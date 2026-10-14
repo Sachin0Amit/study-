@@ -16,13 +16,13 @@ import type { SectionContent } from '../library'
 export const gateCsContent: SectionContent[] = [
   // ------------------------------------------------------------ 1.1 GA Verbal
   {
-    sectionId: 'gate-cs-ch1-s1',
+    sectionId: 'cse-g1-s1',
     readingTime: 8,
     prerequisites: [
       'Basic English sentence structure (subject, verb, object)',
       'Everyday English vocabulary and reading habit'
     ],
-    intro: 'The General Aptitude block carries a fixed 15 marks in every GATE paper through 10 questions (5 × 1 mark and 5 × 2 marks), and roughly half of them test verbal ability. The items are MCQ, MSQ or NAT format, with negative marking applying only to the MCQs, so a wrong guess on a 2-mark MCQ costs 2/3 mark. GATE verbal rewards precise sentence-level grammar and context reading far more than obscure vocabulary.',
+    intro: 'The General Aptitude block carries a fixed 15 marks in every the graduate assessment paper through 10 questions (5 × 1 mark and 5 × 2 marks), and roughly half of them test verbal ability. The items are MCQ, MSQ or NAT format, with negative marking applying only to the MCQs, so a wrong guess on a 2-mark MCQ costs 2/3 mark. the graduate assessment verbal rewards precise sentence-level grammar and context reading far more than obscure vocabulary.',
     objectives: [
       'Apply subject–verb agreement rules, including the neither/nor proximity rule and collective nouns',
       'Choose articles, prepositions, tenses and conjunctions correctly in sentence-completion items',
@@ -34,31 +34,31 @@ export const gateCsContent: SectionContent[] = [
         term: 'Subject–verb agreement',
         kind: 'law',
         statement: 'The **verb agrees with the subject in number and person**: `the number of + plural noun` takes a singular verb, while `a number of + plural noun` takes a plural verb.',
-        detail: 'With either/or and neither/nor, the verb matches the **nearest** subject: "Neither the manager nor the engineers were present". A phrase between subject and verb never changes the agreement: "The list of items is long". Collective nouns (committee, team) take a singular verb when acting as one unit — the standard GATE trap.'
+        detail: 'With either/or and neither/nor, the verb matches the **nearest** subject: "Neither the manager nor the engineers were present". A phrase between subject and verb never changes the agreement: "The list of items is long". Collective nouns (committee, team) take a singular verb when acting as one unit — the standard the graduate assessment trap.'
       },
       {
         term: 'Tense and sequence',
         kind: 'method',
         statement: 'The **past perfect** $\\text{had} + V_3$ requires a later past event: "By the time the build finished, the tests had run". Present perfect pairs with "since/for": "the server has run without a crash since Monday".',
-        detail: 'GATE usually mixes two tenses in one sentence so that only one option is internally consistent. Watch time markers: by the time, already, ever since, ago. Conditional type 3 needs "would have + V3" in the result clause.'
+        detail: 'the graduate assessment usually mixes two tenses in one sentence so that only one option is internally consistent. Watch time markers: by the time, already, ever since, ago. Conditional type 3 needs "would have + V3" in the result clause.'
       },
       {
         term: 'Articles by sound',
         kind: 'method',
         statement: 'Choose **a/an by pronunciation, not spelling**: `an hour, an M.Tech, a university, a European` — the silent h and the yoo-sound decide, not the letter.',
-        detail: 'Use "the" for a second mention or a uniquely identified noun, "a/an" for a first mention. Fixed collocations matter: "different from", "prefer X to Y", "superior to", "consist of" — GATE fill-in-the-blank items usually hinge on exactly one such fixed preposition.'
+        detail: 'Use "the" for a second mention or a uniquely identified noun, "a/an" for a first mention. Fixed collocations matter: "different from", "prefer X to Y", "superior to", "consist of" — the graduate assessment fill-in-the-blank items usually hinge on exactly one such fixed preposition.'
       },
       {
         term: 'Vocabulary in context',
         kind: 'method',
         statement: 'Pick the word the **logic of the passage demands**: contrast signals (however, yet) call for an opposite-leaning word, continuation signals (moreover, indeed) call for reinforcement.',
-        detail: 'Common idioms: "let the cat out of the bag" = reveal a secret, "bite the bullet" = endure something painful bravely, "on the fence" = undecided, "throw in the towel" = give up. Of the four near-synonyms GATE offers, exactly one matches the register (formal vs informal) of the sentence.'
+        detail: 'Common idioms: "let the cat out of the bag" = reveal a secret, "bite the bullet" = endure something painful bravely, "on the fence" = undecided, "throw in the towel" = give up. Of the four near-synonyms the graduate assessment offers, exactly one matches the register (formal vs informal) of the sentence.'
       },
       {
         term: 'Narrative sequencing',
         kind: 'method',
         statement: 'In para-jumbles, **the opening sentence carries no dangling reference** — pronouns such as it, these, such a, and definite noun phrases like "the scanner" must have their antecedent earlier.',
-        detail: 'Chain method: find the sentence that introduces a noun with an indefinite article, then the sentence whose pronoun or definite reference points back to it. Words like then, only after, finally, consequently fix adjacent pairs. The GATE answer options differ in exactly one such link, so verify the link you are least sure about first.'
+        detail: 'Chain method: find the sentence that introduces a noun with an indefinite article, then the sentence whose pronoun or definite reference points back to it. Words like then, only after, finally, consequently fix adjacent pairs. The graduate assessment answer options differ in exactly one such link, so verify the link you are least sure about first.'
       }
     ],
     examples: [
@@ -121,7 +121,7 @@ export const gateCsContent: SectionContent[] = [
 
   // -------------------------------------------------------- 1.2 GA Quantitative
   {
-    sectionId: 'gate-cs-ch1-s2',
+    sectionId: 'cse-g1-s2',
     readingTime: 9,
     prerequisites: [
       'Arithmetic with fractions, decimals and percentages',
@@ -139,19 +139,19 @@ export const gateCsContent: SectionContent[] = [
         term: 'Successive percentage change',
         kind: 'law',
         statement: 'Changes **multiply as factors**: a change of $x\\%$ then $y\\%$ gives the net factor $(1 + \\frac{x}{100})(1 + \\frac{y}{100})$, so `+20% then -10% => 1.2 x 0.9 = 1.08`, i.e. +8%.',
-        detail: 'Two successive discounts of 20% and 10% equal a single discount of 28%, not 30%. Percentage change is always computed on the **new** base of the previous step — the classic GATE trap. Average of two rates is valid only when the bases are equal.'
+        detail: 'Two successive discounts of 20% and 10% equal a single discount of 28%, not 30%. Percentage change is always computed on the **new** base of the previous step — the classic the graduate assessment trap. Average of two rates is valid only when the bases are equal.'
       },
       {
         term: 'Ratios and the unitary method',
         kind: 'method',
         statement: 'Dividing a quantity $Q$ in the ratio $a : b$ gives shares $\\frac{a}{a+b}Q$ and $\\frac{b}{a+b}Q$; combine chained ratios $a:b$ and $b:c$ through the LCM of the common term to get $a:b:c$.',
-        detail: 'For direct proportion set up $\\frac{x_1}{y_1} = \\frac{x_2}{y_2}$; for inverse proportion the product stays constant. GATE three-quantity problems (men–days–work, speed–time–distance) are solved by identifying which pairs vary directly and which inversely.'
+        detail: 'For direct proportion set up $\\frac{x_1}{y_1} = \\frac{x_2}{y_2}$; for inverse proportion the product stays constant. the graduate assessment three-quantity problems (men–days–work, speed–time–distance) are solved by identifying which pairs vary directly and which inversely.'
       },
       {
         term: 'Exponents and logarithms',
         kind: 'law',
         statement: '**Logarithm laws**: $\\log_b xy = \\log_b x + \\log_b y$, $\\log_b \\frac{x}{y} = \\log_b x - \\log_b y$, $\\log_b x^k = k \\log_b x$, change of base $\\log_b a = \\frac{\\log_c a}{\\log_c b}$, and $b^{\\log_b x} = x$.',
-        detail: 'Solve exponential equations by matching bases: $2^x = \\frac{1}{16} = 2^{-4}$ gives $x = -4$; $\\log_2 0.25 = -2$. Useful GATE facts: $\\log 2 + \\log 5 = \\log 10 = 1$ (base 10), and $\\log_a 1 = 0$, $\\log_a a = 1$. NAT answers here are frequently small integers, including negative ones.'
+        detail: 'Solve exponential equations by matching bases: $2^x = \\frac{1}{16} = 2^{-4}$ gives $x = -4$; $\\log_2 0.25 = -2$. Useful the graduate assessment facts: $\\log 2 + \\log 5 = \\log 10 = 1$ (base 10), and $\\log_a 1 = 0$, $\\log_a a = 1$. NAT answers here are frequently small integers, including negative ones.'
       },
       {
         term: 'Permutations and combinations',
@@ -163,13 +163,13 @@ export const gateCsContent: SectionContent[] = [
         term: 'Data interpretation',
         kind: 'method',
         statement: 'Growth rate over a period $= \\frac{\\text{final} - \\text{initial}}{\\text{initial}} \\times 100\\%$; a pie-chart sector of angle $\\theta$ is the fraction $\\frac{\\theta}{360^{\\circ}}$ of the total.',
-        detail: 'Before computing, read the axes, units and scale — GATE distractors exploit missed units (crore vs lakh) or a broken axis. Compare rates rather than absolute rises. Distinguish "percentage change" from "percentage points": a rise from 20% to 25% is 5 percentage points but a 25% relative increase.'
+        detail: 'Before computing, read the axes, units and scale — the graduate assessment distractors exploit missed units (crore vs lakh) or a broken axis. Compare rates rather than absolute rises. Distinguish "percentage change" from "percentage points": a rise from 20% to 25% is 5 percentage points but a 25% relative increase.'
       },
       {
         term: 'Elementary statistics',
         kind: 'definition',
         statement: '**Mean** $\\bar{x} = \\frac{1}{n}\\sum x_i$; **median** = middle value of the sorted data (mean of the two middles for even $n$); **variance** $\\sigma^2 = \\frac{1}{n}\\sum (x_i - \\bar{x})^2$, standard deviation $\\sigma = \\sqrt{\\sigma^2}$.',
-        detail: 'The mean is dragged by outliers while the median resists them — GATE asks which measure changes when an extreme value is added. For equally likely outcomes, $P(A \\text{ or } B) = P(A) + P(B) - P(A \\text{ and } B)$. Compute $\\sigma$ by squaring deviations, never by $\\sum x_i^2$ alone.'
+        detail: 'The mean is dragged by outliers while the median resists them — the graduate assessment asks which measure changes when an extreme value is added. For equally likely outcomes, $P(A \\text{ or } B) = P(A) + P(B) - P(A \\text{ and } B)$. Compute $\\sigma$ by squaring deviations, never by $\\sum x_i^2$ alone.'
       }
     ],
     examples: [
@@ -178,7 +178,7 @@ export const gateCsContent: SectionContent[] = [
         problem: 'A company recorded sales of ₹250 lakh, ₹310 lakh, ₹341 lakh and ₹396 lakh in 2019, 2020, 2021 and 2022 respectively. (i) Which year showed the highest year-on-year growth rate? (ii) What is the total percentage growth from 2019 to 2022?',
         steps: [
           { label: 'Step 1', text: '```text\n2020: (310-250)/250 = 60/250  = 24%\n2021: (341-310)/310 = 31/310  = 10%\n2022: (396-341)/341 = 55/341  = 16.1%\n```\nCompute each year-on-year change on that year base. The three growth rates are 24%, 10% and about 16.1%.' },
-          { label: 'Step 2', text: 'The largest of the three is 24%, so **2020** recorded the highest growth rate — note that the largest absolute rise (₹55 lakh in 2022) is not the largest rate, a deliberate GATE-style contrast.' },
+          { label: 'Step 2', text: 'The largest of the three is 24%, so **2020** recorded the highest growth rate — note that the largest absolute rise (₹55 lakh in 2022) is not the largest rate, a deliberate the graduate assessment-style contrast.' },
           { label: 'Step 3', text: 'Overall growth 2019 → 2022 is computed on the 2019 base: $\\frac{396 - 250}{250} \\times 100 = \\frac{146}{250} \\times 100 = 58.4\\%$.' },
           { label: 'Step 4', text: 'Sanity check: three successive rises of 24%, 10% and 16.1% compound to $1.24 \\times 1.10 \\times 1.161 \\approx 1.584$, matching the single-step 58.4%.' }
         ],
@@ -232,13 +232,13 @@ export const gateCsContent: SectionContent[] = [
 
   // ------------------------------------------------- 2.1 Propositional & FOL
   {
-    sectionId: 'gate-cs-ch2-s1',
+    sectionId: 'cse-g2-s1',
     readingTime: 10,
     prerequisites: [
       'Truth values of simple declarative statements',
       'Basic set notation (used for assignment sets and domains)'
     ],
-    intro: 'Engineering Mathematics supplies about 13 of the 85 subject marks, and propositional and first-order logic is its single most frequently examined topic. GATE repeatedly asks which of several formulas are logically equivalent, valid, or satisfiable, and NAT items ask for counts of satisfying assignments. Every answer reduces to a handful of identities and one discipline: never reason about an implication without recalling when it is false.',
+    intro: 'Engineering Mathematics supplies about 13 of the 85 subject marks, and propositional and first-order logic is its single most frequently examined topic. the graduate assessment repeatedly asks which of several formulas are logically equivalent, valid, or satisfiable, and NAT items ask for counts of satisfying assignments. Every answer reduces to a handful of identities and one discipline: never reason about an implication without recalling when it is false.',
     objectives: [
       'Translate English statements into propositional formulas and negate them correctly',
       'Apply the standard equivalences (implication, De Morgan, contrapositive) to simplify formulas',
@@ -250,13 +250,13 @@ export const gateCsContent: SectionContent[] = [
         term: 'Propositions and connectives',
         kind: 'definition',
         statement: 'A **proposition** is a declarative sentence with a definite truth value; the connectives $\\neg, \\land, \\lor, \\to, \\leftrightarrow$ combine them, and a formula over $n$ variables needs a $2^n$-row truth table.',
-        detail: 'The implication $p \\to q$ is false **only** for the row $p = T, q = F$ — the vacuous-truth rule behind most GATE traps. Precedence: $\\neg$ > $\\land$ > $\\lor$ > $\\to$ > $\\leftrightarrow$. Questions like "which of the following is a proposition" test that commands, questions and paradoxes are not propositions.'
+        detail: 'The implication $p \\to q$ is false **only** for the row $p = T, q = F$ — the vacuous-truth rule behind most the graduate assessment traps. Precedence: $\\neg$ > $\\land$ > $\\lor$ > $\\to$ > $\\leftrightarrow$. Questions like "which of the following is a proposition" test that commands, questions and paradoxes are not propositions.'
       },
       {
         term: 'Implication family',
         kind: 'theorem',
         statement: '**$p \\to q \\equiv \\neg p \\lor q \\equiv \\neg q \\to \\neg p$** (contrapositive); the converse $q \\to p$ and the inverse $\\neg p \\to \\neg q$ are equivalent to each other but not to the original.',
-        detail: 'The most-used identity in GATE options is the negation: $\\neg(p \\to q) \\equiv p \\land \\neg q$ — the denial of "if it rains, the match is cancelled" is "it rains AND the match is not cancelled". Writing the negation as another implication is the standard wrong option.'
+        detail: 'The most-used identity in the graduate assessment options is the negation: $\\neg(p \\to q) \\equiv p \\land \\neg q$ — the denial of "if it rains, the match is cancelled" is "it rains AND the match is not cancelled". Writing the negation as another implication is the standard wrong option.'
       },
       {
         term: 'Tautology, satisfiability, counting',
@@ -268,19 +268,19 @@ export const gateCsContent: SectionContent[] = [
         term: 'De Morgan and normal forms',
         kind: 'law',
         statement: '**De Morgan**: $\\neg(p \\land q) \\equiv \\neg p \\lor \\neg q$ and dually $\\neg(p \\lor q) \\equiv \\neg p \\land \\neg q$; pushing negations inward and distributing $\\lor$ over $\\land$ yields CNF (dually DNF).',
-        detail: 'Functionally complete sets: {¬, ∧}, {¬, ∨}, {¬, →}, and each of NAND and NOR alone. GATE asks whether a given connective set can express every Boolean function — test the two hard functions AND and NOT first.'
+        detail: 'Functionally complete sets: {¬, ∧}, {¬, ∨}, {¬, →}, and each of NAND and NOR alone. the graduate assessment asks whether a given connective set can express every Boolean function — test the two hard functions AND and NOT first.'
       },
       {
         term: 'Quantifier negation',
         kind: 'theorem',
         statement: '**$\\neg \\forall x\\, P(x) \\equiv \\exists x\\, \\neg P(x)$** and $\\neg \\exists x\\, P(x) \\equiv \\forall x\\, \\neg P(x)$; quantifier order matters: $\\forall x \\exists y\\, P(x,y)$ is generally weaker than $\\exists y \\forall x\\, P(x,y)$.',
-        detail: 'Translate negations in one pass, never piecewise: the negation of "every student passed some exam" is "some student failed every exam". When hunting a countermodel for an alleged validity, test a 2-element domain first — most false equivalences break there.'
+        detail: 'Translate negations in one pass, never piecewise: the negation of "every student passed some assessment" is "some student failed every assessment". When hunting a countermodel for an alleged validity, test a 2-element domain first — most false equivalences break there.'
       },
       {
         term: 'Validity in first-order logic',
         kind: 'insight',
         statement: 'A propositional tautology **remains valid under uniform substitution** of first-order formulas for its variables; an FOL validity must hold in every interpretation (every domain and predicate meaning).',
-        detail: 'Distinguish valid (all interpretations), satisfiable (some interpretation) and true-in-a-given-model. GATE MSQs list four statements about quantified formulas and exactly the equivalences survive — derive each with the negation rules rather than intuition.'
+        detail: 'Distinguish valid (all interpretations), satisfiable (some interpretation) and true-in-a-given-model. the graduate assessment MSQs list four statements about quantified formulas and exactly the equivalences survive — derive each with the negation rules rather than intuition.'
       }
     ],
     examples: [
@@ -291,7 +291,7 @@ export const gateCsContent: SectionContent[] = [
           { label: 'Step 1', text: '```text\np -> q  ==  not p  or  q\nnot(p -> q)  ==  p and (not q)\n```\nReplace the arrow first: $p \\to q \\equiv \\neg p \\lor q$. Negating a disjunction with De Morgan gives $\\neg(\\neg p \\lor q) \\equiv p \\land \\neg q$.' },
           { label: 'Step 2', text: '(ii) For the whole disjunction to be false, **both** disjuncts must be false. $p \\to q$ false forces $p = T, q = F$.' },
           { label: 'Step 3', text: '$q \\to r$ false forces $q = T, r = F$. The two requirements demand $q = F$ and $q = T$ simultaneously — impossible.' },
-          { label: 'Step 4', text: 'No assignment falsifies the formula, so all $2^3 = 8$ assignments satisfy it: it is a tautology. This contradiction argument replaces the table and is the intended GATE speed method.' }
+          { label: 'Step 4', text: 'No assignment falsifies the formula, so all $2^3 = 8$ assignments satisfy it: it is a tautology. This contradiction argument replaces the table and is the intended the graduate assessment speed method.' }
         ],
         result: '(i) $\\neg(p \\to q) \\equiv p \\land \\neg q$; (ii) the disjunction is a **tautology** (satisfied by all 8 assignments).'
       },
@@ -343,13 +343,13 @@ export const gateCsContent: SectionContent[] = [
 
   // ---------------------------------------------- 3.1 Number Reps & Arithmetic
   {
-    sectionId: 'gate-cs-ch3-s1',
+    sectionId: 'cse-g3-s1',
     readingTime: 10,
     prerequisites: [
       'Binary (base-2) representation of unsigned integers',
       'Laws of exponents and powers of 2 up to 2^16'
     ],
-    intro: 'Digital Logic contributes roughly 4–6 marks, and its most dependable question type is number representation — range calculations, two\'s-complement addition with overflow detection, and IEEE-754 encoding appear year after year as precise MCQ/NAT items. The answers are exact bit patterns or integers, so success is entirely about applying the formats mechanically. This section builds the representations and the arithmetic traps GATE exploits.',
+    intro: 'Digital Logic contributes roughly 4–6 marks, and its most dependable question type is number representation — range calculations, two\'s-complement addition with overflow detection, and IEEE-754 encoding appear year after year as precise MCQ/NAT items. The answers are exact bit patterns or integers, so success is entirely about applying the formats mechanically. This section builds the representations and the arithmetic traps the graduate assessment exploits.',
     objectives: [
       'Convert between bases, handling fractional positions by repeated multiplication',
       'Compute with sign-magnitude, one\'s-complement and two\'s-complement representations and state each range',
@@ -361,7 +361,7 @@ export const gateCsContent: SectionContent[] = [
         term: 'Positional systems',
         kind: 'definition',
         statement: 'A base-$b$ numeral has **value $\\sum d_i b^i$** with digits $0 \\ldots b-1$; integers convert by repeated division by $b$, fractions by repeated multiplication by $b$ (collecting integer parts).',
-        detail: 'Example: $0.625_{10} = 0.101_2$ because 0.625 → 1.25 → 0.5 → 1.0. Conversely $0.1_{10}$ is non-terminating in binary — the origin of floating-point rounding surprises. GATE NAT items ask for the base-$b$ expansion of small fractions; stop when the fraction reaches exactly 0 or when the requested digits are produced.'
+        detail: 'Example: $0.625_{10} = 0.101_2$ because 0.625 → 1.25 → 0.5 → 1.0. Conversely $0.1_{10}$ is non-terminating in binary — the origin of floating-point rounding surprises. the graduate assessment NAT items ask for the base-$b$ expansion of small fractions; stop when the fraction reaches exactly 0 or when the requested digits are produced.'
       },
       {
         term: 'Signed integer ranges',
@@ -373,13 +373,13 @@ export const gateCsContent: SectionContent[] = [
         term: 'Two\'s-complement addition and overflow',
         kind: 'method',
         statement: 'Add modulo $2^n$ as unsigned; **overflow $V = C_{in} \\oplus C_{out}$** at the MSB, equivalently: adding two same-signed operands can overflow, opposite-signed operands never can.',
-        detail: 'Subtraction $a - b$ is executed as $a + (-b)$ and obeys the same rule on that addition. The result of an overflow is arithmetically wrong but well-defined: the hardware answer is the true sum shifted by $2^n$ (that is, ±2⁸ in 8 bits). GATE gives you a hex or binary pair and asks both for the stored result and whether V is set.'
+        detail: 'Subtraction $a - b$ is executed as $a + (-b)$ and obeys the same rule on that addition. The result of an overflow is arithmetically wrong but well-defined: the hardware answer is the true sum shifted by $2^n$ (that is, ±2⁸ in 8 bits). the graduate assessment gives you a hex or binary pair and asks both for the stored result and whether V is set.'
       },
       {
         term: 'Fixed-point (Q-format)',
         kind: 'definition',
         statement: '**Fixed-point** stores a scaled integer: a $k$-bit word in Q$m.k$ format (m integer bits, k fraction bits) represents $\\text{signed\\_int} / 2^{k}$ with no hardware change.',
-        detail: 'Multiplying two Q-format numbers produces a double-length result with the binary point at $2k$ fraction bits — rescaling (shifting right by k) is required, and GATE checks whether you shift before or after rounding. Fixed point is exact for representable dyadic rationals, unlike binary floating point.'
+        detail: 'Multiplying two Q-format numbers produces a double-length result with the binary point at $2k$ fraction bits — rescaling (shifting right by k) is required, and the graduate assessment checks whether you shift before or after rounding. Fixed point is exact for representable dyadic rationals, unlike binary floating point.'
       },
       {
         term: 'IEEE-754 single precision',
@@ -391,7 +391,7 @@ export const gateCsContent: SectionContent[] = [
         term: 'Rounding, overflow and precision',
         kind: 'insight',
         statement: '**Machine epsilon** for single precision is $2^{-23}$ — the gap between 1.0 and the next representable float; the default round-to-nearest-even mode keeps errors within half an ulp.',
-        detail: 'Exponent overflow produces ±∞; underflow first passes through denormals before flushing to zero. When GATE asks "how many bits of precision", the answer counts the hidden bit: 24 of storage 32. Comparing floats for equality is a design smell the exam expects you to recognise.'
+        detail: 'Exponent overflow produces ±∞; underflow first passes through denormals before flushing to zero. When the graduate assessment asks "how many bits of precision", the answer counts the hidden bit: 24 of storage 32. Comparing floats for equality is a design smell the assessment expects you to recognise.'
       }
     ],
     examples: [
@@ -454,7 +454,7 @@ export const gateCsContent: SectionContent[] = [
 
   // --------------------------------------- 4.1 Machine Instructions & Addressing
   {
-    sectionId: 'gate-cs-ch4-s1',
+    sectionId: 'cse-g4-s1',
     readingTime: 9,
     prerequisites: [
       'Binary and hexadecimal number representation',
@@ -472,7 +472,7 @@ export const gateCsContent: SectionContent[] = [
         term: 'Instruction format',
         kind: 'definition',
         statement: 'An instruction word = **opcode + operand/address fields (+ addressing-mode bits)**; instructions are classified as data movement (load/store/move), arithmetic-logical (add, and, shift) and control (branch, jump, call).',
-        detail: 'One-word instructions embed operands in the word; multi-word formats put a full address in the following word(s) — this length matters for PC-relative targets. GATE sometimes gives a fixed 16-bit format with bit fields and asks which registers a specific encoding references: decode the fields, do not guess.'
+        detail: 'One-word instructions embed operands in the word; multi-word formats put a full address in the following word(s) — this length matters for PC-relative targets. the graduate assessment sometimes gives a fixed 16-bit format with bit fields and asks which registers a specific encoding references: decode the fields, do not guess.'
       },
       {
         term: 'Instruction cycle',
@@ -484,7 +484,7 @@ export const gateCsContent: SectionContent[] = [
         term: 'Effective-address formulas',
         kind: 'law',
         statement: 'Effective addresses: **immediate** — operand is in the instruction itself; **register** — operand is in $R$; **direct** $EA = A$; **indirect** $EA = M[A]$; **register-indirect** $EA = [R]$; **indexed** $EA = A + [R]$; **PC-relative** $EA = PC + \\text{offset}$.',
-        detail: 'Learn these as a table — GATE presents one memory snapshot and asks for five different answers off it. Indexed generalises to base-plus-index and scaled-index (scale factor $\\times$ element size) variants used for array addressing. The offset in relative mode is **signed**, so targets may lie below the branch.'
+        detail: 'Learn these as a table — the graduate assessment presents one memory snapshot and asks for five different answers off it. Indexed generalises to base-plus-index and scaled-index (scale factor $\\times$ element size) variants used for array addressing. The offset in relative mode is **signed**, so targets may lie below the branch.'
       },
       {
         term: 'Memory-access counting',
@@ -502,7 +502,7 @@ export const gateCsContent: SectionContent[] = [
         term: 'RISC versus CISC addressing',
         kind: 'insight',
         statement: 'A **RISC load/store architecture** allows memory operands only in loads and stores (arithmetic is register-register) with few formats; **CISC** lets arithmetic instructions address memory directly through many modes.',
-        detail: 'Fewer modes and fixed-length instructions make RISC pipelining simple — the theme of the next sections. When GATE asks "which mode suits array traversal best", the expected answer is indexed (or base-plus-index), since the index register steps through elements while the base field stays fixed.'
+        detail: 'Fewer modes and fixed-length instructions make RISC pipelining simple — the theme of the next sections. When the graduate assessment asks "which mode suits array traversal best", the expected answer is indexed (or base-plus-index), since the index register steps through elements while the base field stays fixed.'
       }
     ],
     examples: [
@@ -565,7 +565,7 @@ export const gateCsContent: SectionContent[] = [
 
   // ------------------------------------------------------- 5.1 Programming in C
   {
-    sectionId: 'gate-cs-ch5-s1',
+    sectionId: 'cse-g5-s1',
     readingTime: 10,
     prerequisites: [
       'Familiarity with any procedural programming language (variables, loops, functions)',
@@ -583,7 +583,7 @@ export const gateCsContent: SectionContent[] = [
         term: 'Operators and evaluation order',
         kind: 'law',
         statement: 'Precedence (high → low): `! ~ ++ -- (unary)` > `* / %` > `+ -` > relational > equality > `&&` > `||` > `?:` > assignment; **&& and || short-circuit** — the right operand is not evaluated when the left decides the result.',
-        detail: 'Integer division truncates toward zero: $7/2 = 3$ and $-7/2 = -3$, with $-7 \\% 2 = -1$ (C99: the sign of the quotient and remainder follow the dividend). Modulo binds like multiplication: `a % b * c` groups left to right. Modifying the same object twice without an intervening sequence point is undefined behaviour — GATE snippets avoid it, and so should your answers.'
+        detail: 'Integer division truncates toward zero: $7/2 = 3$ and $-7/2 = -3$, with $-7 \\% 2 = -1$ (C99: the sign of the quotient and remainder follow the dividend). Modulo binds like multiplication: `a % b * c` groups left to right. Modifying the same object twice without an intervening sequence point is undefined behaviour — the graduate assessment snippets avoid it, and so should your answers.'
       },
       {
         term: 'Pointers and arrays',
@@ -601,19 +601,19 @@ export const gateCsContent: SectionContent[] = [
         term: 'Storage classes and lifetime',
         kind: 'definition',
         statement: '**auto** (default block local — dies at block exit), **static** (initialized once, retains its value between calls; at file scope, internal linkage), **extern** (defined elsewhere), **register** (a hint to keep in a register).',
-        detail: 'A static local combines block scope with program lifetime — the exact combination GATE exploits by calling a counter function three times. Scope and lifetime are independent: a variable can go out of scope while its value persists (static), or remain in scope with a stale value after an owning function returns (returning the address of a local — undefined).'
+        detail: 'A static local combines block scope with program lifetime — the exact combination the graduate assessment exploits by calling a counter function three times. Scope and lifetime are independent: a variable can go out of scope while its value persists (static), or remain in scope with a stale value after an owning function returns (returning the address of a local — undefined).'
       },
       {
         term: 'Structures, unions and padding',
         kind: 'law',
         statement: 'A **struct** lays members out in declaration order, each at an offset that is a multiple of its alignment requirement, with tail padding so that `sizeof(struct)` is a multiple of the strictest member alignment; a **union** overlays all members at offset 0 and its size is the largest member rounded up to that alignment.',
-        detail: '`struct {char c; int i; short s;}` sizes to 12 on a machine with 4-byte int alignment: c at 0, padding 1–3, i at 4–7, s at 8–9, tail padding 10–11. `union {char c[6]; int i; short s;}` sizes to 8 (6 rounded up to the int alignment 4 → next multiple is 8). Reordering members from largest to smallest minimises padding — a standard interview-and-GATE observation.'
+        detail: '`struct {char c; int i; short s;}` sizes to 12 on a machine with 4-byte int alignment: c at 0, padding 1–3, i at 4–7, s at 8–9, tail padding 10–11. `union {char c[6]; int i; short s;}` sizes to 8 (6 rounded up to the int alignment 4 → next multiple is 8). Reordering members from largest to smallest minimises padding — a standard interview-and-the graduate assessment observation.'
       },
       {
         term: 'Parameter passing',
         kind: 'insight',
         statement: '**C passes every argument by value — including pointers**; an array parameter decays to a pointer, so `sizeof` inside the function sees the pointer, not the caller array.',
-        detail: 'To let a function modify a caller variable, pass its address. When GATE prints `sizeof(arr)/sizeof(arr[0])` inside a function that received `int arr[]`, the correct output is 2 (for an 8-byte pointer and 4-byte int) or similar — never the original element count. This decay rule also explains why 2-D array parameters must declare the column count.'
+        detail: 'To let a function modify a caller variable, pass its address. When the graduate assessment prints `sizeof(arr)/sizeof(arr[0])` inside a function that received `int arr[]`, the correct output is 2 (for an 8-byte pointer and 4-byte int) or similar — never the original element count. This decay rule also explains why 2-D array parameters must declare the column count.'
       }
     ],
     examples: [
@@ -676,7 +676,7 @@ export const gateCsContent: SectionContent[] = [
 
   // ------------------------------------------------- 6.1 Asymptotic Complexity
   {
-    sectionId: 'gate-cs-ch6-s1',
+    sectionId: 'cse-g6-s1',
     readingTime: 10,
     prerequisites: [
       'Logarithms and exponent laws (log of product, change of base)',
@@ -718,7 +718,7 @@ export const gateCsContent: SectionContent[] = [
         term: 'Master theorem',
         kind: 'theorem',
         statement: 'For $T(n) = aT(n/b) + f(n)$ with $a \\ge 1, b > 1$, compare $f$ against $n^{\\log_b a}$: if $f$ is polynomially **smaller**, $T = \\Theta(n^{\\log_b a})$; if **equal up to log factors**, $T = \\Theta(n^{\\log_b a} \\log n)$; if **larger** (with the regularity condition), $T = \\Theta(f)$.',
-        detail: 'Merge sort: $a = 2, b = 2, f = n$ and $n^{\\log_2 2} = n$ — case 2, $\\Theta(n \\log n)$. Binary search: $a = 1, b = 2, f = 1$, $n^{\\log_2 1} = 1$ — case 1, $\\Theta(\\log n)$. Tree traversal $T(n) = 2T(n/2) + 1$ → $\\Theta(n)$. The regularity condition ($a f(n/b) \\le c f(n)$, c < 1) is what case 3 needs — GATE checks whether you check it.'
+        detail: 'Merge sort: $a = 2, b = 2, f = n$ and $n^{\\log_2 2} = n$ — case 2, $\\Theta(n \\log n)$. Binary search: $a = 1, b = 2, f = 1$, $n^{\\log_2 1} = 1$ — case 1, $\\Theta(\\log n)$. Tree traversal $T(n) = 2T(n/2) + 1$ → $\\Theta(n)$. The regularity condition ($a f(n/b) \\le c f(n)$, c < 1) is what case 3 needs — the graduate assessment checks whether you check it.'
       },
       {
         term: 'Space complexity and stack depth',
@@ -787,7 +787,7 @@ export const gateCsContent: SectionContent[] = [
 
   // -------------------------------------------- 7.1 Regular Expressions & Finite Automata
   {
-    sectionId: 'gate-cs-ch7-s1',
+    sectionId: 'cse-g7-s1',
     readingTime: 10,
     prerequisites: [
       'Sets and set operations (languages are sets of strings)',
@@ -835,7 +835,7 @@ export const gateCsContent: SectionContent[] = [
         term: 'State-count heuristics',
         kind: 'insight',
         statement: '**Count what the machine must remember**: a suffix window of length $k$ forces about $2^k$ states, and "the k-th symbol from the end is 1" needs $2^k$ DFA states though it has an NFA with only $k + 1$ states.',
-        detail: 'That $2^k$ versus $k+1$ gap is the canonical proof that subset construction is tight — GATE asks exactly this. Before drawing, decide the memory contents (e.g., "the parity of 1s seen" = 2 states; "the last two symbols" = 4 states plus a start), then check reachability; unreachable memory states never appear in the minimal machine.'
+        detail: 'That $2^k$ versus $k+1$ gap is the canonical proof that subset construction is tight — the graduate assessment asks exactly this. Before drawing, decide the memory contents (e.g., "the parity of 1s seen" = 2 states; "the last two symbols" = 4 states plus a start), then check reachability; unreachable memory states never appear in the minimal machine.'
       }
     ],
     examples: [
@@ -898,7 +898,7 @@ export const gateCsContent: SectionContent[] = [
 
   // ------------------------------------ 9.1 System Calls, Processes, Threads & IPC
   {
-    sectionId: 'gate-cs-ch9-s1',
+    sectionId: 'cse-g9-s1',
     readingTime: 9,
     prerequisites: [
       'The idea of a program versus a running program',
@@ -922,7 +922,7 @@ export const gateCsContent: SectionContent[] = [
         term: 'Process state transitions',
         kind: 'law',
         statement: 'Legal transitions: **new → ready** (admission), **ready → running** (dispatch), **running → ready** (preemption/time slice), **running → blocked** (I/O or event wait), **blocked → ready** (event completion), **running → terminated**. The transition **ready → blocked is impossible**.',
-        detail: 'A process can only enter the blocked state by executing a wait-type request, which requires the CPU — i.e., it must be running. Symmetrically, blocked → running is impossible: an unblocked process must queue in ready first. GATE lists five transitions and asks which cannot occur; these two are the answers.'
+        detail: 'A process can only enter the blocked state by executing a wait-type request, which requires the CPU — i.e., it must be running. Symmetrically, blocked → running is impossible: an unblocked process must queue in ready first. the graduate assessment lists five transitions and asks which cannot occur; these two are the answers.'
       },
       {
         term: 'System calls and dual mode',
@@ -952,14 +952,14 @@ export const gateCsContent: SectionContent[] = [
     examples: [
       {
         title: 'Conditional fork() trace',
-        problem: 'How many times does the following program print "GATE"?\n```c\nint main(void) {\n    fork();\n    if (fork())\n        fork();\n    printf("GATE\\n");\n    return 0;\n}\n```',
+        problem: 'How many times does the following program print "the graduate assessment"?\n```c\nint main(void) {\n    fork();\n    if (fork())\n        fork();\n    printf("the graduate assessment\\n");\n    return 0;\n}\n```',
         steps: [
           { label: 'Step 1', text: '```text\nafter fork() #1: 2 processes (parent P, child C)\n```\nThe first fork() doubles the process count from 1 to 2; both continue to the if.' },
           { label: 'Step 2', text: 'Both processes now evaluate `fork()` inside the if: 4 processes exist. In the two parents this call returned a nonzero PID (true), and in the two children it returned 0 (false).' },
           { label: 'Step 3', text: 'Only the two parents enter the if-body and execute the inner fork(), creating 2 more processes: the total is $2 + 2 = 6$.' },
-          { label: 'Step 4', text: 'All 6 processes — none calls exit before the printf — fall through to the print statement. So "GATE" appears **6** times (6 processes: 1 original + 5 children).' }
+          { label: 'Step 4', text: 'All 6 processes — none calls exit before the printf — fall through to the print statement. So "the graduate assessment" appears **6** times (6 processes: 1 original + 5 children).' }
         ],
-        result: 'The program prints **GATE 6 times**; 6 processes exist in total when the printf calls run.'
+        result: 'The program prints **the graduate assessment 6 times**; 6 processes exist in total when the printf calls run.'
       },
       {
         title: 'fork() in a loop — the 2^n law',
@@ -1009,7 +1009,7 @@ export const gateCsContent: SectionContent[] = [
 
   // ------------------------------------------------------------ 10.1 ER-Model
   {
-    sectionId: 'gate-cs-ch10-s1',
+    sectionId: 'cse-g10-s1',
     readingTime: 9,
     prerequisites: [
       'The relational idea of tables with rows and columns',
@@ -1057,7 +1057,7 @@ export const gateCsContent: SectionContent[] = [
         term: 'Minimum table counting',
         kind: 'insight',
         statement: '**Minimum tables = one per strong entity set + one per weak entity set + one per M:N relationship set + one per multivalued attribute**, with 1:N and 1:1 relationships absorbed as foreign keys and the 1:1 total-total merge applied where legal.',
-        detail: 'GATE phrasing: "the minimum number of tables for the given ER diagram is" — apply the rules in this order and watch for the 1:1 total-total merge that subtracts one. Keep track of foreign keys as you go: the follow-up MCQ usually asks how many FK columns the schema needs in total.'
+        detail: 'the graduate assessment phrasing: "the minimum number of tables for the given ER diagram is" — apply the rules in this order and watch for the 1:1 total-total merge that subtracts one. Keep track of foreign keys as you go: the follow-up MCQ usually asks how many FK columns the schema needs in total.'
       }
     ],
     examples: [
@@ -1114,6 +1114,811 @@ export const gateCsContent: SectionContent[] = [
         options: ['on the one side, referencing the N side', 'on the N side, referencing the one side', 'always in a separate relationship table', 'on both sides for safety'],
         answer: 1,
         explanation: 'Step 1: Each entity on the N side relates to at most one entity on the one side, so a single key value suffices per N-row. Step 2: Placing the FK on the N side stores each association once. Step 3: A separate table is needed only for M:N relationships. Step 4: Duplicating the FK on both sides would store each association twice — redundant and update-anomalous.'
+      }
+    ]
+  },
+  // ------------------------------------------------------- 8.1 Compiler: front end
+  {
+    sectionId: 'cse-g8-s1',
+    readingTime: 11,
+    prerequisites: [
+      'Regular expressions and finite automata (the Theory of Computation chapter)',
+      'Context-free grammars, derivation and parse trees (the Theory of Computation chapter)',
+      'Basic data structures: stacks and tables'
+    ],
+    intro: 'Compiler design carries a reliable 4–6 marks in the CS assessment, and more than half of those questions come from this section: scanning, LL and LR parsing, and syntax-directed translation. the graduate assessment almost never asks you to build a full compiler — it asks for the exact decision point: is this grammar LL(1)? Which item set does this goto produce? Is this attribute grammar L-attributed? Every question in this lesson is built around one such decision point.',
+    objectives: [
+      'Classify tokens, lexemes and patterns, and trace regex-to-DFA conversion for a small scanner',
+      'Decide whether a grammar is LL(1) using FIRST and FOLLOW sets, and fill a predictive parse-table cell',
+      'Distinguish LR(0), SLR, LALR and CLR item sets, and identify handles and shift/reduce conflicts',
+      'Classify attributes as synthesized or inherited, and S- or L-attributed grammars'
+    ],
+    concepts: [
+      {
+        term: 'Token, lexeme, pattern',
+        kind: 'definition',
+        statement: 'A **token** is a category name the parser consumes; a **lexeme** is the actual character sequence matched; a **pattern** is the rule (regular expression) describing all lexemes of a token.',
+        detail: 'In `count = count + 1;` the lexemes are `count`, `=`, `count`, `+`, `1`, `;` mapping to tokens **id**, `assign`, **id**, `plus`, `number**, **semicolon**. The scanner runs the maximal-munch rule: the longest match wins, so `count1` is one identifier, not `count` followed by `1`.'
+      },
+      {
+        term: 'LL(1) predictive parsing',
+        kind: 'method',
+        statement: 'A grammar is **LL(1)** iff for every pair of productions $A \\to \\alpha \\mid \\beta$: $FIRST(\\alpha) \\cap FIRST(\\beta) = \\emptyset$, and if $\\varepsilon \\in FIRST(\\alpha)$ then $FIRST(\\beta) \\cap FOLLOW(A) = \\emptyset$.',
+        detail: 'Build the table with rows = non-terminals, columns = terminals (plus `$`): production $A \\to \\alpha$ goes in cell $[A, a]$ for each $a \\in FIRST(\\alpha)$, and in $[A, b]$ for each $b \\in FOLLOW(A)$ if $\\alpha \\Rightarrow^* \\varepsilon$. **Two productions in one cell ⇒ not LL(1).** Left recursion and ambiguity always break LL(1); left-factor the grammar before testing.'
+      },
+      {
+        term: 'LR item families',
+        kind: 'definition',
+        statement: 'An LR item is a production with a dot: $A \\to \\alpha \\cdot \\beta$. **LR(0)** ignores lookahead; **SLR** reduces only on FOLLOW; **CLR(LR(1))** carries a per-item lookahead; **LALR** merges CLR states with the same core.',
+        detail: 'Power and cost both grow LR(0) < SLR < LALR < CLR. LALR merges states, so it has fewer states than CLR but can introduce (never-new-shift) reduce/reduce conflicts — the classic the graduate assessment trap: LALR may report a reduce/reduce conflict absent in CLR, but any grammar LR(1)-parsable stays parseable (though with merged reductions, wrong choice detected later) under LALR. yacc/bison generate LALR(1) tables.'
+      },
+      {
+        term: 'Handle and viable prefix',
+        kind: 'definition',
+        statement: 'A **handle** is the substring of the sentential form that matches a production body and whose reduction is one step of the rightmost-derivation-in-reverse; a **viable prefix** is any prefix of a right sentential form reachable on the stack.',
+        detail: 'Shift/reduce decisions = "is the stack top a handle?" An LR parser never shifts an error symbol: the stack always holds a viable prefix, so errors are detected at the **earliest possible token** among all parser classes the graduate assessment asks about — a favourite one-mark fact.'
+      },
+      {
+        term: 'Synthesized vs inherited attributes',
+        kind: 'notation',
+        statement: 'A **synthesized** attribute at node $X$ is computed from children of $X$; an **inherited** attribute is computed from the parent and/or left siblings.',
+        detail: 'S-attributed = synthesized only ⇒ always evaluable bottom-up during an LR parse (post-order). L-attributed = inherited attributes may depend only on the parent and **left** siblings (no right-sibling dependency) ⇒ evaluable in one left-to-right pass, which LL parsing gives directly. Every S-attributed grammar is also L-attributed; the converse fails.'
+      }
+    ],
+    examples: [
+      {
+        title: 'LL(1) test on a small grammar',
+        problem: 'Is the grammar $S \\to iEtSS\' \\mid a$, $S\' \\to eS \\mid \\varepsilon$, $E \\to b$ (if-then-else with dangling else) LL(1)?',
+        steps: [
+          { label: 'Step 1', text: 'Compute FIRST sets: $FIRST(S) = \\{i, a\\}$, $FIRST(S\') = \\{e, \\varepsilon\\}$, $FIRST(E) = \\{b\\}$.' },
+          { label: 'Step 2', text: 'FOLLOW(S) contains `$` (S is the start symbol) and `e` (because $S\' \\to eS$ puts `e` after S in that body). So $FOLLOW(S) = \\{e, $\\}$' },
+          { label: 'Step 3', text: 'For $S\' \\to eS \\mid \\varepsilon$: FIRST of the two bodies is $\\{e\\}$ vs $\\{\\varepsilon\\}$. The $\\varepsilon$ case must check $FIRST(eS)$ vs $FOLLOW(S\')$ — and both contain **e**.' },
+          { label: 'Step 4', text: 'Cell $[S\', e]$ receives both $S\' \\to eS$ (from FIRST) and $S\' \\to \\varepsilon$ (from FOLLOW) ⇒ table conflict ⇒ **not LL(1)**.' }
+        ],
+        result: 'Not LL(1) — the dangling-else ambiguity shows up as a parse-table conflict; that is exactly why all real languages resolve it by a "match nearest unmatched then" rule instead of pure LL(1).'
+      },
+      {
+        title: 'LALR state merge consequence',
+        problem: 'A CLR(1) automaton has two states with cores $\{A \\to a \\cdot, B \\to a \\cdot\}$ but lookaheads $\{b\}$ and $\{c\}$ respectively (state 1) and $\{c\}$ and $\{b\}$ (state 2). What happens after LALR merging?',
+        steps: [
+          { label: 'Step 1', text: 'LALR merges states with identical cores: the two states collapse into one with both lookaheads on both items.' },
+          { label: 'Step 2', text: 'In the merged state, on lookahead `c` there are two candidate reductions (by $A$ and by $B$) — a **reduce/reduce conflict** appears that CLR did not have.' },
+          { label: 'Step 3', text: 'No shift/reduce conflict can be *created* by merging (shift decisions depend on the core, which is shared), and no shift action is ever lost — the parser still detects the error, just after performing one possibly-wrong reduction.' }
+        ],
+        result: 'LALR merging may introduce reduce/reduce conflicts (never new shift conflicts), and errors surface at most one reduction later than in CLR. This "one extra wrong reduction" line is a recurring the graduate assessment answer.'
+      }
+    ],
+    keyTakeaways: [
+      'LL(1) fails on left recursion, ambiguity, or non-left-factored grammars — fix the grammar first, then test FIRST/FOLLOW disjointness.',
+      'Parser power: LR(0) < SLR(1) < LALR(1) < CLR(1); parser sizes go the same way, which is why production tools use LALR.',
+      'LALR = CLR with merged same-core states; merging can only create reduce/reduce conflicts, never shift/reduce ones.',
+      'S-attributed grammars evaluate during LR parsing (bottom-up, post-order); L-attributed during LL parsing (left-to-right); S ⊂ L.',
+      'LR parsers announce errors at the first token that cannot continue any viable prefix — earliest detection among the classes the graduate assessment tests.'
+    ],
+    quiz: [
+      {
+        q: 'A grammar has productions $A \\to \\alpha \\mid \\beta$ with $\\varepsilon \\in FIRST(\\alpha)$ and $FIRST(\\beta) \\cap FOLLOW(A) \\neq \\emptyset$. The grammar is',
+        options: ['definitely LL(1)', 'definitely not LL(1)', 'LL(1) only if it is left-factored', 'LL(1) only if it is right-recursive'],
+        answer: 1,
+        explanation: 'Step 1: With $\\alpha$ nullable, production $A \\to \\alpha$ is entered in every cell $[A, b]$, $b \\in FOLLOW(A)$. Step 2: The overlap with $FIRST(\\beta)$ places $A \\to \\beta$ in some of the same cells. Step 3: Two productions in one cell violate the LL(1) condition directly. Step 4: Left-factoring cannot remove a FOLLOW-vs-FIRST clash of this kind; the grammar is not LL(1).'
+      },
+      {
+        q: 'Which statement about LALR(1) parsing is TRUE?',
+        options: ['LALR(1) has more parser states than CLR(1)', 'LALR merging can introduce shift/reduce conflicts', 'LALR merging can introduce reduce/reduce conflicts', 'LALR(1) grammars are a strict subset of SLR(1) grammars'],
+        answer: 2,
+        explanation: 'Step 1: LALR merges CLR states that share the same core (LR(0) items), so it has fewer or equal states. Step 2: Shift actions depend only on the core, so merging cannot create a shift/reduce conflict. Step 3: Lookahead sets combine on merge, so two reductions on the same terminal can collide — a new reduce/reduce conflict. Step 4: Every SLR grammar is LALR and CLR; LALR is the weaker (smaller) family, so "strict subset of SLR" is backwards.'
+      },
+      {
+        q: 'In one pass of an LR (bottom-up) parse, which attribute class can always be evaluated?',
+        options: ['Inherited attributes only', 'Synthesized attributes only', 'Both synthesized and inherited attributes', 'Neither, unless the grammar is ambiguous'],
+        answer: 1,
+        explanation: 'Step 1: LR reduction happens when the full production body is on the stack, i.e. all children are available. Step 2: Synthesized attributes are computed exactly when children values are known — at the reduction step. Step 3: Inherited attributes need parent/sibling context that the parser has not yet built (parent not reduced yet). Step 4: Hence S-attributed grammars are the class that bottom-up parsing evaluates in one pass.'
+      },
+      {
+        q: 'The string `count1` scanned with the maximal-munch rule and tokens `id` and `number` yields',
+        options: ['id(id), number(1)', 'id(count1)', 'number(1), id(count) — order swapped by priority', 'a lexical error'],
+        answer: 1,
+        explanation: 'Step 1: Maximal munch chooses the longest lexeme matching any pattern. Step 2: `count1` as a whole matches the identifier pattern, length 7. Step 3: Splitting into `count` + `1` would give two shorter matches, losing to the longer one. Step 4: No priority rule rescues the split; the token is one id with lexeme count1.'
+      }
+    ]
+  },
+  // ------------------------------------------------------- 8.2 Runtime environments
+  {
+    sectionId: 'cse-g8-s2',
+    readingTime: 9,
+    prerequisites: [
+      'Procedure call semantics and call/return sequence',
+      'Scoping rules: static (lexical) vs dynamic scoping',
+      'Stack (LIFO) behaviour'
+    ],
+    intro: 'Runtime-environment questions are compact and rule-based: given a call chain, the graduate assessment asks how many activation records live on the stack, where an access link points, or what a callee sees after call-by-value versus call-by-reference. Two facts anchor everything: activation records are pushed and popped like stack frames in call order, and access links chain by lexical nesting, not call order.',
+    objectives: [
+      'Lay out an activation record and identify the purpose of each field',
+      'Count live activation records for a given call chain, including recursion',
+      'Trace access links for static scoping and compute the number of link hops to a non-local name',
+      'Predict observable effects of call-by-value, call-by-reference, call-by-value-result and call-by-name'
+    ],
+    concepts: [
+      {
+        term: 'Activation record layout',
+        kind: 'notation',
+        statement: 'A typical activation record, from caller side inward: **return value | actual parameters | control link | access link | saved machine status | local data | temporaries**.',
+        detail: 'The **control link** (dynamic link) points to the caller record — it restores the stack on return. The **access link** (static link) points to the record of the lexically enclosing procedure — it resolves non-local names under static scoping. Saved status holds the return address and registers; temporaries hold intermediate results like the $t_1$ of three-address code.'
+      },
+      {
+        term: 'Access-link hops',
+        kind: 'method',
+        statement: 'To reference a name declared $d$ nesting levels out, the runtime follows $d$ access links; each hop costs one pointer dereference.',
+        detail: 'If $P$ is nested at depth $i$ and uses a variable of a procedure at depth $j < i$, the number of link traversals is $i - j$. the graduate assessment tests the off-by-one trap: the name *inside* $P$ is at depth $i$, but following the first access link already lands in depth $i-1$; the count of hops is exactly $i - j$ when $j$ is the depth of the *declaring* procedure. A display table collapses this to one array lookup — $O(1)$ instead of $O(d)$.'
+      },
+      {
+        term: 'Parameter passing semantics',
+        kind: 'law',
+        statement: '**Call-by-value** copies the value (callee mutations are invisible to the caller); **call-by-reference** passes an address (mutations are visible); **call-by-value-result** copies in and copies back at return; **call-by-name** re-evaluates the actual argument text at each use (like a macro).',
+        detail: 'Classic distinguisher: `swap(a, a)` under call-by-name substitutes both formals with `a`, producing `a := a; a := a` — no swap; under call-by-value-result the copy-back order decides whether one write wins. Aliasing (the same variable passed twice) is what separates these modes in assessments.'
+      },
+      {
+        term: 'Stack vs heap management',
+        kind: 'insight',
+        statement: '**Stack allocation** matches LIFO procedure lifetimes and is reclaimed free at return; **heap allocation** serves data whose lifetime is not tied to the calling procedure (objects, closures, dynamically resized structures).',
+        detail: 'Dangling references arise when a stack-allocated object outlives its frame via a returned pointer; memory leaks arise when heap data loses all references without reclamation. the graduate assessment loves asking which failures each region can produce: a stack can overflow by deep recursion, a heap fragments and leaks.'
+      }
+    ],
+    examples: [
+      {
+        title: 'Counting activation records in a recursion',
+        problem: 'Function `fact(n)` is recursive: `fact(n) = (n ≤ 1) ? 1 : n * fact(n-1)`. The main program calls `fact(3)`. How many activation records are on the stack at the deepest point?',
+        steps: [
+          { label: 'Step 1', text: 'main calls fact(3): records for main and fact(3) are live.' },
+          { label: 'Step 2', text: 'fact(3) calls fact(2) — three live records; fact(2) calls fact(1).' },
+          { label: 'Step 3', text: 'At the deepest point: main, fact(3), fact(2), fact(1) ⇒ **4 records** (1 non-recursive + 3 recursive activations).' },
+          { label: 'Step 4', text: 'General rule: a chain of $k$ nested calls plus the caller gives $k+1$ records; recursion of depth $n$ from a single call site gives $n+1$.' }
+        ],
+        result: '4 activation records — main, fact(3), fact(2), fact(1).'
+      },
+      {
+        title: 'Access link direction under static scoping',
+        problem: 'Procedure structure: `Q` at depth 1 contains `R` at depth 2, which contains `S` at depth 3. Execution: `Q` calls `R`, `R` calls `S`, and `S` references a variable `x` declared in `Q`. If instead the call chain were `Q → T (depth 2, sibling of R) → S`, and `S` were *nested inside T*, how many access-link hops to `x`?',
+        steps: [
+          { label: 'Step 1', text: 'First case: S is at depth 3, Q declared x at depth 1 ⇒ hops = $3 - 1 = 2$ (S→R→Q).' },
+          { label: 'Step 2', text: 'Second case: S nested in T is still at depth 3; the declaring procedure Q is still depth 1.' },
+          { label: 'Step 3', text: 'Hops remain $3 - 1 = 2$ (S→T→Q) — call chains changed, lexical nesting depths did not.' },
+          { label: 'Step 4', text: 'This is the core static-scoping invariant: access links follow the *program text*, never the dynamic call order.' }
+        ],
+        result: '2 hops in both cases — access links are decided by lexical nesting, not by who called whom.'
+      }
+    ],
+    keyTakeaways: [
+      'Activation records live exactly as long as the call: count live records = call-chain length (including the caller) at the moment asked.',
+      'Control link = caller (dynamic); access link = lexical enclosure (static) — the graduate assessment answers hinge on never confusing the two.',
+      'Access hops = depth(using) − depth(declaring); a display makes every non-local lookup one step.',
+      'Call-by-value is copy-in only; call-by-reference shares storage; value-result copies both ways; call-by-name re-substitutes the argument text per use — aliasing (`swap(a,a)`) is the standard discriminator.',
+      'Stacks cannot leak (reclaimed at return) but overflow on deep recursion; heaps leak and fragment but survive their creating frame.'
+    ],
+    quiz: [
+      {
+        q: 'Procedure P (depth 1) contains Q (depth 2); Q contains R (depth 3). R reads a variable declared in P. How many access links does the runtime follow?',
+        options: ['1', '2', '3', '0 — the display handles all lookups in hardware'],
+        answer: 1,
+        explanation: 'Step 1: The referencing procedure R is at nesting depth 3. Step 2: The declaring procedure P is at depth 1. Step 3: Hops = $3 - 1 = 2$: R follows its access link to Q, then Q\'s access link to P. Step 4: Without a display table the cost is proportional to the depth difference; with one it is O(1) — but the question asks about access links, so 2.'
+      },
+      {
+        q: 'A program executes `swap(x, x)` where `swap(a, b)` is `t := a; a := b; b := t`. Under call-by-name, after the call `x` is',
+        options: ['unchanged', 'the original value of the other argument (impossible here — x and x are aliased)', 'negated', 'undefined — call-by-name forbids aliased arguments'],
+        answer: 0,
+        explanation: 'Step 1: Call-by-name substitutes the argument *text*: the body becomes `t := x; x := x; x := t`. Step 2: After `t := x`, t holds x\'s value; `x := x` changes nothing. Step 3: `x := t` writes the same value back. Step 4: Net effect zero — aliasing under call-by-name neutralises the swap, a classic the graduate assessment observation.'
+      },
+      {
+        q: 'Which field of an activation record points to the activation record of the *lexically enclosing* procedure?',
+        options: ['Control (dynamic) link', 'Access (static) link', 'Saved machine status', 'Return-value slot'],
+        answer: 1,
+        explanation: 'Step 1: The control link points to the caller — the record below on the stack. Step 2: The access link points to the most recent activation of the lexically enclosing procedure. Step 3: Saved machine status holds return address/registers; the return-value slot carries the result. Step 4: Non-local name resolution under static scoping walks access links, so that is the required field.'
+      },
+      {
+        q: 'Under call-by-value-result (copy-in, copy-out), passing the same variable to two formal parameters can produce a result that depends on',
+        options: ['the order in which copy-backs are performed at return', 'nothing — the semantics are fully deterministic and aliasing-proof', 'the number of times each formal is read', 'whether the compiler uses quadruples or triples'],
+        answer: 0,
+        explanation: 'Step 1: Copy-in gives each formal an independent local copy; both can be updated freely. Step 2: At return, each formal is copied back to its actual — but both actuals are the *same* variable. Step 3: Which copy-back happens last decides the final value: the result depends on copy-back order. Step 4: Call-by-reference with the same alias instead shares one storage location throughout, giving order-independent (though interleaved) semantics.'
+      }
+    ]
+  },
+  // ------------------------------------------------------- 8.3 Intermediate code
+  {
+    sectionId: 'cse-g8-s3',
+    readingTime: 9,
+    prerequisites: [
+      'Syntax-directed translation of expressions (section 8.1)',
+      'Three-address code basics: at most one operator per instruction',
+      'Boolean short-circuit evaluation'
+    ],
+    intro: 'the graduate assessment intermediate-code questions are countable and mechanical — exactly what makes them high-yield: translate `a = b * -c + b * -c` into quadruples and count them, or emit the short-circuit code for `a < b or c < d` and mark the backpatched labels. This section drills the two workhorses: quadruple/triple generation for expressions and boolean/control-flow translation with backpatching.',
+    objectives: [
+      'Emit three-address code for arithmetic expressions with unary minus and repeated sub-expressions',
+      'Convert between quadruples, triples and indirect triples, and state their relative space behaviour',
+      'Generate short-circuit TAC for boolean expressions and place true/false/backpatch labels correctly',
+      'Translate if-else and while control flow into TAC with explicit goto targets'
+    ],
+    concepts: [
+      {
+        term: 'Three-address code',
+        kind: 'definition',
+        statement: 'TAC allows **at most one operator per instruction**, with implicit temporaries: $x = y \\; op \\; z$, $x = \\; op \\; y$, copy $x = y$, indexed copy, unconditional `goto L`, conditional `if x relop y goto L`, and `param`/`call`/`return`.',
+        detail: 'For `x = a + b * c`: `t1 = b * c` then `x = a + t1` — two instructions; the multiplication comes first because precedence beats the earlier `+`. Unary minus becomes its own instruction (`t = minus y`) *before* use, which is exactly where most counting slips happen.'
+      },
+      {
+        term: 'Quadruples vs triples',
+        kind: 'notation',
+        statement: 'A **quadruple** is `(op, arg1, arg2, result)`; a **triple** refers to results by instruction number, `(op, arg1, arg2)` with result = position; **indirect triples** add a pointer table listing triple addresses in execution order.',
+        detail: 'Quadruples move values (easy to reorder); triples reference temporaries structurally — reordering is hard because an instruction\'s "name" is its address. Indirect triples regain reorderability by moving pointers instead of instructions: the same instruction list, permuted order, cost = one extra pointer array. Space: quadruple `x = y + z` needs 4 fields; the triple needs 3 + the entry in the pointer list for indirect form.'
+      },
+      {
+        term: 'Backpatching',
+        kind: 'method',
+        statement: 'Boolean translation emits `if a < b goto _` / `goto _` with placeholder targets, records the instruction numbers in lists **truelist(B)** / **falselist(B)**, and patches them when the target label becomes known.',
+        detail: 'Operations: `makelist(i)` starts a list; `backpatch(list, L)` writes L into every slot on the list; `merge` unions lists. Why it exists: one-pass code generation — the branch for `a or b`\'s true exit is not knowable when `a` is translated, only after `b` is seen. the graduate assessment asks "which instructions are patched when" — answer by walking the truelist/falselist merge points.'
+      },
+      {
+        term: 'Control-flow templates',
+        kind: 'law',
+        statement: '`if (E) S1 else S2` ⇒ evaluate E, `if False goto L_else`, S1, `goto L_end`, `L_else:`, S2, `L_end:`. A `while (E) S` loop ⇒ `L_begin:`, evaluate E, `if False goto L_end`, S, `goto L_begin`, `L_end:`.',
+        detail: 'Fall-through order matters: the *false* branch jumps (this is the normal the graduate assessment convention), and the loop body ends with an explicit jump back to the *test* — not to the body start. Students who jump back to the body re-execute nothing extra for pure S but mis-count when S itself contains labels.'
+      }
+    ],
+    examples: [
+      {
+        title: 'Quadruple count for a repeated sub-expression',
+        problem: 'Translate `x = b * -c + b * -c` into quadruples. How many quadruples?',
+        steps: [
+          { label: 'Step 1', text: '```text\nt1 = minus c\n```\nUnary minus first (one instruction).' },
+          { label: 'Step 2', text: '```text\nt2 = b * t1\n```\nFirst `b * -c` (second instruction).' },
+          { label: 'Step 3', text: 'Naive translation repeats the pair: `t3 = minus c`, `t4 = b * t3` (fourth instruction).' },
+          { label: 'Step 4', text: '```text\nt5 = t2 + t4\nx  = t5\n```\nAdd and assign (sixth instruction).' }
+        ],
+        result: '6 quadruples without common sub-expression elimination; 4 after CSE reuses `t2` (`x = t2 + t2` in one add). the graduate assessment usually asks for the naive count, so read the wording.'
+      },
+      {
+        title: 'Short-circuit translation with backpatch points',
+        problem: 'Emit TAC for `a < b or c < d` and mark where the truelist is backpatched.',
+        steps: [
+          { label: 'Step 1', text: '```text\n1: if a < b goto _\n2: goto 3\n```\nIf the first test succeeds we jump to the *true exit* (unknown yet) — instruction 1 goes on truelist(E). On failure, fall into `goto 3` to test the second operand.' },
+          { label: 'Step 2', text: '```text\n3: if c < d goto _\n4: goto _\n```\nInstruction 3 joins truelist(E) (merge). Instruction 4 — the false exit — goes on falselist(E), still unknown.' },
+          { label: 'Step 3', text: 'The true exit is patched as soon as the enclosing statement\'s true target exists: `backpatch(truelist, L_true)` — both 1 and 3 receive L_true in one call. Instruction 4 is patched with L_false at the same point.' },
+          { label: 'Step 4', text: 'Short-circuit semantics are preserved: `c < d` is *never* evaluated when `a < b` holds — the goto at 2 only runs when the first test fails.' }
+        ],
+        result: '4 instructions with two backpatch sites: truelist {1, 3} → L_true, falselist {4} → L_false.'
+      }
+    ],
+    keyTakeaways: [
+      'TAC allows one operator per instruction; unary minus, each comparison, each copy is its own instruction — count them in evaluation (precedence) order.',
+      'Quadruples (4 fields, values movable), triples (3 fields, position-addressed, reorder-hostile), indirect triples (+ pointer list, reorderable).',
+      'Backpatching exists because branch targets of boolean expressions are unknown in a one-pass translate: makelist → merge → backpatch.',
+      'Standard templates: if-else jumps on False to the else arm; while re-tests at the top — jump back to the test, never to the body.',
+      'A CSE pass halves this section\'s favourite expression (`b * -c + b * -c`): 6 quadruples naive, 4 optimized — check which one the question wants.'
+    ],
+    quiz: [
+      {
+        q: 'The number of quadruples in the naive (no CSE) three-address translation of `x = -a * b + c` is',
+        options: ['2', '3', '4', '5'],
+        answer: 1,
+        explanation: 'Step 1: `t1 = minus a` — the unary operator gets its own instruction. Step 2: `t2 = t1 * b` — the multiply. Step 3: The final add can assign straight into the target: `x = t2 + c`. Step 4: Three instructions, one operator each — the canonical Dragon-book translation; an extra standalone copy `t3 = x` is what makes naive counts reach 4.'
+      },
+      {
+        q: 'Which representation permits reordering instructions most easily while keeping instruction identities fixed?',
+        options: ['Triples', 'Indirect triples', 'Quadruples with named temporaries', 'Direct source-to-target assembly'],
+        answer: 1,
+        explanation: 'Step 1: In triples, an instruction\'s identity is its position, so reordering breaks references. Step 2: In quadruples, results are named temporaries; reordering is possible but the "instructions" themselves are just records. Step 3: Indirect triples keep one canonical triple list (fixed addresses) plus a separate execution-order table of pointers — reorder by permuting pointers, identity intact. Step 4: That decoupling of *location* from *order* is precisely what optimization phases want.'
+      },
+      {
+        q: 'In one-pass translation of `a < b or c < d`, the instruction `if a < b goto _` is placed on',
+        options: ['the falselist, to be patched to the false exit', 'the truelist, to be patched to the true exit', 'no list — its target is known immediately', 'both the truelist and falselist'],
+        answer: 1,
+        explanation: 'Step 1: A successful first test makes the whole disjunction true, so control must reach the true exit. Step 2: That target does not exist yet when the test is emitted (one-pass constraint). Step 3: The instruction number therefore joins truelist(E), later merged with instruction 3\'s entry and backpatched together. Step 4: The *next* instruction (`goto 3`) is the one that continues to the second operand — it is a known forward jump, not a list member.'
+      },
+      {
+        q: 'Translating `while (i < n) S` into TAC, the last instruction of S is',
+        options: ['an unconditional goto to the first instruction of S', 'an unconditional goto to the test `i < n`', 'a conditional goto on `i < n`', 'a return instruction'],
+        answer: 1,
+        explanation: 'Step 1: The loop template is `L1: if i < n goto body / goto L2; body; goto L1; L2:`. Step 2: The test lives at L1, *before* the body. Step 3: Jumping to the body start would skip the test and create an infinite interior loop with no exit check. Step 4: Control must re-test the condition each iteration, so the back-jump targets L1 — the test.'
+      }
+    ]
+  },
+  // ------------------------------------------------------- 8.4 Local optimisation
+  {
+    sectionId: 'cse-g8-s4',
+    readingTime: 8,
+    prerequisites: [
+      'Three-address code (section 8.3)',
+      'Basic graph vocabulary: nodes, DAG, ancestors',
+      'Loop structure of TAC programs'
+    ],
+    intro: 'Optimisation questions in the graduate assessment are almost always *local* — restricted to one basic block — because then every answer is mechanical: find the leaders, build the DAG, count nodes or identify which transformations apply. This section covers the four things the graduate assessment asks: leaders and blocks, DAG node counting, the standard within-block transformations, and code motion into loop pre-headers.',
+    objectives: [
+      'Identify leaders of basic blocks using the three-leader rule and partition TAC into blocks',
+      'Construct the DAG of a block and count its nodes, including for expressions with sharing',
+      'Classify transformations: common sub-expression elimination, copy propagation, dead-code elimination, code motion',
+      'Recognise which transformations preserve meaning (safe) and which need extra checks'
+    ],
+    concepts: [
+      {
+        term: 'Leaders — the three-rule test',
+        kind: 'law',
+        statement: 'A TAC statement is a **leader** iff it is (1) the first statement, (2) the target of a jump (conditional or unconditional), or (3) the statement immediately *after* a jump. A basic block runs from a leader up to (not including) the next leader.',
+        detail: 'Rule 3 is the one examinees forget — the statement after *any* jump starts a new block, even if nothing jumps to it. Equivalently: control cannot enter a block except at its start and cannot leave except at its end or the final jump.'
+      },
+      {
+        term: 'DAG of a basic block',
+        kind: 'method',
+        statement: 'The **DAG** has a leaf per variable/constant *read first* and an interior node per operation; an operation whose operands match an existing node **reuses** that node instead of creating a new one.',
+        detail: 'Node count = leaves + distinct operations. For `t1 = b * c; t2 = b * c`: one multiply node serves both — that shared node *is* the common sub-expression the DAG exposes. Variables that are only re-assigned attach to nodes as new labels; a node with a **killed** variable label (overwritten later) is dead above that point.'
+      },
+      {
+        term: 'The classic within-block transforms',
+        kind: 'insight',
+        statement: '**CSE** reuses computed values; **copy propagation** replaces uses of copied variables (`x = y` then use `y`); **dead-code elimination** deletes assignments never used; **code motion** moves loop-invariant computations into the pre-header.',
+        detail: 'Algebraic identities fold into local optimisation too: $x + 0 = x$, $x \\cdot 1 = x$, $x^2 = x \\cdot x$ (strength reduction). Constants propagate when all reaching definitions of an operand are the same constant. Each transform is *locally* safe in a block; globally (across blocks) CSE and code motion need data-flow checks — the boundary to section 8.5.'
+      },
+      {
+        term: 'Loop-invariant code motion',
+        kind: 'method',
+        statement: 'A statement is **loop-invariant** if every operand is either constant or has all its definitions outside the loop; such statements move to a **pre-header** block entered once before the loop.',
+        detail: 'The safety condition the graduate assessment tests: the moved statement must not depend on loop-carried values, must execute at least once even if the loop body runs zero times, and must not fault (e.g. division by a loop-carried possibly-zero divisor). Moving an invariant out of a loop that never executes *changes* when (or whether) it runs — the subtle point in "is this motion legal" questions.'
+      }
+    ],
+    examples: [
+      {
+        title: 'Partitioning TAC into basic blocks',
+        problem: '```text\n1: i = 1\n2: s = 0\n3: t1 = i * 10\n4: s = s + t1\n5: i = i + 1\n6: if i < 10 goto 3\n```\nWhich statements are leaders, and how many blocks are there?',
+        steps: [
+          { label: 'Step 1', text: 'Rule 1: statement 1 is a leader (first statement).' },
+          { label: 'Step 2', text: 'Rule 2: statement 3 is a leader (target of the jump at 6).' },
+          { label: 'Step 3', text: 'Rule 3: statement 7 does not exist, but if the jump at 6 were followed by more code, the next statement would be a leader. Here the sequence ends — leaders = {1, 3}.' },
+          { label: 'Step 4', text: 'Block B1 = statements 1–2; block B2 = statements 3–6 (ends with the conditional jump). Two blocks; B2 is the loop body with B2 → B2 (self-loop) and B2 → exit.' }
+        ],
+        result: 'Leaders {1, 3}; two basic blocks — the pre-header (1–2) and the loop (3–6).'
+      },
+      {
+        title: 'DAG node counting with a shared sub-expression',
+        problem: '```text\nx = b * c + b * c\nt = a - (b * c)\n```\nHow many interior+leaf nodes does the DAG of this block have?',
+        steps: [
+          { label: 'Step 1', text: 'Leaves: `b`, `c`, `a` are read; `b` and `c` get one leaf each on first use, `a` one leaf ⇒ 3 leaves.' },
+          { label: 'Step 2', text: 'First `b * c` creates multiply node M. The second `b * c` finds M\'s operands already present ⇒ **reuses M** (that is the CSE).' },
+          { label: 'Step 3', text: 'The `+` of M + M creates node A; the `-` of a − M creates node S ⇒ 3 interior nodes (M, A, S).' },
+          { label: 'Step 4', text: 'Total = 3 leaves + 3 interior = **6 nodes**; naive instruction count would have been 5 TACs with 4 operations — the DAG shares one multiply away.' }
+        ],
+        result: '6 nodes total: leaves {b, c, a}, interior {M: b*c (shared), A: M+M, S: a−M}.'
+      }
+    ],
+    keyTakeaways: [
+      'Leaders: first statement, jump targets, and the statement *after* any jump — forgetting rule 3 is the #1 block-partitioning error.',
+      'DAG node count = distinct leaves + distinct operations; shared operand nodes are exactly the common sub-expressions found.',
+      'CSE, copy propagation, constant folding, algebraic simplification, dead-code elimination are local (within-block) transforms; loop-invariant code motion needs a pre-header and loop analysis.',
+      'Code motion legality: invariant operands, guaranteed execution if it had executed in the loop, and no faulting (division/overflow) — the three checks the graduate assessment phrases as "when is it unsafe".',
+      'A block is single-entry single-exit: the DAG-to-statements regeneration is one topological order of the DAG.'
+    ],
+    quiz: [
+      {
+        q: '```text\n1: x = 1\n2: if a < b goto 6\n3: x = 2\n4: y = x + 1\n5: goto 7\n6: x = 3\n7: z = x\n```\nWhich statement is NOT a leader?',
+        options: ['Statement 3', 'Statement 4', 'Statement 6', 'Statement 7'],
+        answer: 1,
+        explanation: 'Step 1: Statement 1 — first statement ⇒ leader. Step 2: Statement 3 — follows the conditional jump at 2 (rule 3) ⇒ leader. Step 3: Statement 4 — follows the non-jump assignment at 3 and is not a jump target ⇒ **NOT a leader**; it stays inside the block that started at 3. Step 4: Statement 6 — target of the jump at 2 ⇒ leader; statement 7 — follows the jump at 5 and is the target of 5 ⇒ leader. So only statement 4 is interior.'
+      },
+      {
+        q: 'The DAG of the block `x = b * c - b * c` (no dead-code elimination) has how many nodes, including leaves?',
+        options: ['3', '4', '5', '6'],
+        answer: 1,
+        explanation: 'Step 1: Leaves: b and c, read before any write ⇒ 2 leaf nodes. Step 2: The first `b * c` creates multiply node M; the second occurrence reuses M (common sub-expression). Step 3: `M - M` creates subtract node S. Step 4: Total = 2 leaves + 2 interior nodes (M, S) = **4 nodes**. Option 5 would double-count the multiply; 3 forgets S; 6 double-counts both.'
+      },
+      {
+        q: 'Which transformation is NOT a purely local (within basic block) optimisation?',
+        options: ['Common sub-expression elimination inside one block', 'Copy propagation with all definitions inside the block', 'Loop-invariant code motion', 'Algebraic simplification like x*1 → x'],
+        answer: 2,
+        explanation: 'Step 1: A local transform needs only information from the block itself. Step 2: In-block CSE, in-block copy propagation, and algebraic identities all qualify. Step 3: Deciding whether a computation is loop-invariant requires knowing that *no definition inside the entire loop* touches its operands — information from many blocks. Step 4: Hence loop-invariant code motion is a loop-level (global) optimisation, not a local one.'
+      },
+      {
+        q: 'A statement `t = a / b` inside a loop is loop-invariant (a, b set only before the loop) but b may be zero. Why can moving it to the pre-header be unsafe?',
+        options: ['Division results may differ depending on block boundaries', 'If the loop body executes zero times, the moved division still executes and may raise an exception the original never raised', 'The pre-header has no space for temporaries', 'Loop-invariant statements must be assignments to loop variables'],
+        answer: 1,
+        explanation: 'Step 1: Code motion preserves *values* but changes *when* code runs. Step 2: In the loop, if the body never executes (loop condition false at entry), the division never executes — zero-divide never happens. Step 3: In the pre-header it executes unconditionally on every entry, so a zero divisor now raises an exception that the original program would not have raised. Step 4: That is exactly the faulting condition the graduate assessment lists for unsafe code motion; value-preservation alone is not enough.'
+      }
+    ]
+  },
+  // ------------------------------------------------------- 8.5 Data flow analyses
+  {
+    sectionId: 'cse-g8-s5',
+    readingTime: 8,
+    prerequisites: [
+      'Basic blocks and flow graphs (section 8.4)',
+      'Set operations: union, intersection, fixed points',
+      'Direction of data movement: forward vs backward'
+    ],
+    intro: 'Data-flow analysis is where compiler questions turn into small equation systems — perfect the graduate assessment material. The assessment wants three things: set up the equations for liveness, available expressions or constant propagation; run one or two iterations on a 3-block graph; and state the direction of the analysis and the meet operator. Every one of those is one workable rule, drilled below.',
+    objectives: [
+      'Write the liveness data-flow equations and run them backwards on a small flow graph',
+      'Write the available-expressions (global CSE) equations and run them forwards',
+      'Set up constant propagation and decide when the meet changes an OUT set',
+      'Classify each analysis as forward/backward and its meet as union/intersection'
+    ],
+    concepts: [
+      {
+        term: 'Liveness analysis (backward)',
+        kind: 'law',
+        statement: 'A variable is **live** at point $p$ if its value can be used along some path from $p$ before being redefined. Equations: $IN[B] = use[B] \\cup (OUT[B] - def[B])$ and $OUT[B] = \\bigcup_{S \\in succ(B)} IN[S]$.',
+        detail: 'The analysis runs **backwards**: OUT of a block depends on INs of successors; a use *inside* B keeps a variable live even if redefined later in the same block (use is checked statement-by-statement from the end). Boundary: OUT[EXIT] = ∅. Liveness drives register allocation — dead values free registers — which is why the graduate assessment pairs the two.'
+      },
+      {
+        term: 'Available expressions (forward)',
+        kind: 'law',
+        statement: 'An expression is **available** at $p$ if on *every* path from entry to $p$ it is computed and none of its operands is redefined afterwards. Equations: $OUT[B] = e\\_gen[B] \\cup (IN[B] - e\\_kill[B])$ and $IN[B] = \\bigcap_{P \\in pred(B)} OUT[P]$ (except $IN[ENTRY] = \\emptyset$).',
+        detail: 'The meet is **intersection** (all paths must provide it) and the direction is **forward** — the mirror image of liveness on both axes. Initialisation trick: IN of the entry block is ∅, but internal blocks start optimistically with the universe so the intersection does not collapse; the graduate assessment marks this subtlety when it asks "why not initialise to ∅ everywhere". This is the analysis behind **global CSE**: an available expression at a block start can be replaced by a saved temp.'
+      },
+      {
+        term: 'Reaching definitions (forward, union)',
+        kind: 'definition',
+        statement: 'A definition $d: x = \\ldots$ **reaches** point $p$ if there is a path from $d$ to $p$ with no other definition of $x$ in between. $OUT[B] = gen[B] \\cup (IN[B] - kill[B])$, $IN[B] = \\bigcup_{P} OUT[P]$ — the meet is **union** (any path suffices).',
+        detail: 'Same equation shape as available expressions, opposite meet — the assessment-favourite contrast pair. Reaching definitions power constant propagation (if exactly one definition of x reaches a use and it is a constant, substitute) and use-def chains for bug-finding tools.'
+      },
+      {
+        term: 'Iterative fixed-point solution',
+        kind: 'method',
+        statement: 'All these equation systems are **monotone** over finite lattices, so iteration (in any order, until no set changes) terminates at a **least fixed point** — the most conservative solution consistent with the equations.',
+        detail: 'Union-based analyses only grow sets (bottom = ∅); intersection-based analyses only shrink (top = universe), which is why their initialisation differs. Iteration order affects speed, not the result — a monotone framework fact the graduate assessment occasionally states as a 1-mark "does order matter" question.'
+      }
+    ],
+    examples: [
+      {
+        title: 'Two rounds of liveness',
+        problem: 'Block B: `s = 1`, `t = x + y`, `s = t + 1`. Successor (the only one) has $IN = \\{x, s\\}$. Compute $OUT[B]$ and $IN[B]$.',
+        steps: [
+          { label: 'Step 1', text: '$OUT[B] = IN[succ] = \\{x, s\\}$ (union over successors — only one here).' },
+          { label: 'Step 2', text: 'Walk B **backwards** for $use/def$: from the end — `s = t + 1` uses t, defines s ⇒ t live; s defined (kills its liveness here).' },
+          { label: 'Step 3', text: '`t = x + y` uses x, y ⇒ x, y live; defines t (t was live below, but the use here *creates* its liveness, so it stays live above only if used above — it is not).' },
+          { label: 'Step 4', text: 'Statement-level result: live-in of B = $\\{x, y\\}$, live-out = $\\{x, s\\}$; set form: $use[B] = \\{x, y, t\\}$... applied via $IN[B] = use[B] \\cup (OUT[B] - def[B]) = \\{x, y, t\\} \\cup (\\{x, s\\} - \\{s, t\\}) = \\{x, y, t\\} \\cup \\{x\\} = \\{x, y, t\\}$.' }
+        ],
+        result: 'OUT[B] = {x, s}; IN[B] = {x, y, t} — t is live into the block because it is used before its own definition, the classic gen-before-kill subtlety.'
+      },
+      {
+        title: 'Global CSE via available expressions',
+        problem: 'Block P computes `a + b` then redefines `b`; block Q (successor of P only) computes `a + b` at its start. Is `a + b` available at the entry of every successor of Q?',
+        steps: [
+          { label: 'Step 1', text: 'In P: `a + b` is generated by the computation, then killed by the redefinition of `b` ⇒ $OUT[P] \\ni a+b$? No: the kill dominates — processing P forward, gen adds it but the later kill removes it, so `a+b` ∉ OUT[P].' },
+          { label: 'Step 2', text: '$IN[Q] = OUT[P]$ (only predecessor) ⇒ `a + b` not available at Q entry.' },
+          { label: 'Step 3', text: 'Q\'s own computation generates it: `a + b` ∈ OUT[Q] (no later kill in Q) — so it IS available at Q\'s successors.' },
+          { label: 'Step 4', text: 'The kill rule is the trap: *any* redefinition of an operand invalidates the expression, even one textually far away; the equations mechanise that intuition.' }
+        ],
+        result: 'Available at Q\'s exit: yes. At Q\'s entry: no — P killed it by redefining b after computing it.'
+      }
+    ],
+    keyTakeaways: [
+      'Direction/meet table: liveness = backward + union; available expressions = forward + intersection; reaching definitions = forward + union; very-reaching (constant prop) = forward + intersection-like meet.',
+      'A variable used before being redefined inside a block is live-in even though it is also defined in the block — process statements from the end.',
+      'Union analyses start at ∅ and grow; intersection analyses start at universe (except entry) and shrink — initialisation direction is the classic 1-mark trap.',
+      'Global CSE = available expressions; constant propagation = single reaching constant definition; both fail to "may" information when paths disagree.',
+      'Monotone + finite lattice ⇒ the iterative algorithm reaches the same fixed point regardless of block order — order changes speed only.'
+    ],
+    quiz: [
+      {
+        q: 'In liveness analysis, the OUT set of a basic block B is computed as',
+        options: ['union of IN sets of all predecessors of B', 'intersection of IN sets of all successors of B', 'union of IN sets of all successors of B', 'intersection of OUT sets of all predecessors of B'],
+        answer: 2,
+        explanation: 'Step 1: Liveness asks "can this value be used *after* this point?" — information flows backwards. Step 2: Backward analysis computes IN[B] from OUT[B], and OUT[B] from the successors. Step 3: Liveness is a *may* property (some future use), so the combine is union. Step 4: OUT[B] = ∪ IN[S] over successors — "union of successors\' INs" is the exact statement.'
+      },
+      {
+        q: 'A block executes `x = 5` then `y = x + 2`. Which statement about the *constant propagation* analysis of this block is TRUE?',
+        options: ['x is not constant inside the block because it is defined', 'After the block, y is definitely the constant 7 if x was not redefined between the two statements', 'Constant propagation is a backward analysis', 'The meet over paths for constant propagation is union'],
+        answer: 1,
+        explanation: 'Step 1: Constant propagation tracks assignments of literal constants forward. Step 2: `x = 5` makes x the constant 5 from that point forward; the subsequent `x + 2` folds to 7 because no statement intervenes. Step 3: Hence y = 7 holds at block exit — a definite constant. Step 4: The analysis is forward, and when different incoming paths disagree on a value the meet marks it not-a-constant (an "undefined/⊤-like" outcome), not a union of values.'
+      },
+      {
+        q: 'Which data-flow analysis is used directly to perform global common sub-expression elimination?',
+        options: ['Liveness analysis', 'Reaching definitions', 'Available expressions', 'Very busy expressions'],
+        answer: 2,
+        explanation: 'Step 1: Replacing a recomputation with a saved temp requires the expression to be computed on every path already. Step 2: "On every path" is the *must* (all-paths) property, and its standard carrier is available expressions. Step 3: Liveness handles register allocation, reaching definitions support use-def chains and constant propagation. Step 4: So global CSE = available expressions, with operand-redefinition kills.'
+      },
+      {
+        q: 'Why are internal blocks\' IN sets for available-expressions initialised to the universe of expressions instead of ∅?',
+        options: ['To make the algorithm terminate faster', 'To avoid the intersection collapsing to the empty set permanently on the first iteration before facts flow in', 'Because union-based analyses need maximal starting sets', 'It is just a convention; ∅ works identically'],
+        answer: 1,
+        explanation: 'Step 1: The meet for available expressions is intersection. Step 2: If every IN started at ∅, the first iteration would intersect every predecessor OUT with ∅ and every block would permanently report "nothing available". Step 3: Starting optimistically at the universe lets real kills (the only facts that can *remove* availability) do the shrinking over iterations — the least fixed point emerges from below. Step 4: The result with ∅ initialisation is a fixed point too, but the *greatest* (most conservative-empty) one, which is useless for CSE.'
+      }
+    ]
+  },
+  // ------------------------------------------------------- 11.1 Networks: layering
+  {
+    sectionId: 'cse-g11-s1',
+    readingTime: 9,
+    prerequisites: [
+      'The idea of a protocol as rules for message exchange',
+      'Encapsulation: headers wrapped around payloads',
+      'Graph reachability (for virtual-circuit vs datagram paths)'
+    ],
+    intro: 'Computer Networks is the second-heaviest the CS assessment area (typically 6–8 marks) and the graduate assessment opens it exactly here: match a duty to its layer, name the PDU at each level, and tell packet switching from circuit switching. The assessment is strict about *where* OSI puts things — encryption at presentation, routing at network, end-to-end reliability at transport — and this section rehearses every mapping that has ever appeared.',
+    objectives: [
+      'Map the seven OSI layers and four TCP/IP layers to their precise responsibilities',
+      'Name the PDU of each layer (bit, frame, packet, segment, message) and trace encapsulation',
+      'Distinguish packet (datagram) switching, circuit switching and virtual-circuit switching',
+      'Classify a given service (encryption, framing, reliable delivery, naming) to its correct layer'
+    ],
+    concepts: [
+      {
+        term: 'OSI seven layers, bottom-up',
+        kind: 'notation',
+        statement: '**Physical** (bits on wire) → **Data link** (frames, hop-to-hop) → **Network** (packets, host-to-host across networks) → **Transport** (segments, process-to-process) → **Session** (dialogues, checkpoints) → **Presentation** (syntax, encryption, compression) → **Application** (user services).',
+        detail: 'Memory frame: "Please Do Not Throw Sausage Pizza Away". Strict the graduate assessment placements: routing & logical addressing = network; framing, MAC, error detection = data link; reliability, congestion control, port numbers = transport; **encryption/compression = presentation** (never application, never session); DNS/HTTP/SMTP = application. Session layer duties: dialog control, synchronization checkpoints (rarely asked, always misplaced in options).'
+      },
+      {
+        term: 'TCP/IP stack, four layers',
+        kind: 'definition',
+        statement: 'The Internet model: **Network access (link)**, **Internet (network)**, **Transport** (TCP/UDP), **Application** — with session and presentation duties absorbed into applications.',
+        detail: 'TCP/IP merged OSI\'s top three into one application layer; the mapping question "which OSI layer has no separate TCP/IP counterpart" ⇒ session + presentation. the graduate assessment also likes: OSI is a *reference model* (descriptive, protocol-agnostic), TCP/IP is what the Internet actually runs — and neither is an implementation.'
+      },
+      {
+        term: 'Encapsulation and PDUs',
+        kind: 'law',
+        statement: 'Each layer wraps the layer above\'s PDU with its own header: Application **message** → Transport adds ports (TCP **segment**/UDP datagram) → Network adds IP addresses (**packet/datagram**) → Link adds MAC addresses and trailer (**frame**) → Physical sends **bits**.',
+        detail: 'Decapsulation is the mirror image on the receiver. A 2-mark classic: "a switch examines which header?" — Ethernet frame (data link). "A router examines which?" — IP header (network). MTU is a *link* limit, so fragmentation (splitting one packet into several) is a network-layer consequence of a link-layer constraint — the crossover the graduate assessment loves to phrase as "which layer fragments".'
+      },
+      {
+        term: 'Switching paradigms',
+        kind: 'insight',
+        statement: '**Circuit switching** reserves an end-to-end path (bandwidth, buffers) before data — telephone style; **packet/datagram switching** sends self-addressed packets independently, no setup; **virtual circuits** set up a logical path (connection setup, per-call VC tables) but carry packets statistically.',
+        detail: 'Datagram pros: robust to router failure (reroute per packet), no setup delay; cons: per-packet header overhead, possible reordering. VC pros: in-order delivery, simpler per-packet forwarding (short VC numbers); cons: setup cost, one path = single point of failure. the graduate assessment asks "which requires setup" / "which can reorder" — answer by paradigm, not by protocol.'
+      }
+    ],
+    examples: [
+      {
+        title: 'Duty-to-layer mapping',
+        problem: 'Assign each duty to its OSI layer: (a) compressing a video stream header information, (b) choosing the best route for a packet, (c) detecting a bit error inside one hop\'s transmission, (d) guaranteeing ordered delivery between two processes, (e) translating between character codes.',
+        steps: [
+          { label: 'Step 1', text: '(a) Compression is a *representation* change ⇒ **presentation**.' },
+          { label: 'Step 2', text: '(b) Route selection is the defining network-layer job ⇒ **network**.' },
+          { label: 'Step 3', text: '(c) Hop-by-hop error detection (CRC in the trailer) ⇒ **data link**. Note the scope words: "one hop" pins link, not transport.' },
+          { label: 'Step 4', text: '(d) Process-to-process ordering with retransmission ⇒ **transport** (TCP). (e) Code translation (EBCDIC↔ASCII) is classic **presentation**. Every option hinges on scope: hop vs host vs process vs syntax.' }
+        ],
+        result: 'a → presentation, b → network, c → data link, d → transport, e → presentation.'
+      },
+      {
+        title: 'Encapsulation trace',
+        problem: 'A browser sends a 1400-byte HTTP POST. The link MTU is 1500, IP+TCP headers are 20+20 bytes. Name the PDUs and sizes at each layer.',
+        steps: [
+          { label: 'Step 1', text: 'Application: an HTTP **message** of 1400 bytes (headers + body).' },
+          { label: 'Step 2', text: 'Transport: +20 B TCP header ⇒ a TCP **segment** of 1420 B.' },
+          { label: 'Step 3', text: 'Network: +20 B IP header ⇒ an IP **packet** of 1440 B — under the 1500 MTU, so no fragmentation.' },
+          { label: 'Step 4', text: 'Link: +14 B Ethernet header +4 B FCS ⇒ a **frame** of 1458 B; physical layer then clocks out ~11,664 **bits**.' }
+        ],
+        result: 'Message 1400 → segment 1420 → packet 1440 → frame 1458 → bits; fragmentation triggers only when packet size exceeds MTU.'
+      }
+    ],
+    keyTakeaways: [
+      'Scope tells the layer: one hop = data link; host-to-host = network; process-to-process = transport; representation = presentation.',
+      'PDU ladder: message → segment (UDP datagram) → packet → frame → bits; a switch reads frames, a router reads packets.',
+      'OSI has 7 layers; TCP/IP has 4 and absorbs session+presentation into the application layer.',
+      'Encryption/compression = OSI presentation; dialog control & checkpoints = session; both are classic misplacements in options.',
+      'Datagram = no setup, per-packet routing, may reorder; circuit = reserved path, no per-packet decisions; virtual circuit = setup + statistical packet switching hybrid.'
+    ],
+    quiz: [
+      {
+        q: 'Which OSI layer is responsible for encryption of user data?',
+        options: ['Application', 'Session', 'Presentation', 'Transport'],
+        answer: 2,
+        explanation: 'Step 1: Encryption changes the *representation* (syntax) of data, not the dialogue, not the application semantics, not delivery. Step 2: OSI assigns syntax transformations — encryption, compression, code translation — to the presentation layer. Step 3: The application layer defines services (HTTP, SMTP); session manages dialogues and checkpoints. Step 4: Transport handles end-to-end delivery/reliability, not data formatting — so presentation is the answer.'
+      },
+      {
+        q: 'An IP packet is carried inside an Ethernet frame. The Ethernet frame is the PDU of which layer, and the IP packet is addressed to',
+        options: ['data link PDU; addressed to a MAC address', 'network PDU; addressed to an IP address', 'data link PDU; addressed to an IP address', 'network PDU; addressed to a MAC address'],
+        answer: 2,
+        explanation: 'Step 1: PDU naming: frame = data link, packet = network, segment = transport. Step 2: The outer header on any hop is the Ethernet header, carrying MAC (link-layer) addresses — the frame is the data-link PDU. Step 3: The IP header inside it carries the IP (network-layer) address — the packet is addressed by IP. Step 4: So "data link PDU; addressed to an IP address" correctly describes the frame as link PDU and the packet it carries as IP-addressed.'
+      },
+      {
+        q: 'Which statement about datagram (packet) switching is TRUE?',
+        options: ['It requires a setup phase before any data packet is sent', 'Two successive packets between the same hosts may follow different routes', 'Packets are guaranteed to arrive in order', 'Per-packet forwarding decisions use a virtual-circuit identifier'],
+        answer: 1,
+        explanation: 'Step 1: Datagram switching is connectionless: each packet is routed independently using its destination address. Step 2: Independent routing means successive packets can take different paths — and can therefore arrive out of order. Step 3: Setup phases and VC numbers belong to virtual-circuit switching. Step 4: Ordering, when needed, is restored at the transport layer (TCP), not guaranteed by the network.'
+      },
+      {
+        q: 'In the TCP/IP protocol stack, the duties of the OSI session and presentation layers are',
+        options: ['handled by separate TCP/IP layers', 'absorbed into the application layer', 'handled by the transport layer', 'not supported at all and never implemented in practice'],
+        answer: 1,
+        explanation: 'Step 1: TCP/IP has four layers: network access, internet, transport, application. Step 2: It defines no separate session or presentation layers. Step 3: Applications take over those duties directly (TLS for encryption, application-level sessions and codecs). Step 4: So the duties are absorbed into the application layer — not dropped entirely; the Internet clearly supports encrypted, session-based applications.'
+      }
+    ]
+  },
+  // ------------------------------------------------------- 11.2 Data link layer
+  {
+    sectionId: 'cse-g11-s2',
+    readingTime: 10,
+    prerequisites: [
+      'Layering and PDU names (section 11.1)',
+      'Binary arithmetic (XOR) and polynomial division for CRC',
+      'Sliding-window flow control basics'
+    ],
+    intro: 'The data-link layer supplies the graduate assessment\'s most computational networking marks: CRC remainders, bit-stuffing outputs, sliding-window efficiency, and Ethernet\'s minimum-frame-size bound. Every one of those is a 3–5 step calculation with a fixed method — this section makes each method explicit and then drills the assessment\'s favourite parameter twists (window size formulas, slot time, backoff ranges).',
+    objectives: [
+      'Compute CRC remainders and verify codewords for a generator polynomial',
+      'Apply byte stuffing and bit stuffing to given frames and count stuffed bits',
+      'Compute Go-Back-N and Selective-Repeat window limits and channel utilisation',
+      'Derive Ethernet\'s minimum frame size from slot time and detect CSMA/CD backoff ranges'
+    ],
+    concepts: [
+      {
+        term: 'CRC — polynomial division',
+        kind: 'method',
+        statement: 'Append $r$ zeros to the message (degree of generator $G(x)$ = $r$), divide by $G(x)$ **modulo 2**, and transmit data + remainder. Receiver divides the whole codeword by $G(x)$: remainder 0 ⇒ accepted.',
+        detail: 'Modulo-2 division = XOR without carries; a leading-1 bit triggers subtraction of the generator, leading-0 shifts only. A generator with $x^{r}$ and $x^0$ terms detects all single-bit errors, all double errors (if $G$ does not divide $x^k+1$ for the frame length), any odd number of errors (if $G$ has factor $x+1$), and all bursts $\\le r$ bits — the "detect all bursts of length ≤ degree" rule is the most-tested property.'
+      },
+      {
+        term: 'Framing: stuffing rules',
+        kind: 'law',
+        statement: '**Bit stuffing** (HDLC): insert a 0 after any run of five consecutive 1s, so the flag `01111110` never appears in data. **Byte stuffing** (PPP): escape `0x7E` as `0x7D 0x5E` and `0x7D` as `0x7D 0x5D`.',
+        detail: 'Counting questions: n ones in data produce $\\lfloor n/5 \\rfloor$ stuffed zeros (per disjoint run). Character-count framing (a length field in the header) has no delimiters but breaks on a count error — the classic "why delimiters/escaping is preferred" answer: resynchronization.'
+      },
+      {
+        term: 'Sliding windows: GBN vs SR',
+        kind: 'law',
+        statement: 'With $n$ sequence-number bits: **Go-Back-N** sender window $\\le 2^n - 1$, receiver window 1; **Selective Repeat** windows $\\le 2^{n-1}$ (both sides), because the receiver must distinguish a retransmitted old frame from a brand-new one.',
+        detail: 'Utilisation for a sender window $W$ on an RTT channel: $U = \\min(1, \\frac{W \\cdot t\\_tx}{t\\_tx + 2 t\\_prop})$ — GBN retransmits the whole window on error; SR retransmits only the lost frame, which is why SR needs buffering at the receiver. The $2^{n-1}$ SR limit is THE one-mark formula: 3 bits ⇒ SR max 4, GBN max 7.'
+      },
+      {
+        term: 'CSMA/CD and the minimum frame',
+        kind: 'law',
+        statement: 'A station must still be transmitting when a collision returns: $t\\_tx \\ge 2 t\\_prop$ ⇒ minimum frame = $2 \\times \\frac{d}{v} \\times R$ (R = data rate). Ethernet: 51.2 μs slot, 64-byte minimum at 10 Mbps.',
+        detail: 'After the $i$-th collision, each station picks backoff $k \\cdot slot$ with $k \\in [0, 2^{\\min(i,10)} - 1]$ (binary exponential backoff; cap at 10, giving 1024 slots max; after 16 attempts the frame is dropped). Hub-based segments are one collision domain; **bridges/switches split collision domains but not broadcast domains** — VLANs or routers bound broadcast domains.'
+      }
+    ],
+    examples: [
+      {
+        title: 'CRC division end-to-end',
+        problem: 'Data 101110, generator 1001 ($G(x) = x^3 + 1$). Find the transmitted codeword.',
+        steps: [
+          { label: 'Step 1', text: 'Generator degree 3 ⇒ append three zeros: dividend = 101110**000**.' },
+          { label: 'Step 2', text: 'Modulo-2 divide: 1011 1000 ÷ 1001. Align generator with the leading 1: XOR the top 4 bits 1011 ⊕ 1001 = 0010, bring down…' },
+          { label: 'Step 3', text: 'Continuing: quotient bits accumulate as 101011, each XOR consuming one dividend bit; the process ends with remainder **011**.' },
+          { label: 'Step 4', text: 'Transmit data + remainder: 101110**011**. Receiver\'s division of this 9-bit codeword by 1001 yields remainder 000 ⇒ accept.' }
+        ],
+        result: 'Codeword = 101110011 with CRC 011; any non-zero receiver remainder flags the error.'
+      },
+      {
+        title: 'Ethernet minimum frame size',
+        problem: 'A 1 km collision-domain segment propagates at $2 \\times 10^8$ m/s; the data rate is 10 Mbps. What minimum frame size does CSMA/CD require?',
+        steps: [
+          { label: 'Step 1', text: 'One-way propagation: $t\\_prop = \\frac{1000}{2 \\times 10^8} = 5 \\ \\mu s$.' },
+          { label: 'Step 2', text: 'Worst case: the farthest station starts just before the frame arrives; the collision signal needs a full round trip: $2 t\\_prop = 10 \\ \\mu s$.' },
+          { label: 'Step 3', text: 'Transmission time must cover that: $t\\_tx \\ge 10\\ \\mu s$.' },
+          { label: 'Step 4', text: 'Bits = $10 \\times 10^{-6} \\times 10 \\times 10^{6}$ = **100 bits minimum** (rounded up to a byte boundary in real hardware; note how the canonical 512-bit Ethernet minimum comes from its 51.2 μs slot).' }
+        ],
+        result: '100 bits — the frame must outlast the round-trip so the sender can detect the collision.'
+      }
+    ],
+    keyTakeaways: [
+      'CRC: append r zeros, modulo-2 divide, transmit data+remainder; receiver remainder ≠ 0 ⇒ error; a degree-r generator catches all bursts ≤ r.',
+      'Bit stuffing: a 0 after every five 1s (count per run); byte stuffing escapes 0x7E/0x7D with 0x7D.',
+      'Window formulas with n sequence bits: GBN ≤ 2ⁿ−1, SR ≤ 2ⁿ⁻¹; utilisation = min(1, W·t_tx/(t_tx+2t_prop)).',
+      'Minimum frame = 2·t_prop·R — detection demands the sender still be sending when the collision returns; Ethernet slot = 51.2 μs = 64 B at 10 Mbps.',
+      'Backoff: k ∈ [0, 2^min(i,10) −1] slots after the i-th collision, give up after 16; bridges segment collision domains, only routers/VLANs segment broadcast domains.'
+    ],
+    quiz: [
+      {
+        q: 'Data 100100 is sent with generator $x^3 + 1$. After appending zeros and dividing, the CRC remainder is 001. The transmitted codeword is',
+        options: ['100100001', '100100101', '100100011', '100100100'],
+        answer: 0,
+        explanation: 'Step 1: The generator $x^3+1$ has degree 3, so append 3 zeros: 100100000. Step 2: Modulo-2 division by 1001: the leading bits XOR down step by step, giving the stated remainder 001. Step 3: Codeword = data followed by the remainder: 100100 **001**. Step 4: The other options place the remainder before the data or use a wrong-degree remainder — only 100100001 is data+remainder.'
+      },
+      {
+        q: 'A sliding-window protocol uses 4 sequence-number bits and must never confuse a retransmission for a new frame (Selective Repeat semantics). The maximum sender window is',
+        options: ['15', '16', '8', '7'],
+        answer: 2,
+        explanation: 'Step 1: With 4 bits there are $2^4 = 16$ sequence numbers cycling. Step 2: Selective Repeat requires sender and receiver windows $\\le 2^{n-1} = 2^3 = 8$. Step 3: With 8, the receiver can always tell "this is the old window wrapped" from "this is the next window" because the two windows never overlap ambiguously. Step 4: 15 is the GBN sender bound (2ⁿ−1); 7 would be the GBN bound for 3 bits — both are the distractors planted here.'
+      },
+      {
+        q: 'In bit stuffing (HDLC), the data stream 011111101 before framing causes the transmitter to',
+        options: ['stuff a 0 after the first five 1s, so the flag pattern never appears in the payload', 'stuff a 1 after five 1s', 'escape the whole byte with 0x7D', 'drop the frame as invalid'],
+        answer: 0,
+        explanation: 'Step 1: The flag is 01111110 — exactly six 1s bounded by zeros. Step 2: The data contains five consecutive 1s followed by 1 more: to prevent any run of six 1s in the payload, the transmitter inserts a 0 after every run of five 1s. Step 3: The stuffed stream 011111**0**101 can never synthesise the flag; the receiver removes the 0 after any five-1 run. Step 4: Byte escaping (0x7D) belongs to PPP\'s byte stuffing, not HDLC bit stuffing.'
+      },
+      {
+        q: 'A switch (multiport bridge) connecting several hosts',
+        options: ['creates one collision domain and one broadcast domain', 'creates one collision domain per port but a single broadcast domain', 'separates both collision domains and broadcast domains', 'forwards frames based on IP addresses'],
+        answer: 1,
+        explanation: 'Step 1: A bridge/switch stores-and-forwards frames and runs CSMA/CD per segment — each port is its own collision domain. Step 2: Broadcast frames (e.g. ARP requests) are flooded to all ports: the whole switched network is one broadcast domain. Step 3: Only routers (or VLANs) bound broadcast domains. Step 4: Switches forward on *MAC* addresses learned from source fields; IP addresses are the network layer\'s business.'
+      }
+    ]
+  },
+  // ------------------------------------------------------- 11.3 Routing protocols
+  {
+    sectionId: 'cse-g11-s3',
+    readingTime: 9,
+    prerequisites: [
+      'Dijkstra\'s shortest-path algorithm (the Algorithms chapter)',
+      'Graph representation of networks with link costs',
+      'Distance-vector iteration idea: relax edges repeatedly'
+    ],
+    intro: 'Routing is the graduate assessment\'s meeting point of algorithms and networks: Dijkstra with link-state flooding on one side, Bellman–Ford distance vectors on the other, and the count-to-infinity pathology as the question that has appeared in more papers than any other networking item. The three skills: run Dijkstra to a fixed order, run one DV exchange step, and diagnose count-to-infinity — all three with numbers you can redo in under two minutes.',
+    objectives: [
+      'Run Dijkstra on a small weighted graph, stating the permanent order and shortest-path tree',
+      'Perform one step of distance-vector exchange and update a router\'s table',
+      'Recognise and explain the count-to-infinity scenario and the partial cures (split horizon, poison reverse)',
+      'Contrast link-state (OSPF-style) and distance-vector (RIP-style) routing on tables, messages and convergence'
+    ],
+    concepts: [
+      {
+        term: 'Link-state routing (Dijkstra + flooding)',
+        kind: 'method',
+        statement: 'Each router floods a **link-state packet** (its neighbour costs) to all routers; every router then holds the full topology and runs **Dijkstra** locally, producing identical shortest-path trees.',
+        detail: 'Dijkstra order: mark source permanent (0); repeatedly pick the smallest tentative distance, make it permanent, relax its edges — $O(E \\log V)$ with a heap. Link-state needs $O(VE)$ messages in the flooding phase but converges quickly after a change and has no count-to-infinity (everyone sees the same graph). OSPF: link-state, areas, cost = often inverse bandwidth.'
+      },
+      {
+        term: 'Distance-vector routing (distributed Bellman–Ford)',
+        kind: 'method',
+        statement: 'Each router keeps a vector of best-known costs and next hops, periodically sends it to **neighbours only**, and updates via $D_x(y) = \\min_v \\{ c(x,v) + D_v(y) \\}$ — the classic Bellman–Ford relaxation run distributed.',
+        detail: 'The "good news travels fast, bad news travels slowly" asymmetry: a cost *drop* propagates in one exchange; a *rise or link failure* can take many rounds — that slow part is count-to-infinity. RIP is DV with hop count (max 15, 16 = ∞), 30-second updates, and split-horizon/poison-reverse mitigations.'
+      },
+      {
+        term: 'Count-to-infinity',
+        kind: 'insight',
+        statement: 'When the route to a destination dies, a neighbour that *routes through the reporting router* keeps offering "a route" that secretly loops through the asker; each exchange increments the cost by the loop cost until the metric ceiling.',
+        detail: 'Canonical A–B–C example with destination C: link B–C breaks; A tells B "I reach C in 2 via (B)"; B updates to 3 via A; A then hears 3 and updates to 4 via B… to ∞. Cures: **split horizon** (never advertise a route back on the interface it was learned from) blocks the two-node loop; **poison reverse** (advertise it back as ∞) makes the invalidation explicit; neither fixes three-node loops — only path-vector (BGP carrying full AS paths) or link-state fully eliminates the pathology.'
+      },
+      {
+        term: 'Flooding',
+        kind: 'definition',
+        statement: 'Flooding forwards every incoming packet on **all** links except the arrival link; sequence numbers at the source let routers drop duplicates and stop older copies from circulating.',
+        detail: 'Properties: reaches every node in the minimum possible number of hops (all shortest paths in parallel), maximally robust (survives any non-partitioning failure set), and the baseline against which "selective" routing is compared. Its controlled variant — flooding link-state packets once per topology change, then Dijkstra — is exactly how OSPF bootstrap works.'
+      }
+    ],
+    examples: [
+      {
+        title: 'Dijkstra on a 5-node graph',
+        problem: 'Costs: A–B 4, A–C 2, B–C 1, B–D 5, C–D 8, C–E 10, D–E 2. Find shortest paths from A and the permanent-set order.',
+        steps: [
+          { label: 'Step 1', text: 'Permanent: A(0). Tentative: B=4 (via A), C=2 (via A). Pick smallest ⇒ C.' },
+          { label: 'Step 2', text: 'Permanent: A, C(2). Relax C\'s edges: B = min(4, 2+1) = **3 via C**; D = 2+8 = 10; E = 2+10 = 12. Pick smallest ⇒ B.' },
+          { label: 'Step 3', text: 'Permanent: A, C, B(3). Relax B: D = min(10, 3+5) = **8 via B**; E unchanged (3+? no B–E). Pick smallest ⇒ D.' },
+          { label: 'Step 4', text: 'Permanent: A, C, B, D(8). Relax D: E = min(12, 8+2) = **10 via D**. Last pick ⇒ E(10).' }
+        ],
+        result: 'Order A→C→B→D→E; costs B=3, C=2, D=8, E=10; the tree A–C, C–B, B–D, D–E.'
+      },
+      {
+        title: 'One distance-vector exchange step',
+        problem: 'Initial tables — X: (Y,2 via direct), (Z,7 via Y); Y: (X,2), (Z,4 direct); Z: (X,7 via Y), (Y,4). Y now learns its link to Z rose from 4 to 10. After the *next* exchange (everyone advertises simultaneously), what does Y\'s entry for Z become?',
+        steps: [
+          { label: 'Step 1', text: 'Y recomputes with neighbours X and (the broken-cost) direct link: direct = 10; via X = $2 + D_X(Z) = 2 + 7 = 9$.' },
+          { label: 'Step 2', text: 'Y picks 9 **via X** — but X\'s 7 itself came *from Y* (X routes Z via Y): that is the loop seed.' },
+          { label: 'Step 3', text: 'Simultaneously X recomputes: via Y = $2 + D_Y(Z) = 2 + 9 = 11$... X had 7 via Y, now sees Y advertising 9 ⇒ X updates to 11 via Y; next round Y hears 11 and becomes $2 + 11 = 13$ via X…' },
+          { label: 'Step 4', text: 'The two routers keep handing the route back and forth, each time adding the X–Y cost 2 — the count-to-infinity signature, climbing 9, 11, 13, … to the ceiling (RIP: 16 = unreachable).' }
+        ],
+        result: 'Y\'s immediate update: Z = 9 via X — and the (9, 11, 13, …) climb is exactly what split horizon would have blocked by refusing X to advertise Z back toward Y.'
+      }
+    ],
+    keyTakeaways: [
+      'Dijkstra: greedy permanent set, relax on extraction; on ties the permanent order can differ but costs are unique.',
+      'Link-state = flood topology, run Dijkstra locally (OSPF); distance-vector = exchange cost vectors with neighbours only (RIP, Bellman–Ford).',
+      'Count-to-infinity: a failing route is re-advertised by a router that loops through the asker — cost climbs by the loop cost each round.',
+      'Split horizon blocks 2-node loops; poison reverse makes invalidation explicit; neither fixes ≥3-node loops — path vector (BGP) does.',
+      'Flooding visits all nodes in minimal hops and is maximally robust; its cost — duplicated traffic everywhere — is why routing uses it only for control packets.'
+    ],
+    quiz: [
+      {
+        q: 'In link-state routing, after convergence every router in the area',
+        options: ['knows only its neighbours\' distance vectors', 'holds the same topology database and computes shortest paths with Dijkstra', 'computes paths with distributed Bellman–Ford on exchanged vectors', 'learns destinations only when a packet is first sent to them'],
+        answer: 1,
+        explanation: 'Step 1: Link-state routers flood LSPs describing their own links to every router. Step 2: The flooded LSPs assemble an identical link-state database at each router. Step 3: Each router then runs Dijkstra independently over that shared graph — same data, same algorithm, consistent trees. Step 4: Distance vectors and neighbour-only knowledge describe the *other* paradigm (RIP).'
+      },
+      {
+        q: 'Routers A and B both reach destination D. A\'s cost to D is 3 via B; B\'s cost is 2 via A. The link costs are A–B = 1. This situation is',
+        options: ['stable — the costs are consistent', 'a routing loop that count-to-infinity will grow (3, 4, 5, … until the metric ceiling)', 'impossible because Dijkstra prevents loops', 'resolved automatically by flooding data packets'],
+        answer: 1,
+        explanation: 'Step 1: A routes D via B while B routes D via A — a 2-router cycle. Step 2: When one re-advertises, the other adds the A–B cost 1 and updates: 3 → 4 → 5 … Step 3: The climb continues to the protocol ceiling (RIP 16 = unreachable) — the count-to-infinity pathology. Step 4: Split horizon would forbid A advertising D back to B, blocking exactly this two-node loop.'
+      },
+      {
+        q: 'Which technique advertises a learned route back to the neighbour it was learned from, but with cost ∞?',
+        options: ['Split horizon', 'Poison reverse', 'Link-state flooding', 'Path vector'],
+        answer: 1,
+        explanation: 'Step 1: Split horizon stays *silent* about the route on that interface. Step 2: Poison reverse instead sends an explicit unreachable (∞) advertisement back — positive knowledge of invalidity. Step 3: It converges faster than silence on link failure while blocking the same 2-node loops. Step 4: Flooding and path vectors are link-state/BGP machinery, not DV loop cures.'
+      },
+      {
+        q: 'Dijkstra on a graph with V nodes and E edges runs in (with a binary heap priority queue)',
+        options: ['$O(V^2)$ only, regardless of implementation', '$O(E \\log V)$', '$O(V \\log E)$', '$O(E + V)$ always'],
+        answer: 1,
+        explanation: 'Step 1: Each extraction from a binary heap costs $O(\\log V)$ and there are V extractions. Step 2: Each edge relaxation may trigger a decrease-key at $O(\\log V)$, over E edges. Step 3: Total $O((V + E) \\log V)$, simplified for connected graphs to $O(E \\log V)$. Step 4: $O(V^2)$ is the array (no-heap) variant — valid but not the asked implementation; linear $O(E+V)$ needs a Fibonacci-style heap amortisation beyond binary heaps.'
       }
     ]
   }

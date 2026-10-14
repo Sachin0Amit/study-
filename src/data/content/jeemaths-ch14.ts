@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh14Content: SectionContent[] = [
   // ---------------------------------------------------------------- 14.1
   {
-    sectionId: 'jeemaths-ch14-s1',
+    sectionId: 'advmath-ch14-s1',
     readingTime: 8,
     intro: 'Angles measured in radians link arc length directly to radius through $l = r\\theta$, with $\\pi$ radians equal to two right angles. Ratios of acute angles extend to all quadrants by allied angle reductions that preserve magnitude up to sign. This section fixes special values and reduction discipline.',
     objectives: [
@@ -113,7 +113,7 @@ export const jeemathsCh14Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 14.2
   {
-    sectionId: 'jeemaths-ch14-s2',
+    sectionId: 'advmath-ch14-s2',
     readingTime: 9,
     intro: 'Compound formulas $\\sin(A\\pm B)$ and $\\cos(A\\pm B)$ generate every double, half and product identity by specialisation. Multiple angles compress powers while product to sum linearises products for integration and equations. This section proves and applies that family both ways.',
     objectives: [
@@ -239,7 +239,7 @@ export const jeemathsCh14Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 14.3
   {
-    sectionId: 'jeemaths-ch14-s3',
+    sectionId: 'advmath-ch14-s3',
     readingTime: 8,
     intro: 'When $A+B+C = \\pi$, sines, cosines and tangents satisfy symmetric relations that replace angle chasing with algebra. Standard families include $\\sin 2A+\\sin 2B+\\sin 2C = 4\\sin A\\sin B\\sin C$. This section proves the core conditional identities.',
     objectives: [
@@ -344,7 +344,7 @@ export const jeemathsCh14Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 14.4
   {
-    sectionId: 'jeemaths-ch14-s4',
+    sectionId: 'advmath-ch14-s4',
     readingTime: 8,
     intro: 'Trigonometric equations admit infinite families indexed by integers, built from principal values plus period shifts. Squaring and multiplying by variable expressions can plant false candidates. This section solves standard families with domain checks.',
     objectives: [

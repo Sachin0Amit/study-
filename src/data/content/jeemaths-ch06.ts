@@ -9,7 +9,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh06Content: SectionContent[] = [
   // ---------------------------------------------------------------- 6.1
   {
-    sectionId: 'jeemaths-ch6-s1',
+    sectionId: 'advmath-ch6-s1',
     readingTime: 9,
     intro: 'Compound-angle and multiple-angle identities turn sums into products and powers into single angles, which is the core toolkit for simplification. When angles satisfy a condition such as $A + B + C = \\pi$, the identities collapse into elegant conditional forms linking tangents, sines and cosines. This section builds both the unconditional toolkit and the conditional identities used for triangle-angle problems.',
     objectives: [
@@ -128,7 +128,7 @@ export const jeemathsCh06Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 6.2
   {
-    sectionId: 'jeemaths-ch6-s2',
+    sectionId: 'advmath-ch6-s2',
     readingTime: 8,
     intro: 'A trigonometric equation has infinitely many solutions, so the task is to describe all of them with compact general-solution formulas. Each basic equation $\\sin x = k$, $\\cos x = k$ and $\\tan x = k$ owns a canonical family, and harder equations reduce to these after factoring or bounding. This section also trains the habit of rejecting extraneous roots introduced by squaring or by multiplying with expressions that can vanish.',
     objectives: [
@@ -226,7 +226,7 @@ export const jeemathsCh06Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 6.3
   {
-    sectionId: 'jeemaths-ch6-s3',
+    sectionId: 'advmath-ch6-s3',
     readingTime: 8,
     intro: 'Inverse trigonometric functions undo sine, cosine and tangent only after each is restricted to a principal branch where it is one-to-one. The resulting principal values obey a tight web of conversion identities that collapse nested expressions such as $\\sin^{-1}x + \\cos^{-1}x$. This section fixes the branches and builds fluency in simplifying inverse-trig chains without leaving the principal range.',
     objectives: [
@@ -324,7 +324,7 @@ export const jeemathsCh06Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 6.4
   {
-    sectionId: 'jeemaths-ch6-s4',
+    sectionId: 'advmath-ch6-s4',
     readingTime: 9,
     intro: 'The side-angle duality of a triangle is captured by the sine rule, the cosine rule and the projection formula, each translating between lengths and angles. Area admits half-product, Heron and circumradius forms that connect to the same data. This section closes with the four classical centres and their distance formulas, which convert triangle geometry into coordinate computation.',
     objectives: [

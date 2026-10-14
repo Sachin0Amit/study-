@@ -9,7 +9,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh04Content: SectionContent[] = [
   // ---------------------------------------------------------------- 4.1
   {
-    sectionId: 'jeemaths-ch4-s1',
+    sectionId: 'advmath-ch4-s1',
     readingTime: 9,
     intro: 'Counting starts from the multiplication principle and branches into permutations with order and combinations without it. Grouping, identical objects and integer distributions each add one correction factor. This section fixes which formula applies before any numbers are substituted.',
     objectives: [
@@ -107,7 +107,7 @@ export const jeemathsCh04Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.2
   {
-    sectionId: 'jeemaths-ch4-s2',
+    sectionId: 'advmath-ch4-s2',
     readingTime: 8,
     intro: 'The binomial expansion $(x+y)^n = \\sum C(n,k)x^{n-k}y^k$ places every term by its index $k$. The general term $T_{r+1} = C(n,r)x^{n-r}y^r$ locates any single term, while parity of $n$ decides whether one or two middle terms appear. This section makes term-hunting mechanical.',
     objectives: [
@@ -260,7 +260,7 @@ export const jeemathsCh04Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.3
   {
-    sectionId: 'jeemaths-ch4-s3',
+    sectionId: 'advmath-ch4-s3',
     readingTime: 9,
     intro: 'Among the terms $T_r$ the greatest is found by comparing successive ratios $\\frac{T_{r+1}}{T_r}$ against $1$. Coefficient sums come from substituting $x = 1$, while alternating and even-odd splits use $x = -1$ and averaging. This section pairs magnitude comparison with substitution filters.',
     objectives: [
@@ -358,7 +358,7 @@ export const jeemathsCh04Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.4
   {
-    sectionId: 'jeemaths-ch4-s4',
+    sectionId: 'advmath-ch4-s4',
     readingTime: 9,
     intro: 'The multinomial theorem extends binomial coefficients to $(x_1+\\cdots+x_m)^n$ with $\\frac{n!}{k_1!\\cdots k_m!}$ weights. The same expansion thinking cracks divisibility: isolate the remainder by expanding $(1 + k)^n$ or grouping into multiples. This section unites counting of terms with remainder extraction.',
     objectives: [

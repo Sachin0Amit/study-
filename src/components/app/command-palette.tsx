@@ -57,12 +57,12 @@ const QUICK_ACTIONS: {
   {
     view: 'flashcards',
     examMisses: true,
-    label: 'Drill exam misses',
+    label: 'Drill missed questions',
     hint: 'questions you got wrong, scheduled',
     icon: Zap,
   },
   { view: 'formulas', label: 'Formula sheet', hint: '1,668 printable formulas', icon: Sigma },
-  { view: 'exam', label: 'Exam simulator', hint: '6,947-question bank', icon: ClipboardCheck },
+  { view: 'exam', label: 'Test simulator', hint: '10,571-question bank', icon: ClipboardCheck },
   { view: 'progress', label: 'Progress dashboard', hint: 'streaks, notes & stats', icon: BarChart3 },
 ]
 

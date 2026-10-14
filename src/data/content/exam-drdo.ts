@@ -13,16 +13,16 @@ import type { SectionContent } from '../library'
 export const drdoContent: SectionContent[] = [
   // --------------------------------------------- Tier I · 1.1 Quantitative Aptitude
   {
-    sectionId: 'drdo-t1-a1-s1',
+    sectionId: 'math-q1-s1',
     readingTime: 9,
     prerequisites: [
       'Fractions, decimals and place value',
       'Prime factorisation of integers',
     ],
     intro:
-      'DRDO\u2019s Tier-I screening test packs roughly 20 quantitative-aptitude questions into a 100-mark paper with 0.25 negative marking per slip, so speed on number systems is survival. HCF, LCM, surds and indices look elementary but hide most of the time traps in Section A. This section drills the shortcuts that turn two-minute calculations into twenty-second ones.',
+      'the defence research establishment\u2019s Stage-I screening test packs roughly 20 quantitative-aptitude questions into a 100-mark paper with 0.25 negative marking per slip, so speed on number systems is survival. HCF, LCM, surds and indices look elementary but hide most of the time traps in Section A. This section drills the shortcuts that turn two-minute calculations into twenty-second ones.',
     objectives: [
-      'Apply divisibility and remainder rules to shortcut Tier-I computation',
+      'Apply divisibility and remainder rules to shortcut Stage-I computation',
       'Compute HCF and LCM from prime factorisations and decode which one a word problem wants',
       'Simplify, rationalise and compare surds without decimal approximation',
       'Resolve indices quickly, including unit-digit problems via digit cyclicity',
@@ -42,7 +42,7 @@ export const drdoContent: SectionContent[] = [
         statement:
           'The **HCF** takes the lowest power of each common prime; the **LCM** takes the highest power of every prime present. For two numbers $a$ and $b$: $\\text{HCF} \\times \\text{LCM} = a \\times b$.',
         detail:
-          'For fractions: HCF $= \\frac{\\text{HCF of numerators}}{\\text{LCM of denominators}}$ and LCM $= \\frac{\\text{LCM of numerators}}{\\text{HCF of denominators}}$. The product identity holds only for two numbers — with three numbers it fails, which is exactly where the exam sets its trap.',
+          'For fractions: HCF $= \\frac{\\text{HCF of numerators}}{\\text{LCM of denominators}}$ and LCM $= \\frac{\\text{LCM of numerators}}{\\text{HCF of denominators}}$. The product identity holds only for two numbers — with three numbers it fails, which is exactly where the assessment sets its trap.',
       },
       {
         term: 'Decoding HCF and LCM word problems',
@@ -84,7 +84,7 @@ export const drdoContent: SectionContent[] = [
       {
         title: 'Bells that ring together (LCM signature)',
         problem:
-          'Telemetry beacons on a DRDO test range beep every 6, 8, 10 and 12 minutes. They beep together at 07:00 hours. When do they next beep together?',
+          'Telemetry beacons on a defence-research test range beep every 6, 8, 10 and 12 minutes. They beep together at 07:00 hours. When do they next beep together?',
         steps: [
           { label: 'Step 1', text: '"Together again" is the signature of an **LCM** problem — the common cycle of the four periods.' },
           { label: 'Step 2', text: 'Factorise: $6 = 2 \\cdot 3$, $8 = 2^3$, $10 = 2 \\cdot 5$, $12 = 2^2 \\cdot 3$. The LCM takes the highest powers: $2^3 \\cdot 3 \\cdot 5 = 120$ minutes.' },
@@ -132,14 +132,14 @@ export const drdoContent: SectionContent[] = [
   },
   // --------------------------------------------- Tier I · 2.1 Reasoning
   {
-    sectionId: 'drdo-t1-a2-s1',
+    sectionId: 'apt-r1-s1',
     readingTime: 8,
     prerequisites: [
       'Basic arithmetic operations',
       'English alphabet positions (A = 1 \u2026 Z = 26)',
     ],
     intro:
-      'Reasoning supplies the second block of about 20 questions in DRDO\u2019s 100-mark Tier-I screening, where a wrong answer costs 0.25 marks and a slow one costs the paper. Analogies, classification and series reward pattern vocabulary more than raw calculation. Scientists at DRDO laboratories read signatures \u2014 of signals, materials and code \u2014 and this section trains exactly that muscle.',
+      'Reasoning supplies the second block of about 20 questions in the defence research establishment\u2019s 100-mark Stage-I screening, where a wrong answer costs 0.25 marks and a slow one costs the paper. Analogies, classification and series reward pattern vocabulary more than raw calculation. Scientists at defence-research laboratories read signatures \u2014 of signals, materials and code \u2014 and this section trains exactly that muscle.',
     objectives: [
       'Name the relation in an A : B :: C : D analogy before scanning options',
       'Isolate the single discriminating attribute in odd-one-out classification',
@@ -169,7 +169,7 @@ export const drdoContent: SectionContent[] = [
         statement:
           'Work the ladder: first **differences**, then second differences, then ratio between consecutive terms, then alternating rules, then $n^2 \\pm k$ or $n^3 \\pm k$ patterns.',
         detail:
-          'If terms roughly double, jump straight to the multiplicative engine ($a_{n+1} = 2a_n \\pm k$). Mixed engines are common: $\\times 3, \\div 2$ alternating. Always verify the discovered rule on every given term \u2014 the last term you check is the one the examiner bent.',
+          'If terms roughly double, jump straight to the multiplicative engine ($a_{n+1} = 2a_n \\pm k$). Mixed engines are common: $\\times 3, \\div 2$ alternating. Always verify the discovered rule on every given term \u2014 the last term you check is the one the assessor bent.',
       },
       {
         term: 'Letter series and positional values',
@@ -206,7 +206,7 @@ export const drdoContent: SectionContent[] = [
         steps: [
           { label: 'Step 1', text: 'Name the majority class: Mirage 2000, Su-30MKI and Tejas are all **fighter aircraft** flown by the Indian Air Force.' },
           { label: 'Step 2', text: 'Test BrahMos against that attribute: it is a supersonic cruise missile built by the India\u2013Russia joint venture, not an aircraft.' },
-          { label: 'Step 3', text: 'The discriminating attribute is airframe versus missile; everything else (defence platform, DRDO association) is shared and therefore useless as a discriminator.' },
+          { label: 'Step 3', text: 'The discriminating attribute is airframe versus missile; everything else (defence platform, the defence research establishment association) is shared and therefore useless as a discriminator.' },
         ],
         result: 'BrahMos \u2014 a cruise missile among fighter aircraft.',
       },
@@ -250,18 +250,18 @@ export const drdoContent: SectionContent[] = [
   },
   // --------------------------------------------- Tier I · 3.1 General Awareness
   {
-    sectionId: 'drdo-t1-a3-s1',
+    sectionId: 'apt-g1-s1',
     readingTime: 9,
     prerequisites: [
       'Indian polity and geography basics',
-      'Defence organisation overview (DRDO, armed forces, HAL, BARC)',
+      'Defence organisation overview (the defence research establishment, armed forces, HAL, BARC)',
     ],
     intro:
-      'About a fifth of DRDO\u2019s Tier-I screening marks sit in General Awareness \u2014 roughly 20 questions scored at +1 with 0.25 negative marking and a strong defence-and-S&T tilt. Current affairs decay faster than any other section, so method matters more than memory dumps. This section shows what to track, for how long before the exam, and how to answer with elimination when the fact escapes you.',
+      'About a fifth of the defence research establishment\u2019s Stage-I screening marks sit in General Awareness \u2014 roughly 20 questions scored at +1 with 0.25 negative marking and a strong defence-and-S&T tilt. Current affairs decay faster than any other section, so method matters more than memory dumps. This section shows what to track, for how long before the assessment, and how to answer with elimination when the fact escapes you.',
     objectives: [
       'Scope preparation to the rolling twelve-month window the paper actually samples',
       'Classify every question into one of five event families and recall its fixed question signature',
-      'Track defence and space developments (DRDO tests, inductions, exercises, ISRO missions) at exam depth',
+      'Track defence and space developments (the defence research establishment tests, inductions, exercises, ISRO missions) at assessment depth',
       'Anchor current facts to static GK so each new fact stabilises an old one',
     ],
     concepts: [
@@ -269,9 +269,9 @@ export const drdoContent: SectionContent[] = [
         term: 'The twelve-month window',
         kind: 'method',
         statement:
-          'Cover current affairs from **January of the year before the exam** to the exam month \u2014 roughly a rolling twelve-month band \u2014 using one monthly compilation plus a one-page revision sheet per month.',
+          'Cover current affairs from **January of the year before the assessment** to the assessment month \u2014 roughly a rolling twelve-month band \u2014 using one monthly compilation plus a one-page revision sheet per month.',
         detail:
-          'Older events resurface only when they set a "first" (first indigenous carrier, first National Space Day) or an anniversary. Trap: coaching compilations front-load trivia; the exam samples names, dates, venues and firsts, not commentary.',
+          'Older events resurface only when they set a "first" (first indigenous carrier, first National Space Day) or an anniversary. Trap: coaching compilations front-load trivia; the assessment samples names, dates, venues and firsts, not commentary.',
       },
       {
         term: 'The five event families',
@@ -285,9 +285,9 @@ export const drdoContent: SectionContent[] = [
         term: 'Defence and space current affairs',
         kind: 'insight',
         statement:
-          'DRDO papers weight **defence and space developments** heavily: missile and system flight-tests, inductions into service, joint exercises and ISRO missions. Record system, agency, date/window and the first-of-its-kind tag.',
+          'the defence research establishment papers weight **defence and space developments** heavily: missile and system flight-tests, inductions into service, joint exercises and ISRO missions. Record system, agency, date/window and the first-of-its-kind tag.',
         detail:
-          'Typical items: Agni-Prime and BrahMos extensions flight-tested from the Odisha coast, INS Vikrant commissioned as the first indigenously built aircraft carrier, Tejas Mk1A orders, Malabar with all four Quad navies, Chandrayaan-3\u2019s south-pole landing. Trap: confuse the developer (DRDO versus HAL versus private DPSU) and the question flips.',
+          'Typical items: Agni-Prime and BrahMos extensions flight-tested from the Odisha coast, INS Vikrant commissioned as the first indigenously built aircraft carrier, Tejas Mk1A orders, Malabar with all four Quad navies, Chandrayaan-3\u2019s south-pole landing. Trap: confuse the developer (the defence research establishment versus HAL versus private DPSU) and the question flips.',
       },
       {
         term: 'Current-static anchoring',
@@ -323,15 +323,15 @@ export const drdoContent: SectionContent[] = [
         problem:
           'Which of the following correctly describes Agni-Prime? (A) a submarine-launched cruise missile (B) a canisterised surface-to-surface ballistic missile (C) an anti-tank guided missile (D) an air-to-air missile.',
         steps: [
-          { label: 'Step 1', text: 'Tag the family: the Agni series are strategic **surface-to-surface ballistic missiles** developed by DRDO \u2014 half the options die on family name alone.' },
-          { label: 'Step 2', text: 'Eliminate (A): submarine-launched systems belong to the K-family; eliminate (D): Astra is DRDO\u2019s air-to-air missile; eliminate (C): Nag is the anti-tank guided missile.' },
+          { label: 'Step 1', text: 'Tag the family: the Agni series are strategic **surface-to-surface ballistic missiles** developed by the defence research establishment \u2014 half the options die on family name alone.' },
+          { label: 'Step 2', text: 'Eliminate (A): submarine-launched systems belong to the K-family; eliminate (D): Astra is the defence research establishment\u2019s air-to-air missile; eliminate (C): Nag is the anti-tank guided missile.' },
           { label: 'Step 3', text: 'Option (B) survives and carries the distinguishing detail: Agni-Prime is canisterised, two-stage and solid-propellant, first flight-tested from the Odisha coast in June 2021.' },
         ],
         result: 'Option (B) \u2014 a canisterised surface-to-surface ballistic missile.',
       },
     ],
     keyTakeaways: [
-      'Prepare a rolling twelve-month window ending at the exam month; older items matter only as firsts and anniversaries.',
+      'Prepare a rolling twelve-month window ending at the assessment month; older items matter only as firsts and anniversaries.',
       'Five event families \u2014 summits, appointments, schemes, agreements, reports/indices \u2014 each with a fixed question signature (venue, person, ministry, signatories, issuer/rank).',
       'Defence and space items carry outsized weight: record system, agency, date and the first-of-its-kind tag.',
       'Anchor current facts to static GK so one row of notes answers both current and static questions.',
@@ -357,7 +357,7 @@ export const drdoContent: SectionContent[] = [
           "India\u2019s first aircraft carrier, acquired from the United Kingdom in 1961",
           'India\u2019s first indigenously designed and built aircraft carrier',
           'a nuclear-powered ballistic missile submarine built at Visakhapatnam',
-          'a DRDO-built stealth frigate for coastal defence',
+          'a defence-research-built stealth frigate for coastal defence',
         ],
         answer: 1,
         explanation:
@@ -379,14 +379,14 @@ export const drdoContent: SectionContent[] = [
   },
   // --------------------------------------------- Tier I · 4.1 English Language
   {
-    sectionId: 'drdo-t1-a4-s1',
+    sectionId: 'eng-l1-s1',
     readingTime: 8,
     prerequisites: [
       'Parts of speech',
       'Simple sentence structure (subject, verb, object)',
     ],
     intro:
-      'The English section of DRDO\u2019s Tier-I screening carries about 20 of the 100 marks, and grammar questions are its fastest-scoring subset under the 0.25 negative-marking regime. Articles, tenses and agreement are also the foundation for the descriptive Tier-II discipline papers, where marks are lost to imprecise prose. Master the rules here and error-spotting becomes a checklist rather than a gamble.',
+      'The English section of the defence research establishment\u2019s Stage-I screening carries about 20 of the 100 marks, and grammar questions are its fastest-scoring subset under the 0.25 negative-marking regime. Articles, tenses and agreement are also the foundation for the descriptive Stage-II discipline papers, where marks are lost to imprecise prose. Master the rules here and error-spotting becomes a checklist rather than a gamble.',
     objectives: [
       'Choose a/an/the by the initial sound of the following word',
       'Select tenses from time markers such as since, for, by the time and next week',
@@ -424,7 +424,7 @@ export const drdoContent: SectionContent[] = [
         statement:
           'With **either \u2026 or / neither \u2026 nor**, the verb agrees with the nearer subject: "neither the soldiers nor their commander was aware". Collectives (team, committee) stay singular when acting as one unit and turn plural only when members act separately.',
         detail:
-          'Test: "the committee has issued its report" (unit) versus "the committee were divided among themselves" (members). Trap: distance between subject and verb \u2014 the examiner inserts long phrases precisely to hide the head.',
+          'Test: "the committee has issued its report" (unit) versus "the committee were divided among themselves" (members). Trap: distance between subject and verb \u2014 the assessor inserts long phrases precisely to hide the head.',
       },
       {
         term: 'Error-spotting workflow',
@@ -450,7 +450,7 @@ export const drdoContent: SectionContent[] = [
       {
         title: 'Articles and tense in one sentence',
         problem:
-          'Fill in the blanks: "The scientist is ___ M.Tech from IIT Madras and ___ (work) at the Bengaluru laboratory since 2018; next week she ___ (present) her findings to the review board."',
+          'Fill in the blanks: "The scientist is ___ M.Tech from a leading engineering institute and ___ (work) at the Bengaluru laboratory since 2018; next week she ___ (present) her findings to the review board."',
         steps: [
           { label: 'Step 1', text: 'Article by sound: "M.Tech" is read /em tech/, beginning with a vowel sound \u2014 "**an** M.Tech", exactly like "an hour" and opposite to "a university" (/yu/).' },
           { label: 'Step 2', text: '"Since 2018" plus a continuing action demands the present perfect continuous: "**has been working**" (simple "has worked" is also accepted).' },
@@ -488,7 +488,7 @@ export const drdoContent: SectionContent[] = [
           'Step 1: "honest" begins with a silent h \u2014 the sound is vowel-initial, so "an honest". Step 2: "M.Tech" is read /em tech/, again vowel-initial, so "an M.Tech". Step 3: Both slots take "an". Step 4: Any "a" choice spells the word instead of listening to it.',
       },
       {
-        q: '"By the time the flight trial ended, the DRDO team ___ the telemetry anomaly."',
+        q: '"By the time the flight trial ended, the defence research establishment team ___ the telemetry anomaly."',
         options: ['has isolated', 'had isolated', 'isolated', 'was isolating'],
         answer: 1,
         explanation:
@@ -498,14 +498,14 @@ export const drdoContent: SectionContent[] = [
   },
   // --------------------------------------------- Tier II CSE · 6.4 Graph Algorithms
   {
-    sectionId: 'drdo-cse-a6-s4',
+    sectionId: 'cse-d6-s4',
     readingTime: 11,
     prerequisites: [
-      'Graph representations and BFS/DFS (drdo-cse-a5-s3)',
-      'Asymptotic notation and heap basics (drdo-cse-a6-s1)',
+      'Graph representations and BFS/DFS (cse-d5-s3)',
+      'Asymptotic notation and heap basics (cse-d6-s1)',
     ],
     intro:
-      'The DRDO Tier-II Computer Science paper \u2014 60 descriptive discipline marks plus the 15-mark research-aptitude component in the legacy RAC pattern \u2014 expects working fluency in graph algorithms, not just definitions. Shortest paths and minimum spanning trees answer real routing and network-design questions in tactical data networks. This section works Dijkstra, the MST algorithms and the negative-edge cases exactly as the paper demands: with traces, complexity and traps.',
+      'The defence research establishment Stage-II Computer Science paper \u2014 60 descriptive discipline marks plus the 15-mark research-aptitude component in the legacy recruitment pattern \u2014 expects working fluency in graph algorithms, not just definitions. Shortest paths and minimum spanning trees answer real routing and network-design questions in tactical data networks. This section works Dijkstra, the MST algorithms and the negative-edge cases exactly as the paper demands: with traces, complexity and traps.',
     objectives: [
       'Trace BFS and DFS in $O(V + E)$ and state when BFS yields shortest paths',
       'Execute Prim and Kruskal correctly, quoting the cut property and their complexities',
@@ -549,7 +549,7 @@ export const drdoContent: SectionContent[] = [
         term: 'Choosing the right algorithm',
         kind: 'insight',
         statement:
-          '**Decision table** for the exam: unweighted \u2192 BFS; non-negative weights \u2192 Dijkstra; negative edges possible \u2192 Bellman-Ford; all pairs \u2192 Floyd-Warshall; cheapest connectivity \u2192 MST (Prim for dense, Kruskal for sparse graphs).',
+          '**Decision table** for the assessment: unweighted \u2192 BFS; non-negative weights \u2192 Dijkstra; negative edges possible \u2192 Bellman-Ford; all pairs \u2192 Floyd-Warshall; cheapest connectivity \u2192 MST (Prim for dense, Kruskal for sparse graphs).',
         detail:
           'Descriptive papers award marks for justification: state the graph model, the weight semantics (delay, cost, risk) and the constraint that eliminates the alternatives before naming the algorithm.',
       },
@@ -630,14 +630,14 @@ export const drdoContent: SectionContent[] = [
   },
   // --------------------------------------------- Tier II CSE · 9.3 CPU Scheduling
   {
-    sectionId: 'drdo-cse-a9-s3',
+    sectionId: 'cse-d9-s3',
     readingTime: 10,
     prerequisites: [
-      'Processes, threads and the ready queue (drdo-cse-a9-s1)',
+      'Processes, threads and the ready queue (cse-d9-s1)',
       'Elementary queue arithmetic',
     ],
     intro:
-      'In the DRDO Tier-II CSE paper \u2014 60 descriptive marks on the discipline plus 15 on research aptitude \u2014 operating-system questions ask for calculations, not slogans. CPU scheduling is a favourite because a single Gantt chart yields turnaround, waiting and response times in one sweep. Mission computers in missiles and C4I nodes are hard real-time systems, so DRDO examiners like scheduling questions with a latency conscience.',
+      'In the defence research establishment Stage-II CSE paper \u2014 60 descriptive marks on the discipline plus 15 on research aptitude \u2014 operating-system questions ask for calculations, not slogans. CPU scheduling is a favourite because a single Gantt chart yields turnaround, waiting and response times in one sweep. Mission computers in missiles and C4I nodes are hard real-time systems, so the defence research establishment assessors like scheduling questions with a latency conscience.',
     objectives: [
       'Compute completion, turnaround, waiting and response times directly from a Gantt chart',
       'Construct FCFS, SJF/SRTF and Round-Robin schedules and compare their averages',
@@ -659,7 +659,7 @@ export const drdoContent: SectionContent[] = [
         statement:
           '**First-come-first-served** is non-preemptive and trivially fair by order, but one long process shepherds every short arrival behind it \u2014 the convoy effect \u2014 inflating average waiting time.',
         detail:
-          'Convoy damage is worst when arrival order alternates long and short bursts. The exam trap: FCFS minimises nothing except administration; never credit it with optimality.',
+          'Convoy damage is worst when arrival order alternates long and short bursts. The assessment trap: FCFS minimises nothing except administration; never credit it with optimality.',
       },
       {
         term: 'SJF and SRTF',
@@ -757,14 +757,14 @@ export const drdoContent: SectionContent[] = [
   },
   // --------------------------------------------- Tier II ECE · 12.4 Microwave & LOS
   {
-    sectionId: 'drdo-ece-a12-s4',
+    sectionId: 'ece-d12-s4',
     readingTime: 10,
     prerequisites: [
       'Decibel and link-budget arithmetic',
-      'Antenna gain basics (drdo-ece-a7-s5)',
+      'Antenna gain basics (ece-d7-s5)',
     ],
     intro:
-      'The DRDO Tier-II Electronics & Communication paper devotes 60 descriptive marks to the discipline (plus 15 for research aptitude in the legacy pattern), and microwave line-of-sight systems are its most defence-flavoured topic \u2014 every radar and telemetry link is an LOS design problem. Doppler shifts, path loss and Fresnel clearance are the working equations of DRDO radar and communication laboratories. This section builds the link-budget and Doppler toolkit the paper tests.',
+      'The defence research establishment Stage-II Electronics & Communication paper devotes 60 descriptive marks to the discipline (plus 15 for research aptitude in the legacy pattern), and microwave line-of-sight systems are its most defence-flavoured topic \u2014 every radar and telemetry link is an LOS design problem. Doppler shifts, path loss and Fresnel clearance are the working equations of the defence research establishment radar and communication laboratories. This section builds the link-budget and Doppler toolkit the paper tests.',
     objectives: [
       'Compute radio-horizon distances and size tower heights for LOS hops',
       'Apply the Friis equation and the dB free-space path-loss formula to close a link budget',
@@ -879,14 +879,14 @@ export const drdoContent: SectionContent[] = [
   },
   // --------------------------------------------- Tier II EE · 3.4 Synchronous Machines
   {
-    sectionId: 'drdo-ee-a3-s4',
+    sectionId: 'ee-d3-s4',
     readingTime: 9,
     prerequisites: [
-      'Three-phase phasor basics (drdo-ee-a2-s2)',
-      "Faraday's law and magnetic circuits (drdo-ee-a10-s2)",
+      'Three-phase phasor basics (ee-d2-s2)',
+      "Faraday's law and magnetic circuits (ee-d10-s2)",
     ],
     intro:
-      'Synchronous machines anchor the electrical-machines area of the DRDO Tier-II Electrical paper \u2014 60 descriptive discipline marks plus the 15-mark research-aptitude component in the legacy RAC pattern. Every DRDO establishment runs alternators in its DG sets and test bays, so EMF equations and regulation calculations carry direct laboratory relevance. Expect numerical questions built on $N_s = 120f/P$ and $E = 4.44\\, k_w f \\Phi T$.',
+      'Synchronous machines anchor the electrical-machines area of the defence research establishment Stage-II Electrical paper \u2014 60 descriptive discipline marks plus the 15-mark research-aptitude component in the legacy recruitment pattern. Every the defence research establishment runs alternators in its DG sets and test bays, so EMF equations and regulation calculations carry direct laboratory relevance. Expect numerical questions built on $N_s = 120f/P$ and $E = 4.44\\, k_w f \\Phi T$.',
     objectives: [
       'Compute synchronous speed and machine frequency from pole count and rpm',
       'Apply the alternator EMF equation to rated-voltage calculations',
@@ -932,7 +932,7 @@ export const drdoContent: SectionContent[] = [
         statement:
           'Before closing the breaker, match the incoming alternator to the bus on four counts: **voltage magnitude, frequency, phase sequence and phase angle** \u2014 checked with a synchroscope (or dark-lamp method).',
         detail:
-          'Closing out of synchronism produces damaging torques and stator currents. Related exam gem: an overexcited synchronous motor running unloaded draws leading current and behaves as a **synchronous condenser** \u2014 a rotating VAR source for power-factor correction.',
+          'Closing out of synchronism produces damaging torques and stator currents. Related assessment gem: an overexcited synchronous motor running unloaded draws leading current and behaves as a **synchronous condenser** \u2014 a rotating VAR source for power-factor correction.',
       },
     ],
     examples: [
@@ -1000,14 +1000,14 @@ export const drdoContent: SectionContent[] = [
   },
   // --------------------------------------------- Tier II ME · 3.2 Laws of Thermodynamics
   {
-    sectionId: 'drdo-me-a3-s2',
+    sectionId: 'me-d3-s2',
     readingTime: 10,
     prerequisites: [
-      'Pure-substance properties and phase change (drdo-me-a3-s1)',
+      'Pure-substance properties and phase change (me-d3-s1)',
       'Basic integral calculus for computing work',
     ],
     intro:
-      'Thermodynamics opens the propulsion-and-energy stream of the DRDO Tier-II Mechanical paper \u2014 60 descriptive discipline marks alongside the 15-mark research-aptitude section in the legacy RAC pattern. Missile propulsion, wind-tunnel drives and test-rig power all trace back to the three laws. The examiner\u2019s favourite is the Carnot bound: the fastest route to full marks, and the easiest to fumble with a Celsius slip.',
+      'Thermodynamics opens the propulsion-and-energy stream of the defence research establishment Stage-II Mechanical paper \u2014 60 descriptive discipline marks alongside the 15-mark research-aptitude section in the legacy recruitment pattern. Missile propulsion, wind-tunnel drives and test-rig power all trace back to the three laws. The assessor\u2019s favourite is the Carnot bound: the fastest route to full marks, and the easiest to fumble with a Celsius slip.',
     objectives: [
       'Apply the first law $Q - W = \\Delta U$ to closed systems and cycles with a consistent sign convention',
       'State and interconvert the Kelvin-Planck and Clausius forms of the second law',
@@ -1021,7 +1021,7 @@ export const drdoContent: SectionContent[] = [
         statement:
           'If bodies A and B are each in thermal equilibrium with body C, then A and B are in equilibrium with each other \u2014 the **transitivity** that makes temperature a measurable property and thermometry possible.',
         detail:
-          'Exam use: justify why a thermometer reading is meaningful at all. Trap: the zeroth law defines equality of temperature, not its direction of flow \u2014 that is the second law\u2019s business.',
+          'Assessment use: justify why a thermometer reading is meaningful at all. Trap: the zeroth law defines equality of temperature, not its direction of flow \u2014 that is the second law\u2019s business.',
       },
       {
         term: 'First law for a closed system',
@@ -1121,14 +1121,14 @@ export const drdoContent: SectionContent[] = [
   },
   // --------------------------------------------- Tier II CSE · 12.1 Security & Cryptography
   {
-    sectionId: 'drdo-cse-a12-s1',
+    sectionId: 'cse-d12-s1',
     readingTime: 9,
     prerequisites: [
       'Modular arithmetic and gcd',
       'Binary and hexadecimal number bases',
     ],
     intro:
-      'Cybersecurity is Area 6 of Paper 2 in the DRDO Tier-II CSE examination \u2014 60 descriptive discipline marks plus the 15-mark research-aptitude component in the legacy RAC pattern \u2014 and it is the most DRDO-native topic on the syllabus. Secure tactical datalinks, classified networks and cryptographic key management are daily business in defence laboratories. This section covers the principles, the mathematics of RSA and hashes, and the PKI that binds it together.',
+      'Cybersecurity is Area 6 of Paper 2 in the defence research establishment Stage-II CSE assessment \u2014 60 descriptive discipline marks plus the 15-mark research-aptitude component in the legacy recruitment pattern \u2014 and it is the most the defence research establishment-native topic on the syllabus. Secure tactical datalinks, classified networks and cryptographic key management are daily business in defence laboratories. This section covers the principles, the mathematics of RSA and hashes, and the PKI that binds it together.',
     objectives: [
       'Classify attacks against the CIA triad together with authentication and non-repudiation',
       'Work RSA end-to-end on small numbers: key generation, encryption, decryption and the factoring basis',
@@ -1174,12 +1174,12 @@ export const drdoContent: SectionContent[] = [
         statement:
           'A **certificate** (X.509) binds an identity to a public key under a certification authority\u2019s signature; trust chains from a root CA through intermediates to the end entity. TLS uses this to agree an AES session key via asymmetric (or ECDHE) exchange, then encrypts bulk traffic symmetrically.',
         detail:
-          'The hybrid pattern answers the exam\u2019s recurring "why both?" \u2014 asymmetric solves key distribution, symmetric supplies the speed. Defence networks layer this with segmentation, HSM-held keys and certificate pinning.',
+          'The hybrid pattern answers the assessment\u2019s recurring "why both?" \u2014 asymmetric solves key distribution, symmetric supplies the speed. Defence networks layer this with segmentation, HSM-held keys and certificate pinning.',
       },
     ],
     examples: [
       {
-        title: 'RSA on exam-sized numbers',
+        title: 'RSA on assessment-sized numbers',
         problem:
           'Bob publishes the public key $(n = 33, e = 7)$. Alice sends the message $m = 5$. Verify that the private key is $d = 3$, encrypt $m$, and confirm decryption recovers 5.',
         steps: [
@@ -1193,7 +1193,7 @@ export const drdoContent: SectionContent[] = [
       {
         title: 'Why brute force is the wrong attack on AES-128',
         problem:
-          'Estimate the time to brute-force a 128-bit AES key at $10^{12}$ keys per second, and state what this implies about how adversaries actually attack DRDO-grade systems.',
+          'Estimate the time to brute-force a 128-bit AES key at $10^{12}$ keys per second, and state what this implies about how adversaries actually attack the defence research establishment-grade systems.',
         steps: [
           { label: 'Step 1', text: 'Key space $= 2^{128} \\approx 3.4 \\times 10^{38}$ keys.' },
           { label: 'Step 2', text: 'At $10^{12}$ keys/s: $t = \\dfrac{3.4 \\times 10^{38}}{10^{12}} = 3.4 \\times 10^{26}$ s, and with $3.15 \\times 10^7$ s per year, $t \\approx 1.1 \\times 10^{19}$ years.' },

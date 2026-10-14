@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh16Content: SectionContent[] = [
   // ---------------------------------------------------------------- 16.1
   {
-    sectionId: 'jeemaths-ch16-s1',
+    sectionId: 'advmath-ch16-s1',
     readingTime: 9,
     intro: 'Classical inequalities order arithmetic, geometric and quadratic means and bound sums by Cauchy Schwarz forms. Chebyshev and rearrangement extend the same idea to similarly sorted lists. This section proves the chain with equality cases.',
     objectives: [
@@ -134,7 +134,7 @@ export const jeemathsCh16Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 16.2
   {
-    sectionId: 'jeemaths-ch16-s2',
+    sectionId: 'advmath-ch16-s2',
     readingTime: 9,
     intro: 'Limits of vanishing fractions are resolved by cancelling common factors, rationalising surds or applying standard forms. The exponential limit $(1+\\frac{1}{n})^{n} \\to e$ and sine limit $\\frac{\\sin x}{x} \\to 1$ anchor many evaluations. This section builds indeterminate form discipline.',
     objectives: [
@@ -239,7 +239,7 @@ export const jeemathsCh16Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 16.3
   {
-    sectionId: 'jeemaths-ch16-s3',
+    sectionId: 'advmath-ch16-s3',
     readingTime: 9,
     intro: 'Infinite series converge when partial sums settle, tested by comparison, ratio, root and integral tools. Borderline $p$ series $\\sum\\frac{1}{n^{p}}$ separate convergence from divergence. This section applies each test with boundary care.',
     objectives: [
@@ -365,7 +365,7 @@ export const jeemathsCh16Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 16.4
   {
-    sectionId: 'jeemaths-ch16-s4',
+    sectionId: 'advmath-ch16-s4',
     readingTime: 7,
     intro: 'Scales of notation write numbers in any base $r$ with digit values below $r$, while surds are cleared by rationalising factors. Binomial approximations then estimate roots and powers to any order. This section unites base arithmetic with approximation.',
     objectives: [

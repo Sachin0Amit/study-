@@ -9,7 +9,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh01Content: SectionContent[] = [
   // ---------------------------------------------------------------- 1.1
   {
-    sectionId: 'jeemaths-ch1-s1',
+    sectionId: 'advmath-ch1-s1',
     readingTime: 8,
     intro: 'Every complex number $z = x + iy$ is a point $(x, y)$ in the Argand plane, so algebra becomes geometry. The modulus $|z|$ measures distance from the origin while the argument measures direction, and the two together give the polar form. This section builds the toolkit that all later rotation and locus work rests on.',
     objectives: [
@@ -128,7 +128,7 @@ export const jeemathsCh01Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 1.2
   {
-    sectionId: 'jeemaths-ch1-s2',
+    sectionId: 'advmath-ch1-s2',
     readingTime: 9,
     intro: 'De Moivre theorem turns powers and roots of complex numbers into easy trigonometry: raising to $n$ multiplies the angle by $n$. The same idea rotates points in the plane and places the $n$-th roots of unity as a regular polygon. This section makes rotation-by-multiplication automatic.',
     objectives: [
@@ -260,7 +260,7 @@ export const jeemathsCh01Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 1.3
   {
-    sectionId: 'jeemaths-ch1-s3',
+    sectionId: 'advmath-ch1-s3',
     readingTime: 8,
     intro: 'The cube roots of unity $1$, $\\omega$, $\\omega^2$ encode threefold symmetry and collapse many symmetric sums to zero. Alongside them, the triangle inequality controls how large or small $|z_1 + z_2|$ can be. Together they settle a large family of modulus-maximum and symmetric-algebra questions.',
     objectives: [
@@ -379,7 +379,7 @@ export const jeemathsCh01Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 1.4
   {
-    sectionId: 'jeemaths-ch1-s4',
+    sectionId: 'advmath-ch1-s4',
     readingTime: 9,
     intro: 'Modulus equations draw shapes: $|z - z_0| = r$ is a circle and $|z - z_1| = |z - z_2|$ is a straight line. Argument conditions draw rays and half-lines, while quotient tests detect collinearity and perpendicularity. This section translates every locus into an equation and back.',
     objectives: [

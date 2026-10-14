@@ -9,7 +9,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh02Content: SectionContent[] = [
   // ---------------------------------------------------------------- 2.1
   {
-    sectionId: 'jeemaths-ch2-s1',
+    sectionId: 'advmath-ch2-s1',
     readingTime: 7,
     intro: 'The discriminant $D = b^2 - 4ac$ decides the nature of the roots of $ax^2 + bx + c = 0$ at a glance. Its sign separates real distinct, real equal and nonreal conjugate pairs, while its perfect-square character controls rationality. This section turns $D$ into a reliable first move for every quadratic question.',
     objectives: [
@@ -162,7 +162,7 @@ export const jeemathsCh02Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.2
   {
-    sectionId: 'jeemaths-ch2-s2',
+    sectionId: 'advmath-ch2-s2',
     readingTime: 8,
     intro: 'Vieta relations bind the sum and product of roots to the coefficients: $\\alpha + \\beta = -\\frac{b}{a}$ and $\\alpha\\beta = \\frac{c}{a}$. Symmetric functions of roots then reduce to these two numbers without solving. This section builds equations from root data and evaluates symmetric sums directly.',
     objectives: [
@@ -260,7 +260,7 @@ export const jeemathsCh02Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.3
   {
-    sectionId: 'jeemaths-ch2-s3',
+    sectionId: 'advmath-ch2-s3',
     readingTime: 8,
     intro: 'Completing the square rewrites $ax^2+bx+c$ as $a(x-h)^2 + k$ with vertex $(h,k)$ read off directly. That vertex is the global maximum or minimum, and its value decides the sign of the expression for all $x$. This section converts range questions into vertex evaluations.',
     objectives: [
@@ -379,7 +379,7 @@ export const jeemathsCh02Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.4
   {
-    sectionId: 'jeemaths-ch2-s4',
+    sectionId: 'advmath-ch2-s4',
     readingTime: 9,
     intro: 'Two quadratics share a root exactly when their resultant vanishes, and a single quadratic keeps its roots on prescribed sides of given numbers under explicit inequality systems. These are the common-root and location-of-roots problems. This section states each condition sharply and shows how to avoid extraneous candidates.',
     objectives: [

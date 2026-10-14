@@ -1,7 +1,7 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// Engineering Semester Exams — CSE (bookId 'engg-cse') — lesson content.
+// Engineering Semester Exams — CSE (bookId 'cse-complete') — lesson content.
 // Unit-1 (first section) master lessons for eight core CSE chapters across the
 // 8-semester B.Tech structure (AKTU BCS/KCS + VTU pattern): Data Structures,
 // Operating Systems, Theory of Automata, DBMS, Computer Networks, Compiler
@@ -13,13 +13,13 @@ import type { SectionContent } from '../library'
 export const enggCseContent: SectionContent[] = [
   // ------------------------------------------------------------- DSA 12.1
   {
-    sectionId: 'engg-cse-dsa-s1',
+    sectionId: 'cse-e-dsa-s1',
     readingTime: 10,
     prerequisites: [
       'C arrays, pointers and the `sizeof` operator (Programming for Problem Solving)',
       'big-O intuition for counting basic operations',
     ],
-    intro: 'Data Structures is the signature Semester 3 subject of every B.Tech CSE programme, and Unit 1 is where examiners collect easy marks: row-major/column-major address numericals and sparse-matrix triplet representation have appeared in almost every AKTU and VTU paper of the last five years, usually as a compulsory 7-mark question. This section covers the ADT viewpoint, address arithmetic, the triplet form of sparse matrices and string processing with pattern matching.',
+    intro: 'Data Structures is the signature Semester 3 subject of every B.Tech CSE programme, and Unit 1 is where assessors collect easy marks: row-major/column-major address numericals and sparse-matrix triplet representation have appeared in almost every the state technical universities paper of the last five years, usually as a compulsory 7-mark question. This section covers the ADT viewpoint, address arithmetic, the triplet form of sparse matrices and string processing with pattern matching.',
     objectives: [
       'Define an **abstract data type (ADT)** and separate specification from implementation for arrays and strings',
       'Compute element addresses in row-major and column-major order using $LOC(A[i][j]) = B + W[(i - l_r)N + (j - l_c)]$ and its column-major twin',
@@ -31,7 +31,7 @@ export const enggCseContent: SectionContent[] = [
         term: 'Abstract data type',
         kind: 'definition',
         statement: 'An **abstract data type** is a mathematical model together with the set of operations defined on it, specified independently of any implementation; the `array` ADT exports operations like `insert`, `delete`, `traverse` and `search` over a fixed-capacity sequence.',
-        detail: 'Exams ask you to state the ADT for an array or stack (data members plus operation signatures) and then give one implementation such as `struct Array { int A[10]; int length; }`. The classic mistake is listing only the data and forgetting that operations belong to the ADT contract.',
+        detail: 'Assessments ask you to state the ADT for an array or stack (data members plus operation signatures) and then give one implementation such as `struct Array { int A[10]; int length; }`. The classic mistake is listing only the data and forgetting that operations belong to the ADT contract.',
       },
       {
         term: 'Row-major and column-major address laws',
@@ -49,7 +49,7 @@ export const enggCseContent: SectionContent[] = [
         term: 'Adding two sparse triplets',
         kind: 'method',
         statement: 'Sparse **addition is a row-major merge**: both matrices must have identical dimensions; copy triplets while row indices differ, and when row and column indices both match emit $a_{ij} + b_{ij}$ (skipping the entry if it sums to zero, per course convention).',
-        detail: 'Exams ask for the triplet sum of two small sparse matrices. State the dimension check first — different orders cannot be added — and note that the result count $t$ can shrink when entries cancel to zero.',
+        detail: 'Assessments ask for the triplet sum of two small sparse matrices. State the dimension check first — different orders cannot be added — and note that the result count $t$ can shrink when entries cancel to zero.',
       },
       {
         term: 'Strings and naive pattern matching',
@@ -106,7 +106,7 @@ export const enggCseContent: SectionContent[] = [
         q: 'For 0-based indexing with $M$ rows and $N$ columns, the column-major address of $A[i][j]$ is',
         options: ['$B + W(iM + j)$', '$B + W(jN + i)$', '$B + W(jM + i)$', '$B + W(iN + j)$'],
         answer: 2,
-        explanation: 'Step 1: Column-major storage fills column 0 completely, then column 1, and so on. Step 2: Before column $j$ there are $j$ full columns of $M$ elements, contributing $jM$ cells. Step 3: Within column $j$, row $i$ adds $i$ more cells, so the offset is $(jM + i)W$. Step 4: The last option is the row-major rule — the standard exam mix-up.',
+        explanation: 'Step 1: Column-major storage fills column 0 completely, then column 1, and so on. Step 2: Before column $j$ there are $j$ full columns of $M$ elements, contributing $jM$ cells. Step 3: Within column $j$, row $i$ adds $i$ more cells, so the offset is $(jM + i)W$. Step 4: The last option is the row-major rule — the standard assessment mix-up.',
       },
       {
         q: 'The worst-case running time of naive string matching for text length $n$ and pattern length $m$ is',
@@ -118,13 +118,13 @@ export const enggCseContent: SectionContent[] = [
   },
   // -------------------------------------------------------------- OS 18.1
   {
-    sectionId: 'engg-cse-os-s1',
+    sectionId: 'cse-e-os-s1',
     readingTime: 9,
     prerequisites: [
       'How a C program executes and lays out its memory',
       'The idea of interrupts and device drivers (Computer Organization helps)',
     ],
-    intro: 'Operating Systems is the Semester 4 systems core, and examiners open nearly every paper with this unit: define the OS as a resource manager, distinguish kernel from user mode, and trace one system call — a pattern sustained across five years of AKTU and VTU papers as a 7–10 mark question. This section builds that vocabulary along with the classic OS structures (monolithic, layered, microkernel, hybrid) that you must be able to compare.',
+    intro: 'Operating Systems is the Semester 4 systems core, and assessors open nearly every paper with this unit: define the OS as a resource manager, distinguish kernel from user mode, and trace one system call — a pattern sustained across five years of the state technical universities papers as a 7–10 mark question. This section builds that vocabulary along with the classic OS structures (monolithic, layered, microkernel, hybrid) that you must be able to compare.',
     objectives: [
       'Explain the OS as an **extended machine** and a **resource manager**, listing the resources it allocates',
       'Distinguish kernel mode from user mode using the mode bit and identify privileged instructions',
@@ -142,7 +142,7 @@ export const enggCseContent: SectionContent[] = [
         term: 'Dual-mode operation',
         kind: 'insight',
         statement: 'Hardware provides a **mode bit**: $0$ = kernel (supervisor) mode and $1$ = user mode. Instructions such as I/O, halting the CPU, masking interrupts and switching the page-table base are **privileged** and legal only in kernel mode.',
-        detail: 'Exams ask which instructions are privileged and what happens on violation — the hardware traps to the OS, which normally terminates the offender. Reversing the bit values (kernel = 1) is a classic MCQ trap; remember "zero = omnipotent".',
+        detail: 'Assessments ask which instructions are privileged and what happens on violation — the hardware traps to the OS, which normally terminates the offender. Reversing the bit values (kernel = 1) is a classic MCQ trap; remember "zero = omnipotent".',
       },
       {
         term: 'System call mechanism',
@@ -223,13 +223,13 @@ export const enggCseContent: SectionContent[] = [
   },
   // ------------------------------------------------------------- TOC 20.1
   {
-    sectionId: 'engg-cse-toc-s1',
+    sectionId: 'cse-e-toc-s1',
     readingTime: 11,
     prerequisites: [
       'Sets, relations and functions (Discrete Structures)',
       'Proof by induction and contradiction basics',
     ],
-    intro: 'Theory of Automata is the Semester 4 abstract core, and its Unit 1 is the highest-scoring unit of the subject: construct a DFA for a language, convert an NFA to a DFA by subset construction, then minimise — these three tasks recur in five straight years of AKTU and VTU papers, usually 10–14 marks combined. The section treats finite automata as the mathematics of finite memory.',
+    intro: 'Theory of Automata is the Semester 4 abstract core, and its Unit 1 is the highest-scoring unit of the subject: construct a DFA for a language, convert an NFA to a DFA by subset construction, then minimise — these three tasks recur in five straight years of the state technical universities papers, usually 10–14 marks combined. The section treats finite automata as the mathematics of finite memory.',
     objectives: [
       'Write a DFA as the five-tuple $M = (Q, \\Sigma, \\delta, q_0, F)$ and read the extended transition function',
       'Construct DFAs for arithmetic and pattern languages such as binary multiples of 3 or strings ending in 01',
@@ -241,7 +241,7 @@ export const enggCseContent: SectionContent[] = [
         term: 'Deterministic finite automaton',
         kind: 'definition',
         statement: 'A **deterministic finite automaton** is $M = (Q, \\Sigma, \\delta, q_0, F)$ — a finite state set, input alphabet, transition function $\\delta : Q \\times \\Sigma \\to Q$, start state and accepting set $F$; the language accepted is $L(M) = \\{w : \\hat{\\delta}(q_0, w) \\in F\\}$.',
-        detail: 'Exams demand the formal tuple before the diagram. A common error is an incomplete transition table — in a DFA every (state, symbol) pair must have exactly one target; if your table has holes you have really designed an NFA.',
+        detail: 'Assessments demand the formal tuple before the diagram. A common error is an incomplete transition table — in a DFA every (state, symbol) pair must have exactly one target; if your table has holes you have really designed an NFA.',
       },
       {
         term: 'Nondeterminism and epsilon moves',
@@ -253,7 +253,7 @@ export const enggCseContent: SectionContent[] = [
         term: 'Subset construction',
         kind: 'method',
         statement: '**Subset construction** converts an NFA over states $Q$ into a DFA whose states are subsets of $Q$: start from the ε-closure of $\\{q_0\\}$ and set $\\delta\'(S, a) = \\epsilon\\text{-closure}\\left(\\bigcup_{q \\in S} \\delta(q, a)\\right)$; a DFA state is accepting when it contains an NFA final state.',
-        detail: 'Only reachable subsets are ever built, so practical blow-up is small even though the worst case is $2^n$. Forgetting the ε-closure when starting or moving is the most common conversion error; the deterministic version of this exam task usually has no ε-moves at all.',
+        detail: 'Only reachable subsets are ever built, so practical blow-up is small even though the worst case is $2^n$. Forgetting the ε-closure when starting or moving is the most common conversion error; the deterministic version of this assessment task usually has no ε-moves at all.',
       },
       {
         term: 'DFA minimisation',
@@ -265,7 +265,7 @@ export const enggCseContent: SectionContent[] = [
         term: 'Regular expressions and their limits',
         kind: 'theorem',
         statement: '**Kleene\u2019s theorem**: a language is regular iff some finite automaton accepts it iff some regular expression denotes it. The **pumping lemma** — for regular $L$ there is a length $p$ such that $w = xyz$ with $|xy| \\le p$, $|y| \\ge 1$ and $xy^iz \\in L$ for every $i$ — proves languages like $\\{0^n1^n\\}$ **not** regular.',
-        detail: 'The pumping lemma is a necessary condition for regularity, never a sufficient one; using it to prove a language regular earns zero. Exams want the contrapositive argument: if for every valid decomposition some $i$ pumps the word out of the language, the language cannot be regular.',
+        detail: 'The pumping lemma is a necessary condition for regularity, never a sufficient one; using it to prove a language regular earns zero. Assessments want the contrapositive argument: if for every valid decomposition some $i$ pumps the word out of the language, the language cannot be regular.',
       },
     ],
     examples: [
@@ -327,13 +327,13 @@ export const enggCseContent: SectionContent[] = [
   },
   // ------------------------------------------------------------ DBMS 21.1
   {
-    sectionId: 'engg-cse-dbms-s1',
+    sectionId: 'cse-e-dbms-s1',
     readingTime: 11,
     prerequisites: [
       'Tables, rows and columns from everyday spreadsheet use',
       'Basic set operations: union, subset, Cartesian product',
     ],
-    intro: 'DBMS is the Semester 5 core in which this unit is the guaranteed opener: draw and explain the three-level architecture with data independence, then design an ER diagram and map it to tables — a question pattern repeated across AKTU and VTU papers year after year with 10-mark weight. Master the key types and the special abstractions (generalization, specialization, aggregation) and most of Unit 1 falls into place.',
+    intro: 'DBMS is the Semester 5 core in which this unit is the guaranteed opener: draw and explain the three-level architecture with data independence, then design an ER diagram and map it to tables — a question pattern repeated across the state technical universities papers year after year with 10-mark weight. Master the key types and the special abstractions (generalization, specialization, aggregation) and most of Unit 1 falls into place.',
     objectives: [
       'Explain the **three-level ANSI/SPARC architecture** and distinguish physical from logical data independence',
       'Classify DDL, DML, DCL and TCL statements with examples',
@@ -345,7 +345,7 @@ export const enggCseContent: SectionContent[] = [
         term: 'Three-level architecture and data independence',
         kind: 'definition',
         statement: 'The **three-level architecture** separates the **external** level (user views), the **conceptual** level (community logical schema) and the **internal** level (physical storage). **Physical data independence** = change the internal schema without touching the conceptual; **logical data independence** = change the conceptual without invalidating external views.',
-        detail: 'Exams ask which level changed in a scenario (a new index = physical; splitting a table = logical) and which independence is harder to achieve — logical, since every view must keep working. Confusing the two independences is the standard mark-loser.',
+        detail: 'Assessments ask which level changed in a scenario (a new index = physical; splitting a table = logical) and which independence is harder to achieve — logical, since every view must keep working. Confusing the two independences is the standard mark-loser.',
       },
       {
         term: 'Database languages',
@@ -369,7 +369,7 @@ export const enggCseContent: SectionContent[] = [
         term: 'Generalization, specialization, aggregation',
         kind: 'insight',
         statement: '**Specialization** (top-down) extracts sub-entities from a parent, e.g. EMPLOYEE into TEACHER and ADMIN; **generalization** (bottom-up) merges sub-entities with common features into a parent; **aggregation** treats an entire relationship set as one abstract entity so that it can participate in another relationship.',
-        detail: 'The exam tell-tale: "managers monitor the works_on relationship between employees and projects" is aggregation, not a new entity. Disjoint versus overlap and total versus partial constraints on ISA hierarchies earn the last marks in long answers.',
+        detail: 'The assessment tell-tale: "managers monitor the works_on relationship between employees and projects" is aggregation, not a new entity. Disjoint versus overlap and total versus partial constraints on ISA hierarchies earn the last marks in long answers.',
       },
     ],
     examples: [
@@ -431,13 +431,13 @@ export const enggCseContent: SectionContent[] = [
   },
   // -------------------------------------------------------------- CN 23.1
   {
-    sectionId: 'engg-cse-cn-s1',
+    sectionId: 'cse-e-cn-s1',
     readingTime: 10,
     prerequisites: [
       'Bits, bytes and binary representation',
       'Everyday use of networked applications — browsing, email, file transfer',
     ],
-    intro: 'Computer Networks opens with the single most predictable question in the subject: explain the OSI reference model layer by layer, compare it with TCP/IP, and describe how a message travels with headers — asked in virtually every AKTU and VTU paper of the last five years, typically for 10 marks. Layering concepts plus circuit, datagram and virtual-circuit switching complete Unit 1.',
+    intro: 'Computer Networks opens with the single most predictable question in the subject: explain the OSI reference model layer by layer, compare it with TCP/IP, and describe how a message travels with headers — asked in virtually every the state technical universities paper of the last five years, typically for 10 marks. Layering concepts plus circuit, datagram and virtual-circuit switching complete Unit 1.',
     objectives: [
       'Justify layering — decomposition, peer protocols, clean interfaces — and state each OSI layer\u2019s responsibility',
       'Compare the OSI and TCP/IP stacks layer by layer, including where session and presentation went',
@@ -455,7 +455,7 @@ export const enggCseContent: SectionContent[] = [
         term: 'The OSI seven layers',
         kind: 'law',
         statement: 'OSI (ISO 7498) stacks seven layers — **Physical** (bit transmission), **Data Link** (framing, MAC, error and flow control hop-to-hop), **Network** (logical addressing, routing), **Transport** (end-to-end delivery, ports, segmentation), **Session** (dialog control, synchronisation points), **Presentation** (syntax, encryption, compression) and **Application** (user-level services).',
-        detail: 'Mnemonic: Please Do Not Throw Sausage Pizza Away, bottom-up. Exams ask "at which layer does X happen?" — routing = network, reliable byte stream = transport, framing = data link, compression = presentation — so memorise one verb per layer rather than a paragraph.',
+        detail: 'Mnemonic: Please Do Not Throw Sausage Pizza Away, bottom-up. Assessments ask "at which layer does X happen?" — routing = network, reliable byte stream = transport, framing = data link, compression = presentation — so memorise one verb per layer rather than a paragraph.',
       },
       {
         term: 'The TCP/IP model',
@@ -536,13 +536,13 @@ export const enggCseContent: SectionContent[] = [
   },
   // --------------------------------------------------------- COMPILER 24.1
   {
-    sectionId: 'engg-cse-compiler-s1',
+    sectionId: 'cse-e-compiler-s1',
     readingTime: 10,
     prerequisites: [
       'Regular expressions and finite automata (Theory of Automata, Unit 1)',
       'C syntax: declarations, expressions and precedence',
     ],
-    intro: 'Compiler Design papers begin with the same two questions every year: explain the phases of a compiler using a sample assignment statement, and define token, lexeme and pattern while specifying identifiers with regular expressions — a pattern AKTU and VTU have both kept for the last five years. This section walks the front end from source text to tokens.',
+    intro: 'Compiler Design papers begin with the same two questions every year: explain the phases of a compiler using a sample assignment statement, and define token, lexeme and pattern while specifying identifiers with regular expressions — a pattern the state technical universities have both kept for the last five years. This section walks the front end from source text to tokens.',
     objectives: [
       'List the six phases of analysis and synthesis and classify what each phase consumes and produces',
       'Distinguish token, lexeme and pattern, and tokenise a C statement',
@@ -554,13 +554,13 @@ export const enggCseContent: SectionContent[] = [
         term: 'Phases, passes and the symbol table',
         kind: 'insight',
         statement: 'A compiler splits into **analysis (front end)** — lexical, syntax and semantic analysis plus intermediate code generation — and **synthesis (back end)** — optimisation and target code generation, all coordinated through one shared **symbol table**; a **pass** is one complete read of the program.',
-        detail: 'The exam diagram is the six boxes around the symbol table with source flowing down to target code. Attribute errors correctly: misspelled keywords and malformed numbers = lexical, broken grammar = syntax, type clashes = semantic — a guaranteed 2-mark distinction.',
+        detail: 'The assessment diagram is the six boxes around the symbol table with source flowing down to target code. Attribute errors correctly: misspelled keywords and malformed numbers = lexical, broken grammar = syntax, type clashes = semantic — a guaranteed 2-mark distinction.',
       },
       {
         term: 'Role of the lexical analyser',
         kind: 'definition',
         statement: 'The **scanner** groups characters into **lexemes** and reports a **token** (category name) for each, following a **pattern** (rule); it also strips whitespace and comments, tracks line numbers for error messages and enters identifiers into the **symbol table**.',
-        detail: 'For `count <= 100` the lexemes are `count`, `<=`, `100` with tokens id, relop and number. Exams ask why the scanner is a separate phase: simpler design, machine-generated from regular expressions and faster specialised buffering.',
+        detail: 'For `count <= 100` the lexemes are `count`, `<=`, `100` with tokens id, relop and number. Assessments ask why the scanner is a separate phase: simpler design, machine-generated from regular expressions and faster specialised buffering.',
       },
       {
         term: 'Regular-expression specification of tokens',
@@ -578,7 +578,7 @@ export const enggCseContent: SectionContent[] = [
         term: 'Structure of a lex/flex file',
         kind: 'method',
         statement: 'A **lex** file has three sections separated by `%%` — declarations (aliases like `digit [0-9]`), rules of the form `pattern action` such as `{id} { return ID; }`, and user code; flex compiles the rules into precisely the table-driven DFA above.',
-        detail: 'Exams give a spec — recognise keywords if and else, identifiers, integers — and expect the three-part skeleton plus two rules. Rule order matters: keyword rules must precede the identifier rule, or `if` will be scanned as an identifier (a classic trap to discuss).',
+        detail: 'Assessments give a spec — recognise keywords if and else, identifiers, integers — and expect the three-part skeleton plus two rules. Rule order matters: keyword rules must precede the identifier rule, or `if` will be scanned as an identifier (a classic trap to discuss).',
       },
     ],
     examples: [
@@ -640,13 +640,13 @@ export const enggCseContent: SectionContent[] = [
   },
   // -------------------------------------------------------------- SE 25.1
   {
-    sectionId: 'engg-cse-se-s1',
+    sectionId: 'cse-e-se-s1',
     readingTime: 9,
     prerequisites: [
       'What constitutes software: programs, data and documentation',
       'Experience of any team project whose requirements changed midway',
     ],
-    intro: 'Software Engineering and Project Management opens with the surest 10 marks in the paper: compare SDLC models and select one for a given scenario — the question AKTU and VTU have reused, with fresh scenarios, across the last five years. Unit 1 also carries the agile short notes (Scrum events, XP practices) that appear as 3–5 mark sub-questions.',
+    intro: 'Software Engineering and Project Management opens with the surest 10 marks in the paper: compare SDLC models and select one for a given scenario — the question the state technical universities have reused, with fresh scenarios, across the last five years. Unit 1 also carries the agile short notes (Scrum events, XP practices) that appear as 3–5 mark sub-questions.',
     objectives: [
       'Name the SDLC phases common to every model and the work products of each',
       'Compare waterfall, incremental/iterative, RAD, spiral and agile on requirements volatility, risk and delivery speed',
@@ -658,7 +658,7 @@ export const enggCseContent: SectionContent[] = [
         term: 'The common SDLC phases',
         kind: 'definition',
         statement: 'Every SDLC model organises **requirements analysis → design → implementation → testing → deployment → maintenance**, with software understood as programs **plus documentation and procedures**; the models differ only in how they order, repeat or overlap these phases.',
-        detail: 'Exams ask which phase an activity belongs to (SRS = requirements; unit, integration, system and acceptance testing = testing) and the maintenance types — corrective, adaptive, perfective and preventive — as a short note. Maintenance consuming the majority of lifetime cost is a favourite one-liner.',
+        detail: 'Assessments ask which phase an activity belongs to (SRS = requirements; unit, integration, system and acceptance testing = testing) and the maintenance types — corrective, adaptive, perfective and preventive — as a short note. Maintenance consuming the majority of lifetime cost is a favourite one-liner.',
       },
       {
         term: 'Waterfall model',
@@ -676,7 +676,7 @@ export const enggCseContent: SectionContent[] = [
         term: 'Spiral model',
         kind: 'method',
         statement: 'Boehm\u2019s **spiral** loops through four quadrants — (1) determine objectives and constraints, (2) evaluate alternatives, **identify and resolve risks**, (3) develop and verify, typically via a prototype, and (4) plan the next loop — making it a **risk-driven** meta-model whose radius reflects cumulative cost.',
-        detail: 'The keyword is risk: every exam answer must show the risk quadrant doing prototyping or simulation before major commitment. It suits large, novel, first-of-a-kind systems; critics note it is costly and demands risk-assessment expertise.',
+        detail: 'The keyword is risk: every assessment answer must show the risk quadrant doing prototyping or simulation before major commitment. It suits large, novel, first-of-a-kind systems; critics note it is costly and demands risk-assessment expertise.',
       },
       {
         term: 'The agile family: XP and Scrum',
@@ -693,7 +693,7 @@ export const enggCseContent: SectionContent[] = [
           { label: 'Step 1', text: 'Fix the criteria: requirement volatility, project risk, need for documentation or certification, user availability and schedule pressure.' },
           { label: 'Step 2', text: '(i) Stable, precisely specified, safety-critical → **waterfall/V-model**: complete documentation and verification before deployment outweigh flexibility. (ii) Volatile requirements and fast market feedback → **agile (Scrum)**: sprints absorb weekly change and ship working increments.' },
           { label: 'Step 3', text: '(iii) Novel technology with huge technical risk → **spiral**: each loop prototypes and retires the biggest risk before major investment is committed.' },
-          { label: 'Step 4', text: '(iv) Known problem, reusable components, tight schedule → **RAD**: reuse plus JAD workshops deliver a working system in a short cycle. Write each answer as model plus criterion — examiners award the marks for the justification, not the label alone.' },
+          { label: 'Step 4', text: '(iv) Known problem, reusable components, tight schedule → **RAD**: reuse plus JAD workshops deliver a working system in a short cycle. Write each answer as model plus criterion — assessors award the marks for the justification, not the label alone.' },
         ],
         result: '(i) waterfall/V-model, (ii) agile-Scrum, (iii) spiral, (iv) RAD — each keyed to its dominant selection criterion.',
       },
@@ -745,13 +745,13 @@ export const enggCseContent: SectionContent[] = [
   },
   // -------------------------------------------------------------- ML 27.1
   {
-    sectionId: 'engg-cse-ml-s1',
+    sectionId: 'cse-e-ml-s1',
     readingTime: 10,
     prerequisites: [
       'Straight-line equations and partial derivatives (Engineering Mathematics I)',
       'Basic probability and expected value',
     ],
-    intro: 'Machine Learning enters the B.Tech CSE scheme in Semester 6, and its Unit 1 is the dependable scorer: classify the learning paradigm of a scenario, then derive or numerically fit a least-squares line and run gradient-descent steps — the repeated AKTU and VTU pattern over the last five years. The unit also introduces logistic regression as the bridge to classification.',
+    intro: 'Machine Learning enters the B.Tech CSE scheme in Semester 6, and its Unit 1 is the dependable scorer: classify the learning paradigm of a scenario, then derive or numerically fit a least-squares line and run gradient-descent steps — the repeated the state technical universities pattern over the last five years. The unit also introduces logistic regression as the bridge to classification.',
     objectives: [
       'Classify tasks as supervised (regression or classification), unsupervised or reinforcement learning with justified labels',
       'Fit $y = a + bx$ by least squares using the normal equations and predict at a new point',
@@ -775,7 +775,7 @@ export const enggCseContent: SectionContent[] = [
         term: 'Gradient descent',
         kind: 'method',
         statement: '**Batch gradient descent** iterates $\\theta_j := \\theta_j - \\alpha \\frac{\\partial J}{\\partial \\theta_j}$ — for MSE this is $\\theta_1 := \\theta_1 - \\frac{\\alpha}{m}\\sum (h_\\theta(x^{(i)}) - y^{(i)})\\,x^{(i)}$ — with the learning rate $\\alpha$ controlling stability; all parameters update **simultaneously**.',
-        detail: 'Exams ask for 2–3 iterations on a toy cost function. Diagnosis rules: too small $\\alpha$ = slow crawl, too large $\\alpha$ = oscillation or divergence. Gradient descent also scales to large feature counts where the normal-equation matrix inverse at $O(n^3)$ does not.',
+        detail: 'Assessments ask for 2–3 iterations on a toy cost function. Diagnosis rules: too small $\\alpha$ = slow crawl, too large $\\alpha$ = oscillation or divergence. Gradient descent also scales to large feature counts where the normal-equation matrix inverse at $O(n^3)$ does not.',
       },
       {
         term: 'Logistic regression',
@@ -809,7 +809,7 @@ export const enggCseContent: SectionContent[] = [
           { label: 'Step 1', text: 'The update rule is $w := w - \\alpha \\cdot 2(w - 3)$. First step: $w_1 = 0 - 0.1 \\times 2(0 - 3) = 0.6$.' },
           { label: 'Step 2', text: 'Iterate: $w_2 = 0.6 - 0.1 \\times 2(0.6 - 3) = 1.08$ and $w_3 = 1.08 - 0.2(1.08 - 3) = 1.464$.' },
           { label: 'Step 3', text: 'Each step multiplies the gap to the optimum by $(1 - 2\\alpha) = 0.8$, so $w_k = 3 - 3(0.8)^k \\to 3$ — steady geometric convergence.' },
-          { label: 'Step 4', text: 'With $\\alpha = 1$ the update becomes $w := 6 - w$: the iterates oscillate $0, 6, 0, 6, \\ldots$ forever — the too-large learning-rate failure mode that exams want named.' },
+          { label: 'Step 4', text: 'With $\\alpha = 1$ the update becomes $w := 6 - w$: the iterates oscillate $0, 6, 0, 6, \\ldots$ forever — the too-large learning-rate failure mode that assessments want named.' },
         ],
         result: '$w_1 = 0.6$, $w_2 = 1.08$, $w_3 = 1.464$, converging to 3 geometrically; $\\alpha = 1$ oscillates without ever converging.',
       },

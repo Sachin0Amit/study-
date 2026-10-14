@@ -3,7 +3,7 @@ import type { SectionContent } from '../library'
 // ============================================================================
 // Digital SAT Reading & Writing — master lesson content (all 10 skill sections)
 // Full SectionContent lessons for the ten official College Board skills of the
-// adaptive digital SAT R&W section (bookId 'sat-rw-2026'): Words in Context,
+// adaptive digital SAT R&W section (bookId 'english-complete'): Words in Context,
 // Text Structure and Purpose, Cross-Text Connections, Central Ideas and
 // Details, Command of Evidence (textual + quantitative), Inferences,
 // Boundaries, Form/Structure/Sense, Transitions and Rhetorical Synthesis.
@@ -14,13 +14,13 @@ import type { SectionContent } from '../library'
 export const satRwContent: SectionContent[] = [
   // ---------------------------------------------------------------- 1.1
   {
-    sectionId: 'sat-rw-d1-s1',
+    sectionId: 'eng-r1-s1',
     readingTime: 8,
     prerequisites: [
       'Comfortable reading of 25–150 word passages on science, humanities and social science',
       'High-school vocabulary bank',
     ],
-    intro: 'The SAT no longer tests obscure words — it tests whether you can judge which ordinary-sounding word fits a specific context. Every **Words in Context** item gives you a short passage with a blank (or an underlined word) and four plausible choices; only one survives contact with the text. The skill is precision reading: tone, logic and the exact meaning the author intends.',
+    intro: 'The assessment no longer tests obscure words — it tests whether you can judge which ordinary-sounding word fits a specific context. Every **Words in Context** item gives you a short passage with a blank (or an underlined word) and four plausible choices; only one survives contact with the text. The skill is precision reading: tone, logic and the exact meaning the author intends.',
     objectives: [
       'Predict a candidate word from context BEFORE reading the choices',
       'Eliminate answer choices that are too broad, too narrow, or wrong in connotation',
@@ -37,13 +37,13 @@ export const satRwContent: SectionContent[] = [
       {
         term: 'Connotation and register',
         kind: 'definition',
-        statement: '**Connotation** is the emotional colouring of a word (thrifty vs stingy); **register** is the formality level (purchase vs buy). The correct SAT answer matches both the denotation AND the connotation the passage carries.',
+        statement: '**Connotation** is the emotional colouring of a word (thrifty vs stingy); **register** is the formality level (purchase vs buy). The correct the assessment answer matches both the denotation AND the connotation the passage carries.',
         detail: 'A science passage reporting a discovery uses neutral or positive words; a passage criticising a policy will not accept a neutral answer for a blank that follows a criticism. Watch intensifiers ("remarkably", "merely") around the blank — they telegraph the required connotation.'
       },
       {
         term: 'Secondary-meaning items',
         kind: 'insight',
-        statement: 'When a common word is underlined ("currency", "check", "season"), the SAT is almost always testing a LESS common sense of it — let the surrounding syntax and topic decide.',
+        statement: 'When a common word is underlined ("currency", "check", "season"), the assessment is almost always testing a LESS common sense of it — let the surrounding syntax and topic decide.',
         detail: '"The currency of the idea" means prevalence, not money; "seasoned timber" means aged, not flavoured. If the everyday meaning produces nonsense in the sentence, hunt for the secondary sense. Classic tested words: exact, discriminate, address, novel, minute, flag.'
       },
       {
@@ -106,13 +106,13 @@ export const satRwContent: SectionContent[] = [
         q: 'Which pair differs only by connotation?',
         options: ['big / large', 'thrifty / stingy', 'walk / stroll', 'begin / commence'],
         answer: 1,
-        explanation: 'Step 1: Connotation is emotional colouring at the same denotation. Step 2: Thrifty (positive: careful) and stingy (negative: mean) both denote reluctance to spend. Step 3: Big/large are neutral synonyms; walk/stroll differ in manner; begin/commence differ in register. Step 4: SAT blanks near criticism or praise demand this connotation radar.'
+        explanation: 'Step 1: Connotation is emotional colouring at the same denotation. Step 2: Thrifty (positive: careful) and stingy (negative: mean) both denote reluctance to spend. Step 3: Big/large are neutral synonyms; walk/stroll differ in manner; begin/commence differ in register. Step 4: the assessment blanks near criticism or praise demand this connotation radar.'
       }
     ]
   },
   // ---------------------------------------------------------------- 1.2
   {
-    sectionId: 'sat-rw-d1-s2',
+    sectionId: 'eng-r1-s2',
     readingTime: 8,
     prerequisites: [
       'Words in Context reading habits (section 1.1)',
@@ -141,7 +141,7 @@ export const satRwContent: SectionContent[] = [
       {
         term: 'Organisational patterns',
         kind: 'notation',
-        statement: 'Common SAT structures: **problem–solution**, **compare–contrast**, **chronology/cause–effect**, **claim–evidence–counter–rebuttal**, and **introduce–illustrate** (general statement then examples).',
+        statement: 'Common the assessment structures: **problem–solution**, **compare–contrast**, **chronology/cause–effect**, **claim–evidence–counter–rebuttal**, and **introduce–illustrate** (general statement then examples).',
         detail: 'Signal words map the pattern: "however/whereas" \u2192 contrast; "consequently" \u2192 cause–effect; "for instance" \u2192 illustration; "although critics argue" \u2192 counterargument. Structure questions ask how a paragraph relates to the whole (e.g., "the second paragraph mainly serves to...") — answer with the paragraph\u2019s rhetorical job, not its content summary.'
       },
       {
@@ -210,13 +210,13 @@ export const satRwContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 1.3
   {
-    sectionId: 'sat-rw-d1-s3',
+    sectionId: 'eng-r1-s3',
     readingTime: 8,
     prerequisites: [
       'Main-purpose and function skills (section 1.2)',
       'Comfort with argument vocabulary: claim, evidence, concession',
     ],
-    intro: 'Paired passages on the SAT share a topic but never a lens. **Cross-Text Connections** items hand you two short texts (often a scientist and a historian, or two researchers with rival interpretations) and ask where they agree — or how one author would respond to the other\u2019s claim. The secret is mapping each author\u2019s exact position before touching the questions.',
+    intro: 'Paired passages on the assessment share a topic but never a lens. **Cross-Text Connections** items hand you two short texts (often a scientist and a historian, or two researchers with rival interpretations) and ask where they agree — or how one author would respond to the other\u2019s claim. The secret is mapping each author\u2019s exact position before touching the questions.',
     objectives: [
       'Summarise each text\u2019s central claim in a margin note before answering',
       'Identify genuine points of agreement versus superficial topic overlap',
@@ -308,13 +308,13 @@ export const satRwContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.1
   {
-    sectionId: 'sat-rw-d2-s1',
+    sectionId: 'eng-r2-s1',
     readingTime: 8,
     prerequisites: [
       'Skimming discipline for 25–150 word passages',
       'Distinguishing main idea from supporting detail',
     ],
-    intro: 'Every passage has a spine — the **central idea** — and ribs: details that support it. SAT items in this skill either ask for the spine ("Which choice best states the main idea?"), for a specific rib ("According to the text, ...?"), or for the best one-line summary of the whole skeleton. Nothing here requires outside knowledge; everything requires faithful reading.',
+    intro: 'Every passage has a spine — the **central idea** — and ribs: details that support it. the assessment items in this skill either ask for the spine ("Which choice best states the main idea?"), for a specific rib ("According to the text, ...?"), or for the best one-line summary of the whole skeleton. Nothing here requires outside knowledge; everything requires faithful reading.',
     objectives: [
       'Locate the central idea by weighing first/last sentences and repeated concepts',
       'Answer detail items by line-referencing the exact supporting sentence',
@@ -332,7 +332,7 @@ export const satRwContent: SectionContent[] = [
         term: 'Detail triangulation',
         kind: 'method',
         statement: 'For "According to the text" items, match the question\u2019s key noun to its sentence in the passage, and treat that sentence as the sole evidence — no outside facts, no memory-based answers.',
-        detail: 'Detail distractors are TRUE in the real world but absent from the passage, or present in the passage but answering a different question (the swapped-detail trap). Physically locate the line before choosing; the SAT orders these items roughly in passage order, which speeds the hunt.'
+        detail: 'Detail distractors are TRUE in the real world but absent from the passage, or present in the passage but answering a different question (the swapped-detail trap). Physically locate the line before choosing; the assessment orders these items roughly in passage order, which speeds the hunt.'
       },
       {
         term: 'Summary quality',
@@ -344,7 +344,7 @@ export const satRwContent: SectionContent[] = [
         term: 'Over-inference guard',
         kind: 'insight',
         statement: 'Central-idea and detail answers never require knowledge beyond the text; if a choice needs an assumption the passage never states — however reasonable — it is wrong.',
-        detail: 'The digital SAT deliberately writes choices that are tempting to a knowledgeable student: a biology passage about one reef study may include a choice stating a textbook fact about reefs that THIS study never established. The passage is a closed universe; read like a lawyer, not a fan.'
+        detail: 'The digital the assessment deliberately writes choices that are tempting to a knowledgeable student: a biology passage about one reef study may include a choice stating a textbook fact about reefs that THIS study never established. The passage is a closed universe; read like a lawyer, not a fan.'
       }
     ],
     examples: [
@@ -388,7 +388,7 @@ export const satRwContent: SectionContent[] = [
         q: 'A detail choice that states something true in reality but never mentioned in the passage must be',
         options: ['chosen if plausible', 'eliminated', 'chosen if scientifically correct', 'kept if it matches the topic'],
         answer: 1,
-        explanation: 'Step 1: SAT reading is a closed-book, closed-universe exercise. Step 2: The passage is the only admissible evidence. Step 3: Real-world truth without textual support fails the "according to the text" standard. Step 4: Eliminate without regret.'
+        explanation: 'Step 1: the assessment reading is a closed-book, closed-universe exercise. Step 2: The passage is the only admissible evidence. Step 3: Real-world truth without textual support fails the "according to the text" standard. Step 4: Eliminate without regret.'
       },
       {
         q: 'The fastest reliable way to find a passage\u2019s central idea is usually to',
@@ -406,13 +406,13 @@ export const satRwContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.2
   {
-    sectionId: 'sat-rw-d2-s2',
+    sectionId: 'eng-r2-s2',
     readingTime: 9,
     prerequisites: [
       'Central-idea reading (section 2.1)',
       'Basic chart, table and line-graph literacy',
     ],
-    intro: 'The digital SAT quietly handed R&W students a lab instrument: informational graphics. **Command of Evidence** comes in two flavours — textual (which quotation or finding best supports a conclusion?) and quantitative (which table cell, bar or trend supports the claim — or completes the table consistently?). Both are about the marriage of claims and their proof.',
+    intro: 'The digital the assessment quietly handed R&W students a lab instrument: informational graphics. **Command of Evidence** comes in two flavours — textual (which quotation or finding best supports a conclusion?) and quantitative (which table cell, bar or trend supports the claim — or completes the table consistently?). Both are about the marriage of claims and their proof.',
     objectives: [
       'Test each answer choice as a mini-premise for the stated conclusion',
       'Read tables and bar graphs for exact values, trends and comparisons',
@@ -442,7 +442,7 @@ export const satRwContent: SectionContent[] = [
         term: 'Claim–data marriage',
         kind: 'insight',
         statement: 'A claim is supported only by data that would be DIFFERENT if the claim were false — data that discriminates between the claim and its rivals; data consistent with every rival explanation is not evidence.',
-        detail: 'This is the deep logic the SAT tests: a study finding "bees visited both flower types" does not support "bees prefer red flowers" — the finding fits preference for blue too. Look for the asymmetry: the right answer should be surprising under the negation of the claim.'
+        detail: 'This is the deep logic the assessment tests: a study finding "bees visited both flower types" does not support "bees prefer red flowers" — the finding fits preference for blue too. Look for the asymmetry: the right answer should be surprising under the negation of the claim.'
       }
     ],
     examples: [
@@ -504,7 +504,7 @@ export const satRwContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.3
   {
-    sectionId: 'sat-rw-d2-s3',
+    sectionId: 'eng-r2-s3',
     readingTime: 8,
     prerequisites: [
       'Central-idea and evidence skills (2.1, 2.2)',
@@ -521,7 +521,7 @@ export const satRwContent: SectionContent[] = [
       {
         term: 'Licensed conclusions',
         kind: 'definition',
-        statement: 'An inference is correct when it MUST be true given the passage — the strongest statement supported without adding any assumption; the SAT rewards logical necessity, not creativity.',
+        statement: 'An inference is correct when it MUST be true given the passage — the strongest statement supported without adding any assumption; the assessment rewards logical necessity, not creativity.',
         detail: 'Think of each passage as two or three premises with a slot after them. The correct answer is the least controversial sentence that could occupy the slot. If you can say "well, not necessarily" about a choice, it is out — that phrase is your elimination trigger.'
       },
       {
@@ -533,14 +533,14 @@ export const satRwContent: SectionContent[] = [
       {
         term: 'The contrapositive move',
         kind: 'method',
-        statement: 'From "if P then Q" you may validly infer "if not-Q then not-P"; you may NOT infer "if Q then P" (converse) or "if not-P then not-Q" (inverse) — the SAT builds distractors from exactly these two fallacies.',
+        statement: 'From "if P then Q" you may validly infer "if not-Q then not-P"; you may NOT infer "if Q then P" (converse) or "if not-P then not-Q" (inverse) — the assessment builds distractors from exactly these two fallacies.',
         detail: 'Passage: "If a manuscript used the iron-gall ink, it predates 1600." Correct inference: a manuscript dated 1700 did not use iron-gall ink. Wrong: a pre-1600 manuscript used iron-gall (converse — other inks existed); wrong: post-1600 manuscripts never used iron gall elsewhere (inverse + scope stretch).'
       },
       {
         term: 'Numerical inference discipline',
         kind: 'method',
         statement: 'When premises carry numbers, correct inferences respect interval logic: "more than 30" excludes exactly 30; "at least half" includes exactly half; combined premises bound, never pinpoint, unless arithmetic forces it.',
-        detail: 'Classic SAT pattern: "The archive holds 2,400 letters; more than half were catalogued before 1990; exactly 1,100 are from artists." From these: at least 1,201 catalogued early, so at most 1,199 late; letters from non-artists = 1,300 exactly. Choices offering "exactly 1,250 early" or "most letters are from artists" fail the arithmetic. Translate statements into inequalities on scratch paper.'
+        detail: 'Classic the assessment pattern: "The archive holds 2,400 letters; more than half were catalogued before 1990; exactly 1,100 are from artists." From these: at least 1,201 catalogued early, so at most 1,199 late; letters from non-artists = 1,300 exactly. Choices offering "exactly 1,250 early" or "most letters are from artists" fail the arithmetic. Translate statements into inequalities on scratch paper.'
       }
     ],
     examples: [
@@ -570,7 +570,7 @@ export const satRwContent: SectionContent[] = [
     keyTakeaways: [
       'Correct = must be true, no added assumptions; "not necessarily" eliminates.',
       'Qualifiers carry the answer — never let choices drop or upgrade them.',
-      'Contrapositive valid; converse and inverse are SAT bait.',
+      'Contrapositive valid; converse and inverse are the assessment bait.',
       'Translate numeric premises into inequalities before comparing choices.'
     ],
     quiz: [
@@ -602,7 +602,7 @@ export const satRwContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.1
   {
-    sectionId: 'sat-rw-d3-s1',
+    sectionId: 'eng-r3-s1',
     readingTime: 9,
     prerequisites: [
       'Recognising independent versus dependent clauses',
@@ -620,13 +620,13 @@ export const satRwContent: SectionContent[] = [
         term: 'The independence test',
         kind: 'method',
         statement: 'Cover one side of the junction and read the other alone: if it could stand as a sentence (subject + conjugated verb + complete thought), it is an **independent clause**; if it leans ("because...", "which...", "walking to school"), it is a fragment on its own.',
-        detail: 'Everything in Boundaries flows from this test. IC + IC requires a real join (,FANBOYS / ; / .). IC + fragment tolerates no boundary punctuation between them. Run-ons and comma splices are simply the two illegal ways of refusing this rule — the two most tested errors on the SAT.'
+        detail: 'Everything in Boundaries flows from this test. IC + IC requires a real join (,FANBOYS / ; / .). IC + fragment tolerates no boundary punctuation between them. Run-ons and comma splices are simply the two illegal ways of refusing this rule — the two most tested errors on the assessment.'
       },
       {
         term: 'FANBOYS and semicolons',
         kind: 'law',
         statement: 'Two independent clauses may be joined by a **comma followed by a coordinating conjunction** (for, and, nor, but, or, yet, so) or by a **semicolon alone**; a comma alone is a splice, nothing is a run-on.',
-        detail: 'The semicolon implies close logical connection — a fine stylistic choice the SAT tests directly. Colons may also join ICs when the second explains the first, but only after a complete sentence. Watch for the "comma + conjunctive adverb" trap: "however, therefore, moreover" are NOT FANBOYS — they need a semicolon before them ("...; however, ...").'
+        detail: 'The semicolon implies close logical connection — a fine stylistic choice the assessment tests directly. Colons may also join ICs when the second explains the first, but only after a complete sentence. Watch for the "comma + conjunctive adverb" trap: "however, therefore, moreover" are NOT FANBOYS — they need a semicolon before them ("...; however, ...").'
       },
       {
         term: 'Supplements and interrupters',
@@ -638,7 +638,7 @@ export const satRwContent: SectionContent[] = [
         term: 'Unwanted punctuation',
         kind: 'insight',
         statement: 'A correct boundary answer sometimes adds NOTHING: subject-verb-object needs no comma between subject and verb, no comma before a direct object, and no punctuation splitting verb from its required complement.',
-        detail: 'The SAT loves a comma between a long subject and its verb ("The biologist who spent decades in Antarctica, discovered...") — always wrong. Equally beloved: a comma cordoning off a necessary "that" clause. When in doubt, read the sentence aloud: breath needs are not punctuation rules, but friction usually marks a boundary error.'
+        detail: 'The assessment loves a comma between a long subject and its verb ("The biologist who spent decades in Antarctica, discovered...") — always wrong. Equally beloved: a comma cordoning off a necessary "that" clause. When in doubt, read the sentence aloud: breath needs are not punctuation rules, but friction usually marks a boundary error.'
       }
     ],
     examples: [
@@ -682,7 +682,7 @@ export const satRwContent: SectionContent[] = [
         q: '"However", "therefore" and "moreover" join two independent clauses only when preceded by',
         options: ['a comma', 'a semicolon (or period)', 'a colon', 'no punctuation'],
         answer: 1,
-        explanation: 'Step 1: These are conjunctive adverbs, not conjunctions. Step 2: They cannot legally follow a bare comma between ICs. Step 3: The rule: "...; however, ..." or "... . Therefore, ...". Step 4: A comma before "however" mid-splice is the SAT\u2019s most-planted trap.'
+        explanation: 'Step 1: These are conjunctive adverbs, not conjunctions. Step 2: They cannot legally follow a bare comma between ICs. Step 3: The rule: "...; however, ..." or "... . Therefore, ...". Step 4: A comma before "however" mid-splice is the assessment\u2019s most-planted trap.'
       },
       {
         q: 'A long subject must never be separated from its verb by',
@@ -700,13 +700,13 @@ export const satRwContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.2
   {
-    sectionId: 'sat-rw-d3-s2',
+    sectionId: 'eng-r3-s2',
     readingTime: 9,
     prerequisites: [
       'Subject–verb identification under intervening phrases',
       'Pronoun basics: antecedent, case, agreement',
     ],
-    intro: 'The second Conventions skill polishes the inside of sentences: **Form, Structure, and Sense**. The SAT plants agreement, tense, pronoun and modifier traps inside otherwise fluent prose, then asks which choice makes the text conform. Because the errors hide between the subject you see and the verb you reach, the discipline is structural: find the true grammatical core before judging any form.',
+    intro: 'The second Conventions skill polishes the inside of sentences: **Form, Structure, and Sense**. The assessment plants agreement, tense, pronoun and modifier traps inside otherwise fluent prose, then asks which choice makes the text conform. Because the errors hide between the subject you see and the verb you reach, the discipline is structural: find the true grammatical core before judging any form.',
     objectives: [
       'Match verbs to true subjects across intervening phrases and indefinite pronouns',
       'Keep tense, mood and voice consistent with the passage\u2019s temporal frame',
@@ -718,13 +718,13 @@ export const satRwContent: SectionContent[] = [
         term: 'Cross-out the prepositional phrase',
         kind: 'method',
         statement: 'To find the true subject, mentally delete every phrase between subject and verb: "The collection of rare stamps (was/were) sold" — cross out "of rare stamps" — the subject is "collection", singular: **was**.',
-        detail: 'Intervening plural nouns are the SAT\u2019s favourite camouflage. Also immune to camouflage: indefinite pronouns — each, every, either, neither, anyone, everyone, somebody, nobody — are ALWAYS singular; "none" and "some" match their noun of reference. "Either of the routes is passable." Memorise the singular list cold.'
+        detail: 'Intervening plural nouns are the assessment\u2019s favourite camouflage. Also immune to camouflage: indefinite pronouns — each, every, either, neither, anyone, everyone, somebody, nobody — are ALWAYS singular; "none" and "some" match their noun of reference. "Either of the routes is passable." Memorise the singular list cold.'
       },
       {
         term: 'Tense and consistency logic',
         kind: 'law',
         statement: 'Verb tense must fit the passage\u2019s time frame and stay consistent unless a genuine time shift occurs; historical commentary uses present tense ("the author argues"), while narrated events follow their own sequence (past perfect for the earlier of two past events).',
-        detail: 'The digital SAT tests tense mainly through consistency and logic: a paragraph in past tense suddenly offering "will" needs cause. Watch perfect forms: "had painted" only when another past event follows as a reference point. Conditional pairs: "If the funding were approved, the dig would proceed" — hypothetical = were + would.'
+        detail: 'The digital the assessment tests tense mainly through consistency and logic: a paragraph in past tense suddenly offering "will" needs cause. Watch perfect forms: "had painted" only when another past event follows as a reference point. Conditional pairs: "If the funding were approved, the dig would proceed" — hypothetical = were + would.'
       },
       {
         term: 'Pronoun agreement and case',
@@ -735,7 +735,7 @@ export const satRwContent: SectionContent[] = [
       {
         term: 'Modifiers and frequently confused forms',
         kind: 'definition',
-        statement: 'A modifier sits next to what it describes — a dangling or misplaced modifier describes the wrong noun; and the SAT\u2019s lexical traps: its/it\u2019s, their/there/they\u2019re, your/you\u2019re, whose/who\u2019s, fewer (countable) vs less (uncountable), comparative vs superlative.',
+        statement: 'A modifier sits next to what it describes — a dangling or misplaced modifier describes the wrong noun; and the assessment\u2019s lexical traps: its/it\u2019s, their/there/they\u2019re, your/you\u2019re, whose/who\u2019s, fewer (countable) vs less (uncountable), comparative vs superlative.',
         detail: 'Dangling test: the noun after the opening participle must be its doer — "Walking through the museum, the paintings amazed her" fails (paintings don\u2019t walk). Comparative vs superlative: two items \u2192 -er/more; three or more \u2192 -est/most. "Between the two routes, the shorter one..." — never "shortest" of two. Countability: fewer delays, less traffic.'
       }
     ],
@@ -798,7 +798,7 @@ export const satRwContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.1
   {
-    sectionId: 'sat-rw-d4-s1',
+    sectionId: 'eng-r4-s1',
     readingTime: 8,
     prerequisites: [
       'Clause relationships: addition, contrast, cause–effect (Boundaries helps here)',
@@ -807,7 +807,7 @@ export const satRwContent: SectionContent[] = [
     intro: 'Transitions are logical hinges: one blank, and the whole sentence must swing the right way. **Transitions** items give two statements and four candidate connectors — "however", "therefore", "in other words", "for example" — and exactly one matches the TRUE relationship between the statements. The discipline: name the relationship before shopping for the word.',
     objectives: [
       'Classify the statement pair\u2019s logical relationship before reading choices',
-      'Master the SAT\u2019s transition families: addition, contrast, cause–effect, exemplification, emphasis, sequence, restatement',
+      'Master the assessment\u2019s transition families: addition, contrast, cause–effect, exemplification, emphasis, sequence, restatement',
       'Detect scope mismatches: contrast words before agreeing statements, additions between opposites',
       'Distinguish near-synonymous transitions by their exact logical contracts',
     ],
@@ -822,12 +822,12 @@ export const satRwContent: SectionContent[] = [
         term: 'The transition families',
         kind: 'notation',
         statement: '**Addition** (moreover, furthermore, in addition, also); **contrast** (however, nevertheless, on the contrary, in contrast, still); **cause–effect** (therefore, thus, consequently, as a result, hence); **exemplification** (for example, for instance, specifically); **restatement** (in other words, that is, namely); **sequence** (first, then, finally, subsequently); **emphasis** (indeed, in fact).',
-        detail: 'The SAT\u2019s favourite confusions sit INSIDE families: "on the contrary" contradicts a negative statement and substitutes the truth — stronger than "however"\u2019s mere contrast; "for instance" introduces an example while "namely" introduces a specification of something already named. Learn the contracts, not just the vibes.'
+        detail: 'The assessment\u2019s favourite confusions sit INSIDE families: "on the contrary" contradicts a negative statement and substitutes the truth — stronger than "however"\u2019s mere contrast; "for instance" introduces an example while "namely" introduces a specification of something already named. Learn the contracts, not just the vibes.'
       },
       {
         term: 'Contrast versus concession',
         kind: 'insight',
-        statement: '"However" signals that statement 2 pushes back on statement 1; "admittedly"/"granted" signal that statement 2 CONCEDES before an implied rebuttal — the SAT tests this directionality by placing the pivot word mid-argument.',
+        statement: '"However" signals that statement 2 pushes back on statement 1; "admittedly"/"granted" signal that statement 2 CONCEDES before an implied rebuttal — the assessment tests this directionality by placing the pivot word mid-argument.',
         detail: 'Read the pair with the pivot blanked: "The evidence is voluminous. ___ , it is circumstantial." The second statement LIMITS the first — that is concession-contrast: "However"/"Nevertheless"/"Granted" all fit; "Moreover" (addition) and "Therefore" (consequence) break the logic. Direction is decided by which statement is the point and which is the pressure.'
       },
       {
@@ -896,13 +896,13 @@ export const satRwContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.2
   {
-    sectionId: 'sat-rw-d4-s2',
+    sectionId: 'eng-r4-s2',
     readingTime: 8,
     prerequisites: [
       'Sentence-combining practice from Boundaries (3.1)',
       'Concision instinct: spotting redundancy',
     ],
-    intro: 'The final R&W skill is the most practical: you receive a student\u2019s bullet-point notes and a rhetorical goal — "emphasise the contrast", "present the finding and its limitation", "introduce the artist with her signature technique" — and must craft the ONE sentence that uses the right notes, in the right order, with no fluff. It is writing under orders, the SAT\u2019s miniature editorship.',
+    intro: 'The final R&W skill is the most practical: you receive a student\u2019s bullet-point notes and a rhetorical goal — "emphasise the contrast", "present the finding and its limitation", "introduce the artist with her signature technique" — and must craft the ONE sentence that uses the right notes, in the right order, with no fluff. It is writing under orders, the assessment\u2019s miniature editorship.',
     objectives: [
       'Parse the rhetorical goal before reading the notes or choices',
       'Select only the note content the goal requires — no more, no less',
@@ -926,13 +926,13 @@ export const satRwContent: SectionContent[] = [
         term: 'Emphasis placement',
         kind: 'insight',
         statement: 'English grants end-position and main-clause status the greatest emphasis; goals like "highlight the surprise" are met by putting the surprising content in the main clause (or at the end), not in a subordinate "although..." pocket.',
-        detail: 'Compare: "Although the manuscript was unsigned, scholars attribute it to the monastery\u2019s best scribe" (emphasis on attribution) versus "Although scholars attribute it to the monastery\u2019s best scribe, the manuscript is unsigned" (emphasis on anonymity). Same facts, opposite spotlights — the SAT grades the spotlight, not the facts.'
+        detail: 'Compare: "Although the manuscript was unsigned, scholars attribute it to the monastery\u2019s best scribe" (emphasis on attribution) versus "Although scholars attribute it to the monastery\u2019s best scribe, the manuscript is unsigned" (emphasis on anonymity). Same facts, opposite spotlights — the assessment grades the spotlight, not the facts.'
       },
       {
         term: 'Concision and redundancy',
         kind: 'method',
         statement: 'Among choices that achieve the goal, the shortest complete one wins; redundancy patterns include doubled synonyms ("end result", "plan ahead for the future"), restated ideas, and empty openers ("It is a fact that...").',
-        detail: 'Concision is not brevity at all costs — a choice that is shorter but drops a goal-required note loses to a longer complete one. The rule: shortest among ADEQUATE options. Common SAT redundancies: "annual per-year", "past history", "combine together", "basic fundamentals". Also eliminate meta-language ("this essay will discuss...") in favour of direct statement.'
+        detail: 'Concision is not brevity at all costs — a choice that is shorter but drops a goal-required note loses to a longer complete one. The rule: shortest among ADEQUATE options. Common the assessment redundancies: "annual per-year", "past history", "combine together", "basic fundamentals". Also eliminate meta-language ("this essay will discuss...") in favour of direct statement.'
       }
     ],
     examples: [

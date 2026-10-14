@@ -3,27 +3,27 @@ import type { SectionContent } from '../library'
 // ============================================================================
 // JEE (Main) 2026 Physics — master lesson content (high-weightage sections)
 // Full SectionContent lessons for ten sections across Units 2–18 of the
-// official NTA syllabus (bookId 'jeemain-physics-2026'): kinematics (2.1,
+// official NTA syllabus (bookId 'phys-master'): kinematics (2.1,
 // 2.2), laws of motion (3.1), work and power (4.1), centre of mass and
 // rotational basics (5.1), zeroth law of thermodynamics (8.1), charges and
 // Coulomb's law (11.1), current/drift velocity/Ohm's law (12.1), reflection
 // and spherical mirrors (16.1), and atomic models + hydrogen spectrum (18.1).
 // Every lesson carries prerequisites, intro, objectives, concepts, worked
 // JEE-PYQ-style examples, key takeaways and a 4-question quiz. Style follows
-// the jeemaths-ch01 exemplar: KaTeX formulas ($...$, $$...$$), sign-
+// the advmath-ch01 exemplar: KaTeX formulas ($...$, $$...$$), sign-
 // convention drills, dimensional habits, common traps and PYQ patterns.
 // ============================================================================
 
 export const jeemainPhyContent: SectionContent[] = [
   // ---------------------------------------------------------------- 2.1
   {
-    sectionId: 'jeemain-phy-u2-s1',
+    sectionId: 'phys-m2-s1',
     readingTime: 9,
     prerequisites: [
-      'SI units and dimensional thinking from Unit 1 (section jeemain-phy-u1-s1)',
+      'SI units and dimensional thinking from Unit 1 (section phys-m1-s1)',
       'School algebra: reading straight-line graphs and solving linear equations',
     ],
-    intro: 'Motion is meaningless until you say who is watching: a passenger seated in a moving train is at rest in the train frame yet moving at 90 km/h in the ground frame. A **frame of reference** — axes plus a clock — is therefore the silent first input of every kinematics problem, and the position–time graph $x(t)$ is its picture. This section fixes the vocabulary of one-dimensional motion: distance versus displacement, average speed versus average and instantaneous velocity, and the graph-reading habits JEE Main tests every single year.',
+    intro: 'Motion is meaningless until you say who is watching: a passenger seated in a moving train is at rest in the train frame yet moving at 90 km/h in the ground frame. A **frame of reference** — axes plus a clock — is therefore the silent first input of every kinematics problem, and the position–time graph $x(t)$ is its picture. This section fixes the vocabulary of one-dimensional motion: distance versus displacement, average speed versus average and instantaneous velocity, and the graph-reading habits engineering assessment tests every single year.',
     objectives: [
       'Specify a frame of reference (origin + positive direction) before solving any straight-line motion problem',
       'Compute distance, displacement, average speed and average velocity for a given motion and order their magnitudes correctly',
@@ -35,13 +35,13 @@ export const jeemainPhyContent: SectionContent[] = [
         term: 'Frame of reference',
         kind: 'definition',
         statement: 'A **frame of reference** is a chosen origin, a set of axes and a clock relative to which the position $x(t)$ of a particle is specified; the same motion may look different from different frames.',
-        detail: 'A passenger at rest in a moving train has speed zero in the train frame but the train speed in the ground frame — position and velocity are always "with respect to" some frame. JEE Main questions implicitly use the ground frame unless stated otherwise: before substituting a single number, fix the origin, fix the $+$ direction, and never change either mid-solution.'
+        detail: 'A passenger at rest in a moving train has speed zero in the train frame but the train speed in the ground frame — position and velocity are always "with respect to" some frame. engineering assessment questions implicitly use the ground frame unless stated otherwise: before substituting a single number, fix the origin, fix the $+$ direction, and never change either mid-solution.'
       },
       {
         term: 'Position–time graph',
         kind: 'notation',
         statement: 'The **position–time graph** plots $x$ against $t$; its slope at any instant is the velocity, since $v = \\frac{dx}{dt}$.',
-        detail: 'A straight line means uniform motion (constant slope $= v$); a curve means non-uniform motion, with a steeper tangent meaning a faster particle. A horizontal line is a particle at rest, while a point where the tangent is horizontal is a turning point ($v = 0$, direction about to reverse). Reading slopes — not just shapes — is the graph skill JEE Main probes.'
+        detail: 'A straight line means uniform motion (constant slope $= v$); a curve means non-uniform motion, with a steeper tangent meaning a faster particle. A horizontal line is a particle at rest, while a point where the tangent is horizontal is a turning point ($v = 0$, direction about to reverse). Reading slopes — not just shapes — is the graph skill engineering assessment probes.'
       },
       {
         term: 'Distance and displacement',
@@ -121,13 +121,13 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.2
   {
-    sectionId: 'jeemain-phy-u2-s2',
+    sectionId: 'phys-m2-s2',
     readingTime: 10,
     prerequisites: [
-      'jeemain-phy-u2-s1 — frames of reference, position–time graphs, average versus instantaneous velocity',
+      'phys-m2-s1 — frames of reference, position–time graphs, average versus instantaneous velocity',
       'Basic algebra: solving quadratic equations that appear in vertical-motion problems',
     ],
-    intro: 'When acceleration is constant, velocity grows linearly and position traces a parabola, and three compact equations — $v = u + at$, $s = ut + \\frac{1}{2}at^2$ and $v^2 = u^2 + 2as$ — dispatch almost every one-dimensional JEE Main numerical. Graphs carry the same information in pictures: the slope of a v–t line is the acceleration and the area under it is the displacement. This section also installs the sign discipline for vertical motion that separates a correct answer from a sign-error trap.',
+    intro: 'When acceleration is constant, velocity grows linearly and position traces a parabola, and three compact equations — $v = u + at$, $s = ut + \\frac{1}{2}at^2$ and $v^2 = u^2 + 2as$ — dispatch almost every one-dimensional engineering assessment numerical. Graphs carry the same information in pictures: the slope of a v–t line is the acceleration and the area under it is the displacement. This section also installs the sign discipline for vertical motion that separates a correct answer from a sign-error trap.',
     objectives: [
       'Select and apply the appropriate kinematic equation to solve for any one of $u$, $v$, $a$, $s$, $t$ given the other quantities',
       'Compute displacement in the nth second using $s_n = u + \\frac{a(2n-1)}{2}$ and use the $1:3:5:7$ pattern for motion from rest',
@@ -151,13 +151,13 @@ export const jeemainPhyContent: SectionContent[] = [
         term: 'Displacement in the nth second',
         kind: 'method',
         statement: 'The displacement in the **nth second** is $$s_n = s(n) - s(n-1) = u + \\tfrac{a(2n-1)}{2},$$ the difference of the displacements in the first $n$ and first $n-1$ seconds.',
-        detail: 'From rest ($u = 0$) the successive-second displacements go as $1 : 3 : 5 : 7$, while total displacement grows as $n^2$. JEE Main wording like "distance in the 3rd second" means $s_3 = u + \\frac{5a}{2}$, not the distance in the first 3 seconds — read the ordinal carefully.'
+        detail: 'From rest ($u = 0$) the successive-second displacements go as $1 : 3 : 5 : 7$, while total displacement grows as $n^2$. engineering assessment wording like "distance in the 3rd second" means $s_3 = u + \\frac{5a}{2}$, not the distance in the first 3 seconds — read the ordinal carefully.'
       },
       {
         term: 'Graphs of uniformly accelerated motion',
         kind: 'insight',
         statement: 'On a **velocity–time graph** the slope is the acceleration and the area between the graph and the time axis is the displacement; on a position–time graph uniform acceleration appears as a parabola.',
-        detail: 'Area below the time axis counts as negative displacement; taking the area of a speed–time graph instead gives distance. For a piecewise-linear v–t graph, split it into trapeziums and triangles, compute each area and add with signs — a favourite JEE Main graph pattern.'
+        detail: 'Area below the time axis counts as negative displacement; taking the area of a speed–time graph instead gives distance. For a piecewise-linear v–t graph, split it into trapeziums and triangles, compute each area and add with signs — a favourite engineering assessment graph pattern.'
       },
       {
         term: 'Free fall and the sign convention',
@@ -225,13 +225,13 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.1
   {
-    sectionId: 'jeemain-phy-u3-s1',
+    sectionId: 'phys-m3-s1',
     readingTime: 10,
     prerequisites: [
-      'Kinematic equations for straight-line motion (jeemain-phy-u2-s2)',
+      'Kinematic equations for straight-line motion (phys-m2-s2)',
       'Vectors: magnitude, direction and component-wise addition'
     ],
-    intro: 'Newton\'s three laws convert the kinematics of Unit 2 into dynamics: the second law $\\vec{F}_{net} = \\frac{d\\vec{p}}{dt}$ is the master equation of mechanics, the first law defines the inertial frames in which it holds, and the third law explains everything from walking to rocket recoil. Momentum $\\vec{p} = m\\vec{v}$ and impulse $\\vec{J} = \\Delta\\vec{p}$ are the currency in which forces trade. Every JEE Main dynamics numerical begins with the same ritual — free-body diagram, axes, then $\\Sigma F = ma$ one axis at a time.',
+    intro: 'Newton\'s three laws convert the kinematics of Unit 2 into dynamics: the second law $\\vec{F}_{net} = \\frac{d\\vec{p}}{dt}$ is the master equation of mechanics, the first law defines the inertial frames in which it holds, and the third law explains everything from walking to rocket recoil. Momentum $\\vec{p} = m\\vec{v}$ and impulse $\\vec{J} = \\Delta\\vec{p}$ are the currency in which forces trade. Every engineering assessment dynamics numerical begins with the same ritual — free-body diagram, axes, then $\\Sigma F = ma$ one axis at a time.',
     objectives: [
       'State all three laws precisely, including the inertial-frame condition of the first two laws and the "different bodies" clause of the third',
       'Apply $\\Sigma\\vec{F} = m\\vec{a}$ axis by axis to single bodies, accelerating lifts and simple two-block systems',
@@ -339,13 +339,13 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.1
   {
-    sectionId: 'jeemain-phy-u4-s1',
+    sectionId: 'phys-m4-s1',
     readingTime: 9,
     prerequisites: [
-      'Newton\'s laws and free-body diagrams (jeemain-phy-u3-s1)',
+      'Newton\'s laws and free-body diagrams (phys-m3-s1)',
       'Basic integration — enough to integrate a linear function of position'
     ],
-    intro: 'Work $W = \\vec{F}\\cdot\\vec{s} = Fs\\cos\\theta$ is the energy a force deposits, and it cares only about the component of force along the displacement. When the force varies with position, the same idea becomes an integral — the area under the force–displacement graph. Power $P = \\frac{dW}{dt} = \\vec{F}\\cdot\\vec{v}$ rates that transfer in watts, and JEE Main loves testing exactly these three faces: dot product, graph area and the $Fv$ product.',
+    intro: 'Work $W = \\vec{F}\\cdot\\vec{s} = Fs\\cos\\theta$ is the energy a force deposits, and it cares only about the component of force along the displacement. When the force varies with position, the same idea becomes an integral — the area under the force–displacement graph. Power $P = \\frac{dW}{dt} = \\vec{F}\\cdot\\vec{v}$ rates that transfer in watts, and engineering assessment loves testing exactly these three faces: dot product, graph area and the $Fv$ product.',
     objectives: [
       'Compute the work done by a constant force, including the sign cases $\\theta < 90^\\circ$, $\\theta = 90^\\circ$ and $\\theta > 90^\\circ$',
       'Evaluate the work of a position-dependent force by integration or from the F–x graph area',
@@ -357,7 +357,7 @@ export const jeemainPhyContent: SectionContent[] = [
         term: 'Work by a constant force',
         kind: 'definition',
         statement: 'The **work done by a constant force** over a displacement $\\vec{s}$ is the scalar product $$W = \\vec{F}\\cdot\\vec{s} = Fs\\cos\\theta,$$ with SI unit joule ($1$ J $= 1$ N·m).',
-        detail: 'Only the force component along the displacement counts, and $\\cos\\theta$ fixes the sign: positive for $\\theta < 90^\\circ$, zero at $\\theta = 90^\\circ$, negative for $\\theta > 90^\\circ$. Work is a scalar — direction never attaches to it. Note that $W$ is frame-dependent: the same push does different work in the train frame than on the platform, though JEE Main almost always works in the ground frame.'
+        detail: 'Only the force component along the displacement counts, and $\\cos\\theta$ fixes the sign: positive for $\\theta < 90^\\circ$, zero at $\\theta = 90^\\circ$, negative for $\\theta > 90^\\circ$. Work is a scalar — direction never attaches to it. Note that $W$ is frame-dependent: the same push does different work in the train frame than on the platform, though engineering assessment almost always works in the ground frame.'
       },
       {
         term: 'Zero-work situations',
@@ -381,7 +381,7 @@ export const jeemainPhyContent: SectionContent[] = [
         term: 'The kilowatt-hour and unit hygiene',
         kind: 'insight',
         statement: 'The commercial unit of energy is the **kilowatt-hour**: $1$ kWh $=$ energy delivered at 1 kW for one hour $= 3.6\\times10^6$ J.',
-        detail: 'The kWh is energy even though it smells of power — the classic unit trap. A 2 kW heater run for 3 h consumes 6 kWh $= 2.16\\times10^7$ J. In JEE Main numericals, convert everything to SI before substituting and convert back only at the very end.'
+        detail: 'The kWh is energy even though it smells of power — the classic unit trap. A 2 kW heater run for 3 h consumes 6 kWh $= 2.16\\times10^7$ J. In engineering assessment numericals, convert everything to SI before substituting and convert back only at the very end.'
       }
     ],
     examples: [
@@ -443,11 +443,11 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 5.1
   {
-    sectionId: 'jeemain-phy-u5-s1',
+    sectionId: 'phys-m5-s1',
     readingTime: 10,
     prerequisites: [
-      'Newton\'s laws and free-body diagrams (jeemain-phy-u3-s1)',
-      'Kinematic equations for constant acceleration (jeemain-phy-u2-s2)',
+      'Newton\'s laws and free-body diagrams (phys-m3-s1)',
+      'Kinematic equations for constant acceleration (phys-m2-s2)',
       'Radians, arc length $s = r\\theta$, and basic integration'
     ],
     intro: 'The centre of mass $\\vec{r}_{cm} = \\frac{\\sum m_i \\vec{r}_i}{\\sum m_i}$ is the mass-weighted average position of a system — the single point that moves as if all the mass and the whole net external force were concentrated there. Rotation adds a parallel set of variables: angle $\\theta$, angular velocity $\\omega = \\frac{d\\theta}{dt}$, angular acceleration $\\alpha$, and the torque $\\tau = rF\\sin\\theta$ that changes them. This section sets up both languages, which the rest of Unit 5 and Unit 6 use to crack rigid bodies and rolling.',
@@ -553,13 +553,13 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 8.1
   {
-    sectionId: 'jeemain-phy-u8-s1',
+    sectionId: 'phys-m8-s1',
     readingTime: 8,
     prerequisites: [
       'The molecular picture of matter — solids, liquids, gases as collections of particles',
-      'Energy and work concepts from Unit 4 (jeemain-phy-u4-s1)'
+      'Energy and work concepts from Unit 4 (phys-m4-s1)'
     ],
-    intro: 'Temperature is the property two bodies share when, placed in contact through a conducting wall, nothing happens anymore — no net heat flows. That "nothing happens" state is **thermal equilibrium**, and the zeroth law asserts it is transitive: if A is in equilibrium with C and B is in equilibrium with C, then A is in equilibrium with B. This deceptively obvious statement is what makes thermometers and the very concept of temperature meaningful, and JEE Main tests it through thermometry and heat-flow-direction questions.',
+    intro: 'Temperature is the property two bodies share when, placed in contact through a conducting wall, nothing happens anymore — no net heat flows. That "nothing happens" state is **thermal equilibrium**, and the zeroth law asserts it is transitive: if A is in equilibrium with C and B is in equilibrium with C, then A is in equilibrium with B. This deceptively obvious statement is what makes thermometers and the very concept of temperature meaningful, and engineering assessment tests it through thermometry and heat-flow-direction questions.',
     objectives: [
       'Define thermal equilibrium and distinguish it from full thermodynamic equilibrium',
       'State the zeroth law and use its transitivity to certify that a thermometer reading one body also characterises another',
@@ -672,13 +672,13 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 11.1
   {
-    sectionId: 'jeemain-phy-u11-s1',
+    sectionId: 'phys-m11-s1',
     readingTime: 10,
     prerequisites: [
       'Vector addition from Unit 2 — forces as vectors resolved into components',
       'Newton\u2019s second law $\\Sigma \\vec{F} = m\\vec{a}$ to link electrostatic force to motion',
     ],
-    intro: 'Electrostatics begins with a surprisingly strong inverse-square law: two point charges pull (or push) each other with a force that grows as the square of their magnitudes and collapses as the square of their separation. **Coulomb\u2019s law** plus the **superposition principle** — each pair interacts independently — is the whole engine of Unit 11, and JEE Main drills it through equilibrium of hanging charges, deflection of one charge by a symmetric pair, and fraction-transfer problems.',
+    intro: 'Electrostatics begins with a surprisingly strong inverse-square law: two point charges pull (or push) each other with a force that grows as the square of their magnitudes and collapses as the square of their separation. **Coulomb\u2019s law** plus the **superposition principle** — each pair interacts independently — is the whole engine of Unit 11, and engineering assessment drills it through equilibrium of hanging charges, deflection of one charge by a symmetric pair, and fraction-transfer problems.',
     objectives: [
       'Apply Coulomb\u2019s law $F = \\frac{k q_1 q_2}{r^2}$ with $k = \\frac{1}{4\\pi\\varepsilon_0} = 9 \\times 10^9$ in SI units, keeping signs for direction',
       'Use superposition to find the net force on a charge from several others, vector-component by vector-component',
@@ -702,13 +702,13 @@ export const jeemainPhyContent: SectionContent[] = [
         term: 'Superposition principle',
         kind: 'law',
         statement: 'The net force on a charge due to a collection of charges is the **vector sum** of the forces each would exert alone: $\\vec{F}_{\\text{net}} = \\vec{F}_1 + \\vec{F}_2 + \\dots$',
-        detail: 'Pairwise interactions are untouched by the presence of others — there is no shielding between pairs. The standard JEE pattern: a charge at the centre (or a vertex) of a symmetric polygon of equal charges; by symmetry all but one direction cancels, so the survivor is along the bisector. Always draw the free-body diagram before algebra.'
+        detail: 'Pairwise interactions are untouched by the presence of others — there is no shielding between pairs. The standard engineering assessment pattern: a charge at the centre (or a vertex) of a symmetric polygon of equal charges; by symmetry all but one direction cancels, so the survivor is along the bisector. Always draw the free-body diagram before algebra.'
       },
       {
         term: 'Continuous charge distribution',
         kind: 'definition',
         statement: 'Charge spread over a line, surface or volume is described by densities $\\lambda = \\frac{dq}{dl}$, $\\sigma = \\frac{dq}{dA}$, $\\rho = \\frac{dq}{dV}$, and its effect is found by **integrating** Coulomb contributions $dF = \\frac{k q\\,dq}{r^2}$.',
-        detail: 'A ring\u2019s field on its axis, a line\u2019s nearby field and a shell\u2019s exterior field ($\\sigma R^2/\\varepsilon_0 r^2$, acting as if all charge sat at the centre) are the classics. JEE Main mostly tests the shell result and the setup, not brutal integration — but you must know which element produces which $dq$.'
+        detail: 'A ring\u2019s field on its axis, a line\u2019s nearby field and a shell\u2019s exterior field ($\\sigma R^2/\\varepsilon_0 r^2$, acting as if all charge sat at the centre) are the classics. engineering assessment mostly tests the shell result and the setup, not brutal integration — but you must know which element produces which $dq$.'
       },
       {
         term: 'Equilibrium of charged systems',
@@ -776,13 +776,13 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 12.1
   {
-    sectionId: 'jeemain-phy-u12-s1',
+    sectionId: 'phys-m12-s1',
     readingTime: 10,
     prerequisites: [
       'Coulomb\u2019s law and the idea of electric field (Unit 11)',
       'Basic vectors and Newton\u2019s second law for drift-motion reasoning',
     ],
-    intro: 'Current is not charge sitting still — it is charge marching. In a metal, free electrons wander randomly at enormous thermal speeds yet carry no net transport until an electric field biases their drift, producing a collective velocity of mere millimetres per second that lights entire cities. **Drift velocity**, **mobility**, **Ohm\u2019s law** and the shape of $I$–$V$ curves form the microscopic-to-macroscopic bridge JEE Main tests with $I = neAv_d$ and resistivity reasoning every year.',
+    intro: 'Current is not charge sitting still — it is charge marching. In a metal, free electrons wander randomly at enormous thermal speeds yet carry no net transport until an electric field biases their drift, producing a collective velocity of mere millimetres per second that lights entire cities. **Drift velocity**, **mobility**, **Ohm\u2019s law** and the shape of $I$–$V$ curves form the microscopic-to-macroscopic bridge engineering assessment tests with $I = neAv_d$ and resistivity reasoning every year.',
     objectives: [
       'Define current $I = \\frac{dq}{dt}$ and compute charge transported in time or from a charge–time graph',
       'Connect drift velocity to current via $I = neAv_d$ and estimate $v_d$ for realistic copper wires',
@@ -812,7 +812,7 @@ export const jeemainPhyContent: SectionContent[] = [
         term: 'Resistance, resistivity and relaxation time',
         kind: 'law',
         statement: 'Resistance $R = \\frac{\\rho l}{A}$ with resistivity $\\rho = \\frac{m}{ne^2\\tau}$ — set by the electron density and the mean time $\\tau$ between collisions.',
-        detail: 'Temperature rise in a metal increases lattice vibration, shortens $\\tau$, raises $\\rho$: metals heat up and resist more; semiconductors release extra carriers, so their resistivity falls. The product $\\rho\\sigma$-style limits and the temperature formula $\\rho_T \\approx \\rho_0(1 + \\alpha \\Delta T)$ appear in JEE Main numerically — remember $\\alpha$ is per kelvin and small ($\\sim 4 \\times 10^{-3}$/K for copper).'
+        detail: 'Temperature rise in a metal increases lattice vibration, shortens $\\tau$, raises $\\rho$: metals heat up and resist more; semiconductors release extra carriers, so their resistivity falls. The product $\\rho\\sigma$-style limits and the temperature formula $\\rho_T \\approx \\rho_0(1 + \\alpha \\Delta T)$ appear in engineering assessment numerically — remember $\\alpha$ is per kelvin and small ($\\sim 4 \\times 10^{-3}$/K for copper).'
       },
       {
         term: 'Current density',
@@ -880,13 +880,13 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 16.1
   {
-    sectionId: 'jeemain-phy-u16-s1',
+    sectionId: 'phys-m16-s1',
     readingTime: 9,
     prerequisites: [
       'Geometry of similar triangles (for ray diagrams)',
       'Straight-line equations (for locating images algebraically)',
     ],
-    intro: 'Reflection is light obeying a mirror: the angle it leaves equals the angle it arrived, and a spherical mirror turns that rule into a focusing machine. The **mirror formula** $\\frac{1}{v} + \\frac{1}{u} = \\frac{1}{f}$ with $f = \\frac{R}{2}$, the sign convention that powers it, and the three classic rays for drawing images are the toolkit — JEE Main rewards students who treat the sign convention as a religion and checks it through image-position and magnification problems.',
+    intro: 'Reflection is light obeying a mirror: the angle it leaves equals the angle it arrived, and a spherical mirror turns that rule into a focusing machine. The **mirror formula** $\\frac{1}{v} + \\frac{1}{u} = \\frac{1}{f}$ with $f = \\frac{R}{2}$, the sign convention that powers it, and the three classic rays for drawing images are the toolkit — engineering assessment rewards students who treat the sign convention as a religion and checks it through image-position and magnification problems.',
     objectives: [
       'State and apply the law of reflection with the normal defined correctly for plane and spherical surfaces',
       'Use the Cartesian sign convention consistently for concave and convex mirrors',
@@ -910,7 +910,7 @@ export const jeemainPhyContent: SectionContent[] = [
         term: 'Cartesian sign convention',
         kind: 'notation',
         statement: 'All distances are measured **from the pole**: along the incident-light direction as positive $x$ (usually towards the object), heights **above the principal axis positive**; then for a real object $u < 0$, concave $f < 0$, convex $f > 0$, real images $v < 0$, virtual images $v > 0$.',
-        detail: 'This is where marks are won and lost. The JEE convention (object on the left, light travelling right, distances measured from P, positive leftwards for $u$) makes $u$ negative for real objects and concave focal lengths negative. Write the convention at the top of your solution sheet, substitute with signs, and interpret the sign of the answer — negative $v$ means a real image in front of the mirror.'
+        detail: 'This is where marks are won and lost. The engineering assessment convention (object on the left, light travelling right, distances measured from P, positive leftwards for $u$) makes $u$ negative for real objects and concave focal lengths negative. Write the convention at the top of your solution sheet, substitute with signs, and interpret the sign of the answer — negative $v$ means a real image in front of the mirror.'
       },
       {
         term: 'Mirror formula and magnification',
@@ -984,13 +984,13 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 18.1
   {
-    sectionId: 'jeemain-phy-u18-s1',
+    sectionId: 'phys-m18-s1',
     readingTime: 11,
     prerequisites: [
       'Circular motion and centripetal force $\\frac{mv^2}{r}$ (Unit 3/10)',
       'Energy of a photon $E = h\\nu$ (needed to interpret spectral lines)',
     ],
-    intro: 'Rutherford\u2019s alpha particles fired at gold foil came back bouncing — "as if you fired a 15-inch shell at tissue paper and it came back". The atom, he concluded, is a tiny dense positive nucleus with electrons orbiting far out. Classical electromagnetism doomed that picture (orbiting electrons should radiate away and spiral in), and Bohr\u2019s bold quantisation rescued it: only special radii and energies are allowed, and light is born in the jumps between them. The **hydrogen spectrum** — one formula explaining a dozen visible lines — remains JEE Main\u2019s favourite modern-physics calculation.',
+    intro: 'Rutherford\u2019s alpha particles fired at gold foil came back bouncing — "as if you fired a 15-inch shell at tissue paper and it came back". The atom, he concluded, is a tiny dense positive nucleus with electrons orbiting far out. Classical electromagnetism doomed that picture (orbiting electrons should radiate away and spiral in), and Bohr\u2019s bold quantisation rescued it: only special radii and energies are allowed, and light is born in the jumps between them. The **hydrogen spectrum** — one formula explaining a dozen visible lines — remains engineering assessment\u2019s favourite modern-physics calculation.',
     objectives: [
       'Describe the Geiger–Marsden experiment and the nuclear-model conclusions drawn from it',
       'State Bohr\u2019s postulates and derive the allowed radii $r_n = 0.529\\,n^2$ \u00c5 and energies $E_n = -\\frac{13.6}{n^2}$ eV for hydrogen',
@@ -1014,13 +1014,13 @@ export const jeemainPhyContent: SectionContent[] = [
         term: 'Rydberg formula and the spectral series',
         kind: 'law',
         statement: 'A transition $n_2 \\to n_1$ emits wavelength $\\frac{1}{\\lambda} = R Z^2\\left(\\frac{1}{n_1^2} - \\frac{1}{n_2^2}\\right)$ with $R = 1.097 \\times 10^7$ m\u207b\u00b9; $n_1 = 1$ gives the Lyman series (UV), $n_1 = 2$ Balmer (visible), $n_1 = 3$ Paschen (IR).',
-        detail: 'The Balmer series is the visible fingerprint: H\u03b1 656 nm (red, $3\\to2$), H\u03b2 486 nm ($4\\to2$), and the series limit 364.6 nm ($\\infty \\to 2$). Series limits and convergence are favourite JEE numericals; remember the pattern — larger $n_2$ crowds lines towards the limit, and Lyman lines are the most energetic since they land on the deepest level.'
+        detail: 'The Balmer series is the visible fingerprint: H\u03b1 656 nm (red, $3\\to2$), H\u03b2 486 nm ($4\\to2$), and the series limit 364.6 nm ($\\infty \\to 2$). Series limits and convergence are favourite engineering assessment numericals; remember the pattern — larger $n_2$ crowds lines towards the limit, and Lyman lines are the most energetic since they land on the deepest level.'
       },
       {
         term: 'Energy-level bookkeeping',
         kind: 'method',
         statement: 'Level energies of hydrogen: $E_1 = -13.6$, $E_2 = -3.4$, $E_3 = -1.51$, $E_4 = -0.85$ eV; ionisation from level $n$ costs $\\frac{13.6}{n^2}$ eV, and transition energy is the difference $E_{n_2} - E_{n_1}$.',
-        detail: 'The $1/n^2$ spacing means the first excitation of hydrogen ($1 \\to 2$) is 10.2 eV while ionisation is 13.6 eV — 40% more. For He\u207a ($Z=2$) every energy quadruples: ionisation 54.4 eV. Photon counting: a gas excited to level $n$ can emit $\\frac{n(n-1)}{2}$ distinct lines as electrons cascade — the combinatorics question JEE loves (level 4 \u2192 6 lines, of which 3 are Balmer-visible).'
+        detail: 'The $1/n^2$ spacing means the first excitation of hydrogen ($1 \\to 2$) is 10.2 eV while ionisation is 13.6 eV — 40% more. For He\u207a ($Z=2$) every energy quadruples: ionisation 54.4 eV. Photon counting: a gas excited to level $n$ can emit $\\frac{n(n-1)}{2}$ distinct lines as electrons cascade — the combinatorics question engineering assessment loves (level 4 \u2192 6 lines, of which 3 are Balmer-visible).'
       },
       {
         term: 'Orbital mechanics in Bohr orbits',

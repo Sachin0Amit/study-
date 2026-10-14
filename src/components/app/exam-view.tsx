@@ -350,7 +350,7 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
           <div className="absolute inset-0 sv-hero-glow opacity-40" />
           <div className="relative">
             <div className="inline-flex items-center gap-2 rounded-full border border-rose-400/25 bg-rose-400/10 px-3.5 py-1.5 text-xs font-semibold text-rose-300">
-              <ClipboardCheck className="h-3.5 w-3.5" /> Exam simulator · {POOL.length} question bank
+              <ClipboardCheck className="h-3.5 w-3.5" /> Test simulator · {POOL.length} question bank
             </div>
             <h1 className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl">Test yourself like it&apos;s the real thing</h1>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
@@ -505,7 +505,7 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
                 <span className="flex items-center gap-2.5">
                   <Timer className={`h-4 w-4 ${timed ? 'text-amber-300' : 'text-muted-foreground'}`} />
                   <span className="text-left">
-                    <span className="block text-[13px] font-semibold">Timed exam</span>
+                    <span className="block text-[13px] font-semibold">Timed test</span>
                     <span className="block text-[11px] text-muted-foreground">90 s per question, auto-submit</span>
                   </span>
                 </span>
@@ -601,7 +601,7 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
         {/* top bar */}
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            <ClipboardCheck className="h-4 w-4 text-rose-300" /> Exam · Q {cursor + 1}/{run.questions.length}
+            <ClipboardCheck className="h-4 w-4 text-rose-300" /> Test · Q {cursor + 1}/{run.questions.length}
             {run.isRetake && (
               <span className="inline-flex items-center gap-1 rounded-full border border-amber-300/40 bg-amber-300/10 px-2.5 py-1 text-[10px] font-bold tracking-wider text-amber-300">
                 <RotateCcw className="h-3 w-3" /> Miss retake

@@ -191,7 +191,7 @@ export function LibraryView() {
                 className={`inline-flex items-center gap-2 rounded-xl border border-rose-400/30 bg-rose-400/[0.07] px-5 py-2.5 text-sm font-semibold text-rose-300 transition-colors hover:border-rose-400/50 hover:bg-rose-400/[0.12] ${FOCUS_RING}`}
               >
                 <ClipboardCheck className="h-4 w-4 text-rose-300" />
-                Take an exam
+                Take a test
               </button>
               <button
                 onClick={() => navigate({ name: 'formulas' })}
@@ -216,7 +216,7 @@ export function LibraryView() {
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Check className="h-3 w-3 text-emerald-400" aria-hidden />
-                {totalQuestions}-question exam bank
+                {totalQuestions}-question test bank
               </span>
             </div>
 

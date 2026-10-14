@@ -180,7 +180,7 @@ export default function Home() {
                   onClick={() => useStudy.getState().navigate({ name: 'exam' })}
                   className="text-left text-muted-foreground transition-colors hover:text-emerald-300"
                 >
-                  Exam simulator
+                  Test simulator
                 </button>
                 <button
                   onClick={() => useStudy.getState().navigate({ name: 'progress' })}
@@ -200,7 +200,7 @@ export default function Home() {
                   <FlaskConical className="h-3 w-3" /> Lab floor
                 </button>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <BookOpen className="h-3 w-3" /> 58 labs · 1,825 lessons
+                  <BookOpen className="h-3 w-3" /> 60 labs · 4,067 lessons
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
                   <Layers className="h-3 w-3" /> SRS flashcards · 10,365+ cards
@@ -209,7 +209,7 @@ export default function Home() {
                   <Sigma className="h-3 w-3" /> 1,668 printable formulas
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <ClipboardCheck className="h-3 w-3" /> 6,947-question exam bank
+                  <ClipboardCheck className="h-3 w-3" /> 10,571-question test bank
                 </span>
               </div>
               <div className="flex flex-col gap-2">
@@ -217,7 +217,7 @@ export default function Home() {
                   Featured Library
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <Sigma className="h-3 w-3 text-emerald-400" /> 8 Master Volumes
+                  <Sigma className="h-3 w-3 text-emerald-400" /> 24 Library Books
                 </span>
                 <span className="text-muted-foreground/60">Rosen · Stewart · Feynman · Halliday · Young · Ewen · Coletta · Silberschatz · Flanagan · Mano · Hughes · CLRS · Stroustrup</span>
               </div>
@@ -226,7 +226,7 @@ export default function Home() {
           <div className="mt-8 flex flex-col gap-2 border-t border-border/60 pt-5 text-[11px] text-muted-foreground/70 sm:flex-row sm:items-center sm:justify-between">
             <span>StudyVerse — master every book, interactively.</span>
             <span className="font-mono">
-              1,825 lessons · 58 labs · 6,947 quiz questions · 10,365 flashcards · 1,668 formulas · 8 books
+              4,067 lessons · 60 labs · 10,571 quiz questions · 826 chapters · 24 books · 18 subjects
             </span>
           </div>
         </div>

@@ -219,7 +219,7 @@ export function MasteryRadar({
             <svg
               viewBox={`0 0 ${VB_W} ${VB_H}`}
               role="img"
-              aria-label={`Radar chart of mastery for all ${N} chapters across the library: completion counts 40 percent, quiz averages 30 percent, exam averages 30 percent`}
+              aria-label={`Radar chart of mastery for all ${N} chapters across the library: completion counts 40 percent, quiz averages 30 percent, test averages 30 percent`}
               className="block h-auto w-full"
               data-testid="mastery-radar"
             >
@@ -337,7 +337,7 @@ export function MasteryRadar({
                     onMouseEnter={() => setHovered(i)}
                     onMouseLeave={() => setHovered((h) => (h === i ? null : h))}
                   >
-                    <title>{`Ch ${m.number} · ${m.shortTitle} — ${m.mastery}% mastery (completion ${m.completion}% · quizzes ${m.quiz}% · exams ${m.exam}%)`}</title>
+                    <title>{`Ch ${m.number} · ${m.shortTitle} — ${m.mastery}% mastery (completion ${m.completion}% · quizzes ${m.quiz}% · tests ${m.exam}%)`}</title>
                   </circle>
                 )
               })}
@@ -389,7 +389,7 @@ export function MasteryRadar({
                 <div className="mt-1.5 space-y-0.5 font-mono text-[10px] text-muted-foreground">
                   <div>completion {hoveredMastery.completion}%</div>
                   <div>quizzes {hoveredMastery.quiz}%</div>
-                  <div>exams {hoveredMastery.exam}%</div>
+                  <div>tests {hoveredMastery.exam}%</div>
                 </div>
               </div>
             )}

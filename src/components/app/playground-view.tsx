@@ -21,7 +21,7 @@ const LAB_GROUPS: LabGroup[] = [
   {
     subject: 'chem',
     subjectLabel: 'Chemistry',
-    groupLabel: 'JEE & Atkins Physical/Inorganic',
+    groupLabel: 'Physical & Inorganic Chemistry',
     keys: [
       'crystal-lattice-lab',
       'molecular-lab',

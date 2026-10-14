@@ -9,7 +9,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh07Content: SectionContent[] = [
   // ---------------------------------------------------------------- 7.1
   {
-    sectionId: 'jeemaths-ch7-s1',
+    sectionId: 'advmath-ch7-s1',
     readingTime: 8,
     intro: 'Every straight line can be written in slope, intercept, normal and parametric costumes, and fluency means switching costumes to suit the data. The combined pair equation $ax^{2} + 2hxy + by^{2} = 0$ extends the story to two lines through the origin and their angle. This section fixes the forms and the pair-of-lines toolkit used throughout coordinate geometry.',
     objectives: [
@@ -128,7 +128,7 @@ export const jeemathsCh07Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 7.2
   {
-    sectionId: 'jeemaths-ch7-s2',
+    sectionId: 'advmath-ch7-s2',
     readingTime: 8,
     intro: 'Distance formulas turn geometric closeness into algebra, while angle bisectors split the angle between two lines into internal and external loci. Families of lines through a fixed point or through the intersection of two lines compress infinitely many cases into one parameter. This section unifies these tools for foot, reflection and concurrency tasks.',
     objectives: [
@@ -226,7 +226,7 @@ export const jeemathsCh07Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 7.3
   {
-    sectionId: 'jeemaths-ch7-s3',
+    sectionId: 'advmath-ch7-s3',
     readingTime: 8,
     intro: 'A circle is the locus of points at fixed distance from a centre, and its equation adapts to centre-radius, diameter-endpoint and general-form data. Position tests for points and lines decide inside, on and outside without drawing. This section also introduces coaxial intuition that prepares radical-axis work.',
     objectives: [
@@ -324,7 +324,7 @@ export const jeemathsCh07Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 7.4
   {
-    sectionId: 'jeemaths-ch7-s4',
+    sectionId: 'advmath-ch7-s4',
     readingTime: 10,
     intro: 'Tangents, chords and the radical axis form the computational heart of circle geometry. The single expression $T = 0$ writes tangents from a point, chord of contact and polar in one stroke, while $T = S_{1}$ and $T^{2} = SS_{1}$ handle midpoints and tangent pairs. This section assembles these formulas with the director circle and coaxial radical axis.',
     objectives: [

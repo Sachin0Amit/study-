@@ -349,3 +349,70 @@ Stage Summary:
 - New subjects: IIT JEE — Main & Advanced (6 books: Main P/C/M 54 ch/220 s; Advanced P/C/M 59 ch/297 s), Digital SAT (2 books, 8 ch/29 s), DRDO Scientist B (5 books: Tier I + 4 disciplines, 48 ch/210 s), GATE (1 book, 11 ch/58 s), Engineering Semester Exams (4 books: CSE 36 ch/188 s, ECE 37 ch/184 s, EE 32 ch/163 s, ME 30 ch/164 s)
 - 100 sections have full lesson content (concepts, examples, quizzes); remaining ~1600 exam sections render as Syllabus Topic Briefs (complete topic descriptions + navigation)
 - UNRESOLVED/RISKS: (1) memory-constrained box — see Task 7 note; keep browser closed during compiles, use the QA protocol; (2) content coverage continues: prioritize writing SectionContent for remaining high-traffic exam sections (JEE Main Chemistry units 2-20 s2+, SAT Math d2-s4..d4-s4 remaining skills, GATE ch8/ch11, DRDO discipline depth, engg branch cores); (3) exam simulator (ExamView) now includes exam quiz questions automatically; (4) next phase could add exam-pattern info cards (marking schemes, dates) to book views
+---
+Task ID: 9-b-3
+Agent: content-writer (SAT Math completion)
+Task: SectionContent for remaining 9 SAT Math sections — 100% domain coverage
+
+Work Log:
+- Read worklog.md architecture reference, src/data/content/exam-sat-math.ts (full format template), src/data/library-parts/exams/sat-math.ts (section IDs/titles/descriptions), and research/sat-drdo-syllabus.md (Domain 3 & 4 skill details)
+- Updated the file header comment to reflect all-19-sections complete coverage
+- Appended 9 SectionContent objects to the satMathContent array (before its closing bracket), each matching the existing depth/style exactly: prerequisites 2–3, 4 imperative objectives, 5 concepts (term/kind/statement/detail with **bold**, `inline code`, $LaTeX$, and ```text fences), 3 worked examples with 4 labeled steps each, 5 keyTakeaways, 4 SAT-style quiz questions with 4 options + answer index + step-by-step explanations and classic planted distractors (wrong percent base, mean/median confusion, radius-vs-diameter, wrong-table-marginal, copying-the-arc)
+- Sections written: sat-math-d3-s2 Percentages; d3-s3 One-Variable Data (center/spread); d3-s4 Two-Variable Data (models/scatterplots); d3-s5 Probability & Conditional Probability; d3-s6 Inference & Margin of Error; d3-s7 Evaluating Statistical Claims; d4-s2 Lines, Angles, and Triangles; d4-s3 Right Triangles and Trigonometry; d4-s4 Circles
+- Fixed an escaping slip introduced in the second edit batch (22 occurrences of \\' → \' inside single-quoted strings; caught by tsc TS1005 at line 1547, repaired via exact byte replacement, re-validated)
+- Validation: bunx tsc --noEmit 2>&1 | grep '^src/' → EMPTY (0 errors); bun run lint → 0 errors; grep -c "sectionId: 'sat-math" → 19; export satMathContent untouched; index.ts import untouched; 0 duplicate sectionIds; all 36 new quiz questions have 4 options and valid answer indices 0–3
+
+Stage Summary:
+- Digital SAT Math book (sat-math-2026) now has SectionContent for all 19 skill sections — 100% coverage of Algebra (5), Advanced Math (3), Problem Solving & Data Analysis (7), and Geometry & Trigonometry (4); every quiz item is SAT-style with realistic distractors, and every intro anchors the lesson in the Digital SAT context (44 questions / two 35-min adaptive modules / Desmos on every item / no guessing penalty / ~30% in-context)
+
+---
+Task ID: 9-b-2
+Agent: content-writer (JEE Main Chemistry)
+Task: SectionContent for JEE Main Chemistry units 5-20 first sections
+
+Work Log:
+- Read worklog.md architecture notes, the full existing src/data/content/exam-jeemain-chemistry.ts (10 existing lessons, Units 1-15) as the format template, src/data/library-parts/exams/jeemain-chemistry.ts metadata for exact section titles/descriptions, and research/jee-syllabus.md Chemistry Units 1-20 to match NTA topics.
+- Confirmed the metadata's actual unit map differs from the task prompt's guesses (u5 = Solutions, u10 = p-Block, u12 = Coordination, u13 = Purification, u16 = Halogen, u17 = Oxygen, u18 = Nitrogen, u19 = Biomolecules, u20 = Practical) and followed the metadata exactly.
+- Appended 10 new SectionContent objects to jeemainChemContent (before its closing bracket), each with sectionId/readingTime/prerequisites/intro/objectives/concepts/examples/keyTakeaways/quiz in the existing exemplar style: JEE-paper context in intros (25 questions, 100 marks, +4/-1, NCERT-line, fastest-scoring subject), 4 imperative objectives, 5-6 concepts with bold + LaTeX + inline code, 2-3 worked examples with ```text fenced steps, 4-5 key takeaways, 4 single-concept MCQs with step-by-step explanations and misconception distractors.
+- Sections written: jeemain-chem-u5-s1 (Expressing Concentration), u10-s1 (Introduction and Electronic Configuration), u11-s1 (Transition Elements: Introduction), u12-s1 (Werner's Theory and Terminology), u13-s1 (Purification Techniques), u16-s1 (Preparation, Properties and the C-X Bond), u17-s1 (Alcohols), u18-s1 (Amines: Nomenclature, Classification and Structure), u19-s1 (Introduction and Carbohydrates), u20-s1 (Detection of Elements and Functional Groups).
+- Updated the file header comment to describe all 20 units; fixed two typos introduced while drafting (a garbled step text in 13.1, "hydrobarate" in 18.1) and a malformed LaTeX subscript (fructose formula) post-write.
+- Validation: `bunx tsc --noEmit 2>&1 | grep '^src/'` prints nothing; `bun run lint` passes with 0 errors; `grep -c "sectionId: 'jeemain-chem"` = 20; jeemainChemContent export intact (index.ts untouched).
+
+Stage Summary:
+- 10/10 new lessons written (units 5, 10, 11, 12, 13, 16, 17, 18, 19, 20 first sections); exam-jeemain-chemistry.ts now 2229 lines with 20 lessons covering the first section of every NTA unit 1-20.
+- tsc: clean (no src/ errors). eslint: 0 errors. No index.ts or metadata changes needed; all lessons are keyed by sectionId and render via contentMap.
+
+---
+Task ID: 10
+Agent: main-orchestrator
+Task: USER REQUEST — reorganize library subject-wise: dissolve all exam-specific subjects/books, merge into subject books, remove every exam mention from the website (exam provenance allowed in code comments only)
+
+Work Log:
+- Audited full inventory: 17 subjects / 36 books; 5 exam subjects (exam-jee, exam-sat, exam-drdo, exam-gate, exam-engg) + 18 exam books; actual chapter counts (math-master 30 incl. 13 inline rosen-* chapters in library.ts, phys-master 159 incl. programmatically-generated coletta chapters, chem-complete 44)
+- Wrote scripts/restructure-subject-wise.py (kept as migration documentation): renames all chapter/section IDs to neutral prefixes, retargets bookIds, renumbers chapters/sections, scrubs exam names from all non-comment lines
+- Merge map applied (IDs → neutral, numbers resequenced):
+  · math-master (mathematics): +jeemain-math u1-14 → math-m1-14 (ch 31-44), +jeeadv-math → math-a1-15 (ch 45-59), +sat-math → math-s1-4 (ch 60-63), +drdo quant → math-q1 (ch 64) — 64 chapters total
+  · phys-master (physics): +jeemain-phy → phys-m1-20 (ch 160-179), +jeeadv-phy → phys-a1-21 (ch 180-200) — 200 chapters
+  · chem-complete (chemistry): +jeemain-chem → chem-m1-20 (ch 45-64), +jeeadv-chem → chem-a1-23 (ch 65-87) — 87 chapters
+  · NEW english-complete (english subject): sat-rw → eng-r1-4 (ch 1-4) + drdo English → eng-l1 (ch 5)
+  · NEW aptitude-complete (aptitude subject): drdo reasoning → apt-r1, general awareness → apt-g1, general science → apt-s1
+  · NEW cse-complete (cse-engg subject): engg-cse 36 sem subjects → cse-e-* (ch 1-36), gate-cs → cse-g1-11 (ch 37-47), drdo-cse → cse-d1-13 (ch 48-60) — 60 chapters
+  · NEW ece-complete (ece-engg): engg-ece → ece-e-* (ch 1-37) + drdo-ece → ece-d1-12 (ch 38-49)
+  · NEW ee-complete (electrical-engineering): engg-ee → ee-e-* (ch 1-32) + drdo-ee → ee-d1-11 (ch 33-43)
+  · NEW me-complete (mechanical-engineering): engg-me → me-e-* (ch 1-30) + drdo-me → me-d1-12 (ch 31-42)
+  · jeemaths-complete (pre-existing maths book): chapter IDs renamed jeemaths-chN → advmath-chN (URL-neutral)
+- library.ts: removed 5 exam subjects + 18 exam books; added 6 subjects (english, aptitude, cse-engg, ece-engg, electrical-engineering, mechanical-engineering) + 6 books with neutral StudyVerse-curriculum titles/descriptions; added code-comment provenance note (exam sources documented in comments only, per user instruction)
+- Scrubbed ALL exam names from user-visible strings via ordered regex table (~1000 occurrences): JEE/NTA/IIT/SAT/College Board/Bluebook/DRDO/RAC/CEPTAM/GATE/UPSC/ESE/AKTU/VTU/AICTE → neutral phrasing (engineering assessment, testing agency, defence research establishment, graduate assessment, state technical university...); Tier I/II → Stage I/II; generic exam→assessment in content; fixed double-article artifacts ("the the")
+- Removed exam-pattern feature entirely (deleted exam-pattern-card.tsx + exam-patterns.ts, unwired book-view) — it was inherently exam-branded
+- UI reworded: "Exam simulator"→"Test simulator", "Take an exam"→"Take a test", "exam bank"→"test bank", "Chapter exam"→"Chapter test", "Timed exam"→"Timed test", "Exams taken"→"Tests taken", "Exam miss"→"Missed question", labs group "JEE & Atkins"→"Physical & Inorganic Chemistry", mastery radar exam→test
+- Updated stale stats to real computed values: 18 subjects · 24 books · 826 chapters · 4,067 sections · 60 labs · 10,571 quiz questions (footer, hero strip, command palette)
+- Reverted experimental turbopackFileSystemCacheForDev flag (it aggravated OOM during compiles)
+- Validation: tsc clean; lint clean; data-integrity script (all bookIds/subjectIds/chapterIds resolve, unique chapter+section numbers, no orphaned content, no old prefixes in IDs) → ALL VALID; full-app grep audit → zero exam names in any non-comment, non-identifier line
+- Browser-verified (memory-careful protocol): home shows 18 subjects with 0 exam words; math-master 64 chapters incl. merged Quantitative Aptitude at ch 64, 0 exam words; merged lesson math-m2-s1 renders full content ("Complex Numbers and the Argand Plane"); cse-complete 60 chapters clean; Syllabus Brief renders on no-content sections clean
+
+Stage Summary:
+- Library is now 100% subject-wise: Mathematics (64 ch), Physics (200), Chemistry (87), English (5), Aptitude (3), CSE (60), ECE (49), EE (43), ME (42) + the 9 original textbook subjects — 18 subjects, 24 books, 826 chapters, 4,067 sections
+- ZERO exam mentions anywhere user-visible (names, bodies, marking-scheme cards, UI labels, URLs); exam provenance preserved in code comments + research/*.md per user instruction
+- Old bookmarked ?lesson=jeemain-* URLs no longer resolve (IDs renamed) — acceptable consequence of the requested restructure
+- KNOWN RISK: 4GB box OOM-kills next-server during first-time route compiles; watchdog auto-recovers and disk cache makes retries cheap — pre-warm before browser QA (protocol in Task 7 note)
+- Next-phase opportunities: write more SectionContent for merged sections still on Syllabus Briefs; subject-wise practice sets in Test simulator; dedupe overlapping chapters (e.g., OS appears in semester + graduate + defence scopes)

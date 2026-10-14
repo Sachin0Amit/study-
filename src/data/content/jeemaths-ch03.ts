@@ -9,7 +9,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh03Content: SectionContent[] = [
   // ---------------------------------------------------------------- 3.1
   {
-    sectionId: 'jeemaths-ch3-s1',
+    sectionId: 'advmath-ch3-s1',
     readingTime: 8,
     intro: 'A determinant is a signed scale factor that detects singularity and solves linear conditions in one line. Row and column moves simplify it without changing its value, while triangular form makes it a product of diagonal entries. This section turns determinant properties into fast evaluation tools.',
     objectives: [
@@ -107,7 +107,7 @@ export const jeemathsCh03Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.2
   {
-    sectionId: 'jeemaths-ch3-s2',
+    sectionId: 'advmath-ch3-s2',
     readingTime: 9,
     intro: 'The adjoint matrix packages all cofactors so that $A(\\mathrm{adj}\\, A) = |A|I$ holds for every square $A$. When $|A| \\ne 0$ this yields the inverse at once and solves $AX = B$ by multiplication. This section makes the adjoint-inverse route error-free.',
     objectives: [
@@ -226,7 +226,7 @@ export const jeemathsCh03Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.3
   {
-    sectionId: 'jeemaths-ch3-s3',
+    sectionId: 'advmath-ch3-s3',
     readingTime: 9,
     intro: 'Cramer rule writes each unknown as a ratio of determinants, while $|A| = 0$ forces a consistency check on the augmented system. Homogeneous systems always keep the trivial solution and gain nontrivial ones exactly at singularity. This section classifies unique, infinite and no-solution cases.',
     objectives: [
@@ -324,7 +324,7 @@ export const jeemathsCh03Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.4
   {
-    sectionId: 'jeemaths-ch3-s4',
+    sectionId: 'advmath-ch3-s4',
     readingTime: 7,
     intro: 'Three points make a triangle whose signed area is half a $3 \\times 3$ determinant. Vanishing of that determinant is the collinearity test, and the same determinant writes the line through two points. This section converts coordinate geometry into determinant evaluations.',
     objectives: [

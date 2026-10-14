@@ -1,0 +1,552 @@
+     1→import type { SectionContent } from '../library'
+     2→
+     3→// ============================================================================
+     4→// JEE (Main) 2026 Chemistry — master lesson content (high-weightage sections)
+     5→// Full SectionContent lessons for ten first sections across Units 1–15 of the
+     6→// official NTA syllabus (bookId 'jeemain-chemistry-2026'): matter & chemical
+     7→// combination (1.1), radiation & hydrogen spectrum (2.1), ionic bonding
+     8→// (3.1), thermodynamic fundamentals (4.1), dynamic & physical equilibria
+     9→// (6.1), redox concepts & balancing (7.1), reaction rates (8.1), the modern
+    10→// periodic table (9.1), carbon bonding & classification (14.1) and
+    11→// hydrocarbon classification & preparation (15.1). KaTeX formulas, exam
+    12→// traps and PYQ-pattern quizzes follow the jeemaths-ch01 exemplar style.
+    13→// ============================================================================
+    14→
+    15→export const jeemainChemContent: SectionContent[] = [
+    16→  // ---------------------------------------------------------------- 1.1
+    17→  {
+    18→    sectionId: 'jeemain-chem-u1-s1',
+    19→    readingTime: 9,
+    20→    prerequisites: [
+    21→      'Atomic masses and symbols of common elements (school chemistry)',
+    22→      'Ratios, percentages and unitary method arithmetic',
+    23→    ],
+    24→    intro: 'Every quantitative chemistry question stands on the **mole** — the chemist\u2019s dozen. Dalton\u2019s atomic theory explains why elements combine in fixed mass ratios, the laws of chemical combination quantify those ratios, and the mole converts between grams, particles and volumes of gas. JEE Main tests this unit relentlessly through limiting-reagent, per cent-yield and concentration problems.',
+    25→    objectives: [
+    26→      'State the laws of chemical combination (conservation of mass, definite proportions, multiple proportions, reciprocal proportions) and connect each to Dalton\u2019s theory',
+    27→      'Interconvert mass, moles, number of particles and STP gas volume using $n = \\frac{w}{M}$, $n = \\frac{N}{N_A}$ and $n = \\frac{V}{22.4}$',
+    28→      'Compute empirical and molecular formulae from per cent composition',
+    29→      'Solve limiting-reagent, excess-reagent and per cent-yield problems with balanced equations',
+    30→    ],
+    31→    concepts: [
+    32→      {
+    33→        term: 'Laws of chemical combination',
+    34→        kind: 'law',
+    35→        statement: 'Mass is **conserved** in reactions; a compound contains elements in a **fixed mass ratio** (definite proportions); when two elements form several compounds, the mass ratios of one combine with a fixed mass of the other in **small whole numbers** (multiple proportions).',
+    36→        detail: 'Multiple proportions is Dalton\u2019s strongest evidence for atoms: in CO and CO$_2$, oxygen per gram of carbon is in the ratio 1 : 2. Reciprocal (equivalent) proportions links three elements through their combining masses with a third element — the forerunner of equivalent weight.'
+    37→      },
+    38→      {
+    39→        term: 'The mole concept',
+    40→        kind: 'definition',
+    41→        statement: 'One **mole** is the amount of substance containing as many elementary entities as atoms in 12 g of carbon-12: $N_A = 6.022 \\times 10^{23}$ mol$^{-1}$.',
+    42→        detail: 'Three faces of one quantity: $n = \\frac{w}{M}$ (mass), $n = \\frac{N}{N_A}$ (particles), $n = \\frac{V_{\\text{STP}}}{22.4\\ \\text{L}}$ (gas at 1 atm, 273 K). Moles are the only currency that stoichiometry understands — convert everything to moles, use the balanced ratio, convert back.'
+    43→      },
+    44→      {
+    45→        term: 'Empirical and molecular formula',
+    46→        kind: 'method',
+    47→        statement: 'The **empirical formula** gives the simplest whole-number atom ratio; the **molecular formula** is a whole-number multiple: $\\text{MF} = (\\text{EF})_n$ with $n = \\frac{M_{\\text{molar}}}{M_{\\text{EF}}}$.',
+    48→        detail: 'From per cent data: assume 100 g, convert each per cent to grams, divide by atomic mass, divide all by the smallest to get ratios. A ratio like 1 : 1.33 means multiply by 3 to clear thirds (1 : 1.33 = 3 : 4). JEE traps hide in the rounding — carry one decimal until the end.'
+    49→      },
+    50→      {
+    51→        term: 'Limiting reagent',
+    52→        kind: 'method',
+    53→        statement: 'The **limiting reagent** is the reactant that runs out first; it alone decides the maximum product: divide each reactant\u2019s moles by its stoichiometric coefficient — the smallest quotient limits.',
+    54→        detail: 'The other reactant is in excess; leftover = initial minus consumed. Recognising the limiting reagent by inspection (divide moles by coefficients) is faster than the "extend the chain" method and safer under exam pressure.'
+    55→      },
+    56→      {
+    57→        term: 'Concentration terms',
+    58→        kind: 'notation',
+    59→        statement: '**Molarity** $M = \\frac{n_{\\text{solute}}}{V_{\\text{solution}}(\\text{L})}$; **molality** $m = \\frac{n_{\\text{solute}}}{w_{\\text{solvent}}(\\text{kg})}$; mole fraction $x_i = \\frac{n_i}{\\sum n}$.',
+    60→        detail: 'Molarity depends on temperature (volume expands); molality and mole fraction do not — a favourite assertion–reason pairing. Dilution law $M_1V_1 = M_2V_2$ applies when only solvent is added. For mixing problems, total moles over total volume gives the new molarity.'
+    61→      }
+    62→    ],
+    63→    examples: [
+    64→      {
+    65→        title: 'Empirical to molecular formula',
+    66→        problem: 'A compound is 40.0% carbon, 6.67% hydrogen and 53.3% oxygen by mass; its molar mass is 180 g/mol. Find the molecular formula.',
+    67→        steps: [
+    68→          { label: 'Step 1', text: 'Per 100 g: C 40.0 g, H 6.67 g, O 53.3 g. Divide by atomic masses: $\\frac{40}{12} = 3.33$, $\\frac{6.67}{1} = 6.67$, $\\frac{53.3}{16} = 3.33$.' },
+    69→          { label: 'Step 2', text: 'Divide by the smallest (3.33): C : H : O $= 1 : 2 : 1$. Empirical formula $\\text{CH}_2\\text{O}$, mass 30 g/mol.' },
+    70→          { label: 'Step 3', text: '$n = \\frac{180}{30} = 6$, so the molecular formula is $(\\text{CH}_2\\text{O})_6 = \\text{C}_6\\text{H}_{12}\\text{O}_6$.' },
+    71→          { label: 'Step 4', text: 'Sanity check the mass: $6 \\times 12 + 12 \\times 1 + 6 \\times 16 = 72 + 12 + 96 = 180$ g/mol — glucose.' }
+    72→        ],
+    73→        result: 'Molecular formula $\\text{C}_6\\text{H}_{12}\\text{O}_6$ (empirical $\\text{CH}_2\\text{O}$).'
+    74→      },
+    75→      {
+    76→        title: 'Limiting reagent and yield',
+    77→        problem: '2.0 g of $\\text{H}_2$ reacts with 44.0 g of $\\text{N}_2$ giving $\\text{NH}_3$. Find the limiting reagent, the theoretical maximum of ammonia, and the actual yield if the process is 80% efficient. ($N = 14$, $H = 1$)',
+    78→        steps: [
+    79→          { label: 'Step 1', text: 'Balanced equation: $\\text{N}_2 + 3\\text{H}_2 \\to 2\\text{NH}_3$. Moles available: $n(\\text{H}_2) = \\frac{2}{2} = 1.0$; $n(\\text{N}_2) = \\frac{44}{28} = 1.571$.' },
+    80→          { label: 'Step 2', text: 'Divide by coefficients: $\\frac{1.0}{3} = 0.333$ for hydrogen, $\\frac{1.571}{1} = 1.571$ for nitrogen — hydrogen has the smaller quotient, so $\\text{H}_2$ limits.' },
+    81→          { label: 'Step 3', text: 'Ammonia from hydrogen: $\\frac{2}{3} \\times 1.0 = 0.667$ mol $\\times$ 17 g/mol $= 11.33$ g theoretical.' },
+    82→          { label: 'Step 4', text: 'At 80%: $0.8 \\times 11.33 \\approx 9.07$ g $\\text{NH}_3$ actually obtained; nitrogen left over $= 1.571 - 0.333 = 1.238$ mol.' }
+    83→        ],
+    84→        result: 'Limiting reagent $\\text{H}_2$; theoretical yield 11.33 g (0.667 mol); actual yield $\\approx 9.1$ g.'
+    85→      }
+    86→    ],
+    87→    keyTakeaways: [
+    88→      'Mole is the central currency: $n = w/M = N/N_A = V_{\\text{STP}}/22.4$ L for gases.',
+    89→      'Empirical formula from per cent data; multiply by $n = M_{\\text{molar}}/M_{\\text{EF}}$ for molecular formula.',
+    90→      'Limiting reagent: smallest (moles $\\div$ coefficient) wins; it fixes the maximum product.',
+    91→      'Molarity is temperature-dependent; molality and mole fraction are not.'
+    92→    ],
+    93→    quiz: [
+    94→      {
+    95→        q: 'The number of molecules in 4.4 g of $\\text{CO}_2$ is about',
+    96→        options: ['$6.0 \\times 10^{22}$', '$6.0 \\times 10^{23}$', '$1.2 \\times 10^{23}$', '$6.0 \\times 10^{24}$'],
+    97→        answer: 0,
+    98→        explanation: 'Step 1: $M(\\text{CO}_2) = 44$ g/mol, so $n = \\frac{4.4}{44} = 0.1$ mol. Step 2: Molecules $= 0.1 \\times 6.022 \\times 10^{23} = 6.0 \\times 10^{22}$. Step 3: The 0.1 factor is the trap-avoider — many misread 4.4 g as one mole. Step 4: $6 \\times 10^{23}$ would need 44 g.'
+    99→      },
+   100→      {
+   101→        q: '10 g of CaCO$_3$ is heated until fully decomposed ($\\text{CaCO}_3 \\to \\text{CaO} + \\text{CO}_2$). The volume of CO$_2$ liberated at STP is ($Ca = 40$)',
+   102→        options: ['1.12 L', '2.24 L', '22.4 L', '0.56 L'],
+   103→        answer: 1,
+   104→        explanation: 'Step 1: $M(\\text{CaCO}_3) = 100$ g/mol, so $n = \\frac{10}{100} = 0.1$ mol. Step 2: Stoichiometry 1 : 1 gives 0.1 mol CO$_2$. Step 3: At STP, $V = 0.1 \\times 22.4 = 2.24$ L. Step 4: 1.12 L corresponds to 0.05 mol — half the correct amount.'
+   105→      },
+   106→      {
+   107→        q: 'Which concentration term is independent of temperature?',
+   108→        options: ['Molarity', 'Molality', 'Normality', 'Formality'],
+   109→        answer: 1,
+   110→        explanation: 'Step 1: Temperature changes volume of solutions. Step 2: Molarity, normality and formality all divide by volume of solution. Step 3: Molality divides by mass of solvent in kg — mass is immune to thermal expansion. Step 4: Hence molality (and mole fraction) survive a temperature swing.'
+   111→      },
+   112→      {
+   113→        q: 'Equal masses of methane and oxygen are mixed and ignited. The limiting reagent is',
+   114→        options: ['$\\text{CH}_4$', '$\\text{O}_2$', 'both simultaneously', 'cannot be determined'],
+   115→        answer: 1,
+   116→        explanation: 'Step 1: Reaction: $\\text{CH}_4 + 2\\text{O}_2 \\to \\text{CO}_2 + 2\\text{H}_2\\text{O}$. Step 2: For mass $w$ each: $n(\\text{CH}_4) = \\frac{w}{16}$, $n(\\text{O}_2) = \\frac{w}{32}$. Step 3: Quotients by coefficients: $\\frac{w}{16}$ vs $\\frac{w}{64}$ — methane\u2019s quotient is larger, so oxygen runs out first. Step 4: $\\text{O}_2$ is the limiting reagent for any equal-mass mixture.'
+   117→      }
+   118→    ]
+   119→  },
+   120→  // ---------------------------------------------------------------- 2.1
+   121→  {
+   122→    sectionId: 'jeemain-chem-u2-s1',
+   123→    readingTime: 10,
+   124→    prerequisites: [
+   125→      'Mole concept and stoichiometry (Unit 1)',
+   126→      'Basic energy ideas: $E = h\\nu$ from physics is reintroduced chemically',
+   127→    ],
+   128→    intro: 'Light is both wave and particle, and nowhere is the duality sharper than when radiation meets atoms. The **photoelectric effect** proves light arrives in packets (photons) whose energy is set by frequency alone, and the **hydrogen spectrum** shows atoms absorbing and emitting only specific photon energies — the fingerprints of quantised electronic states. JEE Main loves numericals on photon count, work function and Rydberg lines.',
+   129→    objectives: [
+   130→      'Characterise electromagnetic radiation by $c = \\nu\\lambda$ and photon energy $E = h\\nu = \\frac{hc}{\\lambda}$',
+   131→      'Explain the photoelectric effect with threshold frequency, work function and Einstein\u2019s equation $KE_{\\max} = h(\\nu - \\nu_0)$',
+   132→      'Interpret the hydrogen spectrum regions (Lyman, Balmer, Paschen, Brackett, Pfund) using the Rydberg expression',
+   133→      'Count photons delivered by a light source of given power and wavelength',
+   134→    ],
+   135→    concepts: [
+   136→      {
+   137→        term: 'Electromagnetic spectrum bookkeeping',
+   138→        kind: 'notation',
+   139→        statement: 'All EM radiation travels at $c = 3 \\times 10^8$ m/s with $c = \\nu\\lambda$; energy per photon $E = h\\nu$ with $h = 6.626 \\times 10^{-34}$ J·s.',
+   140→        detail: 'Order the spectrum by increasing wavelength: cosmic < gamma < X < UV < visible (400–750 nm) < IR < microwave < radio. Chemical action peaks in UV/visible — the regions that excite electrons. Wavenumber $\\bar{\\nu} = 1/\\lambda$ (m$^{-1}$) is the spectroscopist\u2019s preferred unit, linear in energy.'
+   141→      },
+   142→      {
+   143→        term: 'Photoelectric effect',
+   144→        kind: 'law',
+   145→        statement: 'Electrons eject from a metal surface only when $\\nu > \\nu_0$; the maximum kinetic energy is linear in frequency: $KE_{\\max} = h\\nu - h\\nu_0 = h\\nu - W_0$.',
+   146→        detail: 'Intensity sets the number of photons (and ejected electrons), never their energy — the observation classical wave theory could not explain. Stopping potential $V_s$ satisfies $eV_s = KE_{\\max}$. Below threshold, no emission occurs regardless of intensity or exposure time. Metals with low work functions (Cs, K) respond to visible light; most need UV.'
+   147→      },
+   148→      {
+   149→        term: 'Photon counting',
+   150→        kind: 'method',
+   151→        statement: 'A source of power $P$ at wavelength $\\lambda$ emits $\\frac{P\\lambda}{hc}$ photons per second, each carrying $E = \\frac{hc}{\\lambda}$.',
+   152→        detail: 'Rearranged: number of photons $N = \\frac{E_{\\text{total}}\\lambda}{hc}$. Doubling wavelength doubles photons per joule. This bridges chemistry to real lamps and lasers, and JEE asks it as a two-step numerical almost every alternate year.'
+   153→      },
+   154→      {
+   155→        term: 'Hydrogen spectrum and Rydberg',
+   156→        kind: 'law',
+   157→        statement: 'Spectral lines obey $\\bar{\\nu} = R_H\\left(\\frac{1}{n_1^2} - \\frac{1}{n_2^2}\\right)$ with $R_H = 1.09677 \\times 10^7$ m$^{-1}$; series: Lyman ($n_1 = 1$, UV), Balmer ($2$, visible), Paschen ($3$, IR), Brackett ($4$), Pfund ($5$).',
+   158→        detail: 'Each line is a downward jump: emitted photon energy equals the energy gap. The series limit ($n_2 \\to \\infty$) gives the largest wavenumber of each series. Only the Balmer series is visible — H$_\\alpha$ 656.3 nm (red), H$_\\beta$ 486.1 nm, H$_\\gamma$ 434.0 nm — converging at 364.6 nm.'
+   159→      },
+   160→      {
+   161→        term: 'Why a line spectrum means quantisation',
+   162→        kind: 'insight',
+   163→        statement: 'A continuous spectrum would mean electrons can hold any energy; the observed **discrete lines** mean only specific energy differences exist — electronic energy in atoms is quantised.',
+   164→        detail: 'This inference, not the arithmetic, is the conceptual heart of the chapter. Emission versus absorption spectra: hot gas emits bright lines; cool gas absorbs exactly the same lines from continuous background — the signature used to identify elements in stars.'
+   165→      }
+   166→    ],
+   167→    examples: [
+   168→      {
+   169→        title: 'Photoelectric threshold calculation',
+   170→        problem: 'A metal has work function 2.0 eV. Light of wavelength 400 nm falls on it. Find the maximum kinetic energy of photoelectrons and their stopping potential. ($h = 6.63 \\times 10^{-34}$ J·s, $c = 3 \\times 10^8$ m/s)',
+   171→        steps: [
+   172→          { label: 'Step 1', text: 'Photon energy: $E = \\frac{hc}{\\lambda} = \\frac{6.63 \\times 10^{-34} \\times 3 \\times 10^8}{400 \\times 10^{-9}} = 4.97 \\times 10^{-19}$ J.' },
+   173→          { label: 'Step 2', text: 'Convert to eV: $\\frac{4.97 \\times 10^{-19}}{1.6 \\times 10^{-19}} \\approx 3.11$ eV — well above the 2.0 eV threshold, so emission occurs.' },
+   174→          { label: 'Step 3', text: '$KE_{\\max} = 3.11 - 2.0 = 1.11$ eV $\\approx 1.78 \\times 10^{-19}$ J.' },
+   175→          { label: 'Step 4', text: 'Stopping potential: $V_s = \\frac{KE_{\\max}}{e} = 1.11$ V — a voltmeter reading independent of the light intensity.' }
+   176→        ],
+   177→        result: '$KE_{\\max} \\approx 1.11$ eV with stopping potential $V_s \\approx 1.11$ V.'
+   178→      },
+   179→      {
+   180→        title: 'Balmer line by wavenumber',
+   181→        problem: 'Calculate the wavelength of the second line of the Balmer series of hydrogen.',
+   182→        steps: [
+   183→          { label: 'Step 1', text: 'Second Balmer line: transition $n_2 = 4 \\to n_1 = 2$. Rydberg: $\\bar{\\nu} = R_H\\left(\\frac{1}{2^2} - \\frac{1}{4^2}\\right)$.' },
+   184→          { label: 'Step 2', text: 'Bracket: $\\frac{1}{4} - \\frac{1}{16} = \\frac{3}{16}$, so $\\bar{\\nu} = 1.097 \\times 10^7 \\times \\frac{3}{16} = 2.057 \\times 10^6$ m$^{-1}$.' },
+   185→          { label: 'Step 3', text: 'Invert: $\\lambda = \\frac{1}{2.057 \\times 10^6} = 4.86 \\times 10^{-7}$ m $= 486$ nm.' },
+   186→          { label: 'Step 4', text: '486 nm is blue-green — the H$_\\beta$ line, sitting between red H$_\\alpha$ (656 nm) and the 364.6 nm series limit.' }
+   187→        ],
+   188→        result: '$\\lambda = 486$ nm (H$_\\beta$ of the Balmer series).'
+   189→      }
+   190→    ],
+   191→    keyTakeaways: [
+   192→      '$c = \\nu\\lambda$ and $E = h\\nu$: energy depends only on frequency, never intensity.',
+   193→      'Photoelectric: no emission below $\\nu_0$; $KE_{\\max} = h(\\nu - \\nu_0)$; intensity controls electron count.',
+   194→      'Photons per second from power $P$: $\\frac{P\\lambda}{hc}$.',
+   195→      'Hydrogen lines: $\\bar{\\nu} = R_H(1/n_1^2 - 1/n_2^2)$ — Lyman UV, Balmer visible, Paschen IR.'
+   196→    ],
+   197→    quiz: [
+   198→      {
+   199→        q: 'If the wavelength of light is halved, the photon energy',
+   200→        options: ['halves', 'doubles', 'quadruples', 'stays constant'],
+   201→        answer: 1,
+   202→        explanation: 'Step 1: $E = \\frac{hc}{\\lambda}$ — energy is inversely proportional to wavelength. Step 2: Halving $\\lambda$ multiplies $E$ by 2. Step 3: Frequency doubles at the same time since $\\nu = c/\\lambda$. Step 4: Quadrupling would require $1/\\lambda^2$ dependence, which photons do not have.'
+   203→      },
+   204→      {
+   205→        q: 'The photoelectric effect supports',
+   206→        options: ['wave nature of light', 'particle nature of light', 'interference of light', 'diffraction of light'],
+   207→        answer: 1,
+   208→        explanation: 'Step 1: Key observation — emission depends on frequency, not intensity. Step 2: Wave theory predicts any frequency eventually ejects electrons given enough intensity. Step 3: Photon packets with $E = h\\nu$ explain the threshold instantly. Step 4: Interference and diffraction are wave-phenomena evidence — the opposite corner of duality.'
+   209→      },
+   210→      {
+   211→        q: 'The ratio of the energies of photons of wavelength 200 nm and 400 nm is',
+   212→        options: ['1 : 2', '2 : 1', '1 : 4', '4 : 1'],
+   213→        answer: 1,
+   214→        explanation: 'Step 1: $E \\propto \\frac{1}{\\lambda}$. Step 2: $\\frac{E_{200}}{E_{400}} = \\frac{400}{200} = 2$. Step 3: The shorter wavelength carries double the energy. Step 4: Ratio 1 : 2 would invert the proportionality.'
+   215→      },
+   216→      {
+   217→        q: 'The series of the hydrogen spectrum lying in the visible region is',
+   218→        options: ['Lyman', 'Balmer', 'Paschen', 'Brackett'],
+   219→        answer: 1,
+   220→        explanation: 'Step 1: Series are named by the lower level $n_1$. Step 2: Lyman ($n_1 = 1$) lies in UV; Paschen and Brackett lie in IR. Step 3: Balmer ($n_1 = 2$) spans 656–365 nm — visible. Step 4: The red H$_\\alpha$ line of Balmer is the most famous visible hydrogen line.'
+   221→      }
+   222→    ]
+   223→  },
+   224→  // ---------------------------------------------------------------- 3.1
+   225→  {
+   226→    sectionId: 'jeemain-chem-u3-s1',
+   227→    readingTime: 9,
+   228→    prerequisites: [
+   229→      'Electronic configuration of atoms (Unit 2)',
+   230→      'Ionisation enthalpy and electron gain trends',
+   231→    ],
+   232→    intro: 'Why does Na bond with Cl but not with Ne? **Kossel and Lewis** answered with the octet drive: atoms reshuffle electrons to reach noble-gas configurations, either by transfer (ionic bond) or sharing (covalent bond). The ionic route is governed by a thermodynamic tug-of-war — ionisation, electron affinity and the enormous **lattice enthalpy** released when oppositely charged ions pack into a crystal.',
+   233→    objectives: [
+   234→      'Explain bond formation via the octet rule and Kossel\u2013Lewis electron bookkeeping',
+   235→      'Describe the formation of ionic bonds through electron transfer driven by low IE and high EA',
+   236→      'Use the Born–Haber cycle to compute lattice enthalpy from formation enthalpy, sublimation, IE and EA',
+   237→      'Predict ionic character trends from electronegativity difference',
+   238→    ],
+   239→    concepts: [
+   240→      {
+   241→        term: 'Octet rule',
+   242→        kind: 'law',
+   243→        statement: 'Atoms tend to gain, lose or share electrons until surrounded by **eight valence electrons** (a noble-gas shell) — the driving idea behind Lewis structures and Kossel\u2019s ionic picture.',
+   244→        detail: 'Exceptions matter for JEE: incomplete octets (BeCl$_2$, BF$_3$), expanded octets (PCl$_5$, SF$_6$ — possible from the third period onward via vacant d-orbitals in classical pictures), and odd-electron molecules (NO, NO$_2$). Hydrogen is content with two electrons (duet).'
+   245→      },
+   246→      {
+   247→        term: 'Ionic bond formation',
+   248→        kind: 'definition',
+   249→        statement: 'An **ionic bond** forms by complete electron transfer from a low-ionisation-enthalpy metal to a high-electron-affinity non-metal, producing cations and anions held together by electrostatic attraction.',
+   250→        detail: 'Favourable conditions: metal with low IE (alkali, alkaline-earth), non-metal with high EA/negative electron gain enthalpy (halogens, oxygen), and high lattice enthalpy of the product. The transfer itself usually costs energy — the lattice pays the bill.'
+   251→      },
+   252→      {
+   253→        term: 'Lattice enthalpy',
+   254→        kind: 'definition',
+   255→        statement: '**Lattice enthalpy** is the energy released when one mole of an ionic crystal forms from gaseous ions; it grows with charge magnitude and shrinks with ionic size: $U \\propto \\frac{|z_+ z_-|}{r_+ + r_-}$.',
+   256→        detail: 'Order LiF > NaF > KF (cation size grows); MgO ($2+\\times2-$) is far stronger than NaCl ($1+\\times1-$). High lattice enthalpy means high melting point and low solubility unless hydration can compete — the competition deciding whether an ionic solid dissolves.'
+   257→      },
+   258→      {
+   259→        term: 'Born–Haber cycle',
+   260→        kind: 'method',
+   261→        statement: 'Hess\u2019s law applied to ionic crystal formation: $\\Delta_f H = \\Delta_{\\text{sub}}H + \\frac{1}{2}D(M_2 \\text{ or } X_2) + IE + EA + \\Delta_{\\text{lattice}}H$ — any one unknown can be found from the rest.',
+   262→        detail: 'Steps for NaCl: sublime Na, atomise $\\frac{1}{2}$Cl$_2$, ionise Na ($+496$), attach electron to Cl ($-349$), condense ions (lattice, $-787$). Sum $= -411$ kJ/mol, the observed formation enthalpy. Sign discipline — IE always positive, EA of halogens negative, lattice always negative for formation — is where marks leak.'
+   263→      },
+   264→      {
+   265→        term: 'Electronegativity and ionic character',
+   266→        kind: 'insight',
+   267→        statement: 'The larger the electronegativity difference $\\Delta\\chi$ between bonded atoms, the more polar (ionic) the bond; a rough rule: $\\Delta\\chi > 1.7$ gives predominantly ionic character.',
+   268→        detail: 'CsF is the most ionic simple compound; bonds between identical atoms (H$_2$, Cl$_2$) are perfectly covalent. Percent ionic character grows smoothly — bonding is a continuum, and the "ionic versus covalent" label is a convenience, not a cliff.'
+   269→      }
+   270→    ],
+   271→    examples: [
+   272→      {
+   273→        title: 'Born–Haber lattice enthalpy',
+   274→        problem: 'For KCl: $\\Delta_f H = -437$ kJ/mol, $\\Delta_{\\text{sub}}H$(K) $= +89$, $\\frac{1}{2}D(\\text{Cl}_2) = +122$, IE(K) $= +419$, EA(Cl) $= -349$ kJ/mol. Find the lattice enthalpy.',
+   275→        steps: [
+   276→          { label: 'Step 1', text: 'Write the cycle: $\\Delta_fH = \\Delta_{\\text{sub}}H + \\frac{1}{2}D + IE + EA + \\Delta_{\\text{lat}}H$.' },
+   277→          { label: 'Step 2', text: 'Substitute knowns: $-437 = 89 + 122 + 419 - 349 + \\Delta_{\\text{lat}}H$.' },
+   278→          { label: 'Step 3', text: 'Sum the knowns: $89 + 122 + 419 - 349 = +281$ kJ/mol, so $-437 = 281 + \\Delta_{\\text{lat}}H$.' },
+   279→          { label: 'Step 4', text: 'Solve: $\\Delta_{\\text{lat}}H = -437 - 281 = -718$ kJ/mol — the huge stabilisation that makes KCl exist as a crystal.' }
+   280→        ],
+   281→        result: 'Lattice enthalpy of KCl $= -718$ kJ/mol (718 kJ/mol released on lattice formation).'
+   282→      },
+   283→      {
+   284→        title: 'Comparing lattice enthalpies',
+   285→        problem: 'Arrange LiF, NaCl, KBr, MgO in increasing order of lattice enthalpy and justify.',
+   286→        steps: [
+   287→          { label: 'Step 1', text: 'Governing factors: product of ionic charges over inter-ionic distance, $U \\propto \\frac{|z_+z_-|}{r_+ + r_-}$.' },
+   288→          { label: 'Step 2', text: 'MgO alone has $2+ \\times 2-$ charges — a factor of 4 in the numerator — dwarfing any size effect: it is the largest.' },
+   289→          { label: 'Step 3', text: 'Among the 1:1 halides, both cation and anion grow from LiF $\\to$ NaCl $\\to$ KBr, so distance increases and lattice enthalpy falls.' },
+   290→          { label: 'Step 4', text: 'Order: KBr < NaCl < LiF < MgO — the standard answer expected without any calculation.' }
+   291→        ],
+   292→        result: 'Lattice enthalpy: KBr < NaCl < LiF < MgO.'
+   293→      }
+   294→    ],
+   295→    keyTakeaways: [
+   296→      'Octet drive explains bonding but has named exceptions: BeCl$_2$/BF$_3$ (incomplete), PCl$_5$/SF$_6$ (expanded), NO (odd).',
+   297→      'Ionic bonds favour low IE metals + high EA non-metals + high lattice enthalpy.',
+   298→      '$U \\propto |z_+z_-|/(r_+ + r_-)$: MgO \u226b LiF > NaF > KF.',
+   299→      'Born–Haber = Hess on the ionic assembly line; watch every sign.'
+   300→    ],
+   301→    quiz: [
+   302→      {
+   303→        q: 'The lattice enthalpy of LiF is higher than that of KF because',
+   304→        options: ['Li$^+$ has a higher charge than K$^+$', 'Li$^+$ is smaller than K$^+$, shortening the ion–ion distance', 'F$^-$ is smaller in LiF', 'K\u2019s ionisation enthalpy is low'],
+   305→        answer: 1,
+   306→        explanation: 'Step 1: Both are 1:1 salts, so charge product is identical. Step 2: Lattice enthalpy grows as ionic separation shrinks. Step 3: Li$^+$ (76 pm) is far smaller than K$^+$ (138 pm), pulling ions closer and strengthening the lattice. Step 4: The fluoride ion is the same in both salts.'
+   307→      },
+   308→      {
+   309→        q: 'In the Born–Haber cycle for NaCl, which step is exothermic?',
+   310→        options: ['Sublimation of sodium', 'Ionisation of sodium', 'Electron gain by chlorine', 'Atomisation of chlorine'],
+   311→        answer: 2,
+   312→        explanation: 'Step 1: Sublimation, atomisation and ionisation all break bonds or strip electrons — endothermic. Step 2: Chlorine\u2019s electron gain enthalpy is negative ($-349$ kJ/mol). Step 3: Lattice formation is also exothermic, but it is not listed. Step 4: Hence electron gain by chlorine is the exothermic step among the options.'
+   313→      },
+   314→      {
+   315→        q: 'Which compound has the highest percentage of ionic character?',
+   316→        options: ['CsF', 'NaCl', 'LiCl', 'HF'],
+   317→        answer: 0,
+   318→        explanation: 'Step 1: Ionic character tracks electronegativity difference. Step 2: Cs ($\\chi = 0.79$) and F ($\\chi = 3.98$) give the largest $\\Delta\\chi \\approx 3.2$. Step 3: NaCl and LiCl have smaller differences; HF\u2019s hydrogen is moderately polar. Step 4: CsF — the most electropositive metal with the most electronegative non-metal — wins.'
+   319→      },
+   320→      {
+   321→        q: 'An example of an expanded octet is',
+   322→        options: ['BeCl$_2$', 'BF$_3$', 'PCl$_5$', 'NO'],
+   323→        answer: 2,
+   324→        explanation: 'Step 1: Expanded octet = more than 8 electrons around the central atom. Step 2: PCl$_5$ places 10 electrons around phosphorus. Step 3: BeCl$_2$ and BF$_3$ are electron-deficient (incomplete octets); NO is odd-electron. Step 4: Expansion is available to phosphorus because it lies in period 3.'
+   325→      }
+   326→    ]
+   327→  },
+   328→  // ---------------------------------------------------------------- 4.1
+   329→  {
+   330→    sectionId: 'jeemain-chem-u4-s1',
+   331→    readingTime: 10,
+   332→    prerequisites: [
+   333→      'First law of thermodynamics from physics (work, heat, internal energy)',
+   334→      'Calculus basics: state functions as exact differentials',
+   335→    ],
+   336→    intro: 'Thermodynamics separates what is possible from what is impossible. Before any equation can be trusted, the vocabulary must be exact: what counts as the **system**, which properties are **state functions** immune to path, and what distinguishes reversible from irreversible **processes**. Entropy — the arrow of disorder — enters quietly here and grows into the second law\u2019s judge of spontaneity.',
+   337→    objectives: [
+   338→      'Classify systems (open, closed, isolated) and properties (extensive versus intensive) with examples',
+   339→      'Explain why internal energy, enthalpy, entropy and Gibbs energy are state functions while heat and work are not',
+   340→      'Distinguish isothermal, adiabatic, isobaric, isochoric, cyclic and spontaneous processes',
+   341→      'Qualitatively connect entropy to molecular disorder and the number of accessible microstates',
+   342→    ],
+   343→    concepts: [
+   344→      {
+   345→        term: 'System and surroundings',
+   346→        kind: 'definition',
+   347→        statement: 'The **system** is the part of the universe under study; everything else is the **surroundings**; the boundary separates them and may allow matter and/or energy exchange.',
+   348→        detail: 'Open system: exchanges both (beaker of hot water). Closed: energy only, matter sealed (sealed flask). Isolated: neither (ideal thermos flask). Choose the system before writing any equation — the most common source of sign errors in thermodynamics numericals.'
+   349→      },
+   350→      {
+   351→        term: 'Extensive and intensive properties',
+   352→        kind: 'definition',
+   353→        statement: '**Extensive** properties scale with the amount of matter (mass, volume, internal energy, enthalpy, entropy, heat capacity); **intensive** properties do not (temperature, pressure, density, molar heat capacity, refractive index).',
+   354→        detail: 'Test: double the system — the property doubles (extensive) or stays put (intensive). Ratio of two extensive properties is intensive: $\\frac{V}{n} = V_m$ (molar volume), $\\frac{U}{n}$, $\\rho = \\frac{m}{V}$. JEE tests the classification directly in assertion–reason format.'
+   355→      },
+   356→      {
+   357→        term: 'State functions and path functions',
+   358→        kind: 'law',
+   359→        statement: 'A **state function** depends only on the current state, not on how it was reached ($U$, $H$, $S$, $G$, $P$, $V$, $T$); **path functions** depend on the route taken ($q$ and $w$).',
+   360→        detail: 'Climb a mountain: altitude is a state function (same regardless of path), distance walked is a path function. Consequence: $\\Delta U$, $\\Delta H$, $\\Delta S$ over a cycle are zero; $q$ and $w$ over a cycle generally are not — their difference, not their values, is path-independent ($\\Delta U = q + w$).'
+   361→      },
+   362→      {
+   363→        term: 'Types of processes',
+   364→        kind: 'notation',
+   365→        statement: 'Isothermal ($\\Delta T = 0$), adiabatic ($q = 0$), isobaric ($\\Delta P = 0$), isochoric ($\\Delta V = 0$), cyclic (state returns: all state-function changes zero), spontaneous (proceeds by itself in isolation, driven by energy spread).',
+   366→        detail: 'Reversible processes run through a continuous ladder of equilibrium states — infinitely slow, maximum work; real processes are irreversible. In an isothermal ideal-gas change $\\Delta U = 0$ so $q = -w$; in an adiabatic one $\\Delta U = w$. Process identification is the first read of every thermodynamics numerical.'
+   367→      },
+   368→      {
+   369→        term: 'Entropy',
+   370→        kind: 'definition',
+   371→        statement: '**Entropy** $S$ measures molecular disorder — the number of accessible microscopic arrangements; for a reversible heat exchange $dS = \\frac{\\delta q_{\\text{rev}}}{T}$.',
+   372→        detail: 'Disorder ladder: solid < liquid < gas; dissolution and mixing raise entropy; crystallisation lowers it. The second law: in any spontaneous process the entropy of the universe increases, $\\Delta S_{\\text{total}} = \\Delta S_{\\text{sys}} + \\Delta S_{\\text{surr}} > 0$. Entropy is a state function even though $\\delta q$ is not — dividing by $T$ along the reversible path cures the path dependence.'
+   373→      }
+   374→    ],
+   375→    examples: [
+   376→      {
+   377→        title: 'Classifying properties',
+   378→        problem: 'Classify each as extensive or intensive: (a) internal energy, (b) molar heat capacity, (c) density, (d) entropy, (e) temperature, (f) volume.',
+   379→        steps: [
+   380→          { label: 'Step 1', text: 'Apply the doubling test — imagine two identical flasks of the same gas combined.' },
+   381→          { label: 'Step 2', text: 'Total internal energy doubles: extensive (a). Entropy doubles: extensive (d). Volume doubles: extensive (f).' },
+   382→          { label: 'Step 3', text: 'Molar heat capacity is already per mole — intensive (b). Density is mass/volume, both doubling — unchanged: intensive (c). Temperature is unchanged on mixing identical samples: intensive (e).' },
+   383→          { label: 'Step 4', text: 'Quick rule: anything quoted "per mole", "per gram", "per unit volume" is intensive; totals are extensive.' }
+   384→        ],
+   385→        result: 'Extensive: $U$, $S$, $V$. Intensive: $C_m$, $\\rho$, $T$.'
+   386→      },
+   387→      {
+   388→        title: 'Entropy change of a phase change',
+   389→        problem: 'Compute $\\Delta S$ when 1 mol of ice melts at 0 \u00b0C ($\\Delta_{\\text{fus}}H = 6.0$ kJ/mol), and explain the sign.',
+   390→        steps: [
+   391→          { label: 'Step 1', text: 'Melting at constant $T = 273$ K is reversible at the transition point, so $\\Delta S = \\frac{q_{\\text{rev}}}{T}$.' },
+   392→          { label: 'Step 2', text: '$q_{\\text{rev}} = \\Delta_{\\text{fus}}H = 6000$ J/mol for the one mole.' },
+   393→          { label: 'Step 3', text: '$\\Delta S = \\frac{6000}{273} \\approx 22$ J K$^{-1}$ mol$^{-1}$.' },
+   394→          { label: 'Step 4', text: 'Positive — liquid water\u2019s molecules roam more arrangements than ice\u2019s lattice, so disorder rises exactly as the entropy increase demands.' }
+   395→        ],
+   396→        result: '$\\Delta S_{\\text{fus}} \\approx +22$ J K$^{-1}$ mol$^{-1}$ — melting is entropy-driven.'
+   397→      }
+   398→    ],
+   399→    keyTakeaways: [
+   400→      'Open/closed/isolated: matter and energy exchange define the system type.',
+   401→      'Extensive scales with amount; intensive does not; extensive/extensive ratios are intensive.',
+   402→      '$U$, $H$, $S$, $G$ are state functions; $q$ and $w$ are path functions — cycles return states, not heat.',
+   403→      'Entropy measures disorder; spontaneous changes raise the universe\u2019s entropy.'
+   404→    ],
+   405→    quiz: [
+   406→      {
+   407→        q: 'Which of the following is NOT a state function?',
+   408→        options: ['Enthalpy', 'Entropy', 'Work', 'Gibbs energy'],
+   409→        answer: 2,
+   410→        explanation: 'Step 1: State functions depend only on endpoints. Step 2: Enthalpy, entropy and Gibbs energy are properties of the state. Step 3: Work depends on the path — a piston stroke can be fast or slow, changing $w$ between the same states. Step 4: Hence work (and heat) are path functions.'
+   411→      },
+   412→      {
+   413→        q: 'A thermos flask containing hot coffee is best approximated as',
+   414→        options: ['an open system', 'a closed system', 'an isolated system', 'a homogeneous system'],
+   415→        answer: 2,
+   416→        explanation: 'Step 1: A perfect thermos allows no matter or energy exchange. Step 2: No matter leaves; heat transfer is (ideally) blocked. Step 3: Neither exchange means isolated. Step 4: Real flasks leak slowly, but the idealisation is the classic isolated-system example.'
+   417→      },
+   418→      {
+   419→        q: 'Which is an intensive property?',
+   420→        options: ['Volume', 'Internal energy', 'Molar volume', 'Entropy'],
+   421→        answer: 2,
+   422→        explanation: 'Step 1: Intensive properties survive doubling unchanged. Step 2: Volume, energy and entropy all double with system size. Step 3: Molar volume = volume/mole — an extensive divided by an extensive quantity. Step 4: The per-mole normalisation makes it intensive.'
+   423→      },
+   424→      {
+   425→        q: 'For an isothermal reversible expansion of an ideal gas, which is true?',
+   426→        options: ['$\\Delta U = 0$ and $q = -w$', '$\\Delta U > 0$ and $q = 0$', '$\\Delta H > 0$ and $w = 0$', '$\\Delta U < 0$ and $q < 0$'],
+   427→        answer: 0,
+   428→        explanation: 'Step 1: Ideal-gas internal energy depends only on temperature. Step 2: Isothermal means $\\Delta T = 0$, hence $\\Delta U = 0$ (and $\\Delta H = 0$). Step 3: First law $\\Delta U = q + w$ forces $q = -w$ — heat absorbed equals work done by the gas. Step 4: The other options break either the isothermal or the first-law constraint.'
+   429→      }
+   430→    ]
+   431→  },
+   432→  // ---------------------------------------------------------------- 6.1
+   433→  {
+   434→    sectionId: 'jeemain-chem-u6-s1',
+   435→    readingTime: 9,
+   436→    prerequisites: [
+   437→      'States of matter and phase changes (melting, vaporisation)',
+   438→      'Basic kinetic picture of gases',
+   439→    ],
+   440→    intro: 'Equilibrium is not stillness — it is a standoff. In a closed bottle of soda, CO$_2$ molecules leave and enter the headspace at equal rates; nothing changes, yet everything moves. **Dynamic equilibrium** in chemistry, and its quieter physical cousins — melting ice, evaporating water, gas dissolving — all obey one grammar: equality of forward and reverse rates, constancy of macroscopic properties, and Le Chatelier\u2019s push-back against disturbance.',
+   441→    objectives: [
+   442→      'Define dynamic equilibrium and list its observable characteristics',
+   443→      'Describe the four physical equilibria: solid–liquid, liquid–gas, solid–gas and gas dissolution',
+   444→      'State and apply Henry\u2019s law $p = K_H x$ to gas-solubility problems',
+   445→      'Connect equilibrium constants of physical processes to phase-change temperatures',
+   446→    ],
+   447→    concepts: [
+   448→      {
+   449→        term: 'Dynamic equilibrium',
+   450→        kind: 'definition',
+   451→        statement: 'A system is in **dynamic equilibrium** when opposing processes occur at equal rates, so macroscopic properties (concentration, colour, pressure) remain constant although molecular exchange continues.',
+   452→        detail: 'Requirements: closed system, constancy of measurable properties, and equal forward/backward rates. The evidence for the "dynamic" part: radioactive tracer experiments show exchange continues after apparent stillness. Equilibrium is a state of balance, not of equal concentrations — a favourite assertion–reason trap.'
+   453→      },
+   454→      {
+   455→        term: 'Solid–liquid equilibrium',
+   456→        kind: 'law',
+   457→        statement: 'At the **melting point**, solid and liquid coexist with $\\text{rate}_{\\text{fusion}} = \\text{rate}_{\\text{freezing}}$; below it the solid is the stable phase, above it the liquid.',
+   458→        detail: 'Ice + water at 0 \u00b0C and 1 atm: both phases persist indefinitely. The temperature stays pinned at the melting point until all solid converts — the physics of ice-bath constant temperature and the reason melting is isothermal.'
+   459→      },
+   460→      {
+   461→        term: 'Liquid–gas equilibrium and vapour pressure',
+   462→        kind: 'definition',
+   463→        statement: 'A liquid in a closed vessel equilibrates with its vapour at the **saturated vapour pressure**, which depends only on temperature; the **boiling point** is where vapour pressure equals the external pressure.',
+   464→        detail: 'Higher temperature raises vapour pressure exponentially (Clausius–Clapeyron behaviour); at 1 atm the crossing is the normal boiling point. Volatile liquids have high vapour pressures at room temperature — acetone versus water. Evaporative cooling: escaping molecules carry away above-average energy.'
+   465→      },
+   466→      {
+   467→        term: 'Solid–gas and dissolution equilibria',
+   468→        kind: 'definition',
+   469→        statement: 'Solids with appreciable vapour pressure **sublime** (solid $\\rightleftharpoons$ gas — dry ice, iodine, camphor); gases in liquids equilibrate as $\\text{gas} \\rightleftharpoons \\text{dissolved gas}$, with solubility set by pressure and temperature.',
+   470→        detail: 'Dissolution is exothermic for most gases, so heating drives them out — warm soda goes flat faster, boiled water loses dissolved oxygen. Sublimation connects directly to freeze-drying and mothball shrinkage.'
+   471→      },
+   472→      {
+   473→        term: 'Henry\u2019s law',
+   474→        kind: 'law',
+   475→        statement: 'The solubility of a gas in a liquid is proportional to its partial pressure: $p = K_H x$, where $K_H$ (Henry\u2019s constant) grows with temperature and differs gas-to-gas.',
+   476→        detail: 'Applications: carbonated bottling under high CO$_2$ pressure; scuba diving — high-pressure N$_2$ dissolves in blood (nitrogen narcosis / the bends on fast ascent, hence helium-oxygen mixes); altitude sickness and low O$_2$ solubility. Compare $K_H$ values: higher $K_H$ means lower solubility at the same pressure.'
+   477→      }
+   478→    ],
+   479→    examples: [
+   480→      {
+   481→        title: 'Henry\u2019s law scaling',
+   482→        problem: 'The solubility of a gas in water at 2 atm partial pressure is 0.10 mol/L. What is its solubility at 5 atm of the same gas at the same temperature?',
+   483→        steps: [
+   484→          { label: 'Step 1', text: 'Henry\u2019s law at constant $T$: $x \\propto p$, so solubility is proportional to pressure.' },
+   485→          { label: 'Step 2', text: 'Ratio: $\\frac{S_2}{S_1} = \\frac{p_2}{p_1} = \\frac{5}{2} = 2.5$.' },
+   486→          { label: 'Step 3', text: '$S_2 = 2.5 \\times 0.10 = 0.25$ mol/L.' },
+   487→          { label: 'Step 4', text: 'Temperature held fixed is essential — Henry\u2019s constant itself climbs with temperature, cutting solubility if the water warms.' }
+   488→        ],
+   489→        result: 'Solubility at 5 atm: 0.25 mol/L — linear in pressure.'
+   490→      },
+   491→      {
+   492→        title: 'Predicting the shift on heating',
+   493→        problem: 'Oxygen dissolves in water exothermically. Predict the effect on dissolved O$_2$ of (a) heating a lake in summer, (b) increasing depth (pressure).',
+   494→        steps: [
+   495→          { label: 'Step 1', text: 'Write the equilibrium: $\\text{O}_2(g) \\rightleftharpoons \\text{O}_2(aq)$, $\\Delta H < 0$.' },
+   496→          { label: 'Step 2', text: '(a) Heat is a product in effect; adding heat drives the equilibrium left (Le Chatelier) — dissolved oxygen falls, which is why fish crowd cool, deep water in summer.' },
+   497→          { label: 'Step 3', text: '(b) Greater pressure (deeper water) shifts equilibrium toward the smaller-volume dissolved phase — solubility rises with depth.' },
+   498→          { label: 'Step 4', text: 'Both effects follow Le Chatelier: temperature moves the constant, pressure moves the position.' }
+   499→        ],
+   500→        result: '(a) Heating lowers dissolved O$_2$; (b) higher pressure raises it.'
+   501→      }
+   502→    ],
+   503→    keyTakeaways: [
+   504→      'Dynamic equilibrium: equal opposing rates in a closed system; properties constant, motion unceasing.',
+   505→      'Melting point pins temperature; boiling point = vapour pressure matching external pressure.',
+   506→      'Henry\u2019s law $p = K_H x$: solubility linear in partial pressure; $K_H$ rises with temperature.',
+   507→      'Gas dissolution is exothermic — warm water holds less gas.'
+   508→    ],
+   509→    quiz: [
+   510→      {
+   511→        q: 'At equilibrium, which statement is correct?',
+   512→        options: ['Concentrations of reactants and products are equal', 'Reactions have stopped', 'Forward and reverse rates are equal', 'Only products remain'],
+   513→        answer: 2,
+   514→        explanation: 'Step 1: Equilibrium is dynamic, not dead. Step 2: Molecular interchange continues at equal rates. Step 3: Equal concentrations are coincidental, never required. Step 4: Constant macroscopic properties with equal two-way rates is the definition.'
+   515→      },
+   516→      {
+   517→        q: 'A bottle of soda fizzes open because',
+   518→        options: ['CO$_2$ solubility drops when pressure falls', 'temperature drops on opening', 'CO$_2$ solubility rises when pressure falls', 'the liquid evaporates instantly'],
+   519→        answer: 0,
+   520→        explanation: 'Step 1: Bottling charges the headspace with high CO$_2$ pressure. Step 2: Henry\u2019s law keeps gas dissolved in proportion to that pressure. Step 3: Opening drops the pressure, so solubility collapses and CO$_2$ escapes as bubbles. Step 4: Solubility falling with falling pressure is the correct direction.'
+   521→      },
+   522→      {
+   523→        q: 'Camphor kept in an open dish slowly disappears. This illustrates',
+   524→        options: ['melting', 'boiling', 'sublimation', 'dissolution'],
+   525→        answer: 2,
+   526→        explanation: 'Step 1: The solid never becomes liquid en route. Step 2: Solid $\\to$ vapour directly is sublimation. Step 3: Camphor, iodine, naphthalene and dry ice have appreciable vapour pressure below their melting points. Step 4: The solid–gas equilibrium shifts fully to gas in an open system.'
+   527→      },
+   528→      {
+   529→        q: 'Henry\u2019s constant $K_H$ for a gas in water increases with temperature. This means gas solubility',
+   530→        options: ['increases with temperature', 'decreases with temperature', 'is unaffected by temperature', 'depends only on pressure'],
+   531→        answer: 1,
+   532→        explanation: 'Step 1: Henry\u2019s law: $x = p/K_H$. Step 2: Larger $K_H$ at the same pressure gives smaller mole fraction dissolved. Step 3: Rising temperature therefore expels dissolved gas — the warm-flat-soda effect. Step 4: Pressure still matters at any fixed temperature, but the constant itself moves with $T$.'
+   533→      }
+   534→    ]
+   535→  },
+   536→  // ---------------------------------------------------------------- 7.1
+   537→  {
+   538→    sectionId: 'jeemain-chem-u7-s1',
+   539→    readingTime: 9,
+   540→    prerequisites: [
+   541→      'Atomic structure: valence electrons (Unit 2)',
+   542→      'Equation balancing from stoichiometry (Unit 1)',
+   543→    ],
+   544→    intro: 'Oxidation is electron loss, reduction is electron gain — remember OIL RIG — and a **redox reaction** is the two happening in lockstep, electrons passing from reductant to oxidant. The bookkeeping device is the **oxidation number**: a fictitious charge that tracks electrons so precisely that balancing even fearsome permanganate equations becomes routine arithmetic.',
+   545→    objectives: [
+   546→      'Define oxidation and reduction electronically and identify oxidant/reductant in given reactions',
+   547→      'Assign oxidation numbers using the rule set, including peroxide, superoxide and hydride exceptions',
+   548→      'Distinguish oxidation number from valency and from actual ionic charge',
+   549→      'Balance redox equations by the oxidation-number and ion-electron (half-reaction) methods',
+   550→    ],
+
+[showing lines 1-550 of 1057; use offset=551 with limit to continue reading]

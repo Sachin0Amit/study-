@@ -290,56 +290,72 @@ export const LIBRARY_SUBJECTS: Subject[] = [
     accent: '#fb7185',
     tagline: 'OOP • Streams • Concurrency',
   },
-  // ---- Competitive exam subjects ----
+  // ---- Subject-wise curriculum subjects ----
+  // NOTE (code comment only — not shown in the UI): the chapter/section data
+  // merged into these subject books was researched from official competitive-
+  // exam syllabi (engineering entrance, admissions assessment, defence
+  // recruitment and graduate-assessment sources). Per the product decision,
+  // no exam names appear anywhere in user-visible text; provenance lives in
+  // code comments like this one and in research/*.md.
   {
-    id: 'exam-jee',
-    name: 'IIT JEE — Main & Advanced',
-    slug: 'jee-main-advanced',
+    id: 'english',
+    name: 'English & Comprehension',
+    slug: 'english',
     description:
-      'The complete official NTA JEE Main 2026 syllabus (Physics 20 units, Chemistry 20 units, Mathematics 14 units — every topic, nothing skipped) plus the complete IIT JEE Advanced 2026 syllabus (jeeadv.ac.in) with the extra Advanced-only topics: thermal physics, nuclear chemistry, extractive metallurgy, salt analysis and more — six exam books, unit by unit, subtopic by subtopic.',
-    icon: 'graduation-cap',
-    accent: '#6366f1',
-    tagline: 'Main • Advanced • Official Syllabi',
-  },
-  {
-    id: 'exam-sat',
-    name: 'Digital SAT',
-    slug: 'digital-sat',
-    description:
-      'The College Board digital adaptive SAT mapped skill by skill: all four Math content domains (Algebra, Advanced Math, Problem Solving & Data Analysis, Geometry & Trigonometry) and all four Reading & Writing domains (Craft & Structure, Information & Ideas, Standard English Conventions, Expression of Ideas) with every official testing point, question weights and adaptive module strategy.',
-    icon: 'globe',
-    accent: '#0ea5e9',
-    tagline: 'Math • Reading • Writing',
-  },
-  {
-    id: 'exam-drdo',
-    name: 'DRDO Scientist B',
-    slug: 'drdo-scientist-b',
-    description:
-      'Defence research entrance mapped end to end: the Tier I screening battery (quantitative aptitude, reasoning, general awareness, English, general science) plus the complete Tier II engineering discipline syllabi for Computer Science, Electronics & Communication, Electrical and Mechanical — every area the RAC recruitment tests, from radar and missile guidance to VLSI, power systems and mechatronics.',
-    icon: 'rocket',
-    accent: '#65a30d',
-    tagline: 'Tier I • Tier II • CSE ECE EE ME',
-  },
-  {
-    id: 'exam-gate',
-    name: 'GATE',
-    slug: 'gate',
-    description:
-      'The GATE 2026 Computer Science & Information Technology syllabus (IIT Guwahati official) transcribed in full: General Aptitude plus all ten subject sections from Engineering Mathematics and Digital Logic through Operating Systems, Databases and Computer Networks — with official wording, weightages and every tested subtopic.',
-    icon: 'award',
-    accent: '#b45309',
-    tagline: 'CS & IT • Official 2026 Syllabus',
-  },
-  {
-    id: 'exam-engg',
-    name: 'Engineering Semester Exams',
-    slug: 'engineering-semester-exams',
-    description:
-      'The full four-branch university curriculum (AKTU/VTU/AICTE model) semester by semester: 135+ subjects across Computer Science, Electronics & Communication, Electrical and Mechanical engineering — from first-year mathematics and physics through branch cores like DSA, EMFT, power systems and thermodynamics to final-year AI, VLSI, EV and robotics electives, each with its complete topic list.',
+      'Reading, writing and language mastery: craft and structure, information and ideas, command of evidence, standard English conventions and expression of ideas — plus grammar, vocabulary, voice, narration and reading comprehension for fluent, precise communication.',
     icon: 'library',
+    accent: '#f472b6',
+    tagline: 'Read • Write • Reason',
+  },
+  {
+    id: 'aptitude',
+    name: 'Aptitude, Reasoning & Awareness',
+    slug: 'aptitude-reasoning',
+    description:
+      'Logical and analytical reasoning, general awareness with a defence and science-and-technology focus, and general science: analogies, series, coding–decoding, syllogisms, seating puzzles, non-verbal patterns, current affairs and everyday science — the complete mental-fitness curriculum.',
+    icon: 'globe',
+    accent: '#a3e635',
+    tagline: 'Logic • Awareness • Science',
+  },
+  {
+    id: 'cse-engg',
+    name: 'Computer Science & Engineering',
+    slug: 'computer-science-engineering',
+    description:
+      'The complete CSE degree path and beyond: eight semesters from mathematics and programming in C through data structures, digital logic, computer organization, operating systems, DBMS, theory of computation, compilers and networks — on to AI & machine learning, cloud, cryptography, IoT, big data and distributed systems.',
+    icon: 'cpu',
     accent: '#be123c',
-    tagline: 'CSE • ECE • EE • ME • Semesters 1–8',
+    tagline: 'Compute • Systems • Software',
+  },
+  {
+    id: 'ece-engg',
+    name: 'Electronics & Communication Engineering',
+    slug: 'electronics-communication-engineering',
+    description:
+      'The complete ECE degree path: electronic devices, analog and digital circuits, signals & systems, electromagnetics, communications, DSP, control systems, microprocessors, VLSI, embedded systems, antennas, microwave and radar — every semester from first-year basics to specialist electives.',
+    icon: 'radio',
+    accent: '#c2410c',
+    tagline: 'Signals • Circuits • Systems',
+  },
+  {
+    id: 'electrical-engineering',
+    name: 'Electrical Engineering',
+    slug: 'electrical-engineering',
+    description:
+      'The complete EE degree path: circuit theory and measurements, electrical machines I & II, power systems and power system analysis, power electronics & drives, switchgear & protection, utilization & traction, HVDC & FACTS, electric vehicles and renewable energy systems.',
+    icon: 'zap',
+    accent: '#a16207',
+    tagline: 'Power • Machines • Control',
+  },
+  {
+    id: 'mechanical-engineering',
+    name: 'Mechanical Engineering',
+    slug: 'mechanical-engineering',
+    description:
+      'The complete ME degree path: thermodynamics, mechanics of materials, theory of machines and machine design, manufacturing technology & metrology, fluid mechanics and machinery, heat transfer, IC engines and power plant, materials science, mechatronics, robotics and renewable energy.',
+    icon: 'cog',
+    accent: '#15803d',
+    tagline: 'Motion • Energy • Manufacture',
   },
 ]
 
@@ -595,282 +611,100 @@ export const LIBRARY_BOOKS: BookMeta[] = [
       'Horstmann — Core Java, Vol. I Fundamentals, 12e + Vol. II Advanced Features (3548 pp)',
     ],
   },
-  // ---- ================= COMPETITIVE EXAM LIBRARIES ================= ----
-  // ---- JEE Main 2026 (official NTA syllabus, jeemain.nta.nic.in) ----
+  // ---- ================= SUBJECT-WISE CURRICULUM BOOKS ================= ----
+  // (Code comment, not UI text: the chapters merged into the subject books below
+  // were researched from official competitive-exam syllabi — engineering entrance
+  // P/C/M, admissions-assessment Math & R&W, defence-recruitment aptitude +
+  // CSE/ECE/EE/ME disciplines, the graduate CS assessment and four-branch
+  // university semester curricula. Exam names are intentionally absent from all
+  // user-visible text per product decision; see research/*.md for provenance.)
   {
-    id: 'jeemain-physics-2026',
-    subjectId: 'exam-jee',
-    title: 'JEE Main 2026 Physics — Official NTA Syllabus',
-    author: 'National Testing Agency',
-    edition: '2026 Session Syllabus',
-    year: '2026',
-    description:
-      'The complete NTA Physics syllabus, all 20 units: units & measurements through kinematics, the whole mechanics chain, thermal physics, electromagnetism in full, optics, modern physics, electronic devices and all 18 experimental skills — every official subtopic mapped to a section, with Paper 1 pattern (20+5 questions per subject, +4/−1).',
-    pages: 20,
-    accent: '#6366f1',
-    sources: [
-      'JEE (Main) 2026 official syllabus PDF — NTA (17 pp)',
-    ],
-  },
-  {
-    id: 'jeemain-chemistry-2026',
-    subjectId: 'exam-jee',
-    title: 'JEE Main 2026 Chemistry — Official NTA Syllabus',
-    author: 'National Testing Agency',
-    edition: '2026 Session Syllabus',
-    year: '2026',
-    description:
-      'The complete NTA Chemistry syllabus, all 20 units in official order: the physical core (mole concept through electrochemistry and kinetics), periodicity, p/d/f-block and coordination chemistry, and the full organic sequence from GOC through biomolecules plus the practical-chemistry ion list — every official subtopic mapped to a section.',
-    pages: 20,
-    accent: '#8b5cf6',
-    sources: [
-      'JEE (Main) 2026 official syllabus PDF — NTA (17 pp)',
-    ],
-  },
-  {
-    id: 'jeemain-maths-2026',
-    subjectId: 'exam-jee',
-    title: 'JEE Main 2026 Mathematics — Official NTA Syllabus',
-    author: 'National Testing Agency',
-    edition: '2026 Session Syllabus',
-    year: '2026',
-    description:
-      'The complete NTA Mathematics syllabus, all 14 units: sets and relations, complex numbers and quadratics, matrices and determinants, P&C and binomial theorem, sequences and series, the full calculus spine (limits, continuity, differentiability, integrals, differential equations), coordinate geometry, 3D, vectors, statistics & probability and trigonometry — every official subtopic mapped to a section.',
-    pages: 14,
-    accent: '#a855f7',
-    sources: [
-      'JEE (Main) 2026 official syllabus PDF — NTA (17 pp)',
-    ],
-  },
-  // ---- JEE Advanced 2026 (official IIT syllabus, jeeadv.ac.in) ----
-  {
-    id: 'jeeadv-physics-2026',
-    subjectId: 'exam-jee',
-    title: 'JEE Advanced 2026 Physics — Official IIT Syllabus',
-    author: 'IIT Roorkee (JAB)',
-    edition: '2026 Syllabus',
-    year: '2026',
-    description:
-      'The official JEE Advanced Physics syllabus in study-sized chapters: general physics with all 9 prescribed experiments, the mechanics chain in full depth, thermal physics, electromagnetism including magnetic dipole moments of revolving electrons, ray and wave optics, and modern physics through Moseley\u2019s law, decay law and binding energy — every subtopic of the official 7-section syllabus.',
-    pages: 21,
-    accent: '#4f46e5',
-    sources: [
-      'JEE (Advanced) 2026 official syllabus PDF — jeeadv.ac.in (16 pp)',
-    ],
-  },
-  {
-    id: 'jeeadv-chemistry-2026',
-    subjectId: 'exam-jee',
-    title: 'JEE Advanced 2026 Chemistry — Official IIT Syllabus',
-    author: 'IIT Roorkee (JAB)',
-    edition: '2026 Syllabus',
-    year: '2026',
-    description:
-      'All 37 official Chemistry sections mapped into 23 chapters: general topics, the physical core including solid state, solutions, surface chemistry and nuclear chemistry, the inorganic chain from periodicity through 3d transition elements, ores, extractive metallurgy and complete qualitative salt analysis, and the organic sequence through benzene chemistry, biomolecules and practical organic chemistry.',
-    pages: 23,
-    accent: '#7c3aed',
-    sources: [
-      'JEE (Advanced) 2026 official syllabus PDF — jeeadv.ac.in (16 pp)',
-    ],
-  },
-  {
-    id: 'jeeadv-maths-2026',
-    subjectId: 'exam-jee',
-    title: 'JEE Advanced 2026 Mathematics — Official IIT Syllabus',
-    author: 'IIT Roorkee (JAB)',
-    edition: '2026 Syllabus',
-    year: '2026',
-    description:
-      'The official 9-section Mathematics syllabus split into 15 study chapters: algebra of complex numbers and quadratics with logarithms, matrices, probability with mean/median/mode/standard deviation, trigonometry through general solutions, the full analytic geometry suite (2D, conics, 3D), differential calculus with Rolle/LMVT, integral calculus with definite-integral properties, and vectors.',
-    pages: 15,
-    accent: '#9333ea',
-    sources: [
-      'JEE (Advanced) 2026 official syllabus PDF — jeeadv.ac.in (16 pp)',
-    ],
-  },
-  // ---- Digital SAT (College Board) ----
-  {
-    id: 'sat-math-2026',
-    subjectId: 'exam-sat',
-    title: 'Digital SAT Math — All 4 Content Domains',
-    author: 'College Board',
-    edition: 'Digital SAT Suite',
-    year: '2026',
-    description:
-      'Every Math domain of the adaptive digital SAT with official question weights: Algebra (~35%, 13–15 questions), Advanced Math (~35%), Problem Solving & Data Analysis (~15%) and Geometry & Trigonometry (~15%) — 19 skill sections covering every official testing point from linear systems and nonlinear function behaviour to margin of error, study design, radians and circle equations. Calculator throughout (Desmos), ~30% in-context questions.',
-    pages: 4,
-    accent: '#0ea5e9',
-    sources: [
-      'College Board — Digital SAT Suite Specifications Overview (Summer 2022)',
-      'College Board — Student Question Bank skill taxonomy',
-    ],
-  },
-  {
-    id: 'sat-rw-2026',
-    subjectId: 'exam-sat',
-    title: 'Digital SAT Reading & Writing — All 4 Content Domains',
-    author: 'College Board',
-    edition: 'Digital SAT Suite',
-    year: '2026',
-    description:
-      'Every Reading & Writing domain with official weights: Craft & Structure (~28%), Information & Ideas (~26%), Standard English Conventions (~26%) and Expression of Ideas (~20%) — 10 skill sections from words-in-context and cross-text connections through command of evidence, sentence boundaries, form/structure/sense, transitions and rhetorical synthesis. Short passages (25–150 words), one question each, 64 minutes for 54 questions.',
-    pages: 4,
-    accent: '#0284c7',
-    sources: [
-      'College Board — Digital SAT Suite Specifications Overview (Summer 2022)',
-    ],
-  },
-  // ---- DRDO Scientist B ----
-  {
-    id: 'drdo-tier1',
-    subjectId: 'exam-drdo',
-    title: 'DRDO Scientist B — Tier I Screening',
-    author: 'DRDO Recruitment & Assessment Centre (RAC)',
-    edition: 'RAC Advertisement',
-    year: '2026',
-    description:
-      'The Tier I computer-based screening battery: 100 marks across quantitative aptitude & numerical ability, reasoning & problem solving, general awareness with defence/S&T focus, English language and general science — 29 topic sections from percentages and seating arrangements to DRDO missions, labs and missile programs. Negative marking 0.25; qualifying marks 40% (UR) / 35% (SC/OBC) / 30% (EWS/PwD).',
-    pages: 5,
-    accent: '#65a30d',
-    sources: [
-      'DRDO RAC Scientist \u2018B\u2019 recruitment advertisement — Tier I scheme',
-    ],
-  },
-  {
-    id: 'drdo-cse',
-    subjectId: 'exam-drdo',
-    title: 'DRDO Tier II — Computer Science & Engineering',
-    author: 'DRDO Recruitment & Assessment Centre (RAC)',
-    edition: 'RAC Advertisement',
-    year: '2026',
-    description:
-      'The Tier II CSE discipline paper (60 marks of the 75-mark paper): engineering mathematics, discrete structures, digital logic, computer organization, programming & data structures, algorithms, theory of computation, compiler design, operating systems, databases, computer networks, cybersecurity and AI/ML — the full defence-software stack from lab automation to secure missile code.',
-    pages: 13,
-    accent: '#4d7c0f',
-    sources: [
-      'DRDO RAC Scientist \u2018B\u2019 Tier II syllabus — CSE discipline',
-    ],
-  },
-  {
-    id: 'drdo-ece',
-    subjectId: 'exam-drdo',
-    title: 'DRDO Tier II — Electronics & Communication',
-    author: 'DRDO Recruitment & Assessment Centre (RAC)',
-    edition: 'RAC Advertisement',
-    year: '2026',
-    description:
-      'The Tier II ECE discipline paper: networks, signals & systems, electronic devices, analog and digital circuits, electromagnetics, control systems, analog & digital communications, DSP, VLSI & embedded systems and advanced communications — radar, EW and missile-guidance electronics included, the classic DRDO core branch.',
-    pages: 12,
-    accent: '#3f6212',
-    sources: [
-      'DRDO RAC Scientist \u2018B\u2019 Tier II syllabus — ECE discipline',
-    ],
-  },
-  {
-    id: 'drdo-ee',
-    subjectId: 'exam-drdo',
-    title: 'DRDO Tier II — Electrical Engineering',
-    author: 'DRDO Recruitment & Assessment Centre (RAC)',
-    edition: 'RAC Advertisement',
-    year: '2026',
-    description:
-      'The Tier II EE discipline scope compiled from RAC/SET and CEPTAM official lists: electric circuits, electrical machines, power systems, power electronics & drives, measurements & instrumentation, control systems, signals & systems, analog & digital electronics and electromagnetic theory — with research-lab topics in utilization, materials and maintenance.',
-    pages: 11,
-    accent: '#166534',
-    sources: [
-      'DRDO RAC/CEPTAM EE discipline syllabi',
-    ],
-  },
-  {
-    id: 'drdo-me',
-    subjectId: 'exam-drdo',
-    title: 'DRDO Tier II — Mechanical Engineering',
-    author: 'DRDO Recruitment & Assessment Centre (RAC)',
-    edition: 'RAC Advertisement',
-    year: '2026',
-    description:
-      'The Tier II ME discipline paper: fluid mechanics & machinery, thermodynamics, heat transfer, IC engines & power plant, mechanics of materials, theory of machines & machine design, manufacturing technology & metrology, materials science, industrial engineering, mechatronics & robotics and renewable energy — propulsion, airframes and launcher engineering included.',
-    pages: 12,
-    accent: '#15803d',
-    sources: [
-      'DRDO RAC Scientist \u2018B\u2019 Tier II syllabus — ME discipline',
-    ],
-  },
-  // ---- GATE CS ----
-  {
-    id: 'gate-cs-2026',
-    subjectId: 'exam-gate',
-    title: 'GATE 2026 CS & IT — Official Syllabus',
-    author: 'IIT Guwahati (GATE 2026)',
-    edition: 'CS + IT Papers',
-    year: '2026',
-    description:
-      'The official GATE Computer Science & Information Technology syllabus transcribed in full — General Aptitude (15 marks) plus the ten subject sections: Engineering Mathematics (13 marks), Digital Logic, Computer Organization & Architecture, Programming & Data Structures, Algorithms, Theory of Computation, Compiler Design, Operating System, Databases and Computer Networks — 58 sections with every official subtopic in official wording, for the 65-question / 100-mark / 3-hour paper.',
-    pages: 11,
-    accent: '#b45309',
-    sources: [
-      'GATE 2026 CS syllabus PDF — IIT Guwahati (organizing institute)',
-    ],
-  },
-  // ---- Engineering semester exams ----
-  {
-    id: 'engg-cse',
-    subjectId: 'exam-engg',
-    title: 'CSE — 8 Semesters, Complete Curriculum',
-    author: 'AKTU / VTU / AICTE model curriculum',
+    id: 'english-complete',
+    subjectId: 'english',
+    title: 'English: Reading, Writing & Comprehension',
+    author: 'StudyVerse Curriculum Team',
     edition: '2026 Edition',
     year: '2026',
     description:
-      'The whole Computer Science degree path: 36 subjects from Semester 1 (mathematics, physics, programming in C) through the Sem 3–5 core (DSA, digital logic, COA, OS, DBMS, TOC, compilers, networks) to Sem 6–8 electives (ML, blockchain, cloud, cryptography, IoT, big data, deep learning) — every subject with its complete unit list.',
-    pages: 36,
+      'Complete verbal skills in one volume: reading comprehension and rhetoric, words in context, text structure and purpose, cross-text connections, command of evidence, standard English conventions — sentence boundaries, agreement, punctuation — plus transitions, rhetorical synthesis, grammar essentials, vocabulary, voice, narration and comprehension practice.',
+    pages: 5,
+    accent: '#f472b6',
+  },
+  {
+    id: 'aptitude-complete',
+    subjectId: 'aptitude',
+    title: 'Aptitude, Reasoning & General Awareness',
+    author: 'StudyVerse Curriculum Team',
+    edition: '2026 Edition',
+    year: '2026',
+    description:
+      'The complete mental-aptitude curriculum: reasoning and problem solving (analogies, classification, series, coding–decoding, blood relations, syllogisms, seating arrangements, puzzles, calendars, clocks and non-verbal patterns), general awareness with a defence and S&T focus, and 10+2-level general science.',
+    pages: 3,
+    accent: '#a3e635',
+  },
+  {
+    id: 'cse-complete',
+    subjectId: 'cse-engg',
+    title: 'CSE — The Complete Curriculum',
+    author: 'StudyVerse Curriculum Team',
+    edition: '2026 Edition',
+    year: '2026',
+    description:
+      'The whole Computer Science path in one master volume: the eight-semester degree (36 subjects from mathematics and programming in C through DSA, digital logic, COA, OS, DBMS, TOC, compilers and networks to AI, blockchain, cloud, IoT and deep learning), followed by graduate-level depth across all ten core areas — engineering mathematics, digital logic, computer organization, programming & data structures, algorithms, theory of computation, compiler design, operating systems, databases and computer networks — and the full defence-software stack including cybersecurity and AI/ML.',
+    pages: 60,
     accent: '#be123c',
     sources: [
-      'AKTU CSE 3rd/4th year curricula + VTU 2021-scheme CSE syllabus',
+      'University model CSE curricula (8 semesters, 36 subjects) — every unit listed',
+      'Graduate CS assessment syllabus — all 10 sections + aptitude, official wording',
+      'Defence-software CSE discipline scope — 13 areas from lab automation to secure systems',
     ],
   },
   {
-    id: 'engg-ece',
-    subjectId: 'exam-engg',
-    title: 'ECE — 8 Semesters, Complete Curriculum',
-    author: 'AKTU / VTU / AICTE model curriculum',
+    id: 'ece-complete',
+    subjectId: 'ece-engg',
+    title: 'ECE — The Complete Curriculum',
+    author: 'StudyVerse Curriculum Team',
     edition: '2026 Edition',
     year: '2026',
     description:
-      'The whole Electronics & Communication degree path: 37 subjects from first-year electrical technology and physics through network analysis, electronic devices, signals & systems, analog and digital circuits, EMFT, communications, DSP, control, microprocessors, VLSI, embedded systems, antennas, microwave & radar and optical fiber — every subject with its complete unit list.',
-    pages: 37,
+      'The whole Electronics & Communication path in one master volume: 37 semester subjects from first-year electrical technology and physics through network analysis, electronic devices, signals & systems, analog and digital circuits, EMFT, communications, DSP, control, microprocessors, VLSI, embedded systems, antennas, microwave & radar and optical fiber — plus the full defence-electronics discipline scope spanning radar, electronic warfare and missile-guidance systems.',
+    pages: 49,
     accent: '#c2410c',
     sources: [
-      'IIT-BBS ECE curriculum (46 pp) + AKTU/VTU ECE schemes',
+      'University model ECE curricula (8 semesters, 37 subjects) — every unit listed',
+      'Defence-electronics ECE discipline scope — 12 areas including radar and EW',
     ],
   },
   {
-    id: 'engg-ee',
-    subjectId: 'exam-engg',
-    title: 'EE — 8 Semesters, Complete Curriculum',
-    author: 'AKTU / VTU / AICTE model curriculum',
+    id: 'ee-complete',
+    subjectId: 'electrical-engineering',
+    title: 'EE — The Complete Curriculum',
+    author: 'StudyVerse Curriculum Team',
     edition: '2026 Edition',
     year: '2026',
     description:
-      'The whole Electrical Engineering degree path: 32 subjects from circuit theory and measurements through machines I & II, power systems I & II, power system analysis, power electronics & drives, switchgear & protection, utilization & traction, HVDC & FACTS, electric vehicles and renewable energy systems — every subject with its complete unit list.',
-    pages: 32,
+      'The whole Electrical Engineering path in one master volume: 32 semester subjects from circuit theory and measurements through machines I & II, power systems I & II, power system analysis, power electronics & drives, switchgear & protection, utilization & traction, HVDC & FACTS, electric vehicles and renewable energy systems — plus the defence-research EE discipline scope with research-lab topics in utilization, materials and maintenance.',
+    pages: 43,
     accent: '#a16207',
     sources: [
-      'SHUATS EE syllabus (42 pp) + AKTU/VTU EE schemes',
+      'University model EE curricula (8 semesters, 32 subjects) — every unit listed',
+      'Defence-research EE discipline scope — 11 areas from circuits to EM theory',
     ],
   },
   {
-    id: 'engg-me',
-    subjectId: 'exam-engg',
-    title: 'ME — 8 Semesters, Complete Curriculum',
-    author: 'AKTU / VTU / AICTE model curriculum',
+    id: 'me-complete',
+    subjectId: 'mechanical-engineering',
+    title: 'ME — The Complete Curriculum',
+    author: 'StudyVerse Curriculum Team',
     edition: '2026 Edition',
     year: '2026',
     description:
-      'The whole Mechanical Engineering degree path: 30 subjects from engineering mechanics and strength of materials through thermodynamics, fluid mechanics & machinery, manufacturing technology I & II, heat & mass transfer, theory of machines I & II, machine design, RAC, IC engines, power plant, automobile engineering, CAD/CAM, mechatronics and robotics — every subject with its complete unit list.',
-    pages: 30,
-    accent: '#9f1239',
+      'The whole Mechanical Engineering path in one master volume: 30 semester subjects spanning fluid mechanics & machinery, thermodynamics, heat transfer, IC engines & power plant, mechanics of materials, theory of machines & machine design, manufacturing technology & metrology, materials science, industrial engineering, mechatronics & robotics and renewable energy — plus the defence-research ME discipline scope including propulsion, airframes and launcher engineering.',
+    pages: 42,
+    accent: '#15803d',
     sources: [
-      'SHUATS ME syllabus (73 pp) + AKTU/VTU ME schemes',
+      'University model ME curricula (8 semesters, 30 subjects) — every unit listed',
+      'Defence-research ME discipline scope — 12 areas including propulsion',
     ],
   },
 ]

@@ -129,7 +129,7 @@ export function ExamHistory({ deviceId }: { deviceId: string }) {
     ? [
         { icon: Trophy, label: 'Best score', value: `${stats.best}%`, cls: 'text-emerald-300' },
         { icon: TrendingUp, label: 'Average score', value: `${stats.avg}%`, cls: 'text-amber-300' },
-        { icon: ClipboardCheck, label: 'Exams taken', value: String(stats.count), cls: 'text-emerald-300' },
+        { icon: ClipboardCheck, label: 'Tests taken', value: String(stats.count), cls: 'text-emerald-300' },
         { icon: Timer, label: 'Avg duration', value: fmtDuration(stats.avgSec), cls: 'text-amber-300' },
       ]
     : []
@@ -143,7 +143,7 @@ export function ExamHistory({ deviceId }: { deviceId: string }) {
     >
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
         <h3 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300/80">
-          <LineChart className="h-3.5 w-3.5" /> Exam performance
+          <LineChart className="h-3.5 w-3.5" /> Test performance
         </h3>
         {!loaded ? (
           <span className="font-mono text-[11px] text-muted-foreground">…</span>
@@ -178,7 +178,7 @@ export function ExamHistory({ deviceId }: { deviceId: string }) {
             viewBox={`0 0 ${VB_W} ${VB_H}`}
             className="h-auto w-full"
             role="img"
-            aria-label="Exam score percentage for each of your most recent attempts, oldest to newest"
+            aria-label="Test score percentage for each of your most recent attempts, oldest to newest"
           >
             {/* y gridlines at 0 / 50 / 100 */}
             {[0, 50, 100].map((v) => (

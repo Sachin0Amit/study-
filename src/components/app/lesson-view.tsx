@@ -22,7 +22,7 @@ import {
 } from 'lucide-react'
 import { getBook, getChapter, getSection, getSections } from '@/data/library'
 import { getSectionContent } from '@/data/content'
-import type { DepthBlock, DepthTier, DetailedDerivation, LessonFigure, SectionContent, QuizQuestion } from '@/data/library'
+import type { ChapterMeta, DepthBlock, DepthTier, DetailedDerivation, LessonFigure, QuizQuestion, SectionContent, SectionMeta } from '@/data/library'
 import { RichText, plainText } from '../rich-text'
 import { shuffleQuizOptions } from '@/lib/quiz-shuffle'
 import { InteractiveTool } from '@/components/interactives/registry'
@@ -49,6 +49,178 @@ function bookTitle(bookId: string): string {
   const surname = bookAuthorShort(bookId)
   const edition = book.edition ? `, ${book.edition.replace(' Edition', ' Ed')}` : ''
   return surname ? `${book.title} — ${surname}${edition}` : book.title
+}
+
+/** Split a syllabus-section description (comma/semicolon prose that lists every tested
+ *  subtopic) into scannable bullets for the Syllabus Topic Brief checklist. */
+function splitSyllabusSubtopics(description: string): string[] {
+  const cleaned = description.replace(/\s+/g, ' ').trim().replace(/[.;]\s*$/, '')
+  // "A, B, C, and D" / "A; B; C" — split on commas, semicolons, and the Oxford "and"
+  const parts = cleaned
+    .split(/,|;|\band\b|\bplus\b/gi)
+    .map((p) => p.trim().replace(/^[a-z]/, (c) => c.toUpperCase()))
+    // keep meaningful fragments: at least 3 words or a hyphenated compound
+    .filter((p) => p.length > 8 && p.split(' ').length >= 2 && !/^(The|This|These|Those)$/i.test(p))
+  // dedupe (case-insensitive) and cap at 8 bullets
+  const seen = new Set<string>()
+  const unique = parts.filter((p) => {
+    const key = p.toLowerCase()
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  })
+  return unique.slice(0, 8)
+}
+
+/** Count how many sections of a chapter already have authored lesson content
+ *  (module-level so the React Compiler never sees sibling objects cross a
+ *  function boundary inside the component — keeps manual memoization valid). */
+function countSiblingLessons(chapterId: string): number {
+  return getSections(chapterId).filter((s) => getSectionContent(s.id)).length
+}
+
+/* ------------------------------------------------------------------ */
+/*  Syllabus Topic Brief                                               */
+/*  Rendered for sections that have syllabus metadata but no authored  */
+/*  lesson yet: every official subtopic (split out of the section      */
+/*  description), chapter context chips, sibling-lesson coverage and   */
+/*  prev/next topic navigation. Kept as its own component so the       */
+/*  description-splitting helper never runs in the parent scope        */
+/*  (React Compiler memoization preservation).                         */
+/* ------------------------------------------------------------------ */
+function SyllabusBrief({
+  section,
+  chapter,
+  prev,
+  next,
+  totalSiblings,
+}: {
+  section: SectionMeta
+  chapter: ChapterMeta
+  prev?: SectionMeta
+  next?: SectionMeta
+  totalSiblings: number
+}) {
+  const navigate = useStudy((s) => s.navigate)
+  const subtopics = splitSyllabusSubtopics(section.description)
+  const lessonCount = countSiblingLessons(chapter.id)
+
+  return (
+    <section aria-label="Syllabus topic brief" className="mt-6 mb-4">
+      <div className="relative overflow-hidden rounded-xl border border-book-rule bg-muted/20">
+        {/* subtle decorative wash */}
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-emerald-400/[0.07] via-emerald-400/[0.03] to-transparent"
+        />
+        <div className="relative px-5 py-5 sm:px-7 sm:py-6">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-emerald-400/30 bg-emerald-400/10">
+              <ListTree className="h-4 w-4 text-emerald-600 dark:text-emerald-300" aria-hidden />
+            </span>
+            <div>
+              <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-primary">
+                Syllabus Topic Brief
+              </div>
+              <div className="font-mono text-[10.5px] text-book-soft">
+                Section {section.number} · official syllabus map
+              </div>
+            </div>
+          </div>
+          <p className="mt-4 font-serif text-[16.5px] leading-[1.75]">{section.description}</p>
+
+          {/* subtopic checklist — official bullets split out of the syllabus description */}
+          {subtopics.length > 1 && (
+            <div className="mt-5">
+              <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em] text-book-soft">
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500/80 dark:text-emerald-300/80" aria-hidden />
+                Every tested subtopic in this section
+              </div>
+              <ul className="mt-2.5 grid gap-1.5 sm:grid-cols-2">
+                {subtopics.map((t, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-2 rounded-md border border-border/60 bg-card/60 px-3 py-2 text-[12.5px] leading-snug"
+                  >
+                    <span
+                      aria-hidden
+                      className="mt-[0.2rem] flex h-4 w-4 shrink-0 items-center justify-center rounded-[4px] border border-emerald-400/40 bg-emerald-400/10 font-mono text-[9px] font-bold text-emerald-600 dark:text-emerald-300"
+                    >
+                      {i + 1}
+                    </span>
+                    <span className="min-w-0">{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[12px] text-book-soft">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card/50 px-2.5 py-1">
+              <BookOpenCheck className="h-3 w-3 text-emerald-500/80" aria-hidden />
+              {bookTitle(chapter.bookId)}
+            </span>
+            {chapter.pages && (
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card/50 px-2.5 py-1">
+                <GraduationCap className="h-3 w-3 text-emerald-500/80" aria-hidden />
+                {chapter.pages}
+              </span>
+            )}
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card/50 px-2.5 py-1">
+              <ListTree className="h-3 w-3 text-emerald-500/80" aria-hidden />
+              Chapter {chapter.number} · {chapter.shortTitle}
+            </span>
+            {lessonCount > 0 && (
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1 text-emerald-700 dark:text-emerald-300">
+                <Zap className="h-3 w-3" aria-hidden />
+                {lessonCount} of {totalSiblings} chapter topics have full lessons
+              </span>
+            )}
+          </div>
+          <div className="sv-book-rule mt-5" />
+          <p className="mt-5 text-[13.5px] leading-relaxed text-book-soft">
+            This section of the syllabus map is catalogued with every tested subtopic above. A
+            full lesson — concepts, worked examples and a self-check quiz — follows the same
+            pattern as the authored lessons across the library. Browse the chapter outline for
+            sibling topics, or jump to any completed lesson from the contents list.
+          </p>
+          <div className="mt-5 flex flex-wrap items-center gap-3">
+            <button
+              onClick={() => navigate({ name: 'chapter', chapterId: chapter.id })}
+              className="inline-flex items-center gap-1.5 rounded-full border border-book-rule bg-primary/[0.06] px-4 py-1.5 text-[12px] font-semibold text-book-ink transition-colors hover:border-primary/50 hover:bg-primary/10 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60"
+            >
+              <ListTree className="h-3.5 w-3.5" aria-hidden />
+              All Chapter {chapter.number} topics
+            </button>
+            {(prev || next) && (
+              <span className="flex items-center gap-2">
+                {prev && (
+                  <button
+                    onClick={() => navigate({ name: 'lesson', sectionId: prev.id })}
+                    aria-label={`Go to previous topic: ${prev.title}`}
+                    className="inline-flex items-center gap-1 rounded-full border border-border/70 px-3 py-1.5 text-[11.5px] font-medium text-book-soft transition-colors hover:border-primary/50 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60"
+                  >
+                    <ArrowLeft className="h-3 w-3" aria-hidden />
+                    <span className="max-w-[140px] truncate">§{prev.number}</span>
+                  </button>
+                )}
+                {next && (
+                  <button
+                    onClick={() => navigate({ name: 'lesson', sectionId: next.id })}
+                    aria-label={`Go to next topic: ${next.title}`}
+                    className="inline-flex items-center gap-1 rounded-full border border-border/70 px-3 py-1.5 text-[11.5px] font-medium text-book-soft transition-colors hover:border-primary/50 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60"
+                  >
+                    <span className="max-w-[140px] truncate">§{next.number} next</span>
+                    <ArrowRight className="h-3 w-3" aria-hidden />
+                  </button>
+                )}
+              </span>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }
 
 /** Author surname(s) for the running head, e.g. "Rosen" or "Hughes · Nilsson · AoE" */
@@ -202,6 +374,7 @@ export function LessonView({ sectionId }: { sectionId: string }) {
 
   const prev = idx > 0 ? siblings[idx - 1] : undefined
   const next = idx < siblings.length - 1 ? siblings[idx + 1] : undefined
+
   const p = progress[sectionId]
 
   return (
@@ -356,36 +529,18 @@ export function LessonView({ sectionId }: { sectionId: string }) {
           </div>
           {easyMode && section && <EasyStart title={`§${section.number} ${section.title}`} />}
           {/* syllabus brief — rendered when this section has no authored lesson content yet,
-              so exam-syllabus topics still read as a useful study page instead of an empty one */}
+              so exam-syllabus topics still read as a useful study page instead of an empty one.
+              Extracted into its own component: the subtopic-splitting helper receives the
+              description inside the child, which keeps the React Compiler's memoization
+              analysis of this (parent) component untouched. */}
           {!content && section && chapter && (
-            <section aria-label="Syllabus topic brief" className="mt-6 mb-4">
-              <div className="rounded-xl border border-book-rule bg-muted/20 px-5 py-5 sm:px-7 sm:py-6">
-                <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-primary">
-                  <ListTree className="h-4 w-4" aria-hidden />
-                  <span>Syllabus Topic Brief</span>
-                </div>
-                <p className="mt-3 font-serif text-[16.5px] leading-[1.75]">{section.description}</p>
-                <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-[12px] text-book-soft">
-                  <span>{bookTitle(chapter.bookId)}</span>
-                  {chapter.pages && <span>{chapter.pages}</span>}
-                  <span>Chapter {chapter.number} · {chapter.shortTitle}</span>
-                </div>
-                <div className="sv-book-rule mt-5" />
-                <p className="mt-5 text-[13.5px] leading-relaxed text-book-soft">
-                  This section of the syllabus map is catalogued with every tested subtopic above. A
-                  full lesson — concepts, worked examples and a self-check quiz — follows the same
-                  pattern as the authored lessons across the library. Browse the chapter outline for
-                  sibling topics, or jump to any completed lesson from the contents list.
-                </p>
-                <button
-                  onClick={() => navigate({ name: 'chapter', chapterId: chapter.id })}
-                  className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-book-rule px-4 py-1.5 text-[12px] font-semibold text-book-soft transition-colors hover:border-primary/50 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60"
-                >
-                  <ListTree className="h-3.5 w-3.5" aria-hidden />
-                  All Chapter {chapter.number} topics
-                </button>
-              </div>
-            </section>
+            <SyllabusBrief
+              section={section}
+              chapter={chapter}
+              prev={prev}
+              next={next}
+              totalSiblings={siblings.length}
+            />
           )}
           {/* lede — the opening paragraph, with a three-line drop cap when it opens on a letter */}
           {content?.intro && (

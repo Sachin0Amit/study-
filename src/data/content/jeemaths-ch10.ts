@@ -9,7 +9,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh10Content: SectionContent[] = [
   // ---------------------------------------------------------------- 10.1
   {
-    sectionId: 'jeemaths-ch10-s1',
+    sectionId: 'advmath-ch10-s1',
     readingTime: 8,
     intro: 'Mean, median and mode locate the centre of data while variance and standard deviation quantify its spread. Grouped-data formulas with assumed means and step deviations keep hand computation feasible. This section builds those summaries with shortcut formulas and comparability properties.',
     objectives: [
@@ -107,7 +107,7 @@ export const jeemathsCh10Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 10.2
   {
-    sectionId: 'jeemaths-ch10-s2',
+    sectionId: 'advmath-ch10-s2',
     readingTime: 8,
     intro: 'Classical probability assigns $\\frac{\\text{favourable}}{\\text{total}}$ under equally likely outcomes, and the addition and multiplication theorems extend it to unions and intersections. Conditional probability $P(A|B)$ renormalizes the sample space to $B$. This section builds those theorems with independence tests.',
     objectives: [
@@ -205,7 +205,7 @@ export const jeemathsCh10Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 10.3
   {
-    sectionId: 'jeemaths-ch10-s3',
+    sectionId: 'advmath-ch10-s3',
     readingTime: 9,
     intro: 'Total probability decomposes an event across a partition of the sample space, weighting each branch by its prior. Bayes theorem inverts the conditioning to yield posterior probabilities of causes given observed effects. This section trains partition setup and posterior computation without omission errors.',
     objectives: [
@@ -358,7 +358,7 @@ export const jeemathsCh10Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 10.4
   {
-    sectionId: 'jeemaths-ch10-s4',
+    sectionId: 'advmath-ch10-s4',
     readingTime: 9,
     intro: 'Repeated independent trials with two outcomes follow the binomial law $P(X = r) = \\binom{n}{r}p^{r}q^{n-r}$. Its mean $np$ and variance $npq$ summarize location and spread without summing the whole distribution. This section develops the distribution with recurrence, mode and expectation tools.',
     objectives: [

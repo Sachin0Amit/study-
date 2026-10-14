@@ -2,7 +2,7 @@ import type { SectionContent } from '../library'
 
 // ============================================================================
 // Engineering Semester Exams — ECE / EE / ME branch content (books
-// 'engg-ece', 'engg-ee', 'engg-me'). Full SectionContent for the FIRST
+// 'ece-complete', 'ee-complete', 'me-complete'). Full SectionContent for the FIRST
 // section of 12 core chapters: ECE — Network Analysis & Synthesis (10.1),
 // Signals & Systems (14.1), Analog Communication (16.1), EM Field Theory
 // (19.1); EE — Circuit Theory & Network Analysis (9.1), Electrical Machines I
@@ -15,14 +15,14 @@ import type { SectionContent } from '../library'
 export const enggBranchContent: SectionContent[] = [
   // ------------------------------------------------- ECE 10.1 — Networks
   {
-    sectionId: 'engg-ece-networks-s1',
+    sectionId: 'ece-e-networks-s1',
     readingTime: 9,
     prerequisites: [
       'KCL and KVL for simple resistive circuits',
       'Matrix multiplication and transpose',
       'Two-terminal elements: resistors and ideal sources as branches'
     ],
-    intro: 'Every Network Analysis paper (AKTU KEC303 / VTU Semester 3) begins with the graph: strip the elements away and keep only the connection pattern. Topology decides how many independent KCL and KVL equations you must write before any numbers appear. Mastering tree, incidence, tie-set and cut-set matrices turns messy mesh and nodal analysis into a mechanical procedure worth easy marks.',
+    intro: 'Every Network Analysis paper (the state technical university KEC303 / the state technical university Semester 3) begins with the graph: strip the elements away and keep only the connection pattern. Topology decides how many independent KCL and KVL equations you must write before any numbers appear. Mastering tree, incidence, tie-set and cut-set matrices turns messy mesh and nodal analysis into a mechanical procedure worth easy marks.',
     objectives: [
       'Draw the graph of a network and count tree branches, links and independent loops for any connected graph',
       'Write the reduced incidence matrix $A$ and use the formulations $A i_b = 0$ (KCL) and $v_b = A^T v_n$ (KVL)',
@@ -34,7 +34,7 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Graph, tree and co-tree',
         kind: 'definition',
         statement: 'A **directed graph** replaces every two-terminal element by a **branch** joining two **nodes**; a **tree** is any connected subgraph containing all $n$ nodes but no closed path, and it always has **$n - 1$ twigs** with the remaining **$b - n + 1$ links** forming the co-tree.',
-        detail: 'Every link added to the tree closes exactly one loop, so a connected graph has exactly $b - n + 1$ independent loops and $n - 1$ independent node equations. Exams love the counting question "how many links / twigs / loops" — draw the graph, never guess from the circuit diagram. Sources stay in as branches here; killing sources is the Thevenin exercise of Section 10.2, a completely different operation.'
+        detail: 'Every link added to the tree closes exactly one loop, so a connected graph has exactly $b - n + 1$ independent loops and $n - 1$ independent node equations. Assessments love the counting question "how many links / twigs / loops" — draw the graph, never guess from the circuit diagram. Sources stay in as branches here; killing sources is the Thevenin exercise of Section 10.2, a completely different operation.'
       },
       {
         term: 'Incidence matrix',
@@ -58,7 +58,7 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Counting trees and MNA preview',
         kind: 'insight',
         statement: 'The number of possible trees of a **complete graph** on $n$ nodes is $n^{n-2}$ (Cayley), e.g. $4^2 = 16$ trees for four nodes; when voltage sources or floating elements break the pure admittance pattern, nodal analysis upgrades to **modified nodal analysis (MNA)**.',
-        detail: 'MNA appends extra rows for the branch currents that cannot be eliminated (voltage-source currents), keeping the incidence-based structure intact — SPICE works this way. The counting question "trees of a complete graph with 4 nodes" (answer 16) appears verbatim in AKTU papers; remember each such tree has $n - 1 = 3$ twigs.'
+        detail: 'MNA appends extra rows for the branch currents that cannot be eliminated (voltage-source currents), keeping the incidence-based structure intact — SPICE works this way. The counting question "trees of a complete graph with 4 nodes" (answer 16) appears verbatim in the state technical university papers; remember each such tree has $n - 1 = 3$ twigs.'
       }
     ],
     examples: [
@@ -69,7 +69,7 @@ export const enggBranchContent: SectionContent[] = [
           { label: 'Step 1', text: '```text\ntwigs = n - 1 = 4 ; links = b - n + 1 = 8 - 5 + 1 = 4\n```\nA tree on 5 nodes always uses $n - 1 = 4$ twigs; the remaining $8 - 4 = 4$ branches are the links of the co-tree.' },
           { label: 'Step 2', text: 'Each link closes exactly one independent loop, so the graph has $b - n + 1 = 4$ fundamental loops — exactly the number of independent KVL equations mesh analysis will need.' },
           { label: 'Step 3', text: 'KCL supplies $n - 1 = 4$ independent node equations, and the reduced incidence matrix $A$ is $(n-1) \\times b = 4 \\times 8$ with rank $4$.' },
-          { label: 'Step 4', text: 'Hence $B$ is $4 \\times 8$ (one row per link) and $Q$ is $4 \\times 8$ (one row per twig); the check $BA^T = 0$ must hold identically, a 30-second self-verification in the exam.' }
+          { label: 'Step 4', text: 'Hence $B$ is $4 \\times 8$ (one row per link) and $Q$ is $4 \\times 8$ (one row per twig); the check $BA^T = 0$ must hold identically, a 30-second self-verification in the assessment.' }
         ],
         result: '4 twigs, 4 links, 4 independent loops, rank $A = 4$; $B$ is $4\\times8$ and $Q$ is $4\\times8$.'
       },
@@ -121,19 +121,19 @@ export const enggBranchContent: SectionContent[] = [
   },
   // ------------------------------------------------- ECE 14.1 — Signals
   {
-    sectionId: 'engg-ece-signals-s1',
+    sectionId: 'ece-e-signals-s1',
     readingTime: 10,
     prerequisites: [
       'Elementary calculus: integrating decaying exponentials',
       'Complex exponentials $e^{j\\omega t}$ and the Euler formula',
       'Unit step $u(t)$ and unit impulse basics'
     ],
-    intro: 'Signals & Systems (KEC403 / VTU Semester 4) opens by sorting every signal into classes: continuous or discrete, periodic or not, energy or power. University papers test exactly these classification drills — periodicity of a sum, energy of a decaying exponential, stability of a system — because a wrong class means every later formula (Fourier, Laplace, z) is misapplied. This section builds the sorting machinery the whole semester reuses.',
+    intro: 'Signals & Systems (KEC403 / the state technical university Semester 4) opens by sorting every signal into classes: continuous or discrete, periodic or not, energy or power. University papers test exactly these classification drills — periodicity of a sum, energy of a decaying exponential, stability of a system — because a wrong class means every later formula (Fourier, Laplace, z) is misapplied. This section builds the sorting machinery the whole semester reuses.',
     objectives: [
       'Classify signals as continuous/discrete, periodic/aperiodic, energy/power and deterministic/random',
       'Compute signal energy $E = \\int |x(t)|^2 dt$ and test periodicity for both CT sums and discrete sinusoids',
       'Test systems for linearity, time-invariance, causality and BIBO stability',
-      'Explain why $e^{j2n}$ is not periodic although $e^{j2t}$ is — the classic exam trap'
+      'Explain why $e^{j2n}$ is not periodic although $e^{j2t}$ is — the classic assessment trap'
     ],
     concepts: [
       {
@@ -146,7 +146,7 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Periodicity rules',
         kind: 'theorem',
         statement: '$x(t)$ is **periodic** if $x(t + T) = x(t)$ for some $T > 0$; a sum of sinusoids is periodic iff the ratio of any two periods is **rational**, with $T_0$ the LCM. For $x[n] = \\cos(\\Omega_0 n)$ periodicity needs $\\frac{\\Omega_0}{2\\pi} = \\frac{p}{q}$ rational, giving $N = q$ samples.',
-        detail: 'The killer trap: $e^{j2t}$ is periodic with $T = \\pi$, but $e^{j2n}$ is NOT periodic because $\\frac{2}{2\\pi} = \\frac{1}{\\pi}$ is irrational — no integer N reproduces the sample sequence. Exam favourite: $\\cos(0.3\\pi n)$ has $\\frac{0.3\\pi}{2\\pi} = \\frac{3}{20}$, so $N = 20$.'
+        detail: 'The killer trap: $e^{j2t}$ is periodic with $T = \\pi$, but $e^{j2n}$ is NOT periodic because $\\frac{2}{2\\pi} = \\frac{1}{\\pi}$ is irrational — no integer N reproduces the sample sequence. Assessment favourite: $\\cos(0.3\\pi n)$ has $\\frac{0.3\\pi}{2\\pi} = \\frac{3}{20}$, so $N = 20$.'
       },
       {
         term: 'Energy and power signals',
@@ -175,7 +175,7 @@ export const enggBranchContent: SectionContent[] = [
           { label: 'Step 1', text: '```text\nE = integral of 9 e^{-4t} dt from 0 to infinity = 9/4\n```\nSquare the signal: $|x(t)|^2 = 9e^{-4t}$ for $t \\ge 0$ and zero elsewhere, so $E = \\int_0^{\\infty} 9e^{-4t} dt$.' },
           { label: 'Step 2', text: 'Evaluate: $E = 9 \\left[ \\frac{e^{-4t}}{-4} \\right]_0^{\\infty} = 9 \\times \\frac{1}{4} = 2.25$ J (normalised to 1 $\\Omega$).' },
           { label: 'Step 3', text: 'Because $E$ is finite, $P = 0$ and $x(t)$ is an energy signal; in general $Ae^{-at}u(t)$ stores $E = \\frac{A^2}{2a}$.' },
-          { label: 'Step 4', text: 'Scaling check: amplitude 1 would give $E = \\frac{1}{4}$, and tripling amplitude multiplies energy by 9 — the square law examiners exploit to build distractors.' }
+          { label: 'Step 4', text: 'Scaling check: amplitude 1 would give $E = \\frac{1}{4}$, and tripling amplitude multiplies energy by 9 — the square law assessors exploit to build distractors.' }
         ],
         result: '$E = 2.25$ J and $P = 0$: an energy signal.'
       },
@@ -227,14 +227,14 @@ export const enggBranchContent: SectionContent[] = [
   },
   // --------------------------------------------- ECE 16.1 — Analog Comm
   {
-    sectionId: 'engg-ece-analog-comm-s1',
+    sectionId: 'ece-e-analog-comm-s1',
     readingTime: 11,
     prerequisites: [
       'Fourier series of periodic signals (preview of ECE Section 14.3)',
       'Trigonometric integrals and the Parseval idea',
       'Logarithm and decibel arithmetic'
     ],
-    intro: 'Analog Communication (KEC401 / AKTU Semester 4) starts where signals end: every message must be measured in watts and spectra before any modulation is designed. Papers open with a Fourier-series numerical — harmonic amplitudes of a square wave — then a power or noise computation in dB and dBm. These marks come quickly once the three tools (series, Parseval and $N = kTB$) are automatic.',
+    intro: 'Analog Communication (KEC401 / the state technical university Semester 4) starts where signals end: every message must be measured in watts and spectra before any modulation is designed. Papers open with a Fourier-series numerical — harmonic amplitudes of a square wave — then a power or noise computation in dB and dBm. These marks come quickly once the three tools (series, Parseval and $N = kTB$) are automatic.',
     objectives: [
       'Expand a periodic waveform into trigonometric or exponential Fourier series and sketch its line spectrum',
       'Apply the Parseval power theorem to split total power among harmonics',
@@ -246,7 +246,7 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Fourier series and the line spectrum',
         kind: 'theorem',
         statement: 'A periodic $x(t)$ of period $T$ expands as $x(t) = a_0 + \\sum_{n=1}^{\\infty} (a_n \\cos n\\omega_0 t + b_n \\sin n\\omega_0 t)$ with $\\omega_0 = \\frac{2\\pi}{T}$; the **line spectrum** plots harmonic amplitude against $n f_0$, lines spaced $\\frac{1}{T}$ apart.',
-        detail: 'Symmetry halves the work: even $x$ keeps only $a_n$, odd $x$ only $b_n$, and half-wave symmetry kills the even harmonics. The bipolar square wave of levels $\\pm A$ carries harmonics $\\frac{4A}{n\\pi}$ on odd $n$ only — the $\\frac{4}{\\pi}$ factor and odd-only pattern are the most quoted results in communication exams.'
+        detail: 'Symmetry halves the work: even $x$ keeps only $a_n$, odd $x$ only $b_n$, and half-wave symmetry kills the even harmonics. The bipolar square wave of levels $\\pm A$ carries harmonics $\\frac{4A}{n\\pi}$ on odd $n$ only — the $\\frac{4}{\\pi}$ factor and odd-only pattern are the most quoted results in communication assessments.'
       },
       {
         term: 'Exponential form and negative frequencies',
@@ -270,7 +270,7 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Thermal noise, SNR and noise figure',
         kind: 'law',
         statement: 'Available **thermal noise** power is $N = kTB$ with $k = 1.38\\times10^{-23}$ J/K, giving the anchor $-174$ dBm/Hz at $T_0 = 290$ K; the **noise figure** $F = \\frac{SNR_{in}}{SNR_{out}} \\ge 1$ means, in dB, $SNR_{out} = SNR_{in} - NF$.',
-        detail: 'Every doubling of bandwidth adds 3 dB of noise — the shortcut $-174 + 10\\log B$ is expected in exams. The Friis cascade $F = F_1 + \\frac{F_2 - 1}{G_1} + \\cdots$ shows stage one dominating, which is why the low-noise amplifier sits first in every receiver chain.'
+        detail: 'Every doubling of bandwidth adds 3 dB of noise — the shortcut $-174 + 10\\log B$ is expected in assessments. The Friis cascade $F = F_1 + \\frac{F_2 - 1}{G_1} + \\cdots$ shows stage one dominating, which is why the low-noise amplifier sits first in every receiver chain.'
       }
     ],
     examples: [
@@ -333,14 +333,14 @@ export const enggBranchContent: SectionContent[] = [
   },
   // ------------------------------------------------- ECE 19.1 — EMFT
   {
-    sectionId: 'engg-ece-emft-s1',
+    sectionId: 'ece-e-emft-s1',
     readingTime: 10,
     prerequisites: [
       'Dot and cross products of vectors',
       'Partial derivatives of functions of several variables',
       'Line, surface and volume integrals at physics level'
     ],
-    intro: 'Electromagnetic Field Theory (AKTU KEC501 / VTU Semester 5) is written in the language of vector calculus: gradient, divergence and curl. Every later unit — electrostatics, magnetostatics, Maxwell equations, plane waves — is one of these operators applied to a field. Papers test the machinery directly: compute $\\nabla V$, verify a field is conservative, or push a flux through a cube with the divergence theorem.',
+    intro: 'Electromagnetic Field Theory (the state technical university KEC501 / the state technical university Semester 5) is written in the language of vector calculus: gradient, divergence and curl. Every later unit — electrostatics, magnetostatics, Maxwell equations, plane waves — is one of these operators applied to a field. Papers test the machinery directly: compute $\\nabla V$, verify a field is conservative, or push a flux through a cube with the divergence theorem.',
     objectives: [
       'Compute gradient, divergence, curl and Laplacian of given fields in Cartesian coordinates',
       'Interpret $\\nabla V$ as the direction of steepest increase and use $\\vec E = -\\nabla V$',
@@ -439,7 +439,7 @@ export const enggBranchContent: SectionContent[] = [
 
   // ---------------------------------------------------------------- EE: circuits 9.1
   {
-    sectionId: 'engg-ee-circuits-s1',
+    sectionId: 'ee-e-circuits-s1',
     readingTime: 10,
     prerequisites: [
       'Ohm’s law, KCL and KVL from basic electrical engineering',
@@ -469,19 +469,19 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Fundamental loop and cut-set matrices',
         kind: 'definition',
         statement: 'Adding one link to the tree closes exactly one **fundamental loop**; cutting the twigs that separate a graph into two parts defines a **fundamental cut-set**. The loop matrix $B$ encodes KVL ($BV_b = 0$); the cut-set matrix $Q$ encodes KCL ($QI_b = 0$).',
-        detail: 'Orientations: a fundamental loop takes its link’s direction; a cut-set takes its twig’s. For the same tree, $B$ has dimensions $l \times b$ and $Q$ has $(n-1) \times b$, and they partition the branches as twigs-then-links in compatible order — exam numericals ask exactly for these matrices from a small graph.'
+        detail: 'Orientations: a fundamental loop takes its link’s direction; a cut-set takes its twig’s. For the same tree, $B$ has dimensions $l \times b$ and $Q$ has $(n-1) \times b$, and they partition the branches as twigs-then-links in compatible order — assessment numericals ask exactly for these matrices from a small graph.'
       },
       {
         term: 'Orthogonality of loop and cut-set spaces',
         kind: 'theorem',
         statement: 'For the same tree, the cut-set and loop matrices satisfy $QB^T = 0$: every loop current is invisible to every cut-set — the algebraic signature of the two conservation laws living in orthogonal subspaces.',
-        detail: 'This is why mesh currents and node voltages are fully decoupled descriptions: $b = l + (n-1)$ branch variables split cleanly into loop variables and cut-set variables. Tellegen’s theorem ($\sum v_k i_k = 0$ over all branches) follows from the same orthogonality, and it holds for any two networks sharing a graph — the exam’s favourite "prove Tellegen in 3 lines" route.'
+        detail: 'This is why mesh currents and node voltages are fully decoupled descriptions: $b = l + (n-1)$ branch variables split cleanly into loop variables and cut-set variables. Tellegen’s theorem ($\sum v_k i_k = 0$ over all branches) follows from the same orthogonality, and it holds for any two networks sharing a graph — the assessment’s favourite "prove Tellegen in 3 lines" route.'
       },
       {
         term: 'Choosing formulations wisely',
         kind: 'method',
         statement: 'Use node analysis when the graph has fewer independent nodes than loops (voltage sources help); use mesh/loop analysis when loops are fewer (current sources help); the counts come straight from $n - 1$ versus $b - n + 1$.',
-        detail: 'Planar circuits: meshes = windows of the drawing, and mesh analysis is the familiar special case of the fundamental-loop method with the mesh currents as variables. Non-planar circuits force the general loop method. In exams, count before you commit — the 2-minute count saves 15 minutes of algebra.'
+        detail: 'Planar circuits: meshes = windows of the drawing, and mesh analysis is the familiar special case of the fundamental-loop method with the mesh currents as variables. Non-planar circuits force the general loop method. In assessments, count before you commit — the 2-minute count saves 15 minutes of algebra.'
       }
     ],
     examples: [
@@ -543,7 +543,7 @@ export const enggBranchContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- EE: machines1 14.1
   {
-    sectionId: 'engg-ee-machines1-s1',
+    sectionId: 'ee-e-machines1-s1',
     readingTime: 10,
     prerequisites: [
       'Magnetic circuits, MMF and flux (basic electrical)',
@@ -585,7 +585,7 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Why machines avoid deep saturation',
         kind: 'insight',
         statement: 'Deep in saturation, incremental inductance collapses and $\frac{dL}{d\theta}$-type torque terms shrink — the machine converts less energy per ampere and runs hotter; designers therefore operate near the knee of the B–H curve.',
-        detail: 'Linear analysis (constant L) is also only valid below saturation, which is why exam derivations always state "neglect saturation" as assumption #1. The energy–co-energy picture makes the cost of saturation visible: the co-energy area grows sub-linearly with current once the λ–i curve bends over.'
+        detail: 'Linear analysis (constant L) is also only valid below saturation, which is why assessment derivations always state "neglect saturation" as assumption #1. The energy–co-energy picture makes the cost of saturation visible: the co-energy area grows sub-linearly with current once the λ–i curve bends over.'
       }
     ],
     examples: [
@@ -647,7 +647,7 @@ export const enggBranchContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- EE: ps1 19.1
   {
-    sectionId: 'engg-ee-ps1-s1',
+    sectionId: 'ee-e-ps1-s1',
     readingTime: 9,
     prerequisites: [
       'Per-unit basics and three-phase power (basic electrical)',
@@ -683,7 +683,7 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Kelvin’s law',
         kind: 'law',
         statement: 'The most economical conductor cross-section minimises annual capital-plus-energy cost: $C = aA + \frac{b}{A}$ (annual investment $\propto$ area $A$; annual energy-loss cost $\propto 1/A$); optimum at $A = \sqrt{b/a}$, where the two components are equal.',
-        detail: 'Differentiate: $\frac{dC}{dA} = a - \frac{b}{A^2} = 0$. Limitations exam-tested: it ignores interest/depreciation refinements, load growth, voltage regulation, corona and mechanical strength — so practical design picks the nearest standard conductor ABOVE the Kelvin area. State the law, derive the optimum, then list at least three limitations for full marks.'
+        detail: 'Differentiate: $\frac{dC}{dA} = a - \frac{b}{A^2} = 0$. Limitations assessment-tested: it ignores interest/depreciation refinements, load growth, voltage regulation, corona and mechanical strength — so practical design picks the nearest standard conductor ABOVE the Kelvin area. State the law, derive the optimum, then list at least three limitations for full marks.'
       },
       {
         term: 'Choice of frequency and its system consequences',
@@ -727,7 +727,7 @@ export const enggBranchContent: SectionContent[] = [
         q: 'At the Kelvin’s-law optimum cross-section, the annual investment cost and the annual cost of energy lost are',
         options: ['inversely proportional', 'equal', 'in the ratio 2:1', 'both minimised independently'],
         answer: 1,
-        explanation: 'Step 1: Total $C = aA + b/A$. Step 2: Setting $dC/dA = 0$ gives $aA = b/A$. Step 3: The two components are therefore equal at the optimum. Step 4: This equality is the quick way exam numericals hide the answer.'
+        explanation: 'Step 1: Total $C = aA + b/A$. Step 2: Setting $dC/dA = 0$ gives $aA = b/A$. Step 3: The two components are therefore equal at the optimum. Step 4: This equality is the quick way assessment numericals hide the answer.'
       },
       {
         q: 'Doubling the transmission voltage at constant power and power factor changes the line current by a factor of',
@@ -751,13 +751,13 @@ export const enggBranchContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- EE: power-electronics 21.1
   {
-    sectionId: 'engg-ee-power-electronics-s1',
+    sectionId: 'ee-e-power-electronics-s1',
     readingTime: 10,
     prerequisites: [
       'PN-junction diode behaviour (basic electronics)',
       'Circuit theorems for load-line analysis',
     ],
-    intro: 'Power electronics begins with devices that act as fast switches handling hundreds of amperes and thousands of volts. The **SCR** — a diode with a gate and a latch — anchors the family, flanked by TRIACs, GTOs, power MOSFETs and IGBTs. Ratings, protection and safe operating areas are the exam’s hunting ground, along with the physics that separates a 5 A signal SCR from a 2000 A HVDC valve.',
+    intro: 'Power electronics begins with devices that act as fast switches handling hundreds of amperes and thousands of volts. The **SCR** — a diode with a gate and a latch — anchors the family, flanked by TRIACs, GTOs, power MOSFETs and IGBTs. Ratings, protection and safe operating areas are the assessment’s hunting ground, along with the physics that separates a 5 A signal SCR from a 2000 A HVDC valve.',
     objectives: [
       'Explain SCR construction, latching and the $v$–$i$ characteristic regions including breakover',
       'Compare device families: SCR, TRIAC, GTO, power MOSFET, IGBT — and where each dominates',
@@ -769,7 +769,7 @@ export const enggBranchContent: SectionContent[] = [
         term: 'The SCR and its latch',
         kind: 'definition',
         statement: 'A **silicon-controlled rectifier** is a four-layer PNPN device with three junctions and a gate terminal: it blocks forward voltage until breakover or a gate pulse turns it on, and then **latches** — conduction continues after the gate signal is removed until the current falls below the holding level.',
-        detail: 'The two-transistor analogy explains the latch: the intercoupled NPN/PNP pair feeds itself once loop gain exceeds unity, gate current merely triggers it. Turn-OFF therefore requires forced commutation in DC circuits (auxiliary capacitors/SCRs) — the classic exam derivation — while AC circuits commutate naturally at current zero. TRIAC = two SCRs back-to-back sharing one gate, the dimmer-switch device.'
+        detail: 'The two-transistor analogy explains the latch: the intercoupled NPN/PNP pair feeds itself once loop gain exceeds unity, gate current merely triggers it. Turn-OFF therefore requires forced commutation in DC circuits (auxiliary capacitors/SCRs) — the classic assessment derivation — while AC circuits commutate naturally at current zero. TRIAC = two SCRs back-to-back sharing one gate, the dimmer-switch device.'
       },
       {
         term: 'Device families and their territories',
@@ -781,13 +781,13 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Ratings and the SOA',
         kind: 'notation',
         statement: 'Key ratings: repetitive peak voltage $V_{DRM}/V_{RRM}$, breakover $V_{BO}$, average/rms current $I_{T(AV)}/I_{T(RMS)}$, surge $I_{TSM}$ (one-cycle), $di/dt$ limit (hot-spot formation) and $dv/dt$ limit (spurious turn-on through internal capacitance); the **safe operating area** bounds simultaneous voltage-current during switching.',
-        detail: 'Exceeding $dv/dt$ turns the SCR on WITHOUT a gate pulse — cured by an RC snubber across the device. Exceeding $di/dt$ during turn-on melts local junction area before conduction spreads — cured by inductance in series or gate-pulse shaping. Thermal design: $T_j = T_a + P(R_{\theta JC} + R_{\theta CS} + R_{\theta SA})$ decides the heatsink, and exam numericals usually ask exactly this.'
+        detail: 'Exceeding $dv/dt$ turns the SCR on WITHOUT a gate pulse — cured by an RC snubber across the device. Exceeding $di/dt$ during turn-on melts local junction area before conduction spreads — cured by inductance in series or gate-pulse shaping. Thermal design: $T_j = T_a + P(R_{\theta JC} + R_{\theta CS} + R_{\theta SA})$ decides the heatsink, and assessment numericals usually ask exactly this.'
       },
       {
         term: 'Protection toolkit',
         kind: 'method',
         statement: 'Over-voltage: RC snubbers and voltage clamps (MOV). Over-current: fast semiconductor fuses rated to clear within $I^2t$ of the device. Gate: series resistance and anti-noise filtering; $dv/dt$ filtering; series-parallel device matching with sharing resistors/reactors.',
-        detail: 'Series strings (for high voltage) share static voltage via equal resistors and dynamic voltage via RCD balancing networks; parallel devices (for high current) share via small series inductors/resistors and matched characteristics. The derating factor (use 80–90% of rated capability) is standard exam arithmetic: $N$ devices in series rated for $(1-\text{derating})NV$ total.'
+        detail: 'Series strings (for high voltage) share static voltage via equal resistors and dynamic voltage via RCD balancing networks; parallel devices (for high current) share via small series inductors/resistors and matched characteristics. The derating factor (use 80–90% of rated capability) is standard assessment arithmetic: $N$ devices in series rated for $(1-\text{derating})NV$ total.'
       },
       {
         term: 'Switching losses and frequency ceilings',
@@ -855,7 +855,7 @@ export const enggBranchContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- ME: thermo 9.1
   {
-    sectionId: 'engg-me-thermo-s1',
+    sectionId: 'me-e-thermo-s1',
     readingTime: 10,
     prerequisites: [
       'First and second laws of thermodynamics',
@@ -873,7 +873,7 @@ export const enggBranchContent: SectionContent[] = [
         term: 'The four potentials',
         kind: 'definition',
         statement: 'Beyond internal energy, thermodynamics defines **enthalpy** $H = U + PV$, **Helmholtz** $A = U - TS$ (constant-$T,V$ work potential) and **Gibbs** $G = H - TS$ (constant-$T,P$ work potential); each is a Legendre transform swapping a variable for its conjugate.',
-        detail: 'Natural-variable pairs: $U(S,V)$, $H(S,P)$, $A(T,V)$, $G(T,P)$. Gibbs governs chemical and phase equilibrium because real reactions run at fixed $T, P$ — minimisation of $G$ IS the equilibrium condition. Exam favourite: state the four differentials ($dH = TdS + VdP$, etc.) before any Maxwell derivation.'
+        detail: 'Natural-variable pairs: $U(S,V)$, $H(S,P)$, $A(T,V)$, $G(T,P)$. Gibbs governs chemical and phase equilibrium because real reactions run at fixed $T, P$ — minimisation of $G$ IS the equilibrium condition. Assessment favourite: state the four differentials ($dH = TdS + VdP$, etc.) before any Maxwell derivation.'
       },
       {
         term: 'Maxwell relations',
@@ -897,7 +897,7 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Second-law efficiency',
         kind: 'method',
         statement: 'The **second-law efficiency** $\eta_{II} = \frac{\text{useful exergy output}}{\text{exergy input}}$ complements the first-law efficiency by charging the analysis for destroyed work potential, not just energy.',
-        detail: 'A heater can be 100% first-law efficient while being exergy-catastrophic (high-grade electricity burned for low-grade warmth). Exam pattern: compute $W_{\text{rev}}$ from availability balance, compare with actual $W$, then $\eta_{II} = W_{actual}/W_{rev}$ and $I = W_{rev} - W_{actual} = T_0 S_{gen}$.'
+        detail: 'A heater can be 100% first-law efficient while being exergy-catastrophic (high-grade electricity burned for low-grade warmth). Assessment pattern: compute $W_{\text{rev}}$ from availability balance, compare with actual $W$, then $\eta_{II} = W_{actual}/W_{rev}$ and $I = W_{rev} - W_{actual} = T_0 S_{gen}$.'
       }
     ],
     examples: [
@@ -959,7 +959,7 @@ export const enggBranchContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- ME: som 11.1
   {
-    sectionId: 'engg-me-som-s1',
+    sectionId: 'me-e-som-s1',
     readingTime: 10,
     prerequisites: [
       'Normal and shear stress definitions',
@@ -983,13 +983,13 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Principal stresses',
         kind: 'definition',
         statement: 'The **principal stresses** are the extreme normal stresses (shear zero): $\sigma_{1,2} = \frac{\sigma_x + \sigma_y}{2} \pm \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}$, acting on planes at $\tan 2\theta_p = \frac{2\tau_{xy}}{\sigma_x - \sigma_y}$.',
-        detail: 'Maximum in-plane shear is the radius: $\tau_{max} = \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2} = \frac{\sigma_1 - \sigma_2}{2}$, at 45° from the principal planes. For 3D, absolute max shear is $\frac{\sigma_{max} - \sigma_{min}}{2}$ over ALL three principals — the exam’s favourite trap when $\sigma_2 = 0$ quietly participates.'
+        detail: 'Maximum in-plane shear is the radius: $\tau_{max} = \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2} = \frac{\sigma_1 - \sigma_2}{2}$, at 45° from the principal planes. For 3D, absolute max shear is $\frac{\sigma_{max} - \sigma_{min}}{2}$ over ALL three principals — the assessment’s favourite trap when $\sigma_2 = 0$ quietly participates.'
       },
       {
         term: 'Mohr circle',
         kind: 'method',
         statement: 'Plot $(\sigma, \tau)$ points; the circle has centre $\left(\frac{\sigma_x + \sigma_y}{2}, 0\right)$ and radius $\tau_{max}$; rotations on the circle are DOUBLE physical rotations, shear plotted downward-positive by convention.',
-        detail: 'Construction drill for exams: plot $X(\sigma_x, \tau_{xy})$ and $Y(\sigma_y, -\tau_{xy})$, join XY — the diameter; read $\sigma_{1,2}$ off the $\sigma$-axis intersections; the top point gives $(\sigma_{avg}, \tau_{max})$. The pole (origin-of-planes) method then reads stresses on ANY plane with a single straight line — faster than the formulas once drawn.'
+        detail: 'Construction drill for assessments: plot $X(\sigma_x, \tau_{xy})$ and $Y(\sigma_y, -\tau_{xy})$, join XY — the diameter; read $\sigma_{1,2}$ off the $\sigma$-axis intersections; the top point gives $(\sigma_{avg}, \tau_{max})$. The pole (origin-of-planes) method then reads stresses on ANY plane with a single straight line — faster than the formulas once drawn.'
       },
       {
         term: 'Elastic constants quartet',
@@ -1063,7 +1063,7 @@ export const enggBranchContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- ME: fluids 10.1
   {
-    sectionId: 'engg-me-fluids-s1',
+    sectionId: 'me-e-fluids-s1',
     readingTime: 10,
     prerequisites: [
       'Newton’s law applied to fluids (shear = viscosity × rate)',
@@ -1087,7 +1087,7 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Manometer bookkeeping',
         kind: 'method',
         statement: 'Walk the manometer from one end to the other: moving DOWN a column of density $\rho$ adds $\rho g h$; moving UP subtracts; equate the total to the known end pressures.',
-        detail: 'Differential manometers measure $\Delta P = (\rho_{man} - \rho_f)g h$ for a single gauge fluid; micromanometers magnify resolution with two fluids and inclined limbs. Exam discipline: tabulate each step ($z$ change, fluid, $\rho g \Delta h$ contribution) and the algebra cannot go wrong.'
+        detail: 'Differential manometers measure $\Delta P = (\rho_{man} - \rho_f)g h$ for a single gauge fluid; micromanometers magnify resolution with two fluids and inclined limbs. Assessment discipline: tabulate each step ($z$ change, fluid, $\rho g \Delta h$ contribution) and the algebra cannot go wrong.'
       },
       {
         term: 'Forces on surfaces',
@@ -1105,7 +1105,7 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Surface tension and capillarity',
         kind: 'definition',
         statement: 'Pressure excess: droplet $\Delta p = \frac{2\sigma}{r}$, soap bubble $\frac{4\sigma}{r}$ (two surfaces); capillary rise in a tube of diameter $d$: $h = \frac{4\sigma\cos\theta}{\rho g d}$ — mercury ($\theta > 90^\circ$) depresses.',
-        detail: 'Water in clean glass: $\theta \approx 0$, so with $\sigma = 0.073$ N/m a 1 mm tube lifts ~30 mm — why small tubes need correction. Jet breakup, droplet formation and welded-joint integrity all trace to $\sigma$; exam favourites pair the bubble formula with a soap-film numerical or ask which meniscus shape matches which contact angle.'
+        detail: 'Water in clean glass: $\theta \approx 0$, so with $\sigma = 0.073$ N/m a 1 mm tube lifts ~30 mm — why small tubes need correction. Jet breakup, droplet formation and welded-joint integrity all trace to $\sigma$; assessment favourites pair the bubble formula with a soap-film numerical or ask which meniscus shape matches which contact angle.'
       }
     ],
     examples: [
@@ -1155,7 +1155,7 @@ export const enggBranchContent: SectionContent[] = [
         q: 'The pressure difference across a soap bubble of radius r is',
         options: ['$\frac{\sigma}{r}$', '$\frac{2\sigma}{r}$', '$\frac{4\sigma}{r}$', '$\frac{8\sigma}{r}$'],
         answer: 2,
-        explanation: 'Step 1: A droplet has one surface: $\Delta p = \frac{2\sigma}{r}$. Step 2: A soap bubble has TWO surfaces (inside + outside films). Step 3: The contributions add: $\frac{4\sigma}{r}$. Step 4: This doubling is the examiner’s favourite bubble-versus-droplet discriminator.'
+        explanation: 'Step 1: A droplet has one surface: $\Delta p = \frac{2\sigma}{r}$. Step 2: A soap bubble has TWO surfaces (inside + outside films). Step 3: The contributions add: $\frac{4\sigma}{r}$. Step 4: This doubling is the assessor’s favourite bubble-versus-droplet discriminator.'
       },
       {
         q: 'A floating body is in stable equilibrium when the metacentre M is',
@@ -1167,7 +1167,7 @@ export const enggBranchContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- ME: mfg1 16.1
   {
-    sectionId: 'engg-me-mfg1-s1',
+    sectionId: 'me-e-mfg1-s1',
     readingTime: 9,
     prerequisites: [
       'Phase-change intuition (solidification)',
@@ -1185,7 +1185,7 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Pattern allowances',
         kind: 'definition',
         statement: 'Patterns are deliberately LARGER than the casting: **shrinkage allowance** compensates volumetric contraction (iron ~1%, steel ~2%, aluminium ~1.3% linear), **machining allowance** adds metal for finishing, **draft** (1–3°) eases withdrawal, **distortion** pre-bends warping shapes, **shake** gives removal clearance.',
-        detail: 'Shrinkage happens in three stages — liquid contraction (riser absorbs it), solidification contraction (the cavity-forming culprit), and solid contraction (pattern allowance covers it). Exam pattern: "why is a pattern bigger?" — answer with the five allowances and one line of purpose each for full marks.'
+        detail: 'Shrinkage happens in three stages — liquid contraction (riser absorbs it), solidification contraction (the cavity-forming culprit), and solid contraction (pattern allowance covers it). Assessment pattern: "why is a pattern bigger?" — answer with the five allowances and one line of purpose each for full marks.'
       },
       {
         term: 'Moulding sand properties',
@@ -1197,7 +1197,7 @@ export const enggBranchContent: SectionContent[] = [
         term: 'Gating system anatomy',
         kind: 'notation',
         statement: 'The **gating system**: pouring basin (slows and skims) → sprue (often tapered to avoid aspiration) → sprue well (absorbs kinetic energy) → runners (carry metal) → gates (enter the cavity, ideally at the bottom for laminar filling) → risers (feed shrinkage after filling).',
-        detail: 'Bottom gating fills quiescently (less turbulence, less dross); top gating fills hotter metal into the top — better feeding direction but more oxidation. Choke (the smallest cross-section) placement controls the flow rate everywhere; designing the choke at the sprue base is the standard exam numerical via $Q = A_c\sqrt{2gH}$ continuity reasoning.'
+        detail: 'Bottom gating fills quiescently (less turbulence, less dross); top gating fills hotter metal into the top — better feeding direction but more oxidation. Choke (the smallest cross-section) placement controls the flow rate everywhere; designing the choke at the sprue base is the standard assessment numerical via $Q = A_c\sqrt{2gH}$ continuity reasoning.'
       },
       {
         term: 'Chvorinov’s rule and riser sizing',
@@ -1231,7 +1231,7 @@ export const enggBranchContent: SectionContent[] = [
           { label: 'Step 1', text: 'Torricelli: $v = \sqrt{2gH} = \sqrt{2 \times 9.81 \times 0.25} = 2.21$ m/s.' },
           { label: 'Step 2', text: 'Continuity: $A v$ constant — as $v$ grows downward, area must shrink or the stream breaks free of the walls.' },
           { label: 'Step 3', text: 'A detached stream aspirates air through the gap — gases and dross get sucked into the metal (aspiration effect).' },
-          { label: 'Step 4', text: 'Tapering the sprue to follow $A(z) = \frac{Q}{\sqrt{2g(H - z)}}$ keeps the metal wall-hugging: area at base for the same 20 mm top $= A_t\sqrt{\frac{h_t}{h_t + H}}$ pattern — the design rule every exam quotes.' }
+          { label: 'Step 4', text: 'Tapering the sprue to follow $A(z) = \frac{Q}{\sqrt{2g(H - z)}}$ keeps the metal wall-hugging: area at base for the same 20 mm top $= A_t\sqrt{\frac{h_t}{h_t + H}}$ pattern — the design rule every assessment quotes.' }
         ],
         result: 'Base velocity 2.21 m/s; tapering prevents air aspiration by matching area to the accelerating stream.'
       }
@@ -1247,7 +1247,7 @@ export const enggBranchContent: SectionContent[] = [
         q: 'Shrinkage allowance on a pattern compensates for',
         options: ['liquid contraction', 'solidification + solid contraction in linear terms', 'machining cuts', 'shake removal'],
         answer: 1,
-        explanation: 'Step 1: Liquid contraction is absorbed by the riser. Step 2: The pattern is oversized for the contraction that happens during and after solidification. Step 3: Machining and shake are separate allowances. Step 4: Steel’s ~2% linear allowance is the exam’s standard number.'
+        explanation: 'Step 1: Liquid contraction is absorbed by the riser. Step 2: The pattern is oversized for the contraction that happens during and after solidification. Step 3: Machining and shake are separate allowances. Step 4: Steel’s ~2% linear allowance is the assessment’s standard number.'
       },
       {
         q: 'Permeability of moulding sand primarily controls',

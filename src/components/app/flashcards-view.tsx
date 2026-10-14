@@ -144,7 +144,7 @@ const KIND_LABEL: Record<string, string> = {
   method: 'Method',
   notation: 'Notation',
   insight: 'Insight',
-  exam: 'Exam miss',
+  exam: 'Missed question',
 }
 
 /** badge tint per card kind — exam misses carry the rose exam accent */
@@ -517,7 +517,7 @@ export function FlashcardsView({
       <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
         <div className="mb-5 flex items-center justify-between gap-3">
           <span className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
-            <Zap className="h-4 w-4 text-rose-300" /> Loading your exam misses…
+            <Zap className="h-4 w-4 text-rose-300" /> Loading your missed questions…
           </span>
           <span className="rounded-full border border-border bg-muted/50 px-2.5 py-1 font-mono text-xs text-muted-foreground">
             …
@@ -623,7 +623,7 @@ export function FlashcardsView({
                 </span>
                 <div>
                   <h2 className="text-[15px] font-bold tracking-tight text-rose-100">
-                    Exam misses — {missesList.length} question{missesList.length !== 1 ? 's' : ''} from
+                    Missed questions — {missesList.length} question{missesList.length !== 1 ? 's' : ''} from
                     your last attempts
                   </h2>
                   <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs leading-relaxed text-muted-foreground">
@@ -870,7 +870,7 @@ export function FlashcardsView({
                       }`}
                     >
                       {current.kind === 'exam'
-                        ? `Exam miss · §${current.sectionNumber}`
+                        ? `Missed question · §${current.sectionNumber}`
                         : current.term}
                     </span>
                     <span className="shrink-0 font-mono text-[10px] text-muted-foreground">

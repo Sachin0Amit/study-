@@ -4,7 +4,7 @@ import type { SectionContent } from '../library'
 // JEE (Advanced) 2026 — P/C/M master lesson content (high-weightage sections).
 // Full SectionContent lessons for ten sections of the official IIT syllabus
 // (jeeadv.ac.in, jee-advanced-2026-syllabus.pdf), drawn from the three
-// bookIds 'jeeadv-physics-2026', 'jeeadv-chemistry-2026' and 'jeeadv-maths-2026':
+// bookIds 'phys-master', 'chem-complete' and 'math-master':
 //   Physics (3)   — 11.3 isothermal & adiabatic processes, 13.2 capacitors
 //                   with dielectrics, 20.2 Bohr theory of hydrogen-like atoms
 //   Chemistry (4) — 4.3 molecular orbital theory, 15.2 extraction principles
@@ -13,7 +13,7 @@ import type { SectionContent } from '../library'
 //   Maths (3)     — 12.6 extrema & mean value theorems, 13.5 definite-integral
 //                   properties & the fundamental theorem, 10.3 skew lines &
 //                   shortest distance
-// Every lesson follows the jeemaths-ch01 / exam-jeemain-physics exemplar:
+// Every lesson follows the advmath-ch01 / exam-jeemain-physics exemplar:
 // KaTeX formulas ($...$, $$...$$), Advanced-style multi-step worked examples
 // with full computation, multi-concept traps, and a 4-question quiz pitched
 // at JEE (Advanced) difficulty (multi-concept reasoning, not recall).
@@ -22,14 +22,14 @@ import type { SectionContent } from '../library'
 export const jeeadvContent: SectionContent[] = [
   // ---------------------------------------------------------------- 11.3 (Physics)
   {
-    sectionId: 'jeeadv-phy-u11-s3',
+    sectionId: 'phys-a11-s3',
     readingTime: 12,
     prerequisites: [
-      'The ideal gas equation $PV = nRT$ and the absolute temperature scale (jeeadv-phy-u11-s1)',
-      'Specific heats $C_v$ and $C_p$, the ratio $\\gamma = C_p/C_v$ and its degrees-of-freedom origin (jeeadv-phy-u11-s2)',
+      'The ideal gas equation $PV = nRT$ and the absolute temperature scale (phys-a11-s1)',
+      'Specific heats $C_v$ and $C_p$, the ratio $\\gamma = C_p/C_v$ and its degrees-of-freedom origin (phys-a11-s2)',
       'Elementary integration — enough to integrate $P\\,dV$ along a path',
     ],
-    intro: 'Heat a gas and it may stay at the same temperature; compress it quickly and it may heat up with no heat supplied at all. The two idealised extremes — the **isothermal** process ($\\Delta T = 0$) and the **adiabatic** process ($Q = 0$) — bracket every real process, and JEE (Advanced) loves them precisely because their $P$–$V$ curves, work expressions and bulk moduli are all different facets of one fact: $P$, $V$ and $T$ are tied together along a path, not just at a state. This section builds the equation pairs $PV = \\text{const}$ and $PV^{\\gamma} = \\text{const}$, the two work formulas, and the gas bulk moduli that follow from them.',
+    intro: 'Heat a gas and it may stay at the same temperature; compress it quickly and it may heat up with no heat supplied at all. The two idealised extremes — the **isothermal** process ($\\Delta T = 0$) and the **adiabatic** process ($Q = 0$) — bracket every real process, and advanced engineering assessment loves them precisely because their $P$–$V$ curves, work expressions and bulk moduli are all different facets of one fact: $P$, $V$ and $T$ are tied together along a path, not just at a state. This section builds the equation pairs $PV = \\text{const}$ and $PV^{\\gamma} = \\text{const}$, the two work formulas, and the gas bulk moduli that follow from them.',
     objectives: [
       'Distinguish isothermal ($\\Delta T = 0$, $Q = W$) from adiabatic ($Q = 0$, $W = -\\Delta U$) processes for an ideal gas without confusing their slogans',
       'Compute work in a reversible isothermal change, $W = nRT\\ln\\frac{V_2}{V_1}$, and in a reversible adiabatic change, $W = \\frac{nR(T_1 - T_2)}{\\gamma - 1}$, with correct signs',
@@ -59,7 +59,7 @@ export const jeeadvContent: SectionContent[] = [
         term: 'Bulk modulus of a gas',
         kind: 'insight',
         statement: 'The **bulk modulus** $B = -V\\frac{dP}{dV}$ of an ideal gas is $B_{iso} = P$ for an isothermal compression but $B_{ad} = \\gamma P$ for an adiabatic one — a factor $\\gamma$ stiffer.',
-        detail: 'Differentiate $PV = \\text{const}$ to get $dP/dV = -P/V$, and $PV^{\\gamma} = \\text{const}$ to get $dP/dV = -\\gamma P/V$: the adiabat is $\\gamma$ times steeper than the isotherm through the same state. Newton computed the speed of sound assuming isothermal compression, $v = \\sqrt{P/\\rho}$, and got 280 m/s for air; Laplace corrected it to $\\sqrt{\\gamma P/\\rho} \\approx 331$ m/s because sound compressions are far too rapid for heat to escape. This single fact is a recurring JEE (Advanced) paragraph question.',
+        detail: 'Differentiate $PV = \\text{const}$ to get $dP/dV = -P/V$, and $PV^{\\gamma} = \\text{const}$ to get $dP/dV = -\\gamma P/V$: the adiabat is $\\gamma$ times steeper than the isotherm through the same state. Newton computed the speed of sound assuming isothermal compression, $v = \\sqrt{P/\\rho}$, and got 280 m/s for air; Laplace corrected it to $\\sqrt{\\gamma P/\\rho} \\approx 331$ m/s because sound compressions are far too rapid for heat to escape. This single fact is a recurring advanced engineering assessment paragraph question.',
       },
       {
         term: 'Comparing paths between the same states',
@@ -129,14 +129,14 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 13.2 (Physics)
   {
-    sectionId: 'jeeadv-phy-u13-s2',
+    sectionId: 'phys-a13-s2',
     readingTime: 12,
     prerequisites: [
-      'Capacitance of a parallel-plate capacitor, $C = \\varepsilon_0A/d$ (jeeadv-phy-u13-s1)',
-      'Electric field, potential and their relation $V = Ed$ for uniform fields (jeeadv-phy-u12-s2)',
-      'Energy of a charge system and the meaning of potential energy storage (jeeadv-phy-u12-s3)',
+      'Capacitance of a parallel-plate capacitor, $C = \\varepsilon_0A/d$ (phys-a13-s1)',
+      'Electric field, potential and their relation $V = Ed$ for uniform fields (phys-a12-s2)',
+      'Energy of a charge system and the meaning of potential energy storage (phys-a12-s3)',
     ],
-    intro: 'Slide a slab of insulator between capacitor plates and the capacitance multiplies by the dielectric constant $K$ — but everything else that happens depends on a question the question-setter hides: is the battery still connected? With the battery attached the voltage is fixed and charge floods in; with the battery removed the charge is frozen and the voltage collapses. JEE (Advanced) tests exactly this ledger — capacitance, charge, voltage, field, energy — in reconnection and partial-slab problems where a single wrong assumption about "what stays constant" destroys the whole solution.',
+    intro: 'Slide a slab of insulator between capacitor plates and the capacitance multiplies by the dielectric constant $K$ — but everything else that happens depends on a question the question-setter hides: is the battery still connected? With the battery attached the voltage is fixed and charge floods in; with the battery removed the charge is frozen and the voltage collapses. advanced engineering assessment tests exactly this ledger — capacitance, charge, voltage, field, energy — in reconnection and partial-slab problems where a single wrong assumption about "what stays constant" destroys the whole solution.',
     objectives: [
       'Compute the capacitance of a parallel-plate capacitor fully or partially filled with a dielectric, including the master formula $C = \\frac{\\varepsilon_0A}{d - t + t/K}$',
       'Relate the fields inside and outside the slab, $E_{slab} = E_{air}/K$, and the induced surface charge $\\sigma_{ind} = \\sigma\\left(1 - \\frac{1}{K}\\right)$',
@@ -160,7 +160,7 @@ export const jeeadvContent: SectionContent[] = [
         term: 'Battery connected vs disconnected',
         kind: 'insight',
         statement: '**Battery connected**: $V$ is fixed; inserting a dielectric raises $C \\to KC_0$, so $Q \\to KQ_0$ and stored energy $U = \\frac{1}{2}CV^2 \\to KU_0$, while the field $E = V/d$ is unchanged. **Battery disconnected**: $Q$ is fixed; then $C \\to KC_0$ forces $V \\to V_0/K$ and $U = \\frac{Q^2}{2C} \\to \\frac{U_0}{K}$, while the field also drops by $K$.',
-        detail: 'These two ledgers must be memorised as a pair, because half the JEE (Advanced) assertions on dielectrics are one ledger masquerading as the other. With the battery connected the extra energy $\\Delta U = (K-1)\\frac{1}{2}C_0V^2$ comes from the battery, which supplies charge $\\Delta Q = (K-1)C_0V$ at potential $V$ — the battery gives out $\\Delta Q\\,V = 2\\Delta U$, half stored and half spent on pulling the slab in. With the battery gone the energy *decreases* by $\\frac{(K-1)}{K}U_0$ — that energy is the work the field does pulling the slab in.',
+        detail: 'These two ledgers must be memorised as a pair, because half the advanced engineering assessment assertions on dielectrics are one ledger masquerading as the other. With the battery connected the extra energy $\\Delta U = (K-1)\\frac{1}{2}C_0V^2$ comes from the battery, which supplies charge $\\Delta Q = (K-1)C_0V$ at potential $V$ — the battery gives out $\\Delta Q\\,V = 2\\Delta U$, half stored and half spent on pulling the slab in. With the battery gone the energy *decreases* by $\\frac{(K-1)}{K}U_0$ — that energy is the work the field does pulling the slab in.',
       },
       {
         term: 'Force on a dielectric slab',
@@ -236,14 +236,14 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 20.2 (Physics)
   {
-    sectionId: 'jeeadv-phy-u20-s2',
+    sectionId: 'phys-a20-s2',
     readingTime: 13,
     prerequisites: [
-      'Coulomb\'s law and centripetal force for circular motion (jeeadv-phy-u12-s1, jeeadv-phy-u2-u6 circular motion basics)',
-      'Photon energy $E = h\\nu$ from the photoelectric effect (jeeadv-phy-u20-s1)',
-      'Angular momentum and its conservation for central forces (jeeadv-phy-u5-s3)',
+      'Coulomb\'s law and centripetal force for circular motion (phys-a12-s1, phys-a2-u6 circular motion basics)',
+      'Photon energy $E = h\\nu$ from the photoelectric effect (phys-a20-s1)',
+      'Angular momentum and its conservation for central forces (phys-a5-s3)',
     ],
-    intro: 'Bohr\'s 1913 model is the bridge between classical mechanics and the quantum world: keep the electron in a circular Coulomb orbit, but demand that its angular momentum come only in units of $\\frac{h}{2\\pi}$. From that single postulate follow quantised radii, the $-13.6\\ \\text{eV}$ energy ladder of hydrogen, the entire Rydberg spectrum, and — bonus for JEE (Advanced) — the orbital magnetic moment $\\mu = n\\mu_B$ of a revolving electron. The model is "wrong" (quantum mechanics replaced it) yet numerically exact for hydrogen-like ions, which is why it still generates multi-step numericals in both JEE papers.',
+    intro: 'Bohr\'s 1913 model is the bridge between classical mechanics and the quantum world: keep the electron in a circular Coulomb orbit, but demand that its angular momentum come only in units of $\\frac{h}{2\\pi}$. From that single postulate follow quantised radii, the $-13.6\\ \\text{eV}$ energy ladder of hydrogen, the entire Rydberg spectrum, and — bonus for advanced engineering assessment — the orbital magnetic moment $\\mu = n\\mu_B$ of a revolving electron. The model is "wrong" (quantum mechanics replaced it) yet numerically exact for hydrogen-like ions, which is why it still generates multi-step numericals in both engineering assessment papers.',
     objectives: [
       'State Bohr\'s postulates and derive the quantised radius, speed and energy: $r_n = \\frac{n^2}{Z}a_0$, $v_n = \\frac{Z}{n}\\frac{c}{137}$, $E_n = -13.6\\frac{Z^2}{n^2}$ eV',
       'Apply the Rydberg formula $\\frac{1}{\\lambda} = RZ^2\\left(\\frac{1}{n_1^2} - \\frac{1}{n_2^2}\\right)$ to predict spectral lines, series limits and coincidences between spectra of different ions',
@@ -255,7 +255,7 @@ export const jeeadvContent: SectionContent[] = [
         term: 'Bohr\'s postulates',
         kind: 'law',
         statement: 'Bohr\'s model of the hydrogen-like atom (nucleus of charge $+Ze$, one electron) rests on three statements: (i) the electron moves in allowed circular orbits satisfying $$mvr = \\frac{nh}{2\\pi}, \\qquad n = 1, 2, 3, \\ldots$$ (ii) the Coulomb force supplies the centripetal force, $\\frac{kZe^2}{r^2} = \\frac{mv^2}{r}$; (iii) radiation is emitted or absorbed only when the electron jumps between orbits, in a photon of energy $h\\nu = E_i - E_f$.',
-        detail: 'Postulate (i) is the quantum input — it has no classical justification (though de Broglie later read it as a standing-wave condition $2\\pi r = n\\lambda$). Postulate (ii) is pure Newton + Coulomb. Postulate (iii) repairs classical electrodynamics, which predicts a spiral collapse in $\\sim10^{-11}$ s. Every JEE (Advanced) question on the model is some remix of these three equations; the standard move is to eliminate $v$ between (i) and (ii) to get $r$, then back-substitute for $E$.',
+        detail: 'Postulate (i) is the quantum input — it has no classical justification (though de Broglie later read it as a standing-wave condition $2\\pi r = n\\lambda$). Postulate (ii) is pure Newton + Coulomb. Postulate (iii) repairs classical electrodynamics, which predicts a spiral collapse in $\\sim10^{-11}$ s. Every advanced engineering assessment question on the model is some remix of these three equations; the standard move is to eliminate $v$ between (i) and (ii) to get $r$, then back-substitute for $E$.',
       },
       {
         term: 'Quantised radius and speed',
@@ -279,7 +279,7 @@ export const jeeadvContent: SectionContent[] = [
         term: 'Orbital magnetic dipole moment',
         kind: 'theorem',
         statement: 'An electron revolving with period $T$ is a current loop: $i = \\frac{e}{T} = \\frac{ev}{2\\pi r}$ around area $\\pi r^2$, so the **magnetic dipole moment** is $$\\mu = iA = \\frac{evr}{2} = \\frac{e}{2m}(mvr) = n\\cdot\\frac{eh}{4\\pi m} = n\\mu_B,$$ where $\\mu_B = 9.27\\times10^{-24}\\ \\text{A·m}^2$ is the **Bohr magneton**.',
-        detail: 'The substitution $mvr = \\frac{nh}{2\\pi}$ is the punchline: quantisation of angular momentum forces quantisation of the magnetic moment, in *integer* multiples of $\\mu_B$ (orbital moment — spin adds its own half-integer terms later). The gyromagnetic ratio $\\frac{\\mu}{L} = \\frac{e}{2m} = 8.8\\times10^{10}\\ \\text{C/kg}$ is independent of the orbit. JEE (Advanced) likes asking for the ratio $\\frac{\\mu_n}{\\mu_1} = n$ or for $\\mu$ of the $n = 2$ orbit of He$^+$ — the answer is still $2\\mu_B$, because $\\mu$ depends on $n$ alone, not on $Z$.',
+        detail: 'The substitution $mvr = \\frac{nh}{2\\pi}$ is the punchline: quantisation of angular momentum forces quantisation of the magnetic moment, in *integer* multiples of $\\mu_B$ (orbital moment — spin adds its own half-integer terms later). The gyromagnetic ratio $\\frac{\\mu}{L} = \\frac{e}{2m} = 8.8\\times10^{10}\\ \\text{C/kg}$ is independent of the orbit. advanced engineering assessment likes asking for the ratio $\\frac{\\mu_n}{\\mu_1} = n$ or for $\\mu$ of the $n = 2$ orbit of He$^+$ — the answer is still $2\\mu_B$, because $\\mu$ depends on $n$ alone, not on $Z$.',
       },
     ],
     examples: [
@@ -343,14 +343,14 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.3 (Chemistry)
   {
-    sectionId: 'jeeadv-chem-u4-s3',
+    sectionId: 'chem-a4-s3',
     readingTime: 12,
     prerequisites: [
-      'Shapes of s and p orbitals and their phases (jeeadv-chem-u3-s5)',
-      'Electron configurations with Aufbau, Pauli and Hund rules (jeeadv-chem-u3-s6)',
-      'Covalent bonding by orbital overlap and Lewis structures (jeeadv-chem-u4-s1)',
+      'Shapes of s and p orbitals and their phases (chem-a3-s5)',
+      'Electron configurations with Aufbau, Pauli and Hund rules (chem-a3-s6)',
+      'Covalent bonding by orbital overlap and Lewis structures (chem-a4-s1)',
     ],
-    intro: 'Valence bond theory explains why $\\text{O}_2$ should be diamagnetic — and experiment says it is not. Molecular orbital theory repairs this by abandoning the idea of electrons localised between two atoms: the molecular orbitals of a diatomic spread over the whole molecule, fill by the same Aufbau–Pauli–Hund rules as atomic orbitals, and sort into bonding and antibonding pairs. From one counting exercise — electrons in bonding minus antibonding MOs — flow bond orders, bond lengths, magnetic behaviour and stability rankings for every homonuclear diatomic up to Ne$_2$, which is precisely the palette JEE (Advanced) paints with.',
+    intro: 'Valence bond theory explains why $\\text{O}_2$ should be diamagnetic — and experiment says it is not. Molecular orbital theory repairs this by abandoning the idea of electrons localised between two atoms: the molecular orbitals of a diatomic spread over the whole molecule, fill by the same Aufbau–Pauli–Hund rules as atomic orbitals, and sort into bonding and antibonding pairs. From one counting exercise — electrons in bonding minus antibonding MOs — flow bond orders, bond lengths, magnetic behaviour and stability rankings for every homonuclear diatomic up to Ne$_2$, which is precisely the palette advanced engineering assessment paints with.',
     objectives: [
       'Construct MO energy-level diagrams for homonuclear diatomic species up to Ne$_2$, using the $\\sigma 2p$-below-$\\pi 2p$ order for B$_2$, C$_2$, N$_2$ and the reversed order for O$_2$, F$_2$, Ne$_2$',
       'Compute bond order $\\text{BO} = \\frac{N_b - N_a}{2}$ and use it to rank dissociation energies and bond lengths',
@@ -368,7 +368,7 @@ export const jeeadvContent: SectionContent[] = [
         term: 'The two MO energy orders',
         kind: 'notation',
         statement: 'For O$_2$, F$_2$, Ne$_2$ (no significant $s$–$p$ mixing): $$\\sigma 1s < \\sigma^*1s < \\sigma 2s < \\sigma^*2s < \\sigma 2p_z < \\pi 2p_x = \\pi 2p_y < \\pi^* 2p_x = \\pi^* 2p_y < \\sigma^* 2p_z.$$ For B$_2$, C$_2$, N$_2$ the $2s$–$2p$ interaction pushes $\\sigma 2p_z$ *above* the $\\pi 2p$ pair: $\\ldots \\sigma 2s < \\sigma^*2s < \\pi 2p_x = \\pi 2p_y < \\sigma 2p_z < \\ldots$',
-        detail: 'The crossover happens between N$_2$ and O$_2$ because $s$–$p$ mixing weakens as nuclear charge grows and the $2s$–$2p$ gap widens. The order matters enormously: in C$_2$ ($\\pi$ below $\\sigma$) the highest occupied orbitals are the two $\\pi 2p$ MOs, so C$_2$\'s double bond consists of *two $\\pi$ bonds and no $\\sigma$ bond* — a fact JEE (Advanced) has tested directly. Mixing up the two orders for a given species shifts electrons between $\\sigma 2p_z$ and $\\pi^*2p$, changing magnetism (B$_2$ would falsely come out diamagnetic) even when the bond order survives.',
+        detail: 'The crossover happens between N$_2$ and O$_2$ because $s$–$p$ mixing weakens as nuclear charge grows and the $2s$–$2p$ gap widens. The order matters enormously: in C$_2$ ($\\pi$ below $\\sigma$) the highest occupied orbitals are the two $\\pi 2p$ MOs, so C$_2$\'s double bond consists of *two $\\pi$ bonds and no $\\sigma$ bond* — a fact advanced engineering assessment has tested directly. Mixing up the two orders for a given species shifts electrons between $\\sigma 2p_z$ and $\\pi^*2p$, changing magnetism (B$_2$ would falsely come out diamagnetic) even when the bond order survives.',
       },
       {
         term: 'Bond order and its consequences',
@@ -450,14 +450,14 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 15.2 (Chemistry)
   {
-    sectionId: 'jeeadv-chem-u15-s2',
+    sectionId: 'chem-a15-s2',
     readingTime: 12,
     prerequisites: [
-      'Gibbs energy $\\Delta G = \\Delta H - T\\Delta S$ and the criterion of spontaneity (jeeadv-chem-u5-s6)',
-      'Standard enthalpies of formation and Hess\'s law arithmetic (jeeadv-chem-u5-s4)',
-      'Faraday\'s laws of electrolysis and electrode potentials (jeeadv-chem-u7-s4, jeeadv-chem-u7-s2)',
+      'Gibbs energy $\\Delta G = \\Delta H - T\\Delta S$ and the criterion of spontaneity (chem-a5-s6)',
+      'Standard enthalpies of formation and Hess\'s law arithmetic (chem-a5-s4)',
+      'Faraday\'s laws of electrolysis and electrode potentials (chem-a7-s4, chem-a7-s2)',
     ],
-    intro: 'Extraction is thermodynamics with a blowtorch: a metal oxide is stable exactly as long as its formation Gibbs energy stays more negative than the reductant\'s, and the Ellingham diagram simply plots that race against temperature. Read the diagram and you know why coke liberates iron and zinc but never aluminium, why copper can refine itself with no reductant at all, and why the most reactive metals must be won by electrolysis instead. Add Faraday\'s laws and a few blast-furnace stoichiometries and you have the complete JEE (Advanced) toolkit for extractive metallurgy.',
+    intro: 'Extraction is thermodynamics with a blowtorch: a metal oxide is stable exactly as long as its formation Gibbs energy stays more negative than the reductant\'s, and the Ellingham diagram simply plots that race against temperature. Read the diagram and you know why coke liberates iron and zinc but never aluminium, why copper can refine itself with no reductant at all, and why the most reactive metals must be won by electrolysis instead. Add Faraday\'s laws and a few blast-furnace stoichiometries and you have the complete advanced engineering assessment toolkit for extractive metallurgy.',
     objectives: [
       'Interpret an Ellingham diagram: line positions vs oxide stability, slopes vs $\\Delta S$, and crossovers vs reduction temperature',
       'Compute $\\Delta G^\\circ = \\Delta H^\\circ - T\\Delta S^\\circ$ for a reduction reaction and locate the crossover temperature $T = \\frac{\\Delta H}{\\Delta S}$',
@@ -505,7 +505,7 @@ export const jeeadvContent: SectionContent[] = [
           { label: 'Step 2', text: 'Reaction entropy: $\\Delta S^\\circ = [197.7 + 41.6] - [43.6 + 5.7] = 239.3 - 49.3 = +190.0$ J K$^{-1}$. Positive because one mole of gas is created — the hallmark of carbon reductions and the reason the CO line slopes downward.' },
           { label: 'Step 3', text: 'Crossover (where $\\Delta G^\\circ = 0$): $T = \\frac{\\Delta H^\\circ}{\\Delta S^\\circ} = \\frac{240{,}000}{190.0} \\approx 1263$ K, i.e. about 990 $^\\circ$C — matching the accepted Ellingham crossover of $\\approx$ 1270 K for the ZnO–C couple.' },
           { label: 'Step 4', text: 'At 1400 K: $\\Delta G^\\circ = \\Delta H^\\circ - T\\Delta S^\\circ = 240.0 - (1400)(0.190) = 240.0 - 266.0 = -26.0$ kJ — negative, so coke reduces ZnO spontaneously above the crossover.' },
-          { label: 'Step 5', text: 'Practice note: industrial zinc smelting runs near 1670 K, well past 1270 K, partly for rate and partly because zinc itself boils at 1180 K and must be handled as vapour — the thermodynamic floor and the engineering ceiling both appear in JEE (Advanced) paragraph questions.' },
+          { label: 'Step 5', text: 'Practice note: industrial zinc smelting runs near 1670 K, well past 1270 K, partly for rate and partly because zinc itself boils at 1180 K and must be handled as vapour — the thermodynamic floor and the engineering ceiling both appear in advanced engineering assessment paragraph questions.' },
         ],
         result: '$\\Delta H^\\circ = +240$ kJ, $\\Delta S^\\circ = +190$ J K$^{-1}$; crossover $T \\approx 1263$ K ($\\approx 1270$ K); at 1400 K, $\\Delta G^\\circ = -26$ kJ (spontaneous).',
       },
@@ -557,14 +557,14 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 15.4 (Chemistry)
   {
-    sectionId: 'jeeadv-chem-u15-s4',
+    sectionId: 'chem-a15-s4',
     readingTime: 13,
     prerequisites: [
-      'Solubility product and the common-ion effect (jeeadv-chem-u6-s4)',
-      'Acid–base equilibria, pH and buffers (jeeadv-chem-u6-s5)',
-      'Redox basics and precipitation reactions from the mole-concept chapter (jeeadv-chem-u1)',
+      'Solubility product and the common-ion effect (chem-a6-s4)',
+      'Acid–base equilibria, pH and buffers (chem-a6-s5)',
+      'Redox basics and precipitation reactions from the mole-concept chapter (chem-a1)',
     ],
-    intro: 'Qualitative inorganic analysis is the JEE (Advanced) syllabus\'s laboratory course on paper: eleven cations are separated into five groups by nothing deeper than solubility products and the common-ion effect, yet the scheme rewards exactly the multi-step deductive reasoning the examination prizes. Every group reagent is an equilibrium argument in disguise — acidic $\\text{H}_2\\text{S}$ suppresses sulphide ion so completely that only ultra-insoluble sulphides fall, while ammonium chloride holds hydroxide down so magnesium stays in solution. Master the logic, not the list, and any flowchart question becomes an exercise.',
+    intro: 'Qualitative inorganic analysis is the advanced engineering assessment syllabus\'s laboratory course on paper: eleven cations are separated into five groups by nothing deeper than solubility products and the common-ion effect, yet the scheme rewards exactly the multi-step deductive reasoning the assessment prizes. Every group reagent is an equilibrium argument in disguise — acidic $\\text{H}_2\\text{S}$ suppresses sulphide ion so completely that only ultra-insoluble sulphides fall, while ammonium chloride holds hydroxide down so magnesium stays in solution. Master the logic, not the list, and any flowchart question becomes an exercise.',
     objectives: [
       'Reproduce the five-group scheme: group reagent, member cations, precipitate formulae and colours',
       'Explain each separation quantitatively with $K_{sp}$ and the common-ion effect — why acidic $\\text{H}_2\\text{S}$ catches only Group II and why $\\text{NH}_4\\text{Cl}$ must precede $\\text{NH}_4\\text{OH}$',
@@ -576,7 +576,7 @@ export const jeeadvContent: SectionContent[] = [
         term: 'The five-group scheme',
         kind: 'method',
         statement: 'Cations are precipitated in sequence: **Group I** with dilute HCl (AgCl white, $\\text{Hg}_2\\text{Cl}_2$ white, PbCl$_2$ white); **Group II** with $\\text{H}_2\\text{S}$ in dilute HCl (CuS black, HgS black, PbS black, $\\text{Bi}_2\\text{S}_3$ brown, CdS yellow); **Group III** with $\\text{NH}_4\\text{OH}$ in presence of $\\text{NH}_4\\text{Cl}$ ($\\text{Fe(OH)}_3$ reddish brown, $\\text{Cr(OH)}_3$ green, $\\text{Al(OH)}_3$ white gelatinous); **Group IV** with $\\text{H}_2\\text{S}$ in ammoniacal medium (ZnS dirty white, MnS buff); **Group V** with $(\\text{NH}_4)_2\\text{CO}_3$ in $\\text{NH}_4\\text{Cl}/\\text{NH}_4\\text{OH}$ (BaCO$_3$, CaCO$_3$ white), with Mg$^{2+}$ remaining in solution.',
-        detail: 'The order is a solubility ladder, not an arbitrary convention: each reagent is chosen to catch the *most* insoluble remaining members while leaving the rest dissolved. Because PbCl$_2$ is moderately soluble (about 1 g per 100 mL cold water), lead leaks past Group I into Group II as PbS — the standard "split personality" the examiners love. At every stage, precipitate (carries the group) and filtrate (carries everything else) must both be tracked; flowchart questions test exactly this double bookkeeping.',
+        detail: 'The order is a solubility ladder, not an arbitrary convention: each reagent is chosen to catch the *most* insoluble remaining members while leaving the rest dissolved. Because PbCl$_2$ is moderately soluble (about 1 g per 100 mL cold water), lead leaks past Group I into Group II as PbS — the standard "split personality" the assessors love. At every stage, precipitate (carries the group) and filtrate (carries everything else) must both be tracked; flowchart questions test exactly this double bookkeeping.',
       },
       {
         term: 'Why acidic H₂S precipitates only Group II',
@@ -594,13 +594,13 @@ export const jeeadvContent: SectionContent[] = [
         term: 'Group I separations',
         kind: 'method',
         statement: 'The Group I chlorides separate cleanly: **PbCl$_2$ dissolves in hot water** (retreating on cooling as needles) and so leaves AgCl and $\\text{Hg}_2\\text{Cl}_2$ behind; **AgCl dissolves in $\\text{NH}_4\\text{OH}$** as $[\\text{Ag(NH}_3)_2]^+$ and re-precipitates on acidification with HNO$_3$; **$\\text{Hg}_2\\text{Cl}_2$ turns black with ammonia** (disproportionation to Hg and $\\text{HgNH}_2\\text{Cl}$).',
-        detail: 'Hot water exploits PbCl$_2$\'s steeply temperature-dependent solubility; the ammonia test exploits complex formation ($K_f \\approx 10^{7}$ for the diamminesilver ion) versus mercury(I)\'s disproportionation $\\text{Hg}_2^{2+} \\to \\text{Hg}^{2+} + \\text{Hg}$. Lead that reaches Group II is caught as black PbS and confirmed as yellow PbCrO$_4$ (soluble in NaOH, unlike BaCrO$_4$). The exam pattern: a described colour change with one reagent, then ask which cation — so the *differential* behaviour, not the precipitate colours alone, is the memory target.',
+        detail: 'Hot water exploits PbCl$_2$\'s steeply temperature-dependent solubility; the ammonia test exploits complex formation ($K_f \\approx 10^{7}$ for the diamminesilver ion) versus mercury(I)\'s disproportionation $\\text{Hg}_2^{2+} \\to \\text{Hg}^{2+} + \\text{Hg}$. Lead that reaches Group II is caught as black PbS and confirmed as yellow PbCrO$_4$ (soluble in NaOH, unlike BaCrO$_4$). The assessment pattern: a described colour change with one reagent, then ask which cation — so the *differential* behaviour, not the precipitate colours alone, is the memory target.',
       },
       {
         term: 'Confirmatory tests worth their weight',
         kind: 'notation',
         statement: 'Fe$^{3+}$ + $\\text{K}_4[\\text{Fe(CN)}_6]$ $\\to$ deep-blue **Prussian blue** $\\text{Fe}_4[\\text{Fe(CN)}_6]_3$; Cu$^{2+}$ + $\\text{K}_4[\\text{Fe(CN)}_6]$ $\\to$ chocolate-brown $\\text{Cu}_2[\\text{Fe(CN)}_6]$; Ba$^{2+}$ + $\\text{K}_2\\text{CrO}_4$ $\\to$ yellow $\\text{BaCrO}_4$ (insoluble in acetic acid); Ca$^{2+}$ + ammonium oxalate $\\to$ white $\\text{CaC}_2\\text{O}_4$; Zn$^{2+}$ + potassium ferrocyanide $\\to$ white/bluish ppt soluble in NaOH; Mg$^{2+}$ + $\\text{Na}_2\\text{HPO}_4/\\text{NH}_4\\text{OH}$ $\\to$ white crystalline $\\text{Mg(NH}_4)\\text{PO}_4$; flame tests: Ca brick-red, Ba apple-green.',
-        detail: 'Each confirmatory test is itself a small equilibrium or redox story: Prussian blue is a mixed-valence iron(II/III) hexacyanometallate; the chromate test for barium works in dilute acetic acid because $\\text{BaCrO}_4$ is far less soluble than $\\text{CaCrO}_4$; the calcium oxalate test fails for barium only after barium has been removed — sequence matters. Mn$^{2+}$ is confirmed by oxidation to purple permanganate with $\\text{PbO}_2$/conc. HNO$_3$ or sodium bismuthate. Remember the colours as *pairs* (reagent $\\to$ colour) — the exam almost always describes the observation and asks for the inference.',
+        detail: 'Each confirmatory test is itself a small equilibrium or redox story: Prussian blue is a mixed-valence iron(II/III) hexacyanometallate; the chromate test for barium works in dilute acetic acid because $\\text{BaCrO}_4$ is far less soluble than $\\text{CaCrO}_4$; the calcium oxalate test fails for barium only after barium has been removed — sequence matters. Mn$^{2+}$ is confirmed by oxidation to purple permanganate with $\\text{PbO}_2$/conc. HNO$_3$ or sodium bismuthate. Remember the colours as *pairs* (reagent $\\to$ colour) — the assessment almost always describes the observation and asks for the inference.',
       },
     ],
     examples: [
@@ -664,14 +664,14 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 18.2 (Chemistry)
   {
-    sectionId: 'jeeadv-chem-u18-s2',
+    sectionId: 'chem-a18-s2',
     readingTime: 11,
     prerequisites: [
-      'Structure of benzene and the mechanism of electrophilic aromatic substitution (jeeadv-chem-u18-s1)',
-      'Resonance and electronic effects (+M, −M, +I, −I) from organic basics (jeeadv-chem-u16)',
+      'Structure of benzene and the mechanism of electrophilic aromatic substitution (chem-a18-s1)',
+      'Resonance and electronic effects (+M, −M, +I, −I) from organic basics (chem-a16)',
       'Acid strength and the stabilisation of charged intermediates by delocalisation',
     ],
-    intro: 'Put one substituent on a benzene ring and it dictates the fate of the next: where the incoming electrophile lands and how fast it arrives. Electron-donating groups such as $-\\text{OH}$ and $-\\text{NH}_2$ flood the ring with electron density — ortho/para attack, faster reaction — while electron-withdrawing groups like $-\\text{NO}_2$ starve it and redirect attack to the meta position. JEE (Advanced) tests the concept three ways at once: predicting products, ranking rates, and — hardest of all — planning multi-step syntheses where the *order* of substitution is the whole answer.',
+    intro: 'Put one substituent on a benzene ring and it dictates the fate of the next: where the incoming electrophile lands and how fast it arrives. Electron-donating groups such as $-\\text{OH}$ and $-\\text{NH}_2$ flood the ring with electron density — ortho/para attack, faster reaction — while electron-withdrawing groups like $-\\text{NO}_2$ starve it and redirect attack to the meta position. advanced engineering assessment tests the concept three ways at once: predicting products, ranking rates, and — hardest of all — planning multi-step syntheses where the *order* of substitution is the whole answer.',
     objectives: [
       'Classify substituents as activating/ortho–para, deactivating/meta, or the halogen special case (deactivating yet ortho–para)',
       'Predict the major product (and significant minor products) of electrophilic substitution on monosubstituted benzenes, including steric bias toward para',
@@ -771,14 +771,14 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 12.6 (Maths)
   {
-    sectionId: 'jeeadv-math-u12-s6',
+    sectionId: 'math-a12-s6',
     readingTime: 12,
     prerequisites: [
-      'Derivatives of standard functions and the chain rule (jeeadv-math-u12-s1, jeeadv-math-u12-s2)',
-      'Continuity on closed intervals (jeeadv-math-u11-s2)',
-      'Monotonicity from the sign of the first derivative (jeeadv-math-u12-s5)',
+      'Derivatives of standard functions and the chain rule (math-a12-s1, math-a12-s2)',
+      'Continuity on closed intervals (math-a11-s2)',
+      'Monotonicity from the sign of the first derivative (math-a12-s5)',
     ],
-    intro: 'Differentiation answers local questions; the mean value theorems convert it into global statements about a whole interval. Rolle\'s theorem promises a flat tangent somewhere between two equal heights, Lagrange\'s mean value theorem (LMVT) promises a tangent parallel to the end-point chord, and both — though pure existence results — become sharp tools: they count roots, prove inequalities like $\\frac{x}{1+x} < \\ln(1+x) < x$, and police the extrema of functions whose derivative vanishes for reasons you must interrogate. JEE (Advanced) rarely asks "state the theorem"; it asks you to *use* it three steps into a problem.',
+    intro: 'Differentiation answers local questions; the mean value theorems convert it into global statements about a whole interval. Rolle\'s theorem promises a flat tangent somewhere between two equal heights, Lagrange\'s mean value theorem (LMVT) promises a tangent parallel to the end-point chord, and both — though pure existence results — become sharp tools: they count roots, prove inequalities like $\\frac{x}{1+x} < \\ln(1+x) < x$, and police the extrema of functions whose derivative vanishes for reasons you must interrogate. advanced engineering assessment rarely asks "state the theorem"; it asks you to *use* it three steps into a problem.',
     objectives: [
       'State Rolle\'s theorem and LMVT precisely, check their hypotheses on a given function, and find the guaranteed point(s) $c$ explicitly',
       'Use Rolle\'s theorem to bound the number of real roots of an equation via roots of the derivative',
@@ -790,13 +790,13 @@ export const jeeadvContent: SectionContent[] = [
         term: 'Rolle\'s theorem',
         kind: 'theorem',
         statement: 'If $f$ is **continuous on $[a, b]$**, **differentiable on $(a, b)$**, and $f(a) = f(b)$, then there exists at least one $c \\in (a, b)$ with $$f\'(c) = 0.$$ Geometrically: between two equal heights the graph has a horizontal tangent.',
-        detail: 'The hypotheses are *sufficient*, not necessary — $f(x) = x^3$ on $[-1, 1]$ has $f(-1) \\ne f(1)$ yet still a flat tangent at 0. The exam standard is the converse probe: on $f(x) = |x|$ over $[-1, 1]$, continuity and equal endpoint values hold, but differentiability fails at 0 — and indeed no horizontal tangent exists, so each hypothesis earns its place. Typical task: verify all three conditions, then solve $f\'(x) = 0$ and confirm the roots land inside the *open* interval.',
+        detail: 'The hypotheses are *sufficient*, not necessary — $f(x) = x^3$ on $[-1, 1]$ has $f(-1) \\ne f(1)$ yet still a flat tangent at 0. The assessment standard is the converse probe: on $f(x) = |x|$ over $[-1, 1]$, continuity and equal endpoint values hold, but differentiability fails at 0 — and indeed no horizontal tangent exists, so each hypothesis earns its place. Typical task: verify all three conditions, then solve $f\'(x) = 0$ and confirm the roots land inside the *open* interval.',
       },
       {
         term: 'Lagrange\'s mean value theorem',
         kind: 'theorem',
         statement: 'If $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, there exists $c \\in (a, b)$ such that $$f\'(c) = \\frac{f(b) - f(a)}{b - a}.$$ Equivalently $f(b) = f(a) + (b-a)f\'(c)$: somewhere the tangent is parallel to the chord joining the endpoints.',
-        detail: 'Rolle is the special case $f(a) = f(b)$ (chord slope zero). LMVT is the tool for *estimates*: if $m \\le f\'(x) \\le M$ throughout $(a, b)$, then $m(b-a) \\le f(b) - f(a) \\le M(b-a)$. It also grounds monotonicity: $f\' > 0$ on an interval makes every chord slope positive, so $f$ is strictly increasing. JEE (Advanced) numericals hide $c$ inside nastier algebra (roots like $c = \\sqrt{ab}$ from applying LMVT to $\\ln x$ or $\\sqrt{x}$), so practise the pattern $f\'(c) = \\frac{f(b)-f(a)}{b-a}$ solved for $c$.',
+        detail: 'Rolle is the special case $f(a) = f(b)$ (chord slope zero). LMVT is the tool for *estimates*: if $m \\le f\'(x) \\le M$ throughout $(a, b)$, then $m(b-a) \\le f(b) - f(a) \\le M(b-a)$. It also grounds monotonicity: $f\' > 0$ on an interval makes every chord slope positive, so $f$ is strictly increasing. advanced engineering assessment numericals hide $c$ inside nastier algebra (roots like $c = \\sqrt{ab}$ from applying LMVT to $\\ln x$ or $\\sqrt{x}$), so practise the pattern $f\'(c) = \\frac{f(b)-f(a)}{b-a}$ solved for $c$.',
       },
       {
         term: 'Counting roots with Rolle',
@@ -814,7 +814,7 @@ export const jeeadvContent: SectionContent[] = [
         term: 'Extrema — the complete audit',
         kind: 'insight',
         statement: 'A continuous function on a closed interval attains its global max and min, and they occur only at (i) interior points with $f\' = 0$, (ii) interior points where $f\'$ fails to exist, or (iii) the endpoints. The **second-derivative test** ($f\'\' > 0$: local min, $f\'\' < 0$: local max) is a shortcut that fails when $f\'\' = 0$.',
-        detail: 'Three landmines: $f\'(c) = 0$ does not imply an extremum ($x^3$ at 0); extrema can sit at non-differentiable points ($|x|$ at 0); and $f\'\'(c) = 0$ is inconclusive ($x^4$ has a minimum at 0, $-x^4$ a maximum, $x^3$ neither) — fall back on the sign change of $f\'$. For closed-interval problems, *always* tabulate endpoint values alongside critical values; JEE (Advanced)\'s "greatest value of $f(x) = x^3 - 12x + 5$ on $[0, 3]$" style questions are decided by the endpoints more often than students expect.',
+        detail: 'Three landmines: $f\'(c) = 0$ does not imply an extremum ($x^3$ at 0); extrema can sit at non-differentiable points ($|x|$ at 0); and $f\'\'(c) = 0$ is inconclusive ($x^4$ has a minimum at 0, $-x^4$ a maximum, $x^3$ neither) — fall back on the sign change of $f\'$. For closed-interval problems, *always* tabulate endpoint values alongside critical values; advanced engineering assessment\'s "greatest value of $f(x) = x^3 - 12x + 5$ on $[0, 3]$" style questions are decided by the endpoints more often than students expect.',
       },
     ],
     examples: [
@@ -878,14 +878,14 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 13.5 (Maths)
   {
-    sectionId: 'jeeadv-math-u13-s5',
+    sectionId: 'math-a13-s5',
     readingTime: 13,
     prerequisites: [
-      'Indefinite integration by substitution, partial fractions and by parts (jeeadv-math-u13-s2, jeeadv-math-u13-s3)',
-      'Definite integrals as limits of Riemann sums (jeeadv-math-u13-s4)',
-      'Even, odd and periodic functions (jeeadv-math-u1-s5) and the limit $\\lim_{x\\to0^+} x\\ln x$',
+      'Indefinite integration by substitution, partial fractions and by parts (math-a13-s2, math-a13-s3)',
+      'Definite integrals as limits of Riemann sums (math-a13-s4)',
+      'Even, odd and periodic functions (math-a1-s5) and the limit $\\lim_{x\\to0^+} x\\ln x$',
     ],
-    intro: 'The fundamental theorem turns integration from an infinite summation into antiderivative bookkeeping — but the properties of the *definite* integral are where JEE (Advanced) actually lives. The king property $\\int_a^b f(x)\\,dx = \\int_a^b f(a+b-x)\\,dx$ alone cracks integrals that no antiderivative table touches; even–odd and periodic symmetries turn $[-a, a]$ and $[0, nT]$ into half- or $n$-fold copies; and the Leibniz rule differentiates integrals whose limits are functions. Add the limit-of-sums reading and the same theory evaluates things like $\\lim_{n\\to\\infty}\\left(\\frac{n!}{n^n}\\right)^{1/n}$ in four lines.',
+    intro: 'The fundamental theorem turns integration from an infinite summation into antiderivative bookkeeping — but the properties of the *definite* integral are where advanced engineering assessment actually lives. The king property $\\int_a^b f(x)\\,dx = \\int_a^b f(a+b-x)\\,dx$ alone cracks integrals that no antiderivative table touches; even–odd and periodic symmetries turn $[-a, a]$ and $[0, nT]$ into half- or $n$-fold copies; and the Leibniz rule differentiates integrals whose limits are functions. Add the limit-of-sums reading and the same theory evaluates things like $\\lim_{n\\to\\infty}\\left(\\frac{n!}{n^n}\\right)^{1/n}$ in four lines.',
     objectives: [
       'Apply the king property and its add-both trick to evaluate symmetric integrals such as $\\int_0^\\pi \\frac{x\\sin x}{1+\\cos^2x}\\,dx$',
       'Exploit even/odd symmetry and periodicity to shrink integration domains before computing anything',
@@ -985,14 +985,14 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 10.3 (Maths)
   {
-    sectionId: 'jeeadv-math-u10-s3',
+    sectionId: 'math-a10-s3',
     readingTime: 12,
     prerequisites: [
-      'Vector and Cartesian equations of straight lines in space (jeeadv-math-u10-s2)',
-      'Dot and cross products of vectors (jeeadv-math-u15-s2)',
-      'Scalar triple product and coplanarity (jeeadv-math-u15-s3)',
+      'Vector and Cartesian equations of straight lines in space (math-a10-s2)',
+      'Dot and cross products of vectors (math-a15-s2)',
+      'Scalar triple product and coplanarity (math-a15-s3)',
     ],
-    intro: 'Two lines in a plane either meet or run parallel; in space they can do neither — they can be **skew**, passing each other on non-intersecting, non-parallel tracks like two flight paths at different altitudes. For skew lines the natural question is "how close do they get?", and the answer is beautiful: the shortest segment is perpendicular to both lines, its direction is the cross product of the two direction vectors, and its length comes from one scalar triple product. JEE (Advanced) wraps this in three-step problems — test coplanarity, compute the distance, and (hardest) find the line of shortest distance itself.',
+    intro: 'Two lines in a plane either meet or run parallel; in space they can do neither — they can be **skew**, passing each other on non-intersecting, non-parallel tracks like two flight paths at different altitudes. For skew lines the natural question is "how close do they get?", and the answer is beautiful: the shortest segment is perpendicular to both lines, its direction is the cross product of the two direction vectors, and its length comes from one scalar triple product. advanced engineering assessment wraps this in three-step problems — test coplanarity, compute the distance, and (hardest) find the line of shortest distance itself.',
     objectives: [
       'Classify a pair of lines in space as intersecting, parallel, coincident or skew, using $\\vec{b}_1 \\times \\vec{b}_2$ and the scalar triple product',
       'Compute the shortest distance between skew lines, $d = \\frac{|(\\vec{a}_2-\\vec{a}_1)\\cdot(\\vec{b}_1\\times\\vec{b}_2)|}{|\\vec{b}_1\\times\\vec{b}_2)|}$, and between parallel lines, $d = \\frac{|(\\vec{a}_2-\\vec{a}_1)\\times\\vec{b}|}{|\\vec{b}|}$',
@@ -1028,7 +1028,7 @@ export const jeeadvContent: SectionContent[] = [
         term: 'The line of shortest distance',
         kind: 'insight',
         statement: 'Between two skew lines there is a **unique common perpendicular**; it meets each line at one foot, has direction $\\vec{b}_1\\times\\vec{b}_2$, and its length is the shortest distance. Its equation can be built as the line through one foot with direction $\\vec{b}_1\\times\\vec{b}_2$.',
-        detail: 'To find the feet: let them be $\\vec{a}_1 + \\lambda\\vec{b}_1$ and $\\vec{a}_2 + \\mu\\vec{b}_2$ and impose perpendicularity to both directions: $(\\vec{a}_2 + \\mu\\vec{b}_2 - \\vec{a}_1 - \\lambda\\vec{b}_1)\\cdot\\vec{b}_1 = 0$ and $(\\cdot)\\cdot\\vec{b}_2 = 0$ — two linear equations in $\\lambda, \\mu$. A slicker route passes through the plane family: the SD line is the intersection of plane $\\Pi_1$ (containing line 1, parallel to $\\vec{b}_1\\times\\vec{b}_2$) with plane $\\Pi_2$ (containing line 2, parallel to $\\vec{b}_1\\times\\vec{b}_2$), each built from a scalar triple product condition. This "common perpendicular as line of intersection of two planes" is the version JEE (Advanced) asks when it wants more than a distance.',
+        detail: 'To find the feet: let them be $\\vec{a}_1 + \\lambda\\vec{b}_1$ and $\\vec{a}_2 + \\mu\\vec{b}_2$ and impose perpendicularity to both directions: $(\\vec{a}_2 + \\mu\\vec{b}_2 - \\vec{a}_1 - \\lambda\\vec{b}_1)\\cdot\\vec{b}_1 = 0$ and $(\\cdot)\\cdot\\vec{b}_2 = 0$ — two linear equations in $\\lambda, \\mu$. A slicker route passes through the plane family: the SD line is the intersection of plane $\\Pi_1$ (containing line 1, parallel to $\\vec{b}_1\\times\\vec{b}_2$) with plane $\\Pi_2$ (containing line 2, parallel to $\\vec{b}_1\\times\\vec{b}_2$), each built from a scalar triple product condition. This "common perpendicular as line of intersection of two planes" is the version advanced engineering assessment asks when it wants more than a distance.',
       },
     ],
     examples: [

@@ -2,26 +2,31 @@ import type { SectionContent } from '../library'
 
 // ============================================================================
 // JEE (Main) 2026 Chemistry — master lesson content (high-weightage sections)
-// Full SectionContent lessons for ten first sections across Units 1–15 of the
-// official NTA syllabus (bookId 'jeemain-chemistry-2026'): matter & chemical
+// Full SectionContent lessons for the FIRST section of every unit 1–20 of the
+// official NTA syllabus (bookId 'chem-complete'): matter & chemical
 // combination (1.1), radiation & hydrogen spectrum (2.1), ionic bonding
-// (3.1), thermodynamic fundamentals (4.1), dynamic & physical equilibria
-// (6.1), redox concepts & balancing (7.1), reaction rates (8.1), the modern
-// periodic table (9.1), carbon bonding & classification (14.1) and
-// hydrocarbon classification & preparation (15.1). KaTeX formulas, exam
-// traps and PYQ-pattern quizzes follow the jeemaths-ch01 exemplar style.
+// (3.1), thermodynamic fundamentals (4.1), concentration terms (5.1),
+// dynamic & physical equilibria (6.1), redox concepts & balancing (7.1),
+// reaction rates (8.1), the modern periodic table (9.1), p-block
+// introduction (10.1), transition elements (11.1), Werner's theory and
+// terminology (12.1), purification techniques (13.1), carbon bonding &
+// classification (14.1), hydrocarbon classification & preparation (15.1),
+// haloalkanes and the C–X bond (16.1), alcohols (17.1), amines (18.1),
+// biomolecules and carbohydrates (19.1), detection of elements and
+// functional groups (20.1). KaTeX formulas, exam traps and PYQ-pattern
+// quizzes follow the advmath-ch01 exemplar style.
 // ============================================================================
 
 export const jeemainChemContent: SectionContent[] = [
   // ---------------------------------------------------------------- 1.1
   {
-    sectionId: 'jeemain-chem-u1-s1',
+    sectionId: 'chem-m1-s1',
     readingTime: 9,
     prerequisites: [
       'Atomic masses and symbols of common elements (school chemistry)',
       'Ratios, percentages and unitary method arithmetic',
     ],
-    intro: 'Every quantitative chemistry question stands on the **mole** — the chemist\u2019s dozen. Dalton\u2019s atomic theory explains why elements combine in fixed mass ratios, the laws of chemical combination quantify those ratios, and the mole converts between grams, particles and volumes of gas. JEE Main tests this unit relentlessly through limiting-reagent, per cent-yield and concentration problems.',
+    intro: 'Every quantitative chemistry question stands on the **mole** — the chemist\u2019s dozen. Dalton\u2019s atomic theory explains why elements combine in fixed mass ratios, the laws of chemical combination quantify those ratios, and the mole converts between grams, particles and volumes of gas. engineering assessment tests this unit relentlessly through limiting-reagent, per cent-yield and concentration problems.',
     objectives: [
       'State the laws of chemical combination (conservation of mass, definite proportions, multiple proportions, reciprocal proportions) and connect each to Dalton\u2019s theory',
       'Interconvert mass, moles, number of particles and STP gas volume using $n = \\frac{w}{M}$, $n = \\frac{N}{N_A}$ and $n = \\frac{V}{22.4}$',
@@ -45,13 +50,13 @@ export const jeemainChemContent: SectionContent[] = [
         term: 'Empirical and molecular formula',
         kind: 'method',
         statement: 'The **empirical formula** gives the simplest whole-number atom ratio; the **molecular formula** is a whole-number multiple: $\\text{MF} = (\\text{EF})_n$ with $n = \\frac{M_{\\text{molar}}}{M_{\\text{EF}}}$.',
-        detail: 'From per cent data: assume 100 g, convert each per cent to grams, divide by atomic mass, divide all by the smallest to get ratios. A ratio like 1 : 1.33 means multiply by 3 to clear thirds (1 : 1.33 = 3 : 4). JEE traps hide in the rounding — carry one decimal until the end.'
+        detail: 'From per cent data: assume 100 g, convert each per cent to grams, divide by atomic mass, divide all by the smallest to get ratios. A ratio like 1 : 1.33 means multiply by 3 to clear thirds (1 : 1.33 = 3 : 4). engineering assessment traps hide in the rounding — carry one decimal until the end.'
       },
       {
         term: 'Limiting reagent',
         kind: 'method',
         statement: 'The **limiting reagent** is the reactant that runs out first; it alone decides the maximum product: divide each reactant\u2019s moles by its stoichiometric coefficient — the smallest quotient limits.',
-        detail: 'The other reactant is in excess; leftover = initial minus consumed. Recognising the limiting reagent by inspection (divide moles by coefficients) is faster than the "extend the chain" method and safer under exam pressure.'
+        detail: 'The other reactant is in excess; leftover = initial minus consumed. Recognising the limiting reagent by inspection (divide moles by coefficients) is faster than the "extend the chain" method and safer under assessment pressure.'
       },
       {
         term: 'Concentration terms',
@@ -119,13 +124,13 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.1
   {
-    sectionId: 'jeemain-chem-u2-s1',
+    sectionId: 'chem-m2-s1',
     readingTime: 10,
     prerequisites: [
       'Mole concept and stoichiometry (Unit 1)',
       'Basic energy ideas: $E = h\\nu$ from physics is reintroduced chemically',
     ],
-    intro: 'Light is both wave and particle, and nowhere is the duality sharper than when radiation meets atoms. The **photoelectric effect** proves light arrives in packets (photons) whose energy is set by frequency alone, and the **hydrogen spectrum** shows atoms absorbing and emitting only specific photon energies — the fingerprints of quantised electronic states. JEE Main loves numericals on photon count, work function and Rydberg lines.',
+    intro: 'Light is both wave and particle, and nowhere is the duality sharper than when radiation meets atoms. The **photoelectric effect** proves light arrives in packets (photons) whose energy is set by frequency alone, and the **hydrogen spectrum** shows atoms absorbing and emitting only specific photon energies — the fingerprints of quantised electronic states. engineering assessment loves numericals on photon count, work function and Rydberg lines.',
     objectives: [
       'Characterise electromagnetic radiation by $c = \\nu\\lambda$ and photon energy $E = h\\nu = \\frac{hc}{\\lambda}$',
       'Explain the photoelectric effect with threshold frequency, work function and Einstein\u2019s equation $KE_{\\max} = h(\\nu - \\nu_0)$',
@@ -149,7 +154,7 @@ export const jeemainChemContent: SectionContent[] = [
         term: 'Photon counting',
         kind: 'method',
         statement: 'A source of power $P$ at wavelength $\\lambda$ emits $\\frac{P\\lambda}{hc}$ photons per second, each carrying $E = \\frac{hc}{\\lambda}$.',
-        detail: 'Rearranged: number of photons $N = \\frac{E_{\\text{total}}\\lambda}{hc}$. Doubling wavelength doubles photons per joule. This bridges chemistry to real lamps and lasers, and JEE asks it as a two-step numerical almost every alternate year.'
+        detail: 'Rearranged: number of photons $N = \\frac{E_{\\text{total}}\\lambda}{hc}$. Doubling wavelength doubles photons per joule. This bridges chemistry to real lamps and lasers, and engineering assessment asks it as a two-step numerical almost every alternate year.'
       },
       {
         term: 'Hydrogen spectrum and Rydberg',
@@ -223,7 +228,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.1
   {
-    sectionId: 'jeemain-chem-u3-s1',
+    sectionId: 'chem-m3-s1',
     readingTime: 9,
     prerequisites: [
       'Electronic configuration of atoms (Unit 2)',
@@ -241,7 +246,7 @@ export const jeemainChemContent: SectionContent[] = [
         term: 'Octet rule',
         kind: 'law',
         statement: 'Atoms tend to gain, lose or share electrons until surrounded by **eight valence electrons** (a noble-gas shell) — the driving idea behind Lewis structures and Kossel\u2019s ionic picture.',
-        detail: 'Exceptions matter for JEE: incomplete octets (BeCl$_2$, BF$_3$), expanded octets (PCl$_5$, SF$_6$ — possible from the third period onward via vacant d-orbitals in classical pictures), and odd-electron molecules (NO, NO$_2$). Hydrogen is content with two electrons (duet).'
+        detail: 'Exceptions matter for engineering assessment: incomplete octets (BeCl$_2$, BF$_3$), expanded octets (PCl$_5$, SF$_6$ — possible from the third period onward via vacant d-orbitals in classical pictures), and odd-electron molecules (NO, NO$_2$). Hydrogen is content with two electrons (duet).'
       },
       {
         term: 'Ionic bond formation',
@@ -327,7 +332,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.1
   {
-    sectionId: 'jeemain-chem-u4-s1',
+    sectionId: 'chem-m4-s1',
     readingTime: 10,
     prerequisites: [
       'First law of thermodynamics from physics (work, heat, internal energy)',
@@ -351,7 +356,7 @@ export const jeemainChemContent: SectionContent[] = [
         term: 'Extensive and intensive properties',
         kind: 'definition',
         statement: '**Extensive** properties scale with the amount of matter (mass, volume, internal energy, enthalpy, entropy, heat capacity); **intensive** properties do not (temperature, pressure, density, molar heat capacity, refractive index).',
-        detail: 'Test: double the system — the property doubles (extensive) or stays put (intensive). Ratio of two extensive properties is intensive: $\\frac{V}{n} = V_m$ (molar volume), $\\frac{U}{n}$, $\\rho = \\frac{m}{V}$. JEE tests the classification directly in assertion–reason format.'
+        detail: 'Test: double the system — the property doubles (extensive) or stays put (intensive). Ratio of two extensive properties is intensive: $\\frac{V}{n} = V_m$ (molar volume), $\\frac{U}{n}$, $\\rho = \\frac{m}{V}$. engineering assessment tests the classification directly in assertion–reason format.'
       },
       {
         term: 'State functions and path functions',
@@ -431,7 +436,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 6.1
   {
-    sectionId: 'jeemain-chem-u6-s1',
+    sectionId: 'chem-m6-s1',
     readingTime: 9,
     prerequisites: [
       'States of matter and phase changes (melting, vaporisation)',
@@ -535,7 +540,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 7.1
   {
-    sectionId: 'jeemain-chem-u7-s1',
+    sectionId: 'chem-m7-s1',
     readingTime: 9,
     prerequisites: [
       'Atomic structure: valence electrons (Unit 2)',
@@ -553,7 +558,7 @@ export const jeemainChemContent: SectionContent[] = [
         term: 'Electronic definitions',
         kind: 'definition',
         statement: '**Oxidation** is loss of electrons; **reduction** is gain; the species oxidised (electron donor) is the reducing agent, the species reduced (electron acceptor) is the oxidising agent.',
-        detail: 'Memory hook: OIL RIG. In $\\text{Zn} + \\text{Cu}^{2+} \\to \\text{Zn}^{2+} + \\text{Cu}$, zinc is oxidised (reducing agent) and Cu$^{2+}$ reduced (oxidising agent). The agent is always the opposite of what happens to it — the phrasing JEE tests with relish.'
+        detail: 'Memory hook: OIL RIG. In $\\text{Zn} + \\text{Cu}^{2+} \\to \\text{Zn}^{2+} + \\text{Cu}$, zinc is oxidised (reducing agent) and Cu$^{2+}$ reduced (oxidising agent). The agent is always the opposite of what happens to it — the phrasing engineering assessment tests with relish.'
       },
       {
         term: 'Oxidation number rules',
@@ -577,7 +582,7 @@ export const jeemainChemContent: SectionContent[] = [
         term: 'Ion-electron (half-reaction) method',
         kind: 'method',
         statement: 'Split into oxidation and reduction half-equations; balance atoms, then O with H$_2$O, H with H$^+$ (acidic) or H$_2$O/OH$^-$ (basic); balance charge with electrons; add half-reactions cancelling electrons.',
-        detail: 'The half-reaction method survives basic media where H$^+$ is illegal: balance as acidic, then add OH$^-$ to both sides to neutralise every H$^+$ into water. Titrations (KMnO$_4$/oxalic acid, K$_2$Cr$_2$O$_7$/Fe$^{2+}$) are nothing but balanced redox plus stoichiometry — a guaranteed JEE numerical pattern.'
+        detail: 'The half-reaction method survives basic media where H$^+$ is illegal: balance as acidic, then add OH$^-$ to both sides to neutralise every H$^+$ into water. Titrations (KMnO$_4$/oxalic acid, K$_2$Cr$_2$O$_7$/Fe$^{2+}$) are nothing but balanced redox plus stoichiometry — a guaranteed engineering assessment numerical pattern.'
       }
     ],
     examples: [
@@ -639,13 +644,13 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 8.1
   {
-    sectionId: 'jeemain-chem-u8-s1',
+    sectionId: 'chem-m8-s1',
     readingTime: 10,
     prerequisites: [
       'Mole concept and concentration terms (Unit 1)',
       'Collision idea of reactions (qualitative picture)',
     ],
-    intro: 'Some reactions finish before you can blink (ionic precipitation), others take geological ages (rust in dry air). **Chemical kinetics** is the study of these speeds: what the rate means, how it is measured, and the four levers that move it — concentration, temperature, pressure and catalyst. The rate law is the empirical heart of the chapter, and half-life arithmetic is JEE Main\u2019s favourite question format.',
+    intro: 'Some reactions finish before you can blink (ionic precipitation), others take geological ages (rust in dry air). **Chemical kinetics** is the study of these speeds: what the rate means, how it is measured, and the four levers that move it — concentration, temperature, pressure and catalyst. The rate law is the empirical heart of the chapter, and half-life arithmetic is engineering assessment\u2019s favourite question format.',
     objectives: [
       'Define average and instantaneous rate, and read rate from concentration–time data or graphs',
       'Relate rates of different species in a reaction via stoichiometric coefficients',
@@ -743,13 +748,13 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 9.1
   {
-    sectionId: 'jeemain-chem-u9-s1',
+    sectionId: 'chem-m9-s1',
     readingTime: 9,
     prerequisites: [
       'Electronic configuration and quantum numbers (Unit 2)',
       'Nuclear charge and shielding (Slater intuition helps but not required)',
     ],
-    intro: 'The periodic table is not a list — it is a map of electron configuration. When Moseley ordered elements by atomic number instead of mass, the anomalies vanished and the modern law emerged: properties are a **periodic function of atomic number**. The s, p, d and f blocks are simply where the differentiating electron lands, and from that single fact flow the trends — radius, ionisation energy, electronegativity — that JEE Main tests every single year.',
+    intro: 'The periodic table is not a list — it is a map of electron configuration. When Moseley ordered elements by atomic number instead of mass, the anomalies vanished and the modern law emerged: properties are a **periodic function of atomic number**. The s, p, d and f blocks are simply where the differentiating electron lands, and from that single fact flow the trends — radius, ionisation energy, electronegativity — that engineering assessment tests every single year.',
     objectives: [
       'State the modern periodic law and describe the present form of the table (periods, groups, blocks)',
       'Identify the s, p, d and f blocks from electronic configuration and predict period and group',
@@ -785,7 +790,7 @@ export const jeemainChemContent: SectionContent[] = [
         term: 'Reading trends off the map',
         kind: 'insight',
         statement: 'Across a period, nuclear charge grows with the same shell — radius falls, ionisation energy and electronegativity rise; down a group, new shells dominate — radius rises, ionisation energy falls.',
-        detail: 'Every trend question reduces to a tug-of-war between nuclear charge (pulls electrons in) and shielding (pushes them out). Small anomalies (IE of O < N from paired-electron repulsion in O\u2019s 2p$^4$) are the classic JEE twist — half-filled shells have extra stability.'
+        detail: 'Every trend question reduces to a tug-of-war between nuclear charge (pulls electrons in) and shielding (pushes them out). Small anomalies (IE of O < N from paired-electron repulsion in O\u2019s 2p$^4$) are the classic engineering assessment twist — half-filled shells have extra stability.'
       }
     ],
     examples: [
@@ -816,7 +821,7 @@ export const jeemainChemContent: SectionContent[] = [
       'Modern law: properties repeat periodically with atomic number (electron configuration), not mass.',
       'Block = where the differentiating electron enters; period = highest $n$; group follows the filling arithmetic.',
       'Period 4/5 have 18 elements, 6/7 have 32; f block lives in the detached lanthanide/actinide rows.',
-      'Trends are a nuclear-charge vs shielding tug-of-war, with half-filled-shell anomalies as the exam twist.'
+      'Trends are a nuclear-charge vs shielding tug-of-war, with half-filled-shell anomalies as the assessment twist.'
     ],
     quiz: [
       {
@@ -847,13 +852,13 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 14.1
   {
-    sectionId: 'jeemain-chem-u14-s1',
+    sectionId: 'chem-m14-s1',
     readingTime: 10,
     prerequisites: [
       'Hybridisation and VSEPR shapes (Unit 3 bonding)',
       'Basics of nomenclature from school chemistry',
     ],
-    intro: 'Carbon is tetravalent and small — the two facts that build a chemistry of millions of compounds. Its four bonds point tetrahedrally ($sp^3$), trigonal-planarly ($sp^2$) or linearly ($sp$), giving organic molecules their three-dimensional personalities. organising this zoo are **functional groups** (the reactive sites) and **homologous series** (families differing by CH$_2$), the two classification tools every JEE organic question silently assumes.',
+    intro: 'Carbon is tetravalent and small — the two facts that build a chemistry of millions of compounds. Its four bonds point tetrahedrally ($sp^3$), trigonal-planarly ($sp^2$) or linearly ($sp$), giving organic molecules their three-dimensional personalities. organising this zoo are **functional groups** (the reactive sites) and **homologous series** (families differing by CH$_2$), the two classification tools every engineering assessment organic question silently assumes.',
     objectives: [
       'Explain tetravalency and the geometry of $sp^3$, $sp^2$ and $sp$ carbon centres',
       'Classify organic compounds by functional group, including halo, oxygen, nitrogen and sulfur families',
@@ -871,7 +876,7 @@ export const jeemainChemContent: SectionContent[] = [
         term: 'Functional groups',
         kind: 'definition',
         statement: 'A **functional group** is the atom or substructure that dictates a molecule\u2019s characteristic reactions: halo ($-$X), alcohol ($-$OH), ether ($-$O$-$), aldehyde ($-$CHO), ketone ($-$CO$-$), carboxylic acid ($-$COOH), ester ($-$COOR$-$), amine ($-$NH$_2$), nitrile ($-$CN), nitro ($-$NO$_2$), thiol ($-$SH), sulfonic acid ($-$SO$_3$H).',
-        detail: 'Functional group = reactivity + suffix in nomenclature. The same carbon skeleton wearing different groups behaves like different people in different jobs. Recognising the group is step zero of every JEE organic problem — name it, and half the reaction map is already written.'
+        detail: 'Functional group = reactivity + suffix in nomenclature. The same carbon skeleton wearing different groups behaves like different people in different jobs. Recognising the group is step zero of every engineering assessment organic problem — name it, and half the reaction map is already written.'
       },
       {
         term: 'Homologous series',
@@ -889,7 +894,7 @@ export const jeemainChemContent: SectionContent[] = [
         term: 'IUPAC roots of classification',
         kind: 'notation',
         statement: 'Names encode structure: root (meth-, eth-, prop- for carbons) + saturation infix (-an-, -en-, -yn-) + suffix for the senior functional group ($-$ol, $-$al, $-$one, $-$oic acid) + prefixes for substituents and juniors groups (bromo-, nitro-, hydroxy-).',
-        detail: 'Order of seniority (memorise): carboxylic acid > ester > aldehyde > ketone > alcohol > amine. The senior group takes the suffix and the lowest locant; everything else prefixes alphabetically. Isomer counting (structural: chain, position, functional, tautomer; stereo: geometric, optical) rides on this scaffolding and is a permanent JEE fixture.'
+        detail: 'Order of seniority (memorise): carboxylic acid > ester > aldehyde > ketone > alcohol > amine. The senior group takes the suffix and the lowest locant; everything else prefixes alphabetically. Isomer counting (structural: chain, position, functional, tautomer; stereo: geometric, optical) rides on this scaffolding and is a permanent engineering assessment fixture.'
       }
     ],
     examples: [
@@ -951,13 +956,13 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 15.1
   {
-    sectionId: 'jeemain-chem-u15-s1',
+    sectionId: 'chem-m15-s1',
     readingTime: 10,
     prerequisites: [
       'Functional-group classification (Unit 14 section 1)',
       'Basic nomenclature: alkane/alkene/alkyne roots and suffixes',
     ],
-    intro: 'Hydrocarbons — just carbon and hydrogen — are organic chemistry\u2019s trunk from which all families branch. Alkanes are the saturated backbone, lazy and substitution-only; alkenes and alkynes carry \u03c0-bond reactivity that makes them addition magnets; arenes add the aromatic stability wildcard. Mastering their **IUPAC names, isomer counts and preparation routes** is the entry ticket to every JEE organic question.',
+    intro: 'Hydrocarbons — just carbon and hydrogen — are organic chemistry\u2019s trunk from which all families branch. Alkanes are the saturated backbone, lazy and substitution-only; alkenes and alkynes carry \u03c0-bond reactivity that makes them addition magnets; arenes add the aromatic stability wildcard. Mastering their **IUPAC names, isomer counts and preparation routes** is the entry ticket to every engineering assessment organic question.',
     objectives: [
       'Classify hydrocarbons (alkane, alkene, alkyne, arene; saturated vs unsaturated) and name them by IUPAC rules',
       'Count structural isomers of small alkanes and draw geometric (cis/trans, E/Z) isomers of alkenes',
@@ -969,13 +974,13 @@ export const jeemainChemContent: SectionContent[] = [
         term: 'Families and formulas',
         kind: 'definition',
         statement: '**Alkanes** $\\text{C}_n\\text{H}_{2n+2}$ (saturated, single bonds); **alkenes** $\\text{C}_n\\text{H}_{2n}$ (one C=C); **alkynes** $\\text{C}_n\\text{H}_{2n-2}$ (one C\u2261C); **arenes** contain a benzene ring.',
-        detail: 'Degree of unsaturation (DoU) from a formula: $\\text{DoU} = \\frac{2C + 2 - H}{2}$ (ignore O; add H for halogens; subtract H for N). C$_4$H$_6$: DoU 2 — one triple or two doubles or a double + a ring. DoU is the fastest formula-to-structure probe in the exam arsenal.'
+        detail: 'Degree of unsaturation (DoU) from a formula: $\\text{DoU} = \\frac{2C + 2 - H}{2}$ (ignore O; add H for halogens; subtract H for N). C$_4$H$_6$: DoU 2 — one triple or two doubles or a double + a ring. DoU is the fastest formula-to-structure probe in the assessment arsenal.'
       },
       {
         term: 'IUPAC nomenclature workflow',
         kind: 'method',
         statement: 'Find the longest chain carrying the senior feature \u2192 number from the end giving lowest locants (multiple bond wins ties) \u2192 name substituents alphabetically: 4-methylhex-2-ene, not 3-methylhex-4-ene.',
-        detail: 'The double/triple bond position must ALWAYS be stated for enes and ynes. Lower-sum rule operates on the set of locants (2,3,5 beats 2,4,5), compared lexicographically, not by sum alone in modern IUPAC — but lowest-set-in-order keeps exam answers consistent.',
+        detail: 'The double/triple bond position must ALWAYS be stated for enes and ynes. Lower-sum rule operates on the set of locants (2,3,5 beats 2,4,5), compared lexicographically, not by sum alone in modern IUPAC — but lowest-set-in-order keeps assessment answers consistent.',
       },
       {
         term: 'Isomerism toolkit',
@@ -993,7 +998,7 @@ export const jeemainChemContent: SectionContent[] = [
         term: 'Reaction classes preview',
         kind: 'insight',
         statement: 'Alkanes undergo **free-radical substitution** (halogenation, $h\\nu$); alkenes/alkynes undergo **electrophilic addition** (HX, X$_2$, H$_2$O with Markovnikov orientation; HBr + peroxide gives anti-Markovnikov); benzene undergoes **electrophilic substitution** (nitration, sulfonation, halogenation, Friedel–Crafts).',
-        detail: 'Markovnikov: H adds to the hydrogen-richer carbon, carbocation stability dictating (3\u00b0 > 2\u00b0 > 1\u00b0). Peroxide effect (Kharasch) reverses HBr only — not HCl or HI. The stability order and its rearrangements power elimination-versus-addition predictions throughout the exam.'
+        detail: 'Markovnikov: H adds to the hydrogen-richer carbon, carbocation stability dictating (3\u00b0 > 2\u00b0 > 1\u00b0). Peroxide effect (Kharasch) reverses HBr only — not HCl or HI. The stability order and its rearrangements power elimination-versus-addition predictions throughout the assessment.'
       }
     ],
     examples: [
@@ -1050,6 +1055,1174 @@ export const jeemainChemContent: SectionContent[] = [
         options: ['2-bromopropane (Markovnikov)', '1-bromopropane (anti-Markovnikov)', 'propane', 'no reaction'],
         answer: 1,
         explanation: 'Step 1: Peroxides switch the mechanism to free-radical addition (Kharasch effect). Step 2: Br\u00b7 adds first, placing the radical on the more substituted carbon. Step 3: H then attaches there overall — Br ends up on the terminal carbon: 1-bromopropane. Step 4: The peroxide effect works for HBr only, never HCl or HI.'
+      }
+    ]
+  },
+  // ---------------------------------------------------------------- 5.1
+  {
+    sectionId: 'chem-m5-s1',
+    readingTime: 9,
+    prerequisites: [
+      'Mole concept and stoichiometry (Unit 1)',
+      'Mass, volume and density arithmetic',
+    ],
+    intro: 'Every quantitative statement about a solution — a titration result, a Raoult\u2019s-law plot, a colligative-property sum — opens with a concentration term. engineering assessment asks 25 chemistry questions for 100 marks with +4 for a correct answer and \u22121 for a wrong one, and a good share of them are one-step concentration numericals lifted almost line-by-line from NCERT. That is exactly why chemistry is the fastest-scoring subject on the paper: the formulas are short and the arithmetic honest. This lesson drills the four NCERT terms — molarity, molality, mole fraction and the percentage/`ppm` family — and the density bridge that converts any one of them into another.',
+    objectives: [
+      'Define molarity, molality, mole fraction and the mass/volume percentage terms and compute each from raw data',
+      'Interconvert molarity, molality and mole fraction using the solution\u2019s density',
+      'Decide which concentration terms survive a temperature change and justify the choice',
+      'Solve dilution and mixing problems with $M_1V_1 = M_2V_2$',
+    ],
+    concepts: [
+      {
+        term: 'Why so many concentration terms',
+        kind: 'definition',
+        statement: 'A **solution** is a homogeneous mixture whose **solute** (lesser component) is dispersed at the molecular level in the **solvent** (greater component); each concentration term is a different bookkeeping choice — per volume of solution (`molarity`), per mass of solvent (`molality`), per moles of all species (`mole fraction`) or per mass/volume of solution (percentages).',
+        detail: 'No single term suits every experiment. Volumetric glassware makes molarity the lab workhorse, but volume drifts with temperature, so the physical chemistry ahead (Raoult\u2019s law, colligative properties in the later sections of this unit) demands molality and mole fraction, which are immune to heating. Spotting which term a question silently assumes is half the mark.',
+      },
+      {
+        term: 'Molarity',
+        kind: 'notation',
+        statement: '**Molarity** $M$ is moles of solute per litre of solution: $M = \\frac{n_{\\text{solute}}}{V_{\\text{solution}}(\\text{L})}$, units mol L$^{-1}$; dilution obeys $M_1V_1 = M_2V_2$.',
+        detail: 'Dilution problems assume only solvent is added, so moles of solute are untouched while volume grows. For mixing two solutions of the same solute, total moles over total volume gives the final molarity. Watch the unit: 250 mL must become 0.25 L before dividing — the commonest silly slip on the assessment.',
+      },
+      {
+        term: 'Molality',
+        kind: 'definition',
+        statement: '**Molality** $m$ is moles of solute per kilogram of **solvent** (not solution!): $m = \\frac{n_{\\text{solute}} \\times 1000}{w_{\\text{solvent}}(\\text{g})}$, units mol kg$^{-1}$.',
+        detail: 'Mass neither expands nor contracts, so molality is temperature-independent — the assertion\u2013reason staple of this unit. The solvent-only denominator is the trap: 1 mol of solute in 1 kg of solvent is exactly 1 molal, but that same solution poured into a 1 L flask is not 1 molar.',
+      },
+      {
+        term: 'Mole fraction and percentage terms',
+        kind: 'notation',
+        statement: '**Mole fraction** $x_A = \\frac{n_A}{n_A + n_B}$ is dimensionless with $x_A + x_B = 1$; **mass %** $= \\frac{w_{\\text{solute}}}{w_{\\text{solution}}} \\times 100$; **volume %** $= \\frac{V_{\\text{solute}}}{V_{\\text{solution}}} \\times 100$; trace levels use ppm $= \\frac{w_{\\text{solute}}}{w_{\\text{solution}}} \\times 10^{6}$.',
+        detail: 'Mole fraction and mass % ignore temperature; volume % does not, because liquid volumes are not strictly additive on mixing (ethanol + water contracts). `ppm` is the water-quality unit — hardness ions, fluoride and dissolved pollutants live there.',
+      },
+      {
+        term: 'The density bridge',
+        kind: 'method',
+        statement: 'Density links mass and volume: $d = \\frac{\\text{mass of solution}}{\\text{volume of solution}}$ in g mL$^{-1}$. On a 1 L basis, $m = \\frac{1000\\ M}{1000\\ d - M M_1}$ and $M = \\frac{10 \\times (\\%\\ w/w) \\times d}{M_1}$, where $M_1$ is the molar mass of the solute.',
+        detail: 'The 1-litre basis makes every conversion mechanical: mass of solution $= 1000d$ g, mass of solute $= M \\times M_1$ g, so mass of **solvent** $= (1000d - MM_1)$ g. Divide moles by solvent mass in kg for molality, or convert solvent mass to moles for the mole fraction. Reverse the flow to climb from molality back to molarity.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Dilution bookkeeping',
+        problem: '4.0 g of NaOH ($M = 40$ g/mol) is dissolved and made up to 250 mL. Find the molarity, and the molarity after 500 mL of water is added.',
+        steps: [
+          { label: 'Step 1', text: 'Moles of NaOH: $n = \\frac{4.0}{40} = 0.10$ mol.' },
+          { label: 'Step 2', text: 'Molarity: $M = \\frac{0.10}{0.250} = 0.40$ mol L$^{-1}$.' },
+          { label: 'Step 3', text: 'Dilution: $M_2 = \\frac{M_1V_1}{V_2} = \\frac{0.40 \\times 250}{750} = 0.133$ M — the final volume is $250 + 500 = 750$ mL.' },
+          { label: 'Step 4', text: 'Check the invariant: moles $= 0.133 \\times 0.75 = 0.10$ mol — unchanged, exactly as dilution demands.' }
+        ],
+        result: '0.40 M initially; 0.133 M after adding 500 mL of water.'
+      },
+      {
+        title: 'Molarity to molality via density',
+        problem: 'A 2.0 M NaOH solution has density 1.10 g/mL. Calculate its molality and the mole fraction of NaOH. ($M_{\\text{NaOH}} = 40$, $M_{\\text{H}_2\\text{O}} = 18$ g/mol)',
+        steps: [
+          { label: 'Step 1', text: '```text\n1 L of solution:  mass = 1000 x 1.10 = 1100 g\nNaOH in it:        2.0 mol x 40 = 80 g\nwater (solvent):   1100 - 80 = 1020 g = 1.02 kg\n```' },
+          { label: 'Step 2', text: 'Molality: $m = \\frac{2.0}{1.02} = 1.96$ mol kg$^{-1}$.' },
+          { label: 'Step 3', text: 'Moles of water: $\\frac{1020}{18} = 56.7$ mol, so $x_{\\text{NaOH}} = \\frac{2.0}{2.0 + 56.7} = 0.034$.' },
+          { label: 'Step 4', text: 'Note the direction: molality ($1.96 < 2.0$) fell below molarity because part of the solution\u2019s mass is solute, shrinking the solvent base.' }
+        ],
+        result: '$m = 1.96$ mol kg$^{-1}$; $x_{\\text{NaOH}} \\approx 0.034$.'
+      },
+      {
+        title: 'From mass percent to molarity',
+        problem: 'A commercial reagent is 10% glucose by mass with density 1.04 g/mL ($M_{\\text{glucose}} = 180$ g/mol). Find its molarity.',
+        steps: [
+          { label: 'Step 1', text: 'Take 100 g of solution: 10 g glucose $= \\frac{10}{180} = 0.0556$ mol.' },
+          { label: 'Step 2', text: 'Volume of that solution: $\\frac{100}{1.04} = 96.2$ mL $= 0.0962$ L.' },
+          { label: 'Step 3', text: 'Molarity: $\\frac{0.0556}{0.0962} = 0.578$ mol L$^{-1}$.' },
+          { label: 'Step 4', text: 'Shortcut cross-check: $M = \\frac{10 \\times (\\%\\ w/w) \\times d}{M_1} = \\frac{10 \\times 10 \\times 1.04}{180} = 0.578$ M \u2713 — identical, as it must be.' }
+        ],
+        result: 'The 10% (w/w) glucose solution is about 0.58 M.'
+      }
+    ],
+    keyTakeaways: [
+      'Molarity = mol per litre of solution (temperature-dependent); molality = mol per kg of solvent (temperature-independent).',
+      'Mole fractions are dimensionless, temperature-proof and sum to 1 for a binary solution.',
+      'Density bridge on a 1 L basis: solvent mass $= 1000d - MM_1$ g — the key to every interconversion.',
+      'Dilution never changes moles of solute: $M_1V_1 = M_2V_2$.',
+      'ppm scales trace concentrations: $\\frac{w_{\\text{solute}}}{w_{\\text{solution}}} \\times 10^{6}$.'
+    ],
+    quiz: [
+      {
+        q: 'Which concentration term changes when a solution is heated from 25 \u00b0C to 35 \u00b0C?',
+        options: ['Molality', 'Mole fraction', 'Molarity', 'Mass percentage'],
+        answer: 2,
+        explanation: 'Step 1: Heating expands the solution\u2019s volume. Step 2: Molarity divides moles by litres of solution, so it falls as volume grows. Step 3: Molality divides by solvent mass, mole fraction by moles, mass % by mass — none involve volume. Step 4: Only molarity among these is temperature-dependent.'
+      },
+      {
+        q: 'Water must be added to 250 mL of 2.0 M NaOH to make it 0.50 M. The volume of water to be added is',
+        options: ['500 mL', '750 mL', '1000 mL', '1250 mL'],
+        answer: 1,
+        explanation: 'Step 1: Moles of NaOH stay fixed at $2.0 \\times 0.250 = 0.5$ mol. Step 2: Final volume for 0.50 M: $V_2 = \\frac{0.5}{0.5} = 1.0$ L. Step 3: Water added $= 1000 - 250 = 750$ mL. Step 4: 1000 mL is the final volume, not the added water — the classic mix-up.'
+      },
+      {
+        q: 'The mole fraction of glucose in a solution of 18 g glucose ($M = 180$) in 178.2 g water ($M = 18$) is',
+        options: ['0.1', '0.01', '0.001', '0.5'],
+        answer: 1,
+        explanation: 'Step 1: $n_{\\text{glucose}} = \\frac{18}{180} = 0.1$ mol. Step 2: $n_{\\text{water}} = \\frac{178.2}{18} = 9.9$ mol. Step 3: $x = \\frac{0.1}{0.1 + 9.9} = \\frac{0.1}{10} = 0.01$. Step 4: 0.1 would forget to include the solute moles in the denominator\u2019s total.'
+      },
+      {
+        q: 'A 10% (w/w) aqueous NaCl solution contains',
+        options: ['10 g NaCl in 100 g of water', '10 g NaCl in 100 g of solution', '10 g NaCl in 100 mL of solution', '10 mL NaCl in 100 mL of solution'],
+        answer: 1,
+        explanation: 'Step 1: w/w means mass of solute divided by mass of the whole solution. Step 2: 10% w/w = 10 g NaCl per 100 g of solution, which contains 90 g of water. Step 3: If it were 10 g per 100 g of water, the solution would mass 110 g and the percentage would fall to about 9.1%. Step 4: The solvent is 90 g, not 100 g — the persistent misconception.'
+      }
+    ]
+  },
+  // ---------------------------------------------------------------- 10.1
+  {
+    sectionId: 'chem-m10-s1',
+    readingTime: 8,
+    prerequisites: [
+      'Electronic configuration and subshell filling (Unit 2)',
+      'The modern periodic table\u2019s blocks (Unit 9 section 1)',
+    ],
+    intro: 'Six groups, 38 elements, one governing configuration: the **p block** is where the periodic table\u2019s chemistry turns vivid — acids and bases, oxidants and reductants, inert gases and reactive metals all live here. Since the 2024 syllabus rationalisation the testing agency trimmed the group-wise descriptive detail, so the modern engineering assessment paper (25 chemistry questions, 100 marks, +4 for a hit, \u22121 for a miss) tests the **grammar** of the block — configurations, family names, oxidation states — through short NCERT-line questions. Chemistry stays the fastest-scoring subject of the paper when this grammar is automatic. This section fixes the $ns^2np^{1\u20136}$ skeleton and the family map it generates, leaving the detailed trends to the next two sections.',
+    objectives: [
+      'Write the general p-block configuration $ns^2np^{1\u20136}$ and deduce block, group, period and valence electrons of any element from its $Z$',
+      'Name the six families from group 13 to 18 with their valence-electron counts',
+      'Predict the common oxidation states of each family, including the group \u2212 2 companion state',
+      'Introduce the inert pair effect as the reason heavier p-block elements prefer lower oxidation states',
+    ],
+    concepts: [
+      {
+        term: 'What qualifies as p block',
+        kind: 'definition',
+        statement: 'The **p-block elements** have their differentiating (last) electron entering a p orbital; they occupy **groups 13–18**, where the p subshell fills from $np^1$ to $np^6$, giving the general outer configuration $ns^2np^{1\u20136}$.',
+        detail: 'A p subshell holds six electrons, so filling it spawns six columns of the table. Helium sits in group 18 by its inert behaviour but its $1s^2$ configuration is pure s block — the acknowledged misfit the assessment likes to probe. The lightest true p-block element is boron, because period 2 is the first that owns a 2p subshell.',
+      },
+      {
+        term: 'The six families',
+        kind: 'notation',
+        statement: 'Families to own: **13** boron family (3 valence electrons), **14** carbon family (4), **15** pnictogens (5), **16** chalcogens (6), **17** halogens (7), **18** noble gases (8) — for the p block, valence electrons = group number \u2212 10.',
+        detail: 'Group arithmetic: group = 10 + (s electrons) + (p electrons). For $Z = 33$: $[\\text{Ar}]3d^{10}4s^24p^3$ gives $10 + 2 + 3 = 15$ — arsenic, a metalloid of the pnictogens. The metalloids (B, Si, Ge, As, Sb, Te) straddle the staircase inside the block: metals dominate the bottom-left, non-metals the top-right.',
+      },
+      {
+        term: 'Oxidation states from configuration',
+        kind: 'law',
+        statement: 'The highest positive state equals the **number of valence electrons**; each family also shows a state two lower (group \u2212 2) where the $ns^2$ pair stays unused: $+3/+1$ (13), $+4/+2$ (14), $+5/+3$ (15), $+6/+4/+2$ (16), $+7/+5/+3/+1$ (17), $0$ (18).',
+        detail: 'Fluorine breaks the ladder — only \u22121, never positive, because nothing is more electronegative. Oxygen sticks mainly to \u22122. The heavier noble gases do form compounds (Xe reaches $+2$, $+4$, $+6$ and $+8$ as in XeF$_2$ and XeO$_3$), so "inert gas" is a dated label. Negative states appear only on the right side\u2019s non-metals (N$^{3\u2013}$, O$^{2\u2013}$, F$\u2013$).',
+      },
+      {
+        term: 'The inert pair effect',
+        kind: 'insight',
+        statement: 'Down each group the **$ns^2$ pair participates less and less** in bonding, so the lower oxidation state wins for the heavyweights: Tl$^+$ over Tl$^{3+}$, Pb$^{2+}$ over Pb$^{4+}$, Bi$^{3+}$ over Bi$^{5+}$.',
+        detail: 'Cause: poor shielding by the intervening filled $d$ and $f$ subshells raises the effective nuclear pull on the outer $s$ pair, binding it tighter. Within group 13, aluminium is dominantly +3 while thallium is dominantly +1 — the assessment\u2019s favourite one-line illustration. The full map of how these states shift across periods and down groups belongs to section 10.2.',
+      },
+      {
+        term: 'The locate-a-metal drill',
+        kind: 'method',
+        statement: 'A 20-second loop for any p-block $Z$: configuration \u2192 differentiating electron in p \u2192 **block** \u2192 highest $n$ = **period** \u2192 group = 10 + s + p electrons \u2192 family, valence count and common states.',
+        detail: 'Drill example $Z = 52$: $[\\text{Kr}]4d^{10}5s^25p^4$ \u2192 p block, period 5, group 16, six valence electrons, states \u22122, +4, +6 — tellurium. Automating this loop converts at least one guaranteed configuration question into a free mark every year.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Locating an element from Z',
+        problem: 'An element has $Z = 52$. Write its electronic configuration and deduce its block, period, group, family and common oxidation states.',
+        steps: [
+          { label: 'Step 1', text: '```text\n52 = 36 (Kr core) + 10 (4d) + 2 (5s) + 4 (5p)\nconfig: [Kr] 4d10 5s2 5p4\n```' },
+          { label: 'Step 2', text: 'The differentiating electron lands in 5p: p block, and the highest principal quantum number $n = 5$ fixes period 5.' },
+          { label: 'Step 3', text: 'Group $= 10 + 2 (5s) + 4 (5p) = 16$ — the chalcogen family with six valence electrons.' },
+          { label: 'Step 4', text: 'States: \u22122 (gaining a full octet), +4 and +6 (sharing all or four valence electrons) — the element is tellurium, a metalloid used in alloys and semiconductors.' }
+        ],
+        result: 'Tellurium: $[\\text{Kr}]4d^{10}5s^25p^4$, p block, period 5, group 16 (chalcogen), states \u22122, +4, +6.'
+      },
+      {
+        title: 'Inert pair in action: the missing PbI$_4$',
+        problem: 'PbCl$_4$ can be prepared, but PbI$_4$ does not exist. Explain using oxidation states and the inert pair effect.',
+        steps: [
+          { label: 'Step 1', text: 'Lead: $[\\text{Xe}]4f^{14}5d^{10}6s^26p^2$ — the $+4$ state must deploy the reluctant $6s^2$ pair, so Pb(IV) is a strong oxidant.' },
+          { label: 'Step 2', text: 'I$\u2013$ is a strong reductant; it hands electrons back to Pb(IV), reducing it to the inert-pair-stable Pb$^{2+}$.' },
+          { label: 'Step 3', text: 'Any Pb(IV)\u2013iodide bond self-destructs: $\\text{Pb}^{4+} + 2\\text{I}^- \\to \\text{Pb}^{2+} + \\text{I}_2$ — so PbI$_4$ collapses to PbI$_2$ plus iodine.' },
+          { label: 'Step 4', text: 'With the less reducing Cl$\u2013$, PbCl$_4$ survives (though it is still unstable and decomposes on warming) — the reductant strength of the halide anion decides.' }
+        ],
+        result: 'PbI$_4$ cannot exist: the inert-pair-stabilised Pb$^{2+}$ plus oxidising iodide to I$_2$ is the preferred outcome.'
+      }
+    ],
+    keyTakeaways: [
+      'p block = groups 13–18, outer configuration $ns^2np^{1\u20136}$; valence electrons = group \u2212 10.',
+      'Group = 10 + s + p electrons; period = highest $n$; helium is the s-block resident of group 18.',
+      'Highest oxidation state = valence electron count; the group \u2212 2 state rides on the inert pair effect.',
+      'Heavier elements prefer lower states: Tl$^+$, Pb$^{2+}$, Bi$^{3+}$ beat Tl$^{3+}$, Pb$^{4+}$, Bi$^{5+}$ in stability.',
+    ],
+    quiz: [
+      {
+        q: 'The general outer electronic configuration of group 15 elements is',
+        options: ['$ns^2np^1$', '$ns^2np^3$', '$ns^2np^5$', '$ns^2np^4$'],
+        answer: 1,
+        explanation: 'Step 1: Group 15 = 10 + 2 + p electrons, so p electrons = 3. Step 2: The configuration is $ns^2np^3$ — five valence electrons. Step 3: $ns^2np^1$ is group 13, $ns^2np^5$ is group 17, $ns^2np^4$ is group 16. Step 4: N, P, As, Sb, Bi are the pnictogens with this signature.'
+      },
+      {
+        q: 'The element with $Z = 33$ belongs to',
+        options: ['group 13, period 4', 'group 15, period 4', 'group 15, period 3', 'group 16, period 4'],
+        answer: 1,
+        explanation: 'Step 1: Fill: $[\\text{Ar}]3d^{10}4s^24p^3$ (18 + 10 + 2 + 3 = 33). Step 2: Differentiating electron in 4p \u2192 p block, and $n = 4$ gives period 4. Step 3: Group $= 10 + 2 + 3 = 15$. Step 4: The element is arsenic — a group-15, period-4 metalloid; period 3 would end its p subshell at $Z = 18$.'
+      },
+      {
+        q: 'The most common oxidation state of lead in its stable compounds is',
+        options: ['$+4$', '$+2$', '$+6$', '$0$'],
+        answer: 1,
+        explanation: 'Step 1: Lead is group 14: $6s^26p^2$, so +4 uses all four valence electrons. Step 2: The inert pair effect binds the $6s^2$ pair tightly down the group. Step 3: Pb$^{2+}$ (pair unused) is therefore the stable state; Pb(IV) compounds are oxidising and easily reduced. Step 4: +6 is impossible for group 14; 0 is the free element, not a compound state.'
+      },
+      {
+        q: 'Which element placed in group 18 is NOT a p-block element by electronic configuration?',
+        options: ['Ne', 'Ar', 'Kr', 'He'],
+        answer: 3,
+        explanation: 'Step 1: Group 18 is otherwise the p$^6$ terminus of each period. Step 2: Ne, Ar and Kr are indeed $ns^2np^6$. Step 3: Helium is $1s^2$ — only two electrons in an s subshell, no p electrons at all. Step 4: He sits in group 18 purely for its closed-shell inertness; by configuration it belongs to the s block.'
+      }
+    ]
+  },
+  // ---------------------------------------------------------------- 11.1
+  {
+    sectionId: 'chem-m11-s1',
+    readingTime: 9,
+    prerequisites: [
+      'Electronic configuration of atoms (Unit 2)',
+      'Position of the d block in the periodic table (Unit 9)',
+    ],
+    intro: 'The **d block** occupies the periodic table\u2019s waist and behaves like a bridge — hence "transition": its properties grade smoothly between the fiercely electropositive s-block metals and the p-block\u2019s mixed personalities. One structural fact — a partially filled d subshell — detonates into eight characteristic fingerprints, from the colours of gemstones to the magnets in headphones. engineering assessment\u2019s 25-question, 100-mark chemistry paper (+4 per correct, \u22121 per wrong) reliably parks a question on configurations or the Zn/Cd/Hg exclusion, drawn straight from NCERT lines — quick marks that keep chemistry the fastest-scoring subject of the three.',
+    objectives: [
+      'Define transition elements through the partially filled d subshell in the atom or its common ions',
+      'Write configurations of the 3d series and rationalise the chromium and copper exceptions',
+      'Argue why Zn, Cd and Hg are d-block elements but not transition elements',
+      'Connect the eight characteristic properties to their d-electron origin and describe typical occurrences',
+    ],
+    concepts: [
+      {
+        term: 'Definition and the four series',
+        kind: 'definition',
+        statement: 'A **transition element** possesses a partially filled d subshell in the elemental atom **or** in at least one common oxidation state: the 3d series Sc\u2013Zn, 4d Y\u2013Cd, 5d La, Hf\u2013Hg (and the incomplete 6d row Ac, Rf\u2013Cn).',
+        detail: 'All transition elements are d-block elements, but the converse fails: **Zn, Cd, Hg** carry $d^{10}$ in both the atom and their common +2 ion — nowhere is a d subshell partially filled — so NCERT excludes them from strict transition status. Their tell-tale signs: colourless ions, diamagnetism and a single fixed oxidation state.',
+      },
+      {
+        term: 'Electronic configuration',
+        kind: 'notation',
+        statement: 'General configuration $(n-1)d^{1\u201310}ns^{1\u20132}$; the two 3d celebrities are **Cr** $= [\\text{Ar}]3d^54s^1$ and **Cu** $= [\\text{Ar}]3d^{10}4s^1$.',
+        detail: 'Why the exceptions: exactly half-filled or fully filled d subshells gain exchange-energy stability and symmetric charge distribution that beats the naive aufbau fill. The 4d and 5d rows show many more anomalies (Nb $4d^45s^1$, Pd $4d^{10}5s^0$, Pt $5d^96s^1$) because those subshells are closer in energy. On ionisation, **4s electrons leave first**: Fe$^{2+}$ is $3d^6$, never $3d^44s^2$.',
+      },
+      {
+        term: 'Why the name "transition"',
+        kind: 'insight',
+        statement: 'The d block sits **between** the s and p blocks, and its chemistry transits between them: s-block-like metallic reactivity softening toward p-block covalency, with the d electrons supplying the gradient.',
+        detail: 'Expect intermediate behaviour in practice — moderately reactive metals, several oxidation steps, a strong appetite for complex formation. The literal filling order also transitions: ns fills before (n\u22121)d, which fills before np — the d subshell is the interlude between the two ends of the period.',
+      },
+      {
+        term: 'Occurrence',
+        kind: 'definition',
+        statement: 'Most d-block metals occur in the combined state as oxides, sulfides, carbonates and silicates: hematite $\\text{Fe}_2\\text{O}_3$, pyrolusite $\\text{MnO}_2$, rutile for Ti, chalcopyrite $\\text{CuFeS}_2$, sphalerite $\\text{ZnS}$; only gold, platinum and some silver/copper occur native.',
+        detail: 'The consequence is metallurgical: extraction of this block is reduction-dominated — sulfide ores are roasted to oxides first, then reduced with carbon or aluminium (thermite), and the most reactive members need electrolysis. Occurrence explains why the industry around this block centres on furnaces rather than evaporation ponds.',
+      },
+      {
+        term: 'Eight characteristic fingerprints',
+        kind: 'law',
+        statement: 'Partially filled d orbitals deliver: **variable oxidation states** (Mn spans +2 to +7), **coloured ions** (d\u2013d transitions, Cu$^{2+}$ blue), **paramagnetism** with $\\mu = \\sqrt{n(n+2)}$ BM for $n$ unpaired electrons, **catalysis** (Fe\u2013Haber, $\\text{V}_2\\text{O}_5$\u2013contact, Ni\u2013hydrogenation), **complex formation**, **interstitial compounds**, **alloys** and **high melting points** — Zn, Cd, Hg being the low-melting exceptions.',
+        detail: 'Each property maps to d structure: unpaired electrons feed magnetism and metallic-bond strength; vacant d orbitals plus high charge density invite lone-pair donation (complexes, catalytic surfaces); tiny atoms (H, C, N) slip into lattice voids giving hard, non-stoichiometric interstitial compounds; similar radii let atoms swap lattice sites, hence alloys. Warning: the purple of $\\text{MnO}_4^-$ is a charge-transfer colour, NOT d\u2013d — the standard trap.'
+      },
+    ],
+    examples: [
+      {
+        title: 'Configuration, ion and magnetism of iron',
+        problem: 'Write the configurations of Fe ($Z = 26$) and Fe$^{2+}$, count the unpaired electrons, and compute the magnetic moment.',
+        steps: [
+          { label: 'Step 1', text: '```text\nFe   : [Ar] 3d6 4s2\nFe2+ : [Ar] 3d6      (4s electrons leave first)\nunpaired d electrons = 4\n```' },
+          { label: 'Step 2', text: 'Fe$^{2+}$: $3d^6$ — Hund\u2019s rule places five singly first, the sixth pairs up, leaving 4 unpaired electrons.' },
+          { label: 'Step 3', text: 'Magnetic moment: $\\mu = \\sqrt{n(n+2)} = \\sqrt{4 \\times 6} = \\sqrt{24} \\approx 4.9$ BM.' },
+          { label: 'Step 4', text: 'Fe$^{3+}$ would be $3d^5$ — all five unpaired — giving $\\mu = \\sqrt{35} \\approx 5.9$ BM; the moment is a direct d-electron census.' }
+        ],
+        result: 'Fe: $[\\text{Ar}]3d^64s^2$; Fe$^{2+}$: $[\\text{Ar}]3d^6$ with 4 unpaired electrons, $\\mu \\approx 4.9$ BM.'
+      },
+      {
+        title: 'The Zn exclusion argument',
+        problem: 'Zinc is a d-block element yet is not counted among transition elements, and Zn$^{2+}$ salts are white. Explain.',
+        steps: [
+          { label: 'Step 1', text: 'Zn ($Z = 30$): $[\\text{Ar}]3d^{10}4s^2$ — the d subshell is completely filled in the atom.' },
+          { label: 'Step 2', text: 'The only common ion, Zn$^{2+}$, is $[\\text{Ar}]3d^{10}$ — still fully filled: no partially filled d subshell anywhere.' },
+          { label: 'Step 3', text: 'By the strict definition Zn fails the test; the same argument excludes Cd ($4d^{10}$) and Hg ($5d^{10}$).' },
+          { label: 'Step 4', text: 'With no partially filled d, no d\u2013d transition is possible — Zn$^{2+}$ compounds are colourless (white salts) and diamagnetic, and zinc shows only the +2 state.' }
+        ],
+        result: 'Zn is d-block by position but not transition by definition; its filled $d^{10}$ shells cost it colour, magnetism and variable valence.'
+      }
+    ],
+    keyTakeaways: [
+      'Transition = partially filled d in the atom or a common ion; Zn, Cd, Hg are the excluded d$^{10}$ trio.',
+      'General configuration $(n-1)d^{1\u201310}ns^{1\u20132}$; Cr and Cu break it for half/fully filled stability; 4s ionises before 3d.',
+      'The eight fingerprints (states, colour, magnetism, catalysis, complexes, interstitials, alloys, high mp) all trace to d electrons.',
+      'Magnetic census: $\\mu = \\sqrt{n(n+2)}$ BM — count unpaired d electrons first.',
+      'Most d-block metals occur as oxides/sulfides; extraction is reduction chemistry.',
+    ],
+    quiz: [
+      {
+        q: 'The ground-state electronic configuration of chromium ($Z = 24$) is',
+        options: ['$[\\text{Ar}]3d^44s^2$', '$[\\text{Ar}]3d^54s^1$', '$[\\text{Ar}]3d^34s^24p^1$', '$[\\text{Ar}]3d^64s^2$'],
+        answer: 1,
+        explanation: 'Step 1: Naive aufbau gives $3d^44s^2$ — option one, the trap. Step 2: A half-filled $3d^5$ maximises exchange energy and symmetry. Step 3: One 4s electron is promoted: $[\\text{Ar}]3d^54s^1$ — six singly occupied orbitals. Step 4: $3d^64s^2$ is iron\u2019s configuration (26 electrons), not chromium\u2019s 24.'
+      },
+      {
+        q: 'Which of the following is a d-block element but NOT a transition element?',
+        options: ['Fe', 'Cu', 'Zn', 'Ni'],
+        answer: 2,
+        explanation: 'Step 1: Check the d subshell of the atom and its common ions. Step 2: Fe, Cu and Ni all have partially filled d subshells in some common state (Cu$^{2+}$ is $3d^9$). Step 3: Zn is $3d^{10}$ as atom and Zn$^{2+}$ is $3d^{10}$ — never partially filled. Step 4: Zinc keeps its d-block seat by position but loses transition status by the strict definition.'
+      },
+      {
+        q: 'The number of unpaired electrons in Fe$^{2+}$ ($3d^6$) is',
+        options: ['2', '4', '5', '6'],
+        answer: 1,
+        explanation: 'Step 1: Six d electrons enter five d orbitals by Hund\u2019s rule. Step 2: Five orbitals each take one electron first. Step 3: The sixth must pair, leaving 4 unpaired spins. Step 4: 5 belongs to Fe$^{3+}$ ($3d^5$, all unpaired); 6 would need six orbitals, which d does not have.'
+      },
+      {
+        q: 'Transition metals and their compounds serve as catalysts mainly because they',
+        options: ['are always in the gaseous phase', 'have vacant d orbitals and variable oxidation states that adsorb and activate reactants', 'have completely filled d subshells', 'have very low melting points'],
+        answer: 1,
+        explanation: 'Step 1: A catalyst must bind reactants and offer an easier route. Step 2: Vacant d orbitals accept lone pairs, adsorbing molecules on the metal surface. Step 3: Variable oxidation states shuttle electrons without net consumption (Fe in Haber, $\\text{V}_2\\text{O}_5$ in contact process, Ni in hydrogenation). Step 4: Filled d subshells (Zn, Cd, Hg) make poor catalysts — and low melting points have nothing to do with catalysis.'
+      }
+    ]
+  },
+  // ---------------------------------------------------------------- 12.1
+  {
+    sectionId: 'chem-m12-s1',
+    readingTime: 10,
+    prerequisites: [
+      'Oxidation-number bookkeeping (Unit 7)',
+      'Lewis acids and bases, lone pairs (Unit 3)',
+    ],
+    intro: 'By 1890 chemists could write formulas like CoCl$_3$\u00b76NH$_3$ but not explain them — why did only some of the chloride precipitate with silver nitrate? **Alfred Werner** answered with two kinds of valence, one ionisable and one directional, and single-handedly founded coordination chemistry (the first Nobel Prize in inorganic chemistry, 1913). His vocabulary — ligand, coordination number, denticity, chelation — is the working language of this unit and of the bioinorganic chemistry engineering assessment adores. Across the paper\u2019s 25 chemistry questions (100 marks, +4/\u22121), a definitional or counting question from this vocabulary appears nearly every year as a direct NCERT-line read — cheap marks that keep chemistry the fastest-scoring subject.',
+    objectives: [
+      'State Werner\u2019s postulates of primary (ionisable, oxidation-state) and secondary (non-ionisable, directional) valence',
+      'Dissect any complex into central metal ion, ligands, coordination sphere, counter ions and coordination number',
+      'Compute the metal\u2019s oxidation number from charge bookkeeping of the coordination sphere',
+      'Classify ligands by denticity, recognise ambidentate cases and explain why chelation stabilises complexes',
+    ],
+    concepts: [
+      {
+        term: 'Werner\u2019s postulates',
+        kind: 'law',
+        statement: 'Metals show **two kinds of valence**: the **primary valence** equals the oxidation state, is ionisable and is satisfied by negative ions; the **secondary valence** equals the coordination number (CN), is non-ionisable, is satisfied by ligands and is **directional** — it fixes the geometry (CN 6 \u2192 octahedral, CN 4 \u2192 tetrahedral or square planar).',
+        detail: 'The silver-nitrate evidence: CoCl$_3$\u00b76NH$_3$ releases 3 mol AgCl per mol (so [Co(NH$_3$)$_6$]Cl$_3$), CoCl$_3$\u00b75NH$_3$ releases 2 ([Co(NH$_3$)$_5$Cl]Cl$_2$) and CoCl$_3$\u00b74NH$_3$ only 1 ([Co(NH$_3$)$_4$Cl$_2$]Cl). Only ions outside the coordination sphere precipitate — the counting experiment that made the theory unanswerable.',
+      },
+      {
+        term: 'Anatomy of a complex',
+        kind: 'notation',
+        statement: 'In $[\\text{Co}(\\text{NH}_3)_5\\text{Cl}]\\text{Cl}_2$: square brackets mark the **coordination sphere** (non-ionisable); Co is the **central metal ion**; NH$_3$ and the inner Cl$\u2013$ are **ligands**; the two outer Cl$\u2013$ are **counter ions**; the CN is 6 and the complex ion carries +1.',
+        detail: 'The number of ions a formula releases in solution equals counter ions plus one (the complex ion itself) — three for this salt, measurable by conductivity or colligative methods. Everything inside the brackets survives in water as a unit; everything outside dissociates like any ordinary salt.',
+      },
+      {
+        term: 'Ligands and denticity',
+        kind: 'definition',
+        statement: 'A **ligand** is a Lewis base donating a lone pair to the metal (a Lewis acid); **denticity** counts the donor atoms it uses: monodentate (H$_2$O, NH$_3$, Cl$\u2013$, CO), bidentate (ethylenediamine `en`, oxalate ox$^{2\u2013}$), polydentate (EDTA$^{4\u2013}$ is hexadentate: 2 N + 4 O).',
+        detail: 'Denticity counts donor atoms, not the total atoms of the ligand — that is why $[\\text{Fe}(\\text{C}_2\\text{O}_4)_3]^{3\u2013}$ has CN 6, not 3. Chosen ligands must carry the lone pair at the right spacing: `en` (ethane-1,2-diamine) donates through both nitrogen atoms, wrapping five-membered rings around the metal.',
+      },
+      {
+        term: 'Ambidentate ligands',
+        kind: 'insight',
+        statement: 'An **ambidentate** ligand owns two different donor atoms but binds through only one at a time: CN$\u2013$ through C (cyano) or N (isocyano), NO$_2^-$ through N (nitro \u2013NO$_2$) or O (nitrito \u2013ONO).',
+        detail: 'Binding through the alternative atom generates linkage isomerism — pairs like $[\\text{Co}(\\text{NH}_3)_5\\text{NO}_2]^{2+}$ (yellow, nitro) and $[\\text{Co}(\\text{NH}_3)_5\\text{ONO}]^{2+}$ (red, nitrito). The isomerism itself is treated in section 12.2; here the assessment only wants the donor-atom discrimination.',
+      },
+      {
+        term: 'Chelation and the chelate effect',
+        kind: 'insight',
+        statement: 'When a polydentate ligand grips the **same metal through two or more donor atoms**, it forms rings called a **chelate** — and chelates are markedly more stable than the equivalent collection of monodentate ligands.',
+        detail: 'Thermodynamics favours ring closure largely through entropy: one EDTA molecule replacing six water molecules raises the particle count. $[\\text{Fe}(\\text{C}_2\\text{O}_4)_3]^{3\u2013}$ locks three five-membered rings around iron; EDTA therapy exploits the same claw (Greek ch\u0113l\u0113) to pull toxic lead out of blood. This is why titrations and biological metal sites overwhelmingly use chelating ligands.',
+      },
+      {
+        term: 'Double salts versus complexes',
+        kind: 'definition',
+        statement: 'A **double salt** (Mohr\u2019s salt $\\text{FeSO}_4\u00b7(\\text{NH}_4)_2\\text{SO}_4\u00b76\\text{H}_2\\text{O}$, potash alum) dissociates completely in water and shows all tests of its constituent ions; a **complex** ($\\text{K}_4[\\text{Fe(CN)}_6]$) retains the complex ion intact — no free Fe$^{2+}$ or CN$\u2013$ tests.',
+        detail: 'The distinction is behavioural, not structural: both crystallise as single phases. Add Fe$^{3+}$ to each solution — Mohr\u2019s salt answers with the deep thiocyanate red of free Fe$^{3+}$; ferrocyanide gives Prussian blue only through the intact $[\\text{Fe(CN)}_6]^{4\u2013}$ unit. "Does the identity survive in water?" is the assessment\u2019s one-line discriminator.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Dissecting [Co(NH$_3$)$_5$Cl]Cl$_2$',
+        problem: 'For $[\\text{Co}(\\text{NH}_3)_5\\text{Cl}]\\text{Cl}_2$, identify the coordination sphere, ligands, counter ions, coordination number, the oxidation state of cobalt, and the number of ions furnished in solution.',
+        steps: [
+          { label: 'Step 1', text: '```text\n[ Co (NH3)5 Cl ] Cl2\n  |    |     |    \\__ 2 counter Cl- (ionisable)\n  |    |     \\__ 1 coordinated Cl- (non-ionisable)\n  |    \\__ 5 ammine ligands (denticity 1 each)\n  \\__ central ion, coordination number 6\n```' },
+          { label: 'Step 2', text: 'Ligands: five neutral NH$_3$ plus one coordinated Cl$\u2013$; CN = 5 + 1 = 6 (an octahedral complex).' },
+          { label: 'Step 3', text: 'Oxidation state: $x + 5(0) + (-1) = +2$ for the complex ion, so $x = +3$ — Co(III).' },
+          { label: 'Step 4', text: 'In water: 1 complex ion + 2 chloride ions = 3 ions per formula unit — matching Werner\u2019s 2 mol AgCl per mol of this, his CoCl$_3$\u00b75NH$_3$.' }
+        ],
+        result: 'Co(III), CN 6, [Co(NH$_3$)$_5$Cl]$^{2+}$ + 2 Cl$\u2013$: three ions in solution, two of them ionisable chlorides.'
+      },
+      {
+        title: 'Counting the ionisable chlorides',
+        problem: '0.1 mol each of CoCl$_3$\u00b76NH$_3$, CoCl$_3$\u00b75NH$_3$ and CoCl$_3$\u00b74NH$_3$ is separately treated with excess AgNO$_3$. Predict the AgCl formed and write the modern formulas.',
+        steps: [
+          { label: 'Step 1', text: 'Only chlorides outside the coordination sphere precipitate — count the ions Werner could not.' },
+          { label: 'Step 2', text: 'CoCl$_3$\u00b76NH$_3$ = $[\\text{Co}(\\text{NH}_3)_6]\\text{Cl}_3$: 3 free Cl$\u2013$ \u2192 0.3 mol AgCl.' },
+          { label: 'Step 3', text: 'CoCl$_3$\u00b75NH$_3$ = $[\\text{Co}(\\text{NH}_3)_5\\text{Cl}]\\text{Cl}_2$: 2 free Cl$\u2013$ \u2192 0.2 mol AgCl; CoCl$_3$\u00b74NH$_3$ = $[\\text{Co}(\\text{NH}_3)_4\\text{Cl}_2]\\text{Cl}$: 1 \u2192 0.1 mol AgCl.' },
+          { label: 'Step 4', text: 'The one chloride "missing" at each step simply moved inside the sphere — every NH$_3$ that drops out is replaced by an inner chloride, keeping Co(III) and CN 6 constant.' }
+        ],
+        result: '0.3, 0.2 and 0.1 mol AgCl respectively — the precipitation series that proved the coordination sphere.'
+      },
+    ],
+    keyTakeaways: [
+      'Primary valence = oxidation state (ionisable); secondary valence = coordination number (directional, non-ionisable).',
+      'Only ions outside the brackets precipitate with AgNO$_3$ — Werner\u2019s counting argument.',
+      'Denticity counts donor atoms: en and ox$^{2\u2013}$ are bidentate, EDTA$^{4\u2013}$ hexadentate; CN = ligands \u00d7 denticity.',
+      'Oxidation state from charge bookkeeping: $x + \\sum(\\text{ligand charges}) = \\text{sphere charge}$.',
+      'Double salts lose their identity in water; complex ions survive it; chelate rings buy entropy-driven stability.',
+    ],
+    quiz: [
+      {
+        q: 'In Werner\u2019s theory, the secondary valence of a metal ion corresponds to its',
+        options: ['oxidation state', 'coordination number', 'number of counter ions', 'number of unpaired electrons'],
+        answer: 1,
+        explanation: 'Step 1: Werner split valence into two kinds. Step 2: Primary valence = oxidation state, satisfied by ionisable anions. Step 3: Secondary valence = coordination number, satisfied by ligands and directional (fixes geometry). Step 4: Counter ions and unpaired electrons play no part in his classification.'
+      },
+      {
+        q: '0.1 mol of CoCl$_3$\u00b75NH$_3$, i.e. $[\\text{Co}(\\text{NH}_3)_5\\text{Cl}]\\text{Cl}_2$, is treated with excess AgNO$_3$. The amount of AgCl formed is',
+        options: ['0.1 mol', '0.2 mol', '0.3 mol', '0.05 mol'],
+        answer: 1,
+        explanation: 'Step 1: AgCl precipitates only from ionisable chlorides. Step 2: The two Cl$\u2013$ outside the brackets are ionisable; the one inside is coordinated. Step 3: 0.1 mol of salt gives 2 \u00d7 0.1 = 0.2 mol AgCl. Step 4: 0.3 mol belongs to $[\\text{Co}(\\text{NH}_3)_6]\\text{Cl}_3$, one chloride further out.'
+      },
+      {
+        q: 'The coordination number of Fe in $[\\text{Fe}(\\text{C}_2\\text{O}_4)_3]^{3\u2013}$ is',
+        options: ['3', '4', '6', '2'],
+        answer: 2,
+        explanation: 'Step 1: Identify the ligand: oxalate, C$_2$O$_4^{2\u2013}$. Step 2: Each oxalate binds through two oxygen donor atoms — bidentate. Step 3: CN = 3 ligands \u00d7 2 donor atoms = 6 (octahedral, three chelate rings). Step 4: Answering 3 counts ligands, not donor atoms — the classic denticity trap.'
+      },
+      {
+        q: 'Which of the following is an ambidentate ligand?',
+        options: ['ethylenediamine (en)', 'H$_2$O', 'NO$_2^-$', 'EDTA$^{4\u2013}$'],
+        answer: 2,
+        explanation: 'Step 1: Ambidentate means two different possible donor atoms, one used at a time. Step 2: NO$_2^-$ can bind through N (nitro, \u2013NO$_2$) or O (nitrito, \u2013ONO). Step 3: `en` and EDTA$^{4\u2013}$ are chelating polydentate ligands that always use all their donor atoms; H$_2$O is monodentate. Step 4: NO$_2^-$ binding either way generates linkage isomers.'
+      }
+    ]
+  },
+  // ---------------------------------------------------------------- 13.1
+  {
+    sectionId: 'chem-m13-s1',
+    readingTime: 9,
+    prerequisites: [
+      'Boiling point, vapour pressure and states of matter (school physics/chemistry)',
+      'Intermolecular forces and solubility basics (Unit 5 helps)',
+    ],
+    intro: 'Organic reactions are messy by nature — they stop short, run sideways and leave by-products, so the product must be **purified** before it can be melted, weighed or characterised. Every technique in this section is one physical property exploited: solubility, volatility, sublimability or adsorption. engineering assessment\u2019s practical-leaning questions — within the paper\u2019s 25 chemistry questions worth 100 marks at +4/\u22121 — usually ask which technique suits which mixture, a direct NCERT-line read that makes this some of the cheapest marks on the paper. Chemistry stays the fastest-scoring subject when you can name the right apparatus in ten seconds.',
+    objectives: [
+      'Select a purification technique by matching the exploitable physical-property difference of a mixture',
+      'Describe crystallization, sublimation and simple, fractional, steam and reduced-pressure distillation with one application each',
+      'Explain differential extraction and why several small extractions beat a single large one',
+      'State the principle of chromatography and contrast adsorption with partition chromatography',
+    ],
+    concepts: [
+      {
+        term: 'Purification is a decision, not a recipe',
+        kind: 'insight',
+        statement: 'Choose the technique from the **property gap**: solubility difference \u2192 crystallization; boiling-point difference \u2192 distillation; sublimability \u2192 sublimation; distribution between immiscible solvents \u2192 differential extraction; differential adsorption/partition \u2192 chromatography — thermal sensitivity then modifies the choice.',
+        detail: 'The assessment almost never says "crystallize this"; it describes a mixture and expects the property gap to trigger the method. Boiling points within a few kelvin demand a fractionating column; a compound that decomposes before boiling forces reduced pressure; a compound immiscible with but volatile in steam invites steam distillation.',
+      },
+      {
+        term: 'Crystallization',
+        kind: 'method',
+        statement: '**Crystallization** exploits a solubility gap: dissolve the impure solid hot to saturation, cool slowly, and pure crystals grow while the (minor) impurity stays dissolved in the mother liquor.',
+        detail: 'A good solvent dissolves the compound well when hot and poorly when cold, does not react with it, and keeps the impurity soluble even cold. The trick is that the impurity is present in small quantity, so it never reaches saturation — the whole method rests on concentration, not just solubility. Decolourising with animal charcoal before filtration handles coloured impurities.',
+      },
+      {
+        term: 'Sublimation',
+        kind: 'method',
+        statement: '**Sublimation** passes a solid straight to vapour on heating and redeposits it as crystals on a cold surface; it separates sublimable camphor, naphthalene, benzoic acid, anthracene or iodine from non-sublimable residue.',
+        detail: 'These solids have appreciable vapour pressure below their melting points, so heating drives the solid \u21cc vapour equilibrium fully to vapour; the cold finger (inverted funnel with wet filter paper) recrystallises it. A camphor\u2013common salt mixture is the standard lab demo — salt stays behind in the dish.',
+      },
+      {
+        term: 'The distillation family',
+        kind: 'method',
+        statement: '**Simple distillation** for a large boiling-point gap (chloroform 334 K vs aniline 457 K); **fractional distillation** for close-boiling liquids via the repeated condensation cycles of a fractionating column (acetone 329 K vs methanol 338 K); **distillation under reduced pressure** for liquids that decompose below their b.p. (glycerol); **steam distillation** for steam-volatile compounds immiscible with water (aniline\u2013water, o-nitrophenol).',
+        detail: 'Steam distillation works because an immiscible mixture boils when the **sum** of the vapour pressures hits 1 atm — so the organic distils well below its normal boiling point, protected from decomposition. Fractionating columns multiply the simple-distillation cycle; each theoretical plate is one vaporisation\u2013condensation round that enriches the vapour in the more volatile component.',
+      },
+      {
+        term: 'Differential extraction',
+        kind: 'method',
+        statement: '**Differential extraction** moves a solute between immiscible solvents in a separating funnel: the distribution coefficient $K = \\frac{C_{\\text{organic}}}{C_{\\text{water}}}$ decides how much transfers per shake, and the organic layer is dried over anhydrous $\\text{CaCl}_2$ or $\\text{Na}_2\\text{SO}_4$ after separation.',
+        detail: 'The counter-intuitive arithmetic: extracting with two half-portions of ether leaves less solute behind than one full portion of the same total volume, because each extraction multiplies the remaining fraction by $\\frac{V_{\\text{water}}}{V_{\\text{water}} + K V_{\\text{org}}}$. "Many small shakes beat one big soak" is the lab and assessment rule.',
+      },
+      {
+        term: 'Chromatography',
+        kind: 'method',
+        statement: '**Chromatography** separates by differential migration over a stationary phase under a mobile phase: **adsorption chromatography** (column and TLC on silica gel or alumina) and **partition chromatography** (paper, where water held on the paper is the stationary phase); on a plate, $R_f = \\frac{\\text{distance moved by substance}}{\\text{distance moved by solvent front}}$.',
+        detail: 'TLC reads a reaction at a glance — spots located under UV or in an iodine chamber; a strongly adsorbed compound crawls (low $R_f$), a weakly adsorbed one runs with the front (high $R_f$). Column chromatography scales the same principle to grams, as in separating plant pigments. Adsorption is a surface competition; partition is a solubility equilibrium between two liquids — know which mechanism your question assumes.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Choosing the technique',
+        problem: 'Suggest the purification method for: (a) camphor contaminated with common salt, (b) chloroform mixed with aniline, (c) acetone mixed with methanol, (d) aniline from an aniline\u2013water mixture.',
+        steps: [
+          { label: 'Step 1', text: '```text\n(a) camphor + NaCl   -> sublimability gap  -> sublimation\n(b) CHCl3 + aniline   -> b.p. gap 334/457 K -> simple distillation\n(c) acetone/methanol  -> b.p. gap 329/338 K -> fractional distillation\n(d) aniline + water   -> immiscible + steam-volatile -> steam distillation\n```' },
+          { label: 'Step 2', text: '(a) Camphor sublimes on gentle heating and re-forms on the cold funnel; non-volatile NaCl stays in the dish.' },
+          { label: 'Step 3', text: '(b) The 123 K boiling-point gap lets chloroform distil off cleanly, leaving aniline behind; (c) the 9 K gap is too small for one plate, so the fractionating column supplies many.' },
+          { label: 'Step 4', text: '(d) Aniline boils at 457 K but co-distils with steam below 373 K because the vapour pressures add — no decomposition, no high heat.' }
+        ],
+        result: '(a) sublimation, (b) simple distillation, (c) fractional distillation, (d) steam distillation.'
+      },
+      {
+        title: 'Reading a TLC plate',
+        problem: 'On a silica TLC run, the solvent front travelled 7.2 cm; spot A moved 2.9 cm and spot B moved 5.0 cm. Find both $R_f$ values and say which compound is adsorbed more strongly.',
+        steps: [
+          { label: 'Step 1', text: '$R_f = \\frac{\\text{spot distance}}{\\text{front distance}}$ — always a number between 0 and 1.' },
+          { label: 'Step 2', text: 'Spot A: $\\frac{2.9}{7.2} = 0.40$; spot B: $\\frac{5.0}{7.2} = 0.69$.' },
+          { label: 'Step 3', text: 'A spends more time stuck on the polar silica, so it travels less — A is the more strongly adsorbed compound.' },
+          { label: 'Step 4', text: 'Under identical conditions $R_f$ is a reproducible identity tag for the compound — the basis of purity checks on reaction mixtures.' }
+        ],
+        result: '$R_f(A) = 0.40$, $R_f(B) = 0.69$; A is adsorbed more strongly on silica.'
+      },
+      {
+        title: 'Extraction arithmetic: two small beats one big',
+        problem: '2.0 g of a solute is dissolved in 100 mL water. Its distribution coefficient between ether and water is $K = 4$. Compare one extraction with 100 mL ether against two extractions with 50 mL each.',
+        steps: [
+          { label: 'Step 1', text: 'Fraction left in water per extraction $= \\frac{V_w}{V_w + K V_{\\text{ether}}}$.' },
+          { label: 'Step 2', text: 'One 100 mL extraction: $\\frac{100}{100 + 4 \\times 100} = \\frac{1}{5}$, so $2.0 \\times \\frac{1}{5} = 0.40$ g stays behind — 1.60 g recovered.' },
+          { label: 'Step 3', text: 'Each 50 mL extraction: $\\frac{100}{100 + 4 \\times 50} = \\frac{1}{3}$, so after two, $2.0 \\times (\\frac{1}{3})^2 = 0.22$ g stays behind — 1.78 g recovered.' },
+          { label: 'Step 4', text: 'Same 100 mL of ether, 0.18 g more solute recovered — the multiplicative logic that makes "many small extractions" the standing lab instruction.' }
+        ],
+        result: 'One 100 mL extraction leaves 0.40 g; two 50 mL extractions leave 0.22 g — two small extractions win.'
+      }
+    ],
+    keyTakeaways: [
+      'Match the property gap to the method: solubility \u2192 crystallization, b.p. \u2192 distillation, sublimability \u2192 sublimation, distribution \u2192 extraction, adsorption \u2192 chromatography.',
+      'Close boiling points need a fractionating column; thermal fragility needs reduced pressure; steam volatility + immiscibility need steam.',
+      'Steam distillation boils when $p_{\\text{organic}} + p_{\\text{water}} = 1$ atm — always below 373 K.',
+      '$R_f = \\frac{\\text{distance by spot}}{\\text{distance by front}}$; strong adsorption \u21d2 low $R_f$.',
+      'Extraction: several small portions beat one large portion at equal total solvent.',
+    ],
+    quiz: [
+      {
+        q: 'Aniline is separated from an aniline\u2013water mixture by',
+        options: ['simple distillation', 'steam distillation', 'fractional distillation', 'sublimation'],
+        answer: 1,
+        explanation: 'Step 1: Aniline and water are immiscible. Step 2: Aniline is steam-volatile, and the pair boils when the vapour pressures add to 1 atm. Step 3: The mixture distils below 373 K, far under aniline\u2019s 457 K boiling point. Step 4: Simple/fractional distillation would heat aniline to 457 K — unnecessary and risky.'
+      },
+      {
+        q: 'Acetone (b.p. 329 K) and methanol (b.p. 338 K) are best separated by',
+        options: ['simple distillation', 'fractional distillation', 'steam distillation', 'crystallization'],
+        answer: 1,
+        explanation: 'Step 1: The boiling points differ by only 9 K. Step 2: One vaporisation\u2013condensation cycle cannot enrich the vapour enough. Step 3: A fractionating column provides many cycles (theoretical plates), stepwise enriching the more volatile acetone. Step 4: Steam distillation needs immiscibility with water; crystallization applies to solids.'
+      },
+      {
+        q: 'A liquid that decomposes below its normal boiling point is best purified by',
+        options: ['distillation under reduced pressure', 'steam distillation', 'sublimation', 'simple distillation'],
+        answer: 0,
+        explanation: 'Step 1: Lowering the external pressure lowers the boiling point. Step 2: The liquid then boils at a temperature below its decomposition point. Step 3: Glycerol, which decomposes on strong heating, is the textbook case. Step 4: Steam distillation needs steam volatility plus immiscibility; sublimation applies to solids.'
+      },
+      {
+        q: 'In a TLC run the solvent front travels 6.0 cm and a spot travels 3.6 cm. The $R_f$ value is',
+        options: ['0.5', '0.6', '1.67', '0.36'],
+        answer: 1,
+        explanation: 'Step 1: $R_f = \\frac{\\text{distance by spot}}{\\text{distance by front}}$. Step 2: $\\frac{3.6}{6.0} = 0.6$. Step 3: 1.67 inverts the ratio — $R_f$ can never exceed 1. Step 4: 0.36 would use the front distance as numerator.'
+      }
+    ]
+  },
+  // ---------------------------------------------------------------- 16.1
+  {
+    sectionId: 'chem-m16-s1',
+    readingTime: 11,
+    prerequisites: [
+      'Functional groups and IUPAC nomenclature (Unit 14)',
+      'Markovnikov addition to alkenes (Unit 15)',
+    ],
+    intro: 'Swap an \u2013OH for a halogen and carbon becomes a leaving-group artist: **haloalkanes and haloarenes** are the pivot of synthetic organic chemistry. The C\u2013X bond\u2019s measurable personality — length, enthalpy, dipole moment — predicts everything downstream, and engineering assessment interrogates exactly those orders. Among the paper\u2019s 25 chemistry questions (100 marks, +4/\u22121), halogen-compound items are usually NCERT-line fact checks — reagent choice, bond orders, preparation routes — which is why this unit rewards revision more than genius and keeps chemistry the fastest-scoring subject of the three.',
+    objectives: [
+      'Classify halogen compounds as haloalkanes or haloarenes, and by carbon class (1\u00b0, 2\u00b0, 3\u00b0) and position (vinylic, allylic, benzylic)',
+      'Write the general preparation routes: from alcohols (HX, PX$_3$/PX$_5$, SOCl$_2$), from hydrocarbons (halogenation, HX addition) and by halogen exchange (Finkelstein, Swarts)',
+      'Explain the bond-length, bond-enthalpy and dipole-moment trends of the C\u2013X bond and the reactivity order R\u2013I > R\u2013Br > R\u2013Cl > R\u2013F',
+      'Contrast the C\u2013X bond of haloarenes with that of haloalkanes using resonance and hybridisation',
+    ],
+    concepts: [
+      {
+        term: 'The haloalkane/haloarene family',
+        kind: 'definition',
+        statement: '**Haloalkanes** carry X on an $sp^3$ carbon (alkyl, allylic, benzylic); **haloarenes** carry X directly on an aromatic $sp^2$ carbon; both classify further by halogen count and by the substitution class (1\u00b0, 2\u00b0, 3\u00b0) of the carbon bearing X.',
+        detail: 'Position matters as much as family: CH$_2$=CH\u2013Cl (vinylic) and C$_6$H$_5$\u2013Cl (aryl) resist substitution, while allylic (CH$_2$=CH\u2013CH$_2$Cl) and benzylic (C$_6$H$_5$CH$_2$Cl) halides react briskly — resonance-stabilised intermediates. Physical sheet: boiling points climb R\u2013F < R\u2013Cl < R\u2013Br < R\u2013I with van der Waals bulk, branching lowers them, haloalkanes shun water (no H-bonding) but love organic solvents; CH$_2$Cl$_2$, CHCl$_3$ and CCl$_4$ are all denser than water.',
+      },
+      {
+        term: 'Preparation from alcohols',
+        kind: 'method',
+        statement: 'Alcohol \u2192 halide via $\\text{R\u2013OH} + \\text{HX} \\to \\text{R\u2013X} + \\text{H}_2\\text{O}$ (reactivity HI > HBr > HCl; HCl needs anhydrous ZnCl$_2$), or via phosphorus halides $3\\text{R\u2013OH} + \\text{PX}_3 \\to 3\\text{R\u2013X} + \\text{H}_3\\text{PO}_3$, or via $\\text{R\u2013OH} + \\text{SOCl}_2 \\to \\text{R\u2013Cl} + \\text{SO}_2 + \\text{HCl}$.',
+        detail: 'SOCl$_2$ (thionyl chloride) is the connoisseur\u2019s choice: both by-products are **gases** that bubble out, leaving the alkyl chloride pure — no aqueous workup, no side products. For iodides, red phosphorus with I$_2$ generates PI$_3$ in situ. The Lucas reagent (conc. HCl + anhydrous ZnCl$_2$) doubles as the 1\u00b0/2\u00b0/3\u00b0 diagnostic from Unit 17.',
+      },
+      {
+        term: 'Preparation from hydrocarbons',
+        kind: 'method',
+        statement: 'Alkanes + X$_2$ under $h\\nu$ give **free-radical substitution** (industrial but unselective); alkenes + HX give Markovnikov **addition** (propene \u2192 2-bromopropane; peroxides flip HBr to anti-Markovnikov); X$_2$ addition gives vicinal dihalides; haloarenes come from benzene + X$_2$/FeX$_3$ or from diazonium salts via Sandmeyer (Cu$_2$X$_2$/HX) or KI.',
+        detail: 'Radical halogenation of alkanes is a synthetic mess — every H is a target, so mixtures dominate unless the molecule has one kind of hydrogen (methane \u2192 chloromethane for the chemical industry). The diazonium route is the clean laboratory path to haloarenes, and it is the only easy way to fluoroarenes (Balz\u2013Schiemann-style replacements) — detail reserved for Unit 18\u2019s diazonium section.',
+      },
+      {
+        term: 'Halogen exchange',
+        kind: 'method',
+        statement: '**Finkelstein**: R\u2013Cl/R\u2013Br + NaI in dry acetone \u2192 R\u2013I (NaCl/NaBr precipitate drives it, Le Chatelier); **Swarts**: R\u2013X + AgF (or Hg$_2$F$_2$, CoF$_2$) heated \u2192 R\u2013F.',
+        detail: 'Direct fluorination of hydrocarbons is violent and unselective, so fluoroalkanes are made by swapping the halogen instead — the Swarts route to the freon family. Finkelstein\u2019s precipitation trick only works in dry acetone, where NaI dissolves but NaCl/NaBr do not — a solvent-detail the assessment checks.',
+      },
+      {
+        term: 'Nature of the C\u2013X bond',
+        kind: 'law',
+        statement: 'Bond enthalpy falls C\u2013F > C\u2013Cl > C\u2013Br > C\u2013I (452 > 351 > 293 > 215 kJ/mol) while length grows (139 < 177 < 193 < 214 pm), so **reactivity rises** R\u2013I > R\u2013Br > R\u2013Cl > R\u2013F; yet dipole moments of the methyl halides order $\\text{CH}_3\\text{Cl} > \\text{CH}_3\\text{F} > \\text{CH}_3\\text{Br} > \\text{CH}_3\\text{I}$.',
+        detail: 'The dipole paradox: C\u2013F is the most polar bond, but its short bond length shrinks the charge separation — dipole moment is charge \u00d7 distance, so the longer C\u2013Cl wins. Learn both orders separately: bond enthalpy governs substitution reactivity, dipole moment governs polarity questions. Both are favourite engineering assessment ordering questions.',
+      },
+      {
+        term: 'The haloarene C\u2013X puzzle',
+        kind: 'insight',
+        statement: 'In haloarenes, the halogen lone pair delocalises into the ring: the C\u2013X bond gains **partial double-bond character** — shorter (169 pm vs 177 pm in chloroethane), stronger, less polar — so haloarenes resist nucleophilic substitution spectacularly.',
+        detail: 'Two reinforcing reasons: resonance ties the carbon to the halogen, and the $sp^2$ carbon is more electronegative than $sp^3$, pulling bond electrons toward itself and dulling the carbon\u2019s positive charge. Chlorobenzene laughs at NaOH at room temperature and only reacts under brutal conditions (623 K, ~300 atm) — the punchline of many engineering assessment assertion\u2013reason items.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Reagent selection for clean conversions',
+        problem: 'Choose reagents for the cleanest conversion of: (a) propan-1-ol \u2192 1-chloropropane, (b) 2-methylpropan-2-ol \u2192 2-chloro-2-methylpropane, (c) ethanol \u2192 iodoethane.',
+        steps: [
+          { label: 'Step 1', text: '```text\n(a) CH3CH2CH2OH + SOCl2  -> CH3CH2CH2Cl + SO2 + HCl (both gases!)\n(b) (CH3)3COH + conc. HCl / anhyd. ZnCl2  -> (CH3)3CCl  (instant, 3\u00b0)\n(c) C2H5OH + red P + I2  -> C2H5I (PI3 generated in situ)\n```' },
+          { label: 'Step 2', text: '(a) SOCl$_2$ wins because SO$_2$ and HCl escape as gases, handing over the pure chloride; PCl$_5$ also works but leaves POCl$_3$ to wash out.' },
+          { label: 'Step 3', text: '(b) The 3\u00b0 carbocation forms instantly, so plain conc. HCl with ZnCl$_2$ (Lucas conditions) converts it at once — no stronger reagent needed.' },
+          { label: 'Step 4', text: '(c) HI alone overalkylates; red P + I$_2$ meter the iodide delivery as PI$_3$, the standard clean route to iodoalkanes.' }
+        ],
+        result: '(a) SOCl$_2$, (b) conc. HCl + anhydrous ZnCl$_2$, (c) red phosphorus + I$_2$.'
+      },
+      {
+        title: 'The dipole-moment paradox',
+        problem: 'The C\u2013F bond is more polar than C\u2013Cl, yet CH$_3$Cl (1.86 D) has a slightly larger dipole moment than CH$_3$F (1.85 D). Explain, and give the full order for methyl halides.',
+        steps: [
+          { label: 'Step 1', text: 'Dipole moment is a product: $\\mu = q \\times d$ — charge separation times bond length.' },
+          { label: 'Step 2', text: 'C\u2013F is short (139 pm): high polarity multiplied by a tiny distance gives a slightly smaller $\\mu$ than C\u2013Cl\u2019s 177 pm distance.' },
+          { label: 'Step 3', text: 'Down the group the charge keeps falling while length grows; the length effect caps out, so the net order is $\\text{CH}_3\\text{Cl} > \\text{CH}_3\\text{F} > \\text{CH}_3\\text{Br} > \\text{CH}_3\\text{I}$.' },
+          { label: 'Step 4', text: 'Moral: bond polarity and molecular dipole moment are different quantities — the assessment\u2019s favourite bait conflates them.' }
+        ],
+        result: 'Order: CH$_3$Cl (1.86) > CH$_3$F (1.85) > CH$_3$Br (1.83) > CH$_3$I (1.64 D) — charge \u00d7 distance wins.'
+      },
+      {
+        title: 'Why chlorobenzene resists substitution',
+        problem: 'Chloroethane reacts with aqueous NaOH readily at reflux, but chlorobenzene does not react even on prolonged boiling. Explain using resonance and hybridisation.',
+        steps: [
+          { label: 'Step 1', text: 'In chlorobenzene the chlorine lone pair delocalises into the ring: contributing structures put a C=Cl double bond on the C\u2013Cl linkage.' },
+          { label: 'Step 2', text: 'The bond shortens (169 pm vs 177 pm in chloroethane) and strengthens — cleaving it costs much more energy.' },
+          { label: 'Step 3', text: 'The $sp^2$ carbon is also more electronegative, so the carbon\u2019s positive charge (the nucleophile\u2019s target) is muted.' },
+          { label: 'Step 4', text: 'Net: chlorobenzene needs 623 K and ~300 atm of NaOH to react at all, while chloroethane — a long, weak, polar $sp^3$ C\u2013Cl bond — substitutes easily.' }
+        ],
+        result: 'Resonance-driven partial double-bond character plus $sp^2$ carbon make aryl C\u2013Cl short, strong and nearly apolar — substitution stalls.'
+      }
+    ],
+    keyTakeaways: [
+      'Haloalkanes = X on $sp^3$ carbon; haloarenes = X on aryl $sp^2$ carbon — the hybridisation decides reactivity.',
+      'Best lab routes: SOCl$_2$ for R\u2013Cl (gaseous by-products), red P + X$_2$ for R\u2013I, Finkelstein (NaI/acetone) and Swarts (AgF) for exchange.',
+      'Reactivity order R\u2013I > R\u2013Br > R\u2013Cl > R\u2013F follows falling bond enthalpy, not dipole moment.',
+      'Dipole moments: $\\text{CH}_3\\text{Cl} > \\text{CH}_3\\text{F} > \\text{CH}_3\\text{Br} > \\text{CH}_3\\text{I}$ — charge \u00d7 distance.',
+      'Aryl C\u2013X: resonance gives partial double-bond character (169 pm) — chlorobenzene needs 623 K/300 atm to substitute.',
+    ],
+    quiz: [
+      {
+        q: 'The order of reactivity of haloalkanes toward nucleophilic substitution is',
+        options: ['R\u2013F > R\u2013Cl > R\u2013Br > R\u2013I', 'R\u2013I > R\u2013Br > R\u2013Cl > R\u2013F', 'R\u2013Cl > R\u2013Br > R\u2013I > R\u2013F', 'identical for all four'],
+        answer: 1,
+        explanation: 'Step 1: In SN reactions the C\u2013X bond must break. Step 2: Bond enthalpy falls C\u2013F (452) > C\u2013Cl (351) > C\u2013Br (293) > C\u2013I (215 kJ/mol). Step 3: The weakest bond, C\u2013I, breaks fastest — R\u2013I is the most reactive. Step 4: Ordering by dipole moment or polarity (option one) is the classic wrong instinct.'
+      },
+      {
+        q: 'The correct order of dipole moments of the methyl halides is',
+        options: ['$\\text{CH}_3\\text{F} > \\text{CH}_3\\text{Cl} > \\text{CH}_3\\text{Br} > \\text{CH}_3\\text{I}$', '$\\text{CH}_3\\text{Cl} > \\text{CH}_3\\text{F} > \\text{CH}_3\\text{Br} > \\text{CH}_3\\text{I}$', '$\\text{CH}_3\\text{I} > \\text{CH}_3\\text{Br} > \\text{CH}_3\\text{Cl} > \\text{CH}_3\\text{F}$', '$\\text{CH}_3\\text{Br} > \\text{CH}_3\\text{I} > \\text{CH}_3\\text{Cl} > \\text{CH}_3\\text{F}$'],
+        answer: 1,
+        explanation: 'Step 1: $\\mu = q \\times d$: charge times bond length. Step 2: C\u2013F is most polar but shortest, so its product is edged out by the longer C\u2013Cl. Step 3: Measured values 1.86, 1.85, 1.83, 1.64 D give CH$_3$Cl > CH$_3$F > CH$_3$Br > CH$_3$I. Step 4: Option one orders by bond polarity alone — the bait.'
+      },
+      {
+        q: 'Thionyl chloride is the preferred reagent for converting propan-1-ol to 1-chloropropane because',
+        options: ['the by-products SO$_2$ and HCl are gases that escape, leaving a pure product', 'it simultaneously forms a Grignard reagent', 'it avoids Markovnikov rearrangement', 'it is the cheapest available chlorinating agent'],
+        answer: 0,
+        explanation: 'Step 1: $\\text{R\u2013OH} + \\text{SOCl}_2 \\to \\text{R\u2013Cl} + \\text{SO}_2\\uparrow + \\text{HCl}\\uparrow$. Step 2: Both by-products leave as gases. Step 3: No liquid or solid impurity remains — the chloride comes out analytically clean. Step 4: Grignard formation needs Mg in ether, Markovnikov concerns alkene addition, and cost is not the NCERT reasoning.'
+      },
+      {
+        q: 'The C\u2013Cl bond in chlorobenzene is shorter and stronger than the C\u2013Cl bond in chloroethane because',
+        options: ['chlorine is less electronegative when bonded to an aromatic ring', 'resonance delocalisation gives the C\u2013Cl bond partial double-bond character', 'the benzene ring is planar', 'chlorobenzene has a larger dipole moment'],
+        answer: 1,
+        explanation: 'Step 1: Chlorine\u2019s lone pair overlaps the ring \u03c0 system. Step 2: Contributing resonance structures carry a C=Cl double bond. Step 3: Bond order rises above one, so the bond contracts (169 pm vs 177 pm) and strengthens. Step 4: Electronegativity, planarity and dipole moment are consequences, not causes.'
+      }
+    ]
+  },
+  // ---------------------------------------------------------------- 17.1
+  {
+    sectionId: 'chem-m17-s1',
+    readingTime: 11,
+    prerequisites: [
+      'Functional groups and nomenclature (Unit 14)',
+      'Markovnikov hydration of alkenes (Unit 15)',
+    ],
+    intro: 'Ethanol powers the fermentation industry, methanol poisons badly distilled liquor, and both open this unit: **alcohols**, the first oxygen-containing family. One oxygen with two lone pairs hydrogen-bonds everything — boiling points, water solubility, viscosity — and its active hydrogen reacts with sodium, acids and acid chlorides. engineering assessment\u2019s 25-question chemistry paper (100 marks, +4/\u22121) leans on this unit for Lucas-test identification, oxidation products and dehydration mechanisms — all NCERT-line material, which is why the oxygen units together are the fastest-scoring stretch of organic chemistry.',
+    objectives: [
+      'Classify alcohols as 1\u00b0, 2\u00b0 or 3\u00b0 and predict their preparation from alkenes, haloalkanes, carbonyl compounds and Grignard reagents',
+      'Explain hydrogen bonding\u2019s control over boiling points and water solubility of alcohols',
+      'Identify primary, secondary and tertiary alcohols with the Lucas test and oxidation behaviour',
+      'Write the E1 mechanism of acid-catalysed dehydration with the 3\u00b0 > 2\u00b0 > 1\u00b0 order and Saytzeff products',
+    ],
+    concepts: [
+      {
+        term: 'Classification and structure',
+        kind: 'definition',
+        statement: '**Alcohols** are R\u2013OH compounds classified by the carbon bearing the hydroxyl: **1\u00b0** (methanol, ethanol), **2\u00b0** (propan-2-ol), **3\u00b0** (2-methylpropan-2-ol); allylic and benzylic alcohols sit at unsaturated or aryl-adjacent carbons; the C\u2013O\u2013H chain is bent at the sp\u00b3 oxygen.',
+        detail: 'Do not confuse alcohol class with amine class (Unit 18 counts groups on nitrogen, not on carbon). Fermentation of carbohydrates with zymase gives dilute ethanol, distilled to ~95% and dehydrated to absolute alcohol; methanol ("wood spirit", made from water gas) is dangerously toxic — a few millilitres can blind.',
+      },
+      {
+        term: 'Preparation routes',
+        kind: 'method',
+        statement: 'Alcohols from: **alkenes** (indirect hydration via alkyl hydrogen sulfate, or direct H$_2$O/H$^+$ — both Markovnikov, propene \u2192 propan-2-ol), **haloalkanes** (aqueous KOH, reflux), **carbonyls** (NaBH$_4$/LiAlH$_4$/H$_2$-Ni: aldehyde \u2192 1\u00b0, ketone \u2192 2\u00b0), and **Grignard** reagents (HCHO \u2192 1\u00b0, other aldehydes \u2192 2\u00b0, ketones \u2192 3\u00b0 after acid workup).',
+        detail: 'NaBH$_4$ is the selective scalpel (aldehydes/ketones only, works in water); LiAlH$_4$ the sledgehammer (also acids and esters, needs dry ether). Grignard logic: the nucleophilic R of RMgX installs on the carbonyl carbon, and the oxygen becomes \u2013OMgX until protonated — count the carbon substituents on the carbinol carbon to read the class.',
+      },
+      {
+        term: 'Hydrogen-bonded physical behaviour',
+        kind: 'law',
+        statement: 'Intermolecular **O\u2013H\u00b7\u00b7\u00b7O hydrogen bonding** association makes alcohols boil higher than alkanes, isomeric ethers and haloalkanes of similar molar mass, though still below water; solubility in water falls as the hydrophobic chain grows and rises with branching.',
+        detail: 'Ethanol (b.p. 351 K) sits far above its isomer methoxymethane (248 K) — proof the O\u2013H bond, not the oxygen atom, pays for association. Beyond four or five carbons the alkyl tail dominates and solubility collapses; branching packs less hydrophobic surface per molecule, which is why tert-butyl alcohol mixes with water in all proportions.',
+      },
+      {
+        term: 'Reactions of the O\u2013H bond',
+        kind: 'law',
+        statement: 'Alcohols react with Na/K: $2\\text{R\u2013OH} + 2\\text{Na} \\to 2\\text{R\u2013ONa} + \\text{H}_2$; acid strength runs $\\text{CH}_3\\text{OH} > 1\u00b0 > 2\u00b0 > 3\u00b0$ (electron-releasing alkyls destabilise the alkoxide); esterification with carboxylic acids (H$^+$, reflux) and fast acylation by acid chlorides/anhydrides (often with pyridine) follow the same O\u2013H deprotonation.',
+        detail: 'The alkyl +I effect is the acidity story the assessment wants: more alkyl groups push electron density onto O$^-$, blunting the alkoxide\u2019s charge and lowering acidity. The Na reaction is the classic H$_2$-evolution test distinguishing alcohols from ethers and hydrocarbons.',
+      },
+      {
+        term: 'Identification: Lucas test and oxidation',
+        kind: 'method',
+        statement: '**Lucas reagent** (conc. HCl + anhydrous ZnCl$_2$) reads the class by turbidity timing: 3\u00b0 instant (stable carbocation), 2\u00b0 within \u22485 minutes, 1\u00b0 only on heating; **oxidation** confirms: 1\u00b0 \u2192 aldehyde \u2192 carboxylic acid, 2\u00b0 \u2192 ketone, 3\u00b0 resists (cleaves only under harsh conditions).',
+        detail: 'The turbidity is the insoluble alkyl chloride precipitating, so the test runs exactly as fast as the carbocation forms. Distil a 1\u00b0 alcohol gently with acidified dichromate and the aldehyde escapes before further oxidation; reflux and it goes all the way to the acid — apparatus choice controls the product, a neat assessment point.',
+      },
+      {
+        term: 'Dehydration: the E1 route',
+        kind: 'method',
+        statement: 'Hot acid (conc. H$_2$SO$_4$, 443 K) or heated Al$_2$O$_3$ dehydrates via **E1** for 2\u00b0/3\u00b0: protonate OH \u2192 water leaves \u2192 carbocation \u2192 \u03b2-H loss \u2192 alkene; ease is **3\u00b0 > 2\u00b0 > 1\u00b0** (carbocation stability) and products follow **Saytzeff** (butan-2-ol \u2192 mostly but-2-ene); at 413 K ethanol gives diethyl ether instead.',
+        detail: 'The temperature switch is assessment gold: 413 K favours intermolecular substitution to the ether, 443 K intramolecular elimination to the alkene — one reagent, two products, 30 K apart. Carbocation intermediates also license rearrangements (a 1\u00b0 carbocation will hydride-shift toward 2\u00b0 before losing H$^+$), so predict the rearranged alkene when the substrate allows.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Lucas test triage',
+        problem: 'Three unlabelled bottles hold butan-1-ol, butan-2-ol and 2-methylpropan-2-ol. Lucas reagent is added at room temperature: A turns cloudy instantly, B within about 5 minutes, C stays clear for hours. Identify each bottle.',
+        steps: [
+          { label: 'Step 1', text: '```text\ninstant turbidity  -> 3\u00b0  -> 2-methylpropan-2-ol (A)\n~5 minutes        -> 2\u00b0  -> butan-2-ol (B)\nclear for hours   -> 1\u00b0  -> butan-1-ol (C)\n```' },
+          { label: 'Step 2', text: 'Turbidity is insoluble alkyl chloride forming — the test clock is the carbocation-forming step.' },
+          { label: 'Step 3', text: 'The 3\u00b0 carbocation of A is stabilised by three methyl groups, forming immediately; the 2\u00b0 of B needs minutes.' },
+          { label: 'Step 4', text: 'C\u2019s primary carbocation is too unstable — it must react by the slow SN2 route, so no turbity at room temperature; confirm C later by oxidation to butanal/butanoic acid.' }
+        ],
+        result: 'A = 2-methylpropan-2-ol (3\u00b0), B = butan-2-ol (2\u00b0), C = butan-1-ol (1\u00b0).'
+      },
+      {
+        title: 'Dehydration of butan-2-ol',
+        problem: 'Butan-2-ol is heated with concentrated H$_2$SO$_4$ at 440 K. Give the mechanism and the major product.',
+        steps: [
+          { label: 'Step 1', text: 'Protonation: the OH accepts H$^+$ and becomes water — a good leaving group.' },
+          { label: 'Step 2', text: 'E1 loss of water generates the 2\u00b0 carbocation CH$_3$\u2013C$^+$H\u2013CH$_2$\u2013CH$_3$.' },
+          { label: 'Step 3', text: '```text\nbeta-H loss from C3 -> but-2-ene (trisubstituted)  MAJOR\nbeta-H loss from C1 -> but-1-ene (monosubstituted) minor\n```' },
+          { label: 'Step 4', text: 'Saytzeff\u2019s rule picks the more substituted, more stable alkene — but-2-ene dominates the mixture; no rearrangement is possible because the 2\u00b0 cation has nowhere better to go.' }
+        ],
+        result: 'Major product but-2-ene via E1 (protonation \u2192 2\u00b0 carbocation \u2192 \u03b2-H loss); minor but-1-ene.'
+      },
+      {
+        title: 'Grignard route to a 3\u00b0 alcohol',
+        problem: 'Synthesise 2-methylpropan-2-ol from propanone using a Grignard reagent, and name the reagent you chose.',
+        steps: [
+          { label: 'Step 1', text: 'Target analysis: the carbinol carbon of a 3\u00b0 alcohol needs a ketone plus one alkyl addition — propanone already supplies two methyls.' },
+          { label: 'Step 2', text: 'Add methylmagnesium bromide: $\\text{CH}_3\\text{MgBr} + (\\text{CH}_3)_2\\text{C=O} \\to (\\text{CH}_3)_3\\text{C\u2013OMgBr}$ in dry ether.' },
+          { label: 'Step 3', text: 'Acid workup: $(\\text{CH}_3)_3\\text{C\u2013OMgBr} + \\text{H}_2\\text{O} \\to (\\text{CH}_3)_3\\text{C\u2013OH}$ (2-methylpropan-2-ol) + MgBr(OH).' },
+          { label: 'Step 4', text: 'Rule check: HCHO + RMgX \u2192 1\u00b0 alcohol, RCHO \u2192 2\u00b0, ketone \u2192 3\u00b0 — the carbonyl class decides the alcohol class.' }
+        ],
+        result: 'CH$_3$MgBr + propanone, then H$_3$O$^+$ — 2-methylpropan-2-ol.'
+      }
+    ],
+    keyTakeaways: [
+      'Class by the OH-carbon: 1\u00b0/2\u00b0/3\u00b0; Grignard carbonyl logic: HCHO \u2192 1\u00b0, aldehyde \u2192 2\u00b0, ketone \u2192 3\u00b0.',
+      'Hydrogen bonding lifts boiling points above ethers/haloalkanes; solubility falls with chain length, rises with branching.',
+      'Lucas test: 3\u00b0 instant, 2\u00b0 \u22485 min, 1\u00b0 slow; oxidation: 1\u00b0 \u2192 aldehyde \u2192 acid, 2\u00b0 \u2192 ketone, 3\u00b0 resists.',
+      'Acidity of alcohols: CH$_3$OH > 1\u00b0 > 2\u00b0 > 3\u00b0 — alkyl +I destabilises the alkoxide.',
+      'Dehydration: E1, 3\u00b0 > 2\u00b0 > 1\u00b0, Saytzeff product; 413 K gives ether, 443 K gives alkene.',
+    ],
+    quiz: [
+      {
+        q: 'Lucas reagent is',
+        options: ['concentrated HCl with anhydrous ZnCl$_2$', 'dilute HCl', 'Br$_2$ in CCl$_4$', 'NaHCO$_3$ solution'],
+        answer: 0,
+        explanation: 'Step 1: The test converts alcohols to alkyl chlorides. Step 2: ZnCl$_2$ is a Lewis acid that complexes the OH, making water leave. Step 3: Conc. HCl supplies the chloride and the acidic medium. Step 4: Br$_2$/CCl$_4$ tests unsaturation; NaHCO$_3$ tests carboxyl groups.'
+      },
+      {
+        q: 'Which alcohol gives immediate turbidity with Lucas reagent at room temperature?',
+        options: ['butan-1-ol', 'butan-2-ol', '2-methylpropan-2-ol', 'methanol'],
+        answer: 2,
+        explanation: 'Step 1: Turbidity timing tracks carbocation formation. Step 2: The 3\u00b0 carbocation of 2-methylpropan-2-ol forms instantly. Step 3: Butan-2-ol (2\u00b0) needs about 5 minutes; butan-1-ol and methanol stay clear at room temperature. Step 4: The product cloudiness is insoluble tert-butyl chloride.'
+      },
+      {
+        q: 'Oxidation of butan-2-ol with acidified K$_2$Cr$_2$O$_7$ gives',
+        options: ['butanal', 'butanone', 'butanoic acid', 'no reaction at all'],
+        answer: 1,
+        explanation: 'Step 1: Butan-2-ol is a secondary alcohol. Step 2: Secondary alcohols oxidise to ketones — butanone — by loss of the carbinol H. Step 3: Further oxidation of a ketone needs C\u2013C cleavage, so it stops here. Step 4: Butanal/butanoic acid belong to butan-1-ol (1\u00b0) chemistry.'
+      },
+      {
+        q: 'CH$_3$MgBr reacts with propanal, followed by hydrolysis, to give',
+        options: ['butan-2-ol', 'butan-1-ol', '2-methylpropan-2-ol', 'propan-2-ol'],
+        answer: 0,
+        explanation: 'Step 1: Grignard methyl attacks the carbonyl carbon of propanal. Step 2: The carbinol carbon now carries H (from the aldehyde), CH$_2$CH$_3$ (aldehyde residue) and CH$_3$ (from Grignard) — two carbon groups + H = secondary. Step 3: Hydrolysis of the magnesium alkoxide releases butan-2-ol. Step 4: Ketones would give the 3\u00b0 alcohol; HCHO would give the 1\u00b0.'
+      }
+    ]
+  },
+  // ---------------------------------------------------------------- 18.1
+  {
+    sectionId: 'chem-m18-s1',
+    readingTime: 10,
+    prerequisites: [
+      'Functional groups and nomenclature (Unit 14)',
+      'Ammonia\u2019s pyramidal geometry (Unit 3, VSEPR)',
+    ],
+    intro: 'Amines are ammonia with alkyl or aryl armour on the nitrogen — and the lone pair that survives that armoury makes them organic chemistry\u2019s bases and nucleophiles. This first section sets the vocabulary (classification, nomenclature, pyramidal structure) and the five preparation routes, including the two synthetic workhorses — Gabriel phthalimide and Hofmann degradation — that engineering assessment tests relentlessly. With 25 chemistry questions (100 marks, +4/\u22121) and most amine items being direct NCERT-line reads, a clean command of this section is among the fastest-scoring plays in the paper.',
+    objectives: [
+      'Classify amines as 1\u00b0, 2\u00b0 or 3\u00b0 by the number of carbon groups on nitrogen, and name quaternary ammonium salts',
+      'Name amines in common and IUPAC systems, including N- prefixes and the amino- prefix',
+      'Describe the trigonal-pyramidal sp\u00b3 structure of amines and the role of the nitrogen lone pair',
+      'Write the five preparation routes: ammonolysis, nitro reduction, nitrile reduction, Hofmann bromamide degradation and Gabriel phthalimide synthesis',
+    ],
+    concepts: [
+      {
+        term: 'Classification on nitrogen',
+        kind: 'definition',
+        statement: 'Amines are classified by groups attached to **nitrogen**: RNH$_2$ = **1\u00b0**, R$_2$NH = **2\u00b0**, R$_3$N = **3\u00b0**, and R$_4$N$^+$X$\u2013$ = quaternary ammonium salt — a counting rule quite different from the carbon-based classes of alcohols and haloalkanes.',
+        detail: 'The classic trap: $(\\text{CH}_3)_3\\text{C\u2013NH}_2$ (tert-butylamine) has a 3\u00b0 carbon but is a **1\u00b0 amine** — only one carbon group touches nitrogen. Similarly N-methylaniline is 2\u00b0 (phenyl + methyl on N) even though no secondary carbon exists. Always ask "how many ropes tie the N down?"',
+      },
+      {
+        term: 'Structure: pyramidal nitrogen',
+        kind: 'insight',
+        statement: 'The amine nitrogen is **sp\u00b3 hybridised, trigonal pyramidal** (like NH$_3$, angles \u2248107\u2013108\u00b0), with the lone pair occupying the fourth tetrahedral corner — the seat of both basicity and nucleophilicity.',
+        detail: 'The lone pair makes amines Br\u00f8nsted bases (proton acceptors) and Lewis bases/nucleophiles (electron-pair donors) — the physical origin of every reaction in this unit. Small amines invert rapidly (umbrella flip), so lone-pair "sides" interconvert; in aryl amines the lone pair delocalises into the ring, flattening the pyramid and dulling the nitrogen — basicity details follow in section 18.2.',
+      },
+      {
+        term: 'Nomenclature',
+        kind: 'notation',
+        statement: 'Common names string alkyls before "amine" (methylamine, ethylmethylamine, trimethylamine); IUPAC uses the suffix **-amine** on the carbon chain (methanamine, propan-2-amine) with **N-** locants for extra N-substituents (N-methylethanamine, N,N-dimethylmethanamine), or the prefix **amino-** when a senior group owns the suffix; aniline = benzenamine, benzylamine = phenylmethanamine.',
+        detail: 'Parsing drill: CH$_3$NHCH$_2$CH$_3$ = N-methylethanamine (2\u00b0); (CH$_3$)$_3$N = N,N-dimethylmethanamine (3\u00b0); H$_2$NCH$_2$CH$_2$OH = 2-aminoethan-1-ol (amino as prefix, OH senior). Aniline\u2019s N is bonded directly to the ring; benzylamine\u2019s N hangs from the CH$_2$ — a distinction the assessment never tires of.',
+      },
+      {
+        term: 'Preparation I: ammonolysis and nitro reduction',
+        kind: 'method',
+        statement: '**Ammonolysis**: RX + NH$_3$ (excess, alcohol) \u2192 RNH$_2$, but the product alkylates onward: RNH$_2$ + RX \u2192 R$_2$NH \u2192 R$_3$N \u2192 R$_4$N$^+$X$\u2013$ — a mixture of all four, separated by fractional distillation; **nitro reduction**: $\\text{ArNO}_2 + 3\\text{H}_2 \\to \\text{ArNH}_2 + 2\\text{H}_2\\text{O}$ with H$_2$/Pd or (industrially) Fe/HCl or Sn/HCl — the standard route to aniline.',
+        detail: 'Ammonolysis is synthetically sloppy: the 1\u00b0 amine is a better nucleophile than ammonia, so over-alkylation is unavoidable; excess ammonia merely tilts the mixture toward 1\u00b0. Nitrobenzene\u2019s reduction is the workhorse of aniline (dyestuff) manufacture — catalytic hydrogenation is the green modern version.',
+      },
+      {
+        term: 'Preparation II: the clean 1\u00b0 routes',
+        kind: 'method',
+        statement: '**Nitrile reduction**: R\u2013CN + LiAlH$_4$ (or H$_2$/Ni) \u2192 R\u2013CH$_2$NH$_2$, retaining the nitrile carbon (chain grows by one); **Hofmann bromamide degradation**: $\\text{R\u2013CONH}_2 + \\text{Br}_2 + 4\\text{NaOH} \\to \\text{R\u2013NH}_2 + \\text{Na}_2\\text{CO}_3 + 2\\text{NaBr} + 2\\text{H}_2\\text{O}$ — a pure 1\u00b0 amine with **one carbon fewer**, no rearrangement; **Gabriel phthalimide**: phthalimide + KOH \u2192 potassium salt + RX \u2192 N-alkyl phthalimide \u2192 hydrolysis/hydrazinolysis \u2192 pure RNH$_2$.',
+        detail: 'Each route has a signature the assessment tests by outcome: nitrile route lengthens the chain, Hofmann shortens it by exactly one carbon with a migration that never rearranges, and Gabriel works only for alkyl halides — aryl halides refuse nucleophilic substitution, so **aniline cannot be made by Gabriel**. Choose the route by counting carbons in the product.',
+      },
+      {
+        term: 'Physical properties quick scan',
+        kind: 'notation',
+        statement: 'Lower amines (methylamine, ethylamine, trimethylamine) are **gases** with fishy-ammoniacal odour; 1\u00b0/2\u00b0 amines hydrogen-bond, so they boil above isomeric 3\u00b0 amines and ethers but below comparable alcohols (N is less electronegative than O); small amines are water-soluble via N\u2013H\u00b7\u00b7\u00b7O and N\u00b7\u00b7\u00b7H\u2013O bonds.',
+        detail: '3\u00b0 amines lack N\u2013H, so they cannot self-associate — among isomeric C$_4$ amines the 3\u00b0 member boils lowest. The fish-rot smell of dead matter is low-molecular amines (putrescine, cadaverine) — the sensory hook that makes this section memorable.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Hofmann degradation walk-through',
+        problem: 'Benzamide is treated with bromine and sodium hydroxide solution. Write the equation, identify the product, and compare carbon counts.',
+        steps: [
+          { label: 'Step 1', text: 'Starting material: C$_6$H$_5$\u2013CO\u2013NH$_2$ — the amide of benzoic acid (7 carbons including the carbonyl carbon).' },
+          { label: 'Step 2', text: 'Hofmann reagent: Br$_2$ + 4NaOH converts the amide to an amine, expelling the carbonyl carbon as carbonate.' },
+          { label: 'Step 3', text: '```text\nC6H5-CONH2 + Br2 + 4 NaOH -> C6H5-NH2 + Na2CO3 + 2 NaBr + 2 H2O\n   7 carbons                            6 carbons\n```' },
+          { label: 'Step 4', text: 'Product: aniline (C$_6$H$_5$NH$_2$) — a pure 1\u00b0 amine, one carbon shorter, with no rearrangement because the phenyl migrates intact.' }
+        ],
+        result: 'Benzamide \u2192 aniline + Na$_2$CO$_3$ + 2NaBr + 2H$_2$O — the amine carries one carbon fewer than the amide.'
+      },
+      {
+        title: 'Gabriel synthesis of butan-1-amine',
+        problem: 'Outline the Gabriel phthalimide synthesis of butan-1-amine starting from phthalimide and 1-bromobutane, and state why the method fails for aniline.',
+        steps: [
+          { label: 'Step 1', text: 'Deprotonate: phthalimide + KOH \u2192 potassium phthalimide (the imide N\u2013H is unusually acidic — two flanking carbonyls).' },
+          { label: 'Step 2', text: 'Alkylate: potassium phthalimide + CH$_3$CH$_2$CH$_2$CH$_2$Br \u2192 N-butyl phthalimide + KBr — a clean SN2 on the 1\u00b0 halide.' },
+          { label: 'Step 3', text: 'Release: alkaline hydrolysis (or hydrazinolysis with N$_2$H$_4$) of N-butyl phthalimide \u2192 butan-1-amine + phthalic acid (or phthalhydrazide).' },
+          { label: 'Step 4', text: 'Failure mode: bromobenzene would need the same SN2 displacement, but aryl halides do not undergo it (partial double-bond C\u2013X, Unit 16) — so aniline is unreachable by Gabriel.' }
+        ],
+        result: 'Phthalimide \u2192 (KOH) \u2192 K-salt \u2192 (1-bromobutane) \u2192 N-butyl phthalimide \u2192 (OH$\u2013$/heat) \u2192 pure butan-1-amine; aryl halides never enter.'
+      },
+      {
+        title: 'Classification audit',
+        problem: 'Classify each amine and name it: (a) (CH$_3$)$_3$C\u2013NH$_2$, (b) (CH$_3$)$_3$N, (c) C$_6$H$_5$\u2013NH\u2013CH$_3$, (d) C$_6$H$_5$\u2013CH$_2$\u2013NH$_2$.',
+        steps: [
+          { label: 'Step 1', text: '```text\n(a) (CH3)3C-NH2      1 group on N -> 1\u00b0  (2-methylpropan-2-amine)\n(b) (CH3)3N          3 groups on N -> 3\u00b0  (N,N-dimethylmethanamine)\n(c) C6H5-NH-CH3      2 groups on N -> 2\u00b0  (N-methylbenzenamine)\n(d) C6H5-CH2-NH2     1 group on N -> 1\u00b0  (phenylmethanamine)\n```' },
+          { label: 'Step 2', text: '(a) is the trap: a 3\u00b0 carbon with a 1\u00b0 amine nitrogen — the class counts N-substituents only.' },
+          { label: 'Step 3', text: '(c) vs (d): in N-methylaniline the N is bonded to the ring itself; in phenylmethanamine (benzylamine) it hangs from a CH$_2$ — an aryl amine versus an aryl-adjacent aliphatic amine.' },
+          { label: 'Step 4', text: 'Quaternary check: none here, since no nitrogen carries four carbon groups.' }
+        ],
+        result: '(a) 1\u00b0, (b) 3\u00b0, (c) 2\u00b0 aryl amine, (d) 1\u00b0 benzylic (aliphatic) amine.'
+      }
+    ],
+    keyTakeaways: [
+      'Amine class counts carbon groups on **nitrogen**: tert-butylamine is 1\u00b0; the alcohol/haloalkane carbon-class rules do not apply.',
+      'Nitrogen is sp\u00b3 pyramidal with the lone pair at the apex — base and nucleophile in one.',
+      'Ammonolysis gives 1/2/3/quaternary mixtures; nitro reduction is the aniline workhorse.',
+      'Hofmann bromamide: one carbon fewer, no rearrangement; nitrile reduction: one carbon more; Gabriel: pure 1\u00b0 alkyl amines only.',
+      'Aniline = N directly on the ring; benzylamine = N on the side chain — the pair the assessment loves to swap.',
+    ],
+    quiz: [
+      {
+        q: 'Which of the following is a 3\u00b0 amine?',
+        options: ['tert-butylamine', 'N-methylethanamine', 'N,N-dimethylmethanamine', 'aniline'],
+        answer: 2,
+        explanation: 'Step 1: Count carbon groups bonded to nitrogen. Step 2: tert-butylamine has one (the N carries two H) — 1\u00b0. Step 3: N-methylethanamine has two — 2\u00b0; aniline has one — 1\u00b0. Step 4: N,N-dimethylmethanamine, (CH$_3$)$_3$N, has three — 3\u00b0.'
+      },
+      {
+        q: 'Hofmann bromamide degradation of propanamide (CH$_3$CH$_2$CONH$_2$) gives',
+        options: ['propan-1-amine', 'ethanamine', 'propan-2-amine', 'butan-1-amine'],
+        answer: 1,
+        explanation: 'Step 1: Hofmann degradation removes the carbonyl carbon as carbonate. Step 2: Propanamide has 3 carbons; the amine keeps the two of the ethyl group. Step 3: CH$_3$CH$_2$NH$_2$ — ethanamine — a pure 1\u00b0 amine, one carbon shorter. Step 4: Propan-1-amine would be the nitrile-reduction product (chain grows); butan-1-amine grows it further.'
+      },
+      {
+        q: 'Gabriel phthalimide synthesis cannot be used to prepare',
+        options: ['methanamine', 'butan-1-amine', 'aniline', 'benzylamine'],
+        answer: 2,
+        explanation: 'Step 1: The key step is SN2 alkylation of the phthalimide anion. Step 2: Alkyl halides (methyl iodide, 1-bromobutane, benzyl chloride) undergo SN2 readily. Step 3: Aryl halides do not undergo SN2 — the C\u2013X bond has partial double-bond character. Step 4: Aniline would need halobenzene as the alkylating agent, so Gabriel cannot make it.'
+      },
+      {
+        q: 'Reduction of CH$_3$CN with LiAlH$_4$ followed by hydrolysis gives',
+        options: ['methanamine', 'ethanamine', 'propan-1-amine', 'ethanamide'],
+        answer: 1,
+        explanation: 'Step 1: LiAlH$_4$ reduces the nitrile to a primary amine. Step 2: The nitrile carbon becomes the CH$_2$ of the product: CH$_3$\u2013C\u2261N \u2192 CH$_3$\u2013CH$_2$\u2013NH$_2$. Step 3: Two carbons — ethanamine; the chain grows by one because the nitrile carbon is retained. Step 4: Methanamine would need HCN as the nitrile; ethanamide is the hydrolysis (not reduction) product.'
+      }
+    ]
+  },
+  // ---------------------------------------------------------------- 19.1
+  {
+    sectionId: 'chem-m19-s1',
+    readingTime: 12,
+    prerequisites: [
+      'Functional groups: alcohols, aldehydes, ketones (Units 14, 17)',
+      'Cyclic structures and stereochemical prefixes (Unit 15 helps)',
+    ],
+    intro: 'Biomolecules are the organic compounds of living systems — carbohydrates, proteins, nucleic acids plus the vitamin and hormone regulators — built by photosynthesis and spent by respiration. Carbohydrates open the family: glucose is the most abundant organic molecule on Earth and the fuel every cell recognises. engineering assessment asks factual, NCERT-line questions from this unit that are among the easiest marks among the paper\u2019s 25 chemistry questions (100 marks, +4/\u22121) — classification, constituent monosaccharides, and why sucrose fails the Tollens test. For scoring speed, biomolecules are the paper\u2019s fastest-scoring unit for a prepared aspirant.',
+    objectives: [
+      'Define carbohydrates as optically active polyhydroxy aldehydes/ketones (or their hydrolysis products) and classify them as mono-, oligo- or polysaccharides',
+      'Distinguish aldoses from ketoses and reducing from non-reducing sugars',
+      'Describe the open-chain and cyclic (pyranose/furanose) structures of glucose and fructose, including \u03b1/\u03b2 anomers and mutarotation',
+      'Name the constituent monosaccharides of sucrose, lactose and maltose and the glycosidic bonds linking them',
+    ],
+    concepts: [
+      {
+        term: 'What is a biomolecule',
+        kind: 'definition',
+        statement: '**Biomolecules** are the organic compounds produced by living systems — the four major classes being **carbohydrates** (energy), **proteins** (structure and machinery), **lipids/fats** (storage) and **nucleic acids** (information), with **vitamins** and **hormones** as small-molecule regulators; photosynthesis builds the carbohydrate pool: $6\\text{CO}_2 + 6\\text{H}_2\\text{O} \\xrightarrow{\\text{sunlight, chlorophyll}} \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2$.',
+        detail: 'Respiration runs the same equation backwards to release energy — the carbon cycle in one line. D-configuration: nearly all natural sugars use the D-series (the asymmetric carbon farthest from the carbonyl mirrors D-glyceraldehyde) — a naming convention, not optical-rotation sign.',
+      },
+      {
+        term: 'Carbohydrate definition and classification',
+        kind: 'definition',
+        statement: 'Carbohydrates are **optically active polyhydroxy aldehydes or ketones**, or substances that yield them on hydrolysis; classified by size: **monosaccharides** (not hydrolysable: glucose, fructose, ribose), **oligosaccharides** (2\u201310 units: disaccharides sucrose, lactose, maltose), **polysaccharides** (>10, often thousands: starch, cellulose, glycogen); and by carbonyl: **aldoses** versus **ketoses**; and by behaviour: **reducing** versus **non-reducing**.',
+        detail: 'The name "carbohydrate" = "hydrates of carbon", from formulas like C$_6$(H$_2$O)$_6$ — a historical mislabel, since the H:O ratio is coincidence, not water of hydration (rhamnose, C$_6$H$_{12}$O$_5$, breaks the pattern). Reducing power needs a free aldehyde or a hemiacetal that can open — the hinge for the sucrose question below.',
+      },
+      {
+        term: 'Glucose: the aldohexose',
+        kind: 'method',
+        statement: 'Glucose, C$_6$H$_{12}$O$_6$, is an **aldohexose**; its open-chain structure CH$_2$OH\u2013(CHOH)$_4$\u2013CHO follows from evidence: oxime/hydrazone formation (CHO), penta-acetate with retained aldehyde (five OH), HI reduction to n-hexane (6-carbon straight chain), Br$_2$ water \u2192 gluconic acid (aldehyde \u2192 acid, chain intact) and HNO$_3$ \u2192 saccharic acid (both ends oxidised).',
+        detail: 'In water \u224899% of glucose is **cyclic**: the C5\u2013OH attacks the aldehyde carbon (C1) to form an intramolecular **hemiacetal**, closing a six-membered **pyranose** ring. The newly created C1 stereocentre gives the **\u03b1/\u03b2 anomers** (OH trans or cis to the CH$_2$OH); freshly dissolved \u03b1-D-glucose ($[\u03b1] = +112\u00b0$) or \u03b2 ($+19\u00b0$) each drift to the equilibrium value $+52.7\u00b0$ — **mutarotation**, impossible without a free hemiacetal OH.',
+      },
+      {
+        term: 'Fructose: the ketohexose',
+        kind: 'definition',
+        statement: 'Fructose, also C$_6$H$_{12}$O$_6$, is a **ketohexose** (C=O at C2); it cyclises to a five-membered **furanose** ring by the C5\u2013OH attacking C2, and it is the sweetest natural sugar.',
+        detail: 'Fructose shares the formula with glucose but not the chemistry: ketone carbonyl, furanose preference, levorotatory ($[\u03b1] \u2248 -92\u00b0$, hence "levulose"). Glucose + fructose is the disaccharide sucrose; glucose alone is the unit of starch, cellulose and glycogen — same monomer, three different polymers.',
+      },
+      {
+        term: 'Disaccharides: sucrose, lactose, maltose',
+        kind: 'notation',
+        statement: '**Sucrose** = \u03b1-D-glucopyranose + \u03b2-D-fructofuranose joined C1\u2013C2 (both anomeric carbons engaged) \u2014 **non-reducing**; hydrolysis gives glucose + fructose (the "invert sugar", $+66.5\u00b0 \\to -19.7\u00b0$). **Lactose** = \u03b2-D-galactose + \u03b2-D-glucose (1\u21924 link, one anomeric end free) — reducing. **Maltose** = two \u03b1-D-glucose (1\u21924 link, one end free) — reducing.',
+        detail: 'The rule hiding here: a disaccharide is reducing only if at least one anomeric carbon retains its hemiacetal OH — free to open to the aldehyde/ketone that reduces Tollens/Fehling. Sucrose spends both anomeric carbons on the glycosidic bond, so it cannot open — non-reducing, and no mutarotation either. Enzymes: invertase/sucrase for sucrose, lactase for lactose, maltase for maltose (lactase deficiency = lactose intolerance).',
+      },
+      {
+        term: 'Reactions of glucose worth knowing',
+        kind: 'law',
+        statement: 'Glucose (open-chain fraction) reduces Tollens\u2019 and Fehling\u2019s solutions (the aldehyde test), oxidises with Br$_2$ water to gluconic acid and with HNO$_3$ to saccharic acid, ferments with zymase to ethanol + CO$_2$, and forms glycosides (acetals) with alcohols/H$^+$ — the acetal lock that makes disaccharides and polysaccharides.',
+        detail: 'Every cyclic monosaccharide reacts through the small open-chain fraction at equilibrium; the ring is a reservoir that refills the aldehyde as it is consumed. Acetal (glycosidic) formation with methanol gives methyl glucoside — no longer reducing, because the acetal cannot open under neutral/basic conditions: the same trick nature uses to string sugars together.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Classification audit',
+        problem: 'Classify each as mono/oligo/poly, aldose or ketose, and reducing or non-reducing: glucose, fructose, sucrose, lactose, maltose, starch, cellulose.',
+        steps: [
+          { label: 'Step 1', text: '```text\nname      class     carbonyl   reducing?\nglucose   mono      aldose     yes (free hemiacetal)\nfructose  mono      ketose     yes (opens via enediol)\nsucrose   di        glu+keto   no  (both anomeric C tied)\nlactose   di        two aldose yes (one anomeric C free)\nmaltose   di        two aldose yes (one anomeric C free)\nstarch    poly      --         no  (acetal links)\ncellulose poly      --         no\n```' },
+          { label: 'Step 2', text: 'Fructose reduces Fehling\u2019s solution too — under the alkaline conditions it isomerises via an enediol to glucose/mannose before reacting.' },
+          { label: 'Step 3', text: 'The disaccharide test: count free anomeric carbons — sucrose has zero free (non-reducing), lactose and maltose each keep one.' },
+          { label: 'Step 4', text: 'Polysaccharides are all-acetal, so none of their glucose units can open — none reduces.' }
+        ],
+        result: 'Glucose: mono/aldose/reducing; fructose: mono/ketose/reducing; sucrose: di/non-reducing; lactose, maltose: di/reducing; starch, cellulose: poly/non-reducing.'
+      },
+      {
+        title: 'Why sucrose fails the silver mirror',
+        problem: 'Sucrose gives no silver mirror with Tollens\u2019 reagent and shows no mutarotation, while maltose gives both. Explain with the glycosidic linkage.',
+        steps: [
+          { label: 'Step 1', text: 'Locate the link: sucrose joins \u03b1-D-glucose C1 to \u03b2-D-fructose C2 — the anomeric carbons of both sugars.' },
+          { label: 'Step 2', text: 'Both hemiacetal OH groups have been converted to acetal (glycosidic) oxygens — neither ring can reopen to a carbonyl.' },
+          { label: 'Step 3', text: 'No open-chain aldehyde or ketone \u21d2 no Tollens/Fehling reduction and no \u03b1\u21d4\u03b2 interconversion (no mutarotation).' },
+          { label: 'Step 4', text: 'Maltose\u2019s 1\u21924 link uses only the first glucose\u2019s C1; the second glucose keeps a free hemiacetal at its C1 — it opens, reduces and mutarotates.' }
+        ],
+        result: 'Sucrose: both anomeric carbons locked in the glycosidic bond \u2192 non-reducing, no mutarotation; maltose: one free anomeric carbon \u2192 reducing and mutarotating.'
+      },
+      {
+        title: 'Mutarotation arithmetic',
+        problem: 'Pure \u03b1-D-glucose has specific rotation $+112\u00b0$ and pure \u03b2-D-glucose has $+19\u00b0$. A freshly prepared \u03b1 solution equilibrates at $+52.7\u00b0$. Find the \u03b1 : \u03b2 ratio at equilibrium.',
+        steps: [
+          { label: 'Step 1', text: 'Let the \u03b1 fraction be $x$; then $112x + 19(1 \u2013 x) = 52.7$.' },
+          { label: 'Step 2', text: 'Expand: $19 + 93x = 52.7$, so $x = \\frac{33.7}{93} = 0.362$.' },
+          { label: 'Step 3', text: 'Equilibrium mixture: \u224836% \u03b1-pyranose and 64% \u03b2-pyranose (plus a trace of open chain).' },
+          { label: 'Step 4', text: 'The \u03b2 anomer dominates because its OH at C1 is equatorial — the more comfortable chair position; the same drift explains why both pure anomers settle at $+52.7\u00b0$.' }
+        ],
+        result: '\u03b1 : \u03b2 \u2248 36 : 64 at equilibrium — the mutarotation endpoint of $+52.7\u00b0$.'
+      }
+    ],
+    keyTakeaways: [
+      'Carbohydrates = optically active polyhydroxy aldehydes/ketones or their hydrolysis products; mono \u2192 oligo (2\u201310) \u2192 poly (>10).',
+      'Glucose is an aldohexose: open chain proven by oxime, penta-acetate, n-hexane (HI), gluconic (Br$_2$) and saccharic (HNO$_3$) acids.',
+      'Cyclic glucose = C5\u2013OH + C1 hemiacetal = pyranose; \u03b1/\u03b2 anomers; mutarotation to $+52.7\u00b0$ (36% \u03b1, 64% \u03b2).',
+      'Sucrose = \u03b1-glucose + \u03b2-fructose, both anomeric carbons engaged \u2192 non-reducing, no mutarotation; lactose = \u03b2-galactose + \u03b2-glucose, reducing; maltose = two \u03b1-glucose, reducing.',
+      'A sugar is reducing only if an anomeric carbon stays a hemiacetal — free to open.',
+    ],
+    quiz: [
+      {
+        q: 'Which of the following is a ketose?',
+        options: ['glucose', 'fructose', 'galactose', 'maltose'],
+        answer: 1,
+        explanation: 'Step 1: Ketoses carry the carbonyl at C2 as a ketone. Step 2: Fructose is CH$_2$OH\u2013CO\u2013(CHOH)$_3$\u2013CH$_2$OH — the ketohexose. Step 3: Glucose and galactose are aldohexoses; maltose is a disaccharide of two glucose units. Step 4: Fructose\u2019s C2 ketone closes to the furanose ring.'
+      },
+      {
+        q: 'Hydrolysis of sucrose gives',
+        options: ['glucose + galactose', 'glucose + fructose', 'two molecules of glucose', 'fructose + galactose'],
+        answer: 1,
+        explanation: 'Step 1: Sucrose is a disaccharide of two monosaccharides. Step 2: Its units are \u03b1-D-glucose and \u03b2-D-fructose. Step 3: Hydrolysis (invertase or dilute acid) cleaves the C1\u2013C2 glycosidic bond, releasing both. Step 4: Glucose + galactose is lactose\u2019s pair; glucose + glucose is maltose\u2019s.'
+      },
+      {
+        q: 'Which of the following is a non-reducing sugar?',
+        options: ['glucose', 'maltose', 'lactose', 'sucrose'],
+        answer: 3,
+        explanation: 'Step 1: Reducing power requires a free aldehyde/ketone or a hemiacetal that can open. Step 2: Glucose, maltose and lactose all retain a free anomeric OH. Step 3: Sucrose\u2019s glycosidic bond consumes the anomeric carbons of BOTH units — neither ring can open. Step 4: Hence sucrose gives no Tollens/Fehling reaction and shows no mutarotation.'
+      },
+      {
+        q: 'The constituent monosaccharides of lactose are',
+        options: ['\u03b1-D-glucose and \u03b2-D-fructose', '\u03b2-D-galactose and \u03b2-D-glucose', 'two \u03b1-D-glucose units', '\u03b1-D-galactose and \u03b1-D-glucose'],
+        answer: 1,
+        explanation: 'Step 1: Lactose is the milk sugar, a disaccharide. Step 2: Its units are \u03b2-D-galactose and \u03b2-D-glucose joined by a 1\u21924 glycosidic bond. Step 3: The glucose unit\u2019s anomeric carbon remains free — lactose is a reducing sugar. Step 4: Option one describes sucrose; option three describes maltose.'
+      }
+    ]
+  },
+  // ---------------------------------------------------------------- 20.1
+  {
+    sectionId: 'chem-m20-s1',
+    readingTime: 10,
+    prerequisites: [
+      'Functional-group reactions of Units 17 and 18',
+      'Ionic tests and precipitation rules (Unit 12 helps)',
+    ],
+    intro: 'Practical chemistry is where engineering assessment stops asking "derive" and starts asking "what did you observe?" This section is the detection toolkit: **Lassaigne\u2019s sodium fusion** converts the covalently bound extra elements (N, S, halogens) into ionic salts the beaker can see, and a panel of colour tests reads functional groups off an unknown — Prussian blue, silver mirrors, violet ferric complexes. The testing agency frames direct questions on these laboratory principles every year; with 25 chemistry questions (100 marks, +4/\u22121) and most of this unit being literal NCERT lines, it is the fastest-scoring stretch of the whole paper.',
+    objectives: [
+      'Explain the purpose and chemistry of the Lassaigne sodium-fusion extract',
+      'Detect nitrogen, sulphur, both together, and the individual halogens with confirmatory tests',
+      'Detect hydroxyl (alcoholic versus phenolic), carbonyl (aldehyde versus ketone), carboxyl and amino groups with named reagents',
+      'Order tests so that interfering species are destroyed before the confirmatory step',
+    ],
+    concepts: [
+      {
+        term: 'Lassaigne\u2019s sodium fusion',
+        kind: 'method',
+        statement: 'Heating the organic compound with molten **sodium** converts covalently bound elements to ionic salts: $\\text{Na} + \\text{C} + \\text{N} \\to \\text{NaCN}$, $\\text{Na} + \\text{S} \\to \\text{Na}_2\\text{S}$, $\\text{Na} + \\text{X} \\to \\text{NaX}$; extracting the cooled mass with water gives the **sodium fusion extract (Lassaigne\u2019s extract)**, in which those ions are now detectable.',
+        detail: 'The whole trick is the covalent \u2192 ionic conversion: tests for CN$\u2013$, S$^{2\u2013}$, X$\u2013$ exist in inorganic chemistry, but organic compounds are covalent and insoluble — fusion makes the elements legible to the test tube. Use the fresh extract and filter before testing; carbonate from charred carbon is harmless.',
+      },
+      {
+        term: 'Tests for nitrogen and sulphur',
+        kind: 'method',
+        statement: '**Nitrogen**: extract + freshly prepared FeSO$_4$ + NaOH (boil), then acidify and add FeCl$_3$ \u2192 **Prussian blue** $\\text{Fe}_4[\\text{Fe(CN)}_6]_3$. **Sulphur**: extract + sodium nitroprusside \u2192 **violet** colour, or acidify + lead acetate \u2192 black PbS. **Both N and S**: the fusion forms NaSCN, which with Fe$^{3+}$ gives a **blood-red** $[\\text{Fe(SCN)}]^{2+}$ instead of Prussian blue.',
+        detail: 'The nitrogen sequence is a hidden coordination story: CN$\u2013$ first complexes Fe$^{2+}$ to $[\\text{Fe(CN)}_6]^{4\u2013}$; some Fe$^{2+}$ oxidises to Fe$^{3+}$ on boiling; the Fe$^{3+}$ then builds the Prussian-blue lattice. That is why the FeSO$_4$ must be freshly made — old, fully oxidised iron(II) sulfate wrecks the ferrocyanide step.',
+      },
+      {
+        term: 'Test for halogens',
+        kind: 'method',
+        statement: 'Acidify the extract with dilute **HNO$_3$** and boil (to expel HCN/H$_2$S that would otherwise precipitate as AgCN/Ag$_2$S), then add AgNO$_3$: a **white ppt soluble in NH$_4$OH** = Cl; **pale yellow, partly soluble** = Br; **yellow, insoluble in ammonia** = I. Fluorine is not caught by this test (AgF is soluble).',
+        detail: 'The boiling-with-HNO$_3$ step is the assessment\u2019s favourite "why?" — nitrogen or sulphur in the compound would otherwise fake a halogen positive. Colour deepens with anion polarisability down the group, matching the solubility ladder of the silver halides in ammonia.',
+      },
+      {
+        term: 'Hydroxyl: alcoholic versus phenolic',
+        kind: 'method',
+        statement: '**Alcoholic OH**: ceric ammonium nitrate (yellow CAN) \u2192 **red colouration**; Lucas reagent grades 1\u00b0/2\u00b0/3\u00b0 by turbidity speed; the iodoform test flags the CH$_3$CH(OH)\u2013 skeleton. **Phenolic OH**: neutral FeCl$_3$ \u2192 **violet** (coloured complexes) and bromine water \u2192 **white ppt** of 2,4,6-tribromophenol.',
+        detail: 'CAN\u2019s red is a Ce(IV)\u2013alcohol complex — any alcohol answers; FeCl$_3$\u2019s violet is phenol-specific (enol-type complexation), instantly separating an alcohol from a phenol. Phenol does not liberate CO$_2$ from NaHCO$_3$ while carboxylic acids do — the phenol-vs-acid discrimination the practical paper loves.',
+      },
+      {
+        term: 'Carbonyl, carboxyl and amino groups',
+        kind: 'method',
+        statement: '**Carbonyl**: 2,4-DNP (Brady\u2019s reagent) \u2192 **orange-yellow ppt** of hydrazone for aldehydes AND ketones; Tollens\u2019 ammoniacal AgNO$_3$ \u2192 **silver mirror** (aldehydes only); Fehling\u2019s \u2192 red Cu$_2$O (aliphatic aldehydes — benzaldehyde stays negative). **Carboxyl**: NaHCO$_3$ \u2192 **brisk effervescence** of CO$_2$ (turns lime water milky). **Amino (1\u00b0)**: carbylamine test — heat with CHCl$_3$ + alcoholic KOH \u2192 **foul-smelling isocyanide**; aryl 1\u00b0 amines diazotise with NaNO$_2$/HCl at 273\u2013278 K.',
+        detail: 'Think of 2,4-DNP as the carbonyl detector and Tollens as the aldehyde sorter: DNP-positive plus mirror-negative = ketone. The carbylamine test is negative for 2\u00b0/3\u00b0 amines (no N\u2013H pair to lose the CN footing) — a one-reagent classification that pairs with the Hinsberg approach in section 18.2.',
+      },
+      {
+        term: 'Ordering the tests',
+        kind: 'insight',
+        statement: 'Sequence logic: run **element detection first** (Lassaigne), then **group tests in order of specificity** — CO$_2$ from NaHCO$_3$ (acid) before FeCl$_3$ (phenol), 2,4-DNP before Tollens, and always destroy CN$\u2013$/S$^{2\u2013}$ with HNO$_3$ before any Ag$^+$ test.',
+        detail: 'Interference is the assessor\u2019s weapon: phenols also darken FeCl$_3$-adjacent tests, aldehydes reduce more than just Tollens, and unburned cyanide fakes chloride. A clean unknown protocol is Lassaigne \u2192 NaHCO$_3$ \u2192 FeCl$_3$/bromine water \u2192 2,4-DNP \u2192 Tollens/Fehling \u2192 carbylamine — each step ruling out families for the next.',
+      },
+    ],
+    examples: [
+      {
+        title: 'Lassaigne walk-through for nitrogen',
+        problem: 'An organic compound is suspected to contain nitrogen. Describe the full Lassaigne test sequence with equations and the expected observation.',
+        steps: [
+          { label: 'Step 1', text: 'Fuse: compound + molten Na \u2192 ionic NaCN ($\\text{Na} + \\text{C} + \\text{N} \\to \\text{NaCN}$); extract the residue with water and filter.' },
+          { label: 'Step 2', text: 'Complex: add freshly prepared FeSO$_4$ + a little NaOH and boil: $6\\text{CN}^- + \\text{Fe}^{2+} \\to [\\text{Fe(CN)}_6]^{4\u2013}$ (ferrocyanide); some Fe$^{2+}$ oxidises to Fe$^{3+}$.' },
+          { label: 'Step 3', text: 'Confirm: acidify with dilute H$_2$SO$_4$ and add FeCl$_3$: $4\\text{Fe}^{3+} + 3[\\text{Fe(CN)}_6]^{4\u2013} \\to \\text{Fe}_4[\\text{Fe(CN)}_6]_3$ — deep **Prussian blue**.' },
+          { label: 'Step 4', text: 'Interpretation: Prussian blue \u21d2 nitrogen present; had the fusion also made NaSCN (N + S), the iron(III) test would instead give a blood-red thiocyanate solution.' }
+        ],
+        result: 'Prussian blue colouration confirms nitrogen; blood red would indicate N and S together.'
+      },
+      {
+        title: 'Halogen identification matrix',
+        problem: 'The Lassaigne extract of an unknown is acidified with dilute HNO$_3$, boiled, and treated with AgNO$_3$. Predict the halogen for each observation: (a) curdy white ppt dissolving in NH$_4$OH, (b) pale yellow ppt partly soluble in concentrated NH$_3$, (c) yellow ppt insoluble in NH$_3$.',
+        steps: [
+          { label: 'Step 1', text: '```text\n(a) white ppt, soluble in NH4OH      -> AgCl -> chlorine\n(b) pale yellow, partly soluble         -> AgBr -> bromine\n(c) yellow, insoluble in NH3             -> AgI  -> iodine\n```' },
+          { label: 'Step 2', text: 'The HNO$_3$ boil first destroys CN$\u2013$ and S$^{2\u2013}$ — otherwise AgCN/Ag$_2$S would masquerade as halide precipitates.' },
+          { label: 'Step 3', text: 'Solubility in ammonia falls AgCl \u226b AgBr \u226b AgI (K$_{sp}$ climbs), so the ammonia wash is the sorter.' },
+          { label: 'Step 4', text: 'Fluorine cannot be detected this way — AgF is soluble, so no precipitate ever forms.' }
+        ],
+        result: '(a) chlorine, (b) bromine, (c) iodine — sorted by colour and ammonia solubility of the silver halides.'
+      },
+      {
+        title: 'Unknown triage: aldehyde, ketone or acid?',
+        problem: 'Compound X gives an orange precipitate with 2,4-DNP but no silver mirror with Tollens\u2019 reagent. Compound Y gives both a DNP precipitate and a silver mirror. Compound Z gives no DNP reaction but brisk effervescence with NaHCO$_3$. Assign the functional groups.',
+        steps: [
+          { label: 'Step 1', text: '```text\nX: DNP +  (Tollens \u2013)  -> ketone\nY: DNP +  (Tollens +)  -> aldehyde\nZ: DNP \u2013, NaHCO3 +    -> carboxylic acid\n```' },
+          { label: 'Step 2', text: '2,4-DNP\u2019s hydrazone formation needs only a carbonyl — it is the group detector, blind to aldehyde/ketone distinction.' },
+          { label: 'Step 3', text: 'Tollens\u2019 Ag$^+$ is reduced only by the easily oxidised aldehyde \u2013CHO \u2192 \u2013COOH, which is why Y mirrors and X does not.' },
+          { label: 'Step 4', text: 'Z\u2019s NaHCO$_3$ effervescence (CO$_2$ turning limewater milky) is the carboxyl signature — stronger acid than phenol, which fails this test.' }
+        ],
+        result: 'X = ketone, Y = aldehyde, Z = carboxylic acid.'
+      }
+    ],
+    keyTakeaways: [
+      'Lassaigne fusion converts covalent N, S, X into NaCN, Na$_2$S, NaX — ionic and testable in water.',
+      'N \u2192 Prussian blue; S \u2192 violet with sodium nitroprusside (or black PbS); N + S \u2192 blood red (thiocyanate); halogens \u2192 AgX after HNO$_3$ boiling.',
+      '2,4-DNP detects carbonyl; Tollens/Fehling sort aldehydes from ketones; NaHCO$_3$ effervescence flags carboxyl.',
+      'Alcoholic OH \u2192 red with CAN; phenolic OH \u2192 violet with FeCl$_3$ and white ppt with bromine water; 1\u00b0 amines \u2192 carbylamine\u2019s foul isocyanide.',
+      'Always destroy CN$\u2013$/S$^{2\u2013}$ with HNO$_3$ before the silver-nitrate halogen test.',
+    ],
+    quiz: [
+      {
+        q: 'A Prussian blue colouration in Lassaigne\u2019s test confirms the presence of',
+        options: ['sulphur', 'nitrogen', 'chlorine', 'phosphorus'],
+        answer: 1,
+        explanation: 'Step 1: Fusion converts nitrogen to NaCN. Step 2: CN$\u2013$ + Fe$^{2+}$ builds $[\\text{Fe(CN)}_6]^{4\u2013}$. Step 3: Fe$^{3+}$ then yields Prussian blue, $\\text{Fe}_4[\\text{Fe(CN)}_6]_3$. Step 4: Sulphur answers to sodium nitroprusside, halogens to AgNO$_3$ — different channels entirely.'
+      },
+      {
+        q: 'Sodium fusion extract treated with sodium nitroprusside gives a violet colouration. The compound contains',
+        options: ['nitrogen', 'sulphur', 'iodine', 'both nitrogen and sulphur'],
+        answer: 1,
+        explanation: 'Step 1: Fusion turns sulphur into Na$_2$S. Step 2: S$^{2\u2013}$ + $[\\text{Fe(CN)}_5\\text{NO}]^{2\u2013}$ forms the violet $[\\text{Fe(CN)}_5\\text{NOS}]^{4\u2013}$ complex. Step 3: Nitrogen alone would need the Prussian-blue route; N + S together gives blood red with Fe$^{3+}$. Step 4: Iodine is detected with AgNO$_3$ after nitric acid.'
+      },
+      {
+        q: 'Lassaigne\u2019s extract is acidified with HNO$_3$, boiled and treated with AgNO$_3$: a white precipitate soluble in ammonium hydroxide appears. The element is',
+        options: ['chlorine', 'bromine', 'iodine', 'nitrogen'],
+        answer: 0,
+        explanation: 'Step 1: Only halides precipitate with Ag$^+$ after the acid boil. Step 2: A white AgCl precipitate forms with chloride. Step 3: Its solubility in NH$_4$OH (diamminesilver complex) is the chlorine signature — AgBr is pale yellow and AgBr/AgI resist ammonia. Step 4: The HNO$_3$ boil had already removed nitrogen\u2019s cyanide as HCN.'
+      },
+      {
+        q: 'A carbonyl compound gives an orange precipitate with 2,4-DNP but no silver mirror with Tollens\u2019 reagent. The compound is',
+        options: ['an aliphatic aldehyde', 'a ketone', 'a carboxylic acid', 'an alcohol'],
+        answer: 1,
+        explanation: 'Step 1: 2,4-DNP condenses with any aldehyde or ketone carbonyl to a hydrazone. Step 2: Tollens\u2019 test is passed only by aldehydes, whose \u2013CHO oxidises easily. Step 3: A negative mirror after a positive DNP means the carbonyl is not an aldehyde — it is a ketone. Step 4: Carboxylic acids and alcohols give no DNP precipitate at all.'
       }
     ]
   },

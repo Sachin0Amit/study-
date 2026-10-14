@@ -1,7 +1,7 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// JEE (Main) 2026 Mathematics — lesson content (bookId 'jeemain-maths-2026').
+// JEE (Main) 2026 Mathematics — lesson content (bookId 'math-master').
 // Master study content for the opening section of ten NTA units: set algebra,
 // the Argand plane, matrix algebra, the counting principle, the binomial
 // theorem, real functions, anti-derivatives, plane coordinates and locus,
@@ -15,13 +15,13 @@ import type { SectionContent } from '../library'
 export const jeemainMathContent: SectionContent[] = [
   // ---------------------------------------------------------------- Unit 1 · 1.1
   {
-    sectionId: 'jeemain-math-u1-s1',
+    sectionId: 'math-m1-s1',
     readingTime: 8,
     prerequisites: [
       'The real number system and interval notation such as $(a, b)$ and $[a, b]$',
       'Prime factorisation and divisibility for building number sets',
     ],
-    intro: 'A set is any well-defined collection of objects, written either by listing (roster form) or by a rule (set-builder form). The three operations — union $A \\cup B$, intersection $A \\cap B$ and complement $A\'$ — obey an algebra of laws just as numbers do, with De Morgan\'s rules playing the role of "opening the brackets". JEE Main tests exactly these laws alongside the power set $P(A)$, whose size doubles with every new element.',
+    intro: 'A set is any well-defined collection of objects, written either by listing (roster form) or by a rule (set-builder form). The three operations — union $A \\cup B$, intersection $A \\cap B$ and complement $A\'$ — obey an algebra of laws just as numbers do, with De Morgan\'s rules playing the role of "opening the brackets". engineering assessment tests exactly these laws alongside the power set $P(A)$, whose size doubles with every new element.',
     objectives: [
       'Translate between roster form and set-builder form and test membership with $\\in$ and $\\subseteq$',
       'Apply the union, intersection and complement laws — distributive, De Morgan and absorption — to simplify set expressions',
@@ -51,13 +51,13 @@ export const jeemainMathContent: SectionContent[] = [
         term: 'Inclusion–exclusion counting',
         kind: 'theorem',
         statement: 'For finite sets, **$|A \\cup B| = |A| + |B| - |A \\cap B|$**; for three sets add all three sizes, subtract the three pairwise intersections and add back the triple intersection.',
-        detail: 'Elements of $A \\cap B$ get counted twice by $|A| + |B|$, so the overlap is subtracted once. Companion facts: $|A - B| = |A| - |A \\cap B|$ and "only $A$" means $|A| - |A \\cap B|$. Every survey question in JEE Main is this theorem in costume.',
+        detail: 'Elements of $A \\cap B$ get counted twice by $|A| + |B|$, so the overlap is subtracted once. Companion facts: $|A - B| = |A| - |A \\cap B|$ and "only $A$" means $|A| - |A \\cap B|$. Every survey question in engineering assessment is this theorem in costume.',
       },
       {
         term: 'Venn diagrams as a proof tool',
         kind: 'method',
         statement: 'Every set identity can be **checked by shading**: shade the regions of each side separately on a Venn diagram and confirm the pictures coincide.',
-        detail: 'In an exam, testing a candidate identity on a small concrete universal set such as $X = \\{1, 2, 3, 4\\}$ with $A = \\{1, 2\\}$, $B = \\{2, 3\\}$ eliminates wrong options in seconds. The duality principle — swapping $\\cup \\leftrightarrow \\cap$ and $X \\leftrightarrow \\emptyset$ in any true identity gives another true identity — doubles the value of every law memorised.',
+        detail: 'In an assessment, testing a candidate identity on a small concrete universal set such as $X = \\{1, 2, 3, 4\\}$ with $A = \\{1, 2\\}$, $B = \\{2, 3\\}$ eliminates wrong options in seconds. The duality principle — swapping $\\cup \\leftrightarrow \\cap$ and $X \\leftrightarrow \\emptyset$ in any true identity gives another true identity — doubles the value of every law memorised.',
       },
     ],
     examples: [
@@ -120,7 +120,7 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 2 · 2.1
   {
-    sectionId: 'jeemain-math-u2-s1',
+    sectionId: 'math-m2-s1',
     readingTime: 9,
     prerequisites: [
       'The Cartesian plane and ordered pairs $(x, y)$',
@@ -139,7 +139,7 @@ export const jeemainMathContent: SectionContent[] = [
         term: 'The imaginary unit',
         kind: 'definition',
         statement: 'The symbol **$i$** is defined by $i^2 = -1$; its powers cycle $i, -1, -i, 1$ with period 4, so $i^{4k + r} = i^r$.',
-        detail: 'For a negative real under a root, $\\sqrt{-d} = i\\sqrt{d}$ for $d > 0$. Large exponents reduce modulo 4: since $2027 = 4 \\cdot 506 + 3$, $i^{2027} = i^3 = -i$. Forgetting the cycle and writing $i^{2027} = i$ is a standard JEE slip.',
+        detail: 'For a negative real under a root, $\\sqrt{-d} = i\\sqrt{d}$ for $d > 0$. Large exponents reduce modulo 4: since $2027 = 4 \\cdot 506 + 3$, $i^{2027} = i^3 = -i$. Forgetting the cycle and writing $i^{2027} = i$ is a standard engineering assessment slip.',
       },
       {
         term: 'Ordered pairs and the Argand diagram',
@@ -163,7 +163,7 @@ export const jeemainMathContent: SectionContent[] = [
         term: 'Complex roots of real quadratics',
         kind: 'theorem',
         statement: 'If $D = b^2 - 4ac < 0$, then $ax^2 + bx + c = 0$ has the conjugate pair of roots $\\frac{-b \\pm i\\sqrt{4ac - b^2}}{2a}$, with $\\alpha + \\beta = -\\frac{b}{a}$ and $\\alpha\\beta = \\frac{c}{a}$ both real.',
-        detail: 'Real coefficients force complex roots to appear in conjugate pairs — replacing $i$ by $-i$ changes nothing in the equation. The Vieta sums $\\alpha + \\beta$ and $\\alpha\\beta$ staying real is what lets JEE questions ask for $\\alpha^2 + \\beta^2$, $\\alpha^3 + \\beta^3$ or higher power sums without ever computing the roots individually.',
+        detail: 'Real coefficients force complex roots to appear in conjugate pairs — replacing $i$ by $-i$ changes nothing in the equation. The Vieta sums $\\alpha + \\beta$ and $\\alpha\\beta$ staying real is what lets engineering assessment questions ask for $\\alpha^2 + \\beta^2$, $\\alpha^3 + \\beta^3$ or higher power sums without ever computing the roots individually.',
       },
     ],
     examples: [
@@ -227,13 +227,13 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 3 · 3.1
   {
-    sectionId: 'jeemain-math-u3-s1',
+    sectionId: 'math-m3-s1',
     readingTime: 9,
     prerequisites: [
       'Rectangular arrays of numbers and summation notation $\\sum$',
       'Expanding and collecting polynomial terms',
     ],
-    intro: 'A matrix is a rectangular array of numbers arranged in rows and columns, written $A = [a_{ij}]_{m \\times n}$. Its algebra — addition, scalar multiplication and the all-important row-by-column product — differs from number algebra in two JEE-critical ways: multiplication is not commutative, and the product of two nonzero matrices can be zero. Mastering the types (square, diagonal, symmetric, skew) and the transpose laws here makes determinants and linear systems mechanical later in this unit.',
+    intro: 'A matrix is a rectangular array of numbers arranged in rows and columns, written $A = [a_{ij}]_{m \\times n}$. Its algebra — addition, scalar multiplication and the all-important row-by-column product — differs from number algebra in two engineering assessment-critical ways: multiplication is not commutative, and the product of two nonzero matrices can be zero. Mastering the types (square, diagonal, symmetric, skew) and the transpose laws here makes determinants and linear systems mechanical later in this unit.',
     objectives: [
       'Multiply matrices row-by-column and know when $AB$ is defined: an $m \\times n$ $A$ needs an $n \\times p$ $B$, giving $m \\times p$',
       'Use the transpose laws $(AB)^T = B^T A^T$ and classify special types: diagonal, scalar, identity, symmetric $A^T = A$ and skew-symmetric $A^T = -A$',
@@ -251,7 +251,7 @@ export const jeemainMathContent: SectionContent[] = [
         term: 'Types of matrices',
         kind: 'definition',
         statement: 'A square matrix is **diagonal** when $a_{ij} = 0$ for $i \\ne j$, **scalar** when diagonal with equal diagonal entries, the **identity** $I_n$ when those entries are 1; it is **symmetric** when $A^T = A$ and **skew-symmetric** when $A^T = -A$.',
-        detail: 'A skew-symmetric matrix must have zero diagonal ($a_{ii} = -a_{ii}$). Every square matrix splits uniquely as $A = \\frac{1}{2}(A + A^T) + \\frac{1}{2}(A - A^T)$, a symmetric plus a skew-symmetric matrix — a recurring JEE Main question. Diagonal matrices multiply entrywise on the diagonal: $\\mathrm{diag}(a)\\mathrm{diag}(b) = \\mathrm{diag}(ab)$, which is why they behave like numbers.',
+        detail: 'A skew-symmetric matrix must have zero diagonal ($a_{ii} = -a_{ii}$). Every square matrix splits uniquely as $A = \\frac{1}{2}(A + A^T) + \\frac{1}{2}(A - A^T)$, a symmetric plus a skew-symmetric matrix — a recurring engineering assessment question. Diagonal matrices multiply entrywise on the diagonal: $\\mathrm{diag}(a)\\mathrm{diag}(b) = \\mathrm{diag}(ab)$, which is why they behave like numbers.',
       },
       {
         term: 'Addition and scalar multiplication',
@@ -331,13 +331,13 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 4 · 4.1
   {
-    sectionId: 'jeemain-math-u4-s1',
+    sectionId: 'math-m4-s1',
     readingTime: 8,
     prerequisites: [
       'Multiplication tables and systematic listing',
       'Set language for "and"/"or" decisions (Unit 1)',
     ],
-    intro: 'Every counting question in the JEE Main syllabus — permutations, combinations, probability, even binomial coefficients — reduces to one idea: if a job splits into stages performed one after another, multiply the number of choices at each stage. That is the fundamental principle of counting; its partner, the addition principle, sums choices that are alternatives. Deciding "and $\\to$ multiply, or $\\to$ add" correctly is the single highest-leverage counting skill.',
+    intro: 'Every counting question in the engineering assessment syllabus — permutations, combinations, probability, even binomial coefficients — reduces to one idea: if a job splits into stages performed one after another, multiply the number of choices at each stage. That is the fundamental principle of counting; its partner, the addition principle, sums choices that are alternatives. Deciding "and $\\to$ multiply, or $\\to$ add" correctly is the single highest-leverage counting skill.',
     objectives: [
       'Apply the multiplication principle to multi-stage jobs and the addition principle to disjoint cases',
       'Translate word problems into slot diagrams, handling the most restrictive condition first',
@@ -372,7 +372,7 @@ export const jeemainMathContent: SectionContent[] = [
       {
         term: 'The and/or discipline',
         kind: 'insight',
-        statement: '**AND joins stages — multiply; OR joins cases — add.** Reading the grammar of the question aloud before computing prevents the most common JEE counting errors.',
+        statement: '**AND joins stages — multiply; OR joins cases — add.** Reading the grammar of the question aloud before computing prevents the most common engineering assessment counting errors.',
         detail: 'Choosing a captain and a vice-captain from 11 players multiplies ($11 \\times 10 = 110$) because both selections happen; travelling from A to C through B or by one direct road adds ($5 \\times 4 + 1 = 21$) because the routes are alternatives. Mixed problems alternate the operations — exactly what the 4-digit even-number example below rehearses.',
       },
     ],
@@ -439,13 +439,13 @@ export const jeemainMathContent: SectionContent[] = [
   // for a Positive Integral Index' — NTA Unit 5. (The task brief's shorthand
   // label "Sequences and Series" belongs to Unit 6 and is not this section.)
   {
-    sectionId: 'jeemain-math-u5-s1',
+    sectionId: 'math-m5-s1',
     readingTime: 9,
     prerequisites: [
       'Expanding $(a + b)^2$ and $(a + b)^3$ by direct multiplication',
       'Factorial notation $n!$ and $\\binom{n}{r}$ from Unit 4',
     ],
-    intro: 'Multiplying out $(a + b)^n$ by hand dies by $n = 4$; the binomial theorem does it in one line for every positive integral index: $(a + b)^n = \\sum_{r=0}^{n} \\binom{n}{r} a^{n-r} b^r$. Each term pairs a coefficient $\\binom{n}{r}$ with sliding powers of $a$ and $b$, from $a^n$ down to $b^n$. JEE Main rewards three instant read-offs from any expansion: the number of terms $n + 1$, the symmetry $\\binom{n}{r} = \\binom{n}{n-r}$, and the coefficient sum $2^n$ obtained by setting $a = b = 1$.',
+    intro: 'Multiplying out $(a + b)^n$ by hand dies by $n = 4$; the binomial theorem does it in one line for every positive integral index: $(a + b)^n = \\sum_{r=0}^{n} \\binom{n}{r} a^{n-r} b^r$. Each term pairs a coefficient $\\binom{n}{r}$ with sliding powers of $a$ and $b$, from $a^n$ down to $b^n$. engineering assessment rewards three instant read-offs from any expansion: the number of terms $n + 1$, the symmetry $\\binom{n}{r} = \\binom{n}{n-r}$, and the coefficient sum $2^n$ obtained by setting $a = b = 1$.',
     objectives: [
       'Write the expansion of $(a + b)^n$ and name the term containing $a^{n-r}b^r$ as the $(r + 1)$-th term',
       'Exploit the symmetry $\\binom{n}{r} = \\binom{n}{n-r}$ and Pascal\'s rule $\\binom{n}{r} + \\binom{n}{r-1} = \\binom{n+1}{r}$',
@@ -475,13 +475,13 @@ export const jeemainMathContent: SectionContent[] = [
         term: 'Reading off a specific power',
         kind: 'method',
         statement: 'To land on the term containing a chosen power, **solve the exponent equation first**: in the expansion of $(x + y)^n$ the power of $x$ in $T_{r+1}$ is $n - r$, so fix $r$ before computing any coefficient.',
-        detail: 'For $(a + b)^7$, the term with $a^5 b^2$ needs $n - r = 5$, i.e. $r = 2$; its coefficient is $\\binom{7}{2} = 21$. JEE questions hide this in guises like $(x^2 + \\frac{1}{x})^n$ where the exponent equation is $2(n - r) - r = k$ — always write that equation before reaching for factorials.',
+        detail: 'For $(a + b)^7$, the term with $a^5 b^2$ needs $n - r = 5$, i.e. $r = 2$; its coefficient is $\\binom{7}{2} = 21$. engineering assessment questions hide this in guises like $(x^2 + \\frac{1}{x})^n$ where the exponent equation is $2(n - r) - r = k$ — always write that equation before reaching for factorials.',
       },
       {
         term: 'AM–GM on a coefficient set',
         kind: 'insight',
         statement: 'The $n + 1$ coefficients of $(1 + x)^n$ are **positive and sum to $2^n$**, so their arithmetic mean is $\\frac{2^n}{n+1}$ and AM–GM bounds their geometric mean: $\\left(\\prod_{r=0}^{n} \\binom{n}{r}\\right)^{1/(n+1)} \\le \\frac{2^n}{n+1}$.',
-        detail: 'Equality in AM–GM needs all coefficients equal, which happens only for $n = 0$ and $n = 1$; for every $n \\ge 2$ the inequality is strict. This is the standard JEE chain: binomial sum $2^n$ first, AM–GM second — and it previews the AM–GM machinery of Unit 6.',
+        detail: 'Equality in AM–GM needs all coefficients equal, which happens only for $n = 0$ and $n = 1$; for every $n \\ge 2$ the inequality is strict. This is the standard engineering assessment chain: binomial sum $2^n$ first, AM–GM second — and it previews the AM–GM machinery of Unit 6.',
       },
     ],
     examples: [
@@ -544,14 +544,14 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 7 · 7.1
   {
-    sectionId: 'jeemain-math-u7-s1',
+    sectionId: 'math-m7-s1',
     readingTime: 10,
     prerequisites: [
       'Set-builder notation and the function concept from Unit 1',
       'Rules of exponents and logarithms',
       'Trigonometric ratios of standard angles (Unit 14)',
     ],
-    intro: 'A real function $f : X \\to \\mathbb{R}$ assigns exactly one real output to each input, and its graph — the set of points $(x, f(x))$ — is the fastest way to see domain, range and behaviour at a glance. JEE Main builds its earliest hard questions on exactly this machinery: find the domain where a formula is legal, the range it actually attains, compose or invert functions, and recognise the standard shapes — parabola, hyperbola, exponential, logarithm, sine wave. Everything in the later calculus sections of this unit stands on these families.',
+    intro: 'A real function $f : X \\to \\mathbb{R}$ assigns exactly one real output to each input, and its graph — the set of points $(x, f(x))$ — is the fastest way to see domain, range and behaviour at a glance. engineering assessment builds its earliest hard questions on exactly this machinery: find the domain where a formula is legal, the range it actually attains, compose or invert functions, and recognise the standard shapes — parabola, hyperbola, exponential, logarithm, sine wave. Everything in the later calculus sections of this unit stands on these families.',
     objectives: [
       'Find natural domains using the three taboos: zero denominators, negative radicands and non-positive logarithm arguments',
       'Compute ranges by solving $y = f(x)$ for $x$ and demanding real solutions',
@@ -563,7 +563,7 @@ export const jeemainMathContent: SectionContent[] = [
         term: 'Function, domain and range',
         kind: 'definition',
         statement: 'A **function** $f : A \\to B$ sends each $x \\in A$ to a single value $f(x) \\in B$; the **domain** is the set of legal inputs and the **range** is the set of outputs actually attained.',
-        detail: 'The graph passes the vertical line test — one crossing per $x$. The codomain $B$ may be larger than the range: $f(x) = x^2$ with codomain $\\mathbb{R}$ still has range $[0, \\infty)$, and that gap is a favourite JEE distinction. For a formula with no stated domain, the natural domain is the largest set where the formula makes sense.',
+        detail: 'The graph passes the vertical line test — one crossing per $x$. The codomain $B$ may be larger than the range: $f(x) = x^2$ with codomain $\\mathbb{R}$ still has range $[0, \\infty)$, and that gap is a favourite engineering assessment distinction. For a formula with no stated domain, the natural domain is the largest set where the formula makes sense.',
       },
       {
         term: 'Algebra of functions',
@@ -575,7 +575,7 @@ export const jeemainMathContent: SectionContent[] = [
         term: 'The standard families',
         kind: 'notation',
         statement: 'Memorise the family cards: **polynomial** $p(x)$ (domain $\\mathbb{R}$), **rational** $\\frac{p}{q}$ (exclude zeros of $q$), **$\\sin, \\cos$** (domain $\\mathbb{R}$, range $[-1, 1]$), **$\\tan$** (undefined at odd $\\frac{\\pi}{2}$), **$a^x$** (domain $\\mathbb{R}$, range $(0, \\infty)$) and **$\\log_a x$** (domain $(0, \\infty)$, range $\\mathbb{R}$).',
-        detail: 'The exponential and logarithm are mirror images across $y = x$ — they swap domain with range. Rational functions like $\\frac{1}{x}$ punch holes at zeros of the denominator; $\\sqrt{x}$ cuts away the negative axis; $|x|$ gives the V-shaped graph. Together with shifts and stretches these generate every "graph of simple function" JEE asks for.',
+        detail: 'The exponential and logarithm are mirror images across $y = x$ — they swap domain with range. Rational functions like $\\frac{1}{x}$ punch holes at zeros of the denominator; $\\sqrt{x}$ cuts away the negative axis; $|x|$ gives the V-shaped graph. Together with shifts and stretches these generate every "graph of simple function" engineering assessment asks for.',
       },
       {
         term: 'Inverse functions',
@@ -587,7 +587,7 @@ export const jeemainMathContent: SectionContent[] = [
         term: 'Graph transformations and symmetry',
         kind: 'method',
         statement: '**$y = f(x - a) + b$ shifts the graph right by $a$ and up by $b$**; $y = -f(x)$ reflects in the $x$-axis, $y = f(-x)$ in the $y$-axis, and $y = |f(x)|$ flips the negative parts upward.',
-        detail: 'Even functions satisfy $f(-x) = f(x)$ (symmetric about the $y$-axis — $x^2, \\cos x$), odd ones $f(-x) = -f(x)$ (symmetric about the origin — $x^3, \\sin x$); a product of two odd functions is even, which settles questions like $x \\sin x$ instantly. The greatest-integer function $[x]$, constant between consecutive integers with jumps at each, is the JEE favourite step graph and reappears throughout the limits sections.',
+        detail: 'Even functions satisfy $f(-x) = f(x)$ (symmetric about the $y$-axis — $x^2, \\cos x$), odd ones $f(-x) = -f(x)$ (symmetric about the origin — $x^3, \\sin x$); a product of two odd functions is even, which settles questions like $x \\sin x$ instantly. The greatest-integer function $[x]$, constant between consecutive integers with jumps at each, is the engineering assessment favourite step graph and reappears throughout the limits sections.',
       },
     ],
     examples: [
@@ -649,7 +649,7 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 8 · 8.1
   {
-    sectionId: 'jeemain-math-u8-s1',
+    sectionId: 'math-m8-s1',
     readingTime: 10,
     prerequisites: [
       'Derivatives of $x^n$, $\\sin x$, $\\cos x$, $e^x$ and $\\ln x$ (Unit 7)',
@@ -754,7 +754,7 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 10 · 10.1
   {
-    sectionId: 'jeemain-math-u10-s1',
+    sectionId: 'math-m10-s1',
     readingTime: 9,
     prerequisites: [
       'Plotting points and the Pythagoras theorem',
@@ -796,7 +796,7 @@ export const jeemainMathContent: SectionContent[] = [
         term: 'The two standard distance loci',
         kind: 'theorem',
         statement: '$PA = r$ traces the **circle** $(x - h)^2 + (y - k)^2 = r^2$ about $A = (h, k)$, while $PA = PB$ traces the **perpendicular bisector** of $AB$ — a straight line, because squaring cancels the $x^2 + y^2$ terms.',
-        detail: 'Squaring both sides of a distance equation is safe since distances are nonnegative. For $PA = k \\cdot PB$ with $k \\ne 1$, the $x^2 + y^2$ terms survive with unequal coefficients and the locus is a circle — the Apollonius circle the worked example builds. This is the same equation JEE later disguises as $|z - z_1| = k|z - z_2|$ in complex-number form (Unit 2).',
+        detail: 'Squaring both sides of a distance equation is safe since distances are nonnegative. For $PA = k \\cdot PB$ with $k \\ne 1$, the $x^2 + y^2$ terms survive with unequal coefficients and the locus is a circle — the Apollonius circle the worked example builds. This is the same equation engineering assessment later disguises as $|z - z_1| = k|z - z_2|$ in complex-number form (Unit 2).',
       },
     ],
     examples: [
@@ -858,13 +858,13 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 11 · 11.1
   {
-    sectionId: 'jeemain-math-u11-s1',
+    sectionId: 'math-m11-s1',
     readingTime: 8,
     prerequisites: [
       'Plane coordinate geometry: distance and section formulae (Unit 10)',
       'Squares, cubes and simplifying radicals',
     ],
-    intro: 'Space needs one more axis: a point is now a triple $(x, y, z)$, located by three mutually perpendicular coordinate planes through the origin. The distance formula gains one squared term, $d = \\sqrt{(\\Delta x)^2 + (\\Delta y)^2 + (\\Delta z)^2}$, and the section formula gains one column, but the logic is identical to the plane. JEE Main keeps this unit short and method-driven — identify the octant, compute a distance, apply a ratio — which makes these marks the fastest in the paper once the coordinate arithmetic is automatic.',
+    intro: 'Space needs one more axis: a point is now a triple $(x, y, z)$, located by three mutually perpendicular coordinate planes through the origin. The distance formula gains one squared term, $d = \\sqrt{(\\Delta x)^2 + (\\Delta y)^2 + (\\Delta z)^2}$, and the section formula gains one column, but the logic is identical to the plane. engineering assessment keeps this unit short and method-driven — identify the octant, compute a distance, apply a ratio — which makes these marks the fastest in the paper once the coordinate arithmetic is automatic.',
     objectives: [
       'Locate points $(x, y, z)$ in octants and compute distances to the coordinate planes and axes',
       'Apply the 3-D distance formula to classify triangles in space and detect collinearity',
@@ -876,7 +876,7 @@ export const jeemainMathContent: SectionContent[] = [
         term: 'Coordinates in space',
         kind: 'definition',
         statement: 'A point in space is a triple $(x, y, z)$; the signs of the three coordinates pick one of **eight octants**, and the coordinate planes are the sets $x = 0$, $y = 0$, $z = 0$.',
-        detail: 'The point $(a, b, c)$ lies $|a|$ from the $yz$-plane, $|b|$ from the $xz$-plane and $|c|$ from the $xy$-plane; its distance from the $x$-axis is $\\sqrt{b^2 + c^2}$ (drop the coordinate along the axis) and from the origin $\\sqrt{a^2 + b^2 + c^2}$. Points like $(-2, 3, -4)$ occupy the octant with signs $(-, +, -)$ — sign reading is a free JEE mark.',
+        detail: 'The point $(a, b, c)$ lies $|a|$ from the $yz$-plane, $|b|$ from the $xz$-plane and $|c|$ from the $xy$-plane; its distance from the $x$-axis is $\\sqrt{b^2 + c^2}$ (drop the coordinate along the axis) and from the origin $\\sqrt{a^2 + b^2 + c^2}$. Points like $(-2, 3, -4)$ occupy the octant with signs $(-, +, -)$ — sign reading is a free engineering assessment mark.',
       },
       {
         term: 'Distance formula in space',
@@ -894,7 +894,7 @@ export const jeemainMathContent: SectionContent[] = [
         term: 'Ratio hunting with k : 1',
         kind: 'method',
         statement: 'When a ratio is unknown, **call it $k : 1$** and write the section formula; each known coordinate or condition then produces one linear equation in $k$.',
-        detail: 'A negative solution for $k$ means the division is external — the point lies outside the segment. This device converts "find the ratio in which the plane cuts the segment" into "set one coordinate to zero and solve", the classic JEE pattern in the worked example.',
+        detail: 'A negative solution for $k$ means the division is external — the point lies outside the segment. This device converts "find the ratio in which the plane cuts the segment" into "set one coordinate to zero and solve", the classic engineering assessment pattern in the worked example.',
       },
       {
         term: 'Spheres, bisector planes',
@@ -962,14 +962,14 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 14 · 14.1
   {
-    sectionId: 'jeemain-math-u14-s1',
+    sectionId: 'math-m14-s1',
     readingTime: 9,
     prerequisites: [
       'Right-triangle definitions of $\\sin$, $\\cos$ and $\\tan$',
       'The unit circle and radian measure',
       'Solving quadratic equations',
     ],
-    intro: 'Extend the ratios $\\sin\\theta$ and $\\cos\\theta$ from a right triangle to the whole unit circle: for any angle $\\theta$, the point at arc-length $\\theta$ from $(1, 0)$ is $(\\cos\\theta, \\sin\\theta)$, and the other four functions follow. Quadrant signs — all positive in the first, only $\\sin$ in the second, only $\\tan$ in the third, only $\\cos$ in the fourth — together with periodicity $2\\pi$ (and $\\pi$ for $\\tan$) drive every JEE Main question in this unit, from sign hunting to general solutions of trigonometric equations.',
+    intro: 'Extend the ratios $\\sin\\theta$ and $\\cos\\theta$ from a right triangle to the whole unit circle: for any angle $\\theta$, the point at arc-length $\\theta$ from $(1, 0)$ is $(\\cos\\theta, \\sin\\theta)$, and the other four functions follow. Quadrant signs — all positive in the first, only $\\sin$ in the second, only $\\tan$ in the third, only $\\cos$ in the fourth — together with periodicity $2\\pi$ (and $\\pi$ for $\\tan$) drive every engineering assessment question in this unit, from sign hunting to general solutions of trigonometric equations.',
     objectives: [
       'Place any angle in the correct quadrant, reduce it with allied-angle formulas and fix the sign',
       'Recall exact values at $0, \\frac{\\pi}{6}, \\frac{\\pi}{4}, \\frac{\\pi}{3}, \\frac{\\pi}{2}$ and shift angles by full periods',
@@ -987,7 +987,7 @@ export const jeemainMathContent: SectionContent[] = [
         term: 'Domains, ranges and the fundamental identity',
         kind: 'law',
         statement: 'For all $\\theta$: **$-1 \\le \\sin\\theta \\le 1$ and $-1 \\le \\cos\\theta \\le 1$**, with $\\tan\\theta$ ranging over all reals but undefined at odd multiples of $\\frac{\\pi}{2}$; and $\\sin^2\\theta + \\cos^2\\theta = 1$, which implies $1 + \\tan^2\\theta = \\sec^2\\theta$ and $1 + \\cot^2\\theta = \\cosec^2\\theta$.',
-        detail: 'The bounds instantly reject impossible equations: $\\sin\\theta = \\frac{3}{2}$ has no solution, a one-line elimination in JEE. Also $|\\sec\\theta| \\ge 1$ and $|\\cosec\\theta| \\ge 1$ since they are reciprocals of numbers of modulus at most 1. When a quadratic in $\\sin\\theta$ produces roots, keep only those in $[-1, 1]$.',
+        detail: 'The bounds instantly reject impossible equations: $\\sin\\theta = \\frac{3}{2}$ has no solution, a one-line elimination in engineering assessment. Also $|\\sec\\theta| \\ge 1$ and $|\\cosec\\theta| \\ge 1$ since they are reciprocals of numbers of modulus at most 1. When a quadratic in $\\sin\\theta$ produces roots, keep only those in $[-1, 1]$.',
       },
       {
         term: 'Allied angle reductions',

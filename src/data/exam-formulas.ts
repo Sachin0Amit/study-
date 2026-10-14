@@ -26,18 +26,18 @@ export const EXAM_FORMULAS: FormulaEntry[] = [
   { chapterId: 'engmath-ch10', section: '10.4', name: 'Sampling Criterion', formula: 'fs > 2·fmax or aliasing folds spectra', latex: 'f_s > 2 f_{\\max}', note: 'undersampling maps f to |f − nfs|' },
 
   // ================== JEE Mathematics Companion ==================
-  { chapterId: 'jeemaths-ch1', section: '1.2', name: 'De Moivre Rotation', formula: '(cosθ + i sinθ)ⁿ = cos nθ + i sin nθ; ×e^{iθ} rotates by θ', note: 'roots of unity = regular polygons' },
-  { chapterId: 'jeemaths-ch1', section: '1.3', name: 'Omega Algebra', formula: '1 + ω + ω² = 0; ω³ = 1, ω ≠ 1', note: 'kill all symmetric sums with this' },
-  { chapterId: 'jeemaths-ch2', section: '2.4', name: 'Common-Root Condition', formula: 'shared root ⇒ resultant zero; equal ratios of coefficients', note: 'subtract the equations first' },
-  { chapterId: 'jeemaths-ch3', section: '3.1', name: 'Determinant Factor Trick', formula: 'Rᵢ → Rᵢ − Rⱼ exposes (a−b) factors; triangular = product of diagonal', note: 'never expand a factorable determinant' },
-  { chapterId: 'jeemaths-ch4', section: '4.2', name: 'General Term', formula: 'T_{r+1} = C(n,r)·x^{n−r}·y^r', latex: 'T_{r+1} = \\binom{n}{r} x^{n-r} y^{r}', note: 'independent term: exponent of x = 0' },
-  { chapterId: 'jeemaths-ch5', section: '5.2', name: 'AM ≥ GM ≥ HM', formula: 'equality iff all numbers equal; use for max/min under fixed sum/product', latex: '\\frac{a+b}{2} \\ge \\sqrt{ab} \\ge \\frac{2}{1/a+1/b}', note: 'HP via reciprocals' },
-  { chapterId: 'jeemaths-ch6', section: '6.3', name: 'Principal Branches', formula: 'sin⁻¹[−π/2,π/2], cos⁻¹[0,π], tan⁻¹(−π/2,π/2)', note: 'outside branch ⇒ convert first' },
-  { chapterId: 'jeemaths-ch7', section: '7.4', name: 'Circle Tangent Toolkit', formula: 'T = 0 tangent; T² = SS₁ pair; C₁−C₂ = 0 radical axis', note: 'director circle: x²+y² = 2r²' },
-  { chapterId: 'jeemaths-ch8', section: '8.1', name: 'Parabola Focal Facts', formula: 'y² = 4ax: focus (a,0), latus rectum 4a, param (at²,2at)', note: 'focal chord: t₁t₂ = −1' },
-  { chapterId: 'jeemaths-ch9', section: '9.2', name: 'Skew-Line Distance', formula: 'd = |(a₂−a₁)·(b₁×b₂)| / |b₁×b₂|', latex: 'd = \\frac{|(\\mathbf{a}_2-\\mathbf{a}_1)\\cdot(\\mathbf{b}_1\\times\\mathbf{b}_2)|}{|\\mathbf{b}_1\\times\\mathbf{b}_2|}', note: 'parallel lines: drop one cross' },
-  { chapterId: 'jeemaths-ch10', section: '10.3', name: 'Bayes Partition', formula: 'P(Fᵢ|E) = P(E|Fᵢ)P(Fᵢ) / ΣⱼP(E|Fⱼ)P(Fⱼ)', latex: 'P(F_i\\mid E) = \\frac{P(E\\mid F_i)P(F_i)}{\\sum_j P(E\\mid F_j)P(F_j)}', note: 'denominator = total probability' },
-  { chapterId: 'jeemaths-ch10', section: '10.4', name: 'Binomial Moments', formula: 'mean = np, variance = npq', note: 'most-likely k near (n+1)p' },
+  { chapterId: 'advmath-ch1', section: '1.2', name: 'De Moivre Rotation', formula: '(cosθ + i sinθ)ⁿ = cos nθ + i sin nθ; ×e^{iθ} rotates by θ', note: 'roots of unity = regular polygons' },
+  { chapterId: 'advmath-ch1', section: '1.3', name: 'Omega Algebra', formula: '1 + ω + ω² = 0; ω³ = 1, ω ≠ 1', note: 'kill all symmetric sums with this' },
+  { chapterId: 'advmath-ch2', section: '2.4', name: 'Common-Root Condition', formula: 'shared root ⇒ resultant zero; equal ratios of coefficients', note: 'subtract the equations first' },
+  { chapterId: 'advmath-ch3', section: '3.1', name: 'Determinant Factor Trick', formula: 'Rᵢ → Rᵢ − Rⱼ exposes (a−b) factors; triangular = product of diagonal', note: 'never expand a factorable determinant' },
+  { chapterId: 'advmath-ch4', section: '4.2', name: 'General Term', formula: 'T_{r+1} = C(n,r)·x^{n−r}·y^r', latex: 'T_{r+1} = \\binom{n}{r} x^{n-r} y^{r}', note: 'independent term: exponent of x = 0' },
+  { chapterId: 'advmath-ch5', section: '5.2', name: 'AM ≥ GM ≥ HM', formula: 'equality iff all numbers equal; use for max/min under fixed sum/product', latex: '\\frac{a+b}{2} \\ge \\sqrt{ab} \\ge \\frac{2}{1/a+1/b}', note: 'HP via reciprocals' },
+  { chapterId: 'advmath-ch6', section: '6.3', name: 'Principal Branches', formula: 'sin⁻¹[−π/2,π/2], cos⁻¹[0,π], tan⁻¹(−π/2,π/2)', note: 'outside branch ⇒ convert first' },
+  { chapterId: 'advmath-ch7', section: '7.4', name: 'Circle Tangent Toolkit', formula: 'T = 0 tangent; T² = SS₁ pair; C₁−C₂ = 0 radical axis', note: 'director circle: x²+y² = 2r²' },
+  { chapterId: 'advmath-ch8', section: '8.1', name: 'Parabola Focal Facts', formula: 'y² = 4ax: focus (a,0), latus rectum 4a, param (at²,2at)', note: 'focal chord: t₁t₂ = −1' },
+  { chapterId: 'advmath-ch9', section: '9.2', name: 'Skew-Line Distance', formula: 'd = |(a₂−a₁)·(b₁×b₂)| / |b₁×b₂|', latex: 'd = \\frac{|(\\mathbf{a}_2-\\mathbf{a}_1)\\cdot(\\mathbf{b}_1\\times\\mathbf{b}_2)|}{|\\mathbf{b}_1\\times\\mathbf{b}_2|}', note: 'parallel lines: drop one cross' },
+  { chapterId: 'advmath-ch10', section: '10.3', name: 'Bayes Partition', formula: 'P(Fᵢ|E) = P(E|Fᵢ)P(Fᵢ) / ΣⱼP(E|Fⱼ)P(Fⱼ)', latex: 'P(F_i\\mid E) = \\frac{P(E\\mid F_i)P(F_i)}{\\sum_j P(E\\mid F_j)P(F_j)}', note: 'denominator = total probability' },
+  { chapterId: 'advmath-ch10', section: '10.4', name: 'Binomial Moments', formula: 'mean = np, variance = npq', note: 'most-likely k near (n+1)p' },
 
   // ================== JEE Chemistry ==================
   { chapterId: 'chem-ch1', section: '1.3', name: 'Molarity–Molality Link', formula: 'm = 1000·M / (1000·d − M·M_solute)', note: 'density bridges the two' },
@@ -141,12 +141,12 @@ export const EXAM_FORMULAS: FormulaEntry[] = [
   { chapterId: 'chem-ch25', section: '25.3', name: 'Disconnection Priority', formula: 'cut at branches, heteroatoms and symmetry; FG interconvert before disconnecting', note: 'two-group disconnections simplify most' },
 
   // ================== Classics (Hall & Knight + Loney) ==================
-  { chapterId: 'jeemaths-ch11', section: '11.3', name: 'Descartes Sign Rule', formula: 'positive real roots ≤ sign changes; shortfall is even', note: 'negative roots via f(−x)' },
-  { chapterId: 'jeemaths-ch12', section: '12.2', name: 'Resultant Elimination', formula: 'common root ⇒ determinant of Sylvester matrix zero', note: 'symmetric elimination avoids fractions' },
-  { chapterId: 'jeemaths-ch13', section: '13.1', name: 'General Binomial Term', formula: '(1+x)^n = Σ C(n,r)x^r; converges for |x|<1 when n ∉ ℕ', latex: '(1+x)^n = \\sum_r \\binom{n}{r}x^r, \\quad |x|<1', note: 'greatest term by T_{r+1}/T_r ≥ 1' },
-  { chapterId: 'jeemaths-ch14', section: '14.4', name: 'General Solution Forms', formula: 'sinθ=k ⇒ θ=nπ+(−1)ⁿα; cosθ=k ⇒ θ=2nπ±α; tanθ=k ⇒ θ=nπ+α', note: 'principal α in range first' },
-  { chapterId: 'jeemaths-ch15', section: '15.2', name: 'Sine Rule + Area', formula: 'a/sinA = 2R; Δ = ½ab·sinC = abc/4R = rs', latex: '\\frac{a}{\\sin A} = 2R; \\quad \\Delta = \\frac{abc}{4R} = rs', note: 'ambiguous case: two triangles or none' },
-  { chapterId: 'jeemaths-ch16', section: '16.3', name: 'Ratio Test', formula: 'lim|a_{n+1}/a_n| < 1 converges; > 1 diverges; = 1 try Raabe', note: 'factorials/exponentials ⇒ ratio first' },
+  { chapterId: 'advmath-ch11', section: '11.3', name: 'Descartes Sign Rule', formula: 'positive real roots ≤ sign changes; shortfall is even', note: 'negative roots via f(−x)' },
+  { chapterId: 'advmath-ch12', section: '12.2', name: 'Resultant Elimination', formula: 'common root ⇒ determinant of Sylvester matrix zero', note: 'symmetric elimination avoids fractions' },
+  { chapterId: 'advmath-ch13', section: '13.1', name: 'General Binomial Term', formula: '(1+x)^n = Σ C(n,r)x^r; converges for |x|<1 when n ∉ ℕ', latex: '(1+x)^n = \\sum_r \\binom{n}{r}x^r, \\quad |x|<1', note: 'greatest term by T_{r+1}/T_r ≥ 1' },
+  { chapterId: 'advmath-ch14', section: '14.4', name: 'General Solution Forms', formula: 'sinθ=k ⇒ θ=nπ+(−1)ⁿα; cosθ=k ⇒ θ=2nπ±α; tanθ=k ⇒ θ=nπ+α', note: 'principal α in range first' },
+  { chapterId: 'advmath-ch15', section: '15.2', name: 'Sine Rule + Area', formula: 'a/sinA = 2R; Δ = ½ab·sinC = abc/4R = rs', latex: '\\frac{a}{\\sin A} = 2R; \\quad \\Delta = \\frac{abc}{4R} = rs', note: 'ambiguous case: two triangles or none' },
+  { chapterId: 'advmath-ch16', section: '16.3', name: 'Ratio Test', formula: 'lim|a_{n+1}/a_n| < 1 converges; > 1 diverges; = 1 try Raabe', note: 'factorials/exponentials ⇒ ratio first' },
 
   // ================== Second Opinions (Mahan/Solomons/Lee-Guha) ==================
   { chapterId: 'chem-ch27', section: '27.2', name: 'Colligative Toolkit', formula: 'ΔTb = i·Kb·m; ΔTf = i·Kf·m; π = iCRT', latex: '\\Delta T_b = iK_b m; \\quad \\pi = iCRT', note: 'i counts dissociated particles' },

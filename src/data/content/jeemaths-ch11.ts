@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh11Content: SectionContent[] = [
   // ---------------------------------------------------------------- 11.1
   {
-    sectionId: 'jeemaths-ch11-s1',
+    sectionId: 'advmath-ch11-s1',
     readingTime: 9,
     intro: 'A polynomial of degree $n$ carries exactly $n$ roots when counted with multiplicity over the complex numbers, so coefficients and roots constrain each other tightly. Vieta relations turn those constraints into symmetric sums that can be read directly from coefficients. This section builds Vieta in full generality with power sums and the remainder factor toolkit.',
     objectives: [
@@ -134,7 +134,7 @@ export const jeemathsCh11Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 11.2
   {
-    sectionId: 'jeemaths-ch11-s2',
+    sectionId: 'advmath-ch11-s2',
     readingTime: 8,
     intro: 'Reciprocal equations read the same forwards and backwards, so roots pair as $r$ with $\\frac{1}{r}$ and the degree can be halved by a standard substitution. Shifting and scaling transformations reshape any polynomial while tracking how roots move. This section practises those classical reductions on cubics and quartics.',
     objectives: [
@@ -239,7 +239,7 @@ export const jeemathsCh11Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 11.3
   {
-    sectionId: 'jeemaths-ch11-s3',
+    sectionId: 'advmath-ch11-s3',
     readingTime: 8,
     intro: 'Descartes rule of signs bounds the number of positive and negative real roots by counting sign changes in the coefficient sequence. Simple rational bounds then trap all real roots inside an explicit interval. This section turns those two tools into fast root isolation.',
     objectives: [
@@ -344,7 +344,7 @@ export const jeemathsCh11Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 11.4
   {
-    sectionId: 'jeemaths-ch11-s4',
+    sectionId: 'advmath-ch11-s4',
     readingTime: 9,
     intro: 'Cubics and quartics admit classical closed forms built from depressed equations and resolvent quadratics. The discriminant reads the root pattern at a glance without solving. This section surveys the Cardano and Ferrari ideas plus fast discriminant use.',
     objectives: [
