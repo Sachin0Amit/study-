@@ -416,3 +416,54 @@ Stage Summary:
 - Old bookmarked ?lesson=jeemain-* URLs no longer resolve (IDs renamed) — acceptable consequence of the requested restructure
 - KNOWN RISK: 4GB box OOM-kills next-server during first-time route compiles; watchdog auto-recovers and disk cache makes retries cheap — pre-warm before browser QA (protocol in Task 7 note)
 - Next-phase opportunities: write more SectionContent for merged sections still on Syllabus Briefs; subject-wise practice sets in Test simulator; dedupe overlapping chapters (e.g., OS appears in semester + graduate + defence scopes)
+
+---
+Task ID: 11-a
+Agent: main-orchestrator
+Task: Status assessment + agent-browser QA round
+
+Work Log:
+- Read worklog.md in full; current structure 18 subjects / 24 books / 826 chapters / 4,067 sections confirmed
+- Dev server was dead on arrival (no watchdog running) — started scripts/dev-watchdog.sh in background; server OOM-restarted 4x during QA session (known 4GB RAM issue); followed warm-route protocol each time
+- QA via agent-browser (word-boundary audit for exam names): home CLEAN, book view CLEAN, chapter view CLEAN, simulator CLEAN (note: substring audit false-positives on "FUNDAMENTALS" containing NTA — use \b word boundaries)
+- Verified flows: home → Mathematics subject card → book view (64 chapters) → chapter 1 → lesson §1.1 → quiz interaction (option click → verified solution + explanation render) ✓; Test simulator: start 20Q timed test, answer question, quit with confirm dialog ✓; Progress dashboard renders ✓; footer present; mobile 390px no horizontal overflow ✓
+- Deep-linked URLs work (?chapter=rosen-ch1 restores view)
+- NOTE: "SAT at the frontier: NP-completeness" in Rosen math lesson = Boolean satisfiability problem (legit textbook topic), NOT an exam mention
+
+Stage Summary:
+- QA ISSUE FOUND (only one): VisualDiagramSolver (src/components/visual/visual-diagram-solver.tsx) falls back to 'universal_physics' (Vector Resolution & Physics Laboratory with "Physical parameters and conservation rules satisfied") for ANY unmatched question — shows irrelevant physics lab for logic/CS/English/aptitude questions. Fix: return null when no STEM topic matches (guard the universal fallback with physics keywords), render nothing in that case
+- Everything else stable; proceeding to fix + mandatory styling/features work
+
+---
+Task ID: 11-b
+Agent: main-orchestrator
+Task: Bug fix + mandatory feature (practice sets) + mandatory styling round + final validation
+
+Work Log:
+- BUG FIX (from 11-a QA): visual-diagram-solver.tsx detectDiagramTopic now returns `DiagramTopic | null` — logic_gates regex extended (logical equivalence/tautology/contrapositive/De Morgan/propositional equivalence), chem fallback tightened (bare `element` removed — it false-matched set theory), universal_physics fallback GUARDED behind physics-keyword regex; VisualDiagramSolver returns null when no topic and no customDiagram; lesson-view (BookExample + QuizSection) and exam-view (run phase) compute hasDiagram and hide the "Visual diagram" toggle when nothing will render
+- FEATURE (mandatory #5): Quick practice sets in Test simulator (exam-view.tsx) — module-level PRACTICE_SETS built from LIBRARY_SUBJECTS with curated SET_META (title/blurb/count/timed for all 18 subjects); setup screen gains a card grid: tap loads the subject's chapters + recommended format into the picker (active set highlighted via exact-match Set comparison), play button starts instantly; cards show pool count, set size, timed/untimed badge, subject accent icon; disabled state for pools < 4
+- STYLING (mandatory #4):
+  · library-view: subject cards now render their REAL subject icon (was hardcoded Sigma for all 18) with accent color + hover scale
+  · book-view: book-level progress bar in hero (X of Y lessons complete, % role=progressbar); "Jump back in" resume card (most-recent in-progress section, or next uncompleted after last completed — wraps); chapter cards gained hover border + focus-visible ring + "· N/M done" counter
+  · chapter-view: chapter progress bar + "next: §N" hint in header; "NEXT UP" badge + highlighted border on the recommended section (resumes in-progress section, else next uncompleted); focus-visible rings on section rows
+  · lesson-view: quiz results now show an animated circular score ring (SVG, framer-motion stroke animation) instead of a bare number
+  · chapter-icon.tsx: added missing 'cog' icon (mechanical-engineering subject was falling back to flask)
+- Browser QA round 2 (memory-careful protocol): practice sets render with real pool counts (Math 1615 Q, Physics 3226 Q, Chem 800 Q); Chemistry preset applied → "87 chapters selected · 800 questions" + Start button "15 Qs"; instant-start via play button → "TEST · Q 1/15" chemistry question ✓; jump-back-in card renders ("JUMP BACK IN / Propositional Logic / Chapter 1 · Logic & Proofs · Section 1.1 / Resume") — NOTE: CSS `uppercase` transforms innerText, audit with case-insensitive search; chapter progress "0/8 sections done · next: §1.1" + NEXT UP badge on §1.1 after logic refinement (in-progress section IS next-up); quiz area for the proposition question has NO diagram toggle and NO physics lab (fix verified); worked-example truth-table toggle still present (correct — genuine topic match); mobile 390px: no horizontal overflow on simulator
+- Final validation: bun run lint → 0 errors; bunx tsc --noEmit → no src/ errors; word-boundary exam-name audit on live homepage → CLEAN
+- Screenshots: download/qa-mobile-home.png, qa-chapter-view-nextup.png, qa-practice-sets.png, qa-practice-sets-mobile.png, qa-book-jumpback.png
+
+Stage Summary:
+
+## 1. Current project status (assessment)
+- StudyVerse SPA stable at 18 subjects / 24 books / 826 chapters / 4,067 sections; subject-wise only, ZERO exam names in any rendered output (re-verified this round with word-boundary audit)
+- All main flows QA-verified this session: library → subject → book → chapter → lesson → quiz; Test simulator setup/run/quit; progress dashboard; deep links (?chapter=rosen-ch1); mobile 390px
+- Environment: 4GB box OOM-kills next-server during first-time compiles; watchdog (scripts/dev-watchdog.sh) auto-restarts — IT MUST BE RUNNING (this session found it dead and restarted it); pre-warm routes via curl before opening the browser
+
+## 2. Goals / completed modifications / verification results
+- Goal: fix QA-found bug + mandatory styling + mandatory features
+- Completed: (a) irrelevant physics fallback diagram eliminated (null-topic → no diagram UI anywhere), (b) Quick practice sets feature, (c) styling detail round (real subject icons, book+chapter progress bars, Jump-back-in card, Next-up badge, quiz score ring, focus rings, 'cog' icon)
+- Verification: lint 0 errors, tsc clean, browser QA all green, screenshots in download/
+
+## 3. Unresolved issues / risks + next-phase priorities
+- RISKS: (1) watchdog must be restarted if the box reboots it away — check `ps aux | grep watchdog` when the server is down; (2) first-visit compiles can OOM — always curl-pre-warm; (3) agent-browser innerText audits must be case-insensitive (CSS uppercase) and word-boundary based ("FUNDAMENTALS" contains NTA)
+- NEXT PRIORITIES: (a) write more SectionContent for sections still on Syllabus Topic Briefs (~1,600 remain; the highest-value targets are the merged subject chapters' first sections), (b) dedupe overlapping chapters (OS/networks/DBMS appear in semester + graduate + defence scopes within cse-complete), (c) deeper simulator review analytics (time-per-question heat map exists; could add per-topic weak-spot drill), (d) print stylesheet for the practice-set picker is unnecessary but lesson print styles could gain page-break tuning

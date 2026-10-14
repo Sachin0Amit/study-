@@ -1,0 +1,2002 @@
+     1→'use client'
+     2→
+     3→import React, { useState, useEffect, useMemo, useRef } from 'react'
+     4→import { motion, AnimatePresence } from 'framer-motion'
+     5→import {
+     6→  Sparkles,
+     7→  Play,
+     8→  Pause,
+     9→  RotateCcw,
+    10→  Eye,
+    11→  CheckCircle2,
+    12→  Atom,
+    13→  Flame,
+    14→  Zap,
+    15→  Activity,
+    16→  Compass,
+    17→  Layers,
+    18→  ArrowRight,
+    19→  Maximize2,
+    20→  Pencil
+    21→} from 'lucide-react'
+    22→import { TeX } from '@/components/math'
+    23→import { RichText } from '@/components/rich-text'
+    24→import { HandDrawnSketch } from './hand-drawn-sketch'
+    25→
+    26→/* =====================================================================
+    27→   Physics & STEM Visual Diagram Solver Engine
+    28→   Provides animated, mathematically accurate SVG visual diagrams that
+    29→   illustrate and solve physics, math, and STEM questions step-by-step.
+    30→   ===================================================================== */
+    31→
+    32→export type DiagramTopic =
+    33→  | 'bohr_transitions'
+    34→  | 'projectile'
+    35→  | 'circular_motion'
+    36→  | 'free_body'
+    37→  | 'wave_interference'
+    38→  | 'doppler'
+    39→  | 'coulomb_efield'
+    40→  | 'circuits'
+    41→  | 'optics_snell'
+    42→  | 'thermodynamics_pv'
+    43→  | 'calculus_tangent'
+    44→  | 'logic_gates'
+    45→  | 'titration_equilibrium'
+    46→  | 'periodic_trends'
+    47→  | 'molecular_vsepr'
+    48→  | 'reaction_kinetics'
+    49→  | 'electrochem_galvanic'
+    50→  | 'universal_physics'
+    51→
+    52→/** Determine the most appropriate physics/math/chemistry diagram from question text & explanation */
+    53→export function detectDiagramTopic(
+    54→  text: string,
+    55→  explanation?: string,
+    56→  chapterId?: string
+    57→): DiagramTopic {
+    58→  const combined = `${text} ${explanation ?? ''} ${chapterId ?? ''}`.toLowerCase()
+    59→
+    60→  // --- Chemistry Topics ---
+    61→  if (
+    62→    /titrat|equivalence point|buffer|ph |poh|henderson|acid.*base|indicator|neutraliz|weak acid|pka|pkb|hydrolysis|chem-ch1\b|chem-ch5\b|chem-ch27\b|le chatelier|equilibrium constant|q vs k|haber process|reaction quotient/i.test(
+    63→      combined
+    64→    )
+    65→  ) {
+    66→    return 'titration_equilibrium'
+    67→  }
+    68→  if (
+    69→    /galvanic|voltaic|daniell cell|anode|cathode|nernst|electrode potential|standard reduction|salt bridge|faraday|electrochemical|chem-ch6\b/i.test(
+    70→      combined
+    71→    )
+    72→  ) {
+    73→    return 'electrochem_galvanic'
+    74→  }
+    75→  if (
+    76→    /rate law|order of reaction|zero order|first order|second order|half-life|arrhenius|activation energy|catalyst.*barrier|collision theory|chem-ch7\b|chem-ch19\b|chem-ch20\b|chem-ch26\b|chem-ch28\b/i.test(
+    77→      combined
+    78→    )
+    79→  ) {
+    80→    return 'reaction_kinetics'
+    81→  }
+    82→  if (
+    83→    /periodic trend|electronegativ|atomic radi|ionization energy|shielding effect|effective nuclear charge|electron affinity|mendeleev|chem-ch11-s1|chem-ch13\b|chem-ch14\b|chem-ch31\b/i.test(
+    84→      combined
+    85→    )
+    86→  ) {
+    87→    return 'periodic_trends'
+    88→  }
+    89→  if (
+    90→    /vsepr|molecular geometry|bond angle|lone pair|tetrahedral|trigonal|octahedral|bent molecule|sp3|sp2|sp\b|hybridiz|dipole moment|chem-ch8\b|chem-ch9\b|chem-ch10\b|chem-ch11\b|chem-ch12\b|chem-ch17\b|chem-ch21\b|chem-ch22\b|chem-ch23\b|chem-ch25\b|chem-ch32\b/i.test(
+    91→      combined
+    92→    )
+    93→  ) {
+    94→    return 'molecular_vsepr'
+    95→  }
+    96→
+    97→  // --- Physics & Math Topics ---
+    98→  if (
+    99→    /balmer|lyman|paschen|bohr|hydrogen|ground state|13\.6|spectral|rydberg|energy level|ionization|h-alpha|coletta-ch29|ch29|quantum atom|chem-ch2\b|chem-ch15\b|chem-ch16\b/i.test(
+   100→      combined
+   101→    )
+   102→  ) {
+   103→    return 'bohr_transitions'
+   104→  }
+   105→  if (
+   106→    /projectile|trajectory|launch|angle.*velocity|range.*gravity|parabola|horizontal velocity|vertical velocity|flight time|maximum height|coletta-ch3|young-ch3/i.test(
+   107→      combined
+   108→    )
+   109→  ) {
+   110→    return 'projectile'
+   111→  }
+   112→  if (
+   113→    /centripetal|circular motion|orbit.*speed|radius.*angular|tangential velocity|uniform circular/i.test(
+   114→      combined
+   115→    )
+   116→  ) {
+   117→    return 'circular_motion'
+   118→  }
+   119→  if (
+   120→    /incline|friction|normal force|newton|free body|tension.*pulley|slope|coletta-ch4|young-ch5/i.test(
+   121→      combined
+   122→    )
+   123→  ) {
+   124→    return 'free_body'
+   125→  }
+   126→  if (
+   127→    /interference|double slit|diffraction|standing wave|node.*antinode|wavelength.*fringe|crest.*trough|superposition|slit.*separation|coletta-ch24|young-ch35/i.test(
+   128→      combined
+   129→    )
+   130→  ) {
+   131→    return 'wave_interference'
+   132→  }
+   133→  if (
+   134→    /doppler|frequency.*approaching|source.*moving|sound.*pitch|redshift|blueshift|speed of sound|mach.*number|coletta-ch16|young-ch16/i.test(
+   135→      combined
+   136→    )
+   137→  ) {
+   138→    return 'doppler'
+   139→  }
+   140→  if (
+   141→    /coulomb|electric field|charge.*force|point charge|gauss.*law|potential difference|equipotential|coletta-ch17|young-ch21/i.test(
+   142→      combined
+   143→    )
+   144→  ) {
+   145→    return 'coulomb_efield'
+   146→  }
+   147→  if (
+   148→    /resistor|ohm|kirchhoff|voltage|series.*parallel|current.*ampere|circuit|equivalent resistance|elec-|coletta-ch19|young-ch25|young-ch26/i.test(
+   149→      combined
+   150→    )
+   151→  ) {
+   152→    return 'circuits'
+   153→  }
+   154→  if (
+   155→    /snell|refraction|index of refraction|critical angle|total internal reflection|incident ray|refracted ray|lens.*focal|coletta-ch23|young-ch33/i.test(
+   156→      combined
+   157→    )
+   158→  ) {
+   159→    return 'optics_snell'
+   160→  }
+   161→  if (
+   162→    /isothermal|adiabatic|isobaric|isochoric|pv diagram|carnot|heat engine|ideal gas|work done.*gas|coletta-ch15|young-ch19|chem-ch3\b|chem-ch4\b|chem-ch30\b/i.test(
+   163→      combined
+   164→    )
+   165→  ) {
+   166→    return 'thermodynamics_pv'
+   167→  }
+   168→  if (
+   169→    /derivative|tangent line|riemann|integral.*area|rate of change|limit as|secant|dy\/dx|calc-|stewart/i.test(
+   170→      combined
+   171→    )
+   172→  ) {
+   173→    return 'calculus_tangent'
+   174→  }
+   175→  if (
+   176→    /logic gate|truth table|nand|boolean|karnaugh|flip-flop|and gate|or gate|xor gate|mano-/i.test(
+   177→      combined
+   178→    )
+   179→  ) {
+   180→    return 'logic_gates'
+   181→  }
+   182→
+   183→  // Safe domain-aware fallbacks before universal physics
+   184→  if (/chem-|chemistry|reaction|molecule|molar|element/i.test(combined)) {
+   185→    return 'molecular_vsepr'
+   186→  }
+   187→
+   188→  return 'universal_physics'
+   189→}
+   190→
+   191→/* ------------------------------------------------------------------ */
+   192→/*  1. Bohr Atom & Spectral Series Visual Diagram                      */
+   193→/* ------------------------------------------------------------------ */
+   194→
+   195→export function BohrTransitionsDiagram({
+   196→  questionText,
+   197→  selectedAnswer,
+   198→  isCorrect,
+   199→  playing,
+   200→}: {
+   201→  questionText: string
+   202→  selectedAnswer?: number | null
+   203→  isCorrect?: boolean
+   204→  playing: boolean
+   205→}) {
+   206→  const [activeSeries, setActiveSeries] = useState<'balmer' | 'lyman' | 'ionization'>(() => {
+   207→    if (/ionization|ground energy|-13\.6/i.test(questionText)) return 'ionization'
+   208→    if (/lyman/i.test(questionText)) return 'lyman'
+   209→    return 'balmer'
+   210→  })
+   211→
+   212→  const [t, setT] = useState(0)
+   213→  useEffect(() => {
+   214→    if (!playing) return
+   215→    const interval = setInterval(() => {
+   216→      setT((prev) => (prev + 1) % 100)
+   217→    }, 40)
+   218→    return () => clearInterval(interval)
+   219→  }, [playing])
+   220→
+   221→  // Bohr Levels
+   222→  const levels = [
+   223→    { n: 1, e: -13.6, y: 220, label: 'n = 1 (-13.60 eV)' },
+   224→    { n: 2, e: -3.4, y: 155, label: 'n = 2 (-3.40 eV)' },
+   225→    { n: 3, e: -1.51, y: 110, label: 'n = 3 (-1.51 eV)' },
+   226→    { n: 4, e: -0.85, y: 80, label: 'n = 4 (-0.85 eV)' },
+   227→    { n: 5, e: -0.54, y: 60, label: 'n = 5 (-0.54 eV)' },
+   228→    { n: 6, e: 0.0, y: 35, label: 'n = ∞ (0.00 eV, Free)' },
+   229→  ]
+   230→
+   231→  // Transition progress
+   232→  const jumpProgress = (t % 50) / 50
+   233→  const isJumping = t % 50 < 40
+   234→
+   235→  return (
+   236→    <div className="flex flex-col gap-3">
+   237→      {/* Series selection buttons */}
+   238→      <div className="flex flex-wrap items-center gap-1.5 text-xs font-mono">
+   239→        <span className="text-[10px] uppercase tracking-wider text-muted-foreground mr-1">
+   240→          Active Scenario:
+   241→        </span>
+   242→        <button
+   243→          onClick={() => setActiveSeries('balmer')}
+   244→          className={`px-2.5 py-1 rounded-md border transition-all ${
+   245→            activeSeries === 'balmer'
+   246→              ? 'bg-rose-500/20 border-rose-500 text-rose-300 font-semibold shadow-xs'
+   247→              : 'border-border bg-muted/30 text-muted-foreground hover:text-foreground'
+   248→          }`}
+   249→        >
+   250→          Balmer Series (n_f = 2, Visible)
+   251→        </button>
+   252→        <button
+   253→          onClick={() => setActiveSeries('ionization')}
+   254→          className={`px-2.5 py-1 rounded-md border transition-all ${
+   255→            activeSeries === 'ionization'
+   256→              ? 'bg-amber-500/20 border-amber-500 text-amber-300 font-semibold shadow-xs'
+   257→              : 'border-border bg-muted/30 text-muted-foreground hover:text-foreground'
+   258→          }`}
+   259→        >
+   260→          Ionization (+13.6 eV from n = 1)
+   261→        </button>
+   262→        <button
+   263→          onClick={() => setActiveSeries('lyman')}
+   264→          className={`px-2.5 py-1 rounded-md border transition-all ${
+   265→            activeSeries === 'lyman'
+   266→              ? 'bg-indigo-500/20 border-indigo-500 text-indigo-300 font-semibold shadow-xs'
+   267→              : 'border-border bg-muted/30 text-muted-foreground hover:text-foreground'
+   268→          }`}
+   269→        >
+   270→          Lyman Series (n_f = 1, UV)
+   271→        </button>
+   272→      </div>
+   273→
+   274→      <div className="relative overflow-hidden rounded-xl border border-border/80 bg-background/80 p-3 sm:p-4">
+   275→        <svg
+   276→          viewBox="0 0 640 260"
+   277→          className="w-full h-auto max-h-[300px] select-none"
+   278→          role="img"
+   279→          aria-label="Bohr Hydrogen Energy Level Diagram"
+   280→        >
+   281→          <defs>
+   282→            <linearGradient id="gradPhotonBalmer" x1="0%" y1="0%" x2="100%" y2="0%">
+   283→              <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.8" />
+   284→              <stop offset="100%" stopColor="#fb7185" stopOpacity="0" />
+   285→            </linearGradient>
+   286→            <linearGradient id="gradPhotonIon" x1="0%" y1="0%" x2="100%" y2="0%">
+   287→              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.8" />
+   288→              <stop offset="100%" stopColor="#fbbf24" stopOpacity="0" />
+   289→            </linearGradient>
+   290→            <filter id="glowG">
+   291→              <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
+   292→              <feMerge>
+   293→                <feMergeNode in="coloredBlur" />
+   294→                <feMergeNode in="SourceGraphic" />
+   295→              </feMerge>
+   296→            </filter>
+   297→          </defs>
+   298→
+   299→          {/* Background Grid Lines */}
+   300→          <line x1="40" y1="20" x2="40" y2="240" stroke="#3f3f46" strokeWidth="1" strokeDasharray="3 3" />
+   301→          <text x="35" y="25" textAnchor="end" fontSize="10" fill="#a1a1aa" fontFamily="monospace">
+   302→            Energy
+   303→          </text>
+   304→
+   305→          {/* Energy Levels */}
+   306→          {levels.map((lvl) => {
+   307→            const isTarget =
+   308→              activeSeries === 'balmer'
+   309→                ? lvl.n === 2
+   310→                : activeSeries === 'lyman'
+   311→                  ? lvl.n === 1
+   312→                  : lvl.n === 6
+   313→            const isSource =
+   314→              activeSeries === 'balmer'
+   315→                ? lvl.n === 3
+   316→                : activeSeries === 'lyman'
+   317→                  ? lvl.n === 2
+   318→                  : lvl.n === 1
+   319→
+   320→            return (
+   321→              <g key={lvl.n}>
+   322→                <line
+   323→                  x1="50"
+   324→                  y1={lvl.y}
+   325→                  x2="590"
+   326→                  y2={lvl.y}
+   327→                  stroke={isTarget ? '#10b981' : isSource ? '#fbbf24' : '#52525b'}
+   328→                  strokeWidth={isTarget ? 2.5 : lvl.n === 6 ? 1.5 : 1.2}
+   329→                  strokeDasharray={lvl.n === 6 ? '4 4' : undefined}
+   330→                />
+   331→                <circle
+   332→                  cx="50"
+   333→                  cy={lvl.y}
+   334→                  r={isTarget ? 3.5 : 2.5}
+   335→                  fill={isTarget ? '#10b981' : '#71717a'}
+   336→                />
+   337→                <text
+   338→                  x="60"
+   339→                  y={lvl.y - 4}
+   340→                  fontSize="11"
+   341→                  fill={isTarget ? '#34d399' : isSource ? '#fde047' : '#a1a1aa'}
+   342→                  fontFamily="monospace"
+   343→                  fontWeight={isTarget ? 'bold' : 'normal'}
+   344→                >
+   345→                  {lvl.label}
+   346→                </text>
+   347→              </g>
+   348→            )
+   349→          })}
+   350→
+   351→          {/* Transitions & Photons */}
+   352→          {activeSeries === 'balmer' && (
+   353→            <>
+   354→              {/* Highlight Target Level n=2 */}
+   355→              <rect
+   356→                x="45"
+   357→                y="145"
+   358→                width="550"
+   359→                height="20"
+   360→                fill="rgba(16,185,129,0.08)"
+   361→                rx="4"
+   362→              />
+   363→              {/* Jump Arrow n=3 -> n=2 */}
+   364→              <path
+   365→                d="M 220,110 L 220,155"
+   366→                stroke="#f43f5e"
+   367→                strokeWidth="2.5"
+   368→                markerEnd="url(#arrow)"
+   369→              />
+   370→              <polygon points="220,157 216,148 224,148" fill="#f43f5e" />
+   371→
+   372→              {/* Jump Arrow n=4 -> n=2 */}
+   373→              <path
+   374→                d="M 280,80 L 280,155"
+   375→                stroke="#2dd4bf"
+   376→                strokeWidth="1.8"
+   377→                strokeDasharray="4 3"
+   378→              />
+   379→              <polygon points="280,157 276,148 284,148" fill="#2dd4bf" />
+   380→
+   381→              {/* Moving Electron */}
+   382→              {isJumping && (
+   383→                <circle
+   384→                  cx="220"
+   385→                  cy={110 + (155 - 110) * jumpProgress}
+   386→                  r="5"
+   387→                  fill="#fbbf24"
+   388→                  filter="url(#glowG)"
+   389→                />
+   390→              )}
+   391→
+   392→              {/* Emitted Photon Wave Packet (Red H-alpha 656 nm) */}
+   393→              <g transform="translate(230, 150)">
+   394→                <path
+   395→                  d="M 0,0 Q 15,-10 30,0 T 60,0 T 90,0 T 120,0"
+   396→                  fill="none"
+   397→                  stroke="#f43f5e"
+   398→                  strokeWidth="2"
+   399→                  filter="url(#glowG)"
+   400→                />
+   401→                <text x="130" y="4" fontSize="11" fill="#fb7185" fontFamily="monospace" fontWeight="bold">
+   402→                  hf = 1.89 eV (λ = 656 nm Red)
+   403→                </text>
+   404→              </g>
+   405→
+   406→              {/* Visual callout */}
+   407→              <g transform="translate(420, 95)">
+   408→                <rect width="180" height="48" rx="6" fill="#18181b" stroke="#10b981" strokeWidth="1" />
+   409→                <text x="10" y="20" fontSize="11" fill="#34d399" fontWeight="bold" fontFamily="monospace">
+   410→                  ✓ Balmer Formula:
+   411→                </text>
+   412→                <text x="10" y="38" fontSize="10.5" fill="#e4e4e7" fontFamily="sans-serif">
+   413→                  All jumps terminate at n_f = 2
+   414→                </text>
+   415→              </g>
+   416→            </>
+   417→          )}
+   418→
+   419→          {activeSeries === 'ionization' && (
+   420→            <>
+   421→              {/* Highlight Ground Level n=1 & Continuum */}
+   422→              <rect x="45" y="210" width="550" height="20" fill="rgba(245,158,11,0.08)" rx="4" />
+   423→              <rect x="45" y="25" width="550" height="20" fill="rgba(16,185,129,0.08)" rx="4" />
+   424→
+   425→              {/* Upward Jump Arrow n=1 -> n=inf */}
+   426→              <path d="M 240,220 L 240,35" stroke="#f59e0b" strokeWidth="2.5" />
+   427→              <polygon points="240,33 236,43 244,43" fill="#f59e0b" />
+   428→
+   429→              {/* Moving Electron */}
+   430→              {isJumping && (
+   431→                <circle
+   432→                  cx="240"
+   433→                  cy={220 - (220 - 35) * jumpProgress}
+   434→                  r="5"
+   435→                  fill="#38bdf8"
+   436→                  filter="url(#glowG)"
+   437→                />
+   438→              )}
+   439→
+   440→              {/* Incoming Ionizing UV Photon */}
+   441→              <g transform="translate(100, 220)">
+   442→                <path
+   443→                  d="M 0,0 Q 15,-10 30,0 T 60,0 T 90,0 T 120,0"
+   444→                  fill="none"
+   445→                  stroke="#fbbf24"
+   446→                  strokeWidth="2"
+   447→                  filter="url(#glowG)"
+   448→                />
+   449→                <text x="10" y="-12" fontSize="10.5" fill="#fde047" fontFamily="monospace">
+   450→                  +13.6 eV UV photon absorbed (λ = 91.2 nm)
+   451→                </text>
+   452→              </g>
+   453→
+   454→              {/* Visual callout */}
+   455→              <g transform="translate(370, 140)">
+   456→                <rect width="230" height="52" rx="6" fill="#18181b" stroke="#f59e0b" strokeWidth="1" />
+   457→                <text x="10" y="20" fontSize="11" fill="#fbbf24" fontWeight="bold" fontFamily="monospace">
+   458→                  ΔE = E_∞ - E_1
+   459→                </text>
+   460→                <text x="10" y="38" fontSize="10.5" fill="#e4e4e7" fontFamily="sans-serif">
+   461→                  0 - (-13.60 eV) = +13.60 eV to free
+   462→                </text>
+   463→              </g>
+   464→            </>
+   465→          )}
+   466→
+   467→          {activeSeries === 'lyman' && (
+   468→            <>
+   469→              <path d="M 200,110 L 200,220" stroke="#6366f1" strokeWidth="2.2" />
+   470→              <polygon points="200,222 196,213 204,213" fill="#6366f1" />
+   471→              <g transform="translate(220, 215)">
+   472→                <text x="0" y="0" fontSize="11" fill="#818cf8" fontFamily="monospace">
+   473→                  Lyman Series: n_f = 1 (Ultraviolet)
+   474→                </text>
+   475→              </g>
+   476→            </>
+   477→          )}
+   478→        </svg>
+   479→
+   480→        {/* Math explanation banner */}
+   481→        <div className="mt-2.5 flex flex-wrap items-center justify-between gap-2 border-t border-border/60 pt-2 text-xs">
+   482→          <div className="flex items-center gap-2">
+   483→            <span className="font-semibold text-emerald-400">Rydberg &amp; Bohr Formula:</span>
+   484→            <span className="font-mono text-muted-foreground">
+   485→              1/λ = R_H (1/n_f² - 1/n_i²)
+   486→            </span>
+   487→          </div>
+   488→          <div className="font-mono text-teal-300">
+   489→            {activeSeries === 'balmer'
+   490→              ? 'Balmer Visible Series: n_f = 2 (n_i = 3, 4, 5...)'
+   491→              : activeSeries === 'ionization'
+   492→                ? 'Ionization: n_i = 1 → n_f = ∞ (Cost = 13.6 eV)'
+   493→                : 'Lyman Series: n_f = 1 (Ultraviolet)'}
+   494→          </div>
+   495→        </div>
+   496→      </div>
+   497→    </div>
+   498→  )
+   499→}
+   500→
+   501→/* ------------------------------------------------------------------ */
+   502→/*  2. Projectile Motion Parabolic Trajectory Diagram                  */
+   503→/* ------------------------------------------------------------------ */
+   504→
+   505→export function ProjectileMotionDiagram({ playing }: { playing: boolean }) {
+   506→  const [angle, setAngle] = useState(45)
+   507→  const [v0, setV0] = useState(30)
+   508→  const g = 9.8
+   509→
+   510→  const [t, setT] = useState(0)
+   511→  useEffect(() => {
+   512→    if (!playing) return
+   513→    const interval = setInterval(() => {
+   514→      setT((prev) => (prev + 1) % 100)
+   515→    }, 40)
+   516→    return () => clearInterval(interval)
+   517→  }, [playing])
+   518→
+   519→  const rad = (angle * Math.PI) / 180
+   520→  const v0x = v0 * Math.cos(rad)
+   521→  const v0y = v0 * Math.sin(rad)
+   522→  const flightTime = (2 * v0y) / g
+   523→  const maxH = (v0y * v0y) / (2 * g)
+   524→  const range = (v0 * v0 * Math.sin(2 * rad)) / g
+   525→
+   526→  // Scaled coordinates for SVG (width 600, height 240)
+   527→  const scaleX = 500 / Math.max(1, range)
+   528→  const scaleY = 160 / Math.max(1, maxH)
+   529→
+   530→  const curT = (t / 100) * flightTime
+   531→  const curX = v0x * curT
+   532→  const curY = v0y * curT - 0.5 * g * curT * curT
+   533→  const curVx = v0x
+   534→  const curVy = v0y - g * curT
+   535→
+   536→  const svgX = 60 + curX * scaleX
+   537→  const svgY = 210 - Math.max(0, curY) * scaleY
+   538→
+   539→  // Build trajectory path
+   540→  const pathD = useMemo(() => {
+   541→    let p = `M 60 210`
+   542→    for (let step = 0; step <= 50; step++) {
+   543→      const time = (step / 50) * flightTime
+   544→      const x = 60 + v0x * time * scaleX
+   545→      const y = 210 - (v0y * time - 0.5 * g * time * time) * scaleY
+   546→      p += ` L ${x.toFixed(1)} ${y.toFixed(1)}`
+   547→    }
+   548→    return p
+   549→  }, [v0x, v0y, flightTime, scaleX, scaleY])
+   550→
+   551→  return (
+   552→    <div className="flex flex-col gap-3">
+   553→      <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
+   554→        <label className="flex items-center gap-2">
+   555→          <span className="text-muted-foreground">Angle θ:</span>
+   556→          <input
+   557→            type="range"
+   558→            min="15"
+   559→            max="75"
+   560→            value={angle}
+   561→            onChange={(e) => setAngle(Number(e.target.value))}
+   562→            className="w-24 accent-emerald-500"
+   563→          />
+   564→          <span className="text-emerald-400 font-bold">{angle}°</span>
+   565→        </label>
+   566→        <label className="flex items-center gap-2">
+   567→          <span className="text-muted-foreground">v₀:</span>
+   568→          <input
+   569→            type="range"
+   570→            min="15"
+   571→            max="45"
+   572→            value={v0}
+   573→            onChange={(e) => setV0(Number(e.target.value))}
+   574→            className="w-24 accent-emerald-500"
+   575→          />
+   576→          <span className="text-emerald-400 font-bold">{v0} m/s</span>
+   577→        </label>
+   578→        <span className="text-muted-foreground ml-auto">
+   579→          Range: <strong className="text-teal-300">{range.toFixed(1)} m</strong> · Max H:{' '}
+   580→          <strong className="text-amber-300">{maxH.toFixed(1)} m</strong>
+   581→        </span>
+   582→      </div>
+   583→
+   584→      <div className="relative overflow-hidden rounded-xl border border-border/80 bg-background/80 p-3 sm:p-4">
+   585→        <svg viewBox="0 0 640 240" className="w-full h-auto max-h-[300px] select-none">
+   586→          {/* Ground */}
+   587→          <line x1="40" y1="210" x2="600" y2="210" stroke="#71717a" strokeWidth="2" />
+   588→          <line x1="60" y1="40" x2="60" y2="210" stroke="#3f3f46" strokeWidth="1" strokeDasharray="3 3" />
+   589→
+   590→          {/* Parabolic Path */}
+   591→          <path d={pathD} fill="none" stroke="#10b981" strokeWidth="2.5" opacity="0.85" />
+   592→
+   593→          {/* Peak height indicator */}
+   594→          <line
+   595→            x1={60 + (range / 2) * scaleX}
+   596→            y1="210"
+   597→            x2={60 + (range / 2) * scaleX}
+   598→            y2={210 - maxH * scaleY}
+   599→            stroke="#fbbf24"
+   600→            strokeWidth="1.5"
+   601→            strokeDasharray="3 3"
+   602→          />
+   603→          <text
+   604→            x={60 + (range / 2) * scaleX}
+   605→            y={200 - maxH * scaleY}
+   606→            fontSize="10"
+   607→            fill="#fbbf24"
+   608→            textAnchor="middle"
+   609→            fontFamily="monospace"
+   610→          >
+   611→            H_max = {maxH.toFixed(1)} m (v_y = 0)
+   612→          </text>
+   613→
+   614→          {/* Active Projectile */}
+   615→          <circle cx={svgX} cy={svgY} r="6" fill="#38bdf8" stroke="#0284c7" strokeWidth="2" />
+   616→
+   617→          {/* Velocity Vector Arrows */}
+   618→          <line
+   619→            x1={svgX}
+   620→            y1={svgY}
+   621→            x2={svgX + curVx * 1.2}
+   622→            y2={svgY - curVy * 1.2}
+   623→            stroke="#f43f5e"
+   624→            strokeWidth="2"
+   625→          />
+   626→          <line
+   627→            x1={svgX}
+   628→            y1={svgY}
+   629→            x2={svgX + curVx * 1.2}
+   630→            y2={svgY}
+   631→            stroke="#34d399"
+   632→            strokeWidth="1.5"
+   633→            strokeDasharray="2 2"
+   634→          />
+   635→          <line
+   636→            x1={svgX}
+   637→            y1={svgY}
+   638→            x2={svgX}
+   639→            y2={svgY - curVy * 1.2}
+   640→            stroke="#fbbf24"
+   641→            strokeWidth="1.5"
+   642→            strokeDasharray="2 2"
+   643→          />
+   644→
+   645→          {/* Velocity Component Labels */}
+   646→          <g transform="translate(440, 40)">
+   647→            <rect width="180" height="65" rx="6" fill="#18181b" stroke="#3f3f46" strokeWidth="1" />
+   648→            <text x="10" y="18" fontSize="10" fill="#a1a1aa" fontFamily="monospace">
+   649→              v_x = v₀ cos θ = {v0x.toFixed(1)} m/s (const)
+   650→            </text>
+   651→            <text x="10" y="36" fontSize="10" fill="#fbbf24" fontFamily="monospace">
+   652→              v_y = v₀ sin θ - gt = {curVy.toFixed(1)} m/s
+   653→            </text>
+   654→            <text x="10" y="54" fontSize="10" fill="#38bdf8" fontFamily="monospace">
+   655→              a_y = -9.8 m/s² (gravity down)
+   656→            </text>
+   657→          </g>
+   658→        </svg>
+   659→
+   660→        <div className="mt-2 flex items-center justify-between text-xs text-muted-foreground border-t border-border/60 pt-2">
+   661→          <span>
+   662→            Governing Equations: <TeX tex="x = (v_0\cos\theta)t,\quad y = (v_0\sin\theta)t - \frac{1}{2}gt^2" />
+   663→          </span>
+   664→          <span className="font-mono text-emerald-400">Total flight time: {flightTime.toFixed(2)} s</span>
+   665→        </div>
+   666→      </div>
+   667→    </div>
+   668→  )
+   669→}
+   670→
+   671→/* ------------------------------------------------------------------ */
+   672→/*  3. Wave Interference & Standing Wave Diagram                       */
+   673→/* ------------------------------------------------------------------ */
+   674→
+   675→export function WaveInterferenceDiagram({ playing }: { playing: boolean }) {
+   676→  const [slitD, setSlitD] = useState(30)
+   677→  const [lambda, setLambda] = useState(20)
+   678→
+   679→  const [t, setT] = useState(0)
+   680→  useEffect(() => {
+   681→    if (!playing) return
+   682→    const interval = setInterval(() => {
+   683→      setT((prev) => (prev + 0.1) % (2 * Math.PI))
+   684→    }, 40)
+   685→    return () => clearInterval(interval)
+   686→  }, [playing])
+   687→
+   688→  return (
+   689→    <div className="flex flex-col gap-3">
+   690→      <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
+   691→        <label className="flex items-center gap-2">
+   692→          <span className="text-muted-foreground">Slit Separation d:</span>
+   693→          <input
+   694→            type="range"
+   695→            min="20"
+   696→            max="60"
+   697→            value={slitD}
+   698→            onChange={(e) => setSlitD(Number(e.target.value))}
+   699→            className="w-24 accent-emerald-500"
+   700→          />
+   701→          <span className="text-emerald-400 font-bold">{slitD} µm</span>
+   702→        </label>
+   703→        <label className="flex items-center gap-2">
+   704→          <span className="text-muted-foreground">Wavelength λ:</span>
+   705→          <input
+   706→            type="range"
+   707→            min="10"
+   708→            max="35"
+   709→            value={lambda}
+   710→            onChange={(e) => setLambda(Number(e.target.value))}
+   711→            className="w-24 accent-emerald-500"
+   712→          />
+   713→          <span className="text-teal-300 font-bold">{lambda} nm</span>
+   714→        </label>
+   715→        <span className="text-muted-foreground ml-auto">
+   716→          Condition: <strong className="text-amber-300">d sin θ = m λ (Constructive)</strong>
+   717→        </span>
+   718→      </div>
+   719→
+   720→      <div className="relative overflow-hidden rounded-xl border border-border/80 bg-background/80 p-3 sm:p-4">
+   721→        <svg viewBox="0 0 640 220" className="w-full h-auto max-h-[300px] select-none">
+   722→          {/* Barrier */}
+   723→          <line x1="120" y1="20" x2="120" y2={110 - slitD / 2} stroke="#a1a1aa" strokeWidth="4" />
+   724→          <line
+   725→            x1="120"
+   726→            y1={110 - slitD / 2}
+   727→            x2="120"
+   728→            y2={110 + slitD / 2}
+   729→            stroke="#27272a"
+   730→            strokeWidth="4"
+   731→          />
+   732→          <line x1="120" y1={110 + slitD / 2} x2="120" y2="200" stroke="#a1a1aa" strokeWidth="4" />
+   733→
+   734→          {/* Slit Labels */}
+   735→          <text x="95" y={110 - slitD / 2 + 4} fontSize="10" fill="#2dd4bf" fontFamily="monospace">
+   736→            Slit 1
+   737→          </text>
+   738→          <text x="95" y={110 + slitD / 2 + 4} fontSize="10" fill="#2dd4bf" fontFamily="monospace">
+   739→            Slit 2
+   740→          </text>
+   741→
+   742→          {/* Waves from Slit 1 and Slit 2 */}
+   743→          {[1, 2, 3, 4, 5, 6].map((r) => {
+   744→            const rad = r * 30 + (t * 5) % 30
+   745→            return (
+   746→              <g key={r} opacity={Math.max(0.1, 1 - rad / 220)}>
+   747→                <path
+   748→                  d={`M ${120} ${110 - slitD / 2 - rad} A ${rad} ${rad} 0 0 1 ${120 + rad} ${110 - slitD / 2}`}
+   749→                  fill="none"
+   750→                  stroke="#34d399"
+   751→                  strokeWidth="1.5"
+   752→                />
+   753→                <path
+   754→                  d={`M ${120} ${110 + slitD / 2 - rad} A ${rad} ${rad} 0 0 1 ${120 + rad} ${110 + slitD / 2}`}
+   755→                  fill="none"
+   756→                  stroke="#2dd4bf"
+   757→                  strokeWidth="1.5"
+   758→                />
+   759→              </g>
+   760→            )
+   761→          })}
+   762→
+   763→          {/* Screen on right */}
+   764→          <line x1="560" y1="20" x2="560" y2="200" stroke="#71717a" strokeWidth="3" />
+   765→          <text x="570" y="30" fontSize="10" fill="#a1a1aa" fontFamily="monospace">
+   766→            Detection Screen
+   767→          </text>
+   768→
+   769→          {/* Intensity distribution curve on screen */}
+   770→          {Array.from({ length: 19 }).map((_, i) => {
+   771→            const y = 30 + i * 9
+   772→            const angle = (y - 110) / 440
+   773→            const phase = (2 * Math.PI * slitD * Math.sin(angle)) / lambda
+   774→            const intensity = Math.cos(phase / 2) ** 2
+   775→            const width = intensity * 40
+   776→
+   777→            return (
+   778→              <rect
+   779→                key={i}
+   780→                x={560 - width}
+   781→                y={y - 3}
+   782→                width={width}
+   783→                height="6"
+   784→                fill="rgba(52,211,153,0.4)"
+   785→                rx="2"
+   786→              />
+   787→            )
+   788→          })}
+   789→
+   790→          {/* Central Bright Fringe Marker */}
+   791→          <line x1="520" y1="110" x2="560" y2="110" stroke="#fbbf24" strokeWidth="2" />
+   792→          <text x="440" y="114" fontSize="10.5" fill="#fbbf24" fontFamily="monospace" fontWeight="bold">
+   793→            Central Max (m = 0)
+   794→          </text>
+   795→        </svg>
+   796→
+   797→        <div className="mt-2 flex items-center justify-between text-xs text-muted-foreground border-t border-border/60 pt-2">
+   798→          <span>
+   799→            Path Difference: <TeX tex="\Delta x = r_2 - r_1 = d\sin\theta = m\lambda" />
+   800→          </span>
+   801→          <span className="font-mono text-teal-300">Phase Coherence: Amplitudes Add (ψ₁ + ψ₂)</span>
+   802→        </div>
+   803→      </div>
+   804→    </div>
+   805→  )
+   806→}
+   807→
+   808→/* ------------------------------------------------------------------ */
+   809→/*  4. Free-Body Diagrams & Inclined Plane Force Resolution            */
+   810→/* ------------------------------------------------------------------ */
+   811→
+   812→export function FreeBodyForcesDiagram({ playing }: { playing: boolean }) {
+   813→  const [theta, setTheta] = useState(30)
+   814→  const [mu, setMu] = useState(0.2)
+   815→  const m = 5
+   816→  const g = 9.8
+   817→
+   818→  const rad = (theta * Math.PI) / 180
+   819→  const mg = m * g
+   820→  const mgParallel = mg * Math.sin(rad)
+   821→  const mgPerp = mg * Math.cos(rad)
+   822→  const normal = mgPerp
+   823→  const friction = mu * normal
+   824→  const netForce = Math.max(0, mgParallel - friction)
+   825→  const accel = netForce / m
+   826→
+   827→  return (
+   828→    <div className="flex flex-col gap-3">
+   829→      <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
+   830→        <label className="flex items-center gap-2">
+   831→          <span className="text-muted-foreground">Incline Angle θ:</span>
+   832→          <input
+   833→            type="range"
+   834→            min="10"
+   835→            max="60"
+   836→            value={theta}
+   837→            onChange={(e) => setTheta(Number(e.target.value))}
+   838→            className="w-24 accent-emerald-500"
+   839→          />
+   840→          <span className="text-emerald-400 font-bold">{theta}°</span>
+   841→        </label>
+   842→        <label className="flex items-center gap-2">
+   843→          <span className="text-muted-foreground">Friction Coeff µ:</span>
+   844→          <input
+   845→            type="range"
+   846→            min="0"
+   847→            max="0.8"
+   848→            step="0.05"
+   849→            value={mu}
+   850→            onChange={(e) => setMu(Number(e.target.value))}
+   851→            className="w-24 accent-emerald-500"
+   852→          />
+   853→          <span className="text-amber-300 font-bold">{mu.toFixed(2)}</span>
+   854→        </label>
+   855→        <span className="text-muted-foreground ml-auto">
+   856→          Net Acceleration: <strong className="text-teal-300">{accel.toFixed(2)} m/s²</strong>
+   857→        </span>
+   858→      </div>
+   859→
+   860→      <div className="relative overflow-hidden rounded-xl border border-border/80 bg-background/80 p-3 sm:p-4">
+   861→        <svg viewBox="0 0 640 230" className="w-full h-auto max-h-[300px] select-none">
+   862→          {/* Base Incline Wedge */}
+   863→          <polygon
+   864→            points="60,200 480,200 480,80"
+   865→            fill="rgba(39,39,42,0.6)"
+   866→            stroke="#71717a"
+   867→            strokeWidth="2"
+   868→          />
+   869→
+   870→          {/* Angle arc */}
+   871→          <path d="M 120,200 A 60 60 0 0 0 115,180" fill="none" stroke="#fbbf24" strokeWidth="2" />
+   872→          <text x="130" y="195" fontSize="11" fill="#fbbf24" fontFamily="monospace" fontWeight="bold">
+   873→            θ = {theta}°
+   874→          </text>
+   875→
+   876→          {/* Block Center */}
+   877→          <g transform={`translate(280, 140) rotate(-${theta})`}>
+   878→            {/* The Block */}
+   879→            <rect
+   880→              x="-30"
+   881→              y="-30"
+   882→              width="60"
+   883→              height="30"
+   884→              fill="#10b981"
+   885→              stroke="#047857"
+   886→              strokeWidth="2"
+   887→              rx="3"
+   888→              opacity="0.85"
+   889→            />
+   890→            <text x="0" y="-12" textAnchor="middle" fontSize="11" fill="#042f2e" fontWeight="bold">
+   891→              m = {m} kg
+   892→            </text>
+   893→
+   894→            {/* Normal Force Vector (pointing +y perpendicular away from plane) */}
+   895→            <line x1="0" y1="-15" x2="0" y2="-65" stroke="#38bdf8" strokeWidth="2.5" />
+   896→            <polygon points="0,-68 -4,-58 4,-58" fill="#38bdf8" />
+   897→            <text x="10" y="-55" fontSize="10.5" fill="#38bdf8" fontFamily="monospace">
+   898→              N = mg cos θ = {normal.toFixed(1)} N
+   899→            </text>
+   900→
+   901→            {/* Down-plane Gravity Component (mg sin theta) */}
+   902→            <line x1="0" y1="-15" x2="-55" y2="-15" stroke="#f43f5e" strokeWidth="2.5" />
+   903→            <polygon points="-58,-15 -48,-11 -48,-19" fill="#f43f5e" />
+   904→            <text x="-65" y="-2" textAnchor="end" fontSize="10.5" fill="#f43f5e" fontFamily="monospace">
+   905→              mg sin θ = {mgParallel.toFixed(1)} N
+   906→            </text>
+   907→
+   908→            {/* Friction Force Vector (opposing motion up-plane) */}
+   909→            <line x1="0" y1="-15" x2="45" y2="-15" stroke="#fbbf24" strokeWidth="2.2" />
+   910→            <polygon points="48,-15 38,-19 38,-11" fill="#fbbf24" />
+   911→            <text x="55" y="-18" fontSize="10.5" fill="#fbbf24" fontFamily="monospace">
+   912→              f_k = µN = {friction.toFixed(1)} N
+   913→            </text>
+   914→          </g>
+   915→
+   916→          {/* True Gravity Vector straight down */}
+   917→          <line x1="280" y1="140" x2="280" y2="210" stroke="#a1a1aa" strokeWidth="2" strokeDasharray="3 3" />
+   918→          <polygon points="280,212 276,203 284,203" fill="#a1a1aa" />
+   919→          <text x="290" y="200" fontSize="10.5" fill="#a1a1aa" fontFamily="monospace">
+   920→            W = mg = {mg.toFixed(1)} N (vertical)
+   921→          </text>
+   922→
+   923→          {/* Equation callout */}
+   924→          <g transform="translate(420, 25)">
+   925→            <rect width="200" height="70" rx="6" fill="#18181b" stroke="#3f3f46" strokeWidth="1" />
+   926→            <text x="10" y="20" fontSize="11" fill="#34d399" fontWeight="bold" fontFamily="monospace">
+   927→              Newton's 2nd Law:
+   928→            </text>
+   929→            <text x="10" y="38" fontSize="10.5" fill="#e4e4e7" fontFamily="monospace">
+   930→              ΣF = mg sin θ - f_k = ma
+   931→            </text>
+   932→            <text x="10" y="56" fontSize="10.5" fill="#38bdf8" fontFamily="monospace">
+   933→              a = g(sin θ - µ cos θ)
+   934→            </text>
+   935→          </g>
+   936→        </svg>
+   937→
+   938→        <div className="mt-2 flex items-center justify-between text-xs text-muted-foreground border-t border-border/60 pt-2">
+   939→          <span>
+   940→            Decomposition: <TeX tex="F_\parallel = mg\sin\theta,\quad F_\perp = mg\cos\theta = N" />
+   941→          </span>
+   942→          <span className="font-mono text-emerald-400">
+   943→            {mgParallel > friction ? 'Accelerating down incline' : 'Static / Balanced at rest'}
+   944→          </span>
+   945→        </div>
+   946→      </div>
+   947→    </div>
+   948→  )
+   949→}
+   950→
+   951→/* ------------------------------------------------------------------ */
+   952→/*  5. Doppler Effect & Wavefront Compression Diagram                 */
+   953→/* ------------------------------------------------------------------ */
+   954→
+   955→export function DopplerEffectDiagram({ playing }: { playing: boolean }) {
+   956→  const [vs, setVs] = useState(120) // source speed in m/s
+   957→  const v = 343 // speed of sound in air at 20°C in m/s
+   958→  const f0 = 440 // source base frequency in Hz
+   959→
+   960→  const [t, setT] = useState(0)
+   961→  useEffect(() => {
+   962→    if (!playing) return
+   963→    const interval = setInterval(() => {
+   964→      setT((prev) => (prev + 0.05) % 10)
+   965→    }, 40)
+   966→    return () => clearInterval(interval)
+   967→  }, [playing])
+   968→
+   969→  // Mach number
+   970→  const mach = vs / v
+   971→  const isSupersonic = vs >= v
+   972→
+   973→  // Doppler shifted frequencies
+   974→  const fApproaching = vs < v ? Math.round(f0 * (v / (v - vs))) : Infinity
+   975→  const fReceding = Math.round(f0 * (v / (v + vs)))
+   976→  const lambda0 = (v / f0).toFixed(2)
+   977→  const lambdaApp = vs < v ? ((v - vs) / f0).toFixed(2) : '0.00'
+   978→  const lambdaRec = ((v + vs) / f0).toFixed(2)
+   979→
+   980→  // Wavefronts: emitted at historical source positions
+   981→  const numWaves = 7
+   982→  const period = 1.0 // seconds between emitted wavefronts in model scale
+   983→  const scale = 0.5 // pixels per meter in SVG
+   984→
+   985→  // Source current position along x axis
+   986→  const sourceBaseX = 320
+   987→  const sourceTravel = ((t % 4) - 2) * (vs / 60) * 35
+   988→  const currentSourceX = sourceBaseX + sourceTravel
+   989→
+   990→  return (
+   991→    <div className="flex flex-col gap-3">
+   992→      <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
+   993→        <label className="flex items-center gap-2">
+   994→          <span className="text-muted-foreground">Source Speed v_s:</span>
+   995→          <input
+   996→            type="range"
+   997→            min="0"
+   998→            max="300"
+   999→            step="10"
+  1000→            value={vs}
+  1001→            onChange={(e) => setVs(Number(e.target.value))}
+  1002→            className="w-28 accent-emerald-500"
+  1003→          />
+  1004→          <span className="text-emerald-400 font-bold">{vs} m/s</span>
+  1005→          <span className="text-[11px] text-muted-foreground">({(vs * 3.6).toFixed(0)} km/h)</span>
+  1006→        </label>
+  1007→        <div className="flex items-center gap-2">
+  1008→          <span className="text-muted-foreground">Mach:</span>
+  1009→          <span className={`font-bold ${isSupersonic ? 'text-rose-400' : 'text-teal-300'}`}>
+  1010→            M = {mach.toFixed(2)} {isSupersonic ? '(Supersonic Shockwave)' : '(Subsonic)'}
+  1011→          </span>
+  1012→        </div>
+  1013→        <span className="text-muted-foreground ml-auto">
+  1014→          Sound Speed: <strong className="text-foreground">v = {v} m/s</strong>
+  1015→        </span>
+  1016→      </div>
+  1017→
+  1018→      <div className="relative overflow-hidden rounded-xl border border-border/80 bg-background/80 p-3 sm:p-4">
+  1019→        <svg viewBox="0 0 640 240" className="w-full h-auto max-h-[300px] select-none">
+  1020→          <defs>
+  1021→            <radialGradient id="sourceGlow" cx="50%" cy="50%" r="50%">
+  1022→              <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.9" />
+  1023→              <stop offset="100%" stopColor="#0284c7" stopOpacity="0" />
+  1024→            </radialGradient>
+  1025→          </defs>
+  1026→
+  1027→          {/* Center line axis */}
+  1028→          <line x1="20" y1="120" x2="620" y2="120" stroke="#27272a" strokeWidth="1" strokeDasharray="4 4" />
+  1029→
+  1030→          {/* Left Observer (Receding source) */}
+  1031→          <g transform="translate(60, 120)">
+  1032→            <circle cx="0" cy="0" r="14" fill="#18181b" stroke="#60a5fa" strokeWidth="1.5" />
+  1033→            <text x="0" y="4" textAnchor="middle" fontSize="12" fill="#93c5fd">
+  1034→              👂
+  1035→            </text>
+  1036→            <text x="0" y="26" textAnchor="middle" fontSize="10" fill="#93c5fd" fontFamily="monospace">
+  1037→              Receding
+  1038→            </text>
+  1039→            <text x="0" y="38" textAnchor="middle" fontSize="10.5" fill="#38bdf8" fontWeight="bold" fontFamily="monospace">
+  1040→              {fReceding} Hz
+  1041→            </text>
+  1042→          </g>
+  1043→
+  1044→          {/* Right Observer (Approaching source) */}
+  1045→          <g transform="translate(580, 120)">
+  1046→            <circle cx="0" cy="0" r="14" fill="#18181b" stroke="#34d399" strokeWidth="1.5" />
+  1047→            <text x="0" y="4" textAnchor="middle" fontSize="12" fill="#6ee7b7">
+  1048→              👂
+  1049→            </text>
+  1050→            <text x="0" y="26" textAnchor="middle" fontSize="10" fill="#6ee7b7" fontFamily="monospace">
+  1051→              Approaching
+  1052→            </text>
+  1053→            <text x="0" y="38" textAnchor="middle" fontSize="10.5" fill="#10b981" fontWeight="bold" fontFamily="monospace">
+  1054→              {Number.isFinite(fApproaching) ? `${fApproaching} Hz` : 'Shock!'}
+  1055→            </text>
+  1056→          </g>
+  1057→
+  1058→          {/* Expanding Spherical Wavefronts emitted at spaced historical times */}
+  1059→          {Array.from({ length: numWaves }).map((_, i) => {
+  1060→            const age = (t % 2) + i * 0.4
+  1061→            const r = age * 55
+  1062→            const emitX = currentSourceX - (vs / 340) * (age * 40)
+  1063→            if (r <= 4 || emitX + r < 20 || emitX - r > 620) return null
+  1064→
+  1065→            return (
+  1066→              <circle
+  1067→                key={i}
+  1068→                cx={emitX}
+  1069→                cy={120}
+  1070→                r={r}
+  1071→                fill="none"
+  1072→                stroke={isSupersonic ? '#fb7185' : '#34d399'}
+  1073→                strokeWidth={i === 0 ? 2 : 1.2}
+  1074→                opacity={Math.max(0.12, 1 - r / 260)}
+  1075→              />
+  1076→            )
+  1077→          })}
+  1078→
+  1079→          {/* Supersonic Mach Cone if vs >= v */}
+  1080→          {isSupersonic && (
+  1081→            <g stroke="#f43f5e" strokeWidth="2" strokeDasharray="4 2">
+  1082→              <line x1={currentSourceX} y1="120" x2={currentSourceX - 260} y2="40" />
+  1083→              <line x1={currentSourceX} y1="120" x2={currentSourceX - 260} y2="200" />
+  1084→              <text x={currentSourceX - 180} y="80" fontSize="10" fill="#fb7185" fontFamily="monospace">
+  1085→                Mach Cone shockwave
+  1086→              </text>
+  1087→            </g>
+  1088→          )}
+  1089→
+  1090→          {/* Moving Sound Source */}
+  1091→          <g transform={`translate(${currentSourceX}, 120)`}>
+  1092→            <circle cx="0" cy="0" r="16" fill="url(#sourceGlow)" />
+  1093→            <circle cx="0" cy="0" r="8" fill="#0284c7" stroke="#38bdf8" strokeWidth="2" />
+  1094→            {/* Velocity arrow */}
+  1095→            <line x1="8" y1="0" x2="32" y2="0" stroke="#38bdf8" strokeWidth="2.5" />
+  1096→            <polygon points="36,0 28,-4 28,4" fill="#38bdf8" />
+  1097→            <text x="0" y="-14" textAnchor="middle" fontSize="10" fill="#7dd3fc" fontFamily="monospace" fontWeight="bold">
+  1098→              v_s →
+  1099→            </text>
+  1100→          </g>
+  1101→        </svg>
+  1102→
+  1103→        <div className="mt-2.5 flex flex-wrap items-center justify-between gap-2 border-t border-border/60 pt-2 text-xs">
+  1104→          <div>
+  1105→            <span className="font-semibold text-emerald-400">Doppler Equation: </span>
+  1106→            <span className="font-mono text-muted-foreground">
+  1107→              <TeX tex="f' = f_0 \left(\frac{v \pm v_o}{v \mp v_s}\right)" />
+  1108→            </span>
+  1109→          </div>
+  1110→          <div className="font-mono text-teal-300">
+  1111→            Ahead: λ' = {lambdaApp} m (Compressed) · Behind: λ' = {lambdaRec} m (Stretched)
+  1112→          </div>
+  1113→        </div>
+  1114→      </div>
+  1115→    </div>
+  1116→  )
+  1117→}
+  1118→
+  1119→/* ------------------------------------------------------------------ */
+  1120→/*  6. DC Circuits & Ohm's Law Dynamic Diagram                        */
+  1121→/* ------------------------------------------------------------------ */
+  1122→
+  1123→export function CircuitsDiagram({ playing }: { playing: boolean }) {
+  1124→  const [voltage, setVoltage] = useState(12)
+  1125→  const [resistance, setResistance] = useState(6)
+  1126→
+  1127→  const current = voltage / Math.max(0.1, resistance)
+  1128→  const power = voltage * current
+  1129→
+  1130→  const [t, setT] = useState(0)
+  1131→  useEffect(() => {
+  1132→    if (!playing) return
+  1133→    const interval = setInterval(() => {
+  1134→      setT((prev) => (prev + 1) % 100)
+  1135→    }, 40)
+  1136→    return () => clearInterval(interval)
+  1137→  }, [playing])
+  1138→
+  1139→  // Charge carrier positions around loop
+  1140→  const speedFactor = Math.min(4, Math.max(0.5, current * 0.8))
+  1141→  const carrierProgress = ((t * speedFactor) % 100) / 100
+  1142→
+  1143→  return (
+  1144→    <div className="flex flex-col gap-3">
+  1145→      <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
+  1146→        <label className="flex items-center gap-2">
+  1147→          <span className="text-muted-foreground">EMF Voltage V:</span>
+  1148→          <input
+  1149→            type="range"
+  1150→            min="2"
+  1151→            max="24"
+  1152→            step="1"
+  1153→            value={voltage}
+  1154→            onChange={(e) => setVoltage(Number(e.target.value))}
+  1155→            className="w-24 accent-amber-500"
+  1156→          />
+  1157→          <span className="text-amber-400 font-bold">{voltage} V</span>
+  1158→        </label>
+  1159→        <label className="flex items-center gap-2">
+  1160→          <span className="text-muted-foreground">Resistance R:</span>
+  1161→          <input
+  1162→            type="range"
+  1163→            min="1"
+  1164→            max="20"
+  1165→            step="1"
+  1166→            value={resistance}
+  1167→            onChange={(e) => setResistance(Number(e.target.value))}
+  1168→            className="w-24 accent-emerald-500"
+  1169→          />
+  1170→          <span className="text-emerald-400 font-bold">{resistance} Ω</span>
+  1171→        </label>
+  1172→        <span className="text-muted-foreground ml-auto">
+  1173→          Current: <strong className="text-teal-300">I = {current.toFixed(2)} A</strong> · Dissipated Power:{' '}
+  1174→          <strong className="text-rose-400">P = {power.toFixed(1)} W</strong>
+  1175→        </span>
+  1176→      </div>
+  1177→
+  1178→      <div className="relative overflow-hidden rounded-xl border border-border/80 bg-background/80 p-3 sm:p-4">
+  1179→        <svg viewBox="0 0 640 240" className="w-full h-auto max-h-[300px] select-none">
+  1180→          <defs>
+  1181→            <linearGradient id="voltageDropGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+  1182→              <stop offset="0%" stopColor="#f59e0b" />
+  1183→              <stop offset="100%" stopColor="#3b82f6" />
+  1184→            </linearGradient>
+  1185→          </defs>
+  1186→
+  1187→          {/* Circuit Loop Outline */}
+  1188→          {/* Top Wire: High potential (Amber) */}
+  1189→          <line x1="120" y1="50" x2="310" y2="50" stroke="#f59e0b" strokeWidth="3.5" />
+  1190→          {/* Resistor zigzag between 310,50 and 430,50 */}
+  1191→          <path
+  1192→            d="M 310,50 L 325,35 L 345,65 L 365,35 L 385,65 L 405,35 L 415,65 L 430,50"
+  1193→            fill="none"
+  1194→            stroke="url(#voltageDropGrad)"
+  1195→            strokeWidth="3.5"
+  1196→            strokeLinejoin="round"
+  1197→          />
+  1198→          {/* Top Wire after resistor to corner */}
+  1199→          <line x1="430" y1="50" x2="520" y2="50" stroke="#3b82f6" strokeWidth="3.5" />
+  1200→          {/* Right Wire down */}
+  1201→          <line x1="520" y1="50" x2="520" y2="190" stroke="#3b82f6" strokeWidth="3.5" />
+  1202→          {/* Bottom Wire return */}
+  1203→          <line x1="520" y1="190" x2="120" y2="190" stroke="#3b82f6" strokeWidth="3.5" />
+  1204→          {/* Left Wire bottom to battery */}
+  1205→          <line x1="120" y1="190" x2="120" y2="135" stroke="#3b82f6" strokeWidth="3.5" />
+  1206→          {/* Left Wire top from battery */}
+  1207→          <line x1="120" y1="105" x2="120" y2="50" stroke="#f59e0b" strokeWidth="3.5" />
+  1208→
+  1209→          {/* Battery DC Source */}
+  1210→          <g transform="translate(120, 120)">
+  1211→            {/* Long plate (+) */}
+  1212→            <line x1="-24" y1="-15" x2="24" y2="-15" stroke="#f59e0b" strokeWidth="4" />
+  1213→            <text x="-36" y="-12" fontSize="12" fill="#fbbf24" fontWeight="bold">
+  1214→              +
+  1215→            </text>
+  1216→            {/* Short plate (-) */}
+  1217→            <line x1="-14" y1="15" x2="14" y2="15" stroke="#3b82f6" strokeWidth="5" />
+  1218→            <text x="-36" y="20" fontSize="14" fill="#60a5fa" fontWeight="bold">
+  1219→              −
+  1220→            </text>
+  1221→            <text x="32" y="4" fontSize="11" fill="#fde047" fontFamily="monospace" fontWeight="bold">
+  1222→              {voltage} V
+  1223→            </text>
+  1224→          </g>
+  1225→
+  1226→          {/* Resistor Label */}
+  1227→          <g transform="translate(370, 25)">
+  1228→            <rect x="-45" y="-16" width="90" height="20" rx="4" fill="#18181b" stroke="#10b981" strokeWidth="1" />
+  1229→            <text x="0" y="-2" textAnchor="middle" fontSize="11" fill="#34d399" fontFamily="monospace" fontWeight="bold">
+  1230→              R = {resistance} Ω
+  1231→            </text>
+  1232→          </g>
+  1233→
+  1234→          {/* Current Flow Direction Arrow */}
+  1235→          <g transform="translate(220, 50)">
+  1236→            <polygon points="12,0 0,-5 0,5" fill="#f59e0b" />
+  1237→            <text x="6" y="-10" textAnchor="middle" fontSize="11" fill="#fbbf24" fontFamily="monospace">
+  1238→              I = {current.toFixed(2)} A →
+  1239→            </text>
+  1240→          </g>
+  1241→
+  1242→          {/* Animated Electron / Charge dots circulating */}
+  1243→          {Array.from({ length: 8 }).map((_, i) => {
+  1244→            const frac = (carrierProgress + i / 8) % 1
+  1245→            // Perimeter = top(400) + right(140) + bottom(400) + left(140) = 1080
+  1246→            const totalLen = 1080
+  1247→            const pos = frac * totalLen
+  1248→            let cx = 120
+  1249→            let cy = 50
+  1250→            if (pos < 400) {
+  1251→              cx = 120 + pos
+  1252→              cy = 50
+  1253→            } else if (pos < 540) {
+  1254→              cx = 520
+  1255→              cy = 50 + (pos - 400)
+  1256→            } else if (pos < 940) {
+  1257→              cx = 520 - (pos - 540)
+  1258→              cy = 190
+  1259→            } else {
+  1260→              cx = 120
+  1261→              cy = 190 - (pos - 940)
+  1262→            }
+  1263→
+  1264→            return (
+  1265→              <circle
+  1266→                key={i}
+  1267→                cx={cx}
+  1268→                cy={cy}
+  1269→                r="4.5"
+  1270→                fill="#38bdf8"
+  1271→                stroke="#0284c7"
+  1272→                strokeWidth="1"
+  1273→                opacity={0.9}
+  1274→              />
+  1275→            )
+  1276→          })}
+  1277→
+  1278→          {/* Power callout */}
+  1279→          <g transform="translate(440, 140)">
+  1280→            <rect width="160" height="42" rx="6" fill="#18181b" stroke="#f43f5e" strokeWidth="1" />
+  1281→            <text x="12" y="18" fontSize="11" fill="#fb7185" fontWeight="bold" fontFamily="monospace">
+  1282→              P = I²R = VI
+  1283→            </text>
+  1284→            <text x="12" y="32" fontSize="10.5" fill="#e4e4e7" fontFamily="sans-serif">
+  1285→              Heat Rate = {power.toFixed(1)} Joules/sec
+  1286→            </text>
+  1287→          </g>
+  1288→        </svg>
+  1289→
+  1290→        <div className="mt-2.5 flex flex-wrap items-center justify-between gap-2 border-t border-border/60 pt-2 text-xs">
+  1291→          <div>
+  1292→            <span className="font-semibold text-amber-400">Ohm's Law: </span>
+  1293→            <span className="font-mono text-muted-foreground">
+  1294→              <TeX tex={`I = \\frac{V}{R} = ${current.toFixed(2)}\\text{ A}`} />
+  1295→            </span>
+  1296→          </div>
+  1297→          <div className="font-mono text-emerald-400">
+  1298→            Potential Drop: \Delta V = IR = {voltage} V across resistor
+  1299→          </div>
+  1300→        </div>
+  1301→      </div>
+  1302→    </div>
+  1303→  )
+  1304→}
+  1305→
+  1306→/* ------------------------------------------------------------------ */
+  1307→/*  7. Optics & Snell's Law Refraction Diagram                         */
+  1308→/* ------------------------------------------------------------------ */
+  1309→
+  1310→export function OpticsSnellDiagram({ playing }: { playing: boolean }) {
+  1311→  const [theta1Deg, setTheta1Deg] = useState(40)
+  1312→  const [preset, setPreset] = useState<'air_glass' | 'glass_air' | 'water_air'>('air_glass')
+  1313→
+  1314→  let n1 = 1.0
+  1315→  let n2 = 1.5
+  1316→  let name1 = 'Air (n = 1.00)'
+  1317→  let name2 = 'Glass (n = 1.50)'
+  1318→
+  1319→  if (preset === 'glass_air') {
+  1320→    n1 = 1.5
+  1321→    n2 = 1.0
+  1322→    name1 = 'Glass (n = 1.50)'
+  1323→    name2 = 'Air (n = 1.00)'
+  1324→  } else if (preset === 'water_air') {
+  1325→    n1 = 1.33
+  1326→    n2 = 1.0
+  1327→    name1 = 'Water (n = 1.33)'
+  1328→    name2 = 'Air (n = 1.00)'
+  1329→  }
+  1330→
+  1331→  const theta1Rad = (theta1Deg * Math.PI) / 180
+  1332→  const sinTheta2 = (n1 / n2) * Math.sin(theta1Rad)
+  1333→  const isTIR = sinTheta2 > 1.0 // Total internal reflection
+  1334→
+  1335→  const theta2Rad = isTIR ? 0 : Math.asin(sinTheta2)
+  1336→  const theta2Deg = isTIR ? 0 : (theta2Rad * 180) / Math.PI
+  1337→  const criticalAngleDeg = n1 > n2 ? (Math.asin(n2 / n1) * 180) / Math.PI : null
+  1338→
+  1339→  const [t, setT] = useState(0)
+  1340→  useEffect(() => {
+  1341→    if (!playing) return
+  1342→    const interval = setInterval(() => {
+  1343→      setT((prev) => (prev + 1) % 50)
+  1344→    }, 40)
+  1345→    return () => clearInterval(interval)
+  1346→  }, [playing])
+  1347→
+  1348→  const rayProgress = (t % 50) / 50
+  1349→
+  1350→  // SVG dimensions: interface at y=120, center at x=320
+  1351→  const cx = 320
+  1352→  const cy = 120
+  1353→  const rayLen = 140
+  1354→
+  1355→  // Incident ray start (in medium 1, coming down-right to center)
+  1356→  const incStartX = cx - rayLen * Math.sin(theta1Rad)
+  1357→  const incStartY = cy - rayLen * Math.cos(theta1Rad)
+  1358→
+  1359→  // Refracted ray end (in medium 2, going down-right from center)
+  1360→  const refEndX = cx + rayLen * Math.sin(theta2Rad)
+  1361→  const refEndY = cy + rayLen * Math.cos(theta2Rad)
+  1362→
+  1363→  // Reflected ray end (in medium 1, going up-right from center)
+  1364→  const reflEndX = cx + rayLen * Math.sin(theta1Rad)
+  1365→  const reflEndY = cy - rayLen * Math.cos(theta1Rad)
+  1366→
+  1367→  return (
+  1368→    <div className="flex flex-col gap-3">
+  1369→      <div className="flex flex-wrap items-center gap-3 text-xs font-mono">
+  1370→        <label className="flex items-center gap-2">
+  1371→          <span className="text-muted-foreground">Incident Angle θ₁:</span>
+  1372→          <input
+  1373→            type="range"
+  1374→            min="0"
+  1375→            max="85"
+  1376→            value={theta1Deg}
+  1377→            onChange={(e) => setTheta1Deg(Number(e.target.value))}
+  1378→            className="w-24 accent-emerald-500"
+  1379→          />
+  1380→          <span className="text-emerald-400 font-bold">{theta1Deg}°</span>
+  1381→        </label>
+  1382→        <div className="flex items-center gap-1.5">
+  1383→          <button
+  1384→            onClick={() => setPreset('air_glass')}
+  1385→            className={`px-2 py-0.5 rounded border text-[11px] ${
+  1386→              preset === 'air_glass'
+  1387→                ? 'bg-emerald-500/20 border-emerald-500 text-emerald-300'
+  1388→                : 'border-border bg-muted/30 text-muted-foreground'
+  1389→            }`}
+  1390→          >
+  1391→            Air → Glass
+  1392→          </button>
+  1393→          <button
+  1394→            onClick={() => setPreset('glass_air')}
+  1395→            className={`px-2 py-0.5 rounded border text-[11px] ${
+  1396→              preset === 'glass_air'
+  1397→                ? 'bg-emerald-500/20 border-emerald-500 text-emerald-300'
+  1398→                : 'border-border bg-muted/30 text-muted-foreground'
+  1399→            }`}
+  1400→          >
+  1401→            Glass → Air (TIR demo)
+  1402→          </button>
+  1403→          <button
+  1404→            onClick={() => setPreset('water_air')}
+  1405→            className={`px-2 py-0.5 rounded border text-[11px] ${
+  1406→              preset === 'water_air'
+  1407→                ? 'bg-emerald-500/20 border-emerald-500 text-emerald-300'
+  1408→                : 'border-border bg-muted/30 text-muted-foreground'
+  1409→            }`}
+  1410→          >
+  1411→            Water → Air
+  1412→          </button>
+  1413→        </div>
+  1414→        <span className="text-muted-foreground ml-auto">
+  1415→          {criticalAngleDeg !== null && (
+  1416→            <span className="text-amber-300">θ_c = {criticalAngleDeg.toFixed(1)}° · </span>
+  1417→          )}
+  1418→          {isTIR ? (
+  1419→            <strong className="text-rose-400">Total Internal Reflection!</strong>
+  1420→          ) : (
+  1421→            <strong className="text-teal-300">Refracted θ₂ = {theta2Deg.toFixed(1)}°</strong>
+  1422→          )}
+  1423→        </span>
+  1424→      </div>
+  1425→
+  1426→      <div className="relative overflow-hidden rounded-xl border border-border/80 bg-background/80 p-3 sm:p-4">
+  1427→        <svg viewBox="0 0 640 240" className="w-full h-auto max-h-[300px] select-none">
+  1428→          {/* Medium 1 Shading (Top) */}
+  1429→          <rect x="20" y="20" width="600" height="100" fill="rgba(59,130,246,0.04)" />
+  1430→          {/* Medium 2 Shading (Bottom) */}
+  1431→          <rect x="20" y="120" width="600" height="100" fill="rgba(16,185,129,0.08)" />
+  1432→
+  1433→          {/* Interface boundary */}
+  1434→          <line x1="20" y1="120" x2="620" y2="120" stroke="#71717a" strokeWidth="2" />
+  1435→          <text x="30" y="45" fontSize="11" fill="#93c5fd" fontFamily="monospace">
+  1436→            {name1}
+  1437→          </text>
+  1438→          <text x="30" y="145" fontSize="11" fill="#6ee7b7" fontFamily="monospace">
+  1439→            {name2}
+  1440→          </text>
+  1441→
+  1442→          {/* Normal Dashed Line */}
+  1443→          <line x1={cx} y1="30" x2={cx} y2="210" stroke="#a1a1aa" strokeWidth="1.5" strokeDasharray="4 4" />
+  1444→          <text x={cx + 6} y="40" fontSize="10" fill="#a1a1aa" fontFamily="monospace">
+  1445→            Normal line
+  1446→          </text>
+  1447→
+  1448→          {/* Incident Ray */}
+  1449→          <line x1={incStartX} y1={incStartY} x2={cx} y2={cy} stroke="#fbbf24" strokeWidth="2.5" />
+  1450→          {/* Incident pulse */}
+  1451→          <circle
+  1452→            cx={incStartX + (cx - incStartX) * rayProgress}
+  1453→            cy={incStartY + (cy - incStartY) * rayProgress}
+  1454→            r="4"
+  1455→            fill="#fef08a"
+  1456→          />
+  1457→
+  1458→          {/* Reflected Ray (always present, but 100% in TIR) */}
+  1459→          <line
+  1460→            x1={cx}
+  1461→            y1={cy}
+  1462→            x2={reflEndX}
+  1463→            y2={reflEndY}
+  1464→            stroke="#f59e0b"
+  1465→            strokeWidth={isTIR ? 2.5 : 1.2}
+  1466→            opacity={isTIR ? 1 : 0.45}
+  1467→            strokeDasharray={isTIR ? undefined : '4 3'}
+  1468→          />
+  1469→
+  1470→          {/* Refracted Ray (only if not TIR) */}
+  1471→          {!isTIR && (
+  1472→            <>
+  1473→              <line x1={cx} y1={cy} x2={refEndX} y2={refEndY} stroke="#10b981" strokeWidth="2.5" />
+  1474→              <circle
+  1475→                cx={cx + (refEndX - cx) * rayProgress}
+  1476→                cy={cy + (refEndY - cy) * rayProgress}
+  1477→                r="4"
+  1478→                fill="#34d399"
+  1479→              />
+  1480→            </>
+  1481→          )}
+  1482→
+  1483→          {/* Angle annotations */}
+  1484→          <text x={cx - 35} y={cy - 20} fontSize="11" fill="#fbbf24" fontFamily="monospace">
+  1485→            θ₁={theta1Deg}°
+  1486→          </text>
+  1487→          {!isTIR ? (
+  1488→            <text x={cx + 25} y={cy + 35} fontSize="11" fill="#34d399" fontFamily="monospace">
+  1489→              θ₂={theta2Deg.toFixed(1)}°
+  1490→            </text>
+  1491→          ) : (
+  1492→            <g transform="translate(420, 140)">
+  1493→              <rect width="180" height="45" rx="6" fill="#18181b" stroke="#f43f5e" strokeWidth="1" />
+  1494→              <text x="10" y="20" fontSize="11" fill="#fb7185" fontWeight="bold" fontFamily="monospace">
+  1495→                TIR Condition Met
+  1496→              </text>
+  1497→              <text x="10" y="36" fontSize="10" fill="#e4e4e7" fontFamily="sans-serif">
+  1498→                θ₁ ({theta1Deg}°) &gt; θ_c ({criticalAngleDeg?.toFixed(1)}°)
+  1499→              </text>
+  1500→            </g>
+  1501→          )}
+  1502→        </svg>
+  1503→
+  1504→        <div className="mt-2.5 flex flex-wrap items-center justify-between gap-2 border-t border-border/60 pt-2 text-xs">
+  1505→          <div>
+  1506→            <span className="font-semibold text-emerald-400">Snell's Law: </span>
+  1507→            <span className="font-mono text-muted-foreground">
+  1508→              n_1 \sin\theta_1 = n_2 \sin\theta_2
+  1509→            </span>
+  1510→          </div>
+  1511→          <div className="font-mono text-teal-300">
+  1512→            Ratio: <TeX tex={`\\sin\\theta_2 = \\frac{${n1}}{${n2}} \\sin(${theta1Deg}^\\circ) = ${sinTheta2.toFixed(3)}`} />
+  1513→          </div>
+  1514→        </div>
+  1515→      </div>
+  1516→    </div>
+  1517→  )
+  1518→}
+  1519→
+  1520→/* ------------------------------------------------------------------ */
+  1521→/*  8. Thermodynamics PV-Diagram & Work Expansion Diagram             */
+  1522→/* ------------------------------------------------------------------ */
+  1523→
+  1524→export function ThermodynamicsPVDiagram({ playing }: { playing: boolean }) {
+  1525→  const [processType, setProcessType] = useState<'isothermal' | 'isobaric' | 'isochoric' | 'adiabatic'>('isothermal')
+  1526→  const [ratio, setRatio] = useState(2.2)
+  1527→
+  1528→  const p1 = 400 // kPa
+  1529→  const v1 = 1.0 // m³
+  1530→  const v2 = v1 * ratio
+  1531→
+  1532→  // Work calculation
+  1533→  let work = 0 // kJ
+  1534→  let p2 = p1
+  1535→  if (processType === 'isothermal') {
+  1536→    // PV = const, W = P1*V1*ln(V2/V1)
+  1537→    p2 = p1 / ratio
+  1538→    work = p1 * v1 * Math.log(ratio)
+  1539→  } else if (processType === 'isobaric') {
+  1540→    // P = const, W = P * deltaV
+  1541→    p2 = p1
+  1542→    work = p1 * (v2 - v1)
+  1543→  } else if (processType === 'isochoric') {
+  1544→    // V = const, W = 0
+  1545→    p2 = p1 * 0.5
+  1546→    work = 0
+  1547→  } else if (processType === 'adiabatic') {
+  1548→    // PV^1.4 = const
+  1549→    const gamma = 1.4
+  1550→    p2 = p1 / Math.pow(ratio, gamma)
+  1551→    work = (p1 * v1 - p2 * v2) / (gamma - 1)
+  1552→  }
+  1553→
+  1554→  // Coordinate scales for SVG (x: V from 0.5 to 4.0, y: P from 0 to 500)
+  1555→  const mapV = (vVal: number) => 80 + ((vVal - 0.5) / 3.5) * 380
+  1556→  const mapP = (pVal: number) => 200 - (pVal / 480) * 160
+  1557→
+  1558→  return (
+  1559→    <div className="flex flex-col gap-3">
+  1560→      <div className="flex flex-wrap items-center gap-3 text-xs font-mono">
+  1561→        <span className="text-muted-foreground">Process:</span>
+  1562→        {(['isothermal', 'isobaric', 'isochoric', 'adiabatic'] as const).map((proc) => (
+  1563→          <button
+  1564→            key={proc}
+  1565→            onClick={() => setProcessType(proc)}
+  1566→            className={`px-2.5 py-1 rounded-md border capitalize transition-all ${
+  1567→              processType === proc
+  1568→                ? 'bg-emerald-500/20 border-emerald-500 text-emerald-300 font-semibold'
+  1569→                : 'border-border bg-muted/30 text-muted-foreground'
+  1570→            }`}
+  1571→          >
+  1572→            {proc}
+  1573→          </button>
+  1574→        ))}
+  1575→        {processType !== 'isochoric' && (
+  1576→          <label className="flex items-center gap-2 ml-2">
+  1577→            <span className="text-muted-foreground">V₂/V₁:</span>
+  1578→            <input
+  1579→              type="range"
+  1580→              min="1.3"
+  1581→              max="3.2"
+  1582→              step="0.1"
+  1583→              value={ratio}
+  1584→              onChange={(e) => setRatio(Number(e.target.value))}
+  1585→              className="w-20 accent-emerald-500"
+  1586→            />
+  1587→            <span className="text-emerald-400 font-bold">{ratio.toFixed(1)}x</span>
+  1588→          </label>
+  1589→        )}
+  1590→        <span className="text-muted-foreground ml-auto">
+  1591→          Work Done: <strong className="text-amber-300">W = {work.toFixed(1)} kJ</strong>
+  1592→        </span>
+  1593→      </div>
+  1594→
+  1595→      <div className="relative overflow-hidden rounded-xl border border-border/80 bg-background/80 p-3 sm:p-4">
+  1596→        <svg viewBox="0 0 640 240" className="w-full h-auto max-h-[300px] select-none">
+  1597→          {/* PV Axes */}
+  1598→          <line x1="80" y1="200" x2="500" y2="200" stroke="#71717a" strokeWidth="2" />
+  1599→          <polygon points="505,200 495,196 495,204" fill="#71717a" />
+  1600→          <text x="510" y="204" fontSize="11" fill="#a1a1aa" fontFamily="monospace">
+  1601→            V (m³)
+  1602→          </text>
+  1603→
+  1604→          <line x1="80" y1="200" x2="80" y2="30" stroke="#71717a" strokeWidth="2" />
+  1605→          <polygon points="80,25 76,35 84,35" fill="#71717a" />
+  1606→          <text x="60" y="24" fontSize="11" fill="#a1a1aa" fontFamily="monospace">
+  1607→            P (kPa)
+  1608→          </text>
+  1609→
+  1610→          {/* Shaded Work Done Area W = \int P dV */}
+  1611→          {processType !== 'isochoric' && (
+  1612→            <path
+  1613→              d={(() => {
+  1614→                let dStr = `M ${mapV(v1)} ${mapP(0)} L ${mapV(v1)} ${mapP(p1)}`
+  1615→                const steps = 30
+  1616→                for (let i = 0; i <= steps; i++) {
+  1617→                  const currV = v1 + (i / steps) * (v2 - v1)
+  1618→                  let currP = p1
+  1619→                  if (processType === 'isothermal') currP = (p1 * v1) / currV
+  1620→                  else if (processType === 'adiabatic') currP = p1 / Math.pow(currV / v1, 1.4)
+  1621→                  dStr += ` L ${mapV(currV)} ${mapP(currP)}`
+  1622→                }
+  1623→                dStr += ` L ${mapV(v2)} ${mapP(0)} Z`
+  1624→                return dStr
+  1625→              })()}
+  1626→              fill="rgba(245,158,11,0.15)"
+  1627→              stroke="none"
+  1628→            />
+  1629→          )}
+  1630→
+  1631→          {/* Curve Path from State 1 to State 2 */}
+  1632→          <path
+  1633→            d={(() => {
+  1634→              if (processType === 'isochoric') {
+  1635→                return `M ${mapV(v1)} ${mapP(p1)} L ${mapV(v1)} ${mapP(p2)}`
+  1636→              }
+  1637→              let dStr = `M ${mapV(v1)} ${mapP(p1)}`
+  1638→              const steps = 30
+  1639→              for (let i = 0; i <= steps; i++) {
+  1640→                const currV = v1 + (i / steps) * (v2 - v1)
+  1641→                let currP = p1
+  1642→                if (processType === 'isothermal') currP = (p1 * v1) / currV
+  1643→                else if (processType === 'adiabatic') currP = p1 / Math.pow(currV / v1, 1.4)
+  1644→                dStr += ` L ${mapV(currV)} ${mapP(currP)}`
+  1645→              }
+  1646→              return dStr
+  1647→            })()}
+  1648→            fill="none"
+  1649→            stroke="#10b981"
+  1650→            strokeWidth="3"
+  1651→          />
+  1652→
+  1653→          {/* State 1 Marker */}
+  1654→          <circle cx={mapV(v1)} cy={mapP(p1)} r="5" fill="#10b981" stroke="#34d399" strokeWidth="2" />
+  1655→          <text x={mapV(v1) - 15} y={mapP(p1) - 10} fontSize="11" fill="#34d399" fontFamily="monospace" fontWeight="bold">
+  1656→            State 1 ({p1} kPa, {v1} m³)
+  1657→          </text>
+  1658→
+  1659→          {/* State 2 Marker */}
+  1660→          <circle
+  1661→            cx={mapV(processType === 'isochoric' ? v1 : v2)}
+  1662→            cy={mapP(p2)}
+  1663→            r="5"
+  1664→            fill="#f59e0b"
+  1665→            stroke="#fbbf24"
+  1666→            strokeWidth="2"
+  1667→          />
+  1668→          <text
+  1669→            x={mapV(processType === 'isochoric' ? v1 : v2) + 10}
+  1670→            y={mapP(p2) - 10}
+  1671→            fontSize="11"
+  1672→            fill="#fbbf24"
+  1673→            fontFamily="monospace"
+  1674→            fontWeight="bold"
+  1675→          >
+  1676→            State 2 ({p2.toFixed(0)} kPa, {(processType === 'isochoric' ? v1 : v2).toFixed(1)} m³)
+  1677→          </text>
+  1678→
+  1679→          {/* Work indicator label */}
+  1680→          {processType !== 'isochoric' && (
+  1681→            <text
+  1682→              x={(mapV(v1) + mapV(v2)) / 2}
+  1683→              y="160"
+  1684→              textAnchor="middle"
+  1685→              fontSize="11"
+  1686→              fill="#fde047"
+  1687→              fontFamily="monospace"
+  1688→              fontWeight="bold"
+  1689→            >
+  1690→              W = ∫ P dV = {work.toFixed(1)} kJ
+  1691→            </text>
+  1692→          )}
+  1693→        </svg>
+  1694→
+  1695→        <div className="mt-2.5 flex flex-wrap items-center justify-between gap-2 border-t border-border/60 pt-2 text-xs">
+  1696→          <div>
+  1697→            <span className="font-semibold text-emerald-400">Thermodynamic Work: </span>
+  1698→            <span className="font-mono text-muted-foreground">
+  1699→              W = \int_{`{V_1}`}^{`{V_2}`} P\, dV
+  1700→            </span>
+  1701→          </div>
+  1702→          <div className="font-mono text-teal-300">
+  1703→            {processType === 'isothermal'
+  1704→              ? 'Isothermal: T = const → W = nRT ln(V₂/V₁)'
+  1705→              : processType === 'isobaric'
+  1706→                ? 'Isobaric: P = const → W = P(V₂ - V₁)'
+  1707→                : processType === 'isochoric'
+  1708→                  ? 'Isochoric: V = const → W = 0 (No boundary work)'
+  1709→                  : 'Adiabatic: Q = 0 → PV^γ = const (Steeper slope)'}
+  1710→          </div>
+  1711→        </div>
+  1712→      </div>
+  1713→    </div>
+  1714→  )
+  1715→}
+  1716→
+  1717→/* ------------------------------------------------------------------ */
+  1718→/*  9. Calculus Derivatives & Tangent Slopes Diagram                  */
+  1719→/* ------------------------------------------------------------------ */
+  1720→
+  1721→export function CalculusTangentDiagram({ playing }: { playing: boolean }) {
+  1722→  const [x0, setX0] = useState(1.2)
+  1723→  const [h, setH] = useState(0.8)
+  1724→  const [showRiemann, setShowRiemann] = useState(false)
+  1725→
+  1726→  // f(x) = x^2 / 3 + 1
+  1727→  const f = (xVal: number) => (xVal * xVal) / 3 + 0.8
+  1728→  const fPrime = (xVal: number) => (2 * xVal) / 3 // exact derivative
+  1729→
+  1730→  const y0 = f(x0)
+  1731→  const mTangent = fPrime(x0)
+  1732→  const x1 = x0 + h
+  1733→  const y1 = f(x1)
+  1734→  const mSecant = (y1 - y0) / h
+  1735→
+  1736→  // Coordinate mapping for SVG (x from -3 to 3, y from 0 to 4.5)
+  1737→  const mapX = (xVal: number) => 320 + xVal * 75
+  1738→  const mapY = (yVal: number) => 210 - yVal * 40
+  1739→
+  1740→  return (
+  1741→    <div className="flex flex-col gap-3">
+  1742→      <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
+  1743→        <label className="flex items-center gap-2">
+  1744→          <span className="text-muted-foreground">Evaluation Point x₀:</span>
+  1745→          <input
+  1746→            type="range"
+  1747→            min="-2.2"
+  1748→            max="2.2"
+  1749→            step="0.1"
+  1750→            value={x0}
+  1751→            onChange={(e) => setX0(Number(e.target.value))}
+  1752→            className="w-24 accent-emerald-500"
+  1753→          />
+  1754→          <span className="text-emerald-400 font-bold">{x0.toFixed(1)}</span>
+  1755→        </label>
+  1756→        <label className="flex items-center gap-2">
+  1757→          <span className="text-muted-foreground">Secant Step h:</span>
+  1758→          <input
+  1759→            type="range"
+  1760→            min="0.1"
+  1761→            max="1.5"
+  1762→            step="0.05"
+  1763→            value={h}
+  1764→            onChange={(e) => setH(Number(e.target.value))}
+  1765→            className="w-20 accent-amber-500"
+  1766→          />
+  1767→          <span className="text-amber-400 font-bold">{h.toFixed(2)}</span>
+  1768→        </label>
+  1769→        <button
+  1770→          onClick={() => setShowRiemann((r) => !r)}
+  1771→          className={`px-2.5 py-1 rounded border text-[11px] ${
+  1772→            showRiemann
+  1773→              ? 'bg-emerald-500/20 border-emerald-500 text-emerald-300'
+  1774→              : 'border-border bg-muted/30 text-muted-foreground'
+  1775→          }`}
+  1776→        >
+  1777→          {showRiemann ? 'Hide Integral Slices' : 'Show Riemann Area'}
+  1778→        </button>
+  1779→        <span className="text-muted-foreground ml-auto">
+  1780→          Tangent Slope: <strong className="text-teal-300">f'(x₀) = {mTangent.toFixed(2)}</strong> · Secant:{' '}
+  1781→          <strong className="text-amber-300">m_sec = {mSecant.toFixed(2)}</strong>
+  1782→        </span>
+  1783→      </div>
+  1784→
+  1785→      <div className="relative overflow-hidden rounded-xl border border-border/80 bg-background/80 p-3 sm:p-4">
+  1786→        <svg viewBox="0 0 640 240" className="w-full h-auto max-h-[300px] select-none">
+  1787→          {/* Axes */}
+  1788→          <line x1="60" y1="210" x2="580" y2="210" stroke="#71717a" strokeWidth="1.5" />
+  1789→          <line x1="320" y1="220" x2="320" y2="20" stroke="#71717a" strokeWidth="1.5" />
+  1790→
+  1791→          {/* Riemann rectangles under curve if enabled */}
+  1792→          {showRiemann &&
+  1793→            Array.from({ length: 10 }).map((_, i) => {
+  1794→              const rectX = 0 + i * 0.22
+  1795→              const rectY = f(rectX)
+  1796→              return (
+  1797→                <rect
+  1798→                  key={i}
+  1799→                  x={mapX(rectX)}
+  1800→                  y={mapY(rectY)}
+  1801→                  width={0.22 * 75}
+  1802→                  height={rectY * 40}
+  1803→                  fill="rgba(52,211,153,0.18)"
+  1804→                  stroke="#34d399"
+  1805→                  strokeWidth="0.8"
+  1806→                />
+  1807→              )
+  1808→            })}
+  1809→
+  1810→          {/* Function Curve f(x) */}
+  1811→          <path
+  1812→            d={(() => {
+  1813→              let p = ''
+  1814→              for (let xVal = -2.8; xVal <= 2.8; xVal += 0.1) {
+  1815→                const px = mapX(xVal)
+  1816→                const py = mapY(f(xVal))
+  1817→                p += p === '' ? `M ${px} ${py}` : ` L ${px} ${py}`
+  1818→              }
+  1819→              return p
+  1820→            })()}
+  1821→            fill="none"
+  1822→            stroke="#60a5fa"
+  1823→            strokeWidth="2.5"
+  1824→          />
+  1825→
+  1826→          {/* Secant Line (Amber dashed) */}
+  1827→          <line
+  1828→            x1={mapX(x0 - 0.5)}
+  1829→            y1={mapY(y0 - 0.5 * mSecant)}
+  1830→            x2={mapX(x1 + 0.5)}
+  1831→            y2={mapY(y1 + 0.5 * mSecant)}
+  1832→            stroke="#fbbf24"
+  1833→            strokeWidth="1.8"
+  1834→            strokeDasharray="4 3"
+  1835→          />
+  1836→
+  1837→          {/* Tangent Line (Emerald) */}
+  1838→          <line
+  1839→            x1={mapX(x0 - 1.2)}
+  1840→            y1={mapY(y0 - 1.2 * mTangent)}
+  1841→            x2={mapX(x0 + 1.2)}
+  1842→            y2={mapY(y0 + 1.2 * mTangent)}
+  1843→            stroke="#10b981"
+  1844→            strokeWidth="2.5"
+  1845→          />
+  1846→
+  1847→          {/* Tangent Point (x0, y0) */}
+  1848→          <circle cx={mapX(x0)} cy={mapY(y0)} r="5" fill="#10b981" stroke="#34d399" strokeWidth="2" />
+  1849→          <circle cx={mapX(x1)} cy={mapY(y1)} r="4" fill="#fbbf24" stroke="#fde047" strokeWidth="1.5" />
+  1850→
+  1851→          {/* Annotations */}
+  1852→          <text x={mapX(x0) + 10} y={mapY(y0) - 10} fontSize="11" fill="#34d399" fontFamily="monospace" fontWeight="bold">
+  1853→            (x₀, f(x₀))
+  1854→          </text>
+  1855→        </svg>
+  1856→
+  1857→        <div className="mt-2.5 flex flex-wrap items-center justify-between gap-2 border-t border-border/60 pt-2 text-xs">
+  1858→          <div>
+  1859→            <span className="font-semibold text-emerald-400">Derivative Limit Definition: </span>
+  1860→            <span className="font-mono text-muted-foreground">
+  1861→              <TeX tex="f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}" />
+  1862→            </span>
+  1863→          </div>
+  1864→          <div className="font-mono text-teal-300">
+  1865→            As step h → 0: Secant chord {mSecant.toFixed(2)} converges to exact Tangent {mTangent.toFixed(2)}
+  1866→          </div>
+  1867→        </div>
+  1868→      </div>
+  1869→    </div>
+  1870→  )
+  1871→}
+  1872→
+  1873→/* ------------------------------------------------------------------ */
+  1874→/*  10. Digital Logic Gates & Boolean Algebra Diagram                 */
+  1875→/* ------------------------------------------------------------------ */
+  1876→
+  1877→export function LogicGatesDiagram({ playing }: { playing: boolean }) {
+  1878→  const [gate, setGate] = useState<'AND' | 'OR' | 'NAND' | 'NOR' | 'XOR'>('AND')
+  1879→  const [inA, setInA] = useState<0 | 1>(1)
+  1880→  const [inB, setInB] = useState<0 | 1>(0)
+  1881→
+  1882→  // Compute boolean output
+  1883→  let out: 0 | 1 = 0
+  1884→  if (gate === 'AND') out = (inA && inB) as 0 | 1
+  1885→  else if (gate === 'OR') out = (inA || inB) as 0 | 1
+  1886→  else if (gate === 'NAND') out = (!(inA && inB) ? 1 : 0) as 0 | 1
+  1887→  else if (gate === 'NOR') out = (!(inA || inB) ? 1 : 0) as 0 | 1
+  1888→  else if (gate === 'XOR') out = (inA !== inB ? 1 : 0) as 0 | 1
+  1889→
+  1890→  return (
+  1891→    <div className="flex flex-col gap-3">
+  1892→      <div className="flex flex-wrap items-center gap-3 text-xs font-mono">
+  1893→        <span className="text-muted-foreground">Gate:</span>
+  1894→        {(['AND', 'OR', 'NAND', 'NOR', 'XOR'] as const).map((g) => (
+  1895→          <button
+  1896→            key={g}
+  1897→            onClick={() => setGate(g)}
+  1898→            className={`px-2.5 py-1 rounded-md border transition-all ${
+  1899→              gate === g
+  1900→                ? 'bg-emerald-500/20 border-emerald-500 text-emerald-300 font-semibold'
+  1901→                : 'border-border bg-muted/30 text-muted-foreground'
+  1902→            }`}
+  1903→          >
+  1904→            {g}
+  1905→          </button>
+  1906→        ))}
+  1907→        <div className="flex items-center gap-2 ml-3">
+  1908→          <span className="text-muted-foreground">Inputs:</span>
+  1909→          <button
+  1910→            onClick={() => setInA((v) => (v === 1 ? 0 : 1))}
+  1911→            className={`px-2.5 py-1 rounded font-bold transition-all ${
+  1912→              inA === 1 ? 'bg-emerald-500 text-slate-950' : 'bg-muted border border-border text-muted-foreground'
+  1913→            }`}
+  1914→          >
+  1915→            A = {inA}
+  1916→          </button>
+  1917→          <button
+  1918→            onClick={() => setInB((v) => (v === 1 ? 0 : 1))}
+  1919→            className={`px-2.5 py-1 rounded font-bold transition-all ${
+  1920→              inB === 1 ? 'bg-emerald-500 text-slate-950' : 'bg-muted border border-border text-muted-foreground'
+  1921→            }`}
+  1922→          >
+  1923→            B = {inB}
+  1924→          </button>
+  1925→        </div>
+  1926→        <span className="text-muted-foreground ml-auto">
+  1927→          Output: <strong className={out === 1 ? 'text-emerald-400 font-bold' : 'text-zinc-400 font-bold'}>Y = {out}</strong>
+  1928→        </span>
+  1929→      </div>
+  1930→
+  1931→      <div className="relative overflow-hidden rounded-xl border border-border/80 bg-background/80 p-3 sm:p-4">
+  1932→        <svg viewBox="0 0 640 200" className="w-full h-auto max-h-[260px] select-none">
+  1933→          {/* Input Wires */}
+  1934→          <line
+  1935→            x1="80"
+  1936→            y1="70"
+  1937→            x2="240"
+  1938→            y2="70"
+  1939→            stroke={inA === 1 ? '#10b981' : '#3f3f46'}
+  1940→            strokeWidth="3.5"
+  1941→          />
+  1942→          <text x="50" y="75" fontSize="13" fill={inA === 1 ? '#34d399' : '#a1a1aa'} fontFamily="monospace" fontWeight="bold">
+  1943→            A={inA}
+  1944→          </text>
+  1945→
+  1946→          <line
+  1947→            x1="80"
+  1948→            y1="130"
+  1949→            x2="240"
+  1950→            y2="130"
+  1951→            stroke={inB === 1 ? '#10b981' : '#3f3f46'}
+  1952→            strokeWidth="3.5"
+  1953→          />
+  1954→          <text x="50" y="135" fontSize="13" fill={inB === 1 ? '#34d399' : '#a1a1aa'} fontFamily="monospace" fontWeight="bold">
+  1955→            B={inB}
+  1956→          </text>
+  1957→
+  1958→          {/* Logic Gate Body */}
+  1959→          <g transform="translate(240, 50)">
+  1960→            <rect width="110" height="100" rx="12" fill="#18181b" stroke="#3b82f6" strokeWidth="2" />
+  1961→            <text x="55" y="58" textAnchor="middle" fontSize="18" fill="#60a5fa" fontFamily="monospace" fontWeight="bold">
+  1962→              {gate}
+  1963→            </text>
+  1964→          </g>
+  1965→
+  1966→          {/* Output Wire */}
+  1967→          <line
+  1968→            x1="350"
+  1969→            y1="100"
+  1970→            x2="500"
+  1971→            y2="100"
+  1972→            stroke={out === 1 ? '#10b981' : '#3f3f46'}
+  1973→            strokeWidth="4"
+  1974→          />
+  1975→
+  1976→          {/* Output Node & Indicator */}
+  1977→          <circle
+  1978→            cx="500"
+  1979→            cy="100"
+  1980→            r="16"
+  1981→            fill={out === 1 ? '#10b981' : '#27272a'}
+  1982→            stroke={out === 1 ? '#34d399' : '#52525b'}
+  1983→            strokeWidth="2"
+  1984→          />
+  1985→          <text
+  1986→            x="500"
+  1987→            y="105"
+  1988→            textAnchor="middle"
+  1989→            fontSize="14"
+  1990→            fill={out === 1 ? '#022c22' : '#a1a1aa'}
+  1991→            fontFamily="monospace"
+  1992→            fontWeight="bold"
+  1993→          >
+  1994→            {out}
+  1995→          </text>
+  1996→          <text x="530" y="105" fontSize="13" fill={out === 1 ? '#34d399' : '#a1a1aa'} fontFamily="monospace" fontWeight="bold">
+  1997→            Y = {out}
+  1998→          </text>
+  1999→        </svg>
+  2000→
+
+[showing lines 1-2000 of 3257; use offset=2001 with limit to continue reading]

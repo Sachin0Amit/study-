@@ -25,6 +25,7 @@ import { TOTAL_FORMULAS } from '@/data/formulas'
 import { allContent } from '@/data/content'
 import { easySubjectLine } from '@/data/easy-library'
 import { EasyLine } from './easy-box'
+import { ChapterIcon } from './chapter-icon'
 import { useStudy } from '@/store/useStudy'
 
 const FOCUS_RING =
@@ -282,13 +283,15 @@ export function LibraryView() {
                 />
                 <div className="relative">
                   <div
-                    className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border"
+                    className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border transition-transform duration-300 group-hover:scale-105"
                     style={{
                       borderColor: subject.accent + '55',
                       background: subject.accent + '18',
                     }}
                   >
-                    <Sigma className="h-6 w-6" style={{ color: subject.accent }} />
+                    <span style={{ color: subject.accent }}>
+                      <ChapterIcon icon={subject.icon} className="h-6 w-6" />
+                    </span>
                   </div>
                   <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                     {subject.tagline}

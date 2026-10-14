@@ -89,6 +89,7 @@ import {
   Radio,
   Sparkles,
   FunctionSquare,
+  Cog,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -180,6 +181,7 @@ const ICONS: Record<string, LucideIcon> = {
   radio: Radio,
   sparkles: Sparkles,
   'chart-line': FunctionSquare,
+  cog: Cog,
 }
 
 export function ChapterIcon({ icon, className }: { icon: string; className?: string }) {

@@ -1,8 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowLeft, BookMarked, BookOpen, Clock, Layers, Play } from 'lucide-react'
-import { getBook, getChapters, LIBRARY_SECTIONS, LIBRARY_SUBJECTS } from '@/data/library'
+import { ArrowLeft, ArrowRight, BookMarked, BookOpen, Clock, Layers, Play } from 'lucide-react'
+import { getBook, getChapters, LIBRARY_SECTIONS, LIBRARY_SUBJECTS, type SectionMeta } from '@/data/library'
 import { INTERACTIVE_META } from '@/components/interactives/registry'
 import { easyBookLine, easyChapterLine } from '@/data/easy-library'
 import { EasyBox, EasyLine } from './easy-box'
@@ -22,6 +22,37 @@ export function BookView({ bookId }: { bookId: string }) {
 
   const doneCount = (cid: string) =>
     sectionsOf(cid).filter((s) => progress[s.id]?.status === 'completed').length
+
+  // ---- book-level progress + “jump back in” resume target ----
+  const allSections: SectionMeta[] = chapters.flatMap((c) => sectionsOf(c.id))
+  const bookDone = allSections.filter((s) => progress[s.id]?.status === 'completed').length
+  const bookPct = allSections.length ? Math.round((bookDone / allSections.length) * 100) : 0
+  const touched = allSections
+    .map((s) => ({ s, p: progress[s.id] }))
+    .filter((x): x is { s: SectionMeta; p: NonNullable<typeof x.p> } => Boolean(x.p))
+  const resume: { section: SectionMeta; chapterNumber: number; chapterTitle: string } | null = (() => {
+    if (touched.length === 0) return null
+    // most recent activity wins
+    const last = [...touched].sort((a, b) => Date.parse(b.p.lastViewed ?? '') - Date.parse(a.p.lastViewed ?? ''))[0]
+    const idx = allSections.findIndex((x) => x.id === last.s.id)
+    const chapterOf = (sec: SectionMeta) => {
+      const ch = chapters.find((c) => c.id === sec.chapterId)
+      return ch ? { chapterNumber: ch.number, chapterTitle: ch.shortTitle } : null
+    }
+    if (last.p.status !== 'completed') {
+      const meta = chapterOf(last.s)
+      return meta ? { section: last.s, ...meta } : null
+    }
+    // last activity completed → next uncompleted section after it (wrap to start)
+    for (let i = 1; i <= allSections.length; i++) {
+      const cand = allSections[(idx + i) % allSections.length]
+      if (progress[cand.id]?.status !== 'completed') {
+        const meta = chapterOf(cand)
+        return meta ? { section: cand, ...meta } : null
+      }
+    }
+    return null // everything completed
+  })()
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -91,6 +122,25 @@ export function BookView({ bookId }: { bookId: string }) {
                 </span>
               )}
             </div>
+
+            {/* book-level progress — appears once you start completing lessons */}
+            {touched.length > 0 && (
+              <div className="mt-5 max-w-md">
+                <div className="mb-1.5 flex items-center justify-between text-[11px] font-medium">
+                  <span className="inline-flex items-center gap-1.5 text-muted-foreground">
+                    <Clock className="h-3 w-3 text-emerald-400" />
+                    {bookDone} of {allSections.length} lessons complete
+                  </span>
+                  <span className="font-mono font-bold text-emerald-300">{bookPct}%</span>
+                </div>
+                <div className="h-1.5 overflow-hidden rounded-full bg-muted" role="progressbar" aria-valuenow={bookPct} aria-valuemin={0} aria-valuemax={100} aria-label="Book completion">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-emerald-400 to-teal-300 transition-[width] duration-700"
+                    style={{ width: `${bookPct}%` }}
+                  />
+                </div>
+              </div>
+            )}
             {book.sources && book.sources.length > 0 && (
               <div className="mt-5 rounded-xl border border-border/70 bg-muted/30 p-3.5">
                 <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
@@ -111,6 +161,39 @@ export function BookView({ bookId }: { bookId: string }) {
         </div>
       </motion.div>
 
+      {/* Jump back in — resume the reader's most recent section */}
+      {resume && (
+        <motion.button
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
+          onClick={() => navigate({ name: 'lesson', sectionId: resume.section.id })}
+          className="group mb-8 flex w-full items-center gap-4 rounded-2xl border border-emerald-400/25 bg-gradient-to-r from-emerald-400/[0.08] via-card to-card p-4 text-left transition-all hover:border-emerald-400/45 hover:from-emerald-400/[0.12] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60 sm:gap-5 sm:p-5"
+        >
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-400/10 text-emerald-300 transition-transform group-hover:scale-105">
+            <BookOpen className="h-5 w-5" />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em] text-emerald-300/90">
+              Jump back in
+              {bookPct > 0 && (
+                <span className="rounded-full border border-emerald-400/25 bg-emerald-400/10 px-1.5 py-px font-mono text-[9px] tracking-normal text-emerald-200/90">
+                  {bookPct}% done
+                </span>
+              )}
+            </span>
+            <span className="mt-0.5 block truncate text-[15px] font-bold">{resume.section.title}</span>
+            <span className="mt-0.5 block truncate text-xs text-muted-foreground">
+              Chapter {resume.chapterNumber} · {resume.chapterTitle} · Section {resume.section.number}
+            </span>
+          </span>
+          <span className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground shadow-[0_8px_24px_-8px_rgba(52,211,153,0.4)] transition-all group-hover:bg-primary/90">
+            Resume
+            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+          </span>
+        </motion.button>
+      )}
+
       {/* Chapter grid */}
       <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {chapters.map((ch, i) => {
@@ -128,7 +211,7 @@ export function BookView({ bookId }: { bookId: string }) {
               <TiltCard className="cursor-pointer rounded-2xl">
                 <button
                   onClick={() => navigate({ name: 'chapter', chapterId: ch.id })}
-                  className="sv-card-glow sv-tilt-inner block w-full rounded-2xl border border-border/80 bg-card p-5 text-left"
+                  className="sv-card-glow sv-tilt-inner block w-full rounded-2xl border border-border/80 bg-card p-5 text-left transition-colors duration-300 hover:border-emerald-400/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex items-center gap-3">
@@ -176,7 +259,12 @@ export function BookView({ bookId }: { bookId: string }) {
                   )}
 
                   <div className="mt-3 flex items-center justify-between text-[11px] text-muted-foreground">
-                    <span className="font-mono">{secs.length} sections</span>
+                    <span className="font-mono">
+                      {secs.length} section{secs.length !== 1 ? 's' : ''}
+                      {done > 0 && (
+                        <span className="text-emerald-400"> · {done}/{secs.length} done</span>
+                      )}
+                    </span>
                     <span className="inline-flex items-center gap-1">
                       {tool ? (
                         <>

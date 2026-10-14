@@ -63,6 +63,21 @@ export function ChapterView({ chapterId }: { chapterId: string }) {
 
   const done = sections.filter((s) => progress[s.id]?.status === 'completed').length
   const pct = sections.length ? Math.round((done / sections.length) * 100) : 0
+  // “next up” = resume the most recent section if unfinished, else the first
+  // uncompleted section after it (wrap to start)
+  const nextUpId: string | null = (() => {
+    const touchedIdx = sections
+      .map((s, i) => ({ i, at: Date.parse(progress[s.id]?.lastViewed ?? '') }))
+      .filter((x) => Number.isFinite(x.at))
+      .sort((a, b) => b.at - a.at)[0]?.i
+    if (touchedIdx === undefined) return sections[0]?.id ?? null
+    if (progress[sections[touchedIdx].id]?.status !== 'completed') return sections[touchedIdx].id
+    for (let k = 1; k <= sections.length; k++) {
+      const cand = sections[(touchedIdx + k) % sections.length]
+      if (progress[cand.id]?.status !== 'completed') return cand.id
+    }
+    return null
+  })()
 
   return (
     <>
@@ -99,6 +114,31 @@ export function ChapterView({ chapterId }: { chapterId: string }) {
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
                 {chapter.description}
               </p>
+              {/* chapter progress bar */}
+              <div className="mt-4 max-w-md">
+                <div className="mb-1.5 flex items-center justify-between text-[11px] font-medium">
+                  <span className="text-muted-foreground">
+                    {done}/{sections.length} sections done
+                    {nextUpId && done < sections.length && (
+                      <span className="text-emerald-400"> · next: §{sections.find((s) => s.id === nextUpId)?.number}</span>
+                    )}
+                  </span>
+                  <span className="font-mono font-bold text-emerald-300">{pct}%</span>
+                </div>
+                <div
+                  className="h-1.5 overflow-hidden rounded-full bg-muted"
+                  role="progressbar"
+                  aria-valuenow={pct}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-label="Chapter completion"
+                >
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-emerald-400 to-teal-300 transition-[width] duration-700"
+                    style={{ width: `${pct}%` }}
+                  />
+                </div>
+              </div>
               {easyMode && (
                 <div className="mt-3 max-w-2xl">
                   <EasyBox variant="text" text={easyChapterLine(chapter)} defaultOpen={true} />
@@ -198,6 +238,7 @@ export function ChapterView({ chapterId }: { chapterId: string }) {
             const p = progress[sec.id]
             const isDone = p?.status === 'completed'
             const isStarted = p?.status === 'in_progress'
+            const isNext = sec.id === nextUpId && !isDone
             return (
               <motion.button
                 key={sec.id}
@@ -205,12 +246,14 @@ export function ChapterView({ chapterId }: { chapterId: string }) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.35, delay: Math.min(i * 0.04, 0.35) }}
                 onClick={() => navigate({ name: 'lesson', sectionId: sec.id })}
-                className={`group flex min-w-0 items-center gap-4 rounded-xl border p-4 text-left transition-all hover:translate-x-1 ${
+                className={`group flex min-w-0 items-center gap-4 rounded-xl border p-4 text-left transition-all hover:translate-x-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60 ${
                   isDone
                     ? 'border-emerald-400/30 bg-emerald-400/[0.06] hover:border-emerald-400/50'
-                    : isStarted
-                      ? 'border-amber-300/25 bg-amber-300/[0.04] hover:border-amber-300/45'
-                      : 'border-border/80 bg-card hover:border-emerald-400/35'
+                    : isNext
+                      ? 'border-emerald-400/45 bg-emerald-400/[0.07] shadow-[0_0_0_1px_rgba(16,185,129,0.15),0_8px_28px_-12px_rgba(16,185,129,0.35)] hover:border-emerald-400/60'
+                      : isStarted
+                        ? 'border-amber-300/25 bg-amber-300/[0.04] hover:border-amber-300/45'
+                        : 'border-border/80 bg-card hover:border-emerald-400/35'
                 }`}
               >
                 <span className="shrink-0">
@@ -230,6 +273,11 @@ export function ChapterView({ chapterId }: { chapterId: string }) {
                       §{sec.number}
                     </span>
                     <span className="text-[15px] font-semibold leading-snug">{sec.title}</span>
+                    {isNext && (
+                      <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-2 py-px text-[9px] font-bold uppercase tracking-[0.12em] text-emerald-300">
+                        <Play className="h-2.5 w-2.5" aria-hidden /> Next up
+                      </span>
+                    )}
                   </span>
                   <span className="mt-1 block truncate text-[13px] text-muted-foreground">
                     {sec.description}

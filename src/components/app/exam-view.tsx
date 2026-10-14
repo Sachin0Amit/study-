@@ -21,11 +21,11 @@ import {
   Zap,
   Atom,
 } from 'lucide-react'
-import { LIBRARY_BOOKS, LIBRARY_CHAPTERS, LIBRARY_SECTIONS, type QuizQuestion } from '@/data/library'
+import { LIBRARY_BOOKS, LIBRARY_CHAPTERS, LIBRARY_SECTIONS, LIBRARY_SUBJECTS, type QuizQuestion } from '@/data/library'
 import { allContent } from '@/data/content'
 import { RichText } from '../rich-text'
 import { shuffleQuizOptions } from '@/lib/quiz-shuffle'
-import { VisualDiagramSolver } from '@/components/visual/visual-diagram-solver'
+import { VisualDiagramSolver, detectDiagramTopic } from '@/components/visual/visual-diagram-solver'
 import { useStudy } from '@/store/useStudy'
 import { logActivity } from '@/lib/activity'
 import { ChapterIcon } from './chapter-icon'
@@ -77,6 +77,73 @@ function shuffled<T>(arr: T[]): T[] {
   }
   return a
 }
+
+/* ------------------------------------------------------------------ */
+/*  Quick practice sets — one-tap subject drills for the setup screen  */
+/* ------------------------------------------------------------------ */
+
+interface PracticeSet {
+  subjectId: string
+  title: string
+  blurb: string
+  /** recommended question count (clamped to the available pool) */
+  count: number
+  timed: boolean
+  chapterIds: string[]
+  /** questions in this subject's pool (module-level constant) */
+  poolCount: number
+}
+
+/** Curated flavour per subject — every subject gets a card. */
+const SET_META: Record<string, { title: string; blurb: string; count: number; timed: boolean }> = {
+  mathematics: { title: 'Mathematics sprint', blurb: 'Logic to calculus — one mixed sweep of the master volume', count: 20, timed: true },
+  physics: { title: 'Physics concept check', blurb: 'Mechanics, fields and quanta across the lectures', count: 20, timed: true },
+  chemistry: { title: 'Chemistry rapid recall', blurb: 'Physical, organic and inorganic essentials', count: 15, timed: false },
+  english: { title: 'Reading & writing drill', blurb: 'Comprehension, grammar and expression', count: 10, timed: false },
+  aptitude: { title: 'Aptitude booster', blurb: 'Reasoning, awareness and general science', count: 10, timed: false },
+  'cse-engg': { title: 'CS engineering gauntlet', blurb: 'Semester cores plus systems theory, end to end', count: 20, timed: true },
+  'ece-engg': { title: 'Signals & systems check', blurb: 'Networks, communications and EM theory', count: 15, timed: true },
+  'electrical-engineering': { title: 'Electrical essentials', blurb: 'Circuits, machines and power systems', count: 15, timed: true },
+  'mechanical-engineering': { title: 'Mechanical fundamentals', blurb: 'Thermal, design and manufacturing basics', count: 15, timed: true },
+  'cs-operating-systems': { title: 'Operating systems drill', blurb: 'Processes, memory and file systems', count: 10, timed: false },
+  'cs-javascript': { title: 'JavaScript deep dive', blurb: 'Language core, browser and Node', count: 10, timed: false },
+  'ece-digital-systems': { title: 'Logic design drill', blurb: 'Boolean algebra to register-transfer design', count: 10, timed: false },
+  'ece-electronics': { title: 'Electronics fundamentals', blurb: 'Devices, circuits and applications', count: 10, timed: false },
+  'cs-algorithms': { title: 'Algorithms workout', blurb: 'Design, correctness and complexity', count: 10, timed: true },
+  'cs-cpp': { title: 'C++ mastery check', blurb: 'Core language to the standard library', count: 10, timed: false },
+  'web-development': { title: 'Web dev rapid fire', blurb: 'Frontend patterns and full-stack thinking', count: 10, timed: false },
+  'cs-core-systems': { title: 'CS core systems', blurb: 'DBMS, networks and architecture together', count: 15, timed: true },
+  java: { title: 'Core Java drill', blurb: 'Fundamentals to generics and collections', count: 10, timed: false },
+}
+
+const PRACTICE_SETS: PracticeSet[] = (() => {
+  // chapters grouped by subject (subject → book → chapters, in library order)
+  const chaptersBySubject = new Map<string, string[]>()
+  for (const ch of LIBRARY_CHAPTERS) {
+    const book = LIBRARY_BOOKS.find((b) => b.id === ch.bookId)
+    if (!book) continue
+    const arr = chaptersBySubject.get(book.subjectId) ?? []
+    arr.push(ch.id)
+    chaptersBySubject.set(book.subjectId, arr)
+  }
+  // question pool counted per chapter (one pass over POOL)
+  const poolByChapter = new Map<string, number>()
+  for (const q of POOL) {
+    const chId = q.sectionId.split('-s')[0]
+    poolByChapter.set(chId, (poolByChapter.get(chId) ?? 0) + 1)
+  }
+  return LIBRARY_SUBJECTS.map((subject) => {
+    const chapterIds = chaptersBySubject.get(subject.id) ?? []
+    const poolCount = chapterIds.reduce((a, id) => a + (poolByChapter.get(id) ?? 0), 0)
+    const meta = SET_META[subject.id] ?? {
+      title: `${subject.name} practice set`,
+      blurb: subject.tagline,
+      count: 10,
+      timed: false,
+    }
+    return { subjectId: subject.id, ...meta, chapterIds, poolCount }
+  }).filter((s) => s.chapterIds.length > 0)
+})()
 
 function fmtTime(sec: number): string {
   const m = Math.floor(sec / 60)
@@ -211,6 +278,32 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
   function startExam() {
     beginRun(shuffled(poolForSelection).slice(0, effectiveCount), timed, false)
   }
+
+  /** load a quick practice set's chapters + recommended format into the picker */
+  function applyPreset(set: PracticeSet) {
+    setSelected(new Set(set.chapterIds))
+    setCount(set.count)
+    setTimed(set.timed)
+  }
+
+  /** load AND immediately start a quick practice set */
+  function startPreset(set: PracticeSet) {
+    const ids = new Set(set.chapterIds)
+    const pool = POOL.filter((q) => ids.has(q.sectionId.split('-s')[0]))
+    beginRun(shuffled(pool).slice(0, Math.min(set.count, pool.length)), set.timed, false)
+  }
+
+  /** true when the current selection is exactly this set's chapter list */
+  const setChapterSets = useMemo(
+    () => PRACTICE_SETS.map((s) => ({ set: s, ids: new Set(s.chapterIds) })),
+    []
+  )
+  const activeSetId = useMemo(() => {
+    for (const { set, ids } of setChapterSets) {
+      if (selected.size === ids.size && [...ids].every((id) => selected.has(id))) return set.subjectId
+    }
+    return null
+  }, [selected, setChapterSets])
 
   /** rebuild a new run from exactly this attempt's wrong + unanswered questions */
   function retakeMisses() {
@@ -357,6 +450,96 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
               Pick chapters, set the clock and sit a mixed exam — no instant feedback, just you
               against the timer. Full answer review with explanations when you submit.
             </p>
+          </div>
+        </motion.div>
+
+        {/* quick practice sets — one-tap subject drills */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.05 }}
+          className="mb-6 rounded-2xl border border-border/80 bg-card p-5 sm:p-6"
+        >
+          <div className="mb-1 flex items-center gap-2">
+            <Zap className="h-4 w-4 text-amber-300" aria-hidden />
+            <h2 className="text-base font-bold tracking-tight">Quick practice sets</h2>
+          </div>
+          <p className="mb-4 text-xs leading-relaxed text-muted-foreground">
+            One tap loads a whole subject with a recommended format — or press play to start immediately.
+          </p>
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
+            {PRACTICE_SETS.map((set) => {
+              const subject = LIBRARY_SUBJECTS.find((s) => s.id === set.subjectId)
+              const active = activeSetId === set.subjectId
+              const tooSmall = set.poolCount < 4
+              const effective = Math.min(set.count, set.poolCount)
+              return (
+                <div
+                  key={set.subjectId}
+                  className={`group relative flex items-center gap-3 rounded-xl border p-3 transition-all ${
+                    active
+                      ? 'border-primary/60 bg-primary/[0.08] shadow-[inset_0_0_0_1px_rgba(16,185,129,0.18)]'
+                      : 'border-border/70 bg-muted/20 hover:border-border hover:bg-muted/40'
+                  } ${tooSmall ? 'opacity-60' : ''}`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => applyPreset(set)}
+                    disabled={tooSmall}
+                    className="flex min-w-0 flex-1 items-center gap-3 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60 disabled:cursor-not-allowed"
+                    aria-pressed={active}
+                    title={tooSmall ? 'Not enough questions in this subject yet' : `Load ${set.title}`}
+                  >
+                    <span
+                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border"
+                      style={{
+                        borderColor: (subject?.accent ?? '#10b981') + '55',
+                        background: (subject?.accent ?? '#10b981') + '18',
+                        color: subject?.accent ?? '#10b981',
+                      }}
+                    >
+                      <ChapterIcon icon={subject?.icon ?? 'sparkles'} className="h-4.5 w-4.5" />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="flex items-center gap-1.5">
+                        <span className="truncate text-[13px] font-bold">{set.title}</span>
+                        {active && <Check className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden />}
+                      </span>
+                      <span className="mt-0.5 block truncate text-[11px] text-muted-foreground">{set.blurb}</span>
+                      <span className="mt-1 flex flex-wrap items-center gap-1.5 font-mono text-[10px] text-muted-foreground">
+                        <span className="rounded border border-border/60 bg-background/60 px-1.5 py-px">
+                          {set.poolCount} Q pool
+                        </span>
+                        <span className="rounded border border-border/60 bg-background/60 px-1.5 py-px">
+                          {effective} Q set
+                        </span>
+                        <span
+                          className={`rounded border px-1.5 py-px ${
+                            set.timed
+                              ? 'border-amber-300/40 bg-amber-300/10 text-amber-300'
+                              : 'border-border/60 bg-background/60'
+                          }`}
+                        >
+                          {set.timed ? 'timed' : 'untimed'}
+                        </span>
+                      </span>
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => startPreset(set)}
+                    disabled={tooSmall}
+                    aria-label={`Start ${set.title} now`}
+                    title={`Start ${set.title} now · ${effective} Qs${set.timed ? ' · timed' : ''}`}
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 transition-all hover:border-emerald-400/60 hover:bg-emerald-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60 disabled:cursor-not-allowed disabled:opacity-40"
+                  >
+                    <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden>
+                      <path d="M8 5.14v13.72c0 .8.87 1.3 1.56.9l11-6.86a1.05 1.05 0 0 0 0-1.8l-11-6.86A1.05 1.05 0 0 0 8 5.14z" />
+                    </svg>
+                  </button>
+                </div>
+              )
+            })}
           </div>
         </motion.div>
 
@@ -592,6 +775,8 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
   // ======================== RUN ========================
   if (phase === 'run' && run) {
     const q = run.questions[cursor]
+    // Only offer the visual-diagram toggle when a genuine diagram exists
+    const hasDiagram = detectDiagramTopic(q.q.q, q.q.explanation, q.sectionId) !== null
     const answered = run.answers.filter((a) => a !== null).length
     const danger = remainingSec !== null && remainingSec <= 60
     const low = remainingSec !== null && remainingSec <= Math.max(60, (run.timeLimitSec ?? 0) * 0.2)
@@ -673,19 +858,21 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
                 §{q.sectionNumber} · {q.sectionTitle}
               </span>
               <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => setShowActiveDiagram((prev) => !prev)}
-                  className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs font-medium transition-all ${
-                    showActiveDiagram
-                      ? 'border-emerald-500/50 bg-emerald-500/10 text-emerald-300'
-                      : 'border-border/70 text-muted-foreground hover:border-emerald-500/40 hover:text-foreground'
-                  }`}
-                  title="Toggle animated visual diagram setup"
-                >
-                  <Atom className="h-3.5 w-3.5 text-emerald-400" />
-                  <span>{showActiveDiagram ? 'Hide diagram' : 'Visual diagram'}</span>
-                </button>
+                {hasDiagram && (
+                  <button
+                    type="button"
+                    onClick={() => setShowActiveDiagram((prev) => !prev)}
+                    className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs font-medium transition-all ${
+                      showActiveDiagram
+                        ? 'border-emerald-500/50 bg-emerald-500/10 text-emerald-300'
+                        : 'border-border/70 text-muted-foreground hover:border-emerald-500/40 hover:text-foreground'
+                    }`}
+                    title="Toggle animated visual diagram setup"
+                  >
+                    <Atom className="h-3.5 w-3.5 text-emerald-400" />
+                    <span>{showActiveDiagram ? 'Hide diagram' : 'Visual diagram'}</span>
+                  </button>
+                )}
                 <button
                   onClick={() => toggleFlag()}
                   aria-pressed={run.flagged[cursor]}
@@ -703,7 +890,7 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
 
             <h2 className="text-[17px] font-semibold leading-relaxed sm:text-lg"><RichText text={q.q.q} /></h2>
 
-            {showActiveDiagram && (
+            {showActiveDiagram && hasDiagram && (
               <div className="mt-4">
                 <VisualDiagramSolver
                   questionText={q.q.q}

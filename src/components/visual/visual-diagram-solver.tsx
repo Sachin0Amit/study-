@@ -49,12 +49,14 @@ export type DiagramTopic =
   | 'electrochem_galvanic'
   | 'universal_physics'
 
-/** Determine the most appropriate physics/math/chemistry diagram from question text & explanation */
+/** Determine the most appropriate physics/math/chemistry diagram from question text & explanation.
+ *  Returns null when no STEM visual genuinely fits — callers render nothing then
+ *  (a wrong diagram is worse than no diagram). */
 export function detectDiagramTopic(
   text: string,
   explanation?: string,
   chapterId?: string
-): DiagramTopic {
+): DiagramTopic | null {
   const combined = `${text} ${explanation ?? ''} ${chapterId ?? ''}`.toLowerCase()
 
   // --- Chemistry Topics ---
@@ -173,7 +175,7 @@ export function detectDiagramTopic(
     return 'calculus_tangent'
   }
   if (
-    /logic gate|truth table|nand|boolean|karnaugh|flip-flop|and gate|or gate|xor gate|mano-/i.test(
+    /logic gate|truth table|nand|nor gate|boolean|karnaugh|flip-flop|and gate|or gate|xor gate|mano-|logical equivalence|tautolog|contradiction\b|contraposit|de morgan|propositional equivalence|logic circuit/i.test(
       combined
     )
   ) {
@@ -181,11 +183,21 @@ export function detectDiagramTopic(
   }
 
   // Safe domain-aware fallbacks before universal physics
-  if (/chem-|chemistry|reaction|molecule|molar|element/i.test(combined)) {
+  if (/chem-|chemistry|reaction|molecule|molar|chemical element|acid|base solution/i.test(combined)) {
     return 'molecular_vsepr'
   }
 
-  return 'universal_physics'
+  // Universal physics is ONLY shown when the question is genuinely physics-flavoured —
+  // never for logic/CS-theory/English/aptitude questions where a vector lab is noise.
+  if (
+    /physics|mechanics|statics|dynamics|force\b|forces\b|velocity|energy|momentum|accel|gravity|vector|resultant|displacement|speed\b|torque|pressure|density|friction|motion|kinetic|newton|pendulum|spring/i.test(
+      combined
+    )
+  ) {
+    return 'universal_physics'
+  }
+
+  return null
 }
 
 /* ------------------------------------------------------------------ */
@@ -3108,6 +3120,10 @@ export function VisualDiagramSolver({
     return detectDiagramTopic(questionText, explanation, chapterId)
   }, [questionText, explanation, chapterId])
 
+  // No genuine STEM visual fits this question → render nothing rather than an
+  // irrelevant diagram (e.g. a physics vector lab under a logic question).
+  if (!topic && !customDiagram) return null
+
   return (
     <div className="mt-4 overflow-hidden rounded-xl border border-book-rule/80 bg-card/60 transition-all">
       {/* Header bar with controls */}
@@ -3121,9 +3137,11 @@ export function VisualDiagramSolver({
             <Atom className="h-3 w-3" />
           </span>
           <span>Visual Diagram &amp; Solution</span>
-          <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-mono font-medium text-emerald-400 border border-emerald-500/20">
-            {topic.replace('_', ' ')}
-          </span>
+          {topic && (
+            <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-mono font-medium text-emerald-400 border border-emerald-500/20">
+              {topic.replace('_', ' ')}
+            </span>
+          )}
         </button>
 
         <div className="flex items-center gap-2 text-xs">
@@ -3195,7 +3213,7 @@ export function VisualDiagramSolver({
             transition={{ duration: 0.2 }}
             className="p-3 sm:p-4"
           >
-            {viewMode === 'handdrawn' ? (
+            {viewMode === 'handdrawn' && topic ? (
               <HandDrawnSketch
                 topic={topic}
                 questionText={questionText}

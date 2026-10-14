@@ -26,7 +26,7 @@ import type { ChapterMeta, DepthBlock, DepthTier, DetailedDerivation, LessonFigu
 import { RichText, plainText } from '../rich-text'
 import { shuffleQuizOptions } from '@/lib/quiz-shuffle'
 import { InteractiveTool } from '@/components/interactives/registry'
-import { VisualDiagramSolver } from '@/components/visual/visual-diagram-solver'
+import { VisualDiagramSolver, detectDiagramTopic } from '@/components/visual/visual-diagram-solver'
 import { useStudy } from '@/store/useStudy'
 import { logActivity } from '@/lib/activity'
 import { NotesPanel } from './notes-panel'
@@ -1576,6 +1576,14 @@ function BookExample({
   const [showDiagram, setShowDiagram] = useState(false)
   const total = example.steps.length + (example.result ? 1 : 0)
   const finished = openSteps >= total
+  // Only offer the visual-diagram toggle when a genuine diagram exists
+  const hasDiagram =
+    Boolean(example.diagram) ||
+    detectDiagramTopic(
+      example.problem,
+      example.result || example.steps.map((s) => s.text).join(' '),
+      chapterId
+    ) !== null
 
   return (
     <motion.article
@@ -1654,17 +1662,19 @@ function BookExample({
             )}
           </button>
           <span className="text-muted-foreground/30 print:hidden">·</span>
-          <button
-            type="button"
-            onClick={() => setShowDiagram((v) => !v)}
-            className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-muted/40 px-3 py-1 text-[11.5px] font-medium text-muted-foreground hover:border-emerald-500/50 hover:text-foreground transition-all"
-          >
-            <Atom className="h-3.5 w-3.5 text-emerald-400" />
-            <span>{showDiagram ? 'Hide visual diagram' : 'Visual diagram solution'}</span>
-          </button>
+          {hasDiagram && (
+            <button
+              type="button"
+              onClick={() => setShowDiagram((v) => !v)}
+              className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-muted/40 px-3 py-1 text-[11.5px] font-medium text-muted-foreground hover:border-emerald-500/50 hover:text-foreground transition-all"
+            >
+              <Atom className="h-3.5 w-3.5 text-emerald-400" />
+              <span>{showDiagram ? 'Hide visual diagram' : 'Visual diagram solution'}</span>
+            </button>
+          )}
         </div>
 
-        {showDiagram && (
+        {showDiagram && hasDiagram && (
           <div className="mt-3">
             <VisualDiagramSolver
               questionText={example.problem}
@@ -1726,6 +1736,11 @@ function QuizSection({
 
   const question = quiz[current]
   const score = answers.reduce((acc, a, i) => acc + (a === quiz[i].answer ? 1 : 0), 0)
+  // Only offer the visual-diagram toggle when a genuine diagram exists for this question
+  const hasDiagram =
+    question &&
+    (Boolean(question.diagram) ||
+      detectDiagramTopic(question.q, question.explanation, sectionId) !== null)
 
   const submit = (idx: number) => {
     if (selected !== null) return
@@ -1759,6 +1774,8 @@ function QuizSection({
   if (finished) {
     const pct = Math.round((score / quiz.length) * 100)
     const good = pct >= 60
+    // circular score ring (r=52 → circumference ≈ 326.7)
+    const CIRC = 2 * Math.PI * 52
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0.98 }}
@@ -1767,14 +1784,34 @@ function QuizSection({
           good ? 'border-emerald-500/40 bg-emerald-500/[0.06]' : 'border-amber-500/40 bg-amber-400/[0.05]'
         }`}
       >
-        <div className="font-serif text-[2.6rem] font-semibold leading-none text-primary">
-          {score}
-          <span className="text-book-soft"> / {quiz.length}</span>
+        <div className="relative mx-auto h-32 w-32" role="img" aria-label={`Score ${score} of ${quiz.length}, ${pct} percent`}>
+          <svg viewBox="0 0 120 120" className="h-full w-full -rotate-90">
+            <circle cx="60" cy="60" r="52" fill="none" strokeWidth="8" className="stroke-book-rule" />
+            <motion.circle
+              cx="60"
+              cy="60"
+              r="52"
+              fill="none"
+              strokeWidth="8"
+              strokeLinecap="round"
+              strokeDasharray={CIRC}
+              initial={{ strokeDashoffset: CIRC }}
+              animate={{ strokeDashoffset: CIRC * (1 - pct / 100) }}
+              transition={{ duration: 0.9, ease: 'easeOut' }}
+              className={good ? 'stroke-emerald-500' : 'stroke-amber-400'}
+            />
+          </svg>
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <span className="font-serif text-[1.9rem] font-semibold leading-none text-primary">
+              {score}
+              <span className="text-[1.05rem] text-book-soft"> / {quiz.length}</span>
+            </span>
+            <span className="mt-1 font-sans text-[11px] font-medium text-book-soft">{pct}% correct</span>
+          </div>
         </div>
-        <p className="mt-3 font-serif text-[15px] italic text-book-soft">
+        <p className="mt-4 font-serif text-[15px] italic text-book-soft">
           {good ? 'Section mastered — nice work.' : 'Almost there — review the notes and retry.'}
         </p>
-        <p className="mt-1.5 font-sans text-[12px] text-book-soft">{pct}% correct</p>
         <div className="mt-6 flex flex-wrap justify-center gap-3 font-sans">
           <button
             onClick={retry}
@@ -1832,18 +1869,20 @@ function QuizSection({
             <p className="font-serif text-[1.08rem] font-medium leading-[1.6] flex-1 min-w-[240px]">
               <RichText text={question.q} />
             </p>
-            <button
-              type="button"
-              onClick={() => setShowDiagram((v) => !v)}
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-border/80 bg-muted/40 px-3 py-1 text-[11.5px] font-medium text-muted-foreground hover:border-emerald-500/50 hover:text-foreground transition-all"
-              title="Toggle animated physics diagram solution"
-            >
-              <Atom className="h-3.5 w-3.5 text-emerald-400" />
-              <span>{showDiagram ? 'Hide diagram' : 'Visual diagram'}</span>
-            </button>
+            {hasDiagram && (
+              <button
+                type="button"
+                onClick={() => setShowDiagram((v) => !v)}
+                className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-border/80 bg-muted/40 px-3 py-1 text-[11.5px] font-medium text-muted-foreground hover:border-emerald-500/50 hover:text-foreground transition-all"
+                title="Toggle animated diagram solution"
+              >
+                <Atom className="h-3.5 w-3.5 text-emerald-400" />
+                <span>{showDiagram ? 'Hide diagram' : 'Visual diagram'}</span>
+              </button>
+            )}
           </div>
 
-          {showDiagram && (
+          {showDiagram && hasDiagram && (
             <div className="mt-3">
               <VisualDiagramSolver
                 questionText={question.q}
@@ -1921,7 +1960,7 @@ function QuizSection({
                   <EasyModeQuiz explanation={question.explanation} />
                 </div>
 
-                {!showDiagram && (
+                {!showDiagram && hasDiagram && (
                   <div className="mt-4">
                     <VisualDiagramSolver
                       questionText={question.q}
