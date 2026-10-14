@@ -1,0 +1,976 @@
+     1→# Research: Engineering Semester Syllabi (CSE / ECE / EE / ME) + GATE CS & IT
+     2→
+     3→**Task ID:** 2-c · **Agent:** research-agent-engg-gate · **Purpose:** input data for StudyVerse exam-oriented library books (ENGINEERING EXAM CSE/ECE/EE/ME + GATE CS).
+     4→
+     5→**Primary sources consulted (verified via web search + official PDF downloads):**
+     6→- GATE 2026 official CS syllabus PDF — IIT Guwahati (organizing institute): `gate2026.iitg.ac.in/doc/GATE2026_Syllabus/CS_2026_Syllabus.pdf` (full text extracted; also cross-checked vs GATE 2027 IIT Madras PDF — identical content)
+     7→- GATE 2026 official Question Paper Pattern page — `gate2026.iitg.ac.in/question-paper-pattern.html`
+     8→- GATE official General Aptitude syllabus PDF — `gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/GA_GATE2027_Syllabus.pdf`
+     9→- AKTU (Dr. A.P.J. Abdul Kalam Technical University) CSE V–VI semester curriculum PDF (2024-25) + CSE VII–VIII semester curriculum PDF (2025-26) + AKTU ECE/CSE per-semester subject code lists (notebookpresentation.com, session 2022-25 archives)
+    10→- VTU 2021-scheme CSE syllabus PDF (`vtu.ac.in/pdf/2021syll/cssyll.pdf`, sems 3–7 full module-level topics) + VTU 2021/2022-scheme CSE subject-code lists (vturesource.com)
+    11→- IIT Bhubaneswar B.Tech ECE curriculum + detailed syllabus PDF (46 pp — Signals & Systems, Network Theory, Digital Electronics, Analog/Digital Communication, EM waves, DSP, Control, VLSI, Microprocessors, RF/Microwave, electives)
+    12→- SHUATS B.Tech Electrical Engineering syllabus PDF (42 pp — complete sem 1–8 with unit-level topics) and B.Tech Mechanical Engineering syllabus PDF (73 pp — complete sem 1–8 with unit-level topics)
+    13→- GeeksforGeeks / Unacademy / PW / Ace Academy GATE CSE pages (weightage cross-check)
+    14→
+    15→---
+    16→
+    17→# PART 1 — GATE CS & IT (Paper Code: CS)
+    18→
+    19→## 1.1 Exam Pattern (official, GATE 2026 IIT Guwahati)
+    20→
+    21→| Particular | Detail |
+    22→|---|---|
+    23→| Mode | Computer Based Test (CBT), English only |
+    24→| Duration | 3 hours (180 minutes) |
+    25→| Total questions | **65** (10 General Aptitude + 55 subject questions incl. Engineering Mathematics) |
+    26→| Total marks | **100** |
+    27→| Marks split (CS paper) | **GA: 15 marks · Engineering Mathematics: 13 marks · Core Subject: 72 marks** |
+    28→| GA question split | 10 questions — 5 × 1 mark + 5 × 2 marks |
+    29→| Question types | (a) MCQ — 4 choices, 1 correct; (b) MSQ — multiple select; (c) NAT — Numerical Answer Type |
+    30→| Marks per question | 1 mark or 2 marks |
+    31→| Negative marking | **MCQ only:** 1/3 deducted per wrong 1-mark MCQ; 2/3 deducted per wrong 2-mark MCQ. **No negative marking for MSQ / NAT. No partial marking in MSQ.** |
+    32→| Abilities tested | Recall, Comprehension, Application, Analysis & Synthesis |
+    33→| Note | GATE 2026 conducted for 30 test papers; CS can be combined with a second paper per the two-paper combination list |
+    34→
+    35→> ⚠️ Task brief said "30 GA + 55 subject" — the OFFICIAL split is **15 marks GA (10 questions)** and **55 subject questions (85 marks = 13 Engg-Math + 72 core)**. Use the official numbers above.
+    36→
+    37→## 1.2 General Aptitude (GA) — common to all papers (15 marks)
+    38→
+    39→- **Section 1: Verbal Aptitude**
+    40→  - Basic English grammar: tenses, articles, adjectives, prepositions, conjunctions, verb-noun agreement, other parts of speech
+    41→  - Basic vocabulary: words, idioms, and phrases in context
+    42→  - Reading and comprehension; narrative sequencing
+    43→- **Section 2: Quantitative Aptitude**
+    44→  - Data interpretation: data graphs (bar graphs, pie charts, other graphs), 2- and 3-dimensional plots, maps, tables
+    45→  - Numerical computation and estimation: ratios, percentages, powers, exponents and logarithms, permutations and combinations, series
+    46→  - Mensuration and geometry; elementary statistics and probability
+    47→- **Section 3: Analytical Aptitude**
+    48→  - Logic: deduction and induction; analogy; numerical relations and reasoning
+    49→- **Section 4: Spatial Aptitude**
+    50→  - Transformation of shapes: translation, rotation, scaling, mirroring, assembling, grouping; paper folding, cutting, patterns in 2 and 3 dimensions
+    51→
+    52→## 1.3 Official Subject Syllabus — all 10 sections (exact official wording, GATE 2026/2027 PDF)
+    53→
+    54→### Section 1: Engineering Mathematics
+    55→- **Discrete Mathematics**
+    56→  - Propositional and first-order logic
+    57→  - Sets, relations, functions, partial orders and lattices
+    58→  - Monoids, Groups
+    59→  - Graphs: connectivity, matching, colouring
+    60→  - Combinatorics: counting, recurrence relations, generating functions
+    61→- **Linear Algebra**
+    62→  - Matrices, determinants, system of linear equations
+    63→  - Eigenvalues and eigenvectors
+    64→  - LU decomposition
+    65→- **Calculus**
+    66→  - Limits, continuity and differentiability
+    67→  - Maxima and minima
+    68→  - Mean value theorem
+    69→  - Integration
+    70→- **Probability and Statistics**
+    71→  - Random variables
+    72→  - Uniform, normal, exponential, Poisson and binomial distributions
+    73→  - Mean, median, mode and standard deviation
+    74→  - Conditional probability and Bayes theorem
+    75→
+    76→### Section 2: Digital Logic
+    77→- Boolean algebra
+    78→- Combinational and sequential circuits
+    79→- Minimization
+    80→- Number representations and computer arithmetic (fixed and floating point)
+    81→
+    82→### Section 3: Computer Organization and Architecture
+    83→- Machine instructions and addressing modes
+    84→- ALU, data-path and control unit
+    85→- Instruction pipelining, pipeline hazards
+    86→- Memory hierarchy: cache, main memory and secondary storage
+    87→- I/O interface (interrupt and DMA mode)
+    88→
+    89→### Section 4: Programming and Data Structures
+    90→- Programming in C
+    91→- Recursion
+    92→- Arrays, stacks, queues, linked lists, trees, binary search trees, binary heaps, graphs
+    93→
+    94→### Section 5: Algorithms
+    95→- Searching, sorting, hashing
+    96→- Asymptotic worst-case time and space complexity
+    97→- Algorithm design techniques: greedy, dynamic programming and divide-and-conquer
+    98→- Graph traversals, minimum spanning trees, shortest paths
+    99→
+   100→### Section 6: Theory of Computation
+   101→- Regular expressions and finite automata
+   102→- Context-free grammars and push-down automata
+   103→- Regular and context-free languages, pumping lemma
+   104→- Turing machines and undecidability
+   105→
+   106→### Section 7: Compiler Design
+   107→- Lexical analysis, parsing, syntax-directed translation
+   108→- Runtime environments
+   109→- Intermediate code generation
+   110→- Local optimisation
+   111→- Data flow analyses: constant propagation, liveness analysis, common sub-expression elimination
+   112→
+   113→### Section 8: Operating System
+   114→- System calls, processes, threads, inter-process communication
+   115→- Concurrency and synchronization
+   116→- Deadlock
+   117→- CPU and I/O scheduling
+   118→- Memory management and virtual memory
+   119→- File systems
+   120→
+   121→### Section 9: Databases
+   122→- ER-model
+   123→- Relational model: relational algebra, tuple calculus, SQL
+   124→- Integrity constraints, normal forms
+   125→- File organization, indexing (e.g., B and B+ trees)
+   126→- Transactions and concurrency control
+   127→
+   128→### Section 10: Computer Networks
+   129→- Concept of layering: OSI and TCP/IP protocol stacks
+   130→- Basics of packet, circuit and virtual circuit-switching
+   131→- Data link layer: framing, error detection, Medium Access Control, Ethernet bridging
+   132→- Routing protocols: shortest path, flooding, distance vector and link state routing
+   133→- Fragmentation and IP addressing, IPv4, CIDR notation
+   134→- Basics of IP support protocols (ARP, DHCP, ICMP)
+   135→- Network Address Translation (NAT)
+   136→- Transport layer: flow control and congestion control, UDP, TCP, sockets
+   137→- Application layer protocols: DNS, SMTP, HTTP, FTP, Email
+   138→
+   139→## 1.4 Approximate topic weightage (coaching-institute analysis of past papers; indicative only)
+   140→- Programming & Data Structures: ~10-13 marks (highest weightage)
+   141→- Algorithms: ~7-9 · Theory of Computation: ~6-8 · Operating System: ~7-10 · Databases: ~6-8 · Computer Networks: ~7-10 · COA: ~6-8 · Compiler Design: ~4-6 · Digital Logic: ~4-6 · Discrete/Engg Maths: ~9-13 · GA: 15 (fixed)
+   142→
+   143→---
+   144→
+   145→# PART 2 — ENGINEERING SEMESTER EXAMS (Indian University Model: AKTU / VTU / AICTE-model curricula)
+   146→
+   147→**Modeling notes:**
+   148→- 4-year (8-semester) B.Tech structure per the AICTE model curriculum, cross-verified against AKTU (BCS/KEC/KCS/BEE/MEC codes) and VTU (21CS/BCS codes) schemes and SHUATS/IIT-BBS full syllabus PDFs.
+   149→- Semesters 1–2 are largely **common to all branches** (Maths I–II, Physics, Chemistry, Basic Electrical/Electronics, Programming, Graphics, Workshop, Communication) — listed once per branch for completeness.
+   150→- University placement of subjects varies ±1 semester (e.g., AKTU puts DAA in Sem 5, VTU in Sem 4; VTU puts Computer Networks in Sem 5, AKTU in Sem 6). Both variants noted.
+   151→- Humanities/soft skills (Communication, Environmental Studies, Constitution of India, UHV, Kannada/Sanskrit culture, NCC/NSO) = one line each; not expanded.
+   152→
+   153→---
+   154→
+   155→## 2.1 CSE — Computer Science & Engineering (semester-wise)
+   156→
+   157→### Semester 1
+   158→- **Engineering Mathematics-I**
+   159→  - Matrices: rank, inverse, solution of linear systems (Gauss elimination), eigenvalues & eigenvectors, Cayley–Hamilton theorem, diagonalization
+   160→  - Differential calculus: limits, continuity, differentiability, mean value theorems, Taylor & Maclaurin series
+   161→  - Partial differentiation, maxima–minima of functions of two variables, Lagrange multipliers
+   162→  - First-order ODEs: variable separable, homogeneous, linear, exact; linear differential equations of higher order
+   163→- **Engineering Physics / Chemistry (Lab-based)**
+   164→  - Physics: interference, diffraction, polarization, lasers & fiber optics, quantum physics basics, semiconductors, superconductivity, EM theory basics
+   165→  - Chemistry: atomic structure & bonding, thermodynamics, electrochemistry, water treatment, corrosion, polymers, fuels & lubricants, nanomaterials, green chemistry
+   166→- **Basic Electrical Engineering**
+   167→  - DC circuits: Ohm's law, KVL/KCL, series–parallel networks, star–delta transformation
+   168→  - Network theorems: superposition, Thevenin's, Norton's, maximum power transfer
+   169→  - Single-phase AC: phasors, impedance, power factor, power in complex notation
+   170→  - Three-phase circuits: star/delta, line & phase quantities, power measurement
+   171→  - Magnetic circuits, B–H curve, hysteresis & eddy losses
+   172→  - Transformers: EMF equation, equivalent circuit, OC/SC tests, regulation & efficiency; auto-transformers
+   173→  - DC machines basics; electrical measurements (PMMC, MI, wattmeter); safety & wiring basics
+   174→- **Programming in C (Lab)**
+   175→  - Algorithms, flowcharts, problem solving; program development cycle
+   176→  - Data types, operators, expressions, type conversion; I/O statements
+   177→  - Control statements: if-else, switch, loops (while, do-while, for), break/continue, nesting
+   178→  - Functions, parameter passing (by value/reference), recursion
+   179→  - Arrays (1-D, 2-D), strings; searching & sorting basics
+   180→  - Pointers, pointer arithmetic, dynamic memory allocation
+   181→  - Structures & unions; file handling
+   182→- **Engineering Graphics / Drawing**
+   183→  - Lettering, dimensioning, scales; geometric constructions
+   184→  - Orthographic projection (first/third angle), projection of points/lines/planes/solids
+   185→  - Sectioning, true shape of section; development of surfaces
+   186→  - Isometric projection; CAD software intro
+   187→- **Professional Communication / English** — grammar, technical writing, presentation skills (one line)
+   188→- **Physics/Chemistry Lab, Workshop Practice** — (one line each)
+   189→
+   190→### Semester 2
+   191→- **Engineering Mathematics-II**
+   192→  - Multiple integrals (double/triple), change of order & variables
+   193→  - Vector calculus: gradient, divergence, curl; line/surface/volume integrals; Green's, Stokes' & Gauss divergence theorems
+   194→  - Fourier series: periodic functions, half-range series, harmonic analysis
+   195→  - Higher-order ODEs & applications; Laplace transforms & inverse, solving ODEs
+   196→  - PDEs: formation, separation of variables (heat/wave/Laplace equations)
+   197→- **Engineering Physics-II / Chemistry-II** — continuation of sem 1 science stream (one line)
+   198→- **Basic Electronics Engineering**
+   199→  - Semiconductors: intrinsic/extrinsic, PN junction, diode V-I characteristics
+   200→  - Rectifiers & filters, Zener regulation, clipping/clamping
+   201→  - BJT & MOSFET basics, biasing concepts; small-signal amplifier concept
+   202→  - Number systems & codes, logic gates, Boolean algebra basics
+   203→  - Op-amp basics & applications; 555 timer; communication systems block diagram
+   204→- **Engineering Mechanics / Workshop Practice**
+   205→  - Force systems & equilibrium; friction; centroid & moment of inertia
+   206→  - Trusses (method of joints/sections); simple machines
+   207→  - Dynamics: kinematics & kinetics of particles/rigid bodies, work–energy, impulse–momentum
+   208→  - Workshop: fitting, carpentry, welding, foundry, smithy (one line)
+   209→- **Data Structures intro / Python Programming (Lab)**
+   210→  - Python syntax, data types, control flow, functions, lists/tuples/dicts/sets
+   211→  - Strings & file I/O; OOP basics; modules, NumPy basics
+   212→  - Simple data structure implementation (stacks, queues via lists)
+   213→- **Environmental Science** — ecosystems, biodiversity, pollution, climate (one line)
+   214→
+   215→### Semester 3
+   216→- **Engineering Mathematics-III (Transform Calculus, Fourier Series & Numerical Techniques)** *(VTU 21MAT31)*
+   217→  - Laplace transforms of elementary functions, inverse transforms, convolution theorem, solving ODEs
+   218→  - Fourier series (period 2π and arbitrary), half-range series, practical harmonic analysis
+   219→  - Infinite Fourier transforms, Fourier sine/cosine transforms & inverses
+   220→  - z-transforms, inverse z-transform, difference equations
+   221→  - Numerical solution of PDEs: Laplace (5-point), heat (Schmidt, Crank–Nicolson), wave equations
+   222→  - Runge–Kutta & Milne predictor–corrector methods; calculus of variations (Euler's equation)
+   223→- **Data Structures & Applications**
+   224→  - Abstract data types; arrays & sparse matrices; strings
+   225→  - Stacks & queues: applications (expression conversion/evaluation, circular queues, deque)
+   226→  - Linked lists: singly/doubly/circular; polynomial manipulation
+   227→  - Recursion (tower of Hanoi); trees: binary trees, traversals, BST, AVL rotations, expression trees
+   228→  - Heaps & priority queues; hashing (collision resolution)
+   229→  - Graphs: representations, BFS/DFS, spanning trees; sorting (insertion, quick, merge, heap, radix) & searching (linear, binary) with complexity analysis
+   230→- **Digital Logic / Analog & Digital Electronics**
+   231→  - Boolean algebra, De Morgan's laws; K-map minimization, Quine–McCluskey method
+   232→  - Number systems, complements, binary arithmetic, codes (BCD, gray, excess-3, ASCII)
+   233→  - Combinational circuits: adders/subtractors, MUX/DEMUX, encoders/decoders, comparators, parity
+   234→  - Sequential circuits: latches, flip-flops (RS, JK, D, T; master–slave, edge-triggered), registers, counters
+   235→  - Finite state machines: Moore & Mealy, state minimization & synthesis; asynchronous circuit races
+   236→  - Logic families: TTL, CMOS, ECL — fan-in/out, noise margin, interfacing; 555 timer, multivibrators
+   237→  - Analog portion: diode circuits, transistor amplifiers, op-amp circuits
+   238→- **Computer Organization & Architecture**
+   239→  - Register transfer & micro-operations; bus structures
+   240→  - Machine instructions: formats, operand types, addressing modes (immediate, direct, indirect, indexed, relative)
+   241→  - ALU, data-path and control unit design: hardwired vs microprogrammed
+   242→  - Instruction pipelining, pipeline hazards (structural, data, control) & forwarding
+   243→  - Arithmetic algorithms: add/sub/mult/div (booth), floating-point (IEEE 754)
+   244→  - Memory hierarchy: cache (mapping, replacement), main memory, secondary storage; virtual memory
+   245→  - I/O organization: programmed I/O, interrupts, DMA; RISC vs CISC; performance metrics
+   246→- **Discrete Structures & Theory of Logic**
+   247→  - Propositional logic: connectives, tautologies, normal forms, inference rules
+   248→  - First-order logic: predicates, quantifiers, validity
+   249→  - Methods of proof: induction, contradiction, pigeonhole
+   250→  - Sets, relations (properties, closures, equivalence), functions (injective/surjective/bijective)
+   251→  - Partial orders, lattices, Hasse diagrams; monoids & groups
+   252→  - Recurrence relations & generating functions; counting (sum/product rule, inclusion–exclusion, permutations/combinations)
+   253→  - Graph theory: types, connectivity, Euler & Hamiltonian paths, coloring, trees & spanning trees
+   254→- **Object-Oriented Programming with Java/C++ (Lab)**
+   255→  - OOP paradigm: classes, objects, encapsulation, abstraction
+   256→  - Constructors/destructors, static members, this pointer
+   257→  - Inheritance (single/multiple/hierarchical), polymorphism: overloading & overriding, virtual functions
+   258→  - Operator overloading (C++); interfaces, packages, abstract classes (Java)
+   259→  - Exception handling; generic programming/templates; collections framework
+   260→  - Multithreading basics; file I/O & streams; Java applet/swing or STL basics
+   261→
+   262→### Semester 4
+   263→- **Mathematical Foundations of Computing / Discrete Mathematics-II**
+   264→  - Advanced graph theory (planarity, coloring theorems, matching)
+   265→  - Advanced combinatorics; recurrences (master theorem applications)
+   266→  - Algebraic structures: semigroups, groups, rings, subgroups, cosets, Lagrange's theorem
+   267→  - Number theory: divisibility, GCD, modular arithmetic, cryptography applications
+   268→- **Operating System**
+   269→  - OS types & structure; system calls, kernel vs user mode
+   270→  - Processes & threads; process states, context switch; inter-process communication
+   271→  - CPU scheduling: FCFS, SJF, priority, round-robin, multilevel queue
+   272→  - Process synchronization: critical section, semaphores, monitors; producer–consumer, dining philosophers, readers–writers
+   273→  - Deadlocks: conditions, prevention/avoidance (Banker's algorithm), detection & recovery
+   274→  - Memory management: contiguous allocation, paging, segmentation; virtual memory: demand paging, page replacement (FIFO, LRU, optimal), Belady's anomaly, thrashing
+   275→  - File systems: allocation methods, free-space management, directories
+   276→  - Disk scheduling (FCFS, SSTF, SCAN, C-SCAN); protection & security basics
+   277→- **Design & Analysis of Algorithms** *(AKTU places in Sem 5)*
+   278→  - Asymptotic notation (O, Ω, Θ); recurrence relations
+   279→  - Divide & conquer: merge sort, quick sort, Strassen's matrix multiplication, convex hull; master theorem
+   280→  - Greedy: fractional knapsack, job sequencing, Huffman coding, Prim's & Kruskal's MST, Dijkstra's & Bellman–Ford shortest paths, optimal reliability allocation
+   281→  - Dynamic programming: 0/1 knapsack, LCS, matrix chain multiplication, Floyd–Warshall, resource allocation
+   282→  - Backtracking & branch-and-bound: N-queens, TSP, graph coloring, Hamiltonian cycles, sum of subsets
+   283→  - Advanced data structures: red–black trees, B-trees, binomial & Fibonacci heaps, tries, skip lists
+   284→  - String matching (naive, Rabin–Karp, KMP); FFT basics; NP-completeness, approximation & randomized algorithms
+   285→- **Microprocessor & Microcontroller**
+   286→  - 8085 architecture: pins, bus organization, registers, timing & control
+   287→  - 8085/8086 instruction set, addressing modes, assembly language programming
+   288→  - Stack & subroutines; interrupts & interrupt service routines (vectored, priority)
+   289→  - Memory interfacing & I/O interfacing (memory-mapped vs I/O-mapped); 8255 PPI
+   290→  - Peripheral ICs: 8259 PIC, 8253/8254 timer, 8251 USART, keyboard/display interfacing
+   291→  - A/D & D/A converter interfacing; DMA concepts
+   292→  - 8051 microcontroller: architecture, timers, serial port, interrupts; embedded C basics
+   293→- **Theory of Automata & Formal Languages**
+   294→  - Finite automata: DFA, NFA, equivalence, minimization; regular expressions & languages
+   295→  - Closure properties, pumping lemma for regular languages; Myhill–Nerode theorem
+   296→  - Grammars: context-free grammars, derivations, parse trees, ambiguity; simplification, normal forms (CNF, GNF)
+   297→  - Pushdown automata; deterministic CFLs; pumping lemma for CFLs
+   298→  - Turing machines: variants, universal TM; recursive & recursively enumerable languages
+   299→  - Decidability & undecidability, reductions, Rice's theorem; Chomsky hierarchy
+   300→- **Biology for Engineers / UHV / Constitution** — (one line)
+   301→
+   302→### Semester 5
+   303→- **Database Management System**
+   304→  - DBMS vs file system; database architecture, schema/instance, data independence, DDL/DML
+   305→  - ER modeling: entities, attributes, relationships, keys (super/candidate/primary), generalization, aggregation; ER→tables
+   306→  - Relational model: relational algebra & calculus (tuple/domain)
+   307→  - SQL: DDL/DML/DCL/TCL, queries, sub-queries, joins, views, indexes, aggregate functions; PL/SQL (cursors, triggers, procedures)
+   308→  - Functional dependencies; normalization: 1NF, 2NF, 3NF, BCNF, lossless-join decomposition, MVD/4NF, 5NF
+   309→  - Query processing & optimization; file organization & indexing (B & B+ trees, hashing)
+   310→  - Transactions: ACID, schedules, serializability (conflict/view), recoverability
+   311→  - Concurrency control: locking, timestamp ordering, validation, multiversion & multiple granularity
+   312→  - Recovery: log-based, checkpoints, deadlock handling; database security, recent trends (distributed, OODB, data mining/warehousing)
+   313→- **Web Technology (AKTU)** — HTML lists/tables/forms/frames, XML (DTD, schemas, DOM/SAX), CSS (box model, layouts, advanced), JavaScript & AJAX, internet addressing & sockets, JavaBeans/EJB, servlets & JSP, session tracking, Node.js/REST/MongoDB
+   314→- **Computer Networks** *(VTU places in Sem 5; AKTU in Sem 6)*
+   315→  - Layering: OSI & TCP/IP stacks; packet, circuit & virtual-circuit switching
+   316→  - Data link layer: framing, error detection & correction (parity, CRC, Hamming), flow control (stop-and-wait, sliding window)
+   317→  - Medium Access Control: ALOHA, CSMA/CD, CSMA/CA, token passing; Ethernet, bridging, switching (hubs vs switches)
+   318→  - Network layer: IPv4 addressing, subnetting, CIDR, fragmentation; IPv6; ARP, DHCP, ICMP, NAT
+   319→  - Routing: shortest path (link-state, OSPF), distance vector (RIP), flooding, BGP concepts
+   320→  - Transport layer: UDP, TCP (segment, connection management, flow & congestion control), sockets programming
+   321→  - Application layer: DNS, HTTP, SMTP/POP/IMAP, FTP, email; wireless & network security basics
+   322→- **Compiler Design** *(VTU combines "Automata Theory & Compiler Design" in Sem 5; AKTU in Sem 6)*
+   323→  - Compiler phases; lexical analysis: regular expressions, lex tools, finite automata
+   324→  - Parsing: top-down (recursive descent, LL(1)), bottom-up (LR(0), SLR, LALR, LR(1)), YACC
+   325→  - Syntax-directed translation, attributes, semantic actions
+   326→  - Type checking & conversions; symbol tables; error detection & recovery
+   327→  - Intermediate code: three-address code, quadruples; runtime environments: activation records, storage allocation
+   328→  - Code optimization: local & global, loop optimizations, DAGs
+   329→  - Data flow analyses: constant propagation, liveness analysis, common sub-expression elimination
+   330→  - Code generation: register allocation, peephole optimization
+   331→- **Artificial Intelligence & Machine Learning (VTU 2021)** — AI basics & agents; search (uninformed, informed A*, heuristics, hill climbing); knowledge representation & logic; machine learning paradigms; regression & classification (linear/logistic, decision trees, kNN, SVM, naive Bayes); neural networks; clustering (k-means), PCA; model evaluation; intro deep learning
+   332→- **Departmental Electives-I/II (AKTU)** — Statistical Computing, Data Analytics, Computer Graphics, OOSD with C++, Machine Learning Techniques, Soft Computing, Image Processing, Data Warehousing & Data Mining
+   333→  - **Computer Graphics (elective detail):** output primitives (DDA, Bresenham line/circle), 2D/3D transformations & clipping (Cohen–Sutherland, Liang–Barsky), viewing & projections, visible-surface determination, shading & illumination, Bezier & B-spline curves, OpenGL basics
+   334→  - **Machine Learning Techniques (elective detail):** supervised/unsupervised learning, regression, SVM kernels, decision trees & random forests, ensemble methods, Bayesian learning, neural networks & backpropagation, evaluation metrics
+   335→  - **Image Processing (elective detail):** image enhancement, filtering, Fourier transform of images, restoration, segmentation, morphology, compression
+   336→
+   337→### Semester 6
+   338→- **Software Engineering & Project Management**
+   339→  - SDLC models: waterfall, incremental, iterative, spiral, agile/XP/Scrum, RAD
+   340→  - Requirements engineering: elicitation, analysis, SRS; validation & verification
+   341→  - System design: cohesion & coupling, architectural & detailed design, UML diagrams, OOAD
+   342→  - Coding standards & reviews; software testing: unit, integration, system, acceptance; black-box (equivalence, boundary value) & white-box (basis path, control-flow); test plans & metrics
+   343→  - Project management: COCOMO & function point estimation, scheduling, WBS, CPM/PERT, risk management, configuration management, version control
+   344→  - Quality: CMMI, ISO standards, Six Sigma basics; maintenance types
+   345→- **Computer Networks & Compiler Design labs** — socket programming, lex/yacc mini-compiler (one line)
+   346→- **Full Stack Development / Advanced Java / Web Programming**
+   347→  - Front-end frameworks (React/Angular), back-end (Node.js/Express, Spring Boot), REST APIs, databases (SQL + MongoDB), state management, deployment & DevOps basics
+   348→  - Advanced Java: JDBC, servlets, JSP, session management, Hibernate/Spring basics
+   349→- **Computer Graphics & Fundamentals of Image Processing (VTU 2021 Sem 6)** — see elective detail in Sem 5; plus interactive input, OpenGL menus, image fundamentals, enhancement, compression standards
+   350→- **Machine Learning / Data Science & Visualization / Advanced Computer Architecture (electives)**
+   351→  - Advanced Computer Architecture: pipelining advanced topics, vector processing, multithreaded & dataflow architectures, memory hierarchy advanced, multiprocessors & cache coherence
+   352→  - Data Science: data wrangling, visualization libraries, statistical inference, storytelling with data
+   353→- **Departmental Elective-III (AKTU): Big Data, Augmented & Virtual Reality, Blockchain Architecture Design, Data Compression**
+   354→  - **Big Data:** Hadoop ecosystem (HDFS, MapReduce, YARN), NoSQL stores, Spark, stream processing, analytics pipelines
+   355→  - **AR/VR:** immersive tech fundamentals, tracking, rendering, Unity/Unreal basics, interaction design
+   356→  - **Blockchain:** distributed ledgers, consensus (PoW/PoS), smart contracts, Ethereum, DApps, use cases
+   357→- **Mini Project** (one line)
+   358→
+   359→### Semester 7
+   360→- **Artificial Intelligence (AKTU BCS701)**
+   361→  - AI foundations: history, scope, applications; intelligent agents: types, environments, architecture
+   362→  - Problem solving: problem formulation, uninformed search (BFS, DFS, iterative deepening, uniform cost)
+   363→  - Informed search: greedy best-first, A*, heuristics; hill climbing, simulated annealing
+   364→  - Constraint satisfaction problems; game playing: minimax, alpha–beta pruning, stochastic & partially observable games
+   365→  - Knowledge representation & reasoning: propositional & first-order logic, inference strategies, rule-based systems, semantic nets, frames
+   366→  - Planning; uncertainty: probabilistic reasoning, Bayesian networks, fuzzy logic; neural network basics
+   367→  - Applications: NLP, robotics, multi-agent systems, Explainable AI (XAI)
+   368→- **Internet of Things (elective BCS070)**
+   369→  - IoT architecture (perception, network, application layers); IoT design considerations
+   370→  - Sensors & actuators, embedded devices: Arduino, Raspberry Pi, ESP8266/32
+   371→  - Communication protocols: MQTT, CoAP, HTTP, WebSocket, BLE, ZigBee, LoRaWAN, NB-IoT
+   372→  - Cloud integration & IoT platforms (AWS IoT, ThingSpeak); edge vs cloud computing
+   373→  - IoT data analytics; security & privacy challenges
+   374→  - Applications: smart home/city/health/agriculture/industry 4.0; case studies
+   375→- **Cloud Computing (elective BCS071)**
+   376→  - Cloud computing characteristics, service models (IaaS/PaaS/SaaS), deployment models (public/private/hybrid/community)
+   377→  - Virtualization: hypervisors (Type 1/2), containers, Docker, Kubernetes basics
+   378→  - Distributed & parallel computing fundamentals; MapReduce, Hadoop
+   379→  - Cloud storage & databases; autoscaling, load balancing, monitoring
+   380→  - Major platforms (AWS/Azure/GCP) services; serverless & microservices
+   381→  - Cloud security, compliance & migration; pricing/cost models
+   382→- **Cryptography & Network Security (elective BCS072)**
+   383→  - Security goals: confidentiality, integrity, availability; attack types; OSI security architecture
+   384→  - Classical ciphers (Caesar, Vigenère, Playfair, Hill, transposition); cryptanalysis
+   385→  - Symmetric encryption: DES, AES, block cipher modes (ECB/CBC/CFB/OFB/CTR), stream ciphers (RC4)
+   386→  - Asymmetric: RSA, Diffie–Hellman key exchange, ElGamal, ECC
+   387→  - Hash functions (MD5, SHA family) & MACs; digital signatures & authentication
+   388→  - Key management, PKI, digital certificates; authentication applications: Kerberos, X.509
+   389→  - Email security (PGP/S-MIME); IPsec; SSL/TLS & web security (HTTPS, firewalls, IDS/IPS)
+   390→  - Malware, intrusion detection; network security best practices; cyber laws
+   391→- **Big Data Analytics (VTU 2021 Sem 7)** — big data V's, Hadoop ecosystem, NoSQL, Spark, data lakes, analytics & visualization, case studies
+   392→- **Other electives:** Software Testing, Mobile Computing, Digital Image Processing, Deep Learning, Object-Oriented Modelling & Design (UML), NoSQL Databases
+   393→- **Project-I (BCS753), Mini project/Internship assessment, Startup & Entrepreneurial activity** (one line)
+   394→
+   395→### Semester 8
+   396→- **Open Electives-III/IV (MOOCs)** — typical: Cyber Security, Quantum Computing, Deep Learning & Applications, Distributed Systems, Blockchain, Human-Computer Interaction, Natural Language Processing
+   397→- **Advanced electives:** Information Retrieval, Advanced DBMS, Parallel Computing, Soft Computing, Computer Vision
+   398→- **Project-II (BCS851)** — major project (industry/research problem, full software lifecycle) (one line)
+   399→
+   400→---
+   401→
+   402→## 2.2 ECE — Electronics & Communication Engineering (semester-wise)
+   403→
+   404→### Semester 1–2 (common engineering core)
+   405→- Same common subjects as CSE (Mathematics I–II, Physics, Chemistry, Basic Electrical/Electrical Technology, Programming & Data Structures intro in C, Engineering Drawing/Graphics, Manufacturing processes intro, English/Communication, Labs) — see CSE Sem 1–2 for topic details.
+   406→- **ECE-specific note (IIT-BBS/AKTU):** Sem 1–2 include Electrical Technology (DC networks, AC 1-φ/3-φ, magnetic circuits, transformers, DC machines, measuring instruments) and Introduction to Programming & Data Structures.
+   407→
+   408→### Semester 3
+   409→- **Network Analysis & Synthesis (AKTU KEC303)**
+   410→  - Graph theory: tree, co-tree, cut-set, loop matrices; loop & nodal analysis
+   411→  - Review of KVL/KCL, mesh & node methods; modified nodal analysis
+   412→  - Network theorems: superposition, Thevenin, Norton, maximum power transfer, Millman, reciprocity, Tellegen, substitution, compensation
+   413→  - Transient analysis of RLC circuits via classical method & Laplace transform; initial conditions
+   414→  - Resonance (series/parallel), coupled circuits, tuned circuits
+   415→  - Two-port networks: z, y, h, ABCD parameters, inter-conversion & interconnection
+   416→  - Network functions: driving point & transfer, poles & zeros, time-domain behavior, frequency response, Bode plots
+   417→  - Positive real functions; synthesis of LC, RC, RL networks: Foster & Cauer forms; filters intro
+   418→- **Electronic Devices (AKTU KEC301)**
+   419→  - Semiconductors: intrinsic/extrinsic, drift & diffusion, carrier lifetimes, continuity equation, Hall effect
+   420→  - PN junction: band diagrams, biasing, depletion capacitance, diffusion capacitance, diode equation
+   421→  - Diode types: Zener, tunnel, varactor, LED, photodiode, solar cell, Schottky
+   422→  - BJT: construction, operating regions, characteristics, minority carrier distribution; biasing & thermal stability
+   423→  - FET/JFET: characteristics, biasing; MOSFET enhancement/depletion: characteristics, small-signal models (gm, rd)
+   424→  - UJT; thyristor family overview (SCR, TRIAC, DIAC)
+   425→  - IC fabrication: oxidation, epitaxy, diffusion, ion implantation, photolithography, metallization, packaging
+   426→- **Digital System Design (AKTU KEC302)**
+   427→  - Number systems, codes & conversions; binary arithmetic (1's/2's complement, BCD adders)
+   428→  - Boolean algebra axioms & laws; minimization: algebraic, K-maps, Quine–McCluskey
+   429→  - Combinational logic: adders/subtractors, comparators, parity generators, MUX/DEMUX, encoders/decoders, code converters, PLA/PAL
+   430→  - Universal gates (NAND/NOR realization); tri-state & open-collector logic
+   431→  - Sequential circuits: latches & flip-flops (RS, JK, D, T; master–slave, edge-triggered), race-around
+   432→  - Registers (SISO/SIPO/PISO/PIPO, universal) & counters (ripple, synchronous, ring, Johnson), design of synchronous counters
+   433→  - Finite state machines: Moore & Mealy models, state diagrams/tables, minimization, synthesis; asynchronous sequential circuits, races
+   434→  - Logic families: TTL, CMOS, ECL — characteristics & interfacing; IC555 & multivibrators; memories (ROM, RAM); VHDL basics
+   435→- **Engineering Mathematics-III** — (as per scheme: probability & statistics / transform calculus / numerical methods)
+   436→- **Electronic Workshop & PCB Lab** — (one line)
+   437→
+   438→### Semester 4
+   439→- **Signals & Systems (AKTU KEC403)**
+   440→  - Signal & system classification: continuous/discrete, periodic, energy/power, deterministic/random; system properties: linearity, time-invariance, causality, stability (LTI)
+   441→  - LTI systems: impulse response, convolution integral/sum, step response
+   442→  - Fourier series & properties; Fourier transform (CT), properties, sinusoidal steady-state analysis
+   443→  - Discrete-time Fourier transform; Fourier transform of periodic signals; magnitude–phase representation
+   444→  - Laplace transform (unilateral/bilateral) & properties, system function, block diagram representation, Bode plots
+   445→  - Sampling theorem, digitization & reconstruction; aliasing
+   446→  - z-transform, transfer functions of discrete systems, discrete convolution
+   447→  - Analog filter design intro: Butterworth, frequency transformation
+   448→- **Analog Circuits (AKTU KEC402)**
+   449→  - Diode circuits: rectifiers (half/full-wave) with filters, clipping & clamping, Zener regulation
+   450→  - BJT biasing & stabilization; small-signal analysis of CE/CB/CC amplifiers (h-parameter model)
+   451→  - FET/MOSFET amplifiers; multistage amplifiers (RC-coupled), frequency response & bandwidth
+   452→  - Feedback amplifiers: topologies, effect on gain/bandwidth/distortion; Barkhausen criterion
+   453→  - Oscillators: RC phase-shift, Wien bridge, Colpitts, Hartley, crystal oscillators
+   454→  - Power amplifiers: class A, B, AB, C; push-pull, complementary symmetry, heat sinks; distortion
+   455→  - Differential amplifiers; op-amp (IC741) characteristics, applications: inverting/non-inverting, summing, subtracting, integrator, differentiator, instrumentation amp, comparators, Schmitt trigger
+   456→  - Active filters (Butterworth LP/HP/BP); 555 timer circuits; voltage regulators (LM317, 723)
+   457→- **Communication Engineering / Analog Communication (AKTU KEC401)**
+   458→  - Signals & spectra: Fourier series/transform review, convolution, Parseval's theorem
+   459→  - Amplitude modulation: AM (DSB-FC), DSB-SC, SSB, VSB; modulation index, power, bandwidth
+   460→  - AM modulators & demodulators: square-law, envelope detector, coherent detection, carrier recovery
+   461→  - Superheterodyne receiver: image frequency, IF amplifiers, selectivity
+   462→  - Angle modulation: FM & PM, narrowband & wideband FM, bandwidth (Carson's rule), direct & indirect (Armstrong) generation, PLL demodulation; broadcast FM & stereo; QAM
+   463→  - Noise in analog modulation: SNR, threshold effect
+   464→  - Sampling & pulse modulation: PAM, PWM, PPM, PCM; TDM/FDM multiplexing
+   465→- **Electrical Machines – I or Electronics Measurements basics** (as per scheme; EE Machines-I topics listed under EE branch)
+   466→- **Engineering Mathematics-IV / Numerical Methods** — (one line)
+   467→
+   468→### Semester 5
+   469→- **Microprocessor & Microcontroller (AKTU KEC502)**
+   470→  - Microprocessor vs microcontroller: architecture & organization; historical background
+   471→  - 8085/8086: architecture, buses, registers, flags, instruction formats, addressing modes
+   472→  - Assembly language programming: 8085 & 8051; modular & structured programming, stacks & subroutines
+   473→  - Interrupts: types, vector table, priorities, ISR design; DMA concepts
+   474→  - Memory interfacing & I/O: memory-mapped vs I/O-mapped; data transfer techniques (polling, interrupt-driven)
+   475→  - Peripheral interfacing: keyboard/display, 8255, 8259, 8253/8254, 8251 serial
+   476→  - Sensors, transducers, actuators interfacing; A/D & D/A converters, data acquisition
+   477→  - Standard interfaces: RS-232, USB; embedded C programming, exception handling
+   478→  - ARM fundamentals: architecture, instruction set, pipelines & hazards; comparison of ARM/PIC/AVR/Arduino/Raspberry Pi
+   479→- **Digital Signal Processing (AKTU KEC503)**
+   480→  - Discrete-time signals & systems characterization; LTI system analysis
+   481→  - z-transform: properties, ROC, inverse transforms; solution of difference equations
+   482→  - DTFT & DFT: properties, circular convolution, linear convolution via DFT
+   483→  - FFT algorithms: radix-2 decimation-in-time & decimation-in-frequency, computational complexity
+   484→  - Realization structures: direct form I/II, cascade, parallel, lattice
+   485→  - FIR filter design: window method, frequency sampling; linear phase
+   486→  - IIR filter design: impulse invariance, bilinear transformation; Butterworth & Chebyshev prototype analog filters
+   487→  - Finite word-length effects: quantization noise, limit cycles
+   488→  - Multirate DSP intro; DSP processor architectures; applications: audio, speech, biomedical
+   489→- **Electromagnetic Field Theory / Electromagnetic Waves & Radiating Systems**
+   490→  - Vector analysis: gradient, divergence, curl, Laplacian; Cartesian/cylindrical/spherical coordinates
+   491→  - Electrostatics: Coulomb's & Gauss's laws, potential, Laplace & Poisson equations, polarization, boundary conditions, capacitance
+   492→  - Magnetostatics: Biot–Savart, Ampere's law, vector magnetic potential, magnetization, boundary conditions, inductance
+   493→  - Electrodynamics: Maxwell's equations (time-varying fields), Faraday's law, displacement current
+   494→  - Plane wave propagation in free space & materials; polarization; Poynting vector
+   495→  - Reflection & transmission of plane waves at boundaries
+   496→  - Transmission lines: equations, Smith chart, matching; waveguides (rectangular), microstrip basics
+   497→  - Radiation: antenna fundamentals, dipole antenna intro
+   498→- **VLSI Technology (AKTU KEC053)**
+   499→  - Crystal growth & wafer preparation; oxidation (thermal), thermal budget
+   500→  - Epitaxy (VPE, MBE); diffusion & ion implantation; lithography (photo/e-beam)
+   501→  - Metallization & interconnects; CMOS process flow (n-well, twin-well); BiCMOS fabrication
+   502→  - Layout design rules; MOS transistor theory recap; scaling & Moore's law
+   503→  - Latch-up in CMOS; packaging technologies (DIP to flip-chip); yield
+   504→- **Integrated Circuits / Analog ICs (AKTU KEC501)**
+   505→  - IC fabrication review; op-amp internals: current mirrors, differential pair, level shifter, output stage (IC741)
+   506→  - Op-amp parameters: offset, CMRR, slew rate, GBW; frequency compensation
+   507→  - Op-amp applications: amplifiers, instrumentation, active filters, oscillators, comparators, Schmitt triggers
+   508→  - 555 timer: astable/monostable applications; PLL (IC 565): lock range, capture range, frequency synthesis
+   509→  - Voltage regulators: series, switching, IC 723/LM317; ADC/DAC architectures (successive approximation, flash, dual-slope)
+   510→  - Analog multipliers & applications; function generators
+   511→- **Electronic Instrumentation & Measurements (AKTU KEC057)**
+   512→  - Measurement philosophy: accuracy, precision, errors, standards, calibration
+   513→  - Analog instruments: PMMC, moving iron, electrodynamometer, wattmeter, energy meter
+   514→  - Bridges: Wheatstone, Kelvin double, Maxwell, Hay, Schering, Anderson, Wien bridge; Q-meter
+   515→  - Oscilloscopes: CRT, triggers, measurements; storage & digital scopes; Lissajous figures
+   516→  - Signal generators, wave analyzers, spectrum analyzers, distortion analyzers, logic analyzers
+   517→  - Digital instruments: DMM, frequency counter, phase meter; data acquisition systems
+   518→  - Transducers: classification, LVDT, strain gauges, thermocouples, RTD, thermistors, piezoelectric, photoelectric, Hall effect
+   519→  - Smart sensors & IoT instrumentation; display devices & recorders
+   520→- **Optical Communication (AKTU KEC058, elective)** — optical fiber principles (TIR, numerical aperture, modes, V-number), step/graded-index fibers, fiber materials & fabrication (MCVD), attenuation & dispersion, connectors & splicing, sources (LED, laser diode), detectors (PIN, APD), receiver analysis, link power budget, WDM concepts, optical networks intro
+   521→- **Industrial Electronics (KEC052, elective)** — power devices (SCR, TRIAC, DIAC, MOSFET, IGBT), controlled rectifiers, inverters & choppers, industrial control circuits, electric drives, heating/welding control, UPS & SMPS
+   522→
+   523→### Semester 6
+   524→- **Digital Communication (AKTU KEC601)**
+   525→  - Sampling & quantization; PCM, DPCM, DM, ADM, companding; T1 carrier concepts
+   526→  - Baseband transmission: line codes (NRZ/RZ/Manchester), Nyquist criterion for zero ISI, raised cosine, eye diagram, adaptive equalization
+   527→  - Matched filter; ML & MAP receivers; signal space representation, Gram–Schmidt orthogonalization
+   528→  - Digital passband modulation: ASK, FSK, PSK, BPSK, QPSK, OQPSK, MPSK, QAM, MSK, GMSK, CPFSK; coherent & non-coherent detection; probability of bit error (BER)
+   529→  - Synchronization: carrier, symbol, frame
+   530→  - Channel coding: linear block codes, cyclic codes (CRC), convolutional codes & Viterbi decoding; BCH/RS overview, LDPC/turbo intro
+   531→  - Spread spectrum: DSSS, FHSS; CDMA case study
+   532→  - Multicarrier: OFDM; communication over fading channels (Rayleigh/Rician)
+   533→  - Information theory: entropy, mutual information, Shannon channel capacity
+   534→- **Control System (AKTU KEC602)**
+   535→  - Open-loop vs closed-loop; mathematical modeling of electrical/mechanical/thermal systems; transfer function
+   536→  - Block diagram algebra & signal flow graphs, Mason's gain formula
+   537→  - Time-domain: transient response specs, first/second-order systems, steady-state error & static error constants
+   538→  - Stability: Routh–Hurwitz criterion; root locus: sketching, effect of poles/zeros
+   539→  - Frequency-domain: Bode plots, polar plots, Nyquist criterion, gain & phase margins, constant M/N circles, Nichols chart
+   540→  - Compensation: lag, lead, lag–lead; P, PI, PID controllers
+   541→  - State-space analysis: state models, solution, diagonalization, controllability & observability
+   542→  - Nonlinear systems: phase plane, describing function, Lyapunov stability (intro)
+   543→- **Antenna & Wave Propagation (AKTU KEC603)**
+   544→  - Radiation mechanism; antenna parameters: radiation pattern, directivity, gain, beamwidth, polarization, impedance, bandwidth, efficiency
+   545→  - Thin-wire antennas: half-wave dipole, monopole, small loop; Friis transmission equation
+   546→  - Antenna arrays: linear arrays, broadside/end-fire, pattern multiplication, binomial/Tchebyscheff arrays
+   547→  - Aperture antennas: horn, parabolic reflector, lens
+   548→  - Special antennas: Yagi–Uda, helical, log-periodic (LPDA), turnstile, microstrip patch, spiral
+   549→  - Wave propagation: ground wave, sky wave & ionospheric layers (D/E/F), MUF, skip distance, space wave/LOS, tropospheric scatter, fading
+   550→- **Embedded System (AKTU KOE062)**
+   551→  - Embedded system characteristics & design metrics; embedded hardware: microcontroller units
+   552→  - Embedded C programming: bit manipulation, pointers/registers, interrupt service routines
+   553→  - Peripherals: GPIO, timers/PWM, watchdog; serial communication: UART, SPI, I2C, CAN, USB
+   554→  - Real-time systems: task scheduling, RTOS concepts (kernels, semaphores, mailboxes), FreeRTOS basics
+   555→  - Interfacing: sensors & actuators, motor drivers, displays; device driver basics
+   556→  - Communication for IoT; power management; case studies: automotive (ECU), home automation, wearables
+   557→- **Satellite Communication (elective KEC062)** — Kepler's laws & orbital mechanics, GEO/MEO/LEO, satellite subsystems (TT&C, transponder), earth station technology, link budget analysis, modulation & multiple access (FDMA/TDMA/CDMA), VSAT systems, satellite applications (GPS, DTH, remote sensing)
+   558→- **Data Communication Networks (elective KEC063)** — OSI/TCP-IP, LAN/MAN/WAN, switching (circuit/packet), Ethernet & token passing, HDLC/X.25, IP addressing, routing protocols, ATM & frame relay, digital switching (space/time), network security basics
+   559→- **Seminar-I / Mini project** (one line)
+   560→
+   561→### Semester 7
+   562→- **Wireless & Mobile Communication (AKTU KEC076)**
+   563→  - Cellular fundamentals: frequency reuse, channel assignment, capacity, handoff (hard/soft), cell splitting
+   564→  - Propagation: free-space & two-ray models, log-normal shadowing, multipath fading, Doppler; Okumura–Hata empirical models
+   565→  - Modulation for wireless: π/4-QPSK, GMSK; equalization, diversity, interleaving; channel coding
+   566→  - Multiple access: FDMA, TDMA, CDMA (IS-95), SDMA; OFDMA
+   567→  - Wireless systems & standards: 1G–5G evolution, GSM architecture (BTS/BSC/MSC), GPRS/EDGE, CDMA2000, LTE basics, WiMAX
+   568→  - Wireless LANs: IEEE 802.11 family; Bluetooth, ZigBee, NFC
+   569→  - Mobile IP & ad-hoc networks; wireless security; MIMO & smart antennas intro
+   570→- **VLSI Design (AKTU KEC072)**
+   571→  - VLSI design flow: hierarchy, abstraction levels, design styles, automation
+   572→  - MOS & BiCMOS inverter: VTC, propagation delay, super-buffers; latch-up
+   573→  - Combinational CMOS logic: static, dynamic, domino, clocking schemes, charge sharing
+   574→  - Sequential CMOS: latches, flip-flops, clocking strategies
+   575→  - Subsystem design: adders, multipliers, shifters — area-speed-power tradeoff
+   576→  - Semiconductor memories: SRAM, DRAM, non-volatile (flash)
+   577→  - Low-power design: voltage scaling, switched capacitance reduction, adiabatic logic
+   578→  - Testing: fault models, ATPG, scan design, BIST; physical design: partitioning, placement, routing
+   579→  - HDL (Verilog/VHDL) modeling; FPGA vs ASIC flows
+   580→- **Digital Image Processing (elective KEC071)**
+   581→  - Image fundamentals: sampling & quantization, pixel relationships, color models
+   582→  - Spatial-domain enhancement: intensity transformations, histogram processing, smoothing/sharpening filters
+   583→  - Frequency-domain: 2-D Fourier transform, filtering (ILPF/IHPF/BHPF), selective filtering
+   584→  - Image restoration: noise models, mean/adaptive filters, inverse & Wiener filtering; geometric transformations
+   585→  - Morphological processing: erosion/dilation, opening/closing, hit-or-miss; segmentation: edge detection (Sobel/Canny), thresholding, region growing, watershed
+   586→  - Representation & description; object recognition basics
+   587→  - Compression: lossless (Huffman, run-length) & lossy (JPEG, MPEG); video coding concepts
+   588→- **Optical Network (elective KEC073)** — SONET/SDH, OTN, WDM/DWDM networks, optical cross-connects & add-drop multiplexers, access networks (PON/FTTx), optical switching, network protection & survivability
+   589→- **Microwave & Radar Engineering (elective)**
+   590→  - Microwave tubes: klystron (multi-cavity), reflex klystron, TWT, magnetron
+   591→  - Solid-state microwave devices: Gunn diode, IMPATT, TRAPATT, varactor, PIN, tunnel diode
+   592→  - Waveguide components: tees (E/H/magic), directional couplers, isolators, circulators, attenuators, detectors
+   593→  - S-parameters & microwave network analysis; impedance matching: single/double-stub, quarter-wave transformers
+   594→  - Microwave measurements: VSWR, power, impedance (Smith chart), frequency
+   595→  - Microwave amplifiers (LNA, power), mixers, oscillators; noise figure
+   596→  - Radar: range equation, PRF, PPI displays, CW & Doppler radar, MTI & pulse Doppler, tracking radar; radar clutter
+   597→- **Project-I / Industrial training** (one line)
+   598→
+   599→### Semester 8
+   600→- **Advanced electives:** Advanced Communication Engineering, Speech Signal Processing, Biomedical Signal Processing, Statistical/Adaptive/Array Signal Processing, Pattern Recognition, Computer Vision, NLP, Remote Sensing Systems, Antenna Theory, Microwave Design & Measurement, Modern Radar Systems, Photonic Networks, Fiber Optic Sensors, Semiconductor Device Modeling, Computational Electromagnetics, Smart Grid Technology, IoT
+   601→- **Project-II** — major project (one line)
+   602→
+   603→---
+   604→
+   605→## 2.3 EE — Electrical Engineering (semester-wise)
+   606→
+   607→### Semester 1–2 (common engineering core)
+   608→- Same common subjects as CSE (Mathematics I–II, Physics I–II, Chemistry, Professional Communication, Engineering Graphics I–II, Engineering Mechanics, Intro to Manufacturing, Workshop, Moral & Value Education).
+   609→- EE-specific: **Electrical Engineering (basic)**, **Computer & Languages**, **Basic Electronics** — topics as in CSE Sem 1–2 lists.
+   610→
+   611→### Semester 3
+   612→- **Networks & Systems (SHUATS EE-401)**
+   613→  - Graph theory: graph, tree, co-tree, walk/path/loop, basic cut-set, loop & cut-set matrices, loop & nodal analysis
+   614→  - Continuous-time signals & LTI systems; differential equation formulation
+   615→  - Laplace transform: properties, initial/final value theorems, transform impedance, waveform synthesis
+   616→  - Network theorems: superposition, Tellegen, Thevenin, Norton, Millman, maximum power transfer
+   617→  - Time-domain analysis of LTI networks (transient & steady state); impulse response & system function
+   618→  - Poles & zeros: location vs time-response & stability; frequency response & Bode plots; convolution integral
+   619→  - Two-port networks: parameters, inter-conversion, interconnection, reciprocity, T–π transformation
+   620→  - Positive real functions; synthesis of LC, RL, RC via Foster & Cauer forms
+   621→- **Electrical Measurement & Measuring Instruments (EE-405)**
+   622→  - Measurement philosophy: accuracy, precision, errors; absolute & secondary instruments
+   623→  - PMMC & moving iron instruments; shunts & multipliers; multimeters
+   624→  - Electrodynamometer: wattmeter, watthour meter; power factor meters
+   625→  - Instrument transformers (CT/PT): ratios, errors, burden
+   626→  - DC bridges: Wheatstone, Kelvin double; AC bridges: Maxwell, Hay, Schering, Anderson, Wien; Q-meter
+   627→  - CRT & CRO: measurements (voltage, frequency, phase, Lissajous); digital storage oscilloscope
+   628→  - Signal & function generators; wave/spectrum analyzers; frequency counters, DMM
+   629→  - Transducers: LVDT, strain gauge, thermocouple, RTD, thermistor, piezoelectric; data acquisition
+   630→- **Solid State Devices & Circuits (ECE-401)** — semiconductors, diodes & applications, BJT/FET amplifiers, op-amp circuits, feedback (see ECE Analog Circuits topics)
+   631→- **Switching Theory & Logic Design (ECE-402)** — Boolean algebra, minimization, combinational & sequential circuits, FSMs (see ECE Digital System Design topics)
+   632→- **Engineering Mathematics-III** — ODEs, series solutions (Legendre/Bessel/Chebyshev), integral transforms (Fourier/Hankel/Hilbert), PDEs (parabolic/elliptic/hyperbolic), complex variables (analytic functions, Cauchy's theorem, Taylor/Laurent series, residues, conformal mapping)
+   633→- **Introduction to Information Technology / Environmental Studies** — (one line)
+   634→
+   635→### Semester 4
+   636→- **Signals & System (ECE-406)** — CT/DT signals, LTI convolution, Fourier series/transform, Laplace & z-transforms, sampling (see ECE Sem 4)
+   637→- **Computer Organization (CSIT-412)** — CPU architecture, instruction cycle, addressing modes, memory & I/O organization basics (one line + topics as CSE Sem 3 COA)
+   638→- **Electrical Machines – I (EE-403)**
+   639→  - Electromechanical energy conversion: energy & co-energy in magnetic systems, field energy, torque/force equations, singly-excited systems
+   640→  - DC generators: construction, EMF & torque equations, armature reaction, demagnetizing & cross-magnetizing MMF, interpoles & compensating windings, commutation, characteristics (separately excited, shunt, series, compound)
+   641→  - DC motors: characteristics, starting (3-point/4-point starters), speed control (armature & field, Ward–Leonard), braking, efficiency & testing (Swinburne's, Hopkinson's)
+   642→  - Transformers: construction, EMF equation, equivalent circuit (exact & approximate), per-unit, phasor diagrams, OC/SC & Sumpner's tests, efficiency, regulation, all-day efficiency; auto-transformers
+   643→  - Three-phase transformers: vector groups, parallel operation, load sharing; harmonics; three-winding transformers & tertiary winding; tap changing; special transformers (welding, traction, instrument)
+   644→  - Scott connection (3-φ to 2-φ)
+   645→- **Electrical Engineering Materials (EE-404)**
+   646→  - Crystal structure: bonding, Miller indices, X-ray crystallography, imperfections
+   647→  - Conducting materials: free electron theory, conductivity factors, thermoelectric effects, superconductivity
+   648→  - Dielectric materials: polarization mechanisms, dielectric constant & loss, spontaneous polarization, piezoelectricity
+   649→  - Magnetic materials: dia/para/ferro/anti-ferro/ferrimagnetism, magnetostriction, hysteresis
+   650→  - Semiconductors: band theory, Hall effect, drift & diffusion
+   651→  - Insulating materials: properties & applications; materials for electrical machines
+   652→- **Electromagnetic Field Theory (EE-406)**
+   653→  - Vector calculus (gradient/divergence/curl) in three coordinate systems
+   654→  - Electrostatics: Coulomb, Gauss, potential, Laplace/Poisson, boundary conditions, capacitance, polarization
+   655→  - Magnetostatics: Biot–Savart, Ampere's circuital law, magnetic vector potential, Lorentz force, inductance
+   656→  - Time-varying fields: Faraday's law, Maxwell's equations; plane wave propagation; skin effect
+   657→  - Poynting theorem; reflection/refraction at boundaries
+   658→  - Transmission lines: distributed parameters, Smith chart
+   659→- **Computer-Based Numerical & Statistical Techniques (MAS-491)** — numerical solution of linear systems (Gauss, LU, Gauss–Seidel), interpolation (Newton/Lagrange/spline), numerical differentiation & integration (trapezoidal, Simpson), ODE methods (Euler, RK), curve fitting & least squares, probability & statistics (distributions, hypothesis testing)
+   660→- **Electrical Engineering Drawing** — (one line)
+   661→
+   662→### Semester 5
+   663→- **Electrical Machines – II (EE-501)**
+   664→  - Synchronous machines: construction, armature windings, EMF equation, winding factors, harmonics
+   665→  - Alternator: armature reaction, OC/SC tests, voltage regulation (synchronous impedance, MMF, Potier triangle, ASA methods), parallel operation with infinite bus, cooling
+   666→  - Two-reaction theory (salient pole), power expression; synchronous motor: starting methods, phasor diagram, torque-angle characteristics, V-curves, hunting & damping, synchronous condenser, reluctance motor
+   667→  - Polyphase induction motor: rotating magnetic field, slip, equivalent circuit, torque-slip characteristics, no-load & blocked-rotor tests, circle diagram, performance, induction generator, cogging & crawling
+   668→  - Starting & speed control methods (rotor resistance, injection), deep-bar & double-cage rotors, operation under unbalanced supply
+   669→  - Single-phase induction motor: double revolving field theory, equivalent circuit, starting (split-phase, capacitor start/run, shaded pole); repulsion motor; universal motor & AC commutator motors
+   670→- **Control System (EE-502)**
+   671→  - Open/closed-loop systems; modeling of electrical, mechanical & thermal systems; transfer function
+   672→  - Block diagrams & signal flow graphs, Mason's gain formula
+   673→  - Time-domain: transient response specs, second-order prototype, steady-state errors & static error constants, P/PI/PID performance
+   674→  - Stability: asymptotic & conditional, Routh–Hurwitz; root locus plots & applications
+   675→  - Frequency-domain: polar/inverse polar plots, Bode plots, gain & phase margins, correlation with time domain, constant M & N circles
+   676→  - Compensation: lag, lead, lag–lead networks; feedback compensation with P, PI, PID
+   677→  - Nonlinear systems: linearization, phase-plane, describing function; optimization techniques intro
+   678→- **Elements of Power System (EE-503)**
+   679→  - Power system structure: single-line diagram, components (synchronous machine, transformer, line, bus bar, breaker)
+   680→  - Supply systems: DC/AC, transmission voltage selection, Kelvin's law
+   681→  - Transmission lines: conductor types, resistance (skin & proximity effects), inductance & capacitance of 1-φ/3-φ, single & double circuit lines
+   682→  - Line modeling & performance: short/medium/long lines, Ferranti effect
+   683→  - Corona: phenomenon, loss, factors, interference, remedies
+   684→  - Insulators: types, string efficiency, potential distribution, grading & guard rings
+   685→  - Mechanical design: sag-tension calculations (wind & ice), vibration dampers
+   686→  - Cables: types, grading, capacitance, dielectric stress & losses
+   687→  - Neutral grounding: methods, earthing transformers; EHV/UHV AC and HVDC transmission (dc links, pros/cons), FACTS intro
+   688→- **Electronics Circuit Design (ECE-504)** — linear wave shaping (RC circuits, differentiator/integrator), logic families (TTL/ECL/CMOS, tri-state, interfacing), shift registers & counters, multiplexers, memories (RAM/ROM), waveform generators (555, Schmitt trigger)
+   689→- **Utilization of Electrical Energy (EE-508)**
+   690→  - Electric heating: resistance, arc, induction, dielectric; advantages & methods
+   691→  - Electric welding: arc & resistance welding, electronic control; electrolysis & electrodeposition
+   692→  - Illumination: definitions, laws, lighting design (indoor & outdoor), schemes
+   693→  - Refrigeration & air conditioning loads; electric drives for domestic equipment
+   694→  - Electric traction: systems & track electrification, speed-time curve, average & schedule speeds, tractive effort, specific energy consumption, adhesion
+   695→  - Traction drives: series–parallel control (bridge transition), power electronic control of DC & AC traction, diesel-electric traction
+   696→- **Training-I** — (one line)
+   697→
+   698→### Semester 6
+   699→- **Power Electronics (EE-504/EE-504a)**
+   700→  - Power devices: SCR, GTO, TRIAC, power MOSFET, IGBT; characteristics, ratings, protection, cooling, series/parallel operation
+   701→  - Triggering/firing circuits: RC, UJT, 555, comparator; commutation methods
+   702→  - Phase-controlled rectifiers: single & three phase (half/full) with R, RL, E loads; effect of leakage inductance; dual converters
+   703→  - AC voltage controllers & cycloconverters
+   704→  - Inverters: single/three-phase bridge, voltage-source (square-wave, PWM), McMurray & Bedford, multilevel intro
+   705→  - DC–DC choppers: types A/B/C/D/E, voltage/current commutated, multiphase
+   706→  - Solid-state drives: converter & chopper control of DC motors, AC motor speed control (V/f)
+   707→  - Applications: SMPS, UPS, induction heating, HVDC basics
+   708→- **Power System Analysis (EE-506)**
+   709→  - Per-unit representation; modeling of synchronous machines, transformers, lines
+   710→  - Symmetrical (3-φ) fault analysis: transient/subtransient reactances, current-limiting reactors, breaker selection
+   711→  - Symmetrical components: unbalanced phasors, sequence impedances & networks of machines/transformers, Y-Δ phase shift
+   712→  - Unsymmetrical faults: LG, LL, LLG; sequence network interconnection, faults through impedance
+   713→  - Power system stability: steady-state, transient, dynamic; swing equation, equal-area criterion, step-by-step method, improvement methods
+   714→  - Load flow: Y-bus formation, bus classification, Gauss–Seidel & Newton–Raphson methods (intro to fast decoupled)
+   715→  - Traveling waves: wave equation, surge impedance, reflection/transmission, Bewley's lattice diagram; protection against overvoltage; transients intro
+   716→- **Power Station Practice (EE-507)** — thermal/hydro/nuclear plant layouts & cycles, plant auxiliaries, load curves, economic operation & load sharing, tariffs & power factor improvement
+   717→- **Electrical Machine Design – I (EE-511)** — design factors, output equation, specific loadings, temperature rise & rating; transformer design (core/window, losses, optimization); DC machine design (main dimensions, armature, poles, field)
+   718→- **Advanced Electrical Machine (EE-605)** — special machines: stepper motors (VR/PM/hybrid), servo motors, BLDC, switched reluctance motors, universal motor, linear motors; permanent magnet machines
+   719→- **Microprocessor and Application (ECE-405)** — 8085/8086 architecture, programming, interfacing (memory, I/O, 8255/8259/8253), A/D–D/A, applications in measurement & drives control
+   720→- **Seminar-I** — (one line)
+   721→
+   722→### Semester 7
+   723→- **Non-Conventional Energy Sources (EE-606)** — solar PV (cells, modules, MPPT) & solar thermal, wind energy conversion, biomass, geothermal, tidal & wave, fuel cells & hydrogen, hybrid systems, grid integration & economics
+   724→- **Switch Gear & Protection (EE-601)**
+   725→  - Protection philosophy: qualities of protection, zones, primary & backup protection
+   726→  - Relays as comparators: single/dual/multi-input, amplitude & phase comparators; relay characteristics in impedance/admittance planes
+   727→  - Circuit breaker theory: arc phenomenon, arc quenching, restriking & recovery voltages, current chopping, capacitive current breaking, short-line faults; testing & ratings
+   728→  - Circuit breakers: bulk oil, minimum oil, air-blast, SF6, vacuum, static
+   729→  - Protective relays: electromagnetic, static, numerical; overcurrent (IDMT), distance (impedance/reactance/mho), Buchholz
+   730→  - Transmission line protection: phase & earth fault, distance protection, power swings, carrier & pilot relaying schemes
+   731→  - Busbar & feeder protection; alternator & transformer protection (percentage differential)
+   732→  - Digital protection intro; CT/PT requirements; surge arresters & insulation coordination
+   733→- **Electrical Machine Design – II (EE-602)** — AC machine design: induction motor (output equation, air-gap, rotor), synchronous machine (main dimensions, winding design); DC machine design: stator, armature winding, commutator, brush shift, field windings, temperature rise
+   734→- **Modern Control System (EE-603)** — state-space design & observers, controllability/observability, pole placement, digital/discrete control (z-domain), sampled-data systems, optimal & adaptive control intro; PLC & SCADA in industry
+   735→- **Training-II, Seminar-II, Project Formulation (EE-699a)** — (one line)
+   736→
+   737→### Semester 8
+   738→- **Instrumentation & Process Control (EE-604)**
+   739→  - Process control basics: process models, dynamics (1st/2nd order), interacting & non-interacting systems
+   740→  - Transducers & sensors, signal conditioning, data acquisition; telemetry
+   741→  - Controllers: P, PI, PID; tuning methods (Ziegler–Nichols); final control elements (control valves, actuators, electropneumatic)
+   742→  - PLC architecture & ladder programming; DCS & SCADA architecture
+   743→  - Industrial instrumentation: flow, pressure, level, temperature measurement; case studies
+   744→- **Electives-I/II/III (EE-621 to EE-635):**
+   745→  - Network Synthesis — positive real functions, Foster/Cauer LC-RC-RL synthesis, filters
+   746→  - Power System Operation & Control — AGC (load-frequency), AVR, economic dispatch, unit commitment, SCADA/EMS
+   747→  - Advanced Power Electronics — resonant converters, multilevel inverters, power quality conditioners
+   748→  - Modeling & Simulation of Electrical Machines — generalized machine theory, d-q modeling, simulation tools
+   749→  - Power Quality Monitoring & Conditioning — harmonics, sag/swell, IEEE 519, active filters, DVR/STATCOM
+   750→  - High Voltage Engineering — breakdown mechanisms (gases/liquids/solids), HV generation & measurement, testing
+   751→  - Electric Drives — four-quadrant drives, closed-loop control, vector control intro
+   752→- **Project Execution & Report (EE-699b)** — major project (one line)
+   753→
+   754→---
+   755→
+   756→## 2.4 ME — Mechanical Engineering (semester-wise)
+   757→
+   758→### Semester 1–2 (common engineering core)
+   759→- Same common subjects as CSE (Mathematics I–II, Physics, Chemistry, Professional Communication, Engineering Graphics I–II, Engineering Mechanics, Intro to Manufacturing Process, Workshop Practice & Technology, Moral & Value Education).
+   760→- ME-specific: **Basic Electronics**, **Electrical Engineering** (basic machines & transformers for ME), **Computer & Languages**, **Mechanical Engineering** (overview).
+   761→
+   762→### Semester 3
+   763→- **Machine Drawing & Computer Aided Drafting**
+   764→  - Orthographic projection conventions; assembly & disassembly drawings
+   765→  - Threads & threaded fasteners (bolts, nuts, keys, cotters, knuckle joints)
+   766→  - Riveted & welded joints representation; springs, pipe joints
+   767→  - Limits, fits & tolerances on drawings; surface finish symbols
+   768→  - CAD drafting (AutoCAD): 2D drafting, dimensioning, plotting
+   769→- **Applied Thermodynamics (ME-404)**
+   770→  - Review of laws of thermodynamics; Helmholtz & Gibbs functions, Maxwell relations, Clapeyron equation, Joule–Thomson coefficient, availability & irreversibility
+   771→  - Steam generators: classification, fire/water tube boilers, mountings & accessories, equivalent evaporation, efficiency, heat balance, draught
+   772→  - Rankine & modified Rankine cycles; steam properties & Mollier chart; steam engine indicator diagrams
+   773→  - Nozzles: flow variation, critical condition, nozzle efficiency
+   774→  - Steam turbines: impulse & reaction, compounding, velocity diagrams, work & efficiency, bleeding, reheat factor, governing
+   775→  - IC engines: Otto/Diesel/dual cycle review; gas turbines: Brayton cycle & refinements
+   776→  - Refrigeration & heat pump cycles: Carnot, Bell–Coleman; VCR & VAR introduction
+   777→  - Compressors: reciprocating (intercooling), centrifugal & axial
+   778→- **Fluid Mechanics (CE-406)**
+   779→  - Fluid properties; continuum; ideal vs real; Newtonian & non-Newtonian; surface tension
+   780→  - Kinematics: flow types (steady/unsteady, uniform/non-uniform, laminar/turbulent, 1/2/3-D), stream/path/streak lines, continuity, rotation & circulation, stream & potential functions, flow nets
+   781→  - Fluid statics: pressure measurement (manometers), forces on plane/curved surfaces, centre of pressure, buoyancy & stability, accelerated fluid masses
+   782→  - Dynamics: Euler's equation, Bernoulli's equation & applications (Pitot tube, orifices, mouthpieces, notches, weirs, sluice gates), cavitation, free & forced vortex, momentum equation
+   783→  - Dimensional analysis: Buckingham's π theorem, dimensionless numbers, similitude & model studies
+   784→  - Laminar flow: Poiseuille, Stokes' law, flow between plates; turbulent flow: eddy viscosity, mixing length, velocity distribution
+   785→  - Boundary layer: thicknesses, flat-plate analysis (laminar/turbulent), separation & control
+   786→  - Pipe flow: friction factor, losses (expansion, contraction, bends), pipes in series/parallel, equivalent length, siphons
+   787→  - Drag & lift on submerged bodies (sphere, cylinder, disc), Magnus effect
+   788→  - Compressibility: water hammer, surge tanks
+   789→- **Strength of Materials (CE-408)**
+   790→  - Stress & strain: ductility, toughness, elastic constants, hardness, brittleness; Mohr's circle for compound & principal stresses
+   791→  - Theories of failure & comparison
+   792→  - Bending: SF & BM diagrams, flexure formula, section modulus; shearing stresses in beams
+   793→  - Torsion of circular shafts; combined bending & torsion
+   794→  - Deflection of beams: double integration, Macaulay's, area-moment & unit-load methods
+   795→  - Columns & struts: Euler & Rankine formulae; eccentric loading
+   796→  - Thin & thick cylinders; springs (close/open coiled)
+   797→- **Material Science and Testing (ME-410)**
+   798→  - Crystal structure: bonding, Miller indices, X-ray diffraction, imperfections, crystal growth
+   799→  - Phase diagrams (Fe–C), heat treatment (annealing, normalizing, hardening, tempering, TTT)
+   800→  - Mechanical testing: tensile, compression, hardness (Brinell/Rockwell/Vickers), impact (Izod/Charpy), fatigue (S–N), creep
+   801→  - Ferrous & non-ferrous alloys; alloying effects; composites & ceramics; polymers
+   802→  - Corrosion & prevention; powder metallurgy; NDT (visual, dye penetrant, ultrasonic, radiography) basics
+   803→- **Engineering Mathematics-III, Foundation of IT, Environmental Studies** — (one line each)
+   804→
+   805→### Semester 4
+   806→- **Electrical Machines (EEE-404, for ME)** — DC machines, transformers, 3-φ induction motors, single-phase motors, motor selection & control for mechanical applications (one line + EE Machines-I subset)
+   807→- **Measurement and Metrology (ME-405)**
+   808→  - Standards & measurement systems: accuracy, precision, errors, calibration
+   809→  - Linear measurement: Vernier, micrometer, slip gauges, comparators (mechanical/optical/electrical/pneumatic)
+   810→  - Limits, fits & tolerances: hole & shaft basis, gauge design (Taylor's principle), plug/ring gauges
+   811→  - Angular measurement: sine bar, angle gauges, autocollimator, spirit level
+   812→  - Screw thread measurement: 2/3-wire method, thread gauges; gear measurement: tooth thickness, composite testing
+   813→  - Surface finish: Ra/Rz parameters, profilometer; straightness, flatness, roundness testing
+   814→  - Machine tool metrology: alignment tests; coordinate measuring machine (CMM); interferometry basics
+   815→- **Kinematics of Machines (ME-407)**
+   816→  - Mechanism basics: links, pairs, chains; four-bar & inversions; slider-crank & double slider-crank inversions
+   817→  - Velocity analysis: relative-velocity method, instantaneous centre method, Kennedy's theorem
+   818→  - Acceleration analysis: acceleration diagrams, Coriolis component; Klein's construction for slider-crank; analytical methods
+   819→  - Lower-pair mechanisms: pantograph, Peaucellier's & Hart's straight-line, Scott Russell; Hooke's joint; Davis & Ackermann steering gears
+   820→  - Kinematic synthesis: geometrical & analytical (Freudenstein's equation), 3-position synthesis
+   821→  - Cams: classification, follower motion laws, cam profile design
+   822→  - Gears: law of gearing, involute characteristics, interference & undercutting; gear trains: simple, compound, epicyclic (planetary)
+   823→- **Industrial Engineering (ME-411)**
+   824→  - Productivity: definition, measurement, improvement
+   825→  - Work study: method study & work measurement; time study, motion study, micromotion (therbligs), PMTS; man–machine & flow charts; work sampling; standard time
+   826→  - Job evaluation & merit rating; wage incentive plans
+   827→  - Plant layout & material handling: types, principles
+   828→  - Production planning & control: routing, scheduling, dispatching, follow-up
+   829→  - Inventory control: EOQ, deterministic models; MRP & JIT
+   830→  - Quality control: control charts (X̄, R, p, c), sampling plans, TQM & benchmarking
+   831→  - CPM/PERT network techniques; break-even analysis; replacement analysis
+   832→  - Operations research intro: LP (graphical), transportation; organizational structures, factory legislation (overview)
+   833→- **Manufacturing Science I (ME-412)**
+   834→  - Manufacturing overview: economic & technological considerations; process survey
+   835→  - Casting: patterns & allowances, moulding sands & testing, mould elements, gating & riser design, solidification analysis, sand casting defects & remedies, cupola; die, centrifugal, investment casting
+   836→  - Metal forming: elastic & plastic deformation, yield criteria, hot vs cold working, slab analysis; forging (loads, defects), rolling (force & power), extrusion, wire/strip drawing, tube drawing
+   837→  - Sheet metal: die & press work, blanking vs piercing, compound vs progressive dies, deep drawing & bending analysis
+   838→  - Unconventional forming: explosive, electro-magnetic, electro-hydraulic
+   839→  - Powder metallurgy: process, advantages, applications
+   840→  - Plastics manufacturing: injection moulding, extrusion, welding of plastics
+   841→  - Jigs & fixtures: locating & clamping principles
+   842→- **Computer-Based Numerical & Statistical Techniques, MIS** — (one line)
+   843→
+   844→### Semester 5
+   845→- **Machine Design – I (ME-409)**
+   846→  - Design process: methods, standards, preferred sizes, BIS designation of steels, material selection
+   847→  - Design against static load: modes of failure, factor of safety, theories of failure, stress concentration
+   848→  - Design against fluctuating load: endurance limit, Soderberg & Goodman criteria, fatigue loading
+   849→  - Joints: riveted, welded, screwed — eccentric & fatigue loading
+   850→  - Shafts: strength & rigidity design; keys & splines; rigid & flexible couplings (flanged, pin-bush)
+   851→  - Springs: helical (stress & deflection equations, static & fatigue), multi-leaf (nipping), spiral springs
+   852→  - Power screws: thread forms, stresses, screw jack design; cotter & knuckle joints
+   853→- **Heat and Mass Transfer (ME-503)**
+   854→  - Conduction: Fourier's law, thermal conductivity, general 3-D equation; 1-D steady state (plane/cylindrical/spherical, composite), variable k, shape factor, critical radius of insulation; transient lumped-parameter analysis
+   855→  - Convection: dimensional analysis (π theorem), free & forced convection correlations (flat plate, tubes, bundles), fins (effectiveness & efficiency), boiling (pool) & condensation (drop-wise, film)
+   856→  - Radiation: black/gray/real surfaces, Planck's law, Stefan–Boltzmann, intensity, view factors, radiation exchange between surfaces, network method, radiation shields, solar collectors
+   857→  - Heat exchangers: parallel/counter flow, LMTD & NTU-effectiveness methods, compact exchangers
+   858→  - Mass transfer: Fick's law, diffusion coefficient, steady-state diffusion through stationary media & stagnant gas films, equimolar counter-diffusion
+   859→- **Dynamics of Machines (ME-504)**
+   860→  - Static & dynamic force analysis of linkages; equivalent offset inertia force; dynamic analysis of slider-crank & four-bar; piston effort & crank effort, inertia torque
+   861→  - Turning moment diagrams, fluctuation of energy, flywheel design
+   862→  - Balancing: static & dynamic; rotating & reciprocating masses; primary & secondary forces/couples; balancing of inline & V-engines
+   863→  - Friction: pivot & collar, friction circle; clutches (single plate, multi-plate, cone, centrifugal); thrust bearings; belt drives (flat & V): tensions, slip, creep
+   864→  - Brakes: external/internal shoe, band & block, hydraulic; dynamometers: absorption & transmission
+   865→  - Governors: dead-weight (Watt, Porter, Proell) & spring-loaded (Hartnell, Hartung, Wilson-Hartnell); sensitivity, stability, hunting, isochronism, effort & power
+   866→  - Gyroscopic couple & precession; applications (ships, aircraft, automobiles)
+   867→  - Vibration: single-DOF free/forced, damped; critical speeds of shafts; vibration isolation & transmissibility
+   868→- **Manufacturing Science II (ME-507)**
+   869→  - Metal cutting: chip formation & types, tool geometry (ASA/orthogonal rake), Merchant's circle analysis, cutting forces, tool wear & life (Taylor), economics of machining, cutting fluids, machinability
+   870→  - Machine tools: lathe (operations, turret/capstan, tool layout), shaper/planer/slotter, drilling & boring, milling (up/down, indexing & dividing head), grinding (wheel specification, surface/cylindrical), broaching
+   871→  - NC/CNC: part programming fundamentals (G & M codes), DNC, machining centers
+   872→  - Non-traditional machining: EDM, ECM, USM, AJM, LBM, EBM, chemical machining
+   873→  - Press working: dies & punches; welding processes: arc (SMAW/MIG/TIG), gas welding, resistance welding, advanced (friction, laser, electron beam); welding metallurgy & defects
+   874→- **IC Engine (ME-508)**
+   875→  - Classification & construction; 4-stroke & 2-stroke working; valve & port timing diagrams
+   876→  - Fuel systems: carburettor types, diesel injection systems (pump-line-nozzle, common rail)
+   877→  - Combustion: SI (stages, knock) & CI (stages, diesel knock); combustion chambers
+   878→  - Lubrication: systems, lubricant properties; cooling systems
+   879→  - Supercharging & turbocharging: objectives, methods, performance
+   880→  - Two-stroke scavenging; engine testing: IP/BP, Morse test, heat balance, performance characteristics
+   881→  - Air pollution: pollutant formation (CO, HC, NOx, particulates), after-treatment (catalytic converters), emission norms; alternative fuels
+   882→- **Product Development & Design (ME-506)** — design morphology, need analysis, creativity & ideation (brainstorming), utility & decision making, reliability (bath-tub curve, MTBF), ergonomics & man-machine interface (one-line summary)
+   883→
+   884→### Semester 6
+   885→- **Refrigeration and Air Conditioning (ME-502)**
+   886→  - Refrigeration: methods, Carnot refrigeration cycle, COP, units (TR)
+   887→  - Air refrigeration: Bell–Coleman cycle, aircraft refrigeration systems (bootstrap, regenerative), DART
+   888→  - Vapour compression: single & multi-stage, p–h chart, effect of subcooling & superheating, system components
+   889→  - Vapour absorption: NH3–water & LiBr–water systems, T–x & h–x diagrams, comparison with VCR
+   890→  - Refrigerants: classification, nomenclature, properties, eco-friendly (CFC-free) refrigerants
+   891→  - Psychrometry: properties, adiabatic saturation, wet-bulb, psychrometric chart, processes
+   892→  - Air conditioning: comfort & industrial, comfort zones, cooling load calculations, bypass factor
+   893→  - Equipment: expansion devices, ducts; applications: cold storage, ice plant, water coolers; cooling towers
+   894→- **Machine Design – II (ME-505)**
+   895→  - Spur gears: conjugate action, involute, tooth loads (Lewis equation, wear), dynamic loading (Buckingham), gear materials
+   896→  - Helical, worm & bevel gear design (bending, wear, efficiency, thermal rating)
+   897→  - Anti-friction bearings: types, static & dynamic capacity, life & reliability, selection, mounting, lubrication & seals
+   898→  - Journal bearings: Petroff's equation, Raimondi–Boyd design charts, hydrodynamic theory, thick-film lubrication, hydrostatic bearings
+   899→  - Engine parts: connecting rod, crosshead, crankshaft, piston, valve gear design
+   900→- **Automatic Controls (EEE-509)** — control systems for mechanical engineers: modeling, transfer function, transient & frequency response, PID, applications to thermal/mechanical systems (one line)
+   901→- **Machine Tool Design (ME-513, elective)** — machine tool drives & mechanisms, speed/feed gearbox design (stepped/stepless), structures (beds, columns, guideways, spindles), machine tool dynamics, control systems, CNC structure
+   902→- **Steam Power Engineering (ME-512)**
+   903→  - Vapour power cycles: Rankine improvements — reheat, regenerative feed heating (bled steam, optimum feed temperature, deaerators), binary vapour cycle, actual vs theoretical
+   904→  - Nozzles & diffusers: area–velocity–pressure relations, critical pressure, supersaturated flow, efficiency
+   905→  - Steam turbines: impulse/reaction velocity diagrams, losses, reheat factor, governing (throttle/nozzle/bypass), auxiliary systems
+   906→  - Condensers: surface & jet, vacuum efficiency; cooling towers
+   907→  - Steam generators: modern boilers, circulation, steam drum internals, mountings & accessories, fluidized-bed boilers, fuel handling & burning, draught, performance
+   908→- **Fuel Combustion and Pollution (ME-515)** — fuels & stoichiometry, excess air & flue gas analysis (Orsat), combustion of solid/liquid/gaseous fuels, furnace types & flame characteristics, pollutant formation (NOx/SOx/CO/PM) & control technologies, emission standards
+   909→- **Fluid Machinery (CE-516)**
+   910→  - Impact of jets: force on flat & curved (fixed/moving) plates
+   911→  - Hydraulic turbines: Pelton, Francis, Kaplan — working, work done, efficiency, draft tubes, cavitation, governing, specific speed, performance & model testing, Muschel curves, selection
+   912→  - Centrifugal pumps: construction, work done, priming, specific speed, cavitation, performance
+   913→  - Reciprocating pumps: slip, air vessels, work saved, multicylinder; comparison with centrifugal
+   914→  - Hydraulic systems: press, accumulator, intensifier, ram, fluid coupling, torque converter; jet & air-lift pumps; water hammer
+   915→  - Gas turbines & jet propulsion basics
+   916→- **Seminar-I, summer training** (one line)
+   917→
+   918→### Semester 7
+   919→- **Condition Monitoring (ME-514)**
+   920→  - CM principles, economics, implementation of condition-based maintenance
+   921→  - Vibration monitoring: transducer selection, machinery signatures, frequency analysis, severity criteria
+   922→  - Bearing monitoring: shock-pulse method, kurtosis, vibration signature analysis, fiber-optic systems
+   923→  - NDT: visual, liquid penetrant, radiography (X-ray/gamma), ultrasonic (pulse-echo, transmission, resonance), magnetic particle, eddy current, acoustic emission, thermography
+   924→  - Wear debris & lubricant analysis: sampling, spectrographic analysis, debris size distribution
+   925→  - Performance trend monitoring; corrosion monitoring; machine fault diagnosis case studies
+   926→- **Computer Aided Design (ME-601)**
+   927→  - CAD/CAE/CAED concepts & applications; design workstations, graphics systems
+   928→  - Programming for CAD (C/C++ basics for design programs)
+   929→  - Computer graphics: display systems, output primitives, Bresenham line/circle algorithms, 2-D/3-D transformations & concatenation
+   930→  - Geometric modeling: interpolation vs approximation, spline, Bezier & B-spline curves; polygon & quadric surfaces; solid modeling: wireframe, CSG, B-rep, sweep; color & rendering basics
+   931→  - CAD of machine elements (shafts, springs, bearings) & systems (heat exchangers)
+   932→  - Numerical methods & optimization: curve fitting, Newton–Raphson, LP (graphical)
+   933→  - Finite element method: introduction, 1-D/2-D elements, spring-system analysis; AutoCAD usage
+   934→- **Computer Aided Manufacturing (ME-602)**
+   935→  - Automation & CIM concepts; CAD/CAM integration
+   936→  - NC/CNC/DNC: machine control units, positioning systems, part programming (manual & computer-assisted, APT)
+   937→  - CNC machine elements: drives, feedback devices, tool changers; machining centers & turning centers
+   938→  - Industrial robotics: anatomy, configurations, end effectors, programming, sensors, applications
+   939→  - Group technology & computer-aided process planning; MRP; flexible manufacturing systems (FMS)
+   940→  - Quality in CAM: SPC integration;Industry 4.0 / IIoT overview
+   941→- **Automobile Engineering (ME-603)**
+   942→  - Vehicle classification & chassis layout; frame & body
+   943→  - Engines: modern SI/CI developments, fuel injection & management
+   944→  - Transmission: clutch types, gearboxes (sliding mesh/synchromesh, automatic), propeller shaft, differential, final drive, axles
+   945→  - Steering: geometry (caster, camber, toe-in, Ackermann), steering gearboxes; wheels & tires
+   946→  - Brakes: hydraulic, drum/disc, power brakes, ABS; suspension systems & shock absorbers
+   947→  - Electrical systems: battery, starting, charging, ignition; lighting & accessories
+   948→  - Emission control: PCV, EGR, catalytic converters, norms (BS); EVs & hybrid electric vehicles; maintenance & diagnostics
+   949→- **Power Plant Engineering (ME-605)**
+   950→  - Thermal plants: layout, coal handling & preparation, combustion systems, boilers, turbines, condensers, feed water treatment, ash handling, cooling systems, cycles (supercharged/reheat/regenerative)
+   951→  - Hydro plants: site selection, classification, turbines selection, penstocks, surge tanks
+   952→  - Nuclear plants: reactors (BWR/PWR/FBR), fuels, safety & waste
+   953→  - Diesel & gas turbine plants; combined cycle & cogeneration
+   954→  - Economics: load curves, load factor, diversity, tariffs; power plant instrumentation; energy audit
+   955→- **Industrial Training, Seminar-II, Project Formulation (ME-699a)** — (one line)
+   956→
+   957→### Semester 8
+   958→- **Mechanical System Design (ME-606)** — design of multi-component systems: speed reducers/gearboxes, material handling equipment; design for reliability, manufacture (DFM), assembly (DFA); mechatronic system design; design optimization
+   959→- **Electives (ME-650 to ME-664):** Computational Fluid Dynamics, Finite Element Methods, Advanced IC Engines, Renewable Energy Technology, Mechatronics, Robotics & Automation, Operations Research, Tribology, Composite Materials, Total Quality Management, Non-Destructive Testing, Welding Technology, Tool Design
+   960→- **Project Execution and Report (ME-699b)** — major project (one line)
+   961→
+   962→---
+   963→
+   964→## 2.5 Cross-cutting notes for implementation
+   965→1. **GATE CS maps almost 1:1 to CSE core semesters 3–6** (Digital Logic↔Sem3, COA↔Sem3, DSA↔Sem3/4, Algorithms↔Sem4/5, TOC↔Sem4, Compiler↔Sem5/6, OS↔Sem4, DBMS↔Sem5, CN↔Sem5/6, Engg Math↔Sems 1–4) — a GATE-prep book can reuse chapter content with exam-style depth.
+   966→2. Common subjects (Maths I–III, Physics, Chemistry, Basic Electrical/Electronics, Programming C, Graphics, Mechanics) repeat across all 4 branches — build once, tag to multiple exam books.
+   967→3. Semester placement varies by university (AKTU vs VTU vs others) — store subjects with topic lists keyed by subject, and map subject→semester per exam-branch book.
+   968→4. Humanities/soft-skills subjects (Environmental Studies, Constitution of India, UHV, Professional Communication) should exist as stubs only.
+   969→
+   970→## Coverage statistics
+   971→- **GATE CS:** 10 official sections + GA (4 aptitude sections) + exam pattern — 100% of official syllabus transcribed
+   972→- **CSE:** 8 semesters, ~44 subjects with topic lists (~38 core + electives)
+   973→- **ECE:** 8 semesters, ~38 subjects with topic lists (~30 core + electives)
+   974→- **EE:** 8 semesters, ~40 subjects with topic lists (~32 core + electives)
+   975→- **ME:** 8 semesters, ~42 subjects with topic lists (~34 core + electives)
+   976→

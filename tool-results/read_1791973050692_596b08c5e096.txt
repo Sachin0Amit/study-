@@ -1,0 +1,1284 @@
+     1→# JEE Main + JEE Advanced — Complete Official Syllabi (Research Deliverable)
+     2→
+     3→**Task ID:** 2-a · **Agent:** research-agent-jee · **Compiled:** 2026 (research date)
+     4→**Purpose:** Source-of-truth reference for adding IIT JEE MAINS and IIT ADVANCED exam books/units to the StudyVerse library (Subject → Book → Chapter → Section model).
+     5→
+     6→## Authoritative sources used
+     7→
+     8→| Document | URL |
+     9→|---|---|
+    10→| **JEE (Main) 2026 official syllabus PDF (NTA)** — 17 pages | https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/10/202510311323551056.pdf (linked from jeemain.nta.nic.in/document/syllabus-2026) |
+    11→| **JEE (Advanced) 2026 official syllabus PDF (IIT Roorkee)** — 16 pages | https://jeeadv.ac.in/documents/jee-advanced-2026-syllabus.pdf |
+    12→| JEE (Advanced) 2026 Paper 1 (official) | https://jeeadv.ac.in/documents/p1_english.pdf |
+    13→| JEE (Advanced) 2026 Paper 2 (official) | https://jeeadv.ac.in/documents/p2_english.pdf |
+    14→| AAT (Architecture Aptitude Test) official syllabus | https://jeeadv.ac.in/documents/aat-syllabus.pdf |
+    15→| JEE Advanced 2026 eligibility page | https://jeeadv.ac.in/eligibility.html |
+    16→| NTA 2024 revised-syllabus notice (reduction reference) | https://www.nta.ac.in/Download/Notice/Notice_20231102100841.pdf |
+    17→
+    18→**Key structural facts (verified):**
+    19→- **JEE Main syllabus 2025 = 2026** (identical). NTA reduced the syllabus in **2024** and has made **no further changes through 2026**. Current structure: **Mathematics 14 units · Physics 20 units · Chemistry 20 units** (the older pre-2024 syllabus with ~16 Math / ~28 Chemistry units is now obsolete — do NOT use it for the library).
+    20→- **JEE Advanced syllabus 2025 = 2026** ("The syllabus for JEE Advanced 2026 remains the same as JEE Advanced 2025" — official PDF header; the syllabus was last revised for 2023). Structure: **Physics 7 sections · Chemistry 37 named sections · Mathematics 9 sections**.
+    21→
+    22→---
+    23→
+    24→# JEE MAIN (NTA) — Paper 1 (B.E./B.Tech)
+    25→
+    26→## Physics — 20 Units (complete official topic list)
+    27→
+    28→### Unit 1: Units and Measurements
+    29→- Units of measurements
+    30→- System of units; SI units
+    31→- Fundamental and derived units
+    32→- Least count; significant figures
+    33→- Errors in measurements
+    34→- Dimensions of physical quantities
+    35→- Dimensional analysis and its applications
+    36→
+    37→### Unit 2: Kinematics
+    38→- Frame of reference
+    39→- Motion in a straight line
+    40→- Position–time graph
+    41→- Speed and velocity
+    42→- Uniform and non-uniform motion
+    43→- Average speed and instantaneous velocity
+    44→- Uniformly accelerated motion
+    45→- Velocity–time and position–time graphs
+    46→- Relations for uniformly accelerated motion
+    47→- Scalars and vectors; vector addition and subtraction
+    48→- Scalar and vector product; unit vector; resolution of vectors
+    49→- Relative velocity
+    50→- Motion in a plane
+    51→- Projectile motion
+    52→- Uniform circular motion
+    53→
+    54→### Unit 3: Laws of Motion
+    55→- Force and inertia
+    56→- Newton's first law of motion
+    57→- Momentum
+    58→- Newton's second law of motion
+    59→- Impulse
+    60→- Newton's third law of motion
+    61→- Law of conservation of linear momentum and its applications
+    62→- Equilibrium of concurrent forces
+    63→- Static and kinetic friction; laws of friction; rolling friction
+    64→- Dynamics of uniform circular motion
+    65→- Centripetal force and its applications: vehicle on a level circular road, vehicle on a banked road
+    66→
+    67→### Unit 4: Work, Energy and Power
+    68→- Work done by a constant force and a variable force
+    69→- Kinetic and potential energies
+    70→- Work–energy theorem
+    71→- Power
+    72→- Potential energy of a spring
+    73→- Conservation of mechanical energy
+    74→- Conservative and non-conservative forces
+    75→- Motion in a vertical circle
+    76→- Elastic and inelastic collisions in one and two dimensions
+    77→
+    78→### Unit 5: Rotational Motion
+    79→- Centre of mass of a two-particle system; centre of mass of a rigid body
+    80→- Basic concepts of rotational motion
+    81→- Moment of a force; torque
+    82→- Angular momentum; conservation of angular momentum and its applications
+    83→- Moment of inertia; radius of gyration
+    84→- Values of moments of inertia for simple geometrical objects
+    85→- Parallel and perpendicular axes theorems and their applications
+    86→- Equilibrium of rigid bodies
+    87→- Rigid body rotation and equations of rotational motion
+    88→- Comparison of linear and rotational motions
+    89→
+    90→### Unit 6: Gravitation
+    91→- The universal law of gravitation
+    92→- Acceleration due to gravity and its variation with altitude and depth
+    93→- Kepler's laws of planetary motion
+    94→- Gravitational potential energy; gravitational potential
+    95→- Escape velocity
+    96→- Motion of a satellite; orbital velocity
+    97→- Time period and energy of a satellite
+    98→
+    99→### Unit 7: Properties of Solids and Liquids
+   100→- Elastic behaviour; stress–strain relationship
+   101→- Hooke's law
+   102→- Young's modulus, bulk modulus and modulus of rigidity
+   103→- Pressure due to a fluid column
+   104→- Pascal's law and its applications
+   105→- Effect of gravity on fluid pressure
+   106→- Viscosity; Stokes' law; terminal velocity
+   107→- Streamline and turbulent flow; critical velocity
+   108→- Bernoulli's principle and its applications
+   109→- Surface energy and surface tension
+   110→- Angle of contact
+   111→- Excess of pressure across a curved surface
+   112→- Applications of surface tension: drops, bubbles and capillary rise
+   113→- Heat; temperature; thermal expansion
+   114→- Specific heat capacity; calorimetry
+   115→- Change of state; latent heat
+   116→- Heat transfer: conduction, convection and radiation
+   117→
+   118→### Unit 8: Thermodynamics
+   119→- Thermal equilibrium and the concept of temperature
+   120→- Zeroth law of thermodynamics
+   121→- Heat, work and internal energy
+   122→- First law of thermodynamics
+   123→- Isothermal and adiabatic processes
+   124→- Second law of thermodynamics
+   125→- Reversible and irreversible processes
+   126→
+   127→### Unit 9: Kinetic Theory of Gases
+   128→- Equation of state of a perfect gas
+   129→- Work done on compressing a gas
+   130→- Kinetic theory of gases — assumptions
+   131→- Concept of pressure (kinetic interpretation)
+   132→- Kinetic interpretation of temperature
+   133→- RMS speed of gas molecules
+   134→- Degrees of freedom
+   135→- Law of equipartition of energy and applications to specific heat capacities of gases
+   136→- Mean free path
+   137→- Avogadro's number
+   138→
+   139→### Unit 10: Oscillations and Waves
+   140→- Oscillations and periodic motion: time period, frequency, displacement as a function of time, periodic functions
+   141→- Simple harmonic motion (S.H.M.) and its equation; phase
+   142→- Oscillations of a spring — restoring force and force constant
+   143→- Energy in S.H.M.: kinetic and potential energies
+   144→- Simple pendulum — derivation of expression for its time period
+   145→- Wave motion; longitudinal and transverse waves
+   146→- Speed of the travelling wave
+   147→- Displacement relation for a progressive wave
+   148→- Principle of superposition of waves
+   149→- Reflection of waves
+   150→- Standing waves in strings and organ pipes; fundamental mode and harmonics
+   151→- Beats
+   152→
+   153→### Unit 11: Electrostatics
+   154→- Electric charges; conservation of charge
+   155→- Coulomb's law — force between two point charges
+   156→- Forces between multiple charges; superposition principle and continuous charge distribution
+   157→- Electric field due to a point charge; electric field lines
+   158→- Electric dipole; electric field due to a dipole; torque on a dipole in a uniform electric field
+   159→- Electric flux
+   160→- Gauss's law and its applications: field due to infinitely long uniformly charged straight wire, uniformly charged infinite plane sheet, uniformly charged thin spherical shell
+   161→- Electric potential and its calculation for a point charge, dipole and system of charges
+   162→- Potential difference; equipotential surfaces
+   163→- Electrical potential energy of a system of two point charges and of an electric dipole in an electrostatic field
+   164→- Conductors and insulators
+   165→- Dielectrics and electric polarization
+   166→- Capacitors and capacitance
+   167→- Combination of capacitors in series and parallel
+   168→- Capacitance of a parallel-plate capacitor with and without dielectric medium between the plates
+   169→- Energy stored in a capacitor
+   170→
+   171→### Unit 12: Current Electricity
+   172→- Electric current; drift velocity, mobility and their relation with electric current
+   173→- Ohm's law; electrical resistance
+   174→- I–V characteristics of Ohmic and non-Ohmic conductors
+   175→- Electrical energy and power
+   176→- Electrical resistivity and conductivity
+   177→- Series and parallel combinations of resistors
+   178→- Temperature dependence of resistance
+   179→- Internal resistance, potential difference and emf of a cell
+   180→- Combination of cells in series and parallel
+   181→- Kirchhoff's laws and their applications
+   182→- Wheatstone bridge; metre bridge
+   183→
+   184→### Unit 13: Magnetic Effects of Current and Magnetism
+   185→- Biot–Savart law and its application to the current-carrying circular loop
+   186→- Ampere's law and its applications: infinitely long current-carrying straight wire and solenoid
+   187→- Force on a moving charge in uniform magnetic and electric fields
+   188→- Force on a current-carrying conductor in a uniform magnetic field
+   189→- Force between two parallel current-carrying conductors — definition of ampere
+   190→- Torque experienced by a current loop in a uniform magnetic field
+   191→- Moving coil galvanometer — its sensitivity, conversion to ammeter and voltmeter
+   192→- Current loop as a magnetic dipole and its magnetic dipole moment
+   193→- Bar magnet as an equivalent solenoid; magnetic field lines
+   194→- Magnetic field due to a magnetic dipole (bar magnet) along its axis and perpendicular to its axis
+   195→- Torque on a magnetic dipole in a uniform magnetic field
+   196→- Para-, dia- and ferromagnetic substances with examples
+   197→- Effect of temperature on magnetic properties
+   198→
+   199→### Unit 14: Electromagnetic Induction and Alternating Currents
+   200→- Electromagnetic induction; Faraday's law
+   201→- Induced emf and current; Lenz's law
+   202→- Eddy currents
+   203→- Self and mutual inductance
+   204→- Alternating currents; peak and RMS value of alternating current/voltage
+   205→- Reactance and impedance
+   206→- LCR series circuit; resonance
+   207→- Power in AC circuits; wattless current
+   208→- AC generator and transformer
+   209→
+   210→### Unit 15: Electromagnetic Waves
+   211→- Displacement current
+   212→- Electromagnetic waves and their characteristics
+   213→- Transverse nature of electromagnetic waves
+   214→- Electromagnetic spectrum (radio waves, microwaves, infrared, visible, ultraviolet, X-rays, gamma rays)
+   215→- Applications of electromagnetic waves
+   216→
+   217→### Unit 16: Optics
+   218→- Reflection of light; spherical mirrors; mirror formula
+   219→- Refraction of light at plane and spherical surfaces
+   220→- Thin lens formula; lens maker formula
+   221→- Total internal reflection and its applications
+   222→- Magnification; power of a lens
+   223→- Combination of thin lenses in contact
+   224→- Refraction of light through a prism
+   225→- Microscope and astronomical telescope (reflecting and refracting) and their magnifying powers
+   226→- Wave optics: wavefront and Huygens' principle
+   227→- Laws of reflection and refraction using Huygens' principle
+   228→- Interference: Young's double-slit experiment and expression for fringe width
+   229→- Coherent sources and sustained interference of light
+   230→- Diffraction due to a single slit; width of central maximum
+   231→- Polarisation: plane-polarised light; Brewster's law
+   232→- Uses of plane-polarised light and Polaroid
+   233→
+   234→### Unit 17: Dual Nature of Matter and Radiation
+   235→- Dual nature of radiation
+   236→- Photoelectric effect; Hertz and Lenard's observations
+   237→- Einstein's photoelectric equation
+   238→- Particle nature of light
+   239→- Matter waves: wave nature of particles
+   240→- de Broglie relation
+   241→
+   242→### Unit 18: Atoms and Nuclei
+   243→- Alpha-particle scattering experiment
+   244→- Rutherford's model of the atom
+   245→- Bohr model; energy levels
+   246→- Hydrogen spectrum
+   247→- Composition and size of nucleus; atomic masses
+   248→- Mass–energy relation; mass defect
+   249→- Binding energy per nucleon and its variation with mass number
+   250→- Nuclear fission and fusion
+   251→
+   252→### Unit 19: Electronic Devices
+   253→- Semiconductors
+   254→- Semiconductor diode: I–V characteristics in forward and reverse bias
+   255→- Diode as a rectifier
+   256→- I–V characteristics of LED, photodiode, solar cell
+   257→- Zener diode; Zener diode as a voltage regulator
+   258→- Logic gates (OR, AND, NOT, NAND and NOR)
+   259→
+   260→### Unit 20: Experimental Skills
+   261→Familiarity with the basic approach and observations of the experiments/activities:
+   262→- Vernier calipers — use to measure internal and external diameter and depth of a vessel
+   263→- Screw gauge — use to determine thickness/diameter of thin sheet/wire
+   264→- Simple pendulum — dissipation of energy by plotting a graph between square of amplitude and time
+   265→- Metre scale — mass of a given object by the principle of moments
+   266→- Young's modulus of elasticity of the material of a metallic wire
+   267→- Surface tension of water by capillary rise and effect of detergents
+   268→- Coefficient of viscosity of a given viscous liquid by measuring terminal velocity of a given spherical body
+   269→- Speed of sound in air at room temperature using a resonance tube
+   270→- Specific heat capacity of a given (i) solid and (ii) liquid by method of mixtures
+   271→- Resistivity of the material of a given wire using a metre bridge
+   272→- Resistance of a given wire using Ohm's law
+   273→- Resistance and figure of merit of a galvanometer by half-deflection method
+   274→- Focal length of (i) convex mirror, (ii) concave mirror, (iii) convex lens using the parallax method
+   275→- Plot of the angle of deviation vs angle of incidence for a triangular prism
+   276→- Refractive index of a glass slab using a travelling microscope
+   277→- Characteristic curves of a p-n junction diode in forward and reverse bias
+   278→- Characteristic curves of a Zener diode and finding reverse breakdown voltage
+   279→- Identification of diode, LED, resistor, capacitor from a mixed collection of such items
+   280→
+   281→---
+   282→
+   283→## Chemistry — 20 Units (complete official topic list)
+   284→
+   285→### PHYSICAL CHEMISTRY
+   286→
+   287→#### Unit 1: Some Basic Concepts in Chemistry
+   288→- Matter and its nature
+   289→- Dalton's atomic theory
+   290→- Concept of atom, molecule, element and compound
+   291→- Laws of chemical combination
+   292→- Atomic and molecular masses
+   293→- Mole concept; molar mass; percentage composition
+   294→- Empirical and molecular formulae
+   295→- Chemical equations and stoichiometry
+   296→
+   297→#### Unit 2: Atomic Structure
+   298→- Nature of electromagnetic radiation
+   299→- Photoelectric effect
+   300→- Spectrum of the hydrogen atom
+   301→- Bohr model of the hydrogen atom — postulates; derivation of relations for energy of the electron and radii of the different orbits; limitations of Bohr's model
+   302→- Dual nature of matter; de Broglie's relationship
+   303→- Heisenberg uncertainty principle
+   304→- Elementary ideas of quantum mechanics; the quantum mechanical model of the atom and its important features
+   305→- Concept of atomic orbitals as one-electron wave functions
+   306→- Variation of Ψ and Ψ² with r for 1s and 2s orbitals
+   307→- Various quantum numbers (principal, angular momentum, magnetic) and their significance
+   308→- Shapes of s, p and d orbitals
+   309→- Electron spin and spin quantum number
+   310→- Rules for filling electrons in orbitals — Aufbau principle, Pauli's exclusion principle, Hund's rule
+   311→- Electronic configuration of elements; extra stability of half-filled and completely filled orbitals
+   312→
+   313→#### Unit 3: Chemical Bonding and Molecular Structure
+   314→- Kossel–Lewis approach to chemical bond formation
+   315→- Concept of ionic and covalent bonds
+   316→- Ionic bonding: formation of ionic bonds; factors affecting formation; calculation of lattice enthalpy
+   317→- Covalent bonding: concept of electronegativity
+   318→- Fajan's rule; dipole moment
+   319→- Valence Shell Electron Pair Repulsion (VSEPR) theory and shapes of simple molecules
+   320→- Quantum mechanical approach to covalent bonding: valence bond theory — important features
+   321→- Concept of hybridisation involving s, p and d orbitals
+   322→- Resonance
+   323→- Molecular orbital theory — important features; LCAOs
+   324→- Types of molecular orbitals (bonding, antibonding); sigma and pi bonds
+   325→- Molecular orbital electronic configurations of homonuclear diatomic molecules
+   326→- Concept of bond order, bond length and bond energy
+   327→- Elementary idea of metallic bonding
+   328→- Hydrogen bonding and its applications
+   329→
+   330→#### Unit 4: Chemical Thermodynamics
+   331→- Fundamentals: system and surroundings; extensive and intensive properties; state functions; entropy; types of processes
+   332→- First law of thermodynamics — concept of work, heat, internal energy and enthalpy
+   333→- Heat capacity; molar heat capacity
+   334→- Hess's law of constant heat summation
+   335→- Enthalpies of bond dissociation, combustion, formation, atomization, sublimation, phase transition, hydration, ionization and solution
+   336→- Second law of thermodynamics — spontaneity of processes
+   337→- ΔS of the universe and ΔG of the system as criteria for spontaneity
+   338→- ΔG° (standard Gibbs energy change) and equilibrium constant
+   339→
+   340→#### Unit 5: Solutions
+   341→- Different methods for expressing concentration of solution — molality, molarity, mole fraction, percentage (by volume and mass)
+   342→- Vapour pressure of solutions and Raoult's law
+   343→- Ideal and non-ideal solutions
+   344→- Vapour pressure–composition plots for ideal and non-ideal solutions
+   345→- Colligative properties of dilute solutions: relative lowering of vapour pressure, depression of freezing point, elevation of boiling point, osmotic pressure
+   346→- Determination of molecular mass using colligative properties
+   347→- Abnormal value of molar mass; van't Hoff factor and its significance
+   348→
+   349→#### Unit 6: Equilibrium
+   350→- Meaning of equilibrium; concept of dynamic equilibrium
+   351→- Equilibria involving physical processes: solid–liquid, liquid–gas, gas–gas and solid–gas equilibria
+   352→- Henry's law
+   353→- General characteristics of equilibrium involving physical processes
+   354→- Equilibrium involving chemical processes: law of chemical equilibrium
+   355→- Equilibrium constants (Kp and Kc) and their significance
+   356→- Significance of ΔG and ΔG° in chemical equilibrium
+   357→- Factors affecting equilibrium: concentration, pressure, temperature, effect of catalyst
+   358→- Le Chatelier's principle
+   359→- Ionic equilibrium: weak and strong electrolytes; ionization of electrolytes
+   360→- Various concepts of acids and bases (Arrhenius, Brønsted–Lowry and Lewis) and their ionization
+   361→- Acid–base equilibria (including multistage ionization) and ionization constants
+   362→- Ionization of water; pH scale
+   363→- Common ion effect
+   364→- Hydrolysis of salts and pH of their solutions
+   365→- Solubility of sparingly soluble salts; solubility products
+   366→- Buffer solutions
+   367→
+   368→#### Unit 7: Redox Reactions and Electrochemistry
+   369→- Electronic concepts of oxidation and reduction; redox reactions
+   370→- Oxidation number; rules for assigning oxidation number
+   371→- Balancing of redox reactions
+   372→- Electrolytic and metallic conduction
+   373→- Conductance in electrolytic solutions; molar conductivities and their variation with concentration
+   374→- Kohlrausch's law and its applications
+   375→- Electrochemical cells — electrolytic and galvanic cells
+   376→- Different types of electrodes; electrode potentials including standard electrode potential
+   377→- Half-cell and cell reactions; emf of a galvanic cell and its measurement
+   378→- Nernst equation and its applications
+   379→- Relationship between cell potential and Gibbs energy change
+   380→- Dry cell and lead accumulator
+   381→- Fuel cells
+   382→
+   383→#### Unit 8: Chemical Kinetics
+   384→- Rate of a chemical reaction
+   385→- Factors affecting rate of reactions: concentration, temperature, pressure and catalyst
+   386→- Elementary and complex reactions
+   387→- Order and molecularity of reactions
+   388→- Rate law; rate constant and its units
+   389→- Differential and integral forms of zero and first-order reactions; their characteristics and half-lives
+   390→- Effect of temperature on rate of reactions
+   391→- Arrhenius theory; activation energy and its calculation
+   392→- Collision theory of bimolecular gaseous reactions (no derivation)
+   393→
+   394→### INORGANIC CHEMISTRY
+   395→
+   396→#### Unit 9: Classification of Elements and Periodicity in Properties
+   397→- Modern periodic law and present form of the periodic table
+   398→- s, p, d and f block elements
+   399→- Periodic trends in properties of elements: atomic and ionic radii
+   400→- Ionization enthalpy; electron gain enthalpy
+   401→- Valence; oxidation states; chemical reactivity
+   402→
+   403→#### Unit 10: p-Block Elements (Group 13 to Group 18)
+   404→- General introduction: electronic configuration
+   405→- General trends in physical and chemical properties of elements across the periods and down the groups
+   406→- Unique behaviour of the first element in each group
+   407→
+   408→#### Unit 11: d- and f-Block Elements
+   409→- Transition elements: general introduction, electronic configuration, occurrence and characteristics
+   410→- General trends in properties of first-row transition elements: physical properties, ionization enthalpy, oxidation states, atomic radii, colour, catalytic behaviour, magnetic properties, complex formation, interstitial compounds, alloy formation
+   411→- Preparation, properties and uses of K2Cr2O7 and KMnO4
+   412→- Inner transition elements — Lanthanoids: electronic configuration, oxidation states, lanthanoid contraction
+   413→- Actinoids: electronic configuration and oxidation states
+   414→
+   415→#### Unit 12: Coordination Compounds
+   416→- Introduction to coordination compounds; Werner's theory
+   417→- Ligands; coordination number; denticity; chelation
+   418→- IUPAC nomenclature of mononuclear coordination compounds
+   419→- Isomerism
+   420→- Bonding: valence bond approach and basic ideas of crystal field theory
+   421→- Colour and magnetic properties
+   422→- Importance of coordination compounds (in qualitative analysis, extraction of metals, and in biological systems)
+   423→
+   424→### ORGANIC CHEMISTRY
+   425→
+   426→#### Unit 13: Purification and Characterisation of Organic Compounds
+   427→- Purification — crystallization, sublimation, distillation, differential extraction and chromatography: principles and applications
+   428→- Qualitative analysis — detection of nitrogen, sulphur, phosphorus and halogens
+   429→- Quantitative analysis (basic principles only) — estimation of carbon, hydrogen, nitrogen, halogens, sulphur, phosphorus
+   430→- Calculations of empirical formulae and molecular formulae
+   431→- Numerical problems in organic quantitative analysis
+   432→
+   433→#### Unit 14: Some Basic Principles of Organic Chemistry
+   434→- Tetravalency of carbon; shapes of simple molecules — hybridisation (s and p)
+   435→- Classification of organic compounds based on functional groups, including those containing halogens, oxygen, nitrogen and sulphur
+   436→- Homologous series
+   437→- Isomerism — structural and stereoisomerism
+   438→- Nomenclature (trivial and IUPAC)
+   439→- Covalent bond fission — homolytic and heterolytic
+   440→- Free radicals, carbocations and carbanions; stability of carbocations and free radicals
+   441→- Electrophiles and nucleophiles
+   442→- Electronic displacement in a covalent bond: inductive effect, electromeric effect, resonance, hyperconjugation
+   443→- Common types of organic reactions — substitution, addition, elimination, rearrangement
+   444→
+   445→#### Unit 15: Hydrocarbons
+   446→- Classification, isomerism, IUPAC nomenclature, general methods of preparation, properties and reactions
+   447→- Alkanes — conformations: sawhorse and Newman projections (of ethane); mechanism of halogenation of alkanes
+   448→- Alkenes — geometrical isomerism; mechanism of electrophilic addition
+   449→- Addition of hydrogen, halogens, water, hydrogen halides (Markownikoff's and peroxide effect)
+   450→- Ozonolysis and polymerization (alkenes)
+   451→- Alkynes — acidic character; addition of hydrogen, halogens, water and hydrogen halides; polymerization
+   452→- Aromatic hydrocarbons — nomenclature; benzene — structure and aromaticity
+   453→- Mechanism of electrophilic substitution: halogenation, nitration
+   454→- Friedel–Crafts alkylation and acylation
+   455→- Directive influence of the functional group in monosubstituted benzene
+   456→
+   457→#### Unit 16: Organic Compounds Containing Halogens
+   458→- General methods of preparation, properties and reactions
+   459→- Nature of C–X bond
+   460→- Mechanisms of substitution reactions
+   461→- Uses and environmental effects of chloroform, iodoform, freons and DDT
+   462→
+   463→#### Unit 17: Organic Compounds Containing Oxygen
+   464→General methods of preparation, properties, reactions and uses:
+   465→- **Alcohols:** identification of primary, secondary and tertiary alcohols; mechanism of dehydration
+   466→- **Phenols:** acidic nature; electrophilic substitution reactions — halogenation, nitration, sulphonation; Reimer–Tiemann reaction
+   467→- **Ethers:** structure
+   468→- **Aldehydes and Ketones:** nature of carbonyl group; nucleophilic addition to >C=O group; relative reactivities of aldehydes and ketones
+   469→  - Nucleophilic addition reactions (addition of HCN, NH3 and its derivatives)
+   470→  - Grignard reagent
+   471→  - Oxidation; reduction (Wolff–Kishner and Clemmensen)
+   472→  - Acidity of α-hydrogen; aldol condensation
+   473→  - Cannizzaro reaction; haloform reaction
+   474→  - Chemical tests to distinguish between aldehydes and ketones
+   475→- **Carboxylic Acids:** acidic strength and factors affecting it
+   476→
+   477→#### Unit 18: Organic Compounds Containing Nitrogen
+   478→General methods of preparation, properties, reactions and uses:
+   479→- **Amines:** nomenclature; classification; structure; basic character
+   480→- Identification of primary, secondary and tertiary amines and their basic character
+   481→- **Diazonium salts:** importance in synthetic organic chemistry
+   482→
+   483→#### Unit 19: Biomolecules
+   484→- General introduction and importance of biomolecules
+   485→- **Carbohydrates** — classification; aldoses and ketoses; monosaccharides (glucose and fructose); constituent monosaccharides of oligosaccharides (sucrose, lactose, maltose)
+   486→- **Proteins** — elementary idea of α-amino acids; peptide bond; polypeptides; proteins: primary, secondary, tertiary and quaternary structure (qualitative idea only); denaturation of proteins; enzymes
+   487→- **Vitamins** — classification and functions
+   488→- **Nucleic acids** — chemical constitution of DNA and RNA; biological functions of nucleic acids
+   489→- **Hormones** — general introduction
+   490→
+   491→#### Unit 20: Principles Related to Practical Chemistry
+   492→- Detection of extra elements (nitrogen, sulphur, halogens) in organic compounds
+   493→- Detection of functional groups: hydroxyl (alcoholic and phenolic), carbonyl (aldehyde and ketone), carboxyl and amino groups in organic compounds
+   494→- Chemistry involved in preparation of inorganic compounds: Mohr's salt, potash alum
+   495→- Chemistry involved in preparation of organic compounds: acetanilide, p-nitro acetanilide, aniline yellow, iodoform
+   496→- Chemistry involved in titrimetric exercises — acids, bases and use of indicators; oxalic acid vs KMnO4; Mohr's salt vs KMnO4
+   497→- Chemical principles involved in qualitative salt analysis:
+   498→  - Cations — Pb²⁺, Cu²⁺, Al³⁺, Fe³⁺, Zn²⁺, Ni²⁺, Ca²⁺, Ba²⁺, Mg²⁺, NH₄⁺
+   499→  - Anions — CO₃²⁻, S²⁻, SO₄²⁻, NO₃⁻, NO₂⁻, Cl⁻, Br⁻, I⁻ (insoluble salts excluded)
+   500→- Chemical principles involved in experiments:
+   501→  - Enthalpy of solution of CuSO4
+   502→  - Enthalpy of neutralization of strong acid and strong base
+   503→  - Preparation of lyophilic and lyophobic sols
+   504→  - Kinetic study of the reaction of iodide ions with hydrogen peroxide at room temperature
+   505→
+   506→---
+   507→
+   508→## Mathematics — 14 Units (complete official topic list)
+   509→
+   510→### Unit 1: Sets, Relations and Functions
+   511→- Sets and their representation
+   512→- Union, intersection and complement of sets and their algebraic properties
+   513→- Power set
+   514→- Relations; types of relations; equivalence relations
+   515→- Functions: one-one, into and onto functions
+   516→- Composition of functions
+   517→
+   518→### Unit 2: Complex Numbers and Quadratic Equations
+   519→- Complex numbers as ordered pairs of reals
+   520→- Representation of complex numbers in the form a + ib and their representation in a plane (Argand diagram)
+   521→- Algebra of complex numbers
+   522→- Modulus and argument (or amplitude) of a complex number
+   523→- Quadratic equations in real and complex number systems and their solutions
+   524→- Relations between roots and coefficients
+   525→- Nature of roots
+   526→- Formation of quadratic equations with given roots
+   527→
+   528→### Unit 3: Matrices and Determinants
+   529→- Matrices; algebra of matrices; types of matrices
+   530→- Determinants and matrices of order two and three
+   531→- Evaluation of determinants
+   532→- Area of triangles using determinants
+   533→- Adjoint and inverse of a square matrix
+   534→- Test of consistency and solution of simultaneous linear equations in two or three variables using matrices
+   535→
+   536→### Unit 4: Permutations and Combinations
+   537→- Fundamental principle of counting
+   538→- Permutations and combinations
+   539→- Meaning of P(n, r) and C(n, r)
+   540→- Simple applications
+   541→
+   542→### Unit 5: Binomial Theorem and its Simple Applications
+   543→- Binomial theorem for a positive integral index
+   544→- General term and middle term
+   545→- Simple applications
+   546→
+   547→### Unit 6: Sequence and Series
+   548→- Arithmetic and geometric progressions
+   549→- Insertion of arithmetic and geometric means between two given numbers
+   550→- Relation between A.M. and G.M.
+   551→
+   552→### Unit 7: Limit, Continuity and Differentiability
+   553→- Real-valued functions; algebra of functions
+   554→- Polynomial, rational, trigonometric, logarithmic and exponential functions; inverse functions
+   555→- Graphs of simple functions
+   556→- Limits; continuity and differentiability
+   557→- Differentiation of the sum, difference, product and quotient of two functions
+   558→- Differentiation of trigonometric, inverse trigonometric, logarithmic, exponential, composite and implicit functions
+   559→- Derivatives of order up to two
+   560→- Applications of derivatives: rate of change of quantities
+   561→- Monotonic — increasing and decreasing functions
+   562→- Maxima and minima of functions of one variable
+   563→
+   564→### Unit 8: Integral Calculus
+   565→- Integral as an anti-derivative
+   566→- Fundamental integrals involving algebraic, trigonometric, exponential and logarithmic functions
+   567→- Integration by substitution, by parts and by partial fractions
+   568→- Integration using trigonometric identities
+   569→- Evaluation of simple integrals of the standard listed types (official PDF shows these as formula images):
+   570→  - ∫ dx/(x² − a²), ∫ dx/(x² + a²), ∫ dx/(a² − x²)
+   571→  - ∫ dx/√(x² + a²), ∫ dx/√(x² − a²), ∫ √(a² − x²) dx
+   572→  - ∫ dx/(ax² + bx + c), ∫ dx/√(ax² + bx + c)
+   573→  - ∫ (px + q) dx/(ax² + bx + c), ∫ (px + q) dx/√(ax² + bx + c)
+   574→- Fundamental theorem of calculus
+   575→- Properties of definite integrals
+   576→- Evaluation of definite integrals
+   577→- Determining areas of the regions bounded by simple curves in standard forms
+   578→
+   579→### Unit 9: Differential Equations
+   580→- Ordinary differential equations; their order and degree
+   581→- Solution of differential equation by the method of separation of variables
+   582→- Solution of a homogeneous differential equation
+   583→- Solution of linear differential equation of the type dy/dx + p(x)y = q(x)
+   584→
+   585→### Unit 10: Co-ordinate Geometry
+   586→- Cartesian system of rectangular coordinates in a plane
+   587→- Distance formula; section formula
+   588→- Locus and its equation
+   589→- Slope of a line; parallel and perpendicular lines; intercepts of a line on the coordinate axes
+   590→- Straight line: various forms of equations of a line; intersection of lines; angles between two lines
+   591→- Conditions for concurrence of three lines
+   592→- Distance of a point from a line
+   593→- Coordinates of centroid, orthocentre and circumcentre of a triangle
+   594→- Circle: standard form of equations of a circle; general form of the equation of a circle; its radius and centre
+   595→- Equation of a circle when the endpoints of a diameter are given
+   596→- Points of intersection of a line and a circle with the centre at the origin
+   597→- Sections of conics
+   598→- Equations of conic sections (parabola, ellipse and hyperbola) in standard forms
+   599→
+   600→### Unit 11: Three Dimensional Geometry
+   601→- Coordinates of a point in space; distance between two points
+   602→- Section formula
+   603→- Direction ratios and direction cosines
+   604→- Angle between two intersecting lines
+   605→- Equation of a line
+   606→- Skew lines; shortest distance between them and its equation
+   607→
+   608→### Unit 12: Vector Algebra
+   609→- Vectors and scalars
+   610→- Addition of vectors
+   611→- Components of a vector in two dimensions and three-dimensional spaces
+   612→- Scalar and vector products
+   613→
+   614→### Unit 13: Statistics and Probability
+   615→- Measures of dispersion
+   616→- Calculation of mean, median, mode of grouped and ungrouped data
+   617→- Calculation of standard deviation, variance and mean deviation for grouped and ungrouped data
+   618→- Probability of an event
+   619→- Addition and multiplication theorems of probability
+   620→- Baye's theorem
+   621→- Probability distribution of a random variable
+   622→
+   623→### Unit 14: Trigonometry
+   624→- Trigonometrical identities and trigonometrical functions
+   625→- Inverse trigonometrical functions and their properties
+   626→
+   627→---
+   628→
+   629→## JEE Main Exam Pattern (2025/2026)
+   630→
+   631→### Paper 1 (B.E./B.Tech)
+   632→| Attribute | Detail |
+   633→|---|---|
+   634→| Conducting body | National Testing Agency (NTA) |
+   635→| Sessions | Two per year — Session 1 (January) & Session 2 (April); best of the two scores used for ranking |
+   636→| Mode | Computer Based Test (CBT); drawing part (Paper 2A only) is pen-and-paper |
+   637→| Duration | 3 hours (180 minutes); compensatory time for PwD candidates |
+   638→| Subjects | Physics, Chemistry, Mathematics |
+   639→| Questions | **75 total (25 per subject)** — Section A: 20 MCQs + Section B: 5 numerical-value questions; **all compulsory** (optional questions in Section B discontinued from 2025) |
+   640→| Marks | 300 total (100 per subject); each question 4 marks |
+   641→| Marking | +4 correct; −1 incorrect (MCQ and numerical both); 0 unattempted |
+   642→| Languages | 13 — English, Hindi, Assamese, Bengali, Gujarati, Kannada, Malayalam, Marathi, Odia, Punjabi, Tamil, Telugu, Urdu |
+   643→| Scoring | Normalised percentile across shifts; NTA score per subject + composite |
+   644→| Eligibility / attempts | No age limit; can attempt in 3 consecutive years (⇒ up to 6 attempts with two sessions/year) |
+   645→
+   646→### Paper 2A (B.Arch)
+   647→- Part I: Mathematics — 25 questions (20 MCQ + 5 numerical), 100 marks
+   648→- Part II: Aptitude Test — 50 questions, 200 marks
+   649→- Part III: Drawing Test — 2 questions, 100 marks (pen-and-paper on drawing sheet)
+   650→- Total: 77 questions, 400 marks, 3 hours
+   651→- Aptitude syllabus: awareness of persons/buildings/materials/objects, visualising 3D objects from 2D drawings, analytical reasoning & mental ability (visual, numerical, verbal); 3D perception — scale & proportion, colour texture harmony & contrast, design & drawing of geometrical/abstract shapes, transformation of forms (2D & 3D union, subtraction, rotation, development of surfaces & volumes), generation of plans/elevations/3D views, 2D & 3D compositions
+   652→- Drawing syllabus: sketching of scenes/activities from memory of urbanscape (public space, market, festivals, street scenes, monuments, recreational spaces), landscape (riverfronts, jungle, gardens, trees, plants) and rural life
+   653→
+   654→### Paper 2B (B.Planning)
+   655→- Part I: Mathematics — 25 questions, 100 marks
+   656→- Part II: Aptitude Test — 50 questions, 200 marks
+   657→- Part III: Planning — 25 questions, 100 marks (general awareness, social sciences, thinking skills: comprehension, map reading, critical reasoning, charts/graphs/tables, statistics & quantitative reasoning)
+   658→- Total: 100 questions, 400 marks, 3 hours
+   659→
+   660→### 2024 syllabus reduction — topics removed (context for library builders)
+   661→Removed in the 2024 revision (still absent in 2025/2026):
+   662→- **Physics:** Communication Systems (whole unit); "Physics, technology and society"; some experimental activities; vector subtopic merged into Kinematics
+   663→- **Chemistry:** States of Matter; Surface Chemistry; s-Block Elements; Hydrogen; Environmental Chemistry; Polymers; Chemistry in Everyday Life; p-Block reduced to group-13-to-18 general trends only
+   664→- **Mathematics:** Mathematical Inductions; Mathematical Reasoning; several trimming cuts in 3-D geometry / trigonometry sub-branches
+   665→
+   666→---
+   667→
+   668→# JEE ADVANCED (IIT) — 2025/2026
+   669→
+   670→Revised syllabus (first applied to JEE Advanced 2023, unchanged through 2026; 2026 exam conducted by IIT Roorkee on 17 May 2026).
+   671→
+   672→## Physics — 7 Sections (complete official topic list)
+   673→
+   674→### Section 1: General
+   675→- Units and dimensions; dimensional analysis
+   676→- Least count; significant figures
+   677→- Methods of measurement and error analysis for physical quantities pertaining to the following experiments:
+   678→  - Experiments based on using Vernier calipers and screw gauge (micrometre)
+   679→  - Determination of g using simple pendulum
+   680→  - Young's modulus — elasticity of the material
+   681→  - Surface tension of water by capillary rise and effect of detergents
+   682→  - Specific heat of a liquid using calorimeter
+   683→  - Focal length of a concave mirror and a convex lens using u–v method
+   684→  - Speed of sound using resonance column
+   685→  - Verification of Ohm's law using voltmeter and ammeter
+   686→  - Specific resistance of the material of a wire using metre bridge and post office box
+   687→
+   688→### Section 2: Mechanics
+   689→- Kinematics in one and two dimensions (Cartesian coordinates only)
+   690→- Projectiles
+   691→- Uniform circular motion
+   692→- Relative velocity
+   693→- Newton's laws of motion
+   694→- Inertial and uniformly accelerated frames of reference
+   695→- Static and dynamic friction
+   696→- Kinetic and potential energy
+   697→- Work and power
+   698→- Conservation of linear momentum and mechanical energy
+   699→- Systems of particles; centre of mass and its motion
+   700→- Impulse
+   701→- Elastic and inelastic collisions
+   702→- Rigid body; moment of inertia
+   703→- Parallel and perpendicular axes theorems
+   704→- Moment of inertia of uniform bodies with simple geometrical shapes
+   705→- Angular momentum; torque; conservation of angular momentum
+   706→- Dynamics of rigid bodies with fixed axis of rotation
+   707→- Rolling without slipping of rings, cylinders and spheres
+   708→- Equilibrium of rigid bodies
+   709→- Collision of point masses with rigid bodies
+   710→- Forced and damped oscillation (in one dimension); resonance
+   711→- Linear and angular simple harmonic motions
+   712→- Hooke's law; Young's modulus
+   713→- Law of gravitation
+   714→- Gravitational potential and field
+   715→- Acceleration due to gravity
+   716→- Kepler's laws; geostationary orbits
+   717→- Motion of planets and satellites in circular orbits
+   718→- Escape velocity
+   719→- Pressure in a fluid; Pascal's law; buoyancy
+   720→- Surface energy and surface tension; angle of contact; drops, bubbles and capillary rise
+   721→- Viscosity (Poiseuille's equation excluded)
+   722→- Modulus of rigidity and bulk modulus in mechanics
+   723→- Stokes' law; terminal velocity
+   724→- Streamline flow; equation of continuity
+   725→- Bernoulli's theorem and its applications
+   726→- Wave motion (plane waves only); longitudinal and transverse waves
+   727→- Superposition of waves; progressive and stationary waves
+   728→- Vibration of strings and air columns; resonance
+   729→- Beats
+   730→- Speed of sound in gases
+   731→- Doppler effect (in sound)
+   732→
+   733→### Section 3: Thermal Physics
+   734→- Thermal expansion of solids, liquids and gases
+   735→- Calorimetry; latent heat
+   736→- Heat conduction in one dimension
+   737→- Elementary concepts of convection and radiation
+   738→- Newton's law of cooling
+   739→- Ideal gas laws
+   740→- Specific heats (Cv and Cp for monoatomic and diatomic gases)
+   741→- Isothermal and adiabatic processes; bulk modulus of gases
+   742→- Equivalence of heat and work
+   743→- First law of thermodynamics and its applications (only for ideal gases)
+   744→- Second law of thermodynamics; reversible and irreversible processes
+   745→- Carnot engine and its efficiency
+   746→- Blackbody radiation: absorptive and emissive powers
+   747→- Kirchhoff's law
+   748→- Wien's displacement law; Stefan's law
+   749→
+   750→### Section 4: Electricity and Magnetism
+   751→- Coulomb's law
+   752→- Electric field and potential
+   753→- Electrical potential energy of a system of point charges and of electrical dipoles in a uniform electrostatic field
+   754→- Electric field lines
+   755→- Flux of electric field; Gauss's law and its application in simple cases — field due to infinitely long straight wire, uniformly charged infinite plane sheet, uniformly charged thin spherical shell
+   756→- Capacitance; parallel plate capacitor with and without dielectrics
+   757→- Capacitors in series and parallel; energy stored in a capacitor
+   758→- Electric current; Ohm's law
+   759→- Series and parallel arrangements of resistances and cells
+   760→- Kirchhoff's laws and simple applications
+   761→- Heating effect of current
+   762→- Biot–Savart's law and Ampere's law
+   763→- Magnetic field near a current-carrying straight wire; along the axis of a circular coil; inside a long straight solenoid
+   764→- Force on a moving charge and on a current-carrying wire in a uniform magnetic field
+   765→- Magnetic moment of a current loop; effect of a uniform magnetic field on a current loop
+   766→- Moving coil galvanometer, voltmeter, ammeter and their conversions
+   767→- Electromagnetic induction: Faraday's law; Lenz's law
+   768→- Self and mutual inductance
+   769→- RC, LR, LC and LCR (in series) circuits with d.c. and a.c. sources
+   770→
+   771→### Section 5: Electromagnetic Waves
+   772→- Electromagnetic waves and their characteristics
+   773→- Electromagnetic spectrum (radio waves, microwaves, infrared, visible, ultraviolet, X-rays, gamma rays) including elementary facts about their uses
+   774→
+   775→### Section 6: Optics
+   776→- Rectilinear propagation of light
+   777→- Reflection and refraction at plane and spherical surfaces
+   778→- Total internal reflection
+   779→- Deviation and dispersion of light by a prism
+   780→- Thin lenses
+   781→- Combinations of mirrors and thin lenses
+   782→- Magnification
+   783→- Wave nature of light: Huygens' principle
+   784→- Interference limited to Young's double-slit experiment
+   785→- Diffraction due to a single slit
+   786→- Polarisation of light; plane polarised light
+   787→- Brewster's law; Polaroids
+   788→
+   789→### Section 7: Modern Physics
+   790→- Atomic nucleus
+   791→- α, β and γ radiations
+   792→- Law of radioactive decay; decay constant
+   793→- Half-life and mean life
+   794→- Binding energy and its calculation
+   795→- Fission and fusion processes; energy calculation in these processes
+   796→- Photoelectric effect
+   797→- Bohr's theory of hydrogen-like atoms
+   798→- Characteristic and continuous X-rays; Moseley's law
+   799→- de Broglie wavelength of matter waves
+   800→
+   801→---
+   802→
+   803→## Chemistry — 37 Sections (complete official topic list)
+   804→
+   805→### GENERAL
+   806→#### 1. General Topics
+   807→- Concept of atoms and molecules; Dalton's atomic theory
+   808→- Mole concept; chemical formulae
+   809→- Balanced chemical equations
+   810→- Calculations (based on mole concept and stoichiometry) involving common oxidation–reduction, neutralisation, and displacement reactions
+   811→- Concentration in terms of mole fraction, molarity, molality and normality
+   812→
+   813→### PHYSICAL CHEMISTRY
+   814→#### 2. States of Matter: Gases and Liquids
+   815→- Gas laws and ideal gas equation; absolute scale of temperature
+   816→- Deviation from ideality; van der Waals equation
+   817→- Kinetic theory of gases; average, root mean square and most probable velocities and their relation with temperature
+   818→- Law of partial pressures
+   819→- Diffusion of gases
+   820→- Intermolecular interactions: types, distance dependence, and their effect on properties
+   821→- Liquids: vapour pressure, surface tension, viscosity
+   822→
+   823→#### 3. Atomic Structure
+   824→- Bohr model; spectrum of hydrogen atom
+   825→- Wave–particle duality; de Broglie hypothesis
+   826→- Uncertainty principle
+   827→- Qualitative quantum mechanical picture of hydrogen atom: energies, quantum numbers, wave function and probability density (plots only)
+   828→- Shapes of s, p and d orbitals
+   829→- Aufbau principle; Pauli's exclusion principle; Hund's rule
+   830→
+   831→#### 4. Chemical Bonding and Molecular Structure
+   832→- Orbital overlap and covalent bond
+   833→- Hybridisation involving s, p and d orbitals only
+   834→- Molecular orbital energy diagrams for homonuclear diatomic species (up to Ne2)
+   835→- Hydrogen bond
+   836→- Polarity in molecules; dipole moment
+   837→- VSEPR model and shapes of molecules (linear, angular, triangular, square planar, pyramidal, square pyramidal, trigonal bipyramidal, tetrahedral, octahedral)
+   838→
+   839→#### 5. Chemical Thermodynamics
+   840→- Intensive and extensive properties; state functions
+   841→- First law of thermodynamics; internal energy, work (pressure–volume only) and heat
+   842→- Enthalpy; heat capacity; standard state
+   843→- Hess's law
+   844→- Enthalpy of reaction, fusion and vaporization; lattice enthalpy
+   845→- Second law of thermodynamics; entropy
+   846→- Gibbs energy
+   847→- Criteria of equilibrium and spontaneity
+   848→
+   849→#### 6. Chemical and Ionic Equilibrium
+   850→- Law of mass action
+   851→- Significance of ΔG and ΔG° in chemical equilibrium
+   852→- Equilibrium constant (Kp and Kc) and reaction quotient
+   853→- Le Chatelier's principle (effect of concentration, temperature and pressure)
+   854→- Solubility product and its applications
+   855→- Common ion effect; pH and buffer solutions
+   856→- Acids and bases (Brønsted and Lewis concepts)
+   857→- Hydrolysis of salts
+   858→
+   859→#### 7. Electrochemistry
+   860→- Electrochemical cells and cell reactions
+   861→- Standard electrode potentials
+   862→- Electrochemical work; Nernst equation
+   863→- Electrochemical series; emf of galvanic cells
+   864→- Faraday's laws of electrolysis
+   865→- Electrolytic conductance; specific, equivalent and molar conductivity
+   866→- Kohlrausch's law
+   867→- Batteries: primary and secondary; fuel cells
+   868→- Corrosion
+   869→
+   870→#### 8. Chemical Kinetics
+   871→- Rates of chemical reactions
+   872→- Order and molecularity of reactions
+   873→- Rate law; rate constant; half-life
+   874→- Differential and integrated rate expressions for zero and first order reactions
+   875→- Temperature dependence of rate constant (Arrhenius equation and activation energy)
+   876→- Catalysis: homogeneous and heterogeneous
+   877→- Activity and selectivity of solid catalysts
+   878→- Enzyme catalysis and its mechanism
+   879→
+   880→#### 9. Solid State
+   881→- Classification of solids; crystalline state
+   882→- Seven crystal systems (cell parameters a, b, c, α, β, γ)
+   883→- Close packed structure of solids (cubic and hexagonal)
+   884→- Packing in fcc, bcc and hcp lattices
+   885→- Nearest neighbours
+   886→- Ionic radii and radius ratio
+   887→- Point defects
+   888→
+   889→#### 10. Solutions
+   890→- Henry's law
+   891→- Raoult's law
+   892→- Ideal solutions
+   893→- Colligative properties: lowering of vapour pressure, elevation of boiling point, depression of freezing point, osmotic pressure
+   894→- van't Hoff factor
+   895→
+   896→#### 11. Surface Chemistry
+   897→- Elementary concepts of adsorption: physisorption and chemisorption
+   898→- Freundlich adsorption isotherm
+   899→- Colloids: types, methods of preparation and general properties
+   900→- Elementary ideas of emulsions, surfactants and micelles (only definitions and examples)
+   901→
+   902→### INORGANIC CHEMISTRY
+   903→#### 12. Classification of Elements and Periodicity in Properties
+   904→- Modern periodic law and the present form of the periodic table
+   905→- Electronic configuration of elements
+   906→- Periodic trends in atomic radius, ionic radius, ionization enthalpy, electron gain enthalpy, valence, oxidation states, electronegativity, and chemical reactivity
+   907→
+   908→#### 13. Hydrogen
+   909→- Position of hydrogen in periodic table; occurrence; isotopes
+   910→- Preparation, properties and uses of hydrogen
+   911→- Hydrides — ionic, covalent and interstitial
+   912→- Physical and chemical properties of water; heavy water
+   913→- Hydrogen peroxide — preparation, reactions, use and structure
+   914→- Hydrogen as a fuel
+   915→
+   916→#### 14. s-Block Elements
+   917→- Alkali and alkaline earth metals — reactivity towards air, water, dihydrogen, halogens, acids
+   918→- Their reducing nature including solutions in liquid ammonia
+   919→- Uses of these elements
+   920→- General characteristics of their oxides, hydroxides, halides, salts of oxoacids
+   921→- Anomalous behaviour of lithium and beryllium
+   922→- Preparation, properties and uses of compounds of sodium (sodium carbonate, sodium chloride, sodium hydroxide, sodium hydrogen carbonate) and calcium (calcium oxide, calcium hydroxide, calcium carbonate, calcium sulphate)
+   923→
+   924→#### 15. p-Block Elements
+   925→- Oxidation state and trends in chemical reactivity of elements of groups 13–17
+   926→- Anomalous properties of boron, carbon, nitrogen, oxygen and fluorine with respect to other elements in their respective groups
+   927→- **Group 13:** reactivity towards acids, alkalis, and halogens; preparation, properties and uses of borax, orthoboric acid, diborane, boron trifluoride, aluminium chloride, and alums; uses of boron and aluminium
+   928→- **Group 14:** reactivity towards water and halogen; allotropes of carbon and uses of carbon; preparation, properties and uses of carbon monoxide, carbon dioxide, silicon dioxide, silicones, silicates, zeolites
+   929→- **Group 15:** reactivity towards hydrogen, oxygen, and halogen; allotropes of phosphorus; preparation, properties and uses of dinitrogen, ammonia, nitric acid, phosphine, phosphorus trichloride, phosphorus pentachloride; oxides of nitrogen and oxoacids of phosphorus
+   930→- **Group 16:** reactivity towards hydrogen, oxygen, and halogen; simple oxides; allotropes of sulphur; preparation/manufacture, properties and uses of dioxygen, ozone, sulphur dioxide, sulfuric acid; oxoacids of sulphur
+   931→- **Group 17:** reactivity towards hydrogen, oxygen and metals; preparation/manufacture, properties and uses of chlorine, hydrogen chloride and interhalogen compounds; oxoacids of halogens; bleaching powder
+   932→- **Group 18:** chemical properties and uses; compounds of xenon with fluorine and oxygen
+   933→
+   934→#### 16. d-Block Elements
+   935→- Oxidation states and their stability
+   936→- Standard electrode potentials
+   937→- Interstitial compounds
+   938→- Alloys
+   939→- Catalytic properties; applications
+   940→- Preparation, structure and reactions of oxoanions of chromium and manganese
+   941→
+   942→#### 17. f-Block Elements
+   943→- Lanthanoid and actinoid contractions
+   944→- Oxidation states
+   945→- General characteristics
+   946→
+   947→#### 18. Coordination Compounds
+   948→- Werner's theory
+   949→- Nomenclature
+   950→- cis–trans and ionization isomerism
+   951→- Hybridisation and geometries (linear, tetrahedral, square planar, octahedral) of mononuclear coordination compounds
+   952→- Bonding — VBT and CFT (octahedral and tetrahedral fields)
+   953→- Magnetic properties (spin-only) and colour of 3d-series coordination compounds
+   954→- Ligands and spectrochemical series
+   955→- Stability
+   956→- Importance and applications
+   957→- Metal carbonyls
+   958→
+   959→#### 19. Isolation of Metals
+   960→- Metal ores and their concentration
+   961→- Extraction of crude metal from concentrated ores: thermodynamic (iron, copper, zinc) and electrochemical (aluminium) principles of metallurgy
+   962→- Cyanide process (silver and gold)
+   963→- Refining
+   964→
+   965→#### 20. Principles of Qualitative Analysis
+   966→- Groups I to V (only Ag⁺, Hg₂²⁺, Cu²⁺, Pb²⁺, Fe³⁺, Cr³⁺, Al³⁺, Ca²⁺, Ba²⁺, Zn²⁺, Mn²⁺, Mg²⁺)
+   967→- Nitrate; halides (excluding fluoride); carbonate and bicarbonate; sulphate and sulphide
+   968→
+   969→#### 21. Environmental Chemistry
+   970→- Atmospheric pollution
+   971→- Water pollution
+   972→- Soil pollution
+   973→- Industrial waste
+   974→- Strategies to control environmental pollution
+   975→- Green chemistry
+   976→
+   977→### ORGANIC CHEMISTRY
+   978→#### 22. Basic Principles of Organic Chemistry
+   979→- Hybridisation of carbon; σ and π bonds
+   980→- Shapes of simple organic molecules; aromaticity
+   981→- Structural and geometrical isomerism
+   982→- Stereoisomers and stereochemical relationship (enantiomers, diastereomers, meso) of compounds containing only up to two asymmetric centres (R,S and E,Z configurations excluded)
+   983→- Determination of empirical and molecular formulae of simple compounds by combustion method only
+   984→- IUPAC nomenclature of organic molecules (hydrocarbons, including simple cyclic hydrocarbons and their mono-functional and bi-functional derivatives only)
+   985→- Hydrogen bonding effects
+   986→- Inductive, resonance and hyperconjugative effects
+   987→- Acidity and basicity of organic compounds
+   988→- Reactive intermediates produced during homolytic and heterolytic bond cleavage
+   989→- Formation, structure and stability of carbocations, carbanions and free radicals
+   990→
+   991→#### 23. Alkanes
+   992→- Homologous series
+   993→- Physical properties (melting points, boiling points, density) and effect of branching on them
+   994→- Conformations of ethane and butane (Newman projections only)
+   995→- Preparation from alkyl halides and aliphatic carboxylic acids
+   996→- Reactions: combustion
+   997→- Halogenation (including allylic and benzylic halogenation)
+   998→- Oxidation
+   999→
+  1000→#### 24. Alkenes and Alkynes
+  1001→- Physical properties (boiling points, density and dipole moments)
+  1002→- Preparation by elimination reactions
+  1003→- Acid-catalysed hydration (excluding stereochemistry of addition and elimination)
+  1004→- Metal acetylides
+  1005→- Reactions of alkenes with KMnO4 and ozone
+  1006→- Reduction of alkenes and alkynes
+  1007→- Electrophilic addition reactions of alkenes with X2, HX, HOX (X = halogen)
+  1008→- Effect of peroxide on addition reactions
+  1009→- Cyclic polymerization reaction of alkynes
+  1010→
+  1011→#### 25. Benzene
+  1012→- Structure
+  1013→- Electrophilic substitution reactions: halogenation, nitration, sulphonation, Friedel–Crafts alkylation and acylation
+  1014→- Effect of directing groups (monosubstituted benzene) in these reactions
+  1015→
+  1016→#### 26. Phenols
+  1017→- Physical properties
+  1018→- Preparation
+  1019→- Electrophilic substitution reactions of phenol (halogenation, nitration, sulphonation)
+  1020→- Reimer–Tiemann reaction
+  1021→- Kolbe reaction
+  1022→- Esterification; etherification
+  1023→- Aspirin synthesis
+  1024→- Oxidation and reduction reactions of phenol
+  1025→
+  1026→#### 27. Alkyl Halides
+  1027→- Rearrangement reactions of alkyl carbocation
+  1028→- Grignard reactions
+  1029→- Nucleophilic substitution reactions and their stereochemical aspects
+  1030→
+  1031→#### 28. Alcohols
+  1032→- Physical properties
+  1033→- Reactions: esterification; dehydration (formation of alkenes and ethers)
+  1034→- Reactions with sodium, phosphorus halides, ZnCl2/concentrated HCl, thionyl chloride
+  1035→- Conversion of alcohols into aldehydes, ketones and carboxylic acids
+  1036→
+  1037→#### 29. Ethers
+  1038→- Preparation by Williamson's synthesis
+  1039→- C–O bond cleavage reactions
+  1040→
+  1041→#### 30. Aldehydes and Ketones
+  1042→- Preparation of aldehydes and ketones from acid chlorides and nitriles
+  1043→- Preparation of aldehydes from esters
+  1044→- Preparation of benzaldehyde from toluene and benzene
+  1045→- Reactions: oxidation; reduction
+  1046→- Oxime and hydrazone formation
+  1047→- Aldol condensation
+  1048→- Cannizzaro reaction
+  1049→- Haloform reaction
+  1050→- Nucleophilic addition reaction with RMgX, NaHSO3, HCN, alcohol, amine
+  1051→
+  1052→#### 31. Carboxylic Acids
+  1053→- Physical properties
+  1054→- Preparation: from nitriles, Grignard reagents, hydrolysis of esters and amides
+  1055→- Preparation of benzoic acid from alkylbenzenes
+  1056→- Reactions: reduction
+  1057→- Halogenation
+  1058→- Formation of esters, acid chlorides and amides
+  1059→
+  1060→#### 32. Amines
+  1061→- Preparation from nitro compounds, nitriles and amides
+  1062→- Reactions: Hoffmann bromamide degradation
+  1063→- Gabriel phthalimide synthesis
+  1064→- Reaction with nitrous acid
+  1065→- Azo coupling reaction of diazonium salts of aromatic amines
+  1066→- Sandmeyer and related reactions of diazonium salts
+  1067→- Carbylamine reaction
+  1068→- Hinsberg test
+  1069→- Alkylation and acylation reactions
+  1070→
+  1071→#### 33. Haloarenes
+  1072→- Reactions: Fittig; Wurtz–Fittig
+  1073→- Nucleophilic aromatic substitution in haloarenes and substituted haloarenes (excluding benzyne mechanism and cine substitution)
+  1074→
+  1075→#### 34. Biomolecules
+  1076→- **Carbohydrates:** classification; mono- and di-saccharides (glucose and sucrose); oxidation; reduction; glycoside formation and hydrolysis of disaccharides (sucrose, maltose, lactose); anomers
+  1077→- **Proteins:** amino acids; peptide linkage; structure of peptides (primary and secondary); types of proteins (fibrous and globular)
+  1078→- **Nucleic acids:** chemical composition and structure of DNA and RNA
+  1079→
+  1080→#### 35. Polymers
+  1081→- Types of polymerization (addition, condensation)
+  1082→- Homo- and copolymers
+  1083→- Natural rubber
+  1084→- Cellulose; nylon; Teflon; bakelite; PVC
+  1085→- Bio-degradable polymers
+  1086→- Applications of polymers
+  1087→
+  1088→#### 36. Chemistry in Everyday Life
+  1089→- Drug–target interaction
+  1090→- Therapeutic action, and examples (excluding structures), of antacids, antihistamines, tranquilizers, analgesics, antimicrobials, and antifertility drugs
+  1091→- Artificial sweeteners (names only)
+  1092→- Soaps, detergents, and cleansing action
+  1093→
+  1094→#### 37. Practical Organic Chemistry
+  1095→- Detection of elements (N, S, halogens)
+  1096→- Detection and identification of the following functional groups: hydroxyl (alcoholic and phenolic), carbonyl (aldehyde and ketone), carboxyl, amino and nitro
+  1097→
+  1098→---
+  1099→
+  1100→## Mathematics — 9 Sections (complete official topic list)
+  1101→
+  1102→### Section 1: Sets, Relations and Functions
+  1103→- Sets and their representations
+  1104→- Different kinds of sets (empty, finite, infinite)
+  1105→- Algebra of sets; intersection; complement; difference and symmetric difference of sets and their algebraic properties
+  1106→- De-Morgan's laws on union, intersection, difference (for finite number of sets) and practical problems based on them
+  1107→- Cartesian product of finite sets; ordered pair
+  1108→- Relations; domain and codomain of relations; equivalence relation
+  1109→- Function as a special case of relation; functions as mappings — domain, codomain, range
+  1110→- Invertible functions
+  1111→- Even and odd functions
+  1112→- Into, onto and one-to-one functions
+  1113→- Special functions (polynomial, trigonometric, exponential, logarithmic, power, absolute value, greatest integer, etc.)
+  1114→- Sum, difference, product and composition of functions
+  1115→
+  1116→### Section 2: Algebra
+  1117→- Algebra of complex numbers — addition, multiplication, conjugation
+  1118→- Polar representation of complex numbers
+  1119→- Properties of modulus and principal argument; triangle inequality
+  1120→- Cube roots of unity; geometric interpretations
+  1121→- Statement of fundamental theorem of algebra
+  1122→- Quadratic equations with real coefficients
+  1123→- Relations between roots and coefficients; formation of quadratic equations with given roots
+  1124→- Symmetric functions of roots
+  1125→- Arithmetic and geometric progressions; arithmetic and geometric means
+  1126→- Sums of finite arithmetic and geometric progressions
+  1127→- Infinite geometric series
+  1128→- Sum of the first n natural numbers; sums of squares and cubes of the first n natural numbers
+  1129→- Logarithms and their properties
+  1130→- Permutations and combinations
+  1131→- Binomial theorem for a positive integral index; properties of binomial coefficients
+  1132→
+  1133→### Section 3: Matrices
+  1134→- Matrices as a rectangular array of real numbers; equality of matrices
+  1135→- Addition; multiplication by a scalar; product of matrices
+  1136→- Transpose of a matrix
+  1137→- Elementary row and column transformations
+  1138→- Determinant of a square matrix of order up to three
+  1139→- Adjoint of a matrix; inverse of a square matrix of order up to three
+  1140→- Properties of these matrix operations
+  1141→- Diagonal, symmetric and skew-symmetric matrices and their properties
+  1142→- Solutions of simultaneous linear equations in two or three variables
+  1143→
+  1144→### Section 4: Probability and Statistics
+  1145→- Random experiment; sample space
+  1146→- Different types of events (impossible, simple, compound)
+  1147→- Addition and multiplication rules of probability
+  1148→- Conditional probability; independence of events
+  1149→- Total probability; Bayes' theorem
+  1150→- Computation of probability of events using permutations and combinations
+  1151→- Measure of central tendency and dispersion
+  1152→- Mean, median, mode
+  1153→- Mean deviation, standard deviation and variance of grouped and ungrouped data
+  1154→- Analysis of frequency distribution with same mean but different variance
+  1155→- Random variable; mean and variance of a random variable
+  1156→
+  1157→### Section 5: Trigonometry
+  1158→- Trigonometric functions; their periodicity and graphs
+  1159→- Addition and subtraction formulae
+  1160→- Formulae involving multiple and sub-multiple angles
+  1161→- General solution of trigonometric equations
+  1162→- Inverse trigonometric functions (principal value only) and their elementary properties
+  1163→
+  1164→### Section 6: Analytical Geometry
+  1165→**Two dimensions:**
+  1166→- Cartesian coordinates; distance between two points; section formulae; shift of origin
+  1167→- Equation of a straight line in various forms; angle between two lines; distance of a point from a line
+  1168→- Lines through the point of intersection of two given lines
+  1169→- Equation of the bisector of the angle between two lines; concurrency of lines
+  1170→- Centroid, orthocentre, incentre and circumcentre of a triangle
+  1171→- Equation of a circle in various forms; equations of tangent, normal and chord
+  1172→- Parametric equations of a circle
+  1173→- Intersection of a circle with a straight line or a circle
+  1174→- Equation of a circle through the points of intersection of two circles and those of a circle and a straight line
+  1175→- Equations of a parabola, ellipse and hyperbola in standard form; their foci, directrices and eccentricity
+  1176→- Parametric equations; equations of tangent and normal
+  1177→- Locus problems
+  1178→
+  1179→**Three dimensions:**
+  1180→- Distance between two points
+  1181→- Direction cosines and direction ratios
+  1182→- Equation of a straight line in space
+  1183→- Skew lines; shortest distance between two lines
+  1184→- Equation of a plane
+  1185→- Distance of a point from a plane
+  1186→- Angle between two lines; angle between two planes; angle between a line and a plane
+  1187→- Coplanar lines
+  1188→
+  1189→### Section 7: Differential Calculus
+  1190→- Limit of a function at a real number
+  1191→- Continuity of a function
+  1192→- Limit and continuity of the sum, difference, product and quotient of two functions
+  1193→- L'Hospital rule of evaluation of limits of functions
+  1194→- Continuity of composite functions
+  1195→- Intermediate value property of continuous functions
+  1196→- Derivative of a function; derivative of sum, difference, product and quotient of two functions; chain rule
+  1197→- Derivatives of polynomial, rational, trigonometric, inverse trigonometric, exponential and logarithmic functions
+  1198→- Tangents and normals
+  1199→- Increasing and decreasing functions
+  1200→- Derivatives of order two
+  1201→- Maximum and minimum values of a function
+  1202→- Rolle's theorem and Lagrange's mean value theorem
+  1203→- Geometric interpretation of the two theorems
+  1204→- Derivatives up to order two of implicit functions
+  1205→- Geometric interpretation of derivatives
+  1206→
+  1207→### Section 8: Integral Calculus
+  1208→- Integration as the inverse process of differentiation
+  1209→- Indefinite integrals of standard functions
+  1210→- Definite integrals as the limit of sums
+  1211→- Definite integral and their properties; fundamental theorem of integral calculus
+  1212→- Integration by parts
+  1213→- Integration by the methods of substitution and partial fractions
+  1214→- Application of definite integrals to the determination of areas bounded by simple curves
+  1215→- Formation of ordinary differential equations
+  1216→- Solution of homogeneous differential equations of first order and first degree
+  1217→- Separation of variables method
+  1218→- Linear first order differential equations
+  1219→
+  1220→### Section 9: Vectors
+  1221→- Addition of vectors
+  1222→- Scalar multiplication
+  1223→- Dot and cross products
+  1224→- Scalar and vector triple products and their geometrical interpretations
+  1225→
+  1226→---
+  1227→
+  1228→## JEE Advanced Exam Pattern (2025/2026)
+  1229→
+  1230→### Overall structure
+  1231→| Attribute | Detail |
+  1232→|---|---|
+  1233→| Papers | **Two compulsory papers** — Paper 1 and Paper 2, held on the same day (typically 09:00–12:00 and 14:30–17:30) |
+  1234→| Duration | 3 hours each (compensatory time for PwD candidates) |
+  1235→| Mode | Computer Based Test (CBT); English and Hindi |
+  1236→| Sections | Each paper has 3 parts — Physics, Chemistry, Mathematics — each with 4 sections |
+  1237→| Question types | Single-correct MCQ; one-or-more-correct MCQ (partial marking); numerical answer type (NAT); matching-list; paragraph/comprehension-linked ("question stem") questions |
+  1238→| Eligibility | Top ~2,50,000 (all categories included) in JEE Main Paper 1; max 2 attempts in 2 consecutive years; Class XII with ≥75% (65% reserved) or top-20 percentile; age criterion (born on or after 1 Oct 2001 for GE/OBC in 2026, 5-year relaxation for SC/ST/PwD) |
+  1239→
+  1240→### JEE Advanced 2026 Paper 1 (from official question paper) — 48 questions, 180 marks
+  1241→Per subject (Physics / Chemistry / Maths) — 16 questions, 60 marks:
+  1242→- **Section 1 (12 marks):** 4 single-correct MCQs — **+3** correct / 0 unanswered / **−1** incorrect
+  1243→- **Section 2 (16 marks):** 4 one-or-more-correct MCQs — **+4** if all correct chosen; **partial +3** (all 4 correct but only 3 chosen), **+2** (≥3 correct, only 2 chosen, both correct), **+1** (≥2 correct, only 1 chosen and correct); 0 unanswered; **−1** otherwise
+  1244→- **Section 3 (16 marks):** 4 numerical-value questions — **+4** correct / 0 otherwise (**no negative marking**)
+  1245→- **Section 4 (16 marks):** 4 matching-list sets — **+4** correct option / 0 unanswered / **−1** otherwise
+  1246→
+  1247→### JEE Advanced 2026 Paper 2 (from official question paper) — 54 questions, 180 marks
+  1248→Per subject — 18 questions, 60 marks:
+  1249→- **Section 1 (12 marks):** 4 single-correct MCQs — **+3** / 0 / **−1**
+  1250→- **Section 2 (20 marks):** 5 one-or-more-correct MCQs — same partial marking scheme as above (+4/+3/+2/+1/0/−1)
+  1251→- **Section 3 (20 marks):** 5 numerical-value questions — **+4** / 0 (**no negative marking**)
+  1252→- **Section 4 (8 marks):** 2 question stems, each with **2 linked numerical questions** — **+2** per correct numerical / 0 otherwise (no negative marking)
+  1253→
+  1254→> Combined 2026: 102 questions, 360 marks. **Note:** the exact section/question mix changes slightly every year (e.g., Paper 1 had 48 vs Paper 2's 54 questions in 2026), but question types and marking philosophy (partial marking on multi-correct, no negative on NAT) have been stable.
+  1255→
+  1256→### AAT — Architecture Aptitude Test (B.Arch at IITs)
+  1257→- Only candidates who qualify JEE Advanced may register; result is qualifying/non-qualifying (no rank; B.Arch seats at IIT Roorkee, IIT Kharagpur, IIT (BHU) Varanasi)
+  1258→- 3-hour pen-and-paper test; official syllabus sections:
+  1259→  - **Freehand drawing** — simple drawing depicting the total object in its right form and proportion, surface texture, relative location and details of component parts in appropriate scale; common domestic/day-to-day usable objects (furniture, equipment, etc.) from memory
+  1260→  - **Geometrical drawing** — exercises with lines, angles, triangles, quadrilaterals, polygons, circles; study of plan (top view), elevation (front/side views) of simple solid objects (prisms, cones, cylinders, cubes, splayed surface holders, etc.)
+  1261→  - **Three-dimensional perception** — understanding and appreciation of 3D forms with building elements, colour, volume and orientation; visualisation through structuring objects in memory
+  1262→  - **Imagination and aesthetic sensitivity** — composition exercise with given elements; context mapping; creativity check through innovative uncommon tests with familiar objects; sense of colour grouping or application
+  1263→  - **Architectural awareness** — general interest and awareness of famous architectural creations (national and international), places and personalities (architects, designers, etc.)
+  1264→
+  1265→---
+  1266→
+  1267→## Coverage summary (for library wiring)
+  1268→
+  1269→| Exam | Subject | Units/Sections | Notes |
+  1270→|---|---|---|---|
+  1271→| JEE Main | Physics | **20 units** | Units 1–19 theory + Unit 20 Experimental Skills |
+  1272→| JEE Main | Chemistry | **20 units** | Physical 1–8 · Inorganic 9–12 · Organic 13–20 |
+  1273→| JEE Main | Mathematics | **14 units** | Reduced from 16 (2024 revision) |
+  1274→| JEE Main | Pattern | Paper 1 + 2A + 2B | 75 Q / 300 marks / +4 −1 / two sessions |
+  1275→| JEE Advanced | Physics | **7 sections** | General, Mechanics, Thermal, E&M, EM Waves, Optics, Modern |
+  1276→| JEE Advanced | Chemistry | **37 sections** | General 1 · Physical 2–11 · Inorganic 12–21 · Organic 22–37 |
+  1277→| JEE Advanced | Mathematics | **9 sections** | incl. Analytical Geometry (2D+3D) and Vectors with triple products |
+  1278→| JEE Advanced | Pattern | Paper 1 & 2 (2026 actuals) + AAT | 48 + 54 Q / 360 marks / partial marking |
+  1279→
+  1280→### Caveats for downstream agents
+  1281→1. Use the **current reduced JEE Main syllabus** (14/20/20 units) — many older web sources still list the pre-2024 structure (16 math / 28 chemistry units incl. States of Matter, Surface Chemistry, Hydrogen, s-block, Polymers, Environmental Chemistry, Chemistry in Everyday Life, Mathematical Reasoning/Induction) which NTA has **removed**. Those topics ARE still in **JEE Advanced** and should live under the JEE Advanced book.
+  1282→2. JEE Main Chemistry Unit 10 "p-Block Elements" is only general trends of groups 13–18 — the detailed group-wise compound chemistry exists only in the JEE Advanced syllabus (p-Block section).
+  1283→3. The integral standard forms in JEE Main Math Unit 8 are formula images in the official PDF; the transcribed list above matches the displayed forms (denominators x²±a², a²−x², ax²+bx+c and (px+q)-numerator variants).
+  1284→

@@ -1,0 +1,675 @@
+     1→     1→import type { SectionContent } from '../library'
+     2→     2→
+     3→     3→// ============================================================================
+     4→     4→// JEE (Main) 2026 Physics — master lesson content (high-weightage sections)
+     5→     5→// Full SectionContent lessons for ten sections across Units 2–18 of the
+     6→     6→// official NTA syllabus (bookId 'jeemain-physics-2026'): kinematics (2.1,
+     7→     7→// 2.2), laws of motion (3.1), work and power (4.1), centre of mass and
+     8→     8→// rotational basics (5.1), zeroth law of thermodynamics (8.1), charges and
+     9→     9→// Coulomb's law (11.1), current/drift velocity/Ohm's law (12.1), reflection
+    10→    10→// and spherical mirrors (16.1), and atomic models + hydrogen spectrum (18.1).
+    11→    11→// Every lesson carries prerequisites, intro, objectives, concepts, worked
+    12→    12→// JEE-PYQ-style examples, key takeaways and a 4-question quiz. Style follows
+    13→    13→// the jeemaths-ch01 exemplar: KaTeX formulas ($...$, $$...$$), sign-
+    14→    14→// convention drills, dimensional habits, common traps and PYQ patterns.
+    15→    15→// ============================================================================
+    16→    16→
+    17→    17→export const jeemainPhyContent: SectionContent[] = [
+    18→    18→  // ---------------------------------------------------------------- 2.1
+    19→    19→  {
+    20→    20→    sectionId: 'jeemain-phy-u2-s1',
+    21→    21→    readingTime: 9,
+    22→    22→    prerequisites: [
+    23→    23→      'SI units and dimensional thinking from Unit 1 (section jeemain-phy-u1-s1)',
+    24→    24→      'School algebra: reading straight-line graphs and solving linear equations',
+    25→    25→    ],
+    26→    26→    intro: 'Motion is meaningless until you say who is watching: a passenger seated in a moving train is at rest in the train frame yet moving at 90 km/h in the ground frame. A **frame of reference** — axes plus a clock — is therefore the silent first input of every kinematics problem, and the position–time graph $x(t)$ is its picture. This section fixes the vocabulary of one-dimensional motion: distance versus displacement, average speed versus average and instantaneous velocity, and the graph-reading habits JEE Main tests every single year.',
+    27→    27→    objectives: [
+    28→    28→      'Specify a frame of reference (origin + positive direction) before solving any straight-line motion problem',
+    29→    29→      'Compute distance, displacement, average speed and average velocity for a given motion and order their magnitudes correctly',
+    30→    30→      'Read instantaneous velocity as the tangent slope of a position–time graph and locate turning points where $v = 0$',
+    31→    31→      'Apply the equal-distance (harmonic mean) and equal-time (arithmetic mean) average-speed rules without mixing them up',
+    32→    32→    ],
+    33→    33→    concepts: [
+    34→    34→      {
+    35→    35→        term: 'Frame of reference',
+    36→    36→        kind: 'definition',
+    37→    37→        statement: 'A **frame of reference** is a chosen origin, a set of axes and a clock relative to which the position $x(t)$ of a particle is specified; the same motion may look different from different frames.',
+    38→    38→        detail: 'A passenger at rest in a moving train has speed zero in the train frame but the train speed in the ground frame — position and velocity are always "with respect to" some frame. JEE Main questions implicitly use the ground frame unless stated otherwise: before substituting a single number, fix the origin, fix the $+$ direction, and never change either mid-solution.'
+    39→    39→      },
+    40→    40→      {
+    41→    41→        term: 'Position–time graph',
+    42→    42→        kind: 'notation',
+    43→    43→        statement: 'The **position–time graph** plots $x$ against $t$; its slope at any instant is the velocity, since $v = \\frac{dx}{dt}$.',
+    44→    44→        detail: 'A straight line means uniform motion (constant slope $= v$); a curve means non-uniform motion, with a steeper tangent meaning a faster particle. A horizontal line is a particle at rest, while a point where the tangent is horizontal is a turning point ($v = 0$, direction about to reverse). Reading slopes — not just shapes — is the graph skill JEE Main probes.'
+    45→    45→      },
+    46→    46→      {
+    47→    47→        term: 'Distance and displacement',
+    48→    48→        kind: 'definition',
+    49→    49→        statement: '**Displacement** is the change of position $\\Delta x = x_2 - x_1$ (a signed quantity), while **distance** is the total path length actually travelled (always non-negative).',
+    50→    50→        detail: 'Finish your day at home and your net displacement is zero even though the distance travelled is many kilometres, so $|\\text{displacement}| \\le \\text{distance}$ with equality only for one-way straight-line motion. Every direction reversal inflates the distance but leaves the displacement untouched — the engine of most distance-versus-displacement MCQs.'
+    51→    51→      },
+    52→    52→      {
+    53→    53→        term: 'Average speed versus average velocity',
+    54→    54→        kind: 'insight',
+    55→    55→        statement: '**Average velocity** is $\\bar{v} = \\frac{\\Delta x}{\\Delta t}$, while **average speed** is total path length divided by total time; average speed is never smaller than $|$average velocity$|$.',
+    56→    56→        detail: 'Equal time intervals at speeds $v_1$ and $v_2$ give the arithmetic mean $\\frac{v_1 + v_2}{2}$; equal distances at $v_1$ and $v_2$ give the harmonic mean $\\frac{2v_1v_2}{v_1 + v_2}$. Averaging the two speeds of a two-leg journey without checking which case applies is the classic trap of this unit.'
+    57→    57→      },
+    58→    58→      {
+    59→    59→        term: 'Instantaneous velocity and speed',
+    60→    60→        kind: 'definition',
+    61→    61→        statement: 'The **instantaneous velocity** $v = \\lim_{\\Delta t \\to 0}\\frac{\\Delta x}{\\Delta t} = \\frac{dx}{dt}$ is the slope of the tangent to the x–t curve; its magnitude is the **instantaneous speed**.',
+    62→    62→        detail: 'Speed is never negative, but velocity can be — the sign only encodes direction along the axis. A car\'s speedometer reads instantaneous speed; its odometer accumulates distance. At a turning point $v = 0$ yet the particle is about to move again, so zero velocity at one instant does not mean "at rest" for all instants.'
+    63→    63→      }
+    64→    64→    ],
+    65→    65→    examples: [
+    66→    66→      {
+    67→    67→        title: 'Average speed of a two-leg journey',
+    68→    68→        problem: 'A car covers the first half of the distance of a journey at 40 km/h and the second half at 60 km/h. Find its average speed for the whole journey.',
+    69→    69→        steps: [
+    70→    70→          { label: 'Step 1', text: 'Recognise the regime: equal **distances**, so the harmonic-mean rule applies — the arithmetic mean is only valid for equal times.' },
+    71→    71→          { label: 'Step 2', text: 'Take a total distance of 120 km for clean numbers. The first 60 km takes $t_1 = \\frac{60}{40} = 1.5$ h and the second 60 km takes $t_2 = \\frac{60}{60} = 1$ h.' },
+    72→    72→          { label: 'Step 3', text: 'Average speed $= \\frac{\\text{total path}}{\\text{total time}} = \\frac{120}{1.5 + 1} = \\frac{120}{2.5} = 48$ km/h.' },
+    73→    73→          { label: 'Step 4', text: 'This matches the shortcut $\\frac{2v_1v_2}{v_1 + v_2} = \\frac{2 \\times 40 \\times 60}{100} = 48$ km/h. The tempting answer 50 km/h is the arithmetic-mean trap.' }
+    74→    74→        ],
+    75→    75→        result: 'Average speed $= 48$ km/h (the harmonic mean of 40 and 60).'
+    76→    76→      },
+    77→    77→      {
+    78→    78→        title: 'Distance, displacement and turnaround from $x(t)$',
+    79→    79→        problem: 'A particle moves along the x-axis with $x(t) = 3t^2 - t^3$ metres for $0 \\le t \\le 3$ s. Find its displacement and distance in these 3 s, and the average velocity and average speed.',
+    80→    80→        steps: [
+    81→    81→          { label: 'Step 1', text: 'Velocity: $v = \\frac{dx}{dt} = 6t - 3t^2 = 3t(2 - t)$, which is zero at $t = 0$ and $t = 2$ s. So $v > 0$ on $(0, 2)$ and $v < 0$ on $(2, 3)$: a turning point at $t = 2$ s.' },
+    82→    82→          { label: 'Step 2', text: 'Positions: $x(0) = 0$, $x(2) = 3(4) - 8 = 4$ m, and $x(3) = 3(9) - 27 = 0$ m.' },
+    83→    83→          { label: 'Step 3', text: 'Displacement $= x(3) - x(0) = 0$ m. Distance $= |4 - 0| + |0 - 4| = 4 + 4 = 8$ m (out 4 m, back 4 m).' },
+    84→    84→          { label: 'Step 4', text: 'Average velocity $= \\frac{0}{3} = 0$; average speed $= \\frac{8}{3} \\approx 2.67$ m/s. Same trip, two very different numbers — the reversal is the whole story.' }
+    85→    85→        ],
+    86→    86→        result: 'Displacement 0 m, distance 8 m; average velocity 0, average speed $\\frac{8}{3} \\approx 2.67$ m/s.'
+    87→    87→      }
+    88→    88→    ],
+    89→    89→    keyTakeaways: [
+    90→    90→      'Fix the frame (origin + positive direction) first; positions and velocities are meaningless "with respect to nothing".',
+    91→    91→      'Instantaneous velocity $= \\frac{dx}{dt} =$ tangent slope on the x–t graph; a horizontal tangent is a turning point.',
+    92→    92→      'Distance $\\ge |$displacement$|$ and average speed $\\ge |$average velocity$|$, with equality only for one-way straight-line motion.',
+    93→    93→      'Equal distances $\\to$ harmonic mean $\\frac{2v_1v_2}{v_1+v_2}$; equal times $\\to$ arithmetic mean $\\frac{v_1+v_2}{2}$; never average speeds blindly.'
+    94→    94→    ],
+    95→    95→    quiz: [
+    96→    96→      {
+    97→    97→        q: 'A car covers the first half of the distance of a journey at 20 km/h and the second half at 30 km/h. Its average speed for the whole journey is',
+    98→    98→        options: ['$22.5$ km/h', '$24$ km/h', '$25$ km/h', '$24.5$ km/h'],
+    99→    99→        answer: 1,
+   100→   100→        explanation: 'Step 1: Equal distances, so the harmonic-mean rule applies, not the arithmetic mean. Step 2: Take total distance 60 km: the first 30 km takes $\\frac{30}{20} = 1.5$ h and the second 30 km takes $\\frac{30}{30} = 1$ h. Step 3: Average speed $= \\frac{60}{2.5} = 24$ km/h, which equals $\\frac{2 \\times 20 \\times 30}{20 + 30}$. Step 4: The trap answer 25 km/h comes from blindly averaging 20 and 30, valid only for equal times.'
+   101→   101→      },
+   102→   102→      {
+   103→   103→        q: 'A particle moves along the x-axis with $x(t) = t^2 - 4t + 6$ (metres). It is momentarily at rest at $t =$',
+   104→   104→        options: ['$1$ s', '$2$ s', '$3$ s', '$4$ s'],
+   105→   105→        answer: 1,
+   106→   106→        explanation: 'Step 1: Velocity is the time derivative: $v = 2t - 4$. Step 2: Set $v = 0$: $2t - 4 = 0$ gives $t = 2$ s. Step 3: Geometrically, $x(t)$ is a parabola with its vertex at $t = 2$ s, where the tangent to the x–t graph is horizontal. Step 4: At $t = 1$ s or $t = 3$ s, $v = \\mp 2$ m/s, so the particle is moving.'
+   107→   107→      },
+   108→   108→      {
+   109→   109→        q: 'A man walks 3 m east, then 4 m west, taking 5 s in total. The ratio of the magnitude of his average velocity to his average speed is',
+   110→   110→        options: ['$1 : 7$', '$1 : 5$', '$7 : 1$', '$1 : 1$'],
+   111→   111→        answer: 0,
+   112→   112→        explanation: 'Step 1: Displacement $= 3 - 4 = -1$ m (1 m west); distance $= 3 + 4 = 7$ m. Step 2: $|$average velocity$| = \\frac{1}{5} = 0.2$ m/s. Step 3: Average speed $= \\frac{7}{5} = 1.4$ m/s. Step 4: Ratio $= 0.2 : 1.4 = 1 : 7$; treating the 7 m path as displacement would wrongly give $1 : 1$.'
+   113→   113→      },
+   114→   114→      {
+   115→   115→        q: 'A particle moves along a semicircle of radius 3.5 m from one end of the diameter to the other. The ratio of distance travelled to the magnitude of displacement is ($\\pi \\approx \\frac{22}{7}$)',
+   116→   116→        options: ['$7 : 11$', '$11 : 7$', '$1 : 2$', '$22 : 7$'],
+   117→   117→        answer: 1,
+   118→   118→        explanation: 'Step 1: Distance is the arc length $= \\pi R = \\frac{22}{7} \\times 3.5 = 11$ m. Step 2: Displacement is the straight chord joining the ends, which for a semicircle is the diameter $2R = 7$ m. Step 3: Ratio $= 11 : 7$. Step 4: Curved paths always stretch distance above displacement; $1 : 2$ would require arc length equal to the radius, which never happens here.'
+   119→   119→      }
+   120→   120→    ]
+   121→   121→  },
+   122→   122→  // ---------------------------------------------------------------- 2.2
+   123→   123→  {
+   124→   124→    sectionId: 'jeemain-phy-u2-s2',
+   125→   125→    readingTime: 10,
+   126→   126→    prerequisites: [
+   127→   127→      'jeemain-phy-u2-s1 — frames of reference, position–time graphs, average versus instantaneous velocity',
+   128→   128→      'Basic algebra: solving quadratic equations that appear in vertical-motion problems',
+   129→   129→    ],
+   130→   130→    intro: 'When acceleration is constant, velocity grows linearly and position traces a parabola, and three compact equations — $v = u + at$, $s = ut + \\frac{1}{2}at^2$ and $v^2 = u^2 + 2as$ — dispatch almost every one-dimensional JEE Main numerical. Graphs carry the same information in pictures: the slope of a v–t line is the acceleration and the area under it is the displacement. This section also installs the sign discipline for vertical motion that separates a correct answer from a sign-error trap.',
+   131→   131→    objectives: [
+   132→   132→      'Select and apply the appropriate kinematic equation to solve for any one of $u$, $v$, $a$, $s$, $t$ given the other quantities',
+   133→   133→      'Compute displacement in the nth second using $s_n = u + \\frac{a(2n-1)}{2}$ and use the $1:3:5:7$ pattern for motion from rest',
+   134→   134→      'Extract acceleration (slope) and displacement (area) from velocity–time graphs, including piecewise-linear ones',
+   135→   135→      'Solve vertical-motion problems with one consistent sign convention and use up–down symmetry as a shortcut'
+   136→   136→    ],
+   137→   137→    concepts: [
+   138→   138→      {
+   139→   139→        term: 'Uniform acceleration',
+   140→   140→        kind: 'definition',
+   141→   141→        statement: 'Motion is **uniformly accelerated** when the acceleration $a = \\frac{dv}{dt}$ is constant in both magnitude and direction: velocity changes by equal amounts in equal intervals of time.',
+   142→   142→        detail: 'In one dimension the sign of $a$ carries direction, and "retardation" simply means $a$ points opposite to $v$. Trap: a negative acceleration does not by itself mean slowing down — if $v$ is also negative, the speed is increasing. Only the relative sign of $v$ and $a$ decides speeding up versus slowing down.'
+   143→   143→      },
+   144→   144→      {
+   145→   145→        term: 'The three kinematic equations',
+   146→   146→        kind: 'theorem',
+   147→   147→        statement: 'For constant acceleration, $$v = u + at, \\qquad s = ut + \\tfrac{1}{2}at^2, \\qquad v^2 = u^2 + 2as.$$ Only two are independent; the third follows by eliminating $t$.',
+   148→   148→        detail: 'Here $s$ is displacement, not distance — if the particle reverses, the two differ. To get $v^2 = u^2 + 2as$, substitute $t = \\frac{v - u}{a}$ into $s = ut + \\frac{1}{2}at^2$ and simplify. These equations fail the moment $a$ varies; then integrate $a = \\frac{dv}{dt}$ directly.'
+   149→   149→      },
+   150→   150→      {
+   151→   151→        term: 'Displacement in the nth second',
+   152→   152→        kind: 'method',
+   153→   153→        statement: 'The displacement in the **nth second** is $$s_n = s(n) - s(n-1) = u + \\tfrac{a(2n-1)}{2},$$ the difference of the displacements in the first $n$ and first $n-1$ seconds.',
+   154→   154→        detail: 'From rest ($u = 0$) the successive-second displacements go as $1 : 3 : 5 : 7$, while total displacement grows as $n^2$. JEE Main wording like "distance in the 3rd second" means $s_3 = u + \\frac{5a}{2}$, not the distance in the first 3 seconds — read the ordinal carefully.'
+   155→   155→      },
+   156→   156→      {
+   157→   157→        term: 'Graphs of uniformly accelerated motion',
+   158→   158→        kind: 'insight',
+   159→   159→        statement: 'On a **velocity–time graph** the slope is the acceleration and the area between the graph and the time axis is the displacement; on a position–time graph uniform acceleration appears as a parabola.',
+   160→   160→        detail: 'Area below the time axis counts as negative displacement; taking the area of a speed–time graph instead gives distance. For a piecewise-linear v–t graph, split it into trapeziums and triangles, compute each area and add with signs — a favourite JEE Main graph pattern.'
+   161→   161→      },
+   162→   162→      {
+   163→   163→        term: 'Free fall and the sign convention',
+   164→   164→        kind: 'method',
+   165→   165→        statement: 'For vertical motion take one direction as positive — conventionally upward — so that $a = -g$; the same three equations then apply, with $u$ carrying its own sign.',
+   166→   166→        detail: 'A stone released from a rising balloon keeps the balloon\'s upward velocity at the instant of release (inertia), so $u$ is positive even though nothing pushes it up. Symmetry shortcuts: time up equals time down $= \\frac{u}{g}$, and the speed while passing any height is the same going up and coming down. The commonest error is flipping the sign of $g$ halfway through a solution.'
+   167→   167→      }
+   168→   168→    ],
+   169→   169→    examples: [
+   170→   170→      {
+   171→   171→        title: 'Accelerate then brake — total distance',
+   172→   172→        problem: 'A car starts from rest and accelerates uniformly at $2\\ \\text{m/s}^2$ for 10 s, then brakes with uniform retardation $4\\ \\text{m/s}^2$ until it stops. Find the total distance covered and the average speed for the whole trip.',
+   173→   173→        steps: [
+   174→   174→          { label: 'Step 1', text: 'Speed after the acceleration phase: $v = u + at = 0 + 2 \\times 10 = 20$ m/s, and the distance in this phase is $s_1 = \\frac{1}{2}at^2 = \\frac{1}{2}(2)(10)^2 = 100$ m.' },
+   175→   175→          { label: 'Step 2', text: 'Braking phase: use $v^2 = u^2 + 2as$ with $u = 20$ m/s, $v = 0$, $a = -4\\ \\text{m/s}^2$: $0 = 400 - 8s_2$, so $s_2 = 50$ m.' },
+   176→   176→          { label: 'Step 3', text: 'Total distance $= 100 + 50 = 150$ m. Braking time $t_2 = \\frac{v - u}{a} = \\frac{0 - 20}{-4} = 5$ s, so the total time is $10 + 5 = 15$ s.' },
+   177→   177→          { label: 'Step 4', text: 'Average speed $= \\frac{150}{15} = 10$ m/s — a clean round number that doubles as a check on both phases.' }
+   178→   178→        ],
+   179→   179→        result: 'Total distance 150 m in 15 s; average speed 10 m/s.'
+   180→   180→      },
+   181→   181→      {
+   182→   182→        title: 'Stone released from a rising balloon',
+   183→   183→        problem: 'A balloon is rising vertically at a steady 5 m/s at a height of 60 m when a stone is released from it ($g = 10\\ \\text{m/s}^2$). Find (a) the time for the stone to reach the ground and (b) its speed just before impact.',
+   184→   184→        steps: [
+   185→   185→          { label: 'Step 1', text: 'Take upward positive with the origin at the ground: the stone inherits the balloon\'s velocity, so $u = +5$ m/s, $a = -10\\ \\text{m/s}^2$, and the ground is at $y = 0$ from $y_0 = 60$ m — a displacement of $-60$ m.' },
+   186→   186→          { label: 'Step 2', text: 'Apply $y = ut + \\frac{1}{2}at^2$: $-60 = 5t - 5t^2$, which rearranges to $t^2 - t - 12 = 0$.' },
+   187→   187→          { label: 'Step 3', text: 'Factorise: $(t - 4)(t + 3) = 0$, so $t = 4$ s, rejecting the negative root.' },
+   188→   188→          { label: 'Step 4', text: 'Impact speed: $v = u + at = 5 - 10(4) = -35$ m/s, i.e. 35 m/s downward. Cross-check with $v^2 = u^2 + 2as = 25 + 2(10)(60) = 1225 = 35^2$. $\\checkmark$' }
+   189→   189→        ],
+   190→   190→        result: 'The stone hits the ground after 4 s, moving at 35 m/s downward.'
+   191→   191→      }
+   192→   192→    ],
+   193→   193→    keyTakeaways: [
+   194→   194→      'The three equations hold only for constant $a$, and $s$ is displacement — reverse the motion and distance $\\ne$ displacement.',
+   195→   195→      'v–t slope $= a$; signed v–t area $= s$; speed–time area $=$ distance.',
+   196→   196→      '$s_n = u + \\frac{a(2n-1)}{2}$; from rest, successive seconds give $1:3:5:7$ while total displacement grows as $n^2$.',
+   197→   197→      'Vertical motion: fix up-positive with $a = -g$ for the whole problem; a released body keeps the carrier\'s velocity.'
+   198→   198→    ],
+   199→   199→    quiz: [
+   200→   200→      {
+   201→   201→        q: 'A body starts from rest with uniform acceleration $2\\ \\text{m/s}^2$. The distance it covers in the 3rd second is',
+   202→   202→        options: ['$9$ m', '$5$ m', '$4$ m', '$7$ m'],
+   203→   203→        answer: 1,
+   204→   204→        explanation: 'Step 1: "3rd second" means the interval between $t = 2$ s and $t = 3$ s. Step 2: Distance in the first 3 s $= \\frac{1}{2}(2)(3)^2 = 9$ m; in the first 2 s $= \\frac{1}{2}(2)(2)^2 = 4$ m. Step 3: Difference $= 9 - 4 = 5$ m, matching $s_3 = 0 + \\frac{2(2 \\times 3 - 1)}{2} = 5$ m. Step 4: 9 m is the first-three-seconds trap; from rest the per-second sequence is $1, 3, 5, 7, \\ldots$'
+   205→   205→      },
+   206→   206→      {
+   207→   207→        q: 'A car moving at 20 m/s is brought to rest with uniform retardation $5\\ \\text{m/s}^2$. The stopping distance is',
+   208→   208→        options: ['$10$ m', '$20$ m', '$40$ m', '$80$ m'],
+   209→   209→        answer: 2,
+   210→   210→        explanation: 'Step 1: Use $v^2 = u^2 + 2as$ with $v = 0$, $u = 20$ m/s, $a = -5\\ \\text{m/s}^2$. Step 2: $0 = 400 - 10s$. Step 3: $s = 40$ m. Step 4: Doubling the speed would quadruple this distance (stopping distance $\\propto u^2$), which is why 80 m is the "twice as fast" answer.'
+   211→   211→      },
+   212→   212→      {
+   213→   213→        q: 'A ball thrown vertically upward returns to the thrower after 8 s ($g = 10\\ \\text{m/s}^2$). The maximum height reached is',
+   214→   214→        options: ['$40$ m', '$100$ m', '$160$ m', '$80$ m'],
+   215→   215→        answer: 3,
+   216→   216→        explanation: 'Step 1: Time of flight $T = \\frac{2u}{g}$, so $u = \\frac{gT}{2} = \\frac{10 \\times 8}{2} = 40$ m/s. Step 2: Maximum height $h = \\frac{u^2}{2g} = \\frac{1600}{20} = 80$ m. Step 3: Equivalently $h = \\frac{gT^2}{8} = \\frac{10 \\times 64}{8} = 80$ m — the up-time is only 4 s. Step 4: 160 m wrongly uses the full 8 s for the climb.'
+   217→   217→      },
+   218→   218→      {
+   219→   219→        q: 'The velocity–time graph of a particle is a straight line from $(0, 4\\ \\text{m/s})$ to $(10\\ \\text{s}, 0)$. The displacement in these 10 s is',
+   220→   220→        options: ['$20$ m', '$40$ m', '$10$ m', '$4$ m'],
+   221→   221→        answer: 0,
+   222→   222→        explanation: 'Step 1: The graph is a triangle of base 10 s and height 4 m/s. Step 2: Displacement $=$ area $= \\frac{1}{2} \\times 10 \\times 4 = 20$ m. Step 3: The acceleration (slope) is $-0.4\\ \\text{m/s}^2$ — a separate quantity from the area. Step 4: The average velocity is $\\frac{20}{10} = 2$ m/s, exactly the mean of 0 and 4 for a linear $v(t)$.'
+   223→   223→      }
+   224→   224→    ]
+   225→   225→  },
+   226→   226→  // ---------------------------------------------------------------- 3.1
+   227→   227→  {
+   228→   228→    sectionId: 'jeemain-phy-u3-s1',
+   229→   229→    readingTime: 10,
+   230→   230→    prerequisites: [
+   231→   231→      'Kinematic equations for straight-line motion (jeemain-phy-u2-s2)',
+   232→   232→      'Vectors: magnitude, direction and component-wise addition'
+   233→   233→    ],
+   234→   234→    intro: 'Newton\'s three laws convert the kinematics of Unit 2 into dynamics: the second law $\\vec{F}_{net} = \\frac{d\\vec{p}}{dt}$ is the master equation of mechanics, the first law defines the inertial frames in which it holds, and the third law explains everything from walking to rocket recoil. Momentum $\\vec{p} = m\\vec{v}$ and impulse $\\vec{J} = \\Delta\\vec{p}$ are the currency in which forces trade. Every JEE Main dynamics numerical begins with the same ritual — free-body diagram, axes, then $\\Sigma F = ma$ one axis at a time.',
+   235→   235→    objectives: [
+   236→   236→      'State all three laws precisely, including the inertial-frame condition of the first two laws and the "different bodies" clause of the third',
+   237→   237→      'Apply $\\Sigma\\vec{F} = m\\vec{a}$ axis by axis to single bodies, accelerating lifts and simple two-block systems',
+   238→   238→      'Compute impulse and momentum change from an average force, a contact time or an F–t graph',
+   239→   239→      'Explain everyday consequences: apparent weight in lifts, and why cricketers and airbags "give" to reduce force'
+   240→   240→    ],
+   241→   241→    concepts: [
+   242→   242→      {
+   243→   243→        term: 'First law and inertia',
+   244→   244→        kind: 'law',
+   245→   245→        statement: '**Newton\'s first law**: a body continues in its state of rest or of uniform velocity along a straight line unless compelled to change it by a net external force.',
+   246→   246→        detail: 'The law defines inertial frames — the frames in which it holds — and thereby the arena where $\\Sigma F = ma$ is valid. Inertia, the resistance to change of state, is measured by mass. No force is needed to keep something moving; force is needed only to change motion — the point on which Aristotle disagreed with Galileo and lost.'
+   247→   247→      },
+   248→   248→      {
+   249→   249→        term: 'Newton\'s second law',
+   250→   250→        kind: 'law',
+   251→   251→        statement: '**Newton\'s second law**: $$\\vec{F}_{net} = \\frac{d\\vec{p}}{dt}, \\qquad \\vec{p} = m\\vec{v},$$ which reduces to $\\vec{F}_{net} = m\\vec{a}$ when the mass is constant; $1$ newton $= 1\\ \\text{kg}\\cdot\\text{m/s}^2$.',
+   252→   252→        detail: 'It is the net (vector sum) of all forces that appears — resolve one axis at a time. The $\\frac{dp}{dt}$ form survives variable-mass problems such as rockets, where $F = ma$ alone misleads. Apparent weight in a lift follows at once: $N = m(g + a)$ when accelerating upward and $N = m(g - a)$ when accelerating downward, with $N = 0$ in free fall and $N = mg$ at constant velocity.'
+   253→   253→      },
+   254→   254→      {
+   255→   255→        term: 'Newton\'s third law',
+   256→   256→        kind: 'law',
+   257→   257→        statement: '**Newton\'s third law**: forces occur in equal-magnitude, oppositely directed pairs acting on **two different bodies**: $\\vec{F}_{AB} = -\\vec{F}_{BA}$.',
+   258→   258→        detail: 'Because the two forces act on different bodies, they never cancel each other — only forces on the *same* body enter that body\'s own $\\Sigma F = ma$. The earth pulls a book down; the book pulls the earth up with an equal force. Walking, swimming, gun recoil and rocket propulsion are all third-law engines. A frequent MCQ trap claims action–reaction cancel; they would only if they acted on one body.'
+   259→   259→      },
+   260→   260→      {
+   261→   261→        term: 'Linear momentum',
+   262→   262→        kind: 'definition',
+   263→   263→        statement: '**Linear momentum** $\\vec{p} = m\\vec{v}$ (SI unit kg·m/s) is the quantity of motion; it is a vector pointing along the velocity.',
+   264→   264→        detail: 'Momentum is frame-dependent because velocity is. A 1000 kg truck crawling at 2 m/s carries $2000$ kg·m/s, four times the $500$ kg·m/s of a 50 kg sprinter at 10 m/s — momentum rewards mass as much as speed. The second law says force is the rate at which this quantity is pumped into or drained from a body.'
+   265→   265→      },
+   266→   266→      {
+   267→   267→        term: 'Impulse',
+   268→   268→        kind: 'theorem',
+   269→   269→        statement: '**Impulse** $$\\vec{J} = \\int \\vec{F}\\,dt = \\Delta\\vec{p}$$ equals the change in momentum; for a constant force $J = F\\Delta t$, the area of the rectangle under the F–t graph.',
+   270→   270→        detail: 'Impulse explains safety design: the same $\\Delta p$ spread over a longer contact time needs a smaller force — airbags, crash cushioning, a cricketer withdrawing the hands while catching, bending the knees on landing. Read any F–t graph as a signed area to extract $\\Delta p$, then divide by the mass for the velocity change.'
+   271→   271→      }
+   272→   272→    ],
+   273→   273→    examples: [
+   274→   274→      {
+   275→   275→        title: 'Table block and hanging block',
+   276→   276→        problem: 'A 3 kg block on a frictionless horizontal table is tied by a light inextensible string that passes over a frictionless pulley to a 2 kg block hanging vertically ($g = 10\\ \\text{m/s}^2$). Find the acceleration of the system and the string tension.',
+   277→   277→        steps: [
+   278→   278→          { label: 'Step 1', text: 'Draw both free-body diagrams. For the 3 kg block only the tension pulls horizontally: $T = 3a$. For the 2 kg block, weight acts down and tension up: $20 - T = 2a$.' },
+   279→   279→          { label: 'Step 2', text: 'Add the two equations to eliminate $T$: $20 = 5a$, so $a = 4\\ \\text{m/s}^2$.' },
+   280→   280→          { label: 'Step 3', text: 'Back-substitute: $T = 3a = 3 \\times 4 = 12$ N.' },
+   281→   281→          { label: 'Step 4', text: 'Consistency check from the hanging block: $T = 20 - 2(4) = 12$ N. $\\checkmark$ Note $a < g$: the table block "brakes" the fall, so the string tension (12 N) is less than the hanging weight (20 N).' }
+   282→   282→        ],
+   283→   283→        result: '$a = 4\\ \\text{m/s}^2$ and $T = 12$ N.'
+   284→   284→      },
+   285→   285→      {
+   286→   286→        title: 'Impulse on a hockey ball',
+   287→   287→        problem: 'A hockey ball of mass 200 g moving at 10 m/s is struck straight back along its line of motion and leaves the stick at 5 m/s. If the contact lasts 0.02 s, find the average force exerted by the stick.',
+   288→   288→        steps: [
+   289→   289→          { label: 'Step 1', text: 'Fix the sign convention: take the original direction as positive, so $u = +10$ m/s and (the ball is returned) $v = -5$ m/s, with $m = 0.2$ kg.' },
+   290→   290→          { label: 'Step 2', text: 'Momentum change: $\\Delta p = m(v - u) = 0.2(-5 - 10) = -3$ kg·m/s, so $|\\Delta p| = 3$ kg·m/s.' },
+   291→   291→          { label: 'Step 3', text: 'Average force: $F = \\frac{|\\Delta p|}{\\Delta t} = \\frac{3}{0.02} = 150$ N, directed opposite to the incoming motion.' },
+   292→   292→          { label: 'Step 4', text: 'The sign bookkeeping is everything: using the speed difference $10 - 5 = 5$ m/s would give $\\frac{0.2 \\times 5}{0.02} = 50$ N — five times too small.' }
+   293→   293→        ],
+   294→   294→        result: 'Average force $= 150$ N opposing the original motion.'
+   295→   295→      }
+   296→   296→    ],
+   297→   297→    keyTakeaways: [
+   298→   298→      'First law defines inertial frames and inertia ($\\propto$ mass); second law is $\\vec{F}_{net} = \\frac{d\\vec{p}}{dt}$; third-law pairs act on different bodies and never cancel.',
+   299→   299→      'Draw the FBD first, then write $\\Sigma F = ma$ per axis; a light string over a frictionless pulley carries uniform tension.',
+   300→   300→      'Impulse $=$ area under F–t $= \\Delta p$; stretching the contact time shrinks the force for a given $\\Delta p$.',
+   301→   301→      'Lift weight: $N = m(g \\pm a)$ — true weight $mg$ only at constant velocity, zero in free fall.'
+   302→   302→    ],
+   303→   303→    quiz: [
+   304→   304→      {
+   305→   305→        q: 'A 60 kg man stands on a weighing scale in a lift accelerating upward at $2\\ \\text{m/s}^2$ ($g = 10\\ \\text{m/s}^2$). The scale reads',
+   306→   306→        options: ['$600$ N', '$480$ N', '$720$ N', '$1200$ N'],
+   307→   307→        answer: 2,
+   308→   308→        explanation: 'Step 1: Forces on the man: weight $mg = 600$ N down, normal reaction $N$ up. Step 2: The acceleration is upward, so $N - mg = ma$. Step 3: $N = 60(10 + 2) = 720$ N. Step 4: 600 N is the constant-velocity trap — the scale reads the true weight only when $a = 0$.'
+   309→   309→      },
+   310→   310→      {
+   311→   311→        q: 'Action and reaction forces do not cancel each other because',
+   312→   312→        options: [
+   313→   313→          'they have different magnitudes',
+   314→   314→          'they act on different bodies',
+   315→   315→          'they act in perpendicular directions',
+   316→   316→          'they act at different instants of time'
+   317→   317→        ],
+   318→   318→        answer: 1,
+   319→   319→        explanation: 'Step 1: Third-law pairs are always equal in magnitude, simultaneous and oppositely directed. Step 2: The pair acts on two different bodies — one on each participant of the interaction. Step 3: Cancellation requires both forces to act on the *same* body before summing for that body\'s $ma$. Step 4: Hence each body feels only its own member of the pair, and both can still accelerate.'
+   320→   320→      },
+   321→   321→      {
+   322→   322→        q: 'A force acting on a 0.5 kg ball at rest rises linearly from 0 to 40 N in 0.05 s and falls back to 0 in the next 0.05 s. The ball leaves with speed',
+   323→   323→        options: ['$2$ m/s', '$4$ m/s', '$8$ m/s', '$0.4$ m/s'],
+   324→   324→        answer: 1,
+   325→   325→        explanation: 'Step 1: The F–t graph is a triangle of base 0.1 s and height 40 N. Step 2: Impulse $=$ area $= \\frac{1}{2} \\times 0.1 \\times 40 = 2$ N·s $= \\Delta p$. Step 3: $\\Delta v = \\frac{2}{0.5} = 4$ m/s from rest. Step 4: 8 m/s would come from treating the peak force as if it acted for the full 0.1 s.'
+   326→   326→      },
+   327→   327→      {
+   328→   328→        q: 'The momentum of a particle changes from 10 kg·m/s to 2 kg·m/s in 0.4 s along the same line. The average force on it is',
+   329→   329→        options: [
+   330→   330→          '$20$ N along the motion',
+   331→   331→          '$20$ N opposite to the motion',
+   332→   332→          '$8$ N opposite to the motion',
+   333→   333→          '$5$ N along the motion'
+   334→   334→        ],
+   335→   335→        answer: 1,
+   336→   336→        explanation: 'Step 1: $F = \\frac{\\Delta p}{\\Delta t} = \\frac{2 - 10}{0.4} = -20$ N. Step 2: The minus sign means the force points opposite to the chosen positive (motion) direction. Step 3: Magnitude 20 N; the 8 N option divides the wrong quantity — the change in momentum, not the final momentum. Step 4: A constant opposing force steadily drains momentum, exactly as brakes do.'
+   337→   337→      }
+   338→   338→    ]
+   339→   339→  },
+   340→   340→  // ---------------------------------------------------------------- 4.1
+   341→   341→  {
+   342→   342→    sectionId: 'jeemain-phy-u4-s1',
+   343→   343→    readingTime: 9,
+   344→   344→    prerequisites: [
+   345→   345→      'Newton\'s laws and free-body diagrams (jeemain-phy-u3-s1)',
+   346→   346→      'Basic integration — enough to integrate a linear function of position'
+   347→   347→    ],
+   348→   348→    intro: 'Work $W = \\vec{F}\\cdot\\vec{s} = Fs\\cos\\theta$ is the energy a force deposits, and it cares only about the component of force along the displacement. When the force varies with position, the same idea becomes an integral — the area under the force–displacement graph. Power $P = \\frac{dW}{dt} = \\vec{F}\\cdot\\vec{v}$ rates that transfer in watts, and JEE Main loves testing exactly these three faces: dot product, graph area and the $Fv$ product.',
+   349→   349→    objectives: [
+   350→   350→      'Compute the work done by a constant force, including the sign cases $\\theta < 90^\\circ$, $\\theta = 90^\\circ$ and $\\theta > 90^\\circ$',
+   351→   351→      'Evaluate the work of a position-dependent force by integration or from the F–x graph area',
+   352→   352→      'Distinguish average power $\\frac{W}{t}$ from instantaneous power $\\vec{F}\\cdot\\vec{v}$ and apply both to vehicles and lifts',
+   353→   353→      'Convert between joule, watt, kilowatt-hour and horsepower without unit slips'
+   354→   354→    ],
+   355→   355→    concepts: [
+   356→   356→      {
+   357→   357→        term: 'Work by a constant force',
+   358→   358→        kind: 'definition',
+   359→   359→        statement: 'The **work done by a constant force** over a displacement $\\vec{s}$ is the scalar product $$W = \\vec{F}\\cdot\\vec{s} = Fs\\cos\\theta,$$ with SI unit joule ($1$ J $= 1$ N·m).',
+   360→   360→        detail: 'Only the force component along the displacement counts, and $\\cos\\theta$ fixes the sign: positive for $\\theta < 90^\\circ$, zero at $\\theta = 90^\\circ$, negative for $\\theta > 90^\\circ$. Work is a scalar — direction never attaches to it. Note that $W$ is frame-dependent: the same push does different work in the train frame than on the platform, though JEE Main almost always works in the ground frame.'
+   361→   361→      },
+   362→   362→      {
+   363→   363→        term: 'Zero-work situations',
+   364→   364→        kind: 'insight',
+   365→   365→        statement: '**Zero work** occurs when $\\theta = 90^\\circ$ (force perpendicular to displacement), when the force acts but the body does not move, or when no force acts at all.',
+   366→   366→        detail: 'The centripetal force in uniform circular motion does zero work because it is always perpendicular to the velocity — the speed stays constant for exactly this reason. Carrying a bag along level ground does (nearly) zero work against gravity, since the upward supporting force is perpendicular to the horizontal motion. Recognising these cases instantly eliminates half the options in an MCQ.'
+   367→   367→      },
+   368→   368→      {
+   369→   369→        term: 'Work by a variable force',
+   370→   370→        kind: 'method',
+   371→   371→        statement: 'For a force that varies with position, $$W = \\int_{x_i}^{x_f} F(x)\\,dx,$$ the signed **area under the F–x graph**.',
+   372→   372→        detail: 'Stretching a spring against $F = kx$ gives a triangular area $W = \\frac{1}{2}kx^2$ — the work done by the external stretching agency. For a constant force the integral collapses to $Fs$. In graph questions, split the region into rectangles and triangles and add signed areas; never assume a flat force where the graph slopes.'
+   373→   373→      },
+   374→   374→      {
+   375→   375→        term: 'Power',
+   376→   376→        kind: 'definition',
+   377→   377→        statement: '**Power** is the rate of doing work: $$P_{avg} = \\frac{W}{t}, \\qquad P_{inst} = \\frac{dW}{dt} = \\vec{F}\\cdot\\vec{v} = Fv\\cos\\theta,$$ with SI unit watt ($1$ W $= 1$ J/s).',
+   378→   378→        detail: 'Engine nameplates (a "40 kW" motor) quote power, not energy — energy is power multiplied by time. For a vehicle, $P = Fv$ links traction force to speed at constant power: as $v$ rises the available $F$ falls, which is why acceleration tapers off. One horsepower $= 746$ W for legacy problems.'
+   379→   379→      },
+   380→   380→      {
+   381→   381→        term: 'The kilowatt-hour and unit hygiene',
+   382→   382→        kind: 'insight',
+   383→   383→        statement: 'The commercial unit of energy is the **kilowatt-hour**: $1$ kWh $=$ energy delivered at 1 kW for one hour $= 3.6\\times10^6$ J.',
+   384→   384→        detail: 'The kWh is energy even though it smells of power — the classic unit trap. A 2 kW heater run for 3 h consumes 6 kWh $= 2.16\\times10^7$ J. In JEE Main numericals, convert everything to SI before substituting and convert back only at the very end.'
+   385→   385→      }
+   386→   386→    ],
+   387→   387→    examples: [
+   388→   388→      {
+   389→   389→        title: 'Work by a position-dependent force',
+   390→   390→        problem: 'A force $F = (2 + 3x)$ N acts on a particle moving along the x-axis from $x = 0$ to $x = 4$ m. Find the work done by the force.',
+   391→   391→        steps: [
+   392→   392→          { label: 'Step 1', text: 'The force varies with position, so integrate: $W = \\int_0^4 (2 + 3x)\\,dx$.' },
+   393→   393→          { label: 'Step 2', text: 'Antiderivative: $\\int (2 + 3x)\\,dx = 2x + \\frac{3x^2}{2}$.' },
+   394→   394→          { label: 'Step 3', text: 'Evaluate: $W = \\left[2x + \\frac{3x^2}{2}\\right]_0^4 = 8 + \\frac{3 \\times 16}{2} = 8 + 24 = 32$ J.' },
+   395→   395→          { label: 'Step 4', text: 'Graph check: F–x is a line from 2 N at $x = 0$ to 14 N at $x = 4$ m; trapezium area $= \\frac{2 + 14}{2} \\times 4 = 32$ J. $\\checkmark$' }
+   396→   396→        ],
+   397→   397→        result: '$W = 32$ J.'
+   398→   398→      },
+   399→   399→      {
+   400→   400→        title: 'Accelerating a car — average versus instantaneous power',
+   401→   401→        problem: 'A 1000 kg car accelerates uniformly from rest to 20 m/s in 5 s. Find the average power of the engine during the burst and the instantaneous power at the moment the car reaches 20 m/s.',
+   402→   402→        steps: [
+   403→   403→          { label: 'Step 1', text: 'Kinematics first: $a = \\frac{20 - 0}{5} = 4\\ \\text{m/s}^2$ and $s = \\frac{1}{2}(4)(5)^2 = 50$ m.' },
+   404→   404→          { label: 'Step 2', text: 'Traction force: $F = ma = 1000 \\times 4 = 4000$ N (assumed the only horizontal force). Work done: $W = Fs = 4000 \\times 50 = 2\\times10^5$ J.' },
+   405→   405→          { label: 'Step 3', text: 'Average power: $P_{avg} = \\frac{W}{t} = \\frac{2\\times10^5}{5} = 4\\times10^4$ W $= 40$ kW.' },
+   406→   406→          { label: 'Step 4', text: 'Instantaneous power at the end: $P = Fv = 4000 \\times 20 = 8\\times10^4$ W $= 80$ kW — exactly twice the average, a general result for uniform acceleration from rest.' }
+   407→   407→        ],
+   408→   408→        result: 'Average power 40 kW; instantaneous power at 20 m/s is 80 kW.'
+   409→   409→      }
+   410→   410→    ],
+   411→   411→    keyTakeaways: [
+   412→   412→      '$W = Fs\\cos\\theta$ is a scalar; its sign comes only from $\\cos\\theta$, and $\\perp$ forces do zero work.',
+   413→   413→      'Variable force $\\to$ $W = \\int F\\,dx$ $=$ signed area under the F–x graph (spring: $\\frac{1}{2}kx^2$).',
+   414→   414→      '$P_{inst} = Fv$, $P_{avg} = \\frac{W}{t}$; for uniform acceleration from rest, $P_{avg} = \\frac{1}{2}P_{final}$.',
+   415→   415→      '$1$ kWh $= 3.6\\times10^6$ J is energy; watt is power — never mix them in an MCQ.'
+   416→   416→    ],
+   417→   417→    quiz: [
+   418→   418→      {
+   419→   419→        q: 'A 2 kg block slides from rest down a smooth (frictionless) incline of vertical height 5 m ($g = 10\\ \\text{m/s}^2$). The work done by gravity on the block is',
+   420→   420→        options: ['$50$ J', '$100$ J', '$200$ J', 'it depends on the angle of the incline'],
+   421→   421→        answer: 1,
+   422→   422→        explanation: 'Step 1: Gravity $mg = 20$ N acts vertically while the displacement is along the incline. Step 2: The component of gravity along the incline times the incline length collapses to $W = mgh$, where $h = 5$ m is the vertical drop. Step 3: $W = 2 \\times 10 \\times 5 = 100$ J. Step 4: The work done by gravity between two heights is $mgh$ regardless of path shape — the incline angle is irrelevant.'
+   423→   423→      },
+   424→   424→      {
+   425→   425→        q: 'A force of 10 N acts along +x on a particle for the first 5 m, then decreases linearly to zero over the next 5 m. The total work done is',
+   426→   426→        options: ['$50$ J', '$25$ J', '$75$ J', '$100$ J'],
+   427→   427→        answer: 2,
+   428→   428→        explanation: 'Step 1: First segment: a rectangle of area $10 \\times 5 = 50$ J. Step 2: Second segment: a triangle of base 5 m and height 10 N, area $\\frac{1}{2} \\times 5 \\times 10 = 25$ J. Step 3: Total $W = 50 + 25 = 75$ J. Step 4: 100 J would result from treating the sloping segment as another full rectangle.'
+   429→   429→      },
+   430→   430→      {
+   431→   431→        q: 'A 1000 kg lift rises 20 m in 10 s at constant speed ($g = 10\\ \\text{m/s}^2$). The power delivered by the motor is',
+   432→   432→        options: ['$2$ kW', '$4$ kW', '$20$ kW', '$40$ kW'],
+   433→   433→        answer: 2,
+   434→   434→        explanation: 'Step 1: Constant speed means the cable tension equals the weight: $T = mg = 10^4$ N. Step 2: Work done by the motor: $W = Ts = 10^4 \\times 20 = 2\\times10^5$ J. Step 3: Power $= \\frac{W}{t} = \\frac{2\\times10^5}{10} = 2\\times10^4$ W $= 20$ kW. Step 4: At constant speed there is no net force doing extra work — the motor only fights gravity.'
+   435→   435→      },
+   436→   436→      {
+   437→   437→        q: 'A 2 kW electric heater runs for 3 hours. The energy consumed is',
+   438→   438→        options: ['$6\\times10^6$ J', '$2.16\\times10^7$ J', '$2.16\\times10^6$ J', '$7.2\\times10^6$ J'],
+   439→   439→        answer: 1,
+   440→   440→        explanation: 'Step 1: Energy $=$ power $\\times$ time: $E = 2\\ \\text{kW} \\times 3\\ \\text{h} = 6$ kWh. Step 2: Convert: $1$ kWh $= 3.6\\times10^6$ J. Step 3: $E = 6 \\times 3.6\\times10^6 = 2.16\\times10^7$ J. Step 4: The $6\\times10^6$ J option mistakes kWh for kJ-scale units — the kWh-to-joule conversion is the whole question.'
+   441→   441→      }
+   442→   442→    ]
+   443→   443→  },
+   444→   444→  // ---------------------------------------------------------------- 5.1
+   445→   445→  {
+   446→   446→    sectionId: 'jeemain-phy-u5-s1',
+   447→   447→    readingTime: 10,
+   448→   448→    prerequisites: [
+   449→   449→      'Newton\'s laws and free-body diagrams (jeemain-phy-u3-s1)',
+   450→   450→      'Kinematic equations for constant acceleration (jeemain-phy-u2-s2)',
+   451→   451→      'Radians, arc length $s = r\\theta$, and basic integration'
+   452→   452→    ],
+   453→   453→    intro: 'The centre of mass $\\vec{r}_{cm} = \\frac{\\sum m_i \\vec{r}_i}{\\sum m_i}$ is the mass-weighted average position of a system — the single point that moves as if all the mass and the whole net external force were concentrated there. Rotation adds a parallel set of variables: angle $\\theta$, angular velocity $\\omega = \\frac{d\\theta}{dt}$, angular acceleration $\\alpha$, and the torque $\\tau = rF\\sin\\theta$ that changes them. This section sets up both languages, which the rest of Unit 5 and Unit 6 use to crack rigid bodies and rolling.',
+   454→   454→    objectives: [
+   455→   455→      'Locate the centre of mass of two- and multi-particle systems and state when it lies outside the material of the body',
+   456→   456→      'Use angular variables with their rotational kinematic equations, converting between $v$ and $\\omega$ and between rpm and rad/s',
+   457→   457→      'Compute torque $\\tau = rF\\sin\\theta$ about a point and moment of inertia $I = \\sum mr^2$ about an axis',
+   458→   458→      'Translate any linear-kinematics result into its rotational counterpart via $x \\to \\theta$, $v \\to \\omega$, $a \\to \\alpha$'
+   459→   459→    ],
+   460→   460→    concepts: [
+   461→   461→      {
+   462→   462→        term: 'Centre of mass',
+   463→   463→        kind: 'definition',
+   464→   464→        statement: 'The **centre of mass** of a system of particles is the mass-weighted mean position: $$\\vec{r}_{cm} = \\frac{\\sum m_i \\vec{r}_i}{\\sum m_i},$$ and for two particles on a line, $x_{cm} = \\frac{m_1x_1 + m_2x_2}{m_1 + m_2}$.',
+   465→   465→        detail: 'The COM divides the segment between two particles in the inverse ratio of their masses: it sits twice as close to the particle that is twice as heavy, and at the midpoint for equal masses. Newton\'s second law then applies to the COM as if the entire mass $M = \\sum m_i$ were concentrated there with the net external force acting on it — internal forces can never move it.'
+   466→   466→      },
+   467→   467→      {
+   468→   468→        term: 'Centre of mass of extended bodies',
+   469→   469→        kind: 'insight',
+   470→   470→        statement: 'For a **rigid body** the sum becomes $\\frac{1}{M}\\int x\\,dm$; for uniform, symmetric bodies the COM sits at the geometric centre.',
+   471→   471→        detail: 'Symmetry is the shortcut: a uniform disc, sphere, ring or straight rod has its COM at its centre. The COM need not lie inside the material — a ring\'s COM is at its hollow centre, and an L-shaped lamina\'s COM lies outside the metal. Locating it before solving a rotation problem prevents most geometry errors later.'
+   472→   472→      },
+   473→   473→      {
+   474→   474→        term: 'Angular kinematics',
+   475→   475→        kind: 'notation',
+   476→   476→        statement: 'Rotation is described by angle $\\theta$ (radians), angular velocity $\\omega = \\frac{d\\theta}{dt}$ and angular acceleration $\\alpha = \\frac{d\\omega}{dt}$, with constant-$\\alpha$ equations $$\\omega = \\omega_0 + \\alpha t, \\quad \\theta = \\omega_0 t + \\tfrac{1}{2}\\alpha t^2, \\quad \\omega^2 = \\omega_0^2 + 2\\alpha\\theta.$$',
+   477→   477→        detail: 'Every linear-kinematics result translates by the dictionary $x \\to \\theta$, $v \\to \\omega$, $a \\to \\alpha$ — no new physics, only new symbols. The link to the linear motion of a point at radius $r$ is $v = \\omega r$. Convert rotation rates with $\\omega = \\frac{2\\pi N}{60}$ rad/s for $N$ rpm, and keep writing "rad" until the end: it is dimensionless but an excellent sanity check.'
+   478→   478→      },
+   479→   479→      {
+   480→   480→        term: 'Torque',
+   481→   481→        kind: 'definition',
+   482→   482→        statement: 'The **torque** (moment) of a force about a point is $$\\tau = rF\\sin\\theta,$$ where $\\vec{r}$ points from the point to where the force is applied and $\\theta$ is the angle between $\\vec{r}$ and $\\vec{F}$; SI unit N·m.',
+   483→   483→        detail: 'Torque is the rotational analogue of force — it changes rotational state. Only the component $F\\sin\\theta$ perpendicular to $\\vec{r}$ turns things, which is why door handles sit far from the hinges and why pushing along the line through the hinge ($\\theta = 0$) does nothing. The vector form $\\vec{\\tau} = \\vec{r} \\times \\vec{F}$ and angular momentum arrive in Section 5.2.'
+   484→   484→      },
+   485→   485→      {
+   486→   486→        term: 'Moment of inertia',
+   487→   487→        kind: 'definition',
+   488→   488→        statement: 'The **moment of inertia** of a system about an axis is $$I = \\sum m_i r_i^2$$ (or $\\int r^2\\,dm$ for a continuous body), where $r_i$ is each mass\'s perpendicular distance from the axis; SI unit kg·m².',
+   489→   489→        detail: 'It is the rotational inertia: position counts as $r^2$, so shifting mass away from the axis is expensive. Unlike mass, $I$ is meaningless until the axis is specified — the same rod has different moments about an end, the centre, and a length-wise axis. The standard results (rod, disc, ring) and the parallel/perpendicular-axis theorems follow in Section 5.3; here, compute $I$ by direct summation.'
+   490→   490→      }
+   491→   491→    ],
+   492→   492→    examples: [
+   493→   493→      {
+   494→   494→        title: 'Centre of mass of three particles',
+   495→   495→        problem: 'Particles of mass 2 kg, 4 kg and 6 kg sit at $(0, 0)$, $(3, 0)$ and $(0, 3)$ m respectively. Locate the centre of mass of the system.',
+   496→   496→        steps: [
+   497→   497→          { label: 'Step 1', text: 'Total mass: $M = 2 + 4 + 6 = 12$ kg.' },
+   498→   498→          { label: 'Step 2', text: 'x-coordinate: $x_{cm} = \\frac{2(0) + 4(3) + 6(0)}{12} = \\frac{12}{12} = 1$ m.' },
+   499→   499→          { label: 'Step 3', text: 'y-coordinate: $y_{cm} = \\frac{2(0) + 4(0) + 6(3)}{12} = \\frac{18}{12} = 1.5$ m.' },
+   500→   500→          { label: 'Step 4', text: 'Sanity check: the COM at $(1, 1.5)$ m leans toward the heaviest particle (6 kg at $(0, 3)$) and away from the lightest — exactly the inverse-mass-ratio picture.' }
+   501→   501→        ],
+   502→   502→        result: 'Centre of mass at $(1, 1.5)$ m.'
+   503→   503→      },
+   504→   504→      {
+   505→   505→        title: 'Spin-up of a ceiling-fan blade',
+   506→   506→        problem: 'A fan blade starts from rest and reaches 120 rpm in 10 s with uniform angular acceleration. Find the angular acceleration, the angle swept and the number of revolutions made.',
+   507→   507→        steps: [
+   508→   508→          { label: 'Step 1', text: 'Final angular velocity: $\\omega = \\frac{2\\pi N}{60} = \\frac{2\\pi \\times 120}{60} = 4\\pi \\approx 12.57$ rad/s.' },
+   509→   509→          { label: 'Step 2', text: 'Uniform acceleration: $\\alpha = \\frac{\\omega - \\omega_0}{t} = \\frac{4\\pi}{10} = 0.4\\pi \\approx 1.26$ rad/s².' },
+   510→   510→          { label: 'Step 3', text: 'Angle swept: $\\theta = \\frac{1}{2}(\\omega_0 + \\omega)t = \\frac{1}{2}(4\\pi)(10) = 20\\pi \\approx 62.8$ rad.' },
+   511→   511→          { label: 'Step 4', text: 'Revolutions: $\\frac{\\theta}{2\\pi} = \\frac{20\\pi}{2\\pi} = 10$ turns — the average-velocity formula from linear kinematics, translated.' }
+   512→   512→        ],
+   513→   513→        result: '$\\alpha = 0.4\\pi$ rad/s², $\\theta = 20\\pi$ rad $= 10$ revolutions.'
+   514→   514→      }
+   515→   515→    ],
+   516→   516→    keyTakeaways: [
+   517→   517→      '$\\vec{r}_{cm} = \\frac{\\sum m_i\\vec{r}_i}{M}$ — the mass-weighted average; it lies closer to the heavier mass and can lie outside the body.',
+   518→   518→      'The angular set mirrors the linear one: $x \\to \\theta$, $v \\to \\omega$, $a \\to \\alpha$ with identical constant-acceleration equations.',
+   519→   519→      'rpm $\\to$ rad/s: multiply by $\\frac{2\\pi}{60}$; a point at radius $r$ moves with $v = \\omega r$.',
+   520→   520→      '$\\tau = rF\\sin\\theta$ is the rotational force; $I = \\sum mr^2$ is the rotational mass — both meaningless without specifying the point/axis.'
+   521→   521→    ],
+   522→   522→    quiz: [
+   523→   523→      {
+   524→   524→        q: 'Masses of 4 kg and 6 kg are 5 m apart on a line. Their centre of mass lies',
+   525→   525→        options: [
+   526→   526→          '2 m from the 4 kg mass',
+   527→   527→          '2.5 m from the 4 kg mass',
+   528→   528→          '3 m from the 4 kg mass',
+   529→   529→          '4 m from the 4 kg mass'
+   530→   530→        ],
+   531→   531→        answer: 2,
+   532→   532→        explanation: 'Step 1: Put the 4 kg mass at $x = 0$ and the 6 kg mass at $x = 5$ m. Step 2: $x_{cm} = \\frac{4(0) + 6(5)}{10} = 3$ m from the 4 kg mass. Step 3: Equivalently it is 2 m from the 6 kg mass — closer to the heavier particle, as the inverse-mass rule demands. Step 4: The 2.5 m option is the equal-mass midpoint, wrong here.'
+   533→   533→      },
+   534→   534→      {
+   535→   535→        q: 'A wheel rotates at 300 rpm. Its angular velocity in rad/s is',
+   536→   536→        options: ['$5\\pi$', '$10\\pi$', '$300\\pi$', '$2\\pi$'],
+   537→   537→        answer: 1,
+   538→   538→        explanation: 'Step 1: 300 rpm $= \\frac{300}{60} = 5$ revolutions per second. Step 2: Each revolution is $2\\pi$ radians. Step 3: $\\omega = 5 \\times 2\\pi = 10\\pi \\approx 31.4$ rad/s. Step 4: $300\\pi$ forgets the division by 60.'
+   539→   539→      },
+   540→   540→      {
+   541→   541→        q: 'Masses of 1 kg and 2 kg are fixed at the two ends of a light rod of length 3 m. The moment of inertia about an axis through the midpoint, perpendicular to the rod, is',
+   542→   542→        options: ['$4.5$ kg·m²', '$6.75$ kg·m²', '$9$ kg·m²', '$13.5$ kg·m²'],
+   543→   543→        answer: 1,
+   544→   544→        explanation: 'Step 1: Each mass sits $1.5$ m from the midpoint axis. Step 2: $I = \\sum mr^2 = 1(1.5)^2 + 2(1.5)^2$. Step 3: $I = 2.25 + 4.5 = 6.75$ kg·m². Step 4: 9 kg·m² would use $r = 3$ m for both masses, ignoring where the axis actually is.'
+   545→   545→      },
+   546→   546→      {
+   547→   547→        q: 'The position vector from a bolt to the point of application of a 5 N force is 2 m long and makes $30^\\circ$ with the force. The torque of the force about the bolt is',
+   548→   548→        options: ['$10$ N·m', '$8.66$ N·m', '$5$ N·m', '$2.5$ N·m'],
+   549→   549→        answer: 2,
+   550→   550→        explanation: 'Step 1: Torque $\\tau = rF\\sin\\theta$. Step 2: $\\tau = 2 \\times 5 \\times \\sin 30^\\circ = 10 \\times 0.5$. Step 3: $\\tau = 5$ N·m. Step 4: 10 N·m is the $\\sin 90^\\circ$ maximum (force perpendicular to the wrench); 8.66 N·m misuses $\\cos 30^\\circ$.'
+   551→   551→      }
+   552→   552→    ]
+   553→   553→  },
+   554→   554→  // ---------------------------------------------------------------- 8.1
+   555→   555→  {
+   556→   556→    sectionId: 'jeemain-phy-u8-s1',
+   557→   557→    readingTime: 8,
+   558→   558→    prerequisites: [
+   559→   559→      'The molecular picture of matter — solids, liquids, gases as collections of particles',
+   560→   560→      'Energy and work concepts from Unit 4 (jeemain-phy-u4-s1)'
+   561→   561→    ],
+   562→   562→    intro: 'Temperature is the property two bodies share when, placed in contact through a conducting wall, nothing happens anymore — no net heat flows. That "nothing happens" state is **thermal equilibrium**, and the zeroth law asserts it is transitive: if A is in equilibrium with C and B is in equilibrium with C, then A is in equilibrium with B. This deceptively obvious statement is what makes thermometers and the very concept of temperature meaningful, and JEE Main tests it through thermometry and heat-flow-direction questions.',
+   563→   563→    objectives: [
+   564→   564→      'Define thermal equilibrium and distinguish it from full thermodynamic equilibrium',
+   565→   565→      'State the zeroth law and use its transitivity to certify that a thermometer reading one body also characterises another',
+   566→   566→      'Decide the direction of net heat flow between bodies from temperatures alone, irrespective of size or energy content',
+   567→   567→      'Convert readings between linear thermometer scales, including faulty-scale problems'
+   568→   568→    ],
+   569→   569→    concepts: [
+   570→   570→      {
+   571→   571→        term: 'Thermodynamic equilibrium',
+   572→   572→        kind: 'definition',
+   573→   573→        statement: 'A system is in **thermodynamic equilibrium** when its macroscopic variables (for a gas: pressure $P$, volume $V$, temperature $T$) are unchanging in time *and* no matter or energy flows through it.',
+   574→   574→        detail: 'It bundles three conditions: mechanical equilibrium (no unbalanced forces, uniform $P$), thermal equilibrium (uniform $T$, no heat flow) and chemical equilibrium (no reactions or diffusion). A just-stirred or just-compressed gas is not in equilibrium — wait for it to settle before applying equilibrium relations.'
+   575→   575→      },
+   576→   576→      {
+   577→   577→        term: 'Adiabatic and diathermic walls',
+   578→   578→        kind: 'definition',
+   579→   579→        statement: 'An **adiabatic wall** permits no heat exchange ($\\Delta Q = 0$) between two systems, while a **diathermic wall** allows heat to pass so the two sides can reach thermal equilibrium.',
+   580→   580→        detail: 'A thermos flask approximates an adiabatic wall; a thin metal sheet is diathermic. The distinction is what makes the zeroth law precise — "thermal contact" always means a diathermic separation. Note that adiabatic does not mean insulated from work: you can still compress a gas adiabatically (that story belongs to Section 8.2).'
+   581→   581→      },
+   582→   582→      {
+   583→   583→        term: 'The zeroth law of thermodynamics',
+   584→   584→        kind: 'law',
+   585→   585→        statement: '**Zeroth law**: if bodies A and C are in thermal equilibrium, and bodies B and C are in thermal equilibrium, then A and B are in thermal equilibrium.',
+   586→   586→        detail: 'The law looks obvious but does real work: transitivity makes "being in equilibrium with C" an equivalence class, and the shared property of each class is what we call temperature. It was flagged by R. H. Fowler in the 1930s — after the first and second laws were numbered, though it logically precedes both — hence "zeroth". It is the licence a thermometer uses: equilibrium with C certifies the same temperature for anything else C has certified.'
+   587→   587→      },
+   588→   588→      {
+   589→   589→        term: 'Temperature versus heat',
+   590→   590→        kind: 'insight',
+   591→   591→        statement: '**Temperature** is the intensive marker of thermal state that fixes the direction of heat flow; **heat** is energy in transit due to a temperature difference.',
+   592→   592→        detail: 'Heat flows from the higher-temperature body to the lower one — never spontaneously the reverse — regardless of which body holds more total energy: a red-hot spark (tiny energy) can sear skin that a lukewarm bucket (huge energy) cannot. Two bodies at the same temperature exchange no *net* heat even while their molecules keep colliding. Temperature is intensive; internal energy scales with the amount of substance.'
+   593→   593→      },
+   594→   594→      {
+   595→   595→        term: 'Thermometry and scales',
+   596→   596→        kind: 'method',
+   597→   597→        statement: 'A **thermometer** is any body with a temperature-sensitive property (mercury column, resistance, gas pressure at constant volume); two reproducible fixed points — ice and steam — with equal divisions define a scale: $\\frac{C}{5} = \\frac{F - 32}{9} = \\frac{K - 273}{5}$.',
+   598→   598→        detail: 'For a faulty or unfamiliar linear scale reading $x$ between fixed points $a$ (ice) and $b$ (steam), the true Celsius temperature is $T = \\frac{x - a}{b - a} \\times 100$ — only the fraction of the interval between fixed points matters, because all linear scales agree on those fractions. The constant-volume gas thermometer is the standard against which practical scales are calibrated.'
+   599→   599→      }
+   600→   600→    ],
+   601→   601→    examples: [
+   602→   602→      {
+   603→   603→        title: 'Faulty thermometer calibration',
+   604→   604→        problem: 'A thermometer reads $5^\\circ$ at the ice point and $95^\\circ$ at the steam point. When plunged into a liquid it reads $41^\\circ$. What is the liquid\'s true temperature in $^\\circ$C?',
+   605→   605→        steps: [
+   606→   606→          { label: 'Step 1', text: 'On any linear scale, equal temperature intervals correspond to equal divisions, so match the fractions of the ice–steam range: $\\frac{T - 0}{100} = \\frac{41 - 5}{95 - 5}$.' },
+   607→   607→          { label: 'Step 2', text: 'Compute the fraction: $\\frac{41 - 5}{90} = \\frac{36}{90} = 0.4$.' },
+   608→   608→          { label: 'Step 3', text: 'True temperature: $T = 0.4 \\times 100 = 40\\ ^\\circ$C.' },
+   609→   609→          { label: 'Step 4', text: 'Cross-check: the reading 41 lies below the faulty scale\'s midpoint (50), and 40 °C likewise lies below 50 °C — consistent. $\\checkmark$' }
+   610→   610→        ],
+   611→   611→        result: 'The liquid is at $40\\ ^\\circ$C.'
+   612→   612→      },
+   613→   613→      {
+   614→   614→        title: 'Equilibrium, heat capacity and the zeroth law',
+   615→   615→        problem: 'Body A at $80\\ ^\\circ$C and body B at $20\\ ^\\circ$C are placed in thermal contact inside an adiabatic enclosure. (a) They settle at $50\\ ^\\circ$C — what does that imply about their heat capacities? (b) Had they settled at $60\\ ^\\circ$C instead, what is $\\frac{C_A}{C_B}$? (c) A thermometer is then equilibrated with A; what does the zeroth law say about the thermometer and B?',
+   616→   616→        steps: [
+   617→   617→          { label: 'Step 1', text: '(a) Energy conservation in the adiabatic box: heat lost by A equals heat gained by B, so $C_A(80 - 50) = C_B(50 - 20)$, giving $30C_A = 30C_B$, i.e. $C_A = C_B$.' },
+   618→   618→          { label: 'Step 2', text: '(b) For a $60\\ ^\\circ$C finish: $C_A(80 - 60) = C_B(60 - 20)$, so $20C_A = 40C_B$ and $C_A = 2C_B$.' },
+   619→   619→          { label: 'Step 3', text: 'Pattern: the final temperature always shifts toward the body with the larger heat capacity, because more heat is needed to move its temperature by one degree.' },
+   620→   620→          { label: 'Step 4', text: '(c) The thermometer is in thermal equilibrium with A; A is in thermal equilibrium with B (they share $60\\ ^\\circ$C); by the zeroth law the thermometer and B are in thermal equilibrium — the thermometer reads B without ever touching it.' }
+   621→   621→        ],
+   622→   622→        result: '(a) $C_A = C_B$; (b) $C_A = 2C_B$; (c) zeroth law certifies thermometer $\\equiv$ B.'
+   623→   623→      }
+   624→   624→    ],
+   625→   625→    keyTakeaways: [
+   626→   626→      'Thermal equilibrium $=$ equal temperatures $+$ no net heat flow across a diathermic contact; thermodynamic equilibrium adds mechanical and chemical calm.',
+   627→   627→      'Zeroth law: thermal equilibrium with a common body C is transitive — this is what defines temperature and licenses thermometers.',
+   628→   628→      'Heat flows from higher $T$ to lower $T$; mass, heat capacity or total energy cannot reverse the direction.',
+   629→   629→      'On any linear scale between ice and steam points, equal fractions of the interval mean equal Celsius temperatures: $T = \\frac{x - a}{b - a}\\times 100$.'
+   630→   630→    ],
+   631→   631→    quiz: [
+   632→   632→      {
+   633→   633→        q: 'Body A is in thermal equilibrium with body C, and body B is in thermal equilibrium with body C. Then',
+   634→   634→        options: [
+   635→   635→          'no conclusion about A and B can be drawn',
+   636→   636→          'A is at a higher temperature than B',
+   637→   637→          'A and B are in thermal equilibrium with each other',
+   638→   638→          'A and B can never exchange heat'
+   639→   639→        ],
+   640→   640→        answer: 2,
+   641→   641→        explanation: 'Step 1: This is exactly the hypothesis of the zeroth law. Step 2: Thermal equilibrium is transitive through the common body C. Step 3: Therefore A and B share the same temperature and are in thermal equilibrium. Step 4: "Never exchange heat" is wrong — placed in diathermic contact they exchange no *net* heat, which is precisely what equilibrium means.'
+   642→   642→      },
+   643→   643→      {
+   644→   644→        q: 'When two bodies are placed in thermal contact, the direction of net heat flow is decided by',
+   645→   645→        options: [
+   646→   646→          'their total internal energies',
+   647→   647→          'their temperature difference',
+   648→   648→          'their thermal capacities',
+   649→   649→          'their masses'
+   650→   650→        ],
+   651→   651→        answer: 1,
+   652→   652→        explanation: 'Step 1: Heat is energy in transit driven by a temperature difference. Step 2: Net heat flows from the higher-temperature body to the lower-temperature body. Step 3: Internal energy, heat capacity and mass set how much energy is available or how far the temperature moves — not the direction. Step 4: A small hot spark heats a large cool block, never the reverse.'
+   653→   653→      },
+   654→   654→      {
+   655→   655→        q: 'A thermometer reads $20^\\circ$ at the ice point and $80^\\circ$ at the steam point. When it reads $47^\\circ$ in a liquid, the liquid\'s true temperature is',
+   656→   656→        options: ['$47\\ ^\\circ$C', '$40\\ ^\\circ$C', '$45\\ ^\\circ$C', '$54\\ ^\\circ$C'],
+   657→   657→        answer: 2,
+   658→   658→        explanation: 'Step 1: Match fractions of the ice–steam interval: $\\frac{T}{100} = \\frac{47 - 20}{80 - 20}$. Step 2: Fraction $= \\frac{27}{60} = 0.45$. Step 3: $T = 45\\ ^\\circ$C. Step 4: 47 °C trusts the faulty scale blindly; 54 °C inverts the fraction.'
+   659→   659→      },
+   660→   660→      {
+   661→   661→        q: 'Two bodies in thermal contact have reached thermal equilibrium. Which statement is correct?',
+   662→   662→        options: [
+   663→   663→          'Their internal energies are equal',
+   664→   664→          'Their temperatures are equal and the net heat exchange is zero',
+   665→   665→          'All thermal motion of molecules has stopped',
+   666→   666→          'Heat flowed until both bodies ran out of energy'
+   667→   667→        ],
+   668→   668→        answer: 1,
+   669→   669→        explanation: 'Step 1: Equilibrium means no macroscopic change and no net heat flow. Step 2: By the zeroth law both bodies share one temperature. Step 3: Internal energies can still differ wildly (different masses or materials) — equal temperature does not mean equal energy. Step 4: Molecular motion persists at every temperature above absolute zero; nothing "runs out".'
+   670→   670→      }
+   671→   671→    ]
+   672→   672→  },
+   673→   673→  // __MORE_SECTIONS__
+   674→   674→]
+   675→   675→

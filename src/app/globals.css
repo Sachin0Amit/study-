@@ -1,0 +1,930 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-stix), "STIX Two Text", Georgia, "Times New Roman", serif;
+  --font-handwriting: var(--font-handwriting), "Caveat", "Comic Sans MS", cursive;
+  --color-book-page: var(--sv-book-page);
+  --color-book-edge: var(--sv-book-page-edge);
+  --color-book-ink: var(--sv-book-ink);
+  --color-book-soft: var(--sv-book-ink-soft);
+  --color-book-rule: var(--sv-book-rule);
+  --color-book-rule-strong: var(--sv-book-rule-strong);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* =================================================================
+   LIGHT THEME (default) — warm paper-white with emerald ink
+   ================================================================= */
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.984 0.004 106);
+  --foreground: oklch(0.24 0.02 160);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.02 160);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.24 0.02 160);
+  --primary: oklch(0.596 0.145 163.225);
+  --primary-foreground: oklch(0.99 0.005 160);
+  --secondary: oklch(0.955 0.008 160);
+  --secondary-foreground: oklch(0.30 0.02 160);
+  --muted: oklch(0.955 0.008 160);
+  --muted-foreground: oklch(0.50 0.02 160);
+  --accent: oklch(0.94 0.015 162);
+  --accent-foreground: oklch(0.30 0.02 160);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.905 0.008 160);
+  --input: oklch(0.93 0.01 160);
+  --ring: oklch(0.596 0.145 163.225);
+  --chart-1: oklch(0.596 0.145 163.225);
+  --chart-2: oklch(0.666 0.179 58.318);
+  --chart-3: oklch(0.511 0.096 186.391);
+  --chart-4: oklch(0.705 0.015 286.067);
+  --chart-5: oklch(0.508 0.118 165.612);
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.24 0.02 160);
+  --sidebar-primary: oklch(0.596 0.145 163.225);
+  --sidebar-primary-foreground: oklch(0.99 0.005 160);
+  --sidebar-accent: oklch(0.955 0.008 160);
+  --sidebar-accent-foreground: oklch(0.30 0.02 160);
+  --sidebar-border: oklch(0.905 0.008 160);
+  --sidebar-ring: oklch(0.596 0.145 163.225);
+
+  /* --- accent shade remaps (light backgrounds need darker inks) ---
+     Tailwind v4 utilities resolve to var(--color-*); re-pointing the
+     emerald/amber/teal/zinc scales here flips ~700 usages at once. */
+  --color-emerald-100: oklch(0.432 0.095 166.913); /* → emerald-800 */
+  --color-emerald-200: oklch(0.432 0.095 166.913); /* → emerald-800 */
+  --color-emerald-300: oklch(0.508 0.118 165.612); /* → emerald-700 */
+  --color-emerald-400: oklch(0.596 0.145 163.225); /* → emerald-600 */
+  --color-emerald-500: oklch(0.596 0.145 163.225); /* → emerald-600 */
+  --color-amber-100: oklch(0.555 0.163 48.998); /* → amber-700 */
+  --color-amber-200: oklch(0.666 0.179 58.318); /* → amber-600 */
+  --color-amber-300: oklch(0.666 0.179 58.318); /* → amber-600 */
+  --color-amber-400: oklch(0.666 0.179 58.318); /* → amber-600 */
+  --color-amber-500: oklch(0.666 0.179 58.318); /* → amber-600 */
+  --color-teal-200: oklch(0.511 0.096 186.391); /* → teal-700 */
+  --color-teal-300: oklch(0.511 0.096 186.391); /* → teal-700 */
+  --color-teal-400: oklch(0.511 0.096 186.391); /* → teal-700 */
+  --color-zinc-200: oklch(0.442 0.017 285.786); /* → zinc-600 */
+  --color-zinc-300: oklch(0.552 0.016 285.938); /* → zinc-500 */
+  --color-zinc-400: oklch(0.552 0.016 285.938); /* → zinc-500 */
+  --color-rose-200: oklch(0.586 0.253 17.585); /* → rose-600 */
+  --color-rose-300: oklch(0.586 0.253 17.585); /* → rose-600 */
+  --color-rose-400: oklch(0.586 0.253 17.585); /* → rose-600 */
+
+  /* --- StudyVerse design tokens --- */
+  --sv-scrollbar: oklch(0.82 0.01 160);
+  --sv-scrollbar-hover: oklch(0.70 0.02 160);
+  --sv-grid-line: oklch(0.86 0.01 160 / 0.55);
+  --sv-glow-emerald: oklch(0.596 0.145 163 / 0.08);
+  --sv-glow-amber: oklch(0.666 0.179 58 / 0.05);
+  --sv-grad-start: oklch(0.508 0.118 165.612);
+  --sv-grad-mid: oklch(0.596 0.145 163.225);
+  --sv-grad-end: oklch(0.666 0.179 58.318);
+  --sv-glow-border: oklch(0.596 0.145 163 / 0.4);
+  --sv-glow-ring: oklch(0.596 0.145 163 / 0.2);
+  --sv-glow-shadow: oklch(0.596 0.145 163 / 0.16);
+}
+
+/* =================================================================
+   DARK THEME (premium emerald-on-charcoal — the StudyVerse brand)
+   ================================================================= */
+.dark {
+  --background: oklch(0.13 0.014 165);
+  --foreground: oklch(0.96 0.005 100);
+  --card: oklch(0.17 0.014 165);
+  --card-foreground: oklch(0.96 0.005 100);
+  --popover: oklch(0.19 0.014 165);
+  --popover-foreground: oklch(0.96 0.005 100);
+  --primary: oklch(0.705 0.155 162);
+  --primary-foreground: oklch(0.13 0.014 165);
+  --secondary: oklch(0.24 0.015 165);
+  --secondary-foreground: oklch(0.96 0.005 100);
+  --muted: oklch(0.22 0.014 165);
+  --muted-foreground: oklch(0.65 0.012 120);
+  --accent: oklch(0.26 0.02 165);
+  --accent-foreground: oklch(0.96 0.005 100);
+  --destructive: oklch(0.65 0.2 25);
+  --border: oklch(0.30 0.015 165);
+  --input: oklch(0.24 0.015 165);
+  --ring: oklch(0.705 0.155 162);
+  --chart-1: oklch(0.705 0.155 162);
+  --chart-2: oklch(0.82 0.15 85);
+  --chart-3: oklch(0.75 0.05 165);
+  --chart-4: oklch(0.85 0.02 100);
+  --chart-5: oklch(0.65 0.13 150);
+  --sidebar: oklch(0.17 0.014 165);
+  --sidebar-foreground: oklch(0.96 0.005 100);
+  --sidebar-primary: oklch(0.705 0.155 162);
+  --sidebar-primary-foreground: oklch(0.13 0.014 165);
+  --sidebar-accent: oklch(0.24 0.015 165);
+  --sidebar-accent-foreground: oklch(0.96 0.005 100);
+  --sidebar-border: oklch(0.30 0.015 165);
+  --sidebar-ring: oklch(0.705 0.155 162);
+
+  /* restore Tailwind default accent shades (overridden in :root above) */
+  --color-emerald-100: oklch(95% 0.052 163.051);
+  --color-emerald-200: oklch(90.5% 0.093 164.15);
+  --color-emerald-300: oklch(84.5% 0.143 164.978);
+  --color-emerald-400: oklch(76.5% 0.177 163.223);
+  --color-emerald-500: oklch(69.6% 0.17 162.48);
+  --color-amber-100: oklch(96.2% 0.059 95.617);
+  --color-amber-200: oklch(92.4% 0.12 95.746);
+  --color-amber-300: oklch(87.9% 0.169 91.605);
+  --color-amber-400: oklch(82.8% 0.189 84.429);
+  --color-amber-500: oklch(76.9% 0.188 70.08);
+  --color-teal-200: oklch(91% 0.096 180.426);
+  --color-teal-300: oklch(85.5% 0.138 181.071);
+  --color-teal-400: oklch(77.7% 0.152 181.912);
+  --color-zinc-200: oklch(92% 0.004 286.32);
+  --color-zinc-300: oklch(87.1% 0.006 286.286);
+  --color-zinc-400: oklch(70.5% 0.015 286.067);
+  --color-rose-200: oklch(89.2% 0.058 10.001);
+  --color-rose-300: oklch(81% 0.117 11.638);
+  --color-rose-400: oklch(71.2% 0.194 13.428);
+
+  /* StudyVerse design tokens — dark */
+  --sv-scrollbar: oklch(0.35 0.03 165);
+  --sv-scrollbar-hover: oklch(0.42 0.05 165);
+  --sv-grid-line: oklch(0.28 0.02 165 / 0.28);
+  --sv-glow-emerald: oklch(0.705 0.155 162 / 0.14);
+  --sv-glow-amber: oklch(0.82 0.15 85 / 0.08);
+  --sv-grad-start: oklch(0.85 0.13 140);
+  --sv-grad-mid: oklch(0.705 0.155 162);
+  --sv-grad-end: oklch(0.82 0.15 85);
+  --sv-glow-border: oklch(0.55 0.11 162 / 0.6);
+  --sv-glow-ring: oklch(0.55 0.11 162 / 0.25);
+  --sv-glow-shadow: oklch(0.55 0.11 162 / 0.3);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  /* emerald-tinted text selection */
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 28%, transparent);
+    color: inherit;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .sv-float,
+  .sv-marquee,
+  .sv-pulse-glow {
+    animation: none !important;
+  }
+  .sv-card-glow {
+    transition: none !important;
+  }
+}
+
+/* ---------- StudyVerse custom utilities (theme-token driven) ---------- */
+
+/* Custom scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sv-scrollbar) transparent;
+}
+/* Fully hidden scrollbar (horizontal pill navs on mobile) */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--sv-scrollbar);
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--sv-scrollbar-hover);
+}
+
+/* Subtle grid-pattern backdrop */
+.sv-grid-bg {
+  background-image:
+    linear-gradient(to right, var(--sv-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--sv-grid-line) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Radial glow hero */
+.sv-hero-glow {
+  background:
+    radial-gradient(ellipse 60% 45% at 70% 20%, var(--sv-glow-emerald), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 20% 60%, var(--sv-glow-amber), transparent 70%);
+}
+
+/* Gradient text */
+.sv-text-gradient {
+  background: linear-gradient(115deg, var(--sv-grad-start) 0%, var(--sv-grad-mid) 45%, var(--sv-grad-end) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Card hover glow border + subtle lift */
+.sv-card-glow {
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.sv-card-glow:hover {
+  border-color: var(--sv-glow-border);
+  box-shadow: 0 0 0 1px var(--sv-glow-ring), 0 12px 40px -12px var(--sv-glow-shadow);
+  transform: translateY(-2px);
+}
+
+/* Floating animation for hero elements */
+@keyframes sv-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+.sv-float {
+  animation: sv-float 7s ease-in-out infinite;
+}
+
+/* Slow pulse glow */
+@keyframes sv-pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.sv-pulse-glow {
+  animation: sv-pulse-glow 3.2s ease-in-out infinite;
+}
+
+/* Marquee for theorems strip */
+@keyframes sv-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.sv-marquee {
+  animation: sv-marquee 38s linear infinite;
+}
+.sv-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* 3D tilt card */
+.sv-tilt {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.sv-tilt-inner {
+  transform: translateZ(28px);
+}
+
+/* Orbiting badge container (preserve 3d) */
+.sv-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* ---------- Print styles (formula sheet & lessons) ---------- */
+@media print {
+  html {
+    scroll-behavior: auto;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  /* the printable sheet region flips to a clean paper look */
+  .sv-print-sheet,
+  .sv-print-sheet * {
+    background: transparent !important;
+    color: black !important;
+    border-color: #d4d4d8 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    /* framer-motion whileInView elements below the fold stay at opacity 0 /
+       offset transforms — force everything visible on paper */
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .sv-print-sheet .sv-print-chip {
+    border: 1px solid #a1a1aa !important;
+    background: white !important;
+  }
+  /* keep formula cards intact across page breaks */
+  .sv-print-sheet > div {
+    break-inside: avoid;
+  }
+  @page {
+    margin: 14mm;
+  }
+}
+
+/* =================================================================
+   round 5-c: chapter summary sheet (modal + cheat-sheet print)
+   Append-only block — complements the rules above, never repeats them.
+   ================================================================= */
+/* while the summary modal is open, lock background scroll (screen only) */
+body.sv-summary-open {
+  overflow: hidden;
+}
+
+@media print {
+  /* the app runs color-scheme: dark (next-themes); the UA would otherwise paint
+     the paper canvas dark, printing the @page margins black. Force a white
+     canvas so the whole sheet is clean black-on-white. */
+  html {
+    background: #fff !important;
+    color-scheme: light !important;
+  }
+  /* the modal scroll-lock must never clip the printed sheet */
+  body.sv-summary-open {
+    overflow: visible !important;
+  }
+  /* flatten the fixed modal overlay into normal paper flow */
+  .sv-summary-overlay {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    padding: 0 !important;
+    z-index: auto !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  /* the sheet card drops its on-screen box: full width, no clipping, no chrome */
+  .sv-summary-card {
+    display: block !important;
+    max-width: none !important;
+    max-height: none !important;
+    width: auto !important;
+    overflow: visible !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  /* the scroll area must not clip or scroll on paper */
+  .sv-summary-scroll {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  /* cheat-sheet typography: compact A4-friendly base (~10pt) */
+  .sv-summary-sheet {
+    font-size: 10pt !important;
+    line-height: 1.38 !important;
+    color: #18181b !important;
+    /* neutralizes the generic `.sv-print-sheet > div { break-inside: avoid }`
+       so the whole sheet may flow across pages */
+    break-inside: auto !important;
+  }
+  .sv-summary-sheet .sv-summary-title {
+    font-size: 13pt !important;
+  }
+  /* compact header on paper: no rounded tinted panel, just a rule */
+  .sv-summary-sheet .sv-summary-header {
+    border: 0 !important;
+    border-bottom: 1px solid #d4d4d8 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    padding: 0 0 2mm !important;
+    margin-bottom: 3mm !important;
+  }
+  /* section blocks: two columns, each block kept whole on a page */
+  .sv-summary-sheet .sv-summary-sections {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    column-gap: 5mm !important;
+    row-gap: 3mm !important;
+    break-inside: auto !important;
+  }
+  .sv-summary-sheet .sv-summary-section {
+    break-inside: avoid !important;
+    padding: 1.5mm 2.5mm !important;
+    border-radius: 3px !important;
+  }
+  /* inside a (half-width) section block, lists stack vertically */
+  .sv-summary-sheet .sv-summary-cols {
+    grid-template-columns: 1fr !important;
+    gap: 1.5mm 0 !important;
+    margin-top: 1mm !important;
+  }
+  .sv-summary-sheet .sv-summary-label {
+    font-size: 7.5pt !important;
+    letter-spacing: 0.08em !important;
+    margin-bottom: 0.5mm !important;
+  }
+  .sv-summary-sheet .sv-summary-list {
+    row-gap: 0.7mm !important;
+  }
+}
+
+/* nudge */
+
+/* ============ KaTeX math typesetting polish ============ */
+
+/* math inherits the surrounding text color in both themes */
+.katex {
+  color: inherit;
+}
+
+/* inline math sits slightly larger than body text for readability */
+.sv-math-inline .katex {
+  font-size: 1.04em;
+}
+
+/* display math: centered, breathing room, scrolls on narrow screens */
+.sv-math-block .katex-display {
+  margin: 0;
+  padding: 0.45em 0.75em;
+}
+.sv-math-block .katex-display > .katex {
+  white-space: normal;
+  font-size: 1.06em;
+}
+/* every display equation becomes its own centered line with quiet structure */
+.sv-math-block {
+  scrollbar-width: thin;
+}
+/* inline display-math chips inside sentences shouldn't stretch the line box */
+.sv-math-inline .katex-display {
+  margin: 0.25em 0;
+}
+/* subscript/superscript spacing tuned for dense engineering text */
+.katex .mord.subsup,
+.katex .msupsub {
+  font-feature-settings: 'ss01';
+}
+/* operators and units inside math read better slightly upright */
+.katex .mord.text {
+  font-size: 0.95em;
+}
+
+/* tighter math inside dense UI rows (quiz options, cards) */
+.sv-math-inline .katex .mord.text {
+  font-size: 0.97em;
+}
+
+@media print {
+  .katex {
+    color: #000 !important;
+    font-size: 1em !important;
+  }
+  .sv-math-block {
+    overflow: visible !important;
+  }
+}
+
+/* respect reduced motion for KaTeX animations (none by default, future-proofing) */
+@media (prefers-reduced-motion: reduce) {
+  .katex * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* =================================================================
+   ROUND 11 — the BOOK READING EXPERIENCE (lesson pages)
+   The lesson stops being a stack of cards and becomes a book page:
+   one paper surface, a running head, serif prose at a reading
+   measure, run-in small-cap labels, hairline rules, ornaments.
+   ================================================================= */
+
+/* ---- book palette (theme-aware paper + ink + rules) ---- */
+:root {
+  --sv-book-page: oklch(0.995 0.005 95);      /* warm paper white */
+  --sv-book-page-edge: oklch(0.87 0.008 90);  /* page edge hairline */
+  --sv-book-ink: oklch(0.25 0.015 160);      /* near-black green ink */
+  --sv-book-ink-soft: oklch(0.47 0.015 160); /* softened ink */
+  --sv-book-rule: oklch(0.82 0.01 95);       /* hairline rules */
+  --sv-book-rule-strong: oklch(0.72 0.012 95);
+  --sv-book-shade: oklch(0.965 0.008 95);    /* faint wash for defs */
+}
+.dark {
+  --sv-book-page: oklch(0.175 0.012 165);   /* night-reading page */
+  --sv-book-page-edge: oklch(0.30 0.015 165);
+  --sv-book-ink: oklch(0.94 0.006 100);
+  --sv-book-ink-soft: oklch(0.72 0.012 110);
+  --sv-book-rule: oklch(0.30 0.015 165);
+  --sv-book-rule-strong: oklch(0.40 0.015 165);
+  --sv-book-shade: oklch(0.21 0.012 165);
+}
+
+/* ---- the page itself: a sheet lying on the desk ---- */
+.sv-book {
+  background: var(--sv-book-page);
+  border: 1px solid var(--sv-book-page-edge);
+  border-radius: 3px;
+  box-shadow:
+    0 1px 2px oklch(0 0 0 / 0.05),
+    0 12px 40px -14px oklch(0 0 0 / 0.14);
+}
+.dark .sv-book {
+  box-shadow:
+    0 1px 2px oklch(0 0 0 / 0.4),
+    0 16px 48px -14px oklch(0 0 0 / 0.55);
+}
+
+/* the reading body: serif prose at book measure (labs/notes opt out
+   with an explicit font-sans island wrapper) */
+.sv-book-body {
+  font-family: var(--font-stix), "STIX Two Text", Georgia, "Times New Roman", serif;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: var(--sv-book-ink);
+  hyphens: auto;
+  font-variant-numeric: oldstyle-nums;
+}
+.sv-book-body .katex {
+  hyphens: none;
+}
+/* justified text block from phone-landscape up — the typographic hallmark
+   of a printed page (kept ragged below 640px where rivers would show) */
+@media (min-width: 640px) {
+  .sv-book-body {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  /* labels, lists and interactive rows stay flush left */
+  .sv-book-body h2,
+  .sv-book-body h3,
+  .sv-book-body button,
+  .sv-book-body ol,
+  .sv-book-body aside,
+  .sv-book-body .sv-math-block {
+    text-align: start;
+  }
+}
+
+/* running head — the line at the top of every book page */
+.sv-book-runhead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--sv-book-rule);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sv-book-ink-soft);
+}
+
+/* classic double rule under the chapter opening */
+.sv-book-rule-double {
+  height: 5px;
+  border-top: 1.5px solid var(--sv-book-rule-strong);
+  border-bottom: 1px solid var(--sv-book-rule);
+}
+
+/* the lede: opening paragraph, a size up, dark ink */
+.sv-book-lede {
+  font-size: 1.16em;
+  line-height: 1.72;
+  color: var(--sv-book-ink);
+}
+/* three-line drop cap on the opening word (only when it starts with a letter) —
+   rubricated like an illuminated initial, but muted to book ink, not neon */
+.sv-book-dropcap::first-letter {
+  float: left;
+  font-size: 3.35em;
+  line-height: 0.78;
+  padding: 0.09em 0.14em 0 0;
+  font-weight: 600;
+  color: color-mix(in oklab, var(--primary) 68%, var(--sv-book-ink));
+}
+
+/* small-cap run-in labels — "Definition 1.", "Theorem 2.", "Solution." */
+.sv-book-label {
+  font-weight: 600;
+  font-size: 0.8em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-right: 0.35em;
+}
+
+/* theorem / law block — indented, amber hairline, italic body */
+.sv-book-thm {
+  margin: 1.4rem 0 1.4rem 1.5rem;
+  padding: 0.15rem 0 0.15rem 1.15rem;
+  border-left: 2px solid color-mix(in oklab, var(--chart-2) 62%, transparent);
+  font-style: italic;
+}
+.sv-book-thm .katex {
+  font-style: normal; /* keep math upright inside italic theorems */
+}
+.sv-book-thm .sv-book-label {
+  font-style: normal;
+}
+
+/* definition wash — the faintest paper tint, full measure */
+.sv-book-def {
+  margin: 1.35rem 0;
+  padding: 0.9rem 1.1rem 0.9rem 1.25rem;
+  background: var(--sv-book-shade);
+  border-left: 2.5px solid color-mix(in oklab, var(--primary) 55%, transparent);
+  border-radius: 0 2px 2px 0;
+}
+
+/* insight — a marginal note in rose */
+.sv-book-note {
+  margin: 1.4rem 0 1.4rem 1.5rem;
+  padding-left: 1.15rem;
+  border-left: 2px solid color-mix(in oklab, var(--color-rose-400, oklch(0.65 0.19 13)) 55%, transparent);
+  font-style: italic;
+  font-size: 0.97em;
+  color: var(--sv-book-ink-soft);
+}
+.sv-book-note .sv-book-label {
+  font-style: normal;
+}
+
+/* display math breathes like in a book: centered on its own lines, with overflow protection */
+.sv-math-block,
+.katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+}
+.sv-book .sv-math-block {
+  margin: 1.15rem 0;
+}
+.sv-book .sv-math-block .katex-display {
+  padding: 0.35em 0.5em;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* the QED tombstone */
+.sv-book-qed {
+  display: inline-block;
+  width: 0.52em;
+  height: 0.52em;
+  margin-left: 0.5em;
+  background: var(--sv-book-ink);
+  vertical-align: baseline;
+}
+
+/* part ornament — centered asterism between parts of the lesson */
+.sv-book-orn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.6rem 0;
+  color: var(--sv-book-ink-soft);
+  user-select: none;
+}
+.sv-book-orn::before,
+.sv-book-orn::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(to right, transparent, var(--sv-book-rule-strong));
+}
+.sv-book-orn::after {
+  background: linear-gradient(to left, transparent, var(--sv-book-rule-strong));
+}
+
+/* foot of the page: folio line + prev/next */
+.sv-book-folio {
+  text-align: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sv-book-ink-soft);
+}
+
+/* keep interactive bits (buttons, inputs) in the UI sans face */
+.sv-book-body button,
+.sv-book-body input,
+.sv-book-body textarea,
+.sv-book-body select {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* print: the page flattens onto paper (global print block strips colors) */
+@media print {
+  .sv-book {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    font-size: 11pt;
+  }
+  .sv-book-def {
+    border-left-color: #52525b !important;
+    background: #f4f4f5 !important;
+  }
+  .sv-book-thm,
+  .sv-book-note {
+    border-left-color: #a1a1aa !important;
+  }
+  .sv-book-dropcap::first-letter {
+    color: #000 !important;
+  }
+}
+
+/* =================================================================
+   ROUND 13 — THE DEEPER RESULTS, DISSOLVED INTO THE PAGE
+   The deeper theory is not a separate compartment: its subsections
+   continue the section's own numbering, each with a quiet tag naming
+   what it is — plus the figure plates set between hairline rules.
+   ================================================================= */
+
+/* the quiet tag after a deeper subsection's title — a mention of what
+   this run of results is, not a level system */
+.sv-depth-tag {
+  display: inline-block;
+  margin-left: 0.85rem;
+  vertical-align: 3px;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: color-mix(in oklab, var(--chart-2) 66%, var(--sv-book-ink));
+}
+.sv-depth-tag--frontier {
+  color: color-mix(in oklab, var(--color-rose-400, oklch(0.65 0.19 13)) 60%, var(--sv-book-ink));
+}
+/* the frontier star keeps its rose tint in print */
+@media print {
+  .sv-depth-tag {
+    color: #0f766e !important;
+  }
+  .sv-depth-tag--frontier {
+    color: #9f1239 !important;
+  }
+}
+/* narrow screens: the tag drops under the title instead of wrapping */
+@media (max-width: 560px) {
+  .sv-depth-tag {
+    display: block;
+    margin: 0.3rem 0 0;
+  }
+}
+
+
+/* the proof environment — an indented argument that closes on a tombstone */
+.sv-book-proof {
+  margin: 1.1rem 0 1.35rem 1.5rem;
+  padding: 0.1rem 0 0.1rem 1.15rem;
+  border-left: 2px solid var(--sv-book-rule-strong);
+}
+.sv-book-proof .sv-book-label-proof {
+  font-style: italic;
+  font-weight: 600;
+  margin-right: 0.4em;
+}
+
+/* the open problem — set off in amber italics, like a problem list entry */
+.sv-book-open {
+  margin: 1.5rem 0;
+  padding: 0.95rem 1.2rem 0.95rem 1.3rem;
+  border-left: 2.5px solid color-mix(in oklab, var(--chart-2) 55%, transparent);
+  background: color-mix(in oklab, var(--chart-2) 6%, transparent);
+  border-radius: 0 2px 2px 0;
+  font-style: italic;
+}
+.sv-book-open .katex {
+  font-style: normal;
+}
+.sv-book-open .sv-book-label {
+  font-style: normal;
+}
+
+/* derivation — display-math working with hanging commentary */
+.sv-book-deriv {
+  margin: 1.35rem 0 1.35rem 1.5rem;
+  padding-left: 1.15rem;
+  border-left: 2px solid color-mix(in oklab, var(--primary) 34%, var(--sv-book-rule));
+}
+
+/* depth example — hairline-framed like the worked examples, but compact */
+.sv-book-dexample {
+  margin: 1.5rem 0;
+  padding: 1rem 1.2rem;
+  border-top: 1px solid var(--sv-book-rule);
+  border-bottom: 1px solid var(--sv-book-rule);
+}
+.sv-book-dexample .sv-book-dex-head {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sv-book-ink-soft);
+  margin-bottom: 0.45rem;
+}
+
+@media print {
+  .sv-book-proof {
+    border-left-color: #a1a1aa !important;
+  }
+  .sv-book-open {
+    border-left-color: #b45309 !important;
+    background: #fdf6e3 !important;
+  }
+  .sv-book-deriv {
+    border-left-color: #a1a1aa !important;
+  }
+}
+/* (round-12 debug marker removed) */
+
+/* -----------------------------------------------------------------------------
+   Hand-drawn notebook & chalkboard sketch styling
+   ----------------------------------------------------------------------------- */
+.font-handwriting {
+  font-family: var(--font-handwriting), "Caveat", "Comic Sans MS", cursive;
+}
+
+.bg-notebook-grid {
+  background-color: #faf7f2;
+  background-image: 
+    linear-gradient(to right, rgba(0, 60, 140, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 60, 140, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.dark .bg-notebook-grid {
+  background-color: #12161f;
+  background-image: 
+    linear-gradient(to right, rgba(100, 160, 240, 0.10) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(100, 160, 240, 0.10) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-notebook-lined {
+  background-color: #fcfbf9;
+  background-image: linear-gradient(to bottom, transparent 23px, rgba(70, 120, 200, 0.18) 24px);
+  background-size: 100% 24px;
+}
+.dark .bg-notebook-lined {
+  background-color: #141720;
+  background-image: linear-gradient(to bottom, transparent 23px, rgba(120, 170, 255, 0.12) 24px);
+  background-size: 100% 24px;
+}
+
+.bg-chalkboard {
+  background-color: #152219;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 0);
+  background-size: 18px 18px;
+}
+

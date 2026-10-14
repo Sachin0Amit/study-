@@ -1,0 +1,439 @@
+     1→import type { SectionContent } from '../library'
+     2→
+     3→// ============================================================================
+     4→// Engineering Semester Exams — ECE / EE / ME branch content (books
+     5→// 'engg-ece', 'engg-ee', 'engg-me'). Full SectionContent for the FIRST
+     6→// section of 12 core chapters: ECE — Network Analysis & Synthesis (10.1),
+     7→// Signals & Systems (14.1), Analog Communication (16.1), EM Field Theory
+     8→// (19.1); EE — Circuit Theory & Network Analysis (9.1), Electrical Machines I
+     9→// (14.1), Power Systems I (19.1), Power Electronics (21.1); ME — Applied
+    10→// Thermodynamics (9.1), Strength of Materials (11.1), Fluid Mechanics (10.1),
+    11→// IC Engines (22.1). University-exam oriented (AKTU / VTU paper pattern).
+    12→// All backslashes doubled in TS strings for KaTeX.
+    13→// ============================================================================
+    14→
+    15→export const enggBranchContent: SectionContent[] = [
+    16→  // ------------------------------------------------- ECE 10.1 — Networks
+    17→  {
+    18→    sectionId: 'engg-ece-networks-s1',
+    19→    readingTime: 9,
+    20→    prerequisites: [
+    21→      'KCL and KVL for simple resistive circuits',
+    22→      'Matrix multiplication and transpose',
+    23→      'Two-terminal elements: resistors and ideal sources as branches'
+    24→    ],
+    25→    intro: 'Every Network Analysis paper (AKTU KEC303 / VTU Semester 3) begins with the graph: strip the elements away and keep only the connection pattern. Topology decides how many independent KCL and KVL equations you must write before any numbers appear. Mastering tree, incidence, tie-set and cut-set matrices turns messy mesh and nodal analysis into a mechanical procedure worth easy marks.',
+    26→    objectives: [
+    27→      'Draw the graph of a network and count tree branches, links and independent loops for any connected graph',
+    28→      'Write the reduced incidence matrix $A$ and use the formulations $A i_b = 0$ (KCL) and $v_b = A^T v_n$ (KVL)',
+    29→      'Construct fundamental tie-set and cut-set matrices from a chosen tree and state their sizes',
+    30→      'Solve the nodal equations of a resistive network straight from the incidence formulation'
+    31→    ],
+    32→    concepts: [
+    33→      {
+    34→        term: 'Graph, tree and co-tree',
+    35→        kind: 'definition',
+    36→        statement: 'A **directed graph** replaces every two-terminal element by a **branch** joining two **nodes**; a **tree** is any connected subgraph containing all $n$ nodes but no closed path, and it always has **$n - 1$ twigs** with the remaining **$b - n + 1$ links** forming the co-tree.',
+    37→        detail: 'Every link added to the tree closes exactly one loop, so a connected graph has exactly $b - n + 1$ independent loops and $n - 1$ independent node equations. Exams love the counting question "how many links / twigs / loops" — draw the graph, never guess from the circuit diagram. Sources stay in as branches here; killing sources is the Thevenin exercise of Section 10.2, a completely different operation.'
+    38→      },
+    39→      {
+    40→        term: 'Incidence matrix',
+    41→        kind: 'notation',
+    42→        statement: 'The **reduced incidence matrix** $A$ is $(n-1) \\times b$ with $a_{kj} = +1$ if branch $j$ leaves node $k$, $-1$ if it enters and $0$ otherwise; KCL becomes $A i_b = 0$ and branch voltages follow node voltages as $v_b = A^T v_n$.',
+    43→        detail: 'The rank of $A$ is $n - 1$ for a connected graph because the reference-node row is dropped. Sign conventions must stay consistent — one flipped arrow and the matrix system turns singular. Choosing the reference at the node with the most branches shortens the algebra, a trick worth marks in long problems.'
+    44→      },
+    45→      {
+    46→        term: 'Tie-set (fundamental loop) matrix',
+    47→        kind: 'law',
+    48→        statement: 'Each **link** of the co-tree closes exactly one **fundamental loop** through the tree; collecting orientations row-wise gives the $(b-n+1) \\times b$ **tie-set matrix** $B$, and KVL reads $B v_b = 0$ with loop currents entering as $i_b = B^T i_L$.',
+    49→        detail: 'The f-loop direction is fixed by its own link. Substituting Ohm law and $i_b = B^T i_L$ produces the familiar mesh-resistance equations — mesh analysis is just tie-set analysis on the natural tree of a planar graph. The orthogonality $B A^T = 0$ is a favourite two-mark proof.'
+    50→      },
+    51→      {
+    52→        term: 'Cut-set (fundamental cut-set) matrix',
+    53→        kind: 'law',
+    54→        statement: 'A **cut-set** is a minimal set of branches whose removal splits the graph into two parts; each **twig** defines one fundamental cut-set, giving the $(n-1) \\times b$ **cut-set matrix** $Q$ with KCL as $Q i_b = 0$ and $v_b = Q^T v_t$.',
+    55→        detail: 'The f-cut-set direction is set by its twig, and $Q$ is the machine form of "total current leaving a supernode is zero". Numericals ask sizes: $Q$ is $(n-1) \\times b$ and $B$ is $(b-n+1) \\times b$, with $Q B^T = 0$ linking them. Twig voltages as variables generalise node analysis.'
+    56→      },
+    57→      {
+    58→        term: 'Counting trees and MNA preview',
+    59→        kind: 'insight',
+    60→        statement: 'The number of possible trees of a **complete graph** on $n$ nodes is $n^{n-2}$ (Cayley), e.g. $4^2 = 16$ trees for four nodes; when voltage sources or floating elements break the pure admittance pattern, nodal analysis upgrades to **modified nodal analysis (MNA)**.',
+    61→        detail: 'MNA appends extra rows for the branch currents that cannot be eliminated (voltage-source currents), keeping the incidence-based structure intact — SPICE works this way. The counting question "trees of a complete graph with 4 nodes" (answer 16) appears verbatim in AKTU papers; remember each such tree has $n - 1 = 3$ twigs.'
+    62→      }
+    63→    ],
+    64→    examples: [
+    65→      {
+    66→        title: 'Topology bookkeeping of a five-node graph',
+    67→        problem: 'A connected network graph has $n = 5$ nodes and $b = 8$ branches. Find the number of twigs, links, independent loops, the rank of the incidence matrix, and the sizes of the fundamental tie-set and cut-set matrices.',
+    68→        steps: [
+    69→          { label: 'Step 1', text: '```text\ntwigs = n - 1 = 4 ; links = b - n + 1 = 8 - 5 + 1 = 4\n```\nA tree on 5 nodes always uses $n - 1 = 4$ twigs; the remaining $8 - 4 = 4$ branches are the links of the co-tree.' },
+    70→          { label: 'Step 2', text: 'Each link closes exactly one independent loop, so the graph has $b - n + 1 = 4$ fundamental loops — exactly the number of independent KVL equations mesh analysis will need.' },
+    71→          { label: 'Step 3', text: 'KCL supplies $n - 1 = 4$ independent node equations, and the reduced incidence matrix $A$ is $(n-1) \\times b = 4 \\times 8$ with rank $4$.' },
+    72→          { label: 'Step 4', text: 'Hence $B$ is $4 \\times 8$ (one row per link) and $Q$ is $4 \\times 8$ (one row per twig); the check $BA^T = 0$ must hold identically, a 30-second self-verification in the exam.' }
+    73→        ],
+    74→        result: '4 twigs, 4 links, 4 independent loops, rank $A = 4$; $B$ is $4\\times8$ and $Q$ is $4\\times8$.'
+    75→      },
+    76→      {
+    77→        title: 'Nodal analysis from the incidence formulation',
+    78→        problem: 'A 5 A current source feeds node 1 of a network whose conductances are $G_{10} = 1\\ \\text{S}$ (node 1 to ground), $G_{12} = 2\\ \\text{S}$ (between nodes 1 and 2) and $G_{20} = 2\\ \\text{S}$ (node 2 to ground). Find both node voltages.',
+    79→        steps: [
+    80→          { label: 'Step 1', text: '```text\nnode 1: (1+2)V1 - 2V2 = 5 ; node 2: -2V1 + (2+2)V2 = 0\n```\nPick node 0 as reference. The node-admittance form $A Y_b A^T v_n = i_s$ gives $3V_1 - 2V_2 = 5$ and $-2V_1 + 4V_2 = 0$.' },
+    81→          { label: 'Step 2', text: 'The second equation gives $V_1 = 2V_2$; substitute into the first: $3(2V_2) - 2V_2 = 4V_2 = 5$.' },
+    82→          { label: 'Step 3', text: 'Hence $V_2 = 1.25$ V and $V_1 = 2.5$ V.' },
+    83→          { label: 'Step 4', text: 'KCL check at node 1: current down $G_{10}$ is $2.5 \\times 1 = 2.5$ A and current towards node 2 is $2(2.5 - 1.25) = 2.5$ A — exactly the injected 5 A.' }
+    84→        ],
+    85→        result: '$V_1 = 2.5$ V and $V_2 = 1.25$ V, with the source current fully accounted for by KCL.'
+    86→      }
+    87→    ],
+    88→    keyTakeaways: [
+    89→      'A tree on $n$ nodes has $n-1$ twigs; the co-tree holds the $b-n+1$ links, and each link defines one independent loop.',
+    90→      'The incidence matrix encodes both laws: $Ai_b = 0$ for KCL and $v_b = A^Tv_n$ for KVL, with rank $n-1$.',
+    91→      'Tie-set matrix $B$ ($(b-n+1)\\times b$) carries KVL $Bv_b = 0$; cut-set matrix $Q$ ($(n-1)\\times b$) carries KCL $Qi_b = 0$; always $BA^T = 0$.',
+    92→      'A complete graph $K_n$ has $n^{n-2}$ spanning trees — 16 for four nodes, 125 for five.'
+    93→    ],
+    94→    quiz: [
+    95→      {
+    96→        q: 'A connected graph has 15 branches and 9 nodes. The number of links is',
+    97→        options: ['7', '8', '6', '15'],
+    98→        answer: 0,
+    99→        explanation: 'Step 1: Links are the co-tree branches, $b - n + 1$. Step 2: Substitute: $15 - 9 + 1 = 7$. Step 3: The twigs number $n - 1 = 8$, which is the planted distractor. Step 4: Links plus twigs must total 15 branches, confirming $7 + 8 = 15$.'
+   100→      },
+   101→      {
+   102→        q: 'The rank of the reduced incidence matrix of a connected graph with 6 nodes is',
+   103→        options: ['6', '5', '1', '0'],
+   104→        answer: 1,
+   105→        explanation: 'Step 1: Dropping the reference node leaves $n - 1$ independent rows. Step 2: Those rows are independent KCL equations at the remaining nodes. Step 3: Hence rank $= 6 - 1 = 5$. Step 4: Rank 6 is impossible because all six node rows sum to zero.'
+   106→      },
+   107→      // PYQ-pattern: Cayley tree count for complete graphs
+   108→      {
+   109→        q: 'The number of possible trees of a complete graph with four nodes is',
+   110→        options: ['8', '12', '16', '64'],
+   111→        answer: 2,
+   112→        explanation: 'Step 1: Cayley formula: spanning trees of $K_n$ equal $n^{n-2}$. Step 2: With $n = 4$: $4^2 = 16$. Step 3: Each tree has 3 twigs, so twig-counting alone undercounts. Step 4: 64 is the $4^3$ exponent trap.'
+   113→      },
+   114→      {
+   115→        q: 'Which matrix equation is the node form of Kirchhoff current law?',
+   116→        options: ['$B v_b = 0$', '$A i_b = 0$', '$v_b = A^T v_n$', '$A v_b = 0$'],
+   117→        answer: 1,
+   118→        explanation: 'Step 1: KCL is a statement about currents meeting at nodes. Step 2: Each row of the incidence matrix sums branch currents at one node, giving $Ai_b = 0$. Step 3: $Bv_b = 0$ is KVL and $v_b = A^Tv_n$ maps node voltages to branch voltages. Step 4: $Q i_b = 0$ is the cut-set version of KCL, but the canonical node form is $Ai_b = 0$.'
+   119→      }
+   120→    ]
+   121→  },
+   122→  // ------------------------------------------------- ECE 14.1 — Signals
+   123→  {
+   124→    sectionId: 'engg-ece-signals-s1',
+   125→    readingTime: 10,
+   126→    prerequisites: [
+   127→      'Elementary calculus: integrating decaying exponentials',
+   128→      'Complex exponentials $e^{j\\omega t}$ and the Euler formula',
+   129→      'Unit step $u(t)$ and unit impulse basics'
+   130→    ],
+   131→    intro: 'Signals & Systems (KEC403 / VTU Semester 4) opens by sorting every signal into classes: continuous or discrete, periodic or not, energy or power. University papers test exactly these classification drills — periodicity of a sum, energy of a decaying exponential, stability of a system — because a wrong class means every later formula (Fourier, Laplace, z) is misapplied. This section builds the sorting machinery the whole semester reuses.',
+   132→    objectives: [
+   133→      'Classify signals as continuous/discrete, periodic/aperiodic, energy/power and deterministic/random',
+   134→      'Compute signal energy $E = \\int |x(t)|^2 dt$ and test periodicity for both CT sums and discrete sinusoids',
+   135→      'Test systems for linearity, time-invariance, causality and BIBO stability',
+   136→      'Explain why $e^{j2n}$ is not periodic although $e^{j2t}$ is — the classic exam trap'
+   137→    ],
+   138→    concepts: [
+   139→      {
+   140→        term: 'Signal families',
+   141→        kind: 'definition',
+   142→        statement: 'A **continuous-time signal** $x(t)$ is defined for every $t$; a **discrete-time signal** $x[n]$ exists only at integer indices $n$, and when amplitudes are also quantised the signal is fully **digital**.',
+   143→        detail: 'Deterministic signals are given by formula; random signals (noise) only by statistics. Sampling turns CT into DT while quantisation discretises amplitude — two different operations that students constantly swap in viva questions. Chapters 14.4 and 16 chain them: sample first, quantise second.'
+   144→      },
+   145→      {
+   146→        term: 'Periodicity rules',
+   147→        kind: 'theorem',
+   148→        statement: '$x(t)$ is **periodic** if $x(t + T) = x(t)$ for some $T > 0$; a sum of sinusoids is periodic iff the ratio of any two periods is **rational**, with $T_0$ the LCM. For $x[n] = \\cos(\\Omega_0 n)$ periodicity needs $\\frac{\\Omega_0}{2\\pi} = \\frac{p}{q}$ rational, giving $N = q$ samples.',
+   149→        detail: 'The killer trap: $e^{j2t}$ is periodic with $T = \\pi$, but $e^{j2n}$ is NOT periodic because $\\frac{2}{2\\pi} = \\frac{1}{\\pi}$ is irrational — no integer N reproduces the sample sequence. Exam favourite: $\\cos(0.3\\pi n)$ has $\\frac{0.3\\pi}{2\\pi} = \\frac{3}{20}$, so $N = 20$.'
+   150→      },
+   151→      {
+   152→        term: 'Energy and power signals',
+   153→        kind: 'definition',
+   154→        statement: '**Energy** $E = \\lim_{T \\to \\infty} \\int_{-T/2}^{T/2} |x(t)|^2 dt$ and **power** $P = \\lim_{T \\to \\infty} \\frac{1}{T} \\int_{-T/2}^{T/2} |x(t)|^2 dt$; an energy signal has finite $E$ (then $P = 0$), while a periodic signal has finite $P$ with $E \\to \\infty$.',
+   155→        detail: '$tu(t)$ is neither — its energy and power both blow up. For $x(t) = Ae^{-at}u(t)$ with $a > 0$: $E = \\frac{A^2}{2a}$; for $A\\cos\\omega_0 t$: $P = \\frac{A^2}{2}$. Papers ask "classify the signal" — compute $E$ first, then $P$, and quote both numbers.'
+   156→      },
+   157→      {
+   158→        term: 'Linearity and time-invariance',
+   159→        kind: 'method',
+   160→        statement: 'A system is **linear** iff homogeneity and additivity both hold; it is **time-invariant** iff $x(t) \\to y(t)$ implies $x(t - t_0) \\to y(t - t_0)$ for every shift $t_0$.',
+   161→        detail: '$y(t) = x(2t)$ is linear but time-varying (a shift before compression becomes a doubled shift after it). The amplitude modulator $y(t) = x(t)\\cos\\omega_c t$ is also linear but time-VARYING: the carrier samples a different value at the shifted instant. The integrator $y(t) = \\int_{-\\infty}^{t} x(\\tau) d\\tau$ is linear, time-invariant and causal — the standard all-true example.'
+   162→      },
+   163→      {
+   164→        term: 'Causality and BIBO stability',
+   165→        kind: 'theorem',
+   166→        statement: 'A system is **causal** when the output never anticipates the input ($h(t) = 0$ for $t < 0$ for LTI systems) and **BIBO stable** iff $\\int_{-\\infty}^{\\infty} |h(\\tau)| d\\tau < \\infty$ (CT) or $\\sum_k |h[k]| < \\infty$ (DT).',
+   167→        detail: '$h(t) = e^{-2t}u(t)$ is stable since $\\int_0^{\\infty} e^{-2t} dt = \\frac{1}{2}$; $u(t)$ is NOT BIBO stable even though a step input gives a bounded-looking output — the definition demands a bounded output for EVERY bounded input, and any bounded non-decaying input accumulates without limit. Test the impulse response, never one lucky input.'
+   168→      }
+   169→    ],
+   170→    examples: [
+   171→      {
+   172→        title: 'Energy of a one-sided exponential',
+   173→        problem: 'Classify $x(t) = 3e^{-2t}u(t)$ as an energy or power signal and compute its energy.',
+   174→        steps: [
+   175→          { label: 'Step 1', text: '```text\nE = integral of 9 e^{-4t} dt from 0 to infinity = 9/4\n```\nSquare the signal: $|x(t)|^2 = 9e^{-4t}$ for $t \\ge 0$ and zero elsewhere, so $E = \\int_0^{\\infty} 9e^{-4t} dt$.' },
+   176→          { label: 'Step 2', text: 'Evaluate: $E = 9 \\left[ \\frac{e^{-4t}}{-4} \\right]_0^{\\infty} = 9 \\times \\frac{1}{4} = 2.25$ J (normalised to 1 $\\Omega$).' },
+   177→          { label: 'Step 3', text: 'Because $E$ is finite, $P = 0$ and $x(t)$ is an energy signal; in general $Ae^{-at}u(t)$ stores $E = \\frac{A^2}{2a}$.' },
+   178→          { label: 'Step 4', text: 'Scaling check: amplitude 1 would give $E = \\frac{1}{4}$, and tripling amplitude multiplies energy by 9 — the square law examiners exploit to build distractors.' }
+   179→        ],
+   180→        result: '$E = 2.25$ J and $P = 0$: an energy signal.'
+   181→      },
+   182→      {
+   183→        title: 'Periodicity of CT sums and DT sinusoids',
+   184→        problem: 'Find the fundamental period of $x(t) = 2\\cos(\\frac{\\pi t}{4}) + 3\\sin(\\frac{\\pi t}{8})$ and of $x[n] = \\cos(0.3\\pi n)$; is $e^{j2n}$ periodic?',
+   185→        steps: [
+   186→          { label: 'Step 1', text: 'Continuous-time terms: $T_1 = \\frac{2\\pi}{\\pi/4} = 8$ s and $T_2 = \\frac{2\\pi}{\\pi/8} = 16$ s.' },
+   187→          { label: 'Step 2', text: 'The ratio $\\frac{T_1}{T_2} = \\frac{1}{2}$ is rational, so the sum is periodic with $T_0 = \\mathrm{lcm}(8, 16) = 16$ s.' },
+   188→          { label: 'Step 3', text: 'Discrete case: $\\frac{\\Omega_0}{2\\pi} = \\frac{0.3\\pi}{2\\pi} = \\frac{3}{20}$ is rational, so $x[n]$ is periodic with $N = 20$ samples — the digital frequency must be a rational multiple of $2\\pi$.' },
+   189→          { label: 'Step 4', text: 'For $e^{j2n}$: $\\frac{2}{2\\pi} = \\frac{1}{\\pi}$ is irrational, so no integer $N$ satisfies $e^{j2(n+N)} = e^{j2n}$; it is aperiodic even though its continuous twin $e^{j2t}$ has period $\\pi$.' }
+   190→        ],
+   191→        result: '$T_0 = 16$ s; $N = 20$ samples; $e^{j2n}$ is not periodic.'
+   192→      }
+   193→    ],
+   194→    keyTakeaways: [
+   195→      'A CT sum is periodic only for rational period ratios, with $T_0$ the LCM; a DT sinusoid is periodic only when $\\frac{\\Omega_0}{2\\pi}$ is rational.',
+   196→      'Energy signals have finite $E$ and zero $P$; periodic signals are power signals with infinite energy.',
+   197→      '$y(t) = x(2t)$ and $y(t) = x(t)\\cos\\omega_c t$ are linear but time-varying — the two most-tested time-invariance failures.',
+   198→      'BIBO stability means $\\int |h| < \\infty$ (or $\\sum |h[k]| < \\infty$), verified on the impulse response itself.'
+   199→    ],
+   200→    quiz: [
+   201→      {
+   202→        q: 'The energy of $x(t) = e^{-3t}u(t)$ is',
+   203→        options: ['$\\frac{1}{6}$', '$\\frac{1}{3}$', '$\\frac{1}{9}$', '$3$'],
+   204→        answer: 0,
+   205→        explanation: 'Step 1: Square first: $|x(t)|^2 = e^{-6t}$. Step 2: Integrate: $E = \\int_0^{\\infty} e^{-6t} dt = \\frac{1}{6}$. Step 3: The shortcut $E = \\frac{1}{2a}$ with $a = 3$ gives the same $\\frac{1}{6}$. Step 4: $\\frac{1}{3}$ is the trap of integrating $e^{-3t}$ before squaring.'
+   206→      },
+   207→      {
+   208→        q: 'The fundamental period of $x[n] = \\cos(0.25\\pi n)$ is',
+   209→        options: ['4', '8', '16', 'not periodic'],
+   210→        answer: 1,
+   211→        explanation: 'Step 1: For DT sinusoids compute $\\frac{\\Omega_0}{2\\pi}$. Step 2: $\\frac{0.25\\pi}{2\\pi} = \\frac{1}{8}$ is rational with denominator 8. Step 3: Hence $N = 8$ samples. Step 4: Had the ratio been irrational, "not periodic" would be the answer — as with $e^{j2n}$.'
+   212→      },
+   213→      // PYQ-pattern: DT periodicity drill
+   214→      {
+   215→        q: 'Which of these discrete-time signals is NOT periodic?',
+   216→        options: ['$\\cos(\\frac{\\pi n}{3})$', '$\\sin(0.2\\pi n)$', '$e^{j2n}$', '$\\cos(0.5\\pi n + 1)$'],
+   217→        answer: 2,
+   218→        explanation: 'Step 1: Periodicity needs $\\frac{\\Omega_0}{2\\pi}$ rational. Step 2: $\\frac{\\pi/3}{2\\pi} = \\frac{1}{6}$ gives $N = 6$; $\\frac{0.2\\pi}{2\\pi} = \\frac{1}{10}$ gives $N = 10$; $\\frac{0.5\\pi}{2\\pi} = \\frac{1}{4}$ gives $N = 4$. Step 3: $\\frac{2}{2\\pi} = \\frac{1}{\\pi}$ is irrational, so $e^{j2n}$ never repeats. Step 4: A constant phase offset never affects periodicity.'
+   219→      },
+   220→      {
+   221→        q: 'The system $y(t) = x(t)\\cos(\\omega_0 t)$ is',
+   222→        options: ['linear and time-invariant', 'linear but time-varying', 'nonlinear and time-invariant', 'nonlinear and time-varying'],
+   223→        answer: 1,
+   224→        explanation: 'Step 1: Scaling and additivity pass, so the system is linear. Step 2: A shifted input gives $x(t-\\tau)\\cos\\omega_0 t$. Step 3: The shifted output is $x(t-\\tau)\\cos\\omega_0(t-\\tau)$, which differs because the carrier samples a different value. Step 4: This is the AM modulator — linear but time-varying.'
+   225→      }
+   226→    ]
+   227→  },
+   228→  // --------------------------------------------- ECE 16.1 — Analog Comm
+   229→  {
+   230→    sectionId: 'engg-ece-analog-comm-s1',
+   231→    readingTime: 11,
+   232→    prerequisites: [
+   233→      'Fourier series of periodic signals (preview of ECE Section 14.3)',
+   234→      'Trigonometric integrals and the Parseval idea',
+   235→      'Logarithm and decibel arithmetic'
+   236→    ],
+   237→    intro: 'Analog Communication (KEC401 / AKTU Semester 4) starts where signals end: every message must be measured in watts and spectra before any modulation is designed. Papers open with a Fourier-series numerical — harmonic amplitudes of a square wave — then a power or noise computation in dB and dBm. These marks come quickly once the three tools (series, Parseval and $N = kTB$) are automatic.',
+   238→    objectives: [
+   239→      'Expand a periodic waveform into trigonometric or exponential Fourier series and sketch its line spectrum',
+   240→      'Apply the Parseval power theorem to split total power among harmonics',
+   241→      'Convert powers between watts, dB and dBm without sign or factor errors',
+   242→      'Compute thermal noise $N = kTB$ and signal-to-noise ratio in dB'
+   243→    ],
+   244→    concepts: [
+   245→      {
+   246→        term: 'Fourier series and the line spectrum',
+   247→        kind: 'theorem',
+   248→        statement: 'A periodic $x(t)$ of period $T$ expands as $x(t) = a_0 + \\sum_{n=1}^{\\infty} (a_n \\cos n\\omega_0 t + b_n \\sin n\\omega_0 t)$ with $\\omega_0 = \\frac{2\\pi}{T}$; the **line spectrum** plots harmonic amplitude against $n f_0$, lines spaced $\\frac{1}{T}$ apart.',
+   249→        detail: 'Symmetry halves the work: even $x$ keeps only $a_n$, odd $x$ only $b_n$, and half-wave symmetry kills the even harmonics. The bipolar square wave of levels $\\pm A$ carries harmonics $\\frac{4A}{n\\pi}$ on odd $n$ only — the $\\frac{4}{\\pi}$ factor and odd-only pattern are the most quoted results in communication exams.'
+   250→      },
+   251→      {
+   252→        term: 'Exponential form and negative frequencies',
+   253→        kind: 'notation',
+   254→        statement: 'The compact form $x(t) = \\sum_{n=-\\infty}^{\\infty} c_n e^{jn\\omega_0 t}$ with $c_n = \\frac{1}{T} \\int_T x(t) e^{-jn\\omega_0 t} dt$ gives **two-sided spectra**, $c_{-n} = c_n^{*}$ for real signals and $|c_n| = \\frac{1}{2}\\sqrt{a_n^2 + b_n^2}$.',
+   255→        detail: 'Each trigonometric harmonic splits into $\\pm n f_0$ lines of half amplitude. The standing trap: quoting $a_n$ where $|c_n|$ was asked (or vice versa) loses a factor of two — check whether the question says one-sided or two-sided spectrum before writing numbers.'
+   256→      },
+   257→      {
+   258→        term: 'Parseval power theorem',
+   259→        kind: 'theorem',
+   260→        statement: 'Total normalised power $P = \\sum_{n=-\\infty}^{\\infty} |c_n|^2 = a_0^2 + \\frac{1}{2} \\sum_{n=1}^{\\infty} (a_n^2 + b_n^2)$ — **power splits additively over harmonics**.',
+   261→        detail: 'For the $\\pm A$ square wave, $P = A^2$ with about 81% in the fundamental and 90% once the third harmonic is added — the Parseval answer to "what fraction of power survives a band-limiting filter". Channel truncation causes distortion exactly computable this way.'
+   262→      },
+   263→      {
+   264→        term: 'Decibel arithmetic',
+   265→        kind: 'method',
+   266→        statement: 'Power ratios use $\\text{dB} = 10 \\log_{10} \\frac{P_2}{P_1}$ and absolute power uses **dBm**, $\\text{dBm} = 10\\log_{10} \\frac{P}{1\\ \\text{mW}}$; halving power is $-3$ dB and a decade is 10 dB.',
+   267→        detail: 'Voltage ratios across equal impedances use $20\\log$. Traps that cost marks: adding dB means multiplying powers; dBm + dB stays dBm; doubling voltage is $+6$ dB. Anchor values to memorise: 1 mW is 0 dBm, 1 W is $+30$ dBm and 1 $\\mu$W is $-30$ dBm.'
+   268→      },
+   269→      {
+   270→        term: 'Thermal noise, SNR and noise figure',
+   271→        kind: 'law',
+   272→        statement: 'Available **thermal noise** power is $N = kTB$ with $k = 1.38\\times10^{-23}$ J/K, giving the anchor $-174$ dBm/Hz at $T_0 = 290$ K; the **noise figure** $F = \\frac{SNR_{in}}{SNR_{out}} \\ge 1$ means, in dB, $SNR_{out} = SNR_{in} - NF$.',
+   273→        detail: 'Every doubling of bandwidth adds 3 dB of noise — the shortcut $-174 + 10\\log B$ is expected in exams. The Friis cascade $F = F_1 + \\frac{F_2 - 1}{G_1} + \\cdots$ shows stage one dominating, which is why the low-noise amplifier sits first in every receiver chain.'
+   274→      }
+   275→    ],
+   276→    examples: [
+   277→      {
+   278→        title: 'Harmonics and power of a square wave',
+   279→        problem: 'A square wave switching between $\\pm 5$ V has a period of 1 ms. Compute the amplitudes of the first three odd harmonics, the total normalised power, and the percentage of power carried by the fundamental.',
+   280→        steps: [
+   281→          { label: 'Step 1', text: '```text\nodd harmonics only : a_n = 4A / (n pi) , A = 5 V\n```\nHalf-wave symmetry keeps only odd harmonics with $a_n = \\frac{4A}{n\\pi}$: $a_1 = \\frac{20}{\\pi} = 6.37$ V, $a_3 = \\frac{20}{3\\pi} = 2.12$ V and $a_5 = \\frac{20}{5\\pi} = 1.27$ V.' },
+   282→          { label: 'Step 2', text: 'Normalised power of the wave itself: mean-square of $\\pm 5$ V is $P = A^2 = 25$ W.' },
+   283→          { label: 'Step 3', text: 'Fundamental power by Parseval: $P_1 = \\frac{a_1^2}{2} = \\frac{(6.37)^2}{2} = 20.3$ W, i.e. $\\frac{20.3}{25} \\approx 81\\%$ of the total.' },
+   284→          { label: 'Step 4', text: 'Adding the third harmonic: $P_{1+3} = \\frac{8A^2}{\\pi^2}(1 + \\frac{1}{9}) = 22.5$ W, so 90% of the power sits below $3f_0 = 3$ kHz — the Parseval justification for band-limiting channels.' }
+   285→        ],
+   286→        result: '$a_1 = 6.37$ V, $a_3 = 2.12$ V, $a_5 = 1.27$ V; total power 25 W with about 81% in the fundamental.'
+   287→      },
+   288→      {
+   289→        title: 'Thermal noise floor and SNR',
+   290→        problem: 'A receiver of 200 kHz bandwidth operates at 290 K. If the delivered signal power is $-91$ dBm, find the thermal noise power in dBm and the SNR.',
+   291→        steps: [
+   292→          { label: 'Step 1', text: 'In watts: $N = kTB = 1.38\\times10^{-23} \\times 290 \\times 2\\times10^5 = 8.0\\times10^{-16}$ W.' },
+   293→          { label: 'Step 2', text: 'Convert: $N_{\\text{dBm}} = 10\\log_{10} \\frac{8.0\\times10^{-16}}{10^{-3}} = 10\\log_{10}(8.0\\times10^{-13}) \\approx -121$ dBm.' },
+   294→          { label: 'Step 3', text: 'Shortcut check: $-174 + 10\\log_{10}(2\\times10^5) = -174 + 53 = -121$ dBm — identical.' },
+   295→          { label: 'Step 4', text: 'Hence $SNR = S - N = -91 - (-121) = 30$ dB, a 1000:1 power ratio; any front-end noise figure subtracts directly from this figure.' }
+   296→        ],
+   297→        result: '$N \\approx -121$ dBm and $SNR = 30$ dB.'
+   298→      }
+   299→    ],
+   300→    keyTakeaways: [
+   301→      'A $\\pm A$ square wave carries odd harmonics $\\frac{4A}{n\\pi}$ with total power $A^2$ and roughly 81% in the fundamental.',
+   302→      'Parseval turns spectra into power budgets: $P = \\sum |c_n|^2$ with $|c_n| = \\frac{1}{2}\\sqrt{a_n^2 + b_n^2}$.',
+   303→      'dB compares, dBm anchors: $N = kTB$ gives $-174$ dBm/Hz at 290 K plus $10\\log B$.',
+   304→      'Noise figure subtracts in dB — $SNR_{out} = SNR_{in} - NF$ — and Friis crowns the first stage.'
+   305→    ],
+   306→    quiz: [
+   307→      {
+   308→        q: 'The third-harmonic amplitude of a $\\pm 2$ V square wave is',
+   309→        options: ['$\\frac{8}{3\\pi}$ V', '$\\frac{8}{\\pi}$ V', '$\\frac{4}{3\\pi}$ V', '$\\frac{2}{3\\pi}$ V'],
+   310→        answer: 0,
+   311→        explanation: 'Step 1: Odd harmonics only, amplitude $\\frac{4A}{n\\pi}$. Step 2: With $A = 2$ and $n = 3$: $\\frac{8}{3\\pi}$. Step 3: $\\frac{8}{\\pi}$ forgets the division by $n$. Step 4: Even harmonics vanish by half-wave symmetry.'
+   312→      },
+   313→      {
+   314→        q: 'Thermal noise available from a resistor at 290 K over a 1 MHz bandwidth is about',
+   315→        options: ['$-174$ dBm', '$-114$ dBm', '$-164$ dBm', '$-104$ dBm'],
+   316→        answer: 1,
+   317→        explanation: 'Step 1: Anchor: $-174$ dBm per Hz at 290 K. Step 2: Bandwidth factor: $10\\log_{10} 10^6 = 60$ dB. Step 3: Total: $-174 + 60 = -114$ dBm. Step 4: $-174$ dBm alone is the per-hertz figure, not the integrated power.'
+   318→      },
+   319→      // PYQ-pattern: dBm conversion drill
+   320→      {
+   321→        q: 'A power level of 0.5 W expressed in dBm is',
+   322→        options: ['$+27$ dBm', '$-3$ dBm', '$+30$ dBm', '$+3$ dBm'],
+   323→        answer: 0,
+   324→        explanation: 'Step 1: 0.5 W is 500 mW. Step 2: $10\\log_{10} 500 = 10 \\times 2.699 = 26.99$. Step 3: Hence $+27$ dBm (approximately). Step 4: $+30$ dBm is 1 W and $-3$ dBm would be half a milliwatt — both classic slips.'
+   325→      },
+   326→      {
+   327→        q: 'Doubling the receiver bandwidth at constant temperature changes the thermal noise power by',
+   328→        options: ['+6 dB', '+3 dB', '-3 dB', '+10 dB'],
+   329→        answer: 1,
+   330→        explanation: 'Step 1: Noise power is $N = kTB$, linear in bandwidth. Step 2: Doubling $B$ doubles $N$. Step 3: A factor of two in power is $10\\log 2 \\approx 3$ dB. Step 4: +6 dB would be a fourfold increase — that is the voltage-doubling rule.'
+   331→      }
+   332→    ]
+   333→  },
+   334→  // ------------------------------------------------- ECE 19.1 — EMFT
+   335→  {
+   336→    sectionId: 'engg-ece-emft-s1',
+   337→    readingTime: 10,
+   338→    prerequisites: [
+   339→      'Dot and cross products of vectors',
+   340→      'Partial derivatives of functions of several variables',
+   341→      'Line, surface and volume integrals at physics level'
+   342→    ],
+   343→    intro: 'Electromagnetic Field Theory (AKTU KEC501 / VTU Semester 5) is written in the language of vector calculus: gradient, divergence and curl. Every later unit — electrostatics, magnetostatics, Maxwell equations, plane waves — is one of these operators applied to a field. Papers test the machinery directly: compute $\\nabla V$, verify a field is conservative, or push a flux through a cube with the divergence theorem.',
+   344→    objectives: [
+   345→      'Compute gradient, divergence, curl and Laplacian of given fields in Cartesian coordinates',
+   346→      'Interpret $\\nabla V$ as the direction of steepest increase and use $\\vec E = -\\nabla V$',
+   347→      'Apply the divergence and Stokes theorems to swap volume/surface and surface/line integrals',
+   348→      'Use vector identities to test conservative fields and classify sources'
+   349→    ],
+   350→    concepts: [
+   351→      {
+   352→        term: 'Gradient',
+   353→        kind: 'definition',
+   354→        statement: 'The **gradient** $\\nabla V = \\frac{\\partial V}{\\partial x}\\hat a_x + \\frac{\\partial V}{\\partial y}\\hat a_y + \\frac{\\partial V}{\\partial z}\\hat a_z$ points along maximum increase of $V$, with directional derivative $\\frac{dV}{dl} = \\nabla V \\cdot \\hat a_l$.',
+   355→        detail: 'Electrostatics uses $\\vec E = -\\nabla V$: the field points downhill on the potential surface. Numericals ask for $\\nabla V$ at a point followed by $|\\vec E|$. Trap: equipotential surfaces are perpendicular to $\\nabla V$, so any claim that $\\vec E$ is tangent to an equipotential is always false.'
+   356→      },
+   357→      {
+   358→        term: 'Divergence and the divergence theorem',
+   359→        kind: 'theorem',
+   360→        statement: 'The **divergence** $\\nabla \\cdot \\vec D = \\frac{\\partial D_x}{\\partial x} + \\frac{\\partial D_y}{\\partial y} + \\frac{\\partial D_z}{\\partial z}$ measures outward flux per unit volume, and the theorem $\\oint_S \\vec D \\cdot d\\vec S = \\int_v (\\nabla \\cdot \\vec D)\\, dv$ trades a closed-surface flux for one volume integral.',
+   361→        detail: 'Positive divergence marks a source (charge), negative a sink; zero divergence everywhere means the field is solenoidal. In cylindrical and spherical coordinates the operators carry $\\frac{1}{\\rho}$ and $\\frac{1}{r}$ prefactors — omitting them is the single most common error in university papers.'
+   362→      },
+   363→      {
+   364→        term: 'Curl and the Stokes theorem',
+   365→        kind: 'theorem',
+   366→        statement: 'The **curl** $\\nabla \\times \\vec F$ measures circulation density per unit area, with $\\oint_L \\vec F \\cdot d\\vec L = \\int_S (\\nabla \\times \\vec F) \\cdot d\\vec S$; a field with $\\nabla \\times \\vec F = 0$ everywhere is **conservative**.',
+   367→        detail: 'Conservative means zero work around every closed path and existence of a scalar potential. Electrostatic $\\vec E$ is curl-free while magnetostatic $\\vec B$ is divergence-free — the pair of facts Maxwell later breaks with time-varying terms. Compute the curl from the determinant recipe; visual guessing is where marks die.'
+   368→      },
+   369→      {
+   370→        term: 'Laplacian and curvilinear coordinates',
+   371→        kind: 'notation',
+   372→        statement: 'The **Laplacian** is $\\nabla^2 V = \\nabla \\cdot \\nabla V$; the charge-free electrostatic region obeys the Laplace equation $\\nabla^2 V = 0$, with charge present the Poisson equation $\\nabla^2 V = -\\frac{\\rho_v}{\\epsilon}$.',
+   373→        detail: 'Cylindrical length elements are $d\\rho, \\rho\\, d\\phi, dz$ and spherical $dr, r\\, d\\theta, r \\sin\\theta\\, d\\phi$; unit vectors $\\hat a_\\phi$ and $\\hat a_\\theta$ change direction from point to point. Carrying Cartesian unit vectors into curvilinear integrals silently produces wrong answers — always convert first.'
+   374→      },
+   375→      {
+   376→        term: 'Vector identities as free marks',
+   377→        kind: 'insight',
+   378→        statement: 'Two identities always hold: $\\nabla \\times (\\nabla V) = 0$ — **gradient fields are curl-free** — and $\\nabla \\cdot (\\nabla \\times \\vec A) = 0$ — **curl fields are solenoidal**.',
+   379→        detail: 'These two statements underwrite the potential definitions $\\vec E = -\\nabla V$ and $\\vec B = \\nabla \\times \\vec A$. One-mark regulars: state the divergence of a curl, the curl of a gradient, and that $\\nabla^2 (\\frac{1}{r}) = 0$ for $r \\ne 0$ — memorise all three as true.'
+   380→      }
+   381→    ],
+   382→    examples: [
+   383→      {
+   384→        title: 'Field and work from a potential',
+   385→        problem: 'Given the potential $V = 5x^2y$ volts, find $\\vec E$ at $P(1, 2, 0)$, its magnitude, and the work done in moving a 2 $\\mu$C charge from P to the origin.',
+   386→        steps: [
+   387→          { label: 'Step 1', text: '```text\ndV/dx = 10xy ; dV/dy = 5x^2 ; E = - grad V\n```\nCompute $\\nabla V = 10xy\\hat a_x + 5x^2\\hat a_y$; at P this is $20\\hat a_x + 5\\hat a_y$.' },
+   388→          { label: 'Step 2', text: '$\\vec E = -\\nabla V = -20\\hat a_x - 5\\hat a_y$ V/m, so $|\\vec E| = \\sqrt{400 + 25} = 20.6$ V/m directed towards decreasing potential.' },
+   389→          { label: 'Step 3', text: 'Potentials: $V_P = 5(1)^2(2) = 10$ V and $V_O = 0$. Since the curl of a gradient vanishes, the field is conservative and the path taken does not matter.' },
+   390→          { label: 'Step 4', text: 'Work by the external agent: $W = -q(V_O - V_P) = -2\\times10^{-6}(0 - 10) = +20\\ \\mu$J.' }
+   391→        ],
+   392→        result: '$\\vec E = -20\\hat a_x - 5\\hat a_y$ V/m with $|\\vec E| = 20.6$ V/m; the work done is $20\\ \\mu$J.'
+   393→      },
+   394→      {
+   395→        title: 'Flux through a cube by the divergence theorem',
+   396→        problem: 'The field $\\vec D = 2xy\\hat a_x + x^2\\hat a_y$ C/m$^2$ fills the unit cube $0 \\le x, y, z \\le 1$. Find the total flux leaving the cube.',
+   397→        steps: [
+   398→          { label: 'Step 1', text: 'Divergence: $\\nabla \\cdot \\vec D = \\frac{\\partial (2xy)}{\\partial x} + \\frac{\\partial (x^2)}{\\partial y} = 2y + 0 = 2y$ C/m$^3$.' },
+   399→          { label: 'Step 2', text: 'The divergence theorem converts the six-face surface integral into one volume integral: $\\Psi = \\int_0^1 \\int_0^1 \\int_0^1 2y \\, dv$.' },
+   400→          { label: 'Step 3', text: 'Evaluate: $\\int_0^1 2y\\, dy = 1$ while the $x$ and $z$ integrations each contribute a factor of 1, so $\\Psi = 1$ C.' },
+   401→          { label: 'Step 4', text: 'Sanity check: positive net outward flux means the cube encloses $+1$ C of charge by Gauss law, $Q = \\oint \\vec D \\cdot d\\vec S$.' }
+   402→        ],
+   403→        result: 'Total flux $\\Psi = 1$ C, i.e. an enclosed charge of $+1$ C.'
+   404→      }
+   405→    ],
+   406→    keyTakeaways: [
+   407→      '$\\nabla V$ points along steepest potential increase; $\\vec E = -\\nabla V$ points downhill with that magnitude of slope.',
+   408→      'Divergence converts to total flux via $\\oint \\vec D \\cdot d\\vec S = \\int (\\nabla \\cdot \\vec D) dv$; positive divergence marks a source.',
+   409→      'Conservative field: $\\nabla \\times \\vec F = 0$, closed-path work zero, potential exists — electrostatic $\\vec E$ qualifies, magnetostatic $\\vec B$ is solenoidal instead.',
+   410→      'The identities $\\nabla \\times \\nabla V = 0$ and $\\nabla \\cdot \\nabla \\times \\vec A = 0$ are free marks; curvilinear operators carry $\\frac{1}{\\rho}$ and $\\frac{1}{r}$ prefactors.'
+   411→    ],
+   412→    quiz: [
+   413→      {
+   414→        q: 'If $V = xy$, the magnitude of $\\nabla V$ at the point $(2, 3)$ is',
+   415→        options: ['$\\sqrt{13}$', '$5$', '$6$', '$1$'],
+   416→        answer: 0,
+   417→        explanation: 'Step 1: $\\nabla V = y\\hat a_x + x\\hat a_y$. Step 2: At $(2, 3)$: $3\\hat a_x + 2\\hat a_y$. Step 3: Magnitude $= \\sqrt{9 + 4} = \\sqrt{13}$. Step 4: 5 is the sum of the components, not the norm.'
+   418→      },
+   419→      {
+   420→        q: '$\\nabla \\cdot (\\nabla \\times \\vec A)$ equals',
+   421→        options: ['$\\nabla^2 \\vec A$', '$0$', '$|\\vec A|^2$', '$1$'],
+   422→        answer: 1,
+   423→        explanation: 'Step 1: The divergence of any curl is an identity result. Step 2: Mixed partial derivatives commute, so the trace of the antisymmetric curl matrix vanishes. Step 3: Hence $\\nabla \\cdot (\\nabla \\times \\vec A) = 0$ always. Step 4: This is why $\\vec B = \\nabla \\times \\vec A$ automatically satisfies $\\nabla \\cdot \\vec B = 0$.'
+   424→      },
+   425→      {
+   426→        q: 'The work done by a conservative field around a closed path is',
+   427→        options: ['zero', 'equal to the enclosed flux', 'path dependent', 'always negative'],
+   428→        answer: 0,
+   429→        explanation: 'Step 1: Conservative means $\\vec F = -\\nabla V$ with single-valued $V$. Step 2: Around a closed path the potential returns to its start, so $\\oint \\vec F \\cdot d\\vec L = -\\oint dV = 0$. Step 3: Path dependence is the signature of NON-conservative fields. Step 4: Flux is a surface integral of the field, a different quantity altogether.'
+   430→      },
+   431→      {
+   432→        q: 'In cylindrical coordinates the correct differential length elements are',
+   433→        options: ['$d\\rho, d\\phi, dz$', '$d\\rho, \\rho\\, d\\phi, dz$', '$d\\rho, \\frac{d\\phi}{\\rho}, dz$', '$\\rho\\, d\\rho, d\\phi, dz$'],
+   434→        answer: 1,
+   435→        explanation: 'Step 1: An arc of radius $\\rho$ subtending $d\\phi$ has length $\\rho\\, d\\phi$, not $d\\phi$. Step 2: The radial and axial elements are simply $d\\rho$ and $dz$. Step 3: Hence $(d\\rho, \\rho\\, d\\phi, dz)$. Step 4: Forgetting the metric factor is exactly why curvilinear integrals come out wrong.'
+   436→      }
+   437→    ]
+   438→  },
+   439→

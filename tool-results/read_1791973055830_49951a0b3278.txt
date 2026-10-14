@@ -1,0 +1,426 @@
+     1→     1→# Research: Digital SAT + DRDO Scientist B — Complete Official Syllabi
+     2→     2→
+     3→     3→> **Task ID:** 2-b · **Agent:** research-agent-sat-drdo · **Compiled:** Oct 2025
+     4→     4→> **Primary sources:** College Board official (satsuite.collegeboard.org: Math overview, R&W section, structure page, Student Question Bank, *Digital SAT Suite Specifications Overview* PDF, Summer 2022), DRDO/RAC official advertisement PDFs (Advt 140, Advt 156, CEPTAM-11 advertisement + Tier-II syllabus PDFs from drdo.gov.in), cross-checked against Testbook/Adda247/Embibe/Test Innovators/Manhattan Review/Khan Academy compilations and the agent's domain knowledge. Sources listed at the end.
+     5→     5→
+     6→     6→---
+     7→     7→
+     8→     8→# PART 1 — DIGITAL SAT (College Board, current adaptive format)
+     9→     9→
+    10→    10→The digital SAT measures two sections — **Reading & Writing** and **Math** — delivered in the Bluebook app via **multistage adaptive testing (MST)**. It replaced the paper SAT internationally (Mar 2023) and in the U.S. (Mar 2024). Every question is discrete (one question per passage / standalone math item).
+    11→    11→
+    12→    12→## 1. Math Section — 4 Content Domains (44 questions total, 70 minutes)
+    13→    13→
+    14→    14→Math domains, skills and testing points below are from the official College Board *Specifications Overview* (Table 3) and the official Student Question Bank skill descriptions.
+    15→    15→
+    16→    16→### Domain 1: Algebra — ≈35% of section, 13–15 questions
+    17→    17→*Measures the ability to analyze, fluently solve, and create linear equations and inequalities, and to analyze and fluently solve equations and systems of equations using multiple techniques.*
+    18→    18→
+    19→    19→- **Skill 1.1 — Linear equations in one variable**
+    20→    20→  - Solve single- and multi-step linear equations fluently
+    21→    21→  - Create linear equations in one variable to solve problems in context
+    22→    22→  - Interpret the structure of an equation: constants, variables, coefficients, terms, solutions
+    23→    23→  - Identify equations with **no solution** or **infinitely many solutions**
+    24→    24→  - Fluency with algebraic manipulation (combining like terms, distributing, moving terms)
+    25→    25→- **Skill 1.2 — Linear equations in two variables**
+    26→    26→  - Work with the form **Ax + By = C** (standard form)
+    27→    27→  - Find the value of one variable when given the other
+    28→    28→  - Make connections among algebraic, graphical, and tabular representations of a two-variable linear equation
+    29→    29→  - Write the equation of a line; compute **slope**; interpret x- and y-**intercepts**
+    30→    30→  - Identify **parallel** and **perpendicular** lines via slopes
+    31→    31→  - Relate two variables to model a real-world relationship
+    32→    32→- **Skill 1.3 — Linear functions**
+    33→    33→  - Model relationships with linear functions; use function notation f(x)
+    34→    34→  - Interpret **input/output pairs** and **rate of change** (slope as a rate in context)
+    35→    35→  - Connect a function to its matching graph, table, or algebraic representation
+    36→    36→  - Interpret constants, variables, factors, and terms of a linear function in context
+    37→    37→- **Skill 1.4 — Systems of two linear equations in two variables**
+    38→    38→  - Solve systems graphically and algebraically (**substitution, elimination**)
+    39→    39→  - Determine when a system has **no solution, a unique solution, or infinitely many solutions**
+    40→    40→  - Connect a system of equations to a matching graph (intersection of lines)
+    41→    41→  - Create systems of two linear equations in two variables from context
+    42→    42→- **Skill 1.5 — Linear inequalities in one or two variables**
+    43→    43→  - Solve and interpret linear inequalities in one variable
+    44→    44→  - Work with two-variable inequalities in the xy-plane; graph solution regions
+    45→    45→  - Interpret a point in the xy-plane as a **possible solution** of an inequality (or system)
+    46→    46→  - Make connections among tabular, algebraic, and graphical representations of inequalities
+    47→    47→
+    48→    48→### Domain 2: Advanced Math — ≈35% of section, 13–15 questions
+    49→    49→*Measures skills and knowledge central for progression to more advanced math courses, including understanding of absolute value, quadratic, exponential, polynomial, rational, radical, and other nonlinear equations.*
+    50→    50→
+    51→    51→- **Skill 2.1 — Equivalent expressions**
+    52→    52→  - Use algebraic structure and **properties of operations** to **factor, rewrite, add, subtract, and multiply polynomials**
+    53→    53→  - Rewrite expressions with **rational exponents in radical form** (and vice versa)
+    54→    54→  - Simplify/expand/rearrange expressions into required equivalent forms
+    55→    55→  - Manipulate rational expressions and radicals to produce equivalent forms
+    56→    56→- **Skill 2.2 — Nonlinear equations in one variable and systems of equations in two variables**
+    57→    57→  - Solve **quadratic equations** (factoring, quadratic formula, completing the square)
+    58→    58→  - Determine the **number of real solutions** of a quadratic (discriminant)
+    59→    59→  - Solve **absolute value equations**
+    60→    60→  - Solve **rational and radical equations** (including recognizing **extraneous solutions**)
+    61→    61→  - Solve **polynomial equations** (factoring, roots)
+    62→    62→  - Solve **systems of equations in two variables** where one or both equations are nonlinear (e.g., linear–quadratic, quadratic–quadratic)
+    63→    63→  - Match the solutions of a system to a graph (points of intersection)
+    64→    64→- **Skill 2.3 — Nonlinear functions**
+    65→    65→  - **Quadratic functions**: interpret constants (vertex form, standard form); maximum/minimum values; zeros; transform/interpret graphs
+    66→    66→  - **Exponential functions**: model growth and decay; interpret constant ratio/growth factor and initial value; interpret **asymptotes**; transform/interpret graphs
+    67→    67→  - **Polynomial functions**: interpret input/output pairs, factors, terms; end behavior; zeros and their multiplicities
+    68→    68→  - **Rational, radical, absolute value, and piecewise-defined functions**: interpret and transform graphs
+    69→    69→  - Interpret the meaning of input/output pairs, constants, variables, factors, terms in a nonlinear model
+    70→    70→  - Function concepts: domain and range, function notation, relating graphs/tables/equations, composition of a function with a constant/linear expression, identifying a function from a relationship
+    71→    71→
+    72→    72→### Domain 3: Problem-Solving and Data Analysis — ≈15% of section, 5–7 questions
+    73→    73→*Measures the ability to apply quantitative reasoning about ratios, rates, and proportional relationships; understand and apply unit rate; and analyze and interpret one- and two-variable data.*
+    74→    74→
+    75→    75→- **Skill 3.1 — Ratios, rates, proportional relationships, and units**
+    76→    76→  - Solve problems using a **proportional relationship** between quantities
+    77→    77→  - Calculate/use **ratios and rates**; identify and use **unit rates**
+    78→    78→  - Work with **units, derived units, and unit conversion**
+    79→    79→  - Apply to **scale drawings** and problems in natural and social sciences
+    80→    80→- **Skill 3.2 — Percentages**
+    81→    81→  - Calculate percents; percent **increase/decrease**; discounts, interest, taxes, tips
+    82→    82→  - Recognize the relationship between a percent increase/decrease and a **growth factor** (e.g., 1.05 = +5%)
+    83→    83→- **Skill 3.3 — One-variable data: distributions and measures of center and spread**
+    84→    84→  - Analyze distributions in **frequency tables, histograms, dot plots, and box plots**
+    85→    85→  - Calculate/interpret **mean, median, mode** (measures of center)
+    86→    86→  - **Range, interquartile range, standard deviation** (measures of spread)
+    87→    87→  - Effect of **outliers**; compare multiple distributions
+    88→    88→- **Skill 3.4 — Two-variable data: models and scatterplots**
+    89→    89→  - Interpret **scatterplots**; describe associations (form, direction, strength, outliers)
+    90→    90→  - Use/finterpret the **line of best fit**; interpolate and extrapolate
+    91→    91→  - Fit and distinguish **linear, quadratic, and exponential models** to data in a scatterplot
+    92→    92→  - Interpret a graph modeling a relationship between two quantities
+    93→    93→- **Skill 3.5 — Probability and conditional probability**
+    94→    94→  - Calculate probability of an event from **tables, area models, or descriptions** of situations
+    95→    95→  - **Independent events**; **conditional probability** (including via two-way tables)
+    96→    96→- **Skill 3.6 — Inference from sample statistics and margin of error**
+    97→    97→  - Use **sample mean and sample proportion** to estimate **population mean and population proportion**
+    98→    98→  - Interpret **margin of error**; understand that a **larger sample size generally leads to a smaller margin of error**
+    99→    99→- **Skill 3.7 — Evaluating statistical claims: observational studies and experiments**
+   100→   100→  - Determine whether there is evidence for a **causal relationship** from a study description
+   101→   101→  - Understand why **random assignment** provides evidence for causation
+   102→   102→  - Identify which **population** results from random samples can be generalized to
+   103→   103→  - Distinguish **observational studies** from **controlled experiments**; confounding variables
+   104→   104→
+   105→   105→### Domain 4: Geometry and Trigonometry — ≈15% of section, 5–7 questions
+   106→   106→*Measures the ability to solve problems focusing on area and volume; lines, angles, and triangles; right triangles and trigonometry; and circles. (PSAT 8/9 omits trigonometry.)*
+   107→   107→
+   108→   108→- **Skill 4.1 — Area and volume**
+   109→   109→  - Solve area/perimeter problems: triangles, rectangles, squares, parallelograms, trapezoids, circles, composite figures
+   110→   110→  - Surface area and volume: prisms, cylinders, pyramids, cones, spheres (formulas provided on the reference sheet)
+   111→   111→  - Use **scale factors** to compute changes to length, area, and volume
+   112→   112→- **Skill 4.2 — Lines, angles, and triangles**
+   113→   113→  - **Triangle sum theorem**; exterior angle theorem
+   114→   114→  - **Vertical angle theorem**; angles formed by a **transversal cutting parallel lines**
+   115→   115→  - **Congruence and similarity** of triangles (congruence criteria: SSS, SAS, ASA; AA similarity)
+   116→   116→  - Understand how scale factor changes lengths but not angles
+   117→   117→  - Solve problems using similarity ratios/side proportions
+   118→   118→- **Skill 4.3 — Right triangles and trigonometry**
+   119→   119→  - **Pythagorean theorem** (and common Pythagorean triples)
+   120→   120→  - **Special right triangles**: 45°–45°–90° and 30°–60°–90° (given on reference sheet)
+   121→   121→  - Right-triangle **trigonometric ratios** (sine, cosine, tangent) — solve for sides/angles in similar triangles
+   122→   122→  - Relationship between the **sine and cosine of complementary angles** (sin x = cos(90° − x))
+   123→   123→  - Convert angle measures between **degrees and radians** (π radians = 180°)
+   124→   124→  - **Unit circle** basics (coordinates of points; quadrant signs)
+   125→   125→- **Skill 4.4 — Circles**
+   126→   126→  - Definitions/properties: **radius, diameter, chord, tangent, secant**; tangent ⊥ radius
+   127→   127→  - **Central and inscribed angles**; arc measure; **arc length**; **sector area**
+   128→   128→  - Convert between degrees and radians; use the unit circle
+   129→   129→  - **Circle equations**: standard form **(x − h)² + (y − k)² = r²**; find center/radius; **complete the square** to convert to standard form; create and interpret graphs of circles
+   130→   130→  - **Distance formula** in the coordinate plane (and connections to the Pythagorean theorem)
+   131→   131→  - Work with ordered pairs on a circle
+   132→   132→
+   133→   133→**Math item format notes (official):** ≈75% four-option multiple choice and ≈25% **student-produced response (SPR / grid-in)**; calculator allowed on the entire section (built-in **Desmos graphing calculator** in Bluebook, or an approved personal calculator); a **formula reference sheet** is provided; ≈30% of questions are in-context ("word") problems set in science, social science, or real-world scenarios; questions in each module are ordered easiest → hardest; all four domains appear in each module.
+   134→   134→
+   135→   135→## 2. Reading & Writing Section — 4 Content Domains (54 questions total, 64 minutes)
+   136→   136→
+   137→   137→Each question is a discrete, four-option multiple-choice item attached to one short passage (25–150 words) or a pair of passages. Passages represent **literature, history/social studies, the humanities, and science**. Informational graphics (tables, bar graphs, line graphs) appear in some questions. Domain/skill breakdown below is from the official *Specifications Overview* (Table 2) and Student Question Bank.
+   138→   138→
+   139→   139→### Domain 1: Craft and Structure — ≈28% of section, 13–15 questions
+   140→   140→*Measures comprehension, vocabulary, analysis, synthesis, and reasoning skills and knowledge needed to understand and use high-utility words and phrases in context, evaluate texts rhetorically, and make connections between topically related texts.*
+   141→   141→
+   142→   142→- **Skill 1.1 — Words in Context**
+   143→   143→  - Determine the most logical and **precise word/phrase** to complete a text (vocabulary in context)
+   144→   144→  - "As used in the text, what does ___ most nearly mean?" (high-utility academic vocabulary)
+   145→   145→  - Textually consistent word choice across contexts (multiple meanings/nuance)
+   146→   146→- **Skill 1.2 — Text Structure and Purpose**
+   147→   147→  - Identify the **main purpose** of the overall text
+   148→   148→  - Describe the **function of an underlined sentence/claim** within the text as a whole
+   149→   149→  - Analyze the **overall structure/organization** of a text and rhetorical strategies used
+   150→   150→- **Skill 1.3 — Cross-Text Connections** (paired passages)
+   151→   151→  - Identify points of **agreement** between two authors/passages
+   152→   152→  - Determine how the author of one passage would most likely **respond to a claim** in the other
+   153→   153→  - Compare similarities/differences in perspective, emphasis, or interpretation between texts
+   154→   154→
+   155→   155→### Domain 2: Information and Ideas — ≈26% of section, 12–14 questions
+   156→   156→*Measures comprehension, analysis, and reasoning skills and knowledge, and the ability to locate, interpret, evaluate, and integrate information and ideas from texts and informational graphics (tables, bar graphs, and line graphs).*
+   157→   157→
+   158→   158→- **Skill 2.1 — Central Ideas and Details**
+   159→   159→  - Identify the **main idea/theme** of a text
+   160→   160→  - Locate and interpret **supporting details**; answer questions about specific details in the passage
+   161→   161→  - Select an accurate **summary** of the text
+   162→   162→- **Skill 2.2 — Command of Evidence**
+   163→   163→  - **Textual evidence**: identify which finding/claim/quotation would best **support a conclusion** about the text
+   164→   164→  - **Quantitative evidence**: interpret **tables, bar graphs, line graphs**; determine which data support/illustrate a claim; complete a table to be consistent with findings
+   165→   165→- **Skill 2.3 — Inferences**
+   166→   166→  - "Which choice **most logically completes** the text?" — draw valid inferences beyond literal comprehension
+   167→   167→  - Complete incomplete ideas consistent with textual evidence
+   168→   168→
+   169→   169→### Domain 3: Standard English Conventions — ≈26% of section, 11–15 questions
+   170→   170→*Measures the ability to edit text to conform to core conventions of Standard English sentence structure, usage, and punctuation. All "Which choice completes the text so that it conforms to the conventions of Standard English?" items; arranged easiest → hardest regardless of convention tested.*
+   171→   171→
+   172→   172→- **Skill 3.1 — Boundaries** (options differ in punctuation)
+   173→   173→  - **Sentence boundaries**: recognizing complete sentences vs. fragments and run-ons
+   174→   174→  - **Linking clauses**: coordination (FANBOYS + comma), subordination (dependent markers), semicolon joining independent clauses
+   175→   175→  - **Punctuation within/among sentences**: commas, semicolons, colons, dashes, apostrophes
+   176→   176→  - **Supplements**: correct punctuation of nonessential/parenthetical material (names, appositives, interrupters)
+   177→   177→  - Unwanted punctuation at clause boundaries
+   178→   178→- **Skill 3.2 — Form, Structure, and Sense** (options differ in words or sentence structures)
+   179→   179→  - **Subject–verb agreement** (including with intervening phrases; indefinite pronouns)
+   180→   180→  - **Verb tense, mood, and voice** (consistency; conditional)
+   181→   181→  - **Pronoun–antecedent agreement and clarity**; pronoun case
+   182→   182→  - **Possessives** (singular/plural) vs. plurals vs. contractions
+   183→   183→  - **Noun forms** (count vs. non-count), adjective vs. adverb forms, comparative/superlative forms
+   184→   184→  - **Modifier placement** (dangling/misplaced modifiers)
+   185→   185→  - Frequently confused word pairs (e.g., its/it's, their/there); logical sense and idiomatic usage
+   186→   186→  - Logical conjunctions/transitions linking structure within sentences
+   187→   187→
+   188→   188→### Domain 4: Expression of Ideas — ≈20% of section, 8–12 questions
+   189→   189→*Measures the ability to revise texts to improve the effectiveness of written expression and to meet specific rhetorical goals.*
+   190→   190→
+   191→   191→- **Skill 4.1 — Transitions**
+   192→   192→  - Select the most logical **transition word/phrase** to complete a text (addition, cause-effect, contrast, exemplification, emphasis, sequence/chronology, summary)
+   193→   193→- **Skill 4.2 — Rhetorical Synthesis**
+   194→   194→  - Effectively use information from a **student's notes** (bullet-point information) to accomplish a stated **rhetorical goal**
+   195→   195→  - Sentence combining/revision for **concision, precision, and rhetorical effect**; eliminate redundancy
+   196→   196→
+   197→   197→**Domain order within each R&W module (official):** Craft and Structure questions come first, followed by Information and Ideas, then Standard English Conventions, then Expression of Ideas; within C&S, I&I, and EoI, similar skills are grouped and ordered easiest → hardest.
+   198→   198→
+   199→   199→## 3. Digital SAT Exam Pattern (official structure)
+   200→   200→
+   201→   201→| Component | Reading & Writing | Math |
+   202→   202→|---|---|---|
+   203→   203→| Modules | 2 (32 minutes each) | 2 (35 minutes each) |
+   204→   204→| Questions | 54 total (27/module; 25 operational + 2 pretest per module) | 44 total (22/module; 20 operational + 2 pretest per module) |
+   205→   205→| Time | 64 minutes | 70 minutes |
+   206→   206→| Question types | Discrete four-option MCQ (1 per passage) | ≈75% four-option MCQ + ≈25% student-produced response |
+   207→   207→| Graphics | Tables, bar graphs, line graphs | Yes (science/social science/real-world contexts ≈30%) |
+   208→   208→| Tools | — | Built-in graphing calculator (all of Math), formula reference sheet |
+   209→   209→| Passages | 25–150 words; literature, history/social studies, humanities, science; sometimes passage pairs | — |
+   210→   210→
+   211→   211→- **Total:** 98 questions, **2 hours 14 minutes** (2h 4m of section time + 10-minute break between R&W and Math)
+   212→   212→- **Adaptive format:** Section-level **multistage adaptive testing (MST)** — Module 1 of each section has a broad mix of easy, medium, hard questions; based on Module 1 performance, Module 2 is *more difficult* or *less difficult*. Students can move freely among questions within a module (flag/mark for review, navigate back/forth), but cannot return to a previous module.
+   213→   213→- **Scoring:** Each section scored **200–800** in 10-point intervals; **total score 400–1600** (sum of two section scores). No subscores or cross-test scores on the digital SAT. Vertical scale links SAT/PSAT suite. College & Career Readiness Benchmarks: **R&W 480, Math 530**.
+   214→   214→- **Delivery:** Bluebook digital testing app (laptop/iPad/managed device; device-lending available); scores in days; the app provides Mark for Review, testing timer, calculator, reference sheet, annotation tools; small number of indistinguishable unscored (pretest) questions in each module.
+   215→   215→- **Question order:** All four domains appear in each module; questions arranged easiest → hardest (per domain groups in R&W; across the whole module in Math).
+   216→   216→
+   217→   217→---
+   218→   218→
+   219→   219→# PART 2 — DRDO SCIENTIST 'B' RECRUITMENT (RAC — Recruitment & Assessment Centre)
+   220→   220→
+   221→   221→## 0. IMPORTANT: Evolution of the selection pattern (verified from official ads)
+   222→   222→
+   223→   223→DRDO Scientist 'B' recruitment is run by RAC (rac.gov.in), DRDO's recruitment body. The pattern has changed over the years — a study platform should reflect all of these:
+   224→   224→
+   225→   225→| Era / Advt | Selection route | Key facts (official) |
+   226→   226→|---|---|---|
+   227→   227→| **Legacy "SET" era ads** (e.g., RAC Advt 118/2016, 129/2018 — and the classic **Tier I + Tier II** pattern requested for this platform) | **Tier-I (screening) → Tier-II (descriptive) → Interview** | Tier-I: 100-mark screening test (Quantitative Aptitude, Reasoning & Problem Solving, General Awareness, English Language, General Science — ~20 questions each); Tier-II: 75-mark descriptive paper — **60 marks engineering discipline + 15 marks "Research Aptitude"** (Science & Technology priorities, Research aptitude, Quantitative aptitude & reasoning); then Personal Interview |
+   228→   228→| **Advt 140 (2022, 630 vacancies)** | Part-I disciplines (**ECE, ME, CSE**): GATE shortlist (1:25) → **Written Examination** → Interview (1:5). Part-II disciplines (**EE** + 14 others): GATE → Interview | Written exam: **2 descriptive papers of 300 marks each, 3 hours each** (600 total, offline paper-based), syllabus **similar to UPSC Engineering Services (ESE) Main in the relevant discipline** (downloadable from RAC). Final merit: **80% weightage of written exam + 20% interview** (Part-II: 80% GATE + 20% interview). Interview qualifying marks: **70% (UR), 60% (EWS/OBC/SC/ST/PwD)** |
+   229→   229→| **Advt 156 (current, 2025)** | **Valid GATE score (2023/2024/2025) + Personal Interview** for all disciplines | Final merit: **80% weightage of GATE score + 20% weightage of interview**; interview qualifying 70% UR / 60% reserved. No written exam |
+   230→   230→| **Related: CEPTAM (DRDO's other recruitment body)** | STA-'B' (Senior Technical Assistant): Tier-I CBT + Tier-II CBT | Tier-I: 150 Q / 150 marks / 120 min — General Science (40), General English (30), Quantitative Aptitude/General Maths (40), General Intelligence & Reasoning (40); **negative marking 0.25**; qualifying 40% UR/OBC/EWS, 35% SC/ST/PwBD. Tier-II: 20-min Personality test (qualifying) + **subject-specific CBT: 120 Q / 120 marks / 120 min**, negative 0.25. (Tech-'A' adds a Trade Test.) |
+   231→   231→
+   232→   232→**Disciplines that exist (beyond CSE/ECE/EE/ME):** Advt 140/156 recruit (or recruited) in **Electronics & Communication, Mechanical, Computer Science & Engg, Electrical, Material Science/Metallurgical, Physics, Chemistry, Chemical Engg, Aeronautical/Aerospace Engg, Mathematics, Civil Engg, Instrumentation Engg, Material Science, Naval Architecture, Environmental Science & Engg, Atmospheric Science, Microbiology, Biochemistry** (DRDO/ADA/DST/CME/WESEE etc.). CEPTAM STA-'B' subject syllabus additionally covers **Automobile Engg, Geology, Library Science, Psychology**. For the requested deep-dive, full Tier-II discipline syllabi are given below for **CSE, ECE, EE, ME**.
+   233→   233→
+   234→   234→## 1. Tier I Syllabus — Screening Test (legacy written-exam pattern; mirrors RAC/CEPTAM screening stage)
+   235→   235→
+   236→   236→**Pattern (legacy RAC Tier-I):** 100 marks, ~2 hours, objective/screening in nature, **negative marking 0.25 per wrong answer**; used to shortlist candidates for Tier-II. Five sections of ~20 questions each:
+   237→   237→
+   238→   238→- **Section A — Quantitative Aptitude (≈20 Q)**
+   239→   239→  - Number system, HCF & LCM, surds/indices
+   240→   240→  - Percentages; profit & loss; discount; simple & compound interest
+   241→   241→  - Ratio & proportion; mixtures & alligation; partnership; averages
+   242→   242→  - Time & work; pipes & cisterns; time, speed & distance; trains/boats
+   243→   243→  - Algebra basics (linear & quadratic equations, polynomials)
+   244→   244→  - Geometry & mensuration basics; trigonometry basics
+   245→   245→  - Elementary statistics & data interpretation (tables, charts, graphs)
+   246→   246→- **Section B — Reasoning & Problem Solving (≈20 Q)**
+   247→   247→  - Analogies (word/number/letter); classification (odd one out)
+   248→   248→  - Series (number, letter, figure); coding–decoding
+   249→   249→  - Blood relations; direction & distance sense
+   250→   250→  - Syllogisms; statement–assumption/conclusion; logical deduction
+   251→   251→  - Seating arrangements & puzzles; Venn diagrams
+   252→   252→  - Order & ranking; calendar & clock problems; non-verbal/figure reasoning
+   253→   253→- **Section C — General Awareness (≈20 Q)**
+   254→   254→  - Current affairs (national & international)
+   255→   255→  - Indian history, polity & constitution, geography, economy
+   256→   256→  - Science & technology in news; defence & security developments, DRDO missions/products
+   257→   257→  - Awards, honours, sports; books & authors; important days; organizations (UN, ISRO, DRDO, HAL, BARC…)
+   258→   258→- **Section D — English Language (≈20 Q)**
+   259→   259→  - Grammar: articles, prepositions, tenses, subject–verb agreement, error spotting
+   260→   260→  - Vocabulary: synonyms, antonyms, one-word substitution, idioms & phrases
+   261→   261→  - Sentence completion/jumbled sentences; active–passive & direct–indirect (basic)
+   262→   262→  - Reading comprehension (short passages)
+   263→   263→- **Section E — General Science (≈20 Q)**
+   264→   264→  - Physics (10+2 level: mechanics, heat, optics, electricity, modern physics basics)
+   265→   265→  - Chemistry (10+2 level: atomic structure, bonding, acids/bases, metals/non-metals, carbon compounds basics)
+   266→   266→  - Biology (cells, genetics basics, human physiology, plant biology, ecology)
+   267→   267→  - Everyday science; recent S&T developments; space & defence science
+   268→   268→
+   269→   269→*(Cross-check: the current CEPTAM Tier-I uses the same four/five families of sections — General Science, General English, Quantitative Aptitude/General Maths, General Intelligence & Reasoning — confirming the section composition.)*
+   270→   270→
+   271→   271→## 2. Tier II — Discipline Syllabi (descriptive papers; per official RAC descriptive syllabus ≈ UPSC ESE-Mains style, as documented for Advt 140 written exam)
+   272→   272→
+   273→   273→> The 2022 RAC written exam consisted of **Paper 1 (300 marks, 3 h)** and **Paper 2 (300 marks, 3 h)**, descriptive. The topic lists below are the official discipline syllabi (as published by RAC and reproduced by Testbook/Adda247/Embibe).
+   274→   274→
+   275→   275→### 2.1 Computer Science & Engineering (CSE)
+   276→   276→
+   277→   277→**Paper 1 (CSE):**
+   278→   278→- **Engineering Mathematics**
+   279→   279→  - *Linear Algebra:* Matrices, determinants, system of linear equations, eigenvalues and eigenvectors, LU decomposition, orthonormal bases; Transforms — Fourier, DCT, wavelets
+   280→   280→  - *Calculus:* Limits, continuity, differentiability, maxima and minima, mean value theorem, integration; Vector calculus — gradient, divergence, curl, integral theorems
+   281→   281→  - *Probability:* Random variables; probability distributions — uniform, normal, exponential, Poisson, binomial; mean, median, mode, standard deviation; conditional probability and Bayes theorem; Information theory: Shannon entropy, information and conditional information
+   282→   282→- **Discrete Mathematics:** Propositional and first-order logic; sets, relations, functions, partial orders and lattices, groups; graphs — connectivity, matching, colouring; combinatorics — counting, recurrence relations, generating functions
+   283→   283→- **Digital Logic:** Boolean algebra; combinational and sequential circuits; minimization; number representation and computer arithmetic (fixed and floating point)
+   284→   284→- **Computer Organization and Architecture:** Machine instructions and addressing modes; assembly language; ALU, data path and control unit; instruction pipelining; memory hierarchy — cache, main memory, secondary storage; I/O interface (interrupt and DMA modes); RISC, CISC, parallel architectures
+   285→   285→- **Programming and Data Structures:** Programming in C — functions, structures, memory management, recursion; arrays, stacks, queues, linked lists, trees, binary search trees, binary heaps, graphs; object-oriented programming basics
+   286→   286→- **Algorithms:** Searching, sorting, hashing; asymptotic worst-case time and space complexity; algorithm design techniques — greedy, dynamic programming, divide-and-conquer; graph search, minimum spanning trees, shortest paths
+   287→   287→
+   288→   288→**Paper 2 (CSE):**
+   289→   289→- **Compiler Design:** Lexical analysis, parsing, syntax-directed translation; runtime environments, intermediate code generation
+   290→   290→- **Operating System:** Processes, threads, inter-process communication, concurrency and synchronization, deadlocks; CPU scheduling; memory management and virtual memory; file systems; virtual machines and hypervisors; secure operating systems
+   291→   291→- **Theory of Computation:** Regular expressions and finite automata; context-free grammars and push-down automata; regular and context-free languages, pumping lemma; Turing machines and undecidability
+   292→   292→- **Databases:** ER model; relational model — relational algebra, tuple calculus, SQL; integrity constraints; normal forms; file organization, indexing (e.g., B and B+ trees); transactions and concurrency control
+   293→   293→- **Computer Networks:** Concept of layering, OSI model; LAN technologies (Ethernet); flow and error control techniques, switching; IPv4/IPv6, routers, routing algorithms (distance vector, link state); TCP/UDP and sockets, congestion control; application layer protocols (DNS, SMTP, POP, FTP, HTTP); basics of WiFi
+   294→   294→- **Security of Cyber Systems:** Cybersecurity principles; Kerberos, RADIUS; secure protocols (IPSec, SSH, SSL); basics of public and private key cryptography, hash functions, blockchains, digital signatures and certificates; firewalls, intrusion detection systems; basics of IoT security and cloud security; threats, vulnerabilities, malicious software; attacks — buffer overflow, DoS, DDoS, SQL injection, web application attacks
+   295→   295→- **AI and Machine Learning:** Classification and clustering techniques; dimensionality reduction — PCA, SVD; correlation and regression analysis; training and test data, overfitting, underfitting; search; ontology; decision trees; artificial neural networks — activation function, multi-layer perceptron, deep learning; applications of ANNs
+   296→   296→
+   297→   297→### 2.2 Electronics & Communication Engineering (ECE)
+   298→   298→
+   299→   299→**Paper 1 (ECE):**
+   300→   300→- **Basic Electronics Engineering:** Basics of semiconductors; diode/transistor basics and characteristics; diodes for different uses; junction & field-effect transistors (BJTs, JFETs, MOSFETs); transistor amplifiers of different types, oscillators and other circuits; basics of integrated circuits (ICs); bipolar, MOS and CMOS ICs; basics of linear ICs, operational amplifiers and their applications — linear/non-linear; optical sources/detectors; basics of optoelectronics and its applications
+   301→   301→- **Basic Electrical Engineering:** DC circuits — Ohm's & Kirchhoff's laws, mesh and nodal analysis, circuit theorems; electromagnetism, Faraday's & Lenz's laws, induced EMF and its uses; single-phase AC circuits; transformers, efficiency; basics of DC machines, induction machines, synchronous machines; electrical power sources — hydroelectric, thermal, nuclear, wind, solar; basics of batteries and their uses
+   302→   302→- **Materials Science:** Electrical engineering materials; crystal structure & defects; ceramic materials — structures, composites, processing and uses; insulating laminates for electronics; magnetic materials — classification, ferrites, ferro/para-magnetic materials; nano materials — preparation, purification, sintering, nanoparticles and uses; nano-optical/magnetic/electronic materials; superconductivity and uses
+   303→   303→- **Electronic Measurements and Instrumentation:** Principles of measurement, accuracy, precision and standards; analogue and digital systems for measurement; measuring instruments for different applications; static/dynamic characteristics of measurement systems, errors, statistical analysis and curve fitting; measurement of non-electrical quantities; basics of telemetry; transducers and displays; data acquisition system basics
+   304→   304→- **Network Theory:** Network graphs & matrices; wye–delta transformation; linear constant-coefficient differential equations — time-domain analysis of RLC circuits; solution of network equations using Laplace transforms — frequency-domain analysis of RLC circuits; 2-port network parameters, driving-point & transfer functions; state equations for networks; steady-state sinusoidal analysis
+   305→   305→- **Analog and Digital Circuits:** Small-signal equivalent circuits of diodes, BJTs and FETs; diode circuits for different uses; biasing & stability of BJT & JFET amplifier circuits; analysis/design of single/multi-stage amplifiers; feedback and uses; active filters, timers, multipliers, waveshaping, A/D–D/A converters; Boolean algebra and uses; logic gates, digital IC families, combinational/sequential circuits; multiplexers, counters/registers/memories/microprocessors — design & applications
+   306→   306→
+   307→   307→**Paper 2 (ECE):**
+   308→   308→- **Analog and Digital Communication Systems:** Random signals, noise, probability theory, information theory; analog vs digital communication & applications; AM, FM systems — transmitters/receivers, theory/practice/standards, SNR comparison; digital communication basics — sampling, quantizing, coding, PCM, DPCM, multiplexing (audio/video); digital modulation — ASK, FSK, PSK; multiple access — TDMA, FDMA, CDMA; optical communication — fiber optics, theory, practice/standards
+   309→   309→- **Control Systems:** Classification of signals and systems; application of signal and system theory; system realization; transforms & their applications; signal flow graphs, Routh–Hurwitz criterion, root loci, Nyquist/Bode plots; feedback systems — open & closed loop, stability analysis; steady-state, transient and frequency-response analysis; design of control systems, compensators, lead/lag compensation, PID and industrial controllers
+   310→   310→- **Computer Organization and Architecture (ECE flavor):** Basic architecture, CPU, I/O organization, memory organization, peripheral devices, trends; hardware/software issues; data representation & programming; operating systems basics — processes, memory management, virtual memory, file systems, protection & security; databases — types, characteristics, design; transactions and concurrency control; elements of programming languages
+   311→   311→- **Electromagnetics:** Elements of vector calculus; Maxwell's equations — basic concepts; Gauss' and Stokes' theorems; wave propagation through different media; transmission lines — types, basics, Smith chart, impedance matching/transformation, S-parameters, pulse excitation; waveguides — rectangular types, modes, cut-off frequency, dispersion, dielectric types; antennas — radiation pattern, monopoles/dipoles, gain, active/passive arrays
+   312→   312→- **Advanced Electronics Topics:** VLSI technology — processing, lithography, interconnects, packaging, testing; VLSI design — principles, MUX/ROM/PLA-based design, Moore & Mealy circuit design; pipeline concepts & functions; design for testability; DSP — discrete-time signals/systems; digital filters — FIR/IIR types, design, speech/audio/radar signal processing uses; microprocessors & microcontrollers — basics, interrupts, DMA, instruction sets, interfacing; embedded systems
+   313→   313→- **Advanced Communication Topics:** Communication networks — principles/practices/technologies/OSI model/security; basic packet multiplexed streams/scheduling; cellular networks — types, analysis, protocols (TCP/TCPIP); microwave & satellite communication — terrestrial/space LOS systems, link calculations, system design; communication satellites — orbits, characteristics, systems; fibre optic communication systems — block schematics, link calculations, system design
+   314→   314→
+   315→   315→### 2.3 Electrical Engineering (EE)
+   316→   316→
+   317→   317→> Note: In Advt 140 (2022), EE recruitment was via **GATE + interview** (Part-II), so no RAC descriptive paper was published for EE that cycle. The EE discipline syllabus below is compiled from (a) the legacy RAC/SET Tier-II EE scope (GATE-EE/ESE-EE-equivalent subjects: electric circuits, fields, machines, power systems, power electronics & drives, measurements, control), and (b) DRDO's own official **CEPTAM STA-'B' Tier-II syllabus for Electrical Engineering** — so it is representative of what a DRDO EE paper tests.
+   318→   318→
+   319→   319→**Core areas (Tier-II EE):**
+   320→   320→- **Engineering Mathematics** (common): Linear algebra, calculus, differential equations, probability & statistics, numerical methods
+   321→   321→- **Electric Circuits & Circuit Analysis**
+   322→   322→  - DC circuits: Ohm's & Kirchhoff's laws, mesh/nodal analysis, network theorems (Thevenin, Norton, superposition, max power transfer), star/delta transformations
+   323→   323→  - AC circuits: single- and three-phase phasor analysis, resonance, power factor, power in AC circuits
+   324→   324→  - Transients (RL, RC, RLC); Laplace-domain network analysis; two-port networks; coupled circuits and mutual inductance; network graphs & state equations
+   325→   325→- **Electricity & Magnetism / Electromagnetic Fields**
+   326→   326→  - Electrostatics & magnetostatics; Maxwell's equations; Faraday's & Lenz's laws; induced EMF; inductance/capacitance; electromagnetic force; field theory applications in machines
+   327→   327→- **Electrical Machines**
+   328→   328→  - DC machines — generators/motors, characteristics, starting & speed control, commutation
+   329→   329→  - Transformers — construction, equivalent circuit, losses, efficiency, regulation, auto-transformers, three-phase connections, parallel operation
+   330→   330→  - Induction machines — slip-torque characteristics, starting & speed control, single-phase motors
+   331→   331→  - Synchronous machines — EMF, armature reaction, voltage regulation, synchronizing, power circles; special machines (stepper, BLDC, servo basics)
+   332→   332→- **Electrical Power Engineering (Generation, Transmission & Distribution)**
+   333→   333→  - Generation: thermal, hydro, nuclear, wind, solar PV basics; economics of generation, load curves, tariffs
+   334→   334→  - Transmission: line parameters & models, performance, HVDC vs HVAC basics, insulators, corona, cables; substations; voltage regulation; load flow (basics), symmetrical components, fault analysis, symmetrical/unsymmetrical faults; switchgear & protection (relays, circuit breakers, CTs/PTs, protection schemes); power system stability basics; distribution systems & earthing; utilization of electrical energy (illumination, traction, drives, heating)
+   335→   335→- **Power Electronics & Drives (Industrial Electronics & Control)**
+   336→   336→  - Power semiconductor devices (diode, BJT, MOSFET, IGBT, thyristor, TRIAC); rectifiers (controlled/uncontrolled), choppers, inverters, cycloconverters, AC voltage controllers; switching techniques; electric drives — DC & AC motor control, speed control methods; converters applications
+   337→   337→- **Control Systems**
+   338→   338→  - Mathematical modelling of physical systems; transfer functions; block diagrams & signal flow graphs; time response; stability — Routh–Hurwitz, root locus, Bode/Nyquist; compensators & PID/industrial controllers; state-space basics
+   339→   339→- **Measurements & Instrumentation (Electrical and Electronics Instrumentation)**
+   340→   340→  - Measurement principles, accuracy/precision/standards; static/dynamic characteristics, errors; measuring instruments — PMMC, moving iron, dynamometer wattmeters, energy meters; instrument transformers; bridges (Wheatstone, Kelvin, Maxwell, Schering); measurement of R/L/C, power, energy, power factor; digital measurement (DVMs, counters), transducers, displays, data acquisition; telemetry basics; oscilloscopes
+   341→   341→- **Electronics & Microprocessors (EE-flavor)**
+   342→   342→  - Electronic components & devices; analog electronics basics (amplifiers, op-amps, oscillators, filters); digital electronics — Boolean algebra, gates, combinational/sequential circuits, logic families, ADC/DAC; microprocessors (8085) & microcontrollers (8051) — architecture, programming, interfacing, peripherals; embedded systems basics
+   343→   343→- **Electrical & Electronics Materials**
+   344→   344→  - Conducting, insulating & magnetic materials; crystal structure & defects; superconductivity; dielectric materials; nano-materials basics; batteries & energy storage
+   345→   345→- **Estimation & Costing / Electrical Drawing / Maintenance & Repair**
+   346→   346→  - Wiring systems, estimating & costing of installations; reading electrical schematics; maintenance practices of electrical & electronic equipment
+   347→   347→- **Signal & Systems basics (for EEE-inclusive variants):** continuous/discrete signals, sampling, Fourier/Laplace transforms applications
+   348→   348→
+   349→   349→*(Official CEPTAM STA-'B' EE topic list, verbatim, for cross-reference: "Electrical and Electronics Materials, Electricity and Magnetism, Electrical Engineering Drawing, Estimation & Costing, Electrical Circuit Analysis, Electrical Machines, Electrical Power Engineering, Instrumentation & Control Engineering and Electronics & Micro Processor and relevant topic from subject". The "Electrical & Electronics Engineering" post-code adds: "Electrical Machine, Generation, Transmission and Distribution of Electrical Power, Electrical Circuit and Analysis, Electronics Component and Device, Digital Electronics, Microcontroller Microprocessor And Peripheral devices, Control System, Electrical and Electronics Instrumentation and Measurement, Industrial Electronics and Control, Electrical and Electronics Engineering Materials, Maintenance and Repair of Electrical & Electronics Equipment, Advanced Topics".)*
+   350→   350→
+   351→   351→### 2.4 Mechanical Engineering (ME)
+   352→   352→
+   353→   353→**Paper 1 (ME):**
+   354→   354→- **Fluid Mechanics:** Basic concepts and properties of fluids, manometry, fluid statics, buoyancy, equations of motion, Bernoulli's equation and applications, viscous flow of incompressible fluids, laminar and turbulent flows, flow through pipes and head losses in pipes
+   355→   355→- **Thermodynamics and Heat Transfer:** Thermodynamic systems and processes; properties of pure substance; Zeroth, First and Second Laws of Thermodynamics; entropy, irreversibility and availability; analysis of thermodynamic cycles related to energy conversion — Rankine, Otto, Diesel and Dual cycles; ideal and real gases; compressibility factor; gas mixtures; modes of heat transfer, steady and unsteady heat conduction, thermal resistance, fins, free and forced convection, correlations for convective heat transfer, radiative heat transfer — radiation heat transfer coefficient, boiling and condensation, heat exchanger performance analysis
+   356→   356→- **IC Engines, Refrigeration and Air Conditioning:** SI and CI engines, engine systems and components, performance characteristics and testing of IC engines; fuels; emissions and emission control; vapour compression refrigeration, refrigerants and working cycles, compressors, condensers, evaporators and expansion devices; other refrigeration systems — vapour absorption, vapour jet, thermoelectric, vortex tube; psychrometric properties and processes, comfort chart, comfort and industrial air conditioning, load calculations and heat pumps
+   357→   357→- **Turbo Machinery:** Reciprocating and rotary pumps; Pelton wheel, Kaplan and Francis turbines, velocity diagrams, impulse and reaction principles; steam and gas turbines; theory of jet propulsion — pulse jet and ram jet engines; reciprocating and rotary compressors — theory and applications
+   358→   358→- **Power Plant Engineering:** Rankine and Brayton cycles with regeneration and reheat; fuels and their properties, flue gas analysis; boilers, steam turbines, and other power plant components — condensers, air ejectors, electrostatic precipitators, cooling towers — theory, design, types and applications
+   359→   359→- **Renewable Sources of Energy:** Solar radiation; solar thermal energy collection — flat plate and focusing collectors, materials and performance; solar thermal energy storage; applications — heating, cooling and power generation; solar photovoltaic conversion; harnessing of wind energy, biomass and tidal energy — methods and applications; working principles of fuel cells
+   360→   360→
+   361→   361→**Paper 2 (ME):**
+   362→   362→- **Engineering Mechanics (Mechanics of Materials/Solid Mechanics):** Analysis of system of forces, friction, centroid and centre of gravity, dynamics; stresses and strains — compound stresses and strains; bending moment and shear force diagrams; theory of bending stresses — slope and deflection — torsion; thin and thick cylinders, spheres
+   363→   363→- **Engineering Materials:** Basic crystallography; alloys and phase diagrams; heat treatment; ferrous and non-ferrous metals; non-metallic materials; basics of nano-materials; mechanical properties and testing; corrosion prevention and control
+   364→   364→- **Mechanisms and Machines:** Types of kinematic pairs, mobility, inversions, kinematic analysis; velocity and acceleration analysis of planar mechanisms; cams with uniform acceleration and retardation, cycloidal motion, oscillating followers; vibrations — free and forced vibration of undamped and damped SDOF systems, transmissibility ratio, vibration isolation, critical speed of shafts; gears — geometry of tooth profiles, law of gearing, involute profile, interference, helical, spiral and worm gears; gear trains — simple, compound and epicyclic; dynamic analysis — slider–crank mechanisms, turning moment computations, balancing of revolving & reciprocating masses; gyroscopes — effect of gyroscopic couple on automobiles, ships and aircraft; governors
+   365→   365→- **Design of Machine Elements:** Design for static and dynamic loading; failure theories; fatigue strength and the S–N diagram; design of machine elements — riveted, welded and bolted joints; shafts; spur gears; rolling and sliding contact bearings; brakes and clutches; flywheels
+   366→   366→- **Manufacturing, Industrial and Maintenance Engineering:** Metal casting, metal forming, metal joining, machining and machine tool operations; limits, fits and tolerances; metrology and inspection; computer-integrated manufacturing, FMS; production planning and control; inventory control and operations research — CPM–PERT; failure concepts and characteristics — reliability, failure analysis; machine vibration, data acquisition, fault detection, vibration monitoring, field balancing of rotors, noise monitoring, wear and debris analysis, signature analysis; NDT techniques in condition monitoring
+   367→   367→- **Mechatronics and Robotics:** Microprocessors and microcontrollers — architecture, programming, I/O, computer interfacing, programmable logic controller (PLC); sensors and actuators — piezoelectric accelerometer, Hall-effect sensor, optical encoder, resolver, Inductosyn, pneumatic and hydraulic actuators, stepper motor; control systems — mathematical modelling of physical systems, control signals, controllability and observability; robotics — robot classification, robot specification, notation; direct and inverse kinematics; homogeneous coordinates and arm equation of four-axis SCARA robot
+   368→   368→
+   369→   369→*(Cross-reference — official CEPTAM STA-'B' ME Tier-II topics: "Applied Mathematics, Engineering Drawing and CAD/CAM/CIM, Solid Mechanics and Machine Design, Fluid Mechanics and Hydraulic Machines, Thermal and Heat Transfer and Refrigeration & Air-conditioning, IC Engines, Engineering materials, Production Engineering and Industrial Engineering and relevant topic from subject". The Automobile Engineering post-code adds Solid Mechanics & Machine Design, Fluid & Thermal Engineering, Automobile Engineering I & II, Industrial & Production Engineering, Drawing & Modelling.)*
+   370→   370→
+   371→   371→### 2.5 Tier II — Research Aptitude Portion (15 marks, Section B of legacy Tier-II descriptive paper)
+   372→   372→
+   373→   373→Three named components (per RAC legacy pattern; ~15 marks):
+   374→   374→
+   375→   375→- **Science & Technology Priorities**
+   376→   376→  - Thrust areas / priorities of scientific research in India (national S&T policy directions)
+   377→   377→  - DRDO's mandate, mission, vision and technology spectrum; defence R&D priorities; indigenous development programmes (missiles, aeronautics, armaments, electronics, life sciences, naval systems etc.)
+   378→   378→  - Current national S&T programmes & missions; emerging technologies of national importance; self-reliance in critical technologies
+   379→   379→- **Research Aptitude**
+   380→   380→  - Scientific temper, research methodology basics; formulating research questions
+   381→   381→  - Understanding/interpreting research papers, data & graphs; drawing conclusions
+   382→   382→  - Ethics & integrity in research; literature awareness; application of science to societal problems
+   383→   383→- **Quantitative Aptitude & Reasoning** (higher-order application of Tier-I topics)
+   384→   384→  - Numerical problem solving: percentages, ratios, averages, rates, basic algebra & geometry
+   385→   385→  - Logical reasoning: deduction, data-based inference, puzzles, series, syllogisms
+   386→   386→
+   387→   387→## 3. DRDO Scientist B — Exam Pattern Summary (all routes)
+   388→   388→
+   389→   389→**Legacy Tier-I + Tier-II route (the structure requested for the platform):**
+   390→   390→- **Tier-I (Screening):** objective test, ~100 marks, ~2 hours; 5 sections (~20 questions each): Quantitative Aptitude, Reasoning & Problem Solving, General Awareness, English Language, General Science; **negative marking 0.25 per wrong answer**; screening/qualifying in nature — used to shortlist for Tier-II
+   391→   391→- **Tier-II (Descriptive):** ~3 hours, **75 marks** = **60 marks engineering-discipline** descriptive questions + **15 marks** research aptitude (science & technology priorities, research aptitude, quantitative aptitude & reasoning)
+   392→   392→- **Tier-III — Personal Interview:** final stage; in later RAC ads the final merit used **80% weightage of written (Tier-II/descriptive) + 20% weightage of interview**; interviews require minimum qualifying marks — **70% (UR) / 60% (EWS/OBC/SC/ST/PwD)** (per official Advt 140/156 criteria)
+   393→   393→- Eligibility essentials: first-class B.E./B.Tech (or M.Sc. for science posts) in the advertised discipline + **valid GATE score** (or top IIT/NIT marks ≥80% in some ads); age limit ≤28 years (UR, DRDO) with category relaxations (OBC 31, SC/ST 33 etc.)
+   394→   394→
+   395→   395→**Advt 140 (2022) written-exam route (ECE/ME/CSE):** GATE-based shortlisting (1:25) → offline **descriptive written exam: 2 papers × 300 marks, 3 hours each (600 total)**, syllabus per UPSC ESE (Mains) in the discipline → interview (shortlist 1:5 from written merit) → final merit = 80% written + 20% interview; interview qualifying 70%/60%.
+   396→   396→
+   397→   397→**Current route (Advt 156, 2025):** shortlisting purely on **valid GATE score (2023/2024/2025)** → **Personal Interview** → final merit = **80% GATE + 20% interview**; interview qualifying 70% UR / 60% reserved. No negative marking concept (no CBT); medical examination & character-antecedent verification precede appointment (Level-10, 7th CPC pay matrix, basic pay ₹56,100).
+   398→   398→
+   399→   399→**CEPTAM STA-'B' (comparison):** Tier-I CBT 150 Q/150 marks/120 min (negative 0.25; qualifying 40%/35%) + Tier-II subject CBT 120 Q/120 marks/120 min (negative 0.25) + 20-minute personality test (qualifying).
+   400→   400→
+   401→   401→**Other DRDO scientist recruitment channels (context):** ROSSA (Registration of Students with Scholarships and Aptitude — for high-GATE/merit fresh candidates), campus/Institute-level selection for young scientists, lateral entry for experienced professionals, and DRDO Research Fellowships (JRF/SRF/RA) at laboratories.
+   402→   402→
+   403→   403→---
+   404→   404→
+   405→   405→## Appendix — Research sources consulted
+   406→   406→
+   407→   407→**Digital SAT (official College Board):**
+   408→   408→1. satsuite.collegeboard.org — Math Section: Overview (domain question counts 13-15/13-15/5-7/5-7; ~30% in-context)
+   409→   409→2. satsuite.collegeboard.org — Reading and Writing Section (4 domains, passage specs)
+   410→   410→3. satsuite.collegeboard.org — How the SAT Is Structured (64+70 min, 54+44 Q, 2h14m, 10-min break, MST)
+   411→   411→4. satsuite.collegeboard.org — Math types pages: Algebra, Advanced Math, Geometry and Trigonometry (official skill lists)
+   412→   412→5. satsuite.collegeboard.org — What Are Content Domains? (official domain→skill table for R&W and Math)
+   413→   413→6. satsuite.collegeboard.org — Student Question Bank: Math / Reading & Writing (official skill testing-point descriptions & question stems)
+   414→   414→7. *Digital SAT Suite of Assessments Specifications Overview* PDF (Table 1 format; Table 2 R&W domains with percentages ≈28/26/26/20 and question bands; Table 3 Math domains ≈35/35/15/15; scoring scales 200-800 per section, 400-1600 total; benchmarks RW 480 / Math 530; MST model)
+   415→   415→8. Corroborating: Test Innovators, Test-Ninjas, Manhattan Review, Piqosity, Princeton Review (module composition 27/27 R&W and 22/22 Math per module)
+   416→   416→
+   417→   417→**DRDO (official + corroborating):**
+   418→   418→9. RAC Advt No. 140 (2022) PDF — 630 vacancies; Part-I (ECE/ME/CSE: GATE+Written+Interview) vs Part-II (EE + 14 disciplines: GATE+Interview); written = 2×300-mark descriptive papers, 3 h each, ESE-Mains-like syllabus; selection criteria 80/20; interview qualifying 70%/60%
+   419→   419→10. RAC Advt No. 156 (2025) PDF — current: GATE (2023/24/25) + interview; 80% GATE + 20% interview; discipline list incl. ECE, ME, CSE, EE, Civil, Chemical, Aeronautical, Metallurgical, Physics, Chemistry, Mathematics, Materials, Instrumentation
+   420→   420→11. DRDO CEPTAM-11 Tier-II Detailed Syllabus PDF (official) — STA-'B' subject syllabi incl. CSE, ECE (Electronics), EE, ME + others; Tech-'A' trade syllabi
+   421→   421→12. DRDO CEPTAM-11 Advertisement PDF (official) — Tier-I/Tier-II CBT patterns, negative marking 0.25, qualifying 40%/35%
+   422→   422→13. Testbook — DRDO RAC Exam Pattern & Syllabus (descriptive papers; discipline topic lists)
+   423→   423→14. Adda247 — DRDO Scientist B Syllabus (full discipline topic lists for ME, CSE, ECE Papers 1 & 2)
+   424→   424→15. Embibe — DRDO Syllabus (discipline topic lists, corroborates Adda247/Testbook = RAC descriptive syllabus)
+   425→   425→16. Skillscoach, Internshala, LinkedIn selection-experience posts (pattern corroboration); legacy SET-era Tier-I/Tier-II structure per RAC historical ads (Advt 118/129) as specified in the task brief and standard DRDO preparation references
+   426→   426→

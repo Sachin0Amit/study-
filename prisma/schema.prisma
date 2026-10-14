@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Anonymous device-based study progress
+model StudySession {
+  id        String   @id @default(cuid())
+  deviceId  String   @unique
+  createdAt DateTime @default(now())
+}
+
+model SectionProgress {
+  id          String   @id @default(cuid())
+  deviceId     String
+  sectionKey  String // e.g. "rosen-ch1-s1"
+  status      String   @default("in_progress") // in_progress | completed
+  lastViewedAt DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([deviceId, sectionKey])
+}
+
+model QuizAttempt {
+  id         String   @id @default(cuid())
+  deviceId    String
+  sectionKey String
+  score      Int // correct count
+  total      Int
+  answers    String // JSON array of selected indices
+  createdAt  DateTime @default(now())
+}
+
+// Personal study notes attached to a lesson (per device)
+model SectionNote {
+  id         String   @id @default(cuid())
+  deviceId   String
+  sectionKey String
+  note       String   @default("")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([deviceId, sectionKey])
+}
+
+// Leitner-box spaced repetition state per flashcard (per device)
+// box 0 = new, 1..5 = mastery level; dueAt = next review time
+model FlashcardState {
+  id        String   @id @default(cuid())
+  deviceId  String
+  cardKey   String // "<sectionId>::<term>"
+  box       Int      @default(0)
+  dueAt     DateTime @default(now())
+  seen      Int      @default(0) // total times answered
+  correct   Int      @default(0) // total times remembered
+  updatedAt DateTime @updatedAt
+
+  @@unique([deviceId, cardKey])
+}
+
+// Daily study activity for streak tracking + heatmap
+// kind: "lesson" | "quiz" | "cards" | "note"  (count = actions of that kind that day)
+model StudyActivity {
+  id        String   @id @default(cuid())
+  deviceId  String
+  day       String // "YYYY-MM-DD" (local day, client-supplied)
+  kind      String
+  count     Int      @default(0)
+  updatedAt DateTime @updatedAt
+
+  @@unique([deviceId, day, kind])
+}
+
+// Starred/pinned formulas (per device); note = personal annotation (printable)
+model FormulaFavorite {
+  id         String   @id @default(cuid())
+  deviceId   String
+  formulaKey String // "<chapterId>|<section>|<name>"
+  note       String   @default("")
+  createdAt  DateTime @default(now())
+
+  @@unique([deviceId, formulaKey])
+}
+
+// Timed exam attempts (mixed-chapter quiz simulator)
+model ExamAttempt {
+  id            String   @id @default(cuid())
+  deviceId      String
+  label         String // e.g. "Ch 1, 3, 6" or "Full book"
+  chapters      String // JSON array of chapterIds
+  questionCount Int
+  score         Int
+  total         Int
+  durationSec   Int
+  missed        String   @default("[]") // JSON: missed questions (q, options, answer, explanation, provenance, picked)
+  createdAt     DateTime @default(now())
+}

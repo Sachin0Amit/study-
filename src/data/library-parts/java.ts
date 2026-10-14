@@ -1,0 +1,73 @@
+// ============================================================================
+// Core Java (Horstmann, Vol. 1 12e + Vol. 2 selections) — chapter/section
+// metadata (bookId 'horstmann-java12').
+// Lab mapping: language chapters → 'java-playground' (code is presented in fenced
+// Java blocks); concurrency → 'race-lab' (threads, locks, visibility races).
+// ============================================================================
+import type { ChapterMeta, SectionMeta } from '../library'
+
+export const JAVA_CHAPTERS: ChapterMeta[] = [
+  { id: 'java-ch1', bookId: 'horstmann-java12', number: 1, title: 'Java Platform & Development Environment', shortTitle: 'Platform & Env', description: 'JVM, JDK and bytecode portability; JShell first programs; command-line tools and IDE setup.', icon: 'computer', pages: 'Unit 1', interactiveKey: 'java-playground' },
+  { id: 'java-ch2', bookId: 'horstmann-java12', number: 2, title: 'Fundamental Programming Structures', shortTitle: 'Fundamentals', description: 'Primitive types, strings, input/output, control flow, big numbers and arrays in Java idiom.', icon: 'code', pages: 'Unit 2', interactiveKey: 'java-playground' },
+  { id: 'java-ch3', bookId: 'horstmann-java12', number: 3, title: 'Objects & Classes', shortTitle: 'Objects & Classes', description: 'Encapsulation, constructors, static members, method design, records and packages.', icon: 'package', pages: 'Unit 3', interactiveKey: 'java-playground' },
+  { id: 'java-ch4', bookId: 'horstmann-java12', number: 4, title: 'Inheritance & Polymorphism', shortTitle: 'Inheritance', description: 'Subclassing, dynamic binding, abstract classes, Object methods, enums and reflection preview.', icon: 'git-branch', pages: 'Unit 4', interactiveKey: 'java-playground' },
+  { id: 'java-ch5', bookId: 'horstmann-java12', number: 5, title: 'Interfaces, Lambdas & Inner Classes', shortTitle: 'Interfaces & Lambdas', description: 'Functional interfaces, lambda syntax and method references, inner/nested classes and proxies.', icon: 'component', pages: 'Unit 5', interactiveKey: 'java-playground' },
+  { id: 'java-ch6', bookId: 'horstmann-java12', number: 6, title: 'Exceptions, Assertions & Logging', shortTitle: 'Errors & Logging', description: 'Checked versus unchecked exceptions, try-with-resources, assertions and the logging framework.', icon: 'siren', pages: 'Unit 6', interactiveKey: 'java-playground' },
+  { id: 'java-ch7', bookId: 'horstmann-java12', number: 7, title: 'Generic Programming', shortTitle: 'Generics', description: 'Type parameters and bounds, wildcards, erasure consequences and generic best practices.', icon: 'shapes', pages: 'Unit 7', interactiveKey: 'java-playground' },
+  { id: 'java-ch8', bookId: 'horstmann-java12', number: 8, title: 'Collections Framework', shortTitle: 'Collections', description: 'List, Set, Queue and Map implementations, iteration, views, and choosing the right container.', icon: 'boxes', pages: 'Unit 8', interactiveKey: 'java-playground' },
+  { id: 'java-ch9', bookId: 'horstmann-java12', number: 9, title: 'Concurrency', shortTitle: 'Concurrency', description: 'Threads and executors, synchronization, volatile, locks, concurrent collections and parallel pitfalls.', icon: 'timer', pages: 'Unit 9', interactiveKey: 'race-lab' },
+  { id: 'java-ch10', bookId: 'horstmann-java12', number: 10, title: 'Streams & Functional Pipelines', shortTitle: 'Streams', description: 'Stream creation, intermediate and terminal operations, collectors, optionals and parallel streams.', icon: 'waves', pages: 'Unit 10', interactiveKey: 'java-playground' },
+  { id: 'java-ch11', bookId: 'horstmann-java12', number: 11, title: 'Input/Output, NIO & Networking', shortTitle: 'I/O & Networking', description: 'Streams, readers/writers, NIO channels and buffers, files API, sockets and HTTP clients.', icon: 'hard-drive', pages: 'Unit 11', interactiveKey: 'java-playground' },
+  { id: 'java-ch12', bookId: 'horstmann-java12', number: 12, title: 'Database Programming & Modules', shortTitle: 'JDBC & Modules', description: 'JDBC drivers and queries, prepared statements, transactions, and the JPMS module system.', icon: 'database', pages: 'Unit 12', interactiveKey: 'java-playground' },
+]
+
+export const JAVA_SECTIONS: SectionMeta[] = [
+  { id: 'java-ch1-s1', chapterId: 'java-ch1', number: 1.1, title: 'JVM, JDK & Bytecode Portability', description: 'Write-once-run-anywhere mechanics; bytecode versus native code.' },
+  { id: 'java-ch1-s2', chapterId: 'java-ch1', number: 1.2, title: 'First Programs & JShell', description: 'Class-and-main ceremony, JShell experimentation, program anatomy.' },
+  { id: 'java-ch1-s3', chapterId: 'java-ch1', number: 1.3, title: 'Command-Line Tools & Build Basics', description: 'javac/java JAR handling, classpath, JShell versus files.' },
+  { id: 'java-ch1-s4', chapterId: 'java-ch1', number: 1.4, title: 'IDEs, History & Misconceptions', description: 'IDE workflows, Java evolution highlights, applet-era myths retired.' },
+  { id: 'java-ch2-s1', chapterId: 'java-ch2', number: 2.1, title: 'Primitive Types & Variables', description: 'int/long/double/char/boolean ranges, constants, enumerated types.' },
+  { id: 'java-ch2-s2', chapterId: 'java-ch2', number: 2.2, title: 'Strings & Console I/O', description: 'Immutable strings, text blocks, formatting, Scanner input.' },
+  { id: 'java-ch2-s3', chapterId: 'java-ch2', number: 2.3, title: 'Operators, Casts & Control Flow', description: 'Arithmetic and bitwise operators, narrowing casts, branches and loops.' },
+  { id: 'java-ch2-s4', chapterId: 'java-ch2', number: 2.4, title: 'Big Numbers & Arrays', description: 'BigInteger/BigDecimal exactness, array creation, enhanced for.' },
+  { id: 'java-ch3-s1', chapterId: 'java-ch3', number: 3.1, title: 'Classes, Objects & Encapsulation', description: 'Fields versus locals, access control, mutators that preserve invariants.' },
+  { id: 'java-ch3-s2', chapterId: 'java-ch3', number: 3.2, title: 'Constructors & Initialization', description: 'Overloading, this-chaining, initialization blocks, final fields.' },
+  { id: 'java-ch3-s3', chapterId: 'java-ch3', number: 3.3, title: 'Static Members & Method Design', description: 'Class state, factory methods, parameter passing by value.' },
+  { id: 'java-ch3-s4', chapterId: 'java-ch3', number: 3.4, title: 'Records & Packages', description: 'Compact data carriers, package layout, JAR organization.' },
+  { id: 'java-ch4-s1', chapterId: 'java-ch4', number: 4.1, title: 'Subclassing & Dynamic Binding', description: 'extends, overriding, virtual dispatch, super calls.' },
+  { id: 'java-ch4-s2', chapterId: 'java-ch4', number: 4.2, title: 'Abstract Classes & Final Control', description: 'Template-method pattern, sealing extension points.' },
+  { id: 'java-ch4-s3', chapterId: 'java-ch4', number: 4.3, title: 'Object Methods: equals/hashCode/toString', description: 'Equality contracts, hashing consistency, debugging output.' },
+  { id: 'java-ch4-s4', chapterId: 'java-ch4', number: 4.4, title: 'Enums & Reflection Preview', description: 'Type-safe enumerations with behaviour; Class objects and reflective access.' },
+  { id: 'java-ch5-s1', chapterId: 'java-ch5', number: 5.1, title: 'Interfaces & Default Methods', description: 'Contracts, multiple inheritance of type, evolution via defaults.' },
+  { id: 'java-ch5-s2', chapterId: 'java-ch5', number: 5.2, title: 'Lambdas & Method References', description: 'Functional interfaces, effectively-final capture, comparator idioms.' },
+  { id: 'java-ch5-s3', chapterId: 'java-ch5', number: 5.3, title: 'Inner, Nested & Anonymous Classes', description: 'Outer access rules, static nesting, event-listener patterns.' },
+  { id: 'java-ch5-s4', chapterId: 'java-ch5', number: 5.4, title: 'Proxies & Cloning Preview', description: 'Dynamic proxies for cross-cutting behaviour; clone contracts.' },
+  { id: 'java-ch6-s1', chapterId: 'java-ch6', number: 6.1, title: 'Checked vs Unchecked Exceptions', description: 'Hierarchy, throws discipline, when to catch versus declare.' },
+  { id: 'java-ch6-s2', chapterId: 'java-ch6', number: 6.2, title: 'Try-with-Resources & Chaining', description: 'Automatic closing, suppressed exceptions, cause chains.' },
+  { id: 'java-ch6-s3', chapterId: 'java-ch6', number: 6.3, title: 'Assertions', description: 'Invariants and postconditions, enabling checks, design-by-contract taste.' },
+  { id: 'java-ch6-s4', chapterId: 'java-ch6', number: 6.4, title: 'Logging Framework', description: 'Levels, handlers and formatters, production logging practice.' },
+  { id: 'java-ch7-s1', chapterId: 'java-ch7', number: 7.1, title: 'Type Parameters & Bounds', description: 'Generic classes/methods, extends/super bounds, PECS rule.' },
+  { id: 'java-ch7-s2', chapterId: 'java-ch7', number: 7.2, title: 'Wildcards in Practice', description: 'Producer-extends, consumer-super, unbounded uses.' },
+  { id: 'java-ch7-s3', chapterId: 'java-ch7', number: 7.3, title: 'Erasure Consequences', description: 'No primitives, no instanceof of parameters, bridge methods.' },
+  { id: 'java-ch7-s4', chapterId: 'java-ch7', number: 7.4, title: 'Generic Best Practices', description: 'API design with generics, heap-pollution warnings, varargs caution.' },
+  { id: 'java-ch8-s1', chapterId: 'java-ch8', number: 8.1, title: 'List & Set Implementations', description: 'ArrayList versus LinkedList, HashSet/TreeSet ordering and cost.' },
+  { id: 'java-ch8-s2', chapterId: 'java-ch8', number: 8.2, title: 'Queues, Deques & Maps', description: 'Priority queues, ArrayDeque, HashMap/TreeMap/LinkedHashMap choice.' },
+  { id: 'java-ch8-s3', chapterId: 'java-ch8', number: 8.3, title: 'Iteration, Views & Algorithms', description: 'Iterators, unmodifiable/synchronized views, Collections utilities.' },
+  { id: 'java-ch8-s4', chapterId: 'java-ch8', number: 8.4, title: 'Choosing Containers', description: 'Access/insertion profiles, memory overhead, concurrency preview.' },
+  { id: 'java-ch9-s1', chapterId: 'java-ch9', number: 9.1, title: 'Threads & Executors', description: 'Thread lifecycle, pools, futures, structured task submission.' },
+  { id: 'java-ch9-s2', chapterId: 'java-ch9', number: 9.2, title: 'Synchronization & Locks', description: 'Monitor locks, Lock/Condition, deadlock avoidance.' },
+  { id: 'java-ch9-s3', chapterId: 'java-ch9', number: 9.3, title: 'Volatile, Atomics & Visibility', description: 'Happens-before, safe publication, lock-free counters.' },
+  { id: 'java-ch9-s4', chapterId: 'java-ch9', number: 9.4, title: 'Concurrent Collections & Pitfalls', description: 'Copy-on-write versus partitioned maps, check-then-act races.' },
+  { id: 'java-ch10-s1', chapterId: 'java-ch10', number: 10.1, title: 'Stream Creation & Operations', description: 'Sources, intermediate versus terminal ops, laziness.' },
+  { id: 'java-ch10-s2', chapterId: 'java-ch10', number: 10.2, title: 'Collectors & Grouping', description: 'toList/toMap/groupingBy/partitioningBy, downstream collectors.' },
+  { id: 'java-ch10-s3', chapterId: 'java-ch10', number: 10.3, title: 'Optionals Done Right', description: 'Avoiding null checks, orElse versus orElseGet, optional chains.' },
+  { id: 'java-ch10-s4', chapterId: 'java-ch10', number: 10.4, title: 'Parallel Streams', description: 'Spliterators, associativity requirements, when parallelism pays.' },
+  { id: 'java-ch11-s1', chapterId: 'java-ch11', number: 11.1, title: 'Byte & Character Streams', description: 'Input/Output hierarchies, readers/writers, buffering.' },
+  { id: 'java-ch11-s2', chapterId: 'java-ch11', number: 11.2, title: 'NIO Channels, Buffers & Files', description: 'Selectors preview, Path/Files utilities, memory-mapped files.' },
+  { id: 'java-ch11-s3', chapterId: 'java-ch11', number: 11.3, title: 'Sockets & Networking', description: 'TCP sockets, UDP datagrams, server threading patterns.' },
+  { id: 'java-ch11-s4', chapterId: 'java-ch11', number: 11.4, title: 'HTTP Clients', description: 'Modern HttpClient, request/response handling, async calls.' },
+  { id: 'java-ch12-s1', chapterId: 'java-ch12', number: 12.1, title: 'JDBC Drivers & Connections', description: 'DriverManager versus DataSource, connection lifecycle.' },
+  { id: 'java-ch12-s2', chapterId: 'java-ch12', number: 12.2, title: 'Queries & Prepared Statements', description: 'ResultSet traversal, parameter binding, injection defence.' },
+  { id: 'java-ch12-s3', chapterId: 'java-ch12', number: 12.3, title: 'Transactions', description: 'Commit/rollback, isolation levels, batch updates.' },
+  { id: 'java-ch12-s4', chapterId: 'java-ch12', number: 12.4, title: 'JPMS Modules', description: 'module-info, requires/exports, migration strategy.' },
+]
