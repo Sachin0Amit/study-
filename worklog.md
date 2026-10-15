@@ -507,3 +507,19 @@ Stage Summary:
 ## 3. Unresolved issues / risks + next-phase priorities
 - RISKS: (1) old bookmarked ?chapter=/?lesson= URLs for renamed/merged chapters no longer resolve (progress rows for dropped sections are stale — acceptable consequence of the requested dedup); (2) quiz bank shrank 10,571 → 8,798 because ~1,000+ duplicate-topic questions were intentionally removed with their duplicate sections; (3) ~1,340 sections (mostly merged branch chapters + new phys-lasers/chem-engg) have no written lesson content yet — they render as Syllabus Topic Briefs
 - NEXT PRIORITIES: (a) write SectionContent for the highest-value brief sections (C Programming 11 sections, Engineering Graphics, ME cores, the new Lasers & Fibres and Engineering Chemistry chapters); (b) phys-lasers is a 1-section chapter — consider writing 2–3 lesson sections (lasers, fibres, applications); (c) a "related subjects" cross-link on chapter views (e.g. circuits ↔ EM theory) could restore the cross-subject study paths that centralization removed; (d) GitHub push pending credentials (see task notes)
+
+---
+Task ID: 12-appendix
+Agent: main-orchestrator
+Task: GitHub push status + handoff instructions
+
+Work Log:
+- Attempted git push to https://github.com/Sachin0Amit/study-.git — no credentials exist in this sandbox (no SSH keys, no gh CLI, no tokens, no credential helper), so authentication is impossible from here
+- Work is fully committed locally: 6abc8f9 (consolidation) on top of 2ec678a (pre-migration checkpoint)
+- Created a transportable git bundle: /home/z/my-project/studyverse-consolidated.bundle (27 MB, contains full main branch history)
+
+Stage Summary:
+- TO PUSH FROM A MACHINE WITH GITHUB ACCESS, either:
+  (a) clone/pull this project folder and run: git push -u origin main   (remote 'origin' already configured), or
+  (b) fetch from the bundle: git clone studyverse-consolidated.bundle study-restore && cd study-restore && git remote add origin https://github.com/Sachin0Amit/study-.git && git push -u origin main
+- .gitignore consideration: the bundle file is untracked; do not commit it (27 MB artifact)
