@@ -123,3 +123,113 @@ model SyllabusPlan {
 
   @@index([deviceId, createdAt])
 }
+
+// ============ X1 — Cognitive Digital Twin ============
+
+// Streaming evidence events from the new interaction surfaces (studio Q&A,
+// arena battles, code-judge runs, lab challenges, palace re-walks). The twin
+// ALSO mines the legacy tables (QuizAttempt, FlashcardState, SectionProgress,
+// ExamAttempt) — this table captures what they can't.
+model TwinEvent {
+  id        String   @id @default(cuid())
+  deviceId  String
+  skillKey  String // sectionId the evidence belongs to
+  kind      String // studio | arena | judge | lab | palace | bridge
+  correct   Boolean? // right/wrong when the event is gradeable
+  weight    Int      @default(1) // evidence strength multiplier
+  meta      String? // JSON blob (question text, score detail…)
+  createdAt DateTime @default(now())
+
+  @@index([deviceId, skillKey, createdAt])
+}
+
+// ============ X2 — Multi-Agent Teaching Studio ============
+
+model StudioThread {
+  id          String   @id @default(cuid())
+  deviceId    String
+  title       String   @default("New consultation")
+  persona     String   @default("professor") // professor | examiner | drill | planner | researcher
+  mode        String   @default("chat") // chat | debate | roundtable
+  style       String? // learned cognitive-style preference (from debate votes)
+  targetSkill String? // sectionId the thread focuses on (examiner/drill/lesson-ask)
+  styleCounts String? // JSON {intuition: n, rigor: n, examples: n} — debate vote tally
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([deviceId, updatedAt])
+}
+
+model StudioMessage {
+  id        String   @id @default(cuid())
+  threadId  String
+  deviceId  String
+  role      String // user | assistant
+  persona   String? // which faculty member produced it
+  content   String
+  citations String? // JSON [{sectionId, number, title, chapterTitle}]
+  createdAt DateTime @default(now())
+
+  @@index([threadId, createdAt])
+}
+
+// ============ X4 — Curriculum Remix Engine ============
+
+model RemixPlan {
+  id          String   @id @default(cuid())
+  deviceId    String
+  goal        String // free-text study goal
+  horizonDays Int      @default(14)
+  sequence    String // JSON [{skillKey, number, title, chapterId, chapterTitle, subjectId, priority, reason, pKnown, bridge}]
+  version     Int      @default(1)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([deviceId, updatedAt])
+}
+
+// LLM-generated gap-filling lessons ("you're weak in integration before EM
+// fields" → a bridge lesson is authored once, cached, slotted into the plan).
+model BridgeLesson {
+  id        String   @id @default(cuid())
+  deviceId  String
+  skillKey  String // the section this bridge leads INTO
+  gapKeys   String // JSON: prerequisite skill keys being bridged
+  title     String
+  content   String // JSON {intro, objectives[], concepts[], takeaways[]}
+  createdAt DateTime @default(now())
+
+  @@unique([deviceId, skillKey])
+}
+
+// ============ X7 — Paper-DNA Forensic Analyzer ============
+
+model PaperAnalysis {
+  id        String   @id @default(cuid())
+  deviceId  String
+  title     String
+  files     String // JSON [{name, year, questionCount}]
+  questions String // JSON [{text, year, chapterId?, chapterTitle?, subjectName?, type, difficulty}]
+  stats     String // JSON {hotTopics[], drift[], typeMix, predictions[], crossTwin[]}
+  createdAt DateTime @default(now())
+
+  @@index([deviceId, createdAt])
+}
+
+// ============ X8 — Memory Palace Generator ============
+
+model MemoryPalace {
+  id         String    @id @default(cuid())
+  deviceId   String
+  sectionKey String
+  rooms      String // JSON [{name, scene, facts[], imagePrompt, image, narration, audio}]
+  status     String    @default("pending") // pending | generating | ready | failed
+  error      String?
+  dueAt      DateTime?
+  walks      Int       @default(0)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@unique([deviceId, sectionKey])
+}

@@ -196,21 +196,22 @@ export async function POST(req: NextRequest) {
       const readCandidates = pickReadCandidates(results)
       const pageTexts: string[] = []
       for (const cand of readCandidates) {
+        if (!cand.url) continue
         sse.send('stage', {
           stage: 'read',
           host: cand.host_name ?? '',
           title: (cand.name ?? '').slice(0, 80),
         })
         try {
-          const page = (await withTimeout(
-            zai.functions.invoke('page_reader', { url: cand.url }) as Promise<{
-              title?: string
-              text?: string
-              html?: string
-            }>,
+          const page = ((await withTimeout(
+            zai.functions.invoke('page_reader', { url: cand.url }),
             READ_TIMEOUT_MS,
             'read-timeout'
-          )) ?? {}
+          )) ?? {}) as {
+            title?: string
+            text?: string
+            html?: string
+          }
           const text =
             page.text && page.text.trim().length > 200
               ? page.text

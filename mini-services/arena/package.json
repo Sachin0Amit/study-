@@ -1,0 +1,17 @@
+{
+  "name": "studyverse-arena",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Real-time multiplayer quiz-battle service (socket.io) for StudyVerse",
+  "scripts": {
+    "dev": "bun --hot index.ts",
+    "start": "bun index.ts"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "socket.io": "^4.8.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6"
+  }
+}

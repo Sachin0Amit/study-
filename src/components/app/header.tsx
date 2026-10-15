@@ -9,6 +9,8 @@ import {
   Layers,
   Sigma,
   Search,
+  Brain,
+  Swords,
 } from 'lucide-react'
 import { useStudy } from '@/store/useStudy'
 import { CommandPalette } from './command-palette'
@@ -16,7 +18,10 @@ import { ThemeToggle } from './theme-toggle'
 
 const NAV = [
   { view: 'library', label: 'Library', icon: Library, easy: 'Home: all books' },
+  { view: 'studio', label: 'Studio', icon: Sparkles, easy: 'Ask the AI faculty' },
+  { view: 'twin', label: 'Twin', icon: Brain, easy: 'Brain scan of what you know' },
   { view: 'syllabus', label: 'Syllabus', icon: ClipboardList, easy: 'Map any syllabus to your books' },
+  { view: 'arena', label: 'Arena', icon: Swords, easy: 'Live 1v1 quiz battles' },
   { view: 'playground', label: 'Labs', icon: FlaskConical, easy: 'Play with live demos' },
   { view: 'flashcards', label: 'Cards', icon: Layers, easy: 'Quick memory cards' },
   { view: 'formulas', label: 'Formulas', icon: Sigma, easy: 'All key formulas' },
@@ -122,7 +127,13 @@ export function Header() {
                         ? { name: 'flashcards' }
                         : v === 'formulas'
                           ? { name: 'formulas' }
-                          : { name: v }
+                          : v === 'studio'
+                            ? { name: 'studio' }
+                            : v === 'twin'
+                              ? { name: 'twin' }
+                              : v === 'arena'
+                                ? { name: 'arena' }
+                                : { name: v }
                   )
                 }
                 className={`flex shrink-0 items-center gap-2 rounded-full px-2.5 py-1.5 text-[13px] font-medium transition-all sm:px-3 lg:px-4 ${

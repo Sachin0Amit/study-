@@ -14,6 +14,13 @@ export type View =
   | { name: 'exam'; chapterId?: string }
   | { name: 'search'; query?: string }
   | { name: 'syllabus' }
+  // ---- X-systems (StudyVerse OS) ----
+  | { name: 'studio'; targetSkill?: string; subjectHint?: string }
+  | { name: 'twin' }
+  | { name: 'remix' }
+  | { name: 'arena' }
+  | { name: 'paper-dna' }
+  | { name: 'palace'; sectionKey?: string }
 
 interface ProgressEntry {
   status: 'in_progress' | 'completed'

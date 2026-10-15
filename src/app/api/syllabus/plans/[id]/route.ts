@@ -108,7 +108,10 @@ async function remapPlan(
 
   // apply the incoming pin (chapterId null removes it)
   if (pin && typeof pin.topic === 'string') {
-    const topic = topics.find((t) => t === pin.topic) ?? topics.find((t) => t.toLowerCase() === pin.topic!.toLowerCase())
+    const pinTopic = pin.topic
+    const topic =
+      topics.find((t) => t === pinTopic) ??
+      topics.find((t) => t.toLowerCase() === pinTopic.toLowerCase())
     if (!topic) {
       return NextResponse.json({ error: 'Topic not in this plan.' }, { status: 400 })
     }

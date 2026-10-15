@@ -1,0 +1,47 @@
+{
+  "name": "StudyVerse — Master Every Book, Interactively",
+  "short_name": "StudyVerse",
+  "description": "The master-content study platform: 37 subject tracks, 4,000+ interactive lessons, AI faculty, spaced repetition, live quiz battles and a cognitive digital twin of what you know.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0a0a",
+  "theme_color": "#10b981",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Teaching Studio",
+      "short_name": "Studio",
+      "url": "/?view=studio",
+      "description": "Ask the AI faculty"
+    },
+    {
+      "name": "Flashcards due",
+      "short_name": "Cards",
+      "url": "/?view=flashcards",
+      "description": "Spaced repetition review"
+    },
+    {
+      "name": "Digital Twin",
+      "short_name": "Twin",
+      "url": "/?view=twin",
+      "description": "Your brain scan"
+    },
+    {
+      "name": "Study Arena",
+      "short_name": "Arena",
+      "url": "/?view=arena",
+      "description": "Live quiz battles"
+    }
+  ]
+}
