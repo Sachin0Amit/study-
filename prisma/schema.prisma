@@ -109,9 +109,15 @@ model SyllabusPlan {
   sourceType String   // "typed" | "uploaded"
   sourceName String   // what the user typed, or the filename
   topics     String   // JSON: [{ topic: string }]
-  mapping    String   // JSON: [{ topic, subjectId?, subjectName?, chapterId?, chapterTitle?, confidence: number }]
+  mapping    String   // JSON: [{ topic, subjectId?, subjectName?, chapterId?, chapterTitle?, confidence, closest? }]
   matched    Int      @default(0)
   total      Int      @default(0)
+  // v2 "live & updated" engine bookkeeping
+  engineVersion Int   @default(1)  // mapping engine that produced `mapping`
+  research    String?              // JSON: [{ title, url, host, date? }] — live web sources used
+  pins        String?              // JSON: { "<topic>": "<chapterId>" } — user-confirmed mappings
+  refreshedAt DateTime?            // last engine re-map
+  refreshCount Int    @default(0)  // how many times re-mapped
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 

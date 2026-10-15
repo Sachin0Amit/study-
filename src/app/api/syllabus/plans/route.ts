@@ -21,11 +21,18 @@ export async function GET(req: NextRequest) {
         sourceName: true,
         matched: true,
         total: true,
+        engineVersion: true,
+        refreshedAt: true,
+        refreshCount: true,
         createdAt: true,
       },
     })
     return NextResponse.json({
-      plans: rows.map((r) => ({ ...r, createdAt: r.createdAt.toISOString() })),
+      plans: rows.map((r) => ({
+        ...r,
+        refreshedAt: r.refreshedAt ? r.refreshedAt.toISOString() : null,
+        createdAt: r.createdAt.toISOString(),
+      })),
     })
   } catch (err) {
     console.error('[api/syllabus/plans]', err)

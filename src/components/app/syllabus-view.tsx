@@ -8,21 +8,32 @@ import {
   ArrowRight,
   ArrowUpRight,
   BookOpen,
+  Check,
+  ChevronDown,
   ClipboardList,
+  ExternalLink,
   FileText,
+  Globe,
   Keyboard,
+  Layers,
   Loader2,
+  Pin,
   Plus,
+  RefreshCw,
+  ShieldCheck,
   Sparkles,
+  Target,
   Trash2,
   Upload,
+  Wand2,
   X,
+  Zap,
 } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useToast } from '@/hooks/use-toast'
 import { useStudy } from '@/store/useStudy'
-import { getChapter, LIBRARY_SUBJECTS } from '@/data/library'
+import { getChapter, LIBRARY_BOOKS, LIBRARY_SUBJECTS } from '@/data/library'
 
 // ---------------------------------------------------------------- types --
 
@@ -33,6 +44,21 @@ interface MappingEntry {
   chapterId?: string | null
   chapterTitle?: string | null
   confidence: number
+  via?: 'pin' | 'llm' | 'agree' | 'local' | 'subject' | null
+  closest?: {
+    chapterId: string
+    chapterTitle: string
+    subjectId: string
+    subjectName: string
+    confidence: number
+  } | null
+}
+
+interface SourceRef {
+  title: string
+  url: string
+  host: string
+  date?: string
 }
 
 interface PlanFull {
@@ -42,8 +68,14 @@ interface PlanFull {
   sourceName: string
   matched: number
   total: number
+  engineVersion?: number
+  research?: SourceRef[] | null
+  pins?: Record<string, string>
+  refreshedAt?: string | null
+  refreshCount?: number
   createdAt: string
   mapping: MappingEntry[]
+  llmUsed?: boolean
 }
 
 interface PlanSummary {
@@ -53,11 +85,16 @@ interface PlanSummary {
   sourceName: string
   matched: number
   total: number
+  engineVersion?: number
+  refreshedAt?: string | null
+  refreshCount?: number
   createdAt: string
 }
 
 type Stage = 'input' | 'review' | 'result'
-type Busy = null | 'research' | 'extract' | 'map' | 'open'
+type Busy = null | 'research' | 'extract' | 'map' | 'open' | 'refresh'
+
+type StepState = 'pending' | 'active' | 'done'
 
 const FOCUS_RING =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
@@ -67,13 +104,59 @@ const MAX_BYTES = 10 * 1024 * 1024
 
 const subjectAccentById = new Map(LIBRARY_SUBJECTS.map((s) => [s.id, s.accent]))
 
+// ------------------------------------------------------------ sse client --
+
+/** POST/GET + parse a text/event-stream body, invoking onEvent per event */
+async function streamSSE(
+  url: string,
+  init: RequestInit,
+  onEvent: (event: string, data: Record<string, unknown>) => void
+): Promise<void> {
+  const res = await fetch(url, init)
+  if (!res.ok || !res.body) {
+    let message = `Request failed (${res.status})`
+    try {
+      const data = (await res.json()) as { error?: string }
+      if (data?.error) message = data.error
+    } catch {
+      /* non-json error */
+    }
+    throw new Error(message)
+  }
+  const reader = res.body.getReader()
+  const dec = new TextDecoder()
+  let buf = ''
+  for (;;) {
+    const { done, value } = await reader.read()
+    if (done) break
+    buf += dec.decode(value, { stream: true })
+    let i: number
+    while ((i = buf.indexOf('\n\n')) !== -1) {
+      const raw = buf.slice(0, i)
+      buf = buf.slice(i + 2)
+      let event = 'message'
+      const dataLines: string[] = []
+      for (const line of raw.split('\n')) {
+        if (line.startsWith('event:')) event = line.slice(6).trim()
+        else if (line.startsWith('data:')) dataLines.push(line.slice(5).trim())
+      }
+      if (dataLines.length) {
+        try {
+          onEvent(event, JSON.parse(dataLines.join('\n')) as Record<string, unknown>)
+        } catch {
+          /* skip malformed frame */
+        }
+      }
+    }
+  }
+}
+
 // ----------------------------------------------------------- small parts --
 
 function ConfidenceDot({ c }: { c: number }) {
   const cls =
     c >= 0.75 ? 'bg-emerald-400' : c >= 0.4 ? 'bg-amber-300' : 'bg-muted-foreground/40'
-  const label =
-    c >= 0.75 ? 'strong match' : c >= 0.4 ? 'partial match' : 'no match'
+  const label = c >= 0.75 ? 'strong match' : c >= 0.4 ? 'partial match' : 'no match'
   return (
     <span
       className={`h-2 w-2 shrink-0 rounded-full ${cls}`}
@@ -132,6 +215,164 @@ function SpinnerLine({ text }: { text: string }) {
   )
 }
 
+// ------------------------------------------------------------ live steps --
+
+interface StepDef {
+  id: string
+  label: string
+}
+
+const RESEARCH_STEPS: StepDef[] = [
+  { id: 'search', label: 'Searching the live web' },
+  { id: 'sources', label: 'Ranking the best sources' },
+  { id: 'read', label: 'Reading syllabus pages' },
+  { id: 'synthesize', label: 'Building your topic list' },
+]
+
+const MAP_STEPS: StepDef[] = [
+  { id: 'clean', label: 'Preparing your topics' },
+  { id: 'route', label: 'Routing topics to subjects' },
+  { id: 'chapter', label: 'Matching library chapters' },
+  { id: 'score', label: 'Cross-checking every match' },
+  { id: 'save', label: 'Saving your plan' },
+]
+
+/** animated vertical checklist fed by SSE stage events */
+function LiveSteps({
+  steps,
+  states,
+  note,
+  compact = false,
+}: {
+  steps: StepDef[]
+  states: Record<string, StepState>
+  note?: string | null
+  compact?: boolean
+}) {
+  return (
+    <ol className={`flex flex-col ${compact ? 'gap-1.5' : 'gap-2'} py-1`} aria-live="polite">
+      {steps.map((s, i) => {
+        const state = states[s.id] ?? 'pending'
+        return (
+          <li key={s.id} className="flex items-center gap-2.5">
+            <span
+              className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border transition-colors ${
+                state === 'done'
+                  ? 'border-emerald-400/50 bg-emerald-400/15 text-emerald-300'
+                  : state === 'active'
+                    ? 'border-emerald-400/60 bg-emerald-400/10 text-emerald-300'
+                    : 'border-border bg-muted/40 text-muted-foreground/40'
+              }`}
+              aria-hidden
+            >
+              {state === 'done' ? (
+                <Check className="h-3 w-3" />
+              ) : state === 'active' ? (
+                <Loader2 className="h-3 w-3 animate-spin" />
+              ) : (
+                <span className="h-1 w-1 rounded-full bg-current" />
+              )}
+            </span>
+            <span
+              className={`${
+                compact ? 'text-[12.5px]' : 'text-[13px]'
+              } ${state === 'pending' ? 'text-muted-foreground/60' : 'text-foreground/85'}`}
+            >
+              {s.label}
+              {state === 'active' && note ? (
+                <span className="ml-2 text-muted-foreground">· {note}</span>
+              ) : null}
+            </span>
+            {i < steps.length - 1 && (
+              <span className="sr-only">, </span>
+            )}
+          </li>
+        )
+      })}
+    </ol>
+  )
+}
+
+// ----------------------------------------------------------- sources list --
+
+function SourcesPanel({
+  sources,
+  defaultOpen = false,
+}: {
+  sources: SourceRef[]
+  defaultOpen?: boolean
+}) {
+  const [open, setOpen] = useState(defaultOpen)
+  if (!sources.length) return null
+  return (
+    <div className="rounded-2xl border border-border/80 bg-card p-4 sm:p-5">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        className={`flex w-full items-center gap-2.5 rounded-lg text-left ${FOCUS_RING}`}
+      >
+        <Globe className="h-4 w-4 shrink-0 text-emerald-300" aria-hidden />
+        <span className="text-sm font-bold">
+          Live research sources
+          <span className="ml-2 rounded-full border border-border bg-muted/50 px-2 py-0.5 font-mono text-[10px] font-normal text-muted-foreground">
+            {sources.length}
+          </span>
+        </span>
+        <span className="ml-auto flex items-center gap-1.5 text-[11px] text-muted-foreground">
+          {open ? 'hide' : 'show'}
+          <ChevronDown
+            className={`h-3.5 w-3.5 transition-transform ${open ? 'rotate-180' : ''}`}
+            aria-hidden
+          />
+        </span>
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.ul
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="overflow-hidden"
+          >
+            <div className="mt-3 flex max-h-72 flex-col gap-1.5 overflow-y-auto pr-1">
+              {sources.map((s) => (
+                <li key={s.url}>
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group flex items-center gap-2.5 rounded-xl border border-border/50 bg-background/40 px-3 py-2 transition-colors hover:border-emerald-400/35 hover:bg-emerald-400/[0.05] ${FOCUS_RING}`}
+                  >
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-border/60 bg-card text-[9px] font-bold uppercase text-muted-foreground">
+                      {(s.host || 'web').replace(/^www\./, '').slice(0, 2)}
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate text-[12.5px] font-medium text-foreground/85">
+                        {s.title}
+                      </span>
+                      <span className="block truncate text-[11px] text-muted-foreground">
+                        {s.host}
+                        {s.date && s.date !== 'N/A' ? ` · ${s.date}` : ''}
+                      </span>
+                    </span>
+                    <ExternalLink
+                      className="h-3.5 w-3.5 shrink-0 text-muted-foreground/50 transition-colors group-hover:text-emerald-300"
+                      aria-hidden
+                    />
+                  </a>
+                </li>
+              ))}
+            </div>
+          </motion.ul>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
+
+// ------------------------------------------------------------- plan rows --
+
 /** one saved-plan row — click opens it, trash uses a two-step confirm */
 function PlanRow({
   p,
@@ -159,6 +400,14 @@ function PlanRow({
           <span className="flex items-center gap-1.5 text-[13px] font-semibold">
             {opening && <Loader2 className="h-3 w-3 shrink-0 animate-spin text-emerald-300" aria-hidden />}
             <span className="min-w-0 truncate">{p.title}</span>
+            {(p.engineVersion ?? 1) >= 2 && (
+              <span
+                className="shrink-0 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-1.5 py-px font-mono text-[9px] font-bold text-emerald-300"
+                title="Mapped with the v2 smart engine"
+              >
+                v2
+              </span>
+            )}
           </span>
           <span className="mt-0.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
             <span className="truncate">
@@ -176,6 +425,15 @@ function PlanRow({
             >
               {p.matched}/{p.total}
             </span>
+            {!!p.refreshCount && p.refreshCount > 0 && (
+              <>
+                <span aria-hidden>·</span>
+                <span className="flex shrink-0 items-center gap-0.5" title={`Re-mapped ${p.refreshCount}×`}>
+                  <RefreshCw className="h-2.5 w-2.5" aria-hidden />
+                  {p.refreshCount}
+                </span>
+              </>
+            )}
           </span>
         </button>
         <button
@@ -250,6 +508,14 @@ function SavedPlansPanel({
 
 // ------------------------------------------------------------ main view --
 
+const VIA_LABEL: Record<string, { label: string; title: string }> = {
+  pin: { label: 'Pinned', title: 'You confirmed this match — it is locked' },
+  agree: { label: 'Verified', title: 'AI and the library index agree on this match' },
+  local: { label: 'Indexed', title: 'Matched by the library keyword index' },
+  llm: { label: 'AI', title: 'Matched by the AI reading your syllabus' },
+  subject: { label: 'Subject', title: 'Matched to a subject — no specific chapter yet' },
+}
+
 export function SyllabusView() {
   const { toast } = useToast()
   const ensureDevice = useStudy((s) => s.ensureDevice)
@@ -274,9 +540,19 @@ export function SyllabusView() {
     sourceType: 'typed' | 'uploaded'
     sourceName: string
   }>({ title: '', sourceType: 'typed', sourceName: '' })
+  const [researchSources, setResearchSources] = useState<SourceRef[]>([])
+
+  // live step state
+  const [researchStepStates, setResearchStepStates] = useState<Record<string, StepState>>({})
+  const [researchNote, setResearchNote] = useState<string | null>(null)
+  const [mapStepStates, setMapStepStates] = useState<Record<string, StepState>>({})
+  const [mapNote, setMapNote] = useState<string | null>(null)
 
   // result state
   const [plan, setPlan] = useState<PlanFull | null>(null)
+  const [subjectFilter, setSubjectFilter] = useState<string | 'all'>('all')
+  const [pinningTopic, setPinningTopic] = useState<string | null>(null)
+  const [showUnmatched, setShowUnmatched] = useState(true)
 
   // saved plans sidebar
   const [plans, setPlans] = useState<PlanSummary[]>([])
@@ -314,6 +590,52 @@ export function SyllabusView() {
     toast({ title: 'Syllabus Mapper', description: message, variant: 'destructive' })
   }
 
+  /** advance the research step machine from SSE stage events */
+  const applyResearchStage = (data: Record<string, unknown>) => {
+    const s = typeof data.stage === 'string' ? data.stage : ''
+    setResearchStepStates((prev) => {
+      const next = { ...prev }
+      const order = RESEARCH_STEPS.map((x) => x.id)
+      const idx = order.indexOf(s)
+      if (idx === -1) return next
+      for (let i = 0; i < idx; i++) next[order[i]] = 'done'
+      next[s] = 'active'
+      return next
+    })
+    if (s === 'search') setResearchNote('3 parallel queries')
+    else if (s === 'sources')
+      setResearchNote(`${data.count ?? '?'} results · keeping ${data.kept ?? '?'}`)
+    else if (s === 'read')
+      setResearchNote(
+        data.host ? `reading ${String(data.host).replace(/^www\./, '')}` : 'reading pages'
+      )
+    else if (s === 'synthesize') setResearchNote(`${data.pages ?? 0} pages + ${data.snippets ?? 0} snippets`)
+    else if (s === 'done') setResearchNote(null)
+  }
+
+  /** advance the map step machine from SSE stage events */
+  const applyMapStage = (data: Record<string, unknown>) => {
+    const s = typeof data.stage === 'string' ? data.stage : ''
+    setMapStepStates((prev) => {
+      const next = { ...prev }
+      const order = MAP_STEPS.map((x) => x.id)
+      const idx = order.indexOf(s)
+      if (idx === -1) return next
+      for (let i = 0; i < idx; i++) next[order[i]] = 'done'
+      next[s] = 'active'
+      return next
+    })
+    if (s === 'clean') setMapNote(`${data.count ?? '?'} topics${data.pinned ? ` · ${data.pinned} pinned` : ''}`)
+    else if (s === 'route') setMapNote('reading the subject catalog')
+    else if (s === 'route-done')
+      setMapNote(data.llm ? `${data.subjects ?? '?'} subjects identified` : 'using the local index')
+    else if (s === 'chapter')
+      setMapNote(`${data.done ?? '?'}/${data.total ?? '?'} · ${data.subject ?? ''}`)
+    else if (s === 'score') setMapNote('LLM × keyword index')
+    else if (s === 'save') setMapNote('writing to your library')
+    else setMapNote(null)
+  }
+
   // ------------------------------------------------------- input: typed --
 
   const doResearch = async () => {
@@ -323,24 +645,57 @@ export function SyllabusView() {
       return
     }
     setBusy('research')
+    setResearchStepStates({ search: 'active' })
+    setResearchNote('3 parallel queries')
     try {
-      const res = await fetch('/api/syllabus/research', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ deviceId: ensureDevice(), name: clean, details: details.trim() }),
-      })
-      const data = (await res.json().catch(() => ({}))) as { topics?: string[]; error?: string }
-      if (!res.ok || !data.topics?.length) {
-        fail(data.error || 'Could not research that name — please try again.')
-        return
+      let done = false
+      await streamSSE(
+        '/api/syllabus/research',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deviceId: ensureDevice(), name: clean, details: details.trim() }),
+        },
+        (event, data) => {
+          if (event === 'stage') {
+            applyResearchStage(data)
+          } else if (event === 'done') {
+            done = true
+            const topics = (data.topics as string[]) ?? []
+            const sources = (data.sources as SourceRef[]) ?? []
+            if (!topics.length) return
+            setTopics(topics)
+            setResearchSources(sources)
+            setSource({ title: clean, sourceType: 'typed', sourceName: clean })
+            setResearchStepStates(
+              Object.fromEntries(RESEARCH_STEPS.map((s) => [s.id, 'done' as StepState]))
+            )
+            setStage('review')
+            if (data.cached) {
+              toast({
+                title: 'Served from the live cache',
+                description: 'This exact research was reused from 30 minutes ago — instant.',
+              })
+            } else {
+              toast({
+                title: `Researched ${topics.length} topics`,
+                description: `${sources.length} live web sources used.`,
+              })
+            }
+          } else if (event === 'error') {
+            done = true
+            fail(String(data.error ?? 'Could not research that name — please try again.'))
+          }
+        }
+      )
+      if (!done && !topics.length) {
+        fail('Research stream ended early — please try again.')
       }
-      setTopics(data.topics)
-      setSource({ title: clean, sourceType: 'typed', sourceName: clean })
-      setStage('review')
-    } catch {
-      fail('Network error — please try again.')
+    } catch (err) {
+      fail(err instanceof Error ? err.message : 'Network error — please try again.')
     } finally {
       setBusy(null)
+      setResearchNote(null)
     }
   }
 
@@ -378,6 +733,7 @@ export function SyllabusView() {
       }
       const base = file.name.replace(/\.[^.]+$/, '').trim() || 'Uploaded syllabus'
       setTopics(data.topics)
+      setResearchSources([])
       setSource({ title: base, sourceType: 'uploaded', sourceName: file.name })
       setStage('review')
     } catch {
@@ -408,30 +764,51 @@ export function SyllabusView() {
       return
     }
     setBusy('map')
+    setMapStepStates({ clean: 'active' })
+    setMapNote(`${topics.length} topics`)
     try {
-      const res = await fetch('/api/syllabus/map', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          deviceId: ensureDevice(),
-          title: source.title || 'Syllabus plan',
-          sourceType: source.sourceType,
-          sourceName: source.sourceName,
-          topics,
-        }),
-      })
-      const data = (await res.json().catch(() => ({}))) as PlanFull & { error?: string }
-      if (!res.ok || !data?.id) {
-        fail(data?.error || 'Could not map those topics — please try again.')
-        return
+      let done = false
+      await streamSSE(
+        '/api/syllabus/map',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            deviceId: ensureDevice(),
+            title: source.title || 'Syllabus plan',
+            sourceType: source.sourceType,
+            sourceName: source.sourceName,
+            topics,
+            sources: researchSources,
+          }),
+        },
+        (event, data) => {
+          if (event === 'stage') {
+            applyMapStage(data)
+          } else if (event === 'done') {
+            done = true
+            const p = data as unknown as PlanFull
+            if (!p?.id) return
+            setPlan(p)
+            setSubjectFilter('all')
+            setShowUnmatched(true)
+            setMapStepStates(Object.fromEntries(MAP_STEPS.map((s) => [s.id, 'done' as StepState])))
+            setStage('result')
+            loadPlans()
+          } else if (event === 'error') {
+            done = true
+            fail(String(data.error ?? 'Could not map those topics — please try again.'))
+          }
+        }
+      )
+      if (!done && !plan) {
+        fail('Mapping stream ended early — please try again.')
       }
-      setPlan(data)
-      setStage('result')
-      loadPlans()
-    } catch {
-      fail('Network error — please try again.')
+    } catch (err) {
+      fail(err instanceof Error ? err.message : 'Network error — please try again.')
     } finally {
       setBusy(null)
+      setMapNote(null)
     }
   }
 
@@ -450,6 +827,7 @@ export function SyllabusView() {
         return
       }
       setPlan(data)
+      setSubjectFilter('all')
       setStage('result')
     } catch {
       fail('Network error — please try again.')
@@ -485,12 +863,65 @@ export function SyllabusView() {
     }
   }
 
+  /** PATCH remap — no pin = full refresh, pin = confirm one topic then refresh */
+  const remap = async (pin?: { topic: string; chapterId: string }) => {
+    if (!plan) return
+    const wasPin = !!pin
+    if (wasPin) setPinningTopic(pin.topic)
+    else setBusy('refresh')
+    setMapStepStates({ clean: 'active' })
+    try {
+      let done = false
+      await streamSSE(
+        `/api/syllabus/plans/${encodeURIComponent(plan.id)}?deviceId=${encodeURIComponent(ensureDevice())}`,
+        {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(pin ? { pin } : {}),
+        },
+        (event, data) => {
+          if (event === 'stage') {
+            applyMapStage(data)
+          } else if (event === 'done') {
+            done = true
+            const p = data as unknown as PlanFull
+            if (!p?.id) return
+            setPlan(p)
+            setMapStepStates(Object.fromEntries(MAP_STEPS.map((s) => [s.id, 'done' as StepState])))
+            loadPlans()
+          } else if (event === 'error') {
+            done = true
+            fail(String(data.error ?? 'Could not update the plan.'))
+          }
+        }
+      )
+      if (done) {
+        toast({
+          title: wasPin ? 'Match confirmed' : 'Plan re-mapped',
+          description: wasPin
+            ? 'That topic is now pinned — future refreshes keep it.'
+            : 'Every topic re-checked with the current smart engine.',
+        })
+      }
+    } catch (err) {
+      fail(err instanceof Error ? err.message : 'Network error — please try again.')
+    } finally {
+      setPinningTopic(null)
+      setBusy(null)
+      setMapNote(null)
+    }
+  }
+
   const startOver = () => {
     setStage('input')
     setTopics([])
     setFile(null)
     setAddTopicInput('')
     setPlan(null)
+    setResearchSources([])
+    setResearchStepStates({})
+    setMapStepStates({})
+    setSubjectFilter('all')
   }
 
   // group matched entries by subject, biggest groups first
@@ -501,7 +932,7 @@ export function SyllabusView() {
       { subjectId: string; subjectName: string; entries: MappingEntry[] }
     >()
     for (const m of plan.mapping) {
-      if (!m.subjectId || !m.chapterId) continue
+      if (!m.subjectId) continue
       let g = bySubject.get(m.subjectId)
       if (!g) {
         g = { subjectId: m.subjectId, subjectName: m.subjectName ?? m.subjectId, entries: [] }
@@ -516,6 +947,22 @@ export function SyllabusView() {
     () => (plan ? plan.mapping.filter((m) => !m.subjectId || !m.chapterId) : []),
     [plan]
   )
+  const trueUnmatched = useMemo(
+    () => (plan ? plan.mapping.filter((m) => !m.subjectId && !m.chapterId) : []),
+    [plan]
+  )
+
+  const stats = useMemo(() => {
+    if (!plan) return { subjects: 0, chapters: 0, strong: 0, avg: 0, subjectOnly: 0 }
+    const withChapter = plan.mapping.filter((m) => m.chapterId)
+    const chapters = new Set(withChapter.map((m) => m.chapterId)).size
+    const strong = withChapter.filter((m) => m.confidence >= 0.75).length
+    const avg = withChapter.length
+      ? withChapter.reduce((a, m) => a + m.confidence, 0) / withChapter.length
+      : 0
+    const subjectOnly = plan.mapping.filter((m) => m.subjectId && !m.chapterId).length
+    return { subjects: groups.length, chapters, strong, avg, subjectOnly }
+  }, [plan, groups])
 
   const coveragePct = plan && plan.total > 0 ? Math.round((plan.matched / plan.total) * 100) : 0
   const coverageTone =
@@ -528,11 +975,17 @@ export function SyllabusView() {
     const bookId = getChapter(chapterId)?.bookId
     if (bookId) navigate({ name: 'book', bookId })
   }
+  const openSubjectBookById = (subjectId: string) => {
+    const book = LIBRARY_BOOKS.find((b) => b.subjectId === subjectId)
+    if (book) navigate({ name: 'book', bookId: book.id })
+  }
 
   const requestDelete = (id: string) =>
     confirmDeleteId === id ? deletePlan(id) : setConfirmDeleteId(id)
 
-  // ============================================================== render --
+  const visibleGroups = subjectFilter === 'all' ? groups : groups.filter((g) => g.subjectId === subjectFilter)
+
+  // ============================================================== render =
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
@@ -547,9 +1000,24 @@ export function SyllabusView() {
               Syllabus <span className="text-emerald-300">Mapper</span>
             </h1>
             <p className="mt-1 text-sm text-muted-foreground sm:text-[15px]">
-              Bring any syllabus — we&apos;ll map it to your library.
+              Bring any syllabus — live web research maps it to your library.
             </p>
           </div>
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {[
+            { icon: Globe, label: 'Live web research' },
+            { icon: Zap, label: 'Smart matching engine v2' },
+            { icon: RefreshCw, label: 'Always refreshable' },
+          ].map(({ icon: Icon, label }) => (
+            <span
+              key={label}
+              className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card/50 px-2.5 py-1 text-[11px] font-medium text-muted-foreground"
+            >
+              <Icon className="h-3 w-3 text-emerald-300" aria-hidden />
+              {label}
+            </span>
+          ))}
         </div>
       </div>
 
@@ -628,8 +1096,17 @@ export function SyllabusView() {
                       )}
                       Research topics
                     </button>
-                    {busy === 'research' && <SpinnerLine text="Searching the web…" />}
                   </div>
+                  {busy === 'research' && (
+                    <div className="mt-4 rounded-xl border border-border/60 bg-background/40 p-4">
+                      <LiveSteps
+                        steps={RESEARCH_STEPS}
+                        states={researchStepStates}
+                        note={researchNote}
+                        compact
+                      />
+                    </div>
+                  )}
                 </div>
               </TabsContent>
 
@@ -759,8 +1236,19 @@ export function SyllabusView() {
                 <span className="rounded-full border border-emerald-400/25 bg-emerald-400/10 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-emerald-300">
                   {topics.length} topic{topics.length !== 1 ? 's' : ''}
                 </span>
-                <span className="rounded-full border border-border bg-muted/50 px-2.5 py-0.5 text-[11px] text-muted-foreground">
-                  {source.sourceType === 'uploaded' ? 'From your document' : 'Researched from the web'}
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-2.5 py-0.5 text-[11px] text-muted-foreground">
+                  {source.sourceType === 'uploaded' ? (
+                    <>
+                      <FileText className="h-3 w-3" aria-hidden />
+                      From your document
+                    </>
+                  ) : (
+                    <>
+                      <Globe className="h-3 w-3" aria-hidden />
+                      Live web research
+                      {researchSources.length > 0 && ` · ${researchSources.length} sources`}
+                    </>
+                  )}
                 </span>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -830,9 +1318,20 @@ export function SyllabusView() {
                   <ArrowLeft className="h-4 w-4" aria-hidden />
                   Start over
                 </button>
-                {busy === 'map' && <SpinnerLine text="Mapping topics to your library…" />}
               </div>
+
+              {busy === 'map' && (
+                <div className="mt-4 rounded-xl border border-border/60 bg-background/40 p-4">
+                  <LiveSteps steps={MAP_STEPS} states={mapStepStates} note={mapNote} compact />
+                </div>
+              )}
             </div>
+
+            {researchSources.length > 0 && (
+              <div className="mt-5">
+                <SourcesPanel sources={researchSources} />
+              </div>
+            )}
           </motion.div>
         )}
 
@@ -853,21 +1352,39 @@ export function SyllabusView() {
                 <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
                   <CoverageRing pct={coveragePct} />
                   <div className="min-w-0 flex-1">
-                    <h2 className="truncate text-xl font-bold tracking-tight sm:text-2xl">
-                      {plan.title}
-                    </h2>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h2 className="truncate text-xl font-bold tracking-tight sm:text-2xl">
+                        {plan.title}
+                      </h2>
+                      {(plan.engineVersion ?? 1) >= 2 && (
+                        <span
+                          className="inline-flex shrink-0 items-center gap-1 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-300"
+                          title="Two-stage AI routing + keyword-index cross-checking"
+                        >
+                          <Zap className="h-3 w-3" aria-hidden />
+                          ENGINE v2
+                        </span>
+                      )}
+                    </div>
                     <div className="mt-2 flex flex-wrap items-center gap-2">
                       <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground">
                         {plan.sourceType === 'uploaded' ? (
                           <FileText className="h-3 w-3" aria-hidden />
                         ) : (
-                          <Keyboard className="h-3 w-3" aria-hidden />
+                          <Globe className="h-3 w-3" aria-hidden />
                         )}
-                        {plan.sourceType === 'uploaded' ? 'Uploaded document' : 'Researched'}
+                        {plan.sourceType === 'uploaded' ? 'Uploaded document' : 'Live research'}
                       </span>
                       <span className="text-[11px] text-muted-foreground">
-                        {formatDistanceToNow(new Date(plan.createdAt), { addSuffix: true })}
+                        {plan.refreshedAt
+                          ? `updated ${formatDistanceToNow(new Date(plan.refreshedAt), { addSuffix: true })}`
+                          : formatDistanceToNow(new Date(plan.createdAt), { addSuffix: true })}
                       </span>
+                      {plan.refreshCount ? (
+                        <span className="rounded-full border border-border bg-muted/50 px-2 py-0.5 font-mono text-[10px] text-muted-foreground">
+                          ↻ {plan.refreshCount}
+                        </span>
+                      ) : null}
                     </div>
                     <p className={`mt-3 text-sm font-semibold ${coverageTone}`}>
                       {plan.matched} of {plan.total} topics matched — {coveragePct}% coverage
@@ -884,21 +1401,123 @@ export function SyllabusView() {
                         style={{ width: `${coveragePct}%` }}
                       />
                     </div>
+
+                    {/* stats chips */}
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      <span className="inline-flex items-center gap-1.5 rounded-lg border border-border/70 bg-background/40 px-2.5 py-1 text-[11.5px] font-medium text-muted-foreground">
+                        <Layers className="h-3.5 w-3.5 text-emerald-300/80" aria-hidden />
+                        {stats.subjects} subject{stats.subjects !== 1 ? 's' : ''}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 rounded-lg border border-border/70 bg-background/40 px-2.5 py-1 text-[11.5px] font-medium text-muted-foreground">
+                        <BookOpen className="h-3.5 w-3.5 text-emerald-300/80" aria-hidden />
+                        {stats.chapters} chapter{stats.chapters !== 1 ? 's' : ''}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 rounded-lg border border-border/70 bg-background/40 px-2.5 py-1 text-[11.5px] font-medium text-muted-foreground">
+                        <Target className="h-3.5 w-3.5 text-emerald-300/80" aria-hidden />
+                        {stats.strong} strong match{stats.strong !== 1 ? 'es' : ''}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 rounded-lg border border-border/70 bg-background/40 px-2.5 py-1 text-[11.5px] font-medium text-muted-foreground">
+                        <ShieldCheck className="h-3.5 w-3.5 text-emerald-300/80" aria-hidden />
+                        {Math.round(stats.avg * 100)}% avg confidence
+                      </span>
+                      {stats.subjectOnly > 0 && (
+                        <span className="inline-flex items-center gap-1.5 rounded-lg border border-amber-400/30 bg-amber-400/[0.07] px-2.5 py-1 text-[11.5px] font-medium text-amber-600 dark:text-amber-300">
+                          <Layers className="h-3.5 w-3.5" aria-hidden />
+                          {stats.subjectOnly} subject-only
+                        </span>
+                      )}
+                    </div>
                   </div>
-                  <button
-                    onClick={startOver}
-                    className={`inline-flex shrink-0 items-center gap-2 self-start rounded-xl border border-border bg-card/70 px-4 py-2.5 text-sm font-semibold transition-colors hover:border-emerald-400/40 hover:bg-card sm:self-center ${FOCUS_RING}`}
-                  >
-                    <Plus className="h-4 w-4" aria-hidden />
-                    New plan
-                  </button>
+
+                  <div className="flex shrink-0 flex-row gap-2 sm:flex-col">
+                    <button
+                      onClick={() => remap()}
+                      disabled={busy === 'refresh'}
+                      title="Re-run the smart engine on these topics — pins are kept"
+                      className={`inline-flex items-center gap-2 rounded-xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-2.5 text-sm font-semibold text-emerald-600 transition-colors hover:border-emerald-400/50 hover:bg-emerald-400/15 disabled:cursor-not-allowed disabled:opacity-60 dark:text-emerald-300 ${FOCUS_RING}`}
+                    >
+                      {busy === 'refresh' ? (
+                        <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+                      ) : (
+                        <RefreshCw className="h-4 w-4" aria-hidden />
+                      )}
+                      Refresh
+                    </button>
+                    <button
+                      onClick={startOver}
+                      className={`inline-flex items-center gap-2 rounded-xl border border-border bg-card/70 px-4 py-2.5 text-sm font-semibold transition-colors hover:border-emerald-400/40 hover:bg-card ${FOCUS_RING}`}
+                    >
+                      <Plus className="h-4 w-4" aria-hidden />
+                      New plan
+                    </button>
+                  </div>
                 </div>
+
+                {busy === 'refresh' && (
+                  <div className="mt-4 rounded-xl border border-border/60 bg-background/40 p-4">
+                    <LiveSteps steps={MAP_STEPS} states={mapStepStates} note={mapNote} compact />
+                  </div>
+                )}
               </div>
 
-              {/* matched groups */}
-              {groups.length > 0 ? (
-                <div className="mt-6 flex flex-col gap-5">
+              {/* subject filter chips */}
+              {groups.length > 1 && (
+                <div className="mt-5 flex flex-wrap items-center gap-2">
+                  <button
+                    onClick={() => setSubjectFilter('all')}
+                    aria-pressed={subjectFilter === 'all'}
+                    className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[12px] font-semibold transition-colors ${FOCUS_RING} ${
+                      subjectFilter === 'all'
+                        ? 'border-emerald-400/40 bg-emerald-400/15 text-emerald-600 dark:text-emerald-300'
+                        : 'border-border/70 bg-card/50 text-muted-foreground hover:border-emerald-400/30'
+                    }`}
+                  >
+                    All subjects
+                    <span className="font-mono text-[10px] opacity-70">{plan.mapping.length}</span>
+                  </button>
                   {groups.map((g) => {
+                    const active = subjectFilter === g.subjectId
+                    return (
+                      <button
+                        key={g.subjectId}
+                        onClick={() => setSubjectFilter(active ? 'all' : g.subjectId)}
+                        aria-pressed={active}
+                        className={`inline-flex max-w-full items-center gap-1.5 rounded-full border px-3 py-1.5 text-[12px] font-semibold transition-colors ${FOCUS_RING} ${
+                          active
+                            ? 'border-emerald-400/40 bg-emerald-400/15 text-emerald-600 dark:text-emerald-300'
+                            : 'border-border/70 bg-card/50 text-muted-foreground hover:border-emerald-400/30'
+                        }`}
+                      >
+                        <span
+                          className="h-1.5 w-1.5 shrink-0 rounded-full"
+                          style={{ background: subjectAccentById.get(g.subjectId) ?? '#34d399' }}
+                          aria-hidden
+                        />
+                        <span className="max-w-40 truncate">{g.subjectName}</span>
+                        <span className="font-mono text-[10px] opacity-70">{g.entries.length}</span>
+                      </button>
+                    )
+                  })}
+                  {trueUnmatched.length > 0 && (
+                    <button
+                      onClick={() => setShowUnmatched((v) => !v)}
+                      aria-pressed={showUnmatched}
+                      className={`ml-auto inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[12px] font-semibold transition-colors ${FOCUS_RING} ${
+                        showUnmatched
+                          ? 'border-border/70 bg-card/50 text-muted-foreground'
+                          : 'border-border/70 bg-card/30 text-muted-foreground/60'
+                      }`}
+                    >
+                      {trueUnmatched.length} unmatched
+                    </button>
+                  )}
+                </div>
+              )}
+
+              {/* matched groups */}
+              {visibleGroups.length > 0 ? (
+                <div className="mt-6 flex flex-col gap-5">
+                  {visibleGroups.map((g) => {
                     const accent = subjectAccentById.get(g.subjectId) ?? '#34d399'
                     return (
                       <section
@@ -914,9 +1533,7 @@ export function SyllabusView() {
                           />
                           <button
                             id={`syllabus-subject-${g.subjectId}`}
-                            onClick={() =>
-                              g.entries[0]?.chapterId && openSubjectBook(g.entries[0].chapterId)
-                            }
+                            onClick={() => openSubjectBookById(g.subjectId)}
                             className={`truncate text-left text-sm font-bold transition-opacity hover:opacity-80 ${FOCUS_RING}`}
                             style={{ color: accent }}
                             title={`Open the ${g.subjectName} book`}
@@ -929,35 +1546,77 @@ export function SyllabusView() {
                           <span className="h-px min-w-4 flex-1 bg-border/60" aria-hidden />
                         </div>
                         <ul className="flex flex-col gap-2">
-                          {g.entries.map((m) => (
-                            <li
-                              key={`${m.topic}-${m.chapterId}`}
-                              className="flex flex-col gap-2 rounded-xl border border-border/50 bg-background/40 p-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3"
-                            >
-                              <div className="flex min-w-0 items-center gap-2.5">
-                                <ConfidenceDot c={m.confidence} />
-                                <span className="min-w-0 truncate text-[13.5px] text-foreground/85">
-                                  {m.topic}
-                                </span>
-                              </div>
-                              <button
-                                onClick={() => m.chapterId && openChapter(m.chapterId)}
-                                title={`Open ${m.chapterTitle}`}
-                                className={`group inline-flex min-w-0 shrink-0 items-center gap-1.5 self-start rounded-lg border border-emerald-400/25 bg-emerald-400/10 px-2.5 py-1.5 text-left text-[12.5px] font-semibold text-emerald-600 transition-colors hover:border-emerald-400/50 hover:bg-emerald-400/15 dark:text-emerald-300 sm:self-auto ${FOCUS_RING}`}
+                          {g.entries.map((m) => {
+                            const via = m.via && VIA_LABEL[m.via]
+                            return (
+                              <li
+                                key={`${m.topic}-${m.chapterId ?? 'subject'}`}
+                                className="flex flex-col gap-2 rounded-xl border border-border/50 bg-background/40 p-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3"
                               >
-                                <BookOpen className="h-3.5 w-3.5 shrink-0" aria-hidden />
-                                <span className="min-w-0 truncate">{m.chapterTitle}</span>
-                                <ArrowUpRight
-                                  className="h-3 w-3 shrink-0 opacity-0 transition-opacity group-hover:opacity-100"
-                                  aria-hidden
-                                />
-                              </button>
-                            </li>
-                          ))}
+                                <div className="flex min-w-0 items-center gap-2.5">
+                                  <ConfidenceDot c={m.confidence} />
+                                  <span className="min-w-0 truncate text-[13.5px] text-foreground/85">
+                                    {m.topic}
+                                  </span>
+                                  <span className="shrink-0 font-mono text-[10.5px] text-muted-foreground/70">
+                                    {Math.round(m.confidence * 100)}%
+                                  </span>
+                                  {via && (m.via === 'pin' || m.via === 'agree') && (
+                                    <span
+                                      className={`inline-flex shrink-0 items-center gap-1 rounded-full border px-1.5 py-px text-[9.5px] font-bold uppercase tracking-wide ${
+                                        m.via === 'pin'
+                                          ? 'border-amber-400/30 bg-amber-400/10 text-amber-600 dark:text-amber-300'
+                                          : 'border-emerald-400/30 bg-emerald-400/10 text-emerald-600 dark:text-emerald-300'
+                                      }`}
+                                      title={via.title}
+                                    >
+                                      {m.via === 'pin' ? (
+                                        <Pin className="h-2.5 w-2.5" aria-hidden />
+                                      ) : (
+                                        <ShieldCheck className="h-2.5 w-2.5" aria-hidden />
+                                      )}
+                                      {via.label}
+                                    </span>
+                                  )}
+                                </div>
+                                {m.chapterId ? (
+                                  <button
+                                    onClick={() => openChapter(m.chapterId!)}
+                                    title={`Open ${m.chapterTitle}`}
+                                    className={`group inline-flex min-w-0 shrink-0 items-center gap-1.5 self-start rounded-lg border border-emerald-400/25 bg-emerald-400/10 px-2.5 py-1.5 text-left text-[12.5px] font-semibold text-emerald-600 transition-colors hover:border-emerald-400/50 hover:bg-emerald-400/15 dark:text-emerald-300 sm:self-auto ${FOCUS_RING}`}
+                                  >
+                                    <BookOpen className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                                    <span className="min-w-0 truncate">{m.chapterTitle}</span>
+                                    <ArrowUpRight
+                                      className="h-3 w-3 shrink-0 opacity-0 transition-opacity group-hover:opacity-100"
+                                      aria-hidden
+                                    />
+                                  </button>
+                                ) : (
+                                  <button
+                                    onClick={() => openSubjectBookById(g.subjectId)}
+                                    title={`Browse the ${g.subjectName} book`}
+                                    className={`group inline-flex min-w-0 shrink-0 items-center gap-1.5 self-start rounded-lg border border-amber-400/25 bg-amber-400/[0.08] px-2.5 py-1.5 text-left text-[12.5px] font-semibold text-amber-600 transition-colors hover:border-amber-400/50 hover:bg-amber-400/15 dark:text-amber-300 sm:self-auto ${FOCUS_RING}`}
+                                  >
+                                    <Layers className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                                    <span className="min-w-0 truncate">Browse {g.subjectName}</span>
+                                    <ArrowUpRight
+                                      className="h-3 w-3 shrink-0 opacity-0 transition-opacity group-hover:opacity-100"
+                                      aria-hidden
+                                    />
+                                  </button>
+                                )}
+                              </li>
+                            )
+                          })}
                         </ul>
                       </section>
                     )
                   })}
+                </div>
+              ) : subjectFilter !== 'all' ? (
+                <div className="mt-6 rounded-2xl border border-border/80 bg-card p-6 text-center">
+                  <p className="text-sm font-semibold">No topics in this subject</p>
                 </div>
               ) : (
                 <div className="mt-6 rounded-2xl border border-border/80 bg-card p-6 text-center">
@@ -969,32 +1628,56 @@ export function SyllabusView() {
                 </div>
               )}
 
-              {/* unmatched */}
-              {unmatched.length > 0 && (
+              {/* unmatched with "use closest" fix-up */}
+              {showUnmatched && unmatched.length > 0 && (
                 <section
                   aria-labelledby="syllabus-unmatched"
                   className="mt-6 rounded-2xl border border-dashed border-border/80 bg-card/40 p-4 sm:p-5"
                 >
                   <div className="mb-3 flex items-center gap-2">
-                    <h3
-                      id="syllabus-unmatched"
-                      className="text-sm font-bold text-muted-foreground"
-                    >
-                      Not in library yet
+                    <h3 id="syllabus-unmatched" className="text-sm font-bold text-muted-foreground">
+                      Needs your input
                     </h3>
                     <span className="rounded-full border border-border bg-muted/50 px-2 py-0.5 font-mono text-[10px] text-muted-foreground">
                       {unmatched.length}
                     </span>
                   </div>
-                  <div className="flex max-h-64 flex-wrap gap-2 overflow-y-auto pr-1">
+                  <div className="flex max-h-64 flex-col gap-2 overflow-y-auto pr-1">
                     {unmatched.map((m) => (
-                      <span
+                      <div
                         key={m.topic}
-                        className="inline-flex max-w-full items-center rounded-full border border-border/60 bg-background/40 px-3 py-1.5 text-[12.5px] text-muted-foreground"
-                        title="No matching chapter was found for this topic"
+                        className="flex flex-col gap-2 rounded-xl border border-border/50 bg-background/40 p-2.5 sm:flex-row sm:items-center sm:justify-between"
                       >
-                        <span className="min-w-0 truncate">{m.topic}</span>
-                      </span>
+                        <span
+                          className="min-w-0 truncate text-[12.5px] text-muted-foreground"
+                          title="No confident chapter was found for this topic"
+                        >
+                          {m.topic}
+                        </span>
+                        {m.closest ? (
+                          <button
+                            onClick={() => remap({ topic: m.topic, chapterId: m.closest!.chapterId })}
+                            disabled={pinningTopic === m.topic}
+                            title={`Pin to "${m.closest.chapterTitle}" (${Math.round(
+                              m.closest.confidence * 100
+                            )}% keyword overlap) — pins survive refreshes`}
+                            className={`group inline-flex min-w-0 shrink-0 items-center gap-1.5 self-start rounded-lg border border-dashed border-emerald-400/30 bg-emerald-400/[0.06] px-2.5 py-1.5 text-left text-[12px] font-semibold text-emerald-600 transition-colors hover:border-emerald-400/50 hover:bg-emerald-400/15 disabled:opacity-60 dark:text-emerald-300 sm:self-auto ${FOCUS_RING}`}
+                          >
+                            {pinningTopic === m.topic ? (
+                              <Loader2 className="h-3.5 w-3.5 shrink-0 animate-spin" aria-hidden />
+                            ) : (
+                              <Wand2 className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                            )}
+                            <span className="min-w-0 truncate">
+                              Use closest · {m.closest.chapterTitle}
+                            </span>
+                          </button>
+                        ) : (
+                          <span className="shrink-0 text-[11px] text-muted-foreground/50">
+                            no similar chapter found
+                          </span>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </section>
@@ -1003,6 +1686,11 @@ export function SyllabusView() {
 
             {/* -------- sidebar -------- */}
             <aside className="min-w-0 lg:sticky lg:top-24 lg:self-start" aria-label="Saved plans">
+              {plan.research && plan.research.length > 0 && (
+                <div className="mb-4">
+                  <SourcesPanel sources={plan.research} />
+                </div>
+              )}
               <SavedPlansPanel
                 plans={plans}
                 loading={loadingPlans}
