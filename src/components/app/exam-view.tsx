@@ -126,7 +126,7 @@ const SET_META: Record<string, { title: string; blurb: string; count: number; ti
   'electrical-machines': { title: 'Machines & drives check', blurb: 'Motors, transformers, converters and EV', count: 15, timed: true },
   'power-systems': { title: 'Power systems check', blurb: 'Generation, transmission and protection', count: 12, timed: true },
   'control-instrumentation': { title: 'Control & measurement check', blurb: 'Stability, design, bridges and transducers', count: 12, timed: true },
-  'energy-automotive': { title: 'Energy & engines check', blurb: 'Power plants, engines, vehicles and renewables', count: 12, timed: true },
+  'energy-automotive': { title: 'Energy & engines check', blurb: 'Power plants, engines, vehicles, rockets and renewables', count: 12, timed: true },
   'mechanics-graphics': { title: 'Mechanics & drawing check', blurb: 'Statics, dynamics and engineering graphics', count: 10, timed: false },
   'solids-materials': { title: 'Solids & materials check', blurb: 'Stress, strain and metallurgy', count: 10, timed: false },
   'machines-design': { title: 'Machines & design check', blurb: 'Kinematics, dynamics and machine design', count: 10, timed: false },

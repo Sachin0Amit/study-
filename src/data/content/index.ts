@@ -475,6 +475,9 @@ import { gateCsContent } from './exam-gate-cs'
 import { drdoContent } from './exam-drdo'
 import { enggCseContent } from './exam-engg-cse'
 import { enggBranchContent } from './exam-engg-ece-ee-me'
+import { spacePropulsionContent } from './space-propulsion'
+import { dataConvertersContent } from './data-converters'
+import { aptLasersContent } from './apt-di-lasers'
 import { javaCh01Content } from './java-ch01'
 import { javaCh02Content } from './java-ch02'
 import { javaCh03Content } from './java-ch03'
@@ -1038,6 +1041,11 @@ const allContent: SectionContent[] = [
   ...drdoContent,
   ...enggCseContent,
   ...enggBranchContent,
+  // ---- Subject-track expansion content (space propulsion, data converters,
+  // aptitude DI/data-sufficiency, lasers & fibres) ----
+  ...spacePropulsionContent,
+  ...dataConvertersContent,
+  ...aptLasersContent,
 ]
 
 // Subject-wise consolidation (see scripts/consolidate.ts): sections that were
