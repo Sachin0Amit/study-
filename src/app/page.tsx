@@ -17,6 +17,12 @@ import { FormulaView } from '@/components/app/formula-view'
 import { ExamView } from '@/components/app/exam-view'
 import { SearchView } from '@/components/app/search-view'
 import { SyllabusView } from '@/components/app/syllabus-view'
+import { StudioView } from '@/components/app/studio-view'
+import { TwinView } from '@/components/app/twin-view'
+import { RemixView } from '@/components/app/remix-view'
+import { ArenaView } from '@/components/app/arena-view'
+import { PaperDnaView } from '@/components/app/paper-dna-view'
+import { PalaceView } from '@/components/app/palace-view'
 import { ReadingProgress, ScrollTopButton } from '@/components/app/reading-progress'
 import { ThemeColorMeta } from '@/components/app/theme-color-meta'
 
@@ -58,6 +64,18 @@ export default function Home() {
         useStudy.setState({ view: { name: 'progress' } })
       } else if (v === 'syllabus') {
         useStudy.setState({ view: { name: 'syllabus' } })
+      } else if (v === 'studio') {
+        useStudy.setState({ view: { name: 'studio' } })
+      } else if (v === 'twin') {
+        useStudy.setState({ view: { name: 'twin' } })
+      } else if (v === 'remix') {
+        useStudy.setState({ view: { name: 'remix' } })
+      } else if (v === 'arena') {
+        useStudy.setState({ view: { name: 'arena' } })
+      } else if (v === 'paper-dna') {
+        useStudy.setState({ view: { name: 'paper-dna' } })
+      } else if (v === 'palace') {
+        useStudy.setState({ view: { name: 'palace' } })
       }
     }
   }, [])
@@ -91,7 +109,11 @@ export default function Home() {
                 ? `exam-${view.chapterId ?? 'all'}`
                 : view.name === 'search'
                   ? `search-${view.query ?? 'new'}`
-                  : view.name
+                  : view.name === 'studio'
+                    ? `studio-${view.targetSkill ?? 'free'}`
+                    : view.name === 'palace'
+                      ? `palace-${view.sectionKey ?? 'pick'}`
+                      : view.name
 
   return (
     <div
@@ -123,6 +145,14 @@ export default function Home() {
             {view.name === 'progress' && <ProgressView />}
             {view.name === 'search' && <SearchView initialQuery={view.query} />}
             {view.name === 'syllabus' && <SyllabusView />}
+            {view.name === 'studio' && (
+              <StudioView targetSkill={view.targetSkill} subjectHint={view.subjectHint} />
+            )}
+            {view.name === 'twin' && <TwinView />}
+            {view.name === 'remix' && <RemixView />}
+            {view.name === 'arena' && <ArenaView />}
+            {view.name === 'paper-dna' && <PaperDnaView />}
+            {view.name === 'palace' && <PalaceView sectionKey={view.sectionKey} />}
           </motion.div>
         </AnimatePresence>
       </main>

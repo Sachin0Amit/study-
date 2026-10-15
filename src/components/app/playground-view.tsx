@@ -4,6 +4,8 @@ import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowRight, Dices, FlaskConical, X } from 'lucide-react'
 import { INTERACTIVE_META, InteractiveTool } from '@/components/interactives/registry'
+import { LabsFloor } from '@/components/labs'
+import { JudgePanel } from '@/components/labs/judge-panel'
 import { easyLabLine } from '@/data/easy-library'
 import { EasyBox, EasyLine } from './easy-box'
 import { useStudy } from '@/store/useStudy'
@@ -243,6 +245,40 @@ export function PlaygroundView() {
           </div>
         </div>
       </motion.div>
+
+      {/* compute engines — real simulators + the in-browser code judge */}
+      <section className="mb-12" aria-labelledby="compute-engines-heading">
+        <div className="mb-4 flex flex-wrap items-center gap-3">
+          <h2
+            id="compute-engines-heading"
+            className="text-sm font-bold uppercase tracking-[0.16em] text-foreground/90"
+          >
+            Compute engines
+          </h2>
+          <span className="rounded-full border border-emerald-400/25 bg-emerald-400/[0.06] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-300/90">
+            Real simulators · solved in your browser
+          </span>
+          <span className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
+          <span className="font-mono text-[11px] tabular-nums text-muted-foreground">6 engines</span>
+        </div>
+        <LabsFloor />
+      </section>
+
+      {/* the standing code judge arena */}
+      <section className="mb-12" aria-labelledby="code-judge-heading">
+        <div className="mb-4 flex flex-wrap items-center gap-3">
+          <h2 id="code-judge-heading" className="text-sm font-bold uppercase tracking-[0.16em] text-foreground/90">
+            Code judge arena
+          </h2>
+          <span className="rounded-full border border-amber-400/25 bg-amber-400/[0.06] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-amber-300/90">
+            8 challenges · instant verdict
+          </span>
+          <span className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-border/80 bg-card/70 p-4 sm:p-6">
+          <JudgePanel />
+        </div>
+      </section>
 
       {/* subject filter */}
       <div
