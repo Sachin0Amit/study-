@@ -1,0 +1,1062 @@
+     1→import type { SectionContent } from '../library'
+     2→import { ch1Content } from './ch01'
+     3→import { ch2Content } from './ch02'
+     4→import { ch3Content } from './ch03'
+     5→import { ch4Content } from './ch04'
+     6→import { ch5Content } from './ch05'
+     7→import { ch6Content } from './ch06'
+     8→import { ch7Content } from './ch07'
+     9→import { ch8Content } from './ch08'
+    10→import { ch9Content } from './ch09'
+    11→import { ch10Content } from './ch10'
+    12→import { ch11Content } from './ch11'
+    13→import { ch12Content } from './ch12'
+    14→import { ch13Content } from './ch13'
+    15→import { osCh1Content } from './os-ch01'
+    16→import { osCh2Content } from './os-ch02'
+    17→import { osCh3Content } from './os-ch03'
+    18→import { osCh4Content } from './os-ch04'
+    19→import { osCh5Content } from './os-ch05'
+    20→import { osCh6Content } from './os-ch06'
+    21→import { osCh7Content } from './os-ch07'
+    22→import { osCh8Content } from './os-ch08'
+    23→import { osCh9Content } from './os-ch09'
+    24→import { osCh10Content } from './os-ch10'
+    25→import { osCh11Content } from './os-ch11'
+    26→import { osCh12Content } from './os-ch12'
+    27→import { osCh13Content } from './os-ch13'
+    28→import { osCh14Content } from './os-ch14'
+    29→import { osCh15Content } from './os-ch15'
+    30→import { elecCh1Content } from './elec-ch01'
+    31→import { elecCh2Content } from './elec-ch02'
+    32→import { elecCh3Content } from './elec-ch03'
+    33→import { elecCh4Content } from './elec-ch04'
+    34→import { elecCh5Content } from './elec-ch05'
+    35→import { elecCh6Content } from './elec-ch06'
+    36→import { elecCh7Content } from './elec-ch07'
+    37→import { elecCh8Content } from './elec-ch08'
+    38→import { elecCh9Content } from './elec-ch09'
+    39→import { elecCh10Content } from './elec-ch10'
+    40→import { elecCh11Content } from './elec-ch11'
+    41→import { elecCh12Content } from './elec-ch12'
+    42→import { elecCh13Content } from './elec-ch13'
+    43→import { elecCh14Content } from './elec-ch14'
+    44→import { elecCh15Content } from './elec-ch15'
+    45→import { elecCh16Content } from './elec-ch16'
+    46→import { elecCh17Content } from './elec-ch17'
+    47→import { elecCh18Content } from './elec-ch18'
+    48→import { elecCh19Content } from './elec-ch19'
+    49→import { elecCh20Content } from './elec-ch20'
+    50→import { elecCh21Content } from './elec-ch21'
+    51→import { elecCh22Content } from './elec-ch22'
+    52→import { physCh1Content } from './phys-ch01'
+    53→import { physCh2Content } from './phys-ch02'
+    54→import { physCh3Content } from './phys-ch03'
+    55→import { physCh4Content } from './phys-ch04'
+    56→import { physCh5Content } from './phys-ch05'
+    57→import { physCh6Content } from './phys-ch06'
+    58→import { physCh7Content } from './phys-ch07'
+    59→import { physCh8Content } from './phys-ch08'
+    60→import { physCh9Content } from './phys-ch09'
+    61→import { physCh10Content } from './phys-ch10'
+    62→import { physCh11Content } from './phys-ch11'
+    63→import { physCh12Content } from './phys-ch12'
+    64→import { physCh13Content } from './phys-ch13'
+    65→import { physCh14Content } from './phys-ch14'
+    66→import { physCh15Content } from './phys-ch15'
+    67→import { calcCh1Content } from './calc-ch01'
+    68→import { calcCh2Content } from './calc-ch02'
+    69→import { calcCh3Content } from './calc-ch03'
+    70→import { calcCh4Content } from './calc-ch04'
+    71→import { calcCh5Content } from './calc-ch05'
+    72→import { calcCh6Content } from './calc-ch06'
+    73→import { calcCh7Content } from './calc-ch07'
+    74→import { calcCh8Content } from './calc-ch08'
+    75→import { calcCh9Content } from './calc-ch09'
+    76→import { calcCh10Content } from './calc-ch10'
+    77→import { calcCh11Content } from './calc-ch11'
+    78→import { calcCh12Content } from './calc-ch12'
+    79→import { calcCh13Content } from './calc-ch13'
+    80→import { calcCh14Content } from './calc-ch14'
+    81→import { calcCh15Content } from './calc-ch15'
+    82→import { calcCh16Content } from './calc-ch16'
+    83→import { calcCh17Content } from './calc-ch17'
+    84→import { jsCh1Content } from './js-ch01'
+    85→import { jsCh2Content } from './js-ch02'
+    86→import { jsCh3Content } from './js-ch03'
+    87→import { jsCh4Content } from './js-ch04'
+    88→import { jsCh5Content } from './js-ch05'
+    89→import { jsCh6Content } from './js-ch06'
+    90→import { jsCh7Content } from './js-ch07'
+    91→import { jsCh8Content } from './js-ch08'
+    92→import { jsCh9Content } from './js-ch09'
+    93→import { jsCh10Content } from './js-ch10'
+    94→import { jsCh11Content } from './js-ch11'
+    95→import { jsCh12Content } from './js-ch12'
+    96→import { jsCh13Content } from './js-ch13'
+    97→import { jsCh14Content } from './js-ch14'
+    98→import { jsCh15Content } from './js-ch15'
+    99→import { jsCh16Content } from './js-ch16'
+   100→import { jsCh17Content } from './js-ch17'
+   101→import { manoCh1Content } from './mano-ch01'
+   102→import { manoCh2Content } from './mano-ch02'
+   103→import { manoCh3Content } from './mano-ch03'
+   104→import { manoCh4Content } from './mano-ch04'
+   105→import { manoCh5Content } from './mano-ch05'
+   106→import { manoCh6Content } from './mano-ch06'
+   107→import { manoCh7Content } from './mano-ch07'
+   108→import { manoCh8Content } from './mano-ch8'
+   109→import { manoCh9Content } from './mano-ch09'
+   110→import { manoCh10Content } from './mano-ch10'
+   111→import { manoCh11Content } from './mano-ch11'
+   112→import { manoCh12Content } from './mano-ch12'
+   113→
+   114→// ---- Round 14: CLRS / Halliday / C++ master content imports (auto-synced by scripts/round14/wire_content.py) ----
+   115→import { clrsCh1Content } from './clrs-ch1'
+   116→import { clrsCh2Content } from './clrs-ch2'
+   117→import { clrsCh3Content } from './clrs-ch3'
+   118→import { clrsCh4Content } from './clrs-ch4'
+   119→import { clrsCh5Content } from './clrs-ch5'
+   120→import { clrsCh6Content } from './clrs-ch6'
+   121→import { clrsCh7Content } from './clrs-ch7'
+   122→import { clrsCh8Content } from './clrs-ch8'
+   123→import { clrsCh9Content } from './clrs-ch9'
+   124→import { clrsCh10Content } from './clrs-ch10'
+   125→import { clrsCh11Content } from './clrs-ch11'
+   126→import { clrsCh12Content } from './clrs-ch12'
+   127→import { clrsCh13Content } from './clrs-ch13'
+   128→import { clrsCh14Content } from './clrs-ch14'
+   129→import { clrsCh15Content } from './clrs-ch15'
+   130→import { clrsCh16Content } from './clrs-ch16'
+   131→import { clrsCh17Content } from './clrs-ch17'
+   132→import { clrsCh18Content } from './clrs-ch18'
+   133→import { clrsCh19Content } from './clrs-ch19'
+   134→import { clrsCh20Content } from './clrs-ch20'
+   135→import { clrsCh21Content } from './clrs-ch21'
+   136→import { clrsCh22Content } from './clrs-ch22'
+   137→import { clrsCh23Content } from './clrs-ch23'
+   138→import { clrsCh24Content } from './clrs-ch24'
+   139→import { clrsCh25Content } from './clrs-ch25'
+   140→import { clrsCh26Content } from './clrs-ch26'
+   141→import { clrsCh27Content } from './clrs-ch27'
+   142→import { clrsCh28Content } from './clrs-ch28'
+   143→import { clrsCh29Content } from './clrs-ch29'
+   144→import { clrsCh30Content } from './clrs-ch30'
+   145→import { clrsCh31Content } from './clrs-ch31'
+   146→import { clrsCh32Content } from './clrs-ch32'
+   147→import { clrsCh33Content } from './clrs-ch33'
+   148→import { clrsCh34Content } from './clrs-ch34'
+   149→import { clrsCh35Content } from './clrs-ch35'
+   150→import { clrsCh36Content } from './clrs-ch36'
+   151→import { clrsCh37Content } from './clrs-ch37'
+   152→import { clrsCh38Content } from './clrs-ch38'
+   153→import { clrsCh39Content } from './clrs-ch39'
+   154→import { hallCh1Content } from './hall-ch1'
+   155→import { hallCh2Content } from './hall-ch2'
+   156→import { hallCh3Content } from './hall-ch3'
+   157→import { hallCh4Content } from './hall-ch4'
+   158→import { hallCh5Content } from './hall-ch5'
+   159→import { hallCh6Content } from './hall-ch6'
+   160→import { hallCh7Content } from './hall-ch7'
+   161→import { hallCh8Content } from './hall-ch8'
+   162→import { hallCh9Content } from './hall-ch9'
+   163→import { hallCh10Content } from './hall-ch10'
+   164→import { hallCh11Content } from './hall-ch11'
+   165→import { hallCh12Content } from './hall-ch12'
+   166→import { hallCh13Content } from './hall-ch13'
+   167→import { hallCh14Content } from './hall-ch14'
+   168→import { hallCh15Content } from './hall-ch15'
+   169→import { hallCh16Content } from './hall-ch16'
+   170→import { hallCh17Content } from './hall-ch17'
+   171→import { hallCh18Content } from './hall-ch18'
+   172→import { hallCh19Content } from './hall-ch19'
+   173→import { hallCh20Content } from './hall-ch20'
+   174→import { hallCh21Content } from './hall-ch21'
+   175→import { hallCh22Content } from './hall-ch22'
+   176→import { hallCh23Content } from './hall-ch23'
+   177→import { hallCh24Content } from './hall-ch24'
+   178→import { hallCh25Content } from './hall-ch25'
+   179→import { hallCh26Content } from './hall-ch26'
+   180→import { hallCh27Content } from './hall-ch27'
+   181→import { hallCh28Content } from './hall-ch28'
+   182→import { hallCh29Content } from './hall-ch29'
+   183→import { hallCh30Content } from './hall-ch30'
+   184→import { hallCh31Content } from './hall-ch31'
+   185→import { hallCh32Content } from './hall-ch32'
+   186→import { hallCh33Content } from './hall-ch33'
+   187→import { hallCh34Content } from './hall-ch34'
+   188→import { hallCh35Content } from './hall-ch35'
+   189→import { hallCh36Content } from './hall-ch36'
+   190→import { hallCh37Content } from './hall-ch37'
+   191→import { hallCh38Content } from './hall-ch38'
+   192→import { hallCh39Content } from './hall-ch39'
+   193→import { hallCh40Content } from './hall-ch40'
+   194→import { hallCh41Content } from './hall-ch41'
+   195→import { hallCh42Content } from './hall-ch42'
+   196→import { hallCh43Content } from './hall-ch43'
+   197→import { hallCh44Content } from './hall-ch44'
+   198→import { youngCh1Content } from './young-ch1'
+   199→import { youngCh2Content } from './young-ch2'
+   200→import { youngCh3Content } from './young-ch3'
+   201→import { youngCh4Content } from './young-ch4'
+   202→import { youngCh5Content } from './young-ch5'
+   203→import { youngCh6Content } from './young-ch6'
+   204→import { youngCh7Content } from './young-ch7'
+   205→import { youngCh8Content } from './young-ch8'
+   206→import { youngCh9Content } from './young-ch9'
+   207→import { youngCh10Content } from './young-ch10'
+   208→import { youngCh11Content } from './young-ch11'
+   209→import { youngCh12Content } from './young-ch12'
+   210→import { youngCh13Content } from './young-ch13'
+   211→import { youngCh14Content } from './young-ch14'
+   212→import { youngCh15Content } from './young-ch15'
+   213→import { youngCh16Content } from './young-ch16'
+   214→import { youngCh17Content } from './young-ch17'
+   215→import { youngCh18Content } from './young-ch18'
+   216→import { youngCh19Content } from './young-ch19'
+   217→import { youngCh20Content } from './young-ch20'
+   218→import { youngCh21Content } from './young-ch21'
+   219→import { youngCh22Content } from './young-ch22'
+   220→import { youngCh23Content } from './young-ch23'
+   221→import { youngCh24Content } from './young-ch24'
+   222→import { youngCh25Content } from './young-ch25'
+   223→import { youngCh26Content } from './young-ch26'
+   224→import { youngCh27Content } from './young-ch27'
+   225→import { youngCh28Content } from './young-ch28'
+   226→import { youngCh29Content } from './young-ch29'
+   227→import { youngCh30Content } from './young-ch30'
+   228→import { youngCh31Content } from './young-ch31'
+   229→import { youngCh32Content } from './young-ch32'
+   230→import { youngCh33Content } from './young-ch33'
+   231→import { youngCh34Content } from './young-ch34'
+   232→import { youngCh35Content } from './young-ch35'
+   233→import { youngCh36Content } from './young-ch36'
+   234→import { youngCh37Content } from './young-ch37'
+   235→import { youngCh38Content } from './young-ch38'
+   236→import { youngCh39Content } from './young-ch39'
+   237→import { youngCh40Content } from './young-ch40'
+   238→import { youngCh41Content } from './young-ch41'
+   239→import { youngCh42Content } from './young-ch42'
+   240→import { youngCh43Content } from './young-ch43'
+   241→import { youngCh44Content } from './young-ch44'
+   242→import { ewenCh0Content } from './ewen-ch0'
+   243→import { ewenCh1Content } from './ewen-ch1'
+   244→import { ewenCh2Content } from './ewen-ch2'
+   245→import { ewenCh3Content } from './ewen-ch3'
+   246→import { ewenCh4Content } from './ewen-ch4'
+   247→import { ewenCh5Content } from './ewen-ch5'
+   248→import { ewenCh6Content } from './ewen-ch6'
+   249→import { ewenCh7Content } from './ewen-ch7'
+   250→import { ewenCh8Content } from './ewen-ch8'
+   251→import { ewenCh9Content } from './ewen-ch9'
+   252→import { ewenCh10Content } from './ewen-ch10'
+   253→import { ewenCh11Content } from './ewen-ch11'
+   254→import { ewenCh12Content } from './ewen-ch12'
+   255→import { ewenCh13Content } from './ewen-ch13'
+   256→import { ewenCh14Content } from './ewen-ch14'
+   257→import { ewenCh15Content } from './ewen-ch15'
+   258→import { ewenCh16Content } from './ewen-ch16'
+   259→import { ewenCh17Content } from './ewen-ch17'
+   260→import { ewenCh18Content } from './ewen-ch18'
+   261→import { ewenCh19Content } from './ewen-ch19'
+   262→import { ewenCh20Content } from './ewen-ch20'
+   263→import { ewenCh21Content } from './ewen-ch21'
+   264→import { ewenCh22Content } from './ewen-ch22'
+   265→import { ewenCh23Content } from './ewen-ch23'
+   266→import { ewenCh24Content } from './ewen-ch24'
+   267→import { colettaCh0Content } from './coletta-ch0'
+   268→import { colettaCh1Content } from './coletta-ch1'
+   269→import { colettaCh2Content } from './coletta-ch2'
+   270→import { colettaCh3Content } from './coletta-ch3'
+   271→import { colettaCh4Content } from './coletta-ch4'
+   272→import { colettaCh5Content } from './coletta-ch5'
+   273→import { colettaCh6Content } from './coletta-ch6'
+   274→import { colettaCh7Content } from './coletta-ch7'
+   275→import { colettaCh8Content } from './coletta-ch8'
+   276→import { colettaCh9Content } from './coletta-ch9'
+   277→import { colettaCh10Content } from './coletta-ch10'
+   278→import { colettaCh11Content } from './coletta-ch11'
+   279→import { colettaCh12Content } from './coletta-ch12'
+   280→import { colettaCh13Content } from './coletta-ch13'
+   281→import { colettaCh14Content } from './coletta-ch14'
+   282→import { colettaCh15Content } from './coletta-ch15'
+   283→import { colettaCh16Content } from './coletta-ch16'
+   284→import { colettaCh17Content } from './coletta-ch17'
+   285→import { colettaCh18Content } from './coletta-ch18'
+   286→import { colettaCh19Content } from './coletta-ch19'
+   287→import { colettaCh20Content } from './coletta-ch20'
+   288→import { colettaCh21Content } from './coletta-ch21'
+   289→import { colettaCh22Content } from './coletta-ch22'
+   290→import { colettaCh23Content } from './coletta-ch23'
+   291→import { colettaCh24Content } from './coletta-ch24'
+   292→import { colettaCh25Content } from './coletta-ch25'
+   293→import { colettaCh26Content } from './coletta-ch26'
+   294→import { colettaCh27Content } from './coletta-ch27'
+   295→import { colettaCh28Content } from './coletta-ch28'
+   296→import { colettaCh29Content } from './coletta-ch29'
+   297→import { colettaCh30Content } from './coletta-ch30'
+   298→import { cppCh1Content } from './cpp-ch1'
+   299→import { cppCh2Content } from './cpp-ch2'
+   300→import { cppCh3Content } from './cpp-ch3'
+   301→import { cppCh4Content } from './cpp-ch4'
+   302→import { cppCh5Content } from './cpp-ch5'
+   303→import { cppCh6Content } from './cpp-ch6'
+   304→import { cppCh7Content } from './cpp-ch7'
+   305→import { cppCh8Content } from './cpp-ch8'
+   306→import { cppCh9Content } from './cpp-ch9'
+   307→import { cppCh10Content } from './cpp-ch10'
+   308→import { cppCh11Content } from './cpp-ch11'
+   309→import { cppCh12Content } from './cpp-ch12'
+   310→import { cppCh13Content } from './cpp-ch13'
+   311→import { cppCh14Content } from './cpp-ch14'
+   312→import { cppCh15Content } from './cpp-ch15'
+   313→import { cppCh16Content } from './cpp-ch16'
+   314→import { cppCh17Content } from './cpp-ch17'
+   315→import { cppCh18Content } from './cpp-ch18'
+   316→import { cppCh19Content } from './cpp-ch19'
+   317→import { cppCh20Content } from './cpp-ch20'
+   318→import { cppCh21Content } from './cpp-ch21'
+   319→import { cppCh22Content } from './cpp-ch22'
+   320→import { cppCh23Content } from './cpp-ch23'
+   321→import { cppCh24Content } from './cpp-ch24'
+   322→import { cppCh25Content } from './cpp-ch25'
+   323→import { cppCh26Content } from './cpp-ch26'
+   324→import { cppCh27Content } from './cpp-ch27'
+   325→import { cppCh28Content } from './cpp-ch28'
+   326→import { cppCh29Content } from './cpp-ch29'
+   327→import { cppCh30Content } from './cpp-ch30'
+   328→import { cppCh31Content } from './cpp-ch31'
+   329→import { cppCh32Content } from './cpp-ch32'
+   330→import { cppCh33Content } from './cpp-ch33'
+   331→import { cppCh34Content } from './cpp-ch34'
+   332→import { cppCh35Content } from './cpp-ch35'
+   333→import { cppCh36Content } from './cpp-ch36'
+   334→import { cppCh37Content } from './cpp-ch37'
+   335→import { cppCh38Content } from './cpp-ch38'
+   336→import { cppCh39Content } from './cpp-ch39'
+   337→import { cppCh40Content } from './cpp-ch40'
+   338→import { cppCh41Content } from './cpp-ch41'
+   339→import { cppCh42Content } from './cpp-ch42'
+   340→import { cppCh43Content } from './cpp-ch43'
+   341→import { cppCh44Content } from './cpp-ch44'
+   342→import { webCh01Content } from './web-ch01'
+   343→import { webCh02Content } from './web-ch02'
+   344→import { webCh03Content } from './web-ch03'
+   345→import { webCh04Content } from './web-ch04'
+   346→import { webCh05Content } from './web-ch05'
+   347→import { webCh06Content } from './web-ch06'
+   348→import { webCh07Content } from './web-ch07'
+   349→import { webCh08Content } from './web-ch08'
+   350→import { webCh09Content } from './web-ch09'
+   351→import { webCh10Content } from './web-ch10'
+   352→import { webCh11Content } from './web-ch11'
+   353→import { webCh12Content } from './web-ch12'
+   354→import { webCh13Content } from './web-ch13'
+   355→import { webCh14Content } from './web-ch14'
+   356→import { webCh15Content } from './web-ch15'
+   357→import { webCh16Content } from './web-ch16'
+   358→import { webCh17Content } from './web-ch17'
+   359→import { webCh18Content } from './web-ch18'
+   360→import { webCh19Content } from './web-ch19'
+   361→import { webCh20Content } from './web-ch20'
+   362→import { engmathCh01Content } from './engmath-ch01'
+   363→import { engmathCh02Content } from './engmath-ch02'
+   364→import { engmathCh03Content } from './engmath-ch03'
+   365→import { engmathCh04Content } from './engmath-ch04'
+   366→import { engmathCh05Content } from './engmath-ch05'
+   367→import { engmathCh06Content } from './engmath-ch06'
+   368→import { engmathCh07Content } from './engmath-ch07'
+   369→import { engmathCh08Content } from './engmath-ch08'
+   370→import { engmathCh09Content } from './engmath-ch09'
+   371→import { engmathCh10Content } from './engmath-ch10'
+   372→import { jeemathsCh01Content } from './jeemaths-ch01'
+   373→import { jeemathsCh02Content } from './jeemaths-ch02'
+   374→import { jeemathsCh03Content } from './jeemaths-ch03'
+   375→import { jeemathsCh04Content } from './jeemaths-ch04'
+   376→import { jeemathsCh05Content } from './jeemaths-ch05'
+   377→import { jeemathsCh06Content } from './jeemaths-ch06'
+   378→import { jeemathsCh07Content } from './jeemaths-ch07'
+   379→import { jeemathsCh08Content } from './jeemaths-ch08'
+   380→import { jeemathsCh09Content } from './jeemaths-ch09'
+   381→import { jeemathsCh10Content } from './jeemaths-ch10'
+   382→import { chemCh01Content } from './chem-ch01'
+   383→import { chemCh02Content } from './chem-ch02'
+   384→import { chemCh03Content } from './chem-ch03'
+   385→import { chemCh04Content } from './chem-ch04'
+   386→import { chemCh05Content } from './chem-ch05'
+   387→import { chemCh06Content } from './chem-ch06'
+   388→import { chemCh07Content } from './chem-ch07'
+   389→import { chemCh08Content } from './chem-ch08'
+   390→import { chemCh09Content } from './chem-ch09'
+   391→import { chemCh10Content } from './chem-ch10'
+   392→import { chemCh11Content } from './chem-ch11'
+   393→import { chemCh12Content } from './chem-ch12'
+   394→import { chemCh13Content } from './chem-ch13'
+   395→import { chemCh14Content } from './chem-ch14'
+   396→import { dbmsCh01Content } from './dbms-ch01'
+   397→import { dbmsCh02Content } from './dbms-ch02'
+   398→import { dbmsCh03Content } from './dbms-ch03'
+   399→import { dbmsCh04Content } from './dbms-ch04'
+   400→import { dbmsCh05Content } from './dbms-ch05'
+   401→import { dbmsCh06Content } from './dbms-ch06'
+   402→import { dbmsCh07Content } from './dbms-ch07'
+   403→import { dbmsCh08Content } from './dbms-ch08'
+   404→import { cnCh01Content } from './cn-ch01'
+   405→import { cnCh02Content } from './cn-ch02'
+   406→import { cnCh03Content } from './cn-ch03'
+   407→import { cnCh04Content } from './cn-ch04'
+   408→import { cnCh05Content } from './cn-ch05'
+   409→import { cnCh06Content } from './cn-ch06'
+   410→import { cnCh07Content } from './cn-ch07'
+   411→import { cnCh08Content } from './cn-ch08'
+   412→import { compcoaCh01Content } from './compcoa-ch01'
+   413→import { compcoaCh02Content } from './compcoa-ch02'
+   414→import { compcoaCh03Content } from './compcoa-ch03'
+   415→import { compcoaCh04Content } from './compcoa-ch04'
+   416→import { compcoaCh05Content } from './compcoa-ch05'
+   417→import { compcoaCh06Content } from './compcoa-ch06'
+   418→import { compcoaCh07Content } from './compcoa-ch07'
+   419→import { compcoaCh08Content } from './compcoa-ch08'
+   420→import { compcoaCh09Content } from './compcoa-ch09'
+   421→import { compcoaCh10Content } from './compcoa-ch10'
+   422→import { sigctrlCh01Content } from './sigctrl-ch01'
+   423→import { sigctrlCh02Content } from './sigctrl-ch02'
+   424→import { sigctrlCh03Content } from './sigctrl-ch03'
+   425→import { sigctrlCh04Content } from './sigctrl-ch04'
+   426→import { sigctrlCh05Content } from './sigctrl-ch05'
+   427→import { sigctrlCh06Content } from './sigctrl-ch06'
+   428→import { commemCh01Content } from './commem-ch01'
+   429→import { commemCh02Content } from './commem-ch02'
+   430→import { commemCh03Content } from './commem-ch03'
+   431→import { commemCh04Content } from './commem-ch04'
+   432→import { commemCh05Content } from './commem-ch05'
+   433→import { commemCh06Content } from './commem-ch06'
+   434→import { chemCh15Content } from './chem-ch15'
+   435→import { chemCh16Content } from './chem-ch16'
+   436→import { chemCh17Content } from './chem-ch17'
+   437→import { chemCh18Content } from './chem-ch18'
+   438→import { chemCh19Content } from './chem-ch19'
+   439→import { chemCh20Content } from './chem-ch20'
+   440→import { chemCh21Content } from './chem-ch21'
+   441→import { chemCh22Content } from './chem-ch22'
+   442→import { chemCh23Content } from './chem-ch23'
+   443→import { chemCh24Content } from './chem-ch24'
+   444→import { chemCh25Content } from './chem-ch25'
+   445→import { chemCh26Content } from './chem-ch26'
+   446→import { elecCh23Content } from './elec-ch23'
+   447→import { elecCh24Content } from './elec-ch24'
+   448→import { elecCh25Content } from './elec-ch25'
+   449→import { elecCh26Content } from './elec-ch26'
+   450→import { elecCh27Content } from './elec-ch27'
+   451→import { elecCh28Content } from './elec-ch28'
+   452→import { elecCh29Content } from './elec-ch29'
+   453→import { elecCh30Content } from './elec-ch30'
+   454→import { engmathCh11Content } from './engmath-ch11'
+   455→import { engmathCh12Content } from './engmath-ch12'
+   456→import { engmathCh13Content } from './engmath-ch13'
+   457→import { engmathCh14Content } from './engmath-ch14'
+   458→import { engmathCh15Content } from './engmath-ch15'
+   459→import { engmathCh16Content } from './engmath-ch16'
+   460→import { engmathCh17Content } from './engmath-ch17'
+   461→import { engmathCh18Content } from './engmath-ch18'
+   462→import { engmathCh19Content } from './engmath-ch19'
+   463→import { engmathCh20Content } from './engmath-ch20'
+   464→import { javaCh10Content } from './java-ch10'
+   465→import { javaCh11Content } from './java-ch11'
+   466→import { javaCh12Content } from './java-ch12'
+   467→// ---- Exam syllabus content (JEE Main / JEE Advanced / SAT / DRDO / GATE / Engineering semesters) ----
+   468→import { jeemainPhyContent } from './exam-jeemain-physics'
+   469→import { jeemainChemContent } from './exam-jeemain-chemistry'
+   470→import { jeemainMathContent } from './exam-jeemain-maths'
+   471→import { jeeadvContent } from './exam-jeeadv'
+   472→import { satMathContent } from './exam-sat-math'
+   473→import { satRwContent } from './exam-sat-rw'
+   474→import { gateCsContent } from './exam-gate-cs'
+   475→import { drdoContent } from './exam-drdo'
+   476→import { enggCseContent } from './exam-engg-cse'
+   477→import { enggBranchContent } from './exam-engg-ece-ee-me'
+   478→import { javaCh01Content } from './java-ch01'
+   479→import { javaCh02Content } from './java-ch02'
+   480→import { javaCh03Content } from './java-ch03'
+   481→import { javaCh04Content } from './java-ch04'
+   482→import { javaCh05Content } from './java-ch05'
+   483→import { javaCh06Content } from './java-ch06'
+   484→import { javaCh07Content } from './java-ch07'
+   485→import { javaCh08Content } from './java-ch08'
+   486→import { javaCh09Content } from './java-ch09'
+   487→import { jeemathsCh11Content } from './jeemaths-ch11'
+   488→import { jeemathsCh12Content } from './jeemaths-ch12'
+   489→import { jeemathsCh13Content } from './jeemaths-ch13'
+   490→import { jeemathsCh14Content } from './jeemaths-ch14'
+   491→import { jeemathsCh15Content } from './jeemaths-ch15'
+   492→import { jeemathsCh16Content } from './jeemaths-ch16'
+   493→import { chemCh27Content } from './chem-ch27'
+   494→import { chemCh28Content } from './chem-ch28'
+   495→import { chemCh29Content } from './chem-ch29'
+   496→import { chemCh30Content } from './chem-ch30'
+   497→import { chemCh31Content } from './chem-ch31'
+   498→import { chemCh32Content } from './chem-ch32'
+   499→import { engmathCh21Content } from './engmath-ch21'
+   500→import { engmathCh22Content } from './engmath-ch22'
+   501→import { engmathCh23Content } from './engmath-ch23'
+   502→import { engmathCh24Content } from './engmath-ch24'
+   503→import { webCh21Content } from './web-ch21'
+   504→import { webCh22Content } from './web-ch22'
+   505→import { webCh23Content } from './web-ch23'
+   506→import { webCh24Content } from './web-ch24'
+   507→import { webCh25Content } from './web-ch25'
+   508→import { webCh26Content } from './web-ch26'
+   509→import { chemCh33Content } from './chem-ch33'
+   510→import { chemCh34Content } from './chem-ch34'
+   511→import { chemCh35Content } from './chem-ch35'
+   512→import { chemCh36Content } from './chem-ch36'
+   513→import { chemCh37Content } from './chem-ch37'
+   514→import { chemCh38Content } from './chem-ch38'
+   515→import { chemCh39Content } from './chem-ch39'
+   516→import { chemCh40Content } from './chem-ch40'
+   517→import { chemCh41Content } from './chem-ch41'
+   518→import { chemCh42Content } from './chem-ch42'
+   519→import { chemCh43Content } from './chem-ch43'
+   520→import { chemCh44Content } from './chem-ch44'
+   521→
+   522→const allContent: SectionContent[] = [
+   523→  ...ch1Content,
+   524→  ...ch2Content,
+   525→  ...ch3Content,
+   526→  ...ch4Content,
+   527→  ...ch5Content,
+   528→  ...ch6Content,
+   529→  ...ch7Content,
+   530→  ...ch8Content,
+   531→  ...ch9Content,
+   532→  ...ch10Content,
+   533→  ...ch11Content,
+   534→  ...ch12Content,
+   535→  ...ch13Content,
+   536→  ...osCh1Content,
+   537→  ...osCh2Content,
+   538→  ...osCh3Content,
+   539→  ...osCh4Content,
+   540→  ...osCh5Content,
+   541→  ...osCh6Content,
+   542→  ...osCh7Content,
+   543→  ...osCh8Content,
+   544→  ...osCh9Content,
+   545→  ...osCh10Content,
+   546→  ...osCh11Content,
+   547→  ...osCh12Content,
+   548→  ...osCh13Content,
+   549→  ...osCh14Content,
+   550→  ...osCh15Content,
+   551→  ...elecCh1Content,
+   552→  ...elecCh2Content,
+   553→  ...elecCh3Content,
+   554→  ...elecCh4Content,
+   555→  ...elecCh5Content,
+   556→  ...elecCh6Content,
+   557→  ...elecCh7Content,
+   558→  ...elecCh8Content,
+   559→  ...elecCh9Content,
+   560→  ...elecCh10Content,
+   561→  ...elecCh11Content,
+   562→  ...elecCh12Content,
+   563→  ...elecCh13Content,
+   564→  ...elecCh14Content,
+   565→  ...elecCh15Content,
+   566→  ...elecCh16Content,
+   567→  ...elecCh17Content,
+   568→  ...elecCh18Content,
+   569→  ...elecCh19Content,
+   570→  ...elecCh20Content,
+   571→  ...elecCh21Content,
+   572→  ...elecCh22Content,
+   573→  ...physCh1Content,
+   574→  ...physCh2Content,
+   575→  ...physCh3Content,
+   576→  ...physCh4Content,
+   577→  ...physCh5Content,
+   578→  ...physCh6Content,
+   579→  ...physCh7Content,
+   580→  ...physCh8Content,
+   581→  ...physCh9Content,
+   582→  ...physCh10Content,
+   583→  ...physCh11Content,
+   584→  ...physCh12Content,
+   585→  ...physCh13Content,
+   586→  ...physCh14Content,
+   587→  ...physCh15Content,
+   588→  ...calcCh1Content,
+   589→  ...calcCh2Content,
+   590→  ...calcCh3Content,
+   591→  ...calcCh4Content,
+   592→  ...calcCh5Content,
+   593→  ...calcCh6Content,
+   594→  ...calcCh7Content,
+   595→  ...calcCh8Content,
+   596→  ...calcCh9Content,
+   597→  ...calcCh10Content,
+   598→  ...calcCh11Content,
+   599→  ...calcCh12Content,
+   600→  ...calcCh13Content,
+   601→  ...calcCh14Content,
+   602→  ...calcCh15Content,
+   603→  ...calcCh16Content,
+   604→  ...calcCh17Content,
+   605→  ...jsCh1Content,
+   606→  ...jsCh2Content,
+   607→  ...jsCh3Content,
+   608→  ...jsCh4Content,
+   609→  ...jsCh5Content,
+   610→  ...jsCh6Content,
+   611→  ...jsCh7Content,
+   612→  ...jsCh8Content,
+   613→  ...jsCh9Content,
+   614→  ...jsCh10Content,
+   615→  ...jsCh11Content,
+   616→  ...jsCh12Content,
+   617→  ...jsCh13Content,
+   618→  ...jsCh14Content,
+   619→  ...jsCh15Content,
+   620→  ...jsCh16Content,
+   621→  ...jsCh17Content,
+   622→  ...manoCh1Content,
+   623→  ...manoCh2Content,
+   624→  ...manoCh3Content,
+   625→  ...manoCh4Content,
+   626→  ...manoCh5Content,
+   627→  ...manoCh6Content,
+   628→  ...manoCh7Content,
+   629→  ...manoCh8Content,
+   630→  ...manoCh9Content,
+   631→  ...manoCh10Content,
+   632→  ...manoCh11Content,
+   633→  ...manoCh12Content,
+   634→  // ---- Round 14 books ----
+   635→  ...clrsCh1Content,
+   636→  ...clrsCh2Content,
+   637→  ...clrsCh3Content,
+   638→  ...clrsCh4Content,
+   639→  ...clrsCh5Content,
+   640→  ...clrsCh6Content,
+   641→  ...clrsCh7Content,
+   642→  ...clrsCh8Content,
+   643→  ...clrsCh9Content,
+   644→  ...clrsCh10Content,
+   645→  ...clrsCh11Content,
+   646→  ...clrsCh12Content,
+   647→  ...clrsCh13Content,
+   648→  ...clrsCh14Content,
+   649→  ...clrsCh15Content,
+   650→  ...clrsCh16Content,
+   651→  ...clrsCh17Content,
+   652→  ...clrsCh18Content,
+   653→  ...clrsCh19Content,
+   654→  ...clrsCh20Content,
+   655→  ...clrsCh21Content,
+   656→  ...clrsCh22Content,
+   657→  ...clrsCh23Content,
+   658→  ...clrsCh24Content,
+   659→  ...clrsCh25Content,
+   660→  ...clrsCh26Content,
+   661→  ...clrsCh27Content,
+   662→  ...clrsCh28Content,
+   663→  ...clrsCh29Content,
+   664→  ...clrsCh30Content,
+   665→  ...clrsCh31Content,
+   666→  ...clrsCh32Content,
+   667→  ...clrsCh33Content,
+   668→  ...clrsCh34Content,
+   669→  ...clrsCh35Content,
+   670→  ...clrsCh36Content,
+   671→  ...clrsCh37Content,
+   672→  ...clrsCh38Content,
+   673→  ...clrsCh39Content,
+   674→  ...hallCh1Content,
+   675→  ...hallCh2Content,
+   676→  ...hallCh3Content,
+   677→  ...hallCh4Content,
+   678→  ...hallCh5Content,
+   679→  ...hallCh6Content,
+   680→  ...hallCh7Content,
+   681→  ...hallCh8Content,
+   682→  ...hallCh9Content,
+   683→  ...hallCh10Content,
+   684→  ...hallCh11Content,
+   685→  ...hallCh12Content,
+   686→  ...hallCh13Content,
+   687→  ...hallCh14Content,
+   688→  ...hallCh15Content,
+   689→  ...hallCh16Content,
+   690→  ...hallCh17Content,
+   691→  ...hallCh18Content,
+   692→  ...hallCh19Content,
+   693→  ...hallCh20Content,
+   694→  ...hallCh21Content,
+   695→  ...hallCh22Content,
+   696→  ...hallCh23Content,
+   697→  ...hallCh24Content,
+   698→  ...hallCh25Content,
+   699→  ...hallCh26Content,
+   700→  ...hallCh27Content,
+   701→  ...hallCh28Content,
+   702→  ...hallCh29Content,
+   703→  ...hallCh30Content,
+   704→  ...hallCh31Content,
+   705→  ...hallCh32Content,
+   706→  ...hallCh33Content,
+   707→  ...hallCh34Content,
+   708→  ...hallCh35Content,
+   709→  ...hallCh36Content,
+   710→  ...hallCh37Content,
+   711→  ...hallCh38Content,
+   712→  ...hallCh39Content,
+   713→  ...hallCh40Content,
+   714→  ...hallCh41Content,
+   715→  ...hallCh42Content,
+   716→  ...hallCh43Content,
+   717→  ...hallCh44Content,
+   718→  ...youngCh1Content,
+   719→  ...youngCh2Content,
+   720→  ...youngCh3Content,
+   721→  ...youngCh4Content,
+   722→  ...youngCh5Content,
+   723→  ...youngCh6Content,
+   724→  ...youngCh7Content,
+   725→  ...youngCh8Content,
+   726→  ...youngCh9Content,
+   727→  ...youngCh10Content,
+   728→  ...youngCh11Content,
+   729→  ...youngCh12Content,
+   730→  ...youngCh13Content,
+   731→  ...youngCh14Content,
+   732→  ...youngCh15Content,
+   733→  ...youngCh16Content,
+   734→  ...youngCh17Content,
+   735→  ...youngCh18Content,
+   736→  ...youngCh19Content,
+   737→  ...youngCh20Content,
+   738→  ...youngCh21Content,
+   739→  ...youngCh22Content,
+   740→  ...youngCh23Content,
+   741→  ...youngCh24Content,
+   742→  ...youngCh25Content,
+   743→  ...youngCh26Content,
+   744→  ...youngCh27Content,
+   745→  ...youngCh28Content,
+   746→  ...youngCh29Content,
+   747→  ...youngCh30Content,
+   748→  ...youngCh31Content,
+   749→  ...youngCh32Content,
+   750→  ...youngCh33Content,
+   751→  ...youngCh34Content,
+   752→  ...youngCh35Content,
+   753→  ...youngCh36Content,
+   754→  ...youngCh37Content,
+   755→  ...youngCh38Content,
+   756→  ...youngCh39Content,
+   757→  ...youngCh40Content,
+   758→  ...youngCh41Content,
+   759→  ...youngCh42Content,
+   760→  ...youngCh43Content,
+   761→  ...youngCh44Content,
+   762→  ...ewenCh0Content,
+   763→  ...ewenCh1Content,
+   764→  ...ewenCh2Content,
+   765→  ...ewenCh3Content,
+   766→  ...ewenCh4Content,
+   767→  ...ewenCh5Content,
+   768→  ...ewenCh6Content,
+   769→  ...ewenCh7Content,
+   770→  ...ewenCh8Content,
+   771→  ...ewenCh9Content,
+   772→  ...ewenCh10Content,
+   773→  ...ewenCh11Content,
+   774→  ...ewenCh12Content,
+   775→  ...ewenCh13Content,
+   776→  ...ewenCh14Content,
+   777→  ...ewenCh15Content,
+   778→  ...ewenCh16Content,
+   779→  ...ewenCh17Content,
+   780→  ...ewenCh18Content,
+   781→  ...ewenCh19Content,
+   782→  ...ewenCh20Content,
+   783→  ...ewenCh21Content,
+   784→  ...ewenCh22Content,
+   785→  ...ewenCh23Content,
+   786→  ...ewenCh24Content,
+   787→  ...colettaCh0Content,
+   788→  ...colettaCh1Content,
+   789→  ...colettaCh2Content,
+   790→  ...colettaCh3Content,
+   791→  ...colettaCh4Content,
+   792→  ...colettaCh5Content,
+   793→  ...colettaCh6Content,
+   794→  ...colettaCh7Content,
+   795→  ...colettaCh8Content,
+   796→  ...colettaCh9Content,
+   797→  ...colettaCh10Content,
+   798→  ...colettaCh11Content,
+   799→  ...colettaCh12Content,
+   800→  ...colettaCh13Content,
+   801→  ...colettaCh14Content,
+   802→  ...colettaCh15Content,
+   803→  ...colettaCh16Content,
+   804→  ...colettaCh17Content,
+   805→  ...colettaCh18Content,
+   806→  ...colettaCh19Content,
+   807→  ...colettaCh20Content,
+   808→  ...colettaCh21Content,
+   809→  ...colettaCh22Content,
+   810→  ...colettaCh23Content,
+   811→  ...colettaCh24Content,
+   812→  ...colettaCh25Content,
+   813→  ...colettaCh26Content,
+   814→  ...colettaCh27Content,
+   815→  ...colettaCh28Content,
+   816→  ...colettaCh29Content,
+   817→  ...colettaCh30Content,
+   818→  ...cppCh1Content,
+   819→  ...cppCh2Content,
+   820→  ...cppCh3Content,
+   821→  ...cppCh4Content,
+   822→  ...cppCh5Content,
+   823→  ...cppCh6Content,
+   824→  ...cppCh7Content,
+   825→  ...cppCh8Content,
+   826→  ...cppCh9Content,
+   827→  ...cppCh10Content,
+   828→  ...cppCh11Content,
+   829→  ...cppCh12Content,
+   830→  ...cppCh13Content,
+   831→  ...cppCh14Content,
+   832→  ...cppCh15Content,
+   833→  ...cppCh16Content,
+   834→  ...cppCh17Content,
+   835→  ...cppCh18Content,
+   836→  ...cppCh19Content,
+   837→  ...cppCh20Content,
+   838→  ...cppCh21Content,
+   839→  ...cppCh22Content,
+   840→  ...cppCh23Content,
+   841→  ...cppCh24Content,
+   842→  ...cppCh25Content,
+   843→  ...cppCh26Content,
+   844→  ...cppCh27Content,
+   845→  ...cppCh28Content,
+   846→  ...cppCh29Content,
+   847→  ...cppCh30Content,
+   848→  ...cppCh31Content,
+   849→  ...cppCh32Content,
+   850→  ...cppCh33Content,
+   851→  ...cppCh34Content,
+   852→  ...cppCh35Content,
+   853→  ...cppCh36Content,
+   854→  ...cppCh37Content,
+   855→  ...cppCh38Content,
+   856→  ...cppCh39Content,
+   857→  ...cppCh40Content,
+   858→  ...cppCh41Content,
+   859→  ...cppCh42Content,
+   860→  ...cppCh43Content,
+   861→  ...cppCh44Content,
+   862→  ...webCh01Content,
+   863→  ...webCh02Content,
+   864→  ...webCh03Content,
+   865→  ...webCh04Content,
+   866→  ...webCh05Content,
+   867→  ...webCh06Content,
+   868→  ...webCh07Content,
+   869→  ...webCh08Content,
+   870→  ...webCh09Content,
+   871→  ...webCh10Content,
+   872→  ...webCh11Content,
+   873→  ...webCh12Content,
+   874→  ...webCh13Content,
+   875→  ...webCh14Content,
+   876→  ...webCh15Content,
+   877→  ...webCh16Content,
+   878→  ...webCh17Content,
+   879→  ...webCh18Content,
+   880→  ...webCh19Content,
+   881→  ...webCh20Content,
+   882→  ...elecCh23Content,
+   883→  ...elecCh24Content,
+   884→  ...elecCh25Content,
+   885→  ...elecCh26Content,
+   886→  ...elecCh27Content,
+   887→  ...elecCh28Content,
+   888→  ...elecCh29Content,
+   889→  ...elecCh30Content,
+   890→  ...javaCh01Content,
+   891→  ...javaCh02Content,
+   892→  ...javaCh03Content,
+   893→  ...javaCh04Content,
+   894→  ...javaCh05Content,
+   895→  ...javaCh06Content,
+   896→  ...javaCh07Content,
+   897→  ...javaCh08Content,
+   898→  ...javaCh09Content,
+   899→  ...javaCh10Content,
+   900→  ...javaCh11Content,
+   901→  ...javaCh12Content,
+   902→  ...engmathCh11Content,
+   903→  ...engmathCh12Content,
+   904→  ...engmathCh13Content,
+   905→  ...engmathCh14Content,
+   906→  ...engmathCh15Content,
+   907→  ...engmathCh16Content,
+   908→  ...engmathCh17Content,
+   909→  ...engmathCh18Content,
+   910→  ...engmathCh19Content,
+   911→  ...engmathCh20Content,
+   912→  ...chemCh15Content,
+   913→  ...chemCh16Content,
+   914→  ...chemCh17Content,
+   915→  ...chemCh18Content,
+   916→  ...chemCh19Content,
+   917→  ...chemCh20Content,
+   918→  ...chemCh21Content,
+   919→  ...chemCh22Content,
+   920→  ...chemCh23Content,
+   921→  ...chemCh24Content,
+   922→  ...chemCh25Content,
+   923→  ...chemCh26Content,
+   924→  ...jeemathsCh11Content,
+   925→  ...jeemathsCh12Content,
+   926→  ...jeemathsCh13Content,
+   927→  ...jeemathsCh14Content,
+   928→  ...jeemathsCh15Content,
+   929→  ...jeemathsCh16Content,
+   930→  ...chemCh27Content,
+   931→  ...chemCh28Content,
+   932→  ...chemCh29Content,
+   933→  ...chemCh30Content,
+   934→  ...chemCh31Content,
+   935→  ...chemCh32Content,
+   936→  ...chemCh33Content,
+   937→  ...chemCh34Content,
+   938→  ...chemCh35Content,
+   939→  ...chemCh36Content,
+   940→  ...chemCh37Content,
+   941→  ...chemCh38Content,
+   942→  ...chemCh39Content,
+   943→  ...chemCh40Content,
+   944→  ...chemCh41Content,
+   945→  ...chemCh42Content,
+   946→  ...chemCh43Content,
+   947→  ...chemCh44Content,
+   948→  ...engmathCh21Content,
+   949→  ...engmathCh22Content,
+   950→  ...engmathCh23Content,
+   951→  ...engmathCh24Content,
+   952→  ...webCh21Content,
+   953→  ...webCh22Content,
+   954→  ...webCh23Content,
+   955→  ...webCh24Content,
+   956→  ...webCh25Content,
+   957→  ...webCh26Content,
+   958→  ...engmathCh01Content,
+   959→  ...engmathCh02Content,
+   960→  ...engmathCh03Content,
+   961→  ...engmathCh04Content,
+   962→  ...engmathCh05Content,
+   963→  ...engmathCh06Content,
+   964→  ...engmathCh07Content,
+   965→  ...engmathCh08Content,
+   966→  ...engmathCh09Content,
+   967→  ...engmathCh10Content,
+   968→  ...jeemathsCh01Content,
+   969→  ...jeemathsCh02Content,
+   970→  ...jeemathsCh03Content,
+   971→  ...jeemathsCh04Content,
+   972→  ...jeemathsCh05Content,
+   973→  ...jeemathsCh06Content,
+   974→  ...jeemathsCh07Content,
+   975→  ...jeemathsCh08Content,
+   976→  ...jeemathsCh09Content,
+   977→  ...jeemathsCh10Content,
+   978→  ...chemCh01Content,
+   979→  ...chemCh02Content,
+   980→  ...chemCh03Content,
+   981→  ...chemCh04Content,
+   982→  ...chemCh05Content,
+   983→  ...chemCh06Content,
+   984→  ...chemCh07Content,
+   985→  ...chemCh08Content,
+   986→  ...chemCh09Content,
+   987→  ...chemCh10Content,
+   988→  ...chemCh11Content,
+   989→  ...chemCh12Content,
+   990→  ...chemCh13Content,
+   991→  ...chemCh14Content,
+   992→  ...dbmsCh01Content,
+   993→  ...dbmsCh02Content,
+   994→  ...dbmsCh03Content,
+   995→  ...dbmsCh04Content,
+   996→  ...dbmsCh05Content,
+   997→  ...dbmsCh06Content,
+   998→  ...dbmsCh07Content,
+   999→  ...dbmsCh08Content,
+  1000→  ...cnCh01Content,
+  1001→  ...cnCh02Content,
+  1002→  ...cnCh03Content,
+  1003→  ...cnCh04Content,
+  1004→  ...cnCh05Content,
+  1005→  ...cnCh06Content,
+  1006→  ...cnCh07Content,
+  1007→  ...cnCh08Content,
+  1008→  ...compcoaCh01Content,
+  1009→  ...compcoaCh02Content,
+  1010→  ...compcoaCh03Content,
+  1011→  ...compcoaCh04Content,
+  1012→  ...compcoaCh05Content,
+  1013→  ...compcoaCh06Content,
+  1014→  ...compcoaCh07Content,
+  1015→  ...compcoaCh08Content,
+  1016→  ...compcoaCh09Content,
+  1017→  ...compcoaCh10Content,
+  1018→  ...sigctrlCh01Content,
+  1019→  ...sigctrlCh02Content,
+  1020→  ...sigctrlCh03Content,
+  1021→  ...sigctrlCh04Content,
+  1022→  ...sigctrlCh05Content,
+  1023→  ...sigctrlCh06Content,
+  1024→  ...commemCh01Content,
+  1025→  ...commemCh02Content,
+  1026→  ...commemCh03Content,
+  1027→  ...commemCh04Content,
+  1028→  ...commemCh05Content,
+  1029→  ...commemCh06Content,
+  1030→  // ---- Exam syllabus content ----
+  1031→  ...jeemainPhyContent,
+  1032→  ...jeemainChemContent,
+  1033→  ...jeemainMathContent,
+  1034→  ...jeeadvContent,
+  1035→  ...satMathContent,
+  1036→  ...satRwContent,
+  1037→  ...gateCsContent,
+  1038→  ...drdoContent,
+  1039→  ...enggCseContent,
+  1040→  ...enggBranchContent,
+  1041→]
+  1042→
+  1043→// Subject-wise consolidation (see scripts/consolidate.ts): sections that were
+  1044→// merged away during deduplication no longer exist in the library, so their
+  1045→// content must not leak into quiz pools, flashcards or stats — filter to the
+  1046→// live section ids only.
+  1047→import { LIBRARY_SECTIONS } from '../library'
+  1048→
+  1049→const liveSectionIds = new Set(LIBRARY_SECTIONS.map((s) => s.id))
+  1050→const liveContent: SectionContent[] = allContent.filter((c) => liveSectionIds.has(c.sectionId))
+  1051→
+  1052→const contentMap: Record<string, SectionContent> = Object.fromEntries(
+  1053→  liveContent.map((c) => [c.sectionId, c])
+  1054→)
+  1055→
+  1056→export function getSectionContent(sectionId: string): SectionContent | undefined {
+  1057→  return contentMap[sectionId]
+  1058→}
+  1059→
+  1060→export const TOTAL_CONTENT_SECTIONS = liveContent.length
+  1061→export { liveContent as allContent }
+  1062→

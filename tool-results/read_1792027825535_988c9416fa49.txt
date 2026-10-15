@@ -1,0 +1,1181 @@
+     1→// ============ Core type system for the StudyVerse platform ============
+     2→//
+     3→// SUBJECT-WISE LIBRARY — every subject is a course-level discipline and
+     4→// contains ALL branches' chapters and every competitive-exam scope for that
+     5→// course (the Mathematics model, applied to everything). Provenance (code
+     6→// comment only — exam names intentionally absent from user-visible text per
+     7→// product decision; see research/*.md): chapters researched from official
+     8→// competitive-exam and university syllabi plus the classic textbooks (Rosen,
+     9→// Stewart, Halliday, Young, Ewen, Coletta, Feynman, Silberschatz, Mano,
+    10→// CLRS, Stroustrup, Horstmann, Flanagan, Hughes, Nilsson).
+    11→
+    12→import { MATH_CHAPTERS, MATH_SECTIONS } from './library-parts/merged/math'
+    13→import { PHYS_CHAPTERS, PHYS_SECTIONS } from './library-parts/merged/physics'
+    14→import { CHEM_CHAPTERS, CHEM_SECTIONS } from './library-parts/merged/chemistry'
+    15→import { ENGLISH_CHAPTERS, ENGLISH_SECTIONS } from './library-parts/merged/english'
+    16→import { APT_CHAPTERS, APT_SECTIONS } from './library-parts/merged/aptitude'
+    17→import { CCPP_CHAPTERS, CCPP_SECTIONS } from './library-parts/subjects/programming-c-cpp'
+    18→import { JAVA_CHAPTERS, JAVA_SECTIONS } from './library-parts/subjects/programming-java'
+    19→import { WEB_CHAPTERS, WEB_SECTIONS } from './library-parts/subjects/web-development'
+    20→import { AI_CHAPTERS, AI_SECTIONS } from './library-parts/subjects/ai-data-science'
+    21→import { DSA_CHAPTERS, DSA_SECTIONS } from './library-parts/subjects/dsa'
+    22→import { TOC_CHAPTERS, TOC_SECTIONS } from './library-parts/subjects/toc'
+    23→import { COA_CHAPTERS, COA_SECTIONS } from './library-parts/subjects/coa'
+    24→import { COMPILER_CHAPTERS, COMPILER_SECTIONS } from './library-parts/subjects/compiler-design'
+    25→import { OS_CHAPTERS, OS_SECTIONS } from './library-parts/subjects/operating-systems'
+    26→import { DBMS_CHAPTERS, DBMS_SECTIONS } from './library-parts/subjects/dbms'
+    27→import { NETWORKS_CHAPTERS, NETWORKS_SECTIONS } from './library-parts/subjects/computer-networks'
+    28→import { MICRO_EMBEDDED_CHAPTERS, MICRO_EMBEDDED_SECTIONS } from './library-parts/subjects/microprocessors-embedded'
+    29→import { SOFTWARE_CHAPTERS, SOFTWARE_SECTIONS } from './library-parts/subjects/software-emerging'
+    30→import { CYBER_CHAPTERS, CYBER_SECTIONS } from './library-parts/subjects/cybersecurity'
+    31→import { VISUAL_CHAPTERS, VISUAL_SECTIONS } from './library-parts/subjects/visual-computing'
+    32→import { DIGITAL_CHAPTERS, DIGITAL_SECTIONS } from './library-parts/subjects/digital-electronics'
+    33→import { EDC_CHAPTERS, EDC_SECTIONS } from './library-parts/subjects/electronic-devices-circuits'
+    34→import { SIGNALS_CHAPTERS, SIGNALS_SECTIONS } from './library-parts/subjects/signals-systems'
+    35→import { COMMUNICATION_CHAPTERS, COMMUNICATION_SECTIONS } from './library-parts/subjects/communication-systems'
+    36→import { EM_CHAPTERS, EM_SECTIONS } from './library-parts/subjects/electromagnetics'
+    37→import { VLSI_CHAPTERS, VLSI_SECTIONS } from './library-parts/subjects/vlsi-design'
+    38→import { CIRCUITS_CHAPTERS, CIRCUITS_SECTIONS } from './library-parts/subjects/electric-circuits'
+    39→import { MACHINES_CHAPTERS, MACHINES_SECTIONS } from './library-parts/subjects/electrical-machines'
+    40→import { POWER_CHAPTERS, POWER_SECTIONS } from './library-parts/subjects/power-systems'
+    41→import { CONTROL_CHAPTERS, CONTROL_SECTIONS } from './library-parts/subjects/control-instrumentation'
+    42→import { ENERGY_CHAPTERS, ENERGY_SECTIONS } from './library-parts/subjects/energy-automotive'
+    43→import { MECH_GRAPHICS_CHAPTERS, MECH_GRAPHICS_SECTIONS } from './library-parts/subjects/mechanics-graphics'
+    44→import { SOLIDS_CHAPTERS, SOLIDS_SECTIONS } from './library-parts/subjects/solids-materials'
+    45→import { MACH_DESIGN_CHAPTERS, MACH_DESIGN_SECTIONS } from './library-parts/subjects/machines-design'
+    46→import { THERMAL_CHAPTERS, THERMAL_SECTIONS } from './library-parts/subjects/thermal-fluids'
+    47→import { MANUFACTURING_CHAPTERS, MANUFACTURING_SECTIONS } from './library-parts/subjects/manufacturing-industrial'
+    48→import { MECHATRONICS_CHAPTERS, MECHATRONICS_SECTIONS } from './library-parts/subjects/mechatronics-robotics'
+    49→
+    50→export interface Subject {
+    51→  id: string
+    52→  name: string
+    53→  slug: string
+    54→  description: string
+    55→  icon: string // lucide icon name key
+    56→  accent: string // hex accent color
+    57→  tagline: string
+    58→  group?: string // homepage section (Foundations, Computing Systems, ...)
+    59→}
+    60→
+    61→export interface BookMeta {
+    62→  id: string
+    63→  subjectId: string
+    64→  title: string
+    65→  author: string
+    66→  edition?: string
+    67→  year?: string
+    68→  description: string
+    69→  pages?: number
+    70→  accent: string // hex accent for cards
+    71→  sources?: string[] // for master volumes: the books merged into this one
+    72→}
+    73→
+    74→export interface ChapterMeta {
+    75→  id: string // e.g. "rosen-ch1"
+    76→  bookId: string
+    77→  number: number
+    78→  title: string
+    79→  shortTitle: string
+    80→  description: string
+    81→  icon: string // lucide icon key in chapterIcons map
+    82→  pages: string // e.g. "24–143"
+    83→  interactiveKey: string // key into interactives registry
+    84→}
+    85→
+    86→export interface SectionMeta {
+    87→  id: string // e.g. "rosen-ch1-s1"
+    88→  chapterId: string
+    89→  number: number // section number, e.g. 1.1
+    90→  title: string
+    91→  description: string
+    92→}
+    93→
+    94→// ---------- Master content for a section ----------
+    95→
+    96→export interface Concept {
+    97→  term: string
+    98→  kind: 'definition' | 'theorem' | 'law' | 'method' | 'notation' | 'insight'
+    99→  statement: string // supports simple **bold** markdown-ish
+   100→  detail?: string
+   101→}
+   102→
+   103→export interface WorkedExample {
+   104→  title: string
+   105→  problem: string
+   106→  steps: { label: string; text: string }[]
+   107→  result?: string
+   108→  diagram?: string // visual physics diagram or illustration
+   109→}
+   110→
+   111→export interface QuizQuestion {
+   112→  q: string
+   113→  options: string[]
+   114→  answer: number // index into options
+   115→  explanation: string
+   116→  diagram?: string // visual physics diagram or illustration solving the problem
+   117→}
+   118→
+   119→/* ------------------------------------------------------------------ */
+   120→/*  The depth ladder — "from basics to a PhD"                          */
+   121→/*  The section core above IS the undergraduate material (Level I).   */
+   122→/*  Optional tiers then carry the very same topics to graduate         */
+   123→/*  coursework level (masters) and on to the research frontier (phd).  */
+   124→/* ------------------------------------------------------------------ */
+   125→
+   126→export interface DepthBlock {
+   127→  kind: 'para' | 'theorem' | 'proof' | 'derivation' | 'remark' | 'example' | 'application' | 'open'
+   128→  heading?: string // required for example, recommended for open
+   129→  body: string // flowing prose; **bold**, $...$/$$...$$ KaTeX, `code`
+   130→}
+   131→
+   132→export interface DepthTier {
+   133→  tier: 'masters' | 'phd'
+   134→  title: string
+   135→  blocks: DepthBlock[]
+   136→}
+   137→
+   138→/** A textbook figure — an authored inline SVG set into the reading flow,
+   139→ *  like a figure plate in a printed book. `svg` is static authored data
+   140→ *  (never user input): responsive via viewBox, strokes in currentColor so
+   141→ *  it adapts to light/dark paper. */
+   142→export interface LessonFigure {
+   143→  caption: string // rendered as "Figure N — caption"; supports $...$ math
+   144→  svg: string // inline SVG markup (viewBox based, width 100%)
+   145→  sketchImage?: string // authentic hand-drawn scientific notebook sketch image path, e.g. "/diagrams/bohr_atom_sketch.jpg"
+   146→  sketchCaption?: string // handwritten notes / summary caption for sketch view
+   147→  afterConcept?: number // 1-based concept ordinal to follow; omit → after all concepts
+   148→}
+   149→
+   150→export interface DerivationStep {
+   151→  label: string // e.g. "Step 1: Momentum transfer per collision"
+   152→  formula?: string // KaTeX formula, e.g. "$$\\Delta p_x = 2mv_x$$"
+   153→  explanation: string // pedagogical rationale for this step
+   154→}
+   155→
+   156→export interface DetailedDerivation {
+   157→  title: string
+   158→  statement: string // target formula or law to derive, e.g. "Derivation of Kinetic Pressure $P = \\frac{1}{3}nm\\langle v^2\\rangle$"
+   159→  prerequisites?: string[] // what physics/math is assumed for this derivation
+   160→  steps: DerivationStep[]
+   161→  result: string // final derived formula and interpretation
+   162→}
+   163→
+   164→export interface SectionContent {
+   165→  sectionId: string
+   166→  readingTime: number // minutes
+   167→  prerequisites?: string[] // concepts or prior sections required before this lesson
+   168→  intro: string
+   169→  objectives: string[]
+   170→  concepts: Concept[]
+   171→  figures?: LessonFigure[]
+   172→  derivations?: DetailedDerivation[]
+   173→  examples: WorkedExample[]
+   174→  keyTakeaways: string[]
+   175→  quiz: (QuizQuestion | undefined)[]
+   176→  depth?: DepthTier[]
+   177→}
+   178→
+   179→export const LIBRARY_SUBJECTS: Subject[] = [
+   180→  {
+   181→    id: 'mathematics',
+   182→    name: 'Mathematics',
+   183→    slug: 'mathematics',
+   184→    description: 'The complete mathematics path — logic, proofs, discrete structures, the full calculus sequence, classical algebra, probability and statistics, and the engineering mathematics sequence from linear algebra to transforms and numerical methods.',
+   185→    icon: 'sigma',
+   186→    accent: '#10b981',
+   187→    tagline: 'From first principles to research frontiers',
+   188→    group: 'Foundations',
+   189→  },
+   190→  {
+   191→    id: 'physics',
+   192→    name: 'Physics',
+   193→    slug: 'physics',
+   194→    description: 'One canonical chapter per topic — mechanics, waves, thermodynamics, electromagnetism, optics and modern physics — merging the great textbooks with entrance-scope and applied engineering physics into a single deduplicated sequence.',
+   195→    icon: 'atom',
+   196→    accent: '#f59e0b',
+   197→    tagline: 'The unified physics curriculum',
+   198→    group: 'Foundations',
+   199→  },
+   200→  {
+   201→    id: 'chemistry',
+   202→    name: 'Chemistry',
+   203→    slug: 'chemistry',
+   204→    description: 'Physical, organic and inorganic chemistry in full, plus the applied engineering chemistry — water, corrosion, fuels, polymers and nanomaterials — with every mechanism, trend and confirmatory test.',
+   205→    icon: 'hexagon',
+   206→    accent: '#22d3ee',
+   207→    tagline: 'Molecules, mechanisms and applications',
+   208→    group: 'Foundations',
+   209→  },
+   210→  {
+   211→    id: 'english',
+   212→    name: 'English & Comprehension',
+   213→    slug: 'english',
+   214→    description: 'Complete verbal skills: reading comprehension and rhetoric, words in context, expression of ideas, standard conventions, grammar essentials, vocabulary and comprehension practice.',
+   215→    icon: 'type',
+   216→    accent: '#f472b6',
+   217→    tagline: 'Read deeply, write precisely',
+   218→    group: 'Foundations',
+   219→  },
+   220→  {
+   221→    id: 'aptitude',
+   222→    name: 'Aptitude & Reasoning',
+   223→    slug: 'aptitude',
+   224→    description: 'The complete mental-aptitude curriculum: reasoning and problem solving, quantitative aptitude, general awareness and general science.',
+   225→    icon: 'brain',
+   226→    accent: '#a3e635',
+   227→    tagline: 'Sharpen every kind of thinking',
+   228→    group: 'Foundations',
+   229→  },
+   230→  {
+   231→    id: 'programming-c-cpp',
+   232→    name: 'C & C++ Programming',
+   233→    slug: 'c-cpp-programming',
+   234→    description: 'The complete systems-programming track: C from first principles — types, control flow, functions, arrays, pointers, structures and files — followed by the full C++ canon: the language tour, classes and resource management, templates and generic programming, the standard library, concurrency and metaprogramming. Every branch’s programming curriculum and assessment scope is folded in.',
+   235→    icon: 'terminal',
+   236→    accent: '#f97316',
+   237→    tagline: 'From pointers to templates',
+   238→    group: 'Programming & Software',
+   239→  },
+   240→  {
+   241→    id: 'programming-java',
+   242→    name: 'Java Programming',
+   243→    slug: 'java-programming',
+   244→    description: 'The complete Java track: platform and environment, language fundamentals, objects and classes, inheritance, interfaces and lambdas, error handling and logging, generics, collections, concurrency, streams, I/O and networking, JDBC and modules — matching every branch’s Java curriculum and assessment scope.',
+   245→    icon: 'package',
+   246→    accent: '#dc2626',
+   247→    tagline: 'Objects, streams and enterprise craft',
+   248→    group: 'Programming & Software',
+   249→  },
+   250→  {
+   251→    id: 'web-development',
+   252→    name: 'Web Development & JavaScript',
+   253→    slug: 'web-development',
+   254→    description: 'The complete web track: internet foundations, HTML semantics, CSS layout and theming, client-side JavaScript, TypeScript, React and Next.js, Node APIs, SQL and NoSQL databases, auth and security, testing, performance, accessibility, SEO and deployment — plus the full definitive JavaScript course covering the language core, browser and server platforms, with every curriculum and assessment scope merged in.',
+   255→    icon: 'globe',
+   256→    accent: '#14b8a6',
+   257→    tagline: 'From first page to full stack',
+   258→    group: 'Programming & Software',
+   259→  },
+   260→  {
+   261→    id: 'ai-data-science',
+   262→    name: 'AI, Machine Learning & Data Science',
+   263→    slug: 'ai-data-science',
+   264→    description: 'The complete intelligence track: Python programming as the working language, classical artificial intelligence — search, knowledge representation, reasoning and planning — machine learning, deep learning and big-data analytics, consolidating every branch’s AI curriculum and assessment scope into one sequence.',
+   265→    icon: 'bot',
+   266→    accent: '#9333ea',
+   267→    tagline: 'From search to neural networks',
+   268→    group: 'Programming & Software',
+   269→  },
+   270→  {
+   271→    id: 'dsa',
+   272→    name: 'Data Structures & Algorithms',
+   273→    slug: 'data-structures-algorithms',
+   274→    description: 'The complete algorithms canon: growth of functions, divide-and-conquer, sorting and selection, heaps, hash tables, search trees, dynamic programming, greedy methods, amortized analysis, B-trees, Fibonacci heaps, disjoint sets, graph algorithms, maximum flow, number-theoretic and string algorithms, computational geometry and NP-completeness — with every branch’s curriculum and assessment scope folded in.',
+   275→    icon: 'git-branch',
+   276→    accent: '#16a34a',
+   277→    tagline: 'The algorithms canon',
+   278→    group: 'Computing Systems',
+   279→  },
+   280→  {
+   281→    id: 'toc',
+   282→    name: 'Theory of Computation',
+   283→    slug: 'theory-of-computation',
+   284→    description: 'The complete computability track: formal languages and grammars, finite automata and regular languages, context-free grammars and pushdown automata, Turing machines, decidability and computability — merging every curriculum and assessment scope for the theory of computation.',
+   285→    icon: 'infinity',
+   286→    accent: '#c026d3',
+   287→    tagline: 'Languages, grammars, machines',
+   288→    group: 'Computing Systems',
+   289→  },
+   290→  {
+   291→    id: 'coa',
+   292→    name: 'Computer Organization & Architecture',
+   293→    slug: 'computer-organization-architecture',
+   294→    description: 'How computers are built: register transfer and micro-operations, processor and control-unit design, basic computer organization and microcomputers, instruction-set architecture and addressing modes, datapath and control, pipelining, memory hierarchy and I/O systems, through advanced architectures — merging every branch’s organization curriculum with the classic texts and assessment scopes.',
+   295→    icon: 'cpu',
+   296→    accent: '#b45309',
+   297→    tagline: 'Hardware from gates to pipelines',
+   298→    group: 'Computing Systems',
+   299→  },
+   300→  {
+   301→    id: 'compiler-design',
+   302→    name: 'Compiler Design',
+   303→    slug: 'compiler-design',
+   304→    description: 'The complete translation pipeline: lexical analysis and symbol tables, top-down LL parsing, bottom-up LR parsing, syntax-directed translation and runtime organization, and machine-independent and machine-dependent optimization — consolidating every curriculum and assessment scope for translators and compilers.',
+   305→    icon: 'arrow-left-right',
+   306→    accent: '#be123c',
+   307→    tagline: 'From source code to machine code',
+   308→    group: 'Computing Systems',
+   309→  },
+   310→  {
+   311→    id: 'operating-systems',
+   312→    name: 'Operating Systems',
+   313→    slug: 'operating-systems',
+   314→    description: 'The complete operating-systems course: OS structures, processes and threads, CPU scheduling, synchronization tools and their classic problems, deadlocks, main and virtual memory, mass storage, and file-system interface, implementation and internals — with every branch’s curriculum and assessment scope folded in.',
+   315→    icon: 'server',
+   316→    accent: '#0891b2',
+   317→    tagline: 'The program that runs programs',
+   318→    group: 'Computing Systems',
+   319→  },
+   320→  {
+   321→    id: 'dbms',
+   322→    name: 'Database Management Systems',
+   323→    slug: 'database-management-systems',
+   324→    description: 'The complete databases course: ER modelling, the relational model, algebra and calculus, SQL, normalization, transactions, concurrency control and recovery, indexing and file organization — merging every branch’s curriculum and assessment scope.',
+   325→    icon: 'database',
+   326→    accent: '#65a30d',
+   327→    tagline: 'Model, query, protect',
+   328→    group: 'Computing Systems',
+   329→  },
+   330→  {
+   331→    id: 'computer-networks',
+   332→    name: 'Computer Networks',
+   333→    slug: 'computer-networks',
+   334→    description: 'The complete networking track: layering and switching, framing and error control, medium access and Ethernet, routing algorithms and protocols, IP addressing, ARP/DHCP/ICMP, TCP and congestion control, and application protocols — plus the data-communication perspective on WAN technologies, switching and frame formats from the electronics curriculum, with every assessment scope folded in.',
+   335→    icon: 'network',
+   336→    accent: '#0d9488',
+   337→    tagline: 'Layer by layer, end to end',
+   338→    group: 'Computing Systems',
+   339→  },
+   340→  {
+   341→    id: 'microprocessors-embedded',
+   342→    name: 'Microprocessors & Embedded Systems',
+   343→    slug: 'microprocessors-embedded-systems',
+   344→    description: 'The complete microprocessor and embedded track: architecture, programming and interfacing of the classic microprocessors and microcontrollers, timers, interrupts and peripherals, embedded C, serial buses from UART to CAN, RTOS concepts and interfacing case studies — merging the computer-science and electronics curricula with every assessment scope.',
+   345→    icon: 'circuit-board',
+   346→    accent: '#92400e',
+   347→    tagline: 'Chips that run the real world',
+   348→    group: 'Electronics & Communication',
+   349→  },
+   350→  {
+   351→    id: 'software-emerging',
+   352→    name: 'Software Engineering & Emerging Tech',
+   353→    slug: 'software-engineering-emerging-tech',
+   354→    description: 'Software engineering and the modern stack: process models, requirements, design, testing and project management, cloud computing, the Internet of Things and blockchain architecture — consolidating every branch’s curriculum and assessment scope.',
+   355→    icon: 'folder-cog',
+   356→    accent: '#7c3aed',
+   357→    tagline: 'Process, practice and the new stack',
+   358→    group: 'Programming & Software',
+   359→  },
+   360→  {
+   361→    id: 'cybersecurity',
+   362→    name: 'Cybersecurity',
+   363→    slug: 'cybersecurity',
+   364→    description: 'The complete security course: security foundations and cryptography, symmetric and asymmetric ciphers, hashes and digital signatures, network-security protocols, attacks and defenses, malware analysis and security management — with every branch’s curriculum and assessment scope folded in.',
+   365→    icon: 'lock',
+   366→    accent: '#f43f5e',
+   367→    tagline: 'Defend the system',
+   368→    group: 'Programming & Software',
+   369→  },
+   370→  {
+   371→    id: 'visual-computing',
+   372→    name: 'Computer Graphics & Image Processing',
+   373→    slug: 'computer-graphics-image-processing',
+   374→    description: 'The visual-computing track: computer graphics — scan conversion, transformations, clipping, visible-surface determination, curves and surfaces — and digital image processing: enhancement, transforms, restoration, segmentation and compression, merging both curricula and every assessment scope.',
+   375→    icon: 'aperture',
+   376→    accent: '#06b6d4',
+   377→    tagline: 'Pixels to pictures',
+   378→    group: 'Computing Systems',
+   379→  },
+   380→  {
+   381→    id: 'digital-electronics',
+   382→    name: 'Digital Electronics & Logic Design',
+   383→    slug: 'digital-electronics-logic-design',
+   384→    description: 'The complete digital track: binary systems and codes, Boolean algebra and gates, minimization from K-maps to Quine–McCluskey, combinational and MSI/LSI design, sequential logic, registers and counters — merging the classic Mano text with the digital-systems course, every branch’s logic curriculum and all assessment scopes.',
+   385→    icon: 'binary',
+   386→    accent: '#ea5807',
+   387→    tagline: 'From switches to processors',
+   388→    group: 'Electronics & Communication',
+   389→  },
+   390→  {
+   391→    id: 'electronic-devices-circuits',
+   392→    name: 'Electronic Devices & Circuits',
+   393→    slug: 'electronic-devices-circuits',
+   394→    description: 'The complete devices-and-circuits track: semiconductor physics and the pn junction, diodes and special-purpose devices, BJTs, FETs and MOSFETs, the thyristor family and IC fabrication, amplifier analysis, feedback and oscillators, power stages, op-amp circuits and analog ICs — merging the electronics coverage of every branch with all assessment scopes.',
+   395→    icon: 'battery-charging',
+   396→    accent: '#ca8a04',
+   397→    tagline: 'Electrons under control',
+   398→    group: 'Electronics & Communication',
+   399→  },
+   400→  {
+   401→    id: 'signals-systems',
+   402→    name: 'Signals, Systems & DSP',
+   403→    slug: 'signals-systems-dsp',
+   404→    description: 'The complete signals track: signal classification, LTI systems and convolution, Fourier series and transforms, sampling, Laplace and z-transforms, the DFT and FFT algorithms, FIR and IIR filter design with realization structures and finite word-length effects — plus speech and biomedical DSP applications — with every assessment scope folded in.',
+   405→    icon: 'audio-waveform',
+   406→    accent: '#8b5cf6',
+   407→    tagline: 'Analyze any signal',
+   408→    group: 'Electronics & Communication',
+   409→  },
+   410→  {
+   411→    id: 'communication-systems',
+   412→    name: 'Communication Systems',
+   413→    slug: 'communication-systems',
+   414→    description: 'The complete communication track: analog modulation and superheterodyne receivers, digital modulation and channel coding with information theory, wireless and mobile systems from propagation models to 5G, satellite orbits and link budgets, and optical fibre communication and photonic networks — merging every curriculum and assessment scope.',
+   415→    icon: 'radio',
+   416→    accent: '#e11d48',
+   417→    tagline: 'Sender to receiver',
+   418→    group: 'Electronics & Communication',
+   419→  },
+   420→  {
+   421→    id: 'electromagnetics',
+   422→    name: 'Electromagnetics, Antennas & Microwaves',
+   423→    slug: 'electromagnetics-antennas-microwaves',
+   424→    description: 'The complete fields track: vector calculus in three coordinate systems, electrostatics and magnetostatics, Maxwell’s equations, plane waves and polarization, transmission lines with Smith charts, waveguides, antennas and wave propagation, and microwave tubes, solid-state devices and radar — with every assessment scope folded in.',
+   425→    icon: 'magnet',
+   426→    accent: '#d97706',
+   427→    tagline: 'Fields, waves, links',
+   428→    group: 'Electronics & Communication',
+   429→  },
+   430→  {
+   431→    id: 'vlsi-design',
+   432→    name: 'VLSI Design',
+   433→    slug: 'vlsi-design',
+   434→    description: 'The complete VLSI track: fabrication science from crystal growth to packaging, CMOS process flows and layout rules, MOS inverter design and logic styles, sequential design, subsystem datapaths, memories, low-power techniques and testing — merging both VLSI curricula and every assessment scope.',
+   435→    icon: 'layout-grid',
+   436→    accent: '#a16207',
+   437→    tagline: 'Design the silicon',
+   438→    group: 'Electronics & Communication',
+   439→  },
+   440→  {
+   441→    id: 'electric-circuits',
+   442→    name: 'Electric Circuits & Networks',
+   443→    slug: 'electric-circuits-networks',
+   444→    description: 'The complete circuits track: DC and AC fundamentals, mesh and nodal analysis, the full set of network theorems, resonance and coupled circuits, transients, two-port networks and network synthesis — merging the basic-electrical, circuit-analysis and network-analysis courses of every branch with all assessment scopes.',
+   445→    icon: 'plug',
+   446→    accent: '#f59e0b',
+   447→    tagline: 'The language of every electrical system',
+   448→    group: 'Electrical & Power',
+   449→  },
+   450→  {
+   451→    id: 'electrical-machines',
+   452→    name: 'Electrical Machines, Drives & EV',
+   453→    slug: 'electrical-machines-drives-ev',
+   454→    description: 'The complete machines track: DC machines, transformers, induction and synchronous machines, special machines, electrical machine design, power-electronic converters and electric drives, utilization and traction, and electric vehicles — merging every branch’s curriculum and assessment scope.',
+   455→    icon: 'cog',
+   456→    accent: '#15803d',
+   457→    tagline: 'Motors, generators, drives',
+   458→    group: 'Electrical & Power',
+   459→  },
+   460→  {
+   461→    id: 'power-systems',
+   462→    name: 'Power Systems',
+   463→    slug: 'power-systems',
+   464→    description: 'The complete power track: generation and supply systems, per-unit analysis and load flow, fault studies and protection, switchgear, transmission lines, and HVDC with FACTS — with every branch’s curriculum and assessment scope folded in.',
+   465→    icon: 'zap',
+   466→    accent: '#a16207',
+   467→    tagline: 'Generate, transmit, protect',
+   468→    group: 'Electrical & Power',
+   469→  },
+   470→  {
+   471→    id: 'control-instrumentation',
+   472→    name: 'Control Systems & Instrumentation',
+   473→    slug: 'control-systems-instrumentation',
+   474→    description: 'The complete control track: transfer-function modelling, block-diagram algebra and signal flow graphs, time response, stability, root locus and frequency-domain design, compensation and state-space analysis — together with the full measurement and instrumentation stack: bridges, oscilloscopes, transducers and digital instruments from both the electrical and electronics curricula.',
+   475→    icon: 'gauge',
+   476→    accent: '#0f766e',
+   477→    tagline: 'Measure, model, regulate',
+   478→    group: 'Electrical & Power',
+   479→  },
+   480→  {
+   481→    id: 'energy-automotive',
+   482→    name: 'Energy Conversion & Automotive',
+   483→    slug: 'energy-conversion-automotive',
+   484→    description: 'The energy-conversion track: power-plant engineering, internal-combustion engines, automobile engineering and renewable energy systems — merging the mechanical and electrical coverage of energy with every assessment scope.',
+   485→    icon: 'fan',
+   486→    accent: '#65a30d',
+   487→    tagline: 'Engines, wheels, renewables',
+   488→    group: 'Mechanical & Energy',
+   489→  },
+   490→  {
+   491→    id: 'mechanics-graphics',
+   492→    name: 'Engineering Mechanics & Graphics',
+   493→    slug: 'engineering-mechanics-graphics',
+   494→    description: 'The mechanics-and-drawing track: engineering mechanics — statics and dynamics of particles and rigid bodies — engineering graphics with projection, sections and development, and machine drawing of components, fits and assemblies — with every branch’s curriculum and assessment scope folded in.',
+   495→    icon: 'shapes',
+   496→    accent: '#9333ea',
+   497→    tagline: 'Forces, motion, drawings',
+   498→    group: 'Mechanical & Energy',
+   499→  },
+   500→  {
+   501→    id: 'solids-materials',
+   502→    name: 'Mechanics of Solids & Materials',
+   503→    slug: 'mechanics-of-solids-materials',
+   504→    description: 'The materials track: strength of materials — stress and strain, torsion, bending, shear and deflection — together with materials science and metallurgy: crystal structure, phase diagrams, heat treatment and engineering alloys — merging every branch’s curriculum and assessment scope.',
+   505→    icon: 'layers',
+   506→    accent: '#57534e',
+   507→    tagline: 'Stress, strain, structure',
+   508→    group: 'Mechanical & Energy',
+   509→  },
+   510→  {
+   511→    id: 'machines-design',
+   512→    name: 'Theory of Machines & Machine Design',
+   513→    slug: 'theory-of-machines-design',
+   514→    description: 'The machines track: kinematics of mechanisms, velocity and acceleration analysis, dynamics of machines with balancing and vibrations, and the full machine-design sequence — joints, shafts, bearings, gears, springs and design-for-fatigue — with every assessment scope folded in.',
+   515→    icon: 'wrench',
+   516→    accent: '#b45309',
+   517→    tagline: 'Mechanisms into machines',
+   518→    group: 'Mechanical & Energy',
+   519→  },
+   520→  {
+   521→    id: 'thermal-fluids',
+   522→    name: 'Thermal & Fluid Sciences',
+   523→    slug: 'thermal-fluid-sciences',
+   524→    description: 'The thermal-fluids track: applied thermodynamics, fluid mechanics, heat and mass transfer, fluid machinery, and refrigeration and air conditioning — merging every branch’s curriculum and assessment scope.',
+   525→    icon: 'thermometer',
+   526→    accent: '#dc2626',
+   527→    tagline: 'Heat, work, flow',
+   528→    group: 'Mechanical & Energy',
+   529→  },
+   530→  {
+   531→    id: 'manufacturing-industrial',
+   532→    name: 'Manufacturing & Industrial Systems',
+   533→    slug: 'manufacturing-industrial-systems',
+   534→    description: 'The manufacturing track: casting, forming, welding and machining processes, metrology and quality control, CAD/CAM and automation, and industrial engineering — operations research, production planning and quality management — with every assessment scope folded in.',
+   535→    icon: 'hammer',
+   536→    accent: '#334155',
+   537→    tagline: 'Make it, measure it, manage it',
+   538→    group: 'Mechanical & Energy',
+   539→  },
+   540→  {
+   541→    id: 'mechatronics-robotics',
+   542→    name: 'Mechatronics & Robotics',
+   543→    slug: 'mechatronics-robotics',
+   544→    description: 'The integration track: mechatronics — sensors, actuators, microcontroller interfacing and system design — and robotics: kinematics, dynamics and control of manipulators and mobile robots — merging every branch’s curriculum and assessment scope.',
+   545→    icon: 'move',
+   546→    accent: '#0891b2',
+   547→    tagline: 'Where machines think',
+   548→    group: 'Mechanical & Energy',
+   549→  },
+   550→]
+   551→
+   552→export const LIBRARY_BOOKS: BookMeta[] = [
+   553→  {
+   554→    id: 'math-master',
+   555→    subjectId: 'mathematics',
+   556→    title: 'The Mathematics Master Library',
+   557→    author: 'Kenneth H. Rosen, James Stewart & the StudyVerse Curriculum Team',
+   558→    edition: 'Master Edition',
+   559→    year: '2019 · 2020 · 2026',
+   560→    description:
+   561→      'All the mathematics, one master volume: Rosen’s discrete mathematics (logic, proofs, counting, graphs), Stewart’s complete calculus sequence, the classical algebra block (complex numbers, matrices, trigonometry, coordinate and 3D geometry, probability and statistics), applied problem-solving skills, and the full engineering mathematics sequence — linear algebra, ODEs, PDEs, complex analysis, Laplace/Fourier/z transforms and numerical methods. Every topic appears exactly once, in pedagogical order.',
+   562→    pages: 3868,
+   563→    accent: '#10b981',
+   564→    sources: [
+   565→      'Rosen — Discrete Mathematics and Its Applications, 8e (1118 pp)',
+   566→      'Stewart, Clegg & Watson — Calculus: Early Transcendentals, 9e (1390 pp)',
+   567→      'Engineering mathematics curriculum — linear algebra to numerical methods (23 chapters)',
+   568→      'Classical algebra & advanced problem-solving companion (curriculum volumes)',
+   569→    ],
+   570→  },
+   571→  {
+   572→    id: 'phys-master',
+   573→    subjectId: 'physics',
+   574→    title: 'The Physics Master Library',
+   575→    author: 'David Halliday, Hugh D. Young, Richard P. Feynman, Dale Ewen, Vincent Coletta',
+   576→    edition: 'Consolidated Topic Edition',
+   577→    year: '2010 · 2018 · 2020 · 2021 · 2010',
+   578→    description:
+   579→      'One canonical chapter per physics topic. The conceptual spine of the Feynman Lectures, the complete university course of Halliday/Resnick/Walker and Young & Freedman, Ewen’s applied physics and Coletta’s fundamentals are merged into a single deduplicated sequence — measurement and vectors, mechanics, waves, heat and thermodynamics, electromagnetism, optics, modern physics, lasers and optical fibres — with entrance-scope depth folded into each topic.',
+   580→    pages: 7534,
+   581→    accent: '#f59e0b',
+   582→    sources: [
+   583→      'Feynman, Leighton & Sands — The Feynman Lectures on Physics, Vols I–III (conceptual spine)',
+   584→      'Halliday, Resnick & Walker — Fundamentals of Physics, 11e Extended (primary treatment)',
+   585→      'Young & Freedman — University Physics with Modern Physics, 15e (merged)',
+   586→      'Ewen, Schurter & Gundersen — Applied Physics, 11e (merged)',
+   587→      'Coletta — Physics Fundamentals, 2e (merged)',
+   588→    ],
+   589→  },
+   590→  {
+   591→    id: 'chem-complete',
+   592→    subjectId: 'chemistry',
+   593→    title: 'Chemistry: Physical, Organic, Inorganic & Applied',
+   594→    author: 'StudyVerse Curriculum Team',
+   595→    edition: '2026 Edition',
+   596→    year: '2026',
+   597→    description:
+   598→      'Physical, organic and inorganic chemistry in one deduplicated volume — mole concept through kinetics, GOC through biomolecules, periodicity through salt analysis, spectroscopy, stereochemistry and pericyclic depth — capped by the applied engineering chemistry chapter: water, corrosion, fuels, lubricants, polymers, nanomaterials and green chemistry.',
+   599→    pages: 1060,
+   600→    accent: '#22d3ee',
+   601→  },
+   602→  {
+   603→    id: 'english-complete',
+   604→    subjectId: 'english',
+   605→    title: 'English: Reading, Writing & Comprehension',
+   606→    author: 'StudyVerse Curriculum Team',
+   607→    edition: '2026 Edition',
+   608→    year: '2026',
+   609→    description:
+   610→      'Complete verbal skills in one volume: reading comprehension and rhetoric, words in context, text structure and purpose, cross-text connections, command of evidence, standard English conventions, transitions, rhetorical synthesis, grammar essentials, vocabulary, voice, narration and comprehension practice.',
+   611→    pages: 5,
+   612→    accent: '#f472b6',
+   613→  },
+   614→  {
+   615→    id: 'aptitude-complete',
+   616→    subjectId: 'aptitude',
+   617→    title: 'Aptitude, Reasoning & General Awareness',
+   618→    author: 'StudyVerse Curriculum Team',
+   619→    edition: '2026 Edition',
+   620→    year: '2026',
+   621→    description:
+   622→      'The complete mental-aptitude curriculum: reasoning and problem solving (analogies, series, coding–decoding, blood relations, syllogisms, seating arrangements, puzzles and non-verbal patterns), quantitative aptitude (percentages, ratios, time–work, speed–distance and data interpretation), general awareness and general science.',
+   623→    pages: 4,
+   624→    accent: '#a3e635',
+   625→  },
+   626→  {
+   627→    id: 'c-cpp-complete',
+   628→    subjectId: 'programming-c-cpp',
+   629→    title: 'C & C++ Programming — The Complete Track',
+   630→    author: 'StudyVerse Curriculum Team with Bjarne Stroustrup',
+   631→    edition: '2026 Edition',
+   632→    year: '2026',
+   633→    description: 'All of C and C++ in one track: the C programming course first — types, operators, control flow, functions, arrays, strings, pointers, structures and file handling — then the complete C++ language: tours of the language, abstraction, containers and concurrency; types, declarations and expressions; classes, construction and hierarchies; overloading and templates through metaprogramming; the standard library from containers and algorithms to streams, numerics and concurrency; and memory, resource and utility management.',
+   634→    pages: 1640,
+   635→    accent: '#f97316',
+   636→    sources: [
+   637→      'Stroustrup — The C++ Programming Language, 4e (1366 pp)',
+   638→      'C programming curriculum — all branches + assessment scopes, merged',
+   639→    ],
+   640→  },
+   641→  {
+   642→    id: 'java-complete',
+   643→    subjectId: 'programming-java',
+   644→    title: 'Java Programming — The Complete Track',
+   645→    author: 'StudyVerse Curriculum Team with Cay Horstmann',
+   646→    edition: '2026 Edition',
+   647→    year: '2026',
+   648→    description: 'The complete Java course: the Java platform and environment, fundamentals, objects and classes, inheritance, interfaces and lambda expressions, error handling and logging, generics, collections, concurrency, streams, I/O and networking, JDBC and the module system — every branch’s Java curriculum and assessment scope merged into one sequence.',
+   649→    pages: 290,
+   650→    accent: '#dc2626',
+   651→    sources: [
+   652→      'Horstmann — Core Java, 12e (two volumes)',
+   653→      'University Java curricula — all branches + assessment scopes, merged',
+   654→    ],
+   655→  },
+   656→  {
+   657→    id: 'web-complete',
+   658→    subjectId: 'web-development',
+   659→    title: 'Web Development & JavaScript — The Complete Track',
+   660→    author: 'StudyVerse Curriculum Team with David Flanagan',
+   661→    edition: '2026 Edition',
+   662→    year: '2026',
+   663→    description: 'From a blank page to a deployed full-stack app: web foundations, semantic HTML, forms and media, CSS fundamentals through layout and theming, motion and tooling, JavaScript for the web, async and storage, TypeScript, React and Next.js, Node and Express, APIs and realtime, SQL and NoSQL with ORMs, auth and security, testing, performance, accessibility and SEO, DevOps and the capstone — followed by the definitive deep course on JavaScript itself: lexical structure, types, expressions, objects, arrays, functions, classes, modules, the standard library, iterators and generators, async patterns, metaprogramming, browsers, Node and tooling.',
+   664→    pages: 1340,
+   665→    accent: '#14b8a6',
+   666→    sources: [
+   667→      'The Complete Web Development Library (2026 edition)',
+   668→      'Flanagan — JavaScript: The Definitive Guide, 7e (708 pp)',
+   669→    ],
+   670→  },
+   671→  {
+   672→    id: 'ai-complete',
+   673→    subjectId: 'ai-data-science',
+   674→    title: 'AI, Machine Learning & Data Science — The Complete Track',
+   675→    author: 'StudyVerse Curriculum Team',
+   676→    edition: '2026 Edition',
+   677→    year: '2026',
+   678→    description: 'The intelligence track in one volume: Python programming as the working language, classical artificial intelligence — search, knowledge representation, reasoning, planning and learning — machine learning across supervised, unsupervised and ensemble methods, deep learning with neural architectures and applications, and big-data analytics with the modern data stack. Every branch’s AI curriculum and assessment scope is merged in.',
+   679→    pages: 170,
+   680→    accent: '#9333ea',
+   681→    sources: [
+   682→      'University AI/ML/data-science curricula — all branches + assessment scopes, merged',
+   683→    ],
+   684→  },
+   685→  {
+   686→    id: 'dsa-complete',
+   687→    subjectId: 'dsa',
+   688→    title: 'Data Structures & Algorithms — The Complete Track',
+   689→    author: 'StudyVerse Curriculum Team with Cormen, Leiserson, Rivest & Stein',
+   690→    edition: '2026 Edition',
+   691→    year: '2026',
+   692→    description: 'The complete algorithms canon: the role of algorithms and getting started, growth of functions, divide-and-conquer, randomized algorithms, heapsort and quicksort, linear-time sorting, medians and order statistics, elementary data structures, hash tables, binary search trees, red-black trees and augmentation, dynamic programming and greedy algorithms, amortized analysis, B-trees, Fibonacci heaps, van Emde Boas trees and disjoint sets, graph algorithms from BFS to maximum flow, multithreaded and matrix algorithms, linear programming, polynomials and the FFT, number theory, string matching, computational geometry, NP-completeness and approximation — with every assessment scope folded in.',
+   693→    pages: 940,
+   694→    accent: '#16a34a',
+   695→    sources: [
+   696→      'Cormen, Leiserson, Rivest & Stein — Introduction to Algorithms, 3e (1313 pp)',
+   697→      'Design-&-analysis curricula — all branches + assessment scopes, merged',
+   698→    ],
+   699→  },
+   700→  {
+   701→    id: 'toc-complete',
+   702→    subjectId: 'toc',
+   703→    title: 'Theory of Computation — The Complete Track',
+   704→    author: 'StudyVerse Curriculum Team',
+   705→    edition: '2026 Edition',
+   706→    year: '2026',
+   707→    description: 'Formal languages and the machines that recognize them: regular languages and finite automata, context-free grammars and pushdown automata, Turing machines and computability, decidability and reductions — every curriculum and assessment scope for the theory of computation merged into one chapter-by-section sequence.',
+   708→    pages: 50,
+   709→    accent: '#c026d3',
+   710→    sources: [
+   711→      'University automata/computation curricula — all branches + assessment scopes, merged',
+   712→    ],
+   713→  },
+   714→  {
+   715→    id: 'coa-complete',
+   716→    subjectId: 'coa',
+   717→    title: 'Computer Organization & Architecture — The Complete Track',
+   718→    author: 'StudyVerse Curriculum Team with M. Morris Mano',
+   719→    edition: '2026 Edition',
+   720→    year: '2026',
+   721→    description: 'How computers are built, from the register-transfer level upward: register transfer and micro-operations, processor design, control-unit design, the basic computer and microcomputers, then the modern course — instruction-set architecture and addressing, datapath and control, pipelining, memory hierarchy and I/O systems — capped by advanced architectures. Every branch’s organization curriculum and assessment scope is folded in.',
+   722→    pages: 250,
+   723→    accent: '#b45309',
+   724→    sources: [
+   725→      'Mano — Digital Logic and Computer Design (612 pp, architecture chapters)',
+   726→      'Computer-organization curricula — all branches + assessment scopes, merged',
+   727→    ],
+   728→  },
+   729→  {
+   730→    id: 'compiler-complete',
+   731→    subjectId: 'compiler-design',
+   732→    title: 'Compiler Design — The Complete Track',
+   733→    author: 'StudyVerse Curriculum Team',
+   734→    edition: '2026 Edition',
+   735→    year: '2026',
+   736→    description: 'The complete translation pipeline: lexical analysis and symbol-table construction, top-down LL parsing, bottom-up LR parsing, syntax-directed translation and runtime memory organization, and optimization — machine-independent and machine-dependent. Every curriculum and assessment scope for translators and compilers is merged in.',
+   737→    pages: 120,
+   738→    accent: '#be123c',
+   739→    sources: [
+   740→      'University compiler curricula — all branches + assessment scopes, merged',
+   741→    ],
+   742→  },
+   743→  {
+   744→    id: 'os-complete',
+   745→    subjectId: 'operating-systems',
+   746→    title: 'Operating Systems — The Complete Track',
+   747→    author: 'StudyVerse Curriculum Team with Silberschatz, Galvin & Gagne',
+   748→    edition: '2026 Edition',
+   749→    year: '2026',
+   750→    description: 'The complete operating-systems course: introduction and OS structures, processes, threads and concurrency, CPU scheduling, synchronization tools and their classic problems, deadlocks, main memory and virtual memory, mass-storage structure, I/O systems, and the file-system interface, implementation and internals — with every branch’s curriculum and assessment scope folded in.',
+   751→    pages: 370,
+   752→    accent: '#0891b2',
+   753→    sources: [
+   754→      'Silberschatz, Galvin & Gagne — Operating System Concepts, 10e (918 pp)',
+   755→      'University OS curricula — all branches + assessment scopes, merged',
+   756→    ],
+   757→  },
+   758→  {
+   759→    id: 'dbms-complete',
+   760→    subjectId: 'dbms',
+   761→    title: 'Database Management Systems — The Complete Track',
+   762→    author: 'StudyVerse Curriculum Team',
+   763→    edition: '2026 Edition',
+   764→    year: '2026',
+   765→    description: 'The complete databases course: ER modelling, the relational model and algebra with calculus, SQL, normalization, transactions, concurrency control and recovery, and indexing and file organization — every branch’s curriculum and assessment scope merged into one sequence.',
+   766→    pages: 190,
+   767→    accent: '#65a30d',
+   768→    sources: [
+   769→      'University DBMS curricula — all branches + assessment scopes, merged',
+   770→    ],
+   771→  },
+   772→  {
+   773→    id: 'networks-complete',
+   774→    subjectId: 'computer-networks',
+   775→    title: 'Computer Networks — The Complete Track',
+   776→    author: 'StudyVerse Curriculum Team',
+   777→    edition: '2026 Edition',
+   778→    year: '2026',
+   779→    description: 'The complete networking track: layering and switching, framing and error control, medium access and Ethernet, routing, IP addressing, ARP/DHCP/ICMP, TCP and congestion control, application protocols — plus the data-communication perspective: OSI and TCP/IP stacks, LAN/MAN/WAN, circuit and packet switching, HDLC, ATM and frame relay, and digital switching — with every assessment scope folded in.',
+   780→    pages: 230,
+   781→    accent: '#0d9488',
+   782→    sources: [
+   783→      'University networking curricula — all branches + assessment scopes, merged',
+   784→    ],
+   785→  },
+   786→  {
+   787→    id: 'microembedded-complete',
+   788→    subjectId: 'microprocessors-embedded',
+   789→    title: 'Microprocessors & Embedded Systems — The Complete Track',
+   790→    author: 'StudyVerse Curriculum Team',
+   791→    edition: '2026 Edition',
+   792→    year: '2026',
+   793→    description: 'The complete micro-and-embedded track: microprocessor and microcontroller architecture, programming and interfacing — timers, interrupts, memory and I/O, peripherals and serial buses from UART to CAN — plus embedded-system design: embedded C, RTOS concepts with scheduling and synchronization, and sensor/actuator interfacing case studies. The computer-science and electronics curricula and every assessment scope are merged in.',
+   794→    pages: 110,
+   795→    accent: '#92400e',
+   796→    sources: [
+   797→      'University microprocessor & embedded curricula — all branches + assessment scopes, merged',
+   798→    ],
+   799→  },
+   800→  {
+   801→    id: 'software-complete',
+   802→    subjectId: 'software-emerging',
+   803→    title: 'Software Engineering & Emerging Tech — The Complete Track',
+   804→    author: 'StudyVerse Curriculum Team',
+   805→    edition: '2026 Edition',
+   806→    year: '2026',
+   807→    description: 'Software practice and the modern stack: software-engineering process models, requirements, design, construction, testing and project management, cloud computing from service models to virtualization and migration, the Internet of Things from sensing to fog computing, and blockchain architecture from consensus to smart contracts — every branch’s curriculum and assessment scope merged in.',
+   808→    pages: 110,
+   809→    accent: '#7c3aed',
+   810→    sources: [
+   811→      'University software & emerging-tech curricula — all branches + assessment scopes, merged',
+   812→    ],
+   813→  },
+   814→  {
+   815→    id: 'cybersecurity-complete',
+   816→    subjectId: 'cybersecurity',
+   817→    title: 'Cybersecurity — The Complete Track',
+   818→    author: 'StudyVerse Curriculum Team',
+   819→    edition: '2026 Edition',
+   820→    year: '2026',
+   821→    description: 'The complete security course: security foundations and goals, classical and modern cryptography, symmetric and asymmetric ciphers, hashes, MACs and digital signatures, authentication and key management, network-security protocols and firewalls, web and system attacks, malware, intrusion detection and security management — with every branch’s curriculum and assessment scope folded in.',
+   822→    pages: 70,
+   823→    accent: '#f43f5e',
+   824→    sources: [
+   825→      'University security curricula — all branches + assessment scopes, merged',
+   826→    ],
+   827→  },
+   828→  {
+   829→    id: 'visual-complete',
+   830→    subjectId: 'visual-computing',
+   831→    title: 'Computer Graphics & Image Processing — The Complete Track',
+   832→    author: 'StudyVerse Curriculum Team',
+   833→    edition: '2026 Edition',
+   834→    year: '2026',
+   835→    description: 'The visual-computing track: computer graphics — output primitives and scan conversion, 2D and 3D transformations, clipping, viewing, visible-surface determination, illumination, curves and surfaces — and digital image processing: fundamentals and enhancement, transforms, restoration, segmentation, morphology and compression — merging both curricula and every assessment scope.',
+   836→    pages: 70,
+   837→    accent: '#06b6d4',
+   838→    sources: [
+   839→      'University graphics & vision curricula — all branches + assessment scopes, merged',
+   840→    ],
+   841→  },
+   842→  {
+   843→    id: 'digital-complete',
+   844→    subjectId: 'digital-electronics',
+   845→    title: 'Digital Electronics & Logic Design — The Complete Track',
+   846→    author: 'StudyVerse Curriculum Team with M. Morris Mano',
+   847→    edition: '2026 Edition',
+   848→    year: '2026',
+   849→    description: 'The complete digital track: binary systems, Boolean algebra and logic gates, function simplification from K-maps to the Quine–McCluskey method, combinational logic and MSI/LSI blocks, sequential logic, registers and counters — merged with the full digital-systems course covering number systems, PLDs, finite state machines, logic families and HDL basics. Every branch’s logic curriculum and assessment scope is folded in.',
+   850→    pages: 310,
+   851→    accent: '#ea5807',
+   852→    sources: [
+   853→      'Mano — Digital Logic and Computer Design (612 pp, logic chapters)',
+   854→      'University digital curricula — all branches + assessment scopes, merged',
+   855→    ],
+   856→  },
+   857→  {
+   858→    id: 'edc-complete',
+   859→    subjectId: 'electronic-devices-circuits',
+   860→    title: 'Electronic Devices & Circuits — The Complete Track',
+   861→    author: 'StudyVerse Curriculum Team with Horowitz & Hill',
+   862→    edition: '2026 Edition',
+   863→    year: '2026',
+   864→    description: 'Devices through analog ICs in one track: semiconductor physics, the pn junction and diode circuits, special-purpose diodes, BJTs, JFETs and MOSFETs with biasing, the thyristor family and IC fabrication; diode and transistor circuit applications, amplifier analysis with small-signal models, feedback and oscillator topologies, power amplifiers and op-amp active circuits; and the analog-IC course — op-amp internals, application circuits, the 555 timer and PLL, voltage regulators, data converters and multipliers. Every branch’s electronics curriculum and assessment scope is merged in.',
+   865→    pages: 580,
+   866→    accent: '#ca8a04',
+   867→    sources: [
+   868→      'Horowitz & Hill — The Art of Electronics, 3e (merged)',
+   869→      'University devices & circuits curricula — all branches + assessment scopes, merged',
+   870→    ],
+   871→  },
+   872→  {
+   873→    id: 'signals-complete',
+   874→    subjectId: 'signals-systems',
+   875→    title: 'Signals, Systems & DSP — The Complete Track',
+   876→    author: 'StudyVerse Curriculum Team',
+   877→    edition: '2026 Edition',
+   878→    year: '2026',
+   879→    description: 'Signals and their processing in one track: signal and system classification with LTI analysis, convolution, Fourier series and transforms, sampling and aliasing, Laplace and z-transforms with system functions; discrete-time analysis with the DFT and FFT, FIR and IIR filter design, realization structures and finite word-length effects — plus speech and biomedical signal applications. Every branch’s curriculum and assessment scope is folded in.',
+   880→    pages: 250,
+   881→    accent: '#8b5cf6',
+   882→    sources: [
+   883→      'University signals & DSP curricula — all branches + assessment scopes, merged',
+   884→    ],
+   885→  },
+   886→  {
+   887→    id: 'communication-complete',
+   888→    subjectId: 'communication-systems',
+   889→    title: 'Communication Systems — The Complete Track',
+   890→    author: 'StudyVerse Curriculum Team',
+   891→    edition: '2026 Edition',
+   892→    year: '2026',
+   893→    description: 'Sender to receiver in one track: analog modulation and detection with superheterodyne receivers, digital communication with PCM, line coding, matched filtering, digital modulation and channel coding, spread spectrum and information theory; wireless and mobile systems from propagation and fading through GSM to 5G; satellite orbits, transponders and link budgets; and optical fibre communication with photonic networks from SONET to PON. Every curriculum and assessment scope is merged in.',
+   894→    pages: 310,
+   895→    accent: '#e11d48',
+   896→    sources: [
+   897→      'University communication curricula — all branches + assessment scopes, merged',
+   898→    ],
+   899→  },
+   900→  {
+   901→    id: 'em-complete',
+   902→    subjectId: 'electromagnetics',
+   903→    title: 'Electromagnetics, Antennas & Microwaves — The Complete Track',
+   904→    author: 'StudyVerse Curriculum Team',
+   905→    edition: '2026 Edition',
+   906→    year: '2026',
+   907→    description: 'Fields, waves and links in one track: vector calculus, electrostatics and magnetostatics with boundary conditions, Maxwell’s equations, plane-wave propagation and polarization, transmission lines with Smith charts, and waveguides; antenna parameters, wire and array antennas, aperture antennas and propagation modes; and microwave engineering — tubes, solid-state devices, waveguide components, S-parameters, matching, measurements and radar systems. Every assessment scope is folded in.',
+   908→    pages: 200,
+   909→    accent: '#d97706',
+   910→    sources: [
+   911→      'University fields & microwave curricula — all branches + assessment scopes, merged',
+   912→    ],
+   913→  },
+   914→  {
+   915→    id: 'vlsi-complete',
+   916→    subjectId: 'vlsi-design',
+   917→    title: 'VLSI Design — The Complete Track',
+   918→    author: 'StudyVerse Curriculum Team',
+   919→    edition: '2026 Edition',
+   920→    year: '2026',
+   921→    description: 'Chip design end to end: fabrication science from crystal growth through oxidation, epitaxy, diffusion, ion implantation, lithography and metallization to complete CMOS flows, layout rules and packaging; MOS inverter VTC and delay, static, dynamic and domino logic styles, sequential design, subsystem datapaths, memory design, low-power techniques and testing with ATPG, scan and BIST — merging both VLSI curricula and every assessment scope.',
+   922→    pages: 70,
+   923→    accent: '#a16207',
+   924→    sources: [
+   925→      'University VLSI curricula — all branches + assessment scopes, merged',
+   926→    ],
+   927→  },
+   928→  {
+   929→    id: 'circuits-complete',
+   930→    subjectId: 'electric-circuits',
+   931→    title: 'Electric Circuits & Networks — The Complete Track',
+   932→    author: 'StudyVerse Curriculum Team with Nilsson & Riedel',
+   933→    edition: '2026 Edition',
+   934→    year: '2026',
+   935→    description: 'The complete circuits track: basic electrical engineering — DC and AC fundamentals, magnetism and batteries; circuit analysis with the deep treatments of capacitance, transients, AC power and resonance, two-port networks; network analysis and synthesis — graph theory and topology, the complete theorem set, RLC transients, resonance and coupled circuits, driving-point functions and Foster/Cauer realization; and the electrical materials that make it all — conductors, magnetics and insulators. Every branch’s circuits curriculum and assessment scope is merged in.',
+   936→    pages: 440,
+   937→    accent: '#f59e0b',
+   938→    sources: [
+   939→      'Nilsson & Riedel — Electric Circuits, 12e (merged)',
+   940→      'University circuits curricula — all branches + assessment scopes, merged',
+   941→    ],
+   942→  },
+   943→  {
+   944→    id: 'machines-complete',
+   945→    subjectId: 'electrical-machines',
+   946→    title: 'Electrical Machines, Drives & EV — The Complete Track',
+   947→    author: 'StudyVerse Curriculum Team',
+   948→    edition: '2026 Edition',
+   949→    year: '2026',
+   950→    description: 'Rotating machinery and drives in one track: DC machines, transformers, induction and synchronous machines, special machines and electrical machine design; power-electronic converters — rectifiers, choppers, inverters and cycloconverters — with electric drives; utilization and electric traction; and electric vehicles — motors, batteries, charging and management systems. Every branch’s curriculum and assessment scope is merged in.',
+   951→    pages: 310,
+   952→    accent: '#15803d',
+   953→    sources: [
+   954→      'University machines & drives curricula — all branches + assessment scopes, merged',
+   955→    ],
+   956→  },
+   957→  {
+   958→    id: 'power-complete',
+   959→    subjectId: 'power-systems',
+   960→    title: 'Power Systems — The Complete Track',
+   961→    author: 'StudyVerse Curriculum Team',
+   962→    edition: '2026 Edition',
+   963→    year: '2026',
+   964→    description: 'The grid end to end: generation and supply systems, per-unit representation and load-flow analysis, symmetrical components and fault studies, switchgear and protection — relays, circuit breakers and surge protection — transmission lines and cables, power-system operation and control, and HVDC with FACTS. Every branch’s curriculum and assessment scope is folded in.',
+   965→    pages: 190,
+   966→    accent: '#a16207',
+   967→    sources: [
+   968→      'University power curricula — all branches + assessment scopes, merged',
+   969→    ],
+   970→  },
+   971→  {
+   972→    id: 'control-complete',
+   973→    subjectId: 'control-instrumentation',
+   974→    title: 'Control Systems & Instrumentation — The Complete Track',
+   975→    author: 'StudyVerse Curriculum Team',
+   976→    edition: '2026 Edition',
+   977→    year: '2026',
+   978→    description: 'Measurement and regulation in one track: control-systems modelling with block-diagram algebra and signal flow graphs, time-domain specifications and stability, root locus, Bode and Nyquist methods, compensation and state-space design; electrical and electronic measurement — standards and errors, bridges and Q-meters, instruments and oscilloscopes, digital techniques; and instrumentation — transducers, signal conditioning, data acquisition and display. Both the electrical and electronics curricula and every assessment scope are merged in.',
+   979→    pages: 290,
+   980→    accent: '#0f766e',
+   981→    sources: [
+   982→      'University control & instrumentation curricula — all branches + assessment scopes, merged',
+   983→    ],
+   984→  },
+   985→  {
+   986→    id: 'energy-complete',
+   987→    subjectId: 'energy-automotive',
+   988→    title: 'Energy Conversion & Automotive — The Complete Track',
+   989→    author: 'StudyVerse Curriculum Team',
+   990→    edition: '2026 Edition',
+   991→    year: '2026',
+   992→    description: 'Energy and motion in one track: power-plant engineering — thermal, hydro, nuclear and gas plants with their cycles and economics; internal-combustion engines — SI and CI, fuels, combustion, testing and emissions; automobile engineering — transmission, chassis, electricals and modern systems; renewable energy — solar, wind, biomass, geothermal and storage with hybrid systems; and rocket & space propulsion — the thrust and rocket equations, chemical and electric engines, staging, and spacecraft mission systems. The mechanical and electrical coverage and every assessment scope are merged in.',
+   993→    pages: 240,
+   994→    accent: '#65a30d',
+   995→    sources: [
+   996→      'University energy & automotive curricula — all branches + assessment scopes, merged',
+   997→    ],
+   998→  },
+   999→  {
+  1000→    id: 'mechanics-complete',
+  1001→    subjectId: 'mechanics-graphics',
+  1002→    title: 'Engineering Mechanics & Graphics — The Complete Track',
+  1003→    author: 'StudyVerse Curriculum Team',
+  1004→    edition: '2026 Edition',
+  1005→    year: '2026',
+  1006→    description: 'Forces, motion and the drawings that describe them: engineering mechanics — statics of particles and rigid bodies, friction, trusses, dynamics, kinematics and kinetics; engineering graphics — projection systems, orthographic views, sections, development and pictorials; and machine drawing — threads and fasteners, keys, couplings, joints, bearings and assemblies with limits and fits. Every branch’s curriculum and assessment scope is folded in.',
+  1007→    pages: 100,
+  1008→    accent: '#9333ea',
+  1009→    sources: [
+  1010→      'University mechanics & graphics curricula — all branches + assessment scopes, merged',
+  1011→    ],
+  1012→  },
+  1013→  {
+  1014→    id: 'solids-complete',
+  1015→    subjectId: 'solids-materials',
+  1016→    title: 'Mechanics of Solids & Materials — The Complete Track',
+  1017→    author: 'StudyVerse Curriculum Team',
+  1018→    edition: '2026 Edition',
+  1019→    year: '2026',
+  1020→    description: 'How materials carry load and what they are made of: strength of materials — stress and strain, torsion, bending and shear, deflection, columns and strain energy; and materials science — crystal structure and defects, phase diagrams and transformations, heat treatment, ferrous and non-ferrous alloys, composites and smart materials. Every branch’s curriculum and assessment scope is merged in.',
+  1021→    pages: 110,
+  1022→    accent: '#57534e',
+  1023→    sources: [
+  1024→      'University solids & materials curricula — all branches + assessment scopes, merged',
+  1025→    ],
+  1026→  },
+  1027→  {
+  1028→    id: 'design-complete',
+  1029→    subjectId: 'machines-design',
+  1030→    title: 'Theory of Machines & Machine Design — The Complete Track',
+  1031→    author: 'StudyVerse Curriculum Team',
+  1032→    edition: '2026 Edition',
+  1033→    year: '2026',
+  1034→    description: 'Mechanisms into machines: kinematics of links, cams and followers, gears and gear trains; velocity and acceleration analysis, friction and belt drives; dynamics of machines — balancing, vibration analysis and critical speeds, governors and flywheels; and machine design — materials and stresses, threaded fasteners, shafts and keys, couplings, springs, bearings, welded and riveted joints, spur and helical gears with fatigue considerations. Every assessment scope is folded in.',
+  1035→    pages: 130,
+  1036→    accent: '#b45309',
+  1037→    sources: [
+  1038→      'University machines & design curricula — all branches + assessment scopes, merged',
+  1039→    ],
+  1040→  },
+  1041→  {
+  1042→    id: 'thermal-complete',
+  1043→    subjectId: 'thermal-fluids',
+  1044→    title: 'Thermal & Fluid Sciences — The Complete Track',
+  1045→    author: 'StudyVerse Curriculum Team',
+  1046→    edition: '2026 Edition',
+  1047→    year: '2026',
+  1048→    description: 'Heat, work and flow in one track: applied thermodynamics — laws, processes, cycles, gas and vapour power, refrigeration psychrometry; fluid mechanics — statics, kinematics, dynamics with Bernoulli and momentum, viscous flow, boundary layers, turbomachinery and hydraulic machines; heat and mass transfer — conduction, convection, radiation and exchangers; and refrigeration and air conditioning — vapour-compression and absorption systems, components and load estimation. Every branch’s curriculum and assessment scope is merged in.',
+  1049→    pages: 260,
+  1050→    accent: '#dc2626',
+  1051→    sources: [
+  1052→      'University thermal & fluids curricula — all branches + assessment scopes, merged',
+  1053→    ],
+  1054→  },
+  1055→  {
+  1056→    id: 'manufacturing-complete',
+  1057→    subjectId: 'manufacturing-industrial',
+  1058→    title: 'Manufacturing & Industrial Systems — The Complete Track',
+  1059→    author: 'StudyVerse Curriculum Team',
+  1060→    edition: '2026 Edition',
+  1061→    year: '2026',
+  1062→    description: 'Make it, measure it, manage it: manufacturing processes — casting, welding, forming and machining with CNC; metrology and quality control — measurement standards, comparators, gauges, statistical quality control and acceptance sampling; CAD/CAM and automation — geometric modelling, NC part programming, robotics in manufacturing, FMS and CIM; and industrial engineering — operations research from linear programming through queuing, production planning and control, inventory and plant layout. Every assessment scope is folded in.',
+  1063→    pages: 200,
+  1064→    accent: '#334155',
+  1065→    sources: [
+  1066→      'University manufacturing & industrial curricula — all branches + assessment scopes, merged',
+  1067→    ],
+  1068→  },
+  1069→  {
+  1070→    id: 'mechatronics-complete',
+  1071→    subjectId: 'mechatronics-robotics',
+  1072→    title: 'Mechatronics & Robotics — The Complete Track',
+  1073→    author: 'StudyVerse Curriculum Team',
+  1074→    edition: '2026 Edition',
+  1075→    year: '2026',
+  1076→    description: 'Where machines think: mechatronics — sensors and transducers, actuators, signal conditioning and microcontroller interfacing, system modeling, design and simulation with case studies; and robotics — manipulator kinematics and dynamics, trajectory planning, control, sensors, end effectors and mobile robotics with applications. Every branch’s curriculum and assessment scope is merged in.',
+  1077→    pages: 90,
+  1078→    accent: '#0891b2',
+  1079→    sources: [
+  1080→      'University mechatronics & robotics curricula — all branches + assessment scopes, merged',
+  1081→    ],
+  1082→  },
+  1083→]
+  1084→
+  1085→export const LIBRARY_CHAPTERS: ChapterMeta[] = [
+  1086→  ...MATH_CHAPTERS,
+  1087→  ...PHYS_CHAPTERS,
+  1088→  ...CHEM_CHAPTERS,
+  1089→  ...ENGLISH_CHAPTERS,
+  1090→  ...APT_CHAPTERS,
+  1091→  ...CCPP_CHAPTERS,
+  1092→  ...JAVA_CHAPTERS,
+  1093→  ...WEB_CHAPTERS,
+  1094→  ...AI_CHAPTERS,
+  1095→  ...DSA_CHAPTERS,
+  1096→  ...TOC_CHAPTERS,
+  1097→  ...COA_CHAPTERS,
+  1098→  ...COMPILER_CHAPTERS,
+  1099→  ...OS_CHAPTERS,
+  1100→  ...DBMS_CHAPTERS,
+  1101→  ...NETWORKS_CHAPTERS,
+  1102→  ...MICRO_EMBEDDED_CHAPTERS,
+  1103→  ...SOFTWARE_CHAPTERS,
+  1104→  ...CYBER_CHAPTERS,
+  1105→  ...VISUAL_CHAPTERS,
+  1106→  ...DIGITAL_CHAPTERS,
+  1107→  ...EDC_CHAPTERS,
+  1108→  ...SIGNALS_CHAPTERS,
+  1109→  ...COMMUNICATION_CHAPTERS,
+  1110→  ...EM_CHAPTERS,
+  1111→  ...VLSI_CHAPTERS,
+  1112→  ...CIRCUITS_CHAPTERS,
+  1113→  ...MACHINES_CHAPTERS,
+  1114→  ...POWER_CHAPTERS,
+  1115→  ...CONTROL_CHAPTERS,
+  1116→  ...ENERGY_CHAPTERS,
+  1117→  ...MECH_GRAPHICS_CHAPTERS,
+  1118→  ...SOLIDS_CHAPTERS,
+  1119→  ...MACH_DESIGN_CHAPTERS,
+  1120→  ...THERMAL_CHAPTERS,
+  1121→  ...MANUFACTURING_CHAPTERS,
+  1122→  ...MECHATRONICS_CHAPTERS,
+  1123→]
+  1124→
+  1125→export const LIBRARY_SECTIONS: SectionMeta[] = [
+  1126→  ...MATH_SECTIONS,
+  1127→  ...PHYS_SECTIONS,
+  1128→  ...CHEM_SECTIONS,
+  1129→  ...ENGLISH_SECTIONS,
+  1130→  ...APT_SECTIONS,
+  1131→  ...CCPP_SECTIONS,
+  1132→  ...JAVA_SECTIONS,
+  1133→  ...WEB_SECTIONS,
+  1134→  ...AI_SECTIONS,
+  1135→  ...DSA_SECTIONS,
+  1136→  ...TOC_SECTIONS,
+  1137→  ...COA_SECTIONS,
+  1138→  ...COMPILER_SECTIONS,
+  1139→  ...OS_SECTIONS,
+  1140→  ...DBMS_SECTIONS,
+  1141→  ...NETWORKS_SECTIONS,
+  1142→  ...MICRO_EMBEDDED_SECTIONS,
+  1143→  ...SOFTWARE_SECTIONS,
+  1144→  ...CYBER_SECTIONS,
+  1145→  ...VISUAL_SECTIONS,
+  1146→  ...DIGITAL_SECTIONS,
+  1147→  ...EDC_SECTIONS,
+  1148→  ...SIGNALS_SECTIONS,
+  1149→  ...COMMUNICATION_SECTIONS,
+  1150→  ...EM_SECTIONS,
+  1151→  ...VLSI_SECTIONS,
+  1152→  ...CIRCUITS_SECTIONS,
+  1153→  ...MACHINES_SECTIONS,
+  1154→  ...POWER_SECTIONS,
+  1155→  ...CONTROL_SECTIONS,
+  1156→  ...ENERGY_SECTIONS,
+  1157→  ...MECH_GRAPHICS_SECTIONS,
+  1158→  ...SOLIDS_SECTIONS,
+  1159→  ...MACH_DESIGN_SECTIONS,
+  1160→  ...THERMAL_SECTIONS,
+  1161→  ...MANUFACTURING_SECTIONS,
+  1162→  ...MECHATRONICS_SECTIONS,
+  1163→]
+  1164→
+  1165→// Lookup helpers
+  1166→export function getBook(bookId: string) {
+  1167→  return LIBRARY_BOOKS.find((b) => b.id === bookId)
+  1168→}
+  1169→export function getChapters(bookId: string) {
+  1170→  return LIBRARY_CHAPTERS.filter((c) => c.bookId === bookId).sort((a, b) => a.number - b.number)
+  1171→}
+  1172→export function getChapter(chapterId: string) {
+  1173→  return LIBRARY_CHAPTERS.find((c) => c.id === chapterId)
+  1174→}
+  1175→export function getSections(chapterId: string) {
+  1176→  return LIBRARY_SECTIONS.filter((s) => s.chapterId === chapterId).sort((a, b) => a.number - b.number)
+  1177→}
+  1178→export function getSection(sectionId: string) {
+  1179→  return LIBRARY_SECTIONS.find((s) => s.id === sectionId)
+  1180→}
+  1181→
