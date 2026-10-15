@@ -217,16 +217,16 @@ export default function Home() {
                   Featured Library
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <Sigma className="h-3 w-3 text-emerald-400" /> 9 subject-wise master books
+                  <Sigma className="h-3 w-3 text-emerald-400" /> 37 subject-wise course tracks
                 </span>
-                <span className="text-muted-foreground/60">Mathematics · Physics · Chemistry · English · Aptitude · CSE · ECE · Electrical · Mechanical — one deduplicated book per subject</span>
+                <span className="text-muted-foreground/60">Mathematics · Physics · Chemistry · English · Aptitude · C & C++ · Java · Web · AI · DSA · TOC · COA · Compiler · OS · DBMS · Networks · and 22 more — every course holds all branches' chapters and every assessment scope</span>
               </div>
             </div>
           </div>
           <div className="mt-8 flex flex-col gap-2 border-t border-border/60 pt-5 text-[11px] text-muted-foreground/70 sm:flex-row sm:items-center sm:justify-between">
             <span>StudyVerse — master every book, interactively.</span>
             <span className="font-mono">
-              3,438 lessons · 60 labs · 8,798 quiz questions · 441 chapters · 9 books · 9 subjects
+              3,438 lessons · 60 labs · 8,798 quiz questions · 441 chapters · 37 books · 37 subjects
             </span>
           </div>
         </div>

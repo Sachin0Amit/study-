@@ -11,26 +11,76 @@ const SUBJECT_EASY: Record<string, string> = {
     'Maths is two big games: proving what is true (Rosen logic, sets, graphs) and measuring change (Stewart calculus). Start with Logic Ch 1, it is the ABC for all other chapters.',
   physics:
     'Physics asks: why do things move, heat, shine and stick? Feynman gives the story, Halliday/Young give practice sums, Ewen/Coletta give daily-life machines. Start with motion, then forces.',
-  'cs-operating-systems':
-    'Operating System = the manager of the computer. It shares CPU time, memory rooms and files between many programs without fights. Think hotel manager for programs.',
-  'cs-javascript':
-    'JavaScript = language that makes websites alive. Buttons, lists, fetching data, waiting without freezing. Like giving instructions to a fast but literal helper.',
-  'ece-digital-systems':
-    'Digital Logic = building computers from tiny ON/OFF switches. First binary numbers, then gates, then adders, then full small computer. Like Lego from switch to CPU.',
-  'ece-electronics':
-    'Electronics = controlling electricity to do work. First wires and resistors, then capacitors/coils, then diodes/transistors, then op-amps, then motors and power. Like water pipes for current.',
-  'cs-algorithms':
-    'Algorithms = best recipes to solve problems fast. Sorting, searching, shortest road, saving steps with memory. We also prove why recipe is correct and how fast.',
-  'cs-cpp':
-    'C++ = powerful language to talk close to the machine. Types, pointers, classes, templates. Like driving manual car: more control, more care needed.',
-  'web-development':
-    'Web Dev = from blank page to live site. HTML makes bones, CSS makes clothes, JS makes movement, React/Next makes big app, Node + DB saves data, then put online.',
   chemistry:
     'Chemistry = what things are made of and how they change. Moles count particles, equilibrium balances reactions, organic maps trace carbon paths. Start Mole Ch 1, go in order.',
-  'cs-core-systems':
-    'Core Systems = what happens under your apps. Databases save data safely, networks move it, compilers translate code, hardware runs it. Think post office + library + factory.',
-  java:
+  english:
+    'English = read carefully + write clearly. First find what the passage says, then how it says it, then fix grammar bits. Practice one small passage daily.',
+  aptitude:
+    'Aptitude = fast thinking games: patterns, puzzles, quick maths, and knowing the world. Learn one trick, solve 10 sums with it the same way.',
+  'programming-c-cpp':
+    'C & C++ = talk close to the machine. C first: types, loops, pointers. Then C++ adds classes and templates. Like driving manual car: more control, more care needed.',
+  'programming-java':
     'Java = strict but safe language for big apps. Write class, make objects, handle errors, use collections and streams. Compiler catches mistakes early, like a strict teacher.',
+  'web-development':
+    'Web Dev = from blank page to live site. HTML makes bones, CSS makes clothes, JS makes movement, React/Next makes big app, Node + DB saves data, then put online.',
+  'ai-data-science':
+    'AI = make computer think. Python is your pen. Search and logic first, then learning from data, then neural nets. Train tiny models by hand first.',
+  dsa:
+    'Algorithms = best recipes to solve problems fast. Sorting, searching, shortest road, saving steps with memory. We also prove why recipe is correct and how fast.',
+  toc:
+    'Theory of Computation = what can machines even solve? Small machines (automata) read patterns, bigger ones read grammar, biggest (Turing) compute anything computable.',
+  coa:
+    'COA = how a computer is built inside. Registers hold numbers, datapath moves them, control says when, pipeline overlaps steps, memory keeps them close. One Lego level at a time.',
+  'compiler-design':
+    'Compiler = translator from your code to machine code. Cut words (lexing), build sentence tree (parsing), give meaning (translation), then make it fast (optimization).',
+  'operating-systems':
+    'Operating System = the manager of the computer. It shares CPU time, memory rooms and files between many programs without fights. Think hotel manager for programs.',
+  dbms:
+    'Databases = a very tidy cupboard for facts. Draw ER boxes, write SQL questions, arrange tables so no fact repeats, then many people can read/write safely.',
+  'computer-networks':
+    'Networks = post office for data. Each layer adds an address or a promise: frame, route, deliver, verify. Trace one packet end to end and layers click.',
+  'microprocessors-embedded':
+    'Micro & embedded = tiny computers inside gadgets. Learn the chip, then its timers and pins, then the buses it talks on, then the mini OS that runs many jobs on time.',
+  'software-emerging':
+    'Software practice = build big things without chaos: plan, design, test. Then the new stack: cloud rents computers, IoT connects objects, blockchain keeps shared notes.',
+  cybersecurity:
+    'Security = locks and trust for the digital world. Old ciphers to modern math locks, then who are you (auth), is line private, and how attacks try to sneak past.',
+  'visual-computing':
+    'Visual computing = pictures by numbers. Graphics draws scenes from geometry; image processing cleans and understands photos. Both speak in pixels and transforms.',
+  'digital-electronics':
+    'Digital Logic = building computers from tiny ON/OFF switches. First binary numbers, then gates, then adders, then full small computer. Like Lego from switch to CPU.',
+  'electronic-devices-circuits':
+    'Electronics = controlling electricity to do work. First wires and resistors, then capacitors/coils, then diodes/transistors, then op-amps. Like water pipes for current.',
+  'signals-systems':
+    'Signals = any changing number (sound, sensor, image). Systems change signals. Transforms are just smarter glasses to view them. Filters then clean them.',
+  'communication-systems':
+    'Communication = carry a message on a wave across space. Modulation rides the wave, noise fights it, coding protects it, antennas and fibres are the roads.',
+  electromagnetics:
+    'EM = invisible fields that push and carry. Charges make E, currents make B, changing them makes waves. Lines, guides and antennas steer the wave where you want.',
+  'vlsi-design':
+    'VLSI = draw the city plan of a chip. Transistors are houses, wires are roads, clock is traffic light. Fabrication then builds it layer by layer like 3D printing in silicon.',
+  'electric-circuits':
+    'Circuits = the grammar of every electrical thing. Ohm and Kirchhoff are the spelling; theorems are shortcuts; transients and resonance are the drama.',
+  'electrical-machines':
+    'Machines = electricity ↔ rotation. Motors spin from current, generators do the reverse, transformers pass AC between voltages. Drives then control the spin.',
+  'power-systems':
+    'Power = the journey of electricity: generated, stepped up, sent far, stepped down, protected all the way. One-line diagrams tell the whole story.',
+  'control-instrumentation':
+    'Control = teach machines to hold a value: measure, compare, correct. Instrumentation = the measuring half: bridges, scopes, sensors that turn world into numbers.',
+  'energy-automotive':
+    'Energy track = engines and wheels and sun and wind. Burn or flow to make motion or power, then move it: plants, cars, panels, turbines — one energy story.',
+  'mechanics-graphics':
+    'Mechanics = why things stand or fall (forces), graphics = how to draw them so others can build them (projections). Think with vectors, speak with drawings.',
+  'solids-materials':
+    'Solids = how much load a shape can carry (stress, bending). Materials = what the stuff itself is (crystals, heat treatment). Shape meets substance here.',
+  'machines-design':
+    'Theory of Machines = the moving skeleton: links, cams, gears. Design = sizing every bone so it never breaks: shafts, springs, bearings. Motion made safe.',
+  'thermal-fluids':
+    'Thermal & fluids = heat and flow, the two invisible movers. Thermodynamics is the money of energy, fluids is the travel, heat transfer is the exchange rate.',
+  'manufacturing-industrial':
+    'Manufacturing = shape metal: cast, weld, cut. Metrology = measure honestly. Industrial = plan so everything arrives on time and cheap. Make, measure, manage.',
+  'mechatronics-robotics':
+    'Mechatronics = mechanics + electronics + code in one machine. Robots are its stars: arm moves (kinematics), balance (control), senses (sensors). Build one small system first.',
 }
 
 export function easySubjectLine(s: Subject): string {
@@ -43,41 +93,79 @@ export function easySubjectLine(s: Subject): string {
 
 const BOOK_EASY: Record<string, string> = {
   'math-master':
-    'This book joins 2 maths books: Rosen (thinking + counting + graphs) Ch 1-13, then Stewart (calculus) Ch 14-30. Do Rosen Ch 1 first, it teaches how to read proofs.',
+    'This book joins 2 maths books: Rosen (thinking + counting + graphs) Ch 1-13, then Stewart (calculus) Ch 14-30, then algebra, applied skills and engineering maths. Do Rosen Ch 1 first, it teaches how to read proofs.',
   'phys-master':
-    'This book joins 5 physics books into 159 chapters. Feynman = story, Halliday/Young = big sums, Ewen = machines, Coletta = revision. Start Ch 1 motion, go slow.',
-  'silberschatz-osc10':
-    'The Dinosaur book. 15 chapters: what OS is, then processes, threads, CPU sharing, locks, deadlocks, memory, disk, files. Read Ch 1-3 in order, rest builds on it.',
-  'flanagan-js7':
-    'The Rhino book. Starts types and variables, then objects, functions, classes, then browser + Node + async. Type code in the playground after every lesson.',
-  'mano-dld':
-    'Mano builds a computer step by step: binary, Boolean maths, gates, adders, flip-flops, registers, then full CPU. Draw gates on paper while reading.',
-  'elec-master':
-    'Joins Hughes + Nilsson + Art of Electronics + Sedra/Smith into 30 chapters. DC first, then AC, then chips, then amplifiers and power. Always link formula to the lab toy on same page.',
-  'clrs-alg3':
-    'CLRS is the algorithms bible. Sorting first, then data structures, then smart tricks (dynamic, greedy), then graphs, then hard problems. Trace small examples by hand.',
-  'stroustrup-cpp4':
-    'By the man who made C++. Tour first, then basics, then classes/templates, then full library. Compile tiny programs, break them, fix them.',
-  'webdev-complete':
-    'Zero to job-ready: internet, HTML, CSS, JS, TypeScript, React/Next, Node API, DB, auth, testing, speed, SEO, Docker/cloud, final shop project. Build along.',
-  'engmath-complete':
-    'Engineering maths beyond calculus: matrices, ODEs, vector theorems, complex numbers, Laplace and Fourier. One tool per chapter, practice with numbers.',
-  'jeemaths-complete':
-    'Tricks-first maths: complex numbers, quadratics, matrices, counting, geometry, vectors. Learn one method, then solve 5 sums same way.',
+    'This book joins 5 physics books into 47 topic chapters. Feynman = story, Halliday/Young = big sums, Ewen = machines, Coletta = revision. Start Ch 1 motion, go slow.',
   'chem-complete':
-    'Full chemistry in 26 units: moles to equilibrium to organic maps to salt tests. Physical first, then organic, then inorganic. Write reactions by hand.',
+    'Full chemistry: moles to equilibrium to organic maps to salt tests, plus engineering chemistry. Physical first, then organic, then inorganic. Write reactions by hand.',
+  'english-complete':
+    'Reading + writing in one small book: comprehension passages, grammar rules, expression. Do one section a day, always with a pencil in hand.',
+  'aptitude-complete':
+    'Four kinds of thinking: reasoning puzzles, quick maths, world facts, science facts. Learn one trick, then drill 10 questions the same way.',
+  'c-cpp-complete':
+    'C first (small, close to metal), then the full C++ tour by Stroustrup. Type every example, break it, fix it. Pointers click only when you draw memory boxes.',
+  'java-complete':
+    'Java from zero to job: platform, basics, objects, inheritance, lambdas, errors, generics, collections, threads, streams, files, DB. Code every lesson.',
+  'web-complete':
+    'Zero to job-ready web: internet, HTML, CSS, JS, TypeScript, React/Next, Node API, DB, auth, testing, speed, SEO, Docker/cloud, capstone — then the deep JavaScript bible. Build along.',
+  'ai-complete':
+    'Python first (your pen), then AI thinking (search, logic), then learning from data, then neural nets, then big data. Train tiny models by hand before using libraries.',
+  'dsa-complete':
+    'CLRS is the algorithms bible. Sorting first, then data structures, then smart tricks (dynamic, greedy), then graphs, then hard problems. Trace small examples by hand.',
+  'toc-complete':
+    'One chapter, nine ideas: machines that read patterns (automata), grammars that build strings, Turing machines that compute. Draw state circles for everything.',
+  'coa-complete':
+    'Build a computer step by step: register moves, then processor, then control, then the classic basic computer — then modern ISA, pipelines and caches. Draw the datapath.',
+  'compiler-complete':
+    'Five chapters, one pipeline: words → tree → meaning → memory plan → faster code. Write a tiny compiler for arithmetic and the whole course clicks.',
+  'os-complete':
+    'The Dinosaur book. 15 chapters: what OS is, then processes, threads, CPU sharing, locks, deadlocks, memory, disk, files. Read Ch 1-3 in order, rest builds on it.',
   'dbms-complete':
     'Databases: draw ER boxes, write SQL, fix tables to BCNF, then locking and recovery. Think library records that many people borrow safely.',
-  'cn-complete':
-    'Networks layer by layer: wires to framing to routing to TCP to DNS. Each layer fixes one problem. Draw the packet journey for every sum.',
-  'compcoa-complete':
-    'Machines plus translators: CPU parts and pipelining first, then lexing, parsing, code making. Hardware runs what compiler writes.',
-  'sigctrl-complete':
-    'Signals plus control: waves, convolution, transforms, then feedback and stability. Every formula is a picture of movement.',
-  'commem-complete':
-    'Messages plus waves: noise, modulation, codes, Maxwell waves, antennas. Sender to receiver path is the one story.',
-  'horstmann-java12':
-    'Java from zero to job: platform, basics, objects, inheritance, lambdas, errors, generics, collections, threads, streams, files, DB. Code every lesson.',
+  'networks-complete':
+    'Networks layer by layer: wires to framing to routing to TCP to DNS, plus the telecom view of switching. Each layer fixes one problem. Draw the packet journey for every sum.',
+  'microembedded-complete':
+    'Chips in gadgets: first the classic microprocessor and its timing, then microcontroller pins and buses, then the tiny RTOS. Blink an LED mentally after every section.',
+  'software-complete':
+    'How big software ships: plan, design, build, test — then rent computers (cloud), connect objects (IoT), share ledgers (blockchain). One course, four superpowers.',
+  'cybersecurity-complete':
+    'Locks of the digital world: old ciphers, modern math locks, signatures, then network defenses and attack stories. Encrypt a message by hand once — never forget it.',
+  'visual-complete':
+    'Pictures by numbers: draw scenes (graphics) and understand photos (image processing). Both use transforms — matrices are your brushes.',
+  'digital-complete':
+    'Mano builds logic step by step: binary, Boolean maths, gates, adders, flip-flops, registers — plus the full digital course view. Draw gates on paper while reading.',
+  'edc-complete':
+    'Electrons under control: diode, transistor, amplifier, op-amp, timer chip. Always link the formula to the lab breadboard on the same page.',
+  'signals-complete':
+    'One signal story: classify, convolve, transform (Fourier/Laplace/z), sample, then filter digitally. Ends with speech and heartbeat signals.',
+  'communication-complete':
+    'Messages plus waves: noise, modulation, codes, wireless, satellites, optical fibres. Sender-to-receiver path is the one story.',
+  'em-complete':
+    'Fields first (Maxwell), then waves on lines (Smith chart), then antennas that launch them, then microwave pipes and radar that steer them.',
+  'vlsi-complete':
+    'Chips: first how silicon is built (fab), then how logic is drawn (design). One subject, both halves — the factory and the architect.',
+  'circuits-complete':
+    'The circuit bible: DC and AC basics, then the deep analysis (theorems, transients, resonance), then network theory and synthesis, then the materials inside.',
+  'machines-complete':
+    'Everything that spins: DC, induction, synchronous, special machines — plus the drives that control them and the EVs they power.',
+  'power-complete':
+    'The grid: make power, ship power, protect power. Per-unit maths first, then faults, then relays and breakers, then HVDC superhighways.',
+  'control-complete':
+    'Measure and regulate: modelling, stability, root locus and Bode design — then the instruments (bridges, scopes, sensors) that feed the controller.',
+  'energy-complete':
+    'Energy and motion: power plants, engines, cars, and the sun-and-wind future. One heat-and-work story from boiler to wheel to solar panel.',
+  'mechanics-complete':
+    'Forces and drawings: free-body diagrams first, then friction, trusses, dynamics — then the projection rules that let engineers share designs on paper.',
+  'solids-complete':
+    'Load meets material: stress, bending, torsion, deflection — then what materials ARE (crystals, heat treatment). Shape and substance, one book.',
+  'design-complete':
+    'Machines that move: links and cams, then velocity and force analysis, then balancing and vibration — then design every part to survive fatigue.',
+  'thermal-complete':
+    'Heat and flow: energy money (thermo), moving fluids, heat exchange, turbomachinery, and the cold side (refrigeration and AC).',
+  'manufacturing-complete':
+    'Make, measure, manage: casting to CNC, then honest measurement (metrology), then CAD/CAM robots, then the planning maths of industry.',
+  'mechatronics-complete':
+    'Machines that think: sensors in, actuators out, microcontroller brain — then robots that move, sense and plan. Build one small system first.',
 }
 
 export function easyBookLine(b: BookMeta): string {

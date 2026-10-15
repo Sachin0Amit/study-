@@ -245,7 +245,7 @@ export function LibraryView() {
         </div>
       </section>
 
-      {/* ============ SUBJECTS ============ */}
+      {/* ============ SUBJECTS (grouped course catalog) ============ */}
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
@@ -253,100 +253,141 @@ export function LibraryView() {
               <Layers className="h-3.5 w-3.5" /> Subjects
             </div>
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-              Your library, classified by subject
+              Your library, organized subject by subject
             </h2>
             <p className="mt-2 max-w-xl text-sm text-muted-foreground">
-              Every book is analyzed, categorized and merged into a subject master track. Upload more
-              books and they join their subject automatically.
+              Every course is its own subject — and each subject holds the chapters of{' '}
+              <em>every</em> engineering branch plus every competitive-assessment scope for that
+              course, merged into one deduplicated track.
             </p>
           </div>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {LIBRARY_SUBJECTS.map((subject, idx) => {
-            const books = LIBRARY_BOOKS.filter((b) => b.subjectId === subject.id)
-            const chapters = books.flatMap((b) => LIBRARY_CHAPTERS.filter((c) => c.bookId === b.id))
-            const sections = LIBRARY_SECTIONS.filter((s) => chapters.some((c) => c.id === s.chapterId))
-            return (
-              <motion.button
-                key={subject.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
-                onClick={() => books[0] && navigate({ name: 'book', bookId: books[0].id })}
-                className={`sv-card-glow group relative overflow-hidden rounded-2xl border border-border/80 bg-card p-6 text-left ${FOCUS_RING}`}
-              >
-                <div
-                  className="absolute -right-14 -top-14 h-40 w-40 rounded-full opacity-15 blur-2xl transition-opacity group-hover:opacity-30"
-                  style={{ background: subject.accent }}
-                />
-                <div className="relative">
-                  <div
-                    className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border transition-transform duration-300 group-hover:scale-105"
-                    style={{
-                      borderColor: subject.accent + '55',
-                      background: subject.accent + '18',
-                    }}
-                  >
-                    <span style={{ color: subject.accent }}>
-                      <ChapterIcon icon={subject.icon} className="h-6 w-6" />
-                    </span>
-                  </div>
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                    {subject.tagline}
-                  </div>
-                  <h3 className="mt-1 text-xl font-bold">{subject.name}</h3>
-                  <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
-                    {subject.description}
-                  </p>
-                  <EasyLine text={easySubjectLine(subject)} />
-                  <div className="mt-5 flex flex-wrap items-center gap-2 text-[11px] font-medium">
-                    <span className="rounded-full border border-border bg-muted/50 px-2.5 py-1">
-                      {books.length} book{books.length !== 1 ? 's' : ''}
-                    </span>
-                    <span className="rounded-full border border-border bg-muted/50 px-2.5 py-1">
-                      {chapters.length} chapters
-                    </span>
-                    <span className="rounded-full border border-emerald-400/25 bg-emerald-400/10 px-2.5 py-1 text-emerald-200">
-                      {sections.length} lessons
-                    </span>
-                  </div>
-                  {books.length > 0 && (
-                    <div className="mt-4 flex flex-wrap gap-1.5 border-t border-border/50 pt-3">
-                      {books.map((b) => (
-                        <span
-                          key={b.id}
-                          role="button"
-                          tabIndex={0}
-                          onClick={(e) => {
-                            e.stopPropagation()
-                            navigate({ name: 'book', bookId: b.id })
-                          }}
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                              e.stopPropagation()
-                              e.preventDefault()
-                              navigate({ name: 'book', bookId: b.id })
-                            }
-                          }}
-                          className="inline-flex items-center gap-1 rounded-md border border-border/80 bg-background/80 px-2 py-1 text-[11px] font-medium text-foreground transition-colors hover:border-emerald-400/60 hover:bg-emerald-400/10 hover:text-emerald-300"
-                        >
-                          <BookOpen className="h-3 w-3 text-emerald-400" />
-                          {b.title.split('—')[0].split(':')[0].trim()}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  <div className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-300">
-                    Open track
-                    <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </div>
-                </div>
-              </motion.button>
-            )
-          })}
+        {(() => {
+          // group subjects by their catalog group, preserving library order
+          const groups: { name: string; subjects: typeof LIBRARY_SUBJECTS }[] = []
+          const byName = new Map<string, typeof LIBRARY_SUBJECTS>()
+          for (const s of LIBRARY_SUBJECTS) {
+            const g = s.group ?? 'Subjects'
+            if (!byName.has(g)) {
+              byName.set(g, [])
+              groups.push({ name: g, subjects: byName.get(g)! })
+            }
+            byName.get(g)!.push(s)
+          }
+          return groups.map((group) => (
+            <div key={group.name} className="mb-10 last:mb-0">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-300/90">
+                  {group.name}
+                </span>
+                <span className="h-px flex-1 bg-gradient-to-r from-emerald-400/30 via-border to-transparent" />
+                <span className="rounded-full border border-border bg-muted/50 px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground">
+                  {group.subjects.length} subject{group.subjects.length !== 1 ? 's' : ''}
+                </span>
+              </div>
+              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                {group.subjects.map((subject, idx) => {
+                  const books = LIBRARY_BOOKS.filter((b) => b.subjectId === subject.id)
+                  const chapters = books.flatMap((b) => LIBRARY_CHAPTERS.filter((c) => c.bookId === b.id))
+                  const sections = LIBRARY_SECTIONS.filter((s) => chapters.some((c) => c.id === s.chapterId))
+                  return (
+                    <motion.button
+                      key={subject.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: '-60px' }}
+                      transition={{ duration: 0.5, delay: Math.min(idx, 6) * 0.07 }}
+                      onClick={() => books[0] && navigate({ name: 'book', bookId: books[0].id })}
+                      className={`sv-card-glow group relative overflow-hidden rounded-2xl border border-border/80 bg-card p-6 text-left ${FOCUS_RING}`}
+                    >
+                      <div
+                        className="absolute -right-14 -top-14 h-40 w-40 rounded-full opacity-15 blur-2xl transition-opacity group-hover:opacity-30"
+                        style={{ background: subject.accent }}
+                      />
+                      <div className="relative">
+                        <div className="mb-4 flex items-start justify-between gap-3">
+                          <div
+                            className="flex h-12 w-12 items-center justify-center rounded-xl border transition-transform duration-300 group-hover:scale-105"
+                            style={{
+                              borderColor: subject.accent + '55',
+                              background: subject.accent + '18',
+                            }}
+                          >
+                            <span style={{ color: subject.accent }}>
+                              <ChapterIcon icon={subject.icon} className="h-6 w-6" />
+                            </span>
+                          </div>
+                          <span
+                            className="rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider"
+                            style={{
+                              color: subject.accent,
+                              background: subject.accent + '14',
+                              border: `1px solid ${subject.accent}33`,
+                            }}
+                          >
+                            {chapters.length} ch
+                          </span>
+                        </div>
+                        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                          {subject.tagline}
+                        </div>
+                        <h3 className="mt-1 text-xl font-bold">{subject.name}</h3>
+                        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+                          {subject.description}
+                        </p>
+                        <EasyLine text={easySubjectLine(subject)} />
+                        <div className="mt-5 flex flex-wrap items-center gap-2 text-[11px] font-medium">
+                          <span className="rounded-full border border-border bg-muted/50 px-2.5 py-1">
+                            {books.length} book{books.length !== 1 ? 's' : ''}
+                          </span>
+                          <span className="rounded-full border border-border bg-muted/50 px-2.5 py-1">
+                            {chapters.length} chapters
+                          </span>
+                          <span className="rounded-full border border-emerald-400/25 bg-emerald-400/10 px-2.5 py-1 text-emerald-200">
+                            {sections.length} lessons
+                          </span>
+                        </div>
+                        {books.length > 0 && (
+                          <div className="mt-4 flex flex-wrap gap-1.5 border-t border-border/50 pt-3">
+                            {books.map((b) => (
+                              <span
+                                key={b.id}
+                                role="button"
+                                tabIndex={0}
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  navigate({ name: 'book', bookId: b.id })
+                                }}
+                                onKeyDown={(e) => {
+                                  if (e.key === 'Enter' || e.key === ' ') {
+                                    e.stopPropagation()
+                                    e.preventDefault()
+                                    navigate({ name: 'book', bookId: b.id })
+                                  }
+                                }}
+                                className="inline-flex items-center gap-1 rounded-md border border-border/80 bg-background/80 px-2 py-1 text-[11px] font-medium text-foreground transition-colors hover:border-emerald-400/60 hover:bg-emerald-400/10 hover:text-emerald-300"
+                              >
+                                <BookOpen className="h-3 w-3 text-emerald-400" />
+                                {b.title.split('—')[0].split(':')[0].trim()}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                        <div className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-300">
+                          Open track
+                          <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </div>
+                      </div>
+                    </motion.button>
+                  )
+                })}
+              </div>
+            </div>
+          ))
+        })()}
 
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {/* More coming card */}
           <div className="relative flex min-h-[220px] flex-col justify-center rounded-2xl border border-dashed border-border/80 bg-card/30 p-6 text-center">
             <Sparkles className="mx-auto h-6 w-6 text-amber-300/80" />

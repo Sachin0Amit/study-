@@ -523,3 +523,38 @@ Stage Summary:
   (a) clone/pull this project folder and run: git push -u origin main   (remote 'origin' already configured), or
   (b) fetch from the bundle: git clone studyverse-consolidated.bundle study-restore && cd study-restore && git remote add origin https://github.com/Sachin0Amit/study-.git && git push -u origin main
 - .gitignore consideration: the bundle file is untracked; do not commit it (27 MB artifact)
+
+---
+Task ID: 13
+Agent: main-orchestrator
+Task: USER REQUEST — everything must be SUBJECT-wise, not branch-wise: no "ME engineering / ECE / CS" sections; each subject (like Mathematics) must hold ALL branches' chapters + all competitive-exam scopes; COA and Compiler Design each as their own subject; applied to everything
+
+Work Log:
+- Read worklog + dumped full inventory (scripts/inventory.ts): 9 subjects / 9 books / 441 ch / 3,438 s — 5 science subjects already followed the desired model (all-branches + exam scope merged), 4 BRANCH mega-books violated it (cse-complete 207 ch, ece-complete 23, ee-complete 18, me-complete 23)
+- Designed 37-subject course-level taxonomy with 6 homepage groups: Foundations (Math, Physics, Chem, English, Aptitude — kept) + 32 new discipline subjects dissolving the branch books:
+  · Programming & Software: C & C++ (pps + stroustrup 44 = 45 ch), Java (12), Web Dev & JS (web 26 + flanagan 17 = 43), AI/ML/Data Science (python, ai, ml, dl, bigdata = 5), Software Eng & Emerging Tech (sweng, cloud, iot, blockchain = 4), Cybersecurity (crypto = 1)
+  · Computing Systems: DSA (clrs 39), Theory of Computation (1), COA (mano 8-12 + compcoa 1-5 + aca = 11 — user's example), Compiler Design (compcoa 6-10 = 5 — user's example), OS (15), DBMS (8), Networks (cn 8 + ece-data-comm = 9), Visual Computing (graphics + dip = 2)
+  · Electronics & Comm: Digital Electronics (mano 1-7 + ece-digital = 8), EDC (devices + analog + ic = 3), Signals/DSP (sigsys + dsp + speechbio = 3), Communication (6), EM/Antennas/Microwaves (3), VLSI (2), Microprocessors & Embedded (micro + embedded = 2)
+  · Electrical & Power: Circuits & Networks (basic + circuits + ece-networks + materials = 4), Machines/Drives/EV (7), Power Systems (5), Control & Instrumentation (control + 2×instr + measurements = 4)
+  · Mechanical & Energy: Mechanics & Graphics (3), Solids & Materials (2), TOM & Design (3), Thermal & Fluids (5), Energy & Automotive (powerplant + ice + automobile + ee-energy = 4), Manufacturing & Industrial (5), Mechatronics & Robotics (2)
+- Wrote scripts/subject-wise.ts (kept as migration documentation): routes all 271 branch chapters to new books with VALIDATION (dupes/missing/unknown guards); KEY DESIGN: chapter/section IDs kept STABLE → zero content/formula/progress/deep-link retargeting; only bookId + chapter numbers change; emitted 32 files to src/data/library-parts/subjects/<subjectId>.ts (chapters + sections per subject), rewrote library.ts (37 subjects with new optional group field, 37 books with full descriptions/sources, kept the 5 science books verbatim), deleted merged/cse|ece|ee|me.ts
+- Gave every subject a unique icon from the existing chapterIcons map (terminal, package, globe, bot, git-branch, infinity, cpu, arrow-left-right, server, database, network, circuit-board, folder-cog, lock, aperture, binary, battery-charging, audio-waveform, radio, magnet, layout-grid, plug, cog, zap, gauge, fan, shapes, layers, wrench, thermometer, hammer, move) + distinct non-blue accents
+- UI updates: exam-view SET_META rewritten for all 37 subjects (curated titles/blurs/counts/timed); page.tsx footer stats → 37 books · 37 subjects + updated featured-library copy; library-view SUBJECTS section now renders GROUPED (6 group headers with subject counts, gradient rules, per-card "N CH" accent badge, per-group capped animation delay) and new copy explaining the all-branches model; easy-library SUBJECT_EASY rewritten for all 37 subjects + BOOK_EASY replaced dead ids with all 37 live book ids
+- Validation: scripts/validate-consolidated.ts → ALL CHECKS PASSED (37 subjects, 37 books, 441 ch, 3,438 s, dense numbering, 0 orphan content, 8,798 quiz valid, 1,908 formulas resolve, ZERO exam names word-boundary audited); bunx tsc --noEmit clean; bun run lint 0 errors
+- Browser QA (agent-browser, memory-careful protocol): home renders 37 subject cards in 6 groups (FOUNDATIONS/PROGRAMMING & SOFTWARE/COMPUTING SYSTEMS/ELECTRONICS & COMMUNICATION/ELECTRICAL & POWER/MECHANICAL & ENERGY) with 0 exam words; COA card → book view (11 ch, Mano sources card, "250 pages · 11 chapters"); deep link ?chapter=mano-ch8 → shows as CHAPTER 1 of COA track with progress bar + flashcards/formulas/test/summary buttons; lesson §1 renders 9 concepts + worked examples + Sequential Logic Lab + depth tiers; quiz answered (R1←R2 question) → "Correct." feedback + Visual Diagram & Solution; Test simulator: 37 practice-set cards with real pools (Math 1683 Q, C&C++ 967, OS 329, Digital 201, COA 184, DBMS 128, Networks 128, Compiler 80...), OS set instant-started → "TEST · Q 1/15" monitors question rendered; 7 brief-only subjects show 0-pool disabled cards (by design); mechatronics-complete book view renders; Progress dashboard + mastery radar (441 chapters) render; mobile 390px scrollWidth=390 (no overflow); dev.log clean (progress/notes/activity/exam APIs all 200); screenshot download/qa-subjectwise-mobile.png
+
+Stage Summary:
+
+## 1. Current project status (assessment)
+- StudyVerse is now 100% SUBJECT-WISE at course level: 37 subjects / 37 books / 441 chapters / 3,438 sections, grouped on the homepage into 6 catalog groups
+- NO branch sections remain: CSE/ECE/EE/ME mega-books dissolved; COA and Compiler Design are standalone subjects exactly as the user requested; every subject (like Mathematics) holds all branches' chapters + all competitive-exam scopes for that course
+- All chapter/section IDs preserved → every existing content lesson, formula, quiz, note and bookmarked deep link still resolves; only bookId/numbering/metadata changed
+
+## 2. Goals / completed modifications / verification results
+- Goal: subject-wise restructure per user request
+- Completed: scripts/subject-wise.ts migration (32 new subject data files, library.ts rewrite), SET_META for 37 subjects, grouped library-view, easy-library rewrite, homepage stats/copy
+- Verification: validator ALL CHECKS PASSED, tsc clean, lint 0 errors, full browser QA green (subject → book → chapter → lesson → quiz; practice sets; deep links; mobile; progress dashboard)
+
+## 3. Unresolved issues / risks + next-phase priorities
+- RISKS: (1) 7 subjects' practice sets disabled (0 quiz questions — their sections are syllabus briefs): Mechatronics & Robotics, Mechanics & Graphics, Solids & Materials, TOM & Design, Energy & Automotive, Manufacturing & Industrial, Visual Computing; (2) several subjects have exactly 4-question pools (Cybersecurity, TOC, Aptitude-adjacent sets) — thin but enabled; (3) Mano chapters kept original page ranges ("263–311") which read fine but don't match their new book position; (4) old bookmarked ?book=cse-complete-style URLs no longer resolve (branch books deleted — intended consequence)
+- NEXT PRIORITIES: (a) write SectionContent for the brief-only chapters of the 7 disabled subjects (Mechatronics 15 s, Mechanics/Graphics 16 s, Solids 18 s, TOM/Design 22 s, Energy 33 s, Manufacturing 34 s, Visual 11 s ≈ 149 sections — would light up their practice sets); (b) thin-chapter subjects (TOC 1 ch / 9 s, Cybersecurity 1 ch / 11 s) could be split into multi-chapter structure for better TOC browsing; (c) cross-subject "related tracks" links (e.g. Digital ↔ COA, Signals ↔ Control) would restore cross-subject study paths
