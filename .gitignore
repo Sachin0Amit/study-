@@ -67,3 +67,7 @@ worklog*.md
 scripts/restructure-subject-wise.py
 scripts/round14/gen_clrs.py
 scripts/validate-consolidated.ts
+
+# Local packaging artifacts
+public/project-source.zip
+*.bundle
