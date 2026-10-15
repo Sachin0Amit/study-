@@ -13,6 +13,7 @@ export type View =
   | { name: 'formulas'; chapterId?: string }
   | { name: 'exam'; chapterId?: string }
   | { name: 'search'; query?: string }
+  | { name: 'syllabus' }
 
 interface ProgressEntry {
   status: 'in_progress' | 'completed'

@@ -71,3 +71,6 @@ scripts/validate-consolidated.ts
 # Local packaging artifacts
 public/project-source.zip
 *.bundle
+
+# Sandbox QA scratch
+tmp/

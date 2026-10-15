@@ -7,6 +7,7 @@ import {
   Layers,
   FlaskConical,
   ClipboardCheck,
+  ClipboardList,
   ArrowRight,
   Check,
   Sigma,
@@ -245,8 +246,51 @@ export function LibraryView() {
         </div>
       </section>
 
+      {/* ============ SYLLABUS MAPPER CTA ============ */}
+      <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6" aria-label="Syllabus Mapper">
+        <motion.button
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.45, ease: 'easeOut' }}
+          onClick={() => navigate({ name: 'syllabus' })}
+          className={`sv-card-glow group relative w-full overflow-hidden rounded-2xl border border-emerald-400/25 bg-gradient-to-r from-emerald-400/[0.08] via-card to-card p-5 text-left sm:p-6 ${FOCUS_RING}`}
+        >
+          <div
+            className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-emerald-400/15 opacity-60 blur-2xl transition-opacity group-hover:opacity-100"
+            aria-hidden
+          />
+          <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-400/10">
+              <ClipboardList className="h-6 w-6 text-emerald-300" aria-hidden />
+            </span>
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-emerald-300">
+                  New
+                </span>
+                <h2 className="text-base font-bold tracking-tight sm:text-lg">
+                  Syllabus Mapper
+                </h2>
+              </div>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                Bring any syllabus — type the name of a test or course, or upload its document —
+                and every topic gets mapped onto your library chapters.
+              </p>
+            </div>
+            <span className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_8px_30px_-8px_rgba(52,211,153,0.35)] transition-all group-hover:bg-primary/90">
+              Map my syllabus
+              <ArrowRight
+                className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                aria-hidden
+              />
+            </span>
+          </div>
+        </motion.button>
+      </section>
+
       {/* ============ SUBJECTS (grouped course catalog) ============ */}
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+      <section className="mx-auto max-w-7xl px-4 pb-14 pt-10 sm:px-6">
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
             <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300/80">

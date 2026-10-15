@@ -99,3 +99,21 @@ model ExamAttempt {
   missed        String   @default("[]") // JSON: missed questions (q, options, answer, explanation, provenance, picked)
   createdAt     DateTime @default(now())
 }
+
+// Syllabus mapping plans: user types an exam/course name or uploads a document;
+// topics get extracted and mapped onto the library catalog
+model SyllabusPlan {
+  id         String   @id @default(cuid())
+  deviceId   String
+  title      String
+  sourceType String   // "typed" | "uploaded"
+  sourceName String   // what the user typed, or the filename
+  topics     String   // JSON: [{ topic: string }]
+  mapping    String   // JSON: [{ topic, subjectId?, subjectName?, chapterId?, chapterTitle?, confidence: number }]
+  matched    Int      @default(0)
+  total      Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([deviceId, createdAt])
+}

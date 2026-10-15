@@ -16,6 +16,7 @@ import { FlashcardsView } from '@/components/app/flashcards-view'
 import { FormulaView } from '@/components/app/formula-view'
 import { ExamView } from '@/components/app/exam-view'
 import { SearchView } from '@/components/app/search-view'
+import { SyllabusView } from '@/components/app/syllabus-view'
 import { ReadingProgress, ScrollTopButton } from '@/components/app/reading-progress'
 import { ThemeColorMeta } from '@/components/app/theme-color-meta'
 
@@ -55,6 +56,8 @@ export default function Home() {
         useStudy.setState({ view: { name: 'flashcards' } })
       } else if (v === 'progress') {
         useStudy.setState({ view: { name: 'progress' } })
+      } else if (v === 'syllabus') {
+        useStudy.setState({ view: { name: 'syllabus' } })
       }
     }
   }, [])
@@ -119,6 +122,7 @@ export default function Home() {
             {view.name === 'exam' && <ExamView chapterId={view.chapterId} />}
             {view.name === 'progress' && <ProgressView />}
             {view.name === 'search' && <SearchView initialQuery={view.query} />}
+            {view.name === 'syllabus' && <SyllabusView />}
           </motion.div>
         </AnimatePresence>
       </main>
@@ -154,6 +158,12 @@ export default function Home() {
                   className="text-left text-muted-foreground transition-colors hover:text-emerald-300"
                 >
                   Library
+                </button>
+                <button
+                  onClick={() => useStudy.getState().navigate({ name: 'syllabus' })}
+                  className="text-left text-muted-foreground transition-colors hover:text-emerald-300"
+                >
+                  Syllabus mapper
                 </button>
                 {LIBRARY_BOOKS.map((b) => (
                   <button
@@ -226,7 +236,7 @@ export default function Home() {
           <div className="mt-8 flex flex-col gap-2 border-t border-border/60 pt-5 text-[11px] text-muted-foreground/70 sm:flex-row sm:items-center sm:justify-between">
             <span>StudyVerse — master every book, interactively.</span>
             <span className="font-mono">
-              3,453 lessons · 60 labs · 8,862 quiz questions · 443 chapters · 37 books · 37 subjects
+              4,036 lessons · 60 labs · 8,862 quiz questions · 540 chapters · 37 books · 37 subjects
             </span>
           </div>
         </div>

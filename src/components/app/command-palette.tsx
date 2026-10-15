@@ -5,6 +5,7 @@ import {
   BookOpen,
   Brain,
   ClipboardCheck,
+  ClipboardList,
   Command,
   FlaskConical,
   Layers,
@@ -33,7 +34,15 @@ const KIND_ICON = {
   lab: FlaskConical,
 } as const
 
-type ViewName = 'library' | 'playground' | 'flashcards' | 'formulas' | 'exam' | 'progress' | 'search'
+type ViewName =
+  | 'library'
+  | 'playground'
+  | 'flashcards'
+  | 'formulas'
+  | 'exam'
+  | 'progress'
+  | 'search'
+  | 'syllabus'
 
 /** Quick jumps — shown when the palette opens (empty or matching query) */
 const QUICK_ACTIONS: {
@@ -50,6 +59,12 @@ const QUICK_ACTIONS: {
     hint: 'full-text across all 1,825 sections',
     icon: Search,
     accent: 'emerald',
+  },
+  {
+    view: 'syllabus',
+    label: 'Syllabus Mapper',
+    hint: 'Map any syllabus to your library',
+    icon: ClipboardList,
   },
   { view: 'library', label: 'Library', hint: '8 books & 336 chapters', icon: LibraryIcon },
   { view: 'playground', label: 'Lab floor', hint: '52 interactive labs', icon: FlaskConical },

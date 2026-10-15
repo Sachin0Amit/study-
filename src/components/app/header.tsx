@@ -4,6 +4,7 @@ import {
   Library,
   FlaskConical,
   BarChart3,
+  ClipboardList,
   Sparkles,
   Layers,
   Sigma,
@@ -15,6 +16,7 @@ import { ThemeToggle } from './theme-toggle'
 
 const NAV = [
   { view: 'library', label: 'Library', icon: Library, easy: 'Home: all books' },
+  { view: 'syllabus', label: 'Syllabus', icon: ClipboardList, easy: 'Map any syllabus to your books' },
   { view: 'playground', label: 'Labs', icon: FlaskConical, easy: 'Play with live demos' },
   { view: 'flashcards', label: 'Cards', icon: Layers, easy: 'Quick memory cards' },
   { view: 'formulas', label: 'Formulas', icon: Sigma, easy: 'All key formulas' },
