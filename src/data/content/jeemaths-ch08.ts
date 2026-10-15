@@ -9,7 +9,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh08Content: SectionContent[] = [
   // ---------------------------------------------------------------- 8.1
   {
-    sectionId: 'advmath-ch8-s1',
+    sectionId: 'math-a9-s1',
     readingTime: 9,
     intro: 'The parabola is the locus of points equidistant from a focus and a directrix, and its standard form $y^{2} = 4ax$ concentrates focal, parametric and tangent properties in one parameter. Focal chords, the parametric point $(at^{2}, 2at)$ and the tangent-normal duality drive most problem solving. This section develops those tools from the definition outward.',
     objectives: [
@@ -128,7 +128,7 @@ export const jeemathsCh08Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 8.2
   {
-    sectionId: 'advmath-ch8-s2',
+    sectionId: 'math-a9-s2',
     readingTime: 9,
     intro: 'The ellipse $\\frac{x^{2}}{a^{2}} + \\frac{y^{2}}{b^{2}} = 1$ generalizes the circle with two foci whose distances sum to a constant $2a$. Eccentricity, latus rectum, auxiliary circle and director circle organize its metric properties. This section builds the standard toolkit including parametric points and tangent forms.',
     objectives: [
@@ -226,7 +226,7 @@ export const jeemathsCh08Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 8.3
   {
-    sectionId: 'advmath-ch8-s3',
+    sectionId: 'math-a9-s6',
     readingTime: 9,
     intro: 'The hyperbola $\\frac{x^{2}}{a^{2}} - \\frac{y^{2}}{b^{2}} = 1$ is the difference-of-distances twin of the ellipse, with eccentricity above one and a pair of asymptotes that control its far-field shape. Conjugate axis, transverse axis and rectangular specializations complete the picture. This section develops asymptotes, parametric points and tangent conditions in parallel with the ellipse.',
     objectives: [
@@ -345,7 +345,7 @@ export const jeemathsCh08Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 8.4
   {
-    sectionId: 'advmath-ch8-s4',
+    sectionId: 'math-a9-s7',
     readingTime: 10,
     intro: 'Common tangents and chord techniques unite all three conics under the $T$, $S_{1}$ and $SS_{1}$ machinery. The chord with midpoint $T = S_{1}$, the pair of tangents $T^{2} = SS_{1}$ and the common-tangent discriminant apply verbatim after adjusting $S$ for each conic. This section trains cross-conic problem solving with those shared forms.',
     objectives: [

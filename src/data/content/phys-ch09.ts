@@ -178,7 +178,7 @@ export const physCh9Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 9.2
   {
-    sectionId: 'phys-ch9-s2',
+    sectionId: 'hall-ch37-s23',
     readingTime: 10,
     intro: 'Once the Lorentz transformation replaces Galileo’s, even the humble arithmetic of “how fast is it going relative to me?” changes: half of $c$ plus half of $c$ is only four-fifths of $c$. This section follows Feynman through the collision arguments that force the momentum law $p = \\gamma m_0 v$, show that energy itself has inertia, and end at the two most useful formulas in relativistic particle physics: $E^2 - p^2c^2 = m_0^2c^4$ and $E = pc$ for the photon.',
     objectives: [
@@ -503,7 +503,7 @@ export const physCh9Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 9.4
   {
-    sectionId: 'phys-ch9-s4',
+    sectionId: 'hall-ch37-s24',
     readingTime: 10,
     intro: 'This is the last chapter of the classical theory of light: everything here concerns radiation from sources that move — fast. A single geometric recipe (translate the motion of the charge backwards at the speed of light and differentiate twice) explains synchrotron light, the Crab nebula’s polarized glow, bremsstrahlung, the Doppler effect and even radiation pressure, with the Lorentz transformation of Chapter 9.1 quietly doing the bookkeeping underneath.',
     objectives: [
@@ -665,64 +665,40 @@ export const physCh9Content: SectionContent[] = [
 
 export const physCh9Formulas: FormulaEntry[] = [
   {
-    chapterId: 'phys-ch9',
-    section: '9.1',
-    name: 'Lorentz transformation',
-    formula: 'x′ = (x − ut)/√(1 − u²/c²), t′ = (t − ux/c²)/√(1 − u²/c²)',
-    latex: "x' = \\frac{x - ut}{\\sqrt{1 - u^2/c^2}}, \\qquad t' = \\frac{t - ux/c^2}{\\sqrt{1 - u^2/c^2}}",
-    note: 'y′ = y, z′ = z; the replacement for the Galilean transformation',
-  },
-  {
-    chapterId: 'phys-ch9',
-    section: '9.1',
-    name: 'Time dilation (light clock)',
-    formula: 't = t₀/√(1 − u²/c²) = γt₀',
-    latex: 't = \\frac{t_0}{\\sqrt{1 - u^2/c^2}} = \\gamma t_0, \\qquad \\gamma = \\frac{1}{\\sqrt{1 - u^2/c^2}}',
-    note: 'moving clocks run slow; the muon lifetime stretches by γ',
-  },
-  {
-    chapterId: 'phys-ch9',
-    section: '9.1',
-    name: 'Lorentz contraction',
-    formula: 'L∥ = L₀√(1 − u²/c²)',
-    latex: 'L_{\\parallel} = L_0\\sqrt{1 - u^2/c^2}',
-    note: 'along the motion only; transverse lengths unchanged',
-  },
-  {
-    chapterId: 'phys-ch9',
-    section: '9.2',
+    chapterId: 'hall-ch37',
+    section: '36.23',
     name: 'Relativistic momentum',
     formula: 'p = γm₀v',
     latex: '\\mathbf{p} = \\frac{m_0\\mathbf{v}}{\\sqrt{1 - v^2/c^2}} = \\gamma m_0\\mathbf{v}',
     note: 'momentum grows without bound while v saturates below c',
   },
   {
-    chapterId: 'phys-ch9',
-    section: '9.2',
+    chapterId: 'hall-ch37',
+    section: '36.23',
     name: 'Total energy',
     formula: 'E = γm₀c², ΔT = (γ − 1)m₀c²',
     latex: 'E = \\gamma m_0c^2, \\qquad \\Delta T = (\\gamma - 1)m_0c^2',
     note: 'rest energy m₀c² plus kinetic; E = pc for photons (m₀ = 0)',
   },
   {
-    chapterId: 'phys-ch9',
-    section: '9.2',
+    chapterId: 'hall-ch37',
+    section: '36.23',
     name: 'Invariant energy–momentum relation',
     formula: 'E² − p²c² = m₀²c⁴',
     latex: 'E^2 - p^2c^2 = m_0^2c^4, \\qquad pc = \\frac{Ev}{c}',
     note: 'same in every frame; the working formula of accelerator physics',
   },
   {
-    chapterId: 'phys-ch9',
-    section: '9.2',
+    chapterId: 'hall-ch37',
+    section: '36.23',
     name: 'Relativistic velocity addition',
     formula: 'v = (u + v′)/(1 + uv′/c²)',
     latex: "v = \\frac{u + v'}{1 + uv'/c^2}",
     note: 'half of c plus half of c gives only 4c/5; light stays at c',
   },
   {
-    chapterId: 'phys-ch9',
-    section: '9.4',
+    chapterId: 'hall-ch37',
+    section: '36.24',
     name: 'Relativistic Doppler effect',
     formula: 'ω = ω₀√(1 − v²/c²)/(1 − v/c)',
     latex: '\\omega = \\omega_0\\,\\frac{\\sqrt{1 - v^2/c^2}}{1 - v/c}',

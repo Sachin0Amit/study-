@@ -640,7 +640,7 @@ export const enggCseContent: SectionContent[] = [
   },
   // -------------------------------------------------------------- SE 25.1
   {
-    sectionId: 'cse-e-se-s1',
+    sectionId: 'cse-e-sweng-s1',
     readingTime: 9,
     prerequisites: [
       'What constitutes software: programs, data and documentation',

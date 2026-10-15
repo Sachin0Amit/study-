@@ -13,7 +13,7 @@ import type { SectionContent } from '../library'
 export const elecCh29Content: SectionContent[] = [
   // ------------------------------------------------------------------ 29.1
   {
-    sectionId: 'elec-ch29-s1',
+    sectionId: 'ece-e-analog-s29',
     readingTime: 8,
     intro: 'Figure 11.1 closes a basic amplifier of gain $A$ with a feedback network $\\beta$ that samples the output and mixes a fraction back at the input. Sampling in series senses voltage while sampling in shunt senses current, and mixing in series subtracts voltage while mixing in shunt subtracts current. The four combinations of Figure 11.8 are series-shunt, shunt-series, series-series and shunt-shunt.',
     objectives: [
@@ -118,7 +118,7 @@ export const elecCh29Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 29.2
   {
-    sectionId: 'elec-ch29-s2',
+    sectionId: 'ece-e-analog-s30',
     readingTime: 9,
     intro: 'With loop gain $L = A\\beta$ the closed-loop gain of Figure 11.2 is $A_{f} = A/(1+A\\beta)$, so large $L$ trades raw gain for predictability. Desensitivity $D = 1+A\\beta$ divides every fractional change in $A$, which Problem 11.3 quantifies when $A$ falls by ten percent. Example 11.4 then shows the noninverting buffer holding $100$ V per V within fractions of a percent.',
     objectives: [
@@ -223,7 +223,7 @@ export const elecCh29Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 29.3
   {
-    sectionId: 'elec-ch29-s3',
+    sectionId: 'ece-e-analog-s31',
     readingTime: 8,
     intro: 'Section 11.3 shows the same $1+A\\beta$ factor that stabilizes gain also widens bandwidth, straightens transfer curves and sets terminal resistances. Upper corner $f_{H}$ rises by $D$ while lower corner $f_{L}$ falls by $D$, keeping $A_{f}f_{Hf}$ related to the open-loop product. Series mixing raises impedance and shunt mixing lowers it, with dual rules at the output.',
     objectives: [
@@ -328,7 +328,7 @@ export const elecCh29Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 29.4
   {
-    sectionId: 'elec-ch29-s4',
+    sectionId: 'ece-e-analog-s32',
     readingTime: 9,
     intro: 'Closing the loop turns the $1+A\\beta$ denominator into $1+L(j\\omega)$, which vanishes when loop gain $L = -1$ and sustains oscillation by the Barkhausen criterion. Section 11.6 therefore reads gain margin where phase hits $-180$ degrees and phase margin where magnitude hits unity on Bode or Nyquist plots. The book targets $45$ to $60$ degrees of phase margin for well-damped step response.',
     objectives: [

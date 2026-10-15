@@ -12,7 +12,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh10Content: SectionContent[] = [
   // ------------------------------------------------------------------ 10.1
   {
-    sectionId: 'elec-ch10-s1',
+    sectionId: 'ee-e-circuits-s2',
     readingTime: 9,
     intro: 'Chapter 4 introduced the great network theorems for dc circuits; the phasor machinery of Chapter 8 turned AC steady-state analysis into complex arithmetic. Put the two together and every theorem — superposition, Thévenin, Norton, source transformation, star–delta and maximum power transfer — carries over to AC networks with impedances simply replacing resistances. Hughes demonstrates each one on worked AC networks in Chapter 15, and Nilsson Section 9.7 supplies the frequency-domain proofs: substitute Z for R and the derivations of Chapter 4 go through unchanged.',
     objectives: [
@@ -160,7 +160,7 @@ export const elecCh10Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 10.2
   {
-    sectionId: 'elec-ch10-s2',
+    sectionId: 'ee-e-circuits-s35',
     readingTime: 10,
     intro: 'The phasor transform of Chapter 8 bought algebraic ease but only for the sinusoidal steady state — transients were left behind. The Laplace transform closes that gap: it converts the integrodifferential equations of a circuit with switches, steps, impulses and arbitrary sources into pure algebra in a new variable $s$, solves them, and converts back. Nilsson builds the machine in Chapter 12: the defining integral, the step and impulse functions, tables of functional and operational transforms, partial-fraction inversion, and the poles-and-zeros picture of the s plane that preview’s every circuit’s natural behaviour.',
     objectives: [
@@ -307,7 +307,7 @@ export const elecCh10Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 10.3
   {
-    sectionId: 'elec-ch10-s3',
+    sectionId: 'ee-e-circuits-s36',
     readingTime: 11,
     intro: 'With the transform machinery built, Nilsson Chapter 13 turns it loose on circuits. Each element — resistor, inductor, capacitor — acquires an s-domain equivalent circuit whose initial stored energy appears as an extra source, and then everything from Chapter 2 through Chapter 4 revives: Ohm’s law, KCL, KVL, voltage division, Thévenin. The chapter culminates in the transfer function $H(s)$, the single rational expression that characterizes a circuit independent of its input, whose poles generate the transient response and whose evaluation at $s = j\\omega$ delivers the sinusoidal steady state of Chapter 8 in one line.',
     objectives: [
@@ -451,7 +451,7 @@ export const elecCh10Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 10.4
   {
-    sectionId: 'elec-ch10-s4',
+    sectionId: 'ee-e-circuits-s37',
     readingTime: 11,
     intro: 'Phasors and Laplace transforms both assume nicely behaved inputs — a single sinusoid, or an exponential-polynomial signal. Real waveforms are rougher: square waves from switching circuits, rectified sinusoids from power supplies, triangular sweeps from oscilloscope generators. Fourier’s discovery — that any periodic function is an infinite sum of harmonically related sines and cosines — extends the superposition idea to arbitrary periodic drives, and letting the period grow without bound carries the series into the Fourier transform, the tool for aperiodic signals and the mathematical foundation of spectral thinking.',
     objectives: [
@@ -599,72 +599,72 @@ export const elecCh10Content: SectionContent[] = [
 
 export const elecCh10Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch10',
-    section: '10.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.2',
     name: 'AC source transformation',
     formula: 'V_s = Z_s·I_s',
     note: 'voltage source in series Z ↔ current source in parallel Z',
     latex: 'V_{s} = Z_{s} I_{s}',
   },
   {
-    chapterId: 'elec-ch10',
-    section: '10.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.2',
     name: 'Maximum power transfer (AC)',
     formula: 'Z_L = Z_Th*',
     note: 'conjugate match; equal R parts, opposite reactance parts',
     latex: 'Z_{L} = Z_{\\mathrm{Th}}^{*}',
   },
   {
-    chapterId: 'elec-ch10',
-    section: '10.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.35',
     name: 'Laplace transform',
     formula: 'F(s) = ∫ [0⁻, ∞) f(t)·e⁻ˢᵗ dt',
     note: 'one-sided, lower limit 0⁻; turns integrodifferential → algebra',
     latex: 'F(s) = \\int_{0^{-}}^{\\infty} f(t) e^{-st} dt',
   },
   {
-    chapterId: 'elec-ch10',
-    section: '10.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.35',
     name: 'Differentiation theorem',
     formula: 'L{df/dt} = s·F(s) − f(0⁻)',
     note: 'differentiation in time becomes multiplication by s',
     latex: '\\mathcal{L}\\left\\{\\frac{df}{dt}\\right\\} = sF(s) - f(0^{-})',
   },
   {
-    chapterId: 'elec-ch10',
-    section: '10.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.36',
     name: 's-domain impedances',
     formula: 'Z_L = sL, Z_C = 1/(sC)',
     note: 'initial energy adds sources LI₀ (series) or CV₀ (parallel)',
     latex: 'Z_{L} = sL, \\qquad Z_{C} = \\frac{1}{sC}',
   },
   {
-    chapterId: 'elec-ch10',
-    section: '10.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.36',
     name: 'Transfer function',
     formula: 'H(s) = V_o(s)/V_i(s)',
     note: 'ratio of output to input transforms, zero initial energy',
     latex: 'H(s) = \\frac{Y(s)}{X(s)}',
   },
   {
-    chapterId: 'elec-ch10',
-    section: '10.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.36',
     name: 'Sinusoidal steady state from H(s)',
     formula: 'y_ss = A·|H(jω)|·cos(ωt + φ + θ)',
     note: 'evaluate H at s = jω: scale by |H|, shift phase by θ',
     latex: 'y_{ss}(t) = A|H(j\\omega)|\\cos[\\omega t + \\phi + \\theta(\\omega)]',
   },
   {
-    chapterId: 'elec-ch10',
-    section: '10.4',
+    chapterId: 'ee-e-circuits',
+    section: '2.37',
     name: 'Fourier coefficients',
     formula: 'aₙ = (2/T)·∫ f(t)·cos nω₀t dt',
     note: 'bₙ same with sine; aᵥ = (1/T)∫f dt is the average value',
     latex: 'a_{n} = \\frac{2}{T}\\int f(t) \\cos n\\omega_{0} t\\, dt',
   },
   {
-    chapterId: 'elec-ch10',
-    section: '10.4',
+    chapterId: 'ee-e-circuits',
+    section: '2.37',
     name: 'Fourier transform',
     formula: 'F(ω) = ∫ f(t)·e⁻ʲωᵗ dt',
     note: 'T → ∞ limit of the series; inverse has 1/(2π) prefactor',

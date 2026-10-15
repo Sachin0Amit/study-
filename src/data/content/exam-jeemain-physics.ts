@@ -17,7 +17,7 @@ import type { SectionContent } from '../library'
 export const jeemainPhyContent: SectionContent[] = [
   // ---------------------------------------------------------------- 2.1
   {
-    sectionId: 'phys-m2-s1',
+    sectionId: 'hall-ch2-s25',
     readingTime: 9,
     prerequisites: [
       'SI units and dimensional thinking from Unit 1 (section phys-m1-s1)',
@@ -121,7 +121,7 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.2
   {
-    sectionId: 'phys-m2-s2',
+    sectionId: 'hall-ch2-s26',
     readingTime: 10,
     prerequisites: [
       'phys-m2-s1 — frames of reference, position–time graphs, average versus instantaneous velocity',
@@ -339,7 +339,7 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.1
   {
-    sectionId: 'phys-m4-s1',
+    sectionId: 'hall-ch5-s32',
     readingTime: 9,
     prerequisites: [
       'Newton\'s laws and free-body diagrams (phys-m3-s1)',
@@ -443,7 +443,7 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 5.1
   {
-    sectionId: 'phys-m5-s1',
+    sectionId: 'hall-ch10-s24',
     readingTime: 10,
     prerequisites: [
       'Newton\'s laws and free-body diagrams (phys-m3-s1)',
@@ -553,7 +553,7 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 8.1
   {
-    sectionId: 'phys-m8-s1',
+    sectionId: 'hall-ch18-s46',
     readingTime: 8,
     prerequisites: [
       'The molecular picture of matter — solids, liquids, gases as collections of particles',
@@ -672,7 +672,7 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 11.1
   {
-    sectionId: 'phys-m11-s1',
+    sectionId: 'hall-ch21-s4',
     readingTime: 10,
     prerequisites: [
       'Vector addition from Unit 2 — forces as vectors resolved into components',
@@ -776,7 +776,7 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 12.1
   {
-    sectionId: 'phys-m12-s1',
+    sectionId: 'hall-ch26-s14',
     readingTime: 10,
     prerequisites: [
       'Coulomb\u2019s law and the idea of electric field (Unit 11)',
@@ -880,7 +880,7 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 16.1
   {
-    sectionId: 'phys-m16-s1',
+    sectionId: 'hall-ch34-s25',
     readingTime: 9,
     prerequisites: [
       'Geometry of similar triangles (for ray diagrams)',
@@ -984,7 +984,7 @@ export const jeemainPhyContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 18.1
   {
-    sectionId: 'phys-m18-s1',
+    sectionId: 'hall-ch40-s25',
     readingTime: 11,
     prerequisites: [
       'Circular motion and centripetal force $\\frac{mv^2}{r}$ (Unit 3/10)',

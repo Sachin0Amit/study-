@@ -15,7 +15,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh1Content: SectionContent[] = [
   // ------------------------------------------------------------------ 1.1
   {
-    sectionId: 'elec-ch1-s1',
+    sectionId: 'ee-e-basic-electrical-s9',
     depth: [
       {
         tier: 'masters',
@@ -214,7 +214,7 @@ export const elecCh1Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 1.2
   {
-    sectionId: 'elec-ch1-s2',
+    sectionId: 'ee-e-basic-electrical-s10',
     depth: [
       {
         tier: 'masters',
@@ -416,7 +416,7 @@ export const elecCh1Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 1.3
   {
-    sectionId: 'elec-ch1-s3',
+    sectionId: 'ee-e-basic-electrical-s11',
     depth: [
       {
         tier: 'masters',
@@ -602,7 +602,7 @@ export const elecCh1Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 1.4
   {
-    sectionId: 'elec-ch1-s4',
+    sectionId: 'ee-e-basic-electrical-s12',
     depth: [
       {
         tier: 'masters',
@@ -801,64 +801,64 @@ export const elecCh1Content: SectionContent[] = [
 
 export const elecCh1Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch1',
-    section: '1.2',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.10',
     name: 'Definition of current',
     formula: 'i = dq/dt',
     latex: 'i = \\frac{dq}{dt}',
     note: 'current is the rate of charge flow; 1 A = 1 C/s',
   },
   {
-    chapterId: 'elec-ch1',
-    section: '1.3',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.11',
     name: 'Charge transferred',
     formula: 'Q = It; 1 A h = 3600 C',
     latex: 'Q = It \\quad (1\\ \\text{A h} = 3600\\ \\text{C})',
     note: 'coulomb = ampere second; battery ratings use ampere hours',
   },
   {
-    chapterId: 'elec-ch1',
-    section: '1.3',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.11',
     name: 'Definition of voltage',
     formula: 'V = W/Q = P/I',
     latex: 'V = \\frac{W}{Q} = \\frac{P}{I}',
     note: 'volt = joule per coulomb — energy per unit charge',
   },
   {
-    chapterId: 'elec-ch1',
-    section: '1.4',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.12',
     name: 'Electrical power',
     formula: 'P = VI (sign from passive convention)',
     latex: 'P = VI',
     note: 'watt = volt × ampere; use −vi when current opposes the drop',
   },
   {
-    chapterId: 'elec-ch1',
-    section: '1.4',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.12',
     name: 'Energy from power',
     formula: 'w(t) = ∫ p dx; W = VIt',
     latex: 'w(t) = \\int_0^t p\\,dx',
     note: 'joule = watt second; integrate power to get energy',
   },
   {
-    chapterId: 'elec-ch1',
-    section: '1.4',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.12',
     name: 'Efficiency',
     formula: 'η = Pout/Pin < 1',
     latex: '\\eta = \\frac{P_{o}}{P_{in}} < 1',
     note: 'divide output by efficiency to size the input',
   },
   {
-    chapterId: 'elec-ch1',
-    section: '1.1',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.9',
     name: 'Rotational power',
     formula: 'P = Mω = 2πNᵣM/60',
     latex: 'P = M\\omega = \\frac{2\\pi N_r M}{60}',
     note: 'Nᵣ in r/min; M (or T) in newton metres',
   },
   {
-    chapterId: 'elec-ch1',
-    section: '1.1',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.9',
     name: 'The kilowatt hour',
     formula: '1 kW h = 3.6 MJ',
     latex: '1\\ \\text{kW h} = 3.6 \\times 10^{6}\\ \\text{J}',

@@ -13,7 +13,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh19Content: SectionContent[] = [
   // ------------------------------------------------------------------ 19.1
   {
-    sectionId: 'elec-ch19-s1',
+    sectionId: 'ee-e-machines1-s7',
     readingTime: 11,
     intro: 'The transformer is the one electrical machine with no moving parts, and it earns its keep by changing voltage with almost no loss of power — a medium-sized unit runs at 97–98 per cent full-load efficiency. Hughes builds the whole apparatus of power engineering on it: a laminated ferromagnetic core, two coupled windings, an e.m.f. equation you can derive in four lines, and an equivalent circuit that turns out to be the template for every machine in the rest of this chapter.',
     objectives: [
@@ -193,7 +193,7 @@ export const elecCh19Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 19.2
   {
-    sectionId: 'elec-ch19-s2',
+    sectionId: 'ee-e-machines1-s9',
     readingTime: 9,
     intro: 'Before meeting any specific machine, Hughes asks what every machine has in common: a magnetic field acting as a two-way energy coupling between an electrical system and a mechanical one. From that single idea — plus the observation that magnetic systems try to maximize their stored field energy — flow the forces of alignment and interaction, the reluctance motor, the doubly excited machines, and the single most useful fact in AC machinery: three phase currents make a magnetic field that rotates.',
     objectives: [
@@ -363,7 +363,7 @@ export const elecCh19Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 19.3
   {
-    sectionId: 'elec-ch19-s3',
+    sectionId: 'ee-e-machines2-s7',
     readingTime: 12,
     intro: 'Synchronous machines run the power system; induction motors run industry — Hughes remarks that about half of all electric power consumption is due to induction motor loads. This section follows Hughes through armature reaction, synchronous impedance and the 600 MVA generator whose regulation nearly quadruples between unity and 0.8 power factor, then into the induction motor: slip, the transformer-like equivalent circuit, the torque-slip curve, and every practical way of starting a cage rotor that draws four to seven times full-load current if you dare switch it straight onto the line.',
     objectives: [
@@ -536,7 +536,7 @@ export const elecCh19Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 19.4
   {
-    sectionId: 'elec-ch19-s4',
+    sectionId: 'ee-e-machines1-s3',
     readingTime: 11,
     intro: 'The DC machine is the classical workhorse: a commutator that mechanically rectifies the alternating e.m.f. of rotating conductors, lap or wave windings that trade current against voltage, and the two most quotable characteristics in electrical engineering — the shunt motor that holds its speed and the series motor whose speed is inversely proportional to its current. Hughes finishes the story with motor selection, the loss inventory, and the brake test that measures what all the theory promises.',
     objectives: [
@@ -708,72 +708,72 @@ export const elecCh19Content: SectionContent[] = [
 
 export const elecCh19Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch19',
-    section: '19.1',
+    chapterId: 'ee-e-machines1',
+    section: '3.7',
     name: 'Transformer e.m.f. equation',
     formula: 'E = 4.44 f N Φₘ',
     note: 'RMS e.m.f. of a winding of N turns with sinusoidal flux',
     latex: 'E = 4.44\\, f\\, N\\, \\Phi_{\\mathrm{m}}',
   },
   {
-    chapterId: 'elec-ch19',
-    section: '19.1',
+    chapterId: 'ee-e-machines1',
+    section: '3.7',
     name: 'Ideal transformer ratios',
     formula: 'V₁ / V₂ = N₁ / N₂ ≃ I₂ / I₁',
     note: 'Voltage follows turns; current is inverse (ampere-turn balance)',
     latex: '\\frac{V_1}{V_2} = \\frac{N_1}{N_2} \\simeq \\frac{I_2}{I_1}',
   },
   {
-    chapterId: 'elec-ch19',
-    section: '19.1',
+    chapterId: 'ee-e-machines1',
+    section: '3.7',
     name: 'Transformer voltage regulation',
     formula: 'reg = I₁(Rₑ cos φ₂ + Xₑ sin φ₂) / V₁',
     note: 'Per unit, lagging load; reactance term subtracts if leading',
     latex: '\\text{reg} = \\frac{I_1 \\left( R_e \\cos\\phi_2 + X_e \\sin\\phi_2 \\right)}{V_1}',
   },
   {
-    chapterId: 'elec-ch19',
-    section: '19.1',
+    chapterId: 'ee-e-machines1',
+    section: '3.7',
     name: 'Efficiency from OC and SC tests',
     formula: 'η = S·pf / (S·pf + Pₒc + n²·Pₛc)',
     note: 'At load fraction n of full load; core loss constant, copper n²',
     latex: '\\eta = \\frac{n S \\cos\\phi}{n S \\cos\\phi + P_{\\mathrm{oc}} + n^{2} P_{\\mathrm{sc}}}',
   },
   {
-    chapterId: 'elec-ch19',
-    section: '19.3',
+    chapterId: 'ee-e-machines2',
+    section: '4.7',
     name: 'Slip of an induction motor',
     formula: 's = (nₛ − n) / nₛ',
     note: 'Rotor frequency follows as fr = s·f',
     latex: 's = \\frac{n_s - n}{n_s}',
   },
   {
-    chapterId: 'elec-ch19',
-    section: '19.3',
+    chapterId: 'ee-e-machines2',
+    section: '4.7',
     name: 'Induction-motor mechanical power',
     formula: 'Pₘ = 3·((1 − s)/s)·R₂′·I₁²',
     note: 'The (1−s)/s rotor resistor is the mechanical output',
     latex: 'P_{\\mathrm{m}} = 3\\,\\frac{1-s}{s}\\, R_2^{\\prime} \\left| I_1 \\right|^{2}',
   },
   {
-    chapterId: 'elec-ch19',
-    section: '19.4',
+    chapterId: 'ee-e-machines1',
+    section: '3.3',
     name: 'DC machine e.m.f.',
     formula: 'E = 2·(Z/c)·(N·p/60)·Φ',
     note: 'c = 2 for wave, 2p for lap windings; N in r/min',
     latex: 'E = 2\\,\\frac{Z}{c}\\,\\frac{N p}{60}\\,\\Phi',
   },
   {
-    chapterId: 'elec-ch19',
-    section: '19.4',
+    chapterId: 'ee-e-machines1',
+    section: '3.3',
     name: 'DC motor speed and torque',
     formula: 'N ∝ (V − IₐRₐ)/Φ,  M ∝ Φ·Iₐ',
     note: 'From V = E + IₐRₐ with E = kNΦ and EIₐ the developed power',
     latex: 'N \\propto \\frac{V - I_a R_a}{\\Phi}, \\qquad M \\propto \\Phi I_a',
   },
   {
-    chapterId: 'elec-ch19',
-    section: '19.2',
+    chapterId: 'ee-e-machines1',
+    section: '3.9',
     name: 'Rotating field speed',
     formula: 'f = n·p,  n₁ = f/p',
     note: 'Frequency, speed in r/s and pole pairs for any AC winding',

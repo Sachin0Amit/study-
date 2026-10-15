@@ -14,7 +14,7 @@ import type { SectionContent } from '../library'
 export const elecCh22Content: SectionContent[] = [
   // ------------------------------------------------------------------ 22.1
   {
-    sectionId: 'elec-ch22-s1',
+    sectionId: 'ece-e-ic-s10',
     readingTime: 8,
     intro: 'The op amp is a high-gain differential amplifier with two inputs and one output, drawn as the triangle of Figure 2.1 and described by $v_{O} = A(v_{+} - v_{-})$. Table 2.1 idealizes it with infinite gain, infinite input resistance, zero output resistance, zero common-mode gain and infinite bandwidth. Letting $A$ approach infinity while the output stays finite forces the two golden rules — the virtual short and the virtual open — on which every ideal circuit analysis rests.',
     objectives: [
@@ -119,7 +119,7 @@ export const elecCh22Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 22.2
   {
-    sectionId: 'elec-ch22-s2',
+    sectionId: 'ece-e-ic-s11',
     readingTime: 9,
     intro: 'Closing the loop around the op amp with two resistors trades the unknowable $10^{5}$ open-loop gain for a precise resistor ratio. The inverting configuration gives $-R_{2}/R_{1}$ at a virtual ground, the noninverting gives $1 + R_{2}/R_{1}$ with very high input resistance, and the four-resistor difference stage subtracts with gain $R_{2}/R_{1}$ once its ratios match. Example 2.1 quantifies the cost of finite $A$: with $R_{2}/R_{1} = 100$ the gain error is $9.17$ percent at $A = 10^{3}$ but only $0.10$ percent at $A = 10^{5}$.',
     objectives: [
@@ -225,7 +225,7 @@ export const elecCh22Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 22.3
   {
-    sectionId: 'elec-ch22-s3',
+    sectionId: 'ece-e-ic-s12',
     readingTime: 7,
     intro: 'Replacing the feedback resistor with a capacitor turns the inverting stage into a time machine: the Miller integrator outputs $-(1/CR)$ times the running integral of the input. Example 2.6 sends a $1$ V, $1$ ms pulse through a $0.1$ ms time constant and watches a $-10$ V ramp emerge. Swapping the positions gives the differentiator, whose rising response makes it a noise magnet that practical designs must tame.',
     objectives: [
@@ -330,7 +330,7 @@ export const elecCh22Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 22.4
   {
-    sectionId: 'elec-ch22-s4',
+    sectionId: 'ece-e-ic-s13',
     readingTime: 9,
     intro: 'Real op amps add five imperfections to the ideal: offset voltage $V_{OS}$, input bias currents $I_{B}$, finite gain that rolls off with frequency, slew-rate ceilings on large signals, and saturating outputs. Figure 2.29 models offset as a small source in series with an input, Figure 2.35 cancels bias-current drops with $R_{3} = R_{1} \\parallel R_{2}$, and the single-pole model $A(s) = A_{0}/(1 + s/\\omega_{b})$ turns Example 2.7 into a gain-bandwidth trade: at $f_{t} = 1$ MHz a gain of ten keeps $100$ kHz.',
     objectives: [

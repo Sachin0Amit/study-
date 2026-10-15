@@ -13,7 +13,7 @@ import type { FormulaEntry } from '../formulas'
 export const physCh6Content: SectionContent[] = [
   // ------------------------------------------------------------------ 6.1
   {
-    sectionId: 'phys-ch6-s1',
+    sectionId: 'hall-ch15-s16',
     readingTime: 9,
     intro: 'A mass on a spring is the physicist’s hydrogen atom: the simplest thing that moves, and therefore the system whose equation appears wherever anything oscillates — charge sloshing in a circuit, a tuning fork, electrons radiating light inside atoms, a thermostat hunting, even foxes eating rabbits eating grass. Feynman gives the oscillator four chapters. This one builds the equation, solves it twice — once numerically, once exactly — and shows why every system near equilibrium is secretly a mass on a spring.',
     objectives: [
@@ -159,7 +159,7 @@ export const physCh6Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 6.2
   {
-    sectionId: 'phys-ch6-s2',
+    sectionId: 'hall-ch15-s17',
     readingTime: 9,
     intro: 'Before pushing the oscillator further, Feynman stops to earn the tool. His lecture on algebra — famous enough to be reprinted on its own — rebuilds the number system from the integers: subtraction forces the negatives into existence, division the fractions, $x^2 = 2$ the irrationals, and $x^2 = -1$ the complex numbers, the last invention mathematics will ever need. At the top of the climb stands what he calls the most remarkable formula in all of mathematics.',
     objectives: [
@@ -307,7 +307,7 @@ export const physCh6Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 6.3
   {
-    sectionId: 'phys-ch6-s3',
+    sectionId: 'hall-ch15-s18',
     readingTime: 10,
     intro: 'Push a child on a swing at just the right moments and the arc grows alarmingly; push at random and nothing accumulates. That is resonance — the driven oscillator’s answer peaking when the drive matches the natural frequency — and once friction proportional to speed is included, the whole story is told by one complex fraction. Feynman ends the lecture walking through physics with the resonance curve folded under his arm: atmospheres, crystals, spinning atoms, nuclei and brand-new particles all wear the same shape.',
     objectives: [
@@ -455,7 +455,7 @@ export const physCh6Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 6.4
   {
-    sectionId: 'phys-ch6-s4',
+    sectionId: 'hall-ch15-s19',
     readingTime: 9,
     intro: 'What happens the moment the drive is switched off? The steady state collapses and the oscillator is left to its own devices: it rings down at very nearly its natural frequency, wrapped in a dying exponential envelope. Feynman first guesses the decay from energy bookkeeping so natural it turns out to be essentially exact, then derives it; and the chapter closes with the physicist’s broadest lesson — linear systems answer any force as a superposition of exponentials, and the complete response is always the steady state plus a transient.',
     objectives: [
@@ -597,64 +597,64 @@ export const physCh6Content: SectionContent[] = [
 
 export const physCh6Formulas: FormulaEntry[] = [
   {
-    chapterId: 'phys-ch6',
-    section: '6.1',
+    chapterId: 'hall-ch15',
+    section: '15.16',
     name: 'Harmonic oscillator solution',
     formula: 'x = A cos(ω₀t + φ),  ω₀ = √(k/m)',
     note: 'the equation fixes ω₀; initial conditions fix A and φ',
     latex: 'x = A\\cos(\\omega_0 t + \\varphi), \\quad \\omega_0 = \\sqrt{k/m}',
   },
   {
-    chapterId: 'phys-ch6',
-    section: '6.1',
+    chapterId: 'hall-ch15',
+    section: '15.16',
     name: 'Period of the oscillator',
     formula: 't₀ = 2π√(m/k)',
     note: 'independent of amplitude — scale invariance of linear equations',
     latex: 't_0 = \\frac{2\\pi}{\\omega_0} = 2\\pi\\sqrt{m/k}',
   },
   {
-    chapterId: 'phys-ch6',
-    section: '6.1',
+    chapterId: 'hall-ch15',
+    section: '15.16',
     name: 'Oscillator energy',
     formula: 'E = ½mω₀²a² = ½ka²',
     note: 'energy grows as amplitude squared; averages split half kinetic, half potential',
     latex: 'E = \\tfrac{1}{2}m\\omega_0^2 a^2 = \\tfrac{1}{2}ka^2',
   },
   {
-    chapterId: 'phys-ch6',
-    section: '6.2',
+    chapterId: 'hall-ch15',
+    section: '15.17',
     name: 'Euler formula',
     formula: 'exp(iθ) = cos θ + i sin θ',
     note: 'the most remarkable formula in mathematics — our jewel',
     latex: 'e^{i\\theta} = \\cos\\theta + i\\sin\\theta',
   },
   {
-    chapterId: 'phys-ch6',
-    section: '6.3',
+    chapterId: 'hall-ch15',
+    section: '15.18',
     name: 'Driven damped response',
     formula: 'x = F / m(ω₀² − ω² + iγω)',
     note: 'complex amplitudes; one fraction carries amplitude and phase',
     latex: '\\hat{x} = \\frac{\\hat{F}}{m(\\omega_0^2 - \\omega^2 + i\\gamma\\omega)}',
   },
   {
-    chapterId: 'phys-ch6',
-    section: '6.3',
+    chapterId: 'hall-ch15',
+    section: '15.18',
     name: 'Resonance amplitude',
     formula: 'ρ² = 1 / m²[(ω₀² − ω²)² + γ²ω²]',
     note: 'peak at ω₀ of height 1/m²γ²ω₀² — friction sets the ceiling',
     latex: '\\rho^2 = \\frac{1}{m^2\\left[(\\omega_0^2 - \\omega^2)^2 + \\gamma^2\\omega^2\\right]}',
   },
   {
-    chapterId: 'phys-ch6',
-    section: '6.3',
+    chapterId: 'hall-ch15',
+    section: '15.18',
     name: 'Quality factor',
     formula: 'Q = ω₀/γ = ω₀L/R',
     note: 'resonance width Δω = γ; Q = 1000 means a thousandth of the scale',
     latex: 'Q = \\frac{\\omega_0}{\\gamma} = \\frac{\\omega_0 L}{R}',
   },
   {
-    chapterId: 'phys-ch6',
-    section: '6.4',
+    chapterId: 'hall-ch15',
+    section: '15.19',
     name: 'Damped free oscillation',
     formula: 'x = A₀·exp(−γt/2)·cos(ωt),  ω = √(ω₀² − γ²/4)',
     note: 'energy decays as exp(−γt); amplitude at half that rate',

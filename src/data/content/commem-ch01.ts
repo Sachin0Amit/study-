@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const commemCh01Content: SectionContent[] = [
   // ---------------------------------------------------------------- 1.1
   {
-    sectionId: 'commem-ch1-s1',
+    sectionId: 'ece-e-analog-comm-s6',
     depth: [
       {
         tier: 'masters',
@@ -130,7 +130,7 @@ export const commemCh01Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 1.2
   {
-    sectionId: 'commem-ch1-s2',
+    sectionId: 'ece-e-analog-comm-s7',
     readingTime: 8,
     intro: 'White noise spreads its power evenly across every frequency just as white light mixes every color. Its time samples decorrelate instantly so each instant looks fresh and unpredictable. This section quantifies that flat spectrum, its impulse correlation, and the thermal floor that limits every receiver.',
     objectives: [
@@ -228,7 +228,7 @@ export const commemCh01Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 1.3
   {
-    sectionId: 'commem-ch1-s3',
+    sectionId: 'ece-e-analog-comm-s8',
     readingTime: 9,
     intro: 'A linear filter shapes random inputs by weighting each frequency with its squared magnitude response. Output density follows directly while total power needs an equivalent bandwidth that compresses the shape into one number. This section practices that shaping chain from input density to output power.',
     objectives: [
@@ -326,7 +326,7 @@ export const commemCh01Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 1.4
   {
-    sectionId: 'commem-ch1-s4',
+    sectionId: 'ece-e-analog-comm-s9',
     readingTime: 7,
     intro: 'Bandpass noise around a carrier is easier to handle when split into slowly varying in-phase and quadrature parts. Those two baseband pieces carry the same information as the fast carrier wiggle. This section previews that split and the power sharing that follows.',
     objectives: [

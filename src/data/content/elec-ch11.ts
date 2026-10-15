@@ -15,7 +15,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh11Content: SectionContent[] = [
   // ------------------------------------------------------------------ 11.1
   {
-    sectionId: 'elec-ch11-s1',
+    sectionId: 'ece-e-sigsys-s12',
     readingTime: 10,
     intro:
       'A radio or a mobile phone contains hundreds or thousands of components, yet nobody debugs one transistor at a time. Hughes opens the electronic half of this book with the trick that makes such complexity manageable: treat every unit as a box with an input and an output, ask only how the output relates to the input, and chain the boxes together. This section builds that vocabulary — systems, amplifiers, attenuators, block diagrams — and then gives it teeth with gains, decibels, equivalent networks and frequency response.',
@@ -199,7 +199,7 @@ export const elecCh11Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 11.2
   {
-    sectionId: 'elec-ch11-s2',
+    sectionId: 'ece-e-sigsys-s13',
     readingTime: 11,
     intro:
       'Everything that enters or leaves an electronic system is a signal, and before we can say what a system does to a signal we must say what kind of signal it is. Hughes’s chapter on signals classifies them — continuous or discrete, periodic or aperiodic, deterministic or random, energy or power — and then performs one of the most elegant tricks in engineering: representing any signal as a continuum of impulses, so that a system’s response to a single impulse tells us its response to everything. The machinery that assembles the answer is convolution.',
@@ -395,7 +395,7 @@ export const elecCh11Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 11.3
   {
-    sectionId: 'elec-ch11-s3',
+    sectionId: 'ece-e-sigsys-s14',
     readingTime: 12,
     intro:
       'A signal is only useful if it survives the journey between source and destination — and every journey has a price: limited bandwidth, noise and distortion. Hughes’s three communications chapters assemble the whole chain: analogue and digital signalling, modulation onto carriers, filters and demodulation at the receiver, the channel-capacity mathematics of Shannon, and the medium itself, copper or glass. The story ends with fibre optics, where carrier frequencies of order $10^{14}$ Hz turn bandwidth from a scarcity into an embarrassment.',
@@ -580,64 +580,64 @@ export const elecCh11Content: SectionContent[] = [
 
 export const elecCh11Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch11',
-    section: '11.1',
+    chapterId: 'ece-e-sigsys',
+    section: '4.12',
     name: 'Voltage gain in decibels',
     formula: 'G(dB) = 20·log₁₀(V₂/V₁)',
     note: 'same factor for current ratios; still formally a power ratio',
     latex: 'G_{\\mathrm{dB}} = 20\\,\\log_{10}\\!\\left(\\frac{V_2}{V_1}\\right)',
   },
   {
-    chapterId: 'elec-ch11',
-    section: '11.1',
+    chapterId: 'ece-e-sigsys',
+    section: '4.12',
     name: 'Power ratio in decibels',
     formula: 'G(dB) = 10·log₁₀(P₂/P₁)',
     note: 'one decibel is a tenth of a bel; dB up or dB down on a reference',
     latex: 'G_{\\mathrm{dB}} = 10\\,\\log_{10}\\!\\left(\\frac{P_2}{P_1}\\right)',
   },
   {
-    chapterId: 'elec-ch11',
-    section: '11.1',
+    chapterId: 'ece-e-sigsys',
+    section: '4.12',
     name: 'Cascade gain',
     formula: 'G = G₁·G₂; G(dB) = G₁(dB) + G₂(dB)',
     note: 'stages multiply gains and therefore add decibels',
     latex: 'G = G_1 G_2, \\qquad G_{\\mathrm{dB}} = G_{1\\mathrm{dB}} + G_{2\\mathrm{dB}}',
   },
   {
-    chapterId: 'elec-ch11',
-    section: '11.1',
+    chapterId: 'ece-e-sigsys',
+    section: '4.12',
     name: 'Loaded voltage gain',
     formula: 'Gv = Gvo·RL/(Ro + RL)',
     note: 'output resistance and load form a divider on the open-circuit gain',
     latex: 'G_v = \\frac{G_{vo} R_L}{R_o + R_L}',
   },
   {
-    chapterId: 'elec-ch11',
-    section: '11.2',
+    chapterId: 'ece-e-sigsys',
+    section: '4.13',
     name: 'Convolution sum',
     formula: 'y(k) = Σᵢ u(i)·h(k − i)',
     note: 'discrete-time output from impulse response; commutative',
     latex: 'y(k) = \\sum_{i=-\\infty}^{\\infty} u(i)\\,h(k - i)',
   },
   {
-    chapterId: 'elec-ch11',
-    section: '11.2',
+    chapterId: 'ece-e-sigsys',
+    section: '4.13',
     name: 'Convolution integral',
     formula: 'y(t) = ∫u(τ)·h(t − τ)dτ',
     note: 'fold h, shift by t, multiply by u and integrate',
     latex: 'y(t) = \\int_{-\\infty}^{\\infty} u(\\tau)\\,h(t - \\tau)\\,d\\tau',
   },
   {
-    chapterId: 'elec-ch11',
-    section: '11.3',
+    chapterId: 'ece-e-sigsys',
+    section: '4.14',
     name: 'Shannon–Hartley law',
     formula: 'C = w·log₂(1 + S/N)',
     note: 'error-free capacity in bits per second; convert dB to a ratio first',
     latex: 'C = w\\,\\log_2\\!\\left(1 + \\frac{S}{N}\\right)',
   },
   {
-    chapterId: 'elec-ch11',
-    section: '11.3',
+    chapterId: 'ece-e-sigsys',
+    section: '4.14',
     name: 'AM modulation index',
     formula: 'm = (Vₘₐₓ − Vₘᵢₙ)/(Vₘₐₓ + Vₘᵢₙ)',
     note: 'envelope depth from 0 to 1; overmodulation distorts',

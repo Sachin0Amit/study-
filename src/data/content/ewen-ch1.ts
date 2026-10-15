@@ -7,7 +7,7 @@ import type { SectionContent } from '../library'
 
 export const ewenCh1Content: SectionContent[] = [
   {
-    sectionId: 'ewen-ch1-s1',
+    sectionId: 'young-ch1-s18',
     readingTime: 5,
     intro: "Every measurement compares an unknown against an agreed standard, and the whole of physics depends on those standards being stable. This section introduces the SI and U.S. customary standards and the base quantities length, mass, and time.",
     objectives: [
@@ -103,7 +103,7 @@ export const ewenCh1Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch1-s2',
+    sectionId: 'young-ch1-s19',
     readingTime: 6,
     intro: "The metric system replaces dozens of conversion factors with one idea: prefixes that are powers of ten. Mastering milli, centi, kilo, and mega turns most conversions into decimal-point moves.",
     objectives: [
@@ -192,7 +192,7 @@ export const ewenCh1Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch1-s3',
+    sectionId: 'young-ch1-s20',
     readingTime: 6,
     intro: "Technicians constantly meet numbers too large or small for plain decimals, from microamperes to megohms. Scientific notation writes every value as a digit factor times a power of ten so arithmetic stays exact and compact.",
     objectives: [
@@ -288,7 +288,7 @@ export const ewenCh1Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch1-s4',
+    sectionId: 'young-ch1-s21',
     readingTime: 5,
     intro: "Length is the most-measured quantity in the shop, and its conversions seed every area, volume, and speed calculation later. This section locks in inch-foot-yard-mile and millimeter-centimeter-meter bridges with worked conversions.",
     objectives: [
@@ -377,7 +377,7 @@ export const ewenCh1Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch1-s5',
+    sectionId: 'young-ch1-s22',
     readingTime: 6,
     intro: "Area and volume conversions trap students because the linear factor must be squared or cubed. This section derives those factors once and applies them to flooring, tanks, and material estimates.",
     objectives: [
@@ -473,7 +473,7 @@ export const ewenCh1Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch1-s6',
+    sectionId: 'young-ch1-s23',
     readingTime: 5,
     intro: "Beyond length, the shop measures time, mass, force, pressure, temperature, and angles. This section collects those secondary units and the exact bridges between English and metric forms.",
     objectives: [
@@ -562,7 +562,7 @@ export const ewenCh1Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch1-s7',
+    sectionId: 'young-ch1-s24',
     readingTime: 6,
     intro: "No measurement is exact, and honest physics reports only the digits the instrument earns. This section defines significant digits and accuracy, then shows how to round without corrupting results.",
     objectives: [
@@ -658,7 +658,7 @@ export const ewenCh1Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch1-s8',
+    sectionId: 'young-ch1-s25',
     readingTime: 5,
     intro: "A reading can be repeatable yet wrong: that is the gap between precision and accuracy. This section teaches you to diagnose both from repeated measurements and instrument limits.",
     objectives: [
@@ -747,7 +747,7 @@ export const ewenCh1Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch1-s9',
+    sectionId: 'young-ch1-s26',
     readingTime: 6,
     intro: "Measured data combine through multiplication, division, addition, and powers, and each operation has a digit rule. This section gives those rules and works full technician calculations with honest rounding.",
     objectives: [

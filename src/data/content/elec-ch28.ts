@@ -13,7 +13,7 @@ import type { SectionContent } from '../library'
 export const elecCh28Content: SectionContent[] = [
   // ------------------------------------------------------------------ 28.1
   {
-    sectionId: 'elec-ch28-s1',
+    sectionId: 'ece-e-analog-s25',
     readingTime: 8,
     intro: 'Coupling capacitors $C_{C1}$ and $C_{C2}$ plus the emitter bypass $C_{E}$ of Figure 10.37 turn every discrete stage into three cascaded high-pass sections at low frequencies. Each contributes a pole $f_{Li} = 1/(2\\pi R_{eqi}C_{i})$ and the dominant lowest pole sets the $-3$ dB frequency $f_{L}$. Problem 10.101 designs those three capacitors for $f_{L} = 200$ Hz with the bypass usually dominant.',
     objectives: [
@@ -118,7 +118,7 @@ export const elecCh28Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 28.2
   {
-    sectionId: 'elec-ch28-s2',
+    sectionId: 'ece-e-analog-s26',
     readingTime: 9,
     intro: 'At high frequencies the junction capacitances $C_{\\pi}$ and $C_{\\mu}$ for BJTs plus $C_{gs}$ and $C_{gd}$ for MOSFETs shunt the controlled source. Section 10.1 adds them to the hybrid-pi model, and Section 10.2 shows feedback capacitance $C_{gd}$ or $C_{\\mu}$ multiplied by stage gain at the input. The transit frequency $f_{T} = g_{m}/(2\\pi(C_{\\pi}+C_{\\mu}))$ then marks where short-circuit current gain falls to unity.',
     objectives: [
@@ -223,7 +223,7 @@ export const elecCh28Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 28.3
   {
-    sectionId: 'elec-ch28-s3',
+    sectionId: 'ece-e-analog-s27',
     readingTime: 8,
     intro: 'Section 1.6 first drew gain magnitude flat at midband with $-3$ dB corners $f_{L}$ and $f_{H}$, and Chapter 10 turns that sketch into asymptotic Bode rules. Each pole contributes $-20$ dB per decade and $-45$ degrees per decade around its break, while zeros do the mirror image. The gain-bandwidth product $GBW = |A_{M}|f_{H}$ then stays constant for single-pole compensated stages.',
     objectives: [
@@ -328,7 +328,7 @@ export const elecCh28Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 28.4
   {
-    sectionId: 'elec-ch28-s4',
+    sectionId: 'ece-e-analog-s28',
     readingTime: 8,
     intro: 'Wideband open-loop gain with multiple poles near $f_{H}$ oscillates once feedback of Chapter 29 closes the loop. Dominant-pole compensation inserts or enlarges one capacitance so a single low pole sets $f_{D}$ while higher poles sit far above $f_{t}$. Miller compensation with $C_{c}$ across the second stage splits the two poles apart without a huge shunt capacitor.',
     objectives: [

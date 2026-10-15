@@ -13,7 +13,7 @@ import type { SectionContent } from '../library'
 export const elecCh21Content: SectionContent[] = [
   // ------------------------------------------------------------------ 21.1
   {
-    sectionId: 'elec-ch21-s1',
+    sectionId: 'ece-e-analog-s13',
     readingTime: 8,
     intro: 'Every electronic system begins with a signal, and every signal source is modeled in Sedra/Smith as a Thevenin or Norton equivalent with a source resistance $R_{s}$. Amplifiers are then described by three gains — voltage, current and power — together with the input and output resistances that divide those gains through loading. Because gains multiply across stages, the book adopts the decibel scale, where multiplication becomes addition.',
     objectives: [
@@ -119,7 +119,7 @@ export const elecCh21Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 21.2
   {
-    sectionId: 'elec-ch21-s2',
+    sectionId: 'ece-e-analog-s14',
     readingTime: 7,
     intro: 'Real amplifiers are linear only between two saturation ceilings, so Sedra/Smith draws the transfer characteristic of Figure 1.14 before any small-signal analysis. The designer first places a DC bias point $Q$ inside the linear segment, then treats tiny excursions around $Q$ as a straight line whose slope is the small-signal gain. Keeping the signal small enough to stay on that line is the whole art of linear amplification.',
     objectives: [
@@ -224,7 +224,7 @@ export const elecCh21Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 21.3
   {
-    sectionId: 'elec-ch21-s3',
+    sectionId: 'ece-e-analog-s15',
     readingTime: 9,
     intro: 'Gain is not constant with frequency: coupling capacitors mute the bass while device capacitances mute the treble, leaving a midband where the gain of Section 21.1 applies. Sedra/Smith reduces each roll-off to a single-time-constant network with transfer $K/(1 + s/\\omega_{0})$ or its high-pass twin. Example 1.5 then assembles a complete loaded amplifier — $K = 100$, $f_{0} = 159.2$ kHz, unity gain at $15.92$ MHz — from just two divider ratios and one time constant.',
     objectives: [
@@ -329,7 +329,7 @@ export const elecCh21Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 21.4
   {
-    sectionId: 'elec-ch21-s4',
+    sectionId: 'ece-e-analog-s16',
     readingTime: 8,
     intro: 'One stage rarely suffices: Example 1.3 builds a complete amplifier from a high-input first stage of gain $10$, a high-gain middle stage of $100$, and a unity output stage with $10$ $\\Omega$ output resistance. Each stage loads the one before, so every gain is scaled by a divider before the three multiply to $818$ V/V. From source to load the overall gain is $743.6$ V/V — the two numbers differ by exactly the input loss factor.',
     objectives: [

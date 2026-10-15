@@ -12,7 +12,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh9Content: SectionContent[] = [
   // ------------------------------------------------------------------ 9.1
   {
-    sectionId: 'elec-ch9-s1',
+    sectionId: 'ee-e-circuits-s31',
     readingTime: 8,
     intro: 'When alternating current systems were first introduced, learned scientists claimed it was impossible to deliver energy by such a means: power would flow to the load during one half-cycle and flow straight back during the next. They were almost right. Hughes calls this the impossible power, and resolving the paradox is the business of this section: a resistive component dissipates energy as heat, while a reactive component shuttles it back and forth between the source and the magnetic or electric field of the load — like watching an unending rally in tennis as the ball of energy flies to and fro.',
     objectives: [
@@ -152,7 +152,7 @@ export const elecCh9Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 9.2
   {
-    sectionId: 'elec-ch9-s2',
+    sectionId: 'ee-e-circuits-s32',
     readingTime: 9,
     intro: 'Complex power folds the three quantities of the previous section — watts, vars and volt-amperes — into one complex number, $S = P + jQ$, that can be read straight off a pair of phasors as $V I^{*}$. With it, power-factor correction stops being a phasor-diagram construction exercise and becomes bookkeeping: add up the vars the loads demand, decide how many a capacitor should furnish, and size the capacitor. Every number in this section is traceable to a worked example in Nilsson Chapter 10 or Hughes Chapter 13.',
     objectives: [
@@ -300,7 +300,7 @@ export const elecCh9Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 9.3
   {
-    sectionId: 'elec-ch9-s3',
+    sectionId: 'ee-e-circuits-s33',
     readingTime: 9,
     intro: 'Resonance is what happens when the inductive and capacitive reactances of an AC circuit are equal in magnitude. It may be achieved by varying the frequency or by varying a component — usually the capacitance — and it makes the circuit respond in a markedly different manner at the resonant frequency than at any other. A series resonant circuit magnifies a chosen signal and separates it from signals of other frequencies; the tuning of a radio is the canonical example. This section follows Hughes Chapter 14 from the dynamic curves of a series RLC circuit through Q, bandwidth and selectivity to the practical parallel resonant rejector.',
     objectives: [
@@ -445,7 +445,7 @@ export const elecCh9Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 9.4
   {
-    sectionId: 'elec-ch9-s4',
+    sectionId: 'ee-e-circuits-s34',
     readingTime: 11,
     intro: 'The greater the power supplied at a given voltage, the greater the current — and single-phase supply handles large currents badly: its motors are not self-starting, and its instantaneous power pulsates. Three-phase systems dominate electricity supply because they transmit high powers efficiently, deliver constant instantaneous power (hence smooth motor torque) and provide powerful self-starting motor drives. This section merges Hughes Chapter 28 and Nilsson Chapter 11: star and delta connections, the $\\sqrt{3}$ relations between line and phase quantities, the single-phase equivalent circuit, and power measurement by the two-wattmeter method.',
     objectives: [
@@ -586,72 +586,72 @@ export const elecCh9Content: SectionContent[] = [
 
 export const elecCh9Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch9',
-    section: '9.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.31',
     name: 'Average (active) power',
     formula: 'P = V·I·cos φ',
     note: 'V and I are rms values; φ is the phase angle between them',
     latex: 'P = V_{\\mathrm{rms}} I_{\\mathrm{rms}} \\cos\\phi',
   },
   {
-    chapterId: 'elec-ch9',
-    section: '9.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.31',
     name: 'Reactive power',
     formula: 'Q = V·I·sin φ',
     note: 'in vars; positive for inductors, negative for capacitors',
     latex: 'Q = V_{\\mathrm{rms}} I_{\\mathrm{rms}} \\sin\\phi',
   },
   {
-    chapterId: 'elec-ch9',
-    section: '9.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.32',
     name: 'Complex power',
     formula: 'S = V·I* = P + jQ',
     note: 'rms phasors, passive sign convention; units volt-amperes',
     latex: 'S = V_{\\mathrm{rms}} I_{\\mathrm{rms}}^{*} = P + jQ',
   },
   {
-    chapterId: 'elec-ch9',
-    section: '9.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.32',
     name: 'Power triangle',
     formula: 'S² = P² + Q²',
     note: 'apparent power |S| in VA is the volt-amp capacity carried',
     latex: '|S| = \\sqrt{P^{2} + Q^{2}}',
   },
   {
-    chapterId: 'elec-ch9',
-    section: '9.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.33',
     name: 'Resonant frequency',
     formula: 'f₀ = 1/(2π·√(L·C))',
     note: 'series and ideal parallel RLC; ω₀ = 1/√(LC)',
     latex: 'f_{0} = \\frac{1}{2\\pi\\sqrt{LC}}',
   },
   {
-    chapterId: 'elec-ch9',
-    section: '9.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.33',
     name: 'Q factor (series circuit)',
     formula: 'Q = ω₀·L/R = 1/(ω₀·C·R)',
     note: 'voltage magnification: V_L = V_C = Q·V at resonance',
     latex: 'Q = \\frac{\\omega_{0} L}{R} = \\frac{1}{\\omega_{0} C R}',
   },
   {
-    chapterId: 'elec-ch9',
-    section: '9.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.33',
     name: 'Bandwidth',
     formula: 'BW = f₀/Q',
     note: 'half-power points; their product satisfies f₁·f₂ = f₀²',
     latex: '\\mathrm{BW} = \\frac{f_{0}}{Q}',
   },
   {
-    chapterId: 'elec-ch9',
-    section: '9.4',
+    chapterId: 'ee-e-circuits',
+    section: '2.34',
     name: 'Three-phase power',
     formula: 'P = √3·V_L·I_L·cos φ',
     note: 'any balanced load; star V_L = √3·V_P, delta I_L = √3·I_P',
     latex: 'P = \\sqrt{3}\\, V_{L} I_{L} \\cos\\phi',
   },
   {
-    chapterId: 'elec-ch9',
-    section: '9.4',
+    chapterId: 'ee-e-circuits',
+    section: '2.34',
     name: 'Two-wattmeter power factor',
     formula: 'tan φ = √3·(W₂ − W₁)/(W₂ + W₁)',
     note: 'total power is always W₁ + W₂; balanced load assumed here',

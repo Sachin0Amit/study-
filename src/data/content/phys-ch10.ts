@@ -11,7 +11,7 @@ import type { FormulaEntry } from '../formulas'
 export const physCh10Content: SectionContent[] = [
   // ------------------------------------------------------------------ 10.1
   {
-    sectionId: 'phys-ch10-s1',
+    sectionId: 'hall-ch19-s23',
     readingTime: 11,
     intro: '“All things are made of atoms” was the sentence Feynman would rescue on the desert island in Chapter 1; now we cash it in. Matter is too complicated to solve directly from Newton’s laws — it takes probability, and eventually quantum mechanics — but one chain of reasoning goes all the way through: molecules bang, pressure results, temperature is the average kinetic energy, and the ideal gas law $PV = NkT$ falls out before we have looked inside a single atom.',
     objectives: [
@@ -178,7 +178,7 @@ export const physCh10Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 10.2
   {
-    sectionId: 'phys-ch10-s2',
+    sectionId: 'hall-ch19-s24',
     readingTime: 11,
     intro: 'Statistical mechanics asks two questions: how are molecules distributed in space when forces act on them, and how are they distributed in velocity? The answers are astonishingly clean — space arrangements follow Boltzmann’s exponential $e^{-\\text{P.E.}/kT}$, velocities follow the same law in kinetic energy, and every quadratic term earns $\\tfrac{1}{2}kT$. Then experiment delivers the historical slap: the specific heats of hydrogen and oxygen refuse to obey, and the crack that opens is the one quantum mechanics eventually fills.',
     objectives: [
@@ -344,7 +344,7 @@ export const physCh10Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 10.3
   {
-    sectionId: 'phys-ch10-s3',
+    sectionId: 'hall-ch19-s25',
     readingTime: 12,
     intro: 'Watch a speck of dust under a microscope and you are watching molecules: the speck jiggles because it is being kicked by things too small to see, and its wanderings carry, in one measurable number, the size of atoms. Between Einstein’s 1905 analysis and Feynman’s retelling, this section connects Brownian motion to mobility, diffusion, evaporation, hot filaments and ionized stars — kinetic theory doing real laboratory and astronomical work.',
     objectives: [
@@ -661,7 +661,7 @@ export const physCh10Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 10.5
   {
-    sectionId: 'phys-ch10-s5',
+    sectionId: 'hall-ch20-s16',
     readingTime: 12,
     intro: 'Can a machine turn one-way on molecular chaos? Bolt the vanes of a windmill into a box of gas, gear the axle to a ratchet and pawl, and — so the daydream goes — the Brownian jiggling winds the wheel forever, lifting fleas for free. Feynman’s dissection of this gadget is the most elementary proof of the second law we possess: every step is just $e^{-\\epsilon/kT}$ bookkeeping, yet out of it come Carnot’s efficiency, the rectifier curve, Maxwell’s demon’s failure, and the arrow of time itself.',
     objectives: [
@@ -863,64 +863,56 @@ export const physCh10Content: SectionContent[] = [
 
 export const physCh10Formulas: FormulaEntry[] = [
   {
-    chapterId: 'phys-ch10',
-    section: '10.1',
+    chapterId: 'hall-ch19',
+    section: '19.23',
     name: 'Ideal gas law',
     formula: 'PV = NkT',
     latex: 'PV = NkT',
     note: 'N = atoms; k = 1.38×10⁻²³ J/K; in moles PV = nRT, R = 8.317 J/mol·K',
   },
   {
-    chapterId: 'phys-ch10',
-    section: '10.1',
+    chapterId: 'hall-ch19',
+    section: '19.23',
     name: 'Equipartition / temperature',
     formula: '⟨½mv²⟩ = (3/2)kT; ½kT per direction',
     latex: '\\left\\langle \\tfrac{1}{2}mv^2 \\right\\rangle = \\tfrac{3}{2}kT',
     note: 'defines the Kelvin scale; equal average KE for all gases at one T',
   },
   {
-    chapterId: 'phys-ch10',
-    section: '10.1',
+    chapterId: 'hall-ch19',
+    section: '19.23',
     name: 'Adiabatic compression',
     formula: 'PVᵞ = C (γ = 5/3 monatomic)',
     latex: 'PV^{\\gamma} = C, \\qquad TV^{\\gamma - 1} = C',
     note: 'no heat exchange; a squeezed gas heats — the engine stroke',
   },
   {
-    chapterId: 'phys-ch10',
-    section: '10.2',
+    chapterId: 'hall-ch19',
+    section: '19.24',
     name: 'Boltzmann distribution',
     formula: 'n = n₀·exp(−U/kT)',
     latex: 'n = n_0\\,e^{-U/kT}',
     note: 'probability falls exponentially with potential energy; mgh for the atmosphere',
   },
   {
-    chapterId: 'phys-ch10',
-    section: '10.2',
+    chapterId: 'hall-ch19',
+    section: '19.24',
     name: 'Maxwell speed distribution',
     formula: 'f(u) = √(m/2πkT)·exp(−mu²/2kT)',
     latex: 'f(u) = \\sqrt{\\frac{m}{2\\pi kT}}\\ e^{-mu^2/2kT}',
     note: 'one velocity component; the three multiply to a function of v² alone',
   },
   {
-    chapterId: 'phys-ch10',
-    section: '10.3',
+    chapterId: 'hall-ch19',
+    section: '19.25',
     name: 'Einstein’s Brownian displacement',
     formula: '⟨R²⟩ = 6kTt/μ',
     latex: '\\langle R^2 \\rangle = \\frac{6kTt}{\\mu}',
     note: 'watch a speck under a microscope and weigh Avogadro’s number',
   },
   {
-    chapterId: 'phys-ch10',
-    section: '10.4',
-    name: 'Carnot efficiency',
-    formula: 'η = W/Q₁ = (T₁ − T₂)/T₁',
-    latex: '\\eta = \\frac{W}{Q_1} = \\frac{T_1 - T_2}{T_1}, \\qquad \\frac{Q_1}{T_1} = \\frac{Q_2}{T_2}',
-    note: 'reversible engines only; a property of the temperatures, not the substance',
-  },
-  {
-    chapterId: 'phys-ch10',
-    section: '10.5',
+    chapterId: 'hall-ch20',
+    section: '20.16',
     name: 'Entropy (statistical and thermodynamic)',
     formula: 'S = k ln W; dS = dQ/T',
     latex: 'S = k\\ln W, \\qquad dS = \\frac{dQ}{T}',

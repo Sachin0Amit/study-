@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const commemCh03Content: SectionContent[] = [
   // ---------------------------------------------------------------- 3.1
   {
-    sectionId: 'commem-ch3-s1',
+    sectionId: 'ece-e-digital-comm-s7',
     readingTime: 9,
     intro: 'Pulse-code modulation turns voice into bits by sampling fast enough, rounding each sample, and coding the levels in binary. Quantization adds a sawtooth error whose power sets the familiar six-decibel-per-bit rule. This section sizes rates, noise and companding for telephony-grade speech.',
     objectives: [
@@ -106,7 +106,7 @@ export const commemCh03Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.2
   {
-    sectionId: 'commem-ch3-s2',
+    sectionId: 'ece-e-digital-comm-s8',
     readingTime: 10,
     intro: 'Digital symbols ride on amplitude, phase or frequency shifts of the carrier while quadrature mixes carry two bits at once in one constellation. Spacing between points sets error resistance and bits per symbol set spectral thrift. This section compares four classic families and their coherent costs.',
     objectives: [
@@ -204,7 +204,7 @@ export const commemCh03Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.3
   {
-    sectionId: 'commem-ch3-s3',
+    sectionId: 'ece-e-digital-comm-s9',
     readingTime: 9,
     intro: 'Pulses sent faster than the channel allows smear into neighbors and create intersymbol interference at sampling instants. Zero-crossing pulse shapes remove that smear while wider excess bandwidth eases timing sensitivity. This section applies the Nyquist zero-ISI rule and previews equalization for real channels.',
     objectives: [
@@ -302,7 +302,7 @@ export const commemCh03Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.4
   {
-    sectionId: 'commem-ch3-s4',
+    sectionId: 'ece-e-digital-comm-s10',
     depth: [
       {
         tier: 'masters',

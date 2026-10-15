@@ -18,7 +18,7 @@ import type { FormulaEntry } from '../formulas'
 export const physCh8Content: SectionContent[] = [
   // ------------------------------------------------------------------ 8.1
   {
-    sectionId: 'phys-ch8-s1',
+    sectionId: 'hall-ch34-s28',
     readingTime: 10,
     intro: 'Geometrical optics is the first approximation of light: wavelengths so small, and photon energies so feeble, compared with the apparatus and the detector, that light can be treated as rays that simply go from place to place. Within this "chapter we shall have to unlearn" (Feynman’s own warning), one idea organizes everything — out of all possible paths from A to B, light takes the one that takes the least time. From that single statement fall the law of reflection, Snell’s law, the shapes of lenses and telescope mirrors, and the mirage on a hot road.',
     objectives: [
@@ -184,7 +184,7 @@ export const physCh8Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 8.2
   {
-    sectionId: 'phys-ch8-s2',
+    sectionId: 'hall-ch34-s29',
     readingTime: 11,
     intro: 'Now the principle is put to work: what shapes actually focus light, and what do simple instruments do? The whole of elementary lens theory needs one piece of geometry (the small sagitta $\\Delta \\approx h^2/2s$) plus the equal-time idea — out come the surface formula, the lens equation, magnification, and the recipe for chasing images through any number of lenses. And just as the machinery starts to feel perfect, we hit the wall: ray optics cannot beat the wavelength of the light itself.',
     objectives: [
@@ -345,7 +345,7 @@ export const physCh8Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 8.3
   {
-    sectionId: 'phys-ch8-s3',
+    sectionId: 'hall-ch35-s15',
     readingTime: 11,
     intro: 'With Maxwell’s synthesis, light stopped being a mystery and became a consequence of electricity: the fields of oscillating charges, radiating outward forever. The key surprise is that the radiation field falls off as $1/r$, not $1/r^2$ — which is why the universe is knit together and a galaxy five billion light years away can still tickle a radio dish. With two such radiators side by side, every interference phenomenon of optics appears.',
     objectives: [
@@ -511,7 +511,7 @@ export const physCh8Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 8.4
   {
-    sectionId: 'phys-ch8-s4',
+    sectionId: 'hall-ch36-s17',
     readingTime: 12,
     intro: 'Diffraction is just interference with many participants — and once the arithmetic of $n$ oscillators is in hand, gratings, resolving powers, the refractive index of glass, the width of spectral lines, the blueness of the sky, and the laws of polarization all fall out of the same small toolkit of added arrows. Feynman closes the optical journey where physics meets biology: the eye itself, whose rod cells count single quanta of light and whose insect counterpart is sized by the diffraction limit.',
     objectives: [
@@ -677,64 +677,64 @@ export const physCh8Content: SectionContent[] = [
 
 export const physCh8Formulas: FormulaEntry[] = [
   {
-    chapterId: 'phys-ch8',
-    section: '8.1',
+    chapterId: 'hall-ch34',
+    section: '33.28',
     name: 'Snell\u2019s law',
     formula: 'sin θᵢ = n sin θᵣ',
     note: 'n is the ratio of speeds, v_air/v_water',
     latex: '\\sin\\theta_i = n\\sin\\theta_r',
   },
   {
-    chapterId: 'phys-ch8',
-    section: '8.2',
+    chapterId: 'hall-ch34',
+    section: '33.29',
     name: 'Thin lens equation',
     formula: '1/s + 1/s′ = 1/f',
     note: 'with 1/f = (n−1)(1/R₁ − 1/R₂); Newton form xx′ = f²',
     latex: '\\frac{1}{s} + \\frac{1}{s\'} = \\frac{1}{f}',
   },
   {
-    chapterId: 'phys-ch8',
-    section: '8.3',
+    chapterId: 'hall-ch35',
+    section: '34.15',
     name: 'Radiation field of a charge',
     formula: 'E = −qa(t − r/c)sinθ / 4πε₀c²r',
     note: 'retarded transverse acceleration; falls as 1/r',
     latex: 'E = \\frac{-q\\,a(t - r/c)\\sin\\theta}{4\\pi\\epsilon_0 c^2 r}',
   },
   {
-    chapterId: 'phys-ch8',
-    section: '8.3',
+    chapterId: 'hall-ch35',
+    section: '34.15',
     name: 'Two-source interference',
     formula: 'I = 4I₀cos²(½(α + 2πd sinθ/λ))',
     note: 'equal sources; Δφ = α + 2πd sinθ/λ',
     latex: 'I = 4I_0\\cos^2\\tfrac{1}{2}\\left(\\alpha + \\frac{2\\pi d\\sin\\theta}{\\lambda}\\right)',
   },
   {
-    chapterId: 'phys-ch8',
-    section: '8.4',
+    chapterId: 'hall-ch36',
+    section: '35.17',
     name: 'Grating maxima',
     formula: 'd sinθ = mλ,  Δλ/λ = 1/mn',
     note: 'm order, n lines; resolving power = mn',
     latex: 'd\\sin\\theta = m\\lambda',
   },
   {
-    chapterId: 'phys-ch8',
-    section: '8.4',
+    chapterId: 'hall-ch36',
+    section: '35.17',
     name: 'Index of refraction (dispersion)',
     formula: 'n = 1 + Nqₑ² / 2ε₀m(ω₀² − ω²)',
     note: 'driven electron oscillators; damping makes n complex',
     latex: 'n = 1 + \\frac{Nq_e^2}{2\\epsilon_0 m(\\omega_0^2 - \\omega^2)}',
   },
   {
-    chapterId: 'phys-ch8',
-    section: '8.4',
+    chapterId: 'hall-ch36',
+    section: '35.17',
     name: 'Radiated power of an accelerated charge',
     formula: 'P = q²a² / 6πε₀c³',
     note: 'oscillator: P = q²ω⁴x₀²/12πε₀c³',
     latex: 'P = \\frac{q^2a_0^2}{6\\pi\\epsilon_0 c^3}',
   },
   {
-    chapterId: 'phys-ch8',
-    section: '8.4',
+    chapterId: 'hall-ch36',
+    section: '35.17',
     name: 'Malus\u2019s law (polarizer)',
     formula: 'I = I₀cos²θ',
     note: 'θ between polarization and pass axis; Brewster: reflected ⊥ refracted',

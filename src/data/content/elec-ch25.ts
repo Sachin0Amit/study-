@@ -13,7 +13,7 @@ import type { SectionContent } from '../library'
 export const elecCh25Content: SectionContent[] = [
   // ------------------------------------------------------------------ 25.1
   {
-    sectionId: 'elec-ch25-s1',
+    sectionId: 'ece-e-devices-s37',
     readingTime: 7,
     intro: 'The npn transistor of Figure 6.1 stacks emitter, base and collector as n-p-n silicon, with a thin lightly doped base between a heavily doped emitter and a large collector. Forward bias on the emitter-base junction launches electrons toward the collector while reverse bias on the collector-base junction sweeps them in — the active mode that amplifies. The four combinations of junction bias define cutoff, active, saturation and inverse modes, and the terminal voltages always betray which one holds.',
     objectives: [
@@ -118,7 +118,7 @@ export const elecCh25Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 25.2
   {
-    sectionId: 'elec-ch25-s2',
+    sectionId: 'ece-e-devices-s38',
     readingTime: 9,
     intro: 'The collector current obeys $i_{C} = I_{S}e^{v_{BE}/V_{T}}$ with $I_{S}$ near $10^{-15}$ A, so $0.69$ V supports $1$ mA in Example 6.1 and each decade of current costs $60$ mV. Terminal currents split by $\\alpha = \\beta/(\\beta + 1)$, the Ebers-Moll model unifies all modes through coupled diodes, and the Early effect tilts every curve toward the intercept $-V_{A}$. Exercise 6.44 prices that tilt: $V_{A} = 40$ V gives $r_{o} = 40$ k$\\Omega$ at $1$ mA and $400$ k$\\Omega$ at $100$ $\\mu$A.',
     objectives: [
@@ -224,7 +224,7 @@ export const elecCh25Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 25.3
   {
-    sectionId: 'elec-ch25-s3',
+    sectionId: 'ece-e-devices-s39',
     readingTime: 9,
     intro: 'Biasing a BJT means planting $I_{C}$ with $V_{CE}$ parked safely above $0.3$ V, and Example 6.2 shows the discrete recipe: emitter degeneration $R_{E}$ stabilizes the current while $R_{C}$ sets the collector voltage. With $\\pm 15$ V rails, $\\beta = 100$ and $0.7$ V at $1$ mA, the design lands $2$ mA at $V_{C} = +5$ V through $R_{C} = 5$ k$\\Omega$ and $R_{E} = 7.07$ k$\\Omega$. Fixed base resistance works too, but its $Q$ rides every $\\beta$ spread — the stability factor story of this section.',
     objectives: [
@@ -329,7 +329,7 @@ export const elecCh25Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 25.4
   {
-    sectionId: 'elec-ch25-s4',
+    sectionId: 'ece-e-devices-s40',
     readingTime: 8,
     intro: 'Around $Q$ the BJT linearizes to $g_{m} = I_{C}/V_{T}$ feeding $r_{\\pi} = \\beta/g_{m}$ at the input and $r_{o} = V_{A}/I_{C}$ at the output — $40$ mS, $2.5$ k$\\Omega$ and $100$ k$\\Omega$ at $1$ mA with $\\beta = 100$ and $V_{A} = 100$ V. Hybrid-pi and T circuits arrange these identically: base current through $r_{\\pi}$ or emitter current through $r_{e} = 1/g_{m} = 25$ $\\Omega$. Junction capacitances $C_{\\pi}$ and $C_{\\mu}$ then preview the high-frequency limits of Chapter 9 in Sedra/Smith numbering.',
     objectives: [

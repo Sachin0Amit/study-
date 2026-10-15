@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const commemCh06Content: SectionContent[] = [
   // ---------------------------------------------------------------- 6.1
   {
-    sectionId: 'commem-ch6-s1',
+    sectionId: 'ece-e-antennas-s6',
     readingTime: 10,
     intro: 'A transmission line distributes inductance and capacitance along its length, so voltage and current obey wave equations rather than lumped rules. Characteristic impedance and reflection coefficient then predict every standing pattern. This section derives those two quantities and reads the resulting waveforms.',
     objectives: [
@@ -106,7 +106,7 @@ export const commemCh06Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 6.2
   {
-    sectionId: 'commem-ch6-s2',
+    sectionId: 'ece-e-antennas-s7',
     depth: [
       {
         tier: 'masters',
@@ -230,7 +230,7 @@ export const commemCh06Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 6.3
   {
-    sectionId: 'commem-ch6-s3',
+    sectionId: 'ece-e-antennas-s8',
     readingTime: 10,
     intro: 'Hollow pipes and glass strands both guide waves, but by different physics: metal walls quantize transverse patterns while total internal bouncing traps light in a core. Cutoff separates traveling modes from decaying ones. This section sizes those thresholds and the single-mode windows above them.',
     objectives: [
@@ -328,7 +328,7 @@ export const commemCh06Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 6.4
   {
-    sectionId: 'commem-ch6-s4',
+    sectionId: 'ece-e-antennas-s9',
     readingTime: 9,
     intro: 'Short current elements radiate doughnut-shaped patterns whose strength follows simple sine laws. Real dipoles stretch that element toward resonance while arrays add patterned interference through their spacing. Gain and directivity then score how tightly each structure focuses power.',
     objectives: [

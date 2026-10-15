@@ -192,7 +192,7 @@ export const ewenCh6Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch6-s3',
+    sectionId: 'hall-ch9-s16',
     readingTime: 6,
     intro: "Equal-mass collisions in a plane have a beautiful signature: the fragments separate at right angles. This section proves that result from conservation laws and applies component-wise momentum.",
     objectives: [

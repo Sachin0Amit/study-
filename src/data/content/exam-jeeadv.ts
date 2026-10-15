@@ -22,7 +22,7 @@ import type { SectionContent } from '../library'
 export const jeeadvContent: SectionContent[] = [
   // ---------------------------------------------------------------- 11.3 (Physics)
   {
-    sectionId: 'phys-a11-s3',
+    sectionId: 'hall-ch19-s22',
     readingTime: 12,
     prerequisites: [
       'The ideal gas equation $PV = nRT$ and the absolute temperature scale (phys-a11-s1)',
@@ -236,7 +236,7 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 20.2 (Physics)
   {
-    sectionId: 'phys-a20-s2',
+    sectionId: 'hall-ch40-s22',
     readingTime: 13,
     prerequisites: [
       'Coulomb\'s law and centripetal force for circular motion (phys-a12-s1, phys-a2-u6 circular motion basics)',
@@ -450,7 +450,7 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 15.2 (Chemistry)
   {
-    sectionId: 'chem-a15-s2',
+    sectionId: 'chem-ch13-s22',
     readingTime: 12,
     prerequisites: [
       'Gibbs energy $\\Delta G = \\Delta H - T\\Delta S$ and the criterion of spontaneity (chem-a5-s6)',
@@ -557,7 +557,7 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 15.4 (Chemistry)
   {
-    sectionId: 'chem-a15-s4',
+    sectionId: 'chem-ch13-s24',
     readingTime: 13,
     prerequisites: [
       'Solubility product and the common-ion effect (chem-a6-s4)',
@@ -664,7 +664,7 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 18.2 (Chemistry)
   {
-    sectionId: 'chem-a18-s2',
+    sectionId: 'chem-ch9-s17',
     readingTime: 11,
     prerequisites: [
       'Structure of benzene and the mechanism of electrophilic aromatic substitution (chem-a18-s1)',
@@ -771,7 +771,7 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 12.6 (Maths)
   {
-    sectionId: 'math-a12-s6',
+    sectionId: 'calc-ch3-s16',
     readingTime: 12,
     prerequisites: [
       'Derivatives of standard functions and the chain rule (math-a12-s1, math-a12-s2)',
@@ -878,7 +878,7 @@ export const jeeadvContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 13.5 (Maths)
   {
-    sectionId: 'math-a13-s5',
+    sectionId: 'calc-ch5-s8',
     readingTime: 13,
     prerequisites: [
       'Indefinite integration by substitution, partial fractions and by parts (math-a13-s2, math-a13-s3)',

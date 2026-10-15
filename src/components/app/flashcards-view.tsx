@@ -60,10 +60,9 @@ interface CardSrs {
 
 type DeckMode = 'due' | 'all'
 
-/** "rosen-ch10-s6" → "rosen-ch10" (prefix-safe: ch10 is NOT confused with ch1) */
+/** "rosen-ch10-s6" → "rosen-ch10" (matches the trailing -sN, never a mid-id hyphen) */
 function chapterIdOf(sectionId: string): string {
-  const i = sectionId.indexOf('-s')
-  return i > 0 ? sectionId.slice(0, i) : sectionId
+  return sectionId.replace(/-s\d+$/, '')
 }
 
 function buildDeck(chapterId?: string): Flashcard[] {
@@ -72,7 +71,7 @@ function buildDeck(chapterId?: string): Flashcard[] {
     const chapter = LIBRARY_CHAPTERS.find((c) => c.id === chapterIdOf(content.sectionId))
     if (!chapter) continue
     if (chapterId && chapter.id !== chapterId) continue
-    const sectionNum = Number(content.sectionId.split('-s')[1])
+    const sectionNum = Number(/-s(\d+)$/.exec(content.sectionId)?.[1] ?? 0)
     for (const c of content.concepts) {
       cards.push({
         key: `${content.sectionId}::${c.term}`,

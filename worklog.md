@@ -467,3 +467,43 @@ Stage Summary:
 ## 3. Unresolved issues / risks + next-phase priorities
 - RISKS: (1) watchdog must be restarted if the box reboots it away — check `ps aux | grep watchdog` when the server is down; (2) first-visit compiles can OOM — always curl-pre-warm; (3) agent-browser innerText audits must be case-insensitive (CSS uppercase) and word-boundary based ("FUNDAMENTALS" contains NTA)
 - NEXT PRIORITIES: (a) write more SectionContent for sections still on Syllabus Topic Briefs (~1,600 remain; the highest-value targets are the merged subject chapters' first sections), (b) dedupe overlapping chapters (OS/networks/DBMS appear in semester + graduate + defence scopes within cse-complete), (c) deeper simulator review analytics (time-per-question heat map exists; could add per-topic weak-spot drill), (d) print stylesheet for the practice-set picker is unnecessary but lesson print styles could gain page-break tuning
+
+---
+Task ID: 12
+Agent: main-orchestrator
+Task: USER REQUEST — deduplicate all repeated topics inside every library subject; merge Engineering Chemistry/Maths into their home subjects as chapters (not separate); make the CSE curriculum strictly subject-wise (TOC/COA/electrical/python etc. as chapters inside the main subjects, not scattered standalone subjects); same for all branches; push to GitHub
+
+Work Log:
+- Read worklog + full inventory (18 subjects / 24 books / 826 chapters / 4,067 sections); dumped every chapter/section title for merge analysis (scripts/inventory.ts, scripts/dump-sections.ts)
+- Wrote scripts/consolidate.ts — a one-shot migration encoding a full cluster/route map:
+  · 18 subjects → 9 subjects (Mathematics, Physics, Chemistry, English, Aptitude, CSE, ECE, EE, ME), ONE book each
+  · Dissolved the 9 standalone textbook subjects: silberschatz-osc10 (15 ch), clrs-alg3 (39), stroustrup-cpp4 (44), flanagan-js7 (17), webdev-complete (26), dbms-complete (8), cn-complete (8), compcoa-complete (10), horstmann-java12 (12) → chapters of cse-complete; mano-dld (12) → cse-complete; elec-master 30 + sigctrl 6 + commem 6 → split between ece-complete and ee-complete by topic
+  · Merged engmath-complete (24 ch) + jeemaths-complete (16 ch) into math-master — ONE mathematics book; engmath-ch14 (graph optimization) merged into rosen-ch10
+  · Removed first-year common chapters from ALL branch books (Engg Maths I/II/III, Engg Physics, Engg Chemistry, Basic Electrical, Basic Electronics, Graphics, Mechanics, Programming in C, Numerical Methods); unique applied topics routed home: lasers/fiber optics → NEW phys-lasers chapter; water/corrosion/fuels/polymers/lubricants/nanomaterials/green chemistry → NEW chem-engg chapter; series solutions + calculus of variations → engmath keepers; lattices/algebraic structures → rosen-ch9
+  · Centralized cross-branch domains: signals & systems, EM field theory, control (incl. modern control), analog/digital electronics, microprocessors → ECE/CSE; electric circuits, machines, power, renewables (absorbed ME renewable), switchgear → EE; graphics, mechanics → ME; image processing, IoT → CSE
+  · Merged all graduate/defence scope chapters (cse-g1..g11, cse-d1..d13, ece-d*, ee-d*, me-d*) into their canonical semester chapters with per-section routing
+  · Physics consolidated from 200 → 47 canonical topic chapters (Halliday backbone + Young/Ewen/Coletta/Feynman/entrance-scope merged with fuzzy title dedupe, jaccard ≥ 0.6 / subset, content-bearing sections protected at ≥ 0.75, content-bearing beats content-less via slot swap)
+  · Chemistry consolidated from 87 → 45 chapters (chem-ch + m/a scopes merged); Mathematics 104 → 69 (rosen + calc + merged algebra block + applied skills + engmath)
+- Result: 441 chapters · 3,438 sections · 2,100 live content lessons · 8,798 quiz questions · 1,908 formulas (all retargeted)
+- Fixed pre-existing bugs found during migration: exam-view POOL + flashcards chapterIdOf used split('-s')[0] which broke for chapter ids containing '-s' (math-s1, apt-s1, cse-e-se, ece-e-signals, me-e-som, ee-e-switchgear, ece-e-speech-biomed, ee-e-special-machines) → now regex /-s\d+$/; section numbers renumbered to integer ordinals (fixes the ewen-ch17 duplicate-numbering bug, e.g. two "17.1" sections); scrub artifact "Air Conditioning & the recruitment cell Equipment" → "Air Conditioning Equipment & Systems"; stale watchdog lock dir could block restarts forever → added >90s stale-lock guard
+- Retargeting machinery: keeper chapters keep ids + section order (formula jump-links stay valid); moved/renamed sections got new sequential ids; 1,317 id mappings applied to content files (94 patched) and formula files (retarget 429+174+38, dropped 113 duplicate-section formulas); content/index.ts now filters allContent to live section ids so dropped duplicates cannot leak into quiz pools/flashcards/stats
+- UI updates: SET_META practice-set cards for the 9 consolidated subjects; homepage stats (3,438 lessons · 60 labs · 8,798 quiz questions · 441 chapters · 9 books · 9 subjects); removed silberschatz ternaries in page.tsx/library-view; "Abandon this exam?" → "Abandon this test?"; book/subject descriptions rewritten for the consolidated structure
+- Deleted 21 superseded library-parts files + exams folder (replaced by library-parts/merged/*.ts, 9 files)
+
+Stage Summary:
+
+## 1. Current project status (assessment)
+- StudyVerse is now STRICTLY SUBJECT-WISE: 9 subjects, one deduplicated master book each — Mathematics 69 ch/468 s, Physics 47/913, Chemistry 45/354, English 5/15, Aptitude 4/24, CSE 207/1,014, ECE 23/307, EE 18/173, ME 23/170
+- ZERO topic repetition inside any subject: every chapter that covered the same area as another was merged (fuzzy section-level dedupe); graduate/defence scopes folded into semester chapters; first-year common subjects live only in their home subjects
+- Engineering Chemistry/Maths are chapters INSIDE the chemistry/mathematics books (chem-engg chapter + engmath block), not separate books — exactly as requested
+- TOC, COA, digital logic, OS, DBMS, networks, algorithms, C++, Java, JavaScript, web dev, Python, electrical topics etc. are all CHAPTERS inside CSE/ECE/EE — no standalone mini-subjects remain
+
+## 2. Goals / completed modifications / verification results
+- Goal: subject-wise dedup consolidation + push to GitHub
+- Completed: full migration (scripts/consolidate.ts + fix-formulas-quotes.ts), all data retargeting, UI stat/label updates, watchdog hardening, pre-existing parser bugs fixed
+- Verification: scripts/validate-consolidated.ts → ALL CHECKS PASSED (referential integrity, dense numbering, 0 orphan content, 8,798 valid quiz questions, all 1,908 formulas resolve, zero exam names word-boundary audited, no scrub artifacts); bunx tsc --noEmit clean; bun run lint clean; browser QA (agent-browser, memory-careful protocol): home renders 9 subjects + correct stats, math book 69 ch with merged sections visible (Graphs 12 s, Relations 7 s incl. lattices), chapter view §-ordinals + NEXT UP, lesson 1.1 full content + quiz answered with correct feedback, test simulator 9 practice sets with deduplicated pools (Math 1,683 Q · Physics 1,557 · Chem 796 · CSE 3,850 · EE 286), chemistry set started → question rendered from consolidated book, quit dialog works, CSE book 207 chapters clean, mobile 390px no horizontal overflow
+- Environment note: browser-open OOM-kills next-server (4 GB box); hardened watchdog auto-recovers in ≤45 s; stale ChunkLoadError after a mid-session restart clears on reload (not a bug)
+
+## 3. Unresolved issues / risks + next-phase priorities
+- RISKS: (1) old bookmarked ?chapter=/?lesson= URLs for renamed/merged chapters no longer resolve (progress rows for dropped sections are stale — acceptable consequence of the requested dedup); (2) quiz bank shrank 10,571 → 8,798 because ~1,000+ duplicate-topic questions were intentionally removed with their duplicate sections; (3) ~1,340 sections (mostly merged branch chapters + new phys-lasers/chem-engg) have no written lesson content yet — they render as Syllabus Topic Briefs
+- NEXT PRIORITIES: (a) write SectionContent for the highest-value brief sections (C Programming 11 sections, Engineering Graphics, ME cores, the new Lasers & Fibres and Engineering Chemistry chapters); (b) phys-lasers is a 1-section chapter — consider writing 2–3 lesson sections (lasers, fibres, applications); (c) a "related subjects" cross-link on chapter views (e.g. circuits ↔ EM theory) could restore the cross-subject study paths that centralization removed; (d) GitHub push pending credentials (see task notes)

@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh12Content: SectionContent[] = [
   // ---------------------------------------------------------------- 12.1
   {
-    sectionId: 'advmath-ch12-s1',
+    sectionId: 'math-a5-s12',
     readingTime: 8,
     intro: 'Classical determinants are evaluated by hunting factors, not by brute expansion, with row and column moves that preserve or scale the value in known ways. Cyclic and symmetric forms surrender to the same few moves applied in the right order. This section builds that craftsmanship from factor detection to triangular evaluation.',
     objectives: [
@@ -113,7 +113,7 @@ export const jeemathsCh12Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 12.2
   {
-    sectionId: 'advmath-ch12-s2',
+    sectionId: 'math-a5-s13',
     readingTime: 8,
     intro: 'Elimination removes unknowns between equations until a single condition on parameters remains, called the eliminant or resultant. Symmetric elimination uses sums and products while dialytic methods build a larger linear system. This section practises both with extraneous root control.',
     objectives: [
@@ -218,7 +218,7 @@ export const jeemathsCh12Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 12.3
   {
-    sectionId: 'advmath-ch12-s3',
+    sectionId: 'math-a5-s14',
     readingTime: 9,
     intro: 'Symmetric functions stay fixed under any swap of variables while alternating functions flip sign under each swap. The Vandermonde product is the universal alternating factor and every alternating form is a symmetric multiple of it. This section evaluates those forms and links them to discriminants.',
     objectives: [
@@ -344,7 +344,7 @@ export const jeemathsCh12Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 12.4
   {
-    sectionId: 'advmath-ch12-s4',
+    sectionId: 'math-a5-s15',
     readingTime: 7,
     intro: 'Old style linear systems are solved by Cramer quotients of determinants, with zero denominators signalling either no solution or infinite solutions. Homogeneous systems have nontrivial solutions exactly when the coefficient determinant vanishes. This section drills those decisions by inspection.',
     objectives: [

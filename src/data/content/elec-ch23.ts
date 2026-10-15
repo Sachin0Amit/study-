@@ -14,7 +14,7 @@ import type { SectionContent } from '../library'
 export const elecCh23Content: SectionContent[] = [
   // ------------------------------------------------------------------ 23.1
   {
-    sectionId: 'elec-ch23-s1',
+    sectionId: 'ece-e-devices-s1',
     readingTime: 8,
     intro: 'Silicon conducts because heat frees a few electron-hole pairs — $1.5 \\times 10^{10}$ per cm$^{3}$ at room temperature — and doping then multiplies one carrier type by orders of magnitude. Current flows by drift in electric fields and by diffusion down concentration gradients, with the Einstein relation $D/\\mu = V_{T}$ tying the two. Joining p-type to n-type silicon sweeps the junction clean of carriers, leaving the depletion charge whose voltage $V_{0}$ sets every diode number that follows.',
     objectives: [
@@ -119,7 +119,7 @@ export const elecCh23Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 23.2
   {
-    sectionId: 'elec-ch23-s2',
+    sectionId: 'ece-e-devices-s30',
     readingTime: 8,
     intro: 'Forward bias subtracts from $V_{0}$ and releases the exponential $i = I_{S}e^{v/V_{T}}$, with $I_{S} = 6.9 \\times 10^{-16}$ A for the book 1-mA diode at $0.7$ V. Because the curve is so steep, hand analysis replaces it with the $0.7$ V constant-drop model, and tiny wiggles around the bias point see only the resistance $r_{d} = V_{T}/I_{D}$. Example 4.5 shows the payoff: $0.93$ mA of bias presents $26.9$ $\\Omega$ and shrinks $1$ V of supply ripple to $2.68$ mV.',
     objectives: [
@@ -224,7 +224,7 @@ export const elecCh23Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 23.3
   {
-    sectionId: 'elec-ch23-s3',
+    sectionId: 'ece-e-devices-s31',
     readingTime: 9,
     intro: 'Diodes become dc supplies in rectifier service: the half-wave stage passes one polarity with peak-inverse voltage equal to the full peak $V_{s}$, while the bridge of Figure 4.22 uses both halves and halves the diode stress. A reservoir capacitor then holds each peak, sagging by the ripple $V_{r} = I_{DC}/(2fC)$ for full-wave service between charging pulses. Sizing $C$ from allowed ripple is the central power-supply calculation.',
     objectives: [
@@ -330,7 +330,7 @@ export const elecCh23Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 23.4
   {
-    sectionId: 'elec-ch23-s4',
+    sectionId: 'ece-e-devices-s32',
     readingTime: 8,
     intro: 'The same diode that rectifies also sculpts: limiters clip waveform tops at designed levels, clampers shift entire waveforms to a chosen dc baseline, and breakdown diodes hold rails steady. Example 4.7 exercises a $6.8$ V zener at $5$ mA with $r_{z} = 20$ $\\Omega$, extracting $V_{Z0} = 6.7$ V, line regulation near $30$ mV per V, and load limits down to $1.42$ k$\\Omega$. Small-signal thinking from Section 23.2 prices every one of these behaviors.',
     objectives: [

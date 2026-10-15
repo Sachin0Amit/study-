@@ -16,7 +16,7 @@ import type { FormulaEntry } from '../formulas'
 export const physCh13Content: SectionContent[] = [
   // ------------------------------------------------------------------ 13.1
   {
-    sectionId: 'phys-ch13-s1',
+    sectionId: 'hall-ch33-s32',
     readingTime: 9,
     intro: 'Maxwell’s fix looks tiny — one extra term, $\\partial E/\\partial t$, added to the equation for the curl of B — but putting the four equations together produces something none of them contains alone: fields that leave their sources and travel through space by themselves. From two tabletop measurements of static electricity and magnetism, the speed of that travel falls out as $1/\\sqrt{\\mu_0\\epsilon_0}$, and it is the speed of light.',
     objectives: [
@@ -127,7 +127,7 @@ export const physCh13Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 13.2
   {
-    sectionId: 'phys-ch13-s2',
+    sectionId: 'hall-ch33-s33',
     readingTime: 11,
     intro: 'Between Lecture 19’s digression — the principle of least action, Mr. Bader’s gift to a bored high-school student — and the machinery of Lectures 20–21 lies the payoff of all of electromagnetism: plane waves, spherical waves, and the 1/r radiation field of an accelerating charge. The radio waves carrying music through your room, the light from a galaxy a billion light-years away, and the signal from Mariner II past Venus are all the same mathematics: the wave equation, its retarded solutions, and the dipole radiator.',
     objectives: [
@@ -261,7 +261,7 @@ export const physCh13Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 13.3
   {
-    sectionId: 'phys-ch13-s3',
+    sectionId: 'hall-ch31-s20',
     readingTime: 12,
     intro: 'Impedance is not an engineer’s trick — it is Maxwell’s equations in disguise. Feynman derives the complex impedance of L and C from Faraday’s law and the meaning of voltage, gets Kirchhoff’s rules from field theory, then pushes the frequency upward until lumped elements fail: a capacitor becomes a resonant can of fields, and a hollow pipe becomes a waveguide that carries light through plumbing.',
     objectives: [
@@ -407,7 +407,7 @@ export const physCh13Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 13.4
   {
-    sectionId: 'phys-ch13-s4',
+    sectionId: 'hall-ch33-s34',
     readingTime: 11,
     intro: 'Why does glass bend light, and why does it split white light into colors? Because its atoms are driven oscillators whose response depends on frequency. Feynman solves Maxwell’s equations inside matter with the polarizability $\\alpha(\\omega)$, obtains the refractive index and its absorption, follows the same theory into metals (skin depth, plasma frequency), and finishes at surfaces — where the amplitude and phase of reflected waves follow from nothing but continuity of the fields.',
     objectives: [
@@ -548,64 +548,64 @@ export const physCh13Content: SectionContent[] = [
 
 export const physCh13Formulas: FormulaEntry[] = [
   {
-    chapterId: 'phys-ch13',
-    section: '13.1',
+    chapterId: 'hall-ch33',
+    section: '32.32',
     name: 'Maxwell’s fourth equation (with displacement current)',
     formula: 'c²∇×B = j/ε₀ + ∂E/∂t',
     note: 'the added term makes the equation consistent with charge conservation',
     latex: 'c^{2}\\nabla \\times B = \\frac{j}{\\epsilon_0} + \\frac{\\partial E}{\\partial t}',
   },
   {
-    chapterId: 'phys-ch13',
-    section: '13.2',
+    chapterId: 'hall-ch33',
+    section: '32.33',
     name: 'Plane-wave field ratio',
     formula: 'E = cB',
     note: 'with E ⊥ B ⊥ direction of propagation; front speed c',
     latex: 'E = cB',
   },
   {
-    chapterId: 'phys-ch13',
-    section: '13.2',
+    chapterId: 'hall-ch33',
+    section: '32.33',
     name: 'Retarded potentials (general solution)',
     formula: 'φ(1,t) = ∫ ρ(2, t − r₁₂/c) dV₂ / 4πε₀r₁₂',
     note: 'same form for A with source j/ε₀c²; influences travel at c',
     latex: '\\phi(1, t) = \\int \\frac{\\rho(2,\\, t - r_{12}/c)}{4\\pi\\epsilon_0 r_{12}}\\, dV_2',
   },
   {
-    chapterId: 'phys-ch13',
-    section: '13.2',
+    chapterId: 'hall-ch33',
+    section: '32.33',
     name: 'Radiation field of an accelerated charge',
     formula: 'E = q·a⊥(t − r/c) / 4πε₀c²r',
     note: 'the 1/r term; only acceleration radiates, with cB = êr×E',
     latex: 'E = \\frac{q\\,a_{\\perp}(t - r/c)}{4\\pi\\epsilon_0c^{2}r}',
   },
   {
-    chapterId: 'phys-ch13',
-    section: '13.3',
+    chapterId: 'hall-ch31',
+    section: '31.20',
     name: 'Impedances of L and C',
     formula: 'z_L = iωL, z_C = 1/iωC, z_R = R',
     note: 'average dissipation = ½I₀²·Re(z); reactance stores energy',
     latex: 'z_L = i\\omega L, \\qquad z_C = \\frac{1}{i\\omega C}, \\qquad z_R = R',
   },
   {
-    chapterId: 'phys-ch13',
-    section: '13.3',
+    chapterId: 'hall-ch31',
+    section: '31.20',
     name: 'Cavity resonance and waveguide cutoff',
     formula: 'ω₀ = 2.405c/r; ω_c = πc/a',
     note: 'cylindrical can; rectangular guide propagates only above ωc',
     latex: '\\omega_0 = 2.405\\,\\frac{c}{r}, \\qquad \\omega_c = \\frac{\\pi c}{a}',
   },
   {
-    chapterId: 'phys-ch13',
-    section: '13.4',
+    chapterId: 'hall-ch33',
+    section: '32.34',
     name: 'Refractive index (dilute gas)',
     formula: 'n ≈ 1 + Nq²/2ε₀m(ω₀² − ω²)',
     note: 'dense matter: 3(n²−1)/(n²+2) = Nα (Clausius–Mossotti)',
     latex: 'n \\approx 1 + \\frac{Nq^{2}}{2\\epsilon_0 m(\\omega_0^{2} - \\omega^{2})}',
   },
   {
-    chapterId: 'phys-ch13',
-    section: '13.4',
+    chapterId: 'hall-ch33',
+    section: '32.34',
     name: 'Skin depth in a conductor',
     formula: 'δ = √(2ε₀c²/σω)',
     note: 'above the plasma frequency n² = 1 − (ωp/ω)² and metals clear',

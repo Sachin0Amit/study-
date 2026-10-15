@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const sigctrlCh05Content: SectionContent[] = [
   // ---------------------------------------------------------------- 5.1
   {
-    sectionId: 'sigctrl-ch5-s1',
+    sectionId: 'ece-e-control-s20',
     depth: [
       {
         tier: 'masters',
@@ -147,7 +147,7 @@ export const sigctrlCh05Content: SectionContent[] = [
 
   // ---------------------------------------------------------------- 5.2
   {
-    sectionId: 'sigctrl-ch5-s2',
+    sectionId: 'ece-e-control-s21',
     readingTime: 8,
     intro: 'Block diagrams turn algebra into pictures where series, parallel and feedback combinations collapse visually. Summing junctions and takeoff points slide with care to expose those patterns. Reduction ends with a single transfer between the chosen input and output.',
     objectives: [
@@ -256,7 +256,7 @@ export const sigctrlCh05Content: SectionContent[] = [
 
   // ---------------------------------------------------------------- 5.3
   {
-    sectionId: 'sigctrl-ch5-s3',
+    sectionId: 'ece-e-control-s22',
     readingTime: 10,
     intro: 'Signal-flow graphs replace blocks with branches so any topology reduces by one formula. Forward paths, loops and their touching relations feed Mason determinant directly. Careful enumeration is the whole battle: missed paths and miscounted non-touching sets are the classic slips.',
     objectives: [
@@ -409,7 +409,7 @@ export const sigctrlCh05Content: SectionContent[] = [
 
   // ---------------------------------------------------------------- 5.4
   {
-    sectionId: 'sigctrl-ch5-s4',
+    sectionId: 'ece-e-control-s23',
     readingTime: 9,
     intro: 'Transient specs describe how quickly and cleanly the step response settles, while error constants predict the residue for standard inputs. Damping regimes link pole positions to overshoot and speed in one picture. Together they turn transfer denominators into performance numbers.',
     objectives: [

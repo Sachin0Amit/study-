@@ -115,7 +115,7 @@ const CLUSTERS: Cluster[] = [
   { book: 'phys-master', keeper: 'phys-ch2', title: 'Probability in Physics', shortTitle: 'Probability' },
   { book: 'phys-master', keeper: 'hall-ch2', absorbs: ['young-ch2', 'coletta-ch1', 'coletta-ch2', 'ewen-ch4', 'phys-m2', 'phys-a2'], title: 'Motion in a Straight Line', shortTitle: 'Straight-Line Motion' },
   { book: 'phys-master', keeper: 'hall-ch4', absorbs: ['young-ch3', 'coletta-ch3'] },
-  { book: 'phys-master', keeper: 'hall-ch5', absorbs: ['hall-ch6', 'young-ch4', 'young-ch5', 'coletta-ch4', 'coletta-ch5', 'ewen-ch5', 'phys-m3', 'phys-a3', 'phys-m4', 'phys-a4'], title: 'Force and Motion', shortTitle: 'Force & Motion' },
+  { book: 'phys-master', keeper: 'hall-ch5', absorbs: ['hall-ch6', 'young-ch4', 'young-ch5', 'coletta-ch4', 'coletta-ch5', 'ewen-ch5', 'phys-m3', 'phys-a3', 'phys-m4'], title: 'Force and Motion', shortTitle: 'Force & Motion' },
   { book: 'phys-master', keeper: 'hall-ch7', absorbs: ['young-ch6', 'coletta-ch7', 'ewen-ch8'] },
   { book: 'phys-master', keeper: 'hall-ch8', absorbs: ['young-ch7'] },
   { book: 'phys-master', keeper: 'hall-ch9', absorbs: ['young-ch8', 'coletta-ch8', 'ewen-ch6', 'phys-a4'], title: 'Momentum & Collisions', shortTitle: 'Momentum' },
@@ -339,10 +339,11 @@ const NEW_CHAPTERS: NewChapter[] = [
   },
 ]
 
-// auto-add trivial clusters for remaining BOOK_ORDER ids
+// auto-add trivial clusters for remaining BOOK_ORDER ids (new chapters handled separately)
 const newIds = new Set(NEW_CHAPTERS.map((n) => n.id))
 for (const [book, order] of Object.entries(BOOK_ORDER)) {
   for (const id of order) {
+    if (newIds.has(id)) continue
     if (CLUSTERS.some((c) => c.keeper === id)) continue
     CLUSTERS.push({ keeper: id, book })
   }
@@ -351,6 +352,7 @@ for (const [book, order] of Object.entries(BOOK_ORDER)) {
 // validate clusters
 const absorbedBy = new Map<string, string>()
 for (const c of CLUSTERS) {
+  if (newIds.has(c.keeper)) continue
   const oldKeeper = resolveOld(c.keeper)
   if (!chById.has(oldKeeper)) console.error(`!! keeper not found: ${c.keeper}`)
   for (const a of c.absorbs ?? []) {
@@ -428,6 +430,7 @@ route(['phys-ch15-s3', 'phys-ch15-s4', 'phys-ch15-s5'], 'hall-ch40')
 route(['phys-a1-s5'], 'phys-m20')
 route(['phys-a2-s2', 'phys-a2-s3'], 'hall-ch4')
 route(['phys-m4-s4'], 'hall-ch9')
+route(['phys-a4-s1'], 'hall-ch7')
 route(['phys-a4-s2', 'phys-a4-s3', 'phys-a4-s4'], 'hall-ch9')
 route(['phys-m7-s1'], 'hall-ch12')
 route(['phys-m7-s2', 'phys-m7-s3', 'phys-m7-s4'], 'hall-ch14')

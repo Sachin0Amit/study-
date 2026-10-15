@@ -7,7 +7,7 @@ import type { SectionContent } from '../library'
 
 export const ewenCh2Content: SectionContent[] = [
   {
-    sectionId: 'ewen-ch2-s1',
+    sectionId: 'young-ch1-s27',
     readingTime: 5,
     intro: "Formulas are the working tools of applied physics: each one names a law in symbols. This section teaches you to read those symbols fluently so substitution later is mechanical and safe.",
     objectives: [
@@ -103,7 +103,7 @@ export const ewenCh2Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch2-s2',
+    sectionId: 'young-ch1-s28',
     readingTime: 6,
     intro: "Substitution is where right setups become right answers — or where dropped units hide errors. This section drills the Ewen habit: replace symbols with data-plus-units, cancel, compute, and round honestly.",
     objectives: [
@@ -192,7 +192,7 @@ export const ewenCh2Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch2-s3',
+    sectionId: 'young-ch1-s29',
     readingTime: 6,
     intro: "Top technicians solve problems the same way every time, so stress cannot scramble their thinking. This section formalizes the five-step Ewen routine and proves it on motion, force, and power problems.",
     objectives: [

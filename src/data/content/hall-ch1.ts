@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const hallCh1Content: SectionContent[] = [
   // ------------------------------------------------------------- 1.1
   {
-    sectionId: 'hall-ch1-s1',
+    sectionId: 'young-ch1-s11',
     readingTime: 6,
     intro: "What is physics? One honest answer: the craft of making carefully reasoned guesses about the world and testing them against careful measurements. Everything in this book — a sprinter's split times, the wavelength of light, the mass of a galaxy — begins here, with the discipline of measuring a quantity by comparing it to an agreed standard. This section installs the SI system, the chain-link method for changing units, and the significant-figure rules that keep computed results honest.",
     objectives: [
@@ -126,7 +126,7 @@ export const hallCh1Content: SectionContent[] = [
   },
   // ------------------------------------------------------------- 1.2
   {
-    sectionId: 'hall-ch1-s2',
+    sectionId: 'young-ch1-s12',
     readingTime: 5,
     intro: "What is physics? Time is the raw material of every motion law in this book, yet what time is and how long it takes are different questions. Physics needs the second kind — time intervals — and it gets them from clocks. This section asks what makes a good clock, how the SI second is defined, and how science reaches from the 10⁻¹⁵ s flashes of lasers to the 4 × 10¹⁷ s age of the universe.",
     objectives: [
@@ -242,7 +242,7 @@ export const hallCh1Content: SectionContent[] = [
   },
   // ------------------------------------------------------------- 1.3
   {
-    sectionId: 'hall-ch1-s3',
+    sectionId: 'young-ch1-s13',
     readingTime: 5,
     intro: "What is physics? Mass is the third pillar of measurement. Length locates events, time orders them, and mass tells how much matter is there to move. A balance compares an unknown mass against known ones — a procedure so robust it works identically in Tokyo, Toronto or the Moon's Sea of Tranquility. This section defines the kilogram, separates mass from weight, and introduces density — mass per volume — as the comparison tool for matter.",
     objectives: [

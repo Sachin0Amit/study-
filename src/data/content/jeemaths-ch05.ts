@@ -9,7 +9,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh05Content: SectionContent[] = [
   // ---------------------------------------------------------------- 5.1
   {
-    sectionId: 'advmath-ch5-s1',
+    sectionId: 'calc-ch11-s20',
     readingTime: 8,
     intro: 'An arithmetic progression adds a fixed $d$ while a geometric progression multiplies by a fixed $r$. Their $n$-th terms and sums $S_n$ answer almost every finite-series question once $a$, $d$ and $r$ are identified. This section locks the four formulae and their mean insertions.',
     objectives: [
@@ -107,7 +107,7 @@ export const jeemathsCh05Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 5.2
   {
-    sectionId: 'advmath-ch5-s2',
+    sectionId: 'calc-ch11-s21',
     readingTime: 8,
     intro: 'For positive numbers the chain $AM \\ge GM \\ge HM$ orders the three means with equality only at constancy. Harmonic progressions are arithmetic in reciprocal, so every HP question inverts first. This section applies the chain to minima, maxima and HP term recovery.',
     objectives: [
@@ -260,7 +260,7 @@ export const jeemathsCh05Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 5.3
   {
-    sectionId: 'advmath-ch5-s3',
+    sectionId: 'calc-ch11-s22',
     readingTime: 9,
     intro: 'Sums of $k$, $k^2$ and $k^3$ have closed polynomial forms that evaluate any polynomial series by linearity. When terms are differences $f(k+1) - f(k)$, the sum telescopes to endpoints. This section pairs power-sum formulae with difference recognition.',
     objectives: [
@@ -358,7 +358,7 @@ export const jeemathsCh05Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 5.4
   {
-    sectionId: 'advmath-ch5-s4',
+    sectionId: 'calc-ch11-s23',
     readingTime: 9,
     intro: 'An arithmetico-geometric series multiplies an AP by a GP termwise, and the multiply-subtract trick collapses its finite sum. Letting $n \\to \\infty$ with $|r| < 1$ kills the geometric tail and leaves a clean limit. This section handles both finite AGP sums and infinite tails.',
     objectives: [

@@ -787,7 +787,7 @@ export const gateCsContent: SectionContent[] = [
 
   // -------------------------------------------- 7.1 Regular Expressions & Finite Automata
   {
-    sectionId: 'cse-g7-s1',
+    sectionId: 'cse-e-toc-s7',
     readingTime: 10,
     prerequisites: [
       'Sets and set operations (languages are sets of strings)',

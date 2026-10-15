@@ -7,7 +7,7 @@ import type { SectionContent } from '../library'
 
 export const ewenCh3Content: SectionContent[] = [
   {
-    sectionId: 'ewen-ch3-s1',
+    sectionId: 'young-ch1-s30',
     readingTime: 5,
     intro: "Some quantities need only a size, but pushes, pulls, and trips need a direction too. This section draws the scalar-vector line and shows the arrow language every later force and motion chapter speaks.",
     objectives: [

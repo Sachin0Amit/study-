@@ -1,45 +1,26 @@
 // ============ Core type system for the StudyVerse platform ============
+//
+// SUBJECT-WISE CONSOLIDATED LIBRARY — 9 subjects, one book each:
+//   Mathematics · Physics · Chemistry · English · Aptitude ·
+//   Computer Science & Engineering · Electronics & Communication ·
+//   Electrical Engineering · Mechanical Engineering
+//
+// Every topic appears exactly once, in its home subject. Provenance (code
+// comment only — exam names intentionally absent from user-visible text per
+// product decision; see research/*.md): merged chapters researched from
+// official competitive-exam and university syllabi plus the classic textbooks
+// (Rosen, Stewart, Halliday, Young, Ewen, Coletta, Feynman, Silberschatz,
+// Mano, CLRS, Stroustrup, Horstmann, Flanagan, Hughes, Nilsson).
 
-import { CALC_CHAPTERS, CALC_SECTIONS } from './library-parts/calc'
-import { JS_CHAPTERS, JS_SECTIONS } from './library-parts/js'
-import { MANO_CHAPTERS, MANO_SECTIONS } from './library-parts/mano'
-import { ELEC_CHAPTERS, ELEC_SECTIONS } from './library-parts/electronics'
-import { PHYS_CHAPTERS, PHYS_SECTIONS } from './library-parts/physics'
-import { CLRS_CHAPTERS, CLRS_SECTIONS } from './library-parts/clrs'
-import { HALL_CHAPTERS, HALL_SECTIONS } from './library-parts/halliday'
-import { YOUNG_CHAPTERS, YOUNG_SECTIONS } from './library-parts/young'
-import { EWEN_CHAPTERS, EWEN_SECTIONS } from './library-parts/ewen'
-import { COLETTA_CHAPTERS, COLETTA_SECTIONS } from './library-parts/coletta'
-import { CPP_CHAPTERS, CPP_SECTIONS } from './library-parts/cpp'
-import { WEBDEV_CHAPTERS, WEBDEV_SECTIONS } from './library-parts/webdev'
-import { ENGMATH_CHAPTERS, ENGMATH_SECTIONS } from './library-parts/engmath'
-import { JEEMATHS_CHAPTERS, JEEMATHS_SECTIONS } from './library-parts/jeemaths'
-import { CHEM_CHAPTERS, CHEM_SECTIONS } from './library-parts/chem'
-import { DBMS_CHAPTERS, DBMS_SECTIONS } from './library-parts/dbms'
-import { CN_CHAPTERS, CN_SECTIONS } from './library-parts/cn'
-import { COMPCOA_CHAPTERS, COMPCOA_SECTIONS } from './library-parts/compcoa'
-import { SIGCTRL_CHAPTERS, SIGCTRL_SECTIONS } from './library-parts/sigctrl'
-import { COMMEM_CHAPTERS, COMMEM_SECTIONS } from './library-parts/commem'
-import { JAVA_CHAPTERS, JAVA_SECTIONS } from './library-parts/java'
-// ---- Exam syllabus libraries (JEE Main / JEE Advanced / SAT / DRDO / GATE / Engineering semesters) ----
-import { JEEMAIN_PHY_CHAPTERS, JEEMAIN_PHY_SECTIONS } from './library-parts/exams/jeemain-physics'
-import { JEEMAIN_CHEM_CHAPTERS, JEEMAIN_CHEM_SECTIONS } from './library-parts/exams/jeemain-chemistry'
-import { JEEMAIN_MATH_CHAPTERS, JEEMAIN_MATH_SECTIONS } from './library-parts/exams/jeemain-maths'
-import { JEEADV_PHY_CHAPTERS, JEEADV_PHY_SECTIONS } from './library-parts/exams/jeeadv-physics'
-import { JEEADV_CHEM_CHAPTERS, JEEADV_CHEM_SECTIONS } from './library-parts/exams/jeeadv-chemistry'
-import { JEEADV_MATH_CHAPTERS, JEEADV_MATH_SECTIONS } from './library-parts/exams/jeeadv-maths'
-import { SAT_MATH_CHAPTERS, SAT_MATH_SECTIONS } from './library-parts/exams/sat-math'
-import { SAT_RW_CHAPTERS, SAT_RW_SECTIONS } from './library-parts/exams/sat-rw'
-import { DRDO_T1_CHAPTERS, DRDO_T1_SECTIONS } from './library-parts/exams/drdo-tier1'
-import { DRDO_CSE_CHAPTERS, DRDO_CSE_SECTIONS } from './library-parts/exams/drdo-cse'
-import { DRDO_ECE_CHAPTERS, DRDO_ECE_SECTIONS } from './library-parts/exams/drdo-ece'
-import { DRDO_EE_CHAPTERS, DRDO_EE_SECTIONS } from './library-parts/exams/drdo-ee'
-import { DRDO_ME_CHAPTERS, DRDO_ME_SECTIONS } from './library-parts/exams/drdo-me'
-import { GATE_CS_CHAPTERS, GATE_CS_SECTIONS } from './library-parts/exams/gate-cs'
-import { ENGG_CSE_CHAPTERS, ENGG_CSE_SECTIONS } from './library-parts/exams/engg-cse'
-import { ENGG_ECE_CHAPTERS, ENGG_ECE_SECTIONS } from './library-parts/exams/engg-ece'
-import { ENGG_EE_CHAPTERS, ENGG_EE_SECTIONS } from './library-parts/exams/engg-ee'
-import { ENGG_ME_CHAPTERS, ENGG_ME_SECTIONS } from './library-parts/exams/engg-me'
+import { MATH_CHAPTERS, MATH_SECTIONS } from './library-parts/merged/math'
+import { PHYS_CHAPTERS, PHYS_SECTIONS } from './library-parts/merged/physics'
+import { CHEM_CHAPTERS, CHEM_SECTIONS } from './library-parts/merged/chemistry'
+import { ENGLISH_CHAPTERS, ENGLISH_SECTIONS } from './library-parts/merged/english'
+import { APT_CHAPTERS, APT_SECTIONS } from './library-parts/merged/aptitude'
+import { CSE_CHAPTERS, CSE_SECTIONS } from './library-parts/merged/cse'
+import { ECE_CHAPTERS, ECE_SECTIONS } from './library-parts/merged/ece'
+import { EE_CHAPTERS, EE_SECTIONS } from './library-parts/merged/ee'
+import { ME_CHAPTERS, ME_SECTIONS } from './library-parts/merged/me'
 
 export interface Subject {
   id: string
@@ -174,188 +155,82 @@ export const LIBRARY_SUBJECTS: Subject[] = [
     id: 'mathematics',
     name: 'Mathematics',
     slug: 'mathematics',
-    description:
-      'One unified mathematics curriculum — the complete Rosen discrete mathematics (logic, proofs, counting, graphs, computation) merged with the complete Stewart calculus sequence (limits through vector calculus). Every topic, nothing skipped.',
+    description: 'The complete mathematics path — logic, proofs, discrete structures, the full calculus sequence, classical algebra, probability and statistics, and the engineering mathematics sequence from linear algebra to transforms and numerical methods.',
     icon: 'sigma',
     accent: '#10b981',
-    tagline: 'Proof • Change • Structure',
+    tagline: 'From first principles to research frontiers',
   },
   {
     id: 'physics',
     name: 'Physics',
     slug: 'physics',
-    description:
-      'Feynman’s legendary Lectures on Physics, Volumes I–III merged into one master curriculum: atoms and matter, mechanics and gravitation, oscillations and waves, optics, relativity, heat, the complete electromagnetic theory and quantum mechanics.',
+    description: 'One canonical chapter per topic — mechanics, waves, thermodynamics, electromagnetism, optics and modern physics — merging the great textbooks with entrance-scope and applied engineering physics into a single deduplicated sequence.',
     icon: 'atom',
     accent: '#f59e0b',
-    tagline: 'Mechanics • Fields • Quanta',
-  },
-  {
-    id: 'cs-operating-systems',
-    name: 'Operating Systems',
-    slug: 'operating-systems',
-    description:
-      'The software that runs the machine: processes, threads, CPU scheduling, synchronization, deadlocks, virtual memory, storage, I/O and file systems — the theory underneath every computer you use.',
-    icon: 'terminal',
-    accent: '#f97316',
-    tagline: 'Processes • Memory • Systems',
-  },
-  {
-    id: 'cs-javascript',
-    name: 'JavaScript',
-    slug: 'javascript',
-    description:
-      'The programming language of the web: types, objects, closures, classes, modules, promises and async/await — from language core to browsers, Node and modern tooling.',
-    icon: 'code',
-    accent: '#eab308',
-    tagline: 'Language • Browser • Node',
-  },
-  {
-    id: 'ece-digital-systems',
-    name: 'Digital Logic & Computer Design',
-    slug: 'digital-logic-computer-design',
-    description:
-      'How computers are built from the ground up: binary arithmetic, Boolean algebra, K-maps, combinational and sequential circuits, registers, and the register-transfer design of a complete small computer.',
-    icon: 'circuit-board',
-    accent: '#f43f5e',
-    tagline: 'Gates • Registers • Computers',
-  },
-  {
-    id: 'ece-electronics',
-    name: 'Electronics & Electrical Technology',
-    slug: 'electronics-electrical-technology',
-    description:
-      'The complete electronics master library — Hughes Electrical & Electronic Technology, Nilsson’s Electric Circuits and Horowitz & Hill’s Art of Electronics unified into one curriculum: DC and AC circuit theory, transients, transforms, semiconductors, amplifiers, op-amps, filters, digital electronics, machines and power systems.',
-    icon: 'zap',
-    accent: '#14b8a6',
-    tagline: 'Circuits • Devices • Power',
-  },
-  {
-    id: 'cs-algorithms',
-    name: 'Algorithms',
-    slug: 'algorithms',
-    description:
-      'The theory of algorithms end to end — Cormen, Leiserson, Rivest and Stein’s Introduction to Algorithms in full: asymptotic analysis, sorting, data structures, dynamic programming, greedy methods, amortized analysis, B-trees, van Emde Boas trees, disjoint sets, graph algorithms, flows, multithreaded algorithms, linear programming, the FFT, number theory, string matching, computational geometry, NP-completeness and approximation algorithms — with the mathematical appendices.',
-    icon: 'network',
-    accent: '#84cc16',
-    tagline: 'Correctness • Complexity • Proof',
-  },
-  {
-    id: 'cs-cpp',
-    name: 'C++ Programming',
-    slug: 'cpp-programming',
-    description:
-      'Stroustrup’s complete tour of the C++ programming language (C++11): the core facilities of types, pointers, functions and exceptions; the abstraction mechanisms of classes, templates and metaprogramming; and the full standard library from STL containers and algorithms to strings, regexes, streams, numerics and concurrency.',
-    icon: 'binary',
-    accent: '#a855f7',
-    tagline: 'Types • Templates • Systems',
-  },
-  {
-    id: 'web-development',
-    name: 'Web Development',
-    slug: 'web-development',
-    description:
-      'The complete full-stack web curriculum — how the web works, semantic HTML5, modern CSS3 through Tailwind, JavaScript for the browser, TypeScript, React 19 with Next.js 15, Node.js and Express APIs, PostgreSQL and MongoDB with Prisma, auth and security, testing, performance, accessibility, SEO, Docker, CI/CD and cloud deployment, ending in a production SaaS capstone.',
-    icon: 'globe',
-    accent: '#f472b6',
-    tagline: 'HTML • React • Node',
+    tagline: 'The unified physics curriculum',
   },
   {
     id: 'chemistry',
     name: 'Chemistry',
     slug: 'chemistry',
-    description:
-      'Physical, organic and inorganic chemistry in full: stoichiometry through kinetics, mechanisms and named reactions, periodicity through salt analysis — every formula, trend and classic test.',
-    icon: 'atom',
+    description: 'Physical, organic and inorganic chemistry in full, plus the applied engineering chemistry — water, corrosion, fuels, polymers and nanomaterials — with every mechanism, trend and confirmatory test.',
+    icon: 'hexagon',
     accent: '#22d3ee',
-    tagline: 'Physical • Organic • Inorganic',
+    tagline: 'Molecules, mechanisms and applications',
   },
-  {
-    id: 'cs-core-systems',
-    name: 'CS Core Systems',
-    slug: 'cs-core-systems',
-    description:
-      'The systems spine beyond operating systems: databases, computer networks, compiler design and computer organization — ER to transactions, OSI to DNS, lexing to pipelining.',
-    icon: 'database',
-    accent: '#e879f9',
-    tagline: 'Data • Networks • Machines',
-  },
-  {
-    id: 'java',
-    name: 'Java Programming',
-    slug: 'java-programming',
-    description:
-      'Modern Java from first program to production: syntax and OOP, generics and collections, concurrency, streams, I/O and networking, JDBC and modules — the complete Horstmann tour.',
-    icon: 'code',
-    accent: '#fb7185',
-    tagline: 'OOP • Streams • Concurrency',
-  },
-  // ---- Subject-wise curriculum subjects ----
-  // NOTE (code comment only — not shown in the UI): the chapter/section data
-  // merged into these subject books was researched from official competitive-
-  // exam syllabi (engineering entrance, admissions assessment, defence
-  // recruitment and graduate-assessment sources). Per the product decision,
-  // no exam names appear anywhere in user-visible text; provenance lives in
-  // code comments like this one and in research/*.md.
   {
     id: 'english',
     name: 'English & Comprehension',
     slug: 'english',
-    description:
-      'Reading, writing and language mastery: craft and structure, information and ideas, command of evidence, standard English conventions and expression of ideas — plus grammar, vocabulary, voice, narration and reading comprehension for fluent, precise communication.',
-    icon: 'library',
+    description: 'Complete verbal skills: reading comprehension and rhetoric, words in context, expression of ideas, standard conventions, grammar essentials, vocabulary and comprehension practice.',
+    icon: 'type',
     accent: '#f472b6',
-    tagline: 'Read • Write • Reason',
+    tagline: 'Read deeply, write precisely',
   },
   {
     id: 'aptitude',
-    name: 'Aptitude, Reasoning & Awareness',
-    slug: 'aptitude-reasoning',
-    description:
-      'Logical and analytical reasoning, general awareness with a defence and science-and-technology focus, and general science: analogies, series, coding–decoding, syllogisms, seating puzzles, non-verbal patterns, current affairs and everyday science — the complete mental-fitness curriculum.',
-    icon: 'globe',
+    name: 'Aptitude & Reasoning',
+    slug: 'aptitude',
+    description: 'The complete mental-aptitude curriculum: reasoning and problem solving, quantitative aptitude, general awareness and general science.',
+    icon: 'brain',
     accent: '#a3e635',
-    tagline: 'Logic • Awareness • Science',
+    tagline: 'Sharpen every kind of thinking',
   },
   {
     id: 'cse-engg',
     name: 'Computer Science & Engineering',
     slug: 'computer-science-engineering',
-    description:
-      'The complete CSE degree path and beyond: eight semesters from mathematics and programming in C through data structures, digital logic, computer organization, operating systems, DBMS, theory of computation, compilers and networks — on to AI & machine learning, cloud, cryptography, IoT, big data and distributed systems.',
-    icon: 'cpu',
+    description: 'The whole CS path in one master volume: programming languages (C, Python, C++, Java, JavaScript, web), theory of computation, algorithms, digital logic and computer design, architecture, microprocessors, operating systems, databases, networks, and the applied stack from software engineering to AI, security and big data.',
+    icon: 'binary',
     accent: '#be123c',
-    tagline: 'Compute • Systems • Software',
+    tagline: 'The complete CS curriculum',
   },
   {
     id: 'ece-engg',
     name: 'Electronics & Communication Engineering',
     slug: 'electronics-communication-engineering',
-    description:
-      'The complete ECE degree path: electronic devices, analog and digital circuits, signals & systems, electromagnetics, communications, DSP, control systems, microprocessors, VLSI, embedded systems, antennas, microwave and radar — every semester from first-year basics to specialist electives.',
-    icon: 'radio',
+    description: 'The whole ECE path in one volume: network analysis, electronic devices, digital electronics, signals and systems, DSP, analog circuits and ICs, communications, electromagnetics, antennas, control systems, VLSI, embedded systems and microwave engineering.',
+    icon: 'cpu',
     accent: '#c2410c',
-    tagline: 'Signals • Circuits • Systems',
+    tagline: 'From devices to communication systems',
   },
   {
     id: 'electrical-engineering',
     name: 'Electrical Engineering',
     slug: 'electrical-engineering',
-    description:
-      'The complete EE degree path: circuit theory and measurements, electrical machines I & II, power systems and power system analysis, power electronics & drives, switchgear & protection, utilization & traction, HVDC & FACTS, electric vehicles and renewable energy systems.',
+    description: 'The whole EE path in one volume: basic electrical engineering, circuit analysis, machines, power systems, power electronics and drives, switchgear and protection, measurements, energy systems and renewables, electric vehicles and HVDC.',
     icon: 'zap',
     accent: '#a16207',
-    tagline: 'Power • Machines • Control',
+    tagline: 'Power, machines and control',
   },
   {
     id: 'mechanical-engineering',
     name: 'Mechanical Engineering',
     slug: 'mechanical-engineering',
-    description:
-      'The complete ME degree path: thermodynamics, mechanics of materials, theory of machines and machine design, manufacturing technology & metrology, fluid mechanics and machinery, heat transfer, IC engines and power plant, materials science, mechatronics, robotics and renewable energy.',
+    description: 'The whole ME path in one volume: graphics, mechanics, thermodynamics, fluids, strength of materials, materials science, metrology, theory of machines, manufacturing, design, heat transfer, engines, refrigeration, automotive, CAD/CAM, mechatronics and robotics.',
     icon: 'cog',
     accent: '#15803d',
-    tagline: 'Motion • Energy • Manufacture',
+    tagline: 'Design, build and manufacture',
   },
 ]
 
@@ -364,260 +239,51 @@ export const LIBRARY_BOOKS: BookMeta[] = [
     id: 'math-master',
     subjectId: 'mathematics',
     title: 'The Mathematics Master Library',
-    author: 'Kenneth H. Rosen, James Stewart',
+    author: 'Kenneth H. Rosen, James Stewart & the StudyVerse Curriculum Team',
     edition: 'Master Edition',
-    year: '2019 · 2020',
+    year: '2019 · 2020 · 2026',
     description:
-      'All the mathematics, one master volume: Rosen’s Discrete Mathematics and Its Applications (8e) and Stewart’s Calculus: Early Transcendentals (9e) merged into a single 30-chapter curriculum — logic and proofs, then the complete calculus sequence from limits to vector calculus.',
-    pages: 2508,
+      'All the mathematics, one master volume: Rosen’s discrete mathematics (logic, proofs, counting, graphs), Stewart’s complete calculus sequence, the classical algebra block (complex numbers, matrices, trigonometry, coordinate and 3D geometry, probability and statistics), applied problem-solving skills, and the full engineering mathematics sequence — linear algebra, ODEs, PDEs, complex analysis, Laplace/Fourier/z transforms and numerical methods. Every topic appears exactly once, in pedagogical order.',
+    pages: 3868,
     accent: '#10b981',
     sources: [
-      'Rosen — Discrete Mathematics and Its Applications, 8e (1118 pp) — chapters 1–13',
-      'Stewart, Clegg & Watson — Calculus: Early Transcendentals, 9e (1390 pp) — chapters 14–30',
+      'Rosen — Discrete Mathematics and Its Applications, 8e (1118 pp)',
+      'Stewart, Clegg & Watson — Calculus: Early Transcendentals, 9e (1390 pp)',
+      'Engineering mathematics curriculum — linear algebra to numerical methods (23 chapters)',
+      'Classical algebra & advanced problem-solving companion (curriculum volumes)',
     ],
   },
   {
     id: 'phys-master',
     subjectId: 'physics',
     title: 'The Physics Master Library',
-    author: 'Richard P. Feynman, David Halliday, Hugh D. Young, Dale Ewen, Vincent Coletta',
-    edition: 'Master Edition',
+    author: 'David Halliday, Hugh D. Young, Richard P. Feynman, Dale Ewen, Vincent Coletta',
+    edition: 'Consolidated Topic Edition',
     year: '2010 · 2018 · 2020 · 2021 · 2010',
     description:
-      'All the physics, one master volume — five books merged into a single 159-chapter curriculum: Feynman’s Lectures (the conceptual spine: mechanics, radiation, heat, electromagnetism and quantum mechanics), Halliday/Resnick/Walker’s Fundamentals of Physics (the complete university course), Young & Freedman’s University Physics (calculus-based theory with guided problem-solving), Ewen’s Applied Physics (algebra-based, applications and technical problem-solving) and Coletta’s Physics Fundamentals (motion-to-particles with derivations and perspective essays).',
+      'One canonical chapter per physics topic. The conceptual spine of the Feynman Lectures, the complete university course of Halliday/Resnick/Walker and Young & Freedman, Ewen’s applied physics and Coletta’s fundamentals are merged into a single deduplicated sequence — measurement and vectors, mechanics, waves, heat and thermodynamics, electromagnetism, optics, modern physics, lasers and optical fibres — with entrance-scope depth folded into each topic.',
     pages: 7534,
     accent: '#f59e0b',
     sources: [
-      'Feynman, Leighton & Sands — The Feynman Lectures on Physics, Vols I–III (2752 pp) — chapters 1–15',
-      'Halliday, Resnick & Walker — Fundamentals of Physics, 11e Extended (1452 pp) — chapters 16–59',
-      'Young & Freedman — University Physics with Modern Physics, 15e (1587 pp) — chapters 60–103',
-      'Ewen, Schurter & Gundersen — Applied Physics, 11e (777 pp) — chapters 104–128',
-      'Coletta — Physics Fundamentals, 2e (966 pp) — chapters 129–159',
+      'Feynman, Leighton & Sands — The Feynman Lectures on Physics, Vols I–III (conceptual spine)',
+      'Halliday, Resnick & Walker — Fundamentals of Physics, 11e Extended (primary treatment)',
+      'Young & Freedman — University Physics with Modern Physics, 15e (merged)',
+      'Ewen, Schurter & Gundersen — Applied Physics, 11e (merged)',
+      'Coletta — Physics Fundamentals, 2e (merged)',
     ],
   },
-  {
-    id: 'silberschatz-osc10',
-    subjectId: 'cs-operating-systems',
-    title: 'Operating System Concepts',
-    author: 'Abraham Silberschatz, Peter Baer Galvin, Greg Gagne',
-    edition: 'Tenth Edition',
-    year: '2018',
-    description:
-      'The classic “Dinosaur Book” — what operating systems do and how they do it: processes and threads, CPU scheduling, synchronization, deadlocks, main and virtual memory, mass storage, I/O and file systems.',
-    pages: 918,
-    accent: '#f97316',
-  },
-  {
-    id: 'flanagan-js7',
-    subjectId: 'cs-javascript',
-    title: 'JavaScript: The Definitive Guide',
-    author: 'David Flanagan',
-    edition: 'Seventh Edition',
-    year: '2020',
-    description:
-      '“The Rhino Book” — the complete JavaScript reference and tutorial: the language from types to metaprogramming, plus the browser platform, Node.js and the modern toolchain.',
-    pages: 708,
-    accent: '#eab308',
-  },
-  {
-    id: 'mano-dld',
-    subjectId: 'ece-digital-systems',
-    title: 'Digital Logic and Computer Design',
-    author: 'M. Morris Mano',
-    edition: 'Classic Edition',
-    year: '1979',
-    description:
-      'The classic that builds a computer from first principles: binary systems, Boolean algebra and gate minimization, combinational and sequential logic, registers, and register-transfer design of a small digital computer.',
-    pages: 612,
-    accent: '#f43f5e',
-  },
-  {
-    id: 'elec-master',
-    subjectId: 'ece-electronics',
-    title: 'The Electronics Master Library',
-    author: 'Edward Hughes, James W. Nilsson, Paul Horowitz',
-    edition: 'Master Edition',
-    year: '2016 · 2022 · 2015',
-    description:
-      'All the electronics, one master volume — Hughes Electrical & Electronic Technology (12e), Nilsson & Riedel Electric Circuits (12e) and Horowitz & Hill The Art of Electronics (3e) unified into a single 20-chapter curriculum from DC fundamentals to power systems, with every theorem, device and technique from all three books.',
-    pages: 3049,
-    accent: '#14b8a6',
-    sources: [
-      'Hughes — Electrical & Electronic Technology, 12e (1009 pp)',
-      'Nilsson & Riedel — Electric Circuits, 12e (816 pp)',
-      'Horowitz & Hill — The Art of Electronics, 3e (1224 pp)',
-    ],
-  },
-  // ---- Introduction to Algorithms (Cormen, Leiserson, Rivest, Stein — 3rd Ed) ----
-  {
-    id: 'clrs-alg3',
-    subjectId: 'cs-algorithms',
-    title: 'Introduction to Algorithms',
-    author: 'Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein',
-    edition: 'Third Edition',
-    year: '2009',
-    description:
-      'The definitive algorithms text, covered chapter by chapter: asymptotic analysis, the sorting canon, the classical data structures, dynamic programming and greedy design, amortized analysis, the advanced structures (B-trees, Fibonacci heaps, van Emde Boas trees, disjoint sets), the full graph suite including maximum flow, multithreaded algorithms, matrices and linear programming, the FFT, number-theoretic algorithms, string matching, computational geometry, NP-completeness and approximation — plus all four mathematical appendices.',
-    pages: 1313,
-    accent: '#84cc16',
-  },
-  // ---- The C++ Programming Language (Stroustrup — 4th Ed) ----
-  {
-    id: 'stroustrup-cpp4',
-    subjectId: 'cs-cpp',
-    title: 'The C++ Programming Language',
-    author: 'Bjarne Stroustrup',
-    edition: 'Fourth Edition',
-    year: '2013',
-    description:
-      'The C++ book, by the language’s creator — all four parts: the introductory tours, the basic facilities (types, pointers, functions, exceptions, namespaces, source organization), the abstraction mechanisms (classes, construction and destruction, overloading, hierarchies, RTTI, templates and metaprogramming), and the complete standard library (containers, algorithms, iterators, memory and resources, utilities, strings, regular expressions, streams, locales, numerics, concurrency and the C library).',
-    pages: 1366,
-    accent: '#a855f7',
-  },
-  // ---- The Complete Web Development Library (2026 Edition) ----
-  {
-    id: 'webdev-complete',
-    subjectId: 'web-development',
-    title: 'The Complete Web Development Library',
-    author: 'MDN Web Docs, React, Next.js, Node.js, PostgreSQL & Prisma contributors',
-    edition: '2026 Edition',
-    year: '2026',
-    description:
-      'Zero to shipped: internet and browser fundamentals, HTML5 and CSS3 in full, JavaScript for the web, TypeScript, React and Next.js, Node/Express APIs real and realtime, SQL and NoSQL data layers, auth and OWASP security, testing at every level, performance/accessibility/SEO, and Docker-to-cloud deployment — 20 chapters, 100 sections, nothing skipped.',
-    pages: 1200,
-    accent: '#f472b6',
-    sources: [
-      'MDN Curriculum — web standards, semantic HTML, CSS, JS, a11y, tooling',
-      'roadmap.sh Full-Stack path + 2026 industry syllabi — React/Next, Node/Express, PostgreSQL/Mongo, testing, DevOps',
-    ],
-  },
-  // ---- Engineering Mathematics for GATE (2026 Edition) ----
-  {
-    id: 'engmath-complete',
-    subjectId: 'mathematics',
-    title: 'Engineering Mathematics',
-    author: 'StudyVerse Curriculum Team',
-    edition: '2026 Edition',
-    year: '2026',
-    description:
-      'The mathematics Rosen and Stewart leave out: linear algebra, differential equations, PDEs, vector calculus theorems, complex analysis, Laplace/Fourier/z transforms — 10 chapters, 40 sections, every theorem with worked problems.',
-    pages: 640,
-    accent: '#10b981',
-  },
-  // ---- JEE Mathematics Companion (2026 Edition) ----
-  {
-    id: 'jeemaths-complete',
-    subjectId: 'mathematics',
-    title: 'Advanced Mathematics Companion',
-    author: 'StudyVerse Curriculum Team',
-    edition: '2026 Edition',
-    year: '2026',
-    description:
-      'Problem-solving mathematics in tool-first form: complex numbers, quadratics, matrices, combinatorics, trigonometry, coordinate geometry, vectors/3D and statistics — 10 chapters, 40 sections of method-driven theory.',
-    pages: 720,
-    accent: '#10b981',
-  },
-  // ---- JEE Chemistry: Physical, Organic & Inorganic (2026 Edition) ----
   {
     id: 'chem-complete',
     subjectId: 'chemistry',
-    title: 'Chemistry: Physical, Organic & Inorganic',
+    title: 'Chemistry: Physical, Organic, Inorganic & Applied',
     author: 'StudyVerse Curriculum Team',
     edition: '2026 Edition',
     year: '2026',
     description:
-      'Physical, organic and inorganic chemistry in full: mole concept through kinetics, GOC through biomolecules, periodicity through salt analysis — 14 chapters, 56 sections with every mechanism, trend and confirmatory test.',
-    pages: 980,
+      'Physical, organic and inorganic chemistry in one deduplicated volume — mole concept through kinetics, GOC through biomolecules, periodicity through salt analysis, spectroscopy, stereochemistry and pericyclic depth — capped by the applied engineering chemistry chapter: water, corrosion, fuels, lubricants, polymers, nanomaterials and green chemistry.',
+    pages: 1060,
     accent: '#22d3ee',
   },
-  // ---- Databases: GATE CS/ISRO (2026 Edition) ----
-  {
-    id: 'dbms-complete',
-    subjectId: 'cs-core-systems',
-    title: 'Databases: Design to Transactions',
-    author: 'StudyVerse Curriculum Team',
-    edition: '2026 Edition',
-    year: '2026',
-    description:
-      'ER modeling, relational algebra and calculus, SQL, normalization through BCNF, serializability, concurrency control, recovery and B/B+ indexing — 8 chapters, 32 sections.',
-    pages: 480,
-    accent: '#e879f9',
-  },
-  // ---- Computer Networks: GATE CS/ISRO (2026 Edition) ----
-  {
-    id: 'cn-complete',
-    subjectId: 'cs-core-systems',
-    title: 'Computer Networks: Layers to Applications',
-    author: 'StudyVerse Curriculum Team',
-    edition: '2026 Edition',
-    year: '2026',
-    description:
-      'Layering and switching, framing and CRC, MAC and Ethernet, routing algorithms, CIDR and NAT, TCP congestion control, DNS/HTTP/mail — 8 chapters, 32 sections of numerical-heavy theory.',
-    pages: 520,
-    accent: '#e879f9',
-  },
-  // ---- Compiler Design + Computer Organization (2026 Edition) ----
-  {
-    id: 'compcoa-complete',
-    subjectId: 'cs-core-systems',
-    title: 'Compilers + Computer Organization & Architecture',
-    author: 'StudyVerse Curriculum Team',
-    edition: '2026 Edition',
-    year: '2026',
-    description:
-      'ISA to pipelining to caches to DMA, then lexing through LL/LR parsing to dataflow optimization — 10 chapters, 40 sections.',
-    pages: 660,
-    accent: '#e879f9',
-  },
-  // ---- Signals & Systems + Control (2026 Edition) ----
-  {
-    id: 'sigctrl-complete',
-    subjectId: 'ece-electronics',
-    title: 'Signals & Systems + Control Systems',
-    author: 'StudyVerse Curriculum Team',
-    edition: '2026 Edition',
-    year: '2026',
-    description:
-      'Signals, LTI convolution, Fourier and z-transforms, transfer functions and Mason rule, Routh/Bode/root-locus and state space — 6 chapters, 24 sections.',
-    pages: 420,
-    accent: '#14b8a6',
-  },
-  // ---- Communications + Electromagnetics Extras (2026 Edition) ----
-  {
-    id: 'commem-complete',
-    subjectId: 'ece-electronics',
-    title: 'Communications + Electromagnetics',
-    author: 'StudyVerse Curriculum Team',
-    edition: '2026 Edition',
-    year: '2026',
-    description:
-      'Random processes, AM/FM, digital modulation and detection, information theory and codes, Maxwell waves, transmission lines and antennas — 6 chapters, 24 sections.',
-    pages: 460,
-    accent: '#14b8a6',
-  },
-  // ---- Core Java (Horstmann 12e) ----
-  {
-    id: 'horstmann-java12',
-    subjectId: 'java',
-    title: 'Core Java: Fundamentals to Advanced',
-    author: 'Cay S. Horstmann',
-    edition: 'Twelfth Edition',
-    year: '2024',
-    description:
-      'The complete Java tour in one volume: fundamental syntax, objects and inheritance, interfaces and lambdas, exceptions, generics, collections, concurrency, streams, I/O and networking, JDBC and modules — 12 chapters, 48 sections.',
-    pages: 3548,
-    accent: '#fb7185',
-    sources: [
-      'Horstmann — Core Java, Vol. I Fundamentals, 12e + Vol. II Advanced Features (3548 pp)',
-    ],
-  },
-  // ---- ================= SUBJECT-WISE CURRICULUM BOOKS ================= ----
-  // (Code comment, not UI text: the chapters merged into the subject books below
-  // were researched from official competitive-exam syllabi — engineering entrance
-  // P/C/M, admissions-assessment Math & R&W, defence-recruitment aptitude +
-  // CSE/ECE/EE/ME disciplines, the graduate CS assessment and four-branch
-  // university semester curricula. Exam names are intentionally absent from all
-  // user-visible text per product decision; see research/*.md for provenance.)
   {
     id: 'english-complete',
     subjectId: 'english',
@@ -626,7 +292,7 @@ export const LIBRARY_BOOKS: BookMeta[] = [
     edition: '2026 Edition',
     year: '2026',
     description:
-      'Complete verbal skills in one volume: reading comprehension and rhetoric, words in context, text structure and purpose, cross-text connections, command of evidence, standard English conventions — sentence boundaries, agreement, punctuation — plus transitions, rhetorical synthesis, grammar essentials, vocabulary, voice, narration and comprehension practice.',
+      'Complete verbal skills in one volume: reading comprehension and rhetoric, words in context, text structure and purpose, cross-text connections, command of evidence, standard English conventions, transitions, rhetorical synthesis, grammar essentials, vocabulary, voice, narration and comprehension practice.',
     pages: 5,
     accent: '#f472b6',
   },
@@ -638,57 +304,65 @@ export const LIBRARY_BOOKS: BookMeta[] = [
     edition: '2026 Edition',
     year: '2026',
     description:
-      'The complete mental-aptitude curriculum: reasoning and problem solving (analogies, classification, series, coding–decoding, blood relations, syllogisms, seating arrangements, puzzles, calendars, clocks and non-verbal patterns), general awareness with a defence and S&T focus, and 10+2-level general science.',
-    pages: 3,
+      'The complete mental-aptitude curriculum: reasoning and problem solving (analogies, series, coding–decoding, blood relations, syllogisms, seating arrangements, puzzles and non-verbal patterns), quantitative aptitude (percentages, ratios, time–work, speed–distance and data interpretation), general awareness and general science.',
+    pages: 4,
     accent: '#a3e635',
   },
   {
     id: 'cse-complete',
     subjectId: 'cse-engg',
     title: 'CSE — The Complete Curriculum',
-    author: 'StudyVerse Curriculum Team',
-    edition: '2026 Edition',
+    author: 'StudyVerse Curriculum Team with Silberschatz, Mano, Cormen, Stroustrup, Horstmann & Flanagan',
+    edition: '2026 Master Edition',
     year: '2026',
     description:
-      'The whole Computer Science path in one master volume: the eight-semester degree (36 subjects from mathematics and programming in C through DSA, digital logic, COA, OS, DBMS, TOC, compilers and networks to AI, blockchain, cloud, IoT and deep learning), followed by graduate-level depth across all ten core areas — engineering mathematics, digital logic, computer organization, programming & data structures, algorithms, theory of computation, compiler design, operating systems, databases and computer networks — and the full defence-software stack including cybersecurity and AI/ML.',
-    pages: 60,
+      'The whole Computer Science path in one master volume, organized subject-wise with no repetition: programming in C and Python, the complete C++ (Stroustrup), Java (Horstmann), JavaScript (Flanagan) and web development courses; theory of computation; the full algorithms canon (CLRS); digital logic and computer design (Mano); computer organization, advanced architecture and microprocessors; operating systems (Silberschatz); databases; computer networks; and the applied stack — software engineering, graphics, image processing, AI, machine learning, deep learning, blockchain, IoT, cloud, cybersecurity and big data.',
+    pages: 5851,
     accent: '#be123c',
     sources: [
-      'University model CSE curricula (8 semesters, 36 subjects) — every unit listed',
-      'Graduate CS assessment syllabus — all 10 sections + aptitude, official wording',
-      'Defence-software CSE discipline scope — 13 areas from lab automation to secure systems',
+      'Silberschatz, Galvin & Gagne — Operating System Concepts, 10e (918 pp)',
+      'Mano — Digital Logic and Computer Design (612 pp)',
+      'Cormen, Leiserson, Rivest & Stein — Introduction to Algorithms, 3e (1313 pp)',
+      'Stroustrup — The C++ Programming Language, 4e (1366 pp)',
+      'Horstmann — Core Java, 12e (3548 pp combined volumes)',
+      'Flanagan — JavaScript: The Definitive Guide, 7e (708 pp)',
+      'The Complete Web Development Library (2026 edition)',
+      'University model CSE curricula (8 semesters) + graduate & defence software scopes — merged subject-wise, every topic once',
     ],
   },
   {
     id: 'ece-complete',
     subjectId: 'ece-engg',
     title: 'ECE — The Complete Curriculum',
-    author: 'StudyVerse Curriculum Team',
-    edition: '2026 Edition',
+    author: 'StudyVerse Curriculum Team with Hughes, Nilsson & Horowitz',
+    edition: '2026 Master Edition',
     year: '2026',
     description:
-      'The whole Electronics & Communication path in one master volume: 37 semester subjects from first-year electrical technology and physics through network analysis, electronic devices, signals & systems, analog and digital circuits, EMFT, communications, DSP, control, microprocessors, VLSI, embedded systems, antennas, microwave & radar and optical fiber — plus the full defence-electronics discipline scope spanning radar, electronic warfare and missile-guidance systems.',
-    pages: 49,
+      'The whole Electronics & Communication path in one deduplicated volume: network analysis and synthesis, electronic devices, digital electronics, signals and systems, digital signal processing, analog circuits and ICs, analog and digital communication, electromagnetic field theory, antennas, control systems, measurements and instrumentation, VLSI technology and design, optical fibre communication and networks, data networks, wireless and mobile systems, microwave and radar, satellite communication, embedded systems, and speech/biomedical DSP.',
+    pages: 3029,
     accent: '#c2410c',
     sources: [
-      'University model ECE curricula (8 semesters, 37 subjects) — every unit listed',
-      'Defence-electronics ECE discipline scope — 12 areas including radar and EW',
+      'Hughes — Electrical & Electronic Technology, 12e (electronics chapters)',
+      'Nilsson & Riedel — Electric Circuits, 12e (merged)',
+      'Horowitz & Hill — The Art of Electronics, 3e (merged)',
+      'University model ECE curricula (8 semesters) + defence-electronics scope — merged subject-wise',
     ],
   },
   {
     id: 'ee-complete',
     subjectId: 'electrical-engineering',
     title: 'EE — The Complete Curriculum',
-    author: 'StudyVerse Curriculum Team',
-    edition: '2026 Edition',
+    author: 'StudyVerse Curriculum Team with Hughes & Nilsson',
+    edition: '2026 Master Edition',
     year: '2026',
     description:
-      'The whole Electrical Engineering path in one master volume: 32 semester subjects from circuit theory and measurements through machines I & II, power systems I & II, power system analysis, power electronics & drives, switchgear & protection, utilization & traction, HVDC & FACTS, electric vehicles and renewable energy systems — plus the defence-research EE discipline scope with research-lab topics in utilization, materials and maintenance.',
-    pages: 43,
+      'The whole Electrical Engineering path in one deduplicated volume: basic electrical engineering, electric circuit analysis (including the deep treatments of capacitance, magnetism, transients, AC power and resonance), DC and AC machines, special machines, electrical materials, power systems I & II, power system analysis, switchgear and protection, utilization and traction, power electronics and drives, machine design, measurements, energy systems and renewables, instrumentation, electric vehicles, and HVDC & FACTS.',
+    pages: 2225,
     accent: '#a16207',
     sources: [
-      'University model EE curricula (8 semesters, 32 subjects) — every unit listed',
-      'Defence-research EE discipline scope — 11 areas from circuits to EM theory',
+      'Hughes — Electrical & Electronic Technology, 12e (electrical chapters)',
+      'Nilsson & Riedel — Electric Circuits, 12e (merged)',
+      'University model EE curricula (8 semesters) + defence-research EE scope — merged subject-wise',
     ],
   },
   {
@@ -696,340 +370,40 @@ export const LIBRARY_BOOKS: BookMeta[] = [
     subjectId: 'mechanical-engineering',
     title: 'ME — The Complete Curriculum',
     author: 'StudyVerse Curriculum Team',
-    edition: '2026 Edition',
+    edition: '2026 Master Edition',
     year: '2026',
     description:
-      'The whole Mechanical Engineering path in one master volume: 30 semester subjects spanning fluid mechanics & machinery, thermodynamics, heat transfer, IC engines & power plant, mechanics of materials, theory of machines & machine design, manufacturing technology & metrology, materials science, industrial engineering, mechatronics & robotics and renewable energy — plus the defence-research ME discipline scope including propulsion, airframes and launcher engineering.',
+      'The whole Mechanical Engineering path in one deduplicated volume: engineering graphics and machine drawing, mechanics, applied thermodynamics, fluid mechanics and machinery, strength of materials, materials science, metrology and quality control, theory of machines I & II, manufacturing I & II, machine design, heat and mass transfer, IC engines, refrigeration and air conditioning, automobile engineering, power plant engineering, CAD/CAM and automation, mechatronics and robotics.',
     pages: 42,
     accent: '#15803d',
     sources: [
-      'University model ME curricula (8 semesters, 30 subjects) — every unit listed',
-      'Defence-research ME discipline scope — 12 areas including propulsion',
+      'University model ME curricula (8 semesters) + defence-research ME scope — merged subject-wise',
     ],
   },
 ]
 
 export const LIBRARY_CHAPTERS: ChapterMeta[] = [
-  { id: 'rosen-ch1', bookId: 'math-master', number: 1, title: 'The Foundations: Logic and Proofs', shortTitle: 'Logic & Proofs', description: 'Propositional logic, quantifiers, rules of inference and the craft of writing proofs — the language all of mathematics is written in.', icon: 'brain', pages: 'Rosen 24–143', interactiveKey: 'truth-table-lab' },
-  { id: 'rosen-ch2', bookId: 'math-master', number: 2, title: 'Basic Structures: Sets, Functions, Sequences, Sums, and Matrices', shortTitle: 'Sets & Functions', description: 'The fundamental data structures of mathematics — sets, functions, sequences, cardinality and matrices.', icon: 'circles', pages: 'Rosen 144–223', interactiveKey: 'venn-explorer' },
-  { id: 'rosen-ch3', bookId: 'math-master', number: 3, title: 'Algorithms', shortTitle: 'Algorithms', description: 'What algorithms are, how fast they grow, and how to measure their complexity.', icon: 'cpu', pages: 'Rosen 224–273', interactiveKey: 'sorting-visualizer' },
-  { id: 'rosen-ch4', bookId: 'math-master', number: 4, title: 'Number Theory and Cryptography', shortTitle: 'Number Theory', description: 'Divisibility, primes, congruences and the number-theoretic machinery behind modern cryptography.', icon: 'lock', pages: 'Rosen 274–427', interactiveKey: 'gcd-stepper' },
-  { id: 'rosen-ch5', bookId: 'math-master', number: 5, title: 'Induction and Recursion', shortTitle: 'Induction & Recursion', description: 'Mathematical induction, strong induction, recursive definitions and recursive algorithms.', icon: 'infinity', pages: 'Rosen 354–427', interactiveKey: 'hanoi-tower' },
-  { id: 'rosen-ch6', bookId: 'math-master', number: 6, title: 'Counting', shortTitle: 'Counting', description: 'The basics of counting, pigeonhole principle, permutations, combinations and binomial coefficients.', icon: 'hash', pages: 'Rosen 428–491', interactiveKey: 'counting-lab' },
-  { id: 'rosen-ch7', bookId: 'math-master', number: 7, title: 'Discrete Probability', shortTitle: 'Probability', description: 'Probability theory, Bayes’ theorem, expected value and variance for discrete sample spaces.', icon: 'dices', pages: 'Rosen 492–549', interactiveKey: 'probability-lab' },
-  { id: 'rosen-ch8', bookId: 'math-master', number: 8, title: 'Advanced Counting Techniques', shortTitle: 'Advanced Counting', description: 'Recurrence relations, divide-and-conquer, generating functions and inclusion–exclusion.', icon: 'trending', pages: 'Rosen 550–621', interactiveKey: 'recurrence-explorer' },
-  { id: 'rosen-ch9', bookId: 'math-master', number: 9, title: 'Relations', shortTitle: 'Relations', description: 'Properties of relations, closures, equivalence relations and partial orderings.', icon: 'network', pages: 'Rosen 622–695', interactiveKey: 'relation-explorer' },
-  { id: 'rosen-ch10', bookId: 'math-master', number: 10, title: 'Graphs', shortTitle: 'Graphs', description: 'Graph models, connectivity, Euler and Hamilton paths, shortest paths, planarity and coloring.', icon: 'share', pages: 'Rosen 696–803', interactiveKey: 'graph-playground' },
-  { id: 'rosen-ch11', bookId: 'math-master', number: 11, title: 'Trees', shortTitle: 'Trees', description: 'Tree applications, traversals, spanning trees and minimum spanning trees.', icon: 'git-branch', pages: 'Rosen 804–869', interactiveKey: 'tree-traversal' },
-  { id: 'rosen-ch12', bookId: 'math-master', number: 12, title: 'Boolean Algebra', shortTitle: 'Boolean Algebra', description: 'Boolean functions, logic gates and minimization of circuits.', icon: 'toggle-right', pages: 'Rosen 870–907', interactiveKey: 'logic-gates' },
-  { id: 'rosen-ch13', bookId: 'math-master', number: 13, title: 'Modeling Computation', shortTitle: 'Models of Computation', description: 'Languages and grammars, finite-state machines, language recognition and Turing machines.', icon: 'bot', pages: 'Rosen 908–965', interactiveKey: 'fsm-simulator' },
-  // ---- Operating System Concepts (Silberschatz, Galvin, Gagne — 10th Ed) ----
-  { id: 'osc-ch1', bookId: 'silberschatz-osc10', number: 1, title: 'Introduction', shortTitle: 'Introduction', description: 'What an operating system is, how a computer is organized (interrupts, DMA, storage hierarchy), single-processor to distributed architectures, dual-mode operation and kernel data structures.', icon: 'terminal', pages: '4–54', interactiveKey: 'os-anatomy' },
-  { id: 'osc-ch2', bookId: 'silberschatz-osc10', number: 2, title: 'Operating-System Structures', shortTitle: 'OS Structures', description: 'OS services, the system-call interface, linkers and loaders, monolithic vs layered vs microkernel vs modular designs, and how an OS boots.', icon: 'layers', pages: '55–101', interactiveKey: 'os-anatomy' },
-  { id: 'osc-ch3', bookId: 'silberschatz-osc10', number: 3, title: 'Processes', shortTitle: 'Processes', description: 'The process concept, memory layout, the PCB, scheduling queues and context switches, process creation (fork/exec) and interprocess communication.', icon: 'activity', pages: '106–156', interactiveKey: 'process-lifecycle' },
-  { id: 'osc-ch4', bookId: 'silberschatz-osc10', number: 4, title: 'Threads and Concurrency', shortTitle: 'Threads & Concurrency', description: 'Threads, multicore programming, Amdahl’s law, multithreading models, thread libraries and implicit threading with thread pools and fork–join.', icon: 'shuffle', pages: '160–198', interactiveKey: 'race-lab' },
-  { id: 'osc-ch5', bookId: 'silberschatz-osc10', number: 5, title: 'CPU Scheduling', shortTitle: 'CPU Scheduling', description: 'Scheduling criteria and algorithms — FCFS, SJF/SRTF, priority, round robin, multilevel feedback queues — plus multicore, real-time scheduling and Linux CFS.', icon: 'timer', pages: '200–254', interactiveKey: 'cpu-scheduler' },
-  { id: 'osc-ch6', bookId: 'silberschatz-osc10', number: 6, title: 'Synchronization Tools', shortTitle: 'Synchronization Tools', description: 'Race conditions, the critical-section problem, Peterson’s solution, hardware support (test-and-set, compare-and-swap), mutex locks, semaphores, monitors and liveness hazards.', icon: 'handshake', pages: '257–288', interactiveKey: 'race-lab' },
-  { id: 'osc-ch7', bookId: 'silberschatz-osc10', number: 7, title: 'Synchronization Examples', shortTitle: 'Sync Examples', description: 'The classic problems — bounded buffer, readers–writers, dining philosophers — plus synchronization in Windows, Linux, POSIX and Java.', icon: 'utensils', pages: '289–315', interactiveKey: 'dining-philosophers' },
-  { id: 'osc-ch8', bookId: 'silberschatz-osc10', number: 8, title: 'Deadlocks', shortTitle: 'Deadlocks', description: 'Deadlock characterization, the resource-allocation graph, prevention, avoidance with the Banker’s algorithm, detection and recovery.', icon: 'siren', pages: '318–346', interactiveKey: 'bankers-algorithm' },
-  { id: 'osc-ch9', bookId: 'silberschatz-osc10', number: 9, title: 'Main Memory', shortTitle: 'Main Memory', description: 'Address binding and the MMU, contiguous allocation and fragmentation, paging, TLB and effective access time, page-table structures, Intel and ARMv8.', icon: 'memory-stick', pages: '349–387', interactiveKey: 'paging-visualizer' },
-  { id: 'osc-ch10', bookId: 'silberschatz-osc10', number: 10, title: 'Virtual Memory', shortTitle: 'Virtual Memory', description: 'Demand paging, copy-on-write, page replacement (FIFO, optimal, LRU, clock), frame allocation, thrashing, working sets and memory-mapped files.', icon: 'database', pages: '389–444', interactiveKey: 'page-replacement' },
-  { id: 'osc-ch11', bookId: 'silberschatz-osc10', number: 11, title: 'Mass-Storage Structure', shortTitle: 'Mass Storage', description: 'HDD and NVM device structure, disk scheduling (SSTF, SCAN, C-SCAN), storage attachment, RAID levels, error correction and swap-space management.', icon: 'hard-drive', pages: '449–487', interactiveKey: 'disk-scheduler' },
-  { id: 'osc-ch12', bookId: 'silberschatz-osc10', number: 12, title: 'I/O Systems', shortTitle: 'I/O Systems', description: 'I/O hardware, polling, interrupts and DMA, the application I/O interface, the kernel I/O subsystem (buffering, caching, spooling) and I/O performance.', icon: 'plug', pages: '489–526', interactiveKey: 'os-anatomy' },
-  { id: 'osc-ch13', bookId: 'silberschatz-osc10', number: 13, title: 'File-System Interface', shortTitle: 'FS Interface', description: 'Files, attributes and access methods; directory structures from single-level to acyclic graphs; protection and memory-mapped files.', icon: 'folder-open', pages: '529–561', interactiveKey: 'file-allocation' },
-  { id: 'osc-ch14', bookId: 'silberschatz-osc10', number: 14, title: 'File-System Implementation', shortTitle: 'FS Implementation', description: 'File-system layers and operations, allocation methods (contiguous, linked, indexed), free-space management, efficiency, performance and journaling.', icon: 'folder-cog', pages: '564–594', interactiveKey: 'file-allocation' },
-  { id: 'osc-ch15', bookId: 'silberschatz-osc10', number: 15, title: 'File-System Internals', shortTitle: 'FS Internals', description: 'Partitions and mounting, file sharing, virtual file systems, remote and distributed file systems (NFS) and consistency semantics.', icon: 'server', pages: '597–617', interactiveKey: 'file-allocation' },
-  // ---- Calculus: Early Transcendentals (Stewart 9e) — chapters from parts file ----
-  ...CALC_CHAPTERS,
-  // ---- JavaScript: The Definitive Guide (Flanagan 7e) ----
-  ...JS_CHAPTERS,
-  // ---- Digital Logic and Computer Design (Mano) ----
-  ...MANO_CHAPTERS,
-  // ---- The Electronics Master Library (Hughes 12e + Nilsson 12e + AoE 3e) ----
-  ...ELEC_CHAPTERS,
-  // ---- The Feynman Lectures on Physics, Vols I–III ----
+  ...MATH_CHAPTERS,
   ...PHYS_CHAPTERS,
-  // ---- Introduction to Algorithms (Cormen, Leiserson, Rivest, Stein — 3rd Ed) ----
-  ...CLRS_CHAPTERS,
-  // ---- Fundamentals of Physics (Halliday, Resnick, Walker — 11th Ed Extended, now merged into phys-master ch 16–59) ----
-  ...HALL_CHAPTERS,
-  // ---- University Physics with Modern Physics (Young & Freedman — 15th Ed, phys-master ch 60–103) ----
-  ...YOUNG_CHAPTERS,
-  // ---- Applied Physics (Ewen, Schurter & Gundersen — 11th Ed, phys-master ch 104–128) ----
-  ...EWEN_CHAPTERS,
-  // ---- Physics Fundamentals (Coletta — 2nd Ed, phys-master ch 129–159) ----
-  ...COLETTA_CHAPTERS,
-  // ---- The C++ Programming Language (Stroustrup — 4th Ed) ----
-  ...CPP_CHAPTERS,
-  // ---- The Complete Web Development Library (2026 Edition) ----
-  ...WEBDEV_CHAPTERS,
-  // ---- Engineering Mathematics for GATE (2026 Edition) ----
-  ...ENGMATH_CHAPTERS,
-  // ---- JEE Mathematics Companion (2026 Edition) ----
-  ...JEEMATHS_CHAPTERS,
-  // ---- JEE Chemistry (2026 Edition) ----
   ...CHEM_CHAPTERS,
-  // ---- Databases (2026 Edition) ----
-  ...DBMS_CHAPTERS,
-  // ---- Computer Networks (2026 Edition) ----
-  ...CN_CHAPTERS,
-  // ---- Compilers + Computer Organization (2026 Edition) ----
-  ...COMPCOA_CHAPTERS,
-  // ---- Signals & Systems + Control (2026 Edition) ----
-  ...SIGCTRL_CHAPTERS,
-  // ---- Communications + Electromagnetics (2026 Edition) ----
-  ...COMMEM_CHAPTERS,
-  // ---- Core Java (Horstmann 12e) ----
-  ...JAVA_CHAPTERS,
-  // ---- ============== COMPETITIVE EXAM LIBRARIES (all chapters & sections) ============== ----
-  // ---- JEE Main 2026 (official NTA syllabus) ----
-  ...JEEMAIN_PHY_CHAPTERS,
-  ...JEEMAIN_CHEM_CHAPTERS,
-  ...JEEMAIN_MATH_CHAPTERS,
-  // ---- JEE Advanced 2026 (official IIT syllabus) ----
-  ...JEEADV_PHY_CHAPTERS,
-  ...JEEADV_CHEM_CHAPTERS,
-  ...JEEADV_MATH_CHAPTERS,
-  // ---- Digital SAT (College Board) ----
-  ...SAT_MATH_CHAPTERS,
-  ...SAT_RW_CHAPTERS,
-  // ---- DRDO Scientist B ----
-  ...DRDO_T1_CHAPTERS,
-  ...DRDO_CSE_CHAPTERS,
-  ...DRDO_ECE_CHAPTERS,
-  ...DRDO_EE_CHAPTERS,
-  ...DRDO_ME_CHAPTERS,
-  // ---- GATE CS 2026 ----
-  ...GATE_CS_CHAPTERS,
-  // ---- Engineering semester exams ----
-  ...ENGG_CSE_CHAPTERS,
-  ...ENGG_ECE_CHAPTERS,
-  ...ENGG_EE_CHAPTERS,
-  ...ENGG_ME_CHAPTERS,
+  ...ENGLISH_CHAPTERS,
+  ...APT_CHAPTERS,
+  ...CSE_CHAPTERS,
+  ...ECE_CHAPTERS,
+  ...EE_CHAPTERS,
+  ...ME_CHAPTERS,
 ]
 
-export type LibrarySection = SectionMeta
-
-export const LIBRARY_SECTIONS: LibrarySection[] = [
-  // Chapter 1
-  { id: 'rosen-ch1-s1', chapterId: 'rosen-ch1', number: 1.1, title: 'Propositional Logic', description: 'Propositions, truth values and the connectives ∧, ∨, ⊕, →, ↔ that build compound statements.' },
-  { id: 'rosen-ch1-s2', chapterId: 'rosen-ch1', number: 1.2, title: 'Applications of Propositional Logic', description: 'Translating English to logic, logic in system specifications, Boolean searches and logic puzzles.' },
-  { id: 'rosen-ch1-s3', chapterId: 'rosen-ch1', number: 1.3, title: 'Propositional Equivalences', description: 'Tautologies, contradictions, logical equivalences and the laws of algebra of logic.' },
-  { id: 'rosen-ch1-s4', chapterId: 'rosen-ch1', number: 1.4, title: 'Predicates and Quantifiers', description: 'Predicates, variables, the universal ∀ and existential ∃ quantifiers and bound variables.' },
-  { id: 'rosen-ch1-s5', chapterId: 'rosen-ch1', number: 1.5, title: 'Nested Quantifiers', description: 'Reading and writing statements with two or more quantifiers, and their negations.' },
-  { id: 'rosen-ch1-s6', chapterId: 'rosen-ch1', number: 1.6, title: 'Rules of Inference', description: 'Valid argument forms: modus ponens, modus tollens, hypothetical and disjunctive syllogisms.' },
-  { id: 'rosen-ch1-s7', chapterId: 'rosen-ch1', number: 1.7, title: 'Introduction to Proofs', description: 'Direct proofs, proof by contraposition, proof by contradiction and exhaustive proofs.' },
-  { id: 'rosen-ch1-s8', chapterId: 'rosen-ch1', number: 1.8, title: 'Proof Methods and Strategy', description: 'Choosing proof methods, existence proofs, uniqueness proofs and forward/backward reasoning.' },
-  // Chapter 2
-  { id: 'rosen-ch2-s1', chapterId: 'rosen-ch2', number: 2.1, title: 'Sets', description: 'Set notation, subsets, power sets, Cartesian products and set identities.' },
-  { id: 'rosen-ch2-s2', chapterId: 'rosen-ch2', number: 2.2, title: 'Set Operations', description: 'Union, intersection, difference, complement, symmetric difference and computer representation of sets.' },
-  { id: 'rosen-ch2-s3', chapterId: 'rosen-ch2', number: 2.3, title: 'Functions', description: 'One-to-one, onto, bijections, inverse and composition of functions, important functions.' },
-  { id: 'rosen-ch2-s4', chapterId: 'rosen-ch2', number: 2.4, title: 'Sequences and Summations', description: 'Sequences, recurrence relations, series, summation notation and special series.' },
-  { id: 'rosen-ch2-s5', chapterId: 'rosen-ch2', number: 2.5, title: 'Cardinality of Sets', description: 'Countable sets, the countability of rationals and Cantor’s uncountability of the reals.' },
-  { id: 'rosen-ch2-s6', chapterId: 'rosen-ch2', number: 2.6, title: 'Matrices', description: 'Matrix arithmetic, matrix multiplication, transposes, zero–one matrices and Boolean products.' },
-  // Chapter 3
-  { id: 'rosen-ch3-s1', chapterId: 'rosen-ch3', number: 3.1, title: 'Algorithms', description: 'What algorithms are, pseudocode, searching and greedy algorithms, halting problem.' },
-  { id: 'rosen-ch3-s2', chapterId: 'rosen-ch3', number: 3.2, title: 'The Growth of Functions', description: 'Big-O, big-Omega and big-Theta notation and analyzing function growth.' },
-  { id: 'rosen-ch3-s3', chapterId: 'rosen-ch3', number: 3.3, title: 'Complexity of Algorithms', description: 'Time and space complexity, best/average/worst case analysis of key algorithms.' },
-  // Chapter 4
-  { id: 'rosen-ch4-s1', chapterId: 'rosen-ch4', number: 4.1, title: 'Divisibility and Modular Arithmetic', description: 'Division algorithm, div and mod, congruences and arithmetic modulo m.' },
-  { id: 'rosen-ch4-s2', chapterId: 'rosen-ch4', number: 4.2, title: 'Integer Representations and Algorithms', description: 'Base expansions, binary/octal/hex, integer addition/multiplication and modular exponentiation.' },
-  { id: 'rosen-ch4-s3', chapterId: 'rosen-ch4', number: 4.3, title: 'Primes and Greatest Common Divisors', description: 'Prime factorization, GCD, Euclidean algorithm, Bézout coefficients and linear congruences.' },
-  { id: 'rosen-ch4-s4', chapterId: 'rosen-ch4', number: 4.4, title: 'Solving Congruences', description: 'Linear congruences, the Chinese Remainder Theorem and Fermat’s Little Theorem.' },
-  { id: 'rosen-ch4-s5', chapterId: 'rosen-ch4', number: 4.5, title: 'Applications of Congruences', description: 'Hashing functions, pseudorandom numbers and check digits.' },
-  { id: 'rosen-ch4-s6', chapterId: 'rosen-ch4', number: 4.6, title: 'Cryptography', description: 'Classical ciphers, RSA public-key cryptosystem, encryption and decryption protocols.' },
-  // Chapter 5
-  { id: 'rosen-ch5-s1', chapterId: 'rosen-ch5', number: 5.1, title: 'Mathematical Induction', description: 'The well-ordering principle and proofs by mathematical induction.' },
-  { id: 'rosen-ch5-s2', chapterId: 'rosen-ch5', number: 5.2, title: 'Strong Induction and Well-Ordering', description: 'Strong induction proofs, lemmas and the validity of the well-ordering property.' },
-  { id: 'rosen-ch5-s3', chapterId: 'rosen-ch5', number: 5.3, title: 'Recursive Definitions and Structural Induction', description: 'Recursively defined sets, strings, trees and structural induction proofs.' },
-  { id: 'rosen-ch5-s4', chapterId: 'rosen-ch5', number: 5.4, title: 'Recursive Algorithms', description: 'Designing and analyzing recursive algorithms, merge sort, correctness via induction.' },
-  { id: 'rosen-ch5-s5', chapterId: 'rosen-ch5', number: 5.5, title: 'Program Correctness', description: 'Hoare triples, partial and total correctness and loop invariants.' },
-  // Chapter 6
-  { id: 'rosen-ch6-s1', chapterId: 'rosen-ch6', number: 6.1, title: 'The Basics of Counting', description: 'Product rule, sum rule, subtraction and division rules, the pigeonhole principle basics.' },
-  { id: 'rosen-ch6-s2', chapterId: 'rosen-ch6', number: 6.2, title: 'The Pigeonhole Principle', description: 'The pigeonhole principle, generalized pigeonhole and Ramsey-type applications.' },
-  { id: 'rosen-ch6-s3', chapterId: 'rosen-ch6', number: 6.3, title: 'Permutations and Combinations', description: 'Permutations and combinations of n objects, with and without repetition.' },
-  { id: 'rosen-ch6-s4', chapterId: 'rosen-ch6', number: 6.4, title: 'Binomial Coefficients and Identities', description: 'The binomial theorem, Pascal’s triangle and identities for binomial coefficients.' },
-  { id: 'rosen-ch6-s5', chapterId: 'rosen-ch6', number: 6.5, title: 'Generalized Permutations and Combinations', description: 'Permutations with repetition, combinations with repetition, distributing objects into boxes.' },
-  { id: 'rosen-ch6-s6', chapterId: 'rosen-ch6', number: 6.6, title: 'Generating Permutations and Combinations', description: 'Listing all permutations and combinations: lexicographic order and Gray codes.' },
-  // Chapter 7
-  { id: 'rosen-ch7-s1', chapterId: 'rosen-ch7', number: 7.1, title: 'An Introduction to Discrete Probability', description: 'Sample spaces, events, assigning probabilities and combining events.' },
-  { id: 'rosen-ch7-s2', chapterId: 'rosen-ch7', number: 7.2, title: 'Probability Theory', description: 'Conditional probability, independence, Bernoulli trials and random variables.' },
-  { id: 'rosen-ch7-s3', chapterId: 'rosen-ch7', number: 7.3, title: 'Bayes’ Theorem', description: 'Bayes’ theorem, partitioning sample spaces and Bayesian inference.' },
-  { id: 'rosen-ch7-s4', chapterId: 'rosen-ch7', number: 7.4, title: 'Expected Value and Variance', description: 'Linearity of expectation, variance, Chebyshev’s inequality and Markov chains.' },
-  // Chapter 8
-  { id: 'rosen-ch8-s1', chapterId: 'rosen-ch8', number: 8.1, title: 'Applications of Recurrence Relations', description: 'Modeling with recurrence relations: Fibonacci, compound interest, divide-and-conquer.' },
-  { id: 'rosen-ch8-s2', chapterId: 'rosen-ch8', number: 8.2, title: 'Solving Linear Recurrence Relations', description: 'Homogeneous linear recurrences, characteristic roots, distinct and repeated roots.' },
-  { id: 'rosen-ch8-s3', chapterId: 'rosen-ch8', number: 8.3, title: 'Divide-and-Conquer Algorithms and Recurrence Relations', description: 'Master theorem style analysis of divide-and-conquer recurrences.' },
-  { id: 'rosen-ch8-s4', chapterId: 'rosen-ch8', number: 8.4, title: 'Generating Functions', description: 'Ordinary generating functions, closed forms and counting applications.' },
-  { id: 'rosen-ch8-s5', chapterId: 'rosen-ch8', number: 8.5, title: 'Inclusion–Exclusion', description: 'The principle of inclusion–exclusion for counting unions of sets.' },
-  { id: 'rosen-ch8-s6', chapterId: 'rosen-ch8', number: 8.6, title: 'Applications of Inclusion–Exclusion', description: 'Counting onto functions, derangements and the sieve of Eratosthenes.' },
-  // Chapter 9
-  { id: 'rosen-ch9-s1', chapterId: 'rosen-ch9', number: 9.1, title: 'Relations and Their Properties', description: 'Binary relations, properties: reflexive, symmetric, antisymmetric, transitive; combining relations.' },
-  { id: 'rosen-ch9-s2', chapterId: 'rosen-ch9', number: 9.2, title: 'n-ary Relations and Their Applications', description: 'n-ary relations, relational databases, keys and projection/join operations.' },
-  { id: 'rosen-ch9-s3', chapterId: 'rosen-ch9', number: 9.3, title: 'Representing Relations', description: 'Matrices and digraphs as representations of relations.' },
-  { id: 'rosen-ch9-s4', chapterId: 'rosen-ch9', number: 9.4, title: 'Closures of Relations', description: 'Reflexive, symmetric and transitive closures; Warshall’s algorithm.' },
-  { id: 'rosen-ch9-s5', chapterId: 'rosen-ch9', number: 9.5, title: 'Equivalence Relations', description: 'Equivalence classes, partitions and connections between them.' },
-  { id: 'rosen-ch9-s6', chapterId: 'rosen-ch9', number: 9.6, title: 'Partial Orderings', description: 'Posets, Hasse diagrams, total orders, lattices and topological sorting.' },
-  // Chapter 10
-  { id: 'rosen-ch10-s1', chapterId: 'rosen-ch10', number: 10.1, title: 'Graphs and Graph Models', description: 'Graph terminology, graph models for networks, social analysis and scheduling.' },
-  { id: 'rosen-ch10-s2', chapterId: 'rosen-ch10', number: 10.2, title: 'Graph Terminology and Special Types of Graphs', description: 'Degrees, complete, bipartite, regular graphs and new graphs from old.' },
-  { id: 'rosen-ch10-s3', chapterId: 'rosen-ch10', number: 10.3, title: 'Representing Graphs and Graph Isomorphism', description: 'Adjacency lists, adjacency matrices and detecting graph isomorphism.' },
-  { id: 'rosen-ch10-s4', chapterId: 'rosen-ch10', number: 10.4, title: 'Connectivity', description: 'Paths, connectedness, Menger’s theorem and paths in directed graphs.' },
-  { id: 'rosen-ch10-s5', chapterId: 'rosen-ch10', number: 10.5, title: 'Euler and Hamilton Paths', description: 'Euler circuits and paths, Hamilton circuits, the traveling salesperson problem.' },
-  { id: 'rosen-ch10-s6', chapterId: 'rosen-ch10', number: 10.6, title: 'Shortest-Path Problems', description: 'Dijkstra’s algorithm, shortest paths in weighted graphs.' },
-  { id: 'rosen-ch10-s7', chapterId: 'rosen-ch10', number: 10.7, title: 'Planar Graphs', description: 'Euler’s formula, Kuratowski’s theorem and planarity.' },
-  { id: 'rosen-ch10-s8', chapterId: 'rosen-ch10', number: 10.8, title: 'Graph Coloring', description: 'Chromatic number, the four color theorem and coloring applications.' },
-  // Chapter 11
-  { id: 'rosen-ch11-s1', chapterId: 'rosen-ch11', number: 11.1, title: 'Introduction to Trees', description: 'Trees, forests, rooted trees, m-ary trees and properties of trees.' },
-  { id: 'rosen-ch11-s2', chapterId: 'rosen-ch11', number: 11.2, title: 'Applications of Trees', description: 'Binary search trees, decision trees, prefix codes and Huffman coding.' },
-  { id: 'rosen-ch11-s3', chapterId: 'rosen-ch11', number: 11.3, title: 'Tree Traversal', description: 'Preorder, inorder and postorder traversal, expression trees.' },
-  { id: 'rosen-ch11-s4', chapterId: 'rosen-ch11', number: 11.4, title: 'Spanning Trees', description: 'Spanning trees, DFS and BFS construction, counting spanning trees.' },
-  { id: 'rosen-ch11-s5', chapterId: 'rosen-ch11', number: 11.5, title: 'Minimum Spanning Trees', description: 'Prim’s and Kruskal’s algorithms for minimum spanning trees.' },
-  // Chapter 12
-  { id: 'rosen-ch12-s1', chapterId: 'rosen-ch12', number: 12.1, title: 'Boolean Functions', description: 'Boolean functions, Boolean expressions and duality.' },
-  { id: 'rosen-ch12-s2', chapterId: 'rosen-ch12', number: 12.2, title: 'Representing Boolean Functions', description: 'Sum-of-products expansions and functional completeness.' },
-  { id: 'rosen-ch12-s3', chapterId: 'rosen-ch12', number: 12.3, title: 'Logic Gates', description: 'Gates: NOT, AND, OR, NAND, NOR, XOR; combinational circuits.' },
-  { id: 'rosen-ch12-s4', chapterId: 'rosen-ch12', number: 12.4, title: 'Minimization of Circuits', description: 'Karnaugh maps, the Quine–McCluskey method and don’t care conditions.' },
-  // Chapter 13
-  { id: 'rosen-ch13-s1', chapterId: 'rosen-ch13', number: 13.1, title: 'Languages and Grammars', description: 'Phrase-structure grammars, types 0–3, derivation and Backus–Naur form.' },
-  { id: 'rosen-ch13-s2', chapterId: 'rosen-ch13', number: 13.2, title: 'Finite-State Machines with Output', description: 'Moore machines and Mealy machines with output functions.' },
-  { id: 'rosen-ch13-s3', chapterId: 'rosen-ch13', number: 13.3, title: 'Finite-State Machines with No Output', description: 'State diagrams, set of strings, language recognition, regular sets.' },
-  { id: 'rosen-ch13-s4', chapterId: 'rosen-ch13', number: 13.4, title: 'Language Recognition', description: 'Nondeterministic finite-state machines, Kleene’s theorem and regular expressions.' },
-  { id: 'rosen-ch13-s5', chapterId: 'rosen-ch13', number: 13.5, title: 'Turing Machines', description: 'Turing machines, Church–Turing thesis and computability.' },
-  // ---- Operating System Concepts — Chapter 1: Introduction ----
-  { id: 'osc-ch1-s1', chapterId: 'osc-ch1', number: 1.1, title: 'What Operating Systems Do', description: 'The user view and system view of an OS, and a working definition of what an operating system actually is.' },
-  { id: 'osc-ch1-s2', chapterId: 'osc-ch1', number: 1.2, title: 'Computer-System Organization', description: 'CPU, device controllers and the bus; the interrupt-driven cycle, the storage hierarchy and direct memory access.' },
-  { id: 'osc-ch1-s3', chapterId: 'osc-ch1', number: 1.3, title: 'Computer-System Architecture', description: 'Single-processor systems, multicore, NUMA, clusters and distributed systems.' },
-  { id: 'osc-ch1-s4', chapterId: 'osc-ch1', number: 1.4, title: 'Operating-System Operations', description: 'Dual-mode operation, privileged instructions, the timer, and multiprogramming vs time sharing.' },
-  { id: 'osc-ch1-s5', chapterId: 'osc-ch1', number: 1.5, title: 'Environments, Kernel Structures and Open Source', description: 'Resource management, security, virtualization; kernel data structures (lists, queues, trees, hashes, maps); computing environments; free and open-source operating systems.' },
-  // ---- OSC Chapter 2: Operating-System Structures ----
-  { id: 'osc-ch2-s1', chapterId: 'osc-ch2', number: 2.1, title: 'Operating-System Services', description: 'What the OS provides to users, processes and the system itself — one user interface plus nine core services.' },
-  { id: 'osc-ch2-s2', chapterId: 'osc-ch2', number: 2.2, title: 'User Interfaces and System Calls', description: 'CLI, GUI and touch interfaces; the system-call interface; the six categories of system calls and parameter passing.' },
-  { id: 'osc-ch2-s3', chapterId: 'osc-ch2', number: 2.3, title: 'System Services, Linkers and Loaders', description: 'System services, why applications are OS-specific, and how linkers and loaders bring programs to life.' },
-  { id: 'osc-ch2-s4', chapterId: 'osc-ch2', number: 2.4, title: 'Operating-System Design and Structure', description: 'Mechanisms vs policies; monolithic, layered, microkernel, modular and hybrid designs — macOS, iOS and Android.' },
-  { id: 'osc-ch2-s5', chapterId: 'osc-ch2', number: 2.5, title: 'Building, Booting and Debugging an OS', description: 'The boot process from firmware to GRUB, the Windows subsystem for Linux, and OS debugging with BCC/DTrace.' },
-  // ---- OSC Chapter 3: Processes ----
-  { id: 'osc-ch3-s1', chapterId: 'osc-ch3', number: 3.1, title: 'Process Concept', description: 'A process is a program in execution: the memory layout of a C program, the PCB and the process states.' },
-  { id: 'osc-ch3-s2', chapterId: 'osc-ch3', number: 3.2, title: 'Process Scheduling', description: 'Ready and device queues, long/short-term schedulers, context switching and its cost.' },
-  { id: 'osc-ch3-s3', chapterId: 'osc-ch3', number: 3.3, title: 'Operations on Processes', description: 'Process creation with fork()/exec(), parent–child relationships, wait/exit, Android’s process hierarchy and systemd.' },
-  { id: 'osc-ch3-s4', chapterId: 'osc-ch3', number: 3.4, title: 'IPC in Shared-Memory Systems', description: 'Interprocess communication, the producer–consumer problem and the bounded ring buffer with in/out counters.' },
-  { id: 'osc-ch3-s5', chapterId: 'osc-ch3', number: 3.5, title: 'Message Passing, Pipes and Client-Server IPC', description: 'Direct vs indirect communication, blocking and buffering; POSIX and Windows IPC; pipes, sockets, RPC and Android AIDL.' },
-  // ---- OSC Chapter 4: Threads & Concurrency ----
-  { id: 'osc-ch4-s1', chapterId: 'osc-ch4', number: 4.1, title: 'Overview of Threads', description: 'What a thread is, what it shares with its sibling threads and the four benefits of multithreading.' },
-  { id: 'osc-ch4-s2', chapterId: 'osc-ch4', number: 4.2, title: 'Multicore Programming and Amdahl’s Law', description: 'Data vs task parallelism, the four challenges of multicore programming, and the speedup equation that caps every parallel program.' },
-  { id: 'osc-ch4-s3', chapterId: 'osc-ch4', number: 4.3, title: 'Multithreading Models and Thread Libraries', description: 'User vs kernel threads, many-to-one, one-to-one and many-to-many models; Pthreads, Windows and Java thread libraries.' },
-  { id: 'osc-ch4-s4', chapterId: 'osc-ch4', number: 4.4, title: 'Implicit Threading and Threading Issues', description: 'Thread pools, OpenMP, Grand Central Dispatch and fork–join; cancellation, signals, thread-local storage and kernel thread designs.' },
-  // ---- OSC Chapter 5: CPU Scheduling ----
-  { id: 'osc-ch5-s1', chapterId: 'osc-ch5', number: 5.1, title: 'Basic Concepts', description: 'CPU–I/O burst cycles, when scheduling decisions happen, and preemptive vs non-preemptive policies.' },
-  { id: 'osc-ch5-s2', chapterId: 'osc-ch5', number: 5.2, title: 'Scheduling Criteria', description: 'The five metrics — CPU utilization, throughput, turnaround, waiting and response time — and how they trade off.' },
-  { id: 'osc-ch5-s3', chapterId: 'osc-ch5', number: 5.3, title: 'Scheduling Algorithms', description: 'FCFS and the convoy effect, SJF/SRTF with exponential averaging, priority with aging, and round robin with quantum effects.' },
-  { id: 'osc-ch5-s4', chapterId: 'osc-ch5', number: 5.4, title: 'Thread and Multiprocessor Scheduling', description: 'Multilevel queues and feedback, processor affinity, load balancing, NUMA-aware scheduling, Linux CFS and Windows 10.' },
-  { id: 'osc-ch5-s5', chapterId: 'osc-ch5', number: 5.5, title: 'Real-Time Scheduling and Evaluation', description: 'Rate-monotonic and earliest-deadline-first scheduling with utilization bounds; deterministic, queueing and simulation evaluation.' },
-  // ---- OSC Chapter 6: Synchronization Tools ----
-  { id: 'osc-ch6-s1', chapterId: 'osc-ch6', number: 6.1, title: 'Race Conditions and the Critical-Section Problem', description: 'Why shared data breaks under interleaving, and the three requirements every correct solution must satisfy.' },
-  { id: 'osc-ch6-s2', chapterId: 'osc-ch6', number: 6.2, title: 'Peterson’s Solution and Hardware Support', description: 'Peterson’s algorithm, memory barriers and instruction reordering, test-and-set, compare-and-swap and atomic variables.' },
-  { id: 'osc-ch6-s3', chapterId: 'osc-ch6', number: 6.3, title: 'Mutex Locks and Semaphores', description: 'Spinlocks and CAS-based mutexes; counting and binary semaphores, busy-wait vs sleep implementations and their dangers.' },
-  { id: 'osc-ch6-s4', chapterId: 'osc-ch6', number: 6.4, title: 'Monitors, Liveness and Evaluation', description: 'Condition variables and monitor semantics; deadlock, priority inversion and starvation as liveness hazards; tool support.' },
-  // ---- OSC Chapter 7: Synchronization Examples ----
-  { id: 'osc-ch7-s1', chapterId: 'osc-ch7', number: 7.1, title: 'The Bounded-Buffer Problem', description: 'Producer–consumer with semaphores and with monitors — the canonical synchronization pattern.' },
-  { id: 'osc-ch7-s2', chapterId: 'osc-ch7', number: 7.2, title: 'Readers–Writers and Dining Philosophers', description: 'Concurrent readers vs exclusive writers; five philosophers, five forks and deadlock-free solutions.' },
-  { id: 'osc-ch7-s3', chapterId: 'osc-ch7', number: 7.3, title: 'Synchronization Within Kernels and POSIX', description: 'Windows and Linux kernel synchronization strategies and the POSIX mutex, semaphore and condition-variable APIs.' },
-  { id: 'osc-ch7-s4', chapterId: 'osc-ch7', number: 7.4, title: 'Java Synchronization and Alternative Approaches', description: 'Java monitors, wait/notify and reentrant locks; transactional memory, OpenMP and functional languages as lock-free alternatives.' },
-  // ---- OSC Chapter 8: Deadlocks ----
-  { id: 'osc-ch8-s1', chapterId: 'osc-ch8', number: 8.1, title: 'System Model and Deadlock Characterization', description: 'Resources, the resource-allocation graph and the four necessary conditions for deadlock.' },
-  { id: 'osc-ch8-s2', chapterId: 'osc-ch8', number: 8.2, title: 'Deadlock Prevention and Avoidance', description: 'Breaking the four conditions; safe states and the Banker’s algorithm with full worked examples.' },
-  { id: 'osc-ch8-s3', chapterId: 'osc-ch8', number: 8.3, title: 'Detection, Recovery and Livelock', description: 'Deadlock detection algorithms, recovery by termination or rollback, livelock and Linux lockdep / Java thread dumps.' },
-  // ---- OSC Chapter 9: Main Memory ----
-  { id: 'osc-ch9-s1', chapterId: 'osc-ch9', number: 9.1, title: 'Background and Address Binding', description: 'Logical vs physical addresses, the MMU and dynamic relocation, base-and-limit registers, dynamic loading, linking and DLLs.' },
-  { id: 'osc-ch9-s2', chapterId: 'osc-ch9', number: 9.2, title: 'Contiguous Allocation and Swapping', description: 'First/best/worst fit, internal vs external fragmentation, compaction and swapping pages to backing store.' },
-  { id: 'osc-ch9-s3', chapterId: 'osc-ch9', number: 9.3, title: 'Paging', description: 'Frames and pages, the page table, address translation with the offset split, and the TLB with effective-access-time math.' },
-  { id: 'osc-ch9-s4', chapterId: 'osc-ch9', number: 9.4, title: 'Page-Table Structure and Architectures', description: 'Hierarchical, hashed and inverted page tables; protection and shared pages; Intel x86-64 and ARMv8 examples.' },
-  // ---- OSC Chapter 10: Virtual Memory ----
-  { id: 'osc-ch10-s1', chapterId: 'osc-ch10', number: 10.1, title: 'Background and Demand Paging', description: 'Running programs bigger than RAM: the page-fault dance, its cost and the effective-access-time formula.' },
-  { id: 'osc-ch10-s2', chapterId: 'osc-ch10', number: 10.2, title: 'Copy-on-Write and Memory Compression', description: 'fork() without copying pages, vfork, and compressed memory in macOS and Windows 10.' },
-  { id: 'osc-ch10-s3', chapterId: 'osc-ch10', number: 10.3, title: 'Page Replacement', description: 'FIFO and Belady’s anomaly, optimal replacement, LRU as stack approximation, and clock/second-chance/enhanced variants.' },
-  { id: 'osc-ch10-s4', chapterId: 'osc-ch10', number: 10.4, title: 'Allocation of Frames and Thrashing', description: 'Equal vs proportional allocation, global vs local replacement, page-fault frequency, working sets and why thrashing happens.' },
-  { id: 'osc-ch10-s5', chapterId: 'osc-ch10', number: 10.5, title: 'Memory-Mapped Files and Kernel Memory', description: 'mmap vs read/write, shared memory via files; slab and buddy allocators; Linux and Windows 10 virtual memory in practice.' },
-  // ---- OSC Chapter 11: Mass-Storage Structure ----
-  { id: 'osc-ch11-s1', chapterId: 'osc-ch11', number: 11.1, title: 'HDD and NVM Device Structure', description: 'Platters, tracks, cylinders, sectors and transfer rates; SSD/NVM pages and blocks, the flash translation layer and wear leveling.' },
-  { id: 'osc-ch11-s2', chapterId: 'osc-ch11', number: 11.2, title: 'Disk Scheduling and Device Management', description: 'FCFS, SSTF, SCAN, C-SCAN and C-LOOK on a moving head; formatting, the boot block, bad blocks, ECC and swap-space management.' },
-  { id: 'osc-ch11-s3', chapterId: 'osc-ch11', number: 11.3, title: 'Storage Attachment', description: 'Direct-attached buses, network-attached storage (NAS), storage-area networks (SAN), cloud and object storage.' },
-  { id: 'osc-ch11-s4', chapterId: 'osc-ch11', number: 11.4, title: 'RAID Structure', description: 'Striping, mirroring and parity; RAID 0–6 with capacity and reliability formulas; rebuilding and NVM RAID.' },
-  // ---- OSC Chapter 12: I/O Systems ----
-  { id: 'osc-ch12-s1', chapterId: 'osc-ch12', number: 12.1, title: 'I/O Hardware', description: 'Ports, buses and controllers; handshaking, polling, interrupt vectors and traps, and direct memory access.' },
-  { id: 'osc-ch12-s2', chapterId: 'osc-ch12', number: 12.2, title: 'Application I/O Interface and Kernel I/O Subsystem', description: 'Block, character and network devices; blocking, nonblocking and vectored I/O; buffering, caching, spooling and the life of an I/O request.' },
-  { id: 'osc-ch12-s3', chapterId: 'osc-ch12', number: 12.3, title: 'I/O Performance and Power Management', description: 'The I/O performance ladder, STREAMS, and power management for mobile and laptop systems.' },
-  // ---- OSC Chapter 13: File-System Interface ----
-  { id: 'osc-ch13-s1', chapterId: 'osc-ch13', number: 13.1, title: 'File Concept and Attributes', description: 'What a file is, its attributes and operations, file types and internal structure.' },
-  { id: 'osc-ch13-s2', chapterId: 'osc-ch13', number: 13.2, title: 'Access Methods', description: 'Sequential, direct and indexed access — and the index structures that emulate each.' },
-  { id: 'osc-ch13-s3', chapterId: 'osc-ch13', number: 13.3, title: 'Directory Structure', description: 'Single-level to two-level to tree to acyclic-graph directories; sharing, mounting and path resolution.' },
-  { id: 'osc-ch13-s4', chapterId: 'osc-ch13', number: 13.4, title: 'Protection and Memory-Mapped Files', description: 'Access control — owners, groups and ACLs; memory-mapped files and the Windows file API.' },
-  // ---- OSC Chapter 14: File-System Implementation ----
-  { id: 'osc-ch14-s1', chapterId: 'osc-ch14', number: 14.1, title: 'File-System Structure, Operations and Directories', description: 'The layered design, the mount protocol, the open()/read() flow and linear-list vs hash-table directories.' },
-  { id: 'osc-ch14-s2', chapterId: 'osc-ch14', number: 14.2, title: 'Allocation Methods and Free Space', description: 'Contiguous extents, linked allocation and FAT, indexed i-nodes; bitmaps vs linked free lists; performance trade-offs.' },
-  { id: 'osc-ch14-s3', chapterId: 'osc-ch14', number: 14.3, title: 'Efficiency, Performance and Recovery', description: 'Disk efficiency, the page cache, journaling/write-ahead logging, snapshots and the WAFL file system.' },
-  // ---- OSC Chapter 15: File-System Internals ----
-  { id: 'osc-ch15-s1', chapterId: 'osc-ch15', number: 15.1, title: 'File Systems, Partitions and Mounting', description: 'File-system types, partitions, the boot partition and the mount protocol.' },
-  { id: 'osc-ch15-s2', chapterId: 'osc-ch15', number: 15.2, title: 'File Sharing and Virtual File Systems', description: 'Remote vs distributed file sharing and the VFS object model that unifies many file systems.' },
-  { id: 'osc-ch15-s3', chapterId: 'osc-ch15', number: 15.3, title: 'Remote and Distributed File Systems', description: 'The NFS protocol and idempotent operations, DFS naming and transparency, and remote-access caching.' },
-  { id: 'osc-ch15-s4', chapterId: 'osc-ch15', number: 15.4, title: 'Consistency Semantics', description: 'Unix, session and immutable-file semantics — what “reading what you wrote” really means.' },
-  // ---- Stewart / Mano / Flanagan / Electronics / Feynman sections come from the parts files ----
-  ...CALC_SECTIONS,
-  ...JS_SECTIONS,
-  ...MANO_SECTIONS,
-  ...ELEC_SECTIONS,
+export const LIBRARY_SECTIONS: SectionMeta[] = [
+  ...MATH_SECTIONS,
   ...PHYS_SECTIONS,
-  ...CLRS_SECTIONS,
-  ...HALL_SECTIONS,
-  ...YOUNG_SECTIONS,
-  ...EWEN_SECTIONS,
-  ...COLETTA_SECTIONS,
-  ...CPP_SECTIONS,
-  // ---- The Complete Web Development Library (2026 Edition) ----
-  ...WEBDEV_SECTIONS,
-  // ---- Engineering Mathematics for GATE (2026 Edition) ----
-  ...ENGMATH_SECTIONS,
-  // ---- JEE Mathematics Companion (2026 Edition) ----
-  ...JEEMATHS_SECTIONS,
-  // ---- JEE Chemistry (2026 Edition) ----
   ...CHEM_SECTIONS,
-  // ---- Databases (2026 Edition) ----
-  ...DBMS_SECTIONS,
-  // ---- Computer Networks (2026 Edition) ----
-  ...CN_SECTIONS,
-  // ---- Compilers + Computer Organization (2026 Edition) ----
-  ...COMPCOA_SECTIONS,
-  // ---- Signals & Systems + Control (2026 Edition) ----
-  ...SIGCTRL_SECTIONS,
-  // ---- Communications + Electromagnetics (2026 Edition) ----
-  ...COMMEM_SECTIONS,
-  // ---- Core Java (Horstmann 12e) ----
-  ...JAVA_SECTIONS,
-  // ---- ============== COMPETITIVE EXAM LIBRARIES (all chapters & sections) ============== ----
-  // ---- JEE Main 2026 (official NTA syllabus) ----
-  ...JEEMAIN_PHY_SECTIONS,
-  ...JEEMAIN_CHEM_SECTIONS,
-  ...JEEMAIN_MATH_SECTIONS,
-  // ---- JEE Advanced 2026 (official IIT syllabus) ----
-  ...JEEADV_PHY_SECTIONS,
-  ...JEEADV_CHEM_SECTIONS,
-  ...JEEADV_MATH_SECTIONS,
-  // ---- Digital SAT (College Board) ----
-  ...SAT_MATH_SECTIONS,
-  ...SAT_RW_SECTIONS,
-  // ---- DRDO Scientist B ----
-  ...DRDO_T1_SECTIONS,
-  ...DRDO_CSE_SECTIONS,
-  ...DRDO_ECE_SECTIONS,
-  ...DRDO_EE_SECTIONS,
-  ...DRDO_ME_SECTIONS,
-  // ---- GATE CS 2026 ----
-  ...GATE_CS_SECTIONS,
-  // ---- Engineering semester exams ----
-  ...ENGG_CSE_SECTIONS,
-  ...ENGG_ECE_SECTIONS,
-  ...ENGG_EE_SECTIONS,
-  ...ENGG_ME_SECTIONS,
+  ...ENGLISH_SECTIONS,
+  ...APT_SECTIONS,
+  ...CSE_SECTIONS,
+  ...ECE_SECTIONS,
+  ...EE_SECTIONS,
+  ...ME_SECTIONS,
 ]
 
 // Lookup helpers

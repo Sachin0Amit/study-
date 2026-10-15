@@ -13,7 +13,7 @@ import type { FormulaEntry } from '../formulas'
 export const physCh4Content: SectionContent[] = [
   // ------------------------------------------------------------------ 4.1
   {
-    sectionId: 'phys-ch4-s1',
+    sectionId: 'hall-ch7-s17',
     readingTime: 10,
     intro: 'Before computing a single joule, Feynman tells a story about a mother counting a child\u2019s indestructible blocks — a count that survives only by adding terms for blocks under the rug, out the window, at Bruce\u2019s house, locked in the toy box and sunk in the dirty bathwater. That is energy: an abstract number, with a formula for every hiding place, whose total never changes. The most remarkable part of the analogy is that there are no blocks.',
     objectives: [
@@ -158,7 +158,7 @@ export const physCh4Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 4.2
   {
-    sectionId: 'phys-ch4-s2',
+    sectionId: 'hall-ch13-s22',
     readingTime: 11,
     intro: 'The law of gravitation — every object in the universe attracts every other with a force proportional to both masses and inversely as the square of their separation — is, Feynman says, one of the most far-reaching generalizations of the human mind. This lecture is its biography: Tycho\u2019s data, Kepler\u2019s regularities, Newton\u2019s synthesis, the Cavendish balance, tides, Neptune, double stars — and an honest admission of what we still do not know.',
     objectives: [
@@ -303,7 +303,7 @@ export const physCh4Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 4.3
   {
-    sectionId: 'phys-ch4-s3',
+    sectionId: 'hall-ch8-s11',
     readingTime: 10,
     intro: 'The study of energy now meets Newton\u2019s laws head on. The bridge is work — the integral of force along the path. Feynman proves that kinetic energy changes by exactly the work done, builds potential energies for gravity near and far and for springs, and closes with two classic computations: the field of an infinite sheet and of a spherical shell, the latter explaining why the earth pulls as if all its mass sat at its center.',
     objectives: [
@@ -451,7 +451,7 @@ export const physCh4Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 4.4
   {
-    sectionId: 'phys-ch4-s4',
+    sectionId: 'hall-ch8-s12',
     readingTime: 10,
     intro: 'The final energy lecture is a meditation with formulas: what work really is (and why holding a hundred-pound weight is not work), why friction\u2019s apparent wastefulness is a failure of bookkeeping rather than of nature, how potential energy is defined for conservative forces, and the two showpiece results — the escape velocity of seven miles per second and the field-potential calculus $\\mathbf{F} = -\\nabla U$ that turns one scalar function into the whole force.',
     objectives: [
@@ -597,64 +597,64 @@ export const physCh4Content: SectionContent[] = [
 
 export const physCh4Formulas: FormulaEntry[] = [
   {
-    chapterId: 'phys-ch4',
-    section: '4.1',
+    chapterId: 'hall-ch7',
+    section: '7.17',
     name: 'Gravitational potential energy (near earth)',
     formula: 'U = mgz = (weight)\u00d7(height)',
     latex: 'U = mgz',
     note: 'from reversible machines; heights small vs the earth\u2019s radius',
   },
   {
-    chapterId: 'phys-ch4',
-    section: '4.2',
+    chapterId: 'hall-ch13',
+    section: '13.22',
     name: 'Law of universal gravitation',
     formula: 'F = Gmm\u2032/r\u00b2',
     latex: 'F = \\frac{Gmm^{\\prime}}{r^{2}}',
     note: 'G = 6.670\u00d710\u207b\u00b9\u00b9 N\u00b7m\u00b2/kg\u00b2 (Cavendish)',
   },
   {
-    chapterId: 'phys-ch4',
-    section: '4.2',
+    chapterId: 'hall-ch13',
+    section: '13.22',
     name: 'Kepler\u2019s third law',
     formula: 'T\u00b2 \u221d a\u00b3',
     latex: 'T^{2} \\propto a^{3}',
     note: 'the squares of the periods \u221d the cubes of the semimajor axes',
   },
   {
-    chapterId: 'phys-ch4',
-    section: '4.3',
+    chapterId: 'hall-ch8',
+    section: '8.11',
     name: 'Work (line integral)',
     formula: 'W = \u222bF\u00b7ds',
     latex: 'W = \\int_1^2 \\mathbf{F}\\cdot d\\mathbf{s}',
     note: 'equals the change of kinetic energy along the path',
   },
   {
-    chapterId: 'phys-ch4',
-    section: '4.3',
+    chapterId: 'hall-ch8',
+    section: '8.11',
     name: 'Spring potential energy',
     formula: 'U = \u00bdkx\u00b2',
     latex: 'U = \\frac{1}{2}kx^{2}',
     note: 'force \u2212kx integrated from the equilibrium point',
   },
   {
-    chapterId: 'phys-ch4',
-    section: '4.4',
+    chapterId: 'hall-ch8',
+    section: '8.12',
     name: 'Gravitational potential energy (large r)',
     formula: 'U = \u2212GMm/r',
     latex: 'U = -\\frac{GMm}{r}',
     note: 'zero chosen at infinite separation',
   },
   {
-    chapterId: 'phys-ch4',
-    section: '4.4',
+    chapterId: 'hall-ch8',
+    section: '8.12',
     name: 'Escape velocity',
     formula: 'v = \u221a(2GM/a) = \u221a(2ga)',
     latex: 'v = \\sqrt{2GM/a} = \\sqrt{2ga}',
     note: '\u221a2 times the circular-orbit speed; about 7 mi/s for earth',
   },
   {
-    chapterId: 'phys-ch4',
-    section: '4.4',
+    chapterId: 'hall-ch8',
+    section: '8.12',
     name: 'Force from potential',
     formula: 'F = \u2212\u2207U',
     latex: '\\mathbf{F} = -\\nabla U',

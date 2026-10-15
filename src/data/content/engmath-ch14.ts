@@ -10,7 +10,7 @@ import type { SectionContent } from '../library'
 export const engmathCh14Content: SectionContent[] = [
   // ---------------------------------------------------------------- 14.1
   {
-    sectionId: 'engmath-ch14-s1',
+    sectionId: 'rosen-ch10-s9',
     readingTime: 9,
     intro: 'Shortest-path problems ask for the cheapest route through a weighted network, from road maps to packet routing. Dijkstra method settles vertices in order of distance while Bellman-Ford relaxes every edge repeatedly to survive negative weights. This section states the optimality principle behind both, runs each algorithm by hand, and compares their costs and limits.',
     objectives: [
@@ -115,7 +115,7 @@ export const engmathCh14Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 14.2
   {
-    sectionId: 'engmath-ch14-s2',
+    sectionId: 'rosen-ch10-s10',
     readingTime: 8,
     intro: 'Spanning trees connect every vertex with the fewest possible edges, and minimum spanning trees do it most cheaply. Kruskal sorts edges globally while Prim grows one tree outward, yet both rest on the same cut property. This section proves that property in working form, runs both algorithms, and notes what is unique about the answer.',
     objectives: [
@@ -219,7 +219,7 @@ export const engmathCh14Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 14.3
   {
-    sectionId: 'engmath-ch14-s3',
+    sectionId: 'rosen-ch10-s11',
     readingTime: 9,
     intro: 'Flow networks move stuff from a source to a sink through capacitated pipes, from traffic to data to assignments. Augmenting-path methods push flow along leftover capacity until no route remains. This section defines feasible flows, builds residual graphs, runs Ford-Fulkerson, proves optimality through the max-flow min-cut theorem, and reduces bipartite matching to flow.',
     objectives: [
@@ -323,7 +323,7 @@ export const engmathCh14Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 14.4
   {
-    sectionId: 'engmath-ch14-s4',
+    sectionId: 'rosen-ch10-s12',
     readingTime: 8,
     intro: 'Assignment and scheduling problems match agents to tasks under cost or time constraints. Bipartite graphs model who can do what, the Hungarian method finds minimum-cost perfect matchings, and greedy rules settle interval scheduling. This section connects matching theory with the flow machinery of the previous section and contrasts greedy with optimal strategies.',
     objectives: [

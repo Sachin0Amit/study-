@@ -7,7 +7,7 @@ import type { SectionContent } from '../library'
 
 export const ewenCh9Content: SectionContent[] = [
   {
-    sectionId: 'ewen-ch9-s1',
+    sectionId: 'hall-ch10-s18',
     readingTime: 5,
     intro: "Shafts are rated in rpm, radians, and rim speed — three faces of the same rotation. This section converts among them and relates angular to linear motion at the rim.",
     objectives: [
@@ -192,7 +192,7 @@ export const ewenCh9Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch9-s3',
+    sectionId: 'hall-ch10-s19',
     readingTime: 6,
     intro: "Cornering cars, centrifuges, and governors all demand center-seeking force. This section quantifies centripetal $F = mv^2/r$ and sizes curves and spinners safely.",
     objectives: [
@@ -288,7 +288,7 @@ export const ewenCh9Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch9-s4',
+    sectionId: 'hall-ch10-s20',
     readingTime: 6,
     intro: "Rotating shafts deliver power as torque times spin rate. This section prices shaft power in watts and horsepower and checks pulley torque against belt tension.",
     objectives: [
@@ -377,7 +377,7 @@ export const ewenCh9Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch9-s5',
+    sectionId: 'hall-ch10-s21',
     readingTime: 5,
     intro: "Belts, chains, and gears all enforce ratio rules between driver and driven. This section derives the inverse speed law and applies it to shop reductions.",
     objectives: [
@@ -473,7 +473,7 @@ export const ewenCh9Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch9-s6',
+    sectionId: 'hall-ch10-s22',
     readingTime: 6,
     intro: "Gear teeth quantize the ratio rule: tooth counts replace diameters exactly. This section sizes gear trains, distinguishes idlers, and computes train value.",
     objectives: [
@@ -562,7 +562,7 @@ export const ewenCh9Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch9-s7',
+    sectionId: 'hall-ch10-s23',
     readingTime: 5,
     intro: "Flat belts connect distant pulleys with quiet, forgiving drives. This section applies the pulley ratio law, computes belt speed and length, and selects open versus crossed layouts.",
     objectives: [

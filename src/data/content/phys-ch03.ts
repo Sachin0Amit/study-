@@ -12,7 +12,7 @@ import type { FormulaEntry } from '../formulas'
 export const physCh3Content: SectionContent[] = [
   // ------------------------------------------------------------------ 3.1
   {
-    sectionId: 'phys-ch3-s1',
+    sectionId: 'hall-ch2-s29',
     readingTime: 9,
     intro: 'Feynman opens the study of motion with a disarmingly simple program: before asking why things move, learn to say precisely where they are and when. A car crawling through town and a ball dropped from a height supply the data, and out of the struggle to say what "60 miles an hour" really means comes the invention of the derivative — calculus was created to define speed.',
     objectives: [
@@ -449,7 +449,7 @@ export const physCh3Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 3.4
   {
-    sectionId: 'phys-ch3-s4',
+    sectionId: 'young-ch1-s39',
     readingTime: 9,
     intro: 'Why can one equation of physics be trusted in every coordinate system? Because the laws are symmetric under translations and rotations of the axes, and vector analysis is the bookkeeping that exploits it. This section builds the machinery — components, sums, the dot product — and compresses Newton\u2019s three scalar laws into a single vector statement.',
     objectives: [
@@ -592,7 +592,7 @@ export const physCh3Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 3.5
   {
-    sectionId: 'phys-ch3-s5',
+    sectionId: 'hall-ch5-s35',
     readingTime: 10,
     intro: 'Newton\u2019s laws are a program — "pay attention to the forces" — and this lecture is the catalogue: friction, molecular attraction, the electrical and magnetic fundamentals, pseudo forces, and the nuclear forces that die exponentially. The running theme is honesty about which laws are fundamental and which are lumps of complexity wearing simple clothes.',
     objectives: [
@@ -739,64 +739,40 @@ export const physCh3Content: SectionContent[] = [
 
 export const physCh3Formulas: FormulaEntry[] = [
   {
-    chapterId: 'phys-ch3',
-    section: '3.1',
+    chapterId: 'hall-ch2',
+    section: '4.29',
     name: 'Speed as a derivative',
     formula: 'v = ds/dt',
     latex: 'v = \\frac{ds}{dt}',
     note: 'the limit of \u0394s/\u0394t as the interval shrinks to zero',
   },
   {
-    chapterId: 'phys-ch3',
-    section: '3.1',
+    chapterId: 'hall-ch2',
+    section: '4.29',
     name: 'Distance as an integral',
     formula: 's = \u222bv(t) dt',
     latex: 's = \\int v(t)\\,dt',
     note: 'integration undoes differentiation',
   },
   {
-    chapterId: 'phys-ch3',
-    section: '3.2',
-    name: 'Newton\u2019s second law',
-    formula: 'F = d(mv)/dt = ma',
-    latex: 'F = \\frac{d(mv)}{dt} = ma',
-    note: 'constant mass reduces it to F = ma',
-  },
-  {
-    chapterId: 'phys-ch3',
-    section: '3.2',
-    name: 'Centripetal acceleration',
-    formula: 'a = v\u00b2/R',
-    latex: 'a = \\frac{v^{2}}{R}',
-    note: 'sideways acceleration for motion bent into a circle',
-  },
-  {
-    chapterId: 'phys-ch3',
-    section: '3.3',
-    name: 'Conservation of momentum',
-    formula: 'm\u2081v\u2081 + m\u2082v\u2082 + \u2026 = const',
-    latex: 'm_1v_1 + m_2v_2 + \\cdots = \\text{const}',
-    note: 'isolated system: no net external force',
-  },
-  {
-    chapterId: 'phys-ch3',
-    section: '3.4',
+    chapterId: 'young-ch1',
+    section: '1.39',
     name: 'Scalar (dot) product',
     formula: 'a\u00b7b = ab cos \u03b8',
     latex: '\\mathbf{a}\\cdot\\mathbf{b} = ab\\cos\\theta',
     note: 'the same number in every coordinate system',
   },
   {
-    chapterId: 'phys-ch3',
-    section: '3.5',
+    chapterId: 'hall-ch5',
+    section: '6.35',
     name: 'Dry sliding friction',
     formula: 'F = \u03bcN',
     latex: 'F = \\mu N',
     note: '\u03bc = tan \u03b8 at the sliding angle; independent of weight',
   },
   {
-    chapterId: 'phys-ch3',
-    section: '3.5',
+    chapterId: 'hall-ch5',
+    section: '6.35',
     name: 'Coulomb\u2019s law',
     formula: 'F = q\u2081q\u2082/4\u03c0\u03b5\u2080r\u00b2',
     latex: 'F = \\frac{q_1 q_2}{4\\pi\\varepsilon_0 r^{2}}',

@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const commemCh02Content: SectionContent[] = [
   // ---------------------------------------------------------------- 2.1
   {
-    sectionId: 'commem-ch2-s1',
+    sectionId: 'ece-e-analog-comm-s10',
     readingTime: 9,
     intro: 'Amplitude modulation imprints a slow message onto the height of a fast carrier while keeping frequency fixed. Sidebands appear symmetrically around the carrier and the modulation index sets how deep that imprint goes. This section reads spectra, measures index, and demodulates with envelope tracking.',
     objectives: [
@@ -106,7 +106,7 @@ export const commemCh02Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.2
   {
-    sectionId: 'commem-ch2-s2',
+    sectionId: 'ece-e-analog-comm-s11',
     readingTime: 10,
     intro: 'Angle modulation hides the message in instantaneous frequency or phase while amplitude stays constant. That constancy trades bandwidth for noise robustness and produces Bessel sideband families. This section applies the Carson bandwidth rule and reads discriminator detection end to end.',
     objectives: [
@@ -204,7 +204,7 @@ export const commemCh02Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.3
   {
-    sectionId: 'commem-ch2-s3',
+    sectionId: 'ece-e-analog-comm-s3',
     readingTime: 8,
     intro: 'Tuning every stage across a wide band is costly so receivers shift any desired station to one fixed intermediate frequency. One mixer plus a tunable oscillator does the shifting while sharp fixed filters do the selecting. This section traces image pitfalls and dual conversion that eases them.',
     objectives: [
@@ -302,7 +302,7 @@ export const commemCh02Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.4
   {
-    sectionId: 'commem-ch2-s4',
+    sectionId: 'ece-e-analog-comm-s12',
     readingTime: 7,
     intro: 'AM packs channels tightly with simple receivers while FM spends extra spectrum for cleaner audio in noise. Power splits differently since AM wastes carrier power and FM keeps amplitude constant. This section weighs those trades to explain why broadcast bands split as they do.',
     objectives: [

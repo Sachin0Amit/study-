@@ -7,7 +7,7 @@ import type { SectionContent } from '../library'
 
 export const ewenCh7Content: SectionContent[] = [
   {
-    sectionId: 'ewen-ch7-s1',
+    sectionId: 'hall-ch12-s11',
     readingTime: 6,
     intro: "Real structures carry angled loads that must be split before they can be balanced. This section resolves two-dimensional forces into components and totals them into resultants.",
     objectives: [
@@ -103,7 +103,7 @@ export const ewenCh7Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch7-s2',
+    sectionId: 'hall-ch12-s12',
     readingTime: 7,
     intro: "A sign hanging from two cables or a bracket under load stays put only when forces balance on both axes. This section solves concurrent equilibrium with $\\sum F_x = 0$, $\\sum F_y = 0$.",
     objectives: [
@@ -192,7 +192,7 @@ export const ewenCh7Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch7-s3',
+    sectionId: 'hall-ch12-s13',
     readingTime: 7,
     intro: "Pushing a door near its hinges teaches torque intuitively: turning power is force times leverage. This section defines $\\tau = Fr$ precisely and works wrench, valve, and door problems.",
     objectives: [
@@ -288,7 +288,7 @@ export const ewenCh7Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch7-s4',
+    sectionId: 'hall-ch12-s14',
     readingTime: 7,
     intro: "Beams, seesaws, and bridges balance under parallel forces when pushes sum to zero and twists sum to zero. This section solves support reactions with force plus moment equations.",
     objectives: [

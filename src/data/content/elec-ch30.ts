@@ -13,7 +13,7 @@ import type { SectionContent } from '../library'
 export const elecCh30Content: SectionContent[] = [
   // ------------------------------------------------------------------ 30.1
   {
-    sectionId: 'elec-ch30-s1',
+    sectionId: 'ece-e-analog-s33',
     readingTime: 8,
     intro: 'Figure 12.1 biases an emitter follower at the center of its transfer so the transistor conducts through the full sine, the defining property of class A. Load power $P_{L} = V_{o,rms}^{2}/R_{L}$ comes from the supplies while the transistor idles near half the rail even with no signal. Section 12.1 proves the resistive-load ceiling at $25$ percent and the dissipation split behind it.',
     objectives: [
@@ -118,7 +118,7 @@ export const elecCh30Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 30.2
   {
-    sectionId: 'elec-ch30-s2',
+    sectionId: 'ece-e-analog-s34',
     readingTime: 9,
     intro: 'Figure 12.9 splits the sine between an npn pull-up and a pnp pull-down so each conducts $180$ degrees, the class-B push-pull. Near zero the $0.7$ V turn-on of each base-emitter junction leaves a dead zone called crossover distortion. Section 12.3 derives load power $P_{L} = V_{peak}^{2}/(2R_{L})$, supply power $P_{S} = 2V_{CC}V_{peak}/(\\pi R_{L})$ and the $78.5$ percent ceiling at full swing.',
     objectives: [
@@ -223,7 +223,7 @@ export const elecCh30Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 30.3
   {
-    sectionId: 'elec-ch30-s3',
+    sectionId: 'ece-e-analog-s35',
     readingTime: 8,
     intro: 'Figure 12.14 biases the push-pull with two diodes so a small quiescent current $I_{Q}$ flows at zero input and the dead zone collapses. The $V_{BE}$ multiplier of Figure 12.17 makes that bias adjustable and thermally trackable with one transistor and two resistors. Section 12.4 sizes $I_{Q}$ near a few milliamps so transconductance never hits zero while extra dissipation stays small.',
     objectives: [
@@ -328,7 +328,7 @@ export const elecCh30Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 30.4
   {
-    sectionId: 'elec-ch30-s4',
+    sectionId: 'ece-e-analog-s36',
     readingTime: 8,
     intro: 'Section 12.5 converts device dissipation into temperature rise through $T_{J} = T_{A} + P_{D}(R_{\\theta JC} + R_{\\theta CS} + R_{\\theta SA})$, where each $R_{\\theta}$ is a thermal resistance in degrees per watt. Safe operating area curves of Figure 12.22 then bound simultaneous voltage, current and time, while Figure 12.24 adds short-circuit and thermal-shutdown protection. Without those three, a $14$ W class-B stage fails on its first clipped sine.',
     objectives: [

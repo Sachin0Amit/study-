@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const sigctrlCh01Content: SectionContent[] = [
   // ---------------------------------------------------------------- 1.1
   {
-    sectionId: 'sigctrl-ch1-s1',
+    sectionId: 'ece-e-sigsys-s15',
     readingTime: 8,
     intro: 'A **continuous-time** signal is defined at every instant $t$, while a **discrete-time** signal lives only at integer indices $n$. Beyond this axis, signals split into even versus odd, periodic versus aperiodic, and bounded versus unbounded. These four classifications decide which tools — symmetry tricks, series expansions, stability tests — apply later.',
     objectives: [
@@ -116,7 +116,7 @@ export const sigctrlCh01Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 1.2
   {
-    sectionId: 'sigctrl-ch1-s2',
+    sectionId: 'ece-e-sigsys-s16',
     readingTime: 9,
     intro: 'Shifting slides a signal in time, scaling squeezes or stretches it, and reversal flips it — but combined operations like $y(t) = x(2t - 3)$ must be applied in the right order. The golden rule is **shift first on the dummy axis, then scale**, or equivalently divide the shift by the scale factor. This section makes transformation puzzles mechanical and error-proof.',
     objectives: [
@@ -229,7 +229,7 @@ export const sigctrlCh01Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 1.3
   {
-    sectionId: 'sigctrl-ch1-s3',
+    sectionId: 'ece-e-sigsys-s17',
     readingTime: 9,
     intro: 'The **unit impulse** $\\delta(t)$ sifts out single values, the **unit step** $u(t)$ switches on at zero, and the **ramp** $r(t)$ grows linearly — a singularity family linked by differentiation and integration. Their DT twins $\\delta[n]$ and $u[n]$ play the same roles for sequences. Mastering sifting, switching and singularity calculus unlocks convolution and transform pairs.',
     objectives: [
@@ -337,7 +337,7 @@ export const sigctrlCh01Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 1.4
   {
-    sectionId: 'sigctrl-ch1-s4',
+    sectionId: 'ece-e-sigsys-s18',
     depth: [
       {
         tier: 'masters',

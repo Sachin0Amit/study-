@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const commemCh05Content: SectionContent[] = [
   // ---------------------------------------------------------------- 5.1
   {
-    sectionId: 'commem-ch5-s1',
+    sectionId: 'ece-e-emft-s4',
     readingTime: 10,
     intro: 'Four field laws link charges, currents and the time variation of the fields themselves into one closed system. Their integral forms count flux through surfaces while differential forms test each point. Boundary rules then state exactly which components survive contact between two materials.',
     objectives: [
@@ -106,7 +106,7 @@ export const commemCh05Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 5.2
   {
-    sectionId: 'commem-ch5-s2',
+    sectionId: 'ece-e-emft-s17',
     depth: [
       {
         tier: 'masters',
@@ -229,7 +229,7 @@ export const commemCh05Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 5.3
   {
-    sectionId: 'commem-ch5-s3',
+    sectionId: 'ece-e-emft-s18',
     readingTime: 10,
     intro: 'Waves meeting a boundary split into reflected and transmitted parts whose amplitudes follow the Fresnel rules. At special angles reflection vanishes or transmission turns evanescent. Polarization then describes the shape traced by the tip of the electric vector in time.',
     objectives: [
@@ -327,7 +327,7 @@ export const commemCh05Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 5.4
   {
-    sectionId: 'commem-ch5-s4',
+    sectionId: 'ece-e-emft-s19',
     readingTime: 9,
     intro: 'Real media bend different frequencies by different amounts, so phase fronts and energy packets travel at different speeds. Conductors add strong decay that confines fields to a thin skin. This section quantifies both velocities and that penetration depth.',
     objectives: [

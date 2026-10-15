@@ -15,7 +15,7 @@ import type { FormulaEntry } from '../formulas'
 export const physCh7Content: SectionContent[] = [
   // ------------------------------------------------------------------ 7.1
   {
-    sectionId: 'phys-ch7-s1',
+    sectionId: 'hall-ch16-s22',
     readingTime: 11,
     intro: 'A wave is an oscillation that travels: the harmonic oscillator of Chapter 6, set loose to propagate through space. Feynman chooses sound as his example not because it is the most important wave, but because it is the one wave we can derive from first principles — sound is a branch of mechanics, and the derivation of its wave equation from Newton’s laws is "perhaps the greatest art of mathematical physics": explaining new phenomena in terms of old ones whose laws we already know.',
     objectives: [
@@ -177,7 +177,7 @@ export const physCh7Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 7.2
   {
-    sectionId: 'phys-ch7-s2',
+    sectionId: 'hall-ch17-s23',
     readingTime: 11,
     intro: 'What happens when two waves of different frequency share the same place? First the answer is tame — a slow pulsation called a beat — but pursuing it leads to some of the deepest ideas in physics: the group velocity that carries signals (and resolves an apparent faster-than-light paradox), and the normal modes of any bounded system, which Feynman calls "the most far-reaching principle of mathematical physics" and the seed of quantum energy levels.',
     objectives: [
@@ -338,7 +338,7 @@ export const physCh7Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 7.3
   {
-    sectionId: 'phys-ch7-s3',
+    sectionId: 'hall-ch17-s24',
     readingTime: 12,
     intro: 'Pythagoras discovered that strings whose lengths are in small-integer ratios sound pleasant together — the first quantitative law of nature found outside geometry. Two and a half millennia later we can say exactly why: a plucked string is a sum of harmonics, and consonance is the coincidence of harmonics between two notes. This section completes the mathematics (Fourier’s theorem), then tours the general world of waves — bow waves, shock waves, earthquake waves, and the beautifully complicated waves of water.',
     objectives: [
@@ -504,7 +504,7 @@ export const physCh7Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 7.4
   {
-    sectionId: 'phys-ch7-s4',
+    sectionId: 'hall-ch17-s25',
     readingTime: 10,
     intro: 'Feynman closes Volume I with the deepest organizing idea in physics: symmetry. A law is symmetrical if there is something you can do to an experiment — move it, turn it, delay it, wait, run the film backwards, mirror it — after which it looks the same. The list of nature’s symmetries turns out to be a map of the conservation laws, and the one entry that fails — mirror symmetry, in weak decays — is one of the great surprises of twentieth-century physics.',
     objectives: [
@@ -675,64 +675,64 @@ export const physCh7Content: SectionContent[] = [
 
 export const physCh7Formulas: FormulaEntry[] = [
   {
-    chapterId: 'phys-ch7',
-    section: '7.1',
+    chapterId: 'hall-ch16',
+    section: '16.22',
     name: 'Wave equation for sound',
     formula: '∂²χ/∂x² = (1/cₛ²) ∂²χ/∂t²',
     note: 'χ is the air displacement; follows from Newton’s laws',
     latex: '\\frac{\\partial^2\\chi}{\\partial x^2} = \\frac{1}{c_s^2}\\frac{\\partial^2\\chi}{\\partial t^2}',
   },
   {
-    chapterId: 'phys-ch7',
-    section: '7.1',
+    chapterId: 'hall-ch16',
+    section: '16.22',
     name: 'Speed of sound (adiabatic)',
     formula: 'cₛ = √(γP/ρ) = √(γRT/μ)',
     note: 'Laplace: compressions adiabatic; depends on T only',
     latex: 'c_s = \\sqrt{\\frac{\\gamma P}{\\rho}} = \\sqrt{\\frac{\\gamma RT}{\\mu}}',
   },
   {
-    chapterId: 'phys-ch7',
-    section: '7.2',
+    chapterId: 'hall-ch17',
+    section: '17.23',
     name: 'Beat intensity',
     formula: 'I = A₁² + A₂² + 2A₁A₂cos(ω₁ − ω₂)t',
     note: 'loudness pulsates at the difference frequency',
     latex: 'I = A_1^2 + A_2^2 + 2A_1A_2\\cos(\\omega_1-\\omega_2)t',
   },
   {
-    chapterId: 'phys-ch7',
-    section: '7.2',
+    chapterId: 'hall-ch17',
+    section: '17.23',
     name: 'Group velocity',
     formula: 'v_g = dω/dk,  v_p = ω/k',
     note: 'signals and energy ride the group, not the phase',
     latex: 'v_g = \\frac{d\\omega}{dk}',
   },
   {
-    chapterId: 'phys-ch7',
-    section: '7.2',
+    chapterId: 'hall-ch17',
+    section: '17.23',
     name: 'Modes of a fixed string',
     formula: 'ωₙ = nπc/L,  n = 1, 2, 3, …',
     note: 'discrete harmonics of a bounded wave; λ₁ = 2L',
     latex: '\\omega_n = \\frac{n\\pi c}{L}',
   },
   {
-    chapterId: 'phys-ch7',
-    section: '7.3',
+    chapterId: 'hall-ch17',
+    section: '17.24',
     name: 'Fourier series',
     formula: 'f(t) = a₀ + Σₙ(aₙcos nωt + bₙsin nωt)',
     note: 'any periodic physical function, ω = 2π/T',
     latex: 'f(t) = a_0 + \\sum_{n=1}^{\\infty}\\left(a_n\\cos n\\omega t + b_n\\sin n\\omega t\\right)',
   },
   {
-    chapterId: 'phys-ch7',
-    section: '7.3',
+    chapterId: 'hall-ch17',
+    section: '17.24',
     name: 'Mach cone half-angle',
     formula: 'sin θ = c_w/v',
     note: 'source outrunning its own waves; Cherenkov light',
     latex: '\\sin\\theta = \\frac{c_w}{v}',
   },
   {
-    chapterId: 'phys-ch7',
-    section: '7.3',
+    chapterId: 'hall-ch17',
+    section: '17.24',
     name: 'Deep-water gravity wave speed',
     formula: 'v_phase = √(gλ/2π),  v_g = v_phase/2',
     note: 'long swells travel faster; group is half as fast',

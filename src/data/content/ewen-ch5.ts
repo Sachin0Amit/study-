@@ -7,7 +7,7 @@ import type { SectionContent } from '../library'
 
 export const ewenCh5Content: SectionContent[] = [
   {
-    sectionId: 'ewen-ch5-s1',
+    sectionId: 'hall-ch5-s24',
     readingTime: 5,
     intro: "A force is a push or pull that changes motion, and the first law tells when motion needs no force at all. This section defines force, inertia, and mass, and sets up the free-body habit.",
     objectives: [
@@ -103,7 +103,7 @@ export const ewenCh5Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch5-s2',
+    sectionId: 'hall-ch5-s25',
     readingTime: 6,
     intro: "The second law turns force from a qualitative push into a calculable $F = ma$. This section applies it to vehicles, hoists, and shop loads with strict unit discipline.",
     objectives: [
@@ -192,7 +192,7 @@ export const ewenCh5Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch5-s3',
+    sectionId: 'hall-ch5-s26',
     readingTime: 6,
     intro: "Weight is gravity pull on a mass, and it changes with $g$ while mass does not. This section computes weights, compares earth-moon readings, and separates mass, weight, and force units finally.",
     objectives: [
@@ -377,7 +377,7 @@ export const ewenCh5Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch5-s5',
+    sectionId: 'hall-ch5-s27',
     readingTime: 5,
     intro: "Real pushes come in opposed pairs — thrust against drag, hoist pull against weight — and only their signed total accelerates. This section practices one-dimensional force totals until the sign habit is automatic.",
     objectives: [
@@ -466,7 +466,7 @@ export const ewenCh5Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch5-s6',
+    sectionId: 'hall-ch5-s28',
     readingTime: 5,
     intro: "Forces come in mutual pairs: push on something and it pushes back equally. This section states the third law precisely and uses it to separate action-reaction pairs from balanced forces on one body.",
     objectives: [

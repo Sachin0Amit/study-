@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const commemCh04Content: SectionContent[] = [
   // ---------------------------------------------------------------- 4.1
   {
-    sectionId: 'commem-ch4-s1',
+    sectionId: 'ece-e-digital-comm-s11',
     readingTime: 9,
     intro: 'Some sources surprise us with every symbol while others repeat one value almost always. Entropy turns that intuition into a number: the minimum average bits needed per symbol. Joint and conditional forms then split uncertainty across pairs of variables and set up channel analysis.',
     objectives: [
@@ -106,7 +106,7 @@ export const commemCh04Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.2
   {
-    sectionId: 'commem-ch4-s2',
+    sectionId: 'ece-e-digital-comm-s12',
     depth: [
       {
         tier: 'masters',
@@ -262,7 +262,7 @@ export const commemCh04Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.3
   {
-    sectionId: 'commem-ch4-s3',
+    sectionId: 'ece-e-digital-comm-s13',
     readingTime: 9,
     intro: 'Parity bits placed at power-of-two positions let a receiver both find and fix any single flipped bit. The pattern of failed checks, called the syndrome, points directly at the error address. This section builds those codes and extends them to catch double errors as well.',
     objectives: [
@@ -394,7 +394,7 @@ export const commemCh04Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.4
   {
-    sectionId: 'commem-ch4-s4',
+    sectionId: 'ece-e-digital-comm-s14',
     readingTime: 8,
     intro: 'Cyclic checks treat message bits as polynomial coefficients and keep only the remainder after division by an agreed generator. That remainder travels with the message and any nonzero remainder on arrival proves corruption. This section performs that division and states the burst guarantees behind standard generators.',
     objectives: [

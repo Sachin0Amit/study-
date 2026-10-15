@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const hallCh6Content: SectionContent[] = [
   // ------------------------------------------------------------- 6.1
   {
-    sectionId: 'hall-ch6-s1',
+    sectionId: 'hall-ch5-s4',
     readingTime: 7,
     intro: "Friction is the force we love to hate and cannot live without: it stops cars, walks us forward, holds every nail and knot — and wastes energy as heat. Microscopically it is a story of atoms: surfaces so rough at the atomic scale that they weld together at scattered spots. That story carries two empirical rules, and this section turns them into problem-solving machinery.",
     objectives: [
@@ -133,7 +133,7 @@ export const hallCh6Content: SectionContent[] = [
 
   // ------------------------------------------------------------- 6.2
   {
-    sectionId: 'hall-ch6-s2',
+    sectionId: 'hall-ch5-s5',
     readingTime: 5,
     intro: "Friction with air — drag — grows with the square of the speed, and that fact has a striking consequence: a falling body cannot keep accelerating forever. When drag grows to match gravity, the acceleration vanishes and the body falls at its terminal speed, the number that decides whether a raindrop stings and a skydiver survives.",
     objectives: [
@@ -239,7 +239,7 @@ export const hallCh6Content: SectionContent[] = [
 
   // ------------------------------------------------------------- 6.3
   {
-    sectionId: 'hall-ch6-s3',
+    sectionId: 'hall-ch5-s6',
     readingTime: 7,
     intro: "A body moving in a circle at constant speed is still accelerating — toward the center, at $a = v^2/R$ — so Newton's second law demands a real net force pointing inward. This section collects the suppliers of that inward force: friction on a flat curve, tension on a string, the normal force on a banked road, gravity on the Moon.",
     objectives: [

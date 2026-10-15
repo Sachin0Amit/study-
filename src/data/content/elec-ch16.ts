@@ -16,7 +16,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh16Content: SectionContent[] = [
   // ------------------------------------------------------------------ 16.1
   {
-    sectionId: 'elec-ch16-s1',
+    sectionId: 'ece-e-analog-s37',
     readingTime: 9,
     intro: 'A filter changes the amplitude of an ac voltage as frequency changes, and the whole subject rests on one piece of bookkeeping: reactance varies with frequency while resistance does not. Because the interesting action spans six or more decades, engineers compress the axis with logarithms and the vertical axis with decibels, and then the response collapses into straight lines — the Bode plot. Hughes closes the chapter with the two-port description (z, y and ABCD parameters) that lets filter blocks be cascaded on paper before they are ever built.',
     objectives: [
@@ -155,7 +155,7 @@ export const elecCh16Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 16.2
   {
-    sectionId: 'elec-ch16-s2',
+    sectionId: 'ece-e-analog-s38',
     readingTime: 9,
     intro: 'The simplest filters are one resistor and one reactive element. Taken across the capacitor, the RC pair passes lows and lags; taken across the resistor, it passes highs and leads — and both switch roles when the reactive element is an inductor. Hughes works the two canonical circuits phasor by phasor, deriving the cut-off $\\omega_c = 1/CR$, the $-45^\\circ$ phase at that frequency and the semicircular locus of the output phasor; Nilsson adds the design view and the sober warning that a passive filter is at the mercy of whatever load you hang on it.',
     objectives: [
@@ -302,7 +302,7 @@ export const elecCh16Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 16.3
   {
-    sectionId: 'elec-ch16-s3',
+    sectionId: 'ece-e-analog-s39',
     readingTime: 10,
     intro: 'When the passband must be narrow, two resistors and a capacitor no longer suffice — the job calls for resonance. Nilsson’s bandpass machinery revolves around three linked parameters (center frequency, bandwidth, quality factor) of which only two can be chosen freely, and around the elegant duality between the series RLC circuit (bandwidth $R/L$) and its parallel twin (bandwidth $1/RC$). Hughes supplies the tuned-circuit perspective with a series-resonant filter of quality factor $50$. Both books agree on the punchline: the resonant frequency is not just where the response peaks — it is the natural frequency of the circuit itself.',
     objectives: [
@@ -449,7 +449,7 @@ export const elecCh16Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 16.4
   {
-    sectionId: 'elec-ch16-s4',
+    sectionId: 'ece-e-analog-s40',
     readingTime: 10,
     intro: 'Op amps rescue the filter designer three times over: they replace the inductor (large, heavy, costly, magnetic), they provide passband gain instead of guaranteed attenuation, and their low output impedance makes the transfer function immune to the load. Nilsson’s chapter builds the subject as an escalator — first-order active sections, then scaling, then the Butterworth polynomials with their maximally flat passband, and finally the cascade and parallel architectures that turn small bricks into eighth-order walls — while the Art of Electronics supplies the practicing engineer’s catalog of filter families.',
     objectives: [
@@ -601,72 +601,72 @@ export const elecCh16Content: SectionContent[] = [
 
 export const elecCh16Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch16',
-    section: '16.1',
+    chapterId: 'ece-e-analog',
+    section: '6.37',
     name: 'Decibel (power ratio)',
     formula: 'G = 10 log₁₀(P₂/P₁)',
     note: 'one tenth of a bel; +3 dB is a doubling of power',
     latex: 'G = 10 \\log_{10}\\!\\left(\\frac{P_2}{P_1}\\right)',
   },
   {
-    chapterId: 'elec-ch16',
-    section: '16.1',
+    chapterId: 'ece-e-analog',
+    section: '6.37',
     name: 'Decibel (voltage ratio)',
     formula: 'G = 20 log₁₀(V₂/V₁)',
     note: 'exact for equal resistances; 0.707 → −3 dB, 10 → 20 dB',
     latex: 'G = 20 \\log_{10}\\!\\left(\\frac{V_2}{V_1}\\right)',
   },
   {
-    chapterId: 'elec-ch16',
-    section: '16.2',
+    chapterId: 'ece-e-analog',
+    section: '6.38',
     name: 'Low-pass RC cut-off frequency',
     formula: 'f_c = 1/(2πRC)',
     note: 'half-power point; phase −45° there; τ = 1/ω_c',
     latex: 'f_c = \\frac{1}{2\\pi R C}',
   },
   {
-    chapterId: 'elec-ch16',
-    section: '16.2',
+    chapterId: 'ece-e-analog',
+    section: '6.38',
     name: 'Bode high-frequency asymptote',
     formula: 'G(dB) = −20 log₁₀(ω/ω_c)',
     note: 'slope −20 dB/decade = −6 dB/octave for first order',
     latex: 'G = -20 \\log_{10}\\!\\left(\\frac{\\omega}{\\omega_c}\\right)\\ \\text{dB}',
   },
   {
-    chapterId: 'elec-ch16',
-    section: '16.3',
+    chapterId: 'ece-e-analog',
+    section: '6.39',
     name: 'Series RLC bandpass parameters',
     formula: 'ω₀ = 1/√(LC), β = R/L, Q = ω₀/β',
     note: 'Q = (1/R)√(L/C); parallel dual: β = 1/RC',
     latex: '\\omega_o = \\frac{1}{\\sqrt{LC}}, \\quad \\beta = \\frac{R}{L}, \\quad Q = \\frac{\\omega_o}{\\beta}',
   },
   {
-    chapterId: 'elec-ch16',
-    section: '16.3',
+    chapterId: 'ece-e-analog',
+    section: '6.39',
     name: 'Standard bandpass transfer function',
     formula: 'H(s) = βs/(s² + βs + ω₀²)',
     note: 'bandreject dual: (s² + ω₀²)/(s² + βs + ω₀²)',
     latex: 'H(s) = \\frac{\\beta s}{s^{2} + \\beta s + \\omega_o^{2}}',
   },
   {
-    chapterId: 'elec-ch16',
-    section: '16.4',
+    chapterId: 'ece-e-analog',
+    section: '6.40',
     name: 'Butterworth magnitude',
     formula: '|H(jω)| = 1/√(1 + (ω/ωc)²ⁿ)',
     note: 'maximally flat; cut-off stays at ωc for every n',
     latex: '|H(j\\omega)| = \\frac{1}{\\sqrt{1 + (\\omega/\\omega_c)^{2n}}}',
   },
   {
-    chapterId: 'elec-ch16',
-    section: '16.4',
+    chapterId: 'ece-e-analog',
+    section: '6.40',
     name: 'Magnitude and frequency scaling',
     formula: 'R′ = kₘR, L′ = (kₘ/k_f)L, C′ = C/(kₘk_f)',
     note: 'prototype at 1 rad/s with 1 Ω and 1 F, then scale',
     latex: "R' = k_m R, \\quad L' = \\frac{k_m}{k_f} L, \\quad C' = \\frac{C}{k_m k_f}",
   },
   {
-    chapterId: 'elec-ch16',
-    section: '16.4',
+    chapterId: 'ece-e-analog',
+    section: '6.40',
     name: 'First-order active low-pass section',
     formula: 'H(s) = −K·ωc/(s + ωc)',
     note: 'K = R₂/R₁ and ωc = 1/R₂C — independent knobs',

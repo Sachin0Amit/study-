@@ -161,7 +161,7 @@ export default function Home() {
                     onClick={() => useStudy.getState().navigate({ name: 'book', bookId: b.id })}
                     className="text-left text-muted-foreground transition-colors hover:text-emerald-300"
                   >
-                    {b.id === 'silberschatz-osc10' ? 'Operating Systems · Silberschatz' : `${b.author.split(',')[0]} · ${b.title.split(':')[0]}`}
+                    {`${b.author.split(',')[0]} · ${b.title.split(':')[0]}`}
                   </button>
                 ))}
                 <button
@@ -200,16 +200,16 @@ export default function Home() {
                   <FlaskConical className="h-3 w-3" /> Lab floor
                 </button>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <BookOpen className="h-3 w-3" /> 60 labs · 4,067 lessons
+                  <BookOpen className="h-3 w-3" /> 60 labs · 2,100 lessons
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <Layers className="h-3 w-3" /> SRS flashcards · 10,365+ cards
+                  <Layers className="h-3 w-3" /> SRS flashcards · 11,700+ cards
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <Sigma className="h-3 w-3" /> 1,668 printable formulas
+                  <Sigma className="h-3 w-3" /> 1,974 printable formulas
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <ClipboardCheck className="h-3 w-3" /> 10,571-question test bank
+                  <ClipboardCheck className="h-3 w-3" /> 8,798-question test bank
                 </span>
               </div>
               <div className="flex flex-col gap-2">
@@ -217,16 +217,16 @@ export default function Home() {
                   Featured Library
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <Sigma className="h-3 w-3 text-emerald-400" /> 24 Library Books
+                  <Sigma className="h-3 w-3 text-emerald-400" /> 9 subject-wise master books
                 </span>
-                <span className="text-muted-foreground/60">Rosen · Stewart · Feynman · Halliday · Young · Ewen · Coletta · Silberschatz · Flanagan · Mano · Hughes · CLRS · Stroustrup</span>
+                <span className="text-muted-foreground/60">Mathematics · Physics · Chemistry · English · Aptitude · CSE · ECE · Electrical · Mechanical — one deduplicated book per subject</span>
               </div>
             </div>
           </div>
           <div className="mt-8 flex flex-col gap-2 border-t border-border/60 pt-5 text-[11px] text-muted-foreground/70 sm:flex-row sm:items-center sm:justify-between">
             <span>StudyVerse — master every book, interactively.</span>
             <span className="font-mono">
-              4,067 lessons · 60 labs · 10,571 quiz questions · 826 chapters · 24 books · 18 subjects
+              3,438 lessons · 60 labs · 8,798 quiz questions · 441 chapters · 9 books · 9 subjects
             </span>
           </div>
         </div>

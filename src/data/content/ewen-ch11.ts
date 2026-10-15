@@ -103,7 +103,7 @@ export const ewenCh11Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch11-s2',
+    sectionId: 'hall-ch13-s18',
     readingTime: 5,
     intro: "Gravity can be mapped as a field: an arrow at every point showing the force a test mass would feel. This section defines $g$ as field strength and traces weight loss with altitude.",
     objectives: [

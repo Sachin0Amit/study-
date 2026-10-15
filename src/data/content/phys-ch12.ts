@@ -15,7 +15,7 @@ import type { FormulaEntry } from '../formulas'
 export const physCh12Content: SectionContent[] = [
   // ------------------------------------------------------------------ 12.1
   {
-    sectionId: 'phys-ch12-s1',
+    sectionId: 'hall-ch25-s13',
     readingTime: 12,
     intro: 'Faraday found that stuffing an insulator between the plates of a capacitor increases its capacitance by a factor κ — yet an insulator, by definition, carries no free charge at all. Feynman’s program in Lectures 10–12 is to explain this paradox atom by atom, then to cash in the whole subject: because the mathematics of electrostatics is the same mathematics that governs heat flow, stretched membranes, neutron diffusion and illumination, learning one subject means learning them all at once.',
     objectives: [
@@ -161,7 +161,7 @@ export const physCh12Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 12.2
   {
-    sectionId: 'phys-ch12-s2',
+    sectionId: 'hall-ch29-s14',
     readingTime: 12,
     intro: 'A moving charge feels a force that is perpendicular to everything — to its velocity and to a mysterious direction in space called the magnetic field. Feynman builds magnetostatics from that force law, finds the fields of wires and solenoids with Ampère’s law, and then introduces the vector potential A — which classical physics treats as a computational convenience but quantum mechanics reveals to be, in Feynman’s sense, “real.”',
     objectives: [
@@ -307,7 +307,7 @@ export const physCh12Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 12.3
   {
-    sectionId: 'phys-ch12-s3',
+    sectionId: 'hall-ch30-s22',
     readingTime: 11,
     intro: '“What is the use of a newborn baby?” Faraday replied, and the baby became Boulder Dam. Between the qualitative phenomena of Lecture 16 and the complete laws of Lecture 17 stands the central equation of electrodynamics — Faraday’s law — together with Feynman’s famous warning: the convenient “flux rule” works for circuits whose material stays the same, but it is the sum of two physically distinct effects, and each must be invoked to understand the exceptions.',
     objectives: [
@@ -454,64 +454,64 @@ export const physCh12Content: SectionContent[] = [
 
 export const physCh12Formulas: FormulaEntry[] = [
   {
-    chapterId: 'phys-ch12',
-    section: '12.1',
+    chapterId: 'hall-ch25',
+    section: '25.13',
     name: 'Dielectric constant and polarization charge',
     formula: 'κ = 1 + χ, ρ_pol = −∇·P',
     note: 'P = χε₀E; nonuniform polarization leaves real charge behind',
     latex: '\\kappa = 1 + \\chi, \\qquad \\rho_{\\text{pol}} = -\\nabla \\cdot P',
   },
   {
-    chapterId: 'phys-ch12',
-    section: '12.1',
+    chapterId: 'hall-ch25',
+    section: '25.13',
     name: 'Clausius–Mossotti equation',
     formula: '3(κ − 1)/(κ + 2) = Nα',
     note: 'local field E + P/3ε₀; dilute gas limit κ − 1 = Nα',
     latex: '\\frac{3(\\kappa - 1)}{\\kappa + 2} = N\\alpha',
   },
   {
-    chapterId: 'phys-ch12',
-    section: '12.1',
+    chapterId: 'hall-ch25',
+    section: '25.13',
     name: 'Orientation polarization (Curie’s law)',
     formula: 'P = Np₀²E/3kT',
     note: 'polar molecules; κ − 1 varies as 1/T',
     latex: 'P = \\frac{N p_0^2 E}{3kT}',
   },
   {
-    chapterId: 'phys-ch12',
-    section: '12.2',
+    chapterId: 'hall-ch29',
+    section: '29.14',
     name: 'Ampère’s law (steady currents)',
     formula: '∮ B·ds = I_enc/ε₀c²',
     note: 'wire: B = (1/4πε₀c²)(2I/r); solenoid: B = nI/ε₀c²',
     latex: '\\oint_\\Gamma B \\cdot ds = \\frac{I_{\\text{enc}}}{\\epsilon_0 c^{2}}',
   },
   {
-    chapterId: 'phys-ch12',
-    section: '12.2',
+    chapterId: 'hall-ch29',
+    section: '29.14',
     name: 'Vector potential',
     formula: 'B = ∇×A, A′ = A + ∇ψ',
     note: 'gauge freedom; with ∇·A = 0: ∇²A = −j/ε₀c²',
     latex: 'B = \\nabla \\times A, \\qquad A^{\\prime} = A + \\nabla\\psi',
   },
   {
-    chapterId: 'phys-ch12',
-    section: '12.3',
+    chapterId: 'hall-ch30',
+    section: '30.22',
     name: 'Faraday’s law of induction',
     formula: '∮ E·ds = −d/dt ∮ B·da',
     note: 'emf = −dΦ/dt; differential form ∇×E = −∂B/∂t',
     latex: '\\oint_\\Gamma E \\cdot ds = -\\frac{d}{dt}\\int_S B \\cdot n\\, da',
   },
   {
-    chapterId: 'phys-ch12',
-    section: '12.3',
+    chapterId: 'hall-ch30',
+    section: '30.22',
     name: 'Energy of an inductance',
     formula: 'U = ½LI²',
     note: 'field form: U = (ε₀c²/2)∫B·B dV, valid even dynamically',
     latex: 'U = \\tfrac{1}{2}LI^{2} = \\frac{\\epsilon_0 c^{2}}{2}\\int B \\cdot B\\, dV',
   },
   {
-    chapterId: 'phys-ch12',
-    section: '12.3',
+    chapterId: 'hall-ch30',
+    section: '30.22',
     name: 'Coupled coils',
     formula: 'U = ½L₁I₁² + ½L₂I₂² + MI₁I₂, |M| ≤ √(L₁L₂)',
     note: 'M₁₂ = M₂₁; coupling coefficient k = M/√(L₁L₂)',

@@ -16,7 +16,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh14Content: SectionContent[] = [
   // ------------------------------------------------------------------ 14.1
   {
-    sectionId: 'elec-ch14-s1',
+    sectionId: 'ece-e-devices-s26',
     readingTime: 8,
     intro: 'The bipolar transistor of Chapter 13 paid for its gain with a low input resistance and a current that must constantly be fed into the base. The field-effect transistor removes both costs at a stroke: its conducting channel is controlled by a voltage, and in the most important family that voltage acts on an insulated gate that draws no current at all. Hughes calls the two branches JUGFET and IGFET; the second is better known today as the MOSFET — the device that built the digital world.',
     objectives: [
@@ -150,7 +150,7 @@ export const elecCh14Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 14.2
   {
-    sectionId: 'elec-ch14-s2',
+    sectionId: 'ece-e-devices-s27',
     readingTime: 9,
     intro: 'Measured properly, a FET is described by three numbers — drain resistance, mutual conductance and their product — and, on the transfer side, by one elegant parabola: Shockley’s equation. Hughes assembles the small-signal equivalent circuit (input simply open, so no input loading at all), derives the common-source gain, and then shows the device doing the job the BJT found hardest of all: switching analog signals with no offset and no drive current.',
     objectives: [
@@ -285,7 +285,7 @@ export const elecCh14Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 14.3
   {
-    sectionId: 'elec-ch14-s3',
+    sectionId: 'ece-e-devices-s28',
     readingTime: 8,
     intro: 'The enhancement MOSFET of Section 14.1 becomes a practical amplifier once its gate is biased a couple of volts above its threshold, and the design pattern is the one Hughes already taught for the BJT: set the operating point, then read the gain from the transconductance and the load. The real triumph of this device, though, is what happens when two complementary MOSFETs — one n-channel, one p-channel — are wired as one inverter: the CMOS pair that dissipated no static power and went on to build essentially all of digital electronics.',
     objectives: [
@@ -421,7 +421,7 @@ export const elecCh14Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 14.4
   {
-    sectionId: 'elec-ch14-s4',
+    sectionId: 'ece-e-devices-s29',
     readingTime: 8,
     intro: 'Scale the MOSFET up from milliamperes to amperes and it becomes the workhorse of power electronics: a switch that a logic signal can turn on and off in nanoseconds, whose only conduction loss is a resistance that designers specify directly. Hughes ends the device chapters by observing that the natural home of all these transistors — small and large — is the integrated circuit, where a hundred components cost less than one discrete transistor and the op-amp emerges as the canonical amplifier.',
     objectives: [
@@ -566,64 +566,64 @@ export const elecCh14Content: SectionContent[] = [
 
 export const elecCh14Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch14',
-    section: '14.2',
+    chapterId: 'ece-e-devices',
+    section: '2.27',
     name: 'Shockley’s Transfer Equation',
     formula: 'I_D = I_DSS·(1 − V_GS/V_p)²',
     note: 'parabolic JFET transfer curve; zero at V_GS = V_p, I_DSS at V_GS = 0',
     latex: 'I_D = I_{DSS}\\left(1 - \\frac{V_{GS}}{V_p}\\right)^{2}',
   },
   {
-    chapterId: 'elec-ch14',
-    section: '14.2',
+    chapterId: 'ece-e-devices',
+    section: '2.27',
     name: 'Drain Resistance',
     formula: 'r_d = ΔV_DS/ΔI_D  (at constant V_GS)',
     note: 'slope resistance of the pinch-off region; typically 10–500 kΩ',
     latex: 'r_d = \\frac{\\Delta V_{DS}}{\\Delta I_D} \\quad (V_{GS}\\ \\text{fixed})',
   },
   {
-    chapterId: 'elec-ch14',
-    section: '14.2',
+    chapterId: 'ece-e-devices',
+    section: '2.27',
     name: 'Mutual Conductance (g_m)',
     formula: 'g_m = ΔI_D/ΔV_GS  (at constant V_DS)',
     note: 'FET gain currency, in mA/V; from Shockley: g_m = 2I_DSS(1 − V_GS/V_p)/|V_p|',
     latex: 'g_m = \\frac{\\Delta I_D}{\\Delta V_{GS}} \\quad (V_{DS}\\ \\text{fixed})',
   },
   {
-    chapterId: 'elec-ch14',
-    section: '14.2',
+    chapterId: 'ece-e-devices',
+    section: '2.27',
     name: 'Amplification Factor',
     formula: 'μ = r_d · g_m',
     note: 'dimensionless product; the maximum unloaded voltage gain',
     latex: '\\mu = r_d\\,g_m',
   },
   {
-    chapterId: 'elec-ch14',
-    section: '14.2',
+    chapterId: 'ece-e-devices',
+    section: '2.27',
     name: 'FET Common-Source Gain (Y-parameters)',
     formula: 'A_v = Y_fs·R_L / (1 + R_L·Y_os)',
     note: 'Example 20.8: 2.2 mA/V, 20 μS, 2 kΩ → A_v = 4.23',
     latex: 'A_v = \\frac{Y_{fs}R_L}{1 + R_LY_{os}}',
   },
   {
-    chapterId: 'elec-ch14',
-    section: '14.3',
+    chapterId: 'ece-e-devices',
+    section: '2.28',
     name: 'Common-Source Gain (MOSFET)',
     formula: 'A_v = −g_m·R_D;  unbypassed: −g_m·R_D/(1 + g_m·R_S)',
     note: 'bypass R_S for gain, keep it for bias stability; −R_D/R_S if heavily degenerated',
     latex: 'A_v = -g_m R_D; \\qquad -\\frac{g_m R_D}{1 + g_m R_S}',
   },
   {
-    chapterId: 'elec-ch14',
-    section: '14.3',
+    chapterId: 'ece-e-devices',
+    section: '2.28',
     name: 'CMOS Dynamic Power',
     formula: 'P = C·V_DD²·f',
     note: 'static power is leakage only — this term pays for every transition',
     latex: 'P = C V_{DD}^{2} f',
   },
   {
-    chapterId: 'elec-ch14',
-    section: '14.4',
+    chapterId: 'ece-e-devices',
+    section: '2.29',
     name: 'Power MOSFET Conduction Loss',
     formula: 'P_D = I_D² · R_DS(on)',
     note: '10 mΩ at 10 A → 1 W; ohmic, calculable, temperature-friendly',

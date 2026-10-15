@@ -62,7 +62,7 @@ const QUICK_ACTIONS: {
     icon: Zap,
   },
   { view: 'formulas', label: 'Formula sheet', hint: '1,668 printable formulas', icon: Sigma },
-  { view: 'exam', label: 'Test simulator', hint: '10,571-question bank', icon: ClipboardCheck },
+  { view: 'exam', label: 'Test simulator', hint: '8,798-question bank', icon: ClipboardCheck },
   { view: 'progress', label: 'Progress dashboard', hint: 'streaks, notes & stats', icon: BarChart3 },
 ]
 

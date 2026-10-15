@@ -13,7 +13,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh6Content: SectionContent[] = [
   // ------------------------------------------------------------- 6.1 ------
   {
-    sectionId: 'elec-ch6-s1',
+    sectionId: 'ee-e-circuits-s20',
     readingTime: 11,
     intro: 'Having built magnetic circuits in Chapter 5, we now ask how good a job a coil does at storing magnetic energy \u2014 and the answer is a single number called inductance, measured in henrys. Hughes defines it two equivalent ways (volts per ampere-per-second, and flux-linkages per ampere), Nilsson turns the coil into a circuit element with $v = L\\,di/dt$, and the section closes with two coils on one core: mutual inductance, the dot convention and the series-aiding/opposing arithmetic.',
     objectives: [
@@ -167,7 +167,7 @@ export const elecCh6Content: SectionContent[] = [
 
   // ------------------------------------------------------------- 6.2 ------
   {
-    sectionId: 'elec-ch6-s2',
+    sectionId: 'ee-e-circuits-s21',
     readingTime: 10,
     intro: 'Switch a resistive circuit and the current answers instantly; switch an inductive one and it answers on its own clock. The clock is the time constant $T = L/R$, and the answer is always a rising or falling exponential \u2014 the Helmholtz equation. Hughes derives growth and decay separately, then runs two-position switch examples in which the second transient starts before the first has finished; Nilsson\u2019s natural-response treatment adds the energy accounting.',
     objectives: [
@@ -315,7 +315,7 @@ export const elecCh6Content: SectionContent[] = [
 
   // ------------------------------------------------------------- 6.3 ------
   {
-    sectionId: 'elec-ch6-s3',
+    sectionId: 'ee-e-circuits-s22',
     readingTime: 10,
     intro: 'Growth, decay, RL, RC \u2014 four derivations, one equation. Nilsson\u2019s masterstroke in Section 7.4 is to notice that every first-order circuit obeys $dx/dt + x/\\tau = K$, so a single recipe \u2014 initial value, final value, time constant \u2014 solves them all. This section derives the general solution, runs it on both an RL and an RC step, and applies it to the chapter\u2019s most human example: the artificial pacemaker, whose RC charging curve sets the heartbeat.',
     objectives: [
@@ -463,7 +463,7 @@ export const elecCh6Content: SectionContent[] = [
 
   // ------------------------------------------------------------- 6.4 ------
   {
-    sectionId: 'elec-ch6-s4',
+    sectionId: 'ee-e-circuits-s23',
     readingTime: 9,
     intro: 'Real circuits switch more than once, sometimes while the dust of the previous transient is still in the air; occasionally they even contain active elements that make the dust grow without bound. Nilsson closes the first-order story with these two edges \u2014 sequential switching and the unbounded response \u2014 and then turns the RC circuit inside an op-amp feedback loop into a precision integrator, the analogue computer\u2019s workhorse and the ancestor of every waveform generator.',
     objectives: [
@@ -620,64 +620,64 @@ export const elecCh6Content: SectionContent[] = [
 
 export const elecCh6Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch6',
-    section: '6.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.20',
     name: 'Inductor voltage law',
     formula: 'e = L\u00b7di/dt',
     note: 'henry: 1 V per A/s; inductor is a short for dc',
     latex: 'e = L\\,\\frac{di}{dt}',
   },
   {
-    chapterId: 'elec-ch6',
-    section: '6.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.20',
     name: 'Inductance from flux linkages',
     formula: 'L = N\u03a6/I',
     note: 'flux-linkages per ampere; also L = \u03bc\u2080\u03bc\u1d63N\u00b2A/l',
     latex: 'L = \\frac{N\\Phi}{I} = \\frac{\\mu_0 \\mu_r A N^{2}}{l}',
   },
   {
-    chapterId: 'elec-ch6',
-    section: '6.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.20',
     name: 'Energy stored in an inductor',
     formula: 'W = \u00bdLI\u00b2',
     note: 'joules; all of it is dissipated on discharge',
     latex: 'W = \\tfrac{1}{2}LI^{2}',
   },
   {
-    chapterId: 'elec-ch6',
-    section: '6.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.20',
     name: 'Mutual inductance and coupling',
     formula: 'M = N\u2082\u03a6\u2082/I\u2081;  M = k\u221a(L\u2081L\u2082)',
     note: '0 \u2264 k \u2264 1; dot convention fixes signs',
     latex: 'M = k\\sqrt{L_1 L_2}',
   },
   {
-    chapterId: 'elec-ch6',
-    section: '6.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.20',
     name: 'Coupled coils in series',
     formula: 'L = L\u2081 + L\u2082 \u00b1 2M',
     note: 'plus when aiding; M is a quarter of the difference',
     latex: 'L = L_1 + L_2 \\pm 2M',
   },
   {
-    chapterId: 'elec-ch6',
-    section: '6.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.21',
     name: 'LR time constant',
     formula: 'T = L/R',
     note: 'RC twin: \u03c4 = RC; 63.2% per constant',
     latex: 'T = \\frac{L}{R}',
   },
   {
-    chapterId: 'elec-ch6',
-    section: '6.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.21',
     name: 'Growth and decay in an LR circuit',
     formula: 'i = I(1 \u2212 exp(\u2212t/T));  i = I\u2080\u00b7exp(\u2212t/T)',
     note: 'Helmholtz equation; growth to V/R, decay from I\u2080',
     latex: 'i = I\\left(1 - e^{-t/T}\\right), \\quad i = I_0 e^{-t/T}',
   },
   {
-    chapterId: 'elec-ch6',
-    section: '6.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.22',
     name: 'General first-order solution',
     formula: 'x(t) = Xf + (X\u2080 \u2212 Xf)\u00b7exp(\u2212(t\u2212t\u2080)/\u03c4)',
     note: 'works for RL and RC, natural and step responses',

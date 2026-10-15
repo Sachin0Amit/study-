@@ -16,7 +16,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh2Content: SectionContent[] = [
   // ------------------------------------------------------------------ 2.1
   {
-    sectionId: 'elec-ch2-s1',
+    sectionId: 'ee-e-basic-electrical-s13',
     readingTime: 9,
     intro: 'Georg Ohm found that the potential difference across the ends of many conductors is directly proportional to the current flowing between them — provided the temperature stays constant. From that single proportionality flows the entire vocabulary of resistance: the ohm, the resistor, conductance, the colour code stamped on every physical component, and the reason a cable can pass a large current or a small one. This section merges Hughes’s treatment of resistors and their coding with Nilsson’s sign-aware statement of Ohm’s law.',
     objectives: [
@@ -170,7 +170,7 @@ export const elecCh2Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 2.2
   {
-    sectionId: 'elec-ch2-s2',
+    sectionId: 'ee-e-basic-electrical-s14',
     readingTime: 9,
     intro: 'One lamp on a supply glows normally; wire a second lamp in series with it and both glow feebly, because the current must fight twice the resistance. Wire the second lamp in parallel instead and both shine at full brilliance, because each receives the full supply voltage. Series and parallel connection are the two ways circuits grow, and this section builds their algebra — equivalent resistance, voltage and current sharing — before Kirchhoff’s laws generalize it.',
     objectives: [
@@ -325,7 +325,7 @@ export const elecCh2Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 2.3
   {
-    sectionId: 'elec-ch2-s3',
+    sectionId: 'ee-e-basic-electrical-s1',
     readingTime: 10,
     intro: 'The series and parallel rules are shadows of two deeper statements. Gustav Kirchhoff observed that the addition of currents at a junction and the addition of voltages round a loop are particular cases of two general conditions fundamental to every network. Nine times out of ten his laws handle just two currents or two voltages at a time — but applied jointly, with Ohm’s law, they solve networks of arbitrary complexity, including circuits powered by several sources and by sources whose value depends on another branch.',
     objectives: [
@@ -474,7 +474,7 @@ export const elecCh2Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 2.4
   {
-    sectionId: 'elec-ch2-s4',
+    sectionId: 'ee-e-basic-electrical-s15',
     readingTime: 10,
     prerequisites: [
       'Ohm’s law: $V = IR$ across linear resistive branches',
@@ -694,7 +694,7 @@ export const elecCh2Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 2.5
   {
-    sectionId: 'elec-ch2-s5',
+    sectionId: 'ee-e-basic-electrical-s16',
     readingTime: 9,
     intro: 'Every practical question about electricity eventually asks how hot something gets. Resistors produce heat when passing current; that heat must escape; the resistance itself changes with temperature as it does. Hughes closes his chapter on simple DC circuits with the three laws that quantify this — power and energy, resistivity and conductor sizing, and the temperature coefficient of resistance — and the rating philosophy built on them.',
     objectives: [
@@ -844,64 +844,64 @@ export const elecCh2Content: SectionContent[] = [
 
 export const elecCh2Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch2',
-    section: '2.1',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.13',
     name: 'Ohm’s law and conductance',
     formula: 'V = IR;  I = 1/R × V;  G = 1/R (S)',
     latex: 'V = IR, \\quad G = \\frac{1}{R}',
     note: 'v = iR along the drop, v = −iR against it; siemens = 1/ohm',
   },
   {
-    chapterId: 'elec-ch2',
-    section: '2.5',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.16',
     name: 'Resistor power and energy',
     formula: 'P = VI = I²R = V²/R;  W = I²Rt',
     latex: 'P = VI = I^{2}R = \\frac{V^{2}}{R}, \\quad W = I^{2}Rt',
     note: 'the heating effect of a current; 1 kW h = 3.6 MJ',
   },
   {
-    chapterId: 'elec-ch2',
-    section: '2.2',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.14',
     name: 'Series and parallel equivalents',
     formula: 'R = R₁ + R₂ + …;  1/R = 1/R₁ + 1/R₂ + …',
     latex: 'R = \\sum R_i; \\quad \\frac{1}{R} = \\sum \\frac{1}{R_i}; \\quad R = \\frac{R_1R_2}{R_1+R_2}',
     note: 'product-over-sum holds for exactly two resistors in parallel',
   },
   {
-    chapterId: 'elec-ch2',
-    section: '2.4',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.15',
     name: 'Voltage and current division',
     formula: 'V₁ = V·R₁/(R₁+R₂);  I₁ = I·R₂/(R₁+R₂)',
     latex: 'v_1 = \\frac{R_1}{R_1+R_2}v, \\quad i_1 = \\frac{R_2}{R_1+R_2}i',
     note: 'current division uses the other resistor on top',
   },
   {
-    chapterId: 'elec-ch2',
-    section: '2.3',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.1',
     name: 'Kirchhoff’s two laws',
     formula: 'ΣI = 0 at every node;  ΣV = 0 round every loop',
     latex: '\\sum_{\\text{node}} I_k = 0, \\qquad \\sum_{\\text{loop}} V_k = 0',
     note: 'n nodes give n − 1 independent current equations',
   },
   {
-    chapterId: 'elec-ch2',
-    section: '2.4',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.15',
     name: 'Wheatstone bridge balance',
     formula: 'Rx = (R₂/R₁)·R₃',
     latex: 'R_x = \\frac{R_2}{R_1}R_3',
     note: 'adjust R₃ until the galvanometer reads zero',
   },
   {
-    chapterId: 'elec-ch2',
-    section: '2.5',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.16',
     name: 'Resistivity',
     formula: 'R = ρl/A',
     latex: 'R = \\rho\\frac{l}{A}',
     note: 'ρ in Ω·m — copper 1.59 × 10⁻⁸ Ω·m at 0 °C',
   },
   {
-    chapterId: 'elec-ch2',
-    section: '2.5',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.16',
     name: 'Temperature coefficient of resistance',
     formula: 'R₂ = R₁(1 + α₀θ₂)/(1 + α₀θ₁)',
     latex: 'R_2 = R_1\\,\\frac{1 + \\alpha_0\\theta_2}{1 + \\alpha_0\\theta_1}',

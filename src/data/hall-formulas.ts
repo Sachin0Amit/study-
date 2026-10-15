@@ -15,24 +15,24 @@ import type { FormulaEntry } from './formulas'
 export const HALL_FORMULAS: FormulaEntry[] = [
   // ============================ Chapter 1 — Measurement ============================
   {
-    chapterId: 'hall-ch1',
-    section: '1.1',
+    chapterId: 'young-ch1',
+    section: '1.11',
     name: 'SI base units',
     formula: 'SI: m, kg, s, A, K, mol, cd',
     latex: '\\text{SI: m, kg, s, A, K, mol, cd}',
     note: 'all mechanics answers must reduce to these base units',
   },
   {
-    chapterId: 'hall-ch1',
-    section: '1.2',
+    chapterId: 'young-ch1',
+    section: '1.12',
     name: 'Unit conversion chain',
     formula: 'x = x0 × (factors of 1); 1 m = 100 cm = 1000 mm',
     latex: 'x = x_{0} \\times (\\text{factors of } 1)',
     note: 'multiply by 1 in disguise; keep units attached at each step',
   },
   {
-    chapterId: 'hall-ch1',
-    section: '1.3',
+    chapterId: 'young-ch1',
+    section: '1.13',
     name: 'Density',
     formula: 'ρ = m / V',
     latex: '\\rho = m / V',
@@ -74,30 +74,6 @@ export const HALL_FORMULAS: FormulaEntry[] = [
   },
 
   // ============================ Chapter 3 — Vectors ============================
-  {
-    chapterId: 'hall-ch3',
-    section: '3.1',
-    name: 'Vector components',
-    formula: 'ax = a cosθ; ay = a sinθ; a = √(ax² + ay²)',
-    latex: 'a_{x} = a\\cos\\theta;\\quad a = \\sqrt{a_{x}^{2}+a_{y}^{2}}',
-    note: 'θ from +x; signs of ax, ay carry the quadrant',
-  },
-  {
-    chapterId: 'hall-ch3',
-    section: '3.2',
-    name: 'Adding vectors by components',
-    formula: 'Rx = Σax; Ry = Σay; R = √(Rx² + Ry²)',
-    latex: 'R_{x} = \\sum a_{x};\\quad R_{y} = \\sum a_{y}',
-    note: 'never add magnitudes; add components then rebuild R',
-  },
-  {
-    chapterId: 'hall-ch3',
-    section: '3.3',
-    name: 'Dot and cross products',
-    formula: 'a·b = ab cosφ; |a×b| = ab sinφ; a·b = Σaibi',
-    latex: '\\vec{a}\\cdot\\vec{b} = ab\\cos\\phi;\\quad |\\vec{a}\\times\\vec{b}| = ab\\sin\\phi',
-    note: 'dot tests parallel-ness; cross magnitude tests perp-ness',
-  },
 
   // ============================ Chapter 4 — Motion in 2D and 3D ============================
   {
@@ -161,24 +137,24 @@ export const HALL_FORMULAS: FormulaEntry[] = [
 
   // ============================ Chapter 6 — Force and Motion II ============================
   {
-    chapterId: 'hall-ch6',
-    section: '6.1',
+    chapterId: 'hall-ch5',
+    section: '6.4',
     name: 'Static and kinetic friction',
     formula: 'fs,max = μs N; fk = μk N opposing slip',
     latex: 'f_{s,\\max} = \\mu_{s}N;\\quad f_{k} = \\mu_{k}N',
     note: 'static adjusts up to max; kinetic is fixed at μkN',
   },
   {
-    chapterId: 'hall-ch6',
-    section: '6.2',
+    chapterId: 'hall-ch5',
+    section: '6.5',
     name: 'Drag and terminal speed',
     formula: 'D = ½ C ρ A v²; vt = √(2mg / CρA)',
     latex: 'D = \\tfrac{1}{2}C\\rho Av^{2};\\quad v_{t} = \\sqrt{2mg/C\\rho A}',
     note: 'a = 0 defines terminal; D grows as v squared',
   },
   {
-    chapterId: 'hall-ch6',
-    section: '6.3',
+    chapterId: 'hall-ch5',
+    section: '6.6',
     name: 'Centripetal force',
     formula: 'F = m v² / r toward center',
     latex: 'F = mv^{2}/r',
@@ -1021,32 +997,32 @@ export const HALL_FORMULAS: FormulaEntry[] = [
 
   // ============================ Chapter 32 — Maxwell and Matter ============================
   {
-    chapterId: 'hall-ch32',
-    section: '32.1',
+    chapterId: 'hall-ch33',
+    section: '32.8',
     name: 'Gauss law for magnetism',
     formula: '∮B·dA = 0 (no magnetic monopoles)',
     latex: '\\oint \\vec{B}\\cdot d\\vec{A} = 0',
     note: 'field lines loop; as many in as out',
   },
   {
-    chapterId: 'hall-ch32',
-    section: '32.2',
+    chapterId: 'hall-ch33',
+    section: '32.9',
     name: 'Maxwell Faraday law',
     formula: '∮E·ds = −dΦB/dt',
     latex: '\\oint \\vec{E}\\cdot d\\vec{s} = -d\\Phi_{B}/dt',
     note: 'changing B makes curly nonconservative E',
   },
   {
-    chapterId: 'hall-ch32',
-    section: '32.3',
+    chapterId: 'hall-ch33',
+    section: '32.10',
     name: 'Displacement current',
     formula: 'id = ε0 dΦE/dt; ∮B·ds = μ0(i_enc + id)',
     latex: 'i_{d} = \\varepsilon_{0}d\\Phi_{E}/dt',
     note: 'changing E acts as current; completes Ampere law',
   },
   {
-    chapterId: 'hall-ch32',
-    section: '32.5',
+    chapterId: 'hall-ch33',
+    section: '32.12',
     name: 'Bohr magneton',
     formula: 'μB = eħ / 2m = 9.27×10⁻²⁴ J/T',
     latex: '\\mu_{B} = e\\hbar/2m',
@@ -1327,24 +1303,24 @@ export const HALL_FORMULAS: FormulaEntry[] = [
 
   // ============================ Chapter 41 — Solids ============================
   {
-    chapterId: 'hall-ch41',
-    section: '41.1',
+    chapterId: 'young-ch42',
+    section: '40.9',
     name: 'Metal conduction',
     formula: 'σ = n e² τ / m; ρ = 1/σ from scattering',
     latex: '\\sigma = ne^{2}\\tau/m',
     note: 'Fermi sea supplies carriers; defects raise ρ',
   },
   {
-    chapterId: 'hall-ch41',
-    section: '41.2',
+    chapterId: 'young-ch42',
+    section: '40.10',
     name: 'Semiconductor doping',
     formula: 'n-type donors add e; p-type acceptors add holes',
     latex: 'n\\text{-type: donors;}\\quad p\\text{-type: acceptors}',
     note: 'ppm dopants swing conductivity by orders',
   },
   {
-    chapterId: 'hall-ch41',
-    section: '41.3',
+    chapterId: 'young-ch42',
+    section: '40.11',
     name: 'p-n junction',
     formula: 'forward conducts, reverse blocks; LED hf ≈ eV gap',
     latex: 'hf \\approx eV_{gap}',

@@ -11,7 +11,7 @@ import type { FormulaEntry } from '../formulas'
 export const physCh11Content: SectionContent[] = [
   // ------------------------------------------------------------------ 11.1
   {
-    sectionId: 'phys-ch11-s1',
+    sectionId: 'hall-ch22-s18',
     readingTime: 10,
     intro: 'Feynman opens Volume II with a shock: the electrical force is a billion-billion-billion-billion times stronger than gravity, and the only reason you do not feel it is that positive and negative charge are mixed with almost perfect balance. To describe what is left over — the fields — he builds the language of flux and circulation first, then the differential toolkit: gradient, divergence and curl, all packaged in one hungry operator, $\\nabla$.',
     objectives: [
@@ -146,7 +146,7 @@ export const physCh11Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 11.2
   {
-    sectionId: 'phys-ch11-s2',
+    sectionId: 'hall-ch22-s19',
     readingTime: 9,
     intro: 'Two theorems — Gauss’s and Stokes’ — are the bookkeeping that converts flux and circulation between integral and differential form. Feynman derives each the honest way: sum the flux out of the six faces of a tiny cube, walk the four sides of a tiny square. On the way the divergence acquires its meaning (outflow per unit volume), the curl acquires its meaning (circulation per unit area), and heat flow delivers the diffusion equation as a bonus.',
     objectives: [
@@ -292,7 +292,7 @@ export const physCh11Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 11.3
   {
-    sectionId: 'phys-ch11-s3',
+    sectionId: 'hall-ch23-s9',
     readingTime: 11,
     intro: 'Electrostatics proper. Maxwell’s equations split cleanly into an electric pair and a magnetic pair, and the electric pair is almost absurdly simple: the divergence of $\\boldsymbol{E}$ is $\\rho/\\epsilon_0$ and its curl is zero. From Coulomb’s law plus superposition Feynman builds the potential, then turns the flux idea into Gauss’s law and works the classic problems — sphere, line, plane, conductor — with a line of algebra each. A closing surprise: the law is inverse square to one part in a billion.',
     objectives: [
@@ -438,7 +438,7 @@ export const physCh11Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 11.4
   {
-    sectionId: 'phys-ch11-s4',
+    sectionId: 'hall-ch22-s20',
     readingTime: 11,
     intro: 'When the charges are given, electrostatics is an integral; when conductors appear, it becomes a puzzle — the charges hide on surfaces until the whole conductor is an equipotential. Feynman’s elegant escape is the method of images: solve an easy problem with point charges, notice one of its equipotentials, and replace it by a metal sheet. Then dipoles, condensers, sharp points (with a peek at seeing atoms), and finally the complex-variable trick that solves all two-dimensional problems at once.',
     objectives: [
@@ -585,7 +585,7 @@ export const physCh11Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 11.5
   {
-    sectionId: 'phys-ch11-s5',
+    sectionId: 'hall-ch24-s16',
     readingTime: 11,
     intro: 'Energy ties electrostatics together and then sends it into the sky. Assembling charges, charging condensers, binding salt crystals and nuclei — all one bookkeeping of work — until Feynman relocates the energy to the field itself, $\\epsilon_0 E^2/2$ per cubic metre, with the unsettling bonus that a point charge would carry infinite energy. Then the atmosphere: a permanent 100 V/m field, a 400,000-volt planet-sized battery drained by 1800 amperes and recharged by forty thousand thunderstorms a day.',
     objectives: [
@@ -734,64 +734,64 @@ export const physCh11Content: SectionContent[] = [
 
 export const physCh11Formulas: FormulaEntry[] = [
   {
-    chapterId: 'phys-ch11',
-    section: '11.3',
+    chapterId: 'hall-ch23',
+    section: '23.9',
     name: 'Coulomb’s law',
     formula: 'F = q₁q₂/4πε₀r²',
     latex: 'F = \\frac{1}{4\\pi\\epsilon_0}\\,\\frac{q_1 q_2}{r_{12}^2}',
     note: '1/4πε₀ ≈ 9 × 10⁹ N·m²/C²; plus superposition, all of electrostatics',
   },
   {
-    chapterId: 'phys-ch11',
-    section: '11.3',
+    chapterId: 'hall-ch23',
+    section: '23.9',
     name: 'Gauss’s law',
     formula: '∮ E·n da = Q_inside/ε₀;  ∇·E = ρ/ε₀',
     latex: '\\oint_S \\boldsymbol{E} \\cdot \\boldsymbol{n}\\, da = \\frac{Q_{\\text{inside}}}{\\epsilon_0}, \\quad \\nabla \\cdot \\boldsymbol{E} = \\frac{\\rho}{\\epsilon_0}',
     note: 'the inverse square law in integral and differential form',
   },
   {
-    chapterId: 'phys-ch11',
-    section: '11.3',
+    chapterId: 'hall-ch23',
+    section: '23.9',
     name: 'Electrostatic potential',
     formula: 'E = −∇φ;  φ = q/4πε₀r',
     latex: '\\boldsymbol{E} = -\\nabla\\phi, \\qquad \\phi = \\frac{q}{4\\pi\\epsilon_0 r}',
     note: 'curl-free E is always a gradient; potentials superpose',
   },
   {
-    chapterId: 'phys-ch11',
-    section: '11.2',
+    chapterId: 'hall-ch22',
+    section: '22.19',
     name: 'Gauss’s theorem (divergence theorem)',
     formula: '∮ C·n da = ∫ ∇·C dV',
     latex: '\\oint_S \\boldsymbol{C} \\cdot \\boldsymbol{n}\\, da = \\int_V \\nabla \\cdot \\boldsymbol{C}\\, dV',
     note: 'divergence = outward flux per unit volume',
   },
   {
-    chapterId: 'phys-ch11',
-    section: '11.2',
+    chapterId: 'hall-ch22',
+    section: '22.19',
     name: 'Stokes’ theorem',
     formula: '∮ C·ds = ∫ (∇×C)·n da',
     latex: '\\oint_\\Gamma \\boldsymbol{C} \\cdot d\\boldsymbol{s} = \\int_S (\\nabla \\times \\boldsymbol{C}) \\cdot \\boldsymbol{n}\\, da',
     note: 'curl = circulation per unit area; right-hand rule for the normal',
   },
   {
-    chapterId: 'phys-ch11',
-    section: '11.3',
+    chapterId: 'hall-ch23',
+    section: '23.9',
     name: 'Fields by symmetry',
     formula: 'E = Q/4πε₀r²;  λ/2πε₀r;  σ/2ε₀;  ρr/3ε₀',
     latex: 'E = \\frac{Q}{4\\pi\\epsilon_0 r^2}, \\quad E = \\frac{\\lambda}{2\\pi\\epsilon_0 r}, \\quad E = \\frac{\\sigma}{2\\epsilon_0}, \\quad E = \\frac{\\rho r}{3\\epsilon_0}',
     note: 'sphere (outside), line, isolated sheet, inside a uniform sphere',
   },
   {
-    chapterId: 'phys-ch11',
-    section: '11.4',
+    chapterId: 'hall-ch22',
+    section: '22.20',
     name: 'Capacitance and condenser energy',
     formula: 'Q = CV;  C = ε₀A/d;  U = Q²/2C = ½CV²',
     latex: 'Q = CV, \\qquad C = \\frac{\\epsilon_0 A}{d}, \\qquad U = \\frac{Q^2}{2C} = \\frac{1}{2}CV^2',
     note: 'sphere: C = 4πε₀a; force on a plate: ½QE₀',
   },
   {
-    chapterId: 'phys-ch11',
-    section: '11.5',
+    chapterId: 'hall-ch24',
+    section: '24.16',
     name: 'Energy in the electric field',
     formula: 'u = ε₀E²/2;  U = ∫ (ε₀E²/2) dV',
     latex: 'u = \\frac{\\epsilon_0 E^2}{2}, \\qquad U = \\int \\frac{\\epsilon_0 E^2}{2}\\, dV',

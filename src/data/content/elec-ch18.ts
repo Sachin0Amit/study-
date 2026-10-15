@@ -21,7 +21,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh18Content: SectionContent[] = [
   // ------------------------------------------------------------------ 18.1
   {
-    sectionId: 'elec-ch18-s1',
+    sectionId: 'ece-e-digital-s11',
     readingTime: 10,
     intro: 'Chapter 17 closed with circuits that generate their own waveforms; this chapter opens the world that consumes them. A digital signal carries information in just two states, ON and OFF, 1 and 0 — and once information is reduced to that form it can be stored, transmitted and recomputed without loss. The quantities of engineering are not binary, though, so the first task is a number system built from two symbols: this section is the grammar of binary, octal and hexadecimal notation, and of the arithmetic that digital hardware performs on them.',
     objectives: [
@@ -173,7 +173,7 @@ export const elecCh18Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 18.2
   {
-    sectionId: 'elec-ch18-s2',
+    sectionId: 'ece-e-digital-s12',
     readingTime: 10,
     intro: 'Numbers alone do not act; decisions do. This section crosses from arithmetic into logic — the algebra George Boole built and Claude Shannon first applied to switching circuits. Hughes introduces each function with a bus route, a lamp and two switches, then assembles the gate symbols, truth tables and the small set of Boolean rules that reduce networks to their cheapest form. The deeper Boolean theory belongs to the Digital Logic subject; the concern here is what every electronics engineer must command: the six gates, De Morgan’s theorems, and why real systems standardize on NAND and NOR.',
     objectives: [
@@ -319,7 +319,7 @@ export const elecCh18Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 18.3
   {
-    sectionId: 'elec-ch18-s3',
+    sectionId: 'ece-e-digital-s13',
     readingTime: 12,
     intro: 'Simplifying by Boolean algebra, as Example 23.3 showed, offers no guarantee of reaching the cheapest circuit. This section brings the two tools that close the gap and then the element that algebra alone cannot supply: memory. Karnaugh maps make minimization of four-variable functions a visual routine; feeding a gate output back to an input turns a logic network into a circuit with states. Add a clock and the result is a state machine — the register-and-counter architecture that the converters of section 18.4 and the interfaces of section 18.5 plug into.',
     objectives: [
@@ -466,7 +466,7 @@ export const elecCh18Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 18.4
   {
-    sectionId: 'elec-ch18-s4',
+    sectionId: 'ece-e-digital-s14',
     readingTime: 11,
     intro: 'The earlier chapters of this book built amplifiers, filters and oscillators for continuous signals; the first three sections of this chapter built the binary world that processes them noiselessly. Between the two stands the converter. Hughes’s digital thermometer and CD player are its everyday portraits — analogue in, digital out, and back to analogue at the end — and its hardware is nothing new: the summing amplifier of Chapter 15 turns bits into a weighted voltage, and the comparator, fed back around a counter or register, turns a voltage into bits.',
     objectives: [
@@ -614,7 +614,7 @@ export const elecCh18Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 18.5
   {
-    sectionId: 'elec-ch18-s5',
+    sectionId: 'ece-e-digital-s15',
     readingTime: 9,
     intro: 'Everything so far treated a gate as an ideal symbol. A real gate is a fistful of transistors with analogue appetites: it needs a supply, its inputs load the stage before it, its output swings between two technology-defined voltage levels, and it burns power while switching. Hughes section 23.18 introduces the two families, TTL and CMOS; this section adds the Art of Electronics view of what the numbers mean — noise margins, fan-out, and the daily business of making logic drive lamps, relays and the analogue world, or survive in it.',
     objectives: [
@@ -759,64 +759,64 @@ export const elecCh18Content: SectionContent[] = [
 
 export const elecCh18Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch18',
-    section: '18.1',
+    chapterId: 'ece-e-digital',
+    section: '3.11',
     name: 'Positional expansion of a number',
     formula: 'N = Σ dₖ·bᵏ, e.g. 1011₂ = 2³ + 2¹ + 2⁰ = 11₁₀',
     note: 'digits times powers of the base; b = 2, 8, 16 for binary, octal, hex',
     latex: '1011_2 = 1\\cdot 2^3 + 0\\cdot 2^2 + 1\\cdot 2^1 + 1\\cdot 2^0 = 11_{10}',
   },
   {
-    chapterId: 'elec-ch18',
-    section: '18.1',
+    chapterId: 'ece-e-digital',
+    section: '3.11',
     name: 'Two’s complement',
     formula: 'two’s comp = (one’s comp) + 1 = 2ⁿ − N',
     note: 'subtract by adding the complement and discarding the carry',
     latex: 'N^{*} = \\overline{N} + 1 = 2^n - N',
   },
   {
-    chapterId: 'elec-ch18',
-    section: '18.2',
+    chapterId: 'ece-e-digital',
+    section: '3.12',
     name: 'De Morgan’s laws',
     formula: '¬(A·B·C) = ¬A + ¬B + ¬C ; ¬(A+B+C) = ¬A·¬B·¬C',
     note: 'complement swaps AND with OR — the NAND/NOR conversion tool',
     latex: '\\overline{A\\cdot B\\cdot C} = \\bar A + \\bar B + \\bar C,\\quad \\overline{A+B+C} = \\bar A\\cdot\\bar B\\cdot\\bar C',
   },
   {
-    chapterId: 'elec-ch18',
-    section: '18.2',
+    chapterId: 'ece-e-digital',
+    section: '3.12',
     name: 'Boolean distributive and absorption rules',
     formula: 'A + B·C = (A + B)·(A + C) ; A·(B + C) = A·B + A·C ; A + A·B = A',
     note: 'Hughes [23.11]–[23.14]; the workhorses of network reduction',
     latex: 'A + B\\cdot C = (A+B)\\cdot(A+C);\\quad A\\cdot(B+C) = A\\cdot B + A\\cdot C;\\quad A + A\\cdot B = A',
   },
   {
-    chapterId: 'elec-ch18',
-    section: '18.4',
+    chapterId: 'ece-e-digital',
+    section: '3.14',
     name: 'R/2R ladder DAC output',
     formula: '|V_out| = V_ref·(d₃ + d₂/2 + d₁/4 + d₀/8), with R_f = 2R',
     note: 'each rung Thévenin-halves: bits D, C, B, A give 5, 2.5, 1.25, 0.625 V',
     latex: '|V_{out}| = V_{ref}\\left(d_3 + \\tfrac{d_2}{2} + \\tfrac{d_1}{4} + \\tfrac{d_0}{8}\\right)',
   },
   {
-    chapterId: 'elec-ch18',
-    section: '18.4',
+    chapterId: 'ece-e-digital',
+    section: '3.14',
     name: 'DAC/ADC step size and resolution',
     formula: 'step = V_FS/(2ⁿ − 1) ; %res = step/V_FS × 100',
     note: '8 bits at 5 mV: 127 steps to 635 mV, 0.79 per cent',
     latex: '\\text{step} = \\frac{V_{FS}}{2^n - 1},\\qquad \\%\\,\\text{res} = \\frac{\\text{step}}{V_{FS}}\\times 100',
   },
   {
-    chapterId: 'elec-ch18',
-    section: '18.5',
+    chapterId: 'ece-e-digital',
+    section: '3.15',
     name: 'Logic fan-out',
     formula: 'fan-out = I_OL/I_IL = 16 mA/1.6 mA = 10 (TTL)',
     note: 'CMOS is capacitance-limited instead — speed, not DC current',
     latex: '\\text{fan-out} = \\frac{I_{OL}}{I_{IL}} = \\frac{16\\,\\text{mA}}{1.6\\,\\text{mA}} = 10',
   },
   {
-    chapterId: 'elec-ch18',
-    section: '18.5',
+    chapterId: 'ece-e-digital',
+    section: '3.15',
     name: 'Noise margins',
     formula: 'NM_H = V_OH(min) − V_IH(min) ; NM_L = V_IL(max) − V_OL(max)',
     note: 'TTL 0.4 V both states; 74HC at 5 V about 1.4 V',

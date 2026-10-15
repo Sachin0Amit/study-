@@ -110,7 +110,7 @@ export function LibraryView() {
   const totalQuestions = allContent.reduce((n, c) => n + c.quiz.length, 0)
   /** the most recently added book — hero CTA + chapter-map preview target */
   const latestBook = LIBRARY_BOOKS[LIBRARY_BOOKS.length - 1]
-  const latestShortTitle = latestBook.id === 'silberschatz-osc10' ? 'Operating Systems' : latestBook.title.split(':')[0]
+  const latestShortTitle = latestBook.title.split(':')[0]
 
   return (
     <div>
@@ -333,7 +333,7 @@ export function LibraryView() {
                           className="inline-flex items-center gap-1 rounded-md border border-border/80 bg-background/80 px-2 py-1 text-[11px] font-medium text-foreground transition-colors hover:border-emerald-400/60 hover:bg-emerald-400/10 hover:text-emerald-300"
                         >
                           <BookOpen className="h-3 w-3 text-emerald-400" />
-                          {b.id === 'silberschatz-osc10' ? 'Operating Systems' : b.title.split('—')[0].split(':')[0].trim()}
+                          {b.title.split('—')[0].split(':')[0].trim()}
                         </span>
                       ))}
                     </div>

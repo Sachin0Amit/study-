@@ -7,7 +7,7 @@ import type { SectionContent } from '../library'
 
 export const ewenCh4Content: SectionContent[] = [
   {
-    sectionId: 'ewen-ch4-s1',
+    sectionId: 'hall-ch2-s22',
     readingTime: 5,
     intro: "A speedometer number and a velocity arrow are not the same thing, and confusing them wrecks motion analysis. This section fixes average versus instantaneous rates and the sign language of direction.",
     objectives: [
@@ -192,7 +192,7 @@ export const ewenCh4Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch4-s3',
+    sectionId: 'hall-ch2-s23',
     readingTime: 7,
     intro: "Constant acceleration covers vehicles, elevators, and falling bodies with just three equations. This section derives them, applies them to free fall, and works braking and drop problems end to end.",
     objectives: [
@@ -288,7 +288,7 @@ export const ewenCh4Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch4-s4',
+    sectionId: 'hall-ch2-s24',
     readingTime: 7,
     intro: "Throw a ball sideways off a cliff and its horizontal cruise ignores its vertical plunge: the two motions superpose. This section treats projectiles as independent horizontal and vertical constant-acceleration problems.",
     objectives: [

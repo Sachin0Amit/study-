@@ -12,7 +12,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh7Content: SectionContent[] = [
   // ------------------------------------------------------------------ 7.1
   {
-    sectionId: 'elec-ch7-s1',
+    sectionId: 'ee-e-circuits-s24',
     readingTime: 11,
     intro: 'A circuit that stores energy in two places at once — a capacitor’s electric field and an inductor’s magnetic field — answers with a second-order differential equation, and its voltage no longer simply slides down an exponential ramp. This section follows Nilsson’s source-free parallel RLC as the energy initially trapped in $L$ and $C$ is released through $R$, and shows how one dimensionless comparison, $\\alpha^{2}$ versus $\\omega_{0}^{2}$, decides whether the voltage decays sluggishly, rings, or sits exactly on the boundary between the two.',
     objectives: [
@@ -169,7 +169,7 @@ export const elecCh7Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 7.2
   {
-    sectionId: 'elec-ch7-s2',
+    sectionId: 'ee-e-circuits-s25',
     readingTime: 11,
     intro: 'Forcing the RLC circuit with a step adds a constant to the right-hand side of the differential equation — and one new constraint: a nonzero final value. Nilsson solves the parallel form for the inductor current and the series form for the capacitor voltage, and the beautiful part is that the machinery barely changes: new $\\alpha$ for the series case, same $\\omega_{0}$, same three damping regimes, same two simultaneous equations. The chapter ends with the same circuit driven to 90 percent of its final value three different ways, so you can see speed trade against overshoot in hard numbers.',
     objectives: [
@@ -313,7 +313,7 @@ export const elecCh7Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 7.3
   {
-    sectionId: 'elec-ch7-s3',
+    sectionId: 'ee-e-circuits-s26',
     readingTime: 10,
     intro: 'Strip away the topology and every second-order circuit tells the same story: a forced part that the source demands, plus a natural part the circuit itself contributes, glued together by two initial conditions and a final value. This section assembles the universal two-root recipe, then stress-tests it on a step response that begins with stored energy, on a circuit with no RLC in sight — two cascaded integrating amplifiers — and on the lossless LC oscillator that a computer’s clock generator could be built from.',
     objectives: [
@@ -428,72 +428,72 @@ export const elecCh7Content: SectionContent[] = [
 
 export const elecCh7Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch7',
-    section: '7.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.24',
     name: 'Neper frequency — parallel RLC',
     formula: 'α = 1/2RC',
     note: 'damping (envelope decay) rate of the parallel form',
     latex: '\\alpha = \\frac{1}{2RC}',
   },
   {
-    chapterId: 'elec-ch7',
-    section: '7.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.24',
     name: 'Neper frequency — series RLC',
     formula: 'α = R/2L',
     note: 'the series dual: damping grows with R here',
     latex: '\\alpha = \\frac{R}{2L}',
   },
   {
-    chapterId: 'elec-ch7',
-    section: '7.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.24',
     name: 'Resonant radian frequency',
     formula: 'ω₀ = 1/√(LC)',
     note: 'same for parallel and series; the lossless oscillation rate',
     latex: '\\omega_{0} = \\frac{1}{\\sqrt{LC}}',
   },
   {
-    chapterId: 'elec-ch7',
-    section: '7.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.24',
     name: 'Damped radian frequency',
     formula: 'ω_d = √(ω₀² − α²)',
     note: 'ringing frequency of the underdamped response',
     latex: '\\omega_{d} = \\sqrt{\\omega_{0}^{2} - \\alpha^{2}}',
   },
   {
-    chapterId: 'elec-ch7',
-    section: '7.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.24',
     name: 'Characteristic roots',
     formula: 's₁,₂ = −α ± √(α² − ω₀²)',
     note: 'roots of s² + 2αs + ω₀² = 0 for either topology',
     latex: 's_{1,2} = -\\alpha \\pm \\sqrt{\\alpha^{2} - \\omega_{0}^{2}}',
   },
   {
-    chapterId: 'elec-ch7',
-    section: '7.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.24',
     name: 'Overdamped natural response',
     formula: 'v(t) = A₁·exp(s₁t) + A₂·exp(s₂t)',
     note: 'real distinct roots (ω₀² < α²); two exponentials',
     latex: 'v(t) = A_{1}e^{s_{1}t} + A_{2}e^{s_{2}t}',
   },
   {
-    chapterId: 'elec-ch7',
-    section: '7.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.24',
     name: 'Underdamped natural response',
     formula: 'v(t) = exp(−αt)·(B₁cos ωd t + B₂sin ωd t)',
     note: 'complex roots (ω₀² > α²); a damped oscillation',
     latex: 'v(t) = B_{1}e^{-\\alpha t}\\cos\\omega_{d}t + B_{2}e^{-\\alpha t}\\sin\\omega_{d}t',
   },
   {
-    chapterId: 'elec-ch7',
-    section: '7.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.24',
     name: 'Critically damped natural response',
     formula: 'v(t) = exp(−αt)·(D₁t + D₂)',
     note: 'repeated root (ω₀² = α²); verge of oscillation',
     latex: 'v(t) = D_{1}t\\,e^{-\\alpha t} + D_{2}e^{-\\alpha t}',
   },
   {
-    chapterId: 'elec-ch7',
-    section: '7.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.26',
     name: 'Complete (step) response',
     formula: 'x(t) = X_f + natural-form terms',
     note: 'forced final value plus the two-root natural part',

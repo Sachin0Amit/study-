@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const sigctrlCh04Content: SectionContent[] = [
   // ---------------------------------------------------------------- 4.1
   {
-    sectionId: 'sigctrl-ch4-s1',
+    sectionId: 'ece-e-dsp-s3',
     readingTime: 8,
     intro: 'The DTFT gives every discrete sequence a continuous frequency portrait, while the DFT samples that portrait into a finite computable vector. Periodicity, symmetry and convolution rules carry over with circular twists. This section fixes the pair definitions and the zero-padding habits that make spectra readable.',
     objectives: [
@@ -127,7 +127,7 @@ export const sigctrlCh04Content: SectionContent[] = [
 
   // ---------------------------------------------------------------- 4.2
   {
-    sectionId: 'sigctrl-ch4-s2',
+    sectionId: 'ece-e-dsp-s10',
     readingTime: 7,
     intro: 'The fast Fourier transform is not a new transform but a divide-and-conquer algorithm for the DFT. Even-odd splitting turns quadratic work into log-linear time. The payoff is fast filtering and spectral analysis at scales direct evaluation could never reach.',
     objectives: [
@@ -246,7 +246,7 @@ export const sigctrlCh04Content: SectionContent[] = [
 
   // ---------------------------------------------------------------- 4.3
   {
-    sectionId: 'sigctrl-ch4-s3',
+    sectionId: 'ece-e-dsp-s11',
     readingTime: 10,
     intro: 'The z-transform carries sequences into a complex plane where delays become multiplications and pole positions dictate everything. The region of convergence decides causality, stability and uniqueness of the inverse. Reading ROC from the pole pattern is the central skill of this section.',
     objectives: [
@@ -365,7 +365,7 @@ export const sigctrlCh04Content: SectionContent[] = [
 
   // ---------------------------------------------------------------- 4.4
   {
-    sectionId: 'sigctrl-ch4-s4',
+    sectionId: 'ece-e-dsp-s12',
     readingTime: 9,
     intro: 'Inversion turns rational functions back into sequences, and difference equations turn into algebra under the transform. Partial fractions split the problem into first-order pieces with known pairs. Initial conditions then select the homogeneous constants that complete the response.',
     objectives: [

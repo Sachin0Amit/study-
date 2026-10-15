@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const sigctrlCh02Content: SectionContent[] = [
   // ---------------------------------------------------------------- 2.1
   {
-    sectionId: 'sigctrl-ch2-s1',
+    sectionId: 'ece-e-sigsys-s19',
     depth: [
       {
         tier: 'masters',
@@ -180,7 +180,7 @@ export const sigctrlCh02Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.2
   {
-    sectionId: 'sigctrl-ch2-s2',
+    sectionId: 'ece-e-sigsys-s20',
     readingTime: 8,
     intro: 'Memory, invertibility and causality can be read off either the input–output rule or the impulse response. **Memoryless** systems react instantaneously, **causal** systems never anticipate, and **invertible** systems preserve information distinctly. These three tests share one habit: probe with shifted impulses and delayed inputs.',
     objectives: [
@@ -298,7 +298,7 @@ export const sigctrlCh02Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.3
   {
-    sectionId: 'sigctrl-ch2-s3',
+    sectionId: 'ece-e-sigsys-s21',
     readingTime: 8,
     intro: '**BIBO stability** demands bounded inputs produce bounded outputs — the practical guarantee that a system never blows up in service. For LTI systems the test collapses to one integral: the impulse response must be **absolutely summable or integrable**. Poles in the left half-plane (or inside the unit circle) preview the same verdict from Chapter 6 territory.',
     objectives: [
@@ -416,7 +416,7 @@ export const sigctrlCh02Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.4
   {
-    sectionId: 'sigctrl-ch2-s4',
+    sectionId: 'ece-e-sigsys-s22',
     readingTime: 9,
     intro: '**Poles** (denominator roots) and **zeros** (numerator roots) of a transfer function plot the system soul: distance from each pole to a frequency point sets gain, angles set phase. Reading magnitude peaks near poles and dips near zeros turns algebra into Bode intuition. This section converts pole–zero plots into frequency-response sketches.',
     objectives: [

@@ -12,7 +12,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh8Content: SectionContent[] = [
   // ------------------------------------------------------------------ 8.1
   {
-    sectionId: 'elec-ch8-s1',
+    sectionId: 'ee-e-circuits-s27',
     readingTime: 10,
     intro: 'Almost every electrical supply in the world alternates, and almost every alternating system is sinusoidal — so the vocabulary of the sine wave is not decoration, it is the language of power engineering. Hughes begins by generating a sine wave mechanically (a coil spinning in a magnetic field), then asks the two questions every a.c. measurement must answer: what is this wave worth on average, and what direct current would heat a resistor the same way? The second answer, the r.m.s. value, is the number every a.c. ammeter and voltmeter actually reports.',
     objectives: [
@@ -166,7 +166,7 @@ export const elecCh8Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 8.2
   {
-    sectionId: 'elec-ch8-s2',
+    sectionId: 'ee-e-circuits-s28',
     readingTime: 11,
     intro: 'Phasor diagrams turned sinusoids into geometry; complex notation turns the geometry into algebra. The move rests on one symbol — the operator j, a quarter-turn anticlockwise — and one identity, Euler’s. With them, a sinusoid collapses to a complex number carrying just amplitude and phase, impedances become complex quantities you can add and divide, and the trigonometric gymnastics of adding two out-of-phase sine waves becomes a routine complex sum.',
     objectives: [
@@ -303,7 +303,7 @@ export const elecCh8Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 8.3
   {
-    sectionId: 'elec-ch8-s3',
+    sectionId: 'ee-e-circuits-s29',
     readingTime: 12,
     intro: 'Now the machinery meets the elements. A resistor shrugs at frequency; an inductor fights change in current and ends up with its voltage leading by a quarter cycle; a capacitor fights change in voltage and ends up with its current leading by a quarter cycle. Out of these three behaviours comes the single unifying quantity of a.c. analysis — impedance, $Z$ — and the phasor diagram in which the three component voltages of a series circuit close into a right triangle. Hughes builds the geometry, Nilsson rebuilds it as complex algebra, and both arrive at the same place: Ohm’s law with a complex number.',
     objectives: [
@@ -459,7 +459,7 @@ export const elecCh8Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 8.4
   {
-    sectionId: 'elec-ch8-s4',
+    sectionId: 'ee-e-circuits-s30',
     readingTime: 11,
     intro: 'Parallel a.c. networks invert every habit from the series case: now the voltage is the common quantity, the branch currents are phasors that must be added geometrically, and the natural algebraic tool is not impedance but its reciprocal — admittance, measured in siemens. Hughes develops the current-component method that makes the branch-current sums painless, and Nilsson shows that once impedances are inverted, everything from the d.c. toolbox — parallel combination, current division, series–parallel reduction — transfers unchanged.',
     objectives: [
@@ -603,72 +603,72 @@ export const elecCh8Content: SectionContent[] = [
 
 export const elecCh8Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch8',
-    section: '8.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.27',
     name: 'RMS value of a sinusoid',
     formula: 'I = 0.707·Im = Im/√2',
     note: 'the equal-heating direct current; independent of f and phase',
     latex: 'I = 0.707\\,I_{m} = \\frac{I_{m}}{\\sqrt{2}}',
   },
   {
-    chapterId: 'elec-ch8',
-    section: '8.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.27',
     name: 'Average value of a sinusoid (half-cycle)',
     formula: 'Iav = 0.637·Im = 2Im/π',
     note: 'area under the half sine divided by its base',
     latex: 'I_{av} = 0.637\\,I_{m} = \\frac{2I_{m}}{\\pi}',
   },
   {
-    chapterId: 'elec-ch8',
-    section: '8.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.27',
     name: 'Frequency, period and angular frequency',
     formula: 'f = 1/T, ω = 2πf',
     note: 'a phasor turns through 2π radians per cycle',
     latex: 'f = \\frac{1}{T}, \\qquad \\omega = 2\\pi f',
   },
   {
-    chapterId: 'elec-ch8',
-    section: '8.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.27',
     name: 'Form factor (sine wave)',
     formula: 'kf = RMS/average = 1.11',
     note: 'peak factor kp = peak/RMS = 1.414 for a sine',
     latex: 'k_{f} = \\frac{\\text{r.m.s.}}{\\text{average}} = 1.11',
   },
   {
-    chapterId: 'elec-ch8',
-    section: '8.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.28',
     name: 'Phasor transform',
     formula: 'V = Vm∠φ',
     note: 'keeps amplitude and phase; ω is carried separately',
     latex: '\\mathbf{V} = V_{m}e^{j\\phi} = V_{m}\\angle\\phi',
   },
   {
-    chapterId: 'elec-ch8',
-    section: '8.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.29',
     name: 'Inductive reactance',
     formula: 'XL = ωL = 2πfL',
     note: 'grows with frequency; V leads I by 90°',
     latex: 'X_{L} = \\omega L = 2\\pi f L',
   },
   {
-    chapterId: 'elec-ch8',
-    section: '8.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.29',
     name: 'Capacitive reactance',
     formula: 'XC = 1/ωC = 1/2πfC',
     note: 'falls with frequency; I leads V by 90°',
     latex: 'X_{C} = \\frac{1}{\\omega C} = \\frac{1}{2\\pi f C}',
   },
   {
-    chapterId: 'elec-ch8',
-    section: '8.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.29',
     name: 'Impedance of a series RLC circuit',
     formula: 'Z = R + j(XL − XC)',
     note: '|Z| = √(R² + X²), tan φ = X/R',
     latex: 'Z = R + j(X_{L} - X_{C})',
   },
   {
-    chapterId: 'elec-ch8',
-    section: '8.4',
+    chapterId: 'ee-e-circuits',
+    section: '2.30',
     name: 'Admittance, conductance and susceptance',
     formula: 'Y = 1/Z = G + jB',
     note: 'siemens; parallel branches add admittances',

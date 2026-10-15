@@ -13,7 +13,7 @@ import type { SectionContent } from '../library'
 export const elecCh26Content: SectionContent[] = [
   // ------------------------------------------------------------------ 26.1
   {
-    sectionId: 'elec-ch26-s1',
+    sectionId: 'ece-e-analog-s17',
     readingTime: 8,
     intro: 'The voltage-transfer characteristic of Figure 7.2 has its steepest segment on the interval labeled $AB$, where the MOSFET stays in saturation and the BJT stays in the active region. Biasing parks the quiescent point $Q$ on that segment so a small superimposed signal sees an almost linear slope. Example 7.1 fixes the endpoints at $V_{GS} = 0.4$ V and $V_{GS} = 0.613$ V for a $1.8$ V supply with $R_{D} = 17.5$ k$\\Omega$.',
     objectives: [
@@ -118,7 +118,7 @@ export const elecCh26Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 26.2
   {
-    sectionId: 'elec-ch26-s2',
+    sectionId: 'ece-e-analog-s18',
     readingTime: 9,
     intro: 'Section 7.3 builds the three basic stages by grounding one transistor terminal for signal while driving another and loading the third. The common-emitter and common-source stages invert with large magnitude, while the common-base and common-gate stages keep the same magnitude without inversion. Their small-signal models of Figures 7.13 to 7.25 give the gain and resistance formulas collected in Table 7.1.',
     objectives: [
@@ -223,7 +223,7 @@ export const elecCh26Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 26.3
   {
-    sectionId: 'elec-ch26-s3',
+    sectionId: 'ece-e-analog-s19',
     readingTime: 7,
     intro: 'The common-collector and common-drain stages of Section 7.3 drive the load from the emitter or source while the collector or drain sits at alternating-current ground. Voltage gain is just below unity, but current gain and the impedance transformation are large. Problem 7.84 uses an emitter follower to deliver a $0.5$ V peak sine to a $2$ k$\\Omega$ load with only $5$ mV of $v_{be}$.',
     objectives: [
@@ -328,7 +328,7 @@ export const elecCh26Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 26.4
   {
-    sectionId: 'elec-ch26-s4',
+    sectionId: 'ece-e-analog-s20',
     readingTime: 8,
     intro: 'Table 7.1 collects the three configurations side by side so a specification can be mapped to a stage in one glance. Common-emitter and common-source win on voltage gain, common-base and common-gate win on low input resistance and bandwidth, and followers win as buffers. Problems 7.130 and 7.132 cascade two identical CE stages, where the input resistance of the second loads the first.',
     objectives: [

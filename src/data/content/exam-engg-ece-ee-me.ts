@@ -121,7 +121,7 @@ export const enggBranchContent: SectionContent[] = [
   },
   // ------------------------------------------------- ECE 14.1 — Signals
   {
-    sectionId: 'ece-e-signals-s1',
+    sectionId: 'ece-e-sigsys-s1',
     readingTime: 10,
     prerequisites: [
       'Elementary calculus: integrating decaying exponentials',
@@ -959,7 +959,7 @@ export const enggBranchContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- ME: som 11.1
   {
-    sectionId: 'me-e-som-s1',
+    sectionId: 'me-e-strength-s1',
     readingTime: 10,
     prerequisites: [
       'Normal and shear stress definitions',

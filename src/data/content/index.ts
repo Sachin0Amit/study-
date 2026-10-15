@@ -1040,13 +1040,22 @@ const allContent: SectionContent[] = [
   ...enggBranchContent,
 ]
 
+// Subject-wise consolidation (see scripts/consolidate.ts): sections that were
+// merged away during deduplication no longer exist in the library, so their
+// content must not leak into quiz pools, flashcards or stats — filter to the
+// live section ids only.
+import { LIBRARY_SECTIONS } from '../library'
+
+const liveSectionIds = new Set(LIBRARY_SECTIONS.map((s) => s.id))
+const liveContent: SectionContent[] = allContent.filter((c) => liveSectionIds.has(c.sectionId))
+
 const contentMap: Record<string, SectionContent> = Object.fromEntries(
-  allContent.map((c) => [c.sectionId, c])
+  liveContent.map((c) => [c.sectionId, c])
 )
 
 export function getSectionContent(sectionId: string): SectionContent | undefined {
   return contentMap[sectionId]
 }
 
-export const TOTAL_CONTENT_SECTIONS = allContent.length
-export { allContent }
+export const TOTAL_CONTENT_SECTIONS = liveContent.length
+export { liveContent as allContent }

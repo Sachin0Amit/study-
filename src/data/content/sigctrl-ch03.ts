@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const sigctrlCh03Content: SectionContent[] = [
   // ---------------------------------------------------------------- 3.1
   {
-    sectionId: 'sigctrl-ch3-s1',
+    sectionId: 'ece-e-sigsys-s23',
     readingTime: 10,
     intro: 'A periodic signal is a chord of harmonics: the **Fourier series** expands it into sinusoids at multiples of the fundamental, in trigonometric or exponential form. Symmetry (even, odd, half-wave) kills whole coefficient families before any integral is evaluated. **Parseval** then prices each harmonic share of the total power.',
     objectives: [
@@ -121,7 +121,7 @@ export const sigctrlCh03Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.2
   {
-    sectionId: 'sigctrl-ch3-s2',
+    sectionId: 'ece-e-sigsys-s24',
     depth: [
       {
         tier: 'masters',
@@ -263,7 +263,7 @@ export const sigctrlCh03Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.3
   {
-    sectionId: 'sigctrl-ch3-s3',
+    sectionId: 'ece-e-sigsys-s25',
     readingTime: 9,
     intro: 'Complex exponentials are **eigenfunctions** of LTI systems: $e^{j\\omega t}$ passes through scaled by $H(\\omega)$, the **frequency response**. Magnitude $|H|$ sets gain, phase $\\angle H$ sets delay, and **group delay** (envelope) versus **phase delay** (carrier) separate distortionless transmission from dispersive smear. Design targets reduce to shaping these two curves.',
     objectives: [
@@ -381,7 +381,7 @@ export const sigctrlCh03Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.4
   {
-    sectionId: 'sigctrl-ch3-s4',
+    sectionId: 'ece-e-sigsys-s26',
     readingTime: 10,
     intro: '**Sampling** converts CT to DT by recording values every $T_s$; the **sampling theorem** promises perfect reconstruction when the rate exceeds twice the highest frequency. Undersampling folds high tones onto low ones — **aliasing** — an irreversible mistaken identity. Rate choice, anti-alias filtering and the sinc reconstruction formula are the working consequences.',
     objectives: [

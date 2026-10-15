@@ -14,7 +14,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh20Content: SectionContent[] = [
   // ------------------------------------------------------------------ 20.1
   {
-    sectionId: 'elec-ch20-s1',
+    sectionId: 'ee-e-power-electronics-s10',
     readingTime: 10,
     intro: 'Hughes zooms out from the machine to the system that feeds it: generation at 25 kV, transmission at 400, 275 and 132 kV, distribution at 33 and 11 kV, and a wall socket at 415 V three-phase or 240 V single-phase. Between those voltage levels live the load curves (a British winter peak near 60 GW against a summer base of 22 GW), the per-unit method that makes a continent-wide network calculable, and the fault level that sizes every circuit breaker on it.',
     objectives: [
@@ -181,7 +181,7 @@ export const elecCh20Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 20.2
   {
-    sectionId: 'elec-ch20-s2',
+    sectionId: 'ee-e-power-electronics-s11',
     readingTime: 9,
     intro: 'Power electronics replaces the resistor and the mechanical switch with devices that are either fully on or fully off — dissipating almost nothing in either state. Hughes builds the subject from the thyristor, a four-layer switch that a 50 mA gate pulse turns on but only a current zero turns off, through controlled bridges whose mean output is set by a firing angle, to inverters and the variable-frequency drives that finally set the induction motor free.',
     objectives: [
@@ -347,7 +347,7 @@ export const elecCh20Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 20.3
   {
-    sectionId: 'elec-ch20-s3',
+    sectionId: 'ee-e-power-electronics-s12',
     readingTime: 9,
     intro: 'Between the grid and a 3.3 V logic rail sits the most consequential design decision in electronics: how to drop, raise or invert a voltage without burning it. The Art of Electronics devotes its longest chapter to exactly this. The linear regulator is quiet, simple and wasteful — every volt of headroom times every ampere becomes heat; the switching converter is 90 per cent efficient but demands respect for inductors, ripple and thermal design. Hughes’s SMPS section and AoE’s chapter 9 meet in the same place: the duty cycle is the output.',
     objectives: [
@@ -521,7 +521,7 @@ export const elecCh20Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 20.4
   {
-    sectionId: 'elec-ch20-s4',
+    sectionId: 'ee-e-power-electronics-s13',
     readingTime: 11,
     intro: 'Measurement closes the loop: every control system, drive and instrument of this book ultimately rests on something being sensed, compared and acted on. Hughes’s last two chapters assemble the pieces — open and closed loops, damping, transfer functions, the sensor datasheet vocabulary, actuators — and then the instruments themselves: the digital voltmeter that counts its way to an answer, the analogue meter that never died, and the oscilloscope, still the engineer’s most honest witness of what a waveform is actually doing.',
     objectives: [
@@ -691,72 +691,72 @@ export const elecCh20Content: SectionContent[] = [
 
 export const elecCh20Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch20',
-    section: '20.1',
+    chapterId: 'ee-e-power-electronics',
+    section: '12.10',
     name: 'Ideal heat-engine efficiency',
     formula: 'η = 1 − T₂/T₁',
     note: 'Kelvin temperatures; caps every thermal power station',
     latex: '\\eta = 1 - \\frac{T_2}{T_1}',
   },
   {
-    chapterId: 'elec-ch20',
-    section: '20.1',
+    chapterId: 'ee-e-power-electronics',
+    section: '12.10',
     name: 'Per-unit impedance',
     formula: 'Zpu = Z·SB / VB²',
     note: 'Referred to base MVA and base line voltage',
     latex: 'Z_{\\mathrm{pu}} = \\frac{Z\\, S_B}{V_B^{2}}',
   },
   {
-    chapterId: 'elec-ch20',
-    section: '20.1',
+    chapterId: 'ee-e-power-electronics',
+    section: '12.10',
     name: 'Fault level (short-circuit MVA)',
     formula: 'MVAsc = SB / Zpu',
     note: 'Sets the circuit-breaker rating at that point',
     latex: '\\mathrm{MVA}_{\\mathrm{SC}} = \\frac{S_B}{Z_{\\mathrm{pu}}}',
   },
   {
-    chapterId: 'elec-ch20',
-    section: '20.2',
+    chapterId: 'ee-e-power-electronics',
+    section: '12.11',
     name: 'Fully controlled single-phase bridge',
     formula: 'Vdc = (Vₘ/π)·(1 + cos α)',
     note: 'α = firing angle; α = 0 gives the full 2Vm/π',
     latex: 'V_{\\mathrm{dc}} = \\frac{V_m}{\\pi} \\left( 1 + \\cos\\alpha \\right)',
   },
   {
-    chapterId: 'elec-ch20',
-    section: '20.2',
+    chapterId: 'ee-e-power-electronics',
+    section: '12.11',
     name: 'Chopper average voltage',
     formula: 'Vav = VB · t₁/(t₁ + t₂)',
     note: 'ON time over period — the duty cycle times battery voltage',
     latex: 'V_{\\mathrm{av}} = V_B \\, \\frac{t_1}{t_1 + t_2}',
   },
   {
-    chapterId: 'elec-ch20',
-    section: '20.3',
+    chapterId: 'ee-e-power-electronics',
+    section: '12.12',
     name: 'Buck converter output',
     formula: 'Vout = D · Vin',
     note: 'D = duty cycle of the series switch',
     latex: 'V_{\\mathrm{out}} = D\\, V_{\\mathrm{in}}',
   },
   {
-    chapterId: 'elec-ch20',
-    section: '20.3',
+    chapterId: 'ee-e-power-electronics',
+    section: '12.12',
     name: 'Boost converter output',
     formula: 'Vout = Vin / (1 − D)',
     note: 'Output exceeds input for any duty cycle above zero',
     latex: 'V_{\\mathrm{out}} = \\frac{V_{\\mathrm{in}}}{1 - D}',
   },
   {
-    chapterId: 'elec-ch20',
-    section: '20.3',
+    chapterId: 'ee-e-power-electronics',
+    section: '12.12',
     name: 'Linear-regulator dissipation',
     formula: 'P = (Vin − Vout)·I',
     note: 'Every volt of headroom times every ampere, as heat',
     latex: 'P_{\\mathrm{diss}} = \\left( V_{\\mathrm{in}} - V_{\\mathrm{out}} \\right) I',
   },
   {
-    chapterId: 'elec-ch20',
-    section: '20.3',
+    chapterId: 'ee-e-power-electronics',
+    section: '12.12',
     name: 'Junction temperature',
     formula: 'Tⱼ = Ta + P·θJA',
     note: 'Thermal resistance from junction to ambient',

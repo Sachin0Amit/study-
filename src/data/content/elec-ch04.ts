@@ -12,7 +12,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh4Content: SectionContent[] = [
   // ------------------------------------------------------------------ 4.1
   {
-    sectionId: 'elec-ch4-s1',
+    sectionId: 'ee-e-circuits-s11',
     readingTime: 8,
     intro: 'A capacitor does more than store charge — the space around its plates is where the energy actually lives, in an electric field. Before we can compute capacitance from geometry we therefore need the electrostatic vocabulary: field strength, flux density, and permittivity, the constant that links them. Hughes develops these ideas directly from the parallel-plate capacitor and then extends them to multi-plate and composite-dielectric constructions.',
     objectives: [
@@ -142,7 +142,7 @@ export const elecCh4Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 4.2
   {
-    sectionId: 'elec-ch4-s2',
+    sectionId: 'ee-e-circuits-s12',
     readingTime: 10,
     intro: 'The capacitor is the first of the three great circuit components. Hughes introduces it with a rolled sandwich of foil and waxed paper, a hydraulic analogy that makes charging and discharging intuitive, and the experimental law $Q = CV$; Nilsson then gives the same device its circuit-theory identity: the element whose current is proportional to the rate of change of its voltage, and whose stored energy is $\\frac{1}{2}Cv^2$.',
     objectives: [
@@ -297,7 +297,7 @@ export const elecCh4Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 4.3
   {
-    sectionId: 'elec-ch4-s3',
+    sectionId: 'ee-e-circuits-s13',
     readingTime: 8,
     intro: 'Between the plates of a real capacitor stands a real material, and materials have limits. Push a dielectric too hard and it punctures; leave a charged capacitor on the shelf and it slowly leaks away; look inside the dielectric while it charges and you find Maxwell’s displacement current keeping the circuit “complete”. This section is the materials science of the capacitor — and the catalogue of the families engineers choose from.',
     objectives: [
@@ -419,7 +419,7 @@ export const elecCh4Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 4.4
   {
-    sectionId: 'elec-ch4-s4',
+    sectionId: 'ee-e-circuits-s14',
     readingTime: 10,
     intro: 'Because a capacitor’s current is proportional to the rate of change of its voltage, nothing about a capacitor happens instantly: charging and discharging through a resistor follow the universal exponential. This section derives the growth and decay laws, attaches the time constant $\\tau = CR$ to them, and then adopts Nilsson’s modern shortcut — the general solution $x(t) = X_f + (X_0 - X_f)e^{-t/\\tau}$ — which solves every first-order CR transient in five routine steps.',
     objectives: [
@@ -575,7 +575,7 @@ export const elecCh4Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 4.5
   {
-    sectionId: 'elec-ch4-s5',
+    sectionId: 'ee-e-circuits-s15',
     readingTime: 8,
     intro: 'Capacitors are energy devices: the work done moving charge onto the plates is stored in the field, and that storage can be spent as force, re-shared between capacitors, or computed per cubic metre of dielectric. This closing section assembles the energy and force laws of the charged capacitor, the complete series–parallel combination rules with initial conditions (Nilsson), and the duality that pairs every capacitor statement with an inductor statement.',
     objectives: [
@@ -710,72 +710,72 @@ export const elecCh4Content: SectionContent[] = [
 
 export const elecCh4Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch4',
-    section: '4.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.11',
     name: 'Electric field strength',
     formula: 'E = V/d',
     latex: 'E = \\frac{V}{d}',
     note: 'volts per metre — also the force in newtons on a unit charge',
   },
   {
-    chapterId: 'elec-ch4',
-    section: '4.1',
+    chapterId: 'ee-e-circuits',
+    section: '2.11',
     name: 'Electric flux density and permittivity',
     formula: 'D = Q/A,  D = εE = ε₀εᵣE',
     latex: 'D = \\frac{Q}{A}, \\quad D = \\varepsilon E = \\varepsilon_0\\varepsilon_r E',
     note: 'ε₀ = 8.85 × 10⁻¹² F/m; εᵣ is the capacitance ratio versus vacuum',
   },
   {
-    chapterId: 'elec-ch4',
-    section: '4.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.12',
     name: 'Parallel-plate capacitance',
     formula: 'C = ε₀εᵣA/d',
     latex: 'C = \\frac{\\varepsilon_0\\varepsilon_r A}{d}',
     note: 'multi-plate: use (n − 1)A as the useful plate area',
   },
   {
-    chapterId: 'elec-ch4',
-    section: '4.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.12',
     name: 'Charge–voltage relation',
     formula: 'Q = CV,  i = C·dv/dt',
     latex: 'Q = CV, \\quad i = C\\frac{dv}{dt}',
     note: 'the farad: 1 C of charge per volt; current tracks the rate of change of voltage',
   },
   {
-    chapterId: 'elec-ch4',
-    section: '4.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.12',
     name: 'Series and parallel capacitors',
     formula: '1/C = 1/C₁ + 1/C₂,  V₁ = V·C₂/(C₁+C₂);  C_par = C₁ + C₂',
     latex: '\\frac{1}{C} = \\frac{1}{C_1} + \\frac{1}{C_2}, \\quad V_1 = V\\frac{C_2}{C_1 + C_2}; \\quad C_{\\text{par}} = C_1 + C_2',
     note: 'mirror image of the resistor rules; the smaller capacitor takes the larger voltage share',
   },
   {
-    chapterId: 'elec-ch4',
-    section: '4.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.12',
     name: 'Stored energy',
     formula: 'W = ½CV² = Q²/2C',
     latex: 'W = \\frac{1}{2}CV^2 = \\frac{Q^2}{2C}',
     note: 'energy density in the field: ½DE = ½εE² joules per cubic metre',
   },
   {
-    chapterId: 'elec-ch4',
-    section: '4.4',
+    chapterId: 'ee-e-circuits',
+    section: '2.14',
     name: 'CR growth (charging)',
     formula: 'v = V(1 − exp(−t/τ)),  τ = RC',
     latex: 'v = V\\left(1 - e^{-t/RC}\\right)',
     note: '63.2 per cent of final value after one time constant; five ends it',
   },
   {
-    chapterId: 'elec-ch4',
-    section: '4.4',
+    chapterId: 'ee-e-circuits',
+    section: '2.14',
     name: 'CR decay (discharging) and the general solution',
     formula: 'v = V·exp(−t/τ);  x(t) = X_f + (X₀ − X_f)·exp(−t/τ)',
     latex: 'v = Ve^{-t/RC}; \\quad x\\left(t\\right) = X_f + \\left(X_0 - X_f\\right)e^{-t/\\tau}',
     note: 'the general form solves every first-order natural and step response',
   },
   {
-    chapterId: 'elec-ch4',
-    section: '4.5',
+    chapterId: 'ee-e-circuits',
+    section: '2.15',
     name: 'Force between charged plates',
     formula: 'F = ½εA(V/d)² = ½εAE²',
     latex: 'F = \\frac{1}{2}\\varepsilon A\\left(\\frac{V}{d}\\right)^2 = \\frac{1}{2}\\varepsilon AE^2',

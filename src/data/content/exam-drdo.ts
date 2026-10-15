@@ -13,7 +13,7 @@ import type { SectionContent } from '../library'
 export const drdoContent: SectionContent[] = [
   // --------------------------------------------- Tier I · 1.1 Quantitative Aptitude
   {
-    sectionId: 'math-q1-s1',
+    sectionId: 'apt-q1-s1',
     readingTime: 9,
     prerequisites: [
       'Fractions, decimals and place value',
@@ -757,7 +757,7 @@ export const drdoContent: SectionContent[] = [
   },
   // --------------------------------------------- Tier II ECE · 12.4 Microwave & LOS
   {
-    sectionId: 'ece-d12-s4',
+    sectionId: 'ece-e-microwave-radar-s6',
     readingTime: 10,
     prerequisites: [
       'Decibel and link-budget arithmetic',
@@ -879,7 +879,7 @@ export const drdoContent: SectionContent[] = [
   },
   // --------------------------------------------- Tier II EE · 3.4 Synchronous Machines
   {
-    sectionId: 'ee-d3-s4',
+    sectionId: 'ee-e-machines1-s8',
     readingTime: 9,
     prerequisites: [
       'Three-phase phasor basics (ee-d2-s2)',
@@ -1000,7 +1000,7 @@ export const drdoContent: SectionContent[] = [
   },
   // --------------------------------------------- Tier II ME · 3.2 Laws of Thermodynamics
   {
-    sectionId: 'me-d3-s2',
+    sectionId: 'me-e-thermo-s8',
     readingTime: 10,
     prerequisites: [
       'Pure-substance properties and phase change (me-d3-s1)',
@@ -1121,7 +1121,7 @@ export const drdoContent: SectionContent[] = [
   },
   // --------------------------------------------- Tier II CSE · 12.1 Security & Cryptography
   {
-    sectionId: 'cse-d12-s1',
+    sectionId: 'cse-e-crypto-s7',
     readingTime: 9,
     prerequisites: [
       'Modular arithmetic and gcd',

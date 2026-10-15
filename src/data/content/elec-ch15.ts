@@ -16,7 +16,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh15Content: SectionContent[] = [
   // ------------------------------------------------------------------ 15.1
   {
-    sectionId: 'elec-ch15-s1',
+    sectionId: 'ece-e-ic-s6',
     readingTime: 8,
     intro: 'The operational amplifier — the op amp — is the most successful analog integrated circuit ever built: a complete high-gain differential amplifier on one silicon chip, costing less than a resistor. Nilsson opens the subject with a real device, the µA 741 in its eight-lead DIP package, and shows that from just five terminals and two constraints flows the whole of precision analog electronics. Hughes adds the engineer’s property list: enormous open-loop gain, near-infinite input impedance, and a gain held constant over a wide frequency range — properties that only become useful once feedback is applied.',
     objectives: [
@@ -150,7 +150,7 @@ export const elecCh15Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 15.2
   {
-    sectionId: 'elec-ch15-s2',
+    sectionId: 'ece-e-ic-s7',
     readingTime: 10,
     intro: 'Four circuits — inverting, non-inverting, summing and difference — account for almost every op-amp application ever built, and all four yield to the same four-step analysis. The remarkable outcome is that in every configuration the closed-loop gain reduces to a ratio of external resistors, completely hiding the $10^{5}$ open-loop gain inside the chip. Hughes derives them with the virtual node voltage $v = -v_o/A$; Nilsson derives them with KCL at the inverting node; both roads arrive at the same design equations.',
     objectives: [
@@ -297,7 +297,7 @@ export const elecCh15Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 15.3
   {
-    sectionId: 'elec-ch15-s3',
+    sectionId: 'ece-e-ic-s8',
     readingTime: 8,
     intro: 'The ideal op amp is a lie that circuit designers find convenient — and, used carefully, almost harmless. This section quantifies the lie: Nilsson’s three-defect model (finite input resistance, finite gain, nonzero output resistance) predicts how far real gains drift from the textbook ratios, and Hughes’ treatment of the differential amplifier exposes the second lie, the mismatched resistor pair that lets common-mode signals leak through. Both books converge on the same figure of merit: the common-mode rejection ratio.',
     objectives: [
@@ -419,7 +419,7 @@ export const elecCh15Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 15.4
   {
-    sectionId: 'elec-ch15-s4',
+    sectionId: 'ece-e-ic-s9',
     readingTime: 9,
     intro: 'Feedback is the deep idea underneath every op-amp circuit: return a fraction $\\beta$ of the output to the input, and the amplifier’s character is rewritten. Hughes derives the master relation $G_{vf} = A/(1 - \\beta A)$ for series-voltage feedback and follows it through gain stabilization, resistance transformation, bandwidth extension and distortion reduction — then warns what happens when the loop gain reaches unity and the amplifier becomes an oscillator.',
     objectives: [
@@ -552,7 +552,7 @@ export const elecCh15Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 15.5
   {
-    sectionId: 'elec-ch15-s5',
+    sectionId: 'ece-e-ic-s3',
     readingTime: 8,
     intro: 'Once the two golden rules are second nature, the Art of Electronics builds its repertoire: integrators that turn square waves into triangles, differentiators that find edges, comparators that slice a waveform at a threshold, precision rectifiers that outperform diodes, and the instrumentation amplifier that measures microvolts in the presence of volts of hum. This section collects that repertoire, together with the practical wisdom — decoupling, slew rate, offset — that separates a working circuit from a textbook one.',
     objectives: [
@@ -698,72 +698,72 @@ export const elecCh15Content: SectionContent[] = [
 
 export const elecCh15Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch15',
-    section: '15.1',
+    chapterId: 'ece-e-ic',
+    section: '7.6',
     name: 'Ideal op-amp voltage constraint',
     formula: 'v₊ = v₋',
     note: 'virtual short — valid in the linear region with negative feedback',
     latex: 'v_{p} = v_{n}',
   },
   {
-    chapterId: 'elec-ch15',
-    section: '15.1',
+    chapterId: 'ece-e-ic',
+    section: '7.6',
     name: 'Ideal op-amp current constraint',
     formula: 'i₊ = i₋ = 0',
     note: 'inputs draw no current (input resistance ≥ 1 MΩ)',
     latex: 'i_{p} = i_{n} = 0',
   },
   {
-    chapterId: 'elec-ch15',
-    section: '15.2',
+    chapterId: 'ece-e-ic',
+    section: '7.7',
     name: 'Inverting amplifier gain',
     formula: 'A_v = −R_f / R₁',
     note: 'inverted, scaled replica; virtual ground at the inverting node',
     latex: 'A_v = -\\frac{R_f}{R_1}',
   },
   {
-    chapterId: 'elec-ch15',
-    section: '15.2',
+    chapterId: 'ece-e-ic',
+    section: '7.7',
     name: 'Non-inverting amplifier gain',
     formula: 'A_v = 1 + R_f / R₁',
     note: 'high input resistance; the follower is the R_f = 0 limit',
     latex: 'A_v = 1 + \\frac{R_f}{R_1}',
   },
   {
-    chapterId: 'elec-ch15',
-    section: '15.2',
+    chapterId: 'ece-e-ic',
+    section: '7.7',
     name: 'Summing amplifier',
     formula: 'v_o = −(R_f/R_a·v_a + R_f/R_b·v_b + R_f/R_c·v_c)',
     note: 'weighted, inverted sum — the audio mixer',
     latex: 'v_o = -\\left(\\frac{R_f}{R_a} v_a + \\frac{R_f}{R_b} v_b + \\frac{R_f}{R_c} v_c\\right)',
   },
   {
-    chapterId: 'elec-ch15',
-    section: '15.2',
+    chapterId: 'ece-e-ic',
+    section: '7.7',
     name: 'Difference amplifier (matched resistors)',
     formula: 'v_o = (R_b/R_a)(v_b − v_a)',
     note: 'requires R_a/R_b = R_c/R_d',
     latex: 'v_o = \\frac{R_b}{R_a}(v_b - v_a)',
   },
   {
-    chapterId: 'elec-ch15',
-    section: '15.3',
+    chapterId: 'ece-e-ic',
+    section: '7.8',
     name: 'Common-mode rejection ratio',
     formula: 'CMRR = |A_dm / A_cm|',
     note: '≈ (1 + R_b/R_a)/ε for resistor mismatch ε; in dB: 20 log₁₀',
     latex: '\\mathrm{CMRR} = \\left|\\frac{A_{dm}}{A_{cm}}\\right| \\approx \\frac{1 + R_b/R_a}{|\\epsilon|}',
   },
   {
-    chapterId: 'elec-ch15',
-    section: '15.4',
+    chapterId: 'ece-e-ic',
+    section: '7.9',
     name: 'Closed-loop gain with feedback',
     formula: 'G_vf = A / (1 − βA) ≈ 1/β',
     note: 'series-voltage feedback; deep-feedback limit when βA ≫ 1',
     latex: 'G_{vf} = \\frac{A}{1 - \\beta A} \\approx \\frac{1}{\\beta}',
   },
   {
-    chapterId: 'elec-ch15',
-    section: '15.5',
+    chapterId: 'ece-e-ic',
+    section: '7.3',
     name: 'Op-amp integrator',
     formula: 'v_o = −(1/RC) ∫ v_i dt',
     note: 'Miller integrator; square wave in → triangle wave out',

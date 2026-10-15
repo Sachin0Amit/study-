@@ -14,7 +14,7 @@ import type { FormulaEntry } from '../formulas'
 export const physCh15Content: SectionContent[] = [
   // ------------------------------------------------------------------ 15.1
   {
-    sectionId: 'phys-ch15-s1',
+    sectionId: 'hall-ch39-s19',
     readingTime: 10,
     intro: 'Feynman opens quantum mechanics with the one experiment that contains “the only mystery”: an electron gun, a wall with two holes, and a detector that clicks. Done with bullets the probabilities add; done with waves the intensities interfere; done with electrons the arrivals come in lumps — and the lumps pile up into an interference pattern. Between those three sentences sits the whole of quantum mechanics, including the uncertainty principle, which Feynman derives from the experiment itself rather than from formalism.',
     objectives: [
@@ -158,7 +158,7 @@ export const physCh15Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 15.2
   {
-    sectionId: 'phys-ch15-s2',
+    sectionId: 'hall-ch39-s20',
     readingTime: 10,
     intro: 'Volume III rebuilds the two-hole story as bookkeeping. An amplitude is written with Dirac’s bracket $\\langle x|s\\rangle$; amplitudes multiply along a route and add across routes. Applied to particles that are truly indistinguishable, the bookkeeping splits nature in two: bosons, whose exchanged amplitudes add with a plus sign, and fermions, whose exchanged amplitudes add with a minus. Out of that single sign difference come the laser, the blackbody spectrum, the periodic table, the rigidity of matter — and, by minimizing energy against the uncertainty principle, the size of the hydrogen atom itself.',
     objectives: [
@@ -304,7 +304,7 @@ export const physCh15Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 15.3
   {
-    sectionId: 'phys-ch15-s3',
+    sectionId: 'hall-ch40-s19',
     readingTime: 9,
     intro: 'To do quantum mechanics “properly” Feynman picks a system with no classical analog: spin-one atoms filtered by a Stern–Gerlach magnet. The filter splits a beam into three pure states, and every manipulation of filters teaches a law — base states have no memory, wide-open filters do nothing, and interfering amplitudes are the machinery underneath. The same bookkeeping, extended to time, produces the Hamiltonian matrix $H_{ij}$, the operator that makes states move; for spin one-half it condenses into the three Pauli matrices.',
     objectives: [
@@ -450,7 +450,7 @@ export const physCh15Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 15.4
   {
-    sectionId: 'phys-ch15-s4',
+    sectionId: 'hall-ch40-s20',
     readingTime: 10,
     intro: 'The two-state machinery pays its bills. Ammonia in an electric field becomes the maser, turning a $10^{-4}$ eV level splitting into the most stable oscillator of its era. The same algebra colors benzene and the dye industry, lets neutral K-mesons oscillate into their antiparticles, and splits hydrogen’s ground state into the 21 cm line by which radio astronomy maps the galaxies. Finally, releasing an electron to wander a whole crystal lattice produces energy bands, holes, doped semiconductors and the transistor — Feynman’s proof that quantum mechanics is an engineering subject.',
     objectives: [
@@ -596,7 +596,7 @@ export const physCh15Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 15.5
   {
-    sectionId: 'phys-ch15-s5',
+    sectionId: 'hall-ch40-s21',
     readingTime: 11,
     intro: 'The final step is to let the base states be “the particle at position $x$” — a continuum of them. The amplitudes become a wavefunction $\\psi(x)$, and the Hamiltonian machinery collapses into one differential equation: Schrödinger’s. Confine its solutions and energy quantization falls out by curvature; apply it to the Coulomb field and the hydrogen spectrum and the periodic table appear; write its observables as operators and the algebra of Chapter 14 finds its quantum voice. And because the equation is linear, $10^{22}$ electrons can share one wavefunction — which is superconductivity: the Meissner effect, quantized flux and Josephson’s junctions are quantum interference blown up to human scale.',
     objectives: [
@@ -737,64 +737,64 @@ export const physCh15Content: SectionContent[] = [
 
 export const physCh15Formulas: FormulaEntry[] = [
   {
-    chapterId: 'phys-ch15',
-    section: '15.1',
+    chapterId: 'hall-ch39',
+    section: '38.19',
     name: 'Amplitude combination rule',
     formula: 'P₁₂ = |φ₁ + φ₂|²',
     note: 'indistinguishable alternatives add as amplitudes before squaring',
     latex: 'P_{12} = |\\phi_{1} + \\phi_{2}|^{2} = |\\phi_{1}|^{2} + |\\phi_{2}|^{2} + 2|\\phi_{1}||\\phi_{2}|\\cos\\delta',
   },
   {
-    chapterId: 'phys-ch15',
-    section: '15.1',
+    chapterId: 'hall-ch39',
+    section: '38.19',
     name: 'Heisenberg uncertainty principle',
     formula: 'Δx·Δp ≥ ℏ/2',
     note: 'no which-way apparatus can avoid disturbing the interference',
     latex: '\\Delta x\\,\\Delta p \\ge \\frac{\\hbar}{2}',
   },
   {
-    chapterId: 'phys-ch15',
-    section: '15.3',
+    chapterId: 'hall-ch40',
+    section: '39.19',
     name: 'Hamiltonian matrix evolution',
     formula: 'iℏ dCᵢ/dt = Σⱼ HᵢⱼCⱼ',
     note: 'the energy matrix H_ij drives the amplitudes; Hᵢⱼ* = Hⱼᵢ',
     latex: 'i\\hbar\\,\\frac{dC_{i}}{dt} = \\sum_{j} H_{ij}C_{j}',
   },
   {
-    chapterId: 'phys-ch15',
-    section: '15.4',
+    chapterId: 'hall-ch40',
+    section: '39.20',
     name: 'Ammonia maser resonance',
     formula: '2A = ℏω₀ = h·24 GHz',
     note: 'inversion doublet 10⁻⁴ eV; wavelength 1¼ cm',
     latex: 'E_{I} - E_{II} = 2A = \\hbar\\omega_{0}, \\qquad f_{0} = 24\\times10^{9}\\ \\mathrm{Hz}',
   },
   {
-    chapterId: 'phys-ch15',
-    section: '15.4',
+    chapterId: 'hall-ch40',
+    section: '39.20',
     name: 'Hydrogen hyperfine splitting (21 cm line)',
     formula: '4A = h·1420.4057518 MHz',
     note: 'triplet at E = A, singlet at E = −3A; radio-astronomy beacon',
     latex: 'E_{\\text{triplet}} - E_{\\text{singlet}} = 4A = hf, \\qquad f = 1420.4057518\\ \\mathrm{MHz}',
   },
   {
-    chapterId: 'phys-ch15',
-    section: '15.4',
+    chapterId: 'hall-ch40',
+    section: '39.20',
     name: 'Energy band in a crystal lattice',
     formula: 'E = E₀ − 2A·cos(kb)',
     note: 'band width 4A; effective mass m_eff = ℏ²/2Ab²',
     latex: 'E = E_{0} - 2A\\cos kb, \\qquad m_{\\mathrm{eff}} = \\frac{\\hbar^{2}}{2Ab^{2}}',
   },
   {
-    chapterId: 'phys-ch15',
-    section: '15.5',
+    chapterId: 'hall-ch40',
+    section: '39.21',
     name: 'Schrödinger equation',
     formula: 'iℏ ∂ψ/∂t = −(ℏ²/2m)∇²ψ + Vψ',
     note: 'the continuum limit of the lattice amplitude equation',
     latex: 'i\\hbar\\,\\frac{\\partial\\psi}{\\partial t} = -\\frac{\\hbar^{2}}{2m}\\nabla^{2}\\psi + V\\psi',
   },
   {
-    chapterId: 'phys-ch15',
-    section: '15.5',
+    chapterId: 'hall-ch40',
+    section: '39.21',
     name: 'Hydrogen energy levels',
     formula: 'Eₙ = −13.6 eV/n²',
     note: 'Bohr radius 0.528 Å sets the size of the atom',

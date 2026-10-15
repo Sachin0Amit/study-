@@ -12,7 +12,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh5Content: SectionContent[] = [
   // ------------------------------------------------------------- 5.1 ------
   {
-    sectionId: 'elec-ch5-s1',
+    sectionId: 'ee-e-circuits-s16',
     readingTime: 8,
     intro: 'Every motor, generator, transformer and relay in this library ultimately rests on one experimental fact: an electric current sets up a magnetic field in the space around it. Hughes opens electromagnetism with the ancient compass, shows Faraday\u2019s way of drawing the field as lines of flux, and then lets Oersted\u2019s 1820 discovery carry us from permanent magnets to fields we can switch on and off at will.',
     objectives: [
@@ -140,7 +140,7 @@ export const elecCh5Content: SectionContent[] = [
 
   // ------------------------------------------------------------- 5.2 ------
   {
-    sectionId: 'elec-ch5-s2',
+    sectionId: 'ee-e-circuits-s17',
     readingTime: 10,
     intro: 'Put a current-carrying wire into someone else\u2019s magnetic field and Newton\u2019s third law demands a force \u2014 the force every motor exploits. Move the wire instead, and the field fights back with an induced e.m.f. \u2014 the principle of every generator. This section quantifies both effects: $F = BIl$ for the force, Faraday\u2019s law and Lenz\u2019s law for the induced e.m.f., all with Hughes\u2019s own worked numbers.',
     objectives: [
@@ -293,7 +293,7 @@ export const elecCh5Content: SectionContent[] = [
 
   // ------------------------------------------------------------- 5.3 ------
   {
-    sectionId: 'elec-ch5-s3',
+    sectionId: 'ee-e-circuits-s18',
     readingTime: 11,
     intro: 'Because every flux line closes on itself, a magnetic field can be guided the way an electric circuit guides current: give the flux a steel loop to travel in and you have a magnetic circuit. This section builds the complete analogy \u2014 magnetomotive force drives flux through reluctance, exactly as e.m.f. drives current through resistance \u2014 and then shows where the analogy honestly breaks down. Every number comes from Hughes\u2019s wooden-ring, mild-steel-ring and three-part-series examples.',
     objectives: [
@@ -448,7 +448,7 @@ export const elecCh5Content: SectionContent[] = [
 
   // ------------------------------------------------------------- 5.4 ------
   {
-    sectionId: 'elec-ch5-s4',
+    sectionId: 'ee-e-circuits-s19',
     readingTime: 8,
     intro: 'Because relative permeability refuses to stay constant, the magnetic-circuit designer lives off graphs: the $B$\u2013$H$ magnetisation curve, its saturation knee, and the loop it traces when magnetisation cycles \u2014 hysteresis. Hughes measures the curve two classical ways (fluxmeter and ballistic galvanometer) and closes the chapter with a dictionary between the electromagnetic and electrostatic quantities you met in Chapter 4.',
     objectives: [
@@ -583,64 +583,64 @@ export const elecCh5Content: SectionContent[] = [
 
 export const elecCh5Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch5',
-    section: '5.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.17',
     name: 'Force on a current-carrying conductor',
     formula: 'F = BIl',
     note: 'newtons; conductor at right angles to the field',
     latex: 'F = BIl',
   },
   {
-    chapterId: 'elec-ch5',
-    section: '5.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.17',
     name: 'Magnetic flux and flux density',
     formula: '\u03a6 = BA;  B = \u03a6/A',
     note: 'webers and teslas; 1 T = 1 Wb/m\u00b2',
     latex: '\\Phi = BA, \\quad B = \\frac{\\Phi}{A}',
   },
   {
-    chapterId: 'elec-ch5',
-    section: '5.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.17',
     name: 'Flux-cutting (motional) e.m.f.',
     formula: 'E = Blu;  e = d\u03a6/dt',
     note: 'conductor moving at velocity u across the field',
     latex: 'E = Blu',
   },
   {
-    chapterId: 'elec-ch5',
-    section: '5.2',
+    chapterId: 'ee-e-circuits',
+    section: '2.17',
     name: 'Faraday\u2019s law for a coil',
     formula: 'e = \u2212N\u00b7d\u03a6/dt',
     note: 'minus sign is Lenz\u2019s law; \u03a8 = N\u03a6 in weber-turns',
     latex: 'e = -N\\,\\frac{d\\Phi}{dt}',
   },
   {
-    chapterId: 'elec-ch5',
-    section: '5.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.18',
     name: 'Magnetomotive force',
     formula: 'F = IN',
     note: 'amperes (ampere-turns); drives flux round the core',
     latex: 'F = IN',
   },
   {
-    chapterId: 'elec-ch5',
-    section: '5.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.18',
     name: 'Magnetic field strength',
     formula: 'H = IN/l',
     note: 'amperes per metre; m.m.f. per metre of path',
     latex: 'H = \\frac{IN}{l}',
   },
   {
-    chapterId: 'elec-ch5',
-    section: '5.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.18',
     name: 'Permeability relation',
     formula: 'B = \u03bc\u2080\u03bc\u1d63H',
     note: '\u03bc\u2080 = 4\u03c0 \u00d7 10\u207b\u2077 H/m; \u03bc\u1d63 varies with H',
     latex: 'B = \\mu_0 \\mu_r H',
   },
   {
-    chapterId: 'elec-ch5',
-    section: '5.3',
+    chapterId: 'ee-e-circuits',
+    section: '2.18',
     name: 'Reluctance and magnetic Ohm\u2019s law',
     formula: 'S = l/(\u03bc\u2080\u03bc\u1d63A);  F = \u03a6S',
     note: 'A/Wb; series reluctances add like resistances',

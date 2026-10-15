@@ -16,7 +16,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh13Content: SectionContent[] = [
   // ------------------------------------------------------------------ 13.1
   {
-    sectionId: 'elec-ch13-s1',
+    sectionId: 'ece-e-devices-s21',
     readingTime: 8,
     intro: 'The semiconductor diode of Chapter 12 becomes enormously more powerful when two junctions share one very thin middle layer. That sandwich is the bipolar junction transistor — the device that made electronic amplification cheap, and the ancestor of every amplifier and switch we meet in the rest of this book. Hughes builds it as “a combination of two junction diodes”, then follows the electrons through the base to explain why a tiny base current commands a large collector current.',
     objectives: [
@@ -143,7 +143,7 @@ export const elecCh13Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 13.2
   {
-    sectionId: 'elec-ch13-s2',
+    sectionId: 'ece-e-devices-s22',
     readingTime: 8,
     intro: 'Before a transistor can be biased or amplified into, its terminal behaviour must be measured. Hughes measures it twice — once holding the emitter current fixed (common-base) and once holding the base current fixed (common-emitter) — and the two experiments deliver two current amplification factors, α and β. One algebraic step links them, and one leakage current, I_CBO, sets the stability problem that Section 13.5 has to solve.',
     objectives: [
@@ -277,7 +277,7 @@ export const elecCh13Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 13.3
   {
-    sectionId: 'elec-ch13-s3',
+    sectionId: 'ece-e-devices-s23',
     readingTime: 10,
     intro: 'Characteristics describe the device; the load line describes the circuit around it. Supply voltage, collector resistance and the transistor family meet on one straight line, and where the bias current places the operating point on that line decides whether the stage amplifies cleanly or distorts. Hughes carries one common-emitter stage through the whole story — load line, quiescent point, gains, and finally the choice of every component value.',
     objectives: [
@@ -420,7 +420,7 @@ export const elecCh13Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 13.4
   {
-    sectionId: 'elec-ch13-s4',
+    sectionId: 'ece-e-devices-s24',
     readingTime: 9,
     intro: 'Graphical load lines become clumsy once several stages and source impedances interact, so the transistor is replaced by a small-signal equivalent circuit — a box whose h-parameters are measured once and then reused for every circuit. Hughes derives the current and voltage gains of the common-emitter stage in this language, shows why h_fe is just β wearing a new name, and then multiplies stages together in cascade. The section ends with the observation that pushes electronics toward the FET: the BJT’s input resistance is simply too low.',
     objectives: [
@@ -552,7 +552,7 @@ export const elecCh13Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 13.5
   {
-    sectionId: 'elec-ch13-s5',
+    sectionId: 'ece-e-devices-s25',
     readingTime: 9,
     intro: 'A transistor left with fixed bias will not stay where it was put: leakage current grows with temperature and drags the quiescent point along with it. Hughes answers with stabilized bias networks — potential divider, emitter resistor, and at the system level the Zener and series transistor regulators — and then embraces the drift by driving the transistor deliberately to the two ends of its load line, where it becomes a switch. The Ebers–Moll view closes the chapter by trading the current picture for a voltage one: the collector current is commanded by V_BE, and transconductance is simply IC over the thermal voltage.',
     objectives: [
@@ -696,72 +696,72 @@ export const elecCh13Content: SectionContent[] = [
 
 export const elecCh13Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch13',
-    section: '13.1',
+    chapterId: 'ece-e-devices',
+    section: '2.21',
     name: 'Terminal Currents (Kirchhoff)',
     formula: 'I_E = I_B + I_C',
     note: 'the node equation every BJT current calculation starts from',
     latex: 'I_E = I_B + I_C',
   },
   {
-    chapterId: 'elec-ch13',
-    section: '13.2',
+    chapterId: 'ece-e-devices',
+    section: '2.22',
     name: 'Common-Base Current Gain (α)',
     formula: 'α = ΔI_C/ΔI_E  (at constant V_CB)',
     note: 'slope of the I_C–I_E transfer graph; just under unity',
     latex: '\\alpha = \\frac{\\Delta I_C}{\\Delta I_E} \\quad (V_{CB}\\ \\text{fixed})',
   },
   {
-    chapterId: 'elec-ch13',
-    section: '13.2',
+    chapterId: 'ece-e-devices',
+    section: '2.22',
     name: 'Common-Emitter Current Gain (β)',
     formula: 'β = ΔI_C/ΔI_B  (at constant V_CE)',
     note: 'the datasheet gain figure; h_fe is the same quantity',
     latex: '\\beta = \\frac{\\Delta I_C}{\\Delta I_B} \\quad (V_{CE}\\ \\text{fixed})',
   },
   {
-    chapterId: 'elec-ch13',
-    section: '13.2',
+    chapterId: 'ece-e-devices',
+    section: '2.22',
     name: 'The α–β Relation',
     formula: 'α = β/(1 + β);  β = α/(1 − α)',
     note: 'α = 0.98 → β = 49; α = 0.99 → β = 99 — measure β, derive α',
     latex: '\\alpha = \\frac{\\beta}{1 + \\beta}; \\qquad \\beta = \\frac{\\alpha}{1 - \\alpha}',
   },
   {
-    chapterId: 'elec-ch13',
-    section: '13.2',
+    chapterId: 'ece-e-devices',
+    section: '2.22',
     name: 'Collector Current with Leakage',
     formula: 'I_C = β·I_B + I_CBO/(1 − α)',
     note: 'leakage enters amplified by 1/(1−α); rises with temperature',
     latex: 'I_C = \\beta I_B + \\frac{I_{CBO}}{1 - \\alpha}',
   },
   {
-    chapterId: 'elec-ch13',
-    section: '13.3',
+    chapterId: 'ece-e-devices',
+    section: '2.23',
     name: 'Load Line Equation',
     formula: 'i_c = −(1/R_C)·v_ce + V_S/R_C',
     note: 'intercepts at (V_S, 0) and (0, V_S/R_C); inverse slope is the load',
     latex: 'i_c = -\\frac{1}{R_C}v_{ce} + \\frac{V_S}{R_C}',
   },
   {
-    chapterId: 'elec-ch13',
-    section: '13.3',
+    chapterId: 'ece-e-devices',
+    section: '2.23',
     name: 'Bias Resistor (Fixed Bias)',
     formula: 'R_B = (V_S − V_BE)/I_B ≈ V_S/I_B',
     note: 'Hughes [20.19]–[20.20]; the quiescent base current sets the point',
     latex: 'R_B = \\frac{V_S - V_{BE}}{I_B} \\approx \\frac{V_S}{I_B}',
   },
   {
-    chapterId: 'elec-ch13',
-    section: '13.4',
+    chapterId: 'ece-e-devices',
+    section: '2.24',
     name: 'h-Parameter Voltage Gain (Common-Emitter)',
     formula: 'G_v = −h_fe·R_p / (h_ie·(1 + h_oe·R_p))',
     note: 'R_p = R_C·R_L/(R_C + R_L); minus sign = 180° phase shift',
     latex: 'G_v = \\frac{-h_{fe}R_p}{h_{ie}\\left(1 + h_{oe}R_p\\right)}',
   },
   {
-    chapterId: 'elec-ch13',
-    section: '13.5',
+    chapterId: 'ece-e-devices',
+    section: '2.25',
     name: 'Transconductance (Ebers–Moll)',
     formula: 'g_m = I_C/V_T,  V_T = kT/q ≈ 25 mV',
     note: '40 mS at 1 mA; r_e = 1/g_m = 25 Ω at 1 mA',

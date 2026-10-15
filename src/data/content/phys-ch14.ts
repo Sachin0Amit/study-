@@ -12,7 +12,7 @@ import type { FormulaEntry } from '../formulas'
 export const physCh14Content: SectionContent[] = [
   // ------------------------------------------------------------------ 14.1
   {
-    sectionId: 'phys-ch14-s1',
+    sectionId: 'hall-ch37-s25',
     readingTime: 10,
     intro: 'Maxwell’s equations were relativistically correct half a century before relativity was discovered — Lorentz found his transformation as the one that left them unchanged. This section rebuilds electrodynamics in the four-dimensional notation that makes that invariance manifest: four-vectors, the four-potential, the field tensor, and the rules by which electric and magnetic fields mix when you change frames. Following Feynman, we set $c = 1$ in the derivations and put the $c$’s back in the results.',
     objectives: [
@@ -159,7 +159,7 @@ export const physCh14Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 14.2
   {
-    sectionId: 'phys-ch14-s2',
+    sectionId: 'hall-ch33-s35',
     readingTime: 12,
     intro: 'Energy conservation must be more than a bookkeeping of the world total: relativity forbids energy from vanishing here and appearing there "simultaneously," so every conservation law must be local — energy that leaves a region must cross its boundary. Applying this to the electromagnetic field yields Poynting’s energy flow vector and its startling static-field examples, then the field momentum density, and finally the classical electron’s electromagnetic mass — the beautiful theory that "falls on its face" with the famous 4/3 problem. The section closes with charges threading through fields: helices, spectrometers, lenses and accelerators.',
     objectives: [
@@ -308,7 +308,7 @@ export const physCh14Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 14.3
   {
-    sectionId: 'phys-ch14-s3',
+    sectionId: 'young-ch42-s15',
     readingTime: 9,
     intro: 'Matter is not a featureless continuum: when atoms settle into low-energy arrangements they repeat them, and the resulting internal geometry of crystals — cleavage planes, exact interfacial angles, anisotropic strength — is the visible trace of an invisible lattice. Describing properties that depend on direction requires a new mathematical object beyond vectors: the tensor. Feynman builds it from the polarizability of crystals, generalizes to inertia, stress and elasticity, and reconnects to the four-dimensional field tensor of Section 14.1.',
     objectives: [
@@ -455,7 +455,7 @@ export const physCh14Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 14.4
   {
-    sectionId: 'phys-ch14-s4',
+    sectionId: 'hall-ch28-s33',
     readingTime: 12,
     intro: 'Every atom is a magnet, yet almost no substance shows it: the weak responses called diamagnetism and paramagnetism are a thousand to a million times feebler than iron’s, and classical physics — as Feynman demonstrates before demolishing it — predicts neither. The honest theory is quantum mechanical: quantized angular momentum, discrete spin states, resonant spin flips. From there the chapter builds the machinery of real magnetic matter — magnetization currents, the H field, hysteresis, domains and the exchange interaction that makes iron magnetic for reasons that are not magnetic at all.',
     objectives: [
@@ -602,7 +602,7 @@ export const physCh14Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 14.5
   {
-    sectionId: 'phys-ch14-s5',
+    sectionId: 'hall-ch14-s25',
     readingTime: 12,
     intro: 'The final stretch runs from the stiffness of steel to the curvature of space-time. Hooke’s law and its tensors describe how solids stretch, twist, bend and buckle; "dry water" — von Neumann’s name for the beautiful, viscosity-free hydrodynamics that has almost nothing to do with real fluids — gives Bernoulli’s theorem and the dynamics of vortices; "wet water" brings back friction and the Reynolds number, whose single value selects among creeping flows, vortex streets and turbulence. Then, as a finale, the same least-action idea Feynman learned from his teacher Mr. Bader becomes Einstein’s theory: gravity is the curvature of space-time by matter.',
     objectives: [
@@ -756,64 +756,64 @@ export const physCh14Content: SectionContent[] = [
 
 export const physCh14Formulas: FormulaEntry[] = [
   {
-    chapterId: 'phys-ch14',
-    section: '14.1',
+    chapterId: 'hall-ch37',
+    section: '36.25',
     name: 'Four-vector scalar product',
     formula: 'aμbμ = atbt − a·b',
     note: 'invariant under Lorentz transformations; pμpμ = M²',
     latex: 'a_{\\mu} b_{\\mu} = a_t b_t - \\boldsymbol{a}\\cdot\\boldsymbol{b}',
   },
   {
-    chapterId: 'phys-ch14',
-    section: '14.1',
+    chapterId: 'hall-ch37',
+    section: '36.25',
     name: 'Lorentz transformation of the fields',
     formula: 'E′⊥ = (E + v×B)⊥/√(1−v²/c²)',
     note: 'parallel components unchanged; B mixes with −v×E/c²',
     latex: "E'_{\\perp} = \\frac{(\\boldsymbol{E} + \\boldsymbol{v}\\times\\boldsymbol{B})_{\\perp}}{\\sqrt{1-v^2/c^2}}",
   },
   {
-    chapterId: 'phys-ch14',
-    section: '14.2',
+    chapterId: 'hall-ch33',
+    section: '32.35',
     name: 'Field energy density',
     formula: 'u = ½ε₀E² + ½ε₀c²B²',
     note: 'energy stored per unit volume by the field',
     latex: 'u = \\frac{\\epsilon_0}{2}\\boldsymbol{E}\\cdot\\boldsymbol{E} + \\frac{\\epsilon_0 c^2}{2}\\boldsymbol{B}\\cdot\\boldsymbol{B}',
   },
   {
-    chapterId: 'phys-ch14',
-    section: '14.2',
+    chapterId: 'hall-ch33',
+    section: '32.35',
     name: 'Poynting vector',
     formula: 'S = ε₀c²E×B',
     note: 'energy flow per unit area; momentum density g = S/c²',
     latex: '\\boldsymbol{S} = \\epsilon_0 c^2\\,\\boldsymbol{E}\\times\\boldsymbol{B}',
   },
   {
-    chapterId: 'phys-ch14',
-    section: '14.3',
+    chapterId: 'young-ch42',
+    section: '40.15',
     name: 'Polarizability tensor',
     formula: 'Pi = Σj αijEj',
     note: 'P is generally not parallel to E in a crystal',
     latex: 'P_i = \\sum_j \\alpha_{ij}E_j',
   },
   {
-    chapterId: 'phys-ch14',
-    section: '14.4',
+    chapterId: 'hall-ch28',
+    section: '28.33',
     name: 'Curie law (quantum form)',
     formula: 'M = N·g²µB²·j(j+1)·B/3kT',
     note: 'low-field paramagnetism; spin j, Bohr magneton µB',
     latex: 'M = \\frac{N g^2 \\mu_B^2\\, j(j+1)}{3kT}\\,B',
   },
   {
-    chapterId: 'phys-ch14',
-    section: '14.5',
+    chapterId: 'hall-ch14',
+    section: '14.25',
     name: 'Hooke’s law (Young’s modulus)',
     formula: 'F/A = Y·∆l/l',
     note: 'stress = Young modulus × strain',
     latex: '\\frac{F}{A} = Y\\,\\frac{\\Delta l}{l}',
   },
   {
-    chapterId: 'phys-ch14',
-    section: '14.5',
+    chapterId: 'hall-ch14',
+    section: '14.25',
     name: 'Einstein curvature law',
     formula: 'rexcess = (G/3c²)·M',
     note: 'radius excess of a sphere is set by the enclosed mass',

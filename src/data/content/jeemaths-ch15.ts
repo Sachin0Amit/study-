@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh15Content: SectionContent[] = [
   // ---------------------------------------------------------------- 15.1
   {
-    sectionId: 'advmath-ch15-s1',
+    sectionId: 'math-a7-s13',
     readingTime: 8,
     intro: 'Inverse ratios undo sine, cosine and tangent only after domains are cut to principal branches where each function is one to one. Conversion chains then rewrite any inverse sum as a single value. This section builds range discipline with equation solving.',
     objectives: [
@@ -113,7 +113,7 @@ export const jeemathsCh15Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 15.2
   {
-    sectionId: 'advmath-ch15-s2',
+    sectionId: 'math-a7-s14',
     readingTime: 9,
     intro: 'Any triangle is fixed by three data including one side, with sine and cosine rules translating sides to sines of angles. Half angle formulas give $\\tan\\frac{A}{2}$ from sides alone, while the ambiguous case explains zero, one or two solutions. This section solves all standard configurations.',
     objectives: [
@@ -252,7 +252,7 @@ export const jeemathsCh15Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 15.3
   {
-    sectionId: 'advmath-ch15-s3',
+    sectionId: 'math-a7-s15',
     readingTime: 7,
     intro: 'Heights and distances translate elevation and depression angles into right triangle equations with one unknown height or distance. Two position observations give two equations that eliminate the common height. This section models accessible and inaccessible bases.',
     objectives: [
@@ -357,7 +357,7 @@ export const jeemathsCh15Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 15.4
   {
-    sectionId: 'advmath-ch15-s4',
+    sectionId: 'math-a7-s16',
     readingTime: 8,
     intro: 'Every triangle carries circumradius $R$, inradius $r$ and exradii $r_{a}, r_{b}, r_{c}$ linked by $\\Delta = rs = \\frac{abc}{4R}$. Area itself has sine, Heron and half perimeter forms. This section proves those relations with pedal and centre geometry.',
     objectives: [

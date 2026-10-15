@@ -20,7 +20,7 @@ import type { SectionContent } from '../library'
 export const jeemainChemContent: SectionContent[] = [
   // ---------------------------------------------------------------- 1.1
   {
-    sectionId: 'chem-m1-s1',
+    sectionId: 'chem-ch1-s5',
     readingTime: 9,
     prerequisites: [
       'Atomic masses and symbols of common elements (school chemistry)',
@@ -124,7 +124,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.1
   {
-    sectionId: 'chem-m2-s1',
+    sectionId: 'chem-ch2-s5',
     readingTime: 10,
     prerequisites: [
       'Mole concept and stoichiometry (Unit 1)',
@@ -228,7 +228,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.1
   {
-    sectionId: 'chem-m3-s1',
+    sectionId: 'chem-ch11-s5',
     readingTime: 9,
     prerequisites: [
       'Electronic configuration of atoms (Unit 2)',
@@ -332,7 +332,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.1
   {
-    sectionId: 'chem-m4-s1',
+    sectionId: 'chem-ch4-s5',
     readingTime: 10,
     prerequisites: [
       'First law of thermodynamics from physics (work, heat, internal energy)',
@@ -436,7 +436,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 6.1
   {
-    sectionId: 'chem-m6-s1',
+    sectionId: 'chem-ch5-s5',
     readingTime: 9,
     prerequisites: [
       'States of matter and phase changes (melting, vaporisation)',
@@ -540,7 +540,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 7.1
   {
-    sectionId: 'chem-m7-s1',
+    sectionId: 'chem-ch6-s5',
     readingTime: 9,
     prerequisites: [
       'Atomic structure: valence electrons (Unit 2)',
@@ -644,7 +644,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 8.1
   {
-    sectionId: 'chem-m8-s1',
+    sectionId: 'chem-ch7-s5',
     readingTime: 10,
     prerequisites: [
       'Mole concept and concentration terms (Unit 1)',
@@ -748,7 +748,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 9.1
   {
-    sectionId: 'chem-m9-s1',
+    sectionId: 'chem-ch11-s10',
     readingTime: 9,
     prerequisites: [
       'Electronic configuration and quantum numbers (Unit 2)',
@@ -852,7 +852,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 14.1
   {
-    sectionId: 'chem-m14-s1',
+    sectionId: 'chem-ch8-s5',
     readingTime: 10,
     prerequisites: [
       'Hybridisation and VSEPR shapes (Unit 3 bonding)',
@@ -956,7 +956,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 15.1
   {
-    sectionId: 'chem-m15-s1',
+    sectionId: 'chem-ch9-s5',
     readingTime: 10,
     prerequisites: [
       'Functional-group classification (Unit 14 section 1)',
@@ -1060,7 +1060,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 5.1
   {
-    sectionId: 'chem-m5-s1',
+    sectionId: 'chem-ch27-s5',
     readingTime: 9,
     prerequisites: [
       'Mole concept and stoichiometry (Unit 1)',
@@ -1176,7 +1176,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 10.1
   {
-    sectionId: 'chem-m10-s1',
+    sectionId: 'chem-ch13-s5',
     readingTime: 8,
     prerequisites: [
       'Electronic configuration and subshell filling (Unit 2)',
@@ -1280,7 +1280,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 11.1
   {
-    sectionId: 'chem-m11-s1',
+    sectionId: 'chem-ch13-s8',
     readingTime: 9,
     prerequisites: [
       'Electronic configuration of atoms (Unit 2)',
@@ -1385,7 +1385,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 12.1
   {
-    sectionId: 'chem-m12-s1',
+    sectionId: 'chem-ch12-s5',
     readingTime: 10,
     prerequisites: [
       'Oxidation-number bookkeeping (Unit 7)',
@@ -1496,7 +1496,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 13.1
   {
-    sectionId: 'chem-m13-s1',
+    sectionId: 'chem-ch39-s5',
     readingTime: 9,
     prerequisites: [
       'Boiling point, vapour pressure and states of matter (school physics/chemistry)',
@@ -1618,7 +1618,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 16.1
   {
-    sectionId: 'chem-m16-s1',
+    sectionId: 'chem-ch9-s27',
     readingTime: 11,
     prerequisites: [
       'Functional groups and IUPAC nomenclature (Unit 14)',
@@ -1740,7 +1740,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 17.1
   {
-    sectionId: 'chem-m17-s1',
+    sectionId: 'chem-ch9-s30',
     readingTime: 11,
     prerequisites: [
       'Functional groups and nomenclature (Unit 14)',
@@ -1862,7 +1862,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 18.1
   {
-    sectionId: 'chem-m18-s1',
+    sectionId: 'chem-ch10-s5',
     readingTime: 10,
     prerequisites: [
       'Functional groups and nomenclature (Unit 14)',
@@ -1984,7 +1984,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 19.1
   {
-    sectionId: 'chem-m19-s1',
+    sectionId: 'chem-ch10-s12',
     readingTime: 12,
     prerequisites: [
       'Functional groups: alcohols, aldehydes, ketones (Units 14, 17)',
@@ -2106,7 +2106,7 @@ export const jeemainChemContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 20.1
   {
-    sectionId: 'chem-m20-s1',
+    sectionId: 'chem-ch39-s9',
     readingTime: 10,
     prerequisites: [
       'Functional-group reactions of Units 17 and 18',

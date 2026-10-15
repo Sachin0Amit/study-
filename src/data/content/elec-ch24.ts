@@ -14,7 +14,7 @@ import type { SectionContent } from '../library'
 export const elecCh24Content: SectionContent[] = [
   // ------------------------------------------------------------------ 24.1
   {
-    sectionId: 'elec-ch24-s1',
+    sectionId: 'ece-e-devices-s33',
     readingTime: 8,
     intro: 'The NMOS transistor of Figure 5.1 is a gate oxide over p-type silicon with two n-type islands for source and drain, and it conducts when the gate voltage builds an inversion channel between them. The threshold $V_{t}$ marks that formation, the overdrive $V_{OV} = V_{GS} - V_{t}$ sets the channel depth, and the drain voltage decides whether the channel reaches the drain (triode) or pinches off first (saturation). In the book $0.18$ $\\mu$m process with $4$ nm oxide, $C_{ox} = 8.63$ fF per $\\mu$m$^{2}$ and $k_{n}^{\\prime} = 388$ $\\mu$A per V$^{2}$.',
     objectives: [
@@ -119,7 +119,7 @@ export const elecCh24Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 24.2
   {
-    sectionId: 'elec-ch24-s2',
+    sectionId: 'ece-e-devices-s34',
     readingTime: 9,
     intro: 'The square-law model compresses the chapter into two equations: the triode form $i_{D} = k_{n}[(v_{GS} - V_{tn})v_{DS} - v_{DS}^{2}/2]$ and the saturation form $i_{D} = (k_{n}/2)V_{OV}^{2}(1 + \\lambda v_{DS})$, with $k_{n} = k_{n}^{\\prime}(W/L)$. Example 5.1 runs a $W$ over $L$ of ten at $100$ $\\mu$A to $V_{OV} = 0.23$ V and $V_{GS} = 0.73$ V, then reuses the same device as a $1000$ $\\Omega$ triode resistor at $V_{OV} = 0.26$ V. Example 5.2 turns the triode equation into a quadratic whose valid root is $v_{DS} = 0.06$ V.',
     objectives: [
@@ -225,7 +225,7 @@ export const elecCh24Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 24.3
   {
-    sectionId: 'elec-ch24-s3',
+    sectionId: 'ece-e-devices-s35',
     readingTime: 8,
     intro: 'Biasing plants the $Q$ point that Section 21.2 demanded: a stable $I_{D}$ with room to swing while keeping $V_{DS}$ above $V_{OV}$. The drain-feedback stage ties gate to drain so $V_{GS} = V_{DS}$ enforces saturation automatically, while the divider-plus-source-resistor stage of discrete design trades a volt of headroom for supply immunity. Both reduce to solving the square law against a load line and then verifying the region.',
     objectives: [
@@ -330,7 +330,7 @@ export const elecCh24Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 24.4
   {
-    sectionId: 'elec-ch24-s4',
+    sectionId: 'ece-e-devices-s36',
     readingTime: 8,
     intro: 'Around $Q$ the MOSFET becomes three numbers: transconductance $g_{m} = k_{n}V_{OV} = 2I_{D}/V_{OV}$, output resistance $r_{o} = 1/(\\lambda I_{D})$, and body factor $\\chi$ with $g_{mb} = \\chi g_{m}$. The book $100$ $\\mu$A device at $V_{OV} = 0.22$ V gives $g_{m} = 0.91$ mA per V, and with $\\lambda = 0.1$ per V the intrinsic gain $g_{m}r_{o}$ reaches $91$. Hybrid-pi and T circuits package these numbers for every amplifier analysis of Chapter 7.',
     objectives: [

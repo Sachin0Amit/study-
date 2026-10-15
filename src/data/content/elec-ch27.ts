@@ -13,7 +13,7 @@ import type { SectionContent } from '../library'
 export const elecCh27Content: SectionContent[] = [
   // ------------------------------------------------------------------ 27.1
   {
-    sectionId: 'elec-ch27-s1',
+    sectionId: 'ece-e-analog-s21',
     readingTime: 9,
     intro: 'Figure 9.1 places two matched MOSFETs over one tail current $I$ with two drain resistors $R_{D}$, and Figure 9.12 repeats the idea with BJTs over a tail $I$ and $R_{C}$ loads. Differential input $v_{id} = v_{G1} - v_{G2}$ steers the tail between the sides, while common-mode input moves both gates together. The pair rejects the latter and amplifies the former, which is why every op-amp input stage starts here.',
     objectives: [
@@ -118,7 +118,7 @@ export const elecCh27Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 27.2
   {
-    sectionId: 'elec-ch27-s2',
+    sectionId: 'ece-e-analog-s22',
     readingTime: 8,
     intro: 'Common-mode gain $A_{cm}$ measures how much of a signal moving both inputs together leaks to the output, and Figure 9.13 evaluates it with the tail impedance $R_{EE}$ explicit. The rejection ratio $CMRR = |A_{d}/A_{cm}|$ then compresses two gains into one number of merit. Section 9.4 traces finite $CMRR$ to finite tail impedance plus resistor and device mismatch that also creates input offset voltage $V_{OS}$.',
     objectives: [
@@ -223,7 +223,7 @@ export const elecCh27Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 27.3
   {
-    sectionId: 'elec-ch27-s3',
+    sectionId: 'ece-e-analog-s23',
     readingTime: 9,
     intro: 'Chapter 8 builds the current mirrors that bias every differential stage, and Section 9.5 swaps resistive drains for active PMOS loads to multiply gain. The basic, cascode and Wilson mirrors trade headroom for output resistance, while the Widlar source reaches microamp bias with modest resistors. Active-load gain $A_{d} = -g_{m}(r_{oN} \\parallel r_{oP})$ then replaces $R_{D}$ by parallel transistor resistances.',
     objectives: [
@@ -328,7 +328,7 @@ export const elecCh27Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 27.4
   {
-    sectionId: 'elec-ch27-s4',
+    sectionId: 'ece-e-analog-s24',
     readingTime: 8,
     intro: 'Section 9.6 stacks a differential input stage, a common-source gain stage and a follower output into the two-stage CMOS op amp of Figure 9.32. Direct coupling passes direct current and signal together, so each stage bias must absorb the previous level shift. Overall open-circuit gain is the product of stage gains once each loading $R_{in}$ is paralleled into its driver.',
     objectives: [

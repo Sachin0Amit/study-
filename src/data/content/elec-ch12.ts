@@ -14,7 +14,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh12Content: SectionContent[] = [
   // ------------------------------------------------------------------ 12.1
   {
-    sectionId: 'elec-ch12-s1',
+    sectionId: 'ece-e-devices-s19',
     readingTime: 8,
     intro:
       'Every device in the second half of this book grows from a sliver of purified sand. Hughes begins with the atom itself — the nucleus with its protons and neutrons, and the orbiting electrons — and shows why silicon and germanium, each with exactly four valence electrons, bind into crystals that are perfect insulators at absolute zero and feeble conductors at room temperature. The engineering starts with controlled poisoning: one dopant atom in a hundred million turns the crystal into n-type or p-type material, and the diode, transistor and integrated circuit all grow from that single trick.',
@@ -167,7 +167,7 @@ export const elecCh12Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 12.2
   {
-    sectionId: 'elec-ch12-s2',
+    sectionId: 'ece-e-devices-s2',
     readingTime: 9,
     intro:
       'Join a p-type crystal to an n-type crystal and something remarkable happens at the seam: carriers diffuse across, uncover fixed ions, and the junction charges itself into a barrier that current can pass in only one direction. Hughes builds the depletion layer and its barrier potential first with pictures, then with the Shockley equation — the exponential diode law that everything from rectifiers to transistor biasing rests on. This section adds the practical models that The Art of Electronics recommends for everyday design.',
@@ -328,7 +328,7 @@ export const elecCh12Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 12.3
   {
-    sectionId: 'elec-ch12-s3',
+    sectionId: 'ece-e-devices-s20',
     readingTime: 10,
     intro:
       'A diode passes current in one direction only, so an alternating voltage forces it to conduct on just one half-cycle — or, with more diodes, on both. Hughes’s rectifier chapter turns that single fact into d.c. supplies: half-wave and full-wave circuits with their average and r.m.s. values, the bridge that gets the transformer working full time, and the smoothing capacitor that converts pulsating d.c. into something usable. The Art of Electronics then adds the supply-builder’s reality checks — ripple arithmetic, peak currents and worst-case design — that turn textbook rectifiers into working power supplies.',
@@ -515,7 +515,7 @@ export const elecCh12Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 12.4
   {
-    sectionId: 'elec-ch12-s4',
+    sectionId: 'ece-e-devices-s3',
     readingTime: 9,
     intro:
       'Breakdown in a diode is normally a failure — unless you design for it. Run a junction into reverse avalanche at a controlled voltage and it becomes a voltage reference; forward-bias a compound semiconductor and it emits light; reverse-bias it in the dark and it measures light instead. Hughes closes his diode chapter with the Zener voltage stabilizer, and The Art of Electronics supplies the catalogue of special-purpose devices — varactors, Schottkys, fast-recovery rectifiers — that fill a practising engineer’s drawer.',
@@ -675,64 +675,64 @@ export const elecCh12Content: SectionContent[] = [
 
 export const elecCh12Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch12',
-    section: '12.1',
+    chapterId: 'ece-e-devices',
+    section: '2.19',
     name: 'Mass-action law',
     formula: 'np = nᵢ²',
     note: 'carrier product fixed; n = p = nᵢ when the material is intrinsic',
     latex: 'n\\,p = n_i^{2}',
   },
   {
-    chapterId: 'elec-ch12',
-    section: '12.2',
+    chapterId: 'ece-e-devices',
+    section: '2.2',
     name: 'Shockley diode equation',
     formula: 'I = Is·(exp(qV/kT) − 1)',
     note: 'q/kT ≈ 38.6 per volt at 300 K; current scales tenfold per 60 mV',
     latex: 'I = I_s\\left(e^{qV/kT} - 1\\right)',
   },
   {
-    chapterId: 'elec-ch12',
-    section: '12.3',
+    chapterId: 'ece-e-devices',
+    section: '2.20',
     name: 'Half-wave rectifier averages',
     formula: 'Idc = Im/π = 0.318·Im; Irms = Im/2',
     note: 'peak inverse voltage ≈ Vm; max efficiency 4/π² ≈ 0.405',
     latex: 'I_{\\mathrm{dc}} = \\frac{I_m}{\\pi} = 0.318\\,I_m, \\qquad I_{\\mathrm{rms}} = \\frac{I_m}{2}',
   },
   {
-    chapterId: 'elec-ch12',
-    section: '12.3',
+    chapterId: 'ece-e-devices',
+    section: '2.20',
     name: 'Full-wave rectifier averages',
     formula: 'Idc = 2Im/π = 0.637·Im; Irms = Im/√2',
     note: 'same for the bridge; max efficiency 8/π² ≈ 0.81',
     latex: 'I_{\\mathrm{dc}} = \\frac{2I_m}{\\pi} = 0.637\\,I_m, \\qquad I_{\\mathrm{rms}} = \\frac{I_m}{\\sqrt{2}}',
   },
   {
-    chapterId: 'elec-ch12',
-    section: '12.3',
+    chapterId: 'ece-e-devices',
+    section: '2.20',
     name: 'Ripple factor',
     formula: 'γ = √((Irms/Idc)² − 1)',
     note: '1.21 half-wave, 0.482 full-wave; with a reservoir capacitor ΔV ≈ Idc/(fr·C)',
     latex: '\\gamma = \\sqrt{\\left(\\frac{I_{\\mathrm{rms}}}{I_{\\mathrm{dc}}}\\right)^{2} - 1}',
   },
   {
-    chapterId: 'elec-ch12',
-    section: '12.3',
+    chapterId: 'ece-e-devices',
+    section: '2.20',
     name: 'Peak inverse voltage by circuit',
     formula: 'PIV = Vm (half-wave, bridge); PIV = 2Vm (centre-tap)',
     note: 'the reverse stress each blocking diode must withstand below breakdown',
     latex: 'V_{\\mathrm{PIV}} = V_m \\ \\text{(half-wave, bridge)}, \\quad 2V_m \\ \\text{(centre-tapped)}',
   },
   {
-    chapterId: 'elec-ch12',
-    section: '12.4',
+    chapterId: 'ece-e-devices',
+    section: '2.3',
     name: 'Zener series resistor',
     formula: 'R = (Vin(min) − Vz)/(Iz(min) + IL(max))',
     note: 'sized at the low-line, full-load corner of the design',
     latex: 'R = \\frac{V_{\\mathrm{in(min)}} - V_z}{I_{z(\\mathrm{min})} + I_{L(\\mathrm{max})}}',
   },
   {
-    chapterId: 'elec-ch12',
-    section: '12.4',
+    chapterId: 'ece-e-devices',
+    section: '2.3',
     name: 'Zener current balance',
     formula: 'Iz = (Vin − Vz)/R − IL',
     note: 'the diode absorbs whatever current the load does not take',

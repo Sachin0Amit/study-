@@ -96,24 +96,15 @@ interface PracticeSet {
 
 /** Curated flavour per subject — every subject gets a card. */
 const SET_META: Record<string, { title: string; blurb: string; count: number; timed: boolean }> = {
-  mathematics: { title: 'Mathematics sprint', blurb: 'Logic to calculus — one mixed sweep of the master volume', count: 20, timed: true },
-  physics: { title: 'Physics concept check', blurb: 'Mechanics, fields and quanta across the lectures', count: 20, timed: true },
-  chemistry: { title: 'Chemistry rapid recall', blurb: 'Physical, organic and inorganic essentials', count: 15, timed: false },
+  mathematics: { title: 'Mathematics sprint', blurb: 'Logic to calculus to engineering maths — one mixed sweep', count: 20, timed: true },
+  physics: { title: 'Physics concept check', blurb: 'Mechanics, fields and quanta across the canonical chapters', count: 20, timed: true },
+  chemistry: { title: 'Chemistry rapid recall', blurb: 'Physical, organic, inorganic and applied essentials', count: 15, timed: false },
   english: { title: 'Reading & writing drill', blurb: 'Comprehension, grammar and expression', count: 10, timed: false },
-  aptitude: { title: 'Aptitude booster', blurb: 'Reasoning, awareness and general science', count: 10, timed: false },
-  'cse-engg': { title: 'CS engineering gauntlet', blurb: 'Semester cores plus systems theory, end to end', count: 20, timed: true },
-  'ece-engg': { title: 'Signals & systems check', blurb: 'Networks, communications and EM theory', count: 15, timed: true },
+  aptitude: { title: 'Aptitude booster', blurb: 'Reasoning, quantitative aptitude, awareness and science', count: 10, timed: false },
+  'cse-engg': { title: 'CS engineering gauntlet', blurb: 'Programming, systems and the applied stack, end to end', count: 20, timed: true },
+  'ece-engg': { title: 'Signals & systems check', blurb: 'Devices, circuits, communications and EM theory', count: 15, timed: true },
   'electrical-engineering': { title: 'Electrical essentials', blurb: 'Circuits, machines and power systems', count: 15, timed: true },
   'mechanical-engineering': { title: 'Mechanical fundamentals', blurb: 'Thermal, design and manufacturing basics', count: 15, timed: true },
-  'cs-operating-systems': { title: 'Operating systems drill', blurb: 'Processes, memory and file systems', count: 10, timed: false },
-  'cs-javascript': { title: 'JavaScript deep dive', blurb: 'Language core, browser and Node', count: 10, timed: false },
-  'ece-digital-systems': { title: 'Logic design drill', blurb: 'Boolean algebra to register-transfer design', count: 10, timed: false },
-  'ece-electronics': { title: 'Electronics fundamentals', blurb: 'Devices, circuits and applications', count: 10, timed: false },
-  'cs-algorithms': { title: 'Algorithms workout', blurb: 'Design, correctness and complexity', count: 10, timed: true },
-  'cs-cpp': { title: 'C++ mastery check', blurb: 'Core language to the standard library', count: 10, timed: false },
-  'web-development': { title: 'Web dev rapid fire', blurb: 'Frontend patterns and full-stack thinking', count: 10, timed: false },
-  'cs-core-systems': { title: 'CS core systems', blurb: 'DBMS, networks and architecture together', count: 15, timed: true },
-  java: { title: 'Core Java drill', blurb: 'Fundamentals to generics and collections', count: 10, timed: false },
 }
 
 const PRACTICE_SETS: PracticeSet[] = (() => {
@@ -129,7 +120,7 @@ const PRACTICE_SETS: PracticeSet[] = (() => {
   // question pool counted per chapter (one pass over POOL)
   const poolByChapter = new Map<string, number>()
   for (const q of POOL) {
-    const chId = q.sectionId.split('-s')[0]
+    const chId = q.sectionId.replace(/-s\d+$/, '')
     poolByChapter.set(chId, (poolByChapter.get(chId) ?? 0) + 1)
   }
   return LIBRARY_SUBJECTS.map((subject) => {
@@ -249,7 +240,7 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
   }, [phase, startedAt, timeLimit, flushTime])
 
   const poolForSelection = useMemo(
-    () => POOL.filter((q) => selected.has(q.sectionId.split('-s')[0])),
+    () => POOL.filter((q) => selected.has(q.sectionId.replace(/-s\d+$/, ''))),
     [selected]
   )
 
@@ -289,7 +280,7 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
   /** load AND immediately start a quick practice set */
   function startPreset(set: PracticeSet) {
     const ids = new Set(set.chapterIds)
-    const pool = POOL.filter((q) => ids.has(q.sectionId.split('-s')[0]))
+    const pool = POOL.filter((q) => ids.has(q.sectionId.replace(/-s\d+$/, '')))
     beginRun(shuffled(pool).slice(0, Math.min(set.count, pool.length)), set.timed, false)
   }
 
@@ -810,7 +801,7 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
             )}
             <button
               onClick={() => {
-                if (confirm('Abandon this exam? Your progress will not be saved.')) {
+                if (confirm('Abandon this test? Your progress will not be saved.')) {
                   enterRef.current = null
                   setRun(null)
                   setPhase('setup')

@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh13Content: SectionContent[] = [
   // ---------------------------------------------------------------- 13.1
   {
-    sectionId: 'advmath-ch13-s1',
+    sectionId: 'calc-ch11-s24',
     readingTime: 9,
     intro: 'Newton general binomial $(1+x)^{n}$ extends beyond positive integers to fractional and negative indices, producing infinite series that converge for $|x| < 1$. The general term carries products $n(n-1)\\cdots$ that encode roots and reciprocals. This section builds expansions with convergence discipline and approximations.',
     objectives: [
@@ -134,7 +134,7 @@ export const jeemathsCh13Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 13.2
   {
-    sectionId: 'advmath-ch13-s2',
+    sectionId: 'calc-ch11-s25',
     readingTime: 9,
     intro: 'The exponential series $e^{x} = 1+x+\\frac{x^2}{2!}+\\cdots$ converges for every $x$ and defines $e$ as its sum at $x = 1$. Its inverse logarithmic series $\\log(1+x)$ converges for $-1 < x \\le 1$ and powers log table construction. This section builds both with remainder control.',
     objectives: [
@@ -260,7 +260,7 @@ export const jeemathsCh13Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 13.3
   {
-    sectionId: 'advmath-ch13-s3',
+    sectionId: 'calc-ch11-s26',
     readingTime: 8,
     intro: 'A recurring series obeys a fixed linear scale of relation, so each term is a combination of predecessors and the $n$th term follows from the generating fraction. Partial fractions split that generating fraction into geometric pieces. This section pairs scale finding with cover up decomposition.',
     objectives: [
@@ -365,7 +365,7 @@ export const jeemathsCh13Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 13.4
   {
-    sectionId: 'advmath-ch13-s4',
+    sectionId: 'calc-ch11-s27',
     readingTime: 7,
     intro: 'Compound interest grows as $(1+r)^{n}$ while annuities sum that growth over many payments. Continued fractions give best rational approximations through convergents. This section computes amounts with binomial help and approximates irrationals.',
     objectives: [

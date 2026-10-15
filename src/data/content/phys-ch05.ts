@@ -12,7 +12,7 @@ import type { FormulaEntry } from '../formulas'
 export const physCh5Content: SectionContent[] = [
   // ------------------------------------------------------------------ 5.1
   {
-    sectionId: 'phys-ch5-s1',
+    sectionId: 'hall-ch10-s30',
     readingTime: 9,
     intro: 'Newton’s laws were built for points, but the world is made of wheels, tops and wobbling things. Feynman opens the mechanics of extended bodies with the simplest case — a rigid body turning about a fixed axis, where a single angle tells the whole story — and shows that a complete dynamics of rotation grows out of nothing but $F = ma$ and the work theorem. The chapter ends with the demonstration every skater knows: pull in your arms and you spin faster, because something has stayed constant while everything else changed.',
     objectives: [
@@ -158,7 +158,7 @@ export const physCh5Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 5.2
   {
-    sectionId: 'phys-ch5-s2',
+    sectionId: 'hall-ch10-s31',
     readingTime: 10,
     intro: 'Two questions dominate the mechanics of extended bodies: where is the balance point of a complicated object, and how hard is it to turn? Feynman answers the first with the centre of mass — the average position weighted by mass, located by symmetry, by integration or by the sly theorem of Pappus — and the second with the moment of inertia, computed for rods and discs and then multiplied by two theorems that turn one hard integral into a whole table of easy results.',
     objectives: [
@@ -306,7 +306,7 @@ export const physCh5Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 5.3
   {
-    sectionId: 'phys-ch5-s3',
+    sectionId: 'hall-ch11-s14',
     readingTime: 10,
     intro: 'Take the wheel off the page and into space, and rotation stops being a story about one angle. Torque and angular momentum become vectors built with the cross product; a gyroscope pushed downward by gravity moves sideways instead of falling; and even angular velocity turns out to be hiding a subtlety — it is not quite an honest vector. This is Feynman’s favourite demonstration of mechanics that looks like a miracle but is only Newton’s laws, thought all the way through.',
     objectives: [
@@ -495,64 +495,64 @@ export const physCh5Content: SectionContent[] = [
 
 export const physCh5Formulas: FormulaEntry[] = [
   {
-    chapterId: 'phys-ch5',
-    section: '5.1',
+    chapterId: 'hall-ch10',
+    section: '10.30',
     name: 'Angular velocity and point speed',
     formula: 'ω = dθ/dt,  v = ωr',
     note: 'radians per second; every point shares ω, speed grows with radius',
     latex: '\\omega = \\frac{d\\theta}{dt}, \\quad v = \\omega r',
   },
   {
-    chapterId: 'phys-ch5',
-    section: '5.1',
+    chapterId: 'hall-ch10',
+    section: '10.30',
     name: 'Torque about an axis',
     formula: 'τ = xF_y − yF_x = r·F_tang',
     note: 'defined so torque × angle = work; also force × lever arm',
     latex: '\\tau = xF_y - yF_x = rF_{\\text{tang}}',
   },
   {
-    chapterId: 'phys-ch5',
-    section: '5.1',
+    chapterId: 'hall-ch10',
+    section: '10.30',
     name: 'Angular momentum and moment of inertia',
     formula: 'L = Iω,  I = Σ mᵢrᵢ²',
     note: 'inertia against turning; I depends on the axis, mass does not',
     latex: 'L = I\\omega, \\quad I = \\sum_i m_i r_i^2',
   },
   {
-    chapterId: 'phys-ch5',
-    section: '5.1',
+    chapterId: 'hall-ch10',
+    section: '10.30',
     name: 'Rotational kinetic energy',
     formula: 'T = ½Iω²',
     note: 'the rotational twin of ½mv²; not conserved on the turntable',
     latex: 'T = \\tfrac{1}{2}I\\omega^2',
   },
   {
-    chapterId: 'phys-ch5',
-    section: '5.1',
+    chapterId: 'hall-ch10',
+    section: '10.30',
     name: 'Parallel-axis theorem',
     formula: 'I = I₀ + Md²',
     note: 'I₀ about the parallel axis through the centre of mass; d = axis offset',
     latex: 'I = I_c + MR_{\\text{CM}}^2',
   },
   {
-    chapterId: 'phys-ch5',
-    section: '5.2',
+    chapterId: 'hall-ch10',
+    section: '10.31',
     name: 'Centre of mass',
     formula: 'R = Σ mᵢrᵢ / M',
     note: 'mass-weighted average position; F_ext = M·a_CM',
     latex: '\\mathbf{R}_{\\text{CM}} = \\frac{\\sum_i m_i \\mathbf{r}_i}{M}',
   },
   {
-    chapterId: 'phys-ch5',
-    section: '5.3',
+    chapterId: 'hall-ch11',
+    section: '11.14',
     name: 'Rotation equations in vector form',
     formula: 'τ = r × F,  L = r × p,  τ = dL/dt',
     note: 'valid about a fixed axis or any axis through the centre of mass',
     latex: '\\boldsymbol{\\tau} = \\mathbf{r} \\times \\mathbf{F}, \\quad \\mathbf{L} = \\mathbf{r} \\times \\mathbf{p}, \\quad \\boldsymbol{\\tau} = \\frac{d\\mathbf{L}}{dt}',
   },
   {
-    chapterId: 'phys-ch5',
-    section: '5.3',
+    chapterId: 'hall-ch11',
+    section: '11.14',
     name: 'Gyroscope precession',
     formula: 'τ = Ω × L₀',
     note: 'magnitudes Ω = τ/L₀; the top precesses instead of falling',

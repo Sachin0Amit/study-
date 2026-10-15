@@ -11,7 +11,7 @@ import type { SectionContent } from '../library'
 export const hallCh32Content: SectionContent[] = [
   // ------------------------------------------------------------------ 32-1
   {
-    sectionId: 'hall-ch32-s1',
+    sectionId: 'hall-ch33-s8',
     readingTime: 6,
     intro: "Electrostatics reached its summit in Gauss' law, which counts electric charge by counting electric flux. Magnetism gets the same treatment here — and the answer is striking: the net magnetic flux through any closed surface is exactly zero, always. That single zero is Maxwell\'s second equation, and it encodes the deepest experimental fact about magnetism: no magnetic monopole has ever been found.",
     objectives: [
@@ -105,7 +105,7 @@ export const hallCh32Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 32-2
   {
-    sectionId: 'hall-ch32-s2',
+    sectionId: 'hall-ch33-s9',
     readingTime: 7,
     intro: "Faraday's law says a changing magnetic field induces an electric field — a circulation of E around the region where the flux changes. Maxwell noticed the missing partner: a changing electric field must induce a magnetic field, a circulation of B around the region where electric flux changes. Adding this term to Ampère\'s law completes it, and with the other three equations it will predict light itself.",
     objectives: [
@@ -198,7 +198,7 @@ export const hallCh32Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 32-3
   {
-    sectionId: 'hall-ch32-s3',
+    sectionId: 'hall-ch33-s10',
     readingTime: 6,
     intro: "Maxwell's extra term has the units of a current, and he named it the displacement current: $i_d = \\varepsilon_0\\, d\\Phi_E/dt$. Across the empty gap of a capacitor it exactly matches the conduction current in the wires, so the total current piercing any surface is the same — Ampère\'s law becomes unambiguous. With this fix, electromagnetism is complete in four equations.",
     objectives: [
@@ -292,7 +292,7 @@ export const hallCh32Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 32-4
   {
-    sectionId: 'hall-ch32-s4',
+    sectionId: 'hall-ch33-s11',
     readingTime: 5,
     intro: "Matter responds to magnetic fields in ways that range from imperceptible to dramatic. Before sorting materials into diamagnetic, paramagnetic and ferromagnetic, the vocabulary of ordinary magnets must be exact: poles that always come in pairs, the Earth as a giant dipole whose compass we have trusted for a thousand years, and the short list of elements that are strongly magnetic at room temperature.",
     objectives: [
@@ -385,7 +385,7 @@ export const hallCh32Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 32-5
   {
-    sectionId: 'hall-ch32-s5',
+    sectionId: 'hall-ch33-s12',
     readingTime: 7,
     intro: "Where does the magnetism of materials come from? From electrons: each one carries an orbital magnetic moment set by its motion around the nucleus and a spin magnetic moment that is pure quantum mechanics. Both come in natural units of the Bohr magneton, and whether a material is dia-, para- or ferromagnetic is decided by how these atomic moments answer an applied field — and whether thermal noise lets them answer at all.",
     objectives: [
@@ -477,7 +477,7 @@ export const hallCh32Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 32-6
   {
-    sectionId: 'hall-ch32-s6',
+    sectionId: 'hall-ch33-s13',
     readingTime: 5,
     intro: "In most atoms the orbital and spin moments of paired electrons cancel exactly, leaving no permanent moment. Apply a field anyway and the orbital motion readjusts — always so as to oppose the change. That is diamagnetism: the weakest, universal, and always negative response of matter to magnetism.",
     objectives: [
@@ -570,7 +570,7 @@ export const hallCh32Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 32-7
   {
-    sectionId: 'hall-ch32-s7',
+    sectionId: 'hall-ch33-s14',
     readingTime: 5,
     intro: "If atoms carry permanent moments — from unpaired electron spins, as in aluminum or in the oxygen molecule — an applied field finds something to align. But alignment competes with thermal agitation, and at room temperature agitation wins by three orders of magnitude. Paramagnetism is therefore also weak, though positive, and it strengthens dramatically on cooling: Curie's law.",
     objectives: [
@@ -663,7 +663,7 @@ export const hallCh32Content: SectionContent[] = [
   },
   // ------------------------------------------------------------------ 32-8
   {
-    sectionId: 'hall-ch32-s8',
+    sectionId: 'hall-ch33-s15',
     readingTime: 6,
     intro: "Iron stays magnetic with no applied field at all. The reason is a purely quantum alignment of neighboring spins — the exchange coupling — that locks atomic moments into domains, and hysteresis, which gives a sample memory of the fields it has felt. Ferromagnetism is the strong magnetism of daily life, and it switches off abruptly above the Curie temperature.",
     objectives: [

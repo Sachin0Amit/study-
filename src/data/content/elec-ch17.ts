@@ -13,7 +13,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh17Content: SectionContent[] = [
   // ------------------------------------------------------------------ 17.1
   {
-    sectionId: 'elec-ch17-s1',
+    sectionId: 'ece-e-analog-s41',
     readingTime: 9,
     intro: 'Chapter 15 showed feedback as a servant: negative feedback traded gain for linearity and bandwidth. Turn the sign around and feedback becomes a creator — an amplifier that feeds its own output back to its input, through a network that selects one frequency, will sing at that frequency forever. This section states the one criterion that governs every oscillator ever built, the Barkhausen criterion, and confronts the two problems it leaves open: how oscillation starts, and what stops it from growing without bound.',
     objectives: [
@@ -141,7 +141,7 @@ export const elecCh17Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 17.2
   {
-    sectionId: 'elec-ch17-s2',
+    sectionId: 'ece-e-analog-s42',
     readingTime: 12,
     intro: 'Not every oscillator needs a resonator. A capacitor, a resistor and anything that switches between two thresholds will oscillate — the capacitor charges until the switch flips, the threshold moves, and the cycle repeats. These relaxation oscillators make square waves instead of sine waves, and one integrated circuit, the 555 timer, packages the whole idea into an eight-pin device that has outsold almost every other chip in history.',
     objectives: [
@@ -282,7 +282,7 @@ export const elecCh17Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 17.3
   {
-    sectionId: 'elec-ch17-s3',
+    sectionId: 'ece-e-analog-s43',
     readingTime: 11,
     intro: 'A relaxation oscillator is happy with a few per cent of frequency error; a sine wave for measurement or radio is not. Sinusoidal oscillators put the Barkhausen criterion to work on a frequency-selective network — a humble RC bridge at audio, a resonant LC tank with a capacitive or inductive tap at radio, and, when ppm matter, a slab of vibrating quartz. Each step up the ladder buys frequency stability by making the frequency-setting element sharper and more indifferent to the amplifier around it.',
     objectives: [
@@ -427,64 +427,64 @@ export const elecCh17Content: SectionContent[] = [
 
 export const elecCh17Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch17',
-    section: '17.1',
+    chapterId: 'ece-e-analog',
+    section: '6.41',
     name: 'Barkhausen criterion',
     formula: '|Aβ| = 1 at 0° loop phase (360°)',
     note: 'sustained oscillation; design above 1, stabilize down to it',
     latex: '|A\\beta| = 1, \\quad \\angle A\\beta = 0^{\\circ}',
   },
   {
-    chapterId: 'elec-ch17',
-    section: '17.1',
+    chapterId: 'ece-e-analog',
+    section: '6.41',
     name: 'Resonant frequency of an LC tank',
     formula: 'f_r = 1/(2π√(LC))',
     note: 'Hughes eq. [14.5]; sets the oscillation frequency',
     latex: 'f_r = \\frac{1}{2\\pi\\sqrt{LC}}',
   },
   {
-    chapterId: 'elec-ch17',
-    section: '17.1',
+    chapterId: 'ece-e-analog',
+    section: '6.41',
     name: 'Q factor (energy and loss forms)',
     formula: 'Q = ω_r L/R = 2π · (energy stored)/(energy lost per cycle)',
     note: 'Hughes [14.7]–[14.9]; the loss budget the amplifier must fund',
     latex: 'Q = \\frac{\\omega_r L}{R} = 2\\pi\\,\\frac{W_{\\text{stored}}}{\\Delta W_{\\text{cycle}}}',
   },
   {
-    chapterId: 'elec-ch17',
-    section: '17.2',
+    chapterId: 'ece-e-analog',
+    section: '6.42',
     name: 'Relaxation oscillator period',
     formula: 'T = 2RC·ln((1+γ)/(1−γ)); γ = ½ → T = 2RC·ln 3',
     note: 'γ = R₂/(R₁+R₂) is the hysteresis fraction',
     latex: 'T = 2RC\\ln\\!\\frac{1+\\gamma}{1-\\gamma}; \\quad \\gamma = \\tfrac{1}{2} \\Rightarrow T = 2RC\\ln 3',
   },
   {
-    chapterId: 'elec-ch17',
-    section: '17.2',
+    chapterId: 'ece-e-analog',
+    section: '6.42',
     name: '555 astable frequency',
     formula: 'f = 1.44/((R_A + 2R_B)·C)',
     note: 'T_high = 0.693(R_A+R_B)C, T_low = 0.693·R_B·C',
     latex: 'f = \\frac{1.44}{(R_A + 2R_B)\\,C}',
   },
   {
-    chapterId: 'elec-ch17',
-    section: '17.2',
+    chapterId: 'ece-e-analog',
+    section: '6.42',
     name: '555 monostable pulse width',
     formula: 'T = 1.1·R·C (= RC·ln 3)',
     note: 'charge from 0 to ⅔V_CC through R',
     latex: 'T = RC\\ln 3 \\approx 1.1RC',
   },
   {
-    chapterId: 'elec-ch17',
-    section: '17.3',
+    chapterId: 'ece-e-analog',
+    section: '6.43',
     name: 'Wien bridge frequency and gain',
     formula: 'f₀ = 1/(2πRC); network β = 1/3 → A = 3',
     note: 'zero phase shift only at f₀; lamp holds A at exactly 3',
     latex: 'f_0 = \\frac{1}{2\\pi RC}, \\quad \\beta = \\tfrac{1}{3} \\;\\Rightarrow\\; A = 3',
   },
   {
-    chapterId: 'elec-ch17',
-    section: '17.3',
+    chapterId: 'ece-e-analog',
+    section: '6.43',
     name: 'Colpitts tank and crystal resonances',
     formula: 'C_eff = C₁C₂/(C₁+C₂); f_p = f_s·√(1 + C_m/C₀)',
     note: 'series capacitors set the tank; crystal window is ppm-wide',

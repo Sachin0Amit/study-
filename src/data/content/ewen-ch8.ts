@@ -192,7 +192,7 @@ export const ewenCh8Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch8-s3',
+    sectionId: 'hall-ch7-s14',
     readingTime: 6,
     intro: "Energy is stored work ready to act — motion holds kinetic, height holds gravitational potential. This section banks both and converts between them quantitatively.",
     objectives: [
@@ -281,7 +281,7 @@ export const ewenCh8Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch8-s4',
+    sectionId: 'hall-ch7-s15',
     readingTime: 7,
     intro: "Without friction, mechanical energy only changes form — falling trades height for speed reversibly. This section applies $KE_1 + PE_1 = KE_2 + PE_2$ to drops, coasters, and pendulums.",
     objectives: [
@@ -405,7 +405,7 @@ export const ewenCh8Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch8-s5',
+    sectionId: 'hall-ch7-s16',
     readingTime: 5,
     intro: "Society runs on the same joule whether it comes from coal, river, wind, or sun. This section surveys the sources, compares their densities and trade-offs, and prices a solar contribution.",
     objectives: [

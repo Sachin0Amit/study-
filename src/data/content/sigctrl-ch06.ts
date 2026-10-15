@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 export const sigctrlCh06Content: SectionContent[] = [
   // ---------------------------------------------------------------- 6.1
   {
-    sectionId: 'sigctrl-ch6-s1',
+    sectionId: 'ece-e-control-s24',
     readingTime: 10,
     intro: 'Routh-Hurwitz decides stability from characteristic coefficients without factoring any polynomial. Array construction is mechanical, and sign changes count right-half roots directly. Special cases for zero rows and zero leading elements complete the routine with auxiliary-polynomial tools.',
     objectives: [
@@ -122,7 +122,7 @@ export const sigctrlCh06Content: SectionContent[] = [
 
   // ---------------------------------------------------------------- 6.2
   {
-    sectionId: 'sigctrl-ch6-s2',
+    sectionId: 'ece-e-control-s25',
     depth: [
       {
         tier: 'masters',
@@ -256,7 +256,7 @@ export const sigctrlCh06Content: SectionContent[] = [
 
   // ---------------------------------------------------------------- 6.3
   {
-    sectionId: 'sigctrl-ch6-s3',
+    sectionId: 'ece-e-control-s26',
     readingTime: 10,
     intro: 'Root locus draws every closed-loop pole path as gain sweeps from zero to infinity. Angle and magnitude conditions place branches exactly, while asymptotes and breakaways sketch them quickly. Lead and lag networks then reshape the locus to meet speed and accuracy targets.',
     objectives: [
@@ -370,7 +370,7 @@ export const sigctrlCh06Content: SectionContent[] = [
 
   // ---------------------------------------------------------------- 6.4
   {
-    sectionId: 'sigctrl-ch6-s4',
+    sectionId: 'ece-e-control-s27',
     readingTime: 8,
     intro: 'State-space models track internal memory directly with first-order vector equations instead of hiding it in high-order denominators. State choice is flexible while transfer behavior stays fixed. Controllability and observability then test whether inputs reach and outputs reveal that memory.',
     objectives: [

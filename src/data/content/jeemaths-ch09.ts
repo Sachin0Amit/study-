@@ -9,7 +9,7 @@ import type { SectionContent } from '../library'
 export const jeemathsCh09Content: SectionContent[] = [
   // ---------------------------------------------------------------- 9.1
   {
-    sectionId: 'advmath-ch9-s1',
+    sectionId: 'math-a15-s2',
     readingTime: 8,
     intro: 'Dot and cross products convert geometric relations such as projection, area and Volume into algebraic computation. The scalar triple product tests coplanarity and measures parallelepiped Volume in one determinant. This section builds those products with their geometric meanings and standard identities.',
     objectives: [
@@ -128,7 +128,7 @@ export const jeemathsCh09Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 9.2
   {
-    sectionId: 'advmath-ch9-s2',
+    sectionId: 'math-a10-s2',
     readingTime: 9,
     intro: 'Lines in space need vector or symmetric Cartesian forms because a single Cartesian equation cannot capture a line in three dimensions. Direction cosines, angle between lines and the skew-line shortest distance form the core toolkit. This section develops those forms with intersection and coplanarity tests.',
     objectives: [
@@ -226,7 +226,7 @@ export const jeemathsCh09Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 9.3
   {
-    sectionId: 'advmath-ch9-s3',
+    sectionId: 'math-a10-s8',
     readingTime: 8,
     intro: 'Planes are specified by a normal vector plus one point, and the normal form $ax + by + cz + d = 0$ encodes orientation and offset together. Angles between planes, families through a line and bisector planes extend line-geometry ideas one dimension up. This section systematizes those plane tools.',
     objectives: [
@@ -345,7 +345,7 @@ export const jeemathsCh09Content: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 9.4
   {
-    sectionId: 'advmath-ch9-s4',
+    sectionId: 'math-a10-s9',
     readingTime: 9,
     intro: 'Distance from a point to a plane, foot of perpendicular and mirror image are one formula family with single and doubled displacements. The same projection logic gives line-to-plane distance for parallel cases. This section fixes those image-foot formulas with verification habits.',
     objectives: [

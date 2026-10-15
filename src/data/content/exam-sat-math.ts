@@ -14,7 +14,7 @@ import type { SectionContent } from '../library'
 export const satMathContent: SectionContent[] = [
   // ---------------------------------------------------------------- 1.1
   {
-    sectionId: 'math-s1-s1',
+    sectionId: 'math-sk1-s1',
     readingTime: 8,
     prerequisites: [
       'Combining like terms and the distributive property',
@@ -119,7 +119,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 1.2
   {
-    sectionId: 'math-s1-s2',
+    sectionId: 'math-sk1-s2',
     readingTime: 9,
     prerequisites: [
       'Solving one-variable linear equations (Section 1.1)',
@@ -224,7 +224,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 1.3
   {
-    sectionId: 'math-s1-s3',
+    sectionId: 'math-sk1-s3',
     readingTime: 9,
     prerequisites: [
       'Two-variable linear equations and slope (Section 1.2)',
@@ -329,7 +329,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 1.4
   {
-    sectionId: 'math-s1-s4',
+    sectionId: 'math-sk1-s4',
     readingTime: 10,
     prerequisites: [
       'Slope and $y$-intercept (Section 1.2)',
@@ -434,7 +434,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 1.5
   {
-    sectionId: 'math-s1-s5',
+    sectionId: 'math-sk1-s5',
     readingTime: 9,
     prerequisites: [
       'Solving linear equations (Section 1.1)',
@@ -539,7 +539,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.1
   {
-    sectionId: 'math-s2-s1',
+    sectionId: 'math-sk2-s1',
     readingTime: 9,
     prerequisites: [
       'Distributive property and combining like terms',
@@ -643,7 +643,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.2
   {
-    sectionId: 'math-s2-s2',
+    sectionId: 'math-sk2-s2',
     readingTime: 10,
     prerequisites: [
       'Factoring quadratics (Section 2.1)',
@@ -749,7 +749,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 2.3
   {
-    sectionId: 'math-s2-s3',
+    sectionId: 'math-sk2-s3',
     readingTime: 11,
     prerequisites: [
       'Linear functions and function notation (Section 1.3)',
@@ -854,7 +854,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.1
   {
-    sectionId: 'math-s3-s1',
+    sectionId: 'math-sk3-s1',
     readingTime: 8,
     prerequisites: [
       'Fraction arithmetic and simplifying',
@@ -959,7 +959,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.1
   {
-    sectionId: 'math-s4-s1',
+    sectionId: 'math-sk4-s1',
     readingTime: 9,
     prerequisites: [
       'Evaluating expressions with $\\pi$ and exponents',
@@ -1064,7 +1064,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.2
   {
-    sectionId: 'math-s3-s2',
+    sectionId: 'math-sk3-s2',
     readingTime: 9,
     prerequisites: [
       'Fraction–decimal–percent conversions',
@@ -1181,7 +1181,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.3
   {
-    sectionId: 'math-s3-s3',
+    sectionId: 'math-sk3-s3',
     readingTime: 10,
     prerequisites: [
       'Computing averages of small number lists',
@@ -1304,7 +1304,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.4
   {
-    sectionId: 'math-s3-s4',
+    sectionId: 'math-sk3-s4',
     readingTime: 10,
     prerequisites: [
       'Interpreting slope as a rate (Section 1.2)',
@@ -1421,7 +1421,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.5
   {
-    sectionId: 'math-s3-s5',
+    sectionId: 'math-sk3-s5',
     readingTime: 9,
     prerequisites: [
       'Fraction arithmetic',
@@ -1538,7 +1538,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.6
   {
-    sectionId: 'math-s3-s6',
+    sectionId: 'math-sk3-s6',
     readingTime: 8,
     prerequisites: [
       'Percentages (Section 3.2)',
@@ -1655,7 +1655,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 3.7
   {
-    sectionId: 'math-s3-s7',
+    sectionId: 'math-sk3-s7',
     readingTime: 9,
     prerequisites: [
       'Reading study descriptions',
@@ -1772,7 +1772,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.2
   {
-    sectionId: 'math-s4-s2',
+    sectionId: 'math-sk4-s2',
     readingTime: 10,
     prerequisites: [
       'Solving linear equations (Section 1.1)',
@@ -1889,7 +1889,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.3
   {
-    sectionId: 'math-s4-s3',
+    sectionId: 'math-sk4-s3',
     readingTime: 11,
     prerequisites: [
       'Pythagorean theorem basics',
@@ -2007,7 +2007,7 @@ export const satMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- 4.4
   {
-    sectionId: 'math-s4-s4',
+    sectionId: 'math-sk4-s4',
     readingTime: 10,
     prerequisites: [
       'Distance and midpoint ideas from the coordinate plane',

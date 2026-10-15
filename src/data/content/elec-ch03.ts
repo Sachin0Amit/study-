@@ -12,7 +12,7 @@ import type { FormulaEntry } from '../formulas'
 export const elecCh3Content: SectionContent[] = [
   // ------------------------------------------------------------------ 3.1
   {
-    sectionId: 'elec-ch3-s1',
+    sectionId: 'ee-e-basic-electrical-s17',
     readingTime: 10,
     intro: 'Kirchhoff’s two laws are enough to solve any circuit — the problem is that a brute-force application produces too many simultaneous equations. This section builds the two systematic attacks that replace guesswork: the node-voltage method, which writes Kirchhoff’s current law at the essential nodes, and the mesh-current method, which writes Kirchhoff’s voltage law around the meshes. Hughes arrives at them through a ladder of Kirchhoff applications; Nilsson turns them into five-step procedures with precisely defined special cases for sources.',
     objectives: [
@@ -166,7 +166,7 @@ export const elecCh3Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 3.2
   {
-    sectionId: 'elec-ch3-s2',
+    sectionId: 'ee-e-basic-electrical-s18',
     readingTime: 8,
     intro: 'Linearity is the most exploitable property a circuit has. If a network is linear, the response to several sources acting together equals the sum of the responses to each source acting alone — that is the superposition theorem. Its everyday partner is the source transformation, which swaps a voltage source in series with a resistance for a current source in parallel with the same resistance, letting you massage a circuit into whatever shape is easiest to solve.',
     objectives: [
@@ -301,7 +301,7 @@ export const elecCh3Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 3.3
   {
-    sectionId: 'elec-ch3-s3',
+    sectionId: 'ee-e-basic-electrical-s19',
     readingTime: 10,
     intro: 'Thévenin’s theorem is the working engineer’s favourite shortcut: any linear two-terminal network of sources and resistors behaves, at its terminals, like one voltage source in series with one resistance. Norton’s theorem is the same statement in dual form — one current source in parallel with the same resistance. Between them they turn “what happens when I connect this load to that network?” into a one-line calculation.',
     objectives: [
@@ -441,7 +441,7 @@ export const elecCh3Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 3.4
   {
-    sectionId: 'elec-ch3-s4',
+    sectionId: 'ee-e-basic-electrical-s20',
     readingTime: 8,
     intro: 'Some networks — bridges, attenuators, matching pads — refuse to collapse into series and parallel combinations. The delta–star transformation is the tool that unlocks them: three resistors in a triangle and three resistors in a star can be made equivalent pair by pair, and the same algebra renames itself as the π-to-T transformation used throughout communications and power engineering.',
     objectives: [
@@ -551,7 +551,7 @@ export const elecCh3Content: SectionContent[] = [
 
   // ------------------------------------------------------------------ 3.5
   {
-    sectionId: 'elec-ch3-s5',
+    sectionId: 'ee-e-basic-electrical-s21',
     readingTime: 7,
     intro: 'Connect a variable load to any source and the delivered power peaks at exactly one value of load resistance — when the load equals the internal (Thévenin) resistance of the source. This single fact, the maximum-power-transfer theorem, shapes everything from RF amplifier design to the choice not to match a power grid to its generators.',
     objectives: [
@@ -664,72 +664,72 @@ export const elecCh3Content: SectionContent[] = [
 
 export const elecCh3Formulas: FormulaEntry[] = [
   {
-    chapterId: 'elec-ch3',
-    section: '3.1',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.17',
     name: 'Node-voltage KCL pattern',
     formula: '(v₁ − V_s)/R₁ + v₁/R₂ + (v₁ − v₂)/R₃ = 0',
     latex: '\\frac{v_1 - V_s}{R_1} + \\frac{v_1}{R_2} + \\frac{v_1 - v_2}{R_3} = 0',
     note: 'one KCL per nonreference essential node; currents written as node-voltage differences over R',
   },
   {
-    chapterId: 'elec-ch3',
-    section: '3.1',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.17',
     name: 'Mesh-current standard form',
     formula: 'E₁ = R₁₁I₁ − R₁₂I₂ − … − R₁ₙIₙ',
     latex: 'E_1 = R_{11}I_1 - R_{12}I_2 - \\cdots - R_{1n}I_n',
     note: 'own-mesh term positive; mutual terms negative when all mesh currents share one direction',
   },
   {
-    chapterId: 'elec-ch3',
-    section: '3.2',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.18',
     name: 'Superposition of responses',
     formula: 'i_k = i_k′ + i_k″ + … (one term per independent source)',
     latex: 'i_k = i_k^{\\prime} + i_k^{\\prime\\prime} + \\cdots',
     note: 'only currents and voltages add — never powers',
   },
   {
-    chapterId: 'elec-ch3',
-    section: '3.2',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.18',
     name: 'Source transformation',
     formula: 'I_s = V_s / R',
     latex: 'i_s = \\frac{v_s}{R}',
     note: 'voltage source in series with R ↔ current source in parallel with the same R',
   },
   {
-    chapterId: 'elec-ch3',
-    section: '3.3',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.19',
     name: 'Thévenin voltage',
     formula: 'V_th = V_oc',
     latex: 'V_{\\mathrm{Th}} = v_{\\mathrm{oc}}',
     note: 'the open-circuit terminal voltage of the network',
   },
   {
-    chapterId: 'elec-ch3',
-    section: '3.3',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.19',
     name: 'Thévenin / Norton resistance',
     formula: 'R_th = V_oc / I_sc = R_N,  I_N = I_sc',
     latex: 'R_{\\mathrm{Th}} = \\frac{v_{\\mathrm{oc}}}{i_{\\mathrm{sc}}} = R_N, \\quad I_N = i_{\\mathrm{sc}}',
     note: 'with dependent sources use the test-source ratio R = v_T/i_T instead',
   },
   {
-    chapterId: 'elec-ch3',
-    section: '3.4',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.20',
     name: 'Delta-to-star transformation',
     formula: 'R_a = R₂R₃/(R₁ + R₂ + R₃)',
     latex: 'R_a = \\frac{R_2 R_3}{R_1 + R_2 + R_3}',
     note: 'star arm = product of the two adjacent delta resistances over the delta sum',
   },
   {
-    chapterId: 'elec-ch3',
-    section: '3.4',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.20',
     name: 'Star-to-delta transformation',
     formula: 'R₁ = R_b + R_c + R_bR_c/R_a',
     latex: 'R_1 = R_b + R_c + \\frac{R_b R_c}{R_a}',
     note: 'delta side = sum of the two adjacent star arms plus their product over the third',
   },
   {
-    chapterId: 'elec-ch3',
-    section: '3.5',
+    chapterId: 'ee-e-basic-electrical',
+    section: '1.21',
     name: 'Maximum power transfer',
     formula: 'R_L = R_th,  P_max = V_th²/4R_th',
     latex: 'R_L = R_{\\mathrm{Th}}, \\quad p_{\\max} = \\frac{V_{\\mathrm{Th}}^2}{4R_{\\mathrm{Th}}}',

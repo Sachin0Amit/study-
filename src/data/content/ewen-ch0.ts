@@ -7,7 +7,7 @@ import type { SectionContent } from '../library'
 
 export const ewenCh0Content: SectionContent[] = [
   {
-    sectionId: 'ewen-ch0-s1',
+    sectionId: 'young-ch1-s14',
     readingTime: 5,
     intro: "Technicians meet physics every day in motors, circuits, brakes, and beams, often without naming it. This section makes the case that a working knowledge of a few laws and a disciplined method pays off directly on the job.",
     objectives: [
@@ -103,7 +103,7 @@ export const ewenCh0Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch0-s2',
+    sectionId: 'young-ch1-s15',
     readingTime: 5,
     intro: "Modern technology is applied physics made concrete, from the steam engine to the microchip. This section traces that link so the laws ahead feel like the operating principles of the devices around you.",
     objectives: [
@@ -192,7 +192,7 @@ export const ewenCh0Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch0-s3',
+    sectionId: 'young-ch1-s16',
     readingTime: 4,
     intro: "Physics does not stand alone: chemistry, biology, and engineering all build on its laws. Seeing those bridges early helps you transfer each formula to allied trades and sciences.",
     objectives: [
@@ -281,7 +281,7 @@ export const ewenCh0Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch0-s4',
+    sectionId: 'young-ch1-s17',
     readingTime: 6,
     intro: "Physics advances by testing theories against measurement and distilling the survivors into laws. This section defines those terms precisely and introduces the step-by-step problem routine used throughout the book.",
     objectives: [

@@ -7,7 +7,7 @@ import type { SectionContent } from '../library'
 
 export const ewenCh12Content: SectionContent[] = [
   {
-    sectionId: 'ewen-ch12-s1',
+    sectionId: 'hall-ch18-s38',
     readingTime: 5,
     intro: "Everything technicians cut, pour, pump, or wire is matter in one of three phases. This section defines matter, mass, and the phase behaviors the next sections detail.",
     objectives: [
@@ -103,7 +103,7 @@ export const ewenCh12Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch12-s2',
+    sectionId: 'hall-ch18-s39',
     readingTime: 5,
     intro: "Structures stand on solid properties: strength, stiffness, hardness, and ductility. This section defines each and reads material choices off density and strength tables.",
     objectives: [
@@ -192,7 +192,7 @@ export const ewenCh12Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch12-s3',
+    sectionId: 'hall-ch18-s40',
     readingTime: 5,
     intro: "Oils, water, and coolants transmit pressure, lubricate, and carry heat because they flow. This section covers viscosity, surface tension, and pressure transmission in liquids.",
     objectives: [
@@ -281,7 +281,7 @@ export const ewenCh12Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch12-s4',
+    sectionId: 'hall-ch18-s41',
     readingTime: 5,
     intro: "Gases fill, press, and expand with temperature — the behaviors behind tires, tanks, and HVAC. This section previews gas pressure and temperature relations detailed in Chapter 15.",
     objectives: [
@@ -370,7 +370,7 @@ export const ewenCh12Content: SectionContent[] = [
     ],
   },
   {
-    sectionId: 'ewen-ch12-s5',
+    sectionId: 'hall-ch18-s42',
     readingTime: 6,
     intro: "Density is the working property for materials selection: mass packed per volume. This section computes densities, specific gravities, and float-sink verdicts for shop materials.",
     objectives: [

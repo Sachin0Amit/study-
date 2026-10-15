@@ -15,7 +15,7 @@ import type { SectionContent } from '../library'
 export const jeemainMathContent: SectionContent[] = [
   // ---------------------------------------------------------------- Unit 1 · 1.1
   {
-    sectionId: 'math-m1-s1',
+    sectionId: 'math-a1-s7',
     readingTime: 8,
     prerequisites: [
       'The real number system and interval notation such as $(a, b)$ and $[a, b]$',
@@ -120,7 +120,7 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 2 · 2.1
   {
-    sectionId: 'math-m2-s1',
+    sectionId: 'math-a2-s6',
     readingTime: 9,
     prerequisites: [
       'The Cartesian plane and ordered pairs $(x, y)$',
@@ -227,7 +227,7 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 3 · 3.1
   {
-    sectionId: 'math-m3-s1',
+    sectionId: 'math-a5-s7',
     readingTime: 9,
     prerequisites: [
       'Rectangular arrays of numbers and summation notation $\\sum$',
@@ -331,7 +331,7 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 4 · 4.1
   {
-    sectionId: 'math-m4-s1',
+    sectionId: 'math-a4-s5',
     readingTime: 8,
     prerequisites: [
       'Multiplication tables and systematic listing',
@@ -439,7 +439,7 @@ export const jeemainMathContent: SectionContent[] = [
   // for a Positive Integral Index' — NTA Unit 5. (The task brief's shorthand
   // label "Sequences and Series" belongs to Unit 6 and is not this section.)
   {
-    sectionId: 'math-m5-s1',
+    sectionId: 'math-a4-s6',
     readingTime: 9,
     prerequisites: [
       'Expanding $(a + b)^2$ and $(a + b)^3$ by direct multiplication',
@@ -544,7 +544,7 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 7 · 7.1
   {
-    sectionId: 'math-m7-s1',
+    sectionId: 'calc-ch1-s6',
     readingTime: 10,
     prerequisites: [
       'Set-builder notation and the function concept from Unit 1',
@@ -649,7 +649,7 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 8 · 8.1
   {
-    sectionId: 'math-m8-s1',
+    sectionId: 'calc-ch5-s9',
     readingTime: 10,
     prerequisites: [
       'Derivatives of $x^n$, $\\sin x$, $\\cos x$, $e^x$ and $\\ln x$ (Unit 7)',
@@ -754,7 +754,7 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 10 · 10.1
   {
-    sectionId: 'math-m10-s1',
+    sectionId: 'math-a8-s11',
     readingTime: 9,
     prerequisites: [
       'Plotting points and the Pythagoras theorem',
@@ -858,7 +858,7 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 11 · 11.1
   {
-    sectionId: 'math-m11-s1',
+    sectionId: 'math-a10-s6',
     readingTime: 8,
     prerequisites: [
       'Plane coordinate geometry: distance and section formulae (Unit 10)',
@@ -962,7 +962,7 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 14 · 14.1
   {
-    sectionId: 'math-m14-s1',
+    sectionId: 'math-a7-s6',
     readingTime: 9,
     prerequisites: [
       'Right-triangle definitions of $\\sin$, $\\cos$ and $\\tan$',
