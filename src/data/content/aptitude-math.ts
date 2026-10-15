@@ -96,7 +96,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Expand each left side. Step 2: Choice A gives $2x + 10 = 2x + 10$ — an identity with infinitely many solutions. Step 3: Choice B gives $2x + 10 = 2x + 5$, which reduces to $10 = 5$, a false statement, so no value of $x$ works. Step 4: Choices C and D each reduce to $x = 0$, a single solution.',
       },
-      // SAT-pattern: solve from context, fixed fee + per-unit rate
+      // apt-pattern: solve from context, fixed fee + per-unit rate
       {
         q: 'A phone plan costs $\\$35$ per month plus $\\$0.10$ per minute of talk time. One month\'s bill is $\\$52.50$. How many minutes were used?',
         options: ['$525$', '$170$', '$175$', '$185$'],
@@ -201,7 +201,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Solve for $y$: $3y = -6x + 12$. Step 2: Divide by 3: $y = -2x + 4$. Step 3: The coefficient of $x$ is the slope, $-2$. Step 4: Reading $-A = -6$ as the slope is the trap — you must divide by $B$.',
       },
-      // SAT-pattern: parallel line through a point, then evaluate
+      // apt-pattern: parallel line through a point, then evaluate
       {
         q: 'A line parallel to $y = 5x - 3$ passes through $(3, 8)$. What is the value of $y$ when $x = 4$?',
         options: ['$17$', '$15$', '$13$', '$27$'],
@@ -312,7 +312,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Slope $m = \\frac{13 - 4}{3 - 0} = 3$. Step 2: The point $(0, 4)$ is the $y$-intercept, so $f(x) = 3x + 4$. Step 3: Evaluate: $f(-2) = -6 + 4 = -2$. Step 4: The answer $2$ is $f(+2)$ — the input\'s sign matters.',
       },
-      // SAT-pattern: interpret slope as rate in a population model
+      // apt-pattern: interpret slope as rate in a population model
       {
         q: 'The function $P(t) = 95t + 1{,}200$ models a town\'s population $t$ years after 2020. What does the number $95$ mean in this model?',
         options: ['The population in the year 2020', 'The increase in population each year', 'The number of years since 2020', 'The total population after $t$ years'],
@@ -411,7 +411,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 3,
         explanation: 'Step 1: Add the equations: the $y$-terms cancel and $2x = 18$. Step 2: So $x = 9$. Step 3: Then $y = 5$ from the first equation. Step 4: The pair $(9, 5)$ checks in both: $14$ and $4$. ✓',
       },
-      // SAT-pattern: parameter k selects the solution count
+      // apt-pattern: parameter k selects the solution count
       {
         q: 'The system $2x + y = 3$ and $4x + 2y = k$ has infinitely many solutions. What is the value of $k$?',
         options: ['$6$', '$3$', '$2$', '$12$'],
@@ -528,7 +528,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 3,
         explanation: 'Step 1: The symbol $<$ is strict, so the boundary $y = \\frac{1}{2}x - 2$ is dashed. Step 2: With $y$ isolated, "less than" shades below the line. Step 3: Test $(0, 0)$: $0 < -2$ is false, so the origin is outside the region — consistent with shading below. Step 4: Solid lines belong to $\\le$ or $\\ge$ only.',
       },
-      // SAT-pattern: point-test a budget constraint
+      // apt-pattern: point-test a budget constraint
       {
         q: 'A club can spend at most $\\$200$ on $t$ tables that cost $\\$25$ each and $c$ chairs that cost $\\$10$ each. Which ordered pair $(t, c)$ satisfies $25t + 10c \\le 200$?',
         options: ['$(4, 10)$', '$(5, 9)$', '$(6, 6)$', '$(8, 4)$'],
@@ -726,7 +726,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 3,
         explanation: 'Step 1: Factor: $(x - 2)(x - 5) = 0$. Step 2: Zero product property: $x = 2$ or $x = 5$. Step 3: Both check: $4 - 14 + 10 = 0$ and $25 - 35 + 10 = 0$. Step 4: The negative pairs come from mis-factoring $x^2 + 7x + 10$.',
       },
-      // SAT-pattern: discriminant parameter
+      // apt-pattern: discriminant parameter
       {
         q: 'The equation $x^2 + 6x + c = 0$ has exactly one real solution. What is $c$?',
         options: ['$3$', '$9$', '$36$', '$6$'],
@@ -837,7 +837,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Substitute $x = 3$ into the exponent: $f(3) = 5 \\cdot 2^3$. Step 2: Compute the power: $2^3 = 8$. Step 3: Multiply: $5 \\cdot 8 = 40$. Step 4: The distractor $125$ is $5^3$ — using the wrong base.',
       },
-      // SAT-pattern: percent change to growth factor
+      // apt-pattern: percent change to growth factor
       {
         q: 'A population of $1{,}200$ grows $7\\%$ each year. Which expression models the population $t$ years later?',
         options: ['$1{,}200(0.07)^t$', '$1{,}200 + 1.07t$', '$1{,}200(0.93)^t$', '$1{,}200(1.07)^t$'],
@@ -948,7 +948,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 2,
         explanation: 'Step 1: Sixty minutes holds $\\frac{60}{6} = 10$ six-minute blocks. Step 2: Each block covers $1$ kilometer. Step 3: So the runner covers $10$ kilometers per hour. Step 4: The trap $0.6$ comes from dividing in the wrong direction.',
       },
-      // SAT-pattern: proportion in a recipe context
+      // apt-pattern: proportion in a recipe context
       {
         q: 'A recipe serving 4 requires 3 cups of rice. How many cups are needed for 10 servings?',
         options: ['$7$', '$8$', '$13.3$', '$7.5$'],
@@ -1053,7 +1053,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 3,
         explanation: 'Step 1: New dimensions: $12$ by $20$. Step 2: New area: $12 \\times 20 = 240$. Step 3: Check with scaling: original area $15$ multiplied by $k^2 = 16$ gives $240$. Step 4: $60$ scales the area by $k = 4$ instead of $k^2 = 16$ — the built-in trap.',
       },
-      // SAT-pattern: volume with a unit conversion
+      // apt-pattern: volume with a unit conversion
       {
         q: 'A rectangular tank measures 2 m by 3 m by 0.5 m. How many liters of water does it hold when full? ($1\\ \\text{m}^3 = 1{,}000$ liters)',
         options: ['$3$', '$300$', '$3{,}000$', '$30{,}000$'],
@@ -1158,7 +1158,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: The change is $50 - 40 = 10$ dollars. Step 2: The base is the original price, $40$. Step 3: $\\frac{10}{40} = 0.25 = 25\\%$. Step 4: $20\\%$ divides by the new value $50$ — the wrong base, and it is always among the choices.',
       },
-      // SAT-pattern: decay factor from a percent decrease
+      // apt-pattern: decay factor from a percent decrease
       {
         q: 'A savings account holds $\\$500$ and loses $12\\%$ of its value each year. Which expression gives its value after $t$ years?',
         options: ['$500(0.12)^t$', '$500(0.88)^t$', '$500(1.12)^t$', '$500 - 12t$'],
@@ -1287,7 +1287,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 0,
         explanation: 'Step 1: Every value shifts up by $5$, so the mean and median each rise by $5$. Step 2: Spread measures depend on distances *between* values, which are unchanged. Step 3: So the IQR and standard deviation stay the same. Step 4: Options claiming the standard deviation rises mistake a shift for a stretch.',
       },
-      // SAT-pattern: median from a frequency table
+      // apt-pattern: median from a frequency table
       {
         q: 'Fifteen students report daily screen time in hours: 2 report $0$, 5 report $1$, 6 report $2$, and 2 report $3$. What is the median?',
         options: ['$1$', '$2$', '$1.5$', '$2.5$'],
@@ -1398,7 +1398,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 0,
         explanation: 'Step 1: Substitute $x = 10$: $\\hat{y} = 0.8(10) + 12$. Step 2: Compute: $8 + 12 = 20$. Step 3: The prediction is $20$. Step 4: $8$ forgets the intercept, $12.8$ mis-adds $0.8 + 12$, and $28$ doubles the slope term.',
       },
-      // SAT-pattern: model type from differences versus ratios
+      // apt-pattern: model type from differences versus ratios
       {
         q: 'Data points are $(2, 5)$, $(3, 10)$, $(4, 20)$, and $(5, 40)$. Which type of model best fits the data?',
         options: ['$\\text{Linear}$', '$\\text{Exponential}$', '$\\text{Quadratic}$', '$\\text{No model fits}$'],
@@ -1515,7 +1515,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Total marbles: $6 + 4 + 2 = 12$. Step 2: Not-blue marbles: $6 + 2 = 8$. Step 3: $P = \\frac{8}{12} = \\frac{2}{3}$. Step 4: $\\frac{1}{3}$ is the complement $P(\\text{blue})$ — the classic swap.',
       },
-      // SAT-pattern: conditional probability, wrong-marginal distractors
+      // apt-pattern: conditional probability, wrong-marginal distractors
       {
         q: 'Of 250 students, 40 walk to school and own a bike, 60 walk and do not own a bike, 70 do not walk and own a bike, and 80 do neither. Given that a student walks to school, what is the probability the student owns a bike?',
         options: ['$0.40$', '$0.36$', '$0.16$', '$0.60$'],
@@ -1632,7 +1632,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 0,
         explanation: 'Step 1: Subtract and add the margin to the estimate: $62 - 4 = 58$ and $62 + 4 = 66$. Step 2: The interval is $58\\%$ to $66\\%$, symmetric about the estimate. Step 3: Options adding the margin to only one side misread how intervals work. Step 4: $56\\%$ to $68\\%$ uses a $6$-point margin — a misread of the arithmetic.',
       },
-      // SAT-pattern: what reduces margin of error
+      // apt-pattern: what reduces margin of error
       {
         q: 'A poll\'s margin of error is $5\\%$. Which change would most likely reduce it?',
         options: ['Increasing the number of people surveyed', 'Decreasing the number of people surveyed', 'Reporting results as decimals instead of percents', 'Asking a more complicated question'],
@@ -1749,7 +1749,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 0,
         explanation: 'Step 1: A causal claim needs a controlled experiment with random assignment. Step 2: Only the first option assigns the method randomly, so group differences reduce to the method itself. Step 3: The survey and volunteer designs let self-selection and motivation confound the result. Step 4: The before-and-after design allows other time-varying factors — a new teacher, a new semester — to explain the change.',
       },
-      // SAT-pattern: identify the confounding variable
+      // apt-pattern: identify the confounding variable
       {
         q: 'Students who eat breakfast have a higher average GPA than students who skip it. Which of the following is a confounding variable?',
         options: ['Breakfast eaters tend to keep more regular sleep schedules, which also raises GPA', 'The survey was conducted during the fall semester', 'GPA is reported on a 4.0 scale', 'Some students eat breakfast at home and others at school'],
@@ -1866,7 +1866,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: The angles sum to $180^{\\circ}$: $2x + 3x + 4x = 180$. Step 2: Combine: $9x = 180$. Step 3: $x = 20$. Step 4: $30$ comes from $\\frac{180}{6}$, miscounting the number of angle units — the actual angles are $40^{\\circ}$, $60^{\\circ}$, and $80^{\\circ}$.',
       },
-      // SAT-pattern: same-side interior versus alternate interior
+      // apt-pattern: same-side interior versus alternate interior
       {
         q: 'Two parallel lines are cut by a transversal. One angle measures $65^{\\circ}$. What is the measure of a same-side interior angle?',
         options: ['$65^{\\circ}$', '$115^{\\circ}$', '$25^{\\circ}$', '$90^{\\circ}$'],
@@ -1990,7 +1990,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Complementary angles swap sine and cosine: $\\sin(x) = \\cos(90^{\\circ} - x)$. Step 2: With $x = 20^{\\circ}$, the complement is $70^{\\circ}$. Step 3: So $\\sin(20^{\\circ}) = \\cos(70^{\\circ})$. Step 4: $\\cos(20^{\\circ}) = \\sin(70^{\\circ})$ — the same identity in reverse, planted as the mirror trap.',
       },
-      // SAT-pattern: 30-60-90 side ratios
+      // apt-pattern: 30-60-90 side ratios
       {
         q: 'The hypotenuse of a 30-60-90 triangle is $12$. What is the length of the longer leg?',
         options: ['$6\\sqrt{3}$', '$6$', '$12\\sqrt{3}$', '$4\\sqrt{3}$'],
@@ -2102,7 +2102,7 @@ export const aptitudeMathContent: SectionContent[] = [
         answer: 0,
         explanation: 'Step 1: Match $(x - h)^2 + (y - k)^2 = r^2$. Step 2: $(x + 3)^2 = (x - (-3))^2$ gives $h = -3$, and $(y - 2)^2$ gives $k = 2$. Step 3: The right side is $r^2 = 49$, so $r = 7$. Step 4: Both traps appear: flipped signs and radius $49$ — the squared-radius misread is the most common circle error.',
       },
-      // SAT-pattern: radius versus diameter in an arc computation
+      // apt-pattern: radius versus diameter in an arc computation
       {
         q: 'A circle has diameter $12$. What is the length of a $120^{\\circ}$ arc?',
         options: ['$4\\pi$', '$8\\pi$', '$12\\pi$', '$2\\pi$'],
