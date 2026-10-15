@@ -207,7 +207,7 @@ export const cppCh19Content: SectionContent[] = [
         answer: 0,
         explanation: "The built-in operators evaluate the left operand first and may skip the right; an overload becomes a normal function call — both operands evaluated, in unspecified order — so the notation promises what the code does not deliver.",
       },
-      // PYQ-pattern: GATE 2007 — prefix versus postfix increment semantics (rephrased)
+      // PYQ-pattern — prefix versus postfix increment semantics (rephrased)
       {
         q: "Which statement about iterator stepping is correct?\n```cpp\nauto it = v.begin();\nauto p = it++;\nauto q = ++it;\n```",
         options: ["Both `p` and `q` hold the advanced iterator", "`p` holds the original position while `q` holds the advanced one, and postfix typically costs an extra copy", "`p` holds the advanced position while `q` holds the original", "Both expressions are undefined when applied to iterators"],

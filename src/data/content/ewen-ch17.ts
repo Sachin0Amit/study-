@@ -1209,42 +1209,42 @@ export const ewenCh17Content: SectionContent[] = [
         answer: 1,
         explanation: "Fixed power at higher $V$ needs less $I$, and losses scale with $I^{2}$.",
       },
-      // PYQ-pattern: JEE Mains 2019 — Coulomb force (rephrased, values changed)
+      // PYQ-pattern — Coulomb force (rephrased, values changed)
       {
         q: "Charges $Q_{1} = 2.0 \\text{ }\\mu\\text{C}$ and $Q_{2} = 3.0 \\text{ }\\mu\\text{C}$ sit $r = 0.30 \\text{ m}$ apart in air. The repulsion magnitude is:",
         options: ["$0.060 \\text{ N}$", "$0.60 \\text{ N}$", "$6.0 \\text{ N}$", "$60 \\text{ N}$"],
         answer: 1,
         explanation: "Step 1: Given $Q_{1} = 2.0 \\times 10^{-6} \\text{ C}$, $Q_{2} = 3.0 \\times 10^{-6} \\text{ C}$, $r = 0.30 \\text{ m}$. Step 2: Governing law is $F = kQ_{1}Q_{2}/r^{2}$ with $k = 9.0 \\times 10^{9}$. Step 3: Key equation: $$F = \\frac{(9.0 \\times 10^{9})(2.0 \\times 10^{-6})(3.0 \\times 10^{-6})}{(0.30)^{2}}.$$ Step 4: Numerics give numerator $5.40 \\times 10^{-2}$ over $0.090$, so $F = 0.60 \\text{ N}$; units $\\text{N}$ check out. Step 5: Distractors fail because $6.0$ uses centimeters as meters, $0.060$ slips a decimal, and $60$ drops both micro prefixes. Step 6: Conclude the force is **$0.60 \\text{ N}$** repulsive."
       },
-      // PYQ-pattern: GATE PH 2018 — wire resistance (rephrased, values changed)
+      // PYQ-pattern — wire resistance (rephrased, values changed)
       {
         q: "A copper wire ($\\rho = 1.68 \\times 10^{-8} \\text{ }\\Omega\\cdot\\text{m}$) has length $L = 2.0 \\text{ m}$ and cross-section $A = 1.0 \\text{ mm}^{2}$. Its resistance is:",
         options: ["$3.36 \\text{ }\\Omega$", "$0.336 \\text{ }\\Omega$", "$33.6 \\text{ }\\Omega$", "$0.0336 \\text{ }\\Omega$"],
         answer: 3,
         explanation: "Step 1: Given $\\rho = 1.68 \\times 10^{-8}$, $L = 2.0 \\text{ m}$, $A = 1.0 \\times 10^{-6} \\text{ m}^{2}$. Step 2: Governing law is $R = \\rho L/A$. Step 3: Key equation: $$R = \\frac{(1.68 \\times 10^{-8})(2.0)}{1.0 \\times 10^{-6}}.$$ Step 4: Numerics give $R = 3.36 \\times 10^{-2} = 0.0336 \\text{ }\\Omega$; units $\\Omega\\cdot\\text{m}\\times\\text{m}/\\text{m}^{2}$ are ohms. Step 5: Distractors fail by powers of ten from mishandling $1 \\text{ mm}^{2} = 10^{-6} \\text{ m}^{2}$. Step 6: Conclude the wire presents **$0.0336 \\text{ }\\Omega$**."
       },
-      // PYQ-pattern: JEE Mains 2021 — series-parallel circuit (rephrased, values changed)
+      // PYQ-pattern — series-parallel circuit (rephrased, values changed)
       {
         q: "Resistors $6 \\text{ }\\Omega$ and $3 \\text{ }\\Omega$ in parallel sit in series with $4 \\text{ }\\Omega$ across $12 \\text{ V}$. The total current is:",
         options: ["$2.0 \\text{ A}$", "$6.0 \\text{ A}$", "$1.0 \\text{ A}$", "$3.0 \\text{ A}$"],
         answer: 0,
         explanation: "Step 1: Given $6$ and $3$ in parallel, plus $4$ in series, all in ohms, fed by $12 \\text{ V}$. Step 2: Governing laws are $1/R_{p} = 1/6+1/3$ and $I = V/R_{tot}$. Step 3: Key equation: $$R_{p} = \\frac{(6)(3)}{6+3} = 2.0 \\text{ }\\Omega, \\qquad R_{tot} = 2.0+4.0 = 6.0 \\text{ }\\Omega.$$ Step 4: Numerics give $I = 12/6.0 = 2.0 \\text{ A}$; units $\\text{V}/\\Omega$ are amperes. Step 5: Distractors fail because $6.0$ divides by the parallel part alone, $1.0$ adds all three directly, and $3.0$ mis-adds the parallel pair. Step 6: Conclude the battery supplies **$2.0 \\text{ A}$**."
       },
-      // PYQ-pattern: JEE Advanced 2017 — bulb resistance (rephrased, values changed)
+      // PYQ-pattern — bulb resistance (rephrased, values changed)
       {
         q: "A $120 \\text{ V}$, $60 \\text{ W}$ bulb runs at rated voltage. Its filament resistance and current are:",
         options: ["$2.0 \\text{ }\\Omega$, $30 \\text{ A}$", "$0.50 \\text{ }\\Omega$, $120 \\text{ A}$", "$240 \\text{ }\\Omega$, $0.50 \\text{ A}$", "$7200 \\text{ }\\Omega$, $0.017 \\text{ A}$"],
         answer: 2,
         explanation: "Step 1: Given $V = 120 \\text{ V}$ fixed and $P = 60 \\text{ W}$. Step 2: Governing laws are $P = V^{2}/R$ for fixed voltage and $I = P/V$. Step 3: Key equation: $$R = \\frac{V^{2}}{P} = \\frac{14400}{60}, \\qquad I = \\frac{60}{120}.$$ Step 4: Numerics give $R = 240 \\text{ }\\Omega$ and $I = 0.50 \\text{ A}$; check $VI = 60 \\text{ W}$ closes the loop. Step 5: Distractors fail because $2.0$ computes $P/V$ as resistance, $0.50$ quotes the current as resistance, and $7200$ multiplies $V$ by $P$. Step 6: Conclude the hot filament is **$240 \\text{ }\\Omega$ carrying $0.50 \\text{ A}$**."
       },
-      // PYQ-pattern: GATE PH 2020 — point charge field (rephrased, values changed)
+      // PYQ-pattern — point charge field (rephrased, values changed)
       {
         q: "A point charge $Q = 5.0 \\text{ nC}$ sits in air. The field magnitude $0.10 \\text{ m}$ away is:",
         options: ["$450 \\text{ V/m}$", "$4500 \\text{ V/m}$", "$45000 \\text{ V/m}$", "$45 \\text{ V/m}$"],
         answer: 1,
         explanation: "Step 1: Given $Q = 5.0 \\times 10^{-9} \\text{ C}$ and $r = 0.10 \\text{ m}$. Step 2: Governing law is $E = kQ/r^{2}$ with $k = 9.0 \\times 10^{9}$. Step 3: Key equation: $$E = \\frac{(9.0 \\times 10^{9})(5.0 \\times 10^{-9})}{(0.10)^{2}}.$$ Step 4: Numerics give numerator $45$ over $0.010$, so $E = 4500 \\text{ V/m}$; units $\\text{N/C} = \\text{V/m}$ confirm the form. Step 5: Distractors fail by factors of ten from squaring $0.10$ wrongly or reading centimeters as meters. Step 6: Conclude the field is **$4500 \\text{ V/m}$** outward."
       },
-      // PYQ-pattern: JEE Mains 2023 — energy billing (rephrased, values changed)
+      // PYQ-pattern — energy billing (rephrased, values changed)
       {
         q: "A $1.50 \\text{ kW}$ heater runs $4.00 \\text{ h}$ at $\\$0.180/\\text{kWh}$. The operating cost is:",
         options: ["$\\$1.08$", "$\\$10.80$", "$\\$0.11$", "$\\$6.00$"],

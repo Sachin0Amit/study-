@@ -154,7 +154,7 @@ export const elecCh8Content: SectionContent[] = [
         answer: 1,
         explanation: 'The projection on the vertical axis is $I_{m}\\sin\\omega t$ — zero when the phasor is horizontal, $I_{m}$ at a quarter turn, and negative as it swings past $180^{\\circ}$. One revolution is one cycle of the wave.',
       },
-      // PYQ-pattern: GATE 2014 — RMS value of a sinusoid (rephrased, values changed)
+      // PYQ-pattern — RMS value of a sinusoid (rephrased, values changed)
       {
         q: 'A voltage varies as $v = 170 \\sin(377t)$ V. Its RMS value is closest to:',
         options: ['85 V', '108 V', '120 V', '170 V'],
@@ -447,7 +447,7 @@ export const elecCh8Content: SectionContent[] = [
         answer: 1,
         explanation: '$\\mathbf{V} = \\frac{1}{j\\omega C}\\mathbf{I} = -j\\frac{1}{\\omega C}\\mathbf{I}$, so the impedance is $-j/\\omega C$ and the reactance — the imaginary part — is conventionally $-1/\\omega C$. The inductor mirrors it with $+j\\omega L$.',
       },
-      // PYQ-pattern: ISRO 2018 — series RLC impedance magnitude (rephrased, values changed)
+      // PYQ-pattern — series RLC impedance magnitude (rephrased, values changed)
       {
         q: 'A series circuit with R = 30 Ω, L = 0.10 H and C = 50 μF operates at 50 Hz from a 230 V RMS supply. The impedance magnitude is closest to:',
         options: ['22 Ω', '30 Ω', '44 Ω', '64 Ω'],

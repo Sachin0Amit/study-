@@ -305,14 +305,14 @@ export const osCh11Content: SectionContent[] = [
         explanation: "Raw swap uses a purpose-built allocator optimized for speed rather than storage efficiency; internal fragmentation is acceptable because swap is short-lived and reinitialized at boot. The cost: swap size is fixed at partitioning time, while a swap file can grow or be added anywhere."
       }
     ,
-      // PYQ-pattern: GATE 2016 — SSTF head movement (rephrased)
+      // PYQ-pattern — SSTF head movement (rephrased)
       {
         q: "Queue $98,183,37,122,14,124,65,67$, head at $53$. Under shortest-seek-time-first, what is total head movement?",
         options: ["$640$", "$208$", "$236$", "$299$"],
         answer: 2,
         explanation: "**Step 1 — Given data:** eight requests, start $53$.\n**Step 2 — Rule:** always step to the nearest pending cylinder.\n**Step 3 — Computation:**\n```\n53->65 (12), ->67 (2), ->37 (30), ->14 (23),\n->98 (84), ->122 (24), ->124 (2), ->183 (59)\ntotal = 236\n```\n**Step 4 — Cross-check:** sum of legs $12+2+30+23+84+24+2+59 = 236$; all eight requests served exactly once.\n**Step 5 — Distractors:** $640$ is FCFS order; $208$ is LOOK toward smaller first; $299$ is LOOK toward larger first.\n**Step 6 — Conclude:** $236$ cylinders."
       },
-      // PYQ-pattern: ISRO 2018 — LOOK head movement (rephrased)
+      // PYQ-pattern — LOOK head movement (rephrased)
       {
         q: "Same queue and head ($53$). Under LOOK moving toward smaller cylinders first (no travel to disk ends), what is total movement?",
         options: ["$208$", "$236$", "$640$", "$382$"],

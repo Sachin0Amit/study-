@@ -747,42 +747,42 @@ export const youngCh34Content: SectionContent[] = [
         answer: 1,
         explanation: "Reflection is achromatic and mirrors support from behind."
       },
-      // PYQ-pattern: JEE Mains 2020 — lensmaker formula (rephrased, values changed)
+      // PYQ-pattern — lensmaker formula (rephrased, values changed)
       {
         q: "A biconvex lens of glass $n = 1.50$ has surface radii $R_{1} = 20 \\text{ cm}$ and $R_{2} = -20 \\text{ cm}$. Its focal length and power are:",
         options: ["$+20 \\text{ cm}$, $+5.0 \\text{ D}$ converging", "$-20 \\text{ cm}$, $-5.0 \\text{ D}$ diverging", "$+10 \\text{ cm}$, $+10 \\text{ D}$ converging", "$+40 \\text{ cm}$, $+2.5 \\text{ D}$ converging"],
         answer: 0,
         explanation: "Step 1: Given $n = 1.50$, $R_{1} = +20 \\text{ cm}$, $R_{2} = -20 \\text{ cm}$ with the sign convention for a biconvex pair. Step 2: Governing law is the lensmaker relation $1/f = (n-1)(1/R_{1}-1/R_{2})$. Step 3: Key equation: $$\\frac{1}{f} = (0.50)\\left(\\frac{1}{20}-\\frac{1}{-20}\\right) = \\frac{0.50}{10} = \\frac{1}{20}.$$ Step 4: Numerics give $f = +20 \\text{ cm} = +0.20 \\text{ m}$ and power $P = 1/f = +5.0 \\text{ D}$; positive $f$ means converging, as required. Step 5: Distractors fail because the negative choice flips both radii signs, $+10 \\text{ cm}$ forgets the $(n-1)$ factor, and $+40 \\text{ cm}$ uses only one surface. Step 6: Conclude the lens is converging with **$f = +20 \\text{ cm}$ and $P = +5.0 \\text{ D}$**."
       },
-      // PYQ-pattern: JEE Advanced 2019 — concave mirror image (rephrased, values changed)
+      // PYQ-pattern — concave mirror image (rephrased, values changed)
       {
         q: "A concave mirror has focal length $f = 15 \\text{ cm}$. An object placed $d_{o} = 45 \\text{ cm}$ in front forms an image at:",
         options: ["$+22.5 \\text{ cm}$ real, inverted and reduced", "$-22.5 \\text{ cm}$ virtual behind the mirror", "$+45 \\text{ cm}$ real magnified", "$-11 \\text{ cm}$ virtual enlarged"],
         answer: 0,
         explanation: "Step 1: Given converging mirror $f = 15 \\text{ cm}$ (positive) and object distance $d_{o} = 45 \\text{ cm}$. Step 2: Governing law is the mirror equation $1/f = 1/d_{o}+1/d_{i}$ with $m = -d_{i}/d_{o}$. Step 3: Key equation: $$\\frac{1}{d_{i}} = \\frac{1}{15}-\\frac{1}{45} = \\frac{2}{45}.$$ Step 4: Numerics give $d_{i} = +22.5 \\text{ cm}$ on the real side with $m = -22.5/45 = -0.50$; units are $\\text{cm}$ and $|m| < 1$ means reduced. Step 5: Distractors fail because the negative sign puts the image behind the mirror, $45$ copies the object distance, and $11$ inverts the fraction algebra. Step 6: Conclude the image is real at **$+22.5 \\text{ cm}$ with $m = -0.50$**."
       },
-      // PYQ-pattern: GATE PH 2020 — total internal reflection (rephrased, values changed)
+      // PYQ-pattern — total internal reflection (rephrased, values changed)
       {
         q: "Light travels from glass of index $n = 1.50$ toward air. The critical angle is closest to:",
         options: ["$90^{\\circ}$", "$30^{\\circ}$", "$41.8^{\\circ}$", "$48.8^{\\circ}$"],
         answer: 2,
         explanation: "Step 1: Given denser index $n_{1} = 1.50$ and rarer index $n_{2} = 1.00$. Step 2: Governing law is Snell at grazing emergence, $\\sin c = n_{2}/n_{1}$. Step 3: Key equation: $$\\sin c = \\frac{1.00}{1.50} = 0.667 \\quad\\Rightarrow\\quad c = \\sin^{-1}(0.667).$$ Step 4: Numerics give $c \\approx 41.8^{\\circ}$; the angle is dimensionless in degrees and must lie below $90^{\\circ}$. Step 5: Distractors fail because $90^{\\circ}$ is the refracted angle at onset, $30^{\\circ}$ assumes $n = 2.0$, and $48.8^{\\circ}$ uses $0.75$ for the ratio. Step 6: Conclude rays beyond **$41.8^{\\circ}$** stay trapped."
       },
-      // PYQ-pattern: JEE Mains 2021 — thin lens image (rephrased, values changed)
+      // PYQ-pattern — thin lens image (rephrased, values changed)
       {
         q: "A converging lens of $f = 10 \\text{ cm}$ forms the image of an object at $d_{o} = 30 \\text{ cm}$. The image distance and magnification are:",
         options: ["$+7.5 \\text{ cm}$, $m = -0.25$", "$-15 \\text{ cm}$, virtual", "$+30 \\text{ cm}$, $m = -1.0$", "$+15 \\text{ cm}$, $m = -0.50$ real inverted"],
         answer: 3,
         explanation: "Step 1: Given $f = +10 \\text{ cm}$ and $d_{o} = +30 \\text{ cm}$ for a converging lens. Step 2: Governing laws are $1/f = 1/d_{o}+1/d_{i}$ and $m = -d_{i}/d_{o}$. Step 3: Key equation: $$\\frac{1}{d_{i}} = \\frac{1}{10}-\\frac{1}{30} = \\frac{2}{30}.$$ Step 4: Numerics give $d_{i} = +15 \\text{ cm}$ with $m = -15/30 = -0.50$; the positive sign lands on the opposite side, real and inverted. Step 5: Distractors fail because $7.5$ halves the fraction result, the negative choice flips the real side, and $30$ copies the object distance. Step 6: Conclude the lens gives **$d_{i} = +15 \\text{ cm}$ with $m = -0.50$**."
       },
-      // PYQ-pattern: JEE Advanced 2018 — apparent depth (rephrased, values changed)
+      // PYQ-pattern — apparent depth (rephrased, values changed)
       {
         q: "A coin lies $12 \\text{ cm}$ below a water surface of index $n = 1.33$. Viewed from nearly overhead, its apparent depth is:",
         options: ["$16 \\text{ cm}$", "$9.0 \\text{ cm}$", "$12 \\text{ cm}$", "$4.5 \\text{ cm}$"],
         answer: 1,
         explanation: "Step 1: Given real depth $h = 12 \\text{ cm}$ and $n = 1.33$ for near-normal viewing. Step 2: Governing law for small angles is $h_{app} = h/n$, since rays bend away from the normal on exit. Step 3: Key equation: $$h_{app} = \\frac{12}{1.33}.$$ Step 4: Numerics give $h_{app} \\approx 9.0 \\text{ cm}$; units stay $\\text{cm}$ and the image must rise above the object. Step 5: Distractors fail because $16$ multiplies by $n$ instead of dividing, $12$ ignores refraction, and $4.5$ halves once more. Step 6: Conclude the coin appears lifted to **$9.0 \\text{ cm}$** below the surface."
       },
-      // PYQ-pattern: GATE PH 2022 — contact lens combination (rephrased, values changed)
+      // PYQ-pattern — contact lens combination (rephrased, values changed)
       {
         q: "Lenses $f_{1} = +25 \\text{ cm}$ and $f_{2} = -50 \\text{ cm}$ are cemented in contact. The combination power is:",
         options: ["$+2.0 \\text{ D}$", "$-2.0 \\text{ D}$", "$+6.0 \\text{ D}$", "$0$"],

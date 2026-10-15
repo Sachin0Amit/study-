@@ -422,14 +422,14 @@ export const ch3Content: SectionContent[] = [
         answer: 0,
         explanation: "Tractability is the polynomial/exponential dividing line: nᵏ for some fixed k scales to large inputs, while 2ⁿ does not, whatever the hardware. Implementation and testing say nothing about asymptotic behavior."
       },
-      // PYQ-pattern: GATE 2011 — average-case complexity of linear search (rephrased, values changed)
+      // PYQ-pattern — average-case complexity of linear search (rephrased, values changed)
       {
         q: "Linear search is applied to a list of $n$ distinct elements, with the target always present and equally likely to occupy any of the $n$ positions. The average number of comparisons equals:",
         options: ["$n$", "$\\log_{2} n$", "$n^{2}$", "$\\frac{n+1}{2}$"],
         answer: 3,
         explanation: "Step 1: Restate the task as the **uniform-position average** of the comparison count $1, 2, \\ldots, n$. Step 2: Recall the key formula that average-case cost is the arithmetic mean $\\frac{1}{n}\\sum_{i=1}^{n} i$ under the uniform model. Step 3: Sum the series to get $\\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}$. Step 4: Divide by $n$ to obtain $\\frac{n+1}{2}$, which is $\\Theta(n)$ but with a precise constant. Step 5: The distractors confuse models since $n$ is the worst case, $\\log_{2} n$ belongs to binary search on sorted input, and $n^{2}$ belongs to sorting. Step 6: Hence the average is $\\frac{n+1}{2}$ comparisons."
       },
-      // PYQ-pattern: GATE 2016 — best-case complexity of insertion sort (rephrased, values changed)
+      // PYQ-pattern — best-case complexity of insertion sort (rephrased, values changed)
       {
         q: "Insertion sort is run on an already sorted list of $n$ distinct elements. The number of element comparisons performed equals:",
         options: ["$\\frac{n(n-1)}{2}$", "$n-1$", "$n \\log_{2} n$", "$1$"],

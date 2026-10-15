@@ -313,14 +313,14 @@ export const osCh14Content: SectionContent[] = [
         explanation: "1 marks a free block: the leading 11 frees blocks 0 and 1, the 00 allocates 2 and 3, the 111 frees 4–6, and the trailing 000s allocate the rest."
       }
     ,
-      // PYQ-pattern: GATE 2019 — single-indirect maximum (rephrased)
+      // PYQ-pattern — single-indirect maximum (rephrased)
       {
         q: "Block size $4$ KB, pointer size $4$ bytes, single-indirect index. How many data blocks can one file address through that index, and how large is the file?",
         options: ["$256$ blocks, $1$ MB", "$1024$ blocks, $4$ MB", "$512$ blocks, $2$ MB", "$4096$ blocks, $16$ MB"],
         answer: 1,
         explanation: "**Step 1 — Given data:** $4096$-byte blocks, $4$-byte pointers.\n**Step 2 — Rule:** pointers per index block $= \\frac{4096}{4} = 1024$; file bytes $=$ pointers $\\times$ block size.\n**Step 3 — Computation:** $1024$ blocks; $1024 \\times 4096 = 4194304$ bytes $= 4$ MB.\n**Step 4 — Cross-check:** double-indirect would square to $1024^2$ blocks ($4$ GB); the units track: pointers times bytes-per-block.\n**Step 5 — Distractors:** $256$ assumes $16$-byte pointers; $512$ halves the block; $4096$ confuses blocks with bytes.\n**Step 6 — Conclude:** $1024$ blocks, $4$ MB."
       },
-      // PYQ-pattern: DRDO 2017 — bitmap size (rephrased)
+      // PYQ-pattern — bitmap size (rephrased)
       {
         q: "A $16$-GB disk uses $4$-KB blocks with one bitmap bit per block. How large is the bitmap?",
         options: ["$128$ KB", "$4$ MB", "$16$ MB", "$512$ KB"],

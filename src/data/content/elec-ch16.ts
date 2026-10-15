@@ -290,7 +290,7 @@ export const elecCh16Content: SectionContent[] = [
         answer: 0,
         explanation: 'The high-pass removes everything below $\\omega_1$ and the low-pass everything above $\\omega_2$; with $\\omega_1 < \\omega_2$ the surviving band between them is the passband. (The parallel construction produces a bandstop, not a bandpass.)',
       },
-      // PYQ-pattern: ISRO 2015 — RC low-pass response at cutoff (rephrased, values changed)
+      // PYQ-pattern — RC low-pass response at cutoff (rephrased, values changed)
       {
         q: 'A series RC low-pass filter uses R = 1.6 kΩ and C = 100 nF, output across the capacitor. At its cutoff frequency the magnitude response and phase are closest to:',
         options: ['0.500 and −90°', '0.707 and −45°', '1.000 and 0°', '0.707 and +45°'],
@@ -437,7 +437,7 @@ export const elecCh16Content: SectionContent[] = [
         answer: 1,
         explanation: '$Q = X_L/R = 1000/20 = 50$, so the bandwidth is $f_r/Q = 79{,}577/50 = 1592\\ \\text{Hz}$, placing the half-power frequencies $796\\ \\text{Hz}$ on either side of resonance.',
       },
-      // PYQ-pattern: GATE 2022 — series bandpass bandwidth (rephrased, values changed)
+      // PYQ-pattern — series bandpass bandwidth (rephrased, values changed)
       {
         q: 'A series RLC bandpass section uses R = 20 Ω, L = 10 mH and C = 2.5 μF. Its 3 dB bandwidth is closest to:',
         options: ['159 Hz', '318 Hz', '637 Hz', '1007 Hz'],

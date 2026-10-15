@@ -1589,7 +1589,7 @@ export const ch10Content: SectionContent[] = [
         explanation:
           'A proper coloring makes each color class an independent set — no conflicts inside a slot — so each color is exactly one conflict-free exam period. The minimum number of colors is the minimum number of slots.',
       },
-      // PYQ-pattern: GATE 2013 — chromatic number of an odd cycle (rephrased, values changed)
+      // PYQ-pattern — chromatic number of an odd cycle (rephrased, values changed)
       {
         q: 'What is the chromatic number $\\chi(C_{5})$ of the cycle on $5$ vertices?',
         options: [`$2$`, `$5$`, `$3$`, `$4$`],

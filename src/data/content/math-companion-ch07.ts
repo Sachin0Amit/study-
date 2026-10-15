@@ -1,12 +1,12 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// JEE Mathematics Companion — Chapter 7: Straight Lines & Circles
+// Mathematics Companion — Chapter 7: Straight Lines & Circles
 // Master study content (sections 7.1 - 7.4).
 // Math is LaTeX rendered by KaTeX via the RichText $...$ / $$...$$ pipeline.
 // ============================================================================
 
-export const jeemathsCh07Content: SectionContent[] = [
+export const mathCompanionCh07Content: SectionContent[] = [
   // ---------------------------------------------------------------- 7.1
   {
     sectionId: 'math-a8-s7',

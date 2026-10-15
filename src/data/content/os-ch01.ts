@@ -349,14 +349,14 @@ export const osCh1Content: SectionContent[] = [
         explanation: "Smaller-and-faster lives closer to the CPU: registers, then cache, then DRAM main memory, then electrical nonvolatile memory, then mechanical disks, with optical and tape as tertiary storage at the bottom."
       }
     ,
-      // PYQ-pattern: GATE 2019 — DMA versus per-byte interrupts (rephrased)
+      // PYQ-pattern — DMA versus per-byte interrupts (rephrased)
       {
         q: "Under per-byte interrupt-driven I/O each byte raises one interrupt, while DMA raises one interrupt per block. A controller must move an $8\\,\\text{KB}$ block ($8192$ bytes). How many CPU interrupts occur in each case?",
         options: ["$1$ and $1$", "$1024$ and $8$", "$1$ and $8192$", "$8192$ and $1$"],
         answer: 3,
         explanation: "**Step 1 — Given data:** block size $8\\,\\text{KB} = 2^{13} = 8192$ bytes. Per-byte rule: one interrupt per byte. DMA rule: one completion interrupt per block after driver setup.\n**Step 2 — Rule:** `per-byte count = number of bytes`, `DMA count = number of blocks`.\n**Step 3 — Computation:** per-byte $= 8192$, DMA $= 1$. Setup work (`buffers, pointers, counters`) costs CPU time but raises no interrupt.\n**Step 4 — Cross-check:** ratio is $\\frac{8192}{1} = 8192$, i.e. a factor of $2^{13}$. While the DMA controller moves data, the CPU is free except for memory-cycle contention.\n**Step 5 — Distractors:** `$1$ and $1$` ignores per-byte cost; `$1$ and $8192$` swaps the two; `$1024$ and $8$` assumes $1$-KB sub-blocks, which the statement never defines.\n**Step 6 — Conclude:** per-byte $8192$ versus DMA $1$ — the entire argument for DMA on bulk transfers."
       },
-      // PYQ-pattern: ISRO 2018 — vectored interrupt dispatch (rephrased)
+      // PYQ-pattern — vectored interrupt dispatch (rephrased)
       {
         q: "On a machine with $256$ interrupt vectors, a disk controller raises vector $76$ while user code runs. When is the request sensed, and how is the handler located?",
         options: ["Only at timer ticks, by polling every device in turn", "Only when the running process blocks, via the process table", "After the current instruction, by indexing the vector table with $76$", "Before the next fetch, by scanning main memory for the controller address"],

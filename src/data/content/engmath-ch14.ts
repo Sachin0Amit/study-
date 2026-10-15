@@ -86,7 +86,7 @@ export const engmathCh14Content: SectionContent[] = [
       'Choose Dijkstra for nonnegative sparse graphs and Bellman-Ford whenever negative edges may appear.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2012 — Dijkstra behavior on signed weights (rephrased)
+      // PYQ-pattern — Dijkstra behavior on signed weights (rephrased)
       {
         q: 'Dijkstra method is run on a graph containing one negative edge but no negative cycle. What can happen?',
         options: ['It always still succeeds', 'It may settle a vertex with a wrong distance', 'It always detects the negative edge', 'It runs faster than usual'],

@@ -110,7 +110,7 @@ export const clrsCh18Content: SectionContent[] = [
         answer: 1,
         explanation: "$\\log_t n = \\lg n / \\lg t$: a bigger $t$ means fewer levels, and each level costs one disk page. Space is only guaranteed to be at least half used, not exactly half.",
       },
-      // PYQ-pattern: GATE 2021 — B-tree height bound (rephrased, values changed)
+      // PYQ-pattern — B-tree height bound (rephrased, values changed)
       {
         q: "A B-tree of minimum degree $t = 50$ stores $n = 1000000$ keys. Its height $h$ is at most:",
         options: ["2", "3", "5", "50"],

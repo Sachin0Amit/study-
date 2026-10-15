@@ -509,7 +509,7 @@ export const elecCh20Content: SectionContent[] = [
         answer: 2,
         explanation: '$T_j = T_a + P\\theta_{JA} = 30 + 4 \\times 17.5 = 100$ °C — right at the working limit for many parts, which is why the thermal resistance budget is designed before, not after, the circuit.',
       },
-      // PYQ-pattern: GATE 2021 — buck converter duty-cycle output (rephrased, values changed)
+      // PYQ-pattern — buck converter duty-cycle output (rephrased, values changed)
       {
         q: 'An ideal buck converter in continuous conduction operates from a 48 V input with duty cycle 0.375 and negligible drops. Its steady output voltage is closest to:',
         options: ['18 V', '30 V', '48 V', '128 V'],

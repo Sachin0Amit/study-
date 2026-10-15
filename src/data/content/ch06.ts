@@ -725,14 +725,14 @@ export const ch6Content: SectionContent[] = [
         answer: 3,
         explanation: "0101→0101 is not a step at all (identical); the others each differ in exactly one bit and are all valid Gray steps.",
       },
-      // PYQ-pattern: GATE 2009 — next permutation in lexicographic order (rephrased, values changed)
+      // PYQ-pattern — next permutation in lexicographic order (rephrased, values changed)
       {
         q: "What is the next permutation after $31542$ in lexicographic order?",
         options: ["$32145$", "$31524$", "$34125$", "$32541$"],
         answer: 0,
         explanation: "Step 1: Restate the next-permutation rule as locate the rightmost ascent, swap with its ceiling, then reverse the suffix. Step 2: Recall the key scan $3, 1, 5, 4, 2$ from the right: $4 < 2$ is false, $5 < 4$ is false, but $1 < 5$ is true, so the ascent sits at $1$. Step 3: Among suffix entries $\\{5, 4, 2\\}$ pick the smallest value above $1$, which is $2$. Step 4: Swap to get $3, 2, 5, 4, 1$ and reverse the tail $5, 4, 1$ into $1, 4, 5$. Step 5: The distractor $31524$ merely swaps the last two digits, $34125$ moves the wrong digit, and $32541$ ignores the reversal. Step 6: Hence the successor is $32145$."
       },
-      // PYQ-pattern: GATE 2020 — successor in reflected Gray code (rephrased, values changed)
+      // PYQ-pattern — successor in reflected Gray code (rephrased, values changed)
       {
         q: "In the $4$-bit reflected Gray code, which string follows $0111$?",
         options: ["$0110$", "$1111$", "$0101$", "$0100$"],

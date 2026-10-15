@@ -155,7 +155,7 @@ export const elecCh6Content: SectionContent[] = [
         answer: 3,
         explanation: '$k = M/\\sqrt{L_1L_2} = 0.04/\\sqrt{0.025 \\times 0.1} = 0.04/0.05 = 0.8$. The same example shows that with $k$ raised to 1 ($M = 50$ mH), a current of $i_2 = -5$ A against $i_1 = 10$ A leaves zero net stored energy.',
       },
-      // PYQ-pattern: GATE 2015 — series aiding and opposing inductance (rephrased, values changed)
+      // PYQ-pattern — series aiding and opposing inductance (rephrased, values changed)
       {
         q: 'Two coupled coils have self-inductances 0.40 H and 0.60 H with mutual inductance 0.30 H. Connected in series aiding, the equivalent inductance is:',
         options: ['0.40 H', '0.70 H', '1.00 H', '1.60 H'],
@@ -303,7 +303,7 @@ export const elecCh6Content: SectionContent[] = [
         answer: 3,
         explanation: 'Only the inductor current is guaranteed continuous ($i(0^-) = i(0^+)$). The time constant changes with the new resistance seen by the inductor, and the inductor voltage can jump to whatever the new circuit demands.',
       },
-      // PYQ-pattern: ISRO 2019 — RL growth at one time constant (rephrased, values changed)
+      // PYQ-pattern — RL growth at one time constant (rephrased, values changed)
       {
         q: 'A coil of 2.0 H with 10 Ω series resistance connects across a 50 V supply, starting from zero current. The current 0.20 s after switching is closest to:',
         options: ['1.58 A', '3.16 A', '4.32 A', '5.00 A'],

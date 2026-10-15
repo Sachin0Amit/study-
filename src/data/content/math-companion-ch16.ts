@@ -5,7 +5,7 @@ import type { SectionContent } from '../library'
 // Hall and Knight Chapters XIX-XXI plus VII-VIII: classical bounds.
 // ============================================================================
 
-export const jeemathsCh16Content: SectionContent[] = [
+export const mathCompanionCh16Content: SectionContent[] = [
   // ---------------------------------------------------------------- 16.1
   {
     sectionId: 'advmath-ch16-s1',

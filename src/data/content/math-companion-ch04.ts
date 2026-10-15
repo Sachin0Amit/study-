@@ -6,7 +6,7 @@ import type { SectionContent } from '../library'
 // sums and multinomial-remainder methods.
 // ============================================================================
 
-export const jeemathsCh04Content: SectionContent[] = [
+export const mathCompanionCh04Content: SectionContent[] = [
   // ---------------------------------------------------------------- 4.1
   {
     sectionId: 'math-a4-s9',

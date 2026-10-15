@@ -793,7 +793,7 @@ export const ch8Content: SectionContent[] = [
         answer: 1,
         explanation: 'For each of the C(n,1) = n choices of a missed value, (n−1)ᵐ functions avoid it — but functions missing two values are subtracted twice, which is why the +C(n,2)(n−2)ᵐ term restores them.',
       },
-      // PYQ-pattern: GATE 2007 — derangement recurrence D5 (rephrased, values changed)
+      // PYQ-pattern — derangement recurrence D5 (rephrased, values changed)
       {
         q: 'What is $D_{5}$, the number of derangements of $5$ objects?',
         options: [`$120$`, `$45$`, `$24$`, `$44$`],

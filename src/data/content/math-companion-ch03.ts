@@ -6,7 +6,7 @@ import type { SectionContent } from '../library'
 // linear systems and determinant geometry.
 // ============================================================================
 
-export const jeemathsCh03Content: SectionContent[] = [
+export const mathCompanionCh03Content: SectionContent[] = [
   // ---------------------------------------------------------------- 3.1
   {
     sectionId: 'math-a5-s9',

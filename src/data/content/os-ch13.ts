@@ -584,14 +584,14 @@ export const osCh13Content: SectionContent[] = [
         explanation: "ACLs are the finer-grained, non-default mechanism, and Solaris gives them precedence — following the general rule that specificity has priority over the coarse owner/group/other classes."
       }
     ,
-      // PYQ-pattern: GATE 2015 — octal permission bits (rephrased)
+      // PYQ-pattern — octal permission bits (rephrased)
       {
         q: "Owner gets `rwx`, group gets `r-x`, others get `r--`. What is the octal mode, and what does each digit mean?",
         options: ["$777$, all rights everywhere", "$644$, owner $6$ only", "$754$, owner $7$, group $5$, others $4$", "$421$, reversed order"],
         answer: 2,
         explanation: "**Step 1 — Given data:** three triples `rwx`, `r-x`, `r--`.\n**Step 2 — Rule:** `r = 4`, `w = 2`, `x = 1`; each triple sums to one octal digit in owner-group-other order.\n**Step 3 — Computation:** owner $4+2+1 = 7$; group $4+0+1 = 5$; others $4+0+0 = 4$; mode $754$.\n**Step 4 — Cross-check:** $754$ in binary $111\\,101\\,100$ reproduces the three triples exactly.\n**Step 5 — Distractors:** $777$ is `rwxrwxrwx`; $644$ is `rw-r--r--`; $421$ permutes the digits.\n**Step 6 — Conclude:** $754$."
       },
-      // PYQ-pattern: ISRO 2020 — default mode under umask (rephrased)
+      // PYQ-pattern — default mode under umask (rephrased)
       {
         q: "Default file mode is $666$ and umask is $022$. What mode does a new file receive, and why?",
         options: ["$644$, bits in umask are cleared", "$666$, umask is ignored", "$600$, group and others lose everything", "$755$, execute is added"],

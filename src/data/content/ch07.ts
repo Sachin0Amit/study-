@@ -542,7 +542,7 @@ export const ch7Content: SectionContent[] = [
         answer: 2,
         explanation: 'Sums of expectations are always linear; products of expectations and sums of variances both require independence. Variance, being an expectation of a square, is never negative.',
       },
-      // PYQ-pattern: GATE 2016 — mean and variance of a binomial variable (rephrased, values changed)
+      // PYQ-pattern — mean and variance of a binomial variable (rephrased, values changed)
       {
         q: 'Let $X$ count successes in $12$ independent trials, each with success probability $\\frac{1}{3}$. Then $E(X)$ and $V(X)$ equal:',
         options: [`$E(X) = 6, V(X) = 4$`, `$E(X) = 4, V(X) = \\frac{8}{3}$`, `$E(X) = 4, V(X) = 4$`, `$E(X) = 12, V(X) = 12$`],

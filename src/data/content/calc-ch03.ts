@@ -1369,14 +1369,14 @@ export const calcCh3Content: SectionContent[] = [
         answer: 1,
         explanation: 'The hyperbolic cosine, not the parabola — the classical error Galileo himself made.',
       },
-      // PYQ-pattern: JEE Mains 2020 — derivative of tanh (rephrased, values changed)
+      // PYQ-pattern — derivative of tanh (rephrased, values changed)
       {
         q: 'What is $\\frac{d}{dx}\\tanh x$?',
         options: [`$\\coth^{2} x$`, `$\\operatorname{sech}^{2} x$`, `$-\\operatorname{sech}^{2} x$`, `$\\sinh x$`],
         answer: 1,
         explanation: 'Step 1: Restate $\\tanh x = \\frac{\\sinh x}{\\cosh x}$ and aim for its derivative. Step 2: Recall the key quotient rule $\\left(\\frac{u}{v}\\right)^{\\prime} = \\frac{u^{\\prime}v - uv^{\\prime}}{v^{2}}$ with $u = \\sinh x$ and $v = \\cosh x$. Step 3: Substitute $u^{\\prime} = \\cosh x$ and $v^{\\prime} = \\sinh x$ to get $\\frac{\\cosh^{2} x - \\sinh^{2} x}{\\cosh^{2} x}$. Step 4: Apply the fundamental identity $\\cosh^{2} x - \\sinh^{2} x = 1$ to obtain $\\frac{1}{\\cosh^{2} x} = \\operatorname{sech}^{2} x$. Step 5: The distractors fail since $-\\operatorname{sech}^{2} x$ flips the sign (the derivative of $\\coth$ is $-\\operatorname{csch}^{2} x$), $\\coth^{2} x$ misses a sign and a constant, and $\\sinh x$ confuses the function with its derivative. Step 6: Hence $\\frac{d}{dx}\\tanh x = \\operatorname{sech}^{2} x$.'
       },
-      // PYQ-pattern: JEE Mains 2022 — chain rule with hyperbolic sine (rephrased, values changed)
+      // PYQ-pattern — chain rule with hyperbolic sine (rephrased, values changed)
       {
         q: 'If $y = \\sinh(3x)$, then $\\frac{dy}{dx}$ equals:',
         options: [`$\\cosh(3x)$`, `$3\\sinh(3x)$`, `$3\\cosh(3x)$`, `$\\sinh(3x)$`],

@@ -479,7 +479,7 @@ export const cppCh4Content: SectionContent[] = [
         answer: 3,
         explanation: "Growth is why appending is amortized O(1): occasional linear relocations spread over the many constant-time appends they enable.",
       },
-      // PYQ-pattern: GATE 2020 — ordered versus hashed container complexity (rephrased)
+      // PYQ-pattern — ordered versus hashed container complexity (rephrased)
       {
         q: "A program stores one million records keyed by ID and looks them up constantly, with no need for ordering. Which container choice matches the library guarantees?",
         options: ["`std::vector`, because keyed lookup in a vector is logarithmic", "`std::list`, because pointer hops are friendly to the cache", "`std::map`, because hashing always beats trees for ordered data", "`std::unordered_map`, because average lookup is constant time, while `std::map` lookup is logarithmic"],

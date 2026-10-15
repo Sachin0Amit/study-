@@ -3,7 +3,7 @@ import type { SectionContent } from '../library'
 // ============================================================================
 // Engineering Semester Exams — CSE (bookId 'cse-complete') — lesson content.
 // Unit-1 (first section) master lessons for eight core CSE chapters across the
-// 8-semester B.Tech structure (AKTU BCS/KCS + VTU pattern): Data Structures,
+// 8-semester B.Tech structure (standard university paper pattern): Data Structures,
 // Operating Systems, Theory of Automata, DBMS, Computer Networks, Compiler
 // Design, Software Engineering and Machine Learning.
 // Every section targets the recurring 5-year university-paper pattern:

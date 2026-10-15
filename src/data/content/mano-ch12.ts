@@ -348,14 +348,14 @@ export const manoCh12Content: SectionContent[] = [
         explanation: 'Active-low signals match the output polarity of standard bipolar/TTL decoders and provide better noise margin against ground bounce.'
       }
     ,
-      // PYQ-pattern: GATE 2020 — memory expansion count (rephrased)
+      // PYQ-pattern — memory expansion count (rephrased)
       {
         q: "How many $1K \\times 8$ chips build a $4K \\times 16$ memory, and how are they arranged?",
         options: ["$4$ chips in one row", "$8$ chips: $4$ rows for words $\\times$ $2$ columns for bits", "$16$ chips", "$2$ chips"],
         answer: 1,
         explanation: "**Step 1 — Given data:** target $4096 \\times 16$, chip $1024 \\times 8$.\n**Step 2 — Rule:** rows $=$ target words/chip words; columns $=$ target bits/chip bits; total $=$ rows $\\times$ columns.\n**Step 3 — Computation:** rows $= \\frac{4096}{1024} = 4$; columns $= \\frac{16}{8} = 2$; total $8$.\n**Step 4 — Cross-check:** address decoder selects one of $4$ rows with $2$ high lines; data lines pair two chips per row for $16$ bits.\n**Step 5 — Distractors:** $4$ misses bit expansion; $16$ doubles both; $2$ misses word expansion.\n**Step 6 — Conclude:** $8$ chips in $4 \\times 2$."
       },
-      // PYQ-pattern: ISRO 2019 — mapped versus isolated I/O (rephrased)
+      // PYQ-pattern — mapped versus isolated I/O (rephrased)
       {
         q: "What distinguishes memory-mapped I/O from isolated I/O for reaching peripherals?",
         options: ["Mapped uses the same address space and LDA/STA; isolated uses a separate space with IN/OUT", "Both use identical instructions", "Mapped needs no decoding", "Isolated cannot use interrupts"],

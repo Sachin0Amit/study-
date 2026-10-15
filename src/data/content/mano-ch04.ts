@@ -259,21 +259,21 @@ export const manoCh4Content: SectionContent[] = [
         explanation: 'The XOR gates act as programmable inverters ($B_i \\oplus 1 = B_i′$) and $M$ into $C_0$ adds the 1: together $A + B′ + 1 = A - B$ — two’s-complement subtraction with no extra adder.',
       },
     
-      // PYQ-pattern: GATE 2018 — full adder expressions (rephrased)
+      // PYQ-pattern — full adder expressions (rephrased)
       {
         q: "A full adder has inputs $x$, $y$, $z$ (carry-in). Which pair gives sum $S$ and carry $C$?",
         options: ["$S = x′y′z$, $C = x + y$", "$S = xy + yz$, $C = x \\oplus y$", "$S = x + y + z$, $C = xyz$", "$S = x \\oplus y \\oplus z$, $C = xy + xz + yz$"],
         answer: 3,
         explanation: "**Step 1 — Given data:** three input bits, two outputs.\n**Step 2 — Rule:** sum is odd parity (three-way XOR); carry is majority (at least two inputs $1$).\n**Step 3 — Check:** $S = x \\oplus y \\oplus z$ is $1$ on $1,2,4,7$; $C = xy + xz + yz$ is $1$ on $3,5,6,7$.\n**Step 4 — Cross-check:** half adder is the $z = 0$ case: $S = x \\oplus y$, $C = xy$, consistent.\n**Step 5 — Distractors:** swap sum and carry roles; OR-sum ignores parity; single minterm covers one row only.\n**Step 6 — Conclude:** XOR trio for sum, three ANDs ORed for carry."
       },
-      // PYQ-pattern: ISRO 2019 — ripple carry delay (rephrased)
+      // PYQ-pattern — ripple carry delay (rephrased)
       {
         q: "Each full-adder stage contributes $2$ circuit delays to the carry chain. After how many delays is the final carry valid in an $8$-bit ripple-carry adder?",
         options: ["$8$", "$4$", "$16$", "$32$"],
         answer: 2,
         explanation: "**Step 1 — Given data:** $n = 8$ stages, $2$ delays per stage.\n**Step 2 — Rule:** ripple delay grows linearly as $2n$ since each carry waits for the previous stage.\n**Step 3 — Computation:** $2 \\times 8 = 16$ delays.\n**Step 4 — Cross-check:** $4$-bit gives $8$, $16$-bit gives $32$; the $16$-bit figure in the text matches this $2n$ law.\n**Step 5 — Distractors:** $8$ counts one per stage; $4$ counts half; $32$ is the $16$-bit figure.\n**Step 6 — Conclude:** $16$ delays, the linear cost look-ahead removes."
       },
-      // PYQ-pattern: DRDO 2020 — adder subtractor overflow (rephrased)
+      // PYQ-pattern — adder subtractor overflow (rephrased)
       {
         q: "A $4$-bit mode-controlled adder-subtractor adds with $M = 0$: $A = 0111$ ($7$), $B = 0100$ ($4$). What are result, carry and signed-overflow $V$?",
         options: ["$0111$, no change", "$1011$, carry $1$, $V = 0$", "$1011$ ($-5$), carry $0$, $V = 1$ (overflow)", "$0000$, carry $1$, $V = 1$"],

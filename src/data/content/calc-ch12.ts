@@ -1446,7 +1446,7 @@ export const calcCh12Content: SectionContent[] = [
         answer: 0,
         explanation: 'Both one-sheeted hyperboloids and cones carry families of straight rulings (the hyperboloid two families, doubly ruled); the ellipsoid and paraboloid are strictly curved — no line segment of either lies in its surface.',
       },
-      // PYQ-pattern: JEE Mains 2021 — identifying a two-sheeted hyperboloid (rephrased, values changed)
+      // PYQ-pattern — identifying a two-sheeted hyperboloid (rephrased, values changed)
       {
         q: 'The surface $x^{2} + y^{2} - z^{2} = -1$ is:',
         options: ['An ellipsoid', 'A hyperboloid of two sheets', 'A cone', 'A hyperboloid of one sheet'],

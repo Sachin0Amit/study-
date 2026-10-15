@@ -78,7 +78,7 @@ export const engmathCh04Content: SectionContent[] = [
       'General `$y = y_c + y_p$`; `$n$` initial values fix `$n$` constants.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2004 — complementary function for distinct roots (rephrased)
+      // PYQ-pattern — complementary function for distinct roots (rephrased)
       {
         q: 'The complementary function of `$(D^2 - 5D + 6)y = 0$` is:',
         options: [`$C_1 e^{2x} + C_2 e^{3x}$`, `$(C_1 + C_2 x)e^{2x}$`, `$C_1\\cos 2x + C_2\\sin 3x$`, `$C_1 e^{-2x} + C_2 e^{-3x}$`],
@@ -91,7 +91,7 @@ export const engmathCh04Content: SectionContent[] = [
         answer: 2,
         explanation: 'First multiplicity `$3$` needs three constants. Next polynomial factors run `$1, x, x^2$`. Then the shared envelope is `$e^{-x}$`. Finally only the third option has the full quadratic factor.'
       },
-      // PYQ-pattern: GATE 2010 — complex roots complementary function (rephrased)
+      // PYQ-pattern — complex roots complementary function (rephrased)
       {
         q: 'Roots `$2 \\pm 3i$` contribute which real block to `$y_c$`?',
         options: [`$e^{2x}(C_1\\cos 3x + C_2\\sin 3x)$`, `$C_1 e^{2x} + C_2 e^{3x}$`, `$(C_1 + C_2 x)e^{2x}$`, `$C_1\\cos 2x + C_2\\sin 3x$`],
@@ -197,7 +197,7 @@ export const engmathCh04Content: SectionContent[] = [
       'Polynomials use ascending `$1/f(D)$` expansion truncated past the degree of `$R$`.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2009 — resonance trial selection (rephrased)
+      // PYQ-pattern — resonance trial selection (rephrased)
       {
         q: 'For `$(D^2 - 3D + 2)y = 5e^{2x}$`, the correct trial for `$y_p$` is:',
         options: [`$Ae^{2x}$`, `$Axe^{2x}$`, `$Ax^2e^{2x}$`, `$A\\cos 2x + B\\sin 2x$`],
@@ -210,7 +210,7 @@ export const engmathCh04Content: SectionContent[] = [
         answer: 1,
         explanation: 'First no resonance since natural frequency is `$2$`. Next replace `$D^2$` by `$-9$`. Then denominator is `$-9 + 4 = -5$`. Finally `$\\frac{3}{-5}\\cos 3x$` matches the second option.'
       },
-      // PYQ-pattern: GATE 2015 — particular integral of polynomial forcing (rephrased)
+      // PYQ-pattern — particular integral of polynomial forcing (rephrased)
       {
         q: 'For `$(D + 1)y = x^2$`, the polynomial trial should be:',
         options: [`$Ax^2$`, `$Ax^2 + Bx + C$`, `$A + Bx$`, `$Ae^{x}$`],
@@ -296,7 +296,7 @@ export const engmathCh04Content: SectionContent[] = [
       'Divide to leading-coefficient `$1$` first; VOP covers forcing no trial can touch.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2008 — Wronskian of exponential pair (rephrased)
+      // PYQ-pattern — Wronskian of exponential pair (rephrased)
       {
         q: 'The Wronskian of `$y_1 = e^x$`, `$y_2 = e^{2x}$` is:',
         options: [`$e^{3x}$`, `$e^{2x}$`, `$1$`, `$0$`],
@@ -309,7 +309,7 @@ export const engmathCh04Content: SectionContent[] = [
         answer: 1,
         explanation: 'First differentiate `$W$` and substitute the equation. Next `$Q$` terms cancel leaving `$\\frac{dW}{dx} = -PW$`. Then separation gives `$\\ln|W| = -\\int P\\,dx + C$`. Finally `$W = Ce^{-\\int P\\,dx}$`.'
       },
-      // PYQ-pattern: GATE 2016 — variation of parameters setup (rephrased)
+      // PYQ-pattern — variation of parameters setup (rephrased)
       {
         q: 'In VOP with `$y_p = u_1y_1 + u_2y_2$`, the standard constraint imposed is:',
         options: [`$u_1 y_1 + u_2 y_2 = 0$`, `$\\frac{du_1}{dx} y_1 + \\frac{du_2}{dx} y_2 = 0$`, `$u_1 + u_2 = 0$`, `$W = 0$`],
@@ -415,7 +415,7 @@ export const engmathCh04Content: SectionContent[] = [
       'Forcing travels as `$R(e^z)$`; solve in `$z$`, return with `$z = \\ln x$`.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2011 — Cauchy-Euler auxiliary roots (rephrased)
+      // PYQ-pattern — Cauchy-Euler auxiliary roots (rephrased)
       {
         q: 'Trying `$y = x^m$` in `$x^2\\frac{d^2y}{dx^2} - 2x\\frac{dy}{dx} - 4y = 0$` (derivatives in `$x$) gives:',
         options: [`$m^2 - 3m - 4 = 0$`, `$m^2 - 2m - 4 = 0$`, `$m^2 - 3m + 4 = 0$`, `$m^2 + 3m + 4 = 0$`],
@@ -428,7 +428,7 @@ export const engmathCh04Content: SectionContent[] = [
         answer: 1,
         explanation: 'First chain rule: `$\\frac{dy}{dx} = \\frac{dy}{dz}\\frac{dz}{dx}$`. Next `$z = \\ln x$` gives `$\\frac{dz}{dx} = \\frac{1}{x}$`. Then `$\\frac{dy}{dx} = \\frac{1}{x}\\frac{dy}{dz}$`. Finally multiply by `$x$` to get `$\\theta y$`.'
       },
-      // PYQ-pattern: GATE 2017 — repeated root logarithmic solution (rephrased)
+      // PYQ-pattern — repeated root logarithmic solution (rephrased)
       {
         q: 'If the Cauchy-Euler auxiliary has double root `$m = 1$, the solution pair is:',
         options: [`$x$ and $x^2$`, `$x$ and $x\\ln x$`, `$1$ and $\\ln x$`, '$e^x$ and `$xe^x$`'],

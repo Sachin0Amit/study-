@@ -1,7 +1,7 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// JEE (Main) 2026 Chemistry — master lesson content (high-weightage sections)
+// Chemistry master book — lesson content (high-weightage sections)
 // Full SectionContent lessons for the FIRST section of every unit 1–20 of the
 // official NTA syllabus (bookId 'chem-complete'): matter & chemical
 // combination (1.1), radiation & hydrogen spectrum (2.1), ionic bonding
@@ -17,7 +17,7 @@ import type { SectionContent } from '../library'
 // quizzes follow the advmath-ch01 exemplar style.
 // ============================================================================
 
-export const jeemainChemContent: SectionContent[] = [
+export const mastersChemistryContent: SectionContent[] = [
   // ---------------------------------------------------------------- 1.1
   {
     sectionId: 'chem-ch1-s5',

@@ -232,7 +232,7 @@ export const cppCh2Content: SectionContent[] = [
         answer: 0,
         explanation: "Only the ordering is guaranteed; exact sizes vary across machines, which is why the book states the inequality chain.",
       },
-      // PYQ-pattern: GATE 2005 — integer division versus floating division (rephrased)
+      // PYQ-pattern — integer division versus floating division (rephrased)
       {
         q: "What does this program print?\n```cpp\n#include <iostream>\nint main() {\n  std::cout << 7 / 2 << ' ' << 7.0 / 2;\n}\n```",
         options: ["`3 3.5`", "`3.5 3.5`", "`3 3`", "`4 3.5`"],

@@ -91,7 +91,7 @@ export const engmathCh09Content: SectionContent[] = [
         explanation: 'Step 1: Bound polynomials and modulated exponentials by $Me^{ct}$ with suitable $c$. Step 2: Show $e^{t^{2}}/e^{ct} \\to \\infty$ for every fixed $c$. Step 3: Conclude no abscissa can dominate doubly exponential growth.'
       },
       {
-        // PYQ-pattern: GATE 2015 — Laplace of a power times exponential (rephrased, values changed)
+        // PYQ-pattern — Laplace of a power times exponential (rephrased, values changed)
         q: '$\\mathcal{L}\\{t^{2}e^{-t}\\}$ equals:',
         options: [`$1/(s+1)^{2}$`, `$2/(s-1)^{3}$`, `$2/(s+1)^{3}$`, `$1/s^{3}$`],
         answer: 2,
@@ -183,7 +183,7 @@ export const engmathCh09Content: SectionContent[] = [
         explanation: 'Step 1: Absorb $e^{3t}$ into $e^{-st}$ to get $e^{-(s-3)t}$. Step 2: Recognize the integral as $F$ evaluated at $s - 3$. Step 3: Distinguish from delay $e^{-as}F(s)$, which shifts in time instead.'
       },
       {
-        // PYQ-pattern: GATE 2018 — Laplace of a delayed step function (rephrased, values changed)
+        // PYQ-pattern — Laplace of a delayed step function (rephrased, values changed)
         q: '$\\mathcal{L}\\{u(t - 2)\\}$ with unit step delayed by $2$ equals:',
         options: [`$1/s$`, `$e^{-2s}/s$`, `$e^{2s}/s$`, `$e^{-2s}$`],
         answer: 1,
@@ -335,7 +335,7 @@ export const engmathCh09Content: SectionContent[] = [
         explanation: 'Step 1: Match $1/(s - a)$ with $a = 5$ in the table. Step 2: Read the original $e^{at}$ directly. Step 3: Reject the $t$-weighted form, which belongs to $1/(s-5)^{2}$.'
       },
       {
-        // PYQ-pattern: GATE 2012 — inverse Laplace by partial fractions (rephrased, values changed)
+        // PYQ-pattern — inverse Laplace by partial fractions (rephrased, values changed)
         q: '$\\mathcal{L}^{-1}\\{(3s+2)/[(s-1)(s+2)]\\}$ for $t \\ge 0$ equals:',
         options: [`$(5/3)e^{-t} + (4/3)e^{2t}$`, `$3e^{t} + 2e^{-2t}$`, `$e^{t} + e^{-2t}$`, `$(5/3)e^{t} + (4/3)e^{-2t}$`],
         answer: 3,
@@ -454,7 +454,7 @@ export const engmathCh09Content: SectionContent[] = [
         explanation: 'Step 1: Transform derivatives to $(s^{2} + 3s + 2)Y = F(s)$ with no $init$ block. Step 2: Divide by the characteristic polynomial. Step 3: Keep $F(s)$ in the numerator since forcing shapes the response.'
       },
       {
-        // PYQ-pattern: GATE 2019 — transfer function of a second-order system (rephrased, values changed)
+        // PYQ-pattern — transfer function of a second-order system (rephrased, values changed)
         q: 'Zero-state system $y^{\\prime\\prime} + 3y^{\\prime} + 2y = x(t)$ has transfer $H(s)$ equal to:',
         options: [`$s^{2} + 3s + 2$`, '$1/(s + 1)$ only', `$1/(s^{2} + 3s + 2)$`, `$s/(s^{2} + 3s + 2)$`],
         answer: 2,

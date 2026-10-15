@@ -236,7 +236,7 @@ export const clrsCh11Content: SectionContent[] = [
         answer: 1,
         explanation: "The successful-search expectation is 1 + α/2 − α/(2n) = 1 + 1 − 1/n ≈ 2: on average the target sits halfway down its chain of α ≈ 2 elements."
       },
-      // PYQ-pattern: GATE 2016 — chaining load factor (rephrased, values changed)
+      // PYQ-pattern — chaining load factor (rephrased, values changed)
       {
         q: "A hash table with chaining has $m = 10$ slots holding $n = 30$ keys under simple uniform hashing. The average number of keys examined in an unsuccessful search is closest to:",
         options: ["3", "1", "10", "30"],
@@ -473,7 +473,7 @@ export const clrsCh11Content: SectionContent[] = [
         answer: 1,
         explanation: "HASH-SEARCH stops at the first empty slot; clearing would make later keys unreachable. Tombstones keep probes alive at the cost of gradual clutter, eventually cured by rehashing."
       },
-      // PYQ-pattern: ISRO 2017 — linear probing sequence (rephrased, values changed)
+      // PYQ-pattern — linear probing sequence (rephrased, values changed)
       {
         q: "Into an empty table of $11$ slots, three keys all hashing to $5$ are inserted by linear probing. The third key lands in slot:",
         options: ["5", "6", "8", "7"],

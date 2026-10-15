@@ -791,14 +791,14 @@ export const ch4Content: SectionContent[] = [
         answer: 3,
         explanation: "RSA's security rests on the hardness of factoring: computing d from (n, e) is essentially as hard as factoring n, believed infeasible for properly sized moduli.",
       },
-      // PYQ-pattern: GATE 2019 — RSA private exponent from primes (rephrased, values changed)
+      // PYQ-pattern — RSA private exponent from primes (rephrased, values changed)
       {
         q: "RSA uses primes $p = 7$ and $q = 11$ with public exponent $e = 13$. The private exponent $d$ equals:",
         options: ["$13$", "$60$", "$37$", "$7$"],
         answer: 2,
         explanation: "Step 1: Restate the key-generation rule as $d \\equiv e^{-1} \\pmod{(p-1)(q-1)}$. Step 2: Recall the key formula $\\phi(n) = (p-1)(q-1) = 6 \\times 10 = 60$. Step 3: Seek $d$ with $13d \\equiv 1 \\pmod{60}$ using the extended Euclidean method. Step 4: Verify $13 \\times 37 = 481 = 8 \\times 60 + 1$, so $13 \\times 37 \\equiv 1 \\pmod{60}$. Step 5: The distractors fail since $13$ is the public exponent itself, $60$ is $\\phi(n)$ rather than its inverse, and $7$ is one prime factor. Step 6: Hence the private exponent is $d = 37$."
       },
-      // PYQ-pattern: GATE 2014 — RSA encryption of a small message (rephrased, values changed)
+      // PYQ-pattern — RSA encryption of a small message (rephrased, values changed)
       {
         q: "RSA has modulus $n = 33$ with public exponent $e = 3$. The encryption of the message $m = 4$ is $c = m^{e} \\bmod n$, which equals:",
         options: ["$31$", "$12$", "$64$", "$7$"],

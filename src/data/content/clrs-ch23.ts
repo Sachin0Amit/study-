@@ -216,7 +216,7 @@ export const clrsCh23Content: SectionContent[] = [
         answer: 1,
         explanation: "Union by rank plus path compression gives $O(m\\,\\alpha(n))$ — for all physically meaningful $n$, $\\alpha(n) \\le 5$, so each operation is effectively constant. This is what keeps Kruskal's cycle tests from dominating its running time."
       },
-      // PYQ-pattern: GATE 2016 — Kruskal MST weight (rephrased, values changed)
+      // PYQ-pattern — Kruskal MST weight (rephrased, values changed)
       {
         q: "Edges with weights $ab:1, bc:2, ac:3, cd:4, de:5, ce:6$ span vertices ${a,b,c,d,e}$. Kruskal algorithm MST weight is:",
         options: ["10", "11", "12", "14"],

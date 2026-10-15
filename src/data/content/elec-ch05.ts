@@ -281,7 +281,7 @@ export const elecCh5Content: SectionContent[] = [
         answer: 2,
         explanation: 'Reversal changes the flux by $2 \\times 2.5 = 5$ mWb, so $E = N\\,\\Delta\\Phi/t = 1500 \\times 5 \\times 10^{-3}/0.2 = 37.5$ V \u2014 the doubling from reversal is the trap, exactly as in Example 6.4 (800 mWb, 1200 turns, 0.1 s, 9.6 V).',
       },
-      // PYQ-pattern: JEE-style — force on a current-carrying conductor (rephrased, values changed)
+      // PYQ-pattern — force on a current-carrying conductor (rephrased, values changed)
       {
         q: 'A straight conductor of active length 0.40 m carries 50 A at right angles to a uniform field of density 0.80 T. The mechanical force on the conductor is:',
         options: ['8 N', '16 N', '32 N', '64 N'],
@@ -436,7 +436,7 @@ export const elecCh5Content: SectionContent[] = [
         answer: 0,
         explanation: '$H = IN/l = 120 \\times 1.5/0.25 = 720$ A/m. (The same exercise\u2019s 5 A case gives $H = 2400$ A/m with $B = 1.2$ T \u2014 the two points already show $\\mu_r$ falling from about 660 to about 400 as the steel hardens towards saturation.)',
       },
-      // PYQ-pattern: GATE 2017 — toroid flux from magnetomotive force (rephrased, values changed)
+      // PYQ-pattern — toroid flux from magnetomotive force (rephrased, values changed)
       {
         q: 'A toroidal core has mean length 0.50 m and cross-section 400 mm squared, wound with 300 turns carrying 2.0 A. The relative permeability is 800. The core flux is closest to:',
         options: ['0.12 mWb', '0.48 mWb', '1.20 mWb', '4.80 mWb'],

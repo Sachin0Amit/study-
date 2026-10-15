@@ -265,14 +265,14 @@ export const manoCh9Content: SectionContent[] = [
         explanation: '$s_2 s_1 s_0$: with $s_2 = 0$ the full-adder cascade performs transfer, add, add-complement, increment; with $s_2 = 1$ the logic network performs AND, OR, XOR, complement.',
       },
     
-      // PYQ-pattern: GATE 2019 — ALU selection lines (rephrased)
+      // PYQ-pattern — ALU selection lines (rephrased)
       {
         q: "With selection $S_2S_1S_0$, how does the arithmetic circuit choose among its eight microoperations?",
         options: ["$S$ lines halt the machine", "$S$ lines drive the clock", "$S$ lines choose the memory chip", "$S$ lines feed the per-stage full adders’ input functions, picking transfer, increment, add, subtract and related forms"],
         answer: 3,
         explanation: "**Step 1 — Given data:** chain of full adders with per-stage $X_i, Y_i$ made functions of $A_i, B_i$ and $S$.\n**Step 2 — Rule:** three lines encode eight operations (e.g. $F = A$, $F = A + 1$, $F = A + B$, $F = A + B′ + 1$ for subtract, plus complements and transfers).\n**Step 3 — Apply:** setting $S$ rewires every stage identically, so one code adds across all bits while another subtracts.\n**Step 4 — Cross-check:** the logic section reuses the same $S$ idea with a per-bit selector among AND, OR, XOR, complement — one code space, two circuits.\n**Step 5 — Distractors:** clock, memory choice and halt are control-unit jobs, not ALU data selection.\n**Step 6 — Conclude:** $S$ programs the adder inputs."
       },
-      // PYQ-pattern: DRDO 2018 — status flags (rephrased)
+      // PYQ-pattern — status flags (rephrased)
       {
         q: "After an ALU operation yielding all-zero result with a carry out of the MSB, which flags are set?",
         options: ["Zero $= 1$, carry $= 1$; overflow depends on signed interpretation", "Zero $= 0$, carry $= 0$", "Only sign is set", "No flag changes"],

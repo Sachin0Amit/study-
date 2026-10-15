@@ -1,12 +1,12 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// JEE Mathematics Companion — Chapter 10: Statistics & Probability
+// Mathematics Companion — Chapter 10: Statistics & Probability
 // Master study content (sections 10.1 - 10.4).
 // Math is LaTeX rendered by KaTeX via the RichText $...$ / $$...$$ pipeline.
 // ============================================================================
 
-export const jeemathsCh10Content: SectionContent[] = [
+export const mathCompanionCh10Content: SectionContent[] = [
   // ---------------------------------------------------------------- 10.1
   {
     sectionId: 'math-a6-s10',

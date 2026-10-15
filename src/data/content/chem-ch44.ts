@@ -98,7 +98,7 @@ export const chemCh44Content: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Cross the critical micelle concentration. Step 2: Hide tails from water inside. Step 3: Face charged heads outward to rinse.'
       },
-      // PYQ-pattern: JEE 2020 — soap scum with hard water chemistry (rephrased)
+      // PYQ-pattern — soap scum with hard water chemistry (rephrased)
       {
         q: 'Soap fails in hard water because:',
         options: ['Calcium precipitates insoluble soap curd', 'Sodium evaporates from solution', 'Glycerol turns acidic', 'Micelles freeze solid'],
@@ -197,7 +197,7 @@ export const chemCh44Content: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Neutralise $HCl$ to water plus salts. Step 2: Avoid carbonate that releases $CO_{2}$ gas. Step 3: Balance bowel effects with the mix.'
       },
-      // PYQ-pattern: JEE 2021 — penicillin beta lactam antibacterial action (rephrased)
+      // PYQ-pattern — penicillin beta lactam antibacterial action (rephrased)
       {
         q: 'Penicillin kills bacteria by:',
         options: ['Acylating wall crosslinking enzymes', 'Dissolving human cell membranes', 'Blocking oxygen transport in blood', 'Chelating dietary iron fully'],
@@ -412,7 +412,7 @@ export const chemCh44Content: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Hydrate $C_{3}A$ too fast alone. Step 2: Coat it via sulfoaluminate with gypsum. Step 3: Let silicates build strength on time.'
       },
-      // PYQ-pattern: JEE 2022 — octane versus cetane numbers and industrial conditions (rephrased)
+      // PYQ-pattern — octane versus cetane numbers and industrial conditions (rephrased)
       {
         q: 'Octane versus cetane numbers differ as:',
         options: ['Both reward knock in petrol', 'Octane resists early ignition, cetane rewards quick ignition', 'Both measure cement strength', 'Both count fertilizer grade'],

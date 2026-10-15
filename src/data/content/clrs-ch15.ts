@@ -121,7 +121,7 @@ export const clrsCh15Content: SectionContent[] = [
         answer: 1,
         explanation: "$s[j]$ is the optimal first-piece size; following $j \\gets j - s[j]$ until reaching 0 emits the full cutting plan.",
       },
-      // PYQ-pattern: GATE 2017 — rod-cutting optimum (rephrased, values changed)
+      // PYQ-pattern — rod-cutting optimum (rephrased, values changed)
       {
         q: "Prices for lengths $1$ to $4$ are $1, 5, 8, 9$. The optimal revenue for a rod of length $4$ is:",
         options: ["9 without cutting", "10 by cutting $2 + 2$", "11 by cutting $3 + 1$", "12 by cutting $1 + 1 + 1 + 1$"],
@@ -495,7 +495,7 @@ export const clrsCh15Content: SectionContent[] = [
         answer: 1,
         explanation: "Each row of $c$ depends only on the previous row, so two rows suffice — and iterating over the shorter string makes each of them length $\\min(m,n) + 1$.",
       },
-      // PYQ-pattern: ISRO 2016 — LCS length (rephrased, values changed)
+      // PYQ-pattern — LCS length (rephrased, values changed)
       {
         q: "For $X = ABCBDAB$ and $Y = BDCABA$, the length of a longest common subsequence is:",
         options: ["2", "3", "4", "5"],

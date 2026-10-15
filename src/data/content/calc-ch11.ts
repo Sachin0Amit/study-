@@ -1288,7 +1288,7 @@ export const calcCh11Content: SectionContent[] = [
         answer: 0,
         explanation: 'The next derivative is bounded by $1$, so the error is at most $\\frac{|x|^4}{4!}$, worst at $|x| = 0.3$: $\\frac{0.0081}{24} \\approx 0.00034$.',
       },
-      // PYQ-pattern: JEE Advanced 2021 — limit via Taylor series (rephrased, values changed)
+      // PYQ-pattern — limit via Taylor series (rephrased, values changed)
       {
         q: 'Using series, $\\lim_{x \\to 0}\\frac{\\sin x - x}{x^{3}}$ equals:',
         options: [`$0$`, `$1$`, `$-\\frac{1}{6}$`, `$\\frac{1}{6}$`],

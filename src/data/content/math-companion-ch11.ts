@@ -5,7 +5,7 @@ import type { SectionContent } from '../library'
 // Hall and Knight Chapters XXXIV-XXXV: Vieta, transformations, Descartes rule.
 // ============================================================================
 
-export const jeemathsCh11Content: SectionContent[] = [
+export const mathCompanionCh11Content: SectionContent[] = [
   // ---------------------------------------------------------------- 11.1
   {
     sectionId: 'advmath-ch11-s1',

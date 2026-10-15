@@ -202,7 +202,7 @@ export const elecCh1Content: SectionContent[] = [
         answer: 1,
         explanation: 'The input (80 kg, $g = 9.81$ m/s²) carries only two or three significant figures, so the answer must be rounded to a reasonable compromise — 785 N. Hughes repeatedly warns against false accuracy.',
       },
-      // PYQ-pattern: GATE 2019 — hoist efficiency chain (rephrased, values changed)
+      // PYQ-pattern — hoist efficiency chain (rephrased, values changed)
       {
         q: 'A hoist lifts a 400 kg load vertically at a steady 2 m/s. The gearbox efficiency is 0.92 and the motor efficiency is 0.88. The electrical input power drawn by the motor is closest to:',
         options: ['6.4 kW', '7.8 kW', '9.7 kW', '12.1 kW'],
@@ -788,7 +788,7 @@ export const elecCh1Content: SectionContent[] = [
         answer: 2,
         explanation: 'An ideal voltage source fixes the voltage regardless of current and an ideal current source fixes the current regardless of voltage, so one of each in parallel is always consistent. Two ideal voltage sources in parallel must match voltages (and polarities); two current sources in series must match currents (and directions).',
       },
-      // PYQ-pattern: ISRO 2017 — passive sign and power balance (rephrased, values changed)
+      // PYQ-pattern — passive sign and power balance (rephrased, values changed)
       {
         q: 'In a circuit, one labelled element carries 3 A entering its positive terminal, across which the voltage is 8 V. A second load absorbs 40 W. If a single source supplies the whole circuit, the source power and the role of the first element are:',
         options: ['First element delivers 24 W; source supplies 16 W', 'First element absorbs 24 W; source supplies 64 W', 'First element absorbs 11 W; source supplies 51 W', 'First element delivers 24 W; source supplies 64 W'],

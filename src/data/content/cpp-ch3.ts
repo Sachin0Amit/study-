@@ -365,7 +365,7 @@ export const cppCh3Content: SectionContent[] = [
         answer: 1,
         explanation: "A plain lvalue source selects the copy constructor; the other three are rvalues (temporary or explicitly moved) and take the move path.",
       },
-      // PYQ-pattern: GATE 2019 — moved-from state after std::move (rephrased)
+      // PYQ-pattern — moved-from state after std::move (rephrased)
       {
         q: "After this line runs, which statement is correct?\n```cpp\nstd::string t = std::move(s);\n```",
         options: ["`s` is destroyed immediately, so touching it in any way is forbidden", "`s` remains a valid object in an unspecified state, typically emptied, while `t` holds the characters", "`s` keeps its characters and `t` receives an independent copy", "The program is ill-formed, because moving leaves no valid source object"],

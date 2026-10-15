@@ -410,7 +410,7 @@ export const cppCh8Content: SectionContent[] = [
         answer: 1,
         explanation: "Implicit conversion was a recurring source of bugs with plain enums; `enum class` removes it, forcing conversions to be explicit.",
       },
-      // PYQ-pattern: GATE 2015 — scoped versus unscoped enumeration conversion (rephrased)
+      // PYQ-pattern — scoped versus unscoped enumeration conversion (rephrased)
       {
         q: "Which line fails to compile?\n```cpp\nenum Color { Red, Green };\nenum class Level { Low, High };\nint a = Red;\nint b = Level::Low;\n```",
         options: ["`int b = Level::Low;`, because scoped enumerations do not convert implicitly to `int`", "`int a = Red;`, because plain enumerations are fully type safe", "Both assignments fail to compile", "Neither assignment fails"],

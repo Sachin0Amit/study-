@@ -940,42 +940,42 @@ export const hallCh13Content: SectionContent[] = [
         answer: 1,
         explanation: 'Matter curves geometry; geometry guides matter. Force language is the flat-space approximation.',
       },
-      // PYQ-pattern: JEE Mains 2020 — gravitation field strength (rephrased, values changed)
+      // PYQ-pattern — gravitation field strength (rephrased, values changed)
       {
         q: 'Taking $g = 9.8 \\text{ m/s}^{2}$ at the surface of a uniform planet of radius $R$, the acceleration due to gravity at altitude $h = R$ above the surface is:',
         options: [`$9.8 \\text{ m/s}^{2}$`, `$4.9 \\text{ m/s}^{2}$`, `$0$`, `$2.45 \\text{ m/s}^{2}$`],
         answer: 3,
         explanation: 'Step 1: Given surface value $g = 9.8 \\text{ m/s}^{2}$ and center distance growing from $R$ to $2R$. Step 2: Governing law is the inverse square $g(r) = GM/r^{2}$, so $g$ scales as $1/r^{2}$. Step 3: Key equation: $$g(2R) = \\frac{GM}{(2R)^{2}} = \\frac{1}{4}\\frac{GM}{R^{2}} = \\frac{g}{4}.$$ Step 4: Numerics give $9.8/4 = 2.45 \\text{ m/s}^{2}$; units stay $\\text{m/s}^{2}$ and the value must fall with distance. Step 5: Distractors fail because $9.8$ ignores altitude, $4.9$ halves instead of quartering, and $0$ claims weightlessness outside the atmosphere. Step 6: Conclude gravity there is **$2.45 \\text{ m/s}^{2}$**.',
       },
-      // PYQ-pattern: JEE Advanced 2019 — satellite period (rephrased, values changed)
+      // PYQ-pattern — satellite period (rephrased, values changed)
       {
         q: 'A craft circles a planet in a low orbit of radius $r = 2R$, where $R = 6.37 \\times 10^{6} \\text{ m}$ is the planetary radius and $GM = 3.98 \\times 10^{14} \\text{ m}^{3}\\text{/s}^{2}$. Its orbital period is closest to:',
         options: [`$4.0 \\text{ h}$`, `$1.4 \\text{ h}$`, `$24 \\text{ h}$`, `$2.0 \\text{ h}$`],
         answer: 0,
         explanation: 'Step 1: Given $r = 2R = 1.274 \\times 10^{7} \\text{ m}$ and $GM = 3.98 \\times 10^{14} \\text{ m}^{3}\\text{/s}^{2}$. Step 2: Governing law is Kepler III from $mv^{2}/r = GMm/r^{2}$, giving $T = 2\\pi\\sqrt{r^{3}/GM}$. Step 3: Key equation: $$T = 2\\pi\\sqrt{\\frac{(1.274 \\times 10^{7})^{3}}{3.98 \\times 10^{14}}}.$$ Step 4: Numerics give $r^{3} \\approx 2.07 \\times 10^{21}$, ratio $\\approx 5.19 \\times 10^{6}$, root $\\approx 2278 \\text{ s}$, so $T \\approx 14300 \\text{ s} \\approx 4.0 \\text{ h}$; units of $\\sqrt{\\text{m}^{3}/(\\text{m}^{3}\\text{/s}^{2})}$ are seconds. Step 5: Distractors fail because $1.4 \\text{ h}$ is the surface-skimming period, $24 \\text{ h}$ assumes a stationary orbit, and $2.0 \\text{ h}$ halves the true value. Step 6: Conclude the period is about **$4.0 \\text{ h}$**.',
       },
-      // PYQ-pattern: GATE PH 2021 — escape velocity (rephrased, values changed)
+      // PYQ-pattern — escape velocity (rephrased, values changed)
       {
         q: 'For a planet with surface orbital speed $7.9 \\text{ km/s}$, the escape speed from the surface is:',
         options: [`$7.9 \\text{ km/s}$`, `$15.8 \\text{ km/s}$`, `$11.2 \\text{ km/s}$`, `$5.6 \\text{ km/s}$`],
         answer: 2,
         explanation: 'Step 1: Given circular surface speed $v_{orb} = \\sqrt{GM/R} = 7.9 \\text{ km/s}$. Step 2: Governing law is energy balance $\\frac{1}{2}mv_{esc}^{2} = GMm/R$, so $v_{esc} = \\sqrt{2GM/R}$. Step 3: Key equation: $$v_{esc} = \\sqrt{2}\\,v_{orb} = (1.414)(7.9).$$ Step 4: Numerics give $v_{esc} \\approx 11.2 \\text{ km/s}$; units are $\\text{km/s}$ and escape must exceed orbital speed. Step 5: Distractors fail because $7.9$ is the bound orbital speed, $15.8$ doubles instead of scaling by $\\sqrt{2}$, and $5.6$ divides by $\\sqrt{2}$. Step 6: Conclude escape needs **$11.2 \\text{ km/s}$**.',
       },
-      // PYQ-pattern: JEE Mains 2021 — orbital energy (rephrased, values changed)
+      // PYQ-pattern — orbital energy (rephrased, values changed)
       {
         q: 'A $1000 \\text{ kg}$ vehicle moves in a circular orbit of radius $r = 2R$ with $GM = 3.98 \\times 10^{14} \\text{ m}^{3}\\text{/s}^{2}$ and $R = 6.37 \\times 10^{6} \\text{ m}$. Its orbital kinetic energy is closest to:',
         options: [`$3.1 \\times 10^{10} \\text{ J}$`, `$1.6 \\times 10^{10} \\text{ J}$`, `$-1.6 \\times 10^{10} \\text{ J}$`, `$6.3 \\times 10^{10} \\text{ J}$`],
         answer: 1,
         explanation: 'Step 1: Given $m = 1000 \\text{ kg}$ and $r = 1.274 \\times 10^{7} \\text{ m}$. Step 2: Governing law combines $mv^{2}/r = GMm/r^{2}$ with $K = \\frac{1}{2}mv^{2}$, giving $K = GMm/2r$. Step 3: Key equation: $$K = \\frac{(3.98 \\times 10^{14})(1000)}{2(1.274 \\times 10^{7})}.$$ Step 4: Numerics give $K \\approx 1.56 \\times 10^{10} \\text{ J} \\approx 1.6 \\times 10^{10} \\text{ J}$; units $\\text{N}\\cdot\\text{m}$ are joules and kinetic energy must be positive. Step 5: Distractors fail because $3.1 \\times 10^{10}$ drops the half, $-1.6 \\times 10^{10}$ is the total energy $E = -K$, and $6.3 \\times 10^{10}$ uses the surface radius. Step 6: Conclude the orbital kinetic energy is about **$1.6 \\times 10^{10} \\text{ J}$**.',
       },
-      // PYQ-pattern: JEE Advanced 2016 — geostationary orbit (rephrased, values changed)
+      // PYQ-pattern — geostationary orbit (rephrased, values changed)
       {
         q: 'A planet of radius $R$ spins with period $24 \\text{ h}$ and has $GM = 3.98 \\times 10^{14} \\text{ m}^{3}\\text{/s}^{2}$. The radius of the stationary orbit, in units of $R = 6.37 \\times 10^{6} \\text{ m}$, is closest to:',
         options: [`$6.6R$`, `$2.0R$`, `$60R$`, `$1.0R$`],
         answer: 0,
         explanation: 'Step 1: Given spin period $T = 86400 \\text{ s}$ and $GM = 3.98 \\times 10^{14} \\text{ m}^{3}\\text{/s}^{2}$. Step 2: Governing law is Kepler III $T^{2} = 4\\pi^{2}r^{3}/GM$ solved for $r$. Step 3: Key equation: $$r = \\left(\\frac{GMT^{2}}{4\\pi^{2}}\\right)^{1/3} = \\left(\\frac{(3.98 \\times 10^{14})(86400)^{2}}{4\\pi^{2}}\\right)^{1/3}.$$ Step 4: Numerics give $r \\approx 4.22 \\times 10^{7} \\text{ m}$, and dividing by $6.37 \\times 10^{6}$ yields $6.6R$; units of the cube root are meters. Step 5: Distractors fail because $2.0R$ is a low orbit, $60R$ is the lunar distance, and $1.0R$ sits on the surface. Step 6: Conclude the stationary orbit is at about **$6.6R$**.',
       },
-      // PYQ-pattern: GATE PH 2017 — mass from surface gravity (rephrased, values changed)
+      // PYQ-pattern — mass from surface gravity (rephrased, values changed)
       {
         q: 'A spherical body has radius $R = 3.40 \\times 10^{6} \\text{ m}$ and surface gravity $g = 3.70 \\text{ m/s}^{2}$. With $G = 6.67 \\times 10^{-11} \\text{ N}\\cdot\\text{m}^{2}\\text{/kg}^{2}$, its mass is closest to:',
         options: [`$6.4 \\times 10^{22} \\text{ kg}$`, `$6.4 \\times 10^{24} \\text{ kg}$`, `$1.0 \\times 10^{23} \\text{ kg}$`, `$6.4 \\times 10^{23} \\text{ kg}$`],

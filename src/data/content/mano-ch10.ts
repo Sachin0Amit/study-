@@ -269,14 +269,14 @@ export const manoCh10Content: SectionContent[] = [
         explanation: 'Flexibility: microroutines are data in a ROM. The cost is one control-memory access per microoperation, which is why pure speed still favors hardwired logic.',
       },
     
-      // PYQ-pattern: GATE 2021 — microprogrammed flexibility (rephrased)
+      // PYQ-pattern — microprogrammed flexibility (rephrased)
       {
         q: "A processor’s instruction set is still changing weekly. Which control style fits, and why?",
         options: ["Hardwired discrete circuits, fastest per step", "Microprogrammed control: changes are edits to control memory, not rewiring", "No control unit", "A larger clock only"],
         answer: 1,
         explanation: "**Step 1 — Given data:** weekly ISA edits, correctness plus agility needed.\n**Step 2 — Rule:** hardwired control is a sum-of-products per line (fast, brittle); microcode stores one control word per (state, opcode) with sequencer fields.\n**Step 3 — Apply:** redesigned instruction $=$ rewritten routine rows; no derivation or rewiring.\n**Step 4 — Cross-check:** the worked unit’s shared term survives in both styles; PLA sits between (reprogrammable once, faster than microcode).\n**Step 5 — Distractors:** hardwired needs re-derivation weekly; no control cannot sequence; clock alone adds no behavior.\n**Step 6 — Conclude:** microprogram for flexibility."
       },
-      // PYQ-pattern: ISRO 2017 — control memory sizing (rephrased)
+      // PYQ-pattern — control memory sizing (rephrased)
       {
         q: "A microprogram holds $64$ control words. How wide is its address field, and what do its sequencer fields do?",
         options: ["$6$ bits; condition selects, select and address choose the next word", "$64$ bits; one per word", "$8$ bits; data only", "$4$ bits; clock only"],

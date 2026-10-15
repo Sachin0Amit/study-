@@ -150,14 +150,14 @@ export const manoCh5Content: SectionContent[] = [
         explanation: 'With data on the enable, the selected output follows the data and all others stay 0 — routing one source to one of $2^{n}$ destinations.',
       },
     
-      // PYQ-pattern: GATE 2015 — decoder as minterm generator (rephrased)
+      // PYQ-pattern — decoder as minterm generator (rephrased)
       {
         q: "$F(A,B,C) = \\Sigma(0,2,5,7)$ is to be built with a $3$-to-$8$ decoder and one logic unit. Which unit on which outputs does it?",
         options: ["AND on $0,2,5,7$", "NOR on $1,3,4,6$", "OR on $0,2,5,7$", "XOR on $0$ and $7$"],
         answer: 2,
         explanation: "**Step 1 — Given data:** three variables, listed $1$-minterms $0,2,5,7$.\n**Step 2 — Rule:** decoder output $D_i$ equals minterm $m_i$; a sum of minterms is an OR of those outputs.\n**Step 3 — Apply:** wire $D_0, D_2, D_5, D_7$ into a $4$-input OR; output $1$ exactly on the listed rows.\n**Step 4 — Cross-check:** complement rows $1,3,4,6$ would need NOR/AND forms, not asked here.\n**Step 5 — Distractors:** AND of $1$-rows gives $0$ almost everywhere; NOR of complement rows is dual but not the asked wiring; two-input XOR covers two rows only.\n**Step 6 — Conclude:** one OR over $0,2,5,7$."
       },
-      // PYQ-pattern: ISRO 2016 — multiplexer as function generator (rephrased)
+      // PYQ-pattern — multiplexer as function generator (rephrased)
       {
         q: "How is $F(A,B,C) = \\Sigma(1,2,6,7)$ built with one $8$-to-$1$ multiplexer?",
         options: ["It cannot be done with a multiplexer", "Select $AB$, data from $C$ only", "Use two multiplexers in series", "Select $S_2S_1S_0 = ABC$, data $D_1 = D_2 = D_6 = D_7 = 1$, rest $0$"],

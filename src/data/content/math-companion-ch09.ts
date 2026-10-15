@@ -1,12 +1,12 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// JEE Mathematics Companion — Chapter 9: Vector Algebra & 3D Geometry
+// Mathematics Companion — Chapter 9: Vector Algebra & 3D Geometry
 // Master study content (sections 9.1 - 9.4).
 // Math is LaTeX rendered by KaTeX via the RichText $...$ / $$...$$ pipeline.
 // ============================================================================
 
-export const jeemathsCh09Content: SectionContent[] = [
+export const mathCompanionCh09Content: SectionContent[] = [
   // ---------------------------------------------------------------- 9.1
   {
     sectionId: 'math-a15-s2',

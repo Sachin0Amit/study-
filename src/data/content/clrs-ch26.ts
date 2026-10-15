@@ -215,7 +215,7 @@ export const clrsCh26Content: SectionContent[] = [
         answer: 1,
         explanation: "Shortest augmenting paths make each pair of vertices' distance labels monotone, so each edge becomes critical only $O(V)$ times — $O(VE)$ augmentations over $O(E)$-length paths: $O(VE^2)$, polynomial independent of capacity magnitudes."
       },
-      // PYQ-pattern: GATE 2019 — max-flow min-cut value (rephrased, values changed)
+      // PYQ-pattern — max-flow min-cut value (rephrased, values changed)
       {
         q: "Capacities: $s\\to a:10, s\\to b:8, a\\to b:3, a\\to t:7, b\\to t:12$. The maximum $s$-$t$ flow value is:",
         options: ["15", "17", "18", "20"],

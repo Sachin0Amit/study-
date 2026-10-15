@@ -1,12 +1,12 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// JEE Mathematics Companion — Chapter 8: Parabola, Ellipse & Hyperbola
+// Mathematics Companion — Chapter 8: Parabola, Ellipse & Hyperbola
 // Master study content (sections 8.1 - 8.4).
 // Math is LaTeX rendered by KaTeX via the RichText $...$ / $$...$$ pipeline.
 // ============================================================================
 
-export const jeemathsCh08Content: SectionContent[] = [
+export const mathCompanionCh08Content: SectionContent[] = [
   // ---------------------------------------------------------------- 8.1
   {
     sectionId: 'math-a9-s1',

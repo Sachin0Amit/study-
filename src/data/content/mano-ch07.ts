@@ -449,21 +449,21 @@ export const manoCh7Content: SectionContent[] = [
         explanation: 'The envelope must cover every bit period of the word: high for all eight clocks, typically formed as the OR of the eight timing signals.',
       },
     
-      // PYQ-pattern: GATE 2016 — ring counter states (rephrased)
+      // PYQ-pattern — ring counter states (rephrased)
       {
         q: "How many distinct states does a $4$-bit ring counter cycle through?",
         options: ["$16$", "$8$", "$10$", "$4$"],
         answer: 3,
         explanation: "**Step 1 — Given data:** $4$ stages, single circulating $1$.\n**Step 2 — Rule:** ring holds one $1$ rotating through $n$ positions; states $= n$.\n**Step 3 — Trace:** $1000 \\to 0100 \\to 0010 \\to 0001 \\to 1000$.\n**Step 4 — Cross-check:** no decoding needed for timing use; each stage directly is one timing pulse $T_i$.\n**Step 5 — Distractors:** $16$ is binary-counter states; $8$ is $3$-bit binary; $10$ is $5$-bit Johnson.\n**Step 6 — Conclude:** $4$ states."
       },
-      // PYQ-pattern: ISRO 2018 — Johnson counter states (rephrased)
+      // PYQ-pattern — Johnson counter states (rephrased)
       {
         q: "A $5$-bit switch-tail (Johnson) counter cycles through how many states, each decoded with what complexity?",
         options: ["$32$ states with $5$-input decoding", "$20$ states with $4$-input decoding", "$5$ states with no decoding", "$10$ states, each with one $2$-input AND"],
         answer: 3,
         explanation: "**Step 1 — Given data:** $n = 5$, complemented feedback.\n**Step 2 — Rule:** Johnson states $= 2n$; each state is identified by two adjacent stage values, hence $2$-input decoding.\n**Step 3 — Count:** $2 \\times 5 = 10$ states ($00000, 10000, 11000, \\ldots, 00001$).\n**Step 4 — Cross-check:** $5$-bit binary would give $32$; ring would give $5$; Johnson doubles the ring by using both phases.\n**Step 5 — Distractors:** $32$ is binary; $5$ is ring; $20$ doubles twice.\n**Step 6 — Conclude:** $10$ states, $2$-input decodes."
       },
-      // PYQ-pattern: DRDO 2019 — timing counter choice (rephrased)
+      // PYQ-pattern — timing counter choice (rephrased)
       {
         q: "A control unit needs $8$ repeating timing pulses with minimal decoding. Which counter fits, and how many flip-flops does it need?",
         options: ["$8$-bit ring with $8$ stages", "$4$-bit Johnson with $4$ stages", "$3$-bit binary with $3$ stages plus $3$-input decodes", "$8$-bit binary with $8$ stages"],

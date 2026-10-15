@@ -98,7 +98,7 @@ export const chemCh40Content: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Count two $Cr$ each gaining three electrons. Step 2: Total six electrons per formula. Step 3: Divide molar mass by six.'
       },
-      // PYQ-pattern: JEE 2020 — permanganate half reaction electrons (rephrased)
+      // PYQ-pattern — permanganate half reaction electrons (rephrased)
       {
         q: '$MnO_{4}$ minus to $Mn^{2+}$ in acid needs:',
         options: ['No electrons', 'No water', '$8H^{+}$ plus $5$ electrons giving $4H_{2}O$', 'Only $OH^{-}$'],
@@ -308,7 +308,7 @@ export const chemCh40Content: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Hydrolyse $R_{2}SiCl_{2}$ to silanol. Step 2: Condense with water loss. Step 3: Build $R_{2}SiO$ chains.'
       },
-      // PYQ-pattern: JEE 2019 — Haber pressure temperature compromise (rephrased)
+      // PYQ-pattern — Haber pressure temperature compromise (rephrased)
       {
         q: 'Haber $NH_{3}$ high yield plus rate uses:',
         options: ['Low pressure high temperature', 'No catalyst', '$Fe$ near $723$ K plus $200$ atm with recycle', 'Once through cold'],

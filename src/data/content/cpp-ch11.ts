@@ -477,7 +477,7 @@ export const cppCh11Content: SectionContent[] = [
         answer: 1,
         explanation: "By-value capture makes the closure self-contained; reference captures alias locals that die with the frame — calling the closure afterwards is undefined behavior."
       },
-      // PYQ-pattern: GATE 2021 — lambda capture by value versus by reference (rephrased)
+      // PYQ-pattern — lambda capture by value versus by reference (rephrased)
       {
         q: "What does this program print?\n```cpp\n#include <iostream>\nint main() {\n  int x = 1;\n  auto f = [x] { return x; };\n  x = 99;\n  auto g = [&x] { return x; };\n  std::cout << f() << ' ' << g();\n}\n```",
         options: ["`99 99`", "`1 99`", "`99 1`", "`1 1`"],

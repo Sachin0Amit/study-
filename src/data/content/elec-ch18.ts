@@ -161,7 +161,7 @@ export const elecCh18Content: SectionContent[] = [
         answer: 1,
         explanation: 'Since $8 = 2^3$ and $16 = 2^4$, an octal digit is always a 3-bit group and a hex digit always a 4-bit group — the conversion is a mechanical regrouping, as in $6735_{10} = 15617_8 = 001\\,101\\,110\\,001\\,111_2$, with no arithmetic at all. Hughes sections 22.13–22.14 introduce them because binary numbers grow cumbersome as they grow long.',
       },
-      // PYQ-pattern: ISRO 2018 — decimal to binary conversion (rephrased, values changed)
+      // PYQ-pattern — decimal to binary conversion (rephrased, values changed)
       {
         q: 'The decimal number 173 is represented in 8-bit unsigned binary as:',
         options: ['10101101', '10100111', '11001010', '01011101'],

@@ -238,7 +238,7 @@ export const clrsCh25Content: SectionContent[] = [
         answer: 1,
         explanation: "Reachability is shortest paths in the Boolean semiring: concatenating paths is AND, choosing between them is OR. (Comparing entries against $\\infty$ also works, but only when you already ran the arithmetic version — Warshall's bit-parallel version is far cheaper.)",
       },
-      // PYQ-pattern: ISRO 2015 — Floyd-Warshall update (rephrased, values changed)
+      // PYQ-pattern — Floyd-Warshall update (rephrased, values changed)
       {
         q: "Initial distances: $w(2,3) = 9, w(2,1) = 3, w(1,3) = 4$. After Floyd-Warshall admits vertex $1$ as intermediate, $d(2,3)$ becomes:",
         options: ["9", "7", "12", "3"],

@@ -110,7 +110,7 @@ export const clrsCh14Content: SectionContent[] = [
         answer: 1,
         explanation: "Exactly the ancestors of the inserted node gain one internal descendant — the O(lg n)-long search path — plus O(1) rotated nodes if the fixup rotates."
       },
-      // PYQ-pattern: ISRO 2019 — order-statistic selection step (rephrased, values changed)
+      // PYQ-pattern — order-statistic selection step (rephrased, values changed)
       {
         q: "In OS-SELECT at node $x$ with $x.left.size = 7$, searching for rank $i = 8$ does what?",
         options: ["Descends to the left child", "Returns the minimum of the right subtree", "Returns the successor of $x$", "Returns $x$ itself"],

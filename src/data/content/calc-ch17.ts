@@ -518,7 +518,7 @@ export const calcCh17Content: SectionContent[] = [
         answer: 1,
         explanation: 'When no combination of known functions solves the equation, the series solution becomes the DEFINITION of a new special function — exactly how $\\operatorname{Ai}$, $\\operatorname{Bi}$, Bessel functions and Legendre polynomials enter mathematics.',
       },
-      // PYQ-pattern: GATE 2020 — recurrence for Airy-type series solution (rephrased, values changed)
+      // PYQ-pattern — recurrence for Airy-type series solution (rephrased, values changed)
       {
         q: 'With $y = \\sum_{n=0}^{\\infty}c_{n}x^{n}$ in $y^{\\prime\\prime} - xy = 0$, the recurrence for $n \\geq 0$ is:',
         options: [`$c_{n+3} = (n+3)(n+2)c_{n}$`, `$c_{n+3} = \\frac{c_{n}}{(n+3)(n+2)}$`, `$c_{n+1} = c_{n}$`, `$c_{n+2} = c_{n}$`],

@@ -215,7 +215,7 @@ export const clrsCh6Content: SectionContent[] = [
         answer: 2,
         explanation: "The value 4 swaps with 14, then with 8, and stops at the leaf: two exchanges — the descent length of the node.",
       },
-      // PYQ-pattern: GATE 2017 — MAX-HEAPIFY trace (rephrased, values changed)
+      // PYQ-pattern — MAX-HEAPIFY trace (rephrased, values changed)
       {
         q: "MAX-HEAPIFY is called on index $2$ of $A = [16, 4, 10, 14, 7, 9, 3, 2, 8, 1]$ (1-indexed), where both subtrees of node $2$ are already max-heaps. The resulting array is:",
         options: ["$[16, 14, 10, 8, 7, 9, 3, 2, 4, 1]$", "$[16, 14, 10, 4, 7, 9, 3, 2, 8, 1]$", "$[16, 7, 10, 14, 4, 9, 3, 2, 8, 1]$", "$[4, 14, 10, 16, 7, 9, 3, 2, 8, 1]$"],
@@ -422,7 +422,7 @@ export const clrsCh6Content: SectionContent[] = [
         answer: 1,
         explanation: "The swapped-down value may violate the property only at the root, and only within the shrunken heap — exactly the situation one root heapify repairs.",
       },
-      // PYQ-pattern: ISRO 2018 — BUILD-MAX-HEAP tight bound (rephrased, values changed)
+      // PYQ-pattern — BUILD-MAX-HEAP tight bound (rephrased, values changed)
       {
         q: "BUILD-MAX-HEAP on an $n$-element array runs in:",
         options: ["$\\Theta(n^2)$ time", "$\\Theta(\\lg n)$ time", "$\\Theta(n)$ time", "$\\Theta(n\\lg n)$ time"],

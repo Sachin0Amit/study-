@@ -86,7 +86,7 @@ export const engmathCh13Content: SectionContent[] = [
       'Classic RK4 blends four slopes 1-2-2-1 for global `$O(h^{4})$`, and systems reduce to vector first-order form.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2012 — Euler step computation on growth equation (rephrased)
+      // PYQ-pattern — Euler step computation on growth equation (rephrased)
       {
         q: 'Euler with `$h = 0.2$` starts at `$y(0) = 1$` on `$y^{\\prime} = 2y$`. What is `$y_{1}$`?',
         options: [`$1.2$`, `$1.4$`, `$1.0$`, `$2.0$`],

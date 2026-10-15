@@ -66,7 +66,7 @@ const registry: Record<string, ComponentType> = {
   // ---- Digital Logic (Mano) labs ----
   'kmap-minimizer': lazy(() => import('./kmap-minimizer')),
   'sequential-lab': lazy(() => import('./sequential-lab')),
-  // ---- Chemistry (JEE & Atkins) labs ----
+  // ---- Chemistry labs ----
   'periodic-table-lab': lazy(() => import('./periodic-table-lab')),
   'equilibrium-lab': lazy(() => import('./equilibrium-lab')),
   'molecular-lab': lazy(() => import('./molecular-lab')),
@@ -141,7 +141,7 @@ export const INTERACTIVE_META: Record<string, ToolMeta> = {
   // ---- Digital Logic (Mano) labs ----
   'kmap-minimizer': { title: 'Karnaugh Map Minimizer', description: 'Drop minterms on the K-map and let the exact cover find your minimal SOP expression.', chapter: 'DLD · Ch 1–5 Combinational' },
   'sequential-lab': { title: 'Sequential Logic Lab', description: 'Clock flip-flops — SR, D, JK, T — and watch state diagrams and excitation tables update together.', chapter: 'DLD · Ch 6–12 Sequential' },
-  // ---- Chemistry (JEE & Atkins) labs ----
+  // ---- Chemistry labs ----
   'periodic-table-lab': { title: 'Periodic Table & Trends Lab', description: 'Explore elements Z = 1–92, electron shell orbits, and periodic periodicity (electronegativity, radius, ionization energy).', chapter: 'Chem · Periodicity & Bonding' },
   'equilibrium-lab': { title: 'Equilibrium & Titration Lab', description: 'Simulate quantitative acid-base titrations, buffer equilibrium curves, and Le Châtelier gas-phase shifts.', chapter: 'Chem · Equilibrium & Stoichiometry' },
   'molecular-lab': { title: 'VSEPR Molecular Geometry 3D', description: 'Rotate molecules in 3D, inspect steric numbers, hybridization, bond angles, lone-pair repulsions and dipole vectors.', chapter: 'Chem · Molecular Shapes & Mechanisms' },

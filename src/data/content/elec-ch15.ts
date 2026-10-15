@@ -285,7 +285,7 @@ export const elecCh15Content: SectionContent[] = [
         answer: 1,
         explanation: 'With $A \\approx 10^{5}$, the differential input needed to produce any in-range output is $v_o/A$ — microvolts. The virtual short then makes the circuit a pure resistor network, so only the external ratios set the gain.',
       },
-      // PYQ-pattern: GATE 2021 — inverting amplifier output (rephrased, values changed)
+      // PYQ-pattern — inverting amplifier output (rephrased, values changed)
       {
         q: 'An ideal inverting amplifier uses $R_{1} = 12$ kΩ and $R_{f} = 48$ kΩ with $0.80$ V at the input. Its output is closest to:',
         options: ['+3.2 V', '−3.2 V', '+6.4 V', '−0.20 V'],
@@ -681,7 +681,7 @@ export const elecCh15Content: SectionContent[] = [
         answer: 1,
         explanation: 'The loop drives the internal node an extra diode-drop high so that the output node obeys the golden rules exactly; the $0.6$–$0.7\\ \\text{V}$ penalty never appears at the output, so signals far below a diode drop can be rectified.',
       },
-      // PYQ-pattern: DRDO 2018 — op-amp integrator triangle amplitude (rephrased, values changed)
+      // PYQ-pattern — op-amp integrator triangle amplitude (rephrased, values changed)
       {
         q: 'An ideal integrator with R = 10 kΩ and C = 100 nF is driven by a symmetric ±5 V square wave at 1.0 kHz. The steady output triangle has peak-to-peak amplitude closest to:',
         options: ['1.25 V', '2.50 V', '5.00 V', '10.0 V'],

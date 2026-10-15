@@ -722,7 +722,7 @@ export const calcCh10Content: SectionContent[] = [
         answer: 2,
         explanation: 'A horizontal directrix below the pole pairs with the **plus sine** form: $r = \\frac{ed}{1 + e\\sin\\theta}$, and $ed = 2 \\cdot 3 = 6$.',
       },
-      // PYQ-pattern: JEE Mains 2020 — eccentricity and type from polar form (rephrased, values changed)
+      // PYQ-pattern — eccentricity and type from polar form (rephrased, values changed)
       {
         q: 'The conic $r = \\frac{6}{2 - \\sin\\theta}$ has eccentricity and type:',
         options: ['Parabola with $e = 1$', 'Hyperbola with $e = 2$', 'Circle with $e = 0$', 'Ellipse with $e = \\frac{1}{2}$'],

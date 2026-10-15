@@ -493,21 +493,21 @@ export const manoCh6Content: SectionContent[] = [
         explanation: 'The D excitation table has no X entries, so the logic maps have only next-state don’t-cares — but the design step itself is direct, which is why the 101 detector used D flip-flops.',
       },
     
-      // PYQ-pattern: GATE 2020 — JK excitation (rephrased)
+      // PYQ-pattern — JK excitation (rephrased)
       {
         q: "A JK flip-flop must go $1 \\to 0$ on the next clock. What $J,K$ achieve it?",
         options: ["$J = 0, K = 0$", "$J = d, K = 1$", "$J = 1, K = d$", "$J = d, K = 0$"],
         answer: 1,
         explanation: "**Step 1 — Given data:** present $1$, next $0$.\n**Step 2 — Rule:** JK table: $0 \\to 0$: $J = 0, K = d$; $0 \\to 1$: $J = 1, K = d$; $1 \\to 0$: $J = d, K = 1$; $1 \\to 1$: $J = d, K = 0$.\n**Step 3 — Apply:** need reset, so $K = 1$; $J$ is don’t-care ($d$).\n**Step 4 — Cross-check:** characteristic $Q^{+} = JQ′ + K′Q$ with $Q = 1$ gives $J(0) + K′(1) = K′ = 0$ when $K = 1$, as required.\n**Step 5 — Distractors:** hold keeps $1$; set drives to $1$; $K = 0$ holds $1$.\n**Step 6 — Conclude:** $J = d, K = 1$."
       },
-      // PYQ-pattern: DRDO 2017 — D versus JK don’t-cares (rephrased)
+      // PYQ-pattern — D versus JK don’t-cares (rephrased)
       {
         q: "Why does designing with D flip-flops give fewer excitation don’t-cares than with JK flip-flops?",
         options: ["D has no clock", "D cannot hold state", "D excitation is $D = Q(t+1)$ with no $X$ entries, while JK has two $d$ per transition pair", "JK has no excitation table"],
         answer: 2,
         explanation: "**Step 1 — Given data:** D table: $0 \\to 0$ needs $0$, $0 \\to 1$ needs $1$, $1 \\to 0$ needs $0$, $1 \\to 1$ needs $1$.\n**Step 2 — Rule:** JK assigns $d$ to half the entries (one input free per transition); D assigns a fixed $0$/$1$.\n**Step 3 — Consequence:** D maps have only next-state don’t-cares from unused states; JK maps also have excitation $d$ entries that enlarge groups.\n**Step 4 — Cross-check:** the $101$ detector illustration uses D for directness despite larger logic — the trade described in the text.\n**Step 5 — Distractors:** D is clocked; D holds via feedback; JK tables exist with $d$ entries.\n**Step 6 — Conclude:** D is direct but less minimizable."
       },
-      // PYQ-pattern: ISRO 2019 — overlapping sequence detector (rephrased)
+      // PYQ-pattern — overlapping sequence detector (rephrased)
       {
         q: "A Mealy $101$ detector with overlap has just output $1$ on input $1$. Which state does it enter, and why?",
         options: ["Reset, pattern finished", "`1 seen`, since the trailing $1$ can start the next $101$", "`10 seen`", "A one-clock lockout state"],

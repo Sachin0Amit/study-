@@ -105,7 +105,7 @@ export const clrsCh24Content: SectionContent[] = [
         answer: 2,
         explanation: "The last improvement, $d[z] = -2$ via $(t,z)$, happens in pass 4 — the final allowed pass, since $|V|-1 = 4$.",
       },
-      // PYQ-pattern: GATE 2021 — Bellman-Ford negative cycle (rephrased, values changed)
+      // PYQ-pattern — Bellman-Ford negative cycle (rephrased, values changed)
       {
         q: "Edges are $s\\to a:2, a\\to b:2, b\\to a:-5$. Bellman-Ford from $s$ reports what?",
         options: ["Final distances $a = 2, b = 4$ with no negative cycle", "A reachable negative-weight cycle", "Stable distances after a single pass", "That Dijkstra must be used instead"],
@@ -331,7 +331,7 @@ export const clrsCh24Content: SectionContent[] = [
         answer: 1,
         explanation: "The priority queue becomes a FIFO queue: vertices are extracted in nondecreasing distance order, which is exactly BFS level order, and the d-values are edge counts.",
       },
-      // PYQ-pattern: GATE 2017 — Dijkstra trace (rephrased, values changed)
+      // PYQ-pattern — Dijkstra trace (rephrased, values changed)
       {
         q: "Non-negative edges: $s\\to a:4, s\\to b:2, b\\to a:1, a\\to c:5, b\\to c:8$. Dijkstra from $s$ settles distance to $c$ as:",
         options: ["6", "7", "8", "10"],

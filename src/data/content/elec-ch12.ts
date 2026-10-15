@@ -316,7 +316,7 @@ export const elecCh12Content: SectionContent[] = [
         explanation:
           'Differentiating the Shockley equation gives $r_d = kT/qI \\approx 26\\ \\mathrm{mV}/I$: at 1 mA that is 26 Ω, halving for every doubling of current.',
       },
-      // PYQ-pattern: GATE 2016 — diode equation forward current (rephrased, values changed)
+      // PYQ-pattern — diode equation forward current (rephrased, values changed)
       {
         q: 'A silicon junction at room temperature has reverse saturation current 10 pA and thermal voltage 25.85 mV. With 0.60 V forward bias and ideality factor unity, the forward current is closest to:',
         options: ['1.2 mA', '12 mA', '120 mA', '1.2 A'],
@@ -503,7 +503,7 @@ export const elecCh12Content: SectionContent[] = [
         explanation:
           '$\\Delta V \\approx I/(f_r C) = 0.5/(100 \\times 2200 \\times 10^{-6}) = 0.5/0.22 = 2.3$ V — charge divided by capacitance, per ripple period.',
       },
-      // PYQ-pattern: DRDO 2019 — full-wave smoothing ripple (rephrased, values changed)
+      // PYQ-pattern — full-wave smoothing ripple (rephrased, values changed)
       {
         q: 'A full-wave bridge fed from a 12 V RMS 50 Hz secondary drives a 100 Ω load through a 2200 μF reservoir capacitor. Allowing about 0.7 V per diode, the peak-to-peak ripple is closest to:',
         options: ['0.18 V', '0.36 V', '0.71 V', '1.42 V'],

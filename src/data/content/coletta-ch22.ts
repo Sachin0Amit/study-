@@ -324,42 +324,42 @@ export const colettaCh22Content: SectionContent[] = [
         answer: 3,
         explanation: "Voltage and current are $90^{\\circ}$ apart, so $\\cos\\phi = 0$ and energy merely sloshes."
       },
-      // PYQ-pattern: JEE Mains 2020 — Faraday loop emf (rephrased, values changed)
+      // PYQ-pattern — Faraday loop emf (rephrased, values changed)
       {
         q: "A 50-turn coil of area $0.020 \\text{ m}^{2}$ faces a field rising from $0$ to $0.50 \\text{ T}$ in $0.10 \\text{ s}$. The induced emf magnitude is:",
         options: ["$0.10 \\text{ V}$", "$50 \\text{ V}$", "$5.0 \\text{ V}$", "$0.50 \\text{ V}$"],
         answer: 2,
         explanation: "Step 1: Given $N = 50$, $A = 0.020 \\text{ m}^{2}$, $\\Delta B = 0.50 \\text{ T}$, $\\Delta t = 0.10 \\text{ s}$. Step 2: Governing law is Faraday $\\mathcal{E} = N\\Delta\\Phi/\\Delta t$ with $\\Phi = BA$ at normal incidence. Step 3: Key equation: $$\\mathcal{E} = N\\frac{A\\Delta B}{\\Delta t} = 50\\frac{(0.020)(0.50)}{0.10}.$$ Step 4: Numerics give flux change $0.010 \\text{ Wb}$ per turn over $0.10 \\text{ s}$, so $\\mathcal{E} = 5.0 \\text{ V}$; units $\\text{Wb/s}$ are volts. Step 5: Distractors fail because $0.10$ drops the $N = 50$ factor, $50$ misplaces a decimal, and $0.50$ confuses $\\Delta B$ with the emf. Step 6: Conclude the coil develops **$5.0 \\text{ V}$**."
       },
-      // PYQ-pattern: JEE Advanced 2018 — motional emf (rephrased, values changed)
+      // PYQ-pattern — motional emf (rephrased, values changed)
       {
         q: "A rod of length $L = 0.40 \\text{ m}$ slides at $v = 3.0 \\text{ m/s}$ across a field $B = 0.80 \\text{ T}$ perpendicular to its motion. The emf between its ends is:",
         options: ["$0.96 \\text{ V}$", "$9.6 \\text{ V}$", "$0.096 \\text{ V}$", "$2.4 \\text{ V}$"],
         answer: 0,
         explanation: "Step 1: Given $B = 0.80 \\text{ T}$, $L = 0.40 \\text{ m}$, $v = 3.0 \\text{ m/s}$ mutually perpendicular. Step 2: Governing law is the motional emf $\\mathcal{E} = BLv$ from magnetic force $qvB$ balancing the separated charge. Step 3: Key equation: $$\\mathcal{E} = (0.80)(0.40)(3.0).$$ Step 4: Numerics give $\\mathcal{E} = 0.96 \\text{ V}$; units $\\text{T}\\cdot\\text{m}\\cdot\\text{m/s}$ are volts. Step 5: Distractors fail by decimal slips or by adding $B + L + v$ instead of multiplying. Step 6: Conclude the sliding rod generates **$0.96 \\text{ V}$**."
       },
-      // PYQ-pattern: GATE PH 2019 — Lenz direction (rephrased, values changed)
+      // PYQ-pattern — Lenz direction (rephrased, values changed)
       {
         q: "A north pole advances toward a loop along its axis. The induced current, viewed from the magnet side:",
         options: ["Circulates to make a south pole facing the magnet, aiding the approach", "Circulates to make a north pole facing the magnet, opposing the approach", "Vanishes because flux is symmetric", "Reverses twice per second regardless of motion"],
         answer: 1,
         explanation: "Step 1: Given an approaching north pole, so the toward-loop flux grows. Step 2: Governing law is Lenz: induced effects oppose the change, with field of a loop given by the right-hand rule. Step 3: Key relation: $$\\mathcal{E} = -\\frac{d\\Phi}{dt},$$ where the minus sign commands opposition. Step 4: To fight rising into-page flux the loop must send field back out, which needs the current sense that presents a north pole; energy logic agrees since aiding would create work from nothing. Step 5: Distractors fail because aiding violates energy conservation, vanishing ignores $d\\Phi/dt$, and fixed reversal describes AC drive rather than this motion. Step 6: Conclude the loop presents a **repelling north pole**."
       },
-      // PYQ-pattern: JEE Mains 2022 — ideal transformer (rephrased, values changed)
+      // PYQ-pattern — ideal transformer (rephrased, values changed)
       {
         q: "An ideal transformer has $N_{1}:N_{2} = 1:10$ with primary at $120 \\text{ V}$. The open secondary voltage is:",
         options: ["$12 \\text{ V}$", "$120 \\text{ V}$", "$12000 \\text{ V}$", "$1200 \\text{ V}$"],
         answer: 3,
         explanation: "Step 1: Given turns ratio $N_{2}/N_{1} = 10$ and $V_{1} = 120 \\text{ V}$. Step 2: Governing law for the ideal core is $V_{2}/V_{1} = N_{2}/N_{1}$ at equal power $V_{1}I_{1} = V_{2}I_{2}$. Step 3: Key equation: $$V_{2} = (10)(120).$$ Step 4: Numerics give $V_{2} = 1200 \\text{ V}$ with secondary current one tenth of primary; units stay volts. Step 5: Distractors fail because $12$ steps down, $120$ copies the primary, and $12000$ adds another factor of ten. Step 6: Conclude the secondary delivers **$1200 \\text{ V}$**."
       },
-      // PYQ-pattern: GATE PH 2021 — LC resonance frequency (rephrased, values changed)
+      // PYQ-pattern — LC resonance frequency (rephrased, values changed)
       {
         q: "A tuner uses $L = 0.25 \\text{ mH}$ and $C = 101 \\text{ pF}$. Its resonance frequency is closest to:",
         options: ["$1.0 \\text{ MHz}$", "$6.3 \\text{ MHz}$", "$100 \\text{ kHz}$", "$10 \\text{ MHz}$"],
         answer: 0,
         explanation: "Step 1: Given $L = 2.5 \\times 10^{-4} \\text{ H}$ and $C = 1.01 \\times 10^{-10} \\text{ F}$. Step 2: Governing law is $X_{L} = X_{C}$, giving $f_{0} = 1/2\\pi\\sqrt{LC}$. Step 3: Key equation: $$f_{0} = \\frac{1}{2\\pi\\sqrt{(2.5 \\times 10^{-4})(1.01 \\times 10^{-10})}}.$$ Step 4: Numerics give $LC = 2.53 \\times 10^{-14}$, root $1.59 \\times 10^{-7}$, so $f_{0} \\approx 1.0 \\times 10^{6} \\text{ Hz}$; units of $1/\\sqrt{\\text{H}\\cdot\\text{F}}$ are hertz. Step 5: Distractors fail because $6.3$ drops the $2\\pi$, $100 \\text{ kHz}$ slips a decade, and $10 \\text{ MHz}$ misreads the pico prefix. Step 6: Conclude the tuner peaks near **$1.0 \\text{ MHz}$**."
       },
-      // PYQ-pattern: JEE Advanced 2021 — reactance comparison (rephrased, values changed)
+      // PYQ-pattern — reactance comparison (rephrased, values changed)
       {
         q: "At $60 \\text{ Hz}$, a $50 \\text{ mH}$ inductor and a $20 \\text{ }\\mu\\text{F}$ capacitor are compared. Which holds?",
         options: ["Inductive dominates by about $114 \\text{ }\\Omega$", "Resistive $19 \\text{ }\\Omega$ dominates", "Capacitive dominates by about $114 \\text{ }\\Omega$", "Both equal $19 \\text{ }\\Omega$"],

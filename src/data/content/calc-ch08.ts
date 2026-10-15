@@ -722,7 +722,7 @@ export const calcCh8Content: SectionContent[] = [
         answer: 0,
         explanation: 'The Gaussian has no elementary antiderivative (it is why the error function exists), yet its total integral converges to exactly $\\sqrt{2\\pi}\\sigma$ after normalization — proved with polar double integrals in Chapter 15.',
       },
-      // PYQ-pattern: JEE Mains 2020 — mean of a continuous density (rephrased, values changed)
+      // PYQ-pattern — mean of a continuous density (rephrased, values changed)
       {
         q: 'Let $f(x) = 3x^{2}$ on $[0, 1]$ and $0$ elsewhere. The mean $\\mu = \\int_{-\\infty}^{\\infty} x f(x)\\,dx$ equals:',
         options: [
@@ -734,7 +734,7 @@ export const calcCh8Content: SectionContent[] = [
         answer: 0,
         explanation: 'Step 1: Restate the mean as **first moment** $\\mu = \\int_{0}^{1} x \\cdot 3x^{2}\\,dx$. Step 2: Recall the key density check $\\int_{0}^{1}3x^{2}\\,dx = 1$, so $f$ is legitimate. Step 3: Simplify the moment integrand to $3x^{3}$. Step 4: Integrate to $\\left[\\frac{3x^{4}}{4}\\right]_{0}^{1} = \\frac{3}{4}$. Step 5: The distractors fail since $\\frac{1}{2}$ is the midpoint rather than the tilted mean, $1$ is the total probability, and $\\frac{1}{4}$ integrates $x^{3}$ without the factor $3$. Step 6: Hence $\\mu = \\frac{3}{4}$.'
       },
-      // PYQ-pattern: JEE Mains 2022 — exponential probability over an interval (rephrased, values changed)
+      // PYQ-pattern — exponential probability over an interval (rephrased, values changed)
       {
         q: 'Let $f(x) = e^{-x}$ for $x \\geq 0$ and $0$ otherwise. Then $P(0 \\leq X \\leq 1)$ equals:',
         options: [

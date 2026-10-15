@@ -2,7 +2,7 @@ import type { FormulaEntry } from './formulas'
 
 // ============================================================================
 // Formula sheet — exam-theory expansion books: Engineering Mathematics,
-// JEE Mathematics Companion, JEE Chemistry, Databases, Computer Networks,
+// Mathematics Companion, Chemistry, Databases, Computer Networks,
 // Compiler Design + Computer Organization, Signals/Control/Communications.
 // `section` is the section number where the fact appears. `formula` is a
 // compact Unicode fallback; `latex` renders with KaTeX when present.
@@ -25,7 +25,7 @@ export const EXAM_FORMULAS: FormulaEntry[] = [
   { chapterId: 'engmath-ch9', section: '9.4', name: 'Transfer From ODE', formula: 'zero-initial-conditions ODE → H(s) = Y(s)/X(s) by algebra', note: 'poles of H = natural frequencies' },
   { chapterId: 'engmath-ch10', section: '10.4', name: 'Sampling Criterion', formula: 'fs > 2·fmax or aliasing folds spectra', latex: 'f_s > 2 f_{\\max}', note: 'undersampling maps f to |f − nfs|' },
 
-  // ================== JEE Mathematics Companion ==================
+  // ================== Mathematics Companion ==================
   { chapterId: 'math-a2', section: '32.9', name: 'De Moivre Rotation', formula: '(cosθ + i sinθ)ⁿ = cos nθ + i sin nθ; ×e^{iθ} rotates by θ', note: 'roots of unity = regular polygons' },
   { chapterId: 'math-a2', section: '32.3', name: 'Omega Algebra', formula: '1 + ω + ω² = 0; ω³ = 1, ω ≠ 1', note: 'kill all symmetric sums with this' },
   { chapterId: 'math-a2', section: '32.14', name: 'Common-Root Condition', formula: 'shared root ⇒ resultant zero; equal ratios of coefficients', note: 'subtract the equations first' },
@@ -39,7 +39,7 @@ export const EXAM_FORMULAS: FormulaEntry[] = [
   { chapterId: 'math-a6', section: '42.3', name: 'Bayes Partition', formula: 'P(Fᵢ|E) = P(E|Fᵢ)P(Fᵢ) / ΣⱼP(E|Fⱼ)P(Fⱼ)', latex: 'P(F_i\\mid E) = \\frac{P(E\\mid F_i)P(F_i)}{\\sum_j P(E\\mid F_j)P(F_j)}', note: 'denominator = total probability' },
   { chapterId: 'math-a6', section: '42.12', name: 'Binomial Moments', formula: 'mean = np, variance = npq', note: 'most-likely k near (n+1)p' },
 
-  // ================== JEE Chemistry ==================
+  // ================== Chemistry ==================
   { chapterId: 'chem-ch1', section: '1.3', name: 'Molarity–Molality Link', formula: 'm = 1000·M / (1000·d − M·M_solute)', note: 'density bridges the two' },
   { chapterId: 'chem-ch2', section: '2.1', name: 'Rydberg Transition', formula: '1/λ = RZ²(1/n₁² − 1/n₂²)', latex: '\\frac{1}{\\lambda} = RZ^2\\left(\\frac{1}{n_1^2}-\\frac{1}{n_2^2}\\right)', note: 'Lyman n₁=1, Balmer n₁=2' },
   { chapterId: 'chem-ch2', section: '2.3', name: 'Node Counts', formula: 'radial = n−l−1; angular = l; total = n−1', note: 's has 0 angular nodes' },

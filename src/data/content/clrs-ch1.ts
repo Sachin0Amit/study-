@@ -244,7 +244,7 @@ export const clrsCh1Content: SectionContent[] = [
         answer: 2,
         explanation: "The argument runs the other way: however fast the hardware, a quadratic algorithm still loses to an $n\\lg n$ one at scale — hardware gains do not substitute for algorithmic efficiency.",
       },
-      // PYQ-pattern: GATE 2016 — quadratic versus n log n crossover (rephrased, values changed)
+      // PYQ-pattern — quadratic versus n log n crossover (rephrased, values changed)
       {
         q: "Two sorting routines take $8n^2$ and $64n\\lg n$ microseconds respectively. At $n = 1024$, which is faster and by roughly what factor?",
         options: ["The quadratic one, by about twofold", "Neither; they tie within ten per cent", "The quadratic one, by about thirteenfold", "The $n\\lg n$ one, by about thirteenfold"],

@@ -562,21 +562,21 @@ export const manoCh1Content: SectionContent[] = [
         explanation: 'The 1’s complement inverts every bit: $101100 \\to 010011$. Option A is the 2’s complement (inversion plus one), and option D describes the same 2’s complement in words.',
       },
     
-      // PYQ-pattern: GATE 2017 — 10s complement (rephrased)
+      // PYQ-pattern — 10s complement (rephrased)
       {
         q: "What is the $10$’s complement of $04567$, and how is it obtained?",
         options: ["$54533$, by digit reversal", "$95432$, by $9$’s complement only", "$95433$, by $9$’s complement plus $1$", "$04567$, unchanged"],
         answer: 2,
         explanation: "**Step 1 — Given data:** number $04567$, radix $10$.\n**Step 2 — Rule:** $r$’s complement $=$ $(r-1)$’s complement plus $1$; $9$’s complement subtracts each digit from $9$.\n**Step 3 — Computation:** $9$’s of $04567 = 95432$; plus $1$ gives $95433$.\n**Step 4 — Cross-check:** $04567 + 95433 = 100000$; the sum wraps to zero in $5$ digits, as a complement must.\n**Step 5 — Distractors:** $95432$ stops before the final increment; reversal is not complementation; unchanged ignores the definition.\n**Step 6 — Conclude:** $95433$."
       },
-      // PYQ-pattern: ISRO 2018 — 2s complement subtraction (rephrased)
+      // PYQ-pattern — 2s complement subtraction (rephrased)
       {
         q: "Compute $25 - 18$ in $8$-bit $2$’s-complement arithmetic. What is the bit result?",
         options: ["$00011001$ ($25$) unchanged", "$11111001$ ($-7$)", "$00000111$ ($7$) with end carry discarded", "$11101110$ ($-18$) only"],
         answer: 2,
         explanation: "**Step 1 — Given data:** $25 = 00011001$, $18 = 00010010$.\n**Step 2 — Rule:** subtract by adding the $2$’s complement: invert bits and add $1$, then add and discard the end carry.\n**Step 3 — Computation:** $-18 = 11101110$; $00011001 + 11101110 = 100000111$; drop the ninth bit → $00000111 = 7$.\n**Step 4 — Cross-check:** $25 - 18 = 7$ in decimal; sign bit $0$ confirms non-negative, and operand signs differed so overflow is impossible.\n**Step 5 — Distractors:** $11111001$ negates the answer; $00011001$ never subtracted; $11101110$ is only the subtrahend’s complement.\n**Step 6 — Conclude:** $00000111$."
       },
-      // PYQ-pattern: DRDO 2019 — decimal subtraction by complements (rephrased)
+      // PYQ-pattern — decimal subtraction by complements (rephrased)
       {
         q: "Compute $3250 - 0376$ using $10$’s-complement addition. What is the result?",
         options: ["$12874$, keeping the carry", "$3626$, by direct addition", "$9624$, the complement itself", "$2874$, after dropping the end carry from $12874$"],

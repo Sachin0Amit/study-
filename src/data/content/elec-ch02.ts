@@ -313,7 +313,7 @@ export const elecCh2Content: SectionContent[] = [
         answer: 1,
         explanation: 'In a parallel network each branch is independent; a broken filament open-circuits one branch only. Series lamps share the supply voltage (their one advantage) but one failure blackens the whole string — the Christmas-tree problem.',
       },
-      // PYQ-pattern: GATE 2016 — series-parallel reduction and current sharing (rephrased, values changed)
+      // PYQ-pattern — series-parallel reduction and current sharing (rephrased, values changed)
       {
         q: 'A 12 V supply feeds a 6 Ω resistor in series with the parallel combination of 3 Ω and 6 Ω. The current through the 3 Ω resistor is closest to:',
         options: ['0.5 A', '1.0 A', '1.5 A', '2.0 A'],
@@ -831,7 +831,7 @@ export const elecCh2Content: SectionContent[] = [
         answer: 2,
         explanation: 'Carbon has a negative coefficient ($-0.00048$ per °C), as do electrolytes and insulators. In semiconductors the resulting feedback — heat, lower resistance, more current, more heat — destroys the device unless cooling intervenes; constantan is engineered for exactly zero.',
       },
-      // PYQ-pattern: DRDO 2018 — copper resistance temperature correction (rephrased, values changed)
+      // PYQ-pattern — copper resistance temperature correction (rephrased, values changed)
       {
         q: 'A copper field coil measures 50 Ω at 20 °C. Taking the temperature coefficient of copper as 0.00393 per °C near room temperature, the resistance at 75 °C is closest to:',
         options: ['55.4 Ω', '60.8 Ω', '66.2 Ω', '50.0 Ω'],

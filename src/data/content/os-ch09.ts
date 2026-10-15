@@ -457,14 +457,14 @@ export const osCh9Content: SectionContent[] = [
         explanation: 'The hardware matches the running process’s ASID against the entry’s — a mismatch is treated as a miss — so entries from several processes coexist and a context switch needs no flush. Without ASIDs, each switch empties the TLB.'
       }
     ,
-      // PYQ-pattern: GATE 2018 — page number and offset (rephrased)
+      // PYQ-pattern — page number and offset (rephrased)
       {
         q: "Logical address $12345$ uses $4$-KB pages ($4096$ bytes). Which page number and offset does it split into?",
         options: ["Page $2$, offset $4153$", "Page $4$, offset $57$", "Page $12$, offset $345$", "Page $3$, offset $57$"],
         answer: 3,
         explanation: "**Step 1 — Given data:** address $12345$, page size $4096 = 2^{12}$, so $12$ bits are offset.\n**Step 2 — Rule:** `page = address div page-size`, `offset = address mod page-size`.\n**Step 3 — Computation:** $3 \\times 4096 = 12288$; $12345 - 12288 = 57$. So page $3$, offset $57$.\n**Step 4 — Cross-check:** $3 \\times 4096 + 57 = 12345$; offset $57 < 4096$ is legal.\n**Step 5 — Distractors:** page $2$ leaves $4153$ which exceeds the page; page $4$ starts at $16384$ beyond the address; $12$ confuses decimal digits with paging.\n**Step 6 — Conclude:** page $3$, offset $57$."
       },
-      // PYQ-pattern: ISRO 2019 — TLB effective access time (rephrased)
+      // PYQ-pattern — TLB effective access time (rephrased)
       {
         q: "TLB search takes $5$ ns, memory access $80$ ns, hit ratio $0.95$. What is the effective access time with single-level paging?",
         options: ["$80$ ns", "$89$ ns", "$165$ ns", "$85$ ns"],

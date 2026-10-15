@@ -98,7 +98,7 @@ export const chemCh43Content: SectionContent[] = [
         answer: 0,
         explanation: 'Step 1: Strip water from the ion. Step 2: Fit the bare ion in the cage. Step 3: Repay dehydration only for $K$ plus size.'
       },
-      // PYQ-pattern: JEE 2018 — hemoglobin versus myoglobin loading curves (rephrased)
+      // PYQ-pattern — hemoglobin versus myoglobin loading curves (rephrased)
       {
         q: 'Hemoglobin loading curve shape and cause are:',
         options: ['Hyperbolic from single site', 'Sigmoidal from cooperative subunits', 'Linear from passive leak', 'Flat from no binding'],
@@ -209,7 +209,7 @@ export const chemCh43Content: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Follow falling potentials downhill. Step 2: Pass cytochrome oxidase. Step 3: Reduce $O_{2}$ to $2H_{2}O$.'
       },
-      // PYQ-pattern: JEE 2022 — SOD disproportionation and water oxidizing complex (rephrased)
+      // PYQ-pattern — SOD disproportionation and water oxidizing complex (rephrased)
       {
         q: 'Water oxidation in photosynthesis occurs at:',
         options: ['The Mn4Ca cluster of photosystem II', 'Cytochrome c in mitochondria', 'Zinc of carbonic anhydrase', 'Sodium potassium pump'],
@@ -314,7 +314,7 @@ export const chemCh43Content: SectionContent[] = [
         answer: 3,
         explanation: 'Step 1: Note nitrogenase is oxygen sensitive. Step 2: Supply respiration with buffered oxygen. Step 3: Keep free oxygen low via leghemoglobin.'
       },
-      // PYQ-pattern: JEE 2019 — Haber conditions versus nitrogenase contrast (rephrased)
+      // PYQ-pattern — Haber conditions versus nitrogenase contrast (rephrased)
       {
         q: 'Biological fixation differs from Haber mainly by:',
         options: ['Ambient enzyme route with ATP cost versus heat pressure bed', 'Identical iron bed in both', 'No hydrogen formed in biology', 'Haber working at room pressure'],

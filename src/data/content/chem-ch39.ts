@@ -98,7 +98,7 @@ export const chemCh39Content: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Read gap between boilers. Step 2: Add plates when vapours overlap. Step 3: Select fractional still for close pairs.'
       },
-      // PYQ-pattern: JEE 2018 — steam distillation pressure sum (rephrased)
+      // PYQ-pattern — steam distillation pressure sum (rephrased)
       {
         q: 'Steam distillation works because:',
         options: ['Steam reacts with organic feed', 'Vacuum seals the still', 'Total pressure sums so boiling drops near $100$ degree', 'Sublimation occurs in liquid'],
@@ -308,7 +308,7 @@ export const chemCh39Content: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Build hexacyanoferrate with $FeSO_{4}$. Step 2: Add ferric $FeCl_{3}$. Step 3: Strike blue $Fe_{4}Fe(CN)_{6}$.'
       },
-      // PYQ-pattern: JEE 2021 — Prussian blue sequence (rephrased)
+      // PYQ-pattern — Prussian blue sequence (rephrased)
       {
         q: 'Violet with nitroprusside plus black with lead acetate means:',
         options: ['Halogen present', 'Nitrogen alone', 'Sulfide $S$ as $Na_{2}S$ pool', 'No element'],

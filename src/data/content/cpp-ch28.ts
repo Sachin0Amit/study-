@@ -294,7 +294,7 @@ export const cppCh28Content: SectionContent[] = [
         answer: 1,
         explanation: '999 levels of instantiation is at or beyond most compilers\' default depth caps, and is slow even when allowed.',
       },
-      // PYQ-pattern: GATE 2015 — compile-time selection with conditional (rephrased)
+      // PYQ-pattern — compile-time selection with conditional (rephrased)
       {
         q: "What is `T` below?\n```cpp\n#include <type_traits>\nusing T = std::conditional<true, int, double>::type;\n```",
         options: ["`double`, because both branches are instantiated into the result", "`int`, because the boolean selects the first branch at compile time", "The alias is ill-formed: types cannot be computed", "`bool`, because the condition value leaks into the result"],

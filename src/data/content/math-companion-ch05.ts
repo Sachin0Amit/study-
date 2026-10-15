@@ -6,7 +6,7 @@ import type { SectionContent } from '../library'
 // telescoping and AGP summation.
 // ============================================================================
 
-export const jeemathsCh05Content: SectionContent[] = [
+export const mathCompanionCh05Content: SectionContent[] = [
   // ---------------------------------------------------------------- 5.1
   {
     sectionId: 'calc-ch11-s20',

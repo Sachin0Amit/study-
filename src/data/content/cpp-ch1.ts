@@ -241,7 +241,7 @@ export const cppCh1Content: SectionContent[] = [
         answer: 2,
         explanation: "A universal base class taxes every use with indirection and uniformity of representation; C++ deliberately has none.",
       },
-      // PYQ-pattern: GATE 2011 — C versus C++ character literal types (rephrased)
+      // PYQ-pattern — C versus C++ character literal types (rephrased)
       {
         q: "The same source line `sizeof('a')` is compiled once as C and once as C++. What values result, and what does the difference show?\n```cpp\n// compiled as C:   printf(\"%d\\n\", (int)sizeof('a'));\n// compiled as C++: std::cout << sizeof('a');\n```",
         options: ["`1` in both, because character literals are identical in the two languages", "`4` in both, because `int` occupies 4 bytes on every platform", "`4` in C and `1` in C++, because C gives character literals type `int` while C++ gives them type `char`", "`1` in C and `4` in C++, because C++ widens every literal"],

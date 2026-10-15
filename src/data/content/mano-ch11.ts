@@ -276,14 +276,14 @@ export const manoCh11Content: SectionContent[] = [
         explanation: 'ISZ increments the memory word in DR; if the result is zero, PC <- PC + 1 skips the next instruction (typically skipping an unconditional branch back to loop start).'
       }
     ,
-      // PYQ-pattern: GATE 2018 — fetch microoperations (rephrased)
+      // PYQ-pattern — fetch microoperations (rephrased)
       {
         q: "Which register transfers occur at $T_0$, $T_1$, $T_2$ of every fetch, and which rides free?",
         options: ["$T_0$: AR $\\leftarrow$ PC; $T_1$: IR $\\leftarrow$ M[AR] with PC $\\leftarrow$ PC $+ 1$ free; $T_2$: decode plus AR $\\leftarrow$ IR($0$–$11$)", "$T_0$: AC $\\leftarrow$ DR only", "$T_1$: halt", "$T_2$: output to peripheral"],
         answer: 0,
         explanation: "**Step 1 — Given data:** sequence counter states $T_0$.. with common bus plus dedicated PC incrementer.\n**Step 2 — Rule:** one bus transfer per state; dedicated paths ride free alongside a bus transfer.\n**Step 3 — Trace:** $T_0$ aims AR at PC; $T_1$ reads the word into IR while PC increments off-bus; $T_2$ decodes opcode into $D$ lines and aims AR at the address field.\n**Step 4 — Cross-check:** indirect adds $T_3$: AR $\\leftarrow$ M[AR]; direct skips it.\n**Step 5 — Distractors:** AC work belongs to execute; halt is HLT at $T_3$; peripheral transfer is input-output.\n**Step 6 — Conclude:** the three-step invariant fetch."
       },
-      // PYQ-pattern: DRDO 2019 — LDA execute (rephrased)
+      // PYQ-pattern — LDA execute (rephrased)
       {
         q: "Direct LDA (load accumulator) executes which microoperations at $T_3$ and $T_4$?",
         options: ["$T_3$: DR $\\leftarrow$ M[AR]; $T_4$: AC $\\leftarrow$ DR with SC $\\leftarrow$ $0$", "$T_3$: halt", "$T_3$: AC $\\leftarrow$ AC $+ 1$", "$T_3$: output to OUTR"],

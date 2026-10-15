@@ -181,7 +181,7 @@ export const elecCh19Content: SectionContent[] = [
         answer: 1,
         explanation: 'At leading power factor the regulation is $I_1 (R_e \\cos\\phi_2 - X_e \\sin\\phi_2)/V_1$; since $X_e$ dominates $R_e$, this is negative. In Example 29.8 the 400 V secondary rose to 407 V at 0.7 leading.',
       },
-      // PYQ-pattern: GATE 2015 — transformer core flux from EMF equation (rephrased, values changed)
+      // PYQ-pattern — transformer core flux from EMF equation (rephrased, values changed)
       {
         q: 'A 400 V, 50 Hz single-phase transformer winding has 200 turns. Assuming sinusoidal flux and negligible drops, the maximum core flux is closest to:',
         options: ['0.90 mWb', '4.50 mWb', '9.01 mWb', '18.0 mWb'],

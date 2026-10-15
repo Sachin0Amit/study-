@@ -1008,7 +1008,7 @@ export const ch11Content: SectionContent[] = [
         explanation:
           'By the cut argument, every cut’s unique cheapest edge must appear in every MST; with distinct weights all cuts have unique cheapest edges, so all MSTs coincide — there is exactly one.',
       },
-      // PYQ-pattern: GATE 2011 — Kruskal MST weight computation (rephrased, values changed)
+      // PYQ-pattern — Kruskal MST weight computation (rephrased, values changed)
       {
         q: 'A connected weighted graph has vertices $p, q, r, s$ with edges $p$–$q$ $(3)$, $p$–$r$ $(1)$, $q$–$r$ $(2)$, $q$–$s$ $(4)$, $r$–$s$ $(5)$. The weight of its minimum spanning tree equals:',
         options: [`$6$`, `$7$`, `$8$`, `$10$`],

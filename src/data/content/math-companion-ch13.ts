@@ -5,7 +5,7 @@ import type { SectionContent } from '../library'
 // Hall and Knight Chapters XIII-XVIII plus XXIII-XXV: series craft.
 // ============================================================================
 
-export const jeemathsCh13Content: SectionContent[] = [
+export const mathCompanionCh13Content: SectionContent[] = [
   // ---------------------------------------------------------------- 13.1
   {
     sectionId: 'calc-ch11-s24',

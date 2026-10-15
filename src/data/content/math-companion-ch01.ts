@@ -6,7 +6,7 @@ import type { SectionContent } from '../library'
 // triangle bounds and loci.
 // ============================================================================
 
-export const jeemathsCh01Content: SectionContent[] = [
+export const mathCompanionCh01Content: SectionContent[] = [
   // ---------------------------------------------------------------- 1.1
   {
     sectionId: 'math-a2-s8',

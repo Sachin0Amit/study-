@@ -202,7 +202,7 @@ export const cppCh20Content: SectionContent[] = [
         answer: 3,
         explanation: "Pass by value copies the base subobject only — the derived members are sliced away. (Had Shape been abstract, the compiler would have refused the parameter outright.) Either way, the fix is `const Shape&`.",
       },
-      // PYQ-pattern: GATE 2016 — virtual versus non-virtual dispatch (rephrased)
+      // PYQ-pattern — virtual versus non-virtual dispatch (rephrased)
       {
         q: "What does this program print?\n```cpp\n#include <iostream>\nstruct Base {\n  virtual void who() { std::cout << 'B'; }\n  void id() { std::cout << 'b'; }\n};\nstruct Child : Base {\n  void who() override { std::cout << 'C'; }\n  void id() { std::cout << 'c'; }\n};\nint main() {\n  Child c;\n  Base* p = &c;\n  p->who();\n  p->id();\n}\n```",
         options: ["`Cb`", "`Bb`", "`Cc`", "`Bc`"],

@@ -1236,7 +1236,7 @@ export const calcCh15Content: SectionContent[] = [
         answer: 0,
         explanation: 'Section 15.9’s element is exactly $\\left|\\frac{\\partial(x, y, z)}{\\partial(\\rho, \\theta, \\phi)}\\right|$, computed as a $3 \\times 3$ determinant.',
       },
-      // PYQ-pattern: JEE Advanced 2022 — Jacobian of a linear map (rephrased, values changed)
+      // PYQ-pattern — Jacobian of a linear map (rephrased, values changed)
       {
         q: 'For $x = u + v$ and $y = u - v$, the absolute Jacobian $\\left|\\frac{\\partial(x, y)}{\\partial(u, v)}\\right|$ equals:',
         options: [`$0$`, `$1$`, `$4$`, `$2$`],

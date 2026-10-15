@@ -189,7 +189,7 @@ export const cppCh7Content: SectionContent[] = [
         answer: 2,
         explanation: "Without an element type there is nothing to dereference and no element size to step by — the legal uses are storing and passing it."
       },
-      // PYQ-pattern: GATE 2008 — postfix dereference precedence output (rephrased)
+      // PYQ-pattern — postfix dereference precedence output (rephrased)
       {
         q: "What does this program print?\n```cpp\n#include <iostream>\nint main() {\n  int a = 5;\n  int* p = &a;\n  std::cout << *p++ << ' ' << (p - &a);\n}\n```",
         options: ["`6 0`", "`5 1`", "`5 0`", "The behavior is undefined, because the evaluation order is unspecified"],
@@ -692,7 +692,7 @@ export const cppCh7Content: SectionContent[] = [
         answer: 2,
         explanation: "$10^6$ ints at 4 bytes each is 4 MB of payload; the reference itself is a pointer-sized handle."
       },
-      // PYQ-pattern: GATE 2017 — reference binding rules for temporaries (rephrased)
+      // PYQ-pattern — reference binding rules for temporaries (rephrased)
       {
         q: "Which statement about these declarations is correct?\n```cpp\nint v = 5;\nint& r1 = v;\nint&& r2 = 5;\nint& r3 = 5;\n```",
         options: ["All three references are well-formed", "`r1` is ill-formed, because lvalue references cannot bind to variables", "`r2` is ill-formed, because rvalue references cannot bind to literals", "`r3` is ill-formed: a non-const lvalue reference cannot bind to a temporary"],

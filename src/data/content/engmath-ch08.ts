@@ -91,7 +91,7 @@ export const engmathCh08Content: SectionContent[] = [
         explanation: 'Step 1: Expand $1/(z-3)$ in $z/3$ for the outer-safe term. Step 2: Expand $1/(z-1)$ in $1/z$ for the inner pole. Step 3: Combine to see mixed annulus structure with both directions present.'
       },
       {
-        // PYQ-pattern: GATE 2011 — classification of an isolated singularity (rephrased, values changed)
+        // PYQ-pattern — classification of an isolated singularity (rephrased, values changed)
         q: 'The singularity of $e^{1/z}$ at $z = 0$ is:',
         options: ['Removable', 'Essential', 'A pole of order $1$', 'A pole of order $2$'],
         answer: 1,
@@ -217,7 +217,7 @@ export const engmathCh08Content: SectionContent[] = [
         explanation: 'Step 1: Recognize a simple pole with cleared value $(z-4)f = 1$. Step 2: Take the limit $1$ at $z = 4$. Step 3: Distinguish the residue $1$ from the loop integral $2\\pi i$ that multiplies it.'
       },
       {
-        // PYQ-pattern: GATE 2009 — residue at a higher-order pole (rephrased, values changed)
+        // PYQ-pattern — residue at a higher-order pole (rephrased, values changed)
         q: 'For $f(z) = e^{z}/(z - 1)^{2}$, $\\mathrm{Res}(f, 1)$ equals:',
         options: [`$0$`, `$e$`, `$1$`, `$2e$`],
         answer: 1,
@@ -330,7 +330,7 @@ export const engmathCh08Content: SectionContent[] = [
     ],
     quiz: [
       {
-        // PYQ-pattern: GATE 2014 — residue theorem on a circle (rephrased, values changed)
+        // PYQ-pattern — residue theorem on a circle (rephrased, values changed)
         q: 'Poles of $1/[(z-1)(z+1)(z-3)]$ inside $|z| = 2$ are:',
         options: ['$1$ only', `$1$ and $-1$`, `$1$, $-1$ and $3$`, 'None'],
         answer: 1,
@@ -454,7 +454,7 @@ export const engmathCh08Content: SectionContent[] = [
         explanation: 'Step 1: Factor $x^{2} + 4 = (z - 2i)(z + 2i)$ over $\\mathbb{C}$. Step 2: Keep only $\\Im z > 0$ for upward closure, namely $2i$. Step 3: Compute $1/(2i + 2i) = 1/(4i)$ as the cover-up value.'
       },
       {
-        // PYQ-pattern: GATE 2008 — real rational integral by residues (rephrased, values changed)
+        // PYQ-pattern — real rational integral by residues (rephrased, values changed)
         q: '$\\int_{-\\infty}^{\\infty} dx/(x^{2} + 1)$ equals:',
         options: [`$0$`, `$\\pi/2$`, `$2\\pi$`, `$\\pi$`],
         answer: 3,

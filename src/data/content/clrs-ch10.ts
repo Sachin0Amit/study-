@@ -123,7 +123,7 @@ export const clrsCh10Content: SectionContent[] = [
         answer: 1,
         explanation: "Both states are encoded by index arithmetic alone; sacrificing one slot makes 'empty' (head = tail) and 'full' (head = tail + 1) mutually exclusive signals.",
       },
-      // PYQ-pattern: GATE 2018 — circular queue wraparound (rephrased, values changed)
+      // PYQ-pattern — circular queue wraparound (rephrased, values changed)
       {
         q: "A circular queue of capacity $5$ has head $= 3$ and tail $= 1$ (all arithmetic modulo $5$). After two further ENQUEUE operations, the queue is:",
         options: ["Holding $3$ items", "Full with $5$ items", "Empty", "Holding $4$ items"],

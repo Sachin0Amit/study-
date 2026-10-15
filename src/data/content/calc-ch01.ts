@@ -984,14 +984,14 @@ export const calcCh1Content: SectionContent[] = [
         answer: 1,
         explanation: '$\\sin(\\tfrac{\\pi}{6}) = 0.5$ and $\\tfrac{\\pi}{6}$ lies in the range $[-\\tfrac{\\pi}{2}, \\tfrac{\\pi}{2}]$ — both conditions are required, which is why $\\tfrac{5\\pi}{6}$ (also with sine 0.5) is rejected.',
       },
-      // PYQ-pattern: JEE Mains 2019 — inverse value of a linear function (rephrased, values changed)
+      // PYQ-pattern — inverse value of a linear function (rephrased, values changed)
       {
         q: 'If $f(x) = 3x - 7$, then $f^{-1}(5)$ equals:',
         options: [`$8$`, `$\\frac{22}{3}$`, `$4$`, `$-4$`],
         answer: 2,
         explanation: 'Step 1: Restate the inverse value as the unique $x$ with $f(x) = 5$. Step 2: Recall the key definition $f^{-1}(y) = x \\iff f(x) = y$. Step 3: Set $3x - 7 = 5$ to get $3x = 12$. Step 4: Divide to obtain $x = 4$. Step 5: The distractors fail since $8$ adds instead of solving, $\\frac{22}{3}$ mis-reads the equation as $3 \\times 5 - 7$ over a wrong denominator, and $-4$ flips a sign. Step 6: Hence $f^{-1}(5) = 4$.'
       },
-      // PYQ-pattern: JEE Mains 2021 — logarithmic equation with domain check (rephrased, values changed)
+      // PYQ-pattern — logarithmic equation with domain check (rephrased, values changed)
       {
         q: 'Solve $\\log_{2} x + \\log_{2}(x-2) = 3$ for $x$.',
         options: [`$x = -2$`, `$x = 4$`, `$x = 2$`, `$x = 8$`],

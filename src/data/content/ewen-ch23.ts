@@ -905,42 +905,42 @@ export const ewenCh23Content: SectionContent[] = [
         answer: 1,
         explanation: "Low-$Z$ stopping minimizes radiative conversion; lead follows for any residual photons.",
       },
-      // PYQ-pattern: JEE Mains 2020 — photon energy (rephrased, values changed)
+      // PYQ-pattern — photon energy (rephrased, values changed)
       {
         q: "Green light of wavelength $\\lambda = 500 \\text{ nm}$ carries photon energy closest to:",
         options: ["$2.48 \\text{ eV}$", "$1.24 \\text{ eV}$", "$4.96 \\text{ eV}$", "$12.4 \\text{ eV}$"],
         answer: 0,
         explanation: "Step 1: Given $\\lambda = 500 \\text{ nm} = 5.00 \\times 10^{-7} \\text{ m}$. Step 2: Governing law is $E = hc/\\lambda$ with $hc = 1240 \\text{ eV}\\cdot\\text{nm}$. Step 3: Key equation: $$E = \\frac{1240}{500}.$$ Step 4: Numerics give $E = 2.48 \\text{ eV}$; units $\\text{eV}\\cdot\\text{nm}/\\text{nm}$ are energy. Step 5: Distractors fail because $1.24$ doubles the wavelength, $4.96$ halves it, and $12.4$ slips a decimal. Step 6: Conclude each green photon carries **$2.48 \\text{ eV}$**."
       },
-      // PYQ-pattern: JEE Advanced 2019 — photoelectric stopping potential (rephrased, values changed)
+      // PYQ-pattern — photoelectric stopping potential (rephrased, values changed)
       {
         q: "Light of frequency $f = 1.00 \\times 10^{15} \\text{ Hz}$ strikes a surface of work function $\\phi = 2.00 \\text{ eV}$. The stopping potential is closest to:",
         options: ["$4.14 \\text{ V}$", "$1.07 \\text{ V}$", "$2.14 \\text{ V}$", "$0$"],
         answer: 2,
         explanation: "Step 1: Given $f = 1.00 \\times 10^{15} \\text{ Hz}$ and $\\phi = 2.00 \\text{ eV}$. Step 2: Governing law is Einstein $K_{max} = hf - \\phi$ with $h = 4.14 \\times 10^{-15} \\text{ eV}\\cdot\\text{s}$, and $eV_{0} = K_{max}$. Step 3: Key equation: $$hf = (4.14 \\times 10^{-15})(1.00 \\times 10^{15}) = 4.14 \\text{ eV}, \\qquad V_{0} = 4.14-2.00.$$ Step 4: Numerics give $K_{max} = 2.14 \\text{ eV}$ so $V_{0} = 2.14 \\text{ V}$; volts match electron-volts per charge. Step 5: Distractors fail because $4.14$ forgets the work function, $1.07$ halves the remainder, and $0$ claims no emission although $hf > \\phi$. Step 6: Conclude the stopping potential is **$2.14 \\text{ V}$**."
       },
-      // PYQ-pattern: GATE PH 2021 — de Broglie wavelength (rephrased, values changed)
+      // PYQ-pattern — de Broglie wavelength (rephrased, values changed)
       {
         q: "An electron moves at $v = 1.00 \\times 10^{6} \\text{ m/s}$. Its de Broglie wavelength is closest to:",
         options: ["$7.3 \\text{ nm}$", "$0.73 \\text{ nm}$", "$0.073 \\text{ nm}$", "$1.46 \\text{ nm}$"],
         answer: 1,
         explanation: "Step 1: Given $v = 1.00 \\times 10^{6} \\text{ m/s}$ and $m = 9.11 \\times 10^{-31} \\text{ kg}$. Step 2: Governing law is $\\lambda = h/p = h/mv$ with $h = 6.626 \\times 10^{-34} \\text{ J}\\cdot\\text{s}$. Step 3: Key equation: $$\\lambda = \\frac{6.626 \\times 10^{-34}}{(9.11 \\times 10^{-31})(1.00 \\times 10^{6})}.$$ Step 4: Numerics give $\\lambda = 7.27 \\times 10^{-10} \\text{ m} = 0.73 \\text{ nm}$; units $\\text{J}\\cdot\\text{s}/(\\text{kg}\\cdot\\text{m/s})$ are meters. Step 5: Distractors fail by factors of ten or by doubling the momentum. Step 6: Conclude the matter wavelength is about **$0.73 \\text{ nm}$**."
       },
-      // PYQ-pattern: JEE Mains 2018 — Bohr level energy (rephrased, values changed)
+      // PYQ-pattern — Bohr level energy (rephrased, values changed)
       {
         q: "Hydrogen levels obey $E_{n} = -13.6/n^{2} \\text{ eV}$. The energy needed to ionize the atom from $n = 2$ is:",
         options: ["$13.6 \\text{ eV}$", "$10.2 \\text{ eV}$", "$1.89 \\text{ eV}$", "$3.40 \\text{ eV}$"],
         answer: 3,
         explanation: "Step 1: Given $E_{2} = -13.6/4 = -3.40 \\text{ eV}$ and free electron at $0$. Step 2: Governing law is the Bohr level formula $E_{n} = -13.6/n^{2} \\text{ eV}$. Step 3: Key equation: $$E_{ion} = 0-E_{2} = 0-(-3.40) = 3.40 \\text{ eV}.$$ Step 4: Units are $\\text{eV}$ and the cost must be smaller than from the ground state. Step 5: Distractors fail because $13.6$ ionizes from $n = 1$, $10.2$ is the $2 \\to 1$ photon, and $1.89$ is the $3 \\to 2$ line. Step 6: Conclude ionization from $n = 2$ costs **$3.40 \\text{ eV}$**."
       },
-      // PYQ-pattern: GATE PH 2017 — half-life decay (rephrased, values changed)
+      // PYQ-pattern — half-life decay (rephrased, values changed)
       {
         q: "A sample has half-life $8.0 \\text{ days}$. The surviving fraction after $24 \\text{ days}$ is:",
         options: ["$\\frac{1}{8}$", "$\\frac{1}{3}$", "$\\frac{1}{16}$", "$\\frac{1}{2}$"],
         answer: 0,
         explanation: "Step 1: Given half-life $T_{1/2} = 8.0 \\text{ days}$ and wait $t = 24 \\text{ days}$. Step 2: Governing law is $N = N_{0}(1/2)^{t/T_{1/2}}$. Step 3: Key equation: $$\\frac{N}{N_{0}} = \\left(\\frac{1}{2}\\right)^{24/8} = \\left(\\frac{1}{2}\\right)^{3}.$$ Step 4: Numerics give $1/8 = 0.125$; the fraction is dimensionless and must fall below one half. Step 5: Distractors fail because $1/3$ divides linearly, $1/16$ counts four half-lives, and $1/2$ stops after one. Step 6: Conclude about **$\\frac{1}{8}$ of the sample remains**."
       },
-      // PYQ-pattern: JEE Advanced 2022 — hydrogen spectral line (rephrased, values changed)
+      // PYQ-pattern — hydrogen spectral line (rephrased, values changed)
       {
         q: "The red hydrogen line at $656 \\text{ nm}$ corresponds to photon energy closest to:",
         options: ["$10.2 \\text{ eV}$", "$1.89 \\text{ eV}$", "$3.78 \\text{ eV}$", "$13.6 \\text{ eV}$"],

@@ -217,7 +217,7 @@ export const clrsCh22Content: SectionContent[] = [
         answer: 1,
         explanation: "Each vertex is enqueued/dequeued at most once ($O(V)$) and each edge is scanned once per direction ($O(E)$) — the aggregate argument. $O(V^2)$ is the matrix-based running time."
       },
-      // PYQ-pattern: GATE 2018 — BFS layer distances (rephrased, values changed)
+      // PYQ-pattern — BFS layer distances (rephrased, values changed)
       {
         q: "Undirected edges are $s-a, s-b, a-c, b-c, c-d$. Breadth-first search from $s$ assigns what distance to $d$?",
         options: ["2", "3", "4", "1"],
@@ -535,7 +535,7 @@ export const clrsCh22Content: SectionContent[] = [
         answer: 1,
         explanation: "Two DFS traversals plus building the transpose — each $\\Theta(V+E)$, and constants add, not multiply."
       },
-      // PYQ-pattern: ISRO 2019 — strongly connected components count (rephrased, values changed)
+      // PYQ-pattern — strongly connected components count (rephrased, values changed)
       {
         q: "Directed edges are $1\\to2, 2\\to3, 3\\to1, 3\\to4, 4\\to5, 5\\to4$. How many strongly connected components does the digraph have?",
         options: ["1", "2", "3", "5"],

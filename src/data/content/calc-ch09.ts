@@ -777,7 +777,7 @@ export const calcCh9Content: SectionContent[] = [
         answer: 2,
         explanation: 'Both species suffer from encounters — competition for a shared resource. The book’s example has four equilibria, with coexistence below both solo carrying capacities.',
       },
-      // PYQ-pattern: JEE Mains 2021 — coexistence equilibrium of Lotka-Volterra (rephrased, values changed)
+      // PYQ-pattern — coexistence equilibrium of Lotka-Volterra (rephrased, values changed)
       {
         q: 'For $\\frac{dR}{dt} = 0.4R - 0.02RF$ and $\\frac{dF}{dt} = -0.3F + 0.01RF$, the coexistence equilibrium with $R > 0$ and $F > 0$ is:',
         options: [`$(20, 30)$`, `$(30, 20)$`, 'Only $(0, 0)$', `$(40, 10)$`],

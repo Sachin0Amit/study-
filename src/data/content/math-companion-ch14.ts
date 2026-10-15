@@ -5,7 +5,7 @@ import type { SectionContent } from '../library'
 // Part I: angle measure, compound and multiple angles, general solutions.
 // ============================================================================
 
-export const jeemathsCh14Content: SectionContent[] = [
+export const mathCompanionCh14Content: SectionContent[] = [
   // ---------------------------------------------------------------- 14.1
   {
     sectionId: 'math-a7-s10',

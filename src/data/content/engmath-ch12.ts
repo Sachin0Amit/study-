@@ -398,7 +398,7 @@ export const engmathCh12Content: SectionContent[] = [
       'Newton iteration `$x_{n+1} = x_{n} - f \\div f^{\\prime}$` converges quadratically near simple roots and extends via Jacobian solves.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2016 — condition number of orthogonal matrices (rephrased)
+      // PYQ-pattern — condition number of orthogonal matrices (rephrased)
       {
         q: 'What is the two-norm condition number of any orthogonal matrix `$Q$`?',
         options: [`$0$`, `$1$`, 'Equal to its determinant', 'Infinite'],

@@ -509,7 +509,7 @@ export const cppCh23Content: SectionContent[] = [
         answer: 2,
         explanation: 'Deduction is deliberately exact: beyond decay and `const` trimming, no conversions are applied, so every deduction is unambiguous — and conflicts surface as errors at the call site.',
       },
-      // PYQ-pattern: GATE 2021 — function template argument deduction conflict (rephrased)
+      // PYQ-pattern — function template argument deduction conflict (rephrased)
       {
         q: "What happens with this call?\n```cpp\ntemplate <typename T> T bigger(T a, T b) { return a > b ? a : b; }\nint main() { auto x = bigger(1, 2.5); }\n```",
         options: ["`x` is the `int` `2`, because the second argument truncates", "`x` is the `double` `2.5`, because the first argument promotes", "The call quietly deduces `T = double`", "The call fails: deduction finds conflicting types for `T`, and no conversion applies during deduction"],

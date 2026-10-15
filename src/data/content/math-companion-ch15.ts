@@ -5,7 +5,7 @@ import type { SectionContent } from '../library'
 // Part II: principal values, triangle solutions, heights, centres.
 // ============================================================================
 
-export const jeemathsCh15Content: SectionContent[] = [
+export const mathCompanionCh15Content: SectionContent[] = [
   // ---------------------------------------------------------------- 15.1
   {
     sectionId: 'math-a7-s13',

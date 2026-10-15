@@ -117,7 +117,7 @@ export const cppCh18Content: SectionContent[] = [
         answer: 1,
         explanation: "Best match must dominate in one argument and tie or win in all others; mutual domination means no winner — the compiler refuses to guess.",
       },
-      // PYQ-pattern: GATE 2019 — overload ranking promotion versus conversion (rephrased)
+      // PYQ-pattern — overload ranking promotion versus conversion (rephrased)
       {
         q: "Which overload is selected?\n```cpp\nvoid f(int);\nvoid f(double);\nint main() { f('a'); }\n```",
         options: ["`f(int)`, because `char` to `int` is a promotion while `char` to `double` is a conversion, and promotions rank higher", "`f(double)`, because floating types always outrank integer types", "The call is ambiguous, because both candidates need one conversion", "Neither is viable: character arguments require an exact match"],
@@ -496,7 +496,7 @@ export const cppCh18Content: SectionContent[] = [
         answer: 1,
         explanation: "That is the definition of a converting constructor; when it is not part of the design, `explicit` turns the surprise into a compile error.",
       },
-      // PYQ-pattern: GATE 2023 — competing implicit conversions ambiguity (rephrased)
+      // PYQ-pattern — competing implicit conversions ambiguity (rephrased)
       {
         q: "A class `Score` provides both a non-explicit constructor `Score(int)` and a conversion operator `operator int()`. What follows for code that mixes `Score` values with integers?",
         options: ["The constructor path always wins every overload contest", "The conversion operator path always wins every overload contest", "Calls may turn ambiguous or surprising as two user-defined conversion sequences compete, so one direction should be marked explicit", "Every use of `+` with a `Score` is ill-formed"],

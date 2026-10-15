@@ -248,7 +248,7 @@ export const clrsCh5Content: SectionContent[] = [
         answer: 0,
         explanation: "Each person matches with probability $1/n$; summing $n$ such indicators gives $n \\cdot (1/n) = 1$ — a constant expectation despite strongly dependent events.",
       },
-      // PYQ-pattern: ISRO 2019 — expected hires by linearity (rephrased, values changed)
+      // PYQ-pattern — expected hires by linearity (rephrased, values changed)
       {
         q: "In the hiring problem with $4$ candidates arriving in uniformly random order, the expected number hired equals:",
         options: ["$1$", "$1.5$", "$4$", "$\\frac{25}{12} \\approx 2.08$"],

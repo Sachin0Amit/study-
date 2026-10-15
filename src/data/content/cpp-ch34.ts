@@ -116,7 +116,7 @@ export const cppCh34Content: SectionContent[] = [
         answer: 1,
         explanation: "Observation is exactly what raw pointers are for; ownership is what `unique_ptr` and `shared_ptr` add.",
       },
-      // PYQ-pattern: GATE 2022 — exclusive versus shared ownership choice (rephrased)
+      // PYQ-pattern — exclusive versus shared ownership choice (rephrased)
       {
         q: "A factory creates an object with exactly one owner at a time, and ownership transfers to the caller. Which smart pointer matches, and why not the alternative?",
         options: ["`std::unique_ptr`, because it models exclusive ownership with move-only transfer, while `shared_ptr` adds shared bookkeeping the design does not need", "`std::shared_ptr`, because every object needs a shared count", "A raw owning pointer, because smart pointers cannot transfer ownership", "`std::weak_ptr`, because it owns its object exclusively"],

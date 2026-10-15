@@ -269,14 +269,14 @@ export const osCh7Content: SectionContent[] = [
         explanation: 'Deadlock and starvation are independent liveness failures. The monitor solution is deadlock-free yet a philosopher can still starve; seating only four breaks circular wait but says nothing about fairness — every remedy needs its own starvation argument.'
       }
     ,
-      // PYQ-pattern: GATE 2015 — readers writers entry (rephrased)
+      // PYQ-pattern — readers writers entry (rephrased)
       {
         q: "In the first readers–writers solution (`read_count`, `mutex`, `rw_mutex`), when does a reader acquire `rw_mutex`?",
         options: ["Never; readers ignore `rw_mutex`", "On every entry and exit", "Only when `read_count` becomes $0$", "Only when `read_count` becomes $1$ (first reader in)"],
         answer: 3,
         explanation: "**Step 1 — Given data:** `rw_mutex = 1`, `mutex = 1`, `read_count = 0`.\n**Step 2 — Rule:** reader does `wait(mutex); read_count++; if (read_count == 1) wait(rw_mutex); signal(mutex)`; exit does the mirror with `if (read_count == 0) signal(rw_mutex)`.\n**Step 3 — Apply:** R1 makes count $0 \\to 1$ and locks out writers for the whole crowd; R2 makes $1 \\to 2$ and skips `rw_mutex`, sharing freely.\n**Step 4 — Cross-check:** with one writer active and three readers waiting, one reader queues on `rw_mutex` and two on `mutex` — exactly the edge-gating behavior.\n**Step 5 — Distractors:** every-entry locking would serialize readers; $0$-test belongs to the last leaver; ignoring `rw_mutex` lets writers corrupt reads.\n**Step 6 — Conclude:** first reader locks, last reader unlocks."
       },
-      // PYQ-pattern: ISRO 2017 — dining philosophers remedy (rephrased)
+      // PYQ-pattern — dining philosophers remedy (rephrased)
       {
         q: "All five philosophers hold their left chopstick and wait for the right one. Which change breaks the circular wait while still seating five?",
         options: ["Seat only four philosophers forever", "Odd philosophers pick left first, even pick right first", "Let chopsticks be shared freely", "Release the left chopstick only after eating"],

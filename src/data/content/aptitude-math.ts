@@ -1,17 +1,17 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// Digital SAT Math — lesson content for all 19 skill sections of the College
-// Board four-domain structure (bookId 'math-master'). Complete coverage:
+// Aptitude Math — lesson content for all 19 skill sections of a
+// four-domain structure (bookId 'math-master'). Complete coverage:
 // the full Algebra domain (5 skills), all 3 Advanced Math skills, all 7
 // Problem Solving and Data Analysis skills, and all 4 Geometry and
-// Trigonometry skills. Written to the Digital SAT specifications: 44 questions
+// Trigonometry skills. Written to a digital adaptive specification: 44 questions
 // in two adaptive modules, ~75% four-option MCQ + ~25% student-produced
 // response, Desmos calculator + reference sheet available on every item.
 // Domain weights: Algebra ~35%, Advanced Math ~35%, PS&DA ~15%, G&T ~15%.
 // ============================================================================
 
-export const satMathContent: SectionContent[] = [
+export const aptitudeMathContent: SectionContent[] = [
   // ---------------------------------------------------------------- 1.1
   {
     sectionId: 'math-sk1-s1',

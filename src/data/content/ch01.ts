@@ -1350,14 +1350,14 @@ export const ch1Content: SectionContent[] = [
         answer: 1,
         explanation: "The coloring invariant settles it: 62 squares remain but the colors are unbalanced 30–32, and each domino consumes exactly one of each. The parity/counting mismatch makes a tiling impossible."
       },
-      // PYQ-pattern: GATE 2008 — irrationality proof by contradiction (rephrased, values changed)
+      // PYQ-pattern — irrationality proof by contradiction (rephrased, values changed)
       {
         q: "To establish that $\\sqrt{2}$ is irrational by contradiction, which opening move launches a valid argument?",
         options: ["Declare that the decimal expansion of $\\sqrt{2}$ never repeats, so it is irrational", "Suppose $\\sqrt{2} = \\frac{p}{q}$ where $p$ and $q$ are positive integers with $\\gcd(p,q) = 1$", "Suppose every positive real number can be written as a quotient of integers", "Suppose $\\sqrt{2} = \\frac{m}{n}$ where $m$ and $n$ are both even"],
         answer: 1,
         explanation: "Step 1: Restate the goal as **negation of rationality** — assume the opposite of what must be shown, namely $\\sqrt{2} \\in \\mathbb{Q}$. Step 2: Recall the key characterization that every rational has a lowest-terms form $\\frac{p}{q}$ with $\\gcd(p,q) = 1$. Step 3: Square to get $2q^{2} = p^{2}$, hence $p^{2}$ is even and therefore $p$ is even, say $p = 2k$. Step 4: Substitute back to get $2q^{2} = 4k^{2}$, so $q^{2} = 2k^{2}$ and $q$ is even as well — contradicting $\\gcd(p,q) = 1$. Step 5: The distractors fail since decimal non-repetition assumes the conclusion, universal rationality is far stronger than needed, and starting with both even concedes the contradiction at once. Step 6: Therefore the initial supposition is impossible and $\\sqrt{2} \\notin \\mathbb{Q}$."
       },
-      // PYQ-pattern: GATE 2015 — contrapositive proof structure (rephrased, values changed)
+      // PYQ-pattern — contrapositive proof structure (rephrased, values changed)
       {
         q: "For integers, consider the claim that whenever $n^{2}$ is even then $n$ is even. A contrapositive argument starts by supposing:",
         options: ["$n$ is even and deducing that $n^{2}$ is even", "$n^{2}$ is odd and deducing that $n$ is odd", "$n^{2}$ is even and $n$ is odd simultaneously", "$n$ is odd and deducing that $n^{2}$ is odd"],

@@ -190,7 +190,7 @@ export const engmathCh16Content: SectionContent[] = [
       'Proportion margins scale with `$\\sqrt{\\hat{p}(1-\\hat{p}) \\div n}$`, and quadrupling `$n$` halves width.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2017 — confidence interval margin scaling (rephrased)
+      // PYQ-pattern — confidence interval margin scaling (rephrased)
       {
         q: 'A 95 percent z-interval with `$n = 100$` is `$4$` wide. About how wide at `$n = 400$` with the same `$\\sigma$`?',
         options: ['$2$', '$4$', '$8$', '$1$'],
@@ -453,7 +453,7 @@ export const engmathCh16Content: SectionContent[] = [
       'Residual plots expose curvature while extrapolation beyond data gambles on untested structure.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2019 — regression slope from summary sums (rephrased)
+      // PYQ-pattern — regression slope from summary sums (rephrased)
       {
         q: 'Summary sums give `$S_{xx} = 10$` and `$S_{xy} = 30$` with `$\\bar{x} = 2$`, `$\\bar{y} = 9$`. What is the least-squares line?',
         options: ['`$\\hat{y} = 3 + 3x$`', '`$\\hat{y} = 9 + 3x$`', '`$\\hat{y} = 3 + 10x$`', '`$\\hat{y} = 2 + 30x$`'],

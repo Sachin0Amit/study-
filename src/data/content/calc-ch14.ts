@@ -996,7 +996,7 @@ export const calcCh14Content: SectionContent[] = [
         answer: 1,
         explanation: 'With material $xy + 2xz + 2yz = 12$, the Lagrange solution is a $2 \\times 2 \\times 1$ box: $V = 4$ m³ — square base, half-height, the book’s worked answer.',
       },
-      // PYQ-pattern: JEE Advanced 2020 — Lagrange maximum on a circle (rephrased, values changed)
+      // PYQ-pattern — Lagrange maximum on a circle (rephrased, values changed)
       {
         q: 'The maximum of $f(x, y) = x + 2y$ subject to $x^{2} + y^{2} = 5$ equals:',
         options: [`$-5$`, `$0$`, `$5$`, `$10$`],

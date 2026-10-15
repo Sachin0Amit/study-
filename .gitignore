@@ -56,3 +56,14 @@ server.log
 # sandbox artifacts
 tool-results/
 *.bundle
+
+# local database (regenerate with: bun run db:push)
+db/*.db
+
+# internal dev artifacts (kept locally, not for GitHub)
+research/
+download/
+worklog*.md
+scripts/restructure-subject-wise.py
+scripts/round14/gen_clrs.py
+scripts/validate-consolidated.ts

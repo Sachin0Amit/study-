@@ -154,7 +154,7 @@ export const elecCh3Content: SectionContent[] = [
         answer: 1,
         explanation: 'The two nodes and the source form a supernode: one KCL equation is written for the combination instead of two, plus a trivial constraint equation setting the node-voltage difference equal to the source value — a net simplification.',
       },
-      // PYQ-pattern: GATE 2022 — nodal analysis with two conductances (rephrased, values changed)
+      // PYQ-pattern — nodal analysis with two conductances (rephrased, values changed)
       {
         q: 'A 60 V source in series with 6 Ω feeds a node that also connects 12 Ω and 24 Ω branches to the reference node, while a 2 A current source enters the same node. The node voltage is closest to:',
         options: ['27.4 V', '33.0 V', '41.1 V', '48.6 V'],
@@ -429,7 +429,7 @@ export const elecCh3Content: SectionContent[] = [
         answer: 1,
         explanation: 'With no independent sources, $V_{\\mathrm{Th}} = v_{\\mathrm{oc}} = 0$ and $I_N = i_{\\mathrm{sc}} = 0$, so the ratio method gives $0/0$. Applying a test source — with the dependent sources still active — is the only route to the single equivalent resistance.',
       },
-      // PYQ-pattern: GATE 2020 — Thevenin equivalent of parallel batteries (rephrased, values changed)
+      // PYQ-pattern — Thevenin equivalent of parallel batteries (rephrased, values changed)
       {
         q: 'Two parallel branches feed a 15 Ω load: a 12 V source in series with 2 Ω, and a 9 V source in series with 3 Ω. The current through the load is closest to:',
         options: ['0.33 A', '0.67 A', '1.20 A', '2.00 A'],

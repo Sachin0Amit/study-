@@ -1,7 +1,7 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// JEE (Main) 2026 Physics — master lesson content (high-weightage sections)
+// Physics master book — lesson content (high-weightage sections)
 // Full SectionContent lessons for ten sections across Units 2–18 of the
 // official NTA syllabus (bookId 'phys-master'): kinematics (2.1,
 // 2.2), laws of motion (3.1), work and power (4.1), centre of mass and
@@ -9,12 +9,12 @@ import type { SectionContent } from '../library'
 // Coulomb's law (11.1), current/drift velocity/Ohm's law (12.1), reflection
 // and spherical mirrors (16.1), and atomic models + hydrogen spectrum (18.1).
 // Every lesson carries prerequisites, intro, objectives, concepts, worked
-// JEE-PYQ-style examples, key takeaways and a 4-question quiz. Style follows
+// PYQ-style examples, key takeaways and a 4-question quiz. Style follows
 // the advmath-ch01 exemplar: KaTeX formulas ($...$, $$...$$), sign-
 // convention drills, dimensional habits, common traps and PYQ patterns.
 // ============================================================================
 
-export const jeemainPhyContent: SectionContent[] = [
+export const mastersPhysicsContent: SectionContent[] = [
   // ---------------------------------------------------------------- 2.1
   {
     sectionId: 'hall-ch2-s25',

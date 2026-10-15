@@ -1,8 +1,8 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// JEE (Advanced) 2026 — P/C/M master lesson content (high-weightage sections).
-// Full SectionContent lessons for ten sections of the official IIT syllabus
+// Advanced-tier P/C/M master lesson content (high-weightage sections).
+// Full SectionContent lessons for ten sections of the advanced syllabus
 // (jeeadv.ac.in, jee-advanced-2026-syllabus.pdf), drawn from the three
 // bookIds 'phys-master', 'chem-complete' and 'math-master':
 //   Physics (3)   — 11.3 isothermal & adiabatic processes, 13.2 capacitors
@@ -13,13 +13,13 @@ import type { SectionContent } from '../library'
 //   Maths (3)     — 12.6 extrema & mean value theorems, 13.5 definite-integral
 //                   properties & the fundamental theorem, 10.3 skew lines &
 //                   shortest distance
-// Every lesson follows the advmath-ch01 / exam-jeemain-physics exemplar:
+// Every lesson follows the advmath-ch01 / masters-physics exemplar:
 // KaTeX formulas ($...$, $$...$$), Advanced-style multi-step worked examples
 // with full computation, multi-concept traps, and a 4-question quiz pitched
-// at JEE (Advanced) difficulty (multi-concept reasoning, not recall).
+// at advanced difficulty (multi-concept reasoning, not recall).
 // ============================================================================
 
-export const jeeadvContent: SectionContent[] = [
+export const mastersAdvancedContent: SectionContent[] = [
   // ---------------------------------------------------------------- 11.3 (Physics)
   {
     sectionId: 'hall-ch19-s22',

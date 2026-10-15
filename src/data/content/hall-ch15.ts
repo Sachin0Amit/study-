@@ -683,42 +683,42 @@ export const hallCh15Content: SectionContent[] = [
         answer: 1,
         explanation: 'The peak height is $\\sim F_m/b\\omega$ and its width shrinks with $b$: light damping is high selectivity.',
       },
-      // PYQ-pattern: JEE Mains 2019 — spring-mass period (rephrased, values changed)
+      // PYQ-pattern — spring-mass period (rephrased, values changed)
       {
         q: 'A block of mass $m = 0.50 \\text{ kg}$ hangs on a spring of stiffness $k = 200 \\text{ N/m}$. Its small-oscillation period is:',
         options: [`$0.10 \\text{ s}$`, `$0.31 \\text{ s}$`, `$3.1 \\text{ s}$`, `$0.63 \\text{ s}$`],
         answer: 1,
         explanation: 'Step 1: Given $m = 0.50 \\text{ kg}$ and $k = 200 \\text{ N/m}$ for undamped free oscillation. Step 2: Governing law is $m\\ddot{x} = -kx$, giving angular frequency $\\omega = \\sqrt{k/m}$ and $T = 2\\pi/\\omega$. Step 3: Key equation: $$T = 2\\pi\\sqrt{\\frac{m}{k}} = 2\\pi\\sqrt{\\frac{0.50}{200}}.$$ Step 4: Numerics give $\\sqrt{0.0025} = 0.050 \\text{ s}$ and $T = 2\\pi(0.050) \\approx 0.31 \\text{ s}$; units of $\\sqrt{\\text{kg}/(\\text{N/m})}$ are seconds. Step 5: Distractors fail because $0.10$ replaces $2\\pi$ with $2$ (forgetting $\\pi$), $3.1$ slips a decimal, and $0.63$ doubles the period. Step 6: Conclude the period is **$0.31 \\text{ s}$**.',
       },
-      // PYQ-pattern: JEE Advanced 2020 — simple pendulum (rephrased, values changed)
+      // PYQ-pattern — simple pendulum (rephrased, values changed)
       {
         q: 'A simple pendulum should beat seconds with period $T = 2.0 \\text{ s}$ where $g = 9.8 \\text{ m/s}^{2}$. The required string length is closest to:',
         options: [`$0.25 \\text{ m}$`, `$4.0 \\text{ m}$`, `$0.99 \\text{ m}$`, `$2.0 \\text{ m}$`],
         answer: 2,
         explanation: 'Step 1: Given target $T = 2.0 \\text{ s}$ and $g = 9.8 \\text{ m/s}^{2}$ for small swings. Step 2: Governing law is $T = 2\\pi\\sqrt{L/g}$, so $L = gT^{2}/4\\pi^{2}$. Step 3: Key equation: $$L = \\frac{(9.8)(2.0)^{2}}{4\\pi^{2}} = \\frac{39.2}{39.5}.$$ Step 4: Numerics give $L \\approx 0.99 \\text{ m}$; units of $gT^{2}$ are meters. Step 5: Distractors fail because $0.25$ is the $1.0 \\text{ s}$ length, $4.0$ copies $T^{2}$ forgetting $g/4\\pi^{2}$, and $2.0$ copies the period as a length. Step 6: Conclude the seconds pendulum needs about **$0.99 \\text{ m}$**.',
       },
-      // PYQ-pattern: GATE PH 2018 — SHM velocity and energy (rephrased, values changed)
+      // PYQ-pattern — SHM velocity and energy (rephrased, values changed)
       {
         q: 'A $2.0 \\text{ kg}$ block on a spring ($k = 50 \\text{ N/m}$) oscillates with amplitude $A = 0.10 \\text{ m}$. The maximum speed is:',
         options: [`$0.50 \\text{ m/s}$`, `$0.25 \\text{ m/s}$`, `$1.0 \\text{ m/s}$`, `$0.10 \\text{ m/s}$`],
         answer: 0,
         explanation: 'Step 1: Given $m = 2.0 \\text{ kg}$, $k = 50 \\text{ N/m}$, $A = 0.10 \\text{ m}$. Step 2: Governing laws are energy sharing $\\frac{1}{2}kA^{2} = \\frac{1}{2}mv_{max}^{2}$ and $v_{max} = A\\omega$ with $\\omega = \\sqrt{k/m}$. Step 3: Key equation: $$v_{max} = A\\sqrt{\\frac{k}{m}} = (0.10)\\sqrt{\\frac{50}{2.0}}.$$ Step 4: Numerics give $\\sqrt{25} = 5.0 \\text{ s}^{-1}$ and $v_{max} = 0.50 \\text{ m/s}$, with stored energy $\\frac{1}{2}(50)(0.10)^{2} = 0.25 \\text{ J}$; units check as $\\text{m/s}$. Step 5: Distractors fail because $0.25$ quotes the energy in $\\text{m/s}$, $1.0$ forgets the square root, and $0.10$ copies the amplitude. Step 6: Conclude the peak speed is **$0.50 \\text{ m/s}$**.',
       },
-      // PYQ-pattern: JEE Mains 2022 — phase from initial conditions (rephrased, values changed)
+      // PYQ-pattern — phase from initial conditions (rephrased, values changed)
       {
         q: 'In $x = A\\cos(\\omega t + \\phi)$, the oscillator starts at $x_{0} = A/2$ moving in the positive direction. The phase constant is:',
         options: [`$+\\pi/3$`, `$\\pi/6$`, `$0$`, `$-\\pi/3$`],
         answer: 3,
         explanation: 'Step 1: Given $x(0) = A\\cos\\phi = A/2$ and $v(0) = -A\\omega\\sin\\phi > 0$. Step 2: Governing relations are the position and velocity forms $x = A\\cos(\\omega t + \\phi)$ and $v = -A\\omega\\sin(\\omega t + \\phi)$. Step 3: Key equations: $$\\cos\\phi = \\frac{1}{2}, \\qquad \\sin\\phi < 0 \\quad\\Rightarrow\\quad \\phi = -\\frac{\\pi}{3}.$$ Step 4: The magnitude check $|\\phi| = \\pi/3$ matches $\\cos^{-1}(1/2)$, and the sign test on velocity fixes it uniquely; $\\phi$ is dimensionless in radians. Step 5: Distractors fail because $+\\pi/3$ gives negative initial velocity, $\\pi/6$ has cosine $\\sqrt{3}/2$, and $0$ starts at the extreme $x = A$. Step 6: Conclude the phase constant is **$-\\pi/3$**.',
       },
-      // PYQ-pattern: JEE Advanced 2021 — coupled springs period (rephrased, values changed)
+      // PYQ-pattern — coupled springs period (rephrased, values changed)
       {
         q: 'Springs $k_{1} = 100 \\text{ N/m}$ and $k_{2} = 200 \\text{ N/m}$ joined end to end carry a $1.0 \\text{ kg}$ mass. The oscillation period is closest to:',
         options: [`$0.36 \\text{ s}$`, `$0.77 \\text{ s}$`, `$1.1 \\text{ s}$`, `$0.20 \\text{ s}$`],
         answer: 1,
         explanation: 'Step 1: Given series springs $k_{1} = 100$, $k_{2} = 200$ in $\\text{N/m}$ and $m = 1.0 \\text{ kg}$. Step 2: Governing laws are the series rule $1/k_{eff} = 1/k_{1} + 1/k_{2}$ and $T = 2\\pi\\sqrt{m/k_{eff}}$. Step 3: Key equation: $$k_{eff} = \\frac{(100)(200)}{100+200} = 66.7 \\text{ N/m}, \\qquad T = 2\\pi\\sqrt{\\frac{1.0}{66.7}}.$$ Step 4: Numerics give $\\sqrt{0.0150} = 0.122 \\text{ s}$ and $T \\approx 0.77 \\text{ s}$; the effective stiffness is softer than either spring, so $T$ must grow. Step 5: Distractors fail because $0.36$ is the parallel-spring result, $1.1$ adds the stiffnesses wrongly, and $0.20$ misplaces a decimal. Step 6: Conclude the series system swings with **$T \\approx 0.77 \\text{ s}$**.',
       },
-      // PYQ-pattern: GATE PH 2022 — forced resonance amplitude (rephrased, values changed)
+      // PYQ-pattern — forced resonance amplitude (rephrased, values changed)
       {
         q: 'A damped oscillator ($k = 200 \\text{ N/m}$, $m = 0.50 \\text{ kg}$, $b = 0.50 \\text{ kg/s}$) is driven at resonance by force amplitude $F_{m} = 10 \\text{ N}$. The steady-state amplitude is:',
         options: [`$0.050 \\text{ m}$`, `$0.23 \\text{ m}$`, `$1.0 \\text{ m}$`, `$10 \\text{ m}$`],

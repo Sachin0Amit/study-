@@ -375,7 +375,7 @@ export const cppCh42Content: SectionContent[] = [
         answer: 1,
         explanation: "The return of wait means 're-check now', not 'the condition holds'. Only the predicate under the lock decides the truth; that is also what makes waiting on a condition variable immune to lost wakeups when state changes are published under the mutex.",
       },
-      // PYQ-pattern: GATE 2017 — mutex versus volatile for sharing (rephrased)
+      // PYQ-pattern — mutex versus volatile for sharing (rephrased)
       {
         q: "A shared counter is updated from several threads. Which fix is correct?\n```cpp\n// P: guard every update with the same std::mutex via std::lock_guard.\n// Q: mark the counter volatile and keep updating without a lock.\n```",
         options: ["Q, because `volatile` makes `++` indivisible", "Neither: threads must never share a counter", "P, because mutual exclusion serializes the updates, while `volatile` only blocks certain optimizations and orders nothing across threads", "P and Q are equivalent synchronization"],

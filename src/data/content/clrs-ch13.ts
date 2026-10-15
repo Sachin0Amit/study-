@@ -110,7 +110,7 @@ export const clrsCh13Content: SectionContent[] = [
         answer: 2,
         explanation: "The first half of Lemma 13.1's proof: a subtree of black-height $b$ contains at least $2^b - 1$ internal nodes, here $2^4 - 1 = 15$."
       },
-      // PYQ-pattern: GATE 2015 — red-black height bound (rephrased, values changed)
+      // PYQ-pattern — red-black height bound (rephrased, values changed)
       {
         q: "A red-black tree stores $15$ internal nodes. Its height is at most:",
         options: ["4", "6", "8", "16"],

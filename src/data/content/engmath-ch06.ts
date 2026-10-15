@@ -79,7 +79,7 @@ export const engmathCh06Content: SectionContent[] = [
     ],
     quiz: [
       {
-        // PYQ-pattern: GATE 2014 — divergence of a polynomial vector field (rephrased, values changed)
+        // PYQ-pattern — divergence of a polynomial vector field (rephrased, values changed)
         q: 'For $\\mathbf{F}(x, y, z) = xy\\,\\mathbf{i} + yz\\,\\mathbf{j} + zx\\,\\mathbf{k}$, the divergence $\\nabla \\cdot \\mathbf{F}$ equals:',
         options: [`$xy + yz + zx$`, `$0$`, `$x + y + z$`, `$3$`],
         answer: 2,
@@ -98,7 +98,7 @@ export const engmathCh06Content: SectionContent[] = [
         explanation: 'Step 1: Form $\\nabla f = 2x\\,\\mathbf{i} + 2y\\,\\mathbf{j} + 2z\\,\\mathbf{k}$. Step 2: Evaluate at the point to get $\\langle 2, 4, 4 \\rangle$. Step 3: Compute the length $\\sqrt{4 + 16 + 16} = \\sqrt{36} = 6$.'
       },
       {
-        // PYQ-pattern: GATE 2017 — solenoidal and irrotational classification (rephrased, values changed)
+        // PYQ-pattern — solenoidal and irrotational classification (rephrased, values changed)
         q: 'A smooth field $\\mathbf{F}$ on all of $\\mathbb{R}^{3}$ satisfies $\\nabla \\cdot \\mathbf{F} = 0$ and $\\nabla \\times \\mathbf{F} = \\mathbf{0}$. Which conclusion follows?',
         options: ['No potential can exist because divergence vanishes', 'There exists $f$ with $\\mathbf{F} = \\nabla f$ and moreover $\\nabla^{2} f = 0$', 'There exists $\\mathbf{G}$ with $\\mathbf{F} = \\nabla \\times \\mathbf{G}$ but no scalar potential', 'The field must be identically zero'],
         answer: 1,
@@ -204,7 +204,7 @@ export const engmathCh06Content: SectionContent[] = [
         explanation: 'Step 1: Substitute $f = 1$ into $\\int_{C} f\\,ds = \\int_{a}^{b} 1 \\cdot |\\mathbf{r}^{\\prime}(t)|\\,dt$. Step 2: Recognize $\\int_{a}^{b} |\\mathbf{r}^{\\prime}(t)|\\,dt$ as the arc-length formula. Step 3: Conclude the integral reports pure geometric length with no density weight.'
       },
       {
-        // PYQ-pattern: GATE 2016 — work integral along a parametrized curve (rephrased, values changed)
+        // PYQ-pattern — work integral along a parametrized curve (rephrased, values changed)
         q: 'If $C$ is parametrized by $\\mathbf{r}(t)$ with $0 \\le t \\le 1$ and $-C$ denotes the reversed path, then $\\int_{-C} \\mathbf{F} \\cdot d\\mathbf{r}$ equals:',
         options: [`$\\int_{C} \\mathbf{F} \\cdot d\\mathbf{r}$`, `$0$ for every $\\mathbf{F}$`, `$\\int_{C} |\\mathbf{F}|\\,ds$`, `$-\\int_{C} \\mathbf{F} \\cdot d\\mathbf{r}$`],
         answer: 3,
@@ -296,7 +296,7 @@ export const engmathCh06Content: SectionContent[] = [
     ],
     quiz: [
       {
-        // PYQ-pattern: GATE 2015 — circulation via Green theorem (rephrased, values changed)
+        // PYQ-pattern — circulation via Green theorem (rephrased, values changed)
         q: 'Let $C$ be the positively oriented unit circle and $\\mathbf{F}(x, y) = (x^{2} + y)\\,\\mathbf{i} + (2x - y^{2})\\,\\mathbf{j}$. Then $\\oint_{C} \\mathbf{F} \\cdot d\\mathbf{r}$ equals:',
         options: [`$\\pi$`, `$0$`, `$2\\pi$`, `$-\\pi$`],
         answer: 0,
@@ -315,7 +315,7 @@ export const engmathCh06Content: SectionContent[] = [
         explanation: 'Step 1: Substitute to get $x\\,dy - y\\,dx = 6(\\cos^{2} t + \\sin^{2} t)\\,dt = 6\\,dt$. Step 2: Integrate $\\frac{1}{2} \\int_{0}^{2\\pi} 6\\,dt = 6\\pi$. Step 3: Confirm against $\\pi a b = \\pi \\cdot 3 \\cdot 2 = 6\\pi$.'
       },
       {
-        // PYQ-pattern: GATE 2019 — Green theorem with a singular point (rephrased, values changed)
+        // PYQ-pattern — Green theorem with a singular point (rephrased, values changed)
         q: 'The field $\\mathbf{F} = \\frac{-y\\,\\mathbf{i} + x\\,\\mathbf{j}}{x^{2} + y^{2}}$ satisfies $Q_{x} - P_{y} = 0$ away from the origin. For $C$ the unit circle around the origin, $\\oint_{C} \\mathbf{F} \\cdot d\\mathbf{r}$ equals:',
         options: ['$0$ by Green theorem applied to the whole disk', '$\\pi$ as the disk area', 'It depends on the radius and cannot be fixed', '$2\\pi$ because the field is undefined at the interior origin'],
         answer: 3,
@@ -422,7 +422,7 @@ export const engmathCh06Content: SectionContent[] = [
         explanation: 'Step 1: Recall the right side involves $\\nabla \\times \\mathbf{F}$, not divergence. Step 2: Note cap freedom means any $S$ with rim $C$ and compatible orientation works. Step 3: Eliminate volume and area options as dimensionally mismatched to circulation.'
       },
       {
-        // PYQ-pattern: GATE 2021 — flux via divergence theorem (rephrased, values changed)
+        // PYQ-pattern — flux via divergence theorem (rephrased, values changed)
         q: 'Outward flux of $\\mathbf{F}(x, y, z) = x\\,\\mathbf{i} + y\\,\\mathbf{j} + z\\,\\mathbf{k}$ through the unit sphere equals:',
         options: ['$3$ times the ball volume', `$0$`, `$\\frac{4\\pi}{3}$`, `$4\\pi$`],
         answer: 0,

@@ -202,7 +202,7 @@ export const cppCh5Content: SectionContent[] = [
         answer: 0,
         explanation: "Exclusive ownership is the common case; `shared_ptr`'s control block and atomic counts buy something most designs do not need. (Both support custom deleters.)"
       },
-      // PYQ-pattern: GATE 2016 — RAII locking versus manual unlock on exceptions (rephrased)
+      // PYQ-pattern — RAII locking versus manual unlock on exceptions (rephrased)
       {
         q: "A function must hold a mutex while updating shared state, including when an exception escapes. Which approach is correct?\n```cpp\n// P: m.lock(); update(); m.unlock();\n// Q: std::lock_guard<std::mutex> g(m); update();\n```",
         options: ["Q, because the guard destructor releases the mutex during unwinding, while P leaks the lock if `update()` throws", "P, because destructors never run while an exception is in flight", "Both are equivalent in every possible case", "Q, because the guard turns the mutex into a recursive one"],

@@ -85,7 +85,7 @@ export const engmathCh10Content: SectionContent[] = [
         explanation: 'Step 1: Multiply odd $f$ by even $\\cos nx$ to get an odd integrand. Step 2: Integrate symmetrically to zero for every $n$. Step 3: Retain sine terms since odd times odd is even with nonzero mean.'
       },
       {
-        // PYQ-pattern: GATE 2013 — Fourier coefficients of a square wave (rephrased, values changed)
+        // PYQ-pattern — Fourier coefficients of a square wave (rephrased, values changed)
         q: 'Odd square wave $f = 1$ on $(0, \\pi)$, $-1$ on $(-\\pi, 0)$ has $b_{n}$ equal to:',
         options: [`$0$ for all $n$`, `$4/(n\\pi)$ for odd $n$ and $0$ for even $n$`, `$2/(n\\pi)$ for all $n$`, `$1/n^{2}$`],
         answer: 1,
@@ -204,7 +204,7 @@ export const engmathCh10Content: SectionContent[] = [
         explanation: 'Step 1: Sift $\\int \\delta(t)e^{-i\\omega t}\\,dt = e^{0} = 1$. Step 2: Note flat unit spectrum reflects zero duration needing infinite bandwidth. Step 3: Reserve $2\\pi\\delta(\\omega)$ for the dual constant-one signal.'
       },
       {
-        // PYQ-pattern: GATE 2016 — Nyquist sampling rate (rephrased, values changed)
+        // PYQ-pattern — Nyquist sampling rate (rephrased, values changed)
         q: 'A signal bandlimited to $5$ kHz needs minimum alias-free sampling rate:',
         options: ['$5$ kHz', '$10$ kHz', '$2.5$ kHz', 'Above $10$ kHz'],
         answer: 3,
@@ -322,7 +322,7 @@ export const engmathCh10Content: SectionContent[] = [
         explanation: 'Step 1: Shift $\\omega$ by $2\\pi$ to multiply each term by $e^{-i2\\pi n} = 1$. Step 2: Conclude all integer $n$ terms repeat identically. Step 3: Interpret as sampled-frequency aliasing modulo $2\\pi$.'
       },
       {
-        // PYQ-pattern: GATE 2014 — DFT of a short sequence (rephrased, values changed)
+        // PYQ-pattern — DFT of a short sequence (rephrased, values changed)
         q: 'Four-point DFT of $[1, 1, 0, 0]$ at $k = 1$ equals:',
         options: [`$1 - i$`, `$2$`, `$0$`, `$1 + i$`],
         answer: 0,
@@ -454,7 +454,7 @@ export const engmathCh10Content: SectionContent[] = [
         explanation: 'Step 1: Sum $\\sum_{n=0}^{\\infty} [(1/3)z^{-1}]^{n} = 1/[1 - (1/3)z^{-1}]$. Step 2: Clear to $z/(z - 1/3)$ with pole at $1/3$. Step 3: Impose exterior $|z| > 1/3$ for causal convergence.'
       },
       {
-        // PYQ-pattern: GATE 2017 — ROC of a two-sided z-transform (rephrased, values changed)
+        // PYQ-pattern — ROC of a two-sided z-transform (rephrased, values changed)
         q: '$X(z) = z/(z - 1/2)$ with ROC $|z| < 1/2$ inverts to:',
         options: [`$(1/2)^{n}u[n]$`, `$(1/2)^{n}$ for all $n$`, `$-(1/2)^{n}u[-n-1]$`, `$0$`],
         answer: 2,

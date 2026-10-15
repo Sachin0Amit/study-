@@ -265,7 +265,7 @@ export const cppCh17Content: SectionContent[] = [
         answer: 1,
         explanation: "No completed construction, no object, no destructor call — a key reason to hand partial resources to member objects rather than raw locals in the constructor.",
       },
-      // PYQ-pattern: GATE 2013 — construction versus destruction order (rephrased)
+      // PYQ-pattern — construction versus destruction order (rephrased)
       {
         q: "What does this program print?\n```cpp\n#include <iostream>\nstruct T {\n  char id;\n  T(char c) : id(c) { std::cout << '+' << id; }\n  ~T() { std::cout << '-' << id; }\n};\nint main() {\n  T a('a');\n  T b('b');\n}\n```",
         options: ["`+a+b-a-b`", "`+a+b-b-a`", "`+a-b+a-b`", "`+b+a-b-a`"],
@@ -661,7 +661,7 @@ export const cppCh17Content: SectionContent[] = [
         answer: 2,
         explanation: "New-then-delete gives the strong guarantee and makes self-assignment a harmless special case — ordering is the whole trick.",
       },
-      // PYQ-pattern: GATE 2022 — copy initialization calls the copy constructor (rephrased)
+      // PYQ-pattern — copy initialization calls the copy constructor (rephrased)
       {
         q: "`Widget` declares both a copy constructor and a copy-assignment operator. What does `Widget w2 = w1;` do?",
         options: ["Default-constructs `w2`, then copy-assigns from `w1`", "Move-constructs `w2`, because `w1` is a named object", "Copies raw memory with no user code running", "Copy-constructs `w2` directly from `w1`; the assignment operator is not involved"],

@@ -1,12 +1,12 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// JEE Mathematics Companion — Chapter 6: Trigonometry & Inverse Trigonometry
+// Mathematics Companion — Chapter 6: Trigonometry & Inverse Trigonometry
 // Master study content (sections 6.1 - 6.4).
 // Math is LaTeX rendered by KaTeX via the RichText $...$ / $$...$$ pipeline.
 // ============================================================================
 
-export const jeemathsCh06Content: SectionContent[] = [
+export const mathCompanionCh06Content: SectionContent[] = [
   // ---------------------------------------------------------------- 6.1
   {
     sectionId: 'math-a7-s8',

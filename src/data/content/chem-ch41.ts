@@ -98,7 +98,7 @@ export const chemCh41Content: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Count $8$ plus $10$ equals $18$. Step 2: Set five coordinate shape. Step 3: Select trigonal bipyramid.'
       },
-      // PYQ-pattern: JEE 2022 — carbonyl stretch back donation (rephrased)
+      // PYQ-pattern — carbonyl stretch back donation (rephrased)
       {
         q: 'Lower $CO$ stretch on binding means:',
         options: ['No bonding', 'Stronger $C-O$ only', 'Back gift to pi star weakening $C-O$', 'Loss of metal'],
@@ -412,7 +412,7 @@ export const chemCh41Content: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Need free metal sites. Step 2: Block with $CO$ plus $S$. Step 3: Lose adsorb plus react turns.'
       },
-      // PYQ-pattern: JEE 2021 — Ziegler insertion step (rephrased)
+      // PYQ-pattern — Ziegler insertion step (rephrased)
       {
         q: 'Ziegler chain grows by:',
         options: ['Radical coupling', 'Carbocation shift', 'Coordination plus migratory insertion of $C_{2}H_{4}$ on $Ti$ alkyl', 'Acid cracking'],

@@ -304,7 +304,7 @@ export const cppCh24Content: SectionContent[] = [
         answer: 3,
         explanation: 'They stand in for requirement sets — the notation the book wants, and the one later standardized (in C++20) as template constraints.',
       },
-      // PYQ-pattern: GATE 2024 — concepts name template requirements (rephrased)
+      // PYQ-pattern — concepts name template requirements (rephrased)
       {
         q: "A generic algorithm is lifted from a concrete version, and its hidden requirements are named in one place so misuse is diagnosed at the call. What is that named set of requirements?",
         options: ["An allocator, because every generic algorithm allocates", "A concept: a compile-time predicate on template arguments stating the required operations and associated types", "A virtual base class, because generics need runtime dispatch", "A macro, because requirements cannot be named in the language"],

@@ -369,21 +369,21 @@ export const manoCh2Content: SectionContent[] = [
         explanation: 'Duality swaps + with · and 0 with 1: the saturation law becomes the annihilation law. Option C is the identity postulate, dual of option B.',
       },
     
-      // PYQ-pattern: GATE 2016 — absorption complement rule (rephrased)
+      // PYQ-pattern — absorption complement rule (rephrased)
       {
         q: "Which identity correctly simplifies $x + x′y$, and which theorem justifies each move?",
         options: ["$x′y$, by absorption", "$x$, by idempotence", "$x + y$, by $x + x′y = (x+x′)(x+y) = 1(x+y)$", "$1$, by boundedness"],
         answer: 2,
         explanation: "**Step 1 — Given data:** expression $x + x′y$ with OR distributive over AND.\n**Step 2 — Rule:** distributive $x + yz = (x+y)(x+z)$; complement $x + x′ = 1$; identity $1z = z$.\n**Step 3 — Computation:** $x + x′y = (x + x′)(x + y) = 1(x + y) = x + y$.\n**Step 4 — Cross-check:** rows: when $x = 1$ both sides $1$; when $x = 0$ both equal $y$.\n**Step 5 — Distractors:** $x$ drops a needed $y$-row; $x′y$ drops the $x$-rows; $1$ claims all rows true.\n**Step 6 — Conclude:** $x + y$, removing one literal."
       },
-      // PYQ-pattern: ISRO 2017 — consensus term removal (rephrased)
+      // PYQ-pattern — consensus term removal (rephrased)
       {
         q: "The expression $xy + x′z + yz$ simplifies to $xy + x′z$. Why is $yz$ redundant?",
         options: ["By idempotence $y + y = y$", "$yz$ is covered by the consensus of the other two: when $y$ and $z$ are $1$, one of $xy$ or $x′z$ is already $1$", "By involution", "$yz$ is a maxterm"],
         answer: 1,
         explanation: "**Step 1 — Given data:** three product terms, middle variable $x$ complemented across the first two.\n**Step 2 — Rule:** consensus theorem: $xy + x′z + yz = xy + x′z$.\n**Step 3 — Reasoning:** if $y = 1$ and $z = 1$, then either $x = 1$ making $xy = 1$, or $x = 0$ making $x′z = 1$; in every $yz$-row another term already covers it.\n**Step 4 — Cross-check:** eight-row table agrees on all rows; the $101$ and $111$ rows confirm coverage.\n**Step 5 — Distractors:** idempotence concerns $y + y$; involution concerns double complement; maxterm concerns sums, not this product.\n**Step 6 — Conclude:** $yz$ adds no new $1$-rows."
       },
-      // PYQ-pattern: DRDO 2018 — DeMorgan complement (rephrased)
+      // PYQ-pattern — DeMorgan complement (rephrased)
       {
         q: "By DeMorgan, $(xy′ + x′y)′$ equals which product-of-sums, before any further reduction?",
         options: ["$0$", "$xy + x′y′$", "$x + y$", "$(x′ + y)(x + y′)$"],

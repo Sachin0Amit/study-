@@ -1,17 +1,17 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// Digital SAT Reading & Writing — master lesson content (all 10 skill sections)
-// Full SectionContent lessons for the ten official College Board skills of the
+// Reading & Writing — master lesson content (all 10 skill sections)
+// Full SectionContent lessons for the ten core skills of the
 // adaptive digital SAT R&W section (bookId 'english-complete'): Words in Context,
 // Text Structure and Purpose, Cross-Text Connections, Central Ideas and
 // Details, Command of Evidence (textual + quantitative), Inferences,
 // Boundaries, Form/Structure/Sense, Transitions and Rhetorical Synthesis.
-// Each lesson carries strategy notes, authentic-style SAT items, elimination
-// walkthroughs and 4-question quizzes. Verbal analogue of exam-sat-math.ts.
+// Each lesson carries strategy notes, authentic-style test items, elimination
+// walkthroughs and 4-question quizzes. Verbal analogue of aptitude-math.ts.
 // ============================================================================
 
-export const satRwContent: SectionContent[] = [
+export const englishRwContent: SectionContent[] = [
   // ---------------------------------------------------------------- 1.1
   {
     sectionId: 'eng-r1-s1',

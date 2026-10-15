@@ -417,7 +417,7 @@ export const cppCh13Content: SectionContent[] = [
         answer: 2,
         explanation: 'A new exit path costs RAII nothing — the return itself triggers the same destructors. That is the structural difference from per-path cleanup.',
       },
-      // PYQ-pattern: GATE 2018 — destructors during unwinding replace finally (rephrased)
+      // PYQ-pattern — destructors during unwinding replace finally (rephrased)
       {
         q: "A function acquires two resources and then throws. Which statement explains why the language needs no `finally` clause?",
         options: ["Exceptions are disabled by default, so cleanup code never runs", "The `catch` clause in the same function always releases its locals", "Resources are reclaimed by the operating system at process exit", "Each RAII handle destructor runs during unwinding in reverse order of construction, releasing its resource"],

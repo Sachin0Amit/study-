@@ -1,9 +1,9 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// GATE CS & IT 2026 — lesson content (General Aptitude + Sections 1–10).
-// Written against the official GATE 2026 CS&IT syllabus (IIT Guwahati) and
-// the official GATE General Aptitude syllabus. Covers the first section of
+// CS & IT core — lesson content (General Aptitude + Sections 1–10).
+// Written against the standard CS & IT core syllabus and
+// the standard General Aptitude syllabus. Covers the first section of
 // each core area plus both GA aptitude sections tested here: verbal and
 // quantitative aptitude, propositional & first-order logic, number
 // representations & computer arithmetic, machine instructions & addressing
@@ -13,7 +13,7 @@ import type { SectionContent } from '../library'
 // marks (5 × 1-mark + 5 × 2-mark), negative marking on MCQs only.
 // ============================================================================
 
-export const gateCsContent: SectionContent[] = [
+export const csCoreContent: SectionContent[] = [
   // ------------------------------------------------------------ 1.1 GA Verbal
   {
     sectionId: 'cse-g1-s1',

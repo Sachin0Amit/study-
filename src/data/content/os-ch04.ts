@@ -276,14 +276,14 @@ export const osCh4Content: SectionContent[] = [
         explanation: "All tasks progress (concurrency) but only one executes at any instant — no true simultaneity. Before multiprocessors, CPU schedulers manufactured exactly this illusion of parallelism."
       }
     ,
-      // PYQ-pattern: GATE 2021 — Amdahl speedup bound (rephrased)
+      // PYQ-pattern — Amdahl speedup bound (rephrased)
       {
         q: "A program is $20$ percent serial and $80$ percent parallel. What is the speedup bound on $5$ cores, and what is the limit on any number of cores?",
         options: ["$2.78$ on $5$ cores, ceiling $5$", "$5$ on $5$ cores, no ceiling", "$1.6$ on $5$ cores, ceiling $2$", "$4$ on $5$ cores, ceiling $4$"],
         answer: 0,
         explanation: "**Step 1 — Given data:** serial fraction $S = 0.2$, parallel $1 - S = 0.8$, $N = 5$.\n**Step 2 — Rule:** $$\\text{speedup} \\le \\frac{1}{S + (1-S)/N}$$ with limit $1/S$ as $N \\to \\infty$.\n**Step 3 — Computation:** $$\\frac{1}{0.2 + \\frac{0.8}{5}} = \\frac{1}{0.2 + 0.16} = \\frac{1}{0.36} \\approx 2.78$$ Limit: $$\\frac{1}{0.2} = 5$$\n**Step 4 — Cross-check:** on $2$ cores the same program gives $\\frac{1}{0.2+0.4} \\approx 1.67$; extra cores help less each time as the serial part dominates.\n**Step 5 — Distractors:** $5$ claims linear scaling, ignoring $S$; $1.6$ is the $25$-percent-serial two-core figure; $4$ is the $25$-percent-serial ceiling.\n**Step 6 — Conclude:** about $2.78$ on five cores, never above $5$."
       },
-      // PYQ-pattern: DRDO 2018 — serial fraction dominates (rephrased)
+      // PYQ-pattern — serial fraction dominates (rephrased)
       {
         q: "If $40$ percent of an application must run serially, what is the maximum speedup on any number of cores, and what does adding cores beyond $8$ achieve?",
         options: ["$8$, linear scaling continues", "$4$, doubling every two cores", "$2.5$, almost nothing further", "$1.67$, cores hurt"],

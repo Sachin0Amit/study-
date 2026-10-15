@@ -617,14 +617,14 @@ export const calcCh5Content: SectionContent[] = [
         answer: 2,
         explanation: 'Write $\\sin^3 x = \\sin x \\cdot \\sin^2 x = \\sin x (1 - \\cos^2 x)$; with $du = -\\sin x\\,dx$ the integral becomes $-\\int(1 - u^2)\\,du$.',
       },
-      // PYQ-pattern: JEE Mains 2020 — substitution with exponential composite (rephrased, values changed)
+      // PYQ-pattern — substitution with exponential composite (rephrased, values changed)
       {
         q: 'Evaluate $\\displaystyle\\int_{0}^{1} x e^{x^{2}}\\,dx$ using $u = x^{2}$.',
         options: [`$e$`, `$\\frac{e-1}{2}$`, `$e - 1$`, `$\\frac{e}{2}$`],
         answer: 1,
         explanation: 'Step 1: Restate the composite structure with inner $u = x^{2}$ and $du = 2x\\,dx$. Step 2: Recall the key substitution rule $\\int_{a}^{b} f(g(x))g^{\\prime}(x)\\,dx = \\int_{g(a)}^{g(b)} f(u)\\,du$. Step 3: Convert limits as $u(0) = 0$ and $u(1) = 1$, with $x\\,dx = \\frac{du}{2}$. Step 4: Transform to $\\frac{1}{2}\\int_{0}^{1} e^{u}\\,du = \\frac{1}{2}(e - 1)$. Step 5: The distractors fail since $e - 1$ omits the $\\frac{1}{2}$ factor, $e$ forgets to subtract the lower value, and $\\frac{e}{2}$ keeps only the upper value. Step 6: Hence the integral equals $\\frac{e-1}{2}$.'
       },
-      // PYQ-pattern: JEE Mains 2022 — logarithmic integral by substitution (rephrased, values changed)
+      // PYQ-pattern — logarithmic integral by substitution (rephrased, values changed)
       {
         q: 'Using $u = x^{2} + 1$, evaluate $\\displaystyle\\int_{0}^{1} \\frac{2x}{x^{2}+1}\\,dx$.',
         options: [`$\\ln 1$`, `$1$`, `$\\ln 2$`, `$2$`],

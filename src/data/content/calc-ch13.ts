@@ -509,7 +509,7 @@ export const calcCh13Content: SectionContent[] = [
         answer: 1,
         explanation: 'Eliminating $t$ between $x = v_0\\cos\\alpha\\,t$ and $y = v_0\\sin\\alpha\\,t - \\frac{1}{2}gt^2$ gives a quadratic function of $x$: a parabola.',
       },
-      // PYQ-pattern: JEE Mains 2019 — launch angle maximizing projectile range (rephrased, values changed)
+      // PYQ-pattern — launch angle maximizing projectile range (rephrased, values changed)
       {
         q: 'Over flat ground with fixed launch speed and no air resistance, the launch angle maximizing horizontal range is:',
         options: [`$45^{\\circ}$`, `$30^{\\circ}$`, `$60^{\\circ}$`, `$90^{\\circ}$`],

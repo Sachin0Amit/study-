@@ -78,7 +78,7 @@ export const engmathCh01Content: SectionContent[] = [
       'Reversal rules `$(AB)^T = B^T A^T$` and cyclic trace `$\\mathrm{tr}(AB) = \\mathrm{tr}(BA)$` organize all simplification.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2014 — symmetric and skew-symmetric split (rephrased)
+      // PYQ-pattern — symmetric and skew-symmetric split (rephrased)
       {
         q: 'If `$A$` is any square matrix, which claim about `$B = A + A^T$` and `$C = A - A^T$` is correct?',
         options: ['$B$ is skew-symmetric and `$C$` is symmetric', '$B$ is symmetric and `$C$` is skew-symmetric', 'Both `$B$` and `$C$` are symmetric', 'Both `$B$` and `$C$` are orthogonal'],
@@ -91,7 +91,7 @@ export const engmathCh01Content: SectionContent[] = [
         answer: 2,
         explanation: 'First note both factors are `$2 \\times 2$` so both orders are conformable. Next compute `$AB$` whose second column picks out column structure of `$A$` scaled by `$B$`. Then compute `$BA$` which instead combines rows of `$A$`. Finally compare entries: the two results differ, so order matters.'
       },
-      // PYQ-pattern: GATE 2016 — transpose reversal and trace identities (rephrased)
+      // PYQ-pattern — transpose reversal and trace identities (rephrased)
       {
         q: 'For conformable matrices with `$A$` of size `$m \\times n$` and `$B$` of size $n \\times p$, what is `$(AB)^T$`?',
         options: [`$A^T B^T$`, `$B^T A^T$`, '$AB$ with each entry transposed in place', 'Defined only when `$m = p$`'],
@@ -177,7 +177,7 @@ export const engmathCh01Content: SectionContent[] = [
       'Whole-matrix scaling obeys `$|kA| = k^n |A|$`, and `$|A+B|$` never splits into `$|A| + |B|$`.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2013 — determinant of a 3x3 matrix (rephrased)
+      // PYQ-pattern — determinant of a 3x3 matrix (rephrased)
       {
         q: 'What is $$\\begin{vmatrix} 2 & 1 & 0 \\\\ 1 & 2 & 1 \\\\ 0 & 1 & 2 \\end{vmatrix}~?$$',
         options: [`$0$`, `$2$`, `$4$`, `$8$`],
@@ -190,7 +190,7 @@ export const engmathCh01Content: SectionContent[] = [
         answer: 2,
         explanation: 'First recall whole-matrix scaling hits every one of the `$n = 3$` rows. Next apply `$|kA| = k^n |A|$` with `$k = 3$`. Then compute `$3^3 \\cdot 2 = 27 \\cdot 2$`. Finally arrive at $54$, not `$6$`.'
       },
-      // PYQ-pattern: GATE 2009 — row operations and determinant (rephrased)
+      // PYQ-pattern — row operations and determinant (rephrased)
       {
         q: 'Starting from `$A$`, matrix `$B$` is formed by swapping rows one and two, then adding twice row one to row three. If `$|A| = 5$`, what is `$|B|$`?',
         options: [`$5$`, `$-5$`, `$10$`, `$-10$`],
@@ -276,7 +276,7 @@ export const engmathCh01Content: SectionContent[] = [
       'Rank obeys `$\\rho(AB) \\le \\min(\\rho(A), \\rho(B))$` and `$\\rho(A) \\le \\min(m,n)$`.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2012 — inverse of a 2x2 matrix (rephrased)
+      // PYQ-pattern — inverse of a 2x2 matrix (rephrased)
       {
         q: 'If $$A = \\begin{bmatrix} 4 & 7 \\\\ 2 & 6 \\end{bmatrix}$$ what is `$A^{-1}$`?',
         options: [`$\\frac{1}{10}\\begin{bmatrix} 6 & -7 \\\\ -2 & 4 \\end{bmatrix}$`, `$\\frac{1}{10}\\begin{bmatrix} 4 & 7 \\\\ 2 & 6 \\end{bmatrix}$`, `$\\frac{1}{38}\\begin{bmatrix} 6 & -7 \\\\ -2 & 4 \\end{bmatrix}$`, 'Does not exist since `$A$` is singular'],
@@ -289,7 +289,7 @@ export const engmathCh01Content: SectionContent[] = [
         answer: 1,
         explanation: 'First recall rank is the largest surviving minor size. Next all size-three minors vanish, so rank is below `$3$`. Then a surviving size-two minor proves rank is at least `$2$`. Finally rank equals `$2$` exactly.'
       },
-      // PYQ-pattern: GATE 2015 — rank of a matrix with dependent rows (rephrased)
+      // PYQ-pattern — rank of a matrix with dependent rows (rephrased)
       {
         q: 'Which condition is equivalent to `$A$` (square) being invertible?',
         options: [`$|A| = 0$`, 'Some row is a linear combination of the others', 'Rank equals the matrix size', 'The adjoint `$\\mathrm{adj}(A)$` is the zero matrix'],
@@ -409,7 +409,7 @@ export const engmathCh01Content: SectionContent[] = [
       'Zero pivot rows read as `$0 = c$` (inconsistent) or `$0 = 0$` (free variable).'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2011 — consistency of a 3x3 system (rephrased)
+      // PYQ-pattern — consistency of a 3x3 system (rephrased)
       {
         q: 'For `$Ax = b$` with `$A$` of size $3 \\times 3$, suppose `$\\rho(A) = 2$` and `$\\rho([A \\mid b]) = 3$`. How many solutions?',
         options: ['Exactly one', 'Infinitely many', 'None', 'Exactly two'],
@@ -422,7 +422,7 @@ export const engmathCh01Content: SectionContent[] = [
         answer: 1,
         explanation: 'First rows one and two are proportional, so `$|A| = 0$`. Next rank is `$2$` since rows one and three are independent. Then `$n - \\rho = 3 - 2 = 1$` free variable remains. Finally homogeneous systems are always consistent, so solutions form a line through the origin.'
       },
-      // PYQ-pattern: GATE 2017 — Cramer rule for a 2x2 system (rephrased)
+      // PYQ-pattern — Cramer rule for a 2x2 system (rephrased)
       {
         q: 'By Cramer rule, the solution of $$\\begin{aligned} 2x + y &= 5 \\\\ x + 3y &= 5 \\end{aligned}$$ is:',
         options: [`$x = 1, y = 2$`, `$x = 2, y = 1$`, `$x = 3, y = -1$`, `$x = 0, y = 5$`],

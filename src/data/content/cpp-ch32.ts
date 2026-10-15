@@ -303,7 +303,7 @@ export const cppCh32Content: SectionContent[] = [
         answer: 1,
         explanation: "Only the first range has an end; the caller guarantees the second can keep up."
       },
-      // PYQ-pattern: GATE 2012 — find miss returns end iterator (rephrased)
+      // PYQ-pattern — find miss returns end iterator (rephrased)
       {
         q: "What does this program print?\n```cpp\n#include <algorithm>\n#include <iostream>\n#include <vector>\nint main() {\n  std::vector<int> v{1, 2, 3};\n  auto it = std::find(v.begin(), v.end(), 9);\n  std::cout << (it == v.end());\n}\n```",
         options: ["`0`, because `find` throws when the value is missing", "Nothing predictable, because `it` dangles", "`1`, because a miss returns the end iterator", "`9`, because `find` returns the sought value itself"],
@@ -517,7 +517,7 @@ export const cppCh32Content: SectionContent[] = [
         answer: 3,
         explanation: "Stability — equivalent elements keep their original sequence — at the price of extra memory."
       },
-      // PYQ-pattern: GATE 2018 — sort complexity and binary search precondition (rephrased)
+      // PYQ-pattern — sort complexity and binary search precondition (rephrased)
       {
         q: "What complexity does the standard require on average for `std::sort` over a range of length `n`, and what must hold before `std::binary_search` is meaningful?",
         options: ["Linear-time sorting, and `binary_search` works in any order", "Quadratic sorting, and `binary_search` needs a hash table", "Logarithmic sorting, and `binary_search` needs all-distinct elements", "`std::sort` averages order `n log n` comparisons, and `binary_search` needs the range sorted under the same ordering"],

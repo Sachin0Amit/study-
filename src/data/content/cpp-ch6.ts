@@ -295,7 +295,7 @@ export const cppCh6Content: SectionContent[] = [
         answer: 2,
         explanation: "No value is guaranteed — the standard puts such reads outside the language, and optimizers exploit exactly that."
       },
-      // PYQ-pattern: GATE 2014 — brace initialization rejects narrowing (rephrased)
+      // PYQ-pattern — brace initialization rejects narrowing (rephrased)
       {
         q: "Which statement about these two declarations is correct?\n```cpp\nint a = 7.5;\nint b{7.5};\n```",
         options: ["Both compile, and both hold `7`", "Both are rejected, because fractional literals require `double`", "The first compiles holding `7`, while the second is rejected for narrowing", "The first is rejected, while the second compiles holding `8`"],

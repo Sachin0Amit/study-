@@ -645,14 +645,14 @@ export const ch5Content: SectionContent[] = [
         answer: 1,
         explanation: "That identity holds initially (a = 0·d + a), each pass preserves it, and together with the exit test r < d it yields exactly the division algorithm's conclusion.",
       },
-      // PYQ-pattern: GATE 2012 — weakest precondition of an assignment (rephrased, values changed)
+      // PYQ-pattern — weakest precondition of an assignment (rephrased, values changed)
       {
         q: "Consider $\\{P\\} \\; x := x + 3 \\; \\{x = 10\\}$. The weakest precondition $P$ that makes the triple valid is:",
         options: ["$x = 10$", "$x = 7$", "$x = 13$", "$x = 3$"],
         answer: 1,
         explanation: "Step 1: Restate the assignment rule as substitution of the right-hand side into the postcondition. Step 2: Recall the key rule that $\\{P\\} \\; x := e \\; \\{Q(x)\\}$ holds exactly when $P$ implies $Q(e)$. Step 3: Substitute $x + 3$ for $x$ in $x = 10$ to get $x + 3 = 10$. Step 4: Solve to obtain $x = 7$. Step 5: The distractors fail since $x = 10$ would yield $13$ after the assignment, $x = 13$ would yield $16$, and $x = 3$ would yield $6$. Step 6: Hence only $x = 7$ guarantees $x = 10$ afterward."
       },
-      // PYQ-pattern: GATE 2018 — variant proving loop termination (rephrased, values changed)
+      // PYQ-pattern — variant proving loop termination (rephrased, values changed)
       {
         q: "For the loop `i := 0; while i < n: i := i + 1` with $n \\geq 0$, which variant argument proves termination?",
         options: ["The value $i$ is always positive", "The guard $i < n$ is always true", "Partial correctness already implies termination", "$n - i$ drops by $1$ on every pass and stays nonnegative while the guard holds"],

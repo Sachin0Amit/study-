@@ -369,16 +369,16 @@ import { engmathCh07Content } from './engmath-ch07'
 import { engmathCh08Content } from './engmath-ch08'
 import { engmathCh09Content } from './engmath-ch09'
 import { engmathCh10Content } from './engmath-ch10'
-import { jeemathsCh01Content } from './jeemaths-ch01'
-import { jeemathsCh02Content } from './jeemaths-ch02'
-import { jeemathsCh03Content } from './jeemaths-ch03'
-import { jeemathsCh04Content } from './jeemaths-ch04'
-import { jeemathsCh05Content } from './jeemaths-ch05'
-import { jeemathsCh06Content } from './jeemaths-ch06'
-import { jeemathsCh07Content } from './jeemaths-ch07'
-import { jeemathsCh08Content } from './jeemaths-ch08'
-import { jeemathsCh09Content } from './jeemaths-ch09'
-import { jeemathsCh10Content } from './jeemaths-ch10'
+import { mathCompanionCh01Content } from './math-companion-ch01'
+import { mathCompanionCh02Content } from './math-companion-ch02'
+import { mathCompanionCh03Content } from './math-companion-ch03'
+import { mathCompanionCh04Content } from './math-companion-ch04'
+import { mathCompanionCh05Content } from './math-companion-ch05'
+import { mathCompanionCh06Content } from './math-companion-ch06'
+import { mathCompanionCh07Content } from './math-companion-ch07'
+import { mathCompanionCh08Content } from './math-companion-ch08'
+import { mathCompanionCh09Content } from './math-companion-ch09'
+import { mathCompanionCh10Content } from './math-companion-ch10'
 import { chemCh01Content } from './chem-ch01'
 import { chemCh02Content } from './chem-ch02'
 import { chemCh03Content } from './chem-ch03'
@@ -464,17 +464,17 @@ import { engmathCh20Content } from './engmath-ch20'
 import { javaCh10Content } from './java-ch10'
 import { javaCh11Content } from './java-ch11'
 import { javaCh12Content } from './java-ch12'
-// ---- Exam syllabus content (JEE Main / JEE Advanced / SAT / DRDO / GATE / Engineering semesters) ----
-import { jeemainPhyContent } from './exam-jeemain-physics'
-import { jeemainChemContent } from './exam-jeemain-chemistry'
-import { jeemainMathContent } from './exam-jeemain-maths'
-import { jeeadvContent } from './exam-jeeadv'
-import { satMathContent } from './exam-sat-math'
-import { satRwContent } from './exam-sat-rw'
-import { gateCsContent } from './exam-gate-cs'
-import { drdoContent } from './exam-drdo'
-import { enggCseContent } from './exam-engg-cse'
-import { enggBranchContent } from './exam-engg-ece-ee-me'
+// ---- Exam-syllabus content (science masters / aptitude / CS core / engineering semesters) ----
+import { mastersPhysicsContent } from './masters-physics'
+import { mastersChemistryContent } from './masters-chemistry'
+import { mastersMathsContent } from './masters-maths'
+import { mastersAdvancedContent } from './masters-advanced'
+import { aptitudeMathContent } from './aptitude-math'
+import { englishRwContent } from './english-rw'
+import { csCoreContent } from './cs-core'
+import { aptitudeTechContent } from './aptitude-tech'
+import { enggCseContent } from './engg-cse'
+import { enggBranchContent } from './engg-ece-ee-me'
 import { spacePropulsionContent } from './space-propulsion'
 import { dataConvertersContent } from './data-converters'
 import { aptLasersContent } from './apt-di-lasers'
@@ -487,12 +487,12 @@ import { javaCh06Content } from './java-ch06'
 import { javaCh07Content } from './java-ch07'
 import { javaCh08Content } from './java-ch08'
 import { javaCh09Content } from './java-ch09'
-import { jeemathsCh11Content } from './jeemaths-ch11'
-import { jeemathsCh12Content } from './jeemaths-ch12'
-import { jeemathsCh13Content } from './jeemaths-ch13'
-import { jeemathsCh14Content } from './jeemaths-ch14'
-import { jeemathsCh15Content } from './jeemaths-ch15'
-import { jeemathsCh16Content } from './jeemaths-ch16'
+import { mathCompanionCh11Content } from './math-companion-ch11'
+import { mathCompanionCh12Content } from './math-companion-ch12'
+import { mathCompanionCh13Content } from './math-companion-ch13'
+import { mathCompanionCh14Content } from './math-companion-ch14'
+import { mathCompanionCh15Content } from './math-companion-ch15'
+import { mathCompanionCh16Content } from './math-companion-ch16'
 import { chemCh27Content } from './chem-ch27'
 import { chemCh28Content } from './chem-ch28'
 import { chemCh29Content } from './chem-ch29'
@@ -924,12 +924,12 @@ const allContent: SectionContent[] = [
   ...chemCh24Content,
   ...chemCh25Content,
   ...chemCh26Content,
-  ...jeemathsCh11Content,
-  ...jeemathsCh12Content,
-  ...jeemathsCh13Content,
-  ...jeemathsCh14Content,
-  ...jeemathsCh15Content,
-  ...jeemathsCh16Content,
+  ...mathCompanionCh11Content,
+  ...mathCompanionCh12Content,
+  ...mathCompanionCh13Content,
+  ...mathCompanionCh14Content,
+  ...mathCompanionCh15Content,
+  ...mathCompanionCh16Content,
   ...chemCh27Content,
   ...chemCh28Content,
   ...chemCh29Content,
@@ -968,16 +968,16 @@ const allContent: SectionContent[] = [
   ...engmathCh08Content,
   ...engmathCh09Content,
   ...engmathCh10Content,
-  ...jeemathsCh01Content,
-  ...jeemathsCh02Content,
-  ...jeemathsCh03Content,
-  ...jeemathsCh04Content,
-  ...jeemathsCh05Content,
-  ...jeemathsCh06Content,
-  ...jeemathsCh07Content,
-  ...jeemathsCh08Content,
-  ...jeemathsCh09Content,
-  ...jeemathsCh10Content,
+  ...mathCompanionCh01Content,
+  ...mathCompanionCh02Content,
+  ...mathCompanionCh03Content,
+  ...mathCompanionCh04Content,
+  ...mathCompanionCh05Content,
+  ...mathCompanionCh06Content,
+  ...mathCompanionCh07Content,
+  ...mathCompanionCh08Content,
+  ...mathCompanionCh09Content,
+  ...mathCompanionCh10Content,
   ...chemCh01Content,
   ...chemCh02Content,
   ...chemCh03Content,
@@ -1031,14 +1031,14 @@ const allContent: SectionContent[] = [
   ...commemCh05Content,
   ...commemCh06Content,
   // ---- Exam syllabus content ----
-  ...jeemainPhyContent,
-  ...jeemainChemContent,
-  ...jeemainMathContent,
-  ...jeeadvContent,
-  ...satMathContent,
-  ...satRwContent,
-  ...gateCsContent,
-  ...drdoContent,
+  ...mastersPhysicsContent,
+  ...mastersChemistryContent,
+  ...mastersMathsContent,
+  ...mastersAdvancedContent,
+  ...aptitudeMathContent,
+  ...englishRwContent,
+  ...csCoreContent,
+  ...aptitudeTechContent,
   ...enggCseContent,
   ...enggBranchContent,
   // ---- Subject-track expansion content (space propulsion, data converters,

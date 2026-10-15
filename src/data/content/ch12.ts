@@ -566,7 +566,7 @@ export const ch12Content: SectionContent[] = [
         answer: 1,
         explanation: "K-maps rely on human pattern recognition and stop being usable beyond roughly 4–6 variables; Quine–McCluskey is tabular and algorithmic, so software implements it (at a worst-case exponential price).",
       },
-      // PYQ-pattern: GATE 2015 — K-map minimization to a single literal (rephrased, values changed)
+      // PYQ-pattern — K-map minimization to a single literal (rephrased, values changed)
       {
         q: "The Boolean function $F(A,B,C) = \\Sigma m(0,1,2,3)$ simplifies to:",
         options: [

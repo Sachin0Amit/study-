@@ -426,14 +426,14 @@ export const osCh6Content: SectionContent[] = [
         answer: 2,
         explanation: 'Neither process can proceed: each holds one semaphore and blocks on the other, and only a blocked process could execute the needed signal(). This circular wait is the seed of Chapter 8’s deadlock theory.',
       },
-      // PYQ-pattern: GATE 2018 — counting semaphore value (rephrased)
+      // PYQ-pattern — counting semaphore value (rephrased)
       {
         q: "A counting semaphore guards $3$ identical units and starts at $3$. After five `wait()` operations with no `signal()`, what is the value and what does it mean?",
         options: ["$0$, all units free", "$3$, unchanged", "$-2$, two processes waiting", "$5$, five units created"],
         answer: 2,
         explanation: "**Step 1 — Given data:** initial $S = 3$, five decrements, block-and-sleep implementation (decrement first, test after).\n**Step 2 — Rule:** each `wait()` does $S = S - 1$; if $S < 0$ the caller sleeps; magnitude of a negative value counts sleepers.\n**Step 3 — Computation:** $3 \\to 2 \\to 1 \\to 0 \\to -1 \\to -2$. First three hand out units; next two sleep.\n**Step 4 — Cross-check:** $|{-2}| = 2$ sleepers, $3$ units held — demand $5$ minus supply $3$ equals $2$ unmet.\n**Step 5 — Distractors:** $0$ stops after three waits; $3$ ignores decrements; $5$ confuses the count direction.\n**Step 6 — Conclude:** $-2$ with two processes queued."
       },
-      // PYQ-pattern: DRDO 2019 — ordering with semaphores (rephrased)
+      // PYQ-pattern — ordering with semaphores (rephrased)
       {
         q: "Statement $S1$ in P1 must precede $S2$ in P2. Shared semaphore `synch` starts at $0$. Which placement enforces the order even if P2 runs first, and why does it work?",
         options: ["Both signal before their statements", "P1: `wait(synch); S1`, P2: `S2; signal(synch)`", "P1: `S1; signal(synch)`, P2: `wait(synch); S2` — an early signal is remembered", "Both wait before their statements"],

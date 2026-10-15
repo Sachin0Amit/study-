@@ -864,42 +864,42 @@ export const youngCh37Content: SectionContent[] = [
         answer: 1,
         explanation: "Newton's success at low speed constrains Einstein."
       },
-      // PYQ-pattern: JEE Mains 2021 — muon time dilation (rephrased, values changed)
+      // PYQ-pattern — muon time dilation (rephrased, values changed)
       {
         q: "Muons with proper lifetime $2.2 \\text{ }\\mu\\text{s}$ stream down at $v = 0.99c$. The mean distance they cover before decay is closest to:",
         options: ["$0.66 \\text{ km}$", "$32 \\text{ km}$", "$4.6 \\text{ km}$", "$310 \\text{ km}$"],
         answer: 2,
         explanation: "Step 1: Given $\\tau_{0} = 2.2 \\text{ }\\mu\\text{s}$ and $\\beta = 0.99$. Step 2: Governing laws are $\\gamma = 1/\\sqrt{1-\\beta^{2}}$ and dilated life $\\tau = \\gamma\\tau_{0}$ with range $d = v\\tau$. Step 3: Key equation: $$\\gamma = \\frac{1}{\\sqrt{1-0.9801}} = 7.09, \\qquad d = (0.99c)(7.09)(2.2 \\times 10^{-6}).$$ Step 4: Numerics give $\\tau \\approx 15.6 \\text{ }\\mu\\text{s}$ and $d \\approx 4.6 \\times 10^{3} \\text{ m} = 4.6 \\text{ km}$; units of $c\\tau$ are meters. Step 5: Distractors fail because $0.66$ is the undilated $c\\tau_{0}$, $32$ squares $\\gamma$, and $310$ misplaces the micro prefix. Step 6: Conclude dilation stretches the reach to about **$4.6 \\text{ km}$**."
       },
-      // PYQ-pattern: JEE Advanced 2018 — length contraction (rephrased, values changed)
+      // PYQ-pattern — length contraction (rephrased, values changed)
       {
         q: "A rod of proper length $L_{0} = 100 \\text{ m}$ flies past at $v = 0.80c$. Its length measured in the lab frame is:",
         options: ["$60 \\text{ m}$", "$100 \\text{ m}$", "$167 \\text{ m}$", "$80 \\text{ m}$"],
         answer: 0,
         explanation: "Step 1: Given $L_{0} = 100 \\text{ m}$ and $\\beta = 0.80$. Step 2: Governing law is Lorentz contraction $L = L_{0}/\\gamma$ with $\\gamma = 1/\\sqrt{1-\\beta^{2}}$. Step 3: Key equation: $$\\gamma = \\frac{1}{\\sqrt{1-0.64}} = \\frac{1}{0.60} = 1.667, \\qquad L = \\frac{100}{1.667}.$$ Step 4: Numerics give $L = 60 \\text{ m}$; units stay meters and motion must shorten, never stretch. Step 5: Distractors fail because $100$ ignores relativity, $167$ multiplies by $\\gamma$, and $80$ copies $\\beta$ as a percent. Step 6: Conclude the lab measures **$60 \\text{ m}$**."
       },
-      // PYQ-pattern: GATE PH 2019 — velocity addition (rephrased, values changed)
+      // PYQ-pattern — velocity addition (rephrased, values changed)
       {
         q: "A craft moves at $0.50c$ relative to the ground and launches a probe forward at $0.50c$ relative to the craft. The probe speed seen from the ground is:",
         options: ["$1.00c$", "$0.25c$", "$0.50c$", "$0.80c$"],
         answer: 3,
         explanation: "Step 1: Given $u = 0.50c$ and $v = 0.50c$ along the same line. Step 2: Governing law is the Lorentz sum $u_{obs} = (u+v)/(1+uv/c^{2})$. Step 3: Key equation: $$u_{obs} = \\frac{0.50c+0.50c}{1+0.25} = \\frac{1.00c}{1.25}.$$ Step 4: Numerics give $u_{obs} = 0.80c$; units are fractions of $c$ and the result stays below $c$ as required. Step 5: Distractors fail because $1.00c$ adds Galilean style, $0.25c$ multiplies the fractions, and $0.50c$ copies one frame. Step 6: Conclude the ground observer records **$0.80c$**."
       },
-      // PYQ-pattern: JEE Mains 2022 — relativistic kinetic energy (rephrased, values changed)
+      // PYQ-pattern — relativistic kinetic energy (rephrased, values changed)
       {
         q: "An electron ($mc^{2} = 511 \\text{ keV}$) moves at $v = 0.60c$. Its kinetic energy is closest to:",
         options: ["$640 \\text{ keV}$", "$128 \\text{ keV}$", "$511 \\text{ keV}$", "$320 \\text{ keV}$"],
         answer: 1,
         explanation: "Step 1: Given $\\beta = 0.60$ and rest energy $mc^{2} = 511 \\text{ keV}$. Step 2: Governing law is $K = (\\gamma-1)mc^{2}$ with $\\gamma = 1/\\sqrt{1-\\beta^{2}}$. Step 3: Key equation: $$\\gamma = \\frac{1}{\\sqrt{1-0.36}} = 1.25, \\qquad K = (0.25)(511).$$ Step 4: Numerics give $K \\approx 128 \\text{ keV}$; units are energy and $K$ must lie below the rest energy here. Step 5: Distractors fail because $640$ is the total energy $\\gamma mc^{2}$, $511$ is the rest energy, and $320$ mis-evaluates $\\gamma$. Step 6: Conclude the kinetic energy is about **$128 \\text{ keV}$**."
       },
-      // PYQ-pattern: GATE PH 2021 — invariant mass (rephrased, values changed)
+      // PYQ-pattern — invariant mass (rephrased, values changed)
       {
         q: "A particle has total energy $E = 5.0 \\text{ MeV}$ and momentum $pc = 4.0 \\text{ MeV}$. Its rest energy is:",
         options: ["$3.0 \\text{ MeV}$", "$9.0 \\text{ MeV}$", "$1.0 \\text{ MeV}$", "$5.0 \\text{ MeV}$"],
         answer: 0,
         explanation: "Step 1: Given $E = 5.0 \\text{ MeV}$ and $pc = 4.0 \\text{ MeV}$. Step 2: Governing law is the invariant $E^{2}-(pc)^{2} = (mc^{2})^{2}$, the same in every frame. Step 3: Key equation: $$mc^{2} = \\sqrt{25-16} = \\sqrt{9}.$$ Step 4: Numerics give $mc^{2} = 3.0 \\text{ MeV}$; units are energy and the rest part must be smaller than the total. Step 5: Distractors fail because $9.0$ forgets the square root, $1.0$ subtracts linearly, and $5.0$ copies the total energy. Step 6: Conclude the rest energy is **$3.0 \\text{ MeV}$**."
       },
-      // PYQ-pattern: JEE Advanced 2020 — moving clock (rephrased, values changed)
+      // PYQ-pattern — moving clock (rephrased, values changed)
       {
         q: "A clock moving at $v = 0.60c$ ticks $100 \\text{ s}$ of its own proper time. The time read on lab clocks is:",
         options: ["$100 \\text{ s}$", "$80 \\text{ s}$", "$125 \\text{ s}$", "$160 \\text{ s}$"],

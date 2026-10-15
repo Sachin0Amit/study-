@@ -78,7 +78,7 @@ export const engmathCh03Content: SectionContent[] = [
       'Continuity of `$f$` and `$\\partial f/\\partial y$` governs uniqueness near `$x_0$`.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2005 — separable equation general solution (rephrased)
+      // PYQ-pattern — separable equation general solution (rephrased)
       {
         q: 'The general solution of `$\\frac{dy}{dx} = \\frac{2x}{y}$` is:',
         options: [`$y^2 = 2x^2 + C$`, `$y = 2x^2 + C$`, '$\\ln y = x^2 + C$ only, with no other branch', `$y^2 = x + C$`],
@@ -91,7 +91,7 @@ export const engmathCh03Content: SectionContent[] = [
         answer: 1,
         explanation: 'First test each right side under scaling `$(x, y) \\to (tx, ty)$`. Next only the second is unchanged since numerator and denominator are both degree `$2$`. Then the others mix degrees or carry constants. Finally write it as `$\\frac{1}{v} + v$` with `$v = \\frac{y}{x}$`.'
       },
-      // PYQ-pattern: GATE 2014 — substitution y = vx (rephrased)
+      // PYQ-pattern — substitution y = vx (rephrased)
       {
         q: 'Under $y = vx$, the equation `$\\frac{dy}{dx} = \\frac{y}{x} + \\left(\\frac{y}{x}\\right)^2$` becomes:',
         options: [`$x\\frac{dv}{dx} = v^2$`, `$x\\frac{dv}{dx} = v + v^2$`, `$\\frac{dv}{dx} = v^2$`, `$v + x\\frac{dv}{dx} = v^2$`],
@@ -211,7 +211,7 @@ export const engmathCh03Content: SectionContent[] = [
       'Reattach divided-out zeros such as `$y = 0$`, and keep one constant per connected interval.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2006 — integrating factor (rephrased)
+      // PYQ-pattern — integrating factor (rephrased)
       {
         q: 'The integrating factor of `$\\frac{dy}{dx} + \\frac{2}{x}y = x^2$` is:',
         options: [`$e^{2x}$`, `$x^2$`, `$2\\ln x$`, `$\\frac{1}{x^2}$`],
@@ -224,7 +224,7 @@ export const engmathCh03Content: SectionContent[] = [
         answer: 1,
         explanation: 'First expand `$\\frac{d}{dx}(\\mu y) = \\mu\\frac{dy}{dx} + y\\frac{d\\mu}{dx}$`. Next `$\\frac{d\\mu}{dx} = \\mu P$` by construction of `$\\mu$`. Then the expansion matches `$\\mu\\frac{dy}{dx} + \\mu P y$`. Finally the equation reads `$\\frac{d}{dx}(\\mu y) = \\mu Q$`.'
       },
-      // PYQ-pattern: GATE 2012 — Bernoulli substitution (rephrased)
+      // PYQ-pattern — Bernoulli substitution (rephrased)
       {
         q: 'The substitution linearizing `$\\frac{dy}{dx} + y = xy^3$` is:',
         options: [`$z = y^3$`, `$z = y^2$`, `$z = y^{-2}$`, `$z = e^y$`],
@@ -310,7 +310,7 @@ export const engmathCh03Content: SectionContent[] = [
       'Regroup known totals `$d(xy)$`, `$d(y/x)$`, `$d(\\arctan y/x)$` before heavy machinery.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2003 — exactness test (rephrased)
+      // PYQ-pattern — exactness test (rephrased)
       {
         q: 'The form `$(2xy + 1)\\,dx + (x^2 + 3y^2)\\,dy = 0$` is exact because:',
         options: [`$M_y = 2y$ and $N_x = 2x$`, `$M_y = N_x = 2x$`, '$M = N$ as functions', 'Both `$M$` and `$N$` are polynomials'],
@@ -323,7 +323,7 @@ export const engmathCh03Content: SectionContent[] = [
         answer: 1,
         explanation: 'First the quotient is `$R(x) = \\frac{1}{x}$` of `$x$` alone. Next `$\\mu(x) = e^{\\int R\\,dx} = e^{\\ln x}$`. Then `$e^{\\ln x} = x$`. Finally multiplication by `$x$` equalizes the mixed partials.'
       },
-      // PYQ-pattern: GATE 2018 — potential reconstruction (rephrased)
+      // PYQ-pattern — potential reconstruction (rephrased)
       {
         q: 'If `$\\Psi_x = 2xy + 1$` and $\\Psi_y = x^2 + 3y^2$, then `$\\Psi(x,y)$` (up to a constant) is:',
         options: [`$x^2 y + x + y^3$`, `$x^2 y + 3y^2$`, `$2xy + x^2$`, `$xy + y^3$`],
@@ -430,7 +430,7 @@ export const engmathCh03Content: SectionContent[] = [
       'State domains and angle regimes; vertical and horizontal crossings need differential form.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2007 — Newton cooling curve (rephrased)
+      // PYQ-pattern — Newton cooling curve (rephrased)
       {
         q: 'A body cools from `$80$ degrees` to `$50$ degrees` in `$10$ minutes` with surroundings at `$20$ degrees`. The constant `$k$` in `$T(t) = 20 + 60e^{-kt}$` is:',
         options: ['$\\frac{\\ln 2}{10}$ per minute', '$\\frac{\\ln 3}{10}$ per minute', '$\\frac{1}{10}$ per minute', '$\\ln 2$ per minute'],
@@ -443,7 +443,7 @@ export const engmathCh03Content: SectionContent[] = [
         answer: 1,
         explanation: 'First differentiate: `$\\frac{dy}{dx} = 2cx$`. Next solve `$c = \\frac{y}{x^2}$` from the family. Then substitute to remove `$c$`. Finally `$\\frac{dy}{dx} = \\frac{2y}{x}$`.'
       },
-      // PYQ-pattern: GATE 2013 — orthogonal trajectories (rephrased)
+      // PYQ-pattern — orthogonal trajectories (rephrased)
       {
         q: 'Orthogonal trajectories of `$y = cx^2$` satisfy:',
         options: [`$\\frac{dy}{dx} = \\frac{2y}{x}$`, `$\\frac{dy}{dx} = -\\frac{x}{2y}$`, `$\\frac{dy}{dx} = \\frac{x}{2y}$`, `$2y\\,dy - x\\,dx = 0$`],

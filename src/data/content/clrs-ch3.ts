@@ -135,7 +135,7 @@ export const clrsCh3Content: SectionContent[] = [
         answer: 1,
         explanation: "Each anonymous function symbol in an equation denotes a single member of its set — here the function $h(n) = 3n + 1 \\in \\Theta(n)$, making the first '=' honest; one anonymous function per occurrence of '='.",
       },
-      // PYQ-pattern: GATE 2019 — Theta witness constants (rephrased, values changed)
+      // PYQ-pattern — Theta witness constants (rephrased, values changed)
       {
         q: "For $f(n) = 3n^2 + 5n + 7$, which triple $(c_{1}, c_{2}, n_{0})$ witnesses $f(n) = \\Theta(n^2)$?",
         options: ["$c_{1} = 4, c_{2} = 5, n_{0} = 1$", "$c_{1} = 1, c_{2} = 2, n_{0} = 100$", "$c_{1} = 5, c_{2} = 6, n_{0} = 1$", "$c_{1} = 3, c_{2} = 4, n_{0} = 12$"],
@@ -253,7 +253,7 @@ export const clrsCh3Content: SectionContent[] = [
         answer: 1,
         explanation: "Binet's formula gives exact integer values via rounding because the conjugate term decays; the growth rate is the golden ratio, strictly between 1 and 2 — a recurrence Chapter 4 will solve by the methods of this part.",
       },
-      // PYQ-pattern: GATE 2015 — Stirling growth of log factorial (rephrased, values changed)
+      // PYQ-pattern — Stirling growth of log factorial (rephrased, values changed)
       {
         q: "Which function grows as $\\Theta(n\\lg n)$?",
         options: ["$\\lg(n!)$", "$n$", "$2^n$", "$\\lg\\lg n$"],

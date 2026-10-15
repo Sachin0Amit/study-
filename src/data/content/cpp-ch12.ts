@@ -250,7 +250,7 @@ export const cppCh12Content: SectionContent[] = [
         answer: 1,
         explanation: "The language allows binding a reference only to an lvalue unless it is const — so the const-reference parameter accepts literals and temporaries, one more reason large-read-only args default to it."
       },
-      // PYQ-pattern: GATE 2009 — by-value parameter copy semantics (rephrased)
+      // PYQ-pattern — by-value parameter copy semantics (rephrased)
       {
         q: "What does this program print?\n```cpp\n#include <iostream>\nvoid inc(int x) { x++; }\nint main() {\n  int a = 5;\n  inc(a);\n  std::cout << a;\n}\n```",
         options: ["`5`, because the parameter is an independent copy", "`6`, because the argument aliases the parameter", "Nothing predictable, because `x` starts uninitialized", "It cannot compile, because arguments must be references"],

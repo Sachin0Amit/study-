@@ -753,7 +753,7 @@ export const ch13Content: SectionContent[] = [
         answer: 1,
         explanation: "Machine descriptions are finite strings over a finite alphabet (countable); functions ℕ → ℕ correspond to infinite bit sequences (uncountable) — computation misses almost all of them.",
       },
-      // PYQ-pattern: GATE 2019 — decidable versus undecidable problems (rephrased, values changed)
+      // PYQ-pattern — decidable versus undecidable problems (rephrased, values changed)
       {
         q: "Which of the following problems is undecidable?",
         options: [

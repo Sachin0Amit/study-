@@ -389,14 +389,14 @@ export const osCh15Content: SectionContent[] = [
         explanation: "A single metadata authority — the GFS master or the HDFS NameNode — maps files to their $64\\,\\text{MB}$-class chunks or blocks spread across many storage nodes, streamlining the huge sequential reads and appends that MapReduce-style workloads issue."
       }
     ,
-      // PYQ-pattern: GATE 2021 — NFS stateless recovery (rephrased)
+      // PYQ-pattern — NFS stateless recovery (rephrased)
       {
         q: "Why can an NFS server crash and reboot without losing client file-system state, and what must its operations satisfy?",
         options: ["It keeps all state on clients; operations are idempotent so replays are safe", "It logs every block to tape", "Clients poll until the server returns", "It uses strict locking for all writes"],
         answer: 0,
         explanation: "**Step 1 — Given data:** NFS server exports directories; clients mount them; operations travel as RPCs.\n**Step 2 — Rule:** stateless design keeps no per-client open state on the server; every operation carries full arguments and is idempotent (repeatable with the same effect).\n**Step 3 — Apply:** after a crash the server restarts empty; a client simply replays the last RPC and gets the same result; no recovery protocol is needed.\n**Step 4 — Cross-check:** caching (attribute and data caches with close-to-open flushing) preserves performance without breaking the stateless contract.\n**Step 5 — Distractors:** tape logging is recovery, not statelessness; polling does not make replays safe; strict locking is stateful.\n**Step 6 — Conclude:** stateless plus idempotent gives crash transparency."
       },
-      // PYQ-pattern: ISRO 2016 — close-to-open consistency (rephrased)
+      // PYQ-pattern — close-to-open consistency (rephrased)
       {
         q: "Two clients share one file. Client A writes and closes; client B then opens and reads. What does B see under close-to-open, and how does it differ from session semantics?",
         options: ["B may see stale data; session would show the write", "B sees A’s changes because close flushes and open refreshes; session publishes whole images only at close", "Both see nothing until reboot", "B always sees strict single-image order"],

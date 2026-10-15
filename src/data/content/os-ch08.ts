@@ -299,14 +299,14 @@ export const osCh8Content: SectionContent[] = [
         explanation: 'The request passes both legality checks — Need and Available — but the pretend-allocation leaves no thread able to finish: no safe sequence exists. Avoidance rolls the state back and makes $T_0$ wait; physical availability is not the criterion, provable safety is.'
       }
     ,
-      // PYQ-pattern: GATE 2022 — Banker safe sequence (rephrased)
+      // PYQ-pattern — Banker safe sequence (rephrased)
       {
         q: "Types A/B/C have $10$/$5$/$7$ instances. Allocation|Max rows: T0 $0,1,0$|$7,5,3$; T1 $2,0,0$|$3,2,2$; T2 $3,0,2$|$9,0,2$; T3 $2,1,1$|$2,2,2$; T4 $0,0,2$|$4,3,3$. Available $=(3,3,2)$. Which is a safe sequence?",
         options: ["$\\langle T_0,T_1,T_2,T_3,T_4 \\rangle$", "$\\langle T_1,T_3,T_4,T_2,T_0 \\rangle$", "$\\langle T_2,T_0,T_1,T_3,T_4 \\rangle$", "No safe sequence exists"],
         answer: 1,
         explanation: "**Step 1 — Given data:** compute Need $=$ Max $-$ Allocation: T0 $(7,4,3)$, T1 $(1,2,2)$, T2 $(6,0,0)$, T3 $(0,1,1)$, T4 $(4,3,1)$; Work $= (3,3,2)$.\n**Step 2 — Rule:** repeatedly pick unfinished $i$ with Need$_i \\le$ Work, then Work $+=$ Allocation$_i$.\n**Step 3 — Computation:**\n```\nWork(3,3,2): T1 fits -> (5,3,2); T3 fits -> (7,4,3);\nT4 fits -> (7,4,5); T2 fits -> (10,4,7); T0 fits -> (10,5,7)\n```\n**Step 4 — Cross-check:** all Finish true, so state is safe; order among eligible threads does not affect the verdict.\n**Step 5 — Distractors:** starting with T0 fails since $(7,4,3) \\nleq (3,3,2)$; T2-first fails similarly; unsafe verdict contradicts the constructed witness.\n**Step 6 — Conclude:** $\\langle T_1,T_3,T_4,T_2,T_0 \\rangle$ certifies safety."
       },
-      // PYQ-pattern: DRDO 2020 — Banker request grant (rephrased)
+      // PYQ-pattern — Banker request grant (rephrased)
       {
         q: "From the same snapshot (Available $(3,3,2)$), T1 requests $(1,0,2)$. Can it be granted immediately?",
         options: ["Yes; the pretend state has safe sequence $\\langle T_1,T_3,T_4,T_0,T_2 \\rangle$", "No; it exceeds Need", "No; it exceeds Available", "Yes; without any safety test"],

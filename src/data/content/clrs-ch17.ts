@@ -530,7 +530,7 @@ export const clrsCh17Content: SectionContent[] = [
         answer: 3,
         explanation: "With expansion at 1 and contraction just below 1/2 the two thresholds touch: from α = 1/2 one delete halves and the next insert doubles — Θ(size) copies per pair. Halving only below 1/4 is the hysteresis that prevents this pumping.",
       },
-      // PYQ-pattern: GATE 2020 — dynamic table amortized cost (rephrased, values changed)
+      // PYQ-pattern — dynamic table amortized cost (rephrased, values changed)
       {
         q: "A dynamic table starts empty and doubles on full insertions. For $n$ INSERT operations, the total and amortized costs are:",
         options: ["$\\Theta(n^2)$ total, $\\Theta(n)$ amortized each", "$\\Theta(n)$ total, $O(1)$ amortized each", "$\\Theta(n\\lg n)$ total, $O(\\lg n)$ amortized each", "$\\Theta(1)$ worst case each"],

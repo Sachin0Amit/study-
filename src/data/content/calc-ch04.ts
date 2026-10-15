@@ -1028,14 +1028,14 @@ export const calcCh4Content: SectionContent[] = [
         answer: 1,
         explanation: 'One condition per integration: typically the initial value of the function and of its first derivative.',
       },
-      // PYQ-pattern: JEE Mains 2021 — initial-value problem for velocity (rephrased, values changed)
+      // PYQ-pattern — initial-value problem for velocity (rephrased, values changed)
       {
         q: 'If $f^{\\prime}(x) = 4x^{3} - 6x$ and $f(0) = 5$, then $f(2)$ equals:',
         options: [`$4$`, `$14$`, `$0$`, `$9$`],
         answer: 3,
         explanation: 'Step 1: Restate the task as antidifferentiation plus pinning down the constant with $f(0) = 5$. Step 2: Recall the key power rule in reverse as $\\int x^{n}\\,dx = \\frac{x^{n+1}}{n+1} + C$. Step 3: Integrate term by term to get $f(x) = x^{4} - 3x^{2} + C$. Step 4: Impose $f(0) = 0 - 0 + C = 5$, so $C = 5$ and $f(x) = x^{4} - 3x^{2} + 5$. Step 5: Evaluate at $x = 2$ to get $16 - 12 + 5 = 9$; the distractors drop the constant, mis-handle a coefficient, or return the constant alone. Step 6: Hence $f(2) = 9$.'
       },
-      // PYQ-pattern: JEE Mains 2019 — most general antiderivative of a polynomial (rephrased, values changed)
+      // PYQ-pattern — most general antiderivative of a polynomial (rephrased, values changed)
       {
         q: 'The most general antiderivative of $f(x) = 5x^{4} - 2x + 3$ is:',
         options: [`$x^{5} - x^{2} + 3x + C$`, `$x^{5} - x^{2} + 3x$`, `$20x^{3} - 2$`, `$\\frac{x^{6}}{6} - x^{2} + 3x + C$`],

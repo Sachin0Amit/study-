@@ -641,7 +641,7 @@ export const clrsCh34Content: SectionContent[] = [
         answer: 0,
         explanation: "With no true literals the slack pair tops out at 3 < 4; with k ≥ 1 true literals the slack pair (0–3) can always complete to 4."
       },
-      // PYQ-pattern: GATE 2020 — clique vertex-cover duality (rephrased, values changed)
+      // PYQ-pattern — clique vertex-cover duality (rephrased, values changed)
       {
         q: "Let $\\bar{G}$ be the complement of an $n$-vertex graph $G$. Which claim is true?",
         options: ["A $k$-clique in $G$ forces a $k$-vertex-cover in $\\bar{G}$", "$G$ has a $k$-clique iff $\\bar{G}$ has an $(n - k)$-vertex-cover", "Every problem in NP already has a polynomial-time decider", "A polynomial reduction from $A$ to $B$ proves $A$ is harder than $B$"],

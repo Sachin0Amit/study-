@@ -148,7 +148,7 @@ export const elecCh10Content: SectionContent[] = [
         answer: 1,
         explanation: 'The source transformation $I_{s} = V_{s}/Z_{s}$ connects the two equivalents. In Hughes Examples 15.9 and 15.13, dividing $-(24.6 + j29.5)\\ \\mathrm{V}$ by $(0.89 - j3.74)\\ \\Omega$ gives the Norton current $(6 - j8)\\ \\mathrm{A}$ directly.',
       },
-      // PYQ-pattern: GATE 2019 — AC maximum power with conjugate match (rephrased, values changed)
+      // PYQ-pattern — AC maximum power with conjugate match (rephrased, values changed)
       {
         q: 'A network presents $V_{Th} = 10 \\angle 0°$ V RMS in series with $Z_{Th} = 4 + j3$ Ω. The maximum average power a load can receive, and the matching load, are closest to:',
         options: ['6.25 W with $4 - j3$ Ω', '12.5 W with $4 + j3$ Ω', '25 W with $4$ Ω', '3.13 W with $5$ Ω'],
@@ -439,7 +439,7 @@ export const elecCh10Content: SectionContent[] = [
         answer: 0,
         explanation: 'With $x(t) = \\delta(t)$, $X(s) = 1$ and $Y(s) = H(s)$, so $y(t) = h(t)$ is exactly the inverse transform of the transfer function. Applying an impulse instantaneously stores energy in the circuit; the subsequent release of that energy is the natural response.',
       },
-      // PYQ-pattern: DRDO 2016 — RL step response in the s-domain (rephrased, values changed)
+      // PYQ-pattern — RL step response in the s-domain (rephrased, values changed)
       {
         q: 'A series RL branch with R = 10 Ω and L = 0.50 H, initially relaxed, is switched onto a 20 V step. The current 0.050 s later is closest to:',
         options: ['0.55 A', '0.90 A', '1.26 A', '2.00 A'],

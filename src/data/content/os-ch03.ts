@@ -457,14 +457,14 @@ export const osCh3Content: SectionContent[] = [
         explanation: "systemd — the successor to System V init — is created first at boot with pid 1 and is the ancestor of all user processes, spawning service processes such as logind and sshd; interactive shells appear deeper in the tree."
       }
     ,
-      // PYQ-pattern: GATE 2016 — fork return values (rephrased)
+      // PYQ-pattern — fork return values (rephrased)
       {
         q: "A process with PID $8415$ calls `fork()` and the child receives PID $8416$. What does each process observe as the return value, and where does each continue?",
         options: ["Parent observes $8416$ and child observes $0$, both continue after the call", "Parent observes $0$ and child observes $8416$", "Both observe $8416$", "Child starts a new program immediately"],
         answer: 0,
         explanation: "**Step 1 — Given data:** parent $8415$, child $8416$, address space copied (cheap via copy-on-write).\n**Step 2 — Rule:** `fork()` returns twice: $0$ in the child, the child PID in the parent; both resume at the instruction after the call.\n**Step 3 — Apply:** parent sees $8416$ and takes the parent branch (often `wait()`); child sees $0$ and takes the child branch (often `exec()`).\n**Step 4 — Cross-check:** privileges, scheduling attributes and open files are inherited; only the return value differs.\n**Step 5 — Distractors:** swapped values invert parent and child; identical values cannot separate the branches; a new program needs `exec()`, not `fork()`.\n**Step 6 — Conclude:** $8416$ in the parent, $0$ in the child."
       },
-      // PYQ-pattern: ISRO 2019 — zombie versus orphan (rephrased)
+      // PYQ-pattern — zombie versus orphan (rephrased)
       {
         q: "A child terminates with status $3$ but the parent has not yet called `wait()`. What is the child’s state, and what must the parent do? If instead the parent terminates first, what happens to a still-running child?",
         options: ["Child is running; parent must call `exec()`", "Child is a zombie holding its status until the parent calls `wait()`; a child whose parent dies first is an orphan adopted by the root ancestor", "Child is swapped out; parent must reboot", "Child vanishes immediately with no record"],

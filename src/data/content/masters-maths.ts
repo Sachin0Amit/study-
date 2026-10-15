@@ -1,18 +1,18 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// JEE (Main) 2026 Mathematics — lesson content (bookId 'math-master').
-// Master study content for the opening section of ten NTA units: set algebra,
+// Mathematics master book — lesson content (bookId 'math-master').
+// Master study content for the opening section of ten syllabus units: set algebra,
 // the Argand plane, matrix algebra, the counting principle, the binomial
 // theorem, real functions, anti-derivatives, plane coordinates and locus,
-// points in space and trigonometrical functions. JEE Main-specific drills:
+// points in space and trigonometrical functions. assessment-focused drills:
 // De Morgan counting, Vieta root sums on unit-circle roots, matrix-polynomial
 // reduction, FPC word problems, coefficient sums chained with AM–GM,
 // domain/range hunting, standard integrals, Apollonius loci, external
 // section ratios and general solutions of trigonometric equations.
 // ============================================================================
 
-export const jeemainMathContent: SectionContent[] = [
+export const mastersMathsContent: SectionContent[] = [
   // ---------------------------------------------------------------- Unit 1 · 1.1
   {
     sectionId: 'math-a1-s7',
@@ -436,7 +436,7 @@ export const jeemainMathContent: SectionContent[] = [
   },
   // ---------------------------------------------------------------- Unit 5 · 5.1
   // NOTE: metadata (source of truth) titles this section 'The Binomial Theorem
-  // for a Positive Integral Index' — NTA Unit 5. (The task brief's shorthand
+  // for a Positive Integral Index' — syllabus Unit 5. (The task brief's shorthand
   // label "Sequences and Series" belongs to Unit 6 and is not this section.)
   {
     sectionId: 'math-a4-s6',

@@ -288,7 +288,7 @@ export const elecCh9Content: SectionContent[] = [
         answer: 1,
         explanation: '$P_{\\mathrm{line}} = I^{2}R$: before, $(89.44)^{2}(0.05) = 400\\ \\mathrm{W}$; after, $(80)^{2}(0.05) = 320\\ \\mathrm{W}$. The current fell by about 10.6 percent, and the loss — which goes as the square — fell by 20 percent.',
       },
-      // PYQ-pattern: GATE 2020 — power-factor correction capacitor (rephrased, values changed)
+      // PYQ-pattern — power-factor correction capacitor (rephrased, values changed)
       {
         q: 'A 5 kW load at 0.70 lagging power factor, fed at 230 V and 50 Hz, is to be corrected to 0.95 lagging with a parallel capacitor. The required capacitance is closest to:',
         options: ['98 μF', '142 μF', '208 μF', '330 μF'],
@@ -433,7 +433,7 @@ export const elecCh9Content: SectionContent[] = [
         answer: 1,
         explanation: 'The susceptances cancel, leaving $Y = G$: impedance is maximum and line current minimum. The energy still circulates, so the branch currents are magnified — $|I_{L}| = QI$ — which is current magnification, the dual of the series circuit’s voltage magnification.',
       },
-      // PYQ-pattern: ISRO 2015 — series resonance frequency (rephrased, values changed)
+      // PYQ-pattern — series resonance frequency (rephrased, values changed)
       {
         q: 'A series RLC circuit uses R = 10 Ω, L = 50 mH and C = 20 μF. Its resonant frequency is closest to:',
         options: ['79 Hz', '159 Hz', '318 Hz', '1592 Hz'],

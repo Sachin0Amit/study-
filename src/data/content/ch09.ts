@@ -788,7 +788,7 @@ export const ch9Content: SectionContent[] = [
         answer: 2,
         explanation: 'The sort linearizes the poset: whenever a ≺ b, a comes before b in the output list — exactly what scheduling with prerequisites requires.',
       },
-      // PYQ-pattern: GATE 2010 — maximal and minimal elements of a divisibility poset (rephrased, values changed)
+      // PYQ-pattern — maximal and minimal elements of a divisibility poset (rephrased, values changed)
       {
         q: 'In the poset $(\\{2, 3, 4, 6, 12\\}, \\mid)$ under divisibility, the maximal and minimal elements are:',
         options: ['Maximal: $12$; minimal: $2, 3$', 'Maximal: $4, 6$; minimal: $2$', 'Maximal: $12$; minimal: $12$', 'Maximal: $2, 3$; minimal: $12$'],

@@ -360,7 +360,7 @@ export const clrsCh21Content: SectionContent[] = [
         answer: 1,
         explanation: "Ranks only move while a node is a root losing or winning links. After a node becomes a child, its rank is frozen forever — even as path compression rearranges the tree above it."
       },
-      // PYQ-pattern: GATE 2014 — union-by-rank bound (rephrased, values changed)
+      // PYQ-pattern — union-by-rank bound (rephrased, values changed)
       {
         q: "With union by rank alone on $16$ elements, the maximum rank of any node is at most:",
         options: ["2", "8", "4", "16"],

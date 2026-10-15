@@ -370,14 +370,14 @@ export const osCh10Content: SectionContent[] = [
         explanation: 'The ordered pair (reference, modify) defines four classes; $(0,0)$ is the best victim because the page was not used recently (unlikely to be needed) and is clean (no write-out required) — the algorithm exists to avoid I/O, not just to drop pages.'
       }
     ,
-      // PYQ-pattern: GATE 2020 — Belady anomaly demonstration (rephrased)
+      // PYQ-pattern — Belady anomaly demonstration (rephrased)
       {
         q: "Reference string $1,2,3,4,1,2,5,1,2,3,4,5$: FIFO with $3$ frames faults $9$ times, with $4$ frames $10$ times. What does this show?",
         options: ["FIFO is optimal", "LRU always faults less than FIFO", "Belady anomaly: more frames can mean more faults under FIFO", "Optimal replacement faults most"],
         answer: 2,
         explanation: "**Step 1 — Given data:** $12$-length string, counts $9$ ($3$ frames) versus $10$ ($4$ frames).\n**Step 2 — Rule:** FIFO evicts longest-resident; stack algorithms never show this reversal, FIFO can.\n**Step 3 — Trace sketch:**\n```\n3 frames: faults on 1,2,3,4,5 plus re-faults = 9\n4 frames: extra resident changes eviction order = 10\n```\n**Step 4 — Cross-check:** LRU on the same string gives $10$ ($3$ frames) and $8$ ($4$ frames) — monotone, as a stack policy must be.\n**Step 5 — Distractors:** optimal faults least ($7$ here); LRU-vs-FIFO ranking varies by string; optimal never faults most.\n**Step 6 — Conclude:** the increase $9 \\to 10$ is Belady anomaly."
       },
-      // PYQ-pattern: DRDO 2016 — optimal replacement count (rephrased)
+      // PYQ-pattern — optimal replacement count (rephrased)
       {
         q: "On $1,2,3,4,1,2,5,1,2,3,4,5$ with $3$ frames, FIFO faults $9$ and LRU faults $10$. How many faults does optimal replacement incur?",
         options: ["$7$", "$9$", "$10$", "$12$"],

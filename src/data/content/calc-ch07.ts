@@ -1034,14 +1034,14 @@ export const calcCh7Content: SectionContent[] = [
         answer: 3,
         explanation: 'Each one-sided piece $\\lim_{t \\to 0^{+}}\\int_{t}^{1}x^{-2}dx$ is infinite; the naive antiderivative evaluation ignores the interior blow-up.',
       },
-      // PYQ-pattern: JEE Mains 2021 — p-integral at infinity (rephrased, values changed)
+      // PYQ-pattern — p-integral at infinity (rephrased, values changed)
       {
         q: 'The improper integral $\\displaystyle\\int_{1}^{\\infty} \\frac{dx}{x^{3}}$:',
         options: ['Diverges to $\\infty$', 'Equals $1$', 'Converges to $\\frac{1}{2}$', 'Equals $0$'],
         answer: 2,
         explanation: 'Step 1: Restate the integral as the limit $\\lim_{t \\to \\infty}\\int_{1}^{t}x^{-3}\\,dx$. Step 2: Recall the key $p$-rule that $\\int_{1}^{\\infty}x^{-p}\\,dx$ converges exactly when $p > 1$. Step 3: Antidifferentiate to $\\left[\\frac{x^{-2}}{-2}\\right]_{1}^{t} = \\frac{1}{2} - \\frac{1}{2t^{2}}$. Step 4: Let $t \\to \\infty$ to obtain $\\frac{1}{2}$. Step 5: The distractors fail since divergence needs $p \\leq 1$, $1$ is the value for $p = 2$ misremembered, and $0$ ignores the finite area near $1$. Step 6: Hence the integral converges to $\\frac{1}{2}$.'
       },
-      // PYQ-pattern: JEE Advanced 2019 — p-integral at zero (rephrased, values changed)
+      // PYQ-pattern — p-integral at zero (rephrased, values changed)
       {
         q: 'The improper integral $\\displaystyle\\int_{0}^{1} \\frac{dx}{\\sqrt{x}}$:',
         options: ['Diverges', `$2$`, `$1$`, `$0$`],

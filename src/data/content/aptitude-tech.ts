@@ -1,16 +1,16 @@
 import type { SectionContent } from '../library'
 
 // ============================================================================
-// DRDO Scientist 'B' — lesson content (Tier I screening + Tier II disciplines).
+// Scientist-entry track — lesson content (Tier I screening + Tier II disciplines).
 // Ten master sections: the four aptitude blocks of the 100-mark Tier-I CBT
 // (0.25 negative marking) and six Tier-II discipline lessons — CSE algorithms
 // + OS + cybersecurity, ECE microwave/radar links, EE synchronous machines,
 // ME thermodynamics — matching section metadata in
-// src/data/library-parts/exams/drdo-*.ts (Tier-II = 60 discipline marks plus
-// the 15-mark research-aptitude section in the legacy RAC pattern).
+// the aptitude library parts (Tier-II = 60 discipline marks plus
+// the 15-mark research-aptitude section in the legacy assessment pattern).
 // ============================================================================
 
-export const drdoContent: SectionContent[] = [
+export const aptitudeTechContent: SectionContent[] = [
   // --------------------------------------------- Tier I · 1.1 Quantitative Aptitude
   {
     sectionId: 'apt-q1-s1',
@@ -261,7 +261,7 @@ export const drdoContent: SectionContent[] = [
     objectives: [
       'Scope preparation to the rolling twelve-month window the paper actually samples',
       'Classify every question into one of five event families and recall its fixed question signature',
-      'Track defence and space developments (the defence research establishment tests, inductions, exercises, ISRO missions) at assessment depth',
+      'Track defence and space developments (the defence research establishment tests, inductions, exercises, space-agency missions) at assessment depth',
       'Anchor current facts to static GK so each new fact stabilises an old one',
     ],
     concepts: [
@@ -285,7 +285,7 @@ export const drdoContent: SectionContent[] = [
         term: 'Defence and space current affairs',
         kind: 'insight',
         statement:
-          'the defence research establishment papers weight **defence and space developments** heavily: missile and system flight-tests, inductions into service, joint exercises and ISRO missions. Record system, agency, date/window and the first-of-its-kind tag.',
+          'the defence research establishment papers weight **defence and space developments** heavily: missile and system flight-tests, inductions into service, joint exercises and space-agency missions. Record system, agency, date/window and the first-of-its-kind tag.',
         detail:
           'Typical items: Agni-Prime and BrahMos extensions flight-tested from the Odisha coast, INS Vikrant commissioned as the first indigenously built aircraft carrier, Tejas Mk1A orders, Malabar with all four Quad navies, Chandrayaan-3\u2019s south-pole landing. Trap: confuse the developer (the defence research establishment versus HAL versus private DPSU) and the question flips.',
       },

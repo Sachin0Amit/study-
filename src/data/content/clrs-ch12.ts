@@ -353,7 +353,7 @@ export const clrsCh12Content: SectionContent[] = [
         answer: 1,
         explanation: "Nothing in ordinary BST deletion maintains balance: repeated deletes can strip one side of the tree, raising h. Red-black trees (Chapter 13) add exactly the machinery to prevent this."
       },
-      // PYQ-pattern: GATE 2020 — BST deletion by successor (rephrased, values changed)
+      // PYQ-pattern — BST deletion by successor (rephrased, values changed)
       {
         q: "Keys $[8, 3, 10, 1, 6, 14, 4, 7, 13]$ are inserted into an empty binary search tree in that order. Deleting key $3$ (which has two children) puts which key in its place?",
         options: ["4", "1", "6", "8"],

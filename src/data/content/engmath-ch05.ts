@@ -78,7 +78,7 @@ export const engmathCh05Content: SectionContent[] = [
       'Test essentiality first; repackaged constants do not raise order.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2005 — PDE from eliminating constants (rephrased)
+      // PYQ-pattern — PDE from eliminating constants (rephrased)
       {
         q: 'Eliminating `$a, b$` from `$z = ax + by + ab$` gives:',
         options: [`$p + q = 0$`, `$z = px + qy + pq$`, `$z = ax + by$`, `$p = q$`],
@@ -91,7 +91,7 @@ export const engmathCh05Content: SectionContent[] = [
         answer: 1,
         explanation: 'First top derivatives `$u_{tt}, u_{xx}$` are second order. Next each appears to the first power with no products. Then degree is one. Finally linearity holds since coefficients are constant.'
       },
-      // PYQ-pattern: GATE 2011 — arbitrary function elimination (rephrased)
+      // PYQ-pattern — arbitrary function elimination (rephrased)
       {
         q: 'Eliminating one arbitrary function `$f$` from `$z = f\\left(\\frac{x}{y}\\right)$` yields order:',
         options: ['Zero (algebraic)', 'First order', 'Second order', 'Third order'],
@@ -177,7 +177,7 @@ export const engmathCh05Content: SectionContent[] = [
       'Two time derivatives take two initial snapshots, one takes one, zero takes boundary only.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2008 — classification by discriminant (rephrased)
+      // PYQ-pattern — classification by discriminant (rephrased)
       {
         q: '`$3u_{xx} + 4u_{xy} + u_{yy} = 0$` is:',
         options: ['Parabolic', 'Elliptic', 'Hyperbolic', 'Not second order'],
@@ -190,7 +190,7 @@ export const engmathCh05Content: SectionContent[] = [
         answer: 1,
         explanation: 'First only one second derivative `$u_{xx}$` appears. Next in `$Au_{xx} + Bu_{xt} + Cu_{tt}$` form, `$A = k$`, `$B = C = 0$`. Then `$\\Delta = 0 - 0 = 0$`. Finally zero discriminant means parabolic.'
       },
-      // PYQ-pattern: GATE 2014 — Laplace equation type (rephrased)
+      // PYQ-pattern — Laplace equation type (rephrased)
       {
         q: '`$u_{xx} + u_{yy} = 0$` is:',
         options: ['Hyperbolic', 'Parabolic', 'Elliptic', 'Mixed type'],
@@ -296,7 +296,7 @@ export const engmathCh05Content: SectionContent[] = [
       'Sum modes and project initial data by `$\\int_0^L$` orthogonality with norm `$L/2$`.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2009 — separation constant ODEs (rephrased)
+      // PYQ-pattern — separation constant ODEs (rephrased)
       {
         q: 'Separating `$u_t = ku_{xx}$` via `$u = XT$` with constant `$-\\lambda$` gives:',
         options: [`$\\frac{d^2X}{dx^2} - \\lambda X = 0$`, `$\\frac{d^2X}{dx^2} + \\lambda X = 0$ with $\\frac{dT}{dt} + \\lambda kT = 0$`, '$XT = -\\lambda$ everywhere', '$\\frac{dT}{dt} = \\frac{d^2X}{dx^2}$ with no constant'],
@@ -309,7 +309,7 @@ export const engmathCh05Content: SectionContent[] = [
         answer: 1,
         explanation: 'First `$\\lambda = 0$` gives a line vanishing twice only trivially. Next `$\\lambda < 0$` gives exponentials with the same fate. Then `$\\lambda > 0$` oscillates and fits both ends. Finally `$\\sin\\sqrt{\\lambda}L = 0$` quantizes `$\\sqrt{\\lambda}L = n\\pi$`.'
       },
-      // PYQ-pattern: GATE 2015 — eigenfunction for pinned rod (rephrased)
+      // PYQ-pattern — eigenfunction for pinned rod (rephrased)
       {
         q: 'The first eigenfunction for `$\\frac{d^2X}{dx^2} + \\lambda X = 0$`, `$X(0) = X(L) = 0$` is:',
         options: [`$\\cos\\frac{\\pi x}{L}$`, `$\\sin\\frac{\\pi x}{L}$`, `$e^{\\pi x/L}$`, 'The constant `$1$`'],
@@ -416,7 +416,7 @@ export const engmathCh05Content: SectionContent[] = [
       'Subtract steady profiles for nonzero ends; energy reasoning gives uniqueness.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2010 — vibrating string series form (rephrased)
+      // PYQ-pattern — vibrating string series form (rephrased)
       {
         q: 'For fixed ends, the wave solution with `$u(x,0) = f$`, `$u_t(x,0) = 0$` takes the form:',
         options: [`$\\sum B_n e^{-k\\lambda_n t}\\sin\\frac{n\\pi x}{L}$`, `$\\sum A_n\\cos\\omega_n t\\,\\sin\\frac{n\\pi x}{L}$`, '$\\sum A_n\\sin\\omega_n t$` alone', 'A single constant'],
@@ -429,7 +429,7 @@ export const engmathCh05Content: SectionContent[] = [
         answer: 0,
         explanation: 'First `$L = 1$` gives `$\\lambda_1 = \\pi^2$`. Next `$k = 1$` from `$u_t = u_{xx}$`. Then modal decay is `$e^{-k\\lambda_1 t}$`. Finally `$k\\lambda_1 = \\pi^2$`.'
       },
-      // PYQ-pattern: GATE 2018 — heat series coefficient (rephrased)
+      // PYQ-pattern — heat series coefficient (rephrased)
       {
         q: 'If `$u(x,0) = \\sin\\frac{3\\pi x}{L}$` on `$[0,L]$` with zero ends, the heat-series coefficients are:',
         options: [`$B_3 = 1$, rest $0$`, `$B_1 = 1$, rest $0$`, 'All $B_n = 1$', 'All `$B_n = 0$`'],

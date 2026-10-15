@@ -190,7 +190,7 @@ export const engmathCh15Content: SectionContent[] = [
       'Without-replacement counts are hypergeometric, merging into binomial for large populations.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2015 — binomial mean and variance plug-in (rephrased)
+      // PYQ-pattern — binomial mean and variance plug-in (rephrased)
       {
         q: 'For `$X$` binomial with `$n = 20$` and `$p = 0.3$`, what are its mean and variance?',
         options: ['Mean 6, variance 6', 'Mean 4.2, variance 6', 'Mean 20, variance 0.3', 'Mean 6, variance 4.2'],

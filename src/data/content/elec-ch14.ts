@@ -273,7 +273,7 @@ export const elecCh14Content: SectionContent[] = [
         answer: 2,
         explanation: 'The FET’s input resistance is so high it can be considered infinite: no input current, so no input loading. Contrast $h_{ie} \\approx 1\\,\\text{k}\\Omega$ for the BJT (Section 13.4) — the very limitation that pushed electronics toward the FET.',
       },
-      // PYQ-pattern: GATE 2020 — Shockley drain current (rephrased, values changed)
+      // PYQ-pattern — Shockley drain current (rephrased, values changed)
       {
         q: 'An n-channel JFET has $I_{DSS} = 10$ mA and pinch-off voltage $-4.0$ V. With $V_{GS} = -1.0$ V in saturation, the drain current is closest to:',
         options: ['2.5 mA', '5.6 mA', '7.5 mA', '10 mA'],
@@ -409,7 +409,7 @@ export const elecCh14Content: SectionContent[] = [
         answer: 1,
         explanation: 'The BJT’s Ebers–Moll transconductance ($40\\,\\text{mS}$ at $1\\,\\text{mA}$) dwarfs the FET’s 1–10 mA/V, so the BJT wins on gain; the FET wins on input loading — its gate draws no current at all. Both stages invert.',
       },
-      // PYQ-pattern: ISRO 2019 — enhancement MOSFET bias point (rephrased, values changed)
+      // PYQ-pattern — enhancement MOSFET bias point (rephrased, values changed)
       {
         q: 'An enhancement NMOS has $K = 0.50$ mA per V squared and threshold $1.5$ V. With $V_{GS} = 3.5$ V and drain resistor $3.0$ kΩ from a $12$ V supply, the drain current and drain-source voltage are closest to:',
         options: ['1.0 mA and 9.0 V', '2.0 mA and 6.0 V', '4.0 mA and 0.5 V', '0.5 mA and 10.5 V'],

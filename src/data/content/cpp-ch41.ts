@@ -251,7 +251,7 @@ export const cppCh41Content: SectionContent[] = [
         answer: 3,
         explanation: "`volatile` is a code-generation rule for special memory; it creates no inter-thread ordering, no atomicity, and no happens-before edge — that is the entire subject of 41.4.",
       },
-      // PYQ-pattern: GATE 2023 — data race on plain int is undefined (rephrased)
+      // PYQ-pattern — data race on plain int is undefined (rephrased)
       {
         q: "Two threads run with no lock, atomic, or other coordination:\n```cpp\n// thread A: ++shared;   // thread B: ++shared;\n```\n`shared` is a plain `int` starting at `0`. Which statement is correct?",
         options: ["The final value is always `2`", "The final value is `1` or `2`, and the program is otherwise fine", "The value stays `0`, because concurrent writes cancel out", "The program contains a data race, which is undefined behavior: lost updates are possible and no outcome is guaranteed"],

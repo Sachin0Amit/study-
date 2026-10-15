@@ -1146,7 +1146,7 @@ export const calcCh16Content: SectionContent[] = [
         answer: 1,
         explanation: 'Zero divergence means no sources or sinks: the field is incompressible, so all inflow balances all outflow across the boundary. Magnetic fields satisfy this identically ($\\nabla \\cdot \\mathbf{B} = 0$) — there are no magnetic monopoles.',
       },
-      // PYQ-pattern: JEE Advanced 2021 — flux via divergence theorem (rephrased, values changed)
+      // PYQ-pattern — flux via divergence theorem (rephrased, values changed)
       {
         q: 'Let $\\mathbf{F}(x, y, z) = \\langle x, y, z \\rangle$. The outward flux through the unit sphere $x^{2} + y^{2} + z^{2} = 1$ equals:',
         options: [`$4\\pi$`, `$0$`, `$\\frac{4\\pi}{3}$`, `$12\\pi$`],

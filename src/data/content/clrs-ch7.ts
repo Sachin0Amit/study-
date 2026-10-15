@@ -110,7 +110,7 @@ export const clrsCh7Content: SectionContent[] = [
         answer: 2,
         explanation: "The textbook procedure fixes x = A[r]; its predictability is exactly what Section 7.3's RANDOMIZED-PARTITION removes.",
       },
-      // PYQ-pattern: GATE 2019 — Lomuto PARTITION final position (rephrased, values changed)
+      // PYQ-pattern — Lomuto PARTITION final position (rephrased, values changed)
       {
         q: "Lomuto PARTITION with the last element as pivot runs on $[2, 8, 7, 1, 3, 5, 6, 4]$. The pivot final index (1-indexed) is:",
         options: ["3", "5", "8", "4"],
@@ -216,7 +216,7 @@ export const clrsCh7Content: SectionContent[] = [
         answer: 1,
         explanation: "Subproblems at one depth partition a subset of the array — sizes add up to ≤ n — and each partition costs linear in its own subarray, giving ≤ cn per level.",
       },
-      // PYQ-pattern: GATE 2014 — quicksort worst case on sorted input (rephrased, values changed)
+      // PYQ-pattern — quicksort worst case on sorted input (rephrased, values changed)
       {
         q: "Quicksort with the last-element pivot sorts the ascending array $[1, 2, 3, 4, 5]$. The number of key comparisons is:",
         options: ["7", "15", "10", "5"],

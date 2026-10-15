@@ -283,42 +283,42 @@ export const colettaCh28Content: SectionContent[] = [
         answer: 1,
         explanation: "Narrow packets need broad spectra mathematically, independent of apparatus."
       },
-      // PYQ-pattern: JEE Mains 2019 — photoelectric threshold (rephrased, values changed)
+      // PYQ-pattern — photoelectric threshold (rephrased, values changed)
       {
         q: "A metal has work function $\\phi = 2.30 \\text{ eV}$. The longest wavelength that can eject electrons is closest to:",
         options: ["$270 \\text{ nm}$", "$539 \\text{ nm}$", "$1080 \\text{ nm}$", "$1240 \\text{ nm}$"],
         answer: 1,
         explanation: "Step 1: Given $\\phi = 2.30 \\text{ eV}$ and threshold condition $hf_{0} = \\phi$. Step 2: Governing law is $\\lambda_{0} = hc/\\phi$ with $hc = 1240 \\text{ eV}\\cdot\\text{nm}$. Step 3: Key equation: $$\\lambda_{0} = \\frac{1240}{2.30}.$$ Step 4: Numerics give $\\lambda_{0} \\approx 539 \\text{ nm}$; units are nanometers and longer waves carry too little energy. Step 5: Distractors fail because $270$ halves the wavelength, $1080$ doubles it, and $1240$ is the $1 \\text{ eV}$ conversion constant. Step 6: Conclude cutoff sits at about **$539 \\text{ nm}$**."
       },
-      // PYQ-pattern: GATE PH 2020 — position momentum uncertainty (rephrased, values changed)
+      // PYQ-pattern — position momentum uncertainty (rephrased, values changed)
       {
         q: "An electron is confined to $\\Delta x = 0.050 \\text{ nm}$. The minimum velocity spread is closest to:",
         options: ["$1.2 \\times 10^{6} \\text{ m/s}$", "$5.8 \\times 10^{5} \\text{ m/s}$", "$1.2 \\times 10^{5} \\text{ m/s}$", "$2.3 \\times 10^{6} \\text{ m/s}$"],
         answer: 0,
         explanation: "Step 1: Given $\\Delta x = 5.0 \\times 10^{-11} \\text{ m}$ and $m = 9.11 \\times 10^{-31} \\text{ kg}$. Step 2: Governing law is $\\Delta x\\Delta p \\geq h/4\\pi$ with $h = 6.626 \\times 10^{-34}$. Step 3: Key equation: $$\\Delta p \\geq \\frac{6.626 \\times 10^{-34}}{4\\pi(5.0 \\times 10^{-11})}, \\qquad \\Delta v = \\frac{\\Delta p}{m}.$$ Step 4: Numerics give $\\Delta p \\approx 1.05 \\times 10^{-24}$ and $\\Delta v \\approx 1.2 \\times 10^{6} \\text{ m/s}$; units $\\text{kg}\\cdot\\text{m/s}$ over $\\text{kg}$ are $\\text{m/s}$. Step 5: Distractors fail because $5.8 \\times 10^{5}$ belongs to $0.10 \\text{ nm}$, $1.2 \\times 10^{5}$ slips a decade, and $2.3 \\times 10^{6}$ mishandles $4\\pi$. Step 6: Conclude confinement forces at least **$1.2 \\times 10^{6} \\text{ m/s}$** of spread."
       },
-      // PYQ-pattern: JEE Advanced 2018 — electron wavelength from voltage (rephrased, values changed)
+      // PYQ-pattern — electron wavelength from voltage (rephrased, values changed)
       {
         q: "Electrons accelerated from rest through $100 \\text{ V}$ have wavelength closest to:",
         options: ["$1.23 \\text{ nm}$", "$0.012 \\text{ nm}$", "$0.39 \\text{ nm}$", "$0.123 \\text{ nm}$"],
         answer: 3,
         explanation: "Step 1: Given $V = 100 \\text{ V}$ so $K = eV = 100 \\text{ eV} = 1.60 \\times 10^{-17} \\text{ J}$. Step 2: Governing laws are $p = \\sqrt{2mK}$ and $\\lambda = h/p$. Step 3: Key equation: $$\\lambda = \\frac{6.626 \\times 10^{-34}}{\\sqrt{2(9.11 \\times 10^{-31})(1.60 \\times 10^{-17})}}.$$ Step 4: Numerics give $p = 5.40 \\times 10^{-24}$ and $\\lambda = 1.23 \\times 10^{-10} \\text{ m} = 0.123 \\text{ nm}$; units resolve to meters. Step 5: Distractors fail by decades from unit slips, while $0.39$ belongs to a heavier particle. Step 6: Conclude the beam wavelength is about **$0.123 \\text{ nm}$**."
       },
-      // PYQ-pattern: JEE Mains 2021 — energy time broadening (rephrased, values changed)
+      // PYQ-pattern — energy time broadening (rephrased, values changed)
       {
         q: "An excited level lives $\\Delta t = 0.80 \\text{ ns}$. Its natural energy width is closest to:",
         options: ["$2.1 \\times 10^{-7} \\text{ eV}$", "$8.2 \\times 10^{-7} \\text{ eV}$", "$4.1 \\times 10^{-7} \\text{ eV}$", "$2.6 \\times 10^{-26} \\text{ eV}$"],
         answer: 2,
         explanation: "Step 1: Given $\\Delta t = 8.0 \\times 10^{-10} \\text{ s}$. Step 2: Governing law is $\\Delta E\\Delta t \\geq h/4\\pi$ with $h = 6.626 \\times 10^{-34}$. Step 3: Key equation: $$\\Delta E \\geq \\frac{6.626 \\times 10^{-34}}{4\\pi(8.0 \\times 10^{-10})}.$$ Step 4: Numerics give $6.59 \\times 10^{-26} \\text{ J}$, and dividing by $1.60 \\times 10^{-19}$ yields $4.1 \\times 10^{-7} \\text{ eV}$; units convert cleanly to electron-volts. Step 5: Distractors fail because $2.1 \\times 10^{-7}$ belongs to $1.6 \\text{ ns}$, $8.2 \\times 10^{-7}$ halves the lifetime again, and $2.6 \\times 10^{-26}$ quotes joules as electron-volts. Step 6: Conclude the level is broadened by about **$4.1 \\times 10^{-7} \\text{ eV}$**."
       },
-      // PYQ-pattern: GATE PH 2022 — photon momentum (rephrased, values changed)
+      // PYQ-pattern — photon momentum (rephrased, values changed)
       {
         q: "Orange photons of $\\lambda = 600 \\text{ nm}$ each carry momentum closest to:",
         options: ["$3.3 \\times 10^{-19} \\text{ kg}\\cdot\\text{m/s}$", "$1.10 \\times 10^{-27} \\text{ kg}\\cdot\\text{m/s}$", "$1.8 \\times 10^{-36} \\text{ kg}\\cdot\\text{m/s}$", "$6.6 \\times 10^{-34} \\text{ kg}\\cdot\\text{m/s}$"],
         answer: 1,
         explanation: "Step 1: Given $\\lambda = 6.00 \\times 10^{-7} \\text{ m}$. Step 2: Governing law is $p = h/\\lambda$ with $h = 6.626 \\times 10^{-34}$. Step 3: Key equation: $$p = \\frac{6.626 \\times 10^{-34}}{6.00 \\times 10^{-7}}.$$ Step 4: Numerics give $p \\approx 1.10 \\times 10^{-27} \\text{ kg}\\cdot\\text{m/s}$; units $\\text{J}\\cdot\\text{s}/\\text{m}$ are momentum. Step 5: Distractors fail because $3.3 \\times 10^{-19}$ is the energy in joules, $1.8 \\times 10^{-36}$ divides by $c$ twice, and $6.6 \\times 10^{-34}$ quotes $h$ itself. Step 6: Conclude each photon carries about **$1.10 \\times 10^{-27} \\text{ kg}\\cdot\\text{m/s}$**."
       },
-      // PYQ-pattern: JEE Advanced 2020 — Bohr angular momentum (rephrased, values changed)
+      // PYQ-pattern — Bohr angular momentum (rephrased, values changed)
       {
         q: "In the Bohr model the $n = 3$ orbit of hydrogen has angular momentum:",
         options: ["$3.16 \\times 10^{-34} \\text{ J}\\cdot\\text{s}$", "$1.05 \\times 10^{-34} \\text{ J}\\cdot\\text{s}$", "$9.48 \\times 10^{-34} \\text{ J}\\cdot\\text{s}$", "$0$"],

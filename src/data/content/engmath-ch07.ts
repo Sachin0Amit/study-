@@ -91,7 +91,7 @@ export const engmathCh07Content: SectionContent[] = [
         explanation: 'Step 1: Multiply moduli because lengths scale successively. Step 2: Add arguments because rotations compose. Step 3: Reject subtraction and root forms, which belong to division and root extraction respectively.'
       },
       {
-        // PYQ-pattern: GATE 2012 — roots of a complex number (rephrased, values changed)
+        // PYQ-pattern — roots of a complex number (rephrased, values changed)
         q: 'The number of distinct fourth roots of $1 + i$ in the complex plane is:',
         options: [`$4$`, `$1$`, `$2$`, 'Infinitely many'],
         answer: 0,
@@ -183,7 +183,7 @@ export const engmathCh07Content: SectionContent[] = [
         explanation: 'Step 1: Equate the real-axis and imaginary-axis difference quotients to force the pair. Step 2: Invoke continuity of partials to make the condition sufficient as well. Step 3: Reject the diagonal equalities, which describe no complex slope.'
       },
       {
-        // PYQ-pattern: GATE 2013 — Cauchy-Riemann test for analyticity (rephrased, values changed)
+        // PYQ-pattern — Cauchy-Riemann test for analyticity (rephrased, values changed)
         q: 'The function $f(z) = |z|^{2} = x^{2} + y^{2}$ is:',
         options: ['Entire', 'Analytic on the real axis', 'Analytic only at $z = 0$', 'Nowhere analytic as a complex function'],
         answer: 2,
@@ -301,7 +301,7 @@ export const engmathCh07Content: SectionContent[] = [
         explanation: 'Step 1: Multiply the field value by complex velocity $z^{\\prime}(t)$, not its modulus. Step 2: Reject the modulus form, which belongs to scalar arc-length integrals. Step 3: Reject universal endpoint and zero claims, which need antiderivatives or analyticity.'
       },
       {
-        // PYQ-pattern: GATE 2010 — ML bound estimate on a circular arc (rephrased, values changed)
+        // PYQ-pattern — ML bound estimate on a circular arc (rephrased, values changed)
         q: 'If $|f(z)| \\le 5$ on a contour $C$ of length $2$, then $|\\int_{C} f(z)\\,dz|$ is at most:',
         options: [`$5$`, `$10$`, `$2$`, `$25$`],
         answer: 1,
@@ -399,7 +399,7 @@ export const engmathCh07Content: SectionContent[] = [
         explanation: 'Step 1: Verify the hypothesis covers the full interior with no singularities. Step 2: Apply Cauchy integral theorem to conclude vanishing. Step 3: Distinguish from the formula case where a denominator zero sits inside.'
       },
       {
-        // PYQ-pattern: GATE 2016 — Cauchy integral formula evaluation (rephrased, values changed)
+        // PYQ-pattern — Cauchy integral formula evaluation (rephrased, values changed)
         q: 'For $C$: $|z| = 3$ positively oriented, $\\oint_{C} e^{z}/(z - 1)\\,dz$ equals:',
         options: [`$2\\pi i\\,e$`, `$0$`, `$2\\pi i$`, `$e$`],
         answer: 0,

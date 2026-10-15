@@ -203,7 +203,7 @@ export const cppCh31Content: SectionContent[] = [
         answer: 2,
         explanation: "Bucket order is an implementation detail; rehashing rearranges it, which is why the standard leaves it unspecified."
       },
-      // PYQ-pattern: GATE 2020 — hash versus tree container choice (rephrased)
+      // PYQ-pattern — hash versus tree container choice (rephrased)
       {
         q: "Lookups by key dominate, order does not matter, and the table holds 200,000 entries. Which choice matches the container guarantees?",
         options: ["`std::unordered_map`, with average constant-time lookup and no ordering", "`std::map`, with constant-time lookup plus ordering", "`std::vector`, with logarithmic lookup by key", "`std::deque`, with hashed lookup by key"],

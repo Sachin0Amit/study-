@@ -447,42 +447,42 @@ export const physCh5Content: SectionContent[] = [
         answer: 1,
         explanation: 'Off a principal axis, the different principal moments weight the components of $\\boldsymbol{\\omega}$ differently, so $\\mathbf{L}$ points elsewhere — which is why a lopsided wheel shakes its bearings. About a principal axis, $\\mathbf{L}$ and $\\boldsymbol{\\omega}$ are parallel by construction.',
       },
-      // PYQ-pattern: JEE Mains 2021 — rotational dynamics (rephrased, values changed)
+      // PYQ-pattern — rotational dynamics (rephrased, values changed)
       {
         q: 'A uniform rod of mass $M = 3.0 \\text{ kg}$ and length $L = 2.0 \\text{ m}$ spins about a fixed axis through one end, perpendicular to the rod. The moment of inertia about this axis is:',
         options: [`$\\frac{1}{3}ML^{2} = 4.0 \\text{ kg}\\cdot\\text{m}^{2}$`, `$\\frac{1}{12}ML^{2} = 1.0 \\text{ kg}\\cdot\\text{m}^{2}$`, `$\\frac{1}{2}ML^{2} = 6.0 \\text{ kg}\\cdot\\text{m}^{2}$`, `$ML^{2} = 12 \\text{ kg}\\cdot\\text{m}^{2}$`],
         answer: 0,
         explanation: 'Step 1: Given $M = 3.0 \\text{ kg}$ and $L = 2.0 \\text{ m}$ with the axis at the end. Step 2: Governing law is the parallel-axis theorem $I = I_{cm} + Md^{2}$ with $I_{cm} = \\frac{1}{12}ML^{2}$ and shift $d = \\frac{L}{2}$. Step 3: Key equation: $$I_{end} = \\frac{1}{12}ML^{2} + M\\left(\\frac{L}{2}\\right)^{2} = \\frac{1}{3}ML^{2}.$$ Step 4: Numerics give $I = \\frac{1}{3}(3.0)(2.0)^{2} = 4.0 \\text{ kg}\\cdot\\text{m}^{2}$, and the unit check $[M][L]^{2}$ matches inertia. Step 5: Distractors fail because $\\frac{1}{12}ML^{2}$ is the center-axis value, $\\frac{1}{2}ML^{2}$ belongs to a disc about its axle, and $ML^{2}$ drops the fraction entirely. Step 6: Conclude the end-axis inertia is **$4.0 \\text{ kg}\\cdot\\text{m}^{2}$**.',
       },
-      // PYQ-pattern: JEE Advanced 2018 — rotational dynamics (rephrased, values changed)
+      // PYQ-pattern — rotational dynamics (rephrased, values changed)
       {
         q: 'A uniform disc of mass $M = 4.0 \\text{ kg}$ and radius $R = 0.50 \\text{ m}$ turns freely about its central axle. A constant tangential force $F = 20 \\text{ N}$ applied at the rim produces angular acceleration:',
         options: [`$10 \\text{ rad/s}^{2}$`, `$20 \\text{ rad/s}^{2}$`, `$5.0 \\text{ rad/s}^{2}$`, `$40 \\text{ rad/s}^{2}$`],
         answer: 1,
         explanation: 'Step 1: Given $M = 4.0 \\text{ kg}$, $R = 0.50 \\text{ m}$, rim force $F = 20 \\text{ N}$ acting tangentially. Step 2: Governing laws are $\\tau = FR$ for the lever arm and $\\tau = I\\alpha$ with disc inertia $I = \\frac{1}{2}MR^{2}$. Step 3: Key equation: $$\\alpha = \\frac{\\tau}{I} = \\frac{FR}{\\frac{1}{2}MR^{2}} = \\frac{2F}{MR}.$$ Step 4: Numerics give $I = \\frac{1}{2}(4.0)(0.50)^{2} = 0.50 \\text{ kg}\\cdot\\text{m}^{2}$ and $\\tau = (20)(0.50) = 10 \\text{ N}\\cdot\\text{m}$, so $\\alpha = 10/0.50 = 20 \\text{ rad/s}^{2}$; the unit check $[\\tau]/[I] = \\text{s}^{-2}$ is correct. Step 5: Distractors fail because $10$ uses the hoop inertia $MR^{2}$, $5.0$ halves once more, and $40$ uses the diameter for the lever arm instead of the radius. Step 6: Conclude **$\\alpha = 20 \\text{ rad/s}^{2}$**.',
       },
-      // PYQ-pattern: GATE PH 2019 — rigid body rotation (rephrased, values changed)
+      // PYQ-pattern — rigid body rotation (rephrased, values changed)
       {
         q: 'A skater spins with $I_{1} = 3.0 \\text{ kg}\\cdot\\text{m}^{2}$ at $\\omega_{1} = 2.0 \\text{ rad/s}$, then pulls the arms in to $I_{2} = 1.2 \\text{ kg}\\cdot\\text{m}^{2}$ with no external torque. The new spin rate and the kinetic energy change are:',
         options: ['$0.80 \\text{ rad/s}$, energy lost', '$2.0 \\text{ rad/s}$, energy unchanged', '$5.0 \\text{ rad/s}$, energy gained', '$7.2 \\text{ rad/s}$, energy gained'],
         answer: 2,
         explanation: 'Step 1: Given $I_{1} = 3.0$, $\\omega_{1} = 2.0$, $I_{2} = 1.2$ in SI units, with zero external torque. Step 2: Governing law is conservation $L = I\\omega = \\text{constant}$, so $\\omega_{2} = I_{1}\\omega_{1}/I_{2}$. Step 3: Key equation: $$I_{1}\\omega_{1} = I_{2}\\omega_{2} \\quad\\Rightarrow\\quad \\omega_{2} = \\frac{(3.0)(2.0)}{1.2} = 5.0 \\text{ rad/s}.$$ Step 4: Energies are $K_{1} = \\frac{1}{2}(3.0)(2.0)^{2} = 6.0 \\text{ J}$ and $K_{2} = \\frac{1}{2}(1.2)(5.0)^{2} = 15 \\text{ J}$, so energy rises through internal work; units of $I\\omega^{2}$ are joules. Step 5: Distractors fail because $0.80$ inverts the inertia ratio, $2.0$ ignores conservation, and $7.2$ multiplies the inertias instead of dividing. Step 6: Conclude the skater reaches **$5.0 \\text{ rad/s}$ with gained kinetic energy**.',
       },
-      // PYQ-pattern: JEE Mains 2020 — rolling without slipping (rephrased, values changed)
+      // PYQ-pattern — rolling without slipping (rephrased, values changed)
       {
         q: 'A uniform disc of mass $m$ released from rest rolls without slipping down a ramp from height $h = 3.0 \\text{ m}$. With $g = 9.8 \\text{ m/s}^{2}$, the speed at the bottom is:',
         options: [`$7.7 \\text{ m/s}$`, `$5.4 \\text{ m/s}$`, `$3.1 \\text{ m/s}$`, `$6.3 \\text{ m/s}$`],
         answer: 3,
         explanation: 'Step 1: Given drop $h = 3.0 \\text{ m}$ and rolling constraint $v = \\omega r$ with no slip. Step 2: Governing law is energy sharing $mgh = \\frac{1}{2}mv^{2} + \\frac{1}{2}I\\omega^{2}$ with $I = \\frac{1}{2}mr^{2}$. Step 3: Key equation: $$mgh = \\frac{1}{2}mv^{2} + \\frac{1}{4}mv^{2} = \\frac{3}{4}mv^{2} \\quad\\Rightarrow\\quad v = \\sqrt{\\frac{4gh}{3}}.$$ Step 4: Numerics give $v = \\sqrt{4(9.8)(3.0)/3} = \\sqrt{39.2} \\approx 6.3 \\text{ m/s}$; units of $\\sqrt{gh}$ are $\\text{m/s}$. Step 5: Distractors fail because $7.7$ is pure sliding $\\sqrt{2gh}$, $5.4$ is the hoop result $\\sqrt{gh}$, and $3.1$ drops a factor of two in the algebra. Step 6: Conclude the rolling disc arrives at **$6.3 \\text{ m/s}$**.',
       },
-      // PYQ-pattern: JEE Advanced 2022 — gyroscope precession (rephrased, values changed)
+      // PYQ-pattern — gyroscope precession (rephrased, values changed)
       {
         q: 'A gyroscope has spin angular momentum $L_{0} = 8.0 \\text{ J}\\cdot\\text{s}$ and the weight supplies torque $\\tau = 2.4 \\text{ N}\\cdot\\text{m}$ at right angles to the spin. The steady precession rate is:',
         options: [`$0.30 \\text{ rad/s}$`, `$3.3 \\text{ rad/s}$`, `$19 \\text{ rad/s}$`, `$0.15 \\text{ rad/s}$`],
         answer: 0,
         explanation: 'Step 1: Given $L_{0} = 8.0 \\text{ J}\\cdot\\text{s}$ and perpendicular torque $\\tau = 2.4 \\text{ N}\\cdot\\text{m}$. Step 2: Governing law for steady precession is $\\tau = \\Omega L_{0}$ when torque is at right angles to spin. Step 3: Key equation: $$\\Omega = \\frac{\\tau}{L_{0}} = \\frac{2.4}{8.0} = 0.30 \\text{ rad/s}.$$ Step 4: Unit check gives $\\text{N}\\cdot\\text{m}$ over $\\text{J}\\cdot\\text{s}$, which is $\\text{s}^{-1}$ as required for a rate. Step 5: Distractors fail because $3.3$ inverts the ratio to $L_{0}/\\tau$, $19$ multiplies $\\tau L_{0}$, and $0.15$ inserts a spurious extra half. Step 6: Conclude the axis precesses at **$0.30 \\text{ rad/s}$**.',
       },
-      // PYQ-pattern: GATE PH 2021 — massive pulley dynamics (rephrased, values changed)
+      // PYQ-pattern — massive pulley dynamics (rephrased, values changed)
       {
         q: 'Masses $m_{1} = 3.0 \\text{ kg}$ and $m_{2} = 5.0 \\text{ kg}$ hang over a solid-disc pulley of mass $M = 2.0 \\text{ kg}$ on a frictionless axle. The linear acceleration of the masses is:',
         options: [`$2.5 \\text{ m/s}^{2}$`, `$2.2 \\text{ m/s}^{2}$`, `$9.8 \\text{ m/s}^{2}$`, `$1.1 \\text{ m/s}^{2}$`],

@@ -266,7 +266,7 @@ export const cppCh16Content: SectionContent[] = [
         answer: 3,
         explanation: "`add_day` mutates, so it is not `const`, and a `const` object rejects it. Reads, copies and const-reference passes are all fine.",
       },
-      // PYQ-pattern: GATE 2010 — struct versus class default access (rephrased)
+      // PYQ-pattern — struct versus class default access (rephrased)
       {
         q: "Which statement about default access is correct?\n```cpp\nstruct S { int m; };\nclass C { int m; };\n```",
         options: ["Both grant public access to `m`", "Both grant private access to `m`", "`S::m` is public while `C::m` is private", "`S::m` is private while `C::m` is public"],

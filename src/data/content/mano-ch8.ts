@@ -660,14 +660,14 @@ export const manoCh8Content: SectionContent[] = [
         explanation: 'Skips work by a single extra $\\mathrm{PC} \\leftarrow \\mathrm{PC} + 1$ — the next instruction (often a BUN) is passed over. Placed before any instruction, a skip converts it into a conditional.',
       },
     
-      // PYQ-pattern: GATE 2017 — instruction word fields (rephrased)
+      // PYQ-pattern — instruction word fields (rephrased)
       {
         q: "In the basic computer, a $16$-bit instruction word with a $12$-bit address carries which opcode and mode bits?",
         options: ["IR($0$–$11$) address, IR($12$–$14$) opcode, IR($15$) indirect bit", "IR($0$–$7$) opcode only", "IR($0$–$15$) all address", "IR($15$) opcode, rest data"],
         answer: 0,
         explanation: "**Step 1 — Given data:** $16$-bit word, $4096$-word memory needing $12$ address lines.\n**Step 2 — Rule:** low $12$ bits address memory; next $3$ select among $8$ operation decodes; top bit selects direct vs indirect.\n**Step 3 — Apply:** $D_0$..$D_7$ from IR($12$–$14$); $I$ = IR($15$); effective address $=$ IR($0$–$11$) or $M[$IR($0$–$11$)$]$.\n**Step 4 — Cross-check:** $D_7$ with $I = 0$ means register-reference, with $I = 1$ means input-output — twelve plus six operations from one decode.\n**Step 5 — Distractors:** opcode-only ignores addressing; all-address leaves no operation; swapped fields misplace $I$.\n**Step 6 — Conclude:** $12$ address, $3$ opcode, $1$ mode."
       },
-      // PYQ-pattern: ISRO 2020 — BSA and ISZ behavior (rephrased)
+      // PYQ-pattern — BSA and ISZ behavior (rephrased)
       {
         q: "What do BSA (branch and save) and ISZ (increment and skip) each do to control flow?",
         options: ["BSA stores PC at the effective address then branches there plus $1$; ISZ increments memory and skips next if zero", "Both clear the accumulator", "BSA halts; ISZ shifts", "Both are input-output operations"],

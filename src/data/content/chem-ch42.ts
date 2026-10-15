@@ -116,7 +116,7 @@ export const chemCh42Content: SectionContent[] = [
         answer: 0,
         explanation: 'Step 1: Excite the carbonyl with light. Step 2: Break the bond alpha to $C=O$. Step 3: Collect the two radical fragments.'
       },
-      // PYQ-pattern: JEE 2019 — Norrish Type II gamma hydrogen requirement (rephrased)
+      // PYQ-pattern — Norrish Type II gamma hydrogen requirement (rephrased)
       {
         q: 'A ketone lacking gamma hydrogen atoms on irradiation gives:',
         options: ['Only Type II enol plus alkene', 'Only Type I cleavage or photoreduction, no Type II', 'Always a delta oxime', 'Always a cyclopropane'],
@@ -233,7 +233,7 @@ export const chemCh42Content: SectionContent[] = [
         answer: 2,
         explanation: 'Step 1: Match diene four atoms with $O_{2}$. Step 2: Close the six-membered peroxide bridge. Step 3: Name it an endoperoxide.'
       },
-      // PYQ-pattern: JEE 2021 — benzophenone photoreduction to pinacol (rephrased)
+      // PYQ-pattern — benzophenone photoreduction to pinacol (rephrased)
       {
         q: 'Benzophenone in isopropanol under light mainly gives:',
         options: ['Benzoic acid', 'Benzopinacol by ketyl coupling', 'Vinylcyclopropane', 'Endoperoxide'],
@@ -436,7 +436,7 @@ export const chemCh42Content: SectionContent[] = [
         answer: 1,
         explanation: 'Step 1: Read positive rho as negative charge buildup. Step 2: Match withdrawers to that demand. Step 3: Rank nitro fastest.'
       },
-      // PYQ-pattern: JEE 2020 — dithiane umpolung alkylation concept (rephrased)
+      // PYQ-pattern — dithiane umpolung alkylation concept (rephrased)
       {
         q: 'Dithiane umpolung works because:',
         options: ['Sulfur stabilises the adjacent carbanion for alkylation', 'Oxygen blocks all reaction', 'The carbonyl becomes more electrophilic', 'Light is absorbed by sulfur'],

@@ -130,7 +130,7 @@ export const clrsCh16Content: SectionContent[] = [
         answer: 0,
         explanation: "Finish-time guides at 4, 7, 11, 16: each pick is the first activity starting at or beyond the previous guide.",
       },
-      // PYQ-pattern: GATE 2019 — activity-selection greedy size (rephrased, values changed)
+      // PYQ-pattern — activity-selection greedy size (rephrased, values changed)
       {
         q: "Activities with intervals $[1,3], [2,4], [3,5], [0,6], [5,7], [8,9]$ share one hall. The greedy earliest-finish rule selects how many?",
         options: ["4, namely $[1,3], [3,5], [5,7], [8,9]$", "3, namely $[2,4], [5,7], [8,9]$", "5", "2, namely $[0,6], [8,9]$"],
@@ -374,7 +374,7 @@ export const clrsCh16Content: SectionContent[] = [
         answer: 1,
         explanation: "Depths 1, 3, 3, 3, 4, 4: $45 + 39 + 36 + 48 + 36 + 20 = 224$ — every merge in the trace is verifiable by hand.",
       },
-      // PYQ-pattern: GATE 2022 — Huffman codeword lengths (rephrased, values changed)
+      // PYQ-pattern — Huffman codeword lengths (rephrased, values changed)
       {
         q: "Symbol frequencies are $a:45, b:13, c:12, d:16, e:9, f:5$. In an optimal prefix code, the codeword lengths of $a$ and $f$ are:",
         options: ["$1$ and $2$", "$2$ and $3$", "$3$ and $4$", "$1$ and $4$"],

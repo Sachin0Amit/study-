@@ -5,7 +5,7 @@ import type { SectionContent } from '../library'
 // Hall and Knight Chapters XXXIII-XXXIV: classical determinant craft.
 // ============================================================================
 
-export const jeemathsCh12Content: SectionContent[] = [
+export const mathCompanionCh12Content: SectionContent[] = [
   // ---------------------------------------------------------------- 12.1
   {
     sectionId: 'math-a5-s12',

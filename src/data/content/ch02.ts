@@ -1174,14 +1174,14 @@ export const ch2Content: SectionContent[] = [
         answer: 0,
         explanation: "Symmetry means the matrix mirrors across its main diagonal: aᵢⱼ = aⱼᵢ for all i, j. Zero-one entries define a different (Boolean) world, and A² = I is a separate involutive property."
       },
-      // PYQ-pattern: GATE 2013 — Boolean product of zero-one matrices (rephrased, values changed)
+      // PYQ-pattern — Boolean product of zero-one matrices (rephrased, values changed)
       {
         q: "Let $A = \\begin{bmatrix} 1 & 0 & 1 \\\\ 0 & 1 & 0 \\end{bmatrix}$ and $B = \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\\\ 1 & 0 \\end{bmatrix}$ be zero-one matrices. The Boolean product $A \\odot B$ equals:",
         options: ["$\\begin{bmatrix} 0 & 1 \\\\ 1 & 0 \\end{bmatrix}$", "$\\begin{bmatrix} 1 & 1 \\\\ 1 & 1 \\end{bmatrix}$", "$\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$", "$\\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\end{bmatrix}$"],
         answer: 2,
         explanation: "Step 1: Restate the task as computing the **Boolean product** $C = A \\odot B$ where $c_{ij} = \\bigvee_{k}(a_{ik} \\land b_{kj})$. Step 2: Recall the key rule that each entry is $1$ exactly when some position $k$ has $1$ in both row $i$ of $A$ and column $j$ of $B$. Step 3: Compute row $1$: with column $1$ we get $(1 \\land 1) \\lor (0 \\land 0) \\lor (1 \\land 1) = 1$, and with column $2$ we get $(1 \\land 0) \\lor (0 \\land 1) \\lor (1 \\land 0) = 0$. Step 4: Compute row $2$: with column $1$ we get $(0 \\land 1) \\lor (1 \\land 0) \\lor (0 \\land 1) = 0$, and with column $2$ we get $(0 \\land 0) \\lor (1 \\land 1) \\lor (0 \\land 0) = 1$. Step 5: The all-ones option confuses Boolean product with join, the anti-diagonal option swaps the columns, and the zero option forgets that matching $1$ pairs already exist. Step 6: Hence $C$ is the $2 \\times 2$ identity matrix."
       },
-      // PYQ-pattern: GATE 2017 — counting symmetric zero-one matrices (rephrased, values changed)
+      // PYQ-pattern — counting symmetric zero-one matrices (rephrased, values changed)
       {
         q: "How many symmetric $3 \\times 3$ zero-one matrices are there?",
         options: ["$64$", "$512$", "$8$", "$6$"],

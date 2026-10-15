@@ -6,7 +6,7 @@ import type { SectionContent } from '../library'
 // and interval location of roots.
 // ============================================================================
 
-export const jeemathsCh02Content: SectionContent[] = [
+export const mathCompanionCh02Content: SectionContent[] = [
   // ---------------------------------------------------------------- 2.1
   {
     sectionId: 'math-a2-s11',

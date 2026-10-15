@@ -589,14 +589,14 @@ export const calcCh6Content: SectionContent[] = [
         answer: 2,
         explanation: 'The theorem requires continuity on the closed interval, and $\\frac{1}{x}$ is discontinuous at $0$, which lies inside $[-1, 1]$; on the other intervals the function is continuous.',
       },
-      // PYQ-pattern: JEE Mains 2021 — average value of a power function (rephrased, values changed)
+      // PYQ-pattern — average value of a power function (rephrased, values changed)
       {
         q: 'The average value of $f(x) = x^{2}$ on $[0, 2]$ equals:',
         options: [`$\\frac{4}{3}$`, `$\\frac{8}{3}$`, `$2$`, `$4$`],
         answer: 0,
         explanation: 'Step 1: Restate average value as **height of the equal-area rectangle** $f_{\\text{ave}} = \\frac{1}{2-0}\\int_{0}^{2}x^{2}\\,dx$. Step 2: Recall the key formula $f_{\\text{ave}} = \\frac{1}{b-a}\\int_{a}^{b}f(x)\\,dx$. Step 3: Integrate to get $\\int_{0}^{2}x^{2}\\,dx = \\left[\\frac{x^{3}}{3}\\right]_{0}^{2} = \\frac{8}{3}$. Step 4: Divide by the length $2$ to obtain $\\frac{1}{2} \\times \\frac{8}{3} = \\frac{4}{3}$. Step 5: The distractor $\\frac{8}{3}$ forgets division by length, $4$ evaluates at the endpoint, and $2$ halves the interval midpoint incorrectly. Step 6: Hence the average value is $\\frac{4}{3}$.'
       },
-      // PYQ-pattern: JEE Mains 2019 — point guaranteed by the integral mean value theorem (rephrased, values changed)
+      // PYQ-pattern — point guaranteed by the integral mean value theorem (rephrased, values changed)
       {
         q: 'For $f(x) = x^{2}$ on $[0, 2]$, the number $c$ guaranteed by the Mean Value Theorem for Integrals with $f(c) = f_{\\text{ave}}$ equals:',
         options: [`$1$`, `$0$`, `$2$`, `$\\frac{2\\sqrt{3}}{3}$`],

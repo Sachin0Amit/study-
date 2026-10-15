@@ -163,14 +163,14 @@ export const osCh12Content: SectionContent[] = [
         explanation: "Those three fields drive the whole transfer; richer blocks (scatter-gather) add lists of non-contiguous source/destination pairs so one DMA command executes multiple transfers. The CPU writes the block, tells the controller where it is, and gets interrupted once at the end."
       }
     ,
-      // PYQ-pattern: GATE 2017 — interrupt feasibility (rephrased)
+      // PYQ-pattern — interrupt feasibility (rephrased)
       {
         q: "A device streams at $50$ MB/s (one byte per $20$ ns) while each per-byte interrupt costs $1$ microsecond of CPU. Can per-byte interrupts keep up, and what is the right structure?",
         options: ["Yes, with polling", "No; the bus must be widened", "Yes, with a larger vector table", "No; at most about $1$ MB/s, so DMA with one interrupt per block is needed"],
         answer: 3,
         explanation: "**Step 1 — Given data:** rate $R = 50$ MB/s, cost $C_I = 1$ microsecond per byte.\n**Step 2 — Rule:** feasible only while $C_I \\le 1/R$; max interrupt-sustainable rate is $1/C_I$.\n**Step 3 — Computation:** $1/C_I = 1$ MB/s, far below $50$ MB/s; needed $C_I \\le 20$ ns, impossible for a full save-dispatch-restore.\n**Step 4 — Cross-check:** DMA inverts the math: one setup plus one completion per $B$-byte block costs microseconds per block, i.e. nanoseconds per byte for large $B$.\n**Step 5 — Distractors:** polling still pays per byte; a larger table speeds dispatch but not the per-byte cost; bus width does not remove interrupts.\n**Step 6 — Conclude:** per-byte handling tops near $1$ MB/s; bulk needs DMA."
       },
-      // PYQ-pattern: DRDO 2019 — controller handshake (rephrased)
+      // PYQ-pattern — controller handshake (rephrased)
       {
         q: "Which register set and handshake lets a CPU reliably hand a command to a device controller without loss?",
         options: ["Data-in only, with no status", "Control, status, data-in, data-out with busy-bit and command-ready protocol", "Status only, via interrupts", "Data-out only, via DMA"],

@@ -122,7 +122,7 @@ export const clrsCh9Content: SectionContent[] = [
         answer: 1,
         explanation: "Any element that lost to a non-champion cannot be second smallest, so only the champion's ⌈lg n⌉ direct victims need a small follow-up scan: (n − 1) + (⌈lg n⌉ − 1) total.",
       },
-      // PYQ-pattern: DRDO 2017 — simultaneous minimum and maximum (rephrased, values changed)
+      // PYQ-pattern — simultaneous minimum and maximum (rephrased, values changed)
       {
         q: "The optimal pairwise method finds both the minimum and maximum of $7$ distinct keys using how many comparisons?",
         options: ["7", "12", "9", "14"],

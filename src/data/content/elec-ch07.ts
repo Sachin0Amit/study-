@@ -157,7 +157,7 @@ export const elecCh7Content: SectionContent[] = [
         answer: 2,
         explanation: 'The dissipated power $p = v^{2}/R$ shrinks as $R$ grows, so $\\alpha = 1/2RC \\to 0$ and $\\omega_{d} \\to \\omega_{0}$: less and less energy is lost per cycle until the oscillation is essentially sustained — the lossless LC limit.',
       },
-      // PYQ-pattern: GATE 2021 — parallel RLC damping regime (rephrased, values changed)
+      // PYQ-pattern — parallel RLC damping regime (rephrased, values changed)
       {
         q: 'A source-free parallel RLC network has R = 100 Ω, L = 10 mH and C = 1 μF. The damping regime of the natural response is:',
         options: ['Overdamped, since $\\alpha > \\omega_{0}$', 'Underdamped, since $\\alpha < \\omega_{0}$', 'Critically damped, since $\\alpha = \\omega_{0}$', 'Undamped, since R is finite'],
@@ -301,7 +301,7 @@ export const elecCh7Content: SectionContent[] = [
         answer: 1,
         explanation: 'The measured times to 21.6 mA are 74 µs (underdamped), 97 µs (critically damped) and 130 µs (overdamped). Speed comes from the overshoot: only the underdamped curve exceeds the final value; the other two rise monotonically.',
       },
-      // PYQ-pattern: DRDO 2017 — series RLC step final value and regime (rephrased, values changed)
+      // PYQ-pattern — series RLC step final value and regime (rephrased, values changed)
       {
         q: 'A series RLC circuit with R = 400 Ω, L = 0.10 H and C = 10 μF is driven by a 20 V step, starting relaxed. Which pair correctly describes the response?',
         options: ['Overdamped with capacitor voltage settling at 20 V', 'Underdamped with capacitor voltage settling at 10 V', 'Critically damped with inductor current settling at 2 A', 'Overdamped with capacitor voltage settling at 0 V'],

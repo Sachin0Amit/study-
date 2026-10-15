@@ -237,21 +237,21 @@ export const manoCh3Content: SectionContent[] = [
         explanation: 'A group of $2^{k}$ cells eliminates $k$ literals — cost falls monotonically with group size, so octets before quads before pairs, with essentials anchoring the cover.',
       },
     
-      // PYQ-pattern: GATE 2019 — four-variable quad (rephrased)
+      // PYQ-pattern — four-variable quad (rephrased)
       {
         q: "On a four-variable map, $F(A,B,C,D) = \\Sigma m(0,4,8,12)$. What is the minimal sum-of-products?",
         options: ["$B′D′$", "$C′D′$", "$A′C′$", "$CD$"],
         answer: 1,
         explanation: "**Step 1 — Given data:** minterms $0 = 0000$, $4 = 0100$, $8 = 1000$, $12 = 1100$.\n**Step 2 — Rule:** a quad of adjacent cells eliminates two variables; Gray order makes the four corners/column a valid group.\n**Step 3 — Grouping:** all four have $C = 0$, $D = 0$; $A$ takes both values ($0$ vs $8$, $4$ vs $12$) and $B$ takes both ($0$ vs $4$); term is $C′D′$.\n**Step 4 — Cross-check:** $C′D′$ is $1$ exactly on those four rows and $0$ elsewhere among the $16$.\n**Step 5 — Distractors:** $B′D′$ misses $4$ and $12$; $A′C′$ misses $8$ and $12$; $CD$ is the opposite corner.\n**Step 6 — Conclude:** $C′D′$."
       },
-      // PYQ-pattern: ISRO 2020 — four-variable quad rows (rephrased)
+      // PYQ-pattern — four-variable quad rows (rephrased)
       {
         q: "$F(A,B,C,D) = \\Sigma m(1,3,5,7)$. What is the minimal sum-of-products?",
         options: ["$A′C$", "$B′D$", "$A′D$", "$BD$"],
         answer: 2,
         explanation: "**Step 1 — Given data:** $1 = 0001$, $3 = 0011$, $5 = 0101$, $7 = 0111$.\n**Step 2 — Rule:** four in one half-map sharing two fixed literals form a quad.\n**Step 3 — Grouping:** all have $A = 0$, $D = 1$; $B$ and $C$ each take both values; term $A′D$.\n**Step 4 — Cross-check:** $A′D$ covers exactly the top-half odd rows.\n**Step 5 — Distractors:** $B′D$ would need $B = 0$ rows only; $A′C$ fixes the wrong variable; $BD$ sits in the lower half.\n**Step 6 — Conclude:** $A′D$."
       },
-      // PYQ-pattern: DRDO 2016 — four-corner style block (rephrased)
+      // PYQ-pattern — four-corner style block (rephrased)
       {
         q: "$F(A,B,C,D) = \\Sigma m(0,1,8,9)$. What is the minimal sum-of-products?",
         options: ["$C′D′$", "$B′C′$", "$A′D′$", "$B′D$"],

@@ -285,7 +285,7 @@ export const elecCh4Content: SectionContent[] = [
         answer: 0,
         explanation: 'The elastic diaphragm stretched across the cylinder is the dielectric: force ↔ e.m.f., displaced water ↔ charge, flow ↔ current, and a bursting diaphragm ↔ dielectric puncture by excessive p.d.',
       },
-      // PYQ-pattern: ISRO 2016 — series capacitor voltage sharing (rephrased, values changed)
+      // PYQ-pattern — series capacitor voltage sharing (rephrased, values changed)
       {
         q: 'An 8 μF capacitor in series with a 12 μF capacitor connects across a 250 V supply. The charge on each capacitor is closest to:',
         options: ['1.20 mC', '1.50 mC', '2.00 mC', '3.00 mC'],
@@ -563,7 +563,7 @@ export const elecCh4Content: SectionContent[] = [
         answer: 1,
         explanation: 'One time constant of growth reaches $1 - e^{-1} = 0.632$ of the final value — Hughes’s Example 5.10, where the 10 V source leaves 6.32 V on the capacitor at the moment of switching.',
       },
-      // PYQ-pattern: GATE 2018 — RC charging time to a voltage level (rephrased, values changed)
+      // PYQ-pattern — RC charging time to a voltage level (rephrased, values changed)
       {
         q: 'A 10 μF capacitor in series with a 200 kΩ resistor connects across a 100 V supply, the capacitor initially uncharged. The time for the capacitor voltage to reach 80 V is closest to:',
         options: ['1.4 s', '2.0 s', '3.2 s', '6.4 s'],

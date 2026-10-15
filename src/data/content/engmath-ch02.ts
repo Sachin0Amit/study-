@@ -78,7 +78,7 @@ export const engmathCh02Content: SectionContent[] = [
       'Geometric multiplicity `$\\le$` algebraic multiplicity; a shortfall means defective.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2010 — eigenvalues of a 2x2 matrix (rephrased)
+      // PYQ-pattern — eigenvalues of a 2x2 matrix (rephrased)
       {
         q: 'The eigenvalues of $$A = \\begin{bmatrix} 4 & 1 \\\\ 2 & 3 \\end{bmatrix}$$ are:',
         options: [`$5$ and $2$`, `$4$ and $3$`, `$6$ and $1$`, `$3$ and $3$`],
@@ -91,7 +91,7 @@ export const engmathCh02Content: SectionContent[] = [
         answer: 2,
         explanation: 'First apply `$\\mathrm{tr}(A) = \\lambda_1 + \\lambda_2 + \\lambda_3$`. Next substitute `$6 = 1 + 2 + \\lambda_3$`. Then solve `$\\lambda_3 = 3$`. Finally note no determinant data was needed.'
       },
-      // PYQ-pattern: GATE 2016 — eigenvalues of triangular matrix (rephrased)
+      // PYQ-pattern — eigenvalues of triangular matrix (rephrased)
       {
         q: 'Eigenvalues of every upper-triangular matrix are:',
         options: ['Always all zero', 'Always all distinct', 'Exactly the diagonal entries', 'Always all equal to the trace'],
@@ -198,7 +198,7 @@ export const engmathCh02Content: SectionContent[] = [
       'Real symmetric matrices always admit `$A = QDQ^T$` with orthogonal `$Q$` and real `$D$`.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2008 — Cayley-Hamilton power reduction (rephrased)
+      // PYQ-pattern — Cayley-Hamilton power reduction (rephrased)
       {
         q: 'Matrix `$A$` has characteristic `$p(\\lambda) = \\lambda^2 - 4\\lambda + 3$`. Which matrix identity holds?',
         options: [`$A^2 + 4A + 3I = O$`, `$A^2 - 4A + 3I = O$`, `$A^2 - 4A - 3I = O$`, 'No relation: the theorem applies only to symmetric matrices'],
@@ -211,7 +211,7 @@ export const engmathCh02Content: SectionContent[] = [
         answer: 0,
         explanation: 'First expand `$A^3 = PDP^{-1}PDP^{-1}PDP^{-1}$`. Next adjacent `$P^{-1}P$` pairs cancel to `$I$`. Then only `$PD^3P^{-1}$` survives. Finally cube the diagonal: `$2^3 = 8$` and `$(-1)^3 = -1$`.'
       },
-      // PYQ-pattern: GATE 2019 — diagonalizability of a defective matrix (rephrased)
+      // PYQ-pattern — diagonalizability of a defective matrix (rephrased)
       {
         q: 'A `$3 \\times 3$` matrix has eigenvalue `$2$` of algebraic multiplicity `$3$` but eigenspace dimension `$1$`. It is:',
         options: ['Diagonalizable with $D = 2I$', 'Diagonalizable by a complex $P$', 'Not diagonalizable (defective)', 'Diagonalizable after one row swap'],
@@ -317,7 +317,7 @@ export const engmathCh02Content: SectionContent[] = [
       'Rank-nullity `$\\rho + \\mathrm{nullity} = n$` splits unknowns into pivot versus free counts.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2007 — basis of R3 (rephrased)
+      // PYQ-pattern — basis of R3 (rephrased)
       {
         q: 'Which triple forms a basis of `$\\mathbb{R}^3$`?',
         options: ['`$(1,0,0), (0,1,0), (1,1,0)$`', '`$(1,0,0), (1,1,0), (1,1,1)$`', '`$(0,0,0), (1,0,0), (0,1,0)$`', '`$(1,1,1), (2,2,2), (0,1,0)$`'],
@@ -330,7 +330,7 @@ export const engmathCh02Content: SectionContent[] = [
         answer: 2,
         explanation: 'First identify `$n = 7$` columns. Next apply `$\\rho + \\mathrm{nullity} = n$`. Then `$4 + \\mathrm{nullity} = 7$`. Finally nullity equals `$3$`, meaning three free variables.'
       },
-      // PYQ-pattern: ISRO 2015 — linear dependence test (rephrased)
+      // PYQ-pattern — linear dependence test (rephrased)
       {
         q: 'Vectors `$v_1, v_2, v_3$` in `$\\mathbb{R}^3$` are dependent. Which must hold?',
         options: ['One of them is a linear combination of the others', 'All of them are zero', 'Their span is all of $\\mathbb{R}^3$', 'Their matrix has rank `$3$`'],
@@ -416,7 +416,7 @@ export const engmathCh02Content: SectionContent[] = [
       'One factorization serves all right-hand sides; determinant is `$\\pm \\prod u_{ii}$`.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2004 — LU factors of a 2x2 matrix (rephrased)
+      // PYQ-pattern — LU factors of a 2x2 matrix (rephrased)
       {
         q: 'Doolittle factors of $$A = \\begin{bmatrix} 2 & 1 \\\\ 4 & 3 \\end{bmatrix}$$ are:',
         options: [`$L = I, U = A$`, `$L = \\begin{bmatrix} 1 & 0 \\\\ 2 & 1 \\end{bmatrix}, U = \\begin{bmatrix} 2 & 1 \\\\ 0 & 1 \\end{bmatrix}$`, `$L = \\begin{bmatrix} 2 & 0 \\\\ 4 & 3 \\end{bmatrix}, U = I$`, `$L = \\begin{bmatrix} 1 & 2 \\\\ 0 & 1 \\end{bmatrix}, U = \\begin{bmatrix} 2 & 0 \\\\ 1 & 3 \\end{bmatrix}$`],
@@ -429,7 +429,7 @@ export const engmathCh02Content: SectionContent[] = [
         answer: 1,
         explanation: 'First the factors already encode elimination. Next `$Ly = b$` runs top-down in order `$n^2$`. Then `$Ux = y$` runs bottom-up. Finally no refactorization is needed for any new right-hand side.'
       },
-      // PYQ-pattern: DRDO 2016 — pivoting and existence of LU (rephrased)
+      // PYQ-pattern — pivoting and existence of LU (rephrased)
       {
         q: 'Direct `$LU$` without row swaps is guaranteed iff:',
         options: ['`$A$` is symmetric', 'All leading principal minors are nonzero', '`$A$` has trace zero', '`$A$` is orthogonal'],

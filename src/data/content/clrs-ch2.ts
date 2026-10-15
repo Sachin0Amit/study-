@@ -339,7 +339,7 @@ export const clrsCh2Content: SectionContent[] = [
         answer: 2,
         explanation: "Divide is one floor division; the base cases are constant time; combine is $\\Theta(n)$ per level. Merge sort is combine-heavy, in contrast to quicksort whose cost sits in divide — a contrast the book draws explicitly.",
       },
-      // PYQ-pattern: ISRO 2017 — merge comparison count (rephrased, values changed)
+      // PYQ-pattern — merge comparison count (rephrased, values changed)
       {
         q: "A textbook merge of two sorted runs holding $5$ and $5$ keys, with no sentinels, halts as soon as one run exhausts. It performs at most how many key comparisons?",
         options: ["9", "10", "25", "5"],

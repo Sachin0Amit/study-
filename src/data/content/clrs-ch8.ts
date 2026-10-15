@@ -123,7 +123,7 @@ export const clrsCh8Content: SectionContent[] = [
         answer: 1,
         explanation: "The corollary matches $O(n \\lg n)$ algorithms against the comparison lower bound; quicksort's worst case is quadratic, so only its expectation is optimal. Linear sorts exist outside the comparison model — the rest of this chapter builds them.",
       },
-      // PYQ-pattern: ISRO 2015 — decision-tree height lower bound (rephrased, values changed)
+      // PYQ-pattern — decision-tree height lower bound (rephrased, values changed)
       {
         q: "Any comparison sort of $6$ distinct keys needs a decision tree with $720$ leaves. Its height is at least:",
         options: ["6", "8", "12", "10"],
@@ -256,7 +256,7 @@ export const clrsCh8Content: SectionContent[] = [
         answer: 1,
         explanation: "The decision-tree argument covers algorithms whose only information about keys comes from comparisons. Counting sort inspects values outright, so the model — and the bound — do not apply.",
       },
-      // PYQ-pattern: GATE 2021 — COUNTING-SORT output (rephrased, values changed)
+      // PYQ-pattern — COUNTING-SORT output (rephrased, values changed)
       {
         q: "COUNTING-SORT with $k = 5$ runs on $A = [2, 5, 3, 0, 2, 3, 0, 3]$. The sorted output is:",
         options: ["$[0, 0, 2, 2, 3, 3, 3, 5]$", "$[0, 0, 2, 3, 3, 3, 2, 5]$", "$[5, 3, 3, 3, 2, 2, 0, 0]$", "$[0, 2, 3, 5, 0, 2, 3, 3]$"],

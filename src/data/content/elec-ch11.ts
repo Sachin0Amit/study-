@@ -187,7 +187,7 @@ export const elecCh11Content: SectionContent[] = [
         answer: 1,
         explanation: 'The load and $R_o$ divide the generated signal: $G_v = G_{vo} R_L/(R_o + R_L) = 5000 \\times 175/200 = 4375$, a 12.5 per cent loss to the output resistance.',
       },
-      // PYQ-pattern: ISRO 2017 — voltage gain in decibels (rephrased, values changed)
+      // PYQ-pattern — voltage gain in decibels (rephrased, values changed)
       {
         q: 'An amplifier delivers 1.6 V to a load from a 2.0 mV input, the load and source resistances being equal. Its voltage gain in decibels is closest to:',
         options: ['29 dB', '46 dB', '58 dB', '64 dB'],
@@ -383,7 +383,7 @@ export const elecCh11Content: SectionContent[] = [
         explanation:
           'Deconvolution inverts convolution: with input and output known it yields the impulse response (system identification); with output and impulse response known it yields the input that produced it. The forward problem is the first option.',
       },
-      // PYQ-pattern: GATE 2018 — linear convolution of short sequences (rephrased, values changed)
+      // PYQ-pattern — linear convolution of short sequences (rephrased, values changed)
       {
         q: 'A discrete-time system has impulse response $h = [1, 2]$ and input $x = [2, 1, 3]$. The linear convolution $y = x ∗ h$ equals:',
         options: ['[2, 3, 5, 6]', '[2, 5, 5, 6]', '[2, 5, 7, 3]', '[4, 2, 6, 0]'],

@@ -410,7 +410,7 @@ export const elecCh17Content: SectionContent[] = [
         answer: 1,
         explanation: 'The lamp is the AGC element: more output means more lamp current, a warmer filament, higher resistance, and therefore lower closed-loop gain. Because its thermal time constant spans many cycles, it regulates amplitude without distorting individual waveforms — Hewlett 1939, and the founding product of Hewlett-Packard.',
       },
-      // PYQ-pattern: DRDO 2017 — Wien bridge oscillation frequency (rephrased, values changed)
+      // PYQ-pattern — Wien bridge oscillation frequency (rephrased, values changed)
       {
         q: 'A Wien bridge oscillator uses R = 16 kΩ and C = 10 nF in each arm of its frequency-selective network. Its oscillation frequency is closest to:',
         options: ['99 Hz', '320 Hz', '628 Hz', '995 Hz'],

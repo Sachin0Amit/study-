@@ -265,7 +265,7 @@ export const elecCh13Content: SectionContent[] = [
         answer: 1,
         explanation: 'Between α = 0.98 and α = 0.99, β doubles from 49 to 99. The sensitive quantity is β; Hughes accordingly recommends determining β experimentally and calculating α from $\\alpha = \\beta/(1+\\beta)$. Both are dimensionless ratios.',
       },
-      // PYQ-pattern: ISRO 2016 — alpha-beta interconversion (rephrased, values changed)
+      // PYQ-pattern — alpha-beta interconversion (rephrased, values changed)
       {
         q: 'A bipolar transistor has common-base current gain $α = 0.985$ and emitter current 5.0 mA. Its base current is closest to:',
         options: ['25 μA', '75 μA', '250 μA', '750 μA'],
@@ -408,7 +408,7 @@ export const elecCh13Content: SectionContent[] = [
         answer: 0,
         explanation: '$P_o = I^2 R = (0.68\\times 10^{-3})^2 \\times 2.2\\times 10^{3} \\approx 1.0\\,\\text{mW}$ (equivalently $1.5\\,\\text{V} \\times 0.68\\,\\text{mA}$). With $P_i \\approx 2.9\\,\\mu\\text{W}$, the power gain is $1.0\\times 10^{-3}/2.9\\times 10^{-6} \\approx 340$ — the same figure as $G_v G_i$.',
       },
-      // PYQ-pattern: GATE 2017 — common-emitter quiescent point (rephrased, values changed)
+      // PYQ-pattern — common-emitter quiescent point (rephrased, values changed)
       {
         q: 'A common-emitter stage uses $V_{CC} = 12$ V, $R_{C} = 2.0$ kΩ and $R_{E} = 0.50$ kΩ, biased so $I_{C} = 3.0$ mA. The quiescent collector-emitter voltage is closest to:',
         options: ['2.5 V', '4.5 V', '6.0 V', '7.5 V'],

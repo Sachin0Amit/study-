@@ -815,42 +815,42 @@ export const physCh10Content: SectionContent[] = [
         answer: 1,
         explanation: 'The most probable fluctuation producing local order leaves the unseen rest of the world mixed; an ordered beginning predicts order everywhere. Each newly observed star behaving “normally” is fresh evidence that the order is a memory of a low-entropy start — the origin of the arrow of time.',
       },
-      // PYQ-pattern: JEE Mains 2019 — ideal gas law (rephrased, values changed)
+      // PYQ-pattern — ideal gas law (rephrased, values changed)
       {
         q: 'A vessel holds $V = 24.6 \\text{ L}$ of gas at $P = 1.00 \\times 10^{5} \\text{ Pa}$ and $T = 300 \\text{ K}$. With $R = 8.314 \\text{ J/mol}\\cdot\\text{K}$, the amount of gas is:',
         options: [`$986 \\text{ mol}$`, `$0.50 \\text{ mol}$`, `$1.0 \\text{ mol}$`, `$2.0 \\text{ mol}$`],
         answer: 2,
         explanation: 'Step 1: Given $P = 1.00 \\times 10^{5} \\text{ Pa}$, $V = 24.6 \\text{ L}$, $T = 300 \\text{ K}$. Step 2: Governing law is the ideal gas relation $PV = nRT$. Step 3: Key equation: $$n = \\frac{PV}{RT} = \\frac{(1.00 \\times 10^{5})(2.46 \\times 10^{-2})}{(8.314)(300)}.$$ Step 4: Numerics give $n = 2460/2494 \\approx 0.99 \\text{ mol} \\approx 1.0 \\text{ mol}$ after converting $24.6 \\text{ L} = 2.46 \\times 10^{-2} \\text{ m}^{3}$; units $\\text{Pa}\\cdot\\text{m}^{3}/\\text{J}$ reduce to moles. Step 5: Distractors fail because $986$ uses liters as cubic meters, $0.50$ halves the volume, and $2.0$ doubles it. Step 6: Conclude the vessel holds about **$1.0 \\text{ mol}$**.',
       },
-      // PYQ-pattern: GATE PH 2020 — kinetic theory speeds (rephrased, values changed)
+      // PYQ-pattern — kinetic theory speeds (rephrased, values changed)
       {
         q: 'For oxygen ($M = 0.032 \\text{ kg/mol}$) at $T = 300 \\text{ K}$, the root-mean-square molecular speed is closest to:',
         options: [`$395 \\text{ m/s}$`, `$484 \\text{ m/s}$`, `$968 \\text{ m/s}$`, `$48 \\text{ m/s}$`],
         answer: 1,
         explanation: 'Step 1: Given molar mass $M = 0.032 \\text{ kg/mol}$ and $T = 300 \\text{ K}$ with $R = 8.314 \\text{ J/mol}\\cdot\\text{K}$. Step 2: Governing law is equipartition $\\frac{1}{2}m\\langle v^{2}\\rangle = \\frac{3}{2}kT$, or $v_{rms} = \\sqrt{3RT/M}$. Step 3: Key equation: $$v_{rms} = \\sqrt{\\frac{3(8.314)(300)}{0.032}} = \\sqrt{233800}.$$ Step 4: Numerics give $v_{rms} \\approx 484 \\text{ m/s}$; units of $\\sqrt{\\text{J/kg}}$ are $\\text{m/s}$. Step 5: Distractors fail because $395$ is the most probable speed $\\sqrt{2RT/M}$, $968$ doubles the correct value, and $48$ slips a decimal place. Step 6: Conclude **$v_{rms} \\approx 484 \\text{ m/s}$**.',
       },
-      // PYQ-pattern: JEE Advanced 2017 — adiabatic process (rephrased, values changed)
+      // PYQ-pattern — adiabatic process (rephrased, values changed)
       {
         q: 'One mole of monatomic ideal gas ($\\gamma = \\frac{5}{3}$) at $T_{1} = 300 \\text{ K}$ expands adiabatically until its volume doubles. The final temperature is closest to:',
         options: [`$189 \\text{ K}$`, `$150 \\text{ K}$`, `$300 \\text{ K}$`, `$600 \\text{ K}$`],
         answer: 0,
         explanation: 'Step 1: Given $T_{1} = 300 \\text{ K}$, volume ratio $V_{2}/V_{1} = 2$, $\\gamma = \\frac{5}{3}$. Step 2: Governing law is the adiabatic condition $TV^{\\gamma-1} = \\text{constant}$, so $T_{2} = T_{1}/2^{\\gamma-1}$. Step 3: Key equation: $$T_{2} = \\frac{300}{2^{2/3}} = \\frac{300}{1.587}.$$ Step 4: Numerics give $T_{2} \\approx 189 \\text{ K}$; kelvins are mandatory here since the law needs absolute temperature. Step 5: Distractors fail because $150$ assumes $T$ halves like $V$ doubles, $300$ is the isothermal answer, and $600$ doubles instead of cooling. Step 6: Conclude the gas cools to about **$189 \\text{ K}$**.',
       },
-      // PYQ-pattern: JEE Mains 2022 — Carnot engine (rephrased, values changed)
+      // PYQ-pattern — Carnot engine (rephrased, values changed)
       {
         q: 'A reversible engine works between $T_{1} = 600 \\text{ K}$ and $T_{2} = 300 \\text{ K}$ and absorbs $Q_{1} = 1200 \\text{ J}$ per cycle. The work output per cycle is:',
         options: [`$1200 \\text{ J}$`, `$300 \\text{ J}$`, `$150 \\text{ J}$`, `$600 \\text{ J}$`],
         answer: 3,
         explanation: 'Step 1: Given hot reservoir $T_{1} = 600 \\text{ K}$, cold reservoir $T_{2} = 300 \\text{ K}$, intake $Q_{1} = 1200 \\text{ J}$. Step 2: Governing law is Carnot efficiency $\\eta = W/Q_{1} = 1 - T_{2}/T_{1}$. Step 3: Key equation: $$\\eta = 1 - \\frac{300}{600} = \\frac{1}{2}, \\qquad W = \\eta Q_{1} = \\frac{1200}{2}.$$ Step 4: Numerics give $W = 600 \\text{ J}$; units are joules and $W < Q_{1}$ as the second law demands. Step 5: Distractors fail because $1200$ converts all heat to work, $300$ halves the correct $600$ value, and $150$ quarters it. Step 6: Conclude the engine delivers **$600 \\text{ J}$ per cycle**.',
       },
-      // PYQ-pattern: GATE PH 2018 — Boltzmann factor (rephrased, values changed)
+      // PYQ-pattern — Boltzmann factor (rephrased, values changed)
       {
         q: 'In an isothermal atmosphere the density falls as $n = n_{0}e^{-h/H}$ with scale height $H$. At altitude $h = 2H$ the density ratio $n/n_{0}$ equals:',
         options: [`$0.50$`, `$0.135$`, `$0.018$`, `$1.0$`],
         answer: 1,
         explanation: 'Step 1: Given exponential profile $n = n_{0}e^{-h/H}$ evaluated at $h = 2H$. Step 2: Governing law is the Boltzmann factor $e^{-U/kT}$, which for $U = mgh$ gives the barometric falloff. Step 3: Key equation: $$\\frac{n}{n_{0}} = e^{-2H/H} = e^{-2} \\approx 0.135.$$ Step 4: Numerics use $e^{2} \\approx 7.39$ so $1/7.39 \\approx 0.135$; the ratio is dimensionless as required. Step 5: Distractors fail because $0.50$ assumes linear halving per scale height, $0.018 = e^{-4}$ applies the exponent twice, and $1.0$ ignores the altitude entirely. Step 6: Conclude the density drops to about **$0.135$ of the surface value**.',
       },
-      // PYQ-pattern: JEE Mains 2023 — entropy change (rephrased, values changed)
+      // PYQ-pattern — entropy change (rephrased, values changed)
       {
         q: 'One mole of ideal gas undergoes free expansion doubling its volume at fixed temperature. With $R = 8.314 \\text{ J/mol}\\cdot\\text{K}$, the entropy change of the gas is:',
         options: [`$0$`, `$11.5 \\text{ J/K}$`, `$5.76 \\text{ J/K}$`, `$-5.76 \\text{ J/K}$`],

@@ -615,7 +615,7 @@ export const cppCh10Content: SectionContent[] = [
         answer: 2,
         explanation: "Braced initialization makes narrowing a compile error; = and () truncate silently (both to 7) and `auto` deduces double — no narrowing at all."
       },
-      // PYQ-pattern: GATE 2012 — signed unsigned comparison conversion (rephrased)
+      // PYQ-pattern — signed unsigned comparison conversion (rephrased)
       {
         q: "What does this program print?\n```cpp\n#include <iostream>\nint main() {\n  std::cout << (-1 < 1u);\n}\n```",
         options: ["`1`, because negative numbers are always smaller", "`1`, because the comparison runs in `double` precision", "`0`, because `-1` converts to a large unsigned value", "The result is unspecified by the standard"],

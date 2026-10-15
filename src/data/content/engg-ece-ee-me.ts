@@ -8,7 +8,7 @@ import type { SectionContent } from '../library'
 // (19.1); EE — Circuit Theory & Network Analysis (9.1), Electrical Machines I
 // (14.1), Power Systems I (19.1), Power Electronics (21.1); ME — Applied
 // Thermodynamics (9.1), Strength of Materials (11.1), Fluid Mechanics (10.1),
-// IC Engines (22.1). University-exam oriented (AKTU / VTU paper pattern).
+// IC Engines (22.1). University-exam oriented (standard paper pattern).
 // All backslashes doubled in TS strings for KaTeX.
 // ============================================================================
 

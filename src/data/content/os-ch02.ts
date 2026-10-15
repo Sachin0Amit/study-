@@ -269,14 +269,14 @@ export const osCh2Content: SectionContent[] = [
         explanation: "Message-passing communication opens a connection, exchanges messages in both directions, and closes the connection — the other sets are file management, process control and protection respectively."
       }
     ,
-      // PYQ-pattern: GATE 2020 — system calls in a file copy (rephrased)
+      // PYQ-pattern — system calls in a file copy (rephrased)
       {
         q: "Which system-call sequence correctly copies `in.txt` to `out.txt`, with error handling at every stage?",
         options: ["`delete()` the input, then `open()` the output only", "`open()` both files once and return without any `read()` or `write()`", "`write()` the output before `read()` the input, with no `open()` calls", "`open()` the input, `create()` the output, loop `read()` then `write()` checking each status, then `close()` both files"],
         answer: 3,
         explanation: "**Step 1 — Given data:** two named files, copy loop, every call can fail (missing file, protection, full disk).\n**Step 2 — Rule:** file life cycle is `open()`/`create()`, then `read()`/`write()`/`reposition()`, then `close()`; each call returns status that must be checked.\n**Step 3 — Sequence:** `open()` input (fail → report and abort); `create()` output (existing name forces abort, delete-recreate, or prompt); loop `read()` chunk then `write()` chunk; `close()` both; `write()` completion message and terminate normally.\n**Step 4 — Cross-check:** even prompting for names already costs `read()`/`write()` on the terminal; systems execute thousands of such calls per second.\n**Step 5 — Distractors:** skipping the loop copies nothing; reversed order reads unwritten data; deleting the source destroys the work.\n**Step 6 — Conclude:** the first sequence is the only complete, checked copy."
       },
-      // PYQ-pattern: DRDO 2017 — system-call parameter passing (rephrased)
+      // PYQ-pattern — system-call parameter passing (rephrased)
       {
         q: "On Linux a system call takes seven parameters. How are they conveyed into the kernel?",
         options: ["All seven ride in registers, extras are dropped", "They are appended to the interrupt vector", "In a memory block whose address rides in a register", "They cannot be passed at all"],

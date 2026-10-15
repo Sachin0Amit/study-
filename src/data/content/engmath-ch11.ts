@@ -294,7 +294,7 @@ export const engmathCh11Content: SectionContent[] = [
       'Degree of precision is one for trapezoidal and three for Simpson, the fastest self-test of any implementation.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2008 — Simpson exactness for cubics (rephrased)
+      // PYQ-pattern — Simpson exactness for cubics (rephrased)
       {
         q: 'Which polynomial family does Simpson rule with any even panel count integrate exactly?',
         options: ['All cubics and below', 'Only constants', 'Only odd functions', 'All exponentials'],
@@ -399,7 +399,7 @@ export const engmathCh11Content: SectionContent[] = [
       'Romberg tables climb in order along diagonals while adaptive codes refine only high-error panels.'
     ],
     quiz: [
-      // PYQ-pattern: GATE 2014 — Richardson weights from two grids (rephrased)
+      // PYQ-pattern — Richardson weights from two grids (rephrased)
       {
         q: 'Trapezoidal values `$T(h) = 0.50$` and `$T(h \\div 2) = 0.375$` are available for an integral. What is the Richardson-improved value?',
         options: [`$0.4375$`, `$0.375$`, `$0.3333$`, `$0.50$`],

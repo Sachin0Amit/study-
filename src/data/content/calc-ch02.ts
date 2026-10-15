@@ -1153,14 +1153,14 @@ export const calcCh2Content: SectionContent[] = [
         answer: 1,
         explanation: 'Negative second derivative means $f’$ is decreasing — the slope relaxes, and the curve bends downward, lying below every tangent line. ($f$ itself may still be rising: concave down does not mean falling.)',
       },
-      // PYQ-pattern: JEE Mains 2018 — differentiability implies continuity (rephrased, values changed)
+      // PYQ-pattern — differentiability implies continuity (rephrased, values changed)
       {
         q: 'If $f$ is differentiable at $x = a$, then:',
         options: [`$f$ is continuous at $x = a$`, `$f$ must have a corner at $x = a$`, `$f^{\\prime}(a) = 0$`, `$f$ is discontinuous at $x = a$`],
         answer: 0,
         explanation: 'Step 1: Restate differentiability as existence of $f^{\\prime}(a) = \\lim_{h \\to 0}\\frac{f(a+h) - f(a)}{h}$. Step 2: Recall the key theorem that differentiability implies continuity, proved by writing $f(a+h) - f(a) = h \\cdot \\frac{f(a+h)-f(a)}{h}$ and letting $h \\to 0$. Step 3: The product tends to $0 \\times f^{\\prime}(a) = 0$, so $\\lim_{h \\to 0}f(a+h) = f(a)$. Step 4: Conclude continuity holds at $a$. Step 5: The distractors fail since corners and discontinuities violate differentiability, and the derivative need not vanish. Step 6: Hence differentiability at $a$ forces continuity at $a$, while the converse is false.'
       },
-      // PYQ-pattern: JEE Advanced 2020 — vertical tangent and non-differentiability (rephrased, values changed)
+      // PYQ-pattern — vertical tangent and non-differentiability (rephrased, values changed)
       {
         q: 'For $f(x) = x^{\\frac{1}{3}}$, what happens at $x = 0$?',
         options: [`$f$ is differentiable at $0$ with derivative $0$`, `$f$ is discontinuous at $0$`, `$f$ is differentiable at $0$ with derivative $1$`, 'Continuous at $0$ but not differentiable there, with a vertical tangent'],

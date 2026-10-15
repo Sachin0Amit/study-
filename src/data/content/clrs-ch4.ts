@@ -374,7 +374,7 @@ export const clrsCh4Content: SectionContent[] = [
         answer: 2,
         explanation: "Anonymous $O$-constants may depend on $n$, which is precisely what an induction cannot tolerate — every use of the hypothesis needs one fixed $c$ for all $n \\ge n_0$.",
       },
-      // PYQ-pattern: ISRO 2016 — substitution recurrence evaluated (rephrased, values changed)
+      // PYQ-pattern — substitution recurrence evaluated (rephrased, values changed)
       {
         q: "Let $T(1) = 1$ and $T(n) = 2T(\\frac{n}{2}) + n$ for exact powers of two. Then $T(8)$ equals:",
         options: ["$32$", "$24$", "$40$", "$16$"],
@@ -508,7 +508,7 @@ export const clrsCh4Content: SectionContent[] = [
         answer: 2,
         explanation: "Only the uneven split sends children down at different rates: leftmost leaves appear at depth $\\lg_3 n$, rightmost at $\\lg_{3/2} n$ — a ragged tree, invisible to the master theorem.",
       },
-      // PYQ-pattern: GATE 2020 — lopsided recursion-tree depth (rephrased, values changed)
+      // PYQ-pattern — lopsided recursion-tree depth (rephrased, values changed)
       {
         q: "For $T(n) = T(\\frac{n}{3}) + T(\\frac{2n}{3}) + n$, the depth of the longest root-to-leaf path is:",
         options: ["$\\log_{2}n$", "$\\log_{3}n$", "$\\log_{4}n$", "$\\log_{\\frac{3}{2}}n$"],
@@ -635,7 +635,7 @@ export const clrsCh4Content: SectionContent[] = [
         answer: 2,
         explanation: "The master theorem requires a single split ratio: all $a$ subproblems must have size $n/b$. Two different sizes ($n/3$ and $2n/3$) fall outside its hypotheses — use a recursion tree instead ($\\Theta(n \\lg n)$).",
       },
-      // PYQ-pattern: GATE 2018 — Master case with equal exponent (rephrased, values changed)
+      // PYQ-pattern — Master case with equal exponent (rephrased, values changed)
       {
         q: "For $T(n) = 4T(\\frac{n}{2}) + n^2$, the master method gives:",
         options: ["$T(n) = \\Theta(n^2\\lg n)$", "$T(n) = \\Theta(n^2)$", "$T(n) = \\Theta(n^3)$", "$T(n) = \\Theta(n\\lg n)$"],

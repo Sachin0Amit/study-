@@ -370,14 +370,14 @@ export const osCh5Content: SectionContent[] = [
         answer: 2,
         explanation: 'With a quantum larger than every burst, no process is ever preempted and each runs to completion (or blocks) in arrival order — exactly FCFS. At the other extreme, a tiny quantum floods the system with context switches.',
       },
-      // PYQ-pattern: GATE 2017 — SJF average waiting time (rephrased)
+      // PYQ-pattern — SJF average waiting time (rephrased)
       {
         q: "Four jobs arrive at time $0$ with bursts $5$, $9$, $2$, $7$ ms (P1..P4). Under nonpreemptive shortest-job-first, what is the average waiting time?",
         options: ["$10.25$ ms", "$5.75$ ms", "$7$ ms", "$3$ ms"],
         answer: 1,
         explanation: "**Step 1 — Given data:** bursts P1 $= 5$, P2 $= 9$, P3 $= 2$, P4 $= 7$, all arrival $0$.\n**Step 2 — Rule:** SJF orders by next burst (ties by arrival); waiting is start minus arrival.\n**Step 3 — Computation:** order P3, P1, P4, P2:\n```\nP3 0-2, P1 2-7, P4 7-14, P2 14-23\nwaits: P3 0, P1 2, P4 7, P2 14\navg = $\\frac{(0+2+7+14)}{4} = \\frac{23}{4} = 5.75$ ms\n```\n**Step 4 — Cross-check:** total completion $23$ ms matches sum of bursts $5+9+2+7 = 23$; average turnaround $= 5.75 + \\frac{23}{4} = 11.5$ ms, consistent.\n**Step 5 — Distractors:** $10.25$ is FCFS on the $6,8,7,3$ set; $7$ is SJF on that other set; $3$ is FCFS luckily ordered.\n**Step 6 — Conclude:** $5.75$ ms, optimal for this set."
       },
-      // PYQ-pattern: ISRO 2020 — round robin with small quantum (rephrased)
+      // PYQ-pattern — round robin with small quantum (rephrased)
       {
         q: "Three jobs with bursts $5$, $3$, $8$ ms (P1..P3) arrive at $0$ and run under round robin with quantum $2$ ms. What is the average waiting time?",
         options: ["$5.66$ ms", "$17$ ms", "$6.5$ ms", "$7$ ms"],

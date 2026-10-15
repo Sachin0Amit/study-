@@ -228,7 +228,7 @@ export const cppCh33Content: SectionContent[] = [
         answer: 3,
         explanation: "The pointer specialization is what lets built-in arrays play in every generic algorithm: a raw `T*` is a fully random-access iterator.",
       },
-      // PYQ-pattern: GATE 2014 — iterator category requirements of sort (rephrased)
+      // PYQ-pattern — iterator category requirements of sort (rephrased)
       {
         q: "Why does `std::sort` refuse a `std::list` while the list still offers its own member `sort`?",
         options: ["Lists cannot be sorted under any circumstances", "`std::sort` needs random-access iterators for its jumps, which linked nodes cannot offer; the member version relinks nodes instead", "`std::sort` only accepts raw arrays", "Lists always stay sorted, so sorting is skipped"],
