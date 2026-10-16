@@ -103,7 +103,7 @@ const QUICK_ACTIONS: {
   { view: 'paper-dna', label: 'Paper-DNA Analyzer', hint: 'forensic topic prediction', icon: Scale },
   { view: 'palace', label: 'Memory Palaces', hint: 'visual journeys + narration', icon: Wand2 },
   { view: 'playground', label: 'Lab floor', hint: '60 labs + simulators + code judge', icon: FlaskConical },
-  { view: 'flashcards', label: 'Flashcard decks', hint: '11,700+ cards · SRS', icon: Layers },
+  { view: 'flashcards', label: 'Flashcard decks', hint: '12,400+ cards · SRS', icon: Layers },
   {
     view: 'flashcards',
     examMisses: true,
@@ -112,7 +112,7 @@ const QUICK_ACTIONS: {
     icon: Zap,
   },
   { view: 'formulas', label: 'Formula sheet', hint: '1,974 printable formulas', icon: Sigma },
-  { view: 'exam', label: 'Test simulator', hint: '8,862-question bank', icon: ClipboardCheck },
+  { view: 'exam', label: 'Test simulator', hint: '9,394-question bank', icon: ClipboardCheck },
   { view: 'progress', label: 'Progress dashboard', hint: 'streaks, notes & stats', icon: BarChart3 },
 ]
 

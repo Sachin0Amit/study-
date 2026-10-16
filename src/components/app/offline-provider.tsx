@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { CloudOff, RefreshCw, Wifi, WifiOff } from 'lucide-react'
 import { toast } from 'sonner'
 import { useStudy } from '@/store/useStudy'
@@ -10,6 +10,41 @@ const RING =
 
 const LS_KEY = 'sv-offline-mode'
 
+// --- module-level external stores (SSR-safe via server snapshots) ----------
+const offlineListeners = new Set<() => void>()
+function readOfflinePref(): boolean {
+  try {
+    return typeof localStorage !== 'undefined' && localStorage.getItem(LS_KEY) === '1'
+  } catch {
+    return false
+  }
+}
+function writeOfflinePref(v: boolean) {
+  try {
+    localStorage.setItem(LS_KEY, v ? '1' : '0')
+  } catch {
+    /* storage unavailable */
+  }
+  for (const l of offlineListeners) l()
+}
+function subscribeOfflinePref(cb: () => void) {
+  offlineListeners.add(cb)
+  window.addEventListener('storage', cb) // cross-tab sync
+  return () => {
+    offlineListeners.delete(cb)
+    window.removeEventListener('storage', cb)
+  }
+}
+
+function subscribeNetwork(cb: () => void) {
+  window.addEventListener('online', cb)
+  window.addEventListener('offline', cb)
+  return () => {
+    window.removeEventListener('online', cb)
+    window.removeEventListener('offline', cb)
+  }
+}
+
 /**
  * X9 — Offline PWA layer.
  * The service worker registers ONLY when the learner opts in (keeps the dev
@@ -18,42 +53,29 @@ const LS_KEY = 'sv-offline-mode'
  * replay on reconnect. A tiny status pill shows cache/offline state.
  */
 export function OfflineProvider() {
-  const [enabled, setEnabled] = useState(false)
-  const [online, setOnline] = useState(true)
+  const enabled = useSyncExternalStore(subscribeOfflinePref, readOfflinePref, () => false)
+  const online = useSyncExternalStore(subscribeNetwork, () => navigator.onLine, () => true)
   const [pending, setPending] = useState(0)
   const ensureDevice = useStudy((s) => s.ensureDevice)
   const deviceId = ensureDevice()
 
+  // toast + SW flush on network transitions (no setState here — lint-safe)
+  const prevOnline = useRef(true)
   useEffect(() => {
-    try {
-      setEnabled(localStorage.getItem(LS_KEY) === '1')
-    } catch {
-      /* storage unavailable */
-    }
-    setOnline(navigator.onLine)
-    const up = () => {
-      setOnline(true)
+    if (prevOnline.current === online) return
+    prevOnline.current = online
+    if (online) {
       // tell the SW to flush its mutation queue
-      if (navigator.serviceWorker?.controller) {
-        navigator.serviceWorker.controller.postMessage('sv-flush-queue')
-      }
+      navigator.serviceWorker?.controller?.postMessage('sv-flush-queue')
       toast.success('Back online — queued study actions are syncing', {
         icon: <Wifi className="h-4 w-4 text-emerald-300" />,
       })
-    }
-    const down = () => {
-      setOnline(false)
+    } else {
       toast.info('Offline — StudyVerse keeps working, actions will queue', {
         icon: <WifiOff className="h-4 w-4 text-amber-300" />,
       })
     }
-    window.addEventListener('online', up)
-    window.addEventListener('offline', down)
-    return () => {
-      window.removeEventListener('online', up)
-      window.removeEventListener('offline', down)
-    }
-  }, [])
+  }, [online])
 
   // register/unregister the SW when the toggle flips
   useEffect(() => {
@@ -72,7 +94,7 @@ export function OfflineProvider() {
         })
         .catch(() => {
           toast.error('Offline mode could not start in this browser.')
-          setEnabled(false)
+          writeOfflinePref(false)
         })
     } else {
       void navigator.serviceWorker.getRegistrations().then((regs) => {
@@ -118,12 +140,7 @@ export function OfflineProvider() {
 
   const toggle = () => {
     const next = !enabled
-    setEnabled(next)
-    try {
-      localStorage.setItem(LS_KEY, next ? '1' : '0')
-    } catch {
-      /* storage unavailable */
-    }
+    writeOfflinePref(next)
     if (next) {
       toast.success('Offline mode on — lessons you visit are cached for no-signal study', {
         icon: <CloudOff className="h-4 w-4 text-emerald-300" />,

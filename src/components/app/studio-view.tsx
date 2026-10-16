@@ -301,28 +301,33 @@ export function StudioView({ targetSkill, subjectHint }: { targetSkill?: string;
         })
       }
 
+      // standard SSE frames: "event: <name>\ndata: <json>\n\n"
       while (true) {
         const { done, value } = await reader.read()
         if (done) break
         buffer += decoder.decode(value, { stream: true })
-        const lines = buffer.split('\n')
-        buffer = lines.pop() ?? ''
-        for (const line of lines) {
-          if (!line.startsWith('data:')) continue
-          const payload = line.slice(5).trim()
-          if (!payload || payload === '[DONE]') continue
-          let evt: { event?: string } & Record<string, unknown>
+        let sep: number
+        while ((sep = buffer.indexOf('\n\n')) !== -1) {
+          const raw = buffer.slice(0, sep)
+          buffer = buffer.slice(sep + 2)
+          let type = 'message'
+          const dataLines: string[] = []
+          for (const line of raw.split('\n')) {
+            if (line.startsWith('event:')) type = line.slice(6).trim()
+            else if (line.startsWith('data:')) dataLines.push(line.slice(5).trim())
+          }
+          if (!dataLines.length) continue
+          let evt: unknown
           try {
-            evt = JSON.parse(payload)
+            evt = JSON.parse(dataLines.join('\n'))
           } catch {
             continue
           }
-          const type = evt.event
           if (type === 'stage') {
-            setStage(typeof evt.label === 'string' ? evt.label : null)
+            const label = (evt as { label?: unknown }).label
+            setStage(typeof label === 'string' ? label : null)
           } else if (type === 'citations') {
-            currentCitations = (evt as unknown as { data?: unknown[] }).data as Citation[] ?? []
-            if (!Array.isArray(currentCitations)) currentCitations = []
+            currentCitations = Array.isArray(evt) ? (evt as Citation[]) : []
             setMessages((m) => {
               const copy = [...m]
               const last = copy[copy.length - 1]
@@ -330,8 +335,7 @@ export function StudioView({ targetSkill, subjectHint }: { targetSkill?: string;
               return copy
             })
           } else if (type === 'sources') {
-            currentSources = ((evt as unknown as { data?: unknown[] }).data as WebSource[]) ?? []
-            if (!Array.isArray(currentSources)) currentSources = []
+            currentSources = Array.isArray(evt) ? (evt as WebSource[]) : []
             setMessages((m) => {
               const copy = [...m]
               const last = copy[copy.length - 1]
@@ -339,9 +343,9 @@ export function StudioView({ targetSkill, subjectHint }: { targetSkill?: string;
               return copy
             })
           } else if (type === 'delta') {
-            const d = evt as unknown as { data?: { persona?: string; text?: string } }
-            const p = d.data?.persona ?? placeholderPersona
-            const text = d.data?.text ?? ''
+            const d = evt as { persona?: string; text?: string }
+            const p = d.persona ?? placeholderPersona
+            const text = d.text ?? ''
             if (p === 'debate-sep' || p === 'rt-sep') {
               // separator — next delta starts a new bubble
               lastPersona = 'sep'
@@ -359,13 +363,13 @@ export function StudioView({ targetSkill, subjectHint }: { targetSkill?: string;
             })
           } else if (type === 'done') {
             setMessages((m) => m.map((x) => ({ ...x, pending: false })))
-            const d = evt as unknown as { data?: { twinEvents?: number } }
-            if (d.data?.twinEvents) {
-              toast.success(`Twin updated — ${d.data.twinEvents} evidence event${d.data.twinEvents > 1 ? 's' : ''} recorded`, { icon: <Brain className="h-4 w-4 text-emerald-300" /> })
+            const twinEvents = (evt as { twinEvents?: number }).twinEvents
+            if (twinEvents) {
+              toast.success(`Twin updated — ${twinEvents} evidence event${twinEvents > 1 ? 's' : ''} recorded`, { icon: <Brain className="h-4 w-4 text-emerald-300" /> })
             }
           } else if (type === 'error') {
-            const d = evt as unknown as { data?: { error?: string } }
-            throw new Error(d.data?.error ?? 'stream error')
+            const message = (evt as { error?: string }).error
+            throw new Error(message ?? 'stream error')
           }
         }
       }

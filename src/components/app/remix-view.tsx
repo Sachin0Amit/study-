@@ -19,6 +19,7 @@ import {
   Trash2,
   Wand2,
   X,
+  type LucideIcon,
 } from 'lucide-react'
 import { LIBRARY_SUBJECTS } from '@/data/library'
 import { useStudy } from '@/store/useStudy'
@@ -384,15 +385,19 @@ export function RemixView() {
                   : null,
               ]
                 .filter(Boolean)
-                .map((c) => (
-                  <span
-                    key={c!.label}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-border/70 bg-background/40 px-2.5 py-1 text-[11.5px] font-medium text-muted-foreground"
-                  >
-                    <c!.icon className="h-3.5 w-3.5 text-emerald-300/80" aria-hidden />
-                    {c!.label}
-                  </span>
-                ))}
+                .map((c, i) => {
+                  const chip = c as { icon: LucideIcon; label: string };
+                  const ChipIcon = chip.icon;
+                  return (
+                    <span
+                      key={chip.label ?? i}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border/70 bg-background/40 px-2.5 py-1 text-[11.5px] font-medium text-muted-foreground"
+                    >
+                      <ChipIcon className="h-3.5 w-3.5 text-emerald-300/80" aria-hidden />
+                      {chip.label}
+                    </span>
+                  );
+                })}
             </div>
 
             {/* day filter chips */}
