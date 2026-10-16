@@ -19,6 +19,7 @@ import {
   Database,
   FlaskConical,
   Loader2,
+  Rocket,
   Trophy,
 } from 'lucide-react'
 import { RING, type LabMeta } from './types'
@@ -29,6 +30,8 @@ const LAB_COMPONENTS: Record<string, ComponentType> = {
   os: lazy(() => import('./os-lab')),
   cache: lazy(() => import('./cache-lab')),
   compiler: lazy(() => import('./compiler-lab')),
+  mechanics: lazy(() => import('./mechanics-lab')),
+  chem: lazy(() => import('./chem-lab')),
   judge: lazy(() => import('./judge-panel')),
 }
 
@@ -38,6 +41,8 @@ const ICONS: Record<string, ComponentType<{ className?: string }>> = {
   cpu: Cpu,
   database: Database,
   braces: Braces,
+  rocket: Rocket,
+  flask: FlaskConical,
   trophy: Trophy,
 }
 
@@ -78,12 +83,22 @@ const LABS: LabMeta[] = [
     subjectHint: 'Languages',
   },
   {
-    id: 'judge',
-    title: 'Code Judge',
-    icon: 'trophy',
-    tagline: 'Eight coding challenges, guarded in-browser execution, instant verdicts + mastery evidence.',
-    subjectHint: 'Practice',
+    id: 'mechanics',
+    title: 'Mechanics Sandbox',
+    icon: 'rocket',
+    tagline: 'RK4 projectile ballistics with target practice, a nonlinear pendulum vs its small-angle lie, and friction on an incline.',
+    subjectHint: 'Physics',
   },
+  {
+    id: 'chem',
+    title: 'Chemistry Bench',
+    icon: 'flask',
+    tagline: 'Eight classic reactions on an animated flask, a balance-the-equation mini-game, energy diagrams and a real ICE-table solver.',
+    subjectHint: 'Chemistry',
+  },
+  // NOTE: the code judge lives in the standing "Code judge arena" section of
+  // the playground (below the floor) — keeping it out of this catalog avoids
+  // mounting two live judge instances at once.
 ]
 
 function LabFallback() {
@@ -205,6 +220,8 @@ export { SignalsLab } from './signals-lab'
 export { OsLab } from './os-lab'
 export { CacheLab } from './cache-lab'
 export { CompilerLab } from './compiler-lab'
+export { MechanicsLab } from './mechanics-lab'
+export { ChemLab } from './chem-lab'
 export { JudgePanel } from './judge-panel'
 export type { LabMeta } from './types'
 

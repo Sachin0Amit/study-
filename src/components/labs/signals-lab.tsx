@@ -8,9 +8,10 @@
  */
 
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
-import { Activity, AudioWaveform, Sigma, SlidersHorizontal } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Activity, AudioWaveform, Sigma, SlidersHorizontal, Target } from 'lucide-react'
 import { RING, fmt, mulberry32 } from './types'
+import { LabMissions, getMissions, useMissions } from './missions'
 
 /* ------------------------------------------------------------------ */
 /*  DSP primitives                                                     */
@@ -411,6 +412,23 @@ const WAVE_TYPES: WaveType[] = ['sine', 'square', 'triangle', 'saw', 'noise', 'c
 export function SignalsLab() {
   const [chain, setChain] = useState<ChainState>(DEFAULT_CHAIN)
   const [presetHint, setPresetHint] = useState<string | null>(null)
+  const { fire } = useMissions('signals')
+  const [toast, setToast] = useState<string | null>(null)
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (toastTimer.current) clearTimeout(toastTimer.current)
+    }
+  }, [])
+
+  const onMissionEvent = (missionId: string, objectiveId: string) => {
+    const m = getMissions('signals').find((x) => x.id === missionId)
+    const o = m?.objectives.find((x) => x.id === objectiveId)
+    setToast(o?.text ?? 'Objective complete')
+    if (toastTimer.current) clearTimeout(toastTimer.current)
+    toastTimer.current = setTimeout(() => setToast(null), 2600)
+  }
 
   const analysis = useMemo(() => {
     // 1. generate enabled channels
@@ -483,20 +501,35 @@ export function SignalsLab() {
     return { gens, mixed, output: stage, convKernel, peak, rms, mag, domBin, domFreq: (domBin * FS) / N }
   }, [chain])
 
-  const setChannel = (i: number, patch: Partial<Channel>) =>
+  const setChannel = (i: number, patch: Partial<Channel>) => {
     setChain((c) => ({
       ...c,
       channels: c.channels.map((ch, j) => (j === i ? { ...ch, ...patch } : ch)),
     }))
+    if (patch.type === 'sine') fire('sig-set-sine')
+    if (patch.type === 'square') fire('sig-set-square')
+  }
+
+  // derived mission conditions — evaluated after the chain settles
+  useEffect(() => {
+    const on = chain.channels.filter((c) => c.on)
+    if (on.length >= 2) fire('sig-mix-two')
+    for (const c of on) {
+      if (c.freq > 300) fire('sig-high-freq')
+      if (c.type === 'square' && c.freq <= 100) fire('sig-square-harmonics')
+    }
+  }, [chain, fire])
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
-      className="space-y-5"
+      className="relative space-y-5"
     >
-      <div className="flex items-start gap-3">
+      <LabMissions missions={getMissions('signals')} activeLabId="signals" onEvent={onMissionEvent} />
+
+      <div className="flex items-start gap-3 md:pr-[336px]">
         <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-teal-400/25 bg-teal-400/10">
           <AudioWaveform className="h-5 w-5 text-teal-300" aria-hidden="true" />
         </span>
@@ -641,7 +674,10 @@ export function SignalsLab() {
             {(['add', 'mul'] as const).map((op) => (
               <button
                 key={op}
-                onClick={() => setChain((c) => ({ ...c, mixOp: op }))}
+                onClick={() => {
+                setChain((c) => ({ ...c, mixOp: op }))
+                if (op === 'mul') fire('sig-ring-mod')
+              }}
                 aria-pressed={chain.mixOp === op}
                 className={`rounded-lg border px-2 py-1.5 text-xs font-semibold transition-all ${RING} ${
                   chain.mixOp === op
@@ -866,6 +902,23 @@ export function SignalsLab() {
           ))}
         </div>
       )}
+
+      {/* objective toast */}
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            key={toast}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            className="pointer-events-none absolute bottom-2 right-2 z-30 flex items-center gap-2 rounded-xl border border-emerald-400/40 bg-card/95 px-3.5 py-2.5 text-[12px] font-semibold text-emerald-100 shadow-lg"
+            role="status"
+          >
+            <Target className="h-4 w-4 shrink-0 text-emerald-300" aria-hidden="true" />
+            <span className="max-w-[260px]">{toast}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   )
 }
