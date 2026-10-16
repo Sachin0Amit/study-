@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import { useStudy } from '@/store/useStudy'
 import { CommandPalette } from './command-palette'
+import { OfflineProvider } from './offline-provider'
 import { ThemeToggle } from './theme-toggle'
 
 const NAV = [
@@ -90,6 +91,8 @@ export function Header() {
             <Search className="h-4 w-4 text-emerald-300/80" />
           </button>
           <CommandPalette />
+          {/* X9 — offline pill: opens the Download Manager (pin books, offline mode) */}
+          <OfflineProvider />
           <ThemeToggle />
           {/* Easy help toggle — simple words everywhere, ON by default */}
           <button
