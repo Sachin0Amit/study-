@@ -383,16 +383,19 @@ export function RemixView() {
                   ? { icon: Brain, label: `${Math.round(stats.avgMastery * 100)}% avg mastery now` }
                   : null,
               ]
-                .filter(Boolean)
-                .map((c) => (
-                  <span
-                    key={c!.label}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-border/70 bg-background/40 px-2.5 py-1 text-[11.5px] font-medium text-muted-foreground"
-                  >
-                    <c!.icon className="h-3.5 w-3.5 text-emerald-300/80" aria-hidden />
-                    {c!.label}
-                  </span>
-                ))}
+                .filter((c): c is NonNullable<typeof c> => c !== null)
+                .map((c) => {
+                  const StatIcon = c.icon
+                  return (
+                    <span
+                      key={c.label}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border/70 bg-background/40 px-2.5 py-1 text-[11.5px] font-medium text-muted-foreground"
+                    >
+                      <StatIcon className="h-3.5 w-3.5 text-emerald-300/80" aria-hidden />
+                      {c.label}
+                    </span>
+                  )
+                })}
             </div>
 
             {/* day filter chips */}

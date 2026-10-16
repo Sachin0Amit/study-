@@ -23,6 +23,7 @@ import { RemixView } from '@/components/app/remix-view'
 import { ArenaView } from '@/components/app/arena-view'
 import { PaperDnaView } from '@/components/app/paper-dna-view'
 import { PalaceView } from '@/components/app/palace-view'
+import { LivingView } from '@/components/app/living-view'
 import { ReadingProgress, ScrollTopButton } from '@/components/app/reading-progress'
 import { ThemeColorMeta } from '@/components/app/theme-color-meta'
 
@@ -76,6 +77,12 @@ export default function Home() {
         useStudy.setState({ view: { name: 'paper-dna' } })
       } else if (v === 'palace') {
         useStudy.setState({ view: { name: 'palace' } })
+      } else if (v === 'living') {
+        const dom = params.get('domain') ?? undefined
+        const top = params.get('topic') ?? undefined
+        useStudy.setState({
+          view: { name: 'living', domain: dom ?? undefined, topicId: top ?? undefined },
+        })
       }
     }
   }, [])
@@ -86,7 +93,11 @@ export default function Home() {
     if (view.name === 'lesson') params.set('lesson', view.sectionId)
     else if (view.name === 'chapter') params.set('chapter', view.chapterId)
     else if (view.name === 'book') params.set('book', view.bookId)
-    else if (view.name !== 'library') params.set('view', view.name)
+    else if (view.name === 'living') {
+      params.set('view', 'living')
+      if (view.domain) params.set('domain', view.domain)
+      if (view.topicId) params.set('topic', view.topicId)
+    } else if (view.name !== 'library') params.set('view', view.name)
     const newSearch = params.toString() ? `?${params.toString()}` : window.location.pathname
     window.history.replaceState(null, '', newSearch)
   }, [view])
@@ -113,7 +124,9 @@ export default function Home() {
                     ? `studio-${view.targetSkill ?? 'free'}`
                     : view.name === 'palace'
                       ? `palace-${view.sectionKey ?? 'pick'}`
-                      : view.name
+                      : view.name === 'living'
+                        ? `living-${view.topicId ?? view.domain ?? 'root'}`
+                        : view.name
 
   return (
     <div
@@ -153,6 +166,9 @@ export default function Home() {
             {view.name === 'arena' && <ArenaView />}
             {view.name === 'paper-dna' && <PaperDnaView />}
             {view.name === 'palace' && <PalaceView sectionKey={view.sectionKey} />}
+            {view.name === 'living' && (
+              <LivingView domain={view.domain} topicId={view.topicId} />
+            )}
           </motion.div>
         </AnimatePresence>
       </main>

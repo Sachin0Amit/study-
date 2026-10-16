@@ -26,11 +26,16 @@ export function OfflineProvider() {
 
   useEffect(() => {
     try {
-      setEnabled(localStorage.getItem(LS_KEY) === '1')
+      // storage is an external system — read it once, outside React's render
+      const stored = localStorage.getItem(LS_KEY)
+      const wasOnline = navigator.onLine
+      queueMicrotask(() => {
+        setEnabled(stored === '1')
+        setOnline(wasOnline)
+      })
     } catch {
       /* storage unavailable */
     }
-    setOnline(navigator.onLine)
     const up = () => {
       setOnline(true)
       // tell the SW to flush its mutation queue

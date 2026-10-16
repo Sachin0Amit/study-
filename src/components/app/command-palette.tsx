@@ -17,6 +17,7 @@ import {
   Search,
   Sigma,
   Sparkles,
+  Sprout,
   Swords,
   Terminal,
   Wand2,
@@ -99,6 +100,12 @@ const QUICK_ACTIONS: {
     icon: ClipboardList,
   },
   { view: 'library', label: 'Library', hint: '37 subject tracks · 540 chapters', icon: LibraryIcon },
+  {
+    view: 'living',
+    label: 'Living Library',
+    hint: 'ever-growing knowledge across every field',
+    icon: Sprout,
+  },
   { view: 'arena', label: 'Study Arena', hint: 'live 1v1 quiz battles · ELO', icon: Swords },
   { view: 'paper-dna', label: 'Paper-DNA Analyzer', hint: 'forensic topic prediction', icon: Scale },
   { view: 'palace', label: 'Memory Palaces', hint: 'visual journeys + narration', icon: Wand2 },
@@ -127,9 +134,9 @@ function useOsExecutor() {
           if (view === 'lesson' && typeof action.sectionId === 'string') {
             navigate({ name: 'lesson', sectionId: action.sectionId })
           } else if (
-            ['library', 'playground', 'progress', 'formulas', 'syllabus'].includes(view)
+            ['library', 'playground', 'progress', 'formulas', 'syllabus', 'living'].includes(view)
           ) {
-            navigate({ name: view as 'library' | 'playground' | 'progress' | 'formulas' | 'syllabus' })
+            navigate({ name: view as 'library' | 'playground' | 'progress' | 'formulas' | 'syllabus' | 'living' })
           } else {
             navigate({ name: 'library' })
           }
