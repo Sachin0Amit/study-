@@ -52,7 +52,8 @@ import type { UniverseBlock, UniverseTopic, Tier } from '@/data/universe'
 /*  hard-coded and expanded with every content pass.                   */
 /* ------------------------------------------------------------------ */
 
-const DOMAIN_ICONS: Record<string, typeof Atom> = {
+/** Icon per domain — shared by the catalog cards and the quick-jump chips. */
+export const DOMAIN_ICONS: Record<string, typeof Atom> = {
   'Foundation Learning': BookOpen,
   'Physical Sciences': Atom,
   'Life Sciences': Dna,
@@ -81,9 +82,34 @@ const TIER_STYLE: Record<Tier, string> = {
 const FOCUS_RING =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
 
+/** Accent color per domain — the Knowledge Universe domains render as
+ *  subject cards in the Library catalog, exactly like Mathematics or
+ *  Physics, so each carries its own accent. */
+export const UNIVERSE_DOMAIN_ACCENTS: Record<string, string> = {
+  'Foundation Learning': '#f59e0b',
+  'Physical Sciences': '#22d3ee',
+  'Life Sciences': '#10b981',
+  Mathematics: '#14b8a6',
+  'Environment & Sustainability': '#84cc16',
+  'Computing & AI': '#9333ea',
+  Engineering: '#f97316',
+  'Technology & Applied Science': '#ef4444',
+  'Social Sciences': '#f472b6',
+  Humanities: '#d946ef',
+  'Languages & World Literature': '#fb7185',
+  'Law & Governance': '#a16207',
+  'Business & Economics': '#ca8a04',
+  'Health & Wellness': '#f43f5e',
+  'Arts & Culture': '#ec4899',
+  'Everyday Knowledge': '#0d9488',
+  'Emerging & Interdisciplinary': '#8b5cf6',
+}
+
 function fmtWords(n: number): string {
   return n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}k` : String(n)
 }
+
+export { fmtWords }
 
 function fmtDate(iso: string): string {
   try {
@@ -600,10 +626,10 @@ export function UniverseSection() {
             Every field of human knowledge, one library
           </h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Beyond your course tracks, the Library grows outward — complete study guides across{' '}
-            {UNIVERSE_STATS.domains} knowledge domains, from foundation skills to emerging
-            interdisciplinary fields. Every topic carries concepts, formulas, worked examples,
-            glossaries and a self-check quiz, and every expansion pass adds more.
+            Every domain of the Universe is a subject track in the catalog above — presented
+            exactly like Mathematics or Physics. This layer adds live stats, full-text search
+            across all {UNIVERSE_STATS.topics} guides, and the freshest additions from the latest
+            expansion pass.
           </p>
         </div>
 
@@ -729,60 +755,38 @@ export function UniverseSection() {
               </span>
             </div>
 
-            {/* domain grid */}
-            <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {UNIVERSE_DOMAIN_STATS.map((d, i) => {
-                const Icon = DOMAIN_ICONS[d.domain] ?? BookOpen
-                return (
-                  <motion.button
-                    key={d.domain}
-                    type="button"
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-40px' }}
-                    transition={{ duration: 0.3, delay: Math.min(i * 0.04, 0.4) }}
-                    onClick={() => openDomain(d.domain)}
-                    className={`sv-card-glow group relative overflow-hidden rounded-2xl border border-border/80 bg-card p-6 text-left motion-safe:transition-all! motion-safe:hover:-translate-y-0.5 ${FOCUS_RING}`}
-                  >
-                    <div
-                      aria-hidden
-                      className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent"
-                    />
-                    <div className="flex items-start justify-between">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/60 bg-muted/40 transition-transform duration-300 group-hover:scale-105">
-                        <Icon className="h-6 w-6 text-foreground/70" />
-                      </div>
-                      <span className="text-2xl font-bold tabular-nums text-foreground/20 transition-colors group-hover:text-foreground/40">
+            {/* domain quick-jump — the full domain cards live in the subject
+                catalog above, rendered in the same manner as every subject */}
+            <div className="mt-8">
+              <div className="mb-3 flex items-center gap-3">
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-300/90">
+                  Jump to a domain
+                </span>
+                <span className="h-px flex-1 bg-gradient-to-r from-emerald-400/30 via-border to-transparent" />
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {UNIVERSE_DOMAIN_STATS.map((d) => {
+                  const Icon = DOMAIN_ICONS[d.domain] ?? BookOpen
+                  const accent = UNIVERSE_DOMAIN_ACCENTS[d.domain] ?? '#10b981'
+                  return (
+                    <button
+                      key={d.domain}
+                      type="button"
+                      onClick={() => openDomain(d.domain)}
+                      className={`group inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/50 px-3.5 py-1.5 text-[13px] font-medium text-foreground/80 transition-colors hover:border-foreground/25 hover:bg-card ${FOCUS_RING}`}
+                    >
+                      <Icon className="h-3.5 w-3.5" style={{ color: accent }} aria-hidden />
+                      {d.domain}
+                      <span
+                        className="rounded-full bg-muted/70 px-1.5 py-0.5 text-[10px] font-semibold tabular-nums text-muted-foreground"
+                        style={{ color: accent }}
+                      >
                         {d.topicCount}
                       </span>
-                    </div>
-                    <h3 className="mt-3 text-[15px] font-semibold text-foreground/90 group-hover:underline">
-                      {d.domain}
-                    </h3>
-                    <p className="mt-1 line-clamp-2 flex-1 text-[13px] leading-relaxed text-muted-foreground">
-                      {d.blurb}
-                    </p>
-                    <div className="mt-3 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] text-muted-foreground">
-                      <span>{fmtWords(d.words)} words</span>
-                      <span aria-hidden>·</span>
-                      <span>{d.fields.length} fields</span>
-                      <span aria-hidden>·</span>
-                      <span className="inline-flex items-center gap-1">
-                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/70" />
-                        {d.core}
-                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-500/70" />
-                        {d.intermediate}
-                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-500/70" />
-                        {d.advanced}
-                      </span>
-                    </div>
-                    <div className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-300">
-                      Open domain
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </div>
-                  </motion.button>
-                )
-              })}
+                    </button>
+                  )
+                })}
+              </div>
             </div>
           </>
         )}

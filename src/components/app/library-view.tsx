@@ -16,14 +16,14 @@ import {
   Library as LibraryIcon,
 } from 'lucide-react'
 import Hero3D from './hero3d'
-import { UniverseSection, UniverseDrilldown } from './universe-section'
+import { UniverseSection, UniverseDrilldown, DOMAIN_ICONS, UNIVERSE_DOMAIN_ACCENTS, fmtWords } from './universe-section'
 import {
   LIBRARY_SUBJECTS,
   LIBRARY_BOOKS,
   LIBRARY_CHAPTERS,
   LIBRARY_SECTIONS,
 } from '@/data/library'
-import { UNIVERSE_STATS } from '@/data/universe'
+import { UNIVERSE_STATS, UNIVERSE_DOMAIN_STATS, UNIVERSE_TOPICS } from '@/data/universe'
 import { easySubjectLine } from '@/data/easy-library'
 import { EasyLine } from './easy-box'
 import { ChapterIcon } from './chapter-icon'
@@ -320,7 +320,9 @@ export function LibraryView({ domain, topicId }: { domain?: string; topicId?: st
             <p className="mt-2 max-w-xl text-sm text-muted-foreground">
               Every course is its own subject — and each subject holds the chapters of{' '}
               <em>every</em> engineering branch plus every competitive-assessment scope for that
-              course, merged into one deduplicated track.
+              course, merged into one deduplicated track. The final group extends the same catalog
+              to the Knowledge Universe — every other field of human knowledge, presented the very
+              same way.
             </p>
           </div>
         </div>
@@ -448,6 +450,116 @@ export function LibraryView({ domain, topicId }: { domain?: string; topicId?: st
             </div>
           ))
         })()}
+
+        {/* ============ KNOWLEDGE UNIVERSE — same catalog, same cards ============ */}
+        <div className="mb-10">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-300/90">
+              Knowledge Universe
+            </span>
+            <span className="h-px flex-1 bg-gradient-to-r from-emerald-400/30 via-border to-transparent" />
+            <span className="rounded-full border border-border bg-muted/50 px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground">
+              {UNIVERSE_DOMAIN_STATS.length} domains · {UNIVERSE_STATS.topics} topics
+            </span>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {UNIVERSE_DOMAIN_STATS.map((d, idx) => {
+              const Icon = DOMAIN_ICONS[d.domain] ?? BookOpen
+              const accent = UNIVERSE_DOMAIN_ACCENTS[d.domain] ?? '#10b981'
+              const topics = UNIVERSE_TOPICS.filter((t) => t.domain === d.domain)
+              return (
+                <motion.button
+                  key={d.domain}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.5, delay: Math.min(idx, 6) * 0.07 }}
+                  onClick={() => navigate({ name: 'library', domain: d.domain })}
+                  className={`sv-card-glow group relative overflow-hidden rounded-2xl border border-border/80 bg-card p-6 text-left ${FOCUS_RING}`}
+                >
+                  <div
+                    className="absolute -right-14 -top-14 h-40 w-40 rounded-full opacity-15 blur-2xl transition-opacity group-hover:opacity-30"
+                    style={{ background: accent }}
+                  />
+                  <div className="relative">
+                    <div className="mb-4 flex items-start justify-between gap-3">
+                      <div
+                        className="flex h-12 w-12 items-center justify-center rounded-xl border transition-transform duration-300 group-hover:scale-105"
+                        style={{
+                          borderColor: accent + '55',
+                          background: accent + '18',
+                        }}
+                      >
+                        <Icon className="h-6 w-6" style={{ color: accent }} />
+                      </div>
+                      <span
+                        className="rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider"
+                        style={{
+                          color: accent,
+                          background: accent + '14',
+                          border: `1px solid ${accent}33`,
+                        }}
+                      >
+                        {d.topicCount} topics
+                      </span>
+                    </div>
+                    <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                      {d.fields.slice(0, 3).join(' · ')}
+                    </div>
+                    <h3 className="mt-1 text-xl font-bold">{d.domain}</h3>
+                    <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+                      {d.blurb}
+                    </p>
+                    <EasyLine
+                      text={`Easy idea: ${d.domain} is a full subject track of the Knowledge Universe — open it and read its topics in order.`}
+                    />
+                    <div className="mt-5 flex flex-wrap items-center gap-2 text-[11px] font-medium">
+                      <span className="rounded-full border border-border bg-muted/50 px-2.5 py-1">
+                        {d.topicCount} topic{d.topicCount !== 1 ? 's' : ''}
+                      </span>
+                      <span className="rounded-full border border-border bg-muted/50 px-2.5 py-1">
+                        {d.fields.length} field{d.fields.length !== 1 ? 's' : ''}
+                      </span>
+                      <span className="rounded-full border border-emerald-400/25 bg-emerald-400/10 px-2.5 py-1 text-emerald-200">
+                        {fmtWords(d.words)} words
+                      </span>
+                    </div>
+                    {topics.length > 0 && (
+                      <div className="mt-4 flex flex-wrap gap-1.5 border-t border-border/50 pt-3">
+                        {topics.slice(0, 4).map((t) => (
+                          <span
+                            key={t.id}
+                            role="button"
+                            tabIndex={0}
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              navigate({ name: 'library', domain: t.domain, topicId: t.id })
+                            }}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.stopPropagation()
+                                e.preventDefault()
+                                navigate({ name: 'library', domain: t.domain, topicId: t.id })
+                              }
+                            }}
+                            className="inline-flex items-center gap-1 rounded-md border border-border/80 bg-background/80 px-2 py-1 text-[11px] font-medium text-foreground transition-colors hover:border-emerald-400/60 hover:bg-emerald-400/10 hover:text-emerald-300"
+                          >
+                            <BookOpen className="h-3 w-3 text-emerald-400" />
+                            {t.title.split('—')[0].split(':')[0].trim()}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <div className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-300">
+                      Open track
+                      <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </div>
+                </motion.button>
+              )
+            })}
+          </div>
+        </div>
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {/* More coming card */}
