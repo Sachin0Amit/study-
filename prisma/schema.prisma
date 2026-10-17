@@ -217,6 +217,24 @@ model PaperAnalysis {
   @@index([deviceId, createdAt])
 }
 
+// ============ Exam Command Center — deep-researched exam syllabus maps ============
+// The user types any exam name (dynamic input); live web research produces a
+// hierarchical map: overview → subjects → units → topics, each topic auto-mapped
+// onto library chapters. Multiple maps are saved per device for switching.
+model ExamMap {
+  id        String   @id @default(cuid())
+  deviceId  String
+  name      String   // the exam name the user typed
+  overview  String   // JSON: ExamOverview
+  subjects  String   // JSON: ExamSubject[]
+  sources   String   // JSON: [{ title, url, host, date? }]
+  stats     String   // JSON: { subjectCount, unitCount, topicCount, mappedCount }
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([deviceId, updatedAt])
+}
+
 // ============ X8 — Memory Palace Generator ============
 
 model MemoryPalace {

@@ -78,6 +78,40 @@ export function extractJsonArray(text: string): unknown[] {
   return []
 }
 
+/** Pull a JSON object out of an LLM response. Strips markdown fences, slices
+ *  from the first '{' to the last '}', parses, and returns null when the
+ *  result is not a plain object. */
+export function extractJsonObject(text: string): Record<string, unknown> | null {
+  if (!text) return null
+  let t = text.trim()
+
+  // ```json ... ``` fence
+  const fence = t.match(/```(?:json)?\s*([\s\S]*?)```/i)
+  if (fence?.[1]) t = fence[1].trim()
+
+  const start = t.indexOf('{')
+  const end = t.lastIndexOf('}')
+  if (start !== -1 && end > start) {
+    try {
+      const parsed = JSON.parse(t.slice(start, end + 1))
+      if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+        return parsed as Record<string, unknown>
+      }
+    } catch {
+      /* fall through */
+    }
+  }
+  try {
+    const parsed = JSON.parse(t)
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+      return parsed as Record<string, unknown>
+    }
+  } catch {
+    /* fall through */
+  }
+  return null
+}
+
 /** Normalize any LLM payload (string[] | {topic|name|title|unit}[]) into clean topic strings */
 export function parseTopics(raw: unknown): string[] {
   const out: string[] = []

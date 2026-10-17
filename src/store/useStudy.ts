@@ -11,7 +11,7 @@ export type View =
   | { name: 'progress' }
   | { name: 'flashcards'; chapterId?: string; examMisses?: boolean }
   | { name: 'formulas'; chapterId?: string }
-  | { name: 'exam'; chapterId?: string }
+  | { name: 'exam'; chapterId?: string; chapterIds?: string[]; label?: string; questionCount?: number }
   | { name: 'search'; query?: string }
   | { name: 'syllabus' }
   // ---- X-systems (StudyVerse OS) ----

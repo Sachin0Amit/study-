@@ -162,7 +162,9 @@ export default function Home() {
               : view.name === 'formulas'
                 ? `formulas-${view.chapterId ?? 'sheet'}`
                 : view.name === 'exam'
-                  ? `exam-${view.chapterId ?? 'all'}`
+                  ? `exam-${view.chapterId ?? view.chapterIds?.join(',') ?? 'all'}${
+                      view.label ? `-${view.label}` : ''
+                    }`
                   : view.name === 'search'
                     ? `search-${view.query ?? 'new'}`
                     : view.name === 'studio'
@@ -199,7 +201,14 @@ export default function Home() {
               <FlashcardsView chapterId={view.chapterId} examMisses={view.examMisses} />
             )}
             {view.name === 'formulas' && <FormulaView chapterId={view.chapterId} />}
-            {view.name === 'exam' && <ExamView chapterId={view.chapterId} />}
+            {view.name === 'exam' && (
+              <ExamView
+                chapterId={view.chapterId}
+                chapterIds={view.chapterIds}
+                label={view.label}
+                questionCount={view.questionCount}
+              />
+            )}
             {view.name === 'progress' && <ProgressView />}
             {view.name === 'search' && <SearchView initialQuery={view.query} />}
             {view.name === 'syllabus' && <SyllabusView />}

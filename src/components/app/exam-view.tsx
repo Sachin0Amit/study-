@@ -183,17 +183,37 @@ interface RunState {
   isRetake: boolean
 }
 
-export function ExamView({ chapterId }: { chapterId?: string }) {
+export function ExamView({
+  chapterId,
+  chapterIds,
+  label: labelProp,
+  questionCount,
+}: {
+  chapterId?: string
+  chapterIds?: string[]
+  label?: string
+  questionCount?: number
+}) {
   const navigate = useStudy((s) => s.navigate)
   const deviceId = useStudy((s) => s.deviceId)
   const ensureDevice = useStudy((s) => s.ensureDevice)
 
   const [phase, setPhase] = useState<Phase>('setup')
   // default = the whole book, explicitly selected so the chips always tell the truth
+  // (an exam-scoped run passes its own chapter list instead)
   const [selected, setSelected] = useState<Set<string>>(
-    () => new Set(chapterId ? [chapterId] : LIBRARY_CHAPTERS.map((c) => c.id))
+    () =>
+      new Set(
+        chapterIds?.length
+          ? chapterIds
+          : chapterId
+            ? [chapterId]
+            : LIBRARY_CHAPTERS.map((c) => c.id)
+      )
   )
-  const [count, setCount] = useState<number>(20)
+  const [count, setCount] = useState<number>(
+    questionCount && questionCount >= 1 ? Math.min(120, Math.round(questionCount)) : 20
+  )
   const [timed, setTimed] = useState(true)
   const [run, setRun] = useState<RunState | null>(null)
   const [cursor, setCursor] = useState(0)
@@ -373,6 +393,7 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
     const id = deviceId ?? ensureDevice()
     const chapters = [...new Set(run.questions.map((q) => { const i = q.sectionId.indexOf('-s'); return i > 0 ? q.sectionId.slice(0, i) : q.sectionId }))]
     const label =
+      labelProp ??
       (allSelected
         ? 'Full book'
         : selected.size === 1
@@ -413,7 +434,7 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
       .then(() => setSaved(true))
       .catch(() => {})
     logActivity('quiz')
-  }, [phase, run, score, selected, deviceId, ensureDevice])
+  }, [phase, run, score, selected, deviceId, ensureDevice, labelProp])
 
   // run-phase keyboard shortcuts: 1–4 pick an answer, ←/→ navigate, F flags.
   // Ignored outside the run phase, with modifier keys held, or while a dialog
@@ -461,8 +482,19 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
         >
           <div className="absolute inset-0 sv-hero-glow opacity-40" />
           <div className="relative">
-            <div className="inline-flex items-center gap-2 rounded-full border border-rose-400/25 bg-rose-400/10 px-3.5 py-1.5 text-xs font-semibold text-rose-300">
-              <ClipboardCheck className="h-3.5 w-3.5" /> Test simulator · {POOL.length} question bank
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-2 rounded-full border border-rose-400/25 bg-rose-400/10 px-3.5 py-1.5 text-xs font-semibold text-rose-300">
+                <ClipboardCheck className="h-3.5 w-3.5" /> Test simulator · {POOL.length} question bank
+              </div>
+              {labelProp && (
+                <div
+                  className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-300"
+                  title="This run is scoped to a saved exam's mapped chapters"
+                >
+                  <GraduationCap className="h-3.5 w-3.5" aria-hidden />
+                  Exam-scoped test · {labelProp.split('|').pop() || 'saved exam'}
+                </div>
+              )}
             </div>
             <h1 className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl">Test yourself like it&apos;s the real thing</h1>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
@@ -1096,20 +1128,22 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
           <h2 className="mb-4 text-sm font-bold tracking-tight">Chapter breakdown</h2>
           <div className="grid gap-2 sm:grid-cols-2">
             {Object.entries(
-              run.questions.reduce<Record<number, { right: number; total: number }>>((acc, q, i) => {
-                const key = q.chapterNumber
+              run.questions.reduce<Record<string, { right: number; total: number }>>((acc, q, i) => {
+                // group by the REAL chapter id (derived from the section id) —
+                // chapter numbers alone collide across books
+                const key = q.sectionId.replace(/-s\d+$/, '')
                 acc[key] = acc[key] ?? { right: 0, total: 0 }
                 acc[key].total++
                 if (run.answers[i] === q.q.answer) acc[key].right++
                 return acc
               }, {})
             )
-              .sort((a, b) => Number(a[0]) - Number(b[0]))
-              .map(([chNum, { right, total }]) => {
-                const ch = LIBRARY_CHAPTERS.find((c) => c.number === Number(chNum))
+              .sort((a, b) => a[0].localeCompare(b[0]))
+              .map(([chId, { right, total }]) => {
+                const ch = LIBRARY_CHAPTERS.find((c) => c.id === chId)
                 return (
                   <div
-                    key={chNum}
+                    key={chId}
                     className="flex items-center gap-3 rounded-xl border border-border/60 bg-muted/20 px-3.5 py-2.5"
                   >
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-emerald-400/25 bg-emerald-400/10">
@@ -1117,7 +1151,7 @@ export function ExamView({ chapterId }: { chapterId?: string }) {
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="block truncate text-[12.5px] font-semibold">
-                        Ch {chNum} · {ch?.shortTitle ?? ''}
+                        Ch {ch?.number ?? '?'} · {ch?.shortTitle ?? chId}
                       </span>
                       <span className="mt-1 block h-1 overflow-hidden rounded-full bg-muted">
                         <span

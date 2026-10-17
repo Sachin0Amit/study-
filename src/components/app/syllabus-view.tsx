@@ -34,6 +34,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useToast } from '@/hooks/use-toast'
 import { useStudy } from '@/store/useStudy'
 import { getChapter, LIBRARY_BOOKS, LIBRARY_SUBJECTS } from '@/data/library'
+import { ExamCommandCenter } from './exam-command-center'
 
 // ---------------------------------------------------------------- types --
 
@@ -521,6 +522,22 @@ export function SyllabusView() {
   const ensureDevice = useStudy((s) => s.ensureDevice)
   const navigate = useStudy((s) => s.navigate)
 
+  // top-level mode: the Exam Command Center (default) or the classic topic plans
+  const [topMode, setTopMode] = useState<'exams' | 'plans'>(() => {
+    try {
+      return localStorage.getItem('sv-syllabus-mode') === 'plans' ? 'plans' : 'exams'
+    } catch {
+      return 'exams'
+    }
+  })
+  useEffect(() => {
+    try {
+      localStorage.setItem('sv-syllabus-mode', topMode)
+    } catch {
+      /* storage unavailable */
+    }
+  }, [topMode])
+
   const [stage, setStage] = useState<Stage>('input')
   const [tab, setTab] = useState<'name' | 'file'>('name')
 
@@ -987,8 +1004,50 @@ export function SyllabusView() {
 
   // ============================================================== render =
 
+  const modeSwitch = (
+    <div
+      role="tablist"
+      aria-label="Syllabus tools"
+      className="mb-8 inline-flex h-auto w-full max-w-md gap-1 rounded-xl border border-border/70 bg-card/60 p-1 sm:w-auto"
+    >
+      {(
+        [
+          { id: 'exams', label: 'Exam Command Center', icon: Target },
+          { id: 'plans', label: 'Topic Plans', icon: ClipboardList },
+        ] as const
+      ).map(({ id, label, icon: Icon }) => (
+        <button
+          key={id}
+          role="tab"
+          aria-selected={topMode === id}
+          onClick={() => setTopMode(id)}
+          className={`inline-flex min-h-10 flex-1 items-center justify-center gap-2 rounded-lg px-4 py-2 text-[13px] font-semibold transition-colors ${FOCUS_RING} ${
+            topMode === id
+              ? 'bg-emerald-400/15 text-emerald-600 dark:text-emerald-200'
+              : 'text-muted-foreground hover:text-foreground'
+          }`}
+        >
+          <Icon className="h-3.5 w-3.5" aria-hidden />
+          {label}
+        </button>
+      ))}
+    </div>
+  )
+
+  if (topMode === 'exams') {
+    return (
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
+        {modeSwitch}
+        <ExamCommandCenter />
+      </div>
+    )
+  }
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
+      {/* ---------------- mode switch ---------------- */}
+      {modeSwitch}
+
       {/* ---------------- hero ---------------- */}
       <div className="mb-8 sm:mb-10">
         <div className="flex items-center gap-4">
