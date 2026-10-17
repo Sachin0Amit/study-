@@ -3,7 +3,7 @@
 import { create } from 'zustand'
 
 export type View =
-  | { name: 'library' }
+  | { name: 'library'; domain?: string; topicId?: string }
   | { name: 'book'; bookId: string }
   | { name: 'chapter'; chapterId: string }
   | { name: 'lesson'; sectionId: string }
@@ -21,7 +21,6 @@ export type View =
   | { name: 'arena' }
   | { name: 'paper-dna' }
   | { name: 'palace'; sectionKey?: string }
-  | { name: 'living'; domain?: string; topicId?: string }
 
 interface ProgressEntry {
   status: 'in_progress' | 'completed'

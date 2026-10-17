@@ -1,6 +1,6 @@
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const businessEconomics: LivingDomainFile = {
+export const businessEconomics: UniverseDomainFile = {
   domain: 'Business & Economics',
   blurb:
     'Markets, money and organisations — the logic of prices, trade, investment and value creation.',

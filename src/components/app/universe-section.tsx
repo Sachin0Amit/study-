@@ -15,6 +15,7 @@ import {
   Compass,
   Cpu,
   Dna,
+  Globe,
   HeartPulse,
   Landmark,
   Languages,
@@ -26,7 +27,6 @@ import {
   Search,
   Sigma,
   Sparkles,
-  Sprout,
   TrendingUp,
   Users,
   X,
@@ -38,18 +38,18 @@ import { TeX } from '@/components/math'
 import { RichText } from '../rich-text'
 import { useStudy } from '@/store/useStudy'
 import {
-  LIVING_DOMAIN_STATS,
-  LIVING_STATS,
-  LIVING_TOPICS,
-  LIVING_TOPIC_BY_ID,
-  searchLivingTopics,
-} from '@/data/living'
-import type { LivingBlock, LivingTopic, Tier } from '@/data/living'
+  UNIVERSE_DOMAIN_STATS,
+  UNIVERSE_STATS,
+  UNIVERSE_TOPICS,
+  UNIVERSE_TOPIC_BY_ID,
+  searchUniverseTopics,
+} from '@/data/universe'
+import type { UniverseBlock, UniverseTopic, Tier } from '@/data/universe'
 
 /* ------------------------------------------------------------------ */
-/*  The Living Library — a permanently growing knowledge base.         */
-/*  Topics are hard-coded study guides across every field of human     */
-/*  knowledge; every expansion pass appends more, nothing is deleted.  */
+/*  The Knowledge Universe — the Library's deepest layer.              */
+/*  Complete study guides across every field of human knowledge,       */
+/*  hard-coded and expanded with every content pass.                   */
 /* ------------------------------------------------------------------ */
 
 const DOMAIN_ICONS: Record<string, typeof Atom> = {
@@ -78,6 +78,9 @@ const TIER_STYLE: Record<Tier, string> = {
   advanced: 'border-rose-500/30 bg-rose-500/10 text-rose-700 dark:text-rose-400',
 }
 
+const FOCUS_RING =
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
+
 function fmtWords(n: number): string {
   return n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}k` : String(n)
 }
@@ -96,14 +99,17 @@ function fmtDate(iso: string): string {
 
 /* ------------------------------ read state ------------------------- */
 
-const READ_KEY = 'sv-living-read'
+const READ_KEY = 'sv-universe-read'
+const LEGACY_READ_KEY = 'sv-living-read'
 
 function loadRead(): Set<string> {
   try {
-    const raw = localStorage.getItem(READ_KEY)
+    const raw = localStorage.getItem(READ_KEY) ?? localStorage.getItem(LEGACY_READ_KEY)
     if (!raw) return new Set()
     const arr = JSON.parse(raw)
-    return new Set(Array.isArray(arr) ? arr : [])
+    const set = new Set(Array.isArray(arr) ? arr : [])
+    if (localStorage.getItem(READ_KEY) === null) localStorage.setItem(READ_KEY, raw)
+    return set
   } catch {
     return new Set()
   }
@@ -117,9 +123,32 @@ function saveRead(set: Set<string>) {
   }
 }
 
+/** shared read-state hook — loads once, toggles persist to localStorage */
+function useUniverseRead() {
+  const [read, setRead] = useState<Set<string>>(new Set())
+
+  useEffect(() => {
+    // localStorage is an external system — read once, apply outside the render
+    const stored = loadRead()
+    queueMicrotask(() => setRead(stored))
+  }, [])
+
+  const toggleRead = (id: string) => {
+    setRead((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      saveRead(next)
+      return next
+    })
+  }
+
+  return { read, toggleRead }
+}
+
 /* ------------------------------ quiz ------------------------------- */
 
-function QuizBlock({ block, topicId }: { block: Extract<LivingBlock, { kind: 'quiz' }>; topicId: string }) {
+function QuizBlock({ block, topicId }: { block: Extract<UniverseBlock, { kind: 'quiz' }>; topicId: string }) {
   const [picked, setPicked] = useState<Record<number, number>>({})
 
   const correct = block.items.reduce((n, it, i) => (picked[i] === it.answer ? n + 1 : n), 0)
@@ -196,7 +225,7 @@ function QuizBlock({ block, topicId }: { block: Extract<LivingBlock, { kind: 'qu
 
 /* --------------------------- block renderer ------------------------ */
 
-function BlockView({ block, topicId }: { block: LivingBlock; topicId: string }) {
+function BlockView({ block, topicId }: { block: UniverseBlock; topicId: string }) {
   switch (block.kind) {
     case 'para':
       return (
@@ -292,21 +321,21 @@ function BlockView({ block, topicId }: { block: LivingBlock; topicId: string }) 
 
 /* ------------------------------ topic page ------------------------- */
 
-function TopicPage({
+export function UniverseTopicPage({
   topic,
   onBack,
   onNavigate,
   read,
   onToggleRead,
 }: {
-  topic: LivingTopic
+  topic: UniverseTopic
   onBack: () => void
   onNavigate: (domain: string, topicId: string) => void
   read: Set<string>
   onToggleRead: (id: string) => void
 }) {
   const siblings = useMemo(
-    () => LIVING_TOPICS.filter((t) => t.domain === topic.domain),
+    () => UNIVERSE_TOPICS.filter((t) => t.domain === topic.domain),
     [topic.domain],
   )
   const idx = siblings.findIndex((t) => t.id === topic.id)
@@ -319,7 +348,7 @@ function TopicPage({
       <button
         type="button"
         onClick={onBack}
-        className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        className={`mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground ${FOCUS_RING} rounded`}
       >
         <ArrowLeft className="h-4 w-4" /> {topic.domain}
       </button>
@@ -373,7 +402,7 @@ function TopicPage({
           {isRead ? 'Marked as read' : 'Mark as read'}
         </Button>
         <span className="text-xs text-muted-foreground">
-          {topic.concepts.length} concepts · Living Library
+          {topic.concepts.length} concepts · Knowledge Universe
         </span>
       </div>
 
@@ -383,7 +412,7 @@ function TopicPage({
             <button
               type="button"
               onClick={() => onNavigate(prev.domain, prev.id)}
-              className="group rounded-xl border border-border/60 bg-card/40 p-4 text-left transition-colors hover:border-foreground/25"
+              className={`group rounded-xl border border-border/60 bg-card/40 p-4 text-left transition-colors hover:border-foreground/25 ${FOCUS_RING}`}
             >
               <span className="mb-1 flex items-center gap-1 text-xs text-muted-foreground">
                 <ArrowLeft className="h-3 w-3" /> Previous
@@ -399,7 +428,7 @@ function TopicPage({
             <button
               type="button"
               onClick={() => onNavigate(next.domain, next.id)}
-              className="group rounded-xl border border-border/60 bg-card/40 p-4 text-right transition-colors hover:border-foreground/25"
+              className={`group rounded-xl border border-border/60 bg-card/40 p-4 text-right transition-colors hover:border-foreground/25 ${FOCUS_RING}`}
             >
               <span className="mb-1 flex items-center justify-end gap-1 text-xs text-muted-foreground">
                 Next <ArrowRight className="h-3 w-3" />
@@ -417,7 +446,7 @@ function TopicPage({
 
 /* ------------------------------ domain page ------------------------ */
 
-function DomainPage({
+export function UniverseDomainPage({
   domain,
   onBack,
   onOpenTopic,
@@ -429,10 +458,10 @@ function DomainPage({
   read: Set<string>
 }) {
   const [tier, setTier] = useState<Tier | 'all'>('all')
-  const stats = LIVING_DOMAIN_STATS.find((d) => d.domain === domain)
+  const stats = UNIVERSE_DOMAIN_STATS.find((d) => d.domain === domain)
   const topics = useMemo(
     () =>
-      LIVING_TOPICS.filter(
+      UNIVERSE_TOPICS.filter(
         (t) => t.domain === domain && (tier === 'all' || t.tier === tier),
       ),
     [domain, tier],
@@ -446,9 +475,9 @@ function DomainPage({
       <button
         type="button"
         onClick={onBack}
-        className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        className={`mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground ${FOCUS_RING} rounded`}
       >
-        <ArrowLeft className="h-4 w-4" /> Living Library
+        <ArrowLeft className="h-4 w-4" /> Library · Knowledge Universe
       </button>
 
       <div className="flex items-start gap-4">
@@ -476,7 +505,7 @@ function DomainPage({
             key={t}
             type="button"
             onClick={() => setTier(t)}
-            className={`rounded-full border px-3 py-1 text-xs transition-colors ${
+            className={`rounded-full border px-3 py-1 text-xs transition-colors ${FOCUS_RING} ${
               tier === t
                 ? 'border-foreground/30 bg-foreground text-background'
                 : 'border-border/60 bg-muted/30 text-muted-foreground hover:border-foreground/20'
@@ -500,7 +529,7 @@ function DomainPage({
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: Math.min(i * 0.03, 0.3), duration: 0.2 }}
             onClick={() => onOpenTopic(t.domain, t.id)}
-            className="group rounded-xl border border-border/60 bg-card/40 p-4 text-left transition-colors hover:border-foreground/25 hover:bg-card/70"
+            className={`group rounded-xl border border-border/60 bg-card/40 p-4 text-left transition-colors hover:border-foreground/25 hover:bg-card/70 ${FOCUS_RING}`}
           >
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0">
@@ -538,209 +567,244 @@ function DomainPage({
   )
 }
 
-/* ------------------------------ overview --------------------------- */
+/* ---------------------- library home section ----------------------- */
 
-function Overview({
-  onOpenDomain,
-  onOpenTopic,
-  read,
-}: {
-  onOpenDomain: (domain: string) => void
-  onOpenTopic: (domain: string, topicId: string) => void
-  read: Set<string>
-}) {
+/**
+ * The Knowledge Universe as a section of the Library home page.
+ * Renders the stats strip, topic search, latest-additions row and the
+ * 17-domain grid — all inside the Library view.
+ */
+export function UniverseSection() {
+  const navigate = useStudy((s) => s.navigate)
+  const { read } = useUniverseRead()
   const [query, setQuery] = useState('')
-  const results = useMemo(() => searchLivingTopics(query), [query])
+  const results = useMemo(() => searchUniverseTopics(query), [query])
+
+  const openTopic = (d: string, id: string) => navigate({ name: 'library', domain: d, topicId: id })
+  const openDomain = (d: string) => navigate({ name: 'library', domain: d })
+
+  /** topics added in the most recent expansion pass */
+  const freshest = useMemo(() => {
+    const latest = UNIVERSE_STATS.lastExpanded
+    return UNIVERSE_TOPICS.filter((t) => t.addedOn === latest).slice(0, 4)
+  }, [])
 
   return (
-    <div className="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6">
-      {/* hero */}
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-400">
-            <Sprout className="h-3 w-3" /> grows with every expansion pass
+    <section className="border-t border-border/60 bg-card/25" id="universe">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+        <div className="mb-8">
+          <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300/80">
+            <Globe className="h-3.5 w-3.5" /> The Knowledge Universe
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-foreground">The Living Library</h1>
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            Every field of human knowledge, one library
+          </h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            A permanently expanding knowledge base across {LIVING_STATS.domains} domains of human
-            knowledge — from foundation skills to emerging interdisciplinary fields. Every topic is
-            a complete study guide with concepts, formulas, worked examples, glossaries and a
-            self-check quiz.
+            Beyond your course tracks, the Library grows outward — complete study guides across{' '}
+            {UNIVERSE_STATS.domains} knowledge domains, from foundation skills to emerging
+            interdisciplinary fields. Every topic carries concepts, formulas, worked examples,
+            glossaries and a self-check quiz, and every expansion pass adds more.
           </p>
         </div>
-      </div>
 
-      {/* stats strip */}
-      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-        {[
-          { label: 'Topics', value: LIVING_STATS.topics },
-          { label: 'Words', value: fmtWords(LIVING_STATS.words) },
-          { label: 'Domains', value: LIVING_STATS.domains },
-          { label: 'Fields', value: LIVING_STATS.fields },
-          { label: 'Quiz items', value: LIVING_STATS.quizItems },
-          { label: 'Formulas', value: LIVING_STATS.formulas },
-        ].map((s) => (
-          <div
-            key={s.label}
-            className="rounded-xl border border-border/60 bg-card/40 px-3 py-2.5 text-center"
-          >
-            <div className="text-xl font-bold tabular-nums text-foreground">{s.value}</div>
-            <div className="text-[11px] uppercase tracking-wide text-muted-foreground">
-              {s.label}
+        {/* stats strip */}
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          {[
+            { label: 'Topics', value: String(UNIVERSE_STATS.topics) },
+            { label: 'Words', value: fmtWords(UNIVERSE_STATS.words) },
+            { label: 'Domains', value: String(UNIVERSE_STATS.domains) },
+            { label: 'Fields', value: String(UNIVERSE_STATS.fields) },
+            { label: 'Quiz items', value: String(UNIVERSE_STATS.quizItems) },
+            { label: 'Formulas', value: String(UNIVERSE_STATS.formulas) },
+          ].map((s) => (
+            <div
+              key={s.label}
+              className="rounded-xl border border-border/70 bg-card/50 px-3 py-2.5 text-center"
+            >
+              <div className="text-xl font-bold tabular-nums text-foreground">{s.value}</div>
+              <div className="text-[11px] uppercase tracking-wide text-muted-foreground">
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* search */}
+        <div className="relative mt-6 max-w-xl">
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <Input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search the universe — try “entropy”, “bayes”, “fatigue”, “harmony”…"
+            className="pl-9"
+            aria-label="Search the Knowledge Universe"
+          />
+        </div>
+
+        {query.trim() ? (
+          <div className="mt-6">
+            <p className="mb-3 text-sm text-muted-foreground">
+              {results.length} {results.length === 1 ? 'match' : 'matches'} for “{query.trim()}”
+            </p>
+            <div className="grid gap-3">
+              {results.map((t) => (
+                <button
+                  key={t.id}
+                  type="button"
+                  onClick={() => openTopic(t.domain, t.id)}
+                  className={`group rounded-xl border border-border/60 bg-card/40 p-4 text-left transition-colors hover:border-foreground/25 ${FOCUS_RING}`}
+                >
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="text-[15px] font-semibold text-foreground/90 group-hover:underline">
+                      {t.title}
+                    </h3>
+                    <Badge variant="outline" className={TIER_STYLE[t.tier]}>
+                      {t.tier[0].toUpperCase() + t.tier.slice(1)}
+                    </Badge>
+                    {read.has(t.id) && <Check className="h-3.5 w-3.5 text-emerald-500" />}
+                  </div>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {t.domain} · {t.field} · {t.readMins} min
+                  </p>
+                  <p className="mt-2 line-clamp-2 text-[13px] text-muted-foreground/90">
+                    {t.concepts.slice(0, 5).join(' · ')}
+                  </p>
+                </button>
+              ))}
+              {results.length === 0 && (
+                <p className="rounded-xl border border-dashed border-border/60 p-6 text-center text-sm text-muted-foreground">
+                  Nothing yet — the Universe expands with every pass, so this topic may arrive soon.
+                </p>
+              )}
             </div>
           </div>
-        ))}
-      </div>
-
-      {/* search */}
-      <div className="relative mt-6 max-w-xl">
-        <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-        <Input
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search all topics — try “entropy”, “bayes”, “fatigue”, “harmony”…"
-          className="pl-9"
-          aria-label="Search the Living Library"
-        />
-      </div>
-
-      {query.trim() ? (
-        <div className="mt-6">
-          <p className="mb-3 text-sm text-muted-foreground">
-            {results.length} {results.length === 1 ? 'match' : 'matches'} for “{query.trim()}”
-          </p>
-          <div className="grid gap-3">
-            {results.map((t) => (
-              <button
-                key={t.id}
-                type="button"
-                onClick={() => onOpenTopic(t.domain, t.id)}
-                className="group rounded-xl border border-border/60 bg-card/40 p-4 text-left transition-colors hover:border-foreground/25"
-              >
-                <div className="flex flex-wrap items-center gap-2">
-                  <h2 className="text-[15px] font-semibold text-foreground/90 group-hover:underline">
-                    {t.title}
-                  </h2>
-                  <Badge variant="outline" className={TIER_STYLE[t.tier]}>
-                    {t.tier[0].toUpperCase() + t.tier.slice(1)}
-                  </Badge>
-                  {read.has(t.id) && <Check className="h-3.5 w-3.5 text-emerald-500" />}
+        ) : (
+          <>
+            {/* freshest additions */}
+            {freshest.length > 0 && (
+              <div className="mt-8">
+                <div className="mb-3 flex items-center gap-3">
+                  <span className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-300/90">
+                    Fresh this pass · {fmtDate(UNIVERSE_STATS.lastExpanded)}
+                  </span>
+                  <span className="h-px flex-1 bg-gradient-to-r from-emerald-400/30 via-border to-transparent" />
                 </div>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  {t.domain} · {t.field} · {t.readMins} min
-                </p>
-                <p className="mt-2 line-clamp-2 text-[13px] text-muted-foreground/90">
-                  {t.concepts.slice(0, 5).join(' · ')}
-                </p>
-              </button>
-            ))}
-            {results.length === 0 && (
-              <p className="rounded-xl border border-dashed border-border/60 p-6 text-center text-sm text-muted-foreground">
-                Nothing yet — the library grows with every expansion pass, so this topic may arrive
-                soon.
-              </p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {freshest.map((t) => (
+                    <button
+                      key={t.id}
+                      type="button"
+                      onClick={() => openTopic(t.domain, t.id)}
+                      className={`group rounded-xl border border-emerald-400/20 bg-emerald-400/[0.04] p-4 text-left transition-colors hover:border-emerald-400/40 hover:bg-emerald-400/[0.08] ${FOCUS_RING}`}
+                    >
+                      <div className="flex flex-wrap items-center gap-2">
+                        <Sparkles className="h-3.5 w-3.5 text-emerald-300" />
+                        <h3 className="text-sm font-semibold text-foreground/90 group-hover:underline">
+                          {t.title}
+                        </h3>
+                      </div>
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        {t.domain} · {t.field} · {t.readMins} min read
+                      </p>
+                    </button>
+                  ))}
+                </div>
+              </div>
             )}
-          </div>
-        </div>
-      ) : (
-        <>
-          {/* expansion note */}
-          <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
-            <span>
-              Last expanded <strong className="text-foreground/80">{fmtDate(LIVING_STATS.lastExpanded)}</strong>
-            </span>
-            <span aria-hidden>·</span>
-            <span>
-              {LIVING_STATS.expansionDates.length} expansion{' '}
-              {LIVING_STATS.expansionDates.length === 1 ? 'pass' : 'passes'} to date
-            </span>
-            <span aria-hidden>·</span>
-            <span>{read.size} of {LIVING_STATS.topics} topics read</span>
-          </div>
 
-          {/* domain grid */}
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {LIVING_DOMAIN_STATS.map((d, i) => {
-              const Icon = DOMAIN_ICONS[d.domain] ?? BookOpen
-              return (
-                <motion.button
-                  key={d.domain}
-                  type="button"
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: Math.min(i * 0.04, 0.4), duration: 0.22 }}
-                  onClick={() => onOpenDomain(d.domain)}
-                  className="group flex flex-col rounded-xl border border-border/60 bg-card/40 p-5 text-left transition-all hover:-translate-y-0.5 hover:border-foreground/25 hover:shadow-sm"
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/60 bg-muted/40">
-                      <Icon className="h-5 w-5 text-foreground/70" />
+            {/* expansion note */}
+            <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
+              <span>
+                Last expanded{' '}
+                <strong className="text-foreground/80">{fmtDate(UNIVERSE_STATS.lastExpanded)}</strong>
+              </span>
+              <span aria-hidden>·</span>
+              <span>
+                {UNIVERSE_STATS.expansionDates.length} expansion{' '}
+                {UNIVERSE_STATS.expansionDates.length === 1 ? 'pass' : 'passes'} to date
+              </span>
+              <span aria-hidden>·</span>
+              <span>
+                {read.size} of {UNIVERSE_STATS.topics} topics read
+              </span>
+            </div>
+
+            {/* domain grid */}
+            <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {UNIVERSE_DOMAIN_STATS.map((d, i) => {
+                const Icon = DOMAIN_ICONS[d.domain] ?? BookOpen
+                return (
+                  <motion.button
+                    key={d.domain}
+                    type="button"
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-40px' }}
+                    transition={{ duration: 0.3, delay: Math.min(i * 0.04, 0.4) }}
+                    onClick={() => openDomain(d.domain)}
+                    className={`sv-card-glow group relative overflow-hidden rounded-2xl border border-border/80 bg-card p-6 text-left motion-safe:transition-all! motion-safe:hover:-translate-y-0.5 ${FOCUS_RING}`}
+                  >
+                    <div
+                      aria-hidden
+                      className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent"
+                    />
+                    <div className="flex items-start justify-between">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/60 bg-muted/40 transition-transform duration-300 group-hover:scale-105">
+                        <Icon className="h-6 w-6 text-foreground/70" />
+                      </div>
+                      <span className="text-2xl font-bold tabular-nums text-foreground/20 transition-colors group-hover:text-foreground/40">
+                        {d.topicCount}
+                      </span>
                     </div>
-                    <span className="text-2xl font-bold tabular-nums text-foreground/20 transition-colors group-hover:text-foreground/40">
-                      {d.topicCount}
-                    </span>
-                  </div>
-                  <h2 className="mt-3 text-[15px] font-semibold text-foreground/90 group-hover:underline">
-                    {d.domain}
-                  </h2>
-                  <p className="mt-1 line-clamp-2 flex-1 text-[13px] leading-relaxed text-muted-foreground">
-                    {d.blurb}
-                  </p>
-                  <div className="mt-3 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] text-muted-foreground">
-                    <span>{fmtWords(d.words)} words</span>
-                    <span aria-hidden>·</span>
-                    <span>{d.fields.length} fields</span>
-                    <span aria-hidden>·</span>
-                    <span className="inline-flex items-center gap-1">
-                      <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/70" />
-                      {d.core}
-                      <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-500/70" />
-                      {d.intermediate}
-                      <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-500/70" />
-                      {d.advanced}
-                    </span>
-                  </div>
-                </motion.button>
-              )
-            })}
-          </div>
-        </>
-      )}
-    </div>
+                    <h3 className="mt-3 text-[15px] font-semibold text-foreground/90 group-hover:underline">
+                      {d.domain}
+                    </h3>
+                    <p className="mt-1 line-clamp-2 flex-1 text-[13px] leading-relaxed text-muted-foreground">
+                      {d.blurb}
+                    </p>
+                    <div className="mt-3 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] text-muted-foreground">
+                      <span>{fmtWords(d.words)} words</span>
+                      <span aria-hidden>·</span>
+                      <span>{d.fields.length} fields</span>
+                      <span aria-hidden>·</span>
+                      <span className="inline-flex items-center gap-1">
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/70" />
+                        {d.core}
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-500/70" />
+                        {d.intermediate}
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-500/70" />
+                        {d.advanced}
+                      </span>
+                    </div>
+                    <div className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-300">
+                      Open domain
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </motion.button>
+                )
+              })}
+            </div>
+          </>
+        )}
+      </div>
+    </section>
   )
 }
 
-/* ------------------------------ root ------------------------------- */
-
-export function LivingView({ domain, topicId }: { domain?: string; topicId?: string }) {
+/** convenience wrapper: the whole universe drill-down flow used by LibraryView */
+export function UniverseDrilldown({ domain, topicId }: { domain?: string; topicId?: string }) {
   const navigate = useStudy((s) => s.navigate)
   const goBack = useStudy((s) => s.goBack)
-  const [read, setRead] = useState<Set<string>>(new Set())
+  const { read, toggleRead } = useUniverseRead()
 
-  useEffect(() => {
-    // localStorage is an external system — read once, apply outside the render
-    const stored = loadRead()
-    queueMicrotask(() => setRead(stored))
-  }, [])
-
-  const toggleRead = (id: string) => {
-    setRead((prev) => {
-      const next = new Set(prev)
-      if (next.has(id)) next.delete(id)
-      else next.add(id)
-      saveRead(next)
-      return next
-    })
-  }
-
-  const openTopic = (d: string, id: string) => navigate({ name: 'living', domain: d, topicId: id })
-  const openDomain = (d: string) => navigate({ name: 'living', domain: d })
+  const openTopic = (d: string, id: string) => navigate({ name: 'library', domain: d, topicId: id })
+  const openDomain = (d: string) => navigate({ name: 'library', domain: d })
 
   if (topicId) {
-    const topic = LIVING_TOPIC_BY_ID.get(topicId)
+    const topic = UNIVERSE_TOPIC_BY_ID.get(topicId)
     if (topic) {
       return (
-        <TopicPage
+        <UniverseTopicPage
           topic={topic}
           onBack={() => (domain ? openDomain(domain) : goBack())}
           onNavigate={openTopic}
@@ -752,11 +816,11 @@ export function LivingView({ domain, topicId }: { domain?: string; topicId?: str
   }
 
   if (domain) {
-    const exists = LIVING_DOMAIN_STATS.some((d) => d.domain === domain)
+    const exists = UNIVERSE_DOMAIN_STATS.some((d) => d.domain === domain)
     if (exists) {
-      return <DomainPage domain={domain} onBack={goBack} onOpenTopic={openTopic} read={read} />
+      return <UniverseDomainPage domain={domain} onBack={goBack} onOpenTopic={openTopic} read={read} />
     }
   }
 
-  return <Overview onOpenDomain={openDomain} onOpenTopic={openTopic} read={read} />
+  return null
 }

@@ -1,6 +1,6 @@
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const technologyApplied: LivingDomainFile = {
+export const technologyApplied: UniverseDomainFile = {
   domain: 'Technology & Applied Science',
   blurb: 'The applied engines of modern life — batteries, positioning systems, chip fabrication and the machines they power.',
   topics: [

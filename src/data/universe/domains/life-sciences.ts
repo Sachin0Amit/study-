@@ -1,13 +1,13 @@
 /**
- * Living Library — domain file: Life Sciences
+ * Knowledge Universe — domain file: Life Sciences
  *
  * Genetics, neuroscience, and plant biochemistry — complete lessons.
  * Future expansion passes append new topics below.
  */
 
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const lifeSciences: LivingDomainFile = {
+export const lifeSciences: UniverseDomainFile = {
   domain: 'Life Sciences',
   blurb:
     'Genetics, neuroscience, and plant biochemistry — how living systems store information, signal, and harvest energy.',

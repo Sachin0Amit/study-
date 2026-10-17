@@ -1,6 +1,6 @@
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const humanities: LivingDomainFile = {
+export const humanities: UniverseDomainFile = {
   domain: 'Humanities',
   blurb:
     'History, philosophy and the recorded human past — how people made meaning before and beyond the modern world.',

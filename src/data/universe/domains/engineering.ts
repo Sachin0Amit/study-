@@ -1,6 +1,6 @@
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const engineering: LivingDomainFile = {
+export const engineering: UniverseDomainFile = {
   domain: 'Engineering',
   blurb: 'The discipline of building systems that must work — bridges, chips, power grids and everything in between.',
   topics: [

@@ -1,6 +1,6 @@
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const environment: LivingDomainFile = {
+export const environment: UniverseDomainFile = {
   domain: 'Environment & Sustainability',
   blurb: "How Earth's climate, soils and life-support systems actually work — and how human choices stress or restore them.",
   topics: [

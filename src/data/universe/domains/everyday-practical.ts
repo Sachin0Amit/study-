@@ -1,6 +1,6 @@
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const everydayPractical: LivingDomainFile = {
+export const everydayPractical: UniverseDomainFile = {
   domain: 'Everyday Knowledge',
   blurb: 'Kitchen chemistry, paycheck literacy, and the probability behind everyday bets — knowledge that pays for itself.',
   topics: [

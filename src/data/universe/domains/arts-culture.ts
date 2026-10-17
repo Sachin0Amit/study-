@@ -1,6 +1,6 @@
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const artsCulture: LivingDomainFile = {
+export const artsCulture: UniverseDomainFile = {
   domain: 'Arts & Culture',
   blurb: 'Composition, harmony, and montage — the working craft knowledge behind images, chords, and cuts.',
   topics: [

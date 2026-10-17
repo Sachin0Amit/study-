@@ -1,6 +1,6 @@
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const socialSciences: LivingDomainFile = {
+export const socialSciences: UniverseDomainFile = {
   domain: 'Social Sciences',
   blurb:
     'How humans behave, bond, decide and govern together — psychology, sociology and political science at their meeting points.',

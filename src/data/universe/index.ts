@@ -1,12 +1,13 @@
 /**
- * The Living Library — aggregated index.
+ * The Knowledge Universe — aggregated index.
  *
  * Domains live in ./domains/*.ts. Every expansion pass appends topics;
  * this index recomputes stats at load time so counts and word totals
- * always reflect the actual content on disk.
+ * always reflect the actual content on disk. The Universe is not a
+ * separate section — it renders inside the Library as its deepest layer.
  */
 
-import type { LivingTopic, LivingDomainFile } from './types'
+import type { UniverseTopic, UniverseDomainFile } from './types'
 import { foundationLearning } from './domains/foundation-learning'
 import { physicalSciences } from './domains/physical-sciences'
 import { lifeSciences } from './domains/life-sciences'
@@ -26,7 +27,7 @@ import { everydayPractical } from './domains/everyday-practical'
 import { emergingInterdisciplinary } from './domains/emerging-interdisciplinary'
 
 /** Domain files in display order. Expansion passes may append new files here. */
-export const LIVING_DOMAIN_FILES: LivingDomainFile[] = [
+export const UNIVERSE_DOMAIN_FILES: UniverseDomainFile[] = [
   foundationLearning,
   physicalSciences,
   lifeSciences,
@@ -50,7 +51,7 @@ export const LIVING_DOMAIN_FILES: LivingDomainFile[] = [
 /* Derived data (recomputed so it can never drift from the content)   */
 /* ------------------------------------------------------------------ */
 
-function countTopicWords(t: LivingTopic): number {
+function countTopicWords(t: UniverseTopic): number {
   let n = 0
   for (const b of t.blocks) {
     if (b.kind === 'para' || b.kind === 'heading') n += b.text.split(/\s+/).filter(Boolean).length
@@ -66,16 +67,18 @@ function countTopicWords(t: LivingTopic): number {
 }
 
 /** Authoritative topic list with recomputed words/readMins. */
-export const LIVING_TOPICS: LivingTopic[] = LIVING_DOMAIN_FILES.flatMap((d) =>
+export const UNIVERSE_TOPICS: UniverseTopic[] = UNIVERSE_DOMAIN_FILES.flatMap((d) =>
   d.topics.map((t) => {
     const words = countTopicWords(t)
     return { ...t, words, readMins: Math.max(2, Math.round(words / 200)) }
   }),
 )
 
-export const LIVING_TOPIC_BY_ID: Map<string, LivingTopic> = new Map(LIVING_TOPICS.map((t) => [t.id, t]))
+export const UNIVERSE_TOPIC_BY_ID: Map<string, UniverseTopic> = new Map(
+  UNIVERSE_TOPICS.map((t) => [t.id, t]),
+)
 
-export interface LivingDomainStats {
+export interface UniverseDomainStats {
   domain: string
   blurb: string
   fields: string[]
@@ -87,7 +90,7 @@ export interface LivingDomainStats {
   lastAddedOn: string
 }
 
-export const LIVING_DOMAIN_STATS: LivingDomainStats[] = LIVING_DOMAIN_FILES.map((d) => {
+export const UNIVERSE_DOMAIN_STATS: UniverseDomainStats[] = UNIVERSE_DOMAIN_FILES.map((d) => {
   const topics = d.topics
   return {
     domain: d.domain,
@@ -102,7 +105,7 @@ export const LIVING_DOMAIN_STATS: LivingDomainStats[] = LIVING_DOMAIN_FILES.map(
   }
 })
 
-export interface LivingStats {
+export interface UniverseStats {
   domains: number
   fields: number
   topics: number
@@ -115,24 +118,27 @@ export interface LivingStats {
   expansionDates: string[]
 }
 
-export const LIVING_STATS: LivingStats = (() => {
+export const UNIVERSE_STATS: UniverseStats = (() => {
   const dates = new Set<string>()
   let quizItems = 0
   let formulas = 0
-  for (const t of LIVING_TOPICS) {
+  for (const t of UNIVERSE_TOPICS) {
     dates.add(t.addedOn)
     for (const b of t.blocks) {
       if (b.kind === 'quiz') quizItems += b.items.length
       if (b.kind === 'formula') formulas += 1
     }
   }
-  const lastExpanded = LIVING_TOPICS.reduce((latest, t) => (t.addedOn > latest ? t.addedOn : latest), '1970-01-01')
+  const lastExpanded = UNIVERSE_TOPICS.reduce(
+    (latest, t) => (t.addedOn > latest ? t.addedOn : latest),
+    '1970-01-01',
+  )
   return {
-    domains: LIVING_DOMAIN_FILES.length,
-    fields: new Set(LIVING_TOPICS.map((t) => t.field)).size,
-    topics: LIVING_TOPICS.length,
-    words: LIVING_TOPICS.reduce((n, t) => n + t.words, 0),
-    readMins: LIVING_TOPICS.reduce((n, t) => n + t.readMins, 0),
+    domains: UNIVERSE_DOMAIN_FILES.length,
+    fields: new Set(UNIVERSE_TOPICS.map((t) => t.field)).size,
+    topics: UNIVERSE_TOPICS.length,
+    words: UNIVERSE_TOPICS.reduce((n, t) => n + t.words, 0),
+    readMins: UNIVERSE_TOPICS.reduce((n, t) => n + t.readMins, 0),
     quizItems,
     formulas,
     lastExpanded,
@@ -141,11 +147,11 @@ export const LIVING_STATS: LivingStats = (() => {
 })()
 
 /** Lightweight full-text search across titles, concepts, fields and branches. */
-export function searchLivingTopics(query: string, limit = 30): LivingTopic[] {
+export function searchUniverseTopics(query: string, limit = 30): UniverseTopic[] {
   const q = query.trim().toLowerCase()
   if (!q) return []
   const terms = q.split(/\s+/)
-  return LIVING_TOPICS.filter((t) => {
+  return UNIVERSE_TOPICS.filter((t) => {
     const hay = (t.title + ' ' + t.domain + ' ' + t.field + ' ' + t.branch + ' ' + t.concepts.join(' ')).toLowerCase()
     return terms.every((term) => hay.includes(term))
   })
@@ -153,4 +159,4 @@ export function searchLivingTopics(query: string, limit = 30): LivingTopic[] {
     .slice(0, limit)
 }
 
-export type { LivingTopic, LivingDomainFile, LivingBlock, Tier } from './types'
+export type { UniverseTopic, UniverseDomainFile, UniverseBlock, Tier } from './types'

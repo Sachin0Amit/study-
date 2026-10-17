@@ -1,6 +1,6 @@
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const healthWellness: LivingDomainFile = {
+export const healthWellness: UniverseDomainFile = {
   domain: 'Health & Wellness',
   blurb: 'Evidence-based foundations for sleep, strength, and public health — the science behind feeling and functioning better.',
   topics: [

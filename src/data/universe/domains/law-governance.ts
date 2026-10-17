@@ -1,6 +1,6 @@
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const lawGovernance: LivingDomainFile = {
+export const lawGovernance: UniverseDomainFile = {
   domain: 'Law & Governance',
   blurb:
     'The rules societies write for power — constitutions, courts, treaties and the machinery that makes them hold.',

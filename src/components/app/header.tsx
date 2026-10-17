@@ -11,15 +11,13 @@ import {
   Search,
   Brain,
   Swords,
-  Sprout,
 } from 'lucide-react'
 import { useStudy } from '@/store/useStudy'
 import { CommandPalette } from './command-palette'
 import { ThemeToggle } from './theme-toggle'
 
 const NAV = [
-  { view: 'library', label: 'Library', icon: Library, easy: 'Home: all books' },
-  { view: 'living', label: 'Living', icon: Sprout, easy: 'Ever-growing knowledge library' },
+  { view: 'library', label: 'Library', icon: Library, easy: 'Home: all books + the Knowledge Universe' },
   { view: 'studio', label: 'Studio', icon: Sparkles, easy: 'Ask the AI faculty' },
   { view: 'twin', label: 'Twin', icon: Brain, easy: 'Brain scan of what you know' },
   { view: 'syllabus', label: 'Syllabus', icon: ClipboardList, easy: 'Map any syllabus to your books' },

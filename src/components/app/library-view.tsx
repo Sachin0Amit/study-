@@ -16,6 +16,7 @@ import {
   Library as LibraryIcon,
 } from 'lucide-react'
 import Hero3D from './hero3d'
+import { UniverseSection, UniverseDrilldown } from './universe-section'
 import {
   LIBRARY_SUBJECTS,
   LIBRARY_BOOKS,
@@ -24,6 +25,7 @@ import {
 } from '@/data/library'
 import { TOTAL_FORMULAS } from '@/data/formulas'
 import { allContent } from '@/data/content'
+import { UNIVERSE_STATS } from '@/data/universe'
 import { easySubjectLine } from '@/data/easy-library'
 import { EasyLine } from './easy-box'
 import { ChapterIcon } from './chapter-icon'
@@ -103,7 +105,7 @@ function HeroStat({ value, label }: { value: number; label: string }) {
   )
 }
 
-export function LibraryView() {
+export function LibraryView({ domain, topicId }: { domain?: string; topicId?: string } = {}) {
   const navigate = useStudy((s) => s.navigate)
   const totalSections = LIBRARY_SECTIONS.length
   const totalChapters = LIBRARY_CHAPTERS.length
@@ -112,6 +114,12 @@ export function LibraryView() {
   /** the most recently added book — hero CTA + chapter-map preview target */
   const latestBook = LIBRARY_BOOKS[LIBRARY_BOOKS.length - 1]
   const latestShortTitle = latestBook.title.split(':')[0]
+
+  /* Knowledge Universe drill-down: a domain or topic deep-link renders the
+     universe reader in place of the library home — still the Library view. */
+  if (domain || topicId) {
+    return <UniverseDrilldown domain={domain} topicId={topicId} />
+  }
 
   return (
     <div>
@@ -160,7 +168,7 @@ export function LibraryView() {
               </span>
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              StudyVerse turns your textbooks into a living curriculum — every section distilled into
+              StudyVerse turns your textbooks into an interactive curriculum — every section distilled into
               master notes, animated diagrams, hands-on labs and quizzes that actually check your
               understanding.
             </p>
@@ -219,15 +227,21 @@ export function LibraryView() {
               <span className="inline-flex items-center gap-1.5">
                 <Check className="h-3 w-3 text-emerald-400" aria-hidden />
                 {totalQuestions}-question test bank
+                <span aria-hidden className="text-muted-foreground/50">·</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Check className="h-3 w-3 text-emerald-400" aria-hidden />
+                {UNIVERSE_STATS.topics} Knowledge-Universe topics across {UNIVERSE_STATS.domains} domains
               </span>
             </div>
 
             {/* stats row */}
-            <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="mt-10 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-5">
               <HeroStat value={totalSections} label="sections of master content" />
               <HeroStat value={totalChapters} label="chapters covered" />
               <HeroStat value={totalTools} label="interactive labs" />
               <HeroStat value={TOTAL_FORMULAS} label="printable formulas" />
+              <HeroStat value={UNIVERSE_STATS.topics} label="universe study guides" />
             </div>
           </motion.div>
         </div>
@@ -443,6 +457,9 @@ export function LibraryView() {
           </div>
         </div>
       </section>
+
+      {/* ============ KNOWLEDGE UNIVERSE (every field of knowledge) ============ */}
+      <UniverseSection />
 
       {/* ============ WHAT'S INSIDE ============ */}
       <section className="border-t border-border/60 bg-card/25">

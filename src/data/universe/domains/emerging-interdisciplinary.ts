@@ -1,6 +1,6 @@
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const emergingInterdisciplinary: LivingDomainFile = {
+export const emergingInterdisciplinary: UniverseDomainFile = {
   domain: 'Emerging & Interdisciplinary',
   blurb: 'Where disciplines collide: genomes as code, feedback loops as universal grammar, and qubits stripped of the hype.',
   topics: [

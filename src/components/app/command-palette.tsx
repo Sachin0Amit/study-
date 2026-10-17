@@ -9,6 +9,7 @@ import {
   ClipboardList,
   Command,
   FlaskConical,
+  Globe,
   Layers,
   Library as LibraryIcon,
   BarChart3,
@@ -17,7 +18,6 @@ import {
   Search,
   Sigma,
   Sparkles,
-  Sprout,
   Swords,
   Terminal,
   Wand2,
@@ -39,6 +39,7 @@ const KIND_ICON = {
   concept: Brain,
   chapter: Layers,
   lab: FlaskConical,
+  universe: Globe,
 } as const
 
 type ViewName =
@@ -99,13 +100,7 @@ const QUICK_ACTIONS: {
     hint: 'Map any syllabus to your library',
     icon: ClipboardList,
   },
-  { view: 'library', label: 'Library', hint: '37 subject tracks · 540 chapters', icon: LibraryIcon },
-  {
-    view: 'living',
-    label: 'Living Library',
-    hint: 'ever-growing knowledge across every field',
-    icon: Sprout,
-  },
+  { view: 'library', label: 'Library', hint: '37 subject tracks · 540 chapters · Knowledge Universe', icon: LibraryIcon },
   { view: 'arena', label: 'Study Arena', hint: 'live 1v1 quiz battles · ELO', icon: Swords },
   { view: 'paper-dna', label: 'Paper-DNA Analyzer', hint: 'forensic topic prediction', icon: Scale },
   { view: 'palace', label: 'Memory Palaces', hint: 'visual journeys + narration', icon: Wand2 },
@@ -134,9 +129,9 @@ function useOsExecutor() {
           if (view === 'lesson' && typeof action.sectionId === 'string') {
             navigate({ name: 'lesson', sectionId: action.sectionId })
           } else if (
-            ['library', 'playground', 'progress', 'formulas', 'syllabus', 'living'].includes(view)
+            ['library', 'playground', 'progress', 'formulas', 'syllabus'].includes(view)
           ) {
-            navigate({ name: view as 'library' | 'playground' | 'progress' | 'formulas' | 'syllabus' | 'living' })
+            navigate({ name: view as 'library' | 'playground' | 'progress' | 'formulas' | 'syllabus' })
           } else {
             navigate({ name: 'library' })
           }
@@ -233,7 +228,13 @@ export function CommandPalette() {
     (item: SearchItem) => {
       setOpen(false)
       setQuery('')
-      if (item.sectionId) navigate({ name: 'lesson', sectionId: item.sectionId })
+      if (item.universeTopicId && item.universeDomain) {
+        navigate({
+          name: 'library',
+          domain: item.universeDomain,
+          topicId: item.universeTopicId,
+        })
+      } else if (item.sectionId) navigate({ name: 'lesson', sectionId: item.sectionId })
       else if (item.chapterId) navigate({ name: 'chapter', chapterId: item.chapterId })
     },
     [navigate]
@@ -292,7 +293,14 @@ export function CommandPalette() {
   const groups = useMemo(() => {
     const g: Record<string, SearchItem[]> = {}
     for (const r of results) {
-      const label = r.kind === 'concept' ? 'Concepts' : r.kind === 'chapter' ? 'Chapters' : 'Lessons'
+      const label =
+        r.kind === 'concept'
+          ? 'Concepts'
+          : r.kind === 'chapter'
+            ? 'Chapters'
+            : r.kind === 'universe'
+              ? 'Knowledge Universe'
+              : 'Lessons'
       ;(g[label] ??= []).push(r)
     }
     return g

@@ -1,5 +1,5 @@
 /**
- * The Living Library — a permanently growing knowledge base.
+ * The Knowledge Universe — the ever-expanding core of the Library.
  *
  * Topics live in ./domains/*.ts (one file per knowledge domain) and are
  * expanded over time: every content-expansion pass appends new topics and
@@ -11,7 +11,7 @@
 
 export type Tier = 'core' | 'intermediate' | 'advanced'
 
-export type LivingBlock =
+export type UniverseBlock =
   | { kind: 'para'; text: string }
   | { kind: 'heading'; text: string }
   | { kind: 'callout'; title: string; text: string; tone: 'insight' | 'warn' | 'path' }
@@ -21,7 +21,7 @@ export type LivingBlock =
   | { kind: 'quiz'; items: { q: string; options: string[]; answer: number; explain: string }[] }
   | { kind: 'list'; items: string[]; ordered?: boolean }
 
-export interface LivingTopic {
+export interface UniverseTopic {
   /** kebab-case, globally unique, stable forever: e.g. "phys-angular-momentum" */
   id: string
   title: string
@@ -36,11 +36,11 @@ export interface LivingTopic {
   readMins: number
   /** date this topic was added, YYYY-MM-DD */
   addedOn: string
-  blocks: LivingBlock[]
+  blocks: UniverseBlock[]
 }
 
-export interface LivingDomainFile {
+export interface UniverseDomainFile {
   domain: string
   blurb: string
-  topics: LivingTopic[]
+  topics: UniverseTopic[]
 }

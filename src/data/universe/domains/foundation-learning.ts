@@ -1,13 +1,13 @@
 /**
- * Living Library — domain file: Foundation Learning
+ * Knowledge Universe — domain file: Foundation Learning
  *
  * Study skills, reading strategies, and practical numeracy. Written as
  * complete lessons; future expansion passes append new topics below.
  */
 
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const foundationLearning: LivingDomainFile = {
+export const foundationLearning: UniverseDomainFile = {
   domain: 'Foundation Learning',
   blurb:
     'Study skills, reading strategy, and practical numeracy — the bedrock abilities that make every other domain easier to learn.',

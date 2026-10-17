@@ -1,13 +1,13 @@
 /**
- * Living Library — domain file: Physical Sciences
+ * Knowledge Universe — domain file: Physical Sciences
  *
  * Physics and chemistry from rotating bodies to reacting molecules.
  * Complete lessons; future expansion passes append new topics below.
  */
 
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const physicalSciences: LivingDomainFile = {
+export const physicalSciences: UniverseDomainFile = {
   domain: 'Physical Sciences',
   blurb:
     'Physics and chemistry from rotating bodies to reacting molecules — the quantitative rules of matter and energy.',

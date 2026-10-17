@@ -1,13 +1,13 @@
 /**
- * Living Library — domain file: Mathematics
+ * Knowledge Universe — domain file: Mathematics
  *
  * Calculus, probability, and linear algebra — complete lessons.
  * Future expansion passes append new topics below.
  */
 
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const mathematics: LivingDomainFile = {
+export const mathematics: UniverseDomainFile = {
   domain: 'Mathematics',
   blurb:
     'Calculus, probability, and linear algebra — the language of change, evidence, and structure.',

@@ -6,10 +6,11 @@ import {
   getSection,
 } from './library'
 import { allContent } from './content'
+import { UNIVERSE_TOPICS } from './universe'
 import { plainText } from '@/components/rich-text'
 
 export interface SearchItem {
-  kind: 'section' | 'concept' | 'chapter' | 'lab'
+  kind: 'section' | 'concept' | 'chapter' | 'lab' | 'universe'
   id: string
   title: string
   subtitle: string
@@ -19,6 +20,9 @@ export interface SearchItem {
   sectionId?: string
   chapterId?: string
   toolKey?: string
+  /** Knowledge Universe navigation target (inside the Library view) */
+  universeDomain?: string
+  universeTopicId?: string
   haystack: string
 }
 
@@ -76,6 +80,20 @@ export function buildSearchIndex(): SearchItem[] {
     }
   }
 
+  // Knowledge Universe topics — deep study guides across every field
+  for (const t of UNIVERSE_TOPICS) {
+    items.push({
+      kind: 'universe',
+      id: `universe-${t.id}`,
+      title: t.title,
+      subtitle: t.concepts.slice(0, 3).join(' · '),
+      context: `${t.domain} · ${t.field}`,
+      universeDomain: t.domain,
+      universeTopicId: t.id,
+      haystack: `${t.title} ${t.domain} ${t.field} ${t.branch} ${t.concepts.join(' ')}`.toLowerCase(),
+    })
+  }
+
   cachedIndex = items
   return items
 }
@@ -109,6 +127,7 @@ export function searchLibrary(query: string, limit = 24): SearchItem[] {
     if (item.kind === 'section') score += 6
     if (item.kind === 'concept') score += 3
     if (item.kind === 'chapter') score += 4
+    if (item.kind === 'universe') score += 4
     scored.push({ item, score })
   }
   return scored

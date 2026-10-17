@@ -1,6 +1,6 @@
-import type { LivingDomainFile } from '../types'
+import type { UniverseDomainFile } from '../types'
 
-export const computingAI: LivingDomainFile = {
+export const computingAI: UniverseDomainFile = {
   domain: 'Computing & AI',
   blurb: 'The algorithms, models and mathematics behind modern software — from hash tables to deep learning and cryptography.',
   topics: [
