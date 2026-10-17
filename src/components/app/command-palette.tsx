@@ -36,7 +36,7 @@ import {
   CommandItem,
   CommandList,
 } from '@/components/ui/command'
-import { searchLibrary, type SearchItem } from '@/data/search'
+import type { SearchItem } from '@/data/search'
 import { useStudy } from '@/store/useStudy'
 import {
   FocusTimer,
@@ -309,7 +309,29 @@ export function CommandPalette() {
   const gArmedRef = useRef(0)
   const { resolvedTheme, setTheme } = useTheme()
 
-  const results = useMemo(() => searchLibrary(query), [query])
+  /* The search index pulls the 52MB lesson corpus (allContent) — importing it
+     statically would drag that into every SSR pass and OOM the box. Load it
+     lazily in the background on mount; quick + system actions render
+     immediately, and full search results appear once the index is ready
+     (typically long before the user opens the palette). */
+  const searchFnRef = useRef<((q: string, limit?: number) => SearchItem[]) | null>(null)
+  const [searchReady, setSearchReady] = useState(false)
+  useEffect(() => {
+    let cancelled = false
+    void import('@/data/search').then((m) => {
+      if (cancelled) return
+      searchFnRef.current = m.searchLibrary
+      setSearchReady(true)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const results = useMemo(
+    () => (searchReady && searchFnRef.current ? searchFnRef.current(query) : []),
+    [query, searchReady]
+  )
 
   const jump = useCallback(
     (item: SearchItem) => {

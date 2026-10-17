@@ -1,31 +1,87 @@
 'use client'
 
 import { useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Sparkles, BookOpen, FlaskConical, Sigma, Layers, ClipboardCheck, Globe } from 'lucide-react'
+import { Sparkles, BookOpen, FlaskConical, Sigma, Layers, ClipboardCheck, Globe, Loader2 } from 'lucide-react'
 import { useStudy } from '@/store/useStudy'
 import { LIBRARY_BOOKS } from '@/data/library'
 import { UNIVERSE_STATS } from '@/data/universe'
 import { Header } from '@/components/app/header'
 import { LibraryView } from '@/components/app/library-view'
-import { BookView } from '@/components/app/book-view'
-import { ChapterView } from '@/components/app/chapter-view'
-import { LessonView } from '@/components/app/lesson-view'
-import { PlaygroundView } from '@/components/app/playground-view'
-import { ProgressView } from '@/components/app/progress-view'
-import { FlashcardsView } from '@/components/app/flashcards-view'
-import { FormulaView } from '@/components/app/formula-view'
-import { ExamView } from '@/components/app/exam-view'
-import { SearchView } from '@/components/app/search-view'
-import { SyllabusView } from '@/components/app/syllabus-view'
-import { StudioView } from '@/components/app/studio-view'
-import { TwinView } from '@/components/app/twin-view'
-import { RemixView } from '@/components/app/remix-view'
-import { ArenaView } from '@/components/app/arena-view'
-import { PaperDnaView } from '@/components/app/paper-dna-view'
-import { PalaceView } from '@/components/app/palace-view'
 import { ReadingProgress, ScrollTopButton } from '@/components/app/reading-progress'
 import { ThemeColorMeta } from '@/components/app/theme-color-meta'
+
+/* Heavy views (lesson corpus, labs, flashcards, exams…) are code-split so the
+   Library SSR stays light — the box OOM-killed next-server at ~3.2GB when the
+   52MB content corpus rode along on every request. Each view loads on first
+   navigation; deep links SSR the loading shell then hydrate. */
+function ViewLoading() {
+  return (
+    <div className="flex min-h-[60vh] items-center justify-center" role="status" aria-label="Loading view">
+      <Loader2 className="h-6 w-6 animate-spin text-emerald-300/70" />
+    </div>
+  )
+}
+
+const BookView = dynamic(() => import('@/components/app/book-view').then((m) => m.BookView), {
+  loading: ViewLoading,
+})
+const ChapterView = dynamic(
+  () => import('@/components/app/chapter-view').then((m) => m.ChapterView),
+  { loading: ViewLoading }
+)
+const LessonView = dynamic(
+  () => import('@/components/app/lesson-view').then((m) => m.LessonView),
+  { loading: ViewLoading }
+)
+const PlaygroundView = dynamic(
+  () => import('@/components/app/playground-view').then((m) => m.PlaygroundView),
+  { loading: ViewLoading }
+)
+const ProgressView = dynamic(
+  () => import('@/components/app/progress-view').then((m) => m.ProgressView),
+  { loading: ViewLoading }
+)
+const FlashcardsView = dynamic(
+  () => import('@/components/app/flashcards-view').then((m) => m.FlashcardsView),
+  { loading: ViewLoading }
+)
+const FormulaView = dynamic(
+  () => import('@/components/app/formula-view').then((m) => m.FormulaView),
+  { loading: ViewLoading }
+)
+const ExamView = dynamic(() => import('@/components/app/exam-view').then((m) => m.ExamView), {
+  loading: ViewLoading,
+})
+const SearchView = dynamic(
+  () => import('@/components/app/search-view').then((m) => m.SearchView),
+  { loading: ViewLoading }
+)
+const SyllabusView = dynamic(
+  () => import('@/components/app/syllabus-view').then((m) => m.SyllabusView),
+  { loading: ViewLoading }
+)
+const StudioView = dynamic(() => import('@/components/app/studio-view').then((m) => m.StudioView), {
+  loading: ViewLoading,
+})
+const TwinView = dynamic(() => import('@/components/app/twin-view').then((m) => m.TwinView), {
+  loading: ViewLoading,
+})
+const RemixView = dynamic(() => import('@/components/app/remix-view').then((m) => m.RemixView), {
+  loading: ViewLoading,
+})
+const ArenaView = dynamic(() => import('@/components/app/arena-view').then((m) => m.ArenaView), {
+  loading: ViewLoading,
+})
+const PaperDnaView = dynamic(
+  () => import('@/components/app/paper-dna-view').then((m) => m.PaperDnaView),
+  { loading: ViewLoading }
+)
+const PalaceView = dynamic(
+  () => import('@/components/app/palace-view').then((m) => m.PalaceView),
+  { loading: ViewLoading }
+)
 
 export default function Home() {
   const view = useStudy((s) => s.view)

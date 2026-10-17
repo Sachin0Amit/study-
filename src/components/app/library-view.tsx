@@ -23,8 +23,6 @@ import {
   LIBRARY_CHAPTERS,
   LIBRARY_SECTIONS,
 } from '@/data/library'
-import { TOTAL_FORMULAS } from '@/data/formulas'
-import { allContent } from '@/data/content'
 import { UNIVERSE_STATS } from '@/data/universe'
 import { easySubjectLine } from '@/data/easy-library'
 import { EasyLine } from './easy-box'
@@ -33,6 +31,12 @@ import { useStudy } from '@/store/useStudy'
 
 const FOCUS_RING =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
+
+/** Curated totals — kept as constants so the hero never imports the 52MB
+ *  lesson corpus (allContent) or the formula tables just to print numbers.
+ *  Re-verify with: bun run scripts/verify-counts.ts after content changes. */
+const TOTAL_QUIZ_QUESTIONS = 9_394
+const TOTAL_FORMULAS = 1_908
 
 const MATH_SYMBOLS = ['∀', '∃', '∈', '∑', '√', 'π', '∞', '≠', '⊆', '¬', '∧', '→', '⊕', '↔', '∅', 'Γ']
 
@@ -110,7 +114,7 @@ export function LibraryView({ domain, topicId }: { domain?: string; topicId?: st
   const totalSections = LIBRARY_SECTIONS.length
   const totalChapters = LIBRARY_CHAPTERS.length
   const totalTools = new Set(LIBRARY_CHAPTERS.map((c) => c.interactiveKey).filter(Boolean)).size
-  const totalQuestions = allContent.reduce((n, c) => n + c.quiz.length, 0)
+  const totalQuestions = TOTAL_QUIZ_QUESTIONS
   /** the most recently added book — hero CTA + chapter-map preview target */
   const latestBook = LIBRARY_BOOKS[LIBRARY_BOOKS.length - 1]
   const latestShortTitle = latestBook.title.split(':')[0]
