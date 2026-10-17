@@ -7,10 +7,11 @@
  * elimination (partial pivoting). No external math libraries.
  */
 
-import { useMemo, useState } from 'react'
-import { motion } from 'framer-motion'
-import { AlertTriangle, CircuitBoard, Play, Plus, RotateCcw, Trash2, Zap } from 'lucide-react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { AlertTriangle, CircuitBoard, Play, Plus, RotateCcw, Target, Trash2, Zap } from 'lucide-react'
 import { RING, fmt } from './types'
+import { LabMissions, getMissions, useMissions } from './missions'
 
 /* ------------------------------------------------------------------ */
 /*  Model                                                              */
@@ -384,6 +385,23 @@ export function CircuitLab() {
   const [value, setValue] = useState('1000')
   const [result, setResult] = useState<SolveResult | null>(null)
   const [presetNote, setPresetNote] = useState<string | null>(null)
+  const { fire } = useMissions('circuit')
+  const [toast, setToast] = useState<string | null>(null)
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (toastTimer.current) clearTimeout(toastTimer.current)
+    }
+  }, [])
+
+  const onMissionEvent = (missionId: string, objectiveId: string) => {
+    const m = getMissions('circuit').find((x) => x.id === missionId)
+    const o = m?.objectives.find((x) => x.id === objectiveId)
+    setToast(o?.text ?? 'Objective complete')
+    if (toastTimer.current) clearTimeout(toastTimer.current)
+    toastTimer.current = setTimeout(() => setToast(null), 2600)
+  }
 
   const knownNodes = useMemo(() => {
     const s = new Set<string>([GROUND])
@@ -429,6 +447,11 @@ export function CircuitLab() {
     ])
     setResult(null)
     setPresetNote(null)
+    if (kind === 'vsource') fire('cir-add-source')
+    else {
+      fire('cir-add-resistor')
+      if (parsedValue <= 1) fire('cir-add-short')
+    }
   }
 
   const removeComponent = (id: number) => {
@@ -437,15 +460,30 @@ export function CircuitLab() {
     setPresetNote(null)
   }
 
+  const fireSolveEvents = (comps: Comp[], r: SolveResult) => {
+    if (!r.ok) return
+    fire('cir-solve-ok')
+    const resistors = comps.filter((c) => c.kind === 'resistor')
+    if (resistors.length >= 2) fire('cir-solve-two-r')
+    if (resistors.some((c) => c.value <= 1)) fire('cir-solve-short')
+  }
+
   const loadPreset = (p: Preset) => {
     const built = p.build()
     setComps(built)
     // instant feedback — solve the preset right away
-    setResult(solveMNA(built))
+    const r = solveMNA(built)
+    setResult(r)
     setPresetNote(p.note)
+    fire('cir-load-preset')
+    fireSolveEvents(built, r)
   }
 
-  const solve = () => setResult(solveMNA(comps))
+  const solve = () => {
+    const r = solveMNA(comps)
+    setResult(r)
+    fireSolveEvents(comps, r)
+  }
 
   const unit = kind === 'resistor' ? 'Ω' : 'V'
   const solved = result?.ok === true
@@ -455,10 +493,12 @@ export function CircuitLab() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
-      className="space-y-5"
+      className="relative space-y-5"
     >
+      <LabMissions missions={getMissions('circuit')} activeLabId="circuit" onEvent={onMissionEvent} />
+
       {/* header */}
-      <div className="flex items-start gap-3">
+      <div className="flex items-start gap-3 md:pr-[336px]">
         <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-emerald-400/25 bg-emerald-400/10">
           <CircuitBoard className="h-5 w-5 text-emerald-300" aria-hidden="true" />
         </span>
@@ -765,6 +805,23 @@ export function CircuitLab() {
           )}
         </div>
       </div>
+
+      {/* objective toast */}
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            key={toast}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            className="pointer-events-none absolute bottom-2 right-2 z-30 flex items-center gap-2 rounded-xl border border-emerald-400/40 bg-card/95 px-3.5 py-2.5 text-[12px] font-semibold text-emerald-100 shadow-lg"
+            role="status"
+          >
+            <Target className="h-4 w-4 shrink-0 text-emerald-300" aria-hidden="true" />
+            <span className="max-w-[260px]">{toast}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   )
 }

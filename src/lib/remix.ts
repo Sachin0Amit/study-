@@ -27,6 +27,8 @@ export interface RemixStep {
   reason: string
   pKnown: number | null
   bridge: boolean // needs a generated bridge lesson before starting
+  done?: boolean // P4: learner marked this step complete (progress tracking)
+  completedAt?: string | null // P4: ISO timestamp when the step was checked off
 }
 
 export interface RemixResult {
@@ -351,5 +353,78 @@ export function parseSteps(raw: string): RemixStep[] {
     )
   } catch {
     return []
+  }
+}
+
+// ------------------------------ plan progress (P4) ---------------------------
+
+export interface PlanProgress {
+  totalSteps: number
+  doneSteps: number
+  openSteps: number
+  percent: number
+  currentDay: number // 1-based day index of "now" relative to the plan start
+  overdueDays: number[] // day slots whose date has passed with steps still open
+  velocity: number | null // completed steps/day since the plan started
+  lastCompletedAt: string | null
+}
+
+function startOfDay(d: Date): number {
+  return Math.floor(
+    Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86_400_000
+  )
+}
+
+/** day index (1-based) of `at` relative to a plan that started on `startDate` */
+export function planDayIndex(startDate: Date, at: Date): number {
+  return startOfDay(at) - startOfDay(startDate) + 1
+}
+
+/**
+ * Progress + slip metrics for a saved plan: completion counts, which day slots
+ * are overdue, and the learner's completion velocity (from completedAt stamps
+ * when present, else a done-count/time-elapsed estimate).
+ */
+export function planProgress(
+  steps: RemixStep[],
+  startDate: Date,
+  horizonDays: number,
+  now: Date = new Date()
+): PlanProgress {
+  const totalSteps = steps.length
+  const done = steps.filter((s) => s.done)
+  const doneSteps = done.length
+  const percent = totalSteps ? Math.round((doneSteps / totalSteps) * 100) : 0
+
+  const currentDay = Math.max(1, planDayIndex(startDate, now))
+  const byDay = new Map<number, RemixStep[]>()
+  for (const s of steps) {
+    const list = byDay.get(s.day)
+    if (list) list.push(s)
+    else byDay.set(s.day, [s])
+  }
+  const overdueDays: number[] = []
+  for (const [day, list] of byDay) {
+    if (day < currentDay && list.some((s) => !s.done)) overdueDays.push(day)
+  }
+  overdueDays.sort((a, b) => a - b)
+
+  // velocity — completions per day since the plan started (≥ 1 day window)
+  const stamps = done
+    .map((s) => (typeof s.completedAt === 'string' ? Date.parse(s.completedAt) : NaN))
+    .filter((t) => Number.isFinite(t))
+    .sort((a, b) => a - b)
+  const elapsed = Math.max(1, currentDay - 1)
+  const velocity = doneSteps > 0 ? Math.round((doneSteps / elapsed) * 10) / 10 : 0
+
+  return {
+    totalSteps,
+    doneSteps,
+    openSteps: totalSteps - doneSteps,
+    percent,
+    currentDay,
+    overdueDays,
+    velocity,
+    lastCompletedAt: stamps.length ? new Date(stamps[stamps.length - 1]).toISOString() : null,
   }
 }

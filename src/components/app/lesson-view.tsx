@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
+import { Fragment, useCallback, useEffect, useMemo, useState, useSyncExternalStore } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
   ArrowLeft,
@@ -19,9 +19,11 @@ import {
   Atom,
   Pencil,
   FileImage,
+  CloudDownload,
 } from 'lucide-react'
 import { getBook, getChapter, getSection, getSections } from '@/data/library'
 import { getSectionContent } from '@/data/content'
+import { getOfflineSection } from '@/lib/offline-cache'
 import type { ChapterMeta, DepthBlock, DepthTier, DetailedDerivation, LessonFigure, QuizQuestion, SectionContent, SectionMeta } from '@/data/library'
 import { RichText, plainText } from '../rich-text'
 import { shuffleQuizOptions } from '@/lib/quiz-shuffle'
@@ -245,6 +247,22 @@ const KIND: Record<string, { label: string; color: string; block?: 'def' | 'thm'
   insight: { label: 'Insight', color: 'text-rose-500 dark:text-rose-300', block: 'note' },
 }
 
+/* Live network flag for the offline-copy fallback (X9 Pro download manager). */
+function useOnlineFlag() {
+  return useSyncExternalStore(
+    (cb) => {
+      window.addEventListener('online', cb)
+      window.addEventListener('offline', cb)
+      return () => {
+        window.removeEventListener('online', cb)
+        window.removeEventListener('offline', cb)
+      }
+    },
+    () => navigator.onLine,
+    () => true
+  )
+}
+
 export function LessonView({ sectionId }: { sectionId: string }) {
   const navigate = useStudy((s) => s.navigate)
   const markViewed = useStudy((s) => s.markViewed)
@@ -260,7 +278,30 @@ export function LessonView({ sectionId }: { sectionId: string }) {
   const section = getSection(sectionId)
   const chapter = section ? getChapter(section.chapterId) : undefined
   const siblings = section ? getSections(section.chapterId) : []
-  const content: SectionContent | undefined = getSectionContent(sectionId)
+
+  /* Offline pin fallback (X9 Pro): the bundled content graph stays the primary
+   * source, but when there is no connection and this section was pinned through
+   * the Download Manager, the IndexedDB copy takes over — the lesson keeps
+   * reading even if the content bundle is not on this device. */
+  const online = useOnlineFlag()
+  const bundleContent = getSectionContent(sectionId)
+  const [offlineCopy, setOfflineCopy] = useState<{ sectionId: string; content: SectionContent } | null>(null)
+  useEffect(() => {
+    if (online) return
+    let alive = true
+    void getOfflineSection(sectionId)
+      .then((payload) => {
+        if (alive && payload && payload.content) setOfflineCopy({ sectionId, content: payload.content })
+      })
+      .catch(() => {
+        /* offline cache unavailable — bundled content still renders */
+      })
+    return () => {
+      alive = false
+    }
+  }, [sectionId, online])
+  const readingOfflineCopy = !online && offlineCopy !== null && offlineCopy.sectionId === sectionId
+  const content: SectionContent | undefined = readingOfflineCopy ? offlineCopy.content : bundleContent
 
   const idx = siblings.findIndex((s) => s.id === sectionId)
 
@@ -433,6 +474,14 @@ export function LessonView({ sectionId }: { sectionId: string }) {
           </h1>
           <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 font-sans text-[12px] text-book-soft">
             <span>~{content?.readingTime ?? 10} min read</span>
+            {readingOfflineCopy && (
+              <span
+                className="inline-flex items-center gap-1.5 font-semibold text-emerald-600 dark:text-emerald-300"
+                title="No connection — reading the copy pinned on this device"
+              >
+                <CloudDownload className="h-3.5 w-3.5" aria-hidden /> Offline copy
+              </span>
+            )}
             {content?.depth?.length ? (
               <span
                 className="inline-flex items-center gap-1.5"

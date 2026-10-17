@@ -96,9 +96,9 @@ export async function PATCH(req: NextRequest, { params }: Params) {
       await recordTwinEvent({
         deviceId: plan.deviceId,
         skillKey,
-        kind: 'bridge',
+        kind: 'read',
         correct: null,
-        weight: 2,
+        weight: 3,
         meta: { planId: plan.id, action: 'step-complete' },
       })
       return NextResponse.json({ ok: true })

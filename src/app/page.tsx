@@ -259,13 +259,13 @@ export default function Home() {
                   <BookOpen className="h-3 w-3" /> 60 labs · 2,100 lessons
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <Layers className="h-3 w-3" /> SRS flashcards · 11,700+ cards
+                  <Layers className="h-3 w-3" /> SRS flashcards · 12,400+ cards
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
                   <Sigma className="h-3 w-3" /> 1,974 printable formulas
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <ClipboardCheck className="h-3 w-3" /> 8,862-question test bank
+                  <ClipboardCheck className="h-3 w-3" /> 9,394-question test bank
                 </span>
               </div>
               <div className="flex flex-col gap-2">
@@ -285,7 +285,7 @@ export default function Home() {
           <div className="mt-8 flex flex-col gap-2 border-t border-border/60 pt-5 text-[11px] text-muted-foreground/70 sm:flex-row sm:items-center sm:justify-between">
             <span>StudyVerse — master every book, interactively.</span>
             <span className="font-mono">
-              4,036 lessons · 60 labs · 8,862 quiz questions · 540 chapters · 37 books · 37 subjects ·{' '}
+              4,036 lessons · 60 labs · 9,394 quiz questions · 540 chapters · 37 books · 37 subjects ·{' '}
               {UNIVERSE_STATS.topics} universe guides
             </span>
           </div>

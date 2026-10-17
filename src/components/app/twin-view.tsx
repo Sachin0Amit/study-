@@ -11,23 +11,29 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import type { Variants } from 'framer-motion'
+import Markdown from 'react-markdown'
 import {
   Activity,
   ArrowDownRight,
+  ArrowRight,
   ArrowUpRight,
   Brain,
   ChevronDown,
   ChevronRight,
+  Loader2,
   Minus,
   RefreshCw,
+  Share2,
   Sparkles,
+  Stethoscope,
   Timer,
   TrendingDown,
   TrendingUp,
   Zap,
 } from 'lucide-react'
 import { useStudy } from '@/store/useStudy'
-import type { SubjectRollup, TwinForecast, TwinSkill } from '@/lib/twin'
+import type { SubjectRollup, TwinForecast, TwinSkill, TwinSnapshot } from '@/lib/twin'
+import { TwinGraph } from '@/components/app/twin-graph'
 
 // ------------------------------ shared visuals ------------------------------
 
@@ -80,6 +86,64 @@ interface TwinData {
   strong: TwinSkill[]
   decaying: TwinSkill[]
   skillCount: number
+}
+
+// ------------------------------ X1 Pro · AI diagnosis payload -----------------
+
+interface InsightSkill {
+  key: string
+  number: number
+  title: string
+  chapterTitle: string
+  subjectName: string
+  mastery: number
+  urgency: number
+  evidence: number
+  lastSeen: string | null
+  trend: number
+  lost: number
+}
+
+interface InsightChainLink {
+  key: string
+  number: number
+  title: string
+  mastery: number | null // null → untouched prerequisite
+}
+
+interface InsightPath {
+  subject: string
+  target: { key: string; number: number; title: string; mastery: number }
+  chain: InsightChainLink[] // root-first
+  summary: string
+}
+
+interface InsightData {
+  diagnosis: string
+  criticalPaths: InsightPath[]
+  weakestSkills: InsightSkill[]
+  llm: boolean
+  stats: {
+    computedAt: string
+    evidenceEvents: number
+    evidencedSkills: number
+    universe: number
+    strongSkills: number
+    fragileSkills: number
+    decayingSkills: number
+    velocityPerDay: number
+    projectedCoverage7d: number
+    projectedCoverage30d: number
+    daysToFullCoverage: number | null
+    subjectsLit: number
+    weakestSubjects: {
+      subjectId: string
+      subjectName: string
+      inferredMastery: number
+      evidencedSkills: number
+      skills: number
+    }[]
+  }
 }
 
 // ------------------------------ colour + format helpers ----------------------
@@ -946,6 +1010,272 @@ function HowItWorks() {
   )
 }
 
+// ------------------------------ X1 Pro · AI diagnosis panel -------------------
+
+const DIAGNOSE_STAGES = [
+  'weighing every skill’s evidence',
+  'walking prerequisite chains',
+  'checking decay and momentum',
+  'writing the verdict',
+]
+
+function InsightStatTile({ icon: Icon, label, value, tone }: { icon: typeof Zap; label: string; value: string; tone: string }) {
+  return (
+    <div className="rounded-xl border border-border/60 bg-muted/20 p-3">
+      <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+        <Icon className={`h-3 w-3 ${tone}`} aria-hidden /> {label}
+      </p>
+      <p className={`mt-1.5 font-mono text-lg font-bold ${tone}`}>{value}</p>
+    </div>
+  )
+}
+
+function TwinDiagnosis({ deviceId, onOpen }: { deviceId: string; onOpen: (key: string) => void }) {
+  const [result, setResult] = useState<InsightData | null>(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
+  const [stage, setStage] = useState(0)
+
+  const run = useCallback(async () => {
+    setLoading(true)
+    setError(false)
+    setStage(0)
+    try {
+      const res = await fetch('/api/twin/insight', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ deviceId }),
+      })
+      if (!res.ok) throw new Error(`insight fetch failed: ${res.status}`)
+      const json = (await res.json()) as InsightData
+      setResult(json)
+    } catch {
+      setError(true)
+    } finally {
+      setLoading(false)
+    }
+  }, [deviceId])
+
+  // rotate the "thinking" stage label while the LLM works
+  useEffect(() => {
+    if (!loading) return
+    const t = setInterval(() => setStage((s) => (s + 1) % DIAGNOSE_STAGES.length), 3500)
+    return () => clearInterval(t)
+  }, [loading])
+
+  const s = result?.stats
+
+  return (
+    <div className="rounded-2xl border border-border/80 bg-card/60 p-4 backdrop-blur-sm sm:p-5">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+        <h2 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300/80">
+          <Stethoscope className="h-3.5 w-3.5" aria-hidden /> AI diagnosis — the coach reads your twin
+        </h2>
+        {result && (
+          <div className="flex items-center gap-2">
+            <span
+              className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[10.5px] ${
+                result.llm
+                  ? 'border-emerald-400/30 bg-emerald-400/10 text-emerald-300'
+                  : 'border-amber-400/30 bg-amber-400/10 text-amber-300'
+              }`}
+            >
+              {result.llm ? 'AI coach' : 'local fallback'}
+            </span>
+            <button
+              type="button"
+              onClick={() => void run()}
+              disabled={loading}
+              className={`inline-flex items-center gap-1.5 rounded-xl border border-border/80 bg-card px-3 py-1.5 text-[12px] font-semibold text-muted-foreground transition-colors hover:border-emerald-400/40 hover:text-emerald-200 disabled:opacity-60 ${RING}`}
+            >
+              <RefreshCw className={`h-3.5 w-3.5 ${loading ? 'animate-spin' : ''}`} aria-hidden />
+              Re-run
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* ---------------- idle ---------------- */}
+      {!result && !loading && !error && (
+        <div className="rounded-xl border border-dashed border-emerald-400/30 bg-emerald-400/5 p-6 text-center sm:p-8">
+          <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-2xl border border-emerald-400/30 bg-emerald-400/10">
+            <Stethoscope className="h-5 w-5 text-emerald-300" aria-hidden />
+          </span>
+          <p className="mx-auto mt-3 max-w-md text-[13px] leading-relaxed text-muted-foreground">
+            One deep pass over your whole twin — mastery rollups, decay risks and blocking prerequisite
+            chains — distilled by a blunt-but-supportive cognitive coach into four sections: what your
+            brain shows, what blocks it, three moves this week, and where your pace is heading.
+          </p>
+          <button
+            type="button"
+            onClick={() => void run()}
+            className={`mt-5 inline-flex items-center gap-2 rounded-xl bg-emerald-400/15 px-5 py-2.5 text-sm font-semibold text-emerald-200 transition-colors hover:bg-emerald-400/25 ${RING}`}
+          >
+            <Sparkles className="h-4 w-4" aria-hidden /> Run Diagnosis
+          </button>
+          <p className="mt-2.5 font-mono text-[10.5px] text-muted-foreground/70">one LLM pass · ~10–20s</p>
+        </div>
+      )}
+
+      {/* ---------------- loading ---------------- */}
+      {loading && (
+        <div className="rounded-xl border border-border/70 bg-muted/20 p-6 sm:p-8" aria-busy="true">
+          <div className="flex items-center gap-3">
+            <Loader2 className="h-5 w-5 animate-spin text-emerald-300" aria-hidden />
+            <div>
+              <p className="text-[13.5px] font-semibold">Reading your twin…</p>
+              <p className="mt-0.5 font-mono text-[11px] text-muted-foreground">{DIAGNOSE_STAGES[stage]}</p>
+            </div>
+          </div>
+          <div className="mt-5 space-y-2.5">
+            {[92, 74, 58].map((w, i) => (
+              <div
+                key={i}
+                className="h-2.5 animate-pulse rounded-full bg-muted"
+                style={{ width: `${w}%`, animationDelay: `${i * 200}ms` }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* ---------------- error ---------------- */}
+      {error && !loading && (
+        <div className="rounded-xl border border-rose-400/30 bg-rose-400/5 p-6 text-center">
+          <p className="text-[13.5px] font-semibold text-rose-200">The diagnosis didn&apos;t land</p>
+          <p className="mx-auto mt-1 max-w-sm text-[12.5px] text-muted-foreground">
+            The coach line dropped mid-session — your twin is fine. Try again.
+          </p>
+          <button
+            type="button"
+            onClick={() => void run()}
+            className={`mt-4 inline-flex items-center gap-2 rounded-xl bg-rose-400/15 px-4 py-2 text-sm font-semibold text-rose-200 transition-colors hover:bg-rose-400/25 ${RING}`}
+          >
+            <RefreshCw className="h-4 w-4" aria-hidden /> Try again
+          </button>
+        </div>
+      )}
+
+      {/* ---------------- result ---------------- */}
+      {result && !loading && s && (
+        <div className="space-y-5">
+          {/* stats row */}
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+            <InsightStatTile icon={Zap} label="velocity" value={s.velocityPerDay.toFixed(1)} tone="text-emerald-300" />
+            <InsightStatTile icon={Timer} label="projected +30d" value={covPct(s.projectedCoverage30d)} tone="text-amber-300" />
+            <InsightStatTile icon={TrendingDown} label="fragile" value={fmtInt(s.fragileSkills)} tone="text-rose-300" />
+            <InsightStatTile icon={Activity} label="skills lit" value={`${fmtInt(s.evidencedSkills)}/${fmtInt(s.universe)}`} tone="text-emerald-300" />
+          </div>
+
+          {/* critical path chips */}
+          <div>
+            <h3 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-rose-300/80">
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden /> Critical prerequisite paths
+            </h3>
+            {result.criticalPaths.length === 0 ? (
+              <p className="mt-2 rounded-xl border border-dashed border-border/70 bg-muted/20 p-4 text-[12.5px] text-muted-foreground">
+                No blocking prerequisite chains detected — weakness is spread, not stacked.
+              </p>
+            ) : (
+              <div className="mt-2 space-y-2">
+                {result.criticalPaths.map((path, i) => (
+                  <div
+                    key={`${path.target.key}-${i}`}
+                    className="rounded-xl border border-border/70 bg-muted/20 p-3"
+                  >
+                    <p className="mb-2 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                      {path.subject} · unblock this first
+                    </p>
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      {path.chain.map((link, j) => (
+                        <span key={link.key} className="flex items-center gap-1.5">
+                          {j > 0 && <ChevronRight className="h-3 w-3 text-muted-foreground/50" aria-hidden />}
+                          <button
+                            type="button"
+                            onClick={() => onOpen(link.key)}
+                            title={`Open §${link.number} ${link.title}`}
+                            className={`inline-flex max-w-[240px] items-center gap-1.5 rounded-lg border border-border/70 bg-card px-2 py-1 text-[11px] font-medium transition-colors hover:border-emerald-400/40 hover:text-emerald-200 ${RING}`}
+                          >
+                            <span className="truncate">
+                              §{link.number} {link.title}
+                            </span>
+                            <span
+                              className={`shrink-0 font-mono text-[9.5px] font-bold ${
+                                link.mastery === null ? 'text-muted-foreground' : masteryText(link.mastery)
+                              }`}
+                            >
+                              {link.mastery === null ? '—' : `${Math.round(link.mastery * 100)}%`}
+                            </span>
+                          </button>
+                        </span>
+                      ))}
+                      <ChevronRight className="h-3 w-3 text-muted-foreground/50" aria-hidden />
+                      <button
+                        type="button"
+                        onClick={() => onOpen(path.target.key)}
+                        title={`Open §${path.target.number} ${path.target.title}`}
+                        className={`inline-flex max-w-[240px] items-center gap-1.5 rounded-lg border border-rose-400/30 bg-rose-400/10 px-2 py-1 text-[11px] font-semibold text-rose-200 transition-colors hover:border-rose-400/50 hover:bg-rose-400/20 ${RING}`}
+                      >
+                        <span className="truncate">
+                          §{path.target.number} {path.target.title}
+                        </span>
+                        <span className="shrink-0 font-mono text-[9.5px] font-bold">
+                          {Math.round(path.target.mastery * 100)}%
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* weakest skill pills */}
+          <div>
+            <h3 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-amber-300/80">
+              <TrendingDown className="h-3.5 w-3.5" aria-hidden /> Weakest skills right now
+            </h3>
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {result.weakestSkills.map((skill) => (
+                <button
+                  key={skill.key}
+                  type="button"
+                  onClick={() => onOpen(skill.key)}
+                  title={`Open §${skill.number} ${skill.title} — ${skill.chapterTitle}`}
+                  className={`inline-flex max-w-[300px] items-center gap-1.5 rounded-full border border-border/70 bg-card px-2.5 py-1 text-[11px] font-medium transition-colors hover:border-amber-400/40 hover:text-amber-200 ${RING}`}
+                >
+                  <span className="truncate">
+                    §{skill.number} {skill.title}
+                  </span>
+                  <span className={`shrink-0 font-mono text-[9.5px] font-bold ${masteryText(skill.mastery)}`}>
+                    {Math.round(skill.mastery * 100)}%
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* markdown diagnosis */}
+          <div className="rounded-xl border border-border/70 bg-card/70 p-4 sm:p-5">
+            <div className="twin-diagnosis-markdown space-y-1 text-[13.5px] leading-relaxed text-foreground/90 [&_li]:ml-4 [&_li]:list-disc [&_ol>li]:list-decimal [&_p]:leading-relaxed [&_strong]:font-bold [&_strong]:text-emerald-300 [&_ul]:space-y-1 [&_ul]:pl-1">
+              <Markdown
+                components={{
+                  p: ({ children }) => <p className="mt-3 first:mt-0">{children}</p>,
+                  strong: ({ children }) => <strong>{children}</strong>,
+                  ul: ({ children }) => <ul className="mt-2 list-disc space-y-1 pl-5">{children}</ul>,
+                  ol: ({ children }) => <ol className="mt-2 list-decimal space-y-1 pl-5">{children}</ol>,
+                }}
+              >
+                {result.diagnosis}
+              </Markdown>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
 // ------------------------------ loading + error ------------------------------
 
 function TwinSkeleton() {
@@ -1014,6 +1344,7 @@ export function TwinView() {
   const [refreshing, setRefreshing] = useState(false)
   const [refreshFailed, setRefreshFailed] = useState(false)
   const [colTab, setColTab] = useState<'weak' | 'strong' | 'decay'>('weak')
+  const [mode, setMode] = useState<'scan' | 'graph' | 'diagnosis'>('scan')
 
   const load = useCallback(
     async (bust: boolean) => {
@@ -1061,6 +1392,22 @@ export function TwinView() {
     return [...map.values()]
   }, [data])
 
+  // X1 Pro — a TwinSnapshot-shaped view of the API payload for the graph
+  const snapshot = useMemo<TwinSnapshot | null>(
+    () =>
+      data
+        ? {
+            deviceId,
+            computedAt: data.computedAt,
+            skills: brainSkills,
+            subjects: data.subjects,
+            forecast: data.forecast,
+            totals: data.totals,
+          }
+        : null,
+    [data, deviceId, brainSkills]
+  )
+
   if (!data) {
     if (status === 'error') {
       return <TwinError onRetry={() => void load(true)} />
@@ -1107,6 +1454,12 @@ export function TwinView() {
     },
   ]
   const activeColumn = columns.find((c) => c.id === colTab) ?? columns[0]
+
+  const viewTabs = [
+    { id: 'scan' as const, label: 'Brain Scan', icon: Activity, hint: 'neural rings, mastery + decay' },
+    { id: 'graph' as const, label: 'Knowledge Graph', icon: Share2, hint: 'prerequisite constellation' },
+    { id: 'diagnosis' as const, label: 'AI Diagnosis', icon: Stethoscope, hint: 'the coach reads your twin' },
+  ]
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -1160,54 +1513,101 @@ export function TwinView() {
           </div>
         </motion.header>
 
-        {/* ---------------- the brain scan ---------------- */}
-        <motion.section variants={RISE} aria-label="Brain scan">
-          <BrainScan skills={brainSkills} accents={accents} onOpen={openLesson} />
-        </motion.section>
-
-        {/* ---------------- subject mastery ---------------- */}
-        <motion.section variants={RISE} aria-label="Subject mastery">
-          <SubjectBars subjects={data.subjects} onOpen={openLesson} />
-        </motion.section>
-
-        {/* ---------------- forecast ---------------- */}
-        <motion.section variants={RISE} aria-label="Forecast">
-          <ForecastStrip forecast={data.forecast} totals={t} />
-        </motion.section>
-
-        {/* ---------------- three columns ---------------- */}
-        <motion.section variants={RISE} aria-label="Weakest, strongest and decaying skills">
-          <div className="mb-3 grid grid-cols-3 gap-1 rounded-xl border border-border/70 bg-card/60 p-1 lg:hidden" role="tablist">
-            {columns.map((c) => (
-              <button
-                key={c.id}
-                type="button"
-                role="tab"
-                aria-selected={colTab === c.id}
-                onClick={() => setColTab(c.id)}
-                className={`rounded-lg px-2 py-2 text-[12px] font-semibold transition-colors ${RING} ${
-                  colTab === c.id ? TONES[c.tone].tabOn : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                {c.title}{' '}
-                <span className="font-mono text-[10px] opacity-70">{c.skills.length}</span>
-              </button>
-            ))}
+        {/* ---------------- X1 Pro · view switch ---------------- */}
+        <motion.nav variants={RISE} aria-label="Twin views">
+          <div
+            className="grid grid-cols-3 gap-1 rounded-xl border border-border/70 bg-card/60 p-1 backdrop-blur-sm"
+            role="tablist"
+            aria-label="Choose a twin view"
+          >
+            {viewTabs.map((tab) => {
+              const active = mode === tab.id
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={active}
+                  onClick={() => setMode(tab.id)}
+                  title={tab.hint}
+                  className={`flex items-center justify-center gap-2 rounded-lg px-2 py-2 text-[12px] font-semibold transition-colors sm:text-[12.5px] ${RING} ${
+                    active
+                      ? 'bg-emerald-400/15 text-emerald-200'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  <tab.icon className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                  <span className="truncate">{tab.label}</span>
+                </button>
+              )
+            })}
           </div>
-          <div className="lg:hidden">
-            <SkillColumn {...activeColumn} onOpen={openLesson} />
-          </div>
-          <div className="hidden gap-4 lg:grid lg:grid-cols-3">
-            {columns.map((c) => (
-              <SkillColumn key={c.id} {...c} onOpen={openLesson} />
-            ))}
-          </div>
-        </motion.section>
+        </motion.nav>
 
-        {/* ---------------- how it works ---------------- */}
-        <motion.footer variants={RISE}>
-          <HowItWorks />
-        </motion.footer>
+        {mode === 'scan' && (
+          <>
+            {/* ---------------- the brain scan ---------------- */}
+            <motion.section variants={RISE} aria-label="Brain scan">
+              <BrainScan skills={brainSkills} accents={accents} onOpen={openLesson} />
+            </motion.section>
+
+            {/* ---------------- subject mastery ---------------- */}
+            <motion.section variants={RISE} aria-label="Subject mastery">
+              <SubjectBars subjects={data.subjects} onOpen={openLesson} />
+            </motion.section>
+
+            {/* ---------------- forecast ---------------- */}
+            <motion.section variants={RISE} aria-label="Forecast">
+              <ForecastStrip forecast={data.forecast} totals={t} />
+            </motion.section>
+
+            {/* ---------------- three columns ---------------- */}
+            <motion.section variants={RISE} aria-label="Weakest, strongest and decaying skills">
+              <div className="mb-3 grid grid-cols-3 gap-1 rounded-xl border border-border/70 bg-card/60 p-1 lg:hidden" role="tablist">
+                {columns.map((c) => (
+                  <button
+                    key={c.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={colTab === c.id}
+                    onClick={() => setColTab(c.id)}
+                    className={`rounded-lg px-2 py-2 text-[12px] font-semibold transition-colors ${RING} ${
+                      colTab === c.id ? TONES[c.tone].tabOn : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    {c.title}{' '}
+                    <span className="font-mono text-[10px] opacity-70">{c.skills.length}</span>
+                  </button>
+                ))}
+              </div>
+              <div className="lg:hidden">
+                <SkillColumn {...activeColumn} onOpen={openLesson} />
+              </div>
+              <div className="hidden gap-4 lg:grid lg:grid-cols-3">
+                {columns.map((c) => (
+                  <SkillColumn key={c.id} {...c} onOpen={openLesson} />
+                ))}
+              </div>
+            </motion.section>
+
+            {/* ---------------- how it works ---------------- */}
+            <motion.footer variants={RISE}>
+              <HowItWorks />
+            </motion.footer>
+          </>
+        )}
+
+        {mode === 'graph' && snapshot && (
+          <motion.section variants={RISE} aria-label="Knowledge graph">
+            <TwinGraph snapshot={snapshot} onSelectSkill={openLesson} />
+          </motion.section>
+        )}
+
+        {mode === 'diagnosis' && (
+          <motion.section variants={RISE} aria-label="AI diagnosis">
+            <TwinDiagnosis deviceId={deviceId} onOpen={openLesson} />
+          </motion.section>
+        )}
       </motion.div>
     </div>
   )

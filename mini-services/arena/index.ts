@@ -71,7 +71,9 @@ interface PlayerSlot {
   correctCount: number
   answered: boolean // current question
   times: number[] // seconds per answered question
+  results: boolean[] // correctness per question, index-aligned (post-match analysis)
   connected: boolean
+  isBot?: boolean // server-side bot opponent (synthetic id, no real socket)
 }
 
 interface Room {
@@ -88,6 +90,8 @@ interface Room {
   countdownTimer?: ReturnType<typeof setInterval>
   questionTimer?: ReturnType<typeof setTimeout>
   advanceTimer?: ReturnType<typeof setTimeout>
+  /** non-null → practice room vs a server-side bot (never matchmade) */
+  bot: BotState | null
 }
 
 interface ShuffledView {
@@ -111,6 +115,60 @@ interface QueueEntry {
   name: string
   subject: string | null
   joinedAt: number
+}
+
+/* ------------------------------------------------------------------ */
+/*  Bot opponents                                                      */
+/* ------------------------------------------------------------------ */
+
+type BotDifficulty = 'rookie' | 'skilled' | 'master' | 'adaptive'
+
+interface BotProfile {
+  name: string
+  seedElo: number
+  /** answer delay range, seconds */
+  latency: [number, number]
+  /** probability a sampled answer is correct */
+  accuracy: [number, number]
+  quips: string[]
+}
+
+const BOT_PROFILES: Record<BotDifficulty, BotProfile> = {
+  rookie: {
+    name: 'Pixel (Rookie Bot)',
+    seedElo: 1000,
+    latency: [4, 8],
+    accuracy: [0.35, 0.45],
+    quips: ['gl hf! still learning this one', 'ooh, tricky', 'wait, i know this… maybe', 'practise makes better'],
+  },
+  skilled: {
+    name: 'Vector (Skilled Bot)',
+    seedElo: 1400,
+    latency: [2.5, 5],
+    accuracy: [0.6, 0.75],
+    quips: ['ready when you are', 'speed is part of the game', 'nice pace', 'locking in'],
+  },
+  master: {
+    name: 'Sovereign (Master Bot)',
+    seedElo: 1800,
+    latency: [1.2, 3],
+    accuracy: [0.85, 0.95],
+    quips: ['observe', 'the clock is a weapon too', 'efficient', 'you will get there'],
+  },
+  adaptive: {
+    name: 'Mirror (Adaptive Bot)',
+    seedElo: 1200,
+    latency: [2, 4],
+    accuracy: [0.7, 0.9],
+    quips: ['i am your pace', 'mirroring…', 'let us see who blinks', 'interesting tempo'],
+  },
+}
+
+/** Live bot bookkeeping inside a room (timers cleared with the room). */
+interface BotState {
+  difficulty: BotDifficulty
+  role: 'p1' | 'p2'
+  timers: ReturnType<typeof setTimeout>[]
 }
 
 /* ------------------------------------------------------------------ */
@@ -312,13 +370,13 @@ function queueEloSave(): void {
   }, 800)
 }
 
-/** Fetch-or-create a player record; keeps the latest used name. */
-function record(deviceId: string, name?: string): PlayerRecord {
+/** Fetch-or-create a player record; keeps the latest used name. Bots pass a seed ELO. */
+function record(deviceId: string, name?: string, seedElo?: number): PlayerRecord {
   let r = eloBook[deviceId]
   if (!r) {
     r = {
       name: name || 'Player',
-      elo: START_ELO,
+      elo: typeof seedElo === 'number' && seedElo > 0 ? Math.round(seedElo) : START_ELO,
       wins: 0,
       losses: 0,
       draws: 0,
@@ -448,6 +506,10 @@ function clearRoomTimers(room: Room): void {
   if (room.countdownTimer) clearInterval(room.countdownTimer)
   if (room.questionTimer) clearTimeout(room.questionTimer)
   if (room.advanceTimer) clearTimeout(room.advanceTimer)
+  if (room.bot) {
+    for (const t of room.bot.timers) clearTimeout(t)
+    room.bot.timers = []
+  }
   room.countdownTimer = undefined
   room.questionTimer = undefined
   room.advanceTimer = undefined
@@ -522,6 +584,7 @@ async function tryPair(entry: QueueEntry): Promise<void> {
       correctCount: 0,
       answered: false,
       times: [],
+      results: [],
       connected: true,
     },
     p2: {
@@ -532,6 +595,7 @@ async function tryPair(entry: QueueEntry): Promise<void> {
       correctCount: 0,
       answered: false,
       times: [],
+      results: [],
       connected: true,
     },
     questions,
@@ -542,6 +606,7 @@ async function tryPair(entry: QueueEntry): Promise<void> {
     qIndex: -1,
     phase: 'countdown',
     tStart: 0,
+    bot: null,
   }
   rooms.set(roomId, room)
   s1.data.roomInfo = { roomId, role: 'p1' as const }
@@ -614,6 +679,7 @@ function sendQuestion(room: Room, index: number): void {
     })
   }
   room.questionTimer = setTimeout(() => onQuestionTimeout(room), QUESTION_SECONDS * 1000)
+  if (room.bot) scheduleBotAnswer(room, index)
 }
 
 function onQuestionTimeout(room: Room): void {
@@ -623,6 +689,7 @@ function onQuestionTimeout(room: Room): void {
     if (slot.answered || !slot.connected) continue
     slot.answered = true
     slot.times.push(QUESTION_SECONDS)
+    slot.results.push(false)
     const sock = io.sockets.sockets.get(slot.socketId)
     if (sock) {
       sock.emit('battle:feedback', {
@@ -645,6 +712,45 @@ function onQuestionTimeout(room: Room): void {
   advanceWhenReady(room)
 }
 
+/** Shared scoring path — used by human sockets AND bot timers alike. */
+function applyAnswer(room: Room, role: 'p1' | 'p2', choice: number): void {
+  const slot = room[role]
+  if (slot.answered || !slot.connected) return
+
+  // Anti-cheat: score on server-side elapsed time, not the client's tMs.
+  const elapsedMs = Math.min(QUESTION_SECONDS * 1000, Math.max(0, Date.now() - room.tStart))
+  const secondsTaken = elapsedMs / 1000
+  const correct = choice === room.views[role][room.qIndex].correct
+  const points = correct ? 10 + Math.max(0, 10 - Math.floor(secondsTaken)) : 0
+
+  slot.answered = true
+  slot.points += points
+  if (correct) slot.correctCount += 1
+  slot.times.push(secondsTaken)
+  slot.results.push(correct)
+
+  const question = room.questions[room.qIndex]
+  const sock = io.sockets.sockets.get(slot.socketId)
+  if (sock) {
+    sock.emit('battle:feedback', {
+      index: room.qIndex,
+      correct,
+      answer: room.views[role][room.qIndex].correct,
+      explanation: question.explanation,
+      points,
+      tMs: elapsedMs,
+    })
+  }
+  io.to(room.id).emit('battle:opponent', {
+    index: room.qIndex,
+    answered: true,
+    correct,
+    tMs: elapsedMs,
+  })
+  if (!slot.isBot) postTwin(slot.deviceId, question.sectionId, correct)
+  advanceWhenReady(room)
+}
+
 function handleAnswer(socket: Socket, payload: unknown): void {
   const info = socket.data.roomInfo as { roomId: string; role: 'p1' | 'p2' } | undefined
   if (!info) return
@@ -657,34 +763,7 @@ function handleAnswer(socket: Socket, payload: unknown): void {
   if (slot.answered || !slot.connected) return
   if (!Number.isInteger(choice) || (choice as number) < 0 || (choice as number) > 3) return
 
-  // Anti-cheat: score on server-side elapsed time, not the client's tMs.
-  const elapsedMs = Math.min(QUESTION_SECONDS * 1000, Math.max(0, Date.now() - room.tStart))
-  const secondsTaken = elapsedMs / 1000
-  const correct = choice === room.views[info.role][room.qIndex].correct
-  const points = correct ? 10 + Math.max(0, 10 - Math.floor(secondsTaken)) : 0
-
-  slot.answered = true
-  slot.points += points
-  if (correct) slot.correctCount += 1
-  slot.times.push(secondsTaken)
-
-  const question = room.questions[room.qIndex]
-  socket.emit('battle:feedback', {
-    index: room.qIndex,
-    correct,
-    answer: room.views[info.role][room.qIndex].correct,
-    explanation: question.explanation,
-    points,
-    tMs: elapsedMs,
-  })
-  io.to(room.id).emit('battle:opponent', {
-    index: room.qIndex,
-    answered: true,
-    correct,
-    tMs: elapsedMs,
-  })
-  postTwin(slot.deviceId, question.sectionId, correct)
-  advanceWhenReady(room)
+  applyAnswer(room, info.role, choice as number)
 }
 
 function advanceWhenReady(room: Room): void {
@@ -790,9 +869,243 @@ function endBattle(room: Room, walkoverRole: 'p1' | 'p2' | null): void {
         oppCorrect: opp.correctCount,
         avgTimeSec: avgTimes(me),
       },
+      // Per-question log (receiver's perspective) for post-match analysis.
+      questions: room.questions.map((q, i) => ({
+        index: i,
+        topic: q.sectionTitle,
+        subject: q.subjectName,
+        correct: me.results[i] ?? null,
+        tMs: me.times[i] !== undefined ? Math.round(me.times[i] * 1000) : null,
+        oppCorrect: opp.results[i] ?? null,
+        oppTms: opp.times[i] !== undefined ? Math.round(opp.times[i] * 1000) : null,
+      })),
     })
   }
   destroyRoom(room)
+}
+
+/* ------------------------------------------------------------------ */
+/*  Bot opponents — server-side practice players                       */
+/*                                                                     */
+/*  A bot room is an ordinary Room whose p2 slot holds a synthetic id   */
+/*  (`bot:<difficulty>:<rand>`, never a live socket). Bots answer via   */
+/*  setTimeout through the same applyAnswer() scoring path a human      */
+/*  socket uses, so every battle:* event reaches the real player with  */
+/*  zero protocol changes. Bot rooms are created directly (never via   */
+/*  the matchmaking queue) and queue:join refuses sockets already      */
+/*  locked in a live room, so bots can never be paired with humans.    */
+/* ------------------------------------------------------------------ */
+
+function clampNum(n: number, lo: number, hi: number): number {
+  return Math.min(hi, Math.max(lo, n))
+}
+
+function randRange(lo: number, hi: number): number {
+  return lo + Math.random() * (hi - lo)
+}
+
+/**
+ * Schedule the bot's answer for question `index`. The delay is fixed when
+ * the question is served; the correct/wrong outcome is sampled at fire
+ * time so the adaptive bot can react to the human's freshest state.
+ */
+function scheduleBotAnswer(room: Room, index: number): void {
+  const bot = room.bot
+  if (!bot) return
+  const profile = BOT_PROFILES[bot.difficulty]
+  const human = room[otherRole(bot.role)]
+
+  let delaySec: number
+  if (bot.difficulty === 'adaptive') {
+    const humanAvg =
+      human.times.length > 0
+        ? human.times.reduce((a, b) => a + b, 0) / human.times.length
+        : 3.2
+    const remaining = room.questions.length - index - 1
+    // Endgame push: if the human is slow, answer noticeably faster.
+    const endgamePush = remaining < 2 && humanAvg >= 3.5
+    delaySec = clampNum(humanAvg * (endgamePush ? 0.75 : 0.9), 1.0, 20)
+  } else {
+    delaySec = randRange(profile.latency[0], profile.latency[1])
+  }
+  delaySec = clampNum(delaySec, 0.8, QUESTION_SECONDS - 0.8)
+
+  const timer = setTimeout(() => {
+    if (!rooms.has(room.id) || room.phase !== 'question' || room.qIndex !== index) return
+    const slot = room[bot.role]
+    if (slot.answered) return
+
+    let accuracy: number
+    if (bot.difficulty === 'adaptive') {
+      accuracy = randRange(profile.accuracy[0], profile.accuracy[1])
+      const remaining = room.questions.length - index - 1
+      if (remaining >= 2) {
+        // Mirror phase — hover about one correct answer behind the human.
+        const target = human.correctCount - 1
+        if (slot.correctCount <= target - 1) accuracy = 0.85
+        else if (slot.correctCount >= target + 1) accuracy = 0.15
+      } else if (human.times.length > 0) {
+        const humanAvg = human.times.reduce((a, b) => a + b, 0) / human.times.length
+        if (humanAvg >= 3.5) accuracy = randRange(0.85, 0.95)
+      }
+    } else {
+      accuracy = randRange(profile.accuracy[0], profile.accuracy[1])
+    }
+
+    // Wrong answers pick a random wrong option from the BOT's own view.
+    const view = room.views[bot.role][index]
+    let choice: number
+    if (Math.random() < accuracy) {
+      choice = view.correct
+    } else {
+      const wrong = [0, 1, 2, 3].filter((i) => i !== view.correct)
+      choice = wrong[Math.floor(Math.random() * wrong.length)]
+    }
+    log(
+      `room ${room.id}: bot ${bot.difficulty} answers q${index + 1} ` +
+        `(${choice === view.correct ? 'correct' : 'wrong'}, ${delaySec.toFixed(1)}s)`
+    )
+    applyAnswer(room, bot.role, choice)
+
+    // Occasional persona quip in the room chat.
+    if (Math.random() < 0.18) {
+      io.to(room.id).emit('room:chat', {
+        from: slot.name,
+        text: profile.quips[Math.floor(Math.random() * profile.quips.length)],
+        t: Date.now(),
+      })
+    }
+  }, Math.round(delaySec * 1000))
+  bot.timers.push(timer)
+}
+
+/** Human forfeits their bot battle → bot wins by walkover (mirrors disconnect). */
+function forfeitBotRoom(socket: Socket): boolean {
+  const info = socket.data.roomInfo as { roomId: string; role: 'p1' | 'p2' } | undefined
+  if (!info) return false
+  const room = rooms.get(info.roomId)
+  if (!room || room.phase === 'ended' || !room.bot) return false
+  log(`room ${room.id}: human forfeits the bot battle`)
+  endBattle(room, room.bot.role)
+  return true
+}
+
+/** Handle `bot:challenge` — instant practice room: human (p1) vs bot (p2). */
+async function startBotBattle(socket: Socket, payload: unknown): Promise<void> {
+  if (typeof payload !== 'object' || payload === null) return
+  const { deviceId, name, skillKey, difficulty } = payload as {
+    deviceId?: unknown
+    name?: unknown
+    skillKey?: unknown
+    difficulty?: unknown
+  }
+  if (typeof deviceId !== 'string' || deviceId.trim().length === 0) return
+  if (typeof difficulty !== 'string' || !(difficulty in BOT_PROFILES)) return
+
+  // Never stack a bot battle on top of a live battle (also keeps the human
+  // out of matchmaking while the bot room exists).
+  const locked = socket.data.roomInfo as { roomId: string } | undefined
+  if (locked) {
+    const liveRoom = rooms.get(locked.roomId)
+    if (liveRoom && liveRoom.phase !== 'ended') return
+  }
+  removeFromQueue(socket.id)
+  abortPendingPair(socket.id)
+
+  const humanDeviceId = deviceId.trim().slice(0, 64)
+  const humanName = cleanName(name)
+  const botDifficulty = difficulty as BotDifficulty
+  const profile = BOT_PROFILES[botDifficulty]
+  const subject =
+    typeof skillKey === 'string' && skillKey.trim().length > 0 && skillKey.trim() !== 'mixed'
+      ? skillKey.trim()
+      : null
+
+  socket.data.deviceId = humanDeviceId
+  record(humanDeviceId, humanName)
+
+  // Token guard: bot:leave / a newer challenge / disconnect during the pool
+  // fetch aborts this one cleanly.
+  const challengeToken = Math.random().toString(36).slice(2)
+  socket.data.botChallenge = challengeToken
+
+  log(`bot:challenge "${humanName}" vs ${profile.name} (subject=${subject ?? 'mixed'})`)
+  const questions = await fetchQuestions(subject)
+
+  if (socket.data.botChallenge !== challengeToken) return
+  if (!io.sockets.sockets.has(socket.id)) return
+  const again = socket.data.roomInfo as { roomId: string } | undefined
+  if (again) {
+    const other = rooms.get(again.roomId)
+    if (other && other.phase !== 'ended') return
+  }
+
+  const roomId = 'r-' + Math.random().toString(36).slice(2, 10)
+  const botDeviceId = `bot:${botDifficulty}` // stable per difficulty → persistent ELO
+  const botSlotId = `bot:${botDifficulty}:${Math.random().toString(36).slice(2, 8)}`
+  const botRecord = record(botDeviceId, profile.name, profile.seedElo)
+
+  const room: Room = {
+    id: roomId,
+    subject,
+    p1: {
+      socketId: socket.id,
+      deviceId: humanDeviceId,
+      name: humanName,
+      points: 0,
+      correctCount: 0,
+      answered: false,
+      times: [],
+      results: [],
+      connected: true,
+    },
+    p2: {
+      socketId: botSlotId,
+      deviceId: botDeviceId,
+      name: profile.name,
+      points: 0,
+      correctCount: 0,
+      answered: false,
+      times: [],
+      results: [],
+      connected: true,
+      isBot: true,
+    },
+    questions,
+    views: {
+      p1: questions.map((q, i) => shuffledView(`${roomId}:${humanDeviceId}:${i}`, q)),
+      p2: questions.map((q, i) => shuffledView(`${roomId}:${botDeviceId}:${i}`, q)),
+    },
+    qIndex: -1,
+    phase: 'countdown',
+    tStart: 0,
+    bot: { difficulty: botDifficulty, role: 'p2', timers: [] },
+  }
+  rooms.set(roomId, room)
+  socket.data.roomInfo = { roomId, role: 'p1' }
+  socket.join(roomId)
+
+  socket.emit('match', {
+    roomId,
+    opponent: { name: profile.name, elo: botRecord.elo, bot: true, difficulty: botDifficulty },
+    questions: questions.map((q, i) => ({
+      index: i,
+      q: q.q,
+      options: room.views.p1[i].options,
+      sectionTitle: q.sectionTitle,
+      subjectName: q.subjectName,
+    })),
+    youAre: 'p1',
+  })
+
+  // A little persona flavor before the countdown.
+  io.to(roomId).emit('room:chat', {
+    from: profile.name,
+    text: profile.quips[Math.floor(Math.random() * profile.quips.length)],
+    t: Date.now(),
+  })
+
+  startCountdown(room)
 }
 
 /* ------------------------------------------------------------------ */
@@ -859,6 +1172,13 @@ io.on('connection', (socket) => {
         subject?: unknown
       }
       if (typeof deviceId !== 'string' || deviceId.trim().length === 0) return
+      // A socket already locked into a live battle cannot double-queue —
+      // this also hard-guards bot practice rooms away from human matchmaking.
+      const locked = socket.data.roomInfo as { roomId: string } | undefined
+      if (locked) {
+        const liveRoom = rooms.get(locked.roomId)
+        if (liveRoom && liveRoom.phase !== 'ended') return
+      }
       removeFromQueue(socket.id)
       abortPendingPair(socket.id)
       const cleanSubject =
@@ -887,6 +1207,22 @@ io.on('connection', (socket) => {
     log(`queue:leave ${socket.id}`)
     removeFromQueue(socket.id)
     abortPendingPair(socket.id)
+  })
+
+  socket.on('bot:challenge', (payload: unknown) => {
+    try {
+      void startBotBattle(socket, payload).catch((err) =>
+        console.error(`[arena ${ts()}] bot:challenge error:`, err)
+      )
+    } catch (err) {
+      console.error(`[arena ${ts()}] bot:challenge error:`, err)
+    }
+  })
+
+  socket.on('bot:leave', () => {
+    log(`bot:leave ${socket.id}`)
+    socket.data.botChallenge = undefined // abort a challenge still sourcing questions
+    forfeitBotRoom(socket) // forfeit a live bot battle, if any
   })
 
   socket.on('battle:answer', (payload: unknown) => {

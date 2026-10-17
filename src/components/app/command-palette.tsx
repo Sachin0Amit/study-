@@ -2,17 +2,21 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { toast } from 'sonner'
+import { useTheme } from 'next-themes'
 import {
+  BarChart3,
   BookOpen,
   Brain,
   ClipboardCheck,
   ClipboardList,
+  CloudDownload,
   Command,
   FlaskConical,
   Globe,
+  Keyboard,
   Layers,
   Library as LibraryIcon,
-  BarChart3,
+  Lightbulb,
   Route,
   Scale,
   Search,
@@ -20,6 +24,7 @@ import {
   Sparkles,
   Swords,
   Terminal,
+  Timer,
   Wand2,
   Zap,
 } from 'lucide-react'
@@ -33,6 +38,13 @@ import {
 } from '@/components/ui/command'
 import { searchLibrary, type SearchItem } from '@/data/search'
 import { useStudy } from '@/store/useStudy'
+import {
+  FocusTimer,
+  requestFocusStart,
+  requestFocusStats,
+  requestFocusToggle,
+} from './focus-timer'
+import { ShortcutsOverlay, OPEN_SHORTCUTS_EVENT } from './shortcuts-overlay'
 
 const KIND_ICON = {
   section: BookOpen,
@@ -104,8 +116,8 @@ const QUICK_ACTIONS: {
   { view: 'arena', label: 'Study Arena', hint: 'live 1v1 quiz battles · ELO', icon: Swords },
   { view: 'paper-dna', label: 'Paper-DNA Analyzer', hint: 'forensic topic prediction', icon: Scale },
   { view: 'palace', label: 'Memory Palaces', hint: 'visual journeys + narration', icon: Wand2 },
-  { view: 'playground', label: 'Lab floor', hint: '60 labs + simulators + code judge', icon: FlaskConical },
-  { view: 'flashcards', label: 'Flashcard decks', hint: '11,700+ cards · SRS', icon: Layers },
+  { view: 'playground', label: 'Lab floor', hint: '62 labs + simulators + code judge', icon: FlaskConical },
+  { view: 'flashcards', label: 'Flashcard decks', hint: '12,400+ cards · SRS', icon: Layers },
   {
     view: 'flashcards',
     examMisses: true,
@@ -113,10 +125,83 @@ const QUICK_ACTIONS: {
     hint: 'questions you got wrong, scheduled',
     icon: Zap,
   },
-  { view: 'formulas', label: 'Formula sheet', hint: '1,974 printable formulas', icon: Sigma },
-  { view: 'exam', label: 'Test simulator', hint: '8,862-question bank', icon: ClipboardCheck },
+  { view: 'formulas', label: 'Formula sheet', hint: '1,908 printable formulas', icon: Sigma },
+  { view: 'exam', label: 'Test simulator', hint: '9,394-question bank', icon: ClipboardCheck },
   { view: 'progress', label: 'Progress dashboard', hint: 'streaks, notes & stats', icon: BarChart3 },
 ]
+
+/** X10 Pro system actions — run in place (no navigation) */
+const SYSTEM_ACTIONS: {
+  label: string
+  hint: string
+  icon: typeof Search
+  run: () => void
+}[] = [
+  {
+    label: 'Start focus session (25m)',
+    hint: 'deep-work timer · soft chime when done',
+    icon: Timer,
+    run: () => requestFocusStart(25),
+  },
+  {
+    label: 'Focus stats',
+    hint: 'today · 7-day chart · streak',
+    icon: BarChart3,
+    run: () => requestFocusStats(),
+  },
+  {
+    label: 'Keyboard shortcuts',
+    hint: 'press ? anytime for the cheatsheet',
+    icon: Keyboard,
+    run: () => window.dispatchEvent(new CustomEvent(OPEN_SHORTCUTS_EVENT)),
+  },
+  {
+    label: 'Pin books for offline',
+    hint: 'pick books to download for no-signal study',
+    icon: CloudDownload,
+    run: () => {
+      // P9's download manager listens for this event; preventDefault() marks it handled
+      const handled = window.dispatchEvent(
+        new CustomEvent('sv:open-download-manager', { cancelable: true })
+      )
+      if (!handled) return
+      toast('The offline download manager is not available yet — landing with offline packs.', {
+        icon: <CloudDownload className="h-4 w-4 text-amber-300" />,
+      })
+    },
+  },
+]
+
+/** 'g' + letter view jumps */
+const G_VIEWS: Record<string, 'library' | 'twin' | 'studio' | 'arena' | 'progress'> = {
+  l: 'library',
+  t: 'twin',
+  s: 'studio',
+  a: 'arena',
+  p: 'progress',
+}
+
+/** 'o' — flip offline mode. Prefers clicking the header pill; falls back to
+ *  the localStorage pref + a storage ping (the offline layer listens for it). */
+function toggleOfflineMode() {
+  const pill = document.querySelector<HTMLButtonElement>('button[aria-label="Toggle offline mode"]')
+  if (pill) {
+    pill.click()
+    return
+  }
+  try {
+    const next = localStorage.getItem('sv-offline-mode') !== '1'
+    localStorage.setItem('sv-offline-mode', next ? '1' : '0')
+    window.dispatchEvent(new Event('storage'))
+    toast(
+      next
+        ? 'Offline mode on — lessons you open will cache for no-signal study'
+        : 'Offline mode off'
+    )
+  } catch {
+    /* storage unavailable */
+  }
+}
 
 /** execute an OS action returned by /api/os/command */
 function useOsExecutor() {
@@ -221,6 +306,8 @@ export function CommandPalette() {
   const navigate = useStudy((s) => s.navigate)
   const executeOs = useOsExecutor()
   const osBusyRef = useRef(false)
+  const gArmedRef = useRef(0)
+  const { resolvedTheme, setTheme } = useTheme()
 
   const results = useMemo(() => searchLibrary(query), [query])
 
@@ -266,10 +353,24 @@ export function CommandPalette() {
   }, [query, executeOs])
 
   useEffect(() => {
+    const isTypingTarget = (t: EventTarget | null): boolean => {
+      const el = t as HTMLElement | null
+      if (!el) return false
+      return (
+        el.tagName === 'INPUT' ||
+        el.tagName === 'TEXTAREA' ||
+        el.tagName === 'SELECT' ||
+        el.isContentEditable
+      )
+    }
+    const anyDialogOpen = () =>
+      document.querySelector('[role="dialog"][data-state="open"], dialog[open]') !== null
+
     const down = (e: KeyboardEvent) => {
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
         setOpen((o) => !o)
+        return
       }
       if (e.key === '/' && !open) {
         const target = e.target as HTMLElement
@@ -283,12 +384,80 @@ export function CommandPalette() {
             return
           }
           setOpen(true)
+          return
+        }
+      }
+
+      /* ---- X10 Pro global shortcuts (only when not typing / not in a dialog) ---- */
+      if (e.metaKey || e.ctrlKey || e.altKey || e.isComposing) return
+      if (open || e.defaultPrevented || isTypingTarget(e.target)) return
+      const anyDialog = anyDialogOpen()
+
+      // '?' → the keyboard shortcuts cheatsheet
+      if (e.key === '?') {
+        if (anyDialog) return
+        e.preventDefault()
+        window.dispatchEvent(new CustomEvent(OPEN_SHORTCUTS_EVENT))
+        return
+      }
+
+      const key = e.key.toLowerCase()
+      const now = Date.now()
+
+      // 'g' + letter → view jump (g l / g t / g s / g a / g p, 1.5s window)
+      if (gArmedRef.current !== 0) {
+        const armedAt = gArmedRef.current
+        gArmedRef.current = 0
+        if (now - armedAt < 1500) {
+          const dest = G_VIEWS[key]
+          if (dest) {
+            e.preventDefault()
+            navigate({ name: dest })
+            return
+          }
+        }
+      }
+      if (key === 'g' && !anyDialog) {
+        gArmedRef.current = now
+        return
+      }
+
+      if (anyDialog) return
+
+      switch (key) {
+        case 'e': {
+          e.preventDefault()
+          const { easyMode, setEasyMode } = useStudy.getState()
+          setEasyMode(!easyMode)
+          toast(
+            easyMode ? 'Easy help off' : 'Easy help on — simple yellow boxes everywhere',
+            { icon: <Lightbulb className="h-4 w-4 text-amber-300" /> }
+          )
+          return
+        }
+        case 't': {
+          e.preventDefault()
+          setTheme(resolvedTheme === 'light' ? 'dark' : 'light')
+          return
+        }
+        case 'f': {
+          // the test simulator & mock paper runner own 'f' (flag) while running
+          const viewName = useStudy.getState().view.name
+          if (viewName === 'exam' || viewName === 'paper-dna') return
+          e.preventDefault()
+          requestFocusToggle()
+          return
+        }
+        case 'o': {
+          e.preventDefault()
+          toggleOfflineMode()
+          return
         }
       }
     }
     document.addEventListener('keydown', down)
     return () => document.removeEventListener('keydown', down)
-  }, [open])
+  }, [open, navigate, resolvedTheme, setTheme])
 
   const groups = useMemo(() => {
     const g: Record<string, SearchItem[]> = {}
@@ -315,8 +484,19 @@ export function CommandPalette() {
     )
   }, [query])
 
+  // X10 Pro system actions, same fuzzy treatment
+  const systemMatches = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    if (!q) return SYSTEM_ACTIONS
+    return SYSTEM_ACTIONS.filter(
+      (sa) => sa.label.toLowerCase().includes(q) || sa.hint.toLowerCase().includes(q)
+    )
+  }, [query])
+
   const hasDirectMatches =
-    quickMatches.length > 0 || Object.values(groups).some((g) => g.length > 0)
+    quickMatches.length > 0 ||
+    systemMatches.length > 0 ||
+    Object.values(groups).some((g) => g.length > 0)
 
   return (
     <>
@@ -466,6 +646,33 @@ export function CommandPalette() {
               })}
             </CommandGroup>
           )}
+          {systemMatches.length > 0 && (
+            <CommandGroup heading="Focus & system">
+              {systemMatches.map((sa) => (
+                <CommandItem
+                  key={sa.label}
+                  value={`system ${sa.label} ${sa.hint}`}
+                  onSelect={() => {
+                    setOpen(false)
+                    setQuery('')
+                    sa.run()
+                  }}
+                  className="gap-3 py-2.5"
+                >
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-emerald-400/25 bg-emerald-400/10">
+                    <sa.icon className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-300" />
+                  </span>
+                  <span className="flex min-w-0 flex-col">
+                    <span className="truncate text-[13.5px] font-semibold">{sa.label}</span>
+                    <span className="truncate text-xs text-muted-foreground">{sa.hint}</span>
+                  </span>
+                  <span className="ml-auto shrink-0 rounded-full border border-border bg-muted/50 px-2 py-0.5 font-mono text-[10px] text-muted-foreground">
+                    run
+                  </span>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          )}
           {Object.entries(groups).map(([label, items]) => (
             <CommandGroup key={label} heading={label}>
               {items.map((item) => {
@@ -494,6 +701,11 @@ export function CommandPalette() {
           ))}
         </CommandList>
       </CommandDialog>
+
+      {/* X10 Pro — deep focus timer (self-suppresses if an app-level
+          <FocusTimerMount /> appears later; the engine survives unmounts) */}
+      <FocusTimer />
+      <ShortcutsOverlay />
     </>
   )
 }
