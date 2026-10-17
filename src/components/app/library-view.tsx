@@ -22,8 +22,6 @@ import {
   LIBRARY_CHAPTERS,
   LIBRARY_SECTIONS,
 } from '@/data/library'
-import { TOTAL_FORMULAS } from '@/data/formulas'
-import { allContent } from '@/data/content'
 import { easySubjectLine } from '@/data/easy-library'
 import { EasyLine } from './easy-box'
 import { ChapterIcon } from './chapter-icon'
@@ -31,6 +29,12 @@ import { useStudy } from '@/store/useStudy'
 
 const FOCUS_RING =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
+
+/** Curated totals — kept as constants so the hero never imports the 52MB
+ *  lesson corpus (allContent) or the formula tables just to print numbers.
+ *  Re-verify with: bun run scripts/verify-counts.ts after content changes. */
+const TOTAL_QUIZ_QUESTIONS = 9_774
+const TOTAL_FORMULAS = 1_908
 
 const MATH_SYMBOLS = ['∀', '∃', '∈', '∑', '√', 'π', '∞', '≠', '⊆', '¬', '∧', '→', '⊕', '↔', '∅', 'Γ']
 
@@ -108,7 +112,11 @@ export function LibraryView() {
   const totalSections = LIBRARY_SECTIONS.length
   const totalChapters = LIBRARY_CHAPTERS.length
   const totalTools = new Set(LIBRARY_CHAPTERS.map((c) => c.interactiveKey).filter(Boolean)).size
-  const totalQuestions = allContent.reduce((n, c) => n + c.quiz.length, 0)
+  const totalQuestions = TOTAL_QUIZ_QUESTIONS
+  /** Knowledge Universe counts — derived from the same registries that render
+   *  its subject cards, so the hero always matches the catalog. */
+  const kuSubjects = LIBRARY_SUBJECTS.filter((s) => s.group === 'Knowledge Universe')
+  const kuTopics = LIBRARY_SECTIONS.filter((s) => s.id.startsWith('ku-')).length
   /** the most recently added book — hero CTA + chapter-map preview target */
   const latestBook = LIBRARY_BOOKS[LIBRARY_BOOKS.length - 1]
   const latestShortTitle = latestBook.title.split(':')[0]
@@ -160,7 +168,7 @@ export function LibraryView() {
               </span>
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              StudyVerse turns your textbooks into a living curriculum — every section distilled into
+              StudyVerse turns your textbooks into an interactive curriculum — every section distilled into
               master notes, animated diagrams, hands-on labs and quizzes that actually check your
               understanding.
             </p>
@@ -219,15 +227,21 @@ export function LibraryView() {
               <span className="inline-flex items-center gap-1.5">
                 <Check className="h-3 w-3 text-emerald-400" aria-hidden />
                 {totalQuestions}-question test bank
+                <span aria-hidden className="text-muted-foreground/50">·</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Check className="h-3 w-3 text-emerald-400" aria-hidden />
+                {kuTopics} Knowledge-Universe topics across {kuSubjects.length} domains
               </span>
             </div>
 
             {/* stats row */}
-            <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="mt-10 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-5">
               <HeroStat value={totalSections} label="sections of master content" />
               <HeroStat value={totalChapters} label="chapters covered" />
               <HeroStat value={totalTools} label="interactive labs" />
               <HeroStat value={TOTAL_FORMULAS} label="printable formulas" />
+              <HeroStat value={kuTopics} label="universe study guides" />
             </div>
           </motion.div>
         </div>
@@ -302,7 +316,9 @@ export function LibraryView() {
             <p className="mt-2 max-w-xl text-sm text-muted-foreground">
               Every course is its own subject — and each subject holds the chapters of{' '}
               <em>every</em> engineering branch plus every competitive-assessment scope for that
-              course, merged into one deduplicated track.
+              course, merged into one deduplicated track. The final group extends the same catalog
+              to the Knowledge Universe — every other field of human knowledge, presented the very
+              same way.
             </p>
           </div>
         </div>
@@ -443,6 +459,7 @@ export function LibraryView() {
           </div>
         </div>
       </section>
+
 
       {/* ============ WHAT'S INSIDE ============ */}
       <section className="border-t border-border/60 bg-card/25">

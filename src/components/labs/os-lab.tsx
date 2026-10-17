@@ -7,7 +7,7 @@
  * Paging: FIFO / LRU / Optimal with step-by-step playback.
  */
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
   ChevronLeft,
@@ -18,9 +18,11 @@ import {
   Plus,
   RotateCcw,
   StepForward,
+  Target,
   Trash2,
 } from 'lucide-react'
 import { RING } from './types'
+import { LabMissions, getMissions, useMissions } from './missions'
 
 /* ------------------------------------------------------------------ */
 /*  Scheduling engine                                                  */
@@ -367,15 +369,34 @@ const PAGE_PRESETS: { key: string; label: string; refs: string }[] = [
 
 export function OsLab() {
   const [tab, setTab] = useState<'sched' | 'pages'>('sched')
+  const { fire } = useMissions('os')
+  const [toast, setToast] = useState<string | null>(null)
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (toastTimer.current) clearTimeout(toastTimer.current)
+    }
+  }, [])
+
+  const onMissionEvent = (missionId: string, objectiveId: string) => {
+    const m = getMissions('os').find((x) => x.id === missionId)
+    const o = m?.objectives.find((x) => x.id === objectiveId)
+    setToast(o?.text ?? 'Objective complete')
+    if (toastTimer.current) clearTimeout(toastTimer.current)
+    toastTimer.current = setTimeout(() => setToast(null), 2600)
+  }
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
-      className="space-y-5"
+      className="relative space-y-5"
     >
-      <div className="flex items-start gap-3">
+      <LabMissions missions={getMissions('os')} activeLabId="os" onEvent={onMissionEvent} />
+
+      <div className="flex items-start gap-3 md:pr-[336px]">
         <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-400/25 bg-amber-400/10">
           <Cpu className="h-5 w-5 text-amber-300" aria-hidden="true" />
         </span>
@@ -419,8 +440,25 @@ export function OsLab() {
           exit={{ opacity: 0, y: -6 }}
           transition={{ duration: 0.25 }}
         >
-          {tab === 'sched' ? <SchedulerPanel /> : <PagingPanel />}
+          {tab === 'sched' ? <SchedulerPanel fire={fire} /> : <PagingPanel fire={fire} />}
         </motion.div>
+      </AnimatePresence>
+
+      {/* objective toast */}
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            key={toast}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            className="pointer-events-none absolute bottom-2 right-2 z-30 flex items-center gap-2 rounded-xl border border-emerald-400/40 bg-card/95 px-3.5 py-2.5 text-[12px] font-semibold text-emerald-100 shadow-lg"
+            role="status"
+          >
+            <Target className="h-4 w-4 shrink-0 text-emerald-300" aria-hidden="true" />
+            <span className="max-w-[260px]">{toast}</span>
+          </motion.div>
+        )}
       </AnimatePresence>
     </motion.div>
   )
@@ -430,7 +468,7 @@ export function OsLab() {
 /*  Scheduler panel                                                    */
 /* ------------------------------------------------------------------ */
 
-function SchedulerPanel() {
+function SchedulerPanel({ fire }: { fire: (id: string) => void }) {
   const [procs, setProcs] = useState<Proc[]>(SCHED_PRESETS[0].procs.map((p) => ({ ...p })))
   const [algo, setAlgo] = useState<Algo>('fcfs')
   const [quantum, setQuantum] = useState(2)
@@ -542,7 +580,12 @@ function SchedulerPanel() {
               {ALGOS.map((a) => (
                 <button
                   key={a.id}
-                  onClick={() => setAlgo(a.id)}
+                  onClick={() => {
+                    setAlgo(a.id)
+                    if (a.id === 'fcfs') fire('os-alg-fcfs')
+                    else if (a.id === 'sjf') fire('os-alg-sjf')
+                    else if (a.id === 'rr') fire('os-alg-rr')
+                  }}
                   aria-pressed={algo === a.id}
                   className={`rounded-lg border px-2 py-1.5 text-xs font-semibold transition-all ${RING} ${
                     algo === a.id
@@ -693,7 +736,7 @@ function SchedulerPanel() {
 /*  Paging panel                                                       */
 /* ------------------------------------------------------------------ */
 
-function PagingPanel() {
+function PagingPanel({ fire }: { fire: (id: string) => void }) {
   const [refsText, setRefsText] = useState(PAGE_PRESETS[0].refs)
   const [frameCount, setFrameCount] = useState(3)
   const [algo, setAlgo] = useState<PageAlgo>('fifo')
@@ -736,6 +779,11 @@ function PagingPanel() {
       return () => clearTimeout(t)
     }
   }, [stopAtEnd])
+
+  // reaching the final reference of a trace — by auto-play or by stepping
+  useEffect(() => {
+    if (steps.length > 1 && stepIdx >= steps.length - 1) fire('os-pages-end')
+  }, [stepIdx, steps.length, fire])
 
   const step = steps[stepIdx]
   const last = steps[steps.length - 1]
@@ -801,6 +849,7 @@ function PagingPanel() {
               onClick={() => {
                 setAlgo(a)
                 reset()
+                if (a === 'lru') fire('os-pages-lru')
               }}
               aria-pressed={algo === a}
               className={`rounded-lg border px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider transition-all ${RING} ${
@@ -887,7 +936,10 @@ function PagingPanel() {
                   <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                 </button>
                 <button
-                  onClick={() => setPlaying((p) => !p)}
+                  onClick={() => {
+                    setPlaying((p) => !p)
+                    if (!playing) fire('os-pages-play')
+                  }}
                   disabled={stepIdx >= steps.length - 1}
                   className={`inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-4 py-2 text-sm font-bold text-emerald-950 transition-all hover:bg-emerald-400 disabled:cursor-not-allowed disabled:opacity-40 ${RING}`}
                 >

@@ -271,7 +271,7 @@ export function PlaygroundView() {
             Code judge arena
           </h2>
           <span className="rounded-full border border-amber-400/25 bg-amber-400/[0.06] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-amber-300/90">
-            8 challenges · instant verdict
+            25 challenges · instant verdict
           </span>
           <span className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
         </div>

@@ -8,6 +8,10 @@
  * never deletes old ones. Growth is driven by explicit expansion requests
  * (the daily master prompt) — not by any autonomous process.
  *
+ * NOTE: these modules are consumed ONLY by scripts/serialize-content.ts;
+ * the app reads the pre-serialized knowledge-meta.json + content.json.
+ * After editing any field file, run: bun run scripts/serialize-content.ts
+ *
  * All domain files must conform EXACTLY to these interfaces.
  */
 

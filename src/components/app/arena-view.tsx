@@ -3,7 +3,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { io, type Socket } from 'socket.io-client'
+import Markdown from 'react-markdown'
 import {
+  Bot,
+  Brain,
+  LogOut,
   MessageSquare,
   RotateCcw,
   Send,
@@ -32,7 +36,7 @@ interface QuestionView {
 
 interface MatchPayload {
   roomId: string
-  opponent: { name: string; elo: number }
+  opponent: { name: string; elo: number; bot?: boolean; difficulty?: BotDifficulty }
   questions: QuestionView[]
   youAre: 'p1' | 'p2'
 }
@@ -65,6 +69,16 @@ interface ScorePayload {
   questionIndex: number
 }
 
+interface EndQuestionDetail {
+  index: number
+  topic: string
+  subject: string
+  correct: boolean | null
+  tMs: number | null
+  oppCorrect: boolean | null
+  oppTms: number | null
+}
+
 interface EndPayload {
   winner: 'p1' | 'p2' | 'draw'
   yourPoints: number
@@ -73,6 +87,7 @@ interface EndPayload {
   newElo: number
   walkover?: boolean
   summary: { yourCorrect: number; oppCorrect: number; avgTimeSec: number }
+  questions?: EndQuestionDetail[]
 }
 
 interface LadderEntry {
@@ -95,6 +110,25 @@ interface ChatMsg {
 }
 
 type Phase = 'lobby' | 'searching' | 'countdown' | 'battle' | 'result'
+
+type BotDifficulty = 'rookie' | 'skilled' | 'master' | 'adaptive'
+
+interface BotCard {
+  key: BotDifficulty
+  name: string
+  tag: string
+  elo: number
+  desc: string
+  emoji: string
+}
+
+/** The four practice bots (mirrors BOT_PROFILES on the arena service). */
+const BOT_CARDS: BotCard[] = [
+  { key: 'rookie', name: 'Pixel', tag: 'Rookie Bot', elo: 1000, emoji: '🌱', desc: 'Slow and forgiving — a gentle first spar.' },
+  { key: 'skilled', name: 'Vector', tag: 'Skilled Bot', elo: 1400, emoji: '🛡️', desc: 'Quick and consistent — punishes slow answers.' },
+  { key: 'master', name: 'Sovereign', tag: 'Master Bot', elo: 1800, emoji: '👑', desc: 'Fast, ruthless, rarely wrong.' },
+  { key: 'adaptive', name: 'Mirror', tag: 'Adaptive Bot', elo: 1200, emoji: '🪞', desc: 'Shadows your level, then strikes late.' },
+]
 
 const QUESTION_SECONDS = 25
 const NAME_KEY = 'sv-arena-name'
@@ -172,6 +206,53 @@ function ScoreBar({
   )
 }
 
+/** Bot badge — avatar emoji + BOT tag, used on the opponent chip. */
+function BotBadge({ emoji, compact }: { emoji: string; compact?: boolean }) {
+  return (
+    <span className="flex shrink-0 items-center gap-1">
+      <span aria-hidden="true" className="text-[14px] leading-none">{emoji}</span>
+      {!compact && (
+        <span className="rounded-md border border-amber-400/40 bg-amber-400/15 px-1.5 py-0.5 text-[9px] font-black uppercase tracking-widest text-amber-300">
+          Bot
+        </span>
+      )}
+    </span>
+  )
+}
+
+/** Coach-style markdown breakdown from /api/arena/analyze. */
+function AnalysisMarkdown({ text }: { text: string }) {
+  return (
+    <Markdown
+      components={{
+        h1: ({ children }) => (
+          <h3 className="mt-4 mb-1 text-[12px] font-black uppercase tracking-wider text-emerald-300">{children}</h3>
+        ),
+        h2: ({ children }) => (
+          <h3 className="mt-4 mb-1 text-[12px] font-black uppercase tracking-wider text-emerald-300">{children}</h3>
+        ),
+        h3: ({ children }) => (
+          <h3 className="mt-4 mb-1 text-[12px] font-black uppercase tracking-wider text-emerald-300">{children}</h3>
+        ),
+        p: ({ children }) => <p className="mt-2 text-[13px] leading-relaxed text-foreground/85">{children}</p>,
+        strong: ({ children }) => <strong className="font-bold text-foreground">{children}</strong>,
+        ul: ({ children }) => (
+          <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[13px] leading-relaxed text-foreground/85">{children}</ul>
+        ),
+        ol: ({ children }) => (
+          <ol className="mt-2 list-decimal space-y-1.5 pl-5 text-[13px] leading-relaxed text-foreground/85">{children}</ol>
+        ),
+        li: ({ children }) => <li className="pl-0.5">{children}</li>,
+        code: ({ children }) => (
+          <code className="rounded bg-muted/60 px-1 py-0.5 font-mono text-[12px] text-foreground/90">{children}</code>
+        ),
+      }}
+    >
+      {text}
+    </Markdown>
+  )
+}
+
 /* ------------------------------------------------------------------ */
 /*  Arena view                                                         */
 /* ------------------------------------------------------------------ */
@@ -204,6 +285,10 @@ export function ArenaView() {
   const [chatInput, setChatInput] = useState('')
   const [chat, setChat] = useState<ChatMsg[]>([])
 
+  const [pendingBot, setPendingBot] = useState<BotDifficulty | null>(null)
+  const [analysis, setAnalysis] = useState<string | null>(null)
+  const [analyzing, setAnalyzing] = useState(false)
+
   const socketRef = useRef<Socket | null>(null)
   const deviceIdRef = useRef<string>('')
   const phaseRef = useRef<Phase>('lobby')
@@ -212,6 +297,7 @@ export function ArenaView() {
   const questionStartRef = useRef<number>(Date.now())
   const chatListRef = useRef<HTMLDivElement | null>(null)
   const chatOpenRef = useRef(false)
+  const lastBotRef = useRef<BotDifficulty | null>(null)
 
   phaseRef.current = phase
   matchRef.current = match
@@ -234,6 +320,9 @@ export function ArenaView() {
     setChat([])
     setChatOpen(false)
     setChatInput('')
+    setPendingBot(null)
+    setAnalysis(null)
+    setAnalyzing(false)
     if (msg) {
       setNotice(msg)
       setTimeout(() => setNotice(null), 6000)
@@ -287,6 +376,10 @@ export function ArenaView() {
       setOppJustCorrect(null)
       setScores({ you: 0, youCorrect: 0, opp: 0, oppCorrect: 0 })
       setChat([])
+      setAnalysis(null)
+      setAnalyzing(false)
+      setPendingBot(null)
+      lastBotRef.current = m.opponent?.bot ? (m.opponent.difficulty ?? null) : null
       setPhase('countdown')
     })
 
@@ -395,6 +488,84 @@ export function ArenaView() {
     setPhase('lobby')
   }
 
+  /** Challenge a practice bot — instant match, same battle flow. */
+  const startBotBattle = (difficulty: BotDifficulty) => {
+    const socket = socketRef.current
+    if (!socket) return
+    const clean = name.trim().slice(0, 24) || 'Player'
+    setName(clean)
+    try {
+      localStorage.setItem(NAME_KEY, clean)
+    } catch {
+      /* storage unavailable */
+    }
+    setAnalysis(null)
+    setAnalyzing(false)
+    setPendingBot(difficulty)
+    setQueuePosition(1)
+    setPhase('searching')
+    socket.emit('bot:challenge', {
+      deviceId: deviceIdRef.current || ensureDevice(),
+      name: clean,
+      skillKey: subject || '',
+      difficulty,
+    })
+  }
+
+  /** Cancel a bot challenge (also aborts one that is still sourcing questions). */
+  const cancelBotSearch = () => {
+    socketRef.current?.emit('bot:leave')
+    setPendingBot(null)
+    setPhase('lobby')
+  }
+
+  /** Forfeit a live bot battle — the bot wins by walkover. */
+  const forfeitBotBattle = () => {
+    socketRef.current?.emit('bot:leave')
+    setNotice('You forfeited — the bot takes this one.')
+    setTimeout(() => setNotice(null), 6000)
+  }
+
+  /** Post-match coach breakdown from the analyze API. */
+  const requestAnalysis = async () => {
+    if (!end || !match || analyzing) return
+    setAnalyzing(true)
+    setAnalysis(null)
+    try {
+      const res = await fetch('/api/arena/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          deviceId: deviceIdRef.current || ensureDevice(),
+          battleSummary: {
+            opponent: match.opponent.name,
+            bot: match.opponent.bot === true,
+            result: end.winner === match.youAre ? 'win' : end.winner === 'draw' ? 'draw' : 'loss',
+            yourPoints: end.yourPoints,
+            oppPoints: end.oppPoints,
+            eloDelta: end.eloDelta,
+            avgTimeSec: end.summary.avgTimeSec,
+            questions: (end.questions ?? []).map((q) => ({
+              topic: q.topic,
+              subject: q.subject,
+              youCorrect: q.correct,
+              yourLatencySec: q.tMs != null ? Math.round(q.tMs / 100) / 10 : null,
+              opponentCorrect: q.oppCorrect,
+              opponentLatencySec: q.oppTms != null ? Math.round(q.oppTms / 100) / 10 : null,
+            })),
+          },
+        }),
+      })
+      if (!res.ok) throw new Error(`analyze responded ${res.status}`)
+      const data = (await res.json()) as { analysis?: string }
+      setAnalysis(data.analysis?.trim() || 'No analysis available for this battle.')
+    } catch {
+      setAnalysis('Could not generate the match analysis — check your connection and try again.')
+    } finally {
+      setAnalyzing(false)
+    }
+  }
+
   const answer = (choice: number) => {
     const socket = socketRef.current
     if (!socket || phase !== 'battle' || !question || selected !== null || feedback) return
@@ -416,6 +587,13 @@ export function ArenaView() {
   const rematch = () => {
     setEnd(null)
     setMatch(null)
+    setAnalysis(null)
+    setAnalyzing(false)
+    // Bot battle? Re-challenge the same sparring partner.
+    if (lastBotRef.current) {
+      startBotBattle(lastBotRef.current)
+      return
+    }
     setPhase('searching')
     setQueuePosition(1)
     socketRef.current?.emit('queue:join', {
@@ -432,6 +610,9 @@ export function ArenaView() {
 
   const maxPoints = Math.max(scores.you, scores.opp, 1)
   const myElo = you?.elo ?? 1200
+  const isBotBattle = match?.opponent?.bot === true
+  const botCard = match ? BOT_CARDS.find((b) => b.key === match.opponent?.difficulty) : undefined
+  const pendingBotCard = pendingBot ? BOT_CARDS.find((b) => b.key === pendingBot) : undefined
 
   const subjects = useMemo(() => LIBRARY_SUBJECTS, [])
 
@@ -522,6 +703,52 @@ export function ArenaView() {
               </p>
             </div>
 
+            {/* practice vs bot — always an opponent, zero queue */}
+            <div className="mt-4 rounded-2xl border border-border/80 bg-card p-5 sm:p-6">
+              <div className="flex items-start gap-2.5">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-amber-400/30 bg-amber-400/10 text-amber-300">
+                  <Bot className="h-4.5 w-4.5" />
+                </span>
+                <div className="min-w-0">
+                  <h2 className="text-[15px] font-bold">Practice vs Bot</h2>
+                  <p className="mt-0.5 text-[12px] leading-relaxed text-muted-foreground">
+                    Instant sparring partners with persistent ELO — same battles, same scoring, no
+                    queue.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
+                {BOT_CARDS.map((b) => (
+                  <button
+                    key={b.key}
+                    onClick={() => startBotBattle(b.key)}
+                    aria-label={`Challenge ${b.name}, ${b.tag}, ${b.elo} ELO`}
+                    className={`group flex items-start gap-3 rounded-xl border border-border/70 bg-muted/20 p-3 text-left transition-all hover:border-amber-400/40 hover:bg-amber-400/[0.06] active:scale-[0.99] ${FOCUS_RING}`}
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border/70 bg-background/60 text-[17px] leading-none"
+                    >
+                      {b.emoji}
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="flex items-baseline justify-between gap-2">
+                        <span className="text-[13.5px] font-bold">{b.name}</span>
+                        <span className="shrink-0 font-mono text-[11px] font-bold tabular-nums text-amber-300">{b.elo}</span>
+                      </span>
+                      <span className="mt-0.5 block text-[11px] font-semibold uppercase tracking-wide text-muted-foreground/80">
+                        {b.tag}
+                      </span>
+                      <span className="mt-1 block text-[12px] leading-snug text-muted-foreground">{b.desc}</span>
+                    </span>
+                  </button>
+                ))}
+              </div>
+              <p className="mt-3 text-center text-[11px] text-muted-foreground">
+                Bots use the subject selected above · their ELO moves on the ladder too
+              </p>
+            </div>
+
             {/* ladder */}
             <div className="mt-4 overflow-hidden rounded-2xl border border-border/80 bg-card">
               <div className="flex items-center gap-2 border-b border-border/70 px-5 py-3.5">
@@ -570,36 +797,62 @@ export function ArenaView() {
             exit={{ opacity: 0, y: -12 }}
             className="flex flex-col items-center rounded-2xl border border-border/80 bg-card px-6 py-14 text-center"
           >
-            <div className="relative flex h-24 w-24 items-center justify-center">
-              <motion.span
-                className="absolute inset-0 rounded-full border border-emerald-400/30"
-                animate={{ scale: [1, 1.5], opacity: [0.7, 0] }}
-                transition={{ duration: 1.6, repeat: Infinity, ease: 'easeOut' }}
-              />
-              <motion.span
-                className="absolute inset-0 rounded-full border border-emerald-400/20"
-                animate={{ scale: [1, 1.5], opacity: [0.7, 0] }}
-                transition={{ duration: 1.6, repeat: Infinity, ease: 'easeOut', delay: 0.5 }}
-              />
-              <motion.span
-                className="flex h-14 w-14 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-400/10 text-emerald-300"
-                animate={{ scale: [1, 1.08, 1] }}
-                transition={{ duration: 1.2, repeat: Infinity }}
-              >
-                <Swords className="h-6 w-6" />
-              </motion.span>
-            </div>
-            <h2 className="mt-6 text-lg font-bold">Searching for an opponent…</h2>
-            <p className="mt-1.5 text-[13px] text-muted-foreground">
-              {subject ? subjects.find((s) => s.id === subject)?.name ?? 'Selected subject' : 'Mixed subjects'} · queue
-              position <span className="font-mono font-bold text-emerald-300">{queuePosition}</span>
-            </p>
-            <button
-              onClick={cancelSearch}
-              className={`mt-6 rounded-xl border border-border/80 bg-muted/30 px-5 py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground ${FOCUS_RING}`}
-            >
-              Cancel search
-            </button>
+            {pendingBotCard ? (
+              <>
+                <motion.span
+                  className="flex h-16 w-16 items-center justify-center rounded-2xl border border-amber-400/30 bg-amber-400/10 text-[30px]"
+                  animate={{ scale: [1, 1.08, 1] }}
+                  transition={{ duration: 1.2, repeat: Infinity }}
+                >
+                  {pendingBotCard.emoji}
+                </motion.span>
+                <h2 className="mt-5 text-lg font-bold">
+                  Challenging {pendingBotCard.name} ({pendingBotCard.tag})…
+                </h2>
+                <p className="mt-1.5 text-[13px] text-muted-foreground">
+                  {pendingBotCard.desc} Questions are being sourced.
+                </p>
+                <button
+                  onClick={cancelBotSearch}
+                  className={`mt-6 rounded-xl border border-border/80 bg-muted/30 px-5 py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground ${FOCUS_RING}`}
+                >
+                  Cancel challenge
+                </button>
+              </>
+            ) : (
+              <>
+                <div className="relative flex h-24 w-24 items-center justify-center">
+                  <motion.span
+                    className="absolute inset-0 rounded-full border border-emerald-400/30"
+                    animate={{ scale: [1, 1.5], opacity: [0.7, 0] }}
+                    transition={{ duration: 1.6, repeat: Infinity, ease: 'easeOut' }}
+                  />
+                  <motion.span
+                    className="absolute inset-0 rounded-full border border-emerald-400/20"
+                    animate={{ scale: [1, 1.5], opacity: [0.7, 0] }}
+                    transition={{ duration: 1.6, repeat: Infinity, ease: 'easeOut', delay: 0.5 }}
+                  />
+                  <motion.span
+                    className="flex h-14 w-14 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-400/10 text-emerald-300"
+                    animate={{ scale: [1, 1.08, 1] }}
+                    transition={{ duration: 1.2, repeat: Infinity }}
+                  >
+                    <Swords className="h-6 w-6" />
+                  </motion.span>
+                </div>
+                <h2 className="mt-6 text-lg font-bold">Searching for an opponent…</h2>
+                <p className="mt-1.5 text-[13px] text-muted-foreground">
+                  {subject ? subjects.find((s) => s.id === subject)?.name ?? 'Selected subject' : 'Mixed subjects'} · queue
+                  position <span className="font-mono font-bold text-emerald-300">{queuePosition}</span>
+                </p>
+                <button
+                  onClick={cancelSearch}
+                  className={`mt-6 rounded-xl border border-border/80 bg-muted/30 px-5 py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground ${FOCUS_RING}`}
+                >
+                  Cancel search
+                </button>
+              </>
+            )}
           </motion.div>
         )}
 
@@ -613,11 +866,20 @@ export function ArenaView() {
             className="flex flex-col items-center rounded-2xl border border-border/80 bg-card px-6 py-12 text-center"
           >
             <div className="flex items-center gap-2.5 text-[13px] font-semibold text-muted-foreground">
-              <Users className="h-4 w-4" />
+              {match.opponent.bot ? (
+                <BotBadge emoji={botCard?.emoji ?? '🤖'} compact />
+              ) : (
+                <Users className="h-4 w-4" />
+              )}
               Matched with <span className="text-amber-300">{match.opponent.name}</span>
               <span className="rounded-md border border-border/70 bg-muted/40 px-1.5 py-0.5 font-mono text-[11px] font-bold text-amber-300">
                 {match.opponent.elo}
               </span>
+              {match.opponent.bot && (
+                <span className="rounded-md border border-amber-400/40 bg-amber-400/15 px-1.5 py-0.5 text-[9px] font-black uppercase tracking-widest text-amber-300">
+                  Bot
+                </span>
+              )}
             </div>
             <div className="mt-8 flex h-28 w-28 items-center justify-center">
               <AnimatePresence mode="wait">
@@ -646,8 +908,13 @@ export function ArenaView() {
             {/* header: opponent + timer + chat */}
             <div className="flex items-center gap-3">
               <div className="flex min-w-0 flex-1 items-center gap-2 rounded-xl border border-amber-400/25 bg-amber-400/[0.07] px-3 py-2">
-                <Users className="h-4 w-4 shrink-0 text-amber-300" />
+                {isBotBattle ? (
+                  <Bot className="h-4 w-4 shrink-0 text-amber-300" aria-label="Bot opponent" />
+                ) : (
+                  <Users className="h-4 w-4 shrink-0 text-amber-300" />
+                )}
                 <span className="truncate text-[13px] font-semibold text-amber-300">{match.opponent.name}</span>
+                {isBotBattle && <BotBadge emoji={botCard?.emoji ?? '🤖'} />}
                 <span
                   className={`ml-auto flex h-2.5 w-2.5 shrink-0 items-center justify-center rounded-full transition-all ${
                     oppAnswered ? 'bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.8)]' : 'bg-muted-foreground/25'
@@ -780,6 +1047,16 @@ export function ArenaView() {
                 )}
               </AnimatePresence>
             </div>
+
+            {isBotBattle && (
+              <button
+                onClick={forfeitBotBattle}
+                className={`mx-auto mt-3 flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] font-semibold text-muted-foreground/70 transition-colors hover:text-red-400 ${FOCUS_RING}`}
+              >
+                <LogOut className="h-3.5 w-3.5" />
+                Forfeit bot battle
+              </button>
+            )}
           </motion.div>
         )}
 
@@ -862,7 +1139,7 @@ export function ArenaView() {
                 className={`flex items-center justify-center gap-2 rounded-xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3 text-sm font-bold text-emerald-300 transition-all hover:bg-emerald-400/20 active:scale-[0.99] ${FOCUS_RING}`}
               >
                 <RotateCcw className="h-4 w-4" />
-                Rematch
+                {isBotBattle ? 'Rematch bot' : 'Rematch'}
               </button>
               <button
                 onClick={backToLobby}
@@ -872,6 +1149,54 @@ export function ArenaView() {
                 Back to lobby
               </button>
             </div>
+
+            {/* match analysis — coach breakdown of this battle */}
+            {!analyzing && !analysis && (
+              <button
+                onClick={requestAnalysis}
+                className={`mt-2.5 flex w-full items-center justify-center gap-2 rounded-xl border border-sky-400/30 bg-sky-400/[0.07] px-4 py-3 text-sm font-bold text-sky-300 transition-all hover:bg-sky-400/15 active:scale-[0.99] ${FOCUS_RING}`}
+              >
+                <Brain className="h-4 w-4" />
+                Match Analysis
+              </button>
+            )}
+            {analyzing && (
+              <div
+                className="mt-2.5 rounded-2xl border border-border/80 bg-card p-5 text-left"
+                role="status"
+                aria-label="Generating match analysis"
+              >
+                <div className="flex items-center gap-2 text-[13px] font-semibold text-sky-300">
+                  <Brain className="h-4 w-4 animate-pulse" />
+                  The analyst is reviewing the tape…
+                </div>
+                <div className="mt-3.5 space-y-2.5">
+                  {[88, 72, 81, 60].map((w, i) => (
+                    <div
+                      key={i}
+                      className="h-3 animate-pulse rounded bg-muted/70"
+                      style={{ width: `${w}%`, animationDelay: `${i * 130}ms` }}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+            {analysis && !analyzing && (
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-2.5 rounded-2xl border border-sky-400/25 bg-sky-400/[0.04] p-5 text-left"
+              >
+                <div className="flex items-center gap-2 border-b border-border/60 pb-2.5">
+                  <Brain className="h-4 w-4 text-sky-300" />
+                  <span className="text-[13px] font-bold">Match Analysis</span>
+                  <span className="ml-auto text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+                    Coach breakdown
+                  </span>
+                </div>
+                <AnalysisMarkdown text={analysis} />
+              </motion.div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

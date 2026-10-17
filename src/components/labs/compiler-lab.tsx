@@ -7,8 +7,8 @@
  * highlighted instruction pointer, live stack and output console.
  */
 
-import { useEffect, useMemo, useState } from 'react'
-import { motion } from 'framer-motion'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import {
   AlertTriangle,
   Braces,
@@ -18,9 +18,11 @@ import {
   Play,
   RotateCcw,
   StepForward,
+  Target,
   Terminal,
 } from 'lucide-react'
 import { RING } from './types'
+import { LabMissions, getMissions, useMissions } from './missions'
 
 /* ------------------------------------------------------------------ */
 /*  Lexer                                                              */
@@ -566,6 +568,23 @@ export function CompilerLab() {
   const [src, setSrc] = useState(PRESETS[0].src)
   const [vm, setVm] = useState<VmState>(vmInit)
   const [running, setRunning] = useState(false)
+  const { fire } = useMissions('compiler')
+  const [toast, setToast] = useState<string | null>(null)
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (toastTimer.current) clearTimeout(toastTimer.current)
+    }
+  }, [])
+
+  const onMissionEvent = (missionId: string, objectiveId: string) => {
+    const m = getMissions('compiler').find((x) => x.id === missionId)
+    const o = m?.objectives.find((x) => x.id === objectiveId)
+    setToast(o?.text ?? 'Objective complete')
+    if (toastTimer.current) clearTimeout(toastTimer.current)
+    toastTimer.current = setTimeout(() => setToast(null), 2600)
+  }
 
   const stage: Stage = useMemo(() => {
     const { tokens, error } = lex(src)
@@ -601,7 +620,10 @@ export function CompilerLab() {
   const step = () => {
     setRunning(false)
     const instrs = stage.instrs
-    if (instrs) setVm((s) => vmStep(s, instrs))
+    if (instrs) {
+      setVm((s) => vmStep(s, instrs))
+      fire('comp-step')
+    }
   }
   const reset = () => {
     setRunning(false)
@@ -614,6 +636,7 @@ export function CompilerLab() {
     let guard = 0
     while (!s.halted && !s.error && guard++ < 5000) s = vmStep(s, stage.instrs)
     setVm(s)
+    if (s.halted && !s.error) fire('comp-run')
   }
 
   const ipc = vm.ip
@@ -624,9 +647,11 @@ export function CompilerLab() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
-      className="space-y-5"
+      className="relative space-y-5"
     >
-      <div className="flex items-start gap-3">
+      <LabMissions missions={getMissions('compiler')} activeLabId="compiler" onEvent={onMissionEvent} />
+
+      <div className="flex items-start gap-3 md:pr-[336px]">
         <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-emerald-400/25 bg-emerald-400/10">
           <Braces className="h-5 w-5 text-emerald-300" aria-hidden="true" />
         </span>
@@ -649,7 +674,10 @@ export function CompilerLab() {
         {PRESETS.map((p) => (
           <button
             key={p.key}
-            onClick={() => updateSrc(p.src)}
+            onClick={() => {
+              updateSrc(p.src)
+              if (p.key !== PRESETS[0].key) fire('comp-preset')
+            }}
             className={`rounded-lg border border-border/80 bg-background/60 px-3 py-1.5 text-xs font-semibold text-foreground/90 transition-all hover:border-emerald-400/40 hover:bg-emerald-400/10 hover:text-emerald-200 ${RING}`}
           >
             {p.label}
@@ -668,7 +696,10 @@ export function CompilerLab() {
           </div>
           <textarea
             value={src}
-            onChange={(e) => updateSrc(e.target.value)}
+            onChange={(e) => {
+              updateSrc(e.target.value)
+              fire('comp-edit')
+            }}
             spellCheck={false}
             aria-label="Program source code"
             rows={10}
@@ -892,6 +923,23 @@ export function CompilerLab() {
           )}
         </div>
       </div>
+
+      {/* objective toast */}
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            key={toast}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            className="pointer-events-none absolute bottom-2 right-2 z-30 flex items-center gap-2 rounded-xl border border-emerald-400/40 bg-card/95 px-3.5 py-2.5 text-[12px] font-semibold text-emerald-100 shadow-lg"
+            role="status"
+          >
+            <Target className="h-4 w-4 shrink-0 text-emerald-300" aria-hidden="true" />
+            <span className="max-w-[260px]">{toast}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   )
 }

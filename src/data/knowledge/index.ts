@@ -6,6 +6,10 @@
  * reflect the actual content on disk. The Library bridge in
  * ../library-parts/knowledge-universe turns every topic into a proper
  * Library section so it renders exactly like every other subject.
+ *
+ * NOTE: this module is consumed ONLY by scripts/serialize-content.ts (which
+ * regenerates knowledge-meta.json + content.json). The app imports those JSON
+ * assets — see src/data/library.ts and src/data/content/index.ts.
  */
 
 import type { KnowledgeTopic, KnowledgeDomainFile } from './types'

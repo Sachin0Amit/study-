@@ -1,30 +1,86 @@
 'use client'
 
 import { useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Sparkles, BookOpen, FlaskConical, Sigma, Layers, ClipboardCheck } from 'lucide-react'
+import { Sparkles, BookOpen, FlaskConical, Sigma, Layers, ClipboardCheck, Globe, Loader2 } from 'lucide-react'
 import { useStudy } from '@/store/useStudy'
 import { LIBRARY_BOOKS } from '@/data/library'
 import { Header } from '@/components/app/header'
 import { LibraryView } from '@/components/app/library-view'
-import { BookView } from '@/components/app/book-view'
-import { ChapterView } from '@/components/app/chapter-view'
-import { LessonView } from '@/components/app/lesson-view'
-import { PlaygroundView } from '@/components/app/playground-view'
-import { ProgressView } from '@/components/app/progress-view'
-import { FlashcardsView } from '@/components/app/flashcards-view'
-import { FormulaView } from '@/components/app/formula-view'
-import { ExamView } from '@/components/app/exam-view'
-import { SearchView } from '@/components/app/search-view'
-import { SyllabusView } from '@/components/app/syllabus-view'
-import { StudioView } from '@/components/app/studio-view'
-import { TwinView } from '@/components/app/twin-view'
-import { RemixView } from '@/components/app/remix-view'
-import { ArenaView } from '@/components/app/arena-view'
-import { PaperDnaView } from '@/components/app/paper-dna-view'
-import { PalaceView } from '@/components/app/palace-view'
 import { ReadingProgress, ScrollTopButton } from '@/components/app/reading-progress'
 import { ThemeColorMeta } from '@/components/app/theme-color-meta'
+
+/* Heavy views (lesson corpus, labs, flashcards, exams…) are code-split so the
+   Library SSR stays light — the box OOM-killed next-server at ~3.2GB when the
+   52MB content corpus rode along on every request. Each view loads on first
+   navigation; deep links SSR the loading shell then hydrate. */
+function ViewLoading() {
+  return (
+    <div className="flex min-h-[60vh] items-center justify-center" role="status" aria-label="Loading view">
+      <Loader2 className="h-6 w-6 animate-spin text-emerald-300/70" />
+    </div>
+  )
+}
+
+const BookView = dynamic(() => import('@/components/app/book-view').then((m) => m.BookView), {
+  loading: ViewLoading,
+})
+const ChapterView = dynamic(
+  () => import('@/components/app/chapter-view').then((m) => m.ChapterView),
+  { loading: ViewLoading }
+)
+const LessonView = dynamic(
+  () => import('@/components/app/lesson-view').then((m) => m.LessonView),
+  { loading: ViewLoading }
+)
+const PlaygroundView = dynamic(
+  () => import('@/components/app/playground-view').then((m) => m.PlaygroundView),
+  { loading: ViewLoading }
+)
+const ProgressView = dynamic(
+  () => import('@/components/app/progress-view').then((m) => m.ProgressView),
+  { loading: ViewLoading }
+)
+const FlashcardsView = dynamic(
+  () => import('@/components/app/flashcards-view').then((m) => m.FlashcardsView),
+  { loading: ViewLoading }
+)
+const FormulaView = dynamic(
+  () => import('@/components/app/formula-view').then((m) => m.FormulaView),
+  { loading: ViewLoading }
+)
+const ExamView = dynamic(() => import('@/components/app/exam-view').then((m) => m.ExamView), {
+  loading: ViewLoading,
+})
+const SearchView = dynamic(
+  () => import('@/components/app/search-view').then((m) => m.SearchView),
+  { loading: ViewLoading }
+)
+const SyllabusView = dynamic(
+  () => import('@/components/app/syllabus-view').then((m) => m.SyllabusView),
+  { loading: ViewLoading }
+)
+const StudioView = dynamic(() => import('@/components/app/studio-view').then((m) => m.StudioView), {
+  loading: ViewLoading,
+})
+const TwinView = dynamic(() => import('@/components/app/twin-view').then((m) => m.TwinView), {
+  loading: ViewLoading,
+})
+const RemixView = dynamic(() => import('@/components/app/remix-view').then((m) => m.RemixView), {
+  loading: ViewLoading,
+})
+const ArenaView = dynamic(() => import('@/components/app/arena-view').then((m) => m.ArenaView), {
+  loading: ViewLoading,
+})
+const PaperDnaView = dynamic(
+  () => import('@/components/app/paper-dna-view').then((m) => m.PaperDnaView),
+  { loading: ViewLoading }
+)
+const PalaceView = dynamic(
+  () => import('@/components/app/palace-view').then((m) => m.PalaceView),
+  { loading: ViewLoading }
+)
 
 export default function Home() {
   const view = useStudy((s) => s.view)
@@ -76,9 +132,6 @@ export default function Home() {
         useStudy.setState({ view: { name: 'paper-dna' } })
       } else if (v === 'palace') {
         useStudy.setState({ view: { name: 'palace' } })
-      } else if (v === 'knowledge') {
-        // Knowledge Universe lives inside the Library — land on the catalog
-        useStudy.setState({ view: { name: 'library' } })
       }
     }
   }, [])
@@ -105,18 +158,18 @@ export default function Home() {
         : view.name === 'book'
           ? `book-${view.bookId}`
           : view.name === 'flashcards'
-            ? `flashcards-${view.chapterId ?? 'all'}-${view.examMisses ? 'misses' : 'deck'}`
-            : view.name === 'formulas'
-              ? `formulas-${view.chapterId ?? 'sheet'}`
-              : view.name === 'exam'
-                ? `exam-${view.chapterId ?? 'all'}`
-                : view.name === 'search'
-                  ? `search-${view.query ?? 'new'}`
-                  : view.name === 'studio'
-                    ? `studio-${view.targetSkill ?? 'free'}`
-                    : view.name === 'palace'
-                      ? `palace-${view.sectionKey ?? 'pick'}`
-                      : view.name
+              ? `flashcards-${view.chapterId ?? 'all'}-${view.examMisses ? 'misses' : 'deck'}`
+              : view.name === 'formulas'
+                ? `formulas-${view.chapterId ?? 'sheet'}`
+                : view.name === 'exam'
+                  ? `exam-${view.chapterId ?? 'all'}`
+                  : view.name === 'search'
+                    ? `search-${view.query ?? 'new'}`
+                    : view.name === 'studio'
+                      ? `studio-${view.targetSkill ?? 'free'}`
+                      : view.name === 'palace'
+                        ? `palace-${view.sectionKey ?? 'pick'}`
+                        : view.name
 
   return (
     <div
@@ -135,7 +188,9 @@ export default function Home() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.22, ease: 'easeOut' }}
           >
-            {view.name === 'library' && <LibraryView />}
+            {view.name === 'library' && (
+              <LibraryView />
+            )}
             {view.name === 'book' && <BookView bookId={view.bookId} />}
             {view.name === 'chapter' && <ChapterView chapterId={view.chapterId} />}
             {view.name === 'lesson' && <LessonView sectionId={view.sectionId} />}
@@ -246,13 +301,13 @@ export default function Home() {
                   <BookOpen className="h-3 w-3" /> 60 labs · 2,100 lessons
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <Layers className="h-3 w-3" /> SRS flashcards · 11,700+ cards
+                  <Layers className="h-3 w-3" /> SRS flashcards · 12,400+ cards
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
                   <Sigma className="h-3 w-3" /> 1,974 printable formulas
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <ClipboardCheck className="h-3 w-3" /> 8,862-question test bank
+                  <ClipboardCheck className="h-3 w-3" /> 9,774-question test bank
                 </span>
               </div>
               <div className="flex flex-col gap-2">
@@ -260,16 +315,19 @@ export default function Home() {
                   Featured Library
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <Sigma className="h-3 w-3 text-emerald-400" /> 54 subject-wise course tracks
+                  <Sigma className="h-3 w-3 text-emerald-400" /> 37 subject-wise course tracks
                 </span>
-                <span className="text-muted-foreground/60">Mathematics · Physics · Chemistry · English · Aptitude · C & C++ · Java · Web · AI · DSA · TOC · COA · Compiler · OS · DBMS · Networks · and 37 more — plus the Knowledge Universe: Life Sciences · Humanities · Law · Business · Health · Arts · Everyday Knowledge and 11 more growing domains</span>
+                <span className="flex items-center gap-1.5 text-muted-foreground">
+                  <Globe className="h-3 w-3 text-emerald-400" /> Knowledge Universe — 100 deep study guides across 17 domains, inside the Library
+                </span>
+                <span className="text-muted-foreground/60">Mathematics · Physics · Chemistry · English · Aptitude · C & C++ · Java · Web · AI · DSA · TOC · COA · Compiler · OS · DBMS · Networks · and 22 more — every course holds all branches' chapters and every assessment scope</span>
               </div>
             </div>
           </div>
           <div className="mt-8 flex flex-col gap-2 border-t border-border/60 pt-5 text-[11px] text-muted-foreground/70 sm:flex-row sm:items-center sm:justify-between">
             <span>StudyVerse — master every book, interactively.</span>
             <span className="font-mono">
-              4,136 lessons · 60 labs · 9,239 quiz questions · 626 chapters · 54 books · 54 subjects
+              4,136 lessons · 60 labs · 9,774 quiz questions · 626 chapters · 54 books · 54 subjects
             </span>
           </div>
         </div>

@@ -7,10 +7,11 @@
  * capacity / conflict by replaying the trace on a fully-associative cache.
  */
 
-import { useMemo, useState } from 'react'
-import { motion } from 'framer-motion'
-import { Database, Gauge, Layers, Wand2 } from 'lucide-react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Database, Gauge, Layers, Target, Wand2 } from 'lucide-react'
 import { RING, mulberry32 } from './types'
+import { LabMissions, getMissions, useMissions } from './missions'
 
 /* ------------------------------------------------------------------ */
 /*  Engine                                                             */
@@ -223,6 +224,23 @@ export function CacheLab() {
   })
   const [manual, setManual] = useState('')
   const [useManual, setUseManual] = useState(false)
+  const { fire } = useMissions('cache')
+  const [toast, setToast] = useState<string | null>(null)
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (toastTimer.current) clearTimeout(toastTimer.current)
+    }
+  }, [])
+
+  const onMissionEvent = (missionId: string, objectiveId: string) => {
+    const m = getMissions('cache').find((x) => x.id === missionId)
+    const o = m?.objectives.find((x) => x.id === objectiveId)
+    setToast(o?.text ?? 'Objective complete')
+    if (toastTimer.current) clearTimeout(toastTimer.current)
+    toastTimer.current = setTimeout(() => setToast(null), 2600)
+  }
 
   const trace = useMemo(() => {
     if (useManual) {
@@ -252,6 +270,14 @@ export function CacheLab() {
   const set = <K extends keyof CacheConfig>(k: K, v: CacheConfig[K]) =>
     setCfg((c) => ({ ...c, [k]: v }))
 
+  // derived mission conditions — the simulator re-runs on every config change
+  useEffect(() => {
+    if (!sim) return
+    if (!useManual && cfg.pattern === 'looping') fire('cache-pattern-looping')
+    if (!useManual && cfg.pattern === 'strided') fire('cache-pattern-strided')
+    if (sim.hitRate >= 0.9) fire('cache-hit-90')
+  }, [sim, cfg.pattern, useManual, fire])
+
   const maxSetHits = sim ? Math.max(1, ...sim.setHits) : 1
   const hitPct = sim ? Math.round(sim.hitRate * 100) : 0
 
@@ -260,9 +286,11 @@ export function CacheLab() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
-      className="space-y-5"
+      className="relative space-y-5"
     >
-      <div className="flex items-start gap-3">
+      <LabMissions missions={getMissions('cache')} activeLabId="cache" onEvent={onMissionEvent} />
+
+      <div className="flex items-start gap-3 md:pr-[336px]">
         <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-emerald-400/25 bg-emerald-400/10">
           <Database className="h-5 w-5 text-emerald-300" aria-hidden="true" />
         </span>
@@ -450,7 +478,10 @@ export function CacheLab() {
                 {([1, 2, 4, 8, 'full'] as Assoc[]).map((a) => (
                   <button
                     key={String(a)}
-                    onClick={() => set('assoc', a)}
+                    onClick={() => {
+                      set('assoc', a)
+                      fire('cache-assoc-change')
+                    }}
                     aria-pressed={cfg.assoc === a}
                     className={`rounded-lg border px-1 py-1.5 text-[11px] font-semibold transition-all ${RING} ${
                       cfg.assoc === a
@@ -612,6 +643,23 @@ export function CacheLab() {
           Enter a manual trace or pick a generator pattern to simulate.
         </p>
       )}
+
+      {/* objective toast */}
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            key={toast}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            className="pointer-events-none absolute bottom-2 right-2 z-30 flex items-center gap-2 rounded-xl border border-emerald-400/40 bg-card/95 px-3.5 py-2.5 text-[12px] font-semibold text-emerald-100 shadow-lg"
+            role="status"
+          >
+            <Target className="h-4 w-4 shrink-0 text-emerald-300" aria-hidden="true" />
+            <span className="max-w-[260px]">{toast}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   )
 }
