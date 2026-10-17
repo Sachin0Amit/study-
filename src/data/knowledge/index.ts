@@ -1,32 +1,34 @@
 /**
- * The Living Library — aggregated index.
+ * The Knowledge Universe — aggregated index.
  *
- * Domains live in ./domains/*.ts. Every expansion pass appends topics;
- * this index recomputes stats at load time so counts and word totals
- * always reflect the actual content on disk.
+ * Domains live in ./fields/*.ts. Every expansion pass appends topics; this
+ * index recomputes stats at load time so counts and word totals always
+ * reflect the actual content on disk. The Library bridge in
+ * ../library-parts/knowledge-universe turns every topic into a proper
+ * Library section so it renders exactly like every other subject.
  */
 
-import type { LivingTopic, LivingDomainFile } from './types'
-import { foundationLearning } from './domains/foundation-learning'
-import { physicalSciences } from './domains/physical-sciences'
-import { lifeSciences } from './domains/life-sciences'
-import { mathematics } from './domains/mathematics'
-import { environment } from './domains/environment'
-import { computingAI } from './domains/computing-ai'
-import { engineering } from './domains/engineering'
-import { technologyApplied } from './domains/technology-applied'
-import { socialSciences } from './domains/social-sciences'
-import { humanities } from './domains/humanities'
-import { languagesLiterature } from './domains/languages-literature'
-import { lawGovernance } from './domains/law-governance'
-import { businessEconomics } from './domains/business-economics'
-import { healthWellness } from './domains/health-wellness'
-import { artsCulture } from './domains/arts-culture'
-import { everydayPractical } from './domains/everyday-practical'
-import { emergingInterdisciplinary } from './domains/emerging-interdisciplinary'
+import type { KnowledgeTopic, KnowledgeDomainFile } from './types'
+import { foundationLearning } from './fields/foundation-learning'
+import { physicalSciences } from './fields/physical-sciences'
+import { lifeSciences } from './fields/life-sciences'
+import { mathematics } from './fields/mathematics'
+import { environment } from './fields/environment'
+import { computingAI } from './fields/computing-ai'
+import { engineering } from './fields/engineering'
+import { technologyApplied } from './fields/technology-applied'
+import { socialSciences } from './fields/social-sciences'
+import { humanities } from './fields/humanities'
+import { languagesLiterature } from './fields/languages-literature'
+import { lawGovernance } from './fields/law-governance'
+import { businessEconomics } from './fields/business-economics'
+import { healthWellness } from './fields/health-wellness'
+import { artsCulture } from './fields/arts-culture'
+import { everydayPractical } from './fields/everyday-practical'
+import { emergingInterdisciplinary } from './fields/emerging-interdisciplinary'
 
 /** Domain files in display order. Expansion passes may append new files here. */
-export const LIVING_DOMAIN_FILES: LivingDomainFile[] = [
+export const KNOWLEDGE_DOMAIN_FILES: KnowledgeDomainFile[] = [
   foundationLearning,
   physicalSciences,
   lifeSciences,
@@ -50,7 +52,7 @@ export const LIVING_DOMAIN_FILES: LivingDomainFile[] = [
 /* Derived data (recomputed so it can never drift from the content)   */
 /* ------------------------------------------------------------------ */
 
-function countTopicWords(t: LivingTopic): number {
+export function countTopicWords(t: KnowledgeTopic): number {
   let n = 0
   for (const b of t.blocks) {
     if (b.kind === 'para' || b.kind === 'heading') n += b.text.split(/\s+/).filter(Boolean).length
@@ -66,16 +68,18 @@ function countTopicWords(t: LivingTopic): number {
 }
 
 /** Authoritative topic list with recomputed words/readMins. */
-export const LIVING_TOPICS: LivingTopic[] = LIVING_DOMAIN_FILES.flatMap((d) =>
+export const KNOWLEDGE_TOPICS: KnowledgeTopic[] = KNOWLEDGE_DOMAIN_FILES.flatMap((d) =>
   d.topics.map((t) => {
     const words = countTopicWords(t)
     return { ...t, words, readMins: Math.max(2, Math.round(words / 200)) }
   }),
 )
 
-export const LIVING_TOPIC_BY_ID: Map<string, LivingTopic> = new Map(LIVING_TOPICS.map((t) => [t.id, t]))
+export const KNOWLEDGE_TOPIC_BY_ID: Map<string, KnowledgeTopic> = new Map(
+  KNOWLEDGE_TOPICS.map((t) => [t.id, t]),
+)
 
-export interface LivingDomainStats {
+export interface KnowledgeDomainStats {
   domain: string
   blurb: string
   fields: string[]
@@ -87,7 +91,7 @@ export interface LivingDomainStats {
   lastAddedOn: string
 }
 
-export const LIVING_DOMAIN_STATS: LivingDomainStats[] = LIVING_DOMAIN_FILES.map((d) => {
+export const KNOWLEDGE_DOMAIN_STATS: KnowledgeDomainStats[] = KNOWLEDGE_DOMAIN_FILES.map((d) => {
   const topics = d.topics
   return {
     domain: d.domain,
@@ -102,7 +106,7 @@ export const LIVING_DOMAIN_STATS: LivingDomainStats[] = LIVING_DOMAIN_FILES.map(
   }
 })
 
-export interface LivingStats {
+export interface KnowledgeStats {
   domains: number
   fields: number
   topics: number
@@ -115,24 +119,27 @@ export interface LivingStats {
   expansionDates: string[]
 }
 
-export const LIVING_STATS: LivingStats = (() => {
+export const KNOWLEDGE_STATS: KnowledgeStats = (() => {
   const dates = new Set<string>()
   let quizItems = 0
   let formulas = 0
-  for (const t of LIVING_TOPICS) {
+  for (const t of KNOWLEDGE_TOPICS) {
     dates.add(t.addedOn)
     for (const b of t.blocks) {
       if (b.kind === 'quiz') quizItems += b.items.length
       if (b.kind === 'formula') formulas += 1
     }
   }
-  const lastExpanded = LIVING_TOPICS.reduce((latest, t) => (t.addedOn > latest ? t.addedOn : latest), '1970-01-01')
+  const lastExpanded = KNOWLEDGE_TOPICS.reduce(
+    (latest, t) => (t.addedOn > latest ? t.addedOn : latest),
+    '1970-01-01',
+  )
   return {
-    domains: LIVING_DOMAIN_FILES.length,
-    fields: new Set(LIVING_TOPICS.map((t) => t.field)).size,
-    topics: LIVING_TOPICS.length,
-    words: LIVING_TOPICS.reduce((n, t) => n + t.words, 0),
-    readMins: LIVING_TOPICS.reduce((n, t) => n + t.readMins, 0),
+    domains: KNOWLEDGE_DOMAIN_FILES.length,
+    fields: new Set(KNOWLEDGE_TOPICS.map((t) => t.field)).size,
+    topics: KNOWLEDGE_TOPICS.length,
+    words: KNOWLEDGE_TOPICS.reduce((n, t) => n + t.words, 0),
+    readMins: KNOWLEDGE_TOPICS.reduce((n, t) => n + t.readMins, 0),
     quizItems,
     formulas,
     lastExpanded,
@@ -140,17 +147,4 @@ export const LIVING_STATS: LivingStats = (() => {
   }
 })()
 
-/** Lightweight full-text search across titles, concepts, fields and branches. */
-export function searchLivingTopics(query: string, limit = 30): LivingTopic[] {
-  const q = query.trim().toLowerCase()
-  if (!q) return []
-  const terms = q.split(/\s+/)
-  return LIVING_TOPICS.filter((t) => {
-    const hay = (t.title + ' ' + t.domain + ' ' + t.field + ' ' + t.branch + ' ' + t.concepts.join(' ')).toLowerCase()
-    return terms.every((term) => hay.includes(term))
-  })
-    .sort((a, b) => b.words - a.words)
-    .slice(0, limit)
-}
-
-export type { LivingTopic, LivingDomainFile, LivingBlock, Tier } from './types'
+export type { KnowledgeTopic, KnowledgeDomainFile, KnowledgeBlock, Tier } from './types'

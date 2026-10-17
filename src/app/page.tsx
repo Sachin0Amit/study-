@@ -23,7 +23,6 @@ import { RemixView } from '@/components/app/remix-view'
 import { ArenaView } from '@/components/app/arena-view'
 import { PaperDnaView } from '@/components/app/paper-dna-view'
 import { PalaceView } from '@/components/app/palace-view'
-import { LivingView } from '@/components/app/living-view'
 import { ReadingProgress, ScrollTopButton } from '@/components/app/reading-progress'
 import { ThemeColorMeta } from '@/components/app/theme-color-meta'
 
@@ -77,12 +76,9 @@ export default function Home() {
         useStudy.setState({ view: { name: 'paper-dna' } })
       } else if (v === 'palace') {
         useStudy.setState({ view: { name: 'palace' } })
-      } else if (v === 'living') {
-        const dom = params.get('domain') ?? undefined
-        const top = params.get('topic') ?? undefined
-        useStudy.setState({
-          view: { name: 'living', domain: dom ?? undefined, topicId: top ?? undefined },
-        })
+      } else if (v === 'knowledge') {
+        // Knowledge Universe lives inside the Library — land on the catalog
+        useStudy.setState({ view: { name: 'library' } })
       }
     }
   }, [])
@@ -93,11 +89,7 @@ export default function Home() {
     if (view.name === 'lesson') params.set('lesson', view.sectionId)
     else if (view.name === 'chapter') params.set('chapter', view.chapterId)
     else if (view.name === 'book') params.set('book', view.bookId)
-    else if (view.name === 'living') {
-      params.set('view', 'living')
-      if (view.domain) params.set('domain', view.domain)
-      if (view.topicId) params.set('topic', view.topicId)
-    } else if (view.name !== 'library') params.set('view', view.name)
+    else if (view.name !== 'library') params.set('view', view.name)
     const newSearch = params.toString() ? `?${params.toString()}` : window.location.pathname
     window.history.replaceState(null, '', newSearch)
   }, [view])
@@ -124,9 +116,7 @@ export default function Home() {
                     ? `studio-${view.targetSkill ?? 'free'}`
                     : view.name === 'palace'
                       ? `palace-${view.sectionKey ?? 'pick'}`
-                      : view.name === 'living'
-                        ? `living-${view.topicId ?? view.domain ?? 'root'}`
-                        : view.name
+                      : view.name
 
   return (
     <div
@@ -166,9 +156,6 @@ export default function Home() {
             {view.name === 'arena' && <ArenaView />}
             {view.name === 'paper-dna' && <PaperDnaView />}
             {view.name === 'palace' && <PalaceView sectionKey={view.sectionKey} />}
-            {view.name === 'living' && (
-              <LivingView domain={view.domain} topicId={view.topicId} />
-            )}
           </motion.div>
         </AnimatePresence>
       </main>
@@ -273,16 +260,16 @@ export default function Home() {
                   Featured Library
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <Sigma className="h-3 w-3 text-emerald-400" /> 37 subject-wise course tracks
+                  <Sigma className="h-3 w-3 text-emerald-400" /> 54 subject-wise course tracks
                 </span>
-                <span className="text-muted-foreground/60">Mathematics · Physics · Chemistry · English · Aptitude · C & C++ · Java · Web · AI · DSA · TOC · COA · Compiler · OS · DBMS · Networks · and 22 more — every course holds all branches' chapters and every assessment scope</span>
+                <span className="text-muted-foreground/60">Mathematics · Physics · Chemistry · English · Aptitude · C & C++ · Java · Web · AI · DSA · TOC · COA · Compiler · OS · DBMS · Networks · and 37 more — plus the Knowledge Universe: Life Sciences · Humanities · Law · Business · Health · Arts · Everyday Knowledge and 11 more growing domains</span>
               </div>
             </div>
           </div>
           <div className="mt-8 flex flex-col gap-2 border-t border-border/60 pt-5 text-[11px] text-muted-foreground/70 sm:flex-row sm:items-center sm:justify-between">
             <span>StudyVerse — master every book, interactively.</span>
             <span className="font-mono">
-              4,036 lessons · 60 labs · 8,862 quiz questions · 540 chapters · 37 books · 37 subjects
+              4,136 lessons · 60 labs · 9,239 quiz questions · 626 chapters · 54 books · 54 subjects
             </span>
           </div>
         </div>

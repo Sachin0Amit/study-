@@ -1,6 +1,6 @@
-import type { LivingDomainFile } from '../types'
+import type { KnowledgeDomainFile } from '../types'
 
-export const healthWellness: LivingDomainFile = {
+export const healthWellness: KnowledgeDomainFile = {
   domain: 'Health & Wellness',
   blurb: 'Evidence-based foundations for sleep, strength, and public health — the science behind feeling and functioning better.',
   topics: [
@@ -481,6 +481,434 @@ export const healthWellness: LivingDomainFile = {
             'R₀ = β/γ — contacts, transmission probability, and duration.',
             'Coverage must reach H/E because efficacy is below 100%.',
           ],
+        },
+      ],
+    },
+    {
+      id: 'health-nutrition-macros',
+      title: 'Nutrition Science: Protein, Carbs and Fat Actually Explained',
+      domain: 'Health & Wellness',
+      field: 'Nutrition',
+      branch: 'Dietary Science',
+      tier: 'core',
+      concepts: [
+        'Macronutrients: the only sources of food energy',
+        'Protein as building material with a fuel role',
+        'Carbohydrates: fast fuel, stored as glycogen',
+        'Fat: dense fuel, membranes, and essential fatty acids',
+        'Fiber: the carbohydrate you do not digest',
+        'Nutrient density versus energy density',
+        'Energy balance: why calories still count',
+      ],
+      words: 1100,
+      readMins: 6,
+      addedOn: '2026-10-17',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'Protein, carbohydrate, and fat are the three macronutrients — the only food components that supply energy, and each arrives with a second job beyond fuel. Dietary science, the branch of nutrition behind this Health & Wellness topic, assigns them clean numbers: protein and carbohydrate pack four calories per gram, fat nine. Yet labels, diets, and gym arguments constantly scramble what those numbers mean. This topic explains what each macro actually does in the body, why energy balance still governs weight, and how to read a food label without mythology.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Three-quarters of dietary guidance — from blood-sugar control to heart health — reduces to which macronutrients dominate the plate and how much energy they carry. Understanding the three macros turns diet noise into an engineering problem: measurable inputs, predictable outputs, and no mythology required.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Macronutrients are defined by one hard property: they supply energy the body can burn. Wilbur Atwater measured it in the 1890s, burning foods in a calorimeter and tracking what humans excrete, and his factors — four calories per gram of protein or carbohydrate, nine for fat — still populate every nutrition label. Water, vitamins, and minerals matter desperately but yield nothing, which is why a label\'s calorie count comes entirely from three lines.',
+        },
+        {
+          kind: 'para',
+          text: 'Protein is the only macro that arrives pre-shaped as machinery: enzymes, antibodies, muscle filaments, hormones. Digestion breaks it into about twenty amino acids that the body reassembles into whatever it is building, and nine of the twenty are essential — impossible to synthesize, mandatory to eat. Burned for fuel only in a pinch, protein also triggers the strongest satiety signals of the three, which is why higher-protein diets control hunger almost effortlessly.',
+        },
+        {
+          kind: 'para',
+          text: 'Carbohydrate is the preferred fuel for high-intensity work and the exclusive fuel of red blood cells. Starches are long glucose chains that digest steadily; sugars are short ones that arrive fast. Whatever is not burned is packed into glycogen — roughly 400 grams in muscle and 100 in the liver — a tank that carries about a day and a half of ordinary living, or ninety minutes of hard exercise.',
+        },
+        {
+          kind: 'para',
+          text: 'Dietary fat carries more than twice the energy per gram, and the body treats it as the long-range reserve: a lean adult stores tens of thousands of calories as adipose tissue. Fat is also structural — every cell membrane is built from lipids — and two fatty acids, linoleic and alpha-linolenic, are essential. It ferries the fat-soluble vitamins A, D, E, and K across the gut, which is why zero-fat meals shortchange them.',
+        },
+        {
+          kind: 'para',
+          text: 'Fiber is carbohydrate that human enzymes cannot break down — a genuine label technicality. Soluble fiber gels and slows glucose absorption; insoluble fiber adds bulk and speeds transit. The gut microbiome ferments part of it into short-chain fatty acids that feed the colon\'s lining, which is why fiber behaves like food even when it never enters the bloodstream. Most adults eat barely half the recommended amount.',
+        },
+        {
+          kind: 'para',
+          text: 'Energy density is calories per gram — oil near nine, lettuce near zero. Nutrient density flips the denominator: vitamins and minerals per calorie. Broccoli and soda are both mostly carbohydrate by calorie share, but one delivers folate, vitamin C, and fiber while the other delivers nothing but energy. Building meals with high nutrient density at moderate energy density is the quiet backbone of every evidence-based guideline.',
+        },
+        {
+          kind: 'para',
+          text: 'Body weight follows the ledger: energy in against energy out, with expenditure split among resting metabolism, digestion, and movement. Macro composition shifts what is lost first — cutting carbohydrate drains glycogen and its stored water fastest — but the ledger itself is inescapable. Roughly 7,700 surplus calories equate to a kilogram of body fat, the number behind every honest weight-change estimate.',
+        },
+        { kind: 'heading', text: 'The Mathematics' },
+        {
+          kind: 'formula',
+          name: 'Metabolizable energy (Atwater factors)',
+          latex: 'E = 4C + 4P + 9F',
+          meaning: 'Calories E from grams of carbohydrate C, protein P, and fat F — the arithmetic printed on every nutrition label.',
+        },
+        {
+          kind: 'formula',
+          name: 'Energy balance',
+          latex: '\\Delta m = \\frac{E_{in} - E_{out}}{7700}',
+          meaning: 'A sustained gap between intake and expenditure converts to kilograms of body mass at roughly 7,700 calories per kilogram of fat.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Identify what is asked: a meal label lists 22 g protein, 68 g carbohydrate, and 16 g fat — how many calories does it carry, and what share of a 2,400-calorie day is that?',
+            'Recall the governing idea: metabolizable energy multiplies each macro by its Atwater factor and sums the results.',
+            'Apply: 22 × 4 = 88 from protein, 68 × 4 = 272 from carbohydrate, and 16 × 9 = 144 from fat, totaling 504 calories; 504 ÷ 2,400 is about 21 percent of the day.',
+            'State the result: the meal supplies roughly 500 calories, a fifth of a 2,400-calorie budget — with fat contributing 29 percent of the calories from only 16 of the 106 grams.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Sports dietitians periodize carbohydrate against training load and refill glycogen for competition.',
+            'Clinical dietetics rebuilds malnourished patients with protein targets tied to body weight.',
+            'Label and menu laws standardize Atwater arithmetic so products can be compared honestly.',
+            'Weight-management programs translate the 7,700-calorie ledger into weekly targets.',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'The classic error is moralizing the macros — treating fat as sin and sugar as vice when dose and context decide outcomes. "Net carb" arithmetic quietly deducts fiber that still ferments, and "low fat" labels steer people away from nuts and olive oil toward refined starch. The label math is honest; the folklore surrounding it usually is not.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Macronutrient', def: 'A nutrient supplying energy: protein, carbohydrate, or fat (plus alcohol).' },
+            { term: 'Atwater factors', def: 'Energy coefficients — 4, 4, and 9 calories per gram — used to compute label calories.' },
+            { term: 'Essential amino acid', def: 'One of nine amino acids the body cannot synthesize and must obtain from food.' },
+            { term: 'Glycogen', def: 'The body\'s branched glucose store in muscle and liver, roughly 500 grams in total.' },
+            { term: 'Essential fatty acids', def: 'Linoleic and alpha-linolenic acid, required from the diet for membranes and signaling.' },
+            { term: 'Fiber', def: 'Carbohydrate resistant to human digestion, partly fermented by the gut microbiome.' },
+            { term: 'Energy balance', def: 'The gap between calories consumed and expended, which drives weight change.' },
+          ],
+        },
+        { kind: 'heading', text: 'Check Yourself' },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'How many calories does one gram of fat supply?',
+              options: ['About 4', 'About 7', 'About 9', 'It depends on the type of fat'],
+              answer: 2,
+              explain: 'Atwater assigned fat nine calories per gram — more than double protein or carbohydrate.',
+            },
+            {
+              q: 'Which macronutrient is stored as glycogen?',
+              options: ['Fat', 'Protein', 'Carbohydrate', 'Fiber'],
+              answer: 2,
+              explain: 'Surplus carbohydrate fills limited glycogen depots in muscle and liver before anything else.',
+            },
+            {
+              q: 'A food lists 10 g protein, 20 g carbohydrate, and 10 g fat. Total calories:',
+              options: ['160', '170', '200', '240'],
+              answer: 1,
+              explain: '40 from protein + 80 from carbohydrate + 90 from fat = 170 calories.',
+            },
+            {
+              q: 'Why does fiber complicate calorie math?',
+              options: ['It is fully absorbed like sugar', 'Human enzymes cannot digest it, though gut microbes ferment some', 'It converts directly to body fat', 'It contains alcohol'],
+              answer: 1,
+              explain: 'Fiber resists human digestion; fermentation recovers a few calories, never the full four per gram.',
+            },
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          text: 'No prerequisites — this is the front door to nutrition. Natural next steps: energy balance and weight change in depth, micronutrients and nutrient density, then sport-specific fueling and meal planning.',
+          tone: 'path',
+        },
+      ],
+    },
+    {
+      id: 'health-stress-cortisol',
+      title: "Stress, Cortisol and the Body's Alarm System",
+      domain: 'Health & Wellness',
+      field: 'Mental Health',
+      branch: 'Psychoneuroendocrinology',
+      tier: 'intermediate',
+      concepts: [
+        'The HPA axis and its three glands',
+        'Cortisol: release, rhythm, and receptors',
+        'The fast lane: adrenaline and the sympathetic surge',
+        'Acute stress sharpens; chronic stress erodes',
+        'Allostatic load: the price of staying alarmed',
+        'Cortisol and memory: the inverted U',
+        'Levers that genuinely lower the load',
+      ],
+      words: 980,
+      readMins: 5,
+      addedOn: '2026-10-17',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'A pounding heart before a presentation, a flat exhaustion after months of deadlines — both are the work of the same chemical system. Psychoneuroendocrinology, the word that fuses psychology, nerves, and hormones, maps the hypothalamic–pituitary–adrenal (HPA) axis that answers threat. Its flagship hormone, cortisol, is not a villain: it is a precisely timed alarm that mobilizes fuel, sharpens focus, and then — in a healthy system — switches itself off. This Mental Health topic explains how the alarm works and why it breaks down when it never stops ringing.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Burnout, insomnia, abdominal weight gain, and weakened immune defense all travel with a chronically dysregulated stress axis. Knowing the mechanism explains why "just relax" fails — and points to the interventions, from sleep regularity to perceived control, that measurably reset it.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'The circuit runs hypothalamus to pituitary to adrenal cortex in under a minute. The hypothalamus releases corticotropin-releasing hormone, which orders the pituitary to release ACTH, which commands the adrenal glands to pour out cortisol. Each level also listens for cortisol already circulating and throttles back when enough is present — a classic negative-feedback loop that normally keeps the alarm brief.',
+        },
+        {
+          kind: 'para',
+          text: 'Cortisol is not merely an alarm; it runs on a schedule. It peaks within an hour of waking — the cortisol awakening response — to mobilize fuel for the day, troughs near midnight, and touches nearly every tissue because most cells carry receptors for it. That ubiquity is why its effects read as a whole-body state: liver, muscle, fat, brain, and immune cells all receive the same memo.',
+        },
+        {
+          kind: 'para',
+          text: 'The HPA axis is the slow, hormonal lane; the sympathetic nervous system is the fast one. In seconds, nerve signals trigger the adrenal medulla to dump adrenaline and noradrenaline: heart rate and breathing climb, blood shifts toward muscle, pupils widen. The two lanes run together — adrenaline explains the jolt, cortisol the sustained mobilization that follows.',
+        },
+        {
+          kind: 'para',
+          text: 'A single stress response is adaptive genius: fuel floods the blood, inflammation is pre-emptively damped, and memory tags the episode for future reference. The system was engineered for emergencies measured in minutes to hours. Sustained for weeks, the same chemistry turns corrosive — muscle is broken down for amino acids, sleep architecture flattens, and immune surveillance drifts off course.',
+        },
+        {
+          kind: 'para',
+          text: 'Physiologist Bruce McEwen named the cumulative wear allostatic load: the price of repeatedly activating the stress response and, crucially, of failing to shut it off between activations. Load builds from real demands and imagined ones alike — a worried mind triggers the full chemical cascade. High load tracks with hypertension, insulin resistance, and shrinkage of memory-rich brain regions over the years.',
+        },
+        {
+          kind: 'para',
+          text: 'The hippocampus, the brain\'s memory librarian, is dense with cortisol receptors and responds on an inverted U. Moderate, well-timed cortisol strengthens consolidation, which is why eventful days are memorable ones. Sustained elevation instead withers hippocampal connections and blocks retrieval — the biology behind the blank mind at the worst possible moment.',
+        },
+        {
+          kind: 'para',
+          text: 'The evidence-backed levers are unglamorous. Regular sleep and wake times restore the cortisol rhythm; moderate exercise drains sympathetic tone; slow-breathing practices shift autonomic balance; perceived control — even small chosen routines — measurably damps the axis. Social support and predictable environments do real chemical work. None of it is instant; all of it compounds.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Identify what is asked: four months into a deadline season, a project manager sleeps poorly, wakes wired, and is gaining weight at the waist — what is happening, and what should change first?',
+            'Recall the governing idea: chronic activation flattens the cortisol rhythm; hormone elevated at night fragments sleep, promotes abdominal fat storage, and drains next-day energy.',
+            'Apply: the wired waking points to a mistimed cortisol peak, so the levers are a fixed wake time, daylight within an hour of rising, caffeine before noon, a hard stop on evening work, and 20–30 minutes of moderate movement most days.',
+            'State the result: the rhythm typically re-times within weeks — sleep deepens first, then energy and appetite follow — and persistent symptoms deserve a clinician rather than a willpower verdict.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Burnout-prevention programs now measure recovery rather than hours worked, targeting allostatic load.',
+            'Sports science treats chronic stress and overtraining as one continuum and schedules deload weeks accordingly.',
+            'Trauma therapies account for a stress system recalibrated by early adversity, pacing exposure carefully.',
+            'Shift-work health programs defend the daily cortisol rhythm with light and meal timing.',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'The grand misconception is that cortisol is simply harmful — "adrenal fatigue" narratives oversell a hormone that is essential every morning. The second is treating rest as passive: without regular sleep timing, the axis cannot recover. And self-diagnosis from symptoms alone is risky; the same fatigue and weight change can flag thyroid, mood, or sleep disorders that deserve proper evaluation.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'HPA axis', def: 'The hypothalamic–pituitary–adrenal circuit that produces the hormonal stress response.' },
+            { term: 'Cortisol', def: 'The adrenal hormone that mobilizes fuel and follows a strong daily rhythm.' },
+            { term: 'Cortisol awakening response', def: 'The surge in cortisol within an hour of waking that primes the day.' },
+            { term: 'Adrenaline', def: 'The fast-acting catecholamine behind the seconds-scale fight-or-flight jolt.' },
+            { term: 'Allostatic load', def: 'The cumulative physiological wear of repeated or unrecovered stress responses.' },
+            { term: 'Hippocampus', def: 'The memory structure rich in cortisol receptors, vulnerable to chronic elevation.' },
+            { term: 'Negative feedback', def: 'The shut-off mechanism by which circulating cortisol damps its own production.' },
+          ],
+        },
+        { kind: 'heading', text: 'Check Yourself' },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'The correct order of the HPA axis signal chain is:',
+              options: ['Adrenal → pituitary → hypothalamus', 'Hypothalamus → pituitary → adrenal', 'Pituitary → hypothalamus → adrenal', 'Hypothalamus → adrenal → pituitary'],
+              answer: 1,
+              explain: 'Corticotropin-releasing hormone prompts ACTH, which drives cortisol release from the adrenal cortex.',
+            },
+            {
+              q: 'Cortisol normally peaks:',
+              options: ['Around midnight', 'Within an hour of waking', 'Only during emergencies', 'Immediately after meals'],
+              answer: 1,
+              explain: 'The cortisol awakening response primes fuel and alertness for the day; levels fall toward a midnight trough.',
+            },
+            {
+              q: 'The inverted-U relationship describes cortisol and:',
+              options: ['Body temperature', 'Memory performance', 'Muscle strength', 'Blood pressure'],
+              answer: 1,
+              explain: 'Moderate cortisol aids consolidation in the hippocampus; chronic elevation impairs it.',
+            },
+            {
+              q: 'Allostatic load refers to:',
+              options: ['The total calories burned under stress', 'The cumulative wear of repeated stress responses, especially unrecovered ones', 'A one-time adrenaline spike', 'The number of stress hormones the body can produce'],
+              answer: 1,
+              explain: 'Load accumulates across activations and, more tellingly, across failures to switch off between them.',
+            },
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          text: 'Best read after basic sleep science. Natural next steps: the autonomic nervous system in depth, stress and immune function, and evidence-based interventions for burnout.',
+          tone: 'path',
+        },
+      ],
+    },
+    {
+      id: 'health-vaccines-how-work',
+      title: 'How Vaccines Train the Immune System',
+      domain: 'Health & Wellness',
+      field: 'Public Health',
+      branch: 'Immunization Science',
+      tier: 'core',
+      concepts: [
+        'Innate immunity: the fast, generic defense',
+        'Adaptive immunity: slow to meet, never to forget',
+        'Antigens: the molecular mugshots',
+        'B cells, antibodies, and neutralization',
+        'T cells: assassins and coordinators',
+        'Immunological memory and the second encounter',
+        'From live-attenuated to mRNA: the platform menu',
+      ],
+      words: 1090,
+      readMins: 5,
+      addedOn: '2026-10-17',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'A vaccine is a rehearsal. It presents the immune system with a harmless preview of a pathogen — a fragment, a disabled copy, or the blueprint for one — so that the first real encounter is fought like a second one. Immunization science, the Public Health discipline behind this Health & Wellness topic, explains the remarkable trick: teaching a defense system that normally learns through dangerous infection how to learn safely. The result is a memory that can last decades, sometimes a lifetime.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Vaccination is the highest-leverage intervention in public health history — smallpox eradicated, polio nearly gone, millions of child deaths prevented every year. Understanding the mechanism also explains boosters, herd effects, and why mild diseases are still worth preventing.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'The innate system answers within minutes: inflammation, fever, phagocyte cells that swallow anything flagged as foreign. It is generic — the same response to any invader — and it holds the line but cannot improve with experience. Its alarm signals, though, are what wake the slower system that can.',
+        },
+        {
+          kind: 'para',
+          text: 'The adaptive system takes days to mount a first response, but it is specific and it learns. Lymphocytes carry receptors that recognize particular molecular shapes, and the system maintains a standing library of them. Meeting a pathogen for the first time means expanding the right clones — slow. Meeting it again means the library answers immediately — the principle every vaccine exploits.',
+        },
+        {
+          kind: 'para',
+          text: 'An antigen is any molecular fragment the adaptive system can recognize — the tip of a spike protein, a capsule\'s sugar coat. Antigens are the mugshots vaccines deliver: enough shape for recognition, with none of the pathogen\'s machinery to cause disease. The immune system does not catch diseases; it catches shapes.',
+        },
+        {
+          kind: 'para',
+          text: 'B cells secrete antibodies, Y-shaped proteins that grab their antigen with the two tips of the Y. Coating a virus in antibodies can block its docking sites outright — neutralization — while flagging it for destruction by other cells. Each B cell makes one antibody shape; the best-fitting ones are selected and mass-produced in a process of Darwinian refinement.',
+        },
+        {
+          kind: 'para',
+          text: 'Killer T cells patrol for body cells displaying foreign fragments on their surface and kill the compromised cell before the virus factory opens. Helper T cells are the coordinators, licensing B cells and rallying macrophages. Vaccines that generate strong T-cell memory, not just antibodies, are the ones that handle intracellular threats.',
+        },
+        {
+          kind: 'para',
+          text: 'After the response subsides, long-lived memory B and T cells remain on patrol while antibody levels settle to a low simmer. When the real pathogen arrives, these cells proliferate within hours: antibody titers jump and symptoms never get a foothold. That speed difference — days versus hours — is the entire payoff of vaccination.',
+        },
+        {
+          kind: 'para',
+          text: 'Platforms differ in how they deliver the mugshot. Live-attenuated vaccines carry a weakened virus and give strong, durable immunity — at the cost of being unsuitable for the immunocompromised. Inactivated and subunit vaccines deliver killed whole pathogens or purified fragments, safer but often needing adjuvants and boosters. mRNA vaccines hand cells temporary instructions to build a single antigen, then dissolve.',
+        },
+        { kind: 'heading', text: 'The Mathematics' },
+        {
+          kind: 'formula',
+          name: 'Vaccine efficacy',
+          latex: 'VE = \\frac{AR_u - AR_v}{AR_u} \\times 100\\%',
+          meaning: 'Compare the attack rate among unvaccinated (ARu) and vaccinated (ARv) groups; the relative reduction is the efficacy.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Identify what is asked: in a 20,000-person trial split evenly, 162 infections occur in the placebo arm and 9 in the vaccine arm — what is the vaccine\'s efficacy?',
+            'Recall the governing idea: efficacy is the relative reduction in attack rate attributable to the vaccine.',
+            'Apply: attack rates are 162/10,000 = 1.62 percent unvaccinated and 9/10,000 = 0.09 percent vaccinated, so VE = (1.62 − 0.09)/1.62 × 100 ≈ 94 percent.',
+            'State the result: about 94 percent efficacy — a vaccinated person faced roughly one-eighteenth of the placebo group\'s risk, not a guarantee of never being infected.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Childhood schedules sequence doses to catch the immune system\'s most receptive windows.',
+            'Travel medicine matches regional disease risks — yellow fever, typhoid, hepatitis — to itineraries.',
+            'Outbreak control rings vaccinations around detected cases, exploiting the speed of memory responses.',
+            'Cancer prevention rides the same machinery, immunizing against cancer-causing viruses.',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'The seductive error is reading "94 percent efficacy" as "94 percent chance I cannot be infected" — it is a relative risk reduction across a population, and some vaccinated people still catch the disease, usually more mildly. Another is judging a vaccine by antibody levels alone, which wane naturally while memory cells persist. And a sore arm or brief fever is the immune system working, not the disease itself.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Antigen', def: 'A molecular fragment the adaptive immune system recognizes and responds to.' },
+            { term: 'Antibody', def: 'A Y-shaped B-cell protein that binds a specific antigen, often neutralizing it.' },
+            { term: 'Neutralization', def: 'Blocking a pathogen\'s ability to infect by covering its docking structures.' },
+            { term: 'Memory B cell', def: 'A long-lived cell that enables the rapid, strong secondary response.' },
+            { term: 'Killer T cell', def: 'A lymphocyte that destroys body cells displaying foreign fragments.' },
+            { term: 'Live-attenuated vaccine', def: 'A vaccine built from a weakened pathogen that replicates mildly and trains durably.' },
+            { term: 'Attack rate', def: 'The proportion of a defined population infected over a specified period.' },
+          ],
+        },
+        { kind: 'heading', text: 'Check Yourself' },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'Which arm of the immune system responds within minutes with a generic defense?',
+              options: ['Adaptive immunity', 'Innate immunity', 'Memory B cells', 'Plasma cells'],
+              answer: 1,
+              explain: 'Innate defenses — inflammation, phagocytes — are immediate but do not improve with experience.',
+            },
+            {
+              q: 'Vaccines primarily exploit which property of the adaptive immune system?',
+              options: ['Fever production', 'Immunological memory after a safe first encounter', 'Skin barrier maintenance', 'Red blood cell turnover'],
+              answer: 1,
+              explain: 'A harmless preview primes memory cells so the real pathogen meets a second-exposure response.',
+            },
+            {
+              q: 'In a trial, the unvaccinated attack rate is 2.0 percent and the vaccinated rate 0.5 percent. Efficacy is:',
+              options: ['25 percent', '50 percent', '75 percent', '95 percent'],
+              answer: 2,
+              explain: '(2.0 − 0.5)/2.0 = 0.75, a 75 percent relative reduction.',
+            },
+            {
+              q: 'Why do subunit vaccines often need boosters?',
+              options: ['They contain live virus that must weaken over time', 'Purified fragments are safer but less stimulatory, so doses repeat the training', 'They target only T cells', 'They bypass the bloodstream'],
+              answer: 1,
+              explain: 'Without a replicating pathogen the immune signal is weaker; adjuvants and repeat doses compensate.',
+            },
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          text: 'Pair with the herd-immunity topic for the population-level picture. Then: how immune memory wanes, adjuvant science, and reading vaccine trial results critically.',
+          tone: 'path',
         },
       ],
     },

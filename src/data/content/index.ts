@@ -1,4 +1,5 @@
 import type { SectionContent } from '../library'
+import { KNOWLEDGE_CONTENT } from '../library-parts/knowledge-universe'
 import { ch1Content } from './ch01'
 import { ch2Content } from './ch02'
 import { ch3Content } from './ch03'
@@ -1046,6 +1047,8 @@ const allContent: SectionContent[] = [
   ...spacePropulsionContent,
   ...dataConvertersContent,
   ...aptLasersContent,
+  // ---- Knowledge Universe — domain lessons rendered as ordinary library sections ----
+  ...KNOWLEDGE_CONTENT,
 ]
 
 // Subject-wise consolidation (see scripts/consolidate.ts): sections that were

@@ -46,6 +46,12 @@ import { MACH_DESIGN_CHAPTERS, MACH_DESIGN_SECTIONS } from './library-parts/subj
 import { THERMAL_CHAPTERS, THERMAL_SECTIONS } from './library-parts/subjects/thermal-fluids'
 import { MANUFACTURING_CHAPTERS, MANUFACTURING_SECTIONS } from './library-parts/subjects/manufacturing-industrial'
 import { MECHATRONICS_CHAPTERS, MECHATRONICS_SECTIONS } from './library-parts/subjects/mechatronics-robotics'
+import {
+  KNOWLEDGE_SUBJECTS,
+  KNOWLEDGE_BOOKS,
+  KNOWLEDGE_CHAPTERS,
+  KNOWLEDGE_SECTIONS,
+} from './library-parts/knowledge-universe'
 
 export interface Subject {
   id: string
@@ -547,6 +553,7 @@ export const LIBRARY_SUBJECTS: Subject[] = [
     tagline: 'Where machines think',
     group: 'Mechanical & Energy',
   },
+  ...KNOWLEDGE_SUBJECTS,
 ]
 
 export const LIBRARY_BOOKS: BookMeta[] = [
@@ -1080,6 +1087,7 @@ export const LIBRARY_BOOKS: BookMeta[] = [
       'University mechatronics & robotics curricula — all branches + assessment scopes, merged',
     ],
   },
+  ...KNOWLEDGE_BOOKS,
 ]
 
 export const LIBRARY_CHAPTERS: ChapterMeta[] = [
@@ -1120,6 +1128,7 @@ export const LIBRARY_CHAPTERS: ChapterMeta[] = [
   ...THERMAL_CHAPTERS,
   ...MANUFACTURING_CHAPTERS,
   ...MECHATRONICS_CHAPTERS,
+  ...KNOWLEDGE_CHAPTERS,
 ]
 
 export const LIBRARY_SECTIONS: SectionMeta[] = [
@@ -1160,6 +1169,7 @@ export const LIBRARY_SECTIONS: SectionMeta[] = [
   ...THERMAL_SECTIONS,
   ...MANUFACTURING_SECTIONS,
   ...MECHATRONICS_SECTIONS,
+  ...KNOWLEDGE_SECTIONS,
 ]
 
 // Lookup helpers
