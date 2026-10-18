@@ -1,11 +1,16 @@
 /**
- * The Knowledge Universe — aggregated index.
+ * Knowledge domains — aggregated index.
  *
  * Domains live in ./fields/*.ts. Every expansion pass appends topics; this
  * index recomputes stats at load time so counts and word totals always
  * reflect the actual content on disk. The Library bridge in
- * ../library-parts/knowledge-universe turns every topic into a proper
- * Library section so it renders exactly like every other subject.
+ * ../library-parts/knowledge-universe turns every domain into a Library
+ * SECTION (Foundation Learning, Life Sciences, Social Sciences, …) and every
+ * field into a SUBJECT — no wrapper group, presented exactly like Foundations
+ * or Electronics & Communication.
+ *
+ * DEDUP: ../dedup.ts lists topics already explained elsewhere — they are
+ * filtered out by the bridge (zero repetition across the app).
  *
  * NOTE: this module is consumed ONLY by scripts/serialize-content.ts (which
  * regenerates knowledge-meta.json + content.json). The app imports those JSON

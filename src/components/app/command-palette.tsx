@@ -110,7 +110,7 @@ const QUICK_ACTIONS: {
     hint: 'Map any syllabus to your library',
     icon: ClipboardList,
   },
-  { view: 'library', label: 'Library', hint: '54 subject tracks · 626 chapters · Knowledge Universe', icon: LibraryIcon },
+  { view: 'library', label: 'Library', hint: 'subject tracks · chapters · knowledge sections', icon: LibraryIcon },
   { view: 'arena', label: 'Study Arena', hint: 'live 1v1 quiz battles · ELO', icon: Swords },
   { view: 'paper-dna', label: 'Paper-DNA Analyzer', hint: 'forensic topic prediction', icon: Scale },
   { view: 'palace', label: 'Memory Palaces', hint: 'visual journeys + narration', icon: Wand2 },

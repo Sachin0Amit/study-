@@ -20,6 +20,7 @@ import {
   LIBRARY_CHAPTERS,
   LIBRARY_SECTIONS,
 } from '../src/data/library'
+import { EXCLUDED_DOMAINS, EXCLUDED_TOPICS } from '../src/data/knowledge/dedup'
 
 interface ChapterEntry {
   id: string
@@ -107,9 +108,12 @@ function main() {
       '2. Found it? → extend the existing chapter: add sections, examples, derivations, masters/PhD tiers.',
       '3. Not found? → pick the correct subject (or propose a new one) and author chapter files in src/data/library-parts/ following the existing pattern, then re-run `bun run coverage`.',
       '4. Never create a second chapter covering the same topic under a different name — check synonyms too.',
+      '5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored.',
     ],
     totals,
     subjects,
+    excludedDomains: EXCLUDED_DOMAINS,
+    excludedTopics: EXCLUDED_TOPICS,
   }
   mkdirSync(join(ROOT, 'coverage'), { recursive: true })
   writeFileSync(join(ROOT, 'coverage/coverage.json'), JSON.stringify(registry, null, 2))
@@ -164,6 +168,22 @@ function main() {
     }
   }
 
+  lines.push('---')
+  lines.push('')
+  lines.push('## Already-covered topics — NEVER re-author these (dedup ledger)')
+  lines.push('')
+  lines.push('The following knowledge-domain topics were cross-verified as **already explained** in the')
+  lines.push('existing subjects above. They are excluded from the app (zero repetition). Deepen the')
+  lines.push('listed coverage instead of writing them again.')
+  lines.push('')
+  for (const [dom, note] of Object.entries(EXCLUDED_DOMAINS)) {
+    lines.push(`- **Domain retired: ${dom}** — ${note}`)
+  }
+  lines.push('')
+  for (const [id, entry] of Object.entries(EXCLUDED_TOPICS)) {
+    lines.push(`- \`${id}\` → ${entry.coveredBy} — ${entry.note}`)
+  }
+  lines.push('')
   lines.push('---')
   lines.push('')
   lines.push('*End of registry.*')

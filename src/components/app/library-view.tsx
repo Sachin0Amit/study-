@@ -33,7 +33,7 @@ const FOCUS_RING =
 /** Curated totals — kept as constants so the hero never imports the 52MB
  *  lesson corpus (allContent) or the formula tables just to print numbers.
  *  Re-verify with: bun run scripts/verify-counts.ts after content changes. */
-const TOTAL_QUIZ_QUESTIONS = 9_774
+const TOTAL_QUIZ_QUESTIONS = 9_666
 const TOTAL_FORMULAS = 1_908
 
 const MATH_SYMBOLS = ['∀', '∃', '∈', '∑', '√', 'π', '∞', '≠', '⊆', '¬', '∧', '→', '⊕', '↔', '∅', 'Γ']
@@ -113,10 +113,10 @@ export function LibraryView() {
   const totalChapters = LIBRARY_CHAPTERS.length
   const totalTools = new Set(LIBRARY_CHAPTERS.map((c) => c.interactiveKey).filter(Boolean)).size
   const totalQuestions = TOTAL_QUIZ_QUESTIONS
-  /** Knowledge Universe counts — derived from the same registries that render
-   *  its subject cards, so the hero always matches the catalog. */
-  const kuSubjects = LIBRARY_SUBJECTS.filter((s) => s.group === 'Knowledge Universe')
-  const kuTopics = LIBRARY_SECTIONS.filter((s) => s.id.startsWith('ku-')).length
+  /** Knowledge-section counts — derived from the same registries that render
+   *  the section subject cards, so the hero always matches the catalog. */
+  const domainSections = new Set(LIBRARY_SUBJECTS.filter((s) => s.id.startsWith('ku-')).map((s) => s.group)).size
+  const domainSubjects = LIBRARY_SUBJECTS.filter((s) => s.id.startsWith('ku-')).length
   /** the most recently added book — hero CTA + chapter-map preview target */
   const latestBook = LIBRARY_BOOKS[LIBRARY_BOOKS.length - 1]
   const latestShortTitle = latestBook.title.split(':')[0]
@@ -231,7 +231,7 @@ export function LibraryView() {
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Check className="h-3 w-3 text-emerald-400" aria-hidden />
-                {kuTopics} Knowledge-Universe topics across {kuSubjects.length} domains
+                {domainSubjects} subjects across {domainSections} knowledge sections
               </span>
             </div>
 
@@ -241,7 +241,7 @@ export function LibraryView() {
               <HeroStat value={totalChapters} label="chapters covered" />
               <HeroStat value={totalTools} label="interactive labs" />
               <HeroStat value={TOTAL_FORMULAS} label="printable formulas" />
-              <HeroStat value={kuTopics} label="universe study guides" />
+              <HeroStat value={domainSubjects} label="knowledge subjects" />
             </div>
           </motion.div>
         </div>
@@ -316,9 +316,10 @@ export function LibraryView() {
             <p className="mt-2 max-w-xl text-sm text-muted-foreground">
               Every course is its own subject — and each subject holds the chapters of{' '}
               <em>every</em> engineering branch plus every competitive-assessment scope for that
-              course, merged into one deduplicated track. The final group extends the same catalog
-              to the Knowledge Universe — every other field of human knowledge, presented the very
-              same way.
+              course, merged into one deduplicated track. The sections that follow extend the same
+              catalog across the whole map of knowledge — life sciences, social sciences,
+              humanities, languages, law, business, health, arts and beyond — each with its own
+              subjects, presented exactly the same way.
             </p>
           </div>
         </div>

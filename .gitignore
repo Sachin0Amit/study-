@@ -11,7 +11,9 @@ node_modules
 !.yarn/versions
 
 # testing
-/coverage
+# (note: /coverage is NOT ignored — it holds the AI content-coverage registry:
+#  COVERAGE.md + coverage.json + dedupe-report.json, the dedup ledger that
+#  every expansion pass must consult before authoring new topics)
 
 # next.js
 /.next/

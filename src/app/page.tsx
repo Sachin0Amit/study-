@@ -327,7 +327,7 @@ export default function Home() {
                   <Sigma className="h-3 w-3 text-emerald-400" /> 37 subject-wise course tracks
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <Globe className="h-3 w-3 text-emerald-400" /> Knowledge Universe — 100 deep study guides across 17 domains, inside the Library
+                  <Globe className="h-3 w-3 text-emerald-400" /> Knowledge sections — life sciences, social sciences, humanities, languages, law, business, health, arts and more, inside the Library
                 </span>
                 <span className="text-muted-foreground/60">Mathematics · Physics · Chemistry · English · Aptitude · C & C++ · Java · Web · AI · DSA · TOC · COA · Compiler · OS · DBMS · Networks · and 22 more — every course holds all branches' chapters and every assessment scope</span>
               </div>

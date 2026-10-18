@@ -1,12 +1,16 @@
 /**
- * The Knowledge Universe — a permanently growing knowledge base that lives
- * inside the Library as ordinary subjects, exactly like Mathematics or
- * Physics.
+ * Knowledge domains — a permanently growing knowledge base that renders
+ * inside the Library as ordinary sections and subjects, exactly like
+ * Foundations or Electronics & Communication.
  *
  * Topics live in ./fields/*.ts (one file per knowledge domain) and are
  * expanded over time: every content-expansion pass appends new topics and
  * never deletes old ones. Growth is driven by explicit expansion requests
  * (the daily master prompt) — not by any autonomous process.
+ *
+ * DEDUP RULE: before authoring a topic, cross-verify it against
+ * coverage/COVERAGE.md and ../dedup.ts. If it is already explained
+ * elsewhere in the Library, do NOT include it.
  *
  * NOTE: these modules are consumed ONLY by scripts/serialize-content.ts;
  * the app reads the pre-serialized knowledge-meta.json + content.json.

@@ -1068,7 +1068,8 @@ const allContent: SectionContent[] = [
   ...solidsMfgTopupContent,
   ...materialsMetroTopupContent,
   ...metrologyTopupContent,
-  // ---- Knowledge Universe lessons (domain topics as ordinary sections) ----
+  // ---- Knowledge-section lessons (domain topics as ordinary sections,
+  //      deduplicated against the rest of the library via dedup.ts) ----
   ...KNOWLEDGE_CONTENT,
 ]
 

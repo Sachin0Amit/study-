@@ -18,7 +18,7 @@ import { OfflineProvider } from './offline-provider'
 import { ThemeToggle } from './theme-toggle'
 
 const NAV = [
-  { view: 'library', label: 'Library', icon: Library, easy: 'Home: all books + the Knowledge Universe' },
+  { view: 'library', label: 'Library', icon: Library, easy: 'Home: all books + knowledge sections' },
   { view: 'studio', label: 'Studio', icon: Sparkles, easy: 'Ask the AI faculty' },
   { view: 'twin', label: 'Twin', icon: Brain, easy: 'Brain scan of what you know' },
   { view: 'syllabus', label: 'Syllabus', icon: ClipboardList, easy: 'Map any syllabus to your books' },
