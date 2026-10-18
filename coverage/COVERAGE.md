@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 99
-- **Books (master volumes):** 99
-- **Chapters:** 609
-- **Sections (lessons):** 4108
+- **Subjects:** 120
+- **Books (master volumes):** 120
+- **Chapters:** 671
+- **Sections (lessons):** 4184
 
 ## Foundations — 5 subjects
 
@@ -760,9 +760,11 @@
 
 ### Study Skills & Memory (`ku-foundation-learning-study-skills-and-memory`)
 
-*Retain more, study less* — 1 chapters · 3 sections
+*Retain more, study less* — 3 chapters · 5 sections
 
 - **Ch 1. Learning Science** `ku-foundation-learning-study-skills-and-memory-learning-science` — 3 sections: Spaced Repetition and the Forgetting Curve; Active Recall: Why Testing Yourself Beats Rereading; Interleaving: Why Mixed Practice Beats Blocked Practice
+- **Ch 2. Study Systems** `ku-foundation-learning-study-skills-and-memory-study-systems` — 1 sections: Note-Taking Systems Compared: Cornell, Outlines and Zettelkasten
+- **Ch 3. Performing** `ku-foundation-learning-study-skills-and-memory-performing` — 1 sections: Exam-Day Strategy: How Tests Are Actually Won
 
 ### Reading & Literacy (`ku-foundation-learning-reading-and-literacy`)
 
@@ -782,21 +784,35 @@
 
 - **Ch 1. Expertise Science** `ku-foundation-learning-skill-acquisition-expertise-science` — 1 sections: Deliberate Practice: The Anatomy of Getting Good
 
-## Physical Sciences — 1 subject
+## Physical Sciences — 3 subjects
 
 ### Astronomy & Space Science (`ku-physical-sciences-astronomy-and-space-science`)
 
-*The lives of stars* — 1 chapters · 1 sections
+*The lives of stars* — 2 chapters · 4 sections
 
 - **Ch 1. Astrophysics** `ku-physical-sciences-astronomy-and-space-science-astrophysics` — 1 sections: How Stars Are Born, Live and Die
+- **Ch 2. Exploring the Cosmos** `ku-physical-sciences-astronomy-and-space-science-exploring-the-cosmos` — 3 sections: Touring the Solar System: Planets, Moons and Small Worlds; Exoplanets: Finding Worlds Around Other Stars; Are We Alone? The New Science of Astrobiology
 
-## Life Sciences — 6 subjects
+### Geology & Earth Science (`ku-physical-sciences-geology-and-earth-science`)
+
+*The planet underfoot* — 1 chapters · 4 sections
+
+- **Ch 1. Dynamic Earth** `ku-physical-sciences-geology-and-earth-science-dynamic-earth` — 4 sections: Plate Tectonics: The Engine Beneath Your Feet; Minerals, Rocks and the Rock Cycle; Earthquakes and Volcanoes: When the Crust Moves; Deep Time: Fossils and Dating the Earth
+
+### Meteorology (`ku-physical-sciences-meteorology`)
+
+*Why the sky does what it does* — 1 chapters · 2 sections
+
+- **Ch 1. Weather and Atmosphere** `ku-physical-sciences-meteorology-weather-and-atmosphere` — 2 sections: Why Weather Happens: The Atmosphere at Work; Storms, Fronts and How Forecasts Are Made
+
+## Life Sciences — 9 subjects
 
 ### Genetics & Heredity (`ku-life-sciences-genetics-and-heredity`)
 
-*The code of inheritance* — 1 chapters · 1 sections
+*The code of inheritance* — 2 chapters · 2 sections
 
 - **Ch 1. Molecular Genetics** `ku-life-sciences-genetics-and-heredity-molecular-genetics` — 1 sections: CRISPR and the Mechanics of Gene Editing
+- **Ch 2. Classical Genetics** `ku-life-sciences-genetics-and-heredity-classical-genetics` — 1 sections: Mendel's Laws: How Traits Travel Between Generations
 
 ### Neuroscience (`ku-life-sciences-neuroscience`)
 
@@ -812,9 +828,11 @@
 
 ### Evolutionary Biology (`ku-life-sciences-evolutionary-biology`)
 
-*Descent with modification* — 1 chapters · 1 sections
+*Descent with modification* — 3 chapters · 3 sections
 
 - **Ch 1. Evolution** `ku-life-sciences-evolutionary-biology-evolution` — 1 sections: Evolution by Natural Selection
+- **Ch 2. Speciation** `ku-life-sciences-evolutionary-biology-speciation` — 1 sections: How New Species Are Born
+- **Ch 3. Human Evolution** `ku-life-sciences-evolutionary-biology-human-evolution` — 1 sections: From Lucy to Us: The Story of Human Evolution
 
 ### Immunology (`ku-life-sciences-immunology`)
 
@@ -827,6 +845,24 @@
 *Energy through ecosystems* — 1 chapters · 1 sections
 
 - **Ch 1. Ecosystem Science** `ku-life-sciences-ecology-ecosystem-science` — 1 sections: Ecosystems and the Flow of Energy
+
+### Anatomy & Physiology (`ku-life-sciences-anatomy-and-physiology`)
+
+*The body, system by system* — 1 chapters · 5 sections
+
+- **Ch 1. Human Body Systems** `ku-life-sciences-anatomy-and-physiology-human-body-systems` — 5 sections: The Heart and Circulation: One Pump, Two Circuits; Breathing and Gas Exchange: From Air to Cell; The Digestive System: From Meal to Molecule; Kidneys, Hormones and the Body's Balance; Muscles, Bones and the Machinery of Movement
+
+### Microbiology & Disease (`ku-life-sciences-microbiology-and-disease`)
+
+*The unseen world of germs* — 1 chapters · 3 sections
+
+- **Ch 1. Microbes and Infection** `ku-life-sciences-microbiology-and-disease-microbes-and-infection` — 3 sections: Bacteria, Viruses, Fungi: A Field Guide to the Microbial World; Antibiotics and the Rise of Resistance; The Microbiome: Your Trillion Tenants
+
+### Zoology (`ku-life-sciences-zoology`)
+
+*The animal kingdom mapped* — 1 chapters · 1 sections
+
+- **Ch 1. Animal Diversity** `ku-life-sciences-zoology-animal-diversity` — 1 sections: The Animal Kingdom: A Tour of Body Plans and Phyla
 
 ## Environment & Sustainability — 6 subjects
 
@@ -844,15 +880,17 @@
 
 ### Agriculture & Food Systems (`ku-environment-agriculture-and-food-systems`)
 
-*Feeding eight billion* — 1 chapters · 1 sections
+*Feeding eight billion* — 2 chapters · 2 sections
 
 - **Ch 1. Soil Science** `ku-environment-agriculture-and-food-systems-soil-science` — 1 sections: Soil Health and Regenerative Agriculture
+- **Ch 2. Crop Science** `ku-environment-agriculture-and-food-systems-crop-science` — 1 sections: Crop Science: From Domestication to Disease Resistance
 
 ### Earth Systems (`ku-environment-earth-systems`)
 
-*Rocks, water and cycles* — 1 chapters · 1 sections
+*Rocks, water and cycles* — 2 chapters · 2 sections
 
 - **Ch 1. Hydrology** `ku-environment-earth-systems-hydrology` — 1 sections: The Water Cycle and Freshwater Scarcity
+- **Ch 2. Oceanography** `ku-environment-earth-systems-oceanography` — 1 sections: The Global Ocean: Currents, Chemistry and Life
 
 ### Energy & Sustainability (`ku-environment-energy-and-sustainability`)
 
@@ -862,19 +900,21 @@
 
 ### Conservation Biology (`ku-environment-conservation-biology`)
 
-*Keeping species alive* — 1 chapters · 1 sections
+*Keeping species alive* — 2 chapters · 2 sections
 
 - **Ch 1. Ecology** `ku-environment-conservation-biology-ecology` — 1 sections: Biodiversity and the Sixth Extinction
+- **Ch 2. Restoration** `ku-environment-conservation-biology-restoration` — 1 sections: Restoration and Rewilding: Putting Ecosystems Back Together
 
 ## Engineering Science — 1 subject
 
 ### Aerospace Engineering (`ku-engineering-aerospace-engineering`)
 
-*Why flight works* — 1 chapters · 1 sections
+*Why flight works* — 2 chapters · 2 sections
 
 - **Ch 1. Aerodynamics** `ku-engineering-aerospace-engineering-aerodynamics` — 1 sections: How Wings Really Lift: Aerodynamics Without Magic
+- **Ch 2. Rotorcraft and VTOL** `ku-engineering-aerospace-engineering-rotorcraft-and-vtol` — 1 sections: Helicopters, Drones and Flying Without a Runway
 
-## Technology & Applied Science — 2 subjects
+## Technology & Applied Science — 4 subjects
 
 ### Telecommunications (`ku-technology-applied-telecommunications`)
 
@@ -888,48 +928,86 @@
 
 - **Ch 1. Biomedical Imaging** `ku-technology-applied-medical-technology-biomedical-imaging` — 1 sections: How MRI Machines See Inside You
 
-## Social Sciences — 4 subjects
+### Aviation & Flight (`ku-technology-applied-aviation-and-flight`)
+
+*The sky, organized* — 2 chapters · 2 sections
+
+- **Ch 1. Flight Operations** `ku-technology-applied-aviation-and-flight-flight-operations` — 1 sections: Flight Instruments and the Anatomy of a Cockpit
+- **Ch 2. Air Traffic** `ku-technology-applied-aviation-and-flight-air-traffic` — 1 sections: How Air Traffic Control Keeps the Skies Orderly
+
+### Construction & the Built Environment (`ku-technology-applied-construction-and-the-built-environment`)
+
+*How buildings happen* — 1 chapters · 1 sections
+
+- **Ch 1. How Buildings Work** `ku-technology-applied-construction-and-the-built-environment-how-buildings-work` — 1 sections: How a House Is Built: Foundations to Roof
+
+## Social Sciences — 6 subjects
 
 ### Psychology (`ku-social-sciences-psychology`)
 
-*The studied mind* — 2 chapters · 2 sections
+*The studied mind* — 4 chapters · 4 sections
 
 - **Ch 1. Social Psychology** `ku-social-sciences-psychology-social-psychology` — 1 sections: Cognitive Dissonance and Attitude Change
 - **Ch 2. Behavioral Science** `ku-social-sciences-psychology-behavioral-science` — 1 sections: Cognitive Biases: The Bugs in Human Judgment
+- **Ch 3. Developmental Psychology** `ku-social-sciences-psychology-developmental-psychology` — 1 sections: How Minds Grow: Developmental Psychology Across the Lifespan
+- **Ch 4. Cognitive Psychology** `ku-social-sciences-psychology-cognitive-psychology` — 1 sections: Memory, Attention and Thinking: Cognitive Psychology
 
 ### Sociology (`ku-social-sciences-sociology`)
 
-*Society as a system* — 1 chapters · 1 sections
+*Society as a system* — 3 chapters · 3 sections
 
 - **Ch 1. Classical Theory** `ku-social-sciences-sociology-classical-theory` — 1 sections: Durkheim’s Social Facts and Anomie
+- **Ch 2. Social Structure** `ku-social-sciences-sociology-social-structure` — 1 sections: Class, Status and Power: Social Stratification
+- **Ch 3. Social Institutions** `ku-social-sciences-sociology-social-institutions` — 1 sections: Family, Religion and Institutions: The Skeleton of Society
 
 ### Political Science (`ku-social-sciences-political-science`)
 
-*Power and cooperation* — 2 chapters · 2 sections
+*Power and cooperation* — 4 chapters · 4 sections
 
 - **Ch 1. Rational Choice Theory** `ku-social-sciences-political-science-rational-choice-theory` — 1 sections: Game Theory of Cooperation: The Prisoner’s Dilemma
 - **Ch 2. Public Choice** `ku-social-sciences-political-science-public-choice` — 1 sections: Collective Action and the Tragedy of the Commons
+- **Ch 3. Comparative Politics** `ku-social-sciences-political-science-comparative-politics` — 1 sections: Democracies, Autocracies and Everything in Between
+- **Ch 4. International Relations** `ku-social-sciences-political-science-international-relations` — 1 sections: Why Nations Fight and Trade: International Relations Theory
 
 ### Urban Sociology (`ku-social-sciences-urban-sociology`)
 
-*Why cities exist* — 1 chapters · 1 sections
+*Why cities exist* — 2 chapters · 2 sections
 
 - **Ch 1. Urban Studies** `ku-social-sciences-urban-sociology-urban-studies` — 1 sections: Why Cities Exist: Agglomeration and Urban Life
+- **Ch 2. Urban Change** `ku-social-sciences-urban-sociology-urban-change` — 1 sections: Housing, Segregation and Gentrification
 
-## Humanities — 3 subjects
+### Anthropology (`ku-social-sciences-anthropology`)
+
+*What makes us human* — 2 chapters · 2 sections
+
+- **Ch 1. Cultural Anthropology** `ku-social-sciences-anthropology-cultural-anthropology` — 1 sections: Cultural Anthropology: Making Sense of Human Difference
+- **Ch 2. Archaeology** `ku-social-sciences-anthropology-archaeology` — 1 sections: Archaeology: Reading the Past from Its Remains
+
+### Human Geography (`ku-social-sciences-human-geography`)
+
+*Where people live, and why* — 2 chapters · 2 sections
+
+- **Ch 1. Population and Settlement** `ku-social-sciences-human-geography-population-and-settlement` — 1 sections: Population Geography: Where Humans Live and Why
+- **Ch 2. Economic and Cultural Landscapes** `ku-social-sciences-human-geography-economic-and-cultural-landscapes` — 1 sections: Landscapes of Trade and Belief: Economic and Cultural Geography
+
+## Humanities — 5 subjects
 
 ### World History (`ku-humanities-world-history`)
 
-*How the world connected* — 1 chapters · 2 sections
+*How the world connected* — 3 chapters · 6 sections
 
 - **Ch 1. Economic History** `ku-humanities-world-history-economic-history` — 2 sections: The Silk Road: Exchange Before Globalization; The Industrial Revolution and Its Discontents
+- **Ch 2. The Ancient World** `ku-humanities-world-history-the-ancient-world` — 2 sections: The First Civilizations: Mesopotamia, Egypt and the Indus; Greece and Rome: The Classical Inheritance
+- **Ch 3. The Modern Age** `ku-humanities-world-history-the-modern-age` — 2 sections: The World Wars: Causes, Courses and Consequences; Decolonization and the Making of the Global South
 
 ### Philosophy (`ku-humanities-philosophy`)
 
-*The examined life* — 2 chapters · 2 sections
+*The examined life* — 4 chapters · 4 sections
 
 - **Ch 1. Virtue Ethics** `ku-humanities-philosophy-virtue-ethics` — 1 sections: Aristotle’s Ethics of Flourishing
 - **Ch 2. Intellectual History** `ku-humanities-philosophy-intellectual-history` — 1 sections: The Enlightenment: Reason Changes the World
+- **Ch 3. Epistemology** `ku-humanities-philosophy-epistemology` — 1 sections: Epistemology: What Can We Know?
+- **Ch 4. Philosophy of Mind** `ku-humanities-philosophy-philosophy-of-mind` — 1 sections: The Philosophy of Mind: Consciousness and Its Puzzles
 
 ### Comparative Mythology (`ku-humanities-comparative-mythology`)
 
@@ -937,7 +1015,21 @@
 
 - **Ch 1. Literary Studies** `ku-humanities-comparative-mythology-literary-studies` — 1 sections: Why Myths Repeat: The Monomyth and Cultural Archetypes
 
-## Languages & World Literature — 6 subjects
+### Art History (`ku-humanities-art-history`)
+
+*Five millennia of seeing* — 2 chapters · 2 sections
+
+- **Ch 1. Foundations** `ku-humanities-art-history-foundations` — 1 sections: From Caves to Cathedrals: The First Thirty Thousand Years of Art
+- **Ch 2. The Modern Tradition** `ku-humanities-art-history-the-modern-tradition` — 1 sections: Renaissance to Modernism: How Seeing Changed
+
+### Religious Studies (`ku-humanities-religious-studies`)
+
+*The great traditions, compared* — 2 chapters · 2 sections
+
+- **Ch 1. Eastern Traditions** `ku-humanities-religious-studies-eastern-traditions` — 1 sections: Hinduism, Buddhism and the Eastern Traditions
+- **Ch 2. Western Traditions** `ku-humanities-religious-studies-western-traditions` — 1 sections: Judaism, Christianity and Islam: The Abrahamic Faiths
+
+## Languages & World Literature — 9 subjects
 
 ### Language Acquisition Science (`ku-languages-literature-language-acquisition-science`)
 
@@ -947,21 +1039,24 @@
 
 ### Spanish (`ku-languages-literature-spanish`)
 
-*Two verbs for to be* — 1 chapters · 1 sections
+*Two verbs for to be* — 2 chapters · 2 sections
 
 - **Ch 1. Verb Semantics** `ku-languages-literature-spanish-verb-semantics` — 1 sections: Spanish ser vs estar: Two Ways to Be
+- **Ch 2. Practical Spanish** `ku-languages-literature-spanish-practical-spanish` — 1 sections: Survival Spanish: Greetings, Numbers and the Phrases That Matter
 
 ### Japanese (`ku-languages-literature-japanese`)
 
-*Three scripts, one language* — 1 chapters · 1 sections
+*Three scripts, one language* — 2 chapters · 2 sections
 
 - **Ch 1. Sentence Structure** `ku-languages-literature-japanese-sentence-structure` — 1 sections: Japanese Particles: The Grammar Glue of は, が, を
+- **Ch 2. The Writing System** `ku-languages-literature-japanese-the-writing-system` — 1 sections: Hiragana, Katakana and Kanji: How Japanese Writing Works
 
 ### Linguistics (`ku-languages-literature-linguistics`)
 
-*The architecture of language* — 1 chapters · 1 sections
+*The architecture of language* — 2 chapters · 2 sections
 
 - **Ch 1. Historical Linguistics** `ku-languages-literature-linguistics-historical-linguistics` — 1 sections: Where Words Come From: Etymology in Action
+- **Ch 2. Morphology** `ku-languages-literature-linguistics-morphology` — 1 sections: Morphology: How Languages Build Words
 
 ### Literary Craft (`ku-languages-literature-literary-craft`)
 
@@ -971,11 +1066,30 @@
 
 ### Phonetics & Phonology (`ku-languages-literature-phonetics-and-phonology`)
 
-*The sounds of speech* — 1 chapters · 1 sections
+*The sounds of speech* — 2 chapters · 2 sections
 
 - **Ch 1. Linguistics** `ku-languages-literature-phonetics-and-phonology-linguistics` — 1 sections: Tonal Languages: Meaning in Melody
+- **Ch 2. Prosody** `ku-languages-literature-phonetics-and-phonology-prosody` — 1 sections: Prosody: The Melody of Speech
 
-## Law & Governance — 4 subjects
+### French (`ku-languages-literature-french`)
+
+*Say it like the French* — 1 chapters · 1 sections
+
+- **Ch 1. French Foundations** `ku-languages-literature-french-french-foundations` — 1 sections: French Foundations: Pronunciation, Articles and First Phrases
+
+### Mandarin Chinese (`ku-languages-literature-mandarin-chinese`)
+
+*Tones, strokes and characters* — 1 chapters · 1 sections
+
+- **Ch 1. Mandarin Foundations** `ku-languages-literature-mandarin-chinese-mandarin-foundations` — 1 sections: Mandarin Foundations: Tones, Characters and First Phrases
+
+### World Literature (`ku-languages-literature-world-literature`)
+
+*The books that shaped us* — 1 chapters · 1 sections
+
+- **Ch 1. The Great Tradition** `ku-languages-literature-world-literature-the-great-tradition` — 1 sections: From Gilgamesh to the Odyssey: The Birth of Literature
+
+## Law & Governance — 5 subjects
 
 ### Constitutional Law (`ku-law-governance-constitutional-law`)
 
@@ -992,9 +1106,10 @@
 
 ### Private Law (`ku-law-governance-private-law`)
 
-*Promises enforced* — 1 chapters · 1 sections
+*Promises enforced* — 2 chapters · 2 sections
 
 - **Ch 1. Contract Law** `ku-law-governance-private-law-contract-law` — 1 sections: Contracts: The Anatomy of a Promise the Law Enforces
+- **Ch 2. Tort Law** `ku-law-governance-private-law-tort-law` — 1 sections: Tort Law: When Harm Has a Price
 
 ### Criminal Justice (`ku-law-governance-criminal-justice`)
 
@@ -1002,13 +1117,20 @@
 
 - **Ch 1. Litigation** `ku-law-governance-criminal-justice-litigation` — 1 sections: Evidence and the Burden of Proof
 
-## Business & Economics — 6 subjects
+### Intellectual Property & Media Law (`ku-law-governance-intellectual-property-and-media-law`)
+
+*Who owns an idea* — 1 chapters · 1 sections
+
+- **Ch 1. IP Fundamentals** `ku-law-governance-intellectual-property-and-media-law-ip-fundamentals` — 1 sections: Copyright, Patents and Trademarks: Who Owns an Idea
+
+## Business & Economics — 9 subjects
 
 ### Microeconomics (`ku-business-economics-microeconomics`)
 
-*Prices and incentives* — 1 chapters · 1 sections
+*Prices and incentives* — 2 chapters · 2 sections
 
 - **Ch 1. Price Theory** `ku-business-economics-microeconomics-price-theory` — 1 sections: Supply, Demand and Elasticity
+- **Ch 2. When Markets Fail** `ku-business-economics-microeconomics-when-markets-fail` — 1 sections: When Markets Fail: Externalities, Public Goods and Monopoly Power
 
 ### Finance & Investment (`ku-business-economics-finance-and-investment`)
 
@@ -1024,9 +1146,11 @@
 
 ### Macroeconomics (`ku-business-economics-macroeconomics`)
 
-*Whole economies* — 1 chapters · 1 sections
+*Whole economies* — 3 chapters · 3 sections
 
 - **Ch 1. Monetary Economics** `ku-business-economics-macroeconomics-monetary-economics` — 1 sections: Inflation and What Central Banks Actually Do
+- **Ch 2. The Vital Signs** `ku-business-economics-macroeconomics-the-vital-signs` — 1 sections: GDP, Inflation and Unemployment: The Vital Signs of an Economy
+- **Ch 3. Fiscal Policy** `ku-business-economics-macroeconomics-fiscal-policy` — 1 sections: Fiscal Policy: How Governments Spend and Tax Their Way Through Crises
 
 ### Strategy (`ku-business-economics-strategy`)
 
@@ -1040,7 +1164,26 @@
 
 - **Ch 1. Decision Science** `ku-business-economics-behavioral-economics-decision-science` — 1 sections: Nudges and the Psychology of Choosing
 
-## Health & Wellness — 5 subjects
+### Accounting (`ku-business-economics-accounting`)
+
+*The language of business* — 2 chapters · 2 sections
+
+- **Ch 1. The Ledger** `ku-business-economics-accounting-the-ledger` — 1 sections: Double-Entry Bookkeeping: The Logic Behind Every Ledger
+- **Ch 2. Reading Statements** `ku-business-economics-accounting-reading-statements` — 1 sections: Reading Financial Statements: Balance Sheet, Income and Cash Flow
+
+### Marketing (`ku-business-economics-marketing`)
+
+*Attention, understood* — 1 chapters · 1 sections
+
+- **Ch 1. Marketing Foundations** `ku-business-economics-marketing-marketing-foundations` — 1 sections: The Four Ps and the Psychology of Buying
+
+### Entrepreneurship (`ku-business-economics-entrepreneurship`)
+
+*Ideas into ventures* — 1 chapters · 1 sections
+
+- **Ch 1. Building a Venture** `ku-business-economics-entrepreneurship-building-a-venture` — 1 sections: From Idea to Business: Lean Startups and Business Models
+
+## Health & Wellness — 6 subjects
 
 ### Sleep Science (`ku-health-wellness-sleep-science`)
 
@@ -1069,29 +1212,39 @@
 
 ### Mental Health (`ku-health-wellness-mental-health`)
 
-*Stress and balance* — 1 chapters · 1 sections
+*Stress and balance* — 2 chapters · 2 sections
 
 - **Ch 1. Psychoneuroendocrinology** `ku-health-wellness-mental-health-psychoneuroendocrinology` — 1 sections: Stress, Cortisol and the Body's Alarm System
+- **Ch 2. Mood and Anxiety** `ku-health-wellness-mental-health-mood-and-anxiety` — 1 sections: Anxiety and Depression: What They Actually Are
 
-## Arts & Culture — 6 subjects
+### First Aid & Emergency Care (`ku-health-wellness-first-aid-and-emergency-care`)
+
+*Help that arrives first* — 1 chapters · 1 sections
+
+- **Ch 1. Emergency Basics** `ku-health-wellness-first-aid-and-emergency-care-emergency-basics` — 1 sections: First Aid Essentials: Bleeding, Burns, Choking and the Recovery Position
+
+## Arts & Culture — 8 subjects
 
 ### Photography (`ku-arts-culture-photography`)
 
-*Light, framed* — 1 chapters · 1 sections
+*Light, framed* — 2 chapters · 2 sections
 
 - **Ch 1. Composition** `ku-arts-culture-photography-composition` — 1 sections: The Rule of Thirds and Visual Weight
+- **Ch 2. Exposure and Light** `ku-arts-culture-photography-exposure-and-light` — 1 sections: The Exposure Triangle: Aperture, Shutter Speed and ISO
 
 ### Music Theory & Practice (`ku-arts-culture-music-theory-and-practice`)
 
-*Why chords feel* — 1 chapters · 1 sections
+*Why chords feel* — 2 chapters · 2 sections
 
 - **Ch 1. Diatonic Harmony** `ku-arts-culture-music-theory-and-practice-diatonic-harmony` — 1 sections: Harmony: Why Chords Sound Like Home
+- **Ch 2. Rhythm and Meter** `ku-arts-culture-music-theory-and-practice-rhythm-and-meter` — 1 sections: Rhythm and Meter: How Music Organizes Time
 
 ### Film & Cinema (`ku-arts-culture-film-and-cinema`)
 
-*The grammar of film* — 1 chapters · 1 sections
+*The grammar of film* — 2 chapters · 2 sections
 
 - **Ch 1. Editing Theory** `ku-arts-culture-film-and-cinema-editing-theory` — 1 sections: Montage and the Kuleshov Effect
+- **Ch 2. Cinematography** `ku-arts-culture-film-and-cinema-cinematography` — 1 sections: Cinematography: Shots, Camera Movement and Light
 
 ### Visual Design (`ku-arts-culture-visual-design`)
 
@@ -1111,21 +1264,35 @@
 
 - **Ch 1. Cultural Studies** `ku-arts-culture-fashion-and-identity-cultural-studies` — 1 sections: Fashion as Language: What Clothes Say
 
+### Drawing & Painting (`ku-arts-culture-drawing-and-painting`)
+
+*Seeing, made visible* — 1 chapters · 1 sections
+
+- **Ch 1. Drawing Foundations** `ku-arts-culture-drawing-and-painting-drawing-foundations` — 1 sections: Learning to See: Line, Shape and Perspective
+
+### Music Production (`ku-arts-culture-music-production`)
+
+*Sound, shaped and mixed* — 1 chapters · 1 sections
+
+- **Ch 1. The Home Studio** `ku-arts-culture-music-production-the-home-studio` — 1 sections: Music Production: DAWs, Recording and the Basics of Mixing
+
 ## Everyday Knowledge — 3 subjects
 
 ### Cooking & Food Science (`ku-everyday-practical-cooking-and-food-science`)
 
-*The chemistry of dinner* — 2 chapters · 2 sections
+*The chemistry of dinner* — 3 chapters · 3 sections
 
 - **Ch 1. Kitchen Chemistry** `ku-everyday-practical-cooking-and-food-science-kitchen-chemistry` — 1 sections: The Maillard Reaction: Why Browned Food Tastes Better
 - **Ch 2. Food Safety** `ku-everyday-practical-cooking-and-food-science-food-safety` — 1 sections: Food Safety: The Danger Zone and Its Rules
+- **Ch 3. Flavor** `ku-everyday-practical-cooking-and-food-science-flavor` — 1 sections: The Science of Flavor: Salt, Fat, Acid and Heat
 
 ### Personal Finance (`ku-everyday-practical-personal-finance`)
 
-*Your money, mastered* — 2 chapters · 2 sections
+*Your money, mastered* — 3 chapters · 3 sections
 
 - **Ch 1. Income Literacy** `ku-everyday-practical-personal-finance-income-literacy` — 1 sections: Reading a Paycheck: Taxes, Deductions and Net Pay
 - **Ch 2. Consumer Finance** `ku-everyday-practical-personal-finance-consumer-finance` — 1 sections: Credit Scores: The Math That Decides Your Loan
+- **Ch 3. Credit and Debt** `ku-everyday-practical-personal-finance-credit-and-debt` — 1 sections: Credit Scores, Loans and the Real Cost of Debt
 
 ### Navigation & Outdoors (`ku-everyday-practical-navigation-and-outdoors`)
 

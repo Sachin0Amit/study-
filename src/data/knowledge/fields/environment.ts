@@ -954,5 +954,383 @@ export const environment: KnowledgeDomainFile = {
         },
       ],
     },
+    // ------------------------------------------------------------------
+    {
+      id: 'env-ocean-currents-chemistry',
+      title: 'The Global Ocean: Currents, Chemistry and Life',
+      domain: 'Environment & Sustainability',
+      field: 'Earth Systems',
+      branch: 'Oceanography',
+      tier: 'intermediate',
+      concepts: [
+        'One ocean, wind-driven gyres',
+        'Thermohaline circulation: the conveyor',
+        'Upwelling: the ocean fertilizer pumps',
+        'Salinity and the carbonate buffer',
+        'Acidification under way',
+        'Vertical zones of life',
+      ],
+      words: 0,
+      readMins: 2,
+      addedOn: '2026-10-18',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'The ocean is one connected body of water covering 71 percent of the planet and holding 97 percent of its water — and it is never still. Winds drag its surface into great circular gyres, while differences in temperature and salinity drive a slow overturning that carries water on thousand-year journeys from the North Atlantic to the Pacific. The same water quietly absorbs roughly a quarter of each year\'s carbon emissions, changing its own chemistry as it does. This intermediate Earth Systems lesson covers the currents, the chemistry and the life they support — and why what happens in the ocean never stays in the ocean.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'The ocean sets Earth\'s climate thermostat, feeds over three billion people who rely on seafood for a major protein source, and is acidifying as it absorbs our CO2. Fisheries, storms and coastlines all answer to how the water moves.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Surface currents are the wind\'s work. Persistent trade winds and westerlies drag water into five great subtropical gyres — clockwise in the Northern Hemisphere, counterclockwise in the south. Their western edges run fast, narrow and deep: the Gulf Stream off Florida moves some 30 million cubic meters of water per second, over a hundred Amazon rivers, carrying tropical heat that keeps Western Europe milder than its latitude suggests.',
+        },
+        {
+          kind: 'para',
+          text: 'The deep circulation is driven by density. In the Greenland and Labrador seas, cold water chilled and salted by winter ice formation sinks and creeps south along the ocean floor; the loop resurfaces in the Pacific and Indian oceans centuries later. This thermohaline conveyor redistributes heat planet-wide, and its Atlantic arm — the AMOC — is watched closely because meltwater freshening the North Atlantic could weaken it.',
+        },
+        {
+          kind: 'para',
+          text: 'Where wind blows surface water away, cold, nutrient-rich water rises to replace it: upwelling. The coasts off Peru, California and Namibia are upwelling engines — nitrate and phosphate from the deep fertilize plankton blooms that feed the world\'s richest fisheries, including the Peruvian anchoveta. A few percent of ocean area supplies roughly a fifth of the marine fish catch. When trade winds slacken in an El Nino, the pump stalls and the anchoveta fishery collapses.',
+        },
+        {
+          kind: 'para',
+          text: 'Seawater is a broth of dissolved ions averaging 35 grams of salt per kilogram — mostly sodium and chloride — wrapped in a self-regulating buffer. Added CO2 reacts with water and carbonate to form bicarbonate, which is why the ocean can absorb about a quarter of human emissions. The buffer is not free: the reaction consumes the carbonate ions that shelled life needs.',
+        },
+        {
+          kind: 'para',
+          text: 'Since pre-industrial times the surface ocean\'s pH has slipped from about 8.2 to 8.1 — a 0.1-unit drop meaning roughly 30 percent more hydrogen ions. Oyster hatcheries on the U.S. West Coast have already lost broods to corrosive upwelled water, and corals build more slowly as carbonate declines. High-emission projections reach 0.3 units by 2100, a near-doubling of acidity.',
+        },
+        {
+          kind: 'para',
+          text: 'Life sorts by depth. Phytoplankton, the base of nearly every marine food web, live in the sunlit top 100 to 200 meters; below, the twilight zone runs on the rain of debris from above — the biological pump detailed in our carbon-budget lesson. Even the sunless floor surprises: hydrothermal vents discovered in 1977 host tube worms and shrimp farmed by chemosynthesis, no sunlight required.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Identify what is asked: what a further 0.3-unit drop in ocean pH by 2100 would mean for acidity.',
+            'Recall: pH is logarithmic — a shift of n units multiplies the hydrogen-ion concentration by 10 to the power n.',
+            'Apply: 10^0.3 ≈ 2.0, so the hydrogen-ion concentration very nearly doubles.',
+            'State the result: a "mere" 0.3-unit fall is a near-doubling of acidity — which is why shell-building organisms track CO2 emission scenarios so closely.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Fisheries agencies watch El Nino and upwelling indices to set anchoveta and sardine quotas',
+            'Oyster and clam hatcheries on the Pacific coast now monitor pH and carbonate daily',
+            'Climate scientists track AMOC indicators because a weaker conveyor would reshape European weather',
+            'Coral-reef managers pair local pollution control with global CO2 projections for reef survival',
+            'Shippers and sailors still ride the Gulf Stream and Agulhas currents to save fuel and days',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'The ocean absorbing CO2 is not a harmless free service — the buffering that protects pH consumes carbonate. Surface gyres (wind-driven, fast) and the thermohaline conveyor (density-driven, millennium-slow) are different machines. And the pH change from 8.2 to 8.1 looks tiny because the scale is logarithmic — each 0.1 is about a 30 percent jump in acidity.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Gyre', def: 'A large wind-driven circular surface current around an ocean basin.' },
+            { term: 'Thermohaline circulation', def: 'The global overturning driven by density — sinking cold, salty water and slow deep return flows.' },
+            { term: 'AMOC', def: 'The Atlantic Meridional Overturning Circulation — the conveyor\'s Atlantic arm, a key climate knob.' },
+            { term: 'Upwelling', def: 'Wind-driven rise of cold, nutrient-rich water that fertilizes surface life.' },
+            { term: 'Ocean acidification', def: 'The pH decline caused by absorbed CO2 reacting to form carbonic acid and bicarbonate.' },
+            { term: 'Photic zone', def: 'The sunlit upper 100-200 meters where photosynthesis powers marine food webs.' },
+            { term: 'Chemosynthesis', def: 'Building biomass from chemical energy, as at hydrothermal vents, with no sunlight.' },
+          ],
+        },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'Western Europe is milder than its latitude suggests largely because:',
+              options: ['It is closer to the equator', 'The Gulf Stream carries tropical heat northward', 'Its mountains block cold air', 'Its winds blow only from the south'],
+              answer: 1,
+              explain: 'The Gulf Stream and its extension release enormous amounts of tropical heat to the North Atlantic atmosphere.',
+            },
+            {
+              q: 'Upwelling zones support huge fisheries because rising water brings:',
+              options: ['Warm water', 'Dissolved oxygen from the air', 'Nitrate and phosphate nutrients', 'Freshwater'],
+              answer: 2,
+              explain: 'Deep water is cold but nutrient-rich; fertilized phytoplankton feed everything above them.',
+            },
+            {
+              q: 'The pH drop from 8.2 to 8.1 means the ocean is now about:',
+              options: ['1 percent more acidic', '10 percent more acidic', '30 percent more acidic', 'Twice as acidic'],
+              answer: 2,
+              explain: 'The scale is logarithmic: 0.1 units is roughly a 30 percent increase in hydrogen-ion concentration.',
+            },
+            {
+              q: 'Hydrothermal-vent communities are powered by:',
+              options: ['Sunlight filtering down', 'Chemosynthesis from chemical energy', 'Whale falls only', 'Photosynthesis by vent bacteria'],
+              answer: 1,
+              explain: 'Bacteria oxidize hydrogen sulfide from the vents, feeding ecosystems that never see the Sun.',
+            },
+          ],
+        },
+      ],
+    },
+    // ------------------------------------------------------------------
+    {
+      id: 'env-crop-science-breeding',
+      title: 'Crop Science: From Domestication to Disease Resistance',
+      domain: 'Environment & Sustainability',
+      field: 'Agriculture & Food Systems',
+      branch: 'Crop Science',
+      tier: 'core',
+      concepts: [
+        'Domestication: the first genetic engineering',
+        'Breeding by selection',
+        'Hybrid vigor and yearly seed buying',
+        'The Green Revolution',
+        'GM crops: what they are, what is debated',
+        'Yield gaps and closing them',
+      ],
+      words: 0,
+      readMins: 2,
+      addedOn: '2026-10-18',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'Every crop you have ever eaten is a human invention. Wheat, rice, maize and potatoes all descend from wild plants remade by ten thousand years of selection by farmers who mostly had no idea what genes were. Modern crop science does the same job with far more precision: crossing, selecting, and since the 1990s directly adding or editing DNA. This core lesson traces the arc from domestication through Mendelian breeding, hybrid seed and the Green Revolution to today\'s GM debate — and shows how agronomists measure whether any of it is working, in tonnes per hectare.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Agriculture must roughly double food production by 2050 on little extra land, under shifting climates and evolving pests. Which breeding tools we use — and who controls seed — shapes food prices, farm livelihoods and wild-land conversion.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Domestication began independently in a dozen-odd centers, from the Fertile Crescent\'s wheat and barley to Mexico\'s maize — a scrawny wild grass called teosinte transformed into full ears of corn. The domestication syndrome repeated everywhere: seeds stopped shattering from the stalk, dormancy and bitterness fell away, and harvestable parts swelled. A few regulatory gene changes did much of the work.',
+        },
+        {
+          kind: 'para',
+          text: 'Selection is breeding\'s engine. Early farmers simply kept seed from the best plants; modern breeders do it deliberately — cross two parents, then walk the fields choosing offspring generation after generation, guided now by DNA markers linked to disease resistance or drought tolerance rather than by eye alone. Local landraces, shaped by centuries of farmer selection, remain a reservoir of adaptive genes.',
+        },
+        {
+          kind: 'para',
+          text: 'Cross two genetically different inbred lines and the first generation can outgrow both parents — heterosis, or hybrid vigor, typically worth 10 to 30 percent in maize. The boost does not persist: the second generation reshuffles genes and yields crash, which is why farmers replant fresh F1 seed each season. The biology created the seed industry\'s business model.',
+        },
+        {
+          kind: 'para',
+          text: 'The Green Revolution bundled genetics with agronomy. Norman Borlaug\'s semi-dwarf, rust-resistant wheats, bred at CIMMYT in Mexico, went to India and Pakistan in the mid-1960s and — with fertilizer and irrigation — turned looming famines into grain surpluses; Borlaug won the 1970 Nobel Peace Prize. IR8, the 1966 "miracle rice," did the same across Asia.',
+        },
+        {
+          kind: 'para',
+          text: 'GM crops add genes rather than selecting existing ones. Bt corn and cotton carry a bacterial protein toxic to specific insects, cutting insecticide spraying; herbicide-tolerant varieties simplified weed control. The debate is real on both sides: pests have evolved Bt resistance where refuge plantings were skipped, weeds have followed glyphosate into resistance, and seed ownership concentrates in a few companies — while decades of evidence show no special danger from the technique itself. Newer gene-edited crops, built with the CRISPR tools explained in our genetics lesson, mostly tweak a plant\'s own genes and face lighter regulation.',
+        },
+        {
+          kind: 'para',
+          text: 'Progress is measured in yield: tonnes per hectare. U.S. maize averages about 11 t/ha with contest plots above 16, while Sub-Saharan African maize averages under 2. The yield gap — actual minus attainable yield — closes as much through agronomy, seed access and soil care as through new genetics.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Identify what is asked: the yield gap for a region whose farmers average 3.0 tonnes of maize per hectare where attainable yield with best local practice is 6.5.',
+            'Recall: yield gap = attainable − actual; farmers\' realized share = actual / attainable.',
+            'Apply: gap = 6.5 − 3.0 = 3.5 t/ha; realized share = 3.0 / 6.5 ≈ 0.46, so about 46 percent of attainable yield is captured.',
+            'State the result: over half the potential is unrealized — usually a seed, water, pest or soil-fertility problem to diagnose field by field before any new variety is even discussed.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Seed companies run hundreds of trial plots a year to pick next season\'s hybrids',
+            'Gene banks such as CIMMYT\'s wheat collection preserve wild relatives for future breeding',
+            'Plant pathologists race new stem rust strains like Ug99, breeding resistance before it spreads',
+            'Seed certification laws guarantee that the hybrid in the bag matches its label',
+            'Extension services demo trial yields to close local yield gaps farmer by farmer',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'Hybrid is not GMO: hybrid vigor comes from crossing inbred lines, a technique organic farmers happily use, while GM inserts or edits specific genes. Yield growth also stalled in several regions after the Green Revolution — genetics alone cannot outrun degraded soils and hotter summers. And a record yield in a contest plot says nothing about what average farmers can afford.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Domestication syndrome', def: 'The recurring changes — no shattering, less bitterness, bigger seeds — that mark a domesticated plant.' },
+            { term: 'Landrace', def: 'A locally adapted crop population improved by generations of farmer selection.' },
+            { term: 'Heterosis', def: 'Hybrid vigor — the F1 outperforming both inbred parents.' },
+            { term: 'F1 hybrid', def: 'First-generation cross of two inbred lines; uniform and vigorous, but its seed cannot be saved profitably.' },
+            { term: 'Green Revolution', def: 'The 1960s-70s yield leap from semi-dwarf varieties plus fertilizer and irrigation.' },
+            { term: 'Bt crop', def: 'A plant engineered to produce a bacterial protein toxic to specific insect pests.' },
+            { term: 'Yield gap', def: 'The difference between actual farm yield and the attainable yield with best local practice.' },
+          ],
+        },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'Farmers buy new hybrid seed every year because:',
+              options: ['Seed cannot be stored', 'The F2 generation loses vigor as genes reshuffle', 'Law forbids saving seed everywhere', 'Hybrids are sterile'],
+              answer: 1,
+              explain: 'Segregation in the second generation breaks up the combination that made the F1 outperform — yields crash.',
+            },
+            {
+              q: 'The Green Revolution depended primarily on:',
+              options: ['Organic methods alone', 'Semi-dwarf disease-resistant varieties plus fertilizer and irrigation', 'Clearing new land', 'Greenhouses'],
+              answer: 1,
+              explain: 'Borlaug\'s wheats and IR8 rice only paid off as a package with nutrients and controlled water.',
+            },
+            {
+              q: 'Bt corn reduces insecticide spraying because:',
+              options: ['It grows faster', 'It produces a bacterial protein toxic to its target pests', 'It smells bad to insects', 'It is planted further apart'],
+              answer: 1,
+              explain: 'The engineered Cry protein kills chewing caterpillars like corn borers — the plant is its own pesticide.',
+            },
+            {
+              q: 'A region yields 3.0 t/ha against an attainable 6.5. The yield gap and realized share are:',
+              options: ['3.5 t/ha and 46 percent', '9.5 t/ha and 46 percent', '3.5 t/ha and 54 percent', '6.5 t/ha and 30 percent'],
+              answer: 0,
+              explain: 'Gap = 6.5 − 3.0 = 3.5 t/ha; realized share = 3.0/6.5 ≈ 46 percent.',
+            },
+          ],
+        },
+      ],
+    },
+    // ------------------------------------------------------------------
+    {
+      id: 'env-restoration-rewilding',
+      title: 'Restoration and Rewilding: Putting Ecosystems Back Together',
+      domain: 'Environment & Sustainability',
+      field: 'Conservation Biology',
+      branch: 'Restoration',
+      tier: 'core',
+      concepts: [
+        'Succession: nature recovery sequence',
+        'Setting restoration targets',
+        'Passive restoration: removing the stressor',
+        'Active restoration and reintroduction',
+        'Trophic rewilding: Yellowstone and beavers',
+        'Measuring recovery, not just acres',
+      ],
+      words: 0,
+      readMins: 2,
+      addedOn: '2026-10-18',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'Conservation has two jobs: protect what remains, and put back what was lost. The second job — restoration — has grown from hobby to global industry: the United Nations declared 2021-2030 the Decade on Ecosystem Restoration, and the Bonn Challenge aims to bring 350 million hectares under restoration. The science begins with a simple observation: damaged land does not stay damaged. It recovers along a predictable relay called succession, and restoration is the art of steering it. This core lesson covers that sequence, the choice between letting nature heal itself and helping actively, and the rewilding experiments — from Yellowstone wolves to English beavers — that test how much of an ecosystem you actually need.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Restoration is now central to climate policy (nature-based carbon), water security and the 30x30 global target of protecting 30 percent of land and ocean by 2030. Done well it multiplies biodiversity; done badly it is expensive green paint.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'After a disturbance, life returns in an orderly relay. Bare lava or glacier scrape starts from scratch — primary succession, lichens first and soil building over centuries. A logged forest or abandoned farm keeps its soil, so secondary succession runs faster: weeds and grasses in year one, shrubs by five, pioneer trees by twenty, and in the eastern United States a mature hardwood forest after a century or two.',
+        },
+        {
+          kind: 'para',
+          text: 'Good restoration needs a target: a reference ecosystem — often a nearby intact site or historical records — and goals stated as structure (which species, how many layers), function (nutrient cycling, water storage) and resilience. "Make it green" is not a target; a monoculture of one fast-growing exotic tree is green and still an ecological desert.',
+        },
+        {
+          kind: 'para',
+          text: 'The cheapest restoration is often to stop the harm and wait: fence livestock off the stream, end logging, remove drainage. Studies comparing methods repeatedly find passive recovery can match active planting at a fraction of the cost — but only where the stressor is truly gone and seeds can still reach the site. On land cleared for decades, waiting is not enough.',
+        },
+        {
+          kind: 'para',
+          text: 'Active restoration adds what nature cannot deliver fast: seeding and planting natives, rebuilding hydrology, reintroducing species. Costa Rica did it at national scale — forest cover fell to about 21 percent by 1987, then rebounded past half the country through protection and assisted regrowth, reversing one of the world\'s fastest deforestation curves.',
+        },
+        {
+          kind: 'para',
+          text: 'Trophic rewilding restores the animals that shape ecosystems from the top. In 1995, 41 gray wolves were released in Yellowstone; elk stopped loitering in open river valleys, willows and aspen regrew, beavers recolonized, and their ponds drew birds and fish — a trophic cascade still studied and debated. In Europe, beavers are reintroduced as ecosystem engineers whose dams slow floods, recharge groundwater and build wetlands free of charge; England\'s Devon trial measured real flood-peak reduction downstream.',
+        },
+        {
+          kind: 'para',
+          text: 'Restoration is measured, not announced: species richness against the reference, indicator species returning, functions like decomposition and stream shade, plus survival of what was planted. The flagship caution is "plant a tree" arithmetic — single-species plantations can tick an acreage box (and a carbon credit) while supporting less biodiversity than the degraded land they replaced. The 30x30 target will be judged on function, not geometry.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Identify what is asked: what an abandoned cornfield in the eastern U.S. will look like at 2, 15 and 60 years, and how a restorationist would steer it.',
+            'Recall: secondary succession runs annual weeds → perennial herbs and shrubs → pioneer trees → mature hardwoods, because soil and a nearby seed source remain.',
+            'Apply: year 2 brings ragweed and crabgrass; year 15, broomsedge, shrubs and first pines; year 60, a young hardwood stand with oaks establishing beneath. Steering: knock back invasives early, plant native hardwoods to skip decades, leave snags and logs for habitat.',
+            'State the result: natural recovery delivers a young forest by mid-century; targeted planting reaches the reference community decades sooner at modest cost.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Mine-reclamation law obliges companies to rebuild soils and native vegetation after closure',
+            'Dam removal — over 2,000 U.S. dams since 2012 — lets rivers and salmon runs re-connect',
+            'Cities convert vacant lots to native meadows with passive restoration and seed mixes',
+            'Peatland rewetting in Europe and Southeast Asia cuts both biodiversity loss and fire risk',
+            'Carbon-market standards increasingly demand native diversity, not just planted stems, before paying out',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'Planting is not restoring: rows of one exotic species store carbon yet starve wildlife. Restoring while the original stressor — overgrazing, drainage, pollution — still operates wastes money, which is why passive "stressor removal first" is the field\'s golden rule. And expecting a pristine past ignores that climate has moved the goalposts; many projects now aim for novel but functional ecosystems.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Secondary succession', def: 'Recovery on ground that kept its soil, from weeds to mature forest over decades to centuries.' },
+            { term: 'Reference ecosystem', def: 'The intact site or historical record a restoration project measures itself against.' },
+            { term: 'Passive restoration', def: 'Removing the stressor — fencing, stopping logging — and letting succession do the work.' },
+            { term: 'Active restoration', def: 'Planting, seeding, earthworks and species reintroductions where nature cannot recover alone.' },
+            { term: 'Trophic cascade', def: 'Indirect effects rippling from a predator\'s return, as wolves changed elk behavior and then rivers\' vegetation.' },
+            { term: 'Ecosystem engineer', def: 'A species, like the beaver, that physically rebuilds habitat for many others.' },
+            { term: 'Novel ecosystem', def: 'A functioning new assemblage with no historical analogue, often the realistic target under climate change.' },
+          ],
+        },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'Passive restoration is most likely to succeed when:',
+              options: ['The soil is completely gone', 'The original stressor is removed and a seed source remains nearby', 'The land has been cleared for a century', 'All native species are locally extinct'],
+              answer: 1,
+              explain: 'Nature\'s relay is fast when soil and seeds survive — stop the harm and succession does the labor for free.',
+            },
+            {
+              q: 'The Yellowstone wolf return is celebrated mainly as:',
+              options: ['A predator-control success', 'A trophic cascade that reshaped vegetation and rivers', 'A genetic rescue of elk', 'A tourism campaign'],
+              answer: 1,
+              explain: 'Wolf-avoidance behavior changed elk browsing, letting willows and aspen recover and beavers return — effects still debated in detail.',
+            },
+            {
+              q: 'Beavers are called ecosystem engineers because:',
+              options: ['They hunt keystone prey', 'Their dams physically create wetlands used by many species', 'They plant trees', 'They aerate soil'],
+              answer: 1,
+              explain: 'One animal\'s construction reworks hydrology — ponds, flood storage and habitat that would cost millions to build.',
+            },
+            {
+              q: 'The core criticism of single-species tree plantations counted as "restoration" is:',
+              options: ['They grow too slowly', 'They meet acreage targets while restoring little biodiversity or function', 'They always catch fire', 'They cannot store carbon'],
+              answer: 1,
+              explain: 'Monocultures can earn carbon credits yet support less life than the degraded land they replaced — the trap 30x30 must avoid.',
+            },
+          ],
+        },
+      ],
+    },
   ],
 }

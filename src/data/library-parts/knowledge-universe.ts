@@ -171,6 +171,8 @@ const FIELD_META: Record<string, { icon: string; tagline: string }> = {
   'Skill Acquisition': { icon: 'timer', tagline: 'Practice that compounds' },
   /* Physical Sciences */
   'Astronomy & Space Science': { icon: 'telescope', tagline: 'The lives of stars' },
+  'Geology & Earth Science': { icon: 'mountain', tagline: 'The planet underfoot' },
+  Meteorology: { icon: 'cloud-lightning', tagline: 'Why the sky does what it does' },
   /* Life Sciences */
   'Genetics & Heredity': { icon: 'dna', tagline: 'The code of inheritance' },
   Neuroscience: { icon: 'brain', tagline: 'Signals of the mind' },
@@ -178,6 +180,9 @@ const FIELD_META: Record<string, { icon: string; tagline: string }> = {
   'Evolutionary Biology': { icon: 'git-branch', tagline: 'Descent with modification' },
   Immunology: { icon: 'filter', tagline: 'The body\u2019s defense layers' },
   Ecology: { icon: 'globe', tagline: 'Energy through ecosystems' },
+  'Anatomy & Physiology': { icon: 'heart-pulse', tagline: 'The body, system by system' },
+  'Microbiology & Disease': { icon: 'bug', tagline: 'The unseen world of germs' },
+  Zoology: { icon: 'paw-print', tagline: 'The animal kingdom mapped' },
   /* Environment & Sustainability */
   'Climate Science': { icon: 'wind', tagline: 'Reading the atmosphere' },
   'Agriculture & Food Systems': { icon: 'sprout', tagline: 'Feeding eight billion' },
@@ -190,15 +195,21 @@ const FIELD_META: Record<string, { icon: string; tagline: string }> = {
   /* Technology & Applied Science */
   Telecommunications: { icon: 'radio', tagline: 'Finding where you are' },
   'Medical Technology': { icon: 'microscope', tagline: 'Machines that see within' },
+  'Aviation & Flight': { icon: 'plane', tagline: 'The sky, organized' },
+  'Construction & the Built Environment': { icon: 'hard-hat', tagline: 'How buildings happen' },
   /* Social Sciences */
   Psychology: { icon: 'brain', tagline: 'The studied mind' },
   Sociology: { icon: 'users', tagline: 'Society as a system' },
   'Political Science': { icon: 'landmark', tagline: 'Power and cooperation' },
   'Urban Sociology': { icon: 'boxes', tagline: 'Why cities exist' },
+  Anthropology: { icon: 'users', tagline: 'What makes us human' },
+  'Human Geography': { icon: 'map-pin', tagline: 'Where people live, and why' },
   /* Humanities */
   Philosophy: { icon: 'lightbulb', tagline: 'The examined life' },
   'World History': { icon: 'map', tagline: 'How the world connected' },
   'Comparative Mythology': { icon: 'sparkles', tagline: 'Stories people share' },
+  'Art History': { icon: 'frame', tagline: 'Five millennia of seeing' },
+  'Religious Studies': { icon: 'church', tagline: 'The great traditions, compared' },
   /* Languages & World Literature */
   'Language Acquisition Science': { icon: 'book', tagline: 'How brains absorb language' },
   Spanish: { icon: 'type', tagline: 'Two verbs for to be' },
@@ -206,11 +217,15 @@ const FIELD_META: Record<string, { icon: string; tagline: string }> = {
   Linguistics: { icon: 'binary', tagline: 'The architecture of language' },
   'Phonetics & Phonology': { icon: 'audio-waveform', tagline: 'The sounds of speech' },
   'Literary Craft': { icon: 'pen-tool', tagline: 'How writing works' },
+  French: { icon: 'languages', tagline: 'Say it like the French' },
+  'Mandarin Chinese': { icon: 'languages', tagline: 'Tones, strokes and characters' },
+  'World Literature': { icon: 'library', tagline: 'The books that shaped us' },
   /* Law & Governance */
   'Constitutional Law': { icon: 'scale', tagline: 'Power divided' },
   'International Law': { icon: 'globe', tagline: 'Rules between nations' },
   'Private Law': { icon: 'handshake', tagline: 'Promises enforced' },
   'Criminal Justice': { icon: 'siren', tagline: 'Proof and process' },
+  'Intellectual Property & Media Law': { icon: 'receipt', tagline: 'Who owns an idea' },
   /* Business & Economics */
   Microeconomics: { icon: 'trending', tagline: 'Prices and incentives' },
   'Finance & Investment': { icon: 'calculator', tagline: 'Money across time' },
@@ -218,12 +233,16 @@ const FIELD_META: Record<string, { icon: string; tagline: string }> = {
   Macroeconomics: { icon: 'chart-line', tagline: 'Whole economies' },
   'Behavioral Economics': { icon: 'brain', tagline: 'Predictably irrational' },
   Strategy: { icon: 'route', tagline: 'Choosing what not to do' },
+  Accounting: { icon: 'receipt', tagline: 'The language of business' },
+  Marketing: { icon: 'megaphone', tagline: 'Attention, understood' },
+  Entrepreneurship: { icon: 'lightbulb', tagline: 'Ideas into ventures' },
   /* Health & Wellness */
   'Sleep Science': { icon: 'clock', tagline: 'The night shift' },
   'Exercise & Fitness': { icon: 'heart-pulse', tagline: 'Adaptation by load' },
   Nutrition: { icon: 'utensils', tagline: 'Fuel, decoded' },
   'Mental Health': { icon: 'activity', tagline: 'Stress and balance' },
   'Public Health': { icon: 'users', tagline: 'Health at scale' },
+  'First Aid & Emergency Care': { icon: 'stethoscope', tagline: 'Help that arrives first' },
   /* Arts & Culture */
   Photography: { icon: 'aperture', tagline: 'Light, framed' },
   'Music Theory & Practice': { icon: 'audio-waveform', tagline: 'Why chords feel' },
@@ -231,6 +250,8 @@ const FIELD_META: Record<string, { icon: string; tagline: string }> = {
   'Creative Writing': { icon: 'pen-tool', tagline: 'Stories, engineered' },
   'Visual Design': { icon: 'palette', tagline: 'Composition that guides' },
   'Fashion & Identity': { icon: 'tag', tagline: 'Clothing as signal' },
+  'Drawing & Painting': { icon: 'brush', tagline: 'Seeing, made visible' },
+  'Music Production': { icon: 'disc', tagline: 'Sound, shaped and mixed' },
   /* Everyday Knowledge */
   'Cooking & Food Science': { icon: 'utensils', tagline: 'The chemistry of dinner' },
   'Personal Finance': { icon: 'calculator', tagline: 'Your money, mastered' },

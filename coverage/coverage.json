@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T00:08:50.978Z",
+  "generatedAt": "2026-10-18T03:24:25.936Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 99,
-    "books": 99,
-    "chapters": 609,
-    "sections": 4108
+    "subjects": 120,
+    "books": 120,
+    "chapters": 671,
+    "sections": 4184
   },
   "subjects": [
     {
@@ -25970,8 +25970,8 @@
       "name": "Study Skills & Memory",
       "group": "Foundation Learning",
       "tagline": "Retain more, study less",
-      "chapterCount": 1,
-      "sectionCount": 3,
+      "chapterCount": 3,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-foundation-learning-study-skills-and-memory-learning-science",
@@ -25995,6 +25995,36 @@
               "id": "ku-fnd-interleaving",
               "number": 1.3,
               "title": "Interleaving: Why Mixed Practice Beats Blocked Practice"
+            }
+          ]
+        },
+        {
+          "id": "ku-foundation-learning-study-skills-and-memory-study-systems",
+          "number": 2,
+          "title": "Study Systems",
+          "shortTitle": "Study Systems",
+          "bookId": "ku-foundation-learning-study-skills-and-memory",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-study-note-taking-systems",
+              "number": 2.1,
+              "title": "Note-Taking Systems Compared: Cornell, Outlines and Zettelkasten"
+            }
+          ]
+        },
+        {
+          "id": "ku-foundation-learning-study-skills-and-memory-performing",
+          "number": 3,
+          "title": "Performing",
+          "shortTitle": "Performing",
+          "bookId": "ku-foundation-learning-study-skills-and-memory",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-study-exam-strategy",
+              "number": 3.1,
+              "title": "Exam-Day Strategy: How Tests Are Actually Won"
             }
           ]
         }
@@ -26080,8 +26110,8 @@
       "name": "Astronomy & Space Science",
       "group": "Physical Sciences",
       "tagline": "The lives of stars",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-physical-sciences-astronomy-and-space-science-astrophysics",
@@ -26097,6 +26127,101 @@
               "title": "How Stars Are Born, Live and Die"
             }
           ]
+        },
+        {
+          "id": "ku-physical-sciences-astronomy-and-space-science-exploring-the-cosmos",
+          "number": 2,
+          "title": "Exploring the Cosmos",
+          "shortTitle": "Exploring the Cosmos",
+          "bookId": "ku-physical-sciences-astronomy-and-space-science",
+          "sectionCount": 3,
+          "sections": [
+            {
+              "id": "ku-astro-solar-system-tour",
+              "number": 2.1,
+              "title": "Touring the Solar System: Planets, Moons and Small Worlds"
+            },
+            {
+              "id": "ku-astro-exoplanets",
+              "number": 2.2,
+              "title": "Exoplanets: Finding Worlds Around Other Stars"
+            },
+            {
+              "id": "ku-astro-astrobiology",
+              "number": 2.3,
+              "title": "Are We Alone? The New Science of Astrobiology"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-physical-sciences-geology-and-earth-science",
+      "name": "Geology & Earth Science",
+      "group": "Physical Sciences",
+      "tagline": "The planet underfoot",
+      "chapterCount": 1,
+      "sectionCount": 4,
+      "chapters": [
+        {
+          "id": "ku-physical-sciences-geology-and-earth-science-dynamic-earth",
+          "number": 1,
+          "title": "Dynamic Earth",
+          "shortTitle": "Dynamic Earth",
+          "bookId": "ku-physical-sciences-geology-and-earth-science",
+          "sectionCount": 4,
+          "sections": [
+            {
+              "id": "ku-geo-plate-tectonics",
+              "number": 1.1,
+              "title": "Plate Tectonics: The Engine Beneath Your Feet"
+            },
+            {
+              "id": "ku-geo-minerals-rocks",
+              "number": 1.2,
+              "title": "Minerals, Rocks and the Rock Cycle"
+            },
+            {
+              "id": "ku-geo-earthquakes-volcanoes",
+              "number": 1.3,
+              "title": "Earthquakes and Volcanoes: When the Crust Moves"
+            },
+            {
+              "id": "ku-geo-deep-time-fossils",
+              "number": 1.4,
+              "title": "Deep Time: Fossils and Dating the Earth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-physical-sciences-meteorology",
+      "name": "Meteorology",
+      "group": "Physical Sciences",
+      "tagline": "Why the sky does what it does",
+      "chapterCount": 1,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-physical-sciences-meteorology-weather-and-atmosphere",
+          "number": 1,
+          "title": "Weather and Atmosphere",
+          "shortTitle": "Weather and Atmosphere",
+          "bookId": "ku-physical-sciences-meteorology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-met-atmosphere-weather",
+              "number": 1.1,
+              "title": "Why Weather Happens: The Atmosphere at Work"
+            },
+            {
+              "id": "ku-met-storms-forecasting",
+              "number": 1.2,
+              "title": "Storms, Fronts and How Forecasts Are Made"
+            }
+          ]
         }
       ]
     },
@@ -26105,8 +26230,8 @@
       "name": "Genetics & Heredity",
       "group": "Life Sciences",
       "tagline": "The code of inheritance",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-life-sciences-genetics-and-heredity-molecular-genetics",
@@ -26120,6 +26245,21 @@
               "id": "ku-bio-crispr-gene-editing",
               "number": 1.1,
               "title": "CRISPR and the Mechanics of Gene Editing"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-genetics-and-heredity-classical-genetics",
+          "number": 2,
+          "title": "Classical Genetics",
+          "shortTitle": "Classical Genetics",
+          "bookId": "ku-life-sciences-genetics-and-heredity",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-genetics-mendel",
+              "number": 2.1,
+              "title": "Mendel's Laws: How Traits Travel Between Generations"
             }
           ]
         }
@@ -26180,8 +26320,8 @@
       "name": "Evolutionary Biology",
       "group": "Life Sciences",
       "tagline": "Descent with modification",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-life-sciences-evolutionary-biology-evolution",
@@ -26195,6 +26335,36 @@
               "id": "ku-bio-evolution-natural-selection",
               "number": 1.1,
               "title": "Evolution by Natural Selection"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-evolutionary-biology-speciation",
+          "number": 2,
+          "title": "Speciation",
+          "shortTitle": "Speciation",
+          "bookId": "ku-life-sciences-evolutionary-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-speciation-barriers",
+              "number": 2.1,
+              "title": "How New Species Are Born"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-evolutionary-biology-human-evolution",
+          "number": 3,
+          "title": "Human Evolution",
+          "shortTitle": "Human Evolution",
+          "bookId": "ku-life-sciences-evolutionary-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-human-evolution",
+              "number": 3.1,
+              "title": "From Lucy to Us: The Story of Human Evolution"
             }
           ]
         }
@@ -26245,6 +26415,111 @@
               "id": "ku-bio-ecosystems-energy-flow",
               "number": 1.1,
               "title": "Ecosystems and the Flow of Energy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-life-sciences-anatomy-and-physiology",
+      "name": "Anatomy & Physiology",
+      "group": "Life Sciences",
+      "tagline": "The body, system by system",
+      "chapterCount": 1,
+      "sectionCount": 5,
+      "chapters": [
+        {
+          "id": "ku-life-sciences-anatomy-and-physiology-human-body-systems",
+          "number": 1,
+          "title": "Human Body Systems",
+          "shortTitle": "Human Body Systems",
+          "bookId": "ku-life-sciences-anatomy-and-physiology",
+          "sectionCount": 5,
+          "sections": [
+            {
+              "id": "ku-bio-anatomy-heart-circulation",
+              "number": 1.1,
+              "title": "The Heart and Circulation: One Pump, Two Circuits"
+            },
+            {
+              "id": "ku-bio-anatomy-respiration",
+              "number": 1.2,
+              "title": "Breathing and Gas Exchange: From Air to Cell"
+            },
+            {
+              "id": "ku-bio-anatomy-digestion",
+              "number": 1.3,
+              "title": "The Digestive System: From Meal to Molecule"
+            },
+            {
+              "id": "ku-bio-anatomy-kidneys-endocrine",
+              "number": 1.4,
+              "title": "Kidneys, Hormones and the Body's Balance"
+            },
+            {
+              "id": "ku-bio-anatomy-musculoskeletal",
+              "number": 1.5,
+              "title": "Muscles, Bones and the Machinery of Movement"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-life-sciences-microbiology-and-disease",
+      "name": "Microbiology & Disease",
+      "group": "Life Sciences",
+      "tagline": "The unseen world of germs",
+      "chapterCount": 1,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-life-sciences-microbiology-and-disease-microbes-and-infection",
+          "number": 1,
+          "title": "Microbes and Infection",
+          "shortTitle": "Microbes and Infection",
+          "bookId": "ku-life-sciences-microbiology-and-disease",
+          "sectionCount": 3,
+          "sections": [
+            {
+              "id": "ku-bio-microbe-bacteria-viruses-fungi",
+              "number": 1.1,
+              "title": "Bacteria, Viruses, Fungi: A Field Guide to the Microbial World"
+            },
+            {
+              "id": "ku-bio-microbe-antibiotic-resistance",
+              "number": 1.2,
+              "title": "Antibiotics and the Rise of Resistance"
+            },
+            {
+              "id": "ku-bio-microbe-microbiome",
+              "number": 1.3,
+              "title": "The Microbiome: Your Trillion Tenants"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-life-sciences-zoology",
+      "name": "Zoology",
+      "group": "Life Sciences",
+      "tagline": "The animal kingdom mapped",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-life-sciences-zoology-animal-diversity",
+          "number": 1,
+          "title": "Animal Diversity",
+          "shortTitle": "Animal Diversity",
+          "bookId": "ku-life-sciences-zoology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-zoology-body-plans",
+              "number": 1.1,
+              "title": "The Animal Kingdom: A Tour of Body Plans and Phyla"
             }
           ]
         }
@@ -26305,8 +26580,8 @@
       "name": "Agriculture & Food Systems",
       "group": "Environment & Sustainability",
       "tagline": "Feeding eight billion",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-environment-agriculture-and-food-systems-soil-science",
@@ -26322,6 +26597,21 @@
               "title": "Soil Health and Regenerative Agriculture"
             }
           ]
+        },
+        {
+          "id": "ku-environment-agriculture-and-food-systems-crop-science",
+          "number": 2,
+          "title": "Crop Science",
+          "shortTitle": "Crop Science",
+          "bookId": "ku-environment-agriculture-and-food-systems",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-env-crop-science-breeding",
+              "number": 2.1,
+              "title": "Crop Science: From Domestication to Disease Resistance"
+            }
+          ]
         }
       ]
     },
@@ -26330,8 +26620,8 @@
       "name": "Earth Systems",
       "group": "Environment & Sustainability",
       "tagline": "Rocks, water and cycles",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-environment-earth-systems-hydrology",
@@ -26345,6 +26635,21 @@
               "id": "ku-env-water-cycle",
               "number": 1.1,
               "title": "The Water Cycle and Freshwater Scarcity"
+            }
+          ]
+        },
+        {
+          "id": "ku-environment-earth-systems-oceanography",
+          "number": 2,
+          "title": "Oceanography",
+          "shortTitle": "Oceanography",
+          "bookId": "ku-environment-earth-systems",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-env-ocean-currents-chemistry",
+              "number": 2.1,
+              "title": "The Global Ocean: Currents, Chemistry and Life"
             }
           ]
         }
@@ -26380,8 +26685,8 @@
       "name": "Conservation Biology",
       "group": "Environment & Sustainability",
       "tagline": "Keeping species alive",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-environment-conservation-biology-ecology",
@@ -26397,6 +26702,21 @@
               "title": "Biodiversity and the Sixth Extinction"
             }
           ]
+        },
+        {
+          "id": "ku-environment-conservation-biology-restoration",
+          "number": 2,
+          "title": "Restoration",
+          "shortTitle": "Restoration",
+          "bookId": "ku-environment-conservation-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-env-restoration-rewilding",
+              "number": 2.1,
+              "title": "Restoration and Rewilding: Putting Ecosystems Back Together"
+            }
+          ]
         }
       ]
     },
@@ -26405,8 +26725,8 @@
       "name": "Aerospace Engineering",
       "group": "Engineering Science",
       "tagline": "Why flight works",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-engineering-aerospace-engineering-aerodynamics",
@@ -26420,6 +26740,21 @@
               "id": "ku-eng-aerodynamics-flight",
               "number": 1.1,
               "title": "How Wings Really Lift: Aerodynamics Without Magic"
+            }
+          ]
+        },
+        {
+          "id": "ku-engineering-aerospace-engineering-rotorcraft-and-vtol",
+          "number": 2,
+          "title": "Rotorcraft and VTOL",
+          "shortTitle": "Rotorcraft and VTOL",
+          "bookId": "ku-engineering-aerospace-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-aero-helicopters-drones",
+              "number": 2.1,
+              "title": "Helicopters, Drones and Flying Without a Runway"
             }
           ]
         }
@@ -26476,12 +26811,77 @@
       ]
     },
     {
+      "id": "ku-technology-applied-aviation-and-flight",
+      "name": "Aviation & Flight",
+      "group": "Technology & Applied Science",
+      "tagline": "The sky, organized",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-technology-applied-aviation-and-flight-flight-operations",
+          "number": 1,
+          "title": "Flight Operations",
+          "shortTitle": "Flight Operations",
+          "bookId": "ku-technology-applied-aviation-and-flight",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-avi-flight-instruments",
+              "number": 1.1,
+              "title": "Flight Instruments and the Anatomy of a Cockpit"
+            }
+          ]
+        },
+        {
+          "id": "ku-technology-applied-aviation-and-flight-air-traffic",
+          "number": 2,
+          "title": "Air Traffic",
+          "shortTitle": "Air Traffic",
+          "bookId": "ku-technology-applied-aviation-and-flight",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-avi-air-traffic-control",
+              "number": 2.1,
+              "title": "How Air Traffic Control Keeps the Skies Orderly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-technology-applied-construction-and-the-built-environment",
+      "name": "Construction & the Built Environment",
+      "group": "Technology & Applied Science",
+      "tagline": "How buildings happen",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-technology-applied-construction-and-the-built-environment-how-buildings-work",
+          "number": 1,
+          "title": "How Buildings Work",
+          "shortTitle": "How Buildings Work",
+          "bookId": "ku-technology-applied-construction-and-the-built-environment",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-build-house-anatomy",
+              "number": 1.1,
+              "title": "How a House Is Built: Foundations to Roof"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-social-sciences-psychology",
       "name": "Psychology",
       "group": "Social Sciences",
       "tagline": "The studied mind",
-      "chapterCount": 2,
-      "sectionCount": 2,
+      "chapterCount": 4,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-social-sciences-psychology-social-psychology",
@@ -26512,6 +26912,36 @@
               "title": "Cognitive Biases: The Bugs in Human Judgment"
             }
           ]
+        },
+        {
+          "id": "ku-social-sciences-psychology-developmental-psychology",
+          "number": 3,
+          "title": "Developmental Psychology",
+          "shortTitle": "Developmental Psychology",
+          "bookId": "ku-social-sciences-psychology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-psy-development-lifespan",
+              "number": 3.1,
+              "title": "How Minds Grow: Developmental Psychology Across the Lifespan"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-psychology-cognitive-psychology",
+          "number": 4,
+          "title": "Cognitive Psychology",
+          "shortTitle": "Cognitive Psychology",
+          "bookId": "ku-social-sciences-psychology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-psy-cognitive-architecture",
+              "number": 4.1,
+              "title": "Memory, Attention and Thinking: Cognitive Psychology"
+            }
+          ]
         }
       ]
     },
@@ -26520,8 +26950,8 @@
       "name": "Sociology",
       "group": "Social Sciences",
       "tagline": "Society as a system",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-social-sciences-sociology-classical-theory",
@@ -26537,6 +26967,36 @@
               "title": "Durkheim’s Social Facts and Anomie"
             }
           ]
+        },
+        {
+          "id": "ku-social-sciences-sociology-social-structure",
+          "number": 2,
+          "title": "Social Structure",
+          "shortTitle": "Social Structure",
+          "bookId": "ku-social-sciences-sociology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-stratification",
+              "number": 2.1,
+              "title": "Class, Status and Power: Social Stratification"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-sociology-social-institutions",
+          "number": 3,
+          "title": "Social Institutions",
+          "shortTitle": "Social Institutions",
+          "bookId": "ku-social-sciences-sociology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-family-religion-institutions",
+              "number": 3.1,
+              "title": "Family, Religion and Institutions: The Skeleton of Society"
+            }
+          ]
         }
       ]
     },
@@ -26545,8 +27005,8 @@
       "name": "Political Science",
       "group": "Social Sciences",
       "tagline": "Power and cooperation",
-      "chapterCount": 2,
-      "sectionCount": 2,
+      "chapterCount": 4,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-social-sciences-political-science-rational-choice-theory",
@@ -26577,6 +27037,36 @@
               "title": "Collective Action and the Tragedy of the Commons"
             }
           ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-comparative-politics",
+          "number": 3,
+          "title": "Comparative Politics",
+          "shortTitle": "Comparative Politics",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-pol-regimes-spectrum",
+              "number": 3.1,
+              "title": "Democracies, Autocracies and Everything in Between"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-international-relations",
+          "number": 4,
+          "title": "International Relations",
+          "shortTitle": "International Relations",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-pol-ir-theory",
+              "number": 4.1,
+              "title": "Why Nations Fight and Trade: International Relations Theory"
+            }
+          ]
         }
       ]
     },
@@ -26585,8 +27075,8 @@
       "name": "Urban Sociology",
       "group": "Social Sciences",
       "tagline": "Why cities exist",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-social-sciences-urban-sociology-urban-studies",
@@ -26602,6 +27092,101 @@
               "title": "Why Cities Exist: Agglomeration and Urban Life"
             }
           ]
+        },
+        {
+          "id": "ku-social-sciences-urban-sociology-urban-change",
+          "number": 2,
+          "title": "Urban Change",
+          "shortTitle": "Urban Change",
+          "bookId": "ku-social-sciences-urban-sociology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-urb-housing-segregation",
+              "number": 2.1,
+              "title": "Housing, Segregation and Gentrification"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-social-sciences-anthropology",
+      "name": "Anthropology",
+      "group": "Social Sciences",
+      "tagline": "What makes us human",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-social-sciences-anthropology-cultural-anthropology",
+          "number": 1,
+          "title": "Cultural Anthropology",
+          "shortTitle": "Cultural Anthropology",
+          "bookId": "ku-social-sciences-anthropology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-anth-cultural-relativism",
+              "number": 1.1,
+              "title": "Cultural Anthropology: Making Sense of Human Difference"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-anthropology-archaeology",
+          "number": 2,
+          "title": "Archaeology",
+          "shortTitle": "Archaeology",
+          "bookId": "ku-social-sciences-anthropology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-anth-archaeology-methods",
+              "number": 2.1,
+              "title": "Archaeology: Reading the Past from Its Remains"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-social-sciences-human-geography",
+      "name": "Human Geography",
+      "group": "Social Sciences",
+      "tagline": "Where people live, and why",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-social-sciences-human-geography-population-and-settlement",
+          "number": 1,
+          "title": "Population and Settlement",
+          "shortTitle": "Population and Settlement",
+          "bookId": "ku-social-sciences-human-geography",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-geog-population-migration",
+              "number": 1.1,
+              "title": "Population Geography: Where Humans Live and Why"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-human-geography-economic-and-cultural-landscapes",
+          "number": 2,
+          "title": "Economic and Cultural Landscapes",
+          "shortTitle": "Economic and Cultural Landscapes",
+          "bookId": "ku-social-sciences-human-geography",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-geog-economic-cultural-landscapes",
+              "number": 2.1,
+              "title": "Landscapes of Trade and Belief: Economic and Cultural Geography"
+            }
+          ]
         }
       ]
     },
@@ -26610,8 +27195,8 @@
       "name": "World History",
       "group": "Humanities",
       "tagline": "How the world connected",
-      "chapterCount": 1,
-      "sectionCount": 2,
+      "chapterCount": 3,
+      "sectionCount": 6,
       "chapters": [
         {
           "id": "ku-humanities-world-history-economic-history",
@@ -26632,6 +27217,46 @@
               "title": "The Industrial Revolution and Its Discontents"
             }
           ]
+        },
+        {
+          "id": "ku-humanities-world-history-the-ancient-world",
+          "number": 2,
+          "title": "The Ancient World",
+          "shortTitle": "The Ancient World",
+          "bookId": "ku-humanities-world-history",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-hist-first-civilizations",
+              "number": 2.1,
+              "title": "The First Civilizations: Mesopotamia, Egypt and the Indus"
+            },
+            {
+              "id": "ku-hist-classical-greco-roman",
+              "number": 2.2,
+              "title": "Greece and Rome: The Classical Inheritance"
+            }
+          ]
+        },
+        {
+          "id": "ku-humanities-world-history-the-modern-age",
+          "number": 3,
+          "title": "The Modern Age",
+          "shortTitle": "The Modern Age",
+          "bookId": "ku-humanities-world-history",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-hist-world-wars",
+              "number": 3.1,
+              "title": "The World Wars: Causes, Courses and Consequences"
+            },
+            {
+              "id": "ku-hist-decolonization",
+              "number": 3.2,
+              "title": "Decolonization and the Making of the Global South"
+            }
+          ]
         }
       ]
     },
@@ -26640,8 +27265,8 @@
       "name": "Philosophy",
       "group": "Humanities",
       "tagline": "The examined life",
-      "chapterCount": 2,
-      "sectionCount": 2,
+      "chapterCount": 4,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-humanities-philosophy-virtue-ethics",
@@ -26672,6 +27297,36 @@
               "title": "The Enlightenment: Reason Changes the World"
             }
           ]
+        },
+        {
+          "id": "ku-humanities-philosophy-epistemology",
+          "number": 3,
+          "title": "Epistemology",
+          "shortTitle": "Epistemology",
+          "bookId": "ku-humanities-philosophy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-phil-epistemology",
+              "number": 3.1,
+              "title": "Epistemology: What Can We Know?"
+            }
+          ]
+        },
+        {
+          "id": "ku-humanities-philosophy-philosophy-of-mind",
+          "number": 4,
+          "title": "Philosophy of Mind",
+          "shortTitle": "Philosophy of Mind",
+          "bookId": "ku-humanities-philosophy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-phil-mind-consciousness",
+              "number": 4.1,
+              "title": "The Philosophy of Mind: Consciousness and Its Puzzles"
+            }
+          ]
         }
       ]
     },
@@ -26695,6 +27350,86 @@
               "id": "ku-hum-mythology-patterns",
               "number": 1.1,
               "title": "Why Myths Repeat: The Monomyth and Cultural Archetypes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-humanities-art-history",
+      "name": "Art History",
+      "group": "Humanities",
+      "tagline": "Five millennia of seeing",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-humanities-art-history-foundations",
+          "number": 1,
+          "title": "Foundations",
+          "shortTitle": "Foundations",
+          "bookId": "ku-humanities-art-history",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-arth-caves-to-cathedrals",
+              "number": 1.1,
+              "title": "From Caves to Cathedrals: The First Thirty Thousand Years of Art"
+            }
+          ]
+        },
+        {
+          "id": "ku-humanities-art-history-the-modern-tradition",
+          "number": 2,
+          "title": "The Modern Tradition",
+          "shortTitle": "The Modern Tradition",
+          "bookId": "ku-humanities-art-history",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-arth-renaissance-to-modern",
+              "number": 2.1,
+              "title": "Renaissance to Modernism: How Seeing Changed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-humanities-religious-studies",
+      "name": "Religious Studies",
+      "group": "Humanities",
+      "tagline": "The great traditions, compared",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-humanities-religious-studies-eastern-traditions",
+          "number": 1,
+          "title": "Eastern Traditions",
+          "shortTitle": "Eastern Traditions",
+          "bookId": "ku-humanities-religious-studies",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-rel-eastern-traditions",
+              "number": 1.1,
+              "title": "Hinduism, Buddhism and the Eastern Traditions"
+            }
+          ]
+        },
+        {
+          "id": "ku-humanities-religious-studies-western-traditions",
+          "number": 2,
+          "title": "Western Traditions",
+          "shortTitle": "Western Traditions",
+          "bookId": "ku-humanities-religious-studies",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-rel-abrahamic-faiths",
+              "number": 2.1,
+              "title": "Judaism, Christianity and Islam: The Abrahamic Faiths"
             }
           ]
         }
@@ -26730,8 +27465,8 @@
       "name": "Spanish",
       "group": "Languages & World Literature",
       "tagline": "Two verbs for to be",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-languages-literature-spanish-verb-semantics",
@@ -26747,6 +27482,21 @@
               "title": "Spanish ser vs estar: Two Ways to Be"
             }
           ]
+        },
+        {
+          "id": "ku-languages-literature-spanish-practical-spanish",
+          "number": 2,
+          "title": "Practical Spanish",
+          "shortTitle": "Practical Spanish",
+          "bookId": "ku-languages-literature-spanish",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-spanish-survival",
+              "number": 2.1,
+              "title": "Survival Spanish: Greetings, Numbers and the Phrases That Matter"
+            }
+          ]
         }
       ]
     },
@@ -26755,8 +27505,8 @@
       "name": "Japanese",
       "group": "Languages & World Literature",
       "tagline": "Three scripts, one language",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-languages-literature-japanese-sentence-structure",
@@ -26772,6 +27522,21 @@
               "title": "Japanese Particles: The Grammar Glue of は, が, を"
             }
           ]
+        },
+        {
+          "id": "ku-languages-literature-japanese-the-writing-system",
+          "number": 2,
+          "title": "The Writing System",
+          "shortTitle": "The Writing System",
+          "bookId": "ku-languages-literature-japanese",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-japanese-writing",
+              "number": 2.1,
+              "title": "Hiragana, Katakana and Kanji: How Japanese Writing Works"
+            }
+          ]
         }
       ]
     },
@@ -26780,8 +27545,8 @@
       "name": "Linguistics",
       "group": "Languages & World Literature",
       "tagline": "The architecture of language",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-languages-literature-linguistics-historical-linguistics",
@@ -26795,6 +27560,21 @@
               "id": "ku-lang-etymology-word-origins",
               "number": 1.1,
               "title": "Where Words Come From: Etymology in Action"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-linguistics-morphology",
+          "number": 2,
+          "title": "Morphology",
+          "shortTitle": "Morphology",
+          "bookId": "ku-languages-literature-linguistics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-morphology",
+              "number": 2.1,
+              "title": "Morphology: How Languages Build Words"
             }
           ]
         }
@@ -26830,8 +27610,8 @@
       "name": "Phonetics & Phonology",
       "group": "Languages & World Literature",
       "tagline": "The sounds of speech",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-languages-literature-phonetics-and-phonology-linguistics",
@@ -26845,6 +27625,96 @@
               "id": "ku-lang-tonal-languages",
               "number": 1.1,
               "title": "Tonal Languages: Meaning in Melody"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-phonetics-and-phonology-prosody",
+          "number": 2,
+          "title": "Prosody",
+          "shortTitle": "Prosody",
+          "bookId": "ku-languages-literature-phonetics-and-phonology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-prosody",
+              "number": 2.1,
+              "title": "Prosody: The Melody of Speech"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-languages-literature-french",
+      "name": "French",
+      "group": "Languages & World Literature",
+      "tagline": "Say it like the French",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-french-french-foundations",
+          "number": 1,
+          "title": "French Foundations",
+          "shortTitle": "French Foundations",
+          "bookId": "ku-languages-literature-french",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-french-foundations",
+              "number": 1.1,
+              "title": "French Foundations: Pronunciation, Articles and First Phrases"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-languages-literature-mandarin-chinese",
+      "name": "Mandarin Chinese",
+      "group": "Languages & World Literature",
+      "tagline": "Tones, strokes and characters",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-mandarin-chinese-mandarin-foundations",
+          "number": 1,
+          "title": "Mandarin Foundations",
+          "shortTitle": "Mandarin Foundations",
+          "bookId": "ku-languages-literature-mandarin-chinese",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-mandarin-foundations",
+              "number": 1.1,
+              "title": "Mandarin Foundations: Tones, Characters and First Phrases"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-languages-literature-world-literature",
+      "name": "World Literature",
+      "group": "Languages & World Literature",
+      "tagline": "The books that shaped us",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-world-literature-the-great-tradition",
+          "number": 1,
+          "title": "The Great Tradition",
+          "shortTitle": "The Great Tradition",
+          "bookId": "ku-languages-literature-world-literature",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-epic-tradition",
+              "number": 1.1,
+              "title": "From Gilgamesh to the Odyssey: The Birth of Literature"
             }
           ]
         }
@@ -26920,8 +27790,8 @@
       "name": "Private Law",
       "group": "Law & Governance",
       "tagline": "Promises enforced",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-law-governance-private-law-contract-law",
@@ -26935,6 +27805,21 @@
               "id": "ku-law-contract-basics",
               "number": 1.1,
               "title": "Contracts: The Anatomy of a Promise the Law Enforces"
+            }
+          ]
+        },
+        {
+          "id": "ku-law-governance-private-law-tort-law",
+          "number": 2,
+          "title": "Tort Law",
+          "shortTitle": "Tort Law",
+          "bookId": "ku-law-governance-private-law",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-tort-liability",
+              "number": 2.1,
+              "title": "Tort Law: When Harm Has a Price"
             }
           ]
         }
@@ -26966,12 +27851,37 @@
       ]
     },
     {
+      "id": "ku-law-governance-intellectual-property-and-media-law",
+      "name": "Intellectual Property & Media Law",
+      "group": "Law & Governance",
+      "tagline": "Who owns an idea",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-law-governance-intellectual-property-and-media-law-ip-fundamentals",
+          "number": 1,
+          "title": "IP Fundamentals",
+          "shortTitle": "IP Fundamentals",
+          "bookId": "ku-law-governance-intellectual-property-and-media-law",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-ip-copyright-patent",
+              "number": 1.1,
+              "title": "Copyright, Patents and Trademarks: Who Owns an Idea"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-business-economics-microeconomics",
       "name": "Microeconomics",
       "group": "Business & Economics",
       "tagline": "Prices and incentives",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-business-economics-microeconomics-price-theory",
@@ -26985,6 +27895,21 @@
               "id": "ku-bus-supply-demand-elasticity",
               "number": 1.1,
               "title": "Supply, Demand and Elasticity"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-microeconomics-when-markets-fail",
+          "number": 2,
+          "title": "When Markets Fail",
+          "shortTitle": "When Markets Fail",
+          "bookId": "ku-business-economics-microeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-market-failures",
+              "number": 2.1,
+              "title": "When Markets Fail: Externalities, Public Goods and Monopoly Power"
             }
           ]
         }
@@ -27045,8 +27970,8 @@
       "name": "Macroeconomics",
       "group": "Business & Economics",
       "tagline": "Whole economies",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-business-economics-macroeconomics-monetary-economics",
@@ -27060,6 +27985,36 @@
               "id": "ku-bus-inflation-monetary-policy",
               "number": 1.1,
               "title": "Inflation and What Central Banks Actually Do"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-macroeconomics-the-vital-signs",
+          "number": 2,
+          "title": "The Vital Signs",
+          "shortTitle": "The Vital Signs",
+          "bookId": "ku-business-economics-macroeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-gdp-inflation-unemployment",
+              "number": 2.1,
+              "title": "GDP, Inflation and Unemployment: The Vital Signs of an Economy"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-macroeconomics-fiscal-policy",
+          "number": 3,
+          "title": "Fiscal Policy",
+          "shortTitle": "Fiscal Policy",
+          "bookId": "ku-business-economics-macroeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-fiscal-policy",
+              "number": 3.1,
+              "title": "Fiscal Policy: How Governments Spend and Tax Their Way Through Crises"
             }
           ]
         }
@@ -27110,6 +28065,96 @@
               "id": "ku-bus-behavioral-nudges",
               "number": 1.1,
               "title": "Nudges and the Psychology of Choosing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-accounting",
+      "name": "Accounting",
+      "group": "Business & Economics",
+      "tagline": "The language of business",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-business-economics-accounting-the-ledger",
+          "number": 1,
+          "title": "The Ledger",
+          "shortTitle": "The Ledger",
+          "bookId": "ku-business-economics-accounting",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-acct-double-entry",
+              "number": 1.1,
+              "title": "Double-Entry Bookkeeping: The Logic Behind Every Ledger"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-accounting-reading-statements",
+          "number": 2,
+          "title": "Reading Statements",
+          "shortTitle": "Reading Statements",
+          "bookId": "ku-business-economics-accounting",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-acct-financial-statements",
+              "number": 2.1,
+              "title": "Reading Financial Statements: Balance Sheet, Income and Cash Flow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-marketing",
+      "name": "Marketing",
+      "group": "Business & Economics",
+      "tagline": "Attention, understood",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-business-economics-marketing-marketing-foundations",
+          "number": 1,
+          "title": "Marketing Foundations",
+          "shortTitle": "Marketing Foundations",
+          "bookId": "ku-business-economics-marketing",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-mkt-four-ps",
+              "number": 1.1,
+              "title": "The Four Ps and the Psychology of Buying"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-entrepreneurship",
+      "name": "Entrepreneurship",
+      "group": "Business & Economics",
+      "tagline": "Ideas into ventures",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-business-economics-entrepreneurship-building-a-venture",
+          "number": 1,
+          "title": "Building a Venture",
+          "shortTitle": "Building a Venture",
+          "bookId": "ku-business-economics-entrepreneurship",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-ent-lean-startup",
+              "number": 1.1,
+              "title": "From Idea to Business: Lean Startups and Business Models"
             }
           ]
         }
@@ -27235,8 +28280,8 @@
       "name": "Mental Health",
       "group": "Health & Wellness",
       "tagline": "Stress and balance",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-health-wellness-mental-health-psychoneuroendocrinology",
@@ -27252,6 +28297,46 @@
               "title": "Stress, Cortisol and the Body's Alarm System"
             }
           ]
+        },
+        {
+          "id": "ku-health-wellness-mental-health-mood-and-anxiety",
+          "number": 2,
+          "title": "Mood and Anxiety",
+          "shortTitle": "Mood and Anxiety",
+          "bookId": "ku-health-wellness-mental-health",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-mind-anxiety-depression",
+              "number": 2.1,
+              "title": "Anxiety and Depression: What They Actually Are"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-health-wellness-first-aid-and-emergency-care",
+      "name": "First Aid & Emergency Care",
+      "group": "Health & Wellness",
+      "tagline": "Help that arrives first",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-health-wellness-first-aid-and-emergency-care-emergency-basics",
+          "number": 1,
+          "title": "Emergency Basics",
+          "shortTitle": "Emergency Basics",
+          "bookId": "ku-health-wellness-first-aid-and-emergency-care",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-aid-first-aid-essentials",
+              "number": 1.1,
+              "title": "First Aid Essentials: Bleeding, Burns, Choking and the Recovery Position"
+            }
+          ]
         }
       ]
     },
@@ -27260,8 +28345,8 @@
       "name": "Photography",
       "group": "Arts & Culture",
       "tagline": "Light, framed",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-arts-culture-photography-composition",
@@ -27277,6 +28362,21 @@
               "title": "The Rule of Thirds and Visual Weight"
             }
           ]
+        },
+        {
+          "id": "ku-arts-culture-photography-exposure-and-light",
+          "number": 2,
+          "title": "Exposure and Light",
+          "shortTitle": "Exposure and Light",
+          "bookId": "ku-arts-culture-photography",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-photo-exposure-triangle",
+              "number": 2.1,
+              "title": "The Exposure Triangle: Aperture, Shutter Speed and ISO"
+            }
+          ]
         }
       ]
     },
@@ -27285,8 +28385,8 @@
       "name": "Music Theory & Practice",
       "group": "Arts & Culture",
       "tagline": "Why chords feel",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-arts-culture-music-theory-and-practice-diatonic-harmony",
@@ -27302,6 +28402,21 @@
               "title": "Harmony: Why Chords Sound Like Home"
             }
           ]
+        },
+        {
+          "id": "ku-arts-culture-music-theory-and-practice-rhythm-and-meter",
+          "number": 2,
+          "title": "Rhythm and Meter",
+          "shortTitle": "Rhythm and Meter",
+          "bookId": "ku-arts-culture-music-theory-and-practice",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-musi-rhythm-meter",
+              "number": 2.1,
+              "title": "Rhythm and Meter: How Music Organizes Time"
+            }
+          ]
         }
       ]
     },
@@ -27310,8 +28425,8 @@
       "name": "Film & Cinema",
       "group": "Arts & Culture",
       "tagline": "The grammar of film",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-arts-culture-film-and-cinema-editing-theory",
@@ -27325,6 +28440,21 @@
               "id": "ku-art-montage-kuleshov-effect",
               "number": 1.1,
               "title": "Montage and the Kuleshov Effect"
+            }
+          ]
+        },
+        {
+          "id": "ku-arts-culture-film-and-cinema-cinematography",
+          "number": 2,
+          "title": "Cinematography",
+          "shortTitle": "Cinematography",
+          "bookId": "ku-arts-culture-film-and-cinema",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-cine-cinematography",
+              "number": 2.1,
+              "title": "Cinematography: Shots, Camera Movement and Light"
             }
           ]
         }
@@ -27406,12 +28536,62 @@
       ]
     },
     {
+      "id": "ku-arts-culture-drawing-and-painting",
+      "name": "Drawing & Painting",
+      "group": "Arts & Culture",
+      "tagline": "Seeing, made visible",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-arts-culture-drawing-and-painting-drawing-foundations",
+          "number": 1,
+          "title": "Drawing Foundations",
+          "shortTitle": "Drawing Foundations",
+          "bookId": "ku-arts-culture-drawing-and-painting",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-draw-seeing-perspective",
+              "number": 1.1,
+              "title": "Learning to See: Line, Shape and Perspective"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-arts-culture-music-production",
+      "name": "Music Production",
+      "group": "Arts & Culture",
+      "tagline": "Sound, shaped and mixed",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-arts-culture-music-production-the-home-studio",
+          "number": 1,
+          "title": "The Home Studio",
+          "shortTitle": "The Home Studio",
+          "bookId": "ku-arts-culture-music-production",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-prod-daw-recording-mixing",
+              "number": 1.1,
+              "title": "Music Production: DAWs, Recording and the Basics of Mixing"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-everyday-practical-cooking-and-food-science",
       "name": "Cooking & Food Science",
       "group": "Everyday Knowledge",
       "tagline": "The chemistry of dinner",
-      "chapterCount": 2,
-      "sectionCount": 2,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-everyday-practical-cooking-and-food-science-kitchen-chemistry",
@@ -27442,6 +28622,21 @@
               "title": "Food Safety: The Danger Zone and Its Rules"
             }
           ]
+        },
+        {
+          "id": "ku-everyday-practical-cooking-and-food-science-flavor",
+          "number": 3,
+          "title": "Flavor",
+          "shortTitle": "Flavor",
+          "bookId": "ku-everyday-practical-cooking-and-food-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-cook-flavor-science",
+              "number": 3.1,
+              "title": "The Science of Flavor: Salt, Fat, Acid and Heat"
+            }
+          ]
         }
       ]
     },
@@ -27450,8 +28645,8 @@
       "name": "Personal Finance",
       "group": "Everyday Knowledge",
       "tagline": "Your money, mastered",
-      "chapterCount": 2,
-      "sectionCount": 2,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-everyday-practical-personal-finance-income-literacy",
@@ -27480,6 +28675,21 @@
               "id": "ku-every-credit-scores",
               "number": 2.1,
               "title": "Credit Scores: The Math That Decides Your Loan"
+            }
+          ]
+        },
+        {
+          "id": "ku-everyday-practical-personal-finance-credit-and-debt",
+          "number": 3,
+          "title": "Credit and Debt",
+          "shortTitle": "Credit and Debt",
+          "bookId": "ku-everyday-practical-personal-finance",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-fin-credit-scores-debt",
+              "number": 3.1,
+              "title": "Credit Scores, Loans and the Real Cost of Debt"
             }
           ]
         }

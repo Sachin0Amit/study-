@@ -33,7 +33,7 @@ const FOCUS_RING =
 /** Curated totals — kept as constants so the hero never imports the 52MB
  *  lesson corpus (allContent) or the formula tables just to print numbers.
  *  Re-verify with: bun run scripts/verify-counts.ts after content changes. */
-const TOTAL_QUIZ_QUESTIONS = 9_666
+const TOTAL_QUIZ_QUESTIONS = 9_970
 const TOTAL_FORMULAS = 1_908
 
 const MATH_SYMBOLS = ['∀', '∃', '∈', '∑', '√', 'π', '∞', '≠', '⊆', '¬', '∧', '→', '⊕', '↔', '∅', 'Γ']
