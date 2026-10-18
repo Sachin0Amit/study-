@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { CalendarClock, Layers } from 'lucide-react'
 import { LIBRARY_CHAPTERS, LIBRARY_SECTIONS } from '@/data/library'
-import { allContent } from '@/data/content'
+import { useAllContent } from '@/hooks/use-content'
 
 export interface CardSrs {
   box: number
@@ -12,8 +12,6 @@ export interface CardSrs {
   seen: number
   correct: number
 }
-
-const TOTAL_CARDS = allContent.reduce((a, c) => a + c.concepts.length, 0)
 
 /** local "YYYY-MM-DD" day key (same helper as streak-heatmap) */
 function dayKey(d: Date): string {
@@ -54,6 +52,10 @@ interface ForecastDay {
  *  B) 7-day forecast of cards becoming due (overdue + new cards lumped into "Today")
  */
 export function SrsForecast({ srs, loaded }: { srs: Record<string, CardSrs>; loaded: boolean }) {
+  /* lesson corpus arrives by runtime fetch (kept out of the bundle) */
+  const allContent = useAllContent()
+  const totalCards = allContent ? allContent.reduce((a, c) => a + c.concepts.length, 0) : 0
+
   // section→chapter map (avoids the historic ch1/ch10 prefix-parsing bug)
   const sectionToChapter = useMemo(
     () => new Map(LIBRARY_SECTIONS.map((s) => [s.id, s.chapterId])),
@@ -81,7 +83,7 @@ export function SrsForecast({ srs, loaded }: { srs: Record<string, CardSrs>; loa
     }
 
     let seenCards = 0
-    for (const sec of allContent) {
+    for (const sec of allContent ?? []) {
       const stat = byChapter.get(sectionToChapter.get(sec.sectionId) ?? '')
       for (const concept of sec.concepts) {
         const key = `${sec.sectionId}::${concept.term}`
@@ -118,7 +120,7 @@ export function SrsForecast({ srs, loaded }: { srs: Record<string, CardSrs>; loa
     }))
 
     return { chapters, days, totalDue: chapters.reduce((a, c) => a + c.due, 0), hasAnyState: seenCards > 0 }
-  }, [srs, sectionToChapter])
+  }, [srs, sectionToChapter, allContent])
 
   const maxCount = Math.max(MIN_SCALE, ...days.map((d) => d.count))
 
@@ -199,7 +201,7 @@ export function SrsForecast({ srs, loaded }: { srs: Record<string, CardSrs>; loa
             <div className="flex min-h-44 flex-col items-center justify-center gap-2.5 rounded-xl border border-dashed border-border/80 bg-muted/20 p-6 text-center">
               <CalendarClock className="h-5 w-5 text-muted-foreground/60" />
               <p className="max-w-[240px] text-[13px] leading-relaxed text-muted-foreground">
-                Start reviewing to see your forecast — all {TOTAL_CARDS} cards are new.
+                Start reviewing to see your forecast — all {totalCards} cards are new.
               </p>
             </div>
           ) : (

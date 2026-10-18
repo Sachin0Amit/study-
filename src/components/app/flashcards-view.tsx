@@ -17,10 +17,10 @@ import {
   X,
   Zap,
 } from 'lucide-react'
-import { LIBRARY_BOOKS, LIBRARY_CHAPTERS, type Concept } from '@/data/library'
+import { LIBRARY_BOOKS, LIBRARY_CHAPTERS, type Concept, type SectionContent } from '@/data/library'
 import { RichText } from '../rich-text'
 import { EasyBox } from './easy-box'
-import { allContent } from '@/data/content'
+import { useAllContent } from '@/hooks/use-content'
 import { ChapterIcon } from './chapter-icon'
 import { useStudy } from '@/store/useStudy'
 import { logActivity } from '@/lib/activity'
@@ -65,9 +65,9 @@ function chapterIdOf(sectionId: string): string {
   return sectionId.replace(/-s\d+$/, '')
 }
 
-function buildDeck(chapterId?: string): Flashcard[] {
+function buildDeck(corpus: SectionContent[], chapterId?: string): Flashcard[] {
   const cards: Flashcard[] = []
-  for (const content of allContent) {
+  for (const content of corpus) {
     const chapter = LIBRARY_CHAPTERS.find((c) => c.id === chapterIdOf(content.sectionId))
     if (!chapter) continue
     if (chapterId && chapter.id !== chapterId) continue
@@ -197,6 +197,8 @@ export function FlashcardsView({
   chapterId?: string
   examMisses?: boolean
 }) {
+  /* lesson corpus arrives by runtime fetch (kept out of the bundle) */
+  const allContent = useAllContent()
   const navigate = useStudy((s) => s.navigate)
   const deviceId = useStudy((s) => s.deviceId)
   const ensureDevice = useStudy((s) => s.ensureDevice)
@@ -209,9 +211,11 @@ export function FlashcardsView({
 
   const [picking, setPicking] = useState(!chapterId && !examMisses)
   const [mode, setMode] = useState<DeckMode>('all')
-  const [deck, setDeck] = useState<Flashcard[]>(() =>
-    chapterId ? shuffled(buildDeck(chapterId)) : []
-  )
+  const [deck, setDeck] = useState<Flashcard[]>([])
+  /* once the corpus arrives, materialize the chapter deck (single fire) */
+  useEffect(() => {
+    if (allContent && chapterId) setDeck(shuffled(buildDeck(allContent, chapterId)))
+  }, [allContent, chapterId])
   const [idx, setIdx] = useState(0)
   const [flipped, setFlipped] = useState(false)
   const [known, setKnown] = useState<Set<string>>(new Set())
@@ -282,7 +286,7 @@ export function FlashcardsView({
   }, [])
 
   const startDeck = (cid: string | undefined, m: DeckMode) => {
-    const full = buildDeck(cid)
+    const full = buildDeck(allContent ?? [], cid)
     const pool = m === 'due' ? full.filter(isDue) : full
     beginDeck(pool.length ? pool : full, m) // fallback: empty due → all
   }
@@ -539,7 +543,7 @@ export function FlashcardsView({
 
   /* ---------------- picker screen ---------------- */
   if (picking) {
-    const allCards = buildDeck(undefined)
+    const allCards = buildDeck(allContent ?? [], undefined)
     const dueCount = (cid?: string) =>
       allCards
         .filter((c) => {
@@ -659,7 +663,7 @@ export function FlashcardsView({
               </div>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {LIBRARY_CHAPTERS.filter((ch) => ch.bookId === book.id).map((ch, i) => {
-            const count = buildDeck(ch.id).length
+            const count = buildDeck(allContent ?? [], ch.id).length
             const due = srsLoaded ? dueCount(ch.id) : 0
             return (
               <motion.div

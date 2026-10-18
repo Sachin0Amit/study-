@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getSectionContent } from '@/data/content'
+import { getSectionContent } from '@/data/content/server'
 import { getSection, getChapter, getSections } from '@/data/library'
 
 export async function GET(

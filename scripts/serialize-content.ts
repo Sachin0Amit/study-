@@ -8,8 +8,10 @@
  *     registries (subjects/books/chapters/sections). library.ts imports this
  *     JSON so the heavy topic TS files never enter the client/server compile
  *     graph (the OOM fix — one JSON parse instead of a 500-module graph).
- *  2. src/data/content/content.json — every live SectionContent, including
- *     the Knowledge Universe lessons.
+ *  2. public/data/content.json — every live SectionContent, including
+ *     the Knowledge Universe lessons. Served as a static asset and fetched
+ *     at runtime (client) / fs-read (server API routes) so the 25 MB corpus
+ *     never enters the bundler graph (the OOM fix of fixes).
  *
  * The authored TS files (src/data/content/*.ts, src/data/knowledge/fields/*)
  * are consumed ONLY by this script.
@@ -45,5 +47,5 @@ const { LIBRARY_SECTIONS } = await import('../src/data/library')
 const liveSectionIds = new Set(LIBRARY_SECTIONS.map((s) => s.id))
 const live = rawAllContent.filter((c) => liveSectionIds.has(c.sectionId))
 
-writeFileSync('src/data/content/content.json', JSON.stringify(live))
+writeFileSync('public/data/content.json', JSON.stringify(live))
 console.log(`content.json written — ${live.length} live sections (${rawAllContent.length - live.length} filtered)`)

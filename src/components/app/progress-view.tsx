@@ -25,7 +25,7 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { LIBRARY_BOOKS, LIBRARY_CHAPTERS, LIBRARY_SECTIONS, getSection } from '@/data/library'
-import { allContent } from '@/data/content'
+import { useAllContent } from '@/hooks/use-content'
 import { ChapterIcon } from './chapter-icon'
 import { ExamHistory } from './exam-history'
 import { MasteryRadar } from './mastery-radar'
@@ -39,8 +39,6 @@ interface CardSrs {
   seen: number
   correct: number
 }
-
-const TOTAL_CARDS = allContent.reduce((a, c) => a + c.concepts.length, 0)
 
 const FOCUS_RING =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
@@ -142,6 +140,9 @@ function StatCard({ def, index }: { def: StatDef; index: number }) {
 }
 
 export function ProgressView() {
+  /* lesson corpus arrives by runtime fetch (kept out of the bundle) */
+  const allContent = useAllContent()
+  const TOTAL_CARDS = allContent ? allContent.reduce((a, c) => a + c.concepts.length, 0) : 0
   const progress = useStudy((s) => s.progress)
   const navigate = useStudy((s) => s.navigate)
   const deviceId = useStudy((s) => s.deviceId)

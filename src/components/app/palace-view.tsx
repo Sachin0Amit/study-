@@ -25,7 +25,7 @@ import { Input } from '@/components/ui/input'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useToast } from '@/hooks/use-toast'
 import { useStudy } from '@/store/useStudy'
-import { allContent } from '@/data/content'
+import { useAllContent } from '@/hooks/use-content'
 import {
   getSection,
   LIBRARY_BOOKS,
@@ -44,8 +44,8 @@ import {
 const FOCUS_RING =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60'
 
-/** only sections with authored content can become palaces */
-const CONTENT_IDS = new Set(allContent.map((c) => c.sectionId))
+/** only sections with authored content can become palaces —
+ *  computed at runtime once the fetched corpus arrives */
 
 const SUBJECT_BY_ID = new Map(LIBRARY_SUBJECTS.map((s) => [s.id, s]))
 const BOOK_BY_ID = new Map(LIBRARY_BOOKS.map((b) => [b.id, b]))
@@ -394,6 +394,8 @@ function RoomCard({
 // =============================================================== the view =
 
 export function PalaceView({ sectionKey: propSectionKey }: { sectionKey?: string }) {
+  const allContent = useAllContent()
+  const CONTENT_IDS = useMemo(() => new Set((allContent ?? []).map((c) => c.sectionId)), [allContent])
   const { toast } = useToast()
   const navigate = useStudy((s) => s.navigate)
 
@@ -492,7 +494,7 @@ export function PalaceView({ sectionKey: propSectionKey }: { sectionKey?: string
 
   const sectionsForChapter = useMemo(
     () => LIBRARY_SECTIONS.filter((s) => s.chapterId === chapterId && CONTENT_IDS.has(s.id)),
-    [chapterId]
+    [chapterId, CONTENT_IDS]
   )
 
   const searchResults = useMemo(() => {
@@ -501,7 +503,7 @@ export function PalaceView({ sectionKey: propSectionKey }: { sectionKey?: string
     return LIBRARY_SECTIONS.filter(
       (s) => CONTENT_IDS.has(s.id) && s.title.toLowerCase().includes(q)
     ).slice(0, 30)
-  }, [query])
+  }, [query, CONTENT_IDS])
 
   const targetInfo = useMemo(() => (targetSection ? sectionInfo(targetSection) : null), [targetSection])
 

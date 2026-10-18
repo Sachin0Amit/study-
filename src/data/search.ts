@@ -5,7 +5,7 @@ import {
   getChapter,
   getSection,
 } from './library'
-import { allContent } from './content'
+import { loadAllContent, allContentLoaded } from './content/client'
 import { plainText } from '@/components/rich-text'
 
 export interface SearchItem {
@@ -24,9 +24,16 @@ export interface SearchItem {
 
 let cachedIndex: SearchItem[] | null = null
 
+/** Load the lesson corpus (runtime fetch) and build the search index once. */
+export async function ensureSearchIndex(): Promise<SearchItem[]> {
+  await loadAllContent()
+  return buildSearchIndex()
+}
+
 export function buildSearchIndex(): SearchItem[] {
   if (cachedIndex) return cachedIndex
   const items: SearchItem[] = []
+  const allContent = allContentLoaded()
 
   // Chapters
   for (const ch of LIBRARY_CHAPTERS) {
@@ -76,6 +83,9 @@ export function buildSearchIndex(): SearchItem[] {
     }
   }
 
+  /* never cache an index built before the corpus arrived — otherwise an
+     early query would poison the cache with an empty concept list. */
+  if (allContent.length === 0) return []
   cachedIndex = items
   return items
 }

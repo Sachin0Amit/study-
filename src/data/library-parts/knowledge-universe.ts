@@ -263,6 +263,75 @@ const FIELD_META: Record<string, { icon: string; tagline: string }> = {
   'Brain-Inspired Computing': { icon: 'cpu', tagline: 'Brains in silicon' },
   'Synthetic Biology': { icon: 'component', tagline: 'Cells, programmed' },
   'Computational Science': { icon: 'terminal', tagline: 'Models of the future' },
+  /* --- Everyday Knowledge: new subjects (2026-10-18 expansion) --- */
+  'Car & Driving': { icon: 'car', tagline: 'Own the road, not the repair bill' },
+  'Home & Repair': { icon: 'wrench', tagline: 'Fix it yourself' },
+  'Garden & Growing': { icon: 'sprout', tagline: 'Grow something real' },
+  'Practical Skills': { icon: 'hand', tagline: 'Life, handled' },
+  'Career & Communication': { icon: 'megaphone', tagline: 'Be heard, be hired' },
+  /* --- Health & Wellness: new subjects --- */
+  'Medicine & Pharmacology': { icon: 'pill', tagline: 'How medicines work' },
+  'Disease & Treatment': { icon: 'stethoscope', tagline: 'What illness really is' },
+  'Health & Longevity': { icon: 'hourglass', tagline: 'More good years' },
+  'Sexual & Reproductive Health': { icon: 'heart-pulse', tagline: 'Bodies, plainly explained' },
+  /* --- Arts & Culture: new subjects --- */
+  'Theater & Performance': { icon: 'drama', tagline: 'The live art' },
+  Dance: { icon: 'music', tagline: 'Bodies in time' },
+  'Animation & Sequential Art': { icon: 'film', tagline: 'Drawings that move' },
+  Architecture: { icon: 'landmark', tagline: 'Read the built world' },
+  'Sculpture & Craft': { icon: 'shapes', tagline: 'Art you can touch' },
+  /* --- Languages: new subjects --- */
+  German: { icon: 'languages', tagline: 'The logic of German' },
+  Hindi: { icon: 'languages', tagline: 'Devanagari, decoded' },
+  Korean: { icon: 'languages', tagline: 'Hangul, the smart script' },
+  Russian: { icon: 'languages', tagline: 'Cases and Cyrillic' },
+  Sociolinguistics: { icon: 'users', tagline: 'Language as social glue' },
+  'Historical Linguistics': { icon: 'git-branch', tagline: 'How tongues drift' },
+  /* --- Social Sciences: new subjects --- */
+  'Research Methods': { icon: 'flask-conical', tagline: 'How we know' },
+  Education: { icon: 'graduation-cap', tagline: 'How teaching works' },
+  'Media & Communication': { icon: 'radio', tagline: 'Who frames your world' },
+  'Public Policy': { icon: 'scroll-text', tagline: 'The policy machine' },
+  /* --- Physical Sciences: new subjects --- */
+  'Physics of Complexity': { icon: 'network', tagline: 'Simple rules, wild results' },
+  'Physics of Everyday Phenomena': { icon: 'waves', tagline: 'The physics of the ordinary' },
+  /* --- Life Sciences: new subjects --- */
+  Biochemistry: { icon: 'atom', tagline: 'The cell\u2019s energy economy' },
+  'Developmental Biology': { icon: 'egg', tagline: 'How bodies build themselves' },
+  'Marine Biology': { icon: 'fish', tagline: 'Life in the blue' },
+  'Animal Behavior': { icon: 'paw-print', tagline: 'Minds in the wild' },
+  /* --- Technology & Applied Science: new subjects --- */
+  'Water Technology': { icon: 'droplets', tagline: 'Clean water, engineered' },
+  'Everyday Machines': { icon: 'cog', tagline: 'The machines around you' },
+  'Nuclear Technology': { icon: 'radiation', tagline: 'The atom, harnessed' },
+  Photonics: { icon: 'zap', tagline: 'Light, engineered' },
+  'Materials Science': { icon: 'gem', tagline: 'Why stuff is strong' },
+  'Quantum Information': { icon: 'atom', tagline: 'Qubits and beyond' },
+  'Energy Systems': { icon: 'battery-charging', tagline: 'Storing and moving power' },
+  /* --- Engineering: new subjects --- */
+  'Chemical Engineering': { icon: 'flask-round', tagline: 'Reactions at scale' },
+  'Railway Engineering': { icon: 'train-front', tagline: 'The steel network' },
+  'Naval Architecture': { icon: 'ship', tagline: 'Why ships stay up' },
+  'Electrical & Electronics Engineering': { icon: 'zap', tagline: 'Power and signals' },
+  'Mechanical Engineering': { icon: 'cog', tagline: 'Machines, designed' },
+  'Manufacturing Engineering': { icon: 'factory', tagline: 'Made at scale' },
+  'Civil & Structural Engineering': { icon: 'hard-hat', tagline: 'Standing on math' },
+  /* --- Environment: new subjects --- */
+  'Waste & Circularity': { icon: 'recycle', tagline: 'After the bin' },
+  'Pollution & Environmental Health': { icon: 'wind', tagline: 'The air we breathe' },
+  'Urban Planning': { icon: 'map', tagline: 'Cities, by design' },
+  /* --- Emerging: new subjects --- */
+  Nanotechnology: { icon: 'atom', tagline: 'Engineering at atomic scale' },
+  'Extended Reality': { icon: 'glasses', tagline: 'Worlds, rendered' },
+  /* --- Science fundamentals referenced by field files --- */
+  Chemistry: { icon: 'flask-conical', tagline: 'Molecules and change' },
+  Physics: { icon: 'atom', tagline: 'The rules of reality' },
+  /* --- Law & Governance: new subjects --- */
+  'Tax & Administrative Law': { icon: 'receipt', tagline: 'The tax machine' },
+  'Employment Law': { icon: 'briefcase', tagline: 'Work, under law' },
+  /* --- Business: new subjects --- */
+  'Operations & Supply Chain': { icon: 'boxes', tagline: 'Things, moving' },
+  'Management & Leadership': { icon: 'users', tagline: 'Getting work done' },
 }
 
 /* ------------------------------------------------------------------ */

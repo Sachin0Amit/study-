@@ -36,6 +36,7 @@ import {
   CommandList,
 } from '@/components/ui/command'
 import type { SearchItem } from '@/data/search'
+import { searchLibrary as searchLibrarySync } from '@/data/search'
 import { useStudy } from '@/store/useStudy'
 import {
   FocusTimer,
@@ -316,11 +317,13 @@ export function CommandPalette() {
   const [searchReady, setSearchReady] = useState(false)
   useEffect(() => {
     let cancelled = false
-    void import('@/data/search').then((m) => {
-      if (cancelled) return
-      searchFnRef.current = m.searchLibrary
-      setSearchReady(true)
-    })
+    void import('@/data/search')
+      .then((m) => m.ensureSearchIndex())
+      .then(() => {
+        if (cancelled) return
+        searchFnRef.current = searchLibrarySync
+        setSearchReady(true)
+      })
     return () => {
       cancelled = true
     }

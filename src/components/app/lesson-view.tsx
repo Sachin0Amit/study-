@@ -22,7 +22,7 @@ import {
   CloudDownload,
 } from 'lucide-react'
 import { getBook, getChapter, getSection, getSections } from '@/data/library'
-import { getSectionContent } from '@/data/content'
+import { useAllContent } from '@/hooks/use-content'
 import { getOfflineSection } from '@/lib/offline-cache'
 import type { ChapterMeta, DepthBlock, DepthTier, DetailedDerivation, LessonFigure, QuizQuestion, SectionContent, SectionMeta } from '@/data/library'
 import { RichText, plainText } from '../rich-text'
@@ -74,13 +74,6 @@ function splitSyllabusSubtopics(description: string): string[] {
   return unique.slice(0, 8)
 }
 
-/** Count how many sections of a chapter already have authored lesson content
- *  (module-level so the React Compiler never sees sibling objects cross a
- *  function boundary inside the component — keeps manual memoization valid). */
-function countSiblingLessons(chapterId: string): number {
-  return getSections(chapterId).filter((s) => getSectionContent(s.id)).length
-}
-
 /* ------------------------------------------------------------------ */
 /*  Syllabus Topic Brief                                               */
 /*  Rendered for sections that have syllabus metadata but no authored  */
@@ -104,8 +97,18 @@ function SyllabusBrief({
   totalSiblings: number
 }) {
   const navigate = useStudy((s) => s.navigate)
+  /* lesson corpus arrives by runtime fetch (kept out of the bundle) */
+  const allContent = useAllContent()
   const subtopics = splitSyllabusSubtopics(section.description)
-  const lessonCount = countSiblingLessons(chapter.id)
+  const lessonCount = useMemo(
+    () =>
+      allContent
+        ? getSections(chapter.id).filter((s) =>
+            allContent.some((c) => c.sectionId === s.id)
+          ).length
+        : 0,
+    [allContent, chapter.id]
+  )
 
   return (
     <section aria-label="Syllabus topic brief" className="mt-6 mb-4">
@@ -284,7 +287,12 @@ export function LessonView({ sectionId }: { sectionId: string }) {
    * the Download Manager, the IndexedDB copy takes over — the lesson keeps
    * reading even if the content bundle is not on this device. */
   const online = useOnlineFlag()
-  const bundleContent = getSectionContent(sectionId)
+  /* lesson corpus arrives by runtime fetch (kept out of the bundle) */
+  const allContent = useAllContent()
+  const bundleContent = useMemo(
+    () => allContent?.find((c) => c.sectionId === sectionId),
+    [allContent, sectionId]
+  )
   const [offlineCopy, setOfflineCopy] = useState<{ sectionId: string; content: SectionContent } | null>(null)
   useEffect(() => {
     if (online) return
@@ -582,7 +590,14 @@ export function LessonView({ sectionId }: { sectionId: string }) {
               Extracted into its own component: the subtopic-splitting helper receives the
               description inside the child, which keeps the React Compiler's memoization
               analysis of this (parent) component untouched. */}
-          {!content && section && chapter && (
+          {allContent === null && (
+            <div className="mt-6 space-y-3" aria-hidden>
+              <div className="h-4 w-2/5 animate-pulse rounded bg-muted/50" />
+              <div className="h-4 w-4/5 animate-pulse rounded bg-muted/40" />
+              <div className="h-4 w-3/5 animate-pulse rounded bg-muted/30" />
+            </div>
+          )}
+          {!content && allContent !== null && section && chapter && (
             <SyllabusBrief
               section={section}
               chapter={chapter}

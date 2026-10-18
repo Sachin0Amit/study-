@@ -1,6 +1,6 @@
 import { db } from '@/lib/db'
 import ZAI from 'z-ai-web-dev-sdk'
-import { allContent } from '@/data/content'
+import { allContent } from '@/data/content/server'
 import {
   LIBRARY_CHAPTERS,
   LIBRARY_SECTIONS,
@@ -101,7 +101,7 @@ const RETRIEVAL_INDEX: IndexRow[] = (() => {
   const subjectById = new Map(LIBRARY_SUBJECTS.map((s) => [s.id, s]))
   const sectionById = new Map(LIBRARY_SECTIONS.map((s) => [s.id, s]))
   const rows: IndexRow[] = []
-  for (const c of allContent) {
+  for (const c of allContent()) {
     const sec = sectionById.get(c.sectionId)
     const ch = sec ? chapterById.get(sec.chapterId) : undefined
     const book = ch ? bookById.get(ch.bookId) : undefined

@@ -21,8 +21,8 @@ import {
   Zap,
   Atom,
 } from 'lucide-react'
-import { LIBRARY_BOOKS, LIBRARY_CHAPTERS, LIBRARY_SECTIONS, LIBRARY_SUBJECTS, type QuizQuestion } from '@/data/library'
-import { allContent } from '@/data/content'
+import { LIBRARY_BOOKS, LIBRARY_CHAPTERS, LIBRARY_SECTIONS, LIBRARY_SUBJECTS, type QuizQuestion, type SectionContent } from '@/data/library'
+import { useAllContent } from '@/hooks/use-content'
 import { RichText } from '../rich-text'
 import { shuffleQuizOptions } from '@/lib/quiz-shuffle'
 import { VisualDiagramSolver, detectDiagramTopic } from '@/components/visual/visual-diagram-solver'
@@ -43,12 +43,12 @@ type Phase = 'setup' | 'run' | 'results'
 
 const QUESTION_PRESETS = [10, 20, 30] as const
 
-/** Build the full pool once (module level — static data) */
-const POOL: ExamQuestion[] = (() => {
+/** Build the full question pool from the lesson corpus (runtime) */
+function buildPool(corpus: SectionContent[]): ExamQuestion[] {
   const sectionById = new Map(LIBRARY_SECTIONS.map((s) => [s.id, s]))
   const chapterById = new Map(LIBRARY_CHAPTERS.map((c) => [c.id, c]))
   const pool: ExamQuestion[] = []
-  for (const content of allContent) {
+  for (const content of corpus) {
     const sec = sectionById.get(content.sectionId)
     const ch = sec ? chapterById.get(sec.chapterId) : undefined
     if (!sec || !ch) continue
@@ -66,7 +66,7 @@ const POOL: ExamQuestion[] = (() => {
     }
   }
   return pool
-})()
+}
 
 /** Fisher–Yates shuffle (pure — returns new array) */
 function shuffled<T>(arr: T[]): T[] {
@@ -135,7 +135,8 @@ const SET_META: Record<string, { title: string; blurb: string; count: number; ti
   'mechatronics-robotics': { title: 'Mechatronics check', blurb: 'Sensors, actuators and robot control', count: 8, timed: false },
 }
 
-const PRACTICE_SETS: PracticeSet[] = (() => {
+/** Practice sets with live per-chapter pool counts */
+function buildPracticeSets(pool: ExamQuestion[]): PracticeSet[] {
   // chapters grouped by subject (subject → book → chapters, in library order)
   const chaptersBySubject = new Map<string, string[]>()
   for (const ch of LIBRARY_CHAPTERS) {
@@ -147,7 +148,7 @@ const PRACTICE_SETS: PracticeSet[] = (() => {
   }
   // question pool counted per chapter (one pass over POOL)
   const poolByChapter = new Map<string, number>()
-  for (const q of POOL) {
+  for (const q of pool) {
     const chId = q.sectionId.replace(/-s\d+$/, '')
     poolByChapter.set(chId, (poolByChapter.get(chId) ?? 0) + 1)
   }
@@ -162,7 +163,7 @@ const PRACTICE_SETS: PracticeSet[] = (() => {
     }
     return { subjectId: subject.id, ...meta, chapterIds, poolCount }
   }).filter((s) => s.chapterIds.length > 0)
-})()
+}
 
 function fmtTime(sec: number): string {
   const m = Math.floor(sec / 60)
@@ -194,6 +195,10 @@ export function ExamView({
   label?: string
   questionCount?: number
 }) {
+  /* lesson corpus arrives by runtime fetch (kept out of the bundle) */
+  const allContent = useAllContent()
+  const POOL = useMemo(() => buildPool(allContent ?? []), [allContent])
+  const PRACTICE_SETS = useMemo(() => buildPracticeSets(POOL), [POOL])
   const navigate = useStudy((s) => s.navigate)
   const deviceId = useStudy((s) => s.deviceId)
   const ensureDevice = useStudy((s) => s.ensureDevice)
@@ -289,7 +294,7 @@ export function ExamView({
 
   const poolForSelection = useMemo(
     () => POOL.filter((q) => selected.has(q.sectionId.replace(/-s\d+$/, ''))),
-    [selected]
+    [selected, POOL]
   )
 
   const allSelected = selected.size === LIBRARY_CHAPTERS.length
@@ -335,7 +340,7 @@ export function ExamView({
   /** true when the current selection is exactly this set's chapter list */
   const setChapterSets = useMemo(
     () => PRACTICE_SETS.map((s) => ({ set: s, ids: new Set(s.chapterIds) })),
-    []
+    [PRACTICE_SETS]
   )
   const activeSetId = useMemo(() => {
     for (const { set, ids } of setChapterSets) {

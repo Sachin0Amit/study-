@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { allContent } from '@/data/content'
+import { allContent } from '@/data/content/server'
 import { LIBRARY_BOOKS, LIBRARY_CHAPTERS, LIBRARY_SECTIONS, LIBRARY_SUBJECTS } from '@/data/library'
 
 export const runtime = 'nodejs'
@@ -45,7 +45,7 @@ const POOL: ArenaPoolQuestion[] = (() => {
   const bookById = new Map(LIBRARY_BOOKS.map((b) => [b.id, b]))
   const subjectById = new Map(LIBRARY_SUBJECTS.map((s) => [s.id, s]))
   const pool: ArenaPoolQuestion[] = []
-  for (const content of allContent) {
+  for (const content of allContent()) {
     const sec = sectionById.get(content.sectionId)
     const ch = sec ? chapterById.get(sec.chapterId) : undefined
     const book = ch ? bookById.get(ch.bookId) : undefined

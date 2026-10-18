@@ -795,12 +795,13 @@ export function ExamCommandCenter() {
     return attempts.filter((a) => typeof a.label === 'string' && a.label.startsWith(prefix))
   }, [attempts, current])
 
-  /** question pool per chapter — loaded lazily (heavy content asset) */
+  /** question pool per chapter — loaded lazily (runtime-fetched content asset) */
   useEffect(() => {
     if (tab !== 'tests' || !current || poolByChapter) return
     let cancelled = false
-    import('@/data/content')
-      .then(({ allContent }) => {
+    import('@/data/content/client')
+      .then(({ loadAllContent }) => loadAllContent())
+      .then((allContent) => {
         if (cancelled) return
         const counts = new Map<string, number>()
         for (const c of allContent) {

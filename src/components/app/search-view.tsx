@@ -17,7 +17,7 @@ import {
   type ChapterMeta,
   type SectionContent,
 } from '@/data/library'
-import { allContent, TOTAL_CONTENT_SECTIONS } from '@/data/content'
+import { useAllContent } from '@/hooks/use-content'
 import { useStudy } from '@/store/useStudy'
 import { ChapterIcon } from './chapter-icon'
 
@@ -62,15 +62,12 @@ const KIND_BADGE: Record<SearchKind, string> = {
 /** Strip the light **bold** markdown markers before indexing */
 const plain = (s: string) => s.replace(/\*\*/g, '')
 
-let cachedIndex: IndexEntry[] | null = null
-
 /** Flat index over every intro, objective, concept, example and takeaway */
-function buildIndex(): IndexEntry[] {
-  if (cachedIndex) return cachedIndex
+function buildIndex(corpus: SectionContent[]): IndexEntry[] {
   const sectionById = new Map(LIBRARY_SECTIONS.map((s) => [s.id, s]))
   const entries: IndexEntry[] = []
 
-  for (const content of allContent) {
+  for (const content of corpus) {
     const sec = sectionById.get(content.sectionId)
     const ch = sec ? CHAPTER_BY_ID.get(sec.chapterId) : undefined
     if (!sec || !ch) continue
@@ -110,7 +107,6 @@ function buildIndex(): IndexEntry[] {
     }
   }
 
-  cachedIndex = entries
   return entries
 }
 
@@ -301,6 +297,9 @@ const pillBase =
 /* ================================ view =================================== */
 
 export function SearchView({ initialQuery }: { initialQuery?: string }) {
+  /* lesson corpus arrives by runtime fetch (kept out of the bundle) */
+  const allContent = useAllContent()
+  const totalSections = allContent?.length ?? 0
   const navigate = useStudy((s) => s.navigate)
   const goBack = useStudy((s) => s.goBack)
   const reduced = useReducedMotion()
@@ -312,7 +311,7 @@ export function SearchView({ initialQuery }: { initialQuery?: string }) {
 
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const index = useMemo(() => buildIndex(), [])
+  const index = useMemo(() => (allContent ? buildIndex(allContent) : []), [allContent])
 
   /* recent searches — localStorage as an external store (SSR-safe, cross-tab) */
   const recent = useSyncExternalStore(subscribeRecents, getRecentSnapshot, getServerRecentSnapshot)
@@ -474,14 +473,14 @@ export function SearchView({ initialQuery }: { initialQuery?: string }) {
         <div className="absolute inset-0 sv-hero-glow opacity-40" />
         <div className="relative">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
-            <Search className="h-3.5 w-3.5" /> Full-text search · {TOTAL_CONTENT_SECTIONS}{' '}
+            <Search className="h-3.5 w-3.5" /> Full-text search · {totalSections}{' '}
             sections indexed
           </div>
           <h1 className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl">
             Search the <span className="sv-text-gradient">master content</span>
           </h1>
           <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            Every concept, example, takeaway and objective across {TOTAL_CONTENT_SECTIONS}{' '}
+            Every concept, example, takeaway and objective across {totalSections}{' '}
             sections — indexed and instant.
           </p>
         </div>

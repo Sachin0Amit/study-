@@ -342,6 +342,44 @@
     ]
   },
   {
+    "id": "eng-naval-architecture-ships",
+    "title": "Naval Architecture: Why Ships Float and Stay Up",
+    "domain": "Engineering",
+    "field": "Naval Architecture",
+    "score": 0.43,
+    "verdict": "review",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Fluids",
+      "section": "Archimedes' Principle",
+      "sectionId": "hall-ch14-s5",
+      "score": 0.43
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "Archimedes' Principle",
+        "sectionId": "hall-ch14-s5",
+        "score": 0.43
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Force and Motion",
+        "section": "Uniform Circular Motion",
+        "sectionId": "hall-ch5-s6",
+        "score": 0.15
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "Buoyancy",
+        "sectionId": "hall-ch14-s10",
+        "score": 0.14
+      }
+    ]
+  },
+  {
     "id": "emer-bioinformatics-reading-genomes",
     "title": "Bioinformatics: Reading Genomes with Code",
     "domain": "Emerging & Interdisciplinary",
@@ -988,6 +1026,82 @@
     ]
   },
   {
+    "id": "study-note-taking-systems",
+    "title": "Note-Taking Systems Compared: Cornell, Outlines and Zettelkasten",
+    "domain": "Foundation Learning",
+    "field": "Study Skills & Memory",
+    "score": 0.29,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Microprocessors & Embedded Systems",
+      "chapter": "Embedded System",
+      "section": "RTOS Concepts",
+      "sectionId": "ece-e-embedded-s4",
+      "score": 0.29
+    },
+    "topMatches": [
+      {
+        "subject": "Microprocessors & Embedded Systems",
+        "chapter": "Embedded System",
+        "section": "RTOS Concepts",
+        "sectionId": "ece-e-embedded-s4",
+        "score": 0.29
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Concurrency",
+        "section": "Memory Model",
+        "sectionId": "cpp-ch41-s2",
+        "score": 0.25
+      },
+      {
+        "subject": "Operating Systems",
+        "chapter": "Introduction",
+        "section": "Computer-System Organization",
+        "sectionId": "osc-ch1-s2",
+        "score": 0.24
+      }
+    ]
+  },
+  {
+    "id": "phys-acoustics-sound-spaces",
+    "title": "Room Acoustics: Why Spaces Sound the Way They Do",
+    "domain": "Physical Sciences",
+    "field": "Physics of Everyday Phenomena",
+    "score": 0.29,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Waves—II",
+      "section": "Interference",
+      "sectionId": "hall-ch17-s3",
+      "score": 0.29
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Interference",
+        "sectionId": "hall-ch17-s3",
+        "score": 0.29
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "The Equation of Continuity",
+        "sectionId": "hall-ch14-s6",
+        "score": 0.25
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Reflection and Refraction",
+        "sectionId": "hall-ch33-s5",
+        "score": 0.25
+      }
+    ]
+  },
+  {
     "id": "tech-mri-machines",
     "title": "How MRI Machines See Inside You",
     "domain": "Technology & Applied Science",
@@ -1026,6 +1140,158 @@
     ]
   },
   {
+    "id": "build-house-anatomy",
+    "title": "How a House Is Built: Foundations to Roof",
+    "domain": "Technology & Applied Science",
+    "field": "Construction & the Built Environment",
+    "score": 0.29,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "The C Standard Library",
+      "section": "Files",
+      "sectionId": "cpp-ch43-s2",
+      "score": 0.29
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "The C Standard Library",
+        "section": "Files",
+        "sectionId": "cpp-ch43-s2",
+        "score": 0.29
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Kinetic Energy and Work",
+        "section": "Work Done by the Gravitational Force",
+        "sectionId": "hall-ch7-s3",
+        "score": 0.2
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Standard Library Summary",
+        "section": "Headers",
+        "sectionId": "cpp-ch30-s2",
+        "score": 0.2
+      }
+    ]
+  },
+  {
+    "id": "soc-family-religion-institutions",
+    "title": "Family, Religion and Institutions: The Skeleton of Society",
+    "domain": "Social Sciences",
+    "field": "Sociology",
+    "score": 0.29,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Functions",
+      "section": "Advice",
+      "sectionId": "cpp-ch12-s7",
+      "score": 0.29
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Functions",
+        "section": "Advice",
+        "sectionId": "cpp-ch12-s7",
+        "score": 0.29
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Differentiation Rules",
+        "section": "Implicit Differentiation",
+        "sectionId": "calc-ch3-s5",
+        "score": 0.18
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Differentiation Rules",
+        "section": "Hyperbolic Functions",
+        "sectionId": "calc-ch3-s11",
+        "score": 0.15
+      }
+    ]
+  },
+  {
+    "id": "acct-financial-statements",
+    "title": "Reading Financial Statements: Balance Sheet, Income and Cash Flow",
+    "domain": "Business & Economics",
+    "field": "Accounting",
+    "score": 0.29,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Statements",
+      "section": "Statement Summary",
+      "sectionId": "cpp-ch9-s2",
+      "score": 0.29
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Statements",
+        "section": "Statement Summary",
+        "sectionId": "cpp-ch9-s2",
+        "score": 0.29
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Statements",
+        "section": "",
+        "sectionId": "cpp-ch9",
+        "score": 0.2
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Statements",
+        "section": "Introduction",
+        "sectionId": "cpp-ch9-s1",
+        "score": 0.17
+      }
+    ]
+  },
+  {
+    "id": "health-dental-oral-health",
+    "title": "Dental and Oral Health: Plaque, Cavities and Keeping Your Teeth",
+    "domain": "Health & Wellness",
+    "field": "Disease & Treatment",
+    "score": 0.29,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Waves—II",
+      "section": "Beats",
+      "sectionId": "hall-ch17-s6",
+      "score": 0.29
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Beats",
+        "sectionId": "hall-ch17-s6",
+        "score": 0.29
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Beats and Modes",
+        "sectionId": "hall-ch17-s23",
+        "score": 0.11
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—I",
+        "section": "Transverse Waves",
+        "sectionId": "hall-ch16-s1",
+        "score": 0.1
+      }
+    ]
+  },
+  {
     "id": "cs-blockchain-consensus",
     "title": "Blockchains and Consensus Without a Boss",
     "domain": "Computing & AI",
@@ -1060,6 +1326,44 @@
         "section": "Entropy, Joint & Conditional Entropy",
         "sectionId": "comm-info-theory-s1",
         "score": 0.19
+      }
+    ]
+  },
+  {
+    "id": "bio-anatomy-kidneys-endocrine",
+    "title": "Kidneys, Hormones and the Body's Balance",
+    "domain": "Life Sciences",
+    "field": "Anatomy & Physiology",
+    "score": 0.27,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Chemistry",
+      "chapter": "Amines, Biomolecules, Polymers & Practical Organic",
+      "section": "Hormones",
+      "sectionId": "chem-ch10-s16",
+      "score": 0.27
+    },
+    "topMatches": [
+      {
+        "subject": "Chemistry",
+        "chapter": "Amines, Biomolecules, Polymers & Practical Organic",
+        "section": "Hormones",
+        "sectionId": "chem-ch10-s16",
+        "score": 0.27
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Interference",
+        "section": "Interference and Double-Slit Intensity",
+        "sectionId": "hall-ch35-s3",
+        "score": 0.11
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Diffraction",
+        "section": "Intensity in Single-Slit Diffraction",
+        "sectionId": "hall-ch36-s2",
+        "score": 0.11
       }
     ]
   },
@@ -1178,6 +1482,82 @@
     ]
   },
   {
+    "id": "lang-morphology",
+    "title": "Morphology: How Languages Build Words",
+    "domain": "Languages & World Literature",
+    "field": "Linguistics",
+    "score": 0.27,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Modeling Computation",
+      "section": "Languages and Grammars",
+      "sectionId": "rosen-ch13-s1",
+      "score": 0.27
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Modeling Computation",
+        "section": "Languages and Grammars",
+        "sectionId": "rosen-ch13-s1",
+        "score": 0.27
+      },
+      {
+        "subject": "Theory of Computation",
+        "chapter": "Context-Free Grammars & Languages",
+        "section": "Grammar Simplification",
+        "sectionId": "toc-cfg-s3",
+        "score": 0.19
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Select Operations",
+        "section": "Free Store",
+        "sectionId": "cpp-ch11-s2",
+        "score": 0.18
+      }
+    ]
+  },
+  {
+    "id": "cine-cinematography",
+    "title": "Cinematography: Shots, Camera Movement and Light",
+    "domain": "Arts & Culture",
+    "field": "Film & Cinema",
+    "score": 0.27,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Three-Dimensional Geometry",
+      "section": "Planes",
+      "sectionId": "math-a10-s4",
+      "score": 0.27
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Three-Dimensional Geometry",
+        "section": "Planes",
+        "sectionId": "math-a10-s4",
+        "score": 0.27
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Three-Dimensional Geometry",
+        "section": "Lines in Space",
+        "sectionId": "math-a10-s2",
+        "score": 0.2
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Three-Dimensional Geometry",
+        "section": "Points in Space",
+        "sectionId": "math-a10-s6",
+        "score": 0.2
+      }
+    ]
+  },
+  {
     "id": "fnd-active-recall",
     "title": "Active Recall: Why Testing Yourself Beats Rereading",
     "domain": "Foundation Learning",
@@ -1212,6 +1592,158 @@
         "section": "Macros",
         "sectionId": "cpp-ch12-s6",
         "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "geo-deep-time-fossils",
+    "title": "Deep Time: Fossils and Dating the Earth",
+    "domain": "Physical Sciences",
+    "field": "Geology & Earth Science",
+    "score": 0.25,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Utilities",
+      "section": "Time",
+      "sectionId": "cpp-ch35-s2",
+      "score": 0.25
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Utilities",
+        "section": "Time",
+        "sectionId": "cpp-ch35-s2",
+        "score": 0.25
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "The C Standard Library",
+        "section": "Date and Time",
+        "sectionId": "cpp-ch43-s6",
+        "score": 0.25
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Relativity",
+        "section": "Simultaneity and Time Dilation",
+        "sectionId": "hall-ch37-s1",
+        "score": 0.22
+      }
+    ]
+  },
+  {
+    "id": "phys-fractals-geometry-nature",
+    "title": "Fractals: The Geometry of Nature",
+    "domain": "Physical Sciences",
+    "field": "Physics of Complexity",
+    "score": 0.25,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Induction and Inductance",
+      "section": "Self-Induction",
+      "sectionId": "hall-ch30-s5",
+      "score": 0.25
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Induction and Inductance",
+        "section": "Self-Induction",
+        "sectionId": "hall-ch30-s5",
+        "score": 0.25
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Interference",
+        "section": "Light as a Wave",
+        "sectionId": "hall-ch35-s1",
+        "score": 0.25
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Induction and Inductance",
+        "section": "Inductors and Inductance",
+        "sectionId": "hall-ch30-s4",
+        "score": 0.22
+      }
+    ]
+  },
+  {
+    "id": "bio-marine-biology-oceans",
+    "title": "Marine Biology: Life in the Ocean",
+    "domain": "Life Sciences",
+    "field": "Marine Biology",
+    "score": 0.25,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Electromagnetic Waves",
+      "section": "Radiation Pressure",
+      "sectionId": "hall-ch33-s3",
+      "score": 0.25
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Radiation Pressure",
+        "sectionId": "hall-ch33-s3",
+        "score": 0.25
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "Fluids at Rest",
+        "sectionId": "hall-ch14-s2",
+        "score": 0.22
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "Archimedes' Principle",
+        "sectionId": "hall-ch14-s5",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "bio-plant-physiology-transport",
+    "title": "Plant Physiology: How Plants Actually Work",
+    "domain": "Life Sciences",
+    "field": "Botany",
+    "score": 0.25,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Electromagnetic Waves",
+      "section": "Radiation Pressure",
+      "sectionId": "hall-ch33-s3",
+      "score": 0.25
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Radiation Pressure",
+        "sectionId": "hall-ch33-s3",
+        "score": 0.25
+      },
+      {
+        "subject": "Aptitude & Reasoning",
+        "chapter": "General Science",
+        "section": "Biology: Cells, Genetics & Human Physiology",
+        "sectionId": "apt-gensci-s3",
+        "score": 0.17
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Force and Motion",
+        "section": "Uniform Circular Motion",
+        "sectionId": "hall-ch5-s6",
+        "score": 0.15
       }
     ]
   },
@@ -1292,6 +1824,120 @@
     ]
   },
   {
+    "id": "avi-air-traffic-control",
+    "title": "How Air Traffic Control Keeps the Skies Orderly",
+    "domain": "Technology & Applied Science",
+    "field": "Aviation & Flight",
+    "score": 0.25,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Classes",
+      "section": "Introduction",
+      "sectionId": "cpp-ch16-s1",
+      "score": 0.25
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Classes",
+        "section": "Introduction",
+        "sectionId": "cpp-ch16-s1",
+        "score": 0.25
+      },
+      {
+        "subject": "Java Programming",
+        "chapter": "Objects & Classes",
+        "section": "Classes, Objects & Encapsulation",
+        "sectionId": "java-ch3-s1",
+        "score": 0.18
+      },
+      {
+        "subject": "Computer Networks",
+        "chapter": "Medium Access Control & Ethernet",
+        "section": "Pure & Slotted ALOHA",
+        "sectionId": "cn-ch3-s1",
+        "score": 0.18
+      }
+    ]
+  },
+  {
+    "id": "tech-clocks-timekeeping",
+    "title": "Timekeeping: How Humans Measure Time",
+    "domain": "Technology & Applied Science",
+    "field": "Everyday Machines",
+    "score": 0.25,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Utilities",
+      "section": "Time",
+      "sectionId": "cpp-ch35-s2",
+      "score": 0.25
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Utilities",
+        "section": "Time",
+        "sectionId": "cpp-ch35-s2",
+        "score": 0.25
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "The C Standard Library",
+        "section": "Date and Time",
+        "sectionId": "cpp-ch43-s6",
+        "score": 0.25
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Relativity",
+        "section": "Simultaneity and Time Dilation",
+        "sectionId": "hall-ch37-s1",
+        "score": 0.22
+      }
+    ]
+  },
+  {
+    "id": "law-family",
+    "title": "Family Law: Marriage, Divorce and Custody",
+    "domain": "Law & Governance",
+    "field": "Private Law",
+    "score": 0.25,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "The C Standard Library",
+      "section": "C-Style Strings",
+      "sectionId": "cpp-ch43-s4",
+      "score": 0.25
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "The C Standard Library",
+        "section": "C-Style Strings",
+        "sectionId": "cpp-ch43-s4",
+        "score": 0.25
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "The C Standard Library",
+        "section": "The printf() Family",
+        "sectionId": "cpp-ch43-s3",
+        "score": 0.22
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "The C Standard Library",
+        "section": "Introduction",
+        "sectionId": "cpp-ch43-s1",
+        "score": 0.2
+      }
+    ]
+  },
+  {
     "id": "health-circadian-rhythms-sleep-pressure",
     "title": "Circadian Rhythms and Sleep Pressure",
     "domain": "Health & Wellness",
@@ -1326,6 +1972,44 @@
         "section": "Measuring Pressure",
         "sectionId": "hall-ch14-s3",
         "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "every-car-maintenance-basics",
+    "title": "Car Maintenance Basics: Oil, Tires, Brakes and Warning Lights",
+    "domain": "Everyday Knowledge",
+    "field": "Car & Driving",
+    "score": 0.25,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Electromagnetic Waves",
+      "section": "Radiation Pressure",
+      "sectionId": "hall-ch33-s3",
+      "score": 0.25
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Radiation Pressure",
+        "sectionId": "hall-ch33-s3",
+        "score": 0.25
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "Fluids at Rest",
+        "sectionId": "hall-ch14-s2",
+        "score": 0.22
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Relativity",
+        "section": "Doppler Effect for Light",
+        "sectionId": "hall-ch37-s5",
+        "score": 0.22
       }
     ]
   },
@@ -1444,6 +2128,310 @@
     ]
   },
   {
+    "id": "study-exam-strategy",
+    "title": "Exam-Day Strategy: How Tests Are Actually Won",
+    "domain": "Foundation Learning",
+    "field": "Study Skills & Memory",
+    "score": 0.22,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Utilities",
+      "section": "Compile-Time Rational Arithmetic",
+      "sectionId": "cpp-ch35-s3",
+      "score": 0.22
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Utilities",
+        "section": "Compile-Time Rational Arithmetic",
+        "sectionId": "cpp-ch35-s3",
+        "score": 0.22
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Three-Dimensional Geometry",
+        "section": "Planes",
+        "sectionId": "math-a10-s4",
+        "score": 0.18
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "The C Standard Library",
+        "section": "",
+        "sectionId": "cpp-ch43",
+        "score": 0.18
+      }
+    ]
+  },
+  {
+    "id": "astro-astrobiology",
+    "title": "Are We Alone? The New Science of Astrobiology",
+    "domain": "Physical Sciences",
+    "field": "Astronomy & Space Science",
+    "score": 0.22,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Fluids",
+      "section": "Bernoulli's Equation",
+      "sectionId": "hall-ch14-s7",
+      "score": 0.22
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "Bernoulli's Equation",
+        "sectionId": "hall-ch14-s7",
+        "score": 0.22
+      },
+      {
+        "subject": "Energy Conversion & Automotive",
+        "chapter": "Energy Systems & Renewables",
+        "section": "Solar Photovoltaics",
+        "sectionId": "ee-e-energy-s10",
+        "score": 0.19
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electric Potential",
+        "section": "Electric Potential Energy of a System of Charged Particles",
+        "sectionId": "hall-ch24-s7",
+        "score": 0.15
+      }
+    ]
+  },
+  {
+    "id": "phys-chaos-nonlinear-dynamics",
+    "title": "Chaos: When Simple Rules Make Wild Behavior",
+    "domain": "Physical Sciences",
+    "field": "Physics of Complexity",
+    "score": 0.22,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Static Equilibrium & Elasticity",
+      "section": "Equilibrium",
+      "sectionId": "hall-ch12-s1",
+      "score": 0.22
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Static Equilibrium & Elasticity",
+        "section": "Equilibrium",
+        "sectionId": "hall-ch12-s1",
+        "score": 0.22
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Oscillations",
+        "section": "An Angular Simple Harmonic Oscillator",
+        "sectionId": "hall-ch15-s3",
+        "score": 0.22
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Capacitance",
+        "section": "Capacitors in Parallel and Series",
+        "sectionId": "hall-ch25-s3",
+        "score": 0.22
+      }
+    ]
+  },
+  {
+    "id": "bio-population-genetics",
+    "title": "Population Genetics: Genes Drifting Through Time",
+    "domain": "Life Sciences",
+    "field": "Genetics & Heredity",
+    "score": 0.22,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Metaprogramming",
+      "section": "Control Structures",
+      "sectionId": "cpp-ch28-s3",
+      "score": 0.22
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Metaprogramming",
+        "section": "Control Structures",
+        "sectionId": "cpp-ch28-s3",
+        "score": 0.22
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Metaprogramming",
+        "section": "Introduction",
+        "sectionId": "cpp-ch28-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Differential Equations",
+        "section": "Models for Population Growth",
+        "sectionId": "calc-ch9-s4",
+        "score": 0.15
+      }
+    ]
+  },
+  {
+    "id": "aero-helicopters-drones",
+    "title": "Helicopters, Drones and Flying Without a Runway",
+    "domain": "Engineering",
+    "field": "Aerospace Engineering",
+    "score": 0.22,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Rotation of Rigid Bodies",
+      "section": "Torque",
+      "sectionId": "hall-ch10-s6",
+      "score": 0.22
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Rotation of Rigid Bodies",
+        "section": "Torque",
+        "sectionId": "hall-ch10-s6",
+        "score": 0.22
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Rolling, Torque, and Angular Momentum",
+        "section": "Work and Power in Rotational Motion",
+        "sectionId": "hall-ch11-s13",
+        "score": 0.16
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Second-Order Differential Equations",
+        "section": "Series Solutions",
+        "sectionId": "calc-ch17-s4",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "eng-railway-engineering",
+    "title": "Railway Engineering: The Steel Network",
+    "domain": "Engineering",
+    "field": "Railway Engineering",
+    "score": 0.22,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Applications of Differentiation",
+      "section": "Antiderivatives",
+      "sectionId": "calc-ch4-s8",
+      "score": 0.22
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Applications of Differentiation",
+        "section": "Antiderivatives",
+        "sectionId": "calc-ch4-s8",
+        "score": 0.22
+      },
+      {
+        "subject": "Electric Circuits & Networks",
+        "chapter": "Basic Electrical Engineering",
+        "section": "Magnetic Circuits & Transformers",
+        "sectionId": "ee-e-basic-electrical-s5",
+        "score": 0.2
+      },
+      {
+        "subject": "Electric Circuits & Networks",
+        "chapter": "Basic Electrical Engineering",
+        "section": "Maximum Power Transfer",
+        "sectionId": "ee-e-basic-electrical-s21",
+        "score": 0.15
+      }
+    ]
+  },
+  {
+    "id": "tech-medical-imaging-ultrasound-ct",
+    "title": "Seeing Inside: Ultrasound, X-Ray and CT",
+    "domain": "Technology & Applied Science",
+    "field": "Medical Technology",
+    "score": 0.22,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Relativity",
+      "section": "Doppler Effect for Light",
+      "sectionId": "hall-ch37-s5",
+      "score": 0.22
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Relativity",
+        "section": "Doppler Effect for Light",
+        "sectionId": "hall-ch37-s5",
+        "score": 0.22
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Further Applications of Integration",
+        "section": "Applications to Economics and Biology",
+        "sectionId": "calc-ch8-s4",
+        "score": 0.2
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Interference",
+        "sectionId": "hall-ch17-s3",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "lang-literary-criticism-lenses",
+    "title": "Literary Criticism: Lenses and Schools",
+    "domain": "Languages & World Literature",
+    "field": "World Literature",
+    "score": 0.22,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Notes to the Reader",
+      "section": "References",
+      "sectionId": "cpp-ch1-s6",
+      "score": 0.22
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Notes to the Reader",
+        "section": "References",
+        "sectionId": "cpp-ch1-s6",
+        "score": 0.22
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Induction and Inductance",
+        "section": "Self-Induction",
+        "sectionId": "hall-ch30-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Notes to the Reader",
+        "section": "Learning C++",
+        "sectionId": "cpp-ch1-s3",
+        "score": 0.11
+      }
+    ]
+  },
+  {
     "id": "law-international-human-rights",
     "title": "Human Rights After 1948",
     "domain": "Law & Governance",
@@ -1520,6 +2508,120 @@
     ]
   },
   {
+    "id": "photo-exposure-triangle",
+    "title": "The Exposure Triangle: Aperture, Shutter Speed and ISO",
+    "domain": "Arts & Culture",
+    "field": "Photography",
+    "score": 0.22,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Geometric Optics & Imaging",
+      "section": "Cameras",
+      "sectionId": "hall-ch34-s10",
+      "score": 0.22
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Geometric Optics & Imaging",
+        "section": "Cameras",
+        "sectionId": "hall-ch34-s10",
+        "score": 0.22
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Numerics",
+        "section": "complex Numbers",
+        "sectionId": "cpp-ch40-s4",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Numerics",
+        "section": "Random Numbers",
+        "sectionId": "cpp-ch40-s7",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "draw-seeing-perspective",
+    "title": "Learning to See: Line, Shape and Perspective",
+    "domain": "Arts & Culture",
+    "field": "Drawing & Painting",
+    "score": 0.22,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Two-Dimensional Coordinate Geometry",
+      "section": "Distances, Bisectors & Families",
+      "sectionId": "math-a8-s8",
+      "score": 0.22
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Two-Dimensional Coordinate Geometry",
+        "section": "Distances, Bisectors & Families",
+        "sectionId": "math-a8-s8",
+        "score": 0.22
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Two-Dimensional Coordinate Geometry",
+        "section": "Straight Lines",
+        "sectionId": "math-a8-s2",
+        "score": 0.2
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Three-Dimensional Geometry",
+        "section": "Points in Space",
+        "sectionId": "math-a10-s6",
+        "score": 0.2
+      }
+    ]
+  },
+  {
+    "id": "every-time-management-productivity",
+    "title": "Time Management and Personal Productivity Systems",
+    "domain": "Everyday Knowledge",
+    "field": "Career & Communication",
+    "score": 0.22,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Exception Handling",
+      "section": "Resource Management",
+      "sectionId": "cpp-ch13-s3",
+      "score": 0.22
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Exception Handling",
+        "section": "Resource Management",
+        "sectionId": "cpp-ch13-s3",
+        "score": 0.22
+      },
+      {
+        "subject": "Operating Systems",
+        "chapter": "Introduction",
+        "section": "Operating-System Operations",
+        "sectionId": "osc-ch1-s4",
+        "score": 0.21
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Metaprogramming",
+        "section": "SI Units Example",
+        "sectionId": "cpp-ch28-s7",
+        "score": 0.2
+      }
+    ]
+  },
+  {
     "id": "lang-japanese-particles",
     "title": "Japanese Particles: The Grammar Glue of は, が, を",
     "domain": "Languages & World Literature",
@@ -1554,6 +2656,44 @@
         "section": "Introduction",
         "sectionId": "cpp-ch33-s1",
         "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "ops-project-management",
+    "title": "Project Management: Scope, Time and Cost",
+    "domain": "Business & Economics",
+    "field": "Operations & Supply Chain",
+    "score": 0.21,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Software Engineering & Emerging Tech",
+      "chapter": "Software Engineering & Project Management",
+      "section": "Requirements Engineering",
+      "sectionId": "cse-e-sweng-s2",
+      "score": 0.21
+    },
+    "topMatches": [
+      {
+        "subject": "Software Engineering & Emerging Tech",
+        "chapter": "Software Engineering & Project Management",
+        "section": "Requirements Engineering",
+        "sectionId": "cse-e-sweng-s2",
+        "score": 0.21
+      },
+      {
+        "subject": "Software Engineering & Emerging Tech",
+        "chapter": "Software Engineering & Project Management",
+        "section": "SDLC Models",
+        "sectionId": "cse-e-sweng-s1",
+        "score": 0.19
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Molecular Structure & Symmetry",
+        "section": "Point Groups",
+        "sectionId": "chem-ch17-s3",
+        "score": 0.19
       }
     ]
   },
@@ -1596,6 +2736,158 @@
     ]
   },
   {
+    "id": "geo-plate-tectonics",
+    "title": "Plate Tectonics: The Engine Beneath Your Feet",
+    "domain": "Physical Sciences",
+    "field": "Geology & Earth Science",
+    "score": 0.2,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Magnetic Fields",
+      "section": "Cyclotrons and Synchrotrons",
+      "sectionId": "hall-ch28-s4",
+      "score": 0.2
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Magnetic Fields",
+        "section": "Cyclotrons and Synchrotrons",
+        "sectionId": "hall-ch28-s4",
+        "score": 0.2
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Magnetic Fields",
+        "section": "A Circulating Charged Particle",
+        "sectionId": "hall-ch28-s3",
+        "score": 0.18
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Motion in Two and Three Dimensions",
+        "section": "Position and Displacement",
+        "sectionId": "hall-ch4-s1",
+        "score": 0.15
+      }
+    ]
+  },
+  {
+    "id": "geo-earthquakes-volcanoes",
+    "title": "Earthquakes and Volcanoes: When the Crust Moves",
+    "domain": "Physical Sciences",
+    "field": "Geology & Earth Science",
+    "score": 0.2,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Static Equilibrium & Elasticity",
+      "section": "Elasticity",
+      "sectionId": "hall-ch12-s3",
+      "score": 0.2
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Static Equilibrium & Elasticity",
+        "section": "Elasticity",
+        "sectionId": "hall-ch12-s3",
+        "score": 0.2
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Energy Transport and the Poynting Vector",
+        "sectionId": "hall-ch33-s2",
+        "score": 0.18
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—I",
+        "section": "Energy and Power of a Wave Traveling Along a String",
+        "sectionId": "hall-ch16-s3",
+        "score": 0.17
+      }
+    ]
+  },
+  {
+    "id": "bio-anatomy-heart-circulation",
+    "title": "The Heart and Circulation: One Pump, Two Circuits",
+    "domain": "Life Sciences",
+    "field": "Anatomy & Physiology",
+    "score": 0.2,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Further Applications of Integration",
+      "section": "Applications to Economics and Biology",
+      "sectionId": "calc-ch8-s4",
+      "score": 0.2
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Further Applications of Integration",
+        "section": "Applications to Economics and Biology",
+        "sectionId": "calc-ch8-s4",
+        "score": 0.2
+      },
+      {
+        "subject": "Electronic Devices & Circuits",
+        "chapter": "Analog Circuits",
+        "section": "Four Feedback Topologies",
+        "sectionId": "ece-e-analog-s29",
+        "score": 0.18
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Oscillations and Alternating Current",
+        "section": "The Series RLC Circuit",
+        "sectionId": "hall-ch31-s4",
+        "score": 0.17
+      }
+    ]
+  },
+  {
+    "id": "bio-microbe-bacteria-viruses-fungi",
+    "title": "Bacteria, Viruses, Fungi: A Field Guide to the Microbial World",
+    "domain": "Life Sciences",
+    "field": "Microbiology & Disease",
+    "score": 0.2,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Structures, Unions, and Enumerations",
+      "section": "Introduction",
+      "sectionId": "cpp-ch8-s1",
+      "score": 0.2
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Structures, Unions, and Enumerations",
+        "section": "Introduction",
+        "sectionId": "cpp-ch8-s1",
+        "score": 0.2
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Diffraction",
+        "section": "Single-Slit Diffraction",
+        "sectionId": "hall-ch36-s1",
+        "score": 0.13
+      },
+      {
+        "subject": "Electrical Machines, Drives & EV",
+        "chapter": "Power Electronics & Drives",
+        "section": "AC Controllers & Cycloconverters",
+        "sectionId": "ee-e-power-electronics-s4",
+        "score": 0.12
+      }
+    ]
+  },
+  {
     "id": "cs-transformer-attention",
     "title": "Transformers and Attention: How Modern AI Reads",
     "domain": "Computing & AI",
@@ -1634,6 +2926,82 @@
     ]
   },
   {
+    "id": "soc-research-methods-toolkit",
+    "title": "Social Research Methods: The Toolkit",
+    "domain": "Social Sciences",
+    "field": "Research Methods",
+    "score": 0.2,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "The Kinetic Theory of Gases",
+      "section": "Ideal Gases",
+      "sectionId": "hall-ch19-s2",
+      "score": 0.2
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "The Kinetic Theory of Gases",
+        "section": "Ideal Gases",
+        "sectionId": "hall-ch19-s2",
+        "score": 0.2
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Gauss' Law",
+        "section": "A Charged Isolated Conductor",
+        "sectionId": "hall-ch23-s3",
+        "score": 0.17
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Probability Distributions",
+        "section": "Joint Distributions & Covariance",
+        "sectionId": "engmath-ch15-s4",
+        "score": 0.15
+      }
+    ]
+  },
+  {
+    "id": "soc-public-policy-cycle",
+    "title": "Public Policy: How Decisions Get Made",
+    "domain": "Social Sciences",
+    "field": "Public Policy",
+    "score": 0.2,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "I/O Streams",
+      "section": "Introduction",
+      "sectionId": "cpp-ch38-s1",
+      "score": 0.2
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "I/O Streams",
+        "section": "Introduction",
+        "sectionId": "cpp-ch38-s1",
+        "score": 0.2
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Concurrency",
+        "section": "Introduction",
+        "sectionId": "cpp-ch41-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Data Structures & Algorithms",
+        "chapter": "Probabilistic Analysis and Randomized Algorithms",
+        "section": "The hiring problem",
+        "sectionId": "clrs-ch5-s1",
+        "score": 0.17
+      }
+    ]
+  },
+  {
     "id": "hum-aristotle-eudaimonia",
     "title": "Aristotle’s Ethics of Flourishing",
     "domain": "Humanities",
@@ -1661,6 +3029,44 @@
         "section": "",
         "sectionId": "cpp-ch12",
         "score": 0.15
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Introduction",
+        "sectionId": "cpp-ch2-s1",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "hum-political-philosophy-contract",
+    "title": "Political Philosophy: From Plato to Rawls",
+    "domain": "Humanities",
+    "field": "Philosophy",
+    "score": 0.2,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Gravitation",
+      "section": "Einstein and Gravitation",
+      "sectionId": "hall-ch13-s8",
+      "score": 0.2
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Gravitation",
+        "section": "Einstein and Gravitation",
+        "sectionId": "hall-ch13-s8",
+        "score": 0.2
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "Archimedes' Principle",
+        "sectionId": "hall-ch14-s5",
+        "score": 0.14
       },
       {
         "subject": "C & C++ Programming",
@@ -1706,6 +3112,82 @@
         "section": "Introduction",
         "sectionId": "cpp-ch2-s1",
         "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "lang-arabic-foundations",
+    "title": "Arabic Foundations: Roots, Script and Diglossia",
+    "domain": "Languages & World Literature",
+    "field": "Arabic",
+    "score": 0.2,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "The C Standard Library",
+      "section": "Introduction",
+      "sectionId": "cpp-ch43-s1",
+      "score": 0.2
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "The C Standard Library",
+        "section": "Introduction",
+        "sectionId": "cpp-ch43-s1",
+        "score": 0.2
+      },
+      {
+        "subject": "Data Structures & Algorithms",
+        "chapter": "Elementary Data Structures",
+        "section": "Representing rooted trees",
+        "sectionId": "clrs-ch10-s4",
+        "score": 0.15
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "The C Standard Library",
+        "section": "Files",
+        "sectionId": "cpp-ch43-s2",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "lang-historical-linguistics",
+    "title": "How Languages Change: Sound, Grammar and Family Trees",
+    "domain": "Languages & World Literature",
+    "field": "Linguistics",
+    "score": 0.2,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Trees",
+      "section": "",
+      "sectionId": "rosen-ch11",
+      "score": 0.2
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Trees",
+        "section": "",
+        "sectionId": "rosen-ch11",
+        "score": 0.2
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Trees",
+        "section": "Tree Traversal",
+        "sectionId": "rosen-ch11-s3",
+        "score": 0.18
+      },
+      {
+        "subject": "Compiler Design",
+        "chapter": "Bottom-Up Parsing: LR Families",
+        "section": "Conflicts & Precedence Fixes",
+        "sectionId": "compcoa-ch8-s4",
+        "score": 0.18
       }
     ]
   },
@@ -1786,6 +3268,82 @@
     ]
   },
   {
+    "id": "econ-market-failures",
+    "title": "When Markets Fail: Externalities, Public Goods and Monopoly Power",
+    "domain": "Business & Economics",
+    "field": "Microeconomics",
+    "score": 0.2,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Communication Systems",
+      "chapter": "Analog Communication",
+      "section": "AM vs FM Trade-offs",
+      "sectionId": "ece-e-analog-comm-s12",
+      "score": 0.2
+    },
+    "topMatches": [
+      {
+        "subject": "Communication Systems",
+        "chapter": "Analog Communication",
+        "section": "AM vs FM Trade-offs",
+        "sectionId": "ece-e-analog-comm-s12",
+        "score": 0.2
+      },
+      {
+        "subject": "Electric Circuits & Networks",
+        "chapter": "Basic Electrical Engineering",
+        "section": "Maximum Power Transfer",
+        "sectionId": "ee-e-basic-electrical-s21",
+        "score": 0.15
+      },
+      {
+        "subject": "Computer Networks",
+        "chapter": "Layering: OSI, TCP/IP & Switching",
+        "section": "Packet, Circuit & Virtual-Circuit Switching",
+        "sectionId": "cn-ch1-s3",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "health-heart-vascular-disease",
+    "title": "Heart and Vascular Disease: Atherosclerosis, Risk and Prevention",
+    "domain": "Health & Wellness",
+    "field": "Disease & Treatment",
+    "score": 0.2,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Further Applications of Integration",
+      "section": "Applications to Economics and Biology",
+      "sectionId": "calc-ch8-s4",
+      "score": 0.2
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Further Applications of Integration",
+        "section": "Applications to Economics and Biology",
+        "sectionId": "calc-ch8-s4",
+        "score": 0.2
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Matter Waves & Wave Functions",
+        "section": "The Hydrogen Atom",
+        "sectionId": "hall-ch39-s5",
+        "score": 0.17
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Number Theory and Cryptography",
+        "section": "Divisibility and Modular Arithmetic",
+        "sectionId": "rosen-ch4-s1",
+        "score": 0.14
+      }
+    ]
+  },
+  {
     "id": "every-navigation-maps",
     "title": "How to Actually Read a Map and Find North",
     "domain": "Everyday Knowledge",
@@ -1820,6 +3378,158 @@
         "section": "Relative Motion in One Dimension",
         "sectionId": "hall-ch4-s6",
         "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "every-buying-used-car",
+    "title": "How to Buy a Used Car Without Getting Burned",
+    "domain": "Everyday Knowledge",
+    "field": "Car & Driving",
+    "score": 0.2,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "First-Order Differential Equations",
+      "section": "Exact Equations",
+      "sectionId": "engmath-ch3-s3",
+      "score": 0.2
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "First-Order Differential Equations",
+        "section": "Exact Equations",
+        "sectionId": "engmath-ch3-s3",
+        "score": 0.2
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Temperature, Heat & the First Law",
+        "section": "Heat Transfer Mechanisms",
+        "sectionId": "hall-ch18-s6",
+        "score": 0.14
+      },
+      {
+        "subject": "Data Structures & Algorithms",
+        "chapter": "Amortized Analysis",
+        "section": "Aggregate analysis",
+        "sectionId": "clrs-ch17-s1",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "every-home-electrical-safety",
+    "title": "Home Electrical Safety: Breakers, Outlets and Cords",
+    "domain": "Everyday Knowledge",
+    "field": "Home & Repair",
+    "score": 0.2,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Power Systems",
+      "chapter": "Switchgear & Protection",
+      "section": "Switchgear & Protection",
+      "sectionId": "ee-e-protection-s7",
+      "score": 0.2
+    },
+    "topMatches": [
+      {
+        "subject": "Power Systems",
+        "chapter": "Switchgear & Protection",
+        "section": "Switchgear & Protection",
+        "sectionId": "ee-e-protection-s7",
+        "score": 0.2
+      },
+      {
+        "subject": "Computer Organization & Architecture",
+        "chapter": "I/O: Interrupts, DMA & Buses",
+        "section": "Interrupt-Driven I/O",
+        "sectionId": "compcoa-ch5-s2",
+        "score": 0.19
+      },
+      {
+        "subject": "Electronic Devices & Circuits",
+        "chapter": "Analog Circuits",
+        "section": "Thermal Design and Protection",
+        "sectionId": "ece-e-analog-s36",
+        "score": 0.17
+      }
+    ]
+  },
+  {
+    "id": "every-science-of-cleaning",
+    "title": "The Science of Cleaning: What Actually Removes What",
+    "domain": "Everyday Knowledge",
+    "field": "Practical Skills",
+    "score": 0.2,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Metaprogramming",
+      "section": "A Compile-Time List: Tuple",
+      "sectionId": "cpp-ch28-s5",
+      "score": 0.2
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Metaprogramming",
+        "section": "A Compile-Time List: Tuple",
+        "sectionId": "cpp-ch28-s5",
+        "score": 0.2
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Metaprogramming",
+        "section": "Introduction",
+        "sectionId": "cpp-ch28-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Carbonyl Chemistry In Depth",
+        "section": "Substitution at Carbonyl Carbon",
+        "sectionId": "chem-ch21-s2",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "eng-chemical-reactors",
+    "title": "Chemical Reactors: Where Reactions Meet Engineering",
+    "domain": "Engineering",
+    "field": "Chemical Engineering",
+    "score": 0.19,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Probability Distributions",
+      "section": "Random Variables & Expectation",
+      "sectionId": "engmath-ch15-s1",
+      "score": 0.19
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Probability Distributions",
+        "section": "Random Variables & Expectation",
+        "sectionId": "engmath-ch15-s1",
+        "score": 0.19
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Chemical Kinetics & Surface Chemistry",
+        "section": "",
+        "sectionId": "chem-ch7",
+        "score": 0.19
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Chemical Kinetics & Surface Chemistry",
+        "section": "Zero & First Order Rate Equations",
+        "sectionId": "chem-ch7-s9",
+        "score": 0.15
       }
     ]
   },
@@ -1862,6 +3572,44 @@
     ]
   },
   {
+    "id": "health-understanding-pain",
+    "title": "Understanding Pain: Signals, Gates and Why Chronic Pain Differs",
+    "domain": "Health & Wellness",
+    "field": "Disease & Treatment",
+    "score": 0.19,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Interference",
+      "section": "Intensity in Interference Patterns",
+      "sectionId": "hall-ch35-s8",
+      "score": 0.19
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Interference",
+        "section": "Intensity in Interference Patterns",
+        "sectionId": "hall-ch35-s8",
+        "score": 0.19
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Concurrency",
+        "section": "volatile",
+        "sectionId": "cpp-ch41-s4",
+        "score": 0.17
+      },
+      {
+        "subject": "Database Management Systems",
+        "chapter": "Concurrency Control & Recovery",
+        "section": "Two-Phase Locking",
+        "sectionId": "dbms-ch7-s1",
+        "score": 0.16
+      }
+    ]
+  },
+  {
     "id": "bio-immune-system",
     "title": "The Immune System: Innate to Adaptive Defense",
     "domain": "Life Sciences",
@@ -1895,6 +3643,120 @@
         "chapter": "Electrochemistry",
         "section": "Galvanic Cells & EMF",
         "sectionId": "chem-ch6-s1",
+        "score": 0.15
+      }
+    ]
+  },
+  {
+    "id": "bio-biochemistry-metabolism",
+    "title": "Biochemistry: The Cell's Energy Economy",
+    "domain": "Life Sciences",
+    "field": "Biochemistry",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Induction and Inductance",
+      "section": "Induction and Energy Transfers",
+      "sectionId": "hall-ch30-s2",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Induction and Inductance",
+        "section": "Induction and Energy Transfers",
+        "sectionId": "hall-ch30-s2",
+        "score": 0.18
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Energy Transport and the Poynting Vector",
+        "sectionId": "hall-ch33-s2",
+        "score": 0.18
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—I",
+        "section": "Energy and Power of a Wave Traveling Along a String",
+        "sectionId": "hall-ch16-s3",
+        "score": 0.17
+      }
+    ]
+  },
+  {
+    "id": "env-ocean-currents-chemistry",
+    "title": "The Global Ocean: Currents, Chemistry and Life",
+    "domain": "Environment & Sustainability",
+    "field": "Earth Systems",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Magnetic Fields Due to Currents",
+      "section": "Ampère's Law",
+      "sectionId": "hall-ch29-s3",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Magnetic Fields Due to Currents",
+        "section": "Ampère's Law",
+        "sectionId": "hall-ch29-s3",
+        "score": 0.18
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Molecular Structure & Symmetry",
+        "section": "Hückel Theory Preview",
+        "sectionId": "chem-ch17-s2",
+        "score": 0.14
+      },
+      {
+        "subject": "Communication Systems",
+        "chapter": "Satellite Communication",
+        "section": "Space & Ground Segments",
+        "sectionId": "ece-e-satellite-s2",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "env-crop-science-breeding",
+    "title": "Crop Science: From Domestication to Disease Resistance",
+    "domain": "Environment & Sustainability",
+    "field": "Agriculture & Food Systems",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Further Applications of Integration",
+      "section": "",
+      "sectionId": "calc-ch8",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Further Applications of Integration",
+        "section": "",
+        "sectionId": "calc-ch8",
+        "score": 0.18
+      },
+      {
+        "subject": "Manufacturing & Industrial Systems",
+        "chapter": "Industrial Engineering & Management",
+        "section": "Plant Layout & Material Handling",
+        "sectionId": "me-e-industrial-s3",
+        "score": 0.16
+      },
+      {
+        "subject": "Communication Systems",
+        "chapter": "Analog Communication",
+        "section": "Superheterodyne Receivers",
+        "sectionId": "ece-e-analog-comm-s3",
         "score": 0.15
       }
     ]
@@ -1938,6 +3800,158 @@
     ]
   },
   {
+    "id": "soc-stratification",
+    "title": "Class, Status and Power: Social Stratification",
+    "domain": "Social Sciences",
+    "field": "Sociology",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Classes",
+      "section": "Class Basics",
+      "sectionId": "cpp-ch16-s2",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Classes",
+        "section": "Class Basics",
+        "sectionId": "cpp-ch16-s2",
+        "score": 0.18
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Derived Classes",
+        "section": "Class Hierarchies",
+        "sectionId": "cpp-ch20-s3",
+        "score": 0.17
+      },
+      {
+        "subject": "Power Systems",
+        "chapter": "Power Quality & Harmonics",
+        "section": "Standards & Measurement",
+        "sectionId": "ps-quality-s3",
+        "score": 0.17
+      }
+    ]
+  },
+  {
+    "id": "anth-archaeology-methods",
+    "title": "Archaeology: Reading the Past from Its Remains",
+    "domain": "Social Sciences",
+    "field": "Anthropology",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Schaum Lab: Mappings & Eigenvalues",
+      "section": "Matrix-of-Map Problems",
+      "sectionId": "engmath-ch23-s1",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Schaum Lab: Mappings & Eigenvalues",
+        "section": "Matrix-of-Map Problems",
+        "sectionId": "engmath-ch23-s1",
+        "score": 0.18
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Thermodynamics & Thermochemistry",
+        "section": "Entropy & Second Law",
+        "sectionId": "chem-ch4-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Communication Systems",
+        "chapter": "Satellite Communication",
+        "section": "Systems & Applications",
+        "sectionId": "ece-e-satellite-s4",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "soc-education-pedagogy",
+    "title": "Education and Pedagogy: How Teaching Works",
+    "domain": "Social Sciences",
+    "field": "Education",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Waves—II",
+      "section": "Resonance",
+      "sectionId": "hall-ch17-s18",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Resonance",
+        "sectionId": "hall-ch17-s18",
+        "score": 0.18
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Motion in Two and Three Dimensions",
+        "section": "Circular Motion",
+        "sectionId": "hall-ch4-s13",
+        "score": 0.17
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Kinetic Energy and Work",
+        "section": "Energy of a System of Particles",
+        "sectionId": "hall-ch7-s13",
+        "score": 0.16
+      }
+    ]
+  },
+  {
+    "id": "hist-classical-greco-roman",
+    "title": "Greece and Rome: The Classical Inheritance",
+    "domain": "Humanities",
+    "field": "World History",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Class Hierarchies",
+      "section": "",
+      "sectionId": "cpp-ch21",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Class Hierarchies",
+        "section": "",
+        "sectionId": "cpp-ch21",
+        "score": 0.18
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Entropy & the Second Law",
+        "section": "Entropy in the Real World: Engines",
+        "sectionId": "hall-ch20-s2",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Notes to the Reader",
+        "section": "",
+        "sectionId": "cpp-ch1",
+        "score": 0.17
+      }
+    ]
+  },
+  {
     "id": "law-separation-powers",
     "title": "Separation of Powers and Checks and Balances",
     "domain": "Law & Governance",
@@ -1972,6 +3986,44 @@
         "section": "α, β and γ Radiations",
         "sectionId": "hall-ch42-s23",
         "score": 0.15
+      }
+    ]
+  },
+  {
+    "id": "law-ip-copyright-patent",
+    "title": "Copyright, Patents and Trademarks: Who Owns an Idea",
+    "domain": "Law & Governance",
+    "field": "Intellectual Property & Media Law",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Source Files and Programs",
+      "section": "Advice",
+      "sectionId": "cpp-ch15-s5",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Source Files and Programs",
+        "section": "Advice",
+        "sectionId": "cpp-ch15-s5",
+        "score": 0.18
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Graphs",
+        "section": "Spanning Trees & MST",
+        "sectionId": "rosen-ch10-s10",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Advice",
+        "sectionId": "cpp-ch2-s6",
+        "score": 0.14
       }
     ]
   },
@@ -2014,6 +4066,234 @@
     ]
   },
   {
+    "id": "ent-lean-startup",
+    "title": "From Idea to Business: Lean Startups and Business Models",
+    "domain": "Business & Economics",
+    "field": "Entrepreneurship",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Electronic Devices & Circuits",
+      "chapter": "Electronic Devices",
+      "section": "Hybrid-pi Small-Signal Model",
+      "sectionId": "ece-e-devices-s40",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "Electronic Devices & Circuits",
+        "chapter": "Electronic Devices",
+        "section": "Hybrid-pi Small-Signal Model",
+        "sectionId": "ece-e-devices-s40",
+        "score": 0.18
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Statements",
+        "section": "Introduction",
+        "sectionId": "cpp-ch9-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Differential Equations",
+        "section": "Models for Population Growth",
+        "sectionId": "calc-ch9-s4",
+        "score": 0.15
+      }
+    ]
+  },
+  {
+    "id": "ops-inventory-bullwhip-lean",
+    "title": "Inventory, Logistics and the Bullwhip Effect",
+    "domain": "Business & Economics",
+    "field": "Operations & Supply Chain",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Select Operations",
+      "section": "Explicit Type Conversion",
+      "sectionId": "cpp-ch11-s5",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Select Operations",
+        "section": "Explicit Type Conversion",
+        "sectionId": "cpp-ch11-s5",
+        "score": 0.18
+      },
+      {
+        "subject": "AI, Machine Learning & Data Science",
+        "chapter": "Deep Learning & Applications",
+        "section": "Convolutional Neural Networks",
+        "sectionId": "cse-e-deeplearning-s2",
+        "score": 0.18
+      },
+      {
+        "subject": "Computer Networks",
+        "chapter": "Layering: OSI, TCP/IP & Switching",
+        "section": "OSI vs TCP/IP Stacks",
+        "sectionId": "cn-ch1-s2",
+        "score": 0.17
+      }
+    ]
+  },
+  {
+    "id": "health-pharmacology-how-medicines-work",
+    "title": "Pharmacology: How Medicines Work",
+    "domain": "Health & Wellness",
+    "field": "Medicine & Pharmacology",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Nuclear Physics",
+      "section": "Radioactive Decay",
+      "sectionId": "hall-ch42-s3",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Nuclear Physics",
+        "section": "Radioactive Decay",
+        "sectionId": "hall-ch42-s3",
+        "score": 0.18
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Nuclear Chemistry",
+        "section": "Decay Kinetics & Dating",
+        "sectionId": "chem-ch35-s1",
+        "score": 0.16
+      },
+      {
+        "subject": "Control Systems & Instrumentation",
+        "chapter": "Control Systems",
+        "section": "Time Response & Steady-State Errors",
+        "sectionId": "ece-e-control-s23",
+        "score": 0.15
+      }
+    ]
+  },
+  {
+    "id": "health-psychotherapy-approaches",
+    "title": "How Psychotherapy Works: The Major Approaches",
+    "domain": "Health & Wellness",
+    "field": "Mental Health",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Waves—I",
+      "section": "Standing Waves and Resonance",
+      "sectionId": "hall-ch16-s7",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Waves—I",
+        "section": "Standing Waves and Resonance",
+        "sectionId": "hall-ch16-s7",
+        "score": 0.18
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Boolean Algebra",
+        "section": "Minimization of Circuits",
+        "sectionId": "rosen-ch12-s4",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—I",
+        "section": "Wave Speed",
+        "sectionId": "hall-ch16-s17",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "health-aging-longevity-science",
+    "title": "The Science of Aging and Longevity: Evidence Versus Hype",
+    "domain": "Health & Wellness",
+    "field": "Health & Longevity",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Nuclear Physics",
+      "section": "Radioactive Decay",
+      "sectionId": "hall-ch42-s3",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Nuclear Physics",
+        "section": "Radioactive Decay",
+        "sectionId": "hall-ch42-s3",
+        "score": 0.18
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Entropy & the Second Law",
+        "section": "Entropy in the Real World: Engines",
+        "sectionId": "hall-ch20-s2",
+        "score": 0.17
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Solutions, Colligative Properties & Phase Equilibria",
+        "section": "Raoult Law & Deviations",
+        "sectionId": "chem-ch27-s1",
+        "score": 0.17
+      }
+    ]
+  },
+  {
+    "id": "musi-rhythm-meter",
+    "title": "Rhythm and Meter: How Music Organizes Time",
+    "domain": "Arts & Culture",
+    "field": "Music Theory & Practice",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "The C Standard Library",
+      "section": "",
+      "sectionId": "cpp-ch43",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "The C Standard Library",
+        "section": "",
+        "sectionId": "cpp-ch43",
+        "score": 0.18
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Metaprogramming",
+        "section": "Introduction",
+        "sectionId": "cpp-ch28-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Beats",
+        "sectionId": "hall-ch17-s6",
+        "score": 0.14
+      }
+    ]
+  },
+  {
     "id": "every-kitchen-food-safety",
     "title": "Food Safety: The Danger Zone and Its Rules",
     "domain": "Everyday Knowledge",
@@ -2048,6 +4328,44 @@
         "section": "Advice",
         "sectionId": "cpp-ch2-s6",
         "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "every-public-speaking",
+    "title": "Public Speaking: Managing Fear, Structure and Delivery",
+    "domain": "Everyday Knowledge",
+    "field": "Career & Communication",
+    "score": 0.18,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Partial Derivatives",
+      "section": "Partial Derivatives",
+      "sectionId": "calc-ch14-s3",
+      "score": 0.18
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Partial Derivatives",
+        "section": "Partial Derivatives",
+        "sectionId": "calc-ch14-s3",
+        "score": 0.18
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Metaprogramming",
+        "section": "Introduction",
+        "sectionId": "cpp-ch28-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Control Systems & Instrumentation",
+        "chapter": "Control Systems",
+        "section": "Time-Response Analysis",
+        "sectionId": "ece-e-control-s8",
+        "score": 0.16
       }
     ]
   },
@@ -2123,6 +4441,120 @@
         "chapter": "Memory and Resources",
         "section": "Introduction",
         "sectionId": "cpp-ch34-s1",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "met-storms-forecasting",
+    "title": "Storms, Fronts and How Forecasts Are Made",
+    "domain": "Physical Sciences",
+    "field": "Meteorology",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Entropy & the Second Law",
+      "section": "Heat Engines",
+      "sectionId": "hall-ch20-s6",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Entropy & the Second Law",
+        "section": "Heat Engines",
+        "sectionId": "hall-ch20-s6",
+        "score": 0.17
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Entropy & the Second Law",
+        "section": "Refrigerators and Real Engines",
+        "sectionId": "hall-ch20-s3",
+        "score": 0.15
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Entropy & the Second Law",
+        "section": "Internal-Combustion Engines",
+        "sectionId": "hall-ch20-s7",
+        "score": 0.15
+      }
+    ]
+  },
+  {
+    "id": "astro-solar-system-tour",
+    "title": "Touring the Solar System: Planets, Moons and Small Worlds",
+    "domain": "Physical Sciences",
+    "field": "Astronomy & Space Science",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Matter Waves & Wave Functions",
+      "section": "Angular Momentum of Atoms",
+      "sectionId": "hall-ch39-s6",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Matter Waves & Wave Functions",
+        "section": "Angular Momentum of Atoms",
+        "sectionId": "hall-ch39-s6",
+        "score": 0.17
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Interference",
+        "sectionId": "hall-ch17-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Energy Conversion & Automotive",
+        "chapter": "Energy Systems & Renewables",
+        "section": "Solar Photovoltaics",
+        "sectionId": "ee-e-energy-s10",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "astro-galaxies-milky-way",
+    "title": "Galaxies: Island Universes",
+    "domain": "Physical Sciences",
+    "field": "Astronomy & Space Science",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Matter Waves & Wave Functions",
+      "section": "Angular Momentum of Atoms",
+      "sectionId": "hall-ch39-s6",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Matter Waves & Wave Functions",
+        "section": "Angular Momentum of Atoms",
+        "sectionId": "hall-ch39-s6",
+        "score": 0.17
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Vector Functions",
+        "section": "Vector Functions and Space Curves",
+        "sectionId": "calc-ch13-s1",
+        "score": 0.15
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Interference",
+        "sectionId": "hall-ch17-s3",
         "score": 0.14
       }
     ]
@@ -2204,6 +4636,44 @@
     ]
   },
   {
+    "id": "bio-animal-behavior-ethology",
+    "title": "Animal Behavior: Instinct, Learning, Signals",
+    "domain": "Life Sciences",
+    "field": "Animal Behavior",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Signals, Systems & DSP",
+      "chapter": "Signals & Systems",
+      "section": "Sampling",
+      "sectionId": "ece-e-sigsys-s10",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Signals, Systems & DSP",
+        "chapter": "Signals & Systems",
+        "section": "Sampling",
+        "sectionId": "ece-e-sigsys-s10",
+        "score": 0.17
+      },
+      {
+        "subject": "Signals, Systems & DSP",
+        "chapter": "Digital Signal Processing",
+        "section": "DSP Applications",
+        "sectionId": "ece-e-dsp-s9",
+        "score": 0.15
+      },
+      {
+        "subject": "Communication Systems",
+        "chapter": "Analog Communication",
+        "section": "Superheterodyne Receivers",
+        "sectionId": "ece-e-analog-comm-s3",
+        "score": 0.15
+      }
+    ]
+  },
+  {
     "id": "math-infinity-countability",
     "title": "Infinity and Different Sizes of Forever",
     "domain": "Mathematics",
@@ -2276,6 +4746,120 @@
         "section": "Time",
         "sectionId": "cpp-ch35-s2",
         "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "tech-water-treatment-desalination",
+    "title": "Water Treatment: From River to Tap",
+    "domain": "Technology & Applied Science",
+    "field": "Water Technology",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Circuits",
+      "section": "R-C Circuits",
+      "sectionId": "hall-ch27-s8",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Circuits",
+        "section": "R-C Circuits",
+        "sectionId": "hall-ch27-s8",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Metaprogramming",
+        "section": "Introduction",
+        "sectionId": "cpp-ch28-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Relativity",
+        "section": "Momentum and Energy",
+        "sectionId": "hall-ch37-s6",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "tech-prosthetics-bionics",
+    "title": "Prosthetics and Bionics: Rebuilding Bodies",
+    "domain": "Technology & Applied Science",
+    "field": "Medical Technology",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Programming in C",
+      "section": "Control Flow & Functions",
+      "sectionId": "cse-e-pps-s8",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Programming in C",
+        "section": "Control Flow & Functions",
+        "sectionId": "cse-e-pps-s8",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Derived Classes",
+        "section": "Access Control",
+        "sectionId": "cpp-ch20-s5",
+        "score": 0.17
+      },
+      {
+        "subject": "Computer Networks",
+        "chapter": "Medium Access Control & Ethernet",
+        "section": "Bridging, Learning & Spanning Tree",
+        "sectionId": "cn-ch3-s4",
+        "score": 0.17
+      }
+    ]
+  },
+  {
+    "id": "tech-elevators-escalators",
+    "title": "Elevators and Escalators: The Vertical City",
+    "domain": "Technology & Applied Science",
+    "field": "Everyday Machines",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Electrical Machines, Drives & EV",
+      "chapter": "Electric Vehicles",
+      "section": "Traction Motors & Drives",
+      "sectionId": "ee-e-ev-s2",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Electrical Machines, Drives & EV",
+        "chapter": "Electric Vehicles",
+        "section": "Traction Motors & Drives",
+        "sectionId": "ee-e-ev-s2",
+        "score": 0.17
+      },
+      {
+        "subject": "Data Structures & Algorithms",
+        "chapter": "Medians and Order Statistics",
+        "section": "Minimum and maximum",
+        "sectionId": "clrs-ch9-s1",
+        "score": 0.15
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "STL Algorithms",
+        "section": "Introduction",
+        "sectionId": "cpp-ch32-s1",
+        "score": 0.14
       }
     ]
   },
@@ -2394,6 +4978,120 @@
     ]
   },
   {
+    "id": "pol-ir-theory",
+    "title": "Why Nations Fight and Trade: International Relations Theory",
+    "domain": "Social Sciences",
+    "field": "Political Science",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Trigonometry",
+      "section": "Properties: Centres & Areas",
+      "sectionId": "math-a7-s16",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Trigonometry",
+        "section": "Properties: Centres & Areas",
+        "sectionId": "math-a7-s16",
+        "score": 0.17
+      },
+      {
+        "subject": "Communication Systems",
+        "chapter": "Analog Communication",
+        "section": "AM vs FM Trade-offs",
+        "sectionId": "ece-e-analog-comm-s12",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "The C Standard Library",
+        "section": "Date and Time",
+        "sectionId": "cpp-ch43-s6",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "soc-comparative-politics-institutions",
+    "title": "Comparative Politics: Electoral Systems and Institutions",
+    "domain": "Social Sciences",
+    "field": "Political Science",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Temperature, Heat & the First Law",
+      "section": "Temperature",
+      "sectionId": "hall-ch18-s1",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Temperature, Heat & the First Law",
+        "section": "Temperature",
+        "sectionId": "hall-ch18-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Physics",
+        "chapter": "The Kinetic Theory of Gases",
+        "section": "The Adiabatic Expansion of an Ideal Gas",
+        "sectionId": "hall-ch19-s9",
+        "score": 0.17
+      },
+      {
+        "subject": "Data Structures & Algorithms",
+        "chapter": "Greedy Algorithms",
+        "section": "Elements of the greedy strategy",
+        "sectionId": "clrs-ch16-s2",
+        "score": 0.17
+      }
+    ]
+  },
+  {
+    "id": "soc-media-communication",
+    "title": "Media and Communication: Who Frames Your World",
+    "domain": "Social Sciences",
+    "field": "Media & Communication",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Limits and Derivatives",
+      "section": "The Derivative as a Function",
+      "sectionId": "calc-ch2-s8",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Limits and Derivatives",
+        "section": "The Derivative as a Function",
+        "sectionId": "calc-ch2-s8",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "",
+        "sectionId": "cpp-ch2",
+        "score": 0.15
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "The Foundations: Logic and Proofs",
+        "section": "Nested Quantifiers",
+        "sectionId": "rosen-ch1-s5",
+        "score": 0.14
+      }
+    ]
+  },
+  {
     "id": "hum-industrial-revolution",
     "title": "The Industrial Revolution and Its Discontents",
     "domain": "Humanities",
@@ -2428,6 +5126,82 @@
         "section": "Power",
         "sectionId": "hall-ch7-s6",
         "score": 0.11
+      }
+    ]
+  },
+  {
+    "id": "hist-first-civilizations",
+    "title": "The First Civilizations: Mesopotamia, Egypt and the Indus",
+    "domain": "Humanities",
+    "field": "World History",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Temperature, Heat & the First Law",
+      "section": "Temperature",
+      "sectionId": "hall-ch18-s1",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Temperature, Heat & the First Law",
+        "section": "Temperature",
+        "sectionId": "hall-ch18-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Physics",
+        "chapter": "The Kinetic Theory of Gases",
+        "section": "The Adiabatic Expansion of an Ideal Gas",
+        "sectionId": "hall-ch19-s9",
+        "score": 0.17
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Entropy & the Second Law",
+        "section": "Entropy in the Real World: Engines",
+        "sectionId": "hall-ch20-s2",
+        "score": 0.17
+      }
+    ]
+  },
+  {
+    "id": "arth-caves-to-cathedrals",
+    "title": "From Caves to Cathedrals: The First Thirty Thousand Years of Art",
+    "domain": "Humanities",
+    "field": "Art History",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "The Kinetic Theory of Gases",
+      "section": "The Adiabatic Expansion of an Ideal Gas",
+      "sectionId": "hall-ch19-s9",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "The Kinetic Theory of Gases",
+        "section": "The Adiabatic Expansion of an Ideal Gas",
+        "sectionId": "hall-ch19-s9",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Notes to the Reader",
+        "section": "History",
+        "sectionId": "cpp-ch1-s4",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Statements",
+        "section": "Introduction",
+        "sectionId": "cpp-ch9-s1",
+        "score": 0.17
       }
     ]
   },
@@ -2503,6 +5277,82 @@
         "chapter": "Finite Dimension: Span, Bases & Dimension",
         "section": "Matrices vs Maps",
         "sectionId": "engmath-ch18-s4",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "lang-spanish-survival",
+    "title": "Survival Spanish: Greetings, Numbers and the Phrases That Matter",
+    "domain": "Languages & World Literature",
+    "field": "Spanish",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Matter Waves & Wave Functions",
+      "section": "The Hydrogen Atom",
+      "sectionId": "hall-ch39-s5",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Matter Waves & Wave Functions",
+        "section": "The Hydrogen Atom",
+        "sectionId": "hall-ch39-s5",
+        "score": 0.17
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Atomic Structure & Quantum Numbers",
+        "section": "Photoelectric Effect & de Broglie Waves",
+        "sectionId": "chem-ch2-s2",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Metaprogramming",
+        "section": "Introduction",
+        "sectionId": "cpp-ch28-s1",
+        "score": 0.17
+      }
+    ]
+  },
+  {
+    "id": "lang-korean-foundations",
+    "title": "Korean Foundations: Hangul, Politeness and Verb-Last Order",
+    "domain": "Languages & World Literature",
+    "field": "Korean",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Statements",
+      "section": "Introduction",
+      "sectionId": "cpp-ch9-s1",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Statements",
+        "section": "Introduction",
+        "sectionId": "cpp-ch9-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Matrices & Determinants",
+        "section": "Determinants",
+        "sectionId": "math-a5-s3",
+        "score": 0.15
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Quantum Theory Foundations",
+        "section": "Harmonic Oscillator Preview",
+        "sectionId": "chem-ch15-s4",
         "score": 0.13
       }
     ]
@@ -2622,6 +5472,82 @@
     ]
   },
   {
+    "id": "acct-double-entry",
+    "title": "Double-Entry Bookkeeping: The Logic Behind Every Ledger",
+    "domain": "Business & Economics",
+    "field": "Accounting",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Trigonometry",
+      "section": "Trigonometric Equations",
+      "sectionId": "math-a7-s4",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Trigonometry",
+        "section": "Trigonometric Equations",
+        "sectionId": "math-a7-s4",
+        "score": 0.17
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Trigonometry",
+        "section": "Compound & Multiple Angles",
+        "sectionId": "math-a7-s11",
+        "score": 0.13
+      },
+      {
+        "subject": "Java Programming",
+        "chapter": "Concurrency",
+        "section": "Concurrent Collections & Pitfalls",
+        "sectionId": "java-ch9-s4",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "health-diabetes-metabolic-health",
+    "title": "Diabetes and Metabolic Health: When Blood Sugar Runs Off the Rails",
+    "domain": "Health & Wellness",
+    "field": "Disease & Treatment",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Electronic Devices & Circuits",
+      "chapter": "Electronic Devices",
+      "section": "Small-Signal Model and gm",
+      "sectionId": "ece-e-devices-s36",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Electronic Devices & Circuits",
+        "chapter": "Electronic Devices",
+        "section": "Small-Signal Model and gm",
+        "sectionId": "ece-e-devices-s36",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Overloading",
+        "section": "Type Conversion",
+        "sectionId": "cpp-ch18-s4",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Metaprogramming",
+        "section": "Type Functions",
+        "sectionId": "cpp-ch28-s2",
+        "score": 0.14
+      }
+    ]
+  },
+  {
     "id": "art-color-theory",
     "title": "Color Theory: Why Combinations Work",
     "domain": "Arts & Culture",
@@ -2660,6 +5586,272 @@
     ]
   },
   {
+    "id": "prod-daw-recording-mixing",
+    "title": "Music Production: DAWs, Recording and the Basics of Mixing",
+    "domain": "Arts & Culture",
+    "field": "Music Production",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Concurrency",
+      "section": "Introduction",
+      "sectionId": "cpp-ch41-s1",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Concurrency",
+        "section": "Introduction",
+        "sectionId": "cpp-ch41-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Motion in Two and Three Dimensions",
+        "section": "Relative Motion in One Dimension",
+        "sectionId": "hall-ch4-s6",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Interference",
+        "sectionId": "hall-ch17-s3",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "art-theater-stagecraft-space-blocking",
+    "title": "Theater and Stagecraft: The Space, the Blocking, the Show",
+    "domain": "Arts & Culture",
+    "field": "Theater & Performance",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Vectors and the Geometry of Space",
+      "section": "The Cross Product",
+      "sectionId": "calc-ch12-s4",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Vectors and the Geometry of Space",
+        "section": "The Cross Product",
+        "sectionId": "calc-ch12-s4",
+        "score": 0.17
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Interference",
+        "sectionId": "hall-ch17-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "All About Atoms",
+        "section": "Building the Periodic Table",
+        "sectionId": "hall-ch40-s5",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "art-architecture-reading-buildings",
+    "title": "How to Read a Building: Orders, Structure and Style as Language",
+    "domain": "Arts & Culture",
+    "field": "Architecture",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Statements",
+      "section": "Introduction",
+      "sectionId": "cpp-ch9-s1",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Statements",
+        "section": "Introduction",
+        "sectionId": "cpp-ch9-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Templates and Hierarchies",
+        "section": "Template Parameters as Base Classes",
+        "sectionId": "cpp-ch27-s4",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Notes to the Reader",
+        "section": "",
+        "sectionId": "cpp-ch1",
+        "score": 0.17
+      }
+    ]
+  },
+  {
+    "id": "art-typography-letters-that-talk",
+    "title": "Typography: Why Type Talks",
+    "domain": "Arts & Culture",
+    "field": "Visual Design",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Web Development & JavaScript",
+      "chapter": "CSS Text, Color & Theming",
+      "section": "Font & Text Styling",
+      "sectionId": "web-ch5-s1",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Web Development & JavaScript",
+        "chapter": "CSS Text, Color & Theming",
+        "section": "Font & Text Styling",
+        "sectionId": "web-ch5-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Overloading",
+        "section": "Introduction",
+        "sectionId": "cpp-ch18-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Run-Time Type Information",
+        "section": "Class Hierarchy Navigation",
+        "sectionId": "cpp-ch22-s2",
+        "score": 0.15
+      }
+    ]
+  },
+  {
+    "id": "every-home-toolkit-basic-repairs",
+    "title": "The Home Toolkit: Screws, Anchors and Your First Real Repairs",
+    "domain": "Everyday Knowledge",
+    "field": "Home & Repair",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "The Kinetic Theory of Gases",
+      "section": "The Adiabatic Expansion of an Ideal Gas",
+      "sectionId": "hall-ch19-s9",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "The Kinetic Theory of Gases",
+        "section": "The Adiabatic Expansion of an Ideal Gas",
+        "sectionId": "hall-ch19-s9",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Overloading",
+        "section": "Introduction",
+        "sectionId": "cpp-ch18-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Concurrency",
+        "section": "Introduction",
+        "sectionId": "cpp-ch41-s1",
+        "score": 0.17
+      }
+    ]
+  },
+  {
+    "id": "every-sewing-mending",
+    "title": "Sewing and Mending: Buttons, Hems and Patches",
+    "domain": "Everyday Knowledge",
+    "field": "Practical Skills",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Concurrency",
+      "section": "Introduction",
+      "sectionId": "cpp-ch41-s1",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Concurrency",
+        "section": "Introduction",
+        "sectionId": "cpp-ch41-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Induction and Inductance",
+        "section": "Self-Induction",
+        "sectionId": "hall-ch30-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "AI, Machine Learning & Data Science",
+        "chapter": "Deep Learning & Applications",
+        "section": "Deep Learning Foundations",
+        "sectionId": "cse-e-deeplearning-s1",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "every-emergency-preparedness-home",
+    "title": "Emergency Preparedness at Home: Kits, Plans and Shutoffs",
+    "domain": "Everyday Knowledge",
+    "field": "Practical Skills",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Utilities",
+      "section": "Introduction",
+      "sectionId": "cpp-ch35-s1",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Utilities",
+        "section": "Introduction",
+        "sectionId": "cpp-ch35-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Matrices & Determinants",
+        "section": "Area, Collinearity & Lines by Determinants",
+        "sectionId": "math-a5-s11",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Radiation Pressure",
+        "sectionId": "hall-ch33-s3",
+        "score": 0.13
+      }
+    ]
+  },
+  {
     "id": "emer-neuromorphic-computing",
     "title": "Neuromorphic Computing: Brains in Silicon",
     "domain": "Emerging & Interdisciplinary",
@@ -2694,6 +5886,120 @@
         "section": "",
         "sectionId": "de-memories",
         "score": 0.15
+      }
+    ]
+  },
+  {
+    "id": "emer-nanotechnology-scale",
+    "title": "Nanotechnology: Engineering at the Scale of Atoms",
+    "domain": "Emerging & Interdisciplinary",
+    "field": "Nanotechnology",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mechanics of Solids & Materials",
+      "chapter": "Advanced & Functional Materials",
+      "section": "Nanomaterials",
+      "sectionId": "mat-advanced-s1",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "Mechanics of Solids & Materials",
+        "chapter": "Advanced & Functional Materials",
+        "section": "Nanomaterials",
+        "sectionId": "mat-advanced-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Physics",
+        "chapter": "All About Atoms",
+        "section": "Lasers",
+        "sectionId": "hall-ch40-s7",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "All About Atoms",
+        "section": "The Hydrogen Atom",
+        "sectionId": "hall-ch40-s10",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "emer-ar-vr-immersion",
+    "title": "Augmented and Virtual Reality: Building Other Worlds",
+    "domain": "Emerging & Interdisciplinary",
+    "field": "Extended Reality",
+    "score": 0.17,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Statements",
+      "section": "Introduction",
+      "sectionId": "cpp-ch9-s1",
+      "score": 0.17
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Statements",
+        "section": "Introduction",
+        "sectionId": "cpp-ch9-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Overloading",
+        "section": "Introduction",
+        "sectionId": "cpp-ch18-s1",
+        "score": 0.17
+      },
+      {
+        "subject": "Software Engineering & Emerging Tech",
+        "chapter": "Blockchain Architecture Design",
+        "section": "Use Cases & Design Considerations",
+        "sectionId": "cse-e-blockchain-s4",
+        "score": 0.15
+      }
+    ]
+  },
+  {
+    "id": "env-air-pollution-control",
+    "title": "Air Pollution: Sources, Smog and Solutions",
+    "domain": "Environment & Sustainability",
+    "field": "Pollution & Environmental Health",
+    "score": 0.16,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Energy Conversion & Automotive",
+      "chapter": "Internal Combustion Engines",
+      "section": "Emissions & Alternative Fuels",
+      "sectionId": "me-e-ice-s6",
+      "score": 0.16
+    },
+    "topMatches": [
+      {
+        "subject": "Energy Conversion & Automotive",
+        "chapter": "Internal Combustion Engines",
+        "section": "Emissions & Alternative Fuels",
+        "sectionId": "me-e-ice-s6",
+        "score": 0.16
+      },
+      {
+        "subject": "Java Programming",
+        "chapter": "Streams & Functional Pipelines",
+        "section": "Stream Creation & Operations",
+        "sectionId": "java-ch10-s1",
+        "score": 0.13
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Matrices & Determinants",
+        "section": "Cramer Systems & Consistency",
+        "sectionId": "math-a5-s10",
+        "score": 0.13
       }
     ]
   },
@@ -2850,6 +6156,44 @@
     ]
   },
   {
+    "id": "bio-genetics-mendel",
+    "title": "Mendel's Laws: How Traits Travel Between Generations",
+    "domain": "Life Sciences",
+    "field": "Genetics & Heredity",
+    "score": 0.15,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Mathematical Statistics",
+      "section": "Linear Regression",
+      "sectionId": "engmath-ch16-s4",
+      "score": 0.15
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Mathematical Statistics",
+        "section": "Linear Regression",
+        "sectionId": "engmath-ch16-s4",
+        "score": 0.15
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Entropy & the Second Law",
+        "section": "",
+        "sectionId": "hall-ch20",
+        "score": 0.15
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Probability Distributions",
+        "section": "Normal Law & Central Limit",
+        "sectionId": "engmath-ch15-s3",
+        "score": 0.14
+      }
+    ]
+  },
+  {
     "id": "env-water-cycle",
     "title": "The Water Cycle and Freshwater Scarcity",
     "domain": "Environment & Sustainability",
@@ -2883,6 +6227,82 @@
         "chapter": "Mechatronics",
         "section": "Mechatronic Control",
         "sectionId": "me-e-mechatronics-s9",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "env-waste-management-recycling",
+    "title": "Waste: Where It Goes After the Bin",
+    "domain": "Environment & Sustainability",
+    "field": "Waste & Circularity",
+    "score": 0.15,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Electric Potential",
+      "section": "Electric Potential Energy of a System of Charged Particles",
+      "sectionId": "hall-ch24-s7",
+      "score": 0.15
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Electric Potential",
+        "section": "Electric Potential Energy of a System of Charged Particles",
+        "sectionId": "hall-ch24-s7",
+        "score": 0.15
+      },
+      {
+        "subject": "Energy Conversion & Automotive",
+        "chapter": "Energy Systems & Renewables",
+        "section": "Hybrid Systems & Storage",
+        "sectionId": "ee-e-energy-s7",
+        "score": 0.15
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Relativity",
+        "section": "Momentum and Energy",
+        "sectionId": "hall-ch37-s6",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "urb-housing-segregation",
+    "title": "Housing, Segregation and Gentrification",
+    "domain": "Social Sciences",
+    "field": "Urban Sociology",
+    "score": 0.15,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Chemistry",
+      "chapter": "Stereochemistry In Depth",
+      "section": "Cyclic Stereocontrol",
+      "sectionId": "chem-ch23-s3",
+      "score": 0.15
+    },
+    "topMatches": [
+      {
+        "subject": "Chemistry",
+        "chapter": "Stereochemistry In Depth",
+        "section": "Cyclic Stereocontrol",
+        "sectionId": "chem-ch23-s3",
+        "score": 0.15
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Circuits",
+        "section": "The Ammeter and the Voltmeter",
+        "sectionId": "hall-ch27-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Dispersion",
+        "sectionId": "hall-ch33-s22",
         "score": 0.14
       }
     ]
@@ -2926,6 +6346,196 @@
     ]
   },
   {
+    "id": "hum-stoicism-practice",
+    "title": "Stoicism: The Art of Living Well",
+    "domain": "Humanities",
+    "field": "Philosophy",
+    "score": 0.15,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "A Tour of C++: The Basics",
+      "section": "",
+      "sectionId": "cpp-ch2",
+      "score": 0.15
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "",
+        "sectionId": "cpp-ch2",
+        "score": 0.15
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Matter Waves & Wave Functions",
+        "section": "Two- and Three-Dimensional Electron Traps",
+        "sectionId": "hall-ch39-s4",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Introduction",
+        "sectionId": "cpp-ch2-s1",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "lang-japanese-writing",
+    "title": "Hiragana, Katakana and Kanji: How Japanese Writing Works",
+    "domain": "Languages & World Literature",
+    "field": "Japanese",
+    "score": 0.15,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Matrices & Determinants",
+      "section": "Determinants",
+      "sectionId": "math-a5-s3",
+      "score": 0.15
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Matrices & Determinants",
+        "section": "Determinants",
+        "sectionId": "math-a5-s3",
+        "score": 0.15
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Motion in Two and Three Dimensions",
+        "section": "Relative Motion in One Dimension",
+        "sectionId": "hall-ch4-s6",
+        "score": 0.14
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Heterocycles & Retrosynthetic Analysis",
+        "section": "Retrosynthetic Disconnections",
+        "sectionId": "chem-ch25-s3",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "lang-mandarin-foundations",
+    "title": "Mandarin Foundations: Tones, Characters and First Phrases",
+    "domain": "Languages & World Literature",
+    "field": "Mandarin Chinese",
+    "score": 0.15,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Differentiation Rules",
+      "section": "Monotonicity",
+      "sectionId": "calc-ch3-s15",
+      "score": 0.15
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Differentiation Rules",
+        "section": "Monotonicity",
+        "sectionId": "calc-ch3-s15",
+        "score": 0.15
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Interference",
+        "sectionId": "hall-ch17-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Advice",
+        "sectionId": "cpp-ch2-s6",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "law-tort-liability",
+    "title": "Tort Law: When Harm Has a Price",
+    "domain": "Law & Governance",
+    "field": "Private Law",
+    "score": 0.15,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Probability Distributions",
+      "section": "Joint Distributions & Covariance",
+      "sectionId": "engmath-ch15-s4",
+      "score": 0.15
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Probability Distributions",
+        "section": "Joint Distributions & Covariance",
+        "sectionId": "engmath-ch15-s4",
+        "score": 0.15
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "Archimedes' Principle",
+        "sectionId": "hall-ch14-s5",
+        "score": 0.14
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Eigenvalues via Invariant Subspaces",
+        "section": "Invariant Subspaces",
+        "sectionId": "engmath-ch20-s1",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "law-court-procedure",
+    "title": "Court Procedure: From Pleadings to Appeal",
+    "domain": "Law & Governance",
+    "field": "Criminal Justice",
+    "score": 0.15,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Standard Library Summary",
+      "section": "Error Handling",
+      "sectionId": "cpp-ch30-s4",
+      "score": 0.15
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Standard Library Summary",
+        "section": "Error Handling",
+        "sectionId": "cpp-ch30-s4",
+        "score": 0.15
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Statements",
+        "section": "Statement Summary",
+        "sectionId": "cpp-ch9-s2",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Standard Library Summary",
+        "section": "",
+        "sectionId": "cpp-ch30",
+        "score": 0.13
+      }
+    ]
+  },
+  {
     "id": "health-hypertrophy-muscle-growth",
     "title": "Hypertrophy: How Muscle Actually Grows",
     "domain": "Health & Wellness",
@@ -2960,6 +6570,44 @@
         "section": "Types of Mechanical Waves",
         "sectionId": "hall-ch16-s8",
         "score": 0.12
+      }
+    ]
+  },
+  {
+    "id": "health-sexual-reproductive-health",
+    "title": "Sexual and Reproductive Health: Cycles, Contraception and STIs",
+    "domain": "Health & Wellness",
+    "field": "Sexual & Reproductive Health",
+    "score": 0.15,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Graphs",
+      "section": "Assignment & Scheduling Problems",
+      "sectionId": "rosen-ch10-s12",
+      "score": 0.15
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Graphs",
+        "section": "Assignment & Scheduling Problems",
+        "sectionId": "rosen-ch10-s12",
+        "score": 0.15
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Statements",
+        "section": "Declarations as Statements",
+        "sectionId": "cpp-ch9-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Namespaces",
+        "section": "Namespaces",
+        "sectionId": "cpp-ch14-s2",
+        "score": 0.14
       }
     ]
   },
@@ -3040,6 +6688,158 @@
     ]
   },
   {
+    "id": "every-composting",
+    "title": "Composting: Turning Kitchen Scraps into Soil",
+    "domain": "Everyday Knowledge",
+    "field": "Garden & Growing",
+    "score": 0.15,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Vector Calculus",
+      "section": "Stokes’ Theorem",
+      "sectionId": "calc-ch16-s8",
+      "score": 0.15
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Vector Calculus",
+        "section": "Stokes’ Theorem",
+        "sectionId": "calc-ch16-s8",
+        "score": 0.15
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Practical & Analytical Chemistry",
+        "section": "Quantitative Analysis",
+        "sectionId": "chem-ch39-s7",
+        "score": 0.13
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "p-Block Depth: Groups 13–15",
+        "section": "",
+        "sectionId": "chem-ch37",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "every-job-interviews",
+    "title": "Job Interviews: The STAR Method and the Follow-Up",
+    "domain": "Everyday Knowledge",
+    "field": "Career & Communication",
+    "score": 0.15,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Electric Fields",
+      "section": "The Electric Field in Various Circumstances",
+      "sectionId": "hall-ch22-s20",
+      "score": 0.15
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Electric Fields",
+        "section": "The Electric Field in Various Circumstances",
+        "sectionId": "hall-ch22-s20",
+        "score": 0.15
+      },
+      {
+        "subject": "Data Structures & Algorithms",
+        "chapter": "Linear Programming",
+        "section": "The initial basic feasible solution",
+        "sectionId": "clrs-ch29-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "Software Engineering & Emerging Tech",
+        "chapter": "Human-Computer Interaction & Usability",
+        "section": "User Research & Task Analysis",
+        "sectionId": "se-hci-s3",
+        "score": 0.12
+      }
+    ]
+  },
+  {
+    "id": "met-atmosphere-weather",
+    "title": "Why Weather Happens: The Atmosphere at Work",
+    "domain": "Physical Sciences",
+    "field": "Meteorology",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Compatibility",
+      "section": "C/C++ Compatibility",
+      "sectionId": "cpp-ch44-s3",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Compatibility",
+        "section": "C/C++ Compatibility",
+        "sectionId": "cpp-ch44-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "Measuring Pressure",
+        "sectionId": "hall-ch14-s3",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Radiation Pressure",
+        "sectionId": "hall-ch33-s3",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "astro-exoplanets",
+    "title": "Exoplanets: Finding Worlds Around Other Stars",
+    "domain": "Physical Sciences",
+    "field": "Astronomy & Space Science",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Waves—II",
+      "section": "Interference",
+      "sectionId": "hall-ch17-s3",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Interference",
+        "sectionId": "hall-ch17-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Relativity",
+        "section": "The Relativity of Velocities",
+        "sectionId": "hall-ch37-s4",
+        "score": 0.14
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Vector Functions",
+        "section": "Motion in Space: Velocity and Acceleration",
+        "sectionId": "calc-ch13-s4",
+        "score": 0.13
+      }
+    ]
+  },
+  {
     "id": "bio-action-potentials",
     "title": "Action Potentials and Nerve Signaling",
     "domain": "Life Sciences",
@@ -3074,6 +6874,196 @@
         "section": "",
         "sectionId": "hall-ch24",
         "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "bio-anatomy-respiration",
+    "title": "Breathing and Gas Exchange: From Air to Cell",
+    "domain": "Life Sciences",
+    "field": "Anatomy & Physiology",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Compatibility",
+      "section": "C/C++ Compatibility",
+      "sectionId": "cpp-ch44-s3",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Compatibility",
+        "section": "C/C++ Compatibility",
+        "sectionId": "cpp-ch44-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "Measuring Pressure",
+        "sectionId": "hall-ch14-s3",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Resonance and Sound",
+        "sectionId": "hall-ch17-s13",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "bio-anatomy-musculoskeletal",
+    "title": "Muscles, Bones and the Machinery of Movement",
+    "domain": "Life Sciences",
+    "field": "Anatomy & Physiology",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Magnetic Fields Due to Currents",
+      "section": "Force Between Two Parallel Currents",
+      "sectionId": "hall-ch29-s2",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Magnetic Fields Due to Currents",
+        "section": "Force Between Two Parallel Currents",
+        "sectionId": "hall-ch29-s2",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Static Equilibrium & Elasticity",
+        "section": "Equilibrium",
+        "sectionId": "hall-ch12-s1",
+        "score": 0.11
+      },
+      {
+        "subject": "Engineering Mechanics & Graphics",
+        "chapter": "Engineering Mechanics",
+        "section": "Trusses & Simple Machines",
+        "sectionId": "me-e-mechanics-s4",
+        "score": 0.11
+      }
+    ]
+  },
+  {
+    "id": "bio-zoology-body-plans",
+    "title": "The Animal Kingdom: A Tour of Body Plans and Phyla",
+    "domain": "Life Sciences",
+    "field": "Zoology",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "A Tour of C++: The Basics",
+      "section": "Introduction",
+      "sectionId": "cpp-ch2-s1",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Introduction",
+        "sectionId": "cpp-ch2-s1",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Advice",
+        "sectionId": "cpp-ch2-s6",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Postscript",
+        "sectionId": "cpp-ch2-s5",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "bio-developmental-biology",
+    "title": "Developmental Biology: How a Body Builds Itself",
+    "domain": "Life Sciences",
+    "field": "Developmental Biology",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Limits and Derivatives",
+      "section": "Limits, Continuity and Differentiability",
+      "sectionId": "calc-ch2-s12",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Limits and Derivatives",
+        "section": "Limits, Continuity and Differentiability",
+        "sectionId": "calc-ch2-s12",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Numerics",
+        "section": "Numerical Limits",
+        "sectionId": "cpp-ch40-s2",
+        "score": 0.13
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Further Applications of Integration",
+        "section": "Arc Length",
+        "sectionId": "calc-ch8-s1",
+        "score": 0.11
+      }
+    ]
+  },
+  {
+    "id": "bio-animal-senses-superpowers",
+    "title": "How Animals Sense the World",
+    "domain": "Life Sciences",
+    "field": "Zoology",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Waves—II",
+      "section": "Interference",
+      "sectionId": "hall-ch17-s3",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Interference",
+        "sectionId": "hall-ch17-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Speed of Sound",
+        "sectionId": "hall-ch17-s1",
+        "score": 0.11
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Traveling Sound Waves",
+        "sectionId": "hall-ch17-s2",
+        "score": 0.11
       }
     ]
   },
@@ -3154,6 +7144,120 @@
     ]
   },
   {
+    "id": "env-restoration-rewilding",
+    "title": "Restoration and Rewilding: Putting Ecosystems Back Together",
+    "domain": "Environment & Sustainability",
+    "field": "Conservation Biology",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Circuits",
+      "section": "The Ammeter and the Voltmeter",
+      "sectionId": "hall-ch27-s3",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Circuits",
+        "section": "The Ammeter and the Voltmeter",
+        "sectionId": "hall-ch27-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Web Development & JavaScript",
+        "chapter": "Objects",
+        "section": "Querying, Setting and Deleting Properties",
+        "sectionId": "js-ch6-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Electromagnetics, Antennas & Microwaves",
+        "chapter": "Electromagnetic Field Theory",
+        "section": "Antennas",
+        "sectionId": "ece-e-emft-s10",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "env-urban-planning-design",
+    "title": "Urban Planning: Designing Cities That Work",
+    "domain": "Environment & Sustainability",
+    "field": "Urban Planning",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Electromagnetic Waves",
+      "section": "Diamagnetism",
+      "sectionId": "hall-ch33-s13",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Diamagnetism",
+        "sectionId": "hall-ch33-s13",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Statements",
+        "section": "Declarations as Statements",
+        "sectionId": "cpp-ch9-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Namespaces",
+        "section": "Namespaces",
+        "sectionId": "cpp-ch14-s2",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "avi-flight-instruments",
+    "title": "Flight Instruments and the Anatomy of a Cockpit",
+    "domain": "Technology & Applied Science",
+    "field": "Aviation & Flight",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Circuits",
+      "section": "The Ammeter and the Voltmeter",
+      "sectionId": "hall-ch27-s3",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Circuits",
+        "section": "The Ammeter and the Voltmeter",
+        "sectionId": "hall-ch27-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Applications of Differentiation",
+        "section": "Applications of Derivatives",
+        "sectionId": "calc-ch4-s9",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—I",
+        "section": "Wave Speed on a Stretched String",
+        "sectionId": "hall-ch16-s2",
+        "score": 0.13
+      }
+    ]
+  },
+  {
     "id": "soc-cognitive-dissonance",
     "title": "Cognitive Dissonance and Attitude Change",
     "domain": "Social Sciences",
@@ -3230,6 +7334,196 @@
     ]
   },
   {
+    "id": "psy-cognitive-architecture",
+    "title": "Memory, Attention and Thinking: Cognitive Psychology",
+    "domain": "Social Sciences",
+    "field": "Psychology",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Memory and Resources",
+      "section": "Introduction",
+      "sectionId": "cpp-ch34-s1",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Memory and Resources",
+        "section": "Introduction",
+        "sectionId": "cpp-ch34-s1",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Memory and Resources",
+        "section": "Allocators",
+        "sectionId": "cpp-ch34-s4",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Concurrency",
+        "section": "Memory Model",
+        "sectionId": "cpp-ch41-s2",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "pol-regimes-spectrum",
+    "title": "Democracies, Autocracies and Everything in Between",
+    "domain": "Social Sciences",
+    "field": "Political Science",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Waves—II",
+      "section": "Interference",
+      "sectionId": "hall-ch17-s3",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Interference",
+        "sectionId": "hall-ch17-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Beats",
+        "sectionId": "hall-ch17-s6",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Circuits",
+        "section": "The Ammeter and the Voltmeter",
+        "sectionId": "hall-ch27-s3",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "geog-population-migration",
+    "title": "Population Geography: Where Humans Live and Why",
+    "domain": "Social Sciences",
+    "field": "Human Geography",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Chemistry",
+      "chapter": "Statistical Thermodynamics",
+      "section": "Boltzmann Distribution",
+      "sectionId": "chem-ch19-s1",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Chemistry",
+        "chapter": "Statistical Thermodynamics",
+        "section": "Boltzmann Distribution",
+        "sectionId": "chem-ch19-s1",
+        "score": 0.14
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Further Applications of Integration",
+        "section": "Probability",
+        "sectionId": "calc-ch8-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "Electronic Devices & Circuits",
+        "chapter": "Analog Circuits",
+        "section": "Class B and Crossover Distortion",
+        "sectionId": "ece-e-analog-s34",
+        "score": 0.12
+      }
+    ]
+  },
+  {
+    "id": "geog-economic-cultural-landscapes",
+    "title": "Landscapes of Trade and Belief: Economic and Cultural Geography",
+    "domain": "Social Sciences",
+    "field": "Human Geography",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Statements",
+      "section": "Declarations as Statements",
+      "sectionId": "cpp-ch9-s3",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Statements",
+        "section": "Declarations as Statements",
+        "sectionId": "cpp-ch9-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Namespaces",
+        "section": "Namespaces",
+        "sectionId": "cpp-ch14-s2",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Diffraction",
+        "section": "Single-Slit Diffraction",
+        "sectionId": "hall-ch36-s1",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "soc-social-movements-change",
+    "title": "Social Movements: How Change Happens",
+    "domain": "Social Sciences",
+    "field": "Sociology",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Memory and Resources",
+      "section": "Introduction",
+      "sectionId": "cpp-ch34-s1",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Memory and Resources",
+        "section": "Introduction",
+        "sectionId": "cpp-ch34-s1",
+        "score": 0.14
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Differentiation Rules",
+        "section": "Rates of Change in the Natural and Social Sciences",
+        "sectionId": "calc-ch3-s7",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Momentum & Collisions",
+        "section": "Collision and Impulse",
+        "sectionId": "hall-ch9-s4",
+        "score": 0.11
+      }
+    ]
+  },
+  {
     "id": "hum-enlightenment-reason",
     "title": "The Enlightenment: Reason Changes the World",
     "domain": "Humanities",
@@ -3264,6 +7558,272 @@
         "section": "Namespaces",
         "sectionId": "cpp-ch14-s2",
         "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "phil-epistemology",
+    "title": "Epistemology: What Can We Know?",
+    "domain": "Humanities",
+    "field": "Philosophy",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "A Tour of C++: The Basics",
+      "section": "Introduction",
+      "sectionId": "cpp-ch2-s1",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Introduction",
+        "sectionId": "cpp-ch2-s1",
+        "score": 0.14
+      },
+      {
+        "subject": "Electric Circuits & Networks",
+        "chapter": "Network Analysis & Synthesis",
+        "section": "Two-Port Networks",
+        "sectionId": "ece-e-networks-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Interference",
+        "section": "Two-Source Interference of Light",
+        "sectionId": "hall-ch35-s7",
+        "score": 0.12
+      }
+    ]
+  },
+  {
+    "id": "phil-mind-consciousness",
+    "title": "The Philosophy of Mind: Consciousness and Its Puzzles",
+    "domain": "Humanities",
+    "field": "Philosophy",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "A Tour of C++: The Basics",
+      "section": "Introduction",
+      "sectionId": "cpp-ch2-s1",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Introduction",
+        "sectionId": "cpp-ch2-s1",
+        "score": 0.14
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Algorithms",
+        "section": "Algorithms",
+        "sectionId": "rosen-ch3-s1",
+        "score": 0.09
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Pointers, Arrays, and References",
+        "section": "Arrays",
+        "sectionId": "cpp-ch7-s3",
+        "score": 0.09
+      }
+    ]
+  },
+  {
+    "id": "rel-eastern-traditions",
+    "title": "Hinduism, Buddhism and the Eastern Traditions",
+    "domain": "Humanities",
+    "field": "Religious Studies",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "A Tour of C++: The Basics",
+      "section": "Introduction",
+      "sectionId": "cpp-ch2-s1",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Introduction",
+        "sectionId": "cpp-ch2-s1",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Generic Programming",
+        "section": "Concepts",
+        "sectionId": "cpp-ch24-s3",
+        "score": 0.13
+      },
+      {
+        "subject": "Database Management Systems",
+        "chapter": "Entity-Relationship Modeling",
+        "section": "Relationships & Cardinality",
+        "sectionId": "dbms-ch1-s2",
+        "score": 0.12
+      }
+    ]
+  },
+  {
+    "id": "hum-ethics-moral-theories",
+    "title": "Ethics: Consequentialism, Deontology and Beyond",
+    "domain": "Humanities",
+    "field": "Philosophy",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "A Tour of C++: The Basics",
+      "section": "Introduction",
+      "sectionId": "cpp-ch2-s1",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Introduction",
+        "sectionId": "cpp-ch2-s1",
+        "score": 0.14
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Higher-Order Linear Differential Equations",
+        "section": "Particular Integrals",
+        "sectionId": "engmath-ch4-s2",
+        "score": 0.11
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Integrals",
+        "section": "The Fundamental Theorem of Calculus",
+        "sectionId": "calc-ch5-s3",
+        "score": 0.1
+      }
+    ]
+  },
+  {
+    "id": "hum-eastern-philosophy-systems",
+    "title": "Eastern Philosophy: The Great Systems",
+    "domain": "Humanities",
+    "field": "Philosophy",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "A Tour of C++: The Basics",
+      "section": "Introduction",
+      "sectionId": "cpp-ch2-s1",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Introduction",
+        "sectionId": "cpp-ch2-s1",
+        "score": 0.14
+      },
+      {
+        "subject": "Power Systems",
+        "chapter": "Switchgear & Protection",
+        "section": "Protection Philosophy",
+        "sectionId": "ee-e-protection-s1",
+        "score": 0.13
+      },
+      {
+        "subject": "Control Systems & Instrumentation",
+        "chapter": "Electronic Instrumentation & Measurements",
+        "section": "Measurement Fundamentals",
+        "sectionId": "ece-e-instrumentation-s1",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "hum-existentialism-freedom-meaning",
+    "title": "Existentialism: Freedom, Anxiety, Meaning",
+    "domain": "Humanities",
+    "field": "Philosophy",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "A Tour of C++: The Basics",
+      "section": "Introduction",
+      "sectionId": "cpp-ch2-s1",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Introduction",
+        "sectionId": "cpp-ch2-s1",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Construction, Cleanup, Copy, and Move",
+        "section": "Introduction",
+        "sectionId": "cpp-ch17-s1",
+        "score": 0.11
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Nuclear Physics",
+        "section": "Radioactive Decay",
+        "sectionId": "hall-ch42-s3",
+        "score": 0.09
+      }
+    ]
+  },
+  {
+    "id": "hum-philosophy-of-science",
+    "title": "Philosophy of Science: How We Know What We Know",
+    "domain": "Humanities",
+    "field": "Philosophy",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "A Tour of C++: The Basics",
+      "section": "Introduction",
+      "sectionId": "cpp-ch2-s1",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Introduction",
+        "sectionId": "cpp-ch2-s1",
+        "score": 0.14
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Substitution & Elimination Masterclass",
+        "section": "E2 Stereospecificity",
+        "sectionId": "chem-ch28-s2",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Induction and Inductance",
+        "section": "Self-Induction",
+        "sectionId": "hall-ch30-s5",
+        "score": 0.13
       }
     ]
   },
@@ -3344,6 +7904,538 @@
     ]
   },
   {
+    "id": "lang-prosody",
+    "title": "Prosody: The Melody of Speech",
+    "domain": "Languages & World Literature",
+    "field": "Phonetics & Phonology",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Compatibility",
+      "section": "C/C++ Compatibility",
+      "sectionId": "cpp-ch44-s3",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Compatibility",
+        "section": "C/C++ Compatibility",
+        "sectionId": "cpp-ch44-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Theory of Computation",
+        "chapter": "Theory of Automata & Formal Languages",
+        "section": "Turing Machines",
+        "sectionId": "cse-e-toc-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Run-Time Type Information",
+        "section": "Introduction",
+        "sectionId": "cpp-ch22-s1",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "lang-french-foundations",
+    "title": "French Foundations: Pronunciation, Articles and First Phrases",
+    "domain": "Languages & World Literature",
+    "field": "French",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "The Foundations: Logic and Proofs",
+      "section": "Nested Quantifiers",
+      "sectionId": "rosen-ch1-s5",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "The Foundations: Logic and Proofs",
+        "section": "Nested Quantifiers",
+        "sectionId": "rosen-ch1-s5",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—II",
+        "section": "Interference",
+        "sectionId": "hall-ch17-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "AI, Machine Learning & Data Science",
+        "chapter": "Deep Learning & Applications",
+        "section": "Deep Learning Foundations",
+        "sectionId": "cse-e-deeplearning-s1",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "lang-german-foundations",
+    "title": "German Foundations: Cases, Word Order and Cognates",
+    "domain": "Languages & World Literature",
+    "field": "German",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Second-Order Differential Equations",
+      "section": "Series Solutions",
+      "sectionId": "calc-ch17-s4",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Second-Order Differential Equations",
+        "section": "Series Solutions",
+        "sectionId": "calc-ch17-s4",
+        "score": 0.14
+      },
+      {
+        "subject": "Electronic Devices & Circuits",
+        "chapter": "Analog Circuits",
+        "section": "Active Filter Circuits",
+        "sectionId": "ece-e-analog-s40",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Numerics",
+        "section": "Standard Mathematical Functions",
+        "sectionId": "cpp-ch40-s3",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "lang-hindi-foundations",
+    "title": "Hindi Foundations: Devanagari, Word Order and Agreement",
+    "domain": "Languages & World Literature",
+    "field": "Hindi",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "The Foundations: Logic and Proofs",
+      "section": "Nested Quantifiers",
+      "sectionId": "rosen-ch1-s5",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "The Foundations: Logic and Proofs",
+        "section": "Nested Quantifiers",
+        "sectionId": "rosen-ch1-s5",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Motion in Two and Three Dimensions",
+        "section": "Relative Motion in One Dimension",
+        "sectionId": "hall-ch4-s6",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "Archimedes' Principle",
+        "sectionId": "hall-ch14-s5",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "lang-syntax-sentence-structure",
+    "title": "Syntax: How Sentences Are Built",
+    "domain": "Languages & World Literature",
+    "field": "Linguistics",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "English & Comprehension",
+      "chapter": "Standard English Conventions",
+      "section": "Form, Structure, and Sense",
+      "sectionId": "eng-r3-s2",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "English & Comprehension",
+        "chapter": "Standard English Conventions",
+        "section": "Form, Structure, and Sense",
+        "sectionId": "eng-r3-s2",
+        "score": 0.14
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "GOC, Isomerism & Reaction Mechanisms",
+        "section": "Structural Isomerism",
+        "sectionId": "chem-ch8-s2",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Templates and Hierarchies",
+        "section": "Introduction",
+        "sectionId": "cpp-ch27-s1",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "lang-sociolinguistics",
+    "title": "Language in Society: Dialects, Prestige and Code-Switching",
+    "domain": "Languages & World Literature",
+    "field": "Sociolinguistics",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "A Tour of C++: The Basics",
+      "section": "Introduction",
+      "sectionId": "cpp-ch2-s1",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Introduction",
+        "sectionId": "cpp-ch2-s1",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Specialization",
+        "section": "Specialization",
+        "sectionId": "cpp-ch25-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Coordination Compounds",
+        "section": "Werner Theory & EAN Rule",
+        "sectionId": "chem-ch12-s2",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "lang-writing-systems-world",
+    "title": "Writing Systems of the World: Alphabets, Abjads and Beyond",
+    "domain": "Languages & World Literature",
+    "field": "Linguistics",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "A Tour of C++: The Basics",
+      "section": "Introduction",
+      "sectionId": "cpp-ch2-s1",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Introduction",
+        "sectionId": "cpp-ch2-s1",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Strings",
+        "section": "",
+        "sectionId": "cpp-ch36",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Strings",
+        "section": "Character Classification",
+        "sectionId": "cpp-ch36-s2",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "law-employment-labor",
+    "title": "Employment and Labor Law: The Rulebook of Work",
+    "domain": "Law & Governance",
+    "field": "Employment Law",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Probability Distributions",
+      "section": "Normal Law & Central Limit",
+      "sectionId": "engmath-ch15-s3",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Probability Distributions",
+        "section": "Normal Law & Central Limit",
+        "sectionId": "engmath-ch15-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Entropy & the Second Law",
+        "section": "Refrigerators",
+        "sectionId": "hall-ch20-s8",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Reflection and Refraction",
+        "sectionId": "hall-ch33-s5",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "law-corporate-governance",
+    "title": "Corporate Law: Entities, Fiduciary Duties and Boards",
+    "domain": "Law & Governance",
+    "field": "Private Law",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Probability Distributions",
+      "section": "Normal Law & Central Limit",
+      "sectionId": "engmath-ch15-s3",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Probability Distributions",
+        "section": "Normal Law & Central Limit",
+        "sectionId": "engmath-ch15-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Induction and Inductance",
+        "section": "Self-Induction",
+        "sectionId": "hall-ch30-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Reflection and Refraction",
+        "sectionId": "hall-ch33-s5",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "econ-gdp-inflation-unemployment",
+    "title": "GDP, Inflation and Unemployment: The Vital Signs of an Economy",
+    "domain": "Business & Economics",
+    "field": "Macroeconomics",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Overloading",
+      "section": "Type Conversion",
+      "sectionId": "cpp-ch18-s4",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Overloading",
+        "section": "Type Conversion",
+        "sectionId": "cpp-ch18-s4",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Metaprogramming",
+        "section": "Type Functions",
+        "sectionId": "cpp-ch28-s2",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Numerics",
+        "section": "complex Numbers",
+        "sectionId": "cpp-ch40-s4",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "econ-fiscal-policy",
+    "title": "Fiscal Policy: How Governments Spend and Tax Their Way Through Crises",
+    "domain": "Business & Economics",
+    "field": "Macroeconomics",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Relativity",
+      "section": "Momentum and Energy",
+      "sectionId": "hall-ch37-s6",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Relativity",
+        "section": "Momentum and Energy",
+        "sectionId": "hall-ch37-s6",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "The C Standard Library",
+        "section": "Date and Time",
+        "sectionId": "cpp-ch43-s6",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Static Equilibrium & Elasticity",
+        "section": "Equilibrium",
+        "sectionId": "hall-ch12-s1",
+        "score": 0.11
+      }
+    ]
+  },
+  {
+    "id": "mgt-leadership-team-dynamics",
+    "title": "Leadership and Team Dynamics",
+    "domain": "Business & Economics",
+    "field": "Management & Leadership",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Relativity",
+      "section": "Momentum and Energy",
+      "sectionId": "hall-ch37-s6",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Relativity",
+        "section": "Momentum and Energy",
+        "sectionId": "hall-ch37-s6",
+        "score": 0.14
+      },
+      {
+        "subject": "Database Management Systems",
+        "chapter": "Transactions & ACID",
+        "section": "",
+        "sectionId": "dbms-ch6",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Induction and Inductance",
+        "section": "Self-Induction",
+        "sectionId": "hall-ch30-s5",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "fin-insurance-risk-pooling",
+    "title": "Insurance: Pooling Risk and Pricing It",
+    "domain": "Business & Economics",
+    "field": "Finance & Investment",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Numerics",
+      "section": "complex Numbers",
+      "sectionId": "cpp-ch40-s4",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Numerics",
+        "section": "complex Numbers",
+        "sectionId": "cpp-ch40-s4",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Numerics",
+        "section": "Random Numbers",
+        "sectionId": "cpp-ch40-s7",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Force and Motion",
+        "section": "Applying Newton's Laws",
+        "sectionId": "hall-ch5-s3",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "fin-banks-create-money",
+    "title": "How Banks Create Money",
+    "domain": "Business & Economics",
+    "field": "Finance & Investment",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Electric Fields",
+      "section": "The Electric Field Due to a Charged Disk",
+      "sectionId": "hall-ch22-s5",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Electric Fields",
+        "section": "The Electric Field Due to a Charged Disk",
+        "sectionId": "hall-ch22-s5",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Instantiation",
+        "section": "Name Binding",
+        "sectionId": "cpp-ch26-s3",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Numerics",
+        "section": "Numerical Limits",
+        "sectionId": "cpp-ch40-s2",
+        "score": 0.13
+      }
+    ]
+  },
+  {
     "id": "health-stress-cortisol",
     "title": "Stress, Cortisol and the Body's Alarm System",
     "domain": "Health & Wellness",
@@ -3415,6 +8507,82 @@
         "chapter": "Memory and Resources",
         "section": "Introduction",
         "sectionId": "cpp-ch34-s1",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "aid-first-aid-essentials",
+    "title": "First Aid Essentials: Bleeding, Burns, Choking and the Recovery Position",
+    "domain": "Health & Wellness",
+    "field": "First Aid & Emergency Care",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Construction, Cleanup, Copy, and Move",
+      "section": "Generating Default Operations",
+      "sectionId": "cpp-ch17-s6",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Construction, Cleanup, Copy, and Move",
+        "section": "Generating Default Operations",
+        "sectionId": "cpp-ch17-s6",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Induction and Inductance",
+        "section": "Self-Induction",
+        "sectionId": "hall-ch30-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Everyday & Industrial Chemistry",
+        "section": "Soaps & Detergents",
+        "sectionId": "chem-ch44-s1",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "health-how-doctors-diagnose",
+    "title": "How Doctors Diagnose: History, Exam and the Differential",
+    "domain": "Health & Wellness",
+    "field": "Medicine & Pharmacology",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Chemistry",
+      "chapter": "Amines, Biomolecules, Polymers & Practical Organic",
+      "section": "Tests for Amines",
+      "sectionId": "chem-ch10-s11",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Chemistry",
+        "chapter": "Amines, Biomolecules, Polymers & Practical Organic",
+        "section": "Tests for Amines",
+        "sectionId": "chem-ch10-s11",
+        "score": 0.14
+      },
+      {
+        "subject": "Web Development & JavaScript",
+        "chapter": "Testing & Quality: Unit, Integration & E2E",
+        "section": "Unit Tests with Jest & Vitest",
+        "sectionId": "web-ch18-s1",
+        "score": 0.14
+      },
+      {
+        "subject": "Web Development & JavaScript",
+        "chapter": "Testing & Quality: Unit, Integration & E2E",
+        "section": "API & Integration Tests",
+        "sectionId": "web-ch18-s3",
         "score": 0.14
       }
     ]
@@ -3534,6 +8702,82 @@
     ]
   },
   {
+    "id": "art-opera-musical-theater-form",
+    "title": "Opera and Musical Theater: Voices, Arias and the Sung Story",
+    "domain": "Arts & Culture",
+    "field": "Theater & Performance",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Overloading",
+      "section": "Type Conversion",
+      "sectionId": "cpp-ch18-s4",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Overloading",
+        "section": "Type Conversion",
+        "sectionId": "cpp-ch18-s4",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Metaprogramming",
+        "section": "Type Functions",
+        "sectionId": "cpp-ch28-s2",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Waves—I",
+        "section": "Types of Mechanical Waves",
+        "sectionId": "hall-ch16-s8",
+        "score": 0.12
+      }
+    ]
+  },
+  {
+    "id": "art-animation-twelve-principles",
+    "title": "Animation: The Twelve Principles That Make Drawings Move",
+    "domain": "Arts & Culture",
+    "field": "Animation & Sequential Art",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "A Tour of C++: Abstraction Mechanisms",
+      "section": "",
+      "sectionId": "cpp-ch3",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: Abstraction Mechanisms",
+        "section": "",
+        "sectionId": "cpp-ch3",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "The Equation of Continuity",
+        "sectionId": "hall-ch14-s6",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Functions",
+        "section": "Argument Passing",
+        "sectionId": "cpp-ch12-s2",
+        "score": 0.13
+      }
+    ]
+  },
+  {
     "id": "every-reading-paycheck-net-pay",
     "title": "Reading a Paycheck: Taxes, Deductions and Net Pay",
     "domain": "Everyday Knowledge",
@@ -3610,6 +8854,234 @@
     ]
   },
   {
+    "id": "fin-credit-scores-debt",
+    "title": "Credit Scores, Loans and the Real Cost of Debt",
+    "domain": "Everyday Knowledge",
+    "field": "Personal Finance",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Graphs",
+      "section": "Spanning Trees & MST",
+      "sectionId": "rosen-ch10-s10",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Graphs",
+        "section": "Spanning Trees & MST",
+        "sectionId": "rosen-ch10-s10",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Compatibility",
+        "section": "C/C++ Compatibility",
+        "sectionId": "cpp-ch44-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Java Programming",
+        "chapter": "Collections Framework",
+        "section": "List & Set Implementations",
+        "sectionId": "java-ch8-s1",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "cook-flavor-science",
+    "title": "The Science of Flavor: Salt, Fat, Acid and Heat",
+    "domain": "Everyday Knowledge",
+    "field": "Cooking & Food Science",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Temperature, Heat & the First Law",
+      "section": "Thermal Expansion",
+      "sectionId": "hall-ch18-s3",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Temperature, Heat & the First Law",
+        "section": "Thermal Expansion",
+        "sectionId": "hall-ch18-s3",
+        "score": 0.14
+      },
+      {
+        "subject": "Database Management Systems",
+        "chapter": "Transactions & ACID",
+        "section": "",
+        "sectionId": "dbms-ch6",
+        "score": 0.13
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Practical & Analytical Chemistry",
+        "section": "Titrimetric Exercises",
+        "sectionId": "chem-ch39-s11",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "every-home-plumbing-basics",
+    "title": "Home Plumbing: Faucets, Toilets and Drains",
+    "domain": "Everyday Knowledge",
+    "field": "Home & Repair",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Chemistry",
+      "chapter": "Liquids & Intermolecular Forces",
+      "section": "The Liquid State",
+      "sectionId": "chem-ch34-s6",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Chemistry",
+        "chapter": "Liquids & Intermolecular Forces",
+        "section": "The Liquid State",
+        "sectionId": "chem-ch34-s6",
+        "score": 0.14
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Molecular Structure & Symmetry",
+        "section": "LCAO-MO & Bond Order",
+        "sectionId": "chem-ch17-s1",
+        "score": 0.13
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Carbonyl Chemistry In Depth",
+        "section": "Substitution at Carbonyl Carbon",
+        "sectionId": "chem-ch21-s2",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "every-painting-walls",
+    "title": "Painting Walls Like a Professional",
+    "domain": "Everyday Knowledge",
+    "field": "Home & Repair",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Temperature, Heat & the First Law",
+      "section": "The Celsius and Fahrenheit Scales",
+      "sectionId": "hall-ch18-s2",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Temperature, Heat & the First Law",
+        "section": "The Celsius and Fahrenheit Scales",
+        "sectionId": "hall-ch18-s2",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Reflection and Refraction",
+        "sectionId": "hall-ch33-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "Web Development & JavaScript",
+        "chapter": "HTML5: Forms, Media & the DOM",
+        "section": "Debugging HTML & HTML Accessibility",
+        "sectionId": "web-ch3-s5",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "every-growing-food-at-home",
+    "title": "Growing Food at Home: From Balcony to Garden Bed",
+    "domain": "Everyday Knowledge",
+    "field": "Garden & Growing",
+    "score": 0.14,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Partial Derivatives",
+      "section": "Maximum and Minimum Values",
+      "sectionId": "calc-ch14-s7",
+      "score": 0.14
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Partial Derivatives",
+        "section": "Maximum and Minimum Values",
+        "sectionId": "calc-ch14-s7",
+        "score": 0.14
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Relativity",
+        "section": "Momentum and Energy",
+        "sectionId": "hall-ch37-s6",
+        "score": 0.14
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "STL Containers",
+        "section": "Introduction",
+        "sectionId": "cpp-ch31-s1",
+        "score": 0.14
+      }
+    ]
+  },
+  {
+    "id": "geo-minerals-rocks",
+    "title": "Minerals, Rocks and the Rock Cycle",
+    "domain": "Physical Sciences",
+    "field": "Geology & Earth Science",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Chemistry",
+      "chapter": "Solid State: Lattices, Packing & Defects",
+      "section": "Ionic Solids & Lattice Energy",
+      "sectionId": "chem-ch33-s3",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Chemistry",
+        "chapter": "Solid State: Lattices, Packing & Defects",
+        "section": "Ionic Solids & Lattice Energy",
+        "sectionId": "chem-ch33-s3",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Strings",
+        "section": "Character Classification",
+        "sectionId": "cpp-ch36-s2",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "I/O Streams",
+        "section": "Error Handling",
+        "sectionId": "cpp-ch38-s3",
+        "score": 0.13
+      }
+    ]
+  },
+  {
     "id": "bio-photosynthesis",
     "title": "Photosynthesis: Light and Dark Reactions",
     "domain": "Life Sciences",
@@ -3644,6 +9116,120 @@
         "section": "Light as a Wave",
         "sectionId": "hall-ch35-s1",
         "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "bio-anatomy-digestion",
+    "title": "The Digestive System: From Meal to Molecule",
+    "domain": "Life Sciences",
+    "field": "Anatomy & Physiology",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Computer Graphics & Image Processing",
+      "chapter": "Computer Graphics",
+      "section": "Output Primitives",
+      "sectionId": "cse-e-cgraphics-s1",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Computer Graphics & Image Processing",
+        "chapter": "Computer Graphics",
+        "section": "Output Primitives",
+        "sectionId": "cse-e-cgraphics-s1",
+        "score": 0.13
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Schaum Lab: Vectors, Matrices & Determinants",
+        "section": "Cramer & Consistency Drills",
+        "sectionId": "engmath-ch21-s4",
+        "score": 0.11
+      },
+      {
+        "subject": "Signals, Systems & DSP",
+        "chapter": "Digital Signal Processing",
+        "section": "Discrete-Time Signals & Systems",
+        "sectionId": "ece-e-dsp-s1",
+        "score": 0.11
+      }
+    ]
+  },
+  {
+    "id": "bio-microbe-antibiotic-resistance",
+    "title": "Antibiotics and the Rise of Resistance",
+    "domain": "Life Sciences",
+    "field": "Microbiology & Disease",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Chemistry",
+      "chapter": "Everyday & Industrial Chemistry",
+      "section": "Drugs: Antacids to Antibiotics",
+      "sectionId": "chem-ch44-s2",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Chemistry",
+        "chapter": "Everyday & Industrial Chemistry",
+        "section": "Drugs: Antacids to Antibiotics",
+        "sectionId": "chem-ch44-s2",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Statements",
+        "section": "Selection Statements",
+        "sectionId": "cpp-ch9-s4",
+        "score": 0.13
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Algorithms",
+        "section": "",
+        "sectionId": "rosen-ch3",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "bio-human-evolution",
+    "title": "From Lucy to Us: The Story of Human Evolution",
+    "domain": "Life Sciences",
+    "field": "Evolutionary Biology",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "A Tour of C++: The Basics",
+      "section": "Postscript",
+      "sectionId": "cpp-ch2-s5",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: The Basics",
+        "section": "Postscript",
+        "sectionId": "cpp-ch2-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "Aptitude & Reasoning",
+        "chapter": "General Science",
+        "section": "Biology: Cells, Genetics & Human Physiology",
+        "sectionId": "apt-gensci-s3",
+        "score": 0.11
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Templates",
+        "section": "A Simple String Template",
+        "sectionId": "cpp-ch23-s2",
+        "score": 0.11
       }
     ]
   },
@@ -3686,6 +9272,82 @@
     ]
   },
   {
+    "id": "psy-development-lifespan",
+    "title": "How Minds Grow: Developmental Psychology Across the Lifespan",
+    "domain": "Social Sciences",
+    "field": "Psychology",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Algorithms",
+      "section": "",
+      "sectionId": "rosen-ch3",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Algorithms",
+        "section": "",
+        "sectionId": "rosen-ch3",
+        "score": 0.13
+      },
+      {
+        "subject": "Electronic Devices & Circuits",
+        "chapter": "Analog Circuits",
+        "section": "CE/CS and CB/CG Stages",
+        "sectionId": "ece-e-analog-s18",
+        "score": 0.12
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "Pascal's Principle",
+        "sectionId": "hall-ch14-s4",
+        "score": 0.11
+      }
+    ]
+  },
+  {
+    "id": "anth-cultural-relativism",
+    "title": "Cultural Anthropology: Making Sense of Human Difference",
+    "domain": "Social Sciences",
+    "field": "Anthropology",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Waves—I",
+      "section": "Interference of Waves",
+      "sectionId": "hall-ch16-s5",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Waves—I",
+        "section": "Interference of Waves",
+        "sectionId": "hall-ch16-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Locales",
+        "section": "Handling Cultural Differences",
+        "sectionId": "cpp-ch39-s1",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Generic Programming",
+        "section": "Making Concepts Concrete",
+        "sectionId": "cpp-ch24-s4",
+        "score": 0.1
+      }
+    ]
+  },
+  {
     "id": "hum-mythology-patterns",
     "title": "Why Myths Repeat: The Monomyth and Cultural Archetypes",
     "domain": "Humanities",
@@ -3719,6 +9381,158 @@
         "chapter": "Locales",
         "section": "Handling Cultural Differences",
         "sectionId": "cpp-ch39-s1",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "hist-decolonization",
+    "title": "Decolonization and the Making of the Global South",
+    "domain": "Humanities",
+    "field": "World History",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Waves—I",
+      "section": "Wave Speed on a Stretched String",
+      "sectionId": "hall-ch16-s2",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Waves—I",
+        "section": "Wave Speed on a Stretched String",
+        "sectionId": "hall-ch16-s2",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Interference",
+        "section": "Light as a Wave",
+        "sectionId": "hall-ch35-s1",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Electromagnetic Waves",
+        "sectionId": "hall-ch33-s1",
+        "score": 0.11
+      }
+    ]
+  },
+  {
+    "id": "lang-epic-tradition",
+    "title": "From Gilgamesh to the Odyssey: The Birth of Literature",
+    "domain": "Languages & World Literature",
+    "field": "World Literature",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Chemistry",
+      "chapter": "Spectroscopy Problem Workshops",
+      "section": "Elucidation Drill I: Formula First",
+      "sectionId": "chem-ch29-s1",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Chemistry",
+        "chapter": "Spectroscopy Problem Workshops",
+        "section": "Elucidation Drill I: Formula First",
+        "sectionId": "chem-ch29-s1",
+        "score": 0.13
+      },
+      {
+        "subject": "Web Development & JavaScript",
+        "chapter": "Asynchronous JavaScript",
+        "section": "Asynchronous Programming with Callbacks",
+        "sectionId": "js-ch13-s1",
+        "score": 0.12
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Rotation of Rigid Bodies",
+        "section": "Torque",
+        "sectionId": "hall-ch10-s6",
+        "score": 0.11
+      }
+    ]
+  },
+  {
+    "id": "lang-russian-foundations",
+    "title": "Russian Foundations: Cyrillic, Cases and Aspect",
+    "domain": "Languages & World Literature",
+    "field": "Russian",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Chemistry",
+      "chapter": "Heterocycles & Retrosynthetic Analysis",
+      "section": "Retrosynthetic Disconnections",
+      "sectionId": "chem-ch25-s3",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Chemistry",
+        "chapter": "Heterocycles & Retrosynthetic Analysis",
+        "section": "Retrosynthetic Disconnections",
+        "sectionId": "chem-ch25-s3",
+        "score": 0.13
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Matrices & Determinants",
+        "section": "Cramer Systems & Consistency",
+        "sectionId": "math-a5-s10",
+        "score": 0.13
+      },
+      {
+        "subject": "AI, Machine Learning & Data Science",
+        "chapter": "Deep Learning & Applications",
+        "section": "Deep Learning Foundations",
+        "sectionId": "cse-e-deeplearning-s1",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "lang-semantics-pragmatics",
+    "title": "Meaning: Semantics and Pragmatics",
+    "domain": "Languages & World Literature",
+    "field": "Linguistics",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Thermal & Fluid Sciences",
+      "chapter": "Gas Dynamics & Compressible Flow",
+      "section": "Isentropic Flow & Area-Mach Relations",
+      "sectionId": "tf-gasdynamics-s2",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Thermal & Fluid Sciences",
+        "chapter": "Gas Dynamics & Compressible Flow",
+        "section": "Isentropic Flow & Area-Mach Relations",
+        "sectionId": "tf-gasdynamics-s2",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Functions",
+        "section": "Argument Passing",
+        "sectionId": "cpp-ch12-s2",
+        "score": 0.13
+      },
+      {
+        "subject": "Compiler Design",
+        "chapter": "Lexical Analysis",
+        "section": "Tokens, Lexemes & Attributes",
+        "sectionId": "compcoa-ch6-s1",
         "score": 0.13
       }
     ]
@@ -3762,6 +9576,44 @@
     ]
   },
   {
+    "id": "law-tax-fundamentals",
+    "title": "Tax Law: Brackets, Deductions and Audits",
+    "domain": "Law & Governance",
+    "field": "Tax & Administrative Law",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Electromagnetic Waves",
+      "section": "Reflection and Refraction",
+      "sectionId": "hall-ch33-s5",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Reflection and Refraction",
+        "sectionId": "hall-ch33-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Thermodynamics & Thermochemistry",
+        "section": "Hess Law & Bond Enthalpies",
+        "sectionId": "chem-ch4-s2",
+        "score": 0.12
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Applications of Integration",
+        "section": "Work",
+        "sectionId": "calc-ch6-s4",
+        "score": 0.11
+      }
+    ]
+  },
+  {
     "id": "bus-inflation-monetary-policy",
     "title": "Inflation and What Central Banks Actually Do",
     "domain": "Business & Economics",
@@ -3796,6 +9648,690 @@
         "section": "Class B and Crossover Distortion",
         "sectionId": "ece-e-analog-s34",
         "score": 0.12
+      }
+    ]
+  },
+  {
+    "id": "mkt-four-ps",
+    "title": "The Four Ps and the Psychology of Buying",
+    "domain": "Business & Economics",
+    "field": "Marketing",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Sequences, Series & Logarithms",
+      "section": "Strategy for Testing Series",
+      "sectionId": "calc-ch11-s7",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Sequences, Series & Logarithms",
+        "section": "Strategy for Testing Series",
+        "sectionId": "calc-ch11-s7",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Interference",
+        "section": "Young's Interference Experiment",
+        "sectionId": "hall-ch35-s2",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Relativity",
+        "section": "Relativistic Electrodynamics",
+        "sectionId": "hall-ch37-s25",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "mgt-negotiation-batna",
+    "title": "Negotiation: Interests, BATNA and the Zone of Agreement",
+    "domain": "Business & Economics",
+    "field": "Management & Leadership",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Operating Systems",
+      "chapter": "I/O Systems",
+      "section": "I/O Performance and Power Management",
+      "sectionId": "osc-ch12-s3",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Operating Systems",
+        "chapter": "I/O Systems",
+        "section": "I/O Performance and Power Management",
+        "sectionId": "osc-ch12-s3",
+        "score": 0.13
+      },
+      {
+        "subject": "Database Management Systems",
+        "chapter": "Transactions & ACID",
+        "section": "",
+        "sectionId": "dbms-ch6",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Functions",
+        "section": "Argument Passing",
+        "sectionId": "cpp-ch12-s2",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "econ-game-theory-toolkit",
+    "title": "Game Theory Beyond the Prisoner’s Dilemma",
+    "domain": "Business & Economics",
+    "field": "Strategy",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Induction and Recursion",
+      "section": "Recursive Algorithms",
+      "sectionId": "rosen-ch5-s4",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Induction and Recursion",
+        "section": "Recursive Algorithms",
+        "sectionId": "rosen-ch5-s4",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Induction and Inductance",
+        "section": "Self-Induction",
+        "sectionId": "hall-ch30-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Namespaces",
+        "section": "Modularization and Interfaces",
+        "sectionId": "cpp-ch14-s3",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "mind-anxiety-depression",
+    "title": "Anxiety and Depression: What They Actually Are",
+    "domain": "Health & Wellness",
+    "field": "Mental Health",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Further Applications of Integration",
+      "section": "Probability",
+      "sectionId": "calc-ch8-s5",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Further Applications of Integration",
+        "section": "Probability",
+        "sectionId": "calc-ch8-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Statements",
+        "section": "Selection Statements",
+        "sectionId": "cpp-ch9-s4",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Motion in a Straight Line",
+        "section": "Speed",
+        "sectionId": "hall-ch2-s14",
+        "score": 0.12
+      }
+    ]
+  },
+  {
+    "id": "health-understanding-cancer",
+    "title": "Understanding Cancer: From Mutation to Metastasis",
+    "domain": "Health & Wellness",
+    "field": "Disease & Treatment",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Electromagnetic Waves",
+      "section": "Radiation Pressure",
+      "sectionId": "hall-ch33-s3",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Radiation Pressure",
+        "sectionId": "hall-ch33-s3",
+        "score": 0.13
+      },
+      {
+        "subject": "Mechanics of Solids & Materials",
+        "chapter": "Materials Science & Metallurgy",
+        "section": "Phase Diagrams & Heat Treatment",
+        "sectionId": "me-e-materials-s2",
+        "score": 0.12
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Temperature, Heat & the First Law",
+        "section": "Radiation",
+        "sectionId": "hall-ch18-s28",
+        "score": 0.11
+      }
+    ]
+  },
+  {
+    "id": "health-vision-eye-care",
+    "title": "Vision and Eye Care: Refraction, Screens and Saving Sight",
+    "domain": "Health & Wellness",
+    "field": "Disease & Treatment",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Induction and Inductance",
+      "section": "Self-Induction",
+      "sectionId": "hall-ch30-s5",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Induction and Inductance",
+        "section": "Self-Induction",
+        "sectionId": "hall-ch30-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Reflection and Refraction",
+        "sectionId": "hall-ch33-s5",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Reﬂection and Refraction",
+        "sectionId": "hall-ch33-s30",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "art-dance-movement-traditions",
+    "title": "Dance: Ballet, Folk and Contemporary — How Movement Traditions Work",
+    "domain": "Arts & Culture",
+    "field": "Dance",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Generic Programming",
+      "section": "Concepts",
+      "sectionId": "cpp-ch24-s3",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Generic Programming",
+        "section": "Concepts",
+        "sectionId": "cpp-ch24-s3",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Interference",
+        "section": "Interference and Double-Slit Intensity",
+        "sectionId": "hall-ch35-s3",
+        "score": 0.11
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Diffraction",
+        "section": "Intensity in Single-Slit Diffraction",
+        "sectionId": "hall-ch36-s2",
+        "score": 0.11
+      }
+    ]
+  },
+  {
+    "id": "art-comics-manga-sequential-art",
+    "title": "Comics and Manga: How Sequential Art Tells Stories",
+    "domain": "Arts & Culture",
+    "field": "Animation & Sequential Art",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Three-Dimensional Geometry",
+      "section": "Distances & Image Problems",
+      "sectionId": "math-a10-s9",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Three-Dimensional Geometry",
+        "section": "Distances & Image Problems",
+        "sectionId": "math-a10-s9",
+        "score": 0.13
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Fluids",
+        "section": "The Equation of Continuity",
+        "sectionId": "hall-ch14-s6",
+        "score": 0.13
+      },
+      {
+        "subject": "Electrical Machines, Drives & EV",
+        "chapter": "Electrical Machines I",
+        "section": "Three-Phase Transformers",
+        "sectionId": "ee-e-machines1-s5",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "art-sculpture-ceramics-craft",
+    "title": "Sculpture and Ceramics: Carving, Modeling, Casting and the Kiln",
+    "domain": "Arts & Culture",
+    "field": "Sculpture & Craft",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Modeling Computation",
+      "section": "Languages and Grammars",
+      "sectionId": "rosen-ch13-s1",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Modeling Computation",
+        "section": "Languages and Grammars",
+        "sectionId": "rosen-ch13-s1",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Locales",
+        "section": "Class locale",
+        "sectionId": "cpp-ch39-s2",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Concurrency",
+        "section": "Memory Model",
+        "sectionId": "cpp-ch41-s2",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "art-songwriting-verse-chorus-bridge",
+    "title": "Songwriting: Verse, Chorus, Bridge and the Architecture of a Song",
+    "domain": "Arts & Culture",
+    "field": "Music Theory & Practice",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Functions",
+      "section": "Overloaded Functions",
+      "sectionId": "cpp-ch12-s3",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Functions",
+        "section": "Overloaded Functions",
+        "sectionId": "cpp-ch12-s3",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Functions",
+        "section": "Pre- and Postconditions",
+        "sectionId": "cpp-ch12-s4",
+        "score": 0.13
+      },
+      {
+        "subject": "Web Development & JavaScript",
+        "chapter": "APIs in Practice: REST, GraphQL, Realtime & Jobs",
+        "section": "WebSockets & Server-Sent Events",
+        "sectionId": "web-ch14-s3",
+        "score": 0.13
+      }
+    ]
+  },
+  {
+    "id": "art-jazz-improvisation-changes",
+    "title": "Jazz Improvisation: Swing, Changes and Learning to Solo",
+    "domain": "Arts & Culture",
+    "field": "Music Theory & Practice",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "Functions",
+      "section": "Overloaded Functions",
+      "sectionId": "cpp-ch12-s3",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Functions",
+        "section": "Overloaded Functions",
+        "sectionId": "cpp-ch12-s3",
+        "score": 0.13
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Generic Programming",
+        "section": "Concepts",
+        "sectionId": "cpp-ch24-s3",
+        "score": 0.13
+      },
+      {
+        "subject": "AI, Machine Learning & Data Science",
+        "chapter": "Deep Learning & Applications",
+        "section": "Training, Regularization & Applications",
+        "sectionId": "cse-e-deeplearning-s4",
+        "score": 0.11
+      }
+    ]
+  },
+  {
+    "id": "every-pet-care-essentials",
+    "title": "Pet Care Essentials: Dogs, Cats and the Vet",
+    "domain": "Everyday Knowledge",
+    "field": "Practical Skills",
+    "score": 0.13,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Mathematics",
+      "chapter": "Theory of Equations",
+      "section": "Descartes Rule & Root Bounds",
+      "sectionId": "advmath-ch11-s3",
+      "score": 0.13
+    },
+    "topMatches": [
+      {
+        "subject": "Mathematics",
+        "chapter": "Theory of Equations",
+        "section": "Descartes Rule & Root Bounds",
+        "sectionId": "advmath-ch11-s3",
+        "score": 0.13
+      },
+      {
+        "subject": "Chemistry",
+        "chapter": "Spectroscopy Problem Workshops",
+        "section": "Elucidation Drill I: Formula First",
+        "sectionId": "chem-ch29-s1",
+        "score": 0.13
+      },
+      {
+        "subject": "AI, Machine Learning & Data Science",
+        "chapter": "Deep Learning & Applications",
+        "section": "Training, Regularization & Applications",
+        "sectionId": "cse-e-deeplearning-s4",
+        "score": 0.11
+      }
+    ]
+  },
+  {
+    "id": "bio-microbe-microbiome",
+    "title": "The Microbiome: Your Trillion Tenants",
+    "domain": "Life Sciences",
+    "field": "Microbiology & Disease",
+    "score": 0.11,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Software Engineering & Emerging Tech",
+      "chapter": "Cloud Computing",
+      "section": "Storage, Databases & Scaling",
+      "sectionId": "cse-e-cloud-s4",
+      "score": 0.11
+    },
+    "topMatches": [
+      {
+        "subject": "Software Engineering & Emerging Tech",
+        "chapter": "Cloud Computing",
+        "section": "Storage, Databases & Scaling",
+        "sectionId": "cse-e-cloud-s4",
+        "score": 0.11
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Further Applications of Integration",
+        "section": "Applications to Physics and Engineering",
+        "sectionId": "calc-ch8-s3",
+        "score": 0.1
+      },
+      {
+        "subject": "Software Engineering & Emerging Tech",
+        "chapter": "Cloud Computing",
+        "section": "Platforms, Serverless & Security",
+        "sectionId": "cse-e-cloud-s5",
+        "score": 0.1
+      }
+    ]
+  },
+  {
+    "id": "bio-speciation-barriers",
+    "title": "How New Species Are Born",
+    "domain": "Life Sciences",
+    "field": "Evolutionary Biology",
+    "score": 0.11,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Relativity",
+      "section": "Simultaneity and Time Dilation",
+      "sectionId": "hall-ch37-s1",
+      "score": 0.11
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Relativity",
+        "section": "Simultaneity and Time Dilation",
+        "sectionId": "hall-ch37-s1",
+        "score": 0.11
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Counting",
+        "section": "Permutations and Combinations",
+        "sectionId": "rosen-ch6-s3",
+        "score": 0.1
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Further Applications of Integration",
+        "section": "Applications to Economics and Biology",
+        "sectionId": "calc-ch8-s4",
+        "score": 0.1
+      }
+    ]
+  },
+  {
+    "id": "hist-world-wars",
+    "title": "The World Wars: Causes, Courses and Consequences",
+    "domain": "Humanities",
+    "field": "World History",
+    "score": 0.11,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "Physics",
+      "chapter": "Gravitation",
+      "section": "Newton's Law of Gravitation",
+      "sectionId": "hall-ch13-s1",
+      "score": 0.11
+    },
+    "topMatches": [
+      {
+        "subject": "Physics",
+        "chapter": "Gravitation",
+        "section": "Newton's Law of Gravitation",
+        "sectionId": "hall-ch13-s1",
+        "score": 0.11
+      },
+      {
+        "subject": "Physics",
+        "chapter": "Electromagnetic Waves",
+        "section": "Electromagnetic Basics",
+        "sectionId": "hall-ch33-s37",
+        "score": 0.1
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Exception Handling",
+        "section": "A vector Implementation",
+        "sectionId": "cpp-ch13-s6",
+        "score": 0.1
+      }
+    ]
+  },
+  {
+    "id": "arth-renaissance-to-modern",
+    "title": "Renaissance to Modernism: How Seeing Changed",
+    "domain": "Humanities",
+    "field": "Art History",
+    "score": 0.11,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "C & C++ Programming",
+      "chapter": "A Tour of C++: Abstraction Mechanisms",
+      "section": "Introduction",
+      "sectionId": "cpp-ch3-s1",
+      "score": 0.11
+    },
+    "topMatches": [
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "A Tour of C++: Abstraction Mechanisms",
+        "section": "Introduction",
+        "sectionId": "cpp-ch3-s1",
+        "score": 0.11
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Further Applications of Integration",
+        "section": "Area of a Surface of Revolution",
+        "sectionId": "calc-ch8-s2",
+        "score": 0.1
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Applications of Integration",
+        "section": "Volumes by Cylindrical Shells",
+        "sectionId": "calc-ch6-s3",
+        "score": 0.09
+      }
+    ]
+  },
+  {
+    "id": "rel-abrahamic-faiths",
+    "title": "Judaism, Christianity and Islam: The Abrahamic Faiths",
+    "domain": "Humanities",
+    "field": "Religious Studies",
+    "score": 0.11,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "AI, Machine Learning & Data Science",
+      "chapter": "Deep Learning & Applications",
+      "section": "Training, Regularization & Applications",
+      "sectionId": "cse-e-deeplearning-s4",
+      "score": 0.11
+    },
+    "topMatches": [
+      {
+        "subject": "AI, Machine Learning & Data Science",
+        "chapter": "Deep Learning & Applications",
+        "section": "Training, Regularization & Applications",
+        "sectionId": "cse-e-deeplearning-s4",
+        "score": 0.11
+      },
+      {
+        "subject": "Mathematics",
+        "chapter": "Theory of Equations",
+        "section": "Cubic & Biquadratic Classics",
+        "sectionId": "advmath-ch11-s4",
+        "score": 0.08
+      },
+      {
+        "subject": "C & C++ Programming",
+        "chapter": "Notes to the Reader",
+        "section": "History",
+        "sectionId": "cpp-ch1-s4",
+        "score": 0.08
+      }
+    ]
+  },
+  {
+    "id": "lang-phonetics",
+    "title": "The Sounds of Speech: Phonetics and the IPA",
+    "domain": "Languages & World Literature",
+    "field": "Phonetics & Phonology",
+    "score": 0.08,
+    "verdict": "unique",
+    "bestMatch": {
+      "subject": "English & Comprehension",
+      "chapter": "Standard English Conventions",
+      "section": "Form, Structure, and Sense",
+      "sectionId": "eng-r3-s2",
+      "score": 0.08
+    },
+    "topMatches": [
+      {
+        "subject": "English & Comprehension",
+        "chapter": "Standard English Conventions",
+        "section": "Form, Structure, and Sense",
+        "sectionId": "eng-r3-s2",
+        "score": 0.08
+      },
+      {
+        "subject": "English & Comprehension",
+        "chapter": "Expression of Ideas",
+        "section": "Transitions",
+        "sectionId": "eng-r4-s1",
+        "score": 0.08
+      },
+      {
+        "subject": "English & Comprehension",
+        "chapter": "English Language & Comprehension",
+        "section": "Voice, Narration & Reading Comprehension",
+        "sectionId": "eng-l1-s5",
+        "score": 0.08
       }
     ]
   }

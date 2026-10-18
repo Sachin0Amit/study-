@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 import { Check, Clock, Layers, ListChecks, Target } from 'lucide-react'
 import { LIBRARY_BOOKS, getChapter, getSections } from '@/data/library'
 import type { SectionContent, SectionMeta } from '@/data/library'
-import { allContent } from '@/data/content'
+import { useAllContent } from '@/hooks/use-content'
 import { ChapterIcon } from './chapter-icon'
 import { RichText } from '../rich-text'
 
@@ -43,15 +43,17 @@ interface SectionEntry {
  * flattens to a clean black-on-white A4 sheet (see globals.css print block).
  */
 export function ChapterSummary({ chapterId }: { chapterId: string }) {
+  /* lesson corpus arrives by runtime fetch (kept out of the bundle) */
+  const allContent = useAllContent()
   // sections with a matching master-content entry; missing entries are skipped
   const entries = useMemo<SectionEntry[]>(() => {
     const byId = new Map<string, SectionContent>(
-      allContent.map((c) => [c.sectionId, c] as [string, SectionContent]),
+      (allContent ?? []).map((c) => [c.sectionId, c] as [string, SectionContent]),
     )
     return getSections(chapterId)
       .map((sec) => ({ sec, content: byId.get(sec.id) }))
       .filter((e): e is SectionEntry => e.content != null)
-  }, [chapterId])
+  }, [chapterId, allContent])
 
   const chapter = getChapter(chapterId)
   if (!chapter) return null

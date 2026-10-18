@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
 import { getChapter, getSections, type QuizQuestion } from '@/data/library'
-import { getSectionContent } from '@/data/content'
+import { getSectionContent } from '@/data/content/server'
 import { shuffleQuizOptions } from '@/lib/quiz-shuffle'
 
 // ============ X7 Pro — Paper-DNA Mock Paper Forge ============
