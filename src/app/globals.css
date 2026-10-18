@@ -928,3 +928,9 @@ body.sv-summary-open {
   background-size: 18px 18px;
 }
 
+
+/* ---- Voice Tutor: recording-bars pulse ---- */
+@keyframes vt-bar {
+  from { transform: scaleY(0.35); }
+  to   { transform: scaleY(1); }
+}

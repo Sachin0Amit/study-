@@ -25,6 +25,7 @@ import {
 import { easySubjectLine } from '@/data/easy-library'
 import { EasyLine } from './easy-box'
 import { ChapterIcon } from './chapter-icon'
+import { SIMVERSE_TOOL_KEYS } from '@/components/interactives/lesson-sims'
 import { useStudy } from '@/store/useStudy'
 
 const FOCUS_RING =
@@ -111,7 +112,11 @@ export function LibraryView() {
   const navigate = useStudy((s) => s.navigate)
   const totalSections = LIBRARY_SECTIONS.length
   const totalChapters = LIBRARY_CHAPTERS.length
-  const totalTools = new Set(LIBRARY_CHAPTERS.map((c) => c.interactiveKey).filter(Boolean)).size
+  const totalTools =
+    new Set([
+      ...LIBRARY_CHAPTERS.map((c) => c.interactiveKey).filter(Boolean),
+      ...SIMVERSE_TOOL_KEYS,
+    ]).size
   const totalQuestions = TOTAL_QUIZ_QUESTIONS
   /** Knowledge-section counts — derived from the same registries that render
    *  the section subject cards, so the hero always matches the catalog. */

@@ -10,7 +10,7 @@ import { easyLabLine } from '@/data/easy-library'
 import { EasyBox, EasyLine } from './easy-box'
 import { useStudy } from '@/store/useStudy'
 
-type SubjectKey = 'math' | 'physics' | 'chem' | 'os' | 'js' | 'dld' | 'elec' | 'cpp' | 'java'
+type SubjectKey = 'math' | 'physics' | 'chem' | 'os' | 'js' | 'dld' | 'elec' | 'cpp' | 'java' | 'simverse'
 
 interface LabGroup {
   subject: SubjectKey
@@ -137,6 +137,12 @@ const LAB_GROUPS: LabGroup[] = [
     groupLabel: 'Horstmann, Core Java',
     keys: ['java-playground'],
   },
+  {
+    subject: 'simverse',
+    subjectLabel: 'Living Systems & Society',
+    groupLabel: 'Simverse — chaos, life, markets & climate',
+    keys: ['chaos-lab', 'fractal-lab', 'evolution-lab', 'epidemic-lab', 'econ-lab', 'climate-lab'],
+  },
 ]
 
 const FILTERS: { key: 'all' | SubjectKey; label: string }[] = [
@@ -150,6 +156,7 @@ const FILTERS: { key: 'all' | SubjectKey; label: string }[] = [
   { key: 'elec', label: 'Electronics' },
   { key: 'cpp', label: 'C++' },
   { key: 'java', label: 'Java' },
+  { key: 'simverse', label: 'Living Systems' },
 ]
 
 const TOTAL_LABS = LAB_GROUPS.reduce((n, g) => n + g.keys.length, 0)
@@ -164,6 +171,7 @@ const SUBJECT_ACCENT: Record<SubjectKey, string> = {
   elec: 'text-lime-300/90 border-lime-400/25 bg-lime-400/[0.06]',
   cpp: 'text-violet-300/90 border-violet-400/25 bg-violet-400/[0.06]',
   java: 'text-orange-300/90 border-orange-400/25 bg-orange-400/[0.06]',
+  simverse: 'text-fuchsia-300/90 border-fuchsia-400/25 bg-fuchsia-400/[0.06]',
 }
 
 function focusRing() {

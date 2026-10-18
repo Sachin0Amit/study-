@@ -307,7 +307,7 @@ export default function Home() {
                   <FlaskConical className="h-3 w-3" /> Lab floor
                 </button>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <BookOpen className="h-3 w-3" /> 60 labs · 2,100 lessons
+                  <BookOpen className="h-3 w-3" /> 66 labs · 2,100 lessons
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
                   <Layers className="h-3 w-3" /> SRS flashcards · 12,400+ cards
@@ -336,7 +336,7 @@ export default function Home() {
           <div className="mt-8 flex flex-col gap-2 border-t border-border/60 pt-5 text-[11px] text-muted-foreground/70 sm:flex-row sm:items-center sm:justify-between">
             <span>StudyVerse — master every book, interactively.</span>
             <span className="font-mono">
-              4,136 lessons · 60 labs · 9,774 quiz questions · 626 chapters · 54 books · 54 subjects
+              4,136 lessons · 66 labs · 9,774 quiz questions · 626 chapters · 54 books · 54 subjects
             </span>
           </div>
         </div>

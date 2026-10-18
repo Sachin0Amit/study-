@@ -251,3 +251,15 @@ model MemoryPalace {
 
   @@unique([deviceId, sectionKey])
 }
+
+// ============ X9 — AI Lesson Illustrator ============
+
+model LessonIllustration {
+  id          String   @id @default(cuid())
+  sectionKey  String   @unique
+  prompt      String
+  style       String
+  imageBase64 String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

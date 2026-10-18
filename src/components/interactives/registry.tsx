@@ -73,6 +73,13 @@ const registry: Record<string, ComponentType> = {
   'kinetics-lab': lazy(() => import('./kinetics-lab')),
   'crystal-lattice-lab': lazy(() => import('../visual/webgl-crystal-molecule-viewer')),
   'breadboard-oscilloscope-sim': lazy(() => import('./breadboard-oscilloscope-sim')),
+  // ---- Simverse: living-systems & society labs (paired with Knowledge Universe lessons) ----
+  'chaos-lab': lazy(() => import('./chaos-lab')),
+  'fractal-lab': lazy(() => import('./fractal-lab')),
+  'evolution-lab': lazy(() => import('./evolution-lab')),
+  'epidemic-lab': lazy(() => import('./epidemic-lab')),
+  'econ-lab': lazy(() => import('./econ-lab')),
+  'climate-lab': lazy(() => import('./climate-lab')),
 }
 
 export interface ToolMeta {
@@ -148,6 +155,13 @@ export const INTERACTIVE_META: Record<string, ToolMeta> = {
   'kinetics-lab': { title: 'Chemical Kinetics & Arrhenius', description: 'Simulate zero, first and second order rate laws, reaction half-lives, and Arrhenius activation energy barriers.', chapter: 'Chem · Kinetics & Thermodynamics' },
   'crystal-lattice-lab': { title: 'WebGL 3D Molecule & Crystal Lattice Viewer', description: 'Hardware-accelerated WebGL 3D viewer for crystal unit cells (SC, BCC, FCC, NaCl, Diamond), Miller indices slicing planes (100)/(110)/(111), quantum orbitals, and live bond angle measurements.', chapter: 'Chem · Solid State & Bonding' },
   'breadboard-oscilloscope-sim': { title: 'Breadboard & CRT Oscilloscope Sim', description: 'Interactive 30-column solderless breadboard with animated electron currents, function generator, DC power, and dual-channel calibrated phosphor oscilloscope.', chapter: 'Elec · Lab Instruments & Circuits' },
+  // ---- Simverse: living-systems & society labs ----
+  'chaos-lab': { title: 'Chaos & Nonlinear Dynamics Lab', description: 'Walk the logistic map cobweb step by step, watch the full bifurcation tree bloom, then fly through the Lorenz butterfly — chaos from three simple rules.', chapter: 'Physical Sciences · Chaos' },
+  'fractal-lab': { title: 'Fractal Explorer Lab', description: 'Zoom into the Mandelbrot set, grow Julia sets and L-system trees, and watch a Koch snowflake’s perimeter run to infinity while its area converges.', chapter: 'Physical Sciences · Fractals' },
+  'evolution-lab': { title: 'Evolution & Population Genetics Lab', description: 'Run a real Wright–Fisher meadow — tune selection, mutation, drift and migration and watch allele frequencies sweep, wobble or fix.', chapter: 'Life Sciences · Evolution' },
+  'epidemic-lab': { title: 'Epidemiology Lab: Flatten the Curve', description: 'An SIR city of moving dots — set R₀, distancing and vaccination, race epidemics, and find the herd-immunity threshold yourself.', chapter: 'Health · Immunity & Public Health' },
+  'econ-lab': { title: 'Market Lab: Supply, Demand & Policy', description: 'Drag the curves, levy taxes, cap rents — see equilibrium, elasticity, deadweight loss and tax incidence respond live.', chapter: 'Business & Economics · Markets' },
+  'climate-lab': { title: 'Climate & Carbon Budget Lab', description: 'Steer the world’s emissions pathway to net zero and watch CO₂ and temperature respond — then measure your carbon budget for 1.5 °C.', chapter: 'Environment · Climate' },
 }
 
 export function InteractiveTool({ toolKey }: { toolKey: string }) {

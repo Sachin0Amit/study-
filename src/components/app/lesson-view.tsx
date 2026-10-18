@@ -28,6 +28,9 @@ import type { ChapterMeta, DepthBlock, DepthTier, DetailedDerivation, LessonFigu
 import { RichText, plainText } from '../rich-text'
 import { shuffleQuizOptions } from '@/lib/quiz-shuffle'
 import { InteractiveTool } from '@/components/interactives/registry'
+import { pairedSimForSection } from '@/components/interactives/lesson-sims'
+import { buildVoiceBlocks, VoiceTutor } from './voice-tutor'
+import { LessonIllustrator } from './lesson-illustrator'
 import { VisualDiagramSolver, detectDiagramTopic } from '@/components/visual/visual-diagram-solver'
 import { useStudy } from '@/store/useStudy'
 import { logActivity } from '@/lib/activity'
@@ -311,6 +314,28 @@ export function LessonView({ sectionId }: { sectionId: string }) {
   const readingOfflineCopy = !online && offlineCopy !== null && offlineCopy.sectionId === sectionId
   const content: SectionContent | undefined = readingOfflineCopy ? offlineCopy.content : bundleContent
 
+  /* Voice Tutor reading queue — the speakable spine of the lesson */
+  const voiceBlocks = useMemo(
+    () =>
+      content
+        ? buildVoiceBlocks({
+            intro: content.intro,
+            objectives: content.objectives,
+            concepts: content.concepts,
+            examples: content.examples?.map((ex) => ({
+              title: ex.title,
+              problem: typeof ex.problem === 'string' ? ex.problem : undefined,
+              result: typeof ex.result === 'string' ? ex.result : undefined,
+            })),
+            keyTakeaways: content.keyTakeaways,
+          })
+        : [],
+    [content],
+  )
+
+  /* Simverse pairing: knowledge-topic lessons resolve their lab here */
+  const lessonSimKey = pairedSimForSection(sectionId) ?? chapter?.interactiveKey ?? ''
+
   const idx = siblings.findIndex((s) => s.id === sectionId)
 
   /** academic prerequisites: either explicit from content or intelligent curriculum fallback */
@@ -523,6 +548,14 @@ export function LessonView({ sectionId }: { sectionId: string }) {
             From {bookTitle(chapter.bookId)}
           </p>
           <div aria-hidden className="sv-book-rule-double mt-5" />
+          {/* AI illustrator — commission a plate for this very lesson */}
+          <div className="mt-4">
+            <LessonIllustrator
+              sectionId={sectionId}
+              title={`${section.number} ${section.title}`}
+              concepts={(content?.concepts ?? []).slice(0, 6).map((c) => c.term)}
+            />
+          </div>
         </header>
 
         {/* mobile (<lg): collapsible "Contents" outline, right under the opening */}
@@ -854,12 +887,14 @@ export function LessonView({ sectionId }: { sectionId: string }) {
           ) : null}
 
           {/* the interactive figure — the one place a modern book goes beyond paper */}
-          <section className="mt-4 print:hidden">
-            <PartHeading>Try it — interactive figure</PartHeading>
-            <div className="overflow-hidden rounded-xl border border-book-rule font-sans text-[14px] leading-normal text-foreground">
-              <InteractiveTool toolKey={chapter.interactiveKey} />
-            </div>
-          </section>
+          {lessonSimKey ? (
+            <section className="mt-4 print:hidden">
+              <PartHeading>Try it — interactive figure</PartHeading>
+              <div className="overflow-hidden rounded-xl border border-book-rule font-sans text-[14px] leading-normal text-foreground">
+                <InteractiveTool toolKey={lessonSimKey} />
+              </div>
+            </section>
+          ) : null}
 
           {/* in summary — the closing enumeration, like an end-of-section recap */}
           {content?.keyTakeaways?.length ? (
@@ -980,6 +1015,9 @@ export function LessonView({ sectionId }: { sectionId: string }) {
         {/* "was here" — jump back to the last reading position */}
         <ResumePill target={restore.target} visible={restore.visible} below={restore.below} onJump={restore.jump} />
       </article>
+
+      {/* the lesson that talks back — Listen + voice Q&A */}
+      <VoiceTutor sectionId={sectionId} lessonTitle={`§${section.number} ${section.title}`} blocks={voiceBlocks} />
     </div>
   )
 }
