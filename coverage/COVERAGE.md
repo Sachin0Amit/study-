@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 164
-- **Books (master volumes):** 164
-- **Chapters:** 752
-- **Sections (lessons):** 4280
+- **Subjects:** 168
+- **Books (master volumes):** 168
+- **Chapters:** 781
+- **Sections (lessons):** 4338
 
 ## Foundations — 5 subjects
 
@@ -199,13 +199,16 @@
 
 ### English & Comprehension (`english`)
 
-*Read deeply, write precisely* — 5 chapters · 15 sections
+*Read deeply, write precisely* — 8 chapters · 25 sections
 
 - **Ch 1. Craft and Structure** `eng-r1` — 3 sections: Words in Context; Text Structure and Purpose; Cross-Text Connections
 - **Ch 2. Information and Ideas** `eng-r2` — 3 sections: Central Ideas and Details; Command of Evidence; Inferences
 - **Ch 3. Standard English Conventions** `eng-r3` — 2 sections: Boundaries; Form, Structure, and Sense
 - **Ch 4. Expression of Ideas** `eng-r4` — 2 sections: Transitions; Rhetorical Synthesis
 - **Ch 5. English Language & Comprehension** `eng-l1` — 5 sections: Grammar Essentials: Articles, Tenses & Agreement; Prepositions, Modals & Error Spotting; Vocabulary: Synonyms, Antonyms & One-Word Substitution; Idioms & Phrases, Sentence Completion & Para Jumbles; Voice, Narration & Reading Comprehension
+- **Ch 6. Advanced Grammar & Usage** `eng-a1` — 4 sections: Conditionals and the Subjunctive; Inversion and Emphatic Structures; Determiners and Quantifiers; Phrasal Verbs and Collocations
+- **Ch 7. Vocabulary Architecture: Roots, Affixes and Word Families** `eng-a2` — 3 sections: Latin and Greek Roots; Prefixes, Suffixes and Word Formation; Word Families and Context Clues
+- **Ch 8. Reading and Writing at Length** `eng-a3` — 3 sections: Long Passage Strategy; Cloze Tests and Paragraph Completion; Précis, Summary and Cohesive Writing
 
 ### Aptitude & Reasoning (`aptitude`)
 
@@ -830,9 +833,11 @@
 
 ### Neuroscience (`ku-life-sciences-neuroscience`)
 
-*Signals of the mind* — 1 chapters · 1 sections
+*Signals of the mind* — 3 chapters · 4 sections
 
-- **Ch 1. Cellular Neurophysiology** `ku-life-sciences-neuroscience-cellular-neurophysiology` — 1 sections: Action Potentials and Nerve Signaling
+- **Ch 1. Cellular Neurophysiology** `ku-life-sciences-neuroscience-cellular-neurophysiology` — 2 sections: Action Potentials and Nerve Signaling; The Synapse: How Neurons Talk in Chemistry
+- **Ch 2. Plasticity** `ku-life-sciences-neuroscience-plasticity` — 1 sections: Neuroplasticity: How Experience Rewires the Brain
+- **Ch 3. Neuroanatomy** `ku-life-sciences-neuroscience-neuroanatomy` — 1 sections: The Brain, Mapped: A Guided Tour from Stem to Cortex
 
 ### Botany (`ku-life-sciences-botany`)
 
@@ -851,21 +856,21 @@
 
 ### Immunology (`ku-life-sciences-immunology`)
 
-*The body’s defense layers* — 1 chapters · 1 sections
+*The body’s defense layers* — 1 chapters · 2 sections
 
-- **Ch 1. Biomedical Science** `ku-life-sciences-immunology-biomedical-science` — 1 sections: The Immune System: Innate to Adaptive Defense
+- **Ch 1. Biomedical Science** `ku-life-sciences-immunology-biomedical-science` — 2 sections: The Immune System: Innate to Adaptive Defense; Autoimmunity and Allergy: When the Defense Misfires
 
 ### Ecology (`ku-life-sciences-ecology`)
 
-*Energy through ecosystems* — 1 chapters · 1 sections
+*Energy through ecosystems* — 1 chapters · 3 sections
 
-- **Ch 1. Ecosystem Science** `ku-life-sciences-ecology-ecosystem-science` — 1 sections: Ecosystems and the Flow of Energy
+- **Ch 1. Ecosystem Science** `ku-life-sciences-ecology-ecosystem-science` — 3 sections: Ecosystems and the Flow of Energy; Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters; Biomes: A Tour of Earth's Major Ecosystems
 
 ### Anatomy & Physiology (`ku-life-sciences-anatomy-and-physiology`)
 
-*The body, system by system* — 1 chapters · 5 sections
+*The body, system by system* — 1 chapters · 9 sections
 
-- **Ch 1. Human Body Systems** `ku-life-sciences-anatomy-and-physiology-human-body-systems` — 5 sections: The Heart and Circulation: One Pump, Two Circuits; Breathing and Gas Exchange: From Air to Cell; The Digestive System: From Meal to Molecule; Kidneys, Hormones and the Body's Balance; Muscles, Bones and the Machinery of Movement
+- **Ch 1. Human Body Systems** `ku-life-sciences-anatomy-and-physiology-human-body-systems` — 9 sections: The Heart and Circulation: One Pump, Two Circuits; Breathing and Gas Exchange: From Air to Cell; The Digestive System: From Meal to Molecule; Kidneys, Hormones and the Body's Balance; Muscles, Bones and the Machinery of Movement; The Endocrine System: Hormones as the Body's Slow Messengers; The Nervous System: The Body's Command Network; The Senses: How the Body Reads the World; Reproduction and the Making of a Human
 
 ### Microbiology & Disease (`ku-life-sciences-microbiology-and-disease`)
 
@@ -904,13 +909,24 @@
 
 - **Ch 1. Minds in the Wild** `ku-life-sciences-animal-behavior-minds-in-the-wild` — 1 sections: Animal Behavior: Instinct, Learning, Signals
 
+## Mathematics — 1 subject
+
+### Probability & Statistics (`ku-mathematics-probability-and-statistics`)
+
+*Mathematics* — 3 chapters · 4 sections
+
+- **Ch 1. Descriptive Statistics** `ku-mathematics-probability-and-statistics-descriptive-statistics` — 1 sections: Describing Data: Center, Spread and the Normal Distribution
+- **Ch 2. Inferential Statistics** `ku-mathematics-probability-and-statistics-inferential-statistics` — 2 sections: Sampling and the Central Limit Theorem; Confidence Intervals and Hypothesis Testing
+- **Ch 3. Statistical Modeling** `ku-mathematics-probability-and-statistics-statistical-modeling` — 1 sections: Correlation and Linear Regression
+
 ## Environment & Sustainability — 9 subjects
 
 ### Climate Science (`ku-environment-climate-science`)
 
-*Reading the atmosphere* — 1 chapters · 1 sections
+*Reading the atmosphere* — 2 chapters · 2 sections
 
 - **Ch 1. Biogeochemical Cycles** `ku-environment-climate-science-biogeochemical-cycles` — 1 sections: Carbon Sinks and the Global Carbon Budget
+- **Ch 2. Attribution Science** `ku-environment-climate-science-attribution-science` — 1 sections: Extreme Weather in a Warming World: The Science of Attribution
 
 ### Environmental Policy (`ku-environment-environmental-policy`)
 
@@ -934,9 +950,11 @@
 
 ### Energy & Sustainability (`ku-environment-energy-and-sustainability`)
 
-*Clean power, real math* — 1 chapters · 1 sections
+*Clean power, real math* — 3 chapters · 3 sections
 
 - **Ch 1. Energy Policy** `ku-environment-energy-and-sustainability-energy-policy` — 1 sections: The Renewable Energy Transition
+- **Ch 2. Solar Power** `ku-environment-energy-and-sustainability-solar-power` — 1 sections: Solar Energy: How Photovoltaics and Solar Thermal Actually Work
+- **Ch 3. Wind Power** `ku-environment-energy-and-sustainability-wind-power` — 1 sections: Wind Energy: Turbines, Farms and the Physics of Harvesting Wind
 
 ### Conservation Biology (`ku-environment-conservation-biology`)
 
@@ -947,15 +965,16 @@
 
 ### Waste & Circularity (`ku-environment-waste-and-circularity`)
 
-*After the bin* — 1 chapters · 1 sections
+*After the bin* — 1 chapters · 3 sections
 
-- **Ch 1. Materials Through Society** `ku-environment-waste-and-circularity-materials-through-society` — 1 sections: Waste: Where It Goes After the Bin
+- **Ch 1. Materials Through Society** `ku-environment-waste-and-circularity-materials-through-society` — 3 sections: Waste: Where It Goes After the Bin; Plastics: The Polymer Century; Recycling Systems: How Materials Actually Loop Back
 
 ### Pollution & Environmental Health (`ku-environment-pollution-and-environmental-health`)
 
-*The air we breathe* — 1 chapters · 1 sections
+*The air we breathe* — 2 chapters · 2 sections
 
 - **Ch 1. The Air We Breathe** `ku-environment-pollution-and-environmental-health-the-air-we-breathe` — 1 sections: Air Pollution: Sources, Smog and Solutions
+- **Ch 2. Water Pollution** `ku-environment-pollution-and-environmental-health-water-pollution` — 1 sections: Water Pollution: Nutrients, Toxins and Dead Zones
 
 ### Urban Planning (`ku-environment-urban-planning`)
 
@@ -963,7 +982,7 @@
 
 - **Ch 1. The Built Environment** `ku-environment-urban-planning-the-built-environment` — 1 sections: Urban Planning: Designing Cities That Work
 
-## Engineering Science — 4 subjects
+## Engineering Science — 6 subjects
 
 ### Aerospace Engineering (`ku-engineering-aerospace-engineering`)
 
@@ -974,9 +993,10 @@
 
 ### Chemical Engineering (`ku-engineering-chemical-engineering`)
 
-*Reactions at scale* — 1 chapters · 1 sections
+*Reactions at scale* — 2 chapters · 3 sections
 
-- **Ch 1. Process Engineering** `ku-engineering-chemical-engineering-process-engineering` — 1 sections: Chemical Reactors: Where Reactions Meet Engineering
+- **Ch 1. Process Engineering** `ku-engineering-chemical-engineering-process-engineering` — 2 sections: Chemical Reactors: Where Reactions Meet Engineering; Separation Processes: Distillation, Filtration and the Art of Purification
+- **Ch 2. Transport Infrastructure** `ku-engineering-chemical-engineering-transport-infrastructure` — 1 sections: Pipelines: Moving Fluids Across Continents
 
 ### Railway Engineering (`ku-engineering-railway-engineering`)
 
@@ -989,6 +1009,20 @@
 *Why ships stay up* — 1 chapters · 1 sections
 
 - **Ch 1. Marine Engineering** `ku-engineering-naval-architecture-marine-engineering` — 1 sections: Naval Architecture: Why Ships Float and Stay Up
+
+### Civil & Structural Engineering (`ku-engineering-civil-and-structural-engineering`)
+
+*Standing on math* — 3 chapters · 3 sections
+
+- **Ch 1. Seismic Design** `ku-engineering-civil-and-structural-engineering-seismic-design` — 1 sections: Earthquake Engineering: Designing for Shaking Ground
+- **Ch 2. Underground Engineering** `ku-engineering-civil-and-structural-engineering-underground-engineering` — 1 sections: Tunnels: The Engineering of Going Underground
+- **Ch 3. Water Infrastructure** `ku-engineering-civil-and-structural-engineering-water-infrastructure` — 1 sections: Dams: Storing Water, Making Power, Living With Risk
+
+### Manufacturing Engineering (`ku-engineering-manufacturing-engineering`)
+
+*Made at scale* — 1 chapters · 1 sections
+
+- **Ch 1. Digital Manufacturing** `ku-engineering-manufacturing-engineering-digital-manufacturing` — 1 sections: Additive Manufacturing: How 3D Printing Reshapes Production
 
 ## Technology & Applied Science — 6 subjects
 
@@ -1035,21 +1069,25 @@
 
 ### Psychology (`ku-social-sciences-psychology`)
 
-*The studied mind* — 4 chapters · 4 sections
+*The studied mind* — 6 chapters · 7 sections
 
-- **Ch 1. Social Psychology** `ku-social-sciences-psychology-social-psychology` — 1 sections: Cognitive Dissonance and Attitude Change
+- **Ch 1. Social Psychology** `ku-social-sciences-psychology-social-psychology` — 2 sections: Cognitive Dissonance and Attitude Change; Conformity, Obedience and the Power of the Situation
 - **Ch 2. Behavioral Science** `ku-social-sciences-psychology-behavioral-science` — 1 sections: Cognitive Biases: The Bugs in Human Judgment
 - **Ch 3. Developmental Psychology** `ku-social-sciences-psychology-developmental-psychology` — 1 sections: How Minds Grow: Developmental Psychology Across the Lifespan
 - **Ch 4. Cognitive Psychology** `ku-social-sciences-psychology-cognitive-psychology` — 1 sections: Memory, Attention and Thinking: Cognitive Psychology
+- **Ch 5. Personality** `ku-social-sciences-psychology-personality` — 1 sections: The Big Five: A Field Guide to Human Personality
+- **Ch 6. Individual Differences** `ku-social-sciences-psychology-individual-differences` — 1 sections: Intelligence and IQ: What the Tests Actually Measure
 
 ### Sociology (`ku-social-sciences-sociology`)
 
-*Society as a system* — 4 chapters · 4 sections
+*Society as a system* — 6 chapters · 9 sections
 
 - **Ch 1. Classical Theory** `ku-social-sciences-sociology-classical-theory` — 1 sections: Durkheim’s Social Facts and Anomie
-- **Ch 2. Social Structure** `ku-social-sciences-sociology-social-structure` — 1 sections: Class, Status and Power: Social Stratification
+- **Ch 2. Social Structure** `ku-social-sciences-sociology-social-structure` — 4 sections: Class, Status and Power: Social Stratification; Deviance, Crime and Social Control; Race and Ethnicity in Social Life; Gender, Sex and Sexuality
 - **Ch 3. Social Institutions** `ku-social-sciences-sociology-social-institutions` — 1 sections: Family, Religion and Institutions: The Skeleton of Society
 - **Ch 4. Collective Dynamics** `ku-social-sciences-sociology-collective-dynamics` — 1 sections: Social Movements: How Change Happens
+- **Ch 5. Social Networks** `ku-social-sciences-sociology-social-networks` — 1 sections: Social Networks: The Hidden Structure of Social Life
+- **Ch 6. Social Control** `ku-social-sciences-sociology-social-control` — 1 sections: Deviance and Crime: The Sociology of Rule-Breaking
 
 ### Political Science (`ku-social-sciences-political-science`)
 
@@ -1077,9 +1115,9 @@
 
 ### Human Geography (`ku-social-sciences-human-geography`)
 
-*Where people live, and why* — 2 chapters · 2 sections
+*Where people live, and why* — 2 chapters · 3 sections
 
-- **Ch 1. Population and Settlement** `ku-social-sciences-human-geography-population-and-settlement` — 1 sections: Population Geography: Where Humans Live and Why
+- **Ch 1. Population and Settlement** `ku-social-sciences-human-geography-population-and-settlement` — 2 sections: Population Geography: Where Humans Live and Why; The Demographic Transition: The Arithmetic of Populations
 - **Ch 2. Economic and Cultural Landscapes** `ku-social-sciences-human-geography-economic-and-cultural-landscapes` — 1 sections: Landscapes of Trade and Belief: Economic and Cultural Geography
 
 ### Research Methods (`ku-social-sciences-research-methods`)
@@ -1110,11 +1148,11 @@
 
 ### World History (`ku-humanities-world-history`)
 
-*How the world connected* — 3 chapters · 6 sections
+*How the world connected* — 3 chapters · 9 sections
 
 - **Ch 1. Economic History** `ku-humanities-world-history-economic-history` — 2 sections: The Silk Road: Exchange Before Globalization; The Industrial Revolution and Its Discontents
 - **Ch 2. The Ancient World** `ku-humanities-world-history-the-ancient-world` — 2 sections: The First Civilizations: Mesopotamia, Egypt and the Indus; Greece and Rome: The Classical Inheritance
-- **Ch 3. The Modern Age** `ku-humanities-world-history-the-modern-age` — 2 sections: The World Wars: Causes, Courses and Consequences; Decolonization and the Making of the Global South
+- **Ch 3. The Modern Age** `ku-humanities-world-history-the-modern-age` — 5 sections: The World Wars: Causes, Courses and Consequences; Decolonization and the Making of the Global South; The American Revolution and the Founding of the Republic; The Civil War and Reconstruction; The Civil Rights Movement
 
 ### Philosophy (`ku-humanities-philosophy`)
 
@@ -1301,10 +1339,11 @@
 
 ### Microeconomics (`ku-business-economics-microeconomics`)
 
-*Prices and incentives* — 2 chapters · 2 sections
+*Prices and incentives* — 3 chapters · 3 sections
 
 - **Ch 1. Price Theory** `ku-business-economics-microeconomics-price-theory` — 1 sections: Supply, Demand and Elasticity
 - **Ch 2. When Markets Fail** `ku-business-economics-microeconomics-when-markets-fail` — 1 sections: When Markets Fail: Externalities, Public Goods and Monopoly Power
+- **Ch 3. Market Structure** `ku-business-economics-microeconomics-market-structure` — 1 sections: Market Structures: From Perfect Competition to Monopoly
 
 ### Finance & Investment (`ku-business-economics-finance-and-investment`)
 
@@ -1322,11 +1361,12 @@
 
 ### Macroeconomics (`ku-business-economics-macroeconomics`)
 
-*Whole economies* — 3 chapters · 3 sections
+*Whole economies* — 4 chapters · 4 sections
 
 - **Ch 1. Monetary Economics** `ku-business-economics-macroeconomics-monetary-economics` — 1 sections: Inflation and What Central Banks Actually Do
 - **Ch 2. The Vital Signs** `ku-business-economics-macroeconomics-the-vital-signs` — 1 sections: GDP, Inflation and Unemployment: The Vital Signs of an Economy
 - **Ch 3. Fiscal Policy** `ku-business-economics-macroeconomics-fiscal-policy` — 1 sections: Fiscal Policy: How Governments Spend and Tax Their Way Through Crises
+- **Ch 4. Monetary Policy** `ku-business-economics-macroeconomics-monetary-policy` — 1 sections: Monetary Policy and Central Banking
 
 ### Strategy (`ku-business-economics-strategy`)
 
@@ -1383,9 +1423,10 @@
 
 ### Exercise & Fitness (`ku-health-wellness-exercise-and-fitness`)
 
-*Adaptation by load* — 1 chapters · 1 sections
+*Adaptation by load* — 2 chapters · 2 sections
 
 - **Ch 1. Exercise Physiology** `ku-health-wellness-exercise-and-fitness-exercise-physiology` — 1 sections: Hypertrophy: How Muscle Actually Grows
+- **Ch 2. Cardiovascular Fitness** `ku-health-wellness-exercise-and-fitness-cardiovascular-fitness` — 1 sections: Aerobic Fitness: VO₂ Max, Training Zones and Why Cardio Works
 
 ### Public Health (`ku-health-wellness-public-health`)
 
@@ -1423,18 +1464,20 @@
 
 ### Disease & Treatment (`ku-health-wellness-disease-and-treatment`)
 
-*What illness really is* — 4 chapters · 6 sections
+*What illness really is* — 5 chapters · 9 sections
 
 - **Ch 1. Cancer** `ku-health-wellness-disease-and-treatment-cancer` — 1 sections: Understanding Cancer: From Mutation to Metastasis
 - **Ch 2. Chronic Disease** `ku-health-wellness-disease-and-treatment-chronic-disease` — 2 sections: Diabetes and Metabolic Health: When Blood Sugar Runs Off the Rails; Heart and Vascular Disease: Atherosclerosis, Risk and Prevention
-- **Ch 3. Senses & Organs** `ku-health-wellness-disease-and-treatment-senses-and-organs` — 2 sections: Dental and Oral Health: Plaque, Cavities and Keeping Your Teeth; Vision and Eye Care: Refraction, Screens and Saving Sight
+- **Ch 3. Senses & Organs** `ku-health-wellness-disease-and-treatment-senses-and-organs` — 4 sections: Dental and Oral Health: Plaque, Cavities and Keeping Your Teeth; Vision and Eye Care: Refraction, Screens and Saving Sight; Skin: The Body's Largest Organ and How to Keep It; Hearing: How the Ear Works and How We Lose It
 - **Ch 4. Pain** `ku-health-wellness-disease-and-treatment-pain` — 1 sections: Understanding Pain: Signals, Gates and Why Chronic Pain Differs
+- **Ch 5. Bones & Joints** `ku-health-wellness-disease-and-treatment-bones-and-joints` — 1 sections: Bone Health and Osteoporosis: Your Living Scaffolding
 
 ### Sexual & Reproductive Health (`ku-health-wellness-sexual-and-reproductive-health`)
 
-*Bodies, plainly explained* — 1 chapters · 1 sections
+*Bodies, plainly explained* — 2 chapters · 2 sections
 
 - **Ch 1. Reproductive Health** `ku-health-wellness-sexual-and-reproductive-health-reproductive-health` — 1 sections: Sexual and Reproductive Health: Cycles, Contraception and STIs
+- **Ch 2. Making People** `ku-health-wellness-sexual-and-reproductive-health-making-people` — 1 sections: Pregnancy and Childbirth: The Biology of Building a Baby
 
 ### Health & Longevity (`ku-health-wellness-health-and-longevity`)
 
@@ -1589,7 +1632,7 @@
 - **Ch 2. Getting Hired** `ku-everyday-practical-career-and-communication-getting-hired` — 1 sections: Job Interviews: The STAR Method and the Follow-Up
 - **Ch 3. Working Smarter** `ku-everyday-practical-career-and-communication-working-smarter` — 1 sections: Time Management and Personal Productivity Systems
 
-## Emerging & Interdisciplinary — 7 subjects
+## Emerging & Interdisciplinary — 8 subjects
 
 ### Bioinformatics (`ku-emerging-interdisciplinary-bioinformatics`)
 
@@ -1611,15 +1654,17 @@
 
 ### Brain-Inspired Computing (`ku-emerging-interdisciplinary-brain-inspired-computing`)
 
-*Brains in silicon* — 1 chapters · 1 sections
+*Brains in silicon* — 2 chapters · 2 sections
 
 - **Ch 1. Hardware Frontiers** `ku-emerging-interdisciplinary-brain-inspired-computing-hardware-frontiers` — 1 sections: Neuromorphic Computing: Brains in Silicon
+- **Ch 2. Merging Minds and Machines** `ku-emerging-interdisciplinary-brain-inspired-computing-merging-minds-and-machines` — 1 sections: Brain-Computer Interfaces: Reading and Writing to the Brain
 
 ### Computational Science (`ku-emerging-interdisciplinary-computational-science`)
 
-*Models of the future* — 1 chapters · 1 sections
+*Models of the future* — 2 chapters · 2 sections
 
 - **Ch 1. Earth System Modeling** `ku-emerging-interdisciplinary-computational-science-earth-system-modeling` — 1 sections: How Climate Models Predict the Future
+- **Ch 2. Simulating Reality** `ku-emerging-interdisciplinary-computational-science-simulating-reality` — 1 sections: Digital Twins: Building the Mirror World
 
 ### Nanotechnology (`ku-emerging-interdisciplinary-nanotechnology`)
 
@@ -1633,6 +1678,12 @@
 
 - **Ch 1. Human-Computer Frontier** `ku-emerging-interdisciplinary-extended-reality-human-computer-frontier` — 1 sections: Augmented and Virtual Reality: Building Other Worlds
 
+### Quantum Information (`ku-emerging-interdisciplinary-quantum-information`)
+
+*Qubits and beyond* — 1 chapters · 1 sections
+
+- **Ch 1. Beyond Computing** `ku-emerging-interdisciplinary-quantum-information-beyond-computing` — 1 sections: Quantum Sensing and Atomic Clocks: Measuring the Impossible
+
 ---
 
 ## Already-covered topics — NEVER re-author these (dedup ledger)
@@ -1641,7 +1692,6 @@ The following knowledge-domain topics were cross-verified as **already explained
 existing subjects above. They are excluded from the app (zero repetition). Deepen the
 listed coverage instead of writing them again.
 
-- **Domain retired: Mathematics** — Every topic already covered by the Mathematics master subject (calculus, probability, linear algebra, number theory, set theory, graph theory).
 - **Domain retired: Computing & AI** — Every topic already covered by the DSA / AI / OS / Cybersecurity / Emerging-Tech subjects.
 
 - `phys-angular-momentum` → Physics → Rotational Dynamics chapters — Angular momentum, torque and rotational motion are fully covered in the Physics master library.

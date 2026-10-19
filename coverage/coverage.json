@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T16:29:15.859Z",
+  "generatedAt": "2026-10-19T07:44:17.517Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 164,
-    "books": 164,
-    "chapters": 752,
-    "sections": 4280
+    "subjects": 168,
+    "books": 168,
+    "chapters": 781,
+    "sections": 4338
   },
   "subjects": [
     {
@@ -10345,8 +10345,8 @@
       "name": "English & Comprehension",
       "group": "Foundations",
       "tagline": "Read deeply, write precisely",
-      "chapterCount": 5,
-      "sectionCount": 15,
+      "chapterCount": 8,
+      "sectionCount": 25,
       "chapters": [
         {
           "id": "eng-r1",
@@ -10470,6 +10470,86 @@
               "id": "eng-l1-s5",
               "number": 5,
               "title": "Voice, Narration & Reading Comprehension"
+            }
+          ]
+        },
+        {
+          "id": "eng-a1",
+          "number": 6,
+          "title": "Advanced Grammar & Usage",
+          "shortTitle": "Advanced Grammar",
+          "bookId": "english-complete",
+          "sectionCount": 4,
+          "sections": [
+            {
+              "id": "eng-a1-s1",
+              "number": 1,
+              "title": "Conditionals and the Subjunctive"
+            },
+            {
+              "id": "eng-a1-s2",
+              "number": 2,
+              "title": "Inversion and Emphatic Structures"
+            },
+            {
+              "id": "eng-a1-s3",
+              "number": 3,
+              "title": "Determiners and Quantifiers"
+            },
+            {
+              "id": "eng-a1-s4",
+              "number": 4,
+              "title": "Phrasal Verbs and Collocations"
+            }
+          ]
+        },
+        {
+          "id": "eng-a2",
+          "number": 7,
+          "title": "Vocabulary Architecture: Roots, Affixes and Word Families",
+          "shortTitle": "Vocabulary Architecture",
+          "bookId": "english-complete",
+          "sectionCount": 3,
+          "sections": [
+            {
+              "id": "eng-a2-s1",
+              "number": 1,
+              "title": "Latin and Greek Roots"
+            },
+            {
+              "id": "eng-a2-s2",
+              "number": 2,
+              "title": "Prefixes, Suffixes and Word Formation"
+            },
+            {
+              "id": "eng-a2-s3",
+              "number": 3,
+              "title": "Word Families and Context Clues"
+            }
+          ]
+        },
+        {
+          "id": "eng-a3",
+          "number": 8,
+          "title": "Reading and Writing at Length",
+          "shortTitle": "Reading & Writing at Length",
+          "bookId": "english-complete",
+          "sectionCount": 3,
+          "sections": [
+            {
+              "id": "eng-a3-s1",
+              "number": 1,
+              "title": "Long Passage Strategy"
+            },
+            {
+              "id": "eng-a3-s2",
+              "number": 2,
+              "title": "Cloze Tests and Paragraph Completion"
+            },
+            {
+              "id": "eng-a3-s3",
+              "number": 3,
+              "title": "Précis, Summary and Cohesive Writing"
             }
           ]
         }
@@ -26355,8 +26435,8 @@
       "name": "Neuroscience",
       "group": "Life Sciences",
       "tagline": "Signals of the mind",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-life-sciences-neuroscience-cellular-neurophysiology",
@@ -26364,12 +26444,47 @@
           "title": "Cellular Neurophysiology",
           "shortTitle": "Cellular Neurophysiology",
           "bookId": "ku-life-sciences-neuroscience",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-bio-action-potentials",
               "number": 1.1,
               "title": "Action Potentials and Nerve Signaling"
+            },
+            {
+              "id": "ku-neuro-synapse-neurotransmitters",
+              "number": 1.2,
+              "title": "The Synapse: How Neurons Talk in Chemistry"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-neuroscience-plasticity",
+          "number": 2,
+          "title": "Plasticity",
+          "shortTitle": "Plasticity",
+          "bookId": "ku-life-sciences-neuroscience",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-neuro-neuroplasticity-brain-rewires",
+              "number": 2.1,
+              "title": "Neuroplasticity: How Experience Rewires the Brain"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-neuroscience-neuroanatomy",
+          "number": 3,
+          "title": "Neuroanatomy",
+          "shortTitle": "Neuroanatomy",
+          "bookId": "ku-life-sciences-neuroscience",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-neuro-brain-regions-map",
+              "number": 3.1,
+              "title": "The Brain, Mapped: A Guided Tour from Stem to Cortex"
             }
           ]
         }
@@ -26476,7 +26591,7 @@
       "group": "Life Sciences",
       "tagline": "The body’s defense layers",
       "chapterCount": 1,
-      "sectionCount": 1,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-life-sciences-immunology-biomedical-science",
@@ -26484,12 +26599,17 @@
           "title": "Biomedical Science",
           "shortTitle": "Biomedical Science",
           "bookId": "ku-life-sciences-immunology",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-bio-immune-system",
               "number": 1.1,
               "title": "The Immune System: Innate to Adaptive Defense"
+            },
+            {
+              "id": "ku-imm-autoimmunity-allergy",
+              "number": 1.2,
+              "title": "Autoimmunity and Allergy: When the Defense Misfires"
             }
           ]
         }
@@ -26501,7 +26621,7 @@
       "group": "Life Sciences",
       "tagline": "Energy through ecosystems",
       "chapterCount": 1,
-      "sectionCount": 1,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-life-sciences-ecology-ecosystem-science",
@@ -26509,12 +26629,22 @@
           "title": "Ecosystem Science",
           "shortTitle": "Ecosystem Science",
           "bookId": "ku-life-sciences-ecology",
-          "sectionCount": 1,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-bio-ecosystems-energy-flow",
               "number": 1.1,
               "title": "Ecosystems and the Flow of Energy"
+            },
+            {
+              "id": "ku-bio-food-webs-trophic-cascades",
+              "number": 1.2,
+              "title": "Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters"
+            },
+            {
+              "id": "ku-eco-biomes-major-ecosystems",
+              "number": 1.3,
+              "title": "Biomes: A Tour of Earth's Major Ecosystems"
             }
           ]
         }
@@ -26526,7 +26656,7 @@
       "group": "Life Sciences",
       "tagline": "The body, system by system",
       "chapterCount": 1,
-      "sectionCount": 5,
+      "sectionCount": 9,
       "chapters": [
         {
           "id": "ku-life-sciences-anatomy-and-physiology-human-body-systems",
@@ -26534,7 +26664,7 @@
           "title": "Human Body Systems",
           "shortTitle": "Human Body Systems",
           "bookId": "ku-life-sciences-anatomy-and-physiology",
-          "sectionCount": 5,
+          "sectionCount": 9,
           "sections": [
             {
               "id": "ku-bio-anatomy-heart-circulation",
@@ -26560,6 +26690,26 @@
               "id": "ku-bio-anatomy-musculoskeletal",
               "number": 1.5,
               "title": "Muscles, Bones and the Machinery of Movement"
+            },
+            {
+              "id": "ku-anat-endocrine-system-hormones",
+              "number": 1.6,
+              "title": "The Endocrine System: Hormones as the Body's Slow Messengers"
+            },
+            {
+              "id": "ku-bio-anatomy-nervous-system-command",
+              "number": 1.7,
+              "title": "The Nervous System: The Body's Command Network"
+            },
+            {
+              "id": "ku-bio-anatomy-senses-perception",
+              "number": 1.8,
+              "title": "The Senses: How the Body Reads the World"
+            },
+            {
+              "id": "ku-bio-anatomy-reproduction-development",
+              "number": 1.9,
+              "title": "Reproduction and the Making of a Human"
             }
           ]
         }
@@ -26741,12 +26891,72 @@
       ]
     },
     {
+      "id": "ku-mathematics-probability-and-statistics",
+      "name": "Probability & Statistics",
+      "group": "Mathematics",
+      "tagline": "Mathematics",
+      "chapterCount": 3,
+      "sectionCount": 4,
+      "chapters": [
+        {
+          "id": "ku-mathematics-probability-and-statistics-descriptive-statistics",
+          "number": 1,
+          "title": "Descriptive Statistics",
+          "shortTitle": "Descriptive Statistics",
+          "bookId": "ku-mathematics-probability-and-statistics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-stats-descriptive-distributions",
+              "number": 1.1,
+              "title": "Describing Data: Center, Spread and the Normal Distribution"
+            }
+          ]
+        },
+        {
+          "id": "ku-mathematics-probability-and-statistics-inferential-statistics",
+          "number": 2,
+          "title": "Inferential Statistics",
+          "shortTitle": "Inferential Statistics",
+          "bookId": "ku-mathematics-probability-and-statistics",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-stats-sampling-central-limit",
+              "number": 2.1,
+              "title": "Sampling and the Central Limit Theorem"
+            },
+            {
+              "id": "ku-stats-confidence-hypothesis-testing",
+              "number": 2.2,
+              "title": "Confidence Intervals and Hypothesis Testing"
+            }
+          ]
+        },
+        {
+          "id": "ku-mathematics-probability-and-statistics-statistical-modeling",
+          "number": 3,
+          "title": "Statistical Modeling",
+          "shortTitle": "Statistical Modeling",
+          "bookId": "ku-mathematics-probability-and-statistics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-stats-correlation-regression",
+              "number": 3.1,
+              "title": "Correlation and Linear Regression"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-environment-climate-science",
       "name": "Climate Science",
       "group": "Environment & Sustainability",
       "tagline": "Reading the atmosphere",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-environment-climate-science-biogeochemical-cycles",
@@ -26760,6 +26970,21 @@
               "id": "ku-env-carbon-sinks-global-carbon-budget",
               "number": 1.1,
               "title": "Carbon Sinks and the Global Carbon Budget"
+            }
+          ]
+        },
+        {
+          "id": "ku-environment-climate-science-attribution-science",
+          "number": 2,
+          "title": "Attribution Science",
+          "shortTitle": "Attribution Science",
+          "bookId": "ku-environment-climate-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-env-extreme-weather-attribution",
+              "number": 2.1,
+              "title": "Extreme Weather in a Warming World: The Science of Attribution"
             }
           ]
         }
@@ -26875,8 +27100,8 @@
       "name": "Energy & Sustainability",
       "group": "Environment & Sustainability",
       "tagline": "Clean power, real math",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-environment-energy-and-sustainability-energy-policy",
@@ -26890,6 +27115,36 @@
               "id": "ku-env-renewable-transition",
               "number": 1.1,
               "title": "The Renewable Energy Transition"
+            }
+          ]
+        },
+        {
+          "id": "ku-environment-energy-and-sustainability-solar-power",
+          "number": 2,
+          "title": "Solar Power",
+          "shortTitle": "Solar Power",
+          "bookId": "ku-environment-energy-and-sustainability",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-env-solar-energy-photovoltaics",
+              "number": 2.1,
+              "title": "Solar Energy: How Photovoltaics and Solar Thermal Actually Work"
+            }
+          ]
+        },
+        {
+          "id": "ku-environment-energy-and-sustainability-wind-power",
+          "number": 3,
+          "title": "Wind Power",
+          "shortTitle": "Wind Power",
+          "bookId": "ku-environment-energy-and-sustainability",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-env-wind-energy-turbines",
+              "number": 3.1,
+              "title": "Wind Energy: Turbines, Farms and the Physics of Harvesting Wind"
             }
           ]
         }
@@ -26941,7 +27196,7 @@
       "group": "Environment & Sustainability",
       "tagline": "After the bin",
       "chapterCount": 1,
-      "sectionCount": 1,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-environment-waste-and-circularity-materials-through-society",
@@ -26949,12 +27204,22 @@
           "title": "Materials Through Society",
           "shortTitle": "Materials Through Society",
           "bookId": "ku-environment-waste-and-circularity",
-          "sectionCount": 1,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-env-waste-management-recycling",
               "number": 1.1,
               "title": "Waste: Where It Goes After the Bin"
+            },
+            {
+              "id": "ku-env-plastics-polymer-century",
+              "number": 1.2,
+              "title": "Plastics: The Polymer Century"
+            },
+            {
+              "id": "ku-env-recycling-systems-materials",
+              "number": 1.3,
+              "title": "Recycling Systems: How Materials Actually Loop Back"
             }
           ]
         }
@@ -26965,8 +27230,8 @@
       "name": "Pollution & Environmental Health",
       "group": "Environment & Sustainability",
       "tagline": "The air we breathe",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-environment-pollution-and-environmental-health-the-air-we-breathe",
@@ -26980,6 +27245,21 @@
               "id": "ku-env-air-pollution-control",
               "number": 1.1,
               "title": "Air Pollution: Sources, Smog and Solutions"
+            }
+          ]
+        },
+        {
+          "id": "ku-environment-pollution-and-environmental-health-water-pollution",
+          "number": 2,
+          "title": "Water Pollution",
+          "shortTitle": "Water Pollution",
+          "bookId": "ku-environment-pollution-and-environmental-health",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-env-water-pollution-nutrients",
+              "number": 2.1,
+              "title": "Water Pollution: Nutrients, Toxins and Dead Zones"
             }
           ]
         }
@@ -27055,8 +27335,8 @@
       "name": "Chemical Engineering",
       "group": "Engineering Science",
       "tagline": "Reactions at scale",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-engineering-chemical-engineering-process-engineering",
@@ -27064,12 +27344,32 @@
           "title": "Process Engineering",
           "shortTitle": "Process Engineering",
           "bookId": "ku-engineering-chemical-engineering",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-eng-chemical-reactors",
               "number": 1.1,
               "title": "Chemical Reactors: Where Reactions Meet Engineering"
+            },
+            {
+              "id": "ku-eng-separation-processes-chemical",
+              "number": 1.2,
+              "title": "Separation Processes: Distillation, Filtration and the Art of Purification"
+            }
+          ]
+        },
+        {
+          "id": "ku-engineering-chemical-engineering-transport-infrastructure",
+          "number": 2,
+          "title": "Transport Infrastructure",
+          "shortTitle": "Transport Infrastructure",
+          "bookId": "ku-engineering-chemical-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-pipelines-fluid-transport",
+              "number": 2.1,
+              "title": "Pipelines: Moving Fluids Across Continents"
             }
           ]
         }
@@ -27120,6 +27420,86 @@
               "id": "ku-eng-naval-architecture-ships",
               "number": 1.1,
               "title": "Naval Architecture: Why Ships Float and Stay Up"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-engineering-civil-and-structural-engineering",
+      "name": "Civil & Structural Engineering",
+      "group": "Engineering Science",
+      "tagline": "Standing on math",
+      "chapterCount": 3,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-engineering-civil-and-structural-engineering-seismic-design",
+          "number": 1,
+          "title": "Seismic Design",
+          "shortTitle": "Seismic Design",
+          "bookId": "ku-engineering-civil-and-structural-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-earthquake-engineering-design",
+              "number": 1.1,
+              "title": "Earthquake Engineering: Designing for Shaking Ground"
+            }
+          ]
+        },
+        {
+          "id": "ku-engineering-civil-and-structural-engineering-underground-engineering",
+          "number": 2,
+          "title": "Underground Engineering",
+          "shortTitle": "Underground Engineering",
+          "bookId": "ku-engineering-civil-and-structural-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-tunnels-underground-engineering",
+              "number": 2.1,
+              "title": "Tunnels: The Engineering of Going Underground"
+            }
+          ]
+        },
+        {
+          "id": "ku-engineering-civil-and-structural-engineering-water-infrastructure",
+          "number": 3,
+          "title": "Water Infrastructure",
+          "shortTitle": "Water Infrastructure",
+          "bookId": "ku-engineering-civil-and-structural-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-dams-hydropower-engineering",
+              "number": 3.1,
+              "title": "Dams: Storing Water, Making Power, Living With Risk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-engineering-manufacturing-engineering",
+      "name": "Manufacturing Engineering",
+      "group": "Engineering Science",
+      "tagline": "Made at scale",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-engineering-manufacturing-engineering-digital-manufacturing",
+          "number": 1,
+          "title": "Digital Manufacturing",
+          "shortTitle": "Digital Manufacturing",
+          "bookId": "ku-engineering-manufacturing-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-additive-manufacturing-3d-printing",
+              "number": 1.1,
+              "title": "Additive Manufacturing: How 3D Printing Reshapes Production"
             }
           ]
         }
@@ -27330,8 +27710,8 @@
       "name": "Psychology",
       "group": "Social Sciences",
       "tagline": "The studied mind",
-      "chapterCount": 4,
-      "sectionCount": 4,
+      "chapterCount": 6,
+      "sectionCount": 7,
       "chapters": [
         {
           "id": "ku-social-sciences-psychology-social-psychology",
@@ -27339,12 +27719,17 @@
           "title": "Social Psychology",
           "shortTitle": "Social Psychology",
           "bookId": "ku-social-sciences-psychology",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-soc-cognitive-dissonance",
               "number": 1.1,
               "title": "Cognitive Dissonance and Attitude Change"
+            },
+            {
+              "id": "ku-psych-conformity-obedience-crowd",
+              "number": 1.2,
+              "title": "Conformity, Obedience and the Power of the Situation"
             }
           ]
         },
@@ -27392,6 +27777,36 @@
               "title": "Memory, Attention and Thinking: Cognitive Psychology"
             }
           ]
+        },
+        {
+          "id": "ku-social-sciences-psychology-personality",
+          "number": 5,
+          "title": "Personality",
+          "shortTitle": "Personality",
+          "bookId": "ku-social-sciences-psychology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-psych-big-five-personality",
+              "number": 5.1,
+              "title": "The Big Five: A Field Guide to Human Personality"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-psychology-individual-differences",
+          "number": 6,
+          "title": "Individual Differences",
+          "shortTitle": "Individual Differences",
+          "bookId": "ku-social-sciences-psychology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-psych-intelligence-iq-testing",
+              "number": 6.1,
+              "title": "Intelligence and IQ: What the Tests Actually Measure"
+            }
+          ]
         }
       ]
     },
@@ -27400,8 +27815,8 @@
       "name": "Sociology",
       "group": "Social Sciences",
       "tagline": "Society as a system",
-      "chapterCount": 4,
-      "sectionCount": 4,
+      "chapterCount": 6,
+      "sectionCount": 9,
       "chapters": [
         {
           "id": "ku-social-sciences-sociology-classical-theory",
@@ -27424,12 +27839,27 @@
           "title": "Social Structure",
           "shortTitle": "Social Structure",
           "bookId": "ku-social-sciences-sociology",
-          "sectionCount": 1,
+          "sectionCount": 4,
           "sections": [
             {
               "id": "ku-soc-stratification",
               "number": 2.1,
               "title": "Class, Status and Power: Social Stratification"
+            },
+            {
+              "id": "ku-soc-deviance-crime",
+              "number": 2.2,
+              "title": "Deviance, Crime and Social Control"
+            },
+            {
+              "id": "ku-soc-race-ethnicity",
+              "number": 2.3,
+              "title": "Race and Ethnicity in Social Life"
+            },
+            {
+              "id": "ku-soc-gender-sexuality",
+              "number": 2.4,
+              "title": "Gender, Sex and Sexuality"
             }
           ]
         },
@@ -27460,6 +27890,36 @@
               "id": "ku-soc-social-movements-change",
               "number": 4.1,
               "title": "Social Movements: How Change Happens"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-sociology-social-networks",
+          "number": 5,
+          "title": "Social Networks",
+          "shortTitle": "Social Networks",
+          "bookId": "ku-social-sciences-sociology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-social-networks-structure",
+              "number": 5.1,
+              "title": "Social Networks: The Hidden Structure of Social Life"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-sociology-social-control",
+          "number": 6,
+          "title": "Social Control",
+          "shortTitle": "Social Control",
+          "bookId": "ku-social-sciences-sociology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-crime-deviance-sociology",
+              "number": 6.1,
+              "title": "Deviance and Crime: The Sociology of Rule-Breaking"
             }
           ]
         }
@@ -27636,7 +28096,7 @@
       "group": "Social Sciences",
       "tagline": "Where people live, and why",
       "chapterCount": 2,
-      "sectionCount": 2,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-social-sciences-human-geography-population-and-settlement",
@@ -27644,12 +28104,17 @@
           "title": "Population and Settlement",
           "shortTitle": "Population and Settlement",
           "bookId": "ku-social-sciences-human-geography",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-geog-population-migration",
               "number": 1.1,
               "title": "Population Geography: Where Humans Live and Why"
+            },
+            {
+              "id": "ku-geog-demographic-transition",
+              "number": 1.2,
+              "title": "The Demographic Transition: The Arithmetic of Populations"
             }
           ]
         },
@@ -27776,7 +28241,7 @@
       "group": "Humanities",
       "tagline": "How the world connected",
       "chapterCount": 3,
-      "sectionCount": 6,
+      "sectionCount": 9,
       "chapters": [
         {
           "id": "ku-humanities-world-history-economic-history",
@@ -27824,7 +28289,7 @@
           "title": "The Modern Age",
           "shortTitle": "The Modern Age",
           "bookId": "ku-humanities-world-history",
-          "sectionCount": 2,
+          "sectionCount": 5,
           "sections": [
             {
               "id": "ku-hist-world-wars",
@@ -27835,6 +28300,21 @@
               "id": "ku-hist-decolonization",
               "number": 3.2,
               "title": "Decolonization and the Making of the Global South"
+            },
+            {
+              "id": "ku-hist-american-revolution-founding",
+              "number": 3.3,
+              "title": "The American Revolution and the Founding of the Republic"
+            },
+            {
+              "id": "ku-hist-civil-war-reconstruction",
+              "number": 3.4,
+              "title": "The Civil War and Reconstruction"
+            },
+            {
+              "id": "ku-hist-civil-rights-movement",
+              "number": 3.5,
+              "title": "The Civil Rights Movement"
             }
           ]
         }
@@ -28835,8 +29315,8 @@
       "name": "Microeconomics",
       "group": "Business & Economics",
       "tagline": "Prices and incentives",
-      "chapterCount": 2,
-      "sectionCount": 2,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-business-economics-microeconomics-price-theory",
@@ -28865,6 +29345,21 @@
               "id": "ku-econ-market-failures",
               "number": 2.1,
               "title": "When Markets Fail: Externalities, Public Goods and Monopoly Power"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-microeconomics-market-structure",
+          "number": 3,
+          "title": "Market Structure",
+          "shortTitle": "Market Structure",
+          "bookId": "ku-business-economics-microeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-market-structures",
+              "number": 3.1,
+              "title": "Market Structures: From Perfect Competition to Monopoly"
             }
           ]
         }
@@ -28955,8 +29450,8 @@
       "name": "Macroeconomics",
       "group": "Business & Economics",
       "tagline": "Whole economies",
-      "chapterCount": 3,
-      "sectionCount": 3,
+      "chapterCount": 4,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-business-economics-macroeconomics-monetary-economics",
@@ -29000,6 +29495,21 @@
               "id": "ku-econ-fiscal-policy",
               "number": 3.1,
               "title": "Fiscal Policy: How Governments Spend and Tax Their Way Through Crises"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-macroeconomics-monetary-policy",
+          "number": 4,
+          "title": "Monetary Policy",
+          "shortTitle": "Monetary Policy",
+          "bookId": "ku-business-economics-macroeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-monetary-policy-central-banking",
+              "number": 4.1,
+              "title": "Monetary Policy and Central Banking"
             }
           ]
         }
@@ -29260,8 +29770,8 @@
       "name": "Exercise & Fitness",
       "group": "Health & Wellness",
       "tagline": "Adaptation by load",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-health-wellness-exercise-and-fitness-exercise-physiology",
@@ -29275,6 +29785,21 @@
               "id": "ku-health-hypertrophy-muscle-growth",
               "number": 1.1,
               "title": "Hypertrophy: How Muscle Actually Grows"
+            }
+          ]
+        },
+        {
+          "id": "ku-health-wellness-exercise-and-fitness-cardiovascular-fitness",
+          "number": 2,
+          "title": "Cardiovascular Fitness",
+          "shortTitle": "Cardiovascular Fitness",
+          "bookId": "ku-health-wellness-exercise-and-fitness",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-fit-aerobic-fitness-vo2max",
+              "number": 2.1,
+              "title": "Aerobic Fitness: VO₂ Max, Training Zones and Why Cardio Works"
             }
           ]
         }
@@ -29470,8 +29995,8 @@
       "name": "Disease & Treatment",
       "group": "Health & Wellness",
       "tagline": "What illness really is",
-      "chapterCount": 4,
-      "sectionCount": 6,
+      "chapterCount": 5,
+      "sectionCount": 9,
       "chapters": [
         {
           "id": "ku-health-wellness-disease-and-treatment-cancer",
@@ -29514,7 +30039,7 @@
           "title": "Senses & Organs",
           "shortTitle": "Senses & Organs",
           "bookId": "ku-health-wellness-disease-and-treatment",
-          "sectionCount": 2,
+          "sectionCount": 4,
           "sections": [
             {
               "id": "ku-health-dental-oral-health",
@@ -29525,6 +30050,16 @@
               "id": "ku-health-vision-eye-care",
               "number": 3.2,
               "title": "Vision and Eye Care: Refraction, Screens and Saving Sight"
+            },
+            {
+              "id": "ku-derm-skin-health-barrier",
+              "number": 3.3,
+              "title": "Skin: The Body's Largest Organ and How to Keep It"
+            },
+            {
+              "id": "ku-audi-hearing-ear-health",
+              "number": 3.4,
+              "title": "Hearing: How the Ear Works and How We Lose It"
             }
           ]
         },
@@ -29542,6 +30077,21 @@
               "title": "Understanding Pain: Signals, Gates and Why Chronic Pain Differs"
             }
           ]
+        },
+        {
+          "id": "ku-health-wellness-disease-and-treatment-bones-and-joints",
+          "number": 5,
+          "title": "Bones & Joints",
+          "shortTitle": "Bones & Joints",
+          "bookId": "ku-health-wellness-disease-and-treatment",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-ortho-bone-health-osteoporosis",
+              "number": 5.1,
+              "title": "Bone Health and Osteoporosis: Your Living Scaffolding"
+            }
+          ]
         }
       ]
     },
@@ -29550,8 +30100,8 @@
       "name": "Sexual & Reproductive Health",
       "group": "Health & Wellness",
       "tagline": "Bodies, plainly explained",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-health-wellness-sexual-and-reproductive-health-reproductive-health",
@@ -29565,6 +30115,21 @@
               "id": "ku-health-sexual-reproductive-health",
               "number": 1.1,
               "title": "Sexual and Reproductive Health: Cycles, Contraception and STIs"
+            }
+          ]
+        },
+        {
+          "id": "ku-health-wellness-sexual-and-reproductive-health-making-people",
+          "number": 2,
+          "title": "Making People",
+          "shortTitle": "Making People",
+          "bookId": "ku-health-wellness-sexual-and-reproductive-health",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-repro-pregnancy-childbirth",
+              "number": 2.1,
+              "title": "Pregnancy and Childbirth: The Biology of Building a Baby"
             }
           ]
         }
@@ -30480,8 +31045,8 @@
       "name": "Brain-Inspired Computing",
       "group": "Emerging & Interdisciplinary",
       "tagline": "Brains in silicon",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-emerging-interdisciplinary-brain-inspired-computing-hardware-frontiers",
@@ -30497,6 +31062,21 @@
               "title": "Neuromorphic Computing: Brains in Silicon"
             }
           ]
+        },
+        {
+          "id": "ku-emerging-interdisciplinary-brain-inspired-computing-merging-minds-and-machines",
+          "number": 2,
+          "title": "Merging Minds and Machines",
+          "shortTitle": "Merging Minds and Machines",
+          "bookId": "ku-emerging-interdisciplinary-brain-inspired-computing",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-em-brain-computer-interfaces",
+              "number": 2.1,
+              "title": "Brain-Computer Interfaces: Reading and Writing to the Brain"
+            }
+          ]
         }
       ]
     },
@@ -30505,8 +31085,8 @@
       "name": "Computational Science",
       "group": "Emerging & Interdisciplinary",
       "tagline": "Models of the future",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-emerging-interdisciplinary-computational-science-earth-system-modeling",
@@ -30520,6 +31100,21 @@
               "id": "ku-emer-climate-models",
               "number": 1.1,
               "title": "How Climate Models Predict the Future"
+            }
+          ]
+        },
+        {
+          "id": "ku-emerging-interdisciplinary-computational-science-simulating-reality",
+          "number": 2,
+          "title": "Simulating Reality",
+          "shortTitle": "Simulating Reality",
+          "bookId": "ku-emerging-interdisciplinary-computational-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-em-digital-twins-mirror-worlds",
+              "number": 2.1,
+              "title": "Digital Twins: Building the Mirror World"
             }
           ]
         }
@@ -30574,10 +31169,34 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ku-emerging-interdisciplinary-quantum-information",
+      "name": "Quantum Information",
+      "group": "Emerging & Interdisciplinary",
+      "tagline": "Qubits and beyond",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-emerging-interdisciplinary-quantum-information-beyond-computing",
+          "number": 1,
+          "title": "Beyond Computing",
+          "shortTitle": "Beyond Computing",
+          "bookId": "ku-emerging-interdisciplinary-quantum-information",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-em-quantum-sensing-atomic-clocks",
+              "number": 1.1,
+              "title": "Quantum Sensing and Atomic Clocks: Measuring the Impossible"
+            }
+          ]
+        }
+      ]
     }
   ],
   "excludedDomains": {
-    "Mathematics": "Every topic already covered by the Mathematics master subject (calculus, probability, linear algebra, number theory, set theory, graph theory).",
     "Computing & AI": "Every topic already covered by the DSA / AI / OS / Cybersecurity / Emerging-Tech subjects."
   },
   "excludedTopics": {
