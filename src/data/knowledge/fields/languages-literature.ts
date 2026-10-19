@@ -20,7 +20,7 @@ export const languagesLiterature: KnowledgeDomainFile = {
         'Extensive reading and listening',
         'Refinements: output, interaction, noticing',
       ],
-      words: 810,
+      words: 1022,
       readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
@@ -142,7 +142,7 @@ export const languagesLiterature: KnowledgeDomainFile = {
         'Why “permanent versus temporary” fails',
         'Resultative estar with past participles',
       ],
-      words: 850,
+      words: 1047,
       readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
@@ -268,8 +268,8 @@ export const languagesLiterature: KnowledgeDomainFile = {
         'Ellipsis licensed by particles',
         'The wider case system',
       ],
-      words: 880,
-      readMins: 5,
+      words: 1112,
+      readMins: 6,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -394,8 +394,8 @@ export const languagesLiterature: KnowledgeDomainFile = {
         'Folk etymology and false origins',
         'Reading an etymology entry critically',
       ],
-      words: 1000,
-      readMins: 5,
+      words: 1291,
+      readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -517,8 +517,8 @@ export const languagesLiterature: KnowledgeDomainFile = {
         'Symbolism and motif',
         'Hyperbole, understatement and litotes',
       ],
-      words: 1000,
-      readMins: 5,
+      words: 1204,
+      readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -640,8 +640,8 @@ export const languagesLiterature: KnowledgeDomainFile = {
         'Writing tone: diacritics and numbers',
         'Tone versus intonation',
       ],
-      words: 1060,
-      readMins: 5,
+      words: 1357,
+      readMins: 7,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -765,8 +765,8 @@ export const languagesLiterature: KnowledgeDomainFile = {
         'High-frequency survival phrases',
         'Politeness: usted, por favor, gracias',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1280,
+      readMins: 6,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -884,8 +884,8 @@ export const languagesLiterature: KnowledgeDomainFile = {
         'Okurigana and furigana: kana in support',
         'A learning order that actually works',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1233,
+      readMins: 6,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1003,8 +1003,8 @@ export const languagesLiterature: KnowledgeDomainFile = {
         'Compounding and word structure',
         'Language types: isolating to fusional',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1171,
+      readMins: 6,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1122,8 +1122,8 @@ export const languagesLiterature: KnowledgeDomainFile = {
         'Focus: highlighting the new information',
         'Tone and pitch accent across languages',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1274,
+      readMins: 6,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1241,8 +1241,8 @@ export const languagesLiterature: KnowledgeDomainFile = {
         'tu, vous and the bonjour ritual',
         'Survival phrases for the first week',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1340,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1360,8 +1360,8 @@ export const languagesLiterature: KnowledgeDomainFile = {
         'Simplified versus traditional scripts',
         'Compounding and the first phrases',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1343,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1479,8 +1479,8 @@ export const languagesLiterature: KnowledgeDomainFile = {
         'The hero: kleos, nostos and mortality',
         'What writing changed',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1397,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {

@@ -19,8 +19,8 @@ export const emergingInterdisciplinary: KnowledgeDomainFile = {
         'Next-generation sequencing and Phred quality',
         'Assembly, mapping, and variant calling',
       ],
-      words: 0,
-      readMins: 1,
+      words: 1051,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -176,8 +176,8 @@ export const emergingInterdisciplinary: KnowledgeDomainFile = {
         'Emergence: patterns no part contains',
         'Leverage points and system boundaries',
       ],
-      words: 0,
-      readMins: 1,
+      words: 1013,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -327,8 +327,8 @@ export const emergingInterdisciplinary: KnowledgeDomainFile = {
         'Unitary gates, decoherence, and error correction',
         'What is actually proven to win',
       ],
-      words: 0,
-      readMins: 1,
+      words: 1119,
+      readMins: 6,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -484,7 +484,7 @@ export const emergingInterdisciplinary: KnowledgeDomainFile = {
         'Chassis organisms and editing tools',
         'Applications, containment and safety',
       ],
-      words: 1150,
+      words: 1135,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
@@ -649,7 +649,7 @@ export const emergingInterdisciplinary: KnowledgeDomainFile = {
         'Co-locating memory and computation',
         'Real chips, open questions',
       ],
-      words: 1150,
+      words: 1147,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
@@ -813,7 +813,7 @@ export const emergingInterdisciplinary: KnowledgeDomainFile = {
         'Forcing, feedback and sensitivity',
         'Ensembles, scenarios and testing',
       ],
-      words: 1150,
+      words: 1244,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [

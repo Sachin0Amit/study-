@@ -19,8 +19,8 @@ export const everydayPractical: KnowledgeDomainFile = {
         'Steering with time, temperature, and pH',
         'Color as the flavor readout — and the acrylamide caution',
       ],
-      words: 0,
-      readMins: 1,
+      words: 1001,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -163,8 +163,8 @@ export const everydayPractical: KnowledgeDomainFile = {
         'Withholding: prepaying your annual bill',
         'Reading the stub — and the employer\'s side',
       ],
-      words: 0,
-      readMins: 1,
+      words: 1058,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -326,8 +326,8 @@ export const everydayPractical: KnowledgeDomainFile = {
         'Variance: same expected value, different ride',
         'Law of large numbers and the house edge',
       ],
-      words: 0,
-      readMins: 1,
+      words: 1086,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -490,7 +490,7 @@ export const everydayPractical: KnowledgeDomainFile = {
         'Credit reports versus credit scores',
         'How lenders use scores: pricing tiers',
       ],
-      words: 1100,
+      words: 1184,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
@@ -639,8 +639,8 @@ export const everydayPractical: KnowledgeDomainFile = {
         'Leftovers: cool fast, reheat once, four days',
         'Rice and the Bacillus cereus caution',
       ],
-      words: 1080,
-      readMins: 5,
+      words: 1119,
+      readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -782,7 +782,7 @@ export const everydayPractical: KnowledgeDomainFile = {
         'Handrails, catching features, and attack points',
         'When the phone dies: pace counting and dead reckoning',
       ],
-      words: 1120,
+      words: 1189,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
@@ -930,8 +930,8 @@ export const everydayPractical: KnowledgeDomainFile = {
         'The minimum-payment trap',
         'Snowball versus avalanche: two payoff orders',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1356,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1058,8 +1058,8 @@ export const everydayPractical: KnowledgeDomainFile = {
         'Fat and acid: the balancers',
         'Balancing a dish at the stove',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1269,
+      readMins: 6,
       addedOn: '2026-10-18',
       blocks: [
         {

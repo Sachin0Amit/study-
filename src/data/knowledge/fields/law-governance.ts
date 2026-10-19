@@ -21,8 +21,8 @@ export const lawGovernance: KnowledgeDomainFile = {
         'Parliamentary fusion and its compensations',
         'Comparative constitutional designs',
       ],
-      words: 870,
-      readMins: 5,
+      words: 1190,
+      readMins: 6,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -147,8 +147,8 @@ export const lawGovernance: KnowledgeDomainFile = {
         'Breach, termination and changed circumstances',
         'Enforcement without a world police',
       ],
-      words: 860,
-      readMins: 5,
+      words: 1199,
+      readMins: 6,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -273,8 +273,8 @@ export const lawGovernance: KnowledgeDomainFile = {
         'Breach and the menu of remedies',
         'The limits of enforcement',
       ],
-      words: 1050,
-      readMins: 5,
+      words: 1443,
+      readMins: 7,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -399,8 +399,8 @@ export const lawGovernance: KnowledgeDomainFile = {
         'Credibility, reliability and corroboration',
         'Why wrongful convictions happen',
       ],
-      words: 1080,
-      readMins: 5,
+      words: 1356,
+      readMins: 7,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -525,8 +525,8 @@ export const lawGovernance: KnowledgeDomainFile = {
         'Monitoring: treaty bodies, rapporteurs and NGOs',
         'The enforcement gap and its politics',
       ],
-      words: 1090,
-      readMins: 5,
+      words: 1353,
+      readMins: 7,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -647,8 +647,8 @@ export const lawGovernance: KnowledgeDomainFile = {
         'Strict liability without fault',
         'Damages and what tort law is for',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1400,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -766,8 +766,8 @@ export const lawGovernance: KnowledgeDomainFile = {
         'Fair use and the public domain',
         'Why pharma and software play by different rules',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1422,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {

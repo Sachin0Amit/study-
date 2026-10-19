@@ -20,8 +20,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'Chronotypes and social jetlag',
         'The afternoon dip and the evening wake-maintenance zone',
       ],
-      words: 0,
-      readMins: 1,
+      words: 1097,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -174,8 +174,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'Satellite cells donating myonuclei',
         'Recovery completes the job — soreness is not the receipt',
       ],
-      words: 0,
-      readMins: 1,
+      words: 1055,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -332,8 +332,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'Vaccine efficacy versus coverage',
         'Waning immunity keeps the target moving',
       ],
-      words: 0,
-      readMins: 1,
+      words: 1082,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -500,7 +500,7 @@ export const healthWellness: KnowledgeDomainFile = {
         'Nutrient density versus energy density',
         'Energy balance: why calories still count',
       ],
-      words: 1100,
+      words: 1176,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
@@ -649,7 +649,7 @@ export const healthWellness: KnowledgeDomainFile = {
         'Cortisol and memory: the inverted U',
         'Levers that genuinely lower the load',
       ],
-      words: 980,
+      words: 1060,
       readMins: 5,
       addedOn: '2026-10-17',
       blocks: [
@@ -785,7 +785,7 @@ export const healthWellness: KnowledgeDomainFile = {
         'Immunological memory and the second encounter',
         'From live-attenuated to mRNA: the platform menu',
       ],
-      words: 1090,
+      words: 1040,
       readMins: 5,
       addedOn: '2026-10-17',
       blocks: [
@@ -927,8 +927,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'How CBT works: testing thoughts against evidence',
         'Treatment, help-seeking and stigma',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1316,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1055,8 +1055,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'The recovery position',
         'When to call — and what to say',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1291,
+      readMins: 6,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1184,8 +1184,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'Agonists and antagonists at receptors',
         'Why drug interactions happen',
       ],
-      words: 0,
-      readMins: 5,
+      words: 1514,
+      readMins: 8,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1340,8 +1340,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'Staging with the TNM system',
         'Surgery, chemotherapy, radiation, targeted and immune therapy',
       ],
-      words: 0,
-      readMins: 5,
+      words: 1540,
+      readMins: 8,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1484,8 +1484,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'Small-vessel and large-vessel complications',
         'Management: lifestyle, tablets, hormones and technology',
       ],
-      words: 0,
-      readMins: 5,
+      words: 1459,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1628,8 +1628,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'Recognizing heart attack and stroke fast',
         'Cardiac rehabilitation and living with heart disease',
       ],
-      words: 0,
-      readMins: 5,
+      words: 1423,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1778,8 +1778,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'Bayesian updating at the bedside',
         'Cognitive traps and safety nets',
       ],
-      words: 0,
-      readMins: 5,
+      words: 1402,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1922,8 +1922,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'Third wave: ACT, DBT and mindfulness-based care',
         'Common factors: why the alliance predicts outcome',
       ],
-      words: 0,
-      readMins: 5,
+      words: 1427,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -2066,8 +2066,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'Testing windows and screening',
         'HIV today: treatment, prevention and U=U',
       ],
-      words: 0,
-      readMins: 5,
+      words: 1511,
+      readMins: 8,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -2210,8 +2210,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'Caloric restriction and the unproven drug pipeline',
         'Blue zones and the longevity-hype filter',
       ],
-      words: 0,
-      readMins: 5,
+      words: 1472,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -2354,8 +2354,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'Frequency beats quantity for sugar',
         'The routine the evidence supports',
       ],
-      words: 0,
-      readMins: 5,
+      words: 1417,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -2504,8 +2504,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'Glaucoma: the silent thief of peripheral sight',
         'Screens, strain and the myopia epidemic',
       ],
-      words: 0,
-      readMins: 5,
+      words: 1487,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -2654,8 +2654,8 @@ export const healthWellness: KnowledgeDomainFile = {
         'Chronic pain: an alarm that outlives the fire',
         'The biopsychosocial treatment of pain',
       ],
-      words: 0,
-      readMins: 5,
+      words: 1494,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {

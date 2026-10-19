@@ -20,8 +20,8 @@ export const technologyApplied: KnowledgeDomainFile = {
         'thermal runaway chain reactions',
         'degradation: cycle aging and calendar aging',
       ],
-      words: 800,
-      readMins: 4,
+      words: 1009,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -191,8 +191,8 @@ export const technologyApplied: KnowledgeDomainFile = {
         'relativistic clock corrections',
         'augmentation and multi-constellation receivers',
       ],
-      words: 770,
-      readMins: 4,
+      words: 901,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -349,8 +349,8 @@ export const technologyApplied: KnowledgeDomainFile = {
         'defects and yield economics',
         'process shrinks and Moore scaling',
       ],
-      words: 790,
-      readMins: 4,
+      words: 996,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -524,7 +524,7 @@ export const technologyApplied: KnowledgeDomainFile = {
         'Cooling: moving the heat out',
         'Decay heat and defence in depth',
       ],
-      words: 1150,
+      words: 1188,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
@@ -689,7 +689,7 @@ export const technologyApplied: KnowledgeDomainFile = {
         'Gradients: encoding position as frequency',
         'K-space and image reconstruction',
       ],
-      words: 1150,
+      words: 1145,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
@@ -849,7 +849,7 @@ export const technologyApplied: KnowledgeDomainFile = {
         'Attenuation and the 1550 nm window',
         'Amplifiers and undersea systems',
       ],
-      words: 1150,
+      words: 1167,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [

@@ -19,8 +19,8 @@ export const artsCulture: KnowledgeDomainFile = {
         'Negative space and horizon placement',
         'Breaking the grid deliberately',
       ],
-      words: 0,
-      readMins: 1,
+      words: 1016,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -163,8 +163,8 @@ export const artsCulture: KnowledgeDomainFile = {
         'The V–I cadence and the leading tone',
         'Inversions and the Circle of Fifths',
       ],
-      words: 0,
-      readMins: 1,
+      words: 1102,
+      readMins: 6,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -320,8 +320,8 @@ export const artsCulture: KnowledgeDomainFile = {
         'Parallel editing and cutting rhythm',
         'Invisible continuity as the Hollywood default',
       ],
-      words: 0,
-      readMins: 1,
+      words: 990,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -465,7 +465,7 @@ export const artsCulture: KnowledgeDomainFile = {
         'The 60-30-10 rule and palettes that scale',
         'Contrast ratios and readable text',
       ],
-      words: 1090,
+      words: 1071,
       readMins: 5,
       addedOn: '2026-10-17',
       blocks: [
@@ -614,8 +614,8 @@ export const artsCulture: KnowledgeDomainFile = {
         'Want versus need: the arc engine',
         'Scene and sequel: the pacing heartbeat',
       ],
-      words: 1060,
-      readMins: 5,
+      words: 1132,
+      readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -750,8 +750,8 @@ export const artsCulture: KnowledgeDomainFile = {
         'The semiotic toolkit: cut, fabric, logo, fit',
         'Global flows: appropriation versus appreciation',
       ],
-      words: 1070,
-      readMins: 5,
+      words: 1111,
+      readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
         {

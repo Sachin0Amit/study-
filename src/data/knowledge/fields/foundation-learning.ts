@@ -28,8 +28,8 @@ export const foundationLearning: KnowledgeDomainFile = {
         'Active recall versus passive re-reading',
         'Interference and sleep in consolidation',
       ],
-      words: 897,
-      readMins: 5,
+      words: 894,
+      readMins: 4,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -180,7 +180,7 @@ export const foundationLearning: KnowledgeDomainFile = {
         'Metacognitive monitoring',
       ],
       words: 853,
-      readMins: 5,
+      readMins: 4,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -316,8 +316,8 @@ export const foundationLearning: KnowledgeDomainFile = {
         'Double-and-halve and distributive shortcuts',
         'Estimation and sanity checks',
       ],
-      words: 897,
-      readMins: 5,
+      words: 883,
+      readMins: 4,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -473,7 +473,7 @@ export const foundationLearning: KnowledgeDomainFile = {
         'Pretesting: guessing before knowing',
         'Designing a recall-first session',
       ],
-      words: 1040,
+      words: 1073,
       readMins: 5,
       addedOn: '2026-10-17',
       blocks: [
@@ -610,7 +610,7 @@ export const foundationLearning: KnowledgeDomainFile = {
         'Designing an interleaved schedule',
         'Spacing is the partner, not the rival',
       ],
-      words: 1050,
+      words: 1073,
       readMins: 5,
       addedOn: '2026-10-17',
       blocks: [
@@ -747,7 +747,7 @@ export const foundationLearning: KnowledgeDomainFile = {
         'The ten-year rule and the 10,000-hour folklore',
         'Designing your own deliberate practice',
       ],
-      words: 1080,
+      words: 1097,
       readMins: 5,
       addedOn: '2026-10-17',
       blocks: [
@@ -889,8 +889,8 @@ export const foundationLearning: KnowledgeDomainFile = {
         'Zettelkasten: notes that network',
         'Matching the system to the task',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1294,
+      readMins: 6,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1008,8 +1008,8 @@ export const foundationLearning: KnowledgeDomainFile = {
         'Error triage: three passes',
         'Anxiety as fuel, not fog',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1297,
+      readMins: 6,
       addedOn: '2026-10-18',
       blocks: [
         {

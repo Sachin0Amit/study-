@@ -149,7 +149,15 @@ export const EXCLUDED_TOPICS: Record<string, ExcludedTopic> = {
 
 /** Domains whose every topic was excluded — the whole domain is retired. */
 export const EXCLUDED_DOMAINS: Record<string, string> = {
-  Mathematics: 'Every topic already covered by the Mathematics master subject (calculus, probability, linear algebra, number theory, set theory, graph theory).',
+  // 'Mathematics' was retired as a domain 2026-10-16 because all six of its
+  // topics duplicated the Mathematics master subject. It was re-enabled
+  // 2026-10-19: the six legacy topics remain individually excluded below
+  // (they ARE covered by the master subject), but the new classical-statistics
+  // topics (descriptive stats, sampling/CLT, confidence intervals & hypothesis
+  // testing, correlation & regression) are NOT covered anywhere in the
+  // Library — the master subject is discrete mathematics + the calculus
+  // sequence and contains no statistics chapters (verified against
+  // src/data/library-parts/merged/math.ts chapter titles).
   'Computing & AI': 'Every topic already covered by the DSA / AI / OS / Cybersecurity / Emerging-Tech subjects.',
 }
 

@@ -19,8 +19,8 @@ export const engineering: KnowledgeDomainFile = {
         'stability and oscillation',
         'tuning by the Ziegler–Nichols method',
       ],
-      words: 780,
-      readMins: 4,
+      words: 997,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -186,7 +186,7 @@ export const engineering: KnowledgeDomainFile = {
         'stress concentration at cracks and notches',
         'fracture toughness',
       ],
-      words: 810,
+      words: 1050,
       readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
@@ -364,8 +364,8 @@ export const engineering: KnowledgeDomainFile = {
         'power factor and apparent power',
         'balanced versus unbalanced loads',
       ],
-      words: 760,
-      readMins: 4,
+      words: 1006,
+      readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -546,7 +546,7 @@ export const engineering: KnowledgeDomainFile = {
         'Buckling in slender members',
         'Safety factors and limit states',
       ],
-      words: 1150,
+      words: 1169,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
@@ -711,7 +711,7 @@ export const engineering: KnowledgeDomainFile = {
         'Worst-case versus statistical (RSS) analysis',
         'Datums, gauges and the environment of measurement',
       ],
-      words: 1150,
+      words: 1100,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
@@ -876,7 +876,7 @@ export const engineering: KnowledgeDomainFile = {
         'The lift equation',
         'Aspect ratio and high-lift devices',
       ],
-      words: 1150,
+      words: 1204,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [

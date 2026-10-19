@@ -28,8 +28,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'Rotational kinetic energy',
         'Precession and gyroscopes',
       ],
-      words: 840,
-      readMins: 5,
+      words: 882,
+      readMins: 4,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -189,8 +189,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'Heat engines and the Carnot limit',
         'Gibbs free energy and spontaneity',
       ],
-      words: 860,
-      readMins: 5,
+      words: 894,
+      readMins: 4,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -352,8 +352,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'Temperature — the shift that changes K',
         'Catalysts and equilibrium position',
       ],
-      words: 850,
-      readMins: 5,
+      words: 874,
+      readMins: 4,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -514,8 +514,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'The Lorentz factor γ',
         'Mass–energy equivalence',
       ],
-      words: 880,
-      readMins: 4,
+      words: 1283,
+      readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -664,8 +664,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'Electronegativity',
         'Metallic character and the staircase',
       ],
-      words: 870,
-      readMins: 4,
+      words: 1199,
+      readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -810,8 +810,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'Core collapse: neutron stars and black holes',
         'Stellar recycling',
       ],
-      words: 940,
-      readMins: 5,
+      words: 1295,
+      readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -965,8 +965,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'Rates of plate motion',
         'Subduction zones and the Ring of Fire',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1002,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1091,8 +1091,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'Metamorphic rocks changed in the solid state',
         'The rock cycle conveyor',
       ],
-      words: 0,
-      readMins: 2,
+      words: 898,
+      readMins: 4,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1217,8 +1217,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'Eruption styles and volcano types',
         'Secondary hazards and preparedness',
       ],
-      words: 0,
-      readMins: 2,
+      words: 946,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1343,8 +1343,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'The geologic time scale',
         'Mass extinctions as chapter breaks',
       ],
-      words: 0,
-      readMins: 2,
+      words: 909,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1469,8 +1469,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'Condensation, clouds and fog',
         'Global circulation and the desert belts',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1015,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1595,8 +1595,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'From observation to forecast model',
         'Chaos and the limits of prediction',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1037,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1721,8 +1721,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'Asteroids: leftovers that never grew',
         'Comets and the distant reservoirs',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1057,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1847,8 +1847,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'Weighing planets and sniffing atmospheres',
         'The habitable zone',
       ],
-      words: 0,
-      readMins: 2,
+      words: 980,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1973,8 +1973,8 @@ export const physicalSciences: KnowledgeDomainFile = {
         'The Drake equation',
         'SETI and technosignatures',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1080,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -2373,7 +2373,7 @@ export const physicalSciences: KnowledgeDomainFile = {
         'Isolation through mass, seals and decoupling',
         'Noise control along the path',
       ],
-      words: 1214,
+      words: 1204,
       readMins: 6,
       addedOn: '2026-10-18',
       blocks: [

@@ -29,7 +29,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Off-target effects',
         'Delivery and therapeutic applications',
       ],
-      words: 880,
+      words: 1060,
       readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
@@ -176,7 +176,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Refractory periods',
         'Saltatory conduction in myelinated axons',
       ],
-      words: 850,
+      words: 937,
       readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
@@ -333,7 +333,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         'RuBisCO and photorespiration',
         'C4 and CAM adaptations',
       ],
-      words: 860,
+      words: 1002,
       readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
@@ -494,8 +494,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Evidence: fossils, homology, molecules',
         'Speciation and reproductive isolation',
       ],
-      words: 940,
-      readMins: 5,
+      words: 1212,
+      readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -638,8 +638,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Immunological memory and vaccination',
         'Tolerance and its failures',
       ],
-      words: 950,
-      readMins: 5,
+      words: 1236,
+      readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -787,8 +787,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Primary productivity as the energy budget',
         'Why big, fierce animals are rare',
       ],
-      words: 890,
-      readMins: 4,
+      words: 1109,
+      readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -931,8 +931,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Arteries, capillaries, and veins',
         'Blood pressure and its regulation',
       ],
-      words: 0,
-      readMins: 2,
+      words: 956,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1052,8 +1052,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Carbon dioxide, bicarbonate, and pH',
         'Automatic control from the brainstem',
       ],
-      words: 0,
-      readMins: 2,
+      words: 961,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1173,8 +1173,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Absorption in the small intestine',
         'The liver as processing hub',
       ],
-      words: 0,
-      readMins: 2,
+      words: 887,
+      readMins: 4,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1295,8 +1295,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Negative feedback: the master pattern',
         'The kidneys as endocrine organs',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1006,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1421,8 +1421,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Motor units grade the force',
         'Living bone, constantly remodeled',
       ],
-      words: 0,
-      readMins: 2,
+      words: 985,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1546,8 +1546,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'A size ladder for the invisible',
         'Three ways to cause disease',
       ],
-      words: 0,
-      readMins: 2,
+      words: 903,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1667,8 +1667,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Genes that travel: plasmids',
         'Stewardship: keeping the drugs working',
       ],
-      words: 0,
-      readMins: 2,
+      words: 957,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1788,8 +1788,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Dysbiosis: when balance breaks',
         'Fecal transplants and engineering the flora',
       ],
-      words: 0,
-      readMins: 2,
+      words: 883,
+      readMins: 4,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1910,8 +1910,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Dominance and its variants',
         'Reading family pedigrees',
       ],
-      words: 0,
-      readMins: 2,
+      words: 975,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -2036,8 +2036,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Sympatric: divided without moving',
         'Phylogenetic trees: reading the branches',
       ],
-      words: 0,
-      readMins: 2,
+      words: 989,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -2162,8 +2162,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Out of Africa',
         'Reading the evidence: fossils, stone, DNA',
       ],
-      words: 0,
-      readMins: 2,
+      words: 990,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -2287,8 +2287,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'The phylum tour: sponges to chordates',
         'Protostomes, deuterostomes, and your kin',
       ],
-      words: 0,
-      readMins: 2,
+      words: 895,
+      readMins: 4,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -4331,6 +4331,453 @@ export const lifeSciences: KnowledgeDomainFile = {
           title: "Where to go next",
           text: "Prerequisite: the immune-system lesson for innate and adaptive basics. Continue with the microbiome lesson for the hygiene and old-friends story behind rising allergy, the Health & Wellness diabetes lesson for living with type 1, and the synapse lesson for myasthenia's target — this is education, not diagnosis.",
           tone: "path",
+        },
+      ],
+    },
+    // ------------------------------------------------------------------
+    // FMHY-1-c — topics grounded in OpenStax Anatomy & Physiology 2e
+    // (openstax.org/books/anatomy-and-physiology, CC BY-NC-SA):
+    // 12-1, 12-2, 13-2, 13-4, 15-1 (nervous system); 14-1, 14-2 (senses);
+    // 27-1, 27-2, 28-1, 28-2, 28-3, 28-4 (reproduction and development).
+    {
+      id: 'bio-anatomy-nervous-system-command',
+      title: 'The Nervous System: The Body\'s Command Network',
+      domain: 'Life Sciences',
+      field: 'Anatomy & Physiology',
+      branch: 'Human Body Systems',
+      tier: 'intermediate',
+      concepts: [
+        'Central versus peripheral nervous system',
+        'Gray and white matter: nuclei, ganglia, tracts, nerves',
+        'Neurons and the six glial cell types',
+        'Brain regions and the spinal cord highway',
+        'Twelve cranial nerves, thirty-one spinal nerves, four plexuses',
+        'Sympathetic and parasympathetic divisions',
+        'Two-neuron autonomic circuits and their transmitters',
+      ],
+      words: 1652,
+      readMins: 8,
+      addedOn: '2026-10-19',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'Between reading this sentence and scratching an itch, one network sensed, planned, commanded, and corrected the motion. The nervous system is the body\'s wiring and its command structure at once: a central nervous system (CNS) of brain and spinal cord locked inside skull and vertebral column, and a peripheral nervous system (PNS) of nerves and ganglia reaching everything else. This topic maps that network — organs, wiring rules, and the autonomic dimmer switch that runs the organs without asking. The signal itself, the traveling ion wave of the action potential, belongs to the nerve-signaling lesson; here we follow where the wires go.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Neurology is applied wiring: a stroke in one cerebral hemisphere paralyzes the opposite side of the body because the tracts cross; diabetes numbs the feet first because the longest peripheral nerves fail first; multiple sclerosis and Guillain-Barré strip the same insulation in different compartments. Learn the layout, and symptoms become addresses.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Structurally the division is simple — CNS is brain plus spinal cord, PNS is everything else — but the naming runs deeper. Tissue dense in cell bodies looks gray; myelinated axon tracts look white. And the same thing gets a different name by address: a bundle of axons is a tract in the CNS but a nerve in the PNS, while a cluster of cell bodies is a nucleus centrally but a ganglion peripherally — the optic "nerve" becomes the optic tract the moment its axons cross into the skull. Functionally the system runs three jobs in sequence: sensation, integration, and response. Somatic wiring drives skeletal muscle, mostly voluntarily; autonomic wiring runs smooth muscle, cardiac muscle, and glands for homeostasis; the enteric nervous system runs the gut so independently it is nearly a division of its own.',
+        },
+        {
+          kind: 'para',
+          text: 'The tissue is built from two cell families. Neurons — soma, dendrites, one axon — carry the signals; the action-potential lesson covers how. Shape predicts job: most sensory neurons are pseudo-unipolar, the cell body parked in a dorsal root ganglion while a single axon runs from skin to spinal cord; bipolar neurons serve the retina and olfactory epithelium; nearly everything else is multipolar. The second family, glia, makes signaling possible: astrocytes buffer the brain\'s chemistry and build the blood-brain barrier; oligodendrocytes wrap CNS axons, one cell myelinating many segments; microglia are resident immune cells; ependymal cells filter cerebrospinal fluid in the ventricles. In the periphery, satellite cells cushion ganglion cell bodies, and Schwann cells myelinate one segment each — one reason a cut peripheral nerve can regrow along its Schwann tubes while CNS tracts cannot.',
+        },
+        {
+          kind: 'para',
+          text: 'The CNS is four brain regions plus a cord. The cerebrum — folded cortex in four lobes per hemisphere, the halves joined by the corpus callosum — carries memory, language, and conscious experience; the brain-map lesson tours that geography in detail. Beneath it, the diencephalon holds the thalamus, the relay nearly every sensory signal must pass through, and the hypothalamus, chief of the autonomic system and, through the pituitary, of the endocrine system (the hormones lesson takes that axis from here). The brainstem — midbrain, pons, medulla — runs breathing, cardiovascular control, and the cranial-nerve nuclei while funneling all ascending and descending traffic. Behind it, the cerebellum compares the movement the cerebrum ordered with the sensory feedback that returned, and issues the corrections that keep motion smooth.',
+        },
+        {
+          kind: 'para',
+          text: 'The spinal cord is the trunk cable. In cross-section the gray matter forms an H: posterior horns process arriving sensory signals, anterior horns hold the large motor neurons that command skeletal muscle, and lateral horns at thoracic and upper lumbar levels launch the sympathetic outflow. Around the gray matter, white columns carry ascending sensory tracts and descending motor tracts. Peripheral fibers arrive through dorsal roots and leave through ventral roots — sensory and motor, strictly segregated — with the sensory cell bodies sitting in each dorsal root ganglion. The cord stops growing in toddlerhood while the vertebral column keeps lengthening, so the lowest roots stream downward as a horse-tail bundle, the cauda equina.',
+        },
+        {
+          kind: 'para',
+          text: 'Peripherally, twelve cranial nerves serve the head and neck: purely sensory (olfactory, optic, vestibulocochlear), purely motor (the three eye-movement nerves, the spinal accessory, the hypoglossal), and mixed — trigeminal for face sensation and chewing, facial for expression and taste, glossopharyngeal for the throat, and the vagus, which wanders off to regulate heart and gut. Below the neck, thirty-one pairs of spinal nerves — eight cervical, twelve thoracic, five lumbar, five sacral, one coccygeal — re-sort into four plexuses: the cervical, whose phrenic nerve drives the diaphragm; the brachial, giving the radial, median, and ulnar nerves of the arm; the lumbar, source of the femoral nerve; and the sacral, root of the sciatic nerve, the body\'s largest. Nerves are organs, not bare wires: fascicles of axons wrapped in connective-tissue sheaths.',
+        },
+        {
+          kind: 'para',
+          text: 'The autonomic system always uses a two-neuron chain: a preganglionic neuron from the CNS synapses in a ganglion, and the postganglionic neuron drives the target. The sympathetic division leaves the thoracic and upper lumbar cord — thoracolumbar — into a chain of ganglia flanking the vertebral column; its preganglionic fibers are short, its postganglionic fibers long, and one preganglionic neuron may drive ten to twenty targets. That divergence makes fight-or-flight a whole-body event, and the adrenal medulla joins in as a modified ganglion whose chromaffin cells dump epinephrine into the bloodstream. The parasympathetic division is craniosacral: long preganglionic fibers travel in cranial nerves — mostly the vagus — and sacral nerves to terminal ganglia sitting on or inside the target organs. Most organs receive both; the heart\'s rate is a tug-of-war between them. The chemistry is tidy: all preganglionic fibers release acetylcholine onto nicotinic receptors; parasympathetic postganglionic fibers keep using acetylcholine, on muscarinic receptors; sympathetic postganglionic fibers usually release norepinephrine onto adrenergic receptors.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example: The Fallen Wrist',
+          steps: [
+            'Identify what is asked: why a man who slept with his arm draped over a chair back wakes unable to extend his wrist, though he can grip once the hand is straightened for him.',
+            'Recall the wiring: the radial nerve, off the brachial plexus, spirals around the humerus carrying motor fibers to the wrist and finger extensors and sensory fibers from the back of the hand.',
+            'Apply: hours of compression shut down conduction — the mechanism the action-potential lesson describes — so the extensors get no command, while the flexors, served by the median and ulnar nerves, pull the hand into a flexed droop.',
+            'State the result: "Saturday night palsy," a radial compression neuropathy. The Schwann tubes are intact, so conduction typically returns over days to weeks — unlike a transected cord.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Stroke triage runs on the crossing wiring: one hemisphere\'s stroke weakens the other side of the body, and the deficit pattern names the region before any scan.',
+            'Multiple sclerosis demyelinates CNS tracts; Guillain-Barré demyelinates peripheral nerves — one insulation, two compartments, different symptoms and treatments.',
+            'Neuropathies from diabetes or chemotherapy strike the longest nerves first, so numbness arrives in a stocking-and-glove pattern; conduction studies quantify the slowdown.',
+            'Autonomic pharmacology is receptor bookkeeping: beta-blockers restrain sympathetic drive to the heart, atropine blocks muscarinic receptors, and epinephrine replays the adrenal medulla.',
+            'Vagus-nerve stimulators, implanted for epilepsy and depression, ride the parasympathetic main cable linking brainstem, heart, and gut.',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'The ten-percent-of-the-brain myth is exactly that: imaging shows roughly eighty percent of the brain consuming energy even during simple tasks. Second, the optic "nerve" is brain tissue — a CNS tract — which is partly why it does not regenerate the way a peripheral nerve can. Third, sympathetic and parasympathetic are not an on/off pair: both run continuously, and each organ sits at a balance point that shifts with circumstance.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Central nervous system (CNS)', def: 'Brain plus spinal cord, encased in skull and vertebral column.' },
+            { term: 'Peripheral nervous system (PNS)', def: 'All nervous tissue beyond brain and cord — the nerves and ganglia.' },
+            { term: 'Ganglion', def: 'A cluster of neuron cell bodies in the periphery; its CNS counterpart is a nucleus.' },
+            { term: 'Tract', def: 'A bundle of axons within the CNS; the same bundle in the periphery is a nerve.' },
+            { term: 'Astrocyte', def: 'CNS glial cell that supports neurons and helps build the blood-brain barrier.' },
+            { term: 'Oligodendrocyte', def: 'CNS glial cell that myelinates many axon segments; the target in multiple sclerosis.' },
+            { term: 'Nerve plexus', def: 'An interchange where spinal-nerve fibers re-sort into the named nerves of the limbs.' },
+            { term: 'Preganglionic fiber', def: 'The CNS neuron of an autonomic two-neuron chain; always cholinergic.' },
+          ],
+        },
+        { kind: 'heading', text: 'Check Your Understanding' },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'A bundle of axons running from the spinal cord to the muscles of the foot is called a:',
+              options: ['tract', 'nerve', 'ganglion', 'nucleus'],
+              answer: 1,
+              explain: 'Outside the CNS the bundle is a nerve; inside brain or cord it would be a tract.',
+            },
+            {
+              q: 'Myelin around axons in the brain and spinal cord is made by:',
+              options: ['Schwann cells', 'oligodendrocytes', 'astrocytes', 'satellite cells'],
+              answer: 1,
+              explain: 'Oligodendrocytes myelinate CNS segments, one cell reaching several; Schwann cells do the periphery, one segment each.',
+            },
+            {
+              q: 'The phrenic nerve, which commands the diaphragm, comes from the:',
+              options: ['brachial plexus', 'cervical plexus', 'lumbar plexus', 'sacral plexus'],
+              answer: 1,
+              explain: 'The cervical plexus (C1–C5) sends the phrenic nerve to the diaphragm — why cord injuries above C3 stop breathing.',
+            },
+            {
+              q: 'Sympathetic postganglionic neurons usually release:',
+              options: ['acetylcholine onto nicotinic receptors', 'norepinephrine onto adrenergic receptors', 'dopamine onto D1 receptors', 'epinephrine onto muscarinic receptors'],
+              answer: 1,
+              explain: 'Norepinephrine onto adrenergic receptors is the sympathetic signature; all preganglionic fibers, in both divisions, use acetylcholine onto nicotinic receptors.',
+            },
+            {
+              q: 'The spinal cord proper ends near the upper lumbar vertebrae; the continuing bundle of nerve roots below it is the:',
+              options: ['cauda equina', 'conus medullaris', 'filum terminale', 'sympathetic chain'],
+              answer: 0,
+              explain: 'The cord stops growing in toddlerhood while the column lengthens, leaving the lower roots to stream down as the cauda equina.',
+            },
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          text: 'Prerequisites: the action-potential lesson for the signal and the synapse lesson for the chemistry between neurons. Pair with the brain-map lesson for cortical geography and the plasticity lesson for how those maps redraw; the senses lesson takes the input half of this network from here.',
+          tone: 'path',
+        },
+      ],
+    },
+    // ------------------------------------------------------------------
+    {
+      id: 'bio-anatomy-senses-perception',
+      title: 'The Senses: How the Body Reads the World',
+      domain: 'Life Sciences',
+      field: 'Anatomy & Physiology',
+      branch: 'Human Body Systems',
+      tier: 'intermediate',
+      concepts: [
+        'Sensation versus perception',
+        'Receptor classes: structure, location, modality',
+        'Somatosensation: touch, proprioception, pain',
+        'Taste and smell: the chemical senses',
+        'Hearing and balance from one hair-cell mechanism',
+        'Vision: rods, cones, and phototransduction',
+        'Ascending pathways and the sensory homunculus',
+        'Sensory adaptation',
+      ],
+      words: 1830,
+      readMins: 9,
+      addedOn: '2026-10-19',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'You have never actually seen the world — only your brain\'s reconstruction of it. Sensation is the raw half: receptors converting photons, pressure waves, and dissolved molecules into the nervous system\'s single currency, the nerve impulse. Perception is the constructed half: those impulses woven into color, flavor, music, and ache. This topic walks the human sensorium — receptor families, body-wide somatic senses, the special senses with their dedicated organs, and the pathways that deliver them. The impulse mechanism belongs to the action-potential lesson; other species\' stranger sensory worlds, to the animal-senses tour.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Clinical neuroscience is largely sensory wiring: a cochlear implant works because the cochlea\'s frequency map survives the death of its hair cells; a map of missing visual fields can point to a tumor pressing on the optic chiasm; smell lost after head injury is olfactory axons sheared at the cribriform plate. Sensory health is also a public-health budget line — noise, uncorrected vision, newborn hearing screening.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Everything starts with transduction: a stimulus changes a receptor cell\'s membrane potential until a nerve impulse fires toward the CNS. Receptors sort three ways. By structure: bare free nerve endings (pain, temperature), connective-tissue-encapsulated endings (touch, pressure), and dedicated receptor cells (the retina\'s photoreceptors). By location: exteroceptors face the outside world, interoceptors report the viscera, and proprioceptors track muscles, tendons, and joints. By stimulus: chemoreceptors for taste and smell, mechanoreceptors for touch, sound, and balance, thermoreceptors, nociceptors for damaging stimuli, photoreceptors for light. Distributed senses like touch are general; the special senses — taste, smell, hearing, balance, vision — get whole organs of their own.',
+        },
+        {
+          kind: 'para',
+          text: 'The skin is wired with a cast of mechanoreceptors, each tuned to a job. Free nerve endings carry pain and temperature. Merkel cells at the epidermal–dermal junction read fine texture; tactile (Meissner) corpuscles — densest in fingertips and lips — catch light touch; deep lamellated (Pacinian) corpuscles register deep pressure and fast vibration; bulbous (Ruffini) corpuscles report stretch; a hair-follicle plexus fires when anything bends a hair. In muscle, spindles monitor stretch while Golgi tendon organs gauge tendon tension — together the proprioception that lets you touch your nose with eyes closed. Nociceptors have a famous quirk: capsaicin, the burn of chili, binds the same ion channel that opens above body temperature — which is why pepper feels hot, and why capsaicin creams, holding that channel open until it fatigues, end up quieting pain.',
+        },
+        {
+          kind: 'para',
+          text: 'Taste and smell both read chemistry. Taste buds nest in the tongue\'s papillae, each packed with gustatory cells: salty is sodium ions drifting in, sour is hydrogen ions from acids, while sweet, bitter, and savory (umami — the taste of glutamate) work through G-protein-coupled receptors. Bitter receptors crowd the back of the tongue, near the gag reflex they arm against plant toxins; the facial nerve serves the front, the glossopharyngeal the rear, the vagus the throat. Smell is vaster: olfactory neurons in a patch of upper nasal cavity, their axons threading through the cribriform plate to the olfactory bulb. Olfaction is the one sense that skips the thalamic relay, wiring almost directly into cortex and limbic system — the reason a smell can ambush a memory. Those neurons are replaced every month or two, a renewal that fades with age — one reason elderly people over-salt their food, a habit with cardiovascular consequences.',
+        },
+        {
+          kind: 'para',
+          text: 'Hearing is a chain of mechanical conversions. The auricle funnels sound onto the tympanic membrane, whose vibration rocks the three ossicles — malleus, incus, stapes, the body\'s smallest bones — against the oval window. Inside the cochlea, fluid waves travel the scala vestibuli and scala tympani on either side of the cochlear duct, flexing the basilar membrane; the organ of Corti rides it, its hair cells\' stereocilia shearing against the tectorial membrane — bending toward the tallest member opens ion channels and fires the fiber. The coil is tuned along its length: high frequencies flex the base, low the apex, spanning 20 to 20,000 hertz. The same hair cells run balance: the utricle and saccule weigh head position through otolith-studded membranes, the three semicircular canals detect rotation as their fluid lags and deflects each cupula, and vestibular connections drive the reflex that keeps gaze stable while the head moves. Hair cells never regenerate — the hearing lesson covers what medicine does about that.',
+        },
+        {
+          kind: 'para',
+          text: 'The eye is built in three coats: an outer fibrous tunic of tough sclera and clear, light-bending cornea; a middle vascular tunic of choroid, ciliary body, and iris; and the inner neural tunic — the retina, an outpost of brain tissue. The retina is a tiny circuit: photoreceptors drive bipolar cells, which drive retinal ganglion cells whose axons leave as the optic nerve. Rods carry rhodopsin, sensitive enough that a single photon can register, but they report only grayscale; cones carry three opsins peaking near 564, 534, and 420 nanometers, and color is the brain\'s comparison of their ratios. At the fovea the wiring is one cone to one ganglion cell — maximum sharpness; toward the periphery up to fifty photoreceptors converge on one ganglion cell, trading acuity for sensitivity. Where the optic nerve exits there are no photoreceptors: the blind spot. A photon flips the retinal cofactor from 11-cis to all-trans, and the bleached pigment must be reset — the physiology behind afterimages. Focusing and its failures are the eye-care lesson\'s territory.',
+        },
+        {
+          kind: 'para',
+          text: 'Once transduced, everything must be routed. Sensations below the neck climb two spinal systems: the dorsal column system, carrying fine touch and proprioception, crossing in the medulla; and the spinothalamic tract, carrying pain and temperature, crossing at its entry level in the cord. The face reports through the trigeminal pathway. Nearly all of it relays through the thalamus before landing in the primary somatosensory cortex behind the central sulcus, laid out as the homunculus — a body map with enormous lips and fingertips, scaled to receptor density. Vision takes the strangest route: fibers from the medial half of each retina cross at the optic chiasm, so each hemisphere sees the opposite visual field en route to the occipital cortex, while the brainstem compares the ears\' inputs by tiny timing and loudness differences to localize sound. And perception edits itself: constant stimuli fade as receptors adapt — you stop feeling your shirt within seconds — while proprioceptors and nociceptors, usefully, barely adapt at all. Prism-glasses experiments show the cortex re-mapping its inputs within days.',
+        },
+        {
+          kind: 'formula',
+          name: 'Interaural time difference',
+          latex: '\\Delta t = \\frac{d\\,\\sin\\theta}{v}',
+          meaning: 'A sound at angle θ from straight ahead reaches the two ears separated by Δt; d is the ear-to-ear distance, v the speed of sound (about 343 meters per second). Directly to one side, the delay is roughly half a millisecond — measured by the brainstem to localize the source.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example: Vanishing Side Vision',
+          steps: [
+            'Identify what is asked: why a patient with an enlarging pituitary gland loses only the outermost slivers of both visual fields while central vision stays sharp.',
+            'Recall the wiring: fibers from the medial half of each retina cross at the optic chiasm, and those crossed fibers carry the lateral visual fields.',
+            'Apply: the pituitary sits directly beneath the chiasm, so a growing tumor compresses exactly the crossing fibers — the peripheral-field traffic — while sparing the uncrossed ones.',
+            'State the result: loss of lateral vision on both sides, the signature of chiasmal compression — an optometrist\'s field map is sometimes the first test to find a pituitary tumor.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Cochlear implants skip dead hair cells entirely, stimulating the spiral ganglion\'s frequency map with electrode arrays — pitch by position, the cochlea\'s own code.',
+            'Visual-field testing (perimetry) localizes damage along the pathway — eye, chiasm, tract, or cortex — before any scanner is booked.',
+            'Capsaicin patches outlast their burn: sustained channel binding desensitizes nociceptors, a topical option for nerve pain.',
+            'Smell loss after head trauma is olfactory axons shearing at the cribriform plate; because flavor is mostly retronasal smell, anosmia strips the pleasure from food and pushes eaters toward excess salt.',
+            'Braille readers\' fingertip maps expand in the somatosensory cortex — the plasticity lesson\'s evidence that the homunculus is a living document.',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'The tongue taste map is a myth: all five tastes are sensed across the whole tongue, with only subtle density differences by region. The "five senses" count is folklore too — balance, proprioception, temperature, and pain bring the real modality list past a dozen. And you cannot see colors in a dim room: low light is rod territory, grayscale by design — any color you think you see is memory filling in.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Transduction', def: 'Conversion of a stimulus into a change in a receptor\'s membrane potential.' },
+            { term: 'Sensory modality', def: 'The type of stimulus a receptor encodes — the label on the sensory traffic.' },
+            { term: 'Nociceptor', def: 'A free nerve ending that fires to stimuli that damage or threaten tissue.' },
+            { term: 'Proprioception', def: 'The sense of body position, from muscle spindles, tendon organs, and joints.' },
+            { term: 'Special senses', def: 'Taste, smell, hearing, balance, and vision — the senses with dedicated organs.' },
+            { term: 'Tonotopy', def: 'The cochlea\'s frequency map: high pitches at the base, low at the apex.' },
+            { term: 'Fovea', def: 'The all-cone retinal center with one-to-one wiring, where acuity peaks.' },
+            { term: 'Sensory adaptation', def: 'The fading response of a receptor to an unchanging stimulus.' },
+          ],
+        },
+        { kind: 'heading', text: 'Check Your Understanding' },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'Pain and temperature from the skin are transduced by:',
+              options: ['free nerve endings', 'Meissner corpuscles', 'muscle spindles', 'cone cells'],
+              answer: 0,
+              explain: 'Nociceptors and thermoreceptors are bare free nerve endings in the dermis — no capsule, no dedicated organ.',
+            },
+            {
+              q: 'Which sense bypasses the thalamus on its way to the cerebral cortex?',
+              options: ['Vision', 'Hearing', 'Smell', 'Taste'],
+              answer: 2,
+              explain: 'Olfactory axons run almost directly to cortex and limbic structures — why smells trigger memories so easily.',
+            },
+            {
+              q: 'High-frequency sounds flex the basilar membrane nearest:',
+              options: ['the apex of the cochlea', 'the base, near the oval window', 'the tectorial membrane', 'the middle ear'],
+              answer: 1,
+              explain: 'Tonotopy: stiff, narrow base for high frequencies; wide apex for low — the cochlea as a spread-out piano.',
+            },
+            {
+              q: 'Visual acuity is sharpest at the fovea because:',
+              options: ['it has the most rods', 'each cone drives a single ganglion cell, with no overlying blood vessels', 'it is closest to the lens', 'its photoreceptors regenerate daily'],
+              answer: 1,
+              explain: 'One-to-one wiring and a vessel-free zone give the fovea maximum resolution; the periphery converges up to fifty photoreceptors per ganglion cell.',
+            },
+            {
+              q: 'Fine touch and proprioception from the legs reach the cortex via:',
+              options: ['the spinothalamic tract', 'the dorsal column system, crossing in the medulla', 'the trigeminal pathway', 'the optic tract'],
+              answer: 1,
+              explain: 'The dorsal column system carries them upward and crosses in the medulla; the spinothalamic tract carries pain and temperature and crosses in the cord.',
+            },
+            {
+              q: 'Umami is the taste of:',
+              options: ['sodium ions', 'acids', 'glutamate', 'glucose'],
+              answer: 2,
+              explain: 'The savory taste tracks L-glutamate through a G-protein-coupled receptor — the signature of protein-rich food.',
+            },
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          text: 'Prerequisites: the action-potential lesson for the nerve impulse and the nervous-system command lesson for the wiring these signals travel. The hearing and eye-care lessons take the clinical half of audition and vision; the pain lesson covers nociception gone chronic; the animal-senses tour shows what other species do with the same physics.',
+          tone: 'path',
+        },
+      ],
+    },
+    // ------------------------------------------------------------------
+    {
+      id: 'bio-anatomy-reproduction-development',
+      title: 'Reproduction and the Making of a Human',
+      domain: 'Life Sciences',
+      field: 'Anatomy & Physiology',
+      branch: 'Human Body Systems',
+      tier: 'intermediate',
+      concepts: [
+        'Testes, ducts, and accessory glands',
+        'Spermatogenesis: a 64-day pipeline',
+        'Ovaries, follicles, and the uterine cycle',
+        'Oogenesis: meiosis on hold since before birth',
+        'Fertilization and the blocks to polyspermy',
+        'Cleavage, implantation, and gastrulation',
+        'Fetal growth and the three circulatory shunts',
+        'Labor as a positive-feedback cascade',
+      ],
+      words: 1829,
+      readMins: 9,
+      addedOn: '2026-10-19',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'It is the one organ system you could lose and still live a full life — because it does not exist for you. Its product is the next human. The male system is a continuous factory: sperm made daily from puberty onward, matured, stored, delivered. The female system advances one oocyte at a time on a monthly rhythm — then does what no other system attempts: it houses, feeds, and delivers a whole new person. This topic covers both systems, the making and meeting of the gametes, and the thirty-eight-week construction project that follows.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'IVF has produced millions of births since 1978 by operating this anatomy from the outside — stimulating follicles, retrieving oocytes, injecting single sperm. The biggest public-health wins in pregnancy, from folic-acid fortification to alcohol warnings, are developmental-timing rules written into policy. The hormones\' wider story belongs to the endocrine lesson; cycles, contraception, and the maternal side to the sexual-health and pregnancy lessons.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'The paired testes hang in the scrotum because sperm production runs best two to four degrees below core temperature; dartos and cremaster muscles shorten or lengthen the scrotum to hold that window. Inside, sperm develop in coiled seminiferous tubules where Sertoli cells nurse the germ cells behind the blood-testis barrier while Leydig cells make testosterone. Sperm then mature in the epididymis — six meters of coiled duct — gaining motility over about twelve days before storage. At ejaculation they race up the muscular ductus deferens (the vasectomy\'s target), gathering cargo: fructose-rich seminal-vesicle fluid, most of the volume and the sperm\'s fuel; an alkaline prostate secretion that lets semen coagulate and then liquefy; and lubricating bulbourethral pre-ejaculate, which can carry stray sperm. Erection is hydraulic — nitric oxide dilates the penile arteries, blood fills the corpora cavernosa, and venous drainage compresses shut — the pathway sildenafil (Viagra) keeps open.',
+        },
+        {
+          kind: 'para',
+          text: 'The production line runs continuously. Spermatogonia — stem cells at the tubule\'s edge — divide by mitosis; one daughter stays a stem cell, the other becomes a primary spermatocyte that enters meiosis: two divisions later, four haploid spermatids, which spermiogenesis reshapes into a head with a compact nucleus and enzyme-capped acrosome, a mitochondria-packed mid-piece, and a lashing flagellum. A full cycle takes about 64 days, with new cohorts every 16, yielding 100 to 300 million sperm daily. The throttle is hormonal: hypothalamic GnRH drives pituitary LH (commanding Leydig cells\' testosterone) and FSH (commanding Sertoli cells); testosterone and inhibin feed back to close the loop — an axis the endocrine lesson maps in full.',
+        },
+        {
+          kind: 'para',
+          text: 'Female anatomy is built around an itinerary. Each ovary stocks its follicles — an oocyte wrapped in granulosa cells — from before birth. At ovulation the oocyte bursts free near the fimbriated mouth of a uterine tube, where cilia sweep it toward the uterus; the usual rendezvous with sperm is the tube\'s ampulla. The uterus is mostly myometrium — smooth muscle built for labor — lined by the endometrium, whose stratum functionalis thickens each month and sheds if no embryo implants; the cervix guards the entrance, and the Lactobacillus-kept vagina is both entrance and birth canal. Oogenesis is strikingly asymmetric: a girl is born with one to two million primary oocytes already arrested in meiosis I; perhaps 400,000 remain at puberty, and only a few hundred ever ovulate. Each cycle an LH surge completes the first division — unequally, so nearly all the cytoplasm stays with the secondary oocyte — then meiosis pauses again until a sperm penetrates. The oocyte also supplies the embryo\'s every mitochondrion: mitochondrial DNA traces an unbroken maternal line.',
+        },
+        {
+          kind: 'para',
+          text: 'The cycle is that machinery on a clock. FSH recruits a cohort of follicles; the dominant one pours out estrogen until, past a threshold, negative feedback flips positive — the LH surge that triggers ovulation at about day 14. The spent follicle becomes the corpus luteum, whose progesterone readies the endometrium; if no embryo rescues it with hCG, the luteum degenerates, spiral arteries clamp shut, and the stratum functionalis sheds as menses. The full choreography — fertile windows and the contraception that exploits them — is the sexual-health lesson\'s subject.',
+        },
+        {
+          kind: 'para',
+          text: 'Fertilization is attrition followed by precision. Of the hundreds of millions of sperm ejaculated, vaginal acidity, cervical mucus, and phagocytes cut the field to a few thousand reaching the tube; sperm can wait there three to five days, but the oocyte survives only about a day after ovulation. En route the tract\'s fluids capacitate the sperm, priming the membrane over the head. The oocyte wears two barriers — the corona radiata and the glycoprotein zona pellucida — and hundreds of sperm spill acrosomal enzymes to carve the path wider: the first arrivals never fertilize; they fall so the winner can. When one fuses, the oocyte slams the doors: a fast block depolarizes the membrane, and the slow block — the cortical reaction — hardens the zona into a fertilization membrane, because a triploid embryo cannot live. The pronuclei merge, and the zygote begins to divide. Two eggs released and fertilized makes fraternal twins; one early embryo splitting makes identical ones.',
+        },
+        {
+          kind: 'para',
+          text: 'Week one is travel and division: cleavage packs the zygote into a morula, then a blastocyst — outer trophoblast (future placenta) around an inner cell mass (future embryo) — which hatches, implants, and announces itself with hCG, the hormone every pregnancy test reads. Weeks three to eight, the embryo assembles: gastrulation lays down ectoderm, mesoderm, and endoderm (the developmental-biology lesson traces the logic); the neural tube closes by about day 28 — before most tests turn positive, which is why folate must precede conception; the heart beats in week four; by week eight every organ system exists in outline, three centimeters long. The fetal period is growth and rehearsal: sexes differentiate from bipotential gonads in weeks nine to twelve (until then, embryos are morphologically identical); the mother feels movement by sixteen to twenty weeks; lungs make surfactant and myelination begins from weeks twenty-one to thirty; and blood detours around the fluid-filled lungs and half-built liver through three shunts — ductus venosus, foramen ovale, ductus arteriosus — that close with the first breath. Labor is a positive-feedback cascade: progesterone\'s brake fades, fetal cortisol and estrogen rise, and oxytocin with prostaglandins drive contractions that stretch the cervix, which calls for more oxytocin — through dilation to ten centimeters, delivery, and the afterbirth. The pregnancy lesson takes the maternal side from here.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example: The Fertility Window',
+          steps: [
+            'Identify what is asked: why intercourse two days before ovulation can still conceive, while intercourse the day after ovulation generally cannot.',
+            'Recall the cell biology: capacitated sperm survive in the uterine tubes for three to five days; the oocyte survives only about twenty-four hours.',
+            'Apply: sperm deposited on day twelve of a typical cycle can still be waiting — alive and capacitated — when the oocyte arrives on day fourteen; an oocyte ovulated on day fourteen has no second chance on day fifteen.',
+            'State the result: the fertile window opens days before ovulation and closes about a day after — the asymmetry behind fertility-awareness calendars and clinic scheduling alike.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'IVF: gonadotropins ripen 10 to 20 oocytes at once, needles retrieve them under ultrasound, and roughly 75,000 washed sperm meet each egg in the dish — or one sperm is injected when count or motility fails (ICSI). Success tops 40 percent under 35 and falls steeply past 40.',
+            'Vasectomy interrupts the ductus deferens through the scrotum in minutes: sperm are still made but reabsorbed — anatomy\'s simplest sterilization, and considered permanent.',
+            'Folic-acid fortification of grain cut neural-tube defects sharply: the tube closes by week four, usually before a test turns positive.',
+            'Premature lungs are rescued with surfactant replacement and CPAP — medicine supplying what weeks twenty-one to thirty would have built.',
+            'Mitochondrial DNA rides only in the oocyte\'s cytoplasm, tracing an unbroken maternal line — the basis of "mitochondrial Eve" ancestry mapping.',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'Fertilization does not happen in the uterus — it happens in the uterine tube, and the embryo spends about a week traveling before implanting. The first sperm to arrive never fertilizes the egg; hundreds must digest the path first, which is why sperm counts matter. Male and female embryos are not anatomically distinct from the start — they are morphologically identical until week nine. And the placenta is not a filter: alcohol, nicotine, and several pathogens cross it freely, which is the entire basis of fetal alcohol spectrum disorders.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Spermatogenesis', def: 'The roughly 64-day pipeline from stem cell to formed sperm, running from puberty onward.' },
+            { term: 'Oogenesis', def: 'The female gamete program: begins before birth, arrests twice, completes at fertilization.' },
+            { term: 'Follicle', def: 'An oocyte plus its granulosa cells — the ovary\'s functional unit.' },
+            { term: 'Corpus luteum', def: 'The progesterone factory formed from the spent follicle; without hCG it degenerates.' },
+            { term: 'Capacitation', def: 'The female tract\'s priming of sperm membranes, without which fertilization cannot occur.' },
+            { term: 'Acrosomal reaction', def: 'Release of digestive enzymes from the sperm cap that carve a path through the oocyte\'s coverings.' },
+            { term: 'Blastocyst', def: 'The hundred-cell stage: trophoblast outside, embryo-forming inner cell mass within.' },
+            { term: 'Placenta', def: 'The fetal organ of nutrition, gas exchange, waste removal, and hormones, where maternal and fetal blood never mix.' },
+          ],
+        },
+        { kind: 'heading', text: 'Check Your Understanding' },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'Fertilization most often occurs in the:',
+              options: ['uterus', 'ampulla of the uterine tube', 'ovary', 'cervix'],
+              answer: 1,
+              explain: 'Sperm meet the oocyte in the tube\'s widest portion; the embryo spends about a week traveling before implanting.',
+            },
+            {
+              q: 'Meiosis II of the oocyte is completed:',
+              options: ['at ovulation', 'only if a sperm penetrates the cell', 'before birth', 'at puberty'],
+              answer: 1,
+              explain: 'The secondary oocyte is arrested in meiosis II; sperm entry triggers the finishing division and the second polar body.',
+            },
+            {
+              q: 'The fructose that fuels swimming sperm comes from the:',
+              options: ['prostate gland', 'seminal vesicles', 'bulbourethral glands', 'epididymis'],
+              answer: 1,
+              explain: 'Seminal-vesicle fluid is most of the semen volume and carries the sugar sperm mitochondria burn.',
+            },
+            {
+              q: 'The slow block to polyspermy is:',
+              options: ['the cortical reaction hardening the zona pellucida into a fertilization membrane', 'membrane depolarization', 'thickening of cervical mucus', 'exhaustion of the sperm'],
+              answer: 0,
+              explain: 'Cortical granules release proteins that strip attached sperm and harden the zona; depolarization is the fast, transient first block.',
+            },
+            {
+              q: 'Folate supplementation must begin before conception because:',
+              options: ['the neural tube closes by about day 28, before most pregnancy tests turn positive', 'meiosis requires folate', 'the placenta blocks folate later in pregnancy', 'taste aversions begin in week two'],
+              answer: 0,
+              explain: 'The foundation of brain and spinal cord closes in week four — often before the pregnancy is known.',
+            },
+            {
+              q: 'In the fetus, the foramen ovale:',
+              options: ['shunts blood from the right atrium to the left, bypassing the lungs', 'oxygenates blood in the liver', 'seals shut at week eight', 'feeds the placenta directly'],
+              answer: 0,
+              explain: 'With fluid-filled, nonfunctional lungs, blood crosses the atrial wall directly; the first breath\'s pressure shift slams it shut.',
+            },
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          text: 'The endocrine lesson covers the HPG axis behind gametogenesis; the genetics lessons pick up those genes at fertilization; the developmental-biology lesson explains how the embryo patterns itself; the sexual-health and pregnancy lessons cover the clinical and maternal sides. Continue with lactation and the newborn\'s first breath.',
+          tone: 'path',
         },
       ],
     },

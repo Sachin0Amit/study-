@@ -20,7 +20,7 @@ export const environment: KnowledgeDomainFile = {
         'Budget imbalance',
       ],
       words: 899,
-      readMins: 5,
+      readMins: 4,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -179,7 +179,7 @@ export const environment: KnowledgeDomainFile = {
         'Safe and just boundaries',
       ],
       words: 894,
-      readMins: 5,
+      readMins: 4,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -332,7 +332,7 @@ export const environment: KnowledgeDomainFile = {
         'Carbon sequestration and its limits',
       ],
       words: 899,
-      readMins: 5,
+      readMins: 4,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -490,8 +490,8 @@ export const environment: KnowledgeDomainFile = {
         'Watersheds and the water balance',
         'Physical and economic water scarcity',
       ],
-      words: 1050,
-      readMins: 5,
+      words: 1154,
+      readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -649,8 +649,8 @@ export const environment: KnowledgeDomainFile = {
         'Learning curves and cost declines',
         'System integration and stranded assets',
       ],
-      words: 1070,
-      readMins: 5,
+      words: 1128,
+      readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -809,7 +809,7 @@ export const environment: KnowledgeDomainFile = {
         'Extinction debt and trophic cascades',
         'Protected areas and rewilding',
       ],
-      words: 1040,
+      words: 1081,
       readMins: 5,
       addedOn: '2026-10-17',
       blocks: [
@@ -970,8 +970,8 @@ export const environment: KnowledgeDomainFile = {
         'Acidification under way',
         'Vertical zones of life',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1015,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1096,8 +1096,8 @@ export const environment: KnowledgeDomainFile = {
         'GM crops: what they are, what is debated',
         'Yield gaps and closing them',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1035,
+      readMins: 5,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1222,8 +1222,8 @@ export const environment: KnowledgeDomainFile = {
         'Trophic rewilding: Yellowstone and beavers',
         'Measuring recovery, not just acres',
       ],
-      words: 0,
-      readMins: 2,
+      words: 1104,
+      readMins: 6,
       addedOn: '2026-10-18',
       blocks: [
         {

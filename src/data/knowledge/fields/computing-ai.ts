@@ -20,7 +20,7 @@ export const computingAI: KnowledgeDomainFile = {
         'Resizing and hash-flooding defense',
       ],
       words: 898,
-      readMins: 5,
+      readMins: 4,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -346,7 +346,7 @@ export const computingAI: KnowledgeDomainFile = {
         'Hybrid encryption and the quantum horizon',
       ],
       words: 896,
-      readMins: 5,
+      readMins: 4,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -510,7 +510,7 @@ export const computingAI: KnowledgeDomainFile = {
         'Multi-head attention',
         'Positional encoding and the token pipeline',
       ],
-      words: 1150,
+      words: 1188,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
@@ -674,7 +674,7 @@ export const computingAI: KnowledgeDomainFile = {
         'Scheduling policies and the quantum',
         'Threads and synchronization',
       ],
-      words: 1150,
+      words: 1141,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
@@ -838,7 +838,7 @@ export const computingAI: KnowledgeDomainFile = {
         'Confirmations and the 51% threshold',
         'Proof of stake and slashing',
       ],
-      words: 1150,
+      words: 1156,
       readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
