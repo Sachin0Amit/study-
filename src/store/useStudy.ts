@@ -10,6 +10,7 @@ export type View =
   | { name: 'playground' }
   | { name: 'progress' }
   | { name: 'flashcards'; chapterId?: string; examMisses?: boolean }
+  | { name: 'review' }
   | { name: 'formulas'; chapterId?: string }
   | { name: 'exam'; chapterId?: string; chapterIds?: string[]; label?: string; questionCount?: number }
   | { name: 'search'; query?: string }

@@ -7,6 +7,7 @@ import {
   ClipboardList,
   Sparkles,
   Layers,
+  Repeat,
   Sigma,
   Search,
   Brain,
@@ -25,6 +26,7 @@ const NAV = [
   { view: 'arena', label: 'Arena', icon: Swords, easy: 'Live 1v1 quiz battles' },
   { view: 'playground', label: 'Labs', icon: FlaskConical, easy: 'Play with live demos' },
   { view: 'flashcards', label: 'Cards', icon: Layers, easy: 'Quick memory cards' },
+  { view: 'review', label: 'Review', icon: Repeat, easy: 'Spaced-repetition memory drills' },
   { view: 'formulas', label: 'Formulas', icon: Sigma, easy: 'All key formulas' },
   { view: 'progress', label: 'Progress', icon: BarChart3, easy: 'Your learning score' },
 ] as const
@@ -128,15 +130,17 @@ export function Header() {
                       ? { name: 'library' }
                       : v === 'flashcards'
                         ? { name: 'flashcards' }
-                        : v === 'formulas'
-                          ? { name: 'formulas' }
-                          : v === 'studio'
-                            ? { name: 'studio' }
-                            : v === 'twin'
-                              ? { name: 'twin' }
-                              : v === 'arena'
-                                ? { name: 'arena' }
-                                : { name: v }
+                        : v === 'review'
+                          ? { name: 'review' }
+                          : v === 'formulas'
+                            ? { name: 'formulas' }
+                            : v === 'studio'
+                              ? { name: 'studio' }
+                              : v === 'twin'
+                                ? { name: 'twin' }
+                                : v === 'arena'
+                                  ? { name: 'arena' }
+                                  : { name: v }
                   )
                 }
                 className={`flex shrink-0 items-center gap-2 rounded-full px-2.5 py-1.5 text-[13px] font-medium transition-all sm:px-3 lg:px-4 ${

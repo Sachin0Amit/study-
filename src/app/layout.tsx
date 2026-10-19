@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, STIX_Two_Text, Caveat } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
@@ -72,7 +73,10 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        {/* old shadcn toaster (use-toast hook callers) */}
         <Toaster />
+        {/* sonner toaster (direct toast() callers — studio, palette, review, lessons…) */}
+        <SonnerToaster position="bottom-right" richColors closeButton />
       </body>
     </html>
   );

@@ -17,6 +17,7 @@ import {
   Library as LibraryIcon,
   Lightbulb,
   Route,
+  Repeat,
   Scale,
   Search,
   Sigma,
@@ -57,6 +58,7 @@ type ViewName =
   | 'library'
   | 'playground'
   | 'flashcards'
+  | 'review'
   | 'formulas'
   | 'exam'
   | 'progress'
@@ -117,6 +119,12 @@ const QUICK_ACTIONS: {
   { view: 'palace', label: 'Memory Palaces', hint: 'visual journeys + narration', icon: Wand2 },
   { view: 'playground', label: 'Lab floor', hint: '62 labs + simulators + code judge', icon: FlaskConical },
   { view: 'flashcards', label: 'Flashcard decks', hint: '12,400+ cards · SRS', icon: Layers },
+  {
+    view: 'review',
+    label: 'Start a review session',
+    hint: 'SM-2 spaced repetition · due cards',
+    icon: Repeat,
+  },
   {
     view: 'flashcards',
     examMisses: true,

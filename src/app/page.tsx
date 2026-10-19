@@ -46,6 +46,10 @@ const FlashcardsView = dynamic(
   () => import('@/components/app/flashcards-view').then((m) => m.FlashcardsView),
   { loading: ViewLoading }
 )
+const ReviewView = dynamic(
+  () => import('@/components/app/review-view').then((m) => m.ReviewView),
+  { loading: ViewLoading }
+)
 const FormulaView = dynamic(
   () => import('@/components/app/formula-view').then((m) => m.FormulaView),
   { loading: ViewLoading }
@@ -116,6 +120,8 @@ export default function Home() {
         useStudy.setState({ view: { name: 'formulas' } })
       } else if (v === 'flashcards') {
         useStudy.setState({ view: { name: 'flashcards' } })
+      } else if (v === 'review') {
+        useStudy.setState({ view: { name: 'review' } })
       } else if (v === 'progress') {
         useStudy.setState({ view: { name: 'progress' } })
       } else if (v === 'syllabus') {
@@ -200,6 +206,7 @@ export default function Home() {
             {view.name === 'flashcards' && (
               <FlashcardsView chapterId={view.chapterId} examMisses={view.examMisses} />
             )}
+            {view.name === 'review' && <ReviewView />}
             {view.name === 'formulas' && <FormulaView chapterId={view.chapterId} />}
             {view.name === 'exam' && (
               <ExamView
@@ -276,6 +283,12 @@ export default function Home() {
                   className="text-left text-muted-foreground transition-colors hover:text-emerald-300"
                 >
                   Flashcard decks
+                </button>
+                <button
+                  onClick={() => useStudy.getState().navigate({ name: 'review' })}
+                  className="text-left text-muted-foreground transition-colors hover:text-emerald-300"
+                >
+                  Review — spaced repetition
                 </button>
                 <button
                   onClick={() => useStudy.getState().navigate({ name: 'formulas' })}

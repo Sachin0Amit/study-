@@ -235,6 +235,41 @@ model ExamMap {
   @@index([deviceId, updatedAt])
 }
 
+// ============ X10 — Review Mode (SM-2 spaced repetition) ============
+// Per-lesson review cards: quiz questions, key terms and takeaways become
+// two-sided cards scheduled by the classic SM-2 algorithm (ease factor +
+// growing intervals). Single-user local app — no deviceId scoping needed.
+
+model ReviewCard {
+  id            String    @id @default(cuid())
+  sectionId     String
+  sectionTitle  String
+  front         String
+  back          String
+  kind          String    @default("term") // quiz | term | takeaway
+  reps          Int       @default(0)
+  lapses        Int       @default(0)
+  interval      Float     @default(0) // days until due
+  ease          Float     @default(2.5)
+  dueAt         DateTime  @default(now())
+  lastGrade     Int?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@unique([sectionId, front])
+  @@index([dueAt])
+}
+
+// One row per UTC day — how many review answers were given that day
+// (streaks + the 7-day sparkline on the Review dashboard).
+model ReviewLog {
+  id        String   @id @default(cuid())
+  day       String   @unique // "YYYY-MM-DD" (UTC)
+  reviews   Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 // ============ X8 — Memory Palace Generator ============
 
 model MemoryPalace {

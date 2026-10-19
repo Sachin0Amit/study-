@@ -6,6 +6,7 @@ import {
   ArrowLeft,
   ArrowRight,
   BookOpenCheck,
+  Brain,
   CheckCircle2,
   ChevronDown,
   GraduationCap,
@@ -21,6 +22,7 @@ import {
   FileImage,
   CloudDownload,
 } from 'lucide-react'
+import { toast } from 'sonner'
 import { getBook, getChapter, getSection, getSections } from '@/data/library'
 import { useAllContent } from '@/hooks/use-content'
 import { getOfflineSection } from '@/lib/offline-cache'
@@ -266,6 +268,99 @@ function useOnlineFlag() {
     },
     () => navigator.onLine,
     () => true
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/*  Save to Review — X10                                               */
+/*  Seeds this lesson into the SM-2 Review deck: every quiz question,  */
+/*  key term and takeaway becomes a two-sided card. Re-saving never    */
+/*  resets an existing schedule.                                       */
+/* ------------------------------------------------------------------ */
+function SaveToReview({ sectionId }: { sectionId: string }) {
+  const navigate = useStudy((s) => s.navigate)
+  const [state, setState] = useState<'idle' | 'saving' | 'saved'>('idle')
+  const [created, setCreated] = useState(0)
+
+  const save = async () => {
+    if (state === 'saving') return
+    setState('saving')
+    try {
+      const res = await fetch('/api/review/seed', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sectionId }),
+      })
+      if (!res.ok) throw new Error('seed failed')
+      const data = (await res.json()) as { created?: number; skipped?: number }
+      const made = Number(data.created ?? 0)
+      setCreated(made)
+      setState('saved')
+      toast.success(
+        made > 0
+          ? `${made} review card${made !== 1 ? 's' : ''} added to your Review deck`
+          : 'Already in your Review deck — schedules untouched',
+        {
+          icon: <Brain className="h-4 w-4 text-amber-300" />,
+          action: {
+            label: 'Open Review',
+            onClick: () => navigate({ name: 'review' }),
+          },
+        }
+      )
+    } catch {
+      setState('idle')
+      toast.error('Could not save this lesson to Review — try again.')
+    }
+  }
+
+  if (state === 'saved') {
+    return (
+      <div className="mt-12 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-dashed border-amber-400/40 bg-amber-400/[0.05] px-4 py-3.5 sm:px-5">
+        <p className="flex min-w-0 items-center gap-2.5 font-serif text-[15px] italic text-book-soft">
+          <CheckCircle2 className="h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" aria-hidden />
+          <span className="min-w-0">
+            In your Review deck — scheduled by SM-2
+            {created > 0 && (
+              <span className="ml-1.5 font-sans font-mono text-[11px] not-italic text-muted-foreground">
+                {created} card{created !== 1 ? 's' : ''} · each returns as it ripens
+              </span>
+            )}
+          </span>
+        </p>
+        <button
+          onClick={() => navigate({ name: 'review' })}
+          className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-[12px] font-semibold text-amber-700 transition-colors hover:bg-amber-400/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60 dark:text-amber-300"
+        >
+          <Brain className="h-3.5 w-3.5" aria-hidden /> Open Review
+        </button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="mt-12 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-dashed border-amber-400/40 bg-amber-400/[0.05] px-4 py-3.5 sm:px-5">
+      <div className="flex min-w-0 items-start gap-3">
+        <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-amber-400/30 bg-amber-400/10">
+          <Brain className="h-4.5 w-4.5 text-amber-600 dark:text-amber-300" aria-hidden />
+        </span>
+        <div className="min-w-0">
+          <h3 className="text-[14px] font-bold tracking-tight">Keep this lesson forever</h3>
+          <p className="mt-0.5 max-w-lg text-[12.5px] leading-relaxed text-book-soft">
+            Save it to Review — its quiz questions, key terms and takeaways become SM-2 flashcards
+            that resurface exactly when you&apos;re about to forget them.
+          </p>
+        </div>
+      </div>
+      <button
+        onClick={() => void save()}
+        disabled={state === 'saving'}
+        className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-[12px] font-semibold text-amber-700 transition-colors hover:bg-amber-400/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60 disabled:opacity-50 dark:text-amber-300"
+      >
+        <Zap className="h-3.5 w-3.5" aria-hidden />
+        {state === 'saving' ? 'Saving…' : 'Save to Review'}
+      </button>
+    </div>
   )
 }
 
@@ -938,6 +1033,13 @@ export function LessonView({ sectionId }: { sectionId: string }) {
                 <QuizSection sectionId={sectionId} quiz={content.quiz} />
               </div>
             </section>
+          ) : null}
+
+          {/* save to review — X10: seed this lesson into the SM-2 deck */}
+          {content ? (
+            <div className="print:hidden">
+              <SaveToReview sectionId={sectionId} />
+            </div>
           ) : null}
 
           {/* colophon / folio — how a book closes a page */}
