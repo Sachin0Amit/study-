@@ -115,6 +115,7 @@ import {
   planTodayKey,
   togglePlanBlock,
   useStudyPlan,
+  type PlanBlockRow,
 } from '@/lib/focus-plan'
 import {
   generateStudyPlan,
@@ -2000,11 +2001,17 @@ function PlanCard({
   todayMinutes,
   todayBySubject,
   onAddTask,
+  onStartBlock,
+  liveSubject,
   initialSubjects,
 }: {
   todayMinutes: number
   todayBySubject: Record<string, number>
   onAddTask: (title: string, subjectId: string | null, estimate: number) => Promise<void>
+  /** X11I — one-tap deep block on a plan block (task + linked session) */
+  onStartBlock: (b: PlanBlockRow) => Promise<void>
+  /** subject of the currently-running focus session (row highlight) */
+  liveSubject: string | null
   initialSubjects: { subject: string; subjectId: string | null }[]
 }) {
   const { blocks, refresh } = useStudyPlan()
@@ -2172,12 +2179,23 @@ function PlanCard({
                   </span>
                 )}
               </div>
+              <p className="mt-1 text-[9.5px] font-medium text-muted-foreground/70">
+                tap <span className="font-bold text-emerald-500/90">▶</span> to run a block live — the minutes race
+                this bar as you study
+              </p>
               <ul className="mt-2.5 flex flex-col gap-1.5">
                 {today.blocks.map((b) => {
                   const accent = subjectAccent(b.subject)
                   const actual = todayBySubject[b.subject] ?? 0
+                  const isLive = liveSubject === b.subject
                   return (
-                    <li key={b.id} className="group/plan flex items-center gap-2">
+                    <li
+                      key={b.id}
+                      className={cn(
+                        'group/plan flex items-center gap-2 rounded-lg px-1.5 py-0.5 transition-colors',
+                        isLive ? 'bg-emerald-400/[0.08]' : 'hover:bg-muted/40'
+                      )}
+                    >
                       <button
                         type="button"
                         onClick={() => void togglePlanBlock(b.id, !b.done)}
@@ -2216,6 +2234,25 @@ function PlanCard({
                       >
                         {b.minutes}m{actual > 0 ? <span className="text-emerald-500"> · {Math.round(actual)}m ✓</span> : null}
                       </span>
+                      {isLive ? (
+                        <span
+                          className="flex shrink-0 items-center gap-1 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-1.5 py-0.5 text-[9px] font-black uppercase tracking-wide text-emerald-600 dark:text-emerald-300"
+                          title="A focus session on this subject is running now"
+                        >
+                          <span className="sv-dday-pulse inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden />
+                          live
+                        </span>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => void onStartBlock(b)}
+                          aria-label={`Start a ${b.minutes}-minute deep block on ${b.subject}`}
+                          title={`Start now — ${b.minutes}m deep block on ${b.subject} (task + timer, one tap)`}
+                          className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-400/10 text-emerald-600 transition-all hover:bg-emerald-400/25 hover:brightness-110 active:scale-90 dark:text-emerald-300"
+                        >
+                          <Play className="h-2.5 w-2.5" aria-hidden />
+                        </button>
+                      )}
                       <button
                         type="button"
                         onClick={() =>
@@ -2435,6 +2472,35 @@ function WeeklyDigestCard({ stats, onShare }: { stats: StatsPayload | null; onSh
   const avgMin = Math.round(thisMin / 7)
   const maxBar = Math.max(60, ...thisWeek.map((d) => d.minutes))
 
+  /* X11I — plan adherence: how the trailing 7 planned days actually went.
+   * Only days that have already arrived count (tomorrow's plan can't be
+   * late yet); each day is capped at its planned minutes so one monster
+   * day can't mask a skipped one. */
+  const { blocks: planBlocks } = useStudyPlan()
+  const adherence = useMemo(() => {
+    const week = (stats?.days ?? []).slice(-7)
+    if (week.length === 0) return null
+    const todayKey = week[week.length - 1].day
+    const plannedByDay = new Map<string, number>()
+    for (const b of planBlocks ?? []) {
+      if (week.some((d) => d.day === b.day) && b.day <= todayKey) {
+        plannedByDay.set(b.day, (plannedByDay.get(b.day) ?? 0) + b.minutes)
+      }
+    }
+    if (plannedByDay.size === 0) return null
+    let plannedSum = 0
+    let actualSum = 0
+    let daysMet = 0
+    for (const [day, planned] of plannedByDay) {
+      const actual = week.find((d) => d.day === day)?.minutes ?? 0
+      plannedSum += planned
+      actualSum += Math.min(actual, planned)
+      if (actual >= planned) daysMet++
+    }
+    const pct = plannedSum > 0 ? Math.round((actualSum / plannedSum) * 100) : 0
+    return { pct, daysMet, plannedDays: plannedByDay.size, plannedSum }
+  }, [stats, planBlocks])
+
   return (
     <section aria-label="Weekly digest" className="rounded-3xl border border-border/80 bg-card p-5">
       <div className="flex items-center justify-between gap-2">
@@ -2493,6 +2559,47 @@ function WeeklyDigestCard({ stats, onShare }: { stats: StatsPayload | null; onSh
           )
         })}
       </div>
+
+      {/* X11I — plan adherence: planned vs actually-studied, trailing 7 days */}
+      {adherence && (
+        <div
+          className="mt-3 rounded-xl border border-border/60 bg-muted/25 p-2.5"
+          title={`${adherence.plannedSum}m planned across ${adherence.plannedDays} day${adherence.plannedDays === 1 ? '' : 's'} — a day counts at most its planned minutes`}
+        >
+          <div className="flex items-baseline justify-between gap-2">
+            <span className="flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground">
+              <ClipboardList className="h-3 w-3 text-emerald-400" aria-hidden /> Plan adherence
+            </span>
+            <span
+              className={cn(
+                'text-[11px] font-black tabular-nums',
+                adherence.pct >= 100
+                  ? 'text-emerald-500 dark:text-emerald-300'
+                  : adherence.pct >= 70
+                    ? 'text-emerald-600 dark:text-emerald-400'
+                    : 'text-amber-600 dark:text-amber-300'
+              )}
+            >
+              {adherence.pct}%{adherence.pct >= 100 ? ' · beaten' : ''}
+            </span>
+          </div>
+          <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-muted/70">
+            <div
+              className={cn(
+                'h-full rounded-full transition-all duration-700',
+                adherence.pct >= 70
+                  ? 'bg-gradient-to-r from-emerald-400 to-emerald-500'
+                  : 'bg-gradient-to-r from-amber-400 to-amber-500'
+              )}
+              style={{ width: `${Math.min(100, adherence.pct)}%` }}
+            />
+          </div>
+          <p className="mt-1.5 text-[10px] font-medium text-muted-foreground">
+            {adherence.daysMet}/{adherence.plannedDays} planned day{adherence.plannedDays === 1 ? '' : 's'} met ·{' '}
+            {Math.round(adherence.plannedSum / 60 * 10) / 10}h planned this week
+          </p>
+        </div>
+      )}
 
       <p className="mt-3 border-t border-border/60 pt-2.5 text-[11px] text-muted-foreground">
         {activeDays > 0 ? (
@@ -3786,6 +3893,48 @@ export function FocusView() {
     [ensureDevice, loadTasks]
   )
 
+  /** X11I — one-tap "start now" on a plan block: creates the to-do task AND
+   *  launches a linked deep-block of the block's own length. The session then
+   *  accrues toward the task, the subject analytics and the plan's
+   *  planned-vs-actual race — the whole loop in a single click. */
+  const startPlanBlock = useCallback(
+    async (b: PlanBlockRow) => {
+      const deviceId = ensureDevice()
+      const subject = b.subjectId ? LIBRARY_SUBJECTS.find((s) => s.id === b.subjectId) : null
+      const title = `${b.subject} — plan block`
+      try {
+        const res = await fetch('/api/focus/tasks', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            deviceId,
+            title,
+            subject: subject?.name ?? b.subject,
+            subjectId: b.subjectId ?? null,
+            estimate: Math.max(1, Math.ceil(b.minutes / 25)),
+          }),
+        })
+        if (!res.ok) throw new Error('create failed')
+        const data = (await res.json()) as { task: FocusTaskRow }
+        await loadTasks()
+        const linkage: FocusLinkage = {
+          taskId: data.task.id,
+          taskTitle: data.task.title,
+          subject: data.task.subject ?? undefined,
+          subjectId: data.task.subjectId ?? undefined,
+        }
+        setFocusLinkage(linkage)
+        startFocusSession(b.minutes, linkage)
+        toast.success(`Deep block — ${b.minutes}m on ${b.subject}`, {
+          description: 'Task added to today’s to-dos · minutes race your plan',
+        })
+      } catch {
+        toast.error('Could not start the block')
+      }
+    },
+    [ensureDevice, loadTasks]
+  )
+
   const patchTask = useCallback(
     async (id: string, patch: Partial<FocusTaskRow>) => {
       const deviceId = ensureDevice()
@@ -4108,6 +4257,8 @@ export function FocusView() {
             todayMinutes={todayFocusMinutes}
             todayBySubject={todayBySubject}
             onAddTask={addTask}
+            onStartBlock={startPlanBlock}
+            liveSubject={engine.running && engine.kind === 'focus' ? engine.linkage?.subject ?? null : null}
             initialSubjects={topSubjectSeeds}
           />
           <SoundscapeCard />

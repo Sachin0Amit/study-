@@ -1110,6 +1110,28 @@ export function FocusTimerStats({ className = '' }: { className?: string }) {
   const goalPct = Math.min(100, Math.round((stats.todayMinutes / settings.dailyGoalMin) * 100))
   const goalLeft = Math.max(0, settings.dailyGoalMin - stats.todayMinutes)
 
+  /* X11I — cross-feature streak: spaced-repetition reviews are the other daily
+   * habit; surfacing the review streak here shows both habits in one glance.
+   * (stats dialog mounts lazily, so the fetch only fires when opened). */
+  const [review, setReview] = useState<{ streak: number; due: number } | null>(null)
+  useEffect(() => {
+    let cancelled = false
+    const load = async () => {
+      try {
+        const res = await fetch('/api/review/stats', { cache: 'no-store' })
+        if (!res.ok) return
+        const data = (await res.json()) as { streak?: number; due?: number }
+        if (!cancelled) setReview({ streak: Number(data.streak ?? 0), due: Number(data.due ?? 0) })
+      } catch {
+        /* offline — badge simply doesn't render */
+      }
+    }
+    void load()
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
   // goal streak — consecutive days at/above the daily goal (today only counts
   // once it's actually reached, so an in-progress day never breaks the run)
   const goalStreak = useMemo(() => goalStreakFromLog(log, settings.dailyGoalMin), [log, settings.dailyGoalMin])
@@ -1186,6 +1208,14 @@ export function FocusTimerStats({ className = '' }: { className?: string }) {
             <span className="inline-flex items-center gap-1 rounded-full border border-border/70 bg-muted/40 px-2 py-0.5 text-[10px] font-bold text-muted-foreground">
               <Hourglass className="h-2.5 w-2.5 text-sky-400" aria-hidden /> {(stats.totalMinutes / 60).toFixed(1)}h all-time
             </span>
+            {review && review.streak >= 2 && (
+              <span
+                className="inline-flex items-center gap-1 rounded-full border border-violet-400/40 bg-violet-400/10 px-2 py-0.5 text-[10px] font-bold text-violet-600 dark:text-violet-300"
+                title={review.due > 0 ? `${review.due} review card${review.due === 1 ? '' : 's'} due in Cards → Review` : 'No cards due — deck is clear'}
+              >
+                <Brain className="h-2.5 w-2.5" aria-hidden /> {review.streak}d review
+              </span>
+            )}
           </div>
         </div>
       </div>

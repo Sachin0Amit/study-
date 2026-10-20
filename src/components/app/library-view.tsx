@@ -29,6 +29,8 @@ import { SIMVERSE_TOOL_KEYS } from '@/components/interactives/lesson-sims'
 import { useStudy } from '@/store/useStudy'
 import { CalendarClock } from 'lucide-react'
 import { daysUntil, examTone, upcomingExams, useFocusExams } from '@/lib/focus-exams'
+import { planTodayKey, useStudyPlan } from '@/lib/focus-plan'
+import { useSessionsVersion } from '@/lib/focus'
 
 /** X11H — next-exam D-day chip in the hero: the countdown follows you home.
  *  Subscribes to the same module-level store as Focus HQ + the Pod, so a
@@ -50,6 +52,78 @@ function HomeExamChip() {
       <span className="max-w-[180px] truncate">{next.title}</span>
       <span className="font-black tabular-nums">D-{d}</span>
       {d <= 2 && <span className="sv-dday-pulse inline-block h-1.5 w-1.5 rounded-full bg-rose-400" aria-hidden />}
+    </button>
+  )
+}
+
+/** X11I — today's study-plan chip in the hero: what the plan asks of you today
+ *  and how far into it you already are. Subscribes to the same module-level
+ *  plan store as Focus HQ (so generating/ticking a plan anywhere updates it)
+ *  and re-reads today's minutes whenever a session banks server-side. */
+function HomePlanChip() {
+  const ensureDevice = useStudy((s) => s.ensureDevice)
+  const { blocks } = useStudyPlan()
+  const sessionsVersion = useSessionsVersion()
+  const [todayMin, setTodayMin] = useState<number | null>(null)
+
+  const todayKey = planTodayKey()
+  const today = (blocks ?? []).filter((b) => b.day === todayKey)
+
+  useEffect(() => {
+    let cancelled = false
+    const load = async () => {
+      try {
+        const deviceId = ensureDevice()
+        const res = await fetch(`/api/focus/stats?deviceId=${encodeURIComponent(deviceId)}&days=7`, {
+          cache: 'no-store',
+        })
+        if (!res.ok) return
+        const data = (await res.json()) as { totals?: { todayMinutes?: number } }
+        if (!cancelled) setTodayMin(data.totals?.todayMinutes ?? 0)
+      } catch {
+        /* offline — keep the last known value */
+      }
+    }
+    void load()
+    return () => {
+      cancelled = true
+    }
+  }, [ensureDevice, sessionsVersion, blocks])
+
+  if (today.length === 0) return null
+  const planned = today.reduce((n, b) => n + b.minutes, 0)
+  const done = today.filter((b) => b.done).length
+  const allDone = done === today.length
+  const fmt = (m: number) => (m >= 60 ? `${Math.floor(m / 60)}h${m % 60 ? ` ${m % 60}m` : ''}` : `${m}m`)
+
+  return (
+    <button
+      type="button"
+      onClick={() => useStudy.getState().navigate({ name: 'focus' })}
+      title={`Focus HQ — today's plan: ${today.length} block${today.length === 1 ? '' : 's'}, ${fmt(planned)} planned${todayMin !== null ? `, ${fmt(todayMin)} studied` : ''}`}
+      className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-bold transition-all hover:brightness-110 active:scale-95 ${
+        allDone
+          ? 'border-emerald-400/50 bg-emerald-400/15 text-emerald-200'
+          : 'border-border/70 bg-card/70 text-foreground'
+      }`}
+    >
+      <ClipboardList className="h-3.5 w-3.5 text-emerald-300" aria-hidden />
+      <span>
+        Today’s plan · {allDone ? (
+          <span className="text-emerald-200">all {today.length} block{today.length === 1 ? '' : 's'} ✓</span>
+        ) : (
+          <>
+            {today.length} block{today.length === 1 ? '' : 's'} ·{' '}
+            <span className="tabular-nums text-emerald-200">
+              {todayMin !== null ? `${fmt(Math.min(todayMin, planned))}` : '—'}
+            </span>
+            <span className="text-muted-foreground"> / {fmt(planned)}</span>
+          </>
+        )}
+      </span>
+      {!allDone && todayMin !== null && todayMin >= planned && (
+        <span className="font-black text-emerald-300">beaten</span>
+      )}
     </button>
   )
 }
@@ -191,9 +265,10 @@ export function LibraryView() {
               </span>
               Master content engine · online
             </div>
-            {/* X11H — exam countdown chip (renders only when a D-day exists) */}
+            {/* X11H/X11I — exam countdown + today's plan chips (render only when set) */}
             <div className="mb-5 flex flex-wrap items-center gap-2 empty:mb-0">
               <HomeExamChip />
+              <HomePlanChip />
             </div>
             <h1 className="text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
               Don&apos;t just read your books.

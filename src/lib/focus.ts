@@ -740,7 +740,8 @@ export function selectSession(kind: SessionKind, minutes: number): void {
 }
 
 export function resetSession(): void {
-  logPartialIfRunning()
+  // selectSession() itself banks any running partial credit (≥60s) before
+  // resetting — logging here too would double-post the same session.
   selectSession(engineState.kind, engineState.minutes)
 }
 
