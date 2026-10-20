@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T07:44:17.517Z",
+  "generatedAt": "2026-10-20T06:46:28.208Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 168,
     "books": 168,
-    "chapters": 781,
-    "sections": 4338
+    "chapters": 786,
+    "sections": 4343
   },
   "subjects": [
     {
@@ -26845,8 +26845,8 @@
       "name": "Marine Biology",
       "group": "Life Sciences",
       "tagline": "Life in the blue",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-life-sciences-marine-biology-the-blue-realm",
@@ -26860,6 +26860,21 @@
               "id": "ku-bio-marine-biology-oceans",
               "number": 1.1,
               "title": "Marine Biology: Life in the Ocean"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-marine-biology-fisheries-and-conservation",
+          "number": 2,
+          "title": "Fisheries & Conservation",
+          "shortTitle": "Fisheries & Conservation",
+          "bookId": "ku-life-sciences-marine-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-fisheries-aquaculture",
+              "number": 2.1,
+              "title": "Fisheries, Aquaculture and the Future of Ocean Food"
             }
           ]
         }
@@ -27655,8 +27670,8 @@
       "name": "Water Technology",
       "group": "Technology & Applied Science",
       "tagline": "Clean water, engineered",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-technology-applied-water-technology-clean-water-engineering",
@@ -27670,6 +27685,21 @@
               "id": "ku-tech-water-treatment-desalination",
               "number": 1.1,
               "title": "Water Treatment: From River to Tap"
+            }
+          ]
+        },
+        {
+          "id": "ku-technology-applied-water-technology-wastewater-and-reuse",
+          "number": 2,
+          "title": "Wastewater & Reuse",
+          "shortTitle": "Wastewater & Reuse",
+          "bookId": "ku-technology-applied-water-technology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-tech-wastewater-engineering",
+              "number": 2.1,
+              "title": "Wastewater Engineering: What Happens After the Drain"
             }
           ]
         }
@@ -29425,8 +29455,8 @@
       "name": "International Trade",
       "group": "Business & Economics",
       "tagline": "Why nations exchange",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-business-economics-international-trade-trade-theory",
@@ -29440,6 +29470,21 @@
               "id": "ku-bus-comparative-advantage",
               "number": 1.1,
               "title": "Comparative Advantage and Trade"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-international-trade-trade-policy",
+          "number": 2,
+          "title": "Trade Policy",
+          "shortTitle": "Trade Policy",
+          "bookId": "ku-business-economics-international-trade",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-trade-policy-tariffs",
+              "number": 2.1,
+              "title": "Trade Policy: Tariffs, Quotas and Trade Wars"
             }
           ]
         }
@@ -29650,8 +29695,8 @@
       "name": "Entrepreneurship",
       "group": "Business & Economics",
       "tagline": "Ideas into ventures",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-business-economics-entrepreneurship-building-a-venture",
@@ -29665,6 +29710,21 @@
               "id": "ku-ent-lean-startup",
               "number": 1.1,
               "title": "From Idea to Business: Lean Startups and Business Models"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-entrepreneurship-financing-the-venture",
+          "number": 2,
+          "title": "Financing the Venture",
+          "shortTitle": "Financing the Venture",
+          "bookId": "ku-business-economics-entrepreneurship",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-ent-startup-finance-equity",
+              "number": 2.1,
+              "title": "Startup Finance: Bootstrapping, Equity and Dilution"
             }
           ]
         }
@@ -29850,8 +29910,8 @@
       "name": "Nutrition",
       "group": "Health & Wellness",
       "tagline": "Fuel, decoded",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-health-wellness-nutrition-dietary-science",
@@ -29865,6 +29925,21 @@
               "id": "ku-health-nutrition-macros",
               "number": 1.1,
               "title": "Nutrition Science: Protein, Carbs and Fat Actually Explained"
+            }
+          ]
+        },
+        {
+          "id": "ku-health-wellness-nutrition-micronutrition",
+          "number": 2,
+          "title": "Micronutrition",
+          "shortTitle": "Micronutrition",
+          "bookId": "ku-health-wellness-nutrition",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-health-nutrition-micronutrients",
+              "number": 2.1,
+              "title": "Micronutrients: Vitamins, Minerals and Hidden Hunger"
             }
           ]
         }

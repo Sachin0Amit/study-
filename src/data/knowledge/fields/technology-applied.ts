@@ -1558,6 +1558,171 @@ export const technologyApplied: KnowledgeDomainFile = {
         },
       ],
     },
+    // ------------------------------------------------------------------
+    // Source-grounded 2026-10-20: standard environmental-engineering
+    // treatment of wastewater (BOD5 as the master metric, preliminary/
+    // primary/secondary/tertiary train, activated sludge biology, sludge
+    // digestion and resource recovery), consistent with the open
+    // environmental-engineering texts on the LibreTexts engineering shelf.
+    // The return half of the water cycle, companion to
+    // tech-water-treatment-desalination ("From River to Tap").
+    {
+      id: "tech-wastewater-engineering",
+      title: "Wastewater Engineering: What Happens After the Drain",
+      domain: "Technology & Applied Science",
+      field: "Water Technology",
+      branch: "Wastewater & Reuse",
+      tier: "intermediate",
+      concepts: [
+        "What sewage actually is, and BOD as the master metric",
+        "Preliminary and primary treatment: letting gravity work",
+        "Secondary treatment: farming the right microbes",
+        "Activated sludge versus biofilm systems",
+        "Tertiary polish: nitrogen, phosphorus, disinfection",
+        "The sludge train: digestion, biogas, biosolids",
+        "Effluent standards and the reuse frontier",
+      ],
+      words: 1643,
+      readMins: 8,
+      addedOn: "2026-10-20",
+      blocks: [
+        {
+          kind: "para",
+          text: "The water-treatment lesson followed a river to the tap; this lesson follows what leaves the drain, because cities run a loop, not a line. Wastewater engineering is applied ecology with a legal deadline: take everything a city flushes — organic matter, nutrients, pathogens, the residue of industry — and return water to the river clean enough that the next town downstream, and the river\u2019s own life, can afford it. The discipline\u2019s central trick is elegant: instead of manufacturing purity chemically, engineers farm microbial ecosystems that eat the pollution, then polish what the biology cannot finish.",
+        },
+        {
+          kind: "callout",
+          title: "Why this matters",
+          text: "Sewage treatment is quietly among the greatest public-health technologies ever built — cities without it still lose children to diarrheal disease that a treatment plant would prevent. And the modern plant is becoming a resource factory: biogas from sludge digestion can power the plant, recovered nutrients become fertilizer, and reuse turns effluent into a drought-proof water supply.",
+          tone: "insight",
+        },
+        { kind: "heading", text: "Core Concepts" },
+        {
+          kind: "para",
+          text: "Define the problem before solving it. Raw municipal sewage is roughly ninety-nine percent water; the trouble is the remaining one percent — suspended solids, dissolved organic matter, nitrogen and phosphorus, microbes, and whatever industry contributed. The master metric is BOD, biochemical oxygen demand: the milligrams of oxygen a liter of sample consumes as microbes decompose its organics over five days at twenty degrees (BOD5). A strong municipal influent runs a few hundred mg/L; a healthy river carries a few. Dump untreated sewage into a stream and the decomposer bloom strips the oxygen — fish suffocate not from poison but from want of dissolved O2. Every treatment stage is therefore measured by how much BOD and solids it removes; the permit arithmetic at the end of this lesson is exactly that accounting.",
+        },
+        {
+          kind: "para",
+          text: "The train begins mechanically. Preliminary treatment screens out rags and grit — the objects that would jam pumps — and lets sand settle. Primary treatment is pure physics: slow the water in clarifiers for an hour or two and gravity does the work, settling perhaps half the suspended solids and a third of the BOD into a sludge blanket that is scraped away for separate handling. Nothing biological has happened yet; primary effluent is still rich, gray, and oxygen-hungry.",
+        },
+        {
+          kind: "para",
+          text: "Secondary treatment is where the ecology begins, and its two dialects are the same idea in different geometry. Activated sludge — invented in Manchester in 1913–14 — aerates the effluent in basins while a mixed community of bacteria, protozoa and rotifers consumes the dissolved organics, forming flocs; the mixture then settles in a secondary clarifier, and crucially the settled microbes are returned to the aeration basin to keep the biomass young and hungry (excess is wasted to the sludge line). Trickling filters and other biofilm systems instead fix the microbes on media and drip wastewater over them. Both depend on the same bargain: keep oxygen plentiful, retention time tuned, and the microbial food web balanced so the carbon-eaters win before the sludge leaves.",
+        },
+        {
+          kind: "para",
+          text: "Conventional secondary treatment removes carbon but largely ignores nitrogen and phosphorus — the nutrients that over-fertilize receiving waters into algal blooms and dead zones. Advanced plants therefore add a tertiary act. Nitrogen leaves by nitrification followed by denitrification: first aerobic bacteria oxidize ammonia to nitrate (Nitrosomonas, Nitrobacter), then anaerobic zones let denitrifiers convert that nitrate to N2 gas — engineered so the same molecule is first given oxygen, then persuaded to exhale it. Phosphorus is scraped out either chemically (alum or iron salts precipitating it) or biologically, by cycling bacteria that hoard phosphate (enhanced biological phosphorus removal). A final disinfection — chlorine, UV, or ozone — knocks the pathogen count down before discharge.",
+        },
+        {
+          kind: "para",
+          text: "Every step concentrated something, and that something is sludge: the settled solids from primary and secondary. The sludge train thickens it, then anaerobic digesters let methanogens ferment it for weeks at mesophilic or thermophilic temperatures, stabilizing the organics and yielding biogas — roughly sixty percent methane — burned in combined heat and power units that can make a well-run plant energy-self-sufficient. The digested product, biosolids, is dewatered and land-applied as fertilizer where regulations allow. Sludge is not a byproduct anymore; it is the plant\u2019s second revenue stream and its hardest public-relations problem.",
+        },
+        {
+          kind: "para",
+          text: "The frontier is the loop closing. Effluent standards keep tightening (BOD, suspended solids, ammonia, nutrients, emerging contaminants), and water-scarce cities have discovered the obvious truth that effluent is a reservoir by another name: Singapore\u2019s NEWater reclaims treated effluent to drinking-grade with microfiltration, reverse osmosis and UV, supplying a large share of the island\u2019s demand; windward cities recharge aquifers with purified effluent; non-potable purple-pipe systems water parks and cool industry. The engineering is settled — the remaining obstacles are combined-sewer overflows during storms and the psychology of taste, which marketing calls the yuck factor and engineers call acceptance.",
+        },
+        { kind: "heading", text: "Key Formulas" },
+        {
+          kind: "formula",
+          name: "BOD removal efficiency",
+          latex: "\\eta = \\frac{\\text{BOD}_{\\text{in}} - \\text{BOD}_{\\text{out}}}{\\text{BOD}_{\\text{in}}} \\times 100\\%",
+          meaning: "The plant\u2019s headline grade: a conventional secondary plant removes roughly 85–95% of incoming BOD; tertiary trains push higher.",
+        },
+        {
+          kind: "formula",
+          name: "Daily mass load",
+          latex: "L = C \\cdot Q",
+          meaning: "Concentration (mg/L) times flow (ML/d) gives kilograms per day — because one mg/L across one megaliter is one kilogram. All permit math starts here.",
+        },
+        {
+          kind: "example",
+          title: "Worked Example",
+          steps: [
+            "Set the plant: it treats Q = 40 ML/d (megaliters per day) with influent BOD5 of 250 mg/L and secondary-effluent BOD5 of 20 mg/L.",
+            "Convert to loads: influent load = 250 mg/L × 40 ML/d = 10,000 kg/d; effluent load = 20 × 40 = 800 kg/d — using the 1 mg/L × 1 ML = 1 kg identity.",
+            "Compute the grade: removal = (10,000 − 800) ÷ 10,000 = 92% — comfortably inside conventional secondary performance (85–95%).",
+            "Add the permit check: the river authority caps the discharge at 15 mg/L BOD and the plant is running 20. Options in order of engineering preference: reduce peak wet-weather loadings (infiltration and combined-sewer overflows), tune return-sludge rate and aeration to push the biomass further, or add a polishing stage — because the deficit is 5 mg/L × 40 ML/d = 200 kg/d of BOD reaching the river.",
+          ],
+        },
+        { kind: "heading", text: "Applications in the Real World" },
+        {
+          kind: "list",
+          items: [
+            "Activated sludge, trialed at Manchester\u2019s Davyhulme works in 1913–14, remains the world\u2019s dominant secondary process a century on — a microbial consortium kept hungry by returning its own biomass.",
+            "Singapore\u2019s NEWater blends reclaimed effluent purified by microfiltration, reverse osmosis and UV disinfection into the island\u2019s water supply — the reference design for potable reuse.",
+            "Anaerobic sludge digestion with combined heat and power lets plants like Aarhus (Denmark) export more energy than they import — sewage works rebranded as water-resource recovery facilities.",
+            "Struvite (magnesium ammonium phosphate) recovery reactors harvest phosphorus from sidestreams as slow-release fertilizer, closing the nutrient loop between sanitation and agriculture.",
+          ],
+        },
+        {
+          kind: "callout",
+          title: "Common Pitfalls",
+          text: "Four ideas need retiring. \u201cThe river cleans it anyway\u201d — dilution works only until the decomposer oxygen demand outstrips reaeration; every dead zone in a summer river is that sentence made visible. \u201cSecondary treatment removes nutrients\u201d — it removes carbon; nitrogen and phosphorus largely sail through without the tertiary act. \u201cStorm water is somebody else\u2019s problem\u201d — combined sewers overflow in rain, sending untreated sewage to the river; green infrastructure and storage tanks are part of the treatment system, not landscaping. \u201cReused water is dirtier than fresh\u201d — a modern potable-reuse train is audited more tightly than most surface supplies, which already carry upstream cities\u2019 effluent; the difference is whether the loop is admitted.",
+          tone: "warn",
+        },
+        { kind: "heading", text: "Key Terms" },
+        {
+          kind: "terms",
+          items: [
+            { term: "BOD5", def: "Biochemical oxygen demand over five days at 20 °C — the standard proxy for biodegradable organic pollution." },
+            { term: "Activated sludge", def: "Aerated suspended-growth process whose flocculated microbes consume dissolved organics; biomass is recycled to keep the culture dense." },
+            { term: "Nitrification–denitrification", def: "Two-step nitrogen removal: aerobic oxidation of ammonia to nitrate, then anaerobic reduction of nitrate to atmospheric N2." },
+            { term: "Clarifier", def: "A quiescent settling tank; gravity separates solids in both primary and secondary service." },
+            { term: "Biosolids", def: "Digested, dewatered sludge stabilized enough for regulated land application or other beneficial use." },
+            { term: "Combined sewer overflow", def: "Storm-driven discharge of diluted untreated sewage when combined pipes exceed capacity." },
+            { term: "Potable reuse", def: "Purifying treated effluent to drinking standards — the closed-loop answer of water-scarce cities." },
+          ],
+        },
+        { kind: "heading", text: "Check Your Understanding" },
+        {
+          kind: "quiz",
+          items: [
+            {
+              q: "BOD5 measures:",
+              options: ["The oxygen fish need", "The oxygen microbes consume decomposing a sample in five days", "The bacteria count per liter", "The biochemical phosphorus demand"],
+              answer: 1,
+              explain: "It is an oxygen-demand proxy for biodegradable organics — the quantity whose decomposition would starve a river of dissolved oxygen.",
+            },
+            {
+              q: "What distinguishes activated sludge from a trickling filter?",
+              options: ["One removes carbon, the other nutrients", "Suspended-growth biomass versus biofilm on media — the same ecology in different geometry", "One is chemical, one biological", "Only activated sludge needs aeration"],
+              answer: 1,
+              explain: "Both are aerobic biological oxidation; the microbes are either held in suspension (and recycled) or fixed on surfaces.",
+            },
+            {
+              q: "Conventional secondary treatment is weakest at removing:",
+              options: ["Suspended solids", "Oxygen-demanding organics", "Nitrogen and phosphorus", "Rags and grit"],
+              answer: 2,
+              explain: "Carbon removal is the design target; nutrients need the tertiary act — nitrification/denitrification and chemical or biological phosphorus removal.",
+            },
+            {
+              q: "A 40 ML/d plant cuts influent BOD from 250 to 20 mg/L. The daily BOD load removed is:",
+              options: ["230 kg/d", "920 kg/d", "9,200 kg/d", "10,000 kg/d"],
+              answer: 2,
+              explain: "230 mg/L × 40 ML/d = 9,200 kg/d removed (10,000 in, 800 out) — the 1 mg/L × 1 ML = 1 kg identity doing the work.",
+            },
+          ],
+        },
+        {
+          kind: "callout",
+          title: "Where to go next",
+          text: "Prerequisite: the water-treatment lesson — the inbound half of the loop. Continue with the microbiology subject for the ecology inside the aeration basin, the environmental-pollution subject for receiving-water impacts, and the energy-systems lessons for biogas CHP economics; the reuse frontier connects directly to desalination\u2019s reverse-osmosis machinery.",
+          tone: "path",
+        },
+        { kind: "heading", text: "Five-Minute Recap" },
+        {
+          kind: "list",
+          ordered: true,
+          items: [
+            "BOD5 is the master metric: untreated sewage is an oxygen debt the river cannot pay.",
+            "The train: screens and gravity first (primary), farmed microbes second (activated sludge or biofilm).",
+            "Tertiary is nutrient season: nitrify then denitrify, precipitate phosphorus, disinfect last.",
+            "Sludge is a stream, not a waste: digest it anaerobically for biogas and land the biosolids.",
+            "The loop is closing — reuse, nutrient recovery and energy recovery are turning plants into resource factories.",
+          ],
+        },
+      ],
+    },
     {
       id: "tech-medical-imaging-ultrasound-ct",
       title: "Seeing Inside: Ultrasound, X-Ray and CT",

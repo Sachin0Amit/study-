@@ -395,6 +395,167 @@ export const businessEconomics: KnowledgeDomainFile = {
         ] },
       ],
     },
+    // ------------------------------------------------------------------
+    // Source-grounded 2026-10-20: OpenStax Principles of Economics
+    // ("Globalization and Protectionism" chapter treatment) — tariff and
+    // quota welfare analysis with consumer/producer surplus and deadweight
+    // loss, nontariff barriers, the WTO, and the standard arguments for
+    // restricting imports (national defense, infant industry, anti-dumping,
+    // jobs) with the text's evaluation of each. Continues the
+    // bus-comparative-advantage lesson's theory into the policy layer.
+    {
+      id: 'bus-trade-policy-tariffs',
+      title: 'Trade Policy: Tariffs, Quotas and Trade Wars',
+      domain: 'Business & Economics',
+      field: 'International Trade',
+      branch: 'Trade Policy',
+      tier: 'intermediate',
+      concepts: [
+        'The instrument set: tariffs, quotas, subsidies, nontariff barriers',
+        'Tariff welfare accounting: who gains, who loses',
+        'The two deadweight triangles',
+        'Quota rents and the tariff–quota equivalence',
+        'Concentrated gains versus diffuse losses',
+        'The standard arguments for protectionism, evaluated',
+        'The WTO, agreements and retaliation',
+      ],
+      words: 1651,
+      readMins: 8,
+      addedOn: '2026-10-20',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'The comparative-advantage lesson proved that both countries gain from exchange at the right terms. Politics then asks the follow-up question: everyone gains in aggregate, but who gains here, and can the losers organize? Trade policy — tariffs, quotas, and their quieter cousins — is the answer societies give, and it is a story about redistribution disguised as arithmetic. This topic builds the welfare accounting of a tariff piece by piece, shows why the losses always exceed the gains, and then evaluates the standard arguments for protectionism the way an economics text does: seriously, and mostly against.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Tariffs are back: the large tariff rounds of recent years touched everything from washing machines to semiconductors, and studies of their effects consistently find the cost landing mostly on domestic buyers of the taxed goods. Reading a tariff headline without the welfare toolkit means accepting whichever distributional claim is loudest.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'The instrument set is wider than the headlines. A tariff is a tax levied on imported goods as they cross the border — specific (dollars per unit) or ad valorem (a percentage of value). A quota caps the physical quantity that may be imported. Subsidies prop up exporters or import-competing producers from the budget. Nontariff barriers do the same work with paperwork: product standards, licensing regimes, customs delays, local-content rules. The economics treats tariffs and quotas as near-twins — both raise the domestic price above the world price — with one sharp difference in who collects the markup: a tariff sends revenue to the government, while a quota hands the difference between the world and domestic price to whoever holds the import licenses. Those license profits are called quota rents, and governments that want to hand out favors prefer quotas precisely because the rents are assignable.',
+        },
+        {
+          kind: 'para',
+          text: 'Now the accounting, for a small country that takes the world price as given. Impose a tariff: the domestic price rises to the world price plus the tariff. Consumers respond by buying less — their lost surplus is the largest rectangle-and-triangle on the diagram. Domestic producers respond by making more at higher cost — they gain surplus, but part of that gain is real resources diverted into more expensive domestic production rather than value created. The government collects the tariff on the surviving imports. Consumer loss minus producer gain minus government revenue is the net national loss: two triangles, one on the production side and one on the consumption side. The country has paid real resources to shrink its own trade.',
+        },
+        {
+          kind: 'para',
+          text: 'Why do the losses persist politically? Because of the shape of the coalitions, not the size of the stakes. Protection concentrates its gains on a few identifiable firms and their workers — an industry can measure the tariff\u2019s benefit per member in thousands — while the cost is smeared across millions of consumers as a few dollars each, buried inside the price. Lobbying economics therefore favors the protection seekers systematically: a rational industry spends heavily to win what a rational public will not spend anything to oppose. This is the public-choice engine behind the observation that trade barriers are common even though their aggregate effect is negative.',
+        },
+        {
+          kind: 'para',
+          text: 'The textbook\u2019s standard arguments for restricting imports deserve their list. National defense: some industries are strategic, but the honest tool is targeted procurement or subsidies, not tariffs that tax every consumer purchase. Infant industry: young industries may need shelter to reach scale — but the argument fails in practice when the infant never grows up, because the protection itself builds the lobby that outlives the justification. Anti-dumping: below-cost foreign sales can be predatory, but dumping cases are frequently filed by domestic producers as ordinary protection in disguise. Jobs: tariffs do preserve specific jobs, while destroying less visible jobs elsewhere — in export industries hit by retaliation and in every household\u2019s budget — and the per-job cost to consumers is routinely many times the wage saved.',
+        },
+        {
+          kind: 'para',
+          text: 'At the system level, the General Agreement on Tariffs and Trade and its successor, the World Trade Organization, turn trade policy from bilateral feuding into rules: bound tariff schedules, most-favored-nation treatment, and a dispute-settlement process that converts grievances into cases rather than reprisals. The system works because each country calculates that measured retaliation under rules beats unpredictable trade war — but the constraint is political, and the pressure valves (national-security exceptions, anti-dumping) are exactly where modern disputes collect. When a large country does raise tariffs, the textbook\u2019s terms-of-trade logic and the target\u2019s retaliation both operate, which is why big-country trade wars have no diagram where the initiator visibly wins.',
+        },
+        { kind: 'heading', text: 'Key Formulas' },
+        {
+          kind: 'formula',
+          name: 'Net national loss from a tariff',
+          latex: 'DWL = \\tfrac{1}{2}\\, t \\cdot (Q_{d0} - Q_{d1}) + \\tfrac{1}{2}\\, t \\cdot (Q_{s1} - Q_{s0})',
+          meaning: 'With tariff t per unit, the two deadweight triangles: the value of consumption squeezed out plus the extra resource cost of inefficient domestic production.',
+        },
+        {
+          kind: 'formula',
+          name: 'Consumer surplus lost to the tariff',
+          latex: '\\Delta CS = t \\cdot \\frac{Q_{d0} + Q_{d1}}{2}',
+          meaning: 'The full area between the two prices under the demand curve — the pool from which producer gains, government revenue and deadweight losses are all paid.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Set the market: world price 500 per unit, domestic demand 200 and domestic supply 100 at that price, so imports are 100. The country now imposes a tariff of 100 per unit.',
+            'New domestic price: 600. Demand falls to 170; domestic supply rises to 120; imports shrink to 50.',
+            'Consumer surplus lost: 100 × (200 + 170) ÷ 2 = 18,500. Producer surplus gained: 100 × (100 + 120) ÷ 2 = 11,000. Government revenue: 100 × 50 = 5,000.',
+            'Net national loss: 18,500 − 11,000 − 5,000 = 2,500 — exactly the two triangles (production distortion ½ × 100 × 20 = 1,000; consumption distortion ½ × 100 × 30 = 1,500). Domestic producers gained more than the nation, and the tariff\u2019s political support is explained by that 11,000 concentrated on them.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Smoot–Hawley (1930) raised US tariffs on thousands of goods; partner countries retaliated and world trade collapsed by roughly two-thirds in value during the Depression — the canonical demonstration of the retaliation spiral.',
+            'The US "chicken tax" — a 25% tariff on imported light trucks imposed in 1964 over European retaliation on chicken — still shapes the vehicle market six decades later: protection outlives its grievance.',
+            'Sugar quotas keep the US domestic price at roughly double the world price, a textbook quota rent transferred to license holders and protected growers, costing consumers far more than producers gain.',
+            'The tariff rounds of 2018 onward (washing machines, steel, aluminum, and the wider US–China exchange) produced measured consumer-price increases on the taxed goods and symmetric retaliation on agricultural exports — the small-country diagram made large and empirical.',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'Three errors repeat across centuries. "Tariffs make the exporter pay" — no: the incidence lands overwhelmingly on domestic buyers, since the tariff is collected at the domestic border and world suppliers re-price only partially. "A tariff and a quota are the same thing" — equivalent in price effects, but a quota also surrenders the revenue as assignable rents and, under growing demand, caps quantity while a tariff caps price. "Cheap foreign labor makes trade unfair" — wages reflect productivity; a country can pay high wages and still export because its workers produce more per hour, which is precisely Ricardo\u2019s logic re-read.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Tariff', def: 'A tax on imported goods, specific (per unit) or ad valorem (percentage of value).' },
+            { term: 'Quota', def: 'A quantitative cap on imports, allocated through licenses; the price gap becomes quota rent.' },
+            { term: 'Quota rent', def: 'The profit earned by whoever holds the right to import at the domestic-minus-world price gap.' },
+            { term: 'Deadweight loss', def: 'The net national loss from a tariff or quota: consumption plus production distortions not captured by anyone.' },
+            { term: 'Nontariff barrier', def: 'Standards, licensing, customs procedures or local-content rules that restrict imports without a border tax.' },
+            { term: 'WTO', def: 'The World Trade Organization, successor to GATT: bound schedules, most-favored-nation treatment, and dispute settlement.' },
+            { term: 'Retaliation', def: 'Trading partners\u2019 counter-tariffs; the mechanism by which a tariff on one product becomes a trade war.' },
+          ],
+        },
+        { kind: 'heading', text: 'Check Your Understanding' },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'In the small-country tariff diagram, the two deadweight triangles measure:',
+              options: ['Government revenue plus quota rents', 'Lost consumption value plus inefficient extra domestic production', 'Consumer surplus transferred to producers', 'Export losses abroad'],
+              answer: 1,
+              explain: 'Consumers who exit the market and resources wasted making high-cost units are real losses to no one\u2019s gain — the definition of deadweight.',
+            },
+            {
+              q: 'A quota differs from an equivalent tariff chiefly because:',
+              options: ['It raises the domestic price more', 'The markup becomes assignable license rent instead of government revenue', 'It cannot be repealed', 'It affects only exports'],
+              answer: 1,
+              explain: 'Price effects are near-identical; the difference is who collects the gap — license holders under a quota, the treasury under a tariff.',
+            },
+            {
+              q: 'Why do protectionist policies survive despite negative aggregate effects?',
+              options: ['Consumers enjoy paying them', 'Gains are concentrated on organized producers while costs are diffuse across consumers', 'Economists cannot measure them', 'They always raise employment'],
+              answer: 1,
+              explain: 'Public-choice arithmetic: a small lobby\u2019s per-member stakes dwarf each consumer\u2019s few dollars, so lobbying effort is systematically lopsided.',
+            },
+            {
+              q: 'The infant-industry argument is weakest because:',
+              options: ['No industry ever matured behind a tariff', 'Protection, once granted, builds a lobby that outlives the infant stage', 'Foreign firms refuse to compete', 'It requires a trade agreement'],
+              answer: 1,
+              explain: 'The theory is coherent; the practice fails at exit — removing protection means revoking rents from the very interests the policy created.',
+            },
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          text: 'Prerequisite: the comparative-advantage lesson — this topic is its political sequel. Continue with the monetary-policy lesson for how exchange rates re-price trade overnight, the public-policy subject for rent-seeking and regulatory capture, and the economic-history angle for Smoot–Hawley\u2019s full anatomy.',
+          tone: 'path',
+        },
+        { kind: 'heading', text: 'Five-Minute Recap' },
+        {
+          kind: 'list',
+          ordered: true,
+          items: [
+            'Tariffs tax imports and raise domestic prices; quotas cap quantity and hand the gap to license holders.',
+            'The tariff ledger: consumer losses exceed producer gains plus revenue — the difference is two deadweight triangles.',
+            'Protection persists because gains are concentrated and losses are diffuse.',
+            'The standard arguments (defense, infant industry, anti-dumping, jobs) each carry a sharper, better-targeted alternative.',
+            'GATT/WTO turn feuds into rules; retaliation is why trade wars have no winning diagram.',
+          ],
+        },
+      ],
+    },
     {
       id: 'bus-inflation-monetary-policy',
       title: 'Inflation and What Central Banks Actually Do',
@@ -1606,6 +1767,182 @@ export const businessEconomics: KnowledgeDomainFile = {
           title: 'Where to go next',
           tone: 'path',
           text: 'No prerequisites, though the finance lesson\'s time-value machinery deepens the LTV arithmetic. Follow with the network-effects lesson for winner-take-all markets, the marketing lesson for acquisition, and startup finance: cap tables, dilution and staged fundraising. Exercise: sketch your favourite app on a nine-block canvas and mark which blocks you think are validated — and how you would test the rest.',
+        },
+      ],
+    },
+    // ------------------------------------------------------------------
+    // Source-grounded 2026-10-20: OpenStax Entrepreneurship (Laverty &
+    // Littel, OpenStax 2020), Chapter 9 "Entrepreneurial Finance and
+    // Accounting" — sections 9.1 Overview of Entrepreneurial Finance and
+    // Accounting Strategies, 9.2 Special Funding Strategies (read in
+    // full), 9.3 Accounting Basics for Entrepreneurs, 9.4 Developing
+    // Startup Financial Statements and Projections; book TOC read via the
+    // Open Textbook Library (open.umn.edu/opentextbooks/textbooks/entrepreneurship).
+    {
+      id: 'ent-startup-finance-equity',
+      title: 'Startup Finance: Bootstrapping, Equity and Dilution',
+      domain: 'Business & Economics',
+      field: 'Entrepreneurship',
+      branch: 'Financing the Venture',
+      tier: 'core',
+      concepts: [
+        'Finance and accounting: two halves of one discipline',
+        'The funding ladder from bootstrapping to venture capital',
+        'No-loan strategies: crowdfunding, pre-orders, competitions',
+        'The equity trade: cash today for ownership forever',
+        'Pre-money, post-money and the cap table',
+        'Dilution math across rounds',
+        'Convertible notes and SAFEs',
+        'Runway: the number that governs survival',
+      ],
+      words: 1706,
+      readMins: 9,
+      addedOn: '2026-10-20',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'Every venture has two financial conversations running at once: raising money (finance) and proving you are a responsible steward of it (accounting). OpenStax\u2019s Entrepreneurship textbook pairs them deliberately in one chapter, because founders who can raise money but not account for it lose investors\u2019 trust just as surely as careful accountants with no funding plan lose the company. This topic walks the whole arc: where a startup\u2019s money actually comes from, what giving up equity really costs, and how the three financial statements answer the three questions every backer asks.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Money is the clock of a startup: the company lives or dies on whether it reaches its next milestone before the bank account empties. The companion lesson on lean startups covers unit economics — CAC, LTV, payback — which tells you whether growth is worth buying; this lesson covers where the money to buy it comes from and what that money quietly costs in ownership and control.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Start at the cheap end. Bootstrapping means self-funding: personal savings, revenue reinvested, and aggressive minimization of cash outflows — home offices, independent contractors instead of hires, negotiated vendor terms, and moonlighting to keep a salary flowing while the venture builds. OpenStax emphasizes the structural advantage: no ownership is given up, and no owner is owed an answer. The costs are equally structural — growth is capped by whatever cash the founders can generate, and one bad month can end the company.',
+        },
+        {
+          kind: 'para',
+          text: 'Between bootstrapping and institutional money sits a family of no-loan strategies. Crowdfunding collects small sums from many backers on platforms like Kickstarter and Indiegogo; the textbook\u2019s playbook is specific — set attainable goals, make a compelling video pitch, design rewards you can actually fulfill, and budget for fulfillment before you celebrate the raise. Pre-orders sell the product before it exists; business-plan competitions pay prize money; bartering trades services instead of cash. Social enterprises can layer in donations and grants, though charitable structures carry their own rules about tax-exempt status and program services.',
+        },
+        {
+          kind: 'para',
+          text: 'Equity funding is a different species. Angel investors and venture capital funds hand over cash in exchange for ownership shares — permanently. OpenStax names the trade plainly: outside investors take a share of future profits and, in meaningful sizes, a share of control. That is rational, not sinister: a fifth of a company that reaches scale beats the whole of one that dies broke. Rounds — pre-seed, seed, Series A, B, C and beyond — are milestone machines: each buys eighteen to twenty-four months of runway to hit the proof that unlocks the next round at a higher price.',
+        },
+        {
+          kind: 'para',
+          text: 'The arithmetic of a round lives on three numbers. Pre-money valuation is what the company is judged to be worth before the new cash; add the investment and you get post-money valuation. Ownership is simply the investment divided by the post-money valuation, and the price per share times the total share count reconstructs the same figure on the cap table — the ledger of who owns how many shares. A company is worth four million pre-money and raises one million: the new investor owns one million of the five-million post-money, or twenty percent, and the founders have been diluted to eighty.',
+        },
+        {
+          kind: 'para',
+          text: 'Dilution compounds. Each subsequent round issues new shares, raising the denominator and shrinking every existing holder\u2019s percentage by the same factor. This is the single most misunderstood mechanic in startup life: founders panic at watching their line item fall, and employees misread their option percentages as promises. The honest framing is per-share value — a smaller slice of a much larger pie. Dilution is a cost only when the milestone it funded fails to raise the valuation.',
+        },
+        {
+          kind: 'para',
+          text: 'Early-stage rounds often refuse to set a valuation at all. A convertible note is a loan that converts into shares at the next priced round; a SAFE (simple agreement for future equity) is the same idea without the debt mechanics. Both carry a valuation cap and sometimes a discount, rewarding today\u2019s risk-taking investors with tomorrow\u2019s shares at yesterday\u2019s prices. They trade certainty of ownership today for speed of closing — which, when a competitor is fundraising or the market is turning, is often the better trade.',
+        },
+        {
+          kind: 'para',
+          text: 'Accounting closes the loop. Three statements, in OpenStax\u2019s ordering for startups, answer three distinct questions. The income statement asks: are we profitable — revenues minus expenses over a period. The balance sheet asks: what do we own and owe — assets, liabilities and the owners\u2019 equity that ties them. The cash-flow statement asks the survival question: will we live — because a profitable company on accrual paper can still die of unpaid invoices. Divide cash on hand by monthly net burn and you get runway in months, the number boards and investors quote more than any other.',
+        },
+        { kind: 'heading', text: 'Key Formulas' },
+        {
+          kind: 'formula',
+          name: 'Post-money valuation',
+          latex: 'V_{\\text{post}} = V_{\\text{pre}} + I',
+          meaning: 'The company\u2019s agreed worth after the investment I lands — the denominator of the ownership calculation.',
+        },
+        {
+          kind: 'formula',
+          name: 'Investor ownership',
+          latex: '\\text{Ownership} = \\frac{I}{V_{\\text{post}}}',
+          meaning: 'A one-million investment into a five-million post-money company buys twenty percent, regardless of how the pitch felt.',
+        },
+        {
+          kind: 'formula',
+          name: 'Runway',
+          latex: 'T_{\\text{runway}} = \\frac{\\text{Cash}}{\\text{Monthly net burn}}',
+          meaning: 'Months until the account hits zero at the current burn rate; hiring and pricing decisions are runway decisions.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Set the scene: founders hold 8,000,000 shares — one hundred percent of the cap table. A seed fund agrees to invest at a price of one dollar per share for 2,000,000 new shares.',
+            'Compute round one: total shares rise to 10,000,000. The fund holds 2,000,000 ÷ 10,000,000 = 20%; the founders are diluted from 100% to 80%. The one-dollar price implies a 10,000,000-share company worth ten million post-money, so the fund\u2019s two million bought a fifth of a ten-million company — consistent.',
+            'Add round two: a Series A investor buys 2,500,000 new shares at four dollars. Total shares become 12,500,000. The new investor holds 20%; the seed fund is diluted to 2,000,000 ÷ 12,500,000 = 16%; the founders fall to 8,000,000 ÷ 12,500,000 = 64%.',
+            'Read the result honestly: the founders\u2019 percentage fell thirty-six points across two rounds, but their 64% now sits on a company valued at fifty million (12,500,000 shares × $4) instead of ten million. Percentage is vanity, value per share is sanity — and the check that matters is whether each round\u2019s milestone actually moved the valuation.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Crowdfunding platforms enforce the discipline OpenStax preaches: Kickstarter campaigns that budget nothing for reward fulfillment are the canonical way to raise money and still die — the iBackPack raised over $700,000 on Indiegogo and Kickstarter, delivered nothing, and drew an FTC investigation.',
+            'Y Combinator standardized the SAFE in 2013; it is now the default instrument for pre-seed rounds precisely because it defers the valuation argument both sides would rather not have yet.',
+            'TOMS Shoes\u2019 One-for-One model — a pair donated for every pair sold — is the textbook\u2019s flagship case of social entrepreneurship, where the funding strategy is baked into the revenue model itself.',
+            'Accelerators institutionalize the ladder: a fixed seed check on a SAFE, three months of milestones, and a demo day engineered to compress the next round\u2019s diligence into a single afternoon.',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'Three confusions do the damage. First, revenue is not cash: an accrual income statement can show profit while the company cannot make payroll — read the cash-flow statement for survival. Second, valuation is not money in the bank: a paper valuation of fifty million is an opinion about the future, and preference stacks mean exiting at that number pays investors before founders. Third, dilution is not automatically a defeat — but raising at flat or falling valuations converts dilution from the price of growth into the arithmetic of failure.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Bootstrapping', def: 'Self-funding a venture from savings and revenue while minimizing cash outflows, giving up no ownership.' },
+            { term: 'Angel investor', def: 'A wealthy individual investing personal money in early-stage ventures, typically between friends-and-family and institutional rounds.' },
+            { term: 'Venture capital round', def: 'An institutional investment round — pre-seed, seed, Series A, B, C — priced against the milestone the capital is meant to reach.' },
+            { term: 'Pre-money valuation', def: 'The company\u2019s agreed worth before new cash; post-money adds the investment.' },
+            { term: 'Dilution', def: 'The shrinkage of an existing holder\u2019s ownership percentage when new shares are issued.' },
+            { term: 'SAFE', def: 'Simple agreement for future equity: money now, shares at the next priced round, at a cap or discount.' },
+            { term: 'Runway', def: 'Months of survival remaining, computed as cash on hand divided by monthly net burn.' },
+          ],
+        },
+        { kind: 'heading', text: 'Check Your Understanding' },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'A company has a pre-money valuation of four million and raises one million. What does the new investor own?',
+              options: ['10%', '20%', '25%', '80%'],
+              answer: 1,
+              explain: 'One million divided by the five-million post-money valuation is twenty percent — the investment, not the pre-money, is the numerator.',
+            },
+            {
+              q: 'According to OpenStax, the structural advantage bootstrapping has over equity funding is:',
+              options: ['It grows the company faster', 'No ownership is given up', 'It requires no accounting', 'Investors guarantee the loans'],
+              answer: 1,
+              explain: 'Bootstrapping keeps every share with the founders — the costs are slower growth and full personal exposure to cash shortfalls.',
+            },
+            {
+              q: 'Which financial statement best answers the question "can this startup survive the next six months?"',
+              options: ['The income statement', 'The balance sheet', 'The cash-flow statement', 'The pitch deck'],
+              answer: 2,
+              explain: 'Profitable-on-paper companies die of cash gaps daily; runway comes from cash on hand versus monthly net burn.',
+            },
+            {
+              q: 'A SAFE defers valuation by:',
+              options: ['Fixing the share price forever', 'Converting into shares at the next priced round, at a cap or discount', 'Repaying investors in products instead of shares', 'Indexing ownership to revenue'],
+              answer: 1,
+              explain: 'The SAFE buys today\u2019s cash with tomorrow\u2019s equity at a guaranteed discount to whatever valuation the next round sets.',
+            },
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          text: 'Prerequisite: the lean-startup lesson — unit economics tell you whether the growth you are financing is worth buying. Continue with accounting depth for the three statements in full, the marketing lesson for the CAC side of the runway equation, and the behavioral-economics lesson for how valuation negotiations actually get decided.',
+          tone: 'path',
+        },
+        { kind: 'heading', text: 'Five-Minute Recap' },
+        {
+          kind: 'list',
+          ordered: true,
+          items: [
+            'Finance raises the money; accounting proves stewardship — investors demand both.',
+            'The ladder: bootstrap and no-loan strategies first, angels next, priced venture rounds as milestones unlock them.',
+            'Ownership = investment ÷ post-money valuation; the cap table records it in shares.',
+            'Dilution compounds each round — judge it by value per share, not percentage.',
+            'Runway = cash ÷ monthly burn; the cash-flow statement, not the income statement, is the survival document.',
+          ],
         },
       ],
     },

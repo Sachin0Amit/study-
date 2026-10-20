@@ -16,8 +16,8 @@
 
 - **Subjects:** 168
 - **Books (master volumes):** 168
-- **Chapters:** 781
-- **Sections (lessons):** 4338
+- **Chapters:** 786
+- **Sections (lessons):** 4343
 
 ## Foundations — 5 subjects
 
@@ -899,9 +899,10 @@
 
 ### Marine Biology (`ku-life-sciences-marine-biology`)
 
-*Life in the blue* — 1 chapters · 1 sections
+*Life in the blue* — 2 chapters · 2 sections
 
 - **Ch 1. The Blue Realm** `ku-life-sciences-marine-biology-the-blue-realm` — 1 sections: Marine Biology: Life in the Ocean
+- **Ch 2. Fisheries & Conservation** `ku-life-sciences-marine-biology-fisheries-and-conservation` — 1 sections: Fisheries, Aquaculture and the Future of Ocean Food
 
 ### Animal Behavior (`ku-life-sciences-animal-behavior`)
 
@@ -1055,9 +1056,10 @@
 
 ### Water Technology (`ku-technology-applied-water-technology`)
 
-*Clean water, engineered* — 1 chapters · 1 sections
+*Clean water, engineered* — 2 chapters · 2 sections
 
 - **Ch 1. Clean Water Engineering** `ku-technology-applied-water-technology-clean-water-engineering` — 1 sections: Water Treatment: From River to Tap
+- **Ch 2. Wastewater & Reuse** `ku-technology-applied-water-technology-wastewater-and-reuse` — 1 sections: Wastewater Engineering: What Happens After the Drain
 
 ### Everyday Machines (`ku-technology-applied-everyday-machines`)
 
@@ -1355,9 +1357,10 @@
 
 ### International Trade (`ku-business-economics-international-trade`)
 
-*Why nations exchange* — 1 chapters · 1 sections
+*Why nations exchange* — 2 chapters · 2 sections
 
 - **Ch 1. Trade Theory** `ku-business-economics-international-trade-trade-theory` — 1 sections: Comparative Advantage and Trade
+- **Ch 2. Trade Policy** `ku-business-economics-international-trade-trade-policy` — 1 sections: Trade Policy: Tariffs, Quotas and Trade Wars
 
 ### Macroeconomics (`ku-business-economics-macroeconomics`)
 
@@ -1396,9 +1399,10 @@
 
 ### Entrepreneurship (`ku-business-economics-entrepreneurship`)
 
-*Ideas into ventures* — 1 chapters · 1 sections
+*Ideas into ventures* — 2 chapters · 2 sections
 
 - **Ch 1. Building a Venture** `ku-business-economics-entrepreneurship-building-a-venture` — 1 sections: From Idea to Business: Lean Startups and Business Models
+- **Ch 2. Financing the Venture** `ku-business-economics-entrepreneurship-financing-the-venture` — 1 sections: Startup Finance: Bootstrapping, Equity and Dilution
 
 ### Operations & Supply Chain (`ku-business-economics-operations-and-supply-chain`)
 
@@ -1437,9 +1441,10 @@
 
 ### Nutrition (`ku-health-wellness-nutrition`)
 
-*Fuel, decoded* — 1 chapters · 1 sections
+*Fuel, decoded* — 2 chapters · 2 sections
 
 - **Ch 1. Dietary Science** `ku-health-wellness-nutrition-dietary-science` — 1 sections: Nutrition Science: Protein, Carbs and Fat Actually Explained
+- **Ch 2. Micronutrition** `ku-health-wellness-nutrition-micronutrition` — 1 sections: Micronutrients: Vitamins, Minerals and Hidden Hunger
 
 ### Mental Health (`ku-health-wellness-mental-health`)
 
