@@ -20,6 +20,7 @@ import {
   ArrowDownRight,
   ArrowUpRight,
   BarChart3,
+  BookmarkPlus,
   Brain,
   CalendarCheck,
   CalendarDays,
@@ -54,6 +55,7 @@ import {
   Zap,
 } from 'lucide-react'
 import { toast } from 'sonner'
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Slider } from '@/components/ui/slider'
 import { Switch } from '@/components/ui/switch'
 import { LIBRARY_SUBJECTS } from '@/data/library'
@@ -460,6 +462,95 @@ function linkageOf(t: FocusTaskRow): FocusLinkage {
   }
 }
 
+/* ---- task templates: curated starters + your saved rituals ---------- */
+
+interface TaskTemplate {
+  id: string
+  title: string
+  subjectId: string | null
+  estimate: number
+}
+
+/** Curated quick-start rituals per subject (🍅 = estimated pomodoros). */
+const BUILTIN_TEMPLATES: Record<string, { title: string; estimate: number }[]> = {
+  mathematics: [
+    { title: 'Problem set practice', estimate: 4 },
+    { title: 'Worked examples, re-derived solo', estimate: 2 },
+    { title: 'Formula flash-card drill', estimate: 1 },
+  ],
+  physics: [
+    { title: 'Derivations from memory', estimate: 3 },
+    { title: 'Numerical problem drill', estimate: 4 },
+    { title: 'Concept misconceptions review', estimate: 2 },
+  ],
+  chemistry: [
+    { title: 'Reaction mechanism mapping', estimate: 3 },
+    { title: 'Named reactions recall drill', estimate: 2 },
+    { title: 'Periodic trends flash cards', estimate: 1 },
+  ],
+  english: [
+    { title: 'Reading comprehension set', estimate: 3 },
+    { title: 'Vocabulary in context review', estimate: 2 },
+    { title: 'Timed précis practice', estimate: 2 },
+  ],
+  aptitude: [
+    { title: 'Speed-math sprint', estimate: 2 },
+    { title: 'Logic puzzle set', estimate: 3 },
+    { title: 'Pattern-recognition drill', estimate: 2 },
+  ],
+  dsa: [
+    { title: 'Grind one pattern (5 problems)', estimate: 4 },
+    { title: 'Re-derive complexity proofs', estimate: 2 },
+    { title: 'Whiteboard a past problem', estimate: 1 },
+  ],
+  'ai-data-science': [
+    { title: 'Notebook end-to-end build', estimate: 4 },
+    { title: 'Math behind the model, on paper', estimate: 3 },
+  ],
+  cybersecurity: [
+    { title: 'Lab walk-through + notes', estimate: 3 },
+    { title: 'Attack-chain flash review', estimate: 2 },
+  ],
+}
+
+const GENERIC_TEMPLATES: { title: string; estimate: number }[] = [
+  { title: 'Chapter read-through', estimate: 2 },
+  { title: 'Practice problems', estimate: 3 },
+  { title: 'Summarize in your own words', estimate: 2 },
+  { title: 'Flash-card review', estimate: 1 },
+]
+
+const TEMPLATE_KEY = 'sv-focus-templates'
+
+function loadCustomTemplates(): TaskTemplate[] {
+  try {
+    const raw = localStorage.getItem(TEMPLATE_KEY)
+    if (!raw) return []
+    const parsed = JSON.parse(raw)
+    return Array.isArray(parsed)
+      ? parsed
+          .filter((t) => t && typeof t.title === 'string' && t.title.trim())
+          .slice(0, 24)
+          .map((t) => ({
+            id: String(t.id ?? crypto.randomUUID()),
+            title: String(t.title).slice(0, 160),
+            subjectId: t.subjectId ? String(t.subjectId) : null,
+            estimate: Math.min(16, Math.max(1, Number(t.estimate) || 2)),
+          }))
+      : []
+  } catch {
+    return []
+  }
+}
+
+function persistCustomTemplates(list: TaskTemplate[]) {
+  try {
+    localStorage.setItem(TEMPLATE_KEY, JSON.stringify(list.slice(0, 24)))
+  } catch {
+    /* storage full / private mode — templates just won't persist */
+  }
+}
+
 function TodoCard({
   tasks,
   onAdd,
@@ -485,7 +576,59 @@ function TodoCard({
   const [editingId, setEditingId] = useState<string | null>(null)
   const [editTitle, setEditTitle] = useState('')
   const [showDone, setShowDone] = useState(false)
+  const [customTemplates, setCustomTemplates] = useState<TaskTemplate[]>([])
   const titleRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    setCustomTemplates(loadCustomTemplates())
+  }, [])
+
+  function applyTemplate(t: { title: string; subjectId: string | null; estimate: number }) {
+    setTitle(t.title)
+    setSubjectId(t.subjectId ?? '')
+    setEstimate(t.estimate)
+    titleRef.current?.focus()
+  }
+
+  function saveTemplate(t: FocusTaskRow) {
+    if (customTemplates.some((c) => c.title.toLowerCase() === t.title.toLowerCase())) {
+      toast.info('Already saved as a template')
+      return
+    }
+    const next = [
+      { id: crypto.randomUUID(), title: t.title, subjectId: t.subjectId, estimate: t.estimate },
+      ...customTemplates,
+    ]
+    setCustomTemplates(next)
+    persistCustomTemplates(next)
+    toast.success('Template saved', {
+      description: `“${t.title}” is now one click away in Quick add.`,
+    })
+  }
+
+  function removeTemplate(id: string) {
+    const next = customTemplates.filter((c) => c.id !== id)
+    setCustomTemplates(next)
+    persistCustomTemplates(next)
+  }
+
+  const templateChips = useMemo(() => {
+    const chips: { key: string; title: string; subjectId: string | null; estimate: number; custom?: boolean; id?: string }[] = []
+    for (const c of customTemplates) {
+      chips.push({ key: 'c-' + c.id, id: c.id, title: c.title, subjectId: c.subjectId, estimate: c.estimate, custom: true })
+    }
+    const builtins = subjectId && BUILTIN_TEMPLATES[subjectId] ? BUILTIN_TEMPLATES[subjectId] : []
+    for (const b of builtins) {
+      chips.push({ key: 'b-' + subjectId + '-' + b.title, title: b.title, subjectId, estimate: b.estimate })
+    }
+    if (chips.length < 4) {
+      for (const g of GENERIC_TEMPLATES) {
+        if (chips.length >= 7) break
+        chips.push({ key: 'g-' + g.title, title: g.title, subjectId: subjectId || null, estimate: g.estimate })
+      }
+    }
+    return chips.slice(0, 8)
+  }, [customTemplates, subjectId])
 
   const open = tasks.filter((t) => !t.completed)
   const done = tasks.filter((t) => t.completed)
@@ -580,6 +723,40 @@ function TodoCard({
               </button>
             </div>
           </div>
+
+          {/* quick-add templates — curated per subject + your saved rituals */}
+          {templateChips.length > 0 && (
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground/70">
+                <Sparkles className="h-3 w-3" aria-hidden /> Quick add
+              </span>
+              {templateChips.map((c) => (
+                <span key={c.key} className="group/chip inline-flex">
+                  <button
+                    type="button"
+                    onClick={() => applyTemplate(c)}
+                    title={`Fill the form: “${c.title}” · 🍅 ${c.estimate}`}
+                    className="inline-flex max-w-[220px] items-center gap-1.5 rounded-full border border-border/70 bg-background/60 px-2.5 py-1 text-[11px] font-semibold text-muted-foreground transition-all hover:border-emerald-400/50 hover:bg-emerald-400/10 hover:text-emerald-700 dark:hover:text-emerald-300"
+                  >
+                    <span className="truncate">{c.title}</span>
+                    <span className="shrink-0 text-[9.5px] font-bold tabular-nums opacity-60" aria-hidden>
+                      🍅{c.estimate}
+                    </span>
+                  </button>
+                  {c.custom && c.id && (
+                    <button
+                      type="button"
+                      onClick={() => removeTemplate(c.id!)}
+                      aria-label={`Remove “${c.title}” template`}
+                      className="ml-0.5 hidden h-4 w-4 items-center justify-center rounded-full text-muted-foreground/50 transition-colors hover:bg-red-500/10 hover:text-red-500 group-hover/chip:inline-flex"
+                    >
+                      <Trash2 className="h-2.5 w-2.5" aria-hidden />
+                    </button>
+                  )}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
@@ -729,6 +906,15 @@ function TodoCard({
                     className="flex h-8 w-8 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-400/10 text-emerald-600 transition-all hover:brightness-125 dark:text-emerald-300"
                   >
                     <Play className="h-3.5 w-3.5" aria-hidden />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => saveTemplate(t)}
+                    aria-label={`Save “${t.title}” as a quick-add template`}
+                    title="Save as template — reuse this task in one click"
+                    className="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground/60 transition-colors hover:bg-amber-400/10 hover:text-amber-500"
+                  >
+                    <BookmarkPlus className="h-3.5 w-3.5" aria-hidden />
                   </button>
                   <button
                     type="button"
@@ -998,9 +1184,30 @@ const HEAT_CLASSES = [
 ] as const
 
 /** 371-day contribution heatmap: weeks as columns, weekdays as rows */
-function ConsistencyCard({ stats }: { stats: StatsPayload | null }) {
+function ConsistencyCard({
+  stats,
+  onDayClick,
+}: {
+  stats: StatsPayload | null
+  onDayClick: (day: string) => void
+}) {
   const days = stats?.days ?? []
   const todayKey = days.length > 0 ? days[days.length - 1].day : ''
+  const [hover, setHover] = useState<{ day: string; minutes: number; x: number; y: number } | null>(null)
+
+  // one delegated listener for all 371 cells — show the preview card above
+  // the hovered square (native title remains the a11y/keyboard fallback)
+  const onGridOver = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const cell = (e.target as HTMLElement).closest?.('button[data-heat-day]') as HTMLElement | null
+    if (!cell) return
+    const r = cell.getBoundingClientRect()
+    const day = cell.dataset.heatDay || ''
+    const minutes = Number(cell.dataset.heatMin || 0)
+    setHover((prev) =>
+      prev && prev.day === day ? prev : { day, minutes, x: r.left + r.width / 2, y: r.top }
+    )
+  }, [])
+  const hideHover = useCallback(() => setHover(null), [])
 
   // grid geometry — the first column starts on the Sunday on/before day one
   const { columns, cells, monthLabels } = useMemo(() => {
@@ -1090,11 +1297,13 @@ function ConsistencyCard({ stats }: { stats: StatsPayload | null }) {
                 ))}
               </div>
 
-              {/* the grid — columns of 7 weekday cells */}
+              {/* the grid — columns of 7 weekday cells (each day opens its log) */}
               <div
-                role="img"
-                aria-label={`Focus minutes heatmap for the last ${days.length} days: ${yearMin} minutes across ${activeDays} active days`}
+                role="group"
+                aria-label={`Focus minutes heatmap for the last ${days.length} days: ${yearMin} minutes across ${activeDays} active days. Each day button opens that day's session log.`}
                 className="grid"
+                onMouseOver={onGridOver}
+                onMouseLeave={hideHover}
                 style={{
                   gridTemplateRows: `repeat(7, ${HEAT_CELL}px)`,
                   gridAutoFlow: 'column',
@@ -1103,16 +1312,21 @@ function ConsistencyCard({ stats }: { stats: StatsPayload | null }) {
                 }}
               >
                 {cells.map((c) => {
-                  if (!c.inWindow) return <span key={c.day} />
+                  if (!c.inWindow) return <span key={c.day} aria-hidden />
                   const lvl = heatLevel(c.minutes)
                   const title = c.isToday ? 'today' : fmtDay(c.day)
                   return (
-                    <span
+                    <button
+                      type="button"
                       key={c.day}
-                      title={`${title} · ${c.minutes > 0 ? `${c.minutes}m focused` : 'no focus'}`}
+                      data-heat-day={c.day}
+                      data-heat-min={c.minutes}
+                      onClick={() => onDayClick(c.day)}
+                      title={`${title} · ${c.minutes > 0 ? `${c.minutes}m focused — click to open the day` : 'no focus yet — click to see the day'}`}
+                      aria-label={`${title}: ${c.minutes} minutes of focus. Open the day's sessions.`}
                       style={{ '--sv-heat-col': c.col } as CSSProperties}
-                      className={`sv-heat-cell rounded-[2.5px] transition-transform duration-150 ${HEAT_CLASSES[lvl]} ${
-                        c.isToday ? 'ring-1 ring-emerald-400/80 dark:ring-emerald-300/80' : ''
+                      className={`sv-heat-cell cursor-pointer rounded-[2.5px] transition-transform duration-150 ${HEAT_CLASSES[lvl]} ${
+                        c.isToday ? 'sv-heat-today ring-1 ring-emerald-400/80 dark:ring-emerald-300/80' : ''
                       }`}
                     />
                   )
@@ -1126,7 +1340,7 @@ function ConsistencyCard({ stats }: { stats: StatsPayload | null }) {
       {days.length > 0 && (
         <div className="mt-2 flex items-center justify-between gap-2 border-t border-border/60 pt-2.5">
           <p className="text-[10px] text-muted-foreground/70">
-            Greener = deeper. Squares dim before your first session; today carries the ring.
+            Greener = deeper. Click any square to open that day’s log; today carries the ring.
           </p>
           <p className="flex shrink-0 items-center gap-1 text-[9.5px] font-medium text-muted-foreground/70">
             less
@@ -1137,7 +1351,271 @@ function ConsistencyCard({ stats }: { stats: StatsPayload | null }) {
           </p>
         </div>
       )}
+
+      {/* hover preview card — floats above the hovered square */}
+      {hover && (
+        <span
+          className="sv-heat-tip rounded-xl border border-border bg-popover px-3 py-2 text-center shadow-xl shadow-black/20"
+          style={{
+            left: Math.min(Math.max(hover.x, 84), (typeof window === 'undefined' ? 9999 : window.innerWidth) - 84),
+            top: hover.y,
+            transform: hover.y < 110 ? 'translate(-50%, 14px)' : 'translate(-50%, calc(-100% - 10px))',
+          }}
+          aria-hidden
+        >
+          <span className="block whitespace-nowrap text-[11px] font-bold">
+            {hover.day === todayKey ? 'Today' : fmtDay(hover.day)}
+          </span>
+          <span className="mt-0.5 block whitespace-nowrap font-mono text-[13px] font-black tabular-nums text-emerald-600 dark:text-emerald-300">
+            {hover.minutes > 0 ? `${hover.minutes}m` : '—'}
+          </span>
+          <span className="mt-0.5 block whitespace-nowrap text-[9px] font-medium uppercase tracking-wide text-muted-foreground/70">
+            click to open
+          </span>
+        </span>
+      )}
     </section>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/*  Day-detail drill-down — click a heatmap square, read that day       */
+/* ------------------------------------------------------------------ */
+
+const DAY_KIND_META: Record<string, { label: string; icon: typeof Brain; tone: string }> = {
+  focus: { label: 'Focus', icon: Brain, tone: 'text-emerald-500 dark:text-emerald-300' },
+  short_break: { label: 'Short break', icon: Coffee, tone: 'text-sky-500 dark:text-sky-300' },
+  long_break: { label: 'Long break', icon: Wind, tone: 'text-cyan-500 dark:text-cyan-300' },
+}
+
+function fmtDayLong(key: string): string {
+  const d = new Date(key + 'T00:00:00')
+  return d.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })
+}
+
+function fmtStartTime(iso: string): string {
+  return new Date(iso).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' })
+}
+
+function DayDetailDialog({
+  day,
+  goalMin,
+  onClose,
+}: {
+  day: string | null
+  goalMin: number
+  onClose: () => void
+}) {
+  const [data, setData] = useState<{ day: string; sessions: SessionRow[] } | null>(null)
+
+  // fetch the day's log whenever a new day opens; `current` (derived during
+  // render) is non-null only while showing that day's data — no setState
+  // needed synchronously in the effect body.
+  useEffect(() => {
+    if (!day) return
+    let alive = true
+    const deviceId = useStudy.getState().ensureDevice()
+    fetch(`/api/focus/sessions?deviceId=${encodeURIComponent(deviceId)}&day=${day}`)
+      .then((r) => r.json())
+      .then((d) => {
+        if (alive) setData({ day, sessions: Array.isArray(d.sessions) ? d.sessions : [] })
+      })
+      .catch(() => {
+        if (alive) setData({ day, sessions: [] })
+      })
+    return () => {
+      alive = false
+    }
+  }, [day])
+
+  // close → drop the data so the next open starts fresh (in the handler)
+  function handleClose() {
+    setData(null)
+    onClose()
+  }
+
+  const sessions = data && data.day === day ? data.sessions : null
+
+  const focusRows = (sessions ?? []).filter((s) => s.kind === 'focus')
+  const totalMin = focusRows.reduce((n, s) => n + Math.round(s.actualSec / 60), 0)
+  const pomodoros = focusRows.filter((s) => s.completed).length
+  const interruptions = focusRows.reduce((n, s) => n + s.interruptions, 0)
+  const goalReached = goalMin > 0 && totalMin >= goalMin
+  const bySubject = new Map<string, number>()
+  for (const s of focusRows) {
+    const key = s.subject ?? 'Unlinked'
+    bySubject.set(key, (bySubject.get(key) ?? 0) + Math.round(s.actualSec / 60))
+  }
+  const subjectRows = [...bySubject.entries()].sort((a, b) => b[1] - a[1])
+  const maxSubjectMin = Math.max(1, ...subjectRows.map((r) => r[1]))
+  const isToday = day === new Date().toISOString().slice(0, 10)
+
+  return (
+    <Dialog open={!!day} onOpenChange={(o) => (!o ? handleClose() : undefined)}>
+      <DialogContent className="max-h-[85dvh] overflow-y-auto sm:max-w-lg">
+        <DialogHeader>
+          <DialogTitle className="flex flex-wrap items-center gap-2">
+            <CalendarCheck className="h-4.5 w-4.5 text-emerald-400" aria-hidden />
+            {day ? fmtDayLong(day) : ''}
+            {isToday && (
+              <span className="rounded-full border border-emerald-400/40 bg-emerald-400/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-600 dark:text-emerald-300">
+                today
+              </span>
+            )}
+          </DialogTitle>
+          <DialogDescription>
+            Every session you ran that day — the story behind the square.
+          </DialogDescription>
+        </DialogHeader>
+
+        {sessions === null ? (
+          <div className="flex flex-col gap-2 py-2">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="h-14 animate-pulse rounded-xl bg-muted/60" />
+            ))}
+          </div>
+        ) : sessions.length === 0 ? (
+          <div className="rounded-2xl border border-dashed border-border/80 px-4 py-8 text-center">
+            <p className="text-sm font-semibold">No sessions this day</p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              The square stays dim until focus minutes land on it.
+            </p>
+          </div>
+        ) : (
+          <>
+            {/* day summary strip */}
+            <div className="grid grid-cols-4 gap-2">
+              <span className="flex flex-col items-center gap-0.5 rounded-2xl border border-border/70 bg-muted/30 px-1 py-2 text-center">
+                <Clock className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
+                <span className="text-sm font-black tabular-nums">{totalMin}</span>
+                <span className="text-[9.5px] font-medium text-muted-foreground">minutes</span>
+              </span>
+              <span className="flex flex-col items-center gap-0.5 rounded-2xl border border-border/70 bg-muted/30 px-1 py-2 text-center">
+                <span className="text-[13px]" aria-hidden>🍅</span>
+                <span className="text-sm font-black tabular-nums">{pomodoros}</span>
+                <span className="text-[9.5px] font-medium text-muted-foreground">pomodoros</span>
+              </span>
+              <span className="flex flex-col items-center gap-0.5 rounded-2xl border border-border/70 bg-muted/30 px-1 py-2 text-center">
+                <Zap className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
+                <span className="text-sm font-black tabular-nums">{interruptions}</span>
+                <span className="text-[9.5px] font-medium text-muted-foreground">breaks in flow</span>
+              </span>
+              <span
+                className={cn(
+                  'flex flex-col items-center gap-0.5 rounded-2xl border px-1 py-2 text-center',
+                  goalReached
+                    ? 'border-emerald-400/40 bg-emerald-400/10'
+                    : 'border-border/70 bg-muted/30'
+                )}
+              >
+                <Target className={cn('h-3.5 w-3.5', goalReached ? 'text-emerald-500' : 'text-muted-foreground')} aria-hidden />
+                <span className="text-sm font-black tabular-nums">{goalReached ? '✓' : `${Math.min(999, Math.round((totalMin / Math.max(1, goalMin)) * 100))}%`}</span>
+                <span className={cn('text-[9.5px] font-medium', goalReached ? 'text-emerald-600 dark:text-emerald-300' : 'text-muted-foreground')}>
+                  {goalReached ? 'goal hit' : 'of goal'}
+                </span>
+              </span>
+            </div>
+
+            {/* subject split for the day */}
+            {subjectRows.length > 0 && (
+              <div className="rounded-2xl border border-border/70 bg-muted/20 p-3">
+                <p className="text-[10.5px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                  What you studied
+                </p>
+                <div className="mt-2 flex flex-col gap-1.5">
+                  {subjectRows.map(([name, min]) => (
+                    <div key={name} className="flex items-center gap-2">
+                      <span className="w-28 shrink-0 truncate text-[11px] font-semibold" title={name}>
+                        {name}
+                      </span>
+                      <span className="relative h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+                        <span
+                          className="absolute inset-y-0 left-0 rounded-full"
+                          style={{
+                            width: `${Math.max(4, (min / maxSubjectMin) * 100)}%`,
+                            background: subjectAccent(name),
+                          }}
+                        />
+                      </span>
+                      <span className="w-9 shrink-0 text-right font-mono text-[11px] font-bold tabular-nums">
+                        {min}m
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* the timeline */}
+            <ol className="relative flex flex-col gap-2 pl-4">
+              <span className="absolute bottom-2 left-[5px] top-2 w-px bg-border" aria-hidden />
+              {sessions.map((s) => {
+                const meta = DAY_KIND_META[s.kind] ?? DAY_KIND_META.focus
+                const Icon = meta.icon
+                const actualMin = Math.round(s.actualSec / 60)
+                return (
+                  <li key={s.id} className="relative">
+                    <span
+                      className={cn(
+                        'absolute -left-4 top-3.5 h-2 w-2 rounded-full ring-4 ring-card',
+                        s.kind === 'focus' ? 'bg-emerald-400' : 'bg-sky-400'
+                      )}
+                      aria-hidden
+                    />
+                    <div className="rounded-xl border border-border/70 bg-background/50 p-2.5 transition-colors hover:border-border">
+                      <div className="flex items-center gap-2">
+                        <Icon className={cn('h-3.5 w-3.5 shrink-0', meta.tone)} aria-hidden />
+                        <span className="font-mono text-[10.5px] font-bold tabular-nums text-muted-foreground">
+                          {fmtStartTime(s.startedAt)}
+                        </span>
+                        <span className={cn('truncate text-xs font-bold', meta.tone)}>{meta.label}</span>
+                        <span className="ml-auto flex shrink-0 items-center gap-1.5">
+                          <span className="font-mono text-[11px] font-bold tabular-nums">
+                            {actualMin}m
+                          </span>
+                          {s.completed ? (
+                            <span className="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-400/15 text-emerald-500 dark:text-emerald-300" title="Completed">
+                              <Check className="h-2.5 w-2.5" aria-hidden />
+                            </span>
+                          ) : (
+                            <span
+                              className="h-4 w-4 rounded-full border border-dashed border-border"
+                              title="Partial — banked early"
+                              aria-hidden
+                            />
+                          )}
+                        </span>
+                      </div>
+                      {(s.taskTitle || s.chapterTitle) && (
+                        <p className="mt-1 truncate pl-5.5 text-xs font-medium" title={s.taskTitle ?? s.chapterTitle ?? ''}>
+                          {s.taskTitle ?? s.chapterTitle}
+                          {s.subject && (
+                            <span className="ml-1.5 text-muted-foreground">· {s.subject}</span>
+                          )}
+                        </p>
+                      )}
+                      <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 pl-5.5 text-[10px] text-muted-foreground">
+                        <span>planned {s.plannedMin}m</span>
+                        {s.interruptions > 0 && (
+                          <span className="flex items-center gap-0.5 text-amber-600 dark:text-amber-300">
+                            <Zap className="h-2.5 w-2.5" aria-hidden /> {s.interruptions}
+                          </span>
+                        )}
+                      </div>
+                      {s.note && (
+                        <p className="mt-1.5 border-l-2 border-emerald-400/50 pl-2.5 text-[11px] italic leading-relaxed text-muted-foreground">
+                          “{s.note}”
+                        </p>
+                      )}
+                    </div>
+                  </li>
+                )
+              })}
+            </ol>
+          </>
+        )}
+      </DialogContent>
+    </Dialog>
   )
 }
 
@@ -1619,6 +2097,7 @@ export function FocusView() {
   const [tasks, setTasks] = useState<FocusTaskRow[] | null>(null)
   const [stats, setStats] = useState<StatsPayload | null>(null)
   const [sessions, setSessions] = useState<SessionRow[]>([])
+  const [dayDetail, setDayDetail] = useState<string | null>(null)
 
   const loadTasks = useCallback(async () => {
     try {
@@ -1942,8 +2421,15 @@ export function FocusView() {
 
       {/* the year, full width — the consistency heatmap */}
       <div className="mt-5">
-        <ConsistencyCard stats={stats} />
+        <ConsistencyCard stats={stats} onDayClick={setDayDetail} />
       </div>
+
+      {/* heatmap day drill-down */}
+      <DayDetailDialog
+        day={dayDetail}
+        goalMin={settings.dailyGoalMin}
+        onClose={() => setDayDetail(null)}
+      />
     </div>
   )
 }

@@ -46,13 +46,13 @@ import {
   RotateCcw,
   Target,
   Timer,
+  Trophy,
   Wind,
   X,
   Zap,
 } from 'lucide-react'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Slider } from '@/components/ui/slider'
-import { cn } from '@/lib/utils'
 import { useStudy } from '@/store/useStudy'
 import {
   type FocusEngineState,
@@ -979,6 +979,25 @@ function localDateKeySafe(d: Date = new Date()): string {
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
 }
 
+/** consecutive days at/above the daily goal — today only counts once reached */
+function goalStreakFromLog(log: FocusLogEntry[], goalMin: number): number {
+  const byDay = new Map<string, number>()
+  for (const e of log) byDay.set(e.date, (byDay.get(e.date) ?? 0) + e.focusMinutes)
+  const today = localDateKeySafe()
+  let streak = 0
+  let offset = (byDay.get(today) ?? 0) >= goalMin ? 0 : 1 // skip an in-progress today
+  for (;;) {
+    const d = new Date()
+    d.setDate(d.getDate() - offset)
+    if ((byDay.get(localDateKeySafe(d)) ?? 0) >= goalMin) {
+      streak++
+      offset++
+    } else break
+    if (offset > 3650) break
+  }
+  return streak
+}
+
 export function FocusTimerStats({ className = '' }: { className?: string }) {
   const log = useFocusLog()
   const settings = useFocusSettings()
@@ -987,52 +1006,83 @@ export function FocusTimerStats({ className = '' }: { className?: string }) {
   const goalPct = Math.min(100, Math.round((stats.todayMinutes / settings.dailyGoalMin) * 100))
   const goalLeft = Math.max(0, settings.dailyGoalMin - stats.todayMinutes)
 
+  // goal streak — consecutive days at/above the daily goal (today only counts
+  // once it's actually reached, so an in-progress day never breaks the run)
+  const goalStreak = useMemo(() => goalStreakFromLog(log, settings.dailyGoalMin), [log, settings.dailyGoalMin])
+  const bestWeek = Math.max(0, ...stats.week.map((d) => d.minutes))
+  const activeWeekDays = stats.week.filter((d) => d.minutes > 0).length
+  const RING_R = 52
+  const RING_C = 2 * Math.PI * RING_R
+
   return (
     <div className={`rounded-3xl border border-border/80 bg-card p-5 ${className}`}>
       <div className="flex items-center justify-between gap-3">
         <span className="text-sm font-bold">Deep focus</span>
-        <span className="flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-300">
-          <Flame className="h-3 w-3" aria-hidden />
-          {stats.streakDays}-day streak
-        </span>
+        {goalStreak >= 2 ? (
+          <span className="flex items-center gap-1.5 rounded-full border border-amber-400/40 bg-amber-400/10 px-2.5 py-1 text-[11px] font-bold text-amber-600 dark:text-amber-300">
+            <Trophy className="h-3 w-3" aria-hidden />
+            {goalStreak}× goal
+          </span>
+        ) : (
+          <span className="flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-300">
+            <Flame className="h-3 w-3" aria-hidden />
+            {stats.streakDays}-day streak
+          </span>
+        )}
       </div>
 
-      <div className="mt-3 flex items-end gap-2">
-        <span className="text-5xl font-black leading-none tabular-nums tracking-tight">
-          {stats.todayMinutes}
-        </span>
-        <span className="pb-1 text-xs font-medium text-muted-foreground">
-          focus min today
-          {stats.todayMinutes > 0 ? '' : ' — start a session'}
-        </span>
-      </div>
-
-      {/* daily goal progress (Focus HQ owns the setting) */}
-      <div className="mt-2.5">
-        <div className="flex items-baseline justify-between gap-2 text-[10.5px] font-semibold">
-          <span className="text-muted-foreground">
-            Daily goal · {settings.dailyGoalMin}m
-            {goalLeft > 0 ? (
-              <span className="ml-1.5 text-foreground/70">{goalLeft}m to go</span>
-            ) : (
-              <span className="ml-1.5 text-emerald-500 dark:text-emerald-300">reached 🎯</span>
-            )}
-          </span>
-          <span className={cn('tabular-nums', goalPct >= 100 ? 'text-emerald-500 dark:text-emerald-300' : 'text-foreground/70')}>
-            {goalPct}%
-          </span>
-        </div>
-        <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-muted" role="img"
-          aria-label={`Daily goal ${goalPct}% of ${settings.dailyGoalMin} minutes`}>
-          <div
-            className={cn(
-              'h-full rounded-full transition-all duration-500',
-              goalPct >= 100
-                ? 'bg-gradient-to-r from-emerald-400 to-teal-400'
-                : 'bg-emerald-500/70 dark:bg-emerald-400/70'
-            )}
-            style={{ width: `${Math.max(2, goalPct)}%` }}
+      {/* today's minutes inside the daily-goal ring */}
+      <div className="mt-3 flex items-center gap-4">
+        <svg
+          viewBox="0 0 120 120"
+          className="h-[118px] w-[118px] shrink-0 -rotate-90"
+          role="img"
+          aria-label={`Daily goal ${goalPct}% — ${stats.todayMinutes} of ${settings.dailyGoalMin} minutes`}
+        >
+          <circle cx="60" cy="60" r={RING_R} fill="none" strokeWidth="9" className="stroke-muted" />
+          <circle
+            cx="60"
+            cy="60"
+            r={RING_R}
+            fill="none"
+            strokeWidth="9"
+            strokeLinecap="round"
+            strokeDasharray={RING_C}
+            strokeDashoffset={RING_C * (1 - goalPct / 100)}
+            stroke={goalPct >= 100 ? '#2dd4bf' : '#34d399'}
+            className="transition-[stroke-dashoffset] duration-700"
           />
+          <text x="60" y="54" textAnchor="middle" fontSize="30" className="rotate-90 fill-foreground font-black" style={{ transformOrigin: '60px 60px' }}>
+            {stats.todayMinutes}
+          </text>
+          <text x="60" y="72" textAnchor="middle" fontSize="11" className="rotate-90 fill-muted-foreground font-bold" style={{ transformOrigin: '60px 60px' }}>
+            {goalPct >= 100 ? 'goal 🎯' : `of ${settings.dailyGoalMin}m`}
+          </text>
+        </svg>
+        <div className="min-w-0 flex-1">
+          <p className="text-xs font-bold">focus min today</p>
+          <p className="mt-0.5 text-[11px] font-medium text-muted-foreground">
+            {goalLeft > 0 ? (
+              <>{goalLeft}m to the daily goal</>
+            ) : (
+              <span className="font-bold text-emerald-600 dark:text-emerald-300">goal reached — bank the bonus 🎯</span>
+            )}
+          </p>
+          {/* badge row */}
+          <div className="mt-2.5 flex flex-wrap gap-1.5">
+            <span className="inline-flex items-center gap-1 rounded-full border border-border/70 bg-muted/40 px-2 py-0.5 text-[10px] font-bold text-muted-foreground">
+              <Flame className="h-2.5 w-2.5 text-orange-400" aria-hidden /> {stats.streakDays}d streak
+            </span>
+            <span className="inline-flex items-center gap-1 rounded-full border border-border/70 bg-muted/40 px-2 py-0.5 text-[10px] font-bold text-muted-foreground">
+              <Trophy className="h-2.5 w-2.5 text-amber-400" aria-hidden /> {goalStreak}× goal
+            </span>
+            <span className="inline-flex items-center gap-1 rounded-full border border-border/70 bg-muted/40 px-2 py-0.5 text-[10px] font-bold text-muted-foreground">
+              <CalendarDays className="h-2.5 w-2.5 text-emerald-400" aria-hidden /> best day {bestWeek}m
+            </span>
+            <span className="inline-flex items-center gap-1 rounded-full border border-border/70 bg-muted/40 px-2 py-0.5 text-[10px] font-bold text-muted-foreground">
+              <Hourglass className="h-2.5 w-2.5 text-sky-400" aria-hidden /> {(stats.totalMinutes / 60).toFixed(1)}h all-time
+            </span>
+          </div>
         </div>
       </div>
 
@@ -1094,16 +1144,16 @@ export function FocusTimerStats({ className = '' }: { className?: string }) {
           <span className="text-[10px] font-medium text-muted-foreground">min · 7 days</span>
         </span>
         <span className="flex flex-col items-center gap-0.5 rounded-2xl border border-border/70 bg-muted/30 px-2 py-2.5 text-center">
-          <Hourglass className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
-          <span className="text-sm font-black tabular-nums">
-            {(stats.totalMinutes / 60).toFixed(1)}
-          </span>
-          <span className="text-[10px] font-medium text-muted-foreground">hours all-time</span>
+          <Target className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
+          <span className="text-sm font-black tabular-nums">{activeWeekDays}/7</span>
+          <span className="text-[10px] font-medium text-muted-foreground">active days</span>
         </span>
         <span className="flex flex-col items-center gap-0.5 rounded-2xl border border-border/70 bg-muted/30 px-2 py-2.5 text-center">
-          <Flame className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
-          <span className="text-sm font-black tabular-nums">{stats.streakDays}</span>
-          <span className="text-[10px] font-medium text-muted-foreground">day streak</span>
+          <Hourglass className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
+          <span className="text-sm font-black tabular-nums">
+            {activeWeekDays > 0 ? Math.round(stats.weekMinutes / activeWeekDays) : 0}
+          </span>
+          <span className="text-[10px] font-medium text-muted-foreground">avg / active day</span>
         </span>
       </div>
 

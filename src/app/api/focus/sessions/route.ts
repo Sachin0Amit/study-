@@ -6,7 +6,9 @@ import { db } from '@/lib/db'
  * its linkage (task / subject / chapter) so analytics can answer "what did I
  * study, for how much time".
  *
- * GET   ?deviceId=…&limit=…  → most recent sessions (default 25)
+ * GET   ?deviceId=…&limit=…           → most recent sessions (default 25)
+ * GET   ?deviceId=…&day=YYYY-MM-DD    → that day's sessions, oldest first
+ *                                          (heatmap day-detail drill-down)
  * POST  { deviceId, kind, taskId?, taskTitle?, subject?, subjectId?,
  *         chapterId?, chapterTitle?, plannedMin, actualSec, completed,
  *         interruptions?, startedAt?, incrementTask? }
@@ -36,10 +38,13 @@ export async function GET(req: NextRequest) {
   if (!deviceId) return NextResponse.json({ error: 'deviceId required' }, { status: 400 })
   // limit up to 2000 so "Export CSV" can pull the full history in one request
   const limit = intIn(req.nextUrl.searchParams.get('limit'), 1, 2000, 25)
+  // optional single-day drill-down (heatmap day click) — oldest first so the
+  // day reads like a timeline
+  const day = req.nextUrl.searchParams.get('day')
   try {
     const sessions = await db.focusSession.findMany({
-      where: { deviceId },
-      orderBy: { startedAt: 'desc' },
+      where: day && DAY_RE.test(day) ? { deviceId, day } : { deviceId },
+      orderBy: { startedAt: day ? 'asc' : 'desc' },
       take: limit,
     })
     return NextResponse.json({ sessions })
