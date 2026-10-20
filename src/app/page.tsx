@@ -76,6 +76,10 @@ const SyllabusView = dynamic(
   () => import('@/components/app/syllabus-view').then((m) => m.SyllabusView),
   { loading: ViewLoading }
 )
+const ExamSubjectBook = dynamic(
+  () => import('@/components/app/exam-subject-book').then((m) => m.ExamSubjectBook),
+  { loading: ViewLoading }
+)
 const StudioView = dynamic(() => import('@/components/app/studio-view').then((m) => m.StudioView), {
   loading: ViewLoading,
 })
@@ -147,6 +151,12 @@ export default function Home() {
         useStudy.setState({ view: { name: 'progress' } })
       } else if (v === 'syllabus') {
         useStudy.setState({ view: { name: 'syllabus' } })
+      } else if (v === 'exam-book') {
+        const exam = params.get('exam')
+        const subjectIdx = parseInt(params.get('subject') ?? '0', 10)
+        if (exam && Number.isInteger(subjectIdx) && subjectIdx >= 0) {
+          useStudy.setState({ view: { name: 'exam-book', examMapId: exam, subjectIndex: subjectIdx } })
+        }
       } else if (v === 'studio') {
         useStudy.setState({ view: { name: 'studio' } })
       } else if (v === 'twin') {
@@ -171,7 +181,11 @@ export default function Home() {
     if (view.name === 'lesson') params.set('lesson', view.sectionId)
     else if (view.name === 'chapter') params.set('chapter', view.chapterId)
     else if (view.name === 'book') params.set('book', view.bookId)
-    else if (view.name !== 'library') params.set('view', view.name)
+    else if (view.name === 'exam-book') {
+      params.set('view', 'exam-book')
+      params.set('exam', view.examMapId)
+      params.set('subject', String(view.subjectIndex))
+    } else if (view.name !== 'library') params.set('view', view.name)
     const newSearch = params.toString() ? `?${params.toString()}` : window.location.pathname
     window.history.replaceState(null, '', newSearch)
   }, [view])
@@ -196,7 +210,9 @@ export default function Home() {
                     }`
                   : view.name === 'search'
                     ? `search-${view.query ?? 'new'}`
-                    : view.name === 'studio'
+                    : view.name === 'exam-book'
+                      ? `exam-book-${view.examMapId}-${view.subjectIndex}`
+                      : view.name === 'studio'
                       ? `studio-${view.targetSkill ?? 'free'}`
                       : view.name === 'palace'
                         ? `palace-${view.sectionKey ?? 'pick'}`
@@ -242,6 +258,9 @@ export default function Home() {
             {view.name === 'progress' && <ProgressView />}
             {view.name === 'search' && <SearchView initialQuery={view.query} />}
             {view.name === 'syllabus' && <SyllabusView />}
+            {view.name === 'exam-book' && (
+              <ExamSubjectBook examMapId={view.examMapId} subjectIndex={view.subjectIndex} />
+            )}
             {view.name === 'studio' && (
               <StudioView targetSkill={view.targetSkill} subjectHint={view.subjectHint} />
             )}

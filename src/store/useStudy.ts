@@ -15,6 +15,8 @@ export type View =
   | { name: 'exam'; chapterId?: string; chapterIds?: string[]; label?: string; questionCount?: number }
   | { name: 'search'; query?: string }
   | { name: 'syllabus' }
+  // curated exam-scoped subject book (Exam Command Center → Study Library)
+  | { name: 'exam-book'; examMapId: string; subjectIndex: number }
   // ---- X-systems (StudyVerse OS) ----
   | { name: 'studio'; targetSkill?: string; subjectHint?: string }
   | { name: 'twin' }

@@ -7,6 +7,7 @@ import {
   ArrowLeft,
   ArrowUpRight,
   Atom,
+  BookMarked,
   BookOpen,
   Calculator,
   Check,
@@ -21,6 +22,7 @@ import {
   GraduationCap,
   Landmark,
   Layers,
+  Library,
   ListChecks,
   Loader2,
   Minus,
@@ -486,9 +488,9 @@ export function ExamCommandCenter() {
     return () => clearTimeout(t)
   }, [confirmDeleteId])
 
-  /** open one exam map by id → workspace */
+  /** open one exam map by id → workspace (landTab = which tab to land on) */
   const openMap = useCallback(
-    async (id: string): Promise<boolean> => {
+    async (id: string, landTab: WorkspaceTab = 'map'): Promise<boolean> => {
       setLoadingMapId(id)
       try {
         const res = await fetch(
@@ -500,7 +502,7 @@ export function ExamCommandCenter() {
           return false
         }
         setCurrent(data.map)
-        setTab('map')
+        setTab(landTab)
         setQuery('')
         setOpenSubjects(new Set(data.map.subjects.length ? [0] : []))
         setRenaming(false)
@@ -612,12 +614,12 @@ export function ExamCommandCenter() {
             if (!id) return
             setStepStates(Object.fromEntries(RESEARCH_STAGES.map((s) => [s.id, 'done' as StepState])))
             void (async () => {
-              const ok = await openMap(id)
+              const ok = await openMap(id, 'library')
               loadMaps()
               if (ok) {
                 toast({
-                  title: 'Exam map ready',
-                  description: `${clean} — syllabus mapped onto your library.`,
+                  title: 'Study library ready',
+                  description: `${clean} — every subject now has its own syllabus book.`,
                 })
               }
             })()
@@ -718,6 +720,12 @@ export function ExamCommandCenter() {
     if (book) navigate({ name: 'book', bookId: book.id })
   }
   const openLesson = (sectionId: string) => navigate({ name: 'lesson', sectionId })
+
+  /** open the curated, syllabus-scoped book for exam subject #subjectIndex */
+  const openSubjectBook = (subjectIndex: number) => {
+    if (!current) return
+    navigate({ name: 'exam-book', examMapId: current.id, subjectIndex })
+  }
 
   // ---------------------------------------------------- workspace data --
 
@@ -1627,37 +1635,59 @@ export function ExamCommandCenter() {
                             })
                           }
                         >
-                          <CollapsibleTrigger
-                            className={`group flex w-full items-center gap-2.5 rounded-t-2xl p-4 text-left transition-colors hover:bg-emerald-400/[0.04] ${FOCUS_RING}`}
-                            aria-label={`${expanded ? 'Collapse' : 'Expand'} ${s.name}`}
-                          >
-                            <ChevronDown
-                              className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-data-[state=closed]:-rotate-90"
-                              aria-hidden
-                            />
-                            <span
-                              className="h-2.5 w-2.5 shrink-0 rounded-full"
-                              style={{ background: lib?.accent ?? '#34d399' }}
-                              aria-hidden
-                            />
-                            <h3
-                              id={`ecc-subject-h-${si}`}
-                              className="min-w-0 truncate text-[14.5px] font-bold"
+                          {/* header row: the collapsible trigger must stay a lone
+                              button (no nested <button>) — the Subject book
+                              affordance sits beside it, outside the trigger */}
+                          <div className="flex items-center gap-2 rounded-t-2xl pr-3 sm:pr-4">
+                            <CollapsibleTrigger
+                              className={`group flex min-w-0 flex-1 items-center gap-2.5 rounded-t-2xl p-4 text-left transition-colors hover:bg-emerald-400/[0.04] ${FOCUS_RING}`}
+                              aria-label={`${expanded ? 'Collapse' : 'Expand'} ${s.name}`}
                             >
-                              {s.name}
-                            </h3>
-                            {s.weightage != null && s.weightage > 0 && (
-                              <span className="shrink-0 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-300">
-                                ~{Math.round(s.weightage)}%
+                              <ChevronDown
+                                className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-data-[state=closed]:-rotate-90"
+                                aria-hidden
+                              />
+                              <span
+                                className="h-2.5 w-2.5 shrink-0 rounded-full"
+                                style={{ background: lib?.accent ?? '#34d399' }}
+                                aria-hidden
+                              />
+                              <h3
+                                id={`ecc-subject-h-${si}`}
+                                className="min-w-0 truncate text-[14.5px] font-bold"
+                              >
+                                {s.name}
+                              </h3>
+                              {s.weightage != null && s.weightage > 0 && (
+                                <span className="shrink-0 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-300">
+                                  ~{Math.round(s.weightage)}%
+                                </span>
+                              )}
+                              <span className="ml-auto hidden shrink-0 text-[11px] text-muted-foreground sm:block">
+                                {topics} topic{topics !== 1 ? 's' : ''}
                               </span>
-                            )}
+                              <span className="flex shrink-0 items-center gap-1.5">
+                                <span className="h-1.5 w-14 overflow-hidden rounded-full bg-muted">
+                                  <span
+                                    className={`block h-full rounded-full ${
+                                      mapPct >= 75
+                                        ? 'bg-emerald-400'
+                                        : mapPct >= 40
+                                          ? 'bg-amber-300'
+                                          : 'bg-muted-foreground/40'
+                                    }`}
+                                    style={{ width: `${mapPct}%` }}
+                                  />
+                                </span>
+                                <span className="font-mono text-[10px] text-muted-foreground">
+                                  {mapped}/{topics}
+                                </span>
+                              </span>
+                            </CollapsibleTrigger>
                             {lib && (
                               <button
-                                onClick={(e) => {
-                                  e.stopPropagation()
-                                  openBookBySubject(lib.id)
-                                }}
-                                title={`Open the ${lib.name} book`}
+                                onClick={() => openSubjectBook(si)}
+                                title={`Open the ${s.name} syllabus book — only the chapters, topics and lessons this exam needs`}
                                 className={`hidden min-h-9 shrink-0 items-center gap-1 rounded-full border px-2.5 py-1 text-[10.5px] font-semibold transition-colors hover:bg-emerald-400/10 sm:inline-flex ${FOCUS_RING}`}
                                 style={{
                                   borderColor: (lib.accent ?? '#34d399') + '55',
@@ -1665,31 +1695,11 @@ export function ExamCommandCenter() {
                                   background: (lib.accent ?? '#34d399') + '12',
                                 }}
                               >
-                                <BookOpen className="h-3 w-3" aria-hidden />
-                                <span className="max-w-32 truncate">{lib.name}</span>
+                                <BookMarked className="h-3 w-3" aria-hidden />
+                                <span className="max-w-32 truncate">Subject book</span>
                               </button>
                             )}
-                            <span className="ml-auto hidden shrink-0 text-[11px] text-muted-foreground sm:block">
-                              {topics} topic{topics !== 1 ? 's' : ''}
-                            </span>
-                            <span className="flex shrink-0 items-center gap-1.5">
-                              <span className="h-1.5 w-14 overflow-hidden rounded-full bg-muted">
-                                <span
-                                  className={`block h-full rounded-full ${
-                                    mapPct >= 75
-                                      ? 'bg-emerald-400'
-                                      : mapPct >= 40
-                                        ? 'bg-amber-300'
-                                        : 'bg-muted-foreground/40'
-                                  }`}
-                                  style={{ width: `${mapPct}%` }}
-                                />
-                              </span>
-                              <span className="font-mono text-[10px] text-muted-foreground">
-                                {mapped}/{topics}
-                              </span>
-                            </span>
-                          </CollapsibleTrigger>
+                          </div>
                           <CollapsibleContent>
                             <div className="flex flex-col gap-3 border-t border-border/60 p-3.5 sm:p-4">
                               {units.map(({ unit: u, topics: unitTopics }) => (
@@ -1738,6 +1748,21 @@ export function ExamCommandCenter() {
 
         {/* ============================ TAB 2 · STUDY LIBRARY ============================ */}
         <TabsContent value="library" className="mt-4">
+          {/* intro strip */}
+          <div className="mb-4 flex items-start gap-3 rounded-2xl border border-emerald-400/25 bg-gradient-to-r from-emerald-400/[0.08] via-card to-card p-4 sm:p-5">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-400/10">
+              <Library className="h-5 w-5 text-emerald-300" aria-hidden />
+            </span>
+            <div className="min-w-0">
+              <h3 className="text-[14px] font-bold tracking-tight">
+                Your exam study library
+              </h3>
+              <p className="mt-1 text-[12.5px] leading-relaxed text-muted-foreground">
+                One curated book per subject — only the syllabus chapters, subtopics and lessons
+                your exam needs, pulled from the main library. Click a subject to open its book.
+              </p>
+            </div>
+          </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {current.subjects.map((s, i) => {
               const lib = s.mappedSubjectId ? subjectById.get(s.mappedSubjectId) : undefined
@@ -1747,6 +1772,14 @@ export function ExamCommandCenter() {
               const mapped = subjectMappedCount(s)
               const chapterIds = subjectChapterIds(s)
               const book = lib ? bookBySubjectId.get(lib.id) : undefined
+              const libSections = chapterIds.flatMap((cid) => sectionsByChapterId.get(cid) ?? [])
+              const doneSections = libSections.filter(
+                (sec) => progress[sec.id]?.status === 'completed'
+              ).length
+              const readPct =
+                libSections.length > 0
+                  ? Math.round((doneSections / libSections.length) * 100)
+                  : 0
               return (
                 <article
                   key={`${s.name}-lib-${i}`}
@@ -1804,6 +1837,31 @@ export function ExamCommandCenter() {
                       {chapterIds.length !== 1 ? 's' : ''} matched
                     </p>
 
+                    {libSections.length > 0 && (
+                      <div className="mt-3">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-[10.5px] font-semibold uppercase tracking-wider text-muted-foreground">
+                            Reading progress
+                          </span>
+                          <span className="font-mono text-[10px] text-muted-foreground">
+                            {doneSections}/{libSections.length} lessons
+                          </span>
+                        </div>
+                        <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-muted">
+                          <span
+                            className={`block h-full rounded-full transition-[width] duration-500 ${
+                              readPct >= 75
+                                ? 'bg-emerald-400'
+                                : readPct >= 40
+                                  ? 'bg-amber-300'
+                                  : 'bg-muted-foreground/40'
+                            }`}
+                            style={{ width: `${Math.max(readPct, 3)}%` }}
+                          />
+                        </div>
+                      </div>
+                    )}
+
                     {chapterIds.length > 0 ? (
                       <>
                         <div className="mt-3 flex flex-wrap gap-1.5 border-t border-border/50 pt-3">
@@ -1829,11 +1887,9 @@ export function ExamCommandCenter() {
                             </span>
                           )}
                         </div>
-                        <div className="mt-auto pt-4">
+                        <div className="mt-auto flex flex-col gap-2 pt-4">
                           <button
-                            onClick={() =>
-                              book ? openBookBySubject(book.subjectId) : openChapter(chapterIds[0])
-                            }
+                            onClick={() => openSubjectBook(i)}
                             className={`inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border px-4 py-2.5 text-[13px] font-semibold transition-colors ${FOCUS_RING}`}
                             style={{
                               borderColor: accent + '44',
@@ -1841,10 +1897,21 @@ export function ExamCommandCenter() {
                               color: accent,
                             }}
                           >
-                            <BookOpen className="h-4 w-4" aria-hidden />
-                            Study subject
+                            <BookMarked className="h-4 w-4" aria-hidden />
+                            Open subject book
                             <ChevronRight className="h-4 w-4" aria-hidden />
                           </button>
+                          {book && (
+                            <button
+                              onClick={() => openBookBySubject(book.subjectId)}
+                              title={`Browse the full ${lib?.name ?? 'library'} book — every chapter, beyond the syllabus`}
+                              className={`inline-flex min-h-9 w-full items-center justify-center gap-1.5 rounded-xl px-3 py-1.5 text-[11.5px] font-semibold text-muted-foreground transition-colors hover:bg-muted/50 hover:text-foreground ${FOCUS_RING}`}
+                            >
+                              <BookOpen className="h-3.5 w-3.5" aria-hidden />
+                              Full library book
+                              <ArrowUpRight className="h-3 w-3" aria-hidden />
+                            </button>
+                          )}
                         </div>
                       </>
                     ) : (
