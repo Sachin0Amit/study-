@@ -17,9 +17,12 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
+  ArrowDownRight,
+  ArrowUpRight,
   BarChart3,
   Brain,
   CalendarDays,
+  CalendarRange,
   Check,
   ChevronDown,
   ChevronUp,
@@ -29,7 +32,9 @@ import {
   Hourglass,
   ListTodo,
   Minus,
+  NotebookPen,
   Pause,
+  Pencil,
   PhoneIncoming,
   PieChart,
   Play,
@@ -99,6 +104,7 @@ interface SessionRow {
   actualSec: number
   completed: boolean
   interruptions: number
+  note: string | null
   startedAt: string
 }
 
@@ -750,6 +756,169 @@ function TodoCard({
 /*  Analytics cards                                                    */
 /* ------------------------------------------------------------------ */
 
+const GOAL_R = 30
+const GOAL_C = 2 * Math.PI * GOAL_R
+const GOAL_PRESETS = [60, 120, 180, 240]
+
+/** today's minutes vs the daily goal — a compact ring + quick goal presets */
+function DailyGoalCard({ stats }: { stats: StatsPayload | null }) {
+  const settings = useFocusSettings()
+  const todayMin = stats?.totals.todayMinutes ?? 0
+  const goal = settings.dailyGoalMin
+  const pct = Math.min(100, Math.round((todayMin / goal) * 100))
+  const over = todayMin >= goal
+
+  return (
+    <div className="mt-4 flex items-center gap-3.5 rounded-2xl border border-border/70 bg-gradient-to-br from-emerald-400/[0.05] to-transparent p-3">
+      <svg viewBox="0 0 76 76" className="h-[76px] w-[76px] shrink-0 -rotate-90" role="img"
+        aria-label={`Daily goal ${pct}% — ${todayMin} of ${goal} minutes`}>
+        <circle cx="38" cy="38" r={GOAL_R} fill="none" strokeWidth="7" className="stroke-muted" />
+        <circle
+          cx="38"
+          cy="38"
+          r={GOAL_R}
+          fill="none"
+          strokeWidth="7"
+          strokeLinecap="round"
+          strokeDasharray={GOAL_C}
+          strokeDashoffset={GOAL_C * (1 - pct / 100)}
+          stroke={over ? '#2dd4bf' : '#34d399'}
+          className="transition-[stroke-dashoffset] duration-700"
+        />
+        <text x="38" y="36" textAnchor="middle" fontSize="15" className="rotate-90 fill-foreground font-black" style={{ transformOrigin: '38px 38px' }}>
+          {over ? '🎯' : `${pct}%`}
+        </text>
+        <text x="38" y="50" textAnchor="middle" fontSize="8.5" className="rotate-90 fill-muted-foreground font-bold" style={{ transformOrigin: '38px 38px' }}>
+          {todayMin}/{goal}m
+        </text>
+      </svg>
+      <div className="min-w-0 flex-1">
+        <p className="text-xs font-bold">
+          Daily goal
+          <span className="ml-1.5 font-medium text-muted-foreground">
+            {over ? 'reached — every extra minute compounds' : `${Math.max(1, goal - todayMin)}m to go`}
+          </span>
+        </p>
+        <div className="mt-2 flex flex-wrap items-center gap-1.5">
+          {GOAL_PRESETS.map((g) => (
+            <button
+              key={g}
+              type="button"
+              onClick={() => saveFocusSettings({ dailyGoalMin: g })}
+              aria-pressed={goal === g}
+              className={`rounded-full border px-2.5 py-1 text-[10.5px] font-bold tabular-nums transition-all ${
+                goal === g
+                  ? 'border-emerald-400/60 bg-emerald-400/20 text-emerald-700 dark:text-emerald-300'
+                  : 'border-border/70 bg-card text-muted-foreground hover:border-foreground/30 hover:text-foreground'
+              }`}
+            >
+              {g}m
+            </button>
+          ))}
+          <button
+            type="button"
+            onClick={() => saveFocusSettings({ dailyGoalMin: Math.min(720, goal + 30) })}
+            aria-label="Increase daily goal by 30 minutes"
+            className="flex h-6 w-6 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <Plus className="h-3 w-3" aria-hidden />
+          </button>
+          <button
+            type="button"
+            onClick={() => saveFocusSettings({ dailyGoalMin: Math.max(15, goal - 30) })}
+            aria-label="Decrease daily goal by 30 minutes"
+            className="flex h-6 w-6 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <Minus className="h-3 w-3" aria-hidden />
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/** this week vs last week — momentum, best day, active days */
+function WeeklyDigestCard({ stats }: { stats: StatsPayload | null }) {
+  const days = stats?.days ?? []
+  const thisWeek = days.slice(-7)
+  const lastWeek = days.length >= 14 ? days.slice(0, 7) : []
+  const thisMin = thisWeek.reduce((n, d) => n + d.minutes, 0)
+  const lastMin = lastWeek.reduce((n, d) => n + d.minutes, 0)
+  const delta = lastMin > 0 ? Math.round(((thisMin - lastMin) / lastMin) * 100) : null
+  const best = thisWeek.reduce((b, d) => (d.minutes > b.minutes ? d : b), {
+    day: '', label: '', minutes: 0, pomodoros: 0, interruptions: 0,
+  })
+  const activeDays = thisWeek.filter((d) => d.minutes > 0).length
+  const avgMin = Math.round(thisMin / 7)
+  const maxBar = Math.max(60, ...thisWeek.map((d) => d.minutes))
+
+  return (
+    <section aria-label="Weekly digest" className="rounded-3xl border border-border/80 bg-card p-5">
+      <h3 className="flex items-center gap-2 text-sm font-bold">
+        <CalendarRange className="h-4 w-4 text-emerald-300" aria-hidden /> This week
+      </h3>
+      <div className="mt-3 flex items-end justify-between gap-3">
+        <div className="flex items-end gap-2">
+          <span className="text-3xl font-black leading-none tabular-nums tracking-tight">
+            {thisMin >= 60 ? `${Math.floor(thisMin / 60)}h${thisMin % 60 ? ` ${thisMin % 60}m` : ''}` : `${thisMin}m`}
+          </span>
+          <span className="pb-0.5 text-[11px] font-medium text-muted-foreground">focused</span>
+        </div>
+        {delta !== null && (
+          <span
+            className={`flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-bold tabular-nums ${
+              delta >= 0
+                ? 'border border-emerald-400/40 bg-emerald-400/10 text-emerald-600 dark:text-emerald-300'
+                : 'border border-amber-400/40 bg-amber-400/10 text-amber-600 dark:text-amber-300'
+            }`}
+          >
+            {delta >= 0 ? <ArrowUpRight className="h-3 w-3" aria-hidden /> : <ArrowDownRight className="h-3 w-3" aria-hidden />}
+            {Math.abs(delta)}% vs last week
+          </span>
+        )}
+      </div>
+
+      {/* 7-day strip */}
+      <div className="mt-3 flex h-14 items-end gap-1.5" role="img" aria-label="Focus minutes this week, day by day">
+        {thisWeek.map((d, i) => {
+          const isToday = i === thisWeek.length - 1
+          const h = d.minutes > 0 ? Math.max(6, Math.round((d.minutes / maxBar) * 52)) : 4
+          return (
+            <div key={d.day} className="group relative flex flex-1 flex-col items-center justify-end">
+              <span className="pointer-events-none absolute -top-4 whitespace-nowrap rounded-md border border-border bg-popover px-1.5 py-0.5 text-[9px] font-bold tabular-nums opacity-0 shadow-md transition-opacity group-hover:opacity-100">
+                {d.label} · {d.minutes}m
+              </span>
+              <div
+                className={`w-full rounded-t-[3px] transition-all ${isToday ? 'bg-emerald-400' : d.minutes > 0 ? 'bg-emerald-500/45 dark:bg-emerald-400/40' : 'bg-border'}`}
+                style={{ height: `${h}px` }}
+              />
+              <span className={`mt-1 text-[8.5px] font-semibold ${isToday ? 'text-foreground' : 'text-muted-foreground/70'}`}>
+                {d.label.slice(0, 1)}
+              </span>
+            </div>
+          )
+        })}
+      </div>
+
+      <p className="mt-3 border-t border-border/60 pt-2.5 text-[11px] text-muted-foreground">
+        {activeDays > 0 ? (
+          <>
+            <strong className="text-foreground">{activeDays} active {activeDays === 1 ? 'day' : 'days'}</strong>
+            {' '}· avg {avgMin}m/day
+            {best.minutes > 0 && (
+              <>
+                {' '}· best <strong className="text-foreground">{best.label}</strong> ({best.minutes}m)
+              </>
+            )}
+          </>
+        ) : (
+          'Run a pomodoro — your week lights up here.'
+        )}
+      </p>
+    </section>
+  )
+}
+
 function StatTile({
   icon: Icon,
   value,
@@ -916,7 +1085,17 @@ function GoldenHoursCard({ stats }: { stats: StatsPayload | null }) {
   )
 }
 
-function RecentSessionsCard({ sessions }: { sessions: SessionRow[] }) {
+function RecentSessionsCard({
+  sessions,
+  onNote,
+}: {
+  sessions: SessionRow[]
+  onNote: (id: string, note: string) => Promise<void>
+}) {
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const [draft, setDraft] = useState('')
+  const [saving, setSaving] = useState(false)
+
   return (
     <section aria-label="Recent sessions" className="rounded-3xl border border-border/80 bg-card p-5">
       <h3 className="flex items-center gap-2 text-sm font-bold">
@@ -930,33 +1109,100 @@ function RecentSessionsCard({ sessions }: { sessions: SessionRow[] }) {
         <ul className="mt-3 flex max-h-80 flex-col gap-1.5 overflow-y-auto pr-1 sv-nice-scroll">
           {sessions.map((s) => {
             const isFocus = s.kind === 'focus'
+            const isEditing = editingId === s.id
             return (
-              <li key={s.id} className="flex items-center gap-2.5 rounded-xl border border-border/60 bg-muted/20 px-2.5 py-2">
-                <span
-                  className={cn(
-                    'flex h-7 w-7 shrink-0 items-center justify-center rounded-full',
-                    isFocus
-                      ? 'bg-emerald-400/15 text-emerald-500 dark:text-emerald-300'
-                      : 'bg-sky-400/15 text-sky-500 dark:text-sky-300'
+              <li key={s.id} className="rounded-xl border border-border/60 bg-muted/20 px-2.5 py-2">
+                <div className="flex items-center gap-2.5">
+                  <span
+                    className={cn(
+                      'flex h-7 w-7 shrink-0 items-center justify-center rounded-full',
+                      isFocus
+                        ? 'bg-emerald-400/15 text-emerald-500 dark:text-emerald-300'
+                        : 'bg-sky-400/15 text-sky-500 dark:text-sky-300'
+                    )}
+                  >
+                    {isFocus ? <Timer className="h-3.5 w-3.5" aria-hidden /> : <Coffee className="h-3.5 w-3.5" aria-hidden />}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-xs font-semibold">
+                      {s.taskTitle ?? s.chapterTitle ?? s.subject ?? (isFocus ? 'Focus session' : 'Break')}
+                    </p>
+                    <p className="truncate text-[10px] text-muted-foreground">
+                      {timeAgo(s.startedAt)}
+                      {s.subject && !s.taskTitle ? ` · ${s.subject}` : ''}
+                      {s.taskTitle && s.subject ? ` · ${s.subject}` : ''}
+                      {!s.completed && ' · partial'}
+                      {s.interruptions > 0 ? ` · ${s.interruptions} ⚡` : ''}
+                    </p>
+                  </div>
+                  <span className="shrink-0 font-mono text-[11px] font-bold tabular-nums">
+                    {fmtDuration(s.actualSec)}
+                  </span>
+                  {isFocus && !isEditing && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEditingId(s.id)
+                        setDraft(s.note ?? '')
+                      }}
+                      aria-label={s.note ? 'Edit session note' : 'Add a note to this session'}
+                      title={s.note ? 'Edit note' : 'Add a note'}
+                      className={cn(
+                        'flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-colors',
+                        s.note
+                          ? 'text-emerald-500 hover:bg-emerald-400/10 dark:text-emerald-300'
+                          : 'text-muted-foreground/60 hover:bg-muted hover:text-foreground'
+                      )}
+                    >
+                      {s.note ? <NotebookPen className="h-3.5 w-3.5" aria-hidden /> : <Pencil className="h-3.5 w-3.5" aria-hidden />}
+                    </button>
                   )}
-                >
-                  {isFocus ? <Timer className="h-3.5 w-3.5" aria-hidden /> : <Coffee className="h-3.5 w-3.5" aria-hidden />}
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-xs font-semibold">
-                    {s.taskTitle ?? s.chapterTitle ?? s.subject ?? (isFocus ? 'Focus session' : 'Break')}
-                  </p>
-                  <p className="truncate text-[10px] text-muted-foreground">
-                    {timeAgo(s.startedAt)}
-                    {s.subject && !s.taskTitle ? ` · ${s.subject}` : ''}
-                    {s.taskTitle && s.subject ? ` · ${s.subject}` : ''}
-                    {!s.completed && ' · partial'}
-                    {s.interruptions > 0 ? ` · ${s.interruptions} ⚡` : ''}
-                  </p>
                 </div>
-                <span className="shrink-0 font-mono text-[11px] font-bold tabular-nums">
-                  {fmtDuration(s.actualSec)}
-                </span>
+
+                {/* the journal line */}
+                {s.note && !isEditing && (
+                  <p className="mt-1.5 line-clamp-2 rounded-lg border-l-2 border-emerald-400/50 bg-emerald-400/[0.06] px-2.5 py-1.5 text-[11px] italic leading-relaxed text-muted-foreground">
+                    {s.note}
+                  </p>
+                )}
+
+                {/* inline note editor */}
+                {isEditing && (
+                  <div className="mt-1.5">
+                    <textarea
+                      autoFocus
+                      value={draft}
+                      onChange={(e) => setDraft(e.target.value)}
+                      placeholder="What clicked? What needs a redo?"
+                      maxLength={600}
+                      rows={2}
+                      aria-label="Session note"
+                      className="w-full resize-none rounded-lg border border-border/70 bg-background px-2.5 py-1.5 text-[11.5px] leading-relaxed outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-emerald-400/50"
+                    />
+                    <div className="mt-1 flex items-center justify-end gap-1.5">
+                      <button
+                        type="button"
+                        onClick={() => setEditingId(null)}
+                        className="rounded-full px-2.5 py-1 text-[10.5px] font-bold text-muted-foreground transition-colors hover:text-foreground"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        type="button"
+                        disabled={saving || !draft.trim()}
+                        onClick={async () => {
+                          setSaving(true)
+                          await onNote(s.id, draft)
+                          setSaving(false)
+                          setEditingId(null)
+                        }}
+                        className="rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3 py-1 text-[10.5px] font-bold text-emerald-600 transition-colors hover:bg-emerald-400/25 disabled:opacity-40 dark:text-emerald-300"
+                      >
+                        {saving ? 'Saving…' : 'Save'}
+                      </button>
+                    </div>
+                  </div>
+                )}
               </li>
             )
           })}
@@ -1025,6 +1271,7 @@ function SettingsCard() {
         <Stepper label="Short break" value={settings.shortMin} min={1} max={30} step={1} onChange={(v) => saveFocusSettings({ shortMin: v })} />
         <Stepper label="Long break" value={settings.longMin} min={5} max={60} step={5} onChange={(v) => saveFocusSettings({ longMin: v })} />
         <Stepper label="Long break every" value={settings.longEvery} min={2} max={8} step={1} suffix="🍅" onChange={(v) => saveFocusSettings({ longEvery: v })} />
+        <Stepper label="Daily goal" value={settings.dailyGoalMin} min={15} max={480} step={15} onChange={(v) => saveFocusSettings({ dailyGoalMin: v })} />
       </div>
       <div className="mt-3 flex flex-col gap-2">
         {(
@@ -1221,6 +1468,30 @@ export function FocusView() {
   const t = stats?.totals
   const topSubject = stats?.subjects[0]
 
+  /** attach/edit a journal note on a completed session (recent-sessions card) */
+  const saveNote = useCallback(
+    async (id: string, note: string) => {
+      const deviceId = ensureDevice()
+      const trimmed = note.trim().slice(0, 600)
+      if (!trimmed) return
+      // optimistic
+      setSessions((prev) => prev.map((s) => (s.id === id ? { ...s, note: trimmed } : s)))
+      try {
+        const res = await fetch('/api/focus/sessions', {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id, deviceId, note: trimmed }),
+        })
+        if (!res.ok) throw new Error('note failed')
+        toast.success('Note saved')
+      } catch {
+        toast.error('Could not save the note')
+        await loadAnalytics()
+      }
+    },
+    [ensureDevice, loadAnalytics]
+  )
+
   return (
     <div className="mx-auto max-w-7xl px-4 pb-16 pt-6 sm:px-6 sm:pt-8">
       {/* header */}
@@ -1288,6 +1559,7 @@ export function FocusView() {
               <StatTile icon={Zap} value={t?.todayInterruptions ?? 0} label="interruptions" tone="amber" />
               <StatTile icon={Check} value={t?.completedTasks ?? 0} label="tasks done" tone="sky" />
             </div>
+            <DailyGoalCard stats={stats} />
             {t && t.allSessions > 0 && (
               <p className="mt-3 text-center text-[10.5px] text-muted-foreground/70">
                 all-time: {(t.allMinutes / 60).toFixed(1)}h · {t.allPomodoros} pomodoros · avg {t.avgSessionMin}m
@@ -1296,10 +1568,11 @@ export function FocusView() {
             )}
           </section>
 
+          <WeeklyDigestCard stats={stats} />
           <TrendCard stats={stats} />
           <SubjectsCard stats={stats} />
           <GoldenHoursCard stats={stats} />
-          <RecentSessionsCard sessions={sessions} />
+          <RecentSessionsCard sessions={sessions} onNote={saveNote} />
           <SettingsCard />
         </div>
       </div>

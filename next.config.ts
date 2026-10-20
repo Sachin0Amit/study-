@@ -4,11 +4,10 @@ const nextConfig: NextConfig = {
   output: "standalone",
   turbopack: {
     root: __dirname,
-    // dev.log is written on every request by `bun run dev` (tee) — watching it
-    // would trigger a Fast Refresh loop that wipes client state mid-session.
-    watchOptions: {
-      ignore: ["/dev.log/**", "dev.log", "/auto-library/**"],
-    },
+    // NOTE: dev.log / *.log are gitignored — Turbopack's watcher respects
+    // .gitignore in Next 16, so the tee'd dev.log can't trigger Fast Refresh
+    // loops (the old `watchOptions.ignore` key was removed in 16.1 — it was
+    // rejected as an unrecognized option on every startup).
   },
   typescript: {
     ignoreBuildErrors: true,

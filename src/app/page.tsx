@@ -5,11 +5,22 @@ import dynamic from 'next/dynamic'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Sparkles, BookOpen, FlaskConical, Sigma, Layers, ClipboardCheck, Globe, Loader2 } from 'lucide-react'
 import { useStudy } from '@/store/useStudy'
-import { LIBRARY_BOOKS } from '@/data/library'
+import { LIBRARY_BOOKS, LIBRARY_CHAPTERS, LIBRARY_SUBJECTS } from '@/data/library'
 import { Header } from '@/components/app/header'
 import { LibraryView } from '@/components/app/library-view'
 import { ReadingProgress, ScrollTopButton } from '@/components/app/reading-progress'
 import { ThemeColorMeta } from '@/components/app/theme-color-meta'
+
+/** flagship book per subject — the footer features these 8, not all 168 (that
+ *  wall made the footer ~7,000px tall on every page) */
+const FEATURED_BOOKS = (() => {
+  const seen = new Set<string>()
+  return LIBRARY_BOOKS.filter((b) => {
+    if (seen.has(b.subjectId)) return false
+    seen.add(b.subjectId)
+    return true
+  }).slice(0, 8)
+})()
 
 /* Heavy views (lesson corpus, labs, flashcards, exams…) are code-split so the
    Library SSR stays light — the box OOM-killed next-server at ~3.2GB when the
@@ -265,7 +276,7 @@ export default function Home() {
                 rebuilt as interactive lessons, labs and quizzes — nothing skipped.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-x-14 gap-y-2 text-xs sm:grid-cols-3">
+            <div className="grid max-w-3xl grid-cols-2 gap-x-12 gap-y-2 text-xs sm:grid-cols-4">
               <div className="flex flex-col gap-2">
                 <span className="mb-0.5 font-semibold uppercase tracking-wider text-foreground/80">
                   Study
@@ -282,15 +293,6 @@ export default function Home() {
                 >
                   Syllabus mapper
                 </button>
-                {LIBRARY_BOOKS.map((b) => (
-                  <button
-                    key={b.id}
-                    onClick={() => useStudy.getState().navigate({ name: 'book', bookId: b.id })}
-                    className="text-left text-muted-foreground transition-colors hover:text-emerald-300"
-                  >
-                    {`${b.author.split(',')[0]} · ${b.title.split(':')[0]}`}
-                  </button>
-                ))}
                 <button
                   onClick={() => useStudy.getState().navigate({ name: 'flashcards' })}
                   className="text-left text-muted-foreground transition-colors hover:text-emerald-300"
@@ -330,6 +332,27 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-2">
                 <span className="mb-0.5 font-semibold uppercase tracking-wider text-foreground/80">
+                  Books
+                </span>
+                {FEATURED_BOOKS.map((b) => (
+                  <button
+                    key={b.id}
+                    onClick={() => useStudy.getState().navigate({ name: 'book', bookId: b.id })}
+                    className="text-left text-muted-foreground transition-colors hover:text-emerald-300"
+                    title={`${b.author} · ${b.title}`}
+                  >
+                    {`${b.author.split(',')[0]} · ${b.title.split(':')[0]}`}
+                  </button>
+                ))}
+                <button
+                  onClick={() => useStudy.getState().navigate({ name: 'library' })}
+                  className="mt-0.5 text-left font-semibold text-emerald-500 transition-colors hover:text-emerald-300 dark:text-emerald-300"
+                >
+                  All {LIBRARY_BOOKS.length} books in the Library →
+                </button>
+              </div>
+              <div className="flex flex-col gap-2">
+                <span className="mb-0.5 font-semibold uppercase tracking-wider text-foreground/80">
                   Labs
                 </span>
                 <button
@@ -353,13 +376,17 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-2">
                 <span className="mb-0.5 font-semibold uppercase tracking-wider text-foreground/80">
-                  Featured Library
+                  Explore
                 </span>
                 <span className="flex items-center gap-1.5 text-muted-foreground">
                   <Sigma className="h-3 w-3 text-emerald-400" /> 37 subject-wise course tracks
                 </span>
-                <span className="flex items-center gap-1.5 text-muted-foreground">
-                  <Globe className="h-3 w-3 text-emerald-400" /> Knowledge sections — life sciences, social sciences, humanities, languages, law, business, health, arts and more, inside the Library
+                <span className="flex items-start gap-1.5 text-muted-foreground">
+                  <Globe className="mt-0.5 h-3 w-3 shrink-0 text-emerald-400" />
+                  <span className="leading-relaxed">
+                    Knowledge sections — life sciences, social sciences, humanities,
+                    languages, law, business, health, arts and more, inside the Library
+                  </span>
                 </span>
                 <span className="text-muted-foreground/60">Mathematics · Physics · Chemistry · English · Aptitude · C & C++ · Java · Web · AI · DSA · TOC · COA · Compiler · OS · DBMS · Networks · and 22 more — every course holds all branches' chapters and every assessment scope</span>
               </div>
@@ -368,7 +395,8 @@ export default function Home() {
           <div className="mt-8 flex flex-col gap-2 border-t border-border/60 pt-5 text-[11px] text-muted-foreground/70 sm:flex-row sm:items-center sm:justify-between">
             <span>StudyVerse — master every book, interactively.</span>
             <span className="font-mono">
-              4,136 lessons · 66 labs · 9,774 quiz questions · 626 chapters · 54 books · 54 subjects
+              4,136 lessons · 66 labs · 9,774 quiz questions · {LIBRARY_CHAPTERS.length} chapters ·{' '}
+              {LIBRARY_BOOKS.length} books · {LIBRARY_SUBJECTS.length} subjects
             </span>
           </div>
         </div>

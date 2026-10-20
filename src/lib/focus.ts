@@ -49,6 +49,7 @@ export interface FocusSettings {
   autoBreak: boolean // auto-start the break after a focus session
   autoFocus: boolean // auto-start the next focus after a break
   sound: boolean
+  dailyGoalMin: number // daily deep-focus target in minutes
 }
 
 export interface FocusEngineState {
@@ -191,6 +192,7 @@ export const DEFAULT_FOCUS_SETTINGS: FocusSettings = {
   autoBreak: false,
   autoFocus: false,
   sound: true,
+  dailyGoalMin: 120,
 }
 
 export function readFocusSettings(): FocusSettings {
@@ -212,6 +214,7 @@ export function readFocusSettings(): FocusSettings {
       autoBreak: Boolean(s.autoBreak),
       autoFocus: Boolean(s.autoFocus),
       sound: s.sound === undefined ? true : Boolean(s.sound),
+      dailyGoalMin: clamp(s.dailyGoalMin, 15, 720, 120),
     }
   } catch {
     return DEFAULT_FOCUS_SETTINGS
@@ -768,6 +771,45 @@ export function addInterruption(): void {
 /** attach/detach what the next focus session counts toward */
 export function setFocusLinkage(linkage: FocusLinkage | null): void {
   setEngine({ linkage })
+}
+
+/**
+ * Attach a journal note ("how did it go?") to a completed session.
+ * With no id the note lands on the device's most recent session — this is
+ * the celebration flow, where the session was banked seconds ago. Pure
+ * fire-and-forget: a lost note must never break focusing.
+ */
+export function saveSessionNote(note: string, id?: string): void {
+  if (typeof window === 'undefined') return
+  const trimmed = note.trim().slice(0, 600)
+  if (!trimmed) return
+  const deviceId = useStudy.getState().ensureDevice()
+  try {
+    void fetch('/api/focus/sessions', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(id ? { deviceId, id, note: trimmed } : { deviceId, note: trimmed }),
+      keepalive: true,
+    })
+      .then((r) => {
+        if (r.ok) bumpSessions()
+      })
+      .catch(() => {})
+  } catch {
+    /* never throws */
+  }
+}
+
+/**
+ * Today's deep-focus minutes vs the daily goal (localStorage log — fast,
+ * offline-tolerant; the server stats stay the source of truth for history).
+ */
+export function todayGoalProgress(): { minutes: number; goal: number; pct: number; reached: boolean } {
+  const today = localDateKey(new Date())
+  const minutes = readFocusLog().find((e) => e.date === today)?.focusMinutes ?? 0
+  const goal = settingsState.dailyGoalMin
+  const pct = goal > 0 ? Math.min(100, Math.round((minutes / goal) * 100)) : 0
+  return { minutes, goal, pct, reached: goal > 0 && minutes >= goal }
 }
 
 /** presets derived from the user's settings */

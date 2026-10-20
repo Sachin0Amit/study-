@@ -338,6 +338,7 @@ model FocusSession {
   actualSec    Int      @default(0)
   completed    Boolean  @default(true) // false = stopped early (partial credit)
   interruptions Int     @default(0)
+  note         String? // optional journal line ("how did it go?") attached after a session
   day          String // local "YYYY-MM-DD"
   startedAt    DateTime @default(now())
   endedAt      DateTime @default(now())

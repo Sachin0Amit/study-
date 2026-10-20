@@ -38,6 +38,7 @@ import {
   Hourglass,
   LayoutList,
   Minus,
+  NotebookPen,
   Pause,
   PhoneIncoming,
   Play,
@@ -51,6 +52,7 @@ import {
 } from 'lucide-react'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Slider } from '@/components/ui/slider'
+import { cn } from '@/lib/utils'
 import { useStudy } from '@/store/useStudy'
 import {
   type FocusEngineState,
@@ -63,6 +65,7 @@ import {
   expandWidget,
   fmtClock,
   resetSession,
+  saveSessionNote,
   selectSession,
   sessionLabel,
   setZen,
@@ -174,6 +177,54 @@ function FocusFab({ s }: { s: FocusEngineState }) {
         )}
         <Timer className="relative h-6 w-6 transition-transform duration-300 group-hover:rotate-12" aria-hidden />
       </button>
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/*  <CelebrationNote /> — journal line for the session just banked      */
+/* ------------------------------------------------------------------ */
+
+function CelebrationNote() {
+  const [note, setNote] = useState('')
+  const [saved, setSaved] = useState(false)
+
+  if (saved) {
+    return (
+      <span className="flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-300">
+        <Check className="h-3 w-3" aria-hidden /> Note saved to this session
+      </span>
+    )
+  }
+
+  return (
+    <div className="w-full rounded-2xl border border-border/70 bg-muted/25 p-2.5">
+      <label htmlFor="sv-session-note" className="flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-wider text-muted-foreground">
+        <NotebookPen className="h-3 w-3" aria-hidden /> How did it go?
+      </label>
+      <textarea
+        id="sv-session-note"
+        value={note}
+        onChange={(e) => setNote(e.target.value)}
+        placeholder="e.g. “truth tables finally clicked — redo the drill tomorrow”"
+        maxLength={600}
+        rows={2}
+        className="mt-1.5 w-full resize-none rounded-xl border border-border/70 bg-background px-2.5 py-1.5 text-xs leading-relaxed outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-emerald-400/50"
+      />
+      <div className="mt-1.5 flex items-center justify-between gap-2">
+        <span className="text-[9.5px] text-muted-foreground/60">saved to Focus HQ · recent sessions</span>
+        <button
+          type="button"
+          disabled={!note.trim()}
+          onClick={() => {
+            saveSessionNote(note)
+            setSaved(true)
+          }}
+          className="rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3 py-1 text-[11px] font-bold text-emerald-600 transition-colors hover:bg-emerald-400/25 disabled:cursor-not-allowed disabled:opacity-40 dark:text-emerald-300"
+        >
+          Save note
+        </button>
+      </div>
     </div>
   )
 }
@@ -433,6 +484,33 @@ function WidgetChrome({ s, settings }: { s: FocusEngineState; settings: FocusSet
   const isFocus = s.kind === 'focus'
   const accent = isFocus ? 'text-emerald-400' : 'text-sky-400'
 
+  // Escape closes layers top-down: stats sheet → celebration → the panel
+  // itself. Other overlays (command palette, dialogs) own their Escape, so we
+  // yield whenever one is open.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape' || e.defaultPrevented) return
+      if (s.statsOpen) {
+        closeStats()
+        e.preventDefault()
+        return
+      }
+      if (s.celebration) {
+        dismissCelebration()
+        e.preventDefault()
+        return
+      }
+      // another overlay (palette, shortcut sheet, any dialog) owns Escape
+      if (document.querySelector('[role="dialog"], [cmdk-root]')) return
+      if (!s.hidden && !s.zen) {
+        toggleWidget() // hides — a running session keeps running
+        e.preventDefault()
+      }
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [s.statsOpen, s.celebration, s.hidden, s.zen])
+
   /* ---- zen mode: minimal edge dot (hover to peek) ---- */
   if (s.running && s.zen) {
     return (
@@ -594,7 +672,7 @@ function WidgetChrome({ s, settings }: { s: FocusEngineState; settings: FocusSet
                   toggleWidget()
                 }}
                 aria-label="Hide focus timer (the floating button brings it back)"
-                title="Hide — the floating timer button brings it back (or press F)"
+                title="Hide — or press Esc (a running session keeps running)"
                 className="flex h-7 w-7 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
               >
                 <X className="h-4 w-4" aria-hidden />
@@ -637,6 +715,7 @@ function WidgetChrome({ s, settings }: { s: FocusEngineState; settings: FocusSet
                     </span>
                   )}
                 </div>
+                {s.celebration.kind === 'focus' && <CelebrationNote />}
                 <div className="flex flex-wrap justify-center gap-2">
                   {s.celebration.kind === 'focus' ? (
                     <button
@@ -902,8 +981,11 @@ function localDateKeySafe(d: Date = new Date()): string {
 
 export function FocusTimerStats({ className = '' }: { className?: string }) {
   const log = useFocusLog()
+  const settings = useFocusSettings()
   const stats = useMemo(() => summarizeFocusLog(log), [log])
   const maxBar = Math.max(60, ...stats.week.map((d) => d.minutes))
+  const goalPct = Math.min(100, Math.round((stats.todayMinutes / settings.dailyGoalMin) * 100))
+  const goalLeft = Math.max(0, settings.dailyGoalMin - stats.todayMinutes)
 
   return (
     <div className={`rounded-3xl border border-border/80 bg-card p-5 ${className}`}>
@@ -923,6 +1005,35 @@ export function FocusTimerStats({ className = '' }: { className?: string }) {
           focus min today
           {stats.todayMinutes > 0 ? '' : ' — start a session'}
         </span>
+      </div>
+
+      {/* daily goal progress (Focus HQ owns the setting) */}
+      <div className="mt-2.5">
+        <div className="flex items-baseline justify-between gap-2 text-[10.5px] font-semibold">
+          <span className="text-muted-foreground">
+            Daily goal · {settings.dailyGoalMin}m
+            {goalLeft > 0 ? (
+              <span className="ml-1.5 text-foreground/70">{goalLeft}m to go</span>
+            ) : (
+              <span className="ml-1.5 text-emerald-500 dark:text-emerald-300">reached 🎯</span>
+            )}
+          </span>
+          <span className={cn('tabular-nums', goalPct >= 100 ? 'text-emerald-500 dark:text-emerald-300' : 'text-foreground/70')}>
+            {goalPct}%
+          </span>
+        </div>
+        <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-muted" role="img"
+          aria-label={`Daily goal ${goalPct}% of ${settings.dailyGoalMin} minutes`}>
+          <div
+            className={cn(
+              'h-full rounded-full transition-all duration-500',
+              goalPct >= 100
+                ? 'bg-gradient-to-r from-emerald-400 to-teal-400'
+                : 'bg-emerald-500/70 dark:bg-emerald-400/70'
+            )}
+            style={{ width: `${Math.max(2, goalPct)}%` }}
+          />
+        </div>
       </div>
 
       {/* 7-day mini bar chart (pure SVG) */}

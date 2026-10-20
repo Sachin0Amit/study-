@@ -6,12 +6,15 @@ import { db } from '@/lib/db'
  * its linkage (task / subject / chapter) so analytics can answer "what did I
  * study, for how much time".
  *
- * GET  ?deviceId=…&limit=…  → most recent sessions (default 25)
- * POST { deviceId, kind, taskId?, taskTitle?, subject?, subjectId?,
- *        chapterId?, chapterTitle?, plannedMin, actualSec, completed,
- *        interruptions?, startedAt?, incrementTask? }
- *      → log the session; when incrementTask is set and the task belongs to
- *        the device, its done-pomodoro count + interruptions grow too.
+ * GET   ?deviceId=…&limit=…  → most recent sessions (default 25)
+ * POST  { deviceId, kind, taskId?, taskTitle?, subject?, subjectId?,
+ *         chapterId?, chapterTitle?, plannedMin, actualSec, completed,
+ *         interruptions?, startedAt?, incrementTask? }
+ *       → log the session; when incrementTask is set and the task belongs to
+ *         the device, its done-pomodoro count + interruptions grow too.
+ * PATCH { deviceId, id?, note } → attach/edit a journal note. With no id the
+ *         note lands on the device's most recent session (the celebration
+ *         flow: "how did it go?" right after a pomodoro banks).
  */
 
 const KINDS = new Set(['focus', 'short_break', 'long_break'])
@@ -96,5 +99,43 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.error('[focus/sessions POST]', err)
     return NextResponse.json({ error: 'Could not log session' }, { status: 500 })
+  }
+}
+
+export async function PATCH(req: NextRequest) {
+  const body = await req.json().catch(() => null)
+  const deviceId = String(body?.deviceId ?? '')
+  if (!deviceId) return NextResponse.json({ error: 'deviceId required' }, { status: 400 })
+
+  const noteRaw = body?.note === null || body?.note === undefined ? '' : String(body.note)
+  const note = noteRaw.trim().slice(0, 600)
+
+  try {
+    let targetId = body?.id ? String(body.id).slice(0, 40) : null
+
+    // no id → the celebration flow: attach to the device's most recent session
+    if (!targetId) {
+      const latest = await db.focusSession.findFirst({
+        where: { deviceId },
+        orderBy: { startedAt: 'desc' },
+        select: { id: true },
+      })
+      if (!latest) return NextResponse.json({ error: 'No session to annotate' }, { status: 404 })
+      targetId = latest.id
+    }
+
+    const existing = await db.focusSession.findUnique({ where: { id: targetId } })
+    if (!existing || existing.deviceId !== deviceId) {
+      return NextResponse.json({ error: 'Session not found' }, { status: 404 })
+    }
+
+    const session = await db.focusSession.update({
+      where: { id: targetId },
+      data: { note: note || null },
+    })
+    return NextResponse.json({ session })
+  } catch (err) {
+    console.error('[focus/sessions PATCH]', err)
+    return NextResponse.json({ error: 'Could not save the note' }, { status: 500 })
   }
 }
