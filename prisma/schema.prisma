@@ -335,6 +335,27 @@ model FocusExam {
   @@index([deviceId, examDate])
 }
 
+// X11H — Smart Study Planner: day-by-day allocation of subjects till a
+// D-day (or a custom horizon). One active plan per device — generating a
+// new plan replaces every block dated today or later. Planned minutes can
+// be compared against actual FocusSession minutes per day/subject.
+model StudyPlanBlock {
+  id        String   @id @default(cuid())
+  deviceId  String
+  examId    String? // linked FocusExam when generated till D-day
+  examTitle String? // denormalized so the plan survives exam deletion
+  day       String // local "YYYY-MM-DD"
+  subject   String // subject label, e.g. "Physics"
+  subjectId String? // library subject id when linked
+  minutes   Int // planned minutes for this block
+  note      String? // e.g. "light revision" on the pre-exam day
+  done      Boolean  @default(false)
+  position  Int      @default(0)
+  createdAt DateTime @default(now())
+
+  @@index([deviceId, day])
+}
+
 model FocusSession {
   id           String   @id @default(cuid())
   deviceId     String

@@ -27,6 +27,32 @@ import { EasyLine } from './easy-box'
 import { ChapterIcon } from './chapter-icon'
 import { SIMVERSE_TOOL_KEYS } from '@/components/interactives/lesson-sims'
 import { useStudy } from '@/store/useStudy'
+import { CalendarClock } from 'lucide-react'
+import { daysUntil, examTone, upcomingExams, useFocusExams } from '@/lib/focus-exams'
+
+/** X11H — next-exam D-day chip in the hero: the countdown follows you home.
+ *  Subscribes to the same module-level store as Focus HQ + the Pod, so a
+ *  D-day added anywhere lights up here instantly. */
+function HomeExamChip() {
+  const { exams } = useFocusExams()
+  const next = upcomingExams(exams)[0]
+  if (!next) return null
+  const d = daysUntil(next.examDate)
+  const tone = examTone(d)
+  return (
+    <button
+      type="button"
+      onClick={() => useStudy.getState().navigate({ name: 'focus' })}
+      title={`Focus HQ — plan and countdown for “${next.title}”`}
+      className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-bold transition-all hover:brightness-110 active:scale-95 ${tone.chip}`}
+    >
+      <CalendarClock className="h-3.5 w-3.5" aria-hidden />
+      <span className="max-w-[180px] truncate">{next.title}</span>
+      <span className="font-black tabular-nums">D-{d}</span>
+      {d <= 2 && <span className="sv-dday-pulse inline-block h-1.5 w-1.5 rounded-full bg-rose-400" aria-hidden />}
+    </button>
+  )
+}
 
 const FOCUS_RING =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
@@ -164,6 +190,10 @@ export function LibraryView() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
               </span>
               Master content engine · online
+            </div>
+            {/* X11H — exam countdown chip (renders only when a D-day exists) */}
+            <div className="mb-5 flex flex-wrap items-center gap-2 empty:mb-0">
+              <HomeExamChip />
             </div>
             <h1 className="text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
               Don&apos;t just read your books.

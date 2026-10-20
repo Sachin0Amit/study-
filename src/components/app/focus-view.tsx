@@ -29,6 +29,7 @@ import {
   Check,
   ChevronDown,
   ChevronUp,
+  ClipboardList,
   Clock,
   Coffee,
   Download,
@@ -44,6 +45,7 @@ import {
   PieChart,
   Play,
   Plus,
+  RefreshCw,
   RotateCcw,
   Settings2,
   Share2,
@@ -67,6 +69,7 @@ import {
   type FocusLinkage,
   addInterruption,
   fmtClock,
+  localDateKey,
   resetSession,
   selectSession,
   sessionLabel,
@@ -105,6 +108,19 @@ import {
   useFocusExams,
   weeksBreakdown,
 } from '@/lib/focus-exams'
+import {
+  clearPlan,
+  generatePlan,
+  planByDay,
+  planTodayKey,
+  togglePlanBlock,
+  useStudyPlan,
+} from '@/lib/focus-plan'
+import {
+  generateStudyPlan,
+  planDayRange,
+  type PlanSubjectInput,
+} from '@/lib/plan-generator'
 
 /* ------------------------------------------------------------------ */
 /*  API row types                                                      */
@@ -760,7 +776,7 @@ function TodoCard({
                     type="button"
                     onClick={() => applyTemplate(c)}
                     title={`Fill the form: “${c.title}” · 🍅 ${c.estimate}`}
-                    className="inline-flex max-w-[220px] items-center gap-1.5 rounded-full border border-border/70 bg-background/60 px-2.5 py-1 text-[11px] font-semibold text-muted-foreground transition-all hover:border-emerald-400/50 hover:bg-emerald-400/10 hover:text-emerald-700 dark:hover:text-emerald-300"
+                    className="inline-flex max-w-[280px] items-center gap-1.5 rounded-full border border-border/70 bg-background/60 px-2.5 py-1 text-[11px] font-semibold text-muted-foreground transition-all hover:border-emerald-400/50 hover:bg-emerald-400/10 hover:text-emerald-700 dark:hover:text-emerald-300"
                   >
                     <span className="truncate">{c.title}</span>
                     <span className="shrink-0 text-[9.5px] font-bold tabular-nums opacity-60" aria-hidden>
@@ -1527,6 +1543,782 @@ function ExamCountdownCard() {
           </button>
         </div>
       )}
+    </section>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/*  X11H — Smart Study Planner (study plan till D-day)                  */
+/* ------------------------------------------------------------------ */
+
+/** the generator dialog — same math the server runs, previewed live */
+function PlanGeneratorDialog({
+  open,
+  onClose,
+  onGenerated,
+  initialSubjects,
+  hasPlan,
+}: {
+  open: boolean
+  onClose: () => void
+  onGenerated: () => void
+  initialSubjects: { subject: string; subjectId: string | null }[]
+  hasPlan: boolean
+}) {
+  const { exams } = useFocusExams()
+  const settings = useFocusSettings()
+  const upcoming = upcomingExams(exams)
+
+  // source: picked exam id, or null = custom horizon
+  const [examId, setExamId] = useState<string | null>(null)
+  const [days, setDays] = useState(30)
+  const [dailyMinutes, setDailyMinutes] = useState(settings.dailyGoalMin || 120)
+  const [restWeekly, setRestWeekly] = useState(false)
+  // picked subjects: subjectId -> weight 1..5 (library subjects only)
+  const [picked, setPicked] = useState<Record<string, number>>({})
+  const [busy, setBusy] = useState(false)
+  const [customOpen, setCustomOpen] = useState(false)
+  const [customQuery, setCustomQuery] = useState('')
+
+  // default: preselect the user's top subjects (or exam-agnostic starters)
+  useEffect(() => {
+    if (!open) return
+    setPicked((prev) => {
+      if (Object.keys(prev).length > 0) return prev
+      const seed: Record<string, number> = {}
+      for (const s of initialSubjects.slice(0, 3)) {
+        if (s.subjectId) seed[s.subjectId] = 3
+      }
+      return seed
+    })
+    if (upcoming.length > 0) setExamId((prev) => prev ?? upcoming[0].id)
+  }, [open])
+
+  const exam = examId ? upcoming.find((e) => e.id === examId) ?? null : null
+
+  // resolve the horizon exactly like the server: today → eve-of-exam (or days-1)
+  const todayKey = planTodayKey()
+  let endKey = todayKey
+  let horizonLabel = ''
+  if (exam) {
+    const [y, m, d] = exam.examDate.split('-').map(Number)
+    const eve = new Date(y, (m ?? 1) - 1, (d ?? 1) - 1)
+    const y2 = eve.getFullYear()
+    const m2 = String(eve.getMonth() + 1).padStart(2, '0')
+    const d2 = String(eve.getDate()).padStart(2, '0')
+    endKey = `${y2}-${m2}-${d2}`
+    horizonLabel = `till ${exam.title} · D-${daysUntil(exam.examDate)}`
+  } else {
+    const end = new Date()
+    end.setDate(end.getDate() + days - 1)
+    const y2 = end.getFullYear()
+    const m2 = String(end.getMonth() + 1).padStart(2, '0')
+    const d2 = String(end.getDate()).padStart(2, '0')
+    endKey = `${y2}-${m2}-${d2}`
+    horizonLabel = `${days}-day horizon`
+  }
+
+  const subjectInputs: PlanSubjectInput[] = Object.entries(picked).map(([id, weight]) => {
+    const meta = LIBRARY_SUBJECTS.find((s) => s.id === id)
+    return { subject: meta?.name ?? id, subjectId: id, weight }
+  })
+
+  const preview = useMemo(() => {
+    if (subjectInputs.length === 0) {
+      return { blocks: [], totalMinutes: 0, dayCount: 0, restDays: 0, perSubject: [] }
+    }
+    const dayKeys = planDayRange(todayKey, endKey)
+    return generateStudyPlan({
+      days: dayKeys,
+      subjects: subjectInputs,
+      dailyMinutes,
+      restWeekly,
+      lightLastDay: Boolean(exam),
+    })
+  }, [endKey, subjectInputs, dailyMinutes, restWeekly, exam, todayKey])
+
+  async function submit() {
+    if (busy || subjectInputs.length === 0) return
+    setBusy(true)
+    try {
+      const { created } = await generatePlan({
+        examId: exam?.id,
+        days: exam ? undefined : days,
+        subjects: subjectInputs,
+        dailyMinutes,
+        restWeekly,
+      })
+      toast.success(hasPlan ? 'Plan regenerated' : 'Study plan ready', {
+        description: `${created} blocks · ${(preview.totalMinutes / 60).toFixed(1)}h planned ${horizonLabel}`,
+      })
+      onGenerated()
+      onClose()
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Could not generate the plan')
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  const visibleSubjects = LIBRARY_SUBJECTS.filter(
+    (s) => !customQuery || s.name.toLowerCase().includes(customQuery.toLowerCase())
+  )
+
+  return (
+    <Dialog open={open} onOpenChange={(v) => !v && onClose()}>
+      <DialogContent className="max-h-[88vh] overflow-y-auto rounded-3xl border-border/80 bg-card p-0 sm:max-w-2xl">
+        <div className="sv-plan-hero relative overflow-hidden rounded-t-3xl border-b border-border/70 px-6 pb-5 pt-6">
+          <div className="pointer-events-none absolute -right-10 -top-14 h-44 w-44 rounded-full bg-emerald-400/15 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-16 left-1/3 h-40 w-40 rounded-full bg-amber-300/10 blur-3xl" />
+          <DialogHeader className="relative">
+            <DialogTitle className="flex items-center gap-2.5 text-lg font-black">
+              <span className="flex h-9 w-9 items-center justify-center rounded-2xl border border-emerald-400/30 bg-emerald-400/10">
+                <ClipboardList className="h-4.5 w-4.5 text-emerald-300" aria-hidden />
+              </span>
+              Generate a study plan
+            </DialogTitle>
+            <DialogDescription className="mt-1.5 text-[13px] leading-relaxed text-muted-foreground">
+              Pick a D-day (or a plain horizon), choose subjects and weights — blocks land day-by-day
+              till the eve of the exam, then compete with your real focus minutes.
+            </DialogDescription>
+          </DialogHeader>
+        </div>
+
+        <div className="flex flex-col gap-5 px-6 py-5">
+          {/* 1 — horizon */}
+          <section aria-label="Plan horizon">
+            <h4 className="mb-2 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-muted-foreground">
+              <CalendarRange className="h-3.5 w-3.5 text-emerald-300" aria-hidden /> 1 · Plan till
+            </h4>
+            <div className="flex flex-wrap items-center gap-1.5">
+              {upcoming.map((e) => {
+                const d = daysUntil(e.examDate)
+                const tone = examTone(d)
+                const active = examId === e.id
+                return (
+                  <button
+                    key={e.id}
+                    type="button"
+                    onClick={() => setExamId(active ? null : e.id)}
+                    aria-pressed={active}
+                    className={cn(
+                      'rounded-full border px-3 py-1.5 text-xs font-bold transition-all active:scale-95',
+                      active
+                        ? tone.chip + ' shadow-sm'
+                        : 'border-border/70 bg-background/60 text-muted-foreground hover:border-border hover:text-foreground'
+                    )}
+                  >
+                    {e.title} · D-{d}
+                  </button>
+                )
+              })}
+              <button
+                type="button"
+                onClick={() => setExamId(null)}
+                aria-pressed={examId === null}
+                className={cn(
+                  'flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-bold transition-all active:scale-95',
+                  examId === null
+                    ? 'border-emerald-400/50 bg-emerald-400/15 text-emerald-600 dark:text-emerald-300'
+                    : 'border-border/70 bg-background/60 text-muted-foreground hover:border-border hover:text-foreground'
+                )}
+              >
+                <CalendarDays className="h-3.5 w-3.5" aria-hidden /> Custom horizon
+              </button>
+            </div>
+            {examId === null && (
+              <div className="mt-2.5 flex items-center gap-2 rounded-2xl border border-border/70 bg-muted/20 p-2.5">
+                <span className="text-[11px] font-semibold text-muted-foreground">Days</span>
+                <div className="flex h-8 items-center gap-1 rounded-xl border border-border bg-background px-1">
+                  <button
+                    type="button"
+                    onClick={() => setDays((n) => Math.max(7, n - 7))}
+                    aria-label="Fewer days"
+                    className="flex h-6 w-6 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  >
+                    <Minus className="h-3 w-3" aria-hidden />
+                  </button>
+                  <span className="min-w-[3rem] text-center text-xs font-bold tabular-nums">{days}d</span>
+                  <button
+                    type="button"
+                    onClick={() => setDays((n) => Math.min(365, n + 7))}
+                    aria-label="More days"
+                    className="flex h-6 w-6 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  >
+                    <Plus className="h-3 w-3" aria-hidden />
+                  </button>
+                </div>
+                <span className="text-[10.5px] text-muted-foreground/70">
+                  ≈ {(days / 7).toFixed(0)} weeks of runway
+                </span>
+              </div>
+            )}
+          </section>
+
+          {/* 2 — subjects */}
+          <section aria-label="Plan subjects">
+            <h4 className="mb-2 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-muted-foreground">
+              <ListTodo className="h-3.5 w-3.5 text-emerald-300" aria-hidden /> 2 · Subjects &amp; weights
+            </h4>
+            <input
+              value={customQuery}
+              onChange={(e) => setCustomQuery(e.target.value)}
+              onFocus={() => setCustomOpen(true)}
+              placeholder="Filter subjects… (e.g. physics, dsa)"
+              aria-label="Filter subjects"
+              className="h-9 w-full rounded-xl border border-border bg-background px-3 text-xs font-medium outline-none transition-colors placeholder:text-muted-foreground/80 focus:border-emerald-400/50"
+            />
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {visibleSubjects.slice(0, customOpen || customQuery ? 60 : 18).map((s) => {
+                const w = picked[s.id]
+                return (
+                  <button
+                    key={s.id}
+                    type="button"
+                    onClick={() =>
+                      setPicked((prev) => {
+                        const next = { ...prev }
+                        if (next[s.id]) delete next[s.id]
+                        else if (Object.keys(next).length < 8) next[s.id] = 3
+                        return next
+                      })
+                    }
+                    aria-pressed={Boolean(w)}
+                    title={w ? `${s.name} · weight ×${w}` : `Add ${s.name}`}
+                    className={cn(
+                      'rounded-full border px-2.5 py-1 text-[11px] font-semibold transition-all active:scale-95',
+                      w
+                        ? 'border-emerald-400/50 bg-emerald-400/15 text-emerald-600 dark:text-emerald-300'
+                        : 'border-border/70 bg-background/60 text-muted-foreground hover:border-border hover:text-foreground'
+                    )}
+                  >
+                    {s.name}
+                    {w ? <span className="ml-1 font-black">×{w}</span> : null}
+                  </button>
+                )
+              })}
+              {(customOpen || customQuery) && visibleSubjects.length > 60 && (
+                <span className="self-center text-[10px] text-muted-foreground/60">
+                  +{visibleSubjects.length - 60} more — keep typing
+                </span>
+              )}
+              {!customOpen && !customQuery && LIBRARY_SUBJECTS.length > 18 && (
+                <button
+                  type="button"
+                  onClick={() => setCustomOpen(true)}
+                  className="rounded-full border border-dashed border-border/80 px-2.5 py-1 text-[11px] font-semibold text-muted-foreground/80 transition-colors hover:border-emerald-400/40 hover:text-emerald-300"
+                >
+                  + show all {LIBRARY_SUBJECTS.length}
+                </button>
+              )}
+            </div>
+            {/* picked weights */}
+            {subjectInputs.length > 0 && (
+              <ul className="mt-2.5 flex flex-col gap-1.5 rounded-2xl border border-border/70 bg-muted/20 p-2.5">
+                {subjectInputs.map((s) => {
+                  const meta = LIBRARY_SUBJECTS.find((x) => x.id === s.subjectId)
+                  const accent = subjectAccent(meta?.name)
+                  return (
+                    <li key={s.subjectId} className="flex items-center gap-2">
+                      <span
+                        className="h-2 w-2 shrink-0 rounded-full"
+                        style={{ background: accent }}
+                        aria-hidden
+                      />
+                      <span className="min-w-0 flex-1 truncate text-xs font-semibold">{s.subject}</span>
+                      <div className="flex h-7 items-center gap-0.5 rounded-lg border border-border bg-background px-1">
+                        {[1, 2, 3, 4, 5].map((w) => (
+                          <button
+                            key={w}
+                            type="button"
+                            onClick={() => setPicked((prev) => ({ ...prev, [s.subjectId!]: w }))}
+                            aria-label={`${s.subject} weight ${w}`}
+                            aria-pressed={s.weight === w}
+                            className={cn(
+                              'h-5 w-5 rounded-md text-[10px] font-bold tabular-nums transition-colors',
+                              s.weight === w
+                                ? 'bg-emerald-400/20 text-emerald-600 dark:text-emerald-300'
+                                : 'text-muted-foreground/60 hover:bg-muted hover:text-foreground'
+                            )}
+                          >
+                            {w}
+                          </button>
+                        ))}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setPicked((prev) => {
+                            const next = { ...prev }
+                            delete next[s.subjectId!]
+                            return next
+                          })
+                        }
+                        aria-label={`Remove ${s.subject}`}
+                        className="flex h-5 w-5 items-center justify-center rounded-full text-muted-foreground/40 transition-colors hover:bg-red-500/10 hover:text-red-500"
+                      >
+                        <Trash2 className="h-3 w-3" aria-hidden />
+                      </button>
+                    </li>
+                  )
+                })}
+              </ul>
+            )}
+          </section>
+
+          {/* 3 — pace */}
+          <section aria-label="Daily pace and rest days">
+            <h4 className="mb-2 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-muted-foreground">
+              <Target className="h-3.5 w-3.5 text-emerald-300" aria-hidden /> 3 · Daily pace
+            </h4>
+            <div className="rounded-2xl border border-border/70 bg-muted/20 p-3">
+              <div className="flex items-baseline justify-between">
+                <span className="text-xs font-semibold">
+                  {(dailyMinutes / 60).toFixed(1)}h<span className="text-muted-foreground"> / day</span>
+                </span>
+                <span className="text-[10.5px] tabular-nums text-muted-foreground">
+                  ≈ {Math.max(1, Math.round(dailyMinutes / 50))} block{Math.round(dailyMinutes / 50) > 1 ? 's' : ''} of{' '}
+                  {(Math.round(dailyMinutes / Math.max(1, Math.round(dailyMinutes / 50)) / 5) * 5) || 25}m
+                </span>
+              </div>
+              <Slider
+                value={[dailyMinutes]}
+                min={20}
+                max={360}
+                step={10}
+                onValueChange={(v) => setDailyMinutes(v[0] ?? 120)}
+                aria-label="Daily planned minutes"
+                className="mt-2"
+              />
+              <div className="mt-1 flex justify-between text-[9.5px] tabular-nums text-muted-foreground/60">
+                <span>20m</span>
+                <span>2h</span>
+                <span>4h</span>
+                <span>6h</span>
+              </div>
+              <label className="mt-3 flex cursor-pointer items-center justify-between gap-3">
+                <span className="flex flex-col">
+                  <span className="text-xs font-semibold">Rest day every 7th day</span>
+                  <span className="text-[10.5px] text-muted-foreground">
+                    A zero day each week — burnout insurance (recommended)
+                  </span>
+                </span>
+                <Switch checked={restWeekly} onCheckedChange={setRestWeekly} aria-label="Rest day every 7th day" />
+              </label>
+            </div>
+          </section>
+
+          {/* preview */}
+          <section
+            aria-label="Plan preview"
+            className="overflow-hidden rounded-2xl border border-emerald-400/25 bg-gradient-to-br from-emerald-400/[0.07] to-transparent p-3.5"
+          >
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <h4 className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-emerald-600 dark:text-emerald-300">
+                <Sparkles className="h-3.5 w-3.5" aria-hidden /> Preview · {horizonLabel}
+              </h4>
+              {preview.restDays > 0 && (
+                <span className="rounded-full border border-border/70 bg-background/60 px-2 py-0.5 text-[10px] font-bold text-muted-foreground">
+                  {preview.restDays} rest day{preview.restDays > 1 ? 's' : ''}
+                </span>
+              )}
+            </div>
+            {subjectInputs.length === 0 ? (
+              <p className="mt-2 text-xs text-muted-foreground">Pick at least one subject to see the preview.</p>
+            ) : (
+              <>
+                <div className="mt-2.5 grid grid-cols-3 gap-2">
+                  <div className="rounded-xl border border-border/60 bg-background/50 p-2 text-center">
+                    <div className="text-lg font-black tabular-nums leading-tight">{preview.blocks.length}</div>
+                    <div className="text-[9.5px] font-semibold uppercase tracking-wide text-muted-foreground">blocks</div>
+                  </div>
+                  <div className="rounded-xl border border-border/60 bg-background/50 p-2 text-center">
+                    <div className="text-lg font-black tabular-nums leading-tight">
+                      {(preview.totalMinutes / 60).toFixed(1)}h
+                    </div>
+                    <div className="text-[9.5px] font-semibold uppercase tracking-wide text-muted-foreground">planned</div>
+                  </div>
+                  <div className="rounded-xl border border-border/60 bg-background/50 p-2 text-center">
+                    <div className="text-lg font-black tabular-nums leading-tight">{preview.dayCount}</div>
+                    <div className="text-[9.5px] font-semibold uppercase tracking-wide text-muted-foreground">study days</div>
+                  </div>
+                </div>
+                <ul className="mt-2.5 flex flex-col gap-1.5">
+                  {preview.perSubject.map((s) => {
+                    const accent = subjectAccent(s.subject)
+                    return (
+                      <li key={s.subject} className="flex items-center gap-2">
+                        <span className="w-24 shrink-0 truncate text-[11px] font-semibold">{s.subject}</span>
+                        <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-muted/60">
+                          <div
+                            className="h-full rounded-full transition-all duration-500"
+                            style={{ width: `${Math.round(s.share * 100)}%`, background: accent }}
+                          />
+                        </div>
+                        <span className="w-16 shrink-0 text-right text-[10.5px] font-bold tabular-nums text-muted-foreground">
+                          {Math.round(s.share * 100)}% · {Math.round(s.minutes / 60)}h
+                        </span>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </>
+            )}
+          </section>
+
+          {/* actions */}
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-[10.5px] leading-snug text-muted-foreground/70">
+              {hasPlan ? 'Generating replaces your current plan from today onward.' : 'Your first plan — generate it, then tick blocks off daily.'}
+            </p>
+            <div className="flex shrink-0 gap-2">
+              <button
+                type="button"
+                onClick={onClose}
+                className="rounded-xl border border-border px-4 py-2 text-xs font-bold text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => void submit()}
+                disabled={busy || subjectInputs.length === 0}
+                className="rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-5 py-2 text-xs font-bold text-white shadow-lg shadow-emerald-500/20 transition-all hover:brightness-110 active:scale-[0.98] disabled:opacity-40 disabled:shadow-none"
+              >
+                {busy ? 'Generating…' : 'Generate plan'}
+              </button>
+            </div>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  )
+}
+
+/** the plan card — today's blocks vs real minutes, week strip, actions */
+function PlanCard({
+  todayMinutes,
+  todayBySubject,
+  onAddTask,
+  initialSubjects,
+}: {
+  todayMinutes: number
+  todayBySubject: Record<string, number>
+  onAddTask: (title: string, subjectId: string | null, estimate: number) => Promise<void>
+  initialSubjects: { subject: string; subjectId: string | null }[]
+}) {
+  const { blocks, refresh } = useStudyPlan()
+  const { exams } = useFocusExams()
+  const [generatorOpen, setGeneratorOpen] = useState(false)
+
+  const active = (blocks ?? []).filter((b) => b.day >= planTodayKey())
+  const byDay = planByDay(active)
+  const todayKey = planTodayKey()
+  const today = byDay.find((d) => d.day === todayKey)
+  const future = byDay.filter((d) => d.day > todayKey)
+  const examRef = active[0]?.examId ? (exams ?? []).find((e) => e.id === active[0]?.examId) : null
+  const examTitle = active[0]?.examTitle ?? null
+  const daysLeft = examRef ? daysUntil(examRef.examDate) : null
+  const tone = daysLeft !== null ? examTone(daysLeft) : null
+
+  const totalPlanned = active.reduce((n, b) => n + b.minutes, 0)
+  const donePlanned = active.filter((b) => b.done).reduce((n, b) => n + b.minutes, 0)
+  const todayPlanned = today?.minutes ?? 0
+  const todayPct = todayPlanned > 0 ? Math.min(100, Math.round((todayMinutes / todayPlanned) * 100)) : 0
+
+  async function clearAll() {
+    try {
+      const n = await clearPlan()
+      toast.success(n > 0 ? `Cleared ${n} block${n === 1 ? '' : 's'}` : 'Plan cleared')
+      refresh()
+    } catch {
+      toast.error('Could not clear the plan')
+    }
+  }
+
+  return (
+    <section
+      aria-label="Study plan"
+      className="relative overflow-hidden rounded-3xl border border-border/80 bg-card p-5"
+    >
+      <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-emerald-400/[0.07] blur-3xl" />
+
+      {/* header */}
+      <div className="relative flex items-center justify-between gap-2">
+        <h3 className="flex items-center gap-2 text-sm font-bold">
+          <ClipboardList className="h-4 w-4 text-emerald-300" aria-hidden /> Study plan
+        </h3>
+        <div className="flex items-center gap-1.5">
+          {active.length > 0 && (
+            <>
+              <button
+                type="button"
+                onClick={() => setGeneratorOpen(true)}
+                aria-label="Regenerate the plan"
+                title="Regenerate — replaces the plan from today onward"
+                className="flex h-7 w-7 items-center justify-center rounded-full border border-border/70 bg-background/60 text-muted-foreground transition-all hover:border-emerald-400/50 hover:text-emerald-300 active:scale-95"
+              >
+                <RefreshCw className="h-3 w-3" aria-hidden />
+              </button>
+              <button
+                type="button"
+                onClick={() => void clearAll()}
+                aria-label="Clear the plan"
+                title="Clear every planned block from today onward"
+                className="flex h-7 w-7 items-center justify-center rounded-full border border-border/70 bg-background/60 text-muted-foreground transition-all hover:border-red-400/50 hover:text-red-400 active:scale-95"
+              >
+                <Trash2 className="h-3 w-3" aria-hidden />
+              </button>
+            </>
+          )}
+          <button
+            type="button"
+            onClick={() => setGeneratorOpen(true)}
+            aria-expanded={generatorOpen}
+            className="flex h-7 items-center gap-1 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-2.5 text-[11px] font-bold text-emerald-600 transition-all hover:bg-emerald-400/20 active:scale-95 dark:text-emerald-300"
+          >
+            <Plus className="h-3 w-3" aria-hidden /> {active.length > 0 ? 'New' : 'Generate'}
+          </button>
+        </div>
+      </div>
+
+      {/* exam linkage chip */}
+      {examTitle && (
+        <div className="relative mt-2.5 flex flex-wrap items-center gap-1.5">
+          <span
+            className={cn(
+              'inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10.5px] font-bold',
+              tone?.chip ?? 'border-border/70 bg-muted/30 text-muted-foreground'
+            )}
+          >
+            <CalendarClock className="h-3 w-3" aria-hidden />
+            {examRef ? (
+              <>
+                till {examTitle} · D-{daysLeft}
+                {daysLeft !== null && daysLeft <= 2 && (
+                  <span className="sv-dday-pulse inline-block h-1.5 w-1.5 rounded-full bg-rose-400" aria-hidden />
+                )}
+              </>
+            ) : (
+              <>was till {examTitle}</>
+            )}
+          </span>
+          <span className="text-[10px] text-muted-foreground/70">
+            {future.length + (today ? 1 : 0)} days · {(totalPlanned / 60).toFixed(1)}h planned ·{' '}
+            {Math.round(donePlanned)}m ticked off
+          </span>
+        </div>
+      )}
+
+      {blocks === null ? (
+        /* loading skeleton */
+        <div className="mt-4 flex animate-pulse flex-col gap-2">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="h-9 rounded-xl bg-muted/40" />
+          ))}
+        </div>
+      ) : active.length === 0 ? (
+        /* empty state */
+        <div className="relative mt-3 flex flex-col items-center gap-2 rounded-2xl border border-dashed border-border/80 py-7 text-center">
+          <span className="text-3xl" aria-hidden>
+            🗺️
+          </span>
+          <p className="max-w-[36ch] text-xs text-muted-foreground">
+            Turn a D-day into a day-by-day route: subjects spread across the runway, weights to
+            bias the hours, rest days to survive it. Blocks then race your real focus minutes.
+          </p>
+          <button
+            type="button"
+            onClick={() => setGeneratorOpen(true)}
+            className="mt-1 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 px-4 py-1.5 text-xs font-bold text-white shadow-lg shadow-emerald-500/20 transition-all hover:brightness-110 active:scale-95"
+          >
+            Generate a study plan
+          </button>
+        </div>
+      ) : (
+        <>
+          {/* today — planned vs actual */}
+          {today && (
+            <div className="relative mt-3 rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.04] p-3">
+              <div className="flex items-baseline justify-between gap-2">
+                <span className="flex items-center gap-1.5 text-xs font-bold">
+                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-400/20 text-[9px] font-black text-emerald-600 dark:text-emerald-300">
+                    {new Date(`${today.day}T00:00:00`).getDate()}
+                  </span>
+                  Today&apos;s blocks
+                </span>
+                <span className="text-[10.5px] font-semibold tabular-nums text-muted-foreground">
+                  planned {todayPlanned}m · actual{' '}
+                  <strong
+                    className={cn(
+                      todayMinutes >= todayPlanned && todayPlanned > 0
+                        ? 'text-emerald-500 dark:text-emerald-300'
+                        : 'text-foreground'
+                    )}
+                  >
+                    {todayMinutes}m
+                  </strong>
+                </span>
+              </div>
+              {/* planned-vs-actual bar */}
+              <div className="relative mt-2 h-2 overflow-hidden rounded-full bg-muted/60">
+                <div
+                  className="h-full rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 transition-all duration-700"
+                  style={{ width: `${todayPct}%` }}
+                />
+                {todayPct >= 100 && (
+                  <span className="absolute inset-0 flex items-center justify-center text-[8px] font-black text-emerald-950">
+                    ✓ plan beaten
+                  </span>
+                )}
+              </div>
+              <ul className="mt-2.5 flex flex-col gap-1.5">
+                {today.blocks.map((b) => {
+                  const accent = subjectAccent(b.subject)
+                  const actual = todayBySubject[b.subject] ?? 0
+                  return (
+                    <li key={b.id} className="group/plan flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => void togglePlanBlock(b.id, !b.done)}
+                        aria-pressed={b.done}
+                        aria-label={b.done ? `Re-open ${b.subject} block` : `Tick off ${b.subject} block`}
+                        className={cn(
+                          'flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-all active:scale-90',
+                          b.done
+                            ? 'border-emerald-400/60 bg-emerald-400/20 text-emerald-500 dark:text-emerald-300'
+                            : 'border-border/80 bg-background hover:border-emerald-400/50'
+                        )}
+                      >
+                        {b.done && <Check className="h-3 w-3" aria-hidden />}
+                      </button>
+                      <span
+                        className="h-2 w-2 shrink-0 rounded-full"
+                        style={{ background: accent }}
+                        aria-hidden
+                      />
+                      <span
+                        className={cn(
+                          'min-w-0 flex-1 truncate text-xs font-semibold',
+                          b.done && 'text-muted-foreground line-through decoration-muted-foreground/40'
+                        )}
+                      >
+                        {b.subject}
+                        {b.note && (
+                          <span className="ml-1.5 rounded-full border border-amber-300/30 bg-amber-300/10 px-1.5 py-0.5 text-[9px] font-bold text-amber-600 dark:text-amber-300">
+                            {b.note}
+                          </span>
+                        )}
+                      </span>
+                      <span
+                        className="shrink-0 text-[10.5px] font-bold tabular-nums text-muted-foreground"
+                        title={`${b.minutes}m planned · ${Math.round(actual)}m actually studied today`}
+                      >
+                        {b.minutes}m{actual > 0 ? <span className="text-emerald-500"> · {Math.round(actual)}m ✓</span> : null}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          void onAddTask(
+                            `${b.subject} — plan block`,
+                            b.subjectId,
+                            Math.max(1, Math.ceil(b.minutes / 25))
+                          )
+                        }
+                        aria-label={`Add “${b.subject} — plan block” to today's to-dos`}
+                        title="Send to today's to-dos"
+                        className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-muted-foreground/40 opacity-0 transition-all hover:bg-emerald-400/10 hover:text-emerald-400 group-hover/plan:opacity-100"
+                      >
+                        <Plus className="h-3 w-3" aria-hidden />
+                      </button>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          )}
+
+          {/* coming up — 7-day strip */}
+          <div className="relative mt-3">
+            <div className="flex items-baseline justify-between">
+              <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-muted-foreground/70">
+                Coming up
+              </span>
+              <span className="text-[10px] tabular-nums text-muted-foreground/60">
+                avg {active.length > 0 ? Math.round(totalPlanned / Math.max(1, byDay.length)) : 0}m/day
+              </span>
+            </div>
+            <div className="mt-2 grid grid-cols-7 gap-1.5">
+              {(() => {
+                const days: { key: string; minutes: number; isToday: boolean; rest: boolean }[] = []
+                const start = new Date(`${todayKey}T00:00:00`)
+                for (let i = 0; i < 7; i++) {
+                  const d = new Date(start)
+                  d.setDate(d.getDate() + i)
+                  const y = d.getFullYear()
+                  const m = String(d.getMonth() + 1).padStart(2, '0')
+                  const dd = String(d.getDate()).padStart(2, '0')
+                  const key = `${y}-${m}-${dd}`
+                  const entry = byDay.find((x) => x.day === key)
+                  days.push({
+                    key,
+                    minutes: entry?.minutes ?? 0,
+                    isToday: i === 0,
+                    rest: !entry,
+                  })
+                }
+                const maxMin = Math.max(60, ...days.map((d) => d.minutes))
+                return days.map((d, i) => (
+                  <div key={d.key} className="flex flex-col items-center gap-1">
+                    <span
+                      className={cn(
+                        'text-[9px] font-bold uppercase',
+                        d.isToday ? 'text-emerald-400' : 'text-muted-foreground/60'
+                      )}
+                    >
+                      {new Date(`${d.key}T00:00:00`).toLocaleDateString(undefined, { weekday: 'short' }).slice(0, 2)}
+                    </span>
+                    <div
+                      className={cn(
+                        'flex h-12 w-full items-end justify-center overflow-hidden rounded-lg border',
+                        d.isToday ? 'border-emerald-400/50 bg-emerald-400/[0.07]' : 'border-border/60 bg-muted/20'
+                      )}
+                      title={d.rest ? 'Rest day — nothing planned' : `${d.minutes}m planned`}
+                    >
+                      {d.minutes > 0 ? (
+                        <div
+                          className="w-full rounded-md bg-gradient-to-t from-emerald-500/70 to-emerald-400/70 transition-all"
+                          style={{ height: `${Math.max(18, Math.round((d.minutes / maxMin) * 100))}%` }}
+                        />
+                      ) : (
+                        <span className="text-[9px] font-bold text-muted-foreground/40">
+                          {i === 6 ? '·' : 'rest'}
+                        </span>
+                      )}
+                    </div>
+                    <span
+                      className={cn(
+                        'text-[9px] font-bold tabular-nums',
+                        d.isToday ? 'text-emerald-400' : 'text-muted-foreground/70'
+                      )}
+                    >
+                      {d.minutes > 0 ? `${Math.round(d.minutes / 60)}h` : '—'}
+                    </span>
+                  </div>
+                ))
+              })()}
+            </div>
+          </div>
+        </>
+      )}
+
+      <PlanGeneratorDialog
+        open={generatorOpen}
+        onClose={() => setGeneratorOpen(false)}
+        onGenerated={refresh}
+        initialSubjects={initialSubjects}
+        hasPlan={active.length > 0}
+      />
     </section>
   )
 }
@@ -3127,6 +3919,28 @@ export function FocusView() {
   const topSubject = stats?.subjects[0]
   const goalStreak = stats ? goalStreakOf(stats.days, settings.dailyGoalMin) : 0
 
+  /* X11H — today's real focus minutes + per-subject split (for the plan card's
+     planned-vs-actual race). Uses the loaded session window (recent 15) — a
+     single day rarely exceeds that, and stats.days backs the total up. */
+  const todayKeyLocal = localDateKey(new Date())
+  const todayBySubject: Record<string, number> = {}
+  let todayFocusMinutes = 0
+  {
+    const todayStats = stats?.days?.[stats.days.length - 1]
+    if (todayStats && todayStats.day === todayKeyLocal) todayFocusMinutes = todayStats.minutes
+    for (const s of sessions ?? []) {
+      if (s.kind !== 'focus' || !s.subject) continue
+      if (localDateKey(new Date(s.startedAt)) !== todayKeyLocal) continue
+      todayBySubject[s.subject] = (todayBySubject[s.subject] ?? 0) + s.actualSec / 60
+      if (!todayStats || todayStats.day !== todayKeyLocal) todayFocusMinutes += s.actualSec / 60
+    }
+    todayFocusMinutes = Math.round(todayFocusMinutes)
+  }
+  const topSubjectSeeds = (stats?.subjects ?? []).slice(0, 3).map((s) => ({
+    subject: s.subject,
+    subjectId: LIBRARY_SUBJECTS.find((x) => x.name === s.subject)?.id ?? null,
+  }))
+
   /* X11G — streak milestone ceremony: confetti exactly once per milestone */
   const milestoneSeen = useRef(-1)
   useEffect(() => {
@@ -3290,6 +4104,12 @@ export function FocusView() {
             engineRunning={engine.running && engine.kind === 'focus'}
           />
           <ExamCountdownCard />
+          <PlanCard
+            todayMinutes={todayFocusMinutes}
+            todayBySubject={todayBySubject}
+            onAddTask={addTask}
+            initialSubjects={topSubjectSeeds}
+          />
           <SoundscapeCard />
         </div>
 

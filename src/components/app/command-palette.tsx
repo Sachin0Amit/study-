@@ -141,6 +141,12 @@ const QUICK_ACTIONS: {
     hint: 'timer · task list · what you studied, for how long',
     icon: Timer,
   },
+  {
+    view: 'focus',
+    label: 'Study plan — till D-day',
+    hint: 'day-by-day blocks · planned vs actual minutes',
+    icon: ClipboardList,
+  },
 ]
 
 /** X10 Pro system actions — run in place (no navigation) */
