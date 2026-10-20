@@ -46,7 +46,7 @@ export function FooterDockSync() {
     let raf = 0
     const measure = () => {
       raf = 0
-      const bar = document.querySelector('.sv-footer-bottom')
+      const bar = document.querySelector('.sv-footer-bottom') as HTMLElement | null
       // hidden (reader-focus) or missing footer → no lift
       if (!bar || bar.offsetParent === null) {
         if (body.style.getPropertyValue('--sv-footer-lift')) {

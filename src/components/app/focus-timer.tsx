@@ -6,9 +6,10 @@
  * The ENGINE lives in '@/lib/focus' (module-level, survives unmounts and page
  * reloads). This file is the presentation layer:
  *
- *   • <FocusFab />     — the floating launcher button (bottom-right). Shows
- *                        whenever the timer is hidden, so Pomodoro is always
- *                        one click away — no nav-bar entry needed.
+ *   • <FocusFab />     — the floating launcher button (bottom-LEFT, so it
+ *                        never collides with the Voice Tutor in lessons).
+ *                        Shows whenever the timer is hidden, so Pomodoro is
+ *                        always one click away — no nav-bar entry needed.
  *   • expanded panel   — a complete, scroll-safe redesign: capped height with
  *                        an internal scroll area so NOTHING is ever clipped,
  *                        gradient progress ring, grouped session-length picker
@@ -157,7 +158,7 @@ function CycleDots({ cycle, every }: { cycle: number; every: number }) {
 
 function FocusFab({ s }: { s: FocusEngineState }) {
   return (
-    <div className="sv-dock-fab fixed bottom-5 right-5 z-40 flex flex-col items-center gap-2 sm:bottom-6 sm:right-6">
+    <div className="sv-dock-fab fixed bottom-5 left-5 z-40 flex flex-col items-center gap-2 sm:bottom-6 sm:left-6">
       {/* live countdown bubble while a session runs hidden */}
       {s.running && (
         <button
@@ -489,14 +490,9 @@ export function FocusTimer() {
     [id]
   )
 
-  // coordinate with the scroll-to-top button: while small focus chrome
-  // (FAB or pill) occupies the bottom-right corner, shift it up
-  useEffect(() => {
-    if (!isHolder) return
-    const smallChrome = (s.hidden && !s.zen) || (s.collapsed && !s.hidden)
-    if (smallChrome) document.body.setAttribute('data-sv-focus-fab', '1')
-    else document.body.removeAttribute('data-sv-focus-fab')
-  }, [isHolder, s.hidden, s.zen, s.collapsed])
+  // The Pod docks bottom-LEFT (Voice Tutor owns bottom-right in lessons),
+  // so the scroll-to-top button no longer needs to stack above us — its
+  // coordination now lives with the Voice Tutor (data-sv-voice-fab).
 
   if (!isHolder || !portalTarget) return null
 
@@ -639,13 +635,13 @@ function WidgetChrome({ s, settings }: { s: FocusEngineState; settings: FocusSet
           onClick={() => setZen(false)}
           aria-label="Focus timer in zen mode — click to bring it back"
           title="Zen mode — click to restore the timer"
-          className="group fixed right-0 top-1/2 z-40 -translate-y-1/2 rounded-l-full border border-r-0 border-emerald-400/40 bg-card/90 py-3.5 pl-1.5 pr-2 text-emerald-300 shadow-lg backdrop-blur transition-colors hover:bg-card"
+          className="group fixed left-0 top-1/2 z-40 -translate-y-1/2 rounded-r-full border border-l-0 border-emerald-400/40 bg-card/90 py-3.5 pl-2 pr-1.5 text-emerald-300 shadow-lg backdrop-blur transition-colors hover:bg-card"
         >
           <span className="relative flex h-2.5 w-2.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
           </span>
-          <span className="pointer-events-none absolute right-full top-1/2 mr-2 -translate-y-1/2 whitespace-nowrap rounded-full border border-border bg-card px-2.5 py-1 font-mono text-xs font-bold tabular-nums opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
+          <span className="pointer-events-none absolute left-full top-1/2 ml-2 -translate-y-1/2 whitespace-nowrap rounded-full border border-border bg-card px-2.5 py-1 font-mono text-xs font-bold tabular-nums opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
             {fmtClock(s.remainingMs)} · zen
           </span>
         </button>
@@ -674,7 +670,7 @@ function WidgetChrome({ s, settings }: { s: FocusEngineState; settings: FocusSet
         <div
           role="region"
           aria-label="Focus timer"
-          className="sv-dock-fab fixed bottom-5 right-5 z-40 flex items-center gap-0.5 rounded-full border border-border/80 bg-card/95 p-1.5 pl-3.5 shadow-xl shadow-black/20 backdrop-blur-xl sm:bottom-6 sm:right-6"
+          className="sv-dock-fab fixed bottom-5 left-5 z-40 flex items-center gap-0.5 rounded-full border border-border/80 bg-card/95 p-1.5 pr-3.5 shadow-xl shadow-black/20 backdrop-blur-xl sm:bottom-6 sm:left-6"
         >
           <button
             type="button"
@@ -727,7 +723,7 @@ function WidgetChrome({ s, settings }: { s: FocusEngineState; settings: FocusSet
       <div
         role="region"
         aria-label="Focus timer"
-        className="fixed inset-x-3 bottom-3 z-40 flex max-h-[calc(100dvh-4.5rem)] flex-col sm:inset-x-auto sm:bottom-5 sm:right-5 sm:w-[350px]"
+        className="fixed inset-x-3 bottom-3 z-40 flex max-h-[calc(100dvh-4.5rem)] flex-col sm:inset-x-auto sm:bottom-5 sm:left-5 sm:w-[350px]"
       >
         <div
           className="flex max-h-full flex-col overflow-hidden rounded-[26px] border border-border/70 bg-card/95 shadow-2xl shadow-black/30 backdrop-blur-xl"

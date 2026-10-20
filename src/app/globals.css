@@ -258,8 +258,10 @@
   background: var(--sv-scrollbar-hover);
 }
 
-/* X11b + X11D — while the floating Focus launcher (or its collapsed pill)
-   occupies the bottom-right corner, the scroll-to-top button stacks above
+/* X11b + X11D + X11K — the Focus Pod docks bottom-LEFT (it used to own the
+   bottom-right corner, where it collided with the lesson-view Voice Tutor).
+   Bottom-right corner ownership now: scroll-to-top by default; in lessons the
+   Voice Tutor FAB takes the corner and the scroll-to-top button stacks above
    it; both then rise by --sv-footer-lift (footer dock, below). */
 body {
   --sv-footer-lift: 0px;
@@ -275,13 +277,10 @@ body {
 .sv-scroll-top-btn {
   bottom: calc(1.5rem + var(--sv-footer-lift)) !important;
 }
-body[data-sv-focus-fab='1'] .sv-scroll-top-btn {
-  bottom: calc(6.25rem + var(--sv-footer-lift)) !important;
-}
-@media (max-width: 639px) {
-  body[data-sv-focus-fab='1'] .sv-scroll-top-btn {
-    bottom: calc(6rem + var(--sv-footer-lift)) !important;
-  }
+/* Voice Tutor FAB: h-14 (56px) at bottom calc(1.25rem + safe-area) — stack
+   the scroll-to-top button one gap above it, safe-area aware at all widths */
+body[data-sv-voice-fab='1'] .sv-scroll-top-btn {
+  bottom: calc(5.5rem + env(safe-area-inset-bottom) + var(--sv-footer-lift)) !important;
 }
 
 /* X11D — consistency heatmap cells: left→right sweep-in (column-staggered,

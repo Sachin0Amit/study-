@@ -136,6 +136,15 @@ export function VoiceTutor({ sectionId, lessonTitle, blocks }: {
     () => false,
   )
 
+  /* corner ownership: while our FAB occupies the bottom-right corner, flag it
+   * on <body> so the scroll-to-top button stacks above us (the Focus Pod now
+   * docks bottom-LEFT, so THIS widget owns the right-hand corner in lessons) */
+  useEffect(() => {
+    if (mounted && !open) document.body.setAttribute('data-sv-voice-fab', '1')
+    else document.body.removeAttribute('data-sv-voice-fab')
+    return () => document.body.removeAttribute('data-sv-voice-fab')
+  }, [mounted, open])
+
   /* portal to <body> — escapes any transformed ancestor (page transitions)
    * that would otherwise trap the fixed panel in a local stacking context */
   if (!mounted) return null
