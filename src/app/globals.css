@@ -258,14 +258,60 @@
   background: var(--sv-scrollbar-hover);
 }
 
-/* X11b — while the floating Focus launcher (or its collapsed pill) occupies
-   the bottom-right corner, lift the scroll-to-top button above it */
+/* X11b + X11D — while the floating Focus launcher (or its collapsed pill)
+   occupies the bottom-right corner, the scroll-to-top button stacks above
+   it; both then rise by --sv-footer-lift (footer dock, below). */
+body {
+  --sv-footer-lift: 0px;
+}
+.sv-dock-fab {
+  bottom: calc(1.25rem + var(--sv-footer-lift)) !important;
+}
+@media (min-width: 640px) {
+  .sv-dock-fab {
+    bottom: calc(1.5rem + var(--sv-footer-lift)) !important;
+  }
+}
+.sv-scroll-top-btn {
+  bottom: calc(1.5rem + var(--sv-footer-lift)) !important;
+}
 body[data-sv-focus-fab='1'] .sv-scroll-top-btn {
-  bottom: 6.25rem;
+  bottom: calc(6.25rem + var(--sv-footer-lift)) !important;
 }
 @media (max-width: 639px) {
   body[data-sv-focus-fab='1'] .sv-scroll-top-btn {
-    bottom: 6rem;
+    bottom: calc(6rem + var(--sv-footer-lift)) !important;
+  }
+}
+
+/* X11D — consistency heatmap cells: left→right sweep-in (column-staggered,
+   ~1s for 53 weeks) + a lively hover pop. Disabled under reduced motion. */
+@keyframes sv-heat-in {
+  from {
+    opacity: 0;
+    transform: scale(0.45);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.sv-heat-cell {
+  animation: sv-heat-in 0.32s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+  animation-delay: calc(var(--sv-heat-col, 0) * 18ms);
+}
+.sv-heat-cell:hover {
+  transform: scale(1.35);
+  border-radius: 4px;
+  filter: brightness(1.15);
+}
+@media (prefers-reduced-motion: reduce) {
+  .sv-heat-cell {
+    animation: none;
+    transition: none;
+  }
+  .sv-heat-cell:hover {
+    transform: none;
   }
 }
 

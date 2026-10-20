@@ -8,7 +8,7 @@ import { useStudy } from '@/store/useStudy'
 import { LIBRARY_BOOKS, LIBRARY_CHAPTERS, LIBRARY_SUBJECTS } from '@/data/library'
 import { Header } from '@/components/app/header'
 import { LibraryView } from '@/components/app/library-view'
-import { ReadingProgress, ScrollTopButton } from '@/components/app/reading-progress'
+import { FooterDockSync, ReadingProgress, ScrollTopButton } from '@/components/app/reading-progress'
 import { ThemeColorMeta } from '@/components/app/theme-color-meta'
 
 /** flagship book per subject — the footer features these 8, not all 168 (that
@@ -392,7 +392,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="mt-8 flex flex-col gap-2 border-t border-border/60 pt-5 text-[11px] text-muted-foreground/70 sm:flex-row sm:items-center sm:justify-between">
+          <div className="sv-footer-bottom mt-8 flex flex-col gap-2 border-t border-border/60 pt-5 text-[11px] text-muted-foreground/70 sm:flex-row sm:items-center sm:justify-between">
             <span>StudyVerse — master every book, interactively.</span>
             <span className="font-mono">
               4,136 lessons · 66 labs · 9,774 quiz questions · {LIBRARY_CHAPTERS.length} chapters ·{' '}
@@ -401,6 +401,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <FooterDockSync />
       <ScrollTopButton />
       <FocusTimerMount />
     </div>

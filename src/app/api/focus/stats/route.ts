@@ -4,7 +4,7 @@ import { db } from '@/lib/db'
 /**
  * X11 — Focus HQ analytics. Answers "what did I study, for how much time".
  *
- * GET ?deviceId=…&days=… (default 14, max 120)
+ * GET ?deviceId=…&days=… (default 14, max 371 — the year heatmap pulls 371)
  * → {
  *     days:   [{ day, label, minutes, pomodoros, interruptions }],   // oldest → today
  *     subjects: [{ subject, minutes, sessions, pomodoros }],        // desc by minutes
@@ -12,7 +12,8 @@ import { db } from '@/lib/db'
  *     totals: { allMinutes, allPomodoros, allSessions, avgSessionMin,
  *               streakDays, bestDayMinutes, bestDayDate, weekMinutes,
  *               todayMinutes, todayPomodoros, todayInterruptions,
- *               completedTasks }
+ *               completedTasks, longestSessionSec, longestSessionLabel,
+ *               longestGoalStreak }
  *   }
  */
 
@@ -30,7 +31,7 @@ function shiftLocalDay(base: Date, days: number): Date {
 export async function GET(req: NextRequest) {
   const deviceId = req.nextUrl.searchParams.get('deviceId')
   if (!deviceId) return NextResponse.json({ error: 'deviceId required' }, { status: 400 })
-  const days = Math.min(120, Math.max(7, Number(req.nextUrl.searchParams.get('days')) || 14))
+  const days = Math.min(371, Math.max(7, Number(req.nextUrl.searchParams.get('days')) || 14))
 
   try {
     const now = new Date()
@@ -132,6 +133,34 @@ export async function GET(req: NextRequest) {
     let weekMinutes = 0
     for (const [d, sec] of dayTotals) if (weekKeys.has(d)) weekMinutes += Math.round(sec / 60)
 
+    // longest single focus session (all time) — the "personal records" hero stat
+    let longestSessionSec = 0
+    let longestSessionLabel = ''
+    for (const r of focusAll) {
+      if (r.actualSec > longestSessionSec) {
+        longestSessionSec = r.actualSec
+        longestSessionLabel = localDayKey(r.startedAt)
+      }
+    }
+
+    // longest run of consecutive focus days (all time) — the record the
+    // current streak is measured against
+    const sortedDays = Array.from(focusDays).sort()
+    let longestGoalStreak = 0
+    let run = 0
+    let prevKey: string | null = null
+    for (const d of sortedDays) {
+      if (prevKey !== null) {
+        const gap =
+          (new Date(d + 'T00:00:00').getTime() - new Date(prevKey + 'T00:00:00').getTime()) / 86400000
+        run = gap === 1 ? run + 1 : 1
+      } else {
+        run = 1
+      }
+      if (run > longestGoalStreak) longestGoalStreak = run
+      prevKey = d
+    }
+
     return NextResponse.json({
       days: dayRows,
       subjects,
@@ -149,6 +178,9 @@ export async function GET(req: NextRequest) {
         todayPomodoros: today?.pomodoros ?? 0,
         todayInterruptions: today?.interruptions ?? 0,
         completedTasks,
+        longestSessionSec,
+        longestSessionLabel,
+        longestGoalStreak,
       },
     })
   } catch (err) {

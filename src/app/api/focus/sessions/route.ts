@@ -34,7 +34,8 @@ function intIn(n: unknown, min: number, max: number, fallback: number): number {
 export async function GET(req: NextRequest) {
   const deviceId = req.nextUrl.searchParams.get('deviceId')
   if (!deviceId) return NextResponse.json({ error: 'deviceId required' }, { status: 400 })
-  const limit = intIn(req.nextUrl.searchParams.get('limit'), 1, 100, 25)
+  // limit up to 2000 so "Export CSV" can pull the full history in one request
+  const limit = intIn(req.nextUrl.searchParams.get('limit'), 1, 2000, 25)
   try {
     const sessions = await db.focusSession.findMany({
       where: { deviceId },

@@ -15,12 +15,13 @@
  * Data: FocusTask + FocusSession tables via /api/focus/*.
  */
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { type CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
   ArrowDownRight,
   ArrowUpRight,
   BarChart3,
   Brain,
+  CalendarCheck,
   CalendarDays,
   CalendarRange,
   Check,
@@ -28,6 +29,7 @@ import {
   ChevronUp,
   Clock,
   Coffee,
+  Download,
   Flame,
   Hourglass,
   ListTodo,
@@ -42,10 +44,12 @@ import {
   RotateCcw,
   Settings2,
   Sparkles,
+  Sun,
   Target,
   Timer,
   Trash2,
   TrendingUp,
+  Trophy,
   Wind,
   Zap,
 } from 'lucide-react'
@@ -125,6 +129,9 @@ interface StatsPayload {
     todayPomodoros: number
     todayInterruptions: number
     completedTasks: number
+    longestSessionSec: number
+    longestSessionLabel: string
+    longestGoalStreak: number
   }
 }
 
@@ -153,6 +160,42 @@ function fmtHour(h: number): string {
   const suffix = h < 12 ? 'AM' : 'PM'
   const hr = h % 12 === 0 ? 12 : h % 12
   return `${hr} ${suffix}`
+}
+
+/** "2026-10-20" → "Oct 20" (local-key safe) */
+function fmtDay(key: string): string {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(key)) return key
+  const d = new Date(key + 'T00:00:00')
+  return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
+}
+
+/** consecutive days (ending today or yesterday) whose minutes hit the goal */
+function goalStreakOf(days: { day: string; minutes: number }[], goalMin: number): number {
+  if (days.length === 0) return 0
+  const hit = new Set(days.filter((d) => d.minutes >= goalMin).map((d) => d.day))
+  const last = days[days.length - 1].day
+  const prev = days.length > 1 ? days[days.length - 2].day : ''
+  let cursor = hit.has(last) ? last : hit.has(prev) ? prev : null
+  if (!cursor) return 0
+  let streak = 0
+  while (hit.has(cursor)) {
+    streak++
+    const d = new Date(cursor + 'T00:00:00')
+    d.setDate(d.getDate() - 1)
+    cursor = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+  }
+  return streak
+}
+
+/** best run of goal-hitting days anywhere in the window */
+function bestGoalStreakOf(days: { day: string; minutes: number }[], goalMin: number): number {
+  let best = 0
+  let run = 0
+  for (const d of days) {
+    run = d.minutes >= goalMin ? run + 1 : 0
+    if (run > best) best = run
+  }
+  return best
 }
 
 /** accent color for a subject name (falls back to emerald) */
@@ -767,6 +810,8 @@ function DailyGoalCard({ stats }: { stats: StatsPayload | null }) {
   const goal = settings.dailyGoalMin
   const pct = Math.min(100, Math.round((todayMin / goal) * 100))
   const over = todayMin >= goal
+  const streak = goalStreakOf(stats?.days ?? [], goal)
+  const best = bestGoalStreakOf(stats?.days ?? [], goal)
 
   return (
     <div className="mt-4 flex items-center gap-3.5 rounded-2xl border border-border/70 bg-gradient-to-br from-emerald-400/[0.05] to-transparent p-3">
@@ -799,6 +844,15 @@ function DailyGoalCard({ stats }: { stats: StatsPayload | null }) {
             {over ? 'reached — every extra minute compounds' : `${Math.max(1, goal - todayMin)}m to go`}
           </span>
         </p>
+        {streak > 0 && (
+          <p className="mt-1 flex items-center gap-1 text-[10.5px] font-semibold text-amber-600 dark:text-amber-300">
+            <Flame className="h-3 w-3" aria-hidden />
+            {streak}-day goal streak
+            <span className="font-medium text-muted-foreground">
+              {best > streak ? `· best ${best} in the last year` : '· a personal best'}
+            </span>
+          </p>
+        )}
         <div className="mt-2 flex flex-wrap items-center gap-1.5">
           {GOAL_PRESETS.map((g) => (
             <button
@@ -839,9 +893,10 @@ function DailyGoalCard({ stats }: { stats: StatsPayload | null }) {
 
 /** this week vs last week — momentum, best day, active days */
 function WeeklyDigestCard({ stats }: { stats: StatsPayload | null }) {
-  const days = stats?.days ?? []
-  const thisWeek = days.slice(-7)
-  const lastWeek = days.length >= 14 ? days.slice(0, 7) : []
+  // stats.days spans the year (heatmap) — window to the trailing fortnight
+  const fortnight = (stats?.days ?? []).slice(-14)
+  const thisWeek = fortnight.slice(-7)
+  const lastWeek = fortnight.length >= 14 ? fortnight.slice(0, 7) : []
   const thisMin = thisWeek.reduce((n, d) => n + d.minutes, 0)
   const lastMin = lastWeek.reduce((n, d) => n + d.minutes, 0)
   const delta = lastMin > 0 ? Math.round(((thisMin - lastMin) / lastMin) * 100) : null
@@ -919,6 +974,236 @@ function WeeklyDigestCard({ stats }: { stats: StatsPayload | null }) {
   )
 }
 
+/* ------------------------------------------------------------------ */
+/*  Consistency — the GitHub-style year heatmap (full-width)           */
+/* ------------------------------------------------------------------ */
+
+const HEAT_CELL = 11 // px — 53 weeks × (11+3) ≈ 742px, scrolls on mobile
+const HEAT_GAP = 3
+
+/** intensity bucket for a day's minutes (0 = rest day) */
+function heatLevel(minutes: number): 0 | 1 | 2 | 3 | 4 {
+  if (minutes <= 0) return 0
+  if (minutes < 30) return 1
+  if (minutes < 60) return 2
+  if (minutes < 120) return 3
+  return 4
+}
+const HEAT_CLASSES = [
+  'bg-muted/70 dark:bg-muted/50',
+  'bg-emerald-500/25 dark:bg-emerald-400/25',
+  'bg-emerald-500/45 dark:bg-emerald-400/45',
+  'bg-emerald-500/70 dark:bg-emerald-400/70',
+  'bg-emerald-400 dark:bg-emerald-300',
+] as const
+
+/** 371-day contribution heatmap: weeks as columns, weekdays as rows */
+function ConsistencyCard({ stats }: { stats: StatsPayload | null }) {
+  const days = stats?.days ?? []
+  const todayKey = days.length > 0 ? days[days.length - 1].day : ''
+
+  // grid geometry — the first column starts on the Sunday on/before day one
+  const { columns, cells, monthLabels } = useMemo(() => {
+    if (days.length === 0) return { columns: 0, cells: [], monthLabels: [] as { col: number; name: string }[] }
+    const byDay = new Map(days.map((d) => [d.day, d]))
+    const first = new Date(days[0].day + 'T00:00:00')
+    first.setDate(first.getDate() - first.getDay()) // back to Sunday
+    const last = new Date(todayKey + 'T00:00:00')
+    const span = Math.round((last.getTime() - first.getTime()) / 86400000) + 1
+    const cols = Math.ceil(span / 7)
+
+    const cells: { col: number; row: number; day: string; minutes: number; inWindow: boolean; isToday: boolean }[] = []
+    const months: { col: number; name: string }[] = []
+    let lastMonth = -1
+    for (let col = 0; col < cols; col++) {
+      for (let row = 0; row < 7; row++) {
+        const d = new Date(first)
+        d.setDate(d.getDate() + col * 7 + row)
+        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+        const inWindow = key >= days[0].day && key <= todayKey
+        cells.push({ col, row, day: key, minutes: byDay.get(key)?.minutes ?? 0, inWindow, isToday: key === todayKey })
+        // label the column that contains the 1st of a month
+        if (d.getDate() === 1 && d.getMonth() !== lastMonth && inWindow) {
+          months.push({ col, name: d.toLocaleDateString(undefined, { month: 'short' }) })
+          lastMonth = d.getMonth()
+        }
+      }
+    }
+    return { columns: cols, cells, monthLabels: months }
+  }, [days, todayKey])
+
+  const yearMin = days.reduce((n, d) => n + d.minutes, 0)
+  const activeDays = days.filter((d) => d.minutes > 0).length
+  const t = stats?.totals
+
+  return (
+    <section aria-label="Yearly consistency" className="rounded-3xl border border-border/80 bg-card p-5">
+      <div className="flex flex-wrap items-end justify-between gap-2">
+        <h3 className="flex items-center gap-2 text-sm font-bold">
+          <CalendarCheck className="h-4 w-4 text-emerald-300" aria-hidden /> Consistency
+          <span className="font-medium text-muted-foreground">— the last year, day by day</span>
+        </h3>
+        {days.length > 0 && (
+          <p className="text-[11px] text-muted-foreground">
+            <strong className="font-mono text-foreground">{yearMin >= 60 ? `${Math.floor(yearMin / 60)}h ${yearMin % 60}m` : `${yearMin}m`}</strong> focused
+            {' '}· <strong className="text-foreground">{activeDays}</strong> active {activeDays === 1 ? 'day' : 'days'}
+            {t && t.longestGoalStreak > 1 && <> · best run <strong className="text-foreground">{t.longestGoalStreak} days</strong></>}
+          </p>
+        )}
+      </div>
+
+      {days.length === 0 ? (
+        <p className="mt-3 text-xs text-muted-foreground">
+          A full year of focus squares — every pomodoro you run paints one green. Start today.
+        </p>
+      ) : (
+        <div className="mt-3 overflow-x-auto pb-1 sv-nice-scroll">
+          <div className="flex gap-1.5" style={{ minWidth: columns * (HEAT_CELL + HEAT_GAP) + 22 }}>
+            {/* weekday rail */}
+            <div className="flex flex-col pt-[18px]" style={{ gap: `${HEAT_GAP}px` }} aria-hidden>
+              {['', 'Mon', '', 'Wed', '', 'Fri', ''].map((wd, i) => (
+                <span
+                  key={i}
+                  className="text-[8.5px] font-semibold leading-[11px] text-muted-foreground/60"
+                  style={{ height: HEAT_CELL, width: 22, textAlign: 'right' }}
+                >
+                  {wd}
+                </span>
+              ))}
+            </div>
+
+            <div>
+              {/* month labels */}
+              <div
+                className="relative mb-1 h-[14px]"
+                style={{ width: columns * (HEAT_CELL + HEAT_GAP) }}
+                aria-hidden
+              >
+                {monthLabels.map((m) => (
+                  <span
+                    key={`${m.col}-${m.name}`}
+                    className="absolute top-0 whitespace-nowrap text-[9px] font-bold text-muted-foreground/70"
+                    style={{ left: m.col * (HEAT_CELL + HEAT_GAP) }}
+                  >
+                    {m.name}
+                  </span>
+                ))}
+              </div>
+
+              {/* the grid — columns of 7 weekday cells */}
+              <div
+                role="img"
+                aria-label={`Focus minutes heatmap for the last ${days.length} days: ${yearMin} minutes across ${activeDays} active days`}
+                className="grid"
+                style={{
+                  gridTemplateRows: `repeat(7, ${HEAT_CELL}px)`,
+                  gridAutoFlow: 'column',
+                  gridAutoColumns: `${HEAT_CELL}px`,
+                  gap: `${HEAT_GAP}px`,
+                }}
+              >
+                {cells.map((c) => {
+                  if (!c.inWindow) return <span key={c.day} />
+                  const lvl = heatLevel(c.minutes)
+                  const title = c.isToday ? 'today' : fmtDay(c.day)
+                  return (
+                    <span
+                      key={c.day}
+                      title={`${title} · ${c.minutes > 0 ? `${c.minutes}m focused` : 'no focus'}`}
+                      style={{ '--sv-heat-col': c.col } as CSSProperties}
+                      className={`sv-heat-cell rounded-[2.5px] transition-transform duration-150 ${HEAT_CLASSES[lvl]} ${
+                        c.isToday ? 'ring-1 ring-emerald-400/80 dark:ring-emerald-300/80' : ''
+                      }`}
+                    />
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {days.length > 0 && (
+        <div className="mt-2 flex items-center justify-between gap-2 border-t border-border/60 pt-2.5">
+          <p className="text-[10px] text-muted-foreground/70">
+            Greener = deeper. Squares dim before your first session; today carries the ring.
+          </p>
+          <p className="flex shrink-0 items-center gap-1 text-[9.5px] font-medium text-muted-foreground/70">
+            less
+            {HEAT_CLASSES.map((cls, i) => (
+              <span key={i} className={`h-[10px] w-[10px] rounded-[2px] ${cls}`} aria-hidden />
+            ))}
+            more
+          </p>
+        </div>
+      )}
+    </section>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/*  Personal records — all-time bests                                  */
+/* ------------------------------------------------------------------ */
+
+function RecordsCard({ stats }: { stats: StatsPayload | null }) {
+  const t = stats?.totals
+  const hours = stats?.hours ?? []
+  const peakHour = hours.reduce((best, h) => (h.minutes > best.minutes ? h : best), { hour: -1, minutes: -1 })
+  const records = [
+    {
+      icon: Trophy,
+      value: t && t.bestDayMinutes > 0 ? `${t.bestDayMinutes}m` : '—',
+      label: 'best day',
+      sub: t && t.bestDayDate ? fmtDay(t.bestDayDate) : 'run a pomodoro',
+      tone: 'text-amber-500 dark:text-amber-300 bg-amber-400/10 border-amber-400/30',
+    },
+    {
+      icon: Timer,
+      value: t && t.longestSessionSec > 0 ? fmtDuration(t.longestSessionSec) : '—',
+      label: 'longest session',
+      sub: t && t.longestSessionLabel ? fmtDay(t.longestSessionLabel) : 'go deep',
+      tone: 'text-emerald-600 dark:text-emerald-300 bg-emerald-400/10 border-emerald-400/30',
+    },
+    {
+      icon: Sun,
+      value: peakHour.minutes > 0 ? fmtHour(peakHour.hour) : '—',
+      label: 'golden hour',
+      sub: peakHour.minutes > 0 ? `${peakHour.minutes}m banked` : 'find your rhythm',
+      tone: 'text-sky-600 dark:text-sky-300 bg-sky-400/10 border-sky-400/30',
+    },
+    {
+      icon: Flame,
+      value: t && t.streakDays > 0 ? `${t.streakDays}d` : '—',
+      label: 'focus streak',
+      sub: t && t.longestGoalStreak > 0 ? `record ${t.longestGoalStreak}d` : 'start one today',
+      tone: 'text-rose-600 dark:text-rose-300 bg-rose-400/10 border-rose-400/30',
+    },
+  ]
+
+  return (
+    <section aria-label="Personal records" className="rounded-3xl border border-border/80 bg-card p-5">
+      <h3 className="flex items-center gap-2 text-sm font-bold">
+        <Trophy className="h-4 w-4 text-amber-400" aria-hidden /> Personal records
+      </h3>
+      <div className="mt-3 grid grid-cols-2 gap-2.5">
+        {records.map((r) => (
+          <div
+            key={r.label}
+            className="rounded-2xl border border-border/70 bg-gradient-to-br from-card to-muted/30 p-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-border hover:shadow-md hover:shadow-black/5"
+          >
+            <span className={`flex h-7 w-7 items-center justify-center rounded-lg border ${r.tone}`}>
+              <r.icon className="h-3.5 w-3.5" aria-hidden />
+            </span>
+            <p className="mt-2 truncate font-mono text-lg font-black leading-none tabular-nums">{r.value}</p>
+            <p className="mt-1 text-[10.5px] font-bold uppercase tracking-wide text-muted-foreground">{r.label}</p>
+            <p className="truncate text-[10px] text-muted-foreground/70">{r.sub}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 function StatTile({
   icon: Icon,
   value,
@@ -946,7 +1231,8 @@ function StatTile({
 }
 
 function TrendCard({ stats }: { stats: StatsPayload | null }) {
-  const days = stats?.days ?? []
+  // stats.days spans the year (heatmap) — the trend card only shows the last 14
+  const days = (stats?.days ?? []).slice(-14)
   const maxBar = Math.max(60, ...days.map((d) => d.minutes))
   return (
     <section aria-label="Focus trend" className="rounded-3xl border border-border/80 bg-card p-5">
@@ -1088,9 +1374,11 @@ function GoldenHoursCard({ stats }: { stats: StatsPayload | null }) {
 function RecentSessionsCard({
   sessions,
   onNote,
+  onExport,
 }: {
   sessions: SessionRow[]
   onNote: (id: string, note: string) => Promise<void>
+  onExport: () => void
 }) {
   const [editingId, setEditingId] = useState<string | null>(null)
   const [draft, setDraft] = useState('')
@@ -1098,9 +1386,19 @@ function RecentSessionsCard({
 
   return (
     <section aria-label="Recent sessions" className="rounded-3xl border border-border/80 bg-card p-5">
-      <h3 className="flex items-center gap-2 text-sm font-bold">
-        <CalendarDays className="h-4 w-4 text-emerald-300" aria-hidden /> Recent sessions
-      </h3>
+      <div className="flex items-center justify-between gap-2">
+        <h3 className="flex items-center gap-2 text-sm font-bold">
+          <CalendarDays className="h-4 w-4 text-emerald-300" aria-hidden /> Recent sessions
+        </h3>
+        <button
+          type="button"
+          onClick={onExport}
+          title="Download every session — date, task, subject, minutes, notes — as a CSV file"
+          className="flex items-center gap-1.5 rounded-full border border-border/70 bg-card px-2.5 py-1 text-[10.5px] font-bold text-muted-foreground transition-all hover:border-emerald-400/50 hover:text-emerald-600 dark:hover:text-emerald-300"
+        >
+          <Download className="h-3 w-3" aria-hidden /> CSV
+        </button>
+      </div>
       {sessions.length === 0 ? (
         <p className="mt-3 text-xs text-muted-foreground">
           No sessions yet — your first pomodoro will show up here with exactly what you studied.
@@ -1315,6 +1613,7 @@ function SettingsCard() {
 export function FocusView() {
   const ensureDevice = useStudy((s) => s.ensureDevice)
   const engine = useFocusEngine()
+  const settings = useFocusSettings()
   const sessionsVersion = useSessionsVersion()
 
   const [tasks, setTasks] = useState<FocusTaskRow[] | null>(null)
@@ -1336,8 +1635,9 @@ export function FocusView() {
   const loadAnalytics = useCallback(async () => {
     try {
       const deviceId = ensureDevice()
+      // 371 days feeds the year heatmap; the 14-day cards window themselves
       const [statsRes, sessRes] = await Promise.all([
-        fetch(`/api/focus/stats?deviceId=${encodeURIComponent(deviceId)}&days=14`),
+        fetch(`/api/focus/stats?deviceId=${encodeURIComponent(deviceId)}&days=371`),
         fetch(`/api/focus/sessions?deviceId=${encodeURIComponent(deviceId)}&limit=15`),
       ])
       if (statsRes.ok) setStats((await statsRes.json()) as StatsPayload)
@@ -1465,8 +1765,62 @@ export function FocusView() {
     [ensureDevice, loadTasks, tasks]
   )
 
+  /** download the entire session log as a CSV (Excel-friendly, BOM + CRLF) */
+  const exportSessions = useCallback(async () => {
+    try {
+      const deviceId = ensureDevice()
+      const res = await fetch(`/api/focus/sessions?deviceId=${encodeURIComponent(deviceId)}&limit=2000`)
+      if (!res.ok) throw new Error('export failed')
+      const { sessions: rows } = (await res.json()) as { sessions: SessionRow[] }
+      if (rows.length === 0) {
+        toast.info('Nothing to export yet', {
+          description: 'Run your first pomodoro — it will land here with a timestamp.',
+        })
+        return
+      }
+      const esc = (v: string | number | boolean | null | undefined) =>
+        `"${String(v ?? '').replace(/"/g, '""')}"`
+      const kindLabel = (k: string) => (k === 'focus' ? 'focus' : k === 'short_break' ? 'short break' : 'long break')
+      const header = [
+        'started at', 'kind', 'task', 'subject', 'chapter',
+        'planned min', 'actual min', 'completed', 'interruptions', 'note',
+      ]
+      const lines = rows.map((s) =>
+        [
+          new Date(s.startedAt).toLocaleString(),
+          kindLabel(s.kind),
+          s.taskTitle,
+          s.subject,
+          s.chapterTitle,
+          s.plannedMin,
+          Math.round(s.actualSec / 60),
+          s.completed ? 'yes' : 'partial',
+          s.interruptions,
+          s.note,
+        ]
+          .map(esc)
+          .join(',')
+      )
+      const csv = `\ufeff${[header.map(esc).join(','), ...lines].join('\r\n')}`
+      const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }))
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `studyverse-focus-log-${new Date().toISOString().slice(0, 10)}.csv`
+      document.body.appendChild(a)
+      a.click()
+      a.remove()
+      URL.revokeObjectURL(url)
+      toast.success(`Exported ${rows.length} ${rows.length === 1 ? 'session' : 'sessions'}`, {
+        description: 'studyverse-focus-log.csv — opens in Excel, Sheets or Numbers',
+      })
+    } catch {
+      toast.error('Could not export the session log')
+    }
+  }, [ensureDevice])
+
   const t = stats?.totals
   const topSubject = stats?.subjects[0]
+  const goalStreak = stats ? goalStreakOf(stats.days, settings.dailyGoalMin) : 0
 
   /** attach/edit a journal note on a completed session (recent-sessions card) */
   const saveNote = useCallback(
@@ -1511,6 +1865,14 @@ export function FocusView() {
           {t && t.streakDays > 0 && (
             <span className="flex items-center gap-1.5 rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1.5 text-xs font-bold text-amber-600 dark:text-amber-300">
               <Flame className="h-3.5 w-3.5" aria-hidden /> {t.streakDays}-day streak
+            </span>
+          )}
+          {goalStreak >= 2 && (
+            <span
+              title="Consecutive days hitting your daily goal"
+              className="flex items-center gap-1.5 rounded-full border border-rose-400/40 bg-rose-400/10 px-3 py-1.5 text-xs font-bold text-rose-600 dark:text-rose-300"
+            >
+              <Target className="h-3.5 w-3.5" aria-hidden /> {goalStreak}× goal
             </span>
           )}
           <span className="flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1.5 text-xs font-bold text-emerald-600 dark:text-emerald-300">
@@ -1569,12 +1931,18 @@ export function FocusView() {
           </section>
 
           <WeeklyDigestCard stats={stats} />
+          <RecordsCard stats={stats} />
           <TrendCard stats={stats} />
           <SubjectsCard stats={stats} />
           <GoldenHoursCard stats={stats} />
-          <RecentSessionsCard sessions={sessions} onNote={saveNote} />
+          <RecentSessionsCard sessions={sessions} onNote={saveNote} onExport={exportSessions} />
           <SettingsCard />
         </div>
+      </div>
+
+      {/* the year, full width — the consistency heatmap */}
+      <div className="mt-5">
+        <ConsistencyCard stats={stats} />
       </div>
     </div>
   )

@@ -30,6 +30,51 @@ export function ReadingProgress() {
   )
 }
 
+/* =====================================================================
+   X11D — footer dock for floating chrome.
+   The Focus FAB / pill and the scroll-to-top button sit in the
+   bottom-right corner; on pages tall enough to scroll, they used to
+   cover the footer's bottom stats bar at full scroll. This sync
+   publishes --sv-footer-lift (px) on <body>: how far bottom-anchored
+   chrome must rise so its bottom edge clears the footer bar (+12px
+   breathing room). rAF-throttled, passive listeners, hidden-footer
+   safe (reader-focus mode hides <footer> → lift stays 0).
+   ===================================================================== */
+export function FooterDockSync() {
+  useEffect(() => {
+    const body = document.body
+    let raf = 0
+    const measure = () => {
+      raf = 0
+      const bar = document.querySelector('.sv-footer-bottom')
+      // hidden (reader-focus) or missing footer → no lift
+      if (!bar || bar.offsetParent === null) {
+        if (body.style.getPropertyValue('--sv-footer-lift')) {
+          body.style.setProperty('--sv-footer-lift', '0px')
+        }
+        return
+      }
+      const barTop = bar.getBoundingClientRect().top
+      const anchor = window.innerHeight - 24 // matches bottom-6; mobile bottom-5 is 4px off, absorbed by the gap
+      const lift = Math.max(0, Math.round(anchor - barTop + 12))
+      body.style.setProperty('--sv-footer-lift', `${lift}px`)
+    }
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(measure)
+    }
+    measure()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      if (raf) cancelAnimationFrame(raf)
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      body.style.setProperty('--sv-footer-lift', '0px')
+    }
+  }, [])
+  return null
+}
+
 /** Floating scroll-to-top button, appears after scrolling past 60% of a viewport */
 export function ScrollTopButton() {
   const [visible, setVisible] = useState(false)

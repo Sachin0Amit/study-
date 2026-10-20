@@ -148,7 +148,7 @@ function CycleDots({ cycle, every }: { cycle: number; every: number }) {
 
 function FocusFab({ s }: { s: FocusEngineState }) {
   return (
-    <div className="fixed bottom-5 right-5 z-40 flex flex-col items-center gap-2 sm:bottom-6 sm:right-6">
+    <div className="sv-dock-fab fixed bottom-5 right-5 z-40 flex flex-col items-center gap-2 sm:bottom-6 sm:right-6">
       {/* live countdown bubble while a session runs hidden */}
       {s.running && (
         <button
@@ -556,7 +556,7 @@ function WidgetChrome({ s, settings }: { s: FocusEngineState; settings: FocusSet
         <div
           role="region"
           aria-label="Focus timer"
-          className="fixed bottom-5 right-5 z-40 flex items-center gap-0.5 rounded-full border border-border/80 bg-card/95 p-1.5 pl-3.5 shadow-xl shadow-black/20 backdrop-blur-xl sm:bottom-6 sm:right-6"
+          className="sv-dock-fab fixed bottom-5 right-5 z-40 flex items-center gap-0.5 rounded-full border border-border/80 bg-card/95 p-1.5 pl-3.5 shadow-xl shadow-black/20 backdrop-blur-xl sm:bottom-6 sm:right-6"
         >
           <button
             type="button"
