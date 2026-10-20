@@ -16,8 +16,8 @@
 
 - **Subjects:** 174
 - **Books (master volumes):** 174
-- **Chapters:** 803
-- **Sections (lessons):** 4367
+- **Chapters:** 809
+- **Sections (lessons):** 4373
 
 ## Foundations — 5 subjects
 
@@ -1229,17 +1229,19 @@
 
 ### Spanish (`ku-languages-literature-spanish`)
 
-*Two verbs for to be* — 2 chapters · 2 sections
+*Two verbs for to be* — 3 chapters · 3 sections
 
 - **Ch 1. Verb Semantics** `ku-languages-literature-spanish-verb-semantics` — 1 sections: Spanish ser vs estar: Two Ways to Be
 - **Ch 2. Practical Spanish** `ku-languages-literature-spanish-practical-spanish` — 1 sections: Survival Spanish: Greetings, Numbers and the Phrases That Matter
+- **Ch 3. Verb Morphology** `ku-languages-literature-spanish-verb-morphology` — 1 sections: Spanish Verbs: Endings, Boot Verbs and Two Pasts
 
 ### Japanese (`ku-languages-literature-japanese`)
 
-*Three scripts, one language* — 2 chapters · 2 sections
+*Three scripts, one language* — 3 chapters · 3 sections
 
 - **Ch 1. Sentence Structure** `ku-languages-literature-japanese-sentence-structure` — 1 sections: Japanese Particles: The Grammar Glue of は, が, を
 - **Ch 2. The Writing System** `ku-languages-literature-japanese-the-writing-system` — 1 sections: Hiragana, Katakana and Kanji: How Japanese Writing Works
+- **Ch 3. Verbs & Politeness** `ku-languages-literature-japanese-verbs-and-politeness` — 1 sections: Japanese Verbs: Three Groups, the te-Form and the Politeness Engine
 
 ### Linguistics (`ku-languages-literature-linguistics`)
 
@@ -1265,9 +1267,10 @@
 
 ### French (`ku-languages-literature-french`)
 
-*Say it like the French* — 1 chapters · 1 sections
+*Say it like the French* — 2 chapters · 2 sections
 
 - **Ch 1. French Foundations** `ku-languages-literature-french-french-foundations` — 1 sections: French Foundations: Pronunciation, Articles and First Phrases
+- **Ch 2. French Verbs** `ku-languages-literature-french-french-verbs` — 1 sections: French Verbs: Three Endings, Four Rebels and the Compound Past
 
 ### Mandarin Chinese (`ku-languages-literature-mandarin-chinese`)
 
@@ -1284,9 +1287,10 @@
 
 ### German (`ku-languages-literature-german`)
 
-*The logic of German* — 1 chapters · 1 sections
+*The logic of German* — 2 chapters · 2 sections
 
 - **Ch 1. German Foundations** `ku-languages-literature-german-german-foundations` — 1 sections: German Foundations: Cases, Word Order and Cognates
+- **Ch 2. German Verbs** `ku-languages-literature-german-german-verbs` — 1 sections: German Verbs: Stem Changes, Separable Prefixes and the Perfect
 
 ### Hindi (`ku-languages-literature-hindi`)
 
@@ -1375,9 +1379,10 @@
 
 ### Contract Law (`ku-law-governance-contract-law`)
 
-*Rules, states and constitutions* — 1 chapters · 1 sections
+*Rules, states and constitutions* — 2 chapters · 2 sections
 
 - **Ch 1. Indian Contract Act 1872** `ku-law-governance-contract-law-indian-contract-act-1872` — 1 sections: The Indian Contract Act: Formation, Breach and Remedies
+- **Ch 2. Consent & Validity** `ku-law-governance-contract-law-consent-and-validity` — 1 sections: When Consent Fails: Void and Voidable Agreements
 
 ## Business & Economics — 11 subjects
 
@@ -1430,10 +1435,11 @@
 
 ### Accounting (`ku-business-economics-accounting`)
 
-*The language of business* — 2 chapters · 2 sections
+*The language of business* — 3 chapters · 3 sections
 
 - **Ch 1. The Ledger** `ku-business-economics-accounting-the-ledger` — 1 sections: Double-Entry Bookkeeping: The Logic Behind Every Ledger
 - **Ch 2. Reading Statements** `ku-business-economics-accounting-reading-statements` — 1 sections: Reading Financial Statements: Balance Sheet, Income and Cash Flow
+- **Ch 3. Accounting Cycle** `ku-business-economics-accounting-accounting-cycle` — 1 sections: The Accounting Cycle: Accruals, Adjustments and Closing the Books
 
 ### Marketing (`ku-business-economics-marketing`)
 

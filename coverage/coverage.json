@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T18:48:25.330Z",
+  "generatedAt": "2026-10-20T19:02:47.599Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 174,
     "books": 174,
-    "chapters": 803,
-    "sections": 4367
+    "chapters": 809,
+    "sections": 4373
   },
   "subjects": [
     {
@@ -28840,8 +28840,8 @@
       "name": "Spanish",
       "group": "Languages & World Literature",
       "tagline": "Two verbs for to be",
-      "chapterCount": 2,
-      "sectionCount": 2,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-languages-literature-spanish-verb-semantics",
@@ -28872,6 +28872,21 @@
               "title": "Survival Spanish: Greetings, Numbers and the Phrases That Matter"
             }
           ]
+        },
+        {
+          "id": "ku-languages-literature-spanish-verb-morphology",
+          "number": 3,
+          "title": "Verb Morphology",
+          "shortTitle": "Verb Morphology",
+          "bookId": "ku-languages-literature-spanish",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-spanish-verbs",
+              "number": 3.1,
+              "title": "Spanish Verbs: Endings, Boot Verbs and Two Pasts"
+            }
+          ]
         }
       ]
     },
@@ -28880,8 +28895,8 @@
       "name": "Japanese",
       "group": "Languages & World Literature",
       "tagline": "Three scripts, one language",
-      "chapterCount": 2,
-      "sectionCount": 2,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-languages-literature-japanese-sentence-structure",
@@ -28910,6 +28925,21 @@
               "id": "ku-lang-japanese-writing",
               "number": 2.1,
               "title": "Hiragana, Katakana and Kanji: How Japanese Writing Works"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-japanese-verbs-and-politeness",
+          "number": 3,
+          "title": "Verbs & Politeness",
+          "shortTitle": "Verbs & Politeness",
+          "bookId": "ku-languages-literature-japanese",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-japanese-verbs",
+              "number": 3.1,
+              "title": "Japanese Verbs: Three Groups, the te-Form and the Politeness Engine"
             }
           ]
         }
@@ -29070,8 +29100,8 @@
       "name": "French",
       "group": "Languages & World Literature",
       "tagline": "Say it like the French",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-languages-literature-french-french-foundations",
@@ -29085,6 +29115,21 @@
               "id": "ku-lang-french-foundations",
               "number": 1.1,
               "title": "French Foundations: Pronunciation, Articles and First Phrases"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-french-french-verbs",
+          "number": 2,
+          "title": "French Verbs",
+          "shortTitle": "French Verbs",
+          "bookId": "ku-languages-literature-french",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-french-verbs",
+              "number": 2.1,
+              "title": "French Verbs: Three Endings, Four Rebels and the Compound Past"
             }
           ]
         }
@@ -29160,8 +29205,8 @@
       "name": "German",
       "group": "Languages & World Literature",
       "tagline": "The logic of German",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-languages-literature-german-german-foundations",
@@ -29175,6 +29220,21 @@
               "id": "ku-lang-german-foundations",
               "number": 1.1,
               "title": "German Foundations: Cases, Word Order and Cognates"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-german-german-verbs",
+          "number": 2,
+          "title": "German Verbs",
+          "shortTitle": "German Verbs",
+          "bookId": "ku-languages-literature-german",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-german-verbs",
+              "number": 2.1,
+              "title": "German Verbs: Stem Changes, Separable Prefixes and the Perfect"
             }
           ]
         }
@@ -29590,8 +29650,8 @@
       "name": "Contract Law",
       "group": "Law & Governance",
       "tagline": "Rules, states and constitutions",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-law-governance-contract-law-indian-contract-act-1872",
@@ -29605,6 +29665,21 @@
               "id": "ku-law-indian-contract-act",
               "number": 1.1,
               "title": "The Indian Contract Act: Formation, Breach and Remedies"
+            }
+          ]
+        },
+        {
+          "id": "ku-law-governance-contract-law-consent-and-validity",
+          "number": 2,
+          "title": "Consent & Validity",
+          "shortTitle": "Consent & Validity",
+          "bookId": "ku-law-governance-contract-law",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-consent-defects-void-voidable",
+              "number": 2.1,
+              "title": "When Consent Fails: Void and Voidable Agreements"
             }
           ]
         }
@@ -29930,8 +30005,8 @@
       "name": "Accounting",
       "group": "Business & Economics",
       "tagline": "The language of business",
-      "chapterCount": 2,
-      "sectionCount": 2,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-business-economics-accounting-the-ledger",
@@ -29960,6 +30035,21 @@
               "id": "ku-acct-financial-statements",
               "number": 2.1,
               "title": "Reading Financial Statements: Balance Sheet, Income and Cash Flow"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-accounting-accounting-cycle",
+          "number": 3,
+          "title": "Accounting Cycle",
+          "shortTitle": "Accounting Cycle",
+          "bookId": "ku-business-economics-accounting",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-acct-accounting-cycle-accruals",
+              "number": 3.1,
+              "title": "The Accounting Cycle: Accruals, Adjustments and Closing the Books"
             }
           ]
         }
