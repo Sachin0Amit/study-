@@ -23,6 +23,7 @@ import {
   BookmarkPlus,
   Brain,
   CalendarCheck,
+  CalendarClock,
   CalendarDays,
   CalendarRange,
   Check,
@@ -45,6 +46,7 @@ import {
   Plus,
   RotateCcw,
   Settings2,
+  Share2,
   Sparkles,
   Sun,
   Target,
@@ -89,7 +91,20 @@ import {
   setMasterVolume,
   toggleLayer,
   useSoundscape,
+  useSoundscapeDucked,
 } from '@/lib/soundscape'
+import { celebrateStreakMilestone } from '@/lib/celebrate'
+import { downloadWeeklyShareCard } from '@/lib/share-card'
+import {
+  addExam,
+  daysUntil,
+  examDateLine,
+  examTone,
+  removeExam,
+  upcomingExams,
+  useFocusExams,
+  weeksBreakdown,
+} from '@/lib/focus-exams'
 
 /* ------------------------------------------------------------------ */
 /*  API row types                                                      */
@@ -1022,6 +1037,7 @@ const SOUND_PRESETS: { id: 'off' | 'rain' | 'deep' | 'coffee' | 'bonfire'; label
 
 function SoundscapeCard() {
   const sound = useSoundscape()
+  const ducked = useSoundscapeDucked()
   const playing = sound.master > 0 && SOUND_LAYERS.some((l) => sound.layers[l.id] > 0)
   const activeCount = SOUND_LAYERS.filter((l) => sound.layers[l.id] > 0).length
 
@@ -1039,7 +1055,7 @@ function SoundscapeCard() {
                 <Music4 className="h-3.5 w-3.5 text-emerald-300" aria-hidden />
               </span>
               Soundscape
-              <EqBars playing={playing} />
+              <EqBars playing={playing && !ducked} />
             </h3>
             <p className="mt-1 text-[11px] text-muted-foreground">
               Ambient layers synthesized live — zero audio files. Keeps playing while you browse.
@@ -1167,7 +1183,11 @@ function SoundscapeCard() {
         </div>
 
         <p className="text-[10px] text-muted-foreground/70">
-          {playing ? (
+          {ducked ? (
+            <span className="font-semibold text-emerald-600 dark:text-emerald-300">
+              🎧 Auto-paused — the room returns with your next focus block
+            </span>
+          ) : playing ? (
             <>
               {activeCount} layer{activeCount === 1 ? '' : 's'} playing · mix fades smoothly in and out ·
               settings remembered on this device
@@ -1180,6 +1200,333 @@ function SoundscapeCard() {
           )}
         </p>
       </div>
+    </section>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/*  X11G — Exam D-day countdown (the YeolPumeto planner pillar)        */
+/* ------------------------------------------------------------------ */
+
+function ExamCountdownCard() {
+  const { exams, refresh } = useFocusExams()
+  const settings = useFocusSettings()
+  const [adding, setAdding] = useState(false)
+  const [title, setTitle] = useState('')
+  const [date, setDate] = useState('')
+  const [note, setNote] = useState('')
+  const [busy, setBusy] = useState(false)
+
+  const upcoming = upcomingExams(exams)
+  const past = (exams ?? []).filter((e) => daysUntil(e.examDate) < 0)
+  const next = upcoming[0]
+  const nextDays = next ? daysUntil(next.examDate) : 0
+  const tone = examTone(nextDays)
+
+  // countdown progress: fraction of the add→exam span already behind you
+  let waitPct = 0
+  if (next) {
+    const created = new Date(next.createdAt).getTime()
+    const [y, m, d] = next.examDate.split('-').map(Number)
+    const exam = new Date(y, m - 1, d).getTime()
+    const span = exam - created
+    waitPct = span > 0 ? Math.min(100, Math.max(0, Math.round(((Date.now() - created) / span) * 100))) : 100
+  }
+  const paceHours = next ? Math.round((nextDays * settings.dailyGoalMin) / 60) : 0
+
+  async function submit() {
+    const t = title.trim()
+    if (!t || !date || busy) return
+    setBusy(true)
+    try {
+      await addExam(t, date, note.trim() || undefined)
+      toast.success('D-day on the calendar', {
+        description: `“${t.slice(0, 40)}” · ${examDateLine(date)}`,
+      })
+      setTitle('')
+      setDate('')
+      setNote('')
+      setAdding(false)
+      refresh()
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Could not add the exam')
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  async function remove(id: string, label: string) {
+    try {
+      await removeExam(id)
+      toast.success(`Removed “${label.slice(0, 30)}”`)
+      refresh()
+    } catch {
+      toast.error('Could not remove the exam')
+    }
+  }
+
+  return (
+    <section aria-label="Exam D-day countdown" className="rounded-3xl border border-border/80 bg-card p-5">
+      <div className="flex items-center justify-between gap-2">
+        <h3 className="flex items-center gap-2 text-sm font-bold">
+          <CalendarClock className="h-4 w-4 text-emerald-300" aria-hidden /> D-day planner
+        </h3>
+        <div className="flex items-center gap-2">
+          {upcoming.length > 0 && (
+            <span className="rounded-full border border-border/70 bg-muted/30 px-2 py-0.5 text-[10px] font-bold text-muted-foreground">
+              {upcoming.length} upcoming
+            </span>
+          )}
+          <button
+            type="button"
+            onClick={() => setAdding((v) => !v)}
+            aria-expanded={adding}
+            aria-label={adding ? 'Close the add-exam form' : 'Add an exam D-day'}
+            className="flex h-7 w-7 items-center justify-center rounded-full border border-emerald-400/40 bg-emerald-400/10 text-emerald-600 transition-all hover:bg-emerald-400/20 active:scale-95 dark:text-emerald-300"
+          >
+            {adding ? <Minus className="h-3.5 w-3.5" aria-hidden /> : <Plus className="h-3.5 w-3.5" aria-hidden />}
+          </button>
+        </div>
+      </div>
+
+      {/* add-exam form */}
+      {adding && (
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            void submit()
+          }}
+          className="mt-3 flex flex-col gap-2 rounded-2xl border border-emerald-400/30 bg-emerald-400/[0.05] p-3"
+        >
+          <input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Exam name — e.g. JEE Main 2027"
+            maxLength={60}
+            autoFocus
+            aria-label="Exam name"
+            className="h-9 rounded-xl border border-border bg-background px-3 text-xs font-medium outline-none transition-colors focus:border-emerald-400/50"
+          />
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              aria-label="Exam date"
+              className="h-9 flex-1 rounded-xl border border-border bg-background px-3 text-xs font-medium [color-scheme:dark] outline-none transition-colors focus:border-emerald-400/50"
+            />
+            <input
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
+              placeholder="Note (optional)"
+              maxLength={120}
+              aria-label="Optional note"
+              className="h-9 flex-1 rounded-xl border border-border bg-background px-3 text-xs font-medium outline-none transition-colors focus:border-emerald-400/50"
+            />
+          </div>
+          <div className="flex gap-2">
+            <button
+              type="submit"
+              disabled={!title.trim() || !date || busy}
+              className="flex-1 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 py-2 text-xs font-bold text-white shadow-lg shadow-emerald-500/20 transition-all hover:brightness-110 active:scale-[0.98] disabled:opacity-40 disabled:shadow-none"
+            >
+              {busy ? 'Adding…' : 'Pin the D-day'}
+            </button>
+            <button
+              type="button"
+              onClick={() => setAdding(false)}
+              className="rounded-xl border border-border bg-muted/40 px-3 py-2 text-xs font-bold text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      )}
+
+      {exams === null ? (
+        /* loading skeleton */
+        <div className="mt-4 space-y-2" aria-hidden>
+          <div className="h-20 animate-pulse rounded-2xl bg-muted/40" />
+          <div className="h-8 animate-pulse rounded-xl bg-muted/30" />
+        </div>
+      ) : next ? (
+        <>
+          {/* hero — the next exam */}
+          <div
+            className="relative mt-3 overflow-hidden rounded-2xl border p-4"
+            style={{
+              borderColor: `${tone.hex}55`,
+              background: `linear-gradient(135deg, ${tone.hex}14, transparent 65%)`,
+            }}
+          >
+            <div className="flex items-start gap-4">
+              <div className="flex min-w-[4.5rem] flex-col items-center">
+                <span
+                  className={`whitespace-nowrap text-4xl font-black tabular-nums leading-none tracking-tight ${tone.text} ${
+                    nextDays <= 2 ? 'sv-dday-pulse' : ''
+                  }`}
+                >
+                  {nextDays === 0 ? 'D-day' : `D-${nextDays}`}
+                </span>
+                <span className={`mt-1.5 rounded-full border px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider ${tone.chip}`}>
+                  {tone.label}
+                </span>
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-sm font-bold" title={next.title}>
+                  {next.title}
+                </p>
+                <p className="mt-0.5 text-[11px] text-muted-foreground">{examDateLine(next.examDate)}</p>
+                <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+                  <span className={`rounded-full border px-2 py-0.5 text-[10px] font-bold tabular-nums ${tone.chip}`}>
+                    ⏳ {weeksBreakdown(Math.max(nextDays, 0))} to go
+                  </span>
+                  {paceHours > 0 && (
+                    <span className="rounded-full border border-border/70 bg-muted/30 px-2 py-0.5 text-[10px] font-semibold text-muted-foreground">
+                      ≈ {paceHours}h of focus left at your pace
+                    </span>
+                  )}
+                  {next.note && (
+                    <span className="max-w-full truncate rounded-full border border-border/70 bg-muted/30 px-2 py-0.5 text-[10px] text-muted-foreground" title={next.note}>
+                      📝 {next.note}
+                    </span>
+                  )}
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => void remove(next.id, next.title)}
+                aria-label={`Remove “${next.title}”`}
+                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-muted-foreground/50 transition-colors hover:bg-red-500/10 hover:text-red-500"
+              >
+                <Trash2 className="h-3.5 w-3.5" aria-hidden />
+              </button>
+            </div>
+
+            {/* countdown progress bar — how much of the wait is behind you */}
+            <div className="mt-3.5">
+              <div className="flex items-center justify-between text-[10px] font-semibold text-muted-foreground">
+                <span>countdown progress</span>
+                <span className="tabular-nums">{waitPct}% of the wait behind you</span>
+              </div>
+              <div className="mt-1 h-1.5 overflow-hidden rounded-full border border-border/60 bg-muted/80">
+                <div
+                  className="h-full rounded-full transition-all duration-700"
+                  style={{ width: `${waitPct}%`, background: `linear-gradient(90deg, ${tone.hex}88, ${tone.hex})` }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* the rest of the horizon */}
+          {upcoming.length > 1 && (
+            <ul className="mt-2.5 flex flex-col gap-1">
+              {upcoming.slice(1).map((e) => {
+                const d = daysUntil(e.examDate)
+                const t = examTone(d)
+                return (
+                  <li key={e.id} className="group/exam flex items-center gap-2.5 rounded-xl border border-border/60 bg-muted/20 px-3 py-2 transition-colors hover:border-border">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: t.hex }} aria-hidden />
+                    <span className="min-w-0 flex-1 truncate text-xs font-semibold" title={e.title}>
+                      {e.title}
+                    </span>
+                    <span className="shrink-0 text-[10px] text-muted-foreground">{examDateLine(e.examDate).split(', ')[1]}</span>
+                    <span className={`shrink-0 rounded-full border px-1.5 py-0.5 text-[10px] font-bold tabular-nums ${t.chip}`}>
+                      D-{d}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => void remove(e.id, e.title)}
+                      aria-label={`Remove “${e.title}”`}
+                      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-muted-foreground/40 opacity-0 transition-all hover:bg-red-500/10 hover:text-red-500 group-hover/exam:opacity-100"
+                    >
+                      <Trash2 className="h-3 w-3" aria-hidden />
+                    </button>
+                  </li>
+                )
+              })}
+            </ul>
+          )}
+
+          {/* recent past D-days — a quiet victory lap */}
+          {past.length > 0 && (
+            <div className="mt-2.5 border-t border-dashed border-border/60 pt-2">
+              <p className="text-[9.5px] font-bold uppercase tracking-[0.1em] text-muted-foreground/60">
+                cleared
+              </p>
+              <ul className="mt-1 flex flex-col gap-1">
+                {past.slice(-3).map((e) => (
+                  <li key={e.id} className="group/exam flex items-center gap-2.5 px-1 py-1">
+                    <Check className="h-3 w-3 shrink-0 text-emerald-500" aria-hidden />
+                    <span className="min-w-0 flex-1 truncate text-[11px] font-medium text-muted-foreground line-through decoration-muted-foreground/40" title={e.title}>
+                      {e.title}
+                    </span>
+                    <span className="shrink-0 text-[9.5px] tabular-nums text-muted-foreground/50">
+                      {examDateLine(e.examDate).split(', ').slice(1).join(', ')}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => void remove(e.id, e.title)}
+                      aria-label={`Remove past exam “${e.title}”`}
+                      className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-muted-foreground/30 opacity-0 transition-all hover:bg-red-500/10 hover:text-red-500 group-hover/exam:opacity-100"
+                    >
+                      <Trash2 className="h-2.5 w-2.5" aria-hidden />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </>
+      ) : past.length > 0 ? (
+        <div className="mt-3">
+          <button
+            type="button"
+            onClick={() => setAdding(true)}
+            className="w-full rounded-2xl border border-dashed border-border py-4 text-center text-xs font-semibold text-muted-foreground transition-all hover:border-emerald-400/50 hover:bg-emerald-400/[0.04] hover:text-emerald-600 dark:hover:text-emerald-300"
+          >
+            <CalendarClock className="mr-1.5 inline h-3.5 w-3.5" aria-hidden />
+            No D-day ahead — pin your next exam
+          </button>
+          <ul className="mt-2 flex flex-col gap-1">
+            {past.slice(-3).map((e) => (
+              <li key={e.id} className="group/exam flex items-center gap-2.5 px-1 py-1">
+                <Check className="h-3 w-3 shrink-0 text-emerald-500" aria-hidden />
+                <span className="min-w-0 flex-1 truncate text-[11px] font-medium text-muted-foreground line-through decoration-muted-foreground/40">
+                  {e.title}
+                </span>
+                <span className="shrink-0 text-[9.5px] tabular-nums text-muted-foreground/50">
+                  {examDateLine(e.examDate).split(', ').slice(1).join(', ')}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => void remove(e.id, e.title)}
+                  aria-label={`Remove past exam “${e.title}”`}
+                  className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-muted-foreground/30 opacity-0 transition-all hover:bg-red-500/10 hover:text-red-500 group-hover/exam:opacity-100"
+                >
+                  <Trash2 className="h-2.5 w-2.5" aria-hidden />
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        /* empty state */
+        <div className="mt-3 flex flex-col items-center gap-2 rounded-2xl border border-dashed border-border/80 py-7 text-center">
+          <span className="text-3xl" aria-hidden>🎯</span>
+          <p className="max-w-[34ch] text-xs text-muted-foreground">
+            Pin an exam date and every focus block gains a deadline — countdown,
+            pace projection and a quiet “cleared” list when it&apos;s done.
+          </p>
+          <button
+            type="button"
+            onClick={() => setAdding(true)}
+            className="mt-1 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 px-4 py-1.5 text-xs font-bold text-white shadow-lg shadow-emerald-500/20 transition-all hover:brightness-110 active:scale-95"
+          >
+            + Pin your first D-day
+          </button>
+        </div>
+      )}
     </section>
   )
 }
@@ -1281,7 +1628,7 @@ function DailyGoalCard({ stats }: { stats: StatsPayload | null }) {
 }
 
 /** this week vs last week — momentum, best day, active days */
-function WeeklyDigestCard({ stats }: { stats: StatsPayload | null }) {
+function WeeklyDigestCard({ stats, onShare }: { stats: StatsPayload | null; onShare: () => void }) {
   // stats.days spans the year (heatmap) — window to the trailing fortnight
   const fortnight = (stats?.days ?? []).slice(-14)
   const thisWeek = fortnight.slice(-7)
@@ -1298,9 +1645,20 @@ function WeeklyDigestCard({ stats }: { stats: StatsPayload | null }) {
 
   return (
     <section aria-label="Weekly digest" className="rounded-3xl border border-border/80 bg-card p-5">
-      <h3 className="flex items-center gap-2 text-sm font-bold">
-        <CalendarRange className="h-4 w-4 text-emerald-300" aria-hidden /> This week
-      </h3>
+      <div className="flex items-center justify-between gap-2">
+        <h3 className="flex items-center gap-2 text-sm font-bold">
+          <CalendarRange className="h-4 w-4 text-emerald-300" aria-hidden /> This week
+        </h3>
+        <button
+          type="button"
+          onClick={onShare}
+          title="Export this week as a story-format PNG"
+          aria-label="Export this week as a share card"
+          className="flex items-center gap-1.5 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-2.5 py-1 text-[10.5px] font-bold text-emerald-600 transition-all hover:bg-emerald-400/20 active:scale-95 dark:text-emerald-300"
+        >
+          <Share2 className="h-3 w-3" aria-hidden /> Share
+        </button>
+      </div>
       <div className="mt-3 flex items-end justify-between gap-3">
         <div className="flex items-end gap-2">
           <span className="text-3xl font-black leading-none tabular-nums tracking-tight">
@@ -2521,6 +2879,7 @@ function SettingsCard() {
             ['autoBreak', 'Auto-start breaks', 'The break begins itself when a pomodoro ends'],
             ['autoFocus', 'Auto-start next focus', 'Chain focus blocks after breaks end'],
             ['sound', 'Completion chime', 'A soft two-tone when sessions finish'],
+            ['scapeAutoPause', 'Auto-pause ambience', 'Soundscape fades out on breaks — the room returns with focus'],
           ] as const
         ).map(([key, label, hint]) => (
           <label key={key} className="flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-border/70 bg-muted/20 px-3 py-2">
@@ -2768,6 +3127,83 @@ export function FocusView() {
   const topSubject = stats?.subjects[0]
   const goalStreak = stats ? goalStreakOf(stats.days, settings.dailyGoalMin) : 0
 
+  /* X11G — streak milestone ceremony: confetti exactly once per milestone */
+  const milestoneSeen = useRef(-1)
+  useEffect(() => {
+    if (goalStreak <= 0 || milestoneSeen.current === goalStreak) return
+    milestoneSeen.current = goalStreak
+    const m = celebrateStreakMilestone(goalStreak)
+    if (m) {
+      toast.success(`🔥 ${m}-day goal streak!`, {
+        description: 'Milestone unlocked — the heatmap remembers. Keep the chain alive.',
+        duration: 6000,
+      })
+    }
+  }, [goalStreak])
+
+  /** X11G — render this week as a story-format PNG share card */
+  const shareWeekly = useCallback(async () => {
+    try {
+      const deviceId = ensureDevice()
+      const [statsRes, sessRes] = await Promise.all([
+        fetch(`/api/focus/stats?deviceId=${encodeURIComponent(deviceId)}&days=14`),
+        fetch(`/api/focus/sessions?deviceId=${encodeURIComponent(deviceId)}&limit=500`),
+      ])
+      if (!statsRes.ok || !sessRes.ok) throw new Error('data unavailable')
+      const statsData = (await statsRes.json()) as StatsPayload
+      const { sessions: rows } = (await sessRes.json()) as { sessions: SessionRow[] }
+
+      const days = (statsData.days ?? []).slice(-7)
+      if (days.length < 7 || days.every((d) => d.minutes === 0)) {
+        toast.info('Nothing to share yet', {
+          description: 'Run a pomodoro first — your week lights up on the card.',
+        })
+        return
+      }
+
+      // this week's subjects come from the session log (stats.subjects is all-time)
+      const weekAgo = Date.now() - 6 * 86_400_000
+      const bySubject = new Map<string, number>()
+      for (const s of rows) {
+        if (s.kind !== 'focus' || !s.subject) continue
+        if (new Date(s.startedAt).getTime() < weekAgo) continue
+        bySubject.set(s.subject, (bySubject.get(s.subject) ?? 0) + s.actualSec / 60)
+      }
+      const topSubjects = [...bySubject.entries()]
+        .map(([subject, minutes]) => ({ subject, minutes: Math.round(minutes) }))
+        .sort((a, b) => b.minutes - a.minutes)
+        .slice(0, 3)
+
+      const totalMinutes = days.reduce((n, d) => n + d.minutes, 0)
+      const pomodoros = days.reduce((n, d) => n + d.pomodoros, 0)
+      const goalDays = days.filter((d) => d.minutes >= settings.dailyGoalMin && settings.dailyGoalMin > 0).length
+      const bestDayMinutes = Math.max(0, ...days.map((d) => d.minutes))
+      const fmt = (key: string) =>
+        new Date(`${key}T00:00:00`).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
+
+      const ok = downloadWeeklyShareCard({
+        weekLabel: `${fmt(days[0].day)} – ${fmt(days[6].day)}`,
+        totalMinutes,
+        pomodoros,
+        goalDays,
+        bestDayMinutes,
+        streakDays: statsData.totals.streakDays,
+        goalMin: settings.dailyGoalMin,
+        days: days.map((d) => ({ label: d.label.slice(0, 3), minutes: d.minutes })),
+        topSubjects,
+      })
+      if (ok) {
+        toast.success('Week card exported', {
+          description: 'storyverse-week.png — 1080×1350, ready for your story or group chat',
+        })
+      } else {
+        toast.error('Could not render the share card')
+      }
+    } catch {
+      toast.error('Could not build the share card')
+    }
+  }, [ensureDevice, settings.dailyGoalMin])
+
   /** attach/edit a journal note on a completed session (recent-sessions card) */
   const saveNote = useCallback(
     async (id: string, note: string) => {
@@ -2853,6 +3289,7 @@ export function FocusView() {
             activeTaskId={engine.linkage?.taskId ?? null}
             engineRunning={engine.running && engine.kind === 'focus'}
           />
+          <ExamCountdownCard />
           <SoundscapeCard />
         </div>
 
@@ -2877,7 +3314,7 @@ export function FocusView() {
             )}
           </section>
 
-          <WeeklyDigestCard stats={stats} />
+          <WeeklyDigestCard stats={stats} onShare={shareWeekly} />
           <RecordsCard stats={stats} />
           <TrendCard stats={stats} />
           <SubjectsCard stats={stats} onSubjectClick={setSubjectDetail} />

@@ -324,6 +324,17 @@ model FocusTask {
   @@index([deviceId, completed, position])
 }
 
+model FocusExam {
+  id        String   @id @default(cuid())
+  deviceId  String
+  title     String // e.g. "JEE Main 2027"
+  examDate  String // local "YYYY-MM-DD" — the D-day
+  note      String? // optional plan / exam-center line
+  createdAt DateTime @default(now())
+
+  @@index([deviceId, examDate])
+}
+
 model FocusSession {
   id           String   @id @default(cuid())
   deviceId     String

@@ -81,3 +81,4 @@ upload/
 # runtime pid
 .zscripts/dev.pid
 tmpscripts/
+qa-shots/

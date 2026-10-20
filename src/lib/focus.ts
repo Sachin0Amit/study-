@@ -49,6 +49,7 @@ export interface FocusSettings {
   autoBreak: boolean // auto-start the break after a focus session
   autoFocus: boolean // auto-start the next focus after a break
   sound: boolean
+  scapeAutoPause: boolean // X11G: duck ambient soundscape when not in a focus block
   dailyGoalMin: number // daily deep-focus target in minutes
 }
 
@@ -192,6 +193,7 @@ export const DEFAULT_FOCUS_SETTINGS: FocusSettings = {
   autoBreak: false,
   autoFocus: false,
   sound: true,
+  scapeAutoPause: false,
   dailyGoalMin: 120,
 }
 
@@ -214,6 +216,7 @@ export function readFocusSettings(): FocusSettings {
       autoBreak: Boolean(s.autoBreak),
       autoFocus: Boolean(s.autoFocus),
       sound: s.sound === undefined ? true : Boolean(s.sound),
+      scapeAutoPause: s.scapeAutoPause === undefined ? false : Boolean(s.scapeAutoPause),
       dailyGoalMin: clamp(s.dailyGoalMin, 15, 720, 120),
     }
   } catch {
@@ -363,6 +366,24 @@ function getEngineSnapshot(): FocusEngineState {
 }
 export function useFocusEngine(): FocusEngineState {
   return useSyncExternalStore(subscribeEngine, getEngineSnapshot, () => INITIAL)
+}
+
+/** X11G — plain (non-React) access for cross-module listeners (soundscape ducking). */
+export function getFocusEngineSnapshot(): FocusEngineState {
+  return engineSnapshot
+}
+export function subscribeFocusEngine(fn: () => void): () => void {
+  return subscribeEngine(fn)
+}
+/** X11G — current settings without a React hook (for module-level engines). */
+export function getFocusSettingsSnapshot(): FocusSettings {
+  return settingsState
+}
+export function subscribeFocusSettings(fn: () => void): () => void {
+  settingsListeners.add(fn)
+  return () => {
+    settingsListeners.delete(fn)
+  }
 }
 
 /* ---- ticking (single module interval, drift-proof via endAt) ------- */

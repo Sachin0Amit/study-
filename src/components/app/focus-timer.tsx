@@ -30,6 +30,7 @@ import { createPortal } from 'react-dom'
 import {
   BarChart3,
   Brain,
+  CalendarClock,
   CalendarDays,
   Check,
   ChevronDown,
@@ -84,6 +85,7 @@ import {
   toggleLayer,
   useSoundscape,
 } from '@/lib/soundscape'
+import { daysUntil, examTone, upcomingExams, useFocusExams } from '@/lib/focus-exams'
 
 // re-exported for older call sites (command palette binds these helpers)
 export { requestFocusStart, requestFocusToggle, requestFocusStats } from '@/lib/focus'
@@ -489,6 +491,32 @@ export function FocusTimer() {
 /*  Soundscape row — compact ambient mixer inside the Pod (X11F)       */
 /* ------------------------------------------------------------------ */
 
+/** X11G — next-exam D-day chip (shares the exam store with Focus HQ) */
+function PodExamChip() {
+  const { exams } = useFocusExams()
+  const next = upcomingExams(exams)[0]
+  if (!next) return null
+  const d = daysUntil(next.examDate)
+  const tone = examTone(d)
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        useStudy.setState({ view: { name: 'focus' } })
+      }}
+      title={`${next.title} — ${d === 0 ? 'today' : `${d} day${d === 1 ? '' : 's'} to go`}. Opens Focus HQ.`}
+      className="flex w-full items-center gap-2 rounded-full border px-3 py-1.5 text-left transition-all hover:brightness-110 active:scale-[0.98]"
+      style={{ borderColor: `${tone.hex}44`, background: `${tone.hex}0f` }}
+    >
+      <CalendarClock className="h-3.5 w-3.5 shrink-0" style={{ color: tone.hex }} aria-hidden />
+      <span className="min-w-0 flex-1 truncate text-[11px] font-semibold">{next.title}</span>
+      <span className="shrink-0 rounded-full px-1.5 py-0.5 text-[10px] font-black tabular-nums" style={{ color: tone.hex }}>
+        {d === 0 ? 'D-day' : `D-${d}`}
+      </span>
+    </button>
+  )
+}
+
 function PodSoundscapeRow() {
   const sound = useSoundscape()
   const audible = sound.master > 0
@@ -893,6 +921,9 @@ function WidgetChrome({ s, settings }: { s: FocusEngineState; settings: FocusSet
                     Bank progress &amp; skip to break →
                   </button>
                 )}
+
+                {/* X11G — next exam D-day chip (tap → Focus HQ planner) */}
+                <PodExamChip />
 
                 {/* interruption logging (while a focus session runs) */}
                 {isFocus && s.running && (

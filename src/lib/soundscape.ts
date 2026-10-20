@@ -1,6 +1,12 @@
 'use client'
 
 import { useSyncExternalStore } from 'react'
+import {
+  getFocusEngineSnapshot,
+  getFocusSettingsSnapshot,
+  subscribeFocusEngine,
+  subscribeFocusSettings,
+} from './focus'
 
 /**
  * X11F — Ambient Soundscape engine.
@@ -102,6 +108,48 @@ function persist(): void {
 
 function notify(): void {
   for (const fn of listeners) fn()
+}
+
+/* ------------------------------------------------------------------ */
+/*  X11G — focus ducking (auto-pause ambience outside focus blocks)    */
+/* ------------------------------------------------------------------ */
+
+/**
+ * When the "Auto-pause ambience" ritual setting is on, the whole mix
+ * fades to silence whenever the timer is NOT inside a running focus
+ * block (breaks, pauses, idle). The user's saved levels are untouched —
+ * ducking is a separate multiplier on the master gain, so a new focus
+ * block restores the room instantly and smoothly.
+ */
+let ducked = false
+
+function applyDuck(on: boolean): void {
+  if (ducked === on) return
+  ducked = on
+  // no AudioContext exists before the first user gesture — the duck factor
+  // is a plain multiplier read on every sync, so it applies on next sync
+  if (ctx) syncLayers()
+  notify()
+}
+
+function evalDuck(): void {
+  if (!getFocusSettingsSnapshot().scapeAutoPause) {
+    applyDuck(false)
+    return
+  }
+  const s = getFocusEngineSnapshot()
+  applyDuck(!(s.running && s.kind === 'focus'))
+}
+
+if (typeof window !== 'undefined') {
+  subscribeFocusEngine(evalDuck)
+  subscribeFocusSettings(evalDuck)
+  evalDuck()
+}
+
+/** true while the mix is silenced by the auto-pause ritual */
+export function isSoundscapeDucked(): boolean {
+  return ducked
 }
 
 /* ------------------------------------------------------------------ */
@@ -434,8 +482,9 @@ function syncLayers(): void {
     }
   }
 
-  // master volume (always driven, so mute/unmute fades smoothly)
-  masterGain.gain.setTargetAtTime(state.master, now, 0.15)
+  // master volume (always driven, so mute/unmute fades smoothly) —
+  // the X11G duck multiplier silences the room outside focus blocks
+  masterGain.gain.setTargetAtTime(state.master * (ducked ? 0 : 1), now, 0.15)
 }
 
 /* ---- public API ----------------------------------------------------- */
@@ -526,4 +575,9 @@ export function subscribeSoundscape(fn: () => void): () => void {
 
 export function useSoundscape(): SoundscapeState {
   return useSyncExternalStore(subscribeSoundscape, getSoundscapeState)
+}
+
+/** X11G — React binding for the auto-pause duck state ("room silenced") */
+export function useSoundscapeDucked(): boolean {
+  return useSyncExternalStore(subscribeSoundscape, isSoundscapeDucked, () => false)
 }
