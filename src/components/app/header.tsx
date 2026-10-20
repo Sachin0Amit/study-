@@ -12,7 +12,6 @@ import {
   Search,
   Brain,
   Swords,
-  Timer,
 } from 'lucide-react'
 import { useStudy } from '@/store/useStudy'
 import { CommandPalette } from './command-palette'
@@ -28,7 +27,6 @@ const NAV = [
   { view: 'playground', label: 'Labs', icon: FlaskConical, easy: 'Play with live demos' },
   { view: 'flashcards', label: 'Cards', icon: Layers, easy: 'Quick memory cards' },
   { view: 'review', label: 'Review', icon: Repeat, easy: 'Spaced-repetition memory drills' },
-  { view: 'focus', label: 'Focus', icon: Timer, easy: 'Pomodoro timer + to-do list + study-time stats' },
   { view: 'formulas', label: 'Formulas', icon: Sigma, easy: 'All key formulas' },
   { view: 'progress', label: 'Progress', icon: BarChart3, easy: 'Your learning score' },
 ] as const

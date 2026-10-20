@@ -258,6 +258,17 @@
   background: var(--sv-scrollbar-hover);
 }
 
+/* X11b — while the floating Focus launcher (or its collapsed pill) occupies
+   the bottom-right corner, lift the scroll-to-top button above it */
+body[data-sv-focus-fab='1'] .sv-scroll-top-btn {
+  bottom: 6.25rem;
+}
+@media (max-width: 639px) {
+  body[data-sv-focus-fab='1'] .sv-scroll-top-btn {
+    bottom: 6rem;
+  }
+}
+
 /* Subtle grid-pattern backdrop */
 .sv-grid-bg {
   background-image:

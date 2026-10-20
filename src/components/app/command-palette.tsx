@@ -40,7 +40,6 @@ import type { SearchItem } from '@/data/search'
 import { searchLibrary as searchLibrarySync } from '@/data/search'
 import { useStudy } from '@/store/useStudy'
 import {
-  FocusTimer,
   requestFocusStart,
   requestFocusStats,
   requestFocusToggle,
@@ -732,9 +731,11 @@ export function CommandPalette() {
         </CommandList>
       </CommandDialog>
 
-      {/* X10 Pro — deep focus timer (self-suppresses if an app-level
-          <FocusTimerMount /> appears later; the engine survives unmounts) */}
-      <FocusTimer />
+      {/* X11b — the focus widget mounts ONCE at the page root
+          (<FocusTimerMount />). It must NOT render here: the header's
+          backdrop-blur creates a containing block that breaks the widget's
+          fixed positioning (clipped panel). The request* helpers above still
+          drive the engine from the palette. */}
       <ShortcutsOverlay />
     </>
   )
