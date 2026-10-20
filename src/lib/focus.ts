@@ -50,6 +50,7 @@ export interface FocusSettings {
   autoFocus: boolean // auto-start the next focus after a break
   sound: boolean
   scapeAutoPause: boolean // X11G: duck ambient soundscape when not in a focus block
+  distractionGuard: boolean // X11J: leaving the tab mid-focus logs an interruption
   dailyGoalMin: number // daily deep-focus target in minutes
 }
 
@@ -62,7 +63,13 @@ export interface FocusEngineState {
   hidden: boolean
   collapsed: boolean
   statsOpen: boolean
-  celebration: { kind: SessionKind; minutes: number; cycle: number; nextLong: boolean } | null
+  celebration: {
+    kind: SessionKind
+    minutes: number
+    cycle: number
+    nextLong: boolean
+    interruptions: number // X11J — guard-aware count for the celebration UI
+  } | null
   linkage: FocusLinkage | null
   cycle: number // pomodoros completed since the last long break
   interruptions: number // logged during the current focus session
@@ -78,6 +85,8 @@ export interface FocusEngineState {
 export const FOCUS_START_EVENT = 'sv:focus-start'
 export const FOCUS_TOGGLE_EVENT = 'sv:focus-toggle'
 export const FOCUS_STATS_EVENT = 'sv:focus-stats'
+/** X11J distraction guard — detail { type: 'away' | 'back', awayMs } */
+export const FOCUS_GUARD_EVENT = 'sv:focus-guard'
 
 export function requestFocusStart(minutes: number, linkage?: FocusLinkage): void {
   if (typeof window === 'undefined') return
@@ -194,6 +203,7 @@ export const DEFAULT_FOCUS_SETTINGS: FocusSettings = {
   autoFocus: false,
   sound: true,
   scapeAutoPause: false,
+  distractionGuard: true,
   dailyGoalMin: 120,
 }
 
@@ -217,6 +227,7 @@ export function readFocusSettings(): FocusSettings {
       autoFocus: Boolean(s.autoFocus),
       sound: s.sound === undefined ? true : Boolean(s.sound),
       scapeAutoPause: s.scapeAutoPause === undefined ? false : Boolean(s.scapeAutoPause),
+      distractionGuard: s.distractionGuard === undefined ? true : Boolean(s.distractionGuard),
       dailyGoalMin: clamp(s.dailyGoalMin, 15, 720, 120),
     }
   } catch {
@@ -390,6 +401,10 @@ export function subscribeFocusSettings(fn: () => void): () => void {
 
 let tickHandle: ReturnType<typeof setInterval> | null = null
 let endAt = 0
+/** X11J distraction guard — wall-clock moment the tab went hidden mid-run
+ *  (null = the tab is visible). Module-level so completeSession can bill a
+ *  session that rang while you were away. */
+let guardAwaySince: number | null = null
 
 function stopTick(): void {
   if (tickHandle !== null) {
@@ -570,10 +585,20 @@ function elapsedMs(): number {
 
 function completeSession(silent: boolean): void {
   stopTick()
-  const { kind, minutes, linkage, interruptions, startedAt, cycle } = engineState
+  const { kind, minutes, linkage, startedAt, cycle } = engineState
   const start = startedAt ?? Date.now() - minutes * 60_000
   const actualSec = Math.max(1, Math.round(elapsedMs() / 1000))
   let nextCycle = cycle
+  // X11J — the timer rang while the tab was hidden: that absence is an
+  // interruption too (billed once, never for sub-2s flickers)
+  let interruptions = engineState.interruptions
+  if (guardAwaySince !== null) {
+    const awayMs = Date.now() - guardAwaySince
+    guardAwaySince = null
+    if (kind === 'focus' && settingsState.distractionGuard && awayMs >= 2_000) {
+      interruptions += 1
+    }
+  }
 
   if (kind === 'focus') {
     appendFocusMinutes(minutes)
@@ -617,7 +642,7 @@ function completeSession(silent: boolean): void {
     resumedAt: null,
     celebration: silent
       ? null
-      : { kind, minutes, cycle: nextCycle, nextLong },
+      : { kind, minutes, cycle: nextCycle, nextLong, interruptions },
   })
 
   // auto-chaining (classic Pomodoro flow helpers)
@@ -874,6 +899,30 @@ if (typeof window !== 'undefined') {
       settingsState = readFocusSettings()
       for (const fn of settingsListeners) fn()
     }
+  })
+  // X11J distraction guard — leaving the tab mid-run is an interruption
+  // (Forest-style honesty), but sub-2s flickers are forgiven. The count is
+  // applied on RETURN (or at completion if the timer rang while you were
+  // away), so an accidental Cmd+Tab never marks the session.
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+      if (guardAwaySince === null) return
+      const awayMs = Date.now() - guardAwaySince
+      guardAwaySince = null
+      if (
+        awayMs >= 2_000 &&
+        engineState.running &&
+        engineState.kind === 'focus' &&
+        settingsState.distractionGuard
+      ) {
+        addInterruption()
+        if (awayMs >= 10_000) {
+          window.dispatchEvent(new CustomEvent(FOCUS_GUARD_EVENT, { detail: { type: 'back', awayMs } }))
+        }
+      }
+      return
+    }
+    if (engineState.running && engineState.kind === 'focus') guardAwaySince = Date.now()
   })
   // resume / silently complete a session that ran while the page was closed
   restoreLive()

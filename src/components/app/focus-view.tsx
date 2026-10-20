@@ -37,6 +37,7 @@ import {
   Hourglass,
   ListTodo,
   Minus,
+  Moon,
   Music4,
   NotebookPen,
   Pause,
@@ -110,6 +111,7 @@ import {
 } from '@/lib/focus-exams'
 import {
   clearPlan,
+  deferPlanBlock,
   generatePlan,
   planByDay,
   planTodayKey,
@@ -717,7 +719,7 @@ function TodoCard({
               placeholder="What will you study? e.g. “Finish thermodynamics laws”"
               aria-label="New task title"
               maxLength={160}
-              className="h-10 min-w-0 flex-1 rounded-xl border border-border bg-background px-3.5 text-sm outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-emerald-400/50"
+              className="h-10 min-w-0 flex-1 rounded-xl border border-border bg-background px-3.5 text-sm outline-none transition-all placeholder:text-muted-foreground/80 focus:border-emerald-400/50 focus:ring-2 focus:ring-emerald-400/15"
             />
             <button
               type="button"
@@ -2043,6 +2045,24 @@ function PlanCard({
     }
   }
 
+  /** X11J — push an unfinished today-block to tomorrow (appended at that
+   *  day's end). Life happens; the plan bends instead of breaking. */
+  const tomorrowKey = (() => {
+    const d = new Date(`${todayKey}T00:00:00`)
+    d.setDate(d.getDate() + 1)
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+  })()
+  async function deferBlock(b: PlanBlockRow) {
+    try {
+      await deferPlanBlock(b.id, tomorrowKey)
+      toast.success(`${b.subject} → tomorrow`, {
+        description: `${b.minutes} min moved to the end of tomorrow's plan`,
+      })
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Could not defer the block')
+    }
+  }
+
   return (
     <section
       aria-label="Study plan"
@@ -2268,6 +2288,17 @@ function PlanCard({
                       >
                         <Plus className="h-3 w-3" aria-hidden />
                       </button>
+                      {!b.done && (
+                        <button
+                          type="button"
+                          onClick={() => void deferBlock(b)}
+                          aria-label={`Defer “${b.subject}” to tomorrow`}
+                          title="Defer to tomorrow — push this block to the end of tomorrow's plan"
+                          className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-muted-foreground/40 opacity-0 transition-all hover:bg-amber-400/10 hover:text-amber-400 group-hover/plan:opacity-100"
+                        >
+                          <Moon className="h-3 w-3" aria-hidden />
+                        </button>
+                      )}
                     </li>
                   )
                 })}
@@ -3779,6 +3810,7 @@ function SettingsCard() {
             ['autoFocus', 'Auto-start next focus', 'Chain focus blocks after breaks end'],
             ['sound', 'Completion chime', 'A soft two-tone when sessions finish'],
             ['scapeAutoPause', 'Auto-pause ambience', 'Soundscape fades out on breaks — the room returns with focus'],
+            ['distractionGuard', 'Distraction guard', 'Leaving the tab mid-focus logs an interruption — quick flickers are forgiven'],
           ] as const
         ).map(([key, label, hint]) => (
           <label key={key} className="flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-border/70 bg-muted/20 px-3 py-2">

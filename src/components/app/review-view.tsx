@@ -23,10 +23,12 @@ import {
   RefreshCw,
   Repeat,
   Sparkles,
+  Timer,
   TrendingUp,
   Zap,
 } from 'lucide-react'
 import { toast } from 'sonner'
+import { startFocusSession } from '@/lib/focus'
 import { schedule, formatInterval, type Grade } from '@/lib/sm2'
 import { RichText } from '../rich-text'
 import { useStudy } from '@/store/useStudy'
@@ -600,7 +602,7 @@ export function ReviewView() {
               </button>
               <button
                 onClick={() => navigate({ name: 'lesson', sectionId: 'ku-fnd-spaced-repetition' })}
-                className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-2.5 text-sm font-semibold transition-colors hover:border-amber-400/40"
+                className="inline-flex items-center gap-2 rounded-xl border border-border bg-muted/40 px-5 py-2.5 text-sm font-semibold text-foreground shadow-sm transition-all hover:border-amber-400/50 hover:bg-amber-400/10 hover:text-amber-700 dark:hover:text-amber-300"
               >
                 <BookOpen className="h-4 w-4" /> The forgetting-curve lesson
               </button>
@@ -656,6 +658,23 @@ export function ReviewView() {
             >
               <AlarmClock className="h-4 w-4" aria-hidden />
               {starting ? 'Loading…' : stats.due > 0 ? `Start session — ${stats.due} due` : 'Nothing due'}
+            </button>
+            {/* X11J review↔focus bridge — time a review sit-in as a Pomodoro so
+                the minutes land in "What you studied" beside the book subjects */}
+            <button
+              onClick={() => {
+                startFocusSession(undefined, {
+                  subject: 'Spaced Review',
+                  taskTitle: `SM-2 review${stats.due > 0 ? ` — ${stats.due} due` : ' · reading mode'}`,
+                })
+                toast.success('Pomodoro started — review time is being timed', {
+                  description: 'Deep-focus block · banks into Focus HQ as “Spaced Review” study time',
+                })
+              }}
+              title="Start a Pomodoro for this review sit-in — it shows up in Focus HQ as study time"
+              className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground shadow-sm transition-all hover:border-emerald-400/50 hover:text-emerald-600 dark:hover:text-emerald-300"
+            >
+              <Timer className="h-4 w-4" aria-hidden /> Pomodoro
             </button>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/40 px-3 py-1.5 text-[11px] text-muted-foreground">
               <Brain className="h-3 w-3 text-amber-300/80" aria-hidden />

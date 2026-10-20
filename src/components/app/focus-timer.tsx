@@ -54,6 +54,7 @@ import {
 } from 'lucide-react'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Slider } from '@/components/ui/slider'
+import { toast } from 'sonner'
 import { useStudy } from '@/store/useStudy'
 import {
   type FocusEngineState,
@@ -65,6 +66,7 @@ import {
   dismissCelebration,
   expandWidget,
   fmtClock,
+  FOCUS_GUARD_EVENT,
   resetSession,
   saveSessionNote,
   selectSession,
@@ -449,6 +451,24 @@ export function FocusTimer() {
   useEffect(() => {
     setPortalTarget(document.body)
   }, [])
+
+  // X11J distraction guard — the engine counts the tab-away; this surfaces
+  // it once the studier returns (≥10s absences only — short ones stay silent)
+  useEffect(() => {
+    const onGuard = (e: Event) => {
+      const detail = (e as CustomEvent<{ type?: string; awayMs?: number }>).detail
+      if (detail?.type !== 'back') return
+      const awayMin = Math.max(1, Math.round((detail.awayMs ?? 0) / 60_000))
+      const leftMin = Math.max(1, Math.ceil(s.remainingMs / 60_000))
+      toast.warning(`You were away ${awayMin} min mid-focus`, {
+        description: `Logged as an interruption · ${leftMin} min left — the streak lives`,
+        icon: <PhoneIncoming className="h-4 w-4" aria-hidden />,
+        duration: 5000,
+      })
+    }
+    window.addEventListener(FOCUS_GUARD_EVENT, onGuard)
+    return () => window.removeEventListener(FOCUS_GUARD_EVENT, onGuard)
+  }, [s.remainingMs])
 
   // claim the paint slot whenever it is free (survives holder swaps)
   useEffect(() => {

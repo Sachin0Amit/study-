@@ -115,6 +115,32 @@ export async function togglePlanBlock(id: string, done: boolean): Promise<void> 
   }
 }
 
+/**
+ * X11J — defer an unfinished block to a future day (appended at that day's
+ * end server-side). Optimistic removal from the current day; reload fetches
+ * the authoritative ordering. Throws the server's message on failure.
+ */
+export async function deferPlanBlock(id: string, deferTo: string): Promise<void> {
+  const deviceId = useStudy.getState().ensureDevice()
+  const prev = blocks
+  blocks = (blocks ?? []).filter((b) => b.id !== id)
+  for (const fn of listeners) fn()
+  try {
+    const res = await fetch('/api/focus/plan', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, deviceId, deferTo }),
+    })
+    const data = (await res.json().catch(() => ({}))) as { error?: string }
+    if (!res.ok) throw new Error(data.error ?? 'Could not defer the block')
+    void reload()
+  } catch (err) {
+    blocks = prev
+    for (const fn of listeners) fn()
+    throw err instanceof Error ? err : new Error('Could not defer the block')
+  }
+}
+
 export async function deletePlanBlock(id: string): Promise<void> {
   const deviceId = useStudy.getState().ensureDevice()
   const prev = blocks

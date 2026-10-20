@@ -106,7 +106,7 @@ function StatCard({ def, index }: { def: StatDef; index: number }) {
   const inView = useInView(ref, { once: true })
   const start = inView && !def.loading
   const n = useCountUp(def.target ?? 0, start, def.decimals ?? 0)
-  const value = def.loading ? '…' : def.target === null ? '—' : `${n}${def.suffix ?? ''}`
+  const value = def.loading ? '…' : `${n}${def.suffix ?? ''}`
   const toneClass =
     def.tone === 'emerald'
       ? 'text-emerald-300'
@@ -127,7 +127,19 @@ function StatCard({ def, index }: { def: StatDef; index: number }) {
         className="pointer-events-none absolute right-4 top-4 h-8 w-8 text-muted-foreground opacity-[0.15]"
       />
       <def.icon className={`h-5 w-5 ${toneClass}`} />
-      <div className="mt-3 font-mono text-2xl font-bold">{value}</div>
+      {def.loading ? (
+        <div className="mt-3 font-mono text-2xl font-bold">{value}</div>
+      ) : def.target === null ? (
+        /* empty stat — a quiet invitation instead of a bare dash */
+        <div className="mt-3 flex items-baseline gap-2">
+          <span className="font-mono text-2xl font-bold text-muted-foreground/40">—</span>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/50">
+            no data yet
+          </span>
+        </div>
+      ) : (
+        <div className="mt-3 font-mono text-2xl font-bold">{value}</div>
+      )}
       <div className="mt-2 h-0.5 w-full overflow-hidden rounded-full bg-muted/70">
         <div
           className={`h-full rounded-full transition-all duration-700 ${def.barClass}`}

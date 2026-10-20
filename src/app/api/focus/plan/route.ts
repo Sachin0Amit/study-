@@ -16,6 +16,9 @@ import {
  *          examId  → horizon = today … day-before-exam (light last day)
  *          days?   → custom horizon (7..365) when no exam is linked
  * PATCH  { id, deviceId, done }             → tick off / re-open a block
+ * PATCH  { id, deviceId, deferTo }          → X11J: move an unfinished block
+ *        to a future day (appended at that day's end). deferTo is a local
+ *        "YYYY-MM-DD" strictly after today.
  * DELETE ?id=…&deviceId=…                   → remove one block
  * DELETE ?deviceId=…&all=1                  → clear the active plan
  *
@@ -179,6 +182,43 @@ export async function PATCH(req: NextRequest) {
   if (!id || !deviceId) {
     return NextResponse.json({ error: 'id and deviceId required' }, { status: 400 })
   }
+
+  /* ---- X11J defer-to-a-future-day --------------------------------- */
+  if (body?.deferTo !== undefined) {
+    const deferTo = String(body.deferTo)
+    if (!validDate(deferTo)) {
+      return NextResponse.json({ error: 'deferTo must be YYYY-MM-DD' }, { status: 400 })
+    }
+    const todayKey = localKey(new Date())
+    if (deferTo <= todayKey) {
+      return NextResponse.json({ error: 'Defer to a future day' }, { status: 400 })
+    }
+    try {
+      const block = await db.studyPlanBlock.findFirst({ where: { id, deviceId } })
+      if (!block) return NextResponse.json({ error: 'Block not found' }, { status: 404 })
+      if (block.done) {
+        return NextResponse.json({ error: 'Done blocks cannot be deferred' }, { status: 400 })
+      }
+      if (deferTo === block.day) {
+        return NextResponse.json({ error: 'Block is already on that day' }, { status: 400 })
+      }
+      // append at the end of the target day so ordering stays stable
+      const last = await db.studyPlanBlock.findFirst({
+        where: { deviceId, day: deferTo },
+        orderBy: { position: 'desc' },
+      })
+      const updated = await db.studyPlanBlock.update({
+        where: { id },
+        data: { day: deferTo, position: (last?.position ?? 0) + 1 },
+      })
+      return NextResponse.json({ ok: true, day: updated.day, position: updated.position })
+    } catch (err) {
+      console.error('[focus/plan PATCH defer]', err)
+      return NextResponse.json({ error: 'Could not defer the block' }, { status: 500 })
+    }
+  }
+
+  /* ---- tick off / re-open ------------------------------------------ */
   if (typeof body?.done !== 'boolean') {
     return NextResponse.json({ error: 'done (boolean) required' }, { status: 400 })
   }
