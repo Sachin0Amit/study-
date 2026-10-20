@@ -35,6 +35,7 @@ import {
   Hourglass,
   ListTodo,
   Minus,
+  Music4,
   NotebookPen,
   Pause,
   Pencil,
@@ -81,6 +82,14 @@ import {
   focusPresets,
 } from '@/lib/focus'
 import { cn } from '@/lib/utils'
+import {
+  SOUND_LAYERS,
+  applyPreset,
+  setLayerVolume,
+  setMasterVolume,
+  toggleLayer,
+  useSoundscape,
+} from '@/lib/soundscape'
 
 /* ------------------------------------------------------------------ */
 /*  API row types                                                      */
@@ -982,6 +991,200 @@ function TodoCard({
 }
 
 /* ------------------------------------------------------------------ */
+/*  Soundscape — synthesized ambient mixer (X11F)                      */
+/* ------------------------------------------------------------------ */
+
+/** tiny animated equalizer bars — shown while any layer is audible */
+function EqBars({ playing }: { playing: boolean }) {
+  return (
+    <span className="flex h-3.5 items-end gap-[2px]" aria-hidden>
+      {[0, 1, 2].map((i) => (
+        <span
+          key={i}
+          className={cn(
+            'w-[3px] rounded-full bg-emerald-400 transition-all',
+            playing ? 'sv-eq-bar' : 'h-[3px] opacity-40'
+          )}
+          style={playing ? { animationDelay: `${i * 0.18}s` } : undefined}
+        />
+      ))}
+    </span>
+  )
+}
+
+const SOUND_PRESETS: { id: 'off' | 'rain' | 'deep' | 'coffee' | 'bonfire'; label: string; emoji: string }[] = [
+  { id: 'rain', label: 'Rainy day', emoji: '🌧️' },
+  { id: 'deep', label: 'Deep quiet', emoji: '🌊' },
+  { id: 'coffee', label: 'Coffee shop', emoji: '☕' },
+  { id: 'bonfire', label: 'Bonfire', emoji: '🔥' },
+  { id: 'off', label: 'Silence', emoji: '🔇' },
+]
+
+function SoundscapeCard() {
+  const sound = useSoundscape()
+  const playing = sound.master > 0 && SOUND_LAYERS.some((l) => sound.layers[l.id] > 0)
+  const activeCount = SOUND_LAYERS.filter((l) => sound.layers[l.id] > 0).length
+
+  return (
+    <section
+      aria-label="Ambient soundscape"
+      className="overflow-hidden rounded-3xl border border-border/80 bg-card"
+    >
+      {/* header band with a subtle audio-wave gradient */}
+      <div className="relative bg-gradient-to-r from-emerald-400/[0.08] via-sky-400/[0.04] to-transparent p-5 pb-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h3 className="flex items-center gap-2 text-sm font-bold">
+              <span className="flex h-6 w-6 items-center justify-center rounded-lg border border-emerald-400/30 bg-emerald-400/10">
+                <Music4 className="h-3.5 w-3.5 text-emerald-300" aria-hidden />
+              </span>
+              Soundscape
+              <EqBars playing={playing} />
+            </h3>
+            <p className="mt-1 text-[11px] text-muted-foreground">
+              Ambient layers synthesized live — zero audio files. Keeps playing while you browse.
+            </p>
+          </div>
+          {/* master control */}
+          <div className="flex items-center gap-2.5 rounded-2xl border border-border/70 bg-card/80 px-3 py-1.5">
+            <button
+              type="button"
+              onClick={() => setMasterVolume(sound.master > 0 ? 0 : 0.6)}
+              aria-label={sound.master > 0 ? 'Mute the soundscape' : 'Unmute the soundscape'}
+              className={cn(
+                'flex h-7 w-7 items-center justify-center rounded-full border transition-colors',
+                sound.master > 0
+                  ? 'border-emerald-400/40 bg-emerald-400/15 text-emerald-600 dark:text-emerald-300'
+                  : 'border-border text-muted-foreground hover:text-foreground'
+              )}
+            >
+              {sound.master > 0 ? (
+                <Music4 className="h-3.5 w-3.5" aria-hidden />
+              ) : (
+                <span className="text-xs" aria-hidden>🔇</span>
+              )}
+            </button>
+            <Slider
+              className="w-24"
+              value={[Math.round(sound.master * 100)]}
+              min={0}
+              max={100}
+              step={5}
+              aria-label="Master volume"
+              onValueChange={([v]) => setMasterVolume(v / 100)}
+            />
+            <span className="w-9 text-right font-mono text-[10.5px] font-bold tabular-nums text-muted-foreground">
+              {Math.round(sound.master * 100)}%
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-3.5 p-5 pt-3.5">
+        {/* presets */}
+        <div className="flex flex-wrap items-center gap-1.5">
+          <span className="mr-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground/70">
+            presets
+          </span>
+          {SOUND_PRESETS.map((p) => {
+            const isOff = p.id === 'off'
+            const active = isOff
+              ? !playing
+              : playing &&
+                p.id === 'coffee'
+                  ? sound.layers.cafe > 0 && sound.layers.rain > 0
+                  : p.id === 'bonfire'
+                    ? sound.layers.fire > 0
+                    : p.id === 'rain'
+                      ? sound.layers.rain > 0 && sound.layers.cafe === 0 && sound.layers.fire === 0
+                      : sound.layers.brown > 0 && sound.layers.waves === 0
+            return (
+              <button
+                key={p.id}
+                type="button"
+                onClick={() => applyPreset(p.id)}
+                aria-pressed={active}
+                className={cn(
+                  'flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-semibold transition-all hover:border-emerald-400/50 active:scale-[0.97]',
+                  active
+                    ? 'border-emerald-400/50 bg-emerald-400/15 text-emerald-700 dark:text-emerald-300'
+                    : 'border-border/80 bg-muted/30 text-muted-foreground hover:text-foreground'
+                )}
+              >
+                <span aria-hidden>{p.emoji}</span>
+                {p.label}
+              </button>
+            )
+          })}
+        </div>
+
+        {/* the five layers */}
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
+          {SOUND_LAYERS.map((layer) => {
+            const vol = sound.layers[layer.id]
+            const on = vol > 0 && sound.master > 0
+            return (
+              <div
+                key={layer.id}
+                className={cn(
+                  'flex flex-col rounded-2xl border p-2.5 transition-all',
+                  on
+                    ? 'border-emerald-400/40 bg-emerald-400/[0.06] shadow-[0_0_18px_-8px_rgba(52,211,153,0.5)]'
+                    : 'border-border/70 bg-muted/20 hover:border-border'
+                )}
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleLayer(layer.id)}
+                  aria-pressed={on}
+                  className="group flex flex-1 flex-col items-center gap-1 rounded-xl px-1 py-1.5 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60"
+                >
+                  <span
+                    className={cn(
+                      'text-xl leading-none transition-transform group-hover:scale-110',
+                      on && 'drop-shadow-[0_0_6px_rgba(52,211,153,0.45)]'
+                    )}
+                    aria-hidden
+                  >
+                    {layer.emoji}
+                  </span>
+                  <span className="text-[11px] font-bold leading-tight">{layer.name}</span>
+                  <span className="text-[9px] leading-tight text-muted-foreground/80">{layer.hint}</span>
+                </button>
+                <div className={cn('mt-1.5 transition-opacity', vol > 0 ? 'opacity-100' : 'opacity-40')}>
+                  <Slider
+                    value={[Math.round(vol * 100)]}
+                    min={0}
+                    max={100}
+                    step={5}
+                    aria-label={`${layer.name} volume`}
+                    onValueChange={([v]) => setLayerVolume(layer.id, v / 100)}
+                  />
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        <p className="text-[10px] text-muted-foreground/70">
+          {playing ? (
+            <>
+              {activeCount} layer{activeCount === 1 ? '' : 's'} playing · mix fades smoothly in and out ·
+              settings remembered on this device
+            </>
+          ) : (
+            <>
+              Tap a layer to fold it into your session — drag its slider to blend. Mixes are saved on
+              this device.
+            </>
+          )}
+        </p>
+      </div>
+    </section>
+  )
+}
+
+/* ------------------------------------------------------------------ */
 /*  Analytics cards                                                    */
 /* ------------------------------------------------------------------ */
 
@@ -1407,6 +1610,9 @@ function DayDetailDialog({
   onClose: () => void
 }) {
   const [data, setData] = useState<{ day: string; sessions: SessionRow[] } | null>(null)
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const [draft, setDraft] = useState('')
+  const [saving, setSaving] = useState(false)
 
   // fetch the day's log whenever a new day opens; `current` (derived during
   // render) is non-null only while showing that day's data — no setState
@@ -1431,7 +1637,33 @@ function DayDetailDialog({
   // close → drop the data so the next open starts fresh (in the handler)
   function handleClose() {
     setData(null)
+    setEditingId(null)
     onClose()
+  }
+
+  /** attach/edit a journal note on a session row (PATCH /api/focus/sessions) */
+  async function saveNote(id: string, note: string) {
+    const trimmed = note.trim().slice(0, 600)
+    if (!trimmed) return
+    setSaving(true)
+    try {
+      const deviceId = useStudy.getState().ensureDevice()
+      const res = await fetch('/api/focus/sessions', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, deviceId, note: trimmed }),
+      })
+      if (!res.ok) throw new Error('note failed')
+      setData((prev) =>
+        prev ? { ...prev, sessions: prev.sessions.map((s) => (s.id === id ? { ...s, note: trimmed } : s)) } : prev
+      )
+      toast.success('Note saved')
+    } catch {
+      toast.error('Could not save the note')
+    } finally {
+      setSaving(false)
+      setEditingId(null)
+    }
   }
 
   const sessions = data && data.day === day ? data.sessions : null
@@ -1601,17 +1833,238 @@ function DayDetailDialog({
                             <Zap className="h-2.5 w-2.5" aria-hidden /> {s.interruptions}
                           </span>
                         )}
+                        {/* journal note — pencil to add/edit inline (focus rows only) */}
+                        {s.kind === 'focus' && editingId !== s.id && (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setEditingId(s.id)
+                              setDraft(s.note ?? '')
+                            }}
+                            className="flex items-center gap-1 rounded-full px-1.5 py-0.5 font-semibold text-muted-foreground/80 transition-colors hover:bg-muted/60 hover:text-foreground"
+                            aria-label={s.note ? 'Edit the journal note' : 'Add a journal note'}
+                            title={s.note ? 'Edit note' : 'Add a note — what clicked in this session?'}
+                          >
+                            <Pencil className="h-2.5 w-2.5" aria-hidden />
+                            {s.note ? 'edit note' : 'note'}
+                          </button>
+                        )}
                       </div>
-                      {s.note && (
-                        <p className="mt-1.5 border-l-2 border-emerald-400/50 pl-2.5 text-[11px] italic leading-relaxed text-muted-foreground">
-                          “{s.note}”
-                        </p>
+                      {/* inline note editor */}
+                      {editingId === s.id ? (
+                        <div className="mt-1.5 pl-5.5">
+                          <textarea
+                            value={draft}
+                            onChange={(e) => setDraft(e.target.value)}
+                            rows={2}
+                            maxLength={600}
+                            placeholder="What did you crack in this session? (saved with the session)"
+                            className="w-full resize-none rounded-lg border border-border bg-background px-2.5 py-1.5 text-[11px] leading-relaxed outline-none transition-colors focus:border-emerald-400/60 focus:ring-2 focus:ring-emerald-400/20"
+                            aria-label="Journal note"
+                          />
+                          <div className="mt-1 flex items-center justify-between gap-2">
+                            <span className="font-mono text-[9px] tabular-nums text-muted-foreground/70">
+                              {draft.length}/600
+                            </span>
+                            <span className="flex items-center gap-1.5">
+                              <button
+                                type="button"
+                                onClick={() => setEditingId(null)}
+                                className="rounded-full border border-border px-2 py-0.5 text-[10px] font-bold text-muted-foreground transition-colors hover:text-foreground"
+                              >
+                                Cancel
+                              </button>
+                              <button
+                                type="button"
+                                disabled={saving || !draft.trim()}
+                                onClick={() => void saveNote(s.id, draft)}
+                                className="rounded-full border border-emerald-400/40 bg-emerald-400/15 px-2.5 py-0.5 text-[10px] font-bold text-emerald-600 transition-colors hover:bg-emerald-400/25 disabled:opacity-50 dark:text-emerald-300"
+                              >
+                                {saving ? 'Saving…' : 'Save note'}
+                              </button>
+                            </span>
+                          </div>
+                        </div>
+                      ) : (
+                        s.note && (
+                          <p className="mt-1.5 border-l-2 border-emerald-400/50 pl-2.5 text-[11px] italic leading-relaxed text-muted-foreground">
+                            “{s.note}”
+                          </p>
+                        )
                       )}
                     </div>
                   </li>
                 )
               })}
             </ol>
+          </>
+        )}
+      </DialogContent>
+    </Dialog>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/*  Subject drill-down — click a subject bar → its session history     */
+/* ------------------------------------------------------------------ */
+
+function SubjectDetailDialog({
+  subject,
+  onClose,
+}: {
+  subject: string | null
+  onClose: () => void
+}) {
+  const [data, setData] = useState<{ subject: string; sessions: SessionRow[] } | null>(null)
+
+  // fetch the subject's focus sessions (newest first) whenever it opens
+  useEffect(() => {
+    if (!subject) return
+    let alive = true
+    const deviceId = useStudy.getState().ensureDevice()
+    fetch(
+      `/api/focus/sessions?deviceId=${encodeURIComponent(deviceId)}&subject=${encodeURIComponent(subject)}&limit=100`
+    )
+      .then((r) => r.json())
+      .then((d) => {
+        if (alive) setData({ subject, sessions: Array.isArray(d.sessions) ? d.sessions : [] })
+      })
+      .catch(() => {
+        if (alive) setData({ subject, sessions: [] })
+      })
+    return () => {
+      alive = false
+    }
+  }, [subject])
+
+  function handleClose() {
+    setData(null)
+    onClose()
+  }
+
+  const rows = data && data.subject === subject ? data.sessions : null
+  const totalMin = (rows ?? []).reduce((n, s) => n + Math.round(s.actualSec / 60), 0)
+  const pomodoros = (rows ?? []).filter((s) => s.completed).length
+  const avgMin = rows && rows.length > 0 ? Math.round(totalMin / rows.length) : 0
+  const first = rows && rows.length > 0 ? rows[rows.length - 1] : null
+  const accent = subjectAccent(subject)
+
+  // group by day for a compact readable log
+  const byDay = new Map<string, SessionRow[]>()
+  for (const s of rows ?? []) {
+    const key = s.startedAt.slice(0, 10)
+    const list = byDay.get(key) ?? []
+    list.push(s)
+    byDay.set(key, list)
+  }
+  const dayEntries = [...byDay.entries()].sort((a, b) => (a[0] < b[0] ? 1 : -1))
+
+  return (
+    <Dialog open={!!subject} onOpenChange={(o) => (!o ? handleClose() : undefined)}>
+      <DialogContent className="max-h-[85dvh] overflow-y-auto sm:max-w-lg">
+        <DialogHeader>
+          <DialogTitle className="flex flex-wrap items-center gap-2">
+            <span
+              className="flex h-6 w-6 items-center justify-center rounded-lg border"
+              style={{ borderColor: `${accent}66`, background: `${accent}1f` }}
+              aria-hidden
+            >
+              <span className="h-2 w-2 rounded-full" style={{ background: accent }} />
+            </span>
+            {subject ?? ''}
+          </DialogTitle>
+          <DialogDescription>
+            Every focus session you logged for this subject — the chapters, tasks and minutes behind the
+            bar.
+          </DialogDescription>
+        </DialogHeader>
+
+        {rows === null ? (
+          <div className="flex flex-col gap-2 py-2">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="h-12 animate-pulse rounded-xl bg-muted/60" />
+            ))}
+          </div>
+        ) : rows.length === 0 ? (
+          <div className="rounded-2xl border border-dashed border-border/80 px-4 py-8 text-center">
+            <p className="text-sm font-semibold">No sessions yet</p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Link a to-do to this subject and run a pomodoro — it will show up here.
+            </p>
+          </div>
+        ) : (
+          <>
+            {/* summary tiles */}
+            <div className="grid grid-cols-4 gap-2">
+              <span className="flex flex-col items-center gap-0.5 rounded-2xl border border-border/70 bg-muted/30 px-1 py-2 text-center">
+                <Clock className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
+                <span className="text-sm font-black tabular-nums">
+                  {totalMin >= 60 ? `${(totalMin / 60).toFixed(1)}h` : `${totalMin}m`}
+                </span>
+                <span className="text-[9.5px] font-medium text-muted-foreground">total time</span>
+              </span>
+              <span className="flex flex-col items-center gap-0.5 rounded-2xl border border-border/70 bg-muted/30 px-1 py-2 text-center">
+                <Timer className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
+                <span className="text-sm font-black tabular-nums">{rows.length}</span>
+                <span className="text-[9.5px] font-medium text-muted-foreground">sessions</span>
+              </span>
+              <span className="flex flex-col items-center gap-0.5 rounded-2xl border border-border/70 bg-muted/30 px-1 py-2 text-center">
+                <span className="text-[13px]" aria-hidden>🍅</span>
+                <span className="text-sm font-black tabular-nums">{pomodoros}</span>
+                <span className="text-[9.5px] font-medium text-muted-foreground">pomodoros</span>
+              </span>
+              <span className="flex flex-col items-center gap-0.5 rounded-2xl border border-border/70 bg-muted/30 px-1 py-2 text-center">
+                <TrendingUp className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
+                <span className="text-sm font-black tabular-nums">{avgMin}m</span>
+                <span className="text-[9.5px] font-medium text-muted-foreground">avg session</span>
+              </span>
+            </div>
+
+            {first && (
+              <p className="text-[10.5px] text-muted-foreground">
+                First studied {fmtDay(first.startedAt.slice(0, 10))} · showing the latest {rows.length}{' '}
+                session{rows.length === 1 ? '' : 's'}
+              </p>
+            )}
+
+            {/* day-grouped session log */}
+            <div className="flex flex-col gap-3">
+              {dayEntries.map(([day, dayRows]) => (
+                <div key={day}>
+                  <div className="flex items-baseline justify-between gap-2">
+                    <p className="text-[10.5px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                      {fmtDay(day)}
+                    </p>
+                    <p className="font-mono text-[10px] font-bold tabular-nums text-muted-foreground">
+                      {dayRows.reduce((n, s) => n + Math.round(s.actualSec / 60), 0)}m
+                    </p>
+                  </div>
+                  <div className="mt-1 flex flex-col gap-1">
+                    {dayRows.map((s) => (
+                      <div
+                        key={s.id}
+                        className="flex items-center gap-2 rounded-xl border border-border/70 bg-background/50 px-2.5 py-1.5 transition-colors hover:border-border"
+                      >
+                        <span
+                          className="h-1.5 w-1.5 shrink-0 rounded-full"
+                          style={{ background: s.completed ? accent : 'transparent', boxShadow: s.completed ? 'none' : `0 0 0 1px ${accent}` }}
+                          aria-hidden
+                        />
+                        <span className="font-mono text-[10px] font-bold tabular-nums text-muted-foreground">
+                          {fmtStartTime(s.startedAt)}
+                        </span>
+                        <span className="min-w-0 flex-1 truncate text-[11px] font-semibold" title={s.taskTitle ?? s.chapterTitle ?? ''}>
+                          {s.taskTitle ?? s.chapterTitle ?? 'Focus session'}
+                        </span>
+                        <span className="shrink-0 font-mono text-[11px] font-bold tabular-nums">
+                          {Math.round(s.actualSec / 60)}m
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </>
         )}
       </DialogContent>
@@ -1750,7 +2203,13 @@ function TrendCard({ stats }: { stats: StatsPayload | null }) {
   )
 }
 
-function SubjectsCard({ stats }: { stats: StatsPayload | null }) {
+function SubjectsCard({
+  stats,
+  onSubjectClick,
+}: {
+  stats: StatsPayload | null
+  onSubjectClick: (subject: string) => void
+}) {
   const subjects = stats?.subjects ?? []
   const total = subjects.reduce((n, s) => n + s.minutes, 0)
   const maxMin = Math.max(1, ...subjects.map((s) => s.minutes))
@@ -1771,10 +2230,16 @@ function SubjectsCard({ stats }: { stats: StatsPayload | null }) {
             const share = total > 0 ? Math.round((s.minutes / total) * 100) : 0
             return (
               <li key={s.subject}>
+                <button
+                  type="button"
+                  onClick={() => onSubjectClick(s.subject)}
+                  title={`${s.subject} — open its session history`}
+                  className="group block w-full rounded-xl px-1 py-0.5 text-left transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60"
+                >
                 <div className="flex items-baseline justify-between gap-2 text-xs">
                   <span className="flex min-w-0 items-center gap-1.5 font-semibold">
                     <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: accent }} aria-hidden />
-                    <span className="truncate">{s.subject}</span>
+                    <span className="truncate group-hover:underline group-hover:underline-offset-2">{s.subject}</span>
                   </span>
                   <span className="shrink-0 font-mono text-[11px] font-bold tabular-nums">
                     {s.minutes >= 60 ? `${Math.floor(s.minutes / 60)}h ${s.minutes % 60}m` : `${s.minutes}m`}
@@ -1784,15 +2249,16 @@ function SubjectsCard({ stats }: { stats: StatsPayload | null }) {
                 <div className="mt-1 flex items-center gap-2">
                   <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
                     <div
-                      className="h-full rounded-full transition-all"
+                      className="h-full rounded-full transition-all group-hover:brightness-110"
                       style={{ width: `${Math.max(3, (s.minutes / maxMin) * 100)}%`, background: accent }}
                     />
                   </div>
                   <span className="shrink-0 text-[9.5px] font-medium text-muted-foreground/70">
-                    {s.sessions} session{s.sessions === 1 ? '' : 's'}
+                    {s.sessions} session{s.sessions === 1 ? '' : 's'} · <span className="opacity-0 transition-opacity group-hover:opacity-100">open →</span>
                   </span>
                 </div>
-                {i === 0 && <p className="mt-1 text-[10px] text-muted-foreground/60">your top subject</p>}
+                {i === 0 && <p className="mt-1 text-[10px] text-muted-foreground/60">your top subject — click a subject to open its history</p>}
+                </button>
               </li>
             )
           })}
@@ -2098,6 +2564,7 @@ export function FocusView() {
   const [stats, setStats] = useState<StatsPayload | null>(null)
   const [sessions, setSessions] = useState<SessionRow[]>([])
   const [dayDetail, setDayDetail] = useState<string | null>(null)
+  const [subjectDetail, setSubjectDetail] = useState<string | null>(null)
 
   const loadTasks = useCallback(async () => {
     try {
@@ -2386,6 +2853,7 @@ export function FocusView() {
             activeTaskId={engine.linkage?.taskId ?? null}
             engineRunning={engine.running && engine.kind === 'focus'}
           />
+          <SoundscapeCard />
         </div>
 
         <div className="flex flex-col gap-5">
@@ -2412,7 +2880,7 @@ export function FocusView() {
           <WeeklyDigestCard stats={stats} />
           <RecordsCard stats={stats} />
           <TrendCard stats={stats} />
-          <SubjectsCard stats={stats} />
+          <SubjectsCard stats={stats} onSubjectClick={setSubjectDetail} />
           <GoldenHoursCard stats={stats} />
           <RecentSessionsCard sessions={sessions} onNote={saveNote} onExport={exportSessions} />
           <SettingsCard />
@@ -2429,6 +2897,12 @@ export function FocusView() {
         day={dayDetail}
         goalMin={settings.dailyGoalMin}
         onClose={() => setDayDetail(null)}
+      />
+
+      {/* subject drill-down (subject-bar click) */}
+      <SubjectDetailDialog
+        subject={subjectDetail}
+        onClose={() => setSubjectDetail(null)}
       />
     </div>
   )

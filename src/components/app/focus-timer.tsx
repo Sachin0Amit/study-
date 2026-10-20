@@ -79,6 +79,11 @@ import {
   useFocusLog,
   useFocusSettings,
 } from '@/lib/focus'
+import {
+  SOUND_LAYERS,
+  toggleLayer,
+  useSoundscape,
+} from '@/lib/soundscape'
 
 // re-exported for older call sites (command palette binds these helpers)
 export { requestFocusStart, requestFocusToggle, requestFocusStats } from '@/lib/focus'
@@ -480,6 +485,71 @@ export function FocusTimer() {
 /*  <WidgetChrome /> — FAB / pill / panel / zen (rendered into <body>)  */
 /* ------------------------------------------------------------------ */
 
+/* ------------------------------------------------------------------ */
+/*  Soundscape row — compact ambient mixer inside the Pod (X11F)       */
+/* ------------------------------------------------------------------ */
+
+function PodSoundscapeRow() {
+  const sound = useSoundscape()
+  const audible = sound.master > 0
+  const activeCount = SOUND_LAYERS.filter((l) => sound.layers[l.id] > 0).length
+
+  return (
+    <div
+      className="w-full rounded-2xl border border-border/70 bg-muted/20 p-2"
+      role="group"
+      aria-label="Ambient soundscape"
+    >
+      <div className="flex items-center justify-between gap-2">
+        <span className="flex min-w-0 items-center gap-1.5 text-[9.5px] font-bold uppercase tracking-[0.1em] text-muted-foreground">
+          {/* mini equalizer — dances while audible */}
+          <span className="flex h-3 items-end gap-[1.5px]" aria-hidden>
+            {[0, 1, 2].map((i) => (
+              <span
+                key={i}
+                className={`w-[2.5px] rounded-full bg-emerald-400 ${audible && activeCount > 0 ? 'sv-eq-bar' : 'h-[3px] opacity-40'}`}
+                style={audible && activeCount > 0 ? { animationDelay: `${i * 0.16}s` } : undefined}
+              />
+            ))}
+          </span>
+          ambient
+          {audible && activeCount > 0 && (
+            <span className="font-mono text-[9px] font-bold tabular-nums text-emerald-600 dark:text-emerald-300">
+              {activeCount}
+            </span>
+          )}
+        </span>
+        <div className="flex items-center gap-1">
+          {SOUND_LAYERS.map((layer) => {
+            const on = sound.layers[layer.id] > 0 && audible
+            return (
+              <button
+                key={layer.id}
+                type="button"
+                onClick={() => toggleLayer(layer.id)}
+                aria-pressed={on}
+                aria-label={`${layer.name}${on ? ' on' : ' off'}`}
+                title={`${layer.name} — ${layer.hint}`}
+                className={`flex h-6 w-6 items-center justify-center rounded-lg border text-[12px] leading-none transition-all active:scale-[0.94] ${
+                  on
+                    ? 'border-emerald-400/50 bg-emerald-400/15 shadow-[0_0_10px_-3px_rgba(52,211,153,0.6)]'
+                    : 'border-transparent opacity-45 hover:opacity-90'
+                }`}
+              >
+                <span aria-hidden>{layer.emoji}</span>
+              </button>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/*  Widget chrome                                                      */
+/* ------------------------------------------------------------------ */
+
 function WidgetChrome({ s, settings }: { s: FocusEngineState; settings: FocusSettings }) {
   const isFocus = s.kind === 'focus'
   const accent = isFocus ? 'text-emerald-400' : 'text-sky-400'
@@ -854,6 +924,9 @@ function WidgetChrome({ s, settings }: { s: FocusEngineState; settings: FocusSet
                     </button>
                   </div>
                 )}
+
+                {/* ambient soundscape — synthesized layers, one tap away */}
+                <PodSoundscapeRow />
 
                 {/* session length picker (presets + custom) */}
                 <SessionPicker s={s} settings={settings} />

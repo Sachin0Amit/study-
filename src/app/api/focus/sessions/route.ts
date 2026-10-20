@@ -41,10 +41,19 @@ export async function GET(req: NextRequest) {
   // optional single-day drill-down (heatmap day click) — oldest first so the
   // day reads like a timeline
   const day = req.nextUrl.searchParams.get('day')
+  // optional subject drill-down (subject-bar click in Focus HQ) — focus
+  // sessions for one subject, newest first
+  const subject = req.nextUrl.searchParams.get('subject')
+  const where: { deviceId: string; day?: string; subject?: string; kind?: string } = { deviceId }
+  if (day && DAY_RE.test(day)) where.day = day
+  if (subject) {
+    where.subject = subject
+    where.kind = 'focus'
+  }
   try {
     const sessions = await db.focusSession.findMany({
-      where: day && DAY_RE.test(day) ? { deviceId, day } : { deviceId },
-      orderBy: { startedAt: day ? 'asc' : 'desc' },
+      where,
+      orderBy: { startedAt: day && DAY_RE.test(day) ? 'asc' : 'desc' },
       take: limit,
     })
     return NextResponse.json({ sessions })

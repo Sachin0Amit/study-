@@ -315,6 +315,27 @@ body[data-sv-focus-fab='1'] .sv-scroll-top-btn {
   }
 }
 
+/* Soundscape equalizer bars (X11F) — gentle bounce, staggered per bar */
+@keyframes sv-eq-bounce {
+  0%,
+  100% {
+    height: 4px;
+  }
+  50% {
+    height: 14px;
+  }
+}
+.sv-eq-bar {
+  height: 5px;
+  animation: sv-eq-bounce 0.9s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sv-eq-bar {
+    animation: none;
+    height: 6px;
+  }
+}
+
 /* Subtle grid-pattern backdrop */
 .sv-grid-bg {
   background-image:
