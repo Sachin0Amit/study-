@@ -4946,5 +4946,138 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
       ],
     },
+    // ------------------------------------------------------------------
+    {
+      id: 'bio-plant-reproduction-flowers-seeds',
+      title: 'Plant Reproduction: Flowers, Pollination and Seeds',
+      domain: 'Life Sciences',
+      field: 'Botany',
+      branch: 'Plant Reproduction',
+      tier: 'core',
+      concepts: [
+        'Alternation of generations: gametophyte and sporophyte',
+        'The four whorls of a flower',
+        'Pollen grains and the embryo sac',
+        'Pollination syndromes: wind, water, insects, birds, bats',
+        'Barriers to self-pollination',
+        'Double fertilization: zygote plus endosperm',
+        'From ovule to seed, from ovary to fruit',
+      ],
+      words: 1463,
+      readMins: 7,
+      addedOn: '2026-10-20',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'A flower is not decoration — it is a reproductive machine of packaged gametes, built to trade pollen with the world. Flowering plants dominate land not despite sex but because of how they engineered it: miniature gamete-bearing generations sheltered inside the parent, pollinators recruited as couriers, and a double fertilization that pre-provisions the next generation with food. This core lesson walks the journey from flower to fruit through the machinery that OpenStax Biology lays out in its plant-reproduction chapter.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Nearly every calorie humanity eats passes through a flower: grains are fruits, apples are swollen ovaries, and coffee, chocolate and cotton all begin with pollination. Understanding floral biology is understanding food security — and why pollinator decline is an agricultural emergency.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Plant sexual reproduction runs on alternation of generations: a diploid sporophyte stage alternates with a haploid gametophyte stage. The sporophyte produces spores by meiosis; the spores divide by mitosis into multicellular gametophytes, which make gametes; fusion restores the diploid zygote, which grows into the next sporophyte. In flowering plants the sporophyte is the whole visible plant, and the gametophytes are shrunken to microscopic tenants — the pollen grain (male) and the embryo sac (female), both housed inside the flower. Mosses invert the arrangement (the green leafy carpet is the gametophyte), and ferns keep a free-living gametophyte, but flowering plants carry the reduction to its extreme.',
+        },
+        {
+          kind: 'para',
+          text: 'A typical flower is four whorls in concentric rings. Outermost is the calyx of green sepals, protecting the bud; then the corolla of petals, the billboard for pollinators (three or multiples of three in monocots, four or five and their multiples in dicots); then the androecium of stamens, each a filament topped by an anther holding the pollen sacs; and innermost the gynoecium of carpels, each with a sticky stigma, a neck-like style, and an ovary holding the ovules. All four whorls make a complete flower; both sexes in one flower make it perfect. Imperfect flowers are staminate (male only) or carpellate (female only) — corn bears both on one plant (monoecious, as do peas), while papaya separates the sexes onto different plants (dioecious).',
+        },
+        {
+          kind: 'para',
+          text: 'Inside the anther’s microsporangia, microspore mother cells divide by meiosis into four microspores, each maturing into a pollen grain with two cells: a large tube cell that will grow the pollen tube, and a generative cell that will divide into two sperm. A nourishing tapetum layer builds the grain’s armor — the tough outer exine impregnated with sporopollenin, one of the most resistant biological polymers known, which is why fossil pollen survives millions of years and why wind-carried grains arrive intact.',
+        },
+        {
+          kind: 'para',
+          text: 'The female side is even more selective. Within an ovule, meiosis produces four megaspores and three die; the survivor undergoes mitosis into the eight-nucleate, seven-cell embryo sac: an egg cell flanked by two synergid cells that guide the incoming pollen tube, a central cell holding two fused polar nuclei, and three antipodal cells that later degenerate. Integuments wrap the ovule, leaving a gap — the micropyle — as the door for the pollen tube; after fertilization the integuments harden into the seed coat.',
+        },
+        { kind: 'heading', text: 'Pollination, Double Fertilization and the Seed' },
+        {
+          kind: 'para',
+          text: 'Pollination is simply pollen delivery from anther to stigma — but the delivery services reveal deep evolution. Bee flowers are blue or yellow (bees cannot see red), sweet-scented, day-opening, often with nectar guides visible only in ultraviolet; fly flowers smell of carrion and wear dull purple-brown; moth flowers are pale, flat and open at night, as in the yucca–yucca-moth partnership where the moth pollinates and its larvae eat some seeds; bat flowers are large, pale and musky; bird flowers are sturdy, red tubular and scentless. Wind pollination abandons all bribes: grasses, oaks and conifers make small green scentless flowers and spend their budget on staggering pollen quantities released in early spring onto feathery stigmas. A few aquatic weeds let pollen float. Orchids cheat outright — food deception offers scent without nectar, and sexual deception imitates a female wasp’s pheromone so precisely that male wasps attempt to mate with the flower and leave wearing its pollen.',
+        },
+        {
+          kind: 'para',
+          text: 'Because cross-pollination buys genetic diversity, plants sabotage self-fertilization: stamens and carpels mature at different times; the primrose grows two flower geometries (heterostyly) that put pollen and stigma at heights only insects can bridge; and self-incompatibility genes in the stigma arrest or reject genetically identical pollen outright. These barriers matter to breeders — inbred lines and hybrids both depend on defeating or exploiting them.',
+        },
+        {
+          kind: 'para',
+          text: 'When a compatible pollen grain germinates, the tube cell grows down the style, the generative cell divides into two sperm, and the tube follows chemical cues from the synergids through the micropyle. Then comes the event that defines flowering plants: double fertilization. One sperm fuses with the egg to form the diploid zygote; the other fuses with the two polar nuclei to form the triploid endosperm — the seed’s food supply, built on demand. The zygote divides into a terminal cell that becomes the embryo (heart-shaped in dicots, with two cotyledons) and a basal cell whose suspensor channels nutrition from the mother. The mature ovule is now a seed — coat, stored food, embryo — while the surrounding ovary enlarges into the fruit, and development pauses until germination.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Identify what is asked: follow a corn plant from flower type to the kernel on your plate.',
+            'Classify the flowers: corn is monoecious — staminate flowers in the tassel at the stem tip shed pollen; carpellate flowers cluster in the immature ears.',
+            'Trace pollination: each strand of silk on an ear is an elongated stigma; a wind-borne grain lands on a silk and grows its tube down to a single ovule.',
+            'Apply double fertilization: one sperm makes the 2n embryo; the second makes the 3n endosperm that fills the kernel — the starchy bulk of the grain.',
+            'State the result: each kernel is a seed (a one-seeded fruit) developed from one fertilization event; a full ear is hundreds of independent fertilizations, which is why poor pollination shows up as missing kernels at the tip.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Hybrid seed production exploits controlled cross-pollination, often using male-sterile lines so every seed is a known cross',
+            'Honeybee declines threaten bee-pollinated fruit and vegetable crops, since unpollinated flowers set no seed and no fruit',
+            'Crop domestication rewired reproduction — modern corn grew from tiny-seeded teosinte through selection on a handful of genetic changes',
+            'Orchard managers rent hives and plant pollinator strips, matching flower color, shape and season to local pollinator syndromes',
+            'Allergy seasons track wind-pollinated species, whose enormous lightweight pollen output is designed for air, not animals',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'A fruit is any mature ovary, sweet or not — tomatoes, cucumbers and corn kernels are fruits, while strawberries carry their true fruits on the outside. Nectar guides are invisible to humans but loud to bees. Gymnosperms have cones, no flowers, no fruits and no double fertilization — their second sperm simply degenerates. And self-pollination is not a flaw of lazy flowers: it guarantees reproduction where pollinators are scarce, at the cost of diversity.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Alternation of generations', def: 'The life cycle alternating diploid sporophyte and haploid gametophyte stages via meiosis and fertilization.' },
+            { term: 'Whorl', def: 'One concentric ring of flower parts: sepals, petals, stamens or carpels.' },
+            { term: 'Embryo sac', def: 'The seven-cell, eight-nucleate female gametophyte containing the egg, synergids, central cell and antipodals.' },
+            { term: 'Double fertilization', def: 'The angiosperm event in which one sperm forms the diploid zygote and the other forms the triploid endosperm.' },
+            { term: 'Endosperm', def: 'The triploid food-storage tissue of the seed, built at fertilization to feed the embryo.' },
+            { term: 'Pollination syndrome', def: 'The suite of flower traits — color, scent, shape, timing — matching a particular pollinator such as bees, moths, bats or wind.' },
+            { term: 'Self-incompatibility', def: 'Genetic mechanisms by which a flower rejects its own pollen, enforcing cross-pollination.' },
+          ],
+        },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'Double fertilization in angiosperms produces:',
+              options: ['Two embryos per ovule', 'A diploid zygote and a triploid endosperm', 'A haploid egg and a diploid pollen grain', 'Twice the normal chromosome number in every cell'],
+              answer: 1,
+              explain: 'One sperm fertilizes the egg (2n zygote); the other fuses with the two polar nuclei to build the 3n endosperm — unique to flowering plants.',
+            },
+            {
+              q: 'The four whorls of a complete flower, from outside in, are:',
+              options: ['Petals, sepals, carpels, stamens', 'Sepals, petals, stamens, carpels', 'Stamens, carpels, sepals, petals', 'Carpels, stamens, petals, sepals'],
+              answer: 1,
+              explain: 'Calyx (sepals), corolla (petals), androecium (stamens), gynoecium (carpels) — outermost to innermost.',
+            },
+            {
+              q: 'Wind-pollinated flowers typically:',
+              options: ['Are large, red and fragrant', 'Produce abundant light pollen with little scent or nectar', 'Open only at night', 'Are pollinated by bats'],
+              answer: 1,
+              explain: 'Wind is a numbers game: small, scentless, nectarless flowers and massive pollen release onto feathery stigmas.',
+            },
+            {
+              q: 'The seed coat develops from:',
+              options: ['The ovary wall', 'The integuments of the ovule', 'The endosperm', 'The tapetum'],
+              answer: 1,
+              explain: 'The ovule’s integuments harden into the seed coat; the ovary wall instead becomes the fruit around it.',
+            },
+          ],
+        },
+      ],
+    },
   ],
 }

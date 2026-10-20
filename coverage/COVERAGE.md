@@ -16,8 +16,8 @@
 
 - **Subjects:** 168
 - **Books (master volumes):** 168
-- **Chapters:** 786
-- **Sections (lessons):** 4343
+- **Chapters:** 791
+- **Sections (lessons):** 4348
 
 ## Foundations — 5 subjects
 
@@ -841,10 +841,11 @@
 
 ### Botany (`ku-life-sciences-botany`)
 
-*How plants build the world* — 2 chapters · 2 sections
+*How plants build the world* — 3 chapters · 3 sections
 
 - **Ch 1. Plant Biochemistry** `ku-life-sciences-botany-plant-biochemistry` — 1 sections: Photosynthesis: Light and Dark Reactions
 - **Ch 2. Beyond Photosynthesis** `ku-life-sciences-botany-beyond-photosynthesis` — 1 sections: Plant Physiology: How Plants Actually Work
+- **Ch 3. Plant Reproduction** `ku-life-sciences-botany-plant-reproduction` — 1 sections: Plant Reproduction: Flowers, Pollination and Seeds
 
 ### Evolutionary Biology (`ku-life-sciences-evolutionary-biology`)
 
@@ -924,10 +925,11 @@
 
 ### Climate Science (`ku-environment-climate-science`)
 
-*Reading the atmosphere* — 2 chapters · 2 sections
+*Reading the atmosphere* — 3 chapters · 3 sections
 
 - **Ch 1. Biogeochemical Cycles** `ku-environment-climate-science-biogeochemical-cycles` — 1 sections: Carbon Sinks and the Global Carbon Budget
 - **Ch 2. Attribution Science** `ku-environment-climate-science-attribution-science` — 1 sections: Extreme Weather in a Warming World: The Science of Attribution
+- **Ch 3. Climate Sensitivity** `ku-environment-climate-science-climate-sensitivity` — 1 sections: Climate Feedbacks and Sensitivity: Why Warming Amplifies
 
 ### Environmental Policy (`ku-environment-environmental-policy`)
 
@@ -1421,9 +1423,10 @@
 
 ### Sleep Science (`ku-health-wellness-sleep-science`)
 
-*The night shift* — 1 chapters · 1 sections
+*The night shift* — 2 chapters · 2 sections
 
 - **Ch 1. Chronobiology** `ku-health-wellness-sleep-science-chronobiology` — 1 sections: Circadian Rhythms and Sleep Pressure
+- **Ch 2. Sleep Architecture** `ku-health-wellness-sleep-science-sleep-architecture` — 1 sections: Sleep Architecture: Stages, Cycles and Memory
 
 ### Exercise & Fitness (`ku-health-wellness-exercise-and-fitness`)
 
@@ -1456,9 +1459,10 @@
 
 ### First Aid & Emergency Care (`ku-health-wellness-first-aid-and-emergency-care`)
 
-*Help that arrives first* — 1 chapters · 1 sections
+*Help that arrives first* — 2 chapters · 2 sections
 
 - **Ch 1. Emergency Basics** `ku-health-wellness-first-aid-and-emergency-care-emergency-basics` — 1 sections: First Aid Essentials: Bleeding, Burns, Choking and the Recovery Position
+- **Ch 2. Resuscitation** `ku-health-wellness-first-aid-and-emergency-care-resuscitation` — 1 sections: Cardiac Arrest: CPR, AED and the Chain of Survival
 
 ### Medicine & Pharmacology (`ku-health-wellness-medicine-and-pharmacology`)
 
@@ -1641,9 +1645,10 @@
 
 ### Bioinformatics (`ku-emerging-interdisciplinary-bioinformatics`)
 
-*Genomes, computed* — 1 chapters · 1 sections
+*Genomes, computed* — 2 chapters · 2 sections
 
 - **Ch 1. Computational Biology** `ku-emerging-interdisciplinary-bioinformatics-computational-biology` — 1 sections: Bioinformatics: Reading Genomes with Code
+- **Ch 2. Phylogenetics** `ku-emerging-interdisciplinary-bioinformatics-phylogenetics` — 1 sections: Phylogenetics: Reconstructing the Tree of Life
 
 ### Systems Science (`ku-emerging-interdisciplinary-systems-science`)
 

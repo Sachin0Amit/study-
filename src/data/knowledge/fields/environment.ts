@@ -2720,5 +2720,142 @@ export const environment: KnowledgeDomainFile = {
         },
       ],
     },
+    // ------------------------------------------------------------------
+    {
+      id: 'env-climate-feedbacks-sensitivity',
+      title: 'Climate Feedbacks and Sensitivity: Why Warming Amplifies',
+      domain: 'Environment & Sustainability',
+      field: 'Climate Science',
+      branch: 'Climate Sensitivity',
+      tier: 'intermediate',
+      concepts: [
+        'Radiative forcing defined at the top of the atmosphere',
+        'CO2 forcing grows as the logarithm of concentration',
+        'Positive and negative feedback processes',
+        'Water vapor, ice–albedo and lapse-rate feedbacks',
+        'Cloud feedback as the leading uncertainty',
+        'Equilibrium climate sensitivity for doubled CO2',
+        'Tipping points when feedbacks take over',
+      ],
+      words: 1354,
+      readMins: 7,
+      addedOn: '2026-10-20',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'A bare-rock Earth reflecting 30 percent of sunlight would sit at about 255 kelvin, or minus 18 degrees Celsius — a frozen planet. The real Earth averages 15 degrees, and the difference between those two numbers is written by the atmosphere. But how much does the planet warm when we add carbon dioxide? Not by a fixed recipe: the initial nudge of extra greenhouse gas triggers feedback processes inside the climate system that amplify or dampen the response. This intermediate lesson defines radiative forcing, tours the major feedbacks, and explains where the famous sensitivity numbers come from.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Every carbon budget, every projection and every policy target translates through climate sensitivity. If feedbacks sum near zero, doubled CO2 warms the planet modestly; because they sum strongly positive, the globe is heading for roughly three degrees of warming per doubling — the single most consequential number in climate policy.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Radiative forcing is the initial response of radiative fluxes at the top of the atmosphere: the change in the radiative balance for a specific process — greenhouse gases, aerosols, solar output — with everything else held constant. Positive forcing warms, negative cools. For carbon dioxide the forcing grows with the logarithm of concentration, ΔF = 5.35 × ln(C/C0) watts per square meter, where C0 is a reference level. The log arises because the strongest absorption bands saturate first: each extra part per million matters less than the last. Doubling from the pre-industrial 280 ppm to 560 ppm gives ΔF = 5.35 × ln(2) ≈ 3.7 W/m² — the benchmark forcing of climate science.',
+        },
+        {
+          kind: 'para',
+          text: 'A climate feedback is a process that amplifies (positive) or dampens (negative) the initial temperature response to a forcing. The strongest damper is built into physics itself: a warmer planet radiates as the fourth power of temperature (Stefan–Boltzmann), so it sheds heat faster the hotter it gets. Holding everything else fixed, the 3.7 W/m² of doubled CO2 would settle at about 1.2 degrees of warming — the no-feedback sensitivity. Everything interesting in climate prediction is the sum of what happens next.',
+        },
+        {
+          kind: 'para',
+          text: 'The biggest amplifier is water vapor. Warmer air evaporates more water from the oceans, and because water vapor is itself a powerful greenhouse gas — the atmosphere’s most important infrared absorber alongside CO2 — the extra vapor traps more heat and warms the surface further. Water vapor cannot act as a forcing on human timescales: its lifetime is days, and its concentration is set by temperature. It is the feedback that roughly doubles whatever the CO2 push started, which is why the EPA calls it the most important positive feedback.',
+        },
+        {
+          kind: 'para',
+          text: 'Ice and snow add a second amplifier, the ice–albedo feedback. Earth reflects about 30 percent of sunlight (albedo ≈ 0.3); melt bright surfaces and the planet darkens, absorbs more solar radiation, and melts more ice — a loop that runs in reverse to amplify cooling into ice ages. Partly offsetting it, the lapse-rate feedback is negative: as the surface warms, the vertical temperature profile adjusts so that more radiation escapes to space from the warm lower atmosphere, damping the response. Clouds remain the wild card — they both reflect sunlight (cooling) and trap infrared (warming), and their net feedback sign varies by type and altitude, which is why cloud feedback dominates the spread in model projections.',
+        },
+        { kind: 'heading', text: 'From Feedbacks to Sensitivity' },
+        {
+          kind: 'para',
+          text: 'Climate sensitivity is the total warming or cooling from one forcing after all feedbacks act. The bookkeeping is compact: if f is the net feedback factor, the equilibrium warming is ΔT = ΔT0/(1 − f), where ΔT0 is the no-feedback response. With ΔT0 ≈ 1.2 °C for doubled CO2 and f near 0.6–0.7, the result lands near 3 °C — the equilibrium climate sensitivity that assessment reports place in a likely range of about 2.5 to 4 °C. Net feedbacks being significantly positive is what turns a 3.7 W/m² nudge into a three-degree world; and where feedbacks cross into self-drive — permafrost carbon, ice-sheet collapse, circulation changes — scientists speak of tipping points, thresholds beyond which change continues without further forcing.',
+        },
+        {
+          kind: 'formula',
+          name: 'CO2 radiative forcing',
+          latex: '\\Delta F = 5.35\\,[\\mathrm{W\\,m^{-2}}]\\;\\ln(C/C_0)',
+          meaning: 'Forcing from a CO2 concentration C relative to reference C0; doubling gives 3.7 W/m².',
+        },
+        {
+          kind: 'formula',
+          name: 'Sensitivity with feedbacks',
+          latex: '\\Delta T_{eq} = \\frac{\\Delta T_0}{1 - f}',
+          meaning: 'Equilibrium temperature response ΔT0 (≈1.2 °C for doubled CO2, no feedbacks) amplified by the net feedback factor f; f → 1 means runaway.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Identify what is asked: the forcing and equilibrium warming when CO2 rises from 280 to 420 ppm (today’s level).',
+            'Compute the ratio: 420/280 = 1.5, so ln(1.5) ≈ 0.405.',
+            'Apply the forcing formula: ΔF = 5.35 × 0.405 ≈ 2.2 W/m² — about 60 percent of the doubling benchmark, a direct consequence of the logarithm.',
+            'Fold in feedbacks: with the no-feedback response of about 1.2 °C per 3.7 W/m², this forcing alone gives ≈ 0.7 °C; with the observed net feedback factor f ≈ 0.65, ΔT = 0.7/(1 − 0.65) ≈ 2 °C.',
+            'State the result: today’s concentration already commits the system to roughly two degrees of eventual equilibrium warming — the gap between committed and realized warming is the ocean’s thermal inertia, not an absence of feedbacks.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Remaining carbon budgets are computed by dividing allowable warming by sensitivity — a better-constrained ECS means a sharper emissions deadline',
+            'Ice-age paleoclimate serves as a natural experiment: glacial–interglacial cycles record the feedback sum (CO2, ice sheets, dust) at planetary scale',
+            'Solar geoengineering proposals are judged against feedback logic — masking forcing while leaving feedbacks intact still leaves the system sensitive',
+            'Weather-forecast ensembles and climate models perturb feedback parameters to span the plausible sensitivity range',
+            'Arctic monitoring tracks the ice–albedo loop in real time as sea-ice minimum records fall decade after decade',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'Forcing and feedback are roles, not substances: CO2 injected deep in geological time or by humans acts as forcing, while water vapor acts as feedback because temperature controls its amount. A positive feedback does not mean instant runaway — runaway requires the feedback factor to approach one, far from today’s 0.6–0.7. And equilibrium sensitivity is not the warming you see this decade: transient response lags because oceans absorb heat for centuries.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Radiative forcing', def: 'The change in top-of-the-atmosphere radiative balance caused by one driver, with the rest of the system held fixed.' },
+            { term: 'Climate feedback', def: 'A process that amplifies (positive) or dampens (negative) the temperature response to a forcing.' },
+            { term: 'Water vapor feedback', def: 'Warming → more evaporation → more atmospheric water vapor → more greenhouse trapping; the largest positive feedback.' },
+            { term: 'Ice–albedo feedback', def: 'Melting ice lowers reflectivity, increasing absorbed sunlight and further melting; amplified in both warming and cooling directions.' },
+            { term: 'Lapse-rate feedback', def: 'Negative feedback from changes in the atmospheric vertical temperature profile as the surface warms.' },
+            { term: 'Equilibrium climate sensitivity', def: 'The global warming eventually reached per doubling of CO2, feedbacks included — likely near 3 °C.' },
+            { term: 'Tipping point', def: 'A threshold beyond which a feedback-dominated part of the system keeps changing without further forcing.' },
+          ],
+        },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'Why does CO2 radiative forcing grow only logarithmically with concentration?',
+              options: ['Because CO2 decays over time', 'Because the strongest absorption bands saturate first, so extra gas matters progressively less', 'Because the oceans absorb the difference', 'Because sunlight weakens as CO2 rises'],
+              answer: 1,
+              explain: 'Central absorption wavelengths fill in first; additional CO2 acts mostly on the band edges, giving the ln(C/C0) dependence.',
+            },
+            {
+              q: 'Water vapor is classified as a feedback rather than a forcing because:',
+              options: ['It is not a greenhouse gas', 'Its concentration is controlled by temperature, with a lifetime of days', 'It only exists in clouds', 'It reflects sunlight like aerosols'],
+              answer: 1,
+              explain: 'Humans do not directly load the atmosphere with water vapor on climate timescales; temperature sets its abundance, so it amplifies the initial push.',
+            },
+            {
+              q: 'With no feedbacks at all, doubled CO2 would warm Earth by about:',
+              options: ['0.1 °C', '1.2 °C', '3 °C', '10 °C'],
+              answer: 1,
+              explain: 'The bare Stefan–Boltzmann response to 3.7 W/m² is roughly 1.2 °C; feedbacks lift the equilibrium value to near 3 °C.',
+            },
+            {
+              q: 'Which feedback is currently the largest source of uncertainty in climate sensitivity?',
+              options: ['Ice–albedo feedback', 'Lapse-rate feedback', 'Cloud feedback', 'Water vapor feedback'],
+              answer: 2,
+              explain: 'Clouds both cool (reflect sunlight) and warm (trap infrared); their net response to warming varies by type and altitude and dominates the spread among models.',
+            },
+          ],
+        },
+      ],
+    },
   ],
 }

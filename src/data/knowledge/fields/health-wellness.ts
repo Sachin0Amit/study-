@@ -3641,5 +3641,256 @@ export const healthWellness: KnowledgeDomainFile = {
         },
       ],
     },
+    // ------------------------------------------------------------------
+    {
+      id: 'aid-cardiac-cpr-chain-of-survival',
+      title: 'Cardiac Arrest: CPR, AED and the Chain of Survival',
+      domain: 'Health & Wellness',
+      field: 'First Aid & Emergency Care',
+      branch: 'Resuscitation',
+      tier: 'core',
+      concepts: [
+        'Cardiac arrest versus heart attack',
+        'The six links of the Chain of Survival',
+        'High-quality chest compressions: rate, depth, recoil',
+        'Why compressions buy time for the brain',
+        'AEDs and shockable rhythms',
+        'Minimizing interruptions and avoiding hyperventilation',
+        'Bystander action doubles or triples survival',
+      ],
+      words: 1247,
+      readMins: 6,
+      addedOn: '2026-10-20',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'When the heart stops pumping effectively — cardiac arrest — the brain begins to deteriorate in about five minutes, and the person dies unless someone acts. Paramedics almost always arrive too late to be the first link: survival depends on a bystander who recognizes the arrest, calls for help, and starts compressions. Cardiopulmonary resuscitation is one of the few skills an ordinary person can learn in an afternoon that literally restarts a life. This core lesson explains what cardiac arrest is, how the Chain of Survival organizes the rescue, and what high-quality CPR actually requires.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Most out-of-hospital cardiac arrests happen at home, in front of the people who love the victim most. The American Heart Association reports that bystander CPR can double or triple a victim’s chance of survival — the difference between the life that was and the life that ends is usually the nearest pair of hands.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Cardiac arrest is not a heart attack. A heart attack is a plumbing problem — a blocked coronary artery starves part of the heart muscle, and the heart usually keeps beating. Cardiac arrest is an electrical and mechanical failure: the heart stops pumping effectively, consciousness is lost within seconds, and normal breathing stops or becomes gasping. Heart attacks can trigger arrests, but arrest can strike without any warning. The victim in arrest is unresponsive and not breathing normally — that pair of observations, checked in under ten seconds, is the recognition step that sets everything else in motion.',
+        },
+        {
+          kind: 'para',
+          text: 'The American Heart Association’s Chain of Survival names six links, each dependent on the one before: recognition of cardiac arrest and activation of the emergency response system; early CPR with an emphasis on chest compressions; rapid defibrillation; advanced resuscitation by EMS and healthcare providers; post-cardiac-arrest care in hospital; and recovery, including rehabilitation and psychological support. The metaphor is exact — a chain is only as strong as its weakest link. Perfect hospital care cannot rescue a brain that waited fifteen minutes for blood, and the first three links belong entirely to bystanders.',
+        },
+        {
+          kind: 'para',
+          text: 'High-quality compressions are the engine of CPR. Current guidelines compress the chest of an adult 100 to 120 times per minute, to a depth of 5 to 6 centimeters, allowing full recoil of the chest between compressions, minimizing interruptions, and avoiding excessive ventilation — 30 compressions to 2 breaths for trained rescuers, or compressions alone for untrained ones. The mechanics are simple: the heart sits between the sternum and the spine, so rhythmic pressure squeezes blood to the brain and coronaries. Compressions are exhausting — quality decays within a couple of minutes — so rescuers should swap every two minutes when help is available.',
+        },
+        {
+          kind: 'para',
+          text: 'The most common arrest rhythm in adults, ventricular fibrillation, is electrical chaos: the muscle quivers instead of pumping. No amount of compression converts it — but a shock can. The automated external defibrillator (AED) is built for exactly this: adhesive pads read the rhythm, a voice coach walks the rescuer through every step, and the device shocks only when a shockable rhythm is detected. Defibrillation succeeds best in the first minutes, which is why public-access AED programs in airports, casinos and gyms have produced some of the highest survival rates on record.',
+        },
+        {
+          kind: 'para',
+          text: 'The science has a history of hard lessons. Rescue societies date to 1767, when Amsterdam organized the first drowned-victim resuscitation society; the first formal CPR guidelines appeared in 1966; the International Liaison Committee on Resuscitation standardized methods from 2000 onward. Across revisions, one trend dominates: compressions matter more and more, everything else less. The latest guidelines distill it to five rules — push fast, push hard, let the chest recoil, minimize interruptions, and do not over-ventilate.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Recognize: an adult collapses; shouting gets no response and breathing is absent or gasping — treat as cardiac arrest.',
+            'Activate: send a specific bystander to call emergency services and another to fetch the nearest AED; put the phone on speaker so the dispatcher can coach.',
+            'Compress: kneel beside the chest, heel of one hand on the center of the chest (lower half of the sternum), interlock, arms straight, push 5–6 cm at the tempo of a fast song (100–120 per minute).',
+            'Defibrillate: when the AED arrives, bare the chest, apply pads as the diagrams show, and let it analyze; if it advises a shock, ensure nobody touches the victim and press the button, then resume compressions immediately.',
+            'Sustain: continue cycles with minimal pauses until the person breathes normally, professional crews take over, or you physically cannot continue — swapping rescuers every two minutes keeps compressions strong.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Schools and workplaces run compression-only training so laypersons act without fear of doing it wrong',
+            'Public-access AED programs map devices, register them with dispatchers, and drill their retrieval alongside fire extinguishers',
+            'Emergency dispatchers give telephone-CPR instructions, turning any caller into the first link of the chain',
+            'Smartphone apps alert trained volunteers nearby to an arrest, compressing response times to minutes',
+            'Post-arrest protocols — targeted temperature management, coronary angiography, rehabilitation — convert more resuscitations into survivors who walk out of hospital',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'Fear of hurting the victim stops more rescuers than fainting does: ribs may crack during effective compressions, and a surviving victim forgives a fracture far sooner than a brain forgives five minutes without blood. Compressions alone are acceptable for untrained rescuers — hesitation to give mouth-to-mouth is not a reason to do nothing. Stop checking for a pulse after a few seconds; if in doubt, compress. And this lesson is orientation, not certification: take a hands-on course with an accredited trainer to be ready.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Cardiac arrest', def: 'Sudden loss of effective heart pumping; the person is unresponsive and not breathing normally.' },
+            { term: 'Chain of Survival', def: 'The six-link framework linking bystander recognition, CPR, defibrillation, advanced care, post-arrest care and recovery.' },
+            { term: 'High-quality CPR', def: 'Compressions at 100–120 per minute, 5–6 cm deep, with full recoil, minimal interruptions and no over-ventilation.' },
+            { term: 'AED', def: 'Automated external defibrillator — a device that analyzes the heart rhythm and delivers a shock for ventricular fibrillation or pulseless ventricular tachycardia.' },
+            { term: 'Ventricular fibrillation', def: 'Chaotic electrical activity of the heart muscle; the most common shockable arrest rhythm in adults.' },
+            { term: 'Compression fraction', def: 'The share of resuscitation time spent actually compressing; higher is better, interruptions cost survival.' },
+          ],
+        },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'The correct adult compression rate and depth are:',
+              options: ['60–80 per minute, 2–3 cm', '100–120 per minute, 5–6 cm', '140–160 per minute, 8–10 cm', 'Any rate, as long as breaths are frequent'],
+              answer: 1,
+              explain: 'Guidelines specify 100–120 compressions per minute at 5–6 cm depth with full recoil and minimal pauses.',
+            },
+            {
+              q: 'The first two links of the Chain of Survival are:',
+              options: ['Defibrillation and hospital care', 'Recognition/activation of emergency response and early CPR', 'Recovery and rehabilitation', 'Advanced airway placement and drugs'],
+              answer: 1,
+              explain: 'The chain opens with recognizing the arrest, calling for help, and starting compressions — links owned by bystanders.',
+            },
+            {
+              q: 'An AED works by:',
+              options: ['Restarting a stopped heart with electricity', 'Analyzing the rhythm and shocking ventricular fibrillation so organized rhythm can return', 'Massaging the chest externally', 'Delivering oxygen to the lungs'],
+              answer: 1,
+              explain: 'The heart in fibrillation has not stopped electrically — it is chaotic; the AED stuns it briefly so its natural pacemaker can resume organized rhythm.',
+            },
+            {
+              q: 'The most common mistake bystanders make is:',
+              options: ['Compressing too fast and too deep', 'Doing nothing — waiting for professionals out of fear or uncertainty', 'Calling the emergency services too early', 'Using an AED without permission'],
+              answer: 1,
+              explain: 'Bystander inaction is the weakest link; compressions-only CPR is acceptable and far better than waiting, and AEDs are designed for lay use.',
+            },
+          ],
+        },
+      ],
+    },
+    // ------------------------------------------------------------------
+    {
+      id: 'health-sleep-stages-memory',
+      title: 'Sleep Architecture: Stages, Cycles and Memory',
+      domain: 'Health & Wellness',
+      field: 'Sleep Science',
+      branch: 'Sleep Architecture',
+      tier: 'core',
+      concepts: [
+        'The hypnogram and 90-minute sleep cycles',
+        'NREM stage 1: alpha to theta transition',
+        'Sleep spindles and K-complexes in stage 2',
+        'Delta waves and slow-wave (deep) sleep',
+        'REM sleep: paradoxical paralysis and dreaming',
+        'Why we sleep: adaptive, restorative and memory theories',
+        'Sleep deprivation, REM rebound and learning',
+      ],
+      words: 1352,
+      readMins: 7,
+      addedOn: '2026-10-20',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'Sleep looks like one long blackout from outside, but the sleeping brain cycles through a structured sequence of stages every night — each with its own brain waves, body state and job description. Modern sleep science reads that sequence from the hypnogram the way a cardiologist reads an ECG, and it explains a puzzle every student knows: why a full night of sleep after studying beats any all-nighter. This core lesson tours the stages of non-REM and REM sleep, the roughly 90-minute cycles that stack them, and the evidence that sleep is when the brain files its memories.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'A third of life is spent asleep, and modern schedules treat that third as negotiable. Knowing what each stage does — and which ones a shortened night removes — turns vague guilt about late nights into specific, fixable planning: what you sacrifice when you cut sleep, and when.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'A night of sleep is a staircase. Sleep researchers divide it into non-REM stages 1, 2 and 3 plus REM sleep, and the sleeper descends and ascends that staircase four to five times per night in cycles of roughly 90 minutes. The recipe is not uniform: early cycles are rich in deep sleep, later cycles are rich in REM — which is why going to bed very late steals the REM-heavy morning hours, while waking very early steals the slow-wave-dominated first hours. A hypnogram — the graph of stages across the night — is the standard picture of this architecture.',
+        },
+        {
+          kind: 'para',
+          text: 'Stage 1 is the doorway: a transitional few minutes in which respiration and heartbeat slow, muscles relax and body temperature drops. Brain waves shift from the alpha rhythm of relaxed wakefulness (8–12 hertz) down to theta waves (4–7 hertz), which are lower in frequency and higher in amplitude. People awakened here often insist they were not asleep at all — though they typically lost the thread of the last minutes. This is also the stage of hypnagogic experiences, those brief, dreamlike images that drift in as sleep begins.',
+        },
+        {
+          kind: 'para',
+          text: 'Stage 2 is where the night is actually spent — about half of total sleep. The brain stays in theta but interrupts itself with two signatures. Sleep spindles are rapid bursts of higher-frequency waves, and research ties them to learning and memory; K-complexes are single, very high-amplitude deflections that respond to outside stimuli — a knock, a door slam — and may act as a bridge back toward arousal, letting the brain stay asleep while keeping one ear open.',
+        },
+        {
+          kind: 'para',
+          text: 'Stage 3, deep sleep or slow-wave sleep, is dominated by delta waves — the lowest frequency (under 3 hertz) and highest amplitude of the night. Heart rate and respiration slow dramatically, and waking someone takes real effort; if unusual alpha activity creeps into this stage, people wake unrefreshed no matter how long they stayed in bed. This is the most restorative segment of the night, front-loaded into the first half of sleep.',
+        },
+        {
+          kind: 'para',
+          text: 'REM sleep — rapid eye movement — breaks every rule. The brain waves resemble wakefulness (fast, low-amplitude beta), the eyes dart under closed lids, and vivid dreaming is concentrated here, yet the voluntary muscles are paralyzed; only circulation and respiration carry on. That combination of an active brain and a switched-off body earned the name paradoxical sleep. REM appears to be homeostatically regulated: deprive someone of it and, once allowed to sleep undisturbed, they rebound — spending extra time in REM, as if repaying a debt. Research links REM to emotional processing and regulation, and both REM and non-REM stages to learning and memory, which is why sleep-deprived learners pay on every stage.',
+        },
+        { kind: 'heading', text: 'Why We Sleep' },
+        {
+          kind: 'para',
+          text: 'Three families of explanation share the stage. The adaptive theory views sleep as an evolved survival strategy — out of harm’s way and hidden during vulnerable hours. The restorative view points to physiology: growth and repair processes concentrate in deep sleep, and sleep deprivation degrades attention, mood and immune function measurably. The memory account, the most actively researched, holds that sleep is when the brain consolidates new learning — transferring fragile traces toward stable long-term storage, with spindles and slow waves implicated in the dialogue between hippocampus and cortex. The theories are not rivals so much as overlapping job descriptions; what no serious account disputes is that sleep is an active, essential process, not the absence of one.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Identify what is asked: an 8-hour night from 23:00 to 07:00 — what stages does it contain, and what is lost if it is cut to 5 hours?',
+            'Map the cycles: five cycles of ~90 minutes; the first two are deep-sleep-heavy (stages 3 dominates early), the last two are REM-heavy (long REM episodes toward morning).',
+            'Cut to 05:00 (7 hours): most slow-wave sleep is already banked — it front-loads — so physical rest holds up comparatively well.',
+            'Cut to 02:00 (3–4 hours): the REM-rich final cycles are amputated; the sleeper keeps deep sleep but loses the stage tied to emotional processing and much of memory consolidation.',
+            'State the result: short nights are not uniform deficits — early rising costs slow-wave sleep, late nights cost REM; planning the wake time decides which job of sleep gets done.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Study strategy: review material before sleep — consolidation proceeds overnight, and "sleeping on it" is measurable, not a figure of speech',
+            'Sleep clinics read hypnograms from overnight polysomnography to diagnose disorders and quantify how much restorative sleep a patient actually gets',
+            'Shift-work and jet-lag plans rotate schedules with stage costs in mind, since misaligned sleep fragments deep sleep and REM alike',
+            'Drowsy-driving prevention draws on microsleeps — stage 1 intrusions at the wheel that last seconds and kill',
+            'REM rebound explains why people recovering from sleep debt dream intensely for several nights',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'Sleep is not one flat state, so "I slept six hours" is like "I ate food" — which six, in what mixture? Deep sleep cannot be banked in advance, and naps do not substitute for the full sequence. REM is important but not the only memory-critical stage — spindles in stage 2 and slow waves in stage 3 carry their own share of consolidation. And alcohol may hasten sleep onset while suppressing REM in the first half of the night, leaving the sleeper technically rested and functionally shortchanged.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Sleep architecture', def: 'The structured organization of sleep into NREM stages 1–3 and REM across the night, visualized on a hypnogram.' },
+            { term: 'Sleep spindle', def: 'A brief burst of higher-frequency activity in stage 2, associated with learning and memory processing.' },
+            { term: 'K-complex', def: 'A single high-amplitude brain-wave pattern in stage 2, often triggered by external stimuli; may suppress arousal to preserve sleep.' },
+            { term: 'Delta wave', def: 'The lowest-frequency, highest-amplitude wave of deep (stage 3) sleep, under 3 hertz.' },
+            { term: 'REM sleep', def: 'Sleep with waking-like brain activity, rapid eye movements, vivid dreaming and paralysis of voluntary muscles — paradoxical sleep.' },
+            { term: 'REM rebound', def: 'The increase in REM time after REM deprivation, evidence that REM is homeostatically regulated.' },
+          ],
+        },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'Sleep spindles and K-complexes are the signatures of:',
+              options: ['Stage 1', 'Stage 2', 'Stage 3 (deep sleep)', 'REM sleep'],
+              answer: 1,
+              explain: 'Stage 2 — about half the night — is theta sleep punctuated by spindles (linked to learning) and K-complexes (responses to external stimuli).',
+            },
+            {
+              q: 'During REM sleep the body shows:',
+              options: ['Rigid tensing of all muscles', 'Paralysis of voluntary muscles with an active, waking-like brain', 'Delta waves and low heart rate', 'No dreaming whatsoever'],
+              answer: 1,
+              explain: 'REM pairs beta-like brain activity and darting eyes with muscle paralysis — "paradoxical sleep" — and hosts vivid dreams.',
+            },
+            {
+              q: 'Going to sleep very late on a fixed early alarm mainly costs you:',
+              options: ['Deep slow-wave sleep, which comes first', 'The REM-rich final cycles of the night', 'Stage 1 only', 'Nothing, if total time is made up later'],
+              answer: 1,
+              explain: 'Slow-wave sleep dominates early cycles; REM accumulates in later cycles toward morning, so late nights amputate REM.',
+            },
+            {
+              q: 'REM rebound refers to:',
+              options: ['Extra REM time after REM deprivation, once undisturbed sleep returns', 'The eye movements themselves', 'Waking up during a dream', 'The first REM period of the night'],
+              answer: 0,
+              explain: 'Deprived of REM, the sleeper repays the debt — extra REM on recovery nights — showing the stage is homeostatically regulated.',
+            },
+          ],
+        },
+      ],
+    },
   ],
 }
