@@ -85,6 +85,16 @@ const PalaceView = dynamic(
   () => import('@/components/app/palace-view').then((m) => m.PalaceView),
   { loading: ViewLoading }
 )
+const FocusView = dynamic(() => import('@/components/app/focus-view').then((m) => m.FocusView), {
+  loading: ViewLoading,
+})
+
+/* X11 — Focus HQ widget mount: the Pomodoro engine survives unmounts and
+   reloads; the widget slot-claims so double mounting is harmless. */
+const FocusTimerMount = dynamic(
+  () => import('@/components/app/focus-timer').then((m) => m.FocusTimerMount),
+  { ssr: false }
+)
 
 export default function Home() {
   const view = useStudy((s) => s.view)
@@ -138,6 +148,8 @@ export default function Home() {
         useStudy.setState({ view: { name: 'paper-dna' } })
       } else if (v === 'palace') {
         useStudy.setState({ view: { name: 'palace' } })
+      } else if (v === 'focus') {
+        useStudy.setState({ view: { name: 'focus' } })
       }
     }
   }, [])
@@ -227,6 +239,7 @@ export default function Home() {
             {view.name === 'arena' && <ArenaView />}
             {view.name === 'paper-dna' && <PaperDnaView />}
             {view.name === 'palace' && <PalaceView sectionKey={view.sectionKey} />}
+            {view.name === 'focus' && <FocusView />}
           </motion.div>
         </AnimatePresence>
       </main>
@@ -289,6 +302,12 @@ export default function Home() {
                   className="text-left text-muted-foreground transition-colors hover:text-emerald-300"
                 >
                   Review — spaced repetition
+                </button>
+                <button
+                  onClick={() => useStudy.getState().navigate({ name: 'focus' })}
+                  className="text-left text-muted-foreground transition-colors hover:text-emerald-300"
+                >
+                  Focus HQ — Pomodoro &amp; to-dos
                 </button>
                 <button
                   onClick={() => useStudy.getState().navigate({ name: 'formulas' })}
@@ -355,6 +374,7 @@ export default function Home() {
         </div>
       </footer>
       <ScrollTopButton />
+      <FocusTimerMount />
     </div>
   )
 }

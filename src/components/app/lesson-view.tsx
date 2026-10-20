@@ -14,6 +14,7 @@ import {
   Maximize2,
   Minimize2,
   Printer,
+  Timer,
   X,
   XCircle,
   Zap,
@@ -23,7 +24,8 @@ import {
   CloudDownload,
 } from 'lucide-react'
 import { toast } from 'sonner'
-import { getBook, getChapter, getSection, getSections } from '@/data/library'
+import { getBook, getChapter, getSection, getSections, LIBRARY_SUBJECTS } from '@/data/library'
+import { startFocusSession } from '@/lib/focus'
 import { useAllContent } from '@/hooks/use-content'
 import { getOfflineSection } from '@/lib/offline-cache'
 import type { ChapterMeta, DepthBlock, DepthTier, DetailedDerivation, LessonFigure, QuizQuestion, SectionContent, SectionMeta } from '@/data/library'
@@ -630,6 +632,27 @@ export function LessonView({ sectionId }: { sectionId: string }) {
                 className="inline-flex items-center gap-1.5 rounded-full border border-book-rule px-3 py-1 text-[11px] font-semibold text-book-soft transition-colors hover:border-primary/50 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60"
               >
                 <BookOpenCheck className="h-3.5 w-3.5" aria-hidden /> Focus mode
+              </button>
+              <button
+                onClick={() => {
+                  const book = getBook(chapter.bookId)
+                  const subject =
+                    LIBRARY_SUBJECTS.find((s) => s.id === book?.subjectId)?.name ??
+                    bookTitle(chapter.bookId)
+                  startFocusSession(undefined, {
+                    chapterId: chapter.id,
+                    chapterTitle: chapter.title,
+                    subject,
+                    taskTitle: `Read §${section.number} ${section.title}`,
+                  })
+                  toast.success('Pomodoro started — this lesson is being timed', {
+                    description: `${subject} · the session banks into your Focus HQ analytics`,
+                  })
+                }}
+                title="Start a Pomodoro timed on this lesson — it shows up in Focus HQ as study time for this subject"
+                className="ml-1.5 inline-flex items-center gap-1.5 rounded-full border border-book-rule px-3 py-1 text-[11px] font-semibold text-book-soft transition-colors hover:border-emerald-500/50 hover:text-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60 dark:hover:text-emerald-300"
+              >
+                <Timer className="h-3.5 w-3.5" aria-hidden /> Pomodoro
               </button>
               <button
                 onClick={() => window.print()}

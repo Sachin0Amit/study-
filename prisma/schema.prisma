@@ -298,3 +298,50 @@ model LessonIllustration {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+
+// ============ X11 — Focus HQ (Pomodoro + to-dos + study-time analytics) ============
+// A Pomodoro-style deep-work system: tasks ("to-do today" with pomodoro
+// estimates, Cirillo-style) + timed focus/break sessions. Every session logs
+// WHAT it was spent on (task, subject, chapter) and HOW LONG, so analytics can
+// answer "what did I study, for how much time".
+
+model FocusTask {
+  id          String    @id @default(cuid())
+  deviceId    String
+  title       String
+  subject     String? // subject name label, e.g. "Mathematics"
+  subjectId   String? // library subject id when linked, e.g. "mathematics"
+  bookId      String? // library book id when linked
+  estimate    Int       @default(2) // estimated pomodoros
+  done        Int       @default(0) // completed pomodoros logged against it
+  interruptions Int     @default(0) // internal + external interruptions
+  completed   Boolean   @default(false)
+  completedAt DateTime?
+  position    Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([deviceId, completed, position])
+}
+
+model FocusSession {
+  id           String   @id @default(cuid())
+  deviceId     String
+  kind         String   @default("focus") // focus | short_break | long_break
+  taskId       String?
+  taskTitle    String?
+  subject      String?
+  subjectId    String?
+  chapterId    String?
+  chapterTitle String?
+  plannedMin   Int      @default(25)
+  actualSec    Int      @default(0)
+  completed    Boolean  @default(true) // false = stopped early (partial credit)
+  interruptions Int     @default(0)
+  day          String // local "YYYY-MM-DD"
+  startedAt    DateTime @default(now())
+  endedAt      DateTime @default(now())
+
+  @@index([deviceId, day])
+  @@index([deviceId, subject])
+}

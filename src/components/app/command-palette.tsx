@@ -70,6 +70,7 @@ type ViewName =
   | 'arena'
   | 'paper-dna'
   | 'palace'
+  | 'focus'
 
 /** Quick jumps — shown when the palette opens (empty or matching query) */
 const QUICK_ACTIONS: {
@@ -135,6 +136,12 @@ const QUICK_ACTIONS: {
   { view: 'formulas', label: 'Formula sheet', hint: '1,908 printable formulas', icon: Sigma },
   { view: 'exam', label: 'Test simulator', hint: '9,774-question bank', icon: ClipboardCheck },
   { view: 'progress', label: 'Progress dashboard', hint: 'streaks, notes & stats', icon: BarChart3 },
+  {
+    view: 'focus',
+    label: 'Focus HQ — Pomodoro & to-dos',
+    hint: 'timer · task list · what you studied, for how long',
+    icon: Timer,
+  },
 ]
 
 /** X10 Pro system actions — run in place (no navigation) */

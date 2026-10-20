@@ -1,30 +1,22 @@
 'use client'
 
 /**
- * X10 Pro — Deep Focus timer (Pomodoro-style deep-work widget).
+ * X11 — Deep Focus widget (Pomodoro-style).
  *
- * Architecture notes:
- * - The timer ENGINE lives at module level (outside React) so a running session
- *   survives the widget unmounting (e.g. the header hides during focus reading).
- *   React components subscribe via useSyncExternalStore.
- * - Cross-component contract (window CustomEvents):
- *     'sv:focus-start'  detail { minutes }  → start a focus session
- *     'sv:focus-toggle'                    → show / hide the widget
- *     'sv:focus-stats'                     → open the stats sheet
- *   Use the exported requestFocusStart / requestFocusToggle / requestFocusStats
- *   helpers (they dispatch exactly these events).
- * - Persistence: localStorage `sv-focus-log` — `{ date: 'YYYY-MM-DD',
- *   focusMinutes: number }[]`. readFocusLog is exported so the daily briefing
- *   client can ship the log to /api/briefing.
- * - Mounting: `<FocusTimerMount />` is the intended app-level mount (widget +
- *   stats sheet). The command palette also renders `<FocusTimer />`; a slot
- *   claim guarantees only ONE widget instance ever paints, so double mounting
- *   is harmless. Recommended mount: page.tsx root, next to <ScrollTopButton />.
+ * The ENGINE lives in '@/lib/focus' (module-level, survives unmounts and page
+ * reloads). This file is just the floating widget + the localStorage quick-stats
+ * card. For the full Focus HQ experience (to-dos, subject analytics, settings)
+ * see focus-view.tsx — everything there drives the same engine.
+ *
+ * Mounting: `<FocusTimerMount />` is the app-level mount (widget + stats
+ * sheet). A slot claim guarantees only ONE widget instance ever paints, so
+ * double mounting is harmless.
  */
 
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
+import { useEffect, useMemo, useState, useSyncExternalStore } from 'react'
 import {
   BarChart3,
+  Brain,
   CalendarDays,
   Check,
   ChevronDown,
@@ -32,350 +24,43 @@ import {
   Flame,
   Hourglass,
   Pause,
+  PhoneIncoming,
   Play,
   RotateCcw,
+  Target,
   Timer,
   Wind,
   X,
 } from 'lucide-react'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Slider } from '@/components/ui/slider'
+import {
+  type FocusLogEntry,
+  addInterruption,
+  collapseWidget,
+  dismissCelebration,
+  expandWidget,
+  focusPresets,
+  fmtClock,
+  resetSession,
+  selectSession,
+  sessionLabel,
+  setZen,
+  startBreakSession,
+  startFocusSession,
+  toggleRun,
+  toggleWidget,
+  openStats,
+  closeStats,
+  useFocusEngine,
+  useFocusLog,
+  useFocusSettings,
+} from '@/lib/focus'
 
-/* ------------------------------------------------------------------ */
-/*  Event contracts                                                    */
-/* ------------------------------------------------------------------ */
-
-export const FOCUS_START_EVENT = 'sv:focus-start'
-export const FOCUS_TOGGLE_EVENT = 'sv:focus-toggle'
-export const FOCUS_STATS_EVENT = 'sv:focus-stats'
-
-export function requestFocusStart(minutes: number): void {
-  if (typeof window === 'undefined') return
-  window.dispatchEvent(new CustomEvent(FOCUS_START_EVENT, { detail: { minutes } }))
-}
-export function requestFocusToggle(): void {
-  if (typeof window === 'undefined') return
-  window.dispatchEvent(new CustomEvent(FOCUS_TOGGLE_EVENT))
-}
-export function requestFocusStats(): void {
-  if (typeof window === 'undefined') return
-  window.dispatchEvent(new CustomEvent(FOCUS_STATS_EVENT))
-}
-
-/* ------------------------------------------------------------------ */
-/*  Focus log (localStorage `sv-focus-log`)                            */
-/* ------------------------------------------------------------------ */
-
-export interface FocusLogEntry {
-  date: string // 'YYYY-MM-DD'
-  focusMinutes: number
-}
-
-const LOG_KEY = 'sv-focus-log'
-
-function localDateKey(d: Date): string {
-  const pad = (n: number) => String(n).padStart(2, '0')
-  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
-}
-
-/** defensive read — any garbage in storage degrades to [] */
-export function readFocusLog(): FocusLogEntry[] {
-  if (typeof localStorage === 'undefined') return []
-  try {
-    const raw = localStorage.getItem(LOG_KEY)
-    const parsed: unknown = raw ? JSON.parse(raw) : []
-    if (!Array.isArray(parsed)) return []
-    const out: FocusLogEntry[] = []
-    for (const entry of parsed) {
-      if (!entry || typeof entry !== 'object') continue
-      const date = String((entry as { date?: unknown }).date ?? '')
-      const minutes = Number((entry as { focusMinutes?: unknown }).focusMinutes)
-      if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) continue
-      if (!Number.isFinite(minutes) || minutes <= 0 || minutes > 1440) continue
-      out.push({ date, focusMinutes: Math.round(minutes) })
-    }
-    return out
-  } catch {
-    return []
-  }
-}
-
-/** log store version — bumped on every write so stats views re-render */
-let logVersion = 0
-const logListeners = new Set<() => void>()
-function subscribeFocusLog(fn: () => void): () => void {
-  logListeners.add(fn)
-  return () => {
-    logListeners.delete(fn)
-  }
-}
-function getLogVersion(): number {
-  return logVersion
-}
-function bumpLog(): void {
-  logVersion++
-  for (const fn of logListeners) fn()
-}
-
-/** cached snapshot of the parsed log (stable reference per version) */
-const EMPTY_LOG: FocusLogEntry[] = []
-let cachedLog: FocusLogEntry[] = EMPTY_LOG
-let cachedLogVersion = -1
-function getLogSnapshot(): FocusLogEntry[] {
-  if (cachedLogVersion !== logVersion) {
-    cachedLog = readFocusLog()
-    cachedLogVersion = logVersion
-  }
-  return cachedLog
-}
-
-/** add focus minutes to today's log (also exported for power users/tests) */
-export function appendFocusMinutes(minutes: number): void {
-  if (typeof localStorage === 'undefined' || !Number.isFinite(minutes) || minutes <= 0) return
-  const today = localDateKey(new Date())
-  const log = readFocusLog()
-  const entry = log.find((e) => e.date === today)
-  if (entry) entry.focusMinutes += Math.round(minutes)
-  else log.push({ date: today, focusMinutes: Math.round(minutes) })
-  try {
-    localStorage.setItem(LOG_KEY, JSON.stringify(log.slice(-4000)))
-  } catch {
-    /* storage full / unavailable — this session just isn't persisted */
-  }
-  bumpLog()
-}
-
-/* ------------------------------------------------------------------ */
-/*  Engine (module-level store — survives widget unmounts)             */
-/* ------------------------------------------------------------------ */
-
-type SessionKind = 'focus' | 'break'
-
-interface FocusEngineState {
-  kind: SessionKind
-  minutes: number
-  remainingMs: number
-  running: boolean
-  zen: boolean // focus running → hide the widget into an edge dot
-  hidden: boolean // widget visibility
-  collapsed: boolean // pill vs expanded panel
-  statsOpen: boolean
-  celebration: { kind: SessionKind; minutes: number } | null
-}
-
-const INITIAL: FocusEngineState = {
-  kind: 'focus',
-  minutes: 25,
-  remainingMs: 25 * 60_000,
-  running: false,
-  zen: false,
-  hidden: true,
-  collapsed: false,
-  statsOpen: false,
-  celebration: null,
-}
-
-let engineState: FocusEngineState = INITIAL
-let engineSnapshot: FocusEngineState = INITIAL
-const engineListeners = new Set<() => void>()
-
-function setEngine(patch: Partial<FocusEngineState>): void {
-  engineState = { ...engineState, ...patch }
-  engineSnapshot = engineState
-  for (const fn of engineListeners) fn()
-}
-function subscribeEngine(fn: () => void): () => void {
-  engineListeners.add(fn)
-  return () => {
-    engineListeners.delete(fn)
-  }
-}
-function getEngineSnapshot(): FocusEngineState {
-  return engineSnapshot
-}
-function useFocusState(): FocusEngineState {
-  return useSyncExternalStore(subscribeEngine, getEngineSnapshot, () => INITIAL)
-}
-
-/* ---- ticking (single module interval, drift-proof via endAt) ------- */
-
-let tickHandle: ReturnType<typeof setInterval> | null = null
-let endAt = 0
-
-function stopTick(): void {
-  if (tickHandle !== null) {
-    clearInterval(tickHandle)
-    tickHandle = null
-  }
-}
-
-function ensureTick(): void {
-  if (tickHandle !== null) return
-  tickHandle = setInterval(() => {
-    if (!engineState.running) {
-      stopTick()
-      return
-    }
-    const remaining = Math.max(0, endAt - Date.now())
-    if (remaining <= 0) {
-      completeSession()
-      return
-    }
-    // only re-render when the displayed second flips
-    if (Math.ceil(remaining / 1000) !== Math.ceil(engineState.remainingMs / 1000)) {
-      setEngine({ remainingMs: remaining })
-    }
-  }, 250)
-}
-
-/** soft two-tone chime — pure WebAudio, no audio files, volume 0.1 */
-function chime(): void {
-  if (typeof window === 'undefined') return
-  try {
-    const Ctx =
-      window.AudioContext ??
-      (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext
-    if (!Ctx) return
-    const ctx = new Ctx()
-    void ctx.resume?.()
-    const now = ctx.currentTime
-    const notes = [659.25, 987.77] // E5 → B5
-    notes.forEach((freq, i) => {
-      const osc = ctx.createOscillator()
-      const gain = ctx.createGain()
-      osc.type = 'sine'
-      osc.frequency.value = freq
-      const t0 = now + i * 0.18
-      gain.gain.setValueAtTime(0.0001, t0)
-      gain.gain.linearRampToValueAtTime(0.1, t0 + 0.03)
-      gain.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.55)
-      osc.connect(gain)
-      gain.connect(ctx.destination)
-      osc.start(t0)
-      osc.stop(t0 + 0.6)
-    })
-    setTimeout(() => void ctx.close().catch(() => {}), 1600)
-  } catch {
-    /* audio unavailable — silent completion */
-  }
-}
-
-function completeSession(): void {
-  stopTick()
-  const kind = engineState.kind
-  const minutes = engineState.minutes
-  if (kind === 'focus') appendFocusMinutes(minutes)
-  chime()
-  setEngine({
-    running: false,
-    remainingMs: 0,
-    zen: false,
-    hidden: false,
-    collapsed: false,
-    celebration: { kind, minutes },
-  })
-}
-
-/* ---- engine actions (called by the widget UI + window events) ------ */
-
-function startFocusSession(minutes: number): void {
-  const m = Math.min(180, Math.max(1, Math.round(minutes)))
-  stopTick()
-  endAt = Date.now() + m * 60_000
-  setEngine({
-    kind: 'focus',
-    minutes: m,
-    remainingMs: m * 60_000,
-    running: true,
-    zen: false,
-    hidden: false,
-    collapsed: false,
-    celebration: null,
-  })
-  ensureTick()
-}
-
-function startBreakSession(minutes: number): void {
-  const m = Math.min(60, Math.max(1, Math.round(minutes)))
-  stopTick()
-  endAt = Date.now() + m * 60_000
-  setEngine({
-    kind: 'break',
-    minutes: m,
-    remainingMs: m * 60_000,
-    running: true,
-    zen: false,
-    hidden: false,
-    collapsed: false,
-    celebration: null,
-  })
-  ensureTick()
-}
-
-function toggleRun(): void {
-  if (engineState.running) {
-    stopTick()
-    setEngine({ running: false, remainingMs: Math.max(0, endAt - Date.now()), zen: false })
-  } else {
-    const full = engineState.minutes * 60_000
-    const remaining = engineState.remainingMs > 1000 ? engineState.remainingMs : full
-    endAt = Date.now() + remaining
-    setEngine({ running: true, remainingMs: remaining, celebration: null })
-    ensureTick()
-  }
-}
-
-function selectSession(kind: SessionKind, minutes: number): void {
-  stopTick()
-  const m = Math.min(180, Math.max(1, Math.round(minutes)))
-  setEngine({
-    kind,
-    minutes: m,
-    remainingMs: m * 60_000,
-    running: false,
-    zen: false,
-    celebration: null,
-  })
-}
-
-function resetSession(): void {
-  selectSession(engineState.kind, engineState.minutes)
-}
-
-function setZen(on: boolean): void {
-  setEngine({ zen: on && engineState.running && engineState.kind === 'focus' })
-}
-
-function toggleWidget(): void {
-  if (engineState.hidden) {
-    setEngine({ hidden: false, collapsed: false })
-  } else {
-    setEngine({ hidden: true, zen: false })
-  }
-}
-
-function openStats(): void {
-  setEngine({ statsOpen: true, hidden: false, collapsed: false, zen: false })
-}
-
-function dismissCelebration(): void {
-  setEngine({ celebration: null })
-}
-
-/* ---- window event wiring (bound once, browser only) ---------------- */
-
-if (typeof window !== 'undefined') {
-  window.addEventListener(FOCUS_START_EVENT, (e: Event) => {
-    const detail = (e as CustomEvent<{ minutes?: unknown }>).detail
-    const minutes = Number(detail?.minutes)
-    if (Number.isFinite(minutes) && minutes > 0) startFocusSession(minutes)
-  })
-  window.addEventListener(FOCUS_TOGGLE_EVENT, () => toggleWidget())
-  window.addEventListener(FOCUS_STATS_EVENT, () => openStats())
-  window.addEventListener('storage', (e: StorageEvent) => {
-    if (e.key === LOG_KEY) bumpLog()
-  })
-}
+// re-exported for older call sites (command palette binds these helpers)
+export { requestFocusStart, requestFocusToggle, requestFocusStats } from '@/lib/focus'
+export { readFocusLog, appendFocusMinutes, localDateKey } from '@/lib/focus'
+export type { FocusLogEntry as LogEntry, FocusLinkage } from '@/lib/focus'
 
 /* ------------------------------------------------------------------ */
 /*  Widget slot claim (only one instance may paint)                    */
@@ -401,23 +86,6 @@ function notifySlots(): void {
 /*  Small helpers                                                      */
 /* ------------------------------------------------------------------ */
 
-const PRESETS: { label: string; kind: SessionKind; minutes: number }[] = [
-  { label: 'Focus 25', kind: 'focus', minutes: 25 },
-  { label: 'Focus 50', kind: 'focus', minutes: 50 },
-  { label: 'Break 5', kind: 'break', minutes: 5 },
-  { label: 'Break 15', kind: 'break', minutes: 15 },
-]
-
-function sessionLabel(kind: SessionKind, minutes: number): string {
-  if (kind === 'break') return minutes >= 15 ? 'Long break' : 'Short break'
-  return minutes >= 50 ? 'Deep work' : 'Deep focus'
-}
-
-function fmtClock(ms: number): string {
-  const total = Math.max(0, Math.ceil(ms / 1000))
-  return `${Math.floor(total / 60)}:${String(total % 60).padStart(2, '0')}`
-}
-
 const RING_RADIUS = 56
 const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS
 
@@ -425,6 +93,25 @@ const KEYFRAMES = `
 @keyframes sv-focus-breathe { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
 @keyframes sv-focus-pop { 0% { transform: scale(0.55); opacity: 0; } 60% { transform: scale(1.08); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
 `
+
+/** cycle dots — how many pomodoros until the long break */
+function CycleDots({ cycle, every }: { cycle: number; every: number }) {
+  return (
+    <span className="flex items-center gap-1.5" title={`${cycle % every || every} of ${every} pomodoros until the long break`}>
+      {Array.from({ length: every }, (_, i) => {
+        const filled = (cycle === 0 ? 0 : cycle % every || every) > i
+        return (
+          <span
+            key={i}
+            className={`h-1.5 w-1.5 rounded-full transition-colors ${
+              filled ? 'bg-emerald-400' : 'bg-border'
+            }`}
+          />
+        )
+      })}
+    </span>
+  )
+}
 
 /* ------------------------------------------------------------------ */
 /*  <FocusTimer /> — the floating widget                               */
@@ -434,7 +121,9 @@ export function FocusTimer() {
   const id = useMemo(() => nextWidgetId++, [])
   const holderId = useSyncExternalStore(subscribeSlot, getHolderId, () => null)
   const isHolder = holderId === id
-  const s = useFocusState()
+  const s = useFocusEngine()
+  const settings = useFocusSettings()
+  const presets = useMemo(() => focusPresets(), [settings])
 
   // claim the paint slot whenever it is free (survives holder swaps)
   useEffect(() => {
@@ -487,7 +176,7 @@ export function FocusTimer() {
             {fmtClock(s.remainingMs)} · zen
           </span>
         </button>
-        <FocusStatsDialog open={s.statsOpen} onClose={() => setEngine({ statsOpen: false })} />
+        <FocusStatsDialog open={s.statsOpen} onClose={() => closeStats()} />
       </>
     )
   }
@@ -496,7 +185,7 @@ export function FocusTimer() {
     return (
       <>
         <style>{KEYFRAMES}</style>
-        <FocusStatsDialog open={s.statsOpen} onClose={() => setEngine({ statsOpen: false })} />
+        <FocusStatsDialog open={s.statsOpen} onClose={() => closeStats()} />
       </>
     )
   }
@@ -511,42 +200,42 @@ export function FocusTimer() {
           aria-label="Focus timer"
           className="fixed bottom-3 right-3 z-40 flex items-center gap-0.5 rounded-full border border-border/80 bg-card/95 p-1.5 pl-3.5 shadow-xl shadow-black/20 backdrop-blur-xl sm:bottom-5 sm:right-5"
         >
-        <button
-          type="button"
-          onClick={() => setEngine({ collapsed: false })}
-          className="flex items-center gap-2 rounded-full px-1 py-1 text-left transition-colors hover:text-foreground"
-          aria-label="Expand focus timer"
-        >
-          <Timer className={`h-4 w-4 ${s.running ? accent : 'text-muted-foreground'}`} aria-hidden />
-          <span className="font-mono text-sm font-bold tabular-nums">
-            {s.running || s.remainingMs < durationMs ? fmtClock(s.remainingMs) : `${s.minutes}m`}
-          </span>
-          <span className="hidden text-[10px] font-semibold uppercase tracking-wider text-muted-foreground sm:inline">
-            {sessionLabel(s.kind, s.minutes)}
-          </span>
-        </button>
-        <button
-          type="button"
-          onClick={toggleRun}
-          aria-label={s.running ? 'Pause session' : 'Start session'}
-          className={`flex h-8 w-8 items-center justify-center rounded-full border ${accentSoft}`}
-        >
-          {s.running ? (
-            <Pause className="h-3.5 w-3.5" aria-hidden />
-          ) : (
-            <Play className="h-3.5 w-3.5" aria-hidden />
-          )}
-        </button>
-        <button
-          type="button"
-          onClick={() => setEngine({ collapsed: false })}
-          aria-label="Expand focus timer"
-          className="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground"
-        >
-          <ChevronDown className="h-4 w-4" aria-hidden />
-        </button>
-      </div>
-      <FocusStatsDialog open={s.statsOpen} onClose={() => setEngine({ statsOpen: false })} />
+          <button
+            type="button"
+            onClick={() => expandWidget()}
+            className="flex items-center gap-2 rounded-full px-1 py-1 text-left transition-colors hover:text-foreground"
+            aria-label="Expand focus timer"
+          >
+            <Timer className={`h-4 w-4 ${s.running ? accent : 'text-muted-foreground'}`} aria-hidden />
+            <span className="font-mono text-sm font-bold tabular-nums">
+              {s.running || s.remainingMs < durationMs ? fmtClock(s.remainingMs) : `${s.minutes}m`}
+            </span>
+            <span className="hidden text-[10px] font-semibold uppercase tracking-wider text-muted-foreground sm:inline">
+              {sessionLabel(s.kind, s.minutes)}
+            </span>
+          </button>
+          <button
+            type="button"
+            onClick={toggleRun}
+            aria-label={s.running ? 'Pause session' : 'Start session'}
+            className={`flex h-8 w-8 items-center justify-center rounded-full border ${accentSoft}`}
+          >
+            {s.running ? (
+              <Pause className="h-3.5 w-3.5" aria-hidden />
+            ) : (
+              <Play className="h-3.5 w-3.5" aria-hidden />
+            )}
+          </button>
+          <button
+            type="button"
+            onClick={() => expandWidget()}
+            aria-label="Expand focus timer"
+            className="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <ChevronDown className="h-4 w-4 rotate-180" aria-hidden />
+          </button>
+        </div>
+        <FocusStatsDialog open={s.statsOpen} onClose={() => closeStats()} />
       </>
     )
   }
@@ -560,228 +249,285 @@ export function FocusTimer() {
         aria-label="Focus timer"
         className="fixed inset-x-3 bottom-3 z-40 sm:inset-x-auto sm:bottom-5 sm:right-5 sm:w-[320px]"
       >
-      <div className="overflow-hidden rounded-3xl border border-border/80 bg-card/95 shadow-2xl shadow-black/25 backdrop-blur-xl">
-        {/* header */}
-        <div className="flex items-center justify-between gap-2 border-b border-border/60 px-4 py-2.5">
-          <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider">
-            <Timer className={`h-3.5 w-3.5 ${accent}`} aria-hidden />
-            <span className={s.running ? accent : 'text-muted-foreground'}>
-              {sessionLabel(s.kind, s.minutes)}
-              {s.running ? ' · live' : ''}
+        <div className="overflow-hidden rounded-3xl border border-border/80 bg-card/95 shadow-2xl shadow-black/25 backdrop-blur-xl">
+          {/* header */}
+          <div className="flex items-center justify-between gap-2 border-b border-border/60 px-4 py-2.5">
+            <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider">
+              <Timer className={`h-3.5 w-3.5 ${accent}`} aria-hidden />
+              <span className={s.running ? accent : 'text-muted-foreground'}>
+                {sessionLabel(s.kind, s.minutes)}
+                {s.running ? ' · live' : ''}
+              </span>
             </span>
-          </span>
-          <span className="flex items-center gap-0.5">
-            {isFocus && s.running && (
+            <span className="flex items-center gap-0.5">
+              {isFocus && s.running && (
+                <>
+                  <button
+                    type="button"
+                    onClick={addInterruption}
+                    aria-label="Log an internal interruption (your own distraction)"
+                    title="Internal interruption — I got distracted"
+                    className="flex h-7 w-7 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
+                  >
+                    <Brain className="h-3.5 w-3.5" aria-hidden />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={addInterruption}
+                    aria-label="Log an external interruption (someone/something interrupted you)"
+                    title="External interruption — something pulled me away"
+                    className="flex h-7 w-7 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
+                  >
+                    <PhoneIncoming className="h-3.5 w-3.5" aria-hidden />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setZen(true)}
+                    aria-label="Enter zen mode (hide timer to an edge dot)"
+                    title="Zen — shrink to an edge dot while you work"
+                    className="flex h-7 w-7 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
+                  >
+                    <Wind className="h-3.5 w-3.5" aria-hidden />
+                  </button>
+                </>
+              )}
               <button
                 type="button"
-                onClick={() => setZen(true)}
-                aria-label="Enter zen mode (hide timer to an edge dot)"
-                title="Zen — shrink to an edge dot while you work"
+                onClick={openStats}
+                aria-label="Open focus stats"
+                title="Focus stats"
                 className="flex h-7 w-7 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
               >
-                <Wind className="h-3.5 w-3.5" aria-hidden />
+                <BarChart3 className="h-3.5 w-3.5" aria-hidden />
               </button>
-            )}
-            <button
-              type="button"
-              onClick={openStats}
-              aria-label="Open focus stats"
-              title="Focus stats"
-              className="flex h-7 w-7 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
-            >
-              <BarChart3 className="h-3.5 w-3.5" aria-hidden />
-            </button>
-            <button
-              type="button"
-              onClick={() => setEngine({ collapsed: true })}
-              aria-label="Collapse focus timer to a pill"
-              title="Collapse"
-              className="flex h-7 w-7 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
-            >
-              <ChevronDown className="h-4 w-4" aria-hidden />
-            </button>
-            <button
-              type="button"
-              onClick={() => setEngine({ hidden: true, zen: false })}
-              aria-label="Hide focus timer"
-              title="Hide (press F to bring it back)"
-              className="flex h-7 w-7 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
-            >
-              <X className="h-4 w-4" aria-hidden />
-            </button>
-          </span>
+              <button
+                type="button"
+                onClick={() => collapseWidget()}
+                aria-label="Collapse focus timer to a pill"
+                title="Collapse"
+                className="flex h-7 w-7 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
+              >
+                <ChevronDown className="h-4 w-4" aria-hidden />
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  toggleWidget()
+                }}
+                aria-label="Hide focus timer"
+                title="Hide (press F to bring it back)"
+                className="flex h-7 w-7 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
+              >
+                <X className="h-4 w-4" aria-hidden />
+              </button>
+            </span>
+          </div>
+
+          {/* body */}
+          {s.celebration ? (
+            <div className="flex flex-col items-center gap-3 px-5 py-6 text-center">
+              <span
+                className={`flex h-14 w-14 items-center justify-center rounded-full border ${accentSoft}`}
+                style={{ animation: 'sv-focus-pop 0.5s ease-out both' }}
+              >
+                {s.celebration.kind === 'focus' ? (
+                  <Check className="h-7 w-7" aria-hidden />
+                ) : (
+                  <Coffee className="h-6 w-6" aria-hidden />
+                )}
+              </span>
+              <div>
+                <p className="text-[15px] font-bold leading-tight">
+                  {s.celebration.kind === 'focus'
+                    ? `${s.celebration.minutes} focus minutes banked`
+                    : 'Break\u2019s over'}
+                </p>
+                <p className="mt-0.5 text-xs text-muted-foreground">
+                  {s.celebration.kind === 'focus'
+                    ? 'Nice work — your brain earned a pause.'
+                    : 'Ready for another deep block?'}
+                </p>
+                {s.celebration.kind === 'focus' && (
+                  <span className="mt-2 flex justify-center">
+                    <CycleDots cycle={s.celebration.cycle} every={settings.longEvery} />
+                  </span>
+                )}
+              </div>
+              <div className="flex flex-wrap justify-center gap-2">
+                {s.celebration.kind === 'focus' ? (
+                  <button
+                    type="button"
+                    onClick={() => startBreakSession(undefined, s.celebration?.nextLong)}
+                    className="rounded-full border border-sky-400/40 bg-sky-400/15 px-3.5 py-1.5 text-xs font-bold text-sky-600 transition-colors hover:bg-sky-400/25 dark:text-sky-300"
+                  >
+                    {s.celebration.nextLong
+                      ? `Take a long break · ${settings.longMin}m`
+                      : `Take a ${settings.shortMin}-min break`}
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => startFocusSession(settings.focusMin)}
+                    className="rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3.5 py-1.5 text-xs font-bold text-emerald-600 transition-colors hover:bg-emerald-400/25 dark:text-emerald-300"
+                  >
+                    Start focus {settings.focusMin}
+                  </button>
+                )}
+                <button
+                  type="button"
+                  onClick={dismissCelebration}
+                  className="rounded-full border border-border bg-muted/50 px-3.5 py-1.5 text-xs font-bold text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  Done
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-col items-center gap-3 px-5 pb-4 pt-4">
+              {/* ring + time */}
+              <div
+                className="relative"
+                style={s.running ? { animation: 'sv-focus-breathe 4s ease-in-out infinite' } : undefined}
+              >
+                <svg viewBox="0 0 140 140" className="h-36 w-36 -rotate-90" aria-hidden>
+                  <circle
+                    cx="70"
+                    cy="70"
+                    r={RING_RADIUS}
+                    fill="none"
+                    strokeWidth="8"
+                    className="stroke-border"
+                  />
+                  <circle
+                    cx="70"
+                    cy="70"
+                    r={RING_RADIUS}
+                    fill="none"
+                    strokeWidth="8"
+                    strokeLinecap="round"
+                    strokeDasharray={RING_CIRCUMFERENCE}
+                    strokeDashoffset={RING_CIRCUMFERENCE * (1 - progress)}
+                    className={`${accent} stroke-current transition-[stroke-dashoffset] duration-500 ease-linear`}
+                  />
+                </svg>
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <span className="font-mono text-[30px] font-black leading-none tabular-nums tracking-tight">
+                    {fmtClock(s.remainingMs)}
+                  </span>
+                  <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                    {sessionLabel(s.kind, s.minutes)}
+                  </span>
+                </div>
+              </div>
+
+              {/* linkage chip — what this session counts toward */}
+              {s.linkage && (s.linkage.taskTitle || s.linkage.subject || s.linkage.chapterTitle) && (
+                <span className="flex max-w-full items-center gap-1.5 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">
+                  <Target className="h-3 w-3 shrink-0" aria-hidden />
+                  <span className="truncate">
+                    {s.linkage.taskTitle ??
+                      s.linkage.chapterTitle ??
+                      s.linkage.subject ??
+                      'Linked session'}
+                  </span>
+                  {s.linkage.subject && s.linkage.taskTitle && (
+                    <span className="shrink-0 text-emerald-600/70 dark:text-emerald-300/60">
+                      · {s.linkage.subject}
+                    </span>
+                  )}
+                </span>
+              )}
+
+              {/* interruptions this session */}
+              {isFocus && s.interruptions > 0 && (
+                <span className="text-[10.5px] font-medium text-amber-600 dark:text-amber-300">
+                  {s.interruptions} interruption{s.interruptions === 1 ? '' : 's'} this session
+                </span>
+              )}
+
+              {/* start / pause / reset */}
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={toggleRun}
+                  className={`flex h-10 items-center gap-2 rounded-full border px-5 text-sm font-bold transition-all ${accentSoft} hover:brightness-110`}
+                >
+                  {s.running ? (
+                    <Pause className="h-4 w-4" aria-hidden />
+                  ) : (
+                    <Play className="h-4 w-4" aria-hidden />
+                  )}
+                  {s.running ? 'Pause' : s.remainingMs < durationMs ? 'Resume' : 'Start'}
+                </button>
+                <button
+                  type="button"
+                  onClick={resetSession}
+                  aria-label="Reset session (partial time is banked)"
+                  title="Reset — time already spent is banked"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-muted/50 text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <RotateCcw className="h-4 w-4" aria-hidden />
+                </button>
+              </div>
+
+              {/* presets */}
+              <div className="flex flex-wrap justify-center gap-1.5">
+                {presets.map((p) => {
+                  const active = p.kind === s.kind && p.minutes === s.minutes
+                  return (
+                    <button
+                      key={p.label}
+                      type="button"
+                      onClick={() => selectSession(p.kind, p.minutes)}
+                      className={`rounded-full border px-2.5 py-1 text-[11px] font-bold transition-all ${
+                        active
+                          ? p.kind === 'focus'
+                            ? 'border-emerald-400/50 bg-emerald-400/15 text-emerald-600 dark:text-emerald-300'
+                            : 'border-sky-400/50 bg-sky-400/15 text-sky-600 dark:text-sky-300'
+                          : 'border-border bg-muted/40 text-muted-foreground hover:text-foreground'
+                      }`}
+                    >
+                      {p.label}
+                    </button>
+                  )
+                })}
+              </div>
+
+              {/* custom length */}
+              <div className="w-full">
+                <div className="mb-1.5 flex items-center justify-between text-[11px] font-medium text-muted-foreground">
+                  <span>Custom length</span>
+                  <span className="font-mono font-bold tabular-nums text-foreground/80">
+                    {dragMinutes ?? s.minutes} min
+                  </span>
+                </div>
+                <Slider
+                  value={[Math.min(90, Math.max(5, dragMinutes ?? s.minutes))]}
+                  min={5}
+                  max={90}
+                  step={5}
+                  onValueChange={(v) => setDragMinutes(v[0] ?? null)}
+                  onValueCommit={(v) => {
+                    selectSession(s.kind, v[0] ?? s.minutes)
+                    setDragMinutes(null)
+                  }}
+                  aria-label="Custom session length in minutes"
+                />
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* body */}
-        {s.celebration ? (
-          <div className="flex flex-col items-center gap-3 px-5 py-6 text-center">
-            <span
-              className={`flex h-14 w-14 items-center justify-center rounded-full border ${accentSoft}`}
-              style={{ animation: 'sv-focus-pop 0.5s ease-out both' }}
-            >
-              {s.celebration.kind === 'focus' ? (
-                <Check className="h-7 w-7" aria-hidden />
-              ) : (
-                <Coffee className="h-6 w-6" aria-hidden />
-              )}
-            </span>
-            <div>
-              <p className="text-[15px] font-bold leading-tight">
-                {s.celebration.kind === 'focus'
-                  ? `${s.celebration.minutes} focus minutes banked`
-                  : 'Break\u2019s over'}
-              </p>
-              <p className="mt-0.5 text-xs text-muted-foreground">
-                {s.celebration.kind === 'focus'
-                  ? 'Nice work — your brain earned a pause.'
-                  : 'Ready for another deep block?'}
-              </p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-2">
-              {s.celebration.kind === 'focus' ? (
-                <button
-                  type="button"
-                  onClick={() => startBreakSession(5)}
-                  className="rounded-full border border-sky-400/40 bg-sky-400/15 px-3.5 py-1.5 text-xs font-bold text-sky-600 transition-colors hover:bg-sky-400/25 dark:text-sky-300"
-                >
-                  Take a 5-min break
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => startFocusSession(25)}
-                  className="rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3.5 py-1.5 text-xs font-bold text-emerald-600 transition-colors hover:bg-emerald-400/25 dark:text-emerald-300"
-                >
-                  Start focus 25
-                </button>
-              )}
-              <button
-                type="button"
-                onClick={dismissCelebration}
-                className="rounded-full border border-border bg-muted/50 px-3.5 py-1.5 text-xs font-bold text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Done
-              </button>
-            </div>
-          </div>
-        ) : (
-          <div className="flex flex-col items-center gap-3 px-5 pb-4 pt-4">
-            {/* ring + time */}
-            <div
-              className="relative"
-              style={s.running ? { animation: 'sv-focus-breathe 4s ease-in-out infinite' } : undefined}
-            >
-              <svg viewBox="0 0 140 140" className="h-36 w-36 -rotate-90" aria-hidden>
-                <circle
-                  cx="70"
-                  cy="70"
-                  r={RING_RADIUS}
-                  fill="none"
-                  strokeWidth="8"
-                  className="stroke-border"
-                />
-                <circle
-                  cx="70"
-                  cy="70"
-                  r={RING_RADIUS}
-                  fill="none"
-                  strokeWidth="8"
-                  strokeLinecap="round"
-                  strokeDasharray={RING_CIRCUMFERENCE}
-                  strokeDashoffset={RING_CIRCUMFERENCE * (1 - progress)}
-                  className={`${accent} stroke-current transition-[stroke-dashoffset] duration-500 ease-linear`}
-                />
-              </svg>
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="font-mono text-[30px] font-black leading-none tabular-nums tracking-tight">
-                  {fmtClock(s.remainingMs)}
-                </span>
-                <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                  {sessionLabel(s.kind, s.minutes)}
-                </span>
-              </div>
-            </div>
-
-            {/* start / pause / reset */}
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={toggleRun}
-                className={`flex h-10 items-center gap-2 rounded-full border px-5 text-sm font-bold transition-all ${accentSoft} hover:brightness-110`}
-              >
-                {s.running ? (
-                  <Pause className="h-4 w-4" aria-hidden />
-                ) : (
-                  <Play className="h-4 w-4" aria-hidden />
-                )}
-                {s.running ? 'Pause' : s.remainingMs < durationMs ? 'Resume' : 'Start'}
-              </button>
-              <button
-                type="button"
-                onClick={resetSession}
-                aria-label="Reset session"
-                title="Reset"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-muted/50 text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <RotateCcw className="h-4 w-4" aria-hidden />
-              </button>
-            </div>
-
-            {/* presets */}
-            <div className="flex flex-wrap justify-center gap-1.5">
-              {PRESETS.map((p) => {
-                const active = p.kind === s.kind && p.minutes === s.minutes
-                return (
-                  <button
-                    key={p.label}
-                    type="button"
-                    onClick={() => selectSession(p.kind, p.minutes)}
-                    className={`rounded-full border px-2.5 py-1 text-[11px] font-bold transition-all ${
-                      active
-                        ? p.kind === 'focus'
-                          ? 'border-emerald-400/50 bg-emerald-400/15 text-emerald-600 dark:text-emerald-300'
-                          : 'border-sky-400/50 bg-sky-400/15 text-sky-600 dark:text-sky-300'
-                        : 'border-border bg-muted/40 text-muted-foreground hover:text-foreground'
-                    }`}
-                  >
-                    {p.label}
-                  </button>
-                )
-              })}
-            </div>
-
-            {/* custom length */}
-            <div className="w-full">
-              <div className="mb-1.5 flex items-center justify-between text-[11px] font-medium text-muted-foreground">
-                <span>Custom length</span>
-                <span className="font-mono font-bold tabular-nums text-foreground/80">
-                  {dragMinutes ?? s.minutes} min
-                </span>
-              </div>
-              <Slider
-                value={[Math.min(90, Math.max(5, dragMinutes ?? s.minutes))]}
-                min={5}
-                max={90}
-                step={5}
-                onValueChange={(v) => setDragMinutes(v[0] ?? null)}
-                onValueCommit={(v) => {
-                  selectSession(s.kind, v[0] ?? s.minutes)
-                  setDragMinutes(null)
-                }}
-                aria-label="Custom session length in minutes"
-              />
-            </div>
-          </div>
-        )}
+        <FocusStatsDialog open={s.statsOpen} onClose={() => dismissStats()} />
       </div>
-
-      <FocusStatsDialog open={s.statsOpen} onClose={() => setEngine({ statsOpen: false })} />
-    </div>
     </>
   )
 }
 
-/** stats sheet rendered by the widget (opened via the 'sv:focus-stats' event) */
+/* ------------------------------------------------------------------ */
+/*  Stats sheet (localStorage quick stats — full analytics in Focus HQ) */
+/* ------------------------------------------------------------------ */
+
 function FocusStatsDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
   return (
     <Dialog open={open} onOpenChange={(o) => { if (!o) onClose() }}>
@@ -791,7 +537,8 @@ function FocusStatsDialog({ open, onClose }: { open: boolean; onClose: () => voi
             <BarChart3 className="h-4.5 w-4.5 text-emerald-300" aria-hidden /> Focus stats
           </DialogTitle>
           <DialogDescription>
-            Deep-work minutes logged on this device — take the number to your daily briefing.
+            Deep-work minutes logged on this device. Open <strong>Focus HQ</strong> for per-subject
+            study-time analytics.
           </DialogDescription>
         </DialogHeader>
         <FocusTimerStats />
@@ -801,7 +548,7 @@ function FocusStatsDialog({ open, onClose }: { open: boolean; onClose: () => voi
 }
 
 /* ------------------------------------------------------------------ */
-/*  <FocusTimerStats /> — the stats card                               */
+/*  <FocusTimerStats /> — the quick stats card                          */
 /* ------------------------------------------------------------------ */
 
 interface FocusSummary {
@@ -816,13 +563,14 @@ function summarizeFocusLog(log: FocusLogEntry[]): FocusSummary {
   const byDay = new Map<string, number>()
   for (const e of log) byDay.set(e.date, (byDay.get(e.date) ?? 0) + e.focusMinutes)
 
-  const today = localDateKey(new Date())
+  const today = localDateKeySafe()
   const week: FocusSummary['week'] = []
   const dayLetters = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
   for (let i = 6; i >= 0; i--) {
     const d = new Date()
     d.setDate(d.getDate() - i)
-    const key = localDateKey(d)
+    const pad = (n: number) => String(n).padStart(2, '0')
+    const key = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
     week.push({
       date: key,
       label: dayLetters[d.getDay()] ?? '',
@@ -837,7 +585,9 @@ function summarizeFocusLog(log: FocusLogEntry[]): FocusSummary {
   for (;;) {
     const d = new Date()
     d.setDate(d.getDate() - offset)
-    if ((byDay.get(localDateKey(d)) ?? 0) > 0) {
+    const pad = (n: number) => String(n).padStart(2, '0')
+    const key = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+    if ((byDay.get(key) ?? 0) > 0) {
       streakDays++
       offset++
     } else break
@@ -854,8 +604,14 @@ function summarizeFocusLog(log: FocusLogEntry[]): FocusSummary {
   }
 }
 
+function localDateKeySafe(): string {
+  const d = new Date()
+  const pad = (n: number) => String(n).padStart(2, '0')
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+}
+
 export function FocusTimerStats({ className = '' }: { className?: string }) {
-  const log = useSyncExternalStore(subscribeFocusLog, getLogSnapshot, () => EMPTY_LOG)
+  const log = useFocusLog()
   const stats = useMemo(() => summarizeFocusLog(log), [log])
   const maxBar = Math.max(60, ...stats.week.map((d) => d.minutes))
 
@@ -951,7 +707,7 @@ export function FocusTimerStats({ className = '' }: { className?: string }) {
       </div>
 
       <p className="mt-3 text-center text-[10.5px] text-muted-foreground/70">
-        Sessions are stored on this device only — they feed your daily briefing.
+        Focus HQ has per-subject analytics — open it from the header.
       </p>
     </div>
   )
@@ -962,10 +718,9 @@ export function FocusTimerStats({ className = '' }: { className?: string }) {
 /* ------------------------------------------------------------------ */
 
 /**
- * Mount this ONCE at the app root (recommended: page.tsx, right before
- * <ScrollTopButton />). It renders the floating widget + stats sheet and is
- * safe to co-exist with the command palette's internal <FocusTimer /> —
- * only one instance ever paints thanks to the slot claim.
+ * Mount this ONCE at the app root (page.tsx, right before <ScrollTopButton />).
+ * Renders the floating widget + stats sheet; only one instance ever paints
+ * thanks to the slot claim.
  */
 export function FocusTimerMount() {
   return <FocusTimer />

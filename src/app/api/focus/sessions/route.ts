@@ -1,0 +1,100 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { db } from '@/lib/db'
+
+/**
+ * X11 — Focus HQ session log. Every focus/break session is POSTed here with
+ * its linkage (task / subject / chapter) so analytics can answer "what did I
+ * study, for how much time".
+ *
+ * GET  ?deviceId=…&limit=…  → most recent sessions (default 25)
+ * POST { deviceId, kind, taskId?, taskTitle?, subject?, subjectId?,
+ *        chapterId?, chapterTitle?, plannedMin, actualSec, completed,
+ *        interruptions?, startedAt?, incrementTask? }
+ *      → log the session; when incrementTask is set and the task belongs to
+ *        the device, its done-pomodoro count + interruptions grow too.
+ */
+
+const KINDS = new Set(['focus', 'short_break', 'long_break'])
+const DAY_RE = /^\d{4}-\d{2}-\d{2}$/
+
+function localDayKey(d: Date): string {
+  const pad = (n: number) => String(n).padStart(2, '0')
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+}
+
+function intIn(n: unknown, min: number, max: number, fallback: number): number {
+  const v = Number(n)
+  if (!Number.isFinite(v)) return fallback
+  return Math.min(max, Math.max(min, Math.round(v)))
+}
+
+export async function GET(req: NextRequest) {
+  const deviceId = req.nextUrl.searchParams.get('deviceId')
+  if (!deviceId) return NextResponse.json({ error: 'deviceId required' }, { status: 400 })
+  const limit = intIn(req.nextUrl.searchParams.get('limit'), 1, 100, 25)
+  try {
+    const sessions = await db.focusSession.findMany({
+      where: { deviceId },
+      orderBy: { startedAt: 'desc' },
+      take: limit,
+    })
+    return NextResponse.json({ sessions })
+  } catch (err) {
+    console.error('[focus/sessions GET]', err)
+    return NextResponse.json({ error: 'Session log unavailable' }, { status: 500 })
+  }
+}
+
+export async function POST(req: NextRequest) {
+  const body = await req.json().catch(() => null)
+  const deviceId = String(body?.deviceId ?? '')
+  if (!deviceId) return NextResponse.json({ error: 'deviceId required' }, { status: 400 })
+  const kind = String(body?.kind ?? 'focus')
+  if (!KINDS.has(kind)) return NextResponse.json({ error: 'invalid kind' }, { status: 400 })
+
+  const startedAt = body?.startedAt ? new Date(String(body.startedAt)) : new Date()
+  const endedAt = body?.endedAt ? new Date(String(body.endedAt)) : new Date()
+  const day = String(body?.day ?? '') || localDayKey(startedAt)
+  if (!DAY_RE.test(day)) return NextResponse.json({ error: 'bad day key' }, { status: 400 })
+
+  try {
+    const session = await db.focusSession.create({
+      data: {
+        deviceId,
+        kind,
+        taskId: body?.taskId ? String(body.taskId).slice(0, 40) : null,
+        taskTitle: body?.taskTitle ? String(body.taskTitle).slice(0, 160) : null,
+        subject: body?.subject ? String(body.subject).slice(0, 80) : null,
+        subjectId: body?.subjectId ? String(body.subjectId).slice(0, 80) : null,
+        chapterId: body?.chapterId ? String(body.chapterId).slice(0, 120) : null,
+        chapterTitle: body?.chapterTitle ? String(body.chapterTitle).slice(0, 160) : null,
+        plannedMin: intIn(body?.plannedMin, 1, 240, 25),
+        actualSec: intIn(body?.actualSec, 0, 24 * 3600, 0),
+        completed: body?.completed === false ? false : true,
+        interruptions: intIn(body?.interruptions, 0, 999, 0),
+        day,
+        startedAt,
+        endedAt,
+      },
+    })
+
+    // accrue the pomodoro against its task (ownership-checked)
+    if (body?.incrementTask && session.taskId && kind === 'focus') {
+      const task = await db.focusTask.findUnique({ where: { id: session.taskId } })
+      if (task && task.deviceId === deviceId) {
+        await db.focusTask.update({
+          where: { id: task.id },
+          data: {
+            done: { increment: 1 },
+            interruptions: { increment: session.interruptions },
+          },
+        })
+      }
+    }
+
+    return NextResponse.json({ session }, { status: 201 })
+  } catch (err) {
+    console.error('[focus/sessions POST]', err)
+    return NextResponse.json({ error: 'Could not log session' }, { status: 500 })
+  }
+}
