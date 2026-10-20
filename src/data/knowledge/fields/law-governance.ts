@@ -1,10 +1,14 @@
 import type { KnowledgeDomainFile } from '../types'
+import { x15BusinessLawTopics } from './x15-business-law'
 
 export const lawGovernance: KnowledgeDomainFile = {
   domain: 'Law & Governance',
   blurb:
     'The rules societies write for power — constitutions, courts, treaties and the machinery that makes them hold.',
   topics: [
+    // X15 exam-syllabus pass (2026-10-20): business-law cluster
+    // (Sale of Goods, Partnership, LLP, Companies + regulators).
+    ...x15BusinessLawTopics.filter((t) => t.domain === 'Law & Governance'),
     {
       id: 'law-separation-powers',
       title: 'Separation of Powers and Checks and Balances',

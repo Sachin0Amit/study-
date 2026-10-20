@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 174
-- **Books (master volumes):** 174
-- **Chapters:** 815
-- **Sections (lessons):** 4384
+- **Subjects:** 176
+- **Books (master volumes):** 176
+- **Chapters:** 827
+- **Sections (lessons):** 4398
 
 ## Foundations — 5 subjects
 
@@ -1334,7 +1334,16 @@
 
 - **Ch 1. Critical Reasoning** `ku-languages-literature-verbal-reasoning-critical-reasoning` — 1 sections: Critical Reasoning: Breaking Down Arguments for Exams
 
-## Law & Governance — 8 subjects
+## Law & Governance — 9 subjects
+
+### Business Law (`ku-law-governance-business-law`)
+
+*Rules, states and constitutions* — 4 chapters · 4 sections
+
+- **Ch 1. Sale of Goods Act 1930** `ku-law-governance-business-law-sale-of-goods-act-1930` — 1 sections: The Sale of Goods Act: Conditions, Warranties and the Unpaid Seller
+- **Ch 2. Partnership Act 1932** `ku-law-governance-business-law-partnership-act-1932` — 1 sections: The Partnership Act: Nature, Relations and Dissolution
+- **Ch 3. LLP Act 2008** `ku-law-governance-business-law-llp-act-2008` — 1 sections: The LLP Act: Limited Liability Partnerships
+- **Ch 4. Companies Act 2013** `ku-law-governance-business-law-companies-act-2013` — 1 sections: The Companies Act and the Regulators: Incorporation to Capital
 
 ### Constitutional Law (`ku-law-governance-constitutional-law`)
 
@@ -1390,7 +1399,28 @@
 - **Ch 1. Indian Contract Act 1872** `ku-law-governance-contract-law-indian-contract-act-1872` — 1 sections: The Indian Contract Act: Formation, Breach and Remedies
 - **Ch 2. Consent & Validity** `ku-law-governance-contract-law-consent-and-validity` — 1 sections: When Consent Fails: Void and Voidable Agreements
 
-## Business & Economics — 11 subjects
+## Business & Economics — 12 subjects
+
+### Accounting (`ku-business-economics-accounting`)
+
+*The language of business* — 8 chapters · 10 sections
+
+- **Ch 1. Fixed Assets** `ku-business-economics-accounting-fixed-assets` — 1 sections: Depreciation, Provisions and Reserves
+- **Ch 2. Cash Control** `ku-business-economics-accounting-cash-control` — 1 sections: Bank Reconciliation: Explaining Every Difference
+- **Ch 3. Partnership Accounts** `ku-business-economics-accounting-partnership-accounts` — 2 sections: Partnership Accounts I: Formation, Profit Sharing and Capital; Partnership Accounts II: Admission, Retirement and Dissolution
+- **Ch 4. Company Accounts** `ku-business-economics-accounting-company-accounts` — 2 sections: Company Accounts I: Issue and Forfeiture of Shares; Company Accounts II: Debentures and Borrowings
+- **Ch 5. Special Transactions** `ku-business-economics-accounting-special-transactions` — 1 sections: Bills of Exchange, Consignment and Special Transactions
+- **Ch 6. The Ledger** `ku-business-economics-accounting-the-ledger` — 1 sections: Double-Entry Bookkeeping: The Logic Behind Every Ledger
+- **Ch 7. Reading Statements** `ku-business-economics-accounting-reading-statements` — 1 sections: Reading Financial Statements: Balance Sheet, Income and Cash Flow
+- **Ch 8. Accounting Cycle** `ku-business-economics-accounting-accounting-cycle` — 1 sections: The Accounting Cycle: Accruals, Adjustments and Closing the Books
+
+### Business Economics (`ku-business-economics-business-economics`)
+
+*Markets, money and trade* — 3 chapters · 3 sections
+
+- **Ch 1. Costs & Production** `ku-business-economics-business-economics-costs-and-production` — 1 sections: Cost Concepts for Business Decisions
+- **Ch 2. Business Cycles** `ku-business-economics-business-economics-business-cycles` — 1 sections: Business Cycles: Phases, Causes and Consequences
+- **Ch 3. Public Finance** `ku-business-economics-business-economics-public-finance` — 1 sections: Taxation: Principles, Systems and India’s Structure
 
 ### Microeconomics (`ku-business-economics-microeconomics`)
 
@@ -1438,14 +1468,6 @@
 *Predictably irrational* — 1 chapters · 1 sections
 
 - **Ch 1. Decision Science** `ku-business-economics-behavioral-economics-decision-science` — 1 sections: Nudges and the Psychology of Choosing
-
-### Accounting (`ku-business-economics-accounting`)
-
-*The language of business* — 3 chapters · 3 sections
-
-- **Ch 1. The Ledger** `ku-business-economics-accounting-the-ledger` — 1 sections: Double-Entry Bookkeeping: The Logic Behind Every Ledger
-- **Ch 2. Reading Statements** `ku-business-economics-accounting-reading-statements` — 1 sections: Reading Financial Statements: Balance Sheet, Income and Cash Flow
-- **Ch 3. Accounting Cycle** `ku-business-economics-accounting-accounting-cycle` — 1 sections: The Accounting Cycle: Accruals, Adjustments and Closing the Books
 
 ### Marketing (`ku-business-economics-marketing`)
 

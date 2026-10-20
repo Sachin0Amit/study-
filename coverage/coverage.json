@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T19:52:01.650Z",
+  "generatedAt": "2026-10-20T20:30:25.048Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 174,
-    "books": 174,
-    "chapters": 815,
-    "sections": 4384
+    "subjects": 176,
+    "books": 176,
+    "chapters": 827,
+    "sections": 4398
   },
   "subjects": [
     {
@@ -29506,6 +29506,76 @@
       ]
     },
     {
+      "id": "ku-law-governance-business-law",
+      "name": "Business Law",
+      "group": "Law & Governance",
+      "tagline": "Rules, states and constitutions",
+      "chapterCount": 4,
+      "sectionCount": 4,
+      "chapters": [
+        {
+          "id": "ku-law-governance-business-law-sale-of-goods-act-1930",
+          "number": 1,
+          "title": "Sale of Goods Act 1930",
+          "shortTitle": "Sale of Goods Act 1930",
+          "bookId": "ku-law-governance-business-law",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-sale-of-goods",
+              "number": 1.1,
+              "title": "The Sale of Goods Act: Conditions, Warranties and the Unpaid Seller"
+            }
+          ]
+        },
+        {
+          "id": "ku-law-governance-business-law-partnership-act-1932",
+          "number": 2,
+          "title": "Partnership Act 1932",
+          "shortTitle": "Partnership Act 1932",
+          "bookId": "ku-law-governance-business-law",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-partnership-act",
+              "number": 2.1,
+              "title": "The Partnership Act: Nature, Relations and Dissolution"
+            }
+          ]
+        },
+        {
+          "id": "ku-law-governance-business-law-llp-act-2008",
+          "number": 3,
+          "title": "LLP Act 2008",
+          "shortTitle": "LLP Act 2008",
+          "bookId": "ku-law-governance-business-law",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-llp-act",
+              "number": 3.1,
+              "title": "The LLP Act: Limited Liability Partnerships"
+            }
+          ]
+        },
+        {
+          "id": "ku-law-governance-business-law-companies-act-2013",
+          "number": 4,
+          "title": "Companies Act 2013",
+          "shortTitle": "Companies Act 2013",
+          "bookId": "ku-law-governance-business-law",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-companies-act",
+              "number": 4.1,
+              "title": "The Companies Act and the Regulators: Incorporation to Capital"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-law-governance-constitutional-law",
       "name": "Constitutional Law",
       "group": "Law & Governance",
@@ -29795,6 +29865,201 @@
               "id": "ku-law-consent-defects-void-voidable",
               "number": 2.1,
               "title": "When Consent Fails: Void and Voidable Agreements"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-accounting",
+      "name": "Accounting",
+      "group": "Business & Economics",
+      "tagline": "The language of business",
+      "chapterCount": 8,
+      "sectionCount": 10,
+      "chapters": [
+        {
+          "id": "ku-business-economics-accounting-fixed-assets",
+          "number": 1,
+          "title": "Fixed Assets",
+          "shortTitle": "Fixed Assets",
+          "bookId": "ku-business-economics-accounting",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-acct-depreciation-provisions",
+              "number": 1.1,
+              "title": "Depreciation, Provisions and Reserves"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-accounting-cash-control",
+          "number": 2,
+          "title": "Cash Control",
+          "shortTitle": "Cash Control",
+          "bookId": "ku-business-economics-accounting",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-acct-bank-reconciliation",
+              "number": 2.1,
+              "title": "Bank Reconciliation: Explaining Every Difference"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-accounting-partnership-accounts",
+          "number": 3,
+          "title": "Partnership Accounts",
+          "shortTitle": "Partnership Accounts",
+          "bookId": "ku-business-economics-accounting",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-acct-partnership-fundamentals",
+              "number": 3.1,
+              "title": "Partnership Accounts I: Formation, Profit Sharing and Capital"
+            },
+            {
+              "id": "ku-acct-partnership-changes",
+              "number": 3.2,
+              "title": "Partnership Accounts II: Admission, Retirement and Dissolution"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-accounting-company-accounts",
+          "number": 4,
+          "title": "Company Accounts",
+          "shortTitle": "Company Accounts",
+          "bookId": "ku-business-economics-accounting",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-acct-shares-issue-forfeiture",
+              "number": 4.1,
+              "title": "Company Accounts I: Issue and Forfeiture of Shares"
+            },
+            {
+              "id": "ku-acct-debentures",
+              "number": 4.2,
+              "title": "Company Accounts II: Debentures and Borrowings"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-accounting-special-transactions",
+          "number": 5,
+          "title": "Special Transactions",
+          "shortTitle": "Special Transactions",
+          "bookId": "ku-business-economics-accounting",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-acct-special-transactions",
+              "number": 5.1,
+              "title": "Bills of Exchange, Consignment and Special Transactions"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-accounting-the-ledger",
+          "number": 6,
+          "title": "The Ledger",
+          "shortTitle": "The Ledger",
+          "bookId": "ku-business-economics-accounting",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-acct-double-entry",
+              "number": 6.1,
+              "title": "Double-Entry Bookkeeping: The Logic Behind Every Ledger"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-accounting-reading-statements",
+          "number": 7,
+          "title": "Reading Statements",
+          "shortTitle": "Reading Statements",
+          "bookId": "ku-business-economics-accounting",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-acct-financial-statements",
+              "number": 7.1,
+              "title": "Reading Financial Statements: Balance Sheet, Income and Cash Flow"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-accounting-accounting-cycle",
+          "number": 8,
+          "title": "Accounting Cycle",
+          "shortTitle": "Accounting Cycle",
+          "bookId": "ku-business-economics-accounting",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-acct-accounting-cycle-accruals",
+              "number": 8.1,
+              "title": "The Accounting Cycle: Accruals, Adjustments and Closing the Books"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-business-economics",
+      "name": "Business Economics",
+      "group": "Business & Economics",
+      "tagline": "Markets, money and trade",
+      "chapterCount": 3,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-business-economics-business-economics-costs-and-production",
+          "number": 1,
+          "title": "Costs & Production",
+          "shortTitle": "Costs & Production",
+          "bookId": "ku-business-economics-business-economics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-cost-concepts",
+              "number": 1.1,
+              "title": "Cost Concepts for Business Decisions"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-business-economics-business-cycles",
+          "number": 2,
+          "title": "Business Cycles",
+          "shortTitle": "Business Cycles",
+          "bookId": "ku-business-economics-business-economics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-business-cycles",
+              "number": 2.1,
+              "title": "Business Cycles: Phases, Causes and Consequences"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-business-economics-public-finance",
+          "number": 3,
+          "title": "Public Finance",
+          "shortTitle": "Public Finance",
+          "bookId": "ku-business-economics-business-economics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-taxation-basics",
+              "number": 3.1,
+              "title": "Taxation: Principles, Systems and India’s Structure"
             }
           ]
         }
@@ -30110,61 +30375,6 @@
               "id": "ku-bus-behavioral-nudges",
               "number": 1.1,
               "title": "Nudges and the Psychology of Choosing"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-business-economics-accounting",
-      "name": "Accounting",
-      "group": "Business & Economics",
-      "tagline": "The language of business",
-      "chapterCount": 3,
-      "sectionCount": 3,
-      "chapters": [
-        {
-          "id": "ku-business-economics-accounting-the-ledger",
-          "number": 1,
-          "title": "The Ledger",
-          "shortTitle": "The Ledger",
-          "bookId": "ku-business-economics-accounting",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-acct-double-entry",
-              "number": 1.1,
-              "title": "Double-Entry Bookkeeping: The Logic Behind Every Ledger"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-accounting-reading-statements",
-          "number": 2,
-          "title": "Reading Statements",
-          "shortTitle": "Reading Statements",
-          "bookId": "ku-business-economics-accounting",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-acct-financial-statements",
-              "number": 2.1,
-              "title": "Reading Financial Statements: Balance Sheet, Income and Cash Flow"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-accounting-accounting-cycle",
-          "number": 3,
-          "title": "Accounting Cycle",
-          "shortTitle": "Accounting Cycle",
-          "bookId": "ku-business-economics-accounting",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-acct-accounting-cycle-accruals",
-              "number": 3.1,
-              "title": "The Accounting Cycle: Accruals, Adjustments and Closing the Books"
             }
           ]
         }

@@ -1,10 +1,16 @@
 import type { KnowledgeDomainFile } from '../types'
+import { x15AccountingTopics } from './x15-accounting'
+import { x15BusinessLawTopics } from './x15-business-law'
 
 export const businessEconomics: KnowledgeDomainFile = {
   domain: 'Business & Economics',
   blurb:
     'Markets, money and organisations — the logic of prices, trade, investment and value creation.',
   topics: [
+    // X15 exam-syllabus pass (2026-10-20): accountancy cluster + business
+    // economics trio (law topics spread into law-governance below).
+    ...x15AccountingTopics,
+    ...x15BusinessLawTopics.filter((t) => t.domain === 'Business & Economics'),
     {
       id: 'bus-supply-demand-elasticity',
       title: 'Supply, Demand and Elasticity',
