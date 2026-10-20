@@ -6,12 +6,18 @@
  */
 
 import type { KnowledgeDomainFile } from '../types'
+import { x14MolecularTopics } from './x14-molecular'
+import { x14HeredityBiotechTopics } from './x14-heredity-biotech'
 
 export const lifeSciences: KnowledgeDomainFile = {
   domain: 'Life Sciences',
   blurb:
     'From genes, neurons, and photosynthesis to anatomy, microbes, evolution, and the animal kingdom — how living systems are built, run, and related.',
   topics: [
+    // X14 exam-syllabus pass (2026-10-20): molecular-genetics engine +
+    // transmission-genetics/biotech/genomics deep dives.
+    ...x14MolecularTopics,
+    ...x14HeredityBiotechTopics,
     // ------------------------------------------------------------------
     {
       id: 'bio-crispr-gene-editing',

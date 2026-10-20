@@ -16,8 +16,8 @@
 
 - **Subjects:** 174
 - **Books (master volumes):** 174
-- **Chapters:** 809
-- **Sections (lessons):** 4373
+- **Chapters:** 815
+- **Sections (lessons):** 4384
 
 ## Foundations — 5 subjects
 
@@ -823,13 +823,26 @@
 
 ## Life Sciences — 16 subjects
 
+### Cell & Molecular Biology (`ku-life-sciences-cell-and-molecular-biology`)
+
+*How living systems work* — 5 chapters · 8 sections
+
+- **Ch 1. Molecular Genetics** `ku-life-sciences-cell-and-molecular-biology-molecular-genetics` — 4 sections: DNA: The Molecule of Heredity, Structure and Replication; Transcription: Reading Genes into RNA; The Genetic Code and Translation: RNA to Protein; Mutations and the Repair Systems That Contain Them
+- **Ch 2. Gene Regulation** `ku-life-sciences-cell-and-molecular-biology-gene-regulation` — 1 sections: Gene Regulation: From Operons to Epigenetics
+- **Ch 3. Cell Signaling** `ku-life-sciences-cell-and-molecular-biology-cell-signaling` — 1 sections: Cell Signaling: Reception, Transduction, Response
+- **Ch 4. Cell Biology** `ku-life-sciences-cell-and-molecular-biology-cell-biology` — 1 sections: The Cell and Its Biomolecules: From Membranes to Macromolecules
+- **Ch 5. Bioenergetics** `ku-life-sciences-cell-and-molecular-biology-bioenergetics` — 1 sections: Cellular Respiration: Glycolysis to the Electron Transport Chain
+
 ### Genetics & Heredity (`ku-life-sciences-genetics-and-heredity`)
 
-*The code of inheritance* — 3 chapters · 3 sections
+*The code of inheritance* — 6 chapters · 8 sections
 
-- **Ch 1. Molecular Genetics** `ku-life-sciences-genetics-and-heredity-molecular-genetics` — 1 sections: CRISPR and the Mechanics of Gene Editing
-- **Ch 2. Classical Genetics** `ku-life-sciences-genetics-and-heredity-classical-genetics` — 1 sections: Mendel's Laws: How Traits Travel Between Generations
-- **Ch 3. Genes in Populations** `ku-life-sciences-genetics-and-heredity-genes-in-populations` — 1 sections: Population Genetics: Genes Drifting Through Time
+- **Ch 1. Transmission Genetics** `ku-life-sciences-genetics-and-heredity-transmission-genetics` — 2 sections: Meiosis, Linkage and the Chromosomal Theory of Inheritance; Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits
+- **Ch 2. Biotechnology** `ku-life-sciences-genetics-and-heredity-biotechnology` — 2 sections: Recombinant DNA: The Tools and Techniques of Genetic Engineering; Biotechnology in Practice: Medicine, Farms, and Industry
+- **Ch 3. Genomics** `ku-life-sciences-genetics-and-heredity-genomics` — 1 sections: Genomics and Bioinformatics: Reading Whole Genomes
+- **Ch 4. Molecular Genetics** `ku-life-sciences-genetics-and-heredity-molecular-genetics` — 1 sections: CRISPR and the Mechanics of Gene Editing
+- **Ch 5. Classical Genetics** `ku-life-sciences-genetics-and-heredity-classical-genetics` — 1 sections: Mendel's Laws: How Traits Travel Between Generations
+- **Ch 6. Genes in Populations** `ku-life-sciences-genetics-and-heredity-genes-in-populations` — 1 sections: Population Genetics: Genes Drifting Through Time
 
 ### Neuroscience (`ku-life-sciences-neuroscience`)
 
@@ -918,13 +931,6 @@
 
 - **Ch 1. Systematics** `ku-life-sciences-diversity-and-classification-systematics` — 1 sections: Biological Classification: The Five Kingdoms and Beyond
 - **Ch 2. Botany** `ku-life-sciences-diversity-and-classification-botany` — 1 sections: The Plant Kingdom: Algae to Angiosperms
-
-### Cell & Molecular Biology (`ku-life-sciences-cell-and-molecular-biology`)
-
-*How living systems work* — 2 chapters · 2 sections
-
-- **Ch 1. Cell Biology** `ku-life-sciences-cell-and-molecular-biology-cell-biology` — 1 sections: The Cell and Its Biomolecules: From Membranes to Macromolecules
-- **Ch 2. Bioenergetics** `ku-life-sciences-cell-and-molecular-biology-bioenergetics` — 1 sections: Cellular Respiration: Glycolysis to the Electron Transport Chain
 
 ### Human Physiology (`ku-life-sciences-human-physiology`)
 

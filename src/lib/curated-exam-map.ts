@@ -28,6 +28,7 @@ import {
   tokenize,
 } from '@/lib/syllabus'
 import type { Catalog } from '@/lib/syllabus'
+import { TOPIC_ALIASES, normalizeTopicName } from '@/data/exams/topic-aliases'
 
 // ----------------------------------------------------- knowledge index -----
 
@@ -93,12 +94,20 @@ export interface KnowledgeMatch {
 }
 
 /** Best Knowledge-University topic for a syllabus topic, or null.
- *  Name tokens carry the signal; subtopic tokens only refine it. */
+ *  Curated aliases (verified exact-topic coverage) are consulted first;
+ *  otherwise the generic scorer runs — name tokens carry the signal,
+ *  subtopic tokens only refine it. */
 export function matchKnowledgeTopic(name: string, subs?: string[]): KnowledgeMatch | null {
   const nameTokens = tokenize(name)
   if (nameTokens.size === 0) return null
   const subTokens = subs && subs.length ? tokenize(subs.join(' ')) : new Set<string>()
-  const norm = name.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
+  const norm = normalizeTopicName(name)
+  const aliasId = TOPIC_ALIASES[norm]
+  if (aliasId) {
+    // index ids carry the ku- pseudo-chapter prefix
+    const hit = knowledgeCandidates().find((c) => c.entry.id === 'ku-' + aliasId)
+    if (hit) return { entry: hit.entry, score: 1 } // silently skip stale aliases
+  }
   let best: KnowledgeMatch | null = null
   for (const cand of knowledgeCandidates()) {
     let nameHits = 0
