@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T12:52:33.462Z",
+  "generatedAt": "2026-10-20T18:48:25.330Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 168,
-    "books": 168,
-    "chapters": 791,
-    "sections": 4348
+    "subjects": 174,
+    "books": 174,
+    "chapters": 803,
+    "sections": 4367
   },
   "subjects": [
     {
@@ -26495,8 +26495,8 @@
       "name": "Botany",
       "group": "Life Sciences",
       "tagline": "How plants build the world",
-      "chapterCount": 3,
-      "sectionCount": 3,
+      "chapterCount": 4,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-life-sciences-botany-plant-biochemistry",
@@ -26540,6 +26540,21 @@
               "id": "ku-bio-plant-reproduction-flowers-seeds",
               "number": 3.1,
               "title": "Plant Reproduction: Flowers, Pollination and Seeds"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-botany-plant-morphology-and-anatomy",
+          "number": 4,
+          "title": "Plant Morphology & Anatomy",
+          "shortTitle": "Plant Morphology & Anatomy",
+          "bookId": "ku-life-sciences-botany",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-flowering-plant-body",
+              "number": 4.1,
+              "title": "The Flowering Plant Body: Morphology and Anatomy"
             }
           ]
         }
@@ -26811,7 +26826,7 @@
       "group": "Life Sciences",
       "tagline": "The cell’s energy economy",
       "chapterCount": 1,
-      "sectionCount": 1,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-life-sciences-biochemistry-molecules-of-life",
@@ -26819,12 +26834,27 @@
           "title": "Molecules of Life",
           "shortTitle": "Molecules of Life",
           "bookId": "ku-life-sciences-biochemistry",
-          "sectionCount": 1,
+          "sectionCount": 4,
           "sections": [
             {
               "id": "ku-bio-biochemistry-metabolism",
               "number": 1.1,
               "title": "Biochemistry: The Cell's Energy Economy"
+            },
+            {
+              "id": "ku-bioc-protein-structure-folding",
+              "number": 1.2,
+              "title": "Protein Structure and Folding: Shape Is Function"
+            },
+            {
+              "id": "ku-bioc-enzymes-kinetics-regulation",
+              "number": 1.3,
+              "title": "Enzymes: Catalysis, Kinetics and Regulation"
+            },
+            {
+              "id": "ku-bioc-lipid-amino-acid-metabolism",
+              "number": 1.4,
+              "title": "Beyond Glucose: Fat and Amino-Acid Metabolism"
             }
           ]
         }
@@ -26915,6 +26945,111 @@
               "id": "ku-bio-animal-behavior-ethology",
               "number": 1.1,
               "title": "Animal Behavior: Instinct, Learning, Signals"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-life-sciences-diversity-and-classification",
+      "name": "Diversity & Classification",
+      "group": "Life Sciences",
+      "tagline": "How living systems work",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-life-sciences-diversity-and-classification-systematics",
+          "number": 1,
+          "title": "Systematics",
+          "shortTitle": "Systematics",
+          "bookId": "ku-life-sciences-diversity-and-classification",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-classification-five-kingdoms",
+              "number": 1.1,
+              "title": "Biological Classification: The Five Kingdoms and Beyond"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-diversity-and-classification-botany",
+          "number": 2,
+          "title": "Botany",
+          "shortTitle": "Botany",
+          "bookId": "ku-life-sciences-diversity-and-classification",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-plant-kingdom-groups",
+              "number": 2.1,
+              "title": "The Plant Kingdom: Algae to Angiosperms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-life-sciences-cell-and-molecular-biology",
+      "name": "Cell & Molecular Biology",
+      "group": "Life Sciences",
+      "tagline": "How living systems work",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-life-sciences-cell-and-molecular-biology-cell-biology",
+          "number": 1,
+          "title": "Cell Biology",
+          "shortTitle": "Cell Biology",
+          "bookId": "ku-life-sciences-cell-and-molecular-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-cell-biomolecules",
+              "number": 1.1,
+              "title": "The Cell and Its Biomolecules: From Membranes to Macromolecules"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-cell-and-molecular-biology-bioenergetics",
+          "number": 2,
+          "title": "Bioenergetics",
+          "shortTitle": "Bioenergetics",
+          "bookId": "ku-life-sciences-cell-and-molecular-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-cellular-respiration-pathways",
+              "number": 2.1,
+              "title": "Cellular Respiration: Glycolysis to the Electron Transport Chain"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-life-sciences-human-physiology",
+      "name": "Human Physiology",
+      "group": "Life Sciences",
+      "tagline": "How living systems work",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-life-sciences-human-physiology-reproductive-biology",
+          "number": 1,
+          "title": "Reproductive Biology",
+          "shortTitle": "Reproductive Biology",
+          "bookId": "ku-life-sciences-human-physiology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-human-reproduction-system",
+              "number": 1.1,
+              "title": "Human Reproduction: Systems, Gametes and the Menstrual Cycle"
             }
           ]
         }
@@ -27990,8 +28125,8 @@
       "name": "Political Science",
       "group": "Social Sciences",
       "tagline": "Power and cooperation",
-      "chapterCount": 5,
-      "sectionCount": 5,
+      "chapterCount": 6,
+      "sectionCount": 6,
       "chapters": [
         {
           "id": "ku-social-sciences-political-science-rational-choice-theory",
@@ -28065,6 +28200,21 @@
               "id": "ku-soc-comparative-politics-institutions",
               "number": 5.1,
               "title": "Comparative Politics: Electoral Systems and Institutions"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-indian-polity",
+          "number": 6,
+          "title": "Indian Polity",
+          "shortTitle": "Indian Polity",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-indian-constitution-polity",
+              "number": 6.1,
+              "title": "The Indian Constitution: Rights, Parliament and Federalism"
             }
           ]
         }
@@ -28626,6 +28776,41 @@
       ]
     },
     {
+      "id": "ku-humanities-history",
+      "name": "History",
+      "group": "Humanities",
+      "tagline": "The record of human meaning",
+      "chapterCount": 1,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-humanities-history-indian-history",
+          "number": 1,
+          "title": "Indian History",
+          "shortTitle": "Indian History",
+          "bookId": "ku-humanities-history",
+          "sectionCount": 3,
+          "sections": [
+            {
+              "id": "ku-hist-ancient-india",
+              "number": 1.1,
+              "title": "Ancient India: From the Vedic Age to the Guptas"
+            },
+            {
+              "id": "ku-hist-medieval-india",
+              "number": 1.2,
+              "title": "Medieval India: Delhi Sultanate to the Mughals"
+            },
+            {
+              "id": "ku-hist-modern-india-freedom-struggle",
+              "number": 1.3,
+              "title": "Modern India and the Freedom Struggle: 1757 to 1947"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-languages-literature-language-acquisition-science",
       "name": "Language Acquisition Science",
       "group": "Languages & World Literature",
@@ -29121,12 +29306,37 @@
       ]
     },
     {
+      "id": "ku-languages-literature-verbal-reasoning",
+      "name": "Verbal Reasoning",
+      "group": "Languages & World Literature",
+      "tagline": "How languages live and grow",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-verbal-reasoning-critical-reasoning",
+          "number": 1,
+          "title": "Critical Reasoning",
+          "shortTitle": "Critical Reasoning",
+          "bookId": "ku-languages-literature-verbal-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-critical-reasoning-arguments",
+              "number": 1.1,
+              "title": "Critical Reasoning: Breaking Down Arguments for Exams"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-law-governance-constitutional-law",
       "name": "Constitutional Law",
       "group": "Law & Governance",
       "tagline": "Power divided",
       "chapterCount": 1,
-      "sectionCount": 1,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-law-governance-constitutional-law-structural-principles",
@@ -29134,12 +29344,17 @@
           "title": "Structural Principles",
           "shortTitle": "Structural Principles",
           "bookId": "ku-law-governance-constitutional-law",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-law-separation-powers",
               "number": 1.1,
               "title": "Separation of Powers and Checks and Balances"
+            },
+            {
+              "id": "ku-law-federalism-division-of-powers",
+              "number": 1.2,
+              "title": "Federalism: Dividing Power Between Centre and States"
             }
           ]
         }
@@ -29371,6 +29586,31 @@
       ]
     },
     {
+      "id": "ku-law-governance-contract-law",
+      "name": "Contract Law",
+      "group": "Law & Governance",
+      "tagline": "Rules, states and constitutions",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-law-governance-contract-law-indian-contract-act-1872",
+          "number": 1,
+          "title": "Indian Contract Act 1872",
+          "shortTitle": "Indian Contract Act 1872",
+          "bookId": "ku-law-governance-contract-law",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-indian-contract-act",
+              "number": 1.1,
+              "title": "The Indian Contract Act: Formation, Breach and Remedies"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-business-economics-microeconomics",
       "name": "Microeconomics",
       "group": "Business & Economics",
@@ -29525,8 +29765,8 @@
       "name": "Macroeconomics",
       "group": "Business & Economics",
       "tagline": "Whole economies",
-      "chapterCount": 4,
-      "sectionCount": 4,
+      "chapterCount": 6,
+      "sectionCount": 6,
       "chapters": [
         {
           "id": "ku-business-economics-macroeconomics-monetary-economics",
@@ -29585,6 +29825,36 @@
               "id": "ku-econ-monetary-policy-central-banking",
               "number": 4.1,
               "title": "Monetary Policy and Central Banking"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-macroeconomics-national-income-and-output",
+          "number": 5,
+          "title": "National Income & Output",
+          "shortTitle": "National Income & Output",
+          "bookId": "ku-business-economics-macroeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-macro-ad-as-indian-economy",
+              "number": 5.1,
+              "title": "Measuring the Economy: National Income, AD-AS and India's Reforms"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-macroeconomics-open-economy",
+          "number": 6,
+          "title": "Open Economy",
+          "shortTitle": "Open Economy",
+          "bookId": "ku-business-economics-macroeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-exchange-rates-bop",
+              "number": 6.1,
+              "title": "Exchange Rates and the Balance of Payments"
             }
           ]
         }
@@ -29701,7 +29971,7 @@
       "group": "Business & Economics",
       "tagline": "Attention, understood",
       "chapterCount": 1,
-      "sectionCount": 1,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-business-economics-marketing-marketing-foundations",
@@ -29709,12 +29979,17 @@
           "title": "Marketing Foundations",
           "shortTitle": "Marketing Foundations",
           "bookId": "ku-business-economics-marketing",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-mkt-four-ps",
               "number": 1.1,
               "title": "The Four Ps and the Psychology of Buying"
+            },
+            {
+              "id": "ku-mkt-stp-playbook",
+              "number": 1.2,
+              "title": "Segmentation, Targeting and Positioning: The STP Playbook"
             }
           ]
         }

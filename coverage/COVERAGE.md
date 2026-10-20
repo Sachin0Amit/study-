@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 168
-- **Books (master volumes):** 168
-- **Chapters:** 791
-- **Sections (lessons):** 4348
+- **Subjects:** 174
+- **Books (master volumes):** 174
+- **Chapters:** 803
+- **Sections (lessons):** 4367
 
 ## Foundations — 5 subjects
 
@@ -821,7 +821,7 @@
 
 - **Ch 1. Waves & Sound** `ku-physical-sciences-physics-of-everyday-phenomena-waves-and-sound` — 1 sections: Room Acoustics: Why Spaces Sound the Way They Do
 
-## Life Sciences — 13 subjects
+## Life Sciences — 16 subjects
 
 ### Genetics & Heredity (`ku-life-sciences-genetics-and-heredity`)
 
@@ -841,11 +841,12 @@
 
 ### Botany (`ku-life-sciences-botany`)
 
-*How plants build the world* — 3 chapters · 3 sections
+*How plants build the world* — 4 chapters · 4 sections
 
 - **Ch 1. Plant Biochemistry** `ku-life-sciences-botany-plant-biochemistry` — 1 sections: Photosynthesis: Light and Dark Reactions
 - **Ch 2. Beyond Photosynthesis** `ku-life-sciences-botany-beyond-photosynthesis` — 1 sections: Plant Physiology: How Plants Actually Work
 - **Ch 3. Plant Reproduction** `ku-life-sciences-botany-plant-reproduction` — 1 sections: Plant Reproduction: Flowers, Pollination and Seeds
+- **Ch 4. Plant Morphology & Anatomy** `ku-life-sciences-botany-plant-morphology-and-anatomy` — 1 sections: The Flowering Plant Body: Morphology and Anatomy
 
 ### Evolutionary Biology (`ku-life-sciences-evolutionary-biology`)
 
@@ -888,9 +889,9 @@
 
 ### Biochemistry (`ku-life-sciences-biochemistry`)
 
-*The cell’s energy economy* — 1 chapters · 1 sections
+*The cell’s energy economy* — 1 chapters · 4 sections
 
-- **Ch 1. Molecules of Life** `ku-life-sciences-biochemistry-molecules-of-life` — 1 sections: Biochemistry: The Cell's Energy Economy
+- **Ch 1. Molecules of Life** `ku-life-sciences-biochemistry-molecules-of-life` — 4 sections: Biochemistry: The Cell's Energy Economy; Protein Structure and Folding: Shape Is Function; Enzymes: Catalysis, Kinetics and Regulation; Beyond Glucose: Fat and Amino-Acid Metabolism
 
 ### Developmental Biology (`ku-life-sciences-developmental-biology`)
 
@@ -910,6 +911,26 @@
 *Minds in the wild* — 1 chapters · 1 sections
 
 - **Ch 1. Minds in the Wild** `ku-life-sciences-animal-behavior-minds-in-the-wild` — 1 sections: Animal Behavior: Instinct, Learning, Signals
+
+### Diversity & Classification (`ku-life-sciences-diversity-and-classification`)
+
+*How living systems work* — 2 chapters · 2 sections
+
+- **Ch 1. Systematics** `ku-life-sciences-diversity-and-classification-systematics` — 1 sections: Biological Classification: The Five Kingdoms and Beyond
+- **Ch 2. Botany** `ku-life-sciences-diversity-and-classification-botany` — 1 sections: The Plant Kingdom: Algae to Angiosperms
+
+### Cell & Molecular Biology (`ku-life-sciences-cell-and-molecular-biology`)
+
+*How living systems work* — 2 chapters · 2 sections
+
+- **Ch 1. Cell Biology** `ku-life-sciences-cell-and-molecular-biology-cell-biology` — 1 sections: The Cell and Its Biomolecules: From Membranes to Macromolecules
+- **Ch 2. Bioenergetics** `ku-life-sciences-cell-and-molecular-biology-bioenergetics` — 1 sections: Cellular Respiration: Glycolysis to the Electron Transport Chain
+
+### Human Physiology (`ku-life-sciences-human-physiology`)
+
+*How living systems work* — 1 chapters · 1 sections
+
+- **Ch 1. Reproductive Biology** `ku-life-sciences-human-physiology-reproductive-biology` — 1 sections: Human Reproduction: Systems, Gametes and the Menstrual Cycle
 
 ## Mathematics — 1 subject
 
@@ -1095,13 +1116,14 @@
 
 ### Political Science (`ku-social-sciences-political-science`)
 
-*Power and cooperation* — 5 chapters · 5 sections
+*Power and cooperation* — 6 chapters · 6 sections
 
 - **Ch 1. Rational Choice Theory** `ku-social-sciences-political-science-rational-choice-theory` — 1 sections: Game Theory of Cooperation: The Prisoner’s Dilemma
 - **Ch 2. Public Choice** `ku-social-sciences-political-science-public-choice` — 1 sections: Collective Action and the Tragedy of the Commons
 - **Ch 3. Comparative Politics** `ku-social-sciences-political-science-comparative-politics` — 1 sections: Democracies, Autocracies and Everything in Between
 - **Ch 4. International Relations** `ku-social-sciences-political-science-international-relations` — 1 sections: Why Nations Fight and Trade: International Relations Theory
 - **Ch 5. Institutional Design** `ku-social-sciences-political-science-institutional-design` — 1 sections: Comparative Politics: Electoral Systems and Institutions
+- **Ch 6. Indian Polity** `ku-social-sciences-political-science-indian-polity` — 1 sections: The Indian Constitution: Rights, Parliament and Federalism
 
 ### Urban Sociology (`ku-social-sciences-urban-sociology`)
 
@@ -1148,7 +1170,7 @@
 
 - **Ch 1. The Attention Economy** `ku-social-sciences-media-and-communication-the-attention-economy` — 1 sections: Media and Communication: Who Frames Your World
 
-## Humanities — 5 subjects
+## Humanities — 6 subjects
 
 ### World History (`ku-humanities-world-history`)
 
@@ -1191,7 +1213,13 @@
 - **Ch 1. Eastern Traditions** `ku-humanities-religious-studies-eastern-traditions` — 1 sections: Hinduism, Buddhism and the Eastern Traditions
 - **Ch 2. Western Traditions** `ku-humanities-religious-studies-western-traditions` — 1 sections: Judaism, Christianity and Islam: The Abrahamic Faiths
 
-## Languages & World Literature — 15 subjects
+### History (`ku-humanities-history`)
+
+*The record of human meaning* — 1 chapters · 3 sections
+
+- **Ch 1. Indian History** `ku-humanities-history-indian-history` — 3 sections: Ancient India: From the Vedic Age to the Guptas; Medieval India: Delhi Sultanate to the Mughals; Modern India and the Freedom Struggle: 1757 to 1947
+
+## Languages & World Literature — 16 subjects
 
 ### Language Acquisition Science (`ku-languages-literature-language-acquisition-science`)
 
@@ -1290,13 +1318,19 @@
 
 - **Ch 1. Language in Society** `ku-languages-literature-sociolinguistics-language-in-society` — 1 sections: Language in Society: Dialects, Prestige and Code-Switching
 
-## Law & Governance — 7 subjects
+### Verbal Reasoning (`ku-languages-literature-verbal-reasoning`)
+
+*How languages live and grow* — 1 chapters · 1 sections
+
+- **Ch 1. Critical Reasoning** `ku-languages-literature-verbal-reasoning-critical-reasoning` — 1 sections: Critical Reasoning: Breaking Down Arguments for Exams
+
+## Law & Governance — 8 subjects
 
 ### Constitutional Law (`ku-law-governance-constitutional-law`)
 
-*Power divided* — 1 chapters · 1 sections
+*Power divided* — 1 chapters · 2 sections
 
-- **Ch 1. Structural Principles** `ku-law-governance-constitutional-law-structural-principles` — 1 sections: Separation of Powers and Checks and Balances
+- **Ch 1. Structural Principles** `ku-law-governance-constitutional-law-structural-principles` — 2 sections: Separation of Powers and Checks and Balances; Federalism: Dividing Power Between Centre and States
 
 ### International Law (`ku-law-governance-international-law`)
 
@@ -1339,6 +1373,12 @@
 
 - **Ch 1. The Workplace** `ku-law-governance-employment-law-the-workplace` — 1 sections: Employment and Labor Law: The Rulebook of Work
 
+### Contract Law (`ku-law-governance-contract-law`)
+
+*Rules, states and constitutions* — 1 chapters · 1 sections
+
+- **Ch 1. Indian Contract Act 1872** `ku-law-governance-contract-law-indian-contract-act-1872` — 1 sections: The Indian Contract Act: Formation, Breach and Remedies
+
 ## Business & Economics — 11 subjects
 
 ### Microeconomics (`ku-business-economics-microeconomics`)
@@ -1366,12 +1406,14 @@
 
 ### Macroeconomics (`ku-business-economics-macroeconomics`)
 
-*Whole economies* — 4 chapters · 4 sections
+*Whole economies* — 6 chapters · 6 sections
 
 - **Ch 1. Monetary Economics** `ku-business-economics-macroeconomics-monetary-economics` — 1 sections: Inflation and What Central Banks Actually Do
 - **Ch 2. The Vital Signs** `ku-business-economics-macroeconomics-the-vital-signs` — 1 sections: GDP, Inflation and Unemployment: The Vital Signs of an Economy
 - **Ch 3. Fiscal Policy** `ku-business-economics-macroeconomics-fiscal-policy` — 1 sections: Fiscal Policy: How Governments Spend and Tax Their Way Through Crises
 - **Ch 4. Monetary Policy** `ku-business-economics-macroeconomics-monetary-policy` — 1 sections: Monetary Policy and Central Banking
+- **Ch 5. National Income & Output** `ku-business-economics-macroeconomics-national-income-and-output` — 1 sections: Measuring the Economy: National Income, AD-AS and India's Reforms
+- **Ch 6. Open Economy** `ku-business-economics-macroeconomics-open-economy` — 1 sections: Exchange Rates and the Balance of Payments
 
 ### Strategy (`ku-business-economics-strategy`)
 
@@ -1395,9 +1437,9 @@
 
 ### Marketing (`ku-business-economics-marketing`)
 
-*Attention, understood* — 1 chapters · 1 sections
+*Attention, understood* — 1 chapters · 2 sections
 
-- **Ch 1. Marketing Foundations** `ku-business-economics-marketing-marketing-foundations` — 1 sections: The Four Ps and the Psychology of Buying
+- **Ch 1. Marketing Foundations** `ku-business-economics-marketing-marketing-foundations` — 2 sections: The Four Ps and the Psychology of Buying; Segmentation, Targeting and Positioning: The STP Playbook
 
 ### Entrepreneurship (`ku-business-economics-entrepreneurship`)
 
