@@ -10,6 +10,7 @@ import {
   type SectionMeta,
 } from '@/data/library'
 import { allContentAsync } from '@/data/content/server'
+import { knowledgeIndex, fieldSlug } from '@/lib/curated-exam-map'
 import type { ExamSubject, ExamTopic, ExamUnit } from '@/lib/exam-map-types'
 import type {
   BookChapter,
@@ -85,6 +86,47 @@ function getLibIndex(): LibraryIndex {
     if (arr) arr.push(c)
     else chaptersBySubject.set(sid, [c])
   }
+
+  // ---- Knowledge-University pseudo-chapters ----
+  // Each curated ku topic acts as a one-section chapter under a pseudo book
+  // per field, so exam topics that map to Knowledge-University content
+  // ("Indian Constitution…", "Supply and Demand", …) get real book entries.
+  // The lesson ids are the ku section ids the reader already serves.
+  const knByBook = new Map<string, number>()
+  for (const entry of knowledgeIndex()) {
+    const pseudoSubject = fieldSlug(entry.field)
+    const pseudoBook = pseudoSubject.replace(/^kuf-/, 'kub-')
+    if (!bookTitleById.has(pseudoBook)) {
+      bookTitleById.set(pseudoBook, `${entry.field} — Knowledge University`)
+      subjectByBook.set(pseudoBook, pseudoSubject)
+    }
+    const idx = (knByBook.get(pseudoBook) ?? 0) + 1
+    knByBook.set(pseudoBook, idx)
+    chapterById.set(entry.id, {
+      id: entry.id,
+      bookId: pseudoBook,
+      number: idx,
+      title: entry.title,
+      shortTitle: entry.title,
+      description: entry.concepts[0] ?? '',
+      icon: 'book-open',
+      pages: '',
+      interactiveKey: '',
+    })
+    sectionsByChapter.set(entry.id, [
+      {
+        id: entry.id,
+        chapterId: entry.id,
+        number: 1,
+        title: entry.title,
+        description: entry.concepts.slice(0, 2).join(' · '),
+      },
+    ])
+    const arr = chaptersBySubject.get(pseudoSubject)
+    if (arr) arr.push(chapterById.get(entry.id)!)
+    else chaptersBySubject.set(pseudoSubject, [chapterById.get(entry.id)!])
+  }
+
   libIdx = {
     chapterById,
     sectionsByChapter,
@@ -178,6 +220,9 @@ function normTopic(t: ExamTopic, unit: string): BookTopicRef & { chapterId?: str
     weightage: typeof t?.weightage === 'number' && t.weightage > 0 ? t.weightage : undefined,
     questionTypes: Array.isArray(t?.questionTypes)
       ? t.questionTypes.filter((q) => typeof q === 'string' && q).slice(0, 4)
+      : undefined,
+    subtopics: Array.isArray(t?.subtopics)
+      ? t.subtopics.filter((s) => typeof s === 'string' && s.trim()).slice(0, 8)
       : undefined,
     chapterId: typeof t?.chapterId === 'string' && t.chapterId ? t.chapterId : null,
   }
@@ -329,6 +374,7 @@ async function buildSubjectBook(
         unit: t.unit,
         weightage: t.weightage,
         questionTypes: t.questionTypes,
+        subtopics: t.subtopics,
       })),
       sections: picked,
       extras,

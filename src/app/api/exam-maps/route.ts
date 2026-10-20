@@ -13,6 +13,8 @@ import {
   sseStream,
   withTimeout,
 } from '@/lib/syllabus'
+import { matchCuratedExam } from '@/data/exams'
+import { buildCuratedExamMap } from '@/lib/curated-exam-map'
 import { LIBRARY_SUBJECTS } from '@/data/library'
 import type {
   ExamMapSource,
@@ -338,11 +340,13 @@ export async function POST(req: NextRequest) {
   let deviceId = ''
   let name = ''
   let details = ''
+  let forceLive = false
   try {
     const body = await req.json().catch(() => null)
     deviceId = typeof body?.deviceId === 'string' ? body.deviceId : ''
     name = typeof body?.name === 'string' ? body.name.trim().slice(0, 200) : ''
     details = typeof body?.details === 'string' ? body.details.trim().slice(0, 300) : ''
+    forceLive = body?.forceLive === true
   } catch {
     /* handled below */
   }
@@ -376,6 +380,57 @@ export async function POST(req: NextRequest) {
     }
 
     try {
+      // ---- 0. curated fast-path: the official syllabus is already known ----
+      // 44 hand-verified exams (JEE, NEET, SAT, GRE, UPSC …) build instantly
+      // with every subject/unit/topic/subtopic — no live research needed.
+      const curated = forceLive ? null : matchCuratedExam(name)
+      if (curated) {
+        sse.send('stage', {
+          stage: 'search',
+          queries: 0,
+          curated: true,
+          exam: curated.name,
+        })
+        sse.send('stage', {
+          stage: 'sources',
+          count: curated.sources.length,
+          kept: curated.sources.length,
+          curated: true,
+        })
+        sse.send('stage', {
+          stage: 'read',
+          host: curated.website.replace(/^https?:\/\//, ''),
+          title: 'Official syllabus (curated registry)',
+          curated: true,
+        })
+        const built = buildCuratedExamMap(curated)
+        sse.send('stage', {
+          stage: 'synthesize',
+          curated: true,
+          subjects: built.stats.subjectCount,
+          topics: built.stats.topicCount,
+        })
+        sse.send('stage', {
+          stage: 'map',
+          curated: true,
+          mapped: built.stats.mappedCount,
+          total: built.stats.topicCount,
+        })
+        sse.send('stage', { stage: 'save' })
+        const row = await db.examMap.create({
+          data: {
+            deviceId,
+            name: built.name,
+            overview: JSON.stringify(built.overview),
+            subjects: JSON.stringify(built.subjects),
+            sources: JSON.stringify(built.sources),
+            stats: JSON.stringify(built.stats),
+          },
+        })
+        finish({ id: row.id, name: row.name, curated: true })
+        return
+      }
+
       const zai = await ZAI.create()
 
       // ---- 1. web searches with complementary phrasings ----

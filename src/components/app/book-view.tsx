@@ -1,7 +1,8 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowLeft, ArrowRight, BookMarked, BookOpen, Clock, Layers, Play } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BadgeCheck, BookMarked, BookOpen, Clock, Layers, Loader2, Play } from 'lucide-react'
 import { getBook, getChapters, LIBRARY_SECTIONS, LIBRARY_SUBJECTS, type SectionMeta } from '@/data/library'
 import { INTERACTIVE_META } from '@/components/interactives/registry'
 import { easyBookLine, easyChapterLine } from '@/data/easy-library'
@@ -9,6 +10,96 @@ import { EasyBox, EasyLine } from './easy-box'
 import { ChapterIcon } from './chapter-icon'
 import { TiltCard } from './tilt-card'
 import { useStudy } from '@/store/useStudy'
+
+/** one curated exam that asks this subject — click builds its official-syllabus book */
+interface AskedInExam {
+  examId: string
+  examName: string
+  region: string
+  category: string
+  subjectName: string
+}
+
+/** "Asked in" chips — the reverse index from library subject → exams */
+function AskedInExams({ subjectId, subjectName }: { subjectId: string; subjectName: string }) {
+  const navigate = useStudy((s) => s.navigate)
+  const ensureDevice = useStudy((s) => s.ensureDevice)
+  const [exams, setExams] = useState<AskedInExam[] | null>(null)
+  const [busy, setBusy] = useState<string | null>(null)
+
+  useEffect(() => {
+    let alive = true
+    fetch(`/api/exams?subject=${encodeURIComponent(subjectId)}&subjectName=${encodeURIComponent(subjectName)}`)
+      .then(async (res) => {
+        if (!res.ok) return
+        const data = (await res.json()) as { exams?: AskedInExam[] }
+        if (alive) setExams(Array.isArray(data.exams) ? data.exams : [])
+      })
+      .catch(() => {
+        if (alive) setExams([])
+      })
+    return () => {
+      alive = false
+    }
+  }, [subjectId, subjectName])
+
+  if (!exams || exams.length === 0) return null
+
+  const openExamBook = async (examName: string) => {
+    if (busy) return
+    setBusy(examName)
+    try {
+      const res = await fetch('/api/exam-maps', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ deviceId: ensureDevice(), name: examName }),
+      })
+      if (!res.ok || !res.body) throw new Error('research failed')
+      const reader = res.body.getReader()
+      const dec = new TextDecoder()
+      let buf = ''
+      for (;;) {
+        const { done, value } = await reader.read()
+        if (done) break
+        buf += dec.decode(value, { stream: true })
+        const m = buf.match(/event: done\ndata: (\{[^\n]*\})/)
+        if (m) {
+          const payload = JSON.parse(m[1]) as { id?: string }
+          if (payload.id) navigate({ name: 'exam-book', examMapId: payload.id, subjectIndex: 0 })
+          break
+        }
+      }
+    } catch {
+      /* non-fatal */
+    } finally {
+      setBusy(null)
+    }
+  }
+
+  return (
+    <div className="mt-1 flex w-full flex-wrap items-center gap-1.5">
+      <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground/70">
+        Asked in
+      </span>
+      {exams.slice(0, 8).map((e) => (
+        <button
+          key={e.examId}
+          onClick={() => openExamBook(e.examName)}
+          disabled={busy !== null}
+          title={`${e.examName} (${e.region}) — ${e.category}. Click to build this exam's official-syllabus subject book.`}
+          className="inline-flex min-h-8 items-center gap-1 rounded-full border border-border bg-muted/40 px-2.5 py-1 text-[11px] font-semibold text-muted-foreground transition-all hover:border-emerald-400/40 hover:text-foreground disabled:opacity-60"
+        >
+          {busy === e.examName ? (
+            <Loader2 className="h-3 w-3 animate-spin" aria-hidden />
+          ) : (
+            <BadgeCheck className="h-3 w-3 text-emerald-400/80" aria-hidden />
+          )}
+          {e.examName}
+        </button>
+      ))}
+    </div>
+  )
+}
 
 export function BookView({ bookId }: { bookId: string }) {
   const navigate = useStudy((s) => s.navigate)
@@ -116,6 +207,7 @@ export function BookView({ bookId }: { bookId: string }) {
               <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-3 py-1">
                 <BookOpen className="h-3 w-3" /> {chapters.reduce((acc, c) => acc + sectionsOf(c.id).length, 0)} lessons
               </span>
+              {subject && <AskedInExams subjectId={subject.id} subjectName={subject.name} />}
               {chapters.some((c) => !!INTERACTIVE_META[c.interactiveKey]) && (
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 text-emerald-200">
                   <Play className="h-3 w-3" /> {chapters.filter((c) => !!INTERACTIVE_META[c.interactiveKey]).length} labs

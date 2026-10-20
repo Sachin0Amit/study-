@@ -23,6 +23,8 @@ export interface BookTopicRef {
   unit: string
   weightage?: number
   questionTypes?: string[]
+  /** finer official-syllabus detail under this topic (curated exams) */
+  subtopics?: string[]
 }
 
 /** one library section selected into the book */

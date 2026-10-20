@@ -2,6 +2,11 @@ import { emergingInterdisciplinary } from '../src/data/knowledge/fields/emerging
 import { environment } from '../src/data/knowledge/fields/environment'
 import { healthWellness } from '../src/data/knowledge/fields/health-wellness'
 import { lifeSciences } from '../src/data/knowledge/fields/life-sciences'
+import { humanities } from '../src/data/knowledge/fields/humanities'
+import { socialSciences } from '../src/data/knowledge/fields/social-sciences'
+import { businessEconomics } from '../src/data/knowledge/fields/business-economics'
+import { lawGovernance } from '../src/data/knowledge/fields/law-governance'
+import { languagesLiterature } from '../src/data/knowledge/fields/languages-literature'
 
 const IDS = [
   'emer-phylogenetics-tree-of-life',
@@ -9,6 +14,19 @@ const IDS = [
   'aid-cardiac-cpr-chain-of-survival',
   'health-sleep-stages-memory',
   'bio-plant-reproduction-flowers-seeds',
+  'bio-classification-five-kingdoms',
+  'bio-plant-kingdom-groups',
+  'bio-flowering-plant-body',
+  'bio-cell-biomolecules',
+  'bio-cellular-respiration-pathways',
+  'bio-human-reproduction-system',
+  'hist-ancient-india',
+  'hist-medieval-india',
+  'hist-modern-india-freedom-struggle',
+  'soc-indian-constitution-polity',
+  'econ-macro-ad-as-indian-economy',
+  'law-indian-contract-act',
+  'eng-critical-reasoning-arguments',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length
@@ -28,7 +46,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)

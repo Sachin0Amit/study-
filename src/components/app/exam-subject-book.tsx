@@ -122,6 +122,35 @@ function TopicChip({ name, accent }: { name: string; accent: string }) {
   )
 }
 
+/** one syllabus topic + its official subtopics (the deep-dive layer) */
+function TopicGroup({
+  name,
+  subtopics,
+  accent,
+}: {
+  name: string
+  subtopics?: string[]
+  accent: string
+}) {
+  if (!subtopics || subtopics.length === 0) return <TopicChip name={name} accent={accent} />
+  return (
+    <span className="inline-flex max-w-full flex-col items-start gap-1">
+      <TopicChip name={name} accent={accent} />
+      <span className="ml-2 flex max-w-full flex-wrap gap-1">
+        {subtopics.map((s, j) => (
+          <span
+            key={`${s}-${j}`}
+            className="inline-flex max-w-[220px] items-center rounded-md border border-border/60 bg-muted/40 px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground"
+            title={`Subtopic of ${name}: ${s}`}
+          >
+            <span className="truncate">{s}</span>
+          </span>
+        ))}
+      </span>
+    </span>
+  )
+}
+
 /** completion state of a section row */
 function SectionState({ status }: { status?: 'completed' | 'in_progress' }) {
   if (status === 'completed') {
@@ -806,7 +835,12 @@ function ChapterCard({
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {chapter.topics.map((t, i) => (
-                      <TopicChip key={`${t.name}-${i}`} name={t.name} accent={accent} />
+                      <TopicGroup
+                        key={`${t.name}-${i}`}
+                        name={t.name}
+                        subtopics={t.subtopics}
+                        accent={accent}
+                      />
                     ))}
                   </div>
                 </div>

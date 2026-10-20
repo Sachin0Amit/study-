@@ -7,6 +7,7 @@ import {
   ArrowLeft,
   ArrowUpRight,
   Atom,
+  BadgeCheck,
   BookMarked,
   BookOpen,
   Calculator,
@@ -122,6 +123,20 @@ const RESEARCH_STAGES: StepDef[] = [
   { id: 'map', label: 'Mapping topics onto your library' },
   { id: 'save', label: 'Saving your exam map' },
 ]
+
+/** a curated exam from the official-syllabus registry (/api/exams) */
+interface CuratedCard {
+  id: string
+  name: string
+  fullName: string
+  region: string
+  category: string
+  popularity: number
+  verified: string
+  website: string
+  subjectNames: string[]
+  stats: { subjectCount: number; unitCount: number; topicCount: number; subtopicCount: number }
+}
 
 // ---------------------------------------------------------- library data --
 
@@ -456,6 +471,43 @@ export function ExamCommandCenter() {
   >([])
   const [poolByChapter, setPoolByChapter] = useState<Map<string, number> | null>(null)
 
+  // --------------------------------------------- curated official exams --
+  const [curatedPopular, setCuratedPopular] = useState<CuratedCard[]>([])
+  const [curatedMatches, setCuratedMatches] = useState<CuratedCard[]>([])
+  const [suggOpen, setSuggOpen] = useState(true)
+
+  useEffect(() => {
+    let alive = true
+    fetch('/api/exams')
+      .then(async (res) => {
+        if (!res.ok) return
+        const data = (await res.json()) as { popular?: CuratedCard[] }
+        if (alive && Array.isArray(data.popular)) setCuratedPopular(data.popular)
+      })
+      .catch(() => {})
+    return () => {
+      alive = false
+    }
+  }, [])
+
+  useEffect(() => {
+    const q = name.trim()
+    if (q.length < 2) {
+      setCuratedMatches([])
+      return
+    }
+    const t = setTimeout(() => {
+      fetch(`/api/exams?q=${encodeURIComponent(q.slice(0, 60))}`)
+        .then(async (res) => {
+          if (!res.ok) return
+          const data = (await res.json()) as { matches?: CuratedCard[] }
+          setCuratedMatches(Array.isArray(data.matches) ? data.matches : [])
+        })
+        .catch(() => {})
+    }, 220)
+    return () => clearTimeout(t)
+  }, [name])
+
   const fail = (message: string) => {
     toast({ title: 'Exam Command Center', description: message, variant: 'destructive' })
   }
@@ -579,8 +631,10 @@ export function ExamCommandCenter() {
     else setStepNote(null)
   }
 
-  const startResearch = async () => {
-    const clean = name.trim().slice(0, 200)
+  const startResearch = async (overrideName?: string) => {
+    // guard: onClick={startResearch} passes the click event — only accept strings
+    const source = typeof overrideName === 'string' ? overrideName : name
+    const clean = source.trim().slice(0, 200)
     if (clean.length < 2) {
       fail('Type the name of your exam first (at least 2 characters).')
       return
@@ -950,15 +1004,54 @@ export function ExamCommandCenter() {
           <label htmlFor="ecc-name" className="mb-2 block text-sm font-semibold">
             Which exam are you preparing for?
           </label>
-          <Input
-            id="ecc-name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && startResearch()}
-            placeholder="Type any exam, test or course name"
-            className="h-11 rounded-xl border-border/80 bg-background/60 text-[14px] placeholder:text-muted-foreground/60 focus-visible:ring-emerald-400/50"
-            maxLength={200}
-          />
+          <div className="relative">
+            <Input
+              id="ecc-name"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value)
+                setSuggOpen(true)
+              }}
+              onKeyDown={(e) => e.key === 'Enter' && startResearch()}
+              onBlur={() => setTimeout(() => setSuggOpen(false), 180)}
+              placeholder="Type any exam, test or course name — 44 official syllabi are ready"
+              className="h-11 rounded-xl border-border/80 bg-background/60 text-[14px] placeholder:text-muted-foreground/60 focus-visible:ring-emerald-400/50"
+              maxLength={200}
+              autoComplete="off"
+            />
+            {/* curated-exam typeahead */}
+            {mode === 'home' && suggOpen && curatedMatches.length > 0 && name.trim().length >= 2 && (
+              <div className="absolute inset-x-0 top-full z-30 mt-1.5 overflow-hidden rounded-xl border border-border bg-card shadow-xl">
+                <p className="border-b border-border/60 bg-muted/30 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                  Official syllabi in the curated registry — instant & complete
+                </p>
+                <div className="max-h-72 overflow-y-auto">
+                  {curatedMatches.slice(0, 6).map((m) => (
+                    <button
+                      key={m.id}
+                      onMouseDown={(e) => {
+                        e.preventDefault()
+                        setSuggOpen(false)
+                        startResearch(m.name)
+                      }}
+                      className="flex w-full flex-col gap-0.5 border-b border-border/40 px-3 py-2.5 text-left transition-colors last:border-0 hover:bg-emerald-400/[0.07]"
+                    >
+                      <span className="flex items-center gap-1.5">
+                        <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-emerald-400" aria-hidden />
+                        <span className="truncate text-[13px] font-bold">{m.name}</span>
+                        <span className="truncate text-[11px] text-muted-foreground">{m.fullName}</span>
+                      </span>
+                      <span className="pl-5 text-[10.5px] text-muted-foreground">
+                        {m.region} · {m.category} · {m.stats.subjectCount} subjects ·{' '}
+                        {m.stats.topicCount.toLocaleString()} topics ·{' '}
+                        {m.stats.subtopicCount.toLocaleString()} subtopics · verified {m.verified}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
           <label
             htmlFor="ecc-details"
             className="mb-2 mt-4 block text-sm font-semibold"
@@ -976,7 +1069,7 @@ export function ExamCommandCenter() {
           />
           <div className="mt-5 flex min-h-11 flex-wrap items-center gap-4">
             <button
-              onClick={startResearch}
+              onClick={() => startResearch()}
               className={`inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_8px_30px_-8px_rgba(52,211,153,0.35)] transition-all hover:bg-primary/90 ${FOCUS_RING}`}
             >
               <Radar className="h-4 w-4" aria-hidden />
@@ -987,6 +1080,37 @@ export function ExamCommandCenter() {
             </span>
           </div>
         </div>
+
+        {/* popular curated official exams — one click, instant complete map */}
+        {curatedPopular.length > 0 && (
+          <div className="mt-4">
+            <div className="mb-2 flex items-center gap-2">
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground/70">
+                Popular official syllabi
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-[10px] font-bold text-emerald-300">
+                <BadgeCheck className="h-3 w-3" aria-hidden />
+                instant · every topic & subtopic
+              </span>
+            </div>
+            <div className="flex max-h-44 flex-wrap gap-2 overflow-y-auto pr-1">
+              {curatedPopular.map((e) => (
+                <button
+                  key={e.id}
+                  onClick={() => startResearch(e.name)}
+                  title={`${e.fullName} — ${e.stats.topicCount} topics, ${e.stats.subtopicCount} subtopics (official syllabus, verified ${e.verified})`}
+                  className={`inline-flex min-h-9 items-center gap-1.5 rounded-full border border-emerald-400/25 bg-emerald-400/[0.07] px-3 py-1.5 text-[12px] font-semibold text-foreground/90 transition-all hover:border-emerald-400/50 hover:bg-emerald-400/15 ${FOCUS_RING}`}
+                >
+                  <BadgeCheck className="h-3.5 w-3.5 text-emerald-400" aria-hidden />
+                  {e.name}
+                  <span className="font-mono text-[10px] font-normal text-muted-foreground">
+                    {e.stats.topicCount}t
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* suggestion chips */}
         <div className="mt-4 flex flex-wrap items-center gap-2">
@@ -1208,6 +1332,11 @@ export function ExamCommandCenter() {
 
   const ov = current.overview
   const overviewChips: { icon: LucideIcon; label: string }[] = []
+  if (ov.curatedFrom)
+    overviewChips.unshift({
+      icon: BadgeCheck,
+      label: `Official syllabus${ov.curatedVerified ? ` · verified ${ov.curatedVerified}` : ''}`,
+    })
   if (ov.level) overviewChips.push({ icon: GraduationCap, label: ov.level })
   if (ov.conductor) overviewChips.push({ icon: Landmark, label: ov.conductor })
   if (ov.duration) overviewChips.push({ icon: Clock, label: ov.duration })
@@ -1385,6 +1514,13 @@ export function ExamCommandCenter() {
                 <span className="ml-2 font-normal text-muted-foreground">{ov.fullName}</span>
               ) : null}
             </span>
+            {ov.curatedFrom && (
+              <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-[10px] font-bold text-emerald-300">
+                <BadgeCheck className="h-3 w-3" aria-hidden />
+                Official curated syllabus
+                {ov.curatedVerified ? ` · ${ov.curatedVerified}` : ''}
+              </span>
+            )}
             <ChevronDown
               className="ml-auto h-4 w-4 shrink-0 text-muted-foreground transition-transform group-data-[state=open]:rotate-180"
               aria-hidden

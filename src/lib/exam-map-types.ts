@@ -16,12 +16,18 @@ export interface ExamOverview {
   questionTypes?: string[]
   website?: string
   notes?: string
+  /** set when this map was built from the curated official-syllabus registry */
+  curatedFrom?: string
+  /** YYYY-MM-DD the curated syllabus was verified against the official page */
+  curatedVerified?: string
 }
 
 export interface ExamTopic {
   name: string
   questionTypes?: string[]
   weightage?: number
+  /** finer official-syllabus detail under this topic (curated exams) */
+  subtopics?: string[]
   /** auto-mapped library chapter (best-effort, may be absent) */
   chapterId?: string | null
   chapterTitle?: string | null

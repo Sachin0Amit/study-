@@ -3658,7 +3658,7 @@ export const healthWellness: KnowledgeDomainFile = {
         'Minimizing interruptions and avoiding hyperventilation',
         'Bystander action doubles or triples survival',
       ],
-      words: 1247,
+      words: 1251,
       readMins: 6,
       addedOn: '2026-10-20',
       blocks: [
