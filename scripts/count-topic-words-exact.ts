@@ -9,9 +9,15 @@ import { lawGovernance } from '../src/data/knowledge/fields/law-governance'
 import { languagesLiterature } from '../src/data/knowledge/fields/languages-literature'
 import { x16ExamSkills } from '../src/data/knowledge/fields/x16-exam-skills'
 import { x17ExamSyllabusTopics } from '../src/data/knowledge/fields/x17-exam-syllabus'
+import { x19CivilCoreTopics } from '../src/data/knowledge/fields/x19-civil-core'
 import { computingAI } from '../src/data/knowledge/fields/computing-ai'
 
 const IDS = [
+  'civ-concrete-structures',
+  'civ-hydrology-irrigation',
+  'civ-water-wastewater-municipal',
+  'civ-highway-geometric-design',
+  'civ-surveying-geomatics',
   'hist-nomads-indigenous-modernisation',
   'econ-india-development-challenges',
   'emer-phylogenetics-tree-of-life',
@@ -62,7 +68,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, computingAI]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, computingAI]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)

@@ -1,9 +1,16 @@
 import type { KnowledgeDomainFile } from '../types'
+import { x19CivilCoreTopics } from './x19-civil-core'
 
 export const engineering: KnowledgeDomainFile = {
   domain: 'Engineering',
   blurb: 'The discipline of building systems that must work — bridges, chips, power grids and everything in between.',
   topics: [
+    // X19 exam pass (2026-10-21): the GATE Civil Engineering core cluster —
+    // concrete structures, water resources (hydrology + irrigation),
+    // environmental engineering (water/wastewater + MSW), highways, and
+    // surveying/geomatics. Scoped against eng-structures-bridges (which owns
+    // bridge load paths, not RCC design).
+    ...x19CivilCoreTopics.filter((t) => t.domain === 'Engineering'),
     {
       id: 'eng-feedback-control-pid-tuning',
       title: 'Feedback Control and PID Tuning',
