@@ -10,6 +10,7 @@ import { languagesLiterature } from '../src/data/knowledge/fields/languages-lite
 import { x16ExamSkills } from '../src/data/knowledge/fields/x16-exam-skills'
 import { x17ExamSyllabusTopics } from '../src/data/knowledge/fields/x17-exam-syllabus'
 import { x19CivilCoreTopics } from '../src/data/knowledge/fields/x19-civil-core'
+import { x20FoundationsPassTopics } from '../src/data/knowledge/fields/x20-foundations-pass'
 import { computingAI } from '../src/data/knowledge/fields/computing-ai'
 
 const IDS = [
@@ -49,6 +50,12 @@ const IDS = [
   'pol-contemporary-world-order',
   'pol-india-since-independence',
   'cs-computing-thinking-digital-society',
+  'econ-foundations-methodology',
+  'econ-market-efficiency-surplus',
+  'econ-regional-integration',
+  'cs-java-objects-classes-methods',
+  'cs-java-arrays-and-arraylists',
+  'cs-java-boolean-logic-expressions',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length
@@ -68,7 +75,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, computingAI]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, computingAI]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)

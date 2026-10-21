@@ -201,5 +201,35 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // (equilibrium shifts, output gaps, booms and slumps are named concepts).
   'evaluating economic development': 'econ-india-development-challenges',
   'variations in economic activity': 'econ-macro-ad-as-indian-economy',
+
+  /* ---- X20 pass (2026-10-22): foundations gap — economics methodology/
+   * welfare/integration + intro Java. New-lesson mappings point at the
+   * x20-foundations-pass topics; the first three econ mappings target
+   * pre-existing lessons verified to teach those units fully:
+   * bus-supply-demand-elasticity owns demand/supply/equilibrium/price
+   * signals and every elasticity measure (market mechanism; the elasticity
+   * half of the IB competitive-markets unit), econ-market-failures owns
+   * externalities, public goods, monopoly power, information gaps and the
+   * corrective instruments (market failure and government intervention). ---- */
+  // A-Level Economics methodology unit + IB foundations unit
+  'economic methodology and the economic problem': 'econ-foundations-methodology',
+  'how do economists approach the world': 'econ-foundations-methodology',
+  // A-Level market mechanism → the price-theory lesson
+  'market mechanism': 'bus-supply-demand-elasticity',
+  // A-Level market failure unit → the market-failures lesson
+  'market failure and government intervention': 'econ-market-failures',
+  // IB competitive-markets unit → the surplus/efficiency lesson (which owns
+  // the welfare/efficiency half and applies elasticity to incidence)
+  'competitive markets elasticity and efficiency': 'econ-market-efficiency-surplus',
+  // IB trade unit → the regional-integration lesson (blocs, creation/diversion;
+  // protection instruments live in bus-trade-policy-tariffs)
+  'trade protection and regional integration': 'econ-regional-integration',
+  // AP CSA Java units
+  'creating and storing objects': 'cs-java-objects-classes-methods',
+  'accessor and mutator methods': 'cs-java-objects-classes-methods',
+  'subclass constructors and super references': 'cs-java-objects-classes-methods',
+  'traversing arraylists': 'cs-java-arrays-and-arraylists',
+  'traversing 2d arrays': 'cs-java-arrays-and-arraylists',
+  'equivalent boolean expressions': 'cs-java-boolean-logic-expressions',
 }
 

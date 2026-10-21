@@ -1,5 +1,6 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x17ExamSyllabusTopics } from './x17-exam-syllabus'
+import { x20FoundationsPassTopics } from './x20-foundations-pass'
 
 export const computingAI: KnowledgeDomainFile = {
   domain: 'Computing & AI',
@@ -8,6 +9,9 @@ export const computingAI: KnowledgeDomainFile = {
     // X17 exam-syllabus pass (2026-10-21): CUET/CBSE computing fundamentals —
     // computational thinking, algorithms/flowcharts, digital citizenship.
     ...x17ExamSyllabusTopics.filter((t) => t.domain === 'Computing & AI'),
+    // X20 foundations pass (2026-10-22): intro Java trio — objects/classes,
+    // arrays & ArrayLists, boolean equivalence (AP CSA gap units).
+    ...x20FoundationsPassTopics.filter((t) => t.domain === 'Computing & AI'),
     {
       id: 'cs-hash-tables-collision-resolution',
       title: 'Hash Tables and Collision Resolution',

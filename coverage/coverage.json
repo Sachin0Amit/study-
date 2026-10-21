@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T12:53:16.666Z",
+  "generatedAt": "2026-10-21T18:49:46.350Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 181,
-    "books": 181,
-    "chapters": 836,
-    "sections": 4416
+    "subjects": 184,
+    "books": 184,
+    "chapters": 847,
+    "sections": 4427
   },
   "subjects": [
     {
@@ -27626,6 +27626,146 @@
       ]
     },
     {
+      "id": "ku-computing-and-ai-programming",
+      "name": "Programming",
+      "group": "Computing & AI",
+      "tagline": "Computing & AI",
+      "chapterCount": 3,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-computing-and-ai-programming-object-oriented-java",
+          "number": 1,
+          "title": "Object-Oriented Java",
+          "shortTitle": "Object-Oriented Java",
+          "bookId": "ku-computing-and-ai-programming",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-cs-java-objects-classes-methods",
+              "number": 1.1,
+              "title": "Java Objects and Classes: Constructors, Methods and Inheritance"
+            }
+          ]
+        },
+        {
+          "id": "ku-computing-and-ai-programming-data-handling-in-java",
+          "number": 2,
+          "title": "Data Handling in Java",
+          "shortTitle": "Data Handling in Java",
+          "bookId": "ku-computing-and-ai-programming",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-cs-java-arrays-and-arraylists",
+              "number": 2.1,
+              "title": "Traversing Java Arrays, 2D Arrays and ArrayLists"
+            }
+          ]
+        },
+        {
+          "id": "ku-computing-and-ai-programming-boolean-logic",
+          "number": 3,
+          "title": "Boolean Logic",
+          "shortTitle": "Boolean Logic",
+          "bookId": "ku-computing-and-ai-programming",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-cs-java-boolean-logic-expressions",
+              "number": 3.1,
+              "title": "Equivalent Boolean Expressions in Java"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-engineering-civil-engineering",
+      "name": "Civil Engineering",
+      "group": "Engineering Science",
+      "tagline": "Engineering Science",
+      "chapterCount": 5,
+      "sectionCount": 5,
+      "chapters": [
+        {
+          "id": "ku-engineering-civil-engineering-structural-engineering",
+          "number": 1,
+          "title": "Structural Engineering",
+          "shortTitle": "Structural Engineering",
+          "bookId": "ku-engineering-civil-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-civ-concrete-structures",
+              "number": 1.1,
+              "title": "Concrete Structures: Materials, Beams and Limit-State Design"
+            }
+          ]
+        },
+        {
+          "id": "ku-engineering-civil-engineering-water-resources-engineering",
+          "number": 2,
+          "title": "Water Resources Engineering",
+          "shortTitle": "Water Resources Engineering",
+          "bookId": "ku-engineering-civil-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-civ-hydrology-irrigation",
+              "number": 2.1,
+              "title": "Hydrology and Irrigation: The Engineering of Water"
+            }
+          ]
+        },
+        {
+          "id": "ku-engineering-civil-engineering-environmental-engineering",
+          "number": 3,
+          "title": "Environmental Engineering",
+          "shortTitle": "Environmental Engineering",
+          "bookId": "ku-engineering-civil-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-civ-water-wastewater-municipal",
+              "number": 3.1,
+              "title": "Environmental Engineering: Water Supply, Wastewater and Municipal Solid Wastes"
+            }
+          ]
+        },
+        {
+          "id": "ku-engineering-civil-engineering-transportation-engineering",
+          "number": 4,
+          "title": "Transportation Engineering",
+          "shortTitle": "Transportation Engineering",
+          "bookId": "ku-engineering-civil-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-civ-highway-geometric-design",
+              "number": 4.1,
+              "title": "Highway Engineering: Alignment, Geometric Design and Pavements"
+            }
+          ]
+        },
+        {
+          "id": "ku-engineering-civil-engineering-geomatics-engineering",
+          "number": 5,
+          "title": "Geomatics Engineering",
+          "shortTitle": "Geomatics Engineering",
+          "bookId": "ku-engineering-civil-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-civ-surveying-geomatics",
+              "number": 5.1,
+              "title": "Surveying and Geomatics: Traverses, Leveling, Curves, GIS and GNSS"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-engineering-aerospace-engineering",
       "name": "Aerospace Engineering",
       "group": "Engineering Science",
@@ -30096,6 +30236,156 @@
       ]
     },
     {
+      "id": "ku-business-economics-foundations-of-economics",
+      "name": "Foundations of Economics",
+      "group": "Business & Economics",
+      "tagline": "Markets, money and trade",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-business-economics-foundations-of-economics-methodology-and-scarcity",
+          "number": 1,
+          "title": "Methodology & Scarcity",
+          "shortTitle": "Methodology & Scarcity",
+          "bookId": "ku-business-economics-foundations-of-economics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-foundations-methodology",
+              "number": 1.1,
+              "title": "Economic Methodology: Scarcity, Choice and How Economists Approach the World"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-microeconomics",
+      "name": "Microeconomics",
+      "group": "Business & Economics",
+      "tagline": "Prices and incentives",
+      "chapterCount": 4,
+      "sectionCount": 4,
+      "chapters": [
+        {
+          "id": "ku-business-economics-microeconomics-welfare-economics",
+          "number": 1,
+          "title": "Welfare Economics",
+          "shortTitle": "Welfare Economics",
+          "bookId": "ku-business-economics-microeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-market-efficiency-surplus",
+              "number": 1.1,
+              "title": "Competitive Markets: Efficiency, Surplus and Welfare"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-microeconomics-price-theory",
+          "number": 2,
+          "title": "Price Theory",
+          "shortTitle": "Price Theory",
+          "bookId": "ku-business-economics-microeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-supply-demand-elasticity",
+              "number": 2.1,
+              "title": "Supply, Demand and Elasticity"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-microeconomics-when-markets-fail",
+          "number": 3,
+          "title": "When Markets Fail",
+          "shortTitle": "When Markets Fail",
+          "bookId": "ku-business-economics-microeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-market-failures",
+              "number": 3.1,
+              "title": "When Markets Fail: Externalities, Public Goods and Monopoly Power"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-microeconomics-market-structure",
+          "number": 4,
+          "title": "Market Structure",
+          "shortTitle": "Market Structure",
+          "bookId": "ku-business-economics-microeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-market-structures",
+              "number": 4.1,
+              "title": "Market Structures: From Perfect Competition to Monopoly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-international-trade",
+      "name": "International Trade",
+      "group": "Business & Economics",
+      "tagline": "Why nations exchange",
+      "chapterCount": 3,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-business-economics-international-trade-regional-integration",
+          "number": 1,
+          "title": "Regional Integration",
+          "shortTitle": "Regional Integration",
+          "bookId": "ku-business-economics-international-trade",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-regional-integration",
+              "number": 1.1,
+              "title": "Trade Protection and Regional Integration: Blocs, Trade Creation and Diversion"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-international-trade-trade-theory",
+          "number": 2,
+          "title": "Trade Theory",
+          "shortTitle": "Trade Theory",
+          "bookId": "ku-business-economics-international-trade",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-comparative-advantage",
+              "number": 2.1,
+              "title": "Comparative Advantage and Trade"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-international-trade-trade-policy",
+          "number": 3,
+          "title": "Trade Policy",
+          "shortTitle": "Trade Policy",
+          "bookId": "ku-business-economics-international-trade",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-trade-policy-tariffs",
+              "number": 3.1,
+              "title": "Trade Policy: Tariffs, Quotas and Trade Wars"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-business-economics-accounting",
       "name": "Accounting",
       "group": "Business & Economics",
@@ -30291,61 +30581,6 @@
       ]
     },
     {
-      "id": "ku-business-economics-microeconomics",
-      "name": "Microeconomics",
-      "group": "Business & Economics",
-      "tagline": "Prices and incentives",
-      "chapterCount": 3,
-      "sectionCount": 3,
-      "chapters": [
-        {
-          "id": "ku-business-economics-microeconomics-price-theory",
-          "number": 1,
-          "title": "Price Theory",
-          "shortTitle": "Price Theory",
-          "bookId": "ku-business-economics-microeconomics",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bus-supply-demand-elasticity",
-              "number": 1.1,
-              "title": "Supply, Demand and Elasticity"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-microeconomics-when-markets-fail",
-          "number": 2,
-          "title": "When Markets Fail",
-          "shortTitle": "When Markets Fail",
-          "bookId": "ku-business-economics-microeconomics",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-econ-market-failures",
-              "number": 2.1,
-              "title": "When Markets Fail: Externalities, Public Goods and Monopoly Power"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-microeconomics-market-structure",
-          "number": 3,
-          "title": "Market Structure",
-          "shortTitle": "Market Structure",
-          "bookId": "ku-business-economics-microeconomics",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-econ-market-structures",
-              "number": 3.1,
-              "title": "Market Structures: From Perfect Competition to Monopoly"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "ku-business-economics-finance-and-investment",
       "name": "Finance & Investment",
       "group": "Business & Economics",
@@ -30395,46 +30630,6 @@
               "id": "ku-fin-banks-create-money",
               "number": 3.1,
               "title": "How Banks Create Money"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-business-economics-international-trade",
-      "name": "International Trade",
-      "group": "Business & Economics",
-      "tagline": "Why nations exchange",
-      "chapterCount": 2,
-      "sectionCount": 2,
-      "chapters": [
-        {
-          "id": "ku-business-economics-international-trade-trade-theory",
-          "number": 1,
-          "title": "Trade Theory",
-          "shortTitle": "Trade Theory",
-          "bookId": "ku-business-economics-international-trade",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bus-comparative-advantage",
-              "number": 1.1,
-              "title": "Comparative Advantage and Trade"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-international-trade-trade-policy",
-          "number": 2,
-          "title": "Trade Policy",
-          "shortTitle": "Trade Policy",
-          "bookId": "ku-business-economics-international-trade",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bus-trade-policy-tariffs",
-              "number": 2.1,
-              "title": "Trade Policy: Tariffs, Quotas and Trade Wars"
             }
           ]
         }

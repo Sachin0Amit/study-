@@ -2,6 +2,7 @@ import type { KnowledgeDomainFile } from '../types'
 import { x15AccountingTopics } from './x15-accounting'
 import { x15BusinessLawTopics } from './x15-business-law'
 import { x18ExamPassTopics } from './x18-exam-pass'
+import { x20FoundationsPassTopics } from './x20-foundations-pass'
 
 export const businessEconomics: KnowledgeDomainFile = {
   domain: 'Business & Economics',
@@ -12,6 +13,9 @@ export const businessEconomics: KnowledgeDomainFile = {
     // comparison (scoped against econ-macro-ad-as-indian-economy, which owns
     // measurement and the 1951→1991 narrative).
     ...x18ExamPassTopics.filter((t) => t.domain === 'Business & Economics'),
+    // X20 foundations pass (2026-10-22): economics methodology & scarcity,
+    // competitive-market welfare/surplus, regional integration trio.
+    ...x20FoundationsPassTopics.filter((t) => t.domain === 'Business & Economics'),
     // X15 exam-syllabus pass (2026-10-20): accountancy cluster + business
     // economics trio (law topics spread into law-governance below).
     ...x15AccountingTopics,

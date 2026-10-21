@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 181
-- **Books (master volumes):** 181
-- **Chapters:** 836
-- **Sections (lessons):** 4416
+- **Subjects:** 184
+- **Books (master volumes):** 184
+- **Chapters:** 847
+- **Sections (lessons):** 4427
 
 ## Foundations — 5 subjects
 
@@ -1012,7 +1012,7 @@
 
 - **Ch 1. The Built Environment** `ku-environment-urban-planning-the-built-environment` — 1 sections: Urban Planning: Designing Cities That Work
 
-## Computing & AI — 1 subject
+## Computing & AI — 2 subjects
 
 ### Computer Science (`ku-computing-and-ai-computer-science`)
 
@@ -1020,7 +1020,25 @@
 
 - **Ch 1. Computing Fundamentals** `ku-computing-and-ai-computer-science-computing-fundamentals` — 1 sections: Computational Thinking, Algorithms and the Digital Citizen
 
-## Engineering Science — 6 subjects
+### Programming (`ku-computing-and-ai-programming`)
+
+*Computing & AI* — 3 chapters · 3 sections
+
+- **Ch 1. Object-Oriented Java** `ku-computing-and-ai-programming-object-oriented-java` — 1 sections: Java Objects and Classes: Constructors, Methods and Inheritance
+- **Ch 2. Data Handling in Java** `ku-computing-and-ai-programming-data-handling-in-java` — 1 sections: Traversing Java Arrays, 2D Arrays and ArrayLists
+- **Ch 3. Boolean Logic** `ku-computing-and-ai-programming-boolean-logic` — 1 sections: Equivalent Boolean Expressions in Java
+
+## Engineering Science — 7 subjects
+
+### Civil Engineering (`ku-engineering-civil-engineering`)
+
+*Engineering Science* — 5 chapters · 5 sections
+
+- **Ch 1. Structural Engineering** `ku-engineering-civil-engineering-structural-engineering` — 1 sections: Concrete Structures: Materials, Beams and Limit-State Design
+- **Ch 2. Water Resources Engineering** `ku-engineering-civil-engineering-water-resources-engineering` — 1 sections: Hydrology and Irrigation: The Engineering of Water
+- **Ch 3. Environmental Engineering** `ku-engineering-civil-engineering-environmental-engineering` — 1 sections: Environmental Engineering: Water Supply, Wastewater and Municipal Solid Wastes
+- **Ch 4. Transportation Engineering** `ku-engineering-civil-engineering-transportation-engineering` — 1 sections: Highway Engineering: Alignment, Geometric Design and Pavements
+- **Ch 5. Geomatics Engineering** `ku-engineering-civil-engineering-geomatics-engineering` — 1 sections: Surveying and Geomatics: Traverses, Leveling, Curves, GIS and GNSS
 
 ### Aerospace Engineering (`ku-engineering-aerospace-engineering`)
 
@@ -1429,13 +1447,36 @@
 - **Ch 1. Indian Contract Act 1872** `ku-law-governance-contract-law-indian-contract-act-1872` — 1 sections: The Indian Contract Act: Formation, Breach and Remedies
 - **Ch 2. Consent & Validity** `ku-law-governance-contract-law-consent-and-validity` — 1 sections: When Consent Fails: Void and Voidable Agreements
 
-## Business & Economics — 13 subjects
+## Business & Economics — 14 subjects
 
 ### Development Economics (`ku-business-economics-development-economics`)
 
 *Markets, money and trade* — 1 chapters · 1 sections
 
 - **Ch 1. India & Comparative Development** `ku-business-economics-development-economics-india-and-comparative-development` — 1 sections: Human Capital, Employment and Comparative Development: India's Agenda
+
+### Foundations of Economics (`ku-business-economics-foundations-of-economics`)
+
+*Markets, money and trade* — 1 chapters · 1 sections
+
+- **Ch 1. Methodology & Scarcity** `ku-business-economics-foundations-of-economics-methodology-and-scarcity` — 1 sections: Economic Methodology: Scarcity, Choice and How Economists Approach the World
+
+### Microeconomics (`ku-business-economics-microeconomics`)
+
+*Prices and incentives* — 4 chapters · 4 sections
+
+- **Ch 1. Welfare Economics** `ku-business-economics-microeconomics-welfare-economics` — 1 sections: Competitive Markets: Efficiency, Surplus and Welfare
+- **Ch 2. Price Theory** `ku-business-economics-microeconomics-price-theory` — 1 sections: Supply, Demand and Elasticity
+- **Ch 3. When Markets Fail** `ku-business-economics-microeconomics-when-markets-fail` — 1 sections: When Markets Fail: Externalities, Public Goods and Monopoly Power
+- **Ch 4. Market Structure** `ku-business-economics-microeconomics-market-structure` — 1 sections: Market Structures: From Perfect Competition to Monopoly
+
+### International Trade (`ku-business-economics-international-trade`)
+
+*Why nations exchange* — 3 chapters · 3 sections
+
+- **Ch 1. Regional Integration** `ku-business-economics-international-trade-regional-integration` — 1 sections: Trade Protection and Regional Integration: Blocs, Trade Creation and Diversion
+- **Ch 2. Trade Theory** `ku-business-economics-international-trade-trade-theory` — 1 sections: Comparative Advantage and Trade
+- **Ch 3. Trade Policy** `ku-business-economics-international-trade-trade-policy` — 1 sections: Trade Policy: Tariffs, Quotas and Trade Wars
 
 ### Accounting (`ku-business-economics-accounting`)
 
@@ -1458,14 +1499,6 @@
 - **Ch 2. Business Cycles** `ku-business-economics-business-economics-business-cycles` — 1 sections: Business Cycles: Phases, Causes and Consequences
 - **Ch 3. Public Finance** `ku-business-economics-business-economics-public-finance` — 1 sections: Taxation: Principles, Systems and India’s Structure
 
-### Microeconomics (`ku-business-economics-microeconomics`)
-
-*Prices and incentives* — 3 chapters · 3 sections
-
-- **Ch 1. Price Theory** `ku-business-economics-microeconomics-price-theory` — 1 sections: Supply, Demand and Elasticity
-- **Ch 2. When Markets Fail** `ku-business-economics-microeconomics-when-markets-fail` — 1 sections: When Markets Fail: Externalities, Public Goods and Monopoly Power
-- **Ch 3. Market Structure** `ku-business-economics-microeconomics-market-structure` — 1 sections: Market Structures: From Perfect Competition to Monopoly
-
 ### Finance & Investment (`ku-business-economics-finance-and-investment`)
 
 *Money across time* — 3 chapters · 3 sections
@@ -1473,13 +1506,6 @@
 - **Ch 1. Valuation Basics** `ku-business-economics-finance-and-investment-valuation-basics` — 1 sections: Compound Interest and the Time Value of Money
 - **Ch 2. Risk & Insurance** `ku-business-economics-finance-and-investment-risk-and-insurance` — 1 sections: Insurance: Pooling Risk and Pricing It
 - **Ch 3. Money & Markets** `ku-business-economics-finance-and-investment-money-and-markets` — 1 sections: How Banks Create Money
-
-### International Trade (`ku-business-economics-international-trade`)
-
-*Why nations exchange* — 2 chapters · 2 sections
-
-- **Ch 1. Trade Theory** `ku-business-economics-international-trade-trade-theory` — 1 sections: Comparative Advantage and Trade
-- **Ch 2. Trade Policy** `ku-business-economics-international-trade-trade-policy` — 1 sections: Trade Policy: Tariffs, Quotas and Trade Wars
 
 ### Macroeconomics (`ku-business-economics-macroeconomics`)
 
