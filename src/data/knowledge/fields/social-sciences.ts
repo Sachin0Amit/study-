@@ -1,10 +1,15 @@
 import type { KnowledgeDomainFile } from '../types'
+import { x17ExamSyllabusTopics } from './x17-exam-syllabus'
 
 export const socialSciences: KnowledgeDomainFile = {
   domain: 'Social Sciences',
   blurb:
     'How humans behave, bond, decide and govern together — psychology, sociology and political science at their meeting points.',
   topics: [
+    // X17 exam-syllabus pass (2026-10-21): NCERT Contemporary World Politics
+    // and Politics in India Since Independence, scoped against pol-ir-theory
+    // (theory) and soc-indian-constitution-polity (institutions).
+    ...x17ExamSyllabusTopics.filter((t) => t.domain === 'Social Sciences'),
     {
       id: 'soc-cognitive-dissonance',
       title: 'Cognitive Dissonance and Attitude Change',

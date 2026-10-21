@@ -8,6 +8,8 @@ import { businessEconomics } from '../src/data/knowledge/fields/business-economi
 import { lawGovernance } from '../src/data/knowledge/fields/law-governance'
 import { languagesLiterature } from '../src/data/knowledge/fields/languages-literature'
 import { x16ExamSkills } from '../src/data/knowledge/fields/x16-exam-skills'
+import { x17ExamSyllabusTopics } from '../src/data/knowledge/fields/x17-exam-syllabus'
+import { computingAI } from '../src/data/knowledge/fields/computing-ai'
 
 const IDS = [
   'emer-phylogenetics-tree-of-life',
@@ -33,6 +35,12 @@ const IDS = [
   'eng-skimming-scanning-timed-reading',
   'eng-verbal-reasoning-passage-claims',
   'eng-speaking-fluency-long-turn',
+  'hist-thinkers-beliefs-buildings',
+  'hist-travellers-vijayanagara',
+  'hist-indian-countryside-towns',
+  'pol-contemporary-world-order',
+  'pol-india-since-independence',
+  'cs-computing-thinking-digital-society',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length
@@ -52,7 +60,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, x16ExamSkills]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, computingAI]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)

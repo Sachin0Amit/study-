@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T07:13:00.718Z",
+  "generatedAt": "2026-10-21T12:32:27.649Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 179,
-    "books": 179,
-    "chapters": 833,
-    "sections": 4408
+    "subjects": 180,
+    "books": 180,
+    "chapters": 834,
+    "sections": 4414
   },
   "subjects": [
     {
@@ -27601,6 +27601,31 @@
       ]
     },
     {
+      "id": "ku-computing-and-ai-computer-science",
+      "name": "Computer Science",
+      "group": "Computing & AI",
+      "tagline": "Computing & AI",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-computing-and-ai-computer-science-computing-fundamentals",
+          "number": 1,
+          "title": "Computing Fundamentals",
+          "shortTitle": "Computing Fundamentals",
+          "bookId": "ku-computing-and-ai-computer-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-cs-computing-thinking-digital-society",
+              "number": 1.1,
+              "title": "Computational Thinking, Algorithms and the Digital Citizen"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-engineering-aerospace-engineering",
       "name": "Aerospace Engineering",
       "group": "Engineering Science",
@@ -28031,6 +28056,116 @@
       ]
     },
     {
+      "id": "ku-social-sciences-political-science",
+      "name": "Political Science",
+      "group": "Social Sciences",
+      "tagline": "Power and cooperation",
+      "chapterCount": 6,
+      "sectionCount": 8,
+      "chapters": [
+        {
+          "id": "ku-social-sciences-political-science-international-relations",
+          "number": 1,
+          "title": "International Relations",
+          "shortTitle": "International Relations",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-pol-contemporary-world-order",
+              "number": 1.1,
+              "title": "After the Cold War: Hegemony, Rival Poles and the Global Commons"
+            },
+            {
+              "id": "ku-pol-ir-theory",
+              "number": 1.2,
+              "title": "Why Nations Fight and Trade: International Relations Theory"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-indian-polity",
+          "number": 2,
+          "title": "Indian Polity",
+          "shortTitle": "Indian Polity",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-pol-india-since-independence",
+              "number": 2.1,
+              "title": "India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations"
+            },
+            {
+              "id": "ku-soc-indian-constitution-polity",
+              "number": 2.2,
+              "title": "The Indian Constitution: Rights, Parliament and Federalism"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-rational-choice-theory",
+          "number": 3,
+          "title": "Rational Choice Theory",
+          "shortTitle": "Rational Choice Theory",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-prisoners-dilemma",
+              "number": 3.1,
+              "title": "Game Theory of Cooperation: The Prisoner’s Dilemma"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-public-choice",
+          "number": 4,
+          "title": "Public Choice",
+          "shortTitle": "Public Choice",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-collective-action",
+              "number": 4.1,
+              "title": "Collective Action and the Tragedy of the Commons"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-comparative-politics",
+          "number": 5,
+          "title": "Comparative Politics",
+          "shortTitle": "Comparative Politics",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-pol-regimes-spectrum",
+              "number": 5.1,
+              "title": "Democracies, Autocracies and Everything in Between"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-institutional-design",
+          "number": 6,
+          "title": "Institutional Design",
+          "shortTitle": "Institutional Design",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-comparative-politics-institutions",
+              "number": 6.1,
+              "title": "Comparative Politics: Electoral Systems and Institutions"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-social-sciences-psychology",
       "name": "Psychology",
       "group": "Social Sciences",
@@ -28245,106 +28380,6 @@
               "id": "ku-soc-crime-deviance-sociology",
               "number": 6.1,
               "title": "Deviance and Crime: The Sociology of Rule-Breaking"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-social-sciences-political-science",
-      "name": "Political Science",
-      "group": "Social Sciences",
-      "tagline": "Power and cooperation",
-      "chapterCount": 6,
-      "sectionCount": 6,
-      "chapters": [
-        {
-          "id": "ku-social-sciences-political-science-rational-choice-theory",
-          "number": 1,
-          "title": "Rational Choice Theory",
-          "shortTitle": "Rational Choice Theory",
-          "bookId": "ku-social-sciences-political-science",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-prisoners-dilemma",
-              "number": 1.1,
-              "title": "Game Theory of Cooperation: The Prisoner’s Dilemma"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-political-science-public-choice",
-          "number": 2,
-          "title": "Public Choice",
-          "shortTitle": "Public Choice",
-          "bookId": "ku-social-sciences-political-science",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-collective-action",
-              "number": 2.1,
-              "title": "Collective Action and the Tragedy of the Commons"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-political-science-comparative-politics",
-          "number": 3,
-          "title": "Comparative Politics",
-          "shortTitle": "Comparative Politics",
-          "bookId": "ku-social-sciences-political-science",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-pol-regimes-spectrum",
-              "number": 3.1,
-              "title": "Democracies, Autocracies and Everything in Between"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-political-science-international-relations",
-          "number": 4,
-          "title": "International Relations",
-          "shortTitle": "International Relations",
-          "bookId": "ku-social-sciences-political-science",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-pol-ir-theory",
-              "number": 4.1,
-              "title": "Why Nations Fight and Trade: International Relations Theory"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-political-science-institutional-design",
-          "number": 5,
-          "title": "Institutional Design",
-          "shortTitle": "Institutional Design",
-          "bookId": "ku-social-sciences-political-science",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-comparative-politics-institutions",
-              "number": 5.1,
-              "title": "Comparative Politics: Electoral Systems and Institutions"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-political-science-indian-polity",
-          "number": 6,
-          "title": "Indian Polity",
-          "shortTitle": "Indian Polity",
-          "bookId": "ku-social-sciences-political-science",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-indian-constitution-polity",
-              "number": 6.1,
-              "title": "The Indian Constitution: Rights, Parliament and Federalism"
             }
           ]
         }
@@ -28570,6 +28605,56 @@
               "id": "ku-soc-media-communication",
               "number": 1.1,
               "title": "Media and Communication: Who Frames Your World"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-humanities-history",
+      "name": "History",
+      "group": "Humanities",
+      "tagline": "The record of human meaning",
+      "chapterCount": 1,
+      "sectionCount": 6,
+      "chapters": [
+        {
+          "id": "ku-humanities-history-indian-history",
+          "number": 1,
+          "title": "Indian History",
+          "shortTitle": "Indian History",
+          "bookId": "ku-humanities-history",
+          "sectionCount": 6,
+          "sections": [
+            {
+              "id": "ku-hist-thinkers-beliefs-buildings",
+              "number": 1.1,
+              "title": "Thinkers, Beliefs and Buildings: The Buddha, the Sangha and the Stupa"
+            },
+            {
+              "id": "ku-hist-travellers-vijayanagara",
+              "number": 1.2,
+              "title": "Through the Eyes of Travellers: Foreign Accounts and the Imperial Capital Vijayanagara"
+            },
+            {
+              "id": "ku-hist-indian-countryside-towns",
+              "number": 1.3,
+              "title": "Peasants, Zamindars and the Colonial City: The Indian Countryside from the Mughals to the British"
+            },
+            {
+              "id": "ku-hist-ancient-india",
+              "number": 1.4,
+              "title": "Ancient India: From the Vedic Age to the Guptas"
+            },
+            {
+              "id": "ku-hist-medieval-india",
+              "number": 1.5,
+              "title": "Medieval India: Delhi Sultanate to the Mughals"
+            },
+            {
+              "id": "ku-hist-modern-india-freedom-struggle",
+              "number": 1.6,
+              "title": "Modern India and the Freedom Struggle: 1757 to 1947"
             }
           ]
         }
@@ -28900,41 +28985,6 @@
               "id": "ku-rel-abrahamic-faiths",
               "number": 2.1,
               "title": "Judaism, Christianity and Islam: The Abrahamic Faiths"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-humanities-history",
-      "name": "History",
-      "group": "Humanities",
-      "tagline": "The record of human meaning",
-      "chapterCount": 1,
-      "sectionCount": 3,
-      "chapters": [
-        {
-          "id": "ku-humanities-history-indian-history",
-          "number": 1,
-          "title": "Indian History",
-          "shortTitle": "Indian History",
-          "bookId": "ku-humanities-history",
-          "sectionCount": 3,
-          "sections": [
-            {
-              "id": "ku-hist-ancient-india",
-              "number": 1.1,
-              "title": "Ancient India: From the Vedic Age to the Guptas"
-            },
-            {
-              "id": "ku-hist-medieval-india",
-              "number": 1.2,
-              "title": "Medieval India: Delhi Sultanate to the Mughals"
-            },
-            {
-              "id": "ku-hist-modern-india-freedom-struggle",
-              "number": 1.3,
-              "title": "Modern India and the Freedom Struggle: 1757 to 1947"
             }
           ]
         }
@@ -32176,9 +32226,7 @@
       ]
     }
   ],
-  "excludedDomains": {
-    "Computing & AI": "Every topic already covered by the DSA / AI / OS / Cybersecurity / Emerging-Tech subjects."
-  },
+  "excludedDomains": {},
   "excludedTopics": {
     "phys-angular-momentum": {
       "coveredBy": "Physics → Rotational Dynamics chapters",

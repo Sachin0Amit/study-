@@ -158,7 +158,16 @@ export const EXCLUDED_DOMAINS: Record<string, string> = {
   // Library — the master subject is discrete mathematics + the calculus
   // sequence and contains no statistics chapters (verified against
   // src/data/library-parts/merged/math.ts chapter titles).
-  'Computing & AI': 'Every topic already covered by the DSA / AI / OS / Cybersecurity / Emerging-Tech subjects.',
+  // 'Computing & AI' was retired the same way (all six of its 2026-10-16
+  // topics duplicated the DSA / AI / OS / Cybersecurity masters tracks —
+  // they remain individually excluded in EXCLUDED_TOPICS above). It was
+  // re-enabled 2026-10-21 for the X17 exam-syllabus pass: the CUET/CBSE
+  // computing-fundamentals topic (computational thinking, algorithms &
+  // flowcharts, digital footprint, cyber safety, societal impacts, IT/DPDP
+  // law) is NOT covered anywhere in the Library — verified: the cyber
+  // masters track teaches professional security (CVSS, STRIDE, Zero Trust)
+  // and mentions phishing only as an attack vector; no masters chapter
+  // teaches school-level digital citizenship or computational thinking.
 }
 
 /** Check: is this topic id already excluded (a duplicate)? */

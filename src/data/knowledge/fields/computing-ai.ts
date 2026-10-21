@@ -1,9 +1,13 @@
 import type { KnowledgeDomainFile } from '../types'
+import { x17ExamSyllabusTopics } from './x17-exam-syllabus'
 
 export const computingAI: KnowledgeDomainFile = {
   domain: 'Computing & AI',
   blurb: 'The algorithms, models and mathematics behind modern software — from hash tables to deep learning and cryptography.',
   topics: [
+    // X17 exam-syllabus pass (2026-10-21): CUET/CBSE computing fundamentals —
+    // computational thinking, algorithms/flowcharts, digital citizenship.
+    ...x17ExamSyllabusTopics.filter((t) => t.domain === 'Computing & AI'),
     {
       id: 'cs-hash-tables-collision-resolution',
       title: 'Hash Tables and Collision Resolution',

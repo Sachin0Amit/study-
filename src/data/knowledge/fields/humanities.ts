@@ -1,10 +1,15 @@
 import type { KnowledgeDomainFile } from '../types'
+import { x17ExamSyllabusTopics } from './x17-exam-syllabus'
 
 export const humanities: KnowledgeDomainFile = {
   domain: 'Humanities',
   blurb:
     'History, philosophy and the recorded human past — how people made meaning before and beyond the modern world.',
   topics: [
+    // X17 exam-syllabus pass (2026-10-21): CUET Themes in Indian History —
+    // sources-based lessons (thinkers/sangha/stupas, travellers, agrarian
+    // and urban colonial history) scoped against the X13 political trilogy.
+    ...x17ExamSyllabusTopics.filter((t) => t.domain === 'Humanities'),
     {
       id: 'hum-silk-road-exchange',
       title: 'The Silk Road: Exchange Before Globalization',

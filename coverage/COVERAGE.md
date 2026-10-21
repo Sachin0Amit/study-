@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 179
-- **Books (master volumes):** 179
-- **Chapters:** 833
-- **Sections (lessons):** 4408
+- **Subjects:** 180
+- **Books (master volumes):** 180
+- **Chapters:** 834
+- **Sections (lessons):** 4414
 
 ## Foundations — 5 subjects
 
@@ -1012,6 +1012,14 @@
 
 - **Ch 1. The Built Environment** `ku-environment-urban-planning-the-built-environment` — 1 sections: Urban Planning: Designing Cities That Work
 
+## Computing & AI — 1 subject
+
+### Computer Science (`ku-computing-and-ai-computer-science`)
+
+*Computing & AI* — 1 chapters · 1 sections
+
+- **Ch 1. Computing Fundamentals** `ku-computing-and-ai-computer-science-computing-fundamentals` — 1 sections: Computational Thinking, Algorithms and the Digital Citizen
+
 ## Engineering Science — 6 subjects
 
 ### Aerospace Engineering (`ku-engineering-aerospace-engineering`)
@@ -1098,6 +1106,17 @@
 
 ## Social Sciences — 10 subjects
 
+### Political Science (`ku-social-sciences-political-science`)
+
+*Power and cooperation* — 6 chapters · 8 sections
+
+- **Ch 1. International Relations** `ku-social-sciences-political-science-international-relations` — 2 sections: After the Cold War: Hegemony, Rival Poles and the Global Commons; Why Nations Fight and Trade: International Relations Theory
+- **Ch 2. Indian Polity** `ku-social-sciences-political-science-indian-polity` — 2 sections: India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations; The Indian Constitution: Rights, Parliament and Federalism
+- **Ch 3. Rational Choice Theory** `ku-social-sciences-political-science-rational-choice-theory` — 1 sections: Game Theory of Cooperation: The Prisoner’s Dilemma
+- **Ch 4. Public Choice** `ku-social-sciences-political-science-public-choice` — 1 sections: Collective Action and the Tragedy of the Commons
+- **Ch 5. Comparative Politics** `ku-social-sciences-political-science-comparative-politics` — 1 sections: Democracies, Autocracies and Everything in Between
+- **Ch 6. Institutional Design** `ku-social-sciences-political-science-institutional-design` — 1 sections: Comparative Politics: Electoral Systems and Institutions
+
 ### Psychology (`ku-social-sciences-psychology`)
 
 *The studied mind* — 6 chapters · 7 sections
@@ -1119,17 +1138,6 @@
 - **Ch 4. Collective Dynamics** `ku-social-sciences-sociology-collective-dynamics` — 1 sections: Social Movements: How Change Happens
 - **Ch 5. Social Networks** `ku-social-sciences-sociology-social-networks` — 1 sections: Social Networks: The Hidden Structure of Social Life
 - **Ch 6. Social Control** `ku-social-sciences-sociology-social-control` — 1 sections: Deviance and Crime: The Sociology of Rule-Breaking
-
-### Political Science (`ku-social-sciences-political-science`)
-
-*Power and cooperation* — 6 chapters · 6 sections
-
-- **Ch 1. Rational Choice Theory** `ku-social-sciences-political-science-rational-choice-theory` — 1 sections: Game Theory of Cooperation: The Prisoner’s Dilemma
-- **Ch 2. Public Choice** `ku-social-sciences-political-science-public-choice` — 1 sections: Collective Action and the Tragedy of the Commons
-- **Ch 3. Comparative Politics** `ku-social-sciences-political-science-comparative-politics` — 1 sections: Democracies, Autocracies and Everything in Between
-- **Ch 4. International Relations** `ku-social-sciences-political-science-international-relations` — 1 sections: Why Nations Fight and Trade: International Relations Theory
-- **Ch 5. Institutional Design** `ku-social-sciences-political-science-institutional-design` — 1 sections: Comparative Politics: Electoral Systems and Institutions
-- **Ch 6. Indian Polity** `ku-social-sciences-political-science-indian-polity` — 1 sections: The Indian Constitution: Rights, Parliament and Federalism
 
 ### Urban Sociology (`ku-social-sciences-urban-sociology`)
 
@@ -1178,6 +1186,12 @@
 
 ## Humanities — 6 subjects
 
+### History (`ku-humanities-history`)
+
+*The record of human meaning* — 1 chapters · 6 sections
+
+- **Ch 1. Indian History** `ku-humanities-history-indian-history` — 6 sections: Thinkers, Beliefs and Buildings: The Buddha, the Sangha and the Stupa; Through the Eyes of Travellers: Foreign Accounts and the Imperial Capital Vijayanagara; Peasants, Zamindars and the Colonial City: The Indian Countryside from the Mughals to the British; Ancient India: From the Vedic Age to the Guptas; Medieval India: Delhi Sultanate to the Mughals; Modern India and the Freedom Struggle: 1757 to 1947
+
 ### World History (`ku-humanities-world-history`)
 
 *How the world connected* — 3 chapters · 9 sections
@@ -1218,12 +1232,6 @@
 
 - **Ch 1. Eastern Traditions** `ku-humanities-religious-studies-eastern-traditions` — 1 sections: Hinduism, Buddhism and the Eastern Traditions
 - **Ch 2. Western Traditions** `ku-humanities-religious-studies-western-traditions` — 1 sections: Judaism, Christianity and Islam: The Abrahamic Faiths
-
-### History (`ku-humanities-history`)
-
-*The record of human meaning* — 1 chapters · 3 sections
-
-- **Ch 1. Indian History** `ku-humanities-history-indian-history` — 3 sections: Ancient India: From the Vedic Age to the Guptas; Medieval India: Delhi Sultanate to the Mughals; Modern India and the Freedom Struggle: 1757 to 1947
 
 ## Languages & World Literature — 19 subjects
 
@@ -1799,7 +1807,6 @@ The following knowledge-domain topics were cross-verified as **already explained
 existing subjects above. They are excluded from the app (zero repetition). Deepen the
 listed coverage instead of writing them again.
 
-- **Domain retired: Computing & AI** — Every topic already covered by the DSA / AI / OS / Cybersecurity / Emerging-Tech subjects.
 
 - `phys-angular-momentum` → Physics → Rotational Dynamics chapters — Angular momentum, torque and rotational motion are fully covered in the Physics master library.
 - `phys-entropy-second-law` → Physics → Entropy & the Second Law — Entropy, the second law and heat-engine limits are covered in the thermodynamics block.

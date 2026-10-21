@@ -155,5 +155,34 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // UCAT decision-making probability phrasings → existing probability lesson
   'interpreting probabilities': 'every-probability-everyday-decisions',
   'expected outcomes': 'every-probability-everyday-decisions',
+
+  /* ---- X17 pass (2026-10-21): CUET cluster + cross-exam matcher misses.
+   * Every mapping verified against the target lesson's concepts/blocks. ---- */
+  // CUET History → X13 trilogy (each theme is a named concept + section there)
+  'early states and economies': 'hist-ancient-india',
+  'revolt of 1857 and its representations': 'hist-modern-india-freedom-struggle',
+  'mahatma gandhi and the nationalist movement': 'hist-modern-india-freedom-struggle',
+  // CUET Political Science → constitution & institutions lesson
+  'framing of the constitution': 'soc-indian-constitution-polity',
+  'executive legislature and judiciary': 'soc-indian-constitution-polity',
+  // CUET Economics → macro lesson (each is a named concept + full section)
+  'determination of income and employment': 'econ-macro-ad-as-indian-economy',
+  'development policies and experience 1947 1990': 'econ-macro-ad-as-indian-economy',
+  'economic reforms since 1991': 'econ-macro-ad-as-indian-economy',
+  'current challenges facing the indian economy': 'econ-macro-ad-as-indian-economy',
+  // CUET English + BITSAT proficiency: para-jumble skills → cohesion lesson
+  'rearranging jumbled parts': 'eng-cohesion-lexical-accuracy',
+  'rearrangement': 'eng-cohesion-lexical-accuracy',
+  'referents and reorganization': 'eng-cohesion-lexical-accuracy',
+  // UPSC GS phrasings → X13 trilogy + polity lesson
+  'freedom struggle and its leaders': 'hist-modern-india-freedom-struggle',
+  'parliament and judiciary': 'soc-indian-constitution-polity',
+  // MCAT psych-soc foundations → senses lesson (sensation vs perception is its
+  // opening concept)
+  'sensation': 'bio-anatomy-senses-perception',
+  'perception': 'bio-anatomy-senses-perception',
+  // GMAT verbal phrasing → critical-reasoning lesson (assumption/strengthen-
+  // weaken are its core concepts)
+  'evaluation and assumptions': 'eng-critical-reasoning-arguments',
 }
 
