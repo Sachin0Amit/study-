@@ -115,5 +115,45 @@ export const TOPIC_ALIASES: Record<string, string> = {
   'meaning and phases of business cycles': 'bus-business-cycles',
   'causes and impact of business cycles': 'bus-business-cycles',
   'taxation basics': 'bus-taxation-basics',
+
+  /* ---- X16 exam language & reasoning skills engine (2026-10-21 lessons) ----
+     Targets the weakest audit clusters: IELTS 47%, TOEFL 53%, UCAT 58%,
+     LSAT 59%, CLAT 76%, GRE 85%. Every mapping verified against the
+     target lesson's actual concepts and blocks. */
+  // IELTS / GRE / TOEFL writing → argument-essay lesson
+  'argument essays': 'eng-argument-essay-writing',
+  'argument construction': 'eng-argument-essay-writing',
+  'essay structure': 'eng-argument-essay-writing',
+  'discussion post response': 'eng-argument-essay-writing',
+  // IELTS writing band descriptors → cohesion & lexical lesson
+  'coherence and cohesion': 'eng-cohesion-lexical-accuracy',
+  'lexical resource': 'eng-cohesion-lexical-accuracy',
+  'grammatical range and accuracy': 'eng-cohesion-lexical-accuracy',
+  // IELTS / TOEFL / ACT reading strategy → skimming & scanning lesson
+  'skimming and scanning': 'eng-skimming-scanning-timed-reading',
+  'factual and negative factual information': 'eng-skimming-scanning-timed-reading',
+  'summary and fill in a table': 'eng-skimming-scanning-timed-reading',
+  'main idea and theme': 'eng-skimming-scanning-timed-reading',
+  // UCAT verbal reasoning / CLAT / LSAT passage judgements → T/F/Can't-tell lesson
+  'true false can t tell from passages': 'eng-verbal-reasoning-passage-claims',
+  'author s opinion vs fact': 'eng-verbal-reasoning-passage-claims',
+  'drawing conclusions': 'eng-verbal-reasoning-passage-claims',
+  'tone and attitude': 'eng-verbal-reasoning-passage-claims',
+  'author attitude': 'eng-verbal-reasoning-passage-claims',
+  // IELTS / TOEFL speaking → long-turn lesson
+  'part 2 long turn': 'eng-speaking-fluency-long-turn',
+  'fluency coherence and pronunciation': 'eng-speaking-fluency-long-turn',
+  'personal preference task': 'eng-speaking-fluency-long-turn',
+  'campus situation summary': 'eng-speaking-fluency-long-turn',
+  'academic course summary': 'eng-speaking-fluency-long-turn',
+  // LSAT / CLAT / UCAT argument phrasings → existing critical-reasoning lesson
+  'identifying conclusions': 'eng-critical-reasoning-arguments',
+  'premises': 'eng-critical-reasoning-arguments',
+  'assumptions': 'eng-critical-reasoning-arguments',
+  'strength and weakness of arguments': 'eng-critical-reasoning-arguments',
+  'strongest argument selection': 'eng-critical-reasoning-arguments',
+  // UCAT decision-making probability phrasings → existing probability lesson
+  'interpreting probabilities': 'every-probability-everyday-decisions',
+  'expected outcomes': 'every-probability-everyday-decisions',
 }
 

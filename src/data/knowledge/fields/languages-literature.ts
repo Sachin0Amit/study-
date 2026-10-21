@@ -1,10 +1,12 @@
 import type { KnowledgeDomainFile } from '../types'
+import { x16ExamSkills } from './x16-exam-skills'
 
 export const languagesLiterature: KnowledgeDomainFile = {
   domain: 'Languages & World Literature',
   blurb:
     'The science of learning languages and the literatures they carry — from grammar glue to great texts.',
   topics: [
+    ...x16ExamSkills.topics,
     {
       id: 'lang-comprehensible-input',
       title: 'Comprehensible Input and Language Acquisition',

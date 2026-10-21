@@ -7,6 +7,7 @@ import { socialSciences } from '../src/data/knowledge/fields/social-sciences'
 import { businessEconomics } from '../src/data/knowledge/fields/business-economics'
 import { lawGovernance } from '../src/data/knowledge/fields/law-governance'
 import { languagesLiterature } from '../src/data/knowledge/fields/languages-literature'
+import { x16ExamSkills } from '../src/data/knowledge/fields/x16-exam-skills'
 
 const IDS = [
   'emer-phylogenetics-tree-of-life',
@@ -27,6 +28,11 @@ const IDS = [
   'econ-macro-ad-as-indian-economy',
   'law-indian-contract-act',
   'eng-critical-reasoning-arguments',
+  'eng-argument-essay-writing',
+  'eng-cohesion-lexical-accuracy',
+  'eng-skimming-scanning-timed-reading',
+  'eng-verbal-reasoning-passage-claims',
+  'eng-speaking-fluency-long-turn',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length
@@ -46,7 +52,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, x16ExamSkills]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)

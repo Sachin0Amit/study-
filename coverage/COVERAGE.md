@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 176
-- **Books (master volumes):** 176
-- **Chapters:** 828
-- **Sections (lessons):** 4403
+- **Subjects:** 179
+- **Books (master volumes):** 179
+- **Chapters:** 833
+- **Sections (lessons):** 4408
 
 ## Foundations — 5 subjects
 
@@ -1225,7 +1225,33 @@
 
 - **Ch 1. Indian History** `ku-humanities-history-indian-history` — 3 sections: Ancient India: From the Vedic Age to the Guptas; Medieval India: Delhi Sultanate to the Mughals; Modern India and the Freedom Struggle: 1757 to 1947
 
-## Languages & World Literature — 16 subjects
+## Languages & World Literature — 19 subjects
+
+### Academic Writing (`ku-languages-literature-academic-writing`)
+
+*How languages live and grow* — 2 chapters · 2 sections
+
+- **Ch 1. Exam Essays** `ku-languages-literature-academic-writing-exam-essays` — 1 sections: The Argument Essay: Thesis, Evidence and Counterargument
+- **Ch 2. Style and Editing** `ku-languages-literature-academic-writing-style-and-editing` — 1 sections: Coherence, Cohesion and Lexical Resource: Writing That Reads Smoothly
+
+### Reading Skills (`ku-languages-literature-reading-skills`)
+
+*How languages live and grow* — 1 chapters · 1 sections
+
+- **Ch 1. Timed Strategy** `ku-languages-literature-reading-skills-timed-strategy` — 1 sections: Skimming and Scanning: Reading Strategy for Timed Exams
+
+### Verbal Reasoning (`ku-languages-literature-verbal-reasoning`)
+
+*How languages live and grow* — 2 chapters · 2 sections
+
+- **Ch 1. Passage Judgements** `ku-languages-literature-verbal-reasoning-passage-judgements` — 1 sections: True, False, Can’t Tell: Judging Claims Against the Passage
+- **Ch 2. Critical Reasoning** `ku-languages-literature-verbal-reasoning-critical-reasoning` — 1 sections: Critical Reasoning: Breaking Down Arguments for Exams
+
+### Speaking & Listening (`ku-languages-literature-speaking-and-listening`)
+
+*How languages live and grow* — 1 chapters · 1 sections
+
+- **Ch 1. Exam Speaking** `ku-languages-literature-speaking-and-listening-exam-speaking` — 1 sections: The Long Turn: Speaking Fluently Under Exam Conditions
 
 ### Language Acquisition Science (`ku-languages-literature-language-acquisition-science`)
 
@@ -1327,12 +1353,6 @@
 *Language as social glue* — 1 chapters · 1 sections
 
 - **Ch 1. Language in Society** `ku-languages-literature-sociolinguistics-language-in-society` — 1 sections: Language in Society: Dialects, Prestige and Code-Switching
-
-### Verbal Reasoning (`ku-languages-literature-verbal-reasoning`)
-
-*How languages live and grow* — 1 chapters · 1 sections
-
-- **Ch 1. Critical Reasoning** `ku-languages-literature-verbal-reasoning-critical-reasoning` — 1 sections: Critical Reasoning: Breaking Down Arguments for Exams
 
 ## Law & Governance — 9 subjects
 

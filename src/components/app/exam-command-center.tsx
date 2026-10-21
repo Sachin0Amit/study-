@@ -59,6 +59,8 @@ import {
   LIBRARY_CHAPTERS,
   LIBRARY_SECTIONS,
   LIBRARY_SUBJECTS,
+  getChapter,
+  getSection,
   type SectionMeta,
 } from '@/data/library'
 import { ChapterIcon } from './chapter-icon'
@@ -768,7 +770,16 @@ export function ExamCommandCenter() {
 
   // -------------------------------------------------------- navigation --
 
-  const openChapter = (chapterId: string) => navigate({ name: 'chapter', chapterId })
+  const openChapter = (chapterId: string) => {
+    // Exam maps store Knowledge-University hits with the topic's SECTION id
+    // ('ku-<topic-id>'), not its branch-chapter id. If the id resolves as a
+    // section but not a chapter, open the lesson view directly.
+    if (!getChapter(chapterId) && getSection(chapterId)) {
+      navigate({ name: 'lesson', sectionId: chapterId })
+      return
+    }
+    navigate({ name: 'chapter', chapterId })
+  }
   const openBookBySubject = (subjectId: string) => {
     const book = bookBySubjectId.get(subjectId)
     if (book) navigate({ name: 'book', bookId: book.id })

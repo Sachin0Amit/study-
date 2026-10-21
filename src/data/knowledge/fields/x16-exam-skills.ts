@@ -1,0 +1,651 @@
+import type { KnowledgeTopic } from '../types'
+
+/** Expansion pass X16 (2026-10-21): the exam language & reasoning skills
+ *  engine — argument essays, cohesion/lexical control, skimming & scanning,
+ *  passage-claim judgement (true/false/can't tell) and exam speaking.
+ *  Scoped against the Library's existing critical-reasoning lesson
+ *  (which OWNS argument anatomy, strengthen/weaken and fallacy analysis):
+ *  these lessons cover the PRODUCTION and STRATEGY side the analyzer lesson
+ *  deliberately leaves out. Sources: official IELTS band descriptors,
+ *  ETS TOEFL iBT task specs, UCAT official question formats, LSAC/LSAT
+ *  section specs, ETS GRE Analytical Writing specs. */
+export const x16ExamSkills: {
+  domain: string
+  blurb: string
+  topics: KnowledgeTopic[]
+} = {
+  domain: 'Languages & World Literature',
+  blurb: 'Exam-facing language skills: essays, reading strategy, speaking.',
+  topics: [
+    {
+      id: 'eng-argument-essay-writing',
+      title: 'The Argument Essay: Thesis, Evidence and Counterargument',
+      domain: 'Languages & World Literature',
+      field: 'Academic Writing',
+      branch: 'Exam Essays',
+      tier: 'core',
+      concepts: [
+        'Thesis: the one-sentence claim everything serves',
+        'Essay architecture: stance, roadmap, body, verdict',
+        'Evidence: examples, data and reasoning from first principles',
+        'Counterargument and rebuttal: the strongest-opposition move',
+        'Paragraph roles and the point-proof-comment cycle',
+        'Rubric self-scoring: task response and development',
+        'Timed drafting: the plan-first protocol',
+        'Short-form argument: the discussion-post answer',
+      ],
+      words: 1889,
+      readMins: 9,
+      addedOn: '2026-10-21',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'Forty minutes, at least 250 words, and a question designed so that no answer is ever simply right: that is IELTS Writing Task 2, and it is the purest form of a family of exam tasks that also includes the TOEFL Academic Discussion post (about ten minutes and one hundred words, answering a professor\'s question while reacting to classmates) and the GRE\'s thirty-minute Analyze an Issue essay — the task ETS kept when it retired "Analyze an Argument" in September 2023. Every variant rewards the same underlying competence: take a position, defend it with organized evidence, acknowledge the strongest objection, and land the reader somewhere deliberate. This lesson builds that competence as a repeatable procedure — how to convert a prompt into a thesis in ninety seconds, how to architect the essay before writing it, how paragraphs carry arguments, and how to self-score against the official rubrics the examiners use.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          tone: 'insight',
+          text: 'The argument essay is the highest-leverage single task on these exams: one IELTS Task 2 essay is worth twice the marks of Task 1, the TOEFL discussion post is a fifth of the entire writing score, and the GRE essay is a standalone section reported to admissions committees. Beyond exams, the same move set — claim, support, concede, rebut — is what law-school memos, funding applications and engineering design justifications are made of. Writing under a clock merely removes the illusion that thinking and drafting can be separated.',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Thesis', def: 'One sentence stating your actual position on the prompt — specific enough that a reasonable person could disagree with it. "Education is important" is not a thesis; "Free university tuition helps the economy overall, but only when places are limited by merit rather than wealth" is.' },
+            { term: 'Concession', def: 'An explicit admission that the opposing side has a real point. Conceding a minor point costs nothing and buys credibility for the rebuttal that follows.' },
+            { term: 'Rebuttal', def: 'The move that explains why your position survives the concession — usually by weighing: the opposing point is real but smaller, rarer, or addressable.' },
+            { term: 'Roadmap', def: 'A sentence or clause signalling the essay\'s plan — "I will argue X for two reasons, before addressing the strongest objection" — which examiners reward under Coherence and Cohesion.' },
+          ],
+        },
+        {
+          kind: 'para',
+          text: 'Everything begins with the ninety-second prompt conversion. Exam prompts almost always contain two or three contestable terms — "free", "merit", "helps" — and a question type that tells you the shape of the answer. "To what extent do you agree" wants a calibrated stance, not a yes/no. "Discuss both views and give your own opinion" is legally obliged by its own wording to cover both sides before stating yours. The professional habit is to underline the two or three load-bearing words, decide your position on them, and write the thesis as a single sentence that answers the exact question asked. Writers who skip this step commonly produce essays that are fluent and off-prompt — the fastest route to a Task Response penalty in the IELTS band descriptors, which explicitly reward "addresses all parts of the task" and penalize positions that drift from the question.',
+        },
+        {
+          kind: 'para',
+          text: 'Architecture comes next, and the counterintuitive rule is that the thinking happens before the prose. A four-paragraph default handles nearly every prompt: an introduction that rephrases the question and lands the thesis; body paragraph one carrying your strongest reason with its evidence; body paragraph two carrying either the second reason or the counterargument-plus-rebuttal, depending on which the prompt demands; and a conclusion that restates the position in fresh words and states what follows from it. For "discuss both views" prompts the middle expands to two paragraphs — one per view — before the verdict paragraph gives your own opinion. Planning time is not lost time: five minutes spent listing the thesis, the two body-paragraph topics and one concrete example each routinely saves ten minutes of mid-essay stalling, because the writer never has to decide what comes next while simultaneously managing grammar.',
+        },
+        {
+          kind: 'para',
+          text: 'Within each body paragraph, the point-proof-comment cycle does the carrying. The point is the paragraph\'s topic sentence — a claim, in your words. The proof is the evidence: a concrete example, a statistic you actually remember, or reasoning from a principle the reader already accepts. The comment is the sentence that explains how the proof supports the point — the step examiners call "development" and novice writers skip, assuming the example speaks for itself. It never does. "For instance, students in Germany pay almost no tuition" is not an argument; "For instance, students in Germany pay almost no tuition, yet German universities maintain international rankings — evidence that removing fees does not by itself degrade quality" is. The comment sentence is where the writer\'s thinking becomes visible, and it is the single most reliable marker distinguishing band-7-plus IELTS essays from band-6 work.',
+        },
+        {
+          kind: 'para',
+          text: 'Evidence under exam conditions deserves honest treatment: you will not remember true statistics, and examiners do not fact-check specifics — but invented precision reads as fragile. The robust forms are generic-but-real examples ("public universities in several European countries", "studies of childhood vaccination programmes"), reasoning from shared principles (incentives, fairness, long-term versus short-term effects), and hypotheticals clearly flagged as such ("consider a student from a low-income district..."). What weakens an essay is stacking three thin examples instead of developing one, or citing numbers so specific they invite skepticism. One example explored to its consequences beats three listed and abandoned — depth is what the "extended and supported" language of the band descriptors is scoring.',
+        },
+        {
+          kind: 'para',
+          text: 'The counterargument move deserves its own rehearsal because it separates confident writers from defensive ones. The pattern is four beats: name the objection fairly ("Critics argue that free tuition mainly benefits the middle class, who would attend university anyway"); concede its truth ("This is partly fair — subsidy does flow to families who could pay"); rebut by weighing ("but the alternative — means-tested fees — creates its own disincentives and administrative cost, and the fair-access gains outweigh the leak"); and tie back to the thesis. Note what the pattern avoids: straw-manning the opposition, conceding everything, or "rebutting" by merely repeating your earlier paragraph. Rebuttals weigh, they do not shout. Practised once per practice essay, the move becomes available automatically in the exam hall — and it directly feeds the GRE issue rubric, whose top scores go to essays that "address possible objections" as a matter of course.',
+        },
+        {
+          kind: 'para',
+          text: 'Timing and self-scoring close the loop. A workable clock for IELTS Task 2 is five minutes planning, thirty drafting, five editing — with the editing pass spent on thesis visibility, paragraph openings and verb-tense slips rather than rewording half the essay. For the TOEFL discussion post the whole cycle compresses to ten minutes: ninety seconds reading the professor\'s prompt and one classmate\'s post, a minute deciding a position that adds something new rather than echoing the thread, and the rest drafting roughly a hundred words that state a stance, give one reason with brief support, and respond explicitly to the classmate you quoted. Self-scoring then uses the real criteria: IELTS publishes its four band descriptors (Task Response, Coherence and Cohesion, Lexical Resource, Grammatical Range and Accuracy — the middle two get their own lessons in this field), the GRE issue rubric rewards quality of reasoning over position taken, and the TOEFL writing rubric scores relevant content and elaboration. Grading your own practice essays against the published descriptors, brutally, is the fastest known way to move a band.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example — Prompt to Outline in Five Minutes',
+          steps: [
+            'Prompt: "Some people believe university education should be free for everyone. Others think students should pay, because personal benefit justifies personal cost. Discuss both views and give your own opinion."',
+            'Contestable terms underlined: "free", "everyone", "personal benefit". Question type: discuss-both-views, so both sides must get a full paragraph before my verdict.',
+            'Thesis drafted: "Universities should be publicly funded at the point of use, because the benefits spill well beyond the individual graduate — but means-tested contribution after graduation is a defensible compromise."',
+            'Outline: intro with thesis; body 1 — the free case (access, graduate-tax effect, comparisons with public schooling); body 2 — the paying case (personal return, capacity funding); body 3 — rebuttal weighing both (graduate-contribution schemes as synthesis); conclusion restating the calibrated position.',
+            'Clock: 5 minutes planning produced all five paragraph topics and one example each (German tuition, UK loan system, graduate taxes) — drafting now has no decisions left to make.',
+          ],
+        },
+        { kind: 'heading', text: 'Test Yourself' },
+        { kind: 'quiz', items: [
+          {
+            q: 'The fastest route to a low Task Response score is an essay that is…',
+            options: ['under 250 words', 'fluent and well-written but not answering the question asked', 'written in simple sentences', 'lacking examples'],
+            answer: 1,
+            explain: 'The band descriptors reward essays that address all parts of the task; drifting from the prompt fails it regardless of prose quality.',
+          },
+          {
+            q: 'The "comment" in the point-proof-comment cycle exists to…',
+            options: ['add another example', 'show how the evidence supports the claim — the development examiners score', 'introduce the counterargument', 'restate the thesis'],
+            answer: 1,
+            explain: 'Evidence never speaks for itself; the explaining sentence is where development becomes visible.',
+          },
+          {
+            q: 'A strong rebuttal characteristically…',
+            options: ['denies the objection has any merit', 'concedes the point fully and moves on', 'weighs the objection against your case and shows it is smaller, rarer or addressable', 'repeats your first body paragraph'],
+            answer: 2,
+            explain: 'Rebuttals weigh rather than deny — fair concession plus proportion is what earns top reasoning marks.',
+          },
+          {
+            q: 'For the TOEFL Academic Discussion post, the highest-value opening move is…',
+            options: ['summarizing the professor\'s lecture at length', 'taking a clear position that adds something new to the thread, then supporting it', 'agreeing with the most detailed classmate', 'listing three unrelated reasons'],
+            answer: 1,
+            explain: 'The rubric rewards relevant, elaborated contribution to the discussion — echo posts score lower than additive ones.',
+          },
+        ] },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          tone: 'warn',
+          text: 'Writing before planning, which guarantees mid-essay stalling and structural drift. Answering the question you wish had been asked instead of the one printed. Listing three thin examples instead of developing one. Straw-manning the opposing view — examiners read fairness as maturity. Saving the opinion for the conclusion in a prompt that demands it throughout ("give your own opinion" means the essay is yours from the first paragraph). And treating the word count as a floor to pad to rather than a scope to fill with developed ideas — padding shows.',
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          tone: 'path',
+          text: 'Prerequisites: the Library\'s critical-reasoning lesson — analysing arguments is the mirror image of writing them, and its premise-conclusion anatomy makes your own essays sturdier. Follow-ons: the cohesion-and-lexical-resource lesson for the sentence-level craft this lesson assumes, the skimming-and-scanning lesson for the reading half of these exams, and the long-turn speaking lesson for the same argument skills performed aloud.',
+        },
+        { kind: 'heading', text: 'Five-Minute Recap' },
+        { kind: 'list', ordered: true, items: [
+          'Convert the prompt in ninety seconds: underline contestable terms, match the question type, draft a one-sentence thesis that answers exactly what is asked.',
+          'Plan five minutes before drafting: thesis, body-paragraph topics, one concrete example per paragraph — no decisions left for mid-essay.',
+          'Default architecture: introduction with thesis, two or three body paragraphs, conclusion in fresh words; "discuss both views" adds a paragraph per view.',
+          'Run the point-proof-comment cycle in every body paragraph; the comment sentence is scored development.',
+          'Prefer one developed example to three abandoned ones; keep evidence generic-but-real and flag hypotheticals.',
+          'Rehearse the four-beat counterargument: name fairly, concede partly, rebut by weighing, tie back to thesis.',
+          'Use a fixed clock (5-30-5 for IELTS Task 2; roughly 1.5-8-0.5 for the TOEFL post) and self-score against the published band descriptors.',
+        ] },
+      ],
+    },
+    {
+      id: 'eng-cohesion-lexical-accuracy',
+      title: 'Coherence, Cohesion and Lexical Resource: Writing That Reads Smoothly',
+      domain: 'Languages & World Literature',
+      field: 'Academic Writing',
+      branch: 'Style and Editing',
+      tier: 'core',
+      concepts: [
+        'Coherence: the logic a reader can follow',
+        'Cohesion: the words that stitch sentences together',
+        'Topic sentences and the given-new contract',
+        'Reference chains, substitution and ellipsis',
+        'Conjunctions that signal the logical move',
+        'Lexical resource: range, collocation and paraphrase',
+        'Grammatical range and accuracy: variety under control',
+        'The three-minute editing pass',
+      ],
+      words: 1698,
+      readMins: 8,
+      addedOn: '2026-10-21',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'Two of the four IELTS Writing band descriptors are named Coherence and Cohesion and Lexical Resource and Grammatical Range and Accuracy, and the same qualities hide inside every other essay or discussion-post rubric under plainer names — organization, word choice, sentence control. They are also the three qualities most candidates believe they cannot improve in the final weeks, because they feel like talent. They are not: each decomposes into a small set of learnable devices. Coherence is whether the reader can reconstruct your logic; cohesion is the mechanical stitching — pronouns, connectors, repeated key nouns — that lets them; lexical resource is the range and precision of vocabulary; grammatical range and accuracy is the spread of sentence shapes executed without slips. This lesson takes the four apart and rebuilds them as concrete moves with a three-minute editing pass at the end.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          tone: 'insight',
+          text: 'These descriptors together are worth half of the IELTS writing band and roughly half of the TOEFL discussion-post rubric — but their reach is far wider. Every email that gets answered, every report that gets acted on and every essay that earns its marks runs on the same machinery: a reader who never has to ask "what is this paragraph about?" or "what does this sentence connect back to?". The devices here are small, free and transferable to every language you write in.',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Coherence', def: 'The invisible quality: information arranged so the reader always knows what is being discussed and why. Coherence is achieved by paragraph planning and logical order, and cohesion merely makes it visible on the surface.' },
+            { term: 'Cohesive device', def: 'Any word or pattern that ties one sentence to the next: reference pronouns (this, these, such), substitution (one, do so), ellipsis (deliberate omission), conjunctions (however, therefore) and lexical chains (repeating or varying key nouns).' },
+            { term: 'Given-new contract', def: 'The sentence-level rhythm of fluent prose: begin with information the reader already holds (the "given"), end with the new point. New information then becomes the given of the next sentence — prose that obeys this flows without effort.' },
+            { term: 'Collocation', def: 'Words that native usage pairs: "heavy rain" not "strong rain", "reach a decision" not "arrive a decision". Lexical resource scores reward collocations precisely because they are the fingerprint of real exposure to a language.' },
+          ],
+        },
+        {
+          kind: 'para',
+          text: 'Start with the unit that carries both descriptors at once: the paragraph. A competent exam paragraph opens with a topic sentence that announces the paragraph\'s claim in plain words, develops it through two to four sentences of support, and closes either by drawing the implication or handing to the next topic. The topic sentence is not decoration — it is the reader\'s handle on everything beneath it. Underneath, the given-new contract governs sentence order: "Vocational training has one decisive advantage. That advantage is speed: a plumbing certificate takes two years, a physics degree six." The second sentence opens with "that advantage" — the given — and spends the rest of the sentence delivering the new point. Compare the disorienting alternative: "Speed is one decisive advantage of vocational training, since a plumbing certificate takes two years and a physics degree six." Same words, wrong order; the reader must jump backward to find what "speed" is doing. Essay writers who obey given-new get coherence credited without ever using a fancy connector.',
+        },
+        {
+          kind: 'para',
+          text: 'Cohesion then supplies the visible thread, and its devices sort into a short taxonomy worth memorizing. Reference: pronouns and demonstratives point back — "these costs", "such a policy", "this" standing for a whole preceding sentence. Substitution and ellipsis: "more people cycle than do so" and "some cities invest; others do not" — the omitted verb is still heard. Conjunctions: the logical-signalling layer, best learned as a signal-to-meaning table — "however, nevertheless, on the other hand" announce contrast; "therefore, consequently, as a result" announce consequence; "for instance, specifically" announce support; "admittedly, granted" announce concession; "moreover, in addition" announce accumulation. The scorer is watching whether the connector matches the actual logical move: a "furthermore" pasted onto a contrast reads as a mechanical chain, which is exactly what the band descriptors mean by cohesion that is "used mechanically". The final device, lexical chaining, is the most underestimated: key nouns return in varied dress — "tuition fees ... the policy ... free education" — keeping the topic visible without robotic repetition.',
+        },
+        {
+          kind: 'para',
+          text: 'Lexical resource is scored on three axes: range (enough different words to avoid strain), precision (the right word, including collocations) and paraphrase (restating prompt language in your own words). The paraphrase axis matters most immediately, because the first sentence of any exam essay must rephrase the question — copying it verbatim is penalized as memorized language. Practical technique: build three-word variation ladders for the prompt\'s key nouns before drafting ("students ... learners ... graduates"; "free tuition ... publicly funded places ... removing fees"). Precision grows from collocation study, not from exotic vocabulary: examiners consistently reward accurate ordinary words ("implement a policy", "pose a risk") over misused impressive ones ("utilize" bolted onto every sentence is a known band-6 signature). A useful discipline is the one-per-paragraph rule: allow yourself exactly one ambitious word choice per paragraph, check it, and keep the rest clean — ambitious vocabulary that misfires costs more than plain vocabulary that never slips.',
+        },
+        {
+          kind: 'para',
+          text: 'Grammatical range and accuracy is the most misunderstood descriptor because candidates read "range" as "long sentences". What the descriptors actually reward is a spread of sentence types — simple, compound, complex, and the inverted or participle-opened sentence used sparingly — each executed accurately. One controlled complex sentence per paragraph ("Because graduates earn more over a lifetime, the public investment repays itself") does more for the score than a three-line sentence with a broken clause. Accuracy, meanwhile, is dominated by a short list of high-frequency errors: subject-verb agreement after long subjects, article choice, tense consistency in the past, and comma splices. The professional response is not to write less but to keep an error inventory — the same three or four mistakes in every essay you write — and aim the final editing pass straight at them.',
+        },
+        {
+          kind: 'para',
+          text: 'That editing pass is the lesson\'s payoff move, and it fits in three minutes. Minute one: read only the first sentence of every paragraph — do they announce the argument? Is the thesis still visible? Minute two: scan for your personal error inventory (agreement, articles, tense) and comma splices. Minute three: check connectors — no two paragraphs should open with the same linker, and every "however" should genuinely mark a contrast. Deliberately not rewording: wholesale rephrasing in the last minutes manufactures fresh errors faster than it fixes old ones. The pass is targeted, short and unglamorous, and it routinely moves essays half a band because the descriptors for cohesion and accuracy are precisely what it touches.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example — Rewriting a Choppy Paragraph',
+          steps: [
+            'Before: "Free tuition is good. Students do not have debt. Students study harder. Government spends money. Government has less money for hospitals." Five sentences, zero connections — the reader assembles the logic alone.',
+            'Step 1 — order by logic: benefit to students first, cost to the state second. Step 2 — stitch: reference pronouns, one contrast connector, one consequence connector.',
+            'After: "Free tuition removes the debt that shapes graduates\' early careers, and for that reason alone students can choose fields for interest rather than salary. Many also study more effectively without paid work competing for their hours. The state, however, pays directly: every subsidized place is money unavailable for hospitals or schools. The question, therefore, is not whether the cost exists but whether the benefits outrun it."',
+            'Tally: reference ("that", "for that reason"), contrast ("however"), consequence ("therefore"), lexical chain ("free tuition ... subsidized place ... the cost"), given-new flow sentence to sentence — every descriptor touched in four sentences.',
+          ],
+        },
+        { kind: 'heading', text: 'Test Yourself' },
+        { kind: 'quiz', items: [
+          {
+            q: 'Coherence and cohesion are related but distinct because…',
+            options: ['cohesion is the visible stitching, coherence the underlying logical order', 'coherence means correct grammar', 'cohesion only applies to conclusions', 'they are two names for vocabulary range'],
+            answer: 0,
+            explain: 'Plan the logic (coherence), then make it visible with reference, conjunctions and lexical chains (cohesion).',
+          },
+          {
+            q: 'The given-new contract says sentences flow best when they…',
+            options: ['always begin with the newest idea', 'open with known information and end with the new point', 'avoid all pronouns', 'are uniformly short'],
+            answer: 1,
+            explain: 'Ending on the new point lets it become the given of the next sentence — the engine of fluent prose.',
+          },
+          {
+            q: 'In lexical resource, examiners consistently reward…',
+            options: ['rare vocabulary used imprecisely', 'accurate ordinary collocations and clean paraphrase over misused "impressive" words', 'repeating the prompt verbatim', 'idioms in every paragraph'],
+            answer: 1,
+            explain: 'Precision and collocation carry the score; misfired ambitious words are the classic band-6 signature.',
+          },
+          {
+            q: 'The three-minute editing pass deliberately does NOT…',
+            options: ['check paragraph openings', 'target your personal error inventory', 'verify connectors match the logical move', 'reword the whole essay'],
+            answer: 3,
+            explain: 'Wholesale rewording manufactures fresh errors; the pass is targeted at structure, known errors and linkers.',
+          },
+        ] },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          tone: 'warn',
+          text: 'Connector stuffing — a "furthermore" before every sentence scores as mechanical cohesion. Pronouns with no clear ancestor ("this causes problems" — what does "this" stand for?). One idea per paragraph abandoned after a single sentence, starving development. Memorized introduction templates copied onto prompts they do not fit. Treating "range" as licence for multi-clause monsters, which multiply agreement errors. And skipping the error inventory: almost every writer repeats the same three mistakes, and not knowing yours makes the editing pass blind.',
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          tone: 'path',
+          text: 'Prerequisites: the argument-essay lesson in this field, which produces the drafts this lesson polishes. Follow-ons: the skimming-and-scanning lesson for the reading side of timed exams, and the critical-reasoning lesson — its paragraph-level anatomy of claims is what your topic sentences are modelling from the writing side.',
+        },
+        { kind: 'heading', text: 'Five-Minute Recap' },
+        { kind: 'list', ordered: true, items: [
+          'Every paragraph: plain topic sentence, two to four support sentences, closing implication or handover.',
+          'Obey given-new: open with what the reader holds, end with the new point.',
+          'Cohesive toolkit: reference, substitution, ellipsis, matching conjunctions, lexical chains.',
+          'Learn conjunctions as a signal-to-meaning table and let each one mark a real logical move.',
+          'Lexical resource = range, collocation, paraphrase; build variation ladders for prompt nouns; one ambitious word per paragraph.',
+          'Grammar range = a spread of sentence types executed cleanly; keep a personal error inventory.',
+          'Edit three minutes: paragraph openings, then error inventory, then connectors — never wholesale rewording.',
+        ] },
+      ],
+    },
+    {
+      id: 'eng-skimming-scanning-timed-reading',
+      title: 'Skimming and Scanning: Reading Strategy for Timed Exams',
+      domain: 'Languages & World Literature',
+      field: 'Reading Skills',
+      branch: 'Timed Strategy',
+      tier: 'core',
+      concepts: [
+        'Skim: building a thirty-second map of a passage',
+        'Main idea: titles, bookends and repetition',
+        'Scan: anchoring on names, numbers and keywords',
+        'Question-first or passage-first: matching strategy to task',
+        'Paraphrase radar: questions rarely reuse the text\'s words',
+        'Negative-factual items: EXCEPT and NOT questions',
+        'Summary and table completion: facts into frames',
+        'Pacing protocol and the error budget',
+      ],
+      words: 1779,
+      readMins: 9,
+      addedOn: '2026-10-21',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'IELTS Academic Reading gives you three long passages, forty questions and sixty minutes — no time to read every word twice, and no marks for elegant comprehension. TOEFL reading items similarly test whether you can locate stated facts fast, spot the negative-factual question ("All of the following are true EXCEPT..."), and compress a passage into a summary or table. The ACT Reading section runs forty questions in thirty-five minutes across four passages, and its main-idea questions reward the same first-minute survey. The exam boards themselves prescribe the technique in their official materials: skimming for gist and scanning for detail, two different eye-movements doing two different jobs. This lesson trains both as deliberate procedures — when to survey, when to hunt, how questions disguise the words you scanned for, and how to spend the error budget a timed section really is.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          tone: 'insight',
+          text: 'On every one of these exams, timing — not difficulty — is the reported cause of lost marks: candidates who comprehend perfectly run out of clock because they read everything at the same speed. Reading at adjustable speed is also the everyday skill: a researcher triaging thirty papers, a lawyer finding the clause that matters, a doctor scanning a chart all run the same two gears. The exam just makes the cost of staying in first gear visible.',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Skimming', def: 'Reading for structure and gist at high speed — title, first sentences of paragraphs, the final paragraph — producing a mental map: what the passage is about, its stance, and where each part sits. Used once, before questions.' },
+            { term: 'Scanning', def: 'Reading for location, not meaning: eyes sweep for specific anchors — names, dates, numbers, capitalized terms — and stop only when the anchor appears. Used per question.' },
+            { term: 'Anchor', def: 'The concrete token a question hands you to search with. Proper nouns, numbers and technical terms are ideal anchors because the passage cannot paraphrase them away; abstract phrases are poor ones.' },
+            { term: 'Negative-factual item', def: 'A question asking which option is NOT stated or is EXCEPT-ed. All three true options are in the passage — the exam is testing whether you can verify each option against the text instead of pattern-matching the first plausible one.' },
+          ],
+        },
+        {
+          kind: 'para',
+          text: 'Skimming has a definite anatomy, and practising it as anatomy is what makes it fast. First the title and any subheading — they set the topic frame. Then the opening paragraph, read at near-full speed: writers state their subject and intent there. Then the first sentence of every body paragraph, where academic and journalistic English puts its topic sentence; the rest of each paragraph is skipped entirely on the first pass. Then the closing paragraph, where the conclusion or implication lives. Done in under a minute for a typical exam passage, this produces a skeleton — topic, stance, the three or four supporting movements — that you spend the rest of the section hanging details onto. Two habits spoil it: sliding into full reading ("just this one paragraph..."), which destroys the time advantage, and skipping the survey entirely to go question-first on a hard passage, which forces re-reading later. Main-idea questions, the staple of the ACT and TOEFL, are answered almost directly by the survey: the main idea lives in the title, the bookends and the repeated concern of the topic sentences — never in one dramatic sentence buried mid-passage.',
+        },
+        {
+          kind: 'para',
+          text: 'Scanning is the other gear, and it works only when you let the question do the aiming. Each question supplies anchors; the procedure is to fix them in mind — especially numbers, names and capitalized or technical terms, which the passage usually prints identically — and sweep the relevant paragraph region until they light up. Then, and only then, do you switch to normal reading for the two or three lines around the hit, because the answer almost always sits in the sentence containing the anchor or the one after it. Where scanning goes wrong is in the gap between the question\'s words and the passage\'s words: exam boards deliberately paraphrase. The question says "the introduction of the policy"; the passage said "when the scheme came into force". Only the anchor survives paraphrase — "policy" became "scheme", but a date or a name cannot be swapped. This is why anchor-first works and keyword-literalism fails, and it is the single most trainable micro-skill in timed reading: expecting the paraphrase instead of being defeated by it.',
+        },
+        {
+          kind: 'para',
+          text: 'Question-first or passage-first is the strategy fork, and the right branch depends on the item type. Fact-location items (TOEFL factual information, IELTS matching information) are question-first: the question hands you the anchor, so survey briefly, then hunt. Summary-completion and fill-in-a-table items are passage-structure tasks: they compress the whole passage or one section into gaps, so build the skim map first, then scan per gap — the table\'s own headings and row labels are additional anchors that tell you where each fact must have come from. Global items (main idea, author\'s purpose, best title) come last and cost almost nothing: the survey already answered them. Leaving global questions for the end also exploits a property of these sections — by the time you have located ten facts, the passage\'s shape is twice as clear as it was after the first skim.',
+        },
+        {
+          kind: 'para',
+          text: 'The negative-factual item deserves special drill because it inverts reflexes. "The author mentions the 1994 survey for all of the following reasons EXCEPT" — now every option must be verified against the passage, and three verifications are as much work as one. The efficient protocol: scan to the anchor region, then check options one at a time against that region only; the three supported ones cluster near the anchor, and the intruder is the option whose content you cannot find anywhere near it. The classic trap is the option that is true in real life or true elsewhere in the passage but not connected to the asked-about anchor — the exam is testing whether "true" and "mentioned for this reason" are different claims. Marking the three confirmed options as you verify them turns a chaotic memory task into a checklist.',
+        },
+        {
+          kind: 'para',
+          text: 'Pacing closes the system. IELTS\'s official advice is roughly twenty minutes per passage-set; a workable error budget is to refuse any single question more than ninety seconds — at the limit, mark, guess and move, because one stubborn question can cost two answerable ones later. Answer sheets and transfer time, where they exist, are part of the budget, not an afterthought. And the section-level habit that separates consistent scorers from streaky ones: never leave blanks (these exams do not subtract for wrong answers on reading), because a scanned guess at an anchored question is right far more often than chance. Practise the whole loop under the clock from the first week — untimed skimming practice builds the wrong reflexes — and keep an error log distinguishing "did not know the word" from "never found the line": the second category is what this lesson eliminates, and it is usually the larger one.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example — One Passage-Set Under the Clock',
+          steps: [
+            'Passage: "The revived tradition of street-food night markets in Taiwanese cities" — 850 words, 13 questions, 20 minutes.',
+            'Minute 0-1 — skim: title sets topic; opening paragraph says the markets revived after 2000s municipal promotion; topic sentences track economy, tourism policy, and a debate about authenticity; final paragraph predicts consolidation.',
+            'Q1-6 fact-location, question-first: "In which year did Kaohsiung open its first regulated night market?" — anchors "Kaohsiung", "regulated"; scan hits line 22; read two lines; answer found in 35 seconds.',
+            'Q7-9 summary completion: the frame\'s own row labels ("economic role", "government policy") route the scans; paraphrase radar required — passage said "municipal subsidies", gap asked about "official financial support".',
+            'Q10-12 negative-factual: anchor "tourism campaign" region; verify options a-b-d confirmed in two sentences, option c found nowhere nearby — marked NOT-mentioned after a checklist sweep.',
+            'Q13 main idea, zero new reading: the survey already answered it — municipal revival policy reshaped an inherited tradition. Total: 17 minutes, 2 minutes review, no blanks.',
+          ],
+        },
+        { kind: 'heading', text: 'Test Yourself' },
+        { kind: 'quiz', items: [
+          {
+            q: 'Skimming a passage for structure means reading…',
+            options: ['every word faster', 'title, opening paragraph, first sentences of body paragraphs, and the closing paragraph', 'only the questions', 'the middle of each paragraph'],
+            answer: 1,
+            explain: 'The skeleton lives in the bookends and topic sentences; mid-paragraph detail is skipped on the first pass.',
+          },
+          {
+            q: 'Proper nouns, dates and numbers are the best scanning anchors because…',
+            options: ['they appear in the title', 'the passage rarely paraphrases them, while abstract phrases get reworded', 'they are always in the final paragraph', 'they are printed in bold'],
+            answer: 1,
+            explain: 'Questions paraphrase concepts but cannot swap a name or a date — anchors survive the paraphrase.',
+          },
+          {
+            q: 'In a negative-factual (EXCEPT) item, the efficient protocol is to…',
+            options: ['pick the option that sounds least likely', 'verify each option against the anchor region, confirming the three supported ones', 'read the whole passage again', 'choose the longest option'],
+            answer: 1,
+            explain: 'Three options are stated and one is not; a checklist sweep near the anchor exposes the intruder.',
+          },
+          {
+            q: 'The recommended error budget in a timed reading section says…',
+            options: ['spend unlimited time on hard questions to be sure', 'cap any single question near ninety seconds, then mark, guess and move', 'skip all paraphrased questions', 'answer only questions you are certain about'],
+            answer: 1,
+            explain: 'One stubborn question can cost two answerable ones; there is no penalty for wrong answers on these reading sections, so never leave blanks.',
+          },
+        ] },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          tone: 'warn',
+          text: 'Reading everything at one speed — the defining timing failure. Keyword-literalism: scanning for the question\'s exact words when the passage reworded them. Going question-first on hard passages without any survey, then re-reading three times. Missing the paraphrase and concluding the information is not there. In EXCEPT items, choosing an option that is true-but-irrelevant to the anchor. Ignoring the clock until minute fifteen. And practising untimed: the skills are speed skills and only transfer under the clock.',
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          tone: 'path',
+          text: 'Prerequisites: none — this is an entry-level strategy lesson, though comfortable grammar speed helps. Follow-ons: the true-false-can\'t-tell lesson in this field for the judgement layer on top of located facts, the long-turn speaking lesson for the listening-and-speaking half of the same exams, and the argument-essay lesson for the writing half.',
+        },
+        { kind: 'heading', text: 'Five-Minute Recap' },
+        { kind: 'list', ordered: true, items: [
+          'Skim once per passage: title, opening, first sentences, closing — a skeleton under a minute.',
+          'Main-idea questions are answered by the survey: title, bookends, repeated concern of topic sentences.',
+          'Scan per question with concrete anchors — names, dates, numbers survive paraphrase; abstract phrases do not.',
+          'Expect the paraphrase: the answer sits where the anchor is, in reworded language.',
+          'Fact-location items are question-first; summary and table items are structure-first.',
+          'EXCEPT/NOT items: verify each option against the anchor region as a checklist.',
+          'Cap any question near ninety seconds; never leave blanks; practise only under the clock.',
+        ] },
+      ],
+    },
+    {
+      id: 'eng-verbal-reasoning-passage-claims',
+      title: 'True, False, Can\u2019t Tell: Judging Claims Against the Passage',
+      domain: 'Languages & World Literature',
+      field: 'Verbal Reasoning',
+      branch: 'Passage Judgements',
+      tier: 'core',
+      concepts: [
+        'The three-verdict rule: the text is the only witness',
+        'True: explicitly supported, not merely plausible',
+        'False: explicitly contradicted by the text',
+        'Can\u2019t tell: neither — and outside knowledge is the trap',
+        'Fact, opinion and inference on the page',
+        'Tone and attitude markers: the author between the lines',
+        'Drawing conclusions without overreaching',
+        'Scope qualifiers: all, some, only, tend to',
+      ],
+      words: 1876,
+      readMins: 9,
+      addedOn: '2026-10-21',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'UCAT Verbal Reasoning compresses a hard discipline into a brutal format: a passage of a few hundred words, four statements, and three possible verdicts on each — True, False, or Can\'t Tell — at roughly two minutes for the set. CLAT\'s English section asks the same skill in gentler dress (what is the author\'s tone, which conclusion is best supported), and LSAT Reading Comprehension\'s author-attitude questions are the same judgement at leisure. The discipline itself is textual epistemology: separate what the passage says from what is plausible, and decide verdicts on textual evidence alone. This lesson builds the three-verdict logic from the ground up, then adds the judgement layer that rides on it — fact versus opinion, tone and attitude markers, and how far a conclusion can run before it overreaches the page.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          tone: 'insight',
+          text: 'These judgements are the daily work of any profession that consumes documents: the clinician reading a trial report, the lawyer reading a witness statement, the analyst reading a claim in a filing, the citizen reading a claim on social media. UCAT tests it because medicine drowns in literature where "the study did not say that" is a patient-safety skill. The exam\'s three-verdict format is just the cleanest training rig ever built for asking one question: how do you know?',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'True (verdict)', def: 'The passage explicitly supports the statement — its information is stated or follows by a small, safe step from what is stated. Plausibility alone never earns a True.' },
+            { term: 'False (verdict)', def: 'The passage explicitly contradicts the statement — some textual detail runs directly against it. A statement that merely cannot be confirmed is NOT False; see Can\u2019t tell.' },
+            { term: 'Can\u2019t tell (verdict)', def: 'The passage neither states nor contradicts the claim. The information gap, not your ignorance, is the verdict — the passage itself does not settle it. Bringing in outside knowledge to break the tie is the format\'s signature error.' },
+            { term: 'Scope qualifier', def: 'Words that set claim size: all, some, most, only, always, tends to, may. Verdicts hinge on them — a passage supporting "some cities" does not support "most cities", and "only" is almost always a trap.' },
+          ],
+        },
+        {
+          kind: 'para',
+          text: 'The three-verdict rule begins with a boundary decision that feels alien to well-read candidates: the passage is the only witness. Everything you know from elsewhere — the real-world fact, the textbook answer, the sensible prior — is inadmissible. UCAT\'s own materials are explicit that the passages are self-contained, and several of its published trap statements are true-in-reality but unmentioned-in-text, engineered precisely to catch candidates answering from memory instead of from the page. The practical procedure for every statement is therefore fixed: locate the relevant text region (the skimming-and-scanning lesson\'s anchoring does this job), read it properly, and only then compare statement against text. Never read the statement first and then go looking for confirmation — that is how outside knowledge sneaks in, dressed as recognition.',
+        },
+        {
+          kind: 'para',
+          text: 'True is a higher bar than it looks. The statement is True when the passage explicitly says it, or when it follows from the text by a step so small the passage clearly owns it — converting "sales doubled between 2010 and 2012" into "sales were higher in 2012 than in 2010" is safe. The bar breaks when the step needs new information: "sales doubled, so the product must have improved" imports a causal story the passage never supplied, and that verdict is Can\'t tell, however plausible the story feels. Candidates fail this in one direction more than any other — they reward statements for being likely. The corrective question is mechanical: which words in the passage, exactly, support this? If no words can be pointed at, the answer is not True.',
+        },
+        {
+          kind: 'para',
+          text: 'False requires a contradiction, not an absence. If the statement says "the scheme was popular with residents" and the passage says "protests followed the launch", you may infer tension but not unpopularity — that is Can\'t tell. The False verdict is earned only when some textual detail runs against the statement: the passage says the scheme launched in 2019 while the statement claims 2018; the passage says most users preferred option A while the statement says option B won. A clean test: for a candidate False, you should be able to name the conflicting detail. For a candidate Can\'t tell, the honest report is "the passage is silent here" — and silence is a verdict, not a failure of comprehension. Practised under time pressure, the discipline compresses to a pair of checks: can I point at support, or can I point at conflict? If neither pointer exists, the middle verdict is not a guess — it is the answer.',
+        },
+        {
+          kind: 'para',
+          text: 'Underneath verdicts sits the fact-opinion-inference distinction, because statements and questions constantly blur the three. A fact on the page is verifiable within the text ("the clinic treated 4,000 patients"). An opinion is the author\'s evaluation, signalled by judgement words ("remarkable", "badly designed", "unfortunately") and by hedged verbs ("seems", "arguably"). An inference is content the author implies without stating. Exams test the boundaries: "the author believes the policy failed" is answerable even when "the policy failed" is not — belief-statements are facts about the author\'s stance, and the stance is on the page. This is also where tone and attitude live. Authors signal stance through evaluative vocabulary, through what they choose to mention first and last, through irony and contrast, and through concessive markers ("of course, supporters claim... but the numbers tell another story"). Tone questions in CLAT and author-attitude questions on the LSAT are read off exactly these signals: critical but fair, sympathetic yet cautious, openly dismissive. The method is to collect the evaluative words in one sweep and let them vote — tone is rarely stated, but it is always signalled.',
+        },
+        {
+          kind: 'para',
+          text: 'Drawing conclusions — the "best supported" judgement — is the same discipline aimed forward. A safe conclusion stays inside the text\'s scope qualifiers: if the passage discusses one hospital, the conclusion is about that hospital, not healthcare; if the data covers two years, the conclusion resists forecasting a decade. Strong exams build wrong options from three recipes, and recognizing the recipes is most of the defence. Overreach: true for the specific case, extended to the general ("this survey of commuters found..." becomes "commuters everywhere..."). Causal leap: two things co-occur in the text, the option marries them ("enrolment rose after the campaign, therefore the campaign caused it" — the text never said so). And the reintroduced outside fact: an option that fits the world but not the passage. The winning habit on best-supported questions is elimination by scope — cross out every option that travels beyond the text\'s own qualifiers, and the survivor is usually clean.',
+        },
+        {
+          kind: 'para',
+          text: 'Finally, the pacing frame for the strictest format. UCAT Verbal Reasoning runs at roughly two minutes per passage-plus-four-statements, which means about half a minute per verdict — too little for leisure and too much to waste on any single statement. The working protocol: skim the passage for structure (the scanning lesson\'s survey, faster), work statements in order but flag any that stalls past thirty seconds, and return only if seconds remain at the end. Because the format scores no penalty for wrong answers, a flagged statement gets its best guess rather than a blank. Above all, keep the three-verdict reflex intact under speed: verdicts come from pointers — point at support (True), point at conflict (False), point at silence (Can\'t tell) — and a candidate who can name the pointer is never guessing.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example — Four Statements, One Passage',
+          steps: [
+            'Passage: "When the city introduced free bicycle loans in 2019, ridership on the riverside route rose 40% within a year. Councillor Alvarez, who opposed the scheme, called it a costly gimmick. A follow-up survey found most users already owned bicycles."',
+            'Statement 1: "Riverside cycling increased after the scheme launched." — supported directly by the ridership sentence. Verdict: True (pointer: the 40% sentence).',
+            'Statement 2: "The scheme cost the city more than it recovered in revenue." — the passage never discusses costs or revenue; Alvarez\'s opinion is not a budget. Verdict: Can\'t tell (pointer: silence).',
+            'Statement 3: "Councillor Alvarez supported the scheme from the outset." — directly contradicted ("opposed the scheme"). Verdict: False (pointer: the Alvarez sentence).',
+            'Statement 4: "Most users of the scheme did not need it to obtain a bicycle." — the survey found most users already owned bicycles; a safe small step. Verdict: True (pointer: the survey sentence).',
+            'Note the shape: True-Can\'t tell-False-True, each verdict earned by a pointable line — no verdict came from plausibility, and none from outside knowledge.',
+          ],
+        },
+        { kind: 'heading', text: 'Test Yourself' },
+        { kind: 'quiz', items: [
+          {
+            q: 'A statement is factually true in the real world but never mentioned in the passage. Its verdict is…',
+            options: ['True — the statement is true', 'False — the passage omitted it', 'Can\'t tell — the passage neither states nor contradicts it', 'invalid — such statements do not appear'],
+            answer: 2,
+            explain: 'Verdicts are about the text, not the world; a true-but-unmentioned statement is the format\'s classic Can\'t-tell trap.',
+          },
+          {
+            q: 'A False verdict requires…',
+            options: ['the statement to seem unlikely', 'no supporting line to be findable', 'a textual detail that directly runs against the statement', 'the author\'s opinion to differ'],
+            answer: 2,
+            explain: 'Absence of support is Can\'t tell; False needs a pointable conflict.',
+          },
+          {
+            q: '"The author unfortunately had to conclude the trial was inconclusive." The evaluative signal in this sentence is…',
+            options: ['"trial"', '"unfortunately"', '"conclude"', 'there is none'],
+            answer: 1,
+            explain: 'Judgement words like "unfortunately" carry the author\'s attitude — the raw material of tone questions.',
+          },
+          {
+            q: 'A passage describes one survey of commuters in one city. The best-supported conclusion may lawfully extend to…',
+            options: ['commuters everywhere', 'that survey\'s respondents in that city', 'all transport policy', 'future decades of commuting'],
+            answer: 1,
+            explain: 'Conclusions stay inside the text\'s scope qualifiers; crossing the survey\'s population or timeframe is overreach.',
+          },
+        ] },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          tone: 'warn',
+          text: 'Answering from outside knowledge — the single deadliest habit in this format. Treating Can\'t tell as failure and forcing a True or False to avoid it. Rewarding plausibility: likely is not supported. Reading statements before the text and hunting for confirmation. Missing scope qualifiers ("some" graded as "all"; "only" smuggled in). Confusing the author\'s stance with the truth of the claim — "the author believes X" can be True even when X is not. And ignoring opinion markers, which empties every tone and attitude question of its evidence.',
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          tone: 'path',
+          text: 'Prerequisites: the skimming-and-scanning lesson — verdicts begin by locating the right lines fast. Companion: the Library\'s critical-reasoning lesson, which owns the argument-anatomy layer (premises, assumptions, strengthen and weaken) that UCAT Decision Making and LSAT Logical Reasoning add on top of these passage judgements — this lesson deliberately leaves that layer to it. Follow-ons: the long-turn speaking lesson for the same exams\' speaking half and the argument-essay lesson for the writing half.',
+        },
+        { kind: 'heading', text: 'Five-Minute Recap' },
+        { kind: 'list', ordered: true, items: [
+          'The passage is the only witness; outside knowledge is inadmissible by design.',
+          'True = pointable support (stated, or a step so small the text owns it).',
+          'False = pointable conflict; absence of support is never False.',
+          'Can\'t tell = pointable silence — a verdict, not a failure.',
+          'Separate fact, opinion and inference; stance-statements are facts about the author.',
+          'Tone and attitude are read from evaluative words, ordering and concessive markers.',
+          'Conclusions obey scope qualifiers; eliminate overreach, causal leaps and reintroduced outside facts.',
+          'Under time: half a minute per verdict, flag and guess on stall — pointers, not hunches.',
+        ] },
+      ],
+    },
+    {
+      id: 'eng-speaking-fluency-long-turn',
+      title: 'The Long Turn: Speaking Fluently Under Exam Conditions',
+      domain: 'Languages & World Literature',
+      field: 'Speaking & Listening',
+      branch: 'Exam Speaking',
+      tier: 'core',
+      concepts: [
+        'The IELTS Part 2 protocol: cue card, one minute, two minutes',
+        'The one-minute note frame: who, what, when, why, feeling',
+        'PREP and past-present-future talk shapes',
+        'Fluency: fillers, chunking and self-repair',
+        'Pronunciation: stress, intonation and pace',
+        'Part 3: extending the topic into discussion',
+        'TOEFL speaking: independent and integrated tasks',
+        'Rubric self-audit and the daily recording loop',
+      ],
+      words: 1967,
+      readMins: 10,
+      addedOn: '2026-10-21',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'IELTS Speaking Part 2 is the exam\'s signature ordeal: one cue card, one minute of preparation, and up to two minutes of uninterrupted talk — the "long turn" — before the examiner\'s follow-up questions. TOEFL speaking asks the same fluency in four shorter tasks: one independent personal-preference task (fifteen seconds to prepare, forty-five seconds to speak) and three integrated tasks that have you read a short text or listen to a campus conversation or academic lecture, take notes, and deliver a timed summary. Both exams score the same underlying dimensions — fluency and coherence, lexical resource, grammatical range and accuracy, pronunciation — and both punish the same failure: a candidate with good English who cannot keep producing it alone, unscripted, under a countdown. This lesson trains the long turn as a repeatable performance: what to do with the silent minute, how to structure talk so it cannot stall, the mechanics of sounding fluent, and the recording loop that builds the skill faster than any amount of silent study.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          tone: 'insight',
+          text: 'Speaking is the section most candidates undertrain, because practising it feels awkward — and it is the section with the largest gap between knowledge and performance: candidates who write band-8 essays freeze at minute one of a monologue. The skill itself is larger than the exam: interviews, presentations, viva defenses and client calls are all long turns with a clock, and the person who can talk structured sense for two minutes on any prompt inherits a permanent advantage.',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Cue card', def: 'The Part 2 prompt: a topic ("Describe a decision you changed your mind about") plus three or four bullet hints and a final line ("and explain how you felt about it"). The hints are scaffolding, not a checklist — missing one is survivable; silence is not.' },
+            { term: 'PREP', def: 'A talk shape for opinion-style prompts: Point, Reason, Example, Point repeated. Each cycle runs twenty to thirty seconds, so two or three cycles fill the long turn without new invention.' },
+            { term: 'Self-repair', def: 'The fluent speaker\'s correction move: restarting a phrase ("he said — he told me") without apologizing or restarting the sentence. Scored as fluency, not error, because it mirrors natural speech.' },
+            { term: 'Chunking', def: 'Speaking in natural phrases with linked words inside each chunk and brief pauses between chunks — the rhythm marker that separates fluent delivery from word-by-word reading.' },
+          ],
+        },
+        {
+          kind: 'para',
+          text: 'The silent minute decides the two spoken ones, and it must be spent on structure, not sentences. The note frame that survives exam pressure is five anchors written large: WHO (or WHAT), WHEN, WHERE, WHY-it-mattered, and FEELING — one word or symbol each, mapped to the cue card\'s bullets, with feeling deliberately included because the card\'s final bullet ("and explain how you felt") is the one candidates forget and the one that carries the personal register examiners want. Two notes per anchor — a trigger word, never a sentence — are enough. Writing full sentences in the minute is the classic ruin: the clock expires mid-sentence, and the candidate then recites, runs dry at the sentence\'s end, and stalls. Ten anchor words sustain two minutes of improvisation; ten written sentences sustain exactly ten sentences.',
+        },
+        {
+          kind: 'para',
+          text: 'Structure is what turns those anchors into unbroken talk, and two shapes cover nearly every prompt. The story shape handles describe-experience cards: past-present-future, or before-during-after — set the scene in two sentences, move through the event in three or four, then spend the final third on reflection and feeling, which is where the language gets interesting (conditionals, evaluation, hypotheticals: "if I had known then..."). The PREP shape handles opinion and preference cards: state the point, give the reason, land the example, restate the point — then repeat the cycle for the second aspect if time remains. Both shapes share the property that matters under pressure: each segment names what comes next, so the speaker never faces the open question "what now?" mid-recording. The stall-killer is not vocabulary; it is always the absence of a next slot. Candidates who know their shape talk for two minutes on any topic they possess any story or opinion about — and the cue-card topics are engineered so everyone possesses one.',
+        },
+        {
+          kind: 'para',
+          text: 'Fluency, the scored dimension candidates most misread, is not speed. The band descriptors reward speech that flows with only occasional repetition or self-correction, and they penalize long pauses and slow delivery more than they penalize small errors. The mechanics are teachable. Fillers: the trained English fillers — "well", "actually", "you know", "what I mean is" — are legitimate fluency glue in moderation, unlike the silent gap they replace. Chunking: deliver phrase-groups with rhythm ("the main reason | I chose that course | was purely practical") rather than word-by-word monotone. Self-repair: when an error surfaces, restart the phrase cleanly and continue — no "sorry", no rewind to the sentence start. And pace: slightly slower than comfortable, which paradoxically raises fluency scores, because it reduces errors, lengthens chunks and buys the planning seconds that keep the next slot filled. The candidates who sound most fluent are rarely speaking fastest; they are pausing deliberately at clause boundaries instead of mid-clause.',
+        },
+        {
+          kind: 'para',
+          text: 'Pronunciation carries its own descriptor, and its scoring features are suprasegmental before they are segmental: sentence stress (which word in each chunk carries the beat), intonation (rising and falling that marks questions, contrast and attitude), and chunking itself. Accent is explicitly not penalized — the descriptors say so — but unintelligibility is, and the highest-frequency fixes are prosodic: a monotone delivery scores below an accented but animated one. The two-minute drill that moves this fastest is shadowing — playing a thirty-second clip of clear natural speech and repeating it at the speaker\'s rhythm, mimicking the stress peaks — because it trains the ear and the mouth in one motion. Pair it with deliberate word-stress checks for your own recurring trouble words; misplaced stress inside words (the "PHOtograph / phoTOGraphy" family) causes more intelligibility trouble than any individual vowel.',
+        },
+        {
+          kind: 'para',
+          text: 'Part 3 and the TOEFL tasks extend the same skills in two directions. IELTS Part 3 abandons personal narrative for abstract discussion — the examiner pushes from your story toward general questions ("is it better to make decisions alone or in groups?"), and the winning habit is the same PREP shape generalized: give a point, a reason, an example, and where possible a contrast ("but in some situations..."). Opinion vocabulary earns its keep here precisely because the questions are debatable: "it depends", "I would argue", "there is a case for". The TOEFL independent task compresses this to forty-five seconds: one stance, two reasons, one example — no balanced discussion, because there is no time. The integrated tasks add note-taking from audio: listen for the speaker\'s two or three main points and their attitude, write triggers, then deliver a summary that names the source ("the professor explains...", "the student argues...") and reports content and stance without your opinion — the integrated tasks score whether you can relay, and editorializing costs marks. Note-taking under audio pressure is itself trainable with podcasts: summarize each paragraph in five words.',
+        },
+        {
+          kind: 'para',
+          text: 'The training loop that outperforms everything else is the daily recording audit. Once a day: take a random cue card or TOEFL prompt, prepare for the official time, speak for the official duration into a phone recorder, and listen back once with the four descriptors as a checklist — where did I stall, and was it a missing next slot or a missing word? where did I repeat myself? did I answer the final bullet? The second listen, a week later, shows progress that daily self-criticism hides. Two minutes of speaking per day beats two hours of listening about speaking, because the exam samples a performance habit; the loop builds exactly that habit and, almost as valuably, removes the strangeness of hearing your own voice under pressure — which is the anxiety that costs most candidates their first band.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example — One Long Turn, Anchors to Delivery',
+          steps: [
+            'Cue card: "Describe a skill you would like to learn. You should say: what the skill is; how you would learn it; how long you think it would take; and explain why you want to learn it."',
+            'Minute of notes, five anchors: WHAT = pottery (throwing on the wheel); HOW = evening class + YouTube + practice log; HOW LONG = a year to basics; FEELING = patience, handmade pride; WHY = grandmothers bowls, screen-free work.',
+            'Opening (story shape, scene): "Something I have wanted to learn for years is pottery — specifically throwing pots on a wheel, which I first saw at a market in Kyoto."',
+            'Middle (anchors, chunked): evening-class plan, YouTube technique study, the practice-log idea; honest uncertainty: "I imagine it would take at least a year before anything I made was worth keeping — people say the first hundred pots are for breaking."',
+            'Final third (feeling and why, the credit layer): "What draws me is that it is completely screen-free — my hands instead of my eyes — and there would be something quietly wonderful about drinking from a bowl I made badly myself." Two minutes, no dead air: every segment knew its next slot.',
+          ],
+        },
+        { kind: 'heading', text: 'Test Yourself' },
+        { kind: 'quiz', items: [
+          {
+            q: 'The one-minute preparation before the long turn should be spent…',
+            options: ['writing full sentences to read aloud', 'writing five trigger-word anchors mapped to the cue-card bullets, including the feeling bullet', 'memorizing an introduction', 'resting'],
+            answer: 1,
+            explain: 'Triggers sustain two minutes of improvisation; sentences sustain exactly themselves and then run dry.',
+          },
+          {
+            q: 'In the band descriptors, fluency means…',
+            options: ['speaking as fast as possible', 'uninterrupted flow with deliberate pauses at chunk boundaries — not speed', 'using no fillers at all', 'never making mistakes'],
+            answer: 1,
+            explain: 'Slow, chunked, continuous speech outscores fast, choppy speech; self-repair counts as fluency.',
+          },
+          {
+            q: 'A mistake surfaces mid-sentence. The fluent, higher-scoring response is…',
+            options: ['say sorry and restart the whole sentence', 'restart the phrase cleanly and continue without comment', 'stop and think in silence until it resolves', 'switch to a simpler sentence you have memorized'],
+            answer: 1,
+            explain: 'Clean phrase-level self-repair mirrors natural speech and is scored as fluency, not error.',
+          },
+          {
+            q: 'In TOEFL integrated speaking tasks (campus or academic summaries), the delivery should…',
+            options: ['give your own opinion on the issue', 'name the source and report its content and stance without editorializing', 'list every detail you heard', 'be as short as possible'],
+            answer: 1,
+            explain: 'Integrated tasks score faithful relay — "the professor explains..." — and opinion or omission both cost marks.',
+          },
+        ] },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          tone: 'warn',
+          text: 'Writing sentences during the preparation minute. Memorizing answer scripts — examiners detect recitation and the cue card always bends against it. Chasing speed and landing in choppy word-by-word delivery. Apologizing or freezing after small errors instead of repairing the phrase. Forgetting the cue card\'s final feeling bullet, which costs the personal register. Editorializing in TOEFL integrated summaries. And the meta-pitfall: practising only by reading about speaking — the skill is a performance habit and only recording loops build it.',
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          tone: 'path',
+          text: 'Prerequisites: none — this lesson stands alone, though the argument-essay lesson\'s point-reason-example logic is reused here in spoken form. Follow-ons: the skimming-and-scanning lesson and the true-false-can\'t-tell lesson for the reading and judgement halves of the same exams, the cohesion lesson for the coherence descriptor\'s written twin, and the Library\'s language-acquisition lessons for the input side of the fluency this lesson trains.',
+        },
+        { kind: 'heading', text: 'Five-Minute Recap' },
+        { kind: 'list', ordered: true, items: [
+          'Spend the silent minute on five trigger-word anchors — who/what, when, where, why, feeling — never on sentences.',
+          'Use a talk shape: story (before-during-after) for experience cards, PREP for opinion cards.',
+          'Fluency = uninterrupted chunked flow at deliberate pace; self-repair beats apology.',
+          'Train pronunciation through shadowing: sentence stress, intonation and chunk rhythm before individual sounds.',
+          'Part 3 generalizes PREP to abstract discussion; opinion vocabulary earns its keep there.',
+          'TOEFL independent: one stance, two reasons, one example in forty-five seconds.',
+          'TOEFL integrated: note the audio\'s main points, deliver a named-source summary without your opinion.',
+          'Record daily, audit against the four descriptors, listen again a week later.',
+        ] },
+      ],
+    },
+  ],
+}

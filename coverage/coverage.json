@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T01:00:12.507Z",
+  "generatedAt": "2026-10-21T07:13:00.718Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 176,
-    "books": 176,
-    "chapters": 828,
-    "sections": 4403
+    "subjects": 179,
+    "books": 179,
+    "chapters": 833,
+    "sections": 4408
   },
   "subjects": [
     {
@@ -28941,6 +28941,136 @@
       ]
     },
     {
+      "id": "ku-languages-literature-academic-writing",
+      "name": "Academic Writing",
+      "group": "Languages & World Literature",
+      "tagline": "How languages live and grow",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-academic-writing-exam-essays",
+          "number": 1,
+          "title": "Exam Essays",
+          "shortTitle": "Exam Essays",
+          "bookId": "ku-languages-literature-academic-writing",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-argument-essay-writing",
+              "number": 1.1,
+              "title": "The Argument Essay: Thesis, Evidence and Counterargument"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-academic-writing-style-and-editing",
+          "number": 2,
+          "title": "Style and Editing",
+          "shortTitle": "Style and Editing",
+          "bookId": "ku-languages-literature-academic-writing",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-cohesion-lexical-accuracy",
+              "number": 2.1,
+              "title": "Coherence, Cohesion and Lexical Resource: Writing That Reads Smoothly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-languages-literature-reading-skills",
+      "name": "Reading Skills",
+      "group": "Languages & World Literature",
+      "tagline": "How languages live and grow",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-reading-skills-timed-strategy",
+          "number": 1,
+          "title": "Timed Strategy",
+          "shortTitle": "Timed Strategy",
+          "bookId": "ku-languages-literature-reading-skills",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-skimming-scanning-timed-reading",
+              "number": 1.1,
+              "title": "Skimming and Scanning: Reading Strategy for Timed Exams"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-languages-literature-verbal-reasoning",
+      "name": "Verbal Reasoning",
+      "group": "Languages & World Literature",
+      "tagline": "How languages live and grow",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-verbal-reasoning-passage-judgements",
+          "number": 1,
+          "title": "Passage Judgements",
+          "shortTitle": "Passage Judgements",
+          "bookId": "ku-languages-literature-verbal-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-verbal-reasoning-passage-claims",
+              "number": 1.1,
+              "title": "True, False, Can’t Tell: Judging Claims Against the Passage"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-verbal-reasoning-critical-reasoning",
+          "number": 2,
+          "title": "Critical Reasoning",
+          "shortTitle": "Critical Reasoning",
+          "bookId": "ku-languages-literature-verbal-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-critical-reasoning-arguments",
+              "number": 2.1,
+              "title": "Critical Reasoning: Breaking Down Arguments for Exams"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-languages-literature-speaking-and-listening",
+      "name": "Speaking & Listening",
+      "group": "Languages & World Literature",
+      "tagline": "How languages live and grow",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-speaking-and-listening-exam-speaking",
+          "number": 1,
+          "title": "Exam Speaking",
+          "shortTitle": "Exam Speaking",
+          "bookId": "ku-languages-literature-speaking-and-listening",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-speaking-fluency-long-turn",
+              "number": 1.1,
+              "title": "The Long Turn: Speaking Fluently Under Exam Conditions"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-languages-literature-language-acquisition-science",
       "name": "Language Acquisition Science",
       "group": "Languages & World Literature",
@@ -29490,31 +29620,6 @@
               "id": "ku-lang-sociolinguistics",
               "number": 1.1,
               "title": "Language in Society: Dialects, Prestige and Code-Switching"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-languages-literature-verbal-reasoning",
-      "name": "Verbal Reasoning",
-      "group": "Languages & World Literature",
-      "tagline": "How languages live and grow",
-      "chapterCount": 1,
-      "sectionCount": 1,
-      "chapters": [
-        {
-          "id": "ku-languages-literature-verbal-reasoning-critical-reasoning",
-          "number": 1,
-          "title": "Critical Reasoning",
-          "shortTitle": "Critical Reasoning",
-          "bookId": "ku-languages-literature-verbal-reasoning",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-eng-critical-reasoning-arguments",
-              "number": 1.1,
-              "title": "Critical Reasoning: Breaking Down Arguments for Exams"
             }
           ]
         }
