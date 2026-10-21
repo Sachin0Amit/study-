@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T18:49:46.350Z",
+  "generatedAt": "2026-10-21T19:08:06.688Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 184,
-    "books": 184,
-    "chapters": 847,
-    "sections": 4427
+    "subjects": 189,
+    "books": 189,
+    "chapters": 853,
+    "sections": 4433
   },
   "subjects": [
     {
@@ -26046,6 +26046,81 @@
       ]
     },
     {
+      "id": "ku-foundation-learning-science-and-inquiry-skills",
+      "name": "Science & Inquiry Skills",
+      "group": "Foundation Learning",
+      "tagline": "Learn how to learn",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-foundation-learning-science-and-inquiry-skills-experimental-method",
+          "number": 1,
+          "title": "Experimental Method",
+          "shortTitle": "Experimental Method",
+          "bookId": "ku-foundation-learning-science-and-inquiry-skills",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-sci-experimental-design-hypotheses",
+              "number": 1.1,
+              "title": "Experimental Design: Hypotheses, Controls and the Theory Ladder"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-foundation-learning-professional-and-interpersonal-skills",
+      "name": "Professional & Interpersonal Skills",
+      "group": "Foundation Learning",
+      "tagline": "Learn how to learn",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-foundation-learning-professional-and-interpersonal-skills-situational-judgement",
+          "number": 1,
+          "title": "Situational Judgement",
+          "shortTitle": "Situational Judgement",
+          "bookId": "ku-foundation-learning-professional-and-interpersonal-skills",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-sj-situational-judgement",
+              "number": 1.1,
+              "title": "Situational Judgement: Integrity, Perspective Taking and Teamwork"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-foundation-learning-nonverbal-reasoning",
+      "name": "Nonverbal Reasoning",
+      "group": "Foundation Learning",
+      "tagline": "Learn how to learn",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-foundation-learning-nonverbal-reasoning-figural-patterns",
+          "number": 1,
+          "title": "Figural Patterns",
+          "shortTitle": "Figural Patterns",
+          "bookId": "ku-foundation-learning-nonverbal-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-fnd-visual-pattern-rules",
+              "number": 1.1,
+              "title": "Nonverbal Reasoning: Shape Attributes, Series and Rule Detection"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-foundation-learning-study-skills-and-memory",
       "name": "Study Skills & Memory",
       "group": "Foundation Learning",
@@ -29146,6 +29221,111 @@
       ]
     },
     {
+      "id": "ku-languages-literature-grammar-and-mechanics",
+      "name": "Grammar & Mechanics",
+      "group": "Languages & World Literature",
+      "tagline": "How languages live and grow",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-grammar-and-mechanics-punctuation",
+          "number": 1,
+          "title": "Punctuation",
+          "shortTitle": "Punctuation",
+          "bookId": "ku-languages-literature-grammar-and-mechanics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-punctuation-mechanics",
+              "number": 1.1,
+              "title": "Punctuation Mechanics: Commas, Semicolons, Apostrophes and Dashes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-languages-literature-reading-strategy",
+      "name": "Reading Strategy",
+      "group": "Languages & World Literature",
+      "tagline": "How languages live and grow",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-reading-strategy-paired-passages",
+          "number": 1,
+          "title": "Paired Passages",
+          "shortTitle": "Paired Passages",
+          "bookId": "ku-languages-literature-reading-strategy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-paired-passages-authorial-choices",
+              "number": 1.1,
+              "title": "Paired Passages and Authorial Choices: Reading Two Texts at Once"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-languages-literature-verbal-reasoning",
+      "name": "Verbal Reasoning",
+      "group": "Languages & World Literature",
+      "tagline": "How languages live and grow",
+      "chapterCount": 3,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-verbal-reasoning-principle-application",
+          "number": 1,
+          "title": "Principle Application",
+          "shortTitle": "Principle Application",
+          "bookId": "ku-languages-literature-verbal-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-principle-application",
+              "number": 1.1,
+              "title": "Applying Principles: From Rule to Case"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-verbal-reasoning-passage-judgements",
+          "number": 2,
+          "title": "Passage Judgements",
+          "shortTitle": "Passage Judgements",
+          "bookId": "ku-languages-literature-verbal-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-verbal-reasoning-passage-claims",
+              "number": 2.1,
+              "title": "True, False, Can’t Tell: Judging Claims Against the Passage"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-verbal-reasoning-critical-reasoning",
+          "number": 3,
+          "title": "Critical Reasoning",
+          "shortTitle": "Critical Reasoning",
+          "bookId": "ku-languages-literature-verbal-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-critical-reasoning-arguments",
+              "number": 3.1,
+              "title": "Critical Reasoning: Breaking Down Arguments for Exams"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-languages-literature-academic-writing",
       "name": "Academic Writing",
       "group": "Languages & World Literature",
@@ -29205,46 +29385,6 @@
               "id": "ku-eng-skimming-scanning-timed-reading",
               "number": 1.1,
               "title": "Skimming and Scanning: Reading Strategy for Timed Exams"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-languages-literature-verbal-reasoning",
-      "name": "Verbal Reasoning",
-      "group": "Languages & World Literature",
-      "tagline": "How languages live and grow",
-      "chapterCount": 2,
-      "sectionCount": 2,
-      "chapters": [
-        {
-          "id": "ku-languages-literature-verbal-reasoning-passage-judgements",
-          "number": 1,
-          "title": "Passage Judgements",
-          "shortTitle": "Passage Judgements",
-          "bookId": "ku-languages-literature-verbal-reasoning",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-eng-verbal-reasoning-passage-claims",
-              "number": 1.1,
-              "title": "True, False, Can’t Tell: Judging Claims Against the Passage"
-            }
-          ]
-        },
-        {
-          "id": "ku-languages-literature-verbal-reasoning-critical-reasoning",
-          "number": 2,
-          "title": "Critical Reasoning",
-          "shortTitle": "Critical Reasoning",
-          "bookId": "ku-languages-literature-verbal-reasoning",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-eng-critical-reasoning-arguments",
-              "number": 2.1,
-              "title": "Critical Reasoning: Breaking Down Arguments for Exams"
             }
           ]
         }

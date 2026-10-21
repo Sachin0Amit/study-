@@ -6,12 +6,16 @@
  */
 
 import type { KnowledgeDomainFile } from '../types'
+import { x21SkillsPassTopics } from './x21-skills-pass'
 
 export const foundationLearning: KnowledgeDomainFile = {
   domain: 'Foundation Learning',
   blurb:
     'Study skills, reading strategy, and practical numeracy — the bedrock abilities that make every other domain easier to learn.',
   topics: [
+    // X21 skills pass (2026-10-22): experimental design & hypothesis ladder,
+    // situational judgement, nonverbal reasoning (inquiry/judgement gaps).
+    ...x21SkillsPassTopics.filter((t) => t.domain === 'Foundation Learning'),
     // ------------------------------------------------------------------
     {
       id: 'fnd-spaced-repetition',

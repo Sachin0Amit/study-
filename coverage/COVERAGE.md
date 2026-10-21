@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 184
-- **Books (master volumes):** 184
-- **Chapters:** 847
-- **Sections (lessons):** 4427
+- **Subjects:** 189
+- **Books (master volumes):** 189
+- **Chapters:** 853
+- **Sections (lessons):** 4433
 
 ## Foundations — 5 subjects
 
@@ -759,7 +759,25 @@
 - **Ch 5. Mechatronic System Design & Modeling** `mech-modeling` — 6 sections: The Mechatronic Design Process; System Modeling Across Domains; Time & Frequency Domain Response; Controllers for Mechatronic Plants; Simulation-Driven Design & Digital Twins; Case Studies
 - **Ch 6. Mobile & Autonomous Robotics** `mech-mobile-robotics` — 6 sections: Locomotion Concepts; Localization & Mapping Fundamentals; Path Planning; Navigation Stacks & Obstacle Avoidance; Robot Programming Frameworks; Ethics & Safety of Autonomous Systems
 
-## Foundation Learning — 4 subjects
+## Foundation Learning — 7 subjects
+
+### Science & Inquiry Skills (`ku-foundation-learning-science-and-inquiry-skills`)
+
+*Learn how to learn* — 1 chapters · 1 sections
+
+- **Ch 1. Experimental Method** `ku-foundation-learning-science-and-inquiry-skills-experimental-method` — 1 sections: Experimental Design: Hypotheses, Controls and the Theory Ladder
+
+### Professional & Interpersonal Skills (`ku-foundation-learning-professional-and-interpersonal-skills`)
+
+*Learn how to learn* — 1 chapters · 1 sections
+
+- **Ch 1. Situational Judgement** `ku-foundation-learning-professional-and-interpersonal-skills-situational-judgement` — 1 sections: Situational Judgement: Integrity, Perspective Taking and Teamwork
+
+### Nonverbal Reasoning (`ku-foundation-learning-nonverbal-reasoning`)
+
+*Learn how to learn* — 1 chapters · 1 sections
+
+- **Ch 1. Figural Patterns** `ku-foundation-learning-nonverbal-reasoning-figural-patterns` — 1 sections: Nonverbal Reasoning: Shape Attributes, Series and Rule Detection
 
 ### Study Skills & Memory (`ku-foundation-learning-study-skills-and-memory`)
 
@@ -1252,7 +1270,27 @@
 - **Ch 1. Eastern Traditions** `ku-humanities-religious-studies-eastern-traditions` — 1 sections: Hinduism, Buddhism and the Eastern Traditions
 - **Ch 2. Western Traditions** `ku-humanities-religious-studies-western-traditions` — 1 sections: Judaism, Christianity and Islam: The Abrahamic Faiths
 
-## Languages & World Literature — 19 subjects
+## Languages & World Literature — 21 subjects
+
+### Grammar & Mechanics (`ku-languages-literature-grammar-and-mechanics`)
+
+*How languages live and grow* — 1 chapters · 1 sections
+
+- **Ch 1. Punctuation** `ku-languages-literature-grammar-and-mechanics-punctuation` — 1 sections: Punctuation Mechanics: Commas, Semicolons, Apostrophes and Dashes
+
+### Reading Strategy (`ku-languages-literature-reading-strategy`)
+
+*How languages live and grow* — 1 chapters · 1 sections
+
+- **Ch 1. Paired Passages** `ku-languages-literature-reading-strategy-paired-passages` — 1 sections: Paired Passages and Authorial Choices: Reading Two Texts at Once
+
+### Verbal Reasoning (`ku-languages-literature-verbal-reasoning`)
+
+*How languages live and grow* — 3 chapters · 3 sections
+
+- **Ch 1. Principle Application** `ku-languages-literature-verbal-reasoning-principle-application` — 1 sections: Applying Principles: From Rule to Case
+- **Ch 2. Passage Judgements** `ku-languages-literature-verbal-reasoning-passage-judgements` — 1 sections: True, False, Can’t Tell: Judging Claims Against the Passage
+- **Ch 3. Critical Reasoning** `ku-languages-literature-verbal-reasoning-critical-reasoning` — 1 sections: Critical Reasoning: Breaking Down Arguments for Exams
 
 ### Academic Writing (`ku-languages-literature-academic-writing`)
 
@@ -1266,13 +1304,6 @@
 *How languages live and grow* — 1 chapters · 1 sections
 
 - **Ch 1. Timed Strategy** `ku-languages-literature-reading-skills-timed-strategy` — 1 sections: Skimming and Scanning: Reading Strategy for Timed Exams
-
-### Verbal Reasoning (`ku-languages-literature-verbal-reasoning`)
-
-*How languages live and grow* — 2 chapters · 2 sections
-
-- **Ch 1. Passage Judgements** `ku-languages-literature-verbal-reasoning-passage-judgements` — 1 sections: True, False, Can’t Tell: Judging Claims Against the Passage
-- **Ch 2. Critical Reasoning** `ku-languages-literature-verbal-reasoning-critical-reasoning` — 1 sections: Critical Reasoning: Breaking Down Arguments for Exams
 
 ### Speaking & Listening (`ku-languages-literature-speaking-and-listening`)
 

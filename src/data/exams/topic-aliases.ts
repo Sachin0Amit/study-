@@ -231,5 +231,30 @@ export const TOPIC_ALIASES: Record<string, string> = {
   'traversing arraylists': 'cs-java-arrays-and-arraylists',
   'traversing 2d arrays': 'cs-java-arrays-and-arraylists',
   'equivalent boolean expressions': 'cs-java-boolean-logic-expressions',
+
+  /* ---- X21 pass (2026-10-22): verbal, judgement & inquiry skills.
+   * New-lesson mappings point at x21-skills-pass topics; single-token exam
+   * topics ('punctuation', 'teamwork') can never pass the two-token matcher,
+   * so aliases are the only route. Verified against each lesson's concepts. ---- */
+  // ACT English punctuation unit
+  'punctuation': 'eng-punctuation-mechanics',
+  // ACT Reading + LSAT RC paired-passage units
+  'comparing perspectives': 'eng-paired-passages-authorial-choices',
+  'authorial choices': 'eng-paired-passages-authorial-choices',
+  'two-passage relationship questions': 'eng-paired-passages-authorial-choices',
+  'analyzing each passage in the pair': 'eng-paired-passages-authorial-choices',
+  // LSAT Logical Reasoning principle unit
+  'principle application': 'eng-principle-application',
+  // ACT Science + AP Statistics design units (same normalized name)
+  'experimental design': 'sci-experimental-design-hypotheses',
+  'hypotheses and theories': 'sci-experimental-design-hypotheses',
+  // UCAT SJT ethics units
+  'integrity': 'sj-situational-judgement',
+  'perspective taking': 'sj-situational-judgement',
+  'teamwork': 'sj-situational-judgement',
+  // UCAT abstract reasoning + BITSAT logical reasoning figural units
+  'shape attributes': 'fnd-visual-pattern-rules',
+  'pattern perception and figure formation': 'fnd-visual-pattern-rules',
+  'rule detection': 'fnd-visual-pattern-rules',
 }
 

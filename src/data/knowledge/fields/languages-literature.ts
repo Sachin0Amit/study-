@@ -1,11 +1,15 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x16ExamSkills } from './x16-exam-skills'
+import { x21SkillsPassTopics } from './x21-skills-pass'
 
 export const languagesLiterature: KnowledgeDomainFile = {
   domain: 'Languages & World Literature',
   blurb:
     'The science of learning languages and the literatures they carry — from grammar glue to great texts.',
   topics: [
+    // X21 skills pass (2026-10-22): punctuation mechanics, paired passages &
+    // authorial choices, principle application (verbal/reasoning gap units).
+    ...x21SkillsPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
     ...x16ExamSkills.topics,
     {
       id: 'lang-comprehensible-input',

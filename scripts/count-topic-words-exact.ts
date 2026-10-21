@@ -11,6 +11,7 @@ import { x16ExamSkills } from '../src/data/knowledge/fields/x16-exam-skills'
 import { x17ExamSyllabusTopics } from '../src/data/knowledge/fields/x17-exam-syllabus'
 import { x19CivilCoreTopics } from '../src/data/knowledge/fields/x19-civil-core'
 import { x20FoundationsPassTopics } from '../src/data/knowledge/fields/x20-foundations-pass'
+import { x21SkillsPassTopics } from '../src/data/knowledge/fields/x21-skills-pass'
 import { computingAI } from '../src/data/knowledge/fields/computing-ai'
 
 const IDS = [
@@ -56,6 +57,12 @@ const IDS = [
   'cs-java-objects-classes-methods',
   'cs-java-arrays-and-arraylists',
   'cs-java-boolean-logic-expressions',
+  'eng-punctuation-mechanics',
+  'eng-paired-passages-authorial-choices',
+  'eng-principle-application',
+  'sci-experimental-design-hypotheses',
+  'sj-situational-judgement',
+  'fnd-visual-pattern-rules',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length
@@ -75,7 +82,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, computingAI]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, computingAI]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)
