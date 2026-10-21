@@ -16,8 +16,8 @@
 
 - **Subjects:** 176
 - **Books (master volumes):** 176
-- **Chapters:** 827
-- **Sections (lessons):** 4398
+- **Chapters:** 828
+- **Sections (lessons):** 4403
 
 ## Foundations — 5 subjects
 
@@ -791,17 +791,17 @@
 
 ### Astronomy & Space Science (`ku-physical-sciences-astronomy-and-space-science`)
 
-*The lives of stars* — 3 chapters · 5 sections
+*The lives of stars* — 3 chapters · 6 sections
 
 - **Ch 1. Astrophysics** `ku-physical-sciences-astronomy-and-space-science-astrophysics` — 1 sections: How Stars Are Born, Live and Die
-- **Ch 2. Exploring the Cosmos** `ku-physical-sciences-astronomy-and-space-science-exploring-the-cosmos` — 3 sections: Touring the Solar System: Planets, Moons and Small Worlds; Exoplanets: Finding Worlds Around Other Stars; Are We Alone? The New Science of Astrobiology
+- **Ch 2. Exploring the Cosmos** `ku-physical-sciences-astronomy-and-space-science-exploring-the-cosmos` — 4 sections: Touring the Solar System: Planets, Moons and Small Worlds; Exoplanets: Finding Worlds Around Other Stars; Are We Alone? The New Science of Astrobiology; Moon Phases, Eclipses and Tides: The Moon at Work
 - **Ch 3. Beyond the Milky Way** `ku-physical-sciences-astronomy-and-space-science-beyond-the-milky-way` — 1 sections: Galaxies: Island Universes
 
 ### Geology & Earth Science (`ku-physical-sciences-geology-and-earth-science`)
 
-*The planet underfoot* — 1 chapters · 4 sections
+*The planet underfoot* — 1 chapters · 5 sections
 
-- **Ch 1. Dynamic Earth** `ku-physical-sciences-geology-and-earth-science-dynamic-earth` — 4 sections: Plate Tectonics: The Engine Beneath Your Feet; Minerals, Rocks and the Rock Cycle; Earthquakes and Volcanoes: When the Crust Moves; Deep Time: Fossils and Dating the Earth
+- **Ch 1. Dynamic Earth** `ku-physical-sciences-geology-and-earth-science-dynamic-earth` — 5 sections: Plate Tectonics: The Engine Beneath Your Feet; Minerals, Rocks and the Rock Cycle; Earthquakes and Volcanoes: When the Crust Moves; Deep Time: Fossils and Dating the Earth; Glaciers and Ice Ages: Ice That Reshapes Continents
 
 ### Meteorology (`ku-physical-sciences-meteorology`)
 
@@ -877,9 +877,9 @@
 
 ### Ecology (`ku-life-sciences-ecology`)
 
-*Energy through ecosystems* — 1 chapters · 3 sections
+*Energy through ecosystems* — 1 chapters · 4 sections
 
-- **Ch 1. Ecosystem Science** `ku-life-sciences-ecology-ecosystem-science` — 3 sections: Ecosystems and the Flow of Energy; Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters; Biomes: A Tour of Earth's Major Ecosystems
+- **Ch 1. Ecosystem Science** `ku-life-sciences-ecology-ecosystem-science` — 4 sections: Ecosystems and the Flow of Energy; Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters; Biomes: A Tour of Earth's Major Ecosystems; Population Ecology: Growth, Limits and Cycles
 
 ### Anatomy & Physiology (`ku-life-sciences-anatomy-and-physiology`)
 
@@ -1369,10 +1369,11 @@
 
 ### Criminal Justice (`ku-law-governance-criminal-justice`)
 
-*Proof and process* — 2 chapters · 2 sections
+*Proof and process* — 3 chapters · 3 sections
 
 - **Ch 1. Litigation** `ku-law-governance-criminal-justice-litigation` — 1 sections: Evidence and the Burden of Proof
 - **Ch 2. The Legal Machine** `ku-law-governance-criminal-justice-the-legal-machine` — 1 sections: Court Procedure: From Pleadings to Appeal
+- **Ch 3. Criminology** `ku-law-governance-criminal-justice-criminology` — 1 sections: Criminology: Why People Commit Crime
 
 ### Intellectual Property & Media Law (`ku-law-governance-intellectual-property-and-media-law`)
 
@@ -1513,9 +1514,9 @@
 
 ### Public Health (`ku-health-wellness-public-health`)
 
-*Health at scale* — 2 chapters · 2 sections
+*Health at scale* — 2 chapters · 3 sections
 
-- **Ch 1. Epidemiology** `ku-health-wellness-public-health-epidemiology` — 1 sections: Herd Immunity and R₀
+- **Ch 1. Epidemiology** `ku-health-wellness-public-health-epidemiology` — 2 sections: Herd Immunity and R₀; How Outbreaks Are Investigated: Field Epidemiology
 - **Ch 2. Immunization Science** `ku-health-wellness-public-health-immunization-science` — 1 sections: How Vaccines Train the Immune System
 
 ### Nutrition (`ku-health-wellness-nutrition`)

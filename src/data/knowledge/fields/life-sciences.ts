@@ -6510,5 +6510,152 @@ export const lifeSciences: KnowledgeDomainFile = {
         ] },
       ],
     },
+    {
+      id: 'ecol-population-growth-limits',
+      title: 'Population Ecology: Growth, Limits and Cycles',
+      domain: 'Life Sciences',
+      field: 'Ecology',
+      branch: 'Ecosystem Science',
+      tier: 'intermediate',
+      concepts: [
+        'Demography: size, density, dispersion, age structure',
+        'Life tables and survivorship curves',
+        'Exponential growth and the J-curve',
+        'Logistic growth and carrying capacity K',
+        'r-selected versus K-selected life histories',
+        'Density-dependent and density-independent limits',
+        'The human population exception',
+      ],
+      words: 1280,
+      readMins: 6,
+      addedOn: '2026-10-21',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'A population is all the individuals of one species in one place, and population ecology is the accounting that predicts whether that number will explode, crash, or settle into balance. The tools are disarmingly simple — birth rates, death rates, a bit of calculus — yet they decide how fisheries are managed, how invasive species like the Asian carp tear through ecosystems, and how many humans Earth can carry. Every conservation plan, pest strategy, and pandemic model is population ecology wearing work clothes.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'The same equations that predict yeast in a flask predict reindeer on an island — and humans on Earth. When wildlife managers set hunting quotas or epidemiologists flatten a curve, they are applying the growth models in this lesson. Getting the signs wrong is how boom-and-bust disasters happen.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Demography is the statistics of populations. Ecologists track size (the headcount), density (headcount per area, which controls how easily mates and parasites find you), dispersion (clumped, uniform, or random arrangement), age structure (the pyramid of young and old), and sex ratio. Age structure is the crystal ball: a population bulging with pre-reproductive individuals will grow for decades even if each pair has only replacement children, which is why demographers watch the base of the pyramid, not the top.',
+        },
+        {
+          kind: 'para',
+          text: 'Death, meanwhile, has patterns. A life table follows a cohort from birth to the last survivor, recording how many die at each age — insurance mathematics borrowed by biology. Plot the fraction still alive against age and you get a survivorship curve. Type I is the human pattern: high survival in youth, a cliff at old age. Type II is a straight line — constant risk at every age, like songbirds. Type III is the oyster strategy: catastrophic juvenile mortality, then survivors glide along; a million larvae, a handful of adults.',
+        },
+        {
+          kind: 'para',
+          text: 'Now let it grow. With unlimited resources and a constant per-capita rate r, population size N obeys dN/dt = rN: growth proportional to the population itself, compounding like money at fixed interest. The curve turns upward ever more steeply — the J-shaped exponential curve. Bacteria given everything double on schedule; reindeer introduced to a predator-free island with lichen to spare multiply for decades. Exponential growth is the default physics of life when nothing pushes back.',
+        },
+        {
+          kind: 'para',
+          text: 'Something always pushes back. Food runs short, waste accumulates, territories fill, predators notice. Fold that crowding pressure into the model and you get the logistic equation, dN/dt = rN(K − N)/K, where K is the carrying capacity — the population the environment can sustain indefinitely. Growth is fastest at intermediate density, slows as N approaches K, and the trajectory flattens into an S-curve. Real populations overshoot K and crash, oscillate around it, or cycle — hares and lynx — because effects of density act with a delay.',
+        },
+        {
+          kind: 'para',
+          text: 'The pressures that tighten as a population fills its world — competition, predation, disease, stress — are density-dependent factors; they are the thermostat. Density-independent factors — a hurricane, a hard frost, a volcanic wipe-out — kill by the same fraction whether the population is crowded or sparse. Evolutionary strategy splits along the same axis: r-selected species (dandelions, many fish) pump out cheap offspring into uncertain worlds and let Type III survivorship sort it out; K-selected species (elephants, oaks) invest heavily in few offspring built for a crowded, competitive stage. The old r/K dichotomy is a simplification modern ecology has refined, but its vocabulary still organizes life-history thinking.',
+        },
+        {
+          kind: 'para',
+          text: 'Where do humans fit? Historically, exponentially — eight billion and counting. Humans have sidestepped local limits through migration, agriculture, medicine, and communication, effectively raising K again and again. But K is not abolished: age structures forecast near-term growth, resource and sink limits do not vanish, and unchecked expansion has long-term environmental costs. The human case is the logistic equation in slow motion, with the interesting question being not whether limits exist but where they bind and how gracefully we bend the curve.',
+        },
+        { kind: 'heading', text: 'Key Formulas' },
+        {
+          kind: 'formula',
+          name: 'Exponential growth',
+          latex: '\\frac{dN}{dt} = rN',
+          meaning: 'Unlimited growth at constant per-capita rate r; the solution N(t) = N₀e^{rt} is the accelerating J-curve.',
+        },
+        {
+          kind: 'formula',
+          name: 'Logistic growth',
+          latex: '\\frac{dN}{dt} = rN\\frac{K-N}{K}',
+          meaning: 'Growth throttled by remaining capacity: fast at low N, maximal near K/2, zero at the carrying capacity K.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Identify: a fish population of N = 400 lives in a lake with carrying capacity K = 1000, growing at per-capita rate r = 0.1 per year. How fast is it growing now, and when is growth fastest?',
+            'Apply the logistic equation: dN/dt = rN(K − N)/K = 0.1 × 400 × (1000 − 400)/1000.',
+            'Compute: 0.1 × 400 × 0.6 = 24 fish per year.',
+            'Reason further: maximum sustainable growth comes at K/2 = 500. Harvesting that keeps the population most productive; fishing it down toward K/4 = 250 cuts the surplus yield nearly in half — the quantitative heart of every fisheries-quota argument.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Fisheries: quotas target the maximum surplus near K/2; ignoring density dependence collapsed the Peruvian anchoveta and Atlantic cod.',
+            'Invasions: Asian carp in the Mississippi basin show the exponential phase — no density brakes yet, hence the race to block them.',
+            'Conservation: minimum viable populations guard against the low-N side of the curve, where allee effects and inbreeding bite.',
+            'Pest control: knocking density below the outbreak threshold — not eradicating — is the realistic goal.',
+            'Human demography: age-structure pyramids project where populations will still grow after fertility falls, shaping schools, jobs, and pension policy.',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'Exponential curves are phase, not destiny — no natural population grows exponentially forever. Carrying capacity is not a fixed number etched in the landscape; technology, climate, and trade move it, and overshoot can lower it (degraded rangelands support fewer cattle afterward). And density-independent disasters do not "thin toward balance" — a typhoon kills the same fraction at any density, so recovery depends entirely on survivors.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Population density', def: 'Individuals per unit area or volume; the dial that tunes density-dependent pressure.' },
+            { term: 'Life table', def: 'A cohort-by-age ledger of survival and reproduction.' },
+            { term: 'Survivorship curve', def: 'The plot of cohort survival versus age: Type I late loss, Type II constant, Type III early loss.' },
+            { term: 'Exponential growth', def: 'dN/dt = rN — growth proportional to current size, the J-curve.' },
+            { term: 'Carrying capacity (K)', def: 'The long-term population size an environment can sustain.' },
+            { term: 'r-selected / K-selected', def: 'Contrasting life histories: many cheap offspring versus few well-invested ones.' },
+            { term: 'Density-dependent factor', def: 'A mortality or fertility force whose per-capita effect rises with density.' },
+          ],
+        },
+        { kind: 'heading', text: 'Check Your Understanding' },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'A population grows exponentially at r = 0.05 per year. Roughly how long to double?',
+              options: ['About 7 years', 'About 14 years', 'About 35 years', 'It never doubles'],
+              answer: 1,
+              explain: 'Doubling time ≈ 0.69/r = 0.69/0.05 ≈ 14 years — the rule of 70.',
+            },
+            {
+              q: 'In the logistic model, growth is fastest when:',
+              options: ['N is at carrying capacity K', 'N is near zero', 'N is near K/2', 'Growth rate is constant at all N'],
+              answer: 2,
+              explain: 'Few individuals limit the birth side and crowding limits the resource side; the product rN(K−N)/K peaks midway, at K/2.',
+            },
+            {
+              q: 'Which is a density-DEPENDENT mortality factor?',
+              options: ['A hurricane', 'A lethal frost', 'Parasite transmission that spreads faster when hosts are crowded', 'A meteor strike'],
+              answer: 2,
+              explain: 'Contact-dependent transmission scales with density; the abiotic disasters strike independent of it.',
+            },
+            {
+              q: 'An oyster releasing millions of larvae of which almost none survive has which survivorship curve and strategy?',
+              options: ['Type I, K-selected', 'Type II, uniform risk', 'Type III, r-selected', 'Type I, r-selected'],
+              answer: 2,
+              explain: 'Massive cheap offspring with catastrophic early mortality is the Type III, r-selected playbook.',
+            },
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          text: 'The ecosystems lesson follows energy and matter once populations are assembled into communities; the population-genetics lesson tracks genes rather than individuals; the demographic-transition lesson in Human Geography applies the same accounting to humans. Next: metapopulations and patch dynamics, predator-prey modeling, and life-history evolution.',
+          tone: 'path',
+        },
+      ],
+    },
+
   ],
 }
