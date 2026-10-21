@@ -17,6 +17,7 @@ import {
   Gauge,
   GraduationCap,
   Layers,
+  ListChecks,
   NotebookPen,
   PlayCircle,
   Target,
@@ -371,6 +372,17 @@ export function ProgressView() {
                 </motion.span>
               </button>
             )}
+            {/* topic tracker — search any topic, tick it done, revise later */}
+            <button
+              onClick={() => navigate({ name: 'tracker' })}
+              className={`mt-3 inline-flex items-center gap-2.5 rounded-xl border border-border/80 bg-card px-4 py-2 text-left transition-colors hover:border-emerald-400/40 ${FOCUS_RING}`}
+            >
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-teal-300/25 bg-teal-300/10">
+                <ListChecks className="h-3.5 w-3.5 text-teal-300" />
+              </span>
+              <span className="text-[12.5px] font-semibold">Topic tracker</span>
+              <span className="text-[11px] text-muted-foreground">search · tick done · revise later</span>
+            </button>
           </div>
           <div ref={ringRef} className="relative flex h-32 w-32 shrink-0 items-center justify-center">
             <svg viewBox="0 0 120 120" className="h-32 w-32 -rotate-90">

@@ -7,6 +7,7 @@ import {
   ClipboardList,
   Sparkles,
   Layers,
+  ListChecks,
   Repeat,
   Sigma,
   Search,
@@ -29,6 +30,7 @@ const NAV = [
   { view: 'review', label: 'Review', icon: Repeat, easy: 'Spaced-repetition memory drills' },
   { view: 'formulas', label: 'Formulas', icon: Sigma, easy: 'All key formulas' },
   { view: 'progress', label: 'Progress', icon: BarChart3, easy: 'Your learning score' },
+  { view: 'tracker', label: 'Tracker', icon: ListChecks, easy: 'Search topics, tick them done, revise later' },
 ] as const
 
 export function Header() {

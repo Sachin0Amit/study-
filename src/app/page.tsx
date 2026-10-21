@@ -72,6 +72,10 @@ const SearchView = dynamic(
   () => import('@/components/app/search-view').then((m) => m.SearchView),
   { loading: ViewLoading }
 )
+const TrackerView = dynamic(
+  () => import('@/components/app/tracker-view').then((m) => m.TrackerView),
+  { loading: ViewLoading }
+)
 const SyllabusView = dynamic(
   () => import('@/components/app/syllabus-view').then((m) => m.SyllabusView),
   { loading: ViewLoading }
@@ -149,6 +153,8 @@ export default function Home() {
         useStudy.setState({ view: { name: 'review' } })
       } else if (v === 'progress') {
         useStudy.setState({ view: { name: 'progress' } })
+      } else if (v === 'tracker') {
+        useStudy.setState({ view: { name: 'tracker' } })
       } else if (v === 'syllabus') {
         useStudy.setState({ view: { name: 'syllabus' } })
       } else if (v === 'exam-book') {
@@ -257,6 +263,7 @@ export default function Home() {
             )}
             {view.name === 'progress' && <ProgressView />}
             {view.name === 'search' && <SearchView initialQuery={view.query} />}
+            {view.name === 'tracker' && <TrackerView />}
             {view.name === 'syllabus' && <SyllabusView />}
             {view.name === 'exam-book' && (
               <ExamSubjectBook examMapId={view.examMapId} subjectIndex={view.subjectIndex} />

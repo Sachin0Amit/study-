@@ -14,6 +14,7 @@ export type View =
   | { name: 'formulas'; chapterId?: string }
   | { name: 'exam'; chapterId?: string; chapterIds?: string[]; label?: string; questionCount?: number }
   | { name: 'search'; query?: string }
+  | { name: 'tracker' }
   | { name: 'syllabus' }
   // curated exam-scoped subject book (Exam Command Center → Study Library)
   | { name: 'exam-book'; examMapId: string; subjectIndex: number }
@@ -52,6 +53,8 @@ interface StudyStore {
   loadProgress: () => Promise<void>
   markViewed: (sectionId: string) => void
   markCompleted: (sectionId: string) => void
+  unmarkCompleted: (sectionId: string) => void
+  toggleCompleted: (sectionId: string) => void
   recordQuiz: (sectionId: string, score: number, total: number) => void
 }
 
@@ -173,6 +176,25 @@ export const useStudy = create<StudyStore>((set, get) => ({
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ deviceId: id, sectionKey: sectionId, status: 'completed' }),
     }).catch(() => {})
+  },
+
+  unmarkCompleted: (sectionId) => {
+    const id = get().ensureDevice()
+    set((s) => {
+      if (!s.progress[sectionId]) return s
+      const progress = { ...s.progress }
+      delete progress[sectionId]
+      return { ...s, progress }
+    })
+    fetch(`/api/progress?deviceId=${encodeURIComponent(id)}&sectionKey=${encodeURIComponent(sectionId)}`, {
+      method: 'DELETE',
+    }).catch(() => {})
+  },
+
+  toggleCompleted: (sectionId) => {
+    const current = get().progress[sectionId]
+    if (current?.status === 'completed') get().unmarkCompleted(sectionId)
+    else get().markCompleted(sectionId)
   },
 
   recordQuiz: (sectionId, score, total) => {

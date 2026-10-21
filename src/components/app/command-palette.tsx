@@ -16,6 +16,7 @@ import {
   Layers,
   Library as LibraryIcon,
   Lightbulb,
+  ListChecks,
   Route,
   Repeat,
   Scale,
@@ -62,6 +63,7 @@ type ViewName =
   | 'exam'
   | 'progress'
   | 'search'
+  | 'tracker'
   | 'syllabus'
   | 'studio'
   | 'twin'
@@ -135,6 +137,12 @@ const QUICK_ACTIONS: {
   { view: 'formulas', label: 'Formula sheet', hint: '1,908 printable formulas', icon: Sigma },
   { view: 'exam', label: 'Test simulator', hint: '9,774-question bank', icon: ClipboardCheck },
   { view: 'progress', label: 'Progress dashboard', hint: 'streaks, notes & stats', icon: BarChart3 },
+  {
+    view: 'tracker',
+    label: 'Topic tracker',
+    hint: 'search topics · tick done · revise later',
+    icon: ListChecks,
+  },
   {
     view: 'focus',
     label: 'Focus HQ — Pomodoro & to-dos',

@@ -370,6 +370,7 @@ export function LessonView({ sectionId }: { sectionId: string }) {
   const navigate = useStudy((s) => s.navigate)
   const markViewed = useStudy((s) => s.markViewed)
   const markCompleted = useStudy((s) => s.markCompleted)
+  const unmarkCompleted = useStudy((s) => s.unmarkCompleted)
   const progress = useStudy((s) => s.progress)
   const readerFocus = useStudy((s) => s.readerFocus)
   const setReaderFocus = useStudy((s) => s.setReaderFocus)
@@ -627,6 +628,43 @@ export function LessonView({ sectionId }: { sectionId: string }) {
               </span>
             )}
             <span className="ml-auto print:hidden">
+              <button
+                onClick={() => {
+                  const wasDone = p?.status === 'completed'
+                  if (wasDone) {
+                    unmarkCompleted(sectionId)
+                    toast.success('Marked as not completed', {
+                      description: `§${section.number} ${section.title} moved out of your completed collection`,
+                    })
+                  } else {
+                    markCompleted(sectionId)
+                    toast.success('Section completed — nice work!', {
+                      description: `§${section.number} ${section.title} added to your Tracker collection`,
+                    })
+                  }
+                }}
+                aria-pressed={p?.status === 'completed'}
+                title={
+                  p?.status === 'completed'
+                    ? 'Completed — click to unmark'
+                    : 'Mark this section as completed (it lands in your Tracker collection)'
+                }
+                className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60 ${
+                  p?.status === 'completed'
+                    ? 'border-emerald-500/50 bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500/20 dark:text-emerald-300'
+                    : 'border-book-rule text-book-soft hover:border-emerald-500/50 hover:text-emerald-600 dark:hover:text-emerald-300'
+                }`}
+              >
+                {p?.status === 'completed' ? (
+                  <>
+                    <CheckCircle2 className="h-3.5 w-3.5" aria-hidden /> Completed · undo?
+                  </>
+                ) : (
+                  <>
+                    <CheckCircle2 className="h-3.5 w-3.5" aria-hidden /> Mark complete
+                  </>
+                )}
+              </button>
               <button
                 onClick={() => setReaderFocus(true)}
                 className="inline-flex items-center gap-1.5 rounded-full border border-book-rule px-3 py-1 text-[11px] font-semibold text-book-soft transition-colors hover:border-primary/50 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60"

@@ -54,3 +54,16 @@ export async function POST(req: NextRequest) {
   })
   return NextResponse.json({ ok: true })
 }
+
+// Unmark — removes the progress row entirely (status back to "not started")
+export async function DELETE(req: NextRequest) {
+  const deviceId = req.nextUrl.searchParams.get('deviceId')
+  const sectionKey = req.nextUrl.searchParams.get('sectionKey')
+  if (!deviceId || !sectionKey) {
+    return NextResponse.json({ error: 'deviceId and sectionKey required' }, { status: 400 })
+  }
+  await db.sectionProgress
+    .deleteMany({ where: { deviceId, sectionKey } })
+    .catch(() => undefined) // already absent → treat as success (idempotent)
+  return NextResponse.json({ ok: true })
+}
