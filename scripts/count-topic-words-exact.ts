@@ -12,6 +12,8 @@ import { x17ExamSyllabusTopics } from '../src/data/knowledge/fields/x17-exam-syl
 import { computingAI } from '../src/data/knowledge/fields/computing-ai'
 
 const IDS = [
+  'hist-nomads-indigenous-modernisation',
+  'econ-india-development-challenges',
   'emer-phylogenetics-tree-of-life',
   'env-climate-feedbacks-sensitivity',
   'aid-cardiac-cpr-chain-of-survival',

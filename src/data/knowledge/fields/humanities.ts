@@ -1,5 +1,6 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x17ExamSyllabusTopics } from './x17-exam-syllabus'
+import { x18ExamPassTopics } from './x18-exam-pass'
 
 export const humanities: KnowledgeDomainFile = {
   domain: 'Humanities',
@@ -10,6 +11,10 @@ export const humanities: KnowledgeDomainFile = {
     // sources-based lessons (thinkers/sangha/stupas, travellers, agrarian
     // and urban colonial history) scoped against the X13 political trilogy.
     ...x17ExamSyllabusTopics.filter((t) => t.domain === 'Humanities'),
+    // X18 exam pass (2026-10-21): world-history turnings (nomadic empires,
+    // settler displacement, paths to modernisation) — the themes X17 left
+    // honestly unmapped.
+    ...x18ExamPassTopics.filter((t) => t.domain === 'Humanities'),
     {
       id: 'hum-silk-road-exchange',
       title: 'The Silk Road: Exchange Before Globalization',

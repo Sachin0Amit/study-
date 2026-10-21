@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T12:32:27.649Z",
+  "generatedAt": "2026-10-21T12:53:16.666Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 180,
-    "books": 180,
-    "chapters": 834,
-    "sections": 4414
+    "subjects": 181,
+    "books": 181,
+    "chapters": 836,
+    "sections": 4416
   },
   "subjects": [
     {
@@ -28615,8 +28615,8 @@
       "name": "History",
       "group": "Humanities",
       "tagline": "The record of human meaning",
-      "chapterCount": 1,
-      "sectionCount": 6,
+      "chapterCount": 2,
+      "sectionCount": 7,
       "chapters": [
         {
           "id": "ku-humanities-history-indian-history",
@@ -28655,6 +28655,21 @@
               "id": "ku-hist-modern-india-freedom-struggle",
               "number": 1.6,
               "title": "Modern India and the Freedom Struggle: 1757 to 1947"
+            }
+          ]
+        },
+        {
+          "id": "ku-humanities-history-world-history",
+          "number": 2,
+          "title": "World History",
+          "shortTitle": "World History",
+          "bookId": "ku-humanities-history",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-hist-nomads-indigenous-modernisation",
+              "number": 2.1,
+              "title": "Nomadic Empires, Displaced Peoples and Paths to Modernisation"
             }
           ]
         }
@@ -30050,6 +30065,31 @@
               "id": "ku-law-consent-defects-void-voidable",
               "number": 2.1,
               "title": "When Consent Fails: Void and Voidable Agreements"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-development-economics",
+      "name": "Development Economics",
+      "group": "Business & Economics",
+      "tagline": "Markets, money and trade",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-business-economics-development-economics-india-and-comparative-development",
+          "number": 1,
+          "title": "India & Comparative Development",
+          "shortTitle": "India & Comparative Development",
+          "bookId": "ku-business-economics-development-economics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-india-development-challenges",
+              "number": 1.1,
+              "title": "Human Capital, Employment and Comparative Development: India's Agenda"
             }
           ]
         }

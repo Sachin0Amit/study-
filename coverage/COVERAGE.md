@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 180
-- **Books (master volumes):** 180
-- **Chapters:** 834
-- **Sections (lessons):** 4414
+- **Subjects:** 181
+- **Books (master volumes):** 181
+- **Chapters:** 836
+- **Sections (lessons):** 4416
 
 ## Foundations — 5 subjects
 
@@ -1188,9 +1188,10 @@
 
 ### History (`ku-humanities-history`)
 
-*The record of human meaning* — 1 chapters · 6 sections
+*The record of human meaning* — 2 chapters · 7 sections
 
 - **Ch 1. Indian History** `ku-humanities-history-indian-history` — 6 sections: Thinkers, Beliefs and Buildings: The Buddha, the Sangha and the Stupa; Through the Eyes of Travellers: Foreign Accounts and the Imperial Capital Vijayanagara; Peasants, Zamindars and the Colonial City: The Indian Countryside from the Mughals to the British; Ancient India: From the Vedic Age to the Guptas; Medieval India: Delhi Sultanate to the Mughals; Modern India and the Freedom Struggle: 1757 to 1947
+- **Ch 2. World History** `ku-humanities-history-world-history` — 1 sections: Nomadic Empires, Displaced Peoples and Paths to Modernisation
 
 ### World History (`ku-humanities-world-history`)
 
@@ -1428,7 +1429,13 @@
 - **Ch 1. Indian Contract Act 1872** `ku-law-governance-contract-law-indian-contract-act-1872` — 1 sections: The Indian Contract Act: Formation, Breach and Remedies
 - **Ch 2. Consent & Validity** `ku-law-governance-contract-law-consent-and-validity` — 1 sections: When Consent Fails: Void and Voidable Agreements
 
-## Business & Economics — 12 subjects
+## Business & Economics — 13 subjects
+
+### Development Economics (`ku-business-economics-development-economics`)
+
+*Markets, money and trade* — 1 chapters · 1 sections
+
+- **Ch 1. India & Comparative Development** `ku-business-economics-development-economics-india-and-comparative-development` — 1 sections: Human Capital, Employment and Comparative Development: India's Agenda
 
 ### Accounting (`ku-business-economics-accounting`)
 

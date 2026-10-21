@@ -1,12 +1,17 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x15AccountingTopics } from './x15-accounting'
 import { x15BusinessLawTopics } from './x15-business-law'
+import { x18ExamPassTopics } from './x18-exam-pass'
 
 export const businessEconomics: KnowledgeDomainFile = {
   domain: 'Business & Economics',
   blurb:
     'Markets, money and organisations — the logic of prices, trade, investment and value creation.',
   topics: [
+    // X18 exam pass (2026-10-21): development agenda + India/China/Pakistan
+    // comparison (scoped against econ-macro-ad-as-indian-economy, which owns
+    // measurement and the 1951→1991 narrative).
+    ...x18ExamPassTopics.filter((t) => t.domain === 'Business & Economics'),
     // X15 exam-syllabus pass (2026-10-20): accountancy cluster + business
     // economics trio (law topics spread into law-governance below).
     ...x15AccountingTopics,

@@ -184,5 +184,22 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // GMAT verbal phrasing → critical-reasoning lesson (assumption/strengthen-
   // weaken are its core concepts)
   'evaluation and assumptions': 'eng-critical-reasoning-arguments',
+
+  /* ---- X18 pass (2026-10-21): world-history turnings + development agenda.
+   * Every mapping verified against the target lesson's concepts/blocks;
+   * targets X17 left honestly unmapped. ---- */
+  // CUET world history → nomadic empires / settler displacement / modernisation
+  'nomadic empires': 'hist-nomads-indigenous-modernisation',
+  'displacing indigenous peoples': 'hist-nomads-indigenous-modernisation',
+  'paths to modernisation': 'hist-nomads-indigenous-modernisation',
+  // CUET development chapter → comparative-development lesson
+  'development experience of india s neighbours':
+    'econ-india-development-challenges',
+  // IB Economics: development evaluation → the comparative scorecards lesson
+  // (HDI mechanics, indicator limits, India/China/Pakistan/Sri Lanka data are
+  // its core concepts); macro-fluctuation phrasing → the AD-AS lesson
+  // (equilibrium shifts, output gaps, booms and slumps are named concepts).
+  'evaluating economic development': 'econ-india-development-challenges',
+  'variations in economic activity': 'econ-macro-ad-as-indian-economy',
 }
 
