@@ -3681,5 +3681,125 @@ export const languagesLiterature: KnowledgeDomainFile = {
         ] },
       ],
     },
+    {
+      id: 'eng-literary-narrative-passages',
+      title: 'Reading Narrative Passages: Plot, Narrator and Inference in Literary Fiction',
+      domain: 'Languages & World Literature',
+      field: 'Reading Strategy',
+      branch: 'Narrative Reading',
+      tier: 'core',
+      concepts: [
+        'What literary passages ask: experience, not argument',
+        'Plot structure: exposition, rising action, climax, resolution',
+        'Narrator and point of view: first person, limited, omniscient',
+        'Characterisation: speech, thought, action and contrast',
+        'Setting, imagery and mood',
+        'Theme versus topic',
+        'Inference: reading beyond the stated',
+      ],
+      words: 1409,
+      readMins: 7,
+      addedOn: '2026-10-22',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'A literary passage is a different machine from the news article or the argument excerpt. It does not advance a claim you can underline; it builds an experience — a stretch of invented time peopled by characters whose motives you must read between the lines. The questions that follow such passages therefore probe different skills: not "what is the main argument" but "what does the narrator reveal despite himself", "why does the author place the revelation here", "what does the image of the locked door mean". This lesson covers the moving parts of fiction and the reading habits that answer those questions reliably.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Reading-comprehension sections increasingly draw on literary and narrative extracts, and readers trained only on expository text misread them predictably — hunting for a thesis that is not there. The devices behind the prose have their own lesson; this one is about the reading: tracking who tells the story, what changes, and what the text implies without saying.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Every narrative has a skeleton. The exposition opens the world — who, where, what is ordinary. Rising action introduces and complicates a conflict (against another person, against nature, against society, or against oneself), building tension through choices and setbacks. The climax is the turn: the moment the conflict is decided. The resolution settles the aftermath, sometimes in a deliberate final image. Long passages are rarely complete stories; they are slices of this skeleton, and identifying which slice — before the turn, at the turn, after it — immediately tells you what the questions can ask: motivation before, decision at, consequence after.',
+        },
+        {
+          kind: 'para',
+          text: 'Who tells the story decides what anyone in it can know. A first-person narrator lives inside the text as "I": everything is filtered through one limited, biased consciousness, which is a feature — readers weigh what that narrator admits, hides and misunderstands. A third-person limited narrator rides beside one character, reporting that mind\'s perceptions while keeping outsiders opaque. A third-person omniscient narrator sees all minds and can editorialise. An unreliable narrator — one whose account the text quietly undermines, by contradictions, by gaps, by other characters\' reactions — is the special case that examination passages love, and the antidote is always the same: ask what the text shows that the narrator does not notice.',
+        },
+        {
+          kind: 'para',
+          text: 'Character is built from evidence, and the evidence has categories: what characters do (the strongest signal), what they say and how they speak, what they think, how others react to them, and — rarely — what the narrator flatly asserts. Flat characters are built from one or two traits; round characters hold contradictions and change. A foil exists to throw another character into relief by contrast, and a static character who refuses the change everyone else undergoes is often the passage\'s quiet argument. Questions about motive are answered from the action-thought-reaction evidence, never from adjectives alone.',
+        },
+        {
+          kind: 'para',
+          text: 'Setting is not scenery. Time and place constrain what the characters can want (a harvest, an escape, a marriage) and how fast the conflict can move; weather and light carry mood — the Emotional weather of the scene — and recurring objects gather symbolic weight: the locked door, the untended garden, the river crossing. When a question asks what an image contributes, the honest answers come from the same small set: it establishes mood, characterises a person, foreshadows a turn, or condenses the theme.',
+        },
+        {
+          kind: 'para',
+          text: 'Theme is the story\'s claim about life — ambition hollows, kindness compounds, the past is never past — while topic is merely its subject (love, war, sailing). A theme must be stated as a sentence, and it is inferred from the pattern of the whole: what the conflict costs, what the ending rewards or punishes, what the title points at. Tone is the narrator\'s attitude toward the material (ironic, wistful, bitter), and mood is the atmosphere raised in the reader; both ride on diction — the specific word choices — which is why vocabulary questions in literary passages are really tone questions in disguise.',
+        },
+        {
+          kind: 'para',
+          text: 'Inference is the engine of all the above. Literary texts imply far more than they state, and legitimate inference is disciplined: it moves from textual evidence (a word, a gesture, a silence) plus normal background knowledge (how people usually behave) to the least strong conclusion that explains the evidence. The moment an inference requires inventing facts the text never suggests — a backstory, a country, a motive with no cue — it has stopped being inference and become fan fiction. Answer options in inference questions are built to exploit exactly this gap; the safest option is the modest one fully supported by cues.',
+        },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Exposition', def: 'The opening that establishes characters, setting and the ordinary state of affairs before conflict disturbs it.' },
+            { term: 'Point of view', def: 'Who tells the story and from where: first person, third limited, third omniscient — each fixing what can be known.' },
+            { term: 'Unreliable narrator', def: 'A narrator whose account the text undermines; read what is shown against what is claimed.' },
+            { term: 'Foil', def: 'A character placed in contrast to another so that qualities become visible by difference.' },
+            { term: 'Mood', def: 'The atmosphere a passage raises in the reader, built from setting, imagery and diction.' },
+            { term: 'Theme', def: 'The claim about life the story argues through its pattern — always a sentence, never a single word.' },
+            { term: 'Inference', def: 'A conclusion drawn from textual cues plus ordinary background knowledge — the least strong explanation that fits.' },
+          ],
+        },
+        {
+          kind: 'example',
+          title: 'Inferring attitude from diction',
+          steps: [
+            'Excerpt: "The ceremony, naturally, was prolonged; the mayor enjoyed, as ever, the sound of his own benevolence."',
+            'Mark the diction: "naturally" (weary expectation), "prolonged" (excess), "as ever" (repetition), "the sound of his own benevolence" (hollow performance).',
+            'Add the mechanics: two commas isolate "naturally" — a spoken aside; "benevolence" is abstract where a sincere writer would be concrete.',
+            'Infer, minimally: the narrator is ironic — outwardly describing a civic ritual, inwardly mocking the mayor\'s self-regard.',
+            'Check the rival options: "neutral observation" ignores the word choices; "anger" overstates — mockery is cooler than anger. The modest, cue-anchored reading wins.',
+          ],
+        },
+        { kind: 'heading', text: 'Check Yourself' },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'A passage opens: "Everyone agreed the ship was seaworthy; Meera counted the lifeboats twice." The narration is…',
+              options: ['first person and trusting', 'third person, using Meera\'s contrary action to seed doubt about the collective claim', 'omniscient and neutral', 'a frame narrative'],
+              answer: 1,
+              explain: 'The narrator is outside the story but shows Meera\'s counting — a gesture the group does not see. The text implies doubt through action while the stated view says the opposite: the classic gap a careful reader tracks.',
+            },
+            {
+              q: 'The climax of a narrative is best described as…',
+              options: ['the opening that sets the scene', 'the turn where the central conflict is decided', 'the final image after everything is over', 'the moment a new character enters'],
+              answer: 1,
+              explain: 'The climax is the decisive turn of the conflict; exposition precedes it and the resolution follows. Entries of new characters usually belong to rising action.',
+            },
+            {
+              q: 'In a story, a careless older brother is constantly paired with a meticulous younger one. The younger brother chiefly functions as…',
+              options: ['the antagonist', 'a foil whose contrast sharpens the elder\'s portrait', 'an unreliable narrator', 'the theme of the story'],
+              answer: 1,
+              explain: 'A foil exists for contrast: the pairing makes each brother\'s trait legible. Antagonist would require the younger brother to actively oppose the elder\'s goals.',
+            },
+            {
+              q: 'A question asks what the recurring image of the dried-up well "suggests". The best-grounded answer will…',
+              options: ['invent a backstory for the well', 'connect the image to cues about decline and memory elsewhere in the passage', 'state that wells always symbolise death', 'complain that the image is decorative'],
+              answer: 1,
+              explain: 'Legitimate inference runs from textual cues (what the well touches — scenes of memory, drought, abandonment) to the least strong reading. Universal symbol dictionaries and invented backstories both outrun the evidence.',
+            },
+          ],
+        },
+        {
+          kind: 'para',
+          text: 'Narrative reading compresses to a checklist: locate the slice of the arc, fix the point of view and its limits, gather character evidence from action, weigh setting and recurring images for mood and meaning, then infer modestly from cues. Run the checklist twice on any literary passage — once for the story, once for the telling — and the questions have nowhere left to hide.',
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          text: 'Pair this lesson with the literary-devices lesson for the technique vocabulary (irony, symbolism, imagery) these passages deploy, the paired-passages lesson for reading two texts against each other, and the verbal-reasoning lesson for claims-and-evidence reading on argumentative text. Background reading: the "How to Analyze Fiction — Elements of Literature" chapter in LibreTexts\' Approaches to Literature collection, and any open anthology\'s introductions to plot and point of view.',
+          tone: 'path',
+        },
+      ],
+    },
   ],
 }

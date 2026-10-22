@@ -63,6 +63,12 @@ const IDS = [
   'sci-experimental-design-hypotheses',
   'sj-situational-judgement',
   'fnd-visual-pattern-rules',
+  'psy-stress-coping',
+  'psy-psychological-disorders',
+  'ecol-populations-communities',
+  'bioc-carbohydrates-lipids',
+  'law-legal-reasoning-facts',
+  'eng-literary-narrative-passages',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

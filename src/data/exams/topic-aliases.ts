@@ -256,5 +256,25 @@ export const TOPIC_ALIASES: Record<string, string> = {
   'shape attributes': 'fnd-visual-pattern-rules',
   'pattern perception and figure formation': 'fnd-visual-pattern-rules',
   'rule detection': 'fnd-visual-pattern-rules',
+
+  /* ---- X22 pass (2026-10-22): exam-gap closures on new + existing lessons.
+   * Every mapping verified against the target lesson's actual concepts and
+   * blocks; borderline auto-matches (< 0.6 name score) get belt-and-braces
+   * aliases. ---- */
+  // CLAT legal-reasoning unit → the legal-method lesson (auto-match scores
+  // 0.5, below the comfortable band; the alias is exact-coverage).
+  'applying given legal principles to fact situations': 'law-legal-reasoning-facts',
+  // CUET English literary-reading unit → the narrative-reading lesson
+  // (auto-match scores 0.5; the lesson is built for this unit).
+  'literary and narrative passages': 'eng-literary-narrative-passages',
+  // SSC reasoning "Critical Thinking" → the critical-reasoning lesson
+  // (conclusions, assumptions, strengthen/weaken are its named concepts).
+  'critical thinking': 'eng-critical-reasoning-arguments',
+  // MCAT CARS relationships unit → the paired-passages lesson (relationship
+  // classes: agree/qualify/oppose/extend are its named concepts).
+  'relationships among ideas': 'eng-paired-passages-authorial-choices',
+  // MCAT CARS application unit → the applying-principles lesson
+  // (justify-the-action and conform-to application are its named concepts).
+  'application and extrapolation': 'eng-principle-application',
 }
 

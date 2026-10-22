@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T19:08:06.688Z",
+  "generatedAt": "2026-10-22T00:58:30.695Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 189,
-    "books": 189,
-    "chapters": 853,
-    "sections": 4433
+    "subjects": 190,
+    "books": 190,
+    "chapters": 857,
+    "sections": 4439
   },
   "subjects": [
     {
@@ -26890,8 +26890,8 @@
       "name": "Ecology",
       "group": "Life Sciences",
       "tagline": "Energy through ecosystems",
-      "chapterCount": 1,
-      "sectionCount": 4,
+      "chapterCount": 2,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-life-sciences-ecology-ecosystem-science",
@@ -26920,6 +26920,21 @@
               "id": "ku-ecol-population-growth-limits",
               "number": 1.4,
               "title": "Population Ecology: Growth, Limits and Cycles"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-ecology-community-ecology",
+          "number": 2,
+          "title": "Community Ecology",
+          "shortTitle": "Community Ecology",
+          "bookId": "ku-life-sciences-ecology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-ecol-populations-communities",
+              "number": 2.1,
+              "title": "Populations and Communities: Interactions, Niches and Disturbance"
             }
           ]
         }
@@ -27071,7 +27086,7 @@
       "group": "Life Sciences",
       "tagline": "The cell’s energy economy",
       "chapterCount": 1,
-      "sectionCount": 4,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-life-sciences-biochemistry-molecules-of-life",
@@ -27079,7 +27094,7 @@
           "title": "Molecules of Life",
           "shortTitle": "Molecules of Life",
           "bookId": "ku-life-sciences-biochemistry",
-          "sectionCount": 4,
+          "sectionCount": 5,
           "sections": [
             {
               "id": "ku-bio-biochemistry-metabolism",
@@ -27100,6 +27115,11 @@
               "id": "ku-bioc-lipid-amino-acid-metabolism",
               "number": 1.4,
               "title": "Beyond Glucose: Fat and Amino-Acid Metabolism"
+            },
+            {
+              "id": "ku-bioc-carbohydrates-lipids",
+              "number": 1.5,
+              "title": "Carbohydrates and Lipids: Fuel, Structure and Signalling"
             }
           ]
         }
@@ -28385,8 +28405,8 @@
       "name": "Psychology",
       "group": "Social Sciences",
       "tagline": "The studied mind",
-      "chapterCount": 6,
-      "sectionCount": 7,
+      "chapterCount": 7,
+      "sectionCount": 9,
       "chapters": [
         {
           "id": "ku-social-sciences-psychology-social-psychology",
@@ -28480,6 +28500,26 @@
               "id": "ku-psych-intelligence-iq-testing",
               "number": 6.1,
               "title": "Intelligence and IQ: What the Tests Actually Measure"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-psychology-stress-and-clinical-psychology",
+          "number": 7,
+          "title": "Stress and Clinical Psychology",
+          "shortTitle": "Stress and Clinical Psychology",
+          "bookId": "ku-social-sciences-psychology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-psy-stress-coping",
+              "number": 7.1,
+              "title": "Coping with Stress: Appraisal, Strategies and Resilience"
+            },
+            {
+              "id": "ku-psy-psychological-disorders",
+              "number": 7.2,
+              "title": "Psychological Disorders: Classification and the Major Categories"
             }
           ]
         }
@@ -29250,8 +29290,8 @@
       "name": "Reading Strategy",
       "group": "Languages & World Literature",
       "tagline": "How languages live and grow",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
           "id": "ku-languages-literature-reading-strategy-paired-passages",
@@ -29265,6 +29305,21 @@
               "id": "ku-eng-paired-passages-authorial-choices",
               "number": 1.1,
               "title": "Paired Passages and Authorial Choices: Reading Two Texts at Once"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-reading-strategy-narrative-reading",
+          "number": 2,
+          "title": "Narrative Reading",
+          "shortTitle": "Narrative Reading",
+          "bookId": "ku-languages-literature-reading-strategy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-literary-narrative-passages",
+              "number": 2.1,
+              "title": "Reading Narrative Passages: Plot, Narrator and Inference in Literary Fiction"
             }
           ]
         }
@@ -30345,6 +30400,31 @@
               "id": "ku-law-consent-defects-void-voidable",
               "number": 2.1,
               "title": "When Consent Fails: Void and Voidable Agreements"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-law-governance-legal-method",
+      "name": "Legal Method",
+      "group": "Law & Governance",
+      "tagline": "Rules, states and constitutions",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-law-governance-legal-method-legal-reasoning",
+          "number": 1,
+          "title": "Legal Reasoning",
+          "shortTitle": "Legal Reasoning",
+          "bookId": "ku-law-governance-legal-method",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-legal-reasoning-facts",
+              "number": 1.1,
+              "title": "Legal Reasoning: Applying Principles to Facts"
             }
           ]
         }

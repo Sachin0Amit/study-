@@ -6656,6 +6656,246 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
       ],
     },
+    {
+      id: 'ecol-populations-communities',
+      title: 'Populations and Communities: Interactions, Niches and Disturbance',
+      domain: 'Life Sciences',
+      field: 'Ecology',
+      branch: 'Community Ecology',
+      tier: 'intermediate',
+      concepts: [
+        'Organisms, populations and communities: levels of ecological organization',
+        'The niche and competitive exclusion',
+        'Predation, herbivory and anti-predator defenses',
+        'Symbiosis: mutualism, commensalism, parasitism',
+        'Keystone and foundation species',
+        'Community responses to disturbance: succession',
+        'Invasive species and ecosystem disruptions',
+      ],
+      words: 1232,
+      readMins: 6,
+      addedOn: '2026-10-22',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'Ecology is biology with the walls removed: organisms living not as specimens but as members of populations, and populations woven into communities. A sibling lesson follows the numbers of population ecology — growth curves, carrying capacity, the r/K trade-off. This lesson takes the next step outwards: what happens when different species share a habitat and must answer the same three questions — who eats whom, who lives where, and who does the job no one else can. The answers supply the concepts every ecology paper and every ecosystem-management plan runs on.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Communities are where ecology gets practical. Fisheries collapse, invasive carp restructure rivers, the removal of one wolf population changes the course of a river — these are community-ecology stories. Reading them requires the same small toolkit: niche, competition, symbiosis, keystone species, disturbance and succession. Five terms, endlessly recombined.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Get the levels straight first. An organism is one individual; a population is all the individuals of one species in one area; a community is all the populations of different species in that area, interacting. Ecologists describe a community by its species richness (how many species) and relative abundance (how the individuals are spread among them), together making diversity. Note what a community does NOT include: sunlight, water and soil belong to the ecosystem, the level above. Communities are purely about who lives there and how they treat each other.',
+        },
+        {
+          kind: 'para',
+          text: 'Each species occupies a niche — its full role and address in the community: what it eats, what eats it, the temperatures it tolerates, the times it is active. The niche a population could occupy with no competitors is fundamental; the smaller slice it actually holds under competition is realised. The squeeze matters because Gause\'s competitive exclusion principle says two species cannot occupy the same niche in the same place indefinitely: the superior competitor drives the other extinct locally. Coexistence therefore requires niche differentiation — resource partitioning, as when warblers split one spruce tree into foraging zones — or the exclusion outcome follows.',
+        },
+        {
+          kind: 'para',
+          text: 'Predation and herbivory are the community\'s energy transfer machinery, and they run an arms race. Prey pay for defences: mechanical (thorns, shells), chemical (toxins), warning colouration that advertises unpalatability, camouflage that hides it, and mimicry in two flavours — a harmless species copying a dangerous one, or two defended species converging on a shared warning signal that predators learn once. Predators answer with better detection and handling. The classic dynamics oscillate: prey booms feed predator booms, predator booms crash prey, and the cycle repeats — the hare-and-lynx record being the textbook curve.',
+        },
+        {
+          kind: 'para',
+          text: 'Symbiosis names long-lived, close interspecies relationships. Mutualism benefits both — pollinators and flowers, gut microbes and their hosts, mycorrhizal fungi trading minerals for sugar. Commensalism benefits one and leaves the other unbothered — the egret behind the grazing buffalo. Parasitism benefits one at the other\'s ongoing expense — tapeworms, mistletoe, the viruses this library\'s virology lesson covers. The three are points on a continuum, and a relationship can slide along it when conditions change, which is why pathologists and ecologists ask the same question: what tipped this symbiosis toward parasitism?',
+        },
+        {
+          kind: 'para',
+          text: 'Not all species weigh equally. Foundation species — kelp forests, corals, canopy trees — create habitat and set the community\'s physical architecture. Keystone species have small biomass but outsized influence, usually through predation: remove the sea star Pisaster from its mussel beds and fifteen species collapse into one; remove sea otters and urchins graze kelp forests into barrens. Invasive species, introduced beyond their native range, often act as anti-keystones: freed from their own predators and competitors, they simplify communities — the Asian carp of the American rivers being the modern cautionary tale.',
+        },
+        {
+          kind: 'para',
+          text: 'Communities are built for disturbance — fires, storms, floods, clearances — and their response is succession, the predictable turnover of species composition. Primary succession colonises bare rock from scratch: lichens make soil, grasses and shrubs follow, forests arrive last. Secondary succession rebuilds after disturbance on existing soil, moving through fast weedy colonisers toward the mature community the climate supports; recovery speed is the community\'s resilience, and repeated disturbance beyond that speed is what turns disruption into regime change. Both tracks trade species richness along the way, typically peaking in midsuccession.',
+        },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Community', def: 'All interacting populations of different species in one area; richness plus relative abundance gives its diversity.' },
+            { term: 'Niche', def: 'A species\' full role and address — resources used, conditions tolerated, interactions suffered and caused.' },
+            { term: 'Competitive exclusion principle', def: 'Two species cannot occupy the same niche in the same habitat indefinitely; one outcompetes the other.' },
+            { term: 'Symbiosis', def: 'Close interspecies relationship: mutualism (both gain), commensalism (one gains, other unaffected), parasitism (one gains, other harmed).' },
+            { term: 'Keystone species', def: 'A species whose removal restructures the community far beyond its biomass — usually a top predator or ecosystem engineer.' },
+            { term: 'Foundation species', def: 'A habitat-creating species — kelp, coral, canopy trees — that defines the community\'s physical structure.' },
+            { term: 'Succession', def: 'Predictable species turnover after disturbance: primary from bare rock, secondary on surviving soil.' },
+          ],
+        },
+        {
+          kind: 'example',
+          title: 'Predicting the fall of a keystone',
+          steps: [
+            'Setup: a kelp forest community — otters eat urchins, urchins eat kelp, kelp shelters fish, snails and young seals.',
+            'Event: otter hunting removes the keystone predator.',
+            'Direct effect: urchin numbers release from predation and boom.',
+            'Community cascade: booming urchins graze the kelp to bare rock; the shelter disappears; fish and snail populations fall, seal pups lose nursery cover.',
+            'Lesson: track effects through interaction links, not biomass — the species that mattered was the one doing the eating, not the one doing the weighing.',
+          ],
+        },
+        { kind: 'heading', text: 'Check Yourself' },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'Warbler species coexist on one tree by feeding at different heights and times. This coexistence is explained by…',
+              options: ['competitive exclusion', 'resource partitioning into different realised niches', 'mutualism', 'succession'],
+              answer: 1,
+              explain: 'Each warbler holds a slightly different realised niche — different resources and timing — so direct competition for one niche never reaches the exclusion point.',
+            },
+            {
+              q: 'Two defended, bad-tasting insect species converge on the same orange-and-black warning pattern. This is…',
+              options: ['Batesian mimicry', 'Müllerian mimicry', 'commensalism', 'camouflage'],
+              answer: 1,
+              explain: 'Müllerian mimicry is convergence among defended species, so predators learn one signal for many truthful advertisers. Batesian is the harmless freeloading on a dangerous model.',
+            },
+            {
+              q: 'Removing a top predator restructures a whole community although the predator\'s biomass is tiny. The predator is a…',
+              options: ['foundation species', 'keystone species', 'primary producer', 'invasive species'],
+              answer: 1,
+              explain: 'Keystone species are defined by outsized community impact relative to biomass — usually via predation or engineering, as the Pisaster and sea-otter cases show.',
+            },
+            {
+              q: 'After a farm is abandoned, weeds give way to shrubs and then young forest on the old soil. This is…',
+              options: ['primary succession', 'secondary succession', 'competitive exclusion', 'a foundation-species effect'],
+              answer: 1,
+              explain: 'Secondary succession follows a disturbance that leaves soil intact; primary succession is the slower lichen-first colonisation of bare rock.',
+            },
+          ],
+        },
+        {
+          kind: 'para',
+          text: 'A community is a web with grammar: niches say who fits where, exclusion and partitioning say who can coexist, predation and symbiosis say who affects whom, keystones and foundations say who counts most, and disturbance with succession says how the whole web rebuilds. Master those five sentence-types and every ecology case study — past paper or news report — becomes parseable.',
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          text: 'Prerequisites: the population-ecology lesson for growth, carrying capacity and the r/K trade-off, and the classification lesson for who these species are. Follow with the ecosystems lesson for energy flow and nutrient cycles, and the conservation reading for how communities are protected in practice. Standard reading: OpenStax Biology 2e, chapter 45 "Population and Community Ecology", section 45.6 "Community Ecology".',
+          tone: 'path',
+        },
+      ],
+    },
+    {
+      id: 'bioc-carbohydrates-lipids',
+      title: 'Carbohydrates and Lipids: Fuel, Structure and Signalling',
+      domain: 'Life Sciences',
+      field: 'Biochemistry',
+      branch: 'Molecules of Life',
+      tier: 'core',
+      concepts: [
+        'The (CH2O)n formula and the carbohydrate family',
+        'Monosaccharides: glucose, galactose and fructose',
+        'Disaccharides and the glycosidic bond',
+        'Storage and structural polysaccharides: starch, glycogen, cellulose',
+        'Fatty acids: saturated versus unsaturated',
+        'Triglycerides, phospholipids and the bilayer',
+        'Steroids and cholesterol',
+      ],
+      words: 1249,
+      readMins: 6,
+      addedOn: '2026-10-22',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'Ask a cell for its staffing plan and it answers with two molecule families: carbohydrates for fast, soluble energy and lipids for dense storage, barriers and signals. This lesson follows both families from structure to consequence — why the same six-carbon sugar can be fuel in one linkage and timber in another, and why the shape of a fatty acid decides whether it solidifies, flows or seals a membrane. Structure decides function is the whole lesson; the chemistry of breaking these molecules down for ATP belongs to the metabolism lesson, and the survey of the cell they live in to the cell-biology lesson.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Carbs and lipids are the molecules people argue about at dinner tables — sugar, starch, saturated fat, cholesterol — and the molecules exams probe hardest because every question hides a structure-function step. Learn to move from linkage to property to role, and both the dinner argument and the answer key take care of themselves.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Carbohydrates are sugars and their polymers with the stoichiometric formula (CH2O)n — carbon plus water, one carbon for every two hydrogens and one oxygen. The simplest are monosaccharides (single sugars), usually three to seven carbons and named with the -ose suffix. The hexose glucose, C6H12O6, is the central fuel: plants make it from carbon dioxide and water, animals free it from starch, and cells oxidise it for ATP. Its two common isomers matter too — galactose, the milk-sugar partner, and fructose, the fruit sugar: same formula, different arrangement around the asymmetric carbons, different chemistry. Classify further by the carbonyl position (aldose at the chain\'s end, ketose in the middle) and chain length (triose, pentose, hexose).',
+        },
+        {
+          kind: 'para',
+          text: 'Two monosaccharides join by a dehydration reaction — one water out — to form a disaccharide held by a covalent glycosidic bond. Maltose is glucose plus glucose; lactose, the milk sugar, is galactose plus glucose; sucrose, table sugar, is glucose plus fructose. The bond\'s geometry is not cosmetic: it fixes which enzymes can cut the bond, which is why lactose needs lactase and why one sugar is digestible where a near-identical isomer is not.',
+        },
+        {
+          kind: 'para',
+          text: 'String many sugars together and you get polysaccharides, three of which run the living world. Starch is the plant\'s storage polymer, an unbranched or lightly branched chain of alpha-glucose units — digestible, harvestable, the calories of rice and wheat. Glycogen is the animal version: heavily branched for fast release from liver and muscle. Cellulose is the plant\'s structural polymer: the same glucose units but joined by beta linkages flipped relative to starch, giving straight, hydrogen-bonded fibrils that carry the wall\'s load. Humans lack cellulase, so the strongest timber in biology passes through us as fibre — identical monomer, opposite bond, opposite fate.',
+        },
+        {
+          kind: 'para',
+          text: 'Lipids are defined by behaviour, not monomers: hydrophobic molecules that will not dissolve in water. The workhorses are fatty acids — long hydrocarbon chains ending in a carboxyl group. Saturated chains carry the maximum hydrogen, run straight, and pack tight into solids (butter, lard). Unsaturated chains carry one or more double bonds whose cis kinks bend the tail, prevent packing, and make oils that stay liquid. Industry hydrogenates oils to saturate them — and accidentally builds trans fats, whose straight-yet-abnormal geometry earns their cardiovascular reputation.',
+        },
+        {
+          kind: 'para',
+          text: 'A triglyceride (triacylglycerol) is storage built from three fatty acids ester-linked to one glycerol, each bond formed by dehydration. Its energy density beats carbohydrate roughly sixfold — no water of hydration, a fully reduced carbon load — which is why seeds, whales and couch-bound humans all bank calories as fat. The phospholipid is the same molecule with one tail swapped for a phosphate head: hydrophobic tails plus a hydrophilic head make it amphipathic, and amphipathy spontaneously assembles every cell membrane into a bilayer — tails in, heads out — the subject of the membrane-transport lesson.',
+        },
+        {
+          kind: 'para',
+          text: 'The fourth family is the steroids: four fused rings, no fatty-acid tail. Cholesterol anchors the class — a membrane fluidity buffer that stiffens warm membranes and keeps cold ones from gelling — and is the biosynthetic trunk of the steroid hormones (testosterone, oestrogen, cortisol), small hydrophobic signals that cross membranes and switch gene expression. Waxes round out the set: long-chain esters that waterproof leaves, feathers and ears. Fuel, barrier, signal — the lipid families cover the jobs water cannot be trusted with.',
+        },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Monosaccharide', def: 'A single sugar, three to seven carbons, (CH2O)n formula — glucose, galactose, fructose are the hexose trio.' },
+            { term: 'Glycosidic bond', def: 'The covalent linkage between sugars, formed by dehydration; its alpha or beta geometry decides digestibility.' },
+            { term: 'Polysaccharide', def: 'Long sugar polymer — starch (plant storage), glycogen (animal storage), cellulose (plant structure).' },
+            { term: 'Fatty acid', def: 'Long hydrocarbon chain with a carboxyl end; saturated (straight, solid) or unsaturated (cis-kinked, liquid).' },
+            { term: 'Triglyceride', def: 'Glycerol ester-linked to three fatty acids — the dense, dry energy store of seeds and animals.' },
+            { term: 'Phospholipid', def: 'Diacylglycerol with a hydrophilic phosphate head; amphipathic, and therefore self-assembling into bilayers.' },
+            { term: 'Steroid', def: 'Four-fused-ring lipid; cholesterol buffers membrane fluidity and templates the steroid hormones.' },
+          ],
+        },
+        {
+          kind: 'example',
+          title: 'From linkage to lunch: why cellulose is fibre but starch is food',
+          steps: [
+            'Compare monomers: both starch and cellulose are long glucose polymers — no difference there.',
+            'Compare bonds: starch links alpha-glucose (bonds on one orientation); cellulose links beta-glucose (alternate units flipped).',
+            'Compare enzymes: our amylases fit the alpha geometry; cellulase, which fits beta, is absent from the human gut.',
+            'Follow the consequence: starch hydrolyses to absorbable glucose — calories; cellulose passes intact as dietary fibre, though gut microbes partly digest it.',
+            'Generalise: bond geometry decides enzyme fit, enzyme fit decides function — the one-step logic most carbohydrate questions want.',
+          ],
+        },
+        { kind: 'heading', text: 'Check Yourself' },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'Glucose, galactose and fructose all have formula C6H12O6 but different properties. They are…',
+              options: ['polymers of one another', 'structural isomers differing in arrangement', 'enantiomers', 'disaccharides'],
+              answer: 1,
+              explain: 'Same formula, different arrangement of atoms around the carbons — structural isomers, which is why taste, bond partners and enzyme fit all differ.',
+            },
+            {
+              q: 'A fatty acid tail bends because it contains a cis double bond. Compared with a straight saturated tail, it will…',
+              options: ['pack tighter and melt higher', 'pack loosely and stay liquid', 'cross the membrane freely', 'store more energy per gram'],
+              answer: 1,
+              explain: 'The cis kink disrupts packing, so unsaturated fats are oils; saturated straight chains pack tight and solidify. Per-gram energy is unchanged by the kink.',
+            },
+            {
+              q: 'A molecule has two hydrophobic fatty-acid tails and one hydrophilic phosphate head. In water it will…',
+              options: ['dissolve completely', 'form a bilayer with tails inward', 'hydrolyse into glycerol', 'crystallise like a triglyceride'],
+              answer: 1,
+              explain: 'Amphipathic phospholipids self-assemble into bilayers — tails hidden from water, heads facing it — the spontaneous architecture of every cell membrane.',
+            },
+            {
+              q: 'Glycogen differs from starch mainly by being…',
+              options: ['built of beta-glucose', 'more heavily branched for fast release', 'indigestible to humans', 'a phospholipid'],
+              answer: 1,
+              explain: 'Both are alpha-glucose storage polymers; glycogen\'s dense branching gives many free ends, so liver and muscle can mobilise glucose quickly — a sprint-fuel design.',
+            },
+          ],
+        },
+        {
+          kind: 'para',
+          text: 'Read every carbohydrate and lipid question through one motion: structure, then property, then role. Alpha or beta decides food or fibre; saturated or unsaturated decides solid or oil; three tails or two-plus-head decides fat store or membrane; rings decide cholesterol and hormones. Four toggles generate the whole topic — and almost every answer.',
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          text: 'Prerequisites: the cell-biology lesson surveys all four macromolecule classes inside the cell; this lesson deepens two of them. Follow with the metabolism lesson for how triglycerides and amino acids are actually burned, and the organic-chemistry chapters for the reaction chemistry and identification tests of these same molecules. Standard reading: OpenStax Biology 2e, chapter 3 "Biological Macromolecules", sections 3.2 "Carbohydrates" and 3.3 "Lipids".',
+          tone: 'path',
+        },
+      ],
+    },
 
   ],
 }

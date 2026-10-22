@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 189
-- **Books (master volumes):** 189
-- **Chapters:** 853
-- **Sections (lessons):** 4433
+- **Subjects:** 190
+- **Books (master volumes):** 190
+- **Chapters:** 857
+- **Sections (lessons):** 4439
 
 ## Foundations — 5 subjects
 
@@ -895,9 +895,10 @@
 
 ### Ecology (`ku-life-sciences-ecology`)
 
-*Energy through ecosystems* — 1 chapters · 4 sections
+*Energy through ecosystems* — 2 chapters · 5 sections
 
 - **Ch 1. Ecosystem Science** `ku-life-sciences-ecology-ecosystem-science` — 4 sections: Ecosystems and the Flow of Energy; Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters; Biomes: A Tour of Earth's Major Ecosystems; Population Ecology: Growth, Limits and Cycles
+- **Ch 2. Community Ecology** `ku-life-sciences-ecology-community-ecology` — 1 sections: Populations and Communities: Interactions, Niches and Disturbance
 
 ### Anatomy & Physiology (`ku-life-sciences-anatomy-and-physiology`)
 
@@ -920,9 +921,9 @@
 
 ### Biochemistry (`ku-life-sciences-biochemistry`)
 
-*The cell’s energy economy* — 1 chapters · 4 sections
+*The cell’s energy economy* — 1 chapters · 5 sections
 
-- **Ch 1. Molecules of Life** `ku-life-sciences-biochemistry-molecules-of-life` — 4 sections: Biochemistry: The Cell's Energy Economy; Protein Structure and Folding: Shape Is Function; Enzymes: Catalysis, Kinetics and Regulation; Beyond Glucose: Fat and Amino-Acid Metabolism
+- **Ch 1. Molecules of Life** `ku-life-sciences-biochemistry-molecules-of-life` — 5 sections: Biochemistry: The Cell's Energy Economy; Protein Structure and Folding: Shape Is Function; Enzymes: Catalysis, Kinetics and Regulation; Beyond Glucose: Fat and Amino-Acid Metabolism; Carbohydrates and Lipids: Fuel, Structure and Signalling
 
 ### Developmental Biology (`ku-life-sciences-developmental-biology`)
 
@@ -1155,7 +1156,7 @@
 
 ### Psychology (`ku-social-sciences-psychology`)
 
-*The studied mind* — 6 chapters · 7 sections
+*The studied mind* — 7 chapters · 9 sections
 
 - **Ch 1. Social Psychology** `ku-social-sciences-psychology-social-psychology` — 2 sections: Cognitive Dissonance and Attitude Change; Conformity, Obedience and the Power of the Situation
 - **Ch 2. Behavioral Science** `ku-social-sciences-psychology-behavioral-science` — 1 sections: Cognitive Biases: The Bugs in Human Judgment
@@ -1163,6 +1164,7 @@
 - **Ch 4. Cognitive Psychology** `ku-social-sciences-psychology-cognitive-psychology` — 1 sections: Memory, Attention and Thinking: Cognitive Psychology
 - **Ch 5. Personality** `ku-social-sciences-psychology-personality` — 1 sections: The Big Five: A Field Guide to Human Personality
 - **Ch 6. Individual Differences** `ku-social-sciences-psychology-individual-differences` — 1 sections: Intelligence and IQ: What the Tests Actually Measure
+- **Ch 7. Stress and Clinical Psychology** `ku-social-sciences-psychology-stress-and-clinical-psychology` — 2 sections: Coping with Stress: Appraisal, Strategies and Resilience; Psychological Disorders: Classification and the Major Categories
 
 ### Sociology (`ku-social-sciences-sociology`)
 
@@ -1280,9 +1282,10 @@
 
 ### Reading Strategy (`ku-languages-literature-reading-strategy`)
 
-*How languages live and grow* — 1 chapters · 1 sections
+*How languages live and grow* — 2 chapters · 2 sections
 
 - **Ch 1. Paired Passages** `ku-languages-literature-reading-strategy-paired-passages` — 1 sections: Paired Passages and Authorial Choices: Reading Two Texts at Once
+- **Ch 2. Narrative Reading** `ku-languages-literature-reading-strategy-narrative-reading` — 1 sections: Reading Narrative Passages: Plot, Narrator and Inference in Literary Fiction
 
 ### Verbal Reasoning (`ku-languages-literature-verbal-reasoning`)
 
@@ -1412,7 +1415,7 @@
 
 - **Ch 1. Language in Society** `ku-languages-literature-sociolinguistics-language-in-society` — 1 sections: Language in Society: Dialects, Prestige and Code-Switching
 
-## Law & Governance — 9 subjects
+## Law & Governance — 10 subjects
 
 ### Business Law (`ku-law-governance-business-law`)
 
@@ -1477,6 +1480,12 @@
 
 - **Ch 1. Indian Contract Act 1872** `ku-law-governance-contract-law-indian-contract-act-1872` — 1 sections: The Indian Contract Act: Formation, Breach and Remedies
 - **Ch 2. Consent & Validity** `ku-law-governance-contract-law-consent-and-validity` — 1 sections: When Consent Fails: Void and Voidable Agreements
+
+### Legal Method (`ku-law-governance-legal-method`)
+
+*Rules, states and constitutions* — 1 chapters · 1 sections
+
+- **Ch 1. Legal Reasoning** `ku-law-governance-legal-method-legal-reasoning` — 1 sections: Legal Reasoning: Applying Principles to Facts
 
 ## Business & Economics — 14 subjects
 
