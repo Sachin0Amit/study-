@@ -8,6 +8,8 @@ import { INDIA_PROFESSIONAL_EXAMS } from './india-professional'
 import { USA_SUBJECT_EXAMS } from './usa-subject'
 import { UK_EXAMS } from './uk'
 import { IB_EXAMS } from './ib'
+import { SINGAPORE_EXAMS } from './singapore'
+import { JAPAN_EXAMS } from './japan'
 
 /**
  * The curated official-syllabus registry. Every exam here has a COMPLETE
@@ -24,6 +26,8 @@ export const CURATED_EXAMS: CuratedExam[] = [
   ...USA_SUBJECT_EXAMS,
   ...UK_EXAMS,
   ...IB_EXAMS,
+  ...SINGAPORE_EXAMS,
+  ...JAPAN_EXAMS,
 ].sort((a, b) => b.popularity - a.popularity)
 
 export const CURATED_EXAM_BY_ID: Map<string, CuratedExam> = new Map(

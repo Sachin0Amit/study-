@@ -681,4 +681,169 @@ export const INDIA_GOVT_EXAMS: CuratedExam[] = [
       },
     ],
   },
+  {
+    id: 'cds',
+    name: 'CDS',
+    fullName: 'Combined Defence Services Examination',
+    aliases: ['cds exam', 'combined defence services', 'upsc cds', 'cds ima ota'],
+    region: 'India',
+    category: 'Defence services',
+    popularity: 78,
+    syllabusVerified: '2026-10-22',
+    website: 'https://upsc.gov.in/examinations/Combined%20Defence%20Services%20Examination%20%28II%29%2C%202025',
+    overview: {
+      conductor: 'UPSC',
+      level: 'Graduate (any discipline) → IMA, INA, AFA; OTA for men and women',
+      stages: ['Written exam → SSB interview (5 days) → Medical board → Merit list'],
+      papers: ['English (100 marks)', 'General Knowledge (100 marks)', 'Elementary Mathematics (100 marks — not for OTA)'],
+      duration: 'Three 2 h papers',
+      marking: 'Each paper 100 marks; negative marking applies',
+      negativeMarking: 'One-third of the question\'s marks deducted per wrong answer',
+      questionTypes: ['MCQ (4 options)'],
+      notes:
+        'Conducted twice a year (CDS I and II). OTA candidates sit English and General Knowledge only; IMA/INA/AFA candidates sit all three papers. The Elementary Mathematics paper is at Class 10 (matriculation) level.',
+    },
+    sources: [
+      { title: 'UPSC — Combined Defence Services Examination notice and question papers', url: 'https://upsc.gov.in/examinations/Combined%20Defence%20Services%20Examination%20%28II%29%2C%202025', host: 'upsc.gov.in' },
+      { title: 'UPSC examinations portal (active examinations with notifications)', url: 'https://upsc.gov.in/examinations/active-examinations', host: 'upsc.gov.in' },
+    ],
+    subjects: [
+      {
+        name: 'English',
+        mappedSubjectId: 'english',
+        weightage: 33,
+        units: [
+          {
+            name: 'Grammar and Error-spotting',
+            topics: [
+              { name: 'Spotting Errors', subtopics: ['Errors in parts of a sentence — agreement, tense, preposition, article usage'] },
+              { name: 'Reconstruction of Sentences and Paragraphs', subtopics: ['Rebuilding jumbled sentences into correct order', 'Completing incomplete sentences correctly'] },
+            ],
+          },
+          {
+            name: 'Sentence Ordering and Completion',
+            topics: [
+              { name: 'Ordering of Sentences', subtopics: ['Arranging jumbled sentences into a coherent paragraph'] },
+              { name: 'Sentence Arrangement and Cloze', subtopics: ['Selecting the sentence that fits a blank in a passage', 'Fill in the blanks with suitable words'] },
+            ],
+          },
+          {
+            name: 'Vocabulary',
+            topics: [
+              { name: 'Synonyms and Antonyms', subtopics: ['Choosing the word closest/opposite in meaning in context'] },
+              { name: 'Idioms, Phrases and Selecting Words', subtopics: ['Meaning of idiomatic expressions', 'Choosing the most suitable word or phrase for the context'] },
+            ],
+          },
+          {
+            name: 'Comprehension',
+            topics: [
+              { name: 'Passage Comprehension', subtopics: ['Answering questions on short passages — main idea, detail and inference'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'General Knowledge',
+        weightage: 33,
+        units: [
+          {
+            name: 'Current Events',
+            topics: [
+              { name: 'National and International Current Affairs', subtopics: ['Matters of everyday observation and current events in India and the world'] },
+              { name: 'Sports, Awards and Culture', subtopics: ['Major sports results and honours', 'Awards, books and cultural milestones in the news'] },
+            ],
+          },
+          {
+            name: 'History of India',
+            topics: [
+              { name: 'Ancient and Medieval India', subtopics: ['Indus valley, Vedic age, Mauryan and Gupta empires', 'Delhi sultanate and Mughal empire — society and administration'] },
+              { name: 'Modern India and the Freedom Struggle', subtopics: ['British expansion and administration', 'National movement from 1857 to independence, leaders and turning points'] },
+            ],
+          },
+          {
+            name: 'Geography',
+            topics: [
+              { name: 'Physical Geography of India and the World', subtopics: ['Relief, drainage, climate and natural regions', 'Soils, vegetation and natural resources'] },
+              { name: 'Economic and Social Geography', subtopics: ['Agriculture, industry, transport and population patterns'] },
+            ],
+          },
+          {
+            name: 'Indian Polity and Economy',
+            topics: [
+              { name: 'Indian Constitution and Governance', subtopics: ['Constitutional framework, rights, parliament, judiciary', 'Panchayati raj and administrative structure'] },
+              { name: 'Economy and Planning', subtopics: ['Basics of the Indian economy, planning and budgeting, key sectors'] },
+            ],
+          },
+          {
+            name: 'General Science',
+            topics: [
+              { name: 'Everyday Physics and Chemistry', subtopics: ['Matters of everyday observation — mechanics, heat, light, common chemicals'] },
+              { name: 'Biology and Human Health', subtopics: ['Human body basics, nutrition, diseases and hygiene'] },
+            ],
+          },
+          {
+            name: 'Defence and Security Awareness',
+            topics: [
+              { name: 'Indian Armed Forces and Defence Organisation', subtopics: ['Army, Navy and Air Force structure and commands', 'Defence exercises, missiles and major platforms in the news'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Elementary Mathematics',
+        mappedSubjectId: 'mathematics',
+        weightage: 34,
+        units: [
+          {
+            name: 'Arithmetic',
+            topics: [
+              { name: 'Number System: HCF and LCM', subtopics: ['Natural, integer, rational, irrational and real numbers', 'Decimals, HCF and LCM, Euclidean algorithm'] },
+              { name: 'Percentages, Ratio and Variation', subtopics: ['Percentages and applications', 'Ratio, proportion and variation'] },
+              { name: 'Squares, Roots and Averages', subtopics: ['Squares and square roots, cubes and cube roots', 'Simple and weighted averages'] },
+              { name: 'Profit, Loss and Interest', subtopics: ['Profit and loss, discount', 'Simple and compound interest'] },
+              { name: 'Time and Work; Time and Distance', subtopics: ['Work-rate problems, pipes and cisterns', 'Speed, trains, boats and streams'] },
+            ],
+          },
+          {
+            name: 'Algebra',
+            topics: [
+              { name: 'Basic Operations and Simple Factors', subtopics: ['Addition, subtraction, multiplication and division of algebraic expressions', 'Factorisation of simple expressions'] },
+              { name: 'Remainder Theorem and Polynomials', subtopics: ['Remainder theorem, HCF and LCM of polynomials', 'Theory of polynomials'] },
+              { name: 'Quadratic and Linear Equations', subtopics: ['Solutions of quadratic equations, relation between roots and coefficients', 'Simultaneous linear equations and inequations'] },
+              { name: 'Set Language and Set Notation', subtopics: ['Set language, notation and Venn diagrams'] },
+              { name: 'Laws of Indices and Logarithms', subtopics: ['Laws of indices', 'Logarithms and applications'] },
+            ],
+          },
+          {
+            name: 'Trigonometry',
+            topics: [
+              { name: 'Trigonometric Ratios and Identities', subtopics: ['Values of sin x, cos x and tan x for 0° ≤ x ≤ 90°', 'Simple trigonometric identities, use of tables'] },
+              { name: 'Heights and Distances', subtopics: ['Simple problems on heights and distances'] },
+            ],
+          },
+          {
+            name: 'Geometry',
+            topics: [
+              { name: 'Lines and Angles; Triangles', subtopics: ['Lines and angles, parallel lines', 'Congruency and similarity of triangles, concurrence of medians, heights and bisectors'] },
+              { name: 'Circles and Quadrilaterals', subtopics: ['Properties of angles and circles — tangents, chords, common tangents', 'Parallelograms and quadrilaterals, plane and plane figures'] },
+            ],
+          },
+          {
+            name: 'Mensuration',
+            topics: [
+              { name: 'Areas of Plane Figures', subtopics: ['Areas of squares, rectangles, parallelograms, triangles and circles'] },
+              { name: 'Surface Area and Volume', subtopics: ['Cuboids, spheres, cylinders and cones — surface area and volume'] },
+            ],
+          },
+          {
+            name: 'Statistics',
+            topics: [
+              { name: 'Data Collection and Graphical Representation', subtopics: ['Collection and tabulation of statistical data', 'Histograms, bar charts and pie charts'] },
+              { name: 'Central Tendency', subtopics: ['Mean, median and mode'] },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]
