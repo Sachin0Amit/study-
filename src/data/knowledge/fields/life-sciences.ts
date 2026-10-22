@@ -8,12 +8,16 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x14MolecularTopics } from './x14-molecular'
 import { x14HeredityBiotechTopics } from './x14-heredity-biotech'
+import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 
 export const lifeSciences: KnowledgeDomainFile = {
   domain: 'Life Sciences',
   blurb:
     'From genes, neurons, and photosynthesis to anatomy, microbes, evolution, and the animal kingdom — how living systems are built, run, and related.',
   topics: [
+    // X24 gap-closing pass (2026-10-22): habitat adaptations and abiotic
+    // responses — organism-level ecology the population lesson doesn't own.
+    ...x24GapClosingPassTopics.filter((t) => t.domain === 'Life Sciences'),
     // X14 exam-syllabus pass (2026-10-20): molecular-genetics engine +
     // transmission-genetics/biotech/genomics deep dives.
     ...x14MolecularTopics,

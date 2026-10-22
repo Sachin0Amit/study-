@@ -6,12 +6,16 @@
  */
 
 import type { KnowledgeDomainFile } from '../types'
+import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 
 export const mathematics: KnowledgeDomainFile = {
   domain: 'Mathematics',
   blurb:
     'Calculus, probability, and linear algebra — the language of change, evidence, and structure.',
   topics: [
+    // X24 gap-closing pass (2026-10-22): quartiles/cumulative-frequency/box
+    // plots + DI chart reading — graphical description no master volume owns.
+    ...x24GapClosingPassTopics.filter((t) => t.domain === 'Mathematics'),
     // ------------------------------------------------------------------
     {
       id: 'math-derivative-as-limit',

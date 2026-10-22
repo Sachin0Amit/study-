@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 192
-- **Books (master volumes):** 192
-- **Chapters:** 862
-- **Sections (lessons):** 4445
+- **Subjects:** 197
+- **Books (master volumes):** 197
+- **Chapters:** 868
+- **Sections (lessons):** 4451
 
 ## Foundations — 5 subjects
 
@@ -845,7 +845,13 @@
 
 - **Ch 1. Waves & Sound** `ku-physical-sciences-physics-of-everyday-phenomena-waves-and-sound` — 1 sections: Room Acoustics: Why Spaces Sound the Way They Do
 
-## Life Sciences — 16 subjects
+## Life Sciences — 17 subjects
+
+### Biology (`ku-life-sciences-biology`)
+
+*How living systems work* — 1 chapters · 1 sections
+
+- **Ch 1. Ecology — Organisms and Environment** `ku-life-sciences-biology-ecology-organisms-and-environment` — 1 sections: Life at the Limits: How Organisms Answer Habitat and Abiotic Stress
 
 ### Cell & Molecular Biology (`ku-life-sciences-cell-and-molecular-biology`)
 
@@ -963,7 +969,14 @@
 
 - **Ch 1. Reproductive Biology** `ku-life-sciences-human-physiology-reproductive-biology` — 1 sections: Human Reproduction: Systems, Gametes and the Menstrual Cycle
 
-## Mathematics — 1 subject
+## Mathematics — 2 subjects
+
+### Mathematics (`ku-mathematics-mathematics`)
+
+*Mathematics* — 2 chapters · 2 sections
+
+- **Ch 1. Statistics — Describing Distributions** `ku-mathematics-mathematics-statistics-describing-distributions` — 1 sections: Quartiles, Cumulative Frequency and Box Plots
+- **Ch 2. Data Interpretation** `ku-mathematics-mathematics-data-interpretation` — 1 sections: Reading Data: Bar Charts, Line Graphs, Pie Charts and Combined Sources
 
 ### Probability & Statistics (`ku-mathematics-probability-and-statistics`)
 
@@ -1105,7 +1118,13 @@
 
 - **Ch 1. Digital Manufacturing** `ku-engineering-manufacturing-engineering-digital-manufacturing` — 1 sections: Additive Manufacturing: How 3D Printing Reshapes Production
 
-## Technology & Applied Science — 6 subjects
+## Technology & Applied Science — 7 subjects
+
+### Digital Literacy (`ku-technology-applied-digital-literacy`)
+
+*The applied engines of modern life* — 1 chapters · 1 sections
+
+- **Ch 1. Productivity Applications** `ku-technology-applied-digital-literacy-productivity-applications` — 1 sections: Office Productivity Software: Documents, Spreadsheets, Slides and Workflows
 
 ### Telecommunications (`ku-technology-applied-telecommunications`)
 
@@ -1147,7 +1166,13 @@
 
 - **Ch 1. Machines of Daily Life** `ku-technology-applied-everyday-machines-machines-of-daily-life` — 2 sections: Elevators and Escalators: The Vertical City; Timekeeping: How Humans Measure Time
 
-## Social Sciences — 10 subjects
+## Social Sciences — 11 subjects
+
+### Geography (`ku-social-sciences-geography`)
+
+*Why people do what they do* — 1 chapters · 1 sections
+
+- **Ch 1. Physical Geography of India** `ku-social-sciences-geography-physical-geography-of-india` — 1 sections: The Physical Frame: India’s Landforms, Rivers, Climate and Natural Vegetation
 
 ### Political Science (`ku-social-sciences-political-science`)
 
@@ -1422,7 +1447,13 @@
 
 - **Ch 1. Language in Society** `ku-languages-literature-sociolinguistics-language-in-society` — 1 sections: Language in Society: Dialects, Prestige and Code-Switching
 
-## Law & Governance — 10 subjects
+## Law & Governance — 11 subjects
+
+### Legal History (`ku-law-governance-legal-history`)
+
+*Rules, states and constitutions* — 1 chapters · 1 sections
+
+- **Ch 1. Comparative Legal Systems** `ku-law-governance-legal-history-comparative-legal-systems` — 1 sections: Legal History Milestones: Codes, Charters and the Making of Modern Law
 
 ### Business Law (`ku-law-governance-business-law`)
 

@@ -1,9 +1,13 @@
 import type { KnowledgeDomainFile } from '../types'
+import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 
 export const technologyApplied: KnowledgeDomainFile = {
   domain: 'Technology & Applied Science',
   blurb: 'The applied engines of modern life — batteries, positioning systems, chip fabrication and the machines they power.',
   topics: [
+    // X24 gap-closing pass (2026-10-22): office productivity software —
+    // the digital-literacy layer no computing-ai lesson owned.
+    ...x24GapClosingPassTopics.filter((t) => t.domain === 'Technology & Applied Science'),
     {
       id: 'tech-lithium-ion-charging-chemistry',
       title: 'Lithium-Ion Batteries and the Chemistry of Charging',

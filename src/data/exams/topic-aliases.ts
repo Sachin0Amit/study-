@@ -325,5 +325,53 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // CLAT English sentence-correction unit → the cohesion/lexical-accuracy
   // lesson (grammatical accuracy and the editing pass are its named concepts).
   'sentence correction within passages': 'eng-cohesion-lexical-accuracy',
+
+  /* ---- X24 gap-closing pass (2026-10-22): post-X23 re-audit leftovers.
+   *  New-lesson mappings point at x24-gap-closing-pass topics; existing-lesson
+   *  mappings verified against each target's actual concepts. ---- */
+  // CDS + UPSC GS physical-geography unit → the India physical-frame lesson
+  // (physiography, drainage, monsoon, vegetation and soils are its sections).
+  'physical geography of india and the world': 'geog-india-physical-geography',
+  // GCSE statistics descriptor → the quartiles/ogives/box-plots lesson
+  // (five-number summary, IQR fences and the ogive are its named concepts).
+  'cumulative frequency and box plots': 'math-cumulative-frequency-box-plots',
+  // CAT + SSC-CGL DI units → the chart-reading lesson (bar/line/pie families,
+  // percentage-change and share arithmetic are its named concepts).
+  'bar and line graphs': 'math-reading-data-charts',
+  'bar diagrams and pie charts': 'math-reading-data-charts',
+  // GMAT integrated-reasoning unit → the chart-reading lesson's multi-source
+  // section (unit conversion + deriving quantities across tables and charts).
+  'multi source reasoning': 'math-reading-data-charts',
+  // CLAT current-affairs history unit → the legal-history milestones lesson
+  // (Hammurabi → Magna Carta → codification → Indian legal arc are its sections).
+  'legal history milestones': 'law-legal-history-milestones',
+  // IBPS computer-aptitude office unit → the office-productivity lesson
+  // (word processor, spreadsheet references, mail merge, formats are its sections).
+  'ms office': 'comp-office-productivity-software',
+  // BITSAT ecology unit → the habitat-adaptations lesson (abiotic factors,
+  // regulate/conform/migrate, dormancy and endemism are its named concepts).
+  'adaptations and biodiversity': 'bio-adaptations-habitat',
+  // BITSAT biology "Crop Improvement" → the existing crop-science lesson
+  // (breeding by selection, hybrid vigor, GM crops are its named concepts).
+  'crop improvement': 'env-crop-science-breeding',
+  // CUET polity "Election and Representation" → the constitution lesson's
+  // "Elections and constitutional bodies" concept (ECI, FPTP, universal franchise).
+  'election and representation': 'soc-indian-constitution-polity',
+  // UCAT SJT scoring unit → the situational-judgement lesson ("Rating scales:
+  // appropriateness versus effectiveness" and the accountability framework).
+  'band based scoring': 'sj-situational-judgement',
+  // MCAT psych-soc memory unit → the cognitive-psychology lesson (memory
+  // stores, encoding failure and schema-driven distortion are its concepts).
+  'forgetting and distortion': 'psy-cognitive-architecture',
+  // IB biology water-relations unit → the kidneys/endocrine lesson
+  // (osmoregulation by ADH and negative feedback are its named concepts).
+  'water potential osmosis and homeostasis': 'bio-anatomy-kidneys-endocrine',
+  // EJU biology homeostasis unit → the kidneys/endocrine lesson (homeostasis
+  // via negative feedback and hormonal messengers; the nervous half lives in
+  // bio-anatomy-nervous-system-command, the immune half in bio-immune-system).
+  'homeostasis nervous hormonal and immune systems': 'bio-anatomy-kidneys-endocrine',
+  // GCE H2 biology control unit → the nervous-system lesson (nerve signaling
+  // and reflex control; the hormonal half lives in bio-anatomy-kidneys-endocrine).
+  'nervous and hormonal control': 'bio-anatomy-nervous-system-command',
 }
 

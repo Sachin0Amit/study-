@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T07:14:59.459Z",
+  "generatedAt": "2026-10-22T12:59:34.300Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 192,
-    "books": 192,
-    "chapters": 862,
-    "sections": 4445
+    "subjects": 197,
+    "books": 197,
+    "chapters": 868,
+    "sections": 4451
   },
   "subjects": [
     {
@@ -26486,6 +26486,31 @@
       ]
     },
     {
+      "id": "ku-life-sciences-biology",
+      "name": "Biology",
+      "group": "Life Sciences",
+      "tagline": "How living systems work",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-life-sciences-biology-ecology-organisms-and-environment",
+          "number": 1,
+          "title": "Ecology — Organisms and Environment",
+          "shortTitle": "Ecology — Organisms and Environment",
+          "bookId": "ku-life-sciences-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-adaptations-habitat",
+              "number": 1.1,
+              "title": "Life at the Limits: How Organisms Answer Habitat and Abiotic Stress"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-life-sciences-cell-and-molecular-biology",
       "name": "Cell & Molecular Biology",
       "group": "Life Sciences",
@@ -27306,6 +27331,46 @@
       ]
     },
     {
+      "id": "ku-mathematics-mathematics",
+      "name": "Mathematics",
+      "group": "Mathematics",
+      "tagline": "Mathematics",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-mathematics-mathematics-statistics-describing-distributions",
+          "number": 1,
+          "title": "Statistics — Describing Distributions",
+          "shortTitle": "Statistics — Describing Distributions",
+          "bookId": "ku-mathematics-mathematics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-math-cumulative-frequency-box-plots",
+              "number": 1.1,
+              "title": "Quartiles, Cumulative Frequency and Box Plots"
+            }
+          ]
+        },
+        {
+          "id": "ku-mathematics-mathematics-data-interpretation",
+          "number": 2,
+          "title": "Data Interpretation",
+          "shortTitle": "Data Interpretation",
+          "bookId": "ku-mathematics-mathematics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-math-reading-data-charts",
+              "number": 2.1,
+              "title": "Reading Data: Bar Charts, Line Graphs, Pie Charts and Combined Sources"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-mathematics-probability-and-statistics",
       "name": "Probability & Statistics",
       "group": "Mathematics",
@@ -28101,6 +28166,31 @@
       ]
     },
     {
+      "id": "ku-technology-applied-digital-literacy",
+      "name": "Digital Literacy",
+      "group": "Technology & Applied Science",
+      "tagline": "The applied engines of modern life",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-technology-applied-digital-literacy-productivity-applications",
+          "number": 1,
+          "title": "Productivity Applications",
+          "shortTitle": "Productivity Applications",
+          "bookId": "ku-technology-applied-digital-literacy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-comp-office-productivity-software",
+              "number": 1.1,
+              "title": "Office Productivity Software: Documents, Spreadsheets, Slides and Workflows"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-technology-applied-telecommunications",
       "name": "Telecommunications",
       "group": "Technology & Applied Science",
@@ -28310,6 +28400,31 @@
               "id": "ku-tech-clocks-timekeeping",
               "number": 1.2,
               "title": "Timekeeping: How Humans Measure Time"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-social-sciences-geography",
+      "name": "Geography",
+      "group": "Social Sciences",
+      "tagline": "Why people do what they do",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-social-sciences-geography-physical-geography-of-india",
+          "number": 1,
+          "title": "Physical Geography of India",
+          "shortTitle": "Physical Geography of India",
+          "bookId": "ku-social-sciences-geography",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-geog-india-physical-geography",
+              "number": 1.1,
+              "title": "The Physical Frame: India’s Landforms, Rivers, Climate and Natural Vegetation"
             }
           ]
         }
@@ -30065,6 +30180,31 @@
               "id": "ku-lang-sociolinguistics",
               "number": 1.1,
               "title": "Language in Society: Dialects, Prestige and Code-Switching"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-law-governance-legal-history",
+      "name": "Legal History",
+      "group": "Law & Governance",
+      "tagline": "Rules, states and constitutions",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-law-governance-legal-history-comparative-legal-systems",
+          "number": 1,
+          "title": "Comparative Legal Systems",
+          "shortTitle": "Comparative Legal Systems",
+          "bookId": "ku-law-governance-legal-history",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-legal-history-milestones",
+              "number": 1.1,
+              "title": "Legal History Milestones: Codes, Charters and the Making of Modern Law"
             }
           ]
         }

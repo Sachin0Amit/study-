@@ -1,11 +1,15 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x15BusinessLawTopics } from './x15-business-law'
+import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 
 export const lawGovernance: KnowledgeDomainFile = {
   domain: 'Law & Governance',
   blurb:
     'The rules societies write for power — constitutions, courts, treaties and the machinery that makes them hold.',
   topics: [
+    // X24 gap-closing pass (2026-10-22): legal-history milestones — the
+    // historical arc behind the doctrinal lessons.
+    ...x24GapClosingPassTopics.filter((t) => t.domain === 'Law & Governance'),
     // X15 exam-syllabus pass (2026-10-20): business-law cluster
     // (Sale of Goods, Partnership, LLP, Companies + regulators).
     ...x15BusinessLawTopics.filter((t) => t.domain === 'Law & Governance'),

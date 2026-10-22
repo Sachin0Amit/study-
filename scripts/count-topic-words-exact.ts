@@ -13,6 +13,8 @@ import { x17ExamSyllabusTopics } from '../src/data/knowledge/fields/x17-exam-syl
 import { x19CivilCoreTopics } from '../src/data/knowledge/fields/x19-civil-core'
 import { x20FoundationsPassTopics } from '../src/data/knowledge/fields/x20-foundations-pass'
 import { x21SkillsPassTopics } from '../src/data/knowledge/fields/x21-skills-pass'
+import { mathematics } from '../src/data/knowledge/fields/mathematics'
+import { technologyApplied } from '../src/data/knowledge/fields/technology-applied'
 import { computingAI } from '../src/data/knowledge/fields/computing-ai'
 
 const IDS = [
@@ -76,6 +78,12 @@ const IDS = [
   'chem-ions-aqueous-solution',
   'health-behavior-medical-care',
   'fin-financial-markets-money-capital',
+  'geog-india-physical-geography',
+  'math-cumulative-frequency-box-plots',
+  'math-reading-data-charts',
+  'law-legal-history-milestones',
+  'comp-office-productivity-software',
+  'bio-adaptations-habitat',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length
@@ -95,7 +103,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, computingAI]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, computingAI]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)
