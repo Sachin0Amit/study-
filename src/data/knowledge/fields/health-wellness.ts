@@ -1,9 +1,14 @@
 import type { KnowledgeDomainFile } from '../types'
+import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 
 export const healthWellness: KnowledgeDomainFile = {
   domain: 'Health & Wellness',
   blurb: 'Evidence-based foundations for sleep, strength, and public health — the science behind feeling and functioning better.',
   topics: [
+    // X23 gap pass (2026-10-22): health-behavior models + medical-care
+    // context — scoped against psy-stress-coping (stress physiology) and
+    // health-vaccines-how-work (immunization science).
+    ...x23JapanGapPassTopics.filter((t) => t.domain === 'Health & Wellness'),
     {
       id: 'health-circadian-rhythms-sleep-pressure',
       title: 'Circadian Rhythms and Sleep Pressure',

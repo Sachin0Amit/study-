@@ -6,12 +6,17 @@
  */
 
 import type { KnowledgeDomainFile } from '../types'
+import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 
 export const physicalSciences: KnowledgeDomainFile = {
   domain: 'Physical Sciences',
   blurb:
     'Physics and chemistry from rotating bodies to reacting molecules — the quantitative rules of matter and energy.',
   topics: [
+    // X23 gap pass (2026-10-22): aqueous ion reactions + volumetric analysis —
+    // qualitative/analytical territory the master Chemistry drills do not own
+    // (chem-periodic-trends remains excluded as a master duplicate).
+    ...x23JapanGapPassTopics.filter((t) => t.domain === 'Physical Sciences'),
     // ------------------------------------------------------------------
     {
       id: 'phys-angular-momentum',

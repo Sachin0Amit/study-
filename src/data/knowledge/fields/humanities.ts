@@ -1,12 +1,17 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x17ExamSyllabusTopics } from './x17-exam-syllabus'
 import { x18ExamPassTopics } from './x18-exam-pass'
+import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 
 export const humanities: KnowledgeDomainFile = {
   domain: 'Humanities',
   blurb:
     'History, philosophy and the recorded human past — how people made meaning before and beyond the modern world.',
   topics: [
+    // X23 gap pass (2026-10-22): Japan's economic history — Edo commerce to
+    // the international economy; references (does not repeat) the Meiji
+    // political story owned by the x18 world-history lesson.
+    ...x23JapanGapPassTopics.filter((t) => t.domain === 'Humanities'),
     // X17 exam-syllabus pass (2026-10-21): CUET Themes in Indian History —
     // sources-based lessons (thinkers/sangha/stupas, travellers, agrarian
     // and urban colonial history) scoped against the X13 political trilogy.

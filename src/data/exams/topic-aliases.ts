@@ -276,5 +276,54 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // MCAT CARS application unit → the applying-principles lesson
   // (justify-the-action and conform-to application are its named concepts).
   'application and extrapolation': 'eng-principle-application',
+
+  /* ---- X23 pass (2026-10-22): Japan cluster + single-topic closures.
+   *  New-lesson mappings point at x23-japan-gap-pass topics; existing-lesson
+   *  mappings were verified against each target's actual concepts/blocks. ---- */
+  // EJU "Japan and the World" civics units → the Japan government & society
+  // lesson (parliamentary cabinet system, Diet asymmetry, courts, environment/
+  // labour/information-society policy are its named concepts and sections).
+  'democratic government and japan s system of government':
+    'pol-democratic-government-japan',
+  'contemporary society environment law labour and information':
+    'pol-democratic-government-japan',
+  // EJU politics-economics units → the Japan economy lesson (economic agents,
+  // main banks/keiretsu, national accounts, BOJ, consumption tax, debt).
+  'the market economy and economic agents': 'econ-japan-market-national-economy',
+  'the national economy finance and public finance':
+    'econ-japan-market-national-economy',
+  // EJU history unit → the Japan economic-history lesson (Edo commerce to the
+  // international economy is literally its title and section arc).
+  'japan s economic history industries and the international economy':
+    'hist-japan-modern-industrial',
+  // A-Level chemistry ion reactions + BITSAT volumetric analysis → the
+  // aqueous-ion-chemistry lesson (both units are its named sections).
+  'reactions of ions in aqueous solution': 'chem-ions-aqueous-solution',
+  'volumetric analysis': 'chem-ions-aqueous-solution',
+  // MCAT psych-soc health-behavior unit → the health-behavior lesson
+  // (HBM constructs, stages of change, adherence are its named concepts).
+  'health behavior and medical care': 'health-behavior-medical-care',
+  // IBPS banking-awareness unit → the financial-markets lesson (money vs
+  // capital markets, primary/secondary, instruments are its named concepts).
+  'financial markets': 'fin-financial-markets-money-capital',
+  // EJU history units already owned by existing lessons:
+  'the two world wars and their impact': 'hist-world-wars',
+  'modernization and its impact': 'hum-industrial-revolution',
+  'thinking geographically about the modern world': 'geog-population-migration',
+  // CUET world-history unit → the Greece-and-Rome lesson ("An empire of law,
+  // roads and citizenship" is its named concept — the three-continents empire).
+  'an empire across three continents': 'hist-classical-greco-roman',
+  // GCE H2 Biology infectious-diseases unit → the immune-system lesson
+  // (innate/adaptive defense and vaccination are its named concepts).
+  'infectious diseases and immunity': 'bio-immune-system',
+  // A-Level biodiversity unit → the conservation lesson ("Biodiversity from
+  // genes to ecosystems" covers community-level diversity).
+  'biodiversity within a community': 'env-biodiversity-loss',
+  // UPSC GS demographics unit → the demographic-transition lesson (crude
+  // rates, dependency ratio, population momentum are its named concepts).
+  'demographics and social sector': 'geog-demographic-transition',
+  // CLAT English sentence-correction unit → the cohesion/lexical-accuracy
+  // lesson (grammatical accuracy and the editing pass are its named concepts).
+  'sentence correction within passages': 'eng-cohesion-lexical-accuracy',
 }
 

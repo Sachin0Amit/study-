@@ -7,6 +7,7 @@ import { socialSciences } from '../src/data/knowledge/fields/social-sciences'
 import { businessEconomics } from '../src/data/knowledge/fields/business-economics'
 import { lawGovernance } from '../src/data/knowledge/fields/law-governance'
 import { languagesLiterature } from '../src/data/knowledge/fields/languages-literature'
+import { physicalSciences } from '../src/data/knowledge/fields/physical-sciences'
 import { x16ExamSkills } from '../src/data/knowledge/fields/x16-exam-skills'
 import { x17ExamSyllabusTopics } from '../src/data/knowledge/fields/x17-exam-syllabus'
 import { x19CivilCoreTopics } from '../src/data/knowledge/fields/x19-civil-core'
@@ -69,6 +70,12 @@ const IDS = [
   'bioc-carbohydrates-lipids',
   'law-legal-reasoning-facts',
   'eng-literary-narrative-passages',
+  'pol-democratic-government-japan',
+  'econ-japan-market-national-economy',
+  'hist-japan-modern-industrial',
+  'chem-ions-aqueous-solution',
+  'health-behavior-medical-care',
+  'fin-financial-markets-money-capital',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length
@@ -88,7 +95,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, computingAI]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, computingAI]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)

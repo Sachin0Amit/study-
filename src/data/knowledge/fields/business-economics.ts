@@ -3,12 +3,17 @@ import { x15AccountingTopics } from './x15-accounting'
 import { x15BusinessLawTopics } from './x15-business-law'
 import { x18ExamPassTopics } from './x18-exam-pass'
 import { x20FoundationsPassTopics } from './x20-foundations-pass'
+import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 
 export const businessEconomics: KnowledgeDomainFile = {
   domain: 'Business & Economics',
   blurb:
     'Markets, money and organisations — the logic of prices, trade, investment and value creation.',
   topics: [
+    // X23 gap pass (2026-10-22): Japan's economic agents/national economy +
+    // financial-markets structure. Applies (does not re-teach) the theory the
+    // macro/fiscal/monetary and TVM lessons own.
+    ...x23JapanGapPassTopics.filter((t) => t.domain === 'Business & Economics'),
     // X18 exam pass (2026-10-21): development agenda + India/China/Pakistan
     // comparison (scoped against econ-macro-ad-as-indian-economy, which owns
     // measurement and the 1951→1991 narrative).

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T00:58:30.695Z",
+  "generatedAt": "2026-10-22T07:14:59.459Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 190,
-    "books": 190,
-    "chapters": 857,
-    "sections": 4439
+    "subjects": 192,
+    "books": 192,
+    "chapters": 862,
+    "sections": 4445
   },
   "subjects": [
     {
@@ -26261,6 +26261,31 @@
       ]
     },
     {
+      "id": "ku-physical-sciences-chemistry",
+      "name": "Chemistry",
+      "group": "Physical Sciences",
+      "tagline": "Molecules and change",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-physical-sciences-chemistry-analytical-chemistry",
+          "number": 1,
+          "title": "Analytical Chemistry",
+          "shortTitle": "Analytical Chemistry",
+          "bookId": "ku-physical-sciences-chemistry",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-chem-ions-aqueous-solution",
+              "number": 1.1,
+              "title": "Reactions of Ions in Aqueous Solution: Qualitative Tests and Volumetric Analysis"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-physical-sciences-astronomy-and-space-science",
       "name": "Astronomy & Space Science",
       "group": "Physical Sciences",
@@ -28296,11 +28321,31 @@
       "group": "Social Sciences",
       "tagline": "Power and cooperation",
       "chapterCount": 6,
-      "sectionCount": 8,
+      "sectionCount": 9,
       "chapters": [
         {
-          "id": "ku-social-sciences-political-science-international-relations",
+          "id": "ku-social-sciences-political-science-comparative-politics",
           "number": 1,
+          "title": "Comparative Politics",
+          "shortTitle": "Comparative Politics",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-pol-democratic-government-japan",
+              "number": 1.1,
+              "title": "Democratic Government in Action: Japan’s Parliamentary System and Contemporary Society"
+            },
+            {
+              "id": "ku-pol-regimes-spectrum",
+              "number": 1.2,
+              "title": "Democracies, Autocracies and Everything in Between"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-international-relations",
+          "number": 2,
           "title": "International Relations",
           "shortTitle": "International Relations",
           "bookId": "ku-social-sciences-political-science",
@@ -28308,19 +28353,19 @@
           "sections": [
             {
               "id": "ku-pol-contemporary-world-order",
-              "number": 1.1,
+              "number": 2.1,
               "title": "After the Cold War: Hegemony, Rival Poles and the Global Commons"
             },
             {
               "id": "ku-pol-ir-theory",
-              "number": 1.2,
+              "number": 2.2,
               "title": "Why Nations Fight and Trade: International Relations Theory"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-indian-polity",
-          "number": 2,
+          "number": 3,
           "title": "Indian Polity",
           "shortTitle": "Indian Polity",
           "bookId": "ku-social-sciences-political-science",
@@ -28328,19 +28373,19 @@
           "sections": [
             {
               "id": "ku-pol-india-since-independence",
-              "number": 2.1,
+              "number": 3.1,
               "title": "India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations"
             },
             {
               "id": "ku-soc-indian-constitution-polity",
-              "number": 2.2,
+              "number": 3.2,
               "title": "The Indian Constitution: Rights, Parliament and Federalism"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-rational-choice-theory",
-          "number": 3,
+          "number": 4,
           "title": "Rational Choice Theory",
           "shortTitle": "Rational Choice Theory",
           "bookId": "ku-social-sciences-political-science",
@@ -28348,14 +28393,14 @@
           "sections": [
             {
               "id": "ku-soc-prisoners-dilemma",
-              "number": 3.1,
+              "number": 4.1,
               "title": "Game Theory of Cooperation: The Prisoner’s Dilemma"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-public-choice",
-          "number": 4,
+          "number": 5,
           "title": "Public Choice",
           "shortTitle": "Public Choice",
           "bookId": "ku-social-sciences-political-science",
@@ -28363,23 +28408,8 @@
           "sections": [
             {
               "id": "ku-soc-collective-action",
-              "number": 4.1,
-              "title": "Collective Action and the Tragedy of the Commons"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-political-science-comparative-politics",
-          "number": 5,
-          "title": "Comparative Politics",
-          "shortTitle": "Comparative Politics",
-          "bookId": "ku-social-sciences-political-science",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-pol-regimes-spectrum",
               "number": 5.1,
-              "title": "Democracies, Autocracies and Everything in Between"
+              "title": "Collective Action and the Tragedy of the Commons"
             }
           ]
         },
@@ -28870,12 +28900,27 @@
       "name": "History",
       "group": "Humanities",
       "tagline": "The record of human meaning",
-      "chapterCount": 2,
-      "sectionCount": 7,
+      "chapterCount": 3,
+      "sectionCount": 8,
       "chapters": [
         {
-          "id": "ku-humanities-history-indian-history",
+          "id": "ku-humanities-history-east-asian-history",
           "number": 1,
+          "title": "East Asian History",
+          "shortTitle": "East Asian History",
+          "bookId": "ku-humanities-history",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-hist-japan-modern-industrial",
+              "number": 1.1,
+              "title": "Japan’s Economic History: From Edo Commerce to the International Economy"
+            }
+          ]
+        },
+        {
+          "id": "ku-humanities-history-indian-history",
+          "number": 2,
           "title": "Indian History",
           "shortTitle": "Indian History",
           "bookId": "ku-humanities-history",
@@ -28883,39 +28928,39 @@
           "sections": [
             {
               "id": "ku-hist-thinkers-beliefs-buildings",
-              "number": 1.1,
+              "number": 2.1,
               "title": "Thinkers, Beliefs and Buildings: The Buddha, the Sangha and the Stupa"
             },
             {
               "id": "ku-hist-travellers-vijayanagara",
-              "number": 1.2,
+              "number": 2.2,
               "title": "Through the Eyes of Travellers: Foreign Accounts and the Imperial Capital Vijayanagara"
             },
             {
               "id": "ku-hist-indian-countryside-towns",
-              "number": 1.3,
+              "number": 2.3,
               "title": "Peasants, Zamindars and the Colonial City: The Indian Countryside from the Mughals to the British"
             },
             {
               "id": "ku-hist-ancient-india",
-              "number": 1.4,
+              "number": 2.4,
               "title": "Ancient India: From the Vedic Age to the Guptas"
             },
             {
               "id": "ku-hist-medieval-india",
-              "number": 1.5,
+              "number": 2.5,
               "title": "Medieval India: Delhi Sultanate to the Mughals"
             },
             {
               "id": "ku-hist-modern-india-freedom-struggle",
-              "number": 1.6,
+              "number": 2.6,
               "title": "Modern India and the Freedom Struggle: 1757 to 1947"
             }
           ]
         },
         {
           "id": "ku-humanities-history-world-history",
-          "number": 2,
+          "number": 3,
           "title": "World History",
           "shortTitle": "World History",
           "bookId": "ku-humanities-history",
@@ -28923,7 +28968,7 @@
           "sections": [
             {
               "id": "ku-hist-nomads-indigenous-modernisation",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Nomadic Empires, Displaced Peoples and Paths to Modernisation"
             }
           ]
@@ -30431,6 +30476,101 @@
       ]
     },
     {
+      "id": "ku-business-economics-political-economy",
+      "name": "Political Economy",
+      "group": "Business & Economics",
+      "tagline": "Markets, money and trade",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-business-economics-political-economy-japan-economy-and-society",
+          "number": 1,
+          "title": "Japan: Economy and Society",
+          "shortTitle": "Japan: Economy and Society",
+          "bookId": "ku-business-economics-political-economy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-japan-market-national-economy",
+              "number": 1.1,
+              "title": "Economic Agents and the National Economy: Japan’s Markets, Finance and Public Finances"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-finance-and-investment",
+      "name": "Finance & Investment",
+      "group": "Business & Economics",
+      "tagline": "Money across time",
+      "chapterCount": 4,
+      "sectionCount": 4,
+      "chapters": [
+        {
+          "id": "ku-business-economics-finance-and-investment-markets-and-instruments",
+          "number": 1,
+          "title": "Markets & Instruments",
+          "shortTitle": "Markets & Instruments",
+          "bookId": "ku-business-economics-finance-and-investment",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-fin-financial-markets-money-capital",
+              "number": 1.1,
+              "title": "Financial Markets: How Money and Capital Markets Move Savings to Investment"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-finance-and-investment-valuation-basics",
+          "number": 2,
+          "title": "Valuation Basics",
+          "shortTitle": "Valuation Basics",
+          "bookId": "ku-business-economics-finance-and-investment",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-compound-interest-tvm",
+              "number": 2.1,
+              "title": "Compound Interest and the Time Value of Money"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-finance-and-investment-risk-and-insurance",
+          "number": 3,
+          "title": "Risk & Insurance",
+          "shortTitle": "Risk & Insurance",
+          "bookId": "ku-business-economics-finance-and-investment",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-fin-insurance-risk-pooling",
+              "number": 3.1,
+              "title": "Insurance: Pooling Risk and Pricing It"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-finance-and-investment-money-and-markets",
+          "number": 4,
+          "title": "Money & Markets",
+          "shortTitle": "Money & Markets",
+          "bookId": "ku-business-economics-finance-and-investment",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-fin-banks-create-money",
+              "number": 4.1,
+              "title": "How Banks Create Money"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-business-economics-development-economics",
       "name": "Development Economics",
       "group": "Business & Economics",
@@ -30801,61 +30941,6 @@
       ]
     },
     {
-      "id": "ku-business-economics-finance-and-investment",
-      "name": "Finance & Investment",
-      "group": "Business & Economics",
-      "tagline": "Money across time",
-      "chapterCount": 3,
-      "sectionCount": 3,
-      "chapters": [
-        {
-          "id": "ku-business-economics-finance-and-investment-valuation-basics",
-          "number": 1,
-          "title": "Valuation Basics",
-          "shortTitle": "Valuation Basics",
-          "bookId": "ku-business-economics-finance-and-investment",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bus-compound-interest-tvm",
-              "number": 1.1,
-              "title": "Compound Interest and the Time Value of Money"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-finance-and-investment-risk-and-insurance",
-          "number": 2,
-          "title": "Risk & Insurance",
-          "shortTitle": "Risk & Insurance",
-          "bookId": "ku-business-economics-finance-and-investment",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-fin-insurance-risk-pooling",
-              "number": 2.1,
-              "title": "Insurance: Pooling Risk and Pricing It"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-finance-and-investment-money-and-markets",
-          "number": 3,
-          "title": "Money & Markets",
-          "shortTitle": "Money & Markets",
-          "bookId": "ku-business-economics-finance-and-investment",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-fin-banks-create-money",
-              "number": 3.1,
-              "title": "How Banks Create Money"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "ku-business-economics-macroeconomics",
       "name": "Macroeconomics",
       "group": "Business & Economics",
@@ -31161,6 +31246,66 @@
       ]
     },
     {
+      "id": "ku-health-wellness-public-health",
+      "name": "Public Health",
+      "group": "Health & Wellness",
+      "tagline": "Health at scale",
+      "chapterCount": 3,
+      "sectionCount": 4,
+      "chapters": [
+        {
+          "id": "ku-health-wellness-public-health-health-behavior",
+          "number": 1,
+          "title": "Health Behavior",
+          "shortTitle": "Health Behavior",
+          "bookId": "ku-health-wellness-public-health",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-health-behavior-medical-care",
+              "number": 1.1,
+              "title": "Health Behavior and Medical Care: Models of Change and the Context of Care"
+            }
+          ]
+        },
+        {
+          "id": "ku-health-wellness-public-health-epidemiology",
+          "number": 2,
+          "title": "Epidemiology",
+          "shortTitle": "Epidemiology",
+          "bookId": "ku-health-wellness-public-health",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-health-herd-immunity-r0",
+              "number": 2.1,
+              "title": "Herd Immunity and R₀"
+            },
+            {
+              "id": "ku-epidem-outbreak-investigation",
+              "number": 2.2,
+              "title": "How Outbreaks Are Investigated: Field Epidemiology"
+            }
+          ]
+        },
+        {
+          "id": "ku-health-wellness-public-health-immunization-science",
+          "number": 3,
+          "title": "Immunization Science",
+          "shortTitle": "Immunization Science",
+          "bookId": "ku-health-wellness-public-health",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-health-vaccines-how-work",
+              "number": 3.1,
+              "title": "How Vaccines Train the Immune System"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-health-wellness-sleep-science",
       "name": "Sleep Science",
       "group": "Health & Wellness",
@@ -31235,51 +31380,6 @@
               "id": "ku-fit-aerobic-fitness-vo2max",
               "number": 2.1,
               "title": "Aerobic Fitness: VO₂ Max, Training Zones and Why Cardio Works"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-health-wellness-public-health",
-      "name": "Public Health",
-      "group": "Health & Wellness",
-      "tagline": "Health at scale",
-      "chapterCount": 2,
-      "sectionCount": 3,
-      "chapters": [
-        {
-          "id": "ku-health-wellness-public-health-epidemiology",
-          "number": 1,
-          "title": "Epidemiology",
-          "shortTitle": "Epidemiology",
-          "bookId": "ku-health-wellness-public-health",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-health-herd-immunity-r0",
-              "number": 1.1,
-              "title": "Herd Immunity and R₀"
-            },
-            {
-              "id": "ku-epidem-outbreak-investigation",
-              "number": 1.2,
-              "title": "How Outbreaks Are Investigated: Field Epidemiology"
-            }
-          ]
-        },
-        {
-          "id": "ku-health-wellness-public-health-immunization-science",
-          "number": 2,
-          "title": "Immunization Science",
-          "shortTitle": "Immunization Science",
-          "bookId": "ku-health-wellness-public-health",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-health-vaccines-how-work",
-              "number": 2.1,
-              "title": "How Vaccines Train the Immune System"
             }
           ]
         }

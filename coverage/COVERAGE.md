@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 190
-- **Books (master volumes):** 190
-- **Chapters:** 857
-- **Sections (lessons):** 4439
+- **Subjects:** 192
+- **Books (master volumes):** 192
+- **Chapters:** 862
+- **Sections (lessons):** 4445
 
 ## Foundations — 5 subjects
 
@@ -805,7 +805,13 @@
 
 - **Ch 1. Expertise Science** `ku-foundation-learning-skill-acquisition-expertise-science` — 1 sections: Deliberate Practice: The Anatomy of Getting Good
 
-## Physical Sciences — 5 subjects
+## Physical Sciences — 6 subjects
+
+### Chemistry (`ku-physical-sciences-chemistry`)
+
+*Molecules and change* — 1 chapters · 1 sections
+
+- **Ch 1. Analytical Chemistry** `ku-physical-sciences-chemistry-analytical-chemistry` — 1 sections: Reactions of Ions in Aqueous Solution: Qualitative Tests and Volumetric Analysis
 
 ### Astronomy & Space Science (`ku-physical-sciences-astronomy-and-space-science`)
 
@@ -1145,13 +1151,13 @@
 
 ### Political Science (`ku-social-sciences-political-science`)
 
-*Power and cooperation* — 6 chapters · 8 sections
+*Power and cooperation* — 6 chapters · 9 sections
 
-- **Ch 1. International Relations** `ku-social-sciences-political-science-international-relations` — 2 sections: After the Cold War: Hegemony, Rival Poles and the Global Commons; Why Nations Fight and Trade: International Relations Theory
-- **Ch 2. Indian Polity** `ku-social-sciences-political-science-indian-polity` — 2 sections: India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations; The Indian Constitution: Rights, Parliament and Federalism
-- **Ch 3. Rational Choice Theory** `ku-social-sciences-political-science-rational-choice-theory` — 1 sections: Game Theory of Cooperation: The Prisoner’s Dilemma
-- **Ch 4. Public Choice** `ku-social-sciences-political-science-public-choice` — 1 sections: Collective Action and the Tragedy of the Commons
-- **Ch 5. Comparative Politics** `ku-social-sciences-political-science-comparative-politics` — 1 sections: Democracies, Autocracies and Everything in Between
+- **Ch 1. Comparative Politics** `ku-social-sciences-political-science-comparative-politics` — 2 sections: Democratic Government in Action: Japan’s Parliamentary System and Contemporary Society; Democracies, Autocracies and Everything in Between
+- **Ch 2. International Relations** `ku-social-sciences-political-science-international-relations` — 2 sections: After the Cold War: Hegemony, Rival Poles and the Global Commons; Why Nations Fight and Trade: International Relations Theory
+- **Ch 3. Indian Polity** `ku-social-sciences-political-science-indian-polity` — 2 sections: India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations; The Indian Constitution: Rights, Parliament and Federalism
+- **Ch 4. Rational Choice Theory** `ku-social-sciences-political-science-rational-choice-theory` — 1 sections: Game Theory of Cooperation: The Prisoner’s Dilemma
+- **Ch 5. Public Choice** `ku-social-sciences-political-science-public-choice` — 1 sections: Collective Action and the Tragedy of the Commons
 - **Ch 6. Institutional Design** `ku-social-sciences-political-science-institutional-design` — 1 sections: Comparative Politics: Electoral Systems and Institutions
 
 ### Psychology (`ku-social-sciences-psychology`)
@@ -1226,10 +1232,11 @@
 
 ### History (`ku-humanities-history`)
 
-*The record of human meaning* — 2 chapters · 7 sections
+*The record of human meaning* — 3 chapters · 8 sections
 
-- **Ch 1. Indian History** `ku-humanities-history-indian-history` — 6 sections: Thinkers, Beliefs and Buildings: The Buddha, the Sangha and the Stupa; Through the Eyes of Travellers: Foreign Accounts and the Imperial Capital Vijayanagara; Peasants, Zamindars and the Colonial City: The Indian Countryside from the Mughals to the British; Ancient India: From the Vedic Age to the Guptas; Medieval India: Delhi Sultanate to the Mughals; Modern India and the Freedom Struggle: 1757 to 1947
-- **Ch 2. World History** `ku-humanities-history-world-history` — 1 sections: Nomadic Empires, Displaced Peoples and Paths to Modernisation
+- **Ch 1. East Asian History** `ku-humanities-history-east-asian-history` — 1 sections: Japan’s Economic History: From Edo Commerce to the International Economy
+- **Ch 2. Indian History** `ku-humanities-history-indian-history` — 6 sections: Thinkers, Beliefs and Buildings: The Buddha, the Sangha and the Stupa; Through the Eyes of Travellers: Foreign Accounts and the Imperial Capital Vijayanagara; Peasants, Zamindars and the Colonial City: The Indian Countryside from the Mughals to the British; Ancient India: From the Vedic Age to the Guptas; Medieval India: Delhi Sultanate to the Mughals; Modern India and the Freedom Struggle: 1757 to 1947
+- **Ch 3. World History** `ku-humanities-history-world-history` — 1 sections: Nomadic Empires, Displaced Peoples and Paths to Modernisation
 
 ### World History (`ku-humanities-world-history`)
 
@@ -1487,7 +1494,22 @@
 
 - **Ch 1. Legal Reasoning** `ku-law-governance-legal-method-legal-reasoning` — 1 sections: Legal Reasoning: Applying Principles to Facts
 
-## Business & Economics — 14 subjects
+## Business & Economics — 15 subjects
+
+### Political Economy (`ku-business-economics-political-economy`)
+
+*Markets, money and trade* — 1 chapters · 1 sections
+
+- **Ch 1. Japan: Economy and Society** `ku-business-economics-political-economy-japan-economy-and-society` — 1 sections: Economic Agents and the National Economy: Japan’s Markets, Finance and Public Finances
+
+### Finance & Investment (`ku-business-economics-finance-and-investment`)
+
+*Money across time* — 4 chapters · 4 sections
+
+- **Ch 1. Markets & Instruments** `ku-business-economics-finance-and-investment-markets-and-instruments` — 1 sections: Financial Markets: How Money and Capital Markets Move Savings to Investment
+- **Ch 2. Valuation Basics** `ku-business-economics-finance-and-investment-valuation-basics` — 1 sections: Compound Interest and the Time Value of Money
+- **Ch 3. Risk & Insurance** `ku-business-economics-finance-and-investment-risk-and-insurance` — 1 sections: Insurance: Pooling Risk and Pricing It
+- **Ch 4. Money & Markets** `ku-business-economics-finance-and-investment-money-and-markets` — 1 sections: How Banks Create Money
 
 ### Development Economics (`ku-business-economics-development-economics`)
 
@@ -1538,14 +1560,6 @@
 - **Ch 1. Costs & Production** `ku-business-economics-business-economics-costs-and-production` — 1 sections: Cost Concepts for Business Decisions
 - **Ch 2. Business Cycles** `ku-business-economics-business-economics-business-cycles` — 1 sections: Business Cycles: Phases, Causes and Consequences
 - **Ch 3. Public Finance** `ku-business-economics-business-economics-public-finance` — 1 sections: Taxation: Principles, Systems and India’s Structure
-
-### Finance & Investment (`ku-business-economics-finance-and-investment`)
-
-*Money across time* — 3 chapters · 3 sections
-
-- **Ch 1. Valuation Basics** `ku-business-economics-finance-and-investment-valuation-basics` — 1 sections: Compound Interest and the Time Value of Money
-- **Ch 2. Risk & Insurance** `ku-business-economics-finance-and-investment-risk-and-insurance` — 1 sections: Insurance: Pooling Risk and Pricing It
-- **Ch 3. Money & Markets** `ku-business-economics-finance-and-investment-money-and-markets` — 1 sections: How Banks Create Money
 
 ### Macroeconomics (`ku-business-economics-macroeconomics`)
 
@@ -1599,6 +1613,14 @@
 
 ## Health & Wellness — 10 subjects
 
+### Public Health (`ku-health-wellness-public-health`)
+
+*Health at scale* — 3 chapters · 4 sections
+
+- **Ch 1. Health Behavior** `ku-health-wellness-public-health-health-behavior` — 1 sections: Health Behavior and Medical Care: Models of Change and the Context of Care
+- **Ch 2. Epidemiology** `ku-health-wellness-public-health-epidemiology` — 2 sections: Herd Immunity and R₀; How Outbreaks Are Investigated: Field Epidemiology
+- **Ch 3. Immunization Science** `ku-health-wellness-public-health-immunization-science` — 1 sections: How Vaccines Train the Immune System
+
 ### Sleep Science (`ku-health-wellness-sleep-science`)
 
 *The night shift* — 2 chapters · 2 sections
@@ -1612,13 +1634,6 @@
 
 - **Ch 1. Exercise Physiology** `ku-health-wellness-exercise-and-fitness-exercise-physiology` — 1 sections: Hypertrophy: How Muscle Actually Grows
 - **Ch 2. Cardiovascular Fitness** `ku-health-wellness-exercise-and-fitness-cardiovascular-fitness` — 1 sections: Aerobic Fitness: VO₂ Max, Training Zones and Why Cardio Works
-
-### Public Health (`ku-health-wellness-public-health`)
-
-*Health at scale* — 2 chapters · 3 sections
-
-- **Ch 1. Epidemiology** `ku-health-wellness-public-health-epidemiology` — 2 sections: Herd Immunity and R₀; How Outbreaks Are Investigated: Field Epidemiology
-- **Ch 2. Immunization Science** `ku-health-wellness-public-health-immunization-science` — 1 sections: How Vaccines Train the Immune System
 
 ### Nutrition (`ku-health-wellness-nutrition`)
 
