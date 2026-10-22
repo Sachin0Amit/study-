@@ -392,5 +392,9 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // weaken/strengthen families are taught as its core method).
   'weakening arguments': 'eng-critical-reasoning-arguments',
   'strengthening arguments': 'eng-critical-reasoning-arguments',
+  // Gaokao biology regulation unit → the kidneys/endocrine lesson (internal
+  // environment, nervous-hormonal regulation and immunity are its concepts —
+  // the same coverage verified for the EJU phrasing above).
+  'homeostasis and regulation': 'bio-anatomy-kidneys-endocrine',
 }
 

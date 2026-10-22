@@ -3808,4 +3808,193 @@ export const INDIA_ENGINEERING_EXAMS: CuratedExam[] = [
       },
     ],
   },
+
+/* ------------------------------------------------------------------ */
+/*  VITEEE — added by the exam-syllabus deep-dive pass (2026-10-23).   */
+/*  Pattern and subject split verified against the official VITEEE     */
+/*  site (viteee.vit.ac.in — 100 MCQs, +4/-1, 2 hours; MPCEA maths     */
+/*  stream or BPCEA biology stream). Topic lists follow the official   */
+/*  VITEEE syllabus scope (Class 11-12 NCERT-based subject pages).     */
+/* ------------------------------------------------------------------ */
+  {
+    id: 'viteee',
+    name: 'VITEEE',
+    fullName: 'VIT Engineering Entrance Examination',
+    aliases: ['viteee exam', 'vit engineering entrance', 'vit entrance exam', 'vit vellore entrance'],
+    region: 'India',
+    category: 'Engineering entrance',
+    popularity: 62,
+    syllabusVerified: '2026-10-23',
+    website: 'https://viteee.vit.ac.in',
+    overview: {
+      conductor: 'Vellore Institute of Technology (VIT)',
+      level: 'Undergraduate B.Tech admission across VIT campuses (Vellore, Chennai, AP, Bhopal)',
+      stages: ['Single computer-based test session; candidates book a slot across the exam window (April-May)'],
+      papers: ['One 2-hour paper, 100 MCQs: Mathematics or Biology 40, Physics 25, Chemistry 25, Aptitude 5, English 5'],
+      duration: '120 minutes (Maths/Biology 50 min, Physics 30 min, Chemistry 30 min, English+Aptitude 10 min)',
+      marking: '+4 for each correct answer; 0 for unanswered; no marks above 125 are possible — the paper totals 400 marks across 100 questions',
+      negativeMarking: '−1 for each wrong answer',
+      questionTypes: ['MCQ only; each question carries 4 marks'],
+      notes:
+        'Two streams: MPCEA (Mathematics, Physics, Chemistry, Aptitude, English) for most B.Tech programmes and BPCEA (Biology replaces Mathematics) for biotechnology streams. There is no separate third subject choice — candidates attempt exactly one stream. Selection is rank-based across all VIT campuses.',
+    },
+    sources: [
+      { title: 'VITEEE official site — pattern, eligibility and syllabus links', url: 'https://viteee.vit.ac.in', host: 'viteee.vit.ac.in' },
+      { title: 'VITEEE syllabus page — subject-wise syllabus links', url: 'https://viteee.vit.ac.in/viteee-syllabus.html', host: 'viteee.vit.ac.in' },
+    ],
+    subjects: [
+      {
+        name: 'Mathematics',
+        mappedSubjectId: 'mathematics',
+        weightage: 40,
+        units: [
+          {
+            name: 'Algebra and Matrices',
+            topics: [
+              { name: 'Matrices and determinants', subtopics: ['Types, algebra, transpose and inverse', 'Determinant properties, adjoint, solving linear systems (Cramer)'] },
+              { name: 'Sets, relations and functions', subtopics: ['Set algebra, function composition, invertibility'] },
+              { name: 'Complex numbers and quadratics', subtopics: ['Argand plane, modulus-argument, roots of unity', 'Quadratic equations, nature of roots, symmetric functions of roots'] },
+              { name: 'Permutations, combinations and binomial theorem', subtopics: ['Counting, arrangements and selections', 'Binomial expansion, general and middle terms'] },
+              { name: 'Sequences, series and mathematical induction', subtopics: ['AP, GP, AGP sums, special series', 'Induction proofs'] },
+            ],
+          },
+          {
+            name: 'Trigonometry and Coordinate Geometry',
+            topics: [
+              { name: 'Trigonometry', subtopics: ['Identities and equations, multiple and sub-multiple angles', 'Inverse trigonometric functions, properties of triangles, heights and distances'] },
+              { name: 'Two-dimensional coordinate geometry', subtopics: ['Straight lines, pairs of lines, circles', 'Tangents, chords and radical axis'] },
+              { name: 'Conic sections', subtopics: ['Parabola, ellipse, hyperbola — equations, tangents and normals'] },
+              { name: 'Three-dimensional geometry and vectors', subtopics: ['Direction cosines, lines and planes', 'Vector algebra, dot and cross products, scalar triple product'] },
+            ],
+          },
+          {
+            name: 'Calculus and Probability',
+            topics: [
+              { name: 'Limits, continuity and differentiation', subtopics: ['Limit laws, continuity, differentiability', 'Derivative rules, implicit and parametric differentiation, tangents and normals, maxima and minima, rate problems'] },
+              { name: 'Integration and differential equations', subtopics: ['Standard integrals, substitution, by parts, partial fractions', 'Definite integrals and areas; first-order differential equations — variable separable and linear'] },
+              { name: 'Probability and statistics', subtopics: ['Addition and multiplication rules, conditional probability, Bayes theorem, random variables, mean and variance, binomial distribution'] },
+              { name: 'Discrete mathematics', subtopics: ['Logic statements and truth tables, groups as an algebraic structure'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Physics',
+        mappedSubjectId: 'physics',
+        weightage: 25,
+        units: [
+          {
+            name: 'Mechanics and Properties of Matter',
+            topics: [
+              { name: 'Laws of motion and friction', subtopics: ['Conservation of momentum, static, kinetic and rolling friction'] },
+              { name: 'Work, energy and power', subtopics: ['Work-energy theorem, conservative forces, energy conservation'] },
+              { name: 'Gravitation and solids', subtopics: ['Newton\'s law of gravitation, satellites; elasticity — stress-strain, Hooke\'s law, Poisson ratio'] },
+              { name: 'Fluids and heat', subtopics: ['Viscosity, Stokes\' law, terminal velocity, Bernoulli\'s theorem', 'Heat capacity, latent heat, blackbody radiation — Wien\'s and Stefan\'s laws, laws of thermodynamics'] },
+            ],
+          },
+          {
+            name: 'Electricity and Magnetism',
+            topics: [
+              { name: 'Electrostatics', subtopics: ['Coulomb\'s law and superposition, electric field and dipole', 'Potential and equipotentials, Gauss\'s law, capacitors and dielectrics'] },
+              { name: 'Current electricity', subtopics: ['Drift velocity, Ohm\'s law, resistivity-temperature, Kirchhoff\'s laws, Wheatstone bridge, potentiometer'] },
+              { name: 'Magnetic effects of current', subtopics: ['Biot-Savart and Ampere\'s laws, force on charges and conductors, moving-coil galvanometer'] },
+              { name: 'Electromagnetic induction and AC', subtopics: ['Faraday\'s and Lenz\'s laws, self and mutual inductance, AC circuits with R-L-C, resonance, transformers'] },
+            ],
+          },
+          {
+            name: 'Optics, Modern Physics and Electronics',
+            topics: [
+              { name: 'Ray and wave optics', subtopics: ['Mirrors, lenses, prisms; Huygens\' principle, interference — Young\'s double slit, diffraction, polarisation'] },
+              { name: 'Dual nature and atomic physics', subtopics: ['Electromagnetic waves and spectrum, photoelectric effect, atomic models and spectra'] },
+              { name: 'Nuclear physics', subtopics: ['Radioactivity — decay law and half-life, fission and fusion, binding energy'] },
+              { name: 'Semiconductor devices', subtopics: ['Energy bands, PN junction diode, Zener and LED, transistors as amplifier and switch, logic gates'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Chemistry',
+        mappedSubjectId: 'chemistry',
+        weightage: 25,
+        units: [
+          {
+            name: 'Physical Chemistry',
+            topics: [
+              { name: 'Atomic structure and periodicity', subtopics: ['Quantum numbers, orbitals, electronic configuration', 'Periodic trends — radius, ionisation energy, electronegativity'] },
+              { name: 'Chemical bonding and states', subtopics: ['Ionic and covalent bonding, VSEPR shapes, hybridisation, molecular orbital basics', 'Solid state — unit cells and packing; gaseous state — ideal and real gases'] },
+              { name: 'Thermodynamics, equilibrium and kinetics', subtopics: ['First law, enthalpy, Hess\'s law, Gibbs energy', 'Chemical and ionic equilibrium, pH, buffers, Ksp; rate laws, Arrhenius equation, catalysis; solutions and colligative properties'] },
+              { name: 'Electrochemistry and surface chemistry', subtopics: ['Galvanic cells, Nernst equation, electrolysis, Faraday\'s laws; adsorption, colloids, emulsions'] },
+            ],
+          },
+          {
+            name: 'Inorganic Chemistry',
+            topics: [
+              { name: 's-, p- and d-block elements', subtopics: ['Group trends, anomalous behaviour of the first element, transition-element chemistry — oxidation states, colour, catalysis'] },
+              { name: 'Coordination chemistry and metallurgy', subtopics: ['Nomenclature, isomerism, Werner and crystal-field basics', 'Extraction principles — concentration, reduction, refining of common metals'] },
+            ],
+          },
+          {
+            name: 'Organic Chemistry',
+            topics: [
+              { name: 'Fundamentals and hydrocarbons', subtopics: ['Nomenclature, isomerism, electronic effects — induction, resonance, hyperconjugation', 'Alkanes, alkenes, alkynes and benzene — preparations and characteristic reactions, aromatic substitution'] },
+              { name: 'Functional groups and biomolecules', subtopics: ['Haloalkanes, alcohols, phenols, ethers, aldehydes, ketones, carboxylic acids, amines — preparations and conversions', 'Carbohydrates, proteins and vitamins — classification and properties; polymers; environmental chemistry basics'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Aptitude',
+        mappedSubjectId: 'aptitude',
+        weightage: 5,
+        units: [
+          {
+            name: 'Reasoning and Data',
+            topics: [
+              { name: 'Data interpretation', subtopics: ['Reading tables, bar charts, line graphs and pie charts; percentage-change and comparison questions'] },
+              { name: 'Logical reasoning', subtopics: ['Series and patterns, coding-decoding, blood relations, direction sense, syllogism-style deductions'] },
+              { name: 'Sets, functions and relations basics', subtopics: ['Applied set reasoning, simple mapping and matching questions'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'English',
+        mappedSubjectId: 'english',
+        weightage: 5,
+        units: [
+          {
+            name: 'Comprehension and Grammar',
+            topics: [
+              { name: 'Reading comprehension', subtopics: ['Short passages — main idea, detail, inference, vocabulary in context'] },
+              { name: 'Grammar and usage', subtopics: ['Tenses, articles, prepositions, subject-verb agreement, common errors, sentence completion'] },
+              { name: 'Vocabulary and dialogue', subtopics: ['Synonyms, antonyms, word meanings in context, dialogue sequencing (English for communication)'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Biology (BPCEA stream)',
+        weightage: 40,
+        units: [
+          {
+            name: 'Diversity, Structure and Function',
+            topics: [
+              { name: 'Diversity of living organisms', subtopics: ['Classification — five kingdoms, plant and animal groups, viruses and lichens'] },
+              { name: 'Structural organisation', subtopics: ['Morphology and anatomy of flowering plants; animal tissues — frog as representative'] },
+              { name: 'Cell structure and function', subtopics: ['Cell organelles, biomolecules, cell cycle and division — mitosis and meiosis'] },
+              { name: 'Plant and human physiology', subtopics: ['Transport, mineral nutrition, photosynthesis, respiration, growth and hormones', 'Digestion, breathing, body fluids and circulation, excretion, locomotion, neural and chemical coordination'] },
+            ],
+          },
+          {
+            name: 'Genetics, Reproduction and Ecology',
+            topics: [
+              { name: 'Reproduction', subtopics: ['Reproduction in flowering plants and humans, reproductive health'] },
+              { name: 'Genetics and evolution', subtopics: ['Mendelian inheritance, chromosomes and DNA, molecular basis of inheritance, evolution — theories and evidence'] },
+              { name: 'Biology and human welfare, biotechnology, ecology', subtopics: ['Immunity and health, microbes in human welfare, biotechnology principles and applications, ecosystems, biodiversity and conservation, environmental issues'] },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]

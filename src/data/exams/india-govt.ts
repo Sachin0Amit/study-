@@ -846,4 +846,154 @@ export const INDIA_GOVT_EXAMS: CuratedExam[] = [
       },
     ],
   },
+
+/* ------------------------------------------------------------------ */
+/*  RBI Grade B — added by the exam-syllabus deep-dive pass            */
+/*  (2026-10-23). Phase-I sectional split (GA 80 / English 30 / Quant  */
+/*  30 / Reasoning 60, 200 marks, 120 min) and the Phase-II three-     */
+/*  paper scheme verified against rbi.org.in and the 2026 notification */
+/*  summary. Topic lists follow the notification's paper descriptions  */
+/*  as expanded in the official information handout.                   */
+/* ------------------------------------------------------------------ */
+  {
+    id: 'rbi-grade-b',
+    name: 'RBI Grade B',
+    fullName: 'Reserve Bank of India Grade B Officer (Direct Recruit) Examination',
+    aliases: ['rbi grade b exam', 'rbi officer grade b', 'rbi dr general', 'reserve bank grade b'],
+    region: 'India',
+    category: 'Banking & regulatory services',
+    popularity: 55,
+    syllabusVerified: '2026-10-23',
+    website: 'https://www.rbi.org.in',
+    overview: {
+      conductor: 'Reserve Bank of India (Services Board — RBI Services Board)',
+      level: 'Officer Grade B (Direct Recruit, General cadre) recruitment; separate DEPR/DSIM specialist cadres',
+      stages: ['Phase I — online objective examination (200 marks, 120 minutes)', 'Phase II — three online papers of 100 marks each (Economic & Social Issues; English — Writing Skills; Finance & Management)', 'Interview — 50 marks'],
+      papers: ['Phase I: General Awareness (80 Q / 80 marks), English Language (30 Q / 30), Quantitative Aptitude (30 Q / 30), Reasoning Ability (60 Q / 60)', 'Phase II: Paper I Economic & Social Issues, Paper II English (Writing Skills, descriptive), Paper III Finance & Management (objective + descriptive mix)'],
+      duration: 'Phase I: 120 minutes with sectional timings; Phase II: papers sat on one day (90-120 minutes per paper per recent cycles)',
+      marking: 'Phase I 200 marks; Phase II 300 marks; final merit from Phase II + Interview out of 350',
+      negativeMarking: '−0.25 for each wrong answer in objective papers (Phase I and Phase II objective sections)',
+      questionTypes: ['MCQ (5 options in Phase I)', 'Descriptive typed answers in Phase II Paper II and the descriptive parts of Papers I & III'],
+      notes:
+        'Minimum sectional and aggregate cut-offs apply in Phase I. The English Writing paper tests essay, précis and comprehension through keyboard typing. Current-affairs coverage for General Awareness runs roughly six months before the exam. DEPR (economics) and DSIM (statistics) cadres sit different papers — this syllabus covers the General cadre.',
+    },
+    sources: [
+      { title: 'Reserve Bank of India — recruitment for Officers Grade B (notification and scheme of selection)', url: 'https://www.rbi.org.in/scripts/bs_viewcontent.aspx?Id=2836', host: 'rbi.org.in' },
+      { title: 'RBI — Opportunities@RBI current recruitment pages (Phase I/II scheme and information handouts)', url: 'https://www.rbi.org.in/Scripts/bs_viewcontent.aspx?Id=3935', host: 'rbi.org.in' },
+    ],
+    subjects: [
+      {
+        name: 'General Awareness',
+        mappedSubjectId: 'aptitude',
+        weightage: 40,
+        units: [
+          {
+            name: 'Banking, Finance and Economy in News',
+            topics: [
+              { name: 'Indian banking and financial system', subtopics: ['Structure of scheduled commercial banks, payment banks, small finance banks, NBFCs and cooperatives', 'Recent mergers, licences, and regulatory actions in the news'] },
+              { name: 'Reserve Bank of India and monetary policy', subtopics: ['RBI functions and history, MPC and policy rates, liquidity operations, inflation targeting', 'Financial-market regulator roles — SEBI, IRDAI, PFRDA in the news'] },
+              { name: 'Current economic affairs', subtopics: ['Union budget and Economic Survey highlights, GDP and inflation data releases, government schemes, financial inclusion programmes'] },
+              { name: 'General current affairs', subtopics: ['National and international events, appointments, awards, sports, summits of the last six months, static GK essentials'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'English Language',
+        mappedSubjectId: 'english',
+        weightage: 15,
+        units: [
+          {
+            name: 'Objective English',
+            topics: [
+              { name: 'Reading comprehension', subtopics: ['Passages on economy, finance and society — main idea, inference, vocabulary in context'] },
+              { name: 'Grammar and usage', subtopics: ['Error spotting, sentence correction, phrase replacement, fill in the blanks'] },
+              { name: 'Verbal ability', subtopics: ['Cloze test, para jumbles and sentence rearrangement, word swap/word usage, connectors'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Quantitative Aptitude',
+        mappedSubjectId: 'mathematics',
+        weightage: 15,
+        units: [
+          {
+            name: 'Arithmetic and Data Interpretation',
+            topics: [
+              { name: 'Arithmetic', subtopics: ['Percentages, ratio and proportion, averages, profit and loss, simple and compound interest', 'Time and work, time-speed-distance, pipes and cisterns, mixtures and alligations, ages and partnerships'] },
+              { name: 'Data interpretation', subtopics: ['Tables, bar charts, line graphs, pie charts, caselets; quantity comparison and data sufficiency'] },
+              { name: 'Algebra and series', subtopics: ['Quadratic equations, number series (missing and wrong term), simplification and approximation, mensuration basics'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Reasoning Ability',
+        mappedSubjectId: 'aptitude',
+        weightage: 30,
+        units: [
+          {
+            name: 'Analytical and Logical Reasoning',
+            topics: [
+              { name: 'Puzzles and seating arrangements', subtopics: ['Linear and circular seating with variables, floor/box/scheduling puzzles, comparison puzzles'] },
+              { name: 'Deduction sets', subtopics: ['Syllogism, coded inequalities, blood relations, direction sense, order and ranking'] },
+              { name: 'Logical reasoning', subtopics: ['Statement and assumption, statement and course of action, cause and effect, input-output, alphanumeric and symbol series, data sufficiency'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Economic & Social Issues (Phase II Paper I)',
+        weightage: 25,
+        units: [
+          {
+            name: 'Growth, Development and the Indian Economy',
+            topics: [
+              { name: 'Growth and development', subtopics: ['Measurement of growth — national income and per capita income; development vs growth, HDI and capability approach'] },
+              { name: 'Poverty, inequality and employment', subtopics: ['Poverty lines and estimates, inequality measures, unemployment types, employment schemes and labour reforms'] },
+              { name: 'Sectoral structure and policy', subtopics: ['Agriculture, industry and services in the Indian economy; monetary and fiscal policy transmission; inflation management; balance of payments and exchange rate basics'] },
+              { name: 'Social structure and development', subtopics: ['Demographic trends, human development, education and health indicators, gender and social exclusion, multiculturalism and diversity of India, sustainable development and SDGs, climate and environment in development policy'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'English — Writing Skills (Phase II Paper II)',
+        mappedSubjectId: 'english',
+        weightage: 15,
+        units: [
+          {
+            name: 'Descriptive Writing',
+            topics: [
+              { name: 'Essay writing', subtopics: ['Structured essays on economic, financial and social themes — argument, evidence, conclusion'] },
+              { name: 'Précis and comprehension', subtopics: ['Condensing a passage to one-third with a title; comprehension questions with reasoned answers'] },
+              { name: 'Business correspondence', subtopics: ['Formal letters, office memos and email registers — banking and administrative contexts'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Finance & Management (Phase II Paper III)',
+        weightage: 30,
+        units: [
+          {
+            name: 'Finance',
+            topics: [
+              { name: 'Financial system', subtopics: ['Role of banks and NBFCs, financial markets — money, capital, forex; payment systems and fintech'] },
+              { name: 'Regulation and risk', subtopics: ['RBI regulation of banks, Basel norms and capital adequacy, asset classification and provisioning, risk management — credit, market, operational, liquidity'] },
+              { name: 'Monetary policy and inflation', subtopics: ['Inflation measurement and targeting, policy instruments, transmission; primary and secondary markets, basics of derivatives and financial inclusion instruments'] },
+            ],
+          },
+          {
+            name: 'Management',
+            topics: [
+              { name: 'Management and organisational behaviour', subtopics: ['Nature and functions of management, leadership styles, motivation theories — Maslow, Herzberg, McGregor'] },
+              { name: 'Communication, governance and ethics', subtopics: ['Communication process and barriers, corporate governance, ethics in institutions, conflict and stress management, HR basics — recruitment, appraisal, training'] },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]
