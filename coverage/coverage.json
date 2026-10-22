@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T12:59:34.300Z",
+  "generatedAt": "2026-10-22T18:50:27.414Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 197,
-    "books": 197,
-    "chapters": 868,
-    "sections": 4451
+    "subjects": 201,
+    "books": 201,
+    "chapters": 872,
+    "sections": 4455
   },
   "subjects": [
     {
@@ -26121,6 +26121,31 @@
       ]
     },
     {
+      "id": "ku-foundation-learning-logical-reasoning",
+      "name": "Logical Reasoning",
+      "group": "Foundation Learning",
+      "tagline": "Learn how to learn",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-foundation-learning-logical-reasoning-coded-inequalities",
+          "number": 1,
+          "title": "Coded Inequalities",
+          "shortTitle": "Coded Inequalities",
+          "bookId": "ku-foundation-learning-logical-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-reason-coded-inequalities",
+              "number": 1.1,
+              "title": "Coded Inequalities: Decoding Order Statements into Valid Conclusions"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-foundation-learning-study-skills-and-memory",
       "name": "Study Skills & Memory",
       "group": "Foundation Learning",
@@ -27371,6 +27396,56 @@
       ]
     },
     {
+      "id": "ku-mathematics-discrete-mathematics",
+      "name": "Discrete Mathematics",
+      "group": "Mathematics",
+      "tagline": "Mathematics",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-mathematics-discrete-mathematics-tournaments-and-fixtures",
+          "number": 1,
+          "title": "Tournaments & Fixtures",
+          "shortTitle": "Tournaments & Fixtures",
+          "bookId": "ku-mathematics-discrete-mathematics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-math-games-tournaments-tactics",
+              "number": 1.1,
+              "title": "Tournament Formats and Fixture Arithmetic: Knockouts, Round-Robins and Points Tables"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-mathematics-everyday-math-and-numeracy",
+      "name": "Everyday Math & Numeracy",
+      "group": "Mathematics",
+      "tagline": "Numbers in daily life",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-mathematics-everyday-math-and-numeracy-problem-formulation",
+          "number": 1,
+          "title": "Problem Formulation",
+          "shortTitle": "Problem Formulation",
+          "bookId": "ku-mathematics-everyday-math-and-numeracy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-math-formulating-real-life-problems",
+              "number": 1.1,
+              "title": "From Words to Equations: Formulating Real-Life Problems"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-mathematics-probability-and-statistics",
       "name": "Probability & Statistics",
       "group": "Mathematics",
@@ -28540,6 +28615,31 @@
               "id": "ku-soc-comparative-politics-institutions",
               "number": 6.1,
               "title": "Comparative Politics: Electoral Systems and Institutions"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-social-sciences-defence-studies",
+      "name": "Defence Studies",
+      "group": "Social Sciences",
+      "tagline": "Why people do what they do",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-social-sciences-defence-studies-organisation-of-the-armed-forces",
+          "number": 1,
+          "title": "Organisation of the Armed Forces",
+          "shortTitle": "Organisation of the Armed Forces",
+          "bookId": "ku-social-sciences-defence-studies",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-civ-india-defence-organisation",
+              "number": 1.1,
+              "title": "Organisation of the Armed Forces: India’s Defence Establishment"
             }
           ]
         }

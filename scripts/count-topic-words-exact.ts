@@ -13,6 +13,7 @@ import { x17ExamSyllabusTopics } from '../src/data/knowledge/fields/x17-exam-syl
 import { x19CivilCoreTopics } from '../src/data/knowledge/fields/x19-civil-core'
 import { x20FoundationsPassTopics } from '../src/data/knowledge/fields/x20-foundations-pass'
 import { x21SkillsPassTopics } from '../src/data/knowledge/fields/x21-skills-pass'
+import { x25TournamentReasoningCivicsPassTopics } from '../src/data/knowledge/fields/x25-tournament-reasoning-civics-pass'
 import { mathematics } from '../src/data/knowledge/fields/mathematics'
 import { technologyApplied } from '../src/data/knowledge/fields/technology-applied'
 import { computingAI } from '../src/data/knowledge/fields/computing-ai'
@@ -83,6 +84,10 @@ const IDS = [
   'math-reading-data-charts',
   'law-legal-history-milestones',
   'comp-office-productivity-software',
+  'math-games-tournaments-tactics',
+  'math-formulating-real-life-problems',
+  'reason-coded-inequalities',
+  'civ-india-defence-organisation',
   'bio-adaptations-habitat',
 ]
 
@@ -103,7 +108,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, computingAI]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, { topics: x25TournamentReasoningCivicsPassTopics } as any, computingAI]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)

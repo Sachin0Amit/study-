@@ -373,5 +373,24 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // GCE H2 biology control unit → the nervous-system lesson (nerve signaling
   // and reflex control; the hormonal half lives in bio-anatomy-kidneys-endocrine).
   'nervous and hormonal control': 'bio-anatomy-nervous-system-command',
+
+  /* ---- X25 pass (2026-10-23): single-token topics the token matcher
+     cannot connect (≥2 token hits required); each verified against the
+     target lesson's actual concepts ---- */
+  // BITSAT maths "Formulation" (single token) → the word-problem
+  // formulation lesson (variable naming, translation vocabulary, the
+  // five-step strategy are its named concepts).
+  'formulation': 'math-formulating-real-life-problems',
+  // Reasoning "Inequality" (single token) → the coded-inequalities lesson
+  // (decode maps, chains, breaking points, either-or pairs are its concepts).
+  'inequality': 'reason-coded-inequalities',
+  // CDS general-knowledge unit → the defence-organisation lesson (five MoD
+  // departments, CDS/DMA/IDS, service commands are its named concepts).
+  'indian armed forces and defence organisation': 'civ-india-defence-organisation',
+  // LSAT logical-reasoning question types → the critical-reasoning lesson
+  // ("Strengthen and weaken: the evidence gap" is a named concept; the
+  // weaken/strengthen families are taught as its core method).
+  'weakening arguments': 'eng-critical-reasoning-arguments',
+  'strengthening arguments': 'eng-critical-reasoning-arguments',
 }
 

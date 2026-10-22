@@ -2,6 +2,7 @@ import type { KnowledgeDomainFile } from '../types'
 import { x17ExamSyllabusTopics } from './x17-exam-syllabus'
 import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
+import { x25TournamentReasoningCivicsPassTopics } from './x25-tournament-reasoning-civics-pass'
 
 export const socialSciences: KnowledgeDomainFile = {
   domain: 'Social Sciences',
@@ -14,6 +15,9 @@ export const socialSciences: KnowledgeDomainFile = {
     // X23 gap pass (2026-10-22): Japan's parliamentary system + contemporary
     // society — comparative-politics territory no earlier lesson owned.
     ...x23JapanGapPassTopics.filter((t) => t.domain === 'Social Sciences'),
+    // X25 pass (2026-10-23): organisation of the armed forces — the defence
+    // establishment (departments, CDS/DMA/IDS, commands) no lesson owns.
+    ...x25TournamentReasoningCivicsPassTopics.filter((t) => t.domain === 'Social Sciences'),
     // X17 exam-syllabus pass (2026-10-21): NCERT Contemporary World Politics
     // and Politics in India Since Independence, scoped against pol-ir-theory
     // (theory) and soc-indian-constitution-polity (institutions).

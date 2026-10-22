@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 197
-- **Books (master volumes):** 197
-- **Chapters:** 868
-- **Sections (lessons):** 4451
+- **Subjects:** 201
+- **Books (master volumes):** 201
+- **Chapters:** 872
+- **Sections (lessons):** 4455
 
 ## Foundations — 5 subjects
 
@@ -759,7 +759,7 @@
 - **Ch 5. Mechatronic System Design & Modeling** `mech-modeling` — 6 sections: The Mechatronic Design Process; System Modeling Across Domains; Time & Frequency Domain Response; Controllers for Mechatronic Plants; Simulation-Driven Design & Digital Twins; Case Studies
 - **Ch 6. Mobile & Autonomous Robotics** `mech-mobile-robotics` — 6 sections: Locomotion Concepts; Localization & Mapping Fundamentals; Path Planning; Navigation Stacks & Obstacle Avoidance; Robot Programming Frameworks; Ethics & Safety of Autonomous Systems
 
-## Foundation Learning — 7 subjects
+## Foundation Learning — 8 subjects
 
 ### Science & Inquiry Skills (`ku-foundation-learning-science-and-inquiry-skills`)
 
@@ -778,6 +778,12 @@
 *Learn how to learn* — 1 chapters · 1 sections
 
 - **Ch 1. Figural Patterns** `ku-foundation-learning-nonverbal-reasoning-figural-patterns` — 1 sections: Nonverbal Reasoning: Shape Attributes, Series and Rule Detection
+
+### Logical Reasoning (`ku-foundation-learning-logical-reasoning`)
+
+*Learn how to learn* — 1 chapters · 1 sections
+
+- **Ch 1. Coded Inequalities** `ku-foundation-learning-logical-reasoning-coded-inequalities` — 1 sections: Coded Inequalities: Decoding Order Statements into Valid Conclusions
 
 ### Study Skills & Memory (`ku-foundation-learning-study-skills-and-memory`)
 
@@ -969,7 +975,7 @@
 
 - **Ch 1. Reproductive Biology** `ku-life-sciences-human-physiology-reproductive-biology` — 1 sections: Human Reproduction: Systems, Gametes and the Menstrual Cycle
 
-## Mathematics — 2 subjects
+## Mathematics — 4 subjects
 
 ### Mathematics (`ku-mathematics-mathematics`)
 
@@ -977,6 +983,18 @@
 
 - **Ch 1. Statistics — Describing Distributions** `ku-mathematics-mathematics-statistics-describing-distributions` — 1 sections: Quartiles, Cumulative Frequency and Box Plots
 - **Ch 2. Data Interpretation** `ku-mathematics-mathematics-data-interpretation` — 1 sections: Reading Data: Bar Charts, Line Graphs, Pie Charts and Combined Sources
+
+### Discrete Mathematics (`ku-mathematics-discrete-mathematics`)
+
+*Mathematics* — 1 chapters · 1 sections
+
+- **Ch 1. Tournaments & Fixtures** `ku-mathematics-discrete-mathematics-tournaments-and-fixtures` — 1 sections: Tournament Formats and Fixture Arithmetic: Knockouts, Round-Robins and Points Tables
+
+### Everyday Math & Numeracy (`ku-mathematics-everyday-math-and-numeracy`)
+
+*Numbers in daily life* — 1 chapters · 1 sections
+
+- **Ch 1. Problem Formulation** `ku-mathematics-everyday-math-and-numeracy-problem-formulation` — 1 sections: From Words to Equations: Formulating Real-Life Problems
 
 ### Probability & Statistics (`ku-mathematics-probability-and-statistics`)
 
@@ -1166,7 +1184,7 @@
 
 - **Ch 1. Machines of Daily Life** `ku-technology-applied-everyday-machines-machines-of-daily-life` — 2 sections: Elevators and Escalators: The Vertical City; Timekeeping: How Humans Measure Time
 
-## Social Sciences — 11 subjects
+## Social Sciences — 12 subjects
 
 ### Geography (`ku-social-sciences-geography`)
 
@@ -1184,6 +1202,12 @@
 - **Ch 4. Rational Choice Theory** `ku-social-sciences-political-science-rational-choice-theory` — 1 sections: Game Theory of Cooperation: The Prisoner’s Dilemma
 - **Ch 5. Public Choice** `ku-social-sciences-political-science-public-choice` — 1 sections: Collective Action and the Tragedy of the Commons
 - **Ch 6. Institutional Design** `ku-social-sciences-political-science-institutional-design` — 1 sections: Comparative Politics: Electoral Systems and Institutions
+
+### Defence Studies (`ku-social-sciences-defence-studies`)
+
+*Why people do what they do* — 1 chapters · 1 sections
+
+- **Ch 1. Organisation of the Armed Forces** `ku-social-sciences-defence-studies-organisation-of-the-armed-forces` — 1 sections: Organisation of the Armed Forces: India’s Defence Establishment
 
 ### Psychology (`ku-social-sciences-psychology`)
 

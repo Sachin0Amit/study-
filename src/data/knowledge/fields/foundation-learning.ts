@@ -7,6 +7,7 @@
 
 import type { KnowledgeDomainFile } from '../types'
 import { x21SkillsPassTopics } from './x21-skills-pass'
+import { x25TournamentReasoningCivicsPassTopics } from './x25-tournament-reasoning-civics-pass'
 
 export const foundationLearning: KnowledgeDomainFile = {
   domain: 'Foundation Learning',
@@ -16,6 +17,9 @@ export const foundationLearning: KnowledgeDomainFile = {
     // X21 skills pass (2026-10-22): experimental design & hypothesis ladder,
     // situational judgement, nonverbal reasoning (inquiry/judgement gaps).
     ...x21SkillsPassTopics.filter((t) => t.domain === 'Foundation Learning'),
+    // X25 pass (2026-10-23): coded inequalities — order-reasoning under
+    // symbol substitution; no reasoning lesson owns the coded format.
+    ...x25TournamentReasoningCivicsPassTopics.filter((t) => t.domain === 'Foundation Learning'),
     // ------------------------------------------------------------------
     {
       id: 'fnd-spaced-repetition',
