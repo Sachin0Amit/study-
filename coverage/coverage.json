@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T18:50:27.414Z",
+  "generatedAt": "2026-10-23T01:21:48.863Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 201,
-    "books": 201,
-    "chapters": 872,
-    "sections": 4455
+    "subjects": 205,
+    "books": 205,
+    "chapters": 878,
+    "sections": 4461
   },
   "subjects": [
     {
@@ -27356,6 +27356,31 @@
       ]
     },
     {
+      "id": "ku-mathematics-geometry-and-measurement",
+      "name": "Geometry & Measurement",
+      "group": "Mathematics",
+      "tagline": "Mathematics",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-mathematics-geometry-and-measurement-mensuration",
+          "number": 1,
+          "title": "Mensuration",
+          "shortTitle": "Mensuration",
+          "bookId": "ku-mathematics-geometry-and-measurement",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-math-measurement-areas-volumes",
+              "number": 1.1,
+              "title": "Mensuration and Calculation: Perimeter, Area, Surface Area and Volume"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-mathematics-mathematics",
       "name": "Mathematics",
       "group": "Mathematics",
@@ -29521,6 +29546,31 @@
       ]
     },
     {
+      "id": "ku-languages-literature-professional-writing",
+      "name": "Professional Writing",
+      "group": "Languages & World Literature",
+      "tagline": "How languages live and grow",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-professional-writing-correspondence-and-pr-cis",
+          "number": 1,
+          "title": "Correspondence & Précis",
+          "shortTitle": "Correspondence & Précis",
+          "bookId": "ku-languages-literature-professional-writing",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-business-correspondence",
+              "number": 1.1,
+              "title": "Business Correspondence: Formal Letters, Memos, Email and the Précis"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-languages-literature-grammar-and-mechanics",
       "name": "Grammar & Mechanics",
       "group": "Languages & World Literature",
@@ -30716,6 +30766,111 @@
       ]
     },
     {
+      "id": "ku-business-economics-banking-and-finance",
+      "name": "Banking & Finance",
+      "group": "Business & Economics",
+      "tagline": "Markets, money and trade",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-business-economics-banking-and-finance-indian-financial-system",
+          "number": 1,
+          "title": "Indian Financial System",
+          "shortTitle": "Indian Financial System",
+          "bookId": "ku-business-economics-banking-and-finance",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-indian-banking-financial-system",
+              "number": 1.1,
+              "title": "Indian Banking and the Financial System: Structure, Regulators and Payment Rails"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-development-economics",
+      "name": "Development Economics",
+      "group": "Business & Economics",
+      "tagline": "Markets, money and trade",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-business-economics-development-economics-poverty-and-labour",
+          "number": 1,
+          "title": "Poverty & Labour",
+          "shortTitle": "Poverty & Labour",
+          "bookId": "ku-business-economics-development-economics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-poverty-inequality-employment-india",
+              "number": 1.1,
+              "title": "Poverty, Inequality and Employment in India: Lines, Measures and the Jobs Ledger"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-development-economics-india-and-comparative-development",
+          "number": 2,
+          "title": "India & Comparative Development",
+          "shortTitle": "India & Comparative Development",
+          "bookId": "ku-business-economics-development-economics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-india-development-challenges",
+              "number": 2.1,
+              "title": "Human Capital, Employment and Comparative Development: India's Agenda"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-management",
+      "name": "Management",
+      "group": "Business & Economics",
+      "tagline": "Markets, money and trade",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-business-economics-management-organisational-behaviour",
+          "number": 1,
+          "title": "Organisational Behaviour",
+          "shortTitle": "Organisational Behaviour",
+          "bookId": "ku-business-economics-management",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-management-organisational-behaviour",
+              "number": 1.1,
+              "title": "Management and Organisational Behaviour: Functions, Motivation and Leadership"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-management-communication-governance-and-ethics",
+          "number": 2,
+          "title": "Communication, Governance & Ethics",
+          "shortTitle": "Communication, Governance & Ethics",
+          "bookId": "ku-business-economics-management",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-communication-governance-ethics",
+              "number": 2.1,
+              "title": "Business Communication, Corporate Governance and Ethics: The Institutional Layer"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-business-economics-political-economy",
       "name": "Political Economy",
       "group": "Business & Economics",
@@ -30805,31 +30960,6 @@
               "id": "ku-fin-banks-create-money",
               "number": 4.1,
               "title": "How Banks Create Money"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-business-economics-development-economics",
-      "name": "Development Economics",
-      "group": "Business & Economics",
-      "tagline": "Markets, money and trade",
-      "chapterCount": 1,
-      "sectionCount": 1,
-      "chapters": [
-        {
-          "id": "ku-business-economics-development-economics-india-and-comparative-development",
-          "number": 1,
-          "title": "India & Comparative Development",
-          "shortTitle": "India & Comparative Development",
-          "bookId": "ku-business-economics-development-economics",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-econ-india-development-challenges",
-              "number": 1.1,
-              "title": "Human Capital, Employment and Comparative Development: India's Agenda"
             }
           ]
         }

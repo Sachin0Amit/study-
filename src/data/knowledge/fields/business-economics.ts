@@ -4,12 +4,18 @@ import { x15BusinessLawTopics } from './x15-business-law'
 import { x18ExamPassTopics } from './x18-exam-pass'
 import { x20FoundationsPassTopics } from './x20-foundations-pass'
 import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
+import { x26BankingManagementPassTopics } from './x26-banking-management-pass'
 
 export const businessEconomics: KnowledgeDomainFile = {
   domain: 'Business & Economics',
   blurb:
     'Markets, money and organisations — the logic of prices, trade, investment and value creation.',
   topics: [
+    // X26 pass (2026-10-23): Indian banking institutional structure, poverty/
+    // employment measurement, management & OB, communication/governance/ethics.
+    // Applies the policy instruments the monetary-policy lesson owns and the
+    // human-capital frame the development lesson owns — no overlap.
+    ...x26BankingManagementPassTopics.filter((t) => t.domain === 'Business & Economics'),
     // X23 gap pass (2026-10-22): Japan's economic agents/national economy +
     // financial-markets structure. Applies (does not re-teach) the theory the
     // macro/fiscal/monetary and TVM lessons own.

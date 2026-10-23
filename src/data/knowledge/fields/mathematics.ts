@@ -8,12 +8,17 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 import { x25TournamentReasoningCivicsPassTopics } from './x25-tournament-reasoning-civics-pass'
+import { x26BankingManagementPassTopics } from './x26-banking-management-pass'
 
 export const mathematics: KnowledgeDomainFile = {
   domain: 'Mathematics',
   blurb:
     'Calculus, probability, and linear algebra — the language of change, evidence, and structure.',
   topics: [
+    // X26 pass (2026-10-23): applied mensuration — perimeter/area/surface
+    // area/volume, sectors, composites, unit conversion (applies, does not
+    // re-teach, the masters geometry axioms).
+    ...x26BankingManagementPassTopics.filter((t) => t.domain === 'Mathematics'),
     // X24 gap-closing pass (2026-10-22): quartiles/cumulative-frequency/box
     // plots + DI chart reading — graphical description no master volume owns.
     ...x24GapClosingPassTopics.filter((t) => t.domain === 'Mathematics'),

@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 201
-- **Books (master volumes):** 201
-- **Chapters:** 872
-- **Sections (lessons):** 4455
+- **Subjects:** 205
+- **Books (master volumes):** 205
+- **Chapters:** 878
+- **Sections (lessons):** 4461
 
 ## Foundations — 5 subjects
 
@@ -975,7 +975,13 @@
 
 - **Ch 1. Reproductive Biology** `ku-life-sciences-human-physiology-reproductive-biology` — 1 sections: Human Reproduction: Systems, Gametes and the Menstrual Cycle
 
-## Mathematics — 4 subjects
+## Mathematics — 5 subjects
+
+### Geometry & Measurement (`ku-mathematics-geometry-and-measurement`)
+
+*Mathematics* — 1 chapters · 1 sections
+
+- **Ch 1. Mensuration** `ku-mathematics-geometry-and-measurement-mensuration` — 1 sections: Mensuration and Calculation: Perimeter, Area, Surface Area and Volume
 
 ### Mathematics (`ku-mathematics-mathematics`)
 
@@ -1328,7 +1334,13 @@
 - **Ch 1. Eastern Traditions** `ku-humanities-religious-studies-eastern-traditions` — 1 sections: Hinduism, Buddhism and the Eastern Traditions
 - **Ch 2. Western Traditions** `ku-humanities-religious-studies-western-traditions` — 1 sections: Judaism, Christianity and Islam: The Abrahamic Faiths
 
-## Languages & World Literature — 21 subjects
+## Languages & World Literature — 22 subjects
+
+### Professional Writing (`ku-languages-literature-professional-writing`)
+
+*How languages live and grow* — 1 chapters · 1 sections
+
+- **Ch 1. Correspondence & Précis** `ku-languages-literature-professional-writing-correspondence-and-pr-cis` — 1 sections: Business Correspondence: Formal Letters, Memos, Email and the Précis
 
 ### Grammar & Mechanics (`ku-languages-literature-grammar-and-mechanics`)
 
@@ -1549,7 +1561,27 @@
 
 - **Ch 1. Legal Reasoning** `ku-law-governance-legal-method-legal-reasoning` — 1 sections: Legal Reasoning: Applying Principles to Facts
 
-## Business & Economics — 15 subjects
+## Business & Economics — 17 subjects
+
+### Banking & Finance (`ku-business-economics-banking-and-finance`)
+
+*Markets, money and trade* — 1 chapters · 1 sections
+
+- **Ch 1. Indian Financial System** `ku-business-economics-banking-and-finance-indian-financial-system` — 1 sections: Indian Banking and the Financial System: Structure, Regulators and Payment Rails
+
+### Development Economics (`ku-business-economics-development-economics`)
+
+*Markets, money and trade* — 2 chapters · 2 sections
+
+- **Ch 1. Poverty & Labour** `ku-business-economics-development-economics-poverty-and-labour` — 1 sections: Poverty, Inequality and Employment in India: Lines, Measures and the Jobs Ledger
+- **Ch 2. India & Comparative Development** `ku-business-economics-development-economics-india-and-comparative-development` — 1 sections: Human Capital, Employment and Comparative Development: India's Agenda
+
+### Management (`ku-business-economics-management`)
+
+*Markets, money and trade* — 2 chapters · 2 sections
+
+- **Ch 1. Organisational Behaviour** `ku-business-economics-management-organisational-behaviour` — 1 sections: Management and Organisational Behaviour: Functions, Motivation and Leadership
+- **Ch 2. Communication, Governance & Ethics** `ku-business-economics-management-communication-governance-and-ethics` — 1 sections: Business Communication, Corporate Governance and Ethics: The Institutional Layer
 
 ### Political Economy (`ku-business-economics-political-economy`)
 
@@ -1565,12 +1597,6 @@
 - **Ch 2. Valuation Basics** `ku-business-economics-finance-and-investment-valuation-basics` — 1 sections: Compound Interest and the Time Value of Money
 - **Ch 3. Risk & Insurance** `ku-business-economics-finance-and-investment-risk-and-insurance` — 1 sections: Insurance: Pooling Risk and Pricing It
 - **Ch 4. Money & Markets** `ku-business-economics-finance-and-investment-money-and-markets` — 1 sections: How Banks Create Money
-
-### Development Economics (`ku-business-economics-development-economics`)
-
-*Markets, money and trade* — 1 chapters · 1 sections
-
-- **Ch 1. India & Comparative Development** `ku-business-economics-development-economics-india-and-comparative-development` — 1 sections: Human Capital, Employment and Comparative Development: India's Agenda
 
 ### Foundations of Economics (`ku-business-economics-foundations-of-economics`)
 

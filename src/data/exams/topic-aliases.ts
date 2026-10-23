@@ -396,5 +396,20 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // environment, nervous-hormonal regulation and immunity are its concepts —
   // the same coverage verified for the EJU phrasing above).
   'homeostasis and regulation': 'bio-anatomy-kidneys-endocrine',
+  // X26 pass (2026-10-23) singles, verified against target lessons' concepts:
+  // EJU maths 'Figures and measurements' → the mensuration lesson (perimeter,
+  // area, volume, unit conversion are its concepts; the topic name is EJU's
+  // phrasing for applied measurement).
+  'figures and measurements': 'math-measurement-areas-volumes',
+  // GATE-EE 'Compensation' (control systems) → the feedback-control lesson
+  // (P/I/D action, tuning, stability — controller design IS compensation in
+  // the control-systems sense; verified against its named concepts).
+  'compensation': 'eng-feedback-control-pid-tuning',
+  // IBPS-PO 'Fill in the Blanks' and GRE 'Multi-Blank Completions' → the
+  // cohesion/lexical-resource lesson (collocation, paraphrase, referencing
+  // and grammatical range are exactly the skills these blank-filling formats
+  // test; verified against its named concepts).
+  'fill in the blanks': 'eng-cohesion-lexical-accuracy',
+  'multi blank completions': 'eng-cohesion-lexical-accuracy',
 }
 
