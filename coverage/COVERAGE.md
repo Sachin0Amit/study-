@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 205
-- **Books (master volumes):** 205
-- **Chapters:** 878
-- **Sections (lessons):** 4461
+- **Subjects:** 206
+- **Books (master volumes):** 206
+- **Chapters:** 879
+- **Sections (lessons):** 4466
 
 ## Foundations — 5 subjects
 
@@ -975,7 +975,13 @@
 
 - **Ch 1. Reproductive Biology** `ku-life-sciences-human-physiology-reproductive-biology` — 1 sections: Human Reproduction: Systems, Gametes and the Menstrual Cycle
 
-## Mathematics — 5 subjects
+## Mathematics — 6 subjects
+
+### Calculus (`ku-mathematics-calculus`)
+
+*Mathematics* — 1 chapters · 3 sections
+
+- **Ch 1. Differential Calculus** `ku-mathematics-calculus-differential-calculus` — 3 sections: Removing Discontinuities: Finding and Filling the Holes; Linearization and Differentials: The Tangent as a Calculator; Concavity and the Second Derivative Test
 
 ### Geometry & Measurement (`ku-mathematics-geometry-and-measurement`)
 
@@ -1285,6 +1291,14 @@
 
 ## Humanities — 6 subjects
 
+### World History (`ku-humanities-world-history`)
+
+*How the world connected* — 3 chapters · 11 sections
+
+- **Ch 1. The Modern Age** `ku-humanities-world-history-the-modern-age` — 7 sections: Aggression and National Salvation: China, 1840–1949; The People’s Republic since 1949: Leap, Turmoil and Reform; The World Wars: Causes, Courses and Consequences; Decolonization and the Making of the Global South; The American Revolution and the Founding of the Republic; The Civil War and Reconstruction; The Civil Rights Movement
+- **Ch 2. Economic History** `ku-humanities-world-history-economic-history` — 2 sections: The Silk Road: Exchange Before Globalization; The Industrial Revolution and Its Discontents
+- **Ch 3. The Ancient World** `ku-humanities-world-history-the-ancient-world` — 2 sections: The First Civilizations: Mesopotamia, Egypt and the Indus; Greece and Rome: The Classical Inheritance
+
 ### History (`ku-humanities-history`)
 
 *The record of human meaning* — 3 chapters · 8 sections
@@ -1292,14 +1306,6 @@
 - **Ch 1. East Asian History** `ku-humanities-history-east-asian-history` — 1 sections: Japan’s Economic History: From Edo Commerce to the International Economy
 - **Ch 2. Indian History** `ku-humanities-history-indian-history` — 6 sections: Thinkers, Beliefs and Buildings: The Buddha, the Sangha and the Stupa; Through the Eyes of Travellers: Foreign Accounts and the Imperial Capital Vijayanagara; Peasants, Zamindars and the Colonial City: The Indian Countryside from the Mughals to the British; Ancient India: From the Vedic Age to the Guptas; Medieval India: Delhi Sultanate to the Mughals; Modern India and the Freedom Struggle: 1757 to 1947
 - **Ch 3. World History** `ku-humanities-history-world-history` — 1 sections: Nomadic Empires, Displaced Peoples and Paths to Modernisation
-
-### World History (`ku-humanities-world-history`)
-
-*How the world connected* — 3 chapters · 9 sections
-
-- **Ch 1. Economic History** `ku-humanities-world-history-economic-history` — 2 sections: The Silk Road: Exchange Before Globalization; The Industrial Revolution and Its Discontents
-- **Ch 2. The Ancient World** `ku-humanities-world-history-the-ancient-world` — 2 sections: The First Civilizations: Mesopotamia, Egypt and the Indus; Greece and Rome: The Classical Inheritance
-- **Ch 3. The Modern Age** `ku-humanities-world-history-the-modern-age` — 5 sections: The World Wars: Causes, Courses and Consequences; Decolonization and the Making of the Global South; The American Revolution and the Founding of the Republic; The Civil War and Reconstruction; The Civil Rights Movement
 
 ### Philosophy (`ku-humanities-philosophy`)
 

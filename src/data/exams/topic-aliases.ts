@@ -411,5 +411,20 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // test; verified against its named concepts).
   'fill in the blanks': 'eng-cohesion-lexical-accuracy',
   'multi blank completions': 'eng-cohesion-lexical-accuracy',
+  // X27 pass (2026-10-24): AP-Calculus AB/BC shared unit topics → the three
+  // new calculus lessons (each teaches exactly the syllabus subtopics:
+  // removable/jump/infinite taxonomy + redefinition repair; tangent-line
+  // approximation + differentials + error; concavity + inflection + the
+  // Second Derivative Test with its inconclusive case).
+  'removing discontinuities': 'calc-removing-discontinuities',
+  'linearization and local linearity': 'calc-linearization-differentials',
+  'concavity and the second derivative test':
+    'calc-concavity-second-derivative-test',
+  // Gaokao modern-China history block → the two new world-history lessons
+  // (1840–1949 aggression→salvation chain; PRC 1949 consolidation, Leap,
+  // Cultural Revolution and reform arc).
+  'aggression and national salvation 1840 1949':
+    'hist-modern-china-aggression-salvation',
+  'the peoples republic since 1949': 'hist-peoples-republic-china',
 }
 

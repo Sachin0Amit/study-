@@ -2,12 +2,19 @@ import type { KnowledgeDomainFile } from '../types'
 import { x17ExamSyllabusTopics } from './x17-exam-syllabus'
 import { x18ExamPassTopics } from './x18-exam-pass'
 import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
+import { x27ApCalcChinaPassTopics } from './x27-ap-calc-china-pass'
 
 export const humanities: KnowledgeDomainFile = {
   domain: 'Humanities',
   blurb:
     'History, philosophy and the recorded human past — how people made meaning before and beyond the modern world.',
   topics: [
+    // X27 pass (2026-10-24): the modern-China history block — aggression and
+    // national salvation 1840–1949, and the People's Republic since 1949.
+    // Zero overlap: hist-world-wars owns the European theatre; the silk-road
+    // lesson stops pre-1800; x18's modernisation lesson only touches China
+    // comparatively.
+    ...x27ApCalcChinaPassTopics.filter((t) => t.domain === 'Humanities'),
     // X23 gap pass (2026-10-22): Japan's economic history — Edo commerce to
     // the international economy; references (does not repeat) the Meiji
     // political story owned by the x18 world-history lesson.

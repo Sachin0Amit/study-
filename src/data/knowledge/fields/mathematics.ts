@@ -9,12 +9,18 @@ import type { KnowledgeDomainFile } from '../types'
 import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 import { x25TournamentReasoningCivicsPassTopics } from './x25-tournament-reasoning-civics-pass'
 import { x26BankingManagementPassTopics } from './x26-banking-management-pass'
+import { x27ApCalcChinaPassTopics } from './x27-ap-calc-china-pass'
 
 export const mathematics: KnowledgeDomainFile = {
   domain: 'Mathematics',
   blurb:
     'Calculus, probability, and linear algebra — the language of change, evidence, and structure.',
   topics: [
+    // X27 pass (2026-10-24): the three AP-Calculus unit topics the syllabi
+    // list separately — removing discontinuities, linearization and
+    // differentials, concavity and the Second Derivative Test. Deepens (does
+    // not re-teach) math-derivative-as-limit's definition-level material.
+    ...x27ApCalcChinaPassTopics.filter((t) => t.domain === 'Mathematics'),
     // X26 pass (2026-10-23): applied mensuration — perimeter/area/surface
     // area/volume, sectors, composites, unit conversion (applies, does not
     // re-teach, the masters geometry axioms).

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T01:21:48.863Z",
+  "generatedAt": "2026-10-23T19:00:56.009Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 205,
-    "books": 205,
-    "chapters": 878,
-    "sections": 4461
+    "subjects": 206,
+    "books": 206,
+    "chapters": 879,
+    "sections": 4466
   },
   "subjects": [
     {
@@ -27356,6 +27356,41 @@
       ]
     },
     {
+      "id": "ku-mathematics-calculus",
+      "name": "Calculus",
+      "group": "Mathematics",
+      "tagline": "Mathematics",
+      "chapterCount": 1,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-mathematics-calculus-differential-calculus",
+          "number": 1,
+          "title": "Differential Calculus",
+          "shortTitle": "Differential Calculus",
+          "bookId": "ku-mathematics-calculus",
+          "sectionCount": 3,
+          "sections": [
+            {
+              "id": "ku-calc-removing-discontinuities",
+              "number": 1.1,
+              "title": "Removing Discontinuities: Finding and Filling the Holes"
+            },
+            {
+              "id": "ku-calc-linearization-differentials",
+              "number": 1.2,
+              "title": "Linearization and Differentials: The Tangent as a Calculator"
+            },
+            {
+              "id": "ku-calc-concavity-second-derivative-test",
+              "number": 1.3,
+              "title": "Concavity and the Second Derivative Test"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-mathematics-geometry-and-measurement",
       "name": "Geometry & Measurement",
       "group": "Mathematics",
@@ -29136,6 +29171,101 @@
       ]
     },
     {
+      "id": "ku-humanities-world-history",
+      "name": "World History",
+      "group": "Humanities",
+      "tagline": "How the world connected",
+      "chapterCount": 3,
+      "sectionCount": 11,
+      "chapters": [
+        {
+          "id": "ku-humanities-world-history-the-modern-age",
+          "number": 1,
+          "title": "The Modern Age",
+          "shortTitle": "The Modern Age",
+          "bookId": "ku-humanities-world-history",
+          "sectionCount": 7,
+          "sections": [
+            {
+              "id": "ku-hist-modern-china-aggression-salvation",
+              "number": 1.1,
+              "title": "Aggression and National Salvation: China, 1840–1949"
+            },
+            {
+              "id": "ku-hist-peoples-republic-china",
+              "number": 1.2,
+              "title": "The People’s Republic since 1949: Leap, Turmoil and Reform"
+            },
+            {
+              "id": "ku-hist-world-wars",
+              "number": 1.3,
+              "title": "The World Wars: Causes, Courses and Consequences"
+            },
+            {
+              "id": "ku-hist-decolonization",
+              "number": 1.4,
+              "title": "Decolonization and the Making of the Global South"
+            },
+            {
+              "id": "ku-hist-american-revolution-founding",
+              "number": 1.5,
+              "title": "The American Revolution and the Founding of the Republic"
+            },
+            {
+              "id": "ku-hist-civil-war-reconstruction",
+              "number": 1.6,
+              "title": "The Civil War and Reconstruction"
+            },
+            {
+              "id": "ku-hist-civil-rights-movement",
+              "number": 1.7,
+              "title": "The Civil Rights Movement"
+            }
+          ]
+        },
+        {
+          "id": "ku-humanities-world-history-economic-history",
+          "number": 2,
+          "title": "Economic History",
+          "shortTitle": "Economic History",
+          "bookId": "ku-humanities-world-history",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-hum-silk-road-exchange",
+              "number": 2.1,
+              "title": "The Silk Road: Exchange Before Globalization"
+            },
+            {
+              "id": "ku-hum-industrial-revolution",
+              "number": 2.2,
+              "title": "The Industrial Revolution and Its Discontents"
+            }
+          ]
+        },
+        {
+          "id": "ku-humanities-world-history-the-ancient-world",
+          "number": 3,
+          "title": "The Ancient World",
+          "shortTitle": "The Ancient World",
+          "bookId": "ku-humanities-world-history",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-hist-first-civilizations",
+              "number": 3.1,
+              "title": "The First Civilizations: Mesopotamia, Egypt and the Indus"
+            },
+            {
+              "id": "ku-hist-classical-greco-roman",
+              "number": 3.2,
+              "title": "Greece and Rome: The Classical Inheritance"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-humanities-history",
       "name": "History",
       "group": "Humanities",
@@ -29210,91 +29340,6 @@
               "id": "ku-hist-nomads-indigenous-modernisation",
               "number": 3.1,
               "title": "Nomadic Empires, Displaced Peoples and Paths to Modernisation"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-humanities-world-history",
-      "name": "World History",
-      "group": "Humanities",
-      "tagline": "How the world connected",
-      "chapterCount": 3,
-      "sectionCount": 9,
-      "chapters": [
-        {
-          "id": "ku-humanities-world-history-economic-history",
-          "number": 1,
-          "title": "Economic History",
-          "shortTitle": "Economic History",
-          "bookId": "ku-humanities-world-history",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-hum-silk-road-exchange",
-              "number": 1.1,
-              "title": "The Silk Road: Exchange Before Globalization"
-            },
-            {
-              "id": "ku-hum-industrial-revolution",
-              "number": 1.2,
-              "title": "The Industrial Revolution and Its Discontents"
-            }
-          ]
-        },
-        {
-          "id": "ku-humanities-world-history-the-ancient-world",
-          "number": 2,
-          "title": "The Ancient World",
-          "shortTitle": "The Ancient World",
-          "bookId": "ku-humanities-world-history",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-hist-first-civilizations",
-              "number": 2.1,
-              "title": "The First Civilizations: Mesopotamia, Egypt and the Indus"
-            },
-            {
-              "id": "ku-hist-classical-greco-roman",
-              "number": 2.2,
-              "title": "Greece and Rome: The Classical Inheritance"
-            }
-          ]
-        },
-        {
-          "id": "ku-humanities-world-history-the-modern-age",
-          "number": 3,
-          "title": "The Modern Age",
-          "shortTitle": "The Modern Age",
-          "bookId": "ku-humanities-world-history",
-          "sectionCount": 5,
-          "sections": [
-            {
-              "id": "ku-hist-world-wars",
-              "number": 3.1,
-              "title": "The World Wars: Causes, Courses and Consequences"
-            },
-            {
-              "id": "ku-hist-decolonization",
-              "number": 3.2,
-              "title": "Decolonization and the Making of the Global South"
-            },
-            {
-              "id": "ku-hist-american-revolution-founding",
-              "number": 3.3,
-              "title": "The American Revolution and the Founding of the Republic"
-            },
-            {
-              "id": "ku-hist-civil-war-reconstruction",
-              "number": 3.4,
-              "title": "The Civil War and Reconstruction"
-            },
-            {
-              "id": "ku-hist-civil-rights-movement",
-              "number": 3.5,
-              "title": "The Civil Rights Movement"
             }
           ]
         }
