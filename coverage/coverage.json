@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T12:47:03.255Z",
+  "generatedAt": "2026-10-24T13:34:49.881Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 215,
-    "books": 215,
-    "chapters": 906,
-    "sections": 4494
+    "subjects": 219,
+    "books": 219,
+    "chapters": 912,
+    "sections": 4500
   },
   "subjects": [
     {
@@ -28770,12 +28770,42 @@
       "name": "Political Science",
       "group": "Social Sciences",
       "tagline": "Power and cooperation",
-      "chapterCount": 7,
-      "sectionCount": 10,
+      "chapterCount": 9,
+      "sectionCount": 12,
       "chapters": [
         {
-          "id": "ku-social-sciences-political-science-history-of-political-thought",
+          "id": "ku-social-sciences-political-science-foreign-policy-and-security",
           "number": 1,
+          "title": "Foreign Policy and Security",
+          "shortTitle": "Foreign Policy and Security",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-pol-indian-foreign-policy-determinants",
+              "number": 1.1,
+              "title": "Indian Foreign Policy: Determinants, Institutions and the Long Arc"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-governance-and-public-administration",
+          "number": 2,
+          "title": "Governance and Public Administration",
+          "shortTitle": "Governance and Public Administration",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-pol-governance-concepts-data-administration",
+              "number": 2.1,
+              "title": "Governance: From Good Governance to Data-Driven Administration"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-history-of-political-thought",
+          "number": 3,
           "title": "History of Political Thought",
           "shortTitle": "History of Political Thought",
           "bookId": "ku-social-sciences-political-science",
@@ -28783,14 +28813,14 @@
           "sections": [
             {
               "id": "ku-pol-western-political-thought-canon",
-              "number": 1.1,
+              "number": 3.1,
               "title": "Western Political Thought: Plato to Marx in Eight Thinkers"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-comparative-politics",
-          "number": 2,
+          "number": 4,
           "title": "Comparative Politics",
           "shortTitle": "Comparative Politics",
           "bookId": "ku-social-sciences-political-science",
@@ -28798,19 +28828,19 @@
           "sections": [
             {
               "id": "ku-pol-democratic-government-japan",
-              "number": 2.1,
+              "number": 4.1,
               "title": "Democratic Government in Action: Japan’s Parliamentary System and Contemporary Society"
             },
             {
               "id": "ku-pol-regimes-spectrum",
-              "number": 2.2,
+              "number": 4.2,
               "title": "Democracies, Autocracies and Everything in Between"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-international-relations",
-          "number": 3,
+          "number": 5,
           "title": "International Relations",
           "shortTitle": "International Relations",
           "bookId": "ku-social-sciences-political-science",
@@ -28818,19 +28848,19 @@
           "sections": [
             {
               "id": "ku-pol-contemporary-world-order",
-              "number": 3.1,
+              "number": 5.1,
               "title": "After the Cold War: Hegemony, Rival Poles and the Global Commons"
             },
             {
               "id": "ku-pol-ir-theory",
-              "number": 3.2,
+              "number": 5.2,
               "title": "Why Nations Fight and Trade: International Relations Theory"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-indian-polity",
-          "number": 4,
+          "number": 6,
           "title": "Indian Polity",
           "shortTitle": "Indian Polity",
           "bookId": "ku-social-sciences-political-science",
@@ -28838,19 +28868,19 @@
           "sections": [
             {
               "id": "ku-pol-india-since-independence",
-              "number": 4.1,
+              "number": 6.1,
               "title": "India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations"
             },
             {
               "id": "ku-soc-indian-constitution-polity",
-              "number": 4.2,
+              "number": 6.2,
               "title": "The Indian Constitution: Rights, Parliament and Federalism"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-rational-choice-theory",
-          "number": 5,
+          "number": 7,
           "title": "Rational Choice Theory",
           "shortTitle": "Rational Choice Theory",
           "bookId": "ku-social-sciences-political-science",
@@ -28858,14 +28888,14 @@
           "sections": [
             {
               "id": "ku-soc-prisoners-dilemma",
-              "number": 5.1,
+              "number": 7.1,
               "title": "Game Theory of Cooperation: The Prisoner’s Dilemma"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-public-choice",
-          "number": 6,
+          "number": 8,
           "title": "Public Choice",
           "shortTitle": "Public Choice",
           "bookId": "ku-social-sciences-political-science",
@@ -28873,14 +28903,14 @@
           "sections": [
             {
               "id": "ku-soc-collective-action",
-              "number": 6.1,
+              "number": 8.1,
               "title": "Collective Action and the Tragedy of the Commons"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-institutional-design",
-          "number": 7,
+          "number": 9,
           "title": "Institutional Design",
           "shortTitle": "Institutional Design",
           "bookId": "ku-social-sciences-political-science",
@@ -28888,8 +28918,58 @@
           "sections": [
             {
               "id": "ku-soc-comparative-politics-institutions",
-              "number": 7.1,
+              "number": 9.1,
               "title": "Comparative Politics: Electoral Systems and Institutions"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-social-sciences-mass-media-and-society",
+      "name": "Mass Media and Society",
+      "group": "Social Sciences",
+      "tagline": "Why people do what they do",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-social-sciences-mass-media-and-society-media-and-society",
+          "number": 1,
+          "title": "Media and Society",
+          "shortTitle": "Media and Society",
+          "bookId": "ku-social-sciences-mass-media-and-society",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-gp-mass-media-society-responsibility",
+              "number": 1.1,
+              "title": "Mass Media and Society: Print, Broadcast, Platforms and Responsibility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-social-sciences-logic-and-reasoning",
+      "name": "Logic and Reasoning",
+      "group": "Social Sciences",
+      "tagline": "Why people do what they do",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-social-sciences-logic-and-reasoning-evaluating-arguments",
+          "number": 1,
+          "title": "Evaluating Arguments",
+          "shortTitle": "Evaluating Arguments",
+          "bookId": "ku-social-sciences-logic-and-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-pol-logic-induction-deduction-square",
+              "number": 1.1,
+              "title": "Induction, Deduction and the Square of Opposition"
             }
           ]
         }
@@ -31220,6 +31300,56 @@
               "id": "ku-law-legal-reasoning-facts",
               "number": 1.1,
               "title": "Legal Reasoning: Applying Principles to Facts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-auditing-and-assurance",
+      "name": "Auditing & Assurance",
+      "group": "Business & Economics",
+      "tagline": "Markets, money and trade",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-business-economics-auditing-and-assurance-independent-financial-audit",
+          "number": 1,
+          "title": "Independent Financial Audit",
+          "shortTitle": "Independent Financial Audit",
+          "bookId": "ku-business-economics-auditing-and-assurance",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-com-auditing-assurance-cycle",
+              "number": 1.1,
+              "title": "Auditing: The Independent Examination Behind Credible Accounts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-business-regulation",
+      "name": "Business Regulation",
+      "group": "Business & Economics",
+      "tagline": "Markets, money and trade",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-business-economics-business-regulation-regulatory-framework",
+          "number": 1,
+          "title": "Regulatory Framework",
+          "shortTitle": "Regulatory Framework",
+          "bookId": "ku-business-economics-business-regulation",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-com-regulatory-framework-modern-india",
+              "number": 1.1,
+              "title": "The Modern Regulatory Framework: Statutes, Regulators and the Compliance Map"
             }
           ]
         }

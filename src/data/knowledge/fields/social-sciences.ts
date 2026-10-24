@@ -7,12 +7,22 @@ import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
 import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
 import { x31UgcNetPaper1PassTopics } from './x31-ugc-net-paper1-pass'
 import { x32UgcNetPaper2PassTopics } from './x32-ugc-net-paper2-pass'
+import { x33UgcNetClosurePassTopics } from './x33-ugc-net-closure-pass'
 
 export const socialSciences: KnowledgeDomainFile = {
   domain: 'Social Sciences',
   blurb:
     'How humans behave, bond, decide and govern together — psychology, sociology and political science at their meeting points.',
   topics: [
+    // X33 pass (2026-10-24): UGC NET closure — Indian foreign policy
+    // (determinants, institutions, doctrines, neighbours, major powers),
+    // governance + data-governance (one lesson spanning two Paper-1 units),
+    // mass media and society, and the formal-logic lesson (induction vs
+    // deduction, the traditional square). Carved against the world-order and
+    // India-since-independence lessons (which own the Cold-War frame and the
+    // domestic arc) and the ICT lesson (which owns e-governance service
+    // models) — no overlap.
+    ...x33UgcNetClosurePassTopics.filter((t) => t.domain === 'Social Sciences'),
     // X32 pass (2026-10-24): UGC NET Paper II political-science sweep — the
     // western political-thought canon (Plato→Marx). Distinct from
     // pol-regimes-spectrum (typologies), pol-ir-theory (IR) and

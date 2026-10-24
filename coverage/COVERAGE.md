@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 215
-- **Books (master volumes):** 215
-- **Chapters:** 906
-- **Sections (lessons):** 4494
+- **Subjects:** 219
+- **Books (master volumes):** 219
+- **Chapters:** 912
+- **Sections (lessons):** 4500
 
 ## Foundations — 5 subjects
 
@@ -1237,19 +1237,33 @@
 
 - **Ch 1. Machines of Daily Life** `ku-technology-applied-everyday-machines-machines-of-daily-life` — 2 sections: Elevators and Escalators: The Vertical City; Timekeeping: How Humans Measure Time
 
-## Social Sciences — 12 subjects
+## Social Sciences — 14 subjects
 
 ### Political Science (`ku-social-sciences-political-science`)
 
-*Power and cooperation* — 7 chapters · 10 sections
+*Power and cooperation* — 9 chapters · 12 sections
 
-- **Ch 1. History of Political Thought** `ku-social-sciences-political-science-history-of-political-thought` — 1 sections: Western Political Thought: Plato to Marx in Eight Thinkers
-- **Ch 2. Comparative Politics** `ku-social-sciences-political-science-comparative-politics` — 2 sections: Democratic Government in Action: Japan’s Parliamentary System and Contemporary Society; Democracies, Autocracies and Everything in Between
-- **Ch 3. International Relations** `ku-social-sciences-political-science-international-relations` — 2 sections: After the Cold War: Hegemony, Rival Poles and the Global Commons; Why Nations Fight and Trade: International Relations Theory
-- **Ch 4. Indian Polity** `ku-social-sciences-political-science-indian-polity` — 2 sections: India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations; The Indian Constitution: Rights, Parliament and Federalism
-- **Ch 5. Rational Choice Theory** `ku-social-sciences-political-science-rational-choice-theory` — 1 sections: Game Theory of Cooperation: The Prisoner’s Dilemma
-- **Ch 6. Public Choice** `ku-social-sciences-political-science-public-choice` — 1 sections: Collective Action and the Tragedy of the Commons
-- **Ch 7. Institutional Design** `ku-social-sciences-political-science-institutional-design` — 1 sections: Comparative Politics: Electoral Systems and Institutions
+- **Ch 1. Foreign Policy and Security** `ku-social-sciences-political-science-foreign-policy-and-security` — 1 sections: Indian Foreign Policy: Determinants, Institutions and the Long Arc
+- **Ch 2. Governance and Public Administration** `ku-social-sciences-political-science-governance-and-public-administration` — 1 sections: Governance: From Good Governance to Data-Driven Administration
+- **Ch 3. History of Political Thought** `ku-social-sciences-political-science-history-of-political-thought` — 1 sections: Western Political Thought: Plato to Marx in Eight Thinkers
+- **Ch 4. Comparative Politics** `ku-social-sciences-political-science-comparative-politics` — 2 sections: Democratic Government in Action: Japan’s Parliamentary System and Contemporary Society; Democracies, Autocracies and Everything in Between
+- **Ch 5. International Relations** `ku-social-sciences-political-science-international-relations` — 2 sections: After the Cold War: Hegemony, Rival Poles and the Global Commons; Why Nations Fight and Trade: International Relations Theory
+- **Ch 6. Indian Polity** `ku-social-sciences-political-science-indian-polity` — 2 sections: India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations; The Indian Constitution: Rights, Parliament and Federalism
+- **Ch 7. Rational Choice Theory** `ku-social-sciences-political-science-rational-choice-theory` — 1 sections: Game Theory of Cooperation: The Prisoner’s Dilemma
+- **Ch 8. Public Choice** `ku-social-sciences-political-science-public-choice` — 1 sections: Collective Action and the Tragedy of the Commons
+- **Ch 9. Institutional Design** `ku-social-sciences-political-science-institutional-design` — 1 sections: Comparative Politics: Electoral Systems and Institutions
+
+### Mass Media and Society (`ku-social-sciences-mass-media-and-society`)
+
+*Why people do what they do* — 1 chapters · 1 sections
+
+- **Ch 1. Media and Society** `ku-social-sciences-mass-media-and-society-media-and-society` — 1 sections: Mass Media and Society: Print, Broadcast, Platforms and Responsibility
+
+### Logic and Reasoning (`ku-social-sciences-logic-and-reasoning`)
+
+*Why people do what they do* — 1 chapters · 1 sections
+
+- **Ch 1. Evaluating Arguments** `ku-social-sciences-logic-and-reasoning-evaluating-arguments` — 1 sections: Induction, Deduction and the Square of Opposition
 
 ### Research Methods (`ku-social-sciences-research-methods`)
 
@@ -1629,7 +1643,19 @@
 
 - **Ch 1. Legal Reasoning** `ku-law-governance-legal-method-legal-reasoning` — 1 sections: Legal Reasoning: Applying Principles to Facts
 
-## Business & Economics — 18 subjects
+## Business & Economics — 20 subjects
+
+### Auditing & Assurance (`ku-business-economics-auditing-and-assurance`)
+
+*Markets, money and trade* — 1 chapters · 1 sections
+
+- **Ch 1. Independent Financial Audit** `ku-business-economics-auditing-and-assurance-independent-financial-audit` — 1 sections: Auditing: The Independent Examination Behind Credible Accounts
+
+### Business Regulation (`ku-business-economics-business-regulation`)
+
+*Markets, money and trade* — 1 chapters · 1 sections
+
+- **Ch 1. Regulatory Framework** `ku-business-economics-business-regulation-regulatory-framework` — 1 sections: The Modern Regulatory Framework: Statutes, Regulators and the Compliance Map
 
 ### Business Environment (`ku-business-economics-business-environment`)
 

@@ -130,6 +130,12 @@ const IDS = [
   'com-international-business-fdi-integration',
   'com-marketing-mix-distribution-trends',
   'pol-western-political-thought-canon',
+  'com-auditing-assurance-cycle',
+  'com-regulatory-framework-modern-india',
+  'pol-indian-foreign-policy-determinants',
+  'pol-governance-concepts-data-administration',
+  'gp-mass-media-society-responsibility',
+  'pol-logic-induction-deduction-square',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

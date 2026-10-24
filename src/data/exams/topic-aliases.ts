@@ -548,5 +548,27 @@ export const TOPIC_ALIASES: Record<string, string> = {
     'com-marketing-mix-distribution-trends',
   'trends in marketing': 'com-marketing-mix-distribution-trends',
   'western political thought': 'pol-western-political-thought-canon',
+  // X33 pass (2026-10-24): UGC NET closure sweep → the six new lessons that
+  // close all seven remaining units. The auditing lesson teaches the audit
+  // cycle (vouching/verification/valuation, opinions, trend audits); the
+  // regulatory lesson owns the statute-and-regulator map (IT Act machinery,
+  // RTI routing, IPR/GST stations cross-referenced); the foreign-policy
+  // lesson owns determinants, institutions, Panchsheel/NAM, phases,
+  // neighbours and major powers; the governance lesson honestly spans TWO
+  // Paper-1 units (governance concepts + data and governance — one arc from
+  // good governance through RTI/charters/e-governance SMART to open data
+  // and evidence-based policy); the media lesson owns the print/electronic/
+  // digital evolution and effects/responsibility; the logic lesson owns the
+  // deductive/inductive distinction, the A/E/I/O forms and the traditional
+  // square (the critical-reasoning lesson only mentions formal logic).
+  'auditing': 'com-auditing-assurance-cycle',
+  'modern regulatory framework': 'com-regulatory-framework-modern-india',
+  'determinants and evolution of indian foreign policy':
+    'pol-indian-foreign-policy-determinants',
+  'governance concepts': 'pol-governance-concepts-data-administration',
+  'data and governance': 'pol-governance-concepts-data-administration',
+  'mass-media and society': 'gp-mass-media-society-responsibility',
+  'evaluating and distinguishing inductive and deductive reasoning':
+    'pol-logic-induction-deduction-square',
 }
 

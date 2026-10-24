@@ -6,12 +6,18 @@ import { x20FoundationsPassTopics } from './x20-foundations-pass'
 import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 import { x26BankingManagementPassTopics } from './x26-banking-management-pass'
 import { x32UgcNetPaper2PassTopics } from './x32-ugc-net-paper2-pass'
+import { x33UgcNetClosurePassTopics } from './x33-ugc-net-closure-pass'
 
 export const businessEconomics: KnowledgeDomainFile = {
   domain: 'Business & Economics',
   blurb:
     'Markets, money and organisations — the logic of prices, trade, investment and value creation.',
   topics: [
+    // X33 pass (2026-10-24): UGC NET closure — auditing (vouching/verification/
+    // valuation, audit report, trend audits) and the modern regulatory
+    // framework (statute-and-regulator map). GST/IPR/IT-Act-cyber/RTI
+    // mechanics are cross-referenced to their owning lessons, not repeated.
+    ...x33UgcNetClosurePassTopics.filter((t) => t.domain === 'Business & Economics'),
     // X32 pass (2026-10-24): UGC NET Paper II commerce sweep — business
     // environment, consumer/production theory, corporate finance, FDI &
     // integration, marketing mix + trends. Scoped against bus-supply-demand-
