@@ -476,5 +476,29 @@ export const TOPIC_ALIASES: Record<string, string> = {
   'quadratics including the formula and completing the square':
     'math-quadratics-completing-square',
   'nuclear symbol notation and isotopes': 'chem-isotopes-nuclear-notation',
+  // X30 pass (2026-10-24): final-orphan sweep → five new lessons.
+  // The LPP lesson teaches objective/constraints, half-plane intersection,
+  // the feasible region, the corner-point theorem and both optimum readings
+  // (vertex table and iso-profit line) — the cuet topic and its two
+  // subtopics verbatim.
+  'graphical solution of lpps': 'math-graphical-linear-programming',
+  // The drug-and-additive lesson covers the classification axes, targets,
+  // antacids/antihistamines/analgesics/antibiotics/antiseptics plus
+  // preservatives, antioxidants, sweeteners, colors and emulsifiers —
+  // the bitsat topic's two halves.
+  'chemicals in medicine health care and food': 'chem-chemicals-medicine-food',
+  // The joining lesson spans the gate-mechanical subtopics exactly: arc,
+  // gas and resistance welding (SMAW, GMAW, GTAW, spot) plus brazing and
+  // soldering, with joints, HAZ, defects and weldability.
+  'joining': 'manuf-welding-joining',
+  // The spelling lesson delivers the rule set (i-before-e and exceptions,
+  // doubling, drop-e, y-to-i, plural -es/-ves/-ies, irregulars,
+  // British/American, confusables) behind detecting misspelt words.
+  'spelling': 'eng-spelling-rules-patterns',
+  // The twentieth-century survey covers the gaokao subtopic list verbatim:
+  // world wars (pointing to the dedicated lesson), Russian Revolution,
+  // interwar crises, Cold War order and multipolarisation, economic
+  // globalisation.
+  'the twentieth century': 'hist-twentieth-century',
 }
 

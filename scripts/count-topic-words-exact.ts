@@ -114,6 +114,11 @@ const IDS = [
   'math-algebra-notation-manipulation',
   'math-quadratics-completing-square',
   'chem-isotopes-nuclear-notation',
+  'math-graphical-linear-programming',
+  'chem-chemicals-medicine-food',
+  'manuf-welding-joining',
+  'eng-spelling-rules-patterns',
+  'hist-twentieth-century',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

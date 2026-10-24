@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 211
-- **Books (master volumes):** 211
-- **Chapters:** 891
-- **Sections (lessons):** 4478
+- **Subjects:** 213
+- **Books (master volumes):** 213
+- **Chapters:** 895
+- **Sections (lessons):** 4483
 
 ## Foundations — 5 subjects
 
@@ -815,10 +815,11 @@
 
 ### Chemistry (`ku-physical-sciences-chemistry`)
 
-*Molecules and change* — 2 chapters · 2 sections
+*Molecules and change* — 3 chapters · 3 sections
 
-- **Ch 1. Atomic Structure** `ku-physical-sciences-chemistry-atomic-structure` — 1 sections: Isotopes and Nuclear Notation: Reading an Atom’s ID Card
-- **Ch 2. Analytical Chemistry** `ku-physical-sciences-chemistry-analytical-chemistry` — 1 sections: Reactions of Ions in Aqueous Solution: Qualitative Tests and Volumetric Analysis
+- **Ch 1. Chemistry in Everyday Life** `ku-physical-sciences-chemistry-chemistry-in-everyday-life` — 1 sections: Chemicals in Medicine and Food: Drugs and Additives by Class
+- **Ch 2. Atomic Structure** `ku-physical-sciences-chemistry-atomic-structure` — 1 sections: Isotopes and Nuclear Notation: Reading an Atom’s ID Card
+- **Ch 3. Analytical Chemistry** `ku-physical-sciences-chemistry-analytical-chemistry` — 1 sections: Reactions of Ions in Aqueous Solution: Qualitative Tests and Volumetric Analysis
 
 ### Astronomy & Space Science (`ku-physical-sciences-astronomy-and-space-science`)
 
@@ -983,7 +984,13 @@
 
 - **Ch 1. Reproductive Biology** `ku-life-sciences-human-physiology-reproductive-biology` — 1 sections: Human Reproduction: Systems, Gametes and the Menstrual Cycle
 
-## Mathematics — 8 subjects
+## Mathematics — 9 subjects
+
+### Applied & Finite Mathematics (`ku-mathematics-applied-and-finite-mathematics`)
+
+*Mathematics* — 1 chapters · 1 sections
+
+- **Ch 1. Linear Programming** `ku-mathematics-applied-and-finite-mathematics-linear-programming` — 1 sections: Linear Programming by Graph: Feasible Regions and Corner Points
 
 ### Algebra (`ku-mathematics-algebra`)
 
@@ -1169,7 +1176,13 @@
 
 - **Ch 1. Digital Manufacturing** `ku-engineering-manufacturing-engineering-digital-manufacturing` — 1 sections: Additive Manufacturing: How 3D Printing Reshapes Production
 
-## Technology & Applied Science — 7 subjects
+## Technology & Applied Science — 8 subjects
+
+### Manufacturing & Materials (`ku-technology-applied-manufacturing-and-materials`)
+
+*The applied engines of modern life* — 1 chapters · 1 sections
+
+- **Ch 1. Joining Processes** `ku-technology-applied-manufacturing-and-materials-joining-processes` — 1 sections: Joining Processes: Welding, Brazing and Soldering
 
 ### Digital Literacy (`ku-technology-applied-digital-literacy`)
 
@@ -1317,9 +1330,9 @@
 
 ### World History (`ku-humanities-world-history`)
 
-*How the world connected* — 3 chapters · 11 sections
+*How the world connected* — 3 chapters · 12 sections
 
-- **Ch 1. The Modern Age** `ku-humanities-world-history-the-modern-age` — 7 sections: Aggression and National Salvation: China, 1840–1949; The People’s Republic since 1949: Leap, Turmoil and Reform; The World Wars: Causes, Courses and Consequences; Decolonization and the Making of the Global South; The American Revolution and the Founding of the Republic; The Civil War and Reconstruction; The Civil Rights Movement
+- **Ch 1. The Modern Age** `ku-humanities-world-history-the-modern-age` — 8 sections: The Twentieth Century: Revolution, Cold War Order and Globalisation; Aggression and National Salvation: China, 1840–1949; The People’s Republic since 1949: Leap, Turmoil and Reform; The World Wars: Causes, Courses and Consequences; Decolonization and the Making of the Global South; The American Revolution and the Founding of the Republic; The Civil War and Reconstruction; The Civil Rights Movement
 - **Ch 2. Economic History** `ku-humanities-world-history-economic-history` — 2 sections: The Silk Road: Exchange Before Globalization; The Industrial Revolution and Its Discontents
 - **Ch 3. The Ancient World** `ku-humanities-world-history-the-ancient-world` — 2 sections: The First Civilizations: Mesopotamia, Egypt and the Indus; Greece and Rome: The Classical Inheritance
 
@@ -1368,9 +1381,10 @@
 
 ### Academic English Skills (`ku-languages-literature-academic-english-skills`)
 
-*How languages live and grow* — 1 chapters · 1 sections
+*How languages live and grow* — 2 chapters · 2 sections
 
-- **Ch 1. Listening Comprehension** `ku-languages-literature-academic-english-skills-listening-comprehension` — 1 sections: Academic Listening: From Hearing to Answering
+- **Ch 1. Orthography and Spelling** `ku-languages-literature-academic-english-skills-orthography-and-spelling` — 1 sections: English Spelling: Rules, Patterns and the Words That Break Them
+- **Ch 2. Listening Comprehension** `ku-languages-literature-academic-english-skills-listening-comprehension` — 1 sections: Academic Listening: From Hearing to Answering
 
 ### Academic Reading (`ku-languages-literature-academic-reading`)
 

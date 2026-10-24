@@ -12,12 +12,17 @@ import { x26BankingManagementPassTopics } from './x26-banking-management-pass'
 import { x27ApCalcChinaPassTopics } from './x27-ap-calc-china-pass'
 import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
 import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
+import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
 
 export const mathematics: KnowledgeDomainFile = {
   domain: 'Mathematics',
   blurb:
     'Calculus, probability, and linear algebra — the language of change, evidence, and structure.',
   topics: [
+    // X30 pass (2026-10-24): graphical linear programming — objective and
+    // constraints, half-plane intersection, feasible region, corner-point
+    // theorem, vertex evaluation vs iso-profit lines, infeasible/unbounded.
+    ...x30OrphanFinalPassTopics.filter((t) => t.domain === 'Mathematics'),
     // X29 pass (2026-10-24): algebraic notation/manipulation + quadratics
     // (four solving methods, discriminant, completing the square) — the two
     // gcse-maths algebra gaps. The manipulation lesson feeds the quadratics

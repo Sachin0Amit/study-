@@ -3,12 +3,18 @@ import { x17ExamSyllabusTopics } from './x17-exam-syllabus'
 import { x18ExamPassTopics } from './x18-exam-pass'
 import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 import { x27ApCalcChinaPassTopics } from './x27-ap-calc-china-pass'
+import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
 
 export const humanities: KnowledgeDomainFile = {
   domain: 'Humanities',
   blurb:
     'History, philosophy and the recorded human past — how people made meaning before and beyond the modern world.',
   topics: [
+    // X30 pass (2026-10-24): the twentieth-century survey — revolution,
+    // interwar crises, Cold War order, decolonization, 1989-91,
+    // multipolarisation and globalisation. Carved against hist-world-wars
+    // (military course) and hist-peoples-republic-china (China internal).
+    ...x30OrphanFinalPassTopics.filter((t) => t.domain === 'Humanities'),
     // X27 pass (2026-10-24): the modern-China history block — aggression and
     // national salvation 1840–1949, and the People's Republic since 1949.
     // Zero overlap: hist-world-wars owns the European theatre; the silk-road

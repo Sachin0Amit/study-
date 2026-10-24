@@ -8,12 +8,18 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
+import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
 
 export const physicalSciences: KnowledgeDomainFile = {
   domain: 'Physical Sciences',
   blurb:
     'Physics and chemistry from rotating bodies to reacting molecules — the quantitative rules of matter and energy.',
   topics: [
+    // X30 pass (2026-10-24): chemicals in medicine and food — drug classes
+    // (antacids, antihistamines, analgesics, antibiotics, antiseptics),
+    // targets and agonist/antagonist; preservatives, antioxidants,
+    // sweeteners, color additives, emulsifiers.
+    ...x30OrphanFinalPassTopics.filter((t) => t.domain === 'Physical Sciences'),
     // X29 pass (2026-10-24): atomic structure — isotopes and the AZX nuclear
     // symbol (the ib-chemistry nuclear-notation gap). Distinct from
     // chem-periodic-trends (trends) and chem-ions-aqueous-solution (solutions).

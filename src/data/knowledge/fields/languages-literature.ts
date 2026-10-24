@@ -3,12 +3,17 @@ import { x16ExamSkills } from './x16-exam-skills'
 import { x21SkillsPassTopics } from './x21-skills-pass'
 import { x26BankingManagementPassTopics } from './x26-banking-management-pass'
 import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
+import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
 
 export const languagesLiterature: KnowledgeDomainFile = {
   domain: 'Languages & World Literature',
   blurb:
     'The science of learning languages and the literatures they carry — from grammar glue to great texts.',
   topics: [
+    // X30 pass (2026-10-24): English spelling — the i-before-e rule and
+    // exceptions, doubling/drop-e/y-to-i suffix rules, plural sets,
+    // British/American standards, confusables and exam spotting strategy.
+    ...x30OrphanFinalPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
     // X28 pass (2026-10-24): listening comprehension, sentence-gap discourse
     // reconstruction, and argumentative/practical-text reading — the three
     // English-skills lessons no earlier language topic owned.
