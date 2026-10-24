@@ -584,5 +584,21 @@ export const TOPIC_ALIASES: Record<string, string> = {
   'books and authors': 'lang-books-authors-prizes',
   'recent judgments and legal news': 'law-reading-judgments-precedent',
   'set text recitation': 'lang-classical-chinese-canon',
+
+  /* ---- NSW HSC: X35 pass mappings (verified 2026-10-25) ----
+   * The English-craft lessons own the two response topics (one lesson
+   * honestly spans them, the X33 pattern); the population-genetics lesson
+   * owns the population-scale inheritance layer (carved against
+   * bio-genetics-mendel / bio-beyond-mendel-extensions / evolution); the
+   * disorder-technology lesson owns devices for sensory and kidney
+   * failure (carved against the senses and kidney physiology lessons).
+   * Chemistry "Using Bronsted-Lowry Theory" stays unmapped BY DECISION:
+   * masters chem-ch5-s2 teaches it verbatim and aliases cannot point at
+   * masters chapters. */
+  'representing human experiences in texts': 'eng-texts-human-experiences',
+  'analysing and responding to texts': 'eng-critical-response-literature',
+  'close critical study of a single text': 'eng-critical-response-literature',
+  'inheritance patterns in a population': 'bio-population-inheritance-frequencies',
+  'technologies and disorders': 'bio-sensory-organ-technologies',
 }
 

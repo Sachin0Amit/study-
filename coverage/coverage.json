@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T18:52:14.084Z",
+  "generatedAt": "2026-10-24T19:18:17.455Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 219,
     "books": 219,
-    "chapters": 915,
-    "sections": 4503
+    "chapters": 919,
+    "sections": 4507
   },
   "subjects": [
     {
@@ -26541,6 +26541,211 @@
       ]
     },
     {
+      "id": "ku-life-sciences-genetics-and-heredity",
+      "name": "Genetics & Heredity",
+      "group": "Life Sciences",
+      "tagline": "The code of inheritance",
+      "chapterCount": 7,
+      "sectionCount": 9,
+      "chapters": [
+        {
+          "id": "ku-life-sciences-genetics-and-heredity-population-genetics",
+          "number": 1,
+          "title": "Population Genetics",
+          "shortTitle": "Population Genetics",
+          "bookId": "ku-life-sciences-genetics-and-heredity",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-population-inheritance-frequencies",
+              "number": 1.1,
+              "title": "Inheritance in Populations: Allele Frequencies and Population Patterns"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-genetics-and-heredity-transmission-genetics",
+          "number": 2,
+          "title": "Transmission Genetics",
+          "shortTitle": "Transmission Genetics",
+          "bookId": "ku-life-sciences-genetics-and-heredity",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-meiosis-linkage-inheritance",
+              "number": 2.1,
+              "title": "Meiosis, Linkage and the Chromosomal Theory of Inheritance"
+            },
+            {
+              "id": "ku-bio-beyond-mendel-extensions",
+              "number": 2.2,
+              "title": "Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-genetics-and-heredity-biotechnology",
+          "number": 3,
+          "title": "Biotechnology",
+          "shortTitle": "Biotechnology",
+          "bookId": "ku-life-sciences-genetics-and-heredity",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-biotechnology-rdna-processes",
+              "number": 3.1,
+              "title": "Recombinant DNA: The Tools and Techniques of Genetic Engineering"
+            },
+            {
+              "id": "ku-bio-biotechnology-applications",
+              "number": 3.2,
+              "title": "Biotechnology in Practice: Medicine, Farms, and Industry"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-genetics-and-heredity-genomics",
+          "number": 4,
+          "title": "Genomics",
+          "shortTitle": "Genomics",
+          "bookId": "ku-life-sciences-genetics-and-heredity",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-genomics-bioinformatics",
+              "number": 4.1,
+              "title": "Genomics and Bioinformatics: Reading Whole Genomes"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-genetics-and-heredity-molecular-genetics",
+          "number": 5,
+          "title": "Molecular Genetics",
+          "shortTitle": "Molecular Genetics",
+          "bookId": "ku-life-sciences-genetics-and-heredity",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-crispr-gene-editing",
+              "number": 5.1,
+              "title": "CRISPR and the Mechanics of Gene Editing"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-genetics-and-heredity-classical-genetics",
+          "number": 6,
+          "title": "Classical Genetics",
+          "shortTitle": "Classical Genetics",
+          "bookId": "ku-life-sciences-genetics-and-heredity",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-genetics-mendel",
+              "number": 6.1,
+              "title": "Mendel's Laws: How Traits Travel Between Generations"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-genetics-and-heredity-genes-in-populations",
+          "number": 7,
+          "title": "Genes in Populations",
+          "shortTitle": "Genes in Populations",
+          "bookId": "ku-life-sciences-genetics-and-heredity",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-population-genetics",
+              "number": 7.1,
+              "title": "Population Genetics: Genes Drifting Through Time"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-life-sciences-anatomy-and-physiology",
+      "name": "Anatomy & Physiology",
+      "group": "Life Sciences",
+      "tagline": "The body, system by system",
+      "chapterCount": 2,
+      "sectionCount": 10,
+      "chapters": [
+        {
+          "id": "ku-life-sciences-anatomy-and-physiology-disorder-technologies",
+          "number": 1,
+          "title": "Disorder Technologies",
+          "shortTitle": "Disorder Technologies",
+          "bookId": "ku-life-sciences-anatomy-and-physiology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-sensory-organ-technologies",
+              "number": 1.1,
+              "title": "When Organs Fail: Hearing, Vision and Kidney Technologies"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-anatomy-and-physiology-human-body-systems",
+          "number": 2,
+          "title": "Human Body Systems",
+          "shortTitle": "Human Body Systems",
+          "bookId": "ku-life-sciences-anatomy-and-physiology",
+          "sectionCount": 9,
+          "sections": [
+            {
+              "id": "ku-bio-anatomy-heart-circulation",
+              "number": 2.1,
+              "title": "The Heart and Circulation: One Pump, Two Circuits"
+            },
+            {
+              "id": "ku-bio-anatomy-respiration",
+              "number": 2.2,
+              "title": "Breathing and Gas Exchange: From Air to Cell"
+            },
+            {
+              "id": "ku-bio-anatomy-digestion",
+              "number": 2.3,
+              "title": "The Digestive System: From Meal to Molecule"
+            },
+            {
+              "id": "ku-bio-anatomy-kidneys-endocrine",
+              "number": 2.4,
+              "title": "Kidneys, Hormones and the Body's Balance"
+            },
+            {
+              "id": "ku-bio-anatomy-musculoskeletal",
+              "number": 2.5,
+              "title": "Muscles, Bones and the Machinery of Movement"
+            },
+            {
+              "id": "ku-anat-endocrine-system-hormones",
+              "number": 2.6,
+              "title": "The Endocrine System: Hormones as the Body's Slow Messengers"
+            },
+            {
+              "id": "ku-bio-anatomy-nervous-system-command",
+              "number": 2.7,
+              "title": "The Nervous System: The Body's Command Network"
+            },
+            {
+              "id": "ku-bio-anatomy-senses-perception",
+              "number": 2.8,
+              "title": "The Senses: How the Body Reads the World"
+            },
+            {
+              "id": "ku-bio-anatomy-reproduction-development",
+              "number": 2.9,
+              "title": "Reproduction and the Making of a Human"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-life-sciences-animal-biology",
       "name": "Animal Biology",
       "group": "Life Sciences",
@@ -26766,116 +26971,6 @@
       ]
     },
     {
-      "id": "ku-life-sciences-genetics-and-heredity",
-      "name": "Genetics & Heredity",
-      "group": "Life Sciences",
-      "tagline": "The code of inheritance",
-      "chapterCount": 6,
-      "sectionCount": 8,
-      "chapters": [
-        {
-          "id": "ku-life-sciences-genetics-and-heredity-transmission-genetics",
-          "number": 1,
-          "title": "Transmission Genetics",
-          "shortTitle": "Transmission Genetics",
-          "bookId": "ku-life-sciences-genetics-and-heredity",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-bio-meiosis-linkage-inheritance",
-              "number": 1.1,
-              "title": "Meiosis, Linkage and the Chromosomal Theory of Inheritance"
-            },
-            {
-              "id": "ku-bio-beyond-mendel-extensions",
-              "number": 1.2,
-              "title": "Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits"
-            }
-          ]
-        },
-        {
-          "id": "ku-life-sciences-genetics-and-heredity-biotechnology",
-          "number": 2,
-          "title": "Biotechnology",
-          "shortTitle": "Biotechnology",
-          "bookId": "ku-life-sciences-genetics-and-heredity",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-bio-biotechnology-rdna-processes",
-              "number": 2.1,
-              "title": "Recombinant DNA: The Tools and Techniques of Genetic Engineering"
-            },
-            {
-              "id": "ku-bio-biotechnology-applications",
-              "number": 2.2,
-              "title": "Biotechnology in Practice: Medicine, Farms, and Industry"
-            }
-          ]
-        },
-        {
-          "id": "ku-life-sciences-genetics-and-heredity-genomics",
-          "number": 3,
-          "title": "Genomics",
-          "shortTitle": "Genomics",
-          "bookId": "ku-life-sciences-genetics-and-heredity",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bio-genomics-bioinformatics",
-              "number": 3.1,
-              "title": "Genomics and Bioinformatics: Reading Whole Genomes"
-            }
-          ]
-        },
-        {
-          "id": "ku-life-sciences-genetics-and-heredity-molecular-genetics",
-          "number": 4,
-          "title": "Molecular Genetics",
-          "shortTitle": "Molecular Genetics",
-          "bookId": "ku-life-sciences-genetics-and-heredity",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bio-crispr-gene-editing",
-              "number": 4.1,
-              "title": "CRISPR and the Mechanics of Gene Editing"
-            }
-          ]
-        },
-        {
-          "id": "ku-life-sciences-genetics-and-heredity-classical-genetics",
-          "number": 5,
-          "title": "Classical Genetics",
-          "shortTitle": "Classical Genetics",
-          "bookId": "ku-life-sciences-genetics-and-heredity",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bio-genetics-mendel",
-              "number": 5.1,
-              "title": "Mendel's Laws: How Traits Travel Between Generations"
-            }
-          ]
-        },
-        {
-          "id": "ku-life-sciences-genetics-and-heredity-genes-in-populations",
-          "number": 6,
-          "title": "Genes in Populations",
-          "shortTitle": "Genes in Populations",
-          "bookId": "ku-life-sciences-genetics-and-heredity",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bio-population-genetics",
-              "number": 6.1,
-              "title": "Population Genetics: Genes Drifting Through Time"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "ku-life-sciences-botany",
       "name": "Botany",
       "group": "Life Sciences",
@@ -27080,71 +27175,6 @@
               "id": "ku-ecol-populations-communities",
               "number": 2.1,
               "title": "Populations and Communities: Interactions, Niches and Disturbance"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-life-sciences-anatomy-and-physiology",
-      "name": "Anatomy & Physiology",
-      "group": "Life Sciences",
-      "tagline": "The body, system by system",
-      "chapterCount": 1,
-      "sectionCount": 9,
-      "chapters": [
-        {
-          "id": "ku-life-sciences-anatomy-and-physiology-human-body-systems",
-          "number": 1,
-          "title": "Human Body Systems",
-          "shortTitle": "Human Body Systems",
-          "bookId": "ku-life-sciences-anatomy-and-physiology",
-          "sectionCount": 9,
-          "sections": [
-            {
-              "id": "ku-bio-anatomy-heart-circulation",
-              "number": 1.1,
-              "title": "The Heart and Circulation: One Pump, Two Circuits"
-            },
-            {
-              "id": "ku-bio-anatomy-respiration",
-              "number": 1.2,
-              "title": "Breathing and Gas Exchange: From Air to Cell"
-            },
-            {
-              "id": "ku-bio-anatomy-digestion",
-              "number": 1.3,
-              "title": "The Digestive System: From Meal to Molecule"
-            },
-            {
-              "id": "ku-bio-anatomy-kidneys-endocrine",
-              "number": 1.4,
-              "title": "Kidneys, Hormones and the Body's Balance"
-            },
-            {
-              "id": "ku-bio-anatomy-musculoskeletal",
-              "number": 1.5,
-              "title": "Muscles, Bones and the Machinery of Movement"
-            },
-            {
-              "id": "ku-anat-endocrine-system-hormones",
-              "number": 1.6,
-              "title": "The Endocrine System: Hormones as the Body's Slow Messengers"
-            },
-            {
-              "id": "ku-bio-anatomy-nervous-system-command",
-              "number": 1.7,
-              "title": "The Nervous System: The Body's Command Network"
-            },
-            {
-              "id": "ku-bio-anatomy-senses-perception",
-              "number": 1.8,
-              "title": "The Senses: How the Body Reads the World"
-            },
-            {
-              "id": "ku-bio-anatomy-reproduction-development",
-              "number": 1.9,
-              "title": "Reproduction and the Making of a Human"
             }
           ]
         }
@@ -30006,6 +30036,101 @@
       ]
     },
     {
+      "id": "ku-languages-literature-literary-craft",
+      "name": "Literary Craft",
+      "group": "Languages & World Literature",
+      "tagline": "How writing works",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-literary-craft-representation-and-response",
+          "number": 1,
+          "title": "Representation & Response",
+          "shortTitle": "Representation & Response",
+          "bookId": "ku-languages-literature-literary-craft",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-texts-human-experiences",
+              "number": 1.1,
+              "title": "How Texts Represent Human Experiences"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-literary-craft-rhetoric-and-style",
+          "number": 2,
+          "title": "Rhetoric & Style",
+          "shortTitle": "Rhetoric & Style",
+          "bookId": "ku-languages-literature-literary-craft",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-literary-devices",
+              "number": 2.1,
+              "title": "Literary Devices: How Writing Works Its Magic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-languages-literature-reading-strategy",
+      "name": "Reading Strategy",
+      "group": "Languages & World Literature",
+      "tagline": "How languages live and grow",
+      "chapterCount": 3,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-reading-strategy-critical-response-and-close-study",
+          "number": 1,
+          "title": "Critical Response & Close Study",
+          "shortTitle": "Critical Response & Close Study",
+          "bookId": "ku-languages-literature-reading-strategy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-critical-response-literature",
+              "number": 1.1,
+              "title": "The Critical Response: Analysing Texts and Writing About Literature"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-reading-strategy-paired-passages",
+          "number": 2,
+          "title": "Paired Passages",
+          "shortTitle": "Paired Passages",
+          "bookId": "ku-languages-literature-reading-strategy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-paired-passages-authorial-choices",
+              "number": 2.1,
+              "title": "Paired Passages and Authorial Choices: Reading Two Texts at Once"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-reading-strategy-narrative-reading",
+          "number": 3,
+          "title": "Narrative Reading",
+          "shortTitle": "Narrative Reading",
+          "bookId": "ku-languages-literature-reading-strategy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-literary-narrative-passages",
+              "number": 3.1,
+              "title": "Reading Narrative Passages: Plot, Narrator and Inference in Literary Fiction"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-languages-literature-world-literature",
       "name": "World Literature",
       "group": "Languages & World Literature",
@@ -30225,46 +30350,6 @@
               "id": "ku-eng-punctuation-mechanics",
               "number": 1.1,
               "title": "Punctuation Mechanics: Commas, Semicolons, Apostrophes and Dashes"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-languages-literature-reading-strategy",
-      "name": "Reading Strategy",
-      "group": "Languages & World Literature",
-      "tagline": "How languages live and grow",
-      "chapterCount": 2,
-      "sectionCount": 2,
-      "chapters": [
-        {
-          "id": "ku-languages-literature-reading-strategy-paired-passages",
-          "number": 1,
-          "title": "Paired Passages",
-          "shortTitle": "Paired Passages",
-          "bookId": "ku-languages-literature-reading-strategy",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-eng-paired-passages-authorial-choices",
-              "number": 1.1,
-              "title": "Paired Passages and Authorial Choices: Reading Two Texts at Once"
-            }
-          ]
-        },
-        {
-          "id": "ku-languages-literature-reading-strategy-narrative-reading",
-          "number": 2,
-          "title": "Narrative Reading",
-          "shortTitle": "Narrative Reading",
-          "bookId": "ku-languages-literature-reading-strategy",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-eng-literary-narrative-passages",
-              "number": 2.1,
-              "title": "Reading Narrative Passages: Plot, Narrator and Inference in Literary Fiction"
             }
           ]
         }
@@ -30615,31 +30700,6 @@
               "id": "ku-lang-writing-systems-world",
               "number": 3.3,
               "title": "Writing Systems of the World: Alphabets, Abjads and Beyond"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-languages-literature-literary-craft",
-      "name": "Literary Craft",
-      "group": "Languages & World Literature",
-      "tagline": "How writing works",
-      "chapterCount": 1,
-      "sectionCount": 1,
-      "chapters": [
-        {
-          "id": "ku-languages-literature-literary-craft-rhetoric-and-style",
-          "number": 1,
-          "title": "Rhetoric & Style",
-          "shortTitle": "Rhetoric & Style",
-          "bookId": "ku-languages-literature-literary-craft",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-lang-literary-devices",
-              "number": 1.1,
-              "title": "Literary Devices: How Writing Works Its Magic"
             }
           ]
         }

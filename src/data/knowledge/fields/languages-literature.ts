@@ -5,12 +5,19 @@ import { x26BankingManagementPassTopics } from './x26-banking-management-pass'
 import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
 import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
 import { x34FinalOrphanPassTopics } from './x34-final-orphan-pass'
+import { x35NswHscPassTopics } from './x35-nsw-hsc-pass'
 
 export const languagesLiterature: KnowledgeDomainFile = {
   domain: 'Languages & World Literature',
   blurb:
     'The science of learning languages and the literatures they carry — from grammar glue to great texts.',
   topics: [
+    // X35 NSW-HSC pass (2026-10-25): the representation-analysis and
+    // critical-response lessons — how texts convey human experiences and
+    // the craft of the analytical response (short answers, thesis,
+    // integrated evidence, close critical study) — the literature-exam
+    // layer no earlier reading lesson owned.
+    ...x35NswHscPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
     // X34 final-orphan pass (2026-10-25): the books-and-authors prize map
     // (Nobel/Booker/Pulitzer/Jnanpith + the author-work mapping craft) and
     // the classical Chinese set-text canon with exact-recall craft — the

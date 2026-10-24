@@ -139,6 +139,10 @@ const IDS = [
   'lang-books-authors-prizes',
   'law-reading-judgments-precedent',
   'lang-classical-chinese-canon',
+  'eng-texts-human-experiences',
+  'eng-critical-response-literature',
+  'bio-population-inheritance-frequencies',
+  'bio-sensory-organ-technologies',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

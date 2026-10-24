@@ -16,8 +16,8 @@
 
 - **Subjects:** 219
 - **Books (master volumes):** 219
-- **Chapters:** 915
-- **Sections (lessons):** 4503
+- **Chapters:** 919
+- **Sections (lessons):** 4507
 
 ## Foundations — 5 subjects
 
@@ -855,6 +855,25 @@
 
 ## Life Sciences — 18 subjects
 
+### Genetics & Heredity (`ku-life-sciences-genetics-and-heredity`)
+
+*The code of inheritance* — 7 chapters · 9 sections
+
+- **Ch 1. Population Genetics** `ku-life-sciences-genetics-and-heredity-population-genetics` — 1 sections: Inheritance in Populations: Allele Frequencies and Population Patterns
+- **Ch 2. Transmission Genetics** `ku-life-sciences-genetics-and-heredity-transmission-genetics` — 2 sections: Meiosis, Linkage and the Chromosomal Theory of Inheritance; Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits
+- **Ch 3. Biotechnology** `ku-life-sciences-genetics-and-heredity-biotechnology` — 2 sections: Recombinant DNA: The Tools and Techniques of Genetic Engineering; Biotechnology in Practice: Medicine, Farms, and Industry
+- **Ch 4. Genomics** `ku-life-sciences-genetics-and-heredity-genomics` — 1 sections: Genomics and Bioinformatics: Reading Whole Genomes
+- **Ch 5. Molecular Genetics** `ku-life-sciences-genetics-and-heredity-molecular-genetics` — 1 sections: CRISPR and the Mechanics of Gene Editing
+- **Ch 6. Classical Genetics** `ku-life-sciences-genetics-and-heredity-classical-genetics` — 1 sections: Mendel's Laws: How Traits Travel Between Generations
+- **Ch 7. Genes in Populations** `ku-life-sciences-genetics-and-heredity-genes-in-populations` — 1 sections: Population Genetics: Genes Drifting Through Time
+
+### Anatomy & Physiology (`ku-life-sciences-anatomy-and-physiology`)
+
+*The body, system by system* — 2 chapters · 10 sections
+
+- **Ch 1. Disorder Technologies** `ku-life-sciences-anatomy-and-physiology-disorder-technologies` — 1 sections: When Organs Fail: Hearing, Vision and Kidney Technologies
+- **Ch 2. Human Body Systems** `ku-life-sciences-anatomy-and-physiology-human-body-systems` — 9 sections: The Heart and Circulation: One Pump, Two Circuits; Breathing and Gas Exchange: From Air to Cell; The Digestive System: From Meal to Molecule; Kidneys, Hormones and the Body's Balance; Muscles, Bones and the Machinery of Movement; The Endocrine System: Hormones as the Body's Slow Messengers; The Nervous System: The Body's Command Network; The Senses: How the Body Reads the World; Reproduction and the Making of a Human
+
 ### Animal Biology (`ku-life-sciences-animal-biology`)
 
 *How living systems work* — 1 chapters · 1 sections
@@ -886,17 +905,6 @@
 - **Ch 4. Cell Biology** `ku-life-sciences-cell-and-molecular-biology-cell-biology` — 1 sections: The Cell and Its Biomolecules: From Membranes to Macromolecules
 - **Ch 5. Bioenergetics** `ku-life-sciences-cell-and-molecular-biology-bioenergetics` — 1 sections: Cellular Respiration: Glycolysis to the Electron Transport Chain
 
-### Genetics & Heredity (`ku-life-sciences-genetics-and-heredity`)
-
-*The code of inheritance* — 6 chapters · 8 sections
-
-- **Ch 1. Transmission Genetics** `ku-life-sciences-genetics-and-heredity-transmission-genetics` — 2 sections: Meiosis, Linkage and the Chromosomal Theory of Inheritance; Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits
-- **Ch 2. Biotechnology** `ku-life-sciences-genetics-and-heredity-biotechnology` — 2 sections: Recombinant DNA: The Tools and Techniques of Genetic Engineering; Biotechnology in Practice: Medicine, Farms, and Industry
-- **Ch 3. Genomics** `ku-life-sciences-genetics-and-heredity-genomics` — 1 sections: Genomics and Bioinformatics: Reading Whole Genomes
-- **Ch 4. Molecular Genetics** `ku-life-sciences-genetics-and-heredity-molecular-genetics` — 1 sections: CRISPR and the Mechanics of Gene Editing
-- **Ch 5. Classical Genetics** `ku-life-sciences-genetics-and-heredity-classical-genetics` — 1 sections: Mendel's Laws: How Traits Travel Between Generations
-- **Ch 6. Genes in Populations** `ku-life-sciences-genetics-and-heredity-genes-in-populations` — 1 sections: Population Genetics: Genes Drifting Through Time
-
 ### Botany (`ku-life-sciences-botany`)
 
 *How plants build the world* — 4 chapters · 4 sections
@@ -926,12 +934,6 @@
 
 - **Ch 1. Ecosystem Science** `ku-life-sciences-ecology-ecosystem-science` — 4 sections: Ecosystems and the Flow of Energy; Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters; Biomes: A Tour of Earth's Major Ecosystems; Population Ecology: Growth, Limits and Cycles
 - **Ch 2. Community Ecology** `ku-life-sciences-ecology-community-ecology` — 1 sections: Populations and Communities: Interactions, Niches and Disturbance
-
-### Anatomy & Physiology (`ku-life-sciences-anatomy-and-physiology`)
-
-*The body, system by system* — 1 chapters · 9 sections
-
-- **Ch 1. Human Body Systems** `ku-life-sciences-anatomy-and-physiology-human-body-systems` — 9 sections: The Heart and Circulation: One Pump, Two Circuits; Breathing and Gas Exchange: From Air to Cell; The Digestive System: From Meal to Molecule; Kidneys, Hormones and the Body's Balance; Muscles, Bones and the Machinery of Movement; The Endocrine System: Hormones as the Body's Slow Messengers; The Nervous System: The Body's Command Network; The Senses: How the Body Reads the World; Reproduction and the Making of a Human
 
 ### Microbiology & Disease (`ku-life-sciences-microbiology-and-disease`)
 
@@ -1404,6 +1406,21 @@
 
 ## Languages & World Literature — 24 subjects
 
+### Literary Craft (`ku-languages-literature-literary-craft`)
+
+*How writing works* — 2 chapters · 2 sections
+
+- **Ch 1. Representation & Response** `ku-languages-literature-literary-craft-representation-and-response` — 1 sections: How Texts Represent Human Experiences
+- **Ch 2. Rhetoric & Style** `ku-languages-literature-literary-craft-rhetoric-and-style` — 1 sections: Literary Devices: How Writing Works Its Magic
+
+### Reading Strategy (`ku-languages-literature-reading-strategy`)
+
+*How languages live and grow* — 3 chapters · 3 sections
+
+- **Ch 1. Critical Response & Close Study** `ku-languages-literature-reading-strategy-critical-response-and-close-study` — 1 sections: The Critical Response: Analysing Texts and Writing About Literature
+- **Ch 2. Paired Passages** `ku-languages-literature-reading-strategy-paired-passages` — 1 sections: Paired Passages and Authorial Choices: Reading Two Texts at Once
+- **Ch 3. Narrative Reading** `ku-languages-literature-reading-strategy-narrative-reading` — 1 sections: Reading Narrative Passages: Plot, Narrator and Inference in Literary Fiction
+
 ### World Literature (`ku-languages-literature-world-literature`)
 
 *The books that shaped us* — 3 chapters · 3 sections
@@ -1444,13 +1461,6 @@
 *How languages live and grow* — 1 chapters · 1 sections
 
 - **Ch 1. Punctuation** `ku-languages-literature-grammar-and-mechanics-punctuation` — 1 sections: Punctuation Mechanics: Commas, Semicolons, Apostrophes and Dashes
-
-### Reading Strategy (`ku-languages-literature-reading-strategy`)
-
-*How languages live and grow* — 2 chapters · 2 sections
-
-- **Ch 1. Paired Passages** `ku-languages-literature-reading-strategy-paired-passages` — 1 sections: Paired Passages and Authorial Choices: Reading Two Texts at Once
-- **Ch 2. Narrative Reading** `ku-languages-literature-reading-strategy-narrative-reading` — 1 sections: Reading Narrative Passages: Plot, Narrator and Inference in Literary Fiction
 
 ### Verbal Reasoning (`ku-languages-literature-verbal-reasoning`)
 
@@ -1508,12 +1518,6 @@
 - **Ch 1. Historical Linguistics** `ku-languages-literature-linguistics-historical-linguistics` — 2 sections: Where Words Come From: Etymology in Action; How Languages Change: Sound, Grammar and Family Trees
 - **Ch 2. Morphology** `ku-languages-literature-linguistics-morphology` — 1 sections: Morphology: How Languages Build Words
 - **Ch 3. The Science of Language** `ku-languages-literature-linguistics-the-science-of-language` — 3 sections: Syntax: How Sentences Are Built; Meaning: Semantics and Pragmatics; Writing Systems of the World: Alphabets, Abjads and Beyond
-
-### Literary Craft (`ku-languages-literature-literary-craft`)
-
-*How writing works* — 1 chapters · 1 sections
-
-- **Ch 1. Rhetoric & Style** `ku-languages-literature-literary-craft-rhetoric-and-style` — 1 sections: Literary Devices: How Writing Works Its Magic
 
 ### Phonetics & Phonology (`ku-languages-literature-phonetics-and-phonology`)
 
