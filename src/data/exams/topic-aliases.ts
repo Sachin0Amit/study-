@@ -500,5 +500,32 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // interwar crises, Cold War order and multipolarisation, economic
   // globalisation.
   'the twentieth century': 'hist-twentieth-century',
+
+  /* ---- UGC NET Paper 1: matcher misses on existing lessons (verified 2026-10-24) ---- */
+  // The business-communication lesson teaches the communication process
+  // (sender-encoding-channel-decoding-feedback), channels and the
+  // semantic/psychological/organisational barriers behind communicating
+  // effectively in formal contexts.
+  'effective communication': 'bus-communication-governance-ethics',
+  // The constitutional lesson spans the topic exactly: constitution-making,
+  // preamble, fundamental rights and duties, directive principles,
+  // Parliament, judiciary, federalism.
+  'the constitutional framework': 'soc-indian-constitution-polity',
+  // The IR-theory lesson teaches realism, liberalism and constructivism,
+  // anarchy and the security dilemma, polarity and systemic stability —
+  // the theory set the topic names.
+  'theories and concepts of ir': 'pol-ir-theory',
+  // The people-environment lesson's pollution section covers local,
+  // regional and global issues — air/water/soil/noise pollution, climate
+  // change and biodiversity loss — the topic's subtopic line verbatim.
+  'environmental issues': 'env-people-environment-sustainable-development',
+  // The ICT lesson's e-governance section covers the governance models
+  // (G2C/G2B/G2G/G2E) and ICT use in policy, service delivery and
+  // transparency that the topic asks for.
+  'ict and governance': 'ict-computers-internet-digital-initiatives',
+  // The higher-education lesson's closing section teaches NEP 2020 (GER
+  // target, HECI, academic bank of credits) plus the regulators (UGC,
+  // AICTE, NAAC, NBA, AISHE) — the topic's two subtopic lines.
+  'policies governance and administration': 'edu-higher-education-system-india',
 }
 

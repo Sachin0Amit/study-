@@ -3997,4 +3997,105 @@ export const INDIA_ENGINEERING_EXAMS: CuratedExam[] = [
       },
     ],
   },
+  {
+    id: 'mht-cet',
+    name: 'MHT CET',
+    fullName: 'Maharashtra Health and Technical Common Entrance Test (MHT-CET)',
+    aliases: ['mhtcet', 'maharashtra cet', 'maharashtra common entrance test', 'mh cet', 'maharashtra engineering entrance'],
+    region: 'India',
+    category: 'State engineering & pharmacy entrance',
+    popularity: 52,
+    syllabusVerified: '2026-10-24',
+    website: 'https://cetcell.mahacet.org',
+    overview: {
+      conductor: 'State Common Entrance Test Cell, Government of Maharashtra',
+      level: 'Undergraduate admission to first-year B.E./B.Tech (PCM group) and B.Pharm/Pharm.D (PCM or PCB group) courses in Maharashtra',
+      stages: ['Paper 1 — Mathematics (50 questions, 2 marks each, 90 minutes)', 'Paper 2 — Physics and Chemistry (100 questions — 50 each, 1 mark each, 90 minutes)', 'PCB group instead sits Botany and Zoology papers; PCM and PCB groups are held in separate shifts'],
+      papers: ['Paper 1 Mathematics: 50 MCQs (10 from Class 11, 40 from Class 12), 100 marks', 'Paper 2 Physics: 50 MCQs (10 from Class 11, 40 from Class 12); Chemistry: 50 MCQs (10 from Class 11, 40 from Class 12), 100 marks combined'],
+      duration: 'Two 90-minute papers — 180 minutes total for the PCM group',
+      marking: 'Mathematics 2 marks per question (100 marks); Physics and Chemistry 1 mark per question (50 + 50 marks); total 200 marks',
+      negativeMarking: 'None — no negative marking',
+      questionTypes: ['Multiple-choice questions with four options, one correct; no calculators or smart devices'],
+      notes:
+        'The syllabus is the Maharashtra State Board curriculum: roughly 20 per cent of questions come from selected Class 11 chapters and 80 per cent from the full Class 12 syllabus. For 2026 the additions are Vectors and Error Analysis (Physics Std 11), Chemistry in Everyday Life (Chemistry) and Conic Sections (Mathematics Std 11), while Measures of Dispersion was dropped from Mathematics. Admission runs through the Centralised Admission Process (CAP) rounds using CET percentile; JEE Main scores are also accepted for a share of All-India seats.',
+    },
+    sources: [
+      { title: 'State CET Cell Maharashtra — CET syllabus and marking scheme for MHT-CET 2026 (Technical Education)', url: 'https://cetcell.mahacet.org/wp-content/uploads/2023/12/Syllabus-Technical-2026.pdf', host: 'cetcell.mahacet.org' },
+      { title: 'MHT-CET information brochure — State Common Entrance Test Cell', url: 'https://cetcell.mahacet.org/wp-content/uploads/2023/12/MHT-CET-2026-Information-Brochure.pdf', host: 'cetcell.mahacet.org' },
+    ],
+    subjects: [
+      {
+        name: 'Physics',
+        mappedSubjectId: 'physics',
+        weightage: 25,
+        units: [
+          {
+            name: 'Class 11 Physics (selected chapters)',
+            topics: [
+              { name: 'Vectors and error analysis', subtopics: ['Vector addition and resolution, scalar product; significant figures and propagation of errors'] },
+              { name: 'Motion in a plane and laws of motion', subtopics: ['Projectile motion, relative velocity', "Newton's laws, friction, dynamics of circular motion"] },
+              { name: 'Gravitation, thermal properties and sound', subtopics: ['Universal law of gravitation, acceleration due to gravity', 'Thermal expansion, specific heat, heat transfer', 'Wave nature of sound, Doppler effect'] },
+              { name: 'Optics, electrostatics and semiconductors', subtopics: ['Reflection and refraction, lenses, optical instruments', 'Charges, Coulomb law, electric field basics', 'Semiconductor devices basics'] },
+            ],
+          },
+          {
+            name: 'Class 12 Physics',
+            topics: [
+              { name: 'Mechanics of rotating and oscillating systems', subtopics: ['Circular motion, rotational motion (moment of inertia, angular momentum), oscillations (SHM)', 'Gravitation, elasticity, surface tension'] },
+              { name: 'Waves and optics', subtopics: ['Wave motion, stationary waves and beats', 'Wave theory of light, interference and diffraction'] },
+              { name: 'Electricity and magnetism', subtopics: ['Electrostatics, current electricity, magnetic effects of electric current, magnetism', 'Electromagnetic induction; AC circuits'] },
+              { name: 'Modern physics', subtopics: ['Kinetic theory of gases and radiation', 'Electrons and photons (dual nature), atoms, molecules and nuclei', 'Semiconductors and communication systems'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Chemistry',
+        mappedSubjectId: 'chemistry',
+        weightage: 25,
+        units: [
+          {
+            name: 'Class 11 Chemistry (selected chapters)',
+            topics: [
+              { name: 'Foundations of chemistry', subtopics: ['Some basic concepts of chemistry, structure of atom', 'Chemical bonding, redox reactions'] },
+              { name: 'States, surfaces and s-block', subtopics: ['States of matter (gases and liquids)', 'Adsorption and colloids (surface chemistry)', 'Elements of groups 1 and 2'] },
+              { name: 'Organic fundamentals', subtopics: ['Basic principles of organic chemistry, hydrocarbons'] },
+            ],
+          },
+          {
+            name: 'Class 12 Chemistry',
+            topics: [
+              { name: 'Physical chemistry', subtopics: ['Solid state, solutions and colligative properties, ionic equilibria', 'Chemical thermodynamics and energetics, electrochemistry, chemical kinetics'] },
+              { name: 'Inorganic chemistry', subtopics: ['Elements of groups 16, 17 and 18', 'Transition and inner transition elements, coordination compounds'] },
+              { name: 'Organic chemistry and applied chemistry', subtopics: ['Halogen derivatives of alkanes and arenes; alcohols, phenols and ethers', 'Aldehydes, ketones and carboxylic acids; amines (organic compounds containing nitrogen)', 'Biomolecules, introduction to polymer chemistry, chemistry in everyday life'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Mathematics',
+        mappedSubjectId: 'mathematics',
+        weightage: 50,
+        units: [
+          {
+            name: 'Class 11 Mathematics (selected chapters)',
+            topics: [
+              { name: 'Algebra and complex numbers', subtopics: ['Complex numbers, permutations and combinations, functions', 'Limits and continuity'] },
+              { name: 'Trigonometry and coordinate geometry', subtopics: ['Trigonometry II', 'Straight line, circle, conic section'] },
+              { name: 'Probability', subtopics: ['Classical and axiomatic probability, addition and multiplication theorems'] },
+            ],
+          },
+          {
+            name: 'Class 12 Mathematics',
+            topics: [
+              { name: 'Logic, algebra and vectors', subtopics: ['Mathematical logic (statements), matrices', 'Vectors and three-dimensional geometry — line and plane'] },
+              { name: 'Coordinate geometry and trigonometry', subtopics: ['Pair of straight lines, circle, line, conics', 'Trigonometric functions (inverse trigonometry)'] },
+              { name: 'Calculus', subtopics: ['Continuity, differentiation and applications of derivatives', 'Integration, applications of definite integrals, differential equations'] },
+              { name: 'Probability and statistics', subtopics: ['Probability distributions, statistics (measures of central tendency and variance)', 'Bernoulli trials and binomial distribution; linear programming problems'] },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]

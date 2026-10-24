@@ -1680,4 +1680,284 @@ export const INDIA_PG_COMPETITIVE_EXAMS: CuratedExam[] = [
       },
     ],
   },
+  {
+    id: 'ugc-net',
+    name: 'UGC NET',
+    fullName: 'University Grants Commission National Eligibility Test (UGC-NET)',
+    aliases: ['nta ugc net', 'ugc net exam', 'net exam', 'ugc net jrf', 'national eligibility test', 'csir ugc net', 'assistant professor net'],
+    region: 'India',
+    category: 'Teaching & research eligibility (Assistant Professor, JRF, PhD admission)',
+    popularity: 68,
+    syllabusVerified: '2026-10-24',
+    website: 'https://ugcnet.nta.nic.in',
+    overview: {
+      conductor: 'National Testing Agency (NTA) on behalf of University Grants Commission',
+      level: 'National eligibility determination for Assistant Professor, Junior Research Fellowship (JRF) and PhD admission',
+      stages: ['Paper I — General Paper on Teaching & Research Aptitude (50 questions, 100 marks, compulsory for all)', 'Paper II — subject-specific paper in the chosen subject (100 questions, 200 marks)', 'Both papers sat in a single three-hour session without a break'],
+      papers: ['Paper I (10 units: teaching aptitude, research aptitude, comprehension, communication, mathematical reasoning, logical reasoning, data interpretation, ICT, people-development-environment, higher education system)', 'Paper II (subject paper — 80+ subjects; syllabus of most subjects last revised with effect from June 2019)'],
+      duration: '3 hours, single combined session for Paper I + Paper II',
+      marking: 'Paper I 100 marks (50 × 2) + Paper II 200 marks (100 × 2) = 300 marks total',
+      negativeMarking: 'None — no negative marking in either paper',
+      questionTypes: ['Objective multiple-choice questions with four options, one correct'],
+      notes:
+        'Qualifying marks: 40% aggregate for General/Unreserved, 35% for reserved categories, in both papers combined. JRF goes to the top ~6% of qualifying candidates subject to age limits; Assistant Professor eligibility has no upper age limit. The same test now also gates PhD admission under UGC PhD regulations. Subjects include Commerce (code 08), Political Science (code 02), Management (17), Education (09), English (30), Computer Science & Applications (87) and Economics (01).',
+    },
+    sources: [
+      { title: 'University Grants Commission — NET syllabi (updated syllabi applicable from June 2019 UGC-NET onwards)', url: 'https://www.ugcnetonline.in/syllabus-new.php', host: 'ugcnetonline.in' },
+      { title: 'NTA — UGC NET official examination portal (information bulletins and syllabus downloads)', url: 'https://ugcnet.nta.nic.in', host: 'ugcnet.nta.nic.in' },
+    ],
+    subjects: [
+      {
+        name: 'General Paper on Teaching & Research Aptitude (Paper I)',
+        mappedSubjectId: 'aptitude',
+        weightage: 33,
+        units: [
+          {
+            name: 'Teaching Aptitude',
+            topics: [
+              { name: 'Teaching: concept, objectives and levels', subtopics: ['Concept, characteristics and basic requirements of teaching', 'Levels of teaching: memory, understanding and reflective'] },
+              { name: "Learner's characteristics", subtopics: ['Adolescent and adult learners', 'Academic, social, emotional and cognitive characteristics'] },
+              { name: 'Factors affecting teaching', subtopics: ['Teacher, learner, support material, instructional facilities, learning environment and institution'] },
+              { name: 'Methods of teaching in institutions of higher learning', subtopics: ['Teacher-centred methods: lecture, demonstration, tutorial', 'Learner-centred methods: discussion, seminar, workshop, project, role play and simulation', 'Offline versus online teaching — SWAYAM, SWAYAM PRABHA and MOOCs'] },
+              { name: 'Teaching support system', subtopics: ['Traditional, modern and ICT-based support systems'] },
+              { name: 'Evaluation systems', subtopics: ['Elements and types of evaluation — formative, summative and diagnostic', 'Evaluation in choice-based credit system (CBCS), semester system, grading — quantitative and qualitative'] },
+            ],
+          },
+          {
+            name: 'Research Aptitude',
+            topics: [
+              { name: 'Research: meaning, types and characteristics', subtopics: ['Basic versus applied research; qualitative versus quantitative; positivism and post-positivism as approaches to inquiry'] },
+              { name: 'Steps of research', subtopics: ['Problem formulation, hypothesis, research design, data collection, analysis, generalisation and report writing'] },
+              { name: 'Methods of research', subtopics: ['Experimental, descriptive, historical, qualitative and quantitative methods'] },
+              { name: 'Thesis and article writing', subtopics: ['Format and structure of thesis and research articles', 'Styles of citation — APA, MLA, Chicago; referencing and anti-plagiarism conventions'] },
+              { name: 'Application of ICT in research', subtopics: ['Online libraries, databases (Shodhganga, Shodhgangotri, e-resources), reference managers, plagiarism-detection tools'] },
+              { name: 'Research ethics', subtopics: ['Informed consent, confidentiality, fabrication and falsification', 'Plagiarism — forms, detection (URKUND/Turnitin) and UGC promotion of academic integrity regulations'] },
+            ],
+          },
+          {
+            name: 'Comprehension',
+            topics: [
+              { name: 'Reading and analysing passages', subtopics: ['A passage of 300-350 words with questions on main idea, inference, vocabulary in context and implication'] },
+            ],
+          },
+          {
+            name: 'Communication',
+            topics: [
+              { name: 'Communication: meaning, types and characteristics', subtopics: ['Verbal and non-verbal communication; interpersonal, intrapersonal, group and mass communication'] },
+              { name: 'Effective communication', subtopics: ['Verbal and non-verbal effectiveness in classroom and formal contexts'] },
+              { name: 'Barriers to communication', subtopics: ['Physical, semantic, psychological, organisational and cultural barriers'] },
+              { name: 'Mass-media and society', subtopics: ['Role of print, electronic and digital media; media effects and responsibility'] },
+            ],
+          },
+          {
+            name: 'Mathematical Reasoning and Aptitude',
+            topics: [
+              { name: 'Types of reasoning', subtopics: ['Number series, letter series, codes and relationships'] },
+              { name: 'Mathematical aptitude', subtopics: ['Fractions, time and distance, ratio and proportion, percentage, profit and loss', 'Simple and compound interest, averages, permutation and combination'] },
+            ],
+          },
+          {
+            name: 'Logical Reasoning',
+            topics: [
+              { name: 'Understanding the structure of arguments', subtopics: ['Categorical propositions, mood and figure; uses of language, connotation and denotation of terms', 'Premises and conclusion, validity and soundness'] },
+              { name: 'Evaluating and distinguishing inductive and deductive reasoning', subtopics: ['Induction versus deduction, square of opposition, testing validity'] },
+              { name: 'Analogies', subtopics: ['Verbal, numerical and figural analogy items'] },
+              { name: 'Venn diagram', subtopics: ['Simple and multiple-set Venn diagrams for syllogism problems'] },
+              { name: 'Indian logic: means of knowledge', subtopics: ['Pramanas — pratyaksha (perception), anumana (inference), upamana (comparison), shabda (verbal testimony), arthapatti (postulation), anupalabddhi (non-apprehension)', 'Structure and kinds of anumana (inference)'] },
+            ],
+          },
+          {
+            name: 'Data Interpretation',
+            topics: [
+              { name: 'Sources, acquisition and classification of data', subtopics: ['Primary versus secondary sources; quantitative and qualitative data'] },
+              { name: 'Graphical representation and mapping of data', subtopics: ['Bar chart, pie chart, histogram, frequency polygon, ogive; data tables and caselets'] },
+              { name: 'Data and governance', subtopics: ['Data-driven administration, open-government data and evidence-based policy'] },
+            ],
+          },
+          {
+            name: 'Information and Communication Technology (ICT)',
+            topics: [
+              { name: 'ICT: general abbreviations and terminology', subtopics: ['Common computing, networking and file-format abbreviations'] },
+              { name: 'Basics of internet, intranet, e-mail, audio and video-conferencing', subtopics: ['Protocols, browsers, search tools, e-mail etiquette and conferencing platforms'] },
+              { name: 'Digital initiatives in higher education', subtopics: ['SWAYAM, SWAYAM PRABHA, NPTEL, DIKSHA, National Digital Library, e-PG Pathshala, National Academic Depository, Virtual Labs'] },
+              { name: 'ICT and governance', subtopics: ['E-governance models and ICT use in policy, service delivery and transparency'] },
+            ],
+          },
+          {
+            name: 'People, Development and Environment',
+            topics: [
+              { name: 'Development and environment', subtopics: ['Millennium Development Goals and Sustainable Development Goals (UN 2030 Agenda)'] },
+              { name: 'Human and environment interaction', subtopics: ['Anthropogenic drivers, ecosystem impact and footprint concepts'] },
+              { name: 'Environmental issues', subtopics: ['Local, regional and global issues — air, water and soil pollution, climate change, biodiversity loss'] },
+              { name: 'Impacts of pollutants on human health', subtopics: ['Criteria pollutants and health outcomes; WHO air-quality burden of disease'] },
+              { name: 'Natural hazards and disasters', subtopics: ['Cyclone, flood, earthquake, drought — mitigation strategies and Sendai framework basics'] },
+              { name: 'Natural and energy resources', subtopics: ['Solar, wind, soil, hydro, geothermal, biomass, nuclear, forests and water — use and over-exploitation'] },
+              { name: 'Environment Protection Act and global agreements', subtopics: ['Environment (Protection) Act 1986; Montreal Protocol, Kyoto Protocol, Paris Agreement; Rio Earth Summit'] },
+            ],
+          },
+          {
+            name: 'Higher Education System',
+            topics: [
+              { name: 'Institutions of higher learning in ancient India', subtopics: ['Takshashila, Nalanda, Vikramashila, Vallabhi — organisation and pedagogy'] },
+              { name: 'Evolution of higher learning and research in post-independence India', subtopics: ['UGC, IITs, IIMs, AIIMS, central and state universities; expansion of research bodies (CSIR, ICAR, ICMR)'] },
+              { name: 'Oriental, conventional and non-conventional learning programmes in India', subtopics: ['Traditional disciplines versus open and distance learning, online programmes'] },
+              { name: 'Professional, technical and skill-based education', subtopics: ['AICTE-regulated technical education, NCVET and skill universities, vocationalisation'] },
+              { name: 'Value education and environmental education', subtopics: ['Values in higher education curricula, environmental studies as a compulsory course'] },
+              { name: 'Policies, governance and administration', subtopics: ['National Education Policy 2020 — GER target, HECI proposal, academic bank of credits', 'Regulators and councils: UGC, AICTE, NAAC accreditation, NBA; AISHE and institutional classification'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Commerce (Paper II, Code 08)',
+        weightage: 33,
+        units: [
+          {
+            name: 'Business Environment and International Business',
+            topics: [
+              { name: 'Business environment: concepts and elements', subtopics: ['Economic environment — economic systems, monetary and fiscal policies', 'Political and legal environment — role of government, Consumer Protection Act, FEMA', 'Socio-cultural factors and their influence on business; corporate social responsibility'] },
+              { name: 'International business and trade', subtopics: ['Scope and importance, globalisation and its drivers, modes of entry', 'Theories of international trade; tariff and non-tariff barriers; trade creation and diversion', "India's foreign trade policy and balance of payments"] },
+              { name: 'FDI, regional integration and institutions', subtopics: ['FDI and FPI — types, costs and benefits, India policy', 'Regional trade agreements — EU, ASEAN, SAARC, NAFTA/USMCA', 'IMF, World Bank, UNCTAD; WTO — functions, Agriculture Agreement, GATS, TRIPS, TRIMS'] },
+            ],
+          },
+          {
+            name: 'Accounting and Auditing',
+            topics: [
+              { name: 'Accounting principles and corporate accounting', subtopics: ['Basic accounting principles, concepts and postulates; Indian Accounting Standards and IFRS', 'Partnership accounts; issue, forfeiture and reissue of shares; liquidation; amalgamation; holding company accounts'] },
+              { name: 'Cost and management accounting', subtopics: ['Marginal costing and break-even analysis, standard costing, budgetary control, ABC', 'Ratio analysis, funds flow and cash flow analysis; human resource, inflation and environmental accounting'] },
+              { name: 'Auditing', subtopics: ['Independent financial audit, vouching, verification and valuation; audit report', 'Recent trends — management, energy, environment, systems and safety audits'] },
+            ],
+          },
+          {
+            name: 'Business Economics',
+            topics: [
+              { name: 'Demand, consumer behaviour and production', subtopics: ['Law of demand, elasticity of demand, AR-MR relationship', 'Utility analysis, indifference curves; law of variable proportions and returns to scale; short-run and long-run cost curves'] },
+              { name: 'Market structures and pricing', subtopics: ['Perfect competition, monopolistic competition, oligopoly and price leadership, monopoly and price discrimination', 'Pricing strategies — skimming, penetration, peak-load pricing'] },
+            ],
+          },
+          {
+            name: 'Business Finance',
+            topics: [
+              { name: 'Corporate finance decisions', subtopics: ['Sources of finance, lease financing, cost of capital, time value of money', 'Risk and return, capital structure, capital budgeting techniques, working capital management, dividend theories and policy'] },
+              { name: 'International finance', subtopics: ['International monetary system and financial markets — Euro currency, GDRs, ADRs', 'Foreign exchange market, exchange-rate risk and hedging; multinational capital budgeting'] },
+            ],
+          },
+          {
+            name: 'Business Statistics and Research Methods',
+            topics: [
+              { name: 'Descriptive and inferential statistics', subtopics: ['Central tendency, dispersion, skewness; correlation and regression', 'Probability approaches and Bayes theorem; binomial, Poisson and normal distributions'] },
+              { name: 'Research methods and testing', subtopics: ['Research designs, sampling — probability and non-probability methods, sampling distribution, central limit theorem', 'Hypothesis testing — z-test, t-test, ANOVA, chi-square; Mann-Whitney U, Kruskal-Wallis H, rank correlation; report writing'] },
+            ],
+          },
+          {
+            name: 'Business Management and Human Resource Management',
+            topics: [
+              { name: 'Management principles and organisation', subtopics: ['Principles and functions of management; formal and informal organisation, span of control, delegation and decentralisation', 'Motivation, leadership theories, corporate governance and business ethics'] },
+              { name: 'Human resource management', subtopics: ['HRM concept, role and functions; HR planning, job evaluation, recruitment and selection', 'Training and development, performance appraisal including 360-degree, compensation and incentives', 'Personality, perception, attitudes, group dynamics, conflict and negotiation, organisational culture and change'] },
+            ],
+          },
+          {
+            name: 'Banking and Financial Institutions',
+            topics: [
+              { name: 'Indian financial system and banking', subtopics: ['Types of banks — commercial, RRBs, foreign, cooperative; RBI functions and monetary policy', 'Banking reforms — Basel norms, risk management, NPA management, financial inclusion'] },
+              { name: 'Financial markets and institutions', subtopics: ['Money market, capital market, government securities market', 'DFIs, NBFCs, mutual funds, pension funds; insurance types and IRDAI regulation; digital payments and internet banking'] },
+            ],
+          },
+          {
+            name: 'Marketing Management',
+            topics: [
+              { name: 'Marketing concepts and mix', subtopics: ['Marketing concept and approaches, marketing channels, marketing mix, strategic marketing planning', 'Segmentation, targeting and positioning; product decisions, product life cycle, new product development'] },
+              { name: 'Pricing, promotion and distribution', subtopics: ['Pricing factors and strategies; advertising, personal selling, sales promotion, promotion mix', 'Channels of distribution and channel management; consumer behaviour and buying process'] },
+              { name: 'Trends in marketing', subtopics: ['Social, online, green, direct and rural marketing; CRM; service marketing; logistics management'] },
+            ],
+          },
+          {
+            name: 'Legal Aspects of Business',
+            topics: [
+              { name: 'Business laws', subtopics: ['Indian Contract Act 1872 — valid contract, free consent, discharge, breach, quasi and special contracts', 'Sale of Goods Act 1930; Negotiable Instruments Act 1881; Companies Act 2013; LLP; Competition Act 2002'] },
+              { name: 'Modern regulatory framework', subtopics: ['Information Technology Act 2000 and cyber crimes; RTI Act 2005', 'Intellectual property rights — patents, trademarks, copyrights; GST — objectives, mechanism, dual GST'] },
+            ],
+          },
+          {
+            name: 'Income-tax and Corporate Tax Planning',
+            topics: [
+              { name: 'Income-tax fundamentals', subtopics: ['Residential status and tax incidence, exempted incomes, heads of income and computation', 'Deductions from gross total income, assessment of individuals, clubbing of incomes'] },
+              { name: 'Corporate tax planning and international taxation', subtopics: ['Tax avoidance versus evasion; techniques of corporate tax planning in business decisions', 'Double taxation and its avoidance; transfer pricing; TDS/TCS, advance tax, e-filing'] },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Political Science (Paper II, Code 02)',
+        weightage: 34,
+        units: [
+          {
+            name: 'Political Theory',
+            topics: [
+              { name: 'Core concepts of political theory', subtopics: ['Liberty, equality, justice, rights, democracy, power and authority', 'Theories of the state — liberal, neo-liberal, Marxist, pluralist, post-colonial and feminist perspectives'] },
+            ],
+          },
+          {
+            name: 'Political Thought',
+            topics: [
+              { name: 'Western political thought', subtopics: ['Confucius, Plato, Aristotle, Machiavelli, Hobbes, Locke, Rousseau, Kant', 'Bentham, J.S. Mill, Hegel, Marx, Gramsci, Hannah Arendt'] },
+            ],
+          },
+          {
+            name: 'Indian Political Thought',
+            topics: [
+              { name: 'Classical and modern Indian thought', subtopics: ['Dharmashastra, Arthashastra (Kautilya), Buddhist traditions', 'Sri Aurobindo, M.K. Gandhi, Jawaharlal Nehru, Rabindranath Tagore, B.R. Ambedkar, Deendayal Upadhyaya'] },
+            ],
+          },
+          {
+            name: 'Comparative Political Analysis',
+            topics: [
+              { name: 'Comparative methods and institutions', subtopics: ['Approaches to comparative politics — institutional, systems, political economy', 'Constitutionalism and forms of government, executive-legislative-judicial organisation', 'Electoral systems and party systems; democratisation and regime types'] },
+            ],
+          },
+          {
+            name: 'International Relations',
+            topics: [
+              { name: 'Theories and concepts of IR', subtopics: ['Realism, liberalism, neo-liberal institutionalism, constructivism, English school, feminist and green perspectives', 'Power, balance of power, deterrence, security dilemma, interdependence and globalisation'] },
+              { name: 'Global politics', subtopics: ['Cold War and its end, nuclear proliferation, regional organisations (EU, ASEAN, SAARC, BRICS)', 'United Nations — peacekeeping, reform debates; international political economy, WTO, IMF, World Bank'] },
+            ],
+          },
+          {
+            name: "India's Foreign Policy",
+            topics: [
+              { name: 'Determinants and evolution of Indian foreign policy', subtopics: ['Historical determinants, institutions and policy-making; continuity and change', 'Non-alignment and strategic autonomy; India and its neighbours; India and major powers'] },
+              { name: 'India and the global order', subtopics: ['India and the UN, climate diplomacy, nuclear policy and arms control', 'Look East/Act East policy, Indo-Pacific, BRICS, G20 and multilateralism'] },
+            ],
+          },
+          {
+            name: 'Political Institutions in India',
+            topics: [
+              { name: 'The constitutional framework', subtopics: ['Constitution-making, preamble, fundamental rights and duties, directive principles', 'Parliament — composition, functions, legislative procedure; the presidency and prime ministerial government'] },
+              { name: 'Judiciary and federalism', subtopics: ['Supreme Court and High Courts, judicial review, judicial activism and PIL', 'Centre-state relations, federal dynamics, local government — 73rd/74th amendments and panchayati raj'] },
+            ],
+          },
+          {
+            name: 'Political Processes in India',
+            topics: [
+              { name: 'Party system and elections', subtopics: ['National and regional parties, coalition politics, electoral politics and voting behaviour', 'Election Commission and electoral reforms'] },
+              { name: 'Society and politics', subtopics: ['Caste, religion, tribe, language and gender in political processes', 'Social movements, regionalism, civil society and political participation'] },
+            ],
+          },
+          {
+            name: 'Public Administration',
+            topics: [
+              { name: 'Theories and structures of administration', subtopics: ['Classical, neo-classical and human-relations theories; Weberian bureaucracy', 'Ministry and department organisation, civil services, administrative reforms in India'] },
+            ],
+          },
+          {
+            name: 'Governance and Public Policy',
+            topics: [
+              { name: 'Governance concepts', subtopics: ['Good governance, e-governance, transparency and accountability, RTI and citizen charters'] },
+              { name: 'Public policy process', subtopics: ['Policy-making, implementation and evaluation in India; major policy frameworks and commissions'] },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]

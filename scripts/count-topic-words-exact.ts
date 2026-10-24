@@ -119,6 +119,11 @@ const IDS = [
   'manuf-welding-joining',
   'eng-spelling-rules-patterns',
   'hist-twentieth-century',
+  'res-research-methodology-hypothesis-sampling',
+  'edu-teaching-aptitude-learner-evaluation',
+  'edu-higher-education-system-india',
+  'ict-computers-internet-digital-initiatives',
+  'env-people-environment-sustainable-development',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

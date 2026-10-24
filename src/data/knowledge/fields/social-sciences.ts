@@ -5,12 +5,18 @@ import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 import { x25TournamentReasoningCivicsPassTopics } from './x25-tournament-reasoning-civics-pass'
 import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
 import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
+import { x31UgcNetPaper1PassTopics } from './x31-ugc-net-paper1-pass'
 
 export const socialSciences: KnowledgeDomainFile = {
   domain: 'Social Sciences',
   blurb:
     'How humans behave, bond, decide and govern together — psychology, sociology and political science at their meeting points.',
   topics: [
+    // X31 pass (2026-10-24): UGC NET Paper 1 — research methodology, teaching
+    // aptitude and the India higher-education system. First Education-field
+    // lessons in the library; carved against econ-foundations-methodology
+    // (economic methodology) and pol-india-since-independence (politics).
+    ...x31UgcNetPaper1PassTopics.filter((t) => t.domain === 'Social Sciences'),
     // X29 pass (2026-10-24): social psychology of attraction, aggression and
     // helping — the mcat interpersonal-behavior gap. Distinct from the
     // conformity lesson (situational influence) and the OB lesson (workplace).

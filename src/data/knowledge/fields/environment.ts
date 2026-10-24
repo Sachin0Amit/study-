@@ -1,9 +1,16 @@
 import type { KnowledgeDomainFile } from '../types'
+import { x31UgcNetPaper1PassTopics } from './x31-ugc-net-paper1-pass'
 
 export const environment: KnowledgeDomainFile = {
   domain: 'Environment & Sustainability',
   blurb: "How Earth's climate, soils and life-support systems actually work — and how human choices stress or restore them.",
   topics: [
+    // X31 pass (2026-10-24): UGC NET Paper 1 'People, Development and
+    // Environment' unit — pollution and health, MDGs/SDGs, resources,
+    // disasters, EPA 1986 and the global treaty timeline. Carved against
+    // env-climate-feedbacks-sensitivity (climate physics) and
+    // geo-regional-development-sustainability (regional geography).
+    ...x31UgcNetPaper1PassTopics.filter((t) => t.domain === 'Environment & Sustainability'),
     {
       id: 'env-carbon-sinks-global-carbon-budget',
       title: 'Carbon Sinks and the Global Carbon Budget',

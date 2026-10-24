@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T06:42:43.701Z",
+  "generatedAt": "2026-10-24T07:16:51.692Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 213,
-    "books": 213,
-    "chapters": 895,
-    "sections": 4483
+    "subjects": 214,
+    "books": 214,
+    "chapters": 900,
+    "sections": 4488
   },
   "subjects": [
     {
@@ -27726,6 +27726,46 @@
       ]
     },
     {
+      "id": "ku-environment-environmental-policy",
+      "name": "Environmental Policy",
+      "group": "Environment & Sustainability",
+      "tagline": "Governing the commons",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-environment-environmental-policy-development-and-environment",
+          "number": 1,
+          "title": "Development & Environment",
+          "shortTitle": "Development & Environment",
+          "bookId": "ku-environment-environmental-policy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-env-people-environment-sustainable-development",
+              "number": 1.1,
+              "title": "People, Development and Environment: Pollution, SDGs and Global Agreements"
+            }
+          ]
+        },
+        {
+          "id": "ku-environment-environmental-policy-earth-systems-science",
+          "number": 2,
+          "title": "Earth Systems Science",
+          "shortTitle": "Earth Systems Science",
+          "bookId": "ku-environment-environmental-policy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-env-planetary-boundaries-safe-operating-space",
+              "number": 2.1,
+              "title": "Planetary Boundaries and Safe Operating Space"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-environment-climate-science",
       "name": "Climate Science",
       "group": "Environment & Sustainability",
@@ -27775,31 +27815,6 @@
               "id": "ku-env-climate-feedbacks-sensitivity",
               "number": 3.1,
               "title": "Climate Feedbacks and Sensitivity: Why Warming Amplifies"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-environment-environmental-policy",
-      "name": "Environmental Policy",
-      "group": "Environment & Sustainability",
-      "tagline": "Governing the commons",
-      "chapterCount": 1,
-      "sectionCount": 1,
-      "chapters": [
-        {
-          "id": "ku-environment-environmental-policy-earth-systems-science",
-          "number": 1,
-          "title": "Earth Systems Science",
-          "shortTitle": "Earth Systems Science",
-          "bookId": "ku-environment-environmental-policy",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-env-planetary-boundaries-safe-operating-space",
-              "number": 1.1,
-              "title": "Planetary Boundaries and Safe Operating Space"
             }
           ]
         }
@@ -28075,6 +28090,31 @@
               "id": "ku-env-urban-planning-design",
               "number": 1.1,
               "title": "Urban Planning: Designing Cities That Work"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-computing-and-ai-ict-and-digital-literacy",
+      "name": "ICT & Digital Literacy",
+      "group": "Computing & AI",
+      "tagline": "Computing & AI",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-computing-and-ai-ict-and-digital-literacy-ict-basics",
+          "number": 1,
+          "title": "ICT Basics",
+          "shortTitle": "ICT Basics",
+          "bookId": "ku-computing-and-ai-ict-and-digital-literacy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-ict-computers-internet-digital-initiatives",
+              "number": 1.1,
+              "title": "ICT: From Abbreviations to India’s Digital Higher-Education Initiatives"
             }
           ]
         }
@@ -28726,6 +28766,101 @@
       ]
     },
     {
+      "id": "ku-social-sciences-research-methods",
+      "name": "Research Methods",
+      "group": "Social Sciences",
+      "tagline": "How we know",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-social-sciences-research-methods-research-methodology",
+          "number": 1,
+          "title": "Research Methodology",
+          "shortTitle": "Research Methodology",
+          "bookId": "ku-social-sciences-research-methods",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-res-research-methodology-hypothesis-sampling",
+              "number": 1.1,
+              "title": "Research Methodology: From Question to Sampling to Ethics"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-research-methods-how-we-know",
+          "number": 2,
+          "title": "How We Know",
+          "shortTitle": "How We Know",
+          "bookId": "ku-social-sciences-research-methods",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-research-methods-toolkit",
+              "number": 2.1,
+              "title": "Social Research Methods: The Toolkit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-social-sciences-education",
+      "name": "Education",
+      "group": "Social Sciences",
+      "tagline": "How teaching works",
+      "chapterCount": 3,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-social-sciences-education-teaching-and-pedagogy",
+          "number": 1,
+          "title": "Teaching & Pedagogy",
+          "shortTitle": "Teaching & Pedagogy",
+          "bookId": "ku-social-sciences-education",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-edu-teaching-aptitude-learner-evaluation",
+              "number": 1.1,
+              "title": "Teaching Aptitude: Levels, Methods, Support Systems and Evaluation"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-education-higher-education",
+          "number": 2,
+          "title": "Higher Education",
+          "shortTitle": "Higher Education",
+          "bookId": "ku-social-sciences-education",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-edu-higher-education-system-india",
+              "number": 2.1,
+              "title": "India's Higher Education System: From Nalanda to NEP 2020"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-education-learning-systems",
+          "number": 3,
+          "title": "Learning Systems",
+          "shortTitle": "Learning Systems",
+          "bookId": "ku-social-sciences-education",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-education-pedagogy",
+              "number": 3.1,
+              "title": "Education and Pedagogy: How Teaching Works"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-social-sciences-psychology",
       "name": "Psychology",
       "group": "Social Sciences",
@@ -29295,56 +29430,6 @@
               "id": "ku-anth-archaeology-methods",
               "number": 2.1,
               "title": "Archaeology: Reading the Past from Its Remains"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-social-sciences-research-methods",
-      "name": "Research Methods",
-      "group": "Social Sciences",
-      "tagline": "How we know",
-      "chapterCount": 1,
-      "sectionCount": 1,
-      "chapters": [
-        {
-          "id": "ku-social-sciences-research-methods-how-we-know",
-          "number": 1,
-          "title": "How We Know",
-          "shortTitle": "How We Know",
-          "bookId": "ku-social-sciences-research-methods",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-research-methods-toolkit",
-              "number": 1.1,
-              "title": "Social Research Methods: The Toolkit"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-social-sciences-education",
-      "name": "Education",
-      "group": "Social Sciences",
-      "tagline": "How teaching works",
-      "chapterCount": 1,
-      "sectionCount": 1,
-      "chapters": [
-        {
-          "id": "ku-social-sciences-education-learning-systems",
-          "number": 1,
-          "title": "Learning Systems",
-          "shortTitle": "Learning Systems",
-          "bookId": "ku-social-sciences-education",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-education-pedagogy",
-              "number": 1.1,
-              "title": "Education and Pedagogy: How Teaching Works"
             }
           ]
         }

@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 213
-- **Books (master volumes):** 213
-- **Chapters:** 895
-- **Sections (lessons):** 4483
+- **Subjects:** 214
+- **Books (master volumes):** 214
+- **Chapters:** 900
+- **Sections (lessons):** 4488
 
 ## Foundations — 5 subjects
 
@@ -1046,6 +1046,13 @@
 
 ## Environment & Sustainability — 9 subjects
 
+### Environmental Policy (`ku-environment-environmental-policy`)
+
+*Governing the commons* — 2 chapters · 2 sections
+
+- **Ch 1. Development & Environment** `ku-environment-environmental-policy-development-and-environment` — 1 sections: People, Development and Environment: Pollution, SDGs and Global Agreements
+- **Ch 2. Earth Systems Science** `ku-environment-environmental-policy-earth-systems-science` — 1 sections: Planetary Boundaries and Safe Operating Space
+
 ### Climate Science (`ku-environment-climate-science`)
 
 *Reading the atmosphere* — 3 chapters · 3 sections
@@ -1053,12 +1060,6 @@
 - **Ch 1. Biogeochemical Cycles** `ku-environment-climate-science-biogeochemical-cycles` — 1 sections: Carbon Sinks and the Global Carbon Budget
 - **Ch 2. Attribution Science** `ku-environment-climate-science-attribution-science` — 1 sections: Extreme Weather in a Warming World: The Science of Attribution
 - **Ch 3. Climate Sensitivity** `ku-environment-climate-science-climate-sensitivity` — 1 sections: Climate Feedbacks and Sensitivity: Why Warming Amplifies
-
-### Environmental Policy (`ku-environment-environmental-policy`)
-
-*Governing the commons* — 1 chapters · 1 sections
-
-- **Ch 1. Earth Systems Science** `ku-environment-environmental-policy-earth-systems-science` — 1 sections: Planetary Boundaries and Safe Operating Space
 
 ### Agriculture & Food Systems (`ku-environment-agriculture-and-food-systems`)
 
@@ -1108,7 +1109,13 @@
 
 - **Ch 1. The Built Environment** `ku-environment-urban-planning-the-built-environment` — 1 sections: Urban Planning: Designing Cities That Work
 
-## Computing & AI — 2 subjects
+## Computing & AI — 3 subjects
+
+### ICT & Digital Literacy (`ku-computing-and-ai-ict-and-digital-literacy`)
+
+*Computing & AI* — 1 chapters · 1 sections
+
+- **Ch 1. ICT Basics** `ku-computing-and-ai-ict-and-digital-literacy-ict-basics` — 1 sections: ICT: From Abbreviations to India’s Digital Higher-Education Initiatives
 
 ### Computer Science (`ku-computing-and-ai-computer-science`)
 
@@ -1232,6 +1239,21 @@
 
 ## Social Sciences — 12 subjects
 
+### Research Methods (`ku-social-sciences-research-methods`)
+
+*How we know* — 2 chapters · 2 sections
+
+- **Ch 1. Research Methodology** `ku-social-sciences-research-methods-research-methodology` — 1 sections: Research Methodology: From Question to Sampling to Ethics
+- **Ch 2. How We Know** `ku-social-sciences-research-methods-how-we-know` — 1 sections: Social Research Methods: The Toolkit
+
+### Education (`ku-social-sciences-education`)
+
+*How teaching works* — 3 chapters · 3 sections
+
+- **Ch 1. Teaching & Pedagogy** `ku-social-sciences-education-teaching-and-pedagogy` — 1 sections: Teaching Aptitude: Levels, Methods, Support Systems and Evaluation
+- **Ch 2. Higher Education** `ku-social-sciences-education-higher-education` — 1 sections: India's Higher Education System: From Nalanda to NEP 2020
+- **Ch 3. Learning Systems** `ku-social-sciences-education-learning-systems` — 1 sections: Education and Pedagogy: How Teaching Works
+
 ### Psychology (`ku-social-sciences-psychology`)
 
 *The studied mind* — 8 chapters · 10 sections
@@ -1301,18 +1323,6 @@
 
 - **Ch 1. Cultural Anthropology** `ku-social-sciences-anthropology-cultural-anthropology` — 1 sections: Cultural Anthropology: Making Sense of Human Difference
 - **Ch 2. Archaeology** `ku-social-sciences-anthropology-archaeology` — 1 sections: Archaeology: Reading the Past from Its Remains
-
-### Research Methods (`ku-social-sciences-research-methods`)
-
-*How we know* — 1 chapters · 1 sections
-
-- **Ch 1. How We Know** `ku-social-sciences-research-methods-how-we-know` — 1 sections: Social Research Methods: The Toolkit
-
-### Education (`ku-social-sciences-education`)
-
-*How teaching works* — 1 chapters · 1 sections
-
-- **Ch 1. Learning Systems** `ku-social-sciences-education-learning-systems` — 1 sections: Education and Pedagogy: How Teaching Works
 
 ### Public Policy (`ku-social-sciences-public-policy`)
 

@@ -296,7 +296,7 @@ export const INDIA_PROFESSIONAL_EXAMS: CuratedExam[] = [
       },
       {
         name: 'Quantitative Aptitude',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'mathematics',
         units: [
           {
             name: 'Business Mathematics',

@@ -1,11 +1,17 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x17ExamSyllabusTopics } from './x17-exam-syllabus'
 import { x20FoundationsPassTopics } from './x20-foundations-pass'
+import { x31UgcNetPaper1PassTopics } from './x31-ugc-net-paper1-pass'
 
 export const computingAI: KnowledgeDomainFile = {
   domain: 'Computing & AI',
   blurb: 'The algorithms, models and mathematics behind modern software — from hash tables to deep learning and cryptography.',
   topics: [
+    // X31 pass (2026-10-24): UGC NET Paper 1 ICT unit — computing/network
+    // basics, e-mail and conferencing, and India's higher-education digital
+    // initiatives. Carved against cs-computing-thinking-digital-society,
+    // which owns computational thinking and digital-society debates.
+    ...x31UgcNetPaper1PassTopics.filter((t) => t.domain === 'Computing & AI'),
     // X17 exam-syllabus pass (2026-10-21): CUET/CBSE computing fundamentals —
     // computational thinking, algorithms/flowcharts, digital citizenship.
     ...x17ExamSyllabusTopics.filter((t) => t.domain === 'Computing & AI'),
