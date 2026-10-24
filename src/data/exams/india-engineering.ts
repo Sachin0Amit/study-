@@ -1954,7 +1954,12 @@ export const INDIA_ENGINEERING_EXAMS: CuratedExam[] = [
             name: 'Organic Chemistry',
             topics: [
               {
-                name: 'Concepts',
+                // Named per the official JEE (Advanced) 2026 syllabus PDF
+                // (jeeadv.ac.in) — previously the lossy 'Concepts', which
+                // no matcher could ever map; every subtopic below is owned
+                // by the masters Chemistry chapters (ch8 s6/s12, ch9 s6/s11,
+                // ch11).
+                name: 'Basic Principles of Organic Chemistry',
                 subtopics: [
                   'Hybridisation of carbon; sigma and pi bonds; shapes of simple organic molecules',
                   'Structural and geometrical isomerism; optical isomerism of compounds with up to two asymmetric centres',

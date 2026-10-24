@@ -1,12 +1,19 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x15BusinessLawTopics } from './x15-business-law'
 import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
+import { x34FinalOrphanPassTopics } from './x34-final-orphan-pass'
 
 export const lawGovernance: KnowledgeDomainFile = {
   domain: 'Law & Governance',
   blurb:
     'The rules societies write for power — constitutions, courts, treaties and the machinery that makes them hold.',
   topics: [
+    // X34 final-orphan pass (2026-10-25): reading a judgment — anatomy,
+    // ratio/obiter, Article 141 precedent hierarchy, bench strength, and
+    // the legal-news habit, with a case set carved against the
+    // constitutional-structure lesson (Golak Nath, ADM Jabalpur, Vishaka,
+    // Shreya Singhal, Shayara Bano, Navtej Singh Johar).
+    ...x34FinalOrphanPassTopics.filter((t) => t.domain === 'Law & Governance'),
     // X24 gap-closing pass (2026-10-22): legal-history milestones — the
     // historical arc behind the doctrinal lessons.
     ...x24GapClosingPassTopics.filter((t) => t.domain === 'Law & Governance'),

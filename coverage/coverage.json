@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T13:34:49.881Z",
+  "generatedAt": "2026-10-24T18:52:14.084Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 219,
     "books": 219,
-    "chapters": 912,
-    "sections": 4500
+    "chapters": 915,
+    "sections": 4503
   },
   "subjects": [
     {
@@ -30006,6 +30006,101 @@
       ]
     },
     {
+      "id": "ku-languages-literature-world-literature",
+      "name": "World Literature",
+      "group": "Languages & World Literature",
+      "tagline": "The books that shaped us",
+      "chapterCount": 3,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-world-literature-literary-awards-and-author-work-mapping",
+          "number": 1,
+          "title": "Literary Awards & Author-Work Mapping",
+          "shortTitle": "Literary Awards & Author-Work Mapping",
+          "bookId": "ku-languages-literature-world-literature",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-books-authors-prizes",
+              "number": 1.1,
+              "title": "Books and Authors: The Prize Map from Stockholm to Delhi"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-world-literature-the-great-tradition",
+          "number": 2,
+          "title": "The Great Tradition",
+          "shortTitle": "The Great Tradition",
+          "bookId": "ku-languages-literature-world-literature",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-epic-tradition",
+              "number": 2.1,
+              "title": "From Gilgamesh to the Odyssey: The Birth of Literature"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-world-literature-reading-the-world",
+          "number": 3,
+          "title": "Reading the World",
+          "shortTitle": "Reading the World",
+          "bookId": "ku-languages-literature-world-literature",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-literary-criticism-lenses",
+              "number": 3.1,
+              "title": "Literary Criticism: Lenses and Schools"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-languages-literature-mandarin-chinese",
+      "name": "Mandarin Chinese",
+      "group": "Languages & World Literature",
+      "tagline": "Tones, strokes and characters",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-mandarin-chinese-classical-canon-and-recitation",
+          "number": 1,
+          "title": "Classical Canon & Recitation",
+          "shortTitle": "Classical Canon & Recitation",
+          "bookId": "ku-languages-literature-mandarin-chinese",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-classical-chinese-canon",
+              "number": 1.1,
+              "title": "The Classical Chinese Canon: Famous Lines and Exact Recall"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-mandarin-chinese-mandarin-foundations",
+          "number": 2,
+          "title": "Mandarin Foundations",
+          "shortTitle": "Mandarin Foundations",
+          "bookId": "ku-languages-literature-mandarin-chinese",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-mandarin-foundations",
+              "number": 2.1,
+              "title": "Mandarin Foundations: Tones, Characters and First Phrases"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-languages-literature-academic-english-skills",
       "name": "Academic English Skills",
       "group": "Languages & World Literature",
@@ -30646,71 +30741,6 @@
       ]
     },
     {
-      "id": "ku-languages-literature-mandarin-chinese",
-      "name": "Mandarin Chinese",
-      "group": "Languages & World Literature",
-      "tagline": "Tones, strokes and characters",
-      "chapterCount": 1,
-      "sectionCount": 1,
-      "chapters": [
-        {
-          "id": "ku-languages-literature-mandarin-chinese-mandarin-foundations",
-          "number": 1,
-          "title": "Mandarin Foundations",
-          "shortTitle": "Mandarin Foundations",
-          "bookId": "ku-languages-literature-mandarin-chinese",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-lang-mandarin-foundations",
-              "number": 1.1,
-              "title": "Mandarin Foundations: Tones, Characters and First Phrases"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-languages-literature-world-literature",
-      "name": "World Literature",
-      "group": "Languages & World Literature",
-      "tagline": "The books that shaped us",
-      "chapterCount": 2,
-      "sectionCount": 2,
-      "chapters": [
-        {
-          "id": "ku-languages-literature-world-literature-the-great-tradition",
-          "number": 1,
-          "title": "The Great Tradition",
-          "shortTitle": "The Great Tradition",
-          "bookId": "ku-languages-literature-world-literature",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-lang-epic-tradition",
-              "number": 1.1,
-              "title": "From Gilgamesh to the Odyssey: The Birth of Literature"
-            }
-          ]
-        },
-        {
-          "id": "ku-languages-literature-world-literature-reading-the-world",
-          "number": 2,
-          "title": "Reading the World",
-          "shortTitle": "Reading the World",
-          "bookId": "ku-languages-literature-world-literature",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-lang-literary-criticism-lenses",
-              "number": 2.1,
-              "title": "Literary Criticism: Lenses and Schools"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "ku-languages-literature-german",
       "name": "German",
       "group": "Languages & World Literature",
@@ -30870,6 +30900,46 @@
               "id": "ku-lang-sociolinguistics",
               "number": 1.1,
               "title": "Language in Society: Dialects, Prestige and Code-Switching"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-law-governance-legal-method",
+      "name": "Legal Method",
+      "group": "Law & Governance",
+      "tagline": "Rules, states and constitutions",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-law-governance-legal-method-courts-precedent-and-legal-news",
+          "number": 1,
+          "title": "Courts, Precedent & Legal News",
+          "shortTitle": "Courts, Precedent & Legal News",
+          "bookId": "ku-law-governance-legal-method",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-reading-judgments-precedent",
+              "number": 1.1,
+              "title": "Reading a Judgment: Precedent, Ratio and the Legal-News Habit"
+            }
+          ]
+        },
+        {
+          "id": "ku-law-governance-legal-method-legal-reasoning",
+          "number": 2,
+          "title": "Legal Reasoning",
+          "shortTitle": "Legal Reasoning",
+          "bookId": "ku-law-governance-legal-method",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-legal-reasoning-facts",
+              "number": 2.1,
+              "title": "Legal Reasoning: Applying Principles to Facts"
             }
           ]
         }
@@ -31275,31 +31345,6 @@
               "id": "ku-law-consent-defects-void-voidable",
               "number": 2.1,
               "title": "When Consent Fails: Void and Voidable Agreements"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-law-governance-legal-method",
-      "name": "Legal Method",
-      "group": "Law & Governance",
-      "tagline": "Rules, states and constitutions",
-      "chapterCount": 1,
-      "sectionCount": 1,
-      "chapters": [
-        {
-          "id": "ku-law-governance-legal-method-legal-reasoning",
-          "number": 1,
-          "title": "Legal Reasoning",
-          "shortTitle": "Legal Reasoning",
-          "bookId": "ku-law-governance-legal-method",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-law-legal-reasoning-facts",
-              "number": 1.1,
-              "title": "Legal Reasoning: Applying Principles to Facts"
             }
           ]
         }

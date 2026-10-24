@@ -16,8 +16,8 @@
 
 - **Subjects:** 219
 - **Books (master volumes):** 219
-- **Chapters:** 912
-- **Sections (lessons):** 4500
+- **Chapters:** 915
+- **Sections (lessons):** 4503
 
 ## Foundations — 5 subjects
 
@@ -1404,6 +1404,21 @@
 
 ## Languages & World Literature — 24 subjects
 
+### World Literature (`ku-languages-literature-world-literature`)
+
+*The books that shaped us* — 3 chapters · 3 sections
+
+- **Ch 1. Literary Awards & Author-Work Mapping** `ku-languages-literature-world-literature-literary-awards-and-author-work-mapping` — 1 sections: Books and Authors: The Prize Map from Stockholm to Delhi
+- **Ch 2. The Great Tradition** `ku-languages-literature-world-literature-the-great-tradition` — 1 sections: From Gilgamesh to the Odyssey: The Birth of Literature
+- **Ch 3. Reading the World** `ku-languages-literature-world-literature-reading-the-world` — 1 sections: Literary Criticism: Lenses and Schools
+
+### Mandarin Chinese (`ku-languages-literature-mandarin-chinese`)
+
+*Tones, strokes and characters* — 2 chapters · 2 sections
+
+- **Ch 1. Classical Canon & Recitation** `ku-languages-literature-mandarin-chinese-classical-canon-and-recitation` — 1 sections: The Classical Chinese Canon: Famous Lines and Exact Recall
+- **Ch 2. Mandarin Foundations** `ku-languages-literature-mandarin-chinese-mandarin-foundations` — 1 sections: Mandarin Foundations: Tones, Characters and First Phrases
+
 ### Academic English Skills (`ku-languages-literature-academic-english-skills`)
 
 *How languages live and grow* — 2 chapters · 2 sections
@@ -1515,19 +1530,6 @@
 - **Ch 1. French Foundations** `ku-languages-literature-french-french-foundations` — 1 sections: French Foundations: Pronunciation, Articles and First Phrases
 - **Ch 2. French Verbs** `ku-languages-literature-french-french-verbs` — 1 sections: French Verbs: Three Endings, Four Rebels and the Compound Past
 
-### Mandarin Chinese (`ku-languages-literature-mandarin-chinese`)
-
-*Tones, strokes and characters* — 1 chapters · 1 sections
-
-- **Ch 1. Mandarin Foundations** `ku-languages-literature-mandarin-chinese-mandarin-foundations` — 1 sections: Mandarin Foundations: Tones, Characters and First Phrases
-
-### World Literature (`ku-languages-literature-world-literature`)
-
-*The books that shaped us* — 2 chapters · 2 sections
-
-- **Ch 1. The Great Tradition** `ku-languages-literature-world-literature-the-great-tradition` — 1 sections: From Gilgamesh to the Odyssey: The Birth of Literature
-- **Ch 2. Reading the World** `ku-languages-literature-world-literature-reading-the-world` — 1 sections: Literary Criticism: Lenses and Schools
-
 ### German (`ku-languages-literature-german`)
 
 *The logic of German* — 2 chapters · 2 sections
@@ -1566,6 +1568,13 @@
 - **Ch 1. Language in Society** `ku-languages-literature-sociolinguistics-language-in-society` — 1 sections: Language in Society: Dialects, Prestige and Code-Switching
 
 ## Law & Governance — 11 subjects
+
+### Legal Method (`ku-law-governance-legal-method`)
+
+*Rules, states and constitutions* — 2 chapters · 2 sections
+
+- **Ch 1. Courts, Precedent & Legal News** `ku-law-governance-legal-method-courts-precedent-and-legal-news` — 1 sections: Reading a Judgment: Precedent, Ratio and the Legal-News Habit
+- **Ch 2. Legal Reasoning** `ku-law-governance-legal-method-legal-reasoning` — 1 sections: Legal Reasoning: Applying Principles to Facts
 
 ### Legal History (`ku-law-governance-legal-history`)
 
@@ -1636,12 +1645,6 @@
 
 - **Ch 1. Indian Contract Act 1872** `ku-law-governance-contract-law-indian-contract-act-1872` — 1 sections: The Indian Contract Act: Formation, Breach and Remedies
 - **Ch 2. Consent & Validity** `ku-law-governance-contract-law-consent-and-validity` — 1 sections: When Consent Fails: Void and Voidable Agreements
-
-### Legal Method (`ku-law-governance-legal-method`)
-
-*Rules, states and constitutions* — 1 chapters · 1 sections
-
-- **Ch 1. Legal Reasoning** `ku-law-governance-legal-method-legal-reasoning` — 1 sections: Legal Reasoning: Applying Principles to Facts
 
 ## Business & Economics — 20 subjects
 

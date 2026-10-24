@@ -136,6 +136,9 @@ const IDS = [
   'pol-governance-concepts-data-administration',
   'gp-mass-media-society-responsibility',
   'pol-logic-induction-deduction-square',
+  'lang-books-authors-prizes',
+  'law-reading-judgments-precedent',
+  'lang-classical-chinese-canon',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

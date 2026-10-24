@@ -570,5 +570,19 @@ export const TOPIC_ALIASES: Record<string, string> = {
   'mass-media and society': 'gp-mass-media-society-responsibility',
   'evaluating and distinguishing inductive and deductive reasoning':
     'pol-logic-induction-deduction-square',
+
+  /* ---- CLAT / Gaokao: final-orphan closure (verified 2026-10-25) ----
+   * The X34 pass authored these three lessons and verified each mapping
+   * against the lesson blocks: the books-authors lesson owns the prize
+   * map (Nobel/Booker/Pulitzer/Jnanpith) and mapping craft; the judgments
+   * lesson owns judgment anatomy, ratio/obiter, Article 141 hierarchy and
+   * the legal-news habit (carved against the constitutional-structure
+   * lesson's case facts); the Chinese-canon lesson owns set-text famous
+   * lines and exact-recall craft. Note the Gaokao key: Chinese characters
+   * are stripped by normalizeTopicName, so the name normalises to
+   * 'set text recitation'. */
+  'books and authors': 'lang-books-authors-prizes',
+  'recent judgments and legal news': 'law-reading-judgments-precedent',
+  'set text recitation': 'lang-classical-chinese-canon',
 }
 

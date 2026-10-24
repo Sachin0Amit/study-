@@ -4,12 +4,18 @@ import { x21SkillsPassTopics } from './x21-skills-pass'
 import { x26BankingManagementPassTopics } from './x26-banking-management-pass'
 import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
 import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
+import { x34FinalOrphanPassTopics } from './x34-final-orphan-pass'
 
 export const languagesLiterature: KnowledgeDomainFile = {
   domain: 'Languages & World Literature',
   blurb:
     'The science of learning languages and the literatures they carry — from grammar glue to great texts.',
   topics: [
+    // X34 final-orphan pass (2026-10-25): the books-and-authors prize map
+    // (Nobel/Booker/Pulitzer/Jnanpith + the author-work mapping craft) and
+    // the classical Chinese set-text canon with exact-recall craft — the
+    // two literature territories no earlier language topic owned.
+    ...x34FinalOrphanPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
     // X30 pass (2026-10-24): English spelling — the i-before-e rule and
     // exceptions, doubling/drop-e/y-to-i suffix rules, plural sets,
     // British/American standards, confusables and exam spotting strategy.
