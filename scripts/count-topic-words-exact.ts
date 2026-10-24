@@ -102,6 +102,12 @@ const IDS = [
   'calc-concavity-second-derivative-test',
   'hist-modern-china-aggression-salvation',
   'hist-peoples-republic-china',
+  'eng-academic-listening-comprehension',
+  'eng-seven-choice-gap-filling',
+  'eng-argumentative-practical-texts',
+  'math-sets-logic-foundations',
+  'geo-regional-development-sustainability',
+  'soc-culture-society-cultural-life',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

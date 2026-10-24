@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 206
-- **Books (master volumes):** 206
-- **Chapters:** 879
-- **Sections (lessons):** 4466
+- **Subjects:** 209
+- **Books (master volumes):** 209
+- **Chapters:** 885
+- **Sections (lessons):** 4472
 
 ## Foundations — 5 subjects
 
@@ -975,7 +975,13 @@
 
 - **Ch 1. Reproductive Biology** `ku-life-sciences-human-physiology-reproductive-biology` — 1 sections: Human Reproduction: Systems, Gametes and the Menstrual Cycle
 
-## Mathematics — 6 subjects
+## Mathematics — 7 subjects
+
+### Foundations (`ku-mathematics-foundations`)
+
+*Mathematics* — 1 chapters · 1 sections
+
+- **Ch 1. Sets and Logic** `ku-mathematics-foundations-sets-and-logic` — 1 sections: Sets and Logical Terms: The Grammar of Precise Mathematics
 
 ### Calculus (`ku-mathematics-calculus`)
 
@@ -1198,6 +1204,26 @@
 
 ## Social Sciences — 12 subjects
 
+### Human Geography (`ku-social-sciences-human-geography`)
+
+*Where people live, and why* — 3 chapters · 4 sections
+
+- **Ch 1. Development and Sustainability** `ku-social-sciences-human-geography-development-and-sustainability` — 1 sections: Regional Development and Sustainability: Places, Resources and the Long Term
+- **Ch 2. Population and Settlement** `ku-social-sciences-human-geography-population-and-settlement` — 2 sections: Population Geography: Where Humans Live and Why; The Demographic Transition: The Arithmetic of Populations
+- **Ch 3. Economic and Cultural Landscapes** `ku-social-sciences-human-geography-economic-and-cultural-landscapes` — 1 sections: Landscapes of Trade and Belief: Economic and Cultural Geography
+
+### Sociology (`ku-social-sciences-sociology`)
+
+*Society as a system* — 7 chapters · 10 sections
+
+- **Ch 1. Culture** `ku-social-sciences-sociology-culture` — 1 sections: Culture and Society: How Shared Meanings Shape Us
+- **Ch 2. Classical Theory** `ku-social-sciences-sociology-classical-theory` — 1 sections: Durkheim’s Social Facts and Anomie
+- **Ch 3. Social Structure** `ku-social-sciences-sociology-social-structure` — 4 sections: Class, Status and Power: Social Stratification; Deviance, Crime and Social Control; Race and Ethnicity in Social Life; Gender, Sex and Sexuality
+- **Ch 4. Social Institutions** `ku-social-sciences-sociology-social-institutions` — 1 sections: Family, Religion and Institutions: The Skeleton of Society
+- **Ch 5. Collective Dynamics** `ku-social-sciences-sociology-collective-dynamics` — 1 sections: Social Movements: How Change Happens
+- **Ch 6. Social Networks** `ku-social-sciences-sociology-social-networks` — 1 sections: Social Networks: The Hidden Structure of Social Life
+- **Ch 7. Social Control** `ku-social-sciences-sociology-social-control` — 1 sections: Deviance and Crime: The Sociology of Rule-Breaking
+
 ### Geography (`ku-social-sciences-geography`)
 
 *Why people do what they do* — 1 chapters · 1 sections
@@ -1233,17 +1259,6 @@
 - **Ch 6. Individual Differences** `ku-social-sciences-psychology-individual-differences` — 1 sections: Intelligence and IQ: What the Tests Actually Measure
 - **Ch 7. Stress and Clinical Psychology** `ku-social-sciences-psychology-stress-and-clinical-psychology` — 2 sections: Coping with Stress: Appraisal, Strategies and Resilience; Psychological Disorders: Classification and the Major Categories
 
-### Sociology (`ku-social-sciences-sociology`)
-
-*Society as a system* — 6 chapters · 9 sections
-
-- **Ch 1. Classical Theory** `ku-social-sciences-sociology-classical-theory` — 1 sections: Durkheim’s Social Facts and Anomie
-- **Ch 2. Social Structure** `ku-social-sciences-sociology-social-structure` — 4 sections: Class, Status and Power: Social Stratification; Deviance, Crime and Social Control; Race and Ethnicity in Social Life; Gender, Sex and Sexuality
-- **Ch 3. Social Institutions** `ku-social-sciences-sociology-social-institutions` — 1 sections: Family, Religion and Institutions: The Skeleton of Society
-- **Ch 4. Collective Dynamics** `ku-social-sciences-sociology-collective-dynamics` — 1 sections: Social Movements: How Change Happens
-- **Ch 5. Social Networks** `ku-social-sciences-sociology-social-networks` — 1 sections: Social Networks: The Hidden Structure of Social Life
-- **Ch 6. Social Control** `ku-social-sciences-sociology-social-control` — 1 sections: Deviance and Crime: The Sociology of Rule-Breaking
-
 ### Urban Sociology (`ku-social-sciences-urban-sociology`)
 
 *Why cities exist* — 2 chapters · 2 sections
@@ -1257,13 +1272,6 @@
 
 - **Ch 1. Cultural Anthropology** `ku-social-sciences-anthropology-cultural-anthropology` — 1 sections: Cultural Anthropology: Making Sense of Human Difference
 - **Ch 2. Archaeology** `ku-social-sciences-anthropology-archaeology` — 1 sections: Archaeology: Reading the Past from Its Remains
-
-### Human Geography (`ku-social-sciences-human-geography`)
-
-*Where people live, and why* — 2 chapters · 3 sections
-
-- **Ch 1. Population and Settlement** `ku-social-sciences-human-geography-population-and-settlement` — 2 sections: Population Geography: Where Humans Live and Why; The Demographic Transition: The Arithmetic of Populations
-- **Ch 2. Economic and Cultural Landscapes** `ku-social-sciences-human-geography-economic-and-cultural-landscapes` — 1 sections: Landscapes of Trade and Belief: Economic and Cultural Geography
 
 ### Research Methods (`ku-social-sciences-research-methods`)
 
@@ -1340,7 +1348,20 @@
 - **Ch 1. Eastern Traditions** `ku-humanities-religious-studies-eastern-traditions` — 1 sections: Hinduism, Buddhism and the Eastern Traditions
 - **Ch 2. Western Traditions** `ku-humanities-religious-studies-western-traditions` — 1 sections: Judaism, Christianity and Islam: The Abrahamic Faiths
 
-## Languages & World Literature — 22 subjects
+## Languages & World Literature — 24 subjects
+
+### Academic English Skills (`ku-languages-literature-academic-english-skills`)
+
+*How languages live and grow* — 1 chapters · 1 sections
+
+- **Ch 1. Listening Comprehension** `ku-languages-literature-academic-english-skills-listening-comprehension` — 1 sections: Academic Listening: From Hearing to Answering
+
+### Academic Reading (`ku-languages-literature-academic-reading`)
+
+*How languages live and grow* — 2 chapters · 2 sections
+
+- **Ch 1. Discourse Reconstruction** `ku-languages-literature-academic-reading-discourse-reconstruction` — 1 sections: Restoring Removed Sentences: Gap-Filling as Discourse Reconstruction
+- **Ch 2. Informational and Argumentative Reading** `ku-languages-literature-academic-reading-informational-and-argumentative-reading` — 1 sections: Reading Arguments and Practical Texts: Structure First, Details Second
 
 ### Professional Writing (`ku-languages-literature-professional-writing`)
 

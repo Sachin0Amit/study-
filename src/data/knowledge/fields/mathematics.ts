@@ -10,12 +10,17 @@ import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 import { x25TournamentReasoningCivicsPassTopics } from './x25-tournament-reasoning-civics-pass'
 import { x26BankingManagementPassTopics } from './x26-banking-management-pass'
 import { x27ApCalcChinaPassTopics } from './x27-ap-calc-china-pass'
+import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
 
 export const mathematics: KnowledgeDomainFile = {
   domain: 'Mathematics',
   blurb:
     'Calculus, probability, and linear algebra — the language of change, evidence, and structure.',
   topics: [
+    // X28 pass (2026-10-24): elementary sets and propositional logic — the
+    // notation-and-terminology ground floor (sets, Venn, quantifiers,
+    // conditionals, De Morgan) beneath the Cantor/cardinality lesson.
+    ...x28GaokaoSkillsPassTopics.filter((t) => t.domain === 'Mathematics'),
     // X27 pass (2026-10-24): the three AP-Calculus unit topics the syllabi
     // list separately — removing discontinuities, linearization and
     // differentials, concavity and the Second Derivative Test. Deepens (does

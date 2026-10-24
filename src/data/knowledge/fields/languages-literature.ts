@@ -2,12 +2,17 @@ import type { KnowledgeDomainFile } from '../types'
 import { x16ExamSkills } from './x16-exam-skills'
 import { x21SkillsPassTopics } from './x21-skills-pass'
 import { x26BankingManagementPassTopics } from './x26-banking-management-pass'
+import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
 
 export const languagesLiterature: KnowledgeDomainFile = {
   domain: 'Languages & World Literature',
   blurb:
     'The science of learning languages and the literatures they carry — from grammar glue to great texts.',
   topics: [
+    // X28 pass (2026-10-24): listening comprehension, sentence-gap discourse
+    // reconstruction, and argumentative/practical-text reading — the three
+    // English-skills lessons no earlier language topic owned.
+    ...x28GaokaoSkillsPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
     // X26 pass (2026-10-23): business correspondence — formal letters, memos,
     // email registers and the précis (formats + register, banking contexts).
     ...x26BankingManagementPassTopics.filter((t) => t.domain === 'Languages & World Literature'),

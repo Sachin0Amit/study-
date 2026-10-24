@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T19:00:56.009Z",
+  "generatedAt": "2026-10-24T00:45:46.262Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 206,
-    "books": 206,
-    "chapters": 879,
-    "sections": 4466
+    "subjects": 209,
+    "books": 209,
+    "chapters": 885,
+    "sections": 4472
   },
   "subjects": [
     {
@@ -27356,6 +27356,31 @@
       ]
     },
     {
+      "id": "ku-mathematics-foundations",
+      "name": "Foundations",
+      "group": "Mathematics",
+      "tagline": "Mathematics",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-mathematics-foundations-sets-and-logic",
+          "number": 1,
+          "title": "Sets and Logic",
+          "shortTitle": "Sets and Logic",
+          "bookId": "ku-mathematics-foundations",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-math-sets-logic-foundations",
+              "number": 1.1,
+              "title": "Sets and Logical Terms: The Grammar of Precise Mathematics"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-mathematics-calculus",
       "name": "Calculus",
       "group": "Mathematics",
@@ -28541,6 +28566,196 @@
       ]
     },
     {
+      "id": "ku-social-sciences-human-geography",
+      "name": "Human Geography",
+      "group": "Social Sciences",
+      "tagline": "Where people live, and why",
+      "chapterCount": 3,
+      "sectionCount": 4,
+      "chapters": [
+        {
+          "id": "ku-social-sciences-human-geography-development-and-sustainability",
+          "number": 1,
+          "title": "Development and Sustainability",
+          "shortTitle": "Development and Sustainability",
+          "bookId": "ku-social-sciences-human-geography",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-geo-regional-development-sustainability",
+              "number": 1.1,
+              "title": "Regional Development and Sustainability: Places, Resources and the Long Term"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-human-geography-population-and-settlement",
+          "number": 2,
+          "title": "Population and Settlement",
+          "shortTitle": "Population and Settlement",
+          "bookId": "ku-social-sciences-human-geography",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-geog-population-migration",
+              "number": 2.1,
+              "title": "Population Geography: Where Humans Live and Why"
+            },
+            {
+              "id": "ku-geog-demographic-transition",
+              "number": 2.2,
+              "title": "The Demographic Transition: The Arithmetic of Populations"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-human-geography-economic-and-cultural-landscapes",
+          "number": 3,
+          "title": "Economic and Cultural Landscapes",
+          "shortTitle": "Economic and Cultural Landscapes",
+          "bookId": "ku-social-sciences-human-geography",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-geog-economic-cultural-landscapes",
+              "number": 3.1,
+              "title": "Landscapes of Trade and Belief: Economic and Cultural Geography"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-social-sciences-sociology",
+      "name": "Sociology",
+      "group": "Social Sciences",
+      "tagline": "Society as a system",
+      "chapterCount": 7,
+      "sectionCount": 10,
+      "chapters": [
+        {
+          "id": "ku-social-sciences-sociology-culture",
+          "number": 1,
+          "title": "Culture",
+          "shortTitle": "Culture",
+          "bookId": "ku-social-sciences-sociology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-culture-society-cultural-life",
+              "number": 1.1,
+              "title": "Culture and Society: How Shared Meanings Shape Us"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-sociology-classical-theory",
+          "number": 2,
+          "title": "Classical Theory",
+          "shortTitle": "Classical Theory",
+          "bookId": "ku-social-sciences-sociology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-durkheim-social-facts-anomie",
+              "number": 2.1,
+              "title": "Durkheim’s Social Facts and Anomie"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-sociology-social-structure",
+          "number": 3,
+          "title": "Social Structure",
+          "shortTitle": "Social Structure",
+          "bookId": "ku-social-sciences-sociology",
+          "sectionCount": 4,
+          "sections": [
+            {
+              "id": "ku-soc-stratification",
+              "number": 3.1,
+              "title": "Class, Status and Power: Social Stratification"
+            },
+            {
+              "id": "ku-soc-deviance-crime",
+              "number": 3.2,
+              "title": "Deviance, Crime and Social Control"
+            },
+            {
+              "id": "ku-soc-race-ethnicity",
+              "number": 3.3,
+              "title": "Race and Ethnicity in Social Life"
+            },
+            {
+              "id": "ku-soc-gender-sexuality",
+              "number": 3.4,
+              "title": "Gender, Sex and Sexuality"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-sociology-social-institutions",
+          "number": 4,
+          "title": "Social Institutions",
+          "shortTitle": "Social Institutions",
+          "bookId": "ku-social-sciences-sociology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-family-religion-institutions",
+              "number": 4.1,
+              "title": "Family, Religion and Institutions: The Skeleton of Society"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-sociology-collective-dynamics",
+          "number": 5,
+          "title": "Collective Dynamics",
+          "shortTitle": "Collective Dynamics",
+          "bookId": "ku-social-sciences-sociology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-social-movements-change",
+              "number": 5.1,
+              "title": "Social Movements: How Change Happens"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-sociology-social-networks",
+          "number": 6,
+          "title": "Social Networks",
+          "shortTitle": "Social Networks",
+          "bookId": "ku-social-sciences-sociology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-social-networks-structure",
+              "number": 6.1,
+              "title": "Social Networks: The Hidden Structure of Social Life"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-sociology-social-control",
+          "number": 7,
+          "title": "Social Control",
+          "shortTitle": "Social Control",
+          "bookId": "ku-social-sciences-sociology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-crime-deviance-sociology",
+              "number": 7.1,
+              "title": "Deviance and Crime: The Sociology of Rule-Breaking"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-social-sciences-geography",
       "name": "Geography",
       "group": "Social Sciences",
@@ -28831,121 +29046,6 @@
       ]
     },
     {
-      "id": "ku-social-sciences-sociology",
-      "name": "Sociology",
-      "group": "Social Sciences",
-      "tagline": "Society as a system",
-      "chapterCount": 6,
-      "sectionCount": 9,
-      "chapters": [
-        {
-          "id": "ku-social-sciences-sociology-classical-theory",
-          "number": 1,
-          "title": "Classical Theory",
-          "shortTitle": "Classical Theory",
-          "bookId": "ku-social-sciences-sociology",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-durkheim-social-facts-anomie",
-              "number": 1.1,
-              "title": "Durkheim’s Social Facts and Anomie"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-sociology-social-structure",
-          "number": 2,
-          "title": "Social Structure",
-          "shortTitle": "Social Structure",
-          "bookId": "ku-social-sciences-sociology",
-          "sectionCount": 4,
-          "sections": [
-            {
-              "id": "ku-soc-stratification",
-              "number": 2.1,
-              "title": "Class, Status and Power: Social Stratification"
-            },
-            {
-              "id": "ku-soc-deviance-crime",
-              "number": 2.2,
-              "title": "Deviance, Crime and Social Control"
-            },
-            {
-              "id": "ku-soc-race-ethnicity",
-              "number": 2.3,
-              "title": "Race and Ethnicity in Social Life"
-            },
-            {
-              "id": "ku-soc-gender-sexuality",
-              "number": 2.4,
-              "title": "Gender, Sex and Sexuality"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-sociology-social-institutions",
-          "number": 3,
-          "title": "Social Institutions",
-          "shortTitle": "Social Institutions",
-          "bookId": "ku-social-sciences-sociology",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-family-religion-institutions",
-              "number": 3.1,
-              "title": "Family, Religion and Institutions: The Skeleton of Society"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-sociology-collective-dynamics",
-          "number": 4,
-          "title": "Collective Dynamics",
-          "shortTitle": "Collective Dynamics",
-          "bookId": "ku-social-sciences-sociology",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-social-movements-change",
-              "number": 4.1,
-              "title": "Social Movements: How Change Happens"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-sociology-social-networks",
-          "number": 5,
-          "title": "Social Networks",
-          "shortTitle": "Social Networks",
-          "bookId": "ku-social-sciences-sociology",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-social-networks-structure",
-              "number": 5.1,
-              "title": "Social Networks: The Hidden Structure of Social Life"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-sociology-social-control",
-          "number": 6,
-          "title": "Social Control",
-          "shortTitle": "Social Control",
-          "bookId": "ku-social-sciences-sociology",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-crime-deviance-sociology",
-              "number": 6.1,
-              "title": "Deviance and Crime: The Sociology of Rule-Breaking"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "ku-social-sciences-urban-sociology",
       "name": "Urban Sociology",
       "group": "Social Sciences",
@@ -29020,51 +29120,6 @@
               "id": "ku-anth-archaeology-methods",
               "number": 2.1,
               "title": "Archaeology: Reading the Past from Its Remains"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-social-sciences-human-geography",
-      "name": "Human Geography",
-      "group": "Social Sciences",
-      "tagline": "Where people live, and why",
-      "chapterCount": 2,
-      "sectionCount": 3,
-      "chapters": [
-        {
-          "id": "ku-social-sciences-human-geography-population-and-settlement",
-          "number": 1,
-          "title": "Population and Settlement",
-          "shortTitle": "Population and Settlement",
-          "bookId": "ku-social-sciences-human-geography",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-geog-population-migration",
-              "number": 1.1,
-              "title": "Population Geography: Where Humans Live and Why"
-            },
-            {
-              "id": "ku-geog-demographic-transition",
-              "number": 1.2,
-              "title": "The Demographic Transition: The Arithmetic of Populations"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-human-geography-economic-and-cultural-landscapes",
-          "number": 2,
-          "title": "Economic and Cultural Landscapes",
-          "shortTitle": "Economic and Cultural Landscapes",
-          "bookId": "ku-social-sciences-human-geography",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-geog-economic-cultural-landscapes",
-              "number": 2.1,
-              "title": "Landscapes of Trade and Belief: Economic and Cultural Geography"
             }
           ]
         }
@@ -29585,6 +29640,71 @@
               "id": "ku-rel-abrahamic-faiths",
               "number": 2.1,
               "title": "Judaism, Christianity and Islam: The Abrahamic Faiths"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-languages-literature-academic-english-skills",
+      "name": "Academic English Skills",
+      "group": "Languages & World Literature",
+      "tagline": "How languages live and grow",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-academic-english-skills-listening-comprehension",
+          "number": 1,
+          "title": "Listening Comprehension",
+          "shortTitle": "Listening Comprehension",
+          "bookId": "ku-languages-literature-academic-english-skills",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-academic-listening-comprehension",
+              "number": 1.1,
+              "title": "Academic Listening: From Hearing to Answering"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-languages-literature-academic-reading",
+      "name": "Academic Reading",
+      "group": "Languages & World Literature",
+      "tagline": "How languages live and grow",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-languages-literature-academic-reading-discourse-reconstruction",
+          "number": 1,
+          "title": "Discourse Reconstruction",
+          "shortTitle": "Discourse Reconstruction",
+          "bookId": "ku-languages-literature-academic-reading",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-seven-choice-gap-filling",
+              "number": 1.1,
+              "title": "Restoring Removed Sentences: Gap-Filling as Discourse Reconstruction"
+            }
+          ]
+        },
+        {
+          "id": "ku-languages-literature-academic-reading-informational-and-argumentative-reading",
+          "number": 2,
+          "title": "Informational and Argumentative Reading",
+          "shortTitle": "Informational and Argumentative Reading",
+          "bookId": "ku-languages-literature-academic-reading",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-argumentative-practical-texts",
+              "number": 2.1,
+              "title": "Reading Arguments and Practical Texts: Structure First, Details Second"
             }
           ]
         }

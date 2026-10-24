@@ -426,5 +426,38 @@ export const TOPIC_ALIASES: Record<string, string> = {
   'aggression and national salvation 1840 1949':
     'hist-modern-china-aggression-salvation',
   'the peoples republic since 1949': 'hist-peoples-republic-china',
+  // X28 pass (2026-10-24): language-skills and foundations sweep → six new
+  // lessons. Listening topic family: the listening lesson teaches the
+  // five-stage process, gist/detail/inference, attitude & organization
+  // tracking AND answer transcription (spelling, plurals, word limits), so
+  // one lesson honestly covers three syllabus phrasings across exams.
+  'listening': 'eng-academic-listening-comprehension',
+  'spelling and grammar in answers': 'eng-academic-listening-comprehension',
+  'attitude and organization': 'eng-academic-listening-comprehension',
+  // Sentence-gap reconstruction (cohesion as decoding + elimination
+  // procedure) covers the seven-choice gap-filling task verbatim.
+  'gap filling': 'eng-seven-choice-gap-filling',
+  // The argumentative/practical-texts lesson teaches claim-reason-evidence
+  // anatomy, organization patterns, news/report/popular-science reading,
+  // charts and multi-document comparison — both reading tasks.
+  'argumentative and expository texts': 'eng-argumentative-practical-texts',
+  'practical texts': 'eng-argumentative-practical-texts',
+  // Sets/logic lesson: roster + set-builder notation, subsets, Venn,
+  // operations, quantifiers, conditionals, necessary/sufficient — the
+  // syllabus name decomposes exactly into its two halves.
+  'sets and common logical terms': 'math-sets-logic-foundations',
+  // Regional lesson: analysis toolkit, resource exploitation, land
+  // management, governance, security, GIS — the syllabus subtopics verbatim.
+  'regional development and sustainability':
+    'geo-regional-development-sustainability',
+  // Culture lesson: elements of culture, transmission/exchange, change,
+  // diversity, identity — the cultural-life syllabus content at world level.
+  'cultural life': 'soc-culture-society-cultural-life',
+  // mcat 'Evolutionary Mechanisms' → the natural-selection lesson: selection
+  // modes, drift and founder effect, migration (gene flow), variation and
+  // inheritance, fossils/homology/molecule evidence, speciation — the
+  // syllabus subtopics verbatim (the generic matcher misses it because only
+  // 'evolution' overlaps the title; verified against its named concepts).
+  'evolutionary mechanisms': 'bio-evolution-natural-selection',
 }
 

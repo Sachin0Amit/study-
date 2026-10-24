@@ -3,12 +3,17 @@ import { x17ExamSyllabusTopics } from './x17-exam-syllabus'
 import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 import { x25TournamentReasoningCivicsPassTopics } from './x25-tournament-reasoning-civics-pass'
+import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
 
 export const socialSciences: KnowledgeDomainFile = {
   domain: 'Social Sciences',
   blurb:
     'How humans behave, bond, decide and govern together — psychology, sociology and political science at their meeting points.',
   topics: [
+    // X28 pass (2026-10-24): human-geography regional development and
+    // sustainability + sociology of culture — the two social-science gaps
+    // the audit still reported after X27.
+    ...x28GaokaoSkillsPassTopics.filter((t) => t.domain === 'Social Sciences'),
     // X24 gap-closing pass (2026-10-22): India's physical frame — the
     // stage-setting geography lesson no earlier geog- lesson owned.
     ...x24GapClosingPassTopics.filter((t) => t.domain === 'Social Sciences'),
