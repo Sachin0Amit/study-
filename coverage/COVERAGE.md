@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 209
-- **Books (master volumes):** 209
-- **Chapters:** 885
-- **Sections (lessons):** 4472
+- **Subjects:** 211
+- **Books (master volumes):** 211
+- **Chapters:** 891
+- **Sections (lessons):** 4478
 
 ## Foundations — 5 subjects
 
@@ -815,9 +815,10 @@
 
 ### Chemistry (`ku-physical-sciences-chemistry`)
 
-*Molecules and change* — 1 chapters · 1 sections
+*Molecules and change* — 2 chapters · 2 sections
 
-- **Ch 1. Analytical Chemistry** `ku-physical-sciences-chemistry-analytical-chemistry` — 1 sections: Reactions of Ions in Aqueous Solution: Qualitative Tests and Volumetric Analysis
+- **Ch 1. Atomic Structure** `ku-physical-sciences-chemistry-atomic-structure` — 1 sections: Isotopes and Nuclear Notation: Reading an Atom’s ID Card
+- **Ch 2. Analytical Chemistry** `ku-physical-sciences-chemistry-analytical-chemistry` — 1 sections: Reactions of Ions in Aqueous Solution: Qualitative Tests and Volumetric Analysis
 
 ### Astronomy & Space Science (`ku-physical-sciences-astronomy-and-space-science`)
 
@@ -851,7 +852,22 @@
 
 - **Ch 1. Waves & Sound** `ku-physical-sciences-physics-of-everyday-phenomena-waves-and-sound` — 1 sections: Room Acoustics: Why Spaces Sound the Way They Do
 
-## Life Sciences — 17 subjects
+## Life Sciences — 18 subjects
+
+### Animal Biology (`ku-life-sciences-animal-biology`)
+
+*How living systems work* — 1 chapters · 1 sections
+
+- **Ch 1. Histology** `ku-life-sciences-animal-biology-histology` — 1 sections: Animal Tissue Types: Four Families, One Body Plan
+
+### Neuroscience (`ku-life-sciences-neuroscience`)
+
+*Signals of the mind* — 4 chapters · 5 sections
+
+- **Ch 1. Systems Neuroscience** `ku-life-sciences-neuroscience-systems-neuroscience` — 1 sections: From Neurons to Brain Areas: The Nervous System at Work
+- **Ch 2. Cellular Neurophysiology** `ku-life-sciences-neuroscience-cellular-neurophysiology` — 2 sections: Action Potentials and Nerve Signaling; The Synapse: How Neurons Talk in Chemistry
+- **Ch 3. Plasticity** `ku-life-sciences-neuroscience-plasticity` — 1 sections: Neuroplasticity: How Experience Rewires the Brain
+- **Ch 4. Neuroanatomy** `ku-life-sciences-neuroscience-neuroanatomy` — 1 sections: The Brain, Mapped: A Guided Tour from Stem to Cortex
 
 ### Biology (`ku-life-sciences-biology`)
 
@@ -879,14 +895,6 @@
 - **Ch 4. Molecular Genetics** `ku-life-sciences-genetics-and-heredity-molecular-genetics` — 1 sections: CRISPR and the Mechanics of Gene Editing
 - **Ch 5. Classical Genetics** `ku-life-sciences-genetics-and-heredity-classical-genetics` — 1 sections: Mendel's Laws: How Traits Travel Between Generations
 - **Ch 6. Genes in Populations** `ku-life-sciences-genetics-and-heredity-genes-in-populations` — 1 sections: Population Genetics: Genes Drifting Through Time
-
-### Neuroscience (`ku-life-sciences-neuroscience`)
-
-*Signals of the mind* — 3 chapters · 4 sections
-
-- **Ch 1. Cellular Neurophysiology** `ku-life-sciences-neuroscience-cellular-neurophysiology` — 2 sections: Action Potentials and Nerve Signaling; The Synapse: How Neurons Talk in Chemistry
-- **Ch 2. Plasticity** `ku-life-sciences-neuroscience-plasticity` — 1 sections: Neuroplasticity: How Experience Rewires the Brain
-- **Ch 3. Neuroanatomy** `ku-life-sciences-neuroscience-neuroanatomy` — 1 sections: The Brain, Mapped: A Guided Tour from Stem to Cortex
 
 ### Botany (`ku-life-sciences-botany`)
 
@@ -975,7 +983,14 @@
 
 - **Ch 1. Reproductive Biology** `ku-life-sciences-human-physiology-reproductive-biology` — 1 sections: Human Reproduction: Systems, Gametes and the Menstrual Cycle
 
-## Mathematics — 7 subjects
+## Mathematics — 8 subjects
+
+### Algebra (`ku-mathematics-algebra`)
+
+*Mathematics* — 2 chapters · 2 sections
+
+- **Ch 1. Elementary Algebra** `ku-mathematics-algebra-elementary-algebra` — 1 sections: Algebraic Notation and Manipulation: The Grammar of Expressions
+- **Ch 2. Quadratic Equations** `ku-mathematics-algebra-quadratic-equations` — 1 sections: Quadratics: Four Ways to Solve, One Formula to Rule Them
 
 ### Foundations (`ku-mathematics-foundations`)
 
@@ -1204,6 +1219,19 @@
 
 ## Social Sciences — 12 subjects
 
+### Psychology (`ku-social-sciences-psychology`)
+
+*The studied mind* — 8 chapters · 10 sections
+
+- **Ch 1. Interpersonal Relations** `ku-social-sciences-psychology-interpersonal-relations` — 1 sections: Interpersonal Behavior: Attraction, Aggression and Helping
+- **Ch 2. Social Psychology** `ku-social-sciences-psychology-social-psychology` — 2 sections: Cognitive Dissonance and Attitude Change; Conformity, Obedience and the Power of the Situation
+- **Ch 3. Behavioral Science** `ku-social-sciences-psychology-behavioral-science` — 1 sections: Cognitive Biases: The Bugs in Human Judgment
+- **Ch 4. Developmental Psychology** `ku-social-sciences-psychology-developmental-psychology` — 1 sections: How Minds Grow: Developmental Psychology Across the Lifespan
+- **Ch 5. Cognitive Psychology** `ku-social-sciences-psychology-cognitive-psychology` — 1 sections: Memory, Attention and Thinking: Cognitive Psychology
+- **Ch 6. Personality** `ku-social-sciences-psychology-personality` — 1 sections: The Big Five: A Field Guide to Human Personality
+- **Ch 7. Individual Differences** `ku-social-sciences-psychology-individual-differences` — 1 sections: Intelligence and IQ: What the Tests Actually Measure
+- **Ch 8. Stress and Clinical Psychology** `ku-social-sciences-psychology-stress-and-clinical-psychology` — 2 sections: Coping with Stress: Appraisal, Strategies and Resilience; Psychological Disorders: Classification and the Major Categories
+
 ### Human Geography (`ku-social-sciences-human-geography`)
 
 *Where people live, and why* — 3 chapters · 4 sections
@@ -1246,18 +1274,6 @@
 *Why people do what they do* — 1 chapters · 1 sections
 
 - **Ch 1. Organisation of the Armed Forces** `ku-social-sciences-defence-studies-organisation-of-the-armed-forces` — 1 sections: Organisation of the Armed Forces: India’s Defence Establishment
-
-### Psychology (`ku-social-sciences-psychology`)
-
-*The studied mind* — 7 chapters · 9 sections
-
-- **Ch 1. Social Psychology** `ku-social-sciences-psychology-social-psychology` — 2 sections: Cognitive Dissonance and Attitude Change; Conformity, Obedience and the Power of the Situation
-- **Ch 2. Behavioral Science** `ku-social-sciences-psychology-behavioral-science` — 1 sections: Cognitive Biases: The Bugs in Human Judgment
-- **Ch 3. Developmental Psychology** `ku-social-sciences-psychology-developmental-psychology` — 1 sections: How Minds Grow: Developmental Psychology Across the Lifespan
-- **Ch 4. Cognitive Psychology** `ku-social-sciences-psychology-cognitive-psychology` — 1 sections: Memory, Attention and Thinking: Cognitive Psychology
-- **Ch 5. Personality** `ku-social-sciences-psychology-personality` — 1 sections: The Big Five: A Field Guide to Human Personality
-- **Ch 6. Individual Differences** `ku-social-sciences-psychology-individual-differences` — 1 sections: Intelligence and IQ: What the Tests Actually Measure
-- **Ch 7. Stress and Clinical Psychology** `ku-social-sciences-psychology-stress-and-clinical-psychology` — 2 sections: Coping with Stress: Appraisal, Strategies and Resilience; Psychological Disorders: Classification and the Major Categories
 
 ### Urban Sociology (`ku-social-sciences-urban-sociology`)
 

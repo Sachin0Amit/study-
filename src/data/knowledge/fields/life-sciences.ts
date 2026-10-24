@@ -9,12 +9,18 @@ import type { KnowledgeDomainFile } from '../types'
 import { x14MolecularTopics } from './x14-molecular'
 import { x14HeredityBiotechTopics } from './x14-heredity-biotech'
 import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
+import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
 
 export const lifeSciences: KnowledgeDomainFile = {
   domain: 'Life Sciences',
   blurb:
     'From genes, neurons, and photosynthesis to anatomy, microbes, evolution, and the animal kingdom — how living systems are built, run, and related.',
   topics: [
+    // X29 pass (2026-10-24): histology (four tissue families) + systems
+    // neuroscience survey — the mcat bio/neuro gaps exposed by X28's
+    // candidate-slot shift. Carved against bio-action-potentials (electrical
+    // event) and neuro-synapse-neurotransmitters (synaptic chemistry).
+    ...x29OrphanClosurePassTopics.filter((t) => t.domain === 'Life Sciences'),
     // X24 gap-closing pass (2026-10-22): habitat adaptations and abiotic
     // responses — organism-level ecology the population lesson doesn't own.
     ...x24GapClosingPassTopics.filter((t) => t.domain === 'Life Sciences'),

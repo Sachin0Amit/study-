@@ -4,12 +4,17 @@ import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 import { x25TournamentReasoningCivicsPassTopics } from './x25-tournament-reasoning-civics-pass'
 import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
+import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
 
 export const socialSciences: KnowledgeDomainFile = {
   domain: 'Social Sciences',
   blurb:
     'How humans behave, bond, decide and govern together — psychology, sociology and political science at their meeting points.',
   topics: [
+    // X29 pass (2026-10-24): social psychology of attraction, aggression and
+    // helping — the mcat interpersonal-behavior gap. Distinct from the
+    // conformity lesson (situational influence) and the OB lesson (workplace).
+    ...x29OrphanClosurePassTopics.filter((t) => t.domain === 'Social Sciences'),
     // X28 pass (2026-10-24): human-geography regional development and
     // sustainability + sociology of culture — the two social-science gaps
     // the audit still reported after X27.

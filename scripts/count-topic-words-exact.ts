@@ -108,6 +108,12 @@ const IDS = [
   'math-sets-logic-foundations',
   'geo-regional-development-sustainability',
   'soc-culture-society-cultural-life',
+  'bio-animal-tissue-types',
+  'neuro-biological-bases-behavior',
+  'soc-interpersonal-behavior',
+  'math-algebra-notation-manipulation',
+  'math-quadratics-completing-square',
+  'chem-isotopes-nuclear-notation',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

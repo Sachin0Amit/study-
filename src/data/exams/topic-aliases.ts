@@ -459,5 +459,22 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // syllabus subtopics verbatim (the generic matcher misses it because only
   // 'evolution' overlaps the title; verified against its named concepts).
   'evolutionary mechanisms': 'bio-evolution-natural-selection',
+  // X29 pass (2026-10-24): orphan-closure sweep → six new lessons.
+  'tissue types': 'bio-animal-tissue-types',
+  // The biopsych survey teaches neuron anatomy, glia, CNS/PNS and autonomic
+  // divisions, brain geography, language areas, endocrine bridge and
+  // lesion/imaging evidence — the full mcat topic at survey depth (the two
+  // specialist neuro lessons own the action potential and synaptic chemistry).
+  'biological bases of behavior': 'neuro-biological-bases-behavior',
+  // Attraction (proximity, mere exposure, similarity, reciprocity),
+  // aggression (hostile/instrumental, frustration-aggression, bullying,
+  // cyberbullying) and prosocial behavior (bystander effect, diffusion of
+  // responsibility, altruism) — the mcat topic's three subtopic clusters.
+  'interpersonal behavior': 'soc-interpersonal-behavior',
+  'notation vocabulary and manipulation':
+    'math-algebra-notation-manipulation',
+  'quadratics including the formula and completing the square':
+    'math-quadratics-completing-square',
+  'nuclear symbol notation and isotopes': 'chem-isotopes-nuclear-notation',
 }
 

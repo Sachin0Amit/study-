@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T00:45:46.262Z",
+  "generatedAt": "2026-10-24T01:06:35.975Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 209,
-    "books": 209,
-    "chapters": 885,
-    "sections": 4472
+    "subjects": 211,
+    "books": 211,
+    "chapters": 891,
+    "sections": 4478
   },
   "subjects": [
     {
@@ -26290,12 +26290,27 @@
       "name": "Chemistry",
       "group": "Physical Sciences",
       "tagline": "Molecules and change",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 2,
+      "sectionCount": 2,
       "chapters": [
         {
-          "id": "ku-physical-sciences-chemistry-analytical-chemistry",
+          "id": "ku-physical-sciences-chemistry-atomic-structure",
           "number": 1,
+          "title": "Atomic Structure",
+          "shortTitle": "Atomic Structure",
+          "bookId": "ku-physical-sciences-chemistry",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-chem-isotopes-nuclear-notation",
+              "number": 1.1,
+              "title": "Isotopes and Nuclear Notation: Reading an Atom’s ID Card"
+            }
+          ]
+        },
+        {
+          "id": "ku-physical-sciences-chemistry-analytical-chemistry",
+          "number": 2,
           "title": "Analytical Chemistry",
           "shortTitle": "Analytical Chemistry",
           "bookId": "ku-physical-sciences-chemistry",
@@ -26303,7 +26318,7 @@
           "sections": [
             {
               "id": "ku-chem-ions-aqueous-solution",
-              "number": 1.1,
+              "number": 2.1,
               "title": "Reactions of Ions in Aqueous Solution: Qualitative Tests and Volumetric Analysis"
             }
           ]
@@ -26505,6 +26520,106 @@
               "id": "ku-phys-acoustics-sound-spaces",
               "number": 1.1,
               "title": "Room Acoustics: Why Spaces Sound the Way They Do"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-life-sciences-animal-biology",
+      "name": "Animal Biology",
+      "group": "Life Sciences",
+      "tagline": "How living systems work",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-life-sciences-animal-biology-histology",
+          "number": 1,
+          "title": "Histology",
+          "shortTitle": "Histology",
+          "bookId": "ku-life-sciences-animal-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-animal-tissue-types",
+              "number": 1.1,
+              "title": "Animal Tissue Types: Four Families, One Body Plan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-life-sciences-neuroscience",
+      "name": "Neuroscience",
+      "group": "Life Sciences",
+      "tagline": "Signals of the mind",
+      "chapterCount": 4,
+      "sectionCount": 5,
+      "chapters": [
+        {
+          "id": "ku-life-sciences-neuroscience-systems-neuroscience",
+          "number": 1,
+          "title": "Systems Neuroscience",
+          "shortTitle": "Systems Neuroscience",
+          "bookId": "ku-life-sciences-neuroscience",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-neuro-biological-bases-behavior",
+              "number": 1.1,
+              "title": "From Neurons to Brain Areas: The Nervous System at Work"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-neuroscience-cellular-neurophysiology",
+          "number": 2,
+          "title": "Cellular Neurophysiology",
+          "shortTitle": "Cellular Neurophysiology",
+          "bookId": "ku-life-sciences-neuroscience",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-action-potentials",
+              "number": 2.1,
+              "title": "Action Potentials and Nerve Signaling"
+            },
+            {
+              "id": "ku-neuro-synapse-neurotransmitters",
+              "number": 2.2,
+              "title": "The Synapse: How Neurons Talk in Chemistry"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-neuroscience-plasticity",
+          "number": 3,
+          "title": "Plasticity",
+          "shortTitle": "Plasticity",
+          "bookId": "ku-life-sciences-neuroscience",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-neuro-neuroplasticity-brain-rewires",
+              "number": 3.1,
+              "title": "Neuroplasticity: How Experience Rewires the Brain"
+            }
+          ]
+        },
+        {
+          "id": "ku-life-sciences-neuroscience-neuroanatomy",
+          "number": 4,
+          "title": "Neuroanatomy",
+          "shortTitle": "Neuroanatomy",
+          "bookId": "ku-life-sciences-neuroscience",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-neuro-brain-regions-map",
+              "number": 4.1,
+              "title": "The Brain, Mapped: A Guided Tour from Stem to Cortex"
             }
           ]
         }
@@ -26740,66 +26855,6 @@
               "id": "ku-bio-population-genetics",
               "number": 6.1,
               "title": "Population Genetics: Genes Drifting Through Time"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-life-sciences-neuroscience",
-      "name": "Neuroscience",
-      "group": "Life Sciences",
-      "tagline": "Signals of the mind",
-      "chapterCount": 3,
-      "sectionCount": 4,
-      "chapters": [
-        {
-          "id": "ku-life-sciences-neuroscience-cellular-neurophysiology",
-          "number": 1,
-          "title": "Cellular Neurophysiology",
-          "shortTitle": "Cellular Neurophysiology",
-          "bookId": "ku-life-sciences-neuroscience",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-bio-action-potentials",
-              "number": 1.1,
-              "title": "Action Potentials and Nerve Signaling"
-            },
-            {
-              "id": "ku-neuro-synapse-neurotransmitters",
-              "number": 1.2,
-              "title": "The Synapse: How Neurons Talk in Chemistry"
-            }
-          ]
-        },
-        {
-          "id": "ku-life-sciences-neuroscience-plasticity",
-          "number": 2,
-          "title": "Plasticity",
-          "shortTitle": "Plasticity",
-          "bookId": "ku-life-sciences-neuroscience",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-neuro-neuroplasticity-brain-rewires",
-              "number": 2.1,
-              "title": "Neuroplasticity: How Experience Rewires the Brain"
-            }
-          ]
-        },
-        {
-          "id": "ku-life-sciences-neuroscience-neuroanatomy",
-          "number": 3,
-          "title": "Neuroanatomy",
-          "shortTitle": "Neuroanatomy",
-          "bookId": "ku-life-sciences-neuroscience",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-neuro-brain-regions-map",
-              "number": 3.1,
-              "title": "The Brain, Mapped: A Guided Tour from Stem to Cortex"
             }
           ]
         }
@@ -27350,6 +27405,46 @@
               "id": "ku-bio-human-reproduction-system",
               "number": 1.1,
               "title": "Human Reproduction: Systems, Gametes and the Menstrual Cycle"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-mathematics-algebra",
+      "name": "Algebra",
+      "group": "Mathematics",
+      "tagline": "Mathematics",
+      "chapterCount": 2,
+      "sectionCount": 2,
+      "chapters": [
+        {
+          "id": "ku-mathematics-algebra-elementary-algebra",
+          "number": 1,
+          "title": "Elementary Algebra",
+          "shortTitle": "Elementary Algebra",
+          "bookId": "ku-mathematics-algebra",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-math-algebra-notation-manipulation",
+              "number": 1.1,
+              "title": "Algebraic Notation and Manipulation: The Grammar of Expressions"
+            }
+          ]
+        },
+        {
+          "id": "ku-mathematics-algebra-quadratic-equations",
+          "number": 2,
+          "title": "Quadratic Equations",
+          "shortTitle": "Quadratic Equations",
+          "bookId": "ku-mathematics-algebra",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-math-quadratics-completing-square",
+              "number": 2.1,
+              "title": "Quadratics: Four Ways to Solve, One Formula to Rule Them"
             }
           ]
         }
@@ -28566,6 +28661,146 @@
       ]
     },
     {
+      "id": "ku-social-sciences-psychology",
+      "name": "Psychology",
+      "group": "Social Sciences",
+      "tagline": "The studied mind",
+      "chapterCount": 8,
+      "sectionCount": 10,
+      "chapters": [
+        {
+          "id": "ku-social-sciences-psychology-interpersonal-relations",
+          "number": 1,
+          "title": "Interpersonal Relations",
+          "shortTitle": "Interpersonal Relations",
+          "bookId": "ku-social-sciences-psychology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-interpersonal-behavior",
+              "number": 1.1,
+              "title": "Interpersonal Behavior: Attraction, Aggression and Helping"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-psychology-social-psychology",
+          "number": 2,
+          "title": "Social Psychology",
+          "shortTitle": "Social Psychology",
+          "bookId": "ku-social-sciences-psychology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-soc-cognitive-dissonance",
+              "number": 2.1,
+              "title": "Cognitive Dissonance and Attitude Change"
+            },
+            {
+              "id": "ku-psych-conformity-obedience-crowd",
+              "number": 2.2,
+              "title": "Conformity, Obedience and the Power of the Situation"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-psychology-behavioral-science",
+          "number": 3,
+          "title": "Behavioral Science",
+          "shortTitle": "Behavioral Science",
+          "bookId": "ku-social-sciences-psychology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-cognitive-biases",
+              "number": 3.1,
+              "title": "Cognitive Biases: The Bugs in Human Judgment"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-psychology-developmental-psychology",
+          "number": 4,
+          "title": "Developmental Psychology",
+          "shortTitle": "Developmental Psychology",
+          "bookId": "ku-social-sciences-psychology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-psy-development-lifespan",
+              "number": 4.1,
+              "title": "How Minds Grow: Developmental Psychology Across the Lifespan"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-psychology-cognitive-psychology",
+          "number": 5,
+          "title": "Cognitive Psychology",
+          "shortTitle": "Cognitive Psychology",
+          "bookId": "ku-social-sciences-psychology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-psy-cognitive-architecture",
+              "number": 5.1,
+              "title": "Memory, Attention and Thinking: Cognitive Psychology"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-psychology-personality",
+          "number": 6,
+          "title": "Personality",
+          "shortTitle": "Personality",
+          "bookId": "ku-social-sciences-psychology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-psych-big-five-personality",
+              "number": 6.1,
+              "title": "The Big Five: A Field Guide to Human Personality"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-psychology-individual-differences",
+          "number": 7,
+          "title": "Individual Differences",
+          "shortTitle": "Individual Differences",
+          "bookId": "ku-social-sciences-psychology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-psych-intelligence-iq-testing",
+              "number": 7.1,
+              "title": "Intelligence and IQ: What the Tests Actually Measure"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-psychology-stress-and-clinical-psychology",
+          "number": 8,
+          "title": "Stress and Clinical Psychology",
+          "shortTitle": "Stress and Clinical Psychology",
+          "bookId": "ku-social-sciences-psychology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-psy-stress-coping",
+              "number": 8.1,
+              "title": "Coping with Stress: Appraisal, Strategies and Resilience"
+            },
+            {
+              "id": "ku-psy-psychological-disorders",
+              "number": 8.2,
+              "title": "Psychological Disorders: Classification and the Major Categories"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-social-sciences-human-geography",
       "name": "Human Geography",
       "group": "Social Sciences",
@@ -28915,131 +29150,6 @@
               "id": "ku-civ-india-defence-organisation",
               "number": 1.1,
               "title": "Organisation of the Armed Forces: India’s Defence Establishment"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-social-sciences-psychology",
-      "name": "Psychology",
-      "group": "Social Sciences",
-      "tagline": "The studied mind",
-      "chapterCount": 7,
-      "sectionCount": 9,
-      "chapters": [
-        {
-          "id": "ku-social-sciences-psychology-social-psychology",
-          "number": 1,
-          "title": "Social Psychology",
-          "shortTitle": "Social Psychology",
-          "bookId": "ku-social-sciences-psychology",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-soc-cognitive-dissonance",
-              "number": 1.1,
-              "title": "Cognitive Dissonance and Attitude Change"
-            },
-            {
-              "id": "ku-psych-conformity-obedience-crowd",
-              "number": 1.2,
-              "title": "Conformity, Obedience and the Power of the Situation"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-psychology-behavioral-science",
-          "number": 2,
-          "title": "Behavioral Science",
-          "shortTitle": "Behavioral Science",
-          "bookId": "ku-social-sciences-psychology",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-cognitive-biases",
-              "number": 2.1,
-              "title": "Cognitive Biases: The Bugs in Human Judgment"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-psychology-developmental-psychology",
-          "number": 3,
-          "title": "Developmental Psychology",
-          "shortTitle": "Developmental Psychology",
-          "bookId": "ku-social-sciences-psychology",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-psy-development-lifespan",
-              "number": 3.1,
-              "title": "How Minds Grow: Developmental Psychology Across the Lifespan"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-psychology-cognitive-psychology",
-          "number": 4,
-          "title": "Cognitive Psychology",
-          "shortTitle": "Cognitive Psychology",
-          "bookId": "ku-social-sciences-psychology",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-psy-cognitive-architecture",
-              "number": 4.1,
-              "title": "Memory, Attention and Thinking: Cognitive Psychology"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-psychology-personality",
-          "number": 5,
-          "title": "Personality",
-          "shortTitle": "Personality",
-          "bookId": "ku-social-sciences-psychology",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-psych-big-five-personality",
-              "number": 5.1,
-              "title": "The Big Five: A Field Guide to Human Personality"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-psychology-individual-differences",
-          "number": 6,
-          "title": "Individual Differences",
-          "shortTitle": "Individual Differences",
-          "bookId": "ku-social-sciences-psychology",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-psych-intelligence-iq-testing",
-              "number": 6.1,
-              "title": "Intelligence and IQ: What the Tests Actually Measure"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-psychology-stress-and-clinical-psychology",
-          "number": 7,
-          "title": "Stress and Clinical Psychology",
-          "shortTitle": "Stress and Clinical Psychology",
-          "bookId": "ku-social-sciences-psychology",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-psy-stress-coping",
-              "number": 7.1,
-              "title": "Coping with Stress: Appraisal, Strategies and Resilience"
-            },
-            {
-              "id": "ku-psy-psychological-disorders",
-              "number": 7.2,
-              "title": "Psychological Disorders: Classification and the Major Categories"
             }
           ]
         }

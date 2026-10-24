@@ -11,12 +11,18 @@ import { x25TournamentReasoningCivicsPassTopics } from './x25-tournament-reasoni
 import { x26BankingManagementPassTopics } from './x26-banking-management-pass'
 import { x27ApCalcChinaPassTopics } from './x27-ap-calc-china-pass'
 import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
+import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
 
 export const mathematics: KnowledgeDomainFile = {
   domain: 'Mathematics',
   blurb:
     'Calculus, probability, and linear algebra — the language of change, evidence, and structure.',
   topics: [
+    // X29 pass (2026-10-24): algebraic notation/manipulation + quadratics
+    // (four solving methods, discriminant, completing the square) — the two
+    // gcse-maths algebra gaps. The manipulation lesson feeds the quadratics
+    // lesson as its prerequisite.
+    ...x29OrphanClosurePassTopics.filter((t) => t.domain === 'Mathematics'),
     // X28 pass (2026-10-24): elementary sets and propositional logic — the
     // notation-and-terminology ground floor (sets, Venn, quantifiers,
     // conditionals, De Morgan) beneath the Cantor/cardinality lesson.

@@ -7,12 +7,17 @@
 
 import type { KnowledgeDomainFile } from '../types'
 import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
+import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
 
 export const physicalSciences: KnowledgeDomainFile = {
   domain: 'Physical Sciences',
   blurb:
     'Physics and chemistry from rotating bodies to reacting molecules — the quantitative rules of matter and energy.',
   topics: [
+    // X29 pass (2026-10-24): atomic structure — isotopes and the AZX nuclear
+    // symbol (the ib-chemistry nuclear-notation gap). Distinct from
+    // chem-periodic-trends (trends) and chem-ions-aqueous-solution (solutions).
+    ...x29OrphanClosurePassTopics.filter((t) => t.domain === 'Physical Sciences'),
     // X23 gap pass (2026-10-22): aqueous ion reactions + volumetric analysis —
     // qualitative/analytical territory the master Chemistry drills do not own
     // (chem-periodic-trends remains excluded as a master duplicate).
