@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 214
-- **Books (master volumes):** 214
-- **Chapters:** 900
-- **Sections (lessons):** 4488
+- **Subjects:** 215
+- **Books (master volumes):** 215
+- **Chapters:** 906
+- **Sections (lessons):** 4494
 
 ## Foundations — 5 subjects
 
@@ -1239,6 +1239,18 @@
 
 ## Social Sciences — 12 subjects
 
+### Political Science (`ku-social-sciences-political-science`)
+
+*Power and cooperation* — 7 chapters · 10 sections
+
+- **Ch 1. History of Political Thought** `ku-social-sciences-political-science-history-of-political-thought` — 1 sections: Western Political Thought: Plato to Marx in Eight Thinkers
+- **Ch 2. Comparative Politics** `ku-social-sciences-political-science-comparative-politics` — 2 sections: Democratic Government in Action: Japan’s Parliamentary System and Contemporary Society; Democracies, Autocracies and Everything in Between
+- **Ch 3. International Relations** `ku-social-sciences-political-science-international-relations` — 2 sections: After the Cold War: Hegemony, Rival Poles and the Global Commons; Why Nations Fight and Trade: International Relations Theory
+- **Ch 4. Indian Polity** `ku-social-sciences-political-science-indian-polity` — 2 sections: India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations; The Indian Constitution: Rights, Parliament and Federalism
+- **Ch 5. Rational Choice Theory** `ku-social-sciences-political-science-rational-choice-theory` — 1 sections: Game Theory of Cooperation: The Prisoner’s Dilemma
+- **Ch 6. Public Choice** `ku-social-sciences-political-science-public-choice` — 1 sections: Collective Action and the Tragedy of the Commons
+- **Ch 7. Institutional Design** `ku-social-sciences-political-science-institutional-design` — 1 sections: Comparative Politics: Electoral Systems and Institutions
+
 ### Research Methods (`ku-social-sciences-research-methods`)
 
 *How we know* — 2 chapters · 2 sections
@@ -1292,17 +1304,6 @@
 *Why people do what they do* — 1 chapters · 1 sections
 
 - **Ch 1. Physical Geography of India** `ku-social-sciences-geography-physical-geography-of-india` — 1 sections: The Physical Frame: India’s Landforms, Rivers, Climate and Natural Vegetation
-
-### Political Science (`ku-social-sciences-political-science`)
-
-*Power and cooperation* — 6 chapters · 9 sections
-
-- **Ch 1. Comparative Politics** `ku-social-sciences-political-science-comparative-politics` — 2 sections: Democratic Government in Action: Japan’s Parliamentary System and Contemporary Society; Democracies, Autocracies and Everything in Between
-- **Ch 2. International Relations** `ku-social-sciences-political-science-international-relations` — 2 sections: After the Cold War: Hegemony, Rival Poles and the Global Commons; Why Nations Fight and Trade: International Relations Theory
-- **Ch 3. Indian Polity** `ku-social-sciences-political-science-indian-polity` — 2 sections: India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations; The Indian Constitution: Rights, Parliament and Federalism
-- **Ch 4. Rational Choice Theory** `ku-social-sciences-political-science-rational-choice-theory` — 1 sections: Game Theory of Cooperation: The Prisoner’s Dilemma
-- **Ch 5. Public Choice** `ku-social-sciences-political-science-public-choice` — 1 sections: Collective Action and the Tragedy of the Commons
-- **Ch 6. Institutional Design** `ku-social-sciences-political-science-institutional-design` — 1 sections: Comparative Politics: Electoral Systems and Institutions
 
 ### Defence Studies (`ku-social-sciences-defence-studies`)
 
@@ -1628,7 +1629,49 @@
 
 - **Ch 1. Legal Reasoning** `ku-law-governance-legal-method-legal-reasoning` — 1 sections: Legal Reasoning: Applying Principles to Facts
 
-## Business & Economics — 17 subjects
+## Business & Economics — 18 subjects
+
+### Business Environment (`ku-business-economics-business-environment`)
+
+*Markets, money and trade* — 1 chapters · 1 sections
+
+- **Ch 1. Environment, Scanning and Adaptation** `ku-business-economics-business-environment-environment-scanning-and-adaptation` — 1 sections: The Business Environment: Reading the Forces Around the Firm
+
+### Microeconomics (`ku-business-economics-microeconomics`)
+
+*Prices and incentives* — 5 chapters · 5 sections
+
+- **Ch 1. Consumer and Producer Theory** `ku-business-economics-microeconomics-consumer-and-producer-theory` — 1 sections: Consumer Behaviour and Production: The Theory Behind the Curves
+- **Ch 2. Welfare Economics** `ku-business-economics-microeconomics-welfare-economics` — 1 sections: Competitive Markets: Efficiency, Surplus and Welfare
+- **Ch 3. Price Theory** `ku-business-economics-microeconomics-price-theory` — 1 sections: Supply, Demand and Elasticity
+- **Ch 4. When Markets Fail** `ku-business-economics-microeconomics-when-markets-fail` — 1 sections: When Markets Fail: Externalities, Public Goods and Monopoly Power
+- **Ch 5. Market Structure** `ku-business-economics-microeconomics-market-structure` — 1 sections: Market Structures: From Perfect Competition to Monopoly
+
+### Finance & Investment (`ku-business-economics-finance-and-investment`)
+
+*Money across time* — 5 chapters · 5 sections
+
+- **Ch 1. Corporate Finance** `ku-business-economics-finance-and-investment-corporate-finance` — 1 sections: Corporate Finance Decisions: Investing, Financing and Paying Out
+- **Ch 2. Markets & Instruments** `ku-business-economics-finance-and-investment-markets-and-instruments` — 1 sections: Financial Markets: How Money and Capital Markets Move Savings to Investment
+- **Ch 3. Valuation Basics** `ku-business-economics-finance-and-investment-valuation-basics` — 1 sections: Compound Interest and the Time Value of Money
+- **Ch 4. Risk & Insurance** `ku-business-economics-finance-and-investment-risk-and-insurance` — 1 sections: Insurance: Pooling Risk and Pricing It
+- **Ch 5. Money & Markets** `ku-business-economics-finance-and-investment-money-and-markets` — 1 sections: How Banks Create Money
+
+### International Trade (`ku-business-economics-international-trade`)
+
+*Why nations exchange* — 4 chapters · 4 sections
+
+- **Ch 1. FDI and Economic Integration** `ku-business-economics-international-trade-fdi-and-economic-integration` — 1 sections: FDI, Regional Integration and the Institutions of World Trade
+- **Ch 2. Regional Integration** `ku-business-economics-international-trade-regional-integration` — 1 sections: Trade Protection and Regional Integration: Blocs, Trade Creation and Diversion
+- **Ch 3. Trade Theory** `ku-business-economics-international-trade-trade-theory` — 1 sections: Comparative Advantage and Trade
+- **Ch 4. Trade Policy** `ku-business-economics-international-trade-trade-policy` — 1 sections: Trade Policy: Tariffs, Quotas and Trade Wars
+
+### Marketing (`ku-business-economics-marketing`)
+
+*Attention, understood* — 2 chapters · 3 sections
+
+- **Ch 1. Pricing, Channels and Promotion** `ku-business-economics-marketing-pricing-channels-and-promotion` — 1 sections: Pricing, Distribution and Promotion: The Marketing Mix and Its Digital Turn
+- **Ch 2. Marketing Foundations** `ku-business-economics-marketing-marketing-foundations` — 2 sections: The Four Ps and the Psychology of Buying; Segmentation, Targeting and Positioning: The STP Playbook
 
 ### Banking & Finance (`ku-business-economics-banking-and-finance`)
 
@@ -1656,37 +1699,11 @@
 
 - **Ch 1. Japan: Economy and Society** `ku-business-economics-political-economy-japan-economy-and-society` — 1 sections: Economic Agents and the National Economy: Japan’s Markets, Finance and Public Finances
 
-### Finance & Investment (`ku-business-economics-finance-and-investment`)
-
-*Money across time* — 4 chapters · 4 sections
-
-- **Ch 1. Markets & Instruments** `ku-business-economics-finance-and-investment-markets-and-instruments` — 1 sections: Financial Markets: How Money and Capital Markets Move Savings to Investment
-- **Ch 2. Valuation Basics** `ku-business-economics-finance-and-investment-valuation-basics` — 1 sections: Compound Interest and the Time Value of Money
-- **Ch 3. Risk & Insurance** `ku-business-economics-finance-and-investment-risk-and-insurance` — 1 sections: Insurance: Pooling Risk and Pricing It
-- **Ch 4. Money & Markets** `ku-business-economics-finance-and-investment-money-and-markets` — 1 sections: How Banks Create Money
-
 ### Foundations of Economics (`ku-business-economics-foundations-of-economics`)
 
 *Markets, money and trade* — 1 chapters · 1 sections
 
 - **Ch 1. Methodology & Scarcity** `ku-business-economics-foundations-of-economics-methodology-and-scarcity` — 1 sections: Economic Methodology: Scarcity, Choice and How Economists Approach the World
-
-### Microeconomics (`ku-business-economics-microeconomics`)
-
-*Prices and incentives* — 4 chapters · 4 sections
-
-- **Ch 1. Welfare Economics** `ku-business-economics-microeconomics-welfare-economics` — 1 sections: Competitive Markets: Efficiency, Surplus and Welfare
-- **Ch 2. Price Theory** `ku-business-economics-microeconomics-price-theory` — 1 sections: Supply, Demand and Elasticity
-- **Ch 3. When Markets Fail** `ku-business-economics-microeconomics-when-markets-fail` — 1 sections: When Markets Fail: Externalities, Public Goods and Monopoly Power
-- **Ch 4. Market Structure** `ku-business-economics-microeconomics-market-structure` — 1 sections: Market Structures: From Perfect Competition to Monopoly
-
-### International Trade (`ku-business-economics-international-trade`)
-
-*Why nations exchange* — 3 chapters · 3 sections
-
-- **Ch 1. Regional Integration** `ku-business-economics-international-trade-regional-integration` — 1 sections: Trade Protection and Regional Integration: Blocs, Trade Creation and Diversion
-- **Ch 2. Trade Theory** `ku-business-economics-international-trade-trade-theory` — 1 sections: Comparative Advantage and Trade
-- **Ch 3. Trade Policy** `ku-business-economics-international-trade-trade-policy` — 1 sections: Trade Policy: Tariffs, Quotas and Trade Wars
 
 ### Accounting (`ku-business-economics-accounting`)
 
@@ -1732,12 +1749,6 @@
 *Predictably irrational* — 1 chapters · 1 sections
 
 - **Ch 1. Decision Science** `ku-business-economics-behavioral-economics-decision-science` — 1 sections: Nudges and the Psychology of Choosing
-
-### Marketing (`ku-business-economics-marketing`)
-
-*Attention, understood* — 1 chapters · 2 sections
-
-- **Ch 1. Marketing Foundations** `ku-business-economics-marketing-marketing-foundations` — 2 sections: The Four Ps and the Psychology of Buying; Segmentation, Targeting and Positioning: The STP Playbook
 
 ### Entrepreneurship (`ku-business-economics-entrepreneurship`)
 

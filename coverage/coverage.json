@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T07:16:51.692Z",
+  "generatedAt": "2026-10-24T12:47:03.255Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 214,
-    "books": 214,
-    "chapters": 900,
-    "sections": 4488
+    "subjects": 215,
+    "books": 215,
+    "chapters": 906,
+    "sections": 4494
   },
   "subjects": [
     {
@@ -28766,6 +28766,136 @@
       ]
     },
     {
+      "id": "ku-social-sciences-political-science",
+      "name": "Political Science",
+      "group": "Social Sciences",
+      "tagline": "Power and cooperation",
+      "chapterCount": 7,
+      "sectionCount": 10,
+      "chapters": [
+        {
+          "id": "ku-social-sciences-political-science-history-of-political-thought",
+          "number": 1,
+          "title": "History of Political Thought",
+          "shortTitle": "History of Political Thought",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-pol-western-political-thought-canon",
+              "number": 1.1,
+              "title": "Western Political Thought: Plato to Marx in Eight Thinkers"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-comparative-politics",
+          "number": 2,
+          "title": "Comparative Politics",
+          "shortTitle": "Comparative Politics",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-pol-democratic-government-japan",
+              "number": 2.1,
+              "title": "Democratic Government in Action: Japan’s Parliamentary System and Contemporary Society"
+            },
+            {
+              "id": "ku-pol-regimes-spectrum",
+              "number": 2.2,
+              "title": "Democracies, Autocracies and Everything in Between"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-international-relations",
+          "number": 3,
+          "title": "International Relations",
+          "shortTitle": "International Relations",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-pol-contemporary-world-order",
+              "number": 3.1,
+              "title": "After the Cold War: Hegemony, Rival Poles and the Global Commons"
+            },
+            {
+              "id": "ku-pol-ir-theory",
+              "number": 3.2,
+              "title": "Why Nations Fight and Trade: International Relations Theory"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-indian-polity",
+          "number": 4,
+          "title": "Indian Polity",
+          "shortTitle": "Indian Polity",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-pol-india-since-independence",
+              "number": 4.1,
+              "title": "India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations"
+            },
+            {
+              "id": "ku-soc-indian-constitution-polity",
+              "number": 4.2,
+              "title": "The Indian Constitution: Rights, Parliament and Federalism"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-rational-choice-theory",
+          "number": 5,
+          "title": "Rational Choice Theory",
+          "shortTitle": "Rational Choice Theory",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-prisoners-dilemma",
+              "number": 5.1,
+              "title": "Game Theory of Cooperation: The Prisoner’s Dilemma"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-public-choice",
+          "number": 6,
+          "title": "Public Choice",
+          "shortTitle": "Public Choice",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-collective-action",
+              "number": 6.1,
+              "title": "Collective Action and the Tragedy of the Commons"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-institutional-design",
+          "number": 7,
+          "title": "Institutional Design",
+          "shortTitle": "Institutional Design",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-comparative-politics-institutions",
+              "number": 7.1,
+              "title": "Comparative Politics: Electoral Systems and Institutions"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-social-sciences-research-methods",
       "name": "Research Methods",
       "group": "Social Sciences",
@@ -29210,121 +29340,6 @@
               "id": "ku-geog-india-physical-geography",
               "number": 1.1,
               "title": "The Physical Frame: India’s Landforms, Rivers, Climate and Natural Vegetation"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-social-sciences-political-science",
-      "name": "Political Science",
-      "group": "Social Sciences",
-      "tagline": "Power and cooperation",
-      "chapterCount": 6,
-      "sectionCount": 9,
-      "chapters": [
-        {
-          "id": "ku-social-sciences-political-science-comparative-politics",
-          "number": 1,
-          "title": "Comparative Politics",
-          "shortTitle": "Comparative Politics",
-          "bookId": "ku-social-sciences-political-science",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-pol-democratic-government-japan",
-              "number": 1.1,
-              "title": "Democratic Government in Action: Japan’s Parliamentary System and Contemporary Society"
-            },
-            {
-              "id": "ku-pol-regimes-spectrum",
-              "number": 1.2,
-              "title": "Democracies, Autocracies and Everything in Between"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-political-science-international-relations",
-          "number": 2,
-          "title": "International Relations",
-          "shortTitle": "International Relations",
-          "bookId": "ku-social-sciences-political-science",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-pol-contemporary-world-order",
-              "number": 2.1,
-              "title": "After the Cold War: Hegemony, Rival Poles and the Global Commons"
-            },
-            {
-              "id": "ku-pol-ir-theory",
-              "number": 2.2,
-              "title": "Why Nations Fight and Trade: International Relations Theory"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-political-science-indian-polity",
-          "number": 3,
-          "title": "Indian Polity",
-          "shortTitle": "Indian Polity",
-          "bookId": "ku-social-sciences-political-science",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-pol-india-since-independence",
-              "number": 3.1,
-              "title": "India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations"
-            },
-            {
-              "id": "ku-soc-indian-constitution-polity",
-              "number": 3.2,
-              "title": "The Indian Constitution: Rights, Parliament and Federalism"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-political-science-rational-choice-theory",
-          "number": 4,
-          "title": "Rational Choice Theory",
-          "shortTitle": "Rational Choice Theory",
-          "bookId": "ku-social-sciences-political-science",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-prisoners-dilemma",
-              "number": 4.1,
-              "title": "Game Theory of Cooperation: The Prisoner’s Dilemma"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-political-science-public-choice",
-          "number": 5,
-          "title": "Public Choice",
-          "shortTitle": "Public Choice",
-          "bookId": "ku-social-sciences-political-science",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-collective-action",
-              "number": 5.1,
-              "title": "Collective Action and the Tragedy of the Commons"
-            }
-          ]
-        },
-        {
-          "id": "ku-social-sciences-political-science-institutional-design",
-          "number": 6,
-          "title": "Institutional Design",
-          "shortTitle": "Institutional Design",
-          "bookId": "ku-social-sciences-political-science",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-comparative-politics-institutions",
-              "number": 6.1,
-              "title": "Comparative Politics: Electoral Systems and Institutions"
             }
           ]
         }
@@ -31211,6 +31226,316 @@
       ]
     },
     {
+      "id": "ku-business-economics-business-environment",
+      "name": "Business Environment",
+      "group": "Business & Economics",
+      "tagline": "Markets, money and trade",
+      "chapterCount": 1,
+      "sectionCount": 1,
+      "chapters": [
+        {
+          "id": "ku-business-economics-business-environment-environment-scanning-and-adaptation",
+          "number": 1,
+          "title": "Environment, Scanning and Adaptation",
+          "shortTitle": "Environment, Scanning and Adaptation",
+          "bookId": "ku-business-economics-business-environment",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-com-business-environment-elements",
+              "number": 1.1,
+              "title": "The Business Environment: Reading the Forces Around the Firm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-microeconomics",
+      "name": "Microeconomics",
+      "group": "Business & Economics",
+      "tagline": "Prices and incentives",
+      "chapterCount": 5,
+      "sectionCount": 5,
+      "chapters": [
+        {
+          "id": "ku-business-economics-microeconomics-consumer-and-producer-theory",
+          "number": 1,
+          "title": "Consumer and Producer Theory",
+          "shortTitle": "Consumer and Producer Theory",
+          "bookId": "ku-business-economics-microeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-com-demand-consumer-production-theory",
+              "number": 1.1,
+              "title": "Consumer Behaviour and Production: The Theory Behind the Curves"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-microeconomics-welfare-economics",
+          "number": 2,
+          "title": "Welfare Economics",
+          "shortTitle": "Welfare Economics",
+          "bookId": "ku-business-economics-microeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-market-efficiency-surplus",
+              "number": 2.1,
+              "title": "Competitive Markets: Efficiency, Surplus and Welfare"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-microeconomics-price-theory",
+          "number": 3,
+          "title": "Price Theory",
+          "shortTitle": "Price Theory",
+          "bookId": "ku-business-economics-microeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-supply-demand-elasticity",
+              "number": 3.1,
+              "title": "Supply, Demand and Elasticity"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-microeconomics-when-markets-fail",
+          "number": 4,
+          "title": "When Markets Fail",
+          "shortTitle": "When Markets Fail",
+          "bookId": "ku-business-economics-microeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-market-failures",
+              "number": 4.1,
+              "title": "When Markets Fail: Externalities, Public Goods and Monopoly Power"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-microeconomics-market-structure",
+          "number": 5,
+          "title": "Market Structure",
+          "shortTitle": "Market Structure",
+          "bookId": "ku-business-economics-microeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-market-structures",
+              "number": 5.1,
+              "title": "Market Structures: From Perfect Competition to Monopoly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-finance-and-investment",
+      "name": "Finance & Investment",
+      "group": "Business & Economics",
+      "tagline": "Money across time",
+      "chapterCount": 5,
+      "sectionCount": 5,
+      "chapters": [
+        {
+          "id": "ku-business-economics-finance-and-investment-corporate-finance",
+          "number": 1,
+          "title": "Corporate Finance",
+          "shortTitle": "Corporate Finance",
+          "bookId": "ku-business-economics-finance-and-investment",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-com-corporate-finance-decisions",
+              "number": 1.1,
+              "title": "Corporate Finance Decisions: Investing, Financing and Paying Out"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-finance-and-investment-markets-and-instruments",
+          "number": 2,
+          "title": "Markets & Instruments",
+          "shortTitle": "Markets & Instruments",
+          "bookId": "ku-business-economics-finance-and-investment",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-fin-financial-markets-money-capital",
+              "number": 2.1,
+              "title": "Financial Markets: How Money and Capital Markets Move Savings to Investment"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-finance-and-investment-valuation-basics",
+          "number": 3,
+          "title": "Valuation Basics",
+          "shortTitle": "Valuation Basics",
+          "bookId": "ku-business-economics-finance-and-investment",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-compound-interest-tvm",
+              "number": 3.1,
+              "title": "Compound Interest and the Time Value of Money"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-finance-and-investment-risk-and-insurance",
+          "number": 4,
+          "title": "Risk & Insurance",
+          "shortTitle": "Risk & Insurance",
+          "bookId": "ku-business-economics-finance-and-investment",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-fin-insurance-risk-pooling",
+              "number": 4.1,
+              "title": "Insurance: Pooling Risk and Pricing It"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-finance-and-investment-money-and-markets",
+          "number": 5,
+          "title": "Money & Markets",
+          "shortTitle": "Money & Markets",
+          "bookId": "ku-business-economics-finance-and-investment",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-fin-banks-create-money",
+              "number": 5.1,
+              "title": "How Banks Create Money"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-international-trade",
+      "name": "International Trade",
+      "group": "Business & Economics",
+      "tagline": "Why nations exchange",
+      "chapterCount": 4,
+      "sectionCount": 4,
+      "chapters": [
+        {
+          "id": "ku-business-economics-international-trade-fdi-and-economic-integration",
+          "number": 1,
+          "title": "FDI and Economic Integration",
+          "shortTitle": "FDI and Economic Integration",
+          "bookId": "ku-business-economics-international-trade",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-com-international-business-fdi-integration",
+              "number": 1.1,
+              "title": "FDI, Regional Integration and the Institutions of World Trade"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-international-trade-regional-integration",
+          "number": 2,
+          "title": "Regional Integration",
+          "shortTitle": "Regional Integration",
+          "bookId": "ku-business-economics-international-trade",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-regional-integration",
+              "number": 2.1,
+              "title": "Trade Protection and Regional Integration: Blocs, Trade Creation and Diversion"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-international-trade-trade-theory",
+          "number": 3,
+          "title": "Trade Theory",
+          "shortTitle": "Trade Theory",
+          "bookId": "ku-business-economics-international-trade",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-comparative-advantage",
+              "number": 3.1,
+              "title": "Comparative Advantage and Trade"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-international-trade-trade-policy",
+          "number": 4,
+          "title": "Trade Policy",
+          "shortTitle": "Trade Policy",
+          "bookId": "ku-business-economics-international-trade",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-trade-policy-tariffs",
+              "number": 4.1,
+              "title": "Trade Policy: Tariffs, Quotas and Trade Wars"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-business-economics-marketing",
+      "name": "Marketing",
+      "group": "Business & Economics",
+      "tagline": "Attention, understood",
+      "chapterCount": 2,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-business-economics-marketing-pricing-channels-and-promotion",
+          "number": 1,
+          "title": "Pricing, Channels and Promotion",
+          "shortTitle": "Pricing, Channels and Promotion",
+          "bookId": "ku-business-economics-marketing",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-com-marketing-mix-distribution-trends",
+              "number": 1.1,
+              "title": "Pricing, Distribution and Promotion: The Marketing Mix and Its Digital Turn"
+            }
+          ]
+        },
+        {
+          "id": "ku-business-economics-marketing-marketing-foundations",
+          "number": 2,
+          "title": "Marketing Foundations",
+          "shortTitle": "Marketing Foundations",
+          "bookId": "ku-business-economics-marketing",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-mkt-four-ps",
+              "number": 2.1,
+              "title": "The Four Ps and the Psychology of Buying"
+            },
+            {
+              "id": "ku-mkt-stp-playbook",
+              "number": 2.2,
+              "title": "Segmentation, Targeting and Positioning: The STP Playbook"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ku-business-economics-banking-and-finance",
       "name": "Banking & Finance",
       "group": "Business & Economics",
@@ -31341,76 +31666,6 @@
       ]
     },
     {
-      "id": "ku-business-economics-finance-and-investment",
-      "name": "Finance & Investment",
-      "group": "Business & Economics",
-      "tagline": "Money across time",
-      "chapterCount": 4,
-      "sectionCount": 4,
-      "chapters": [
-        {
-          "id": "ku-business-economics-finance-and-investment-markets-and-instruments",
-          "number": 1,
-          "title": "Markets & Instruments",
-          "shortTitle": "Markets & Instruments",
-          "bookId": "ku-business-economics-finance-and-investment",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-fin-financial-markets-money-capital",
-              "number": 1.1,
-              "title": "Financial Markets: How Money and Capital Markets Move Savings to Investment"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-finance-and-investment-valuation-basics",
-          "number": 2,
-          "title": "Valuation Basics",
-          "shortTitle": "Valuation Basics",
-          "bookId": "ku-business-economics-finance-and-investment",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bus-compound-interest-tvm",
-              "number": 2.1,
-              "title": "Compound Interest and the Time Value of Money"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-finance-and-investment-risk-and-insurance",
-          "number": 3,
-          "title": "Risk & Insurance",
-          "shortTitle": "Risk & Insurance",
-          "bookId": "ku-business-economics-finance-and-investment",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-fin-insurance-risk-pooling",
-              "number": 3.1,
-              "title": "Insurance: Pooling Risk and Pricing It"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-finance-and-investment-money-and-markets",
-          "number": 4,
-          "title": "Money & Markets",
-          "shortTitle": "Money & Markets",
-          "bookId": "ku-business-economics-finance-and-investment",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-fin-banks-create-money",
-              "number": 4.1,
-              "title": "How Banks Create Money"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "ku-business-economics-foundations-of-economics",
       "name": "Foundations of Economics",
       "group": "Business & Economics",
@@ -31430,131 +31685,6 @@
               "id": "ku-econ-foundations-methodology",
               "number": 1.1,
               "title": "Economic Methodology: Scarcity, Choice and How Economists Approach the World"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-business-economics-microeconomics",
-      "name": "Microeconomics",
-      "group": "Business & Economics",
-      "tagline": "Prices and incentives",
-      "chapterCount": 4,
-      "sectionCount": 4,
-      "chapters": [
-        {
-          "id": "ku-business-economics-microeconomics-welfare-economics",
-          "number": 1,
-          "title": "Welfare Economics",
-          "shortTitle": "Welfare Economics",
-          "bookId": "ku-business-economics-microeconomics",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-econ-market-efficiency-surplus",
-              "number": 1.1,
-              "title": "Competitive Markets: Efficiency, Surplus and Welfare"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-microeconomics-price-theory",
-          "number": 2,
-          "title": "Price Theory",
-          "shortTitle": "Price Theory",
-          "bookId": "ku-business-economics-microeconomics",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bus-supply-demand-elasticity",
-              "number": 2.1,
-              "title": "Supply, Demand and Elasticity"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-microeconomics-when-markets-fail",
-          "number": 3,
-          "title": "When Markets Fail",
-          "shortTitle": "When Markets Fail",
-          "bookId": "ku-business-economics-microeconomics",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-econ-market-failures",
-              "number": 3.1,
-              "title": "When Markets Fail: Externalities, Public Goods and Monopoly Power"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-microeconomics-market-structure",
-          "number": 4,
-          "title": "Market Structure",
-          "shortTitle": "Market Structure",
-          "bookId": "ku-business-economics-microeconomics",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-econ-market-structures",
-              "number": 4.1,
-              "title": "Market Structures: From Perfect Competition to Monopoly"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-business-economics-international-trade",
-      "name": "International Trade",
-      "group": "Business & Economics",
-      "tagline": "Why nations exchange",
-      "chapterCount": 3,
-      "sectionCount": 3,
-      "chapters": [
-        {
-          "id": "ku-business-economics-international-trade-regional-integration",
-          "number": 1,
-          "title": "Regional Integration",
-          "shortTitle": "Regional Integration",
-          "bookId": "ku-business-economics-international-trade",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-econ-regional-integration",
-              "number": 1.1,
-              "title": "Trade Protection and Regional Integration: Blocs, Trade Creation and Diversion"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-international-trade-trade-theory",
-          "number": 2,
-          "title": "Trade Theory",
-          "shortTitle": "Trade Theory",
-          "bookId": "ku-business-economics-international-trade",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bus-comparative-advantage",
-              "number": 2.1,
-              "title": "Comparative Advantage and Trade"
-            }
-          ]
-        },
-        {
-          "id": "ku-business-economics-international-trade-trade-policy",
-          "number": 3,
-          "title": "Trade Policy",
-          "shortTitle": "Trade Policy",
-          "bookId": "ku-business-economics-international-trade",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bus-trade-policy-tariffs",
-              "number": 3.1,
-              "title": "Trade Policy: Tariffs, Quotas and Trade Wars"
             }
           ]
         }
@@ -31915,36 +32045,6 @@
               "id": "ku-bus-behavioral-nudges",
               "number": 1.1,
               "title": "Nudges and the Psychology of Choosing"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ku-business-economics-marketing",
-      "name": "Marketing",
-      "group": "Business & Economics",
-      "tagline": "Attention, understood",
-      "chapterCount": 1,
-      "sectionCount": 2,
-      "chapters": [
-        {
-          "id": "ku-business-economics-marketing-marketing-foundations",
-          "number": 1,
-          "title": "Marketing Foundations",
-          "shortTitle": "Marketing Foundations",
-          "bookId": "ku-business-economics-marketing",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-mkt-four-ps",
-              "number": 1.1,
-              "title": "The Four Ps and the Psychology of Buying"
-            },
-            {
-              "id": "ku-mkt-stp-playbook",
-              "number": 1.2,
-              "title": "Segmentation, Targeting and Positioning: The STP Playbook"
             }
           ]
         }

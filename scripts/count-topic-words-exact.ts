@@ -124,6 +124,12 @@ const IDS = [
   'edu-higher-education-system-india',
   'ict-computers-internet-digital-initiatives',
   'env-people-environment-sustainable-development',
+  'com-business-environment-elements',
+  'com-demand-consumer-production-theory',
+  'com-corporate-finance-decisions',
+  'com-international-business-fdi-integration',
+  'com-marketing-mix-distribution-trends',
+  'pol-western-political-thought-canon',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

@@ -6,12 +6,19 @@ import { x25TournamentReasoningCivicsPassTopics } from './x25-tournament-reasoni
 import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
 import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
 import { x31UgcNetPaper1PassTopics } from './x31-ugc-net-paper1-pass'
+import { x32UgcNetPaper2PassTopics } from './x32-ugc-net-paper2-pass'
 
 export const socialSciences: KnowledgeDomainFile = {
   domain: 'Social Sciences',
   blurb:
     'How humans behave, bond, decide and govern together — psychology, sociology and political science at their meeting points.',
   topics: [
+    // X32 pass (2026-10-24): UGC NET Paper II political-science sweep — the
+    // western political-thought canon (Plato→Marx). Distinct from
+    // pol-regimes-spectrum (typologies), pol-ir-theory (IR) and
+    // law-separation-powers (institutional device): this lesson owns the
+    // intellectual history.
+    ...x32UgcNetPaper2PassTopics.filter((t) => t.domain === 'Social Sciences'),
     // X31 pass (2026-10-24): UGC NET Paper 1 — research methodology, teaching
     // aptitude and the India higher-education system. First Education-field
     // lessons in the library; carved against econ-foundations-methodology

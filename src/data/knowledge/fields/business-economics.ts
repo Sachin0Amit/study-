@@ -5,12 +5,20 @@ import { x18ExamPassTopics } from './x18-exam-pass'
 import { x20FoundationsPassTopics } from './x20-foundations-pass'
 import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 import { x26BankingManagementPassTopics } from './x26-banking-management-pass'
+import { x32UgcNetPaper2PassTopics } from './x32-ugc-net-paper2-pass'
 
 export const businessEconomics: KnowledgeDomainFile = {
   domain: 'Business & Economics',
   blurb:
     'Markets, money and organisations — the logic of prices, trade, investment and value creation.',
   topics: [
+    // X32 pass (2026-10-24): UGC NET Paper II commerce sweep — business
+    // environment, consumer/production theory, corporate finance, FDI &
+    // integration, marketing mix + trends. Scoped against bus-supply-demand-
+    // elasticity (owns market curves/elasticity), bus-compound-interest-tvm
+    // (owns discounting), bus-comparative-advantage + bus-trade-policy-tariffs
+    // (own trade theory and tariffs) — no overlap.
+    ...x32UgcNetPaper2PassTopics.filter((t) => t.domain === 'Business & Economics'),
     // X26 pass (2026-10-23): Indian banking institutional structure, poverty/
     // employment measurement, management & OB, communication/governance/ethics.
     // Applies the policy instruments the monetary-policy lesson owns and the

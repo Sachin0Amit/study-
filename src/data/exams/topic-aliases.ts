@@ -527,5 +527,26 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // target, HECI, academic bank of credits) plus the regulators (UGC,
   // AICTE, NAAC, NBA, AISHE) — the topic's two subtopic lines.
   'policies governance and administration': 'edu-higher-education-system-india',
+  // X32 pass (2026-10-24): UGC NET Paper II sweep → the six new commerce and
+  // political-thought lessons. Each alias names the syllabus unit the lesson
+  // was written to cover: the environment lesson teaches internal/external
+  // sectors + PESTEL + LPG; the theory lesson teaches indifference curves,
+  // variable proportions and cost curves; the finance lesson teaches the
+  // three decision areas with NPV/WACC/trade-off; the FDI lesson teaches FDI
+  // forms, entry modes, the integration ladder and the institutions; the
+  // marketing lesson teaches pricing anchors, channel design, the promotion
+  // mix and the digital trends (one lesson honestly spans two units); the
+  // political-thought lesson walks Plato→Marx.
+  'business environment: concepts and elements':
+    'com-business-environment-elements',
+  'demand, consumer behaviour and production':
+    'com-demand-consumer-production-theory',
+  'corporate finance decisions': 'com-corporate-finance-decisions',
+  'fdi, regional integration and institutions':
+    'com-international-business-fdi-integration',
+  'pricing, promotion and distribution':
+    'com-marketing-mix-distribution-trends',
+  'trends in marketing': 'com-marketing-mix-distribution-trends',
+  'western political thought': 'pol-western-political-thought-canon',
 }
 
