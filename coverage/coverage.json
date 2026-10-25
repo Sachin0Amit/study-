@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T19:16:59.135Z",
+  "generatedAt": "2026-10-25T19:57:41.318Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 138,
     "books": 138,
     "chapters": 859,
-    "sections": 4604
+    "sections": 4606
   },
   "subjects": [
     {
@@ -26866,7 +26866,7 @@
       "group": "Life Sciences",
       "tagline": "The chemistry that runs cells",
       "chapterCount": 2,
-      "sectionCount": 6,
+      "sectionCount": 8,
       "chapters": [
         {
           "id": "ku-biochemistry-molecules-of-life",
@@ -26874,7 +26874,7 @@
           "title": "Molecules of Life",
           "shortTitle": "Molecules of Life",
           "bookId": "ku-biochemistry",
-          "sectionCount": 5,
+          "sectionCount": 7,
           "sections": [
             {
               "id": "ku-bio-biochemistry-metabolism",
@@ -26882,23 +26882,33 @@
               "title": "Biochemistry: The Cell's Energy Economy"
             },
             {
-              "id": "ku-bioc-protein-structure-folding",
+              "id": "ku-bioc-water-ph-buffers",
               "number": 1.2,
+              "title": "Water, pH and Buffers: The Chemistry Every Reaction Lives In"
+            },
+            {
+              "id": "ku-bioc-amino-acids-r-groups",
+              "number": 1.3,
+              "title": "Amino Acids: The Twenty Letters and Their Chemistry"
+            },
+            {
+              "id": "ku-bioc-protein-structure-folding",
+              "number": 1.4,
               "title": "Protein Structure and Folding: Shape Is Function"
             },
             {
               "id": "ku-bioc-enzymes-kinetics-regulation",
-              "number": 1.3,
+              "number": 1.5,
               "title": "Enzymes: Catalysis, Kinetics and Regulation"
             },
             {
               "id": "ku-bioc-lipid-amino-acid-metabolism",
-              "number": 1.4,
+              "number": 1.6,
               "title": "Beyond Glucose: Fat and Amino-Acid Metabolism"
             },
             {
               "id": "ku-bioc-carbohydrates-lipids",
-              "number": 1.5,
+              "number": 1.7,
               "title": "Carbohydrates and Lipids: Fuel, Structure and Signalling"
             }
           ]

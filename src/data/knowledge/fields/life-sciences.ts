@@ -13,6 +13,7 @@ import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
 import { x35NswHscPassTopics } from './x35-nsw-hsc-pass'
 import { x47BioSplitPassTopics } from './x47-bio-split-pass'
 import { x55CrossverifyTopics } from './x55-crossverify-pass'
+import { x57CrossverifyTopics } from './x57-crossverify-pass'
 
 export const lifeSciences: KnowledgeDomainFile = {
   domain: 'Life Sciences',
@@ -6141,6 +6142,20 @@ export const lifeSciences: KnowledgeDomainFile = {
       ],
     },
     // ------------------------------------------------------------------
+    // X57 cross-verify pass (2026-10-26): Biochemistry (book 4) verified
+    // against Ahern/Rajagopal/Tan, "Biochemistry Free For All" 1.3 (OSU,
+    // CC BY-NC-SA 4.0, official free hosting) — two chapter-opening
+    // lessons the book teaches and no live topic owned: water/pH/buffers
+    // with the Henderson-Hasselbalch and pI arithmetic (grep-verified:
+    // "Henderson" appeared nowhere in the library), and amino-acid
+    // side-chain chemistry with pKa values and the 20+2 code. Placed
+    // BEFORE the protein-structure lesson so the Molecules of Life
+    // chapter reads water -> monomers -> folds; carved against the
+    // protein lesson (owns folding), the metabolism lesson (owns carbon-
+    // skeleton catabolism) and the toolbox (owns pI separations). See
+    // x57-crossverify-pass.ts header for the full cross-verify result.
+    ...x57CrossverifyTopics,
+    // ------------------------------------------------------------------
     {
       id: 'bioc-protein-structure-folding',
       title: 'Protein Structure and Folding: Shape Is Function',
@@ -6157,8 +6172,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Amyloid and misfolding disease',
         'Denaturation and renaturation',
       ],
-      words: 1640,
-      readMins: 8,
+      words: 1898,
+      readMins: 9,
       addedOn: '2026-10-21',
       blocks: [
         {
@@ -6182,6 +6197,10 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
+          text: "Geometry refines the picture. A helix rises 0.15 nanometres per residue and completes one turn every 0.54 — parameters Pauling, Corey and Branson predicted correctly from models in 1951, before any crystallographer saw one. Two rarer cousins share the architecture: the 3-10 helix (ten residues in three turns, hydrogen bonds three apart, usually capping an alpha-helix) and the pi-helix (22 residues in five turns, present somewhere in as many as 15 percent of proteins, almost always inserted mid-alpha-helix). The backbone's rotatable phi and psi angles are themselves constrained — G.N. Ramachandran's 1963 analysis plotted the sterically allowed combinations and found just three favoured regions (beta-strands, right-handed helices, left-handed helices), and real proteins land on that map with remarkable fidelity. The same logic runs in reverse: tally which residues favour which structure across thousands of known folds and you can predict secondary structure from sequence alone with up to 80 percent accuracy.",
+        },
+        {
+          kind: 'para',
           text: 'Why does the chain fold at all? The dominant driver is the hydrophobic effect. Water around a nonpolar side chain is forced into ordered, cage-like arrangements; burying nonpolar groups in the core releases that water into disorder. The system gains entropy even though the protein itself becomes more ordered — folding is a thermodynamic balance, conventionally written as free energy change equals enthalpy change minus temperature times entropy change, and native proteins sit only 20–60 kilojoules per mole below the unfolded ensemble, a margin thin enough that heating, extremes of pH, or detergents can erase it: denaturation. Boiled egg white is denatured ovalbumin — new bonds forged between exposed hydrophobic patches make the change practically irreversible there, though not in general.',
         },
         {
@@ -6191,6 +6210,10 @@ export const lifeSciences: KnowledgeDomainFile = {
         {
           kind: 'para',
           text: 'Cells add molecular chaperones — many of them heat-shock proteins, first noticed as products switched on by a sudden temperature rise. They add no information; they add time and shielding. Hsp70-style chaperones clamp onto exposed hydrophobic patches of a nascent chain and keep neighbours from sticking together prematurely. Chaperonins such as the bacterial GroEL–GroES pair seal a single chain inside an ATP-fuelled barrel, a private room where folding proceeds without an audience of other hydrophobic surfaces. In the crowded cell — protein concentrations of hundreds of grams per litre — aggregation, not misfolding, is the everyday danger.',
+        },
+        {
+          kind: 'para',
+          text: "The system has more moving parts than the barrel metaphor suggests. Hsp70 works with an ATP-hydrolysis co-chaperone, Hsp40, that drives the clamp cycle; and when a client is damaged beyond rescue, Hsp70 recruits the ubiquitination enzymes that tag it with a polyubiquitin chain — linked at specific lysines of ubiquitin, K48 for the proteasome's attention — dooming the protein to the barrel-shaped proteasome, which clips its client into seven-to-eight-residue peptides for recycling. Even environments tune stability: thermophiles thriving above 50 degrees stabilise their proteins with extra hydrogen bonds, extra salt bridges and tighter packing — the same forces ordinary proteins use, simply more of them.",
         },
         {
           kind: 'para',
@@ -6295,8 +6318,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Vitamins as coenzyme precursors',
         'Enzymes as drug targets',
       ],
-      words: 1493,
-      readMins: 7,
+      words: 1689,
+      readMins: 8,
       addedOn: '2026-10-21',
       blocks: [
         {
@@ -6320,6 +6343,10 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
+          text: "The kinetics rest on three experimental assumptions worth stating explicitly: velocity is measured as the INITIAL rate, before the reverse reaction or product buildup contaminates the reading; substrate is in great excess over enzyme, so the enzyme is never idle waiting for substrate; and the reaction is sampled under steady state, where the enzyme–substrate complex's concentration is not appreciably changing. Most enzymes, moreover, juggle two substrates, and the binding choreography sorts them into families: sequential reactions bind both substrates before any product leaves — in ordered fashion, as lactate dehydrogenase demands NADH before pyruvate, or in random fashion, as creatine kinase accepts creatine and ATP in either order — while ping-pong (double-displacement) enzymes never hold both at once: a transaminase takes the amino group from one substrate onto its own cofactor, then hands it to the second, physically shuttling between two modified states.",
+        },
+        {
+          kind: 'para',
           text: 'Kinetics turns this into numbers. At low substrate concentration, reaction velocity rises almost linearly with substrate; at high concentration, every enzyme molecule is saturated and velocity plateaus at Vmax. Michaelis and Menten captured the curve a century ago: v equals Vmax times S over Km plus S, where Km — the substrate concentration giving half-maximal velocity — reflects how tightly the enzyme holds its substrate (smaller Km, tighter grip). The turnover number kcat counts molecules converted per enzyme per second (carbonic anhydrase: about a million), and the ratio kcat/Km measures catalytic efficiency, approaching the theoretical diffusion limit for the best enzymes.',
         },
         {
@@ -6328,7 +6355,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
-          text: 'Cells regulate enzymes at four levels. Allosteric regulation: a signal molecule binds a site distant from the active site and shifts the enzyme between tense and relaxed conformations — phosphofructokinase, the valve of glycolysis, is inhibited by ATP and unleashed by AMP, the cell’s fuel gauge. Covalent modification: kinases bolt phosphates onto target enzymes and phosphatases remove them, building the switching cascades of hormone signalling. Proteolytic activation: dangerous hydrolases are synthesised as inert zymogens — trypsinogen, the clotting cascade — and armed only where and when needed. And enzyme amount: gene expression and degradation set how many copies exist, the slowest but largest lever. Clinical labs exploit isozymes — tissue-specific versions of the same enzyme: creatine kinase tagged MB points to heart muscle, ALP isoenzymes distinguish bone from liver.',
+          text: 'Cells regulate enzymes at four levels. Allosteric regulation: a signal molecule binds a site distant from the active site and shifts the enzyme between tense and relaxed conformations — phosphofructokinase, the valve of glycolysis, is inhibited by ATP and unleashed by AMP, the cell’s fuel gauge. Covalent modification: kinases bolt phosphates onto target enzymes and phosphatases remove them, building the switching cascades of hormone signalling. Proteolytic activation: dangerous hydrolases are synthesised as inert zymogens — trypsinogen, the clotting cascade — and armed only where and when needed. And enzyme amount: gene expression and degradation set how many copies exist, the slowest but largest lever. Clinical labs exploit isozymes — tissue-specific versions of the same enzyme: creatine kinase tagged MB points to heart muscle, ALP isoenzymes distinguish bone from liver. Allosteric effectors get their own vocabulary: homotropic effectors are the enzyme’s own substrate, whose binding converts the hyperbolic velocity curve into a sigmoid as T-state enzymes flip to R — the cooperative shape haemoglobin’s oxygen curve shares — while heterotropic effectors are other molecules entirely, like ATP and AMP on phosphofructokinase.',
         },
         {
           kind: 'para',
@@ -6429,8 +6456,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Fed and fasted metabolic states',
         'Why fat cannot become glucose',
       ],
-      words: 1562,
-      readMins: 7,
+      words: 1811,
+      readMins: 9,
       addedOn: '2026-10-21',
       blocks: [
         {
@@ -6454,6 +6481,10 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
+          text: "Two wrinkles complete the spiral. Very long chains — twenty-two carbons and up — begin oxidation in peroxisomes, where the same chemistry runs but the FADH2 electrons reduce oxygen to hydrogen peroxide instead of feeding a proton pump, so peroxisomal fat burning yields no ATP from that step and must shuttle its NADH equivalents onward; the peroxisome also handles branched-chain fatty acids and eicosanoids. And the double bonds of unsaturated fats need extra enzymes: a cis-delta-3-enoyl-CoA isomerase repositions misplaced double bonds into the trans configuration the spiral expects, and a 2,4-dienoyl-CoA reductase (spending NADPH) handles the second bond of polyunsaturated chains — which is why dietary linoleic and linolenic acids burn a little less efficiently but still burn. The medium-chain acyl-CoA dehydrogenase deficiency flagged above is among the most common inherited metabolic errors and has been linked to sudden infant death syndrome — the first long overnight fast is where an undiagnosed child meets it.",
+        },
+        {
+          kind: 'para',
           text: 'That asymmetry is a biochemistry classic: animals cannot turn even-numbered fatty acids into glucose. The reason is bookkeeping — the pyruvate dehydrogenase step from pyruvate to acetyl-CoA is a one-way door, and the two carbons entering the Krebs cycle as acetyl-CoA leave as two CO2 before anything net can be harvested. Carbon skeletons for gluconeogenesis come from glycerol, lactate, most amino acids, and odd-chain fats — never from acetyl-CoA itself. Plants and microbes run the glyoxylate shunt that skips the two decarboxylations; animals lost it, which is why dieting biology separates “burning fat” from “building blood sugar”.',
         },
         {
@@ -6462,7 +6493,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
-          text: 'Amino acids arrive with a waste problem: nitrogen. The first move is transamination — aminotransferases hand the amino group to alpha-ketoglutarate, making glutamate, the collection hub. In the mitochondria of liver hepatocytes, glutamate dehydrogenase releases it as ammonia, and the urea cycle locks the ammonia into urea at a cost of about two ATP per molecule — five reactions spanning mitochondrial and cytosolic compartments, launched by carbamoyl-phosphate synthetase I, the most abundant liver enzyme. Urea rides to the kidneys for excretion; liver failure lets ammonia reach the brain (hepatic encephalopathy), while inherited urea-cycle defects make protein a poison from infancy. What remains after deamination are carbon skeletons, sorted by their destination: glucogenic ones funnel into pyruvate or Krebs intermediates and can raise glucose; ketogenic ones (leucine, lysine alone) become acetyl-CoA or acetoacetate; several — isoleucine, phenylalanine, tyrosine, tryptophan, threonine — do both.',
+          text: 'Amino acids arrive with a waste problem: nitrogen. The first move is transamination — aminotransferases hand the amino group to alpha-ketoglutarate, making glutamate, the collection hub. In the mitochondria of liver hepatocytes, glutamate dehydrogenase releases it as ammonia, and the urea cycle locks the ammonia into urea at the cost of three ATP — four high-energy phosphate bonds in total, because the argininosuccinate-synthetase step spends ATP to make AMP — across five reactions spanning the mitochondrial matrix and the cytosol, launched by carbamoyl-phosphate synthetase I, the most abundant liver enzyme. The cycle was the first metabolic cycle ever discovered — Hans Krebs worked it out in 1932, five years before his citric acid cycle — and it is regulated at that first step by N-acetylglutamate, an allosteric activator whose own synthetase is switched on by arginine and glutamate, so a nitrogen-rich cell arms its disposal valve. Urea rides to the kidneys for excretion (humans are ureotelic; birds excrete uric acid, fish simply ammonia); liver failure lets ammonia reach the brain (hepatic encephalopathy), while inherited urea-cycle defects make protein a poison from infancy. What remains after deamination are carbon skeletons, sorted by their destination: glucogenic ones funnel into pyruvate or Krebs intermediates and can raise glucose; ketogenic ones (leucine, lysine alone) become acetyl-CoA or acetoacetate; several — isoleucine, phenylalanine, tyrosine, tryptophan, threonine — do both.',
         },
         {
           kind: 'para',
@@ -6471,8 +6502,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         {
           kind: 'formula',
           name: 'ATP yield from a fatty acid',
-          latex: '\\text{ATP} \\approx 7n - 6 \\quad (\\text{C}_{2n}\\ \\text{saturated fatty acid})',
-          meaning: 'Each two-carbon unit nets about 14 ATP (an acetyl-CoA worth 10 plus 1.5 + 2.5 from the spiral), minus 2 for activation. Palmitate (n = 8): 7 × 16 − 6 ≈ 106 — the arithmetic behind fat’s energy density.',
+          latex: '\\text{ATP} \\approx 7n - 6 \\quad (\\text{C}_{n}\\ \\text{saturated fatty acid})',
+          meaning: 'Each two-carbon unit nets about 14 ATP (an acetyl-CoA worth 10 plus 1.5 + 2.5 from the spiral), minus 2 for activation. Palmitate (n = 16 carbons): 7 × 16 − 6 ≈ 106 — the arithmetic behind fat’s energy density.',
         },
         {
           kind: 'example',
@@ -6505,7 +6536,7 @@ export const lifeSciences: KnowledgeDomainFile = {
           { term: 'beta-oxidation', def: 'The four-step mitochondrial spiral releasing acetyl-CoA two carbons at a time from a fatty acid.' },
           { term: 'ketone bodies', def: 'Acetoacetate and beta-hydroxybutyrate, liver-made, blood-borne alternative fuel for brain and muscle.' },
           { term: 'transamination', def: 'Transfer of an amino group to alpha-ketoglutarate, collecting nitrogen as glutamate.' },
-          { term: 'urea cycle', def: 'The five-reaction liver pathway converting ammonia to excretable urea, costing about two ATP per urea.' },
+          { term: 'urea cycle', def: 'The five-reaction liver pathway converting ammonia to excretable urea — three ATP and four high-energy phosphate bonds spent per turn, N-acetylglutamate-activated at CPS I.' },
           { term: 'glucogenic / ketogenic', def: 'Classification of amino-acid carbon skeletons by whether they can net-yield glucose, ketones, or both.' },
           { term: 'Randle cycle', def: 'The substrate competition by which fatty-acid oxidation suppresses glucose use in muscle.' },
         ] },
@@ -6828,8 +6859,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Triglycerides, phospholipids and the bilayer',
         'Steroids and cholesterol',
       ],
-      words: 1249,
-      readMins: 6,
+      words: 1396,
+      readMins: 7,
       addedOn: '2026-10-22',
       blocks: [
         {
@@ -6858,6 +6889,10 @@ export const lifeSciences: KnowledgeDomainFile = {
         {
           kind: 'para',
           text: 'Lipids are defined by behaviour, not monomers: hydrophobic molecules that will not dissolve in water. The workhorses are fatty acids — long hydrocarbon chains ending in a carboxyl group. Saturated chains carry the maximum hydrogen, run straight, and pack tight into solids (butter, lard). Unsaturated chains carry one or more double bonds whose cis kinks bend the tail, prevent packing, and make oils that stay liquid. Industry hydrogenates oils to saturate them — and accidentally builds trans fats, whose straight-yet-abnormal geometry earns their cardiovascular reputation.',
+        },
+        {
+          kind: 'para',
+          text: "Melting behaviour follows the same geometry and matters everywhere from membranes to kitchen shelves: each cis double bond lowers the melting temperature, and shorter chains do too — which is why fish living in cold water bank polyunsaturated fats that stay fluid. Two unsaturated fatty acids are essential nutrients — linoleic acid (omega-6) and linolenic acid (omega-3), both eighteen carbons — because human desaturase enzymes cannot build double bonds beyond the ninth carbon from the carboxyl end; the body manufactures the rest of the omega family from these two dietary starters. Sugars add a slower mischief of their own: free sugars — fructose most readily, then galactose and glucose — glycate proteins without any enzyme, and the accumulating advanced glycation end-products stiffen collagen, damage vessels and are tracked clinically by glycated haemoglobin, the HbA1c reading that reports a diabetic patient's average blood sugar over the preceding months.",
         },
         {
           kind: 'para',

@@ -17,7 +17,7 @@
 - **Subjects:** 138
 - **Books (master volumes):** 138
 - **Chapters:** 859
-- **Sections (lessons):** 4604
+- **Sections (lessons):** 4606
 
 ## Foundations — 7 subjects
 
@@ -809,9 +809,9 @@
 
 ### Biochemistry (`ku-biochemistry`)
 
-*The chemistry that runs cells* — 2 chapters · 6 sections
+*The chemistry that runs cells* — 2 chapters · 8 sections
 
-- **Ch 1. Molecules of Life** `ku-biochemistry-molecules-of-life` — 5 sections: Biochemistry: The Cell's Energy Economy; Protein Structure and Folding: Shape Is Function; Enzymes: Catalysis, Kinetics and Regulation; Beyond Glucose: Fat and Amino-Acid Metabolism; Carbohydrates and Lipids: Fuel, Structure and Signalling
+- **Ch 1. Molecules of Life** `ku-biochemistry-molecules-of-life` — 7 sections: Biochemistry: The Cell's Energy Economy; Water, pH and Buffers: The Chemistry Every Reaction Lives In; Amino Acids: The Twenty Letters and Their Chemistry; Protein Structure and Folding: Shape Is Function; Enzymes: Catalysis, Kinetics and Regulation; Beyond Glucose: Fat and Amino-Acid Metabolism; Carbohydrates and Lipids: Fuel, Structure and Signalling
 - **Ch 2. Laboratory Methods** `ku-biochemistry-laboratory-methods` — 1 sections: The Biochemist’s Toolbox: Chromatography, Electrophoresis and Spectrophotometry
 
 ### Genetics & Heredity (`ku-genetics-heredity`)

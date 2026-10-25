@@ -99,8 +99,8 @@ export const x47BioSplitPassTopics: KnowledgeTopic[] = [
       'Spectrophotometry and the Beer–Lambert law',
       'Reading a purification table: yield versus fold-purification',
     ],
-    words: 1436,
-    readMins: 7,
+    words: 1803,
+    readMins: 9,
     addedOn: '2026-10-25',
     blocks: [
       {
@@ -120,11 +120,23 @@ export const x47BioSplitPassTopics: KnowledgeTopic[] = [
       },
       {
         kind: 'para',
+        text: "Before any of it can run, the cell must be opened. Small cells yield to osmotic shock or to enzymes — lysozyme chews bacterial walls, cellulase softens plant tissue — while tougher samples take mechanical beating with glass beads, sonication at 20-50 kilohertz (noisy and heating), pressure bombs that release up to 25,000 psi so dissolved gas bursts the cells from inside, or cryopulverization: freezing the tissue in liquid nitrogen and grinding the frozen powder, the standard route through cartilage, seeds and connective tissue. The lysate is then spun in stages — low speed drops the debris, higher speeds bring down nuclei, then mitochondria, leaving the soluble supernatant the columns will fractionate.",
+      },
+      {
+        kind: 'para',
         text: 'Ion-exchange columns carry charged groups, so they hold onto molecules of opposite charge and release them when salt competes for the binding sites. Gel-filtration (size-exclusion) columns are beads riddled with tunnels: small molecules wander into the tunnels and take a longer path, so they come out last, while large molecules flow around the beads and come out first — the column sorts by size with the biggest first. Affinity chromatography is the most selective of all: the stationary phase carries a molecule that your target binds specifically — an antibody, a substrate analog, a metal chelate — so everything else washes straight through and the target is released afterwards by changing conditions. High-performance liquid chromatography (HPLC) miniaturizes and pressurizes the column so separations run in minutes with fine resolution; in practice “FPLC” and “HPLC” names a machine as much as a principle.',
       },
       {
         kind: 'para',
+        text: "One affinity scheme dominates modern protein work: the histidine tag. Genetic engineering appends six or more histidines to a recombinant protein, and because those imidazole side chains bind nickel or cobalt ions, the tagged protein alone sticks to a nickel column; imidazole itself, mimicking the tag's chemistry, is then flooded in to displace it. HPLC columns come in two polarities worth naming — normal phase, with a polar support where non-polar molecules elute first, and reverse phase, the non-polar, more reproducible workhorse where polar compounds cling longest — and the apotheosis of the separation toolkit is 2D gel electrophoresis: first isoelectric focusing by pI along a strip, then that strip laid across an SDS-PAGE slab for size, so every protein appears as a spot at its unique (pI, mass) address, ready to be excised and identified by mass spectrometry.",
+      },
+      {
+        kind: 'para',
         text: 'Electrophoresis separates molecules by charge and size through a gel matrix under an electric field. DNA fragments, which carry a uniform charge-per-base ratio, are sorted by size on agarose gels — small fragments thread through the mesh quickly, large ones lag — and the sizes are read against a ladder of known standards. Proteins are trickier because each has its own charge, so SDS-PAGE first coats every protein with the anionic detergent SDS, roughly equalizing charge-per-mass and leaving size as the dominant factor: proteins migrate toward the anode with the smallest travelling fastest. Isoelectric focusing goes the other way: proteins migrate along a pH gradient until they reach their isoelectric point, the pH at which their net charge is zero, and there they stop.',
+      },
+      {
+        kind: 'para',
+        text: "Real gels have two refinements the names hide. Samples are boiled with a reducing agent — mercaptoethanol or dithiothreitol — to break disulfide bonds so every protein runs as a fully unbraided rod (its absence leaves ghost dimers migrating oddly); and the polyacrylamide slab carries a compressible stacking gel above the fine resolving gel, squeezing the loaded sample into a razor-thin band before size separation begins. Resolution reaches absurd levels: isoelectric focusing can separate proteins whose pIs differ by as little as 0.01 pH unit. And the blots that identify a band carry their own naming joke — Southern blot for DNA (after Edwin Southern), northern blot for RNA, western blot for the antibody-probed protein test.",
       },
       {
         kind: 'para',
