@@ -17,7 +17,7 @@
 - **Subjects:** 138
 - **Books (master volumes):** 138
 - **Chapters:** 858
-- **Sections (lessons):** 4597
+- **Sections (lessons):** 4600
 
 ## Foundations — 7 subjects
 
@@ -801,10 +801,10 @@
 
 ### Cell & Molecular Biology (`ku-cell-molecular-biology`)
 
-*The unit of life, read to the letter* — 3 chapters · 8 sections
+*The unit of life, read to the letter* — 3 chapters · 11 sections
 
-- **Ch 1. The Cell: Structure & Signaling** `ku-cell-molecular-biology-the-cell-structure-and-signaling` — 2 sections: Cell Signaling: Reception, Transduction, Response; The Cell and Its Biomolecules: From Membranes to Macromolecules
-- **Ch 2. Molecular Biology of the Gene** `ku-cell-molecular-biology-molecular-biology-of-the-gene` — 5 sections: DNA: The Molecule of Heredity, Structure and Replication; Transcription: Reading Genes into RNA; The Genetic Code and Translation: RNA to Protein; Mutations and the Repair Systems That Contain Them; Gene Regulation: From Operons to Epigenetics
+- **Ch 1. The Cell: Structure & Signaling** `ku-cell-molecular-biology-the-cell-structure-and-signaling` — 4 sections: Cell Signaling: Reception, Transduction, Response; The Cytoskeleton and Cell Motility: Tubes, Ropes and Molecular Walkers; The Cell Cycle: Phases, Checkpoints and How Cells Die; The Cell and Its Biomolecules: From Membranes to Macromolecules
+- **Ch 2. Molecular Biology of the Gene** `ku-cell-molecular-biology-molecular-biology-of-the-gene` — 6 sections: DNA: The Molecule of Heredity, Structure and Replication; Transcription: Reading Genes into RNA; The Genetic Code and Translation: RNA to Protein; Mutations and the Repair Systems That Contain Them; Gene Regulation: From Operons to Epigenetics; Chromatin and the Nucleosome: How Two Metres of DNA Fit Into a Nucleus
 - **Ch 3. Bioenergetics** `ku-cell-molecular-biology-bioenergetics` — 1 sections: Cellular Respiration: Glycolysis to the Electron Transport Chain
 
 ### Biochemistry (`ku-biochemistry`)

@@ -12,6 +12,7 @@ import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
 import { x35NswHscPassTopics } from './x35-nsw-hsc-pass'
 import { x47BioSplitPassTopics } from './x47-bio-split-pass'
+import { x55CrossverifyTopics } from './x55-crossverify-pass'
 
 export const lifeSciences: KnowledgeDomainFile = {
   domain: 'Life Sciences',
@@ -5777,6 +5778,14 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
       ],
     },
+    // X55 cross-verify pass (2026-10-26): Cell & Molecular Biology checked
+    // against Bergtrom's open iText — chromatin/nucleosome structure,
+    // cytoskeleton & motility, cell cycle/checkpoints/apoptosis (each
+    // carved against the lessons that own adjacent territory; carving in
+    // the x55 header). Spread AFTER the entry biomolecules lesson so Ch1
+    // reads biomolecules -> signaling -> skeleton -> cycle, and Ch2 ends
+    // with the chromatin structure workshop.
+    ...x55CrossverifyTopics,
     // ------------------------------------------------------------------
     {
       id: 'bio-cellular-respiration-pathways',

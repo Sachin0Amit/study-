@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T18:07:31.384Z",
+  "generatedAt": "2026-10-25T18:45:23.763Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 138,
     "books": 138,
     "chapters": 858,
-    "sections": 4597
+    "sections": 4600
   },
   "subjects": [
     {
@@ -26766,7 +26766,7 @@
       "group": "Life Sciences",
       "tagline": "The unit of life, read to the letter",
       "chapterCount": 3,
-      "sectionCount": 8,
+      "sectionCount": 11,
       "chapters": [
         {
           "id": "ku-cell-molecular-biology-the-cell-structure-and-signaling",
@@ -26774,7 +26774,7 @@
           "title": "The Cell: Structure & Signaling",
           "shortTitle": "The Cell: Structure & Signaling",
           "bookId": "ku-cell-molecular-biology",
-          "sectionCount": 2,
+          "sectionCount": 4,
           "sections": [
             {
               "id": "ku-bio-cell-signaling-transduction",
@@ -26782,8 +26782,18 @@
               "title": "Cell Signaling: Reception, Transduction, Response"
             },
             {
-              "id": "ku-bio-cell-biomolecules",
+              "id": "ku-bio-cytoskeleton-cell-motility",
               "number": 1.2,
+              "title": "The Cytoskeleton and Cell Motility: Tubes, Ropes and Molecular Walkers"
+            },
+            {
+              "id": "ku-bio-cell-cycle-mitosis-checkpoints",
+              "number": 1.3,
+              "title": "The Cell Cycle: Phases, Checkpoints and How Cells Die"
+            },
+            {
+              "id": "ku-bio-cell-biomolecules",
+              "number": 1.4,
               "title": "The Cell and Its Biomolecules: From Membranes to Macromolecules"
             }
           ]
@@ -26794,7 +26804,7 @@
           "title": "Molecular Biology of the Gene",
           "shortTitle": "Molecular Biology of the Gene",
           "bookId": "ku-cell-molecular-biology",
-          "sectionCount": 5,
+          "sectionCount": 6,
           "sections": [
             {
               "id": "ku-bio-dna-structure-replication",
@@ -26820,6 +26830,11 @@
               "id": "ku-bio-gene-regulation-epigenetics",
               "number": 2.5,
               "title": "Gene Regulation: From Operons to Epigenetics"
+            },
+            {
+              "id": "ku-bio-chromatin-nucleosome-packaging",
+              "number": 2.6,
+              "title": "Chromatin and the Nucleosome: How Two Metres of DNA Fit Into a Nucleus"
             }
           ]
         },

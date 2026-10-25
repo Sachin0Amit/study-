@@ -33,6 +33,9 @@ import { technologyApplied } from '../src/data/knowledge/fields/technology-appli
 import { computingAI } from '../src/data/knowledge/fields/computing-ai'
 
 const IDS = [
+  'bio-chromatin-nucleosome-packaging',
+  'bio-cytoskeleton-cell-motility',
+  'bio-cell-cycle-mitosis-checkpoints',
   'dl-bits-koans-digital-world',
   'dl-privacy-footprints-fingerprints',
   'dl-document-metadata-ghosts',
