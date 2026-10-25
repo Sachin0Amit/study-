@@ -26,6 +26,9 @@ node_modules
 .DS_Store
 *.pem
 
+# temporary book downloads (CROSSVERIFY loop scratch space — never commit)
+/tmp-books/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
