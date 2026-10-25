@@ -472,6 +472,7 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     chapters: [
       { name: 'Epidemiology', branches: ['Epidemiology'] },
       { name: 'Immunization & Health Behavior', branches: ['Immunization Science', 'Health Behavior'] },
+      { name: 'Health Equity & Systems', branches: ['Health Equity', 'Health Systems'] },
     ],
   },
   {

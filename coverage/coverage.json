@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T05:50:27.957Z",
+  "generatedAt": "2026-10-25T06:47:28.435Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 92,
     "books": 92,
-    "chapters": 771,
-    "sections": 4543
+    "chapters": 772,
+    "sections": 4548
   },
   "subjects": [
     {
@@ -27670,12 +27670,32 @@
       "name": "Public Health",
       "group": "Medicine & Health",
       "tagline": "Health of populations",
-      "chapterCount": 2,
-      "sectionCount": 4,
+      "chapterCount": 3,
+      "sectionCount": 6,
       "chapters": [
         {
-          "id": "ku-public-health-immunization-and-health-behavior",
+          "id": "ku-public-health-health-equity-and-systems",
           "number": 1,
+          "title": "Health Equity & Systems",
+          "shortTitle": "Health Equity & Systems",
+          "bookId": "ku-public-health",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-health-social-determinants",
+              "number": 1.1,
+              "title": "Social Determinants of Health: Where Lives Depend on Where They Are Lived"
+            },
+            {
+              "id": "ku-health-systems-how-care-organized",
+              "number": 1.2,
+              "title": "Health Systems: How Care Gets Organized and Paid For"
+            }
+          ]
+        },
+        {
+          "id": "ku-public-health-immunization-and-health-behavior",
+          "number": 2,
           "title": "Immunization & Health Behavior",
           "shortTitle": "Immunization & Health Behavior",
           "bookId": "ku-public-health",
@@ -27683,19 +27703,19 @@
           "sections": [
             {
               "id": "ku-health-behavior-medical-care",
-              "number": 1.1,
+              "number": 2.1,
               "title": "Health Behavior and Medical Care: Models of Change and the Context of Care"
             },
             {
               "id": "ku-health-vaccines-how-work",
-              "number": 1.2,
+              "number": 2.2,
               "title": "How Vaccines Train the Immune System"
             }
           ]
         },
         {
           "id": "ku-public-health-epidemiology",
-          "number": 2,
+          "number": 3,
           "title": "Epidemiology",
           "shortTitle": "Epidemiology",
           "bookId": "ku-public-health",
@@ -27703,12 +27723,12 @@
           "sections": [
             {
               "id": "ku-health-herd-immunity-r0",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Herd Immunity and R₀"
             },
             {
               "id": "ku-epidem-outbreak-investigation",
-              "number": 2.2,
+              "number": 3.2,
               "title": "How Outbreaks Are Investigated: Field Epidemiology"
             }
           ]
@@ -27796,7 +27816,7 @@
       "group": "Medicine & Health",
       "tagline": "The mind, kept well",
       "chapterCount": 3,
-      "sectionCount": 3,
+      "sectionCount": 6,
       "chapters": [
         {
           "id": "ku-mental-health-mind-body-science",
@@ -27804,11 +27824,16 @@
           "title": "Mind–Body Science",
           "shortTitle": "Mind–Body Science",
           "bookId": "ku-mental-health",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
-              "id": "ku-health-stress-cortisol",
+              "id": "ku-mind-gut-brain-axis",
               "number": 1.1,
+              "title": "The Gut–Brain Axis: Your Second Brain and Your Mood"
+            },
+            {
+              "id": "ku-health-stress-cortisol",
+              "number": 1.2,
               "title": "Stress, Cortisol and the Body's Alarm System"
             }
           ]
@@ -27819,11 +27844,16 @@
           "title": "Mood & Anxiety",
           "shortTitle": "Mood & Anxiety",
           "bookId": "ku-mental-health",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
-              "id": "ku-mind-anxiety-depression",
+              "id": "ku-mind-trauma-ptsd-recovery",
               "number": 2.1,
+              "title": "Trauma and PTSD: How Wounds Become Symptoms and How Recovery Works"
+            },
+            {
+              "id": "ku-mind-anxiety-depression",
+              "number": 2.2,
               "title": "Anxiety and Depression: What They Actually Are"
             }
           ]
@@ -27834,11 +27864,16 @@
           "title": "Mind & Therapy",
           "shortTitle": "Mind & Therapy",
           "bookId": "ku-mental-health",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
-              "id": "ku-health-psychotherapy-approaches",
+              "id": "ku-mind-addiction-reward-cycle",
               "number": 3.1,
+              "title": "Addiction: The Reward Cycle and the Way Out"
+            },
+            {
+              "id": "ku-health-psychotherapy-approaches",
+              "number": 3.2,
               "title": "How Psychotherapy Works: The Major Approaches"
             }
           ]

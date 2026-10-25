@@ -16,8 +16,8 @@
 
 - **Subjects:** 92
 - **Books (master volumes):** 92
-- **Chapters:** 771
-- **Sections (lessons):** 4543
+- **Chapters:** 772
+- **Sections (lessons):** 4548
 
 ## Foundations — 7 subjects
 
@@ -869,10 +869,11 @@
 
 ### Public Health (`ku-public-health`)
 
-*Health of populations* — 2 chapters · 4 sections
+*Health of populations* — 3 chapters · 6 sections
 
-- **Ch 1. Immunization & Health Behavior** `ku-public-health-immunization-and-health-behavior` — 2 sections: Health Behavior and Medical Care: Models of Change and the Context of Care; How Vaccines Train the Immune System
-- **Ch 2. Epidemiology** `ku-public-health-epidemiology` — 2 sections: Herd Immunity and R₀; How Outbreaks Are Investigated: Field Epidemiology
+- **Ch 1. Health Equity & Systems** `ku-public-health-health-equity-and-systems` — 2 sections: Social Determinants of Health: Where Lives Depend on Where They Are Lived; Health Systems: How Care Gets Organized and Paid For
+- **Ch 2. Immunization & Health Behavior** `ku-public-health-immunization-and-health-behavior` — 2 sections: Health Behavior and Medical Care: Models of Change and the Context of Care; How Vaccines Train the Immune System
+- **Ch 3. Epidemiology** `ku-public-health-epidemiology` — 2 sections: Herd Immunity and R₀; How Outbreaks Are Investigated: Field Epidemiology
 
 ### Health, Nutrition & Fitness (`ku-health-nutrition-fitness`)
 
@@ -884,11 +885,11 @@
 
 ### Mental Health (`ku-mental-health`)
 
-*The mind, kept well* — 3 chapters · 3 sections
+*The mind, kept well* — 3 chapters · 6 sections
 
-- **Ch 1. Mind–Body Science** `ku-mental-health-mind-body-science` — 1 sections: Stress, Cortisol and the Body's Alarm System
-- **Ch 2. Mood & Anxiety** `ku-mental-health-mood-and-anxiety` — 1 sections: Anxiety and Depression: What They Actually Are
-- **Ch 3. Mind & Therapy** `ku-mental-health-mind-and-therapy` — 1 sections: How Psychotherapy Works: The Major Approaches
+- **Ch 1. Mind–Body Science** `ku-mental-health-mind-body-science` — 2 sections: The Gut–Brain Axis: Your Second Brain and Your Mood; Stress, Cortisol and the Body's Alarm System
+- **Ch 2. Mood & Anxiety** `ku-mental-health-mood-and-anxiety` — 2 sections: Trauma and PTSD: How Wounds Become Symptoms and How Recovery Works; Anxiety and Depression: What They Actually Are
+- **Ch 3. Mind & Therapy** `ku-mental-health-mind-and-therapy` — 2 sections: Addiction: The Reward Cycle and the Way Out; How Psychotherapy Works: The Major Approaches
 
 ## Humanities & Social Sciences — 11 subjects
 

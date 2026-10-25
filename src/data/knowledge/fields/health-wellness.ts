@@ -1,10 +1,18 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
+import { x44HealthMindPassTopics } from './x44-health-mind-pass'
 
 export const healthWellness: KnowledgeDomainFile = {
   domain: 'Health & Wellness',
   blurb: 'Evidence-based foundations for sleep, strength, and public health — the science behind feeling and functioning better.',
   topics: [
+    // X44 pass (2026-10-25, CONTENT-20261025-5): Mental Health + Public Health
+    // deepening — gut–brain axis, trauma/PTSD, addiction cycle, social
+    // determinants, health systems. Scoped against health-stress-cortisol,
+    // mind-anxiety-depression, health-psychotherapy-approaches, x23 health-
+    // behavior models and the finance insurance lesson (carve-outs in the
+    // pass-file header).
+    ...x44HealthMindPassTopics.filter((t) => t.domain === 'Health & Wellness'),
     // X23 gap pass (2026-10-22): health-behavior models + medical-care
     // context — scoped against psy-stress-coping (stress physiology) and
     // health-vaccines-how-work (immunization science).
