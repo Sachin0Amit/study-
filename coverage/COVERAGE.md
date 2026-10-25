@@ -16,8 +16,8 @@
 
 - **Subjects:** 92
 - **Books (master volumes):** 92
-- **Chapters:** 774
-- **Sections (lessons):** 4554
+- **Chapters:** 777
+- **Sections (lessons):** 4559
 
 ## Foundations — 7 subjects
 
@@ -946,9 +946,9 @@
 
 ### Anthropology (`ku-anthropology`)
 
-*What makes us human* — 2 chapters · 2 sections
+*What makes us human* — 2 chapters · 3 sections
 
-- **Ch 1. Cultural Anthropology** `ku-anthropology-cultural-anthropology` — 1 sections: Cultural Anthropology: Making Sense of Human Difference
+- **Ch 1. Cultural Anthropology** `ku-anthropology-cultural-anthropology` — 2 sections: Cultural Anthropology: Making Sense of Human Difference; Kinship, Descent and Marriage: The Grammar of Relatedness
 - **Ch 2. Archaeology** `ku-anthropology-archaeology` — 1 sections: Archaeology: Reading the Past from Its Remains
 
 ### Political Science (`ku-political-science`)
@@ -982,9 +982,9 @@
 
 ### Media & Communication (`ku-media-communication`)
 
-*Who frames your world* — 2 chapters · 2 sections
+*Who frames your world* — 2 chapters · 3 sections
 
-- **Ch 1. Media & Society** `ku-media-communication-media-and-society` — 1 sections: Mass Media and Society: Print, Broadcast, Platforms and Responsibility
+- **Ch 1. Media & Society** `ku-media-communication-media-and-society` — 2 sections: Journalism Craft: News Values, the Inverted Pyramid and Verification; Mass Media and Society: Print, Broadcast, Platforms and Responsibility
 - **Ch 2. The Attention Economy** `ku-media-communication-the-attention-economy` — 1 sections: Media and Communication: Who Frames Your World
 
 ### Research Methods (`ku-research-methods`)
@@ -1094,10 +1094,11 @@
 
 ### French (`ku-french`)
 
-*Say it like the French* — 2 chapters · 2 sections
+*Say it like the French* — 3 chapters · 3 sections
 
-- **Ch 1. French Foundations** `ku-french-french-foundations` — 1 sections: French Foundations: Pronunciation, Articles and First Phrases
-- **Ch 2. French Verbs** `ku-french-french-verbs` — 1 sections: French Verbs: Three Endings, Four Rebels and the Compound Past
+- **Ch 1. French Reading & Culture** `ku-french-french-reading-and-culture` — 1 sections: French Reading and the Francophone World
+- **Ch 2. French Foundations** `ku-french-french-foundations` — 1 sections: French Foundations: Pronunciation, Articles and First Phrases
+- **Ch 3. French Verbs** `ku-french-french-verbs` — 1 sections: French Verbs: Three Endings, Four Rebels and the Compound Past
 
 ### German (`ku-german`)
 
@@ -1108,9 +1109,11 @@
 
 ### Hindi (`ku-hindi`)
 
-*Devanagari, decoded* — 1 chapters · 1 sections
+*Devanagari, decoded* — 3 chapters · 3 sections
 
-- **Ch 1. Hindi Foundations** `ku-hindi-hindi-foundations` — 1 sections: Hindi Foundations: Devanagari, Word Order and Agreement
+- **Ch 1. Hindi Literature** `ku-hindi-hindi-literature` — 1 sections: Hindi Literature: From Kabir’s Dohas to the Nayi Kahani
+- **Ch 2. Hindi Grammar** `ku-hindi-hindi-grammar` — 1 sections: Hindi Grammar Workshop: Sandhi, Samas, Rasa and Alankar
+- **Ch 3. Hindi Foundations** `ku-hindi-hindi-foundations` — 1 sections: Hindi Foundations: Devanagari, Word Order and Agreement
 
 ### Arabic (`ku-arabic`)
 

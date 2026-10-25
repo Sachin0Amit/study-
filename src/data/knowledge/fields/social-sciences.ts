@@ -9,12 +9,20 @@ import { x31UgcNetPaper1PassTopics } from './x31-ugc-net-paper1-pass'
 import { x32UgcNetPaper2PassTopics } from './x32-ugc-net-paper2-pass'
 import { x33UgcNetClosurePassTopics } from './x33-ugc-net-closure-pass'
 import { x37AlbertaPassTopics } from './x37-alberta-pass'
+import { x46ThinBooksPassTopics } from './x46-thin-books-pass'
 
 export const socialSciences: KnowledgeDomainFile = {
   domain: 'Social Sciences',
   blurb:
     'How humans behave, bond, decide and govern together — psychology, sociology and political science at their meeting points.',
   topics: [
+    // X46 thin-books pass (2026-10-25): journalism craft — news values,
+    // the summary lead, the inverted pyramid, attribution protocols,
+    // verification and libel. Carved against gp-mass-media-society-
+    // responsibility (owns media ages, functions, gatekeeping, framing,
+    // ethics) — this lesson owns the production craft. Brings the
+    // Media & Communication book to 3 lessons.
+    ...x46ThinBooksPassTopics.filter((t) => t.domain === 'Social Sciences'),
     // X33 pass (2026-10-24): UGC NET closure — Indian foreign policy
     // (determinants, institutions, doctrines, neighbours, major powers),
     // governance + data-governance (one lesson spanning two Paper-1 units),

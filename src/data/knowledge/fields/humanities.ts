@@ -5,12 +5,19 @@ import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 import { x27ApCalcChinaPassTopics } from './x27-ap-calc-china-pass'
 import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
 import { x45ExamGapPassTopics } from './x45-exam-gap-pass'
+import { x46ThinBooksPassTopics } from './x46-thin-books-pass'
 
 export const humanities: KnowledgeDomainFile = {
   domain: 'Humanities',
   blurb:
     'History, philosophy and the recorded human past — how people made meaning before and beyond the modern world.',
   topics: [
+    // X46 thin-books pass (2026-10-25): kinship, descent and marriage —
+    // the comparative anthropology machinery (unilineal/cognatic descent,
+    // residence, marriage payments, terminology systems). Carved against
+    // soc-family-religion-institutions, which owns family as an
+    // institution; this lesson owns descent/marriage/terminology.
+    ...x46ThinBooksPassTopics.filter((t) => t.domain === 'Humanities'),
     // X45 pass (2026-10-25, EXAM-PASS-20261025-1): the Renaissance as a
     // world-history theme — Italian city-states, humanism, patronage, the
     // press, the historiography debate. Carved against arth-renaissance-to-

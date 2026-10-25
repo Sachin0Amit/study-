@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T07:18:39.389Z",
+  "generatedAt": "2026-10-25T12:45:37.460Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 92,
     "books": 92,
-    "chapters": 774,
-    "sections": 4554
+    "chapters": 777,
+    "sections": 4559
   },
   "subjects": [
     {
@@ -28491,7 +28491,7 @@
       "group": "Humanities & Social Sciences",
       "tagline": "What makes us human",
       "chapterCount": 2,
-      "sectionCount": 2,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-anthropology-cultural-anthropology",
@@ -28499,12 +28499,17 @@
           "title": "Cultural Anthropology",
           "shortTitle": "Cultural Anthropology",
           "bookId": "ku-anthropology",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-anth-cultural-relativism",
               "number": 1.1,
               "title": "Cultural Anthropology: Making Sense of Human Difference"
+            },
+            {
+              "id": "ku-anth-kinship-descent-marriage",
+              "number": 1.2,
+              "title": "Kinship, Descent and Marriage: The Grammar of Relatedness"
             }
           ]
         },
@@ -28826,7 +28831,7 @@
       "group": "Humanities & Social Sciences",
       "tagline": "Who frames your world",
       "chapterCount": 2,
-      "sectionCount": 2,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-media-communication-media-and-society",
@@ -28834,11 +28839,16 @@
           "title": "Media & Society",
           "shortTitle": "Media & Society",
           "bookId": "ku-media-communication",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
-              "id": "ku-gp-mass-media-society-responsibility",
+              "id": "ku-media-journalism-craft",
               "number": 1.1,
+              "title": "Journalism Craft: News Values, the Inverted Pyramid and Verification"
+            },
+            {
+              "id": "ku-gp-mass-media-society-responsibility",
+              "number": 1.2,
               "title": "Mass Media and Society: Print, Broadcast, Platforms and Responsibility"
             }
           ]
@@ -30020,12 +30030,27 @@
       "name": "French",
       "group": "Languages & Literature",
       "tagline": "Say it like the French",
-      "chapterCount": 2,
-      "sectionCount": 2,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-french-french-foundations",
+          "id": "ku-french-french-reading-and-culture",
           "number": 1,
+          "title": "French Reading & Culture",
+          "shortTitle": "French Reading & Culture",
+          "bookId": "ku-french",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-french-reading-francophonie",
+              "number": 1.1,
+              "title": "French Reading and the Francophone World"
+            }
+          ]
+        },
+        {
+          "id": "ku-french-french-foundations",
+          "number": 2,
           "title": "French Foundations",
           "shortTitle": "French Foundations",
           "bookId": "ku-french",
@@ -30033,14 +30058,14 @@
           "sections": [
             {
               "id": "ku-lang-french-foundations",
-              "number": 1.1,
+              "number": 2.1,
               "title": "French Foundations: Pronunciation, Articles and First Phrases"
             }
           ]
         },
         {
           "id": "ku-french-french-verbs",
-          "number": 2,
+          "number": 3,
           "title": "French Verbs",
           "shortTitle": "French Verbs",
           "bookId": "ku-french",
@@ -30048,7 +30073,7 @@
           "sections": [
             {
               "id": "ku-lang-french-verbs",
-              "number": 2.1,
+              "number": 3.1,
               "title": "French Verbs: Three Endings, Four Rebels and the Compound Past"
             }
           ]
@@ -30100,12 +30125,42 @@
       "name": "Hindi",
       "group": "Languages & Literature",
       "tagline": "Devanagari, decoded",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-hindi-hindi-foundations",
+          "id": "ku-hindi-hindi-literature",
           "number": 1,
+          "title": "Hindi Literature",
+          "shortTitle": "Hindi Literature",
+          "bookId": "ku-hindi",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-hindi-literature-masters",
+              "number": 1.1,
+              "title": "Hindi Literature: From Kabir’s Dohas to the Nayi Kahani"
+            }
+          ]
+        },
+        {
+          "id": "ku-hindi-hindi-grammar",
+          "number": 2,
+          "title": "Hindi Grammar",
+          "shortTitle": "Hindi Grammar",
+          "bookId": "ku-hindi",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-hindi-grammar-workshop",
+              "number": 2.1,
+              "title": "Hindi Grammar Workshop: Sandhi, Samas, Rasa and Alankar"
+            }
+          ]
+        },
+        {
+          "id": "ku-hindi-hindi-foundations",
+          "number": 3,
           "title": "Hindi Foundations",
           "shortTitle": "Hindi Foundations",
           "bookId": "ku-hindi",
@@ -30113,7 +30168,7 @@
           "sections": [
             {
               "id": "ku-lang-hindi-foundations",
-              "number": 1.1,
+              "number": 3.1,
               "title": "Hindi Foundations: Devanagari, Word Order and Agreement"
             }
           ]

@@ -7,12 +7,19 @@ import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
 import { x34FinalOrphanPassTopics } from './x34-final-orphan-pass'
 import { x35NswHscPassTopics } from './x35-nsw-hsc-pass'
 import { x37AlbertaPassTopics } from './x37-alberta-pass'
+import { x46ThinBooksPassTopics } from './x46-thin-books-pass'
 
 export const languagesLiterature: KnowledgeDomainFile = {
   domain: 'Languages & World Literature',
   blurb:
     'The science of learning languages and the literatures they carry — from grammar glue to great texts.',
   topics: [
+    // X46 thin-books pass (2026-10-25): Hindi literature masters (four
+    // periods, Kabir to Nayi Kahani), Hindi grammar workshop (sandhi,
+    // samas, rasa, alankar, chhand) and French reading + the francophone
+    // world. Carved against lang-hindi-foundations and the two French
+    // lessons — brings the Hindi book to 3 lessons and French to 3.
+    ...x46ThinBooksPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
     // X35 NSW-HSC pass (2026-10-25): the representation-analysis and
     // critical-response lessons — how texts convey human experiences and
     // the craft of the analytical response (short answers, thesis,
