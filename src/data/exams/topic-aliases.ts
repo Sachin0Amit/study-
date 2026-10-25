@@ -600,5 +600,29 @@ export const TOPIC_ALIASES: Record<string, string> = {
   'close critical study of a single text': 'eng-critical-response-literature',
   'inheritance patterns in a population': 'bio-population-inheritance-frequencies',
   'technologies and disorders': 'bio-sensory-organ-technologies',
-}
 
+  /* ---- Alberta Diploma Exams: X37 pass mappings (verified 2026-10-25) ----
+   * Three authored lessons own the Social Studies 30-1 ideology territory
+   * (RI1 x2 → ideologies lesson; RI2 x2 → liberalism lesson; RI4 →
+   * citizenship lesson). RI3 remapped by coverage to pol-regimes-spectrum,
+   * which owns regime classification, hybrid regimes and illiberal
+   * backsliding. ELA outcomes remapped to their existing owners: the
+   * human-experiences lesson (GO1), research-methodology (GO3), the
+   * critical-response lesson (GO4), the peer-learning lesson (GO5) — and
+   * the new visual-texts lesson owns GO2. Biology 30 development remapped
+   * to the reproduction-systems lesson (fertilization → implantation →
+   * parturition → assisted reproduction all owned; embryonic pattern
+   * formation deepened by the developmental-biology KU). */
+  'discovering and exploring ideas through language': 'eng-texts-human-experiences',
+  'responding to visual and multimedia texts': 'lang-visual-multimedia-texts',
+  'inquiry research and source evaluation': 'res-research-methodology-hypothesis-sampling',
+  'the personal response and the critical analytical essay': 'eng-critical-response-literature',
+  'collaboration peer feedback and group inquiry': 'fnd-peer-learning-teaching',
+  'development fertilization embryogenesis and reproductive technologies': 'bio-human-reproduction-system',
+  'characteristics and themes of ideology': 'pol-ideologies-individualism-collectivism',
+  'individualism and collectivism as foundations of ideology': 'pol-ideologies-individualism-collectivism',
+  'classical liberalism and its nineteenth century impacts': 'pol-liberalism-classical-modern',
+  'modern liberalism and ideologies that rejected it': 'pol-liberalism-classical-modern',
+  'citizenship rights roles and responsibilities': 'pol-citizenship-collective-rights',
+  'political and economic systems through a liberal lens': 'pol-regimes-spectrum',
+}

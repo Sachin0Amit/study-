@@ -16,8 +16,8 @@
 
 - **Subjects:** 219
 - **Books (master volumes):** 219
-- **Chapters:** 919
-- **Sections (lessons):** 4512
+- **Chapters:** 920
+- **Sections (lessons):** 4516
 
 ## Foundations — 5 subjects
 
@@ -1243,17 +1243,18 @@
 
 ### Political Science (`ku-social-sciences-political-science`)
 
-*Power and cooperation* — 9 chapters · 12 sections
+*Power and cooperation* — 10 chapters · 15 sections
 
 - **Ch 1. Foreign Policy and Security** `ku-social-sciences-political-science-foreign-policy-and-security` — 1 sections: Indian Foreign Policy: Determinants, Institutions and the Long Arc
 - **Ch 2. Governance and Public Administration** `ku-social-sciences-political-science-governance-and-public-administration` — 1 sections: Governance: From Good Governance to Data-Driven Administration
-- **Ch 3. History of Political Thought** `ku-social-sciences-political-science-history-of-political-thought` — 1 sections: Western Political Thought: Plato to Marx in Eight Thinkers
-- **Ch 4. Comparative Politics** `ku-social-sciences-political-science-comparative-politics` — 2 sections: Democratic Government in Action: Japan’s Parliamentary System and Contemporary Society; Democracies, Autocracies and Everything in Between
-- **Ch 5. International Relations** `ku-social-sciences-political-science-international-relations` — 2 sections: After the Cold War: Hegemony, Rival Poles and the Global Commons; Why Nations Fight and Trade: International Relations Theory
-- **Ch 6. Indian Polity** `ku-social-sciences-political-science-indian-polity` — 2 sections: India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations; The Indian Constitution: Rights, Parliament and Federalism
-- **Ch 7. Rational Choice Theory** `ku-social-sciences-political-science-rational-choice-theory` — 1 sections: Game Theory of Cooperation: The Prisoner’s Dilemma
-- **Ch 8. Public Choice** `ku-social-sciences-political-science-public-choice` — 1 sections: Collective Action and the Tragedy of the Commons
-- **Ch 9. Institutional Design** `ku-social-sciences-political-science-institutional-design` — 1 sections: Comparative Politics: Electoral Systems and Institutions
+- **Ch 3. Political Ideologies** `ku-social-sciences-political-science-political-ideologies` — 3 sections: Political Ideologies: Individualism and Collectivism; Liberalism: Classical Origins, Modern Reform and Its Rejections; Citizenship: Rights, Roles and Responsible Action
+- **Ch 4. History of Political Thought** `ku-social-sciences-political-science-history-of-political-thought` — 1 sections: Western Political Thought: Plato to Marx in Eight Thinkers
+- **Ch 5. Comparative Politics** `ku-social-sciences-political-science-comparative-politics` — 2 sections: Democratic Government in Action: Japan’s Parliamentary System and Contemporary Society; Democracies, Autocracies and Everything in Between
+- **Ch 6. International Relations** `ku-social-sciences-political-science-international-relations` — 2 sections: After the Cold War: Hegemony, Rival Poles and the Global Commons; Why Nations Fight and Trade: International Relations Theory
+- **Ch 7. Indian Polity** `ku-social-sciences-political-science-indian-polity` — 2 sections: India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations; The Indian Constitution: Rights, Parliament and Federalism
+- **Ch 8. Rational Choice Theory** `ku-social-sciences-political-science-rational-choice-theory` — 1 sections: Game Theory of Cooperation: The Prisoner’s Dilemma
+- **Ch 9. Public Choice** `ku-social-sciences-political-science-public-choice` — 1 sections: Collective Action and the Tragedy of the Commons
+- **Ch 10. Institutional Design** `ku-social-sciences-political-science-institutional-design` — 1 sections: Comparative Politics: Electoral Systems and Institutions
 
 ### Mass Media and Society (`ku-social-sciences-mass-media-and-society`)
 
@@ -1408,9 +1409,9 @@
 
 ### Literary Craft (`ku-languages-literature-literary-craft`)
 
-*How writing works* — 2 chapters · 2 sections
+*How writing works* — 2 chapters · 3 sections
 
-- **Ch 1. Representation & Response** `ku-languages-literature-literary-craft-representation-and-response` — 1 sections: How Texts Represent Human Experiences
+- **Ch 1. Representation & Response** `ku-languages-literature-literary-craft-representation-and-response` — 2 sections: How Texts Represent Human Experiences; Reading Visual and Multimedia Texts
 - **Ch 2. Rhetoric & Style** `ku-languages-literature-literary-craft-rhetoric-and-style` — 1 sections: Literary Devices: How Writing Works Its Magic
 
 ### Reading Strategy (`ku-languages-literature-reading-strategy`)

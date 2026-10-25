@@ -6,6 +6,7 @@ import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
 import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
 import { x34FinalOrphanPassTopics } from './x34-final-orphan-pass'
 import { x35NswHscPassTopics } from './x35-nsw-hsc-pass'
+import { x37AlbertaPassTopics } from './x37-alberta-pass'
 
 export const languagesLiterature: KnowledgeDomainFile = {
   domain: 'Languages & World Literature',
@@ -18,6 +19,9 @@ export const languagesLiterature: KnowledgeDomainFile = {
     // integrated evidence, close critical study) — the literature-exam
     // layer no earlier reading lesson owned.
     ...x35NswHscPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
+    // X37 pass (2026-10-25): Alberta ELA 30-1 — visual/multimedia text
+    // reading (media-literacy grammar from the reader's side).
+    ...x37AlbertaPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
     // X34 final-orphan pass (2026-10-25): the books-and-authors prize map
     // (Nobel/Booker/Pulitzer/Jnanpith + the author-work mapping craft) and
     // the classical Chinese set-text canon with exact-recall craft — the

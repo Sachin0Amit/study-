@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T00:50:04.875Z",
+  "generatedAt": "2026-10-25T01:11:05.599Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 219,
     "books": 219,
-    "chapters": 919,
-    "sections": 4512
+    "chapters": 920,
+    "sections": 4516
   },
   "subjects": [
     {
@@ -28825,8 +28825,8 @@
       "name": "Political Science",
       "group": "Social Sciences",
       "tagline": "Power and cooperation",
-      "chapterCount": 9,
-      "sectionCount": 12,
+      "chapterCount": 10,
+      "sectionCount": 15,
       "chapters": [
         {
           "id": "ku-social-sciences-political-science-foreign-policy-and-security",
@@ -28859,8 +28859,33 @@
           ]
         },
         {
-          "id": "ku-social-sciences-political-science-history-of-political-thought",
+          "id": "ku-social-sciences-political-science-political-ideologies",
           "number": 3,
+          "title": "Political Ideologies",
+          "shortTitle": "Political Ideologies",
+          "bookId": "ku-social-sciences-political-science",
+          "sectionCount": 3,
+          "sections": [
+            {
+              "id": "ku-pol-ideologies-individualism-collectivism",
+              "number": 3.1,
+              "title": "Political Ideologies: Individualism and Collectivism"
+            },
+            {
+              "id": "ku-pol-liberalism-classical-modern",
+              "number": 3.2,
+              "title": "Liberalism: Classical Origins, Modern Reform and Its Rejections"
+            },
+            {
+              "id": "ku-pol-citizenship-collective-rights",
+              "number": 3.3,
+              "title": "Citizenship: Rights, Roles and Responsible Action"
+            }
+          ]
+        },
+        {
+          "id": "ku-social-sciences-political-science-history-of-political-thought",
+          "number": 4,
           "title": "History of Political Thought",
           "shortTitle": "History of Political Thought",
           "bookId": "ku-social-sciences-political-science",
@@ -28868,14 +28893,14 @@
           "sections": [
             {
               "id": "ku-pol-western-political-thought-canon",
-              "number": 3.1,
+              "number": 4.1,
               "title": "Western Political Thought: Plato to Marx in Eight Thinkers"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-comparative-politics",
-          "number": 4,
+          "number": 5,
           "title": "Comparative Politics",
           "shortTitle": "Comparative Politics",
           "bookId": "ku-social-sciences-political-science",
@@ -28883,19 +28908,19 @@
           "sections": [
             {
               "id": "ku-pol-democratic-government-japan",
-              "number": 4.1,
+              "number": 5.1,
               "title": "Democratic Government in Action: Japan’s Parliamentary System and Contemporary Society"
             },
             {
               "id": "ku-pol-regimes-spectrum",
-              "number": 4.2,
+              "number": 5.2,
               "title": "Democracies, Autocracies and Everything in Between"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-international-relations",
-          "number": 5,
+          "number": 6,
           "title": "International Relations",
           "shortTitle": "International Relations",
           "bookId": "ku-social-sciences-political-science",
@@ -28903,19 +28928,19 @@
           "sections": [
             {
               "id": "ku-pol-contemporary-world-order",
-              "number": 5.1,
+              "number": 6.1,
               "title": "After the Cold War: Hegemony, Rival Poles and the Global Commons"
             },
             {
               "id": "ku-pol-ir-theory",
-              "number": 5.2,
+              "number": 6.2,
               "title": "Why Nations Fight and Trade: International Relations Theory"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-indian-polity",
-          "number": 6,
+          "number": 7,
           "title": "Indian Polity",
           "shortTitle": "Indian Polity",
           "bookId": "ku-social-sciences-political-science",
@@ -28923,19 +28948,19 @@
           "sections": [
             {
               "id": "ku-pol-india-since-independence",
-              "number": 6.1,
+              "number": 7.1,
               "title": "India Since Independence: Congress Dominance, Nation-Building and Regional Aspirations"
             },
             {
               "id": "ku-soc-indian-constitution-polity",
-              "number": 6.2,
+              "number": 7.2,
               "title": "The Indian Constitution: Rights, Parliament and Federalism"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-rational-choice-theory",
-          "number": 7,
+          "number": 8,
           "title": "Rational Choice Theory",
           "shortTitle": "Rational Choice Theory",
           "bookId": "ku-social-sciences-political-science",
@@ -28943,14 +28968,14 @@
           "sections": [
             {
               "id": "ku-soc-prisoners-dilemma",
-              "number": 7.1,
+              "number": 8.1,
               "title": "Game Theory of Cooperation: The Prisoner’s Dilemma"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-public-choice",
-          "number": 8,
+          "number": 9,
           "title": "Public Choice",
           "shortTitle": "Public Choice",
           "bookId": "ku-social-sciences-political-science",
@@ -28958,14 +28983,14 @@
           "sections": [
             {
               "id": "ku-soc-collective-action",
-              "number": 8.1,
+              "number": 9.1,
               "title": "Collective Action and the Tragedy of the Commons"
             }
           ]
         },
         {
           "id": "ku-social-sciences-political-science-institutional-design",
-          "number": 9,
+          "number": 10,
           "title": "Institutional Design",
           "shortTitle": "Institutional Design",
           "bookId": "ku-social-sciences-political-science",
@@ -28973,7 +28998,7 @@
           "sections": [
             {
               "id": "ku-soc-comparative-politics-institutions",
-              "number": 9.1,
+              "number": 10.1,
               "title": "Comparative Politics: Electoral Systems and Institutions"
             }
           ]
@@ -30066,7 +30091,7 @@
       "group": "Languages & World Literature",
       "tagline": "How writing works",
       "chapterCount": 2,
-      "sectionCount": 2,
+      "sectionCount": 3,
       "chapters": [
         {
           "id": "ku-languages-literature-literary-craft-representation-and-response",
@@ -30074,12 +30099,17 @@
           "title": "Representation & Response",
           "shortTitle": "Representation & Response",
           "bookId": "ku-languages-literature-literary-craft",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-eng-texts-human-experiences",
               "number": 1.1,
               "title": "How Texts Represent Human Experiences"
+            },
+            {
+              "id": "ku-lang-visual-multimedia-texts",
+              "number": 1.2,
+              "title": "Reading Visual and Multimedia Texts"
             }
           ]
         },

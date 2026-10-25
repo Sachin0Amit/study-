@@ -8,6 +8,7 @@ import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
 import { x31UgcNetPaper1PassTopics } from './x31-ugc-net-paper1-pass'
 import { x32UgcNetPaper2PassTopics } from './x32-ugc-net-paper2-pass'
 import { x33UgcNetClosurePassTopics } from './x33-ugc-net-closure-pass'
+import { x37AlbertaPassTopics } from './x37-alberta-pass'
 
 export const socialSciences: KnowledgeDomainFile = {
   domain: 'Social Sciences',
@@ -23,6 +24,10 @@ export const socialSciences: KnowledgeDomainFile = {
     // domestic arc) and the ICT lesson (which owns e-governance service
     // models) — no overlap.
     ...x33UgcNetClosurePassTopics.filter((t) => t.domain === 'Social Sciences'),
+    // X37 pass (2026-10-25): Alberta Social Studies 30-1 — ideologies,
+    // liberalism's arc, citizenship & collective rights (RI3 remapped to
+    // pol-regimes-spectrum by coverage).
+    ...x37AlbertaPassTopics.filter((t) => t.domain === 'Social Sciences'),
     // X32 pass (2026-10-24): UGC NET Paper II political-science sweep — the
     // western political-thought canon (Plato→Marx). Distinct from
     // pol-regimes-spectrum (typologies), pol-ir-theory (IR) and
