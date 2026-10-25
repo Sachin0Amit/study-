@@ -17,7 +17,7 @@
 - **Subjects:** 219
 - **Books (master volumes):** 219
 - **Chapters:** 919
-- **Sections (lessons):** 4507
+- **Sections (lessons):** 4512
 
 ## Foundations — 5 subjects
 
@@ -787,17 +787,17 @@
 
 ### Study Skills & Memory (`ku-foundation-learning-study-skills-and-memory`)
 
-*Retain more, study less* — 3 chapters · 5 sections
+*Retain more, study less* — 3 chapters · 9 sections
 
-- **Ch 1. Learning Science** `ku-foundation-learning-study-skills-and-memory-learning-science` — 3 sections: Spaced Repetition and the Forgetting Curve; Active Recall: Why Testing Yourself Beats Rereading; Interleaving: Why Mixed Practice Beats Blocked Practice
-- **Ch 2. Study Systems** `ku-foundation-learning-study-skills-and-memory-study-systems` — 1 sections: Note-Taking Systems Compared: Cornell, Outlines and Zettelkasten
+- **Ch 1. Learning Science** `ku-foundation-learning-study-skills-and-memory-learning-science` — 6 sections: Mnemonics and the Memory Palace: Encoding That Sticks; Metacognition and Calibration: Knowing What You Know; The Protégé Effect: Learning by Teaching; Spaced Repetition and the Forgetting Curve; Active Recall: Why Testing Yourself Beats Rereading; Interleaving: Why Mixed Practice Beats Blocked Practice
+- **Ch 2. Study Systems** `ku-foundation-learning-study-skills-and-memory-study-systems` — 2 sections: Habits and Behavior Design: Automating the Studying; Note-Taking Systems Compared: Cornell, Outlines and Zettelkasten
 - **Ch 3. Performing** `ku-foundation-learning-study-skills-and-memory-performing` — 1 sections: Exam-Day Strategy: How Tests Are Actually Won
 
 ### Reading & Literacy (`ku-foundation-learning-reading-and-literacy`)
 
-*Read with intent* — 1 chapters · 1 sections
+*Read with intent* — 1 chapters · 2 sections
 
-- **Ch 1. Reading Strategies** `ku-foundation-learning-reading-and-literacy-reading-strategies` — 1 sections: Active Reading with SQ3R
+- **Ch 1. Reading Strategies** `ku-foundation-learning-reading-and-literacy-reading-strategies` — 2 sections: Reading Scientific Papers Without Drowning; Active Reading with SQ3R
 
 ### Everyday Math & Numeracy (`ku-foundation-learning-everyday-math-and-numeracy`)
 

@@ -8,6 +8,7 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x21SkillsPassTopics } from './x21-skills-pass'
 import { x25TournamentReasoningCivicsPassTopics } from './x25-tournament-reasoning-civics-pass'
+import { x36LearningSciencePassTopics } from './x36-learning-science-pass'
 
 export const foundationLearning: KnowledgeDomainFile = {
   domain: 'Foundation Learning',
@@ -20,6 +21,11 @@ export const foundationLearning: KnowledgeDomainFile = {
     // X25 pass (2026-10-23): coded inequalities — order-reasoning under
     // symbol substitution; no reasoning lesson owns the coded format.
     ...x25TournamentReasoningCivicsPassTopics.filter((t) => t.domain === 'Foundation Learning'),
+    // X36 pass (2026-10-25): learning-science expansion — mnemonic encoding,
+    // habit automation, metacognitive calibration, peer teaching, and
+    // primary-literature reading. Layers the existing scheduling/practice
+    // lessons did not own.
+    ...x36LearningSciencePassTopics,
     // ------------------------------------------------------------------
     {
       id: 'fnd-spaced-repetition',
