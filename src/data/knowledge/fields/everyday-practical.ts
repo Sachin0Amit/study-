@@ -1,10 +1,19 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
+import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
 
 export const everydayPractical: KnowledgeDomainFile = {
   domain: 'Everyday Knowledge',
   blurb: 'Kitchen chemistry, paycheck literacy, and the probability behind everyday bets — knowledge that pays for itself.',
   topics: [
+    // X58 library-org deepening pass (2026-10-26): heat at the stove —
+    // transfer modes, the 100°C wet ceiling, the myosin/actin/collagen
+    // denaturation ladder, the searing myth, carryover/resting, USDA
+    // doneness floors. Carved against every-maillard-reaction-browning
+    // (OWNS browning chemistry) and cook-flavor-science (OWNS salt/fat/
+    // acid balancing); 'sous-vide'/'carryover' had zero live hits; joins
+    // the Kitchen Chemistry chapter as its third lesson.
+    ...x58LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Everyday Knowledge'),
     // X48 all-subjects split pass (2026-10-25): plant propagation for the
     // Garden & Growing volume — seed dormancy/scarification/stratification,
     // cuttings, layering, division, grafting, tissue culture. Carved

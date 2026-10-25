@@ -2,11 +2,21 @@ import type { KnowledgeDomainFile } from '../types'
 import { x19CivilCoreTopics } from './x19-civil-core'
 import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
 import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
+import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
 
 export const engineering: KnowledgeDomainFile = {
   domain: 'Engineering',
   blurb: 'The discipline of building systems that must work — bridges, chips, power grids and everything in between.',
   topics: [
+    // X58 library-org deepening pass (2026-10-26): process safety —
+    // inherently safer design, HAZOP, LOPA arithmetic, relief sizing,
+    // Management of Change, Bhopal/Texas City/Flixborough case files.
+    // Carved against eng-chemical-reactors (OWNS kinetics/runaway sizing
+    // context — its relief-valve pitfall line is referenced, not
+    // expanded); HAZOP/Kletz/Flixborough/inherent-safety had zero live
+    // hits; routes by branch 'Process Safety' into the book's new third
+    // chapter.
+    ...x58LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Engineering'),
     // X51 library-org pass (2026-10-26): naval thin-book clearance — ship
     // structures (section modulus, framing, fatigue/brittle fracture, class
     // rules) and design & propulsion (deadweight/tonnage, Froude number,

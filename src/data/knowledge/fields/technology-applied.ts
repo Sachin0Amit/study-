@@ -1,11 +1,19 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
+import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
 
 export const technologyApplied: KnowledgeDomainFile = {
   domain: 'Technology & Applied Science',
   blurb: 'The applied engines of modern life — batteries, positioning systems, chip fabrication and the machines they power.',
   topics: [
+    // X58 library-org deepening pass (2026-10-26): the clinical laboratory —
+    // CBC/chemistry panels, reference ranges, sensitivity/specificity/PPV,
+    // preanalytic error, Westgard QC and POCT. Carved against the imaging
+    // lessons (which own MRI/CT/ultrasound physics) — reference range and
+    // Westgard had zero live hits; routes by branch 'Laboratory Medicine'
+    // into the book's new Laboratory Medicine chapter.
+    ...x58LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Technology & Applied Science'),
     // X30 pass (2026-10-24): joining processes — welding (oxy-fuel, SMAW,
     // GMAW, GTAW, resistance spot), brazing vs soldering, joint types, the
     // heat-affected zone, defects, weldability and safety.

@@ -8,12 +8,21 @@ import { x26BankingManagementPassTopics } from './x26-banking-management-pass'
 import { x32UgcNetPaper2PassTopics } from './x32-ugc-net-paper2-pass'
 import { x33UgcNetClosurePassTopics } from './x33-ugc-net-closure-pass'
 import { x45ExamGapPassTopics } from './x45-exam-gap-pass'
+import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
 
 export const businessEconomics: KnowledgeDomainFile = {
   domain: 'Business & Economics',
   blurb:
     'Markets, money and organisations — the logic of prices, trade, investment and value creation.',
   topics: [
+    // X58 library-org deepening pass (2026-10-26): brand equity and
+    // architecture — Aaker's five dimensions, Keller's CBBE pyramid,
+    // branded house vs house of brands, private label, valuation, the
+    // Tropicana case. Carved against mkt-stp-playbook (which OWNS
+    // positioning and forward-references 'brand strategy in depth') and
+    // mkt-four-ps; 'brand equity'/'Aaker' had zero live hits; routes by
+    // branch 'Brands & Growth' into the book's new third chapter.
+    ...x58LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Business & Economics'),
     // X45 pass (2026-10-25, EXAM-PASS-20261025-1): computerized accounting
     // systems — components, chart of accounts, voucher data entry, reports.
     // Carved against the manual Accounting Cycle lessons (which own the

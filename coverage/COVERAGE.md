@@ -16,8 +16,8 @@
 
 - **Subjects:** 138
 - **Books (master volumes):** 138
-- **Chapters:** 859
-- **Sections (lessons):** 4606
+- **Chapters:** 863
+- **Sections (lessons):** 4612
 
 ## Foundations — 7 subjects
 
@@ -968,10 +968,11 @@
 
 ### Medical Technology (`ku-medical-technology`)
 
-*Machines that see within* — 2 chapters · 3 sections
+*Machines that see within* — 3 chapters · 4 sections
 
 - **Ch 1. Biomedical Imaging** `ku-medical-technology-biomedical-imaging` — 2 sections: How MRI Machines See Inside You; Seeing Inside: Ultrasound, X-Ray and CT
-- **Ch 2. Prosthetics & Human–Machine Interfaces** `ku-medical-technology-prosthetics-and-human-machine-interfaces` — 1 sections: Prosthetics and Bionics: Rebuilding Bodies
+- **Ch 2. Laboratory Medicine** `ku-medical-technology-laboratory-medicine` — 1 sections: The Clinical Laboratory: Reading the Body’s Chemistry
+- **Ch 3. Prosthetics & Human–Machine Interfaces** `ku-medical-technology-prosthetics-and-human-machine-interfaces` — 1 sections: Prosthetics and Bionics: Rebuilding Bodies
 
 ### Medicines, First Aid & Reproductive Health (`ku-medicines-emergency-care`)
 
@@ -1037,10 +1038,11 @@
 
 ### East Asian History (`ku-east-asian-history`)
 
-*China and Japan enter the modern world* — 2 chapters · 3 sections
+*China, Japan and the Koreas enter the modern world* — 3 chapters · 4 sections
 
 - **Ch 1. China: Aggression, Salvation & Revolution** `ku-east-asian-history-china-aggression-salvation-and-revolution` — 2 sections: Aggression and National Salvation: China, 1840–1949; The People’s Republic since 1949: Leap, Turmoil and Reform
 - **Ch 2. Japan’s Modern Industrialization** `ku-east-asian-history-japan-s-modern-industrialization` — 1 sections: Japan’s Economic History: From Edo Commerce to the International Economy
+- **Ch 3. The Two Koreas** `ku-east-asian-history-the-two-koreas` — 1 sections: The Two Koreas: Division, War and the Miracle on the Han
 
 ### Philosophy (`ku-philosophy`)
 
@@ -1234,10 +1236,11 @@
 
 ### Marketing (`ku-marketing`)
 
-*Creating customers* — 2 chapters · 3 sections
+*Creating customers* — 3 chapters · 4 sections
 
 - **Ch 1. Marketing Foundations** `ku-marketing-marketing-foundations` — 2 sections: The Four Ps and the Psychology of Buying; Segmentation, Targeting and Positioning: The STP Playbook
 - **Ch 2. Pricing, Channels & Promotion** `ku-marketing-pricing-channels-and-promotion` — 1 sections: Pricing, Distribution and Promotion: The Marketing Mix and Its Digital Turn
+- **Ch 3. Brands & Growth** `ku-marketing-brands-and-growth` — 1 sections: Brand Equity and Architecture: Compounding Trust
 
 ### Operations, Strategy & Supply Chain (`ku-operations-strategy`)
 
@@ -1265,9 +1268,9 @@
 
 ### Constitutional Law (`ku-constitutional-law`)
 
-*The rules about the rules* — 2 chapters · 3 sections
+*The rules about the rules* — 2 chapters · 4 sections
 
-- **Ch 1. Structural Principles** `ku-constitutional-law-structural-principles` — 2 sections: Separation of Powers and Checks and Balances; Federalism: Dividing Power Between Centre and States
+- **Ch 1. Structural Principles** `ku-constitutional-law-structural-principles` — 3 sections: Amendment and Entrenchment: How Constitutions Change; Separation of Powers and Checks and Balances; Federalism: Dividing Power Between Centre and States
 - **Ch 2. Constitutional Law in Practice** `ku-constitutional-law-constitutional-law-in-practice` — 1 sections: Public Interest Litigation: Taking the Public to Court
 
 ### Private Law: Contracts, Torts & Family (`ku-private-law`)
@@ -1519,10 +1522,11 @@
 
 ### Chemical Engineering (`ku-chemical-engineering`)
 
-*Reactions at scale* — 2 chapters · 3 sections
+*Reactions at scale* — 3 chapters · 4 sections
 
 - **Ch 1. Process Engineering** `ku-chemical-engineering-process-engineering` — 2 sections: Chemical Reactors: Where Reactions Meet Engineering; Separation Processes: Distillation, Filtration and the Art of Purification
 - **Ch 2. Pipeline Transport** `ku-chemical-engineering-pipeline-transport` — 1 sections: Pipelines: Moving Fluids Across Continents
+- **Ch 3. Process Safety** `ku-chemical-engineering-process-safety` — 1 sections: Process Safety: Engineering Against Catastrophe
 
 ### Naval Architecture & Marine Engineering (`ku-naval-architecture`)
 
@@ -1560,9 +1564,9 @@
 
 ### Cooking & Food Science (`ku-cooking-food-science`)
 
-*The kitchen, understood* — 2 chapters · 3 sections
+*The kitchen, understood* — 2 chapters · 4 sections
 
-- **Ch 1. Kitchen Chemistry & Flavor** `ku-cooking-food-science-kitchen-chemistry-and-flavor` — 2 sections: The Maillard Reaction: Why Browned Food Tastes Better; The Science of Flavor: Salt, Fat, Acid and Heat
+- **Ch 1. Kitchen Chemistry & Flavor** `ku-cooking-food-science-kitchen-chemistry-and-flavor` — 3 sections: Heat at the Stove: Transfer, Doneness and the Craft of Control; The Maillard Reaction: Why Browned Food Tastes Better; The Science of Flavor: Salt, Fat, Acid and Heat
 - **Ch 2. Food Safety** `ku-cooking-food-science-food-safety` — 1 sections: Food Safety: The Danger Zone and Its Rules
 
 ### Home Repair & Everyday Machines (`ku-home-repair-machines`)

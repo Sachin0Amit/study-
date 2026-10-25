@@ -7,12 +7,20 @@ import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
 import { x45ExamGapPassTopics } from './x45-exam-gap-pass'
 import { x46ThinBooksPassTopics } from './x46-thin-books-pass'
 import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
+import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
 
 export const humanities: KnowledgeDomainFile = {
   domain: 'Humanities',
   blurb:
     'History, philosophy and the recorded human past — how people made meaning before and beyond the modern world.',
   topics: [
+    // X58 library-org deepening pass (2026-10-26): the Two Koreas — annexation,
+    // division, war, and the paired development experiment (Juche autarky vs
+    // export-led Miracle on the Han). Korea is untouched territory — carved
+    // against the China lessons (field 'World History') and Japan lesson
+    // (branch 'East Asian History'); this topic routes by branch 'Korean
+    // Peninsula' into the book's new third chapter.
+    ...x58LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Humanities'),
     // X48 all-subjects split pass (2026-10-25): the Economic History
     // volume's divergence chapter — Malthusian baseline, Pomeranz coal-
     // and-colonies, institutional counters, reversal of fortune, Meiji.

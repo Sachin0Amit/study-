@@ -4,12 +4,22 @@ import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 import { x34FinalOrphanPassTopics } from './x34-final-orphan-pass'
 import { x45ExamGapPassTopics } from './x45-exam-gap-pass'
 import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
+import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
 
 export const lawGovernance: KnowledgeDomainFile = {
   domain: 'Law & Governance',
   blurb:
     'The rules societies write for power — constitutions, courts, treaties and the machinery that makes them hold.',
   topics: [
+    // X58 library-org deepening pass (2026-10-26): amendment and
+    // entrenchment — Article V arithmetic, comparative formulas (7/50,
+    // double majority), eternity clauses, basic-structure comparative
+    // note, dead-hand debate. Carved against law-separation-powers (OWNS
+    // Marbury/judicial review — 'Article V' had zero live hits),
+    // law-federalism (uses entrenchment for divisions of power) and
+    // soc-indian-constitution-polity (OWNS India's basic structure);
+    // joins the Structural Principles chapter as its third lesson.
+    ...x58LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Law & Governance'),
     // X48 all-subjects split pass (2026-10-25): the International Law
     // volume's new institutions chapter — ICJ/Article 38, ICC vs ICJ and
     // complementarity, UNCLOS zones, Geneva Conventions. Carved against

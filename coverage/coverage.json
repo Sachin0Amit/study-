@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T19:57:41.318Z",
+  "generatedAt": "2026-10-25T22:32:43.074Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 138,
     "books": 138,
-    "chapters": 859,
-    "sections": 4606
+    "chapters": 863,
+    "sections": 4612
   },
   "subjects": [
     {
@@ -28165,8 +28165,8 @@
       "name": "Medical Technology",
       "group": "Medicine & Health",
       "tagline": "Machines that see within",
-      "chapterCount": 2,
-      "sectionCount": 3,
+      "chapterCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-medical-technology-biomedical-imaging",
@@ -28189,8 +28189,23 @@
           ]
         },
         {
-          "id": "ku-medical-technology-prosthetics-and-human-machine-interfaces",
+          "id": "ku-medical-technology-laboratory-medicine",
           "number": 2,
+          "title": "Laboratory Medicine",
+          "shortTitle": "Laboratory Medicine",
+          "bookId": "ku-medical-technology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-tech-clinical-lab-diagnostics",
+              "number": 2.1,
+              "title": "The Clinical Laboratory: Reading the Body’s Chemistry"
+            }
+          ]
+        },
+        {
+          "id": "ku-medical-technology-prosthetics-and-human-machine-interfaces",
+          "number": 3,
           "title": "Prosthetics & Human–Machine Interfaces",
           "shortTitle": "Prosthetics & Human–Machine Interfaces",
           "bookId": "ku-medical-technology",
@@ -28198,7 +28213,7 @@
           "sections": [
             {
               "id": "ku-tech-prosthetics-bionics",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Prosthetics and Bionics: Rebuilding Bodies"
             }
           ]
@@ -28714,9 +28729,9 @@
       "id": "ku-east-asian-history",
       "name": "East Asian History",
       "group": "Humanities & Social Sciences",
-      "tagline": "China and Japan enter the modern world",
-      "chapterCount": 2,
-      "sectionCount": 3,
+      "tagline": "China, Japan and the Koreas enter the modern world",
+      "chapterCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-east-asian-history-china-aggression-salvation-and-revolution",
@@ -28750,6 +28765,21 @@
               "id": "ku-hist-japan-modern-industrial",
               "number": 2.1,
               "title": "Japan’s Economic History: From Edo Commerce to the International Economy"
+            }
+          ]
+        },
+        {
+          "id": "ku-east-asian-history-the-two-koreas",
+          "number": 3,
+          "title": "The Two Koreas",
+          "shortTitle": "The Two Koreas",
+          "bookId": "ku-east-asian-history",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-hist-koreas-division-han-river-miracle",
+              "number": 3.1,
+              "title": "The Two Koreas: Division, War and the Miracle on the Han"
             }
           ]
         }
@@ -30320,8 +30350,8 @@
       "name": "Marketing",
       "group": "Commerce, Economics & Business",
       "tagline": "Creating customers",
-      "chapterCount": 2,
-      "sectionCount": 3,
+      "chapterCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-marketing-marketing-foundations",
@@ -30355,6 +30385,21 @@
               "id": "ku-com-marketing-mix-distribution-trends",
               "number": 2.1,
               "title": "Pricing, Distribution and Promotion: The Marketing Mix and Its Digital Turn"
+            }
+          ]
+        },
+        {
+          "id": "ku-marketing-brands-and-growth",
+          "number": 3,
+          "title": "Brands & Growth",
+          "shortTitle": "Brands & Growth",
+          "bookId": "ku-marketing",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-mkt-brand-equity-architecture",
+              "number": 3.1,
+              "title": "Brand Equity and Architecture: Compounding Trust"
             }
           ]
         }
@@ -30521,7 +30566,7 @@
       "group": "Law & Justice",
       "tagline": "The rules about the rules",
       "chapterCount": 2,
-      "sectionCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-constitutional-law-structural-principles",
@@ -30529,16 +30574,21 @@
           "title": "Structural Principles",
           "shortTitle": "Structural Principles",
           "bookId": "ku-constitutional-law",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
-              "id": "ku-law-separation-powers",
+              "id": "ku-law-amendment-entrenchment",
               "number": 1.1,
+              "title": "Amendment and Entrenchment: How Constitutions Change"
+            },
+            {
+              "id": "ku-law-separation-powers",
+              "number": 1.2,
               "title": "Separation of Powers and Checks and Balances"
             },
             {
               "id": "ku-law-federalism-division-of-powers",
-              "number": 1.2,
+              "number": 1.3,
               "title": "Federalism: Dividing Power Between Centre and States"
             }
           ]
@@ -32465,8 +32515,8 @@
       "name": "Chemical Engineering",
       "group": "Applied Engineering & Technology",
       "tagline": "Reactions at scale",
-      "chapterCount": 2,
-      "sectionCount": 3,
+      "chapterCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-chemical-engineering-process-engineering",
@@ -32500,6 +32550,21 @@
               "id": "ku-eng-pipelines-fluid-transport",
               "number": 2.1,
               "title": "Pipelines: Moving Fluids Across Continents"
+            }
+          ]
+        },
+        {
+          "id": "ku-chemical-engineering-process-safety",
+          "number": 3,
+          "title": "Process Safety",
+          "shortTitle": "Process Safety",
+          "bookId": "ku-chemical-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-process-safety-layers",
+              "number": 3.1,
+              "title": "Process Safety: Engineering Against Catastrophe"
             }
           ]
         }
@@ -32731,7 +32796,7 @@
       "group": "Everyday Life Skills",
       "tagline": "The kitchen, understood",
       "chapterCount": 2,
-      "sectionCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-cooking-food-science-kitchen-chemistry-and-flavor",
@@ -32739,16 +32804,21 @@
           "title": "Kitchen Chemistry & Flavor",
           "shortTitle": "Kitchen Chemistry & Flavor",
           "bookId": "ku-cooking-food-science",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
-              "id": "ku-every-maillard-reaction-browning",
+              "id": "ku-cook-heat-transfer-methods",
               "number": 1.1,
+              "title": "Heat at the Stove: Transfer, Doneness and the Craft of Control"
+            },
+            {
+              "id": "ku-every-maillard-reaction-browning",
+              "number": 1.2,
               "title": "The Maillard Reaction: Why Browned Food Tastes Better"
             },
             {
               "id": "ku-cook-flavor-science",
-              "number": 1.2,
+              "number": 1.3,
               "title": "The Science of Flavor: Salt, Fat, Acid and Heat"
             }
           ]

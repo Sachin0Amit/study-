@@ -674,10 +674,11 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'activity',
     accent: '#0891b2',
     tagline: 'Machines that see within',
-    blurb: 'Biomedical imaging — MRI, ultrasound and CT — and the prosthetics and bionics that restore function.',
+    blurb: 'Biomedical imaging — MRI, ultrasound and CT — the clinical laboratory that reads the body’s chemistry, and the prosthetics and bionics that restore function.',
     ownFields: ['Medical Technology'],
     chapters: [
       { name: 'Biomedical Imaging', branches: ['Biomedical Imaging', 'Machines That See Within'] },
+      { name: 'Laboratory Medicine', branches: ['Laboratory Medicine'] },
       { name: 'Prosthetics & Human–Machine Interfaces', branches: ['Human-Machine Interfaces'] },
     ],
   },
@@ -804,11 +805,12 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     group: 'Humanities & Social Sciences',
     icon: 'landmark',
     accent: '#dc2626',
-    tagline: 'China and Japan enter the modern world',
-    blurb: 'China\u2019s century of aggression and salvation, the People\u2019s Republic, and Japan\u2019s modern industrialization.',
+    tagline: 'China, Japan and the Koreas enter the modern world',
+    blurb: 'China\u2019s century of aggression and salvation, the People\u2019s Republic, Japan\u2019s modern industrialization, and the two Koreas\u2019 divided paths.',
     chapters: [
       { name: 'China: Aggression, Salvation & Revolution', fields: ['World History'] },
       { name: 'Japan\u2019s Modern Industrialization', branches: ['East Asian History'] },
+      { name: 'The Two Koreas', branches: ['Korean Peninsula'] },
     ],
   },
   {
@@ -1180,11 +1182,12 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'megaphone',
     accent: '#db2777',
     tagline: 'Creating customers',
-    blurb: 'Marketing foundations, and pricing, channels and promotion.',
+    blurb: 'Marketing foundations, pricing, channels and promotion, and the brand equity and architecture that compound trust.',
     ownFields: ['Marketing'],
     chapters: [
       { name: 'Marketing Foundations', branches: ['Marketing Foundations'] },
       { name: 'Pricing, Channels & Promotion', branches: ['Pricing, Channels and Promotion'] },
+      { name: 'Brands & Growth', branches: ['Brands & Growth'] },
     ],
   },
   {
@@ -1711,11 +1714,12 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'flask-round',
     accent: '#0d9488',
     tagline: 'Reactions at scale',
-    blurb: 'Reactors, separation processes and pipeline transport.',
+    blurb: 'Reactors, separation processes, pipeline transport and the process-safety engineering that keeps them from harm.',
     ownFields: ['Chemical Engineering'],
     chapters: [
       { name: 'Process Engineering', branches: ['Process Engineering'] },
       { name: 'Pipeline Transport', branches: ['Transport Infrastructure'] },
+      { name: 'Process Safety', branches: ['Process Safety'] },
     ],
   },
   {
