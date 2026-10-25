@@ -1,17 +1,21 @@
 /* ------------------------------------------------------------------ */
-/*  Knowledge domains — Library bridge (section-wise edition)          */
+/*  Knowledge domains — Library bridge (SUBJECT-WISE edition)          */
 /*                                                                     */
-/*  Every knowledge domain is a FIRST-CLASS LIBRARY SECTION, exactly   */
-/*  like "Foundations", "Electronics & Communication" or "Mechanical   */
-/*  & Energy":                                                         */
+/*  USER RULE (verbatim intent): "Make all the things in the Library   */
+/*  subject-wise, not field-wise. If it is maths it should be a        */
+/*  single book of maths — whether IIT maths, GATE maths or            */
+/*  engineering maths — inside which chapters group the topics: if     */
+/*  it is integration, then ALL integration content sits in that       */
+/*  chapter. Do this for every subject."                               */
 /*                                                                     */
-/*    Section (domain group) → Subject (field) →                       */
-/*    Book (field track) → Chapter (branch) → Section (topic lesson)   */
+/*    Subject (canonical, via ../knowledge/subject-taxonomy) →         */
+/*    Book (one per subject; curated masters absorb their field) →     */
+/*    Chapter (canonical topic area) → Section (topic lesson)          */
 /*                                                                     */
-/*  There is NO "Knowledge Universe" wrapper — the user asked for      */
-/*  section-wise presentation: "Foundation Learning, which has         */
-/*  multiple subjects; Life Science, which has multiple subjects;      */
-/*  Social Science … Humanities …". The bridge adapts automatically    */
+/*  Every field of every domain maps to ONE canonical subject;         */
+/*  mathematics from any source lands in the Mathematics Master        */
+/*  Library, physics in the Physics Master Library, and the rest       */
+/*  each get a single unified book. The bridge adapts automatically    */
 /*  as ../knowledge/fields/*.ts grows.                                 */
 /*                                                                     */
 /*  DEDUP RULE: topics listed in ../knowledge/dedup.ts are already     */
@@ -578,10 +582,109 @@ export function topicToSectionContent(topic: KnowledgeTopic): SectionContent {
   }
 }
 
+
 /* ------------------------------------------------------------------ */
-/*  Derived Library registries — section (domain) → subject (field)    */
-/*    → book → chapter (branch) → section (topic)                      */
+/*  Derived Library registries — SUBJECT-WISE                          */
+/*                                                                     */
+/*  USER RULE (verbatim intent): one book per subject. If it is        */
+/*  maths, it is a single mathematics book — whether the lesson came   */
+/*  from university coursework, an entrance syllabus or applied        */
+/*  engineering — and inside that book, chapters group the topics:     */
+/*  all integration content lives in the calculus chapter, and so on   */
+/*  for every subject.                                                 */
+/*                                                                     */
+/*  Every live topic is assigned to ONE canonical subject via the      */
+/*  taxonomy (field ownership, with branch ownership as fallback),     */
+/*  then grouped into canonical chapters (field- or branch-matched,    */
+/*  with a branch-name fallback). Subjects with `mergeInto` append     */
+/*  their chapters to an existing curated master book — the            */
+/*  Mathematics Master Library grows the new chapters directly — so    */
+/*  the Library shows exactly ONE book per subject.                    */
+/*                                                                     */
+/*  Section ids stay `ku-<topicId>` for every topic, so progress       */
+/*  tracking, the exam-coverage matcher and content.json are           */
+/*  unaffected by this presentation-layer regrouping.                  */
 /* ------------------------------------------------------------------ */
+
+import { SUBJECT_TAXONOMY, type TaxonomySubject } from '../knowledge/subject-taxonomy'
+import { CURATED_BOOK_CHAPTER_TOPS } from './curated-book-tops'
+
+const TAXONOMY_BY_FIELD = new Map<string, TaxonomySubject>()
+const TAXONOMY_BY_BRANCH = new Map<string, TaxonomySubject>()
+for (const tax of SUBJECT_TAXONOMY) {
+  for (const f of tax.ownFields) if (!TAXONOMY_BY_FIELD.has(f)) TAXONOMY_BY_FIELD.set(f, tax)
+  for (const ch of tax.chapters) {
+    if (!ch.branches) continue
+    for (const b of ch.branches) if (!TAXONOMY_BY_BRANCH.has(b)) TAXONOMY_BY_BRANCH.set(b, tax)
+  }
+}
+
+function taxonomyFor(topic: KnowledgeTopic): TaxonomySubject | null {
+  return TAXONOMY_BY_FIELD.get(topic.field) ?? TAXONOMY_BY_BRANCH.get(topic.branch) ?? null
+}
+
+function chapterNameFor(tax: TaxonomySubject, topic: KnowledgeTopic): string {
+  const ch = tax.chapters.find(
+    (c) => (c.fields ? c.fields.includes(topic.field) : false) || (c.branches ? c.branches.includes(topic.branch) : false),
+  )
+  return ch ? ch.name : topic.branch
+}
+
+interface SubjectBucket {
+  tax: TaxonomySubject
+  /** canonical chapter name → topics (insertion order preserved) */
+  chapters: Map<string, KnowledgeTopic[]>
+}
+
+const SUBJECT_BUCKETS: SubjectBucket[] = (() => {
+  const byKey = new Map<string, SubjectBucket>()
+  for (const topic of KNOWLEDGE_LIVE_TOPICS) {
+    const tax = taxonomyFor(topic)
+    if (!tax) continue // legacy fallback below owns these
+    let bucket = byKey.get(tax.key)
+    if (!bucket) {
+      bucket = { tax, chapters: new Map() }
+      byKey.set(tax.key, bucket)
+    }
+    const chName = chapterNameFor(tax, topic)
+    if (!bucket.chapters.has(chName)) bucket.chapters.set(chName, [])
+    bucket.chapters.get(chName)!.push(topic)
+  }
+  return SUBJECT_TAXONOMY.filter((t) => byKey.has(t.key)).map((t) => byKey.get(t.key)!)
+})()
+
+interface UnifiedChapter {
+  tax: TaxonomySubject
+  name: string
+  bookId: string
+  chapterId: string
+  number: number
+  topics: KnowledgeTopic[]
+}
+
+const UNIFIED_CHAPTERS: UnifiedChapter[] = (() => {
+  const out: UnifiedChapter[] = []
+  for (const bucket of SUBJECT_BUCKETS) {
+    const merged = bucket.tax.mergeInto
+    const bookId = merged ? merged.bookId : `ku-${bucket.tax.key}`
+    let n = merged ? CURATED_BOOK_CHAPTER_TOPS[bookId] ?? 0 : 0
+    for (const [name, topics] of bucket.chapters) {
+      n += 1
+      out.push({
+        tax: bucket.tax,
+        name,
+        bookId,
+        chapterId: `ku-${merged ? `x-${bookId}` : bucket.tax.key}-${slugify(name)}`,
+        number: n,
+        topics,
+      })
+    }
+  }
+  return out
+})()
+
+/* ---- Legacy fallback — fields not (yet) in the taxonomy keep the   */
+/* ---- old domain/field presentation so nothing is ever lost.        */
 
 interface FieldSubject {
   domainKey: string
@@ -595,15 +698,19 @@ interface FieldSubject {
 
 const FIELD_SUBJECTS: FieldSubject[] = (() => {
   const out: FieldSubject[] = []
+  const seen = new Set<string>()
   for (const file of LIVE_DOMAIN_FILES) {
     const def = domainSectionFor(file.domain)
     const byField = new Map<string, KnowledgeTopic[]>()
     for (const t of file.topics) {
+      if (taxonomyFor(t)) continue
       if (!byField.has(t.field)) byField.set(t.field, [])
       byField.get(t.field)!.push(t)
     }
     let idx = 0
     for (const [field, topics] of byField) {
+      if (seen.has(field)) continue
+      seen.add(field)
       out.push({
         domainKey: def.key,
         domainName: def.name,
@@ -616,44 +723,14 @@ const FIELD_SUBJECTS: FieldSubject[] = (() => {
       idx += 1
     }
   }
+  if (out.length > 0) {
+    console.warn(
+      `[taxonomy] ${out.length} field(s) not covered by the subject taxonomy — rendered via legacy fallback:`,
+      out.map((f) => `${f.domainName} > ${f.field}`).join(' | '),
+    )
+  }
   return out
 })()
-
-export const KNOWLEDGE_SUBJECTS: Subject[] = FIELD_SUBJECTS.map((fs) => {
-  const domainDef = DOMAIN_SECTIONS[fs.domainName]
-  const meta = FIELD_META[fs.field]
-  const titles = fs.topics.map((t) => t.title)
-  return {
-    id: fs.subjectId,
-    name: fs.field,
-    slug: `${fs.domainKey}-${fs.fieldSlug}`,
-    description: `${fs.topics.length} complete lesson${fs.topics.length !== 1 ? 's' : ''}: ${titles.join('; ')}.`,
-    icon: meta?.icon ?? domainDef?.icon ?? 'sparkles',
-    accent: fs.accent,
-    tagline: meta?.tagline ?? domainDef?.tagline ?? fs.domainName,
-    group: fs.domainName,
-  }
-})
-
-export const KNOWLEDGE_BOOKS: BookMeta[] = FIELD_SUBJECTS.map((fs) => {
-  const words = fs.topics.reduce((n, t) => n + countTopicWords(t), 0)
-  const years = [...new Set(fs.topics.map((t) => t.addedOn.slice(0, 4)))].sort()
-  const meta = FIELD_META[fs.field]
-  return {
-    id: fs.subjectId,
-    subjectId: fs.subjectId,
-    title: `${fs.field} — The Complete Track`,
-    author: 'StudyVerse Curriculum Team',
-    edition: 'Growing Edition',
-    year: years.join(' · '),
-    description: `The ${fs.field} track in the ${fs.domainName} section — ${fs.topics.length} complete, self-contained lesson${fs.topics.length !== 1 ? 's' : ''} with worked examples, key terms and self-check quizzes. New lessons are added as the section grows.`,
-    pages: Math.max(1, Math.round(words / 400)),
-    accent: fs.accent,
-    sources: [
-      `${fs.domainName} → ${fs.field}: ${fs.topics.length} lesson${fs.topics.length !== 1 ? 's' : ''} (${meta?.tagline ?? ''})`.trim(),
-    ],
-  }
-})
 
 interface BranchChapter {
   branch: string
@@ -663,7 +740,7 @@ interface BranchChapter {
   topics: KnowledgeTopic[]
 }
 
-const BRANCH_CHAPTERS: BranchChapter[] = (() => {
+const LEGACY_CHAPTERS: BranchChapter[] = (() => {
   const out: BranchChapter[] = []
   for (const fs of FIELD_SUBJECTS) {
     const byBranch = new Map<string, KnowledgeTopic[]>()
@@ -686,36 +763,151 @@ const BRANCH_CHAPTERS: BranchChapter[] = (() => {
   return out
 })()
 
-const SUBJECT_BY_ID = new Map(KNOWLEDGE_SUBJECTS.map((s) => [s.id, s]))
+/* ---- Subjects: one card per canonical subject (legacy fallback last) */
 
-export const KNOWLEDGE_CHAPTERS: ChapterMeta[] = BRANCH_CHAPTERS.map((g) => {
-  const subject = SUBJECT_BY_ID.get(g.subjectId)!
-  const words = g.topics.reduce((n, t) => n + countTopicWords(t), 0)
-  const titles = g.topics.map((t) => t.title).join(' · ')
-  return {
-    id: g.chapterId,
-    bookId: g.subjectId,
-    number: g.number,
-    title: g.branch,
-    shortTitle: g.branch,
-    description: excerpt(
-      `${g.branch} — ${g.topics.length} complete lesson${g.topics.length !== 1 ? 's' : ''}: ${titles}.`,
-      220,
-    ),
-    icon: subject.icon,
-    pages: `${words.toLocaleString('en-US')} words`,
-    interactiveKey: '',
-  }
-})
+export const KNOWLEDGE_SUBJECTS: Subject[] = [
+  ...SUBJECT_BUCKETS.filter((b) => !b.tax.mergeInto).map((bucket) => {
+    const tax = bucket.tax
+    const topicCount = bucket.chapters.size > 0 ? [...bucket.chapters.values()].reduce((n, ts) => n + ts.length, 0) : 0
+    const chapterTitles = [...bucket.chapters.keys()].join(' · ')
+    return {
+      id: `ku-${tax.key}`,
+      name: tax.name,
+      slug: tax.key,
+      description: `${tax.blurb} ${bucket.chapters.size} chapter${bucket.chapters.size !== 1 ? 's' : ''} · ${topicCount} complete lesson${topicCount !== 1 ? 's' : ''}: ${chapterTitles}.`,
+      icon: tax.icon,
+      accent: tax.accent,
+      tagline: tax.tagline,
+      group: tax.group,
+    }
+  }),
+  ...FIELD_SUBJECTS.map((fs) => {
+    const domainDef = DOMAIN_SECTIONS[fs.domainName]
+    const meta = FIELD_META[fs.field]
+    const titles = fs.topics.map((t) => t.title)
+    return {
+      id: fs.subjectId,
+      name: fs.field,
+      slug: `${fs.domainKey}-${fs.fieldSlug}`,
+      description: `${fs.topics.length} complete lesson${fs.topics.length !== 1 ? 's' : ''}: ${titles.join('; ')}.`,
+      icon: meta?.icon ?? domainDef?.icon ?? 'sparkles',
+      accent: fs.accent,
+      tagline: meta?.tagline ?? domainDef?.tagline ?? fs.domainName,
+      group: fs.domainName,
+    }
+  }),
+]
 
-export const KNOWLEDGE_SECTIONS: SectionMeta[] = BRANCH_CHAPTERS.flatMap((g) =>
-  g.topics.map((t, i) => ({
-    id: `ku-${t.id}`,
-    chapterId: g.chapterId,
-    number: Number(`${g.number}.${i + 1}`),
-    title: t.title,
-    description: excerpt(firstSentence(t.blocks.find((b) => b.kind === 'para')?.text ?? t.title), 200),
-  })),
-)
+/* ---- Books: one unified volume per own subject (nothing emitted for
+        merged subjects — their chapters live in the curated master) */
+
+export const KNOWLEDGE_BOOKS: BookMeta[] = [
+  ...SUBJECT_BUCKETS.filter((b) => !b.tax.mergeInto).map((bucket) => {
+    const tax = bucket.tax
+    const topics = [...bucket.chapters.values()].flat()
+    const words = topics.reduce((n, t) => n + countTopicWords(t), 0)
+    const years = [...new Set(topics.map((t) => t.addedOn.slice(0, 4)))].sort()
+    const chapterTitles = [...bucket.chapters.keys()].join(', ')
+    const sourceAreas = [...new Set(topics.map((t) => t.field))].join(', ')
+    return {
+      id: `ku-${tax.key}`,
+      subjectId: `ku-${tax.key}`,
+      title: `${tax.name} — The Complete Book`,
+      author: 'StudyVerse Curriculum Team',
+      edition: 'Unified Edition',
+      year: years.join(' · '),
+      description: `Every ${tax.name} lesson in the Library, unified into one volume — ${chapterTitles}. ${topics.length} complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material.`,
+      pages: Math.max(1, Math.round(words / 400)),
+      accent: tax.accent,
+      sources: [
+        `One book per subject — ${[...new Set(topics.map((t) => t.field))].length} subject areas merged: ${sourceAreas}`,
+      ],
+    }
+  }),
+  ...FIELD_SUBJECTS.map((fs) => {
+    const words = fs.topics.reduce((n, t) => n + countTopicWords(t), 0)
+    const years = [...new Set(fs.topics.map((t) => t.addedOn.slice(0, 4)))].sort()
+    const meta = FIELD_META[fs.field]
+    return {
+      id: fs.subjectId,
+      subjectId: fs.subjectId,
+      title: `${fs.field} — The Complete Track`,
+      author: 'StudyVerse Curriculum Team',
+      edition: 'Growing Edition',
+      year: years.join(' · '),
+      description: `The ${fs.field} track in the ${fs.domainName} section — ${fs.topics.length} complete, self-contained lesson${fs.topics.length !== 1 ? 's' : ''} with worked examples, key terms and self-check quizzes.`,
+      pages: Math.max(1, Math.round(words / 400)),
+      accent: fs.accent,
+      sources: [
+        `${fs.domainName} → ${fs.field}: ${fs.topics.length} lesson${fs.topics.length !== 1 ? 's' : ''} (${meta?.tagline ?? ''})`.trim(),
+      ],
+    }
+  }),
+]
+
+/* ---- Chapters: canonical chapters inside each subject's book        */
+
+export const KNOWLEDGE_CHAPTERS: ChapterMeta[] = [
+  ...UNIFIED_CHAPTERS.map((g) => {
+    const words = g.topics.reduce((n, t) => n + countTopicWords(t), 0)
+    const titles = g.topics.map((t) => t.title).join(' · ')
+    return {
+      id: g.chapterId,
+      bookId: g.bookId,
+      number: g.number,
+      title: g.name,
+      shortTitle: g.name,
+      description: excerpt(
+        `${g.name} — ${g.topics.length} complete lesson${g.topics.length !== 1 ? 's' : ''}: ${titles}.`,
+        220,
+      ),
+      icon: g.tax.icon,
+      pages: `${words.toLocaleString('en-US')} words`,
+      interactiveKey: '',
+    }
+  }),
+  ...LEGACY_CHAPTERS.map((g) => {
+    const subject = KNOWLEDGE_SUBJECTS.find((s) => s.id === g.subjectId)
+    const words = g.topics.reduce((n, t) => n + countTopicWords(t), 0)
+    const titles = g.topics.map((t) => t.title).join(' · ')
+    return {
+      id: g.chapterId,
+      bookId: g.subjectId,
+      number: g.number,
+      title: g.branch,
+      shortTitle: g.branch,
+      description: excerpt(
+        `${g.branch} — ${g.topics.length} complete lesson${g.topics.length !== 1 ? 's' : ''}: ${titles}.`,
+        220,
+      ),
+      icon: subject?.icon ?? 'sparkles',
+      pages: `${words.toLocaleString('en-US')} words`,
+      interactiveKey: '',
+    }
+  }),
+]
+
+/* ---- Sections: the lessons themselves (ids unchanged: ku-<topicId>) */
+
+export const KNOWLEDGE_SECTIONS: SectionMeta[] = [
+  ...UNIFIED_CHAPTERS.flatMap((g) =>
+    g.topics.map((t, i) => ({
+      id: `ku-${t.id}`,
+      chapterId: g.chapterId,
+      number: Number(`${g.number}.${i + 1}`),
+      title: t.title,
+      description: excerpt(firstSentence(t.blocks.find((b) => b.kind === 'para')?.text ?? t.title), 200),
+    })),
+  ),
+  ...LEGACY_CHAPTERS.flatMap((g) =>
+    g.topics.map((t, i) => ({
+      id: `ku-${t.id}`,
+      chapterId: g.chapterId,
+      number: Number(`${g.number}.${i + 1}`),
+      title: t.title,
+      description: excerpt(firstSentence(t.blocks.find((b) => b.kind === 'para')?.text ?? t.title), 200),
+    })),
+  ),
+]
 
 export const KNOWLEDGE_CONTENT: SectionContent[] = KNOWLEDGE_LIVE_TOPICS.map(topicToSectionContent)

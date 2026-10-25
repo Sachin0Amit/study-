@@ -218,10 +218,10 @@ export function LibraryView() {
       ...SIMVERSE_TOOL_KEYS,
     ]).size
   const totalQuestions = TOTAL_QUIZ_QUESTIONS
-  /** Knowledge-section counts — derived from the same registries that render
-   *  the section subject cards, so the hero always matches the catalog. */
-  const domainSections = new Set(LIBRARY_SUBJECTS.filter((s) => s.id.startsWith('ku-')).map((s) => s.group)).size
-  const domainSubjects = LIBRARY_SUBJECTS.filter((s) => s.id.startsWith('ku-')).length
+  /** Knowledge-subject counts — derived from the same registries that render
+   *  the subject cards, so the hero always matches the catalog. */
+  const knowledgeGroups = new Set(LIBRARY_SUBJECTS.filter((s) => s.id.startsWith('ku-')).map((s) => s.group)).size
+  const knowledgeSubjects = LIBRARY_SUBJECTS.filter((s) => s.id.startsWith('ku-')).length
   /** the most recently added book — hero CTA + chapter-map preview target */
   const latestBook = LIBRARY_BOOKS[LIBRARY_BOOKS.length - 1]
   const latestShortTitle = latestBook.title.split(':')[0]
@@ -341,7 +341,7 @@ export function LibraryView() {
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Check className="h-3 w-3 text-emerald-400" aria-hidden />
-                {domainSubjects} subjects across {domainSections} knowledge sections
+                {knowledgeSubjects} unified subjects across {knowledgeGroups} shelves
               </span>
             </div>
 
@@ -351,7 +351,7 @@ export function LibraryView() {
               <HeroStat value={totalChapters} label="chapters covered" />
               <HeroStat value={totalTools} label="interactive labs" />
               <HeroStat value={TOTAL_FORMULAS} label="printable formulas" />
-              <HeroStat value={domainSubjects} label="knowledge subjects" />
+              <HeroStat value={knowledgeSubjects} label="unified subjects" />
             </div>
           </motion.div>
         </div>

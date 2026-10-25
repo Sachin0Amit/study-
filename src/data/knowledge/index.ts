@@ -4,10 +4,10 @@
  * Domains live in ./fields/*.ts. Every expansion pass appends topics; this
  * index recomputes stats at load time so counts and word totals always
  * reflect the actual content on disk. The Library bridge in
- * ../library-parts/knowledge-universe turns every domain into a Library
- * SECTION (Foundation Learning, Life Sciences, Social Sciences, …) and every
- * field into a SUBJECT — no wrapper group, presented exactly like Foundations
- * or Electronics & Communication.
+ * ../library-parts/knowledge-universe maps every field to ONE canonical
+ * SUBJECT via subject-taxonomy.ts (all mathematics — from any source —
+ * lands in the single Mathematics book, and so on for every subject);
+ * chapters inside each book are canonical topic areas.
  *
  * DEDUP: ../dedup.ts lists topics already explained elsewhere — they are
  * filtered out by the bridge (zero repetition across the app).

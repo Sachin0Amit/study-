@@ -219,6 +219,26 @@ export function easyChapterLine(ch: ChapterMeta): string {
     hint = 'Calculus part: one small idea (slope or area) then many sums. Draw graph while reading.'
   else if (/(force|motion|energy|wave|quantum|relativ|electric|magnet|orbit|projectile)/.test(t))
     hint = 'Physics part: first picture the scene, then formula. Play with the lab toy on same page.'
+  else if (
+    /(gene|dna|cell|evolution|speciation|enzyme|protein|anatomy|physiolog|plant|animal|ecosystem|immune|microbe|bacteria|zoolog|botan|heredity|meiosis|mendel|neuro)/.test(t)
+  )
+    hint = 'Biology part: draw the diagram yourself — cell, pathway or family tree. Redraw from memory to test.'
+  else if (/(disease|medicine|patient|clinic|pharmac|nutrition|diet|sleep|fitness|public health|first aid)/.test(t))
+    hint = 'Health part: link each idea to a body part or a real case. Say it in one sentence from memory.'
+  else if (/(econom|market|price|demand|supply|trade|gdp|inflation|fiscal|monetar)/.test(t))
+    hint = 'Economics part: think one buyer, one seller, then scale up. Draw the small graph.'
+  else if (/(account|ledger|balance sheet|audit|marketing|management|entrepreneur|business)/.test(t))
+    hint = 'Business part: follow one rupee through the story — earn, record, spend, grow.'
+  else if (/(law|legal|court|constitution|contract|tort|statute|litigat|rights)/.test(t))
+    hint = 'Law part: who is the plaintiff, what do they want, which rule decides it. Argue both sides once.'
+  else if (/(histor|philosoph|mytholog|religio|literar|empire|civilization|century)/.test(t))
+    hint = 'Humanities part: put the idea in its time and place first, then the argument. Timeline beats notes.'
+  else if (/(sociolog|psycholog|political|governance|society|behaviour|behavior|institution)/.test(t))
+    hint = 'Social science part: find the one example in the lesson that proves the rule. Swap in your own.'
+  else if (/(climate|pollution|sustainab|environment|ecolog|waste|renewable)/.test(t))
+    hint = 'Environment part: trace the flow — energy, water or carbon — from source to sink.'
+  else if (/(verb|grammar|vocabular|spanish|french|japanese|german|russian|korean|hindi|arabic|mandarin)/.test(t))
+    hint = 'Language part: say each example sentence out loud twice. Mouth memory beats eye memory.'
   else if (/(sort|graph|tree|hash|dynamic|greedy|complexity|proof)/.test(t))
     hint = 'Algorithms part: trace tiny example by hand (n=3), then big idea clicks.'
   else if (/(thread|process|schedul|deadlock|memory|paging|file|disk)/.test(t))
