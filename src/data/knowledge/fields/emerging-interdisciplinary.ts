@@ -1,9 +1,19 @@
 import type { KnowledgeDomainFile } from '../types'
+import { x47BioSplitPassTopics } from './x47-bio-split-pass'
 
 export const emergingInterdisciplinary: KnowledgeDomainFile = {
   domain: 'Emerging & Interdisciplinary',
   blurb: 'Where disciplines collide: genomes as code, feedback loops as universal grammar, and qubits stripped of the hype.',
   topics: [
+    // X47 biology-split pass (2026-10-25): the user split the one-volume
+    // Biology book into 13 discipline books. Emerging & Interdisciplinary
+    // slice: bioinformatics databases & structure prediction (carved
+    // against emer-bioinformatics-reading-genomes, which owns algorithms,
+    // and bio-genomics-bioinformatics, which owns the HGP history), plus
+    // the two synthetic-biology lessons — the DBTL engineering cycle and
+    // biosafety/biosecurity governance (carved against
+    // emer-synthetic-biology, which owns parts/circuits/modeling).
+    ...x47BioSplitPassTopics.filter((t) => t.domain === 'Emerging & Interdisciplinary'),
     {
       id: 'emer-bioinformatics-reading-genomes',
       title: 'Bioinformatics: Reading Genomes with Code',

@@ -220,7 +220,7 @@ export function easyChapterLine(ch: ChapterMeta): string {
   else if (/(force|motion|energy|wave|quantum|relativ|electric|magnet|orbit|projectile)/.test(t))
     hint = 'Physics part: first picture the scene, then formula. Play with the lab toy on same page.'
   else if (
-    /(gene|dna|cell|evolution|speciation|enzyme|protein|anatomy|physiolog|plant|animal|ecosystem|immune|microbe|bacteria|zoolog|botan|heredity|meiosis|mendel|neuro)/.test(t)
+    /(gene|dna|cell|evolution|speciation|enzyme|protein|anatomy|physiolog|plant|animal|ecosystem|immune|microbe|bacteria|zoolog|botan|heredity|meiosis|mendel|neuro|biolog|biochem|plankton|larva|marine|morphogen)/.test(t)
   )
     hint = 'Biology part: draw the diagram yourself — cell, pathway or family tree. Redraw from memory to test.'
   else if (/(disease|medicine|patient|clinic|pharmac|nutrition|diet|sleep|fitness|public health|first aid)/.test(t))

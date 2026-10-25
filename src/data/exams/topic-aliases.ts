@@ -78,6 +78,11 @@ export const TOPIC_ALIASES: Record<string, string> = {
   'recombinant dna technology': 'bio-biotechnology-rdna-processes',
   'microbial technology': 'bio-biotechnology-applications',
   'microbes in human welfare': 'bio-biotechnology-applications',
+  // VITEEE mega-topic phrasing (was fuzzy-matched to the old one-volume
+  // Biology book's Genetics chapter pre-split; the biology discipline split
+  // fragmented that subject-level token coverage). The applications lesson
+  // owns the welfare/biotechnology core of the topic.
+  'biology and human welfare biotechnology ecology': 'bio-biotechnology-applications',
   'gene technologies': 'bio-biotechnology-rdna-processes',
   'using genome projects': 'bio-genomics-bioinformatics',
 

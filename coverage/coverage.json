@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T12:45:37.460Z",
+  "generatedAt": "2026-10-25T13:11:38.822Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 92,
-    "books": 92,
-    "chapters": 777,
-    "sections": 4559
+    "subjects": 104,
+    "books": 104,
+    "chapters": 801,
+    "sections": 4566
   },
   "subjects": [
     {
@@ -26706,20 +26706,160 @@
       ]
     },
     {
-      "id": "ku-biology",
-      "name": "Biology",
-      "group": "Natural Sciences",
-      "tagline": "The living world, end to end",
-      "chapterCount": 12,
-      "sectionCount": 65,
+      "id": "ku-cell-molecular-biology",
+      "name": "Cell & Molecular Biology",
+      "group": "Life Sciences",
+      "tagline": "The unit of life, read to the letter",
+      "chapterCount": 3,
+      "sectionCount": 8,
       "chapters": [
         {
-          "id": "ku-biology-genetics-and-heredity",
+          "id": "ku-cell-molecular-biology-molecular-biology-of-the-gene",
           "number": 1,
-          "title": "Genetics & Heredity",
-          "shortTitle": "Genetics & Heredity",
-          "bookId": "ku-biology",
-          "sectionCount": 9,
+          "title": "Molecular Biology of the Gene",
+          "shortTitle": "Molecular Biology of the Gene",
+          "bookId": "ku-cell-molecular-biology",
+          "sectionCount": 5,
+          "sections": [
+            {
+              "id": "ku-bio-dna-structure-replication",
+              "number": 1.1,
+              "title": "DNA: The Molecule of Heredity, Structure and Replication"
+            },
+            {
+              "id": "ku-bio-transcription-rna-processing",
+              "number": 1.2,
+              "title": "Transcription: Reading Genes into RNA"
+            },
+            {
+              "id": "ku-bio-translation-genetic-code",
+              "number": 1.3,
+              "title": "The Genetic Code and Translation: RNA to Protein"
+            },
+            {
+              "id": "ku-bio-mutations-dna-repair",
+              "number": 1.4,
+              "title": "Mutations and the Repair Systems That Contain Them"
+            },
+            {
+              "id": "ku-bio-gene-regulation-epigenetics",
+              "number": 1.5,
+              "title": "Gene Regulation: From Operons to Epigenetics"
+            }
+          ]
+        },
+        {
+          "id": "ku-cell-molecular-biology-the-cell-structure-and-signaling",
+          "number": 2,
+          "title": "The Cell: Structure & Signaling",
+          "shortTitle": "The Cell: Structure & Signaling",
+          "bookId": "ku-cell-molecular-biology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-cell-signaling-transduction",
+              "number": 2.1,
+              "title": "Cell Signaling: Reception, Transduction, Response"
+            },
+            {
+              "id": "ku-bio-cell-biomolecules",
+              "number": 2.2,
+              "title": "The Cell and Its Biomolecules: From Membranes to Macromolecules"
+            }
+          ]
+        },
+        {
+          "id": "ku-cell-molecular-biology-bioenergetics",
+          "number": 3,
+          "title": "Bioenergetics",
+          "shortTitle": "Bioenergetics",
+          "bookId": "ku-cell-molecular-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-cellular-respiration-pathways",
+              "number": 3.1,
+              "title": "Cellular Respiration: Glycolysis to the Electron Transport Chain"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-biochemistry",
+      "name": "Biochemistry",
+      "group": "Life Sciences",
+      "tagline": "The chemistry that runs cells",
+      "chapterCount": 2,
+      "sectionCount": 6,
+      "chapters": [
+        {
+          "id": "ku-biochemistry-laboratory-methods",
+          "number": 1,
+          "title": "Laboratory Methods",
+          "shortTitle": "Laboratory Methods",
+          "bookId": "ku-biochemistry",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bioc-biochem-toolbox",
+              "number": 1.1,
+              "title": "The Biochemist’s Toolbox: Chromatography, Electrophoresis and Spectrophotometry"
+            }
+          ]
+        },
+        {
+          "id": "ku-biochemistry-molecules-of-life",
+          "number": 2,
+          "title": "Molecules of Life",
+          "shortTitle": "Molecules of Life",
+          "bookId": "ku-biochemistry",
+          "sectionCount": 5,
+          "sections": [
+            {
+              "id": "ku-bio-biochemistry-metabolism",
+              "number": 2.1,
+              "title": "Biochemistry: The Cell's Energy Economy"
+            },
+            {
+              "id": "ku-bioc-protein-structure-folding",
+              "number": 2.2,
+              "title": "Protein Structure and Folding: Shape Is Function"
+            },
+            {
+              "id": "ku-bioc-enzymes-kinetics-regulation",
+              "number": 2.3,
+              "title": "Enzymes: Catalysis, Kinetics and Regulation"
+            },
+            {
+              "id": "ku-bioc-lipid-amino-acid-metabolism",
+              "number": 2.4,
+              "title": "Beyond Glucose: Fat and Amino-Acid Metabolism"
+            },
+            {
+              "id": "ku-bioc-carbohydrates-lipids",
+              "number": 2.5,
+              "title": "Carbohydrates and Lipids: Fuel, Structure and Signalling"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-genetics-heredity",
+      "name": "Genetics & Heredity",
+      "group": "Life Sciences",
+      "tagline": "How traits travel and vary",
+      "chapterCount": 4,
+      "sectionCount": 9,
+      "chapters": [
+        {
+          "id": "ku-genetics-heredity-genes-in-populations",
+          "number": 1,
+          "title": "Genes in Populations",
+          "shortTitle": "Genes in Populations",
+          "bookId": "ku-genetics-heredity",
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-bio-population-inheritance-frequencies",
@@ -26727,433 +26867,688 @@
               "title": "Inheritance in Populations: Allele Frequencies and Population Patterns"
             },
             {
-              "id": "ku-bio-meiosis-linkage-inheritance",
-              "number": 1.2,
-              "title": "Meiosis, Linkage and the Chromosomal Theory of Inheritance"
-            },
-            {
-              "id": "ku-bio-beyond-mendel-extensions",
-              "number": 1.3,
-              "title": "Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits"
-            },
-            {
-              "id": "ku-bio-biotechnology-rdna-processes",
-              "number": 1.4,
-              "title": "Recombinant DNA: The Tools and Techniques of Genetic Engineering"
-            },
-            {
-              "id": "ku-bio-biotechnology-applications",
-              "number": 1.5,
-              "title": "Biotechnology in Practice: Medicine, Farms, and Industry"
-            },
-            {
-              "id": "ku-bio-genomics-bioinformatics",
-              "number": 1.6,
-              "title": "Genomics and Bioinformatics: Reading Whole Genomes"
-            },
-            {
-              "id": "ku-bio-crispr-gene-editing",
-              "number": 1.7,
-              "title": "CRISPR and the Mechanics of Gene Editing"
-            },
-            {
-              "id": "ku-bio-genetics-mendel",
-              "number": 1.8,
-              "title": "Mendel's Laws: How Traits Travel Between Generations"
-            },
-            {
               "id": "ku-bio-population-genetics",
-              "number": 1.9,
+              "number": 1.2,
               "title": "Population Genetics: Genes Drifting Through Time"
             }
           ]
         },
         {
-          "id": "ku-biology-human-anatomy-and-physiology",
+          "id": "ku-genetics-heredity-classical-and-transmission-genetics",
           "number": 2,
-          "title": "Human Anatomy & Physiology",
-          "shortTitle": "Human Anatomy & Physiology",
-          "bookId": "ku-biology",
-          "sectionCount": 11,
+          "title": "Classical & Transmission Genetics",
+          "shortTitle": "Classical & Transmission Genetics",
+          "bookId": "ku-genetics-heredity",
+          "sectionCount": 3,
           "sections": [
             {
-              "id": "ku-bio-sensory-organ-technologies",
+              "id": "ku-bio-meiosis-linkage-inheritance",
               "number": 2.1,
-              "title": "When Organs Fail: Hearing, Vision and Kidney Technologies"
+              "title": "Meiosis, Linkage and the Chromosomal Theory of Inheritance"
             },
             {
-              "id": "ku-bio-anatomy-reproduction-development",
-              "number": 2.1,
-              "title": "Reproduction and the Making of a Human"
-            },
-            {
-              "id": "ku-bio-human-reproduction-system",
-              "number": 2.11,
-              "title": "Human Reproduction: Systems, Gametes and the Menstrual Cycle"
-            },
-            {
-              "id": "ku-bio-anatomy-heart-circulation",
+              "id": "ku-bio-beyond-mendel-extensions",
               "number": 2.2,
-              "title": "The Heart and Circulation: One Pump, Two Circuits"
+              "title": "Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits"
             },
             {
-              "id": "ku-bio-anatomy-respiration",
+              "id": "ku-bio-genetics-mendel",
               "number": 2.3,
-              "title": "Breathing and Gas Exchange: From Air to Cell"
-            },
-            {
-              "id": "ku-bio-anatomy-digestion",
-              "number": 2.4,
-              "title": "The Digestive System: From Meal to Molecule"
-            },
-            {
-              "id": "ku-bio-anatomy-kidneys-endocrine",
-              "number": 2.5,
-              "title": "Kidneys, Hormones and the Body's Balance"
-            },
-            {
-              "id": "ku-bio-anatomy-musculoskeletal",
-              "number": 2.6,
-              "title": "Muscles, Bones and the Machinery of Movement"
-            },
-            {
-              "id": "ku-anat-endocrine-system-hormones",
-              "number": 2.7,
-              "title": "The Endocrine System: Hormones as the Body's Slow Messengers"
-            },
-            {
-              "id": "ku-bio-anatomy-nervous-system-command",
-              "number": 2.8,
-              "title": "The Nervous System: The Body's Command Network"
-            },
-            {
-              "id": "ku-bio-anatomy-senses-perception",
-              "number": 2.9,
-              "title": "The Senses: How the Body Reads the World"
+              "title": "Mendel's Laws: How Traits Travel Between Generations"
             }
           ]
         },
         {
-          "id": "ku-biology-zoology-and-animal-science",
+          "id": "ku-genetics-heredity-biotechnology",
           "number": 3,
-          "title": "Zoology & Animal Science",
-          "shortTitle": "Zoology & Animal Science",
-          "bookId": "ku-biology",
-          "sectionCount": 4,
+          "title": "Biotechnology",
+          "shortTitle": "Biotechnology",
+          "bookId": "ku-genetics-heredity",
+          "sectionCount": 2,
           "sections": [
             {
-              "id": "ku-bio-animal-tissue-types",
+              "id": "ku-bio-biotechnology-rdna-processes",
               "number": 3.1,
-              "title": "Animal Tissue Types: Four Families, One Body Plan"
+              "title": "Recombinant DNA: The Tools and Techniques of Genetic Engineering"
             },
             {
-              "id": "ku-bio-zoology-body-plans",
+              "id": "ku-bio-biotechnology-applications",
               "number": 3.2,
-              "title": "The Animal Kingdom: A Tour of Body Plans and Phyla"
-            },
-            {
-              "id": "ku-bio-animal-behavior-ethology",
-              "number": 3.3,
-              "title": "Animal Behavior: Instinct, Learning, Signals"
-            },
-            {
-              "id": "ku-bio-animal-senses-superpowers",
-              "number": 3.4,
-              "title": "How Animals Sense the World"
+              "title": "Biotechnology in Practice: Medicine, Farms, and Industry"
             }
           ]
         },
         {
-          "id": "ku-biology-ecology-and-conservation",
+          "id": "ku-genetics-heredity-molecular-genetics-and-genomics",
           "number": 4,
-          "title": "Ecology & Conservation",
-          "shortTitle": "Ecology & Conservation",
-          "bookId": "ku-biology",
-          "sectionCount": 8,
+          "title": "Molecular Genetics & Genomics",
+          "shortTitle": "Molecular Genetics & Genomics",
+          "bookId": "ku-genetics-heredity",
+          "sectionCount": 2,
           "sections": [
             {
-              "id": "ku-bio-adaptations-habitat",
+              "id": "ku-bio-genomics-bioinformatics",
               "number": 4.1,
-              "title": "Life at the Limits: How Organisms Answer Habitat and Abiotic Stress"
+              "title": "Genomics and Bioinformatics: Reading Whole Genomes"
             },
             {
-              "id": "ku-bio-ecosystems-energy-flow",
+              "id": "ku-bio-crispr-gene-editing",
               "number": 4.2,
-              "title": "Ecosystems and the Flow of Energy"
-            },
-            {
-              "id": "ku-bio-food-webs-trophic-cascades",
-              "number": 4.3,
-              "title": "Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters"
-            },
-            {
-              "id": "ku-eco-biomes-major-ecosystems",
-              "number": 4.4,
-              "title": "Biomes: A Tour of Earth's Major Ecosystems"
-            },
-            {
-              "id": "ku-ecol-population-growth-limits",
-              "number": 4.5,
-              "title": "Population Ecology: Growth, Limits and Cycles"
-            },
-            {
-              "id": "ku-ecol-populations-communities",
-              "number": 4.6,
-              "title": "Populations and Communities: Interactions, Niches and Disturbance"
-            },
-            {
-              "id": "ku-env-biodiversity-loss",
-              "number": 4.7,
-              "title": "Biodiversity and the Sixth Extinction"
-            },
-            {
-              "id": "ku-env-restoration-rewilding",
-              "number": 4.8,
-              "title": "Restoration and Rewilding: Putting Ecosystems Back Together"
+              "title": "CRISPR and the Mechanics of Gene Editing"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "ku-evolutionary-biology",
+      "name": "Evolutionary Biology",
+      "group": "Life Sciences",
+      "tagline": "Descent with modification",
+      "chapterCount": 3,
+      "sectionCount": 5,
+      "chapters": [
         {
-          "id": "ku-biology-cell-and-molecular-biology",
-          "number": 5,
-          "title": "Cell & Molecular Biology",
-          "shortTitle": "Cell & Molecular Biology",
-          "bookId": "ku-biology",
-          "sectionCount": 8,
-          "sections": [
-            {
-              "id": "ku-bio-dna-structure-replication",
-              "number": 5.1,
-              "title": "DNA: The Molecule of Heredity, Structure and Replication"
-            },
-            {
-              "id": "ku-bio-transcription-rna-processing",
-              "number": 5.2,
-              "title": "Transcription: Reading Genes into RNA"
-            },
-            {
-              "id": "ku-bio-translation-genetic-code",
-              "number": 5.3,
-              "title": "The Genetic Code and Translation: RNA to Protein"
-            },
-            {
-              "id": "ku-bio-mutations-dna-repair",
-              "number": 5.4,
-              "title": "Mutations and the Repair Systems That Contain Them"
-            },
-            {
-              "id": "ku-bio-gene-regulation-epigenetics",
-              "number": 5.5,
-              "title": "Gene Regulation: From Operons to Epigenetics"
-            },
-            {
-              "id": "ku-bio-cell-signaling-transduction",
-              "number": 5.6,
-              "title": "Cell Signaling: Reception, Transduction, Response"
-            },
-            {
-              "id": "ku-bio-cell-biomolecules",
-              "number": 5.7,
-              "title": "The Cell and Its Biomolecules: From Membranes to Macromolecules"
-            },
-            {
-              "id": "ku-bio-cellular-respiration-pathways",
-              "number": 5.8,
-              "title": "Cellular Respiration: Glycolysis to the Electron Transport Chain"
-            }
-          ]
-        },
-        {
-          "id": "ku-biology-botany",
-          "number": 6,
-          "title": "Botany",
-          "shortTitle": "Botany",
-          "bookId": "ku-biology",
-          "sectionCount": 4,
-          "sections": [
-            {
-              "id": "ku-bio-photosynthesis",
-              "number": 6.1,
-              "title": "Photosynthesis: Light and Dark Reactions"
-            },
-            {
-              "id": "ku-bio-plant-physiology-transport",
-              "number": 6.2,
-              "title": "Plant Physiology: How Plants Actually Work"
-            },
-            {
-              "id": "ku-bio-plant-reproduction-flowers-seeds",
-              "number": 6.3,
-              "title": "Plant Reproduction: Flowers, Pollination and Seeds"
-            },
-            {
-              "id": "ku-bio-flowering-plant-body",
-              "number": 6.4,
-              "title": "The Flowering Plant Body: Morphology and Anatomy"
-            }
-          ]
-        },
-        {
-          "id": "ku-biology-evolution-and-diversity",
-          "number": 7,
-          "title": "Evolution & Diversity",
-          "shortTitle": "Evolution & Diversity",
-          "bookId": "ku-biology",
-          "sectionCount": 5,
+          "id": "ku-evolutionary-biology-evolution-and-speciation",
+          "number": 1,
+          "title": "Evolution & Speciation",
+          "shortTitle": "Evolution & Speciation",
+          "bookId": "ku-evolutionary-biology",
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-bio-evolution-natural-selection",
-              "number": 7.1,
+              "number": 1.1,
               "title": "Evolution by Natural Selection"
             },
             {
               "id": "ku-bio-speciation-barriers",
-              "number": 7.2,
+              "number": 1.2,
               "title": "How New Species Are Born"
-            },
-            {
-              "id": "ku-bio-human-evolution",
-              "number": 7.3,
-              "title": "From Lucy to Us: The Story of Human Evolution"
-            },
-            {
-              "id": "ku-bio-classification-five-kingdoms",
-              "number": 7.4,
-              "title": "Biological Classification: The Five Kingdoms and Beyond"
-            },
-            {
-              "id": "ku-bio-plant-kingdom-groups",
-              "number": 7.5,
-              "title": "The Plant Kingdom: Algae to Angiosperms"
             }
           ]
         },
         {
-          "id": "ku-biology-microbiology-and-immunology",
-          "number": 8,
-          "title": "Microbiology & Immunology",
-          "shortTitle": "Microbiology & Immunology",
-          "bookId": "ku-biology",
-          "sectionCount": 5,
+          "id": "ku-evolutionary-biology-human-evolution",
+          "number": 2,
+          "title": "Human Evolution",
+          "shortTitle": "Human Evolution",
+          "bookId": "ku-evolutionary-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-human-evolution",
+              "number": 2.1,
+              "title": "From Lucy to Us: The Story of Human Evolution"
+            }
+          ]
+        },
+        {
+          "id": "ku-evolutionary-biology-diversity-and-systematics",
+          "number": 3,
+          "title": "Diversity & Systematics",
+          "shortTitle": "Diversity & Systematics",
+          "bookId": "ku-evolutionary-biology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-classification-five-kingdoms",
+              "number": 3.1,
+              "title": "Biological Classification: The Five Kingdoms and Beyond"
+            },
+            {
+              "id": "ku-bio-plant-kingdom-groups",
+              "number": 3.2,
+              "title": "The Plant Kingdom: Algae to Angiosperms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-botany",
+      "name": "Botany",
+      "group": "Life Sciences",
+      "tagline": "The lives of plants",
+      "chapterCount": 3,
+      "sectionCount": 4,
+      "chapters": [
+        {
+          "id": "ku-botany-plant-physiology",
+          "number": 1,
+          "title": "Plant Physiology",
+          "shortTitle": "Plant Physiology",
+          "bookId": "ku-botany",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-photosynthesis",
+              "number": 1.1,
+              "title": "Photosynthesis: Light and Dark Reactions"
+            },
+            {
+              "id": "ku-bio-plant-physiology-transport",
+              "number": 1.2,
+              "title": "Plant Physiology: How Plants Actually Work"
+            }
+          ]
+        },
+        {
+          "id": "ku-botany-reproduction-and-life-cycles",
+          "number": 2,
+          "title": "Reproduction & Life Cycles",
+          "shortTitle": "Reproduction & Life Cycles",
+          "bookId": "ku-botany",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-plant-reproduction-flowers-seeds",
+              "number": 2.1,
+              "title": "Plant Reproduction: Flowers, Pollination and Seeds"
+            }
+          ]
+        },
+        {
+          "id": "ku-botany-the-plant-body",
+          "number": 3,
+          "title": "The Plant Body",
+          "shortTitle": "The Plant Body",
+          "bookId": "ku-botany",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-flowering-plant-body",
+              "number": 3.1,
+              "title": "The Flowering Plant Body: Morphology and Anatomy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-zoology",
+      "name": "Zoology",
+      "group": "Life Sciences",
+      "tagline": "The animal kingdom, up close",
+      "chapterCount": 2,
+      "sectionCount": 4,
+      "chapters": [
+        {
+          "id": "ku-zoology-animal-diversity-and-form",
+          "number": 1,
+          "title": "Animal Diversity & Form",
+          "shortTitle": "Animal Diversity & Form",
+          "bookId": "ku-zoology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-animal-tissue-types",
+              "number": 1.1,
+              "title": "Animal Tissue Types: Four Families, One Body Plan"
+            },
+            {
+              "id": "ku-bio-zoology-body-plans",
+              "number": 1.2,
+              "title": "The Animal Kingdom: A Tour of Body Plans and Phyla"
+            }
+          ]
+        },
+        {
+          "id": "ku-zoology-senses-and-behavior",
+          "number": 2,
+          "title": "Senses & Behavior",
+          "shortTitle": "Senses & Behavior",
+          "bookId": "ku-zoology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-animal-behavior-ethology",
+              "number": 2.1,
+              "title": "Animal Behavior: Instinct, Learning, Signals"
+            },
+            {
+              "id": "ku-bio-animal-senses-superpowers",
+              "number": 2.2,
+              "title": "How Animals Sense the World"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-ecology-conservation",
+      "name": "Ecology & Conservation",
+      "group": "Life Sciences",
+      "tagline": "Who lives where, and why",
+      "chapterCount": 4,
+      "sectionCount": 8,
+      "chapters": [
+        {
+          "id": "ku-ecology-conservation-organisms-and-the-environment",
+          "number": 1,
+          "title": "Organisms & the Environment",
+          "shortTitle": "Organisms & the Environment",
+          "bookId": "ku-ecology-conservation",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-adaptations-habitat",
+              "number": 1.1,
+              "title": "Life at the Limits: How Organisms Answer Habitat and Abiotic Stress"
+            }
+          ]
+        },
+        {
+          "id": "ku-ecology-conservation-ecosystems-energy-and-biomes",
+          "number": 2,
+          "title": "Ecosystems, Energy & Biomes",
+          "shortTitle": "Ecosystems, Energy & Biomes",
+          "bookId": "ku-ecology-conservation",
+          "sectionCount": 4,
+          "sections": [
+            {
+              "id": "ku-bio-ecosystems-energy-flow",
+              "number": 2.1,
+              "title": "Ecosystems and the Flow of Energy"
+            },
+            {
+              "id": "ku-bio-food-webs-trophic-cascades",
+              "number": 2.2,
+              "title": "Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters"
+            },
+            {
+              "id": "ku-eco-biomes-major-ecosystems",
+              "number": 2.3,
+              "title": "Biomes: A Tour of Earth's Major Ecosystems"
+            },
+            {
+              "id": "ku-ecol-population-growth-limits",
+              "number": 2.4,
+              "title": "Population Ecology: Growth, Limits and Cycles"
+            }
+          ]
+        },
+        {
+          "id": "ku-ecology-conservation-populations-and-communities",
+          "number": 3,
+          "title": "Populations & Communities",
+          "shortTitle": "Populations & Communities",
+          "bookId": "ku-ecology-conservation",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-ecol-populations-communities",
+              "number": 3.1,
+              "title": "Populations and Communities: Interactions, Niches and Disturbance"
+            }
+          ]
+        },
+        {
+          "id": "ku-ecology-conservation-conservation-and-restoration",
+          "number": 4,
+          "title": "Conservation & Restoration",
+          "shortTitle": "Conservation & Restoration",
+          "bookId": "ku-ecology-conservation",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-env-biodiversity-loss",
+              "number": 4.1,
+              "title": "Biodiversity and the Sixth Extinction"
+            },
+            {
+              "id": "ku-env-restoration-rewilding",
+              "number": 4.2,
+              "title": "Restoration and Rewilding: Putting Ecosystems Back Together"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-microbiology-immunology",
+      "name": "Microbiology & Immunology",
+      "group": "Life Sciences",
+      "tagline": "The invisible majority",
+      "chapterCount": 2,
+      "sectionCount": 5,
+      "chapters": [
+        {
+          "id": "ku-microbiology-immunology-immunology",
+          "number": 1,
+          "title": "Immunology",
+          "shortTitle": "Immunology",
+          "bookId": "ku-microbiology-immunology",
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-bio-immune-system",
-              "number": 8.1,
+              "number": 1.1,
               "title": "The Immune System: Innate to Adaptive Defense"
             },
             {
-              "id": "ku-bio-microbe-bacteria-viruses-fungi",
-              "number": 8.2,
-              "title": "Bacteria, Viruses, Fungi: A Field Guide to the Microbial World"
-            },
-            {
-              "id": "ku-bio-microbe-antibiotic-resistance",
-              "number": 8.3,
-              "title": "Antibiotics and the Rise of Resistance"
-            },
-            {
-              "id": "ku-bio-microbe-microbiome",
-              "number": 8.4,
-              "title": "The Microbiome: Your Trillion Tenants"
-            },
-            {
               "id": "ku-imm-autoimmunity-allergy",
-              "number": 8.5,
+              "number": 1.2,
               "title": "Autoimmunity and Allergy: When the Defense Misfires"
             }
           ]
         },
         {
-          "id": "ku-biology-biochemistry",
-          "number": 9,
-          "title": "Biochemistry",
-          "shortTitle": "Biochemistry",
-          "bookId": "ku-biology",
-          "sectionCount": 5,
-          "sections": [
-            {
-              "id": "ku-bio-biochemistry-metabolism",
-              "number": 9.1,
-              "title": "Biochemistry: The Cell's Energy Economy"
-            },
-            {
-              "id": "ku-bioc-protein-structure-folding",
-              "number": 9.2,
-              "title": "Protein Structure and Folding: Shape Is Function"
-            },
-            {
-              "id": "ku-bioc-enzymes-kinetics-regulation",
-              "number": 9.3,
-              "title": "Enzymes: Catalysis, Kinetics and Regulation"
-            },
-            {
-              "id": "ku-bioc-lipid-amino-acid-metabolism",
-              "number": 9.4,
-              "title": "Beyond Glucose: Fat and Amino-Acid Metabolism"
-            },
-            {
-              "id": "ku-bioc-carbohydrates-lipids",
-              "number": 9.5,
-              "title": "Carbohydrates and Lipids: Fuel, Structure and Signalling"
-            }
-          ]
-        },
-        {
-          "id": "ku-biology-developmental-and-marine-biology",
-          "number": 10,
-          "title": "Developmental & Marine Biology",
-          "shortTitle": "Developmental & Marine Biology",
-          "bookId": "ku-biology",
+          "id": "ku-microbiology-immunology-the-microbial-world",
+          "number": 2,
+          "title": "The Microbial World",
+          "shortTitle": "The Microbial World",
+          "bookId": "ku-microbiology-immunology",
           "sectionCount": 3,
           "sections": [
             {
-              "id": "ku-bio-developmental-biology",
-              "number": 10.1,
-              "title": "Developmental Biology: How a Body Builds Itself"
+              "id": "ku-bio-microbe-bacteria-viruses-fungi",
+              "number": 2.1,
+              "title": "Bacteria, Viruses, Fungi: A Field Guide to the Microbial World"
             },
             {
-              "id": "ku-bio-marine-biology-oceans",
-              "number": 10.2,
-              "title": "Marine Biology: Life in the Ocean"
+              "id": "ku-bio-microbe-antibiotic-resistance",
+              "number": 2.2,
+              "title": "Antibiotics and the Rise of Resistance"
             },
             {
-              "id": "ku-bio-fisheries-aquaculture",
-              "number": 10.3,
-              "title": "Fisheries, Aquaculture and the Future of Ocean Food"
+              "id": "ku-bio-microbe-microbiome",
+              "number": 2.3,
+              "title": "The Microbiome: Your Trillion Tenants"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-human-anatomy-physiology",
+      "name": "Human Anatomy & Physiology",
+      "group": "Life Sciences",
+      "tagline": "The body, system by system",
+      "chapterCount": 3,
+      "sectionCount": 11,
+      "chapters": [
+        {
+          "id": "ku-human-anatomy-physiology-when-systems-fail",
+          "number": 1,
+          "title": "When Systems Fail",
+          "shortTitle": "When Systems Fail",
+          "bookId": "ku-human-anatomy-physiology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-sensory-organ-technologies",
+              "number": 1.1,
+              "title": "When Organs Fail: Hearing, Vision and Kidney Technologies"
             }
           ]
         },
         {
-          "id": "ku-biology-bioinformatics-and-genomics",
-          "number": 11,
-          "title": "Bioinformatics & Genomics",
-          "shortTitle": "Bioinformatics & Genomics",
-          "bookId": "ku-biology",
+          "id": "ku-human-anatomy-physiology-body-systems",
+          "number": 2,
+          "title": "Body Systems",
+          "shortTitle": "Body Systems",
+          "bookId": "ku-human-anatomy-physiology",
+          "sectionCount": 9,
+          "sections": [
+            {
+              "id": "ku-bio-anatomy-heart-circulation",
+              "number": 2.1,
+              "title": "The Heart and Circulation: One Pump, Two Circuits"
+            },
+            {
+              "id": "ku-bio-anatomy-respiration",
+              "number": 2.2,
+              "title": "Breathing and Gas Exchange: From Air to Cell"
+            },
+            {
+              "id": "ku-bio-anatomy-digestion",
+              "number": 2.3,
+              "title": "The Digestive System: From Meal to Molecule"
+            },
+            {
+              "id": "ku-bio-anatomy-kidneys-endocrine",
+              "number": 2.4,
+              "title": "Kidneys, Hormones and the Body's Balance"
+            },
+            {
+              "id": "ku-bio-anatomy-musculoskeletal",
+              "number": 2.5,
+              "title": "Muscles, Bones and the Machinery of Movement"
+            },
+            {
+              "id": "ku-anat-endocrine-system-hormones",
+              "number": 2.6,
+              "title": "The Endocrine System: Hormones as the Body's Slow Messengers"
+            },
+            {
+              "id": "ku-bio-anatomy-nervous-system-command",
+              "number": 2.7,
+              "title": "The Nervous System: The Body's Command Network"
+            },
+            {
+              "id": "ku-bio-anatomy-senses-perception",
+              "number": 2.8,
+              "title": "The Senses: How the Body Reads the World"
+            },
+            {
+              "id": "ku-bio-anatomy-reproduction-development",
+              "number": 2.9,
+              "title": "Reproduction and the Making of a Human"
+            }
+          ]
+        },
+        {
+          "id": "ku-human-anatomy-physiology-reproduction-and-development",
+          "number": 3,
+          "title": "Reproduction & Development",
+          "shortTitle": "Reproduction & Development",
+          "bookId": "ku-human-anatomy-physiology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-human-reproduction-system",
+              "number": 3.1,
+              "title": "Human Reproduction: Systems, Gametes and the Menstrual Cycle"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-developmental-biology",
+      "name": "Developmental Biology",
+      "group": "Life Sciences",
+      "tagline": "From one cell to a body",
+      "chapterCount": 2,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-developmental-biology-mechanisms-and-model-organisms",
+          "number": 1,
+          "title": "Mechanisms & Model Organisms",
+          "shortTitle": "Mechanisms & Model Organisms",
+          "bookId": "ku-developmental-biology",
           "sectionCount": 2,
           "sections": [
             {
-              "id": "ku-emer-bioinformatics-reading-genomes",
-              "number": 11.1,
-              "title": "Bioinformatics: Reading Genomes with Code"
+              "id": "ku-bio-dev-model-organisms",
+              "number": 1.1,
+              "title": "Model Organisms: Flies, Worms, Fish and the Standard Laboratory Bodies"
             },
             {
-              "id": "ku-emer-phylogenetics-tree-of-life",
-              "number": 11.2,
-              "title": "Phylogenetics: Reconstructing the Tree of Life"
+              "id": "ku-bio-dev-morphogenesis",
+              "number": 1.2,
+              "title": "Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo"
             }
           ]
         },
         {
-          "id": "ku-biology-synthetic-biology",
-          "number": 12,
-          "title": "Synthetic Biology",
-          "shortTitle": "Synthetic Biology",
-          "bookId": "ku-biology",
+          "id": "ku-developmental-biology-building-the-body",
+          "number": 2,
+          "title": "Building the Body",
+          "shortTitle": "Building the Body",
+          "bookId": "ku-developmental-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-developmental-biology",
+              "number": 2.1,
+              "title": "Developmental Biology: How a Body Builds Itself"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-marine-biology",
+      "name": "Marine Biology",
+      "group": "Life Sciences",
+      "tagline": "Life in the blue",
+      "chapterCount": 3,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-marine-biology-plankton-larvae-and-recruitment",
+          "number": 1,
+          "title": "Plankton, Larvae & Recruitment",
+          "shortTitle": "Plankton, Larvae & Recruitment",
+          "bookId": "ku-marine-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-marine-plankton-larvae",
+              "number": 1.1,
+              "title": "Plankton and Larvae: The Drifting Majority of Ocean Life"
+            }
+          ]
+        },
+        {
+          "id": "ku-marine-biology-the-blue-realm",
+          "number": 2,
+          "title": "The Blue Realm",
+          "shortTitle": "The Blue Realm",
+          "bookId": "ku-marine-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-marine-biology-oceans",
+              "number": 2.1,
+              "title": "Marine Biology: Life in the Ocean"
+            }
+          ]
+        },
+        {
+          "id": "ku-marine-biology-fisheries-and-ocean-conservation",
+          "number": 3,
+          "title": "Fisheries & Ocean Conservation",
+          "shortTitle": "Fisheries & Ocean Conservation",
+          "bookId": "ku-marine-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-fisheries-aquaculture",
+              "number": 3.1,
+              "title": "Fisheries, Aquaculture and the Future of Ocean Food"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-bioinformatics-genomics",
+      "name": "Bioinformatics & Genomics",
+      "group": "Life Sciences",
+      "tagline": "Biology as data",
+      "chapterCount": 3,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-bioinformatics-genomics-databases-and-structure-prediction",
+          "number": 1,
+          "title": "Databases & Structure Prediction",
+          "shortTitle": "Databases & Structure Prediction",
+          "bookId": "ku-bioinformatics-genomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-bioinformatics-databases-structures",
+              "number": 1.1,
+              "title": "Bioinformatics Databases and Protein Structure Prediction: From FASTA to AlphaFold"
+            }
+          ]
+        },
+        {
+          "id": "ku-bioinformatics-genomics-reading-genomes-with-code",
+          "number": 2,
+          "title": "Reading Genomes with Code",
+          "shortTitle": "Reading Genomes with Code",
+          "bookId": "ku-bioinformatics-genomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-emer-bioinformatics-reading-genomes",
+              "number": 2.1,
+              "title": "Bioinformatics: Reading Genomes with Code"
+            }
+          ]
+        },
+        {
+          "id": "ku-bioinformatics-genomics-phylogenetics",
+          "number": 3,
+          "title": "Phylogenetics",
+          "shortTitle": "Phylogenetics",
+          "bookId": "ku-bioinformatics-genomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-emer-phylogenetics-tree-of-life",
+              "number": 3.1,
+              "title": "Phylogenetics: Reconstructing the Tree of Life"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-synthetic-biology",
+      "name": "Synthetic Biology",
+      "group": "Life Sciences",
+      "tagline": "Life, engineered",
+      "chapterCount": 2,
+      "sectionCount": 3,
+      "chapters": [
+        {
+          "id": "ku-synthetic-biology-applications-and-responsible-innovation",
+          "number": 1,
+          "title": "Applications & Responsible Innovation",
+          "shortTitle": "Applications & Responsible Innovation",
+          "bookId": "ku-synthetic-biology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-synbio-dbtl-practice",
+              "number": 1.1,
+              "title": "Synthetic Biology in Practice: The Design–Build–Test–Learn Cycle"
+            },
+            {
+              "id": "ku-bio-synbio-biosafety-ethics",
+              "number": 1.2,
+              "title": "Biosafety, Biosecurity and the Ethics of Engineering Life"
+            }
+          ]
+        },
+        {
+          "id": "ku-synthetic-biology-programming-living-cells",
+          "number": 2,
+          "title": "Programming Living Cells",
+          "shortTitle": "Programming Living Cells",
+          "bookId": "ku-synthetic-biology",
           "sectionCount": 1,
           "sections": [
             {
               "id": "ku-emer-synthetic-biology",
-              "number": 12.1,
+              "number": 2.1,
               "title": "Synthetic Biology: Programming Living Cells"
             }
           ]

@@ -11,12 +11,22 @@ import { x14HeredityBiotechTopics } from './x14-heredity-biotech'
 import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
 import { x35NswHscPassTopics } from './x35-nsw-hsc-pass'
+import { x47BioSplitPassTopics } from './x47-bio-split-pass'
 
 export const lifeSciences: KnowledgeDomainFile = {
   domain: 'Life Sciences',
   blurb:
     'From genes, neurons, and photosynthesis to anatomy, microbes, evolution, and the animal kingdom — how living systems are built, run, and related.',
   topics: [
+    // X47 biology-split pass (2026-10-25): the user split the one-volume
+    // Biology book into 13 discipline books; this pass supplies the new
+    // lessons the thin books need. Life Sciences slice: the biochemist's
+    // toolbox (chromatography/electrophoresis/spectrophotometry — no
+    // existing lesson owned laboratory methods), model organisms +
+    // morphogenesis (carved against bio-developmental-biology, which owns
+    // the embryo-stage narrative), and plankton/larval ecology (carved
+    // against the ocean-zones and fisheries lessons).
+    ...x47BioSplitPassTopics.filter((t) => t.domain === 'Life Sciences'),
     // X35 NSW-HSC pass (2026-10-25): population-scale inheritance (allele
     // frequencies, population modelling, polyallelic/polygenic patterns)
     // and the disorder-technology layer (hearing/vision/kidney devices) —

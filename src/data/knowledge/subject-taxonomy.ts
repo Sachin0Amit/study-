@@ -14,11 +14,21 @@
 /*  And each separate book have multiple chapters, multiple lessons    */
 /*  inside it. Do this for all of the fields and subject."             */
 /*                                                                     */
+/*  USER RULE 3 (2026-10-25, verbatim intent): "do these things for    */
+/*  biology — the chapter can become separate books, it has such       */
+/*  chapters." Biology follows Arts & Culture: each discipline-grade   */
+/*  chapter (Cell & Molecular Biology, Biochemistry, Genetics,         */
+/*  Evolution, Botany, Zoology, Ecology, Microbiology & Immunology,    */
+/*  Human Anatomy & Physiology, Developmental Biology, Marine          */
+/*  Biology, Bioinformatics & Genomics, Synthetic Biology) is its own  */
+/*  book in the Life Sciences shelf.                                   */
+/*                                                                     */
 /*  So the granularity rule is: each DISTINCT ACADEMIC DISCIPLINE is   */
 /*  its own book. A single discipline with sub-areas (Mathematics,     */
-/*  Biology, Law, Economics, Civil Engineering…) stays ONE book with   */
+/*  Law, Economics, Civil Engineering…) stays ONE book with            */
 /*  many chapters — but a bundle of different disciplines (the old     */
-/*  Arts & Culture and Medicine & Health mega-books) must be SPLIT     */
+/*  Arts & Culture and Medicine & Health mega-books, and the old       */
+/*  one-volume Biology) must be SPLIT                                  */
 /*  into one book per discipline. A split is only made when content    */
 /*  supports it: every book needs ≥2 chapters and ≥3 lessons.          */
 /*                                                                     */
@@ -330,33 +340,199 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     ],
   },
   {
-    key: 'biology',
-    name: 'Biology',
-    group: 'Natural Sciences',
+    /* USER RULE 3 (2026-10-25, verbatim intent): "do these things for     */
+    /* biology — the chapters can become separate books, it has such      */
+    /* chapters." Biology is therefore split exactly like Arts & Culture: */
+    /* every discipline-grade chapter becomes its own book.               */
+    key: 'cell-molecular-biology',
+    name: 'Cell & Molecular Biology',
+    group: 'Life Sciences',
+    icon: 'microscope',
+    accent: '#14b8a6',
+    tagline: 'The unit of life, read to the letter',
+    blurb: 'Cells, membranes, signaling and the molecular biology of the gene — DNA, RNA, protein and their regulation.',
+    ownFields: ['Cell & Molecular Biology'],
+    chapters: [
+      { name: 'The Cell: Structure & Signaling', branches: ['Cell Biology', 'Cell Signaling'] },
+      { name: 'Molecular Biology of the Gene', branches: ['Molecular Genetics', 'Gene Regulation'] },
+      { name: 'Bioenergetics', branches: ['Bioenergetics'] },
+    ],
+  },
+  {
+    key: 'biochemistry',
+    name: 'Biochemistry',
+    group: 'Life Sciences',
+    icon: 'flask-conical',
+    accent: '#f59e0b',
+    tagline: 'The chemistry that runs cells',
+    blurb: 'The molecules of life and the reactions that power them — proteins, enzymes, metabolism and the laboratory methods that reveal them.',
+    ownFields: ['Biochemistry'],
+    chapters: [
+      { name: 'Molecules of Life', branches: ['Molecules of Life'] },
+      { name: 'Laboratory Methods', branches: ['Laboratory Methods'] },
+    ],
+  },
+  {
+    key: 'genetics-heredity',
+    name: 'Genetics & Heredity',
+    group: 'Life Sciences',
     icon: 'dna',
     accent: '#34d399',
-    tagline: 'The living world, end to end',
-    blurb: 'One complete biology volume — cells, genetics, evolution, botany, zoology, ecology, microbiology, biochemistry and human anatomy & physiology.',
-    ownFields: [
-      'Animal Behavior', 'Animal Biology', 'Anatomy & Physiology', 'Biochemistry', 'Bioinformatics', 'Biology',
-      'Botany', 'Cell & Molecular Biology', 'Conservation Biology', 'Developmental Biology',
-      'Diversity & Classification', 'Ecology', 'Evolutionary Biology', 'Genetics & Heredity',
-      'Human Physiology', 'Immunology', 'Marine Biology', 'Microbiology & Disease',
-      'Synthetic Biology', 'Zoology',
-    ],
+    tagline: 'How traits travel and vary',
+    blurb: 'From Mendel\'s laws and chromosomes to biotechnology, genomics and the genetics of populations.',
+    ownFields: ['Genetics & Heredity'],
     chapters: [
-      { name: 'Cell & Molecular Biology', fields: ['Cell & Molecular Biology'] },
-      { name: 'Biochemistry', fields: ['Biochemistry'] },
-      { name: 'Genetics & Heredity', fields: ['Genetics & Heredity'] },
-      { name: 'Evolution & Diversity', fields: ['Evolutionary Biology', 'Diversity & Classification'] },
-      { name: 'Botany', fields: ['Botany'] },
-      { name: 'Zoology & Animal Science', fields: ['Zoology', 'Animal Biology', 'Animal Behavior'] },
-      { name: 'Ecology & Conservation', fields: ['Ecology', 'Conservation Biology'], branches: ['Ecology — Organisms and Environment'] },
-      { name: 'Microbiology & Immunology', fields: ['Microbiology & Disease', 'Immunology'] },
-      { name: 'Human Anatomy & Physiology', fields: ['Anatomy & Physiology', 'Human Physiology'] },
-      { name: 'Developmental & Marine Biology', fields: ['Developmental Biology', 'Marine Biology'] },
-      { name: 'Bioinformatics & Genomics', fields: ['Bioinformatics'] },
-      { name: 'Synthetic Biology', fields: ['Synthetic Biology'] },
+      { name: 'Classical & Transmission Genetics', branches: ['Classical Genetics', 'Transmission Genetics'] },
+      { name: 'Molecular Genetics & Genomics', branches: ['Molecular Genetics', 'Genomics'] },
+      { name: 'Genes in Populations', branches: ['Population Genetics', 'Genes in Populations'] },
+      { name: 'Biotechnology', branches: ['Biotechnology'] },
+    ],
+  },
+  {
+    key: 'evolutionary-biology',
+    name: 'Evolutionary Biology',
+    group: 'Life Sciences',
+    icon: 'git-branch',
+    accent: '#f97316',
+    tagline: 'Descent with modification',
+    blurb: 'Natural selection, speciation, human evolution and the classification of life\'s diversity.',
+    ownFields: ['Evolutionary Biology', 'Diversity & Classification'],
+    chapters: [
+      { name: 'Evolution & Speciation', branches: ['Evolution', 'Speciation'] },
+      { name: 'Human Evolution', branches: ['Human Evolution'] },
+      { name: 'Diversity & Systematics', branches: ['Systematics', 'Botany'] },
+    ],
+  },
+  {
+    key: 'botany',
+    name: 'Botany',
+    group: 'Life Sciences',
+    icon: 'sprout',
+    accent: '#22c55e',
+    tagline: 'The lives of plants',
+    blurb: 'Plant form, photosynthesis, transport, reproduction and the diversity of the plant body.',
+    ownFields: ['Botany'],
+    chapters: [
+      { name: 'The Plant Body', branches: ['Plant Morphology & Anatomy'] },
+      { name: 'Plant Physiology', branches: ['Plant Biochemistry', 'Beyond Photosynthesis'] },
+      { name: 'Reproduction & Life Cycles', branches: ['Plant Reproduction'] },
+    ],
+  },
+  {
+    key: 'zoology',
+    name: 'Zoology',
+    group: 'Life Sciences',
+    icon: 'paw-print',
+    accent: '#b45309',
+    tagline: 'The animal kingdom, up close',
+    blurb: 'Animal diversity, tissues, body plans and how animals sense and behave in the world.',
+    ownFields: ['Zoology', 'Animal Biology', 'Animal Behavior'],
+    chapters: [
+      { name: 'Animal Diversity & Form', branches: ['Animal Diversity', 'Histology'] },
+      { name: 'Senses & Behavior', branches: ['Sensory Worlds', 'Minds in the Wild'] },
+    ],
+  },
+  {
+    key: 'ecology-conservation',
+    name: 'Ecology & Conservation',
+    group: 'Life Sciences',
+    icon: 'leaf',
+    accent: '#65a30d',
+    tagline: 'Who lives where, and why',
+    blurb: 'Organisms and environments, populations, communities, ecosystems, energy flow, biodiversity and restoration.',
+    ownFields: ['Ecology', 'Conservation Biology', 'Biology'],
+    chapters: [
+      { name: 'Organisms & the Environment', fields: ['Biology'], branches: ['Ecology — Organisms and Environment'] },
+      { name: 'Populations & Communities', branches: ['Community Ecology'] },
+      { name: 'Ecosystems, Energy & Biomes', branches: ['Ecosystem Science'] },
+      { name: 'Conservation & Restoration', branches: ['Ecology', 'Restoration'] },
+    ],
+  },
+  {
+    key: 'microbiology-immunology',
+    name: 'Microbiology & Immunology',
+    group: 'Life Sciences',
+    icon: 'bug',
+    accent: '#06b6d4',
+    tagline: 'The invisible majority',
+    blurb: 'Bacteria, viruses, fungi, the microbiome, antibiotics and resistance — and the immune system that keeps them in check.',
+    ownFields: ['Microbiology & Disease', 'Immunology'],
+    chapters: [
+      { name: 'The Microbial World', branches: ['Microbes and Infection'] },
+      { name: 'Immunology', branches: ['Biomedical Science'] },
+    ],
+  },
+  {
+    key: 'human-anatomy-physiology',
+    name: 'Human Anatomy & Physiology',
+    group: 'Life Sciences',
+    icon: 'heart-pulse',
+    accent: '#ef4444',
+    tagline: 'The body, system by system',
+    blurb: 'The eleven organ systems of the human body — circulation, respiration, digestion, nerves, hormones, senses, movement and reproduction.',
+    ownFields: ['Anatomy & Physiology', 'Human Physiology'],
+    chapters: [
+      { name: 'Body Systems', branches: ['Human Body Systems'] },
+      { name: 'Reproduction & Development', branches: ['Reproductive Biology'] },
+      { name: 'When Systems Fail', branches: ['Disorder Technologies'] },
+    ],
+  },
+  {
+    key: 'developmental-biology',
+    name: 'Developmental Biology',
+    group: 'Life Sciences',
+    icon: 'egg',
+    accent: '#ec4899',
+    tagline: 'From one cell to a body',
+    blurb: 'How a fertilized egg builds an organism — the model organisms, genes and cell behaviors that sculpt the embryo.',
+    ownFields: ['Developmental Biology'],
+    chapters: [
+      { name: 'Building the Body', branches: ['Growth & Form'] },
+      { name: 'Mechanisms & Model Organisms', branches: ['Developmental Mechanisms'] },
+    ],
+  },
+  {
+    key: 'marine-biology',
+    name: 'Marine Biology',
+    group: 'Life Sciences',
+    icon: 'fish',
+    accent: '#0ea5e9',
+    tagline: 'Life in the blue',
+    blurb: 'Ocean zones and habitats, plankton and larvae, coral reefs, deep sea, fisheries and aquaculture.',
+    ownFields: ['Marine Biology'],
+    chapters: [
+      { name: 'The Blue Realm', branches: ['The Blue Realm'] },
+      { name: 'Plankton, Larvae & Recruitment', branches: ['Plankton & Larval Ecology'] },
+      { name: 'Fisheries & Ocean Conservation', branches: ['Fisheries & Conservation'] },
+    ],
+  },
+  {
+    key: 'bioinformatics-genomics',
+    name: 'Bioinformatics & Genomics',
+    group: 'Life Sciences',
+    icon: 'binary',
+    accent: '#8b5cf6',
+    tagline: 'Biology as data',
+    blurb: 'Algorithms, databases and structures for reading genomes — alignment, assembly, phylogenetics and protein-structure prediction.',
+    ownFields: ['Bioinformatics'],
+    chapters: [
+      { name: 'Reading Genomes with Code', branches: ['Computational Biology'] },
+      { name: 'Phylogenetics', branches: ['Phylogenetics'] },
+      { name: 'Databases & Structure Prediction', branches: ['Data & Structures'] },
+    ],
+  },
+  {
+    key: 'synthetic-biology',
+    name: 'Synthetic Biology',
+    group: 'Life Sciences',
+    icon: 'component',
+    accent: '#d946ef',
+    tagline: 'Life, engineered',
+    blurb: 'Designing and building biological systems — parts, circuits, chassis, the design-build-test-learn cycle, applications, biosafety and ethics.',
+    ownFields: ['Synthetic Biology'],
+    chapters: [
+      { name: 'Programming Living Cells', branches: ['Bioengineering'] },
+      { name: 'Applications & Responsible Innovation', branches: ['Applications & Ethics'] },
     ],
   },
   {

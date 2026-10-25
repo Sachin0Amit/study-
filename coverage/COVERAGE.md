@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 92
-- **Books (master volumes):** 92
-- **Chapters:** 777
-- **Sections (lessons):** 4559
+- **Subjects:** 104
+- **Books (master volumes):** 104
+- **Chapters:** 801
+- **Sections (lessons):** 4566
 
 ## Foundations — 7 subjects
 
@@ -797,24 +797,110 @@
 - **Ch 5. Mechatronic System Design & Modeling** `mech-modeling` — 6 sections: The Mechatronic Design Process; System Modeling Across Domains; Time & Frequency Domain Response; Controllers for Mechatronic Plants; Simulation-Driven Design & Digital Twins; Case Studies
 - **Ch 6. Mobile & Autonomous Robotics** `mech-mobile-robotics` — 6 sections: Locomotion Concepts; Localization & Mapping Fundamentals; Path Planning; Navigation Stacks & Obstacle Avoidance; Robot Programming Frameworks; Ethics & Safety of Autonomous Systems
 
-## Natural Sciences — 6 subjects
+## Life Sciences — 13 subjects
 
-### Biology (`ku-biology`)
+### Cell & Molecular Biology (`ku-cell-molecular-biology`)
 
-*The living world, end to end* — 12 chapters · 65 sections
+*The unit of life, read to the letter* — 3 chapters · 8 sections
 
-- **Ch 1. Genetics & Heredity** `ku-biology-genetics-and-heredity` — 9 sections: Inheritance in Populations: Allele Frequencies and Population Patterns; Meiosis, Linkage and the Chromosomal Theory of Inheritance; Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits; Recombinant DNA: The Tools and Techniques of Genetic Engineering; Biotechnology in Practice: Medicine, Farms, and Industry; Genomics and Bioinformatics: Reading Whole Genomes; CRISPR and the Mechanics of Gene Editing; Mendel's Laws: How Traits Travel Between Generations; Population Genetics: Genes Drifting Through Time
-- **Ch 2. Human Anatomy & Physiology** `ku-biology-human-anatomy-and-physiology` — 11 sections: When Organs Fail: Hearing, Vision and Kidney Technologies; Reproduction and the Making of a Human; Human Reproduction: Systems, Gametes and the Menstrual Cycle; The Heart and Circulation: One Pump, Two Circuits; Breathing and Gas Exchange: From Air to Cell; The Digestive System: From Meal to Molecule; Kidneys, Hormones and the Body's Balance; Muscles, Bones and the Machinery of Movement; The Endocrine System: Hormones as the Body's Slow Messengers; The Nervous System: The Body's Command Network; The Senses: How the Body Reads the World
-- **Ch 3. Zoology & Animal Science** `ku-biology-zoology-and-animal-science` — 4 sections: Animal Tissue Types: Four Families, One Body Plan; The Animal Kingdom: A Tour of Body Plans and Phyla; Animal Behavior: Instinct, Learning, Signals; How Animals Sense the World
-- **Ch 4. Ecology & Conservation** `ku-biology-ecology-and-conservation` — 8 sections: Life at the Limits: How Organisms Answer Habitat and Abiotic Stress; Ecosystems and the Flow of Energy; Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters; Biomes: A Tour of Earth's Major Ecosystems; Population Ecology: Growth, Limits and Cycles; Populations and Communities: Interactions, Niches and Disturbance; Biodiversity and the Sixth Extinction; Restoration and Rewilding: Putting Ecosystems Back Together
-- **Ch 5. Cell & Molecular Biology** `ku-biology-cell-and-molecular-biology` — 8 sections: DNA: The Molecule of Heredity, Structure and Replication; Transcription: Reading Genes into RNA; The Genetic Code and Translation: RNA to Protein; Mutations and the Repair Systems That Contain Them; Gene Regulation: From Operons to Epigenetics; Cell Signaling: Reception, Transduction, Response; The Cell and Its Biomolecules: From Membranes to Macromolecules; Cellular Respiration: Glycolysis to the Electron Transport Chain
-- **Ch 6. Botany** `ku-biology-botany` — 4 sections: Photosynthesis: Light and Dark Reactions; Plant Physiology: How Plants Actually Work; Plant Reproduction: Flowers, Pollination and Seeds; The Flowering Plant Body: Morphology and Anatomy
-- **Ch 7. Evolution & Diversity** `ku-biology-evolution-and-diversity` — 5 sections: Evolution by Natural Selection; How New Species Are Born; From Lucy to Us: The Story of Human Evolution; Biological Classification: The Five Kingdoms and Beyond; The Plant Kingdom: Algae to Angiosperms
-- **Ch 8. Microbiology & Immunology** `ku-biology-microbiology-and-immunology` — 5 sections: The Immune System: Innate to Adaptive Defense; Bacteria, Viruses, Fungi: A Field Guide to the Microbial World; Antibiotics and the Rise of Resistance; The Microbiome: Your Trillion Tenants; Autoimmunity and Allergy: When the Defense Misfires
-- **Ch 9. Biochemistry** `ku-biology-biochemistry` — 5 sections: Biochemistry: The Cell's Energy Economy; Protein Structure and Folding: Shape Is Function; Enzymes: Catalysis, Kinetics and Regulation; Beyond Glucose: Fat and Amino-Acid Metabolism; Carbohydrates and Lipids: Fuel, Structure and Signalling
-- **Ch 10. Developmental & Marine Biology** `ku-biology-developmental-and-marine-biology` — 3 sections: Developmental Biology: How a Body Builds Itself; Marine Biology: Life in the Ocean; Fisheries, Aquaculture and the Future of Ocean Food
-- **Ch 11. Bioinformatics & Genomics** `ku-biology-bioinformatics-and-genomics` — 2 sections: Bioinformatics: Reading Genomes with Code; Phylogenetics: Reconstructing the Tree of Life
-- **Ch 12. Synthetic Biology** `ku-biology-synthetic-biology` — 1 sections: Synthetic Biology: Programming Living Cells
+- **Ch 1. Molecular Biology of the Gene** `ku-cell-molecular-biology-molecular-biology-of-the-gene` — 5 sections: DNA: The Molecule of Heredity, Structure and Replication; Transcription: Reading Genes into RNA; The Genetic Code and Translation: RNA to Protein; Mutations and the Repair Systems That Contain Them; Gene Regulation: From Operons to Epigenetics
+- **Ch 2. The Cell: Structure & Signaling** `ku-cell-molecular-biology-the-cell-structure-and-signaling` — 2 sections: Cell Signaling: Reception, Transduction, Response; The Cell and Its Biomolecules: From Membranes to Macromolecules
+- **Ch 3. Bioenergetics** `ku-cell-molecular-biology-bioenergetics` — 1 sections: Cellular Respiration: Glycolysis to the Electron Transport Chain
+
+### Biochemistry (`ku-biochemistry`)
+
+*The chemistry that runs cells* — 2 chapters · 6 sections
+
+- **Ch 1. Laboratory Methods** `ku-biochemistry-laboratory-methods` — 1 sections: The Biochemist’s Toolbox: Chromatography, Electrophoresis and Spectrophotometry
+- **Ch 2. Molecules of Life** `ku-biochemistry-molecules-of-life` — 5 sections: Biochemistry: The Cell's Energy Economy; Protein Structure and Folding: Shape Is Function; Enzymes: Catalysis, Kinetics and Regulation; Beyond Glucose: Fat and Amino-Acid Metabolism; Carbohydrates and Lipids: Fuel, Structure and Signalling
+
+### Genetics & Heredity (`ku-genetics-heredity`)
+
+*How traits travel and vary* — 4 chapters · 9 sections
+
+- **Ch 1. Genes in Populations** `ku-genetics-heredity-genes-in-populations` — 2 sections: Inheritance in Populations: Allele Frequencies and Population Patterns; Population Genetics: Genes Drifting Through Time
+- **Ch 2. Classical & Transmission Genetics** `ku-genetics-heredity-classical-and-transmission-genetics` — 3 sections: Meiosis, Linkage and the Chromosomal Theory of Inheritance; Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits; Mendel's Laws: How Traits Travel Between Generations
+- **Ch 3. Biotechnology** `ku-genetics-heredity-biotechnology` — 2 sections: Recombinant DNA: The Tools and Techniques of Genetic Engineering; Biotechnology in Practice: Medicine, Farms, and Industry
+- **Ch 4. Molecular Genetics & Genomics** `ku-genetics-heredity-molecular-genetics-and-genomics` — 2 sections: Genomics and Bioinformatics: Reading Whole Genomes; CRISPR and the Mechanics of Gene Editing
+
+### Evolutionary Biology (`ku-evolutionary-biology`)
+
+*Descent with modification* — 3 chapters · 5 sections
+
+- **Ch 1. Evolution & Speciation** `ku-evolutionary-biology-evolution-and-speciation` — 2 sections: Evolution by Natural Selection; How New Species Are Born
+- **Ch 2. Human Evolution** `ku-evolutionary-biology-human-evolution` — 1 sections: From Lucy to Us: The Story of Human Evolution
+- **Ch 3. Diversity & Systematics** `ku-evolutionary-biology-diversity-and-systematics` — 2 sections: Biological Classification: The Five Kingdoms and Beyond; The Plant Kingdom: Algae to Angiosperms
+
+### Botany (`ku-botany`)
+
+*The lives of plants* — 3 chapters · 4 sections
+
+- **Ch 1. Plant Physiology** `ku-botany-plant-physiology` — 2 sections: Photosynthesis: Light and Dark Reactions; Plant Physiology: How Plants Actually Work
+- **Ch 2. Reproduction & Life Cycles** `ku-botany-reproduction-and-life-cycles` — 1 sections: Plant Reproduction: Flowers, Pollination and Seeds
+- **Ch 3. The Plant Body** `ku-botany-the-plant-body` — 1 sections: The Flowering Plant Body: Morphology and Anatomy
+
+### Zoology (`ku-zoology`)
+
+*The animal kingdom, up close* — 2 chapters · 4 sections
+
+- **Ch 1. Animal Diversity & Form** `ku-zoology-animal-diversity-and-form` — 2 sections: Animal Tissue Types: Four Families, One Body Plan; The Animal Kingdom: A Tour of Body Plans and Phyla
+- **Ch 2. Senses & Behavior** `ku-zoology-senses-and-behavior` — 2 sections: Animal Behavior: Instinct, Learning, Signals; How Animals Sense the World
+
+### Ecology & Conservation (`ku-ecology-conservation`)
+
+*Who lives where, and why* — 4 chapters · 8 sections
+
+- **Ch 1. Organisms & the Environment** `ku-ecology-conservation-organisms-and-the-environment` — 1 sections: Life at the Limits: How Organisms Answer Habitat and Abiotic Stress
+- **Ch 2. Ecosystems, Energy & Biomes** `ku-ecology-conservation-ecosystems-energy-and-biomes` — 4 sections: Ecosystems and the Flow of Energy; Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters; Biomes: A Tour of Earth's Major Ecosystems; Population Ecology: Growth, Limits and Cycles
+- **Ch 3. Populations & Communities** `ku-ecology-conservation-populations-and-communities` — 1 sections: Populations and Communities: Interactions, Niches and Disturbance
+- **Ch 4. Conservation & Restoration** `ku-ecology-conservation-conservation-and-restoration` — 2 sections: Biodiversity and the Sixth Extinction; Restoration and Rewilding: Putting Ecosystems Back Together
+
+### Microbiology & Immunology (`ku-microbiology-immunology`)
+
+*The invisible majority* — 2 chapters · 5 sections
+
+- **Ch 1. Immunology** `ku-microbiology-immunology-immunology` — 2 sections: The Immune System: Innate to Adaptive Defense; Autoimmunity and Allergy: When the Defense Misfires
+- **Ch 2. The Microbial World** `ku-microbiology-immunology-the-microbial-world` — 3 sections: Bacteria, Viruses, Fungi: A Field Guide to the Microbial World; Antibiotics and the Rise of Resistance; The Microbiome: Your Trillion Tenants
+
+### Human Anatomy & Physiology (`ku-human-anatomy-physiology`)
+
+*The body, system by system* — 3 chapters · 11 sections
+
+- **Ch 1. When Systems Fail** `ku-human-anatomy-physiology-when-systems-fail` — 1 sections: When Organs Fail: Hearing, Vision and Kidney Technologies
+- **Ch 2. Body Systems** `ku-human-anatomy-physiology-body-systems` — 9 sections: The Heart and Circulation: One Pump, Two Circuits; Breathing and Gas Exchange: From Air to Cell; The Digestive System: From Meal to Molecule; Kidneys, Hormones and the Body's Balance; Muscles, Bones and the Machinery of Movement; The Endocrine System: Hormones as the Body's Slow Messengers; The Nervous System: The Body's Command Network; The Senses: How the Body Reads the World; Reproduction and the Making of a Human
+- **Ch 3. Reproduction & Development** `ku-human-anatomy-physiology-reproduction-and-development` — 1 sections: Human Reproduction: Systems, Gametes and the Menstrual Cycle
+
+### Developmental Biology (`ku-developmental-biology`)
+
+*From one cell to a body* — 2 chapters · 3 sections
+
+- **Ch 1. Mechanisms & Model Organisms** `ku-developmental-biology-mechanisms-and-model-organisms` — 2 sections: Model Organisms: Flies, Worms, Fish and the Standard Laboratory Bodies; Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo
+- **Ch 2. Building the Body** `ku-developmental-biology-building-the-body` — 1 sections: Developmental Biology: How a Body Builds Itself
+
+### Marine Biology (`ku-marine-biology`)
+
+*Life in the blue* — 3 chapters · 3 sections
+
+- **Ch 1. Plankton, Larvae & Recruitment** `ku-marine-biology-plankton-larvae-and-recruitment` — 1 sections: Plankton and Larvae: The Drifting Majority of Ocean Life
+- **Ch 2. The Blue Realm** `ku-marine-biology-the-blue-realm` — 1 sections: Marine Biology: Life in the Ocean
+- **Ch 3. Fisheries & Ocean Conservation** `ku-marine-biology-fisheries-and-ocean-conservation` — 1 sections: Fisheries, Aquaculture and the Future of Ocean Food
+
+### Bioinformatics & Genomics (`ku-bioinformatics-genomics`)
+
+*Biology as data* — 3 chapters · 3 sections
+
+- **Ch 1. Databases & Structure Prediction** `ku-bioinformatics-genomics-databases-and-structure-prediction` — 1 sections: Bioinformatics Databases and Protein Structure Prediction: From FASTA to AlphaFold
+- **Ch 2. Reading Genomes with Code** `ku-bioinformatics-genomics-reading-genomes-with-code` — 1 sections: Bioinformatics: Reading Genomes with Code
+- **Ch 3. Phylogenetics** `ku-bioinformatics-genomics-phylogenetics` — 1 sections: Phylogenetics: Reconstructing the Tree of Life
+
+### Synthetic Biology (`ku-synthetic-biology`)
+
+*Life, engineered* — 2 chapters · 3 sections
+
+- **Ch 1. Applications & Responsible Innovation** `ku-synthetic-biology-applications-and-responsible-innovation` — 2 sections: Synthetic Biology in Practice: The Design–Build–Test–Learn Cycle; Biosafety, Biosecurity and the Ethics of Engineering Life
+- **Ch 2. Programming Living Cells** `ku-synthetic-biology-programming-living-cells` — 1 sections: Synthetic Biology: Programming Living Cells
+
+## Natural Sciences — 5 subjects
 
 ### Neuroscience (`ku-neuroscience`)
 
