@@ -10,6 +10,7 @@ import { x21SkillsPassTopics } from './x21-skills-pass'
 import { x25TournamentReasoningCivicsPassTopics } from './x25-tournament-reasoning-civics-pass'
 import { x36LearningSciencePassTopics } from './x36-learning-science-pass'
 import { x52CrossverifyPassTopics } from './x52-crossverify-pass'
+import { x53CrossverifyPassTopics } from './x53-crossverify-pass'
 
 export const foundationLearning: KnowledgeDomainFile = {
   domain: 'Foundation Learning',
@@ -34,6 +35,13 @@ export const foundationLearning: KnowledgeDomainFile = {
     // every-time-management-productivity, psy-stress-coping, the habits
     // and metacognition lessons (carving documented in the x52 header).
     ...x52CrossverifyPassTopics,
+    // X53 crossverify pass (2026-10-26): second popular book for the same
+    // subject — Barbara Oakley, A Mind for Numbers (full text, archive.org):
+    // focused/diffuse modes + procrastination zombie anatomy lessons added;
+    // overlearning refinement in the interleaving lesson and hard-start-
+    // jump-to-easy refinement in the exam-strategy lesson (carving in the
+    // x53 header — zombies lesson carved against habits/time-management).
+    ...x53CrossverifyPassTopics,
     // ------------------------------------------------------------------
     {
       id: 'fnd-spaced-repetition',
@@ -631,9 +639,10 @@ export const foundationLearning: KnowledgeDomainFile = {
         'Where interleaving helps most',
         'Designing an interleaved schedule',
         'Spacing is the partner, not the rival',
+        'Overlearning: the blocked-practice exception',
       ],
-      words: 1073,
-      readMins: 5,
+      words: 1233,
+      readMins: 6,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -676,6 +685,10 @@ export const foundationLearning: KnowledgeDomainFile = {
           text: 'Interleaving across a single afternoon and interleaving across days are different doses of the same medicine. The strongest schedules do both: today\'s mixed set includes material from last week, which is itself spacing. A practical stack assembles three techniques — retrieval practice for the content, spaced scheduling for the calendar, interleaving for the selection — into one session.',
         },
         {
+          kind: 'para',
+          text: 'The blocked cousin of this failure has its own name. Overlearning means continuing to study or practice immediately after you have already reached the criterion — solving one more, and then five more, of the same problem type in the same session. Research summarized by Doug Rohrer and highlighted in Barbara Oakley\'s A Mind for Numbers finds same-session overlearning buys diminishing returns: the first correct repetitions consolidate, the rest mostly polish comfort. One exception earns its keep — when a skill must become automatic for performance, as with a tennis serve or a piano concerto, overlearning is exactly the tool. But for learning that must survive to a delayed test, the honest move after reaching criterion is to switch to mixed practice or to a different topic, returning to this one in a later session — which is spacing in disguise.',
+        },
+        {
           kind: 'example',
           title: 'Worked Example',
           steps: [
@@ -712,6 +725,7 @@ export const foundationLearning: KnowledgeDomainFile = {
             { term: 'Performance-learning paradox', def: 'Practice conditions that look worse in-session but test better later.' },
             { term: 'Spaced retrieval', def: 'Recalling an item after a delay, strengthened by interleaving\'s returns.' },
             { term: 'Transfer', def: 'Applying a practiced skill to new problems and contexts.' },
+            { term: 'Overlearning', def: 'Continuing to practice past the criterion within the same session; useful for performance automaticity, wasteful for durable learning.' },
           ],
         },
         { kind: 'heading', text: 'Check Yourself' },
@@ -1028,10 +1042,11 @@ export const foundationLearning: KnowledgeDomainFile = {
         'Reading the paper before answering it',
         'Point arithmetic: budgeting minutes',
         'Error triage: three passes',
+        'Hard-start, jump-to-easy',
         'Anxiety as fuel, not fog',
       ],
-      words: 1297,
-      readMins: 6,
+      words: 1470,
+      readMins: 7,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1067,6 +1082,10 @@ export const foundationLearning: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
+          text: 'The three-pass order has one principled rival worth knowing. Barbara Oakley\'s hard-start, jump-to-easy technique — from A Mind for Numbers, and backed by the same reasoning as Sian Beilock\'s choking research — says that when the format allows free movement between questions, begin with the hardest one, and the instant you feel stuck, jump to easy ones and bank marks. While your focused mode works the easy questions, the diffuse mode keeps incubating the hard one in the background, so a fresh approach is often waiting when you return. The deeper logic: the standard order stacks your maximum stress with your maximum difficulty in the final minutes — exactly the collision that produces paralysis by analysis. If you run the hard start, commit to jumping early rather than sinking five minutes into one stuck problem; if you know your triage discipline is shaky, the bank-marks-first order remains the safer default.',
+        },
+        {
+          kind: 'para',
           text: 'Arousal is not the enemy; misread arousal is. The Yerkes-Dodson law puts performance highest at moderate arousal, and the racing heart that feels like fear is physiologically near-identical to excitement — relabel it. Control what can be controlled: long, slow exhales calm the nervous system, a first easy question gets ink flowing, and a deliberate pause resets a frozen moment. If panic rises, skip and return; working memory comes back when the alarm stops owning it. You trained retrieval all term — the exam is just retrieval with a stopwatch.',
         },
         { kind: 'example', title: 'Worked Example', steps: [
@@ -1098,6 +1117,7 @@ export const foundationLearning: KnowledgeDomainFile = {
           { term: 'partial credit', def: 'Marks awarded for visible method and setup, even when the final answer is wrong.' },
           { term: 'Yerkes-Dodson law', def: 'The finding that performance peaks at moderate arousal and falls when arousal is too low or too high.' },
           { term: 'reappraisal', def: 'Relabelling a racing heart as excitement rather than fear, exploiting their physiological similarity.' },
+          { term: 'hard-start, jump-to-easy', def: 'Attempting the hardest question first when the format allows, then switching to easier ones so the diffuse mode keeps incubating it.' },
         ] },
         { kind: 'heading', text: 'Check Yourself' },
         { kind: 'quiz', items: [
