@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T17:30:50.187Z",
+  "generatedAt": "2026-10-25T18:07:31.384Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 138,
     "books": 138,
     "chapters": 858,
-    "sections": 4591
+    "sections": 4597
   },
   "subjects": [
     {
@@ -26691,7 +26691,7 @@
       "group": "Foundations",
       "tagline": "Computing, plainly",
       "chapterCount": 2,
-      "sectionCount": 3,
+      "sectionCount": 9,
       "chapters": [
         {
           "id": "ku-computer-literacy-computing-fundamentals",
@@ -26699,12 +26699,17 @@
           "title": "Computing Fundamentals",
           "shortTitle": "Computing Fundamentals",
           "bookId": "ku-computer-literacy",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-cs-computing-thinking-digital-society",
               "number": 1.1,
               "title": "Computational Thinking, Algorithms and the Digital Citizen"
+            },
+            {
+              "id": "ku-dl-internet-packets-hourglass",
+              "number": 1.2,
+              "title": "How the Internet Actually Works: Packets, Addresses and the Hourglass"
             }
           ]
         },
@@ -26714,16 +26719,41 @@
           "title": "ICT & Digital Literacy",
           "shortTitle": "ICT & Digital Literacy",
           "bookId": "ku-computer-literacy",
-          "sectionCount": 2,
+          "sectionCount": 7,
           "sections": [
             {
-              "id": "ku-ict-computers-internet-digital-initiatives",
+              "id": "ku-dl-bits-koans-digital-world",
               "number": 2.1,
+              "title": "The Seven Koans of Bits: How the Digital World Actually Behaves"
+            },
+            {
+              "id": "ku-dl-privacy-footprints-fingerprints",
+              "number": 2.2,
+              "title": "Privacy Lost, Privacy Traded: Footprints, Fingerprints and Little Brother"
+            },
+            {
+              "id": "ku-dl-document-metadata-ghosts",
+              "number": 2.3,
+              "title": "Ghosts in the Machine: What You See Is Not What the Computer Knows"
+            },
+            {
+              "id": "ku-dl-web-search-bits-bazaar",
+              "number": 2.4,
+              "title": "Search Engines and the Bits Bazaar: How Results Are Made and Why It Matters"
+            },
+            {
+              "id": "ku-dl-copyright-balance-toppled",
+              "number": 2.5,
+              "title": "Who Owns the Bits? Copyright After Perfect Copies"
+            },
+            {
+              "id": "ku-ict-computers-internet-digital-initiatives",
+              "number": 2.6,
               "title": "ICT: From Abbreviations to India’s Digital Higher-Education Initiatives"
             },
             {
               "id": "ku-comp-office-productivity-software",
-              "number": 2.2,
+              "number": 2.7,
               "title": "Office Productivity Software: Documents, Spreadsheets, Slides and Workflows"
             }
           ]

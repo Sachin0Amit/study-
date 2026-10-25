@@ -3,11 +3,26 @@ import { x17ExamSyllabusTopics } from './x17-exam-syllabus'
 import { x20FoundationsPassTopics } from './x20-foundations-pass'
 import { x31UgcNetPaper1PassTopics } from './x31-ugc-net-paper1-pass'
 import { x45ExamGapPassTopics } from './x45-exam-gap-pass'
+import { x54CrossverifyPassTopics } from './x54-crossverify-pass'
 
 export const computingAI: KnowledgeDomainFile = {
   domain: 'Computing & AI',
   blurb: 'The algorithms, models and mathematics behind modern software — from hash tables to deep learning and cryptography.',
   topics: [
+    // X17 exam-syllabus pass (2026-10-21): CUET/CBSE computing fundamentals —
+    // computational thinking, algorithms/flowcharts, digital citizenship.
+    // Registered BEFORE x54 so the entry lesson stays first in Chapter 1.
+    ...x17ExamSyllabusTopics.filter((t) => t.domain === 'Computing & AI'),
+    // X54 cross-verify pass (2026-10-26, CROSSVERIFY-20261026-3): Computer &
+    // Digital Literacy (book 2, ku-computer-literacy) cross-verified against
+    // Abelson/Ledeen/Lewis, "Blown to Bits" (2008, official free PDF) — six
+    // book-grounded lessons: bits koans, privacy fingerprints, document
+    // metadata/redaction, search machinery, copyright enforcement, internet
+    // packet mechanics. Carved against cs-computing-thinking-digital-society
+    // (owns threat taxonomy/licences), x31 ICT vocabulary, x24 office suites,
+    // cs-public-key-cryptography-rsa (owns RSA maths), law-ip-copyright-
+    // patent (owns doctrine) — carving documented in the x54 header.
+    ...x54CrossverifyPassTopics.filter((t) => t.domain === 'Computing & AI'),
     // X45 pass (2026-10-25, EXAM-PASS-20261025-1): method overriding —
     // validity rules, @Override, dynamic dispatch, super calls, equals/
     // toString contracts. Carved against cs-java-objects-classes-methods
@@ -18,9 +33,6 @@ export const computingAI: KnowledgeDomainFile = {
     // initiatives. Carved against cs-computing-thinking-digital-society,
     // which owns computational thinking and digital-society debates.
     ...x31UgcNetPaper1PassTopics.filter((t) => t.domain === 'Computing & AI'),
-    // X17 exam-syllabus pass (2026-10-21): CUET/CBSE computing fundamentals —
-    // computational thinking, algorithms/flowcharts, digital citizenship.
-    ...x17ExamSyllabusTopics.filter((t) => t.domain === 'Computing & AI'),
     // X20 foundations pass (2026-10-22): intro Java trio — objects/classes,
     // arrays & ArrayLists, boolean equivalence (AP CSA gap units).
     ...x20FoundationsPassTopics.filter((t) => t.domain === 'Computing & AI'),

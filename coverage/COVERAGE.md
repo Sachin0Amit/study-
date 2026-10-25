@@ -17,7 +17,7 @@
 - **Subjects:** 138
 - **Books (master volumes):** 138
 - **Chapters:** 858
-- **Sections (lessons):** 4591
+- **Sections (lessons):** 4597
 
 ## Foundations — 7 subjects
 
@@ -247,10 +247,10 @@
 
 ### Computer & Digital Literacy (`ku-computer-literacy`)
 
-*Computing, plainly* — 2 chapters · 3 sections
+*Computing, plainly* — 2 chapters · 9 sections
 
-- **Ch 1. Computing Fundamentals** `ku-computer-literacy-computing-fundamentals` — 1 sections: Computational Thinking, Algorithms and the Digital Citizen
-- **Ch 2. ICT & Digital Literacy** `ku-computer-literacy-ict-and-digital-literacy` — 2 sections: ICT: From Abbreviations to India’s Digital Higher-Education Initiatives; Office Productivity Software: Documents, Spreadsheets, Slides and Workflows
+- **Ch 1. Computing Fundamentals** `ku-computer-literacy-computing-fundamentals` — 2 sections: Computational Thinking, Algorithms and the Digital Citizen; How the Internet Actually Works: Packets, Addresses and the Hourglass
+- **Ch 2. ICT & Digital Literacy** `ku-computer-literacy-ict-and-digital-literacy` — 7 sections: The Seven Koans of Bits: How the Digital World Actually Behaves; Privacy Lost, Privacy Traded: Footprints, Fingerprints and Little Brother; Ghosts in the Machine: What You See Is Not What the Computer Knows; Search Engines and the Bits Bazaar: How Results Are Made and Why It Matters; Who Owns the Bits? Copyright After Perfect Copies; ICT: From Abbreviations to India’s Digital Higher-Education Initiatives; Office Productivity Software: Documents, Spreadsheets, Slides and Workflows
 
 ## Programming & Software — 6 subjects
 
