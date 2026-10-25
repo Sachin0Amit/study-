@@ -1,11 +1,20 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 import { x44HealthMindPassTopics } from './x44-health-mind-pass'
+import { x56VcePassTopics } from './x56-vce-pass'
 
 export const healthWellness: KnowledgeDomainFile = {
   domain: 'Health & Wellness',
   blurb: 'Evidence-based foundations for sleep, strength, and public health — the science behind feeling and functioning better.',
   topics: [
+    // X56 VCE pass (2026-10-26): mind-specific-phobia-biopsychosocial —
+    // mental wellbeing continuum + specific phobia as the biopsychosocial
+    // worked example (GABA/LTP, conditioning paths, benzodiazepines,
+    // desensitisation, psychoeducation). Carved against mind-anxiety-
+    // depression (owns general anxiety/depression + CBT core) and the
+    // gut–brain lesson (owns microbiome mood science). Serves VCE
+    // Psychology Unit 4 Area of Study 2.
+    ...x56VcePassTopics.filter((t) => t.domain === 'Health & Wellness'),
     // X44 pass (2026-10-25, CONTENT-20261025-5): Mental Health + Public Health
     // deepening — gut–brain axis, trauma/PTSD, addiction cycle, social
     // determinants, health systems. Scoped against health-stress-cortisol,

@@ -16,14 +16,14 @@
 
 - **Subjects:** 138
 - **Books (master volumes):** 138
-- **Chapters:** 858
-- **Sections (lessons):** 4600
+- **Chapters:** 859
+- **Sections (lessons):** 4604
 
 ## Foundations — 7 subjects
 
 ### Mathematics (`mathematics`)
 
-*From first principles to research frontiers* — 76 chapters · 485 sections
+*From first principles to research frontiers* — 76 chapters · 486 sections
 
 - **Ch 1. The Foundations: Logic and Proofs** `rosen-ch1` — 8 sections: Propositional Logic; Applications of Propositional Logic; Propositional Equivalences; Predicates and Quantifiers; Nested Quantifiers; Rules of Inference; Introduction to Proofs; Proof Methods and Strategy
 - **Ch 2. Basic Structures: Sets, Functions, Sequences, Sums, and Matrices** `rosen-ch2` — 6 sections: Sets; Set Operations; Functions; Sequences and Summations; Cardinality of Sets; Matrices
@@ -99,7 +99,7 @@
 - **Ch 72. Calculus** `ku-x-math-master-calculus` — 3 sections: Removing Discontinuities: Finding and Filling the Holes; Linearization and Differentials: The Tangent as a Calculator; Concavity and the Second Derivative Test
 - **Ch 73. Geometry & Measurement** `ku-x-math-master-geometry-and-measurement` — 1 sections: Mensuration and Calculation: Perimeter, Area, Surface Area and Volume
 - **Ch 74. Discrete Mathematics** `ku-x-math-master-discrete-mathematics` — 1 sections: Tournament Formats and Fixture Arithmetic: Knockouts, Round-Robins and Points Tables
-- **Ch 75. Probability & Statistics** `ku-x-math-master-probability-and-statistics` — 6 sections: Quartiles, Cumulative Frequency and Box Plots; Reading Data: Bar Charts, Line Graphs, Pie Charts and Combined Sources; Describing Data: Center, Spread and the Normal Distribution; Sampling and the Central Limit Theorem; Confidence Intervals and Hypothesis Testing; Correlation and Linear Regression
+- **Ch 75. Probability & Statistics** `ku-x-math-master-probability-and-statistics` — 7 sections: Time Series: Trend, Seasonality and Forecasting from Data Ordered in Time; Quartiles, Cumulative Frequency and Box Plots; Reading Data: Bar Charts, Line Graphs, Pie Charts and Combined Sources; Describing Data: Center, Spread and the Normal Distribution; Sampling and the Central Limit Theorem; Confidence Intervals and Hypothesis Testing; Correlation and Linear Regression
 - **Ch 76. Applied Mathematics & Numeracy** `ku-x-math-master-applied-mathematics-and-numeracy` — 3 sections: Percentage, Ratio and Mental Math Shortcuts; Linear Programming by Graph: Feasible Regions and Corner Points; From Words to Equations: Formulating Real-Life Problems
 
 ### Physics (`physics`)
@@ -803,7 +803,7 @@
 
 *The unit of life, read to the letter* — 3 chapters · 11 sections
 
-- **Ch 1. The Cell: Structure & Signaling** `ku-cell-molecular-biology-the-cell-structure-and-signaling` — 4 sections: Cell Signaling: Reception, Transduction, Response; The Cytoskeleton and Cell Motility: Tubes, Ropes and Molecular Walkers; The Cell Cycle: Phases, Checkpoints and How Cells Die; The Cell and Its Biomolecules: From Membranes to Macromolecules
+- **Ch 1. The Cell: Structure & Signaling** `ku-cell-molecular-biology-the-cell-structure-and-signaling` — 4 sections: Cell Signaling: Reception, Transduction, Response; The Cell and Its Biomolecules: From Membranes to Macromolecules; The Cytoskeleton and Cell Motility: Tubes, Ropes and Molecular Walkers; The Cell Cycle: Phases, Checkpoints and How Cells Die
 - **Ch 2. Molecular Biology of the Gene** `ku-cell-molecular-biology-molecular-biology-of-the-gene` — 6 sections: DNA: The Molecule of Heredity, Structure and Replication; Transcription: Reading Genes into RNA; The Genetic Code and Translation: RNA to Protein; Mutations and the Repair Systems That Contain Them; Gene Regulation: From Operons to Epigenetics; Chromatin and the Nucleosome: How Two Metres of DNA Fit Into a Nucleus
 - **Ch 3. Bioenergetics** `ku-cell-molecular-biology-bioenergetics` — 1 sections: Cellular Respiration: Glycolysis to the Electron Transport Chain
 
@@ -999,9 +999,9 @@
 
 ### Mental Health (`ku-mental-health`)
 
-*The mind, kept well* — 3 chapters · 6 sections
+*The mind, kept well* — 3 chapters · 7 sections
 
-- **Ch 1. Mood & Anxiety** `ku-mental-health-mood-and-anxiety` — 2 sections: Trauma and PTSD: How Wounds Become Symptoms and How Recovery Works; Anxiety and Depression: What They Actually Are
+- **Ch 1. Mood & Anxiety** `ku-mental-health-mood-and-anxiety` — 3 sections: Mental Wellbeing and Specific Phobia: The Biopsychosocial Model at Work; Trauma and PTSD: How Wounds Become Symptoms and How Recovery Works; Anxiety and Depression: What They Actually Are
 - **Ch 2. Mind & Therapy** `ku-mental-health-mind-and-therapy` — 2 sections: Addiction: The Reward Cycle and the Way Out; How Psychotherapy Works: The Major Approaches
 - **Ch 3. Mind–Body Science** `ku-mental-health-mind-body-science` — 2 sections: The Gut–Brain Axis: Your Second Brain and Your Mood; Stress, Cortisol and the Body's Alarm System
 
@@ -1062,13 +1062,14 @@
 
 ### Psychology (`ku-psychology`)
 
-*The studied mind* — 5 chapters · 10 sections
+*The studied mind* — 6 chapters · 12 sections
 
-- **Ch 1. Cognitive & Behavioral Psychology** `ku-psychology-cognitive-and-behavioral-psychology` — 2 sections: Cognitive Biases: The Bugs in Human Judgment; Memory, Attention and Thinking: Cognitive Psychology
+- **Ch 1. Cognitive & Behavioral Psychology** `ku-psychology-cognitive-and-behavioral-psychology` — 3 sections: The Multi-Store Model and the Brain's Memory Systems; Cognitive Biases: The Bugs in Human Judgment; Memory, Attention and Thinking: Cognitive Psychology
 - **Ch 2. Developmental Psychology** `ku-psychology-developmental-psychology` — 1 sections: How Minds Grow: Developmental Psychology Across the Lifespan
 - **Ch 3. Social & Interpersonal Psychology** `ku-psychology-social-and-interpersonal-psychology` — 3 sections: Interpersonal Behavior: Attraction, Aggression and Helping; Cognitive Dissonance and Attitude Change; Conformity, Obedience and the Power of the Situation
 - **Ch 4. Personality & Individual Differences** `ku-psychology-personality-and-individual-differences` — 2 sections: The Big Five: A Field Guide to Human Personality; Intelligence and IQ: What the Tests Actually Measure
 - **Ch 5. Stress & Clinical Psychology** `ku-psychology-stress-and-clinical-psychology` — 2 sections: Coping with Stress: Appraisal, Strategies and Resilience; Psychological Disorders: Classification and the Major Categories
+- **Ch 6. Learning and Behaviour** `ku-psychology-learning-and-behaviour` — 1 sections: Classical and Operant Conditioning: How Experience Teaches Behaviour
 
 ### Sociology (`ku-sociology`)
 

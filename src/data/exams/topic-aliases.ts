@@ -681,4 +681,65 @@ export const TOPIC_ALIASES: Record<string, string> = {
   'measuring economic activity and ad as': 'econ-macro-ad-as-indian-economy',
   'prominent personalities': 'hist-modern-india-freedom-struggle',
   'ancient china': 'hist-first-civilizations',
+
+  /* ---- VCE launch X56 (verified 2026-10-26) ---------------------------
+   * The VCE was added as the 55th curated exam (src/data/exams/victoria.ts,
+   * 8 studies at Units 3 and 4 from the official VCAA study designs). Each
+   * alias below names a topic the matcher could not reach and the target
+   * lesson genuinely teaches (verified against lesson blocks and concepts):
+   * - General Maths data analysis → the statistics lessons (time series
+   *   topic authored this pass; regression/descriptive already owned).
+   * - General Maths recursion/financial modelling → the compound-interest
+   *   TVM lesson (recurrence + loans + annuities; the rosen recursion
+   *   chapter only owns the abstract recurrence half).
+   * - Biology Unit 3/4 → biotech, photosynthesis, immune, vaccines,
+   *   speciation, human-evolution and enzymes lessons (each verified as
+   *   the owner of the syllabus bullet set).
+   * - Scientific-poster topics (Bio/Chem/Phys/Psych) → the research-
+   *   methodology lesson (owns variables, validity, repeatability,
+   *   poster conventions).
+   * - Psychology → the two lessons authored this pass (conditioning and
+   *   multi-store) plus existing owners (synapse, sleep architecture).
+   * - Mental wellbeing + specific phobia → the biopsychosocial lesson
+   *   authored this pass (the continuum framings are taught in its
+   *   opening section).
+   * - 'Creating texts' → the story-structure lesson (owns imaginative
+   *   narrative craft; persuasive mode owned by the argument-essay
+   *   masters section the masters matcher already serves). */
+  'investigating and modelling linear associations': 'stats-correlation-regression',
+  'investigating associations between two variables scatterplots correlation and causation':
+    'stats-correlation-regression',
+  'investigating and modelling time series trend seasonality and smoothing':
+    'stats-time-series-trend-seasonality',
+  'recursion and financial modelling loans annuities and depreciation':
+    'bus-compound-interest-tvm',
+  'dna manipulation techniques and applications': 'bio-biotechnology-rdna-processes',
+  'photosynthesis as a biochemical pathway': 'bio-photosynthesis',
+  'biotechnological applications of biochemical pathways': 'bio-biotechnology-applications',
+  'enzymes coenzymes and the regulation of biochemical pathways':
+    'bioc-enzymes-kinetics-regulation',
+  'responding to antigens': 'bio-immune-system',
+  'acquiring immunity': 'bio-immune-system',
+  'disease challenges and strategies': 'health-vaccines-how-work',
+  'changes in species over time and their relatedness': 'bio-speciation-barriers',
+  'human change over time hominins and human migration': 'bio-human-evolution',
+  'scientific investigation and the scientific poster':
+    'res-research-methodology-hypothesis-sampling',
+  'scientific investigation and research methods':
+    'res-research-methodology-hypothesis-sampling',
+  'creating texts imaginative persuasive and reflective writing':
+    'art-story-structure',
+  'nervous system and neural transmission': 'neuro-synapse-neurotransmitters',
+  'behaviourist approaches classical and operant conditioning':
+    'psy-behaviourist-learning',
+  'observational learning and social cognitive approaches': 'psy-behaviourist-learning',
+  'observational learning attention retention reproduction motivation and reinforcement':
+    'psy-behaviourist-learning',
+  'memory and the multi-store model': 'psy-memory-multistore-brain',
+  'sleep as a psychological construct rem and nrem sleep':
+    'health-sleep-stages-memory',
+  'mental wellbeing as a multidimensional construct':
+    'mind-specific-phobia-biopsychosocial',
+  'specific phobia development and interventions':
+    'mind-specific-phobia-biopsychosocial',
 }

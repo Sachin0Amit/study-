@@ -218,6 +218,10 @@ const IDS = [
   'study-procrastination-zombies',
   'fnd-interleaving',
   'study-exam-strategy',
+  'psy-behaviourist-learning',
+  'psy-memory-multistore-brain',
+  'mind-specific-phobia-biopsychosocial',
+  'stats-time-series-trend-seasonality',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

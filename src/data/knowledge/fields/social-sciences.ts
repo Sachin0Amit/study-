@@ -10,12 +10,20 @@ import { x32UgcNetPaper2PassTopics } from './x32-ugc-net-paper2-pass'
 import { x33UgcNetClosurePassTopics } from './x33-ugc-net-closure-pass'
 import { x37AlbertaPassTopics } from './x37-alberta-pass'
 import { x46ThinBooksPassTopics } from './x46-thin-books-pass'
+import { x56VcePassTopics } from './x56-vce-pass'
 
 export const socialSciences: KnowledgeDomainFile = {
   domain: 'Social Sciences',
   blurb:
     'How humans behave, bond, decide and govern together — psychology, sociology and political science at their meeting points.',
   topics: [
+    // X56 VCE pass (2026-10-26): psy-behaviourist-learning (Pavlov three-phase,
+    // Skinner ABC, Bandura pentad — carved against x44 fear-conditioning,
+    // the animal-cognition aside and x31's teaching-methods citation) and
+    // psy-memory-multistore-brain (Atkinson-Shiffrin + brain systems —
+    // carved against psy-cognitive-architecture, fnd-mnemonics,
+    // health-sleep-stages-memory). Serves VCE Psychology Units 3-4.
+    ...x56VcePassTopics.filter((t) => t.domain === 'Social Sciences'),
     // X46 thin-books pass (2026-10-25): journalism craft — news values,
     // the summary lead, the inverted pyramid, attribution protocols,
     // verification and libel. Carved against gp-mass-media-society-

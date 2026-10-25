@@ -13,12 +13,21 @@ import { x27ApCalcChinaPassTopics } from './x27-ap-calc-china-pass'
 import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
 import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
 import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
+import { x56VcePassTopics } from './x56-vce-pass'
 
 export const mathematics: KnowledgeDomainFile = {
   domain: 'Mathematics',
   blurb:
     'Calculus, probability, and linear algebra — the language of change, evidence, and structure.',
   topics: [
+    // X56 VCE pass (2026-10-26): stats-time-series-trend-seasonality —
+    // trend/seasonal/irregular decomposition, seasonal indices,
+    // deseasonalising, moving means/medians, forecasting + extrapolation
+    // risk. Carved against stats-correlation-regression (cross-sectional
+    // fitting) and the control-engineering signal-processing sections
+    // (continuous-time filters). Serves VCE General Mathematics Unit 3
+    // data analysis (the exam's time-series topic).
+    ...x56VcePassTopics.filter((t) => t.domain === 'Mathematics'),
     // X30 pass (2026-10-24): graphical linear programming — objective and
     // constraints, half-plane intersection, feasible region, corner-point
     // theorem, vertex evaluation vs iso-profit lines, infeasible/unbounded.
