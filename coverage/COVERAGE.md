@@ -16,8 +16,8 @@
 
 - **Subjects:** 138
 - **Books (master volumes):** 138
-- **Chapters:** 841
-- **Sections (lessons):** 4571
+- **Chapters:** 847
+- **Sections (lessons):** 4577
 
 ## Foundations — 7 subjects
 
@@ -1368,21 +1368,27 @@
 
 ### Arabic (`ku-arabic`)
 
-*The calligraphic tradition* — 1 chapters · 1 sections
+*The calligraphic tradition* — 3 chapters · 3 sections
 
-- **Ch 1. Arabic Foundations** `ku-arabic-arabic-foundations` — 1 sections: Arabic Foundations: Roots, Script and Diglossia
+- **Ch 1. Arabic Grammar** `ku-arabic-arabic-grammar` — 1 sections: Arabic Grammar Workshop: Cases, Plurals and the Verb Engine
+- **Ch 2. Arabic Literature & Culture** `ku-arabic-arabic-literature-and-culture` — 1 sections: Arabic Literature: Odes, Nights and the Novel
+- **Ch 3. Arabic Foundations** `ku-arabic-arabic-foundations` — 1 sections: Arabic Foundations: Roots, Script and Diglossia
 
 ### Korean (`ku-korean`)
 
-*Hangul, the smart script* — 1 chapters · 1 sections
+*Hangul, the smart script* — 3 chapters · 3 sections
 
-- **Ch 1. Korean Foundations** `ku-korean-korean-foundations` — 1 sections: Korean Foundations: Hangul, Politeness and Verb-Last Order
+- **Ch 1. Korean Grammar** `ku-korean-korean-grammar` — 1 sections: Korean Grammar Workshop: Particles, Endings and Irregular Verbs
+- **Ch 2. Korean Literature & Culture** `ku-korean-korean-literature-and-culture` — 1 sections: Korean Reading and Culture: From Hunminjeongeum to the Nobel
+- **Ch 3. Korean Foundations** `ku-korean-korean-foundations` — 1 sections: Korean Foundations: Hangul, Politeness and Verb-Last Order
 
 ### Russian (`ku-russian`)
 
-*Cases and Cyrillic* — 1 chapters · 1 sections
+*Cases and Cyrillic* — 3 chapters · 3 sections
 
-- **Ch 1. Russian Foundations** `ku-russian-russian-foundations` — 1 sections: Russian Foundations: Cyrillic, Cases and Aspect
+- **Ch 1. Russian Grammar** `ku-russian-russian-grammar` — 1 sections: Russian Grammar Workshop: Declension, Motion and Government
+- **Ch 2. Russian Literature** `ku-russian-russian-literature` — 1 sections: Russian Literature: The Golden Age and After
+- **Ch 3. Russian Foundations** `ku-russian-russian-foundations` — 1 sections: Russian Foundations: Cyrillic, Cases and Aspect
 
 ### Mandarin Chinese (`ku-mandarin`)
 

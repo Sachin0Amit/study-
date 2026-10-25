@@ -8,12 +8,22 @@ import { x34FinalOrphanPassTopics } from './x34-final-orphan-pass'
 import { x35NswHscPassTopics } from './x35-nsw-hsc-pass'
 import { x37AlbertaPassTopics } from './x37-alberta-pass'
 import { x46ThinBooksPassTopics } from './x46-thin-books-pass'
+import { x49LanguageDeepeningPassTopics } from './x49-language-deepening-pass'
 
 export const languagesLiterature: KnowledgeDomainFile = {
   domain: 'Languages & World Literature',
   blurb:
     'The science of learning languages and the literatures they carry — from grammar glue to great texts.',
   topics: [
+    // X49 language-deepening pass (2026-10-25): brings the Arabic, Korean
+    // and Russian books from 1 lesson each to the 3-lesson standard with a
+    // grammar workshop + a literature/culture lesson per language — full
+    // i'rab/derived-stem morphology and the qasida-to-Mahfouz canon;
+    // 은/는 vs 이/가 particle mechanics and the Hunminjeongeum-to-Han-Kang
+    // arc; full declension/motion-verb tables and the Golden Age through
+    // the Nobel lineage. Carved against the three foundations lessons
+    // (each owns script mechanics + the introductory idea in outline).
+    ...x49LanguageDeepeningPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
     // X46 thin-books pass (2026-10-25): Hindi literature masters (four
     // periods, Kabir to Nayi Kahani), Hindi grammar workshop (sandhi,
     // samas, rasa, alankar, chhand) and French reading + the francophone

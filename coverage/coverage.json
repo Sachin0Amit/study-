@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T13:53:48.136Z",
+  "generatedAt": "2026-10-25T14:20:56.187Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 138,
     "books": 138,
-    "chapters": 841,
-    "sections": 4571
+    "chapters": 847,
+    "sections": 4577
   },
   "subjects": [
     {
@@ -31175,12 +31175,42 @@
       "name": "Arabic",
       "group": "Languages & Literature",
       "tagline": "The calligraphic tradition",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-arabic-arabic-foundations",
+          "id": "ku-arabic-arabic-grammar",
           "number": 1,
+          "title": "Arabic Grammar",
+          "shortTitle": "Arabic Grammar",
+          "bookId": "ku-arabic",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-arabic-grammar-morphology",
+              "number": 1.1,
+              "title": "Arabic Grammar Workshop: Cases, Plurals and the Verb Engine"
+            }
+          ]
+        },
+        {
+          "id": "ku-arabic-arabic-literature-and-culture",
+          "number": 2,
+          "title": "Arabic Literature & Culture",
+          "shortTitle": "Arabic Literature & Culture",
+          "bookId": "ku-arabic",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-arabic-literature-culture",
+              "number": 2.1,
+              "title": "Arabic Literature: Odes, Nights and the Novel"
+            }
+          ]
+        },
+        {
+          "id": "ku-arabic-arabic-foundations",
+          "number": 3,
           "title": "Arabic Foundations",
           "shortTitle": "Arabic Foundations",
           "bookId": "ku-arabic",
@@ -31188,7 +31218,7 @@
           "sections": [
             {
               "id": "ku-lang-arabic-foundations",
-              "number": 1.1,
+              "number": 3.1,
               "title": "Arabic Foundations: Roots, Script and Diglossia"
             }
           ]
@@ -31200,12 +31230,42 @@
       "name": "Korean",
       "group": "Languages & Literature",
       "tagline": "Hangul, the smart script",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-korean-korean-foundations",
+          "id": "ku-korean-korean-grammar",
           "number": 1,
+          "title": "Korean Grammar",
+          "shortTitle": "Korean Grammar",
+          "bookId": "ku-korean",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-korean-grammar-workshop",
+              "number": 1.1,
+              "title": "Korean Grammar Workshop: Particles, Endings and Irregular Verbs"
+            }
+          ]
+        },
+        {
+          "id": "ku-korean-korean-literature-and-culture",
+          "number": 2,
+          "title": "Korean Literature & Culture",
+          "shortTitle": "Korean Literature & Culture",
+          "bookId": "ku-korean",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-korean-reading-culture",
+              "number": 2.1,
+              "title": "Korean Reading and Culture: From Hunminjeongeum to the Nobel"
+            }
+          ]
+        },
+        {
+          "id": "ku-korean-korean-foundations",
+          "number": 3,
           "title": "Korean Foundations",
           "shortTitle": "Korean Foundations",
           "bookId": "ku-korean",
@@ -31213,7 +31273,7 @@
           "sections": [
             {
               "id": "ku-lang-korean-foundations",
-              "number": 1.1,
+              "number": 3.1,
               "title": "Korean Foundations: Hangul, Politeness and Verb-Last Order"
             }
           ]
@@ -31225,12 +31285,42 @@
       "name": "Russian",
       "group": "Languages & Literature",
       "tagline": "Cases and Cyrillic",
-      "chapterCount": 1,
-      "sectionCount": 1,
+      "chapterCount": 3,
+      "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-russian-russian-foundations",
+          "id": "ku-russian-russian-grammar",
           "number": 1,
+          "title": "Russian Grammar",
+          "shortTitle": "Russian Grammar",
+          "bookId": "ku-russian",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-russian-grammar-workshop",
+              "number": 1.1,
+              "title": "Russian Grammar Workshop: Declension, Motion and Government"
+            }
+          ]
+        },
+        {
+          "id": "ku-russian-russian-literature",
+          "number": 2,
+          "title": "Russian Literature",
+          "shortTitle": "Russian Literature",
+          "bookId": "ku-russian",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-russian-literature-golden",
+              "number": 2.1,
+              "title": "Russian Literature: The Golden Age and After"
+            }
+          ]
+        },
+        {
+          "id": "ku-russian-russian-foundations",
+          "number": 3,
           "title": "Russian Foundations",
           "shortTitle": "Russian Foundations",
           "bookId": "ku-russian",
@@ -31238,7 +31328,7 @@
           "sections": [
             {
               "id": "ku-lang-russian-foundations",
-              "number": 1.1,
+              "number": 3.1,
               "title": "Russian Foundations: Cyrillic, Cases and Aspect"
             }
           ]
