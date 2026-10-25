@@ -1,10 +1,22 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x47BioSplitPassTopics } from './x47-bio-split-pass'
+import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
 
 export const emergingInterdisciplinary: KnowledgeDomainFile = {
   domain: 'Emerging & Interdisciplinary',
   blurb: 'Where disciplines collide: genomes as code, feedback loops as universal grammar, and qubits stripped of the hype.',
   topics: [
+    // X51 library-org pass (2026-10-26): thin-book clearance for
+    // Nanotechnology (making/seeing the nanoworld: top-down vs bottom-up,
+    // diffraction limit, SEM/TEM/AFM/STM/XRD/DLS; nanomedicine & clean tech:
+    // liposomes/Doxil, EPR, gold-NP diagnostics, ZVI remediation), Quantum
+    // Information (qubits & gates; algorithms & hardware — zero live overlap:
+    // no existing topic mentions qubits/Shor/Grover) and Computational
+    // Science (numerical methods engine: finite differences, RK4, CFL,
+    // stiffness, Monte Carlo, V&V). Carved against the scale lesson (which
+    // owns the physics), the sensing lesson (which owns metrology), and the
+    // twins/climate lessons (which own the applications layers).
+    ...x51LibraryOrgPassTopics.filter((t) => t.domain === 'Emerging & Interdisciplinary'),
     // X47 biology-split pass (2026-10-25): the user split the one-volume
     // Biology book into 13 discipline books. Emerging & Interdisciplinary
     // slice: bioinformatics databases & structure prediction (carved

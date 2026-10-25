@@ -16,8 +16,8 @@
 
 - **Subjects:** 138
 - **Books (master volumes):** 138
-- **Chapters:** 847
-- **Sections (lessons):** 4577
+- **Chapters:** 858
+- **Sections (lessons):** 4586
 
 ## Foundations — 7 subjects
 
@@ -949,9 +949,11 @@
 
 ### Energy & Sustainability (`ku-energy`)
 
-*Clean power, real engineering* — 1 chapters · 3 sections
+*Clean power, real engineering* — 3 chapters · 3 sections
 
-- **Ch 1. Renewable Energy** `ku-energy-renewable-energy` — 3 sections: The Renewable Energy Transition; Solar Energy: How Photovoltaics and Solar Thermal Actually Work; Wind Energy: Turbines, Farms and the Physics of Harvesting Wind
+- **Ch 1. The Energy Transition** `ku-energy-the-energy-transition` — 1 sections: The Renewable Energy Transition
+- **Ch 2. Solar Power** `ku-energy-solar-power` — 1 sections: Solar Energy: How Photovoltaics and Solar Thermal Actually Work
+- **Ch 3. Wind Power** `ku-energy-wind-power` — 1 sections: Wind Energy: Turbines, Farms and the Physics of Harvesting Wind
 
 ## Medicine & Health — 6 subjects
 
@@ -1353,10 +1355,11 @@
 
 ### German (`ku-german`)
 
-*The logic of German* — 2 chapters · 2 sections
+*The logic of German* — 3 chapters · 3 sections
 
 - **Ch 1. German Foundations** `ku-german-german-foundations` — 1 sections: German Foundations: Cases, Word Order and Cognates
 - **Ch 2. German Verbs** `ku-german-german-verbs` — 1 sections: German Verbs: Stem Changes, Separable Prefixes and the Perfect
+- **Ch 3. German Literature** `ku-german-german-literature` — 1 sections: German Literature: Luther’s Language to the Nobel List
 
 ### Hindi (`ku-hindi`)
 
@@ -1392,10 +1395,11 @@
 
 ### Mandarin Chinese (`ku-mandarin`)
 
-*Tones, strokes and characters* — 2 chapters · 2 sections
+*Tones, strokes and characters* — 3 chapters · 3 sections
 
 - **Ch 1. Mandarin Foundations** `ku-mandarin-mandarin-foundations` — 1 sections: Mandarin Foundations: Tones, Characters and First Phrases
-- **Ch 2. Classical Canon & Recitation** `ku-mandarin-classical-canon-and-recitation` — 1 sections: The Classical Chinese Canon: Famous Lines and Exact Recall
+- **Ch 2. Mandarin Grammar** `ku-mandarin-mandarin-grammar` — 1 sections: Mandarin Grammar: Measure Words, Aspect and the Ba-Construction
+- **Ch 3. Classical Canon & Recitation** `ku-mandarin-classical-canon-and-recitation` — 1 sections: The Classical Chinese Canon: Famous Lines and Exact Recall
 
 ## Arts & Culture — 8 subjects
 
@@ -1521,28 +1525,35 @@
 
 ### Naval Architecture & Marine Engineering (`ku-naval-architecture`)
 
-*Why ships stay up* — 1 chapters · 1 sections
+*Why ships stay up* — 3 chapters · 3 sections
 
 - **Ch 1. Marine Engineering** `ku-naval-architecture-marine-engineering` — 1 sections: Naval Architecture: Why Ships Float and Stay Up
+- **Ch 2. Ship Structures** `ku-naval-architecture-ship-structures` — 1 sections: Ship Structures: Hull Girders, Framing and Fatigue
+- **Ch 3. Ship Design & Propulsion** `ku-naval-architecture-ship-design-and-propulsion` — 1 sections: Ship Design and Propulsion: The Spiral from Deadweight to Propeller
 
 ### Nanotechnology (`ku-nanotechnology`)
 
-*Engineering at atomic scale* — 1 chapters · 1 sections
+*Engineering at atomic scale* — 3 chapters · 3 sections
 
 - **Ch 1. The Small Frontier** `ku-nanotechnology-the-small-frontier` — 1 sections: Nanotechnology: Engineering at the Scale of Atoms
+- **Ch 2. Making & Seeing the Nanoworld** `ku-nanotechnology-making-and-seeing-the-nanoworld` — 1 sections: Making and Seeing the Nanoworld
+- **Ch 3. Nanomedicine & Clean Tech** `ku-nanotechnology-nanomedicine-and-clean-tech` — 1 sections: Nanomedicine and Clean Technology
 
 ### Quantum Information (`ku-quantum-information`)
 
-*Qubits and beyond* — 1 chapters · 1 sections
+*Qubits and beyond* — 3 chapters · 3 sections
 
-- **Ch 1. Quantum Computation** `ku-quantum-information-quantum-computation` — 1 sections: Quantum Sensing and Atomic Clocks: Measuring the Impossible
+- **Ch 1. Quantum Sensing & Metrology** `ku-quantum-information-quantum-sensing-and-metrology` — 1 sections: Quantum Sensing and Atomic Clocks: Measuring the Impossible
+- **Ch 2. Quantum Computation** `ku-quantum-information-quantum-computation` — 1 sections: Qubits and Quantum Gates
+- **Ch 3. Algorithms & Hardware** `ku-quantum-information-algorithms-and-hardware` — 1 sections: Quantum Algorithms and Hardware Platforms
 
 ### Computational Science & Simulation (`ku-computational-science`)
 
-*Models of the future* — 2 chapters · 2 sections
+*Models of the future* — 3 chapters · 3 sections
 
-- **Ch 1. Simulating Reality** `ku-computational-science-simulating-reality` — 1 sections: Digital Twins: Building the Mirror World
-- **Ch 2. Earth System Modeling** `ku-computational-science-earth-system-modeling` — 1 sections: How Climate Models Predict the Future
+- **Ch 1. Numerical Methods** `ku-computational-science-numerical-methods` — 1 sections: Numerical Methods: The Engine Under Every Simulation
+- **Ch 2. Simulating Reality** `ku-computational-science-simulating-reality` — 1 sections: Digital Twins: Building the Mirror World
+- **Ch 3. Earth System Modeling** `ku-computational-science-earth-system-modeling` — 1 sections: How Climate Models Predict the Future
 
 ## Everyday Life Skills — 6 subjects
 

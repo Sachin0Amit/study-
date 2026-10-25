@@ -1,11 +1,19 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x19CivilCoreTopics } from './x19-civil-core'
 import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
+import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
 
 export const engineering: KnowledgeDomainFile = {
   domain: 'Engineering',
   blurb: 'The discipline of building systems that must work — bridges, chips, power grids and everything in between.',
   topics: [
+    // X51 library-org pass (2026-10-26): naval thin-book clearance — ship
+    // structures (section modulus, framing, fatigue/brittle fracture, class
+    // rules) and design & propulsion (deadweight/tonnage, Froude number,
+    // block coefficient, design spiral, propeller J/KT/KQ, SOLAS/MARPOL).
+    // Carved against eng-naval-architecture-ships (which owns buoyancy,
+    // stability, the resistance split and the hog-sag narrative).
+    ...x51LibraryOrgPassTopics.filter((t) => t.domain === 'Engineering'),
     // X48 all-subjects split pass (2026-10-25): traffic flow theory for
     // the Transportation Engineering volume — fundamental diagram,
     // Greenshields, shockwaves, LOS, Webster. Carved against the x19

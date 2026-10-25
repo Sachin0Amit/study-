@@ -9,12 +9,23 @@ import { x35NswHscPassTopics } from './x35-nsw-hsc-pass'
 import { x37AlbertaPassTopics } from './x37-alberta-pass'
 import { x46ThinBooksPassTopics } from './x46-thin-books-pass'
 import { x49LanguageDeepeningPassTopics } from './x49-language-deepening-pass'
+import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
 
 export const languagesLiterature: KnowledgeDomainFile = {
   domain: 'Languages & World Literature',
   blurb:
     'The science of learning languages and the literatures they carry — from grammar glue to great texts.',
   topics: [
+    // X51 library-org pass (2026-10-26): German book reaches 3 lessons —
+    // German Literature (Luther's Bible → Weimar Classicism → Romanticism →
+    // Kafka/Mann → Brecht → the Nobel roll; carved against
+    // lang-german-foundations which owns cases/word order and mentions
+    // Goethe/Kafka once as an application bullet, and lang-german-verbs)
+    // and Mandarin book reaches 3 — Mandarin Grammar (measure words,
+    // aspect particles le/guo/zhe, ba-construction, complements; carved
+    // against lang-mandarin-foundations which owns tones/pinyin/radicals
+    // and lang-classical-chinese-canon which owns set-text recitation).
+    ...x51LibraryOrgPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
     // X49 language-deepening pass (2026-10-25): brings the Arabic, Korean
     // and Russian books from 1 lesson each to the 3-lesson standard with a
     // grammar workshop + a literature/culture lesson per language — full

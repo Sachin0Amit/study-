@@ -635,10 +635,15 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'battery-charging',
     accent: '#facc15',
     tagline: 'Clean power, real engineering',
-    blurb: 'Renewable energy, grids and storage, and the atom harnessed.',
+    blurb: 'The energy transition, solar, wind — grids, storage and the atom.',
     ownFields: ['Energy & Sustainability', 'Energy Systems', 'Nuclear Technology'],
+    /* X51 fix: the field-matched 'Renewable Energy' chapter swallowed all
+       three lessons into one chapter; branch-based declarations give each
+       technology its own chapter in pedagogical order (USER RULE 5). */
     chapters: [
-      { name: 'Renewable Energy', fields: ['Energy & Sustainability'] },
+      { name: 'The Energy Transition', branches: ['Energy Policy'] },
+      { name: 'Solar Power', branches: ['Solar Power'] },
+      { name: 'Wind Power', branches: ['Wind Power'] },
       { name: 'Energy Systems & Grids', fields: ['Energy Systems'] },
       { name: 'Nuclear Energy', fields: ['Nuclear Technology'] },
     ],
@@ -1397,9 +1402,15 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'languages',
     accent: '#334155',
     tagline: 'The logic of German',
-    blurb: 'German foundations and the verb system.',
+    blurb: 'Foundations, the verb system and the canon from Luther to the Nobel list.',
     ownFields: ['German'],
-    chapters: [],
+    /* X51: declared pedagogical order — foundations, then verbs, then
+       literature (USER RULE 5). */
+    chapters: [
+      { name: 'German Foundations', branches: ['German Foundations'] },
+      { name: 'German Verbs', branches: ['German Verbs'] },
+      { name: 'German Literature', branches: ['German Literature'] },
+    ],
   },
   {
     key: 'hindi',
@@ -1476,12 +1487,13 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'languages',
     accent: '#dc2626',
     tagline: 'Tones, strokes and characters',
-    blurb: 'Mandarin foundations and the classical canon.',
+    blurb: 'Foundations, the grammar engine and the classical canon.',
     ownFields: ['Mandarin Chinese'],
-    /* X49 sequencing: declared pedagogical order — the modern language
-       before the classical canon (USER RULE 5). */
+    /* X51: the grammar engine sits between foundations and the classical
+       canon (USER RULE 5). */
     chapters: [
       { name: 'Mandarin Foundations', branches: ['Mandarin Foundations'] },
+      { name: 'Mandarin Grammar', branches: ['Mandarin Grammar'] },
       { name: 'Classical Canon & Recitation', branches: ['Classical Canon & Recitation'] },
     ],
   },
@@ -1713,9 +1725,15 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'ship',
     accent: '#0369a1',
     tagline: 'Why ships stay up',
-    blurb: 'Buoyancy, stability and marine engineering.',
+    blurb: 'Buoyancy and stability, hull structures, and the design-propulsion spiral.',
     ownFields: ['Naval Architecture'],
-    chapters: [],
+    /* X51: declared pedagogical order — float/stability first, then
+       structures, then design/propulsion (USER RULE 5). */
+    chapters: [
+      { name: 'Marine Engineering', branches: ['Marine Engineering'] },
+      { name: 'Ship Structures', branches: ['Ship Structures'] },
+      { name: 'Ship Design & Propulsion', branches: ['Ship Design & Propulsion'] },
+    ],
   },
   {
     key: 'nanotechnology',
@@ -1724,9 +1742,15 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'atom',
     accent: '#a855f7',
     tagline: 'Engineering at atomic scale',
-    blurb: 'The small frontier — engineering matter at the nanoscale.',
+    blurb: 'The small frontier — its physics, its making-and-seeing tools, its medicine and clean tech.',
     ownFields: ['Nanotechnology'],
-    chapters: [],
+    /* X51: declared pedagogical order — scale physics first, then the
+       fabrication/characterization craft, then applications (USER RULE 5). */
+    chapters: [
+      { name: 'The Small Frontier', branches: ['The Small Frontier'] },
+      { name: 'Making & Seeing the Nanoworld', branches: ['Making & Seeing the Nanoworld'] },
+      { name: 'Nanomedicine & Clean Tech', branches: ['Nanomedicine & Clean Tech'] },
+    ],
   },
   {
     key: 'quantum-information',
@@ -1735,10 +1759,14 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'atom',
     accent: '#8b5cf6',
     tagline: 'Qubits and beyond',
-    blurb: 'Quantum computation and what lies beyond classical computing.',
+    blurb: 'Qubits and gates, algorithms and hardware — and the quantum sensing that started it all.',
     ownFields: ['Quantum Information'],
+    /* X51: restructured — the sensing lesson now owns a correctly-named
+       chapter; computation and algorithms/hardware follow (USER RULE 5). */
     chapters: [
-      { name: 'Quantum Computation', branches: ['Quantum Computation', 'Beyond Computing'] },
+      { name: 'Quantum Sensing & Metrology', branches: ['Beyond Computing'] },
+      { name: 'Quantum Computation', branches: ['Quantum Computation'] },
+      { name: 'Algorithms & Hardware', branches: ['Algorithms & Hardware'] },
     ],
   },
   {
@@ -1748,9 +1776,12 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'cpu',
     accent: '#0891b2',
     tagline: 'Models of the future',
-    blurb: 'Simulating reality and modeling the Earth system.',
+    blurb: 'The numerical engine, digital twins and the modeled Earth system.',
     ownFields: ['Computational Science'],
+    /* X51: the shared numerical machinery sits first, then the two
+       application chapters (USER RULE 5). */
     chapters: [
+      { name: 'Numerical Methods', branches: ['Numerical Methods'] },
       { name: 'Simulating Reality', branches: ['Simulating Reality'] },
       { name: 'Earth System Modeling', branches: ['Earth System Modeling'] },
     ],

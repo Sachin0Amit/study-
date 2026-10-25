@@ -781,7 +781,13 @@ export const KNOWLEDGE_SUBJECTS: Subject[] = [
   ...SUBJECT_BUCKETS.filter((b) => !b.tax.mergeInto).map((bucket) => {
     const tax = bucket.tax
     const topicCount = bucket.chapters.size > 0 ? [...bucket.chapters.values()].reduce((n, ts) => n + ts.length, 0) : 0
-    const chapterTitles = [...bucket.chapters.keys()].join(' · ')
+    /* USER RULE 5 — the subject card lists chapters in the SAME declared
+       pedagogical order the book page renders (X51 fix): declared
+       chapters first in declaration order, undeclared keep first-
+       occurrence order after them. */
+    const declaredNames = tax.chapters.map((c) => c.name).filter((name) => bucket.chapters.has(name))
+    const restNames = [...bucket.chapters.keys()].filter((name) => !declaredNames.includes(name))
+    const chapterTitles = [...declaredNames, ...restNames].join(' · ')
     return {
       id: `ku-${tax.key}`,
       name: tax.name,
@@ -819,7 +825,13 @@ export const KNOWLEDGE_BOOKS: BookMeta[] = [
     const topics = [...bucket.chapters.values()].flat()
     const words = topics.reduce((n, t) => n + countTopicWords(t), 0)
     const years = [...new Set(topics.map((t) => t.addedOn.slice(0, 4)))].sort()
-    const chapterTitles = [...bucket.chapters.keys()].join(', ')
+    /* USER RULE 5 — the card blurb lists chapters in the SAME declared
+       pedagogical order the book page renders (X51 fix): declared
+       chapters first in declaration order, undeclared keep first-
+       occurrence order after them. */
+    const declaredNames = tax.chapters.map((c) => c.name).filter((name) => bucket.chapters.has(name))
+    const restNames = [...bucket.chapters.keys()].filter((name) => !declaredNames.includes(name))
+    const chapterTitles = [...declaredNames, ...restNames].join(', ')
     const sourceAreas = [...new Set(topics.map((t) => t.field))].join(', ')
     return {
       id: `ku-${tax.key}`,
