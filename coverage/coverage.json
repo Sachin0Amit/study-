@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T14:20:56.187Z",
+  "generatedAt": "2026-10-25T16:17:46.657Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -3054,27 +3054,17 @@
           ]
         },
         {
-          "id": "ku-x-math-master-applied-mathematics-and-numeracy",
+          "id": "ku-x-math-master-sets-logic-and-mathematical-foundations",
           "number": 70,
-          "title": "Applied Mathematics & Numeracy",
-          "shortTitle": "Applied Mathematics & Numeracy",
+          "title": "Sets, Logic & Mathematical Foundations",
+          "shortTitle": "Sets, Logic & Mathematical Foundations",
           "bookId": "math-master",
-          "sectionCount": 3,
+          "sectionCount": 1,
           "sections": [
             {
-              "id": "ku-fnd-percentage-ratio-mental-math",
+              "id": "ku-math-sets-logic-foundations",
               "number": 70.1,
-              "title": "Percentage, Ratio and Mental Math Shortcuts"
-            },
-            {
-              "id": "ku-math-graphical-linear-programming",
-              "number": 70.2,
-              "title": "Linear Programming by Graph: Feasible Regions and Corner Points"
-            },
-            {
-              "id": "ku-math-formulating-real-life-problems",
-              "number": 70.3,
-              "title": "From Words to Equations: Formulating Real-Life Problems"
+              "title": "Sets and Logical Terms: The Grammar of Precise Mathematics"
             }
           ]
         },
@@ -3099,23 +3089,8 @@
           ]
         },
         {
-          "id": "ku-x-math-master-sets-logic-and-mathematical-foundations",
-          "number": 72,
-          "title": "Sets, Logic & Mathematical Foundations",
-          "shortTitle": "Sets, Logic & Mathematical Foundations",
-          "bookId": "math-master",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-math-sets-logic-foundations",
-              "number": 72.1,
-              "title": "Sets and Logical Terms: The Grammar of Precise Mathematics"
-            }
-          ]
-        },
-        {
           "id": "ku-x-math-master-calculus",
-          "number": 73,
+          "number": 72,
           "title": "Calculus",
           "shortTitle": "Calculus",
           "bookId": "math-master",
@@ -3123,24 +3098,24 @@
           "sections": [
             {
               "id": "ku-calc-removing-discontinuities",
-              "number": 73.1,
+              "number": 72.1,
               "title": "Removing Discontinuities: Finding and Filling the Holes"
             },
             {
               "id": "ku-calc-linearization-differentials",
-              "number": 73.2,
+              "number": 72.2,
               "title": "Linearization and Differentials: The Tangent as a Calculator"
             },
             {
               "id": "ku-calc-concavity-second-derivative-test",
-              "number": 73.3,
+              "number": 72.3,
               "title": "Concavity and the Second Derivative Test"
             }
           ]
         },
         {
           "id": "ku-x-math-master-geometry-and-measurement",
-          "number": 74,
+          "number": 73,
           "title": "Geometry & Measurement",
           "shortTitle": "Geometry & Measurement",
           "bookId": "math-master",
@@ -3148,8 +3123,23 @@
           "sections": [
             {
               "id": "ku-math-measurement-areas-volumes",
-              "number": 74.1,
+              "number": 73.1,
               "title": "Mensuration and Calculation: Perimeter, Area, Surface Area and Volume"
+            }
+          ]
+        },
+        {
+          "id": "ku-x-math-master-discrete-mathematics",
+          "number": 74,
+          "title": "Discrete Mathematics",
+          "shortTitle": "Discrete Mathematics",
+          "bookId": "math-master",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-math-games-tournaments-tactics",
+              "number": 74.1,
+              "title": "Tournament Formats and Fixture Arithmetic: Knockouts, Round-Robins and Points Tables"
             }
           ]
         },
@@ -3194,17 +3184,27 @@
           ]
         },
         {
-          "id": "ku-x-math-master-discrete-mathematics",
+          "id": "ku-x-math-master-applied-mathematics-and-numeracy",
           "number": 76,
-          "title": "Discrete Mathematics",
-          "shortTitle": "Discrete Mathematics",
+          "title": "Applied Mathematics & Numeracy",
+          "shortTitle": "Applied Mathematics & Numeracy",
           "bookId": "math-master",
-          "sectionCount": 1,
+          "sectionCount": 3,
           "sections": [
             {
-              "id": "ku-math-games-tournaments-tactics",
+              "id": "ku-fnd-percentage-ratio-mental-math",
               "number": 76.1,
-              "title": "Tournament Formats and Fixture Arithmetic: Knockouts, Round-Robins and Points Tables"
+              "title": "Percentage, Ratio and Mental Math Shortcuts"
+            },
+            {
+              "id": "ku-math-graphical-linear-programming",
+              "number": 76.2,
+              "title": "Linear Programming by Graph: Feasible Regions and Corner Points"
+            },
+            {
+              "id": "ku-math-formulating-real-life-problems",
+              "number": 76.3,
+              "title": "From Words to Equations: Formulating Real-Life Problems"
             }
           ]
         }
@@ -11104,23 +11104,8 @@
           ]
         },
         {
-          "id": "ku-x-aptitude-complete-situational-judgement",
-          "number": 5,
-          "title": "Situational Judgement",
-          "shortTitle": "Situational Judgement",
-          "bookId": "aptitude-complete",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-sj-situational-judgement",
-              "number": 5.1,
-              "title": "Situational Judgement: Integrity, Perspective Taking and Teamwork"
-            }
-          ]
-        },
-        {
           "id": "ku-x-aptitude-complete-verbal-logical-and-nonverbal-reasoning",
-          "number": 6,
+          "number": 5,
           "title": "Verbal, Logical & Nonverbal Reasoning",
           "shortTitle": "Verbal, Logical & Nonverbal Reasoning",
           "bookId": "aptitude-complete",
@@ -11128,33 +11113,48 @@
           "sections": [
             {
               "id": "ku-fnd-visual-pattern-rules",
-              "number": 6.1,
+              "number": 5.1,
               "title": "Nonverbal Reasoning: Shape Attributes, Series and Rule Detection"
             },
             {
               "id": "ku-reason-coded-inequalities",
-              "number": 6.2,
+              "number": 5.2,
               "title": "Coded Inequalities: Decoding Order Statements into Valid Conclusions"
             },
             {
               "id": "ku-pol-logic-induction-deduction-square",
-              "number": 6.3,
+              "number": 5.3,
               "title": "Induction, Deduction and the Square of Opposition"
             },
             {
               "id": "ku-eng-principle-application",
-              "number": 6.4,
+              "number": 5.4,
               "title": "Applying Principles: From Rule to Case"
             },
             {
               "id": "ku-eng-verbal-reasoning-passage-claims",
-              "number": 6.5,
+              "number": 5.5,
               "title": "True, False, Can’t Tell: Judging Claims Against the Passage"
             },
             {
               "id": "ku-eng-critical-reasoning-arguments",
-              "number": 6.6,
+              "number": 5.6,
               "title": "Critical Reasoning: Breaking Down Arguments for Exams"
+            }
+          ]
+        },
+        {
+          "id": "ku-x-aptitude-complete-situational-judgement",
+          "number": 6,
+          "title": "Situational Judgement",
+          "shortTitle": "Situational Judgement",
+          "bookId": "aptitude-complete",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-sj-situational-judgement",
+              "number": 6.1,
+              "title": "Situational Judgement: Integrity, Perspective Taking and Teamwork"
             }
           ]
         }
@@ -26669,28 +26669,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-computer-literacy-ict-and-digital-literacy",
-          "number": 1,
-          "title": "ICT & Digital Literacy",
-          "shortTitle": "ICT & Digital Literacy",
-          "bookId": "ku-computer-literacy",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-ict-computers-internet-digital-initiatives",
-              "number": 1.1,
-              "title": "ICT: From Abbreviations to India’s Digital Higher-Education Initiatives"
-            },
-            {
-              "id": "ku-comp-office-productivity-software",
-              "number": 1.2,
-              "title": "Office Productivity Software: Documents, Spreadsheets, Slides and Workflows"
-            }
-          ]
-        },
-        {
           "id": "ku-computer-literacy-computing-fundamentals",
-          "number": 2,
+          "number": 1,
           "title": "Computing Fundamentals",
           "shortTitle": "Computing Fundamentals",
           "bookId": "ku-computer-literacy",
@@ -26698,8 +26678,28 @@
           "sections": [
             {
               "id": "ku-cs-computing-thinking-digital-society",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Computational Thinking, Algorithms and the Digital Citizen"
+            }
+          ]
+        },
+        {
+          "id": "ku-computer-literacy-ict-and-digital-literacy",
+          "number": 2,
+          "title": "ICT & Digital Literacy",
+          "shortTitle": "ICT & Digital Literacy",
+          "bookId": "ku-computer-literacy",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-ict-computers-internet-digital-initiatives",
+              "number": 2.1,
+              "title": "ICT: From Abbreviations to India’s Digital Higher-Education Initiatives"
+            },
+            {
+              "id": "ku-comp-office-productivity-software",
+              "number": 2.2,
+              "title": "Office Productivity Software: Documents, Spreadsheets, Slides and Workflows"
             }
           ]
         }
@@ -26714,43 +26714,8 @@
       "sectionCount": 8,
       "chapters": [
         {
-          "id": "ku-cell-molecular-biology-molecular-biology-of-the-gene",
-          "number": 1,
-          "title": "Molecular Biology of the Gene",
-          "shortTitle": "Molecular Biology of the Gene",
-          "bookId": "ku-cell-molecular-biology",
-          "sectionCount": 5,
-          "sections": [
-            {
-              "id": "ku-bio-dna-structure-replication",
-              "number": 1.1,
-              "title": "DNA: The Molecule of Heredity, Structure and Replication"
-            },
-            {
-              "id": "ku-bio-transcription-rna-processing",
-              "number": 1.2,
-              "title": "Transcription: Reading Genes into RNA"
-            },
-            {
-              "id": "ku-bio-translation-genetic-code",
-              "number": 1.3,
-              "title": "The Genetic Code and Translation: RNA to Protein"
-            },
-            {
-              "id": "ku-bio-mutations-dna-repair",
-              "number": 1.4,
-              "title": "Mutations and the Repair Systems That Contain Them"
-            },
-            {
-              "id": "ku-bio-gene-regulation-epigenetics",
-              "number": 1.5,
-              "title": "Gene Regulation: From Operons to Epigenetics"
-            }
-          ]
-        },
-        {
           "id": "ku-cell-molecular-biology-the-cell-structure-and-signaling",
-          "number": 2,
+          "number": 1,
           "title": "The Cell: Structure & Signaling",
           "shortTitle": "The Cell: Structure & Signaling",
           "bookId": "ku-cell-molecular-biology",
@@ -26758,13 +26723,48 @@
           "sections": [
             {
               "id": "ku-bio-cell-signaling-transduction",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Cell Signaling: Reception, Transduction, Response"
             },
             {
               "id": "ku-bio-cell-biomolecules",
-              "number": 2.2,
+              "number": 1.2,
               "title": "The Cell and Its Biomolecules: From Membranes to Macromolecules"
+            }
+          ]
+        },
+        {
+          "id": "ku-cell-molecular-biology-molecular-biology-of-the-gene",
+          "number": 2,
+          "title": "Molecular Biology of the Gene",
+          "shortTitle": "Molecular Biology of the Gene",
+          "bookId": "ku-cell-molecular-biology",
+          "sectionCount": 5,
+          "sections": [
+            {
+              "id": "ku-bio-dna-structure-replication",
+              "number": 2.1,
+              "title": "DNA: The Molecule of Heredity, Structure and Replication"
+            },
+            {
+              "id": "ku-bio-transcription-rna-processing",
+              "number": 2.2,
+              "title": "Transcription: Reading Genes into RNA"
+            },
+            {
+              "id": "ku-bio-translation-genetic-code",
+              "number": 2.3,
+              "title": "The Genetic Code and Translation: RNA to Protein"
+            },
+            {
+              "id": "ku-bio-mutations-dna-repair",
+              "number": 2.4,
+              "title": "Mutations and the Repair Systems That Contain Them"
+            },
+            {
+              "id": "ku-bio-gene-regulation-epigenetics",
+              "number": 2.5,
+              "title": "Gene Regulation: From Operons to Epigenetics"
             }
           ]
         },
@@ -26794,23 +26794,8 @@
       "sectionCount": 6,
       "chapters": [
         {
-          "id": "ku-biochemistry-laboratory-methods",
-          "number": 1,
-          "title": "Laboratory Methods",
-          "shortTitle": "Laboratory Methods",
-          "bookId": "ku-biochemistry",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bioc-biochem-toolbox",
-              "number": 1.1,
-              "title": "The Biochemist’s Toolbox: Chromatography, Electrophoresis and Spectrophotometry"
-            }
-          ]
-        },
-        {
           "id": "ku-biochemistry-molecules-of-life",
-          "number": 2,
+          "number": 1,
           "title": "Molecules of Life",
           "shortTitle": "Molecules of Life",
           "bookId": "ku-biochemistry",
@@ -26818,28 +26803,43 @@
           "sections": [
             {
               "id": "ku-bio-biochemistry-metabolism",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Biochemistry: The Cell's Energy Economy"
             },
             {
               "id": "ku-bioc-protein-structure-folding",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Protein Structure and Folding: Shape Is Function"
             },
             {
               "id": "ku-bioc-enzymes-kinetics-regulation",
-              "number": 2.3,
+              "number": 1.3,
               "title": "Enzymes: Catalysis, Kinetics and Regulation"
             },
             {
               "id": "ku-bioc-lipid-amino-acid-metabolism",
-              "number": 2.4,
+              "number": 1.4,
               "title": "Beyond Glucose: Fat and Amino-Acid Metabolism"
             },
             {
               "id": "ku-bioc-carbohydrates-lipids",
-              "number": 2.5,
+              "number": 1.5,
               "title": "Carbohydrates and Lipids: Fuel, Structure and Signalling"
+            }
+          ]
+        },
+        {
+          "id": "ku-biochemistry-laboratory-methods",
+          "number": 2,
+          "title": "Laboratory Methods",
+          "shortTitle": "Laboratory Methods",
+          "bookId": "ku-biochemistry",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bioc-biochem-toolbox",
+              "number": 2.1,
+              "title": "The Biochemist’s Toolbox: Chromatography, Electrophoresis and Spectrophotometry"
             }
           ]
         }
@@ -26854,28 +26854,8 @@
       "sectionCount": 9,
       "chapters": [
         {
-          "id": "ku-genetics-heredity-genes-in-populations",
-          "number": 1,
-          "title": "Genes in Populations",
-          "shortTitle": "Genes in Populations",
-          "bookId": "ku-genetics-heredity",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-bio-population-inheritance-frequencies",
-              "number": 1.1,
-              "title": "Inheritance in Populations: Allele Frequencies and Population Patterns"
-            },
-            {
-              "id": "ku-bio-population-genetics",
-              "number": 1.2,
-              "title": "Population Genetics: Genes Drifting Through Time"
-            }
-          ]
-        },
-        {
           "id": "ku-genetics-heredity-classical-and-transmission-genetics",
-          "number": 2,
+          "number": 1,
           "title": "Classical & Transmission Genetics",
           "shortTitle": "Classical & Transmission Genetics",
           "bookId": "ku-genetics-heredity",
@@ -26883,44 +26863,24 @@
           "sections": [
             {
               "id": "ku-bio-meiosis-linkage-inheritance",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Meiosis, Linkage and the Chromosomal Theory of Inheritance"
             },
             {
               "id": "ku-bio-beyond-mendel-extensions",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits"
             },
             {
               "id": "ku-bio-genetics-mendel",
-              "number": 2.3,
+              "number": 1.3,
               "title": "Mendel's Laws: How Traits Travel Between Generations"
             }
           ]
         },
         {
-          "id": "ku-genetics-heredity-biotechnology",
-          "number": 3,
-          "title": "Biotechnology",
-          "shortTitle": "Biotechnology",
-          "bookId": "ku-genetics-heredity",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-bio-biotechnology-rdna-processes",
-              "number": 3.1,
-              "title": "Recombinant DNA: The Tools and Techniques of Genetic Engineering"
-            },
-            {
-              "id": "ku-bio-biotechnology-applications",
-              "number": 3.2,
-              "title": "Biotechnology in Practice: Medicine, Farms, and Industry"
-            }
-          ]
-        },
-        {
           "id": "ku-genetics-heredity-molecular-genetics-and-genomics",
-          "number": 4,
+          "number": 2,
           "title": "Molecular Genetics & Genomics",
           "shortTitle": "Molecular Genetics & Genomics",
           "bookId": "ku-genetics-heredity",
@@ -26928,13 +26888,53 @@
           "sections": [
             {
               "id": "ku-bio-genomics-bioinformatics",
-              "number": 4.1,
+              "number": 2.1,
               "title": "Genomics and Bioinformatics: Reading Whole Genomes"
             },
             {
               "id": "ku-bio-crispr-gene-editing",
-              "number": 4.2,
+              "number": 2.2,
               "title": "CRISPR and the Mechanics of Gene Editing"
+            }
+          ]
+        },
+        {
+          "id": "ku-genetics-heredity-genes-in-populations",
+          "number": 3,
+          "title": "Genes in Populations",
+          "shortTitle": "Genes in Populations",
+          "bookId": "ku-genetics-heredity",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-population-inheritance-frequencies",
+              "number": 3.1,
+              "title": "Inheritance in Populations: Allele Frequencies and Population Patterns"
+            },
+            {
+              "id": "ku-bio-population-genetics",
+              "number": 3.2,
+              "title": "Population Genetics: Genes Drifting Through Time"
+            }
+          ]
+        },
+        {
+          "id": "ku-genetics-heredity-biotechnology",
+          "number": 4,
+          "title": "Biotechnology",
+          "shortTitle": "Biotechnology",
+          "bookId": "ku-genetics-heredity",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-biotechnology-rdna-processes",
+              "number": 4.1,
+              "title": "Recombinant DNA: The Tools and Techniques of Genetic Engineering"
+            },
+            {
+              "id": "ku-bio-biotechnology-applications",
+              "number": 4.2,
+              "title": "Biotechnology in Practice: Medicine, Farms, and Industry"
             }
           ]
         }
@@ -27014,43 +27014,8 @@
       "sectionCount": 4,
       "chapters": [
         {
-          "id": "ku-botany-plant-physiology",
-          "number": 1,
-          "title": "Plant Physiology",
-          "shortTitle": "Plant Physiology",
-          "bookId": "ku-botany",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-bio-photosynthesis",
-              "number": 1.1,
-              "title": "Photosynthesis: Light and Dark Reactions"
-            },
-            {
-              "id": "ku-bio-plant-physiology-transport",
-              "number": 1.2,
-              "title": "Plant Physiology: How Plants Actually Work"
-            }
-          ]
-        },
-        {
-          "id": "ku-botany-reproduction-and-life-cycles",
-          "number": 2,
-          "title": "Reproduction & Life Cycles",
-          "shortTitle": "Reproduction & Life Cycles",
-          "bookId": "ku-botany",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bio-plant-reproduction-flowers-seeds",
-              "number": 2.1,
-              "title": "Plant Reproduction: Flowers, Pollination and Seeds"
-            }
-          ]
-        },
-        {
           "id": "ku-botany-the-plant-body",
-          "number": 3,
+          "number": 1,
           "title": "The Plant Body",
           "shortTitle": "The Plant Body",
           "bookId": "ku-botany",
@@ -27058,8 +27023,43 @@
           "sections": [
             {
               "id": "ku-bio-flowering-plant-body",
-              "number": 3.1,
+              "number": 1.1,
               "title": "The Flowering Plant Body: Morphology and Anatomy"
+            }
+          ]
+        },
+        {
+          "id": "ku-botany-plant-physiology",
+          "number": 2,
+          "title": "Plant Physiology",
+          "shortTitle": "Plant Physiology",
+          "bookId": "ku-botany",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-photosynthesis",
+              "number": 2.1,
+              "title": "Photosynthesis: Light and Dark Reactions"
+            },
+            {
+              "id": "ku-bio-plant-physiology-transport",
+              "number": 2.2,
+              "title": "Plant Physiology: How Plants Actually Work"
+            }
+          ]
+        },
+        {
+          "id": "ku-botany-reproduction-and-life-cycles",
+          "number": 3,
+          "title": "Reproduction & Life Cycles",
+          "shortTitle": "Reproduction & Life Cycles",
+          "bookId": "ku-botany",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-plant-reproduction-flowers-seeds",
+              "number": 3.1,
+              "title": "Plant Reproduction: Flowers, Pollination and Seeds"
             }
           ]
         }
@@ -27139,38 +27139,8 @@
           ]
         },
         {
-          "id": "ku-ecology-conservation-ecosystems-energy-and-biomes",
-          "number": 2,
-          "title": "Ecosystems, Energy & Biomes",
-          "shortTitle": "Ecosystems, Energy & Biomes",
-          "bookId": "ku-ecology-conservation",
-          "sectionCount": 4,
-          "sections": [
-            {
-              "id": "ku-bio-ecosystems-energy-flow",
-              "number": 2.1,
-              "title": "Ecosystems and the Flow of Energy"
-            },
-            {
-              "id": "ku-bio-food-webs-trophic-cascades",
-              "number": 2.2,
-              "title": "Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters"
-            },
-            {
-              "id": "ku-eco-biomes-major-ecosystems",
-              "number": 2.3,
-              "title": "Biomes: A Tour of Earth's Major Ecosystems"
-            },
-            {
-              "id": "ku-ecol-population-growth-limits",
-              "number": 2.4,
-              "title": "Population Ecology: Growth, Limits and Cycles"
-            }
-          ]
-        },
-        {
           "id": "ku-ecology-conservation-populations-and-communities",
-          "number": 3,
+          "number": 2,
           "title": "Populations & Communities",
           "shortTitle": "Populations & Communities",
           "bookId": "ku-ecology-conservation",
@@ -27178,8 +27148,38 @@
           "sections": [
             {
               "id": "ku-ecol-populations-communities",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Populations and Communities: Interactions, Niches and Disturbance"
+            }
+          ]
+        },
+        {
+          "id": "ku-ecology-conservation-ecosystems-energy-and-biomes",
+          "number": 3,
+          "title": "Ecosystems, Energy & Biomes",
+          "shortTitle": "Ecosystems, Energy & Biomes",
+          "bookId": "ku-ecology-conservation",
+          "sectionCount": 4,
+          "sections": [
+            {
+              "id": "ku-bio-ecosystems-energy-flow",
+              "number": 3.1,
+              "title": "Ecosystems and the Flow of Energy"
+            },
+            {
+              "id": "ku-bio-food-webs-trophic-cascades",
+              "number": 3.2,
+              "title": "Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters"
+            },
+            {
+              "id": "ku-eco-biomes-major-ecosystems",
+              "number": 3.3,
+              "title": "Biomes: A Tour of Earth's Major Ecosystems"
+            },
+            {
+              "id": "ku-ecol-population-growth-limits",
+              "number": 3.4,
+              "title": "Population Ecology: Growth, Limits and Cycles"
             }
           ]
         },
@@ -27214,28 +27214,8 @@
       "sectionCount": 5,
       "chapters": [
         {
-          "id": "ku-microbiology-immunology-immunology",
-          "number": 1,
-          "title": "Immunology",
-          "shortTitle": "Immunology",
-          "bookId": "ku-microbiology-immunology",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-bio-immune-system",
-              "number": 1.1,
-              "title": "The Immune System: Innate to Adaptive Defense"
-            },
-            {
-              "id": "ku-imm-autoimmunity-allergy",
-              "number": 1.2,
-              "title": "Autoimmunity and Allergy: When the Defense Misfires"
-            }
-          ]
-        },
-        {
           "id": "ku-microbiology-immunology-the-microbial-world",
-          "number": 2,
+          "number": 1,
           "title": "The Microbial World",
           "shortTitle": "The Microbial World",
           "bookId": "ku-microbiology-immunology",
@@ -27243,18 +27223,38 @@
           "sections": [
             {
               "id": "ku-bio-microbe-bacteria-viruses-fungi",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Bacteria, Viruses, Fungi: A Field Guide to the Microbial World"
             },
             {
               "id": "ku-bio-microbe-antibiotic-resistance",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Antibiotics and the Rise of Resistance"
             },
             {
               "id": "ku-bio-microbe-microbiome",
-              "number": 2.3,
+              "number": 1.3,
               "title": "The Microbiome: Your Trillion Tenants"
+            }
+          ]
+        },
+        {
+          "id": "ku-microbiology-immunology-immunology",
+          "number": 2,
+          "title": "Immunology",
+          "shortTitle": "Immunology",
+          "bookId": "ku-microbiology-immunology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-immune-system",
+              "number": 2.1,
+              "title": "The Immune System: Innate to Adaptive Defense"
+            },
+            {
+              "id": "ku-imm-autoimmunity-allergy",
+              "number": 2.2,
+              "title": "Autoimmunity and Allergy: When the Defense Misfires"
             }
           ]
         }
@@ -27269,23 +27269,8 @@
       "sectionCount": 11,
       "chapters": [
         {
-          "id": "ku-human-anatomy-physiology-when-systems-fail",
-          "number": 1,
-          "title": "When Systems Fail",
-          "shortTitle": "When Systems Fail",
-          "bookId": "ku-human-anatomy-physiology",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bio-sensory-organ-technologies",
-              "number": 1.1,
-              "title": "When Organs Fail: Hearing, Vision and Kidney Technologies"
-            }
-          ]
-        },
-        {
           "id": "ku-human-anatomy-physiology-body-systems",
-          "number": 2,
+          "number": 1,
           "title": "Body Systems",
           "shortTitle": "Body Systems",
           "bookId": "ku-human-anatomy-physiology",
@@ -27293,54 +27278,54 @@
           "sections": [
             {
               "id": "ku-bio-anatomy-heart-circulation",
-              "number": 2.1,
+              "number": 1.1,
               "title": "The Heart and Circulation: One Pump, Two Circuits"
             },
             {
               "id": "ku-bio-anatomy-respiration",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Breathing and Gas Exchange: From Air to Cell"
             },
             {
               "id": "ku-bio-anatomy-digestion",
-              "number": 2.3,
+              "number": 1.3,
               "title": "The Digestive System: From Meal to Molecule"
             },
             {
               "id": "ku-bio-anatomy-kidneys-endocrine",
-              "number": 2.4,
+              "number": 1.4,
               "title": "Kidneys, Hormones and the Body's Balance"
             },
             {
               "id": "ku-bio-anatomy-musculoskeletal",
-              "number": 2.5,
+              "number": 1.5,
               "title": "Muscles, Bones and the Machinery of Movement"
             },
             {
               "id": "ku-anat-endocrine-system-hormones",
-              "number": 2.6,
+              "number": 1.6,
               "title": "The Endocrine System: Hormones as the Body's Slow Messengers"
             },
             {
               "id": "ku-bio-anatomy-nervous-system-command",
-              "number": 2.7,
+              "number": 1.7,
               "title": "The Nervous System: The Body's Command Network"
             },
             {
               "id": "ku-bio-anatomy-senses-perception",
-              "number": 2.8,
+              "number": 1.8,
               "title": "The Senses: How the Body Reads the World"
             },
             {
               "id": "ku-bio-anatomy-reproduction-development",
-              "number": 2.9,
+              "number": 1.9,
               "title": "Reproduction and the Making of a Human"
             }
           ]
         },
         {
           "id": "ku-human-anatomy-physiology-reproduction-and-development",
-          "number": 3,
+          "number": 2,
           "title": "Reproduction & Development",
           "shortTitle": "Reproduction & Development",
           "bookId": "ku-human-anatomy-physiology",
@@ -27348,8 +27333,23 @@
           "sections": [
             {
               "id": "ku-bio-human-reproduction-system",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Human Reproduction: Systems, Gametes and the Menstrual Cycle"
+            }
+          ]
+        },
+        {
+          "id": "ku-human-anatomy-physiology-when-systems-fail",
+          "number": 3,
+          "title": "When Systems Fail",
+          "shortTitle": "When Systems Fail",
+          "bookId": "ku-human-anatomy-physiology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-sensory-organ-technologies",
+              "number": 3.1,
+              "title": "When Organs Fail: Hearing, Vision and Kidney Technologies"
             }
           ]
         }
@@ -27364,28 +27364,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-developmental-biology-mechanisms-and-model-organisms",
-          "number": 1,
-          "title": "Mechanisms & Model Organisms",
-          "shortTitle": "Mechanisms & Model Organisms",
-          "bookId": "ku-developmental-biology",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-bio-dev-model-organisms",
-              "number": 1.1,
-              "title": "Model Organisms: Flies, Worms, Fish and the Standard Laboratory Bodies"
-            },
-            {
-              "id": "ku-bio-dev-morphogenesis",
-              "number": 1.2,
-              "title": "Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo"
-            }
-          ]
-        },
-        {
           "id": "ku-developmental-biology-building-the-body",
-          "number": 2,
+          "number": 1,
           "title": "Building the Body",
           "shortTitle": "Building the Body",
           "bookId": "ku-developmental-biology",
@@ -27393,8 +27373,28 @@
           "sections": [
             {
               "id": "ku-bio-developmental-biology",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Developmental Biology: How a Body Builds Itself"
+            }
+          ]
+        },
+        {
+          "id": "ku-developmental-biology-mechanisms-and-model-organisms",
+          "number": 2,
+          "title": "Mechanisms & Model Organisms",
+          "shortTitle": "Mechanisms & Model Organisms",
+          "bookId": "ku-developmental-biology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-dev-model-organisms",
+              "number": 2.1,
+              "title": "Model Organisms: Flies, Worms, Fish and the Standard Laboratory Bodies"
+            },
+            {
+              "id": "ku-bio-dev-morphogenesis",
+              "number": 2.2,
+              "title": "Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo"
             }
           ]
         }
@@ -27409,23 +27409,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-marine-biology-plankton-larvae-and-recruitment",
-          "number": 1,
-          "title": "Plankton, Larvae & Recruitment",
-          "shortTitle": "Plankton, Larvae & Recruitment",
-          "bookId": "ku-marine-biology",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bio-marine-plankton-larvae",
-              "number": 1.1,
-              "title": "Plankton and Larvae: The Drifting Majority of Ocean Life"
-            }
-          ]
-        },
-        {
           "id": "ku-marine-biology-the-blue-realm",
-          "number": 2,
+          "number": 1,
           "title": "The Blue Realm",
           "shortTitle": "The Blue Realm",
           "bookId": "ku-marine-biology",
@@ -27433,8 +27418,23 @@
           "sections": [
             {
               "id": "ku-bio-marine-biology-oceans",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Marine Biology: Life in the Ocean"
+            }
+          ]
+        },
+        {
+          "id": "ku-marine-biology-plankton-larvae-and-recruitment",
+          "number": 2,
+          "title": "Plankton, Larvae & Recruitment",
+          "shortTitle": "Plankton, Larvae & Recruitment",
+          "bookId": "ku-marine-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-marine-plankton-larvae",
+              "number": 2.1,
+              "title": "Plankton and Larvae: The Drifting Majority of Ocean Life"
             }
           ]
         },
@@ -27464,23 +27464,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-bioinformatics-genomics-databases-and-structure-prediction",
-          "number": 1,
-          "title": "Databases & Structure Prediction",
-          "shortTitle": "Databases & Structure Prediction",
-          "bookId": "ku-bioinformatics-genomics",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-bio-bioinformatics-databases-structures",
-              "number": 1.1,
-              "title": "Bioinformatics Databases and Protein Structure Prediction: From FASTA to AlphaFold"
-            }
-          ]
-        },
-        {
           "id": "ku-bioinformatics-genomics-reading-genomes-with-code",
-          "number": 2,
+          "number": 1,
           "title": "Reading Genomes with Code",
           "shortTitle": "Reading Genomes with Code",
           "bookId": "ku-bioinformatics-genomics",
@@ -27488,14 +27473,14 @@
           "sections": [
             {
               "id": "ku-emer-bioinformatics-reading-genomes",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Bioinformatics: Reading Genomes with Code"
             }
           ]
         },
         {
           "id": "ku-bioinformatics-genomics-phylogenetics",
-          "number": 3,
+          "number": 2,
           "title": "Phylogenetics",
           "shortTitle": "Phylogenetics",
           "bookId": "ku-bioinformatics-genomics",
@@ -27503,8 +27488,23 @@
           "sections": [
             {
               "id": "ku-emer-phylogenetics-tree-of-life",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Phylogenetics: Reconstructing the Tree of Life"
+            }
+          ]
+        },
+        {
+          "id": "ku-bioinformatics-genomics-databases-and-structure-prediction",
+          "number": 3,
+          "title": "Databases & Structure Prediction",
+          "shortTitle": "Databases & Structure Prediction",
+          "bookId": "ku-bioinformatics-genomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-bioinformatics-databases-structures",
+              "number": 3.1,
+              "title": "Bioinformatics Databases and Protein Structure Prediction: From FASTA to AlphaFold"
             }
           ]
         }
@@ -27519,28 +27519,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-synthetic-biology-applications-and-responsible-innovation",
-          "number": 1,
-          "title": "Applications & Responsible Innovation",
-          "shortTitle": "Applications & Responsible Innovation",
-          "bookId": "ku-synthetic-biology",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-bio-synbio-dbtl-practice",
-              "number": 1.1,
-              "title": "Synthetic Biology in Practice: The Design–Build–Test–Learn Cycle"
-            },
-            {
-              "id": "ku-bio-synbio-biosafety-ethics",
-              "number": 1.2,
-              "title": "Biosafety, Biosecurity and the Ethics of Engineering Life"
-            }
-          ]
-        },
-        {
           "id": "ku-synthetic-biology-programming-living-cells",
-          "number": 2,
+          "number": 1,
           "title": "Programming Living Cells",
           "shortTitle": "Programming Living Cells",
           "bookId": "ku-synthetic-biology",
@@ -27548,8 +27528,28 @@
           "sections": [
             {
               "id": "ku-emer-synthetic-biology",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Synthetic Biology: Programming Living Cells"
+            }
+          ]
+        },
+        {
+          "id": "ku-synthetic-biology-applications-and-responsible-innovation",
+          "number": 2,
+          "title": "Applications & Responsible Innovation",
+          "shortTitle": "Applications & Responsible Innovation",
+          "bookId": "ku-synthetic-biology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-synbio-dbtl-practice",
+              "number": 2.1,
+              "title": "Synthetic Biology in Practice: The Design–Build–Test–Learn Cycle"
+            },
+            {
+              "id": "ku-bio-synbio-biosafety-ethics",
+              "number": 2.2,
+              "title": "Biosafety, Biosecurity and the Ethics of Engineering Life"
             }
           ]
         }
@@ -27564,23 +27564,8 @@
       "sectionCount": 5,
       "chapters": [
         {
-          "id": "ku-neuroscience-systems-neuroscience",
-          "number": 1,
-          "title": "Systems Neuroscience",
-          "shortTitle": "Systems Neuroscience",
-          "bookId": "ku-neuroscience",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-neuro-biological-bases-behavior",
-              "number": 1.1,
-              "title": "From Neurons to Brain Areas: The Nervous System at Work"
-            }
-          ]
-        },
-        {
           "id": "ku-neuroscience-cellular-neurophysiology",
-          "number": 2,
+          "number": 1,
           "title": "Cellular Neurophysiology",
           "shortTitle": "Cellular Neurophysiology",
           "bookId": "ku-neuroscience",
@@ -27588,34 +27573,34 @@
           "sections": [
             {
               "id": "ku-bio-action-potentials",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Action Potentials and Nerve Signaling"
             },
             {
               "id": "ku-neuro-synapse-neurotransmitters",
-              "number": 2.2,
+              "number": 1.2,
               "title": "The Synapse: How Neurons Talk in Chemistry"
             }
           ]
         },
         {
-          "id": "ku-neuroscience-plasticity",
-          "number": 3,
-          "title": "Plasticity",
-          "shortTitle": "Plasticity",
+          "id": "ku-neuroscience-systems-neuroscience",
+          "number": 2,
+          "title": "Systems Neuroscience",
+          "shortTitle": "Systems Neuroscience",
           "bookId": "ku-neuroscience",
           "sectionCount": 1,
           "sections": [
             {
-              "id": "ku-neuro-neuroplasticity-brain-rewires",
-              "number": 3.1,
-              "title": "Neuroplasticity: How Experience Rewires the Brain"
+              "id": "ku-neuro-biological-bases-behavior",
+              "number": 2.1,
+              "title": "From Neurons to Brain Areas: The Nervous System at Work"
             }
           ]
         },
         {
           "id": "ku-neuroscience-neuroanatomy",
-          "number": 4,
+          "number": 3,
           "title": "Neuroanatomy",
           "shortTitle": "Neuroanatomy",
           "bookId": "ku-neuroscience",
@@ -27623,8 +27608,23 @@
           "sections": [
             {
               "id": "ku-neuro-brain-regions-map",
-              "number": 4.1,
+              "number": 3.1,
               "title": "The Brain, Mapped: A Guided Tour from Stem to Cortex"
+            }
+          ]
+        },
+        {
+          "id": "ku-neuroscience-plasticity",
+          "number": 4,
+          "title": "Plasticity",
+          "shortTitle": "Plasticity",
+          "bookId": "ku-neuroscience",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-neuro-neuroplasticity-brain-rewires",
+              "number": 4.1,
+              "title": "Neuroplasticity: How Experience Rewires the Brain"
             }
           ]
         }
@@ -27774,33 +27774,8 @@
       "sectionCount": 5,
       "chapters": [
         {
-          "id": "ku-earth-climate-science-climate-science-and-change",
-          "number": 1,
-          "title": "Climate Science & Change",
-          "shortTitle": "Climate Science & Change",
-          "bookId": "ku-earth-climate-science",
-          "sectionCount": 3,
-          "sections": [
-            {
-              "id": "ku-env-carbon-sinks-global-carbon-budget",
-              "number": 1.1,
-              "title": "Carbon Sinks and the Global Carbon Budget"
-            },
-            {
-              "id": "ku-env-extreme-weather-attribution",
-              "number": 1.2,
-              "title": "Extreme Weather in a Warming World: The Science of Attribution"
-            },
-            {
-              "id": "ku-env-climate-feedbacks-sensitivity",
-              "number": 1.3,
-              "title": "Climate Feedbacks and Sensitivity: Why Warming Amplifies"
-            }
-          ]
-        },
-        {
           "id": "ku-earth-climate-science-earth-systems-oceans-water-and-rock",
-          "number": 2,
+          "number": 1,
           "title": "Earth Systems: Oceans, Water & Rock",
           "shortTitle": "Earth Systems: Oceans, Water & Rock",
           "bookId": "ku-earth-climate-science",
@@ -27808,13 +27783,38 @@
           "sections": [
             {
               "id": "ku-env-water-cycle",
-              "number": 2.1,
+              "number": 1.1,
               "title": "The Water Cycle and Freshwater Scarcity"
             },
             {
               "id": "ku-env-ocean-currents-chemistry",
-              "number": 2.2,
+              "number": 1.2,
               "title": "The Global Ocean: Currents, Chemistry and Life"
+            }
+          ]
+        },
+        {
+          "id": "ku-earth-climate-science-climate-science-and-change",
+          "number": 2,
+          "title": "Climate Science & Change",
+          "shortTitle": "Climate Science & Change",
+          "bookId": "ku-earth-climate-science",
+          "sectionCount": 3,
+          "sections": [
+            {
+              "id": "ku-env-carbon-sinks-global-carbon-budget",
+              "number": 2.1,
+              "title": "Carbon Sinks and the Global Carbon Budget"
+            },
+            {
+              "id": "ku-env-extreme-weather-attribution",
+              "number": 2.2,
+              "title": "Extreme Weather in a Warming World: The Science of Attribution"
+            },
+            {
+              "id": "ku-env-climate-feedbacks-sensitivity",
+              "number": 2.3,
+              "title": "Climate Feedbacks and Sensitivity: Why Warming Amplifies"
             }
           ]
         }
@@ -27884,28 +27884,8 @@
       "sectionCount": 4,
       "chapters": [
         {
-          "id": "ku-environmental-health-food-agriculture-and-food-systems",
-          "number": 1,
-          "title": "Agriculture & Food Systems",
-          "shortTitle": "Agriculture & Food Systems",
-          "bookId": "ku-environmental-health-food",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-env-soil-health-regenerative-agriculture",
-              "number": 1.1,
-              "title": "Soil Health and Regenerative Agriculture"
-            },
-            {
-              "id": "ku-env-crop-science-breeding",
-              "number": 1.2,
-              "title": "Crop Science: From Domestication to Disease Resistance"
-            }
-          ]
-        },
-        {
           "id": "ku-environmental-health-food-pollution-and-environmental-health",
-          "number": 2,
+          "number": 1,
           "title": "Pollution & Environmental Health",
           "shortTitle": "Pollution & Environmental Health",
           "bookId": "ku-environmental-health-food",
@@ -27913,13 +27893,33 @@
           "sections": [
             {
               "id": "ku-env-air-pollution-control",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Air Pollution: Sources, Smog and Solutions"
             },
             {
               "id": "ku-env-water-pollution-nutrients",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Water Pollution: Nutrients, Toxins and Dead Zones"
+            }
+          ]
+        },
+        {
+          "id": "ku-environmental-health-food-agriculture-and-food-systems",
+          "number": 2,
+          "title": "Agriculture & Food Systems",
+          "shortTitle": "Agriculture & Food Systems",
+          "bookId": "ku-environmental-health-food",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-env-soil-health-regenerative-agriculture",
+              "number": 2.1,
+              "title": "Soil Health and Regenerative Agriculture"
+            },
+            {
+              "id": "ku-env-crop-science-breeding",
+              "number": 2.2,
+              "title": "Crop Science: From Domestication to Disease Resistance"
             }
           ]
         }
@@ -27969,23 +27969,8 @@
       "sectionCount": 9,
       "chapters": [
         {
-          "id": "ku-clinical-medicine-cancer",
-          "number": 1,
-          "title": "Cancer",
-          "shortTitle": "Cancer",
-          "bookId": "ku-clinical-medicine",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-health-understanding-cancer",
-              "number": 1.1,
-              "title": "Understanding Cancer: From Mutation to Metastasis"
-            }
-          ]
-        },
-        {
           "id": "ku-clinical-medicine-chronic-and-metabolic-disease",
-          "number": 2,
+          "number": 1,
           "title": "Chronic & Metabolic Disease",
           "shortTitle": "Chronic & Metabolic Disease",
           "bookId": "ku-clinical-medicine",
@@ -27993,13 +27978,28 @@
           "sections": [
             {
               "id": "ku-health-diabetes-metabolic-health",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Diabetes and Metabolic Health: When Blood Sugar Runs Off the Rails"
             },
             {
               "id": "ku-health-heart-vascular-disease",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Heart and Vascular Disease: Atherosclerosis, Risk and Prevention"
+            }
+          ]
+        },
+        {
+          "id": "ku-clinical-medicine-cancer",
+          "number": 2,
+          "title": "Cancer",
+          "shortTitle": "Cancer",
+          "bookId": "ku-clinical-medicine",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-health-understanding-cancer",
+              "number": 2.1,
+              "title": "Understanding Cancer: From Mutation to Metastasis"
             }
           ]
         },
@@ -28109,28 +28109,8 @@
       "sectionCount": 6,
       "chapters": [
         {
-          "id": "ku-medicines-emergency-care-first-aid-and-resuscitation",
-          "number": 1,
-          "title": "First Aid & Resuscitation",
-          "shortTitle": "First Aid & Resuscitation",
-          "bookId": "ku-medicines-emergency-care",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-aid-first-aid-essentials",
-              "number": 1.1,
-              "title": "First Aid Essentials: Bleeding, Burns, Choking and the Recovery Position"
-            },
-            {
-              "id": "ku-aid-cardiac-cpr-chain-of-survival",
-              "number": 1.2,
-              "title": "Cardiac Arrest: CPR, AED and the Chain of Survival"
-            }
-          ]
-        },
-        {
           "id": "ku-medicines-emergency-care-pharmacology-and-clinical-reasoning",
-          "number": 2,
+          "number": 1,
           "title": "Pharmacology & Clinical Reasoning",
           "shortTitle": "Pharmacology & Clinical Reasoning",
           "bookId": "ku-medicines-emergency-care",
@@ -28138,13 +28118,33 @@
           "sections": [
             {
               "id": "ku-health-pharmacology-how-medicines-work",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Pharmacology: How Medicines Work"
             },
             {
               "id": "ku-health-how-doctors-diagnose",
-              "number": 2.2,
+              "number": 1.2,
               "title": "How Doctors Diagnose: History, Exam and the Differential"
+            }
+          ]
+        },
+        {
+          "id": "ku-medicines-emergency-care-first-aid-and-resuscitation",
+          "number": 2,
+          "title": "First Aid & Resuscitation",
+          "shortTitle": "First Aid & Resuscitation",
+          "bookId": "ku-medicines-emergency-care",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-aid-first-aid-essentials",
+              "number": 2.1,
+              "title": "First Aid Essentials: Bleeding, Burns, Choking and the Recovery Position"
+            },
+            {
+              "id": "ku-aid-cardiac-cpr-chain-of-survival",
+              "number": 2.2,
+              "title": "Cardiac Arrest: CPR, AED and the Chain of Survival"
             }
           ]
         },
@@ -28179,22 +28179,22 @@
       "sectionCount": 6,
       "chapters": [
         {
-          "id": "ku-public-health-health-equity-and-systems",
+          "id": "ku-public-health-epidemiology",
           "number": 1,
-          "title": "Health Equity & Systems",
-          "shortTitle": "Health Equity & Systems",
+          "title": "Epidemiology",
+          "shortTitle": "Epidemiology",
           "bookId": "ku-public-health",
           "sectionCount": 2,
           "sections": [
             {
-              "id": "ku-health-social-determinants",
+              "id": "ku-health-herd-immunity-r0",
               "number": 1.1,
-              "title": "Social Determinants of Health: Where Lives Depend on Where They Are Lived"
+              "title": "Herd Immunity and R₀"
             },
             {
-              "id": "ku-health-systems-how-care-organized",
+              "id": "ku-epidem-outbreak-investigation",
               "number": 1.2,
-              "title": "Health Systems: How Care Gets Organized and Paid For"
+              "title": "How Outbreaks Are Investigated: Field Epidemiology"
             }
           ]
         },
@@ -28219,22 +28219,22 @@
           ]
         },
         {
-          "id": "ku-public-health-epidemiology",
+          "id": "ku-public-health-health-equity-and-systems",
           "number": 3,
-          "title": "Epidemiology",
-          "shortTitle": "Epidemiology",
+          "title": "Health Equity & Systems",
+          "shortTitle": "Health Equity & Systems",
           "bookId": "ku-public-health",
           "sectionCount": 2,
           "sections": [
             {
-              "id": "ku-health-herd-immunity-r0",
+              "id": "ku-health-social-determinants",
               "number": 3.1,
-              "title": "Herd Immunity and R₀"
+              "title": "Social Determinants of Health: Where Lives Depend on Where They Are Lived"
             },
             {
-              "id": "ku-epidem-outbreak-investigation",
+              "id": "ku-health-systems-how-care-organized",
               "number": 3.2,
-              "title": "How Outbreaks Are Investigated: Field Epidemiology"
+              "title": "Health Systems: How Care Gets Organized and Paid For"
             }
           ]
         }
@@ -28249,27 +28249,22 @@
       "sectionCount": 7,
       "chapters": [
         {
-          "id": "ku-health-nutrition-fitness-sleep-aging-and-longevity",
+          "id": "ku-health-nutrition-fitness-nutrition-science",
           "number": 1,
-          "title": "Sleep, Aging & Longevity",
-          "shortTitle": "Sleep, Aging & Longevity",
+          "title": "Nutrition Science",
+          "shortTitle": "Nutrition Science",
           "bookId": "ku-health-nutrition-fitness",
-          "sectionCount": 3,
+          "sectionCount": 2,
           "sections": [
             {
-              "id": "ku-health-circadian-rhythms-sleep-pressure",
+              "id": "ku-health-nutrition-macros",
               "number": 1.1,
-              "title": "Circadian Rhythms and Sleep Pressure"
+              "title": "Nutrition Science: Protein, Carbs and Fat Actually Explained"
             },
             {
-              "id": "ku-health-aging-longevity-science",
+              "id": "ku-health-nutrition-micronutrients",
               "number": 1.2,
-              "title": "The Science of Aging and Longevity: Evidence Versus Hype"
-            },
-            {
-              "id": "ku-health-sleep-stages-memory",
-              "number": 1.3,
-              "title": "Sleep Architecture: Stages, Cycles and Memory"
+              "title": "Micronutrients: Vitamins, Minerals and Hidden Hunger"
             }
           ]
         },
@@ -28294,22 +28289,27 @@
           ]
         },
         {
-          "id": "ku-health-nutrition-fitness-nutrition-science",
+          "id": "ku-health-nutrition-fitness-sleep-aging-and-longevity",
           "number": 3,
-          "title": "Nutrition Science",
-          "shortTitle": "Nutrition Science",
+          "title": "Sleep, Aging & Longevity",
+          "shortTitle": "Sleep, Aging & Longevity",
           "bookId": "ku-health-nutrition-fitness",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
-              "id": "ku-health-nutrition-macros",
+              "id": "ku-health-circadian-rhythms-sleep-pressure",
               "number": 3.1,
-              "title": "Nutrition Science: Protein, Carbs and Fat Actually Explained"
+              "title": "Circadian Rhythms and Sleep Pressure"
             },
             {
-              "id": "ku-health-nutrition-micronutrients",
+              "id": "ku-health-aging-longevity-science",
               "number": 3.2,
-              "title": "Micronutrients: Vitamins, Minerals and Hidden Hunger"
+              "title": "The Science of Aging and Longevity: Evidence Versus Hype"
+            },
+            {
+              "id": "ku-health-sleep-stages-memory",
+              "number": 3.3,
+              "title": "Sleep Architecture: Stages, Cycles and Memory"
             }
           ]
         }
@@ -28324,28 +28324,8 @@
       "sectionCount": 6,
       "chapters": [
         {
-          "id": "ku-mental-health-mind-body-science",
-          "number": 1,
-          "title": "Mind–Body Science",
-          "shortTitle": "Mind–Body Science",
-          "bookId": "ku-mental-health",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-mind-gut-brain-axis",
-              "number": 1.1,
-              "title": "The Gut–Brain Axis: Your Second Brain and Your Mood"
-            },
-            {
-              "id": "ku-health-stress-cortisol",
-              "number": 1.2,
-              "title": "Stress, Cortisol and the Body's Alarm System"
-            }
-          ]
-        },
-        {
           "id": "ku-mental-health-mood-and-anxiety",
-          "number": 2,
+          "number": 1,
           "title": "Mood & Anxiety",
           "shortTitle": "Mood & Anxiety",
           "bookId": "ku-mental-health",
@@ -28353,19 +28333,19 @@
           "sections": [
             {
               "id": "ku-mind-trauma-ptsd-recovery",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Trauma and PTSD: How Wounds Become Symptoms and How Recovery Works"
             },
             {
               "id": "ku-mind-anxiety-depression",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Anxiety and Depression: What They Actually Are"
             }
           ]
         },
         {
           "id": "ku-mental-health-mind-and-therapy",
-          "number": 3,
+          "number": 2,
           "title": "Mind & Therapy",
           "shortTitle": "Mind & Therapy",
           "bookId": "ku-mental-health",
@@ -28373,13 +28353,33 @@
           "sections": [
             {
               "id": "ku-mind-addiction-reward-cycle",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Addiction: The Reward Cycle and the Way Out"
             },
             {
               "id": "ku-health-psychotherapy-approaches",
-              "number": 3.2,
+              "number": 2.2,
               "title": "How Psychotherapy Works: The Major Approaches"
+            }
+          ]
+        },
+        {
+          "id": "ku-mental-health-mind-body-science",
+          "number": 3,
+          "title": "Mind–Body Science",
+          "shortTitle": "Mind–Body Science",
+          "bookId": "ku-mental-health",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-mind-gut-brain-axis",
+              "number": 3.1,
+              "title": "The Gut–Brain Axis: Your Second Brain and Your Mood"
+            },
+            {
+              "id": "ku-health-stress-cortisol",
+              "number": 3.2,
+              "title": "Stress, Cortisol and the Body's Alarm System"
             }
           ]
         }
@@ -28394,28 +28394,8 @@
       "sectionCount": 4,
       "chapters": [
         {
-          "id": "ku-ancient-early-modern-history-themes-in-early-modern-world-history",
-          "number": 1,
-          "title": "Themes in Early Modern World History",
-          "shortTitle": "Themes in Early Modern World History",
-          "bookId": "ku-ancient-early-modern-history",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-hist-renaissance-cultural-change",
-              "number": 1.1,
-              "title": "Changing Cultural Traditions: The Renaissance and Humanism"
-            },
-            {
-              "id": "ku-hist-nomads-indigenous-modernisation",
-              "number": 1.2,
-              "title": "Nomadic Empires, Displaced Peoples and Paths to Modernisation"
-            }
-          ]
-        },
-        {
           "id": "ku-ancient-early-modern-history-the-ancient-world",
-          "number": 2,
+          "number": 1,
           "title": "The Ancient World",
           "shortTitle": "The Ancient World",
           "bookId": "ku-ancient-early-modern-history",
@@ -28423,13 +28403,33 @@
           "sections": [
             {
               "id": "ku-hist-first-civilizations",
-              "number": 2.1,
+              "number": 1.1,
               "title": "The First Civilizations: Mesopotamia, Egypt and the Indus"
             },
             {
               "id": "ku-hist-classical-greco-roman",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Greece and Rome: The Classical Inheritance"
+            }
+          ]
+        },
+        {
+          "id": "ku-ancient-early-modern-history-themes-in-early-modern-world-history",
+          "number": 2,
+          "title": "Themes in Early Modern World History",
+          "shortTitle": "Themes in Early Modern World History",
+          "bookId": "ku-ancient-early-modern-history",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-hist-renaissance-cultural-change",
+              "number": 2.1,
+              "title": "Changing Cultural Traditions: The Renaissance and Humanism"
+            },
+            {
+              "id": "ku-hist-nomads-indigenous-modernisation",
+              "number": 2.2,
+              "title": "Nomadic Empires, Displaced Peoples and Paths to Modernisation"
             }
           ]
         }
@@ -28444,33 +28444,8 @@
       "sectionCount": 6,
       "chapters": [
         {
-          "id": "ku-modern-world-history-war-decolonization-and-the-twentieth-century",
-          "number": 1,
-          "title": "War, Decolonization & the Twentieth Century",
-          "shortTitle": "War, Decolonization & the Twentieth Century",
-          "bookId": "ku-modern-world-history",
-          "sectionCount": 3,
-          "sections": [
-            {
-              "id": "ku-hist-twentieth-century",
-              "number": 1.1,
-              "title": "The Twentieth Century: Revolution, Cold War Order and Globalisation"
-            },
-            {
-              "id": "ku-hist-world-wars",
-              "number": 1.2,
-              "title": "The World Wars: Causes, Courses and Consequences"
-            },
-            {
-              "id": "ku-hist-decolonization",
-              "number": 1.3,
-              "title": "Decolonization and the Making of the Global South"
-            }
-          ]
-        },
-        {
           "id": "ku-modern-world-history-democracy-rights-and-revolution",
-          "number": 2,
+          "number": 1,
           "title": "Democracy, Rights & Revolution",
           "shortTitle": "Democracy, Rights & Revolution",
           "bookId": "ku-modern-world-history",
@@ -28478,18 +28453,43 @@
           "sections": [
             {
               "id": "ku-hist-american-revolution-founding",
-              "number": 2.1,
+              "number": 1.1,
               "title": "The American Revolution and the Founding of the Republic"
             },
             {
               "id": "ku-hist-civil-war-reconstruction",
-              "number": 2.2,
+              "number": 1.2,
               "title": "The Civil War and Reconstruction"
             },
             {
               "id": "ku-hist-civil-rights-movement",
-              "number": 2.3,
+              "number": 1.3,
               "title": "The Civil Rights Movement"
+            }
+          ]
+        },
+        {
+          "id": "ku-modern-world-history-war-decolonization-and-the-twentieth-century",
+          "number": 2,
+          "title": "War, Decolonization & the Twentieth Century",
+          "shortTitle": "War, Decolonization & the Twentieth Century",
+          "bookId": "ku-modern-world-history",
+          "sectionCount": 3,
+          "sections": [
+            {
+              "id": "ku-hist-twentieth-century",
+              "number": 2.1,
+              "title": "The Twentieth Century: Revolution, Cold War Order and Globalisation"
+            },
+            {
+              "id": "ku-hist-world-wars",
+              "number": 2.2,
+              "title": "The World Wars: Causes, Courses and Consequences"
+            },
+            {
+              "id": "ku-hist-decolonization",
+              "number": 2.3,
+              "title": "Decolonization and the Making of the Global South"
             }
           ]
         }
@@ -28504,23 +28504,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-economic-history-the-great-divergence",
-          "number": 1,
-          "title": "The Great Divergence",
-          "shortTitle": "The Great Divergence",
-          "bookId": "ku-economic-history",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-hist-great-divergence",
-              "number": 1.1,
-              "title": "The Great Divergence: Why Europe Got Rich First"
-            }
-          ]
-        },
-        {
           "id": "ku-economic-history-trade-exchange-and-industrialization",
-          "number": 2,
+          "number": 1,
           "title": "Trade, Exchange & Industrialization",
           "shortTitle": "Trade, Exchange & Industrialization",
           "bookId": "ku-economic-history",
@@ -28528,13 +28513,28 @@
           "sections": [
             {
               "id": "ku-hum-silk-road-exchange",
-              "number": 2.1,
+              "number": 1.1,
               "title": "The Silk Road: Exchange Before Globalization"
             },
             {
               "id": "ku-hum-industrial-revolution",
-              "number": 2.2,
+              "number": 1.2,
               "title": "The Industrial Revolution and Its Discontents"
+            }
+          ]
+        },
+        {
+          "id": "ku-economic-history-the-great-divergence",
+          "number": 2,
+          "title": "The Great Divergence",
+          "shortTitle": "The Great Divergence",
+          "bookId": "ku-economic-history",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-hist-great-divergence",
+              "number": 2.1,
+              "title": "The Great Divergence: Why Europe Got Rich First"
             }
           ]
         }
@@ -28654,48 +28654,8 @@
       "sectionCount": 10,
       "chapters": [
         {
-          "id": "ku-philosophy-ethics-and-value-theory",
-          "number": 1,
-          "title": "Ethics & Value Theory",
-          "shortTitle": "Ethics & Value Theory",
-          "bookId": "ku-philosophy",
-          "sectionCount": 3,
-          "sections": [
-            {
-              "id": "ku-hum-aristotle-eudaimonia",
-              "number": 1.1,
-              "title": "Aristotle’s Ethics of Flourishing"
-            },
-            {
-              "id": "ku-hum-ethics-moral-theories",
-              "number": 1.2,
-              "title": "Ethics: Consequentialism, Deontology and Beyond"
-            },
-            {
-              "id": "ku-hum-stoicism-practice",
-              "number": 1.3,
-              "title": "Stoicism: The Art of Living Well"
-            }
-          ]
-        },
-        {
-          "id": "ku-philosophy-intellectual-history",
-          "number": 2,
-          "title": "Intellectual History",
-          "shortTitle": "Intellectual History",
-          "bookId": "ku-philosophy",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-hum-enlightenment-reason",
-              "number": 2.1,
-              "title": "The Enlightenment: Reason Changes the World"
-            }
-          ]
-        },
-        {
           "id": "ku-philosophy-epistemology-and-philosophy-of-science",
-          "number": 3,
+          "number": 1,
           "title": "Epistemology & Philosophy of Science",
           "shortTitle": "Epistemology & Philosophy of Science",
           "bookId": "ku-philosophy",
@@ -28703,19 +28663,44 @@
           "sections": [
             {
               "id": "ku-phil-epistemology",
-              "number": 3.1,
+              "number": 1.1,
               "title": "Epistemology: What Can We Know?"
             },
             {
               "id": "ku-hum-philosophy-of-science",
-              "number": 3.2,
+              "number": 1.2,
               "title": "Philosophy of Science: How We Know What We Know"
             }
           ]
         },
         {
+          "id": "ku-philosophy-ethics-and-value-theory",
+          "number": 2,
+          "title": "Ethics & Value Theory",
+          "shortTitle": "Ethics & Value Theory",
+          "bookId": "ku-philosophy",
+          "sectionCount": 3,
+          "sections": [
+            {
+              "id": "ku-hum-aristotle-eudaimonia",
+              "number": 2.1,
+              "title": "Aristotle’s Ethics of Flourishing"
+            },
+            {
+              "id": "ku-hum-ethics-moral-theories",
+              "number": 2.2,
+              "title": "Ethics: Consequentialism, Deontology and Beyond"
+            },
+            {
+              "id": "ku-hum-stoicism-practice",
+              "number": 2.3,
+              "title": "Stoicism: The Art of Living Well"
+            }
+          ]
+        },
+        {
           "id": "ku-philosophy-philosophy-of-mind",
-          "number": 4,
+          "number": 3,
           "title": "Philosophy of Mind",
           "shortTitle": "Philosophy of Mind",
           "bookId": "ku-philosophy",
@@ -28723,24 +28708,24 @@
           "sections": [
             {
               "id": "ku-phil-mind-consciousness",
-              "number": 4.1,
+              "number": 3.1,
               "title": "The Philosophy of Mind: Consciousness and Its Puzzles"
             },
             {
               "id": "ku-hum-eastern-philosophy-systems",
-              "number": 4.2,
+              "number": 3.2,
               "title": "Eastern Philosophy: The Great Systems"
             },
             {
               "id": "ku-hum-existentialism-freedom-meaning",
-              "number": 4.3,
+              "number": 3.3,
               "title": "Existentialism: Freedom, Anxiety, Meaning"
             }
           ]
         },
         {
           "id": "ku-philosophy-political-philosophy-and-legitimacy",
-          "number": 5,
+          "number": 4,
           "title": "Political Philosophy & Legitimacy",
           "shortTitle": "Political Philosophy & Legitimacy",
           "bookId": "ku-philosophy",
@@ -28748,8 +28733,23 @@
           "sections": [
             {
               "id": "ku-hum-political-philosophy-contract",
-              "number": 5.1,
+              "number": 4.1,
               "title": "Political Philosophy: From Plato to Rawls"
+            }
+          ]
+        },
+        {
+          "id": "ku-philosophy-intellectual-history",
+          "number": 5,
+          "title": "Intellectual History",
+          "shortTitle": "Intellectual History",
+          "bookId": "ku-philosophy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-hum-enlightenment-reason",
+              "number": 5.1,
+              "title": "The Enlightenment: Reason Changes the World"
             }
           ]
         }
@@ -28764,23 +28764,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-religion-mythology-comparative-mythology",
-          "number": 1,
-          "title": "Comparative Mythology",
-          "shortTitle": "Comparative Mythology",
-          "bookId": "ku-religion-mythology",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-hum-mythology-patterns",
-              "number": 1.1,
-              "title": "Why Myths Repeat: The Monomyth and Cultural Archetypes"
-            }
-          ]
-        },
-        {
           "id": "ku-religion-mythology-eastern-traditions",
-          "number": 2,
+          "number": 1,
           "title": "Eastern Traditions",
           "shortTitle": "Eastern Traditions",
           "bookId": "ku-religion-mythology",
@@ -28788,14 +28773,14 @@
           "sections": [
             {
               "id": "ku-rel-eastern-traditions",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Hinduism, Buddhism and the Eastern Traditions"
             }
           ]
         },
         {
           "id": "ku-religion-mythology-western-traditions",
-          "number": 3,
+          "number": 2,
           "title": "Western Traditions",
           "shortTitle": "Western Traditions",
           "bookId": "ku-religion-mythology",
@@ -28803,8 +28788,23 @@
           "sections": [
             {
               "id": "ku-rel-abrahamic-faiths",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Judaism, Christianity and Islam: The Abrahamic Faiths"
+            }
+          ]
+        },
+        {
+          "id": "ku-religion-mythology-comparative-mythology",
+          "number": 3,
+          "title": "Comparative Mythology",
+          "shortTitle": "Comparative Mythology",
+          "bookId": "ku-religion-mythology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-hum-mythology-patterns",
+              "number": 3.1,
+              "title": "Why Myths Repeat: The Monomyth and Cultural Archetypes"
             }
           ]
         }
@@ -28819,33 +28819,8 @@
       "sectionCount": 10,
       "chapters": [
         {
-          "id": "ku-psychology-social-and-interpersonal-psychology",
-          "number": 1,
-          "title": "Social & Interpersonal Psychology",
-          "shortTitle": "Social & Interpersonal Psychology",
-          "bookId": "ku-psychology",
-          "sectionCount": 3,
-          "sections": [
-            {
-              "id": "ku-soc-interpersonal-behavior",
-              "number": 1.1,
-              "title": "Interpersonal Behavior: Attraction, Aggression and Helping"
-            },
-            {
-              "id": "ku-soc-cognitive-dissonance",
-              "number": 1.2,
-              "title": "Cognitive Dissonance and Attitude Change"
-            },
-            {
-              "id": "ku-psych-conformity-obedience-crowd",
-              "number": 1.3,
-              "title": "Conformity, Obedience and the Power of the Situation"
-            }
-          ]
-        },
-        {
           "id": "ku-psychology-cognitive-and-behavioral-psychology",
-          "number": 2,
+          "number": 1,
           "title": "Cognitive & Behavioral Psychology",
           "shortTitle": "Cognitive & Behavioral Psychology",
           "bookId": "ku-psychology",
@@ -28853,19 +28828,19 @@
           "sections": [
             {
               "id": "ku-soc-cognitive-biases",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Cognitive Biases: The Bugs in Human Judgment"
             },
             {
               "id": "ku-psy-cognitive-architecture",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Memory, Attention and Thinking: Cognitive Psychology"
             }
           ]
         },
         {
           "id": "ku-psychology-developmental-psychology",
-          "number": 3,
+          "number": 2,
           "title": "Developmental Psychology",
           "shortTitle": "Developmental Psychology",
           "bookId": "ku-psychology",
@@ -28873,8 +28848,33 @@
           "sections": [
             {
               "id": "ku-psy-development-lifespan",
-              "number": 3.1,
+              "number": 2.1,
               "title": "How Minds Grow: Developmental Psychology Across the Lifespan"
+            }
+          ]
+        },
+        {
+          "id": "ku-psychology-social-and-interpersonal-psychology",
+          "number": 3,
+          "title": "Social & Interpersonal Psychology",
+          "shortTitle": "Social & Interpersonal Psychology",
+          "bookId": "ku-psychology",
+          "sectionCount": 3,
+          "sections": [
+            {
+              "id": "ku-soc-interpersonal-behavior",
+              "number": 3.1,
+              "title": "Interpersonal Behavior: Attraction, Aggression and Helping"
+            },
+            {
+              "id": "ku-soc-cognitive-dissonance",
+              "number": 3.2,
+              "title": "Cognitive Dissonance and Attitude Change"
+            },
+            {
+              "id": "ku-psych-conformity-obedience-crowd",
+              "number": 3.3,
+              "title": "Conformity, Obedience and the Power of the Situation"
             }
           ]
         },
@@ -28929,23 +28929,8 @@
       "sectionCount": 10,
       "chapters": [
         {
-          "id": "ku-sociology-culture",
-          "number": 1,
-          "title": "Culture",
-          "shortTitle": "Culture",
-          "bookId": "ku-sociology",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-soc-culture-society-cultural-life",
-              "number": 1.1,
-              "title": "Culture and Society: How Shared Meanings Shape Us"
-            }
-          ]
-        },
-        {
           "id": "ku-sociology-classical-theory",
-          "number": 2,
+          "number": 1,
           "title": "Classical Theory",
           "shortTitle": "Classical Theory",
           "bookId": "ku-sociology",
@@ -28953,14 +28938,14 @@
           "sections": [
             {
               "id": "ku-soc-durkheim-social-facts-anomie",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Durkheim’s Social Facts and Anomie"
             }
           ]
         },
         {
           "id": "ku-sociology-social-structure-and-institutions",
-          "number": 3,
+          "number": 2,
           "title": "Social Structure & Institutions",
           "shortTitle": "Social Structure & Institutions",
           "bookId": "ku-sociology",
@@ -28968,28 +28953,43 @@
           "sections": [
             {
               "id": "ku-soc-stratification",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Class, Status and Power: Social Stratification"
             },
             {
               "id": "ku-soc-family-religion-institutions",
-              "number": 3.2,
+              "number": 2.2,
               "title": "Family, Religion and Institutions: The Skeleton of Society"
             },
             {
               "id": "ku-soc-deviance-crime",
-              "number": 3.3,
+              "number": 2.3,
               "title": "Deviance, Crime and Social Control"
             },
             {
               "id": "ku-soc-race-ethnicity",
-              "number": 3.4,
+              "number": 2.4,
               "title": "Race and Ethnicity in Social Life"
             },
             {
               "id": "ku-soc-gender-sexuality",
-              "number": 3.5,
+              "number": 2.5,
               "title": "Gender, Sex and Sexuality"
+            }
+          ]
+        },
+        {
+          "id": "ku-sociology-culture",
+          "number": 3,
+          "title": "Culture",
+          "shortTitle": "Culture",
+          "bookId": "ku-sociology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-soc-culture-society-cultural-life",
+              "number": 3.1,
+              "title": "Culture and Society: How Shared Meanings Shape Us"
             }
           ]
         },
@@ -29229,38 +29229,8 @@
       "sectionCount": 4,
       "chapters": [
         {
-          "id": "ku-international-relations-foreign-policy-and-security",
-          "number": 1,
-          "title": "Foreign Policy & Security",
-          "shortTitle": "Foreign Policy & Security",
-          "bookId": "ku-international-relations",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-pol-indian-foreign-policy-determinants",
-              "number": 1.1,
-              "title": "Indian Foreign Policy: Determinants, Institutions and the Long Arc"
-            }
-          ]
-        },
-        {
-          "id": "ku-international-relations-defence-and-the-armed-forces",
-          "number": 2,
-          "title": "Defence & the Armed Forces",
-          "shortTitle": "Defence & the Armed Forces",
-          "bookId": "ku-international-relations",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-civ-india-defence-organisation",
-              "number": 2.1,
-              "title": "Organisation of the Armed Forces: India’s Defence Establishment"
-            }
-          ]
-        },
-        {
           "id": "ku-international-relations-international-relations",
-          "number": 3,
+          "number": 1,
           "title": "International Relations",
           "shortTitle": "International Relations",
           "bookId": "ku-international-relations",
@@ -29268,13 +29238,43 @@
           "sections": [
             {
               "id": "ku-pol-contemporary-world-order",
-              "number": 3.1,
+              "number": 1.1,
               "title": "After the Cold War: Hegemony, Rival Poles and the Global Commons"
             },
             {
               "id": "ku-pol-ir-theory",
-              "number": 3.2,
+              "number": 1.2,
               "title": "Why Nations Fight and Trade: International Relations Theory"
+            }
+          ]
+        },
+        {
+          "id": "ku-international-relations-foreign-policy-and-security",
+          "number": 2,
+          "title": "Foreign Policy & Security",
+          "shortTitle": "Foreign Policy & Security",
+          "bookId": "ku-international-relations",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-pol-indian-foreign-policy-determinants",
+              "number": 2.1,
+              "title": "Indian Foreign Policy: Determinants, Institutions and the Long Arc"
+            }
+          ]
+        },
+        {
+          "id": "ku-international-relations-defence-and-the-armed-forces",
+          "number": 3,
+          "title": "Defence & the Armed Forces",
+          "shortTitle": "Defence & the Armed Forces",
+          "bookId": "ku-international-relations",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-civ-india-defence-organisation",
+              "number": 3.1,
+              "title": "Organisation of the Armed Forces: India’s Defence Establishment"
             }
           ]
         }
@@ -29304,33 +29304,8 @@
           ]
         },
         {
-          "id": "ku-public-policy-administration-rational-choice-and-institutional-design",
-          "number": 2,
-          "title": "Rational Choice & Institutional Design",
-          "shortTitle": "Rational Choice & Institutional Design",
-          "bookId": "ku-public-policy-administration",
-          "sectionCount": 3,
-          "sections": [
-            {
-              "id": "ku-soc-prisoners-dilemma",
-              "number": 2.1,
-              "title": "Game Theory of Cooperation: The Prisoner’s Dilemma"
-            },
-            {
-              "id": "ku-soc-collective-action",
-              "number": 2.2,
-              "title": "Collective Action and the Tragedy of the Commons"
-            },
-            {
-              "id": "ku-soc-comparative-politics-institutions",
-              "number": 2.3,
-              "title": "Comparative Politics: Electoral Systems and Institutions"
-            }
-          ]
-        },
-        {
           "id": "ku-public-policy-administration-the-policy-cycle",
-          "number": 3,
+          "number": 2,
           "title": "The Policy Cycle",
           "shortTitle": "The Policy Cycle",
           "bookId": "ku-public-policy-administration",
@@ -29338,8 +29313,33 @@
           "sections": [
             {
               "id": "ku-soc-public-policy-cycle",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Public Policy: How Decisions Get Made"
+            }
+          ]
+        },
+        {
+          "id": "ku-public-policy-administration-rational-choice-and-institutional-design",
+          "number": 3,
+          "title": "Rational Choice & Institutional Design",
+          "shortTitle": "Rational Choice & Institutional Design",
+          "bookId": "ku-public-policy-administration",
+          "sectionCount": 3,
+          "sections": [
+            {
+              "id": "ku-soc-prisoners-dilemma",
+              "number": 3.1,
+              "title": "Game Theory of Cooperation: The Prisoner’s Dilemma"
+            },
+            {
+              "id": "ku-soc-collective-action",
+              "number": 3.2,
+              "title": "Collective Action and the Tragedy of the Commons"
+            },
+            {
+              "id": "ku-soc-comparative-politics-institutions",
+              "number": 3.3,
+              "title": "Comparative Politics: Electoral Systems and Institutions"
             }
           ]
         }
@@ -29354,38 +29354,8 @@
       "sectionCount": 5,
       "chapters": [
         {
-          "id": "ku-geography-human-geography",
-          "number": 1,
-          "title": "Human Geography",
-          "shortTitle": "Human Geography",
-          "bookId": "ku-geography",
-          "sectionCount": 4,
-          "sections": [
-            {
-              "id": "ku-geo-regional-development-sustainability",
-              "number": 1.1,
-              "title": "Regional Development and Sustainability: Places, Resources and the Long Term"
-            },
-            {
-              "id": "ku-geog-population-migration",
-              "number": 1.2,
-              "title": "Population Geography: Where Humans Live and Why"
-            },
-            {
-              "id": "ku-geog-economic-cultural-landscapes",
-              "number": 1.3,
-              "title": "Landscapes of Trade and Belief: Economic and Cultural Geography"
-            },
-            {
-              "id": "ku-geog-demographic-transition",
-              "number": 1.4,
-              "title": "The Demographic Transition: The Arithmetic of Populations"
-            }
-          ]
-        },
-        {
           "id": "ku-geography-physical-geography",
-          "number": 2,
+          "number": 1,
           "title": "Physical Geography",
           "shortTitle": "Physical Geography",
           "bookId": "ku-geography",
@@ -29393,8 +29363,38 @@
           "sections": [
             {
               "id": "ku-geog-india-physical-geography",
-              "number": 2.1,
+              "number": 1.1,
               "title": "The Physical Frame: India’s Landforms, Rivers, Climate and Natural Vegetation"
+            }
+          ]
+        },
+        {
+          "id": "ku-geography-human-geography",
+          "number": 2,
+          "title": "Human Geography",
+          "shortTitle": "Human Geography",
+          "bookId": "ku-geography",
+          "sectionCount": 4,
+          "sections": [
+            {
+              "id": "ku-geo-regional-development-sustainability",
+              "number": 2.1,
+              "title": "Regional Development and Sustainability: Places, Resources and the Long Term"
+            },
+            {
+              "id": "ku-geog-population-migration",
+              "number": 2.2,
+              "title": "Population Geography: Where Humans Live and Why"
+            },
+            {
+              "id": "ku-geog-economic-cultural-landscapes",
+              "number": 2.3,
+              "title": "Landscapes of Trade and Belief: Economic and Cultural Geography"
+            },
+            {
+              "id": "ku-geog-demographic-transition",
+              "number": 2.4,
+              "title": "The Demographic Transition: The Arithmetic of Populations"
             }
           ]
         }
@@ -29509,23 +29509,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-research-methods-experimental-design",
-          "number": 1,
-          "title": "Experimental Design",
-          "shortTitle": "Experimental Design",
-          "bookId": "ku-research-methods",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-sci-experimental-design-hypotheses",
-              "number": 1.1,
-              "title": "Experimental Design: Hypotheses, Controls and the Theory Ladder"
-            }
-          ]
-        },
-        {
           "id": "ku-research-methods-research-methodology",
-          "number": 2,
+          "number": 1,
           "title": "Research Methodology",
           "shortTitle": "Research Methodology",
           "bookId": "ku-research-methods",
@@ -29533,13 +29518,28 @@
           "sections": [
             {
               "id": "ku-res-research-methodology-hypothesis-sampling",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Research Methodology: From Question to Sampling to Ethics"
             },
             {
               "id": "ku-soc-research-methods-toolkit",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Social Research Methods: The Toolkit"
+            }
+          ]
+        },
+        {
+          "id": "ku-research-methods-experimental-design",
+          "number": 2,
+          "title": "Experimental Design",
+          "shortTitle": "Experimental Design",
+          "bookId": "ku-research-methods",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-sci-experimental-design-hypotheses",
+              "number": 2.1,
+              "title": "Experimental Design: Hypotheses, Controls and the Theory Ladder"
             }
           ]
         }
@@ -29554,28 +29554,8 @@
       "sectionCount": 7,
       "chapters": [
         {
-          "id": "ku-microeconomics-consumers-producers-and-welfare",
-          "number": 1,
-          "title": "Consumers, Producers & Welfare",
-          "shortTitle": "Consumers, Producers & Welfare",
-          "bookId": "ku-microeconomics",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-com-demand-consumer-production-theory",
-              "number": 1.1,
-              "title": "Consumer Behaviour and Production: The Theory Behind the Curves"
-            },
-            {
-              "id": "ku-econ-market-efficiency-surplus",
-              "number": 1.2,
-              "title": "Competitive Markets: Efficiency, Surplus and Welfare"
-            }
-          ]
-        },
-        {
           "id": "ku-microeconomics-the-economic-way-of-thinking",
-          "number": 2,
+          "number": 1,
           "title": "The Economic Way of Thinking",
           "shortTitle": "The Economic Way of Thinking",
           "bookId": "ku-microeconomics",
@@ -29583,14 +29563,14 @@
           "sections": [
             {
               "id": "ku-econ-foundations-methodology",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Economic Methodology: Scarcity, Choice and How Economists Approach the World"
             }
           ]
         },
         {
           "id": "ku-microeconomics-how-markets-work",
-          "number": 3,
+          "number": 2,
           "title": "How Markets Work",
           "shortTitle": "How Markets Work",
           "bookId": "ku-microeconomics",
@@ -29598,34 +29578,39 @@
           "sections": [
             {
               "id": "ku-bus-supply-demand-elasticity",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Supply, Demand and Elasticity"
             },
             {
               "id": "ku-econ-market-structures",
-              "number": 3.2,
+              "number": 2.2,
               "title": "Market Structures: From Perfect Competition to Monopoly"
             }
           ]
         },
         {
-          "id": "ku-microeconomics-behavioral-economics",
-          "number": 4,
-          "title": "Behavioral Economics",
-          "shortTitle": "Behavioral Economics",
+          "id": "ku-microeconomics-consumers-producers-and-welfare",
+          "number": 3,
+          "title": "Consumers, Producers & Welfare",
+          "shortTitle": "Consumers, Producers & Welfare",
           "bookId": "ku-microeconomics",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
-              "id": "ku-bus-behavioral-nudges",
-              "number": 4.1,
-              "title": "Nudges and the Psychology of Choosing"
+              "id": "ku-com-demand-consumer-production-theory",
+              "number": 3.1,
+              "title": "Consumer Behaviour and Production: The Theory Behind the Curves"
+            },
+            {
+              "id": "ku-econ-market-efficiency-surplus",
+              "number": 3.2,
+              "title": "Competitive Markets: Efficiency, Surplus and Welfare"
             }
           ]
         },
         {
           "id": "ku-microeconomics-when-markets-fail",
-          "number": 5,
+          "number": 4,
           "title": "When Markets Fail",
           "shortTitle": "When Markets Fail",
           "bookId": "ku-microeconomics",
@@ -29633,8 +29618,23 @@
           "sections": [
             {
               "id": "ku-econ-market-failures",
-              "number": 5.1,
+              "number": 4.1,
               "title": "When Markets Fail: Externalities, Public Goods and Monopoly Power"
+            }
+          ]
+        },
+        {
+          "id": "ku-microeconomics-behavioral-economics",
+          "number": 5,
+          "title": "Behavioral Economics",
+          "shortTitle": "Behavioral Economics",
+          "bookId": "ku-microeconomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bus-behavioral-nudges",
+              "number": 5.1,
+              "title": "Nudges and the Psychology of Choosing"
             }
           ]
         }
@@ -29649,28 +29649,8 @@
       "sectionCount": 6,
       "chapters": [
         {
-          "id": "ku-macroeconomics-money-and-monetary-policy",
-          "number": 1,
-          "title": "Money & Monetary Policy",
-          "shortTitle": "Money & Monetary Policy",
-          "bookId": "ku-macroeconomics",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-bus-inflation-monetary-policy",
-              "number": 1.1,
-              "title": "Inflation and What Central Banks Actually Do"
-            },
-            {
-              "id": "ku-econ-monetary-policy-central-banking",
-              "number": 1.2,
-              "title": "Monetary Policy and Central Banking"
-            }
-          ]
-        },
-        {
           "id": "ku-macroeconomics-national-income-and-the-vital-signs",
-          "number": 2,
+          "number": 1,
           "title": "National Income & the Vital Signs",
           "shortTitle": "National Income & the Vital Signs",
           "bookId": "ku-macroeconomics",
@@ -29678,13 +29658,33 @@
           "sections": [
             {
               "id": "ku-econ-gdp-inflation-unemployment",
-              "number": 2.1,
+              "number": 1.1,
               "title": "GDP, Inflation and Unemployment: The Vital Signs of an Economy"
             },
             {
               "id": "ku-econ-macro-ad-as-indian-economy",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Measuring the Economy: National Income, AD-AS and India's Reforms"
+            }
+          ]
+        },
+        {
+          "id": "ku-macroeconomics-money-and-monetary-policy",
+          "number": 2,
+          "title": "Money & Monetary Policy",
+          "shortTitle": "Money & Monetary Policy",
+          "bookId": "ku-macroeconomics",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bus-inflation-monetary-policy",
+              "number": 2.1,
+              "title": "Inflation and What Central Banks Actually Do"
+            },
+            {
+              "id": "ku-econ-monetary-policy-central-banking",
+              "number": 2.2,
+              "title": "Monetary Policy and Central Banking"
             }
           ]
         },
@@ -29729,28 +29729,8 @@
       "sectionCount": 4,
       "chapters": [
         {
-          "id": "ku-international-trade-regional-integration-and-fdi",
-          "number": 1,
-          "title": "Regional Integration & FDI",
-          "shortTitle": "Regional Integration & FDI",
-          "bookId": "ku-international-trade",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-com-international-business-fdi-integration",
-              "number": 1.1,
-              "title": "FDI, Regional Integration and the Institutions of World Trade"
-            },
-            {
-              "id": "ku-econ-regional-integration",
-              "number": 1.2,
-              "title": "Trade Protection and Regional Integration: Blocs, Trade Creation and Diversion"
-            }
-          ]
-        },
-        {
           "id": "ku-international-trade-trade-theory",
-          "number": 2,
+          "number": 1,
           "title": "Trade Theory",
           "shortTitle": "Trade Theory",
           "bookId": "ku-international-trade",
@@ -29758,14 +29738,14 @@
           "sections": [
             {
               "id": "ku-bus-comparative-advantage",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Comparative Advantage and Trade"
             }
           ]
         },
         {
           "id": "ku-international-trade-trade-policy",
-          "number": 3,
+          "number": 2,
           "title": "Trade Policy",
           "shortTitle": "Trade Policy",
           "bookId": "ku-international-trade",
@@ -29773,8 +29753,28 @@
           "sections": [
             {
               "id": "ku-bus-trade-policy-tariffs",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Trade Policy: Tariffs, Quotas and Trade Wars"
+            }
+          ]
+        },
+        {
+          "id": "ku-international-trade-regional-integration-and-fdi",
+          "number": 3,
+          "title": "Regional Integration & FDI",
+          "shortTitle": "Regional Integration & FDI",
+          "bookId": "ku-international-trade",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-com-international-business-fdi-integration",
+              "number": 3.1,
+              "title": "FDI, Regional Integration and the Institutions of World Trade"
+            },
+            {
+              "id": "ku-econ-regional-integration",
+              "number": 3.2,
+              "title": "Trade Protection and Regional Integration: Blocs, Trade Creation and Diversion"
             }
           ]
         }
@@ -29804,23 +29804,8 @@
           ]
         },
         {
-          "id": "ku-development-economics-political-economy",
-          "number": 2,
-          "title": "Political Economy",
-          "shortTitle": "Political Economy",
-          "bookId": "ku-development-economics",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-econ-japan-market-national-economy",
-              "number": 2.1,
-              "title": "Economic Agents and the National Economy: Japan’s Markets, Finance and Public Finances"
-            }
-          ]
-        },
-        {
           "id": "ku-development-economics-india-and-comparative-development",
-          "number": 3,
+          "number": 2,
           "title": "India & Comparative Development",
           "shortTitle": "India & Comparative Development",
           "bookId": "ku-development-economics",
@@ -29828,8 +29813,23 @@
           "sections": [
             {
               "id": "ku-econ-india-development-challenges",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Human Capital, Employment and Comparative Development: India's Agenda"
+            }
+          ]
+        },
+        {
+          "id": "ku-development-economics-political-economy",
+          "number": 3,
+          "title": "Political Economy",
+          "shortTitle": "Political Economy",
+          "bookId": "ku-development-economics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-econ-japan-market-national-economy",
+              "number": 3.1,
+              "title": "Economic Agents and the National Economy: Japan’s Markets, Finance and Public Finances"
             }
           ]
         }
@@ -29899,22 +29899,22 @@
       "sectionCount": 6,
       "chapters": [
         {
-          "id": "ku-financial-accounting-special-transactions-and-computerized-systems",
+          "id": "ku-financial-accounting-the-accounting-cycle-and-the-ledger",
           "number": 1,
-          "title": "Special Transactions & Computerized Systems",
-          "shortTitle": "Special Transactions & Computerized Systems",
+          "title": "The Accounting Cycle & the Ledger",
+          "shortTitle": "The Accounting Cycle & the Ledger",
           "bookId": "ku-financial-accounting",
           "sectionCount": 2,
           "sections": [
             {
-              "id": "ku-acct-computerized-accounting-systems",
+              "id": "ku-acct-double-entry",
               "number": 1.1,
-              "title": "Computerized Accounting: From Voucher to Report"
+              "title": "Double-Entry Bookkeeping: The Logic Behind Every Ledger"
             },
             {
-              "id": "ku-acct-special-transactions",
+              "id": "ku-acct-accounting-cycle-accruals",
               "number": 1.2,
-              "title": "Bills of Exchange, Consignment and Special Transactions"
+              "title": "The Accounting Cycle: Accruals, Adjustments and Closing the Books"
             }
           ]
         },
@@ -29939,22 +29939,22 @@
           ]
         },
         {
-          "id": "ku-financial-accounting-the-accounting-cycle-and-the-ledger",
+          "id": "ku-financial-accounting-special-transactions-and-computerized-systems",
           "number": 3,
-          "title": "The Accounting Cycle & the Ledger",
-          "shortTitle": "The Accounting Cycle & the Ledger",
+          "title": "Special Transactions & Computerized Systems",
+          "shortTitle": "Special Transactions & Computerized Systems",
           "bookId": "ku-financial-accounting",
           "sectionCount": 2,
           "sections": [
             {
-              "id": "ku-acct-double-entry",
+              "id": "ku-acct-computerized-accounting-systems",
               "number": 3.1,
-              "title": "Double-Entry Bookkeeping: The Logic Behind Every Ledger"
+              "title": "Computerized Accounting: From Voucher to Report"
             },
             {
-              "id": "ku-acct-accounting-cycle-accruals",
+              "id": "ku-acct-special-transactions",
               "number": 3.2,
-              "title": "The Accounting Cycle: Accruals, Adjustments and Closing the Books"
+              "title": "Bills of Exchange, Consignment and Special Transactions"
             }
           ]
         }
@@ -29969,23 +29969,8 @@
       "sectionCount": 6,
       "chapters": [
         {
-          "id": "ku-advanced-accounting-auditing-auditing-and-assurance",
-          "number": 1,
-          "title": "Auditing & Assurance",
-          "shortTitle": "Auditing & Assurance",
-          "bookId": "ku-advanced-accounting-auditing",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-com-auditing-assurance-cycle",
-              "number": 1.1,
-              "title": "Auditing: The Independent Examination Behind Credible Accounts"
-            }
-          ]
-        },
-        {
           "id": "ku-advanced-accounting-auditing-partnership-accounts",
-          "number": 2,
+          "number": 1,
           "title": "Partnership Accounts",
           "shortTitle": "Partnership Accounts",
           "bookId": "ku-advanced-accounting-auditing",
@@ -29993,19 +29978,19 @@
           "sections": [
             {
               "id": "ku-acct-partnership-fundamentals",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Partnership Accounts I: Formation, Profit Sharing and Capital"
             },
             {
               "id": "ku-acct-partnership-changes",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Partnership Accounts II: Admission, Retirement and Dissolution"
             }
           ]
         },
         {
           "id": "ku-advanced-accounting-auditing-company-accounts-and-financial-statements",
-          "number": 3,
+          "number": 2,
           "title": "Company Accounts & Financial Statements",
           "shortTitle": "Company Accounts & Financial Statements",
           "bookId": "ku-advanced-accounting-auditing",
@@ -30013,18 +29998,33 @@
           "sections": [
             {
               "id": "ku-acct-shares-issue-forfeiture",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Company Accounts I: Issue and Forfeiture of Shares"
             },
             {
               "id": "ku-acct-debentures",
-              "number": 3.2,
+              "number": 2.2,
               "title": "Company Accounts II: Debentures and Borrowings"
             },
             {
               "id": "ku-acct-financial-statements",
-              "number": 3.3,
+              "number": 2.3,
               "title": "Reading Financial Statements: Balance Sheet, Income and Cash Flow"
+            }
+          ]
+        },
+        {
+          "id": "ku-advanced-accounting-auditing-auditing-and-assurance",
+          "number": 3,
+          "title": "Auditing & Assurance",
+          "shortTitle": "Auditing & Assurance",
+          "bookId": "ku-advanced-accounting-auditing",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-com-auditing-assurance-cycle",
+              "number": 3.1,
+              "title": "Auditing: The Independent Examination Behind Credible Accounts"
             }
           ]
         }
@@ -30039,23 +30039,8 @@
       "sectionCount": 9,
       "chapters": [
         {
-          "id": "ku-finance-banking-corporate-finance",
-          "number": 1,
-          "title": "Corporate Finance",
-          "shortTitle": "Corporate Finance",
-          "bookId": "ku-finance-banking",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-com-corporate-finance-decisions",
-              "number": 1.1,
-              "title": "Corporate Finance Decisions: Investing, Financing and Paying Out"
-            }
-          ]
-        },
-        {
           "id": "ku-finance-banking-money-banking-risk-and-insurance",
-          "number": 2,
+          "number": 1,
           "title": "Money, Banking, Risk & Insurance",
           "shortTitle": "Money, Banking, Risk & Insurance",
           "bookId": "ku-finance-banking",
@@ -30063,24 +30048,24 @@
           "sections": [
             {
               "id": "ku-econ-indian-banking-financial-system",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Indian Banking and the Financial System: Structure, Regulators and Payment Rails"
             },
             {
               "id": "ku-fin-insurance-risk-pooling",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Insurance: Pooling Risk and Pricing It"
             },
             {
               "id": "ku-fin-banks-create-money",
-              "number": 2.3,
+              "number": 1.3,
               "title": "How Banks Create Money"
             }
           ]
         },
         {
           "id": "ku-finance-banking-markets-and-instruments",
-          "number": 3,
+          "number": 2,
           "title": "Markets & Instruments",
           "shortTitle": "Markets & Instruments",
           "bookId": "ku-finance-banking",
@@ -30088,14 +30073,14 @@
           "sections": [
             {
               "id": "ku-fin-financial-markets-money-capital",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Financial Markets: How Money and Capital Markets Move Savings to Investment"
             }
           ]
         },
         {
           "id": "ku-finance-banking-valuation-basics",
-          "number": 4,
+          "number": 3,
           "title": "Valuation Basics",
           "shortTitle": "Valuation Basics",
           "bookId": "ku-finance-banking",
@@ -30103,8 +30088,23 @@
           "sections": [
             {
               "id": "ku-bus-compound-interest-tvm",
-              "number": 4.1,
+              "number": 3.1,
               "title": "Compound Interest and the Time Value of Money"
+            }
+          ]
+        },
+        {
+          "id": "ku-finance-banking-corporate-finance",
+          "number": 4,
+          "title": "Corporate Finance",
+          "shortTitle": "Corporate Finance",
+          "bookId": "ku-finance-banking",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-com-corporate-finance-decisions",
+              "number": 4.1,
+              "title": "Corporate Finance Decisions: Investing, Financing and Paying Out"
             }
           ]
         },
@@ -30194,23 +30194,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-marketing-pricing-channels-and-promotion",
-          "number": 1,
-          "title": "Pricing, Channels & Promotion",
-          "shortTitle": "Pricing, Channels & Promotion",
-          "bookId": "ku-marketing",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-com-marketing-mix-distribution-trends",
-              "number": 1.1,
-              "title": "Pricing, Distribution and Promotion: The Marketing Mix and Its Digital Turn"
-            }
-          ]
-        },
-        {
           "id": "ku-marketing-marketing-foundations",
-          "number": 2,
+          "number": 1,
           "title": "Marketing Foundations",
           "shortTitle": "Marketing Foundations",
           "bookId": "ku-marketing",
@@ -30218,13 +30203,28 @@
           "sections": [
             {
               "id": "ku-mkt-four-ps",
-              "number": 2.1,
+              "number": 1.1,
               "title": "The Four Ps and the Psychology of Buying"
             },
             {
               "id": "ku-mkt-stp-playbook",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Segmentation, Targeting and Positioning: The STP Playbook"
+            }
+          ]
+        },
+        {
+          "id": "ku-marketing-pricing-channels-and-promotion",
+          "number": 2,
+          "title": "Pricing, Channels & Promotion",
+          "shortTitle": "Pricing, Channels & Promotion",
+          "bookId": "ku-marketing",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-com-marketing-mix-distribution-trends",
+              "number": 2.1,
+              "title": "Pricing, Distribution and Promotion: The Marketing Mix and Its Digital Turn"
             }
           ]
         }
@@ -30239,28 +30239,8 @@
       "sectionCount": 4,
       "chapters": [
         {
-          "id": "ku-operations-strategy-strategy-and-strategic-interaction",
-          "number": 1,
-          "title": "Strategy & Strategic Interaction",
-          "shortTitle": "Strategy & Strategic Interaction",
-          "bookId": "ku-operations-strategy",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-bus-network-effects",
-              "number": 1.1,
-              "title": "Network Effects: Why Winner-Take-All Markets Exist"
-            },
-            {
-              "id": "ku-econ-game-theory-toolkit",
-              "number": 1.2,
-              "title": "Game Theory Beyond the Prisoner’s Dilemma"
-            }
-          ]
-        },
-        {
           "id": "ku-operations-strategy-operations-and-supply-chain",
-          "number": 2,
+          "number": 1,
           "title": "Operations & Supply Chain",
           "shortTitle": "Operations & Supply Chain",
           "bookId": "ku-operations-strategy",
@@ -30268,13 +30248,33 @@
           "sections": [
             {
               "id": "ku-ops-inventory-bullwhip-lean",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Inventory, Logistics and the Bullwhip Effect"
             },
             {
               "id": "ku-ops-project-management",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Project Management: Scope, Time and Cost"
+            }
+          ]
+        },
+        {
+          "id": "ku-operations-strategy-strategy-and-strategic-interaction",
+          "number": 2,
+          "title": "Strategy & Strategic Interaction",
+          "shortTitle": "Strategy & Strategic Interaction",
+          "bookId": "ku-operations-strategy",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bus-network-effects",
+              "number": 2.1,
+              "title": "Network Effects: Why Winner-Take-All Markets Exist"
+            },
+            {
+              "id": "ku-econ-game-theory-toolkit",
+              "number": 2.2,
+              "title": "Game Theory Beyond the Prisoner’s Dilemma"
             }
           ]
         }
@@ -30289,28 +30289,8 @@
       "sectionCount": 4,
       "chapters": [
         {
-          "id": "ku-entrepreneurship-business-environment-business-environment-and-regulation",
-          "number": 1,
-          "title": "Business Environment & Regulation",
-          "shortTitle": "Business Environment & Regulation",
-          "bookId": "ku-entrepreneurship-business-environment",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-com-regulatory-framework-modern-india",
-              "number": 1.1,
-              "title": "The Modern Regulatory Framework: Statutes, Regulators and the Compliance Map"
-            },
-            {
-              "id": "ku-com-business-environment-elements",
-              "number": 1.2,
-              "title": "The Business Environment: Reading the Forces Around the Firm"
-            }
-          ]
-        },
-        {
           "id": "ku-entrepreneurship-business-environment-building-and-financing-ventures",
-          "number": 2,
+          "number": 1,
           "title": "Building & Financing Ventures",
           "shortTitle": "Building & Financing Ventures",
           "bookId": "ku-entrepreneurship-business-environment",
@@ -30318,13 +30298,33 @@
           "sections": [
             {
               "id": "ku-ent-lean-startup",
-              "number": 2.1,
+              "number": 1.1,
               "title": "From Idea to Business: Lean Startups and Business Models"
             },
             {
               "id": "ku-ent-startup-finance-equity",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Startup Finance: Bootstrapping, Equity and Dilution"
+            }
+          ]
+        },
+        {
+          "id": "ku-entrepreneurship-business-environment-business-environment-and-regulation",
+          "number": 2,
+          "title": "Business Environment & Regulation",
+          "shortTitle": "Business Environment & Regulation",
+          "bookId": "ku-entrepreneurship-business-environment",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-com-regulatory-framework-modern-india",
+              "number": 2.1,
+              "title": "The Modern Regulatory Framework: Statutes, Regulators and the Compliance Map"
+            },
+            {
+              "id": "ku-com-business-environment-elements",
+              "number": 2.2,
+              "title": "The Business Environment: Reading the Forces Around the Firm"
             }
           ]
         }
@@ -30339,38 +30339,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-legal-systems-method-courts-precedent-and-the-legal-machine",
-          "number": 1,
-          "title": "Courts, Precedent & the Legal Machine",
-          "shortTitle": "Courts, Precedent & the Legal Machine",
-          "bookId": "ku-legal-systems-method",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-law-reading-judgments-precedent",
-              "number": 1.1,
-              "title": "Reading a Judgment: Precedent, Ratio and the Legal-News Habit"
-            }
-          ]
-        },
-        {
-          "id": "ku-legal-systems-method-comparative-legal-systems-and-legal-history",
-          "number": 2,
-          "title": "Comparative Legal Systems & Legal History",
-          "shortTitle": "Comparative Legal Systems & Legal History",
-          "bookId": "ku-legal-systems-method",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-law-legal-history-milestones",
-              "number": 2.1,
-              "title": "Legal History Milestones: Codes, Charters and the Making of Modern Law"
-            }
-          ]
-        },
-        {
           "id": "ku-legal-systems-method-legal-reasoning",
-          "number": 3,
+          "number": 1,
           "title": "Legal Reasoning",
           "shortTitle": "Legal Reasoning",
           "bookId": "ku-legal-systems-method",
@@ -30378,8 +30348,38 @@
           "sections": [
             {
               "id": "ku-law-legal-reasoning-facts",
-              "number": 3.1,
+              "number": 1.1,
               "title": "Legal Reasoning: Applying Principles to Facts"
+            }
+          ]
+        },
+        {
+          "id": "ku-legal-systems-method-courts-precedent-and-the-legal-machine",
+          "number": 2,
+          "title": "Courts, Precedent & the Legal Machine",
+          "shortTitle": "Courts, Precedent & the Legal Machine",
+          "bookId": "ku-legal-systems-method",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-reading-judgments-precedent",
+              "number": 2.1,
+              "title": "Reading a Judgment: Precedent, Ratio and the Legal-News Habit"
+            }
+          ]
+        },
+        {
+          "id": "ku-legal-systems-method-comparative-legal-systems-and-legal-history",
+          "number": 3,
+          "title": "Comparative Legal Systems & Legal History",
+          "shortTitle": "Comparative Legal Systems & Legal History",
+          "bookId": "ku-legal-systems-method",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-legal-history-milestones",
+              "number": 3.1,
+              "title": "Legal History Milestones: Codes, Charters and the Making of Modern Law"
             }
           ]
         }
@@ -30394,23 +30394,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-constitutional-law-constitutional-law-in-practice",
-          "number": 1,
-          "title": "Constitutional Law in Practice",
-          "shortTitle": "Constitutional Law in Practice",
-          "bookId": "ku-constitutional-law",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-law-pil-public-interest-litigation",
-              "number": 1.1,
-              "title": "Public Interest Litigation: Taking the Public to Court"
-            }
-          ]
-        },
-        {
           "id": "ku-constitutional-law-structural-principles",
-          "number": 2,
+          "number": 1,
           "title": "Structural Principles",
           "shortTitle": "Structural Principles",
           "bookId": "ku-constitutional-law",
@@ -30418,13 +30403,28 @@
           "sections": [
             {
               "id": "ku-law-separation-powers",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Separation of Powers and Checks and Balances"
             },
             {
               "id": "ku-law-federalism-division-of-powers",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Federalism: Dividing Power Between Centre and States"
+            }
+          ]
+        },
+        {
+          "id": "ku-constitutional-law-constitutional-law-in-practice",
+          "number": 2,
+          "title": "Constitutional Law in Practice",
+          "shortTitle": "Constitutional Law in Practice",
+          "bookId": "ku-constitutional-law",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-pil-public-interest-litigation",
+              "number": 2.1,
+              "title": "Public Interest Litigation: Taking the Public to Court"
             }
           ]
         }
@@ -30569,17 +30569,17 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-criminal-justice-criminal-litigation",
+          "id": "ku-criminal-justice-criminology",
           "number": 1,
-          "title": "Criminal Litigation",
-          "shortTitle": "Criminal Litigation",
+          "title": "Criminology",
+          "shortTitle": "Criminology",
           "bookId": "ku-criminal-justice",
           "sectionCount": 1,
           "sections": [
             {
-              "id": "ku-law-evidence-burden",
+              "id": "ku-crim-theories-of-crime",
               "number": 1.1,
-              "title": "Evidence and the Burden of Proof"
+              "title": "Criminology: Why People Commit Crime"
             }
           ]
         },
@@ -30599,17 +30599,17 @@
           ]
         },
         {
-          "id": "ku-criminal-justice-criminology",
+          "id": "ku-criminal-justice-criminal-litigation",
           "number": 3,
-          "title": "Criminology",
-          "shortTitle": "Criminology",
+          "title": "Criminal Litigation",
+          "shortTitle": "Criminal Litigation",
           "bookId": "ku-criminal-justice",
           "sectionCount": 1,
           "sections": [
             {
-              "id": "ku-crim-theories-of-crime",
+              "id": "ku-law-evidence-burden",
               "number": 3.1,
-              "title": "Criminology: Why People Commit Crime"
+              "title": "Evidence and the Burden of Proof"
             }
           ]
         }
@@ -30624,23 +30624,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-international-law-courts-organizations-and-the-law-of-the-sea",
-          "number": 1,
-          "title": "Courts, Organizations & the Law of the Sea",
-          "shortTitle": "Courts, Organizations & the Law of the Sea",
-          "bookId": "ku-international-law",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-law-international-order-courts",
-              "number": 1.1,
-              "title": "Courts, Organizations and the Law of the Sea: How International Order Is Built"
-            }
-          ]
-        },
-        {
           "id": "ku-international-law-treaty-law",
-          "number": 2,
+          "number": 1,
           "title": "Treaty Law",
           "shortTitle": "Treaty Law",
           "bookId": "ku-international-law",
@@ -30648,14 +30633,14 @@
           "sections": [
             {
               "id": "ku-law-international-treaties",
-              "number": 2.1,
+              "number": 1.1,
               "title": "How International Treaties Actually Work"
             }
           ]
         },
         {
           "id": "ku-international-law-human-rights-law",
-          "number": 3,
+          "number": 2,
           "title": "Human Rights Law",
           "shortTitle": "Human Rights Law",
           "bookId": "ku-international-law",
@@ -30663,8 +30648,23 @@
           "sections": [
             {
               "id": "ku-law-international-human-rights",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Human Rights After 1948"
+            }
+          ]
+        },
+        {
+          "id": "ku-international-law-courts-organizations-and-the-law-of-the-sea",
+          "number": 3,
+          "title": "Courts, Organizations & the Law of the Sea",
+          "shortTitle": "Courts, Organizations & the Law of the Sea",
+          "bookId": "ku-international-law",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-international-order-courts",
+              "number": 3.1,
+              "title": "Courts, Organizations and the Law of the Sea: How International Order Is Built"
             }
           ]
         }
@@ -30679,23 +30679,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-regulatory-workplace-law-ip-and-media-law",
-          "number": 1,
-          "title": "IP & Media Law",
-          "shortTitle": "IP & Media Law",
-          "bookId": "ku-regulatory-workplace-law",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-law-ip-copyright-patent",
-              "number": 1.1,
-              "title": "Copyright, Patents and Trademarks: Who Owns an Idea"
-            }
-          ]
-        },
-        {
           "id": "ku-regulatory-workplace-law-tax-and-administrative-law",
-          "number": 2,
+          "number": 1,
           "title": "Tax & Administrative Law",
           "shortTitle": "Tax & Administrative Law",
           "bookId": "ku-regulatory-workplace-law",
@@ -30703,14 +30688,14 @@
           "sections": [
             {
               "id": "ku-law-tax-fundamentals",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Tax Law: Brackets, Deductions and Audits"
             }
           ]
         },
         {
           "id": "ku-regulatory-workplace-law-employment-law-and-the-workplace",
-          "number": 3,
+          "number": 2,
           "title": "Employment Law & the Workplace",
           "shortTitle": "Employment Law & the Workplace",
           "bookId": "ku-regulatory-workplace-law",
@@ -30718,8 +30703,23 @@
           "sections": [
             {
               "id": "ku-law-employment-labor",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Employment and Labor Law: The Rulebook of Work"
+            }
+          ]
+        },
+        {
+          "id": "ku-regulatory-workplace-law-ip-and-media-law",
+          "number": 3,
+          "title": "IP & Media Law",
+          "shortTitle": "IP & Media Law",
+          "bookId": "ku-regulatory-workplace-law",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-law-ip-copyright-patent",
+              "number": 3.1,
+              "title": "Copyright, Patents and Trademarks: Who Owns an Idea"
             }
           ]
         }
@@ -30734,48 +30734,8 @@
       "sectionCount": 6,
       "chapters": [
         {
-          "id": "ku-literature-literary-craft-and-criticism",
-          "number": 1,
-          "title": "Literary Craft & Criticism",
-          "shortTitle": "Literary Craft & Criticism",
-          "bookId": "ku-literature",
-          "sectionCount": 3,
-          "sections": [
-            {
-              "id": "ku-eng-texts-human-experiences",
-              "number": 1.1,
-              "title": "How Texts Represent Human Experiences"
-            },
-            {
-              "id": "ku-lang-visual-multimedia-texts",
-              "number": 1.2,
-              "title": "Reading Visual and Multimedia Texts"
-            },
-            {
-              "id": "ku-lang-literary-devices",
-              "number": 1.3,
-              "title": "Literary Devices: How Writing Works Its Magic"
-            }
-          ]
-        },
-        {
-          "id": "ku-literature-literary-awards-and-the-canon",
-          "number": 2,
-          "title": "Literary Awards & the Canon",
-          "shortTitle": "Literary Awards & the Canon",
-          "bookId": "ku-literature",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-lang-books-authors-prizes",
-              "number": 2.1,
-              "title": "Books and Authors: The Prize Map from Stockholm to Delhi"
-            }
-          ]
-        },
-        {
           "id": "ku-literature-the-great-tradition",
-          "number": 3,
+          "number": 1,
           "title": "The Great Tradition",
           "shortTitle": "The Great Tradition",
           "bookId": "ku-literature",
@@ -30783,14 +30743,14 @@
           "sections": [
             {
               "id": "ku-lang-epic-tradition",
-              "number": 3.1,
+              "number": 1.1,
               "title": "From Gilgamesh to the Odyssey: The Birth of Literature"
             }
           ]
         },
         {
           "id": "ku-literature-reading-the-world",
-          "number": 4,
+          "number": 2,
           "title": "Reading the World",
           "shortTitle": "Reading the World",
           "bookId": "ku-literature",
@@ -30798,8 +30758,48 @@
           "sections": [
             {
               "id": "ku-lang-literary-criticism-lenses",
-              "number": 4.1,
+              "number": 2.1,
               "title": "Literary Criticism: Lenses and Schools"
+            }
+          ]
+        },
+        {
+          "id": "ku-literature-literary-awards-and-the-canon",
+          "number": 3,
+          "title": "Literary Awards & the Canon",
+          "shortTitle": "Literary Awards & the Canon",
+          "bookId": "ku-literature",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-books-authors-prizes",
+              "number": 3.1,
+              "title": "Books and Authors: The Prize Map from Stockholm to Delhi"
+            }
+          ]
+        },
+        {
+          "id": "ku-literature-literary-craft-and-criticism",
+          "number": 4,
+          "title": "Literary Craft & Criticism",
+          "shortTitle": "Literary Craft & Criticism",
+          "bookId": "ku-literature",
+          "sectionCount": 3,
+          "sections": [
+            {
+              "id": "ku-eng-texts-human-experiences",
+              "number": 4.1,
+              "title": "How Texts Represent Human Experiences"
+            },
+            {
+              "id": "ku-lang-visual-multimedia-texts",
+              "number": 4.2,
+              "title": "Reading Visual and Multimedia Texts"
+            },
+            {
+              "id": "ku-lang-literary-devices",
+              "number": 4.3,
+              "title": "Literary Devices: How Writing Works Its Magic"
             }
           ]
         }
@@ -30814,23 +30814,8 @@
       "sectionCount": 11,
       "chapters": [
         {
-          "id": "ku-linguistics-language-acquisition",
-          "number": 1,
-          "title": "Language Acquisition",
-          "shortTitle": "Language Acquisition",
-          "bookId": "ku-linguistics",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-lang-comprehensible-input",
-              "number": 1.1,
-              "title": "Comprehensible Input and Language Acquisition"
-            }
-          ]
-        },
-        {
           "id": "ku-linguistics-the-science-of-language",
-          "number": 2,
+          "number": 1,
           "title": "The Science of Language",
           "shortTitle": "The Science of Language",
           "bookId": "ku-linguistics",
@@ -30838,39 +30823,39 @@
           "sections": [
             {
               "id": "ku-lang-etymology-word-origins",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Where Words Come From: Etymology in Action"
             },
             {
               "id": "ku-lang-morphology",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Morphology: How Languages Build Words"
             },
             {
               "id": "ku-lang-syntax-sentence-structure",
-              "number": 2.3,
+              "number": 1.3,
               "title": "Syntax: How Sentences Are Built"
             },
             {
               "id": "ku-lang-semantics-pragmatics",
-              "number": 2.4,
+              "number": 1.4,
               "title": "Meaning: Semantics and Pragmatics"
             },
             {
               "id": "ku-lang-historical-linguistics",
-              "number": 2.5,
+              "number": 1.5,
               "title": "How Languages Change: Sound, Grammar and Family Trees"
             },
             {
               "id": "ku-lang-writing-systems-world",
-              "number": 2.6,
+              "number": 1.6,
               "title": "Writing Systems of the World: Alphabets, Abjads and Beyond"
             }
           ]
         },
         {
           "id": "ku-linguistics-phonetics-and-phonology",
-          "number": 3,
+          "number": 2,
           "title": "Phonetics & Phonology",
           "shortTitle": "Phonetics & Phonology",
           "bookId": "ku-linguistics",
@@ -30878,24 +30863,24 @@
           "sections": [
             {
               "id": "ku-lang-tonal-languages",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Tonal Languages: Meaning in Melody"
             },
             {
               "id": "ku-lang-prosody",
-              "number": 3.2,
+              "number": 2.2,
               "title": "Prosody: The Melody of Speech"
             },
             {
               "id": "ku-lang-phonetics",
-              "number": 3.3,
+              "number": 2.3,
               "title": "The Sounds of Speech: Phonetics and the IPA"
             }
           ]
         },
         {
           "id": "ku-linguistics-language-in-society",
-          "number": 4,
+          "number": 3,
           "title": "Language in Society",
           "shortTitle": "Language in Society",
           "bookId": "ku-linguistics",
@@ -30903,8 +30888,23 @@
           "sections": [
             {
               "id": "ku-lang-sociolinguistics",
-              "number": 4.1,
+              "number": 3.1,
               "title": "Language in Society: Dialects, Prestige and Code-Switching"
+            }
+          ]
+        },
+        {
+          "id": "ku-linguistics-language-acquisition",
+          "number": 4,
+          "title": "Language Acquisition",
+          "shortTitle": "Language Acquisition",
+          "bookId": "ku-linguistics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-comprehensible-input",
+              "number": 4.1,
+              "title": "Comprehensible Input and Language Acquisition"
             }
           ]
         }
@@ -31029,23 +31029,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-french-french-reading-and-culture",
-          "number": 1,
-          "title": "French Reading & Culture",
-          "shortTitle": "French Reading & Culture",
-          "bookId": "ku-french",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-lang-french-reading-francophonie",
-              "number": 1.1,
-              "title": "French Reading and the Francophone World"
-            }
-          ]
-        },
-        {
           "id": "ku-french-french-foundations",
-          "number": 2,
+          "number": 1,
           "title": "French Foundations",
           "shortTitle": "French Foundations",
           "bookId": "ku-french",
@@ -31053,14 +31038,14 @@
           "sections": [
             {
               "id": "ku-lang-french-foundations",
-              "number": 2.1,
+              "number": 1.1,
               "title": "French Foundations: Pronunciation, Articles and First Phrases"
             }
           ]
         },
         {
           "id": "ku-french-french-verbs",
-          "number": 3,
+          "number": 2,
           "title": "French Verbs",
           "shortTitle": "French Verbs",
           "bookId": "ku-french",
@@ -31068,8 +31053,23 @@
           "sections": [
             {
               "id": "ku-lang-french-verbs",
-              "number": 3.1,
+              "number": 2.1,
               "title": "French Verbs: Three Endings, Four Rebels and the Compound Past"
+            }
+          ]
+        },
+        {
+          "id": "ku-french-french-reading-and-culture",
+          "number": 3,
+          "title": "French Reading & Culture",
+          "shortTitle": "French Reading & Culture",
+          "bookId": "ku-french",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-french-reading-francophonie",
+              "number": 3.1,
+              "title": "French Reading and the Francophone World"
             }
           ]
         }
@@ -31124,17 +31124,17 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-hindi-hindi-literature",
+          "id": "ku-hindi-hindi-foundations",
           "number": 1,
-          "title": "Hindi Literature",
-          "shortTitle": "Hindi Literature",
+          "title": "Hindi Foundations",
+          "shortTitle": "Hindi Foundations",
           "bookId": "ku-hindi",
           "sectionCount": 1,
           "sections": [
             {
-              "id": "ku-lang-hindi-literature-masters",
+              "id": "ku-lang-hindi-foundations",
               "number": 1.1,
-              "title": "Hindi Literature: From Kabir’s Dohas to the Nayi Kahani"
+              "title": "Hindi Foundations: Devanagari, Word Order and Agreement"
             }
           ]
         },
@@ -31154,17 +31154,17 @@
           ]
         },
         {
-          "id": "ku-hindi-hindi-foundations",
+          "id": "ku-hindi-hindi-literature",
           "number": 3,
-          "title": "Hindi Foundations",
-          "shortTitle": "Hindi Foundations",
+          "title": "Hindi Literature",
+          "shortTitle": "Hindi Literature",
           "bookId": "ku-hindi",
           "sectionCount": 1,
           "sections": [
             {
-              "id": "ku-lang-hindi-foundations",
+              "id": "ku-lang-hindi-literature-masters",
               "number": 3.1,
-              "title": "Hindi Foundations: Devanagari, Word Order and Agreement"
+              "title": "Hindi Literature: From Kabir’s Dohas to the Nayi Kahani"
             }
           ]
         }
@@ -31179,38 +31179,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-arabic-arabic-grammar",
-          "number": 1,
-          "title": "Arabic Grammar",
-          "shortTitle": "Arabic Grammar",
-          "bookId": "ku-arabic",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-lang-arabic-grammar-morphology",
-              "number": 1.1,
-              "title": "Arabic Grammar Workshop: Cases, Plurals and the Verb Engine"
-            }
-          ]
-        },
-        {
-          "id": "ku-arabic-arabic-literature-and-culture",
-          "number": 2,
-          "title": "Arabic Literature & Culture",
-          "shortTitle": "Arabic Literature & Culture",
-          "bookId": "ku-arabic",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-lang-arabic-literature-culture",
-              "number": 2.1,
-              "title": "Arabic Literature: Odes, Nights and the Novel"
-            }
-          ]
-        },
-        {
           "id": "ku-arabic-arabic-foundations",
-          "number": 3,
+          "number": 1,
           "title": "Arabic Foundations",
           "shortTitle": "Arabic Foundations",
           "bookId": "ku-arabic",
@@ -31218,8 +31188,38 @@
           "sections": [
             {
               "id": "ku-lang-arabic-foundations",
-              "number": 3.1,
+              "number": 1.1,
               "title": "Arabic Foundations: Roots, Script and Diglossia"
+            }
+          ]
+        },
+        {
+          "id": "ku-arabic-arabic-grammar",
+          "number": 2,
+          "title": "Arabic Grammar",
+          "shortTitle": "Arabic Grammar",
+          "bookId": "ku-arabic",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-arabic-grammar-morphology",
+              "number": 2.1,
+              "title": "Arabic Grammar Workshop: Cases, Plurals and the Verb Engine"
+            }
+          ]
+        },
+        {
+          "id": "ku-arabic-arabic-literature-and-culture",
+          "number": 3,
+          "title": "Arabic Literature & Culture",
+          "shortTitle": "Arabic Literature & Culture",
+          "bookId": "ku-arabic",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-arabic-literature-culture",
+              "number": 3.1,
+              "title": "Arabic Literature: Odes, Nights and the Novel"
             }
           ]
         }
@@ -31234,38 +31234,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-korean-korean-grammar",
-          "number": 1,
-          "title": "Korean Grammar",
-          "shortTitle": "Korean Grammar",
-          "bookId": "ku-korean",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-lang-korean-grammar-workshop",
-              "number": 1.1,
-              "title": "Korean Grammar Workshop: Particles, Endings and Irregular Verbs"
-            }
-          ]
-        },
-        {
-          "id": "ku-korean-korean-literature-and-culture",
-          "number": 2,
-          "title": "Korean Literature & Culture",
-          "shortTitle": "Korean Literature & Culture",
-          "bookId": "ku-korean",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-lang-korean-reading-culture",
-              "number": 2.1,
-              "title": "Korean Reading and Culture: From Hunminjeongeum to the Nobel"
-            }
-          ]
-        },
-        {
           "id": "ku-korean-korean-foundations",
-          "number": 3,
+          "number": 1,
           "title": "Korean Foundations",
           "shortTitle": "Korean Foundations",
           "bookId": "ku-korean",
@@ -31273,8 +31243,38 @@
           "sections": [
             {
               "id": "ku-lang-korean-foundations",
-              "number": 3.1,
+              "number": 1.1,
               "title": "Korean Foundations: Hangul, Politeness and Verb-Last Order"
+            }
+          ]
+        },
+        {
+          "id": "ku-korean-korean-grammar",
+          "number": 2,
+          "title": "Korean Grammar",
+          "shortTitle": "Korean Grammar",
+          "bookId": "ku-korean",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-korean-grammar-workshop",
+              "number": 2.1,
+              "title": "Korean Grammar Workshop: Particles, Endings and Irregular Verbs"
+            }
+          ]
+        },
+        {
+          "id": "ku-korean-korean-literature-and-culture",
+          "number": 3,
+          "title": "Korean Literature & Culture",
+          "shortTitle": "Korean Literature & Culture",
+          "bookId": "ku-korean",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-korean-reading-culture",
+              "number": 3.1,
+              "title": "Korean Reading and Culture: From Hunminjeongeum to the Nobel"
             }
           ]
         }
@@ -31289,38 +31289,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-russian-russian-grammar",
-          "number": 1,
-          "title": "Russian Grammar",
-          "shortTitle": "Russian Grammar",
-          "bookId": "ku-russian",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-lang-russian-grammar-workshop",
-              "number": 1.1,
-              "title": "Russian Grammar Workshop: Declension, Motion and Government"
-            }
-          ]
-        },
-        {
-          "id": "ku-russian-russian-literature",
-          "number": 2,
-          "title": "Russian Literature",
-          "shortTitle": "Russian Literature",
-          "bookId": "ku-russian",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-lang-russian-literature-golden",
-              "number": 2.1,
-              "title": "Russian Literature: The Golden Age and After"
-            }
-          ]
-        },
-        {
           "id": "ku-russian-russian-foundations",
-          "number": 3,
+          "number": 1,
           "title": "Russian Foundations",
           "shortTitle": "Russian Foundations",
           "bookId": "ku-russian",
@@ -31328,8 +31298,38 @@
           "sections": [
             {
               "id": "ku-lang-russian-foundations",
-              "number": 3.1,
+              "number": 1.1,
               "title": "Russian Foundations: Cyrillic, Cases and Aspect"
+            }
+          ]
+        },
+        {
+          "id": "ku-russian-russian-grammar",
+          "number": 2,
+          "title": "Russian Grammar",
+          "shortTitle": "Russian Grammar",
+          "bookId": "ku-russian",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-russian-grammar-workshop",
+              "number": 2.1,
+              "title": "Russian Grammar Workshop: Declension, Motion and Government"
+            }
+          ]
+        },
+        {
+          "id": "ku-russian-russian-literature",
+          "number": 3,
+          "title": "Russian Literature",
+          "shortTitle": "Russian Literature",
+          "bookId": "ku-russian",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-russian-literature-golden",
+              "number": 3.1,
+              "title": "Russian Literature: The Golden Age and After"
             }
           ]
         }
@@ -31344,23 +31344,8 @@
       "sectionCount": 2,
       "chapters": [
         {
-          "id": "ku-mandarin-classical-canon-and-recitation",
-          "number": 1,
-          "title": "Classical Canon & Recitation",
-          "shortTitle": "Classical Canon & Recitation",
-          "bookId": "ku-mandarin",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-lang-classical-chinese-canon",
-              "number": 1.1,
-              "title": "The Classical Chinese Canon: Famous Lines and Exact Recall"
-            }
-          ]
-        },
-        {
           "id": "ku-mandarin-mandarin-foundations",
-          "number": 2,
+          "number": 1,
           "title": "Mandarin Foundations",
           "shortTitle": "Mandarin Foundations",
           "bookId": "ku-mandarin",
@@ -31368,8 +31353,23 @@
           "sections": [
             {
               "id": "ku-lang-mandarin-foundations",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Mandarin Foundations: Tones, Characters and First Phrases"
+            }
+          ]
+        },
+        {
+          "id": "ku-mandarin-classical-canon-and-recitation",
+          "number": 2,
+          "title": "Classical Canon & Recitation",
+          "shortTitle": "Classical Canon & Recitation",
+          "bookId": "ku-mandarin",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lang-classical-chinese-canon",
+              "number": 2.1,
+              "title": "The Classical Chinese Canon: Famous Lines and Exact Recall"
             }
           ]
         }
@@ -31639,53 +31639,8 @@
           ]
         },
         {
-          "id": "ku-film-cinema-film-history-and-movements",
-          "number": 2,
-          "title": "Film History & Movements",
-          "shortTitle": "Film History & Movements",
-          "bookId": "ku-film-cinema",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-film-movements-history",
-              "number": 2.1,
-              "title": "Film Movements: Silent Cinema to New Waves"
-            }
-          ]
-        },
-        {
-          "id": "ku-film-cinema-sound-and-score",
-          "number": 3,
-          "title": "Sound & Score",
-          "shortTitle": "Sound & Score",
-          "bookId": "ku-film-cinema",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-film-sound-design",
-              "number": 3.1,
-              "title": "Sound Design: The Invisible Half of Cinema"
-            }
-          ]
-        },
-        {
-          "id": "ku-film-cinema-editing-and-montage",
-          "number": 4,
-          "title": "Editing & Montage",
-          "shortTitle": "Editing & Montage",
-          "bookId": "ku-film-cinema",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-art-montage-kuleshov-effect",
-              "number": 4.1,
-              "title": "Montage and the Kuleshov Effect"
-            }
-          ]
-        },
-        {
           "id": "ku-film-cinema-cinematography-and-light",
-          "number": 5,
+          "number": 2,
           "title": "Cinematography & Light",
           "shortTitle": "Cinematography & Light",
           "bookId": "ku-film-cinema",
@@ -31693,8 +31648,53 @@
           "sections": [
             {
               "id": "ku-cine-cinematography",
-              "number": 5.1,
+              "number": 2.1,
               "title": "Cinematography: Shots, Camera Movement and Light"
+            }
+          ]
+        },
+        {
+          "id": "ku-film-cinema-editing-and-montage",
+          "number": 3,
+          "title": "Editing & Montage",
+          "shortTitle": "Editing & Montage",
+          "bookId": "ku-film-cinema",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-art-montage-kuleshov-effect",
+              "number": 3.1,
+              "title": "Montage and the Kuleshov Effect"
+            }
+          ]
+        },
+        {
+          "id": "ku-film-cinema-sound-and-score",
+          "number": 4,
+          "title": "Sound & Score",
+          "shortTitle": "Sound & Score",
+          "bookId": "ku-film-cinema",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-film-sound-design",
+              "number": 4.1,
+              "title": "Sound Design: The Invisible Half of Cinema"
+            }
+          ]
+        },
+        {
+          "id": "ku-film-cinema-film-history-and-movements",
+          "number": 5,
+          "title": "Film History & Movements",
+          "shortTitle": "Film History & Movements",
+          "bookId": "ku-film-cinema",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-film-movements-history",
+              "number": 5.1,
+              "title": "Film Movements: Silent Cinema to New Waves"
             }
           ]
         }
@@ -31709,53 +31709,8 @@
       "sectionCount": 5,
       "chapters": [
         {
-          "id": "ku-animation-storyboarding-and-pre-production",
-          "number": 1,
-          "title": "Storyboarding & Pre-Production",
-          "shortTitle": "Storyboarding & Pre-Production",
-          "bookId": "ku-animation",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-animation-storyboarding",
-              "number": 1.1,
-              "title": "Storyboarding and Pre-Production"
-            }
-          ]
-        },
-        {
-          "id": "ku-animation-stop-motion-and-hybrid-techniques",
-          "number": 2,
-          "title": "Stop-Motion & Hybrid Techniques",
-          "shortTitle": "Stop-Motion & Hybrid Techniques",
-          "bookId": "ku-animation",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-animation-stop-motion",
-              "number": 2.1,
-              "title": "Stop-Motion: Clay, Puppets and Cutouts"
-            }
-          ]
-        },
-        {
-          "id": "ku-animation-digital-and-3d-production",
-          "number": 3,
-          "title": "Digital & 3D Production",
-          "shortTitle": "Digital & 3D Production",
-          "bookId": "ku-animation",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-animation-digital-3d",
-              "number": 3.1,
-              "title": "The Digital Pipeline: Modeling, Rigging and Rendering"
-            }
-          ]
-        },
-        {
           "id": "ku-animation-principles-of-animation",
-          "number": 4,
+          "number": 1,
           "title": "Principles of Animation",
           "shortTitle": "Principles of Animation",
           "bookId": "ku-animation",
@@ -31763,8 +31718,53 @@
           "sections": [
             {
               "id": "ku-art-animation-twelve-principles",
-              "number": 4.1,
+              "number": 1.1,
               "title": "Animation: The Twelve Principles That Make Drawings Move"
+            }
+          ]
+        },
+        {
+          "id": "ku-animation-storyboarding-and-pre-production",
+          "number": 2,
+          "title": "Storyboarding & Pre-Production",
+          "shortTitle": "Storyboarding & Pre-Production",
+          "bookId": "ku-animation",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-animation-storyboarding",
+              "number": 2.1,
+              "title": "Storyboarding and Pre-Production"
+            }
+          ]
+        },
+        {
+          "id": "ku-animation-stop-motion-and-hybrid-techniques",
+          "number": 3,
+          "title": "Stop-Motion & Hybrid Techniques",
+          "shortTitle": "Stop-Motion & Hybrid Techniques",
+          "bookId": "ku-animation",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-animation-stop-motion",
+              "number": 3.1,
+              "title": "Stop-Motion: Clay, Puppets and Cutouts"
+            }
+          ]
+        },
+        {
+          "id": "ku-animation-digital-and-3d-production",
+          "number": 4,
+          "title": "Digital & 3D Production",
+          "shortTitle": "Digital & 3D Production",
+          "bookId": "ku-animation",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-animation-digital-3d",
+              "number": 4.1,
+              "title": "The Digital Pipeline: Modeling, Rigging and Rendering"
             }
           ]
         },
@@ -31899,23 +31899,8 @@
           ]
         },
         {
-          "id": "ku-performing-arts-choreography-and-composition",
-          "number": 2,
-          "title": "Choreography & Composition",
-          "shortTitle": "Choreography & Composition",
-          "bookId": "ku-performing-arts",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-dance-choreography",
-              "number": 2.1,
-              "title": "Choreography: Composing Movement in Space and Time"
-            }
-          ]
-        },
-        {
           "id": "ku-performing-arts-stagecraft-and-production",
-          "number": 3,
+          "number": 2,
           "title": "Stagecraft & Production",
           "shortTitle": "Stagecraft & Production",
           "bookId": "ku-performing-arts",
@@ -31923,14 +31908,14 @@
           "sections": [
             {
               "id": "ku-art-theater-stagecraft-space-blocking",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Theater and Stagecraft: The Space, the Blocking, the Show"
             }
           ]
         },
         {
           "id": "ku-performing-arts-dance-forms-and-history",
-          "number": 4,
+          "number": 3,
           "title": "Dance Forms & History",
           "shortTitle": "Dance Forms & History",
           "bookId": "ku-performing-arts",
@@ -31938,8 +31923,23 @@
           "sections": [
             {
               "id": "ku-art-dance-movement-traditions",
-              "number": 4.1,
+              "number": 3.1,
               "title": "Dance: Ballet, Folk and Contemporary — How Movement Traditions Work"
+            }
+          ]
+        },
+        {
+          "id": "ku-performing-arts-choreography-and-composition",
+          "number": 4,
+          "title": "Choreography & Composition",
+          "shortTitle": "Choreography & Composition",
+          "bookId": "ku-performing-arts",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-dance-choreography",
+              "number": 4.1,
+              "title": "Choreography: Composing Movement in Space and Time"
             }
           ]
         },
@@ -32104,23 +32104,8 @@
           ]
         },
         {
-          "id": "ku-water-environmental-engineering-environmental-engineering",
-          "number": 2,
-          "title": "Environmental Engineering",
-          "shortTitle": "Environmental Engineering",
-          "bookId": "ku-water-environmental-engineering",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-civ-water-wastewater-municipal",
-              "number": 2.1,
-              "title": "Environmental Engineering: Water Supply, Wastewater and Municipal Solid Wastes"
-            }
-          ]
-        },
-        {
           "id": "ku-water-environmental-engineering-water-and-wastewater-treatment",
-          "number": 3,
+          "number": 2,
           "title": "Water & Wastewater Treatment",
           "shortTitle": "Water & Wastewater Treatment",
           "bookId": "ku-water-environmental-engineering",
@@ -32128,13 +32113,28 @@
           "sections": [
             {
               "id": "ku-tech-water-treatment-desalination",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Water Treatment: From River to Tap"
             },
             {
               "id": "ku-tech-wastewater-engineering",
-              "number": 3.2,
+              "number": 2.2,
               "title": "Wastewater Engineering: What Happens After the Drain"
+            }
+          ]
+        },
+        {
+          "id": "ku-water-environmental-engineering-environmental-engineering",
+          "number": 3,
+          "title": "Environmental Engineering",
+          "shortTitle": "Environmental Engineering",
+          "bookId": "ku-water-environmental-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-civ-water-wastewater-municipal",
+              "number": 3.1,
+              "title": "Environmental Engineering: Water Supply, Wastewater and Municipal Solid Wastes"
             }
           ]
         }
@@ -32429,23 +32429,8 @@
       "sectionCount": 2,
       "chapters": [
         {
-          "id": "ku-computational-science-earth-system-modeling",
-          "number": 1,
-          "title": "Earth System Modeling",
-          "shortTitle": "Earth System Modeling",
-          "bookId": "ku-computational-science",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-emer-climate-models",
-              "number": 1.1,
-              "title": "How Climate Models Predict the Future"
-            }
-          ]
-        },
-        {
           "id": "ku-computational-science-simulating-reality",
-          "number": 2,
+          "number": 1,
           "title": "Simulating Reality",
           "shortTitle": "Simulating Reality",
           "bookId": "ku-computational-science",
@@ -32453,8 +32438,23 @@
           "sections": [
             {
               "id": "ku-em-digital-twins-mirror-worlds",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Digital Twins: Building the Mirror World"
+            }
+          ]
+        },
+        {
+          "id": "ku-computational-science-earth-system-modeling",
+          "number": 2,
+          "title": "Earth System Modeling",
+          "shortTitle": "Earth System Modeling",
+          "bookId": "ku-computational-science",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-emer-climate-models",
+              "number": 2.1,
+              "title": "How Climate Models Predict the Future"
             }
           ]
         }
@@ -32514,28 +32514,8 @@
       "sectionCount": 6,
       "chapters": [
         {
-          "id": "ku-home-repair-machines-machines-of-daily-life",
-          "number": 1,
-          "title": "Machines of Daily Life",
-          "shortTitle": "Machines of Daily Life",
-          "bookId": "ku-home-repair-machines",
-          "sectionCount": 2,
-          "sections": [
-            {
-              "id": "ku-tech-elevators-escalators",
-              "number": 1.1,
-              "title": "Elevators and Escalators: The Vertical City"
-            },
-            {
-              "id": "ku-tech-clocks-timekeeping",
-              "number": 1.2,
-              "title": "Timekeeping: How Humans Measure Time"
-            }
-          ]
-        },
-        {
           "id": "ku-home-repair-machines-around-the-house",
-          "number": 2,
+          "number": 1,
           "title": "Around the House",
           "shortTitle": "Around the House",
           "bookId": "ku-home-repair-machines",
@@ -32543,23 +32523,43 @@
           "sections": [
             {
               "id": "ku-every-home-toolkit-basic-repairs",
-              "number": 2.1,
+              "number": 1.1,
               "title": "The Home Toolkit: Screws, Anchors and Your First Real Repairs"
             },
             {
               "id": "ku-every-home-plumbing-basics",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Home Plumbing: Faucets, Toilets and Drains"
             },
             {
               "id": "ku-every-home-electrical-safety",
-              "number": 2.3,
+              "number": 1.3,
               "title": "Home Electrical Safety: Breakers, Outlets and Cords"
             },
             {
               "id": "ku-every-painting-walls",
-              "number": 2.4,
+              "number": 1.4,
               "title": "Painting Walls Like a Professional"
+            }
+          ]
+        },
+        {
+          "id": "ku-home-repair-machines-machines-of-daily-life",
+          "number": 2,
+          "title": "Machines of Daily Life",
+          "shortTitle": "Machines of Daily Life",
+          "bookId": "ku-home-repair-machines",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-tech-elevators-escalators",
+              "number": 2.1,
+              "title": "Elevators and Escalators: The Vertical City"
+            },
+            {
+              "id": "ku-tech-clocks-timekeeping",
+              "number": 2.2,
+              "title": "Timekeeping: How Humans Measure Time"
             }
           ]
         }
@@ -32574,23 +32574,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-cars-navigation-outdoors-navigation-and-the-outdoors",
-          "number": 1,
-          "title": "Navigation & the Outdoors",
-          "shortTitle": "Navigation & the Outdoors",
-          "bookId": "ku-cars-navigation-outdoors",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-every-navigation-maps",
-              "number": 1.1,
-              "title": "How to Actually Read a Map and Find North"
-            }
-          ]
-        },
-        {
           "id": "ku-cars-navigation-outdoors-wheels-and-ownership",
-          "number": 2,
+          "number": 1,
           "title": "Wheels & Ownership",
           "shortTitle": "Wheels & Ownership",
           "bookId": "ku-cars-navigation-outdoors",
@@ -32598,13 +32583,28 @@
           "sections": [
             {
               "id": "ku-every-car-maintenance-basics",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Car Maintenance Basics: Oil, Tires, Brakes and Warning Lights"
             },
             {
               "id": "ku-every-buying-used-car",
-              "number": 2.2,
+              "number": 1.2,
               "title": "How to Buy a Used Car Without Getting Burned"
+            }
+          ]
+        },
+        {
+          "id": "ku-cars-navigation-outdoors-navigation-and-the-outdoors",
+          "number": 2,
+          "title": "Navigation & the Outdoors",
+          "shortTitle": "Navigation & the Outdoors",
+          "bookId": "ku-cars-navigation-outdoors",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-every-navigation-maps",
+              "number": 2.1,
+              "title": "How to Actually Read a Map and Find North"
             }
           ]
         }
@@ -32619,23 +32619,8 @@
       "sectionCount": 3,
       "chapters": [
         {
-          "id": "ku-garden-growing-propagation-making-more-plants",
-          "number": 1,
-          "title": "Propagation: Making More Plants",
-          "shortTitle": "Propagation: Making More Plants",
-          "bookId": "ku-garden-growing",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-grow-plant-propagation",
-              "number": 1.1,
-              "title": "Plant Propagation: Seeds, Cuttings, Grafts and Clones"
-            }
-          ]
-        },
-        {
           "id": "ku-garden-growing-growing-things",
-          "number": 2,
+          "number": 1,
           "title": "Growing Things",
           "shortTitle": "Growing Things",
           "bookId": "ku-garden-growing",
@@ -32643,13 +32628,28 @@
           "sections": [
             {
               "id": "ku-every-growing-food-at-home",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Growing Food at Home: From Balcony to Garden Bed"
             },
             {
               "id": "ku-every-composting",
-              "number": 2.2,
+              "number": 1.2,
               "title": "Composting: Turning Kitchen Scraps into Soil"
+            }
+          ]
+        },
+        {
+          "id": "ku-garden-growing-propagation-making-more-plants",
+          "number": 2,
+          "title": "Propagation: Making More Plants",
+          "shortTitle": "Propagation: Making More Plants",
+          "bookId": "ku-garden-growing",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-grow-plant-propagation",
+              "number": 2.1,
+              "title": "Plant Propagation: Seeds, Cuttings, Grafts and Clones"
             }
           ]
         }

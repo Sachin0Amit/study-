@@ -1140,13 +1140,13 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'calculator',
     accent: '#16a34a',
     tagline: 'Money across time',
-    blurb: 'Valuation, markets, corporate finance, risk, the Indian financial system and personal finance.',
+    blurb: 'Money and banking first, then markets, valuation, corporate finance and personal finance.',
     ownFields: ['Banking & Finance', 'Finance & Investment', 'Personal Finance'],
     chapters: [
-      { name: 'Valuation Basics', branches: ['Valuation Basics'] },
-      { name: 'Markets & Instruments', branches: ['Markets & Instruments'] },
-      { name: 'Corporate Finance', branches: ['Corporate Finance'] },
       { name: 'Money, Banking, Risk & Insurance', branches: ['Money & Markets', 'Risk & Insurance'], fields: ['Banking & Finance'] },
+      { name: 'Markets & Instruments', branches: ['Markets & Instruments'] },
+      { name: 'Valuation Basics', branches: ['Valuation Basics'] },
+      { name: 'Corporate Finance', branches: ['Corporate Finance'] },
       { name: 'Personal Finance', fields: ['Personal Finance'] },
     ],
   },
@@ -1380,9 +1380,15 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'languages',
     accent: '#3b82f6',
     tagline: 'Say it like the French',
-    blurb: 'French foundations and the verb system.',
+    blurb: 'Foundations, the verb system, and reading the francophone world.',
     ownFields: ['French'],
-    chapters: [],
+    /* X49 sequencing: declared pedagogical order — Foundations →
+       Verbs → Reading & Culture (USER RULE 5). */
+    chapters: [
+      { name: 'French Foundations', branches: ['French Foundations'] },
+      { name: 'French Verbs', branches: ['French Verbs'] },
+      { name: 'French Reading & Culture', branches: ['French Reading & Culture'] },
+    ],
   },
   {
     key: 'german',
@@ -1402,9 +1408,15 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'languages',
     accent: '#ea580c',
     tagline: 'Devanagari, decoded',
-    blurb: 'Hindi foundations.',
+    blurb: 'Foundations, the grammar workshop and the literature from Kabir to the Nayi Kahani.',
     ownFields: ['Hindi'],
-    chapters: [],
+    /* X49 sequencing: declared pedagogical order — Foundations →
+       Grammar → Literature (USER RULE 5). */
+    chapters: [
+      { name: 'Hindi Foundations', branches: ['Hindi Foundations'] },
+      { name: 'Hindi Grammar', branches: ['Hindi Grammar'] },
+      { name: 'Hindi Literature', branches: ['Hindi Literature'] },
+    ],
   },
   {
     key: 'arabic',
@@ -1415,7 +1427,13 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     tagline: 'The calligraphic tradition',
     blurb: 'Foundations, the grammar workshop and the literary canon — from the Mu‘allaqāt to the Nobel novel.',
     ownFields: ['Arabic'],
-    chapters: [],
+    /* X49 sequencing: declared pedagogical order — Foundations →
+       Grammar → Literature (USER RULE 5). */
+    chapters: [
+      { name: 'Arabic Foundations', branches: ['Arabic Foundations'] },
+      { name: 'Arabic Grammar', branches: ['Arabic Grammar'] },
+      { name: 'Arabic Literature & Culture', branches: ['Arabic Literature & Culture'] },
+    ],
   },
   {
     key: 'korean',
@@ -1426,7 +1444,13 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     tagline: 'Hangul, the smart script',
     blurb: 'Foundations, the particle-and-ending workshop and the canon from sijo to the Nobel.',
     ownFields: ['Korean'],
-    chapters: [],
+    /* X49 sequencing: declared pedagogical order — Foundations →
+       Grammar → Literature (USER RULE 5). */
+    chapters: [
+      { name: 'Korean Foundations', branches: ['Korean Foundations'] },
+      { name: 'Korean Grammar', branches: ['Korean Grammar'] },
+      { name: 'Korean Literature & Culture', branches: ['Korean Literature & Culture'] },
+    ],
   },
   {
     key: 'russian',
@@ -1437,7 +1461,13 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     tagline: 'Cases and Cyrillic',
     blurb: 'Foundations, the declension workshop and the Golden Age canon to the Nobel lineage.',
     ownFields: ['Russian'],
-    chapters: [],
+    /* X49 sequencing: declared pedagogical order — Foundations →
+       Grammar → Literature (USER RULE 5). */
+    chapters: [
+      { name: 'Russian Foundations', branches: ['Russian Foundations'] },
+      { name: 'Russian Grammar', branches: ['Russian Grammar'] },
+      { name: 'Russian Literature', branches: ['Russian Literature'] },
+    ],
   },
   {
     key: 'mandarin',
@@ -1448,7 +1478,12 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     tagline: 'Tones, strokes and characters',
     blurb: 'Mandarin foundations and the classical canon.',
     ownFields: ['Mandarin Chinese'],
-    chapters: [],
+    /* X49 sequencing: declared pedagogical order — the modern language
+       before the classical canon (USER RULE 5). */
+    chapters: [
+      { name: 'Mandarin Foundations', branches: ['Mandarin Foundations'] },
+      { name: 'Classical Canon & Recitation', branches: ['Classical Canon & Recitation'] },
+    ],
   },
   {
     key: 'art-history',
@@ -1493,8 +1528,8 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     ownFields: ['Music Theory & Practice', 'Music Production', 'Music History & Appreciation'],
     chapters: [
       { name: 'Theory & Musicianship', fields: ['Music Theory & Practice'] },
-      { name: 'Music Production', fields: ['Music Production'] },
       { name: 'History & Appreciation', fields: ['Music History & Appreciation'] },
+      { name: 'Music Production', fields: ['Music Production'] },
     ],
   },
   {
@@ -1507,11 +1542,11 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     blurb: 'Cinematography, editing, screenwriting, film history and sound — how movies are built, shot and cut.',
     ownFields: ['Film & Cinema'],
     chapters: [
+      { name: 'Screenwriting & Story', branches: ['Screenwriting & Story'] },
       { name: 'Cinematography & Light', branches: ['Cinematography'] },
       { name: 'Editing & Montage', branches: ['Editing Theory'] },
-      { name: 'Screenwriting & Story', branches: ['Screenwriting & Story'] },
-      { name: 'Film History & Movements', branches: ['Film History & Movements'] },
       { name: 'Sound & Score', branches: ['Sound & Score'] },
+      { name: 'Film History & Movements', branches: ['Film History & Movements'] },
     ],
   },
   {
@@ -1559,9 +1594,9 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     chapters: [
       { name: 'Acting & Performance', branches: ['Acting & Performance'] },
       { name: 'Stagecraft & Production', branches: ['Stagecraft & Production', 'Stage & Performance'] },
-      { name: 'Opera & Musical Theater', branches: ['Words & Music'] },
       { name: 'Dance Forms & History', branches: ['Dance Forms & History', 'Movement Traditions'] },
       { name: 'Choreography & Composition', branches: ['Choreography & Composition'] },
+      { name: 'Opera & Musical Theater', branches: ['Words & Music'] },
     ],
   },
   {

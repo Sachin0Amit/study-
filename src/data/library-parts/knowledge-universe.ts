@@ -668,7 +668,19 @@ const UNIFIED_CHAPTERS: UnifiedChapter[] = (() => {
     const merged = bucket.tax.mergeInto
     const bookId = merged ? merged.bookId : `ku-${bucket.tax.key}`
     let n = merged ? CURATED_BOOK_CHAPTER_TOPS[bookId] ?? 0 : 0
-    for (const [name, topics] of bucket.chapters) {
+    /* USER RULE 5 — sequence-wise chapters: the taxonomy's declared
+       chapter order IS the pedagogical sequence (foundations before
+       mechanics before applications/culture). Declared chapters render
+       first in declared order; any chapter the declaration missed keeps
+       its first-occurrence order after them. Chapter ids are derived
+       from the chapter NAME, so reordering never breaks lesson links —
+       only the chapter/section numbers re-sequence. */
+    const declared = bucket.tax.chapters
+      .map((c) => c.name)
+      .filter((name) => bucket.chapters.has(name))
+    const rest = [...bucket.chapters.keys()].filter((name) => !declared.includes(name))
+    for (const name of [...declared, ...rest]) {
+      const topics = bucket.chapters.get(name)!
       n += 1
       out.push({
         tax: bucket.tax,
