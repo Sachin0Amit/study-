@@ -16,8 +16,8 @@
 
 - **Subjects:** 92
 - **Books (master volumes):** 92
-- **Chapters:** 772
-- **Sections (lessons):** 4548
+- **Chapters:** 774
+- **Sections (lessons):** 4554
 
 ## Foundations — 7 subjects
 
@@ -104,7 +104,7 @@
 
 ### Physics (`physics`)
 
-*The unified physics curriculum* — 49 chapters · 919 sections
+*The unified physics curriculum* — 50 chapters · 920 sections
 
 - **Ch 1. Units, Measurement & Vectors** `young-ch1` — 39 sections: The Nature of Physics; Solving Physics Problems; Standards and Units; Using and Converting Units; Uncertainty and Significant Figures; Estimates and Orders of Magnitude; Vectors and Vector Addition; Components of Vectors; Unit Vectors; Products of Vectors; Measuring Things, Including Lengths; Time; Mass; Why Study Physics?; Physics and Its Role in Technology; Physics and Its Connection to Other Fields and Sciences; Theories, Laws, and Problem Solving; Standards of Measure; Introduction to the Metric System; Scientific Notation; Length; Area and Volume; Other Units; Measurement: Significant Digits and Accuracy; Measurement: Precision; Calculations with Measurements; Formulas; Substituting Data into Formulas; Problem-Solving Method; Vectors and Scalars; Motion, Matter and Applications; Mathematics and Study Objectives; Measurement, Units and Significant Figures; Units, the SI System and Measurement; Least Count, Significant Figures and Errors; Dimensions and Dimensional Analysis; Units & Dimensions; Measurement Methods & Error Analysis; Vectors
 - **Ch 2. Introduction — Atoms in Motion** `phys-ch1` — 4 sections: Atoms in Motion; Basic Physics Before and After 1920; The Relation of Physics to Other Sciences; Time and Distance
@@ -153,12 +153,13 @@
 - **Ch 45. Simple Machines** `ewen-ch10` — 9 sections: Machines and Energy Transfer; The Lever; The Wheel-and-Axle; The Pulley; The Inclined Plane; The Screw; The Wedge; Compound Machines; The Effect of Friction on Simple Machines
 - **Ch 46. The Eye and Optical Instruments*** `coletta-ch25` — 5 sections: The Human Eye; The Magniﬁer; The Microscope; The Telescope; Factors Limiting Visual Acuity
 - **Ch 47. Experimental Skills** `phys-m20` — 7 sections: Measurement Instruments; Mechanics Experiments; Heat and Sound Experiments; Electricity Experiments; Optics Experiments; Semiconductor Device Experiments; The Official Experiments
-- **Ch 48. Nonlinear Science & Complexity** `ku-x-phys-master-nonlinear-science-and-complexity` — 3 sections: Chaos: When Simple Rules Make Wild Behavior; Fractals: The Geometry of Nature; Systems Thinking: Feedback Loops Everywhere
-- **Ch 49. Physics of Everyday Phenomena** `ku-x-phys-master-physics-of-everyday-phenomena` — 1 sections: Room Acoustics: Why Spaces Sound the Way They Do
+- **Ch 48. Physics — Extension Topics** `ku-x-phys-master-physics-extension-topics` — 1 sections: Electronics: Signals, Amplifiers and Sensing Circuits
+- **Ch 49. Nonlinear Science & Complexity** `ku-x-phys-master-nonlinear-science-and-complexity` — 3 sections: Chaos: When Simple Rules Make Wild Behavior; Fractals: The Geometry of Nature; Systems Thinking: Feedback Loops Everywhere
+- **Ch 50. Physics of Everyday Phenomena** `ku-x-phys-master-physics-of-everyday-phenomena` — 1 sections: Room Acoustics: Why Spaces Sound the Way They Do
 
 ### Chemistry (`chemistry`)
 
-*Molecules, mechanisms and applications* — 46 chapters · 357 sections
+*Molecules, mechanisms and applications* — 46 chapters · 358 sections
 
 - **Ch 1. Mole Concept & Stoichiometry** `chem-ch1` — 11 sections: Moles, Formulae & Equations; Limiting Reagent & Yield; Concentration Terms; Titrations & Redox Arithmetic; Matter, Atoms and Chemical Combination; Atomic, Molecular and Molar Masses; Formulae, Equations and Stoichiometry; Atoms, Molecules & Dalton’s Atomic Theory; Mole Concept & Chemical Formulae; Balanced Chemical Equations; Stoichiometric Calculations
 - **Ch 2. Atomic Structure & Quantum Numbers** `chem-ch2` — 12 sections: Bohr Model & Hydrogen Spectrum; Photoelectric Effect & de Broglie Waves; Quantum Numbers & Orbitals; Electronic Configuration & Stability; Radiation, Photoelectric Effect and Hydrogen Spectrum; Dual Nature and Uncertainty; The Quantum Mechanical Model of the Atom; Wave–Particle Duality & de Broglie Hypothesis; Uncertainty Principle; Quantum Mechanical Picture of the Hydrogen Atom; Shapes of Orbitals; Aufbau, Pauli & Hund Rules
@@ -205,7 +206,7 @@
 - **Ch 43. Bioinorganic Chemistry & Nucleic Acids** `chem-ch43` — 4 sections: Ion Transport & Metalloproteins; Metalloenzymes & Electron Transfer; Nitrogen Fixation; Nucleic Acids: DNA & RNA
 - **Ch 44. Everyday & Industrial Chemistry** `chem-ch44` — 5 sections: Soaps & Detergents; Drugs: Antacids to Antibiotics; Food Additives & Preservatives; Fertilizers, Cement, Fuels & Industrial Processes; Chemistry in Everyday Life
 - **Ch 45. Engineering Chemistry** `chem-engg` — 5 sections: Water Treatment & Corrosion; Polymers, Fuels & Lubricants; Nanomaterials & Green Chemistry; Water & Corrosion Control; Materials Chemistry
-- **Ch 46. Applied & Analytical Chemistry** `ku-x-chem-complete-applied-and-analytical-chemistry` — 3 sections: Chemicals in Medicine and Food: Drugs and Additives by Class; Isotopes and Nuclear Notation: Reading an Atom’s ID Card; Reactions of Ions in Aqueous Solution: Qualitative Tests and Volumetric Analysis
+- **Ch 46. Applied & Analytical Chemistry** `ku-x-chem-complete-applied-and-analytical-chemistry` — 4 sections: Using Brønsted–Lowry Theory: Strength, Concentration and Titration Curves; Chemicals in Medicine and Food: Drugs and Additives by Class; Isotopes and Nuclear Notation: Reading an Atom’s ID Card; Reactions of Ions in Aqueous Solution: Qualitative Tests and Volumetric Analysis
 
 ### English & Comprehension (`english`)
 
@@ -305,7 +306,7 @@
 
 ### Java Programming (`programming-java`)
 
-*Objects, streams and enterprise craft* — 16 chapters · 70 sections
+*Objects, streams and enterprise craft* — 16 chapters · 71 sections
 
 - **Ch 1. Java Platform & Development Environment** `java-ch1` — 4 sections: JVM, JDK & Bytecode Portability; First Programs & JShell; Command-Line Tools & Build Basics; IDEs, History & Misconceptions
 - **Ch 2. Fundamental Programming Structures** `java-ch2` — 4 sections: Primitive Types & Variables; Strings & Console I/O; Operators, Casts & Control Flow; Big Numbers & Arrays
@@ -322,7 +323,7 @@
 - **Ch 13. JVM Internals & Performance** `java-jvm` — 6 sections: Class Loading & Linking; Runtime Data Areas & the Memory Model; Garbage Collection Algorithms; JIT Compilation & Adaptive Optimization; Profiling & Tuning Methodology; Diagnosing Leaks & Latency
 - **Ch 14. Modern Java: Records, Sealed Types & Pattern Matching** `java-modern` — 6 sections: Evolution from 8 to 21; Records & Compact Constructors; Sealed Hierarchies & Exhaustive Switch; Pattern Matching; Text Blocks & Convenience Features; Virtual Threads & Structured Concurrency
 - **Ch 15. Enterprise Java & Spring** `java-enterprise` — 7 sections: Dependency Injection & the Spring Container; Spring Boot Auto-Configuration & Starters; Data Access with JPA; Building REST APIs & Validation; Spring Security Essentials; Testing Enterprise Layers; Microservices with Spring Cloud Basics
-- **Ch 16. Java in Practice** `ku-x-java-complete-java-in-practice` — 3 sections: Java Objects and Classes: Constructors, Methods and Inheritance; Traversing Java Arrays, 2D Arrays and ArrayLists; Equivalent Boolean Expressions in Java
+- **Ch 16. Java in Practice** `ku-x-java-complete-java-in-practice` — 4 sections: Overriding Methods: Dynamic Dispatch and the Object Class; Java Objects and Classes: Constructors, Methods and Inheritance; Traversing Java Arrays, 2D Arrays and ArrayLists; Equivalent Boolean Expressions in Java
 
 ### Web Development & JavaScript (`web-development`)
 
@@ -895,12 +896,12 @@
 
 ### History (`ku-history`)
 
-*How the world came to be* — 6 chapters · 20 sections
+*How the world came to be* — 6 chapters · 21 sections
 
-- **Ch 1. The Modern Age** `ku-history-the-modern-age` — 8 sections: The Twentieth Century: Revolution, Cold War Order and Globalisation; Aggression and National Salvation: China, 1840–1949; The People’s Republic since 1949: Leap, Turmoil and Reform; The World Wars: Causes, Courses and Consequences; Decolonization and the Making of the Global South; The American Revolution and the Founding of the Republic; The Civil War and Reconstruction; The Civil Rights Movement
-- **Ch 2. East Asian History** `ku-history-east-asian-history` — 1 sections: Japan’s Economic History: From Edo Commerce to the International Economy
-- **Ch 3. Indian History** `ku-history-indian-history` — 6 sections: Thinkers, Beliefs and Buildings: The Buddha, the Sangha and the Stupa; Through the Eyes of Travellers: Foreign Accounts and the Imperial Capital Vijayanagara; Peasants, Zamindars and the Colonial City: The Indian Countryside from the Mughals to the British; Ancient India: From the Vedic Age to the Guptas; Medieval India: Delhi Sultanate to the Mughals; Modern India and the Freedom Struggle: 1757 to 1947
-- **Ch 4. Themes in World History** `ku-history-themes-in-world-history` — 1 sections: Nomadic Empires, Displaced Peoples and Paths to Modernisation
+- **Ch 1. Themes in World History** `ku-history-themes-in-world-history` — 2 sections: Changing Cultural Traditions: The Renaissance and Humanism; Nomadic Empires, Displaced Peoples and Paths to Modernisation
+- **Ch 2. The Modern Age** `ku-history-the-modern-age` — 8 sections: The Twentieth Century: Revolution, Cold War Order and Globalisation; Aggression and National Salvation: China, 1840–1949; The People’s Republic since 1949: Leap, Turmoil and Reform; The World Wars: Causes, Courses and Consequences; Decolonization and the Making of the Global South; The American Revolution and the Founding of the Republic; The Civil War and Reconstruction; The Civil Rights Movement
+- **Ch 3. East Asian History** `ku-history-east-asian-history` — 1 sections: Japan’s Economic History: From Edo Commerce to the International Economy
+- **Ch 4. Indian History** `ku-history-indian-history` — 6 sections: Thinkers, Beliefs and Buildings: The Buddha, the Sangha and the Stupa; Through the Eyes of Travellers: Foreign Accounts and the Imperial Capital Vijayanagara; Peasants, Zamindars and the Colonial City: The Indian Countryside from the Mughals to the British; Ancient India: From the Vedic Age to the Guptas; Medieval India: Delhi Sultanate to the Mughals; Modern India and the Freedom Struggle: 1757 to 1947
 - **Ch 5. Economic History** `ku-history-economic-history` — 2 sections: The Silk Road: Exchange Before Globalization; The Industrial Revolution and Its Discontents
 - **Ch 6. The Ancient World** `ku-history-the-ancient-world` — 2 sections: The First Civilizations: Mesopotamia, Egypt and the Indus; Greece and Rome: The Classical Inheritance
 
@@ -1010,14 +1011,15 @@
 
 ### Accounting & Auditing (`ku-accounting-auditing`)
 
-*The language of business* — 6 chapters · 11 sections
+*The language of business* — 7 chapters · 12 sections
 
-- **Ch 1. Auditing & Assurance** `ku-accounting-auditing-auditing-and-assurance` — 1 sections: Auditing: The Independent Examination Behind Credible Accounts
-- **Ch 2. Fixed Assets & Special Transactions** `ku-accounting-auditing-fixed-assets-and-special-transactions` — 2 sections: Depreciation, Provisions and Reserves; Bills of Exchange, Consignment and Special Transactions
-- **Ch 3. The Ledger & Cash Control** `ku-accounting-auditing-the-ledger-and-cash-control` — 2 sections: Bank Reconciliation: Explaining Every Difference; Double-Entry Bookkeeping: The Logic Behind Every Ledger
-- **Ch 4. Partnership & Company Accounts** `ku-accounting-auditing-partnership-and-company-accounts` — 4 sections: Partnership Accounts I: Formation, Profit Sharing and Capital; Partnership Accounts II: Admission, Retirement and Dissolution; Company Accounts I: Issue and Forfeiture of Shares; Company Accounts II: Debentures and Borrowings
-- **Ch 5. Reading Financial Statements** `ku-accounting-auditing-reading-financial-statements` — 1 sections: Reading Financial Statements: Balance Sheet, Income and Cash Flow
-- **Ch 6. The Accounting Cycle** `ku-accounting-auditing-the-accounting-cycle` — 1 sections: The Accounting Cycle: Accruals, Adjustments and Closing the Books
+- **Ch 1. Computerized Accounting** `ku-accounting-auditing-computerized-accounting` — 1 sections: Computerized Accounting: From Voucher to Report
+- **Ch 2. Auditing & Assurance** `ku-accounting-auditing-auditing-and-assurance` — 1 sections: Auditing: The Independent Examination Behind Credible Accounts
+- **Ch 3. Fixed Assets & Special Transactions** `ku-accounting-auditing-fixed-assets-and-special-transactions` — 2 sections: Depreciation, Provisions and Reserves; Bills of Exchange, Consignment and Special Transactions
+- **Ch 4. The Ledger & Cash Control** `ku-accounting-auditing-the-ledger-and-cash-control` — 2 sections: Bank Reconciliation: Explaining Every Difference; Double-Entry Bookkeeping: The Logic Behind Every Ledger
+- **Ch 5. Partnership & Company Accounts** `ku-accounting-auditing-partnership-and-company-accounts` — 4 sections: Partnership Accounts I: Formation, Profit Sharing and Capital; Partnership Accounts II: Admission, Retirement and Dissolution; Company Accounts I: Issue and Forfeiture of Shares; Company Accounts II: Debentures and Borrowings
+- **Ch 6. Reading Financial Statements** `ku-accounting-auditing-reading-financial-statements` — 1 sections: Reading Financial Statements: Balance Sheet, Income and Cash Flow
+- **Ch 7. The Accounting Cycle** `ku-accounting-auditing-the-accounting-cycle` — 1 sections: The Accounting Cycle: Accruals, Adjustments and Closing the Books
 
 ### Finance & Banking (`ku-finance-banking`)
 
@@ -1043,12 +1045,12 @@
 
 ### Law (`ku-law`)
 
-*Rules, states and constitutions* — 8 chapters · 23 sections
+*Rules, states and constitutions* — 8 chapters · 24 sections
 
-- **Ch 1. Legal Method & Reasoning** `ku-law-legal-method-and-reasoning` — 2 sections: Reading a Judgment: Precedent, Ratio and the Legal-News Habit; Legal Reasoning: Applying Principles to Facts
-- **Ch 2. Legal History & Systems** `ku-law-legal-history-and-systems` — 1 sections: Legal History Milestones: Codes, Charters and the Making of Modern Law
-- **Ch 3. Private, Contract & Business Law** `ku-law-private-contract-and-business-law` — 10 sections: The Sale of Goods Act: Conditions, Warranties and the Unpaid Seller; When Consent Fails: Void and Voidable Agreements; The Partnership Act: Nature, Relations and Dissolution; The LLP Act: Limited Liability Partnerships; The Companies Act and the Regulators: Incorporation to Capital; Contracts: The Anatomy of a Promise the Law Enforces; Tort Law: When Harm Has a Price; Family Law: Marriage, Divorce and Custody; Corporate Law: Entities, Fiduciary Duties and Boards; The Indian Contract Act: Formation, Breach and Remedies
-- **Ch 4. Constitutional Law** `ku-law-constitutional-law` — 2 sections: Separation of Powers and Checks and Balances; Federalism: Dividing Power Between Centre and States
+- **Ch 1. Constitutional Law** `ku-law-constitutional-law` — 3 sections: Public Interest Litigation: Taking the Public to Court; Separation of Powers and Checks and Balances; Federalism: Dividing Power Between Centre and States
+- **Ch 2. Legal Method & Reasoning** `ku-law-legal-method-and-reasoning` — 2 sections: Reading a Judgment: Precedent, Ratio and the Legal-News Habit; Legal Reasoning: Applying Principles to Facts
+- **Ch 3. Legal History & Systems** `ku-law-legal-history-and-systems` — 1 sections: Legal History Milestones: Codes, Charters and the Making of Modern Law
+- **Ch 4. Private, Contract & Business Law** `ku-law-private-contract-and-business-law` — 10 sections: The Sale of Goods Act: Conditions, Warranties and the Unpaid Seller; When Consent Fails: Void and Voidable Agreements; The Partnership Act: Nature, Relations and Dissolution; The LLP Act: Limited Liability Partnerships; The Companies Act and the Regulators: Incorporation to Capital; Contracts: The Anatomy of a Promise the Law Enforces; Tort Law: When Harm Has a Price; Family Law: Marriage, Divorce and Custody; Corporate Law: Entities, Fiduciary Duties and Boards; The Indian Contract Act: Formation, Breach and Remedies
 - **Ch 5. International Law** `ku-law-international-law` — 2 sections: How International Treaties Actually Work; Human Rights After 1948
 - **Ch 6. Criminal Justice** `ku-law-criminal-justice` — 3 sections: Evidence and the Burden of Proof; Court Procedure: From Pleadings to Appeal; Criminology: Why People Commit Crime
 - **Ch 7. IP & Media Law** `ku-law-ip-and-media-law` — 1 sections: Copyright, Patents and Trademarks: Who Owns an Idea

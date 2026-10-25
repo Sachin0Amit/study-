@@ -625,4 +625,21 @@ export const TOPIC_ALIASES: Record<string, string> = {
   'modern liberalism and ideologies that rejected it': 'pol-liberalism-classical-modern',
   'citizenship rights roles and responsibilities': 'pol-citizenship-collective-rights',
   'political and economic systems through a liberal lens': 'pol-regimes-spectrum',
+
+  /* ---- Exam-gap pass X45 (verified 2026-10-25) --------------------
+   * Six audited-unmapped syllabus points → lessons authored this pass
+   * (src/data/knowledge/fields/x45-exam-gap-pass.ts). Each target
+   * lesson genuinely teaches the full syllabus point (both accountancy
+   * units map to the one computerized-accounting lesson, which covers
+   * components, vouchers, account creation and report generation).
+   * 'Electronics' is deliberately NOT aliased: the A-Level physics
+   * lesson's title contains the exact topic name, so the normTitle
+   * rule scores it 0.9 — and a one-word generic alias key would risk
+   * capturing other exams' topics. */
+  'computerized accounting system': 'acct-computerized-accounting-systems',
+  'using computerized accounting': 'acct-computerized-accounting-systems',
+  'changing cultural traditions': 'hist-renaissance-cultural-change',
+  'public interest litigation basics': 'law-pil-public-interest-litigation',
+  'overriding methods': 'cs-method-overriding-dynamic-dispatch',
+  'using bronsted lowry theory': 'chem-bronsted-lowry-in-use',
 }

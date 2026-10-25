@@ -4,12 +4,18 @@ import { x18ExamPassTopics } from './x18-exam-pass'
 import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 import { x27ApCalcChinaPassTopics } from './x27-ap-calc-china-pass'
 import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
+import { x45ExamGapPassTopics } from './x45-exam-gap-pass'
 
 export const humanities: KnowledgeDomainFile = {
   domain: 'Humanities',
   blurb:
     'History, philosophy and the recorded human past — how people made meaning before and beyond the modern world.',
   topics: [
+    // X45 pass (2026-10-25, EXAM-PASS-20261025-1): the Renaissance as a
+    // world-history theme — Italian city-states, humanism, patronage, the
+    // press, the historiography debate. Carved against arth-renaissance-to-
+    // modern (Art History owns the visual-technique story).
+    ...x45ExamGapPassTopics.filter((t) => t.domain === 'Humanities'),
     // X30 pass (2026-10-24): the twentieth-century survey — revolution,
     // interwar crises, Cold War order, decolonization, 1989-91,
     // multipolarisation and globalisation. Carved against hist-world-wars

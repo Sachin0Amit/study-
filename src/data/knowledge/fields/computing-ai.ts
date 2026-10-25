@@ -2,11 +2,17 @@ import type { KnowledgeDomainFile } from '../types'
 import { x17ExamSyllabusTopics } from './x17-exam-syllabus'
 import { x20FoundationsPassTopics } from './x20-foundations-pass'
 import { x31UgcNetPaper1PassTopics } from './x31-ugc-net-paper1-pass'
+import { x45ExamGapPassTopics } from './x45-exam-gap-pass'
 
 export const computingAI: KnowledgeDomainFile = {
   domain: 'Computing & AI',
   blurb: 'The algorithms, models and mathematics behind modern software — from hash tables to deep learning and cryptography.',
   topics: [
+    // X45 pass (2026-10-25, EXAM-PASS-20261025-1): method overriding —
+    // validity rules, @Override, dynamic dispatch, super calls, equals/
+    // toString contracts. Carved against cs-java-objects-classes-methods
+    // (owns construction, super() constructor calls, inheritance setup).
+    ...x45ExamGapPassTopics.filter((t) => t.domain === 'Computing & AI'),
     // X31 pass (2026-10-24): UGC NET Paper 1 ICT unit — computing/network
     // basics, e-mail and conferencing, and India's higher-education digital
     // initiatives. Carved against cs-computing-thinking-digital-society,

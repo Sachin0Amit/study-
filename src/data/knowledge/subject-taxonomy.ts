@@ -717,6 +717,7 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     ownFields: ['Accounting', 'Auditing & Assurance'],
     chapters: [
       { name: 'The Accounting Cycle', branches: ['Accounting Cycle'] },
+      { name: 'Computerized Accounting', branches: ['Computerized Accounting'] },
       { name: 'The Ledger & Cash Control', branches: ['The Ledger', 'Cash Control'] },
       { name: 'Fixed Assets & Special Transactions', branches: ['Fixed Assets', 'Special Transactions'] },
       { name: 'Partnership & Company Accounts', branches: ['Partnership Accounts', 'Company Accounts'] },

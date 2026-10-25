@@ -9,12 +9,20 @@ import type { KnowledgeDomainFile } from '../types'
 import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
 import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
+import { x45ExamGapPassTopics } from './x45-exam-gap-pass'
 
 export const physicalSciences: KnowledgeDomainFile = {
   domain: 'Physical Sciences',
   blurb:
     'Physics and chemistry from rotating bodies to reacting molecules — the quantitative rules of matter and energy.',
   topics: [
+    // X45 pass (2026-10-25, EXAM-PASS-20261025-1): electronics (signals,
+    // ideal op-amps, sensing circuits, RC networks — carved against the
+    // Electronics & Communication master track, which owns device physics
+    // and real op-amp internals) and applied Brønsted–Lowry work (strength
+    // vs concentration, titration curves, indicator choice — carved against
+    // the master volume's Chemical & Ionic Equilibrium chapter).
+    ...x45ExamGapPassTopics.filter((t) => t.domain === 'Physical Sciences'),
     // X30 pass (2026-10-24): chemicals in medicine and food — drug classes
     // (antacids, antihistamines, analgesics, antibiotics, antiseptics),
     // targets and agonist/antagonist; preservatives, antioxidants,

@@ -7,12 +7,18 @@ import { x23JapanGapPassTopics } from './x23-japan-gap-pass'
 import { x26BankingManagementPassTopics } from './x26-banking-management-pass'
 import { x32UgcNetPaper2PassTopics } from './x32-ugc-net-paper2-pass'
 import { x33UgcNetClosurePassTopics } from './x33-ugc-net-closure-pass'
+import { x45ExamGapPassTopics } from './x45-exam-gap-pass'
 
 export const businessEconomics: KnowledgeDomainFile = {
   domain: 'Business & Economics',
   blurb:
     'Markets, money and organisations — the logic of prices, trade, investment and value creation.',
   topics: [
+    // X45 pass (2026-10-25, EXAM-PASS-20261025-1): computerized accounting
+    // systems — components, chart of accounts, voucher data entry, reports.
+    // Carved against the manual Accounting Cycle lessons (which own the
+    // mechanics being automated).
+    ...x45ExamGapPassTopics.filter((t) => t.domain === 'Business & Economics'),
     // X33 pass (2026-10-24): UGC NET closure — auditing (vouching/verification/
     // valuation, audit report, trend audits) and the modern regulatory
     // framework (statute-and-regulator map). GST/IPR/IT-Act-cyber/RTI
