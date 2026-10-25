@@ -9,6 +9,7 @@ import type { KnowledgeDomainFile } from '../types'
 import { x21SkillsPassTopics } from './x21-skills-pass'
 import { x25TournamentReasoningCivicsPassTopics } from './x25-tournament-reasoning-civics-pass'
 import { x36LearningSciencePassTopics } from './x36-learning-science-pass'
+import { x52CrossverifyPassTopics } from './x52-crossverify-pass'
 
 export const foundationLearning: KnowledgeDomainFile = {
   domain: 'Foundation Learning',
@@ -26,6 +27,13 @@ export const foundationLearning: KnowledgeDomainFile = {
     // primary-literature reading. Layers the existing scheduling/practice
     // lessons did not own.
     ...x36LearningSciencePassTopics,
+    // X52 crossverify pass (2026-10-26): Study Skills & Learning Science
+    // cross-verified against Cottrell, The Study Skills Handbook (5th ed,
+    // 2019) publisher preview — self-efficacy/mindset, student time
+    // management and stress/well-being chapters added; carved against
+    // every-time-management-productivity, psy-stress-coping, the habits
+    // and metacognition lessons (carving documented in the x52 header).
+    ...x52CrossverifyPassTopics,
     // ------------------------------------------------------------------
     {
       id: 'fnd-spaced-repetition',

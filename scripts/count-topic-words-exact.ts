@@ -24,6 +24,7 @@ import { x47BioSplitPassTopics } from '../src/data/knowledge/fields/x47-bio-spli
 import { x48AllSubjectsSplitPassTopics } from '../src/data/knowledge/fields/x48-all-subjects-split-pass'
 import { x49LanguageDeepeningPassTopics } from '../src/data/knowledge/fields/x49-language-deepening-pass'
 import { x51LibraryOrgPassTopics } from '../src/data/knowledge/fields/x51-library-org-pass'
+import { x52CrossverifyPassTopics } from '../src/data/knowledge/fields/x52-crossverify-pass'
 import { mathematics } from '../src/data/knowledge/fields/mathematics'
 import { technologyApplied } from '../src/data/knowledge/fields/technology-applied'
 import { computingAI } from '../src/data/knowledge/fields/computing-ai'
@@ -198,6 +199,9 @@ const IDS = [
   'lang-german-literature',
   'lang-mandarin-grammar',
   'compsci-numerical-methods',
+  'study-self-efficacy-mindset',
+  'study-time-management',
+  'study-stress-wellbeing',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length
@@ -217,7 +221,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, { topics: x25TournamentReasoningCivicsPassTopics } as any, { topics: x26BankingManagementPassTopics } as any, { topics: x27ApCalcChinaPassTopics } as any, { topics: x36LearningSciencePassTopics } as any, { topics: x37AlbertaPassTopics } as any, computingAI, { topics: x45ExamGapPassTopics } as any, { topics: x46ThinBooksPassTopics } as any, { topics: x47BioSplitPassTopics } as any, { topics: x48AllSubjectsSplitPassTopics } as any, { topics: x49LanguageDeepeningPassTopics } as any, { topics: x51LibraryOrgPassTopics } as any]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, { topics: x25TournamentReasoningCivicsPassTopics } as any, { topics: x26BankingManagementPassTopics } as any, { topics: x27ApCalcChinaPassTopics } as any, { topics: x36LearningSciencePassTopics } as any, { topics: x37AlbertaPassTopics } as any, computingAI, { topics: x45ExamGapPassTopics } as any, { topics: x46ThinBooksPassTopics } as any, { topics: x47BioSplitPassTopics } as any, { topics: x48AllSubjectsSplitPassTopics } as any, { topics: x49LanguageDeepeningPassTopics } as any, { topics: x51LibraryOrgPassTopics } as any, { topics: x52CrossverifyPassTopics } as any]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)

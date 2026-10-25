@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T16:37:15.809Z",
+  "generatedAt": "2026-10-25T17:20:54.099Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 138,
     "books": 138,
     "chapters": 858,
-    "sections": 4586
+    "sections": 4589
   },
   "subjects": [
     {
@@ -26576,7 +26576,7 @@
       "group": "Foundations",
       "tagline": "Retain more, study less",
       "chapterCount": 3,
-      "sectionCount": 10,
+      "sectionCount": 13,
       "chapters": [
         {
           "id": "ku-study-skills-the-science-of-learning",
@@ -26584,7 +26584,7 @@
           "title": "The Science of Learning",
           "shortTitle": "The Science of Learning",
           "bookId": "ku-study-skills",
-          "sectionCount": 6,
+          "sectionCount": 7,
           "sections": [
             {
               "id": "ku-fnd-mnemonics-memory-palace",
@@ -26602,18 +26602,23 @@
               "title": "The Protégé Effect: Learning by Teaching"
             },
             {
-              "id": "ku-fnd-spaced-repetition",
+              "id": "ku-study-self-efficacy-mindset",
               "number": 1.4,
+              "title": "Self-Efficacy and Mindset: Taking Charge of Your Learning"
+            },
+            {
+              "id": "ku-fnd-spaced-repetition",
+              "number": 1.5,
               "title": "Spaced Repetition and the Forgetting Curve"
             },
             {
               "id": "ku-fnd-active-recall",
-              "number": 1.5,
+              "number": 1.6,
               "title": "Active Recall: Why Testing Yourself Beats Rereading"
             },
             {
               "id": "ku-fnd-interleaving",
-              "number": 1.6,
+              "number": 1.7,
               "title": "Interleaving: Why Mixed Practice Beats Blocked Practice"
             }
           ]
@@ -26624,7 +26629,7 @@
           "title": "Study Systems",
           "shortTitle": "Study Systems",
           "bookId": "ku-study-skills",
-          "sectionCount": 2,
+          "sectionCount": 4,
           "sections": [
             {
               "id": "ku-fnd-habits-behavior-design",
@@ -26632,8 +26637,18 @@
               "title": "Habits and Behavior Design: Automating the Studying"
             },
             {
-              "id": "ku-study-note-taking-systems",
+              "id": "ku-study-time-management",
               "number": 2.2,
+              "title": "Time Management for Students: Owning the Study Week"
+            },
+            {
+              "id": "ku-study-stress-wellbeing",
+              "number": 2.3,
+              "title": "Stress, Well-being and Sustainable Study"
+            },
+            {
+              "id": "ku-study-note-taking-systems",
+              "number": 2.4,
               "title": "Note-Taking Systems Compared: Cornell, Outlines and Zettelkasten"
             }
           ]
