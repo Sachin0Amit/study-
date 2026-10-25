@@ -494,7 +494,7 @@ export const x27ApCalcChinaPassTopics: KnowledgeTopic[] = [
     title: 'Aggression and National Salvation: China, 1840\u20131949',
     domain: 'Humanities',
     field: 'World History',
-    branch: 'The Modern Age',
+    branch: 'East Asian History',
     tier: 'intermediate',
     concepts: [
       'Century of humiliation and the unequal treaties',
@@ -667,7 +667,7 @@ export const x27ApCalcChinaPassTopics: KnowledgeTopic[] = [
     title: 'The People\u2019s Republic since 1949: Leap, Turmoil and Reform',
     domain: 'Humanities',
     field: 'World History',
-    branch: 'The Modern Age',
+    branch: 'East Asian History',
     tier: 'intermediate',
     concepts: [
       '1 October 1949 proclamation and consolidation',

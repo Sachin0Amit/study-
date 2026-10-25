@@ -647,4 +647,38 @@ export const TOPIC_ALIASES: Record<string, string> = {
   'public interest litigation basics': 'law-pil-public-interest-litigation',
   'overriding methods': 'cs-method-overriding-dynamic-dispatch',
   'using bronsted lowry theory': 'chem-bronsted-lowry-in-use',
+
+  /* ---- All-subjects split X48 (verified 2026-10-25) -----------------
+   * The discipline split renamed eleven subject books (Law → 7, Economics
+   * → 5, History → 5, Political Science → 4, Accounting → 2 …), and the
+   * fuzzy matcher lost 11 previously-subject-token-matched topics. Each
+   * alias below restores an audited-unmapped syllabus point to its true
+   * owner lesson (mapping verified against lesson blocks):
+   * - CUET Political Science: international organisations and UGC NET
+   *   'global politics' → the contemporary-world-order lesson (UN system,
+   *   polarity, institutions); planned development → India-since-
+   *   independence (planning commission, five-year arc); external
+   *   relations → the Indian foreign-policy lesson; judiciary and
+   *   federalism → the Indian constitution lesson.
+   * - CA Foundation: rectification of errors → the accounting-cycle
+   *   lesson (trial balance → suspense → rectify, owned in its closing
+   *   block); joint venture → the special-transactions lesson.
+   * - IB Economics: government intervention → the market-failures
+   *   lesson (externalities/public goods/monopoly remedies); measuring
+   *   economic activity and AD-AS → the national-income AD-AS lesson.
+   * - NDA 'prominent personalities' → the Indian freedom-struggle
+   *   lesson (its personalities are the syllabus's reference set).
+   * - Gaokao 'Ancient China' → the first-civilizations lesson (Yellow
+   *   River/Shang/Zhou are its second case study). */
+  'international organisations': 'pol-contemporary-world-order',
+  'global politics': 'pol-contemporary-world-order',
+  'politics of planned development': 'pol-india-since-independence',
+  'india s external relations': 'pol-indian-foreign-policy-determinants',
+  'judiciary and federalism': 'soc-indian-constitution-polity',
+  'rectification of errors': 'acct-accounting-cycle-accruals',
+  'joint venture': 'acct-special-transactions',
+  'government intervention': 'econ-market-failures',
+  'measuring economic activity and ad as': 'econ-macro-ad-as-indian-economy',
+  'prominent personalities': 'hist-modern-india-freedom-struggle',
+  'ancient china': 'hist-first-civilizations',
 }

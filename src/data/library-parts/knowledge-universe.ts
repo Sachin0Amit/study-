@@ -612,7 +612,7 @@ import { CURATED_BOOK_CHAPTER_TOPS } from './curated-book-tops'
 const TAXONOMY_BY_FIELD = new Map<string, TaxonomySubject>()
 const TAXONOMY_BY_BRANCH = new Map<string, TaxonomySubject>()
 for (const tax of SUBJECT_TAXONOMY) {
-  for (const f of tax.ownFields) if (!TAXONOMY_BY_FIELD.has(f)) TAXONOMY_BY_FIELD.set(f, tax)
+  for (const f of tax.ownFields ?? []) if (!TAXONOMY_BY_FIELD.has(f)) TAXONOMY_BY_FIELD.set(f, tax)
   for (const ch of tax.chapters) {
     if (!ch.branches) continue
     for (const b of ch.branches) if (!TAXONOMY_BY_BRANCH.has(b)) TAXONOMY_BY_BRANCH.set(b, tax)

@@ -37,7 +37,7 @@ export const x17ExamSyllabusTopics: KnowledgeTopic[] = [
     title: 'Thinkers, Beliefs and Buildings: The Buddha, the Sangha and the Stupa',
     domain: 'Humanities',
     field: 'History',
-    branch: 'Indian History',
+    branch: 'Ancient & Medieval India',
     tier: 'intermediate',
     concepts: [
       'Sramana sects and the sixth-century BCE ferment',
@@ -169,7 +169,7 @@ export const x17ExamSyllabusTopics: KnowledgeTopic[] = [
     title: 'Through the Eyes of Travellers: Foreign Accounts and the Imperial Capital Vijayanagara',
     domain: 'Humanities',
     field: 'History',
-    branch: 'Indian History',
+    branch: 'Ancient & Medieval India',
     tier: 'intermediate',
     concepts: [
       'Al-Biruni: the comparative scientist of Kitab-ul-Hind',
@@ -316,7 +316,7 @@ export const x17ExamSyllabusTopics: KnowledgeTopic[] = [
     title: 'Peasants, Zamindars and the Colonial City: The Indian Countryside from the Mughals to the British',
     domain: 'Humanities',
     field: 'History',
-    branch: 'Indian History',
+    branch: 'Colonial & Modern India',
     tier: 'intermediate',
     concepts: [
       'The Mughal village: panchayat, muqaddam, patwari',

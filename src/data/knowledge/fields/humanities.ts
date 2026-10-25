@@ -6,12 +6,20 @@ import { x27ApCalcChinaPassTopics } from './x27-ap-calc-china-pass'
 import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
 import { x45ExamGapPassTopics } from './x45-exam-gap-pass'
 import { x46ThinBooksPassTopics } from './x46-thin-books-pass'
+import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
 
 export const humanities: KnowledgeDomainFile = {
   domain: 'Humanities',
   blurb:
     'History, philosophy and the recorded human past — how people made meaning before and beyond the modern world.',
   topics: [
+    // X48 all-subjects split pass (2026-10-25): the Economic History
+    // volume's divergence chapter — Malthusian baseline, Pomeranz coal-
+    // and-colonies, institutional counters, reversal of fortune, Meiji.
+    // Carved against hum-industrial-revolution (owns the British IR
+    // narrative) and the demographic-transition lesson (owns Malthusian
+    // population dynamics).
+    ...x48AllSubjectsSplitPassTopics.filter((t) => t.domain === 'Humanities'),
     // X46 thin-books pass (2026-10-25): kinship, descent and marriage —
     // the comparative anthropology machinery (unilineal/cognatic descent,
     // residence, marriage payments, terminology systems). Carved against
@@ -2484,7 +2492,7 @@ export const humanities: KnowledgeDomainFile = {
       title: 'The American Revolution and the Founding of the Republic',
       domain: 'Humanities',
       field: 'World History',
-      branch: 'The Modern Age',
+      branch: 'Democracy & Rights',
       tier: 'core',
       concepts: [
         'Empire, debt and the Proclamation Line',
@@ -2601,7 +2609,7 @@ export const humanities: KnowledgeDomainFile = {
       title: 'The Civil War and Reconstruction',
       domain: 'Humanities',
       field: 'World History',
-      branch: 'The Modern Age',
+      branch: 'Democracy & Rights',
       tier: 'core',
       concepts: [
         'A house divided over slavery\'s expansion',
@@ -2730,7 +2738,7 @@ export const humanities: KnowledgeDomainFile = {
       title: 'The Civil Rights Movement',
       domain: 'Humanities',
       field: 'World History',
-      branch: 'The Modern Age',
+      branch: 'Democracy & Rights',
       tier: 'core',
       concepts: [
         'The Double V generation',
@@ -2859,7 +2867,7 @@ export const humanities: KnowledgeDomainFile = {
       title: 'Ancient India: From the Vedic Age to the Guptas',
       domain: 'Humanities',
       field: 'History',
-      branch: 'Indian History',
+      branch: 'Ancient & Medieval India',
       tier: 'core',
       concepts: [
         'Sources: epigraphy, coins, literature',
@@ -2985,7 +2993,7 @@ export const humanities: KnowledgeDomainFile = {
       title: 'Medieval India: Delhi Sultanate to the Mughals',
       domain: 'Humanities',
       field: 'History',
-      branch: 'Indian History',
+      branch: 'Ancient & Medieval India',
       tier: 'core',
       concepts: [
         'Tripartite struggle for Kannauj',
@@ -3113,7 +3121,7 @@ export const humanities: KnowledgeDomainFile = {
       title: 'Modern India and the Freedom Struggle: 1757 to 1947',
       domain: 'Humanities',
       field: 'History',
-      branch: 'Indian History',
+      branch: 'Colonial & Modern India',
       tier: 'core',
       concepts: [
         'Plassey to diwani: trade becomes empire',

@@ -21,6 +21,7 @@ import { x37AlbertaPassTopics } from '../src/data/knowledge/fields/x37-alberta-p
 import { x45ExamGapPassTopics } from '../src/data/knowledge/fields/x45-exam-gap-pass'
 import { x46ThinBooksPassTopics } from '../src/data/knowledge/fields/x46-thin-books-pass'
 import { x47BioSplitPassTopics } from '../src/data/knowledge/fields/x47-bio-split-pass'
+import { x48AllSubjectsSplitPassTopics } from '../src/data/knowledge/fields/x48-all-subjects-split-pass'
 import { mathematics } from '../src/data/knowledge/fields/mathematics'
 import { technologyApplied } from '../src/data/knowledge/fields/technology-applied'
 import { computingAI } from '../src/data/knowledge/fields/computing-ai'
@@ -175,6 +176,11 @@ const IDS = [
   'bio-bioinformatics-databases-structures',
   'bio-synbio-dbtl-practice',
   'bio-synbio-biosafety-ethics',
+  'law-international-order-courts',
+  'hist-great-divergence',
+  'eng-traffic-flow-theory',
+  'grow-plant-propagation',
+  'eng-structural-analysis-methods',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length
@@ -194,7 +200,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, { topics: x25TournamentReasoningCivicsPassTopics } as any, { topics: x26BankingManagementPassTopics } as any, { topics: x27ApCalcChinaPassTopics } as any, { topics: x36LearningSciencePassTopics } as any, { topics: x37AlbertaPassTopics } as any, computingAI, { topics: x45ExamGapPassTopics } as any, { topics: x46ThinBooksPassTopics } as any, { topics: x47BioSplitPassTopics } as any]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, { topics: x25TournamentReasoningCivicsPassTopics } as any, { topics: x26BankingManagementPassTopics } as any, { topics: x27ApCalcChinaPassTopics } as any, { topics: x36LearningSciencePassTopics } as any, { topics: x37AlbertaPassTopics } as any, computingAI, { topics: x45ExamGapPassTopics } as any, { topics: x46ThinBooksPassTopics } as any, { topics: x47BioSplitPassTopics } as any, { topics: x48AllSubjectsSplitPassTopics } as any]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)

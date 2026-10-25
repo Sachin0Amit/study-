@@ -1,9 +1,16 @@
 import type { KnowledgeDomainFile } from '../types'
+import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
 
 export const everydayPractical: KnowledgeDomainFile = {
   domain: 'Everyday Knowledge',
   blurb: 'Kitchen chemistry, paycheck literacy, and the probability behind everyday bets — knowledge that pays for itself.',
   topics: [
+    // X48 all-subjects split pass (2026-10-25): plant propagation for the
+    // Garden & Growing volume — seed dormancy/scarification/stratification,
+    // cuttings, layering, division, grafting, tissue culture. Carved
+    // against every-composting (owns soil/compost) and the Botany subject
+    // (owns plant physiology/hormones).
+    ...x48AllSubjectsSplitPassTopics.filter((t) => t.domain === 'Everyday Knowledge'),
     {
       id: 'every-maillard-reaction-browning',
       title: 'The Maillard Reaction: Why Browned Food Tastes Better',

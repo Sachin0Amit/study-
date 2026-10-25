@@ -3,12 +3,19 @@ import { x15BusinessLawTopics } from './x15-business-law'
 import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
 import { x34FinalOrphanPassTopics } from './x34-final-orphan-pass'
 import { x45ExamGapPassTopics } from './x45-exam-gap-pass'
+import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
 
 export const lawGovernance: KnowledgeDomainFile = {
   domain: 'Law & Governance',
   blurb:
     'The rules societies write for power — constitutions, courts, treaties and the machinery that makes them hold.',
   topics: [
+    // X48 all-subjects split pass (2026-10-25): the International Law
+    // volume's new institutions chapter — ICJ/Article 38, ICC vs ICJ and
+    // complementarity, UNCLOS zones, Geneva Conventions. Carved against
+    // law-vienna-convention-treaties (owns treaty lifecycle/counter-
+    // measures) and the human-rights lesson (owns HR machinery).
+    ...x48AllSubjectsSplitPassTopics.filter((t) => t.domain === 'Law & Governance'),
     // X45 pass (2026-10-25, EXAM-PASS-20261025-1): public interest litigation
     // — standing relaxation, writs, epistolary jurisdiction, the case line
     // from Hussainara Khatoon to Vishaka, and the overreach critique.

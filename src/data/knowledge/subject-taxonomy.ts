@@ -23,14 +23,15 @@
 /*  Biology, Bioinformatics & Genomics, Synthetic Biology) is its own  */
 /*  book in the Life Sciences shelf.                                   */
 /*                                                                     */
-/*  So the granularity rule is: each DISTINCT ACADEMIC DISCIPLINE is   */
-/*  its own book. A single discipline with sub-areas (Mathematics,     */
-/*  Law, Economics, Civil Engineering…) stays ONE book with            */
-/*  many chapters — but a bundle of different disciplines (the old     */
-/*  Arts & Culture and Medicine & Health mega-books, and the old       */
-/*  one-volume Biology) must be SPLIT                                  */
-/*  into one book per discipline. A split is only made when content    */
-/*  supports it: every book needs ≥2 chapters and ≥3 lessons.          */
+/*  USER RULE 4 (2026-10-25, verbatim intent): "do such type of       */
+/*  things all subjects." The Biology pattern now applies to every     */
+/*  remaining multi-discipline volume: Law (7 books), Economics (5),   */
+/*  History (5), Political Science (4), Business & Management (4),    */
+/*  Environmental Science (3) + Urban Studies, Everyday Life Skills    */
+/*  (6), Civil Engineering (4), Accounting (2), Medicine & Treatment  */
+/*  (3). Single disciplines with sub-areas stay one book (Mathematics, */
+/*  Sociology, Linguistics, Finance & Banking) unless their chapters   */
+/*  are themselves discipline-grade.                                   */
 /*                                                                     */
 /*  Every knowledge topic is assigned to ONE canonical subject via     */
 /*  its field (ownFields). Inside a subject, topics are grouped into   */
@@ -65,8 +66,8 @@ export interface TaxonomySubject {
   tagline: string
   /** one-line description used on the subject card */
   blurb: string
-  /** fields owned by this subject (disjoint across subjects) */
-  ownFields: string[]
+  /** fields owned by this subject (disjoint across subjects); empty for branch-routed subjects */
+  ownFields?: string[]
   /** when set, chapters append to this curated book instead of a new subject */
   mergeInto?: { subjectId: string; bookId: string }
   chapters: TaxonomyChapter[]
@@ -580,27 +581,51 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
       { name: 'Weather & Atmosphere', fields: ['Meteorology'] },
     ],
   },
+  /* ================================================================ */
+  /*  ENVIRONMENTAL SCIENCE split (USER RULE 4) — 3 books + Urban      */
+  /*  Studies (Urban Planning leaves with Urban Sociology)             */
+  /* ================================================================ */
+
   {
-    key: 'environmental-science',
-    name: 'Environmental Science',
+    key: 'earth-climate-science',
+    name: 'Earth & Climate Science',
     group: 'Natural Sciences',
-    icon: 'leaf',
-    accent: '#22c55e',
-    tagline: 'Earth systems and stewardship',
-    blurb: 'Climate, earth systems, agriculture, pollution, waste, policy and the planned city.',
-    ownFields: [
-      'Agriculture & Food Systems', 'Climate Science', 'Earth Systems',
-      'Environmental Policy', 'Pollution & Environmental Health', 'Urban Planning',
-      'Waste & Circularity',
-    ],
+    icon: 'globe',
+    accent: '#0ea5e9',
+    tagline: 'The planet as a system',
+    blurb: 'Earth systems — oceans, water and rock — and the science of climate and climate change.',
+    ownFields: ['Earth Systems', 'Climate Science'],
     chapters: [
-      { name: 'Climate Science', fields: ['Climate Science'] },
-      { name: 'Earth Systems', fields: ['Earth Systems'] },
-      { name: 'Agriculture & Food Systems', fields: ['Agriculture & Food Systems'] },
+      { name: 'Earth Systems: Oceans, Water & Rock', fields: ['Earth Systems'] },
+      { name: 'Climate Science & Change', fields: ['Climate Science'] },
+    ],
+  },
+  {
+    key: 'environmental-policy-circularity',
+    name: 'Environmental Policy & Circularity',
+    group: 'Natural Sciences',
+    icon: 'recycle',
+    accent: '#16a34a',
+    tagline: 'From rules to reuse',
+    blurb: 'Environmental policy and governance, waste systems and the circular economy of materials.',
+    ownFields: ['Environmental Policy', 'Waste & Circularity'],
+    chapters: [
+      { name: 'Environmental Policy & Governance', fields: ['Environmental Policy'] },
+      { name: 'Waste, Materials & the Circular Economy', fields: ['Waste & Circularity'] },
+    ],
+  },
+  {
+    key: 'environmental-health-food',
+    name: 'Environmental Health & Food Systems',
+    group: 'Natural Sciences',
+    icon: 'sprout',
+    accent: '#84cc16',
+    tagline: 'Environment, health and harvest',
+    blurb: 'Pollution and environmental health, agriculture and the food systems that feed the world.',
+    ownFields: ['Pollution & Environmental Health', 'Agriculture & Food Systems'],
+    chapters: [
       { name: 'Pollution & Environmental Health', fields: ['Pollution & Environmental Health'] },
-      { name: 'Waste & Circularity', fields: ['Waste & Circularity'] },
-      { name: 'Environmental Policy', fields: ['Environmental Policy'] },
-      { name: 'Urban Planning', fields: ['Urban Planning'] },
+      { name: 'Agriculture & Food Systems', fields: ['Agriculture & Food Systems'] },
     ],
   },
   {
@@ -618,22 +643,52 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
       { name: 'Nuclear Energy', fields: ['Nuclear Technology'] },
     ],
   },
+  /* ================================================================ */
+  /*  MEDICINE & TREATMENT split (USER RULE 4) — 3 books               */
+  /* ================================================================ */
+
   {
-    key: 'medicine',
-    name: 'Medicine & Treatment',
+    key: 'clinical-medicine',
+    name: 'Clinical Medicine',
     group: 'Medicine & Health',
     icon: 'stethoscope',
     accent: '#e11d48',
-    tagline: 'Disease, diagnosed and treated',
-    blurb: 'How disease works, how medicines act, the technology that sees inside the body, and emergency and reproductive care.',
-    ownFields: [
-      'Disease & Treatment', 'Medicine & Pharmacology', 'Medical Technology',
-      'First Aid & Emergency Care', 'Sexual & Reproductive Health',
-    ],
+    tagline: 'Disease, understood',
+    blurb: 'How disease works — cancer, chronic and metabolic disease, the senses and organs, pain, bones and joints.',
     chapters: [
-      { name: 'Understanding Disease', fields: ['Disease & Treatment'] },
-      { name: 'Medicines & Clinical Practice', fields: ['Medicine & Pharmacology', 'Medical Technology'] },
-      { name: 'Emergency & Reproductive Care', fields: ['First Aid & Emergency Care', 'Sexual & Reproductive Health'] },
+      { name: 'Chronic & Metabolic Disease', branches: ['Chronic Disease'] },
+      { name: 'Cancer', branches: ['Cancer'] },
+      { name: 'Senses & Organs', branches: ['Senses & Organs'] },
+      { name: 'Pain, Bones & Joints', branches: ['Pain', 'Bones & Joints'] },
+    ],
+  },
+  {
+    key: 'medical-technology',
+    name: 'Medical Technology',
+    group: 'Medicine & Health',
+    icon: 'activity',
+    accent: '#0891b2',
+    tagline: 'Machines that see within',
+    blurb: 'Biomedical imaging — MRI, ultrasound and CT — and the prosthetics and bionics that restore function.',
+    ownFields: ['Medical Technology'],
+    chapters: [
+      { name: 'Biomedical Imaging', branches: ['Biomedical Imaging', 'Machines That See Within'] },
+      { name: 'Prosthetics & Human–Machine Interfaces', branches: ['Human-Machine Interfaces'] },
+    ],
+  },
+  {
+    key: 'medicines-emergency-care',
+    name: 'Medicines, First Aid & Reproductive Health',
+    group: 'Medicine & Health',
+    icon: 'pill',
+    accent: '#f97316',
+    tagline: 'From molecule to bedside',
+    blurb: 'How medicines work and how doctors reason, first aid and resuscitation, and sexual & reproductive health.',
+    ownFields: ['Medicine & Pharmacology', 'First Aid & Emergency Care', 'Sexual & Reproductive Health'],
+    chapters: [
+      { name: 'Pharmacology & Clinical Reasoning', fields: ['Medicine & Pharmacology'] },
+      { name: 'First Aid & Resuscitation', fields: ['First Aid & Emergency Care'] },
+      { name: 'Sexual & Reproductive Health', fields: ['Sexual & Reproductive Health'] },
     ],
   },
   {
@@ -681,22 +736,74 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
       { name: 'Mind–Body Science', branches: ['Psychoneuroendocrinology'] },
     ],
   },
+  /* ================================================================ */
+  /*  HISTORY split (USER RULE 4) — 5 books. Branch edits steer the     */
+  /*  China/modern/democracy/Indian-period topics (ids unchanged).     */
+  /* ================================================================ */
+
   {
-    key: 'history',
-    name: 'History',
+    key: 'ancient-early-modern-history',
+    name: 'Ancient & Early Modern History',
     group: 'Humanities & Social Sciences',
-    icon: 'map',
-    accent: '#d97706',
-    tagline: 'How the world came to be',
-    blurb: 'Ancient, early-modern and modern world history, economic history, Indian and East Asian history.',
-    ownFields: ['History', 'World History'],
+    icon: 'scroll-text',
+    accent: '#b45309',
+    tagline: 'From first cities to the Renaissance',
+    blurb: 'The first civilizations, the classical Greco-Roman world, and the themes and transitions of the pre-modern globe.',
     chapters: [
       { name: 'The Ancient World', branches: ['The Ancient World'] },
-      { name: 'The Modern Age', branches: ['The Modern Age'] },
-      { name: 'Economic History', branches: ['Economic History'] },
-      { name: 'Themes in World History', branches: ['World History'] },
-      { name: 'Indian History', branches: ['Indian History'] },
-      { name: 'East Asian History', branches: ['East Asian History'] },
+      { name: 'Themes in Early Modern World History', branches: ['World History'] },
+    ],
+  },
+  {
+    key: 'modern-world-history',
+    name: 'Modern World History',
+    group: 'Humanities & Social Sciences',
+    icon: 'hourglass',
+    accent: '#d97706',
+    tagline: 'The age of revolutions and world wars',
+    blurb: 'Revolutions, democracy and rights, the world wars, decolonization and the twentieth-century world order.',
+    chapters: [
+      { name: 'Democracy, Rights & Revolution', branches: ['Democracy & Rights'] },
+      { name: 'War, Decolonization & the Twentieth Century', branches: ['The Modern Age'] },
+    ],
+  },
+  {
+    key: 'economic-history',
+    name: 'Economic History',
+    group: 'Humanities & Social Sciences',
+    icon: 'chart-line',
+    accent: '#ca8a04',
+    tagline: 'How economies became modern',
+    blurb: 'Trade routes, exchange networks, the Industrial Revolution and the great divergence between economies.',
+    chapters: [
+      { name: 'Trade, Exchange & Industrialization', branches: ['Economic History'] },
+      { name: 'The Great Divergence', branches: ['Global Divergence'] },
+    ],
+  },
+  {
+    key: 'indian-history',
+    name: 'Indian History',
+    group: 'Humanities & Social Sciences',
+    icon: 'map',
+    accent: '#ea580c',
+    tagline: 'A civilization in the longue durée',
+    blurb: 'Ancient and medieval India, its thinkers and travellers, colonialism and the freedom struggle.',
+    chapters: [
+      { name: 'Ancient & Medieval India', branches: ['Ancient & Medieval India'] },
+      { name: 'Colonial India & the Freedom Struggle', branches: ['Colonial & Modern India'] },
+    ],
+  },
+  {
+    key: 'east-asian-history',
+    name: 'East Asian History',
+    group: 'Humanities & Social Sciences',
+    icon: 'landmark',
+    accent: '#dc2626',
+    tagline: 'China and Japan enter the modern world',
+    blurb: 'China\u2019s century of aggression and salvation, the People\u2019s Republic, and Japan\u2019s modern industrialization.',
+    chapters: [
+      { name: 'China: Aggression, Salvation & Revolution', fields: ['World History'] },
+      { name: 'Japan\u2019s Modern Industrialization', branches: ['East Asian History'] },
     ],
   },
   {
@@ -756,14 +863,29 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     accent: '#f472b6',
     tagline: 'Society as a system',
     blurb: 'Classical theory, social structure and institutions, culture, collective dynamics and the city.',
-    ownFields: ['Sociology', 'Urban Sociology'],
+    ownFields: ['Sociology'],
     chapters: [
       { name: 'Classical Theory', branches: ['Classical Theory'] },
       { name: 'Social Structure & Institutions', branches: ['Social Structure', 'Social Institutions'] },
       { name: 'Culture', branches: ['Culture'] },
       { name: 'Collective Dynamics & Networks', branches: ['Collective Dynamics', 'Social Networks'] },
       { name: 'Social Control', branches: ['Social Control'] },
-      { name: 'Urban Studies', fields: ['Urban Sociology'] },
+    ],
+  },
+  {
+    /* USER RULE 4: Urban content unified across domains — Urban    */
+    /* Planning (ex-Environmental Science) joins Urban Sociology.   */
+    key: 'urban-studies',
+    name: 'Urban Studies',
+    group: 'Humanities & Social Sciences',
+    icon: 'map-pin',
+    accent: '#0f766e',
+    tagline: 'The city, planned and lived',
+    blurb: 'The built environment and urban planning, urban society and how cities change.',
+    ownFields: ['Urban Planning', 'Urban Sociology'],
+    chapters: [
+      { name: 'The Built Environment', fields: ['Urban Planning'] },
+      { name: 'Urban Society & Change', fields: ['Urban Sociology'] },
     ],
   },
   {
@@ -780,25 +902,62 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
       { name: 'Archaeology', branches: ['Archaeology'] },
     ],
   },
+  /* ================================================================ */
+  /*  POLITICAL SCIENCE split (USER RULE 4) — 4 books, branch-routed   */
+  /* ================================================================ */
+
   {
-    key: 'political-science',
-    name: 'Political Science',
+    key: 'political-theory',
+    name: 'Political Theory',
     group: 'Humanities & Social Sciences',
-    icon: 'landmark',
-    accent: '#ef4444',
-    tagline: 'Power and cooperation',
-    blurb: 'Ideologies, political thought, comparative politics, international relations, Indian polity, governance, public policy and defence studies.',
-    ownFields: ['Political Science', 'Public Policy', 'Defence Studies'],
+    icon: 'lightbulb',
+    accent: '#dc2626',
+    tagline: 'Ideas about power and justice',
+    blurb: 'Political ideologies — individualism, collectivism, liberalism, citizenship — and the canon of political thought.',
     chapters: [
       { name: 'Political Ideologies', branches: ['Political Ideologies'] },
       { name: 'History of Political Thought', branches: ['History of Political Thought'] },
+    ],
+  },
+  {
+    key: 'comparative-indian-politics',
+    name: 'Comparative Politics & Indian Polity',
+    group: 'Humanities & Social Sciences',
+    icon: 'landmark',
+    accent: '#f59e0b',
+    tagline: 'Governments, compared',
+    blurb: 'Regimes and democratic government across countries, and the constitution and politics of India.',
+    chapters: [
       { name: 'Comparative Politics', branches: ['Comparative Politics'] },
-      { name: 'International Relations', branches: ['International Relations'] },
-      { name: 'Foreign Policy, Security & Defence', branches: ['Foreign Policy and Security'], fields: ['Defence Studies'] },
       { name: 'Indian Polity', branches: ['Indian Polity'] },
+    ],
+  },
+  {
+    key: 'international-relations',
+    name: 'International Relations & Security',
+    group: 'Humanities & Social Sciences',
+    icon: 'globe',
+    accent: '#b91c1c',
+    tagline: 'The world order and its guardians',
+    blurb: 'IR theory and the contemporary world order, foreign policy and security, and the organization of armed forces.',
+    chapters: [
+      { name: 'International Relations', branches: ['International Relations'] },
+      { name: 'Foreign Policy & Security', branches: ['Foreign Policy and Security'] },
+      { name: 'Defence & the Armed Forces', branches: ['Organisation of the Armed Forces'] },
+    ],
+  },
+  {
+    key: 'public-policy-administration',
+    name: 'Public Policy & Administration',
+    group: 'Humanities & Social Sciences',
+    icon: 'scroll-text',
+    accent: '#92400e',
+    tagline: 'How the state gets things done',
+    blurb: 'Governance and public administration, the policy cycle, and the rational-choice science of institutional design.',
+    chapters: [
       { name: 'Governance & Public Administration', branches: ['Governance and Public Administration'] },
+      { name: 'The Policy Cycle', branches: ['The Policy Machine'] },
       { name: 'Rational Choice & Institutional Design', branches: ['Rational Choice Theory', 'Public Choice', 'Institutional Design'] },
-      { name: 'Public Policy', fields: ['Public Policy'] },
     ],
   },
   {
@@ -858,53 +1017,126 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
       { name: 'Experimental Design', fields: ['Science & Inquiry Skills'] },
     ],
   },
+  /* ================================================================ */
+  /*  ECONOMICS split (USER RULE 4) — 5 books; foundations and          */
+  /*  behavioral economics live as chapters inside Microeconomics      */
+  /* ================================================================ */
+
   {
-    key: 'economics',
-    name: 'Economics',
-    group: 'Commerce, Economics & Law',
+    key: 'microeconomics',
+    name: 'Microeconomics',
+    group: 'Commerce, Economics & Business',
     icon: 'chart-line',
     accent: '#65a30d',
-    tagline: 'Markets, money and trade',
-    blurb: 'One economics volume — micro, macro, international trade, development, behavioral, business and political economy.',
-    ownFields: [
-      'Behavioral Economics', 'Business Economics', 'Development Economics',
-      'Foundations of Economics', 'International Trade', 'Macroeconomics',
-      'Microeconomics', 'Political Economy',
-    ],
+    tagline: 'The logic of markets',
+    blurb: 'The economic way of thinking, consumers and producers, prices and market structure, market failures, welfare and behavioral economics.',
+    ownFields: ['Foundations of Economics', 'Microeconomics', 'Behavioral Economics'],
     chapters: [
-      { name: 'Foundations of Economics', fields: ['Foundations of Economics'] },
-      { name: 'Microeconomics', fields: ['Microeconomics'] },
-      { name: 'Macroeconomics', fields: ['Macroeconomics'] },
-      { name: 'International Trade', fields: ['International Trade'] },
-      { name: 'Development Economics', fields: ['Development Economics'] },
-      { name: 'Business Economics', fields: ['Business Economics'] },
+      { name: 'The Economic Way of Thinking', fields: ['Foundations of Economics'] },
+      { name: 'How Markets Work', branches: ['Price Theory', 'Market Structure'] },
+      { name: 'Consumers, Producers & Welfare', branches: ['Consumer and Producer Theory', 'Welfare Economics'] },
+      { name: 'When Markets Fail', branches: ['When Markets Fail'] },
       { name: 'Behavioral Economics', fields: ['Behavioral Economics'] },
+    ],
+  },
+  {
+    key: 'macroeconomics',
+    name: 'Macroeconomics',
+    group: 'Commerce, Economics & Business',
+    icon: 'trending',
+    accent: '#0d9488',
+    tagline: 'The economy as a whole',
+    blurb: 'National income and output, the vital signs, money and monetary policy, fiscal policy and the open economy.',
+    ownFields: ['Macroeconomics'],
+    chapters: [
+      { name: 'National Income & the Vital Signs', branches: ['National Income & Output', 'The Vital Signs'] },
+      { name: 'Money & Monetary Policy', branches: ['Monetary Economics', 'Monetary Policy'] },
+      { name: 'Fiscal Policy', branches: ['Fiscal Policy'] },
+      { name: 'The Open Economy', branches: ['Open Economy'] },
+    ],
+  },
+  {
+    key: 'international-trade',
+    name: 'International Trade',
+    group: 'Commerce, Economics & Business',
+    icon: 'globe',
+    accent: '#0891b2',
+    tagline: 'Why nations trade',
+    blurb: 'Trade theory, trade policy, regional integration and foreign direct investment.',
+    ownFields: ['International Trade'],
+    chapters: [
+      { name: 'Trade Theory', branches: ['Trade Theory'] },
+      { name: 'Trade Policy', branches: ['Trade Policy'] },
+      { name: 'Regional Integration & FDI', branches: ['FDI and Economic Integration', 'Regional Integration'] },
+    ],
+  },
+  {
+    key: 'development-economics',
+    name: 'Development & Political Economy',
+    group: 'Commerce, Economics & Business',
+    icon: 'sprout',
+    accent: '#16a34a',
+    tagline: 'Why some places grow rich',
+    blurb: 'Poverty and labour, India and comparative development, and the political economy of growth.',
+    ownFields: ['Development Economics', 'Political Economy'],
+    chapters: [
+      { name: 'Poverty, Labour & Development', branches: ['Poverty & Labour'] },
+      { name: 'India & Comparative Development', branches: ['India & Comparative Development'] },
       { name: 'Political Economy', fields: ['Political Economy'] },
     ],
   },
   {
-    key: 'accounting-auditing',
-    name: 'Accounting & Auditing',
-    group: 'Commerce, Economics & Law',
+    key: 'business-economics',
+    name: 'Business Economics',
+    group: 'Commerce, Economics & Business',
+    icon: 'briefcase',
+    accent: '#b45309',
+    tagline: 'Economics for the firm',
+    blurb: 'Costs and production, business cycles for managers, and the public finance that frames business decisions.',
+    ownFields: ['Business Economics'],
+    chapters: [
+      { name: 'Costs & Production', branches: ['Costs & Production'] },
+      { name: 'Business Cycles', branches: ['Business Cycles'] },
+      { name: 'Public Finance', branches: ['Public Finance'] },
+    ],
+  },
+  /* ================================================================ */
+  /*  ACCOUNTING & AUDITING split (USER RULE 4) — 2 books              */
+  /* ================================================================ */
+
+  {
+    key: 'financial-accounting',
+    name: 'Financial Accounting',
+    group: 'Commerce, Economics & Business',
     icon: 'receipt',
     accent: '#0d9488',
     tagline: 'The language of business',
-    blurb: 'The full accounting cycle through partnership and company accounts, plus the independent financial audit.',
-    ownFields: ['Accounting', 'Auditing & Assurance'],
+    blurb: 'The full accounting cycle — double entry, the ledger, cash control, fixed assets, special transactions and computerized systems.',
     chapters: [
-      { name: 'The Accounting Cycle', branches: ['Accounting Cycle'] },
-      { name: 'Computerized Accounting', branches: ['Computerized Accounting'] },
-      { name: 'The Ledger & Cash Control', branches: ['The Ledger', 'Cash Control'] },
-      { name: 'Fixed Assets & Special Transactions', branches: ['Fixed Assets', 'Special Transactions'] },
-      { name: 'Partnership & Company Accounts', branches: ['Partnership Accounts', 'Company Accounts'] },
-      { name: 'Reading Financial Statements', branches: ['Reading Statements'] },
+      { name: 'The Accounting Cycle & the Ledger', branches: ['Accounting Cycle', 'The Ledger'] },
+      { name: 'Cash, Assets & Controls', branches: ['Cash Control', 'Fixed Assets'] },
+      { name: 'Special Transactions & Computerized Systems', branches: ['Special Transactions', 'Computerized Accounting'] },
+    ],
+  },
+  {
+    key: 'advanced-accounting-auditing',
+    name: 'Advanced Accounting & Auditing',
+    group: 'Commerce, Economics & Business',
+    icon: 'calculator',
+    accent: '#115e59',
+    tagline: 'From partnership to the audit',
+    blurb: 'Partnership and company accounts, reading financial statements, and the independent financial audit.',
+    ownFields: ['Auditing & Assurance'],
+    chapters: [
+      { name: 'Partnership Accounts', branches: ['Partnership Accounts'] },
+      { name: 'Company Accounts & Financial Statements', branches: ['Company Accounts', 'Reading Statements'] },
       { name: 'Auditing & Assurance', fields: ['Auditing & Assurance'] },
     ],
   },
   {
     key: 'finance-banking',
     name: 'Finance & Banking',
-    group: 'Commerce, Economics & Law',
+    group: 'Commerce, Economics & Business',
     icon: 'calculator',
     accent: '#16a34a',
     tagline: 'Money across time',
@@ -918,50 +1150,173 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
       { name: 'Personal Finance', fields: ['Personal Finance'] },
     ],
   },
+  /* ================================================================ */
+  /*  BUSINESS & MANAGEMENT split (USER RULE 4) — 4 books              */
+  /* ================================================================ */
+
   {
-    key: 'business-management',
-    name: 'Business & Management',
-    group: 'Commerce, Economics & Law',
-    icon: 'briefcase',
+    key: 'management-leadership',
+    name: 'Management & Leadership',
+    group: 'Commerce, Economics & Business',
+    icon: 'users',
     accent: '#b45309',
-    tagline: 'Getting work done',
-    blurb: 'Management, leadership, entrepreneurship, marketing, operations, strategy and the business environment.',
-    ownFields: [
-      'Business Environment', 'Business Regulation', 'Entrepreneurship', 'Management',
-      'Management & Leadership', 'Marketing', 'Operations & Supply Chain', 'Strategy',
-    ],
+    tagline: 'Getting work done through people',
+    blurb: 'Organisations and behaviour, managing people, leadership, deals and decisions.',
+    ownFields: ['Management', 'Management & Leadership'],
     chapters: [
-      { name: 'Management & Organisations', fields: ['Management'] },
-      { name: 'Leadership & People', fields: ['Management & Leadership'] },
-      { name: 'Entrepreneurship', fields: ['Entrepreneurship'] },
-      { name: 'Marketing', fields: ['Marketing'] },
-      { name: 'Operations & Supply Chain', fields: ['Operations & Supply Chain'] },
-      { name: 'Strategy', fields: ['Strategy'] },
-      { name: 'Business Environment & Regulation', fields: ['Business Environment', 'Business Regulation'] },
+      { name: 'Organisations & People', fields: ['Management'] },
+      { name: 'Leadership, Deals & Decisions', fields: ['Management & Leadership'] },
     ],
   },
   {
-    key: 'law',
-    name: 'Law',
-    group: 'Commerce, Economics & Law',
-    icon: 'scale',
-    accent: '#a16207',
-    tagline: 'Rules, states and constitutions',
-    blurb: 'One law volume — legal method, constitutional law, contracts and private law, business law, crime, international law, tax and employment.',
-    ownFields: [
-      'Business Law', 'Constitutional Law', 'Contract Law', 'Criminal Justice',
-      'Employment Law', 'Intellectual Property & Media Law', 'International Law',
-      'Legal History', 'Legal Method', 'Private Law', 'Tax & Administrative Law',
-    ],
+    key: 'marketing',
+    name: 'Marketing',
+    group: 'Commerce, Economics & Business',
+    icon: 'megaphone',
+    accent: '#db2777',
+    tagline: 'Creating customers',
+    blurb: 'Marketing foundations, and pricing, channels and promotion.',
+    ownFields: ['Marketing'],
     chapters: [
-      { name: 'Legal Method & Reasoning', fields: ['Legal Method'] },
-      { name: 'Legal History & Systems', fields: ['Legal History'] },
-      { name: 'Constitutional Law', fields: ['Constitutional Law'] },
-      { name: 'Private, Contract & Business Law', fields: ['Private Law', 'Contract Law', 'Business Law'] },
-      { name: 'Criminal Justice', fields: ['Criminal Justice'] },
-      { name: 'International Law', fields: ['International Law'] },
+      { name: 'Marketing Foundations', branches: ['Marketing Foundations'] },
+      { name: 'Pricing, Channels & Promotion', branches: ['Pricing, Channels and Promotion'] },
+    ],
+  },
+  {
+    key: 'operations-strategy',
+    name: 'Operations, Strategy & Supply Chain',
+    group: 'Commerce, Economics & Business',
+    icon: 'cog',
+    accent: '#4d7c0f',
+    tagline: 'Running and steering the firm',
+    blurb: 'Operations and supply chain, strategy and strategic interaction, and the economics of technology.',
+    ownFields: ['Operations & Supply Chain', 'Strategy'],
+    chapters: [
+      { name: 'Operations & Supply Chain', fields: ['Operations & Supply Chain'] },
+      { name: 'Strategy & Strategic Interaction', fields: ['Strategy'] },
+    ],
+  },
+  {
+    key: 'entrepreneurship-business-environment',
+    name: 'Entrepreneurship & the Business Environment',
+    group: 'Commerce, Economics & Business',
+    icon: 'rocket',
+    accent: '#ea580c',
+    tagline: 'From idea to institution',
+    blurb: 'Building and financing ventures, the business environment, and the regulatory framework that governs firms.',
+    ownFields: ['Entrepreneurship', 'Business Environment', 'Business Regulation'],
+    chapters: [
+      { name: 'Building & Financing Ventures', fields: ['Entrepreneurship'] },
+      { name: 'Business Environment & Regulation', fields: ['Business Environment', 'Business Regulation'] },
+    ],
+  },
+  /* ================================================================ */
+  /*  LAW split (USER RULE 4) — 7 books in the Law & Justice shelf.    */
+  /*  Private Law's corporate branch joins the Business Law volume.    */
+  /* ================================================================ */
+
+  {
+    key: 'legal-systems-method',
+    name: 'Legal Systems & Method',
+    group: 'Law & Justice',
+    icon: 'library',
+    accent: '#a16207',
+    tagline: 'How law thinks',
+    blurb: 'Legal reasoning, courts and precedent, and the comparative history of the world\u2019s legal systems.',
+    ownFields: ['Legal Method', 'Legal History'],
+    chapters: [
+      { name: 'Legal Reasoning', branches: ['Legal Reasoning'] },
+      { name: 'Courts, Precedent & the Legal Machine', branches: ['Courts, Precedent & Legal News'] },
+      { name: 'Comparative Legal Systems & Legal History', fields: ['Legal History'] },
+    ],
+  },
+  {
+    key: 'constitutional-law',
+    name: 'Constitutional Law',
+    group: 'Law & Justice',
+    icon: 'landmark',
+    accent: '#b45309',
+    tagline: 'The rules about the rules',
+    blurb: 'Constitutions, structural principles and the architecture of state power.',
+    ownFields: ['Constitutional Law'],
+    chapters: [
+      { name: 'Structural Principles', branches: ['Structural Principles'] },
+      { name: 'Constitutional Law in Practice', branches: ['Constitutional Law'] },
+    ],
+  },
+  {
+    key: 'private-law',
+    name: 'Private Law: Contracts, Torts & Family',
+    group: 'Law & Justice',
+    icon: 'scale',
+    accent: '#92400e',
+    tagline: 'Between citizens',
+    blurb: 'Contract law — formation, consent and validity — plus tort and family law.',
+    ownFields: ['Contract Law'],
+    chapters: [
+      { name: 'Contract Law', branches: ['Contract Law', 'Indian Contract Act 1872', 'Consent & Validity'] },
+      { name: 'Tort Law', branches: ['Tort Law'] },
+      { name: 'Family Law', branches: ['Family Law'] },
+    ],
+  },
+  {
+    key: 'business-corporate-law',
+    name: 'Business & Corporate Law',
+    group: 'Law & Justice',
+    icon: 'briefcase',
+    accent: '#0d9488',
+    tagline: 'The law of commerce',
+    blurb: 'Sale of goods, partnership and LLP law, and company law — the legal spine of business.',
+    ownFields: ['Business Law'],
+    chapters: [
+      { name: 'Sale of Goods & Commercial Transactions', branches: ['Sale of Goods Act 1930'] },
+      { name: 'Partnership & LLP', branches: ['Partnership Act 1932', 'LLP Act 2008'] },
+      { name: 'Company Law', branches: ['Companies Act 2013', 'Corporate Law'] },
+    ],
+  },
+  {
+    key: 'criminal-justice',
+    name: 'Criminal Law & Justice',
+    group: 'Law & Justice',
+    icon: 'scale',
+    accent: '#dc2626',
+    tagline: 'Crime and its machinery',
+    blurb: 'Criminology, the legal machine of criminal justice, and criminal litigation.',
+    ownFields: ['Criminal Justice'],
+    chapters: [
+      { name: 'Criminology', branches: ['Criminology'] },
+      { name: 'The Legal Machine', branches: ['The Legal Machine'] },
+      { name: 'Criminal Litigation', branches: ['Litigation'] },
+    ],
+  },
+  {
+    key: 'international-law',
+    name: 'International Law',
+    group: 'Law & Justice',
+    icon: 'globe',
+    accent: '#0369a1',
+    tagline: 'Law among states',
+    blurb: 'Treaty law, human rights law, and the courts and organizations that order the world.',
+    ownFields: ['International Law'],
+    chapters: [
+      { name: 'Treaty Law', branches: ['Treaty Law'] },
+      { name: 'Human Rights Law', branches: ['Human Rights Law'] },
+      { name: 'Courts, Organizations & the Law of the Sea', branches: ['Institutions & Dispute Settlement'] },
+    ],
+  },
+  {
+    key: 'regulatory-workplace-law',
+    name: 'Regulatory & Workplace Law',
+    group: 'Law & Justice',
+    icon: 'receipt',
+    accent: '#7c2d12',
+    tagline: 'The law of everyday life',
+    blurb: 'Tax and administrative law, employment and the workplace, and intellectual property & media law.',
+    ownFields: ['Employment Law', 'Intellectual Property & Media Law', 'Tax & Administrative Law'],
+    chapters: [
+      { name: 'Tax & Administrative Law', fields: ['Tax & Administrative Law'] },
+      { name: 'Employment Law & the Workplace', fields: ['Employment Law'] },
       { name: 'IP & Media Law', fields: ['Intellectual Property & Media Law'] },
-      { name: 'Tax, Administrative & Employment Law', fields: ['Tax & Administrative Law', 'Employment Law'] },
     ],
   },
   {
@@ -1224,24 +1579,67 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
       { name: 'Design & Practice', branches: ['Design & Practice'] },
     ],
   },
+  /* ================================================================ */
+  /*  CIVIL ENGINEERING split (USER RULE 4) — 4 books. Fields 'Civil    */
+  /*  Engineering' and 'Civil & Structural Engineering' route by        */
+  /*  branch; the pipeline stays with Chemical Engineering.             */
+  /* ================================================================ */
+
   {
-    key: 'civil-engineering',
-    name: 'Civil Engineering',
+    key: 'structural-seismic-engineering',
+    name: 'Structural & Seismic Engineering',
     group: 'Applied Engineering & Technology',
-    icon: 'hard-hat',
+    icon: 'frame',
     accent: '#f59e0b',
     tagline: 'Standing on math',
-    blurb: 'One civil engineering volume — structures, water, transport, geomatics, seismic, tunnels, dams and construction.',
-    ownFields: ['Civil & Structural Engineering', 'Civil Engineering', 'Construction & the Built Environment', 'Railway Engineering', 'Water Technology'],
+    blurb: 'Structural analysis and design in steel and concrete, and engineering for earthquakes.',
     chapters: [
-      { name: 'Structural Engineering', branches: ['Structural Engineering'] },
-      { name: 'Water Resources & Environmental Engineering', branches: ['Water Resources Engineering', 'Environmental Engineering'], fields: ['Water Technology'] },
-      { name: 'Transportation & Railway Engineering', branches: ['Transportation Engineering'], fields: ['Railway Engineering'] },
+      { name: 'Structural Analysis & Design', branches: ['Structural Engineering'] },
+      { name: 'Seismic Design', branches: ['Seismic Design'] },
+    ],
+  },
+  {
+    key: 'water-environmental-engineering',
+    name: 'Water & Environmental Engineering',
+    group: 'Applied Engineering & Technology',
+    icon: 'droplets',
+    accent: '#0369a1',
+    tagline: 'Water, engineered',
+    blurb: 'Water resources and dams, water and wastewater treatment, and environmental engineering.',
+    ownFields: ['Water Technology'],
+    chapters: [
+      { name: 'Water Resources & Dams', branches: ['Water Resources Engineering', 'Water Infrastructure'] },
+      { name: 'Water & Wastewater Treatment', fields: ['Water Technology'] },
+      { name: 'Environmental Engineering', branches: ['Environmental Engineering'] },
+    ],
+  },
+  {
+    key: 'transportation-engineering',
+    name: 'Transportation Engineering',
+    group: 'Applied Engineering & Technology',
+    icon: 'route',
+    accent: '#ea580c',
+    tagline: 'The geometry of movement',
+    blurb: 'Highway and traffic engineering — flow, capacity and geometric design — and railway transport infrastructure.',
+    ownFields: ['Railway Engineering'],
+    chapters: [
+      { name: 'Highways, Traffic & Geometric Design', branches: ['Transportation Engineering'] },
+      { name: 'Railways & Transport Infrastructure', fields: ['Railway Engineering'] },
+    ],
+  },
+  {
+    key: 'construction-geomatics',
+    name: 'Construction, Geomatics & Underground Engineering',
+    group: 'Applied Engineering & Technology',
+    icon: 'hard-hat',
+    accent: '#a16207',
+    tagline: 'Measuring, building, digging',
+    blurb: 'Geomatics and surveying, tunnels and underground engineering, and how buildings work.',
+    ownFields: ['Construction & the Built Environment'],
+    chapters: [
       { name: 'Geomatics & Surveying', branches: ['Geomatics Engineering'] },
-      { name: 'Seismic & Earthquake Engineering', branches: ['Seismic Design'] },
-      { name: 'Underground & Tunnel Engineering', branches: ['Underground Engineering'] },
-      { name: 'Dams & Water Infrastructure', branches: ['Water Infrastructure'] },
-      { name: 'Construction & the Built Environment', fields: ['Construction & the Built Environment'] },
+      { name: 'Tunnels & Underground Engineering', branches: ['Underground Engineering'] },
+      { name: 'How Buildings Work', fields: ['Construction & the Built Environment'] },
     ],
   },
   {
@@ -1322,26 +1720,92 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
       { name: 'Earth System Modeling', branches: ['Earth System Modeling'] },
     ],
   },
+  /* ================================================================ */
+  /*  EVERYDAY LIFE SKILLS split (USER RULE 4) — 6 books               */
+  /* ================================================================ */
+
   {
-    key: 'everyday-life-skills',
-    name: 'Everyday Life Skills',
+    key: 'cooking-food-science',
+    name: 'Cooking & Food Science',
     group: 'Everyday Life Skills',
-    icon: 'home',
+    icon: 'utensils',
     accent: '#f97316',
-    tagline: 'Life, handled',
-    blurb: 'Cooking and food science, cars, home repair, gardening, navigation, practical skills and career communication.',
-    ownFields: [
-      'Car & Driving', 'Career & Communication', 'Cooking & Food Science', 'Everyday Machines',
-      'Garden & Growing', 'Home & Repair', 'Navigation & Outdoors', 'Practical Skills',
-    ],
+    tagline: 'The kitchen, understood',
+    blurb: 'Kitchen chemistry, flavor and food safety.',
+    ownFields: ['Cooking & Food Science'],
     chapters: [
-      { name: 'Cooking & Food Science', fields: ['Cooking & Food Science'] },
-      { name: 'Car & Driving', fields: ['Car & Driving'] },
-      { name: 'Home & Everyday Machines', fields: ['Home & Repair', 'Everyday Machines'] },
-      { name: 'Garden & Growing', fields: ['Garden & Growing'] },
-      { name: 'Navigation & Outdoors', fields: ['Navigation & Outdoors'] },
-      { name: 'Practical Skills', fields: ['Practical Skills'] },
-      { name: 'Career & Communication', fields: ['Career & Communication'] },
+      { name: 'Kitchen Chemistry & Flavor', branches: ['Kitchen Chemistry', 'Flavor'] },
+      { name: 'Food Safety', branches: ['Food Safety'] },
+    ],
+  },
+  {
+    key: 'home-repair-machines',
+    name: 'Home Repair & Everyday Machines',
+    group: 'Everyday Life Skills',
+    icon: 'wrench',
+    accent: '#0d9488',
+    tagline: 'Fix it yourself',
+    blurb: 'Around the house — repairs and maintenance — and the machines of daily life.',
+    ownFields: ['Home & Repair', 'Everyday Machines'],
+    chapters: [
+      { name: 'Around the House', fields: ['Home & Repair'] },
+      { name: 'Machines of Daily Life', fields: ['Everyday Machines'] },
+    ],
+  },
+  {
+    key: 'cars-navigation-outdoors',
+    name: 'Cars, Navigation & the Outdoors',
+    group: 'Everyday Life Skills',
+    icon: 'car',
+    accent: '#334155',
+    tagline: 'Get there and get back',
+    blurb: 'Wheels and ownership, and navigation and outdoor skills.',
+    ownFields: ['Car & Driving', 'Navigation & Outdoors'],
+    chapters: [
+      { name: 'Wheels & Ownership', fields: ['Car & Driving'] },
+      { name: 'Navigation & the Outdoors', fields: ['Navigation & Outdoors'] },
+    ],
+  },
+  {
+    key: 'garden-growing',
+    name: 'Garden & Growing',
+    group: 'Everyday Life Skills',
+    icon: 'sprout',
+    accent: '#16a34a',
+    tagline: 'Grow more plants',
+    blurb: 'Growing things — soil, water, light — and propagation: making more plants from the plants you have.',
+    ownFields: ['Garden & Growing'],
+    chapters: [
+      { name: 'Growing Things', branches: ['Growing Things'] },
+      { name: 'Propagation: Making More Plants', branches: ['Propagation'] },
+    ],
+  },
+  {
+    key: 'practical-skills-readiness',
+    name: 'Practical Skills & Readiness',
+    group: 'Everyday Life Skills',
+    icon: 'hand',
+    accent: '#9333ea',
+    tagline: 'Life, handled',
+    blurb: 'Cloth and mending, household chemistry, animal companions, safety and readiness.',
+    ownFields: ['Practical Skills'],
+    chapters: [
+      { name: 'Cloth, Mending & Household Chemistry', branches: ['Cloth & Mending', 'Household Chemistry'] },
+      { name: 'Animals, Safety & Readiness', branches: ['Animal Companions', 'Safety & Readiness'] },
+    ],
+  },
+  {
+    key: 'career-communication',
+    name: 'Career & Communication',
+    group: 'Everyday Life Skills',
+    icon: 'megaphone',
+    accent: '#db2777',
+    tagline: 'Say it, get hired',
+    blurb: 'Speaking and presence, getting hired, and working smarter.',
+    ownFields: ['Career & Communication'],
+    chapters: [
+      { name: 'Speaking & Presence', branches: ['Speaking & Presence'] },
+      { name: 'Getting Hired & Working Smarter', branches: ['Getting Hired', 'Working Smarter'] },
     ],
   },
 ]

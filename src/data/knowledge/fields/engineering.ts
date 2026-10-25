@@ -1,10 +1,17 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x19CivilCoreTopics } from './x19-civil-core'
+import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
 
 export const engineering: KnowledgeDomainFile = {
   domain: 'Engineering',
   blurb: 'The discipline of building systems that must work — bridges, chips, power grids and everything in between.',
   topics: [
+    // X48 all-subjects split pass (2026-10-25): traffic flow theory for
+    // the Transportation Engineering volume — fundamental diagram,
+    // Greenshields, shockwaves, LOS, Webster. Carved against the x19
+    // highway lesson (owns geometric design/sight distance/superelevation)
+    // and the railway lesson (owns track cant).
+    ...x48AllSubjectsSplitPassTopics.filter((t) => t.domain === 'Engineering'),
     // X19 exam pass (2026-10-21): the GATE Civil Engineering core cluster —
     // concrete structures, water resources (hydrology + irrigation),
     // environmental engineering (water/wastewater + MSW), highways, and
