@@ -145,6 +145,41 @@ export const EXCLUDED_TOPICS: Record<string, ExcludedTopic> = {
     coveredBy: 'Mathematics → Discrete Probability',
     note: 'Probability foundations, conditional probability and expected value are fully covered.',
   },
+  /* ---- Arts & Culture discipline split (2026-10-25) ---------------- */
+  /* The X38–X43 arts-discipline passes were authored in parallel with the
+   * discovery that the 2026-10-18 double-quoted arts expansion inside
+   * arts-culture.ts had already published lessons on the same ground.
+   * USER RULE: already-explained topics are never duplicated — the NEW
+   * lessons are excluded and the PUBLISHED ones keep their section ids
+   * (reader progress and content.json stay stable). */
+  'animation-twelve-principles': {
+    coveredBy: 'Animation → Principles of Animation ("Animation: The Twelve Principles That Make Drawings Move")',
+    note: 'The twelve principles were already published on 2026-10-18.',
+  },
+  'animation-comics-grammar': {
+    coveredBy: 'Animation → Comics & Sequential Art ("Comics and Manga: How Sequential Art Tells Stories")',
+    note: 'Closure, panels, gutters and page grammar were already published on 2026-10-18.',
+  },
+  'theater-stagecraft': {
+    coveredBy: 'Performing Arts → Stagecraft & Production ("Theater and Stagecraft: The Space, the Blocking, the Show")',
+    note: 'Stagecraft, space and blocking were already published on 2026-10-18.',
+  },
+  'dance-world-forms': {
+    coveredBy: 'Performing Arts → Dance Forms & History ("Dance: Ballet, Folk and Contemporary")',
+    note: 'World dance traditions were already published on 2026-10-18.',
+  },
+  'sculpture-fundamentals': {
+    coveredBy: 'Visual Arts → Sculpture & Craft ("Sculpture and Ceramics: Carving, Modeling, Casting and the Kiln")',
+    note: 'Carving, modeling and casting were already published on 2026-10-18.',
+  },
+  'craft-ceramics': {
+    coveredBy: 'Visual Arts → Sculpture & Craft ("Sculpture and Ceramics: Carving, Modeling, Casting and the Kiln")',
+    note: 'Clay bodies, kiln firings and glaze were already published on 2026-10-18.',
+  },
+  'design-typography': {
+    coveredBy: 'Design → Typography & Layout ("Typography: Why Type Talks")',
+    note: 'Type anatomy, classification, pairing and hierarchy were already published on 2026-10-18.',
+  },
 }
 
 /** Domains whose every topic was excluded — the whole domain is retired. */

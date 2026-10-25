@@ -1,9 +1,21 @@
 import type { KnowledgeDomainFile } from '../types'
+import { x38ArtsHistoryVisualPassTopics } from './x38-arts-history-visual-pass'
+import { x39ArtsMusicFilmPassTopics } from './x39-arts-music-film-pass'
+import { x40ArtsAnimationPassTopics } from './x40-arts-animation-pass'
+import { x41ArtsDesignPassTopics } from './x41-arts-design-pass'
+import { x42ArtsPerformingPassTopics } from './x42-arts-performing-pass'
+import { x43ArtsArchitecturePassTopics } from './x43-arts-architecture-pass'
 
 export const artsCulture: KnowledgeDomainFile = {
   domain: 'Arts & Culture',
   blurb: 'Composition, harmony, and montage — the working craft knowledge behind images, chords, and cuts.',
   topics: [
+    ...x38ArtsHistoryVisualPassTopics,
+    ...x39ArtsMusicFilmPassTopics,
+    ...x40ArtsAnimationPassTopics,
+    ...x41ArtsDesignPassTopics,
+    ...x42ArtsPerformingPassTopics,
+    ...x43ArtsArchitecturePassTopics,
     {
       id: 'art-rule-of-thirds-visual-weight',
       title: 'The Rule of Thirds and Visual Weight',

@@ -8,6 +8,20 @@
 /*  is integration, then ALL integration content sits in that          */
 /*  chapter. Do this for every subject."                               */
 /*                                                                     */
+/*  USER RULE 2 (2026-10-25, verbatim intent): "Art history should     */
+/*  have separate book. Visual art has separate book. Music has        */
+/*  separate book. Film animation have separate books, and so on.      */
+/*  And each separate book have multiple chapters, multiple lessons    */
+/*  inside it. Do this for all of the fields and subject."             */
+/*                                                                     */
+/*  So the granularity rule is: each DISTINCT ACADEMIC DISCIPLINE is   */
+/*  its own book. A single discipline with sub-areas (Mathematics,     */
+/*  Biology, Law, Economics, Civil Engineering…) stays ONE book with   */
+/*  many chapters — but a bundle of different disciplines (the old     */
+/*  Arts & Culture and Medicine & Health mega-books) must be SPLIT     */
+/*  into one book per discipline. A split is only made when content    */
+/*  supports it: every book needs ≥2 chapters and ≥3 lessons.          */
+/*                                                                     */
 /*  Every knowledge topic is assigned to ONE canonical subject via     */
 /*  its field (ownFields). Inside a subject, topics are grouped into   */
 /*  canonical chapters (matched by field OR branch, with a             */
@@ -429,30 +443,65 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     ],
   },
   {
-    key: 'medicine-health',
-    name: 'Medicine & Health',
+    key: 'medicine',
+    name: 'Medicine & Treatment',
     group: 'Medicine & Health',
-    icon: 'heart-pulse',
+    icon: 'stethoscope',
     accent: '#e11d48',
-    tagline: 'Body and mind, kept well',
-    blurb: 'Disease, medicines, public health, medical technology, nutrition, fitness, sleep, mental health and emergency care.',
+    tagline: 'Disease, diagnosed and treated',
+    blurb: 'How disease works, how medicines act, the technology that sees inside the body, and emergency and reproductive care.',
     ownFields: [
-      'Disease & Treatment', 'Exercise & Fitness', 'First Aid & Emergency Care',
-      'Health & Longevity', 'Medical Technology', 'Medicine & Pharmacology', 'Mental Health',
-      'Nutrition', 'Public Health', 'Sexual & Reproductive Health', 'Sleep Science',
+      'Disease & Treatment', 'Medicine & Pharmacology', 'Medical Technology',
+      'First Aid & Emergency Care', 'Sexual & Reproductive Health',
     ],
     chapters: [
-      { name: 'Disease & Treatment', fields: ['Disease & Treatment'] },
-      { name: 'Medicine & Pharmacology', fields: ['Medicine & Pharmacology'] },
-      { name: 'Public Health', fields: ['Public Health'] },
-      { name: 'Medical Technology', fields: ['Medical Technology'] },
-      { name: 'Nutrition', fields: ['Nutrition'] },
+      { name: 'Understanding Disease', fields: ['Disease & Treatment'] },
+      { name: 'Medicines & Clinical Practice', fields: ['Medicine & Pharmacology', 'Medical Technology'] },
+      { name: 'Emergency & Reproductive Care', fields: ['First Aid & Emergency Care', 'Sexual & Reproductive Health'] },
+    ],
+  },
+  {
+    key: 'public-health',
+    name: 'Public Health',
+    group: 'Medicine & Health',
+    icon: 'activity',
+    accent: '#f43f5e',
+    tagline: 'Health of populations',
+    blurb: 'Epidemiology, immunization and the science of health behavior — keeping whole communities well.',
+    ownFields: ['Public Health'],
+    chapters: [
+      { name: 'Epidemiology', branches: ['Epidemiology'] },
+      { name: 'Immunization & Health Behavior', branches: ['Immunization Science', 'Health Behavior'] },
+    ],
+  },
+  {
+    key: 'health-nutrition-fitness',
+    name: 'Health, Nutrition & Fitness',
+    group: 'Medicine & Health',
+    icon: 'heart-pulse',
+    accent: '#16a34a',
+    tagline: 'Fuel, movement, recovery',
+    blurb: 'What to eat, how the body adapts to training, why sleep matters and the science of aging well.',
+    ownFields: ['Nutrition', 'Exercise & Fitness', 'Sleep Science', 'Health & Longevity'],
+    chapters: [
+      { name: 'Nutrition Science', fields: ['Nutrition'] },
       { name: 'Exercise & Fitness', fields: ['Exercise & Fitness'] },
-      { name: 'Sleep Science', fields: ['Sleep Science'] },
-      { name: 'Mental Health', fields: ['Mental Health'] },
-      { name: 'First Aid & Emergency Care', fields: ['First Aid & Emergency Care'] },
-      { name: 'Health & Longevity', fields: ['Health & Longevity'] },
-      { name: 'Sexual & Reproductive Health', fields: ['Sexual & Reproductive Health'] },
+      { name: 'Sleep, Aging & Longevity', fields: ['Sleep Science', 'Health & Longevity'] },
+    ],
+  },
+  {
+    key: 'mental-health',
+    name: 'Mental Health',
+    group: 'Medicine & Health',
+    icon: 'brain',
+    accent: '#d946ef',
+    tagline: 'The mind, kept well',
+    blurb: 'Mood and anxiety, how therapy works and the biology that links stress, hormones and mind.',
+    ownFields: ['Mental Health'],
+    chapters: [
+      { name: 'Mood & Anxiety', branches: ['Mood and Anxiety'] },
+      { name: 'Mind & Therapy', branches: ['Mind & Therapy'] },
+      { name: 'Mind–Body Science', branches: ['Psychoneuroendocrinology'] },
     ],
   },
   {
@@ -869,27 +918,132 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     chapters: [],
   },
   {
-    key: 'arts-culture',
-    name: 'Arts & Culture',
+    key: 'art-history',
+    name: 'Art History',
+    group: 'Arts & Culture',
+    icon: 'frame',
+    accent: '#f59e0b',
+    tagline: 'Five millennia of seeing',
+    blurb: 'How humans have made images and objects — from caves and pyramids through the Renaissance to the contemporary gallery.',
+    ownFields: ['Art History'],
+    chapters: [
+      { name: 'Foundations & the Ancient World', branches: ['Foundations'] },
+      { name: 'Renaissance to Modernism', branches: ['The Modern Tradition'] },
+      { name: 'World Art Traditions', branches: ['World Art Traditions'] },
+      { name: "The Historian's Craft", branches: ["The Historian's Craft"] },
+      { name: 'The Contemporary Scene', branches: ['The Contemporary Scene'] },
+    ],
+  },
+  {
+    key: 'visual-arts',
+    name: 'Visual Arts',
     group: 'Arts & Culture',
     icon: 'palette',
     accent: '#ec4899',
-    tagline: 'How art works on us',
-    blurb: 'One arts volume — visual arts, design, music, film & animation, performing arts, architecture and art history.',
-    ownFields: [
-      'Animation & Sequential Art', 'Architecture', 'Art History', 'Dance',
-      'Drawing & Painting', 'Fashion & Identity', 'Film & Cinema', 'Music Production',
-      'Music Theory & Practice', 'Photography', 'Sculpture & Craft', 'Theater & Performance',
-      'Visual Design',
-    ],
+    tagline: 'Made by hand, seen by eye',
+    blurb: 'Drawing, painting, photography, sculpture and craft — the studio disciplines of making images and objects.',
+    ownFields: ['Drawing & Painting', 'Photography', 'Sculpture & Craft'],
     chapters: [
-      { name: 'Visual Arts', fields: ['Drawing & Painting', 'Photography', 'Sculpture & Craft'] },
-      { name: 'Design', fields: ['Visual Design', 'Fashion & Identity'] },
-      { name: 'Music', fields: ['Music Theory & Practice', 'Music Production'] },
-      { name: 'Film & Animation', fields: ['Film & Cinema', 'Animation & Sequential Art'] },
-      { name: 'Performing Arts', fields: ['Theater & Performance', 'Dance'] },
-      { name: 'Architecture', fields: ['Architecture'] },
-      { name: 'Art History', fields: ['Art History'] },
+      { name: 'Drawing & Painting', fields: ['Drawing & Painting'] },
+      { name: 'Photography', fields: ['Photography'] },
+      { name: 'Sculpture & Craft', fields: ['Sculpture & Craft'] },
+    ],
+  },
+  {
+    key: 'music',
+    name: 'Music',
+    group: 'Arts & Culture',
+    icon: 'music',
+    accent: '#a855f7',
+    tagline: 'Organized sound, end to end',
+    blurb: 'Theory and harmony, rhythm, melody, ear training, studio production and the great listening traditions of the world.',
+    ownFields: ['Music Theory & Practice', 'Music Production', 'Music History & Appreciation'],
+    chapters: [
+      { name: 'Theory & Musicianship', fields: ['Music Theory & Practice'] },
+      { name: 'Music Production', fields: ['Music Production'] },
+      { name: 'History & Appreciation', fields: ['Music History & Appreciation'] },
+    ],
+  },
+  {
+    key: 'film-cinema',
+    name: 'Film & Cinema',
+    group: 'Arts & Culture',
+    icon: 'film',
+    accent: '#ef4444',
+    tagline: 'The twenty-four frames per second art',
+    blurb: 'Cinematography, editing, screenwriting, film history and sound — how movies are built, shot and cut.',
+    ownFields: ['Film & Cinema'],
+    chapters: [
+      { name: 'Cinematography & Light', branches: ['Cinematography'] },
+      { name: 'Editing & Montage', branches: ['Editing Theory'] },
+      { name: 'Screenwriting & Story', branches: ['Screenwriting & Story'] },
+      { name: 'Film History & Movements', branches: ['Film History & Movements'] },
+      { name: 'Sound & Score', branches: ['Sound & Score'] },
+    ],
+  },
+  {
+    key: 'animation',
+    name: 'Animation',
+    group: 'Arts & Culture',
+    icon: 'clapperboard',
+    accent: '#f97316',
+    tagline: 'Bringing drawings to life',
+    blurb: 'The principles of motion, storyboarding, stop-motion, the digital 3D pipeline and the grammar of comics.',
+    ownFields: ['Animation & Sequential Art'],
+    chapters: [
+      { name: 'Principles of Animation', branches: ['Principles of Animation', 'Moving Pictures'] },
+      { name: 'Storyboarding & Pre-Production', branches: ['Storyboarding & Pre-Production'] },
+      { name: 'Stop-Motion & Hybrid Techniques', branches: ['Stop-Motion & Hybrid'] },
+      { name: 'Digital & 3D Production', branches: ['Digital & 3D'] },
+      { name: 'Comics & Sequential Art', branches: ['Comics & Sequential Art', 'The Page'] },
+    ],
+  },
+  {
+    key: 'design',
+    name: 'Design',
+    group: 'Arts & Culture',
+    icon: 'pen-tool',
+    accent: '#0d9488',
+    tagline: 'Intention made visible',
+    blurb: 'Design foundations and color, typography and layout, interaction and UX, and fashion as a design language.',
+    ownFields: ['Visual Design', 'Fashion & Identity'],
+    chapters: [
+      { name: 'Design Foundations', branches: ['Design Foundations'] },
+      { name: 'Typography & Layout', branches: ['Typography & Layout', 'Type & Letters'] },
+      { name: 'Interaction & UX', branches: ['Interaction & UX'] },
+      { name: 'Fashion & Identity', fields: ['Fashion & Identity'] },
+    ],
+  },
+  {
+    key: 'performing-arts',
+    name: 'Performing Arts',
+    group: 'Arts & Culture',
+    icon: 'drama',
+    accent: '#d946ef',
+    tagline: 'The live arts',
+    blurb: 'Acting, improvisation and ensemble, stagecraft and production, and the world\u2019s dance forms and choreography.',
+    ownFields: ['Theater & Performance', 'Dance'],
+    chapters: [
+      { name: 'Acting & Performance', branches: ['Acting & Performance'] },
+      { name: 'Stagecraft & Production', branches: ['Stagecraft & Production', 'Stage & Performance'] },
+      { name: 'Opera & Musical Theater', branches: ['Words & Music'] },
+      { name: 'Dance Forms & History', branches: ['Dance Forms & History', 'Movement Traditions'] },
+      { name: 'Choreography & Composition', branches: ['Choreography & Composition'] },
+    ],
+  },
+  {
+    key: 'architecture',
+    name: 'Architecture',
+    group: 'Arts & Culture',
+    icon: 'landmark',
+    accent: '#b45309',
+    tagline: 'The art we live inside',
+    blurb: 'The history of building from pyramids to glass towers, how structures stand up, and how architects actually work.',
+    ownFields: ['Architecture'],
+    chapters: [
+      { name: 'History of Architecture', branches: ['History of Architecture', 'Built Form'] },
+      { name: 'Structures & Materials', branches: ['Structures & Materials'] },
+      { name: 'Design & Practice', branches: ['Design & Practice'] },
     ],
   },
   {
