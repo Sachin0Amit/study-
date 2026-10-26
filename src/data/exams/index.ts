@@ -5,6 +5,7 @@ import { INDIA_MEDICAL_EXAMS } from './india-medical'
 import { INDIA_PG_COMPETITIVE_EXAMS } from './india-pg-competitive'
 import { INDIA_GOVT_EXAMS } from './india-govt'
 import { INDIA_PROFESSIONAL_EXAMS } from './india-professional'
+import { INDIA_STATE_CET_EXAMS } from './india-state-cets'
 import { USA_SUBJECT_EXAMS } from './usa-subject'
 import { UK_EXAMS } from './uk'
 import { IB_EXAMS } from './ib'
@@ -28,6 +29,7 @@ export const CURATED_EXAMS: CuratedExam[] = [
   ...INDIA_PG_COMPETITIVE_EXAMS,
   ...INDIA_GOVT_EXAMS,
   ...INDIA_PROFESSIONAL_EXAMS,
+  ...INDIA_STATE_CET_EXAMS,
   ...USA_SUBJECT_EXAMS,
   ...UK_EXAMS,
   ...IB_EXAMS,

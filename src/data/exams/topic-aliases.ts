@@ -742,6 +742,20 @@ export const TOPIC_ALIASES: Record<string, string> = {
     'mind-specific-phobia-biopsychosocial',
   'specific phobia development and interventions':
     'mind-specific-phobia-biopsychosocial',
+  /* ---- KCET Biology (verified 2026-10-26): PUC chapter phrasings whose
+     true owners are single Knowledge-University lessons — each target's
+     concepts were read this pass to confirm genuine coverage:
+     - classification lesson owns taxonomy/five-kingdoms (monera..animalia)
+     - Mendel lesson owns segregation/assortment/pedigrees (linkage and
+       disorders are the beyond-Mendel lesson, same book, next lesson)
+     - immune lesson owns pathogens, innate/adaptive immunity, vaccination
+     (the 'structural organisation in animals' and 'molecular basis of
+     inheritance' phrasings were already aliased above — 2026-10-20 — to
+     bio-zoology-body-plans and bio-dna-structure-replication) */
+  'the living world and biological classification': 'bio-classification-five-kingdoms',
+  'principles of inheritance and variation': 'bio-genetics-mendel',
+  'human health and disease': 'bio-immune-system',
+  'sexual reproduction in flowering plants': 'bio-plant-reproduction-flowers-seeds',
   /* ---- QCE Biology (verified 2026-10-26): the 2025 syllabus topic
      'Biodiversity and populations' (Unit 3) is taught verbatim by the
      env-measuring-biodiversity lesson — richness/evenness/Simpson's index,
