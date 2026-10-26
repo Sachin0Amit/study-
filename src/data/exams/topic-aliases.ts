@@ -742,4 +742,11 @@ export const TOPIC_ALIASES: Record<string, string> = {
     'mind-specific-phobia-biopsychosocial',
   'specific phobia development and interventions':
     'mind-specific-phobia-biopsychosocial',
+  /* ---- QCE Biology (verified 2026-10-26): the 2025 syllabus topic
+     'Biodiversity and populations' (Unit 3) is taught verbatim by the
+     env-measuring-biodiversity lesson — richness/evenness/Simpson's index,
+     stratified quadrat sampling, species classification, limiting factors —
+     but the generic matcher needs ≥2 name-token overlap and 'and'+'and'
+     does not connect. Alias verified against the lesson's concepts. */
+  'biodiversity and populations': 'env-measuring-biodiversity',
 }

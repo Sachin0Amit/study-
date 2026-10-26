@@ -825,4 +825,161 @@ export const x26BankingManagementPassTopics: KnowledgeTopic[] = [
       ] },
     ],
   },
+  // --------------------------------------------------------------------
+  // Exam-gap pass (2026-10-26): 'Earth geometry' (locations, distances on
+  // the Earth, time zones) had zero live coverage — the Geometry &
+  // Measurement chapter had planar mensuration (the lesson above) and the
+  // Mathematics book's vector chapters have 3-D vectors, but neither
+  // teaches latitude/longitude, great-circle distance or time-zone
+  // arithmetic. Carved against math-measurement-areas-volumes (planar) and
+  // ku vectors chapters (vector space, not navigation).
+  {
+    id: 'math-earth-geometry',
+    title: 'Earth Geometry: Latitude, Longitude, Great Circles and Time Zones',
+    domain: 'Mathematics',
+    field: 'Geometry & Measurement',
+    branch: 'Mensuration',
+    tier: 'intermediate',
+    concepts: [
+      'Latitude and longitude as the Earth\u2019s coordinate grid',
+      'One degree of arc \u2248 111 km; the nautical mile',
+      'Great circles as shortest routes',
+      'Distance shrinks with cos(latitude) along a parallel',
+      'Time zones: 15\u00b0 per hour from UTC',
+      'The International Date Line',
+    ],
+    words: 1338,
+    readMins: 7,
+    addedOn: '2026-10-26',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'The Earth is a ball of rock roughly 40,000 kilometres around, and every point on it has an address made of two angles. Latitude measures how far north or south of the equator a place sits, from 0\u00b0 at the equator to 90\u00b0 at each pole; longitude measures how far east or west it sits of the prime meridian through Greenwich, from 0\u00b0 to 180\u00b0 each way. Together the pair locates any spot on the planet — and, because angles on a known sphere convert directly into distances and times, this coordinate grid quietly runs aviation, shipping, GPS navigation and the world\u2019s clocks.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'Airline routes, container shipping, satellite positioning and international flight scheduling are all applied spherical geometry. The same arithmetic answers exam staples: distances between cities, arrival times across time zones and the odd behaviour of routes that look bent on a flat map but are shortest on the globe.',
+        tone: 'insight',
+      },
+      { kind: 'heading', text: 'Core Concepts' },
+      {
+        kind: 'para',
+        text: 'The grid is drawn from two families of circles. Parallels of latitude run east-west and stay parallel to the equator; only the equator itself is a great circle — the others shrink toward the poles. Meridians of longitude run pole to pole, all of them great circles, and any meridian paired with its opposite meridian forms a full great circle through both poles. Because a full circle contains 360 degrees and the Earth turns once in 24 hours, the planet spins through 15 degrees of longitude every hour — which is exactly why the world\u2019s time zones are, on average, 15 degrees wide.',
+      },
+      {
+        kind: 'para',
+        text: 'Angles become distances through the sphere\u2019s size. The equatorial circumference is about 40,075 kilometres, so one degree of arc along any great circle is about 40,075 \u00f7 360 \u2248 111 kilometres (navigation rounds it: one minute of arc, a sixtieth of a degree, is defined as the nautical mile, 1.852 km). Along a meridian this is exact enough for everyday work: two places 10 degrees of latitude apart are about 1,110 kilometres apart. Along a parallel, however, the ground shrinks as you approach the poles, because the circle you are walking is smaller — distance per degree of longitude scales with the cosine of the latitude, reaching 111 cos(\u03c6) kilometres per degree. At Brisbane\u2019s latitude of about 27.5\u00b0S, one degree of longitude is only about 98 kilometres; at 60\u00b0N it is barely 55.',
+      },
+      {
+        kind: 'para',
+        text: 'The shortest route between two points on a sphere is the arc of the great circle through them — not the straight line a flat map suggests, and not the parallel that "looks level". This is why flights from, say, London to Singapore arc far toward the pole on a Mercator map: on the globe, that curve is the straightest path. Computing such a great-circle distance between two arbitrary points uses the spherical law of cosines or the equivalent haversine formula from the two cities\u2019 latitudes and longitudes; the spherical geometry chapter\u2019s trigonometry does the rest. The key qualitative rule survives every formula: any route that is not a great-circle arc is longer than it needs to be.',
+      },
+      {
+        kind: 'para',
+        text: 'Time zones convert longitude into hours. Local standard time equals UTC plus an offset of one hour for every 15 degrees east (ahead) or west (behind) of the Greenwich meridian — so Perth at 116\u00b0E keeps UTC+8, Brisbane at 153\u00b0E keeps UTC+10, and when it is noon UTC it is already 10 p.m. in Brisbane but only 8 p.m. in Perth. Political boundaries bend the zone lines for convenience — China keeps one zone for the whole country — and some jurisdictions shift for daylight saving in summer, so real offsets must be checked, not just derived. The International Date Line, drawn near 180\u00b0 through the empty Pacific, marks the calendar seam: crossing it westbound adds a day, eastbound subtracts one, which is why flying Sydney to Los Angeles lands "before" it left.',
+      },
+      { kind: 'heading', text: 'The Mathematics' },
+      {
+        kind: 'formula',
+        name: 'Distance along a meridian',
+        latex: 'd \\approx 111\\,\\text{km} \\times \\Delta\\phi',
+        meaning: 'Two points \u0394\u03c6 degrees of latitude apart on (roughly) the same meridian are 111 km per degree apart.',
+      },
+      {
+        kind: 'formula',
+        name: 'Distance per degree along a parallel',
+        latex: 'd_{\\text{per deg}} \\approx 111 \\cos(\\varphi)\\,\\text{km}',
+        meaning: 'At latitude \u03c6, one degree of longitude spans 111 cos \u03c6 kilometres — shrinking to zero at the poles.',
+      },
+      {
+        kind: 'formula',
+        name: 'Time-zone offset',
+        latex: '\\Delta t = \\frac{\\Delta\\lambda}{15\\degree}\\ \\text{hours}',
+        meaning: 'The time difference between two standard-zone locations equals their longitude difference divided by 15 degrees per hour.',
+      },
+      {
+        kind: 'example',
+        title: 'Worked Example',
+        steps: [
+          'Problem: Townsville sits at about 19.3\u00b0S, 146.8\u00b0E; Mount Isa at about 20.7\u00b0S, 139.5\u00b0E. Estimate the east-west separation along their shared latitude.',
+          'Longitude gap: 146.8 \u2212 139.5 = 7.3 degrees. Average latitude \u2248 20\u00b0S.',
+          'Kilometres per degree of longitude at 20\u00b0S: 111 \u00d7 cos 20\u00b0 \u2248 111 \u00d7 0.940 \u2248 104 km.',
+          'Distance: 7.3 \u00d7 104 \u2248 760 kilometres — and the time difference with UTC stays fixed all along: both cities run UTC+10, so 12:00 UTC is 22:00 local in each.',
+        ],
+      },
+      { kind: 'heading', text: 'Applications in the Real World' },
+      {
+        kind: 'list',
+        items: [
+          'Flight planning: airlines file great-circle routes that look bowed on flat maps but minimise fuel and time',
+          'GPS receivers reporting position as decimal degrees to six places — about 0.1 metre of precision',
+          'Broadcast and meeting scheduling across UTC offsets, with daylight-saving exceptions checked against tables',
+          'Marine charts dividing the frame into degrees and minutes, with distances measured in nautical miles against the latitude scale',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Common Pitfalls',
+        text: 'Latitude comes first in most written coordinates (Brisbane 27.5\u00b0S, 153.0\u00b0E) — swapping the pair puts you in the ocean. The 111 km rule applies to degrees along a great circle, not along a parallel: forgetting the cosine factor overestimates east-west distances near the poles. Time offsets are zone-relative, not longitude-derived, where politics overrides geometry, and daylight saving silently shifts half a continent. Crossing the date line changes the date, not just the hour.',
+        tone: 'warn',
+      },
+      { kind: 'heading', text: 'Key Terms' },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Latitude', def: 'Angular distance north or south of the equator, 0\u00b0 to 90\u00b0.' },
+          { term: 'Longitude', def: 'Angular distance east or west of the Greenwich prime meridian, 0\u00b0 to 180\u00b0.' },
+          { term: 'Great circle', def: 'Any circle on the sphere whose centre is the Earth\u2019s centre; its arcs are the shortest surface routes.' },
+          { term: 'Nautical mile', def: 'One minute of arc along a great circle, 1.852 km by definition.' },
+          { term: 'UTC', def: 'Coordinated Universal Time — the reference clock from which all time-zone offsets are counted.' },
+          { term: 'International Date Line', def: 'The calendar boundary near 180\u00b0 longitude; crossing it changes the date by one day.' },
+        ],
+      },
+      { kind: 'heading', text: 'Check Yourself' },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'Two islands lie on the same meridian, 5 degrees of latitude apart. Their separation is closest to:',
+            options: ['5 km', '55 km', '111 km', '555 km'],
+            answer: 3,
+            explain: 'One degree along a great circle is about 111 km, so 5 degrees \u2248 555 km.',
+          },
+          {
+            q: 'At 60\u00b0N latitude, one degree of longitude spans roughly:',
+            options: ['19 km', '55 km', '96 km', '111 km'],
+            answer: 1,
+            explain: '111 cos 60\u00b0 = 111 \u00d7 0.5 = 55.5 km — parallels shrink toward the poles.',
+          },
+          {
+            q: 'Perth runs UTC+8 and Brisbane UTC+10. When a Perth office opens at 9:00 a.m. local time, it is already:',
+            options: ['7:00 a.m. in Brisbane', '11:00 a.m. in Brisbane', '9:00 a.m. in Brisbane', '1:00 p.m. in Brisbane'],
+            answer: 1,
+            explain: 'Brisbane is two hours ahead of Perth, so 9:00 + 2 = 11:00 a.m. local Brisbane time.',
+          },
+          {
+            q: 'A plane crosses the International Date Line flying westbound from Honolulu to Auckland. The calendar:',
+            options: ['jumps back one day', 'jumps forward one day', 'changes by one hour per 15 degrees only', 'does not change at all'],
+            answer: 1,
+            explain: 'Westward crossing of the date line adds a day — eastbound subtracts one.',
+          },
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Where to go next',
+        text: 'Prerequisites: planar mensuration in the Geometry & Measurement chapter for arc-length logic, and trigonometry for the cosine that shrinks the parallels. Follow with the navigation lesson in Everyday Life Skills for compass-and-map fieldwork, and the vectors chapters for the full three-dimensional picture of the coordinate grid.',
+        tone: 'path',
+      },
+      { kind: 'heading', text: 'Five-Minute Recap' },
+      { kind: 'list', ordered: true, items: [
+        'Coordinates: latitude first (0-90\u00b0 N/S from the equator), longitude second (0-180\u00b0 E/W from Greenwich).',
+        'Scale: 1\u00b0 of great-circle arc \u2248 111 km; 1\u2032 = 1 nautical mile = 1.852 km.',
+        'Parallels shrink: distance per degree of longitude = 111 cos(latitude) km.',
+        'Shortest routes are great-circle arcs — the bent-looking lines on flat maps.',
+        'Time: 15\u00b0 per hour around UTC; date line at \u2248180\u00b0 adds or drops a day; real zones bend for politics and daylight saving.',
+      ] },
+    ],
+  },
 ]

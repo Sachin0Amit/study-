@@ -234,6 +234,8 @@ const IDS = [
   'psy-memory-multistore-brain',
   'mind-specific-phobia-biopsychosocial',
   'stats-time-series-trend-seasonality',
+  'env-measuring-biodiversity',
+  'math-earth-geometry',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

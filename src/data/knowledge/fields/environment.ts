@@ -2864,5 +2864,155 @@ export const environment: KnowledgeDomainFile = {
         },
       ],
     },
+    // ------------------------------------------------------------------
+    // Exam-gap pass (2026-10-26): 'measuring biodiversity' was uncovered —
+    // env-biodiversity-loss teaches extinction drivers, this one teaches the
+    // field quantification (richness, evenness, Simpson's index, quadrat and
+    // mark-recapture sampling). Carved against env-biodiversity-loss and
+    // ku-eco populations/communities lessons (they teach dynamics, not
+    // measurement protocols).
+    {
+      id: 'env-measuring-biodiversity',
+      title: 'Measuring Biodiversity: Richness, Evenness, Sampling and Simpson\u2019s Index',
+      domain: 'Environment & Sustainability',
+      field: 'Conservation Biology',
+      branch: 'Ecology',
+      tier: 'intermediate',
+      concepts: [
+        'Richness counts species; evenness weighs their balance',
+        'Quadrats and transects for field sampling',
+        'Simpson\u2019s index of diversity',
+        'Shannon index and information entropy',
+        'Mark-recapture and the Lincoln index',
+        'Sampling effort and bias control',
+      ],
+      words: 1089,
+      readMins: 5,
+      addedOn: '2026-10-26',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'You cannot protect what you cannot count. Every reserve designation, every environmental impact assessment and every recovery plan begins with a number, and that number comes from someone kneeling in a quadrat at 6 a.m. counting grasses. Measuring biodiversity is therefore a skill in its own right — part field craft, part statistics — and the instruments it uses turn the vague idea that "this wetland is healthier than that one" into defensible, comparable data.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Biodiversity data decide where parks go, whether a mine proceeds and if a restoration project is actually working. A census that misses the rare subpopulation, or an index chosen badly, quietly rewrites policy.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Biodiversity measurement starts from two distinct ingredients. Species richness is simply the number of different species present — a wetland with fourteen bird species is richer than one with nine. Species evenness describes how evenly individuals are spread across those species: a pond where 95 percent of fish belong to one invader is, in a meaningful sense, less diverse than a pond where four species share the water equally, even though both have richness four. Every diversity index is an attempt to compress richness and evenness into one number without losing the difference between them.',
+        },
+        {
+          kind: 'para',
+          text: 'Nobody can count everything, so ecologists sample. A quadrat is a square frame — often one square metre for plants — thrown or placed systematically, within which every target organism is counted or its percentage cover estimated. The quadrats must be placed without preference: random coordinates, or a systematic grid, never "where the flowers look nice". A transect is a line laid across a habitat, with quadrats or counts taken at intervals along it — ideal for capturing change across a gradient, say from dune to slack or from grassland into forest. Stratified sampling refines this further: if the reserve is 70 percent woodland and 30 percent marsh, seventy percent of sampling effort should land in each, so no habitat is silently under-represented.',
+        },
+        {
+          kind: 'para',
+          text: 'Animals that move cannot be quadratted. For mobile populations the standard tool is capture-mark-recapture: trap a sample, mark each individual harmlessly, release, then trap again later. If the second sample contains the same proportion of marked animals as the whole population supposedly holds, the population can be estimated by the Lincoln index: total population equals marked individuals times total second capture, divided by marked recaptures. The method assumes the population is closed — no births, deaths, immigration or emigration between sessions — that marking does not change catchability, and that every animal has an equal chance of capture. Violate an assumption and the estimate is biased, not merely noisy.',
+        },
+        { kind: 'heading', text: 'The Mathematics' },
+        {
+          kind: 'formula',
+          name: 'Simpson\u2019s index of diversity',
+          latex: 'D_{1} = 1 - \\sum_{i=1}^{S} \\left( \\frac{n_i}{N} \\right)^2',
+          meaning: 'The probability that two individuals drawn at random belong to different species. Ranges from 0 (one species only) toward 1 (many, evenly mixed).',
+        },
+        {
+          kind: 'formula',
+          name: 'Shannon index',
+          latex: 'H = -\\sum_{i=1}^{S} p_i \\ln p_i',
+          meaning: 'Information entropy of the community: uncertainty about the identity of the next individual drawn. Larger values mean richer, more even communities.',
+        },
+        {
+          kind: 'formula',
+          name: 'Lincoln index (population estimate)',
+          latex: 'N = \\frac{M \\times C}{R}',
+          meaning: 'Estimated population N from M marked, C captured in the second sample and R of those recaptures bearing marks.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Set the scene: a 100-stem quadrat survey of a meadow finds four grass species with counts 30, 25, 25 and 20.',
+            'Compute each species\u2019 squared proportion: (0.30)\u00b2 = 0.090, (0.25)\u00b2 = 0.0625, (0.25)\u00b2 = 0.0625, (0.20)\u00b2 = 0.040.',
+            'Sum and subtract: \u03a3p\u00b2 = 0.255, so Simpson\u2019s diversity D\u2081 = 1 \u2212 0.255 = 0.745.',
+            'Compare: a rival meadow with the same four species but counts 85, 5, 5, 5 gives \u03a3p\u00b2 \u2248 0.727 and D\u2081 \u2248 0.273 — identical richness, far lower evenness, and the index catches it.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Environmental impact statements that must show, with numbers, how a proposed road or mine changes local diversity',
+            'Repeat surveys of the same transects year after year, turning indices into trends that reveal whether restoration is working',
+            'Fisheries and wildlife agencies estimating stock sizes by mark-recapture where direct counting is impossible',
+            'Citizen-science programmes — bird counts, bioblitzes — whose richness records feed national biodiversity indicators',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'Richness alone flatters degraded sites: a weed-invaded patch can out-count a pristine one while its evenness collapses. Small samples miss rare species, so indices rise with effort — always compare sites sampled with equal intensity. In mark-recapture, a trap-shy or trap-happy animal skews every estimate, and marks that rub off or harm the animal bias R downward or upward respectively.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Species richness', def: 'The number of different species in a defined area, ignoring their abundances.' },
+            { term: 'Evenness', def: 'How close to equal the abundances of the present species are.' },
+            { term: 'Quadrat', def: 'A frame of known area within which organisms are counted or cover estimated.' },
+            { term: 'Transect', def: 'A measured line along which samples are taken to record change across a habitat.' },
+            { term: "Simpson's index of diversity", def: 'One minus the summed squared proportions: the chance two random individuals differ in species.' },
+            { term: 'Lincoln index', def: 'Mark-recapture population estimate: N = MC/R under closed-population assumptions.' },
+            { term: 'Stratified sampling', def: 'Allocating sampling effort in proportion to the areas of different habitat zones.' },
+          ],
+        },
+        { kind: 'heading', text: 'Check Yourself' },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'Two plots each contain 10 species. Plot A is dominated by one species holding 90 percent of individuals; Plot B\u2019s individuals are spread evenly. Which is true?',
+              options: ['A is more diverse because dominance indicates stability', 'Both have equal diversity because richness matches', 'B is more diverse — equal richness but higher evenness', 'Diversity cannot be compared without a new survey'],
+              answer: 2,
+              explain: 'Diversity indices combine richness with evenness; equal counts of species does not mean equal diversity.',
+            },
+            {
+              q: 'A community of 100 individuals has four species with counts 30, 25, 25, 20. Simpson\u2019s diversity (1 \u2212 D) is about:',
+              options: ['0.255', '0.495', '0.745', '1.255'],
+              answer: 2,
+              explain: '\u03a3p\u00b2 = 0.090 + 0.0625 + 0.0625 + 0.040 = 0.255, and 1 \u2212 0.255 = 0.745.',
+            },
+            {
+              q: 'Researchers mark 40 beetles and release them. A later capture of 50 beetles includes 10 marked ones. The estimated population is:',
+              options: ['80', '140', '200', '2,000'],
+              answer: 2,
+              explain: 'By the Lincoln index N = MC/R = 40 \u00d7 50 / 10 = 200.',
+            },
+            {
+              q: 'Which change most directly threatens the validity of a mark-recapture estimate?',
+              options: [
+                'Sampling on two consecutive weekends',
+                'Marked animals becoming easier to re-trap because they learned where bait is',
+                'Recording air temperature during sampling',
+                'Using a larger quadrat for plants than for animals',
+              ],
+              answer: 1,
+              explain: 'Equal catchability is a core assumption; bait-learning makes recaptures over-represent, biasing the estimate downward.',
+            },
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Where to go next',
+          text: 'Within this domain, biodiversity loss explains what these numbers are declining toward, and restoration ecology shows how sites are monitored against their own baselines. The populations and communities lessons extend sampling into population dynamics.',
+          tone: 'path',
+        },
+      ],
+    },
   ],
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T22:32:43.074Z",
+  "generatedAt": "2026-10-26T01:36:08.506Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 138,
     "books": 138,
     "chapters": 863,
-    "sections": 4612
+    "sections": 4614
   },
   "subjects": [
     {
@@ -21,7 +21,7 @@
       "group": "Foundations",
       "tagline": "From first principles to research frontiers",
       "chapterCount": 76,
-      "sectionCount": 486,
+      "sectionCount": 487,
       "chapters": [
         {
           "id": "rosen-ch1",
@@ -3119,12 +3119,17 @@
           "title": "Geometry & Measurement",
           "shortTitle": "Geometry & Measurement",
           "bookId": "math-master",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-math-measurement-areas-volumes",
               "number": 73.1,
               "title": "Mensuration and Calculation: Perimeter, Area, Surface Area and Volume"
+            },
+            {
+              "id": "ku-math-earth-geometry",
+              "number": 73.2,
+              "title": "Earth Geometry: Latitude, Longitude, Great Circles and Time Zones"
             }
           ]
         },
@@ -27206,7 +27211,7 @@
       "group": "Life Sciences",
       "tagline": "Who lives where, and why",
       "chapterCount": 4,
-      "sectionCount": 8,
+      "sectionCount": 9,
       "chapters": [
         {
           "id": "ku-ecology-conservation-organisms-and-the-environment",
@@ -27274,7 +27279,7 @@
           "title": "Conservation & Restoration",
           "shortTitle": "Conservation & Restoration",
           "bookId": "ku-ecology-conservation",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-env-biodiversity-loss",
@@ -27285,6 +27290,11 @@
               "id": "ku-env-restoration-rewilding",
               "number": 4.2,
               "title": "Restoration and Rewilding: Putting Ecosystems Back Together"
+            },
+            {
+              "id": "ku-env-measuring-biodiversity",
+              "number": 4.3,
+              "title": "Measuring Biodiversity: Richness, Evenness, Sampling and Simpson’s Index"
             }
           ]
         }

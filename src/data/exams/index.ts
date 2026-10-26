@@ -13,6 +13,7 @@ import { JAPAN_EXAMS } from './japan'
 import { CHINA_EXAMS } from './china'
 import { AUSTRALIA_EXAMS } from './australia'
 import { VICTORIA_EXAMS } from './victoria'
+import { QUEENSLAND_EXAMS } from './queensland'
 import { CANADA_EXAMS } from './canada'
 
 /**
@@ -35,6 +36,7 @@ export const CURATED_EXAMS: CuratedExam[] = [
   ...CHINA_EXAMS,
   ...AUSTRALIA_EXAMS,
   ...VICTORIA_EXAMS,
+  ...QUEENSLAND_EXAMS,
   ...CANADA_EXAMS,
 ].sort((a, b) => b.popularity - a.popularity)
 

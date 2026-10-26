@@ -17,13 +17,13 @@
 - **Subjects:** 138
 - **Books (master volumes):** 138
 - **Chapters:** 863
-- **Sections (lessons):** 4612
+- **Sections (lessons):** 4614
 
 ## Foundations — 7 subjects
 
 ### Mathematics (`mathematics`)
 
-*From first principles to research frontiers* — 76 chapters · 486 sections
+*From first principles to research frontiers* — 76 chapters · 487 sections
 
 - **Ch 1. The Foundations: Logic and Proofs** `rosen-ch1` — 8 sections: Propositional Logic; Applications of Propositional Logic; Propositional Equivalences; Predicates and Quantifiers; Nested Quantifiers; Rules of Inference; Introduction to Proofs; Proof Methods and Strategy
 - **Ch 2. Basic Structures: Sets, Functions, Sequences, Sums, and Matrices** `rosen-ch2` — 6 sections: Sets; Set Operations; Functions; Sequences and Summations; Cardinality of Sets; Matrices
@@ -97,7 +97,7 @@
 - **Ch 70. Sets, Logic & Mathematical Foundations** `ku-x-math-master-sets-logic-and-mathematical-foundations` — 1 sections: Sets and Logical Terms: The Grammar of Precise Mathematics
 - **Ch 71. Algebra** `ku-x-math-master-algebra` — 2 sections: Algebraic Notation and Manipulation: The Grammar of Expressions; Quadratics: Four Ways to Solve, One Formula to Rule Them
 - **Ch 72. Calculus** `ku-x-math-master-calculus` — 3 sections: Removing Discontinuities: Finding and Filling the Holes; Linearization and Differentials: The Tangent as a Calculator; Concavity and the Second Derivative Test
-- **Ch 73. Geometry & Measurement** `ku-x-math-master-geometry-and-measurement` — 1 sections: Mensuration and Calculation: Perimeter, Area, Surface Area and Volume
+- **Ch 73. Geometry & Measurement** `ku-x-math-master-geometry-and-measurement` — 2 sections: Mensuration and Calculation: Perimeter, Area, Surface Area and Volume; Earth Geometry: Latitude, Longitude, Great Circles and Time Zones
 - **Ch 74. Discrete Mathematics** `ku-x-math-master-discrete-mathematics` — 1 sections: Tournament Formats and Fixture Arithmetic: Knockouts, Round-Robins and Points Tables
 - **Ch 75. Probability & Statistics** `ku-x-math-master-probability-and-statistics` — 7 sections: Time Series: Trend, Seasonality and Forecasting from Data Ordered in Time; Quartiles, Cumulative Frequency and Box Plots; Reading Data: Bar Charts, Line Graphs, Pie Charts and Combined Sources; Describing Data: Center, Spread and the Normal Distribution; Sampling and the Central Limit Theorem; Confidence Intervals and Hypothesis Testing; Correlation and Linear Regression
 - **Ch 76. Applied Mathematics & Numeracy** `ku-x-math-master-applied-mathematics-and-numeracy` — 3 sections: Percentage, Ratio and Mental Math Shortcuts; Linear Programming by Graph: Feasible Regions and Corner Points; From Words to Equations: Formulating Real-Life Problems
@@ -848,12 +848,12 @@
 
 ### Ecology & Conservation (`ku-ecology-conservation`)
 
-*Who lives where, and why* — 4 chapters · 8 sections
+*Who lives where, and why* — 4 chapters · 9 sections
 
 - **Ch 1. Organisms & the Environment** `ku-ecology-conservation-organisms-and-the-environment` — 1 sections: Life at the Limits: How Organisms Answer Habitat and Abiotic Stress
 - **Ch 2. Populations & Communities** `ku-ecology-conservation-populations-and-communities` — 1 sections: Populations and Communities: Interactions, Niches and Disturbance
 - **Ch 3. Ecosystems, Energy & Biomes** `ku-ecology-conservation-ecosystems-energy-and-biomes` — 4 sections: Ecosystems and the Flow of Energy; Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters; Biomes: A Tour of Earth's Major Ecosystems; Population Ecology: Growth, Limits and Cycles
-- **Ch 4. Conservation & Restoration** `ku-ecology-conservation-conservation-and-restoration` — 2 sections: Biodiversity and the Sixth Extinction; Restoration and Rewilding: Putting Ecosystems Back Together
+- **Ch 4. Conservation & Restoration** `ku-ecology-conservation-conservation-and-restoration` — 3 sections: Biodiversity and the Sixth Extinction; Restoration and Rewilding: Putting Ecosystems Back Together; Measuring Biodiversity: Richness, Evenness, Sampling and Simpson’s Index
 
 ### Microbiology & Immunology (`ku-microbiology-immunology`)
 
