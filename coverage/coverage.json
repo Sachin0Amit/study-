@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T13:37:52.269Z",
+  "generatedAt": "2026-10-26T15:44:19.419Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 138,
     "books": 138,
     "chapters": 870,
-    "sections": 4637
+    "sections": 4640
   },
   "subjects": [
     {
@@ -21,7 +21,7 @@
       "group": "Foundations",
       "tagline": "From first principles to research frontiers",
       "chapterCount": 76,
-      "sectionCount": 487,
+      "sectionCount": 490,
       "chapters": [
         {
           "id": "rosen-ch1",
@@ -3074,7 +3074,7 @@
           "title": "Algebra",
           "shortTitle": "Algebra",
           "bookId": "math-master",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-math-algebra-notation-manipulation",
@@ -3085,6 +3085,11 @@
               "id": "ku-math-quadratics-completing-square",
               "number": 71.2,
               "title": "Quadratics: Four Ways to Solve, One Formula to Rule Them"
+            },
+            {
+              "id": "ku-math-modulus-logarithm-inequalities",
+              "number": 71.3,
+              "title": "Modulus and Logarithm Inequalities: The Algebra of Distance and of Growth"
             }
           ]
         },
@@ -3094,7 +3099,7 @@
           "title": "Calculus",
           "shortTitle": "Calculus",
           "bookId": "math-master",
-          "sectionCount": 3,
+          "sectionCount": 4,
           "sections": [
             {
               "id": "ku-calc-removing-discontinuities",
@@ -3110,6 +3115,11 @@
               "id": "ku-calc-concavity-second-derivative-test",
               "number": 72.3,
               "title": "Concavity and the Second Derivative Test"
+            },
+            {
+              "id": "ku-calc-definite-integral-properties",
+              "number": 72.4,
+              "title": "Properties of Definite Integrals: Reflection, Periodicity and the Leibniz Rule"
             }
           ]
         },
@@ -3119,7 +3129,7 @@
           "title": "Geometry & Measurement",
           "shortTitle": "Geometry & Measurement",
           "bookId": "math-master",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-math-measurement-areas-volumes",
@@ -3130,6 +3140,11 @@
               "id": "ku-math-earth-geometry",
               "number": 73.2,
               "title": "Earth Geometry: Latitude, Longitude, Great Circles and Time Zones"
+            },
+            {
+              "id": "ku-math-sphere-three-dimensions",
+              "number": 73.3,
+              "title": "The Sphere in Three-Dimensional Coordinate Geometry"
             }
           ]
         },

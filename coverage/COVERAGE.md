@@ -17,13 +17,13 @@
 - **Subjects:** 138
 - **Books (master volumes):** 138
 - **Chapters:** 870
-- **Sections (lessons):** 4637
+- **Sections (lessons):** 4640
 
 ## Foundations — 7 subjects
 
 ### Mathematics (`mathematics`)
 
-*From first principles to research frontiers* — 76 chapters · 487 sections
+*From first principles to research frontiers* — 76 chapters · 490 sections
 
 - **Ch 1. The Foundations: Logic and Proofs** `rosen-ch1` — 8 sections: Propositional Logic; Applications of Propositional Logic; Propositional Equivalences; Predicates and Quantifiers; Nested Quantifiers; Rules of Inference; Introduction to Proofs; Proof Methods and Strategy
 - **Ch 2. Basic Structures: Sets, Functions, Sequences, Sums, and Matrices** `rosen-ch2` — 6 sections: Sets; Set Operations; Functions; Sequences and Summations; Cardinality of Sets; Matrices
@@ -95,9 +95,9 @@
 - **Ch 68. Schaum Lab: Mappings & Eigenvalues** `engmath-ch23` — 4 sections: Matrix-of-Map Problems; Invertibility Drills; Eigenvalue Computation Sprints; Dual Space & Functional Drills
 - **Ch 69. Schaum Lab: Canonical Forms & Inner Products** `engmath-ch24` — 4 sections: Diagonalization Decisions; Jordan Preview & Defective Cases; Gram-Schmidt Drills; Quadratic & Hermitian Forms
 - **Ch 70. Sets, Logic & Mathematical Foundations** `ku-x-math-master-sets-logic-and-mathematical-foundations` — 1 sections: Sets and Logical Terms: The Grammar of Precise Mathematics
-- **Ch 71. Algebra** `ku-x-math-master-algebra` — 2 sections: Algebraic Notation and Manipulation: The Grammar of Expressions; Quadratics: Four Ways to Solve, One Formula to Rule Them
-- **Ch 72. Calculus** `ku-x-math-master-calculus` — 3 sections: Removing Discontinuities: Finding and Filling the Holes; Linearization and Differentials: The Tangent as a Calculator; Concavity and the Second Derivative Test
-- **Ch 73. Geometry & Measurement** `ku-x-math-master-geometry-and-measurement` — 2 sections: Mensuration and Calculation: Perimeter, Area, Surface Area and Volume; Earth Geometry: Latitude, Longitude, Great Circles and Time Zones
+- **Ch 71. Algebra** `ku-x-math-master-algebra` — 3 sections: Algebraic Notation and Manipulation: The Grammar of Expressions; Quadratics: Four Ways to Solve, One Formula to Rule Them; Modulus and Logarithm Inequalities: The Algebra of Distance and of Growth
+- **Ch 72. Calculus** `ku-x-math-master-calculus` — 4 sections: Removing Discontinuities: Finding and Filling the Holes; Linearization and Differentials: The Tangent as a Calculator; Concavity and the Second Derivative Test; Properties of Definite Integrals: Reflection, Periodicity and the Leibniz Rule
+- **Ch 73. Geometry & Measurement** `ku-x-math-master-geometry-and-measurement` — 3 sections: Mensuration and Calculation: Perimeter, Area, Surface Area and Volume; Earth Geometry: Latitude, Longitude, Great Circles and Time Zones; The Sphere in Three-Dimensional Coordinate Geometry
 - **Ch 74. Discrete Mathematics** `ku-x-math-master-discrete-mathematics` — 1 sections: Tournament Formats and Fixture Arithmetic: Knockouts, Round-Robins and Points Tables
 - **Ch 75. Probability & Statistics** `ku-x-math-master-probability-and-statistics` — 7 sections: Time Series: Trend, Seasonality and Forecasting from Data Ordered in Time; Quartiles, Cumulative Frequency and Box Plots; Reading Data: Bar Charts, Line Graphs, Pie Charts and Combined Sources; Describing Data: Center, Spread and the Normal Distribution; Sampling and the Central Limit Theorem; Confidence Intervals and Hypothesis Testing; Correlation and Linear Regression
 - **Ch 76. Applied Mathematics & Numeracy** `ku-x-math-master-applied-mathematics-and-numeracy` — 3 sections: Percentage, Ratio and Mental Math Shortcuts; Linear Programming by Graph: Feasible Regions and Corner Points; From Words to Equations: Formulating Real-Life Problems
