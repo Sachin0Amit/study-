@@ -36,6 +36,12 @@ import { technologyApplied } from '../src/data/knowledge/fields/technology-appli
 import { computingAI } from '../src/data/knowledge/fields/computing-ai'
 
 const IDS = [
+  'bio-dev-stem-cells-regeneration',
+  'emer-synbio-genetic-circuits',
+  'hum-eco-money-bretton-woods',
+  'urb-urban-mobility-transit',
+  'anth-fieldwork-ethnography',
+  'media-algorithmic-feed',
   'bio-chromosome-number-structure',
   'bio-alleles-mullers-morphs',
   'bio-penetrance-expressivity',

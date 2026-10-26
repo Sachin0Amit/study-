@@ -486,11 +486,12 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'egg',
     accent: '#ec4899',
     tagline: 'From one cell to a body',
-    blurb: 'How a fertilized egg builds an organism — the model organisms, genes and cell behaviors that sculpt the embryo.',
+    blurb: 'How a fertilized egg builds an organism — the model organisms, genes and cell behaviors that sculpt the embryo, and the stem cells that renew and rebuild bodies.',
     ownFields: ['Developmental Biology'],
     chapters: [
       { name: 'Building the Body', branches: ['Growth & Form'] },
       { name: 'Mechanisms & Model Organisms', branches: ['Developmental Mechanisms'] },
+      { name: 'Growth, Renewal & Regeneration', branches: ['Growth, Renewal & Regeneration'] },
     ],
   },
   {
@@ -530,10 +531,11 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'component',
     accent: '#d946ef',
     tagline: 'Life, engineered',
-    blurb: 'Designing and building biological systems — parts, circuits, chassis, the design-build-test-learn cycle, applications, biosafety and ethics.',
+    blurb: 'Designing and building biological systems — parts and circuits, chassis, the design-build-test-learn cycle, applications, biosafety and ethics.',
     ownFields: ['Synthetic Biology'],
     chapters: [
       { name: 'Programming Living Cells', branches: ['Bioengineering'] },
+      { name: 'Genetic Circuits & Toolkits', branches: ['Genetic Circuits & Toolkits'] },
       { name: 'Applications & Responsible Innovation', branches: ['Applications & Ethics'] },
     ],
   },
@@ -781,10 +783,11 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'chart-line',
     accent: '#ca8a04',
     tagline: 'How economies became modern',
-    blurb: 'Trade routes, exchange networks, the Industrial Revolution and the great divergence between economies.',
+    blurb: 'Trade routes, exchange networks, the Industrial Revolution, the great divergence between economies and the monetary order that binds them.',
     chapters: [
       { name: 'Trade, Exchange & Industrialization', branches: ['Economic History'] },
       { name: 'The Great Divergence', branches: ['Global Divergence'] },
+      { name: 'Money, Crises & the Modern Order', branches: ['Money & the Modern Order'] },
     ],
   },
   {

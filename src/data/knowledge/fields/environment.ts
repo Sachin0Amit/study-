@@ -1,5 +1,6 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x31UgcNetPaper1PassTopics } from './x31-ugc-net-paper1-pass'
+import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
 
 export const environment: KnowledgeDomainFile = {
   domain: 'Environment & Sustainability',
@@ -3014,5 +3015,17 @@ export const environment: KnowledgeDomainFile = {
         },
       ],
     },
+    // X60 library-org thin-book pass (2026-10-26): Urban Studies book
+    // reaches 4 lessons — Getting Around: streets, transit and contested
+    // mobility (person-throughput mode ladder, frequency as freedom,
+    // ridership-coverage, BRT proof Curitiba/Bogotá, freeway revolts and
+    // removals, congestion pricing Singapore/London/Stockholm/NYC, transit
+    // deserts, Vision Zero). Carved against env-urban-planning-design
+    // (which OWNS zoning/complete streets/parking/induced demand/TOD) and
+    // the Transportation Engineering book (OWNS traffic-flow theory and
+    // geometric design). Greps: 'TransMilenio', 'Curitiba', 'freeway
+    // revolt' had ZERO live hits; 'congestion pricing' appeared once as an
+    // application bullet in the policy-cycle lesson.
+    ...x60LibraryOrgThinBooksPassTopics.filter((t) => t.domain === 'Environment & Sustainability'),
   ],
 }

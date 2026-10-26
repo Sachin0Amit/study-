@@ -2,6 +2,7 @@ import type { KnowledgeDomainFile } from '../types'
 import { x47BioSplitPassTopics } from './x47-bio-split-pass'
 import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
 import { x59LibraryOrgBacklogPassTopics } from './x59-library-org-pass'
+import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
 
 export const emergingInterdisciplinary: KnowledgeDomainFile = {
   domain: 'Emerging & Interdisciplinary',
@@ -1875,5 +1876,15 @@ export const emergingInterdisciplinary: KnowledgeDomainFile = {
         },
       ],
     },
+    // X60 library-org thin-book pass (2026-10-26): Synthetic Biology book
+    // gains new Ch2 'Genetic Circuits & Toolkits' (inserted foundations-first)
+    // — circuit engineering (bistability/hysteresis mechanics, repressilator
+    // design lessons, logic composition, load/retroactivity/insulation,
+    // quorum wiring, two-colour noise, Cello compilers, characterisation).
+    // Carved against emer-synthetic-biology (which OWNS parts/modelling/
+    // chassis and describes toggle+repressilator in ONE paragraph) and
+    // bio-synbio-dbtl-practice (which OWNS the DBTL workflow). Greps:
+    // 'quorum', 'retroactivity' had ZERO live hits.
+    ...x60LibraryOrgThinBooksPassTopics.filter((t) => t.domain === 'Emerging & Interdisciplinary'),
   ],
 }

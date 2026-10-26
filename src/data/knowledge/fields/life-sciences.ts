@@ -15,6 +15,7 @@ import { x47BioSplitPassTopics } from './x47-bio-split-pass'
 import { x55CrossverifyTopics } from './x55-crossverify-pass'
 import { x57CrossverifyTopics } from './x57-crossverify-pass'
 import { x60CrossverifyTopics } from './x60-crossverify-pass'
+import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
 
 export const lifeSciences: KnowledgeDomainFile = {
   domain: 'Life Sciences',
@@ -6177,6 +6178,17 @@ export const lifeSciences: KnowledgeDomainFile = {
     // to Classical & Transmission Genetics. See x60-crossverify-pass.ts
     // header for the full cross-verify result.
     ...x60CrossverifyTopics,
+    // X60 library-org thin-book pass (2026-10-26): Developmental Biology
+    // book reaches 4 lessons via new Ch3 'Growth, Renewal & Regeneration' —
+    // stem cells & regeneration (potency ladder + niche, planarian neoblasts,
+    // axolotl blastema lineage restriction/positional memory, compensatory
+    // regeneration, scarring trade-off, iPSCs, organoids). Carved against
+    // bio-developmental-biology (which OWNS the embryo arc and gives
+    // regeneration ONE paragraph + one iPSC application line — the forward
+    // reference this lesson fills) and bio-dev-morphogenesis (which OWNS
+    // embryonic shaping mechanics). Greps: 'Yamanaka'/'induced pluripotent'
+    // beyond the overview had zero/one hits; this lesson owns the machinery.
+    ...x60LibraryOrgThinBooksPassTopics.filter((t) => t.domain === 'Life Sciences'),
     // ------------------------------------------------------------------
     {
       id: 'bioc-protein-structure-folding',
