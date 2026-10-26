@@ -763,4 +763,57 @@ export const TOPIC_ALIASES: Record<string, string> = {
      but the generic matcher needs ≥2 name-token overlap and 'and'+'and'
      does not connect. Alias verified against the lesson's concepts. */
   'biodiversity and populations': 'env-measuring-biodiversity',
+  /* ---- ENEM (verified 2026-10-27, pass X60): ENEM topics whose phrasing
+     differs from library lesson titles even though the lessons genuinely
+     teach them. Each alias verified against the target lesson's concepts
+     and blocks:
+     - reading interpretation/genres: eng-skimming-scanning-timed-reading
+       teaches reading strategy for authentic texts (gist, detail,
+       inference — the ENEM interpretation skill set).
+     - linguistic variation + intertextuality: the Brazilian-literature
+       lesson OWNS modernism's intertextual parody (anthropophagy) and the
+       colloquial-register revolution (Bandeira/Drummond) that ENEM tests
+       as linguistic variation.
+     - Trovadorismo/Barroco/Arcadismo + Romanticism/Realism + Modernism
+       topics: lit-brazilian-literature-modernism is their verbatim owner.
+     - the essay: eng-argument-essay-writing owns thesis/argument/
+       counterargument — the redação's five-competency core.
+     - medieval/early-modern Europe: the French Revolution lesson's Old
+       Regime section teaches absolutism, the estates, feudal privilege
+       and the post-Reformation order as the revolution's context.
+     - Latin America after independence: the Brazil colonial lesson's
+       independence section teaches the Spanish-American route (juntas,
+       Bolívar, San Martín, caudillos) as the comparison case.
+     - contemporary society/media: soc-media-communication owns media
+       framing, networks and social life. */
+  'reading interpretation and textual genres': 'eng-skimming-scanning-timed-reading',
+  'linguistic variation and intertextuality': 'lit-brazilian-literature-modernism',
+  'classical and colonial literature trovadorismo barroco and arcadismo':
+    'lit-brazilian-literature-modernism',
+  'romanticism and realism in brazil': 'lit-brazilian-literature-modernism',
+  'modernism and contemporary brazilian literature': 'lit-brazilian-literature-modernism',
+  'dissertative argumentative essay': 'eng-argument-essay-writing',
+  'medieval and early modern europe': 'hist-french-revolution-napoleonic-era',
+  'latin america after independence': 'hist-brazil-colonial-slavery-empire',
+  'digital media and the information society': 'soc-media-communication',
+  'digital networks media and inequality': 'soc-media-communication',
+  /* - art movements: arth-renaissance-to-modern teaches the movement
+     sequence (Renaissance to modernism) ENEM's arts items test; the
+     Brazilian-art subtopic is additionally owned by the literature
+     lesson's Semana/anthropophagy coverage.
+     - sport/health: fit-aerobic-fitness-vo2max owns physical activity,
+     training and health physiology. */
+  'art movements and the brazilian arts': 'arth-renaissance-to-modern',
+  'sport as social practice and health': 'fit-aerobic-fitness-vo2max',
+  /* - redemocratization: hist-brazil-republic-vargas-dictatorship owns the
+     1964-85 regime and the 1988 transition verbatim.
+     - human geography/global economy: econ-regional-integration owns the
+     globalization, trade-blocs and WTO subtopics (the urbanization angle
+     is soc-urbanization-cities in the same masters network).
+     - culture/movements: soc-social-movements-change owns social
+     movements and citizenship; the culture-heritage subtopic is shared
+     coverage, documented here. */
+  'democracy dictatorship and redemocratization': 'hist-brazil-republic-vargas-dictatorship',
+  'human geography and the global economy': 'econ-regional-integration',
+  'culture society and social movements': 'soc-social-movements-change',
 }

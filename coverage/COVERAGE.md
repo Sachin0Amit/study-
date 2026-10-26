@@ -16,8 +16,8 @@
 
 - **Subjects:** 138
 - **Books (master volumes):** 138
-- **Chapters:** 870
-- **Sections (lessons):** 4640
+- **Chapters:** 871
+- **Sections (lessons):** 4645
 
 ## Foundations — 7 subjects
 
@@ -849,12 +849,12 @@
 
 ### Ecology & Conservation (`ku-ecology-conservation`)
 
-*Who lives where, and why* — 4 chapters · 9 sections
+*Who lives where, and why* — 4 chapters · 10 sections
 
 - **Ch 1. Organisms & the Environment** `ku-ecology-conservation-organisms-and-the-environment` — 1 sections: Life at the Limits: How Organisms Answer Habitat and Abiotic Stress
 - **Ch 2. Populations & Communities** `ku-ecology-conservation-populations-and-communities` — 1 sections: Populations and Communities: Interactions, Niches and Disturbance
 - **Ch 3. Ecosystems, Energy & Biomes** `ku-ecology-conservation-ecosystems-energy-and-biomes` — 4 sections: Ecosystems and the Flow of Energy; Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters; Biomes: A Tour of Earth's Major Ecosystems; Population Ecology: Growth, Limits and Cycles
-- **Ch 4. Conservation & Restoration** `ku-ecology-conservation-conservation-and-restoration` — 3 sections: Biodiversity and the Sixth Extinction; Restoration and Rewilding: Putting Ecosystems Back Together; Measuring Biodiversity: Richness, Evenness, Sampling and Simpson’s Index
+- **Ch 4. Conservation & Restoration** `ku-ecology-conservation-conservation-and-restoration` — 4 sections: Brazilian Biomes and the Geography of Deforestation; Biodiversity and the Sixth Extinction; Restoration and Rewilding: Putting Ecosystems Back Together; Measuring Biodiversity: Richness, Evenness, Sampling and Simpson’s Index
 
 ### Microbiology & Immunology (`ku-microbiology-immunology`)
 
@@ -1020,10 +1020,11 @@
 
 ### Modern World History (`ku-modern-world-history`)
 
-*The age of revolutions and world wars* — 2 chapters · 6 sections
+*The age of revolutions and world wars* — 3 chapters · 9 sections
 
-- **Ch 1. Democracy, Rights & Revolution** `ku-modern-world-history-democracy-rights-and-revolution` — 3 sections: The American Revolution and the Founding of the Republic; The Civil War and Reconstruction; The Civil Rights Movement
+- **Ch 1. Democracy, Rights & Revolution** `ku-modern-world-history-democracy-rights-and-revolution` — 4 sections: The American Revolution and the Founding of the Republic; The Civil War and Reconstruction; The Civil Rights Movement; The French Revolution and the Napoleonic Era
 - **Ch 2. War, Decolonization & the Twentieth Century** `ku-modern-world-history-war-decolonization-and-the-twentieth-century` — 3 sections: The Twentieth Century: Revolution, Cold War Order and Globalisation; The World Wars: Causes, Courses and Consequences; Decolonization and the Making of the Global South
+- **Ch 3. Brazil: Colony to Redemocratization** `ku-modern-world-history-brazil-colony-to-redemocratization` — 2 sections: Colonial Brazil, Slavery and the Empire: 1500-1889; The Brazilian Republic: Old Republic, Vargas and the Military Dictatorship
 
 ### Economic History (`ku-economic-history`)
 
@@ -1321,10 +1322,10 @@
 
 ### Literature (`ku-literature`)
 
-*The books that shaped us* — 4 chapters · 6 sections
+*The books that shaped us* — 4 chapters · 7 sections
 
 - **Ch 1. The Great Tradition** `ku-literature-the-great-tradition` — 1 sections: From Gilgamesh to the Odyssey: The Birth of Literature
-- **Ch 2. Reading the World** `ku-literature-reading-the-world` — 1 sections: Literary Criticism: Lenses and Schools
+- **Ch 2. Reading the World** `ku-literature-reading-the-world` — 2 sections: Literary Criticism: Lenses and Schools; Brazilian Literature: From Barroco to Modernism
 - **Ch 3. Literary Awards & the Canon** `ku-literature-literary-awards-and-the-canon` — 1 sections: Books and Authors: The Prize Map from Stockholm to Delhi
 - **Ch 4. Literary Craft & Criticism** `ku-literature-literary-craft-and-criticism` — 3 sections: How Texts Represent Human Experiences; Reading Visual and Multimedia Texts; Literary Devices: How Writing Works Its Magic
 

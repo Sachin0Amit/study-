@@ -1,6 +1,7 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x31UgcNetPaper1PassTopics } from './x31-ugc-net-paper1-pass'
 import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
+import { x60EnemBrazilPassTopics } from './x60-enem-brazil-pass'
 
 export const environment: KnowledgeDomainFile = {
   domain: 'Environment & Sustainability',
@@ -12,6 +13,12 @@ export const environment: KnowledgeDomainFile = {
     // env-climate-feedbacks-sensitivity (climate physics) and
     // geo-regional-development-sustainability (regional geography).
     ...x31UgcNetPaper1PassTopics.filter((t) => t.domain === 'Environment & Sustainability'),
+    // X60 ENEM pass (2026-10-27): the six Brazilian biomes and the
+    // deforestation geography — drivers, INPE/PRODES data, Forest Code
+    // architecture, dieback question. Carved against env-biodiversity-loss
+    // (owns global extinction drivers), env-measuring-biodiversity (owns
+    // measurement METHODS), env-carbon-sinks and env-restoration-rewilding.
+    ...x60EnemBrazilPassTopics.filter((t) => t.domain === 'Environment & Sustainability'),
     {
       id: 'env-carbon-sinks-global-carbon-budget',
       title: 'Carbon Sinks and the Global Carbon Budget',

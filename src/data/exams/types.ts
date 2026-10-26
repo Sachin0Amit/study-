@@ -19,6 +19,7 @@ export type ExamRegion =
   | 'Singapore'
   | 'Japan'
   | 'China'
+  | 'South America'
 
 /** One topic inside a unit — the smallest syllabus line item. */
 export interface CuratedTopic {

@@ -16,6 +16,7 @@ import { AUSTRALIA_EXAMS } from './australia'
 import { VICTORIA_EXAMS } from './victoria'
 import { QUEENSLAND_EXAMS } from './queensland'
 import { CANADA_EXAMS } from './canada'
+import { BRAZIL_EXAMS } from './brazil'
 
 /**
  * The curated official-syllabus registry. Every exam here has a COMPLETE
@@ -40,6 +41,7 @@ export const CURATED_EXAMS: CuratedExam[] = [
   ...VICTORIA_EXAMS,
   ...QUEENSLAND_EXAMS,
   ...CANADA_EXAMS,
+  ...BRAZIL_EXAMS,
 ].sort((a, b) => b.popularity - a.popularity)
 
 export const CURATED_EXAM_BY_ID: Map<string, CuratedExam> = new Map(

@@ -32,6 +32,7 @@ import { x59LibraryOrgBacklogPassTopics } from '../src/data/knowledge/fields/x59
 import { x60CrossverifyTopics } from '../src/data/knowledge/fields/x60-crossverify-pass'
 import { x62CrossverifyEvolutionPassTopics } from '../src/data/knowledge/fields/x62-crossverify-pass'
 import { x63CengagePassTopics } from '../src/data/knowledge/fields/x63-cengage-pass'
+import { x60EnemBrazilPassTopics } from '../src/data/knowledge/fields/x60-enem-brazil-pass'
 import { foundationLearning } from '../src/data/knowledge/fields/foundation-learning'
 import { mathematics } from '../src/data/knowledge/fields/mathematics'
 import { technologyApplied } from '../src/data/knowledge/fields/technology-applied'
@@ -53,6 +54,11 @@ const IDS = [
   'bio-alleles-mullers-morphs',
   'bio-penetrance-expressivity',
   'bio-chromatin-nucleosome-packaging',
+  'hist-french-revolution-napoleonic-era',
+  'hist-brazil-colonial-slavery-empire',
+  'hist-brazil-republic-vargas-dictatorship',
+  'lit-brazilian-literature-modernism',
+  'env-brazil-biomes-geography',
   'bio-cytoskeleton-cell-motility',
   'bio-cell-cycle-mitosis-checkpoints',
   'dl-bits-koans-digital-world',
@@ -285,7 +291,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, foundationLearning, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, { topics: x25TournamentReasoningCivicsPassTopics } as any, { topics: x26BankingManagementPassTopics } as any, { topics: x27ApCalcChinaPassTopics } as any, { topics: x36LearningSciencePassTopics } as any, { topics: x37AlbertaPassTopics } as any, computingAI, { topics: x45ExamGapPassTopics } as any, { topics: x46ThinBooksPassTopics } as any, { topics: x47BioSplitPassTopics } as any, { topics: x48AllSubjectsSplitPassTopics } as any, { topics: x49LanguageDeepeningPassTopics } as any, { topics: x51LibraryOrgPassTopics } as any, { topics: x52CrossverifyPassTopics } as any, { topics: x53CrossverifyPassTopics } as any, { topics: x54CrossverifyPassTopics } as any, { topics: x58LibraryOrgDeepeningPassTopics } as any, { topics: x59LibraryOrgBacklogPassTopics } as any, { topics: x60CrossverifyTopics } as any, { topics: x62CrossverifyEvolutionPassTopics } as any, { topics: x63CengagePassTopics } as any]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, foundationLearning, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, { topics: x25TournamentReasoningCivicsPassTopics } as any, { topics: x26BankingManagementPassTopics } as any, { topics: x27ApCalcChinaPassTopics } as any, { topics: x36LearningSciencePassTopics } as any, { topics: x37AlbertaPassTopics } as any, computingAI, { topics: x45ExamGapPassTopics } as any, { topics: x46ThinBooksPassTopics } as any, { topics: x47BioSplitPassTopics } as any, { topics: x48AllSubjectsSplitPassTopics } as any, { topics: x49LanguageDeepeningPassTopics } as any, { topics: x51LibraryOrgPassTopics } as any, { topics: x52CrossverifyPassTopics } as any, { topics: x53CrossverifyPassTopics } as any, { topics: x54CrossverifyPassTopics } as any, { topics: x58LibraryOrgDeepeningPassTopics } as any, { topics: x59LibraryOrgBacklogPassTopics } as any, { topics: x60EnemBrazilPassTopics } as any]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)

@@ -770,10 +770,11 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'hourglass',
     accent: '#d97706',
     tagline: 'The age of revolutions and world wars',
-    blurb: 'Revolutions, democracy and rights, the world wars, decolonization and the twentieth-century world order.',
+    blurb: 'Revolutions, democracy and rights, the world wars, Brazil from colony to redemocratization, decolonization and the twentieth-century world order.',
     chapters: [
       { name: 'Democracy, Rights & Revolution', branches: ['Democracy & Rights'] },
       { name: 'War, Decolonization & the Twentieth Century', branches: ['The Modern Age'] },
+      { name: 'Brazil: Colony to Redemocratization', branches: ['Brazilian History'] },
     ],
   },
   {

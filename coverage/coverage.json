@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T15:44:19.419Z",
+  "generatedAt": "2026-10-26T19:39:36.397Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 138,
     "books": 138,
-    "chapters": 870,
-    "sections": 4640
+    "chapters": 871,
+    "sections": 4645
   },
   "subjects": [
     {
@@ -27276,7 +27276,7 @@
       "group": "Life Sciences",
       "tagline": "Who lives where, and why",
       "chapterCount": 4,
-      "sectionCount": 9,
+      "sectionCount": 10,
       "chapters": [
         {
           "id": "ku-ecology-conservation-organisms-and-the-environment",
@@ -27344,21 +27344,26 @@
           "title": "Conservation & Restoration",
           "shortTitle": "Conservation & Restoration",
           "bookId": "ku-ecology-conservation",
-          "sectionCount": 3,
+          "sectionCount": 4,
           "sections": [
             {
-              "id": "ku-env-biodiversity-loss",
+              "id": "ku-env-brazil-biomes-geography",
               "number": 4.1,
+              "title": "Brazilian Biomes and the Geography of Deforestation"
+            },
+            {
+              "id": "ku-env-biodiversity-loss",
+              "number": 4.2,
               "title": "Biodiversity and the Sixth Extinction"
             },
             {
               "id": "ku-env-restoration-rewilding",
-              "number": 4.2,
+              "number": 4.3,
               "title": "Restoration and Rewilding: Putting Ecosystems Back Together"
             },
             {
               "id": "ku-env-measuring-biodiversity",
-              "number": 4.3,
+              "number": 4.4,
               "title": "Measuring Biodiversity: Richness, Evenness, Sampling and Simpson’s Index"
             }
           ]
@@ -28670,8 +28675,8 @@
       "name": "Modern World History",
       "group": "Humanities & Social Sciences",
       "tagline": "The age of revolutions and world wars",
-      "chapterCount": 2,
-      "sectionCount": 6,
+      "chapterCount": 3,
+      "sectionCount": 9,
       "chapters": [
         {
           "id": "ku-modern-world-history-democracy-rights-and-revolution",
@@ -28679,7 +28684,7 @@
           "title": "Democracy, Rights & Revolution",
           "shortTitle": "Democracy, Rights & Revolution",
           "bookId": "ku-modern-world-history",
-          "sectionCount": 3,
+          "sectionCount": 4,
           "sections": [
             {
               "id": "ku-hist-american-revolution-founding",
@@ -28695,6 +28700,11 @@
               "id": "ku-hist-civil-rights-movement",
               "number": 1.3,
               "title": "The Civil Rights Movement"
+            },
+            {
+              "id": "ku-hist-french-revolution-napoleonic-era",
+              "number": 1.4,
+              "title": "The French Revolution and the Napoleonic Era"
             }
           ]
         },
@@ -28720,6 +28730,26 @@
               "id": "ku-hist-decolonization",
               "number": 2.3,
               "title": "Decolonization and the Making of the Global South"
+            }
+          ]
+        },
+        {
+          "id": "ku-modern-world-history-brazil-colony-to-redemocratization",
+          "number": 3,
+          "title": "Brazil: Colony to Redemocratization",
+          "shortTitle": "Brazil: Colony to Redemocratization",
+          "bookId": "ku-modern-world-history",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-hist-brazil-colonial-slavery-empire",
+              "number": 3.1,
+              "title": "Colonial Brazil, Slavery and the Empire: 1500-1889"
+            },
+            {
+              "id": "ku-hist-brazil-republic-vargas-dictatorship",
+              "number": 3.2,
+              "title": "The Brazilian Republic: Old Republic, Vargas and the Military Dictatorship"
             }
           ]
         }
@@ -31046,7 +31076,7 @@
       "group": "Languages & Literature",
       "tagline": "The books that shaped us",
       "chapterCount": 4,
-      "sectionCount": 6,
+      "sectionCount": 7,
       "chapters": [
         {
           "id": "ku-literature-the-great-tradition",
@@ -31069,12 +31099,17 @@
           "title": "Reading the World",
           "shortTitle": "Reading the World",
           "bookId": "ku-literature",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-lang-literary-criticism-lenses",
               "number": 2.1,
               "title": "Literary Criticism: Lenses and Schools"
+            },
+            {
+              "id": "ku-lit-brazilian-literature-modernism",
+              "number": 2.2,
+              "title": "Brazilian Literature: From Barroco to Modernism"
             }
           ]
         },

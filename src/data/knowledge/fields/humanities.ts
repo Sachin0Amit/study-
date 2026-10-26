@@ -9,6 +9,7 @@ import { x46ThinBooksPassTopics } from './x46-thin-books-pass'
 import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
 import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
 import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
+import { x60EnemBrazilPassTopics } from './x60-enem-brazil-pass'
 
 export const humanities: KnowledgeDomainFile = {
   domain: 'Humanities',
@@ -3271,5 +3272,13 @@ export const humanities: KnowledgeDomainFile = {
     // World-Wars lesson's post-1945 institution list — the forward
     // reference this lesson fills.
     ...x60LibraryOrgThinBooksPassTopics.filter((t) => t.domain === 'Humanities'),
+    // X60 ENEM pass (2026-10-27): the French Revolution and the Napoleonic era —
+    // Old Regime, 1789, Terror, Napoleon, Vienna. Owns the revolutionary HISTORY
+    // (contract theory stays with the political-philosophy lesson, the American
+    // founding with hist-american-revolution-founding, the Code's comparative-law
+    // career with the codification lesson). Registered AFTER the American
+    // Revolution / Civil War / Civil Rights lessons so the Democracy & Rights
+    // chapter runs chronologically: 1776 → 1789 → 1861 → 1955.
+    ...x60EnemBrazilPassTopics.filter((t) => t.domain === 'Humanities'),
   ],
 }
