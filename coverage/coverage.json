@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T04:30:30.923Z",
+  "generatedAt": "2026-10-26T07:58:30.861Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 138,
     "books": 138,
-    "chapters": 866,
-    "sections": 4623
+    "chapters": 867,
+    "sections": 4626
   },
   "subjects": [
     {
@@ -26940,8 +26940,8 @@
       "name": "Genetics & Heredity",
       "group": "Life Sciences",
       "tagline": "How traits travel and vary",
-      "chapterCount": 4,
-      "sectionCount": 9,
+      "chapterCount": 5,
+      "sectionCount": 12,
       "chapters": [
         {
           "id": "ku-genetics-heredity-classical-and-transmission-genetics",
@@ -26949,28 +26949,53 @@
           "title": "Classical & Transmission Genetics",
           "shortTitle": "Classical & Transmission Genetics",
           "bookId": "ku-genetics-heredity",
-          "sectionCount": 3,
+          "sectionCount": 4,
           "sections": [
             {
-              "id": "ku-bio-meiosis-linkage-inheritance",
+              "id": "ku-bio-genetics-mendel",
               "number": 1.1,
+              "title": "Mendel's Laws: How Traits Travel Between Generations"
+            },
+            {
+              "id": "ku-bio-meiosis-linkage-inheritance",
+              "number": 1.2,
               "title": "Meiosis, Linkage and the Chromosomal Theory of Inheritance"
             },
             {
               "id": "ku-bio-beyond-mendel-extensions",
-              "number": 1.2,
+              "number": 1.3,
               "title": "Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits"
             },
             {
-              "id": "ku-bio-genetics-mendel",
-              "number": 1.3,
-              "title": "Mendel's Laws: How Traits Travel Between Generations"
+              "id": "ku-bio-penetrance-expressivity",
+              "number": 1.4,
+              "title": "When Genes Do Not Follow the Script: Penetrance, Expressivity and the Chi-Square Test"
+            }
+          ]
+        },
+        {
+          "id": "ku-genetics-heredity-cytogenetics-and-allelic-analysis",
+          "number": 2,
+          "title": "Cytogenetics & Allelic Analysis",
+          "shortTitle": "Cytogenetics & Allelic Analysis",
+          "bookId": "ku-genetics-heredity",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-chromosome-number-structure",
+              "number": 2.1,
+              "title": "Chromosomes Under Glass: Number, Structure and Karyotypes"
+            },
+            {
+              "id": "ku-bio-alleles-mullers-morphs",
+              "number": 2.2,
+              "title": "What Alleles Do: Wild Type, Muller's Morphs and Complementation"
             }
           ]
         },
         {
           "id": "ku-genetics-heredity-molecular-genetics-and-genomics",
-          "number": 2,
+          "number": 3,
           "title": "Molecular Genetics & Genomics",
           "shortTitle": "Molecular Genetics & Genomics",
           "bookId": "ku-genetics-heredity",
@@ -26978,19 +27003,19 @@
           "sections": [
             {
               "id": "ku-bio-genomics-bioinformatics",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Genomics and Bioinformatics: Reading Whole Genomes"
             },
             {
               "id": "ku-bio-crispr-gene-editing",
-              "number": 2.2,
+              "number": 3.2,
               "title": "CRISPR and the Mechanics of Gene Editing"
             }
           ]
         },
         {
           "id": "ku-genetics-heredity-genes-in-populations",
-          "number": 3,
+          "number": 4,
           "title": "Genes in Populations",
           "shortTitle": "Genes in Populations",
           "bookId": "ku-genetics-heredity",
@@ -26998,19 +27023,19 @@
           "sections": [
             {
               "id": "ku-bio-population-inheritance-frequencies",
-              "number": 3.1,
+              "number": 4.1,
               "title": "Inheritance in Populations: Allele Frequencies and Population Patterns"
             },
             {
               "id": "ku-bio-population-genetics",
-              "number": 3.2,
+              "number": 4.2,
               "title": "Population Genetics: Genes Drifting Through Time"
             }
           ]
         },
         {
           "id": "ku-genetics-heredity-biotechnology",
-          "number": 4,
+          "number": 5,
           "title": "Biotechnology",
           "shortTitle": "Biotechnology",
           "bookId": "ku-genetics-heredity",
@@ -27018,12 +27043,12 @@
           "sections": [
             {
               "id": "ku-bio-biotechnology-rdna-processes",
-              "number": 4.1,
+              "number": 5.1,
               "title": "Recombinant DNA: The Tools and Techniques of Genetic Engineering"
             },
             {
               "id": "ku-bio-biotechnology-applications",
-              "number": 4.2,
+              "number": 5.2,
               "title": "Biotechnology in Practice: Medicine, Farms, and Industry"
             }
           ]

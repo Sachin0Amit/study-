@@ -384,6 +384,7 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     ownFields: ['Genetics & Heredity'],
     chapters: [
       { name: 'Classical & Transmission Genetics', branches: ['Classical Genetics', 'Transmission Genetics'] },
+      { name: 'Cytogenetics & Allelic Analysis', branches: ['Cytogenetics', 'Allelic Analysis'] },
       { name: 'Molecular Genetics & Genomics', branches: ['Molecular Genetics', 'Genomics'] },
       { name: 'Genes in Populations', branches: ['Population Genetics', 'Genes in Populations'] },
       { name: 'Biotechnology', branches: ['Biotechnology'] },
