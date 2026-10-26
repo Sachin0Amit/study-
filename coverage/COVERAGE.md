@@ -17,7 +17,7 @@
 - **Subjects:** 138
 - **Books (master volumes):** 138
 - **Chapters:** 870
-- **Sections (lessons):** 4633
+- **Sections (lessons):** 4637
 
 ## Foundations — 7 subjects
 
@@ -826,11 +826,11 @@
 
 ### Evolutionary Biology (`ku-evolutionary-biology`)
 
-*Descent with modification* — 3 chapters · 5 sections
+*Descent with modification* — 3 chapters · 9 sections
 
-- **Ch 1. Evolution & Speciation** `ku-evolutionary-biology-evolution-and-speciation` — 2 sections: Evolution by Natural Selection; How New Species Are Born
+- **Ch 1. Evolution & Speciation** `ku-evolutionary-biology-evolution-and-speciation` — 5 sections: Evolution by Natural Selection; How New Species Are Born; Sexual Selection: Weapons, Displays and the Struggle for Mates; Difficulties on Theory: The Eye, Missing Links and Sterile Workers; The Geography of Life: Barriers, Oceanic Islands and Dispersal
 - **Ch 2. Human Evolution** `ku-evolutionary-biology-human-evolution` — 1 sections: From Lucy to Us: The Story of Human Evolution
-- **Ch 3. Diversity & Systematics** `ku-evolutionary-biology-diversity-and-systematics` — 2 sections: Biological Classification: The Five Kingdoms and Beyond; The Plant Kingdom: Algae to Angiosperms
+- **Ch 3. Diversity & Systematics** `ku-evolutionary-biology-diversity-and-systematics` — 3 sections: Biological Classification: The Five Kingdoms and Beyond; The Plant Kingdom: Algae to Angiosperms; Classification as Genealogy: Homology, Analogy and Rudimentary Organs
 
 ### Botany (`ku-botany`)
 

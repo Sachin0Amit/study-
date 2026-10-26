@@ -16,6 +16,7 @@ import { x55CrossverifyTopics } from './x55-crossverify-pass'
 import { x57CrossverifyTopics } from './x57-crossverify-pass'
 import { x60CrossverifyTopics } from './x60-crossverify-pass'
 import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
+import { x62CrossverifyEvolutionPassTopics } from './x62-crossverify-pass'
 
 export const lifeSciences: KnowledgeDomainFile = {
   domain: 'Life Sciences',
@@ -6189,6 +6190,23 @@ export const lifeSciences: KnowledgeDomainFile = {
     // embryonic shaping mechanics). Greps: 'Yamanaka'/'induced pluripotent'
     // beyond the overview had zero/one hits; this lesson owns the machinery.
     ...x60LibraryOrgThinBooksPassTopics.filter((t) => t.domain === 'Life Sciences'),
+    // X62 crossverify pass (2026-10-26): Evolutionary Biology cross-verified
+    // vs Darwin, On the Origin of Species (1859 first edition, VLIZ
+    // institutional PDF, read in full) — verdict ZERO corrections to the 5
+    // existing lessons. Four book-grounded gaps added with 4-question quizzes:
+    // sexual selection (Ch IV — law of battle + female choice; carved against
+    // the animal-behavior lesson which OWNS the handicap principle), Darwin's
+    // difficulties (Ch VI-VII — the eye's gradations, transitional varieties,
+    // family selection for neuters; Tiktaalik fresh, whale/feathered-dino
+    // fossils deferred to bio-evolution-natural-selection), biogeography
+    // (Ch XI-XII — barriers over conditions, the mammal test, oceanic-island
+    // rosters, the Madeira frog test; carved against environment.ts which
+    // OWNS island-biogeography reserve design), and classification as
+    // genealogy (Ch XIII — subordination of characters, analogy vs homology,
+    // rudimentary organs; carved against bio-classification-five-kingdoms
+    // which OWNS the hierarchy mechanics and against the developmental-bio
+    // book which OWNS von Baer). See x62-crossverify-pass.ts header.
+    ...x62CrossverifyEvolutionPassTopics.filter((t) => t.domain === 'Life Sciences'),
     // ------------------------------------------------------------------
     {
       id: 'bioc-protein-structure-folding',
