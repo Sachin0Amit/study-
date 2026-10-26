@@ -36,6 +36,7 @@ import { technologyApplied } from '../src/data/knowledge/fields/technology-appli
 import { computingAI } from '../src/data/knowledge/fields/computing-ai'
 
 const IDS = [
+  'bio-markers-qtl-mapping',
   'bio-dev-stem-cells-regeneration',
   'emer-synbio-genetic-circuits',
   'hum-eco-money-bretton-woods',

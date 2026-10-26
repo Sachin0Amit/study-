@@ -16,8 +16,8 @@
 
 - **Subjects:** 138
 - **Books (master volumes):** 138
-- **Chapters:** 867
-- **Sections (lessons):** 4626
+- **Chapters:** 870
+- **Sections (lessons):** 4633
 
 ## Foundations — 7 subjects
 
@@ -816,11 +816,11 @@
 
 ### Genetics & Heredity (`ku-genetics-heredity`)
 
-*How traits travel and vary* — 5 chapters · 12 sections
+*How traits travel and vary* — 5 chapters · 13 sections
 
 - **Ch 1. Classical & Transmission Genetics** `ku-genetics-heredity-classical-and-transmission-genetics` — 4 sections: Mendel's Laws: How Traits Travel Between Generations; Meiosis, Linkage and the Chromosomal Theory of Inheritance; Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits; When Genes Do Not Follow the Script: Penetrance, Expressivity and the Chi-Square Test
 - **Ch 2. Cytogenetics & Allelic Analysis** `ku-genetics-heredity-cytogenetics-and-allelic-analysis` — 2 sections: Chromosomes Under Glass: Number, Structure and Karyotypes; What Alleles Do: Wild Type, Muller's Morphs and Complementation
-- **Ch 3. Molecular Genetics & Genomics** `ku-genetics-heredity-molecular-genetics-and-genomics` — 2 sections: Genomics and Bioinformatics: Reading Whole Genomes; CRISPR and the Mechanics of Gene Editing
+- **Ch 3. Molecular Genetics & Genomics** `ku-genetics-heredity-molecular-genetics-and-genomics` — 3 sections: Genomics and Bioinformatics: Reading Whole Genomes; Genetic Markers: DNA Landmarks, Marker Maps and QTL; CRISPR and the Mechanics of Gene Editing
 - **Ch 4. Genes in Populations** `ku-genetics-heredity-genes-in-populations` — 2 sections: Inheritance in Populations: Allele Frequencies and Population Patterns; Population Genetics: Genes Drifting Through Time
 - **Ch 5. Biotechnology** `ku-genetics-heredity-biotechnology` — 2 sections: Recombinant DNA: The Tools and Techniques of Genetic Engineering; Biotechnology in Practice: Medicine, Farms, and Industry
 
@@ -873,10 +873,11 @@
 
 ### Developmental Biology (`ku-developmental-biology`)
 
-*From one cell to a body* — 2 chapters · 3 sections
+*From one cell to a body* — 3 chapters · 4 sections
 
 - **Ch 1. Building the Body** `ku-developmental-biology-building-the-body` — 1 sections: Developmental Biology: How a Body Builds Itself
 - **Ch 2. Mechanisms & Model Organisms** `ku-developmental-biology-mechanisms-and-model-organisms` — 2 sections: Model Organisms: Flies, Worms, Fish and the Standard Laboratory Bodies; Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo
+- **Ch 3. Growth, Renewal & Regeneration** `ku-developmental-biology-growth-renewal-and-regeneration` — 1 sections: Stem Cells and Regeneration: The Body’s Repair Kit and Its Missing Manuals
 
 ### Marine Biology (`ku-marine-biology`)
 
@@ -896,10 +897,11 @@
 
 ### Synthetic Biology (`ku-synthetic-biology`)
 
-*Life, engineered* — 2 chapters · 3 sections
+*Life, engineered* — 3 chapters · 4 sections
 
 - **Ch 1. Programming Living Cells** `ku-synthetic-biology-programming-living-cells` — 1 sections: Synthetic Biology: Programming Living Cells
-- **Ch 2. Applications & Responsible Innovation** `ku-synthetic-biology-applications-and-responsible-innovation` — 2 sections: Synthetic Biology in Practice: The Design–Build–Test–Learn Cycle; Biosafety, Biosecurity and the Ethics of Engineering Life
+- **Ch 2. Genetic Circuits & Toolkits** `ku-synthetic-biology-genetic-circuits-and-toolkits` — 1 sections: Genetic Circuits: Engineering Logic from Repressors
+- **Ch 3. Applications & Responsible Innovation** `ku-synthetic-biology-applications-and-responsible-innovation` — 2 sections: Synthetic Biology in Practice: The Design–Build–Test–Learn Cycle; Biosafety, Biosecurity and the Ethics of Engineering Life
 
 ## Natural Sciences — 7 subjects
 
@@ -1025,10 +1027,11 @@
 
 ### Economic History (`ku-economic-history`)
 
-*How economies became modern* — 2 chapters · 3 sections
+*How economies became modern* — 3 chapters · 4 sections
 
 - **Ch 1. Trade, Exchange & Industrialization** `ku-economic-history-trade-exchange-and-industrialization` — 2 sections: The Silk Road: Exchange Before Globalization; The Industrial Revolution and Its Discontents
 - **Ch 2. The Great Divergence** `ku-economic-history-the-great-divergence` — 1 sections: The Great Divergence: Why Europe Got Rich First
+- **Ch 3. Money, Crises & the Modern Order** `ku-economic-history-money-crises-and-the-modern-order` — 1 sections: Money, Crises and the Modern Order: From Gold to Bretton Woods
 
 ### Indian History (`ku-indian-history`)
 
@@ -1086,16 +1089,16 @@
 
 ### Urban Studies (`ku-urban-studies`)
 
-*The city, planned and lived* — 2 chapters · 3 sections
+*The city, planned and lived* — 2 chapters · 4 sections
 
-- **Ch 1. The Built Environment** `ku-urban-studies-the-built-environment` — 1 sections: Urban Planning: Designing Cities That Work
+- **Ch 1. The Built Environment** `ku-urban-studies-the-built-environment` — 2 sections: Urban Planning: Designing Cities That Work; Getting Around: Streets, Transit and the Contested Mobility of Cities
 - **Ch 2. Urban Society & Change** `ku-urban-studies-urban-society-and-change` — 2 sections: Why Cities Exist: Agglomeration and Urban Life; Housing, Segregation and Gentrification
 
 ### Anthropology (`ku-anthropology`)
 
-*What makes us human* — 2 chapters · 3 sections
+*What makes us human* — 2 chapters · 4 sections
 
-- **Ch 1. Cultural Anthropology** `ku-anthropology-cultural-anthropology` — 2 sections: Cultural Anthropology: Making Sense of Human Difference; Kinship, Descent and Marriage: The Grammar of Relatedness
+- **Ch 1. Cultural Anthropology** `ku-anthropology-cultural-anthropology` — 3 sections: Cultural Anthropology: Making Sense of Human Difference; Fieldwork and Ethnography: How Anthropologists Actually Learn; Kinship, Descent and Marriage: The Grammar of Relatedness
 - **Ch 2. Archaeology** `ku-anthropology-archaeology` — 1 sections: Archaeology: Reading the Past from Its Remains
 
 ### Political Theory (`ku-political-theory`)
@@ -1145,10 +1148,10 @@
 
 ### Media & Communication (`ku-media-communication`)
 
-*Who frames your world* — 2 chapters · 3 sections
+*Who frames your world* — 2 chapters · 4 sections
 
 - **Ch 1. Media & Society** `ku-media-communication-media-and-society` — 2 sections: Journalism Craft: News Values, the Inverted Pyramid and Verification; Mass Media and Society: Print, Broadcast, Platforms and Responsibility
-- **Ch 2. The Attention Economy** `ku-media-communication-the-attention-economy` — 1 sections: Media and Communication: Who Frames Your World
+- **Ch 2. The Attention Economy** `ku-media-communication-the-attention-economy` — 2 sections: Media and Communication: Who Frames Your World; The Algorithmic Feed: How Platforms Decide What You See
 
 ### Research Methods (`ku-research-methods`)
 

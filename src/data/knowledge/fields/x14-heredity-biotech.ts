@@ -1,4 +1,5 @@
 import type { KnowledgeTopic } from '../types'
+import { x61CrossverifyGeneticsPassTopics } from './x61-crossverify-pass'
 
 /** Expansion pass X14 (2026-10-20): transmission genetics extensions,
  *  recombinant-DNA processes, applied biotechnology, and genomics.
@@ -934,4 +935,17 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       },
     ],
   },
+  // X61 crossverify pass (2026-10-26): Genetics & Heredity cross-verified vs
+  // Nickle & Barrette-Ng, Online Open Genetics (LibreTexts, CC BY-SA 3.0) —
+  // zero factual corrections across all 9 lessons. This run CONVERGED with a
+  // parallel session (afebd14) that already added the cytogenetics/Muller/
+  // penetrance-chi-square lessons, so per the zero-repetition rule this pass
+  // ships ONLY bio-markers-qtl-mapping (RFLP/SSR/SNP marker classes, linkage
+  // maps, marker-assisted selection, QTL mapping — carved against
+  // bio-biotechnology-rdna-processes which owns the cloning toolkit and STR
+  // identity fingerprinting, bio-genomics-bioinformatics which owns GWAS,
+  // and bio-beyond-mendel-extensions which owns the polygenic arithmetic;
+  // 'RFLP'/'QTL'/'marker-assisted' had zero live hits). Carving documented
+  // in the x61 header.
+    ...x61CrossverifyGeneticsPassTopics.filter((t) => t.domain === 'Life Sciences'),
 ]
