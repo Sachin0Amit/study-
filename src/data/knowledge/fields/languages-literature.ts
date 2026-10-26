@@ -10,6 +10,7 @@ import { x37AlbertaPassTopics } from './x37-alberta-pass'
 import { x46ThinBooksPassTopics } from './x46-thin-books-pass'
 import { x49LanguageDeepeningPassTopics } from './x49-language-deepening-pass'
 import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
+import { x59LibraryOrgBacklogPassTopics } from './x59-library-org-pass'
 
 export const languagesLiterature: KnowledgeDomainFile = {
   domain: 'Languages & World Literature',
@@ -3860,5 +3861,22 @@ export const languagesLiterature: KnowledgeDomainFile = {
         },
       ],
     },
+    // X59 library-org backlog pass (2026-10-26): German +1 lesson and
+    // Mandarin +1 lesson — the payload's standing backlog. Placed AFTER
+    // the base topics so each new lesson renders as lesson 2 inside its
+    // existing Foundations chapter (live order = intra-chapter order).
+    // lang-german-adjective-endings: weak/mixed/strong declension via the
+    // compensation principle — fills the explicit forward reference in
+    // lang-german-foundations' study-path line ("adjective endings,
+    // which extend the case system"). Carved against that lesson (owns
+    // case functions on ARTICLES) and lang-german-verbs (owns
+    // conjugation/tenses). lang-mandarin-writing-strokes: the writing
+    // craft — stroke system, seven stroke-order rules, 214-radical
+    // lookup workflow, six-category taxonomy with fresh examples, one-
+    // to-many simplified/traditional traps, component-story memory.
+    // Carved against lang-mandarin-foundations (which OWNS radicals as
+    // meaning clues, the phono-semantic ratio, and simplified-vs-
+    // traditional as a choice) — 'stroke order' had zero live hits.
+    ...x59LibraryOrgBacklogPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
   ],
 }

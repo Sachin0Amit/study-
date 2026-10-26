@@ -1,6 +1,7 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x47BioSplitPassTopics } from './x47-bio-split-pass'
 import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
+import { x59LibraryOrgBacklogPassTopics } from './x59-library-org-pass'
 
 export const emergingInterdisciplinary: KnowledgeDomainFile = {
   domain: 'Emerging & Interdisciplinary',
@@ -17,6 +18,33 @@ export const emergingInterdisciplinary: KnowledgeDomainFile = {
     // owns the physics), the sensing lesson (which owns metrology), and the
     // twins/climate lessons (which own the applications layers).
     ...x51LibraryOrgPassTopics.filter((t) => t.domain === 'Emerging & Interdisciplinary'),
+    // X59 library-org backlog pass (2026-10-26): nano +1 chapter +2
+    // lessons and quantum +1 chapter +2 lessons, compsci +1 lesson.
+    // Placed AFTER the x51 filter so the new Monte Carlo lesson renders
+    // as lesson 2 of the existing Numerical Methods chapter (live order
+    // = intra-chapter order). nano-confinement-brus + nano-nucleation-
+    // growth-assembly are carved against emer-nanotechnology-scale
+    // (names confinement in one concept line; OWNS surface-to-volume
+    // and the materials tour), nano-making-seeing (OWNS the toolbox —
+    // this pass OWNS the colloidal recipe: LaMer, hot-injection,
+    // ripening, ligands, core-shell, DNA origami, lotus/gecko) and
+    // nano-medicine-clean-tech (OWNS plasmon APPLICATIONS — the LSPR
+    // physics lives in the confinement lesson). quantum-error-
+    // correction-codes + quantum-fault-tolerance-scale are carved
+    // against quantum-qubits-gates (OWNS no-cloning/decoherence and
+    // INTRODUCES entanglement), quantum-algorithms-hardware (NAMES EC
+    // in one concept line — the forward reference this chapter fills)
+    // and emer-quantum-computing-without-hype (one threshold sentence).
+    // Greps: 'Brus', 'exciton', 'Ostwald', 'hot-injection', 'magic
+    // state' had zero live hits; 'surface code'/'threshold theorem'
+    // appeared only in the two named sentences. compsci-monte-carlo-
+    // mcmc is carved against compsci-numerical-methods (OWNS the 1/√N
+    // LAW — this lesson OWNS the machinery: π estimation, inverse/
+    // rejection sampling, Metropolis–Hastings, diagnostics, variance
+    // reduction, quasi-MC, UQ/Sobol) and fills the twins lesson's
+    // 'uncertainty as a first-class output' forward reference. Greps:
+    // 'MCMC', 'Metropolis', 'variance reduction' had zero live hits.
+    ...x59LibraryOrgBacklogPassTopics.filter((t) => t.domain === 'Emerging & Interdisciplinary'),
     // X47 biology-split pass (2026-10-25): the user split the one-volume
     // Biology book into 13 discipline books. Emerging & Interdisciplinary
     // slice: bioinformatics databases & structure prediction (carved

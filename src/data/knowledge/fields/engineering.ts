@@ -3,11 +3,26 @@ import { x19CivilCoreTopics } from './x19-civil-core'
 import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
 import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
 import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
+import { x59LibraryOrgBacklogPassTopics } from './x59-library-org-pass'
 
 export const engineering: KnowledgeDomainFile = {
   domain: 'Engineering',
   blurb: 'The discipline of building systems that must work — bridges, chips, power grids and everything in between.',
   topics: [
+    // X59 library-org backlog pass (2026-10-26): naval +1 chapter +2
+    // lessons — Seakeeping & Manoeuvring (ship DYNAMICS: six degrees of
+    // freedom, roll-period resonance T = 2πk/√(g·GM), added mass, RAOs,
+    // slamming/parametric rolling, stabilizers; rudder lift, pivot
+    // point, turning circles, course stability, squat/bank effects,
+    // stopping, pods). Carved against eng-naval-architecture-ships
+    // (OWNS buoyancy/GM/free-surface STATICS, the resistance split,
+    // cavitation), eng-naval-ship-structures (OWNS hull girders/fatigue)
+    // and eng-naval-design-propulsion (OWNS the Froude number, the
+    // design spiral and propeller theory). Greps: 'seakeeping', 'tactical
+    // diameter', 'bilge keel', 'pivot point', 'squat' had zero live hits;
+    // 'rudder' appeared only in a cavitation quiz distractor and the
+    // aviation-instruments lesson.
+    ...x59LibraryOrgBacklogPassTopics.filter((t) => t.domain === 'Engineering'),
     // X58 library-org deepening pass (2026-10-26): process safety —
     // inherently safer design, HAZOP, LOPA arithmetic, relief sizing,
     // Management of Change, Bhopal/Texas City/Flixborough case files.

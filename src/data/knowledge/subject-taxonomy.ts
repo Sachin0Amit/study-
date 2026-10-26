@@ -1729,14 +1729,17 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'ship',
     accent: '#0369a1',
     tagline: 'Why ships stay up',
-    blurb: 'Buoyancy and stability, hull structures, and the design-propulsion spiral.',
+    blurb: 'Buoyancy and stability, hull structures, the design-propulsion spiral, and how ships move and steer in waves.',
     ownFields: ['Naval Architecture'],
     /* X51: declared pedagogical order — float/stability first, then
-       structures, then design/propulsion (USER RULE 5). */
+       structures, then design/propulsion (USER RULE 5). X59 appends the
+       dynamics chapter: motions and manoeuvring come after the ship is
+       designed, built and propelled. */
     chapters: [
       { name: 'Marine Engineering', branches: ['Marine Engineering'] },
       { name: 'Ship Structures', branches: ['Ship Structures'] },
       { name: 'Ship Design & Propulsion', branches: ['Ship Design & Propulsion'] },
+      { name: 'Seakeeping & Manoeuvring', branches: ['Seakeeping & Manoeuvring'] },
     ],
   },
   {
@@ -1746,12 +1749,16 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'atom',
     accent: '#a855f7',
     tagline: 'Engineering at atomic scale',
-    blurb: 'The small frontier — its physics, its making-and-seeing tools, its medicine and clean tech.',
+    blurb: 'The small frontier — its physics, the quantum-confinement core, how nanocrystals are grown, its making-and-seeing tools, its medicine and clean tech.',
     ownFields: ['Nanotechnology'],
     /* X51: declared pedagogical order — scale physics first, then the
-       fabrication/characterization craft, then applications (USER RULE 5). */
+       fabrication/characterization craft, then applications (USER RULE 5).
+       X59 inserts the quantitative core between them: confinement physics
+       and crystal-growth chemistry belong with the foundations, before
+       the toolbox that assumes them. */
     chapters: [
       { name: 'The Small Frontier', branches: ['The Small Frontier'] },
+      { name: 'Confinement & Controlled Growth', branches: ['Confinement & Controlled Growth'] },
       { name: 'Making & Seeing the Nanoworld', branches: ['Making & Seeing the Nanoworld'] },
       { name: 'Nanomedicine & Clean Tech', branches: ['Nanomedicine & Clean Tech'] },
     ],
@@ -1763,14 +1770,17 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'atom',
     accent: '#8b5cf6',
     tagline: 'Qubits and beyond',
-    blurb: 'Qubits and gates, algorithms and hardware — and the quantum sensing that started it all.',
+    blurb: 'Qubits and gates, algorithms and hardware — and the error-correction stack that turns them into machines.',
     ownFields: ['Quantum Information'],
     /* X51: restructured — the sensing lesson now owns a correctly-named
-       chapter; computation and algorithms/hardware follow (USER RULE 5). */
+       chapter; computation and algorithms/hardware follow (USER RULE 5).
+       X59 appends the protection stack as capstone: the algorithms
+       chapter names error correction, and this chapter delivers it. */
     chapters: [
       { name: 'Quantum Sensing & Metrology', branches: ['Beyond Computing'] },
       { name: 'Quantum Computation', branches: ['Quantum Computation'] },
       { name: 'Algorithms & Hardware', branches: ['Algorithms & Hardware'] },
+      { name: 'Error Correction & Fault Tolerance', branches: ['Error Correction & Fault Tolerance'] },
     ],
   },
   {

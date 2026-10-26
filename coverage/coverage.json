@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T01:36:08.506Z",
+  "generatedAt": "2026-10-26T04:30:30.923Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 138,
     "books": 138,
-    "chapters": 863,
-    "sections": 4614
+    "chapters": 866,
+    "sections": 4623
   },
   "subjects": [
     {
@@ -31271,7 +31271,7 @@
       "group": "Languages & Literature",
       "tagline": "The logic of German",
       "chapterCount": 3,
-      "sectionCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-german-german-foundations",
@@ -31279,12 +31279,17 @@
           "title": "German Foundations",
           "shortTitle": "German Foundations",
           "bookId": "ku-german",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-lang-german-foundations",
               "number": 1.1,
               "title": "German Foundations: Cases, Word Order and Cognates"
+            },
+            {
+              "id": "ku-lang-german-adjective-endings",
+              "number": 1.2,
+              "title": "German Adjective Endings: The Table That Runs the Noun Phrase"
             }
           ]
         },
@@ -31546,7 +31551,7 @@
       "group": "Languages & Literature",
       "tagline": "Tones, strokes and characters",
       "chapterCount": 3,
-      "sectionCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-mandarin-mandarin-foundations",
@@ -31554,12 +31559,17 @@
           "title": "Mandarin Foundations",
           "shortTitle": "Mandarin Foundations",
           "bookId": "ku-mandarin",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-lang-mandarin-foundations",
               "number": 1.1,
               "title": "Mandarin Foundations: Tones, Characters and First Phrases"
+            },
+            {
+              "id": "ku-lang-mandarin-writing-strokes",
+              "number": 1.2,
+              "title": "Writing Chinese: Stroke Order, Radical Lookup and Character Memory"
             }
           ]
         },
@@ -32585,8 +32595,8 @@
       "name": "Naval Architecture & Marine Engineering",
       "group": "Applied Engineering & Technology",
       "tagline": "Why ships stay up",
-      "chapterCount": 3,
-      "sectionCount": 3,
+      "chapterCount": 4,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-naval-architecture-marine-engineering",
@@ -32632,6 +32642,26 @@
               "title": "Ship Design and Propulsion: The Spiral from Deadweight to Propeller"
             }
           ]
+        },
+        {
+          "id": "ku-naval-architecture-seakeeping-and-manoeuvring",
+          "number": 4,
+          "title": "Seakeeping & Manoeuvring",
+          "shortTitle": "Seakeeping & Manoeuvring",
+          "bookId": "ku-naval-architecture",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-eng-naval-seakeeping-motions",
+              "number": 4.1,
+              "title": "Seakeeping: How Ships Move in Waves"
+            },
+            {
+              "id": "ku-eng-naval-manoeuvring-rudders",
+              "number": 4.2,
+              "title": "Manoeuvring: How Ships Turn, Stop and Stay on Course"
+            }
+          ]
         }
       ]
     },
@@ -32640,8 +32670,8 @@
       "name": "Nanotechnology",
       "group": "Applied Engineering & Technology",
       "tagline": "Engineering at atomic scale",
-      "chapterCount": 3,
-      "sectionCount": 3,
+      "chapterCount": 4,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-nanotechnology-the-small-frontier",
@@ -32659,8 +32689,28 @@
           ]
         },
         {
-          "id": "ku-nanotechnology-making-and-seeing-the-nanoworld",
+          "id": "ku-nanotechnology-confinement-and-controlled-growth",
           "number": 2,
+          "title": "Confinement & Controlled Growth",
+          "shortTitle": "Confinement & Controlled Growth",
+          "bookId": "ku-nanotechnology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-nano-confinement-brus",
+              "number": 2.1,
+              "title": "Quantum Confinement: Tuning Matter with Size"
+            },
+            {
+              "id": "ku-nano-nucleation-growth-assembly",
+              "number": 2.2,
+              "title": "Nucleation, Growth and Self-Assembly"
+            }
+          ]
+        },
+        {
+          "id": "ku-nanotechnology-making-and-seeing-the-nanoworld",
+          "number": 3,
           "title": "Making & Seeing the Nanoworld",
           "shortTitle": "Making & Seeing the Nanoworld",
           "bookId": "ku-nanotechnology",
@@ -32668,14 +32718,14 @@
           "sections": [
             {
               "id": "ku-nano-making-seeing",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Making and Seeing the Nanoworld"
             }
           ]
         },
         {
           "id": "ku-nanotechnology-nanomedicine-and-clean-tech",
-          "number": 3,
+          "number": 4,
           "title": "Nanomedicine & Clean Tech",
           "shortTitle": "Nanomedicine & Clean Tech",
           "bookId": "ku-nanotechnology",
@@ -32683,7 +32733,7 @@
           "sections": [
             {
               "id": "ku-nano-medicine-clean-tech",
-              "number": 3.1,
+              "number": 4.1,
               "title": "Nanomedicine and Clean Technology"
             }
           ]
@@ -32695,8 +32745,8 @@
       "name": "Quantum Information",
       "group": "Applied Engineering & Technology",
       "tagline": "Qubits and beyond",
-      "chapterCount": 3,
-      "sectionCount": 3,
+      "chapterCount": 4,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-quantum-information-quantum-sensing-and-metrology",
@@ -32742,6 +32792,26 @@
               "title": "Quantum Algorithms and Hardware Platforms"
             }
           ]
+        },
+        {
+          "id": "ku-quantum-information-error-correction-and-fault-tolerance",
+          "number": 4,
+          "title": "Error Correction & Fault Tolerance",
+          "shortTitle": "Error Correction & Fault Tolerance",
+          "bookId": "ku-quantum-information",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-quantum-error-correction-codes",
+              "number": 4.1,
+              "title": "Quantum Error Correction: Measuring Errors Without Reading the Data"
+            },
+            {
+              "id": "ku-quantum-fault-tolerance-scale",
+              "number": 4.2,
+              "title": "Fault Tolerance: From Physical to Logical Qubits"
+            }
+          ]
         }
       ]
     },
@@ -32751,7 +32821,7 @@
       "group": "Applied Engineering & Technology",
       "tagline": "Models of the future",
       "chapterCount": 3,
-      "sectionCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-computational-science-numerical-methods",
@@ -32759,12 +32829,17 @@
           "title": "Numerical Methods",
           "shortTitle": "Numerical Methods",
           "bookId": "ku-computational-science",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-compsci-numerical-methods",
               "number": 1.1,
               "title": "Numerical Methods: The Engine Under Every Simulation"
+            },
+            {
+              "id": "ku-compsci-monte-carlo-mcmc",
+              "number": 1.2,
+              "title": "Monte Carlo, MCMC and Quantified Uncertainty"
             }
           ]
         },

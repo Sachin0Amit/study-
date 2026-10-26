@@ -16,8 +16,8 @@
 
 - **Subjects:** 138
 - **Books (master volumes):** 138
-- **Chapters:** 863
-- **Sections (lessons):** 4614
+- **Chapters:** 866
+- **Sections (lessons):** 4623
 
 ## Foundations — 7 subjects
 
@@ -1359,9 +1359,9 @@
 
 ### German (`ku-german`)
 
-*The logic of German* — 3 chapters · 3 sections
+*The logic of German* — 3 chapters · 4 sections
 
-- **Ch 1. German Foundations** `ku-german-german-foundations` — 1 sections: German Foundations: Cases, Word Order and Cognates
+- **Ch 1. German Foundations** `ku-german-german-foundations` — 2 sections: German Foundations: Cases, Word Order and Cognates; German Adjective Endings: The Table That Runs the Noun Phrase
 - **Ch 2. German Verbs** `ku-german-german-verbs` — 1 sections: German Verbs: Stem Changes, Separable Prefixes and the Perfect
 - **Ch 3. German Literature** `ku-german-german-literature` — 1 sections: German Literature: Luther’s Language to the Nobel List
 
@@ -1399,9 +1399,9 @@
 
 ### Mandarin Chinese (`ku-mandarin`)
 
-*Tones, strokes and characters* — 3 chapters · 3 sections
+*Tones, strokes and characters* — 3 chapters · 4 sections
 
-- **Ch 1. Mandarin Foundations** `ku-mandarin-mandarin-foundations` — 1 sections: Mandarin Foundations: Tones, Characters and First Phrases
+- **Ch 1. Mandarin Foundations** `ku-mandarin-mandarin-foundations` — 2 sections: Mandarin Foundations: Tones, Characters and First Phrases; Writing Chinese: Stroke Order, Radical Lookup and Character Memory
 - **Ch 2. Mandarin Grammar** `ku-mandarin-mandarin-grammar` — 1 sections: Mandarin Grammar: Measure Words, Aspect and the Ba-Construction
 - **Ch 3. Classical Canon & Recitation** `ku-mandarin-classical-canon-and-recitation` — 1 sections: The Classical Chinese Canon: Famous Lines and Exact Recall
 
@@ -1530,33 +1530,36 @@
 
 ### Naval Architecture & Marine Engineering (`ku-naval-architecture`)
 
-*Why ships stay up* — 3 chapters · 3 sections
+*Why ships stay up* — 4 chapters · 5 sections
 
 - **Ch 1. Marine Engineering** `ku-naval-architecture-marine-engineering` — 1 sections: Naval Architecture: Why Ships Float and Stay Up
 - **Ch 2. Ship Structures** `ku-naval-architecture-ship-structures` — 1 sections: Ship Structures: Hull Girders, Framing and Fatigue
 - **Ch 3. Ship Design & Propulsion** `ku-naval-architecture-ship-design-and-propulsion` — 1 sections: Ship Design and Propulsion: The Spiral from Deadweight to Propeller
+- **Ch 4. Seakeeping & Manoeuvring** `ku-naval-architecture-seakeeping-and-manoeuvring` — 2 sections: Seakeeping: How Ships Move in Waves; Manoeuvring: How Ships Turn, Stop and Stay on Course
 
 ### Nanotechnology (`ku-nanotechnology`)
 
-*Engineering at atomic scale* — 3 chapters · 3 sections
+*Engineering at atomic scale* — 4 chapters · 5 sections
 
 - **Ch 1. The Small Frontier** `ku-nanotechnology-the-small-frontier` — 1 sections: Nanotechnology: Engineering at the Scale of Atoms
-- **Ch 2. Making & Seeing the Nanoworld** `ku-nanotechnology-making-and-seeing-the-nanoworld` — 1 sections: Making and Seeing the Nanoworld
-- **Ch 3. Nanomedicine & Clean Tech** `ku-nanotechnology-nanomedicine-and-clean-tech` — 1 sections: Nanomedicine and Clean Technology
+- **Ch 2. Confinement & Controlled Growth** `ku-nanotechnology-confinement-and-controlled-growth` — 2 sections: Quantum Confinement: Tuning Matter with Size; Nucleation, Growth and Self-Assembly
+- **Ch 3. Making & Seeing the Nanoworld** `ku-nanotechnology-making-and-seeing-the-nanoworld` — 1 sections: Making and Seeing the Nanoworld
+- **Ch 4. Nanomedicine & Clean Tech** `ku-nanotechnology-nanomedicine-and-clean-tech` — 1 sections: Nanomedicine and Clean Technology
 
 ### Quantum Information (`ku-quantum-information`)
 
-*Qubits and beyond* — 3 chapters · 3 sections
+*Qubits and beyond* — 4 chapters · 5 sections
 
 - **Ch 1. Quantum Sensing & Metrology** `ku-quantum-information-quantum-sensing-and-metrology` — 1 sections: Quantum Sensing and Atomic Clocks: Measuring the Impossible
 - **Ch 2. Quantum Computation** `ku-quantum-information-quantum-computation` — 1 sections: Qubits and Quantum Gates
 - **Ch 3. Algorithms & Hardware** `ku-quantum-information-algorithms-and-hardware` — 1 sections: Quantum Algorithms and Hardware Platforms
+- **Ch 4. Error Correction & Fault Tolerance** `ku-quantum-information-error-correction-and-fault-tolerance` — 2 sections: Quantum Error Correction: Measuring Errors Without Reading the Data; Fault Tolerance: From Physical to Logical Qubits
 
 ### Computational Science & Simulation (`ku-computational-science`)
 
-*Models of the future* — 3 chapters · 3 sections
+*Models of the future* — 3 chapters · 4 sections
 
-- **Ch 1. Numerical Methods** `ku-computational-science-numerical-methods` — 1 sections: Numerical Methods: The Engine Under Every Simulation
+- **Ch 1. Numerical Methods** `ku-computational-science-numerical-methods` — 2 sections: Numerical Methods: The Engine Under Every Simulation; Monte Carlo, MCMC and Quantified Uncertainty
 - **Ch 2. Simulating Reality** `ku-computational-science-simulating-reality` — 1 sections: Digital Twins: Building the Mirror World
 - **Ch 3. Earth System Modeling** `ku-computational-science-earth-system-modeling` — 1 sections: How Climate Models Predict the Future
 
