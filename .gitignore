@@ -66,7 +66,10 @@ tool-results/
 db/*.db
 
 # internal dev artifacts (kept locally, not for GitHub)
-/research/   # root-only: legacy exam-PDF research notes (NOT src/app/api/syllabus/research)
+# /research/ is root-only: legacy exam-PDF research notes (NOT src/app/api/syllabus/research)
+/research/
+.tmp-k4/
+.tmp-ra11/
 download/
 worklog*.md
 scripts/restructure-subject-wise.py

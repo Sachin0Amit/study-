@@ -384,6 +384,7 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     ownFields: ['Genetics & Heredity'],
     chapters: [
       { name: 'Classical & Transmission Genetics', branches: ['Classical Genetics', 'Transmission Genetics'] },
+      { name: 'Cytogenetics & Allelic Analysis', branches: ['Cytogenetics', 'Allelic Analysis'] },
       { name: 'Molecular Genetics & Genomics', branches: ['Molecular Genetics', 'Genomics'] },
       { name: 'Genes in Populations', branches: ['Population Genetics', 'Genes in Populations'] },
       { name: 'Biotechnology', branches: ['Biotechnology'] },
@@ -485,11 +486,17 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'egg',
     accent: '#ec4899',
     tagline: 'From one cell to a body',
-    blurb: 'How a fertilized egg builds an organism — the model organisms, genes and cell behaviors that sculpt the embryo.',
+    blurb: 'How a fertilized egg builds an organism — the model organisms, genes and cell behaviors that sculpt the embryo, how identical nuclei take different fates, and the stem cells that renew and rebuild bodies.',
     ownFields: ['Developmental Biology'],
+    /* X64: Cell Fate & Determination inserted as Ch2 — the fate question
+       (how identical nuclei become different cells) is the conceptual
+       foundation between the body-building overview and the mechanism
+       chapters (USER RULE 5, foundations-first). */
     chapters: [
       { name: 'Building the Body', branches: ['Growth & Form'] },
+      { name: 'Cell Fate & Determination', branches: ['Cell Fate & Determination'] },
       { name: 'Mechanisms & Model Organisms', branches: ['Developmental Mechanisms'] },
+      { name: 'Growth, Renewal & Regeneration', branches: ['Growth, Renewal & Regeneration'] },
     ],
   },
   {
@@ -529,10 +536,11 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'component',
     accent: '#d946ef',
     tagline: 'Life, engineered',
-    blurb: 'Designing and building biological systems — parts, circuits, chassis, the design-build-test-learn cycle, applications, biosafety and ethics.',
+    blurb: 'Designing and building biological systems — parts and circuits, chassis, the design-build-test-learn cycle, applications, biosafety and ethics.',
     ownFields: ['Synthetic Biology'],
     chapters: [
       { name: 'Programming Living Cells', branches: ['Bioengineering'] },
+      { name: 'Genetic Circuits & Toolkits', branches: ['Genetic Circuits & Toolkits'] },
       { name: 'Applications & Responsible Innovation', branches: ['Applications & Ethics'] },
     ],
   },
@@ -767,10 +775,11 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'hourglass',
     accent: '#d97706',
     tagline: 'The age of revolutions and world wars',
-    blurb: 'Revolutions, democracy and rights, the world wars, decolonization and the twentieth-century world order.',
+    blurb: 'Revolutions, democracy and rights, the world wars, Brazil from colony to redemocratization, decolonization and the twentieth-century world order.',
     chapters: [
       { name: 'Democracy, Rights & Revolution', branches: ['Democracy & Rights'] },
       { name: 'War, Decolonization & the Twentieth Century', branches: ['The Modern Age'] },
+      { name: 'Brazil: Colony to Redemocratization', branches: ['Brazilian History'] },
     ],
   },
   {
@@ -780,10 +789,11 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'chart-line',
     accent: '#ca8a04',
     tagline: 'How economies became modern',
-    blurb: 'Trade routes, exchange networks, the Industrial Revolution and the great divergence between economies.',
+    blurb: 'Trade routes, exchange networks, the Industrial Revolution, the great divergence between economies and the monetary order that binds them.',
     chapters: [
       { name: 'Trade, Exchange & Industrialization', branches: ['Economic History'] },
       { name: 'The Great Divergence', branches: ['Global Divergence'] },
+      { name: 'Money, Crises & the Modern Order', branches: ['Money & the Modern Order'] },
     ],
   },
   {
@@ -1729,14 +1739,17 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'ship',
     accent: '#0369a1',
     tagline: 'Why ships stay up',
-    blurb: 'Buoyancy and stability, hull structures, the design-propulsion spiral, and how ships move and steer in waves.',
+    blurb: 'Buoyancy, the full stability story — intact GZ curves and damage subdivision — hull structures, the design-propulsion spiral, and how ships move and steer in waves.',
     ownFields: ['Naval Architecture'],
     /* X51: declared pedagogical order — float/stability first, then
        structures, then design/propulsion (USER RULE 5). X59 appends the
        dynamics chapter: motions and manoeuvring come after the ship is
-       designed, built and propelled. */
+       designed, built and propelled. X61 inserts the Stability & Safety
+       chapter as Ch2 — righting-arm curves and damage subdivision are
+       the second thing a naval architect learns, before structures. */
     chapters: [
       { name: 'Marine Engineering', branches: ['Marine Engineering'] },
+      { name: 'Stability & Safety', branches: ['Stability & Safety'] },
       { name: 'Ship Structures', branches: ['Ship Structures'] },
       { name: 'Ship Design & Propulsion', branches: ['Ship Design & Propulsion'] },
       { name: 'Seakeeping & Manoeuvring', branches: ['Seakeeping & Manoeuvring'] },
@@ -1749,16 +1762,19 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'atom',
     accent: '#a855f7',
     tagline: 'Engineering at atomic scale',
-    blurb: 'The small frontier — its physics, the quantum-confinement core, how nanocrystals are grown, its making-and-seeing tools, its medicine and clean tech.',
+    blurb: 'The small frontier — its physics, the quantum-confinement core, the carbon family from fullerenes to graphene, transistors at the scaling limit, its making-and-seeing tools, its medicine and clean tech.',
     ownFields: ['Nanotechnology'],
     /* X51: declared pedagogical order — scale physics first, then the
        fabrication/characterization craft, then applications (USER RULE 5).
        X59 inserts the quantitative core between them: confinement physics
        and crystal-growth chemistry belong with the foundations, before
-       the toolbox that assumes them. */
+       the toolbox that assumes them. X61 inserts the materials/devices
+       chapter as Ch3 — carbon nanomaterials and the transistor scaling
+       story build on confinement (Ch2) and feed the toolbox (Ch4). */
     chapters: [
       { name: 'The Small Frontier', branches: ['The Small Frontier'] },
       { name: 'Confinement & Controlled Growth', branches: ['Confinement & Controlled Growth'] },
+      { name: 'Carbon Nanomaterials & Nanoelectronics', branches: ['Carbon Nanomaterials & Nanoelectronics'] },
       { name: 'Making & Seeing the Nanoworld', branches: ['Making & Seeing the Nanoworld'] },
       { name: 'Nanomedicine & Clean Tech', branches: ['Nanomedicine & Clean Tech'] },
     ],
@@ -1770,16 +1786,23 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'atom',
     accent: '#8b5cf6',
     tagline: 'Qubits and beyond',
-    blurb: 'Qubits and gates, algorithms and hardware — and the error-correction stack that turns them into machines.',
+    blurb: 'Qubits and gates, algorithms and hardware, the communication stack from BB84 to the quantum internet, sensing and metrology — and the error-correction stack that turns them into machines.',
     ownFields: ['Quantum Information'],
     /* X51: restructured — the sensing lesson now owns a correctly-named
        chapter; computation and algorithms/hardware follow (USER RULE 5).
        X59 appends the protection stack as capstone: the algorithms
-       chapter names error correction, and this chapter delivers it. */
+       chapter names error correction, and this chapter delivers it.
+       X61 (USER RULE 5 fix + new chapter): the book now renders
+       FOUNDATIONS-FIRST — Qubits & Gates is Ch1 (the sensing lesson had
+       sat first with no foundations under it), then Algorithms &
+       Hardware, then the new Quantum Communication & Networks chapter
+       (QKD/teleportation), then Sensing & Metrology as the application
+       chapter, with Error Correction & Fault Tolerance kept as capstone. */
     chapters: [
-      { name: 'Quantum Sensing & Metrology', branches: ['Beyond Computing'] },
       { name: 'Quantum Computation', branches: ['Quantum Computation'] },
       { name: 'Algorithms & Hardware', branches: ['Algorithms & Hardware'] },
+      { name: 'Quantum Communication & Networks', branches: ['Quantum Communication & Networks'] },
+      { name: 'Quantum Sensing & Metrology', branches: ['Beyond Computing'] },
       { name: 'Error Correction & Fault Tolerance', branches: ['Error Correction & Fault Tolerance'] },
     ],
   },

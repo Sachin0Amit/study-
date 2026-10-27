@@ -297,6 +297,13 @@ const LAB_EASY: Record<string, string> = {
   'kinetics-lab': 'Slide temperature or turn on catalyst to see activation energy wall drop and reaction speed up.',
   'cpp-playground': 'Type small C++ logic, press run, see output. Break it safely here, fix errors one by one.',
   'java-playground': 'Type small Java logic, press run, see output. Break it safely here, fix errors one by one.',
+  'c-playground': 'Type small C logic, press run, see output. Real compiler answers back — errors too, that is how you learn.',
+  'ts-playground': 'Type TypeScript, press run, see output. Types get checked while it runs.',
+  'python-playground': 'Type small Python, press run, see output. Break it safely here, fix errors one by one.',
+  'sql-playground': 'Write one query, press run, see a real table answer. Tables are already filled with demo data.',
+  'html-playground': 'Change the tags, watch the preview redraw itself. No run button needed.',
+  'css-playground': 'Change the styles, watch the box on the right restyle instantly.',
+  'matrix-lab': 'Change one number in the grid — det, inverse and eigens update instantly. Flip to 2×2 and press animate.',
 }
 
 export function easyLabLine(toolKey: string, fallbackTitle: string, fallbackDesc: string): string {

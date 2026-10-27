@@ -5,6 +5,7 @@ import { INDIA_MEDICAL_EXAMS } from './india-medical'
 import { INDIA_PG_COMPETITIVE_EXAMS } from './india-pg-competitive'
 import { INDIA_GOVT_EXAMS } from './india-govt'
 import { INDIA_PROFESSIONAL_EXAMS } from './india-professional'
+import { INDIA_STATE_CET_EXAMS } from './india-state-cets'
 import { USA_SUBJECT_EXAMS } from './usa-subject'
 import { UK_EXAMS } from './uk'
 import { IB_EXAMS } from './ib'
@@ -15,6 +16,7 @@ import { AUSTRALIA_EXAMS } from './australia'
 import { VICTORIA_EXAMS } from './victoria'
 import { QUEENSLAND_EXAMS } from './queensland'
 import { CANADA_EXAMS } from './canada'
+import { BRAZIL_EXAMS } from './brazil'
 
 /**
  * The curated official-syllabus registry. Every exam here has a COMPLETE
@@ -28,6 +30,7 @@ export const CURATED_EXAMS: CuratedExam[] = [
   ...INDIA_PG_COMPETITIVE_EXAMS,
   ...INDIA_GOVT_EXAMS,
   ...INDIA_PROFESSIONAL_EXAMS,
+  ...INDIA_STATE_CET_EXAMS,
   ...USA_SUBJECT_EXAMS,
   ...UK_EXAMS,
   ...IB_EXAMS,
@@ -38,6 +41,7 @@ export const CURATED_EXAMS: CuratedExam[] = [
   ...VICTORIA_EXAMS,
   ...QUEENSLAND_EXAMS,
   ...CANADA_EXAMS,
+  ...BRAZIL_EXAMS,
 ].sort((a, b) => b.popularity - a.popularity)
 
 export const CURATED_EXAM_BY_ID: Map<string, CuratedExam> = new Map(

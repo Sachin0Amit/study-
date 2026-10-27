@@ -58,11 +58,21 @@ const registry: Record<string, ComponentType> = {
   // ---- JavaScript (Flanagan) labs ----
   'js-playground': lazy(() => import('./js-playground')),
   'event-loop-lab': lazy(() => import('./event-loop-lab')),
-  // ---- C++ (Stroustrup) and Java (Horstmann) consoles ----
-  // Both share the interactive console runner; each carries its own subject
-  // title so C++/Java chapters never show a "JavaScript" label.
-  'cpp-playground': lazy(() => import('./js-playground')),
-  'java-playground': lazy(() => import('./js-playground')),
+  // ---- Real-toolchain code playgrounds (mini-services/code-runner :3020) ----
+  // Each language gets its OWN playground: C chapters show the C Playground
+  // (real gcc), C++ the C++ Playground (real g++), Java the Java Playground
+  // (real OpenJDK) — never a mislabeled "JavaScript Playground".
+  'c-playground': lazy(() => import('./c-playground')),
+  'cpp-playground': lazy(() => import('./cpp-playground')),
+  'java-playground': lazy(() => import('./java-playground')),
+  'ts-playground': lazy(() => import('./ts-playground')),
+  'python-playground': lazy(() => import('./python-playground')),
+  'sql-playground': lazy(() => import('./sql-playground')),
+  // ---- Web platform — live-preview playgrounds ----
+  'html-playground': lazy(() => import('./html-playground')),
+  'css-playground': lazy(() => import('./css-playground')),
+  // ---- Linear algebra ----
+  'matrix-lab': lazy(() => import('./matrix-lab')),
   // ---- Digital Logic (Mano) labs ----
   'kmap-minimizer': lazy(() => import('./kmap-minimizer')),
   'sequential-lab': lazy(() => import('./sequential-lab')),
@@ -142,9 +152,18 @@ export const INTERACTIVE_META: Record<string, ToolMeta> = {
   // ---- JavaScript (Flanagan) labs ----
   'js-playground': { title: 'JavaScript Playground', description: 'Write real code in a sandboxed console with instant evaluation and captured output.', chapter: 'JS · Ch 1–12, 14–17' },
   'event-loop-lab': { title: 'Event Loop Lab', description: 'Queue tasks, microtasks and timers and watch the call stack drain in the exact order JavaScript runs them.', chapter: 'JS · Ch 13 Asynchronous JS' },
-  // ---- C++ (Stroustrup) and Java (Horstmann) consoles ----
-  'cpp-playground': { title: 'C++ Playground', description: 'Try the chapter’s logic hands-on — control flow, functions, classes and STL ideas — in the interactive console with instant output.', chapter: 'C++ · Stroustrup' },
-  'java-playground': { title: 'Java Playground', description: 'Try the chapter’s logic hands-on — objects, lambdas, generics, collections and streams — in the interactive console with instant output.', chapter: 'Java · Horstmann' },
+  // ---- Real-toolchain code playgrounds ----
+  'c-playground': { title: 'C Playground', description: 'Real gcc, in the browser tab: printf, loops, pointers, structs — edit an example, press Run, read the program output.', chapter: 'C · Programming in C' },
+  'cpp-playground': { title: 'C++ Playground', description: 'Real g++ with -std=c++20: vectors, classes, templates and RAII — edit an example, press Run, read the program output.', chapter: 'C++ · Stroustrup' },
+  'java-playground': { title: 'Java Playground', description: 'Real OpenJDK 21: records, streams, generics and lambdas — edit an example, press Run, read the program output.', chapter: 'Java · Horstmann' },
+  'ts-playground': { title: 'TypeScript Playground', description: 'Bun runs TypeScript natively: interfaces, narrowing, generics and utility types — edit, Run, read.', chapter: 'Web · TypeScript' },
+  'python-playground': { title: 'Python Playground', description: 'Real CPython 3.13: dataclasses, comprehensions, gradient descent, a hash chain, a tiny test suite — edit, Run, read.', chapter: 'AI & Data Science · Python' },
+  'sql-playground': { title: 'SQL Playground', description: 'A real SQLite engine with a seeded demo database — joins, groups, window functions, DDL. Write a query, press Run.', chapter: 'Web · SQL & PostgreSQL' },
+  // ---- Web platform — live preview ----
+  'html-playground': { title: 'HTML Playground', description: 'Real markup, real rendering: semantic pages, forms with validation, tables, canvas — the preview is a live sandboxed document.', chapter: 'Web · HTML5' },
+  'css-playground': { title: 'CSS Playground', description: 'Style a real document live: selectors, cascade, flexbox, grid, custom properties and keyframe animations.', chapter: 'Web · CSS & Sass' },
+  // ---- Linear algebra ----
+  'matrix-lab': { title: 'Matrix Lab', description: 'Determinant, rank, inverse and eigenvalues as you type — and for 2×2, watch the plane deform from identity to M.', chapter: 'Math · Matrices & Linear Algebra' },
   // ---- Digital Logic (Mano) labs ----
   'kmap-minimizer': { title: 'Karnaugh Map Minimizer', description: 'Drop minterms on the K-map and let the exact cover find your minimal SOP expression.', chapter: 'DLD · Ch 1–5 Combinational' },
   'sequential-lab': { title: 'Sequential Logic Lab', description: 'Clock flip-flops — SR, D, JK, T — and watch state diagrams and excitation tables update together.', chapter: 'DLD · Ch 6–12 Sequential' },

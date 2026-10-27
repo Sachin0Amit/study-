@@ -11,6 +11,8 @@ import { x46ThinBooksPassTopics } from './x46-thin-books-pass'
 import { x49LanguageDeepeningPassTopics } from './x49-language-deepening-pass'
 import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
 import { x59LibraryOrgBacklogPassTopics } from './x59-library-org-pass'
+import { x60EnemBrazilPassTopics } from './x60-enem-brazil-pass'
+import { x61LibraryOrgLoopPassTopics } from './x61-library-org-pass'
 
 export const languagesLiterature: KnowledgeDomainFile = {
   domain: 'Languages & World Literature',
@@ -3878,5 +3880,25 @@ export const languagesLiterature: KnowledgeDomainFile = {
     // meaning clues, the phono-semantic ratio, and simplified-vs-
     // traditional as a choice) — 'stroke order' had zero live hits.
     ...x59LibraryOrgBacklogPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
+    // X60 ENEM pass (2026-10-27): Brazilian literature from Barroco to
+    // Modernism — the examination canon (Semana de 1922, Machado de Assis,
+    // anthropophagy) plus modernism's intertextual parody and colloquial
+    // register revolution. Carved against lang-literary-devices (owns
+    // figurative TECHNIQUE) and lang-epic-tradition (owns the European canon).
+    ...x60EnemBrazilPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
+    // X61 library-org loop pass (2026-10-27): two language books reach
+    // 5 lessons. German +1: word formation (compounds/head rule/Fugen,
+    // derivational prefix MEANINGS + stress pairs, suffix families,
+    // decompounding workflow; carved against lang-german-foundations
+    // which owns gender-suffix rules as GENDER predictors, and
+    // lang-german-verbs which owns prefixes as PARTICIPLE grammar).
+    // Mandarin +1: the topolect family and the standard (Sinitic map,
+    // mutual unintelligibility, guānhuā→Guoyu→Putonghua, the 1956
+    // definition, PSC grading; carved against the Tonal Languages
+    // lesson which OWNS tone typology/sandhi, and lang-mandarin-
+    // foundations which owns the SCRIPT choice). Greps: 'Fugen',
+    // 'Donaudampf', 'Komposit', 'Putonghua', 'topolect', 'Hokkien',
+    // 'Hakka', 'guanhua' had zero live hits.
+    ...x61LibraryOrgLoopPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
   ],
 }

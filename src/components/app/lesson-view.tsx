@@ -431,8 +431,11 @@ export function LessonView({ sectionId }: { sectionId: string }) {
     [content],
   )
 
-  /* Simverse pairing: knowledge-topic lessons resolve their lab here */
-  const lessonSimKey = pairedSimForSection(sectionId) ?? chapter?.interactiveKey ?? ''
+  /* Simverse pairing: knowledge-topic lessons resolve their lab here.
+     Chapters may declare interactiveKey 'none' — that means no lab, so it
+     must not fall through to the "not available yet" placeholder. */
+  const rawSimKey = pairedSimForSection(sectionId) ?? chapter?.interactiveKey ?? ''
+  const lessonSimKey = rawSimKey && rawSimKey !== 'none' ? rawSimKey : ''
 
   const idx = siblings.findIndex((s) => s.id === sectionId)
 
