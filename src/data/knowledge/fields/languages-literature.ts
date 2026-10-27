@@ -11,6 +11,7 @@ import { x46ThinBooksPassTopics } from './x46-thin-books-pass'
 import { x49LanguageDeepeningPassTopics } from './x49-language-deepening-pass'
 import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
 import { x59LibraryOrgBacklogPassTopics } from './x59-library-org-pass'
+import { x60EnemBrazilPassTopics } from './x60-enem-brazil-pass'
 
 export const languagesLiterature: KnowledgeDomainFile = {
   domain: 'Languages & World Literature',
@@ -3878,5 +3879,11 @@ export const languagesLiterature: KnowledgeDomainFile = {
     // meaning clues, the phono-semantic ratio, and simplified-vs-
     // traditional as a choice) — 'stroke order' had zero live hits.
     ...x59LibraryOrgBacklogPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
+    // X60 ENEM pass (2026-10-27): Brazilian literature from Barroco to
+    // Modernism — the examination canon (Semana de 1922, Machado de Assis,
+    // anthropophagy) plus modernism's intertextual parody and colloquial
+    // register revolution. Carved against lang-literary-devices (owns
+    // figurative TECHNIQUE) and lang-epic-tradition (owns the European canon).
+    ...x60EnemBrazilPassTopics.filter((t) => t.domain === 'Languages & World Literature'),
   ],
 }

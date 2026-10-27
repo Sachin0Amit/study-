@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T07:57:09.054Z",
+  "generatedAt": "2026-10-27T08:11:38.828Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 138,
     "books": 138,
-    "chapters": 866,
-    "sections": 4623
+    "chapters": 871,
+    "sections": 4645
   },
   "subjects": [
     {
@@ -21,7 +21,7 @@
       "group": "Foundations",
       "tagline": "From first principles to research frontiers",
       "chapterCount": 76,
-      "sectionCount": 487,
+      "sectionCount": 490,
       "chapters": [
         {
           "id": "rosen-ch1",
@@ -3074,7 +3074,7 @@
           "title": "Algebra",
           "shortTitle": "Algebra",
           "bookId": "math-master",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-math-algebra-notation-manipulation",
@@ -3085,6 +3085,11 @@
               "id": "ku-math-quadratics-completing-square",
               "number": 71.2,
               "title": "Quadratics: Four Ways to Solve, One Formula to Rule Them"
+            },
+            {
+              "id": "ku-math-modulus-logarithm-inequalities",
+              "number": 71.3,
+              "title": "Modulus and Logarithm Inequalities: The Algebra of Distance and of Growth"
             }
           ]
         },
@@ -3094,7 +3099,7 @@
           "title": "Calculus",
           "shortTitle": "Calculus",
           "bookId": "math-master",
-          "sectionCount": 3,
+          "sectionCount": 4,
           "sections": [
             {
               "id": "ku-calc-removing-discontinuities",
@@ -3110,6 +3115,11 @@
               "id": "ku-calc-concavity-second-derivative-test",
               "number": 72.3,
               "title": "Concavity and the Second Derivative Test"
+            },
+            {
+              "id": "ku-calc-definite-integral-properties",
+              "number": 72.4,
+              "title": "Properties of Definite Integrals: Reflection, Periodicity and the Leibniz Rule"
             }
           ]
         },
@@ -3119,7 +3129,7 @@
           "title": "Geometry & Measurement",
           "shortTitle": "Geometry & Measurement",
           "bookId": "math-master",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-math-measurement-areas-volumes",
@@ -3130,6 +3140,11 @@
               "id": "ku-math-earth-geometry",
               "number": 73.2,
               "title": "Earth Geometry: Latitude, Longitude, Great Circles and Time Zones"
+            },
+            {
+              "id": "ku-math-sphere-three-dimensions",
+              "number": 73.3,
+              "title": "The Sphere in Three-Dimensional Coordinate Geometry"
             }
           ]
         },
@@ -26940,8 +26955,8 @@
       "name": "Genetics & Heredity",
       "group": "Life Sciences",
       "tagline": "How traits travel and vary",
-      "chapterCount": 4,
-      "sectionCount": 9,
+      "chapterCount": 5,
+      "sectionCount": 13,
       "chapters": [
         {
           "id": "ku-genetics-heredity-classical-and-transmission-genetics",
@@ -26949,7 +26964,7 @@
           "title": "Classical & Transmission Genetics",
           "shortTitle": "Classical & Transmission Genetics",
           "bookId": "ku-genetics-heredity",
-          "sectionCount": 3,
+          "sectionCount": 4,
           "sections": [
             {
               "id": "ku-bio-genetics-mendel",
@@ -26965,32 +26980,62 @@
               "id": "ku-bio-beyond-mendel-extensions",
               "number": 1.3,
               "title": "Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits"
+            },
+            {
+              "id": "ku-bio-penetrance-expressivity",
+              "number": 1.4,
+              "title": "When Genes Do Not Follow the Script: Penetrance, Expressivity and the Chi-Square Test"
+            }
+          ]
+        },
+        {
+          "id": "ku-genetics-heredity-cytogenetics-and-allelic-analysis",
+          "number": 2,
+          "title": "Cytogenetics & Allelic Analysis",
+          "shortTitle": "Cytogenetics & Allelic Analysis",
+          "bookId": "ku-genetics-heredity",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-chromosome-number-structure",
+              "number": 2.1,
+              "title": "Chromosomes Under Glass: Number, Structure and Karyotypes"
+            },
+            {
+              "id": "ku-bio-alleles-mullers-morphs",
+              "number": 2.2,
+              "title": "What Alleles Do: Wild Type, Muller's Morphs and Complementation"
             }
           ]
         },
         {
           "id": "ku-genetics-heredity-molecular-genetics-and-genomics",
-          "number": 2,
+          "number": 3,
           "title": "Molecular Genetics & Genomics",
           "shortTitle": "Molecular Genetics & Genomics",
           "bookId": "ku-genetics-heredity",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-bio-genomics-bioinformatics",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Genomics and Bioinformatics: Reading Whole Genomes"
             },
             {
+              "id": "ku-bio-markers-qtl-mapping",
+              "number": 3.2,
+              "title": "Genetic Markers: DNA Landmarks, Marker Maps and QTL"
+            },
+            {
               "id": "ku-bio-crispr-gene-editing",
-              "number": 2.2,
+              "number": 3.3,
               "title": "CRISPR and the Mechanics of Gene Editing"
             }
           ]
         },
         {
           "id": "ku-genetics-heredity-genes-in-populations",
-          "number": 3,
+          "number": 4,
           "title": "Genes in Populations",
           "shortTitle": "Genes in Populations",
           "bookId": "ku-genetics-heredity",
@@ -26998,19 +27043,19 @@
           "sections": [
             {
               "id": "ku-bio-population-inheritance-frequencies",
-              "number": 3.1,
+              "number": 4.1,
               "title": "Inheritance in Populations: Allele Frequencies and Population Patterns"
             },
             {
               "id": "ku-bio-population-genetics",
-              "number": 3.2,
+              "number": 4.2,
               "title": "Population Genetics: Genes Drifting Through Time"
             }
           ]
         },
         {
           "id": "ku-genetics-heredity-biotechnology",
-          "number": 4,
+          "number": 5,
           "title": "Biotechnology",
           "shortTitle": "Biotechnology",
           "bookId": "ku-genetics-heredity",
@@ -27018,12 +27063,12 @@
           "sections": [
             {
               "id": "ku-bio-biotechnology-rdna-processes",
-              "number": 4.1,
+              "number": 5.1,
               "title": "Recombinant DNA: The Tools and Techniques of Genetic Engineering"
             },
             {
               "id": "ku-bio-biotechnology-applications",
-              "number": 4.2,
+              "number": 5.2,
               "title": "Biotechnology in Practice: Medicine, Farms, and Industry"
             }
           ]
@@ -27036,7 +27081,7 @@
       "group": "Life Sciences",
       "tagline": "Descent with modification",
       "chapterCount": 3,
-      "sectionCount": 5,
+      "sectionCount": 9,
       "chapters": [
         {
           "id": "ku-evolutionary-biology-evolution-and-speciation",
@@ -27044,7 +27089,7 @@
           "title": "Evolution & Speciation",
           "shortTitle": "Evolution & Speciation",
           "bookId": "ku-evolutionary-biology",
-          "sectionCount": 2,
+          "sectionCount": 5,
           "sections": [
             {
               "id": "ku-bio-evolution-natural-selection",
@@ -27055,6 +27100,21 @@
               "id": "ku-bio-speciation-barriers",
               "number": 1.2,
               "title": "How New Species Are Born"
+            },
+            {
+              "id": "ku-bio-sexual-selection-darwin",
+              "number": 1.3,
+              "title": "Sexual Selection: Weapons, Displays and the Struggle for Mates"
+            },
+            {
+              "id": "ku-bio-darwin-difficulties",
+              "number": 1.4,
+              "title": "Difficulties on Theory: The Eye, Missing Links and Sterile Workers"
+            },
+            {
+              "id": "ku-bio-biogeography-darwin",
+              "number": 1.5,
+              "title": "The Geography of Life: Barriers, Oceanic Islands and Dispersal"
             }
           ]
         },
@@ -27079,7 +27139,7 @@
           "title": "Diversity & Systematics",
           "shortTitle": "Diversity & Systematics",
           "bookId": "ku-evolutionary-biology",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-bio-classification-five-kingdoms",
@@ -27090,6 +27150,11 @@
               "id": "ku-bio-plant-kingdom-groups",
               "number": 3.2,
               "title": "The Plant Kingdom: Algae to Angiosperms"
+            },
+            {
+              "id": "ku-bio-classification-common-descent",
+              "number": 3.3,
+              "title": "Classification as Genealogy: Homology, Analogy and Rudimentary Organs"
             }
           ]
         }
@@ -27211,7 +27276,7 @@
       "group": "Life Sciences",
       "tagline": "Who lives where, and why",
       "chapterCount": 4,
-      "sectionCount": 9,
+      "sectionCount": 10,
       "chapters": [
         {
           "id": "ku-ecology-conservation-organisms-and-the-environment",
@@ -27279,21 +27344,26 @@
           "title": "Conservation & Restoration",
           "shortTitle": "Conservation & Restoration",
           "bookId": "ku-ecology-conservation",
-          "sectionCount": 3,
+          "sectionCount": 4,
           "sections": [
             {
-              "id": "ku-env-biodiversity-loss",
+              "id": "ku-env-brazil-biomes-geography",
               "number": 4.1,
+              "title": "Brazilian Biomes and the Geography of Deforestation"
+            },
+            {
+              "id": "ku-env-biodiversity-loss",
+              "number": 4.2,
               "title": "Biodiversity and the Sixth Extinction"
             },
             {
               "id": "ku-env-restoration-rewilding",
-              "number": 4.2,
+              "number": 4.3,
               "title": "Restoration and Rewilding: Putting Ecosystems Back Together"
             },
             {
               "id": "ku-env-measuring-biodiversity",
-              "number": 4.3,
+              "number": 4.4,
               "title": "Measuring Biodiversity: Richness, Evenness, Sampling and Simpson’s Index"
             }
           ]
@@ -27455,8 +27525,8 @@
       "name": "Developmental Biology",
       "group": "Life Sciences",
       "tagline": "From one cell to a body",
-      "chapterCount": 2,
-      "sectionCount": 3,
+      "chapterCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-developmental-biology-building-the-body",
@@ -27490,6 +27560,21 @@
               "id": "ku-bio-dev-morphogenesis",
               "number": 2.2,
               "title": "Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo"
+            }
+          ]
+        },
+        {
+          "id": "ku-developmental-biology-growth-renewal-and-regeneration",
+          "number": 3,
+          "title": "Growth, Renewal & Regeneration",
+          "shortTitle": "Growth, Renewal & Regeneration",
+          "bookId": "ku-developmental-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-dev-stem-cells-regeneration",
+              "number": 3.1,
+              "title": "Stem Cells and Regeneration: The Body’s Repair Kit and Its Missing Manuals"
             }
           ]
         }
@@ -27610,8 +27695,8 @@
       "name": "Synthetic Biology",
       "group": "Life Sciences",
       "tagline": "Life, engineered",
-      "chapterCount": 2,
-      "sectionCount": 3,
+      "chapterCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-synthetic-biology-programming-living-cells",
@@ -27629,8 +27714,23 @@
           ]
         },
         {
-          "id": "ku-synthetic-biology-applications-and-responsible-innovation",
+          "id": "ku-synthetic-biology-genetic-circuits-and-toolkits",
           "number": 2,
+          "title": "Genetic Circuits & Toolkits",
+          "shortTitle": "Genetic Circuits & Toolkits",
+          "bookId": "ku-synthetic-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-emer-synbio-genetic-circuits",
+              "number": 2.1,
+              "title": "Genetic Circuits: Engineering Logic from Repressors"
+            }
+          ]
+        },
+        {
+          "id": "ku-synthetic-biology-applications-and-responsible-innovation",
+          "number": 3,
           "title": "Applications & Responsible Innovation",
           "shortTitle": "Applications & Responsible Innovation",
           "bookId": "ku-synthetic-biology",
@@ -27638,12 +27738,12 @@
           "sections": [
             {
               "id": "ku-bio-synbio-dbtl-practice",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Synthetic Biology in Practice: The Design–Build–Test–Learn Cycle"
             },
             {
               "id": "ku-bio-synbio-biosafety-ethics",
-              "number": 2.2,
+              "number": 3.2,
               "title": "Biosafety, Biosecurity and the Ethics of Engineering Life"
             }
           ]
@@ -28575,8 +28675,8 @@
       "name": "Modern World History",
       "group": "Humanities & Social Sciences",
       "tagline": "The age of revolutions and world wars",
-      "chapterCount": 2,
-      "sectionCount": 6,
+      "chapterCount": 3,
+      "sectionCount": 9,
       "chapters": [
         {
           "id": "ku-modern-world-history-democracy-rights-and-revolution",
@@ -28584,7 +28684,7 @@
           "title": "Democracy, Rights & Revolution",
           "shortTitle": "Democracy, Rights & Revolution",
           "bookId": "ku-modern-world-history",
-          "sectionCount": 3,
+          "sectionCount": 4,
           "sections": [
             {
               "id": "ku-hist-american-revolution-founding",
@@ -28600,6 +28700,11 @@
               "id": "ku-hist-civil-rights-movement",
               "number": 1.3,
               "title": "The Civil Rights Movement"
+            },
+            {
+              "id": "ku-hist-french-revolution-napoleonic-era",
+              "number": 1.4,
+              "title": "The French Revolution and the Napoleonic Era"
             }
           ]
         },
@@ -28627,6 +28732,26 @@
               "title": "Decolonization and the Making of the Global South"
             }
           ]
+        },
+        {
+          "id": "ku-modern-world-history-brazil-colony-to-redemocratization",
+          "number": 3,
+          "title": "Brazil: Colony to Redemocratization",
+          "shortTitle": "Brazil: Colony to Redemocratization",
+          "bookId": "ku-modern-world-history",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-hist-brazil-colonial-slavery-empire",
+              "number": 3.1,
+              "title": "Colonial Brazil, Slavery and the Empire: 1500-1889"
+            },
+            {
+              "id": "ku-hist-brazil-republic-vargas-dictatorship",
+              "number": 3.2,
+              "title": "The Brazilian Republic: Old Republic, Vargas and the Military Dictatorship"
+            }
+          ]
         }
       ]
     },
@@ -28635,8 +28760,8 @@
       "name": "Economic History",
       "group": "Humanities & Social Sciences",
       "tagline": "How economies became modern",
-      "chapterCount": 2,
-      "sectionCount": 3,
+      "chapterCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-economic-history-trade-exchange-and-industrialization",
@@ -28670,6 +28795,21 @@
               "id": "ku-hist-great-divergence",
               "number": 2.1,
               "title": "The Great Divergence: Why Europe Got Rich First"
+            }
+          ]
+        },
+        {
+          "id": "ku-economic-history-money-crises-and-the-modern-order",
+          "number": 3,
+          "title": "Money, Crises & the Modern Order",
+          "shortTitle": "Money, Crises & the Modern Order",
+          "bookId": "ku-economic-history",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-hum-eco-money-bretton-woods",
+              "number": 3.1,
+              "title": "Money, Crises and the Modern Order: From Gold to Bretton Woods"
             }
           ]
         }
@@ -29206,7 +29346,7 @@
       "group": "Humanities & Social Sciences",
       "tagline": "The city, planned and lived",
       "chapterCount": 2,
-      "sectionCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-urban-studies-the-built-environment",
@@ -29214,12 +29354,17 @@
           "title": "The Built Environment",
           "shortTitle": "The Built Environment",
           "bookId": "ku-urban-studies",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-env-urban-planning-design",
               "number": 1.1,
               "title": "Urban Planning: Designing Cities That Work"
+            },
+            {
+              "id": "ku-urb-urban-mobility-transit",
+              "number": 1.2,
+              "title": "Getting Around: Streets, Transit and the Contested Mobility of Cities"
             }
           ]
         },
@@ -29251,7 +29396,7 @@
       "group": "Humanities & Social Sciences",
       "tagline": "What makes us human",
       "chapterCount": 2,
-      "sectionCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-anthropology-cultural-anthropology",
@@ -29259,7 +29404,7 @@
           "title": "Cultural Anthropology",
           "shortTitle": "Cultural Anthropology",
           "bookId": "ku-anthropology",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-anth-cultural-relativism",
@@ -29267,8 +29412,13 @@
               "title": "Cultural Anthropology: Making Sense of Human Difference"
             },
             {
-              "id": "ku-anth-kinship-descent-marriage",
+              "id": "ku-anth-fieldwork-ethnography",
               "number": 1.2,
+              "title": "Fieldwork and Ethnography: How Anthropologists Actually Learn"
+            },
+            {
+              "id": "ku-anth-kinship-descent-marriage",
+              "number": 1.3,
               "title": "Kinship, Descent and Marriage: The Grammar of Relatedness"
             }
           ]
@@ -29631,7 +29781,7 @@
       "group": "Humanities & Social Sciences",
       "tagline": "Who frames your world",
       "chapterCount": 2,
-      "sectionCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-media-communication-media-and-society",
@@ -29659,12 +29809,17 @@
           "title": "The Attention Economy",
           "shortTitle": "The Attention Economy",
           "bookId": "ku-media-communication",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-soc-media-communication",
               "number": 2.1,
               "title": "Media and Communication: Who Frames Your World"
+            },
+            {
+              "id": "ku-media-algorithmic-feed",
+              "number": 2.2,
+              "title": "The Algorithmic Feed: How Platforms Decide What You See"
             }
           ]
         }
@@ -30921,7 +31076,7 @@
       "group": "Languages & Literature",
       "tagline": "The books that shaped us",
       "chapterCount": 4,
-      "sectionCount": 6,
+      "sectionCount": 7,
       "chapters": [
         {
           "id": "ku-literature-the-great-tradition",
@@ -30944,12 +31099,17 @@
           "title": "Reading the World",
           "shortTitle": "Reading the World",
           "bookId": "ku-literature",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-lang-literary-criticism-lenses",
               "number": 2.1,
               "title": "Literary Criticism: Lenses and Schools"
+            },
+            {
+              "id": "ku-lit-brazilian-literature-modernism",
+              "number": 2.2,
+              "title": "Brazilian Literature: From Barroco to Modernism"
             }
           ]
         },

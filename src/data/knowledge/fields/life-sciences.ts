@@ -14,6 +14,9 @@ import { x35NswHscPassTopics } from './x35-nsw-hsc-pass'
 import { x47BioSplitPassTopics } from './x47-bio-split-pass'
 import { x55CrossverifyTopics } from './x55-crossverify-pass'
 import { x57CrossverifyTopics } from './x57-crossverify-pass'
+import { x60CrossverifyTopics } from './x60-crossverify-pass'
+import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
+import { x62CrossverifyEvolutionPassTopics } from './x62-crossverify-pass'
 
 export const lifeSciences: KnowledgeDomainFile = {
   domain: 'Life Sciences',
@@ -43,13 +46,141 @@ export const lifeSciences: KnowledgeDomainFile = {
     // X24 gap-closing pass (2026-10-22): habitat adaptations and abiotic
     // responses — organism-level ecology the population lesson doesn't own.
     ...x24GapClosingPassTopics.filter((t) => t.domain === 'Life Sciences'),
+    // ------------------------------------------------------------------
+    // ------------------------------------------------------------------
+    {
+      id: 'bio-genetics-mendel',
+      title: 'Mendel\'s Laws: How Traits Travel Between Generations',
+      domain: 'Life Sciences',
+      field: 'Genetics & Heredity',
+      branch: 'Classical Genetics',
+      tier: 'core',
+      concepts: [
+        'Genes come in pairs, one per parent',
+        'The law of segregation',
+        'The law of independent assortment',
+        'Punnett squares and probability',
+        'Dominance and its variants',
+        'Reading family pedigrees',
+      ],
+      words: 975,
+      readMins: 5,
+      addedOn: '2026-10-18',
+      blocks: [
+        {
+          kind: 'para',
+          text: 'Gregor Mendel counted his way to the laws of inheritance: some 28,000 pea plants over eight years in a monastery garden, tracking seed shape, flower color, and stem length across generations. From the ratios alone he deduced that traits are carried by paired factors that separate cleanly into eggs and pollen and recombine at random. Published in 1866 and ignored for 34 years, Mendel\'s laws still anchor genetics — this topic covers the two laws, the square that applies them, and the family trees that extend them.',
+        },
+        {
+          kind: 'callout',
+          title: 'Why this matters',
+          text: 'Genetic counseling for cystic fibrosis, sickle-cell trait, and Huntington\'s disease is applied Mendelism: the same ratios that fell out of monastery peas tell an expecting couple their odds. Punnett-square arithmetic is the working toolkit of clinics, breeding programs, and identity labs alike.',
+          tone: 'insight',
+        },
+        { kind: 'heading', text: 'Core Concepts' },
+        {
+          kind: 'para',
+          text: 'Every gene comes in two copies — alleles — one on each member of a chromosome pair, one inherited from each parent. Mendel saw the logic without ever seeing a chromosome: crossing pure tall with pure short peas gave all tall offspring, yet the short factor had not vanished, for it resurfaced in the grandchildren. The lesson: an organism\'s appearance (phenotype) and its genetic makeup (genotype) are different things.',
+        },
+        {
+          kind: 'para',
+          text: 'The law of segregation: during the formation of eggs and sperm, the two alleles of each gene separate, and each gamete receives exactly one. A plant carrying one tall and one short allele makes equal numbers of each type of gamete — the fairness of a coin flip — and at fertilization, chance reassembles the pair.',
+        },
+        {
+          kind: 'para',
+          text: 'The law of independent assortment: pairs of alleles for different genes are handed out independently, so the allele a seed gets for height says nothing about its allele for seed color. The independence holds only for genes on different chromosomes, or far apart on the same one — a boundary Mendel could not have known he was brushing against. Where it holds, trait ratios multiply like probabilities.',
+        },
+        {
+          kind: 'para',
+          text: 'The Punnett square turns the laws into arithmetic. Cross two heterozygotes (Tt × Tt): the grid yields one TT, two Tt, and one tt — a 3:1 ratio of phenotypes when one allele dominates, and a 1:2:1 ratio of genotypes. Stack two traits and the ratios multiply into the classic 9:3:3:1 dihybrid pattern Mendel tabulated. Probability, not blending, is the grammar of inheritance.',
+        },
+        {
+          kind: 'para',
+          text: 'Dominance is a biochemical outcome, not a tug of war. In incomplete dominance, one red and one white allele yield pink flowers; in codominance, both appear separately, as the A and B antigens on AB blood; and a recessive disease allele usually means one working copy is enough for health. Humans carry some 20,000 genes — a slot, in each of them, where alleles can differ.',
+        },
+        {
+          kind: 'para',
+          text: 'Pedigrees hang the laws on family trees. Autosomal recessive traits like cystic fibrosis skip generations and can strike two entirely healthy carriers; dominant traits like Huntington\'s disease appear in every generation, each child of an affected parent at 50 percent risk. Squares for males, circles for females, shading for the affected — and behind every pedigree, Mendel\'s ratios at work.',
+        },
+        {
+          kind: 'example',
+          title: 'Worked Example',
+          steps: [
+            'Identify what is asked: the risk that two unaffected carriers of cystic fibrosis have an affected child.',
+            'Recall the governing idea: cystic fibrosis is autosomal recessive — only the double-recessive genotype is affected.',
+            'Apply: both carrier parents are Cc. The Cc × Cc Punnett square gives CC, Cc, Cc, and cc — one cc combination in four.',
+            'State the result: a 25 percent chance of an affected child per pregnancy, a 50 percent chance of a carrier like the parents, and 25 percent of a non-carrier — Mendel\'s 3:1 arithmetic running in a modern clinic.',
+          ],
+        },
+        { kind: 'heading', text: 'Applications in the Real World' },
+        {
+          kind: 'list',
+          items: [
+            'Carrier screening for recessive diseases counsels couples with Mendelian odds before pregnancy.',
+            'Plant and animal breeding still runs on segregation ratios and selection indices.',
+            'DNA paternity and forensic tests track alleles as Mendelian markers across generations.',
+            'Classroom corn ears showing 9:3:3:1 kernel ratios demonstrate assortment on a single cob.',
+            'The royal hemophilia pedigree traced a recessive X-linked allele across Victorian Europe.',
+          ],
+        },
+        {
+          kind: 'callout',
+          title: 'Common Pitfalls',
+          text: 'Dominant does not mean common — Huntington\'s is dominant and rare, while type O blood is recessive and everywhere. Recessive does not mean weak: it means the trait shows only in the absence of a working allele. And independent assortment fails for linked genes — neighbors on the same chromosome travel together, the very exception that first let geneticists map genes onto chromosomes.',
+          tone: 'warn',
+        },
+        { kind: 'heading', text: 'Key Terms' },
+        {
+          kind: 'terms',
+          items: [
+            { term: 'Allele', def: 'One of the alternative forms a gene can take in a population.' },
+            { term: 'Genotype', def: 'The actual pair of alleles an organism carries.' },
+            { term: 'Phenotype', def: 'The observable trait, which may mask one of the alleles present.' },
+            { term: 'Heterozygous', def: 'Carrying two different alleles of a gene.' },
+            { term: 'Law of segregation', def: 'The two alleles of a gene separate into separate gametes, one each.' },
+            { term: 'Law of independent assortment', def: 'Allele pairs for different genes are inherited independently — when not linked.' },
+            { term: 'Punnett square', def: 'A grid computing the genotypes and ratios expected from a cross.' },
+          ],
+        },
+        {
+          kind: 'quiz',
+          items: [
+            {
+              q: 'Two heterozygous parents (Tt × Tt) are crossed. What fraction of offspring shows the recessive phenotype?',
+              options: ['none', 'one quarter', 'one half', 'three quarters'],
+              answer: 1,
+              explain: 'One tt combination in four — the signature 3:1 phenotypic ratio.',
+            },
+            {
+              q: 'Independent assortment fails when two genes:',
+              options: ['sit close together on the same chromosome', 'are both dominant', 'affect the same trait', 'are on separate chromosomes'],
+              answer: 0,
+              explain: 'Linked genes travel together through meiosis — recombination only occasionally breaks the pair.',
+            },
+            {
+              q: 'In codominance, a heterozygote:',
+              options: ['resembles one parent only', 'shows a blended intermediate', 'expresses both alleles distinctly, as in AB blood', 'is always infertile'],
+              answer: 2,
+              explain: 'Both products are made side by side — A and B antigens together, not a blend of them.',
+            },
+            {
+              q: 'A pedigree showing healthy parents with affected siblings, skipping generations, suggests:',
+              options: ['autosomal dominant inheritance', 'mitochondrial inheritance', 'autosomal recessive inheritance', 'random chance only'],
+              answer: 2,
+              explain: 'Unaffected carriers producing affected children is the classic recessive signature.',
+            },
+          ],
+        },
+      ],
+    },
+    // ------------------------------------------------------------------
     // X14 exam-syllabus pass (2026-10-20): molecular-genetics engine +
-    // transmission-genetics/biotech/genomics deep dives. The two
-    // Transmission Genetics lessons are placed AFTER the Mendel
-    // foundations lesson below (CROSSVERIFY 2026-10-27 reorder — USER
-    // RULE 5: foundations render first inside the chapter).
+    // transmission-genetics/biotech/genomics deep dives. The Mendel
+    // foundations lesson sits ABOVE this spread (moved here by the
+    // 2026-10-26 convergence fix), so Classical & Transmission Genetics
+    // renders Mendel -> Meiosis/Linkage -> Beyond Mendel (USER RULE 5).
     ...x14MolecularTopics,
-    ...x14HeredityBiotechTopics.filter((t) => t.branch !== 'Transmission Genetics'),
+    ...x14HeredityBiotechTopics,
     // ------------------------------------------------------------------
     {
       id: 'bio-crispr-gene-editing',
@@ -1934,137 +2065,7 @@ export const lifeSciences: KnowledgeDomainFile = {
     },
     // ------------------------------------------------------------------
     {
-      id: 'bio-genetics-mendel',
-      title: 'Mendel\'s Laws: How Traits Travel Between Generations',
-      domain: 'Life Sciences',
-      field: 'Genetics & Heredity',
-      branch: 'Classical Genetics',
-      tier: 'core',
-      concepts: [
-        'Genes come in pairs, one per parent',
-        'The law of segregation',
-        'The law of independent assortment',
-        'Punnett squares and probability',
-        'Dominance and its variants',
-        'Reading family pedigrees',
-      ],
-      words: 975,
-      readMins: 5,
-      addedOn: '2026-10-18',
-      blocks: [
-        {
-          kind: 'para',
-          text: 'Gregor Mendel counted his way to the laws of inheritance: some 28,000 pea plants over eight years in a monastery garden, tracking seed shape, flower color, and stem length across generations. From the ratios alone he deduced that traits are carried by paired factors that separate cleanly into eggs and pollen and recombine at random. Published in 1866 and ignored for 34 years, Mendel\'s laws still anchor genetics — this topic covers the two laws, the square that applies them, and the family trees that extend them.',
-        },
-        {
-          kind: 'callout',
-          title: 'Why this matters',
-          text: 'Genetic counseling for cystic fibrosis, sickle-cell trait, and Huntington\'s disease is applied Mendelism: the same ratios that fell out of monastery peas tell an expecting couple their odds. Punnett-square arithmetic is the working toolkit of clinics, breeding programs, and identity labs alike.',
-          tone: 'insight',
-        },
-        { kind: 'heading', text: 'Core Concepts' },
-        {
-          kind: 'para',
-          text: 'Every gene comes in two copies — alleles — one on each member of a chromosome pair, one inherited from each parent. Mendel saw the logic without ever seeing a chromosome: crossing pure tall with pure short peas gave all tall offspring, yet the short factor had not vanished, for it resurfaced in the grandchildren. The lesson: an organism\'s appearance (phenotype) and its genetic makeup (genotype) are different things.',
-        },
-        {
-          kind: 'para',
-          text: 'The law of segregation: during the formation of eggs and sperm, the two alleles of each gene separate, and each gamete receives exactly one. A plant carrying one tall and one short allele makes equal numbers of each type of gamete — the fairness of a coin flip — and at fertilization, chance reassembles the pair.',
-        },
-        {
-          kind: 'para',
-          text: 'The law of independent assortment: pairs of alleles for different genes are handed out independently, so the allele a seed gets for height says nothing about its allele for seed color. The independence holds only for genes on different chromosomes, or far apart on the same one — a boundary Mendel could not have known he was brushing against. Where it holds, trait ratios multiply like probabilities.',
-        },
-        {
-          kind: 'para',
-          text: 'The Punnett square turns the laws into arithmetic. Cross two heterozygotes (Tt × Tt): the grid yields one TT, two Tt, and one tt — a 3:1 ratio of phenotypes when one allele dominates, and a 1:2:1 ratio of genotypes. Stack two traits and the ratios multiply into the classic 9:3:3:1 dihybrid pattern Mendel tabulated. Probability, not blending, is the grammar of inheritance.',
-        },
-        {
-          kind: 'para',
-          text: 'Dominance is a biochemical outcome, not a tug of war. In incomplete dominance, one red and one white allele yield pink flowers; in codominance, both appear separately, as the A and B antigens on AB blood; and a recessive disease allele usually means one working copy is enough for health. Humans carry some 20,000 genes — a slot, in each of them, where alleles can differ.',
-        },
-        {
-          kind: 'para',
-          text: 'Pedigrees hang the laws on family trees. Autosomal recessive traits like cystic fibrosis skip generations and can strike two entirely healthy carriers; dominant traits like Huntington\'s disease appear in every generation, each child of an affected parent at 50 percent risk. Squares for males, circles for females, shading for the affected — and behind every pedigree, Mendel\'s ratios at work.',
-        },
-        {
-          kind: 'example',
-          title: 'Worked Example',
-          steps: [
-            'Identify what is asked: the risk that two unaffected carriers of cystic fibrosis have an affected child.',
-            'Recall the governing idea: cystic fibrosis is autosomal recessive — only the double-recessive genotype is affected.',
-            'Apply: both carrier parents are Cc. The Cc × Cc Punnett square gives CC, Cc, Cc, and cc — one cc combination in four.',
-            'State the result: a 25 percent chance of an affected child per pregnancy, a 50 percent chance of a carrier like the parents, and 25 percent of a non-carrier — Mendel\'s 3:1 arithmetic running in a modern clinic.',
-          ],
-        },
-        { kind: 'heading', text: 'Applications in the Real World' },
-        {
-          kind: 'list',
-          items: [
-            'Carrier screening for recessive diseases counsels couples with Mendelian odds before pregnancy.',
-            'Plant and animal breeding still runs on segregation ratios and selection indices.',
-            'DNA paternity and forensic tests track alleles as Mendelian markers across generations.',
-            'Classroom corn ears showing 9:3:3:1 kernel ratios demonstrate assortment on a single cob.',
-            'The royal hemophilia pedigree traced a recessive X-linked allele across Victorian Europe.',
-          ],
-        },
-        {
-          kind: 'callout',
-          title: 'Common Pitfalls',
-          text: 'Dominant does not mean common — Huntington\'s is dominant and rare, while type O blood is recessive and everywhere. Recessive does not mean weak: it means the trait shows only in the absence of a working allele. And independent assortment fails for linked genes — neighbors on the same chromosome travel together, the very exception that first let geneticists map genes onto chromosomes.',
-          tone: 'warn',
-        },
-        { kind: 'heading', text: 'Key Terms' },
-        {
-          kind: 'terms',
-          items: [
-            { term: 'Allele', def: 'One of the alternative forms a gene can take in a population.' },
-            { term: 'Genotype', def: 'The actual pair of alleles an organism carries.' },
-            { term: 'Phenotype', def: 'The observable trait, which may mask one of the alleles present.' },
-            { term: 'Heterozygous', def: 'Carrying two different alleles of a gene.' },
-            { term: 'Law of segregation', def: 'The two alleles of a gene separate into separate gametes, one each.' },
-            { term: 'Law of independent assortment', def: 'Allele pairs for different genes are inherited independently — when not linked.' },
-            { term: 'Punnett square', def: 'A grid computing the genotypes and ratios expected from a cross.' },
-          ],
-        },
-        {
-          kind: 'quiz',
-          items: [
-            {
-              q: 'Two heterozygous parents (Tt × Tt) are crossed. What fraction of offspring shows the recessive phenotype?',
-              options: ['none', 'one quarter', 'one half', 'three quarters'],
-              answer: 1,
-              explain: 'One tt combination in four — the signature 3:1 phenotypic ratio.',
-            },
-            {
-              q: 'Independent assortment fails when two genes:',
-              options: ['sit close together on the same chromosome', 'are both dominant', 'affect the same trait', 'are on separate chromosomes'],
-              answer: 0,
-              explain: 'Linked genes travel together through meiosis — recombination only occasionally breaks the pair.',
-            },
-            {
-              q: 'In codominance, a heterozygote:',
-              options: ['resembles one parent only', 'shows a blended intermediate', 'expresses both alleles distinctly, as in AB blood', 'is always infertile'],
-              answer: 2,
-              explain: 'Both products are made side by side — A and B antigens together, not a blend of them.',
-            },
-            {
-              q: 'A pedigree showing healthy parents with affected siblings, skipping generations, suggests:',
-              options: ['autosomal dominant inheritance', 'mitochondrial inheritance', 'autosomal recessive inheritance', 'random chance only'],
-              answer: 2,
-              explain: 'Unaffected carriers producing affected children is the classic recessive signature.',
-            },
-          ],
-        },
-      ],
-    },
-    // CROSSVERIFY 2026-10-27 (vs Griffiths et al., An Introduction to
-    // Genetic Analysis 8e, Part I): transmission genetics builds ON the
-    // Mendelian foundations, so the meiosis/linkage and beyond-Mendel
-    // lessons render after Mendel's Laws — foundations-first (USER RULE 5).
-    ...x14HeredityBiotechTopics.filter((t) => t.branch === 'Transmission Genetics'),
-    // ------------------------------------------------------------------
-    {
+
       id: 'bio-speciation-barriers',
       title: 'How New Species Are Born',
       domain: 'Life Sciences',
@@ -6163,6 +6164,53 @@ export const lifeSciences: KnowledgeDomainFile = {
     // skeleton catabolism) and the toolbox (owns pI separations). See
     // x57-crossverify-pass.ts header for the full cross-verify result.
     ...x57CrossverifyTopics,
+    // X60 cross-verify pass (2026-10-26): Genetics & Heredity cross-verified
+    // vs "Introduction to Genetics" (LibreTexts OER remix of Nickle &
+    // Barrette-Ng's Online Open Genetics + OpenStax; full 478-page PDF read).
+    // ZERO factual corrections needed in the nine existing lessons; three
+    // book-taught subtopics with zero live coverage added: chromosome number
+    // & structure (karyotypes, NHEJ, the four rearrangements, FISH — owns
+    // the cytogenetic VIEW, carving against the meiosis lesson's nondisjunction
+    // MECHANICS and beyond-Mendel's X-inactivation), Muller's morphs &
+    // complementation (allele-level functional classification, carving
+    // against Mendel's dominance definitions, beyond-Mendel's trait-level
+    // pleiotropy/lethals and the cell-molecular book's repair biochemistry),
+    // and penetrance/expressivity + the chi-square goodness-of-fit test
+    // (quantified genotype-phenotype correlation, carving against
+    // beyond-Mendel's categorical environment rewrites and the population
+    // lessons' frequency-level thinking). Branches route to the new
+    // 'Cytogenetics & Allelic Analysis' chapter (declared in taxonomy) and
+    // to Classical & Transmission Genetics. See x60-crossverify-pass.ts
+    // header for the full cross-verify result.
+    ...x60CrossverifyTopics,
+    // X60 library-org thin-book pass (2026-10-26): Developmental Biology
+    // book reaches 4 lessons via new Ch3 'Growth, Renewal & Regeneration' —
+    // stem cells & regeneration (potency ladder + niche, planarian neoblasts,
+    // axolotl blastema lineage restriction/positional memory, compensatory
+    // regeneration, scarring trade-off, iPSCs, organoids). Carved against
+    // bio-developmental-biology (which OWNS the embryo arc and gives
+    // regeneration ONE paragraph + one iPSC application line — the forward
+    // reference this lesson fills) and bio-dev-morphogenesis (which OWNS
+    // embryonic shaping mechanics). Greps: 'Yamanaka'/'induced pluripotent'
+    // beyond the overview had zero/one hits; this lesson owns the machinery.
+    ...x60LibraryOrgThinBooksPassTopics.filter((t) => t.domain === 'Life Sciences'),
+    // X62 crossverify pass (2026-10-26): Evolutionary Biology cross-verified
+    // vs Darwin, On the Origin of Species (1859 first edition, VLIZ
+    // institutional PDF, read in full) — verdict ZERO corrections to the 5
+    // existing lessons. Four book-grounded gaps added with 4-question quizzes:
+    // sexual selection (Ch IV — law of battle + female choice; carved against
+    // the animal-behavior lesson which OWNS the handicap principle), Darwin's
+    // difficulties (Ch VI-VII — the eye's gradations, transitional varieties,
+    // family selection for neuters; Tiktaalik fresh, whale/feathered-dino
+    // fossils deferred to bio-evolution-natural-selection), biogeography
+    // (Ch XI-XII — barriers over conditions, the mammal test, oceanic-island
+    // rosters, the Madeira frog test; carved against environment.ts which
+    // OWNS island-biogeography reserve design), and classification as
+    // genealogy (Ch XIII — subordination of characters, analogy vs homology,
+    // rudimentary organs; carved against bio-classification-five-kingdoms
+    // which OWNS the hierarchy mechanics and against the developmental-bio
+    // book which OWNS von Baer). See x62-crossverify-pass.ts header.
+    ...x62CrossverifyEvolutionPassTopics.filter((t) => t.domain === 'Life Sciences'),
     // ------------------------------------------------------------------
     {
       id: 'bioc-protein-structure-folding',
