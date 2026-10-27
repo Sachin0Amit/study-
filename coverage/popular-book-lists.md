@@ -97,9 +97,27 @@ done in the worklog: `CENGAGE-DONE: <subject> — <books used / internet-researc
 
 - **Mathematics** — DONE 2026-10-26 (CENGAGE-20261026-1: Tewani official info-PDFs ×5 +
   Edwards Integral Calculus vol I + Smith Solid Geometry; 3 lessons in x63-cengage-pass.ts).
-- Physics — next: B. M. Sharma vol 1 (Mechanics I) official info-PDF + Feynman/NCERT/
-  PD classics (e.g., Millikan & Gale — A First Course in Physics, PD).
-- Chemistry — then: K. S. Verma official info-PDFs + NCERT/Exemplar + PD classics
-  (e.g., Roscoe's Lessons in Elementary Chemistry, PD).
+- **Physics** — DONE 2026-10-27 (CENGAGE-20261027-2: B. M. Sharma 6-volume series scope
+  from the official catalog TOC list persisted above; the cengage.co.in site has since
+  restructured and the volume book-info PDFs are no longer reachable, Wayback has no
+  snapshots; GitHub search: 1 personal repo mirroring the commercial volumes = pirated,
+  REFUSED. Cross-verification basis instead: the two official syllabus PDFs —
+  jeeadv.ac.in/documents/jee-advanced-2026-syllabus.pdf (16pp) + the NTA national
+  syllabus (17pp) — both downloaded, read in scope, deleted after coverage. Gap found:
+  the Physics master book's Experimental Skills unit (its 7 sections were all briefs —
+  the exact unit where the testing agency reserves numerical-value questions) → all 7
+  sections written as full lessons in src/data/content/phys-experimental-a.ts +
+  phys-experimental-b.ts with 13 authored SVG figure plates + 3 hand-drawn notebook
+  sketches; every numerical hand-verified; carved against engineering-metrology
+  (instrument design), fluids (Stokes theory), calorimetry and circuits chapters).
+- **Chemistry** — DONE 2026-10-27 (CENGAGE-20261027-2: K. S. Verma 6-volume series scope
+  from the catalog list; same no-legal-PDF status and same pirated-mirror refusal. Gap
+  found: the Engineering Chemistry chapter (5 sections all briefs) → all 5 written as
+  full lessons in src/data/content/chem-engineering.ts (water treatment/corrosion,
+  polymers/fuels/lubricants, nanomaterials/green chemistry, a numerical workshop, and
+  an applied case-study lesson) with 5 SVG plates + 1 notebook sketch; carved against
+  the municipal water-treatment knowledge lesson (owns the process-train framing), the
+  organic volume's polymer-basics section, the everyday-chemistry fuel survey, and the
+  nanotechnology book (owns devices/carbon).
 - Every other Library subject: rank its bestsellers (as the CROSSVERIFY loop already
   does), extend this ledger, one subject per run.
