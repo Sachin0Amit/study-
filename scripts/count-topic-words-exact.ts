@@ -29,14 +29,43 @@ import { x53CrossverifyPassTopics } from '../src/data/knowledge/fields/x53-cross
 import { x54CrossverifyPassTopics } from '../src/data/knowledge/fields/x54-crossverify-pass'
 import { x58LibraryOrgDeepeningPassTopics } from '../src/data/knowledge/fields/x58-library-org-pass'
 import { x59LibraryOrgBacklogPassTopics } from '../src/data/knowledge/fields/x59-library-org-pass'
-import { x60LibraryOrgDeepeningPassTopics } from '../src/data/knowledge/fields/x60-library-org-pass'
+import { x60CrossverifyTopics } from '../src/data/knowledge/fields/x60-crossverify-pass'
+import { x66CrossverifyTopics } from '../src/data/knowledge/fields/x66-crossverify-pass'
+import { x62CrossverifyEvolutionPassTopics } from '../src/data/knowledge/fields/x62-crossverify-pass'
+import { x63CengagePassTopics } from '../src/data/knowledge/fields/x63-cengage-pass'
+import { x60EnemBrazilPassTopics } from '../src/data/knowledge/fields/x60-enem-brazil-pass'
+import { x61LibraryOrgLoopPassTopics } from '../src/data/knowledge/fields/x61-library-org-pass'
+import { x64LibraryOrgPassTopics } from '../src/data/knowledge/fields/x64-library-org-pass'
+import { x65CrossverifyBotanyPassTopics } from '../src/data/knowledge/fields/x65-crossverify-pass'
+import { x67LibraryOrgDeepeningPassTopics } from '../src/data/knowledge/fields/x67-library-org-pass'
 import { foundationLearning } from '../src/data/knowledge/fields/foundation-learning'
 import { mathematics } from '../src/data/knowledge/fields/mathematics'
 import { technologyApplied } from '../src/data/knowledge/fields/technology-applied'
 import { computingAI } from '../src/data/knowledge/fields/computing-ai'
 
 const IDS = [
+  'bio-pedigree-mode-inference',
+  'bio-sex-determination-systems',
+  'bio-markers-qtl-mapping',
+  'bio-sexual-selection-darwin',
+  'bio-darwin-difficulties',
+  'bio-biogeography-darwin',
+  'bio-classification-common-descent',
+  'bio-dev-stem-cells-regeneration',
+  'emer-synbio-genetic-circuits',
+  'hum-eco-money-bretton-woods',
+  'urb-urban-mobility-transit',
+  'anth-fieldwork-ethnography',
+  'media-algorithmic-feed',
+  'bio-chromosome-number-structure',
+  'bio-alleles-mullers-morphs',
+  'bio-penetrance-expressivity',
   'bio-chromatin-nucleosome-packaging',
+  'hist-french-revolution-napoleonic-era',
+  'hist-brazil-colonial-slavery-empire',
+  'hist-brazil-republic-vargas-dictatorship',
+  'lit-brazilian-literature-modernism',
+  'env-brazil-biomes-geography',
   'bio-cytoskeleton-cell-motility',
   'bio-cell-cycle-mitosis-checkpoints',
   'dl-bits-koans-digital-world',
@@ -177,6 +206,14 @@ const IDS = [
   'eng-texts-human-experiences',
   'eng-critical-response-literature',
   'bio-population-inheritance-frequencies',
+  // CROSSVERIFY 2026-10-27 — genetics book corrections & label realignment
+  'bio-genetics-mendel',
+  'bio-meiosis-linkage-inheritance',
+  'bio-beyond-mendel-extensions',
+  'bio-genomics-bioinformatics',
+  'bio-population-genetics',
+  'bio-biotechnology-rdna-processes',
+  'bio-biotechnology-applications',
   'bio-sensory-organ-technologies',
   'fnd-mnemonics-memory-palace',
   'fnd-habits-behavior-design',
@@ -247,12 +284,38 @@ const IDS = [
   'lang-german-adjective-endings',
   'lang-mandarin-writing-strokes',
   'compsci-monte-carlo-mcmc',
-  'dev-stem-cells-organoids-regeneration',
-  'synbio-directed-evolution-proteins',
+  // LIBRARY-ORG 2026-10-28 (X67) — post-merge thin-book deepening (4 kept)
   'media-propaganda-persuasion',
   'civ-foundations-geotechnical',
   'grow-pests-diseases-ipm',
   'career-resume-networking-applications',
+  'math-sphere-three-dimensions',
+  'calc-definite-integral-properties',
+  'math-modulus-logarithm-inequalities',
+  // LIBRARY-ORG 2026-10-27 (X61) — six-book backlog clearance
+  'eng-naval-intact-stability-gz',
+  'eng-naval-damage-subdivision',
+  'nano-carbon-family',
+  'nano-nanoelectronics-scaling',
+  'quantum-qkd-bb84',
+  'quantum-teleportation-networks',
+  'lang-german-word-formation',
+  'lang-mandarin-topolects',
+  'compsci-hpc-parallel-scaling',
+  // LIBRARY-ORG 2026-10-27 (X64) — thin-book deepening rotation
+  'bio-cell-fate-determinants',
+  'synbio-directed-evolution',
+  'urb-heat-island-design',
+  'anth-bioarchaeology-bones',
+  'media-video-games-interactive',
+  // CROSSVERIFY 2026-10-27 (X65) — Botany vs Taiz & Zeiger 6e
+  'bio-plant-xylem-hydraulics',
+  'bio-plant-phloem-loading-partitioning',
+  'bio-plant-stomatal-blue-light',
+  'bio-plant-seed-structure-germination',
+  // X65 enrichments re-verified
+  'bio-photosynthesis',
+  'bio-plant-reproduction-flowers-seeds',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length
@@ -272,7 +335,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, foundationLearning, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, { topics: x25TournamentReasoningCivicsPassTopics } as any, { topics: x26BankingManagementPassTopics } as any, { topics: x27ApCalcChinaPassTopics } as any, { topics: x36LearningSciencePassTopics } as any, { topics: x37AlbertaPassTopics } as any, computingAI, { topics: x45ExamGapPassTopics } as any, { topics: x46ThinBooksPassTopics } as any, { topics: x47BioSplitPassTopics } as any, { topics: x48AllSubjectsSplitPassTopics } as any, { topics: x49LanguageDeepeningPassTopics } as any, { topics: x51LibraryOrgPassTopics } as any, { topics: x52CrossverifyPassTopics } as any, { topics: x53CrossverifyPassTopics } as any, { topics: x54CrossverifyPassTopics } as any, { topics: x58LibraryOrgDeepeningPassTopics } as any, { topics: x59LibraryOrgBacklogPassTopics } as any, { topics: x60LibraryOrgDeepeningPassTopics } as any]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, foundationLearning, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, { topics: x25TournamentReasoningCivicsPassTopics } as any, { topics: x26BankingManagementPassTopics } as any, { topics: x27ApCalcChinaPassTopics } as any, { topics: x36LearningSciencePassTopics } as any, { topics: x37AlbertaPassTopics } as any, computingAI, { topics: x45ExamGapPassTopics } as any, { topics: x46ThinBooksPassTopics } as any, { topics: x47BioSplitPassTopics } as any, { topics: x48AllSubjectsSplitPassTopics } as any, { topics: x49LanguageDeepeningPassTopics } as any, { topics: x51LibraryOrgPassTopics } as any, { topics: x52CrossverifyPassTopics } as any, { topics: x53CrossverifyPassTopics } as any, { topics: x54CrossverifyPassTopics } as any, { topics: x58LibraryOrgDeepeningPassTopics } as any, { topics: x59LibraryOrgBacklogPassTopics } as any, { topics: x60EnemBrazilPassTopics } as any, { topics: x61LibraryOrgLoopPassTopics } as any, { topics: x64LibraryOrgPassTopics } as any, { topics: x65CrossverifyBotanyPassTopics } as any, { topics: x67LibraryOrgDeepeningPassTopics } as any]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)

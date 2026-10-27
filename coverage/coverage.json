@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T22:29:19.954Z",
+  "generatedAt": "2026-10-27T22:44:07.191Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 138,
     "books": 138,
-    "chapters": 871,
-    "sections": 4629
+    "chapters": 878,
+    "sections": 4669
   },
   "subjects": [
     {
@@ -21,7 +21,7 @@
       "group": "Foundations",
       "tagline": "From first principles to research frontiers",
       "chapterCount": 76,
-      "sectionCount": 487,
+      "sectionCount": 490,
       "chapters": [
         {
           "id": "rosen-ch1",
@@ -3074,7 +3074,7 @@
           "title": "Algebra",
           "shortTitle": "Algebra",
           "bookId": "math-master",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-math-algebra-notation-manipulation",
@@ -3085,6 +3085,11 @@
               "id": "ku-math-quadratics-completing-square",
               "number": 71.2,
               "title": "Quadratics: Four Ways to Solve, One Formula to Rule Them"
+            },
+            {
+              "id": "ku-math-modulus-logarithm-inequalities",
+              "number": 71.3,
+              "title": "Modulus and Logarithm Inequalities: The Algebra of Distance and of Growth"
             }
           ]
         },
@@ -3094,7 +3099,7 @@
           "title": "Calculus",
           "shortTitle": "Calculus",
           "bookId": "math-master",
-          "sectionCount": 3,
+          "sectionCount": 4,
           "sections": [
             {
               "id": "ku-calc-removing-discontinuities",
@@ -3110,6 +3115,11 @@
               "id": "ku-calc-concavity-second-derivative-test",
               "number": 72.3,
               "title": "Concavity and the Second Derivative Test"
+            },
+            {
+              "id": "ku-calc-definite-integral-properties",
+              "number": 72.4,
+              "title": "Properties of Definite Integrals: Reflection, Periodicity and the Leibniz Rule"
             }
           ]
         },
@@ -3119,7 +3129,7 @@
           "title": "Geometry & Measurement",
           "shortTitle": "Geometry & Measurement",
           "bookId": "math-master",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-math-measurement-areas-volumes",
@@ -3130,6 +3140,11 @@
               "id": "ku-math-earth-geometry",
               "number": 73.2,
               "title": "Earth Geometry: Latitude, Longitude, Great Circles and Time Zones"
+            },
+            {
+              "id": "ku-math-sphere-three-dimensions",
+              "number": 73.3,
+              "title": "The Sphere in Three-Dimensional Coordinate Geometry"
             }
           ]
         },
@@ -26940,8 +26955,8 @@
       "name": "Genetics & Heredity",
       "group": "Life Sciences",
       "tagline": "How traits travel and vary",
-      "chapterCount": 4,
-      "sectionCount": 9,
+      "chapterCount": 5,
+      "sectionCount": 15,
       "chapters": [
         {
           "id": "ku-genetics-heredity-classical-and-transmission-genetics",
@@ -26949,48 +26964,88 @@
           "title": "Classical & Transmission Genetics",
           "shortTitle": "Classical & Transmission Genetics",
           "bookId": "ku-genetics-heredity",
-          "sectionCount": 3,
+          "sectionCount": 6,
           "sections": [
             {
-              "id": "ku-bio-meiosis-linkage-inheritance",
+              "id": "ku-bio-genetics-mendel",
               "number": 1.1,
+              "title": "Mendel's Laws: How Traits Travel Between Generations"
+            },
+            {
+              "id": "ku-bio-meiosis-linkage-inheritance",
+              "number": 1.2,
               "title": "Meiosis, Linkage and the Chromosomal Theory of Inheritance"
             },
             {
               "id": "ku-bio-beyond-mendel-extensions",
-              "number": 1.2,
+              "number": 1.3,
               "title": "Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits"
             },
             {
-              "id": "ku-bio-genetics-mendel",
-              "number": 1.3,
-              "title": "Mendel's Laws: How Traits Travel Between Generations"
+              "id": "ku-bio-pedigree-mode-inference",
+              "number": 1.4,
+              "title": "Pedigree Analysis: Inferring the Mode of Inheritance"
+            },
+            {
+              "id": "ku-bio-sex-determination-systems",
+              "number": 1.5,
+              "title": "Sex Determination Across Species: X, Y, Z, W and the Alternatives"
+            },
+            {
+              "id": "ku-bio-penetrance-expressivity",
+              "number": 1.6,
+              "title": "When Genes Do Not Follow the Script: Penetrance, Expressivity and the Chi-Square Test"
+            }
+          ]
+        },
+        {
+          "id": "ku-genetics-heredity-cytogenetics-and-allelic-analysis",
+          "number": 2,
+          "title": "Cytogenetics & Allelic Analysis",
+          "shortTitle": "Cytogenetics & Allelic Analysis",
+          "bookId": "ku-genetics-heredity",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-chromosome-number-structure",
+              "number": 2.1,
+              "title": "Chromosomes Under Glass: Number, Structure and Karyotypes"
+            },
+            {
+              "id": "ku-bio-alleles-mullers-morphs",
+              "number": 2.2,
+              "title": "What Alleles Do: Wild Type, Muller's Morphs and Complementation"
             }
           ]
         },
         {
           "id": "ku-genetics-heredity-molecular-genetics-and-genomics",
-          "number": 2,
+          "number": 3,
           "title": "Molecular Genetics & Genomics",
           "shortTitle": "Molecular Genetics & Genomics",
           "bookId": "ku-genetics-heredity",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-bio-genomics-bioinformatics",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Genomics and Bioinformatics: Reading Whole Genomes"
             },
             {
+              "id": "ku-bio-markers-qtl-mapping",
+              "number": 3.2,
+              "title": "Genetic Markers: DNA Landmarks, Marker Maps and QTL"
+            },
+            {
               "id": "ku-bio-crispr-gene-editing",
-              "number": 2.2,
+              "number": 3.3,
               "title": "CRISPR and the Mechanics of Gene Editing"
             }
           ]
         },
         {
           "id": "ku-genetics-heredity-genes-in-populations",
-          "number": 3,
+          "number": 4,
           "title": "Genes in Populations",
           "shortTitle": "Genes in Populations",
           "bookId": "ku-genetics-heredity",
@@ -26998,19 +27053,19 @@
           "sections": [
             {
               "id": "ku-bio-population-inheritance-frequencies",
-              "number": 3.1,
+              "number": 4.1,
               "title": "Inheritance in Populations: Allele Frequencies and Population Patterns"
             },
             {
               "id": "ku-bio-population-genetics",
-              "number": 3.2,
+              "number": 4.2,
               "title": "Population Genetics: Genes Drifting Through Time"
             }
           ]
         },
         {
           "id": "ku-genetics-heredity-biotechnology",
-          "number": 4,
+          "number": 5,
           "title": "Biotechnology",
           "shortTitle": "Biotechnology",
           "bookId": "ku-genetics-heredity",
@@ -27018,12 +27073,12 @@
           "sections": [
             {
               "id": "ku-bio-biotechnology-rdna-processes",
-              "number": 4.1,
+              "number": 5.1,
               "title": "Recombinant DNA: The Tools and Techniques of Genetic Engineering"
             },
             {
               "id": "ku-bio-biotechnology-applications",
-              "number": 4.2,
+              "number": 5.2,
               "title": "Biotechnology in Practice: Medicine, Farms, and Industry"
             }
           ]
@@ -27036,7 +27091,7 @@
       "group": "Life Sciences",
       "tagline": "Descent with modification",
       "chapterCount": 3,
-      "sectionCount": 5,
+      "sectionCount": 9,
       "chapters": [
         {
           "id": "ku-evolutionary-biology-evolution-and-speciation",
@@ -27044,7 +27099,7 @@
           "title": "Evolution & Speciation",
           "shortTitle": "Evolution & Speciation",
           "bookId": "ku-evolutionary-biology",
-          "sectionCount": 2,
+          "sectionCount": 5,
           "sections": [
             {
               "id": "ku-bio-evolution-natural-selection",
@@ -27055,6 +27110,21 @@
               "id": "ku-bio-speciation-barriers",
               "number": 1.2,
               "title": "How New Species Are Born"
+            },
+            {
+              "id": "ku-bio-sexual-selection-darwin",
+              "number": 1.3,
+              "title": "Sexual Selection: Weapons, Displays and the Struggle for Mates"
+            },
+            {
+              "id": "ku-bio-darwin-difficulties",
+              "number": 1.4,
+              "title": "Difficulties on Theory: The Eye, Missing Links and Sterile Workers"
+            },
+            {
+              "id": "ku-bio-biogeography-darwin",
+              "number": 1.5,
+              "title": "The Geography of Life: Barriers, Oceanic Islands and Dispersal"
             }
           ]
         },
@@ -27079,7 +27149,7 @@
           "title": "Diversity & Systematics",
           "shortTitle": "Diversity & Systematics",
           "bookId": "ku-evolutionary-biology",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-bio-classification-five-kingdoms",
@@ -27090,6 +27160,11 @@
               "id": "ku-bio-plant-kingdom-groups",
               "number": 3.2,
               "title": "The Plant Kingdom: Algae to Angiosperms"
+            },
+            {
+              "id": "ku-bio-classification-common-descent",
+              "number": 3.3,
+              "title": "Classification as Genealogy: Homology, Analogy and Rudimentary Organs"
             }
           ]
         }
@@ -27101,7 +27176,7 @@
       "group": "Life Sciences",
       "tagline": "The lives of plants",
       "chapterCount": 3,
-      "sectionCount": 4,
+      "sectionCount": 8,
       "chapters": [
         {
           "id": "ku-botany-the-plant-body",
@@ -27124,7 +27199,7 @@
           "title": "Plant Physiology",
           "shortTitle": "Plant Physiology",
           "bookId": "ku-botany",
-          "sectionCount": 2,
+          "sectionCount": 5,
           "sections": [
             {
               "id": "ku-bio-photosynthesis",
@@ -27135,6 +27210,21 @@
               "id": "ku-bio-plant-physiology-transport",
               "number": 2.2,
               "title": "Plant Physiology: How Plants Actually Work"
+            },
+            {
+              "id": "ku-bio-plant-xylem-hydraulics",
+              "number": 2.3,
+              "title": "The Xylem Pipeline: Soil Water, Root Pressure and Cavitation"
+            },
+            {
+              "id": "ku-bio-plant-phloem-loading-partitioning",
+              "number": 2.4,
+              "title": "Phloem Mechanics: Loading, Pressure Flow and Allocation"
+            },
+            {
+              "id": "ku-bio-plant-stomatal-blue-light",
+              "number": 2.5,
+              "title": "Stomata: Blue-Light Valves and the Water–Carbon Bargain"
             }
           ]
         },
@@ -27144,12 +27234,17 @@
           "title": "Reproduction & Life Cycles",
           "shortTitle": "Reproduction & Life Cycles",
           "bookId": "ku-botany",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-bio-plant-reproduction-flowers-seeds",
               "number": 3.1,
               "title": "Plant Reproduction: Flowers, Pollination and Seeds"
+            },
+            {
+              "id": "ku-bio-plant-seed-structure-germination",
+              "number": 3.2,
+              "title": "Inside the Seed: Grain Anatomy, Dormancy and the Germination Trigger"
             }
           ]
         }
@@ -27211,7 +27306,7 @@
       "group": "Life Sciences",
       "tagline": "Who lives where, and why",
       "chapterCount": 4,
-      "sectionCount": 9,
+      "sectionCount": 10,
       "chapters": [
         {
           "id": "ku-ecology-conservation-organisms-and-the-environment",
@@ -27279,21 +27374,26 @@
           "title": "Conservation & Restoration",
           "shortTitle": "Conservation & Restoration",
           "bookId": "ku-ecology-conservation",
-          "sectionCount": 3,
+          "sectionCount": 4,
           "sections": [
             {
-              "id": "ku-env-biodiversity-loss",
+              "id": "ku-env-brazil-biomes-geography",
               "number": 4.1,
+              "title": "Brazilian Biomes and the Geography of Deforestation"
+            },
+            {
+              "id": "ku-env-biodiversity-loss",
+              "number": 4.2,
               "title": "Biodiversity and the Sixth Extinction"
             },
             {
               "id": "ku-env-restoration-rewilding",
-              "number": 4.2,
+              "number": 4.3,
               "title": "Restoration and Rewilding: Putting Ecosystems Back Together"
             },
             {
               "id": "ku-env-measuring-biodiversity",
-              "number": 4.3,
+              "number": 4.4,
               "title": "Measuring Biodiversity: Richness, Evenness, Sampling and Simpson’s Index"
             }
           ]
@@ -27455,8 +27555,8 @@
       "name": "Developmental Biology",
       "group": "Life Sciences",
       "tagline": "From one cell to a body",
-      "chapterCount": 3,
-      "sectionCount": 4,
+      "chapterCount": 4,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-developmental-biology-building-the-body",
@@ -27474,8 +27574,23 @@
           ]
         },
         {
-          "id": "ku-developmental-biology-mechanisms-and-model-organisms",
+          "id": "ku-developmental-biology-cell-fate-and-determination",
           "number": 2,
+          "title": "Cell Fate & Determination",
+          "shortTitle": "Cell Fate & Determination",
+          "bookId": "ku-developmental-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-cell-fate-determinants",
+              "number": 2.1,
+              "title": "Cell Fate: How Identical Nuclei Become Different Cells"
+            }
+          ]
+        },
+        {
+          "id": "ku-developmental-biology-mechanisms-and-model-organisms",
+          "number": 3,
           "title": "Mechanisms & Model Organisms",
           "shortTitle": "Mechanisms & Model Organisms",
           "bookId": "ku-developmental-biology",
@@ -27483,28 +27598,28 @@
           "sections": [
             {
               "id": "ku-bio-dev-model-organisms",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Model Organisms: Flies, Worms, Fish and the Standard Laboratory Bodies"
             },
             {
               "id": "ku-bio-dev-morphogenesis",
-              "number": 2.2,
+              "number": 3.2,
               "title": "Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo"
             }
           ]
         },
         {
-          "id": "ku-developmental-biology-stem-cells-and-regenerative-medicine",
-          "number": 3,
-          "title": "Stem Cells & Regenerative Medicine",
-          "shortTitle": "Stem Cells & Regenerative Medicine",
+          "id": "ku-developmental-biology-growth-renewal-and-regeneration",
+          "number": 4,
+          "title": "Growth, Renewal & Regeneration",
+          "shortTitle": "Growth, Renewal & Regeneration",
           "bookId": "ku-developmental-biology",
           "sectionCount": 1,
           "sections": [
             {
-              "id": "ku-dev-stem-cells-organoids-regeneration",
-              "number": 3.1,
-              "title": "Stem Cells, Organoids and the Regeneration Problem"
+              "id": "ku-bio-dev-stem-cells-regeneration",
+              "number": 4.1,
+              "title": "Stem Cells and Regeneration: The Body’s Repair Kit and Its Missing Manuals"
             }
           ]
         }
@@ -27626,7 +27741,7 @@
       "group": "Life Sciences",
       "tagline": "Life, engineered",
       "chapterCount": 3,
-      "sectionCount": 4,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-synthetic-biology-programming-living-cells",
@@ -27634,27 +27749,32 @@
           "title": "Programming Living Cells",
           "shortTitle": "Programming Living Cells",
           "bookId": "ku-synthetic-biology",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-emer-synthetic-biology",
               "number": 1.1,
               "title": "Synthetic Biology: Programming Living Cells"
+            },
+            {
+              "id": "ku-synbio-directed-evolution",
+              "number": 1.2,
+              "title": "Directed Evolution: Letting Selection Do the Designing"
             }
           ]
         },
         {
-          "id": "ku-synthetic-biology-engineering-by-evolution",
+          "id": "ku-synthetic-biology-genetic-circuits-and-toolkits",
           "number": 2,
-          "title": "Engineering by Evolution",
-          "shortTitle": "Engineering by Evolution",
+          "title": "Genetic Circuits & Toolkits",
+          "shortTitle": "Genetic Circuits & Toolkits",
           "bookId": "ku-synthetic-biology",
           "sectionCount": 1,
           "sections": [
             {
-              "id": "ku-synbio-directed-evolution-proteins",
+              "id": "ku-emer-synbio-genetic-circuits",
               "number": 2.1,
-              "title": "Directed Evolution: Engineering Molecules by Selection"
+              "title": "Genetic Circuits: Engineering Logic from Repressors"
             }
           ]
         },
@@ -28605,8 +28725,8 @@
       "name": "Modern World History",
       "group": "Humanities & Social Sciences",
       "tagline": "The age of revolutions and world wars",
-      "chapterCount": 2,
-      "sectionCount": 6,
+      "chapterCount": 3,
+      "sectionCount": 9,
       "chapters": [
         {
           "id": "ku-modern-world-history-democracy-rights-and-revolution",
@@ -28614,7 +28734,7 @@
           "title": "Democracy, Rights & Revolution",
           "shortTitle": "Democracy, Rights & Revolution",
           "bookId": "ku-modern-world-history",
-          "sectionCount": 3,
+          "sectionCount": 4,
           "sections": [
             {
               "id": "ku-hist-american-revolution-founding",
@@ -28630,6 +28750,11 @@
               "id": "ku-hist-civil-rights-movement",
               "number": 1.3,
               "title": "The Civil Rights Movement"
+            },
+            {
+              "id": "ku-hist-french-revolution-napoleonic-era",
+              "number": 1.4,
+              "title": "The French Revolution and the Napoleonic Era"
             }
           ]
         },
@@ -28657,6 +28782,26 @@
               "title": "Decolonization and the Making of the Global South"
             }
           ]
+        },
+        {
+          "id": "ku-modern-world-history-brazil-colony-to-redemocratization",
+          "number": 3,
+          "title": "Brazil: Colony to Redemocratization",
+          "shortTitle": "Brazil: Colony to Redemocratization",
+          "bookId": "ku-modern-world-history",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-hist-brazil-colonial-slavery-empire",
+              "number": 3.1,
+              "title": "Colonial Brazil, Slavery and the Empire: 1500-1889"
+            },
+            {
+              "id": "ku-hist-brazil-republic-vargas-dictatorship",
+              "number": 3.2,
+              "title": "The Brazilian Republic: Old Republic, Vargas and the Military Dictatorship"
+            }
+          ]
         }
       ]
     },
@@ -28665,8 +28810,8 @@
       "name": "Economic History",
       "group": "Humanities & Social Sciences",
       "tagline": "How economies became modern",
-      "chapterCount": 2,
-      "sectionCount": 3,
+      "chapterCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-economic-history-trade-exchange-and-industrialization",
@@ -28700,6 +28845,21 @@
               "id": "ku-hist-great-divergence",
               "number": 2.1,
               "title": "The Great Divergence: Why Europe Got Rich First"
+            }
+          ]
+        },
+        {
+          "id": "ku-economic-history-money-crises-and-the-modern-order",
+          "number": 3,
+          "title": "Money, Crises & the Modern Order",
+          "shortTitle": "Money, Crises & the Modern Order",
+          "bookId": "ku-economic-history",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-hum-eco-money-bretton-woods",
+              "number": 3.1,
+              "title": "Money, Crises and the Modern Order: From Gold to Bretton Woods"
             }
           ]
         }
@@ -29236,7 +29396,7 @@
       "group": "Humanities & Social Sciences",
       "tagline": "The city, planned and lived",
       "chapterCount": 2,
-      "sectionCount": 3,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-urban-studies-the-built-environment",
@@ -29244,12 +29404,22 @@
           "title": "The Built Environment",
           "shortTitle": "The Built Environment",
           "bookId": "ku-urban-studies",
-          "sectionCount": 1,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-env-urban-planning-design",
               "number": 1.1,
               "title": "Urban Planning: Designing Cities That Work"
+            },
+            {
+              "id": "ku-urb-urban-mobility-transit",
+              "number": 1.2,
+              "title": "Getting Around: Streets, Transit and the Contested Mobility of Cities"
+            },
+            {
+              "id": "ku-urb-heat-island-design",
+              "number": 1.3,
+              "title": "The Urban Heat Island: Cities That Make Their Own Weather"
             }
           ]
         },
@@ -29281,7 +29451,7 @@
       "group": "Humanities & Social Sciences",
       "tagline": "What makes us human",
       "chapterCount": 2,
-      "sectionCount": 3,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-anthropology-cultural-anthropology",
@@ -29289,7 +29459,7 @@
           "title": "Cultural Anthropology",
           "shortTitle": "Cultural Anthropology",
           "bookId": "ku-anthropology",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-anth-cultural-relativism",
@@ -29297,8 +29467,13 @@
               "title": "Cultural Anthropology: Making Sense of Human Difference"
             },
             {
-              "id": "ku-anth-kinship-descent-marriage",
+              "id": "ku-anth-fieldwork-ethnography",
               "number": 1.2,
+              "title": "Fieldwork and Ethnography: How Anthropologists Actually Learn"
+            },
+            {
+              "id": "ku-anth-kinship-descent-marriage",
+              "number": 1.3,
               "title": "Kinship, Descent and Marriage: The Grammar of Relatedness"
             }
           ]
@@ -29309,12 +29484,17 @@
           "title": "Archaeology",
           "shortTitle": "Archaeology",
           "bookId": "ku-anthropology",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-anth-archaeology-methods",
               "number": 2.1,
               "title": "Archaeology: Reading the Past from Its Remains"
+            },
+            {
+              "id": "ku-anth-bioarchaeology-bones",
+              "number": 2.2,
+              "title": "Reading Bones: Bioarchaeology and the Lives of Past People"
             }
           ]
         }
@@ -29661,7 +29841,7 @@
       "group": "Humanities & Social Sciences",
       "tagline": "Who frames your world",
       "chapterCount": 3,
-      "sectionCount": 4,
+      "sectionCount": 6,
       "chapters": [
         {
           "id": "ku-media-communication-media-and-society",
@@ -29689,12 +29869,22 @@
           "title": "The Attention Economy",
           "shortTitle": "The Attention Economy",
           "bookId": "ku-media-communication",
-          "sectionCount": 1,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-soc-media-communication",
               "number": 2.1,
               "title": "Media and Communication: Who Frames Your World"
+            },
+            {
+              "id": "ku-media-algorithmic-feed",
+              "number": 2.2,
+              "title": "The Algorithmic Feed: How Platforms Decide What You See"
+            },
+            {
+              "id": "ku-media-video-games-interactive",
+              "number": 2.3,
+              "title": "Videogames: The Interactive Medium"
             }
           ]
         },
@@ -30966,7 +31156,7 @@
       "group": "Languages & Literature",
       "tagline": "The books that shaped us",
       "chapterCount": 4,
-      "sectionCount": 6,
+      "sectionCount": 7,
       "chapters": [
         {
           "id": "ku-literature-the-great-tradition",
@@ -30989,12 +31179,17 @@
           "title": "Reading the World",
           "shortTitle": "Reading the World",
           "bookId": "ku-literature",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-lang-literary-criticism-lenses",
               "number": 2.1,
               "title": "Literary Criticism: Lenses and Schools"
+            },
+            {
+              "id": "ku-lit-brazilian-literature-modernism",
+              "number": 2.2,
+              "title": "Brazilian Literature: From Barroco to Modernism"
             }
           ]
         },
@@ -31316,7 +31511,7 @@
       "group": "Languages & Literature",
       "tagline": "The logic of German",
       "chapterCount": 3,
-      "sectionCount": 4,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-german-german-foundations",
@@ -31324,7 +31519,7 @@
           "title": "German Foundations",
           "shortTitle": "German Foundations",
           "bookId": "ku-german",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-lang-german-foundations",
@@ -31335,6 +31530,11 @@
               "id": "ku-lang-german-adjective-endings",
               "number": 1.2,
               "title": "German Adjective Endings: The Table That Runs the Noun Phrase"
+            },
+            {
+              "id": "ku-lang-german-word-formation",
+              "number": 1.3,
+              "title": "German Word Formation: Compounds, Prefixes and the Vocabulary Engine"
             }
           ]
         },
@@ -31596,7 +31796,7 @@
       "group": "Languages & Literature",
       "tagline": "Tones, strokes and characters",
       "chapterCount": 3,
-      "sectionCount": 4,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-mandarin-mandarin-foundations",
@@ -31604,7 +31804,7 @@
           "title": "Mandarin Foundations",
           "shortTitle": "Mandarin Foundations",
           "bookId": "ku-mandarin",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-lang-mandarin-foundations",
@@ -31615,6 +31815,11 @@
               "id": "ku-lang-mandarin-writing-strokes",
               "number": 1.2,
               "title": "Writing Chinese: Stroke Order, Radical Lookup and Character Memory"
+            },
+            {
+              "id": "ku-lang-mandarin-topolects",
+              "number": 1.3,
+              "title": "Mandarin’s Family: Topolects, Putonghua and the Standard"
             }
           ]
         },
@@ -32655,8 +32860,8 @@
       "name": "Naval Architecture & Marine Engineering",
       "group": "Applied Engineering & Technology",
       "tagline": "Why ships stay up",
-      "chapterCount": 4,
-      "sectionCount": 5,
+      "chapterCount": 5,
+      "sectionCount": 7,
       "chapters": [
         {
           "id": "ku-naval-architecture-marine-engineering",
@@ -32674,8 +32879,28 @@
           ]
         },
         {
-          "id": "ku-naval-architecture-ship-structures",
+          "id": "ku-naval-architecture-stability-and-safety",
           "number": 2,
+          "title": "Stability & Safety",
+          "shortTitle": "Stability & Safety",
+          "bookId": "ku-naval-architecture",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-eng-naval-intact-stability-gz",
+              "number": 2.1,
+              "title": "Intact Stability: GZ Curves, Dynamic Stability and the Angle of Loll"
+            },
+            {
+              "id": "ku-eng-naval-damage-subdivision",
+              "number": 2.2,
+              "title": "Damage Stability: Flooding, Subdivision and the Probabilistic Index"
+            }
+          ]
+        },
+        {
+          "id": "ku-naval-architecture-ship-structures",
+          "number": 3,
           "title": "Ship Structures",
           "shortTitle": "Ship Structures",
           "bookId": "ku-naval-architecture",
@@ -32683,14 +32908,14 @@
           "sections": [
             {
               "id": "ku-eng-naval-ship-structures",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Ship Structures: Hull Girders, Framing and Fatigue"
             }
           ]
         },
         {
           "id": "ku-naval-architecture-ship-design-and-propulsion",
-          "number": 3,
+          "number": 4,
           "title": "Ship Design & Propulsion",
           "shortTitle": "Ship Design & Propulsion",
           "bookId": "ku-naval-architecture",
@@ -32698,14 +32923,14 @@
           "sections": [
             {
               "id": "ku-eng-naval-design-propulsion",
-              "number": 3.1,
+              "number": 4.1,
               "title": "Ship Design and Propulsion: The Spiral from Deadweight to Propeller"
             }
           ]
         },
         {
           "id": "ku-naval-architecture-seakeeping-and-manoeuvring",
-          "number": 4,
+          "number": 5,
           "title": "Seakeeping & Manoeuvring",
           "shortTitle": "Seakeeping & Manoeuvring",
           "bookId": "ku-naval-architecture",
@@ -32713,12 +32938,12 @@
           "sections": [
             {
               "id": "ku-eng-naval-seakeeping-motions",
-              "number": 4.1,
+              "number": 5.1,
               "title": "Seakeeping: How Ships Move in Waves"
             },
             {
               "id": "ku-eng-naval-manoeuvring-rudders",
-              "number": 4.2,
+              "number": 5.2,
               "title": "Manoeuvring: How Ships Turn, Stop and Stay on Course"
             }
           ]
@@ -32730,8 +32955,8 @@
       "name": "Nanotechnology",
       "group": "Applied Engineering & Technology",
       "tagline": "Engineering at atomic scale",
-      "chapterCount": 4,
-      "sectionCount": 5,
+      "chapterCount": 5,
+      "sectionCount": 7,
       "chapters": [
         {
           "id": "ku-nanotechnology-the-small-frontier",
@@ -32769,8 +32994,28 @@
           ]
         },
         {
-          "id": "ku-nanotechnology-making-and-seeing-the-nanoworld",
+          "id": "ku-nanotechnology-carbon-nanomaterials-and-nanoelectronics",
           "number": 3,
+          "title": "Carbon Nanomaterials & Nanoelectronics",
+          "shortTitle": "Carbon Nanomaterials & Nanoelectronics",
+          "bookId": "ku-nanotechnology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-nano-carbon-family",
+              "number": 3.1,
+              "title": "Fullerenes, Nanotubes and Graphene: The Carbon Family"
+            },
+            {
+              "id": "ku-nano-nanoelectronics-scaling",
+              "number": 3.2,
+              "title": "Nanoelectronics: Transistors at the Scaling Limit"
+            }
+          ]
+        },
+        {
+          "id": "ku-nanotechnology-making-and-seeing-the-nanoworld",
+          "number": 4,
           "title": "Making & Seeing the Nanoworld",
           "shortTitle": "Making & Seeing the Nanoworld",
           "bookId": "ku-nanotechnology",
@@ -32778,14 +33023,14 @@
           "sections": [
             {
               "id": "ku-nano-making-seeing",
-              "number": 3.1,
+              "number": 4.1,
               "title": "Making and Seeing the Nanoworld"
             }
           ]
         },
         {
           "id": "ku-nanotechnology-nanomedicine-and-clean-tech",
-          "number": 4,
+          "number": 5,
           "title": "Nanomedicine & Clean Tech",
           "shortTitle": "Nanomedicine & Clean Tech",
           "bookId": "ku-nanotechnology",
@@ -32793,7 +33038,7 @@
           "sections": [
             {
               "id": "ku-nano-medicine-clean-tech",
-              "number": 4.1,
+              "number": 5.1,
               "title": "Nanomedicine and Clean Technology"
             }
           ]
@@ -32805,27 +33050,12 @@
       "name": "Quantum Information",
       "group": "Applied Engineering & Technology",
       "tagline": "Qubits and beyond",
-      "chapterCount": 4,
-      "sectionCount": 5,
+      "chapterCount": 5,
+      "sectionCount": 7,
       "chapters": [
         {
-          "id": "ku-quantum-information-quantum-sensing-and-metrology",
-          "number": 1,
-          "title": "Quantum Sensing & Metrology",
-          "shortTitle": "Quantum Sensing & Metrology",
-          "bookId": "ku-quantum-information",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-em-quantum-sensing-atomic-clocks",
-              "number": 1.1,
-              "title": "Quantum Sensing and Atomic Clocks: Measuring the Impossible"
-            }
-          ]
-        },
-        {
           "id": "ku-quantum-information-quantum-computation",
-          "number": 2,
+          "number": 1,
           "title": "Quantum Computation",
           "shortTitle": "Quantum Computation",
           "bookId": "ku-quantum-information",
@@ -32833,14 +33063,14 @@
           "sections": [
             {
               "id": "ku-quantum-qubits-gates",
-              "number": 2.1,
+              "number": 1.1,
               "title": "Qubits and Quantum Gates"
             }
           ]
         },
         {
           "id": "ku-quantum-information-algorithms-and-hardware",
-          "number": 3,
+          "number": 2,
           "title": "Algorithms & Hardware",
           "shortTitle": "Algorithms & Hardware",
           "bookId": "ku-quantum-information",
@@ -32848,14 +33078,49 @@
           "sections": [
             {
               "id": "ku-quantum-algorithms-hardware",
-              "number": 3.1,
+              "number": 2.1,
               "title": "Quantum Algorithms and Hardware Platforms"
             }
           ]
         },
         {
-          "id": "ku-quantum-information-error-correction-and-fault-tolerance",
+          "id": "ku-quantum-information-quantum-communication-and-networks",
+          "number": 3,
+          "title": "Quantum Communication & Networks",
+          "shortTitle": "Quantum Communication & Networks",
+          "bookId": "ku-quantum-information",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-quantum-qkd-bb84",
+              "number": 3.1,
+              "title": "Quantum Key Distribution: Security from Physics"
+            },
+            {
+              "id": "ku-quantum-teleportation-networks",
+              "number": 3.2,
+              "title": "Teleportation and the Quantum Internet"
+            }
+          ]
+        },
+        {
+          "id": "ku-quantum-information-quantum-sensing-and-metrology",
           "number": 4,
+          "title": "Quantum Sensing & Metrology",
+          "shortTitle": "Quantum Sensing & Metrology",
+          "bookId": "ku-quantum-information",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-em-quantum-sensing-atomic-clocks",
+              "number": 4.1,
+              "title": "Quantum Sensing and Atomic Clocks: Measuring the Impossible"
+            }
+          ]
+        },
+        {
+          "id": "ku-quantum-information-error-correction-and-fault-tolerance",
+          "number": 5,
           "title": "Error Correction & Fault Tolerance",
           "shortTitle": "Error Correction & Fault Tolerance",
           "bookId": "ku-quantum-information",
@@ -32863,12 +33128,12 @@
           "sections": [
             {
               "id": "ku-quantum-error-correction-codes",
-              "number": 4.1,
+              "number": 5.1,
               "title": "Quantum Error Correction: Measuring Errors Without Reading the Data"
             },
             {
               "id": "ku-quantum-fault-tolerance-scale",
-              "number": 4.2,
+              "number": 5.2,
               "title": "Fault Tolerance: From Physical to Logical Qubits"
             }
           ]
@@ -32881,7 +33146,7 @@
       "group": "Applied Engineering & Technology",
       "tagline": "Models of the future",
       "chapterCount": 3,
-      "sectionCount": 4,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-computational-science-numerical-methods",
@@ -32889,7 +33154,7 @@
           "title": "Numerical Methods",
           "shortTitle": "Numerical Methods",
           "bookId": "ku-computational-science",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-compsci-numerical-methods",
@@ -32900,6 +33165,11 @@
               "id": "ku-compsci-monte-carlo-mcmc",
               "number": 1.2,
               "title": "Monte Carlo, MCMC and Quantified Uncertainty"
+            },
+            {
+              "id": "ku-compsci-hpc-parallel-scaling",
+              "number": 1.3,
+              "title": "High-Performance Computing: Parallelism, Scaling and the Exascale Era"
             }
           ]
         },

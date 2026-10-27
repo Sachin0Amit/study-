@@ -16,14 +16,14 @@
 
 - **Subjects:** 138
 - **Books (master volumes):** 138
-- **Chapters:** 871
-- **Sections (lessons):** 4629
+- **Chapters:** 878
+- **Sections (lessons):** 4669
 
 ## Foundations — 7 subjects
 
 ### Mathematics (`mathematics`)
 
-*From first principles to research frontiers* — 76 chapters · 487 sections
+*From first principles to research frontiers* — 76 chapters · 490 sections
 
 - **Ch 1. The Foundations: Logic and Proofs** `rosen-ch1` — 8 sections: Propositional Logic; Applications of Propositional Logic; Propositional Equivalences; Predicates and Quantifiers; Nested Quantifiers; Rules of Inference; Introduction to Proofs; Proof Methods and Strategy
 - **Ch 2. Basic Structures: Sets, Functions, Sequences, Sums, and Matrices** `rosen-ch2` — 6 sections: Sets; Set Operations; Functions; Sequences and Summations; Cardinality of Sets; Matrices
@@ -95,9 +95,9 @@
 - **Ch 68. Schaum Lab: Mappings & Eigenvalues** `engmath-ch23` — 4 sections: Matrix-of-Map Problems; Invertibility Drills; Eigenvalue Computation Sprints; Dual Space & Functional Drills
 - **Ch 69. Schaum Lab: Canonical Forms & Inner Products** `engmath-ch24` — 4 sections: Diagonalization Decisions; Jordan Preview & Defective Cases; Gram-Schmidt Drills; Quadratic & Hermitian Forms
 - **Ch 70. Sets, Logic & Mathematical Foundations** `ku-x-math-master-sets-logic-and-mathematical-foundations` — 1 sections: Sets and Logical Terms: The Grammar of Precise Mathematics
-- **Ch 71. Algebra** `ku-x-math-master-algebra` — 2 sections: Algebraic Notation and Manipulation: The Grammar of Expressions; Quadratics: Four Ways to Solve, One Formula to Rule Them
-- **Ch 72. Calculus** `ku-x-math-master-calculus` — 3 sections: Removing Discontinuities: Finding and Filling the Holes; Linearization and Differentials: The Tangent as a Calculator; Concavity and the Second Derivative Test
-- **Ch 73. Geometry & Measurement** `ku-x-math-master-geometry-and-measurement` — 2 sections: Mensuration and Calculation: Perimeter, Area, Surface Area and Volume; Earth Geometry: Latitude, Longitude, Great Circles and Time Zones
+- **Ch 71. Algebra** `ku-x-math-master-algebra` — 3 sections: Algebraic Notation and Manipulation: The Grammar of Expressions; Quadratics: Four Ways to Solve, One Formula to Rule Them; Modulus and Logarithm Inequalities: The Algebra of Distance and of Growth
+- **Ch 72. Calculus** `ku-x-math-master-calculus` — 4 sections: Removing Discontinuities: Finding and Filling the Holes; Linearization and Differentials: The Tangent as a Calculator; Concavity and the Second Derivative Test; Properties of Definite Integrals: Reflection, Periodicity and the Leibniz Rule
+- **Ch 73. Geometry & Measurement** `ku-x-math-master-geometry-and-measurement` — 3 sections: Mensuration and Calculation: Perimeter, Area, Surface Area and Volume; Earth Geometry: Latitude, Longitude, Great Circles and Time Zones; The Sphere in Three-Dimensional Coordinate Geometry
 - **Ch 74. Discrete Mathematics** `ku-x-math-master-discrete-mathematics` — 1 sections: Tournament Formats and Fixture Arithmetic: Knockouts, Round-Robins and Points Tables
 - **Ch 75. Probability & Statistics** `ku-x-math-master-probability-and-statistics` — 7 sections: Time Series: Trend, Seasonality and Forecasting from Data Ordered in Time; Quartiles, Cumulative Frequency and Box Plots; Reading Data: Bar Charts, Line Graphs, Pie Charts and Combined Sources; Describing Data: Center, Spread and the Normal Distribution; Sampling and the Central Limit Theorem; Confidence Intervals and Hypothesis Testing; Correlation and Linear Regression
 - **Ch 76. Applied Mathematics & Numeracy** `ku-x-math-master-applied-mathematics-and-numeracy` — 3 sections: Percentage, Ratio and Mental Math Shortcuts; Linear Programming by Graph: Feasible Regions and Corner Points; From Words to Equations: Formulating Real-Life Problems
@@ -816,28 +816,29 @@
 
 ### Genetics & Heredity (`ku-genetics-heredity`)
 
-*How traits travel and vary* — 4 chapters · 9 sections
+*How traits travel and vary* — 5 chapters · 15 sections
 
-- **Ch 1. Classical & Transmission Genetics** `ku-genetics-heredity-classical-and-transmission-genetics` — 3 sections: Meiosis, Linkage and the Chromosomal Theory of Inheritance; Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits; Mendel's Laws: How Traits Travel Between Generations
-- **Ch 2. Molecular Genetics & Genomics** `ku-genetics-heredity-molecular-genetics-and-genomics` — 2 sections: Genomics and Bioinformatics: Reading Whole Genomes; CRISPR and the Mechanics of Gene Editing
-- **Ch 3. Genes in Populations** `ku-genetics-heredity-genes-in-populations` — 2 sections: Inheritance in Populations: Allele Frequencies and Population Patterns; Population Genetics: Genes Drifting Through Time
-- **Ch 4. Biotechnology** `ku-genetics-heredity-biotechnology` — 2 sections: Recombinant DNA: The Tools and Techniques of Genetic Engineering; Biotechnology in Practice: Medicine, Farms, and Industry
+- **Ch 1. Classical & Transmission Genetics** `ku-genetics-heredity-classical-and-transmission-genetics` — 6 sections: Mendel's Laws: How Traits Travel Between Generations; Meiosis, Linkage and the Chromosomal Theory of Inheritance; Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits; Pedigree Analysis: Inferring the Mode of Inheritance; Sex Determination Across Species: X, Y, Z, W and the Alternatives; When Genes Do Not Follow the Script: Penetrance, Expressivity and the Chi-Square Test
+- **Ch 2. Cytogenetics & Allelic Analysis** `ku-genetics-heredity-cytogenetics-and-allelic-analysis` — 2 sections: Chromosomes Under Glass: Number, Structure and Karyotypes; What Alleles Do: Wild Type, Muller's Morphs and Complementation
+- **Ch 3. Molecular Genetics & Genomics** `ku-genetics-heredity-molecular-genetics-and-genomics` — 3 sections: Genomics and Bioinformatics: Reading Whole Genomes; Genetic Markers: DNA Landmarks, Marker Maps and QTL; CRISPR and the Mechanics of Gene Editing
+- **Ch 4. Genes in Populations** `ku-genetics-heredity-genes-in-populations` — 2 sections: Inheritance in Populations: Allele Frequencies and Population Patterns; Population Genetics: Genes Drifting Through Time
+- **Ch 5. Biotechnology** `ku-genetics-heredity-biotechnology` — 2 sections: Recombinant DNA: The Tools and Techniques of Genetic Engineering; Biotechnology in Practice: Medicine, Farms, and Industry
 
 ### Evolutionary Biology (`ku-evolutionary-biology`)
 
-*Descent with modification* — 3 chapters · 5 sections
+*Descent with modification* — 3 chapters · 9 sections
 
-- **Ch 1. Evolution & Speciation** `ku-evolutionary-biology-evolution-and-speciation` — 2 sections: Evolution by Natural Selection; How New Species Are Born
+- **Ch 1. Evolution & Speciation** `ku-evolutionary-biology-evolution-and-speciation` — 5 sections: Evolution by Natural Selection; How New Species Are Born; Sexual Selection: Weapons, Displays and the Struggle for Mates; Difficulties on Theory: The Eye, Missing Links and Sterile Workers; The Geography of Life: Barriers, Oceanic Islands and Dispersal
 - **Ch 2. Human Evolution** `ku-evolutionary-biology-human-evolution` — 1 sections: From Lucy to Us: The Story of Human Evolution
-- **Ch 3. Diversity & Systematics** `ku-evolutionary-biology-diversity-and-systematics` — 2 sections: Biological Classification: The Five Kingdoms and Beyond; The Plant Kingdom: Algae to Angiosperms
+- **Ch 3. Diversity & Systematics** `ku-evolutionary-biology-diversity-and-systematics` — 3 sections: Biological Classification: The Five Kingdoms and Beyond; The Plant Kingdom: Algae to Angiosperms; Classification as Genealogy: Homology, Analogy and Rudimentary Organs
 
 ### Botany (`ku-botany`)
 
-*The lives of plants* — 3 chapters · 4 sections
+*The lives of plants* — 3 chapters · 8 sections
 
 - **Ch 1. The Plant Body** `ku-botany-the-plant-body` — 1 sections: The Flowering Plant Body: Morphology and Anatomy
-- **Ch 2. Plant Physiology** `ku-botany-plant-physiology` — 2 sections: Photosynthesis: Light and Dark Reactions; Plant Physiology: How Plants Actually Work
-- **Ch 3. Reproduction & Life Cycles** `ku-botany-reproduction-and-life-cycles` — 1 sections: Plant Reproduction: Flowers, Pollination and Seeds
+- **Ch 2. Plant Physiology** `ku-botany-plant-physiology` — 5 sections: Photosynthesis: Light and Dark Reactions; Plant Physiology: How Plants Actually Work; The Xylem Pipeline: Soil Water, Root Pressure and Cavitation; Phloem Mechanics: Loading, Pressure Flow and Allocation; Stomata: Blue-Light Valves and the Water–Carbon Bargain
+- **Ch 3. Reproduction & Life Cycles** `ku-botany-reproduction-and-life-cycles` — 2 sections: Plant Reproduction: Flowers, Pollination and Seeds; Inside the Seed: Grain Anatomy, Dormancy and the Germination Trigger
 
 ### Zoology (`ku-zoology`)
 
@@ -848,12 +849,12 @@
 
 ### Ecology & Conservation (`ku-ecology-conservation`)
 
-*Who lives where, and why* — 4 chapters · 9 sections
+*Who lives where, and why* — 4 chapters · 10 sections
 
 - **Ch 1. Organisms & the Environment** `ku-ecology-conservation-organisms-and-the-environment` — 1 sections: Life at the Limits: How Organisms Answer Habitat and Abiotic Stress
 - **Ch 2. Populations & Communities** `ku-ecology-conservation-populations-and-communities` — 1 sections: Populations and Communities: Interactions, Niches and Disturbance
 - **Ch 3. Ecosystems, Energy & Biomes** `ku-ecology-conservation-ecosystems-energy-and-biomes` — 4 sections: Ecosystems and the Flow of Energy; Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters; Biomes: A Tour of Earth's Major Ecosystems; Population Ecology: Growth, Limits and Cycles
-- **Ch 4. Conservation & Restoration** `ku-ecology-conservation-conservation-and-restoration` — 3 sections: Biodiversity and the Sixth Extinction; Restoration and Rewilding: Putting Ecosystems Back Together; Measuring Biodiversity: Richness, Evenness, Sampling and Simpson’s Index
+- **Ch 4. Conservation & Restoration** `ku-ecology-conservation-conservation-and-restoration` — 4 sections: Brazilian Biomes and the Geography of Deforestation; Biodiversity and the Sixth Extinction; Restoration and Rewilding: Putting Ecosystems Back Together; Measuring Biodiversity: Richness, Evenness, Sampling and Simpson’s Index
 
 ### Microbiology & Immunology (`ku-microbiology-immunology`)
 
@@ -872,11 +873,12 @@
 
 ### Developmental Biology (`ku-developmental-biology`)
 
-*From one cell to a body* — 3 chapters · 4 sections
+*From one cell to a body* — 4 chapters · 5 sections
 
 - **Ch 1. Building the Body** `ku-developmental-biology-building-the-body` — 1 sections: Developmental Biology: How a Body Builds Itself
-- **Ch 2. Mechanisms & Model Organisms** `ku-developmental-biology-mechanisms-and-model-organisms` — 2 sections: Model Organisms: Flies, Worms, Fish and the Standard Laboratory Bodies; Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo
-- **Ch 3. Stem Cells & Regenerative Medicine** `ku-developmental-biology-stem-cells-and-regenerative-medicine` — 1 sections: Stem Cells, Organoids and the Regeneration Problem
+- **Ch 2. Cell Fate & Determination** `ku-developmental-biology-cell-fate-and-determination` — 1 sections: Cell Fate: How Identical Nuclei Become Different Cells
+- **Ch 3. Mechanisms & Model Organisms** `ku-developmental-biology-mechanisms-and-model-organisms` — 2 sections: Model Organisms: Flies, Worms, Fish and the Standard Laboratory Bodies; Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo
+- **Ch 4. Growth, Renewal & Regeneration** `ku-developmental-biology-growth-renewal-and-regeneration` — 1 sections: Stem Cells and Regeneration: The Body’s Repair Kit and Its Missing Manuals
 
 ### Marine Biology (`ku-marine-biology`)
 
@@ -896,10 +898,10 @@
 
 ### Synthetic Biology (`ku-synthetic-biology`)
 
-*Life, engineered* — 3 chapters · 4 sections
+*Life, engineered* — 3 chapters · 5 sections
 
-- **Ch 1. Programming Living Cells** `ku-synthetic-biology-programming-living-cells` — 1 sections: Synthetic Biology: Programming Living Cells
-- **Ch 2. Engineering by Evolution** `ku-synthetic-biology-engineering-by-evolution` — 1 sections: Directed Evolution: Engineering Molecules by Selection
+- **Ch 1. Programming Living Cells** `ku-synthetic-biology-programming-living-cells` — 2 sections: Synthetic Biology: Programming Living Cells; Directed Evolution: Letting Selection Do the Designing
+- **Ch 2. Genetic Circuits & Toolkits** `ku-synthetic-biology-genetic-circuits-and-toolkits` — 1 sections: Genetic Circuits: Engineering Logic from Repressors
 - **Ch 3. Applications & Responsible Innovation** `ku-synthetic-biology-applications-and-responsible-innovation` — 2 sections: Synthetic Biology in Practice: The Design–Build–Test–Learn Cycle; Biosafety, Biosecurity and the Ethics of Engineering Life
 
 ## Natural Sciences — 7 subjects
@@ -1019,17 +1021,19 @@
 
 ### Modern World History (`ku-modern-world-history`)
 
-*The age of revolutions and world wars* — 2 chapters · 6 sections
+*The age of revolutions and world wars* — 3 chapters · 9 sections
 
-- **Ch 1. Democracy, Rights & Revolution** `ku-modern-world-history-democracy-rights-and-revolution` — 3 sections: The American Revolution and the Founding of the Republic; The Civil War and Reconstruction; The Civil Rights Movement
+- **Ch 1. Democracy, Rights & Revolution** `ku-modern-world-history-democracy-rights-and-revolution` — 4 sections: The American Revolution and the Founding of the Republic; The Civil War and Reconstruction; The Civil Rights Movement; The French Revolution and the Napoleonic Era
 - **Ch 2. War, Decolonization & the Twentieth Century** `ku-modern-world-history-war-decolonization-and-the-twentieth-century` — 3 sections: The Twentieth Century: Revolution, Cold War Order and Globalisation; The World Wars: Causes, Courses and Consequences; Decolonization and the Making of the Global South
+- **Ch 3. Brazil: Colony to Redemocratization** `ku-modern-world-history-brazil-colony-to-redemocratization` — 2 sections: Colonial Brazil, Slavery and the Empire: 1500-1889; The Brazilian Republic: Old Republic, Vargas and the Military Dictatorship
 
 ### Economic History (`ku-economic-history`)
 
-*How economies became modern* — 2 chapters · 3 sections
+*How economies became modern* — 3 chapters · 4 sections
 
 - **Ch 1. Trade, Exchange & Industrialization** `ku-economic-history-trade-exchange-and-industrialization` — 2 sections: The Silk Road: Exchange Before Globalization; The Industrial Revolution and Its Discontents
 - **Ch 2. The Great Divergence** `ku-economic-history-the-great-divergence` — 1 sections: The Great Divergence: Why Europe Got Rich First
+- **Ch 3. Money, Crises & the Modern Order** `ku-economic-history-money-crises-and-the-modern-order` — 1 sections: Money, Crises and the Modern Order: From Gold to Bretton Woods
 
 ### Indian History (`ku-indian-history`)
 
@@ -1087,17 +1091,17 @@
 
 ### Urban Studies (`ku-urban-studies`)
 
-*The city, planned and lived* — 2 chapters · 3 sections
+*The city, planned and lived* — 2 chapters · 5 sections
 
-- **Ch 1. The Built Environment** `ku-urban-studies-the-built-environment` — 1 sections: Urban Planning: Designing Cities That Work
+- **Ch 1. The Built Environment** `ku-urban-studies-the-built-environment` — 3 sections: Urban Planning: Designing Cities That Work; Getting Around: Streets, Transit and the Contested Mobility of Cities; The Urban Heat Island: Cities That Make Their Own Weather
 - **Ch 2. Urban Society & Change** `ku-urban-studies-urban-society-and-change` — 2 sections: Why Cities Exist: Agglomeration and Urban Life; Housing, Segregation and Gentrification
 
 ### Anthropology (`ku-anthropology`)
 
-*What makes us human* — 2 chapters · 3 sections
+*What makes us human* — 2 chapters · 5 sections
 
-- **Ch 1. Cultural Anthropology** `ku-anthropology-cultural-anthropology` — 2 sections: Cultural Anthropology: Making Sense of Human Difference; Kinship, Descent and Marriage: The Grammar of Relatedness
-- **Ch 2. Archaeology** `ku-anthropology-archaeology` — 1 sections: Archaeology: Reading the Past from Its Remains
+- **Ch 1. Cultural Anthropology** `ku-anthropology-cultural-anthropology` — 3 sections: Cultural Anthropology: Making Sense of Human Difference; Fieldwork and Ethnography: How Anthropologists Actually Learn; Kinship, Descent and Marriage: The Grammar of Relatedness
+- **Ch 2. Archaeology** `ku-anthropology-archaeology` — 2 sections: Archaeology: Reading the Past from Its Remains; Reading Bones: Bioarchaeology and the Lives of Past People
 
 ### Political Theory (`ku-political-theory`)
 
@@ -1146,10 +1150,10 @@
 
 ### Media & Communication (`ku-media-communication`)
 
-*Who frames your world* — 3 chapters · 4 sections
+*Who frames your world* — 3 chapters · 6 sections
 
 - **Ch 1. Media & Society** `ku-media-communication-media-and-society` — 2 sections: Journalism Craft: News Values, the Inverted Pyramid and Verification; Mass Media and Society: Print, Broadcast, Platforms and Responsibility
-- **Ch 2. The Attention Economy** `ku-media-communication-the-attention-economy` — 1 sections: Media and Communication: Who Frames Your World
+- **Ch 2. The Attention Economy** `ku-media-communication-the-attention-economy` — 3 sections: Media and Communication: Who Frames Your World; The Algorithmic Feed: How Platforms Decide What You See; Videogames: The Interactive Medium
 - **Ch 3. Persuasion & Misinformation** `ku-media-communication-persuasion-and-misinformation` — 1 sections: Propaganda and Persuasion: The Manufacture of Belief
 
 ### Research Methods (`ku-research-methods`)
@@ -1320,10 +1324,10 @@
 
 ### Literature (`ku-literature`)
 
-*The books that shaped us* — 4 chapters · 6 sections
+*The books that shaped us* — 4 chapters · 7 sections
 
 - **Ch 1. The Great Tradition** `ku-literature-the-great-tradition` — 1 sections: From Gilgamesh to the Odyssey: The Birth of Literature
-- **Ch 2. Reading the World** `ku-literature-reading-the-world` — 1 sections: Literary Criticism: Lenses and Schools
+- **Ch 2. Reading the World** `ku-literature-reading-the-world` — 2 sections: Literary Criticism: Lenses and Schools; Brazilian Literature: From Barroco to Modernism
 - **Ch 3. Literary Awards & the Canon** `ku-literature-literary-awards-and-the-canon` — 1 sections: Books and Authors: The Prize Map from Stockholm to Delhi
 - **Ch 4. Literary Craft & Criticism** `ku-literature-literary-craft-and-criticism` — 3 sections: How Texts Represent Human Experiences; Reading Visual and Multimedia Texts; Literary Devices: How Writing Works Its Magic
 
@@ -1362,9 +1366,9 @@
 
 ### German (`ku-german`)
 
-*The logic of German* — 3 chapters · 4 sections
+*The logic of German* — 3 chapters · 5 sections
 
-- **Ch 1. German Foundations** `ku-german-german-foundations` — 2 sections: German Foundations: Cases, Word Order and Cognates; German Adjective Endings: The Table That Runs the Noun Phrase
+- **Ch 1. German Foundations** `ku-german-german-foundations` — 3 sections: German Foundations: Cases, Word Order and Cognates; German Adjective Endings: The Table That Runs the Noun Phrase; German Word Formation: Compounds, Prefixes and the Vocabulary Engine
 - **Ch 2. German Verbs** `ku-german-german-verbs` — 1 sections: German Verbs: Stem Changes, Separable Prefixes and the Perfect
 - **Ch 3. German Literature** `ku-german-german-literature` — 1 sections: German Literature: Luther’s Language to the Nobel List
 
@@ -1402,9 +1406,9 @@
 
 ### Mandarin Chinese (`ku-mandarin`)
 
-*Tones, strokes and characters* — 3 chapters · 4 sections
+*Tones, strokes and characters* — 3 chapters · 5 sections
 
-- **Ch 1. Mandarin Foundations** `ku-mandarin-mandarin-foundations` — 2 sections: Mandarin Foundations: Tones, Characters and First Phrases; Writing Chinese: Stroke Order, Radical Lookup and Character Memory
+- **Ch 1. Mandarin Foundations** `ku-mandarin-mandarin-foundations` — 3 sections: Mandarin Foundations: Tones, Characters and First Phrases; Writing Chinese: Stroke Order, Radical Lookup and Character Memory; Mandarin’s Family: Topolects, Putonghua and the Standard
 - **Ch 2. Mandarin Grammar** `ku-mandarin-mandarin-grammar` — 1 sections: Mandarin Grammar: Measure Words, Aspect and the Ba-Construction
 - **Ch 3. Classical Canon & Recitation** `ku-mandarin-classical-canon-and-recitation` — 1 sections: The Classical Chinese Canon: Famous Lines and Exact Recall
 
@@ -1534,36 +1538,39 @@
 
 ### Naval Architecture & Marine Engineering (`ku-naval-architecture`)
 
-*Why ships stay up* — 4 chapters · 5 sections
+*Why ships stay up* — 5 chapters · 7 sections
 
 - **Ch 1. Marine Engineering** `ku-naval-architecture-marine-engineering` — 1 sections: Naval Architecture: Why Ships Float and Stay Up
-- **Ch 2. Ship Structures** `ku-naval-architecture-ship-structures` — 1 sections: Ship Structures: Hull Girders, Framing and Fatigue
-- **Ch 3. Ship Design & Propulsion** `ku-naval-architecture-ship-design-and-propulsion` — 1 sections: Ship Design and Propulsion: The Spiral from Deadweight to Propeller
-- **Ch 4. Seakeeping & Manoeuvring** `ku-naval-architecture-seakeeping-and-manoeuvring` — 2 sections: Seakeeping: How Ships Move in Waves; Manoeuvring: How Ships Turn, Stop and Stay on Course
+- **Ch 2. Stability & Safety** `ku-naval-architecture-stability-and-safety` — 2 sections: Intact Stability: GZ Curves, Dynamic Stability and the Angle of Loll; Damage Stability: Flooding, Subdivision and the Probabilistic Index
+- **Ch 3. Ship Structures** `ku-naval-architecture-ship-structures` — 1 sections: Ship Structures: Hull Girders, Framing and Fatigue
+- **Ch 4. Ship Design & Propulsion** `ku-naval-architecture-ship-design-and-propulsion` — 1 sections: Ship Design and Propulsion: The Spiral from Deadweight to Propeller
+- **Ch 5. Seakeeping & Manoeuvring** `ku-naval-architecture-seakeeping-and-manoeuvring` — 2 sections: Seakeeping: How Ships Move in Waves; Manoeuvring: How Ships Turn, Stop and Stay on Course
 
 ### Nanotechnology (`ku-nanotechnology`)
 
-*Engineering at atomic scale* — 4 chapters · 5 sections
+*Engineering at atomic scale* — 5 chapters · 7 sections
 
 - **Ch 1. The Small Frontier** `ku-nanotechnology-the-small-frontier` — 1 sections: Nanotechnology: Engineering at the Scale of Atoms
 - **Ch 2. Confinement & Controlled Growth** `ku-nanotechnology-confinement-and-controlled-growth` — 2 sections: Quantum Confinement: Tuning Matter with Size; Nucleation, Growth and Self-Assembly
-- **Ch 3. Making & Seeing the Nanoworld** `ku-nanotechnology-making-and-seeing-the-nanoworld` — 1 sections: Making and Seeing the Nanoworld
-- **Ch 4. Nanomedicine & Clean Tech** `ku-nanotechnology-nanomedicine-and-clean-tech` — 1 sections: Nanomedicine and Clean Technology
+- **Ch 3. Carbon Nanomaterials & Nanoelectronics** `ku-nanotechnology-carbon-nanomaterials-and-nanoelectronics` — 2 sections: Fullerenes, Nanotubes and Graphene: The Carbon Family; Nanoelectronics: Transistors at the Scaling Limit
+- **Ch 4. Making & Seeing the Nanoworld** `ku-nanotechnology-making-and-seeing-the-nanoworld` — 1 sections: Making and Seeing the Nanoworld
+- **Ch 5. Nanomedicine & Clean Tech** `ku-nanotechnology-nanomedicine-and-clean-tech` — 1 sections: Nanomedicine and Clean Technology
 
 ### Quantum Information (`ku-quantum-information`)
 
-*Qubits and beyond* — 4 chapters · 5 sections
+*Qubits and beyond* — 5 chapters · 7 sections
 
-- **Ch 1. Quantum Sensing & Metrology** `ku-quantum-information-quantum-sensing-and-metrology` — 1 sections: Quantum Sensing and Atomic Clocks: Measuring the Impossible
-- **Ch 2. Quantum Computation** `ku-quantum-information-quantum-computation` — 1 sections: Qubits and Quantum Gates
-- **Ch 3. Algorithms & Hardware** `ku-quantum-information-algorithms-and-hardware` — 1 sections: Quantum Algorithms and Hardware Platforms
-- **Ch 4. Error Correction & Fault Tolerance** `ku-quantum-information-error-correction-and-fault-tolerance` — 2 sections: Quantum Error Correction: Measuring Errors Without Reading the Data; Fault Tolerance: From Physical to Logical Qubits
+- **Ch 1. Quantum Computation** `ku-quantum-information-quantum-computation` — 1 sections: Qubits and Quantum Gates
+- **Ch 2. Algorithms & Hardware** `ku-quantum-information-algorithms-and-hardware` — 1 sections: Quantum Algorithms and Hardware Platforms
+- **Ch 3. Quantum Communication & Networks** `ku-quantum-information-quantum-communication-and-networks` — 2 sections: Quantum Key Distribution: Security from Physics; Teleportation and the Quantum Internet
+- **Ch 4. Quantum Sensing & Metrology** `ku-quantum-information-quantum-sensing-and-metrology` — 1 sections: Quantum Sensing and Atomic Clocks: Measuring the Impossible
+- **Ch 5. Error Correction & Fault Tolerance** `ku-quantum-information-error-correction-and-fault-tolerance` — 2 sections: Quantum Error Correction: Measuring Errors Without Reading the Data; Fault Tolerance: From Physical to Logical Qubits
 
 ### Computational Science & Simulation (`ku-computational-science`)
 
-*Models of the future* — 3 chapters · 4 sections
+*Models of the future* — 3 chapters · 5 sections
 
-- **Ch 1. Numerical Methods** `ku-computational-science-numerical-methods` — 2 sections: Numerical Methods: The Engine Under Every Simulation; Monte Carlo, MCMC and Quantified Uncertainty
+- **Ch 1. Numerical Methods** `ku-computational-science-numerical-methods` — 3 sections: Numerical Methods: The Engine Under Every Simulation; Monte Carlo, MCMC and Quantified Uncertainty; High-Performance Computing: Parallelism, Scaling and the Exascale Era
 - **Ch 2. Simulating Reality** `ku-computational-science-simulating-reality` — 1 sections: Digital Twins: Building the Mirror World
 - **Ch 3. Earth System Modeling** `ku-computational-science-earth-system-modeling` — 1 sections: How Climate Models Predict the Future
 

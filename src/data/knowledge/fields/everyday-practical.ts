@@ -1,7 +1,7 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
 import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
-import { x60LibraryOrgDeepeningPassTopics } from './x60-library-org-pass'
+import { x67LibraryOrgDeepeningPassTopics } from './x67-library-org-pass'
 
 export const everydayPractical: KnowledgeDomainFile = {
   domain: 'Everyday Knowledge',
@@ -3345,7 +3345,7 @@ export const everydayPractical: KnowledgeDomainFile = {
         },
       ],
     },
-    // X60 library-org deepening pass (2026-10-28): plant health + the
+    // X67 library-org deepening pass (2026-10-28): plant health + the
     // job-search toolkit. grow-pests-diseases-ipm is the Garden &
     // Growing book's new 'Plant Health' chapter — carved against the
     // botany plant-defense lesson (OWNS the SCIENCE of immunity) and
@@ -3361,6 +3361,6 @@ export const everydayPractical: KnowledgeDomainFile = {
     // re-taught) and the digital-literacy footprint lesson (OWNS
     // online privacy). Grep: 'cover letter' 0, 'LinkedIn' 0,
     // 'informational interview' 0, 'hidden job market' 0.
-    ...x60LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Everyday Knowledge'),
+    ...x67LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Everyday Knowledge'),
   ],
 }

@@ -4,7 +4,8 @@ import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
 import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
 import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
 import { x59LibraryOrgBacklogPassTopics } from './x59-library-org-pass'
-import { x60LibraryOrgDeepeningPassTopics } from './x60-library-org-pass'
+import { x61LibraryOrgLoopPassTopics } from './x61-library-org-pass'
+import { x67LibraryOrgDeepeningPassTopics } from './x67-library-org-pass'
 
 export const engineering: KnowledgeDomainFile = {
   domain: 'Engineering',
@@ -24,7 +25,22 @@ export const engineering: KnowledgeDomainFile = {
     // 'rudder' appeared only in a cavitation quiz distractor and the
     // aviation-instruments lesson.
     ...x59LibraryOrgBacklogPassTopics.filter((t) => t.domain === 'Engineering'),
-    // X60 library-org deepening pass (2026-10-28): foundations and ground
+    // X61 library-org loop pass (2026-10-27): naval book reaches its 5th
+    // chapter — Stability & Safety (inserted foundations-first as Ch2,
+    // after float, before structures): intact stability (the full GZ
+    // curve, cross curves, dynamic stability as area, the 2008 IS Code
+    // criteria, angle of loll, Vasa/HMS Captain case files) and damage
+    // stability (flooding mechanics, permeability, margin line/floodable
+    // length, the deterministic→probabilistic SOLAS turn, ro-ro from
+    // Herald to Estonia, defense in depth). Carved against
+    // eng-naval-architecture-ships (OWNS buoyancy/GM/free-surface
+    // STATICS), eng-naval-seakeeping-motions (NAMES the weather
+    // criterion — not re-taught here) and eng-naval-design-propulsion
+    // (NAMES SOLAS/MARPOL in one line). Greps: 'GZ curve', 'righting
+    // arm', 'angle of loll', 'margin line', 'downflooding' had ZERO
+    // live hits.
+    ...x61LibraryOrgLoopPassTopics.filter((t) => t.domain === 'Engineering'),
+    // X67 library-org deepening pass (2026-10-28): foundations and ground
     // engineering — the structural-seismic book's new 'Ground &
     // Foundations' chapter (inserted as Ch2: structures → ground →
     // seismic, the classic civil curriculum order). Carved against
@@ -33,7 +49,7 @@ export const engineering: KnowledgeDomainFile = {
     // and eng-structural-analysis-methods (OWNS determinacy/trusses/
     // diagrams). Grep: 'Terzaghi' 0, 'soil mechanics' 0, 'retaining
     // wall' 0, 'liquefaction' one incidental hit live.
-    ...x60LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Engineering'),
+    ...x67LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Engineering'),
     // X58 library-org deepening pass (2026-10-26): process safety —
     // inherently safer design, HAZOP, LOPA arithmetic, relief sizing,
     // Management of Change, Bhopal/Texas City/Flixborough case files.

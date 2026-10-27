@@ -14,6 +14,7 @@ import { x28GaokaoSkillsPassTopics } from './x28-gaokao-skills-pass'
 import { x29OrphanClosurePassTopics } from './x29-orphan-closure-pass'
 import { x30OrphanFinalPassTopics } from './x30-orphan-final-pass'
 import { x56VcePassTopics } from './x56-vce-pass'
+import { x63CengagePassTopics } from './x63-cengage-pass'
 
 export const mathematics: KnowledgeDomainFile = {
   domain: 'Mathematics',
@@ -1633,5 +1634,24 @@ export const mathematics: KnowledgeDomainFile = {
         },
       ],
     },
+    // X63 Cengage-depth pass (2026-10-26): CENGAGE-20261026-1 — three
+    // lessons at the depth of the most popular advanced-entrance book
+    // series, sourced from the publisher's official info-PDFs (Tewani
+    // volumes) + two public-domain full-text classics read in scope
+    // (Joseph Edwards, A Treatise on the Integral Calculus vol I, 1921 —
+    // Ch IX General Theorems + Ch X Leibniz; Charles Smith, An
+    // Elementary Treatise on Solid Geometry — quadric/tangent-plane
+    // theory). CARVED: math-sphere-three-dimensions owns the sphere as
+    // a quadric (Earth-geometry lesson owns the geographic sphere —
+    // deferred one line; the 3D line/plane sections own lines, planes,
+    // skew lines); calc-definite-integral-properties owns the
+    // reflection/folding/periodic properties + Leibniz rule (calc-ch5
+    // owns the definite integral's definition, FTC, substitution and
+    // odd/even basics — deferred one line; calc-ch7 owns indefinite
+    // techniques); math-modulus-logarithm-inequalities owns the
+    // modulus/log inequality craft (math-sk2 owns SAT-level nonlinear
+    // equation solving, advmath-ch16 owns classical AM-GM/Cauchy
+    // theory, calc-ch1's log lesson owns the log laws — all deferred).
+    ...x63CengagePassTopics.filter((t) => t.domain === 'Mathematics'),
   ],
 }

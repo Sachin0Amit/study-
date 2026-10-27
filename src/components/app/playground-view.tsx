@@ -10,7 +10,7 @@ import { easyLabLine } from '@/data/easy-library'
 import { EasyBox, EasyLine } from './easy-box'
 import { useStudy } from '@/store/useStudy'
 
-type SubjectKey = 'math' | 'physics' | 'chem' | 'os' | 'js' | 'dld' | 'elec' | 'cpp' | 'java' | 'simverse'
+type SubjectKey = 'math' | 'physics' | 'chem' | 'os' | 'js' | 'dld' | 'elec' | 'cpp' | 'java' | 'simverse' | 'poly' | 'web'
 
 interface LabGroup {
   subject: SubjectKey
@@ -126,16 +126,29 @@ const LAB_GROUPS: LabGroup[] = [
     ],
   },
   {
-    subject: 'cpp',
-    subjectLabel: 'C++ Programming',
-    groupLabel: 'Stroustrup, The C++ Language',
-    keys: ['cpp-playground'],
+    subject: 'math',
+    subjectLabel: 'Mathematics',
+    groupLabel: 'Linear Algebra — matrices',
+    keys: ['matrix-lab'],
   },
   {
-    subject: 'java',
-    subjectLabel: 'Java Programming',
-    groupLabel: 'Horstmann, Core Java',
-    keys: ['java-playground'],
+    subject: 'poly',
+    subjectLabel: 'Programming Languages',
+    groupLabel: 'Real toolchains — gcc · g++ · OpenJDK · Bun · CPython · SQLite',
+    keys: [
+      'c-playground',
+      'cpp-playground',
+      'java-playground',
+      'ts-playground',
+      'python-playground',
+      'sql-playground',
+    ],
+  },
+  {
+    subject: 'web',
+    subjectLabel: 'Web Platform',
+    groupLabel: 'HTML & CSS — live preview',
+    keys: ['html-playground', 'css-playground'],
   },
   {
     subject: 'simverse',
@@ -154,8 +167,8 @@ const FILTERS: { key: 'all' | SubjectKey; label: string }[] = [
   { key: 'js', label: 'JavaScript' },
   { key: 'dld', label: 'Digital Logic' },
   { key: 'elec', label: 'Electronics' },
-  { key: 'cpp', label: 'C++' },
-  { key: 'java', label: 'Java' },
+  { key: 'poly', label: 'Programming' },
+  { key: 'web', label: 'Web Platform' },
   { key: 'simverse', label: 'Living Systems' },
 ]
 
@@ -171,6 +184,8 @@ const SUBJECT_ACCENT: Record<SubjectKey, string> = {
   elec: 'text-lime-300/90 border-lime-400/25 bg-lime-400/[0.06]',
   cpp: 'text-violet-300/90 border-violet-400/25 bg-violet-400/[0.06]',
   java: 'text-orange-300/90 border-orange-400/25 bg-orange-400/[0.06]',
+  poly: 'text-violet-300/90 border-violet-400/25 bg-violet-400/[0.06]',
+  web: 'text-orange-300/90 border-orange-400/25 bg-orange-400/[0.06]',
   simverse: 'text-fuchsia-300/90 border-fuchsia-400/25 bg-fuchsia-400/[0.06]',
 }
 

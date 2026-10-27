@@ -2,7 +2,9 @@ import type { KnowledgeDomainFile } from '../types'
 import { x47BioSplitPassTopics } from './x47-bio-split-pass'
 import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
 import { x59LibraryOrgBacklogPassTopics } from './x59-library-org-pass'
-import { x60LibraryOrgDeepeningPassTopics } from './x60-library-org-pass'
+import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
+import { x64LibraryOrgPassTopics } from './x64-library-org-pass'
+import { x61LibraryOrgLoopPassTopics } from './x61-library-org-pass'
 
 export const emergingInterdisciplinary: KnowledgeDomainFile = {
   domain: 'Emerging & Interdisciplinary',
@@ -46,15 +48,28 @@ export const emergingInterdisciplinary: KnowledgeDomainFile = {
     // 'uncertainty as a first-class output' forward reference. Greps:
     // 'MCMC', 'Metropolis', 'variance reduction' had zero live hits.
     ...x59LibraryOrgBacklogPassTopics.filter((t) => t.domain === 'Emerging & Interdisciplinary'),
-    // X60 library-org deepening pass (2026-10-28): directed evolution —
-    // the synthetic-biology book's new 'Engineering by Evolution'
-    // chapter (inserted as Ch2, foundations-first: intro → method →
-    // applications). Carved against bio-synbio-dbtl-practice (which
-    // iterates CIRCUITS and the artemisinin pathway at the design
-    // level — referenced, not re-taught) and emer-synthetic-biology
-    // (OWNS BioBricks/chassis/editing). 'Frances Arnold' 0 live hits;
-    // 'directed evolution' only an agricultural breeding aside.
-    ...x60LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Emerging & Interdisciplinary'),
+    // X61 library-org loop pass (2026-10-27): three books deepened.
+    // Nanotechnology +1 chapter (Carbon Nanomaterials & Nanoelectronics,
+    // inserted as Ch3 after Confinement & Controlled Growth): the carbon
+    // family (C60 discovery/chirality/Dirac cones/2D family; carved
+    // against emer-nanotechnology-scale's one-paragraph materials tour —
+    // the isolation anecdote stays theirs) and nanoelectronics (Moore/
+    // Dennard/short-channel/high-k/FinFET→GAA/Coulomb blockade; fills
+    // the intro tour's one-line FinFET+EUV forward reference). Quantum
+    // Information +1 chapter (Quantum Communication & Networks) plus
+    // foundations-first chapter reorder in subject-taxonomy: QKD/BB84
+    // (fills the qubits lesson's 'eavesdropping leaves marks' promise;
+    // PQC/ML-KEM stays owned by the algorithms lesson) and
+    // teleportation/repeaters/networks (distinct from the fault-
+    // tolerance lesson's magic-state INJECTION circuit trick).
+    // Computational Science +1 lesson: HPC/parallel scaling (Amdahl,
+    // Gustafson, MPI/OpenMP/GPU, domain decomposition, roofline,
+    // exascale; carved against numerical-methods' math ownership and
+    // monte-carlo's stochastic machinery). Greps: 'fullerene', 'Iijima',
+    // 'Dirac', 'Dennard', 'Coulomb blockade', 'BB84', 'Ekert', 'decoy',
+    // 'entanglement swapping', 'Micius', 'Amdahl', 'Gustafson',
+    // 'exascale', 'roofline' (computing sense) had ZERO live hits.
+    ...x61LibraryOrgLoopPassTopics.filter((t) => t.domain === 'Emerging & Interdisciplinary'),
     // X47 biology-split pass (2026-10-25): the user split the one-volume
     // Biology book into 13 discipline books. Emerging & Interdisciplinary
     // slice: bioinformatics databases & structure prediction (carved
@@ -1885,5 +1900,24 @@ export const emergingInterdisciplinary: KnowledgeDomainFile = {
         },
       ],
     },
+    // X60 library-org thin-book pass (2026-10-26): Synthetic Biology book
+    // gains new Ch2 'Genetic Circuits & Toolkits' (inserted foundations-first)
+    // — circuit engineering (bistability/hysteresis mechanics, repressilator
+    // design lessons, logic composition, load/retroactivity/insulation,
+    // quorum wiring, two-colour noise, Cello compilers, characterisation).
+    // Carved against emer-synthetic-biology (which OWNS parts/modelling/
+    // chassis and describes toggle+repressilator in ONE paragraph) and
+    // bio-synbio-dbtl-practice (which OWNS the DBTL workflow). Greps:
+    // 'quorum', 'retroactivity' had ZERO live hits.
+    ...x60LibraryOrgThinBooksPassTopics.filter((t) => t.domain === 'Emerging & Interdisciplinary'),
+
+    // X64 library-org deepening pass (2026-10-27): second thin-book
+    // lesson for Synthetic Biology, landing in Programming Living Cells
+    // (branch Bioengineering). Owns lab evolution as an engineering
+    // method (error-prone PCR, screening vs selection, the Chen & Arnold
+    // 1993 subtilisin lineage, Stemmer shuffling, sitagliptin); defers
+    // circuit mechanics to emer-synbio-genetic-circuits (X60) and DBTL
+    // cases to bio-synbio-dbtl-practice. Full carving in the x64 header.
+    ...x64LibraryOrgPassTopics.filter((t) => t.domain === 'Emerging & Interdisciplinary'),
   ],
 }

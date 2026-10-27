@@ -1,4 +1,6 @@
 import type { KnowledgeTopic } from '../types'
+import { x61CrossverifyGeneticsPassTopics } from './x61-crossverify-pass'
+import { x66CrossverifyTopics } from './x66-crossverify-pass'
 
 /** Expansion pass X14 (2026-10-20): transmission genetics extensions,
  *  recombinant-DNA processes, applied biotechnology, and genomics.
@@ -18,11 +20,13 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       'Sutton, Boveri and Morgan\'s white-eyed fly: genes ride chromosomes',
       'Synapsis, crossing over and chiasmata in prophase I',
       'Independent assortment and the 2^n gamete count',
+      'Random fertilization: 70 trillion chromosome combinations',
       'Linkage, recombination frequency and centimorgan maps',
+      'Sturtevant\'s first chromosome map',
       'Nondisjunction and aneuploid outcomes',
     ],
-    words: 2270,
-    readMins: 11,
+    words: 2715,
+    readMins: 14,
     addedOn: '2026-10-20',
     blocks: [
       {
@@ -69,7 +73,7 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       { kind: 'heading', text: 'Linkage and the First Gene Maps' },
       {
         kind: 'para',
-        text: 'Mendel\'s second law quietly assumes every pair of genes makes its decision independently. Genes on the same chromosome cannot — they are physically linked, doomed to travel together unless a crossover physically separates them. William Bateson and Reginald Punnett glimpsed this in sweet peas in 1905, when their dihybrid crosses produced parental combinations in suspicious excess; Morgan\'s Drosophila made it quantitative. Complete linkage — loci so close that essentially no crossover ever lands between them — yields only parental-type gametes. Incomplete linkage, the usual case, yields a large majority of parental gametes plus a minority of recombinants: gametes that exist only because a crossover occurred in the stretch between the two genes. That minority is information. Recombination is not erratic; the farther apart two loci sit, the more often a crossover falls between them, so the frequency of recombinant offspring measures distance.',
+        text: 'Mendel\'s second law quietly assumes every pair of genes makes its decision independently. Genes on the same chromosome cannot — they are physically linked, doomed to travel together unless a crossover physically separates them. William Bateson and Reginald Punnett glimpsed this in sweet peas in 1905, when their dihybrid crosses produced parental combinations in suspicious excess; Morgan\'s Drosophila made it quantitative. Complete linkage — loci so close that essentially no crossover ever lands between them — yields only parental-type gametes. Incomplete linkage, the usual case, yields a large majority of parental gametes plus a minority of recombinants: gametes that exist only because a crossover occurred in the stretch between the two genes. That minority is information. Recombination is not erratic; the farther apart two loci sit, the more often a crossover falls between them, so the frequency of recombinant offspring measures distance. Two vocabulary details complete the toolkit. Phase: a double heterozygote carrying both dominants on one homolog and both recessives on the other is in the coupling (cis) configuration; one dominant paired with the other gene\'s recessive is the repulsion (trans) configuration — same genotype letters, opposite gamete predictions, so phase must be known or inferred from the parents before any cross is read. Ceiling: recombination frequency saturates at 50 percent for loci far apart or on different chromosomes, which is why unlinked loci are defined as those recombinant half the time, why map distances above about 30 centimorgans grow unreliable without correction for undetected double crossovers, and why a chromosome can span more than 100 centimorgans while its end-to-end recombination stays capped. Genes on the same chromosome are syntenic regardless of how tightly they are linked — all linked genes are syntenic, but not all syntenic genes are linked.',
       },
       {
         kind: 'formula',
@@ -126,6 +130,9 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
           { term: 'Centimorgan', def: 'One map unit — the distance yielding 1 percent recombination.' },
           { term: 'Nondisjunction', def: 'Failure of homologs (meiosis I) or sister chromatids (meiosis II) to separate, producing gametes with abnormal counts.' },
           { term: 'Aneuploidy', def: 'A chromosome count off by one or more from the normal set, as in trisomy 21.' },
+          { term: 'Coupling (cis) configuration', def: 'A double heterozygote with both dominants on one homolog and both recessives on the other — the phase that determines which gametes are parental.' },
+          { term: 'Repulsion (trans) configuration', def: 'The alternative phase — each homolog carries one dominant and one recessive; same letters, opposite recombinant classes.' },
+          { term: 'Syntenic', def: 'Residing on the same chromosome, whether or not they recombine freely; all linked genes are syntenic, not all syntenic genes are linked.' },
         ],
       },
       { kind: 'heading', text: 'Check Your Understanding' },
@@ -162,6 +169,12 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
             answer: 1,
             explain: 'Map distance in centimorgans equals the recombination percentage: 12 cM means about 12 percent recombinant gametes — Ab and aB together.',
           },
+          {
+            q: 'Two linked genes recombine at 48 percent — yet a third gene sits between them at measurable distances from both. What does this reveal about map distances?',
+            options: ['The 48 percent figure is the true distance between the outer genes', 'RF saturates near 50 percent, so distant genes must be pieced together through intermediate markers', 'The three genes sit on different chromosomes', 'Recombination has stopped between the outer genes'],
+            answer: 1,
+            explain: 'Multiple crossovers between far-apart loci restore parental arrangements, capping observable RF near 50 percent — the reason Sturtevant-style maps add short intervals rather than reading long ones directly.',
+          },
         ],
       },
       {
@@ -194,15 +207,18 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
     tier: 'intermediate',
     concepts: [
       'Epistasis and the 9:3:4, 12:3:1, 9:7 and 15:1 ratios',
-      'Multiple allele series, pleiotropy and lethal alleles',
-      'X-linked, Y-linked, sex-influenced and sex-limited traits',
+      'Dominant, complementary and duplicate gene action',
+      'Multiple allele series',
+      'Pleiotropy and lethal alleles',
+      'X-linked recessives: criss-cross inheritance',
+      'X-linked dominant, Y-linked, sex-influenced and sex-limited traits',
       'Barr bodies, X-inactivation and calico mosaics',
       'Cytoplasmic and maternal inheritance',
       'Polygenic traits, heritability and norm of reaction',
       'Environment writing the phenotype: Himalayan rabbit, PKU, hydrangea',
     ],
-    words: 2150,
-    readMins: 11,
+    words: 2645,
+    readMins: 13,
     addedOn: '2026-10-20',
     blocks: [
       {
@@ -253,7 +269,7 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       },
       {
         kind: 'para',
-        text: 'Females have two X chromosomes and males one, yet both make roughly the same amount of most X-linked proteins. The equalizer is X-inactivation, proposed by Mary Lyon in 1961: early in development each female cell shuts down one X at random, condensing it into a Barr body, silent in that cell and its descendants (the XIST RNA coats it and recruits the silencing machinery). The female body is thus a mosaic of two cell lines, paternal X and maternal. Calico and tortoiseshell cats make the mosaic visible — the orange and black coat alleles sit on the X, and each colored patch traces one cell\'s decision about which X to keep. Nearly all calicos are female; the rare male is XXY and infertile. Two consequences: carriers of X-linked recessives are usually, not always, unaffected — their mosaic can lean the wrong way; and inactivation resets in the germ line, so every egg leaves with a freshly active X.',
+        text: 'Females have two X chromosomes and males one, yet both make roughly the same amount of most X-linked proteins. The equalizer is X-inactivation, proposed by Mary Lyon in 1961: early in development each female cell shuts down one X at random, condensing it into a Barr body, silent in that cell and its descendants (the XIST RNA coats it and recruits the silencing machinery). The female body is thus a mosaic of two cell lines, paternal X and maternal. Calico and tortoiseshell cats make the mosaic visible — the orange and black coat alleles sit on the X, and each colored patch traces one cell\'s decision about which X to keep. Nearly all calicos are female; the rare male is XXY and infertile. Two consequences: carriers of X-linked recessives are usually, not always, unaffected — their mosaic can lean the wrong way; and inactivation resets in the germ line, so every egg leaves with a freshly active X. The cat genome adds two finishing touches that examiners love. First, the distinction the names gloss over: tortoiseshell is the X-inactivation mosaic alone — patches of orange and black — while a CALICO is a tortoiseshell that also carries the piebald-spotting allele (S), which superimposes the white patches; orange, black and white together make the calico pattern, and the white-splotch gene is a plain autosomal one with nothing to do with the X. Second, the whole color scheme can be hidden by a dominant epistatic allele at an entirely different locus: one copy of the white-masking W allele prevents melanocyte development altogether, so a W_ cat is entirely white no matter what its Orange, dilute or piebald genes say — true albinism is much rarer and distinguishable by red eyes, while a masked W_ cat keeps ordinary eye color. Genotype, as ever, runs deeper than the coat shows.',
       },
       {
         kind: 'para',
@@ -352,6 +368,12 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
             answer: 1,
             explain: 'The A^Y A^Y class dies before birth; survivors are 2 yellow to 1 agouti — the 2:1 ratio that betrays a recessive lethal.',
           },
+          {
+            q: 'A mother has a mitochondrial disease. Her four children — two sons, two daughters — are born to an unaffected father. How many are expected to inherit the disease?',
+            options: ['none — the father must transmit it', 'the two daughters only', 'all four, sons and daughters alike', 'half, regardless of sex'],
+            answer: 2,
+            explain: 'Mitochondria ride the egg\'s cytoplasm — the sperm contributes essentially none — so an affected mother passes the organelle, and its genome, to every child of either sex.',
+          },
         ],
       },
       {
@@ -387,12 +409,15 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       'Plasmid architecture and the vector for every job',
       'Competent cells, transformation and selection',
       'PCR: temperature cycles, primers and 2^n amplification',
-      'Gel electrophoresis and STR DNA fingerprinting',
+      'PCR variants: RT-PCR and quantitative real-time PCR',
+      'Gel electrophoresis and Southern blotting',
+      'DNA fingerprinting with STR loci and the product rule',
       'Genomic versus cDNA libraries',
-      'Sanger sequencing and bioreactor-scale production',
+      'Sanger sequencing: chain termination',
+      'Bioreactor-scale production',
     ],
-    words: 2250,
-    readMins: 11,
+    words: 2507,
+    readMins: 13,
     addedOn: '2026-10-20',
     blocks: [
       {
@@ -412,7 +437,7 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       },
       {
         kind: 'para',
-        text: 'A cut gene needs a vehicle: a vector. The classic is the plasmid, a small circle bacteria copy independently of their chromosome. A cloning plasmid needs four features: an origin of replication, a selectable marker (usually antibiotic resistance, so only plasmid-bearing cells survive plating), a multiple cloning site — an engineered cluster of unique restriction sites — and often the rop gene holding copy number stable. The textbook pBR322 carries two resistance markers; cloning into one disrupts it, so recombinants are ampicillin-resistant but tetracycline-sensitive — insertional inactivation, identity by the marker you broke. Bigger jobs call for other vectors: phage lambda accepts 15-20 kilobase inserts and injects them via in vitro packaging; cosmids splice lambda\'s cos sites onto a plasmid to ferry 35-45 kb; the Ti plasmid of Agrobacterium tumefaciens is nature\'s plant engineer, its T-DNA the standard route into plants. Shuttle vectors carry two origins to commute between hosts; expression vectors add a strong promoter, ribosome-binding site, terminator, and purification tags such as a histidine run fused to the product.',
+        text: 'A cut gene needs a vehicle: a vector. The classic is the plasmid, a small circle bacteria copy independently of their chromosome. A cloning plasmid needs four features: an origin of replication, a selectable marker (usually antibiotic resistance, so only plasmid-bearing cells survive plating), a multiple cloning site — an engineered cluster of unique restriction sites — and often the rop gene holding copy number stable. The textbook pBR322 carries two resistance markers; cloning into one disrupts it, so recombinants are ampicillin-resistant but tetracycline-sensitive — insertional inactivation, identity by the marker you broke. Bigger jobs call for other vectors: phage lambda accepts inserts up to about 15 kilobases — its head can package no more than roughly 50 kb of DNA — and delivers them via in vitro packaging; cosmids splice lambda\'s cos sites onto a plasmid to ferry 35-45 kb; the Ti plasmid of Agrobacterium tumefaciens is nature\'s plant engineer, its T-DNA the standard route into plants. Shuttle vectors carry two origins to commute between hosts; expression vectors add a strong promoter, ribosome-binding site, terminator, and purification tags such as a histidine run fused to the product.',
       },
       {
         kind: 'para',
@@ -542,6 +567,12 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
             answer: 1,
             explain: 'An insert interrupts lacZ-alpha, so no beta-galactosidase forms, no blue dye is made, and the colony stays white.',
           },
+          {
+            q: 'In Sanger chain-termination sequencing, the fragments that spell out the sequence end in:',
+            options: ['sticky ends left by EcoRI', 'dideoxynucleotides that lack the 3-prime hydroxyl and stop the chain', 'Taq polymerase molecules', 'the primer, unextended'],
+            answer: 1,
+            explain: 'A ddNTP incorporated into a growing strand cannot accept the next phosphodiester bond, so each terminated fragment\'s length marks the position of its base.',
+          },
         ],
       },
       {
@@ -578,12 +609,16 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       'Hybridoma technology and monoclonal antibodies',
       'Gene therapy: ex vivo and in vivo, the ADA-SCID first trial',
       'Molecular diagnostics: PCR tests, ELISA, probes',
-      'Bt crops with refuge strategy, golden rice, herbicide tolerance',
-      'Transgenic animals, biofertilizers, biocontrol agents',
-      'Industrial enzymes, biogas, and bioremediation',
+      'Transgenic animals and molecular pharming',
+      'Bt crops with refuge strategy',
+      'Golden rice, herbicide tolerance and the first engineered foods',
+      'Biofertilizers, biocontrol agents and biogas',
+      'Industrial enzymes: detergents, cheese, Taq',
+      'Bioremediation: microbes against pollution',
+      'The social ledger: labeling, gene flow, seed patents',
     ],
-    words: 2200,
-    readMins: 11,
+    words: 3012,
+    readMins: 15,
     addedOn: '2026-10-20',
     blocks: [
       {
@@ -654,7 +689,7 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       },
       {
         kind: 'para',
-        text: 'Bioremediation closes the loop by deploying organisms against pollution. Naturally occurring bacteria degrade petroleum hydrocarbons — in oil spills, dispersants and nutrient additions mainly help indigenous degraders multiply — and Ananda Chakrabarty\'s multi-plasmid Pseudomonas, granted a United States patent in 1980 as the first engineered life form, was built to chew through crude oil. Engineered and native strains soak up heavy metals and break down chlorinated solvents at contaminated sites; sewage treatment itself is applied microbial ecology at municipal scale. Fungi join in: white-rot fungi\'s lignin-degrading enzymes can dismantle persistent pollutants that resemble lignin\'s tough chemistry. The common principle is the same one the ecosystems lesson develops — decomposers run the world\'s recycling — turned to human purposes.',
+        text: 'Bioremediation closes the loop by deploying organisms against pollution. Naturally occurring bacteria degrade petroleum hydrocarbons — in oil spills, dispersants and nutrient additions mainly help indigenous degraders multiply — and Ananda Chakrabarty\'s multi-plasmid Pseudomonas — declared patentable by the United States Supreme Court in Diamond v. Chakrabarty (1980) and granted the patent itself in 1981 as the first engineered life form — was built to chew through crude oil. Engineered and native strains soak up heavy metals and break down chlorinated solvents at contaminated sites; sewage treatment itself is applied microbial ecology at municipal scale. Fungi join in: white-rot fungi\'s lignin-degrading enzymes can dismantle persistent pollutants that resemble lignin\'s tough chemistry. The common principle is the same one the ecosystems lesson develops — decomposers run the world\'s recycling — turned to human purposes.',
       },
       {
         kind: 'para',
@@ -728,6 +763,12 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
             answer: 1,
             explain: 'The control line holds antibodies against the labeled antibody itself, catching whatever flowed past — the built-in check that the strip worked, independent of hCG.',
           },
+          {
+            q: 'A farmer inoculates legume seed with Rhizobium instead of applying nitrogen fertilizer. This works because the bacteria:',
+            options: ['fix atmospheric nitrogen inside root nodules', 'degrade the soil\'s nitrate poison', 'produce Bt crystal toxin in the roots', 'supply phosphorus from rock like mycorrhiza do'],
+            answer: 0,
+            explain: 'Rhizobium is the classic biofertilizer: colonizing legume roots and reducing atmospheric nitrogen to usable forms — living input rather than synthetic fertilizer.',
+          },
         ],
       },
       {
@@ -760,15 +801,17 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
     tier: 'advanced',
     concepts: [
       'Human Genome Project: goals, rivals, and the Bermuda Principle',
-      'Hierarchical BAC-by-BAC versus whole-genome shotgun sequencing',
       'Surprising findings: 20,000 genes, 98 percent non-coding',
       'From Sanger capillaries to long-read platforms and the 1,000-dollar genome',
       'Annotation, BLAST homology search, and the sequence databases',
-      'Comparative and functional genomics: synteny, microarrays, RNA-seq',
-      'Pharmacogenomics, GWAS, DNA barcoding, and metagenomics',
+      'Comparative genomics: synteny and model organisms',
+      'Functional genomics: microarrays and RNA-seq',
+      'Proteomics and metabolomics: the layers below RNA',
+      'Pharmacogenomics: prescriptions tuned to genotype',
+      'GWAS, DNA barcoding, metagenomics and ancient DNA',
     ],
-    words: 2150,
-    readMins: 11,
+    words: 3009,
+    readMins: 15,
     addedOn: '2026-10-20',
     blocks: [
       {
@@ -911,6 +954,12 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
             answer: 1,
             explain: 'Association studies find markers inherited together with the causal variant; because most common-trait signals are regulatory, the hit usually flags a control region that fine mapping must pin down.',
           },
+          {
+            q: 'Before prescribing a drug metabolized by a variable enzyme, pharmacogenomics would first:',
+            options: ['sequence the entire genome of the pathogen', 'genotype the patient\'s drug-metabolizing enzyme to tune choice and dose', 'run a BLAST search against the enzyme', 'measure the drug by mass spectrometry in a bioreactor'],
+            answer: 1,
+            explain: 'Pharmacogenomics reads the patient\'s own variants — in enzymes and transporters — and adjusts prescribing before exposure, the clinical dividend of the sequence era.',
+          },
         ],
       },
       {
@@ -934,4 +983,34 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       },
     ],
   },
+  // X61 crossverify pass (2026-10-26): Genetics & Heredity cross-verified vs
+  // Nickle & Barrette-Ng, Online Open Genetics (LibreTexts, CC BY-SA 3.0) —
+  // zero factual corrections across all 9 lessons. This run CONVERGED with a
+  // parallel session (afebd14) that already added the cytogenetics/Muller/
+  // penetrance-chi-square lessons, so per the zero-repetition rule this pass
+  // ships ONLY bio-markers-qtl-mapping (RFLP/SSR/SNP marker classes, linkage
+  // maps, marker-assisted selection, QTL mapping — carved against
+  // bio-biotechnology-rdna-processes which owns the cloning toolkit and STR
+  // identity fingerprinting, bio-genomics-bioinformatics which owns GWAS,
+  // and bio-beyond-mendel-extensions which owns the polygenic arithmetic;
+  // 'RFLP'/'QTL'/'marker-assisted' had zero live hits). Carving documented
+  // in the x61 header.
+    ...x61CrossverifyGeneticsPassTopics.filter((t) => t.domain === 'Life Sciences'),
+    // X66 crossverify pass (2026-10-28): Genetics & Heredity cross-verified vs
+    // Nickle & Barrette-Ng, Online Open Genetics (LibreTexts, CC BY-NC-SA 3.0)
+    // — full book walked (13 chapters / 93 sections). CONVERGED with the
+    // remote X60 (penetrance+chi-square, karyotypes, Muller's morphs) and X61
+    // (markers/QTL) passes: four drafted lessons dropped per zero-repetition,
+    // TWO genuinely-new subtopics shipped — bio-pedigree-mode-inference
+    // (proband/carrier/consanguinity notation, five modes with definitive
+    // discriminators, probability chaining; 'proband' had zero live hits) and
+    // bio-sex-determination-systems (TDF-Y switch vs X:A ratio, ZW/ZZ, XX/XO,
+    // haplodiploidy, environmental systems, hormonal vs cell-autonomous,
+    // hypertranscription vs X-inactivation; 'sex determination'/'freemartin'/
+    // 'gynandromorph'/'TDF-Y' all zero live hits). Also re-applies the
+    // book-sourced enrichments both remote runs missed: coupling/repulsion
+    // phase + 50% RF ceiling + syntenic term to the meiosis lesson, and the
+    // tortoiseshell-vs-calico piebald distinction + W_ white masking to the
+    // beyond-Mendel lesson. Carving in x66-crossverify-pass.ts header.
+    ...x66CrossverifyTopics,
 ]

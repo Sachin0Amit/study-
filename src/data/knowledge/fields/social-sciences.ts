@@ -11,24 +11,15 @@ import { x33UgcNetClosurePassTopics } from './x33-ugc-net-closure-pass'
 import { x37AlbertaPassTopics } from './x37-alberta-pass'
 import { x46ThinBooksPassTopics } from './x46-thin-books-pass'
 import { x56VcePassTopics } from './x56-vce-pass'
-import { x60LibraryOrgDeepeningPassTopics } from './x60-library-org-pass'
+import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
+import { x64LibraryOrgPassTopics } from './x64-library-org-pass'
+import { x67LibraryOrgDeepeningPassTopics } from './x67-library-org-pass'
 
 export const socialSciences: KnowledgeDomainFile = {
   domain: 'Social Sciences',
   blurb:
     'How humans behave, bond, decide and govern together — psychology, sociology and political science at their meeting points.',
   topics: [
-    // X60 library-org deepening pass (2026-10-28): propaganda and
-    // persuasion — the Media & Communication book's new 'Persuasion &
-    // Misinformation' chapter. Carved against gp-mass-media-society-
-    // responsibility (OWNS watchdog/regulation; mentions deepfakes in
-    // ONE clause — the mechanics are taught here) and media-journalism-
-    // craft (OWNS verification craft; 'lateral reading' is owned by a
-    // digital-literacy lesson and referenced only). Grep: 'Bernays' 0,
-    // 'Creel' 0, 'illusory truth' 0 live hits. Routes by branch
-    // 'Propaganda & Misinformation' (field 'Media Literacy' is not a
-    // chapter-field match, so the topic reaches the new chapter).
-    ...x60LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Social Sciences'),
     // X56 VCE pass (2026-10-26): psy-behaviourist-learning (Pavlov three-phase,
     // Skinner ABC, Bandura pentad — carved against x44 fear-conditioning,
     // the animal-cognition aside and x31's teaching-methods citation) and
@@ -3416,5 +3407,51 @@ export const socialSciences: KnowledgeDomainFile = {
         },
       ],
     },
+    // X60 library-org thin-book pass (2026-10-26): two thin books deepen.
+    // Anthropology reaches 4 lessons — fieldwork & ethnography method
+    // (Malinowski's revolution, fieldnotes craft, emic/etic, key
+    // consultants, reciprocity ethics, multi-sited/netnography/studying-up).
+    // Carved against anth-cultural-relativism (which OWNS the theory
+    // critique — Boas/Mead/reflexivity/decolonization — and names 'Fieldwork
+    // and thick description' as the one-line forward reference filled here)
+    // and anth-archaeology-methods (OWNS excavation/dating). Greps:
+    // 'multi-sited', 'netnograp' had ZERO live hits; 'participant
+    // observation' appeared only in a method-family list line + the
+    // relativism concept line. Media & Communication reaches 4 lessons —
+    // the algorithmic feed (two-stage recommenders, engagement
+    // optimization, the 2014 contagion experiment, the 2023 evidence
+    // suite, persuasive design, DSA transparency). Carved against
+    // soc-media-communication (which OWNS framing/agenda/cultivation and
+    // names 'Platforms, engagement and filter bubbles' as the concept line
+    // filled here) and gp-mass-media-society-responsibility (OWNS media
+    // history + responsibility debates). Greps: 'recommender',
+    // 'collaborative filtering', 'infinite scroll' had ZERO live hits.
+    ...x60LibraryOrgThinBooksPassTopics.filter((t) => t.domain === 'Social Sciences'),
+
+    // X64 library-org deepening pass (2026-10-27): three second lessons —
+    // urb-heat-island-design in The Built Environment (owns urban thermal
+    // physics; defers mobility to urb-urban-mobility-transit, X60),
+    // anth-bioarchaeology-bones in Archaeology (owns the skeleton as
+    // archive; defers fieldwork to anth-fieldwork-ethnography, X60) and
+    // media-video-games-interactive in The Attention Economy (owns the
+    // interactive medium; defers recommender feeds to
+    // media-algorithmic-feed, X60). Full carving in the x64 pass header.
+    ...x64LibraryOrgPassTopics.filter((t) => t.domain === 'Social Sciences'),
+
+    // X67 library-org deepening pass (2026-10-28): propaganda and
+    // persuasion — the Media & Communication book's new 'Persuasion &
+    // Misinformation' chapter. Carved against gp-mass-media-society-
+    // responsibility (OWNS watchdog/regulation; mentions deepfakes in
+    // ONE clause — the mechanics are taught here), media-journalism-
+    // craft (OWNS verification craft; 'lateral reading' owned by a
+    // digital-literacy lesson, referenced only) and the parallel run's
+    // media-algorithmic-feed (OWNS recommenders/engagement/DSA — the
+    // machine room; this lesson owns the persuasion canon: Creel,
+    // Bernays, IPA devices, misinformation taxonomy, illusory truth,
+    // prebunking; zero overlap). Grep: 'Bernays' 0, 'Creel' 0,
+    // 'illusory truth' 0 live hits. Routes by branch 'Propaganda &
+    // Misinformation' (field 'Media Literacy' matches no earlier
+    // chapter-field, so the topic reaches the new chapter).
+    ...x67LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Social Sciences'),
   ],
 }

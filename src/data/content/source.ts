@@ -479,6 +479,9 @@ import { enggBranchContent } from './engg-ece-ee-me'
 import { spacePropulsionContent } from './space-propulsion'
 import { dataConvertersContent } from './data-converters'
 import { aptLasersContent } from './apt-di-lasers'
+import { physExperimentalAContent } from './phys-experimental-a'
+import { physExperimentalBContent } from './phys-experimental-b'
+import { chemEngineeringContent } from './chem-engineering'
 // ---- Thin-subject top-up (Task 5) ----
 import { csCoreTopupContent } from './topup-cs-core'
 import { mlSeTopupContent } from './topup-ml-se'
@@ -1057,6 +1060,13 @@ const allContent: SectionContent[] = [
   ...spacePropulsionContent,
   ...dataConvertersContent,
   ...aptLasersContent,
+  // ---- Experimental-skills unit (measurement instruments, mechanics/heat/
+  // sound/electricity/optics/semiconductor bench experiments, error analysis)
+  // + engineering-chemistry volume (water/corrosion, polymers/fuels/
+  // lubricants, nanomaterials/green chemistry) ----
+  ...physExperimentalAContent,
+  ...physExperimentalBContent,
+  ...chemEngineeringContent,
   // ---- Thin-subject top-up (Task 5): AI/ML, software eng, cybersecurity,
   // power systems, solids/materials, manufacturing/metrology ----
   ...csCoreTopupContent,
