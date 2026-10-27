@@ -17,7 +17,7 @@
 - **Subjects:** 138
 - **Books (master volumes):** 138
 - **Chapters:** 875
-- **Sections (lessons):** 4663
+- **Sections (lessons):** 4665
 
 ## Foundations — 7 subjects
 
@@ -816,9 +816,9 @@
 
 ### Genetics & Heredity (`ku-genetics-heredity`)
 
-*How traits travel and vary* — 5 chapters · 13 sections
+*How traits travel and vary* — 5 chapters · 15 sections
 
-- **Ch 1. Classical & Transmission Genetics** `ku-genetics-heredity-classical-and-transmission-genetics` — 4 sections: Mendel's Laws: How Traits Travel Between Generations; Meiosis, Linkage and the Chromosomal Theory of Inheritance; Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits; When Genes Do Not Follow the Script: Penetrance, Expressivity and the Chi-Square Test
+- **Ch 1. Classical & Transmission Genetics** `ku-genetics-heredity-classical-and-transmission-genetics` — 6 sections: Mendel's Laws: How Traits Travel Between Generations; Meiosis, Linkage and the Chromosomal Theory of Inheritance; Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits; Pedigree Analysis: Inferring the Mode of Inheritance; Sex Determination Across Species: X, Y, Z, W and the Alternatives; When Genes Do Not Follow the Script: Penetrance, Expressivity and the Chi-Square Test
 - **Ch 2. Cytogenetics & Allelic Analysis** `ku-genetics-heredity-cytogenetics-and-allelic-analysis` — 2 sections: Chromosomes Under Glass: Number, Structure and Karyotypes; What Alleles Do: Wild Type, Muller's Morphs and Complementation
 - **Ch 3. Molecular Genetics & Genomics** `ku-genetics-heredity-molecular-genetics-and-genomics` — 3 sections: Genomics and Bioinformatics: Reading Whole Genomes; Genetic Markers: DNA Landmarks, Marker Maps and QTL; CRISPR and the Mechanics of Gene Editing
 - **Ch 4. Genes in Populations** `ku-genetics-heredity-genes-in-populations` — 2 sections: Inheritance in Populations: Allele Frequencies and Population Patterns; Population Genetics: Genes Drifting Through Time

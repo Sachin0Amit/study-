@@ -30,6 +30,7 @@ import { x54CrossverifyPassTopics } from '../src/data/knowledge/fields/x54-cross
 import { x58LibraryOrgDeepeningPassTopics } from '../src/data/knowledge/fields/x58-library-org-pass'
 import { x59LibraryOrgBacklogPassTopics } from '../src/data/knowledge/fields/x59-library-org-pass'
 import { x60CrossverifyTopics } from '../src/data/knowledge/fields/x60-crossverify-pass'
+import { x66CrossverifyTopics } from '../src/data/knowledge/fields/x66-crossverify-pass'
 import { x62CrossverifyEvolutionPassTopics } from '../src/data/knowledge/fields/x62-crossverify-pass'
 import { x63CengagePassTopics } from '../src/data/knowledge/fields/x63-cengage-pass'
 import { x60EnemBrazilPassTopics } from '../src/data/knowledge/fields/x60-enem-brazil-pass'
@@ -42,6 +43,8 @@ import { technologyApplied } from '../src/data/knowledge/fields/technology-appli
 import { computingAI } from '../src/data/knowledge/fields/computing-ai'
 
 const IDS = [
+  'bio-pedigree-mode-inference',
+  'bio-sex-determination-systems',
   'bio-markers-qtl-mapping',
   'bio-sexual-selection-darwin',
   'bio-darwin-difficulties',

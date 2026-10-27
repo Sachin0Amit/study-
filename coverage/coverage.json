@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T16:05:16.746Z",
+  "generatedAt": "2026-10-27T20:08:42.372Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 138,
     "books": 138,
     "chapters": 875,
-    "sections": 4663
+    "sections": 4665
   },
   "subjects": [
     {
@@ -26956,7 +26956,7 @@
       "group": "Life Sciences",
       "tagline": "How traits travel and vary",
       "chapterCount": 5,
-      "sectionCount": 13,
+      "sectionCount": 15,
       "chapters": [
         {
           "id": "ku-genetics-heredity-classical-and-transmission-genetics",
@@ -26964,7 +26964,7 @@
           "title": "Classical & Transmission Genetics",
           "shortTitle": "Classical & Transmission Genetics",
           "bookId": "ku-genetics-heredity",
-          "sectionCount": 4,
+          "sectionCount": 6,
           "sections": [
             {
               "id": "ku-bio-genetics-mendel",
@@ -26982,8 +26982,18 @@
               "title": "Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits"
             },
             {
-              "id": "ku-bio-penetrance-expressivity",
+              "id": "ku-bio-pedigree-mode-inference",
               "number": 1.4,
+              "title": "Pedigree Analysis: Inferring the Mode of Inheritance"
+            },
+            {
+              "id": "ku-bio-sex-determination-systems",
+              "number": 1.5,
+              "title": "Sex Determination Across Species: X, Y, Z, W and the Alternatives"
+            },
+            {
+              "id": "ku-bio-penetrance-expressivity",
+              "number": 1.6,
               "title": "When Genes Do Not Follow the Script: Penetrance, Expressivity and the Chi-Square Test"
             }
           ]

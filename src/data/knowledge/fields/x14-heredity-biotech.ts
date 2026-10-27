@@ -1,5 +1,6 @@
 import type { KnowledgeTopic } from '../types'
 import { x61CrossverifyGeneticsPassTopics } from './x61-crossverify-pass'
+import { x66CrossverifyTopics } from './x66-crossverify-pass'
 
 /** Expansion pass X14 (2026-10-20): transmission genetics extensions,
  *  recombinant-DNA processes, applied biotechnology, and genomics.
@@ -24,8 +25,8 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       'Sturtevant\'s first chromosome map',
       'Nondisjunction and aneuploid outcomes',
     ],
-    words: 2496,
-    readMins: 12,
+    words: 2715,
+    readMins: 14,
     addedOn: '2026-10-20',
     blocks: [
       {
@@ -72,7 +73,7 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       { kind: 'heading', text: 'Linkage and the First Gene Maps' },
       {
         kind: 'para',
-        text: 'Mendel\'s second law quietly assumes every pair of genes makes its decision independently. Genes on the same chromosome cannot — they are physically linked, doomed to travel together unless a crossover physically separates them. William Bateson and Reginald Punnett glimpsed this in sweet peas in 1905, when their dihybrid crosses produced parental combinations in suspicious excess; Morgan\'s Drosophila made it quantitative. Complete linkage — loci so close that essentially no crossover ever lands between them — yields only parental-type gametes. Incomplete linkage, the usual case, yields a large majority of parental gametes plus a minority of recombinants: gametes that exist only because a crossover occurred in the stretch between the two genes. That minority is information. Recombination is not erratic; the farther apart two loci sit, the more often a crossover falls between them, so the frequency of recombinant offspring measures distance.',
+        text: 'Mendel\'s second law quietly assumes every pair of genes makes its decision independently. Genes on the same chromosome cannot — they are physically linked, doomed to travel together unless a crossover physically separates them. William Bateson and Reginald Punnett glimpsed this in sweet peas in 1905, when their dihybrid crosses produced parental combinations in suspicious excess; Morgan\'s Drosophila made it quantitative. Complete linkage — loci so close that essentially no crossover ever lands between them — yields only parental-type gametes. Incomplete linkage, the usual case, yields a large majority of parental gametes plus a minority of recombinants: gametes that exist only because a crossover occurred in the stretch between the two genes. That minority is information. Recombination is not erratic; the farther apart two loci sit, the more often a crossover falls between them, so the frequency of recombinant offspring measures distance. Two vocabulary details complete the toolkit. Phase: a double heterozygote carrying both dominants on one homolog and both recessives on the other is in the coupling (cis) configuration; one dominant paired with the other gene\'s recessive is the repulsion (trans) configuration — same genotype letters, opposite gamete predictions, so phase must be known or inferred from the parents before any cross is read. Ceiling: recombination frequency saturates at 50 percent for loci far apart or on different chromosomes, which is why unlinked loci are defined as those recombinant half the time, why map distances above about 30 centimorgans grow unreliable without correction for undetected double crossovers, and why a chromosome can span more than 100 centimorgans while its end-to-end recombination stays capped. Genes on the same chromosome are syntenic regardless of how tightly they are linked — all linked genes are syntenic, but not all syntenic genes are linked.',
       },
       {
         kind: 'formula',
@@ -129,6 +130,9 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
           { term: 'Centimorgan', def: 'One map unit — the distance yielding 1 percent recombination.' },
           { term: 'Nondisjunction', def: 'Failure of homologs (meiosis I) or sister chromatids (meiosis II) to separate, producing gametes with abnormal counts.' },
           { term: 'Aneuploidy', def: 'A chromosome count off by one or more from the normal set, as in trisomy 21.' },
+          { term: 'Coupling (cis) configuration', def: 'A double heterozygote with both dominants on one homolog and both recessives on the other — the phase that determines which gametes are parental.' },
+          { term: 'Repulsion (trans) configuration', def: 'The alternative phase — each homolog carries one dominant and one recessive; same letters, opposite recombinant classes.' },
+          { term: 'Syntenic', def: 'Residing on the same chromosome, whether or not they recombine freely; all linked genes are syntenic, not all syntenic genes are linked.' },
         ],
       },
       { kind: 'heading', text: 'Check Your Understanding' },
@@ -213,8 +217,8 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       'Polygenic traits, heritability and norm of reaction',
       'Environment writing the phenotype: Himalayan rabbit, PKU, hydrangea',
     ],
-    words: 2497,
-    readMins: 12,
+    words: 2645,
+    readMins: 13,
     addedOn: '2026-10-20',
     blocks: [
       {
@@ -265,7 +269,7 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       },
       {
         kind: 'para',
-        text: 'Females have two X chromosomes and males one, yet both make roughly the same amount of most X-linked proteins. The equalizer is X-inactivation, proposed by Mary Lyon in 1961: early in development each female cell shuts down one X at random, condensing it into a Barr body, silent in that cell and its descendants (the XIST RNA coats it and recruits the silencing machinery). The female body is thus a mosaic of two cell lines, paternal X and maternal. Calico and tortoiseshell cats make the mosaic visible — the orange and black coat alleles sit on the X, and each colored patch traces one cell\'s decision about which X to keep. Nearly all calicos are female; the rare male is XXY and infertile. Two consequences: carriers of X-linked recessives are usually, not always, unaffected — their mosaic can lean the wrong way; and inactivation resets in the germ line, so every egg leaves with a freshly active X.',
+        text: 'Females have two X chromosomes and males one, yet both make roughly the same amount of most X-linked proteins. The equalizer is X-inactivation, proposed by Mary Lyon in 1961: early in development each female cell shuts down one X at random, condensing it into a Barr body, silent in that cell and its descendants (the XIST RNA coats it and recruits the silencing machinery). The female body is thus a mosaic of two cell lines, paternal X and maternal. Calico and tortoiseshell cats make the mosaic visible — the orange and black coat alleles sit on the X, and each colored patch traces one cell\'s decision about which X to keep. Nearly all calicos are female; the rare male is XXY and infertile. Two consequences: carriers of X-linked recessives are usually, not always, unaffected — their mosaic can lean the wrong way; and inactivation resets in the germ line, so every egg leaves with a freshly active X. The cat genome adds two finishing touches that examiners love. First, the distinction the names gloss over: tortoiseshell is the X-inactivation mosaic alone — patches of orange and black — while a CALICO is a tortoiseshell that also carries the piebald-spotting allele (S), which superimposes the white patches; orange, black and white together make the calico pattern, and the white-splotch gene is a plain autosomal one with nothing to do with the X. Second, the whole color scheme can be hidden by a dominant epistatic allele at an entirely different locus: one copy of the white-masking W allele prevents melanocyte development altogether, so a W_ cat is entirely white no matter what its Orange, dilute or piebald genes say — true albinism is much rarer and distinguishable by red eyes, while a masked W_ cat keeps ordinary eye color. Genotype, as ever, runs deeper than the coat shows.',
       },
       {
         kind: 'para',
@@ -992,4 +996,21 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
   // 'RFLP'/'QTL'/'marker-assisted' had zero live hits). Carving documented
   // in the x61 header.
     ...x61CrossverifyGeneticsPassTopics.filter((t) => t.domain === 'Life Sciences'),
+    // X66 crossverify pass (2026-10-28): Genetics & Heredity cross-verified vs
+    // Nickle & Barrette-Ng, Online Open Genetics (LibreTexts, CC BY-NC-SA 3.0)
+    // — full book walked (13 chapters / 93 sections). CONVERGED with the
+    // remote X60 (penetrance+chi-square, karyotypes, Muller's morphs) and X61
+    // (markers/QTL) passes: four drafted lessons dropped per zero-repetition,
+    // TWO genuinely-new subtopics shipped — bio-pedigree-mode-inference
+    // (proband/carrier/consanguinity notation, five modes with definitive
+    // discriminators, probability chaining; 'proband' had zero live hits) and
+    // bio-sex-determination-systems (TDF-Y switch vs X:A ratio, ZW/ZZ, XX/XO,
+    // haplodiploidy, environmental systems, hormonal vs cell-autonomous,
+    // hypertranscription vs X-inactivation; 'sex determination'/'freemartin'/
+    // 'gynandromorph'/'TDF-Y' all zero live hits). Also re-applies the
+    // book-sourced enrichments both remote runs missed: coupling/repulsion
+    // phase + 50% RF ceiling + syntenic term to the meiosis lesson, and the
+    // tortoiseshell-vs-calico piebald distinction + W_ white masking to the
+    // beyond-Mendel lesson. Carving in x66-crossverify-pass.ts header.
+    ...x66CrossverifyTopics,
 ]
