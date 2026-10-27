@@ -44,9 +44,12 @@ export const lifeSciences: KnowledgeDomainFile = {
     // responses — organism-level ecology the population lesson doesn't own.
     ...x24GapClosingPassTopics.filter((t) => t.domain === 'Life Sciences'),
     // X14 exam-syllabus pass (2026-10-20): molecular-genetics engine +
-    // transmission-genetics/biotech/genomics deep dives.
+    // transmission-genetics/biotech/genomics deep dives. The two
+    // Transmission Genetics lessons are placed AFTER the Mendel
+    // foundations lesson below (CROSSVERIFY 2026-10-27 reorder — USER
+    // RULE 5: foundations render first inside the chapter).
     ...x14MolecularTopics,
-    ...x14HeredityBiotechTopics,
+    ...x14HeredityBiotechTopics.filter((t) => t.branch !== 'Transmission Genetics'),
     // ------------------------------------------------------------------
     {
       id: 'bio-crispr-gene-editing',
@@ -2055,6 +2058,11 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
       ],
     },
+    // CROSSVERIFY 2026-10-27 (vs Griffiths et al., An Introduction to
+    // Genetic Analysis 8e, Part I): transmission genetics builds ON the
+    // Mendelian foundations, so the meiosis/linkage and beyond-Mendel
+    // lessons render after Mendel's Laws — foundations-first (USER RULE 5).
+    ...x14HeredityBiotechTopics.filter((t) => t.branch === 'Transmission Genetics'),
     // ------------------------------------------------------------------
     {
       id: 'bio-speciation-barriers',
@@ -3299,7 +3307,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         "Gene flow between populations",
         "Coalescence: tracing genes backward",
       ],
-      words: 1243,
+      words: 1261,
       readMins: 6,
       addedOn: "2026-10-18",
       blocks: [
@@ -3320,7 +3328,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
         {
           kind: "para",
-          text: "That surprise is the Hardy-Weinberg equilibrium. In a large, randomly mating population free of selection, mutation, migration, and drift, one round of mating settles genotype frequencies at p squared, 2pq, and q squared — and they stay there. This null model predicts that a dominant allele will not sweep through just by being dominant, and that rare recessive alleles can hide almost indefinitely inside heterozygotes. Real populations deviate slightly, and the deviations are the discoveries.",
+          text: "That surprise is the Hardy-Weinberg equilibrium — worked out independently in 1908 by G. H. Hardy, a mathematician, and Wilhelm Weinberg, a physician, with a third independent discovery by the Russian geneticist Sergei Chetverikov. In a large, randomly mating population free of selection, mutation, migration, and drift, one round of mating settles genotype frequencies at p squared, 2pq, and q squared — and they stay there. This null model predicts that a dominant allele will not sweep through just by being dominant, and that rare recessive alleles can hide almost indefinitely inside heterozygotes. Real populations deviate slightly, and the deviations are the discoveries.",
         },
         {
           kind: "para",

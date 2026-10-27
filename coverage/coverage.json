@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T04:30:30.923Z",
+  "generatedAt": "2026-10-27T07:57:09.054Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -26952,19 +26952,19 @@
           "sectionCount": 3,
           "sections": [
             {
-              "id": "ku-bio-meiosis-linkage-inheritance",
+              "id": "ku-bio-genetics-mendel",
               "number": 1.1,
+              "title": "Mendel's Laws: How Traits Travel Between Generations"
+            },
+            {
+              "id": "ku-bio-meiosis-linkage-inheritance",
+              "number": 1.2,
               "title": "Meiosis, Linkage and the Chromosomal Theory of Inheritance"
             },
             {
               "id": "ku-bio-beyond-mendel-extensions",
-              "number": 1.2,
-              "title": "Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits"
-            },
-            {
-              "id": "ku-bio-genetics-mendel",
               "number": 1.3,
-              "title": "Mendel's Laws: How Traits Travel Between Generations"
+              "title": "Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits"
             }
           ]
         },

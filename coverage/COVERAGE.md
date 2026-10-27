@@ -818,7 +818,7 @@
 
 *How traits travel and vary* — 4 chapters · 9 sections
 
-- **Ch 1. Classical & Transmission Genetics** `ku-genetics-heredity-classical-and-transmission-genetics` — 3 sections: Meiosis, Linkage and the Chromosomal Theory of Inheritance; Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits; Mendel's Laws: How Traits Travel Between Generations
+- **Ch 1. Classical & Transmission Genetics** `ku-genetics-heredity-classical-and-transmission-genetics` — 3 sections: Mendel's Laws: How Traits Travel Between Generations; Meiosis, Linkage and the Chromosomal Theory of Inheritance; Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits
 - **Ch 2. Molecular Genetics & Genomics** `ku-genetics-heredity-molecular-genetics-and-genomics` — 2 sections: Genomics and Bioinformatics: Reading Whole Genomes; CRISPR and the Mechanics of Gene Editing
 - **Ch 3. Genes in Populations** `ku-genetics-heredity-genes-in-populations` — 2 sections: Inheritance in Populations: Allele Frequencies and Population Patterns; Population Genetics: Genes Drifting Through Time
 - **Ch 4. Biotechnology** `ku-genetics-heredity-biotechnology` — 2 sections: Recombinant DNA: The Tools and Techniques of Genetic Engineering; Biotechnology in Practice: Medicine, Farms, and Industry

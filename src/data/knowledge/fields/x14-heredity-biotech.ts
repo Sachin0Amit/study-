@@ -18,11 +18,13 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       'Sutton, Boveri and Morgan\'s white-eyed fly: genes ride chromosomes',
       'Synapsis, crossing over and chiasmata in prophase I',
       'Independent assortment and the 2^n gamete count',
+      'Random fertilization: 70 trillion chromosome combinations',
       'Linkage, recombination frequency and centimorgan maps',
+      'Sturtevant\'s first chromosome map',
       'Nondisjunction and aneuploid outcomes',
     ],
-    words: 2270,
-    readMins: 11,
+    words: 2496,
+    readMins: 12,
     addedOn: '2026-10-20',
     blocks: [
       {
@@ -162,6 +164,12 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
             answer: 1,
             explain: 'Map distance in centimorgans equals the recombination percentage: 12 cM means about 12 percent recombinant gametes — Ab and aB together.',
           },
+          {
+            q: 'Two linked genes recombine at 48 percent — yet a third gene sits between them at measurable distances from both. What does this reveal about map distances?',
+            options: ['The 48 percent figure is the true distance between the outer genes', 'RF saturates near 50 percent, so distant genes must be pieced together through intermediate markers', 'The three genes sit on different chromosomes', 'Recombination has stopped between the outer genes'],
+            answer: 1,
+            explain: 'Multiple crossovers between far-apart loci restore parental arrangements, capping observable RF near 50 percent — the reason Sturtevant-style maps add short intervals rather than reading long ones directly.',
+          },
         ],
       },
       {
@@ -194,15 +202,18 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
     tier: 'intermediate',
     concepts: [
       'Epistasis and the 9:3:4, 12:3:1, 9:7 and 15:1 ratios',
-      'Multiple allele series, pleiotropy and lethal alleles',
-      'X-linked, Y-linked, sex-influenced and sex-limited traits',
+      'Dominant, complementary and duplicate gene action',
+      'Multiple allele series',
+      'Pleiotropy and lethal alleles',
+      'X-linked recessives: criss-cross inheritance',
+      'X-linked dominant, Y-linked, sex-influenced and sex-limited traits',
       'Barr bodies, X-inactivation and calico mosaics',
       'Cytoplasmic and maternal inheritance',
       'Polygenic traits, heritability and norm of reaction',
       'Environment writing the phenotype: Himalayan rabbit, PKU, hydrangea',
     ],
-    words: 2150,
-    readMins: 11,
+    words: 2497,
+    readMins: 12,
     addedOn: '2026-10-20',
     blocks: [
       {
@@ -352,6 +363,12 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
             answer: 1,
             explain: 'The A^Y A^Y class dies before birth; survivors are 2 yellow to 1 agouti — the 2:1 ratio that betrays a recessive lethal.',
           },
+          {
+            q: 'A mother has a mitochondrial disease. Her four children — two sons, two daughters — are born to an unaffected father. How many are expected to inherit the disease?',
+            options: ['none — the father must transmit it', 'the two daughters only', 'all four, sons and daughters alike', 'half, regardless of sex'],
+            answer: 2,
+            explain: 'Mitochondria ride the egg\'s cytoplasm — the sperm contributes essentially none — so an affected mother passes the organelle, and its genome, to every child of either sex.',
+          },
         ],
       },
       {
@@ -387,12 +404,15 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       'Plasmid architecture and the vector for every job',
       'Competent cells, transformation and selection',
       'PCR: temperature cycles, primers and 2^n amplification',
-      'Gel electrophoresis and STR DNA fingerprinting',
+      'PCR variants: RT-PCR and quantitative real-time PCR',
+      'Gel electrophoresis and Southern blotting',
+      'DNA fingerprinting with STR loci and the product rule',
       'Genomic versus cDNA libraries',
-      'Sanger sequencing and bioreactor-scale production',
+      'Sanger sequencing: chain termination',
+      'Bioreactor-scale production',
     ],
-    words: 2250,
-    readMins: 11,
+    words: 2507,
+    readMins: 13,
     addedOn: '2026-10-20',
     blocks: [
       {
@@ -412,7 +432,7 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       },
       {
         kind: 'para',
-        text: 'A cut gene needs a vehicle: a vector. The classic is the plasmid, a small circle bacteria copy independently of their chromosome. A cloning plasmid needs four features: an origin of replication, a selectable marker (usually antibiotic resistance, so only plasmid-bearing cells survive plating), a multiple cloning site — an engineered cluster of unique restriction sites — and often the rop gene holding copy number stable. The textbook pBR322 carries two resistance markers; cloning into one disrupts it, so recombinants are ampicillin-resistant but tetracycline-sensitive — insertional inactivation, identity by the marker you broke. Bigger jobs call for other vectors: phage lambda accepts 15-20 kilobase inserts and injects them via in vitro packaging; cosmids splice lambda\'s cos sites onto a plasmid to ferry 35-45 kb; the Ti plasmid of Agrobacterium tumefaciens is nature\'s plant engineer, its T-DNA the standard route into plants. Shuttle vectors carry two origins to commute between hosts; expression vectors add a strong promoter, ribosome-binding site, terminator, and purification tags such as a histidine run fused to the product.',
+        text: 'A cut gene needs a vehicle: a vector. The classic is the plasmid, a small circle bacteria copy independently of their chromosome. A cloning plasmid needs four features: an origin of replication, a selectable marker (usually antibiotic resistance, so only plasmid-bearing cells survive plating), a multiple cloning site — an engineered cluster of unique restriction sites — and often the rop gene holding copy number stable. The textbook pBR322 carries two resistance markers; cloning into one disrupts it, so recombinants are ampicillin-resistant but tetracycline-sensitive — insertional inactivation, identity by the marker you broke. Bigger jobs call for other vectors: phage lambda accepts inserts up to about 15 kilobases — its head can package no more than roughly 50 kb of DNA — and delivers them via in vitro packaging; cosmids splice lambda\'s cos sites onto a plasmid to ferry 35-45 kb; the Ti plasmid of Agrobacterium tumefaciens is nature\'s plant engineer, its T-DNA the standard route into plants. Shuttle vectors carry two origins to commute between hosts; expression vectors add a strong promoter, ribosome-binding site, terminator, and purification tags such as a histidine run fused to the product.',
       },
       {
         kind: 'para',
@@ -542,6 +562,12 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
             answer: 1,
             explain: 'An insert interrupts lacZ-alpha, so no beta-galactosidase forms, no blue dye is made, and the colony stays white.',
           },
+          {
+            q: 'In Sanger chain-termination sequencing, the fragments that spell out the sequence end in:',
+            options: ['sticky ends left by EcoRI', 'dideoxynucleotides that lack the 3-prime hydroxyl and stop the chain', 'Taq polymerase molecules', 'the primer, unextended'],
+            answer: 1,
+            explain: 'A ddNTP incorporated into a growing strand cannot accept the next phosphodiester bond, so each terminated fragment\'s length marks the position of its base.',
+          },
         ],
       },
       {
@@ -578,12 +604,16 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       'Hybridoma technology and monoclonal antibodies',
       'Gene therapy: ex vivo and in vivo, the ADA-SCID first trial',
       'Molecular diagnostics: PCR tests, ELISA, probes',
-      'Bt crops with refuge strategy, golden rice, herbicide tolerance',
-      'Transgenic animals, biofertilizers, biocontrol agents',
-      'Industrial enzymes, biogas, and bioremediation',
+      'Transgenic animals and molecular pharming',
+      'Bt crops with refuge strategy',
+      'Golden rice, herbicide tolerance and the first engineered foods',
+      'Biofertilizers, biocontrol agents and biogas',
+      'Industrial enzymes: detergents, cheese, Taq',
+      'Bioremediation: microbes against pollution',
+      'The social ledger: labeling, gene flow, seed patents',
     ],
-    words: 2200,
-    readMins: 11,
+    words: 3012,
+    readMins: 15,
     addedOn: '2026-10-20',
     blocks: [
       {
@@ -654,7 +684,7 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       },
       {
         kind: 'para',
-        text: 'Bioremediation closes the loop by deploying organisms against pollution. Naturally occurring bacteria degrade petroleum hydrocarbons — in oil spills, dispersants and nutrient additions mainly help indigenous degraders multiply — and Ananda Chakrabarty\'s multi-plasmid Pseudomonas, granted a United States patent in 1980 as the first engineered life form, was built to chew through crude oil. Engineered and native strains soak up heavy metals and break down chlorinated solvents at contaminated sites; sewage treatment itself is applied microbial ecology at municipal scale. Fungi join in: white-rot fungi\'s lignin-degrading enzymes can dismantle persistent pollutants that resemble lignin\'s tough chemistry. The common principle is the same one the ecosystems lesson develops — decomposers run the world\'s recycling — turned to human purposes.',
+        text: 'Bioremediation closes the loop by deploying organisms against pollution. Naturally occurring bacteria degrade petroleum hydrocarbons — in oil spills, dispersants and nutrient additions mainly help indigenous degraders multiply — and Ananda Chakrabarty\'s multi-plasmid Pseudomonas — declared patentable by the United States Supreme Court in Diamond v. Chakrabarty (1980) and granted the patent itself in 1981 as the first engineered life form — was built to chew through crude oil. Engineered and native strains soak up heavy metals and break down chlorinated solvents at contaminated sites; sewage treatment itself is applied microbial ecology at municipal scale. Fungi join in: white-rot fungi\'s lignin-degrading enzymes can dismantle persistent pollutants that resemble lignin\'s tough chemistry. The common principle is the same one the ecosystems lesson develops — decomposers run the world\'s recycling — turned to human purposes.',
       },
       {
         kind: 'para',
@@ -728,6 +758,12 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
             answer: 1,
             explain: 'The control line holds antibodies against the labeled antibody itself, catching whatever flowed past — the built-in check that the strip worked, independent of hCG.',
           },
+          {
+            q: 'A farmer inoculates legume seed with Rhizobium instead of applying nitrogen fertilizer. This works because the bacteria:',
+            options: ['fix atmospheric nitrogen inside root nodules', 'degrade the soil\'s nitrate poison', 'produce Bt crystal toxin in the roots', 'supply phosphorus from rock like mycorrhiza do'],
+            answer: 0,
+            explain: 'Rhizobium is the classic biofertilizer: colonizing legume roots and reducing atmospheric nitrogen to usable forms — living input rather than synthetic fertilizer.',
+          },
         ],
       },
       {
@@ -760,15 +796,17 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
     tier: 'advanced',
     concepts: [
       'Human Genome Project: goals, rivals, and the Bermuda Principle',
-      'Hierarchical BAC-by-BAC versus whole-genome shotgun sequencing',
       'Surprising findings: 20,000 genes, 98 percent non-coding',
       'From Sanger capillaries to long-read platforms and the 1,000-dollar genome',
       'Annotation, BLAST homology search, and the sequence databases',
-      'Comparative and functional genomics: synteny, microarrays, RNA-seq',
-      'Pharmacogenomics, GWAS, DNA barcoding, and metagenomics',
+      'Comparative genomics: synteny and model organisms',
+      'Functional genomics: microarrays and RNA-seq',
+      'Proteomics and metabolomics: the layers below RNA',
+      'Pharmacogenomics: prescriptions tuned to genotype',
+      'GWAS, DNA barcoding, metagenomics and ancient DNA',
     ],
-    words: 2150,
-    readMins: 11,
+    words: 3009,
+    readMins: 15,
     addedOn: '2026-10-20',
     blocks: [
       {
@@ -910,6 +948,12 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
             options: ['codes for a new protein', 'tags a causal or regulatory variant through linkage disequilibrium', 'proves causation outright', 'marks a sequencing error'],
             answer: 1,
             explain: 'Association studies find markers inherited together with the causal variant; because most common-trait signals are regulatory, the hit usually flags a control region that fine mapping must pin down.',
+          },
+          {
+            q: 'Before prescribing a drug metabolized by a variable enzyme, pharmacogenomics would first:',
+            options: ['sequence the entire genome of the pathogen', 'genotype the patient\'s drug-metabolizing enzyme to tune choice and dose', 'run a BLAST search against the enzyme', 'measure the drug by mass spectrometry in a bioreactor'],
+            answer: 1,
+            explain: 'Pharmacogenomics reads the patient\'s own variants — in enzymes and transporters — and adjusts prescribing before exposure, the clinical dividend of the sequence era.',
           },
         ],
       },
