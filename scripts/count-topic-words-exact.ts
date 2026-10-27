@@ -35,6 +35,7 @@ import { x63CengagePassTopics } from '../src/data/knowledge/fields/x63-cengage-p
 import { x60EnemBrazilPassTopics } from '../src/data/knowledge/fields/x60-enem-brazil-pass'
 import { x61LibraryOrgLoopPassTopics } from '../src/data/knowledge/fields/x61-library-org-pass'
 import { x64LibraryOrgPassTopics } from '../src/data/knowledge/fields/x64-library-org-pass'
+import { x65CrossverifyBotanyPassTopics } from '../src/data/knowledge/fields/x65-crossverify-pass'
 import { foundationLearning } from '../src/data/knowledge/fields/foundation-learning'
 import { mathematics } from '../src/data/knowledge/fields/mathematics'
 import { technologyApplied } from '../src/data/knowledge/fields/technology-applied'
@@ -298,6 +299,14 @@ const IDS = [
   'urb-heat-island-design',
   'anth-bioarchaeology-bones',
   'media-video-games-interactive',
+  // CROSSVERIFY 2026-10-27 (X65) — Botany vs Taiz & Zeiger 6e
+  'bio-plant-xylem-hydraulics',
+  'bio-plant-phloem-loading-partitioning',
+  'bio-plant-stomatal-blue-light',
+  'bio-plant-seed-structure-germination',
+  // X65 enrichments re-verified
+  'bio-photosynthesis',
+  'bio-plant-reproduction-flowers-seeds',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length
@@ -317,7 +326,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, foundationLearning, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, { topics: x25TournamentReasoningCivicsPassTopics } as any, { topics: x26BankingManagementPassTopics } as any, { topics: x27ApCalcChinaPassTopics } as any, { topics: x36LearningSciencePassTopics } as any, { topics: x37AlbertaPassTopics } as any, computingAI, { topics: x45ExamGapPassTopics } as any, { topics: x46ThinBooksPassTopics } as any, { topics: x47BioSplitPassTopics } as any, { topics: x48AllSubjectsSplitPassTopics } as any, { topics: x49LanguageDeepeningPassTopics } as any, { topics: x51LibraryOrgPassTopics } as any, { topics: x52CrossverifyPassTopics } as any, { topics: x53CrossverifyPassTopics } as any, { topics: x54CrossverifyPassTopics } as any, { topics: x58LibraryOrgDeepeningPassTopics } as any, { topics: x59LibraryOrgBacklogPassTopics } as any, { topics: x60EnemBrazilPassTopics } as any, { topics: x61LibraryOrgLoopPassTopics } as any, { topics: x64LibraryOrgPassTopics } as any]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, foundationLearning, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, { topics: x25TournamentReasoningCivicsPassTopics } as any, { topics: x26BankingManagementPassTopics } as any, { topics: x27ApCalcChinaPassTopics } as any, { topics: x36LearningSciencePassTopics } as any, { topics: x37AlbertaPassTopics } as any, computingAI, { topics: x45ExamGapPassTopics } as any, { topics: x46ThinBooksPassTopics } as any, { topics: x47BioSplitPassTopics } as any, { topics: x48AllSubjectsSplitPassTopics } as any, { topics: x49LanguageDeepeningPassTopics } as any, { topics: x51LibraryOrgPassTopics } as any, { topics: x52CrossverifyPassTopics } as any, { topics: x53CrossverifyPassTopics } as any, { topics: x54CrossverifyPassTopics } as any, { topics: x58LibraryOrgDeepeningPassTopics } as any, { topics: x59LibraryOrgBacklogPassTopics } as any, { topics: x60EnemBrazilPassTopics } as any, { topics: x61LibraryOrgLoopPassTopics } as any, { topics: x64LibraryOrgPassTopics } as any, { topics: x65CrossverifyBotanyPassTopics } as any]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)

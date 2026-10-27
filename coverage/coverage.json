@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T13:33:34.167Z",
+  "generatedAt": "2026-10-27T14:02:25.562Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 138,
     "books": 138,
     "chapters": 875,
-    "sections": 4659
+    "sections": 4663
   },
   "subjects": [
     {
@@ -27166,7 +27166,7 @@
       "group": "Life Sciences",
       "tagline": "The lives of plants",
       "chapterCount": 3,
-      "sectionCount": 4,
+      "sectionCount": 8,
       "chapters": [
         {
           "id": "ku-botany-the-plant-body",
@@ -27189,7 +27189,7 @@
           "title": "Plant Physiology",
           "shortTitle": "Plant Physiology",
           "bookId": "ku-botany",
-          "sectionCount": 2,
+          "sectionCount": 5,
           "sections": [
             {
               "id": "ku-bio-photosynthesis",
@@ -27200,6 +27200,21 @@
               "id": "ku-bio-plant-physiology-transport",
               "number": 2.2,
               "title": "Plant Physiology: How Plants Actually Work"
+            },
+            {
+              "id": "ku-bio-plant-xylem-hydraulics",
+              "number": 2.3,
+              "title": "The Xylem Pipeline: Soil Water, Root Pressure and Cavitation"
+            },
+            {
+              "id": "ku-bio-plant-phloem-loading-partitioning",
+              "number": 2.4,
+              "title": "Phloem Mechanics: Loading, Pressure Flow and Allocation"
+            },
+            {
+              "id": "ku-bio-plant-stomatal-blue-light",
+              "number": 2.5,
+              "title": "Stomata: Blue-Light Valves and the Water–Carbon Bargain"
             }
           ]
         },
@@ -27209,12 +27224,17 @@
           "title": "Reproduction & Life Cycles",
           "shortTitle": "Reproduction & Life Cycles",
           "bookId": "ku-botany",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-bio-plant-reproduction-flowers-seeds",
               "number": 3.1,
               "title": "Plant Reproduction: Flowers, Pollination and Seeds"
+            },
+            {
+              "id": "ku-bio-plant-seed-structure-germination",
+              "number": 3.2,
+              "title": "Inside the Seed: Grain Anatomy, Dormancy and the Germination Trigger"
             }
           ]
         }

@@ -17,7 +17,7 @@
 - **Subjects:** 138
 - **Books (master volumes):** 138
 - **Chapters:** 875
-- **Sections (lessons):** 4659
+- **Sections (lessons):** 4663
 
 ## Foundations — 7 subjects
 
@@ -834,11 +834,11 @@
 
 ### Botany (`ku-botany`)
 
-*The lives of plants* — 3 chapters · 4 sections
+*The lives of plants* — 3 chapters · 8 sections
 
 - **Ch 1. The Plant Body** `ku-botany-the-plant-body` — 1 sections: The Flowering Plant Body: Morphology and Anatomy
-- **Ch 2. Plant Physiology** `ku-botany-plant-physiology` — 2 sections: Photosynthesis: Light and Dark Reactions; Plant Physiology: How Plants Actually Work
-- **Ch 3. Reproduction & Life Cycles** `ku-botany-reproduction-and-life-cycles` — 1 sections: Plant Reproduction: Flowers, Pollination and Seeds
+- **Ch 2. Plant Physiology** `ku-botany-plant-physiology` — 5 sections: Photosynthesis: Light and Dark Reactions; Plant Physiology: How Plants Actually Work; The Xylem Pipeline: Soil Water, Root Pressure and Cavitation; Phloem Mechanics: Loading, Pressure Flow and Allocation; Stomata: Blue-Light Valves and the Water–Carbon Bargain
+- **Ch 3. Reproduction & Life Cycles** `ku-botany-reproduction-and-life-cycles` — 2 sections: Plant Reproduction: Flowers, Pollination and Seeds; Inside the Seed: Grain Anatomy, Dormancy and the Germination Trigger
 
 ### Zoology (`ku-zoology`)
 

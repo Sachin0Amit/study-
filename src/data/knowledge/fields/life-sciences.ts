@@ -17,6 +17,7 @@ import { x57CrossverifyTopics } from './x57-crossverify-pass'
 import { x60CrossverifyTopics } from './x60-crossverify-pass'
 import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
 import { x64LibraryOrgPassTopics } from './x64-library-org-pass'
+import { x65CrossverifyBotanyPassTopics } from './x65-crossverify-pass'
 import { x62CrossverifyEvolutionPassTopics } from './x62-crossverify-pass'
 
 export const lifeSciences: KnowledgeDomainFile = {
@@ -503,7 +504,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         'RuBisCO and photorespiration',
         'C4 and CAM adaptations',
       ],
-      words: 1002,
+      words: 1028,
       readMins: 5,
       addedOn: '2026-10-16',
       blocks: [
@@ -544,7 +545,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
-          text: 'Two independent evolutionary fixes exist: C4 plants such as maize first fix carbon into four-carbon acids in mesophyll cells and ship them inward to concentrate carbon dioxide at RuBisCO, while CAM plants such as cacti open stomata at night and store acids until daylight returns.',
+          text: 'Two independent evolutionary fixes exist: C4 plants such as maize first fix carbon into four-carbon acids in mesophyll cells and ship them inward to concentrate carbon dioxide at RuBisCO — the anatomy that makes this possible is Kranz anatomy, a tight wreath of bundle-sheath cells around each vein where the Calvin cycle then runs — while CAM plants such as cacti open stomata at night and store acids until daylight returns.',
         },
         { kind: 'heading', text: 'Key Formulas' },
         {
@@ -5008,7 +5009,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Double fertilization: zygote plus endosperm',
         'From ovule to seed, from ovary to fruit',
       ],
-      words: 1463,
+      words: 1481,
       readMins: 7,
       addedOn: '2026-10-20',
       blocks: [
@@ -5037,7 +5038,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
-          text: 'The female side is even more selective. Within an ovule, meiosis produces four megaspores and three die; the survivor undergoes mitosis into the eight-nucleate, seven-cell embryo sac: an egg cell flanked by two synergid cells that guide the incoming pollen tube, a central cell holding two fused polar nuclei, and three antipodal cells that later degenerate. Integuments wrap the ovule, leaving a gap — the micropyle — as the door for the pollen tube; after fertilization the integuments harden into the seed coat.',
+          text: 'The female side is even more selective. Within an ovule, meiosis produces four megaspores and three die; the survivor undergoes mitosis into the eight-nucleate, seven-cell embryo sac: an egg cell flanked by two synergid cells that guide the incoming pollen tube, a central cell holding two fused polar nuclei, and three antipodal cells that commonly degenerate around fertilization — the exact timing varies with species, some degenerating before fertilization and a few proliferating instead. Integuments wrap the ovule, leaving a gap — the micropyle — as the door for the pollen tube; after fertilization the integuments harden into the seed coat.',
         },
         { kind: 'heading', text: 'Pollination, Double Fertilization and the Seed' },
         {
@@ -7035,5 +7036,29 @@ export const lifeSciences: KnowledgeDomainFile = {
     // bio-dev-stem-cells-regeneration (X60). Full carving in the x64
     // pass header.
     ...x64LibraryOrgPassTopics.filter((t) => t.domain === 'Life Sciences'),
+
+    // X65 crossverify pass (2026-10-27): Botany vs Taiz/Zeiger/Møller/Murphy,
+    // Plant Physiology and Development 6e (Sinauer 2015) — four missing
+    // in-scope subtopic areas, WITH 4-question quizzes incl. explanations:
+    // three land in Plant Physiology after the transport lesson (xylem
+    // hydraulics: soil water potential, conduit anatomy, root pressure and
+    // guttation, cavitation/embolism and repair — carved against the
+    // transport lesson's plumbing map and qualitative cohesion-tension
+    // sentence; phloem loading/partitioning: sieve-element anatomy, Münch
+    // 1930 pressure-flow with measured velocities, the three loading
+    // strategies, allocation vs partitioning — carved against the
+    // transport lesson's source-sink paragraph; stomatal mechanism:
+    // phototropin/zeaxanthin sensing, K+/Cl–/malate osmotic chemistry,
+    // distribution patterns, resistance model — carved against the
+    // transport lesson's guard-cell paragraph), and one lands in
+    // Reproduction & Life Cycles (seed structure, dormancy keys and the
+    // GA–aleurone–alpha-amylase cascade — carved against the
+    // reproduction lesson, which owns double fertilization and fruit).
+    // Full carving in the x65 pass header. Greps: 'embolism',
+    // 'guttation', 'hydathode', 'vulnerability curve', 'Münch',
+    // 'polymer trapping', 'apoplastic loading', 'phototropin',
+    // 'aleurone', 'scutellum', 'after-ripening', 'photoblasty' had ZERO
+    // live hits before this pass.
+    ...x65CrossverifyBotanyPassTopics.filter((t) => t.domain === 'Life Sciences'),
   ],
 }
