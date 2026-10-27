@@ -485,11 +485,12 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'egg',
     accent: '#ec4899',
     tagline: 'From one cell to a body',
-    blurb: 'How a fertilized egg builds an organism — the model organisms, genes and cell behaviors that sculpt the embryo.',
+    blurb: 'How a fertilized egg builds an organism — the model organisms, genes and cell behaviors that sculpt the embryo, and the stem cells that keep bodies running.',
     ownFields: ['Developmental Biology'],
     chapters: [
       { name: 'Building the Body', branches: ['Growth & Form'] },
       { name: 'Mechanisms & Model Organisms', branches: ['Developmental Mechanisms'] },
+      { name: 'Stem Cells & Regenerative Medicine', branches: ['Regeneration & Stem Cells'] },
     ],
   },
   {
@@ -529,10 +530,11 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'component',
     accent: '#d946ef',
     tagline: 'Life, engineered',
-    blurb: 'Designing and building biological systems — parts, circuits, chassis, the design-build-test-learn cycle, applications, biosafety and ethics.',
+    blurb: 'Designing and building biological systems — parts, circuits, chassis, directed evolution, the design-build-test-learn cycle, applications, biosafety and ethics.',
     ownFields: ['Synthetic Biology'],
     chapters: [
       { name: 'Programming Living Cells', branches: ['Bioengineering'] },
+      { name: 'Engineering by Evolution', branches: ['Directed Evolution'] },
       { name: 'Applications & Responsible Innovation', branches: ['Applications & Ethics'] },
     ],
   },
@@ -1003,11 +1005,12 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'radio',
     accent: '#db2777',
     tagline: 'Who frames your world',
-    blurb: 'Media and society, and the attention economy.',
+    blurb: 'Media and society, the attention economy, and the persuasion machinery — propaganda, misinformation and how to resist them.',
     ownFields: ['Mass Media and Society', 'Media & Communication'],
     chapters: [
       { name: 'Media & Society', fields: ['Mass Media and Society'] },
       { name: 'The Attention Economy', fields: ['Media & Communication'] },
+      { name: 'Persuasion & Misinformation', branches: ['Propaganda & Misinformation'] },
     ],
   },
   {
@@ -1642,9 +1645,10 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'frame',
     accent: '#f59e0b',
     tagline: 'Standing on math',
-    blurb: 'Structural analysis and design in steel and concrete, and engineering for earthquakes.',
+    blurb: 'Structural analysis and design in steel and concrete, the ground they stand on, and engineering for earthquakes.',
     chapters: [
       { name: 'Structural Analysis & Design', branches: ['Structural Engineering'] },
+      { name: 'Ground & Foundations', branches: ['Geotechnical Engineering'] },
       { name: 'Seismic Design', branches: ['Seismic Design'] },
     ],
   },
@@ -1853,11 +1857,12 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'sprout',
     accent: '#16a34a',
     tagline: 'Grow more plants',
-    blurb: 'Growing things — soil, water, light — and propagation: making more plants from the plants you have.',
+    blurb: 'Growing things — soil, water, light — propagation: making more plants, and plant health: keeping them alive without a chemical treadmill.',
     ownFields: ['Garden & Growing'],
     chapters: [
       { name: 'Growing Things', branches: ['Growing Things'] },
       { name: 'Propagation: Making More Plants', branches: ['Propagation'] },
+      { name: 'Plant Health', branches: ['Plant Health'] },
     ],
   },
   {

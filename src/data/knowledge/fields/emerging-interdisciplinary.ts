@@ -2,6 +2,7 @@ import type { KnowledgeDomainFile } from '../types'
 import { x47BioSplitPassTopics } from './x47-bio-split-pass'
 import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
 import { x59LibraryOrgBacklogPassTopics } from './x59-library-org-pass'
+import { x60LibraryOrgDeepeningPassTopics } from './x60-library-org-pass'
 
 export const emergingInterdisciplinary: KnowledgeDomainFile = {
   domain: 'Emerging & Interdisciplinary',
@@ -45,6 +46,15 @@ export const emergingInterdisciplinary: KnowledgeDomainFile = {
     // 'uncertainty as a first-class output' forward reference. Greps:
     // 'MCMC', 'Metropolis', 'variance reduction' had zero live hits.
     ...x59LibraryOrgBacklogPassTopics.filter((t) => t.domain === 'Emerging & Interdisciplinary'),
+    // X60 library-org deepening pass (2026-10-28): directed evolution —
+    // the synthetic-biology book's new 'Engineering by Evolution'
+    // chapter (inserted as Ch2, foundations-first: intro → method →
+    // applications). Carved against bio-synbio-dbtl-practice (which
+    // iterates CIRCUITS and the artemisinin pathway at the design
+    // level — referenced, not re-taught) and emer-synthetic-biology
+    // (OWNS BioBricks/chassis/editing). 'Frances Arnold' 0 live hits;
+    // 'directed evolution' only an agricultural breeding aside.
+    ...x60LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Emerging & Interdisciplinary'),
     // X47 biology-split pass (2026-10-25): the user split the one-volume
     // Biology book into 13 discipline books. Emerging & Interdisciplinary
     // slice: bioinformatics databases & structure prediction (carved

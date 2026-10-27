@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T04:30:30.923Z",
+  "generatedAt": "2026-10-27T22:29:19.954Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 138,
     "books": 138,
-    "chapters": 866,
-    "sections": 4623
+    "chapters": 871,
+    "sections": 4629
   },
   "subjects": [
     {
@@ -27455,8 +27455,8 @@
       "name": "Developmental Biology",
       "group": "Life Sciences",
       "tagline": "From one cell to a body",
-      "chapterCount": 2,
-      "sectionCount": 3,
+      "chapterCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-developmental-biology-building-the-body",
@@ -27490,6 +27490,21 @@
               "id": "ku-bio-dev-morphogenesis",
               "number": 2.2,
               "title": "Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo"
+            }
+          ]
+        },
+        {
+          "id": "ku-developmental-biology-stem-cells-and-regenerative-medicine",
+          "number": 3,
+          "title": "Stem Cells & Regenerative Medicine",
+          "shortTitle": "Stem Cells & Regenerative Medicine",
+          "bookId": "ku-developmental-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-dev-stem-cells-organoids-regeneration",
+              "number": 3.1,
+              "title": "Stem Cells, Organoids and the Regeneration Problem"
             }
           ]
         }
@@ -27610,8 +27625,8 @@
       "name": "Synthetic Biology",
       "group": "Life Sciences",
       "tagline": "Life, engineered",
-      "chapterCount": 2,
-      "sectionCount": 3,
+      "chapterCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-synthetic-biology-programming-living-cells",
@@ -27629,8 +27644,23 @@
           ]
         },
         {
-          "id": "ku-synthetic-biology-applications-and-responsible-innovation",
+          "id": "ku-synthetic-biology-engineering-by-evolution",
           "number": 2,
+          "title": "Engineering by Evolution",
+          "shortTitle": "Engineering by Evolution",
+          "bookId": "ku-synthetic-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-synbio-directed-evolution-proteins",
+              "number": 2.1,
+              "title": "Directed Evolution: Engineering Molecules by Selection"
+            }
+          ]
+        },
+        {
+          "id": "ku-synthetic-biology-applications-and-responsible-innovation",
+          "number": 3,
           "title": "Applications & Responsible Innovation",
           "shortTitle": "Applications & Responsible Innovation",
           "bookId": "ku-synthetic-biology",
@@ -27638,12 +27668,12 @@
           "sections": [
             {
               "id": "ku-bio-synbio-dbtl-practice",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Synthetic Biology in Practice: The Design–Build–Test–Learn Cycle"
             },
             {
               "id": "ku-bio-synbio-biosafety-ethics",
-              "number": 2.2,
+              "number": 3.2,
               "title": "Biosafety, Biosecurity and the Ethics of Engineering Life"
             }
           ]
@@ -29630,8 +29660,8 @@
       "name": "Media & Communication",
       "group": "Humanities & Social Sciences",
       "tagline": "Who frames your world",
-      "chapterCount": 2,
-      "sectionCount": 3,
+      "chapterCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-media-communication-media-and-society",
@@ -29665,6 +29695,21 @@
               "id": "ku-soc-media-communication",
               "number": 2.1,
               "title": "Media and Communication: Who Frames Your World"
+            }
+          ]
+        },
+        {
+          "id": "ku-media-communication-persuasion-and-misinformation",
+          "number": 3,
+          "title": "Persuasion & Misinformation",
+          "shortTitle": "Persuasion & Misinformation",
+          "bookId": "ku-media-communication",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-media-propaganda-persuasion",
+              "number": 3.1,
+              "title": "Propaganda and Persuasion: The Manufacture of Belief"
             }
           ]
         }
@@ -32265,8 +32310,8 @@
       "name": "Structural & Seismic Engineering",
       "group": "Applied Engineering & Technology",
       "tagline": "Standing on math",
-      "chapterCount": 2,
-      "sectionCount": 3,
+      "chapterCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-structural-seismic-engineering-structural-analysis-and-design",
@@ -32289,8 +32334,23 @@
           ]
         },
         {
-          "id": "ku-structural-seismic-engineering-seismic-design",
+          "id": "ku-structural-seismic-engineering-ground-and-foundations",
           "number": 2,
+          "title": "Ground & Foundations",
+          "shortTitle": "Ground & Foundations",
+          "bookId": "ku-structural-seismic-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-civ-foundations-geotechnical",
+              "number": 2.1,
+              "title": "Foundations and Ground Engineering: What Every Structure Stands On"
+            }
+          ]
+        },
+        {
+          "id": "ku-structural-seismic-engineering-seismic-design",
+          "number": 3,
           "title": "Seismic Design",
           "shortTitle": "Seismic Design",
           "bookId": "ku-structural-seismic-engineering",
@@ -32298,7 +32358,7 @@
           "sections": [
             {
               "id": "ku-eng-earthquake-engineering-design",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Earthquake Engineering: Designing for Shaking Ground"
             }
           ]
@@ -33035,8 +33095,8 @@
       "name": "Garden & Growing",
       "group": "Everyday Life Skills",
       "tagline": "Grow more plants",
-      "chapterCount": 2,
-      "sectionCount": 3,
+      "chapterCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-garden-growing-growing-things",
@@ -33070,6 +33130,21 @@
               "id": "ku-grow-plant-propagation",
               "number": 2.1,
               "title": "Plant Propagation: Seeds, Cuttings, Grafts and Clones"
+            }
+          ]
+        },
+        {
+          "id": "ku-garden-growing-plant-health",
+          "number": 3,
+          "title": "Plant Health",
+          "shortTitle": "Plant Health",
+          "bookId": "ku-garden-growing",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-grow-pests-diseases-ipm",
+              "number": 3.1,
+              "title": "Pests, Diseases and IPM: Protecting the Garden Without Poisoning It"
             }
           ]
         }
@@ -33131,7 +33206,7 @@
       "group": "Everyday Life Skills",
       "tagline": "Say it, get hired",
       "chapterCount": 2,
-      "sectionCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-career-communication-speaking-and-presence",
@@ -33154,7 +33229,7 @@
           "title": "Getting Hired & Working Smarter",
           "shortTitle": "Getting Hired & Working Smarter",
           "bookId": "ku-career-communication",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-every-job-interviews",
@@ -33165,6 +33240,11 @@
               "id": "ku-every-time-management-productivity",
               "number": 2.2,
               "title": "Time Management and Personal Productivity Systems"
+            },
+            {
+              "id": "ku-career-resume-networking-applications",
+              "number": 2.3,
+              "title": "Resumes, Cover Letters and the Hidden Job Market"
             }
           ]
         }

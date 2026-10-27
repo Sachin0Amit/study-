@@ -14,12 +14,22 @@ import { x35NswHscPassTopics } from './x35-nsw-hsc-pass'
 import { x47BioSplitPassTopics } from './x47-bio-split-pass'
 import { x55CrossverifyTopics } from './x55-crossverify-pass'
 import { x57CrossverifyTopics } from './x57-crossverify-pass'
+import { x60LibraryOrgDeepeningPassTopics } from './x60-library-org-pass'
 
 export const lifeSciences: KnowledgeDomainFile = {
   domain: 'Life Sciences',
   blurb:
     'From genes, neurons, and photosynthesis to anatomy, microbes, evolution, and the animal kingdom — how living systems are built, run, and related.',
   topics: [
+    // X60 library-org deepening pass (2026-10-28): stem cells, organoids
+    // and the regeneration problem — the developmental-biology book's new
+    // capstone chapter. Carved against bio-developmental-biology, whose
+    // 4-sentence callout TEASES salamander blastema/planarian neoblasts/
+    // the 2012 iPSC Nobel; this lesson goes deep where the callout points
+    // (niches, HSC transplantation, OSKM, organoids, 14-day rule, the
+    // mammalian scarring failure). Grep: 'organoid' 0, '14-day rule' 0,
+    // 'Yamanaka' 0 live hits.
+    ...x60LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Life Sciences'),
     // X47 biology-split pass (2026-10-25): the user split the one-volume
     // Biology book into 13 discipline books; this pass supplies the new
     // lessons the thin books need. Life Sciences slice: the biochemist's

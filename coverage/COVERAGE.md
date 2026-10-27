@@ -16,8 +16,8 @@
 
 - **Subjects:** 138
 - **Books (master volumes):** 138
-- **Chapters:** 866
-- **Sections (lessons):** 4623
+- **Chapters:** 871
+- **Sections (lessons):** 4629
 
 ## Foundations — 7 subjects
 
@@ -872,10 +872,11 @@
 
 ### Developmental Biology (`ku-developmental-biology`)
 
-*From one cell to a body* — 2 chapters · 3 sections
+*From one cell to a body* — 3 chapters · 4 sections
 
 - **Ch 1. Building the Body** `ku-developmental-biology-building-the-body` — 1 sections: Developmental Biology: How a Body Builds Itself
 - **Ch 2. Mechanisms & Model Organisms** `ku-developmental-biology-mechanisms-and-model-organisms` — 2 sections: Model Organisms: Flies, Worms, Fish and the Standard Laboratory Bodies; Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo
+- **Ch 3. Stem Cells & Regenerative Medicine** `ku-developmental-biology-stem-cells-and-regenerative-medicine` — 1 sections: Stem Cells, Organoids and the Regeneration Problem
 
 ### Marine Biology (`ku-marine-biology`)
 
@@ -895,10 +896,11 @@
 
 ### Synthetic Biology (`ku-synthetic-biology`)
 
-*Life, engineered* — 2 chapters · 3 sections
+*Life, engineered* — 3 chapters · 4 sections
 
 - **Ch 1. Programming Living Cells** `ku-synthetic-biology-programming-living-cells` — 1 sections: Synthetic Biology: Programming Living Cells
-- **Ch 2. Applications & Responsible Innovation** `ku-synthetic-biology-applications-and-responsible-innovation` — 2 sections: Synthetic Biology in Practice: The Design–Build–Test–Learn Cycle; Biosafety, Biosecurity and the Ethics of Engineering Life
+- **Ch 2. Engineering by Evolution** `ku-synthetic-biology-engineering-by-evolution` — 1 sections: Directed Evolution: Engineering Molecules by Selection
+- **Ch 3. Applications & Responsible Innovation** `ku-synthetic-biology-applications-and-responsible-innovation` — 2 sections: Synthetic Biology in Practice: The Design–Build–Test–Learn Cycle; Biosafety, Biosecurity and the Ethics of Engineering Life
 
 ## Natural Sciences — 7 subjects
 
@@ -1144,10 +1146,11 @@
 
 ### Media & Communication (`ku-media-communication`)
 
-*Who frames your world* — 2 chapters · 3 sections
+*Who frames your world* — 3 chapters · 4 sections
 
 - **Ch 1. Media & Society** `ku-media-communication-media-and-society` — 2 sections: Journalism Craft: News Values, the Inverted Pyramid and Verification; Mass Media and Society: Print, Broadcast, Platforms and Responsibility
 - **Ch 2. The Attention Economy** `ku-media-communication-the-attention-economy` — 1 sections: Media and Communication: Who Frames Your World
+- **Ch 3. Persuasion & Misinformation** `ku-media-communication-persuasion-and-misinformation` — 1 sections: Propaganda and Persuasion: The Manufacture of Belief
 
 ### Research Methods (`ku-research-methods`)
 
@@ -1484,10 +1487,11 @@
 
 ### Structural & Seismic Engineering (`ku-structural-seismic-engineering`)
 
-*Standing on math* — 2 chapters · 3 sections
+*Standing on math* — 3 chapters · 4 sections
 
 - **Ch 1. Structural Analysis & Design** `ku-structural-seismic-engineering-structural-analysis-and-design` — 2 sections: Structural Analysis: Determinacy, Trusses and Shear-and-Moment Diagrams; Concrete Structures: Materials, Beams and Limit-State Design
-- **Ch 2. Seismic Design** `ku-structural-seismic-engineering-seismic-design` — 1 sections: Earthquake Engineering: Designing for Shaking Ground
+- **Ch 2. Ground & Foundations** `ku-structural-seismic-engineering-ground-and-foundations` — 1 sections: Foundations and Ground Engineering: What Every Structure Stands On
+- **Ch 3. Seismic Design** `ku-structural-seismic-engineering-seismic-design` — 1 sections: Earthquake Engineering: Designing for Shaking Ground
 
 ### Water & Environmental Engineering (`ku-water-environmental-engineering`)
 
@@ -1588,10 +1592,11 @@
 
 ### Garden & Growing (`ku-garden-growing`)
 
-*Grow more plants* — 2 chapters · 3 sections
+*Grow more plants* — 3 chapters · 4 sections
 
 - **Ch 1. Growing Things** `ku-garden-growing-growing-things` — 2 sections: Growing Food at Home: From Balcony to Garden Bed; Composting: Turning Kitchen Scraps into Soil
 - **Ch 2. Propagation: Making More Plants** `ku-garden-growing-propagation-making-more-plants` — 1 sections: Plant Propagation: Seeds, Cuttings, Grafts and Clones
+- **Ch 3. Plant Health** `ku-garden-growing-plant-health` — 1 sections: Pests, Diseases and IPM: Protecting the Garden Without Poisoning It
 
 ### Practical Skills & Readiness (`ku-practical-skills-readiness`)
 
@@ -1602,10 +1607,10 @@
 
 ### Career & Communication (`ku-career-communication`)
 
-*Say it, get hired* — 2 chapters · 3 sections
+*Say it, get hired* — 2 chapters · 4 sections
 
 - **Ch 1. Speaking & Presence** `ku-career-communication-speaking-and-presence` — 1 sections: Public Speaking: Managing Fear, Structure and Delivery
-- **Ch 2. Getting Hired & Working Smarter** `ku-career-communication-getting-hired-and-working-smarter` — 2 sections: Job Interviews: The STAR Method and the Follow-Up; Time Management and Personal Productivity Systems
+- **Ch 2. Getting Hired & Working Smarter** `ku-career-communication-getting-hired-and-working-smarter` — 3 sections: Job Interviews: The STAR Method and the Follow-Up; Time Management and Personal Productivity Systems; Resumes, Cover Letters and the Hidden Job Market
 
 ---
 

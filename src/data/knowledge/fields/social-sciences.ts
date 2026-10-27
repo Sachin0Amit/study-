@@ -11,12 +11,24 @@ import { x33UgcNetClosurePassTopics } from './x33-ugc-net-closure-pass'
 import { x37AlbertaPassTopics } from './x37-alberta-pass'
 import { x46ThinBooksPassTopics } from './x46-thin-books-pass'
 import { x56VcePassTopics } from './x56-vce-pass'
+import { x60LibraryOrgDeepeningPassTopics } from './x60-library-org-pass'
 
 export const socialSciences: KnowledgeDomainFile = {
   domain: 'Social Sciences',
   blurb:
     'How humans behave, bond, decide and govern together — psychology, sociology and political science at their meeting points.',
   topics: [
+    // X60 library-org deepening pass (2026-10-28): propaganda and
+    // persuasion — the Media & Communication book's new 'Persuasion &
+    // Misinformation' chapter. Carved against gp-mass-media-society-
+    // responsibility (OWNS watchdog/regulation; mentions deepfakes in
+    // ONE clause — the mechanics are taught here) and media-journalism-
+    // craft (OWNS verification craft; 'lateral reading' is owned by a
+    // digital-literacy lesson and referenced only). Grep: 'Bernays' 0,
+    // 'Creel' 0, 'illusory truth' 0 live hits. Routes by branch
+    // 'Propaganda & Misinformation' (field 'Media Literacy' is not a
+    // chapter-field match, so the topic reaches the new chapter).
+    ...x60LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Social Sciences'),
     // X56 VCE pass (2026-10-26): psy-behaviourist-learning (Pavlov three-phase,
     // Skinner ABC, Bandura pentad — carved against x44 fear-conditioning,
     // the animal-cognition aside and x31's teaching-methods citation) and

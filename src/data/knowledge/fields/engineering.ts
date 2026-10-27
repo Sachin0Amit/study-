@@ -4,6 +4,7 @@ import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
 import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
 import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
 import { x59LibraryOrgBacklogPassTopics } from './x59-library-org-pass'
+import { x60LibraryOrgDeepeningPassTopics } from './x60-library-org-pass'
 
 export const engineering: KnowledgeDomainFile = {
   domain: 'Engineering',
@@ -23,6 +24,16 @@ export const engineering: KnowledgeDomainFile = {
     // 'rudder' appeared only in a cavitation quiz distractor and the
     // aviation-instruments lesson.
     ...x59LibraryOrgBacklogPassTopics.filter((t) => t.domain === 'Engineering'),
+    // X60 library-org deepening pass (2026-10-28): foundations and ground
+    // engineering — the structural-seismic book's new 'Ground &
+    // Foundations' chapter (inserted as Ch2: structures → ground →
+    // seismic, the classic civil curriculum order). Carved against
+    // eng-earthquake-engineering-design (OWNS the response spectrum and
+    // the Mexico City 1985 soil-amplification case — referenced only)
+    // and eng-structural-analysis-methods (OWNS determinacy/trusses/
+    // diagrams). Grep: 'Terzaghi' 0, 'soil mechanics' 0, 'retaining
+    // wall' 0, 'liquefaction' one incidental hit live.
+    ...x60LibraryOrgDeepeningPassTopics.filter((t) => t.domain === 'Engineering'),
     // X58 library-org deepening pass (2026-10-26): process safety —
     // inherently safer design, HAZOP, LOPA arithmetic, relief sizing,
     // Management of Change, Bhopal/Texas City/Flixborough case files.
