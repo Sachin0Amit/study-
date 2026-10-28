@@ -1,6 +1,7 @@
 import type { KnowledgeDomainFile } from '../types'
 import { x31UgcNetPaper1PassTopics } from './x31-ugc-net-paper1-pass'
 import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
+import { x69LibraryOrgConvergenceTopics } from './x69-library-org-convergence'
 import { x60EnemBrazilPassTopics } from './x60-enem-brazil-pass'
 
 export const environment: KnowledgeDomainFile = {
@@ -3033,6 +3034,18 @@ export const environment: KnowledgeDomainFile = {
     // geometric design). Greps: 'TransMilenio', 'Curitiba', 'freeway
     // revolt' had ZERO live hits; 'congestion pricing' appeared once as an
     // application bullet in the policy-cycle lesson.
+
+    // X69 library-org convergence pass (2026-10-28): Energy & Sustainability
+    // +1 lesson in the pre-declared Nuclear Energy chapter
+    // (env-nuclear-fission-fusion, 1,574w — energy density 24 GWh/kg,
+    // plant anatomy PWR/BWR, defense-in-depth via TMI/Chernobyl/Fukushima,
+    // Onkalo + fuel cycle, SMRs + fleet delivery, ITER + NIF ignition).
+    // RE-CARVED: reactor physics (moderation, delayed neutrons, reactivity,
+    // control rods, decay heat) is owned by tech-nuclear-fission-reactors,
+    // so the chain-reaction teaching is bridged to one paragraph; this
+    // lesson owns the energy-system layer. 'Onkalo', 'void coefficient',
+    // 'NIF' had zero live hits in the knowledge library.
     ...x60LibraryOrgThinBooksPassTopics.filter((t) => t.domain === 'Environment & Sustainability'),
+    ...x69LibraryOrgConvergenceTopics.filter((t) => t.domain === 'Environment & Sustainability'),
   ],
 }

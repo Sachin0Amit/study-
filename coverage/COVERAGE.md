@@ -16,8 +16,8 @@
 
 - **Subjects:** 138
 - **Books (master volumes):** 138
-- **Chapters:** 878
-- **Sections (lessons):** 4671
+- **Chapters:** 882
+- **Sections (lessons):** 4675
 
 ## Foundations — 7 subjects
 
@@ -873,28 +873,31 @@
 
 ### Developmental Biology (`ku-developmental-biology`)
 
-*From one cell to a body* — 4 chapters · 5 sections
+*From one cell to a body* — 5 chapters · 6 sections
 
 - **Ch 1. Building the Body** `ku-developmental-biology-building-the-body` — 1 sections: Developmental Biology: How a Body Builds Itself
 - **Ch 2. Cell Fate & Determination** `ku-developmental-biology-cell-fate-and-determination` — 1 sections: Cell Fate: How Identical Nuclei Become Different Cells
 - **Ch 3. Mechanisms & Model Organisms** `ku-developmental-biology-mechanisms-and-model-organisms` — 2 sections: Model Organisms: Flies, Worms, Fish and the Standard Laboratory Bodies; Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo
 - **Ch 4. Growth, Renewal & Regeneration** `ku-developmental-biology-growth-renewal-and-regeneration` — 1 sections: Stem Cells and Regeneration: The Body’s Repair Kit and Its Missing Manuals
+- **Ch 5. Evo-Devo: How Development Evolves** `ku-developmental-biology-evo-devo-how-development-evolves` — 1 sections: Evo-Devo: How Development Evolves
 
 ### Marine Biology (`ku-marine-biology`)
 
-*Life in the blue* — 3 chapters · 3 sections
+*Life in the blue* — 4 chapters · 4 sections
 
 - **Ch 1. The Blue Realm** `ku-marine-biology-the-blue-realm` — 1 sections: Marine Biology: Life in the Ocean
-- **Ch 2. Plankton, Larvae & Recruitment** `ku-marine-biology-plankton-larvae-and-recruitment` — 1 sections: Plankton and Larvae: The Drifting Majority of Ocean Life
-- **Ch 3. Fisheries & Ocean Conservation** `ku-marine-biology-fisheries-and-ocean-conservation` — 1 sections: Fisheries, Aquaculture and the Future of Ocean Food
+- **Ch 2. Coastal Habitats & Communities** `ku-marine-biology-coastal-habitats-and-communities` — 1 sections: From Tidepools to Reefs: Coastal Habitats and Communities
+- **Ch 3. Plankton, Larvae & Recruitment** `ku-marine-biology-plankton-larvae-and-recruitment` — 1 sections: Plankton and Larvae: The Drifting Majority of Ocean Life
+- **Ch 4. Fisheries & Ocean Conservation** `ku-marine-biology-fisheries-and-ocean-conservation` — 1 sections: Fisheries, Aquaculture and the Future of Ocean Food
 
 ### Bioinformatics & Genomics (`ku-bioinformatics-genomics`)
 
-*Biology as data* — 3 chapters · 3 sections
+*Biology as data* — 4 chapters · 4 sections
 
 - **Ch 1. Reading Genomes with Code** `ku-bioinformatics-genomics-reading-genomes-with-code` — 1 sections: Bioinformatics: Reading Genomes with Code
-- **Ch 2. Phylogenetics** `ku-bioinformatics-genomics-phylogenetics` — 1 sections: Phylogenetics: Reconstructing the Tree of Life
-- **Ch 3. Databases & Structure Prediction** `ku-bioinformatics-genomics-databases-and-structure-prediction` — 1 sections: Bioinformatics Databases and Protein Structure Prediction: From FASTA to AlphaFold
+- **Ch 2. Sequencing & Assembly** `ku-bioinformatics-genomics-sequencing-and-assembly` — 1 sections: Genome Sequencing and Assembly: From Reads to Reference
+- **Ch 3. Phylogenetics** `ku-bioinformatics-genomics-phylogenetics` — 1 sections: Phylogenetics: Reconstructing the Tree of Life
+- **Ch 4. Databases & Structure Prediction** `ku-bioinformatics-genomics-databases-and-structure-prediction` — 1 sections: Bioinformatics Databases and Protein Structure Prediction: From FASTA to AlphaFold
 
 ### Synthetic Biology (`ku-synthetic-biology`)
 
@@ -953,11 +956,12 @@
 
 ### Energy & Sustainability (`ku-energy`)
 
-*Clean power, real engineering* — 3 chapters · 3 sections
+*Clean power, real engineering* — 4 chapters · 4 sections
 
 - **Ch 1. The Energy Transition** `ku-energy-the-energy-transition` — 1 sections: The Renewable Energy Transition
 - **Ch 2. Solar Power** `ku-energy-solar-power` — 1 sections: Solar Energy: How Photovoltaics and Solar Thermal Actually Work
 - **Ch 3. Wind Power** `ku-energy-wind-power` — 1 sections: Wind Energy: Turbines, Farms and the Physics of Harvesting Wind
+- **Ch 4. Nuclear Energy** `ku-energy-nuclear-energy` — 1 sections: Nuclear Energy: Fission Today, Fusion Tomorrow
 
 ## Medicine & Health — 6 subjects
 

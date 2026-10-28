@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T04:48:09.851Z",
+  "generatedAt": "2026-10-28T10:33:35.675Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 138,
     "books": 138,
-    "chapters": 878,
-    "sections": 4671
+    "chapters": 882,
+    "sections": 4675
   },
   "subjects": [
     {
@@ -27555,8 +27555,8 @@
       "name": "Developmental Biology",
       "group": "Life Sciences",
       "tagline": "From one cell to a body",
-      "chapterCount": 4,
-      "sectionCount": 5,
+      "chapterCount": 5,
+      "sectionCount": 6,
       "chapters": [
         {
           "id": "ku-developmental-biology-building-the-body",
@@ -27622,6 +27622,21 @@
               "title": "Stem Cells and Regeneration: The Body’s Repair Kit and Its Missing Manuals"
             }
           ]
+        },
+        {
+          "id": "ku-developmental-biology-evo-devo-how-development-evolves",
+          "number": 5,
+          "title": "Evo-Devo: How Development Evolves",
+          "shortTitle": "Evo-Devo: How Development Evolves",
+          "bookId": "ku-developmental-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-dev-evo-devo",
+              "number": 5.1,
+              "title": "Evo-Devo: How Development Evolves"
+            }
+          ]
         }
       ]
     },
@@ -27630,8 +27645,8 @@
       "name": "Marine Biology",
       "group": "Life Sciences",
       "tagline": "Life in the blue",
-      "chapterCount": 3,
-      "sectionCount": 3,
+      "chapterCount": 4,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-marine-biology-the-blue-realm",
@@ -27649,8 +27664,23 @@
           ]
         },
         {
-          "id": "ku-marine-biology-plankton-larvae-and-recruitment",
+          "id": "ku-marine-biology-coastal-habitats-and-communities",
           "number": 2,
+          "title": "Coastal Habitats & Communities",
+          "shortTitle": "Coastal Habitats & Communities",
+          "bookId": "ku-marine-biology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bio-marine-coastal-habitats",
+              "number": 2.1,
+              "title": "From Tidepools to Reefs: Coastal Habitats and Communities"
+            }
+          ]
+        },
+        {
+          "id": "ku-marine-biology-plankton-larvae-and-recruitment",
+          "number": 3,
           "title": "Plankton, Larvae & Recruitment",
           "shortTitle": "Plankton, Larvae & Recruitment",
           "bookId": "ku-marine-biology",
@@ -27658,14 +27688,14 @@
           "sections": [
             {
               "id": "ku-bio-marine-plankton-larvae",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Plankton and Larvae: The Drifting Majority of Ocean Life"
             }
           ]
         },
         {
           "id": "ku-marine-biology-fisheries-and-ocean-conservation",
-          "number": 3,
+          "number": 4,
           "title": "Fisheries & Ocean Conservation",
           "shortTitle": "Fisheries & Ocean Conservation",
           "bookId": "ku-marine-biology",
@@ -27673,7 +27703,7 @@
           "sections": [
             {
               "id": "ku-bio-fisheries-aquaculture",
-              "number": 3.1,
+              "number": 4.1,
               "title": "Fisheries, Aquaculture and the Future of Ocean Food"
             }
           ]
@@ -27685,8 +27715,8 @@
       "name": "Bioinformatics & Genomics",
       "group": "Life Sciences",
       "tagline": "Biology as data",
-      "chapterCount": 3,
-      "sectionCount": 3,
+      "chapterCount": 4,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-bioinformatics-genomics-reading-genomes-with-code",
@@ -27704,8 +27734,23 @@
           ]
         },
         {
-          "id": "ku-bioinformatics-genomics-phylogenetics",
+          "id": "ku-bioinformatics-genomics-sequencing-and-assembly",
           "number": 2,
+          "title": "Sequencing & Assembly",
+          "shortTitle": "Sequencing & Assembly",
+          "bookId": "ku-bioinformatics-genomics",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-emer-bioinformatics-sequencing-assembly",
+              "number": 2.1,
+              "title": "Genome Sequencing and Assembly: From Reads to Reference"
+            }
+          ]
+        },
+        {
+          "id": "ku-bioinformatics-genomics-phylogenetics",
+          "number": 3,
           "title": "Phylogenetics",
           "shortTitle": "Phylogenetics",
           "bookId": "ku-bioinformatics-genomics",
@@ -27713,14 +27758,14 @@
           "sections": [
             {
               "id": "ku-emer-phylogenetics-tree-of-life",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Phylogenetics: Reconstructing the Tree of Life"
             }
           ]
         },
         {
           "id": "ku-bioinformatics-genomics-databases-and-structure-prediction",
-          "number": 3,
+          "number": 4,
           "title": "Databases & Structure Prediction",
           "shortTitle": "Databases & Structure Prediction",
           "bookId": "ku-bioinformatics-genomics",
@@ -27728,7 +27773,7 @@
           "sections": [
             {
               "id": "ku-bio-bioinformatics-databases-structures",
-              "number": 3.1,
+              "number": 4.1,
               "title": "Bioinformatics Databases and Protein Structure Prediction: From FASTA to AlphaFold"
             }
           ]
@@ -28175,8 +28220,8 @@
       "name": "Energy & Sustainability",
       "group": "Natural Sciences",
       "tagline": "Clean power, real engineering",
-      "chapterCount": 3,
-      "sectionCount": 3,
+      "chapterCount": 4,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-energy-the-energy-transition",
@@ -28220,6 +28265,21 @@
               "id": "ku-env-wind-energy-turbines",
               "number": 3.1,
               "title": "Wind Energy: Turbines, Farms and the Physics of Harvesting Wind"
+            }
+          ]
+        },
+        {
+          "id": "ku-energy-nuclear-energy",
+          "number": 4,
+          "title": "Nuclear Energy",
+          "shortTitle": "Nuclear Energy",
+          "bookId": "ku-energy",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-env-nuclear-fission-fusion",
+              "number": 4.1,
+              "title": "Nuclear Energy: Fission Today, Fusion Tomorrow"
             }
           ]
         }

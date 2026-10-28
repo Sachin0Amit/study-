@@ -6,6 +6,7 @@
  */
 
 import type { KnowledgeDomainFile } from '../types'
+import { x69LibraryOrgConvergenceTopics } from './x69-library-org-convergence'
 import { x14MolecularTopics } from './x14-molecular'
 import { x14HeredityBiotechTopics } from './x14-heredity-biotech'
 import { x24GapClosingPassTopics } from './x24-gap-closing-pass'
@@ -7059,6 +7060,25 @@ export const lifeSciences: KnowledgeDomainFile = {
     // 'polymer trapping', 'apoplastic loading', 'phototropin',
     // 'aleurone', 'scutellum', 'after-ripening', 'photoblasty' had ZERO
     // live hits before this pass.
+
+    // X69 library-org convergence pass (2026-10-28): this session's six-lesson
+    // X60 re-based onto origin/main and re-carved against the merged X60-X68
+    // passes — two lessons dropped as near-duplicates (directed evolution vs
+    // x64's ku-synbio-directed-evolution; money/crises vs x67's
+    // ku-hum-eco-money-bretton-woods + x68's finance layer), four kept.
+    // Life Sciences slice: Developmental Biology +1 chapter 'Evo-Devo: How
+    // Development Evolves' (bio-dev-evo-devo: toolkit/deep homology, 2R Hox
+    // duplication, stickleback Pitx1 enhancer, heterochrony/axolotl, eyespot
+    // co-option — the evolutionary layer the parallel session's Cell Fate and
+    // Stem Cells chapters left untouched) and Marine Biology +1 chapter
+    // 'Coastal Habitats & Communities' (bio-marine-coastal-habitats: Connell
+    // zonation, estuaries, mangrove/seagrass ecosystems, urchin barrens,
+    // Darwin reef sequence). Carved against bio-developmental-biology,
+    // bio-dev-model-organisms, bio-cell-fate-determinants + stem-cells,
+    // bio-marine-biology-oceans, env's otter/acidification lessons and the
+    // ecology lesson's Pisaster ownership. 'deep homology', 'heterochrony',
+    // 'Chthamalus', 'bioerosion' had zero live hits.
     ...x65CrossverifyBotanyPassTopics.filter((t) => t.domain === 'Life Sciences'),
+    ...x69LibraryOrgConvergenceTopics.filter((t) => t.domain === 'Life Sciences'),
   ],
 }

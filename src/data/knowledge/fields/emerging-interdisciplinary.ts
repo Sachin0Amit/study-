@@ -4,6 +4,7 @@ import { x51LibraryOrgPassTopics } from './x51-library-org-pass'
 import { x59LibraryOrgBacklogPassTopics } from './x59-library-org-pass'
 import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
 import { x64LibraryOrgPassTopics } from './x64-library-org-pass'
+import { x69LibraryOrgConvergenceTopics } from './x69-library-org-convergence'
 import { x61LibraryOrgLoopPassTopics } from './x61-library-org-pass'
 
 export const emergingInterdisciplinary: KnowledgeDomainFile = {
@@ -1918,6 +1919,19 @@ export const emergingInterdisciplinary: KnowledgeDomainFile = {
     // 1993 subtilisin lineage, Stemmer shuffling, sitagliptin); defers
     // circuit mechanics to emer-synbio-genetic-circuits (X60) and DBTL
     // cases to bio-synbio-dbtl-practice. Full carving in the x64 header.
+
+    // X69 library-org convergence pass (2026-10-28): Bioinformatics &
+    // Genomics +1 chapter 'Sequencing & Assembly'
+    // (emer-bioinformatics-sequencing-assembly, 1,164w — coverage C=NL/G,
+    // OLC vs de Bruijn k-mer assembly, repeats, N50, BWT/FM-index mapping,
+    // variant calling, T2T + pangenomes). RE-CARVED: the instrument-tour
+    // chemistry (Sanger/Illumina/PacBio/nanopore) is compressed to one
+    // bridge because x14-heredity-biotech's enriched HGP lesson owns it;
+    // this lesson owns the computational pipeline. The session's
+    // emer-directed-evolution was DROPPED as a near-duplicate of x64's
+    // ku-synbio-directed-evolution. 'N50', 'de Bruijn', 'Burrows' had zero
+    // live hits in this book's field.
     ...x64LibraryOrgPassTopics.filter((t) => t.domain === 'Emerging & Interdisciplinary'),
+    ...x69LibraryOrgConvergenceTopics.filter((t) => t.domain === 'Emerging & Interdisciplinary'),
   ],
 }

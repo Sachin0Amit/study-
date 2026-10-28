@@ -486,7 +486,7 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'egg',
     accent: '#ec4899',
     tagline: 'From one cell to a body',
-    blurb: 'How a fertilized egg builds an organism — the model organisms, genes and cell behaviors that sculpt the embryo, how identical nuclei take different fates, and the stem cells that renew and rebuild bodies.',
+    blurb: 'How a fertilized egg builds an organism — the model organisms, genes and cell behaviors that sculpt the embryo, the stem cells that renew it, and how the program itself evolves.',
     ownFields: ['Developmental Biology'],
     /* X64: Cell Fate & Determination inserted as Ch2 — the fate question
        (how identical nuclei become different cells) is the conceptual
@@ -497,6 +497,7 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
       { name: 'Cell Fate & Determination', branches: ['Cell Fate & Determination'] },
       { name: 'Mechanisms & Model Organisms', branches: ['Developmental Mechanisms'] },
       { name: 'Growth, Renewal & Regeneration', branches: ['Growth, Renewal & Regeneration'] },
+      { name: 'Evo-Devo: How Development Evolves', branches: ['Evo-Devo'] },
     ],
   },
   {
@@ -506,10 +507,11 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'fish',
     accent: '#0ea5e9',
     tagline: 'Life in the blue',
-    blurb: 'Ocean zones and habitats, plankton and larvae, coral reefs, deep sea, fisheries and aquaculture.',
+    blurb: 'Ocean zones, coastal habitats, plankton and larvae, coral reefs, deep sea, fisheries and aquaculture.',
     ownFields: ['Marine Biology'],
     chapters: [
       { name: 'The Blue Realm', branches: ['The Blue Realm'] },
+      { name: 'Coastal Habitats & Communities', branches: ['Coastal Habitats'] },
       { name: 'Plankton, Larvae & Recruitment', branches: ['Plankton & Larval Ecology'] },
       { name: 'Fisheries & Ocean Conservation', branches: ['Fisheries & Conservation'] },
     ],
@@ -521,10 +523,11 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'binary',
     accent: '#8b5cf6',
     tagline: 'Biology as data',
-    blurb: 'Algorithms, databases and structures for reading genomes — alignment, assembly, phylogenetics and protein-structure prediction.',
+    blurb: 'Algorithms, databases and structures for reading genomes — sequencing and assembly, alignment, phylogenetics and protein-structure prediction.',
     ownFields: ['Bioinformatics'],
     chapters: [
       { name: 'Reading Genomes with Code', branches: ['Computational Biology'] },
+      { name: 'Sequencing & Assembly', branches: ['Sequencing & Assembly'] },
       { name: 'Phylogenetics', branches: ['Phylogenetics'] },
       { name: 'Databases & Structure Prediction', branches: ['Data & Structures'] },
     ],
