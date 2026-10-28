@@ -17,7 +17,7 @@
 - **Subjects:** 138
 - **Books (master volumes):** 138
 - **Chapters:** 883
-- **Sections (lessons):** 4680
+- **Sections (lessons):** 4681
 
 ## Foundations — 7 subjects
 
@@ -816,11 +816,11 @@
 
 ### Genetics & Heredity (`ku-genetics-heredity`)
 
-*How traits travel and vary* — 5 chapters · 17 sections
+*How traits travel and vary* — 5 chapters · 18 sections
 
 - **Ch 1. Classical & Transmission Genetics** `ku-genetics-heredity-classical-and-transmission-genetics` — 7 sections: Mendel's Laws: How Traits Travel Between Generations; Meiosis, Linkage and the Chromosomal Theory of Inheritance; Beyond Mendel: Epistasis, Sex Linkage and Polygenic Traits; Pedigree Analysis: Inferring the Mode of Inheritance; Sex Determination Across Species: X, Y, Z, W and the Alternatives; Three-Point Crosses: Gene Order, Interference and the Architecture of Maps; When Genes Do Not Follow the Script: Penetrance, Expressivity and the Chi-Square Test
 - **Ch 2. Cytogenetics & Allelic Analysis** `ku-genetics-heredity-cytogenetics-and-allelic-analysis` — 2 sections: Chromosomes Under Glass: Number, Structure and Karyotypes; What Alleles Do: Wild Type, Muller's Morphs and Complementation
-- **Ch 3. Molecular Genetics & Genomics** `ku-genetics-heredity-molecular-genetics-and-genomics` — 3 sections: Genomics and Bioinformatics: Reading Whole Genomes; Genetic Markers: DNA Landmarks, Marker Maps and QTL; CRISPR and the Mechanics of Gene Editing
+- **Ch 3. Molecular Genetics & Genomics** `ku-genetics-heredity-molecular-genetics-and-genomics` — 4 sections: Genomics and Bioinformatics: Reading Whole Genomes; Genetic Markers: DNA Landmarks, Marker Maps and QTL; CRISPR and the Mechanics of Gene Editing; Cancer Genetics: Oncogenes, Tumor Suppressors and Targeted Therapy
 - **Ch 4. Genes in Populations** `ku-genetics-heredity-genes-in-populations` — 3 sections: Inheritance in Populations: Allele Frequencies and Population Patterns; Population Genetics: Genes Drifting Through Time; Inbreeding, Consanguinity and the Mutation-Selection Balance
 - **Ch 5. Biotechnology** `ku-genetics-heredity-biotechnology` — 2 sections: Recombinant DNA: The Tools and Techniques of Genetic Engineering; Biotechnology in Practice: Medicine, Farms, and Industry
 

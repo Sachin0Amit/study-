@@ -217,8 +217,8 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       'Polygenic traits, heritability and norm of reaction',
       'Environment writing the phenotype: Himalayan rabbit, PKU, hydrangea',
     ],
-    words: 2645,
-    readMins: 13,
+    words: 2797,
+    readMins: 14,
     addedOn: '2026-10-20',
     blocks: [
       {
@@ -261,7 +261,7 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       { kind: 'heading', text: 'Sex Linkage and Dosage Compensation' },
       {
         kind: 'para',
-        text: 'Genes on the sex chromosomes follow their own rules because males are hemizygous — one X, one Y, no second copy to mask a recessive. An X-linked recessive therefore expresses in every male who carries it, while a female needs two copies. Red-green color blindness and hemophilia A (factor VIII) are the standard examples; Queen Victoria\'s pedigree carried a clotting defect through Europe\'s royal houses. The pattern is criss-cross inheritance: an affected father passes his X to all his daughters — obligate carriers — and to none of his sons; the carriers\' sons run a 50 percent risk, so the trait zigzags grandfather to grandson through unaffected daughters. Carrier females are mosaics and occasionally show mild symptoms — borderline-low clotting factor — when the wrong X won inactivation in the relevant tissues.',
+        text: 'Genes on the sex chromosomes follow their own rules because males are hemizygous — one X, one Y, no second copy to mask a recessive. An X-linked recessive therefore expresses in every male who carries it, while a female needs two copies. Red-green color blindness and hemophilia A (factor VIII) are the standard examples; Queen Victoria\'s pedigree carried a clotting defect through Europe\'s royal houses. The pattern is criss-cross inheritance: an affected father passes his X to all his daughters — obligate carriers — and to none of his sons; the carriers\' sons run a 50 percent risk, so the trait zigzags grandfather to grandson through unaffected daughters. Carrier females are mosaics and occasionally show mild symptoms — borderline-low clotting factor — when the wrong X won inactivation in the relevant tissues. The definitive test for sex linkage is the reciprocal cross: repeat the mating with the sexes of the two phenotypes swapped, and if the two F1 generations differ, a sex-chromosome locus is implicated — the test that settled the white gene on the fly X. Not every gene on the X obeys the sex-linked pattern, though: short stretches called pseudoautosomal regions are shared between X and Y, pair and recombine in male meiosis, and the genes inside them are inherited like autosomal genes, two copies in everyone. SHOX, a bone-growth regulator sitting in that region, is the clinical example — one copy (as in Turner syndrome) means short stature, three copies (extra X or Y) means taller than average. On the Y, the sex-determining TDF gene (SRY) anchors the male pathway, and the handful of other Y-linked loci — the hairy-ear-rim trait is the classic curiosity — pass strictly father to son.',
       },
       {
         kind: 'para',
@@ -437,7 +437,7 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       },
       {
         kind: 'para',
-        text: 'A cut gene needs a vehicle: a vector. The classic is the plasmid, a small circle bacteria copy independently of their chromosome. A cloning plasmid needs four features: an origin of replication, a selectable marker (usually antibiotic resistance, so only plasmid-bearing cells survive plating), a multiple cloning site — an engineered cluster of unique restriction sites — and often the rop gene holding copy number stable. The textbook pBR322 carries two resistance markers; cloning into one disrupts it, so recombinants are ampicillin-resistant but tetracycline-sensitive — insertional inactivation, identity by the marker you broke. Bigger jobs call for other vectors: phage lambda accepts inserts up to about 15 kilobases — its head can package no more than roughly 50 kb of DNA — and delivers them via in vitro packaging; cosmids splice lambda\'s cos sites onto a plasmid to ferry 35-45 kb; the Ti plasmid of Agrobacterium tumefaciens is nature\'s plant engineer, its T-DNA the standard route into plants. Shuttle vectors carry two origins to commute between hosts; expression vectors add a strong promoter, ribosome-binding site, terminator, and purification tags such as a histidine run fused to the product.',
+        text: 'A cut gene needs a vehicle: a vector. The classic is the plasmid, a small circle bacteria copy independently of their chromosome. A cloning plasmid needs four features: an origin of replication, a selectable marker (usually antibiotic resistance, so only plasmid-bearing cells survive plating), a multiple cloning site — an engineered cluster of unique restriction sites — and often the rop gene holding copy number stable. The textbook pBR322 carries two resistance markers; cloning into one disrupts it, so recombinants are ampicillin-resistant but tetracycline-sensitive — insertional inactivation, identity by the marker you broke. Bigger jobs call for other vectors: phage lambda accepts inserts up to about 15 kilobases — its head can package no more than roughly 50 kb of DNA — and delivers them via in vitro packaging; cosmids splice lambda\'s cos sites onto a plasmid to ferry 30-45 kb; the Ti plasmid of Agrobacterium tumefaciens is nature\'s plant engineer, its T-DNA the standard route into plants. Shuttle vectors carry two origins to commute between hosts; expression vectors add a strong promoter, ribosome-binding site, terminator, and purification tags such as a histidine run fused to the product.',
       },
       {
         kind: 'para',

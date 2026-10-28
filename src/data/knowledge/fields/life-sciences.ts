@@ -17,6 +17,7 @@ import { x55CrossverifyTopics } from './x55-crossverify-pass'
 import { x57CrossverifyTopics } from './x57-crossverify-pass'
 import { x60CrossverifyTopics } from './x60-crossverify-pass'
 import { x71CrossverifyGeneticsTopics } from './x71-crossverify-pass'
+import { x72CrossverifyPassTopics } from './x72-crossverify-pass'
 import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
 import { x64LibraryOrgPassTopics } from './x64-library-org-pass'
 import { x65CrossverifyBotanyPassTopics } from './x65-crossverify-pass'
@@ -213,8 +214,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Off-target effects',
         'Delivery and therapeutic applications',
       ],
-      words: 1060,
-      readMins: 5,
+      words: 1169,
+      readMins: 6,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -230,7 +231,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         { kind: 'heading', text: 'Core Concepts' },
         {
           kind: 'para',
-          text: 'Bacteria store fragments of invading phage DNA between clustered repeats in their genome; transcribed later, these fragments guide Cas nucleases to cut the same sequence should it return. It is acquired immunity in a single-celled organism — a memory written directly into heritable DNA.',
+          text: 'Bacteria store fragments of invading phage DNA between clustered repeats in their genome; transcribed later, these fragments guide Cas nucleases to cut the same sequence should it return. It is acquired immunity in a single-celled organism — a memory written directly into heritable DNA. The immune memory works in three stages. Adaptation: after surviving an infection, the bacterium splices a short piece of the viral genome — a spacer, cut from the viral segment called the protospacer — into its CRISPR array between the repeats. crRNA biogenesis: on re-infection the array is transcribed and processed so each mature guide carries one spacer. Interference: the guide–tracrRNA–Cas9 complex scans incoming DNA for a protospacer sitting beside its PAM motif and cuts it — the host\u2019s own chromosome lacks PAMs beside those stored sequences, which is why the cell never cuts itself. The laboratory system keeps the interference stage and lets the experimenter write the spacer.',
         },
         {
           kind: 'para',
@@ -6205,6 +6206,20 @@ export const lifeSciences: KnowledgeDomainFile = {
     // to Classical & Transmission Genetics. See x60-crossverify-pass.ts
     // header for the full cross-verify result.
     ...x60CrossverifyTopics,
+    // X72 cross-verify pass (2026-10-29, this run): convergence-resolution
+    // keeps — cancer genetics (book ch41) uniquely owned here: clonal
+    // evolution, gain-of-function oncogenes (point mutation / amplification /
+    // translocation incl. the Philadelphia BCR-ABL fusion), the two-hit rule
+    // (RB1/p53/BRCA1-2), mutagens-carcinogens, imatinib as targeted therapy,
+    // with a retinoblastoma two-hit worked example and 4-question quiz.
+    // Carved against health-understanding-cancer (Clinical Medicine — owns
+    // incidence/staging/metastasis/treatment from the patient's side),
+    // x60's bio-chromosome-number-structure (owns the four structural
+    // rearrangements as cytogenetics) and bio-cell-cycle-mitosis-checkpoints
+    // (owns checkpoint machinery). Greps on origin/main: 'Philadelphia',
+    // 'two-hit', 'Knudson', 'retinoblastoma' had ZERO live hits. See
+    // x72-crossverify-pass.ts header for the full result.
+    ...x72CrossverifyPassTopics.filter((t) => t.id === 'bio-cancer-genetics-oncogenes'),
     // X60 library-org thin-book pass (2026-10-26): Developmental Biology
     // book reaches 4 lessons via new Ch3 'Growth, Renewal & Regeneration' —
     // stem cells & regeneration (potency ladder + niche, planarian neoblasts,

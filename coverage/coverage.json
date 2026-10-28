@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T19:51:39.898Z",
+  "generatedAt": "2026-10-28T23:06:53.449Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 138,
     "books": 138,
     "chapters": 883,
-    "sections": 4680
+    "sections": 4681
   },
   "subjects": [
     {
@@ -26956,7 +26956,7 @@
       "group": "Life Sciences",
       "tagline": "How traits travel and vary",
       "chapterCount": 5,
-      "sectionCount": 17,
+      "sectionCount": 18,
       "chapters": [
         {
           "id": "ku-genetics-heredity-classical-and-transmission-genetics",
@@ -27029,7 +27029,7 @@
           "title": "Molecular Genetics & Genomics",
           "shortTitle": "Molecular Genetics & Genomics",
           "bookId": "ku-genetics-heredity",
-          "sectionCount": 3,
+          "sectionCount": 4,
           "sections": [
             {
               "id": "ku-bio-genomics-bioinformatics",
@@ -27045,6 +27045,11 @@
               "id": "ku-bio-crispr-gene-editing",
               "number": 3.3,
               "title": "CRISPR and the Mechanics of Gene Editing"
+            },
+            {
+              "id": "ku-bio-cancer-genetics-oncogenes",
+              "number": 3.4,
+              "title": "Cancer Genetics: Oncogenes, Tumor Suppressors and Targeted Therapy"
             }
           ]
         },
