@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T16:40:57.063Z",
+  "generatedAt": "2026-10-28T19:51:39.898Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 138,
     "books": 138,
     "chapters": 883,
-    "sections": 4678
+    "sections": 4680
   },
   "subjects": [
     {
@@ -26956,7 +26956,7 @@
       "group": "Life Sciences",
       "tagline": "How traits travel and vary",
       "chapterCount": 5,
-      "sectionCount": 15,
+      "sectionCount": 17,
       "chapters": [
         {
           "id": "ku-genetics-heredity-classical-and-transmission-genetics",
@@ -26964,7 +26964,7 @@
           "title": "Classical & Transmission Genetics",
           "shortTitle": "Classical & Transmission Genetics",
           "bookId": "ku-genetics-heredity",
-          "sectionCount": 6,
+          "sectionCount": 7,
           "sections": [
             {
               "id": "ku-bio-genetics-mendel",
@@ -26992,8 +26992,13 @@
               "title": "Sex Determination Across Species: X, Y, Z, W and the Alternatives"
             },
             {
-              "id": "ku-bio-penetrance-expressivity",
+              "id": "ku-bio-gene-mapping-three-point",
               "number": 1.6,
+              "title": "Three-Point Crosses: Gene Order, Interference and the Architecture of Maps"
+            },
+            {
+              "id": "ku-bio-penetrance-expressivity",
+              "number": 1.7,
               "title": "When Genes Do Not Follow the Script: Penetrance, Expressivity and the Chi-Square Test"
             }
           ]
@@ -27049,7 +27054,7 @@
           "title": "Genes in Populations",
           "shortTitle": "Genes in Populations",
           "bookId": "ku-genetics-heredity",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-bio-population-inheritance-frequencies",
@@ -27060,6 +27065,11 @@
               "id": "ku-bio-population-genetics",
               "number": 4.2,
               "title": "Population Genetics: Genes Drifting Through Time"
+            },
+            {
+              "id": "ku-bio-inbreeding-mutation-balance",
+              "number": 4.3,
+              "title": "Inbreeding, Consanguinity and the Mutation-Selection Balance"
             }
           ]
         },

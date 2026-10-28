@@ -16,6 +16,7 @@ import { x47BioSplitPassTopics } from './x47-bio-split-pass'
 import { x55CrossverifyTopics } from './x55-crossverify-pass'
 import { x57CrossverifyTopics } from './x57-crossverify-pass'
 import { x60CrossverifyTopics } from './x60-crossverify-pass'
+import { x71CrossverifyGeneticsTopics } from './x71-crossverify-pass'
 import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
 import { x64LibraryOrgPassTopics } from './x64-library-org-pass'
 import { x65CrossverifyBotanyPassTopics } from './x65-crossverify-pass'
@@ -184,6 +185,17 @@ export const lifeSciences: KnowledgeDomainFile = {
     // renders Mendel -> Meiosis/Linkage -> Beyond Mendel (USER RULE 5).
     ...x14MolecularTopics,
     ...x14HeredityBiotechTopics,
+    // X71 crossverify convergence (2026-10-29): the classical three-factor
+    // cross arithmetic — eight gamete classes, DCO-reveal-the-middle-gene,
+    // add-back interval distances, coefficient of coincidence/interference,
+    // map expansion by chained intervals. Carved against the meiosis lesson
+    // (owns RF/cM + phase/ceiling since X66), x60's
+    // bio-chromosome-number-structure (cytogenetic view) and x61's
+    // bio-markers-qtl-mapping (modern marker mapping). Greps on origin/main:
+    // 'three-factor cross'/'coefficient of coincidence'/'crossover
+    // interference' had zero live hits. See x71-crossverify-pass.ts header
+    // for the full convergence result (three drafted duplicates dropped).
+    ...x71CrossverifyGeneticsTopics.filter((t) => t.id === 'bio-gene-mapping-three-point'),
     // ------------------------------------------------------------------
     {
       id: 'bio-crispr-gene-editing',
@@ -3434,6 +3446,13 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
       ],
     },
+    // X71 crossverify convergence (2026-10-29): inbreeding coefficient F,
+    // consanguinity risk arithmetic and mutation-selection balance — the
+    // population chapter's depth pass. Carved against the Hardy-Weinberg/
+    // selection/drift/flow/coalescence ownership of the lesson above.
+    // Greps on origin/main: 'inbreeding coefficient'/'homozygous by
+    // descent'/'mutation-selection balance' had zero live hits.
+    ...x71CrossverifyGeneticsTopics.filter((t) => t.id === 'bio-inbreeding-mutation-balance'),
     // ------------------------------------------------------------------
     {
       id: "bio-animal-senses-superpowers",
