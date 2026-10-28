@@ -16,8 +16,8 @@
 
 - **Subjects:** 138
 - **Books (master volumes):** 138
-- **Chapters:** 882
-- **Sections (lessons):** 4675
+- **Chapters:** 883
+- **Sections (lessons):** 4678
 
 ## Foundations — 7 subjects
 
@@ -1066,11 +1066,12 @@
 
 ### Religious Studies & Mythology (`ku-religion-mythology`)
 
-*The great traditions, compared* — 3 chapters · 3 sections
+*The great traditions, compared* — 4 chapters · 4 sections
 
 - **Ch 1. Eastern Traditions** `ku-religion-mythology-eastern-traditions` — 1 sections: Hinduism, Buddhism and the Eastern Traditions
 - **Ch 2. Western Traditions** `ku-religion-mythology-western-traditions` — 1 sections: Judaism, Christianity and Islam: The Abrahamic Faiths
-- **Ch 3. Comparative Mythology** `ku-religion-mythology-comparative-mythology` — 1 sections: Why Myths Repeat: The Monomyth and Cultural Archetypes
+- **Ch 3. Sacred Texts & Canon** `ku-religion-mythology-sacred-texts-and-canon` — 1 sections: Scripture, Canon and Interpretation: How Traditions Make and Read Holy Texts
+- **Ch 4. Comparative Mythology** `ku-religion-mythology-comparative-mythology` — 1 sections: Why Myths Repeat: The Monomyth and Cultural Archetypes
 
 ### Psychology (`ku-psychology`)
 
@@ -1146,9 +1147,9 @@
 
 ### Education (`ku-education`)
 
-*How teaching works* — 3 chapters · 3 sections
+*How teaching works* — 3 chapters · 4 sections
 
-- **Ch 1. Teaching & Pedagogy** `ku-education-teaching-and-pedagogy` — 1 sections: Teaching Aptitude: Levels, Methods, Support Systems and Evaluation
+- **Ch 1. Teaching & Pedagogy** `ku-education-teaching-and-pedagogy` — 2 sections: Curriculum: Tyler, Backward Design and the Hidden Syllabus; Teaching Aptitude: Levels, Methods, Support Systems and Evaluation
 - **Ch 2. Higher Education** `ku-education-higher-education` — 1 sections: India's Higher Education System: From Nalanda to NEP 2020
 - **Ch 3. Learning Systems** `ku-education-learning-systems` — 1 sections: Education and Pedagogy: How Teaching Works
 
@@ -1162,9 +1163,9 @@
 
 ### Research Methods (`ku-research-methods`)
 
-*How we know* — 2 chapters · 3 sections
+*How we know* — 2 chapters · 4 sections
 
-- **Ch 1. Research Methodology** `ku-research-methods-research-methodology` — 2 sections: Research Methodology: From Question to Sampling to Ethics; Social Research Methods: The Toolkit
+- **Ch 1. Research Methodology** `ku-research-methods-research-methodology` — 3 sections: Survey and Questionnaire Design: Asking Questions That Measure; Research Methodology: From Question to Sampling to Ethics; Social Research Methods: The Toolkit
 - **Ch 2. Experimental Design** `ku-research-methods-experimental-design` — 1 sections: Experimental Design: Hypotheses, Controls and the Theory Ladder
 
 ## Commerce, Economics & Business — 12 subjects

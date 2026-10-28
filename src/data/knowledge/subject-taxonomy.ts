@@ -850,11 +850,12 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'church',
     accent: '#7c3aed',
     tagline: 'The great traditions, compared',
-    blurb: 'Eastern and Western religious traditions and the comparative study of myth.',
+    blurb: 'Eastern and Western traditions, the making and reading of scripture, and the comparative study of myth.',
     ownFields: ['Religious Studies', 'Comparative Mythology'],
     chapters: [
       { name: 'Eastern Traditions', branches: ['Eastern Traditions'] },
       { name: 'Western Traditions', branches: ['Western Traditions'] },
+      { name: 'Sacred Texts & Canon', branches: ['Sacred Texts'] },
       { name: 'Comparative Mythology', fields: ['Comparative Mythology'] },
     ],
   },
@@ -1001,7 +1002,7 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'graduation-cap',
     accent: '#0891b2',
     tagline: 'How teaching works',
-    blurb: 'Pedagogy, higher education and learning systems.',
+    blurb: 'Curriculum design, pedagogy, higher education and learning systems.',
     ownFields: ['Education'],
     chapters: [
       { name: 'Teaching & Pedagogy', branches: ['Teaching & Pedagogy'] },
@@ -1031,7 +1032,7 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'flask-conical',
     accent: '#14b8a6',
     tagline: 'How we know',
-    blurb: 'Research methodology and experimental design — hypotheses, controls and the theory ladder.',
+    blurb: 'Research methodology, survey design and experimental design — hypotheses, controls, instruments and the theory ladder.',
     ownFields: ['Research Methods', 'Science & Inquiry Skills'],
     chapters: [
       { name: 'Research Methodology', branches: ['Research Methodology', 'How We Know'] },

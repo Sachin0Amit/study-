@@ -15,12 +15,23 @@ import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
 import { x64LibraryOrgPassTopics } from './x64-library-org-pass'
 import { x67LibraryOrgDeepeningPassTopics } from './x67-library-org-pass'
 import { x68LibraryOrgConvergenceTopics } from './x68-library-org-convergence'
+import { x70LibraryOrgPassTopics } from './x70-library-org-pass'
 
 export const socialSciences: KnowledgeDomainFile = {
   domain: 'Social Sciences',
   blurb:
     'How humans behave, bond, decide and govern together — psychology, sociology and political science at their meeting points.',
   topics: [
+    // X70 library-org pass (2026-10-29): edu-curriculum-backward-design
+    // (curriculum DESIGN doctrine — Tyler, backward design, Bloom-as-
+    // alignment, hidden/null curriculum, constructive alignment; carved
+    // against soc-education-pedagogy which owns delivery EVIDENCE and
+    // x31's teaching-aptitude lesson which owns evaluation types + CBCS)
+    // and res-survey-instrument-design (instrument craft — wording,
+    // Likert, response biases, question order, mode effects, Total
+    // Survey Error's measurement arm; carved against the toolkit lesson's
+    // SAMPLING ownership and x31's measurement-levels ownership).
+    ...x70LibraryOrgPassTopics.filter((t) => t.domain === 'Social Sciences'),
     // X56 VCE pass (2026-10-26): psy-behaviourist-learning (Pavlov three-phase,
     // Skinner ABC, Bandura pentad — carved against x44 fear-conditioning,
     // the animal-cognition aside and x31's teaching-methods citation) and

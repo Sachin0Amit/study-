@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T16:26:02.688Z",
+  "generatedAt": "2026-10-28T16:40:57.063Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 138,
     "books": 138,
-    "chapters": 882,
-    "sections": 4675
+    "chapters": 883,
+    "sections": 4678
   },
   "subjects": [
     {
@@ -29165,8 +29165,8 @@
       "name": "Religious Studies & Mythology",
       "group": "Humanities & Social Sciences",
       "tagline": "The great traditions, compared",
-      "chapterCount": 3,
-      "sectionCount": 3,
+      "chapterCount": 4,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-religion-mythology-eastern-traditions",
@@ -29199,8 +29199,23 @@
           ]
         },
         {
-          "id": "ku-religion-mythology-comparative-mythology",
+          "id": "ku-religion-mythology-sacred-texts-and-canon",
           "number": 3,
+          "title": "Sacred Texts & Canon",
+          "shortTitle": "Sacred Texts & Canon",
+          "bookId": "ku-religion-mythology",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-rel-scripture-canon-interpretation",
+              "number": 3.1,
+              "title": "Scripture, Canon and Interpretation: How Traditions Make and Read Holy Texts"
+            }
+          ]
+        },
+        {
+          "id": "ku-religion-mythology-comparative-mythology",
+          "number": 4,
           "title": "Comparative Mythology",
           "shortTitle": "Comparative Mythology",
           "bookId": "ku-religion-mythology",
@@ -29208,7 +29223,7 @@
           "sections": [
             {
               "id": "ku-hum-mythology-patterns",
-              "number": 3.1,
+              "number": 4.1,
               "title": "Why Myths Repeat: The Monomyth and Cultural Archetypes"
             }
           ]
@@ -29856,7 +29871,7 @@
       "group": "Humanities & Social Sciences",
       "tagline": "How teaching works",
       "chapterCount": 3,
-      "sectionCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-education-teaching-and-pedagogy",
@@ -29864,11 +29879,16 @@
           "title": "Teaching & Pedagogy",
           "shortTitle": "Teaching & Pedagogy",
           "bookId": "ku-education",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
-              "id": "ku-edu-teaching-aptitude-learner-evaluation",
+              "id": "ku-edu-curriculum-backward-design",
               "number": 1.1,
+              "title": "Curriculum: Tyler, Backward Design and the Hidden Syllabus"
+            },
+            {
+              "id": "ku-edu-teaching-aptitude-learner-evaluation",
+              "number": 1.2,
               "title": "Teaching Aptitude: Levels, Methods, Support Systems and Evaluation"
             }
           ]
@@ -29981,7 +30001,7 @@
       "group": "Humanities & Social Sciences",
       "tagline": "How we know",
       "chapterCount": 2,
-      "sectionCount": 3,
+      "sectionCount": 4,
       "chapters": [
         {
           "id": "ku-research-methods-research-methodology",
@@ -29989,16 +30009,21 @@
           "title": "Research Methodology",
           "shortTitle": "Research Methodology",
           "bookId": "ku-research-methods",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
-              "id": "ku-res-research-methodology-hypothesis-sampling",
+              "id": "ku-res-survey-instrument-design",
               "number": 1.1,
+              "title": "Survey and Questionnaire Design: Asking Questions That Measure"
+            },
+            {
+              "id": "ku-res-research-methodology-hypothesis-sampling",
+              "number": 1.2,
               "title": "Research Methodology: From Question to Sampling to Ethics"
             },
             {
               "id": "ku-soc-research-methods-toolkit",
-              "number": 1.2,
+              "number": 1.3,
               "title": "Social Research Methods: The Toolkit"
             }
           ]

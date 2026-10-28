@@ -11,12 +11,21 @@ import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
 import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
 import { x60EnemBrazilPassTopics } from './x60-enem-brazil-pass'
 import { x68LibraryOrgConvergenceTopics } from './x68-library-org-convergence'
+import { x70LibraryOrgPassTopics } from './x70-library-org-pass'
 
 export const humanities: KnowledgeDomainFile = {
   domain: 'Humanities',
   blurb:
     'History, philosophy and the recorded human past — how people made meaning before and beyond the modern world.',
   topics: [
+    // X70 library-org pass (2026-10-29): rel-scripture-canon-interpretation —
+    // the cross-tradition textual machinery (oral-to-written transmission,
+    // canon formation, translation, midrash-to-historical-criticism,
+    // textual criticism). Carved against rel-eastern-traditions and
+    // rel-abrahamic-faiths, which own the traditions' content; the
+    // comparative-mythology lesson owns narrative pattern study. Routes by
+    // branch 'Sacred Texts' into the book's new third chapter.
+    ...x70LibraryOrgPassTopics.filter((t) => t.domain === 'Humanities'),
     // X58 library-org deepening pass (2026-10-26): the Two Koreas — annexation,
     // division, war, and the paired development experiment (Juche autarky vs
     // export-led Miracle on the Han). Korea is untouched territory — carved
