@@ -10,6 +10,7 @@ import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
 import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
 import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
 import { x60EnemBrazilPassTopics } from './x60-enem-brazil-pass'
+import { x68LibraryOrgConvergenceTopics } from './x68-library-org-convergence'
 
 export const humanities: KnowledgeDomainFile = {
   domain: 'Humanities',
@@ -557,6 +558,16 @@ export const humanities: KnowledgeDomainFile = {
         },
       ],
     },
+    // X68 convergence pass (2026-10-28): money & credit — the FINANCE
+    // layer (bills of exchange, Medici banking, VOC joint-stock and
+    // bourse, Bank of England, 1720 bubbles, gold standard), uniquely
+    // owned after the parallel-session merge dropped this pass's four
+    // duplicate lessons (see the x68 header). Carved against silk-road
+    // (relay exchange), industrial-revolution (production), great-
+    // divergence (institutions debate), business-economics (modern
+    // money creation) and x15 accounting (bill mechanics). Spread
+    // between the two Ch1 lessons.
+    ...x68LibraryOrgConvergenceTopics.filter((t) => t.id === 'hum-money-credit-financial-revolutions'),
     {
       id: 'hum-industrial-revolution',
       title: 'The Industrial Revolution and Its Discontents',

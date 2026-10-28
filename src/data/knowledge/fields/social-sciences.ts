@@ -14,6 +14,7 @@ import { x56VcePassTopics } from './x56-vce-pass'
 import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
 import { x64LibraryOrgPassTopics } from './x64-library-org-pass'
 import { x67LibraryOrgDeepeningPassTopics } from './x67-library-org-pass'
+import { x68LibraryOrgConvergenceTopics } from './x68-library-org-convergence'
 
 export const socialSciences: KnowledgeDomainFile = {
   domain: 'Social Sciences',
@@ -1329,6 +1330,15 @@ export const socialSciences: KnowledgeDomainFile = {
         ] },
       ],
     },
+    // X68 convergence pass (2026-10-28): informal settlements — the
+    // majority urban world (UN-Habitat criteria, why settlements form,
+    // incremental housing, Orangi lane-level sanitation, tenure
+    // spectrum), uniquely owned after the parallel-session merge (see
+    // the x68 header). Carved against soc-urbanization-cities (why
+    // cities exist), urb-housing-segregation (formal-market segregation
+    // and gentrification) and the planning lesson (formal levers).
+    // Spread between the two Ch2 lessons.
+    ...x68LibraryOrgConvergenceTopics.filter((t) => t.id === 'urb-informal-settlements-self-built-cities'),
     {
       id: 'urb-housing-segregation',
       title: 'Housing, Segregation and Gentrification',

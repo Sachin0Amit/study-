@@ -17,7 +17,7 @@
 - **Subjects:** 138
 - **Books (master volumes):** 138
 - **Chapters:** 878
-- **Sections (lessons):** 4669
+- **Sections (lessons):** 4671
 
 ## Foundations — 7 subjects
 
@@ -1029,9 +1029,9 @@
 
 ### Economic History (`ku-economic-history`)
 
-*How economies became modern* — 3 chapters · 4 sections
+*How economies became modern* — 3 chapters · 5 sections
 
-- **Ch 1. Trade, Exchange & Industrialization** `ku-economic-history-trade-exchange-and-industrialization` — 2 sections: The Silk Road: Exchange Before Globalization; The Industrial Revolution and Its Discontents
+- **Ch 1. Trade, Exchange & Industrialization** `ku-economic-history-trade-exchange-and-industrialization` — 3 sections: The Silk Road: Exchange Before Globalization; Money and Credit: The Financial Revolutions Behind Modern Growth; The Industrial Revolution and Its Discontents
 - **Ch 2. The Great Divergence** `ku-economic-history-the-great-divergence` — 1 sections: The Great Divergence: Why Europe Got Rich First
 - **Ch 3. Money, Crises & the Modern Order** `ku-economic-history-money-crises-and-the-modern-order` — 1 sections: Money, Crises and the Modern Order: From Gold to Bretton Woods
 
@@ -1091,10 +1091,10 @@
 
 ### Urban Studies (`ku-urban-studies`)
 
-*The city, planned and lived* — 2 chapters · 5 sections
+*The city, planned and lived* — 2 chapters · 6 sections
 
 - **Ch 1. The Built Environment** `ku-urban-studies-the-built-environment` — 3 sections: Urban Planning: Designing Cities That Work; Getting Around: Streets, Transit and the Contested Mobility of Cities; The Urban Heat Island: Cities That Make Their Own Weather
-- **Ch 2. Urban Society & Change** `ku-urban-studies-urban-society-and-change` — 2 sections: Why Cities Exist: Agglomeration and Urban Life; Housing, Segregation and Gentrification
+- **Ch 2. Urban Society & Change** `ku-urban-studies-urban-society-and-change` — 3 sections: Why Cities Exist: Agglomeration and Urban Life; The Self-Built City: Informal Settlements and the Majority Urban World; Housing, Segregation and Gentrification
 
 ### Anthropology (`ku-anthropology`)
 
