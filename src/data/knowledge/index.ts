@@ -72,6 +72,23 @@ export function countTopicWords(t: KnowledgeTopic): number {
     else if (b.kind === 'list') n += b.items.join(' ').split(/\s+/).filter(Boolean).length
     else if (b.kind === 'quiz')
       n += b.items.map((i) => i.q + ' ' + i.options.join(' ') + ' ' + i.explain).join(' ').split(/\s+/).filter(Boolean).length
+    else if (b.kind === 'figure')
+      n += (b.caption + ' ' + (b.sketchCaption ?? '')).split(/\s+/).filter(Boolean).length
+    else if (b.kind === 'derivation')
+      n +=
+        (
+          b.title +
+          ' ' +
+          b.statement +
+          ' ' +
+          (b.prerequisites ?? []).join(' ') +
+          ' ' +
+          b.steps.map((s) => s.label + ' ' + (s.formula ?? '') + ' ' + s.explanation).join(' ') +
+          ' ' +
+          b.result
+        )
+          .split(/\s+/)
+          .filter(Boolean).length
   }
   return n
 }

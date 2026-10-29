@@ -52,14 +52,16 @@ export const foundationLearning: KnowledgeDomainFile = {
       tier: 'core',
       concepts: [
         'The Ebbinghaus forgetting curve',
+        'The savings method',
         'The spacing effect',
         'Retrieval practice and the testing effect',
         'Expanding review intervals',
         'Active recall versus passive re-reading',
         'Interference and sleep in consolidation',
+        'Consolidation across nights',
       ],
-      words: 894,
-      readMins: 4,
+      words: 1582,
+      readMins: 8,
       addedOn: '2026-10-16',
       blocks: [
         {
@@ -76,6 +78,10 @@ export const foundationLearning: KnowledgeDomainFile = {
         {
           kind: 'para',
           text: 'Ebbinghaus taught himself nonsense syllables and tested recall after delays from minutes to days, finding memory drops steeply within the first day before flattening. Most forgetting happens early — exactly when the first review should arrive.',
+        },
+        {
+          kind: 'para',
+          text: 'His instrument was the savings method: after a delay he relearned each list and compared the time needed with the original effort. A list that took twenty minutes to learn and five minutes to relearn a week later showed 75 percent savings — a precise, continuous measure of a memory that pure recall would score as simply gone. Later work, including a 2006 meta-analysis by Cepeda and colleagues pooling more than two hundred experiments, confirmed the curve’s signature across ages, materials and delays: steep loss within the first day, then a long shallow tail.',
         },
         {
           kind: 'para',
@@ -97,6 +103,10 @@ export const foundationLearning: KnowledgeDomainFile = {
           kind: 'para',
           text: 'New learning competes with old: similar facts interfere, and sleep helps the brain consolidate what you studied. Spacing reviews across days gives consolidation the time it needs.',
         },
+        {
+          kind: 'para',
+          text: 'Consolidation is not instant: during slow-wave sleep the hippocampus replays the day’s activity to the cortex, and each replay acts like a spaced review at neural scale. Reviews separated by nights therefore ride the consolidation machinery, while massed same-day study leaves it no time to act — one mechanistic reason the spacing effect appears across every kind of material.',
+        },
         { kind: 'heading', text: 'Key Formulas' },
         {
           kind: 'formula',
@@ -104,6 +114,79 @@ export const foundationLearning: KnowledgeDomainFile = {
           latex: 'R = e^{-t/S}',
           meaning:
             'Retention R falls exponentially with elapsed time t; the stability constant S grows with each successful review, flattening the curve.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The forgetting curve with and without spaced reviews. Retention $R = e^{-t/S}$ decays steeply in the first days (Ebbinghaus, 1885, measured by the savings method). Each review fired at the threshold $R^* \\approx 60\\%$ restores retention and raises stability $S$, so the safe gaps grow — 3, 7, then 16 days — exactly the expanding schedule of the worked example (days 2, 5, 12, 28).',
+          sketchImage: '/diagrams/forgetting-curve-sketch.jpg',
+          sketchCaption:
+            'Student Laboratory Notebook: the Ebbinghaus forgetting curve sinking toward ~20% within a week with no review; four spaced reviews at days 2, 5, 12 and 28 each restore retention to ~95% while stability S doubles, stretching the gaps 3 → 7 → 16 days; review threshold R* drawn at 60%.',
+          afterConcept: 5,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="Forgetting curve with and without spaced reviews, retention versus time since learning">
+  <!-- hand-drawn axes (double-stroked, gently wobbly) -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round">
+    <path d="M84 52 Q82 220 86 392"/>
+    <path d="M80 388 Q300 392 540 387 Q700 391 836 386"/>
+  </g>
+  <g fill="none" stroke="#8a8a93" stroke-width="1" opacity="0.5" stroke-linecap="round">
+    <path d="M89 55 Q87 220 91 390"/>
+    <path d="M77 393 Q300 397 540 392 Q700 396 833 391"/>
+  </g>
+  <!-- axis titles + ticks -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="currentColor">
+    <text x="30" y="224" font-size="15" font-style="italic" text-anchor="middle" transform="rotate(-90 30 224)">Retention R (%)</text>
+    <text x="836" y="448" font-size="15" font-style="italic" text-anchor="end">Time since learning (days)</text>
+    <g font-size="11.5" fill="#8a8a93" text-anchor="end">
+      <text x="76" y="64">100</text><text x="76" y="146">75</text><text x="76" y="228">50</text><text x="76" y="310">25</text><text x="76" y="392">0</text>
+    </g>
+    <g font-size="11.5" fill="#8a8a93" text-anchor="middle">
+      <text x="84" y="380">0</text><text x="209" y="380">7</text><text x="335" y="380">14</text><text x="460" y="380">21</text><text x="585" y="380">28</text><text x="710" y="380">35</text><text x="836" y="380">42</text>
+    </g>
+  </g>
+  <!-- review threshold -->
+  <line x1="84" y1="191" x2="836" y2="191" stroke="#d97706" stroke-width="2" stroke-dasharray="7 6" opacity="0.85"/>
+  <text x="330" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#d97706">review threshold R* ≈ 60%</text>
+  <!-- forgetting curve: no review (rose) -->
+  <path d="M84 60 C 92 95 97 118 102 135 C 109 158 113 176 120 191 C 130 213 142 230 156 244 C 172 259 190 277 209 293 C 238 316 268 323 299 329 C 350 340 396 345 442 349 C 492 353 540 356 585 359 C 672 363 760 365 836 368" fill="none" stroke="#e11d48" stroke-width="3" stroke-linecap="round" opacity="0.95"/>
+  <text x="628" y="343" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-style="italic" fill="#e11d48">forgetting curve (no review)</text>
+  <!-- spaced-repetition staircase (emerald) -->
+  <g fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" opacity="0.97">
+    <path d="M86 60 C 94 95 99 118 104 135 C 111 158 115 176 122 191"/>
+    <path d="M122 191 L120 78" stroke-width="2.2"/>
+    <path d="M120 76 C 130 96 136 108 138 119 C 146 137 150 148 156 158 C 162 173 168 183 174 191"/>
+    <path d="M174 191 L174 78" stroke-width="2.2"/>
+    <path d="M174 76 C 190 94 200 108 209 119 C 226 134 236 144 245 152 C 264 167 282 181 299 191"/>
+    <path d="M299 191 L299 78" stroke-width="2.2"/>
+    <path d="M299 76 C 330 95 360 108 388 119 C 422 133 450 144 478 152 C 513 164 552 181 585 191"/>
+    <path d="M585 191 L585 78" stroke-width="2.2"/>
+    <path d="M585 76 C 630 86 672 93 710 99 C 755 106 800 113 836 119"/>
+  </g>
+  <!-- review markers -->
+  <g fill="#059669">
+    <circle cx="120" cy="76" r="5.5"/><circle cx="174" cy="76" r="5.5"/><circle cx="299" cy="76" r="5.5"/><circle cx="585" cy="76" r="5.5"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="currentColor" text-anchor="middle">
+    <text x="120" y="46">Review 1 · day 2</text>
+    <text x="174" y="62">Review 2 · day 5</text>
+    <text x="299" y="46">Review 3 · day 12</text>
+    <text x="585" y="62">Review 4 · day 28</text>
+  </g>
+  <!-- in-plot annotations -->
+  <text x="420" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-style="italic" fill="currentColor">R = e<tspan dy="-6" font-size="10.5">−t/S</tspan></text>
+  <path d="M640 138 L658 104" stroke="#059669" stroke-width="1.3" stroke-dasharray="3 4" fill="none"/>
+  <text x="624" y="152" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-style="italic" fill="#059669">with spaced reviews (R restored)</text>
+  <!-- expanding-interval brackets under the axis -->
+  <g fill="none" stroke="#8a8a93" stroke-width="1.6" stroke-linecap="round">
+    <path d="M120 398 L120 404 L174 404 L174 398"/>
+    <path d="M174 398 L174 404 L299 404 L299 398"/>
+    <path d="M299 398 L299 404 L585 404 L585 398"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#8a8a93" text-anchor="middle">
+    <text x="147" y="421">3 days</text><text x="236" y="421">7 days</text><text x="442" y="421">16 days</text>
+  </g>
+  <text x="442" y="441" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#d97706" text-anchor="middle">expanding intervals</text>
+</svg>`,
         },
         {
           kind: 'example',
@@ -114,6 +197,47 @@ export const foundationLearning: KnowledgeDomainFile = {
             'Apply: split the 40 terms into four sets of ten; learn set one on day one, test yourself on days 2, 5, 12, and 28, and start a new set each day on the same pattern.',
             'State the result: every term is retrieved four to five times over six weeks, about two and a half hours total, and recall at the exam far exceeds any single three-hour cram.',
           ],
+        },
+        {
+          kind: 'derivation',
+          title: 'Why intervals expand: the stability-doubling derivation',
+          statement:
+            'Derivation of the expanding-interval law from the retention decay model $R = e^{-t/S}$ — if each successful review multiplies the stability constant $S$ by a factor $\\alpha > 1$, the review intervals must grow geometrically.',
+          prerequisites: ['The retention decay model', 'Natural logarithms'],
+          steps: [
+            {
+              label: 'Step 1: Fix the review threshold',
+              formula: '$$R^* = e^{-t/S}$$',
+              explanation:
+                'Choose the retention level at which each review should fire — for example R* = 0.6, the dashed line in the figure. Every review lands exactly when the curve sinks to this threshold.',
+            },
+            {
+              label: 'Step 2: Solve for the safe interval',
+              formula: '$$t = S\\,\\ln\\left(1/R^*\\right)$$',
+              explanation:
+                'Taking natural logarithms of the threshold condition: the time you can safely wait is proportional to the stability S — stabler memories buy longer gaps.',
+            },
+            {
+              label: 'Step 3: Let each successful review scale stability',
+              formula: '$$S_n = \\alpha S_{n-1},\\quad \\alpha \\approx 2$$',
+              explanation:
+                'A successful retrieval is not a neutral readout: it raises the memory’s stability by a factor α (empirically near 2 for well-formed material).',
+            },
+            {
+              label: 'Step 4: The intervals inherit the factor',
+              formula: '$$t_n = \\alpha\\, t_{n-1}$$',
+              explanation:
+                'Substituting the scaled stability into Step 2 multiplies every interval by the same α: gaps of 3, 7 and 16 days grow almost geometrically, exactly as in the worked example.',
+            },
+            {
+              label: 'Step 5: Count the reviews to a horizon',
+              formula: '$$n = \\left\\lceil \\frac{\\ln(T/t_1)}{\\ln \\alpha} \\right\\rceil$$',
+              explanation:
+                'Keeping recall above the threshold for a horizon of T days costs only logarithmically many reviews — with t₁ = 2 days and α = 2, a full year needs about eight retrievals per fact.',
+            },
+          ],
+          result:
+            'Expanding intervals are a mathematical consequence, not a stylistic choice: holding retention at a fixed threshold while each review multiplies stability by α forces the gaps to multiply by α too. That is why serious schedules read “one day, then three, then a week, then a month” — and why a year of recall costs fewer than ten retrievals per fact.',
         },
         { kind: 'heading', text: 'Applications in the Real World' },
         {
@@ -170,6 +294,18 @@ export const foundationLearning: KnowledgeDomainFile = {
               options: ['At the same interval as before', 'At a shorter interval than before', 'At a longer interval than before', 'Only after a failed test'],
               answer: 2,
               explain: 'Each successful recall raises memory stability, so the safe interval can lengthen.',
+            },
+            {
+              q: 'Using the interval law t = S·ln(1/R*): if the review threshold is fixed and a successful review doubles stability S, the next safe interval…',
+              options: ['stays the same', 'doubles', 'halves', 'depends only on the material'],
+              answer: 1,
+              explain: 'The interval is proportional to stability, so doubling S doubles the safe gap — the geometric growth behind expanding schedules.',
+            },
+            {
+              q: 'Ebbinghaus traced the forgetting curve chiefly by which method?',
+              options: ['Brain imaging during recall', 'Savings — comparing relearning time with original learning time', 'Multiple-choice quizzes', 'Interviewing learners about confidence'],
+              answer: 1,
+              explain: 'The savings method measures how much faster a list is relearned — a continuous gauge of a memory that pure recall would score as gone.',
             },
           ],
         },

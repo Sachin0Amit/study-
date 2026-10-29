@@ -30,6 +30,36 @@ export type KnowledgeBlock =
   | { kind: 'terms'; items: { term: string; def: string }[] }
   | { kind: 'quiz'; items: { q: string; options: string[]; answer: number; explain: string }[] }
   | { kind: 'list'; items: string[]; ordered?: boolean }
+  /**
+   * Hand-drawn textbook figure plate. `svg` is inline, self-contained markup
+   * (viewBox-based, no external refs) whose labels MUST use the exact
+   * terminology of the lesson prose — the reader should meet the same names
+   * in text and figure. Rendered by the lesson view as "Figure N — caption"
+   * with an optional paired hand-drawn notebook sketch image.
+   */
+  | {
+      kind: 'figure'
+      caption: string
+      svg: string
+      /** optional authentic hand-drawn notebook sketch, e.g. "/diagrams/xxx-sketch.jpg" */
+      sketchImage?: string
+      sketchCaption?: string
+      /** 1-based concept ordinal the plate follows; omit → after the concept run */
+      afterConcept?: number
+    }
+  /**
+   * Step-by-step derivation — for any topic built on formulas. Steps carry
+   * KaTeX (`$$...$$` or `$...$`) with the pedagogical rationale for each
+   * move, from premises to the derived result.
+   */
+  | {
+      kind: 'derivation'
+      title: string
+      statement: string
+      prerequisites?: string[]
+      steps: { label: string; formula?: string; explanation: string }[]
+      result: string
+    }
 
 export interface KnowledgeTopic {
   /** kebab-case, globally unique, stable forever: e.g. "bio-crispr-gene-editing" */

@@ -51,6 +51,7 @@ import { technologyApplied } from '../src/data/knowledge/fields/technology-appli
 import { computingAI } from '../src/data/knowledge/fields/computing-ai'
 
 const IDS = [
+  'fnd-spaced-repetition',
   'rel-scripture-canon-interpretation',
   'edu-curriculum-backward-design',
   'res-survey-instrument-design',
@@ -351,7 +352,19 @@ function blockWords(b: any): number {
   if (typeof b.name === 'string') n += wc(b.name)
   if (typeof b.meaning === 'string') n += wc(b.meaning)
   if (typeof b.title === 'string' && b.kind === 'example') n += wc(b.title)
-  for (const s of b.steps || []) n += wc(s)
+  if (b.kind === 'figure') {
+    if (typeof b.caption === 'string') n += wc(b.caption)
+    if (typeof b.sketchCaption === 'string') n += wc(b.sketchCaption)
+  }
+  if (b.kind === 'derivation') {
+    if (typeof b.title === 'string') n += wc(b.title)
+    if (typeof b.statement === 'string') n += wc(b.statement)
+    for (const p of b.prerequisites || []) n += wc(p)
+    for (const s of b.steps || []) n += wc(s.label || '') + wc(s.formula || '') + wc(s.explanation || '')
+    if (typeof b.result === 'string') n += wc(b.result)
+  } else {
+    for (const s of b.steps || []) n += wc(s)
+  }
   for (const it of b.items || []) {
     if (typeof it === 'string') n += wc(it)
     else n += wc(it.term || '') + wc(it.def || '') + wc(it.q || '') + wc(it.explain || '') + (it.options || []).reduce((a: number, o: string) => a + wc(o), 0)

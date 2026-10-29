@@ -33,6 +33,8 @@ import type {
   Concept,
   WorkedExample,
   QuizQuestion,
+  LessonFigure,
+  DetailedDerivation,
 } from '../library'
 import {
   KNOWLEDGE_DOMAIN_FILES,
@@ -443,6 +445,8 @@ export function topicToSectionContent(topic: KnowledgeTopic): SectionContent {
   const examples: WorkedExample[] = []
   const quiz: QuizQuestion[] = []
   const takeaways: string[] = []
+  const figures: LessonFigure[] = []
+  const derivations: DetailedDerivation[] = []
   let insightCallout: { title: string; text: string } | null = null
 
   let conceptCursor = 0
@@ -554,6 +558,26 @@ export function topicToSectionContent(topic: KnowledgeTopic): SectionContent {
         for (const item of block.items) takeaways.push(item)
         break
       }
+      case 'figure': {
+        figures.push({
+          caption: block.caption,
+          svg: block.svg,
+          sketchImage: block.sketchImage,
+          sketchCaption: block.sketchCaption,
+          afterConcept: block.afterConcept,
+        })
+        break
+      }
+      case 'derivation': {
+        derivations.push({
+          title: block.title,
+          statement: block.statement,
+          prerequisites: block.prerequisites,
+          steps: block.steps,
+          result: block.result,
+        })
+        break
+      }
     }
   }
 
@@ -576,6 +600,8 @@ export function topicToSectionContent(topic: KnowledgeTopic): SectionContent {
     intro,
     objectives,
     concepts,
+    figures: figures.length > 0 ? figures : undefined,
+    derivations: derivations.length > 0 ? derivations : undefined,
     examples,
     keyTakeaways,
     quiz,
