@@ -356,6 +356,13 @@ const IDS = [
   'ecol-species-richness-gradients',
   'bio-animal-senses-superpowers',
   'bio-animal-behavior-ethology',
+  // CROSSVERIFY 2026-10-30 (X79) — Microbiology & Immunology vs Brock 16e
+  // official TOC (internet-research): 3 new lessons + immune-lesson
+  // isotypes enrichment re-verified
+  'bio-virus-replication-cycle',
+  'bio-pathogen-virulence-toxins',
+  'bio-innate-defenses-complement',
+  'bio-immune-system',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

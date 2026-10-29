@@ -20,6 +20,7 @@ import { x71CrossverifyGeneticsTopics } from './x71-crossverify-pass'
 import { x72CrossverifyPassTopics } from './x72-crossverify-pass'
 import { x77CrossverifyZoologyTopics } from './x77-crossverify-pass'
 import { x78CrossverifyEcologyTopics } from './x78-crossverify-pass'
+import { x79CrossverifyMicrobiologyTopics } from './x79-crossverify-pass'
 import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
 import { x64LibraryOrgPassTopics } from './x64-library-org-pass'
 import { x65CrossverifyBotanyPassTopics } from './x65-crossverify-pass'
@@ -852,8 +853,8 @@ export const lifeSciences: KnowledgeDomainFile = {
         'Immunological memory and vaccination',
         'Tolerance and its failures',
       ],
-      words: 1236,
-      readMins: 6,
+      words: 1402,
+      readMins: 7,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -882,6 +883,10 @@ export const lifeSciences: KnowledgeDomainFile = {
         {
           kind: 'para',
           text: 'The adaptive arm is slow on first meeting, taking days, but surgical and permanent. B cells carry receptors assembled by randomly shuffling gene segments; when one matches an antigen and receives helper approval, it explodes into a clone of plasma cells that pour out millions of soluble copies of that receptor — antibodies — which neutralize, coat, and tag pathogens for destruction. Diversity is designed-in randomness, a lottery with millions of tickets drawn per infection.',
+        },
+        {
+          kind: 'para',
+          text: 'Antibody classes: the same grip, different jobs. Every antibody keeps the antigen-binding arms it won in the lottery; what class switching changes is the tail — the constant region that decides where the molecule travels and whom it summons. IgM is the first responder, assembled as a five-unit star with ten binding sites that grips weakly but teams brilliantly — the complement cascade\'s best activator. IgG is the blood\'s workhorse, roughly three-quarters of serum antibody: it crosses the placenta to arm a newborn, opsonizes bacteria for phagocytes, and carries the memory response. IgA works the mucosal borders as a two-unit dimer — tears, saliva, milk, and the gut lining, where it neutralizes invaders without summoning inflammation. IgE is the parasite specialist gone restless: it arms mast cells, and in a world short of parasitic worms its misfires are allergy. IgD stays mostly on the B-cell surface as a receptor. The classes interconvert without touching the binding site — one B cell, one antigen, many tailored weapons.',
         },
         {
           kind: 'para',
@@ -985,6 +990,15 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
       ],
     },
+    // ------------------------------------------------------------------
+    // X79 CROSSVERIFY pass (2026-10-30): Microbiology & Immunology (book
+    // #10) — innate-immunity deep dive lands directly after the immune-
+    // system overview so the book's Immunology chapter runs map-first,
+    // then machine room. Carved: barriers/inflammation/adaptive arm stay
+    // with the overview lesson; hypersensitivity classes stay with the
+    // allergy lesson; ELISA/diagnostics stay with biotech (x14). TLR,
+    // complement cascade, interferon, opsonization were ZERO live hits.
+    ...x79CrossverifyMicrobiologyTopics.filter((t) => t.id === 'bio-innate-defenses-complement'),
     // ------------------------------------------------------------------
     {
       id: 'bio-ecosystems-energy-flow',
@@ -1866,6 +1880,17 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
       ],
     },
+    // ------------------------------------------------------------------
+    // X79 CROSSVERIFY pass (2026-10-30): viral replication cycle +
+    // pathogenesis/virulence land directly after the field guide so Ch1
+    // runs what-microbes-are → how-viruses-multiply → how-they-cause-
+    // disease → antibiotics → microbiome (Brock 16e unit order). Carved:
+    // viroids/prions → bio-classification-five-kingdoms; CRISPR spacer
+    // memory → bio-crispr-gene-editing; plasmid HGT transfer mechanics →
+    // bio-microbe-antibiotic-resistance; biofilm persistence → the same
+    // resistance lesson. 'Koch's postulates', 'exotoxin', 'endotoxin',
+    // 'lysogeny', 'burst size', 'ID50' were ZERO live hits before writing.
+    ...x79CrossverifyMicrobiologyTopics.filter((t) => t.id === 'bio-virus-replication-cycle' || t.id === 'bio-pathogen-virulence-toxins'),
     // ------------------------------------------------------------------
     {
       id: 'bio-microbe-antibiotic-resistance',

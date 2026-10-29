@@ -17,7 +17,7 @@
 - **Subjects:** 138
 - **Books (master volumes):** 138
 - **Chapters:** 885
-- **Sections (lessons):** 4688
+- **Sections (lessons):** 4691
 
 ## Foundations — 7 subjects
 
@@ -858,10 +858,10 @@
 
 ### Microbiology & Immunology (`ku-microbiology-immunology`)
 
-*The invisible majority* — 2 chapters · 5 sections
+*The invisible majority* — 2 chapters · 8 sections
 
-- **Ch 1. The Microbial World** `ku-microbiology-immunology-the-microbial-world` — 3 sections: Bacteria, Viruses, Fungi: A Field Guide to the Microbial World; Antibiotics and the Rise of Resistance; The Microbiome: Your Trillion Tenants
-- **Ch 2. Immunology** `ku-microbiology-immunology-immunology` — 2 sections: The Immune System: Innate to Adaptive Defense; Autoimmunity and Allergy: When the Defense Misfires
+- **Ch 1. The Microbial World** `ku-microbiology-immunology-the-microbial-world` — 5 sections: Bacteria, Viruses, Fungi: A Field Guide to the Microbial World; How Viruses Multiply: From Attachment to Burst; How Microbes Cause Disease: Adhesion, Invasion, Toxins; Antibiotics and the Rise of Resistance; The Microbiome: Your Trillion Tenants
+- **Ch 2. Immunology** `ku-microbiology-immunology-immunology` — 3 sections: The Immune System: Innate to Adaptive Defense; Innate Immunity in Depth: TLRs, Complement, Interferons; Autoimmunity and Allergy: When the Defense Misfires
 
 ### Human Anatomy & Physiology (`ku-human-anatomy-physiology`)
 
