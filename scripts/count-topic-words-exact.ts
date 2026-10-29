@@ -286,6 +286,8 @@ const IDS = [
   'study-procrastination-zombies',
   'fnd-interleaving',
   'study-exam-strategy',
+  'fnd-deliberate-practice',
+  'fnd-learning-styles-myth',
   'psy-behaviourist-learning',
   'psy-memory-multistore-brain',
   'mind-specific-phobia-biopsychosocial',

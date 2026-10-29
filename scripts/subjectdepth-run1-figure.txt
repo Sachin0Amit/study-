@@ -1,0 +1,91 @@
+        {
+          kind: 'figure',
+          caption:
+            'The power law of practice. Time per trial $T = a\\,P^{-b}$ falls steeply over the first hours of practice, then flattens into the plateau of automaticity — repetition maintains but no longer improves. When deliberate practice begins (edge-difficulty drills with a feedback loop), the curve re-steepens as mental representations grow. Inset: the Berlin violin study (Ericsson, Krampe & Tesch-Römer, 1993) — by age 18 the best violinists had banked ≈ 7,410 hours of solitary practice against ≈ 3,420 for the future music teachers.',
+          sketchImage: '/diagrams/deliberate-practice-sketch.jpg',
+          sketchCaption:
+            'Student Laboratory Notebook: practice curve with time per trial on the vertical axis and accumulated practice hours on the horizontal; the power law T = aP^-b dropping steeply then flattening into a labelled plateau of automaticity; a dashed vertical line marked "deliberate practice begins: edge-difficulty + feedback" where the curve bends downward again; corner box listing Berlin 1993 hours — best ≈ 7,410, good ≈ 5,301, teachers ≈ 3,420 by age 18.',
+          afterConcept: 1,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="Power law of practice: time per trial falls with accumulated practice, plateaus under automaticity, and drops again when deliberate practice re-steepens the curve">
+  <!-- hand-drawn axes (double-stroked, gently wobbly) -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round">
+    <path d="M84 52 Q82 220 86 392"/>
+    <path d="M80 388 Q300 392 540 387 Q700 391 836 386"/>
+  </g>
+  <g fill="none" stroke="#8a8a93" stroke-width="1" opacity="0.5" stroke-linecap="round">
+    <path d="M89 55 Q87 220 91 390"/>
+    <path d="M77 393 Q300 397 540 392 Q700 396 833 391"/>
+  </g>
+  <!-- axis titles + ticks -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="currentColor">
+    <text x="30" y="224" font-size="15" font-style="italic" text-anchor="middle" transform="rotate(-90 30 224)">Time per trial T</text>
+    <text x="836" y="448" font-size="15" font-style="italic" text-anchor="end">Accumulated practice P (hours)</text>
+    <g font-size="11.5" fill="#8a8a93" text-anchor="end">
+      <text x="76" y="64">100</text><text x="76" y="146">75</text><text x="76" y="228">50</text><text x="76" y="310">25</text><text x="76" y="392">0</text>
+    </g>
+    <g font-size="11.5" fill="#8a8a93" text-anchor="middle">
+      <text x="84" y="380">0</text><text x="209" y="380">500</text><text x="335" y="380">1,000</text><text x="460" y="380">1,500</text><text x="585" y="380">2,000</text><text x="710" y="380">2,500</text><text x="836" y="380">3,000</text>
+    </g>
+  </g>
+  <!-- maintenance curve: power law flattening into plateau (rose) -->
+  <path d="M84 60 C 100 130 118 178 140 214 C 170 258 205 288 245 308 C 300 332 360 344 430 350 C 520 356 620 358 836 359" fill="none" stroke="#e11d48" stroke-width="3" stroke-linecap="round" opacity="0.95"/>
+  <text x="620" y="334" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-style="italic" fill="#e11d48">plateau — automaticity: repetition maintains</text>
+  <!-- deliberate-practice intervention -->
+  <line x1="470" y1="84" x2="470" y2="352" stroke="#d97706" stroke-width="2" stroke-dasharray="7 6" opacity="0.9"/>
+  <path d="M470 82 L464 94 L476 94 Z" fill="#d97706"/>
+  <text x="482" y="100" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#d97706">deliberate practice begins: edge-difficulty drills + feedback loop</text>
+  <!-- re-steepened curve (emerald) -->
+  <path d="M470 352 C 500 340 530 300 560 262 C 600 214 660 176 730 158 C 770 148 806 144 836 141" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" opacity="0.97"/>
+  <text x="592" y="132" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-style="italic" fill="#059669">re-steepened: mental representations grow</text>
+  <!-- formula annotation -->
+  <text x="140" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-style="italic" fill="currentColor">power law of practice: T = aP<tspan dy="-7" font-size="11">−b</tspan></text>
+  <!-- Berlin study box -->
+  <g>
+    <path d="M560 52 Q560 46 566 46 L712 46 Q718 46 718 52 L718 110 Q718 116 712 116 L566 116 Q560 116 560 110 Z" fill="none" stroke="#8a8a93" stroke-width="1.4" opacity="0.6"/>
+    <text x="639" y="66" font-family="Georgia, 'Times New Roman', serif" font-size="12" text-anchor="middle" fill="currentColor">Berlin violin study (1993):</text>
+    <text x="639" y="84" font-family="Georgia, 'Times New Roman', serif" font-size="12" text-anchor="middle" fill="currentColor">best ≈ 7,410 h · good ≈ 5,301 h</text>
+    <text x="639" y="102" font-family="Georgia, 'Times New Roman', serif" font-size="12" text-anchor="middle" fill="currentColor">future teachers ≈ 3,420 h by age 18</text>
+  </g>
+</svg>`,
+        },
+        {
+          kind: 'derivation',
+          title: 'How expensive is the next halving? The power-law arithmetic',
+          statement:
+            'Derivation from the power law of practice $T = a\\,P^{-b}$ — why each halving of trial time costs a constant multiple of ALL previous practice, and why deliberate practice must change the curve rather than move along it.',
+          prerequisites: ['The power law of practice', 'Logarithms and exponents'],
+          steps: [
+            {
+              label: 'Step 1: State the law',
+              formula: '$$T = a\\,P^{-b}$$',
+              explanation:
+                'Time per trial T decays as a power of accumulated practice P: the constant a sets the starting level, the exponent b the steepness of improvement.',
+            },
+            {
+              label: 'Step 2: Linearise on log-log axes',
+              formula: '$$\\ln T = \\ln a - b\\,\\ln P$$',
+              explanation:
+                "Taking logarithms turns the curve into a straight line of slope −b — exactly how practice curves are fitted empirically, and why b is the natural summary of a domain's rate of improvement.",
+            },
+            {
+              label: 'Step 3: Price a halving of trial time',
+              formula: '$$\\frac{T_2}{T_1} = \\tfrac{1}{2} \\;\\Rightarrow\\; \\frac{P_2}{P_1} = 2^{1/b}$$',
+              explanation:
+                'Because T depends on P through the power −b, making the skill twice as fast requires multiplying accumulated practice by 2^(1/b) — regardless of where you start.',
+            },
+            {
+              label: 'Step 4: Insert the empirical exponent',
+              formula: '$$b \\approx 0.3 \\;\\Rightarrow\\; 2^{1/b} \\approx 10$$',
+              explanation:
+                'For cognitive skills b typically sits between 0.2 and 0.4; at b = 0.3 every halving of trial time demands roughly TEN times the practice already banked — the mathematical form of the plateau.',
+            },
+            {
+              label: 'Step 5: The escape route changes the constants',
+              formula: "$$a \\to a' < a, \\quad b \\to b' > b$$",
+              explanation:
+                'Moving along the curve buys geometrically less each time. Deliberate practice works by shifting the curve itself — a smaller a (better method, better coaching) and a steeper b (edge-difficulty drills with feedback) — which is why redesign, not volume, is what ends plateaus.',
+            },
+          ],
+          result:
+            "Volume alone obeys brutal arithmetic: at b ≈ 0.3, the next halving of trial time costs ten times all the practice already banked. Deliberate practice is the design intervention that changes the constants themselves — the only mathematically honest way off the plateau, and the reason the Berlin violinists' hours were solitary, targeted and feedback-rich rather than merely many.",
+        },

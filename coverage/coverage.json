@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T10:04:13.199Z",
+  "generatedAt": "2026-10-29T12:19:23.993Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 138,
     "books": 138,
     "chapters": 884,
-    "sections": 4682
+    "sections": 4683
   },
   "subjects": [
     {
@@ -26601,7 +26601,7 @@
       "group": "Foundations",
       "tagline": "Retain more, study less",
       "chapterCount": 3,
-      "sectionCount": 15,
+      "sectionCount": 16,
       "chapters": [
         {
           "id": "ku-study-skills-the-science-of-learning",
@@ -26609,7 +26609,7 @@
           "title": "The Science of Learning",
           "shortTitle": "The Science of Learning",
           "bookId": "ku-study-skills",
-          "sectionCount": 8,
+          "sectionCount": 9,
           "sections": [
             {
               "id": "ku-fnd-mnemonics-memory-palace",
@@ -26650,6 +26650,11 @@
               "id": "ku-fnd-interleaving",
               "number": 1.8,
               "title": "Interleaving: Why Mixed Practice Beats Blocked Practice"
+            },
+            {
+              "id": "ku-fnd-learning-styles-myth",
+              "number": 1.9,
+              "title": "The Learning-Styles Myth: Why Teaching to Your Style Fails"
             }
           ]
         },

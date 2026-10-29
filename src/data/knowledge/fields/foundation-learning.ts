@@ -11,6 +11,7 @@ import { x25TournamentReasoningCivicsPassTopics } from './x25-tournament-reasoni
 import { x36LearningSciencePassTopics } from './x36-learning-science-pass'
 import { x52CrossverifyPassTopics } from './x52-crossverify-pass'
 import { x53CrossverifyPassTopics } from './x53-crossverify-pass'
+import { x75SubjectDepthPassTopics } from './x75-subjectdepth-pass'
 
 export const foundationLearning: KnowledgeDomainFile = {
   domain: 'Foundation Learning',
@@ -919,8 +920,8 @@ export const foundationLearning: KnowledgeDomainFile = {
         'The ten-year rule and the 10,000-hour folklore',
         'Designing your own deliberate practice',
       ],
-      words: 1097,
-      readMins: 5,
+      words: 2516,
+      readMins: 13,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -940,6 +941,10 @@ export const foundationLearning: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
+          text: 'The founding evidence is the 1993 Berlin violin study. Ericsson, Krampe and Tesch-Römer interviewed students at the Berlin University of the Arts, divided them by their professors into future international soloists, merely good players, and future music teachers, then reconstructed every hour of practice from age eight onward. The biographies separated cleanly: by age eighteen the best violinists had banked an average of about 7,410 hours of solitary practice, the good players about 5,301, and the future teachers about 3,420 — and the gap was carried almost entirely by effortful practice alone in the practice room, not by lessons, ensemble hours or performances. Two details complete the picture. The best players structured the work in sessions of at most eighty to ninety minutes with real breaks, capping deliberate practice near three and a half hours a day. And they slept more — about 8.6 hours a night including naps, roughly an hour more than the weaker groups — treating recovery as part of the training. Practice history predicted the groups better than any early-talent rating; nobody had reached the top on thin hours.',
+        },
+        {
+          kind: 'para',
           text: 'Deliberate sessions pursue targets a notch below "get better at violin": land the shift cleanly in bar twelve, hold the opening line of the difficult conversation. A well-defined goal names the sub-skill, makes success observable, and shrinks the feedback loop to minutes. "Practice more" produces hours; "fix the third-bridge shift" produces change.',
         },
         {
@@ -956,7 +961,19 @@ export const foundationLearning: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
+          text: 'The laboratory version of this story is extreme. In the classic Chase and Ericsson digit-span experiments, a college student identified only as SF — a keen long-distance runner — trained his digit span session after session, chunking runs of digits into race times he knew cold (3,492 became "3 minutes 49 point 2, near world-record mile pace") and building retrieval links between chunks. After months of this single-minded drilling he could repeat back 82 digits in order — against a normal span of seven — yet his letter span stayed ordinary, because what he had built was not a bigger memory but a domain-specific system of chunks and cues. Ericsson and Kintsch later named the general mechanism long-term working memory: experts use familiar structures to park and re-address information in long-term storage almost as if it were held in mind. That is what a mental representation buys, and it only grows under practice that keeps outrunning the current structure.',
+        },
+        {
+          kind: 'para',
           text: 'The famous round number came from averaging top performers\' accumulated practice — and it is a center, not a threshold. Some experts reach world class in far less time by training efficiently; others accumulate many more hours without improving at all. The rule\'s surviving core: expertise takes years of deliberate work rather than exposure, and the composition of the hours matters more than their count.',
+        },
+        {
+          kind: 'para',
+          text: 'That round number had a famous career. Malcolm Gladwell\'s Outliers (2008) distilled the Berlin numbers into a "10,000-hour rule" — and Ericsson spent years politely correcting the translation: 10,000 was the average accumulated by the best violinists around age twenty, not a threshold anyone crosses, and dropping the word "deliberate" turned a finding about designed, effortful, feedback-rich practice into a folk theorem about mere seat time. The correction matters because the wider evidence says composition dominates volume. Macnamara, Hambrick and Oswald\'s 2014 meta-analysis of 88 studies measured how much performance variance deliberate practice actually explains: about 26 per cent in games, 21 per cent in music, 18 per cent in sports — but only 4 per cent in education and under 1 per cent in established professions. Deliberate practice is the most controllable lever anyone has found, not the only variable: starting age, coaching quality, and how predictable the domain is all pull their own weight. The honest reading is liberating rather than deflating — hours you can design and audit are worth more than hours you can merely count.',
+        },
+        {
+          kind: 'para',
+          text: 'Where does the ten-year figure come from? Arithmetic, mostly. Herbert Simon and William Chase\'s 1973 chess work found no player reaching international master strength with less than about a decade of intense involvement — the origin of the "ten-year rule" — and the Berlin math reproduces it: three deliberate hours a day, roughly 350 serious days a year, sustained for ten years, accumulates about 10,500 hours. The number is what falls out of a sustainable daily dose held for the time it takes the representations to deepen; it is a by-product of the recipe, never a substitute for it.',
         },
         {
           kind: 'para',
@@ -969,6 +986,98 @@ export const foundationLearning: KnowledgeDomainFile = {
           latex: 'T = a\\,P^{-b}',
           meaning: 'Time per trial T falls with accumulated practice P: gains are steep early and progressively more expensive — why volume alone plateaus and design must take over.',
         },
+        {
+          kind: 'figure',
+          caption:
+            'The power law of practice. Time per trial $T = a\\,P^{-b}$ falls steeply over the first hours of practice, then flattens into the plateau of automaticity — repetition maintains but no longer improves. When deliberate practice begins (edge-difficulty drills with a feedback loop), the curve re-steepens as mental representations grow. Inset: the Berlin violin study (Ericsson, Krampe & Tesch-Römer, 1993) — by age 18 the best violinists had banked ≈ 7,410 hours of solitary practice against ≈ 3,420 for the future music teachers.',
+          sketchImage: '/diagrams/deliberate-practice-sketch.jpg',
+          sketchCaption:
+            'Student Laboratory Notebook: practice curve with time per trial on the vertical axis and accumulated practice hours on the horizontal; the power law T = aP^-b dropping steeply then flattening into a labelled plateau of automaticity; a dashed vertical line marked "deliberate practice begins: edge-difficulty + feedback" where the curve bends downward again; corner box listing Berlin 1993 hours — best ≈ 7,410, good ≈ 5,301, teachers ≈ 3,420 by age 18.',
+          afterConcept: 1,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="Power law of practice: time per trial falls with accumulated practice, plateaus under automaticity, and drops again when deliberate practice re-steepens the curve">
+  <!-- hand-drawn axes (double-stroked, gently wobbly) -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round">
+    <path d="M84 52 Q82 220 86 392"/>
+    <path d="M80 388 Q300 392 540 387 Q700 391 836 386"/>
+  </g>
+  <g fill="none" stroke="#8a8a93" stroke-width="1" opacity="0.5" stroke-linecap="round">
+    <path d="M89 55 Q87 220 91 390"/>
+    <path d="M77 393 Q300 397 540 392 Q700 396 833 391"/>
+  </g>
+  <!-- axis titles + ticks -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="currentColor">
+    <text x="30" y="224" font-size="15" font-style="italic" text-anchor="middle" transform="rotate(-90 30 224)">Time per trial T</text>
+    <text x="836" y="448" font-size="15" font-style="italic" text-anchor="end">Accumulated practice P (hours)</text>
+    <g font-size="11.5" fill="#8a8a93" text-anchor="end">
+      <text x="76" y="64">100</text><text x="76" y="146">75</text><text x="76" y="228">50</text><text x="76" y="310">25</text><text x="76" y="392">0</text>
+    </g>
+    <g font-size="11.5" fill="#8a8a93" text-anchor="middle">
+      <text x="84" y="380">0</text><text x="209" y="380">500</text><text x="335" y="380">1,000</text><text x="460" y="380">1,500</text><text x="585" y="380">2,000</text><text x="710" y="380">2,500</text><text x="836" y="380">3,000</text>
+    </g>
+  </g>
+  <!-- maintenance curve: power law flattening into plateau (rose) -->
+  <path d="M84 60 C 100 130 118 178 140 214 C 170 258 205 288 245 308 C 300 332 360 344 430 350 C 520 356 620 358 836 359" fill="none" stroke="#e11d48" stroke-width="3" stroke-linecap="round" opacity="0.95"/>
+  <text x="620" y="334" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-style="italic" fill="#e11d48">plateau — automaticity: repetition maintains</text>
+  <!-- deliberate-practice intervention -->
+  <line x1="470" y1="84" x2="470" y2="352" stroke="#d97706" stroke-width="2" stroke-dasharray="7 6" opacity="0.9"/>
+  <path d="M470 82 L464 94 L476 94 Z" fill="#d97706"/>
+  <text x="482" y="100" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#d97706">deliberate practice begins: edge-difficulty drills + feedback loop</text>
+  <!-- re-steepened curve (emerald) -->
+  <path d="M470 352 C 500 340 530 300 560 262 C 600 214 660 176 730 158 C 770 148 806 144 836 141" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" opacity="0.97"/>
+  <text x="592" y="132" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-style="italic" fill="#059669">re-steepened: mental representations grow</text>
+  <!-- formula annotation -->
+  <text x="140" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-style="italic" fill="currentColor">power law of practice: T = aP<tspan dy="-7" font-size="11">−b</tspan></text>
+  <!-- Berlin study box -->
+  <g>
+    <path d="M560 52 Q560 46 566 46 L712 46 Q718 46 718 52 L718 110 Q718 116 712 116 L566 116 Q560 116 560 110 Z" fill="none" stroke="#8a8a93" stroke-width="1.4" opacity="0.6"/>
+    <text x="639" y="66" font-family="Georgia, 'Times New Roman', serif" font-size="12" text-anchor="middle" fill="currentColor">Berlin violin study (1993):</text>
+    <text x="639" y="84" font-family="Georgia, 'Times New Roman', serif" font-size="12" text-anchor="middle" fill="currentColor">best ≈ 7,410 h · good ≈ 5,301 h</text>
+    <text x="639" y="102" font-family="Georgia, 'Times New Roman', serif" font-size="12" text-anchor="middle" fill="currentColor">future teachers ≈ 3,420 h by age 18</text>
+  </g>
+</svg>`,
+        },
+        {
+          kind: 'derivation',
+          title: 'How expensive is the next halving? The power-law arithmetic',
+          statement:
+            'Derivation from the power law of practice $T = a\\,P^{-b}$ — why each halving of trial time costs a constant multiple of ALL previous practice, and why deliberate practice must change the curve rather than move along it.',
+          prerequisites: ['The power law of practice', 'Logarithms and exponents'],
+          steps: [
+            {
+              label: 'Step 1: State the law',
+              formula: '$$T = a\\,P^{-b}$$',
+              explanation:
+                'Time per trial T decays as a power of accumulated practice P: the constant a sets the starting level, the exponent b the steepness of improvement.',
+            },
+            {
+              label: 'Step 2: Linearise on log-log axes',
+              formula: '$$\\ln T = \\ln a - b\\,\\ln P$$',
+              explanation:
+                "Taking logarithms turns the curve into a straight line of slope −b — exactly how practice curves are fitted empirically, and why b is the natural summary of a domain's rate of improvement.",
+            },
+            {
+              label: 'Step 3: Price a halving of trial time',
+              formula: '$$\\frac{T_2}{T_1} = \\tfrac{1}{2} \\;\\Rightarrow\\; \\frac{P_2}{P_1} = 2^{1/b}$$',
+              explanation:
+                'Because T depends on P through the power −b, making the skill twice as fast requires multiplying accumulated practice by 2^(1/b) — regardless of where you start.',
+            },
+            {
+              label: 'Step 4: Insert the empirical exponent',
+              formula: '$$b \\approx 0.3 \\;\\Rightarrow\\; 2^{1/b} \\approx 10$$',
+              explanation:
+                'For cognitive skills b typically sits between 0.2 and 0.4; at b = 0.3 every halving of trial time demands roughly TEN times the practice already banked — the mathematical form of the plateau.',
+            },
+            {
+              label: 'Step 5: The escape route changes the constants',
+              formula: "$$a \\to a' < a, \\quad b \\to b' > b$$",
+              explanation:
+                'Moving along the curve buys geometrically less each time. Deliberate practice works by shifting the curve itself — a smaller a (better method, better coaching) and a steeper b (edge-difficulty drills with feedback) — which is why redesign, not volume, is what ends plateaus.',
+            },
+          ],
+          result:
+            "Volume alone obeys brutal arithmetic: at b ≈ 0.3, the next halving of trial time costs ten times all the practice already banked. Deliberate practice is the design intervention that changes the constants themselves — the only mathematically honest way off the plateau, and the reason the Berlin violinists' hours were solitary, targeted and feedback-rich rather than merely many.",
+        },
+
         {
           kind: 'example',
           title: 'Worked Example',
@@ -1035,6 +1144,30 @@ export const foundationLearning: KnowledgeDomainFile = {
               options: ['Every additional hour yields equal gains', 'Gains per hour shrink as skill accumulates', 'Practice becomes easier over time', 'Feedback matters only for beginners'],
               answer: 1,
               explain: 'Early hours buy steep gains; later improvement requires designed, deliberate training.',
+            },
+            {
+              q: 'In the 1993 Berlin violin study, what best separated the future soloists from the future music teachers by age 18?',
+              options: ['Hours of lessons and ensemble playing', 'Accumulated solitary deliberate practice (about 7,410 h vs about 3,420 h)', 'Teachers\' early ratings of talent', 'Faster sight-reading at admission'],
+              answer: 1,
+              explain: 'The biographies separated on banked solitary practice — its structure (60-90 minute sessions, more sleep) carrying the gap, not lessons or talent ratings.',
+            },
+            {
+              q: 'Using the power law with b = 0.3, roughly how much MORE accumulated practice does the NEXT halving of trial time require?',
+              options: ['Twice the current total', 'About ten times the current total', 'A constant 100 extra hours regardless of level', 'Half the current total'],
+              answer: 1,
+              explain: 'P₂/P₁ = 2^(1/0.3) ≈ 2^3.33 ≈ 10 — each halving costs ten times everything already banked, the arithmetic behind the plateau.',
+            },
+            {
+              q: 'The Macnamara, Hambrick and Oswald (2014) meta-analysis found deliberate practice explains about 26% of performance variance in games but under 1% in professions. The honest conclusion is:',
+              options: ['Deliberate practice is a myth outside games', 'It is the most controllable lever but not the only variable — starting age, coaching and domain predictability also matter', 'Professionals should stop training', 'The meta-analysis disproved the Berlin study'],
+              answer: 1,
+              explain: 'A powerful, designable lever — never the whole story; that is why the recipe audits the composition of hours, not just their count.',
+            },
+            {
+              q: 'Why do elite performers cap deliberate practice at about three to five focused hours a day?',
+              options: ['They run out of material', 'Edge-difficulty work is exhausting and needs consolidation — beyond the cap, quality decays into comfortable volume', 'Coaches forbid longer sessions', 'Muscle growth stops after two hours'],
+              answer: 1,
+              explain: 'The Berlin violinists stopped near 3.5 hours a day and slept MORE than the weaker groups — rest is part of the training, and strain defines the dose.',
             },
           ],
         },
@@ -1181,8 +1314,8 @@ export const foundationLearning: KnowledgeDomainFile = {
         'Hard-start, jump-to-easy',
         'Anxiety as fuel, not fog',
       ],
-      words: 1470,
-      readMins: 7,
+      words: 2082,
+      readMins: 10,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1214,6 +1347,10 @@ export const foundationLearning: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
+          text: 'Punished wrong answers change the arithmetic, so run it honestly. Under the common fractional penalty (+1 for correct, −¼ for wrong, four options), a blind guess has expected value 0.25 × 1 − 0.75 × 0.25 = +0.0625 — still positive, and eliminating even one option pushes it to 0.5 × 1 − 0.5 × 0.25 = +0.375. Even a five-option paper with −¼ penalties lands a blind guess at exactly zero, so any elimination tips the balance toward answering. Only a full penalty (−1 for a wrong answer, four options) makes the blank rational — expected value exactly zero with no information. The rule of thumb that survives every regime: never leave a blank you could narrow, and never answer purely at random under a full penalty. The evidence on revisiting answers is just as settled: Benjamin, Cavell and Shallenberger\'s 1984 review of thirty-three answer-changing studies found that changes go wrong-to-right roughly twice as often as right-to-wrong — the "always keep your first instinct" folklore is simply false. What separates the good changer from the bad is the reason: a specific correction (misread question, recalled a fact, spotted a units error) pays; naked second-guessing does not.',
+        },
+        {
+          kind: 'para',
           text: 'Work in passes. Pass one: every question you can answer cleanly and fast — banking marks and building momentum. Pass two: the mediums, which get their full budgets. Pass three: the hard and uncertain, attacked with the remaining time and the confidence of a mostly-finished paper. Multiple choice: never leave blanks — eliminate and choose, unless wrong answers are penalised. Essays: outline before writing, because a two-minute skeleton earns more than a page of early drift. Final pass: signs, units, skipped sub-parts, your name.',
         },
         {
@@ -1223,6 +1360,10 @@ export const foundationLearning: KnowledgeDomainFile = {
         {
           kind: 'para',
           text: 'Arousal is not the enemy; misread arousal is. The Yerkes-Dodson law puts performance highest at moderate arousal, and the racing heart that feels like fear is physiologically near-identical to excitement — relabel it. Control what can be controlled: long, slow exhales calm the nervous system, a first easy question gets ink flowing, and a deliberate pause resets a frozen moment. If panic rises, skip and return; working memory comes back when the alarm stops owning it. You trained retrieval all term — the exam is just retrieval with a stopwatch.',
+        },
+        {
+          kind: 'para',
+          text: 'The modern choking literature explains exactly why the freeze happens. Sian Beilock\'s experiments — golf putters under video cameras, students doing arithmetic for money — showed that pressure hurts skilled performers when attention turns inward: experts run on compiled procedures, and consciously monitoring the mechanics ("keep the elbow in, watch the clubface") re-inserts the step-by-step control the skill has outgrown. Among students, it was the HIGH working-memory ones who fell furthest under pressure — the very resource pressure floods is the one their strategies lean on. The practical defences follow from the mechanism: practise under mild, staged pressure so the exam feels familiar rather than novel; use pre-performance routines to park attention on one controllable cue; and reappraise the symptoms as readiness, because a body mobilised for action is only mislabelled as disaster.',
         },
         { kind: 'example', title: 'Worked Example', steps: [
           'Identify what is asked: a 120-minute, 100-point paper — twenty multiple-choice questions worth 1 point each, three short answers worth 10 each, one essay worth 30. Build the plan.',
@@ -1281,6 +1422,30 @@ export const foundationLearning: KnowledgeDomainFile = {
             answer: 1,
             explain: 'Moderate arousal is optimal, and reappraisal plus slow exhales steer toward it — the racing heart is fuel if labelled correctly.',
           },
+            {
+              q: 'A paper scores +1 for a correct multiple choice and −0.25 for a wrong one (4 options). You can eliminate two options. The expected value of guessing is:',
+              options: ['negative — leave it blank', 'exactly zero — it makes no difference', 'positive: 0.5 × 1 − 0.5 × 0.25 = +0.375, so answer', 'impossible to compute without knowing the topic'],
+              answer: 2,
+              explain: 'With two options eliminated the guess is a coin flip that pays 1 against 0.25 — expected value +0.375. Under fractional penalties, narrowing always beats blanking.',
+            },
+            {
+              q: 'The Benjamin, Cavell and Shallenberger (1984) review of answer-changing found that:',
+              options: ['changes go wrong-to-right about twice as often as right-to-wrong — the first-instinct folklore is false', 'first answers are almost always best — never change', 'changes make no difference on average', 'only top students benefit from changing answers'],
+              answer: 0,
+              explain: 'Across 33 studies, changes improved scores about two-to-one — provided the change is made for a specific reason (misread, recalled, units error).',
+            },
+            {
+              q: 'Beilock\'s choking experiments showed pressure hurts skilled performers mainly because:',
+              options: ['adrenaline damages muscle memory', 'attention turns inward to step-by-step mechanics the skill has outgrown', 'working memory expands and overwhelms the checker', 'the brain runs out of glucose'],
+              answer: 1,
+              explain: 'Experts run on compiled procedures; consciously monitoring mechanics re-inserts novice-level control — which is why practising under mild pressure and parking attention on one cue defends the skill.',
+            },
+            {
+              q: 'A 90-point paper allows 180 minutes and you reserve 20 minutes for checking. The per-point budget is about:',
+              options: ['1 minute per point', '1.8 minutes per point', '2.5 minutes per point', '3 minutes per point'],
+              answer: 1,
+              explain: '(180 − 20) / 90 ≈ 1.78 — reserve the buffer first, then divide what remains by the marks; every question gets a ceiling in the same currency.',
+            },
         ] },
         {
           kind: 'callout',
@@ -1290,5 +1455,10 @@ export const foundationLearning: KnowledgeDomainFile = {
         },
       ],
     },
+    // X75 subject-depth pass (2026-10-29, loop 483894 run 1): Make It Stick Ch6
+    // structural mirroring — the learning-styles myth anatomy; carved against
+    // x52's quiz-item fact, metacognition-calibration and mnemonics (carving in
+    // the x75 header). Registered LAST so it lands as Study Skills Ch1 §1.9.
+    ...x75SubjectDepthPassTopics,
   ],
 }

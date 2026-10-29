@@ -17,7 +17,7 @@
 - **Subjects:** 138
 - **Books (master volumes):** 138
 - **Chapters:** 884
-- **Sections (lessons):** 4682
+- **Sections (lessons):** 4683
 
 ## Foundations — 7 subjects
 
@@ -239,9 +239,9 @@
 
 ### Study Skills & Learning Science (`ku-study-skills`)
 
-*Retain more, study less* — 3 chapters · 15 sections
+*Retain more, study less* — 3 chapters · 16 sections
 
-- **Ch 1. The Science of Learning** `ku-study-skills-the-science-of-learning` — 8 sections: Mnemonics and the Memory Palace: Encoding That Sticks; Metacognition and Calibration: Knowing What You Know; The Protégé Effect: Learning by Teaching; Self-Efficacy and Mindset: Taking Charge of Your Learning; Focused and Diffuse Modes: The Brain's Two Gears; Spaced Repetition and the Forgetting Curve; Active Recall: Why Testing Yourself Beats Rereading; Interleaving: Why Mixed Practice Beats Blocked Practice
+- **Ch 1. The Science of Learning** `ku-study-skills-the-science-of-learning` — 9 sections: Mnemonics and the Memory Palace: Encoding That Sticks; Metacognition and Calibration: Knowing What You Know; The Protégé Effect: Learning by Teaching; Self-Efficacy and Mindset: Taking Charge of Your Learning; Focused and Diffuse Modes: The Brain's Two Gears; Spaced Repetition and the Forgetting Curve; Active Recall: Why Testing Yourself Beats Rereading; Interleaving: Why Mixed Practice Beats Blocked Practice; The Learning-Styles Myth: Why Teaching to Your Style Fails
 - **Ch 2. Study Systems** `ku-study-skills-study-systems` — 5 sections: Habits and Behavior Design: Automating the Studying; Time Management for Students: Owning the Study Week; Stress, Well-being and Sustainable Study; Procrastination and the Zombie Habits: Rewriting the Cue; Note-Taking Systems Compared: Cornell, Outlines and Zettelkasten
 - **Ch 3. Practice, Performance & Expertise** `ku-study-skills-practice-performance-and-expertise` — 2 sections: Deliberate Practice: The Anatomy of Getting Good; Exam-Day Strategy: How Tests Are Actually Won
 
