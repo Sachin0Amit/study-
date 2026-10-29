@@ -634,17 +634,20 @@ export const foundationLearning: KnowledgeDomainFile = {
       concepts: [
         'The testing effect',
         'The evidence: a century of retrievals',
+        'The century before the labs: recitation and savings',
         'Why rereading feels good and does little',
         'Desirable difficulties',
         'Formats: free recall, flashcards, questions, teaching',
         'Feedback closes the loop',
         'Effort is the active ingredient',
+        'The strategy gap: what students actually do',
+        'Retrieval goes to school',
         'Pretesting: guessing before knowing',
         'Past papers as retrieval practice',
         'Designing a recall-first session',
       ],
-      words: 2294,
-      readMins: 11,
+      words: 2998,
+      readMins: 15,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -738,6 +741,10 @@ export const foundationLearning: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
+          text: 'The testing effect was old news before anyone named it. Ebbinghaus, who mapped forgetting from syllables in 1885, built his measurements on relearning — the savings method asks how much faster material relearns, and his savings were the shadow of retrieval at work. Katzaroff (1908) and Abbott (1909) hinted first; then Arthur Gates ran the first large classroom experiment in 1917: schoolchildren studied biographies and syllable lists while reading time ranged from all-reading down to twenty percent, and recall peaked when recitation took roughly sixty to eighty percent — about a third better on prose, two to four times better on the lists. Gates\u2019s advice was then neglected for decades. One honest caution: recitation alone has not consistently helped adult learners, hence the modern form adds feedback.',
+        },
+        {
+          kind: 'para',
           text: 'Rereading exploits a perceptual illusion: each pass makes the page more familiar, and the brain mistakes fluency for knowledge. The feeling of "I know this" tracks how easily information comes in, not whether it can come out — and only the outgoing path is ever graded. Highlighting and verbatim summarizing share the flaw: they polish the input while leaving retrieval untrained.',
         },
         {
@@ -755,6 +762,79 @@ export const foundationLearning: KnowledgeDomainFile = {
         {
           kind: 'para',
           text: 'Why should the harder route leave a stronger trace? Pyc and Rawson\u2019s 2009 work on retrieval effort suggests the effort is informative: a difficult-but-successful retrieval forces deeper, more elaborate processing of the answer, and that extra processing is what supports recall later. Errors have a role too — when a retrieval fails and feedback then supplies the answer, the correction lands on a hole you have just personally mapped, which makes it memorable. This is why the recall-first cycle refuses to grade itself gently: a session in which every pull succeeds is a session that taught you nothing new. The practical translation is uncomfortable but simple — if practice never feels effortful, it is probably not retrieval; it is review wearing retrieval\u2019s clothes.',
+        },
+        {
+          kind: 'para',
+          text: 'If retrieval works this well, why does anyone reread? Because most students never hear the news. When Karpicke, Butler and Roediger (2009) asked 177 college students how they actually study, 84 percent named rereading their number-one strategy and only 11 percent mentioned practicing retrieval. Dunlosky and colleagues (2013), grading ten common techniques on years of classroom data, left exactly two rated high utility: practice testing and distributed practice. Interleaving, self-explanation and elaborative interrogation sat in the moderate tier; rereading, summarization and highlighting — the strategies that fill most study hours — rated low. The gap is the fluency illusion at work: smooth today, billed at exam week.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The strategy gap (Karpicke, Butler & Roediger, 2009; Dunlosky et al., 2013). Left: of 177 students, 84% named rereading their #1 strategy; 11% named practice testing. Right: the evidence grades them oppositely — only practice testing and distributed practice rate high utility; rereading, summarization and highlighting rate low.',
+          sketchImage: '/diagrams/strategy-gap-utility-sketch.jpg',
+          sketchCaption:
+            'Student Laboratory Notebook: hand-drawn two-panel comparison — survey bars 84% versus 11% labeled \u201crereading\u201d and \u201cpractice testing\u201d, and a utility tier table with HIGH holding \u201cpractice testing\u201d and \u201cdistributed practice\u201d, MODERATE holding \u201cinterleaving\u201d, LOW holding \u201crereading\u201d, \u201csummarization\u201d and \u201chighlighting\u201d — margin note: \u201cthe smooth methods lose.\u201d',
+          afterConcept: 9,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="Left: survey bars showing 84 percent of students name rereading their top strategy versus 11 percent practice testing. Right: utility tiers from Dunlosky 2013 — practice testing and distributed practice high, interleaving moderate, rereading summarization and highlighting low.">
+  <!-- panel divider -->
+  <g fill="none" stroke="#8a8a93" stroke-width="1.2" stroke-linecap="round" opacity="0.55">
+    <path d="M438 46 Q434 235 440 424"/>
+    <path d="M444 48 Q440 235 446 422"/>
+  </g>
+  <!-- LEFT: the survey -->
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="64" y="52" font-size="15.5" fill="currentColor" font-style="italic">how 177 students study</text>
+    <text x="64" y="72" font-size="12" fill="#8a8a93">(Karpicke, Butler &amp; Roediger, 2009)</text>
+  </g>
+  <!-- rereading bar: 84% -> w=252 (3 px per %) -->
+  <path d="M96 108 Q95 128 98 148 L348 148 Q350 128 348 106 Q220 103 96 108" fill="#e11d48" opacity="0.16"/>
+  <path d="M98 110 Q96 128 99 146 M348 146 Q350 128 348 108" fill="none" stroke="#e11d48" stroke-width="3" stroke-linecap="round"/>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="112" y="134" font-size="15" fill="currentColor">rereading</text>
+    <text x="392" y="134" font-size="17" fill="#e11d48" text-anchor="middle">84%</text>
+  </g>
+  <!-- practice testing bar: 11% -> w=33 -->
+  <path d="M96 190 Q95 210 98 230 L129 230 Q131 210 129 188 Q112 186 96 190" fill="#059669" opacity="0.16"/>
+  <path d="M98 192 Q96 210 99 228 M129 228 Q131 210 129 190" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="112" y="216" font-size="15" fill="currentColor">practice testing</text>
+    <text x="172" y="254" font-size="17" fill="#059669">11%</text>
+  </g>
+  <text x="64" y="306" font-size="12.5" fill="#8a8a93" font-family="Georgia, 'Times New Roman', serif" font-style="italic">the #1 named strategy, by share of students</text>
+  <!-- RIGHT: the utility grades -->
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="486" y="52" font-size="15.5" fill="currentColor" font-style="italic">the evidence\u2019s verdict</text>
+    <text x="486" y="72" font-size="12" fill="#8a8a93">(Dunlosky et al., 2013 — ten techniques graded)</text>
+  </g>
+  <!-- HIGH shelf -->
+  <path d="M486 106 Q484 124 488 142 L822 142 Q824 124 822 104 Q654 101 486 106" fill="#059669" opacity="0.12"/>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="500" y="131" font-size="13.5" fill="#059669" font-weight="bold">HIGH</text>
+    <text x="560" y="131" font-size="14" fill="currentColor">practice testing \u00b7 distributed practice</text>
+  </g>
+  <!-- MODERATE shelf -->
+  <path d="M486 180 Q484 198 488 216 L822 216 Q824 198 822 178 Q654 175 486 180" fill="#d97706" opacity="0.12"/>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="500" y="205" font-size="13.5" fill="#d97706" font-weight="bold">MODERATE</text>
+    <text x="598" y="205" font-size="14" fill="currentColor">interleaving \u00b7 self-explanation \u00b7 elaborative interrogation</text>
+  </g>
+  <!-- LOW shelf -->
+  <path d="M486 254 Q484 272 488 290 L822 290 Q824 272 822 252 Q654 249 486 254" fill="#e11d48" opacity="0.12"/>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="500" y="279" font-size="13.5" fill="#e11d48" font-weight="bold">LOW</text>
+    <text x="560" y="279" font-size="14" fill="currentColor">rereading \u00b7 summarization \u00b7 highlighting</text>
+  </g>
+  <!-- the honest arrow -->
+  <path d="M520 330 Q620 300 716 322" fill="none" stroke="#d97706" stroke-width="2.2" stroke-dasharray="7 6" stroke-linecap="round"/>
+  <path d="M716 322 l-11 -3 M716 322 l-3 -10" fill="none" stroke="#d97706" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="618" y="354" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#d97706">move the hours up the shelves</text>
+  <!-- shared footnote -->
+  <text x="452" y="438" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#8a8a93">what students choose (left) versus what survives the exam week (right)</text>
+</svg>`,
+        },
+        {
+          kind: 'para',
+          text: 'None of this stayed in the laboratory. Roediger, Agarwal, McDaniel and McDermott (2011) ran three experiments inside 6th-grade social studies classrooms: material quizzed on brief in-class quizzes was answered better on the real chapter exams and end-of-semester exams, and in the one experiment with a restudy comparison, quizzing beat restudying on the chapter exam (.91 versus lower). McDaniel and colleagues (2011) replicated the pattern in 8th-grade science, and McDermott and colleagues (2013) found in 7th-grade science that quizzed questions beat non-quizzed ones by 18 percentage points on later exams whether the quizzes were multiple-choice or short-answer — the format mattered far less than the retrieval. The objection that testing must mean more stress failed its own test: across Agarwal and colleagues\u2019 2014 classroom programs, students who practiced retrieval reported less test anxiety, not more.',
         },
         {
           kind: 'para',
@@ -848,6 +928,9 @@ export const foundationLearning: KnowledgeDomainFile = {
             { term: 'Pretesting', def: 'Answering questions before studying, which primes later learning.' },
             { term: 'Retrieval effort', def: 'Pyc and Rawson\u2019s principle that difficult-but-successful retrievals produce the deepest learning.' },
             { term: 'Crossover', def: 'The flip by which restudy wins at five minutes but retrieval wins at the delayed test.' },
+            { term: 'Recitation', def: 'Gates\u2019s term for studying aloud from memory — retrieval practice\u2019s classroom ancestor.' },
+            { term: 'Savings method', def: 'Ebbinghaus\u2019s memory measure: how much faster material is relearned than first learned.' },
+            { term: 'Practice testing', def: 'Dunlosky\u2019s high-utility label for the retrieval family used as study, not as grading.' },
           ],
         },
         { kind: 'heading', text: 'Check Yourself' },
@@ -901,6 +984,24 @@ export const foundationLearning: KnowledgeDomainFile = {
               options: ['Reread the whole chapter once more', 'Mark the gaps — the targeted restudy list the final gap-only retrieval then attacks', 'Make the page presentable', 'Preview the next chapter'],
               answer: 1,
               explain: 'Feedback converts the retrieval attempt into a located curriculum: the marked gaps, and only the gaps, get the remaining minutes.',
+            },
+            {
+              q: 'In Gates\u2019s 1917 classroom experiment, recall peaked when recitation took roughly:',
+              options: ['10\u201320% of the study time', '60\u201380% of the study time', 'Exactly 100% of the study time', 'No consistent fraction of time'],
+              answer: 1,
+              explain: 'Reading time ranged from 100% down to 20%; recall peaked at 60\u201380% recitation — and pushing further backfired. Recitation\u2019s adult-replication record is mixed, hence the modern form adds feedback.',
+            },
+            {
+              q: 'Karpicke, Butler and Roediger (2009) surveyed 177 college students: the shares naming rereading versus practicing retrieval as their #1 strategy were:',
+              options: ['84% rereading vs 11% retrieval', '11% rereading vs 84% retrieval', '50% each', '84% retrieval vs 11% rereading'],
+              answer: 0,
+              explain: '84% named rereading first, 11% self-testing — the strategy gap. Dunlosky\u2019s 2013 review grades it the opposite way: practice testing and distributed practice are the only two rated high utility.',
+            },
+            {
+              q: 'In McDermott and colleagues\u2019 2013 7th-grade science classroom study, quizzed questions beat non-quizzed ones on later exams by 18 percentage points:',
+              options: ['Only for short-answer quizzes', 'Only for multiple-choice quizzes', 'Whether the quizzes were multiple-choice or short-answer', 'Only when quizzes were graded'],
+              answer: 2,
+              explain: 'The format mattered far less than the retrieval itself — both formats enhanced later exams, consistent with the classroom programs in Roediger et al. (2011) and McDaniel et al. (2011).',
             },
           ],
         },
