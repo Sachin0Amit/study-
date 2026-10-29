@@ -1,5 +1,23 @@
 import type { KnowledgeTopic } from '../types'
 
+/** CROSS-VERIFY PASS X66 — X73 CONVERGENCE ENRICHMENT (2026-10-29): a
+ *  later CROSSVERIFY run re-walked the same book (Nickle & Barrette-Ng,
+ *  Online Open Genetics, official LibreTexts edition, CC BY-SA — 76
+ *  section pages / 11 chapters harvested and read) after this pass had
+ *  merged, found zero factual disagreements, and re-applied the book
+ *  fragments still absent from origin/main onto THIS lesson
+ *  (grep-verified zero live hits): the full 1/36 chained-probability
+ *  example from §5.5 (two two-thirds-carrier siblings -> two 1/3-carrier
+ *  children -> 1/3 x 1/3 x 1/4 = 1/36 for their child) alongside the
+ *  one-in-sixteen product already here, plus §5.4's ALS
+ *  familial-versus-sporadic caution (5-10% AD familial form involving
+ *  different genes; Stephen Hawking's sporadic case). The same run
+ *  enriched x60's bio-alleles-mullers-morphs with the CFTR/ΔF508/
+ *  Kalydeco G551D precision-medicine ending (§4.7) and x60's
+ *  bio-chromosome-number-structure with John Down 1866/1959 and DYRK
+ *  (§9.3), and aligned x14's PCR annealing range to the book's 45-65
+ *  degrees. See commit CROSSVERIFY-20261029-2 for the full result. */
+
 /** CROSS-VERIFY PASS X66 (2026-10-28): Genetics & Heredity (book 5,
  *  ku-genetics-heredity) cross-verified against T. Timothy Nickle &
  *  Michael J. Barrette-Ng, "Online Open Genetics" (LibreTexts edition,
@@ -106,8 +124,8 @@ export const x66CrossverifyTopics: KnowledgeTopic[] = [
       'Definitive discriminators between modes',
       'Probability chaining through a pedigree',
     ],
-    words: 1582,
-    readMins: 8,
+    words: 1726,
+    readMins: 9,
     addedOn: '2026-10-28',
     blocks: [
       {
@@ -132,7 +150,7 @@ export const x66CrossverifyTopics: KnowledgeTopic[] = [
       },
       {
         kind: 'para',
-        text: "Once the mode is inferred, probability chaining computes concrete risks by multiplying the chances along the family paths. The method: assign genotypes to every person the pedigree constrains, then multiply independent probabilities down each path and sum over alternatives. The book's worked logic in miniature: the unaffected sibling of an AR patient has a known two-thirds chance of being a carrier (three unaffected genotypes out of four Mendelian boxes, one of which is the non-carrier); if that sibling's spouse is also a known carrier, each child faces the carrier-product one half times one half times the affected fraction one quarter — a one-in-sixteen affected risk. Every risk statement in a counseling session is some such product, which is why mode inference comes first: an inference error of one mode multiplies into every downstream number.",
+        text: "Once the mode is inferred, probability chaining computes concrete risks by multiplying the chances along the family paths. The method: assign genotypes to every person the pedigree constrains, then multiply independent probabilities down each path and sum over alternatives. The book's worked logic in miniature: the unaffected sibling of an AR patient has a known two-thirds chance of being a carrier (three unaffected genotypes out of four Mendelian boxes, one of which is the non-carrier); if that sibling's spouse is also a known carrier, each child faces the carrier-product one half times one half times the affected fraction one quarter — a one-in-sixteen affected risk. The chains run longer in real trees: if TWO people are each the unaffected sibling of an affected individual (two-thirds carriers apiece), and each marries an unrelated non-carrier, each of their children is a carrier with two-thirds times one-half — one-third; and if those two children (cousins, in effect) marry each other, their own child faces one-third times one-third times one-quarter — one chance in thirty-six, about a hundredfold a rare recessive's population baseline. Every risk statement in a counseling session is some such product, which is why mode inference comes first: an inference error of one mode multiplies into every downstream number. One final caution about family clustering itself: a disease that repeats in a family is not automatically genetic — most amyotrophic lateral sclerosis is sporadic, with only some five to ten percent of cases inherited in an autosomal-dominant pattern, and the familial and sporadic forms turn out to involve different genes — a distinction Stephen Hawking's case illustrates, being sporadic despite the familiar name the disease carries from Lou Gehrig.",
       },
       { kind: 'example', title: 'Worked Example: Mode Inference from a Textbook Pedigree', steps: [
         'Problem: a pedigree shows affected individuals in every generation; an affected father has an unaffected son, an affected daughter, and an affected son who has an affected son of his own. Females outnumber males among the affected. Infer the mode.',

@@ -102,7 +102,7 @@ export const x60CrossverifyTopics: KnowledgeTopic[] = [
       'FISH: painting chromosomes with fluorescent probes',
     ],
 
-    words: 2330,
+    words: 2383,
     readMins: 12,
     addedOn: '2026-10-26',
     blocks: [
@@ -122,7 +122,7 @@ export const x60CrossverifyTopics: KnowledgeTopic[] = [
       },
       {
         kind: 'para',
-        text: "The vocabulary of counts is precise. An individual with the species-typical chromosome set is euploid; in humans that is 22 pairs of autosomes plus one pair of sex chromosomes. An error in number makes the individual aneuploid, and the two names matter: monosomy is the loss of one chromosome of a pair, trisomy the gain of an extra one. The reason counts are so consequential is gene dosage — cell functions are calibrated to the output of two copies of each gene, so a whole extra or missing chromosome disrupts thousands of calibrated doses at once. Monosomic zygotes missing any autosome invariably fail to develop to birth; most autosomal trisomies fail too. Duplications of some of the smaller chromosomes — 13, 15, 18, 21, 22 — can survive, and among them trisomy 21, Down syndrome, is the most common, with characteristic physical features and delays in growth and cognition.",
+        text: "The vocabulary of counts is precise. An individual with the species-typical chromosome set is euploid; in humans that is 22 pairs of autosomes plus one pair of sex chromosomes. An error in number makes the individual aneuploid, and the two names matter: monosomy is the loss of one chromosome of a pair, trisomy the gain of an extra one. The reason counts are so consequential is gene dosage — cell functions are calibrated to the output of two copies of each gene, so a whole extra or missing chromosome disrupts thousands of calibrated doses at once. Monosomic zygotes missing any autosome invariably fail to develop to birth; most autosomal trisomies fail too. Duplications of some of the smaller chromosomes — 13, 15, 18, 21, 22 — can survive, and among them trisomy 21, Down syndrome, is the most common, with characteristic physical features and delays in growth and cognition. The syndrome carries the name of John Down, who described it in 1866, but its chromosomal basis waited until 1959 to be discovered; part of the cognitive phenotype now traces to having three copies of the DYRK gene, whose excess protein damages neurons in both humans and mice — gene dosage made molecular.",
       },
       {
         kind: 'para',
@@ -241,8 +241,8 @@ export const x60CrossverifyTopics: KnowledgeTopic[] = [
       'Complementation groups assign mutants to genes',
     ],
 
-    words: 2051,
-    readMins: 10,
+    words: 2305,
+    readMins: 12,
     addedOn: '2026-10-26',
     blocks: [
       {
@@ -266,6 +266,10 @@ export const x60CrossverifyTopics: KnowledgeTopic[] = [
       {
         kind: 'para',
         text: "A hypomorph keeps partial function — the leaky mutation, its name suggesting a product that still drips through. Any step can be merely weakened: reduced transcription from a sloppier promoter, a splicing change that slows throughput, a protein that works at half speed. Hypomorphs are usually recessive too, for the same haplosufficiency reason; the white-apricot allele of Drosophila, which tints eyes apricot only when both copies are mutant, is the standard example. Because amorphs and hypomorphs both leave the heterozygote healthy, the great majority of inherited recessive disease alleles in humans are losses of function — the cystic-fibrosis allele the population-genetics lesson counts is one.",
+      },
+      {
+        kind: 'para',
+        text: "Cystic fibrosis is also the mutation story told end to end, and it shows why the allele-level view matters clinically. The disease — the most common life-limiting autosomal recessive condition among people of European heritage, about one birth in 2,500 affected and one person in 25 a carrier — traces to CFTR, an ATP-gated chloride channel of epithelial cell membranes identified by Lap-chee Tsui's group at the University of Toronto, mapped to DNA markers in 1985 and cloned in 1989. More than a thousand mutant alleles are known, and the details differ in therapeutically meaningful ways. The commonest, ΔF508, deletes exactly three nucleotides — one phenylalanine at position 508 of the 1,480-amino-acid protein — enough to misfold the channel in the endoplasmic reticulum so it never reaches the membrane; it accounts for roughly seventy percent of North American cases, and its frequency has prompted speculation that carriers gained an edge against cholera's dehydration. A different lesion, G551D, substitutes aspartic acid for glycine at position 551 and breaks ATP gating — the channel reaches the membrane but will not open. Both are loss-of-function, yet the drug that fixes one does not fix the other: Kalydeco, approved in 2012, binds mutant CFTR and holds it open — but only for G551D carriers of the allele, fewer than five percent of patients, at a cost near a quarter of a million dollars per patient per year. One gene, a thousand alleles, and precision medicine priced per mutation — the morphs vocabulary, cashed out at the pharmacy counter.",
       },
       {
         kind: 'para',

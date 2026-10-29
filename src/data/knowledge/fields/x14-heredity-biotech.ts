@@ -416,7 +416,7 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       'Sanger sequencing: chain termination',
       'Bioreactor-scale production',
     ],
-    words: 2507,
+    words: 2513,
     readMins: 13,
     addedOn: '2026-10-20',
     blocks: [
@@ -445,7 +445,7 @@ export const x14HeredityBiotechTopics: KnowledgeTopic[] = [
       },
       {
         kind: 'para',
-        text: 'The polymerase chain reaction is copying without cloning: a test-tube reaction that amplifies a chosen segment a billion-fold in hours. Each cycle runs three temperatures — denaturation at 94-95 degrees Celsius pries the helix apart; annealing at 50-65 degrees lets short primers base-pair with sequences flanking the target; extension at 72 degrees lets the enzyme synthesize outward from each primer. The enzyme is Taq polymerase from the hot-spring bacterium Thermus aquaticus, heat-proof enough to survive every denaturation step (its lack of proofreading is why fidelity-critical work swaps in Pfu). Specificity lives in primer design: 18-25 nucleotides, 40-60 percent GC, no self-complementarity that would form hairpins or primer-dimers, and a discriminating 3-prime end. Contamination control — separate rooms, aerosol-resistant tips, negative controls — is a professional obsession because the reaction amplifies stray DNA as faithfully as target.',
+        text: 'The polymerase chain reaction is copying without cloning: a test-tube reaction that amplifies a chosen segment a billion-fold in hours. Each cycle runs three temperatures — denaturation at 94-95 degrees Celsius pries the helix apart; annealing at 45-65 degrees (exact temperature depends on primer sequence) lets short primers base-pair with sequences flanking the target; extension at 72 degrees lets the enzyme synthesize outward from each primer. The enzyme is Taq polymerase from the hot-spring bacterium Thermus aquaticus, heat-proof enough to survive every denaturation step (its lack of proofreading is why fidelity-critical work swaps in Pfu). Specificity lives in primer design: 18-25 nucleotides, 40-60 percent GC, no self-complementarity that would form hairpins or primer-dimers, and a discriminating 3-prime end. Contamination control — separate rooms, aerosol-resistant tips, negative controls — is a professional obsession because the reaction amplifies stray DNA as faithfully as target.',
       },
       {
         kind: 'formula',
