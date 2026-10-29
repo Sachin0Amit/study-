@@ -44,6 +44,7 @@ import { x70LibraryOrgPassTopics } from '../src/data/knowledge/fields/x70-librar
 import { x71CrossverifyGeneticsTopics } from '../src/data/knowledge/fields/x71-crossverify-pass'
 import { x72CrossverifyPassTopics } from '../src/data/knowledge/fields/x72-crossverify-pass'
 import { x74LibraryOrgConvergencePassTopics } from '../src/data/knowledge/fields/x74-library-org-pass'
+import { x76LibraryOrgPassTopics } from '../src/data/knowledge/fields/x76-library-org-pass'
 import { x14HeredityBiotechTopics } from '../src/data/knowledge/fields/x14-heredity-biotech'
 import { foundationLearning } from '../src/data/knowledge/fields/foundation-learning'
 import { mathematics } from '../src/data/knowledge/fields/mathematics'
@@ -346,6 +347,9 @@ const IDS = [
   'bio-marine-coastal-habitats',
   'emer-bioinformatics-sequencing-assembly',
   'env-nuclear-fission-fusion',
+  // LIBRARY-ORG 2026-10-30 (X76) — International Law deepening: new chapter
+  'law-states-statehood-territory',
+  'law-jurisdiction-immunity',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

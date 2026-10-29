@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T15:57:49.707Z",
+  "generatedAt": "2026-10-29T16:27:28.004Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 138,
     "books": 138,
-    "chapters": 884,
-    "sections": 4683
+    "chapters": 885,
+    "sections": 4685
   },
   "subjects": [
     {
@@ -31160,8 +31160,8 @@
       "name": "International Law",
       "group": "Law & Justice",
       "tagline": "Law among states",
-      "chapterCount": 3,
-      "sectionCount": 3,
+      "chapterCount": 4,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-international-law-treaty-law",
@@ -31179,8 +31179,28 @@
           ]
         },
         {
-          "id": "ku-international-law-human-rights-law",
+          "id": "ku-international-law-states-territory-and-jurisdiction",
           "number": 2,
+          "title": "States, Territory & Jurisdiction",
+          "shortTitle": "States, Territory & Jurisdiction",
+          "bookId": "ku-international-law",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-law-states-statehood-territory",
+              "number": 2.1,
+              "title": "What Makes a State? Statehood, Recognition and Territory"
+            },
+            {
+              "id": "ku-law-jurisdiction-immunity",
+              "number": 2.2,
+              "title": "Jurisdiction, Immunity and the Reach of National Courts"
+            }
+          ]
+        },
+        {
+          "id": "ku-international-law-human-rights-law",
+          "number": 3,
           "title": "Human Rights Law",
           "shortTitle": "Human Rights Law",
           "bookId": "ku-international-law",
@@ -31188,14 +31208,14 @@
           "sections": [
             {
               "id": "ku-law-international-human-rights",
-              "number": 2.1,
+              "number": 3.1,
               "title": "Human Rights After 1948"
             }
           ]
         },
         {
           "id": "ku-international-law-courts-organizations-and-the-law-of-the-sea",
-          "number": 3,
+          "number": 4,
           "title": "Courts, Organizations & the Law of the Sea",
           "shortTitle": "Courts, Organizations & the Law of the Sea",
           "bookId": "ku-international-law",
@@ -31203,7 +31223,7 @@
           "sections": [
             {
               "id": "ku-law-international-order-courts",
-              "number": 3.1,
+              "number": 4.1,
               "title": "Courts, Organizations and the Law of the Sea: How International Order Is Built"
             }
           ]

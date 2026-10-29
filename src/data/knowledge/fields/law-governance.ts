@@ -5,12 +5,26 @@ import { x34FinalOrphanPassTopics } from './x34-final-orphan-pass'
 import { x45ExamGapPassTopics } from './x45-exam-gap-pass'
 import { x48AllSubjectsSplitPassTopics } from './x48-all-subjects-split-pass'
 import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
+import { x76LibraryOrgPassTopics } from './x76-library-org-pass'
 
 export const lawGovernance: KnowledgeDomainFile = {
   domain: 'Law & Governance',
   blurb:
     'The rules societies write for power — constitutions, courts, treaties and the machinery that makes them hold.',
   topics: [
+    // X76 library-org pass (2026-10-30): the International Law book's new
+    // "States, Territory & Jurisdiction" chapter — statehood (Montevideo
+    // criteria, recognition theories, uti possidetis, self-determination,
+    // succession) and jurisdiction (three jurisdictions, five prescriptive
+    // bases, sovereign/diplomatic immunity, universal jurisdiction, act of
+    // state + comity). Carved against law-international-treaties (OWNS the
+    // VCLT lifecycle — no statehood content), law-international-order-courts
+    // (OWNS ICJ/ICC/UNCLOS zones and the single IHL concept slot — cross-
+    // referenced, not re-taught) and law-international-human-rights (OWNS
+    // the HR machinery). 'Montevideo', 'uti possidetis', 'sovereign
+    // immunity', 'universal jurisdiction', 'diplomatic immunity' were all
+    // ZERO live hits before this pass.
+    ...x76LibraryOrgPassTopics.filter((t) => t.domain === 'Law & Governance'),
     // X58 library-org deepening pass (2026-10-26): amendment and
     // entrenchment — Article V arithmetic, comparative formulas (7/50,
     // double majority), eternity clauses, basic-structure comparative

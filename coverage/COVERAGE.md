@@ -16,8 +16,8 @@
 
 - **Subjects:** 138
 - **Books (master volumes):** 138
-- **Chapters:** 884
-- **Sections (lessons):** 4683
+- **Chapters:** 885
+- **Sections (lessons):** 4685
 
 ## Foundations — 7 subjects
 
@@ -1311,11 +1311,12 @@
 
 ### International Law (`ku-international-law`)
 
-*Law among states* — 3 chapters · 3 sections
+*Law among states* — 4 chapters · 5 sections
 
 - **Ch 1. Treaty Law** `ku-international-law-treaty-law` — 1 sections: How International Treaties Actually Work
-- **Ch 2. Human Rights Law** `ku-international-law-human-rights-law` — 1 sections: Human Rights After 1948
-- **Ch 3. Courts, Organizations & the Law of the Sea** `ku-international-law-courts-organizations-and-the-law-of-the-sea` — 1 sections: Courts, Organizations and the Law of the Sea: How International Order Is Built
+- **Ch 2. States, Territory & Jurisdiction** `ku-international-law-states-territory-and-jurisdiction` — 2 sections: What Makes a State? Statehood, Recognition and Territory; Jurisdiction, Immunity and the Reach of National Courts
+- **Ch 3. Human Rights Law** `ku-international-law-human-rights-law` — 1 sections: Human Rights After 1948
+- **Ch 4. Courts, Organizations & the Law of the Sea** `ku-international-law-courts-organizations-and-the-law-of-the-sea` — 1 sections: Courts, Organizations and the Law of the Sea: How International Order Is Built
 
 ### Regulatory & Workplace Law (`ku-regulatory-workplace-law`)
 

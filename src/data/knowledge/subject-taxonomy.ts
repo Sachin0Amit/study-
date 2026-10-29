@@ -1319,10 +1319,11 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'globe',
     accent: '#0369a1',
     tagline: 'Law among states',
-    blurb: 'Treaty law, human rights law, and the courts and organizations that order the world.',
+    blurb: 'Treaty law, statehood and jurisdiction, human rights law, and the courts and organizations that order the world.',
     ownFields: ['International Law'],
     chapters: [
       { name: 'Treaty Law', branches: ['Treaty Law'] },
+      { name: 'States, Territory & Jurisdiction', branches: ['States & Jurisdiction'] },
       { name: 'Human Rights Law', branches: ['Human Rights Law'] },
       { name: 'Courts, Organizations & the Law of the Sea', branches: ['Institutions & Dispute Settlement'] },
     ],
