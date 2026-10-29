@@ -1194,8 +1194,8 @@ export const foundationLearning: KnowledgeDomainFile = {
         'Zettelkasten: notes that network',
         'Matching the system to the task',
       ],
-      words: 1294,
-      readMins: 6,
+      words: 1826,
+      readMins: 9,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1218,12 +1218,89 @@ export const foundationLearning: KnowledgeDomainFile = {
           text: 'Walter Pauk\'s Cornell method, published in 1949, turns one page into a testing machine. Rule the page into three zones: a narrow cue column on the left, a wide note area on the right, a summary strip along the bottom. During the lecture, notes go right, in your own words, abbreviated. Within a day, distil the cue column — the questions and keywords those notes answer. Then cover the notes and answer your own cues; the summary strip forces one-sentence synthesis. The page is a deck of flashcards that wrote itself.',
         },
         {
+          kind: 'figure',
+          caption:
+            'The Cornell page as Pauk designed it: a narrow cue column on the left, a wide note area on the right, a summary strip along the bottom. Live notes go right, in your own words and abbreviated; within 24 hours the cues are distilled — the questions those notes answer; then cover the note area and answer the cues from memory, and let the summary strip force a one-sentence synthesis. Every zone is a working part: the page is a self-test that wrote itself.',
+          afterConcept: 2,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="The Cornell page: cue column left, note area right, summary strip bottom">
+  <rect x="120" y="60" width="640" height="330" fill="#059669" opacity="0.04"/>
+  <rect x="120" y="60" width="640" height="330" fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round"/>
+  <rect x="116" y="56" width="648" height="338" fill="none" stroke="#8a8a93" stroke-width="1" opacity="0.5"/>
+  <!-- dividers -->
+  <g stroke="#8a8a93" stroke-width="2" stroke-linecap="round">
+    <path d="M320 62 Q318 220 322 386"/>
+    <path d="M122 320 Q440 316 756 322"/>
+  </g>
+  <g stroke="#8a8a93" stroke-width="1" opacity="0.5">
+    <path d="M324 64 Q322 220 326 384"/>
+    <path d="M124 324 Q440 320 754 326"/>
+  </g>
+  <!-- cue column tint + scribbles -->
+  <rect x="122" y="62" width="196" height="256" fill="#d97706" opacity="0.07"/>
+  <g stroke="#d97706" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.85">
+    <path d="M140 92 L296 90"/>
+    <path d="M140 122 L270 121"/>
+    <path d="M140 152 L292 154"/>
+    <path d="M140 182 L252 181"/>
+    <path d="M140 212 L286 184"/>
+    <path d="M140 242 L276 241"/>
+    <path d="M140 272 L298 273"/>
+  </g>
+  <!-- note area scribbles -->
+  <g stroke="#8a8a93" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.8">
+    <path d="M342 92 L736 90"/>
+    <path d="M342 112 L700 111"/>
+    <path d="M342 132 L742 133"/>
+    <path d="M342 162 L664 161"/>
+    <path d="M366 172 L690 171"/>
+    <path d="M342 202 L724 203"/>
+    <path d="M342 222 L596 221"/>
+    <path d="M342 252 L738 253"/>
+    <path d="M342 272 L640 271"/>
+    <path d="M342 292 L706 293"/>
+  </g>
+  <!-- summary strip tint -->
+  <rect x="122" y="324" width="636" height="64" fill="#e11d48" opacity="0.05"/>
+  <g stroke="#8a8a93" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.8">
+    <path d="M140 352 L600 350"/>
+  </g>
+  <!-- labels -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-style="italic">
+    <text x="220" y="412" font-size="14" fill="#d97706" text-anchor="middle">cue column</text>
+    <text x="220" y="432" font-size="12" fill="#8a8a93" text-anchor="middle">questions the notes answer</text>
+    <text x="540" y="412" font-size="14" fill="currentColor" text-anchor="middle">note area</text>
+    <text x="540" y="432" font-size="12" fill="#8a8a93" text-anchor="middle">your own words, abbreviated — live</text>
+    <text x="770" y="356" font-size="13" fill="#e11d48" text-anchor="start">summary strip —</text>
+    <text x="770" y="376" font-size="12" fill="#8a8a93" text-anchor="start">one-sentence</text>
+    <text x="770" y="394" font-size="12" fill="#8a8a93" text-anchor="start">synthesis</text>
+  </g>
+  <!-- workflow arrows -->
+  <g fill="none" stroke="#059669" stroke-width="1.6" stroke-dasharray="4 4" stroke-linecap="round">
+    <path d="M320 96 C 300 80 260 76 232 84"/>
+    <path d="M540 300 C 520 296 500 292 486 288"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#059669">
+    <text x="60" y="76">within 24 hours:</text>
+    <text x="60" y="94">distill the cues</text>
+    <text x="356" y="286">cover the notes, answer the cues</text>
+  </g>
+</svg>`
+        },
+        {
+          kind: 'para',
+          text: 'Cornell earns its keep only after the lecture, and the conversion has a clock on it. Within twenty-four hours — while the lecture still has shape in memory — distill the cue column: the questions those notes answer, written as questions, because cues drafted a week later are guesses. From there the page plugs into the scheduling machinery the spaced repetition lesson owns: first cover-and-test within a day, again inside the week, then at expanding intervals, with every missed cue marked for the next round. The exam-facing version maps cues against the syllabus and past papers: a cue the question style never asks can wait; a cue that keeps failing is a drill target. The note page becomes one station in a retrieval pipeline rather than a static archive.',
+        },
+        {
           kind: 'para',
           text: 'Outlining records hierarchy: main point, sub-point, evidence, indented beneath. It suits material that arrives already structured — textbook chapters, well-signposted lectures, legal judgments — and it trains a single powerful question of every sentence: at what level does this live? Its weakness is speed under fire: a fast lecturer outruns tidy indentation, and relationships that are not trees — two causes feeding one effect — get flattened. Outlines excel as the format for reorganising material you already partly understand.',
         },
         {
           kind: 'para',
           text: 'Mind maps put the topic in the centre and radiate branches outward, refusing linearity. They surface connections and gaps, which makes them strong for brainstorming, revision overviews and subjects whose structure you do not yet know — the map discovers it. They are weak for dense sequential argument and anything you must quote precisely, and they scale badly on paper: past a few dozen nodes the picture becomes soup. Best used as the frontispiece to a denser system, not the system.',
+        },
+        {
+          kind: 'para',
+          text: 'Live lectures add a triage problem the systems above assume away: a lecturer speaks at roughly three hundred words a minute and you write at about seventy-five. The fix is to write structure, not sentences — the skeleton of the argument, abbreviations, arrows — and to leave deliberate gaps whenever attention falls behind, marking a “?” where something was missed instead of inventing plausible filler. The gap is an honest debt the post-lecture pass collects: the textbook, a classmate or the recording settles it within the day, and the cue conversion doubles as the checklist that nothing was left unsettled. Students who fabricate during the lecture encode the fabrication; the blank-with-a-question-mark costs one moment of honesty and buys a correctable note.',
         },
         {
           kind: 'para',
@@ -1262,6 +1339,7 @@ export const foundationLearning: KnowledgeDomainFile = {
           { term: 'mind map', def: 'A radial diagram placing a central topic in the middle with branches for sub-ideas.' },
           { term: 'Zettelkasten', def: 'A slip-box or digital system of atomic, densely linked notes in one\'s own words.' },
           { term: 'atomic note', def: 'A Zettelkasten unit: one idea per note, phrased for reuse and linking.' },
+          { term: 'cue conversion', def: 'Distilling the day\'s notes into cue questions within 24 hours so the page becomes a self-test.' },
         ] },
         { kind: 'heading', text: 'Check Yourself' },
         { kind: 'quiz', items: [
@@ -1288,6 +1366,24 @@ export const foundationLearning: KnowledgeDomainFile = {
             options: ['a mind map', 'an outline mirroring the source hierarchy', 'verbatim transcription', 'no notes — just re-reading three times'],
             answer: 1,
             explain: 'Structured sources arrive as trees, and outlines are tree-shaped; maps suit unknown structure, not known structure.',
+          },
+          {
+            q: 'When should the Cornell cue column be written, and why?',
+            options: ['A week later, once the material has settled', 'Within 24 hours, while the lecture still has shape in memory', 'Never — the lecturer provides the cues', 'Only during the final revision week'],
+            answer: 1,
+            explain: 'Cues drafted a week later are guesses; the conversion has a clock on it, and only after it does the page plug into the spaced schedule.',
+          },
+          {
+            q: 'When the lecturer outruns your pen, the tactic is to:',
+            options: ['write faster in full sentences', 'invent plausible filler so the page stays complete', 'leave a marked “?” gap and settle it from the textbook or recording the same day', 'stop taking notes entirely'],
+            answer: 2,
+            explain: 'Fabricated notes encode fabrication; the marked gap is honest debt the post-lecture pass collects — and the cue conversion checks nothing was left unsettled.',
+          },
+          {
+            q: 'For revising unknown, tangled territory, the best-fit format is:',
+            options: ['a mind map, to discover the shape', 'verbatim transcription', 'a Zettelkasten from day one', 'highlighting only'],
+            answer: 0,
+            explain: 'Maps surface connections and gaps when structure is unknown — the map discovers it; outlines mirror structure you already know.',
           },
         ] },
         {

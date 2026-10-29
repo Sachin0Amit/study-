@@ -288,6 +288,8 @@ const IDS = [
   'study-exam-strategy',
   'fnd-deliberate-practice',
   'fnd-learning-styles-myth',
+  'study-note-taking-systems',
+  'fnd-habits-behavior-design',
   'psy-behaviourist-learning',
   'psy-memory-multistore-brain',
   'mind-specific-phobia-biopsychosocial',

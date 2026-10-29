@@ -414,8 +414,8 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
         'Friction and context design',
         'Lapse recovery: never miss twice',
       ],
-      words: 1464,
-      readMins: 7,
+      words: 1983,
+      readMins: 10,
       addedOn: '2026-10-25',
       blocks: [
         {
@@ -435,11 +435,75 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
         },
         {
           kind: 'para',
+          text: 'How much of daily life runs on this machinery? Diary research by Wendy Wood and colleagues put the share at roughly forty per cent: about 43% of everyday actions were performed almost daily and usually in the same context — repeated, cue-triggered, barely thought about. That share is the strategic point for a student: whichever study system you run, most of its showings-up will be habit-driven whether you designed them or not. Behavior design is the decision to author that forty per cent deliberately — choosing which actions become automatic — instead of inheriting whatever the environment happened to train.',
+        },
+        {
+          kind: 'para',
           text: 'Habit formation has three phases. Initiation: select one small behavior and one consistent context — the when-and-where decision, which is itself the design act. Learning: repeat the behavior in that same context; through associative learning the context and the action fuse, each repetition strengthening the link. Stability: the habit is formed and now maintains itself with minimal effort — the behavior has become, as participants in the classic study put it, second nature, something they felt strange not doing.',
         },
         {
           kind: 'para',
           text: 'How long does the learning phase take? The best-known real-world study — Lally and colleagues, volunteers installing one new daily behavior each — measured daily self-reported automaticity and watched it rise fast, then decelerate, then plateau. The average plateau arrived around 66 days. The honest fine print: that figure is a median over the subset of participants whose data fit the model, and individual estimates ranged from 18 to 254 days — a fourteenfold spread. Behavior type mattered too: drinking a glass of water plateaued near 59 days, eating behaviors near 65, exercise near 91. So treat "66 days" as a planning midpoint, not a deadline — and as a reason to distrust any product promising a habit in a week.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The automaticity curve the Lally study actually measured: daily repetitions in the same context drive self-rated automaticity up steeply at first, then decelerating, until the behavior plateaus — the stability phase where the habit runs itself. The median plateau arrived near 66 days, but individual estimates ranged from 18 to 254 days, and behavior type shifted the midpoint (drinking water near 59, exercise near 91). Read it as a planning curve, not a countdown: the question is never “am I at day 66?” but “which phase am I in?”',
+          afterConcept: 4,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="Automaticity rises fast then plateaus: median 66 days, individual range 18 to 254 days">
+  <g fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round">
+    <path d="M84 54 Q82 220 86 392"/>
+    <path d="M82 388 Q300 392 540 387 Q700 391 834 386"/>
+  </g>
+  <g fill="none" stroke="#8a8a93" stroke-width="1" opacity="0.5" stroke-linecap="round">
+    <path d="M89 56 Q87 220 91 390"/>
+    <path d="M79 393 Q300 397 540 392 Q700 396 831 391"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" fill="currentColor">
+    <text x="32" y="224" font-size="15" font-style="italic" text-anchor="middle" transform="rotate(-90 32 224)">Automaticity (self-rated)</text>
+    <text x="836" y="448" font-size="15" font-style="italic" text-anchor="end">Days of daily repetitions in the same context</text>
+    <g font-size="11.5" fill="#8a8a93" text-anchor="middle">
+      <text x="86" y="380">0</text><text x="237" y="380">62</text><text x="388" y="380">125</text><text x="539" y="380">188</text><text x="690" y="380">250</text>
+    </g>
+  </g>
+  <!-- individual-range band 18..254 days -->
+  <rect x="112" y="70" width="578" height="316" fill="#059669" opacity="0.05"/>
+  <g stroke="#8a8a93" stroke-width="1.4" stroke-dasharray="5 5" opacity="0.75">
+    <line x1="112" y1="62" x2="112" y2="388"/>
+    <line x1="690" y1="62" x2="690" y2="388"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#8a8a93" text-anchor="middle">
+    <text x="112" y="52">18 days — fastest</text>
+    <text x="664" y="52">254 days — slowest</text>
+  </g>
+  <!-- median marker -->
+  <line x1="229" y1="62" x2="229" y2="388" stroke="#d97706" stroke-width="2" stroke-dasharray="7 6" opacity="0.9"/>
+  <text x="237" y="86" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-style="italic" fill="#d97706">~66-day median plateau</text>
+  <!-- the automaticity curve: steep rise, decelerate, plateau -->
+  <g fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" opacity="0.97">
+    <path d="M88 396 C 110 330 128 258 148 214 C 166 176 186 152 210 140 C 250 121 300 118 360 116 C 470 113 600 112 700 112 C 740 112 780 112 812 113"/>
+  </g>
+  <g fill="none" stroke="#059669" stroke-width="1" opacity="0.45" stroke-linecap="round">
+    <path d="M92 399 C 114 333 132 261 152 218 C 170 180 190 156 214 144 C 254 125 304 122 364 120 C 474 117 604 116 704 116 C 744 116 782 116 810 117"/>
+  </g>
+  <!-- phase brackets -->
+  <g fill="none" stroke="#8a8a93" stroke-width="1.6" stroke-linecap="round">
+    <path d="M90 404 L90 412 L150 412 L150 404"/>
+    <path d="M150 404 L150 412 L228 412 L228 404"/>
+    <path d="M228 404 L228 412 L700 412 L700 404"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="currentColor" text-anchor="middle">
+    <text x="120" y="430">initiation</text>
+    <text x="189" y="430">learning</text>
+    <text x="464" y="430">stability — the habit runs itself</text>
+  </g>
+  <!-- curve label -->
+  <text x="470" y="170" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="currentColor">rise, decelerate, plateau</text>
+</svg>`
+        },
+        {
+          kind: 'para',
+          text: 'What cements the link during the learning phase is the reward that follows the routine. Habits consolidate when performance is followed by something the brain registers as worth repeating — the checked box, the streak, the small relief of a finished set. The research caution is on extrinsic payoffs: the meta-analysis by Deci, Koestner and Ryan found tangible rewards can undermine intrinsic motivation for interesting tasks, and when the payment stops the behavior often collapses with it. Keep the reward small, immediate and attached to the act — the calendar cross from the worked example — and let the growing automaticity itself become the payoff: the habit that costs nothing to start is its own best reward.',
         },
         {
           kind: 'para',
@@ -490,6 +554,8 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
             { term: 'Context consistency', def: 'Repeating the behavior in the same time and place so the cue–action link strengthens.' },
             { term: 'Friction design', def: 'Lowering steps and effort for the desired behavior while raising them for rivals.' },
             { term: 'Never miss twice', def: 'The lapse rule: one miss is noise; two consecutive misses trigger shrinking the behavior.' },
+            { term: 'Cue stacking', def: 'Bolting a new behavior onto an existing stable habit so the old routine becomes the new cue.' },
+            { term: 'Stability phase', def: 'The plateau region where the habit maintains itself with minimal effort — strange not to do.' },
           ],
         },
         { kind: 'heading', text: 'Check Yourself' },
@@ -519,6 +585,24 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
               options: ['Resets the habit formation clock', 'Barely dented automaticity and recovered quickly', 'Destroyed the habit permanently', 'Improved automaticity'],
               answer: 1,
               explain: 'One omission moved the automaticity rating by under half a point; cascades of misses, not single lapses, are what kill habits.',
+            },
+            {
+              q: 'Roughly what share of everyday actions runs on habit-like automaticity, per the diary research?',
+              options: ['About 5%', 'About 20%', 'About 43%', 'About 90%'],
+              answer: 2,
+              explain: 'Wood and colleagues\' diaries: about 43% of daily actions were performed almost daily in the same context — behavior design means authoring that share deliberately.',
+            },
+            {
+              q: 'The research caution on extrinsic rewards for a study habit is that:',
+              options: ['They always speed habit formation', 'Tangible payoffs can undermine intrinsic motivation, so the behavior may collapse when they stop', 'Rewards are irrelevant to habits', 'Only punishments build durable habits'],
+              answer: 1,
+              explain: 'The Deci, Koestner and Ryan meta-analysis is the caution; keep rewards small, immediate and attached to the act — the calendar cross, not a payment scheme.',
+            },
+            {
+              q: 'After missing two evenings in a row, the lesson\'s rule says:',
+              options: ['Double the next session to catch up', 'Shrink the behavior until it fits the worst day — ten cards become two', 'Restart the habit from day one', 'Switch to a different habit'],
+              answer: 1,
+              explain: 'Protect the cue–context link; volume is recoverable, the link is what decays — exactly the worked example\'s shrink-to-two-cards rule.',
             },
           ],
         },
