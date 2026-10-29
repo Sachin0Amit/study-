@@ -4,8 +4,10 @@
  * X12 — Keyboard Dojo: the advanced typing trainer.
  *
  * A full typing laboratory inside StudyVerse:
- *  · 6 test modes — Time (15/30/60/120s), Words (10-100), Quotes (S/M/L),
- *    real Code snippets (TS/JS/Py/C), a 12-step Drill curriculum, Custom text
+ *  · 7 test modes — the Touch Typing Course (12 chapters / 50 lessons,
+ *    home row → full keyboard, TypingMaster-style pass gates + stars),
+ *    Time (15/30/60/120s), Words (10-100), Quotes (S/M/L), real Code
+ *    snippets (TS/JS/Py/C), a 12-step Drill curriculum, Custom text
  *  · live engine — per-character feedback, smooth caret, live WPM/accuracy HUD,
  *    per-second raw/net series, ghost race against your PB pace
  *  · difficulty modifiers — punctuation, numbers, Iron (strict), Blind (no
@@ -32,6 +34,7 @@ import {
 } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
+  ArrowLeft,
   ArrowRight,
   AtSign,
   BarChart3,
@@ -370,8 +373,24 @@ function FingerKeyboard({
   nextShift?: 'l' | 'r' | null
   legend?: boolean
 }) {
-  const taught = useMemo(() => new Set(taughtKeys.toLowerCase().split('')), [taughtKeys])
-  const fresh = useMemo(() => new Set(newKeys.toLowerCase().split('')), [newKeys])
+  const taught = useMemo(() => {
+    const s = new Set<string>()
+    for (const ch of taughtKeys.toLowerCase()) {
+      s.add(ch)
+      const base = SHIFTED_TO_BASE[ch]
+      if (base) s.add(base)
+    }
+    return s
+  }, [taughtKeys])
+  const fresh = useMemo(() => {
+    const s = new Set<string>()
+    for (const ch of newKeys.toLowerCase()) {
+      s.add(ch)
+      const base = SHIFTED_TO_BASE[ch]
+      if (base) s.add(base)
+    }
+    return s
+  }, [newKeys])
 
   const isNext = (k: string) => nextKey === k
   const keyWidth = (w: FingerKey['w']) =>
@@ -532,7 +551,8 @@ function StarsRow({ stars, size = 'md', pop = false }: { stars: number; size?: '
 
 /** big keycap used in lesson intros */
 function LessonKeyCap({ ch }: { ch: string }) {
-  const code = FINGER_CODE[ch.toLowerCase()] ?? 'th'
+  const base = SHIFTED_TO_BASE[ch] ?? ch
+  const code = FINGER_CODE[base.toLowerCase()] ?? 'th'
   return (
     <div className="flex flex-col items-center gap-1.5">
       <span
@@ -987,6 +1007,14 @@ interface LessonOutcome {
   goalAcc: number
 }
 
+/** stars for a course lesson attempt — 0 = gate missed */
+function starsForLesson(les: CourseLesson, wpm: number, acc: number): number {
+  if (wpm < les.goalWpm || acc < les.goalAcc) return 0
+  if (wpm >= Math.round(les.goalWpm * 1.4) && acc >= Math.min(100, les.goalAcc + 4)) return 3
+  if (wpm >= Math.round(les.goalWpm * 1.2) && acc >= Math.min(100, les.goalAcc + 2)) return 2
+  return 1
+}
+
 export function TypingView() {
   const ensureDevice = useStudy((s) => s.ensureDevice)
 
@@ -1328,18 +1356,58 @@ export function TypingView() {
     if (!days.includes(todayKey())) saveDays([...days, todayKey()])
     setStreak(streakFromDays(loadDays()))
 
+    /* ---- course lesson grading (pass gates + stars, best record kept) ---- */
+    if (c.mode === 'course') {
+      const les = courseLessonById(String(c.param || ''))
+      if (les) {
+        const stars = starsForLesson(les, wpm, accuracy)
+        const passed = stars > 0
+        const prog = loadCourse() // fresh read — no stale-closure risk in this callback
+        const prev = prog[les.id]
+        const firstClear = passed && !prev?.passed
+        const improved = passed && !!prev?.passed && (stars > prev.stars || wpm > prev.wpm)
+        const merged: Record<string, LessonRecord> = {
+          ...prog,
+          [les.id]: {
+            passed: !!prev?.passed || passed,
+            stars: Math.max(prev?.stars ?? 0, stars),
+            wpm: Math.max(prev?.wpm ?? 0, wpm),
+            acc: Math.max(prev?.acc ?? 0, accuracy),
+            at: res.at,
+          },
+        }
+        setCourseProg(merged)
+        saveCourse(merged)
+        setLessonOutcome({
+          passed,
+          stars,
+          firstClear,
+          improved,
+          goalWpm: les.goalWpm,
+          goalAcc: les.goalAcc,
+        })
+        if (firstClear) {
+          burstConfetti({ count: 70, power: 1 })
+          toast.success(`Lesson ${les.n} cleared — ${les.title}`, {
+            description: `${wpm} wpm at ${accuracy}% (gate ${les.goalWpm} wpm / ${les.goalAcc}%) · ${stars} star${stars > 1 ? 's' : ''}`,
+          })
+        }
+      }
+    }
+
     setResult(res)
     setPhaseSafe('done')
 
-    if (isPb) {
+    if (isPb && c.mode !== 'course') {
       burstConfetti({ count: 80, power: 1.1 })
       toast.success(`New personal best — ${wpm} WPM`, {
         description: `${configLabel(c)} · ${accuracy}% accuracy`,
       })
     }
 
-    /* ---- server leaderboard (anonymous, device-scoped) ---- */
-    if (wpm >= 8 && res.durationSec >= 8 && accuracy >= 60) {
+    /* ---- server leaderboard (anonymous, device-scoped; course lessons keep
+           their own star grades and stay off the competitive board) ---- */
+    if (c.mode !== 'course' && wpm >= 8 && res.durationSec >= 8 && accuracy >= 60) {
       const deviceId = ensureDevice()
       fetch('/api/typing/results', {
         method: 'POST',
@@ -1661,13 +1729,33 @@ export function TypingView() {
   const drillPb = drillDef ? pbs[`drill-${drillDef.id}`] : undefined
 
   const nextKey = useMemo(() => {
-    if (cfg.mode !== 'drill' || phase === 'done') return undefined
+    if ((cfg.mode !== 'drill' && cfg.mode !== 'course') || phase === 'done') return undefined
     const word = words[pos.w]
     if (!word) return undefined
     if (pos.c >= word.chars.length) return ' '
     const ch = word.chars[pos.c].char
-    return ch === ' ' ? ' ' : ch.toLowerCase()
+    if (ch === ' ') return ' '
+    return SHIFTED_TO_BASE[ch] ?? ch.toLowerCase()
   }, [cfg.mode, phase, words, pos])
+
+  /** course mode: which Shift the next char needs — always the OPPOSITE hand */
+  const nextShift = useMemo<'l' | 'r' | null>(() => {
+    if (cfg.mode !== 'course' || phase === 'done') return null
+    const word = words[pos.w]
+    if (!word || pos.c >= word.chars.length) return null
+    const ch = word.chars[pos.c].char
+    const base = SHIFTED_TO_BASE[ch] ?? (/^[A-Z]$/.test(ch) ? ch.toLowerCase() : null)
+    if (!base) return null
+    return LEFT_HAND_KEYS.has(base) ? 'r' : 'l'
+  }, [cfg.mode, phase, words, pos])
+
+  /** the active course lesson (undefined on the course-home screen) */
+  const activeLesson = useMemo(
+    () => (cfg.mode === 'course' ? courseLessonById(String(cfg.param || '')) : undefined),
+    [cfg.mode, cfg.param]
+  )
+  const courseHomeMode = cfg.mode === 'course' && !activeLesson
+  const nextUp = activeLesson ? lessonAfter(activeLesson.n) : undefined
 
   const bestWpm = useMemo(() => Math.max(0, ...history.map((h) => h.wpm)), [history])
   const avg10 = useMemo(() => {
@@ -1769,8 +1857,8 @@ export function TypingView() {
               Keyboard <span className="text-emerald-500 dark:text-emerald-300">Dojo</span>
             </h1>
             <p className="text-xs text-muted-foreground sm:text-[13px]">
-              The typing laboratory — timed sprints, quotes, real code, a 12-step drill
-              curriculum and per-key forensics.
+              The typing laboratory — a 50-lesson touch-typing course from home row to
+              mastery, plus timed sprints, quotes, real code, drills and per-key forensics.
             </p>
           </div>
         </div>
@@ -1809,7 +1897,9 @@ export function TypingView() {
                               ? paramMemRef.current.code
                               : m.id === 'drill'
                                 ? paramMemRef.current.drill
-                                : ''
+                                : m.id === 'course'
+                                  ? paramMemRef.current.course
+                                  : ''
                     return (
                       <button
                         key={m.id}
@@ -1965,7 +2055,8 @@ export function TypingView() {
                   </div>
                 )}
 
-                {/* modifiers */}
+                {/* modifiers (practice modes only — the course teaches clean) */}
+                {cfg.mode !== 'course' && (
                 <div className="mt-3 flex flex-wrap items-center gap-1.5 border-t border-border/60 pt-3">
                   <span className="mr-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                     modifiers
@@ -2000,11 +2091,23 @@ export function TypingView() {
                     )
                   })}
                 </div>
+                )}
               </motion.div>
             ) : null}
           </AnimatePresence>
 
           {/* ---------- surface / results ---------- */}
+          {courseHomeMode ? (
+            <CourseHome
+              prog={courseProg}
+              onPick={(id) => applyCfg({ ...cfgRef.current, mode: 'course', param: id })}
+              onReset={() => {
+                const empty: Record<string, LessonRecord> = {}
+                setCourseProg(empty)
+                saveCourse(empty)
+              }}
+            />
+          ) : (
           <AnimatePresence mode="wait">
             {phase !== 'done' ? (
               <motion.div
@@ -2015,6 +2118,99 @@ export function TypingView() {
                 transition={{ duration: 0.18 }}
                 className="mt-4"
               >
+                {/* course lesson intro — the teaching card */}
+                {cfg.mode === 'course' && activeLesson && phase === 'idle' && (
+                  <div className="mb-4 rounded-xl border border-emerald-500/25 bg-gradient-to-br from-emerald-500/[0.07] via-transparent to-amber-300/[0.05] p-4">
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      <div className="min-w-0 flex-1">
+                        <div className="flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-300">
+                          <BookOpen className="h-3.5 w-3.5" />
+                          Chapter {activeLesson.ch} · Lesson {activeLesson.n} of {TOTAL_LESSONS}
+                          {courseProg[activeLesson.id]?.passed && (
+                            <span className="flex items-center gap-1 rounded-full bg-emerald-500/15 px-2 py-0.5 normal-case tracking-normal">
+                              <CheckCircle2 className="h-3 w-3" /> cleared · best{' '}
+                              {courseProg[activeLesson.id].wpm} wpm
+                            </span>
+                          )}
+                        </div>
+                        <h3 className="mt-1 text-lg font-bold tracking-tight">{activeLesson.title}</h3>
+                        <p className="mt-1.5 max-w-2xl text-[13px] leading-relaxed text-muted-foreground">
+                          <Lightbulb className="mr-1 inline h-3.5 w-3.5 shrink-0 text-amber-500" />
+                          {activeLesson.tip}
+                        </p>
+                      </div>
+                      <div className="flex shrink-0 flex-col items-end gap-1.5">
+                        <span className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                          <Target className="h-3.5 w-3.5 text-emerald-500" /> pass gate
+                        </span>
+                        <span className="font-mono text-sm font-bold">
+                          {activeLesson.goalWpm} wpm <span className="text-muted-foreground">·</span>{' '}
+                          {activeLesson.goalAcc}%
+                        </span>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => applyCfg({ ...cfgRef.current, mode: 'course', param: '' })}
+                          className="h-7 gap-1 px-2 text-[11px] text-muted-foreground hover:text-foreground"
+                        >
+                          <ArrowLeft className="h-3 w-3" /> all lessons
+                        </Button>
+                      </div>
+                    </div>
+                    {activeLesson.ch === 8 ? (
+                      <div className="mt-3 flex flex-wrap items-center gap-3">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                          number pad
+                        </span>
+                        <NumpadMini />
+                        <span className="max-w-xs text-[11px] leading-relaxed text-muted-foreground">
+                          right hand: index on 4, middle on 5, ring on 6 — the thumb rides 0.
+                        </span>
+                      </div>
+                    ) : activeLesson.newKeys === 'shift' ? (
+                      <div className="mt-3 flex flex-wrap items-center gap-2.5 text-[12px] text-muted-foreground">
+                        <span className="rounded-lg border-2 border-amber-400/60 bg-amber-400/10 px-3 py-1.5 font-mono text-sm font-bold text-amber-600 dark:text-amber-300">
+                          shift ⇧
+                        </span>
+                        hold it with the{' '}
+                        <span className="font-semibold text-foreground">opposite-hand pinky</span> while
+                        the finger strikes — never twist one hand across the keyboard
+                      </div>
+                    ) : activeLesson.newKeys ? (
+                      <div className="mt-3 flex flex-wrap items-center gap-3">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                          new keys
+                        </span>
+                        {activeLesson.newKeys.split('').map((k) => (
+                          <LessonKeyCap key={k} ch={k} />
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="mt-3 flex flex-wrap items-center gap-2 text-[12px] text-muted-foreground">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" /> review lesson — every
+                        key is already yours; polish the rhythm
+                      </div>
+                    )}
+                  </div>
+                )}
+                {/* course lesson compact bar (running) */}
+                {cfg.mode === 'course' && activeLesson && phase === 'running' && (
+                  <div className="mb-3 flex flex-wrap items-center justify-between gap-2 rounded-lg border border-border/60 bg-muted/30 px-3 py-1.5 text-[12px]">
+                    <span className="min-w-0 truncate font-semibold">
+                      L{activeLesson.n} · {activeLesson.title}
+                    </span>
+                    <span className="flex shrink-0 items-center gap-2 font-mono text-muted-foreground">
+                      goal {activeLesson.goalWpm} wpm / {activeLesson.goalAcc}%
+                      <button
+                        onClick={() => applyCfg({ ...cfgRef.current, mode: 'course', param: '' })}
+                        className="rounded border border-border/70 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
+                      >
+                        exit
+                      </button>
+                    </span>
+                  </div>
+                )}
+
                 {/* HUD */}
                 <div className="mb-3 flex items-center justify-between gap-3 font-mono text-[12px] text-muted-foreground">
                   <span className="flex items-center gap-1.5">
@@ -2186,6 +2382,20 @@ export function TypingView() {
                     />
                   </div>
                 )}
+
+                {/* live course keyboard — the teaching aid: finger colors, NEW
+                    keys ringed, next key lit, opposite Shift glowing for capitals */}
+                {cfg.mode === 'course' && activeLesson && (
+                  <div className="mt-4 overflow-x-auto pb-1">
+                    <FingerKeyboard
+                      taughtKeys={activeLesson.keys}
+                      newKeys={activeLesson.newKeys === 'shift' ? '' : activeLesson.newKeys}
+                      nextKey={nextKey}
+                      nextShift={nextShift}
+                      legend
+                    />
+                  </div>
+                )}
               </motion.div>
             ) : (
               /* ---------- results ---------- */
@@ -2205,6 +2415,78 @@ export function TypingView() {
                       New personal best for {result.label}
                       {result.prevPbWpm !== undefined ? ` — up from ${result.prevPbWpm} wpm` : ''}
                       {typeof result.rank === 'number' ? ` · leaderboard #${result.rank}` : ''}
+                    </div>
+                  )}
+
+                  {/* course lesson verdict — the TypingMaster pass gate */}
+                  {cfg.mode === 'course' && activeLesson && lessonOutcome && (
+                    <div
+                      className={cn(
+                        'mb-4 rounded-xl border p-4',
+                        lessonOutcome.passed
+                          ? 'border-emerald-500/40 bg-emerald-500/[0.08]'
+                          : 'border-amber-500/40 bg-amber-500/[0.06]'
+                      )}
+                    >
+                      <div className="flex flex-wrap items-center justify-between gap-3">
+                        <div className="min-w-0">
+                          <div className="flex items-center gap-2 text-[13px] font-bold">
+                            {lessonOutcome.passed ? (
+                              <>
+                                <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />
+                                Lesson {activeLesson.n} cleared
+                                {lessonOutcome.firstClear
+                                  ? ' — first clear!'
+                                  : lessonOutcome.improved
+                                    ? ' — new record!'
+                                    : ''}
+                              </>
+                            ) : (
+                              <>
+                                <Target className="h-4 w-4 shrink-0 text-amber-500" />
+                                Gate missed — {lessonOutcome.goalWpm} wpm at {lessonOutcome.goalAcc}%
+                                needed
+                              </>
+                            )}
+                          </div>
+                          <p className="mt-0.5 text-[12px] text-muted-foreground">
+                            You typed {result.wpm} wpm at {result.accuracy}%
+                            {lessonOutcome.passed
+                              ? ` — ${lessonOutcome.stars >= 3 ? 'flawless' : lessonOutcome.stars === 2 ? 'strong' : 'clean'} pass.`
+                              : result.wpm < lessonOutcome.goalWpm
+                                ? '. Slow down and aim for pure accuracy — speed follows rhythm.'
+                                : '. Almost — a few too many slips; retry calmly and watch the lit key.'}
+                          </p>
+                        </div>
+                        {lessonOutcome.passed && <StarsRow stars={lessonOutcome.stars} size="lg" pop />}
+                      </div>
+                      <div className="mt-3 flex flex-wrap items-center gap-2">
+                        {lessonOutcome.passed && nextUp ? (
+                          <Button
+                            onClick={() =>
+                              applyCfg({ ...cfgRef.current, mode: 'course', param: nextUp.id })
+                            }
+                            className="gap-1.5 bg-emerald-600 text-white hover:bg-emerald-500 dark:bg-emerald-500 dark:text-emerald-950 dark:hover:bg-emerald-400"
+                          >
+                            Next: L{nextUp.n} {nextUp.title} <ArrowRight className="h-3.5 w-3.5" />
+                          </Button>
+                        ) : lessonOutcome.passed ? (
+                          <span className="flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1.5 text-[12px] font-semibold text-amber-700 dark:text-amber-200">
+                            <Trophy className="h-3.5 w-3.5" /> Course complete — all {TOTAL_LESSONS}{' '}
+                            lessons cleared!
+                          </span>
+                        ) : null}
+                        <Button variant="outline" onClick={() => applyCfg(cfgRef.current)} className="gap-1.5">
+                          <RotateCcw className="h-3.5 w-3.5" /> Retry lesson
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          onClick={() => applyCfg({ ...cfgRef.current, mode: 'course', param: '' })}
+                          className="gap-1.5 text-muted-foreground hover:text-foreground"
+                        >
+                          <ArrowLeft className="h-3.5 w-3.5" /> All lessons
+                        </Button>
+                      </div>
                     </div>
                   )}
                   <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
@@ -2267,6 +2549,7 @@ export function TypingView() {
                     <WpmChart result={result} />
                   </div>
 
+                  {!(cfg.mode === 'course' && lessonOutcome) && (
                   <div className="mt-4 flex flex-wrap items-center gap-2">
                     <Button
                       onClick={() => applyCfg(cfgRef.current)}
@@ -2284,10 +2567,12 @@ export function TypingView() {
                       </span>
                     )}
                   </div>
+                  )}
                 </motion.div>
               )
             )}
           </AnimatePresence>
+          )}
         </CardContent>
       </Card>
 
