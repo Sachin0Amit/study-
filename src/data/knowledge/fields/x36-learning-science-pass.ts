@@ -630,9 +630,11 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
         'Retrieval as a measuring instrument',
         'Beginners overestimate',
         'Close the loop: reflect and adjust',
+        'Judgments of learning, delayed',
+        'The Brier score and bias arithmetic',
       ],
-      words: 1376,
-      readMins: 7,
+      words: 2951,
+      readMins: 15,
       addedOn: '2026-10-25',
       blocks: [
         {
@@ -651,8 +653,71 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
           text: 'The self-regulation cycle runs in five steps, and it is worth memorizing as a loop rather than a list. First, assess the task: be sure you understand what you are actually being asked to do — the end goal, the format, the standard — because strategy choice depends on it. Second, evaluate strengths and weaknesses: given the task, what can you already do and where will you need support? Third, plan: which strategies, which resources, how many sessions, what order. Fourth, apply and monitor: work the plan while checking in on what you are actually learning, not what you are merely touching. Fifth, reflect and adjust: after the task, judge whether the plan worked, and replace the strategies that did not. Then the loop runs again on the next task, a little better.',
         },
         {
+          kind: 'figure',
+          caption:
+            'The five-step self-regulation cycle drawn as the loop it is: assess the task, evaluate strengths and weaknesses, plan, apply and monitor, reflect and adjust — then the loop runs again on the next task, a little better. In Nelson and Narens\' two-level picture, the upward strokes are monitoring (information rising from the object level of study to the meta level) and the downward strokes are control (commands falling back on the study itself).',
+          afterConcept: 2,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" role="img" aria-label="The five-step self-regulation cycle as a loop: assess the task, evaluate strengths and weaknesses, plan, apply and monitor, reflect and adjust">
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <!-- wobbly step nodes -->
+    <g fill="none" stroke-width="2.4" stroke-linecap="round">
+      <path d="M330 56 Q440 49 550 55 Q557 72 551 89 Q440 97 331 90 Q323 72 330 56 Z" stroke="#059669"/>
+      <path d="M553 152 Q668 144 783 151 Q790 170 784 189 Q668 198 554 191 Q546 170 553 152 Z" stroke="#d97706"/>
+      <path d="M502 324 Q582 317 662 323 Q669 340 663 357 Q582 365 503 358 Q495 340 502 324 Z" stroke="#e11d48"/>
+      <path d="M183 324 Q298 317 413 323 Q420 340 414 357 Q298 365 184 358 Q176 340 183 324 Z" stroke="#059669"/>
+      <path d="M107 154 Q212 147 317 153 Q324 170 318 187 Q212 195 108 188 Q100 170 107 154 Z" stroke="#d97706"/>
+    </g>
+    <!-- step numbers -->
+    <g fill="none" stroke-width="2" stroke-linecap="round">
+      <circle cx="322" cy="50" r="12" stroke="#059669"/>
+      <circle cx="545" cy="146" r="12" stroke="#d97706"/>
+      <circle cx="494" cy="318" r="12" stroke="#e11d48"/>
+      <circle cx="175" cy="318" r="12" stroke="#059669"/>
+      <circle cx="99" cy="148" r="12" stroke="#d97706"/>
+    </g>
+    <g font-size="12.5" fill="currentColor" text-anchor="middle">
+      <text x="322" y="54.5">1</text><text x="545" y="150.5">2</text><text x="494" y="322.5">3</text><text x="175" y="322.5">4</text><text x="99" y="152.5">5</text>
+    </g>
+    <!-- step labels (same names as the prose) -->
+    <g font-size="15" fill="currentColor" text-anchor="middle">
+      <text x="440" y="77">Assess the task</text>
+      <text x="668" y="166">Evaluate strengths</text>
+      <text x="668" y="186">&amp; weaknesses</text>
+      <text x="582" y="345">Plan</text>
+      <text x="298" y="345">Apply &amp; monitor</text>
+      <text x="212" y="175">Reflect &amp; adjust</text>
+    </g>
+    <!-- hand-drawn clockwise arrows -->
+    <g fill="none" stroke="#8a8a93" stroke-width="2.2" stroke-linecap="round">
+      <path d="M545 92 Q612 88 638 124"/>
+      <path d="M626 118 L638 124 L636 111"/>
+      <path d="M676 210 Q692 274 650 312"/>
+      <path d="M655 300 L650 312 L663 308"/>
+      <path d="M500 348 Q440 372 410 352"/>
+      <path d="M423 354 L410 352 L417 364"/>
+      <path d="M184 306 Q162 252 200 210"/>
+      <path d="M196 223 L200 210 L188 215"/>
+      <path d="M234 134 Q272 82 320 64"/>
+      <path d="M311 74 L320 64 L307 63"/>
+    </g>
+    <!-- center + footnote -->
+    <text x="440" y="222" font-size="17" font-style="italic" fill="currentColor" text-anchor="middle">the self-regulation cycle</text>
+    <text x="440" y="246" font-size="12.5" fill="#8a8a93" text-anchor="middle">monitoring up, control down</text>
+    <text x="440" y="424" font-size="13" font-style="italic" fill="#8a8a93" text-anchor="middle">then the loop runs again on the next task — a little better</text>
+  </g>
+</svg>`,
+        },
+        {
+          kind: 'para',
+          text: 'Where does this machinery come from? The word itself is young: the developmental psychologist John Flavell coined "metacognition" in 1979 to name the growing evidence that children — and adults — can think about their own thinking. His papers pose the question every learner still asks: if you read a page, feel confused, and notice the confusion, who exactly noticed? A decade later, Thomas Nelson and Louis Narens (1990) gave the field its working diagram by splitting the mind into two levels. The object level holds the learning itself — the pages, the problems, the memories. The meta level holds your model of that learning. Monitoring carries information upward (how is it going?), and control carries commands downward (keep going, switch strategy, stop). The five-step cycle above is that loop in student clothing, and every ritual in this lesson is a monitoring measurement put to work by a control decision.',
+        },
+        {
           kind: 'para',
           text: 'The reason the monitoring step cannot be skipped is the fluency illusion. Familiarity is not knowledge, but the brain reports both as "this feels smooth." Rereading a chapter is the classic trap: the pages grow familiar, recognition hums along, and the learner concludes mastery — while the exam, which demands generation rather than recognition, finds nothing to grab. Highlighting behaves the same way, marking material as handled without ever processing it. In the large 2013 review by Dunlosky and colleagues, rereading and highlighting rated surprisingly low utility: popular, easy, and inconsistently effective, largely because they produce smooth feelings that are poor evidence of anything.',
+        },
+        {
+          kind: 'para',
+          text: 'Monitoring also comes in grades, and naming them sharpens your own measurements. Ease-of-learning judgments run before study, predicting how hard an item will be to learn. Judgments of learning — JOLs — run during or just after study, estimating what has just stuck. Feelings of knowing answer a different question: for something you cannot retrieve right now, would you recognize it if shown? And confidence judgments grade answers already given. Asher Koriat\'s cue-utilization account (1997) explains why these gauges mislead: a judgment of learning is built from cues, and the most available cue is not what you know but how smoothly the material is flowing right now — processing fluency again. Rereading feeds the cue without feeding the knowledge, which is exactly why fluency-based judgments inflate while retrieval-based judgments stay honest.',
         },
         {
           kind: 'para',
@@ -660,7 +725,107 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
         },
         {
           kind: 'para',
+          text: 'Timing changes how honest the gauge is, too. Nelson and Dunlosky (1991) had students judge their learning immediately after studying paired associates, or a few minutes later, and the delayed judgments were dramatically more accurate — a predictive correlation around .90 versus about .50 for the immediate ones. The mechanism is Koriat\'s own cue logic: seconds after study, fluency still rides the study episode, but a delay forces a short memory search that samples retrieval itself, so the honest move is a quick self-test before committing to a prediction. The working rule: finish a section, look away for a few minutes, then ask "will I still know this on Friday?" and let the answer, not the mood, book the review. Errors close the loop from the other side — the hypercorrection effect (Butterfield and Metcalfe) shows that high-confidence mistakes, once exposed by feedback, are the most likely of all to be corrected. Confident errors, caught honestly, are gifts.',
+        },
+        {
+          kind: 'para',
           text: 'Calibration has a concrete ritual: predict, then check, then adjust. Before a practice set, write your expected score — per topic, not just overall. Take the test. Compare. Where you overestimated, your judgment of learning is inflated and the topic needs real hours; where you underestimated, you are wasting anxiety on mastered material. Over several rounds the predictions tighten, and the skill generalizes: calibrated learners can walk out of any lecture with a realistic map of what they own. A warning label belongs here — beginners in a subject tend to overestimate their abilities, so until your predictions have a track record, budget more support than feels necessary.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The calibration plot. Confidence — the predicted performance you would declare before a test — runs across; actual performance runs up. The dashed diagonal is perfect calibration (predicted = actual). The beginner curve sits below it: at 70% confidence the real score is nearer 52%, and that vertical distance is the prediction gap. Points below the line are overestimated topics that need real hours; the lone point above the line is underestimated material wasting anxiety. The worked example below reads this chart topic by topic and spends hours where the gap is widest.',
+          sketchImage: '/diagrams/fnd-metacognition-calibration-sketch.jpg',
+          sketchCaption:
+            'Student Laboratory Notebook: calibration plot hand-drawn with confidence (predicted performance) on the horizontal axis and actual performance on the vertical; dashed identity line labelled perfect calibration; overconfidence curve sagging below it; arrow marking the prediction gap at 70% confidence (predicted 70, actual near 52); one point above the line labelled underestimated.',
+          afterConcept: 4,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="Calibration plot: confidence versus actual performance, perfect calibration diagonal, beginner overconfidence curve below it, prediction gap arrowed at 70 percent confidence">
+  <!-- hand-drawn axes (double-stroked, gently wobbly) -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round">
+    <path d="M84 52 Q82 220 86 392"/>
+    <path d="M80 388 Q300 392 540 387 Q700 391 836 386"/>
+  </g>
+  <g fill="none" stroke="#8a8a93" stroke-width="1" opacity="0.5" stroke-linecap="round">
+    <path d="M89 55 Q87 220 91 390"/>
+    <path d="M77 393 Q300 397 540 392 Q700 396 833 391"/>
+  </g>
+  <!-- axis titles + ticks -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="currentColor">
+    <text x="30" y="224" font-size="15" font-style="italic" text-anchor="middle" transform="rotate(-90 30 224)">Actual performance (%)</text>
+    <text x="836" y="448" font-size="15" font-style="italic" text-anchor="end">Confidence — predicted performance (%)</text>
+    <g font-size="11.5" fill="#8a8a93" text-anchor="end">
+      <text x="76" y="64">100</text><text x="76" y="146">75</text><text x="76" y="228">50</text><text x="76" y="310">25</text><text x="76" y="392">0</text>
+    </g>
+    <g font-size="11.5" fill="#8a8a93" text-anchor="middle">
+      <text x="84" y="380">0</text><text x="272" y="380">25</text><text x="460" y="380">50</text><text x="648" y="380">75</text><text x="836" y="380">100</text>
+    </g>
+  </g>
+  <!-- perfect calibration diagonal (emerald, dashed) -->
+  <line x1="84" y1="392" x2="836" y2="60" stroke="#059669" stroke-width="2" stroke-dasharray="7 6" opacity="0.9" stroke-linecap="round"/>
+  <text x="300" y="268" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#059669" text-anchor="middle" transform="rotate(-24 300 268)">perfect calibration (predicted = actual)</text>
+  <!-- overconfidence curve (rose) -->
+  <path d="M90 386 C 140 372 240 345 310 326 C 380 305 430 283 460 266 C 500 247 560 231 610 219 C 660 207 700 197 723 193 C 760 186 800 178 836 173" fill="none" stroke="#e11d48" stroke-width="3" stroke-linecap="round" opacity="0.95"/>
+  <text x="628" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-style="italic" fill="#e11d48" text-anchor="middle">typical overconfidence (beginners)</text>
+  <text x="628" y="320" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#d97706" text-anchor="middle">overestimated: needs real hours</text>
+  <!-- prediction gap arrow at 70% confidence -->
+  <g fill="none" stroke="#d97706" stroke-width="2.2" stroke-linecap="round">
+    <path d="M610 212 L610 168"/>
+    <path d="M604 180 L610 168 L616 180"/>
+  </g>
+  <text x="622" y="196" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#d97706">prediction gap</text>
+  <!-- underestimated point above the line -->
+  <circle cx="761" cy="78" r="5.5" fill="#059669"/>
+  <text x="748" y="54" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#059669" text-anchor="end">underestimated: wasted anxiety</text>
+</svg>`,
+        },
+        {
+          kind: 'para',
+          text: 'The overconfidence tilt is not a folk suspicion; it has numbers. In Kruger and Dunning\'s tests (1999), students in the bottom quartile estimated their percentile rank near the 62nd while actually scoring near the 12th — the least skilled were off by half the scale, while the top performers predicted themselves almost exactly. Dunning\'s group traced part of the gap to a humbling source: the weakest students had never clearly experienced the contrast between their own answer and a correct one, so they possessed no evidence with which to discount their confidence. And the cost is not just a distorted self-image. Dunlosky and Rawson (2012) followed students through repeated study-test cycles and found that inflated judgments of learning made learners quit practice early — overconfidence produced underachievement, mechanically, through sessions that ended too soon. That is the price tag on the fluency illusion: not a philosophical worry, but hours silently misallocated.',
+        },
+        {
+          kind: 'para',
+          text: 'Calibration also has a quantitative form, worth learning because it turns "how accurate am I?" into one gradeable number. Score each practice item twice: your confidence p, from 0 to 1, and the outcome o — 1 if correct, 0 if wrong. The bias is mean confidence minus mean accuracy: positive means overconfident, negative means underconfident, and zero alone is not yet perfect, because a student who says 50% on everything and half-succeeds also averages zero. The Brier score closes that hole by squaring the gap on every item, so big misses cost far more than small ones — and it sets up the short derivation below, which shows why confident errors are the expensive kind.',
+        },
+        {
+          kind: 'derivation',
+          title: 'Why confident errors hurt doubly: the Brier-score derivation',
+          statement:
+            'Derivation of the two asymmetries inside the Brier score $B = \\frac{1}{N}\\sum_{i=1}^{N}(p_i-o_i)^2$ — why it bills confident errors at the square, and why the only long-run optimal policy is to declare your honest probability.',
+          prerequisites: ['Confidence p as a probability from 0 to 1', 'The outcome o: 1 for correct, 0 for wrong', 'Squares of numbers between 0 and 1'],
+          steps: [
+            {
+              label: 'Step 1: Score one item',
+              formula: '$$B_{\\text{item}} = (p-o)^2$$',
+              explanation:
+                'Each practice answer contributes the squared gap between the confidence you declared and the outcome you got. Perfectly honest and perfectly right scores 0; the worst miss — 100% confidence on a wrong answer — scores 1.',
+            },
+            {
+              label: 'Step 2: Split by outcome',
+              formula: '$$o=1:\\; B=(1-p)^2 \\qquad o=0:\\; B=p^2$$',
+              explanation:
+                'If you were right, only your underconfidence is taxed: a 90%-confident correct answer costs just 0.01. If you were wrong, the whole confidence becomes the error: 90% confident and wrong costs 0.81.',
+            },
+            {
+              label: 'Step 3: Compare two wrong answers',
+              formula: '$$\\frac{B_{0.9,\\,\\text{wrong}}}{B_{0.6,\\,\\text{wrong}}} = \\frac{0.9^2}{0.6^2} = \\left(\\frac{0.9}{0.6}\\right)^{2} = 2.25$$',
+              explanation:
+                'A student who is 90% sure and wrong pays more than twice what a doubting 60%-sure student pays for the same wrong answer. Confidence compounds the cost of error — this is the arithmetic behind "confident errors are the expensive kind."',
+            },
+            {
+              label: 'Step 4: Average over a set',
+              formula: '$$B = \\frac{1}{N}\\sum_{i=1}^{N}(p_i-o_i)^2$$',
+              explanation:
+                'A whole practice set collapses to one Brier score. A coin-flipper who always declares 50% on 50/50 items averages (0.5)² = 0.25 — the chance baseline that any serious predictor must beat.',
+            },
+            {
+              label: 'Step 5: Why honesty is the optimum',
+              formula: '$$p_{\\text{reported}} = p_{\\text{true}}$$',
+              explanation:
+                'The Brier score is a strictly proper scoring rule: whatever your true probability of being right, the squared penalty is minimized by declaring exactly that number. Inflating to feel good raises the expected penalty; understating to be safe does too.',
+            },
+          ],
+          result:
+            'The Brier score makes the calibration ritual auditable: bias tells you the direction of your error, and B tells you its size — with confident errors billed at the square. The student\'s operating rule falls straight out: after each practice set, mark the items you got wrong while feeling sure. Those are the 0.81s, and they are exactly where the next hour of study belongs.',
         },
         {
           kind: 'para',
@@ -707,6 +872,8 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
             { term: 'Retrieval practice', def: 'Producing answers from memory; the honest instrument for judging what you know.' },
             { term: 'Judgment of learning', def: 'Your moment-to-moment estimate of what you have just learned — accurate only when grounded in testing.' },
             { term: 'Knowledge of cognition', def: 'What you know about strategies, task demands and your own strengths and weaknesses.' },
+            { term: 'Brier score', def: 'The mean squared gap between stated confidence and being correct; confident errors are billed at the square.' },
+            { term: 'Delayed JOL', def: 'A judgment of learning made minutes after study — ideally after a quick self-test; far more accurate than an immediate judgment.' },
           ],
         },
         { kind: 'heading', text: 'Check Yourself' },
@@ -736,6 +903,30 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
               options: ['Getting every answer right', 'Actively recalling and using the information rather than being told it', 'Finishing quickly', 'Using only official past papers'],
               answer: 1,
               explain: 'Retrieval attempts — even failed ones — are the measurement and the training effect; correctness polishing comes after.',
+            },
+            {
+              q: 'The word "metacognition" entered the literature in 1979 through the work of:',
+              options: ['Hermann Ebbinghaus', 'John Flavell', 'Benjamin Bloom', 'Tony Buzan'],
+              answer: 1,
+              explain: 'Flavell named the field; Nelson and Narens (1990) later supplied the meta-level/object-level monitoring-and-control diagram the lesson uses.',
+            },
+            {
+              q: 'Judgments of learning become far more accurate when they are made:',
+              options: ['Immediately, while the material is fresh', 'A few minutes after study, after a brief self-test, when fluency has faded', 'After rereading the passage one more time', 'Only at the end of the course'],
+              answer: 1,
+              explain: 'Nelson and Dunlosky (1991): delayed JOLs correlated about .90 with later recall versus about .50 immediate — the delay strips out study-side fluency and samples retrieval itself.',
+            },
+            {
+              q: 'You are 90% confident on one item and wrong; 60% confident on another and also wrong. The Brier contributions are:',
+              options: ['0.9 and 0.6', '0.81 and 0.36 — the confident error costs 2.25 times more', '0.09 and 0.06 — the same for both', 'Zero, since both were honest attempts'],
+              answer: 1,
+              explain: 'Wrong answers contribute p²: 0.9² = 0.81 and 0.6² = 0.36, a ratio of (0.9/0.6)² = 2.25 — confidence is billed at the square.',
+            },
+            {
+              q: 'In the worked example, where do the two remaining evenings go?',
+              options: ['To thermodynamics and kinetics — the highest predicted scores', 'To organic first, bonding second — the widest predicted-versus-actual gaps', 'Split evenly across all five topics', 'To equilibrium, because its prediction was met exactly'],
+              answer: 1,
+              explain: 'Calibration spends where the prediction gap is widest: organic predicted 70% against 40% actual, bonding next — polishing solid topics adds nothing.',
             },
           ],
         },
