@@ -845,7 +845,14 @@ export function TypingView() {
         recordStroke(expected, ch, ok)
         if (ok) {
           correctFinalRef.current += 1
-          posRef.current = { w, c: c + 1 }
+          // a correctly typed '\n' IS the word separator in free-form code
+          // lines — advance to the next line-word instead of sitting past
+          // the end (where the next char would wrongly become an extra)
+          if (ch === '\n' && word.freeForm && c + 1 >= word.text.length) {
+            posRef.current = { w: w + 1, c: 0 }
+          } else {
+            posRef.current = { w, c: c + 1 }
+          }
           if (soundRef.current) blip(520 + Math.random() * 60, 0.02, 0.012, 'triangle')
         } else if (!cfgRef.current.mods.iron) {
           posRef.current = { w, c: c + 1 }
@@ -909,7 +916,25 @@ export function TypingView() {
   const handleBackspace = useCallback(() => {
     if (phaseRef.current === 'done') return
     const { w, c } = posRef.current
-    if (c === 0) return
+    if (c === 0) {
+      // free-form code lines: backspace past a typed '\n' returns to the
+      // previous line so typos there stay fixable
+      const prev = wordsRef.current[w - 1]
+      if (
+        w > 0 &&
+        prev?.freeForm &&
+        prev.text.endsWith('\n') &&
+        prev.chars[prev.chars.length - 1]?.state === 'correct'
+      ) {
+        const lastIdx = prev.chars.length - 1
+        prev.chars[lastIdx] = { char: '\n', state: 'pending' }
+        correctFinalRef.current = Math.max(0, correctFinalRef.current - 1)
+        posRef.current = { w: w - 1, c: lastIdx }
+        setPos(posRef.current)
+        setWords(wordsRef.current.slice())
+      }
+      return
+    }
     const word = wordsRef.current[w]
     if (!word) return
     const idx = c - 1
