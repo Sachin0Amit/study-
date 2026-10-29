@@ -1025,7 +1025,9 @@ export const foundationLearning: KnowledgeDomainFile = {
         'Blocked practice and the illusion of mastery',
         'Interleaving: shuffling the categories',
         'The numbers: three times the score for the same hour',
+        'Desirable difficulties: Bjork\u2019s umbrella',
         'Why it works: discrimination and spaced retrieval',
+        'Two theories of the mix: variability versus contrast',
         'The performance-learning paradox',
         'Where interleaving helps most',
         'Building mixed problem sets: the one-back rule',
@@ -1033,8 +1035,8 @@ export const foundationLearning: KnowledgeDomainFile = {
         'Spacing is the partner, not the rival',
         'Overlearning: the blocked-practice exception',
       ],
-      words: 2253,
-      readMins: 11,
+      words: 2999,
+      readMins: 15,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -1118,7 +1120,15 @@ export const foundationLearning: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
+          text: 'The idea has a lineage. William Battig spent the 1960s and 1970s arguing that random presentation would cost performance yet pay in retention and transfer; Shea and Morgan\u2019s 1979 experiments confirmed his conceptualization: 72 college students learned three motor tasks in blocked or random order, and the random groups led on delayed retention and complex transfer. They gave the disruption its name: contextual interference. Fifteen years later Robert Bjork folded the finding into a wider umbrella, coining desirable difficulties in a 1994 chapter titled \u201cMemory and metamemory considerations in the training of human beings\u201d: conditions that slow practice \u2014 spacing, testing, interleaving \u2014 often produce the most durable learning because, in the new theory of disuse he developed with Elizabeth Bjork, a retrieval made while the answer feels furthest away builds the most storage strength. The paradox running through this topic is a named, general law.',
+        },
+        {
+          kind: 'para',
           text: 'Two engines run under the mix. First, discrimination: interleaving trains the front half of expertise — recognizing which knowledge applies — which blocked practice skips entirely. Second, each return to a category after an absence is a spaced retrieval, and spaced retrieval is the strongest known memory tool. Interleaving is spaced repetition wearing practice clothes.',
+        },
+        {
+          kind: 'para',
+          text: 'Why does the mix work? Two theories compete for the credit; both leave the prescription unchanged. Encoding variability holds that a category met again in a new context collects another set of retrieval routes, so the skill is callable from more angles. Discriminative contrast holds that interleaving parks confusable neighbours side by side in time, making their differences \u2014 the features that decide which technique applies \u2014 impossible to ignore, while blocked practice smooths those contrasts away and trains the similarities. The painting study adds a third thread: interleaved viewers improved at induction, inferring the style of painters they had never seen, suggesting the mix teaches the category itself. Brunmair and Richter\u2019s meta-analysis found the benefit weakest where categories barely resemble each other \u2014 precisely what the contrast account predicts.',
         },
         {
           kind: 'para',
@@ -1138,7 +1148,81 @@ export const foundationLearning: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
-          text: 'Interleaving across a single afternoon and interleaving across days are different doses of the same medicine. The strongest schedules do both: today\'s mixed set includes material from last week, which is itself spacing. A practical stack assembles three techniques — retrieval practice for the content, spaced scheduling for the calendar, interleaving for the selection — into one session.',
+          text: 'Interleaving across a single afternoon and interleaving across days are different doses of the same medicine. The strongest schedules do both: today\'s mixed set includes material from last week, which is itself spacing. A practical stack assembles three techniques — retrieval practice for the content, spaced scheduling for the calendar, interleaving for the selection — into one session. The long arc holds at scale: in a pre-registered cluster randomized trial, Rohrer, Dedrick, Hartwig and Cheung gave 54 seventh-grade classes periodic interleaved or blocked assignments across four months, both groups finishing on the same interleaved review; one month later, on an unannounced test, the interleaved group scored 61% against 38% (d = 0.83). Teachers ran it without special training and, surveyed before the results were known, said they would keep it.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'One week of mixed practice. Each session is a mixed set obeying the one-back rule — no two consecutive items alike — cycling the same three categories twice. Wednesday carries material from last week — which is itself spacing — and the running tally (A × 6 · B × 6 · C × 6) keeps every category in view. Inside each session the mix trains discrimination; across the week, widening gaps make every return a spaced retrieval (Rohrer, Dedrick, Hartwig & Cheung, 2020).',
+          sketchImage: '/diagrams/interleaving-week-sketch.jpg',
+          sketchCaption:
+            'Student Laboratory Notebook: a weekly practice planner with three mixed sets — Monday A B C B A C, Wednesday C A B A C B, Friday B C A C B A — one square circled \u201cfrom last week,\u201d margin tally A\u00d76 \u00b7 B\u00d76 \u00b7 C\u00d76.',
+          afterConcept: 11,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" role="img" aria-label="A week of interleaved practice: three mixed sets on Monday, Wednesday and Friday, each obeying the one-back rule, with a running tally of six returns per category">
+  <text x="440" y="42" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="17" fill="currentColor">one week of interleaved practice — three mixed sets</text>
+  <text x="440" y="64" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-style="italic" fill="#8a8a93">the one-back rule inside every session: no two consecutive items alike</text>
+  <!-- Monday -->
+  <text x="36" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="currentColor">Monday</text>
+  <text x="36" y="134" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">mixed set · six items</text>
+  <g stroke-linecap="round">
+    <rect x="250" y="100" width="48" height="48" rx="9" fill="#e11d48" opacity="0.14"/><rect x="252" y="102" width="44" height="44" rx="8" fill="none" stroke="#e11d48" stroke-width="2.4"/>
+    <rect x="308" y="100" width="48" height="48" rx="9" fill="#d97706" opacity="0.14"/><rect x="310" y="102" width="44" height="44" rx="8" fill="none" stroke="#d97706" stroke-width="2.4" transform="rotate(0.7 332 124)"/>
+    <rect x="366" y="100" width="48" height="48" rx="9" fill="#059669" opacity="0.14"/><rect x="368" y="102" width="44" height="44" rx="8" fill="none" stroke="#059669" stroke-width="2.4" transform="rotate(-0.6 390 124)"/>
+    <rect x="424" y="100" width="48" height="48" rx="9" fill="#d97706" opacity="0.14"/><rect x="426" y="102" width="44" height="44" rx="8" fill="none" stroke="#d97706" stroke-width="2.4"/>
+    <rect x="482" y="100" width="48" height="48" rx="9" fill="#e11d48" opacity="0.14"/><rect x="484" y="102" width="44" height="44" rx="8" fill="none" stroke="#e11d48" stroke-width="2.4" transform="rotate(0.6 506 124)"/>
+    <rect x="540" y="100" width="48" height="48" rx="9" fill="#059669" opacity="0.14"/><rect x="542" y="102" width="44" height="44" rx="8" fill="none" stroke="#059669" stroke-width="2.4" transform="rotate(-0.7 564 124)"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="bold" text-anchor="middle">
+    <text x="274" y="131" fill="#e11d48">A</text><text x="332" y="131" fill="#d97706">B</text><text x="390" y="131" fill="#059669">C</text>
+    <text x="448" y="131" fill="#d97706">B</text><text x="506" y="131" fill="#e11d48">A</text><text x="564" y="131" fill="#059669">C</text>
+  </g>
+  <text x="250" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">no two consecutive alike — a fresh diagnosis almost every item</text>
+  <!-- Wednesday -->
+  <text x="36" y="212" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="currentColor">Wednesday</text>
+  <text x="36" y="230" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">mixed set · six items</text>
+  <text x="274" y="186" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="10.5" font-style="italic" fill="#8a8a93">from last week</text>
+  <g stroke-linecap="round">
+    <rect x="244" y="190" width="60" height="60" rx="11" fill="none" stroke="#8a8a93" stroke-width="1.6" stroke-dasharray="4 3"/>
+    <rect x="250" y="196" width="48" height="48" rx="9" fill="#059669" opacity="0.14"/><rect x="252" y="198" width="44" height="44" rx="8" fill="none" stroke="#059669" stroke-width="2.4"/>
+    <rect x="308" y="196" width="48" height="48" rx="9" fill="#e11d48" opacity="0.14"/><rect x="310" y="198" width="44" height="44" rx="8" fill="none" stroke="#e11d48" stroke-width="2.4" transform="rotate(-0.7 332 220)"/>
+    <rect x="366" y="196" width="48" height="48" rx="9" fill="#d97706" opacity="0.14"/><rect x="368" y="198" width="44" height="44" rx="8" fill="none" stroke="#d97706" stroke-width="2.4" transform="rotate(0.6 390 220)"/>
+    <rect x="424" y="196" width="48" height="48" rx="9" fill="#e11d48" opacity="0.14"/><rect x="426" y="198" width="44" height="44" rx="8" fill="none" stroke="#e11d48" stroke-width="2.4"/>
+    <rect x="482" y="196" width="48" height="48" rx="9" fill="#059669" opacity="0.14"/><rect x="484" y="198" width="44" height="44" rx="8" fill="none" stroke="#059669" stroke-width="2.4" transform="rotate(0.7 506 220)"/>
+    <rect x="540" y="196" width="48" height="48" rx="9" fill="#d97706" opacity="0.14"/><rect x="542" y="198" width="44" height="44" rx="8" fill="none" stroke="#d97706" stroke-width="2.4" transform="rotate(-0.6 564 220)"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="bold" text-anchor="middle">
+    <text x="274" y="227" fill="#059669">C</text><text x="332" y="227" fill="#e11d48">A</text><text x="390" y="227" fill="#d97706">B</text>
+    <text x="448" y="227" fill="#e11d48">A</text><text x="506" y="227" fill="#059669">C</text><text x="564" y="227" fill="#d97706">B</text>
+  </g>
+  <text x="250" y="268" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">carries material from last week — which is itself spacing</text>
+  <!-- Friday -->
+  <text x="36" y="308" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="currentColor">Friday</text>
+  <text x="36" y="326" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">mixed set · six items</text>
+  <g stroke-linecap="round">
+    <rect x="250" y="292" width="48" height="48" rx="9" fill="#d97706" opacity="0.14"/><rect x="252" y="294" width="44" height="44" rx="8" fill="none" stroke="#d97706" stroke-width="2.4"/>
+    <rect x="308" y="292" width="48" height="48" rx="9" fill="#059669" opacity="0.14"/><rect x="310" y="294" width="44" height="44" rx="8" fill="none" stroke="#059669" stroke-width="2.4" transform="rotate(0.6 332 316)"/>
+    <rect x="366" y="292" width="48" height="48" rx="9" fill="#e11d48" opacity="0.14"/><rect x="368" y="294" width="44" height="44" rx="8" fill="none" stroke="#e11d48" stroke-width="2.4" transform="rotate(-0.7 390 316)"/>
+    <rect x="424" y="292" width="48" height="48" rx="9" fill="#059669" opacity="0.14"/><rect x="426" y="294" width="44" height="44" rx="8" fill="none" stroke="#059669" stroke-width="2.4"/>
+    <rect x="482" y="292" width="48" height="48" rx="9" fill="#d97706" opacity="0.14"/><rect x="484" y="294" width="44" height="44" rx="8" fill="none" stroke="#d97706" stroke-width="2.4" transform="rotate(-0.6 506 316)"/>
+    <rect x="540" y="292" width="48" height="48" rx="9" fill="#e11d48" opacity="0.14"/><rect x="542" y="294" width="44" height="44" rx="8" fill="none" stroke="#e11d48" stroke-width="2.4" transform="rotate(0.7 564 316)"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="bold" text-anchor="middle">
+    <text x="274" y="323" fill="#d97706">B</text><text x="332" y="323" fill="#059669">C</text><text x="390" y="323" fill="#e11d48">A</text>
+    <text x="448" y="323" fill="#059669">C</text><text x="506" y="323" fill="#d97706">B</text><text x="564" y="323" fill="#e11d48">A</text>
+  </g>
+  <text x="250" y="364" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">the running tally keeps every category in view</text>
+  <!-- running tally box -->
+  <rect x="660" y="196" width="180" height="128" rx="12" fill="none" stroke="#8a8a93" stroke-width="2" transform="rotate(0.5 750 260)"/>
+  <text x="750" y="224" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" fill="currentColor">running tally</text>
+  <text x="750" y="242" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-style="italic" fill="#8a8a93">for the week</text>
+  <text x="750" y="280" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="bold"><tspan fill="#e11d48">A × 6</tspan><tspan fill="#8a8a93"> · </tspan><tspan fill="#d97706">B × 6</tspan><tspan fill="#8a8a93"> · </tspan><tspan fill="#059669">C × 6</tspan></text>
+  <text x="750" y="308" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-style="italic" fill="#059669">dose evenly — nothing vanishes</text>
+  <text x="440" y="394" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#059669">each return to a category is a spaced retrieval — and the gaps widen across the week</text>
+  <rect x="120" y="412" width="640" height="58" rx="12" fill="none" stroke="#8a8a93" stroke-width="2.2" transform="rotate(-0.4 440 441)"/>
+  <text x="440" y="436" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-style="italic" fill="currentColor">inside each session: discrimination — which technique does this call for?</text>
+  <text x="440" y="458" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#8a8a93">across sessions: spacing — every category returns before it fades</text>
+  <text x="440" y="492" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#d97706">A = rose · B = amber · C = emerald</text>
+</svg>`,
         },
         {
           kind: 'para',
@@ -1225,6 +1309,9 @@ export const foundationLearning: KnowledgeDomainFile = {
             { term: 'Overlearning', def: 'Continuing to practice past the criterion within the same session; useful for performance automaticity, wasteful for durable learning.' },
             { term: 'One-back rule', def: 'Mixed-set design rule: no two consecutive items of the same type.' },
             { term: 'Selection tax', def: 'The drop in practice accuracy interleaving charges — repaid with interest on the delayed test.' },
+            { term: 'Desirable difficulty', def: 'A condition that slows practice but strengthens retention and transfer — Bjork\u2019s umbrella for spacing, testing and interleaving.' },
+            { term: 'Encoding variability', def: 'The theory that a category met in varied contexts gains extra retrieval routes, making the skill more flexible.' },
+            { term: 'Discriminative contrast', def: 'The theory that interleaving helps by parking confusable neighbours side by side, making their decisive differences hard to miss.' },
           ],
         },
         { kind: 'heading', text: 'Check Yourself' },
@@ -1278,6 +1365,24 @@ export const foundationLearning: KnowledgeDomainFile = {
               options: ['More total minutes', 'Lower in-session accuracy — practice that feels worse', 'More practice problems to buy', 'Extra instruction or tutoring'],
               answer: 1,
               explain: 'Same problems, same minutes: the price is a 24-point drop in how competent practice feels (89% to 65% in the 2007 study) — the paradox is the price.',
+            },
+            {
+              q: 'The name contextual interference was attached to the effect by:',
+              options: ['Battig, in his 1960s theorizing', 'Shea and Morgan (1979), whose random-practice groups stumbled in practice yet led on the delayed test', 'Rohrer and Taylor (2007)', 'Brunmair and Richter (2019)'],
+              answer: 1,
+              explain: 'The 1979 motor-skill experiments demonstrated and named the effect; their results supported Battig\u2019s earlier conceptualization. Bjork\u2019s 1994 \u201cdesirable difficulties\u201d later became the umbrella term.',
+            },
+            {
+              q: 'In Bjork\u2019s new theory of disuse, a successful retrieval builds the most storage strength when:',
+              options: ['The answer was rehearsed a minute earlier', 'Practice is blocked inside one session', 'Retrieval strength is low — the answer feels furthest away', 'The material has never been studied before'],
+              answer: 2,
+              explain: 'Low-retrieval-strength recalls are the potent ones — the theoretical engine behind spacing, testing and interleaving, the three classic desirable difficulties.',
+            },
+            {
+              q: 'In the four-month cluster randomized trial with 54 seventh-grade classes, the unannounced test one month after review ended:',
+              options: ['61% interleaved vs 38% blocked (d = 0.83)', '38% interleaved vs 61% blocked', 'Dead even — only the small 2015 study found a gap', 'Interleaved ahead, but only with trained teachers'],
+              answer: 0,
+              explain: 'The four-month trial with 54 classes put the interleaved group 23 points ahead; teachers ran it without training and supported it in a survey taken before results were known.',
             },
           ],
         },
