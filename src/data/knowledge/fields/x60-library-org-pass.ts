@@ -465,8 +465,8 @@ export const x60LibraryOrgThinBooksPassTopics: KnowledgeTopic[] = [
       'SDRs, conditionality and the debt crises',
       'The fiat-dollar world that followed',
     ],
-    words: 1641,
-    readMins: 8,
+    words: 1801,
+    readMins: 9,
     addedOn: '2026-10-26',
     blocks: [
       {
@@ -491,6 +491,10 @@ export const x60LibraryOrgThinBooksPassTopics: KnowledgeTopic[] = [
       {
         kind: 'para',
         text: 'The Depression\u2019s cruelest twist was diagnosed by Barry Eichengreen in Golden Fetters: the gold standard itself transmitted the collapse. Defending the peg forced central banks to raise rates into bank runs, and a deflationary impulse crossed borders through fixed parities. The evidence was grimly natural-experimental: countries that left gold early — Britain after 1931, then the \u201csterling bloc\u201d — freed their monetary policy and recovered sooner; countries that clung longest, like France, suffered longest. By the time the war ended, the lesson was consensus: fixed exchange rates without capital controls had been a disaster, and something had to be designed.',
+      },
+      {
+        kind: 'para',
+        text: 'The settlement of 1944 stands at the end of a much longer story of monetary promises. Coinage itself begins around the sixth century BCE, when the kingdom of Lydia in Anatolia stamped official marks on electrum lumps — certifying weight without weighing, and inventing in one act both modern money and the seigniorage problem. Paper money is China\'s invention: merchants\' Sichuan deposit receipts were standardized by the Song government in 1024 as the jiaozi, the world\'s first official paper currency, and the Yuan dynasty pushed further to make paper the only legal tender — then printed past its own credibility into the first recorded paper hyperinflation, the cautionary tale every later fiat issuer relearns. Marco Polo\'s marveling account of Kublai\'s notes carries the irony: money\'s value always rested on restraint, not material. The gold standard that Bretton Woods half-revived was the industrial era\'s answer to that lesson, and 1971\'s fiat world is the newest answer — still running its experiment.',
       },
       {
         kind: 'para',

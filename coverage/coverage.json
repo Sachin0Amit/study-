@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T02:19:45.604Z",
+  "generatedAt": "2026-10-29T04:50:12.384Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 138,
     "books": 138,
-    "chapters": 883,
-    "sections": 4681
+    "chapters": 884,
+    "sections": 4682
   },
   "subjects": [
     {
@@ -32625,8 +32625,8 @@
       "name": "Structural & Seismic Engineering",
       "group": "Applied Engineering & Technology",
       "tagline": "Standing on math",
-      "chapterCount": 3,
-      "sectionCount": 4,
+      "chapterCount": 4,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-structural-seismic-engineering-structural-analysis-and-design",
@@ -32675,6 +32675,21 @@
               "id": "ku-eng-earthquake-engineering-design",
               "number": 3.1,
               "title": "Earthquake Engineering: Designing for Shaking Ground"
+            }
+          ]
+        },
+        {
+          "id": "ku-structural-seismic-engineering-bridges-and-long-span-structures",
+          "number": 4,
+          "title": "Bridges & Long-Span Structures",
+          "shortTitle": "Bridges & Long-Span Structures",
+          "bookId": "ku-structural-seismic-engineering",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-eng-bridges-long-span",
+              "number": 4.1,
+              "title": "Bridges and Long-Span Structures: How Spans Grow"
             }
           ]
         }

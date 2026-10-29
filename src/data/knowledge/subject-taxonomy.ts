@@ -1657,11 +1657,12 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'frame',
     accent: '#f59e0b',
     tagline: 'Standing on math',
-    blurb: 'Structural analysis and design in steel and concrete, the ground they stand on, and engineering for earthquakes.',
+    blurb: 'Structural analysis and design in steel and concrete, the ground they stand on, engineering for earthquakes, and the long-span bridge forms.',
     chapters: [
       { name: 'Structural Analysis & Design', branches: ['Structural Engineering'] },
       { name: 'Ground & Foundations', branches: ['Geotechnical Engineering'] },
       { name: 'Seismic Design', branches: ['Seismic Design'] },
+      { name: 'Bridges & Long-Span Structures', branches: ['Bridges & Long-Span Structures'] },
     ],
   },
   {

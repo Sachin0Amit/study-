@@ -16,8 +16,8 @@
 
 - **Subjects:** 138
 - **Books (master volumes):** 138
-- **Chapters:** 883
-- **Sections (lessons):** 4681
+- **Chapters:** 884
+- **Sections (lessons):** 4682
 
 ## Foundations — 7 subjects
 
@@ -1496,11 +1496,12 @@
 
 ### Structural & Seismic Engineering (`ku-structural-seismic-engineering`)
 
-*Standing on math* — 3 chapters · 4 sections
+*Standing on math* — 4 chapters · 5 sections
 
 - **Ch 1. Structural Analysis & Design** `ku-structural-seismic-engineering-structural-analysis-and-design` — 2 sections: Structural Analysis: Determinacy, Trusses and Shear-and-Moment Diagrams; Concrete Structures: Materials, Beams and Limit-State Design
 - **Ch 2. Ground & Foundations** `ku-structural-seismic-engineering-ground-and-foundations` — 1 sections: Foundations and Ground Engineering: What Every Structure Stands On
 - **Ch 3. Seismic Design** `ku-structural-seismic-engineering-seismic-design` — 1 sections: Earthquake Engineering: Designing for Shaking Ground
+- **Ch 4. Bridges & Long-Span Structures** `ku-structural-seismic-engineering-bridges-and-long-span-structures` — 1 sections: Bridges and Long-Span Structures: How Spans Grow
 
 ### Water & Environmental Engineering (`ku-water-environmental-engineering`)
 

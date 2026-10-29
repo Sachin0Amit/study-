@@ -269,7 +269,7 @@ export const x64LibraryOrgPassTopics: KnowledgeTopic[] = [
       'Industrial enzyme cases: sitagliptin, polymers, PCR',
       'Limits: local optima, epistasis and the screening bottleneck',
     ],
-    words: 1722,
+    words: 1860,
     readMins: 9,
     addedOn: '2026-10-27',
     blocks: [
@@ -295,6 +295,10 @@ export const x64LibraryOrgPassTopics: KnowledgeTopic[] = [
       {
         kind: 'para',
         text: 'The hard half is finding the needle. Screening puts each variant in its own compartment — a well, a droplet, a colony — and measures it individually, tens of thousands at a time; fluorescence-activated cell sorting can push that to millions per day when the activity itself can be wired to a fluorescent readout. Selection goes further: it arranges things so that only cells carrying a useful variant survive or grow, letting biology do the counting for free. The maxim every practitioner repeats is that "you get what you screen for" — the assay, not the intention, defines the fitness function. A screen that measures binding rather than catalysis will return binders; a selection run in rich medium will evolve luxuries, not the stress tolerance you meant to improve.',
+      },
+      {
+        kind: 'para',
+        text: 'Evolution-in-a-glass predates the field\'s name. Sol Spiegelman demonstrated the raw idea in 1967: give Qβ replicase a tube of building blocks and the RNA it copies evolves on its own — becoming shorter and faster-replicating than its ancestor, the famous "Spiegelman\'s monster": Darwin without cells. The arithmetic explains how modern campaigns walk: the genetic code offers twenty amino acids, so fully randomizing n positions costs 20^n variants — five positions is already 3.2 million — which is why practitioners mutate a few positions per round and recombine lineages that improved by different routes. And the newest machinery tightens the loop itself: continuous-evolution systems (PACE and its relatives) couple mutation and selection in a single living flow rather than discrete flasks, compressing a campaign from months to days and reaching protein functions no batch protocol has time to find.',
       },
       {
         kind: 'para',

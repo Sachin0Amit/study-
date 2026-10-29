@@ -6,11 +6,32 @@ import { x58LibraryOrgDeepeningPassTopics } from './x58-library-org-pass'
 import { x59LibraryOrgBacklogPassTopics } from './x59-library-org-pass'
 import { x61LibraryOrgLoopPassTopics } from './x61-library-org-pass'
 import { x67LibraryOrgDeepeningPassTopics } from './x67-library-org-pass'
+import { x74LibraryOrgConvergencePassTopics } from './x74-library-org-pass'
 
 export const engineering: KnowledgeDomainFile = {
   domain: 'Engineering',
   blurb: 'The discipline of building systems that must work — bridges, chips, power grids and everything in between.',
   topics: [
+    // X74 library-org convergence pass (2026-10-29): the stale-sandbox
+    // run's kept fragment — the Bridges & Long-Span Structures chapter
+    // (origin/main's five library-org rounds deepened the structural
+    // book with Ground & Foundations but never wrote the span forms).
+    // Owns the span-form taxonomy in depth (girder/truss/cantilever
+    // Forth-1890/Quebec-1907-collapse, arch Iron-Bridge-1779 →
+    // Chaotianmen-552m, suspension Brooklyn/Golden-Gate-1280/Akashi-
+    // 1991m, cable-stayed Millau-343m/Russky-1104m), the parabolic-
+    // cable tension law H = wL²/8d with the worked 1,422·w example,
+    // aeroelastic FLUTTER not resonance (Billah & Scanlan 1991, Tacoma
+    // Nov 7 1940), Silver Bridge 1967 → 1971 National Bridge Inspection
+    // Standards + fracture-critical members + I-35W 2007, Hyatt Regency
+    // 1981 change-management case. Carved against eng-structures-bridges
+    // (OWNS the load/stress/safety-factor FUNDAMENTALS and names
+    // truss/arch/suspension in one paragraph), civ-concrete-structures
+    // (RCC), civ-foundations-geotechnical (remote X61's ground
+    // engineering) and eng-earthquake-engineering-design (seismic);
+    // 'tacoma'/'aeroelastic'/'hyatt regency'/'silver bridge'/'main
+    // span' had zero live hits on origin/main.
+    ...x74LibraryOrgConvergencePassTopics.filter((t) => t.domain === 'Engineering'),
     // X59 library-org backlog pass (2026-10-26): naval +1 chapter +2
     // lessons — Seakeeping & Manoeuvring (ship DYNAMICS: six degrees of
     // freedom, roll-period resonance T = 2πk/√(g·GM), added mass, RAOs,

@@ -122,8 +122,8 @@ export const x67LibraryOrgDeepeningPassTopics: KnowledgeTopic[] = [
       'The illusory truth effect: repetition breeds belief',
       'Prebunking and inoculation: training the immune system first',
     ],
-    words: 1596,
-    readMins: 8,
+    words: 1837,
+    readMins: 9,
     addedOn: '2026-10-28',
     blocks: [
       {
@@ -148,6 +148,14 @@ export const x67LibraryOrgDeepeningPassTopics: KnowledgeTopic[] = [
       {
         kind: 'para',
         text: 'The seven devices. In 1937, alarmed by fascism’s messaging, the Institute for Propaganda Analysis published a field guide of seven devices — the canon every later taxonomy extends. Name-calling: attach an emotional label, skip the evidence ("groomers", "puppets"). Glittering generalities: attach virtue-words with no fixed meaning ("freedom", "the people", "innovation"). Transfer: borrow authority by adjacency — flags, scientists in lab coats, stock photos of judges. Testimonial: rent a trusted voice — celebrities, "doctors recommend". Plain folks: perform ordinariness — the leader in the diner, the brand "like you". Card stacking: build the case from selected facts — true statements, dishonest selection. Bandwagon: everyone is already doing it — join or lose. The devices persist because they exploit how attention and memory work, not because audiences are stupid; every ad campaign, press release and influencer post you scroll past uses at least two.',
+      },
+      {
+        kind: 'para',
+        text: 'Why the devices work is its own canon. Robert Cialdini\'s Influence (1984), built on three years of undercover fieldwork inside sales organizations, named six principles of persuasion that explain propaganda\'s mechanics at the level of ordinary social life: reciprocity (free samples create obligation), commitment and consistency (small yeses lead to large ones), social proof (we copy the crowd, especially under uncertainty — laugh tracks, like counts), authority (credentials and uniforms shortcut scrutiny — Bernays\' physicians again), liking (we say yes to people like us or flattering us — the influencer industry\'s entire engine), and scarcity (limited time, limited stock — urgency converts). Advertising had industrialized the same psychology earlier: the motivational researchers of the 1940s-50s, Ernest Dichter foremost — the "Freud of Madison Avenue" whom Vance Packard\'s 1957 exposé The Hidden Persuaders made infamous — replaced feature-listing with identity-selling: you do not buy a car, you buy what it says about you. The principles work even when you know them, which is why awareness slows persuasion but never immunizes against it.',
+      },
+      {
+        kind: 'para',
+        text: 'The vocabulary of fake support has its own origin note: astroturfing — manufactured grassroots — was coined in 1985 when Senator Lloyd Bentsen, shown a telecom lobby\'s flood of identical constituent letters, called it "synthetic grass." The modern platform version adds micro-targeting: the same campaign shows a hundred different tailored stories, each persuasive to its niche, breaking the old shared-public defense of a mass audience all seeing the same message.',
       },
       {
         kind: 'para',
