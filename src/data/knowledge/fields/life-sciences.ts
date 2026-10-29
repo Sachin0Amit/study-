@@ -19,6 +19,7 @@ import { x60CrossverifyTopics } from './x60-crossverify-pass'
 import { x71CrossverifyGeneticsTopics } from './x71-crossverify-pass'
 import { x72CrossverifyPassTopics } from './x72-crossverify-pass'
 import { x77CrossverifyZoologyTopics } from './x77-crossverify-pass'
+import { x78CrossverifyEcologyTopics } from './x78-crossverify-pass'
 import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
 import { x64LibraryOrgPassTopics } from './x64-library-org-pass'
 import { x65CrossverifyBotanyPassTopics } from './x65-crossverify-pass'
@@ -43,6 +44,19 @@ export const lifeSciences: KnowledgeDomainFile = {
     // foraging attribution fix in bio-animal-behavior-ethology (Krebs 1977
     // great tits 95%, J.M. Tinbergen 1981 starlings 5.9 vs 6-7 predicted).
     ...x77CrossverifyZoologyTopics.filter((t) => t.domain === 'Life Sciences'),
+    // X78 CROSSVERIFY pass (2026-10-30): Ecology & Conservation (book #9) vs
+    // Begon, Townsend & Harper, Ecology: From Individuals to Ecosystems 4e
+    // (university course-page PDF, read + deleted). Two MISSING topics added
+    // per Begon 6.9 (Levins metapopulation theory) and Ch21 (geographic
+    // species-richness gradients). Carved: dispersal-as-Darwin-argument →
+    // bio-biogeography-darwin (x62), dormancy → bio-adaptations-habitat,
+    // island biogeography + reserve design → environment book, diversity-
+    // function evidence → env-biodiversity-loss, indices →
+    // env-measuring-biodiversity, succession mechanics →
+    // env-restoration-rewilding. Also CORRECTED in place: ecol-populations-
+    // communities' Pisaster result (was "fifteen species collapse into one"
+    // — Paine 1966 via Begon 19.4.2 says 15 → eight).
+    ...x78CrossverifyEcologyTopics.filter((t) => t.domain === 'Life Sciences'),
     // X47 biology-split pass (2026-10-25): the user split the one-volume
     // Biology book into 13 discipline books; this pass supplies the new
     // lessons the thin books need. Life Sciences slice: the biochemist's
@@ -6893,7 +6907,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
-          text: 'Not all species weigh equally. Foundation species — kelp forests, corals, canopy trees — create habitat and set the community\'s physical architecture. Keystone species have small biomass but outsized influence, usually through predation: remove the sea star Pisaster from its mussel beds and fifteen species collapse into one; remove sea otters and urchins graze kelp forests into barrens. Invasive species, introduced beyond their native range, often act as anti-keystones: freed from their own predators and competitors, they simplify communities — the Asian carp of the American rivers being the modern cautionary tale.',
+          text: 'Not all species weigh equally. Foundation species — kelp forests, corals, canopy trees — create habitat and set the community\'s physical architecture. Keystone species have small biomass but outsized influence, usually through predation: remove the sea star Pisaster from its mussel beds and the shoreline\'s species count fell from 15 to eight as mussels crowded out everything else (Paine\'s classic experiment, as Begon\'s ecology text retells it); remove sea otters and urchins graze kelp forests into barrens. Invasive species, introduced beyond their native range, often act as anti-keystones: freed from their own predators and competitors, they simplify communities — the Asian carp of the American rivers being the modern cautionary tale.',
         },
         {
           kind: 'para',

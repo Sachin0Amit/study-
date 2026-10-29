@@ -17,7 +17,7 @@
 - **Subjects:** 138
 - **Books (master volumes):** 138
 - **Chapters:** 885
-- **Sections (lessons):** 4686
+- **Sections (lessons):** 4688
 
 ## Foundations — 7 subjects
 
@@ -849,10 +849,10 @@
 
 ### Ecology & Conservation (`ku-ecology-conservation`)
 
-*Who lives where, and why* — 4 chapters · 10 sections
+*Who lives where, and why* — 4 chapters · 12 sections
 
 - **Ch 1. Organisms & the Environment** `ku-ecology-conservation-organisms-and-the-environment` — 1 sections: Life at the Limits: How Organisms Answer Habitat and Abiotic Stress
-- **Ch 2. Populations & Communities** `ku-ecology-conservation-populations-and-communities` — 1 sections: Populations and Communities: Interactions, Niches and Disturbance
+- **Ch 2. Populations & Communities** `ku-ecology-conservation-populations-and-communities` — 3 sections: Metapopulations: When Persistence Lives Between Patches; Patterns in Species Richness: Why the Tropics Win; Populations and Communities: Interactions, Niches and Disturbance
 - **Ch 3. Ecosystems, Energy & Biomes** `ku-ecology-conservation-ecosystems-energy-and-biomes` — 4 sections: Ecosystems and the Flow of Energy; Food Webs and Trophic Cascades: Who Eats Whom, and Why It Matters; Biomes: A Tour of Earth's Major Ecosystems; Population Ecology: Growth, Limits and Cycles
 - **Ch 4. Conservation & Restoration** `ku-ecology-conservation-conservation-and-restoration` — 4 sections: Brazilian Biomes and the Geography of Deforestation; Biodiversity and the Sixth Extinction; Restoration and Rewilding: Putting Ecosystems Back Together; Measuring Biodiversity: Richness, Evenness, Sampling and Simpson’s Index
 

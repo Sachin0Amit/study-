@@ -1271,7 +1271,7 @@ export const environment: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
-          text: 'Trophic rewilding restores the animals that shape ecosystems from the top. In 1995, 41 gray wolves were released in Yellowstone; elk stopped loitering in open river valleys, willows and aspen regrew, beavers recolonized, and their ponds drew birds and fish — a trophic cascade still studied and debated. In Europe, beavers are reintroduced as ecosystem engineers whose dams slow floods, recharge groundwater and build wetlands free of charge; England\'s Devon trial measured real flood-peak reduction downstream.',
+          text: 'Trophic rewilding restores the animals that shape ecosystems from the top. In 1995, 31 gray wolves from Canada were released in Yellowstone, joined by 17 more the next winter (the National Park Service\u2019s Wolf Project annual reports); elk stopped loitering in open river valleys, willows and aspen regrew, beavers recolonized, and their ponds drew birds and fish — a trophic cascade still studied and debated. In Europe, beavers are reintroduced as ecosystem engineers whose dams slow floods, recharge groundwater and build wetlands free of charge; England\'s Devon trial measured real flood-peak reduction downstream.',
         },
         {
           kind: 'para',

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T19:12:43.913Z",
+  "generatedAt": "2026-10-29T19:42:37.699Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 138,
     "books": 138,
     "chapters": 885,
-    "sections": 4686
+    "sections": 4688
   },
   "subjects": [
     {
@@ -27331,7 +27331,7 @@
       "group": "Life Sciences",
       "tagline": "Who lives where, and why",
       "chapterCount": 4,
-      "sectionCount": 10,
+      "sectionCount": 12,
       "chapters": [
         {
           "id": "ku-ecology-conservation-organisms-and-the-environment",
@@ -27354,11 +27354,21 @@
           "title": "Populations & Communities",
           "shortTitle": "Populations & Communities",
           "bookId": "ku-ecology-conservation",
-          "sectionCount": 1,
+          "sectionCount": 3,
           "sections": [
             {
-              "id": "ku-ecol-populations-communities",
+              "id": "ku-ecol-metapopulations-dispersal",
               "number": 2.1,
+              "title": "Metapopulations: When Persistence Lives Between Patches"
+            },
+            {
+              "id": "ku-ecol-species-richness-gradients",
+              "number": 2.2,
+              "title": "Patterns in Species Richness: Why the Tropics Win"
+            },
+            {
+              "id": "ku-ecol-populations-communities",
+              "number": 2.3,
               "title": "Populations and Communities: Interactions, Niches and Disturbance"
             }
           ]

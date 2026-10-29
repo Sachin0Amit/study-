@@ -352,6 +352,8 @@ const IDS = [
   'law-jurisdiction-immunity',
   // CROSSVERIFY 2026-10-30 (X77) — Zoology vs Hickman 18e (internet-research)
   'bio-animal-behavior-rhythms',
+  'ecol-metapopulations-dispersal',
+  'ecol-species-richness-gradients',
   'bio-animal-senses-superpowers',
   'bio-animal-behavior-ethology',
 ]
