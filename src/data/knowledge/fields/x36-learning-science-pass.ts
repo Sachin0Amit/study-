@@ -108,8 +108,8 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
         'Elaborative rehearsal and the self-reference effect',
         'Encoding first, retrieving second',
       ],
-      words: 1418,
-      readMins: 7,
+      words: 2792,
+      readMins: 14,
       addedOn: '2026-10-25',
       blocks: [
         {
@@ -125,23 +125,143 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
         { kind: 'heading', text: 'Core Concepts' },
         {
           kind: 'para',
-          text: 'An acronym packs a list into one pronounceable word: HOMES for Huron, Ontario, Michigan, Erie and Superior. An acrostic does the same job with a sentence: "Please Excuse My Dear Aunt Sally" hands you Parentheses, Exponents, Multiplication, Division, Addition, Subtraction in order. Both work by the same mechanism — the arbitrary first-letters become a single meaningful item, and meaning is what memory holds best. A jingle adds rhythm and rhyme: "i before e except after c" survives decades after school because sound patterns are themselves retrieval cues.',
+          text: 'An acronym packs a list into one pronounceable word: HOMES for Huron, Ontario, Michigan, Erie and Superior. An acrostic does the same job with a sentence: "Please Excuse My Dear Aunt Sally" hands you Parentheses, Exponents, Multiplication, Division, Addition, Subtraction in order. Musicians read the treble stave through "Every Good Boy Deserves Fudge", and physics students keep the visible spectrum ordered with Roy G. Biv. Both work by the same mechanism — the arbitrary first-letters become a single meaningful item, and meaning is what memory holds best. The mechanism is measurable, too: first-letter cues reliably boost recall of a list you thought you had lost, because the cue does the searching and the memory only has to match. A jingle adds rhythm and rhyme: "i before e except after c" survives decades after school because sound patterns are themselves retrieval cues.',
         },
         {
           kind: 'para',
-          text: 'Chunking attacks the other bottleneck: capacity. Organizing information into manageable bits or chunks lets a working memory that holds perhaps four items hold four packages instead of forty details — a phone number becomes one melody rather than ten digits. Every mnemonic is secretly a chunking machine: ten unrelated facts collapse into one image, one route, or one sentence.',
+          text: 'Chunking attacks the other bottleneck: capacity. George Miller measured the span of working memory at seven items, plus or minus two, in his famous 1956 paper The Magical Number Seven; Nelson Cowan re-analyzed a century of span studies in 2001 and put the practical modern estimate nearer four. Organizing information into manageable bits or chunks lets those few slots hold packages instead of details — a phone number read as 987 654 3210 is three chunks rather than ten loose digits, and a chess master sees one defended king-side pattern where a novice sees thirty-two separate pieces (Chase and Simon filmed exactly this difference at Carnegie Mellon in 1973). Every mnemonic is secretly a chunking machine: ten unrelated facts collapse into one image, one route, or one sentence.',
         },
         {
           kind: 'para',
-          text: 'The method of loci — the memory palace — is the heavyweight. You take a route you know by heart, your childhood home say, and place vivid images of each item at a fixed spot along it: laundry detergent foaming in the hallway, eggs nested in the umbrella stand. At recall you walk the route mentally and collect the images. The technique is ancient — classical orators delivered speeches this way — and it works because spatial memory is enormous and automatic: you never practiced remembering where your kitchen is. Joshua Foer, who documented his year of memory training culminating in winning the U.S. Memory Championship, built his entire competitive repertoire on this single idea, and OpenStax points to his talks as the modern popularization.',
+          text: 'The heavyweight has the best origin story in psychology. Cicero tells it in De Oratore (55 BCE): the poet Simonides of Ceos stepped outside a banquet hall in Thessaly moments before its roof collapsed, and when the grieving families could not tell one crushed body from another, he identified each guest by remembering where they had been sitting. From that grim inventory the Greeks drew a general law — place and order carry information better than effort alone — and the method of loci was born. Roman rhetoricians turned it into standard training equipment: Quintilian describes orators walking an imaginary building, nailing each part of a speech to a column or a niche so nothing could come out of order. Twenty-four centuries later, every finalist at the World Memory Championship is still using a version of the Simonides dining room.',
         },
         {
           kind: 'para',
-          text: 'For paired associations — foreign vocabulary, symbol-to-name mappings in anatomy or chemistry — the keyword method links the new sound to a familiar word and then welds the pair into one image: Spanish "caber" (to fit) heard as "cab bear" — a bear fitting into a taxi. It is quick and it sticks. But here the honest limit arrives: the largest systematic review of learning techniques, Dunlosky and colleagues in 2013, rated the keyword mnemonic surprisingly low utility for broad course learning — inconsistent gains, hard to generalize, irrelevant to concepts. Mnemonics are a scalpel for arbitrary mappings, not a substitute for comprehension: no acrostic will teach you why demand curves slope downward, and pretending otherwise is how students end up decorating ignorance.',
+          text: 'The method of loci — the memory palace — is the heavyweight. You take a route you know by heart, your childhood home say, and place vivid images of each item at a fixed spot along it: laundry detergent foaming in the hallway, eggs nested in the umbrella stand. At recall you walk the route mentally and collect the images. The technique is ancient — classical orators delivered speeches this way — and it works because spatial memory is enormous and automatic: you never practiced remembering where your kitchen is. Joshua Foer, who documented his year of memory training culminating in winning the U.S. Memory Championship, built his entire competitive repertoire on this single idea, and OpenStax points to his talks as the modern popularization. And what the athletes claim, brain imaging has now measured: Eleanor Maguire and colleagues scanned eight superior memorizers for Nature Neuroscience in 2002 and found structurally ordinary brains — no enlarged hippocampus, nothing exotic — but during recall their equipment lit up the same spatial-navigation circuitry the rest of us use to find our way around a city. The athletes were not born different; they had deliberately recruited the oldest memory technology there is.',
         },
         {
           kind: 'para',
-          text: 'Two quieter techniques deserve the same billing. Elaborative rehearsal means thinking about the meaning of new information and relating it to what you already know — asking why it is true, connecting it to another course, finding the exception — and it reliably beats plain repetition. The self-reference effect is its personal branch: rewrite definitions in your own words and relate concepts to your own life, because you are thereby building a web of retrieval cues anchored in the richest material you own. Saying words aloud helps too — it makes a word distinctive, and distinctiveness is memorable.',
+          text: 'Building a palace that survives contact with an exam takes five deliberate moves. Pick a route of ten to twenty fixed spots you could walk blindfolded — your front door to your kitchen is ideal, because the order of rooms is knowledge you already own. Number the spots the same way every time: one, the doormat; two, the coat hook; three, the hallway; four, the umbrella stand; five, the kitchen counter; six, the kitchen sink. Walk the empty route twice before storing anything in it, so the addresses themselves are solid. Then park exactly one vivid image at each spot — exaggerated, moving, interacting with its location, ideally absurd: detergent foaming over the hallway, not merely standing in it. Finally, test the walk: an hour later, then again the next day, stroll the route on your commute and read the images back. One image per spot is the rule — a crowded scene blurs into a single vague memory, which is precisely what you were trying to avoid.',
+        },
+        {
+          kind: 'figure',
+          caption: 'The method of loci: one walk through the palace. Six fixed spots from the worked example, in route order — front door, coat hook, hallway, umbrella stand, kitchen counter, kitchen sink — each holding exactly one vivid image: soap on the doormat, mangoes swinging from the coat hook, laundry detergent foaming in the hallway, eggs nested in the umbrella stand, bananas marching on the counter, a milk carton diving into the sink. The emerald line is the encoding walk (store one image per locus); the rose line is the recall walk — same automatic route, images collected as you pass.',
+          sketchImage: '/diagrams/memory-palace-sketch.jpg',
+          sketchCaption: 'Student Laboratory Notebook: floor plan of a memory palace — a corridor walk from the front door to the kitchen sink with six numbered loci; a bar of soap oozing foam on the doormat, mangoes swinging from the coat hook, laundry detergent foaming in the hallway, eggs nested in the umbrella stand, bananas marching on the kitchen counter, a milk carton diving into the sink; dashed arrows marking the encode and recall walks; labels in neat handwriting: method of loci, one vivid image per locus.',
+          afterConcept: 4,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="The memory palace: method of loci — a corridor walk from the front door to the kitchen sink with six numbered loci, one vivid image each">
+  <!-- title + legend -->
+  <text x="74" y="84" font-family="Georgia, 'Times New Roman', serif" font-size="15.5" font-style="italic" fill="currentColor">the memory palace — method of loci</text>
+  <line x1="718" y1="64" x2="758" y2="64" stroke="#059669" stroke-width="2.4" stroke-dasharray="7 5" stroke-linecap="round"/>
+  <text x="752" y="68" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#059669" text-anchor="end">encode: store one image per locus</text>
+  <line x1="718" y1="86" x2="758" y2="86" stroke="#e11d48" stroke-width="2.4" stroke-dasharray="7 5" stroke-linecap="round"/>
+  <text x="752" y="90" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#e11d48" text-anchor="end">recall: walk and collect</text>
+  <!-- hand-drawn corridor walls (double-stroked, gently wobbly) -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round">
+    <path d="M66 120 Q 300 116 540 119 Q 690 121 814 118"/>
+    <path d="M70 352 Q 300 356 540 353 Q 690 355 812 352"/>
+    <path d="M68 122 Q 65 168 67 210"/>
+    <path d="M67 272 Q 65 312 68 350"/>
+    <path d="M812 120 Q 809 166 810 212"/>
+    <path d="M810 270 Q 808 312 812 350"/>
+  </g>
+  <g fill="none" stroke="#8a8a93" stroke-width="1" opacity="0.5" stroke-linecap="round">
+    <path d="M71 126 Q 300 122 540 125 Q 690 127 806 124"/>
+    <path d="M75 346 Q 300 350 540 347 Q 690 349 804 346"/>
+  </g>
+  <!-- open front door (left end) -->
+  <path d="M67 212 Q 99 222 94 254" fill="none" stroke="#8a8a93" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="92" cy="250" r="2.2" fill="#8a8a93"/>
+  <!-- kitchen door (right end) -->
+  <text x="822" y="245" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="currentColor">kitchen</text>
+  <!-- encode route: emerald, through the six loci -->
+  <path d="M92 252 Q 116 246 140 240 Q 200 232 255 236 Q 314 240 370 236 Q 430 232 485 238 Q 544 243 600 236 Q 660 230 715 238 Q 754 244 784 246" fill="none" stroke="#059669" stroke-width="2.6" stroke-dasharray="8 6" stroke-linecap="round"/>
+  <g fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M244 228 L258 236 L244 243"/>
+    <path d="M474 229 L488 237 L474 244"/>
+    <path d="M766 237 L780 245 L765 252"/>
+  </g>
+  <text x="98" y="224" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#059669">the mental walk</text>
+  <!-- recall route: rose, returning -->
+  <path d="M782 302 Q 660 306 540 302 Q 420 298 300 303 Q 190 307 100 300" fill="none" stroke="#e11d48" stroke-width="2" stroke-dasharray="6 6" stroke-linecap="round"/>
+  <g fill="none" stroke="#e11d48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M116 293 L102 300 L117 308"/>
+    <path d="M414 295 L400 302 L415 310"/>
+  </g>
+  <!-- locus 1: front door — soap on the doormat -->
+  <ellipse cx="140" cy="196" rx="30" ry="8" fill="none" stroke="#8a8a93" stroke-width="1.8"/>
+  <rect x="127" y="174" width="26" height="13" rx="5" fill="none" stroke="#e11d48" stroke-width="2.2"/>
+  <g fill="none" stroke="#e11d48" stroke-width="1.8">
+    <circle cx="131" cy="169" r="3.6"/><circle cx="140" cy="166" r="4"/><circle cx="149" cy="170" r="3.2"/>
+    <path d="M133 187 Q 132 191 134 194"/><path d="M147 187 Q 148 191 146 194"/>
+  </g>
+  <!-- locus 2: coat hook — mangoes swinging -->
+  <path d="M247 142 L265 142" stroke="#8a8a93" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M255 142 Q 254 148 256 151" fill="none" stroke="#8a8a93" stroke-width="1.8" stroke-linecap="round"/>
+  <g fill="none" stroke="#d97706" stroke-width="2">
+    <path d="M248 152 Q 245 164 249 174"/>
+    <path d="M262 152 Q 266 163 262 173"/>
+    <ellipse cx="247" cy="180" rx="7" ry="10" transform="rotate(-14 247 180)"/>
+    <ellipse cx="264" cy="179" rx="7" ry="10" transform="rotate(12 264 179)"/>
+  </g>
+  <!-- locus 3: hallway — laundry detergent foaming -->
+  <rect x="360" y="152" width="22" height="38" rx="4" fill="none" stroke="#059669" stroke-width="2.2"/>
+  <rect x="366" y="144" width="10" height="8" rx="2" fill="none" stroke="#059669" stroke-width="1.8"/>
+  <g fill="none" stroke="#059669" stroke-width="1.6">
+    <circle cx="353" cy="152" r="4"/><circle cx="349" cy="161" r="3"/><circle cx="356" cy="170" r="2.4"/>
+    <circle cx="389" cy="148" r="3.4"/><circle cx="392" cy="158" r="2.6"/>
+  </g>
+  <!-- locus 4: umbrella stand — eggs nested -->
+  <path d="M476 160 L494 160 L490 198 L480 198 Z" fill="none" stroke="#8a8a93" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M485 160 Q 483 142 481 132 M481 132 Q 486 128 491 133" fill="none" stroke="#8a8a93" stroke-width="1.8" stroke-linecap="round"/>
+  <g fill="none" stroke="#d97706" stroke-width="2">
+    <ellipse cx="482" cy="189" rx="6" ry="8" transform="rotate(-10 482 189)"/>
+    <ellipse cx="490" cy="187" rx="6" ry="8" transform="rotate(9 490 187)"/>
+  </g>
+  <!-- locus 5: kitchen counter — bananas marching -->
+  <path d="M584 198 L646 198" stroke="#8a8a93" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  <path d="M596 192 Q 598 168 612 164 M596 192 Q 610 190 616 194" fill="none" stroke="#e11d48" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M612 192 Q 616 172 628 170 M612 192 Q 624 191 630 194" fill="none" stroke="#e11d48" stroke-width="2.4" stroke-linecap="round"/>
+  <!-- locus 6: kitchen sink — milk carton diving -->
+  <path d="M688 180 L688 198 L744 198 L744 180" fill="none" stroke="#8a8a93" stroke-width="2" stroke-linecap="round"/>
+  <path d="M700 178 L700 196 M732 178 L732 196" stroke="#8a8a93" stroke-width="1" opacity="0.5" fill="none"/>
+  <g fill="none" stroke="#059669" stroke-width="2.2">
+    <path d="M707 154 L707 178 L725 178 L725 154"/>
+    <path d="M707 154 L716 146 L725 154"/>
+  </g>
+  <g fill="none" stroke="#059669" stroke-width="1.4">
+    <path d="M699 170 Q 696 174 698 178"/><path d="M733 168 Q 736 172 734 177"/>
+  </g>
+  <!-- locus badges on the route -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.2">
+    <circle cx="140" cy="238" r="13"/><circle cx="255" cy="238" r="13"/><circle cx="370" cy="238" r="13"/>
+    <circle cx="485" cy="238" r="13"/><circle cx="600" cy="238" r="13"/><circle cx="715" cy="238" r="13"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" fill="currentColor" text-anchor="middle">
+    <text x="140" y="243">1</text><text x="255" y="243">2</text><text x="370" y="243">3</text>
+    <text x="485" y="243">4</text><text x="600" y="243">5</text><text x="715" y="243">6</text>
+  </g>
+  <!-- labels under each locus -->
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <g font-size="12" fill="currentColor">
+      <text x="140" y="266">front door</text><text x="255" y="266">coat hook</text><text x="370" y="266">hallway</text>
+      <text x="485" y="266">umbrella stand</text><text x="600" y="266">kitchen counter</text><text x="715" y="266">kitchen sink</text>
+    </g>
+    <g font-size="10.5" font-style="italic">
+      <text x="140" y="281" fill="#e11d48">soap on the doormat</text><text x="255" y="281" fill="#d97706">mangoes swinging</text><text x="370" y="281" fill="#059669">laundry detergent</text>
+      <text x="485" y="281" fill="#d97706">eggs nested</text><text x="600" y="281" fill="#e11d48">bananas marching</text><text x="715" y="281" fill="#059669">milk carton diving</text>
+    </g>
+  </g>
+  <!-- footer note -->
+  <text x="440" y="338" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="currentColor" text-anchor="middle" opacity="0.75">one vivid image per fixed spot — exaggerate it, let it interact with its place</text>
+</svg>`},
+        {
+          kind: 'para',
+          text: 'For paired associations — foreign vocabulary, symbol-to-name mappings in anatomy or chemistry — the keyword method links the new sound to a familiar word and then welds the pair into one image: Spanish "caber" (to fit) heard as "cab bear" — a bear fitting into a taxi. It is quick and it sticks. The method itself is a two-step ritual first systematized by Richard Atkinson in 1975 — choose the familiar sound-alike keyword, then build the interactive image — and in the Stanford Russian-vocabulary experiments the keyword groups recalled substantially more words than rote-learning groups, both immediately and days later. But here the honest limit arrives: the largest systematic review of learning techniques, Dunlosky and colleagues in 2013, rated the keyword mnemonic surprisingly low utility for broad course learning — inconsistent gains, hard to generalize, irrelevant to concepts. Mnemonics are a scalpel for arbitrary mappings, not a substitute for comprehension: no acrostic will teach you why demand curves slope downward, and pretending otherwise is how students end up decorating ignorance.',
+        },
+        {
+          kind: 'para',
+          text: 'Two quieter techniques deserve the same billing. Elaborative rehearsal means thinking about the meaning of new information and relating it to what you already know — asking why it is true, connecting it to another course, finding the exception — and it reliably beats plain repetition. The self-reference effect is its personal branch: rewrite definitions in your own words and relate concepts to your own life, because you are thereby building a web of retrieval cues anchored in the richest material you own. The effect has a classic measurement behind it: Rogers, Kuiper and Kirker showed in 1977 that words judged against yourself are recalled better than words judged against anyone else, because self-material is the densest cue web a brain carries. Saying words aloud helps too — it makes a word distinctive, and distinctiveness is memorable.',
         },
         {
           kind: 'para',
@@ -153,9 +273,50 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
           steps: [
             'Identify what is asked: memorize the biological taxonomy ranks in order — Domain, Kingdom, Phylum, Class, Order, Family, Genus, Species — plus six items on a shopping list, tonight.',
             'Recall the governing idea: first-letters compress lists into meaning; spatial routes carry arbitrary items; choose the device that matches the material.',
-            'Apply: build the acrostic "Dear King Philip Came Over For Good Soup" and rehearse it aloud twice; then peg the six shopping items as vivid, exaggerated images at six fixed spots on a walk from your front door to the kitchen — soap oozing over the doormat, mangoes swinging from the coat hook.',
+            'Apply: build the acrostic "Dear King Philip Came Over For Good Soup" and rehearse it aloud twice; then peg the six shopping items as vivid, exaggerated images at six fixed spots on a walk from your front door to the kitchen — soap oozing over the doormat, mangoes swinging from the coat hook, laundry detergent foaming in the hallway, eggs nested in the umbrella stand, bananas marching across the kitchen counter, a milk carton diving into the sink.',
             'State the result: the acrostic survives because a sentence is one chunk with eight ordered slots; the list survives because walking a known route is automatic. Follow up tomorrow with a blank-page recall of both — encoding done, now retrieval.',
           ],
+        },
+        {
+          kind: 'derivation',
+          title: 'How much does one palace hold? The capacity arithmetic',
+          statement:
+            'A planning derivation for the method of loci — from the chunk limit of working memory to the number of palaces a real course needs. Nothing here is deep mathematics; the value is that every input is a number you can count for yourself.',
+          prerequisites: ['Chunking and the working-memory span', 'The method of loci: one locus, one image'],
+          steps: [
+            {
+              label: 'Step 1: One locus holds one chunk',
+              formula: '$$N = R \\times L$$',
+              explanation:
+                'Encoding capacity is additive over loci: a palace with R rooms and L loci per room stores N items, because each locus carries exactly one vivid image — one chunk, not a crowd. Overloading a locus is the classic error the Common Pitfalls section warns about.',
+            },
+            {
+              label: 'Step 2: Count your own loci',
+              formula: '$$N = 12 \\times 5 = 60 \\text{ items}$$',
+              explanation:
+                'A twelve-room apartment route with five honest loci per room — doormat, coat hook, shelf, window, lamp — yields sixty storage spots. The worked route above, front door to kitchen, is the six-locus miniature of the same arithmetic.',
+            },
+            {
+              label: 'Step 3: Scale to a real course',
+              formula: '$$P = \\left\\lceil \\frac{V}{N} \\right\\rceil = \\left\\lceil \\frac{200}{60} \\right\\rceil = 4 \\text{ palaces}$$',
+              explanation:
+                'The applications section budgets the first two hundred high-frequency words of a language to keyword images. At sixty items per palace, a ceiling division says four palaces cover the course — a number small enough to change the plan from impossible to an afternoon of route-building.',
+            },
+            {
+              label: 'Step 4: Price the recall walk',
+              formula: '$$t_{\\text{walk}} = N \\times s = 60 \\times 3\\,\\text{s} = 180\\,\\text{s} = 3\\,\\text{min}$$',
+              explanation:
+                'Retrieval costs one mental stop per locus. Walking all sixty images at a deliberate three seconds each takes three minutes — the whole course reviewed before the kettle boils.',
+            },
+            {
+              label: 'Step 5: The general law',
+              formula: '$$P = \\left\\lceil \\frac{V}{R \\times L} \\right\\rceil, \\qquad t_{\\text{walk}} \\approx R \\times L \\times s$$',
+              explanation:
+                'Capacity multiplies with the routes you know, and each palace costs one walk to sweep. The arithmetic never maintains a memory, though — encoding sets the system up; the review schedule belongs to spaced repetition.',
+            },
+          ],
+          result:
+            'One palace of R rooms and L loci holds R × L items, a course of V items needs the ceiling of V divided by R × L palaces, and a full recall walk costs about N × s seconds. The arithmetic turns memorize two hundred words from one impossible pile into four three-minute walks — but it only moves material into memory; keeping it there is the spacing-repetition lesson to handle.',
         },
         { kind: 'heading', text: 'Applications in the Real World' },
         {
@@ -213,6 +374,18 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
               options: ['Mnemonics encode material first; retrieval practice retains it on schedule', 'Mnemonics replace review entirely', 'Retrieval practice replaces encoding', 'Both are only for exam cramming'],
               answer: 0,
               explain: 'Encode with a device, retain by self-testing on a schedule — the two halves compose, they do not compete.',
+            },
+            {
+              q: 'A ten-digit phone number overloads a working memory span of about four chunks; reading it as 987 654 3210 makes it holdable because grouping turns it into:',
+              options: ['Ten separate items', 'Three chunks', 'One sensory memory', 'A long-term memory'],
+              answer: 1,
+              explain: 'Chunking packages digits into larger bits: three groups fit inside a four-chunk span (Cowan 2001), ten loose digits do not — Miller measured the original seven-plus-or-minus-two span in 1956.',
+            },
+            {
+              q: 'A palace has 12 rooms with 5 loci per room, and a course needs 200 items. How many palaces, and how long is one full recall walk at 3 seconds per locus?',
+              options: ['17 palaces; 10 minutes', '4 palaces; 3 minutes', '60 palaces; 1 minute', '4 palaces; 10 minutes'],
+              answer: 1,
+              explain: 'N = 12 × 5 = 60 items per palace, so the ceiling of 200 ÷ 60 is 4 palaces; the walk costs 60 × 3 s = 180 s, about three minutes — the capacity arithmetic of the derivation.',
             },
           ],
         },
