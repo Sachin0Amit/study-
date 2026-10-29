@@ -284,6 +284,7 @@ const IDS = [
   'study-stress-wellbeing',
   'study-focused-diffuse-modes',
   'study-procrastination-zombies',
+  'fnd-active-recall',
   'fnd-interleaving',
   'study-exam-strategy',
   'fnd-deliberate-practice',

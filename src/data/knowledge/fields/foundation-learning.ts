@@ -633,15 +633,18 @@ export const foundationLearning: KnowledgeDomainFile = {
       tier: 'core',
       concepts: [
         'The testing effect',
+        'The evidence: a century of retrievals',
         'Why rereading feels good and does little',
         'Desirable difficulties',
         'Formats: free recall, flashcards, questions, teaching',
         'Feedback closes the loop',
+        'Effort is the active ingredient',
         'Pretesting: guessing before knowing',
+        'Past papers as retrieval practice',
         'Designing a recall-first session',
       ],
-      words: 1073,
-      readMins: 5,
+      words: 2294,
+      readMins: 11,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -661,6 +664,80 @@ export const foundationLearning: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
+          text: 'The canonical numbers come from an experiment now taught in every learning-science course. Roediger and Karpicke (2006) had students study prose passages and either restudy them four times (SSSS) or study once and take three free-recall tests (STTT) — the same four exposures, only their direction different. On a test five minutes later, restudying actually won: 83% versus 71%. But the payoff lived in the delay: one week later the ranking had flipped hard, 61% for the test-takers against 40% for the re-readers — repeated reading took the best score early and the worst score late. The finding is not a one-off. Karpicke and Blunt reported in Science (2011) that retrieval practice beat even concept mapping on a week-later short-answer test (0.67 versus 0.45 correct — a 50% improvement — with 84% of students doing better after retrieval), and the advantage held on inference questions requiring ideas to be connected, not just repeated. Karpicke and Roediger (2008) added the warning label with Swahili vocabulary: dropping items from retrieval after their first correct recall — a natural, time-saving habit — cut week-later recall roughly in half, because the dropping removes exactly the retrieval that consolidates. Modern syntheses bracket the whole literature: Rowland (2014) found g \u2248 0.50 across 61 studies, Adesope and colleagues (2017) g \u2248 0.61 across 272 effect sizes, and Yang and colleagues (2021) confirmed g \u2248 0.50 in real classrooms with 48,478 students — with the advantage growing as the delay grows. A finding documented since the early 1900s and this broad is about as close to a law as learning science gets.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The crossover that made the testing effect famous (Roediger & Karpicke, 2006, Experiment 2). After five minutes, repeated study (SSSS) leads repeated testing (STTT), 83% to 71% — the fluency illusion wearing a lab coat. One week later the ranking flips: 61% versus 40%, for the same four exposures spent in opposite directions. The advantage of retrieval grows exactly where it matters — at the delay.',
+          sketchImage: '/diagrams/testing-effect-crossover-sketch.jpg',
+          sketchCaption:
+            'Student Laboratory Notebook: hand-drawn bar chart of the testing-effect crossover — study SSSS versus test STTT bars at \u201c5 min\u201d (83 vs 71) and \u201c1 week\u201d (40 vs 61), a wobbly arrow marking the flip, margin note: \u201cretrieval wins at the delay.\u201d',
+          afterConcept: 2,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="Bar chart: repeated study versus repeated testing at five minutes and one week — study leads at five minutes (83 vs 71), testing leads at one week (61 vs 40)">
+  <!-- hand-drawn axes (double-stroked, gently wobbly) -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round">
+    <path d="M92 54 Q90 230 94 396"/>
+    <path d="M88 392 Q340 396 620 391 Q740 394 838 390"/>
+  </g>
+  <g fill="none" stroke="#8a8a93" stroke-width="1" opacity="0.5" stroke-linecap="round">
+    <path d="M97 57 Q95 230 99 394"/>
+    <path d="M84 397 Q340 401 620 396 Q740 399 835 395"/>
+  </g>
+  <!-- axis titles + ticks -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="currentColor">
+    <text x="34" y="228" font-size="15" font-style="italic" text-anchor="middle" transform="rotate(-90 34 228)">Recall of the passage (%)</text>
+    <text x="838" y="446" font-size="15" font-style="italic" text-anchor="end">Time since study</text>
+    <g font-size="11.5" fill="#8a8a93" text-anchor="end">
+      <text x="84" y="68">100</text><text x="84" y="148">75</text><text x="84" y="228">50</text><text x="84" y="308">25</text><text x="84" y="392">0</text>
+    </g>
+  </g>
+  <!-- gridline at 100/75/50/25 -->
+  <g stroke="#8a8a93" stroke-width="0.8" opacity="0.3" stroke-dasharray="4 5">
+    <line x1="92" y1="64" x2="830" y2="64"/>
+    <line x1="92" y1="144" x2="830" y2="144"/>
+    <line x1="92" y1="224" x2="830" y2="224"/>
+    <line x1="92" y1="304" x2="830" y2="304"/>
+  </g>
+  <!-- cluster 1: 5 minutes (baseline y=392, scale 3.2 px/%) -->
+  <!-- SSSS 83% -> h=266, y=126; STTT 71% -> h=227, y=165 -->
+  <path d="M172 128 Q170 260 174 392 L242 392 Q244 260 242 128 Q208 124 172 128" fill="#e11d48" opacity="0.16"/>
+  <path d="M176 130 Q174 260 178 392 M238 392 Q240 260 238 130" fill="none" stroke="#e11d48" stroke-width="3" stroke-linecap="round"/>
+  <path d="M330 167 Q328 280 332 392 L400 392 Q402 280 400 167 Q366 163 330 167" fill="#059669" opacity="0.16"/>
+  <path d="M334 169 Q332 280 336 392 M396 392 Q398 280 396 169" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="14" text-anchor="middle">
+    <text x="208" y="118" fill="#e11d48">83%</text>
+    <text x="366" y="157" fill="#059669">71%</text>
+  </g>
+  <text x="288" y="424" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" font-style="italic" fill="currentColor">5 minutes later</text>
+  <!-- cluster 2: 1 week -->
+  <!-- SSSS 40% -> h=128, y=264; STTT 61% -> h=195, y=197 -->
+  <path d="M536 266 Q534 330 538 392 L606 392 Q608 330 606 266 Q572 262 536 266" fill="#e11d48" opacity="0.16"/>
+  <path d="M540 268 Q538 330 542 392 M602 392 Q604 330 602 268" fill="none" stroke="#e11d48" stroke-width="3" stroke-linecap="round"/>
+  <path d="M694 199 Q692 296 696 392 L764 392 Q766 296 764 199 Q730 195 694 199" fill="#059669" opacity="0.16"/>
+  <path d="M698 201 Q696 296 700 392 M760 392 Q762 296 760 201" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="14" text-anchor="middle">
+    <text x="572" y="256" fill="#e11d48">40%</text>
+    <text x="730" y="189" fill="#059669">61%</text>
+  </g>
+  <text x="652" y="424" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" font-style="italic" fill="currentColor">1 week later</text>
+  <!-- legend -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="13">
+    <rect x="118" y="20" width="16" height="10" fill="#e11d48" opacity="0.35"/>
+    <text x="140" y="29" fill="currentColor">repeated study (SSSS)</text>
+    <rect x="330" y="20" width="16" height="10" fill="#059669" opacity="0.35"/>
+    <text x="352" y="29" fill="currentColor">repeated testing (STTT)</text>
+  </g>
+  <!-- crossover annotation -->
+  <path d="M300 96 Q420 66 560 118" fill="none" stroke="#d97706" stroke-width="2.2" stroke-dasharray="7 6" stroke-linecap="round"/>
+  <path d="M560 118 l-11 -2 M560 118 l-4 -10" fill="none" stroke="#d97706" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="430" y="58" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#d97706">the crossover: study wins now, testing wins later</text>
+  <!-- condition note -->
+  <text x="452" y="452" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#8a8a93">same four exposures — SSSS reads four times, STTT reads once and recalls three times</text>
+</svg>`,
+        },
+        {
+          kind: 'para',
           text: 'Rereading exploits a perceptual illusion: each pass makes the page more familiar, and the brain mistakes fluency for knowledge. The feeling of "I know this" tracks how easily information comes in, not whether it can come out — and only the outgoing path is ever graded. Highlighting and verbatim summarizing share the flaw: they polish the input while leaving retrieval untrained.',
         },
         {
@@ -677,7 +754,15 @@ export const foundationLearning: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
+          text: 'Why should the harder route leave a stronger trace? Pyc and Rawson\u2019s 2009 work on retrieval effort suggests the effort is informative: a difficult-but-successful retrieval forces deeper, more elaborate processing of the answer, and that extra processing is what supports recall later. Errors have a role too — when a retrieval fails and feedback then supplies the answer, the correction lands on a hole you have just personally mapped, which makes it memorable. This is why the recall-first cycle refuses to grade itself gently: a session in which every pull succeeds is a session that taught you nothing new. The practical translation is uncomfortable but simple — if practice never feels effortful, it is probably not retrieval; it is review wearing retrieval\u2019s clothes.',
+        },
+        {
+          kind: 'para',
           text: 'A strange but robust finding: attempting questions on material you have never studied improves later learning of it, even when the guesses are wrong. Wrong guesses create curiosity and prime the correct answers, so the subsequent reading lands on prepared ground. A pretest costs minutes — skim the headings and guess the content — and buys attention for the whole chapter.',
+        },
+        {
+          kind: 'para',
+          text: 'The highest-value retrieval format is usually already in the drawer: old exams and problem sets. A past paper is a professionally balanced battery of retrieval prompts, calibrated for the exact mix of recall, method selection and transfer the real assessment will demand — no homemade flashcard deck matches that balance. The discipline is the ritual above, pointed at the real target: sit the paper closed-book on the clock, mark it honestly against the solutions, and let the error list write next week\u2019s study plan. Students who skip the attempt and read the solutions directly are running the fluency illusion on expert output — solutions read smoothly precisely because someone else did the retrieving.',
         },
         {
           kind: 'para',
@@ -692,6 +777,47 @@ export const foundationLearning: KnowledgeDomainFile = {
             'Apply: spend ten minutes reading the section cold for structure; twenty-five minutes writing everything recallable from memory with the book closed; ten minutes checking against the source and marking gaps; ten minutes rereading only the marked gaps; five minutes on a final gap-only retrieval.',
             'State the result: the same hour produces one full retrieval pass, a color-coded gap map, and a second pass over the weak half — versus an hour of fluent rereading that leaves recall completely untested.',
           ],
+        },
+        {
+          kind: 'derivation',
+          title: 'What one hour of retrieval buys: the retention exchange rate',
+          statement:
+            'Three published numbers from the Roediger–Karpicke design turn the testing effect into an exchange rate: how much week-later memory does a unit of study time buy when it is spent on retrieval instead of restudy?',
+          prerequisites: ['Fractions and percentages', 'The equal-exposures design (SSSS vs STTT)'],
+          steps: [
+            {
+              label: 'Step 1: Count exposures, not minutes',
+              formula: '$$\\text{SSSS} = 4\\ \\text{passes}, \\qquad \\text{STTT} = 1 + 3 = 4\\ \\text{passes}$$',
+              explanation:
+                'Both conditions processed the passage four times; the only difference is direction — passes two through four were inputs (study) for one group and outputs (retrievals) for the other. Any retention gap is therefore bought with zero extra time.',
+            },
+            {
+              label: 'Step 2: Read the five-minute score',
+              formula: '$$R_{5\\min}^{\\text{study}} = 83\\% \\;>\\; R_{5\\min}^{\\text{test}} = 71\\%$$',
+              explanation:
+                'Immediately after study, restudying leads by 12 points. This is the fluency illusion wearing a lab coat — and it is precisely the feeling students use to choose their methods.',
+            },
+            {
+              label: 'Step 3: Read the one-week score',
+              formula: '$$R_{1\\,\\text{wk}}^{\\text{test}} = 61\\% \\;>\\; R_{1\\,\\text{wk}}^{\\text{study}} = 40\\%$$',
+              explanation:
+                'At the delay that matters, the ranking has flipped and testing leads by 21 points — the crossover the figure shows.',
+            },
+            {
+              label: 'Step 4: Convert to an exchange rate',
+              formula: '$$g = \\frac{61 - 40}{40} = 0.525$$',
+              explanation:
+                'The test group\u2019s week-later memory is 52.5% larger than the restudy group\u2019s — for identical time on task. The crossover is what makes the late advantage free.',
+            },
+            {
+              label: 'Step 5: Generalize beyond one experiment',
+              formula: '$$g_{\\text{Rowland}} \\approx 0.50, \\qquad g_{\\text{Adesope}} \\approx 0.51\\ (\\text{vs restudy})$$',
+              explanation:
+                'Independent meta-analyses land near half a standard deviation over restudy (Rowland 2014; Adesope et al. 2017), with the margin growing as the delay grows — the exchange rate is a property of the method, not of one passage.',
+            },
+          ],
+          result:
+            'One passage-pass exchanged from input to output buys about 52% more week-later recall in the canonical experiment and roughly half a standard deviation across the literature — a return that grows with delay. The most expensive minute in studying is the one spent re-reading a page you could have retrieved.',
         },
         { kind: 'heading', text: 'Applications in the Real World' },
         {
@@ -720,6 +846,8 @@ export const foundationLearning: KnowledgeDomainFile = {
             { term: 'Free recall', def: 'Writing or saying everything remembered about a topic with the source closed.' },
             { term: 'Feedback', def: 'Checking retrieved answers against the source to mark and repair gaps.' },
             { term: 'Pretesting', def: 'Answering questions before studying, which primes later learning.' },
+            { term: 'Retrieval effort', def: 'Pyc and Rawson\u2019s principle that difficult-but-successful retrievals produce the deepest learning.' },
+            { term: 'Crossover', def: 'The flip by which restudy wins at five minutes but retrieval wins at the delayed test.' },
           ],
         },
         { kind: 'heading', text: 'Check Yourself' },
@@ -750,6 +878,30 @@ export const foundationLearning: KnowledgeDomainFile = {
               answer: 1,
               explain: 'Wrong guesses prime attention and curiosity, so the correct answers stick better afterward.',
             },
+            {
+              q: 'In Roediger and Karpicke\u2019s one-week test, repeated testing (STTT) versus repeated studying (SSSS) scored roughly:',
+              options: ['61% vs 40% — testing led by 21 points', '40% vs 61% — study led', '83% vs 71% — the five-minute result', 'Exactly equal at the delay'],
+              answer: 0,
+              explain: 'One week later: 61% versus 40%. The 83-vs-71 figure was only the five-minute score, where restudy still led — the crossover is the whole point.',
+            },
+            {
+              q: 'Karpicke and Blunt (2011) showed that retrieval practice outperformed:',
+              options: ['Only verbatim fact recall', 'Concept mapping on a week-later test, including inference questions (0.67 vs 0.45 correct)', 'Nothing — concept mapping won', 'Only methods with unlimited study time'],
+              answer: 1,
+              explain: 'Retrieval beat even an elaborative technique built for understanding — a ~50% improvement, with 84% of students doing better after retrieval.',
+            },
+            {
+              q: 'In Karpicke and Roediger\u2019s 2008 vocabulary study, dropping an item from retrieval after its first correct recall:',
+              options: ['Saved time with no cost to memory', 'Cut week-later recall roughly in half versus continuing to retrieve it', 'Improved retention through spacing', 'Only hurt the easiest items'],
+              answer: 1,
+              explain: 'The dropped retrievals are exactly the ones that consolidate — the time-saving habit removes the mechanism.',
+            },
+            {
+              q: 'In the recall-first hour, the minutes spent checking your free-recall page against the source exist to:',
+              options: ['Reread the whole chapter once more', 'Mark the gaps — the targeted restudy list the final gap-only retrieval then attacks', 'Make the page presentable', 'Preview the next chapter'],
+              answer: 1,
+              explain: 'Feedback converts the retrieval attempt into a located curriculum: the marked gaps, and only the gaps, get the remaining minutes.',
+            },
           ],
         },
         {
@@ -771,15 +923,17 @@ export const foundationLearning: KnowledgeDomainFile = {
       concepts: [
         'Blocked practice and the illusion of mastery',
         'Interleaving: shuffling the categories',
+        'The numbers: three times the score for the same hour',
         'Why it works: discrimination and spaced retrieval',
         'The performance-learning paradox',
         'Where interleaving helps most',
+        'Building mixed problem sets: the one-back rule',
         'Designing an interleaved schedule',
         'Spacing is the partner, not the rival',
         'Overlearning: the blocked-practice exception',
       ],
-      words: 1233,
-      readMins: 6,
+      words: 2253,
+      readMins: 11,
       addedOn: '2026-10-17',
       blocks: [
         {
@@ -803,6 +957,66 @@ export const foundationLearning: KnowledgeDomainFile = {
         },
         {
           kind: 'para',
+          text: 'The pattern has been documented with almost uncomfortable consistency. Rohrer and Taylor (2007) gave university students the same twenty mathematics problems, blocked or shuffled: the blocked group solved 89% during practice yet scored 20% on the test a week later, while the shuffled group — visibly clumsier at 65% in practice — scored 63%, roughly three times the delayed score for identical problems and identical minutes. Rohrer, Dedrick and Stershic\u2019s 2015 randomized classroom trial took it into real 9th-grade algebra across twelve problem types: one day after practice the groups were close, but one month later the interleaved group scored 72% against 38%. Kornell and Bjork (2008) found the same flip outside mathematics — students who studied paintings interleaved became far better at recognizing the styles of painters they had never seen — and Shea and Morgan (1979) had already found it in motor skills in the 1970s, where the disruption earned its name: contextual interference. Brunmair and Richter\u2019s 2019 meta-analysis of 59 studies put the average benefit at g \u2248 0.42, strongest for mathematics — the subject whose textbooks are most stubbornly blocked.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'Two schedules for the same nine problems. Blocked practice (A A A B B B C C C) keeps one method loaded in working memory, so every item after the first is execution only. Interleaved practice (A B C B C A C A B) forces a fresh diagnosis on almost every item — which technique does this call for? — and each category is now retrieved on three separate occasions. Same problems, same minutes; only the order differs (Rohrer & Taylor, 2007).',
+          sketchImage: '/diagrams/interleaving-schedule-sketch.jpg',
+          sketchCaption:
+            'Student Laboratory Notebook: two hand-lettered rows of practice squares — blocked A A A B B B C C C above, interleaved A B C B C A C A B below — with a margin note: \u201csame problems, same minutes, only the order differs.\u201d',
+          afterConcept: 3,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="Blocked schedule A A A B B B C C C versus interleaved schedule A B C B C A C A B, with diagnosis annotations">
+  <!-- blocked row -->
+  <text x="52" y="84" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="currentColor">Blocked practice</text>
+  <text x="52" y="104" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-style="italic" fill="#8a8a93">one method loaded — execution only</text>
+  <g stroke-linecap="round">
+    <rect x="250" y="56" width="56" height="56" rx="10" fill="#e11d48" opacity="0.14"/><rect x="252" y="58" width="52" height="52" rx="9" fill="none" stroke="#e11d48" stroke-width="2.4"/>
+    <rect x="316" y="56" width="56" height="56" rx="10" fill="#e11d48" opacity="0.14"/><rect x="318" y="58" width="52" height="52" rx="9" fill="none" stroke="#e11d48" stroke-width="2.4" transform="rotate(0.8 344 84)"/>
+    <rect x="382" y="56" width="56" height="56" rx="10" fill="#e11d48" opacity="0.14"/><rect x="384" y="58" width="52" height="52" rx="9" fill="none" stroke="#e11d48" stroke-width="2.4" transform="rotate(-0.7 410 84)"/>
+    <rect x="448" y="56" width="56" height="56" rx="10" fill="#d97706" opacity="0.14"/><rect x="450" y="58" width="52" height="52" rx="9" fill="none" stroke="#d97706" stroke-width="2.4"/>
+    <rect x="514" y="56" width="56" height="56" rx="10" fill="#d97706" opacity="0.14"/><rect x="516" y="58" width="52" height="52" rx="9" fill="none" stroke="#d97706" stroke-width="2.4" transform="rotate(0.6 542 84)"/>
+    <rect x="580" y="56" width="56" height="56" rx="10" fill="#d97706" opacity="0.14"/><rect x="582" y="58" width="52" height="52" rx="9" fill="none" stroke="#d97706" stroke-width="2.4" transform="rotate(-0.5 608 84)"/>
+    <rect x="646" y="56" width="56" height="56" rx="10" fill="#059669" opacity="0.14"/><rect x="648" y="58" width="52" height="52" rx="9" fill="none" stroke="#059669" stroke-width="2.4"/>
+    <rect x="712" y="56" width="56" height="56" rx="10" fill="#059669" opacity="0.14"/><rect x="714" y="58" width="52" height="52" rx="9" fill="none" stroke="#059669" stroke-width="2.4" transform="rotate(0.7 740 84)"/>
+    <rect x="778" y="56" width="56" height="56" rx="10" fill="#059669" opacity="0.14"/><rect x="780" y="58" width="52" height="52" rx="9" fill="none" stroke="#059669" stroke-width="2.4" transform="rotate(-0.8 806 84)"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="bold" text-anchor="middle">
+    <text x="278" y="92" fill="#e11d48">A</text><text x="344" y="92" fill="#e11d48">A</text><text x="410" y="92" fill="#e11d48">A</text>
+    <text x="476" y="92" fill="#d97706">B</text><text x="542" y="92" fill="#d97706">B</text><text x="608" y="92" fill="#d97706">B</text>
+    <text x="674" y="92" fill="#059669">C</text><text x="740" y="92" fill="#059669">C</text><text x="806" y="92" fill="#059669">C</text>
+  </g>
+  <text x="566" y="136" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#8a8a93">selection happens twice — items 1 and 4</text>
+  <!-- interleaved row -->
+  <text x="52" y="248" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="currentColor">Interleaved practice</text>
+  <text x="52" y="268" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-style="italic" fill="#8a8a93">fresh diagnosis almost every item</text>
+  <g stroke-linecap="round">
+    <rect x="250" y="220" width="56" height="56" rx="10" fill="#e11d48" opacity="0.14"/><rect x="252" y="222" width="52" height="52" rx="9" fill="none" stroke="#e11d48" stroke-width="2.4"/>
+    <rect x="316" y="220" width="56" height="56" rx="10" fill="#d97706" opacity="0.14"/><rect x="318" y="222" width="52" height="52" rx="9" fill="none" stroke="#d97706" stroke-width="2.4" transform="rotate(-0.7 344 248)"/>
+    <rect x="382" y="220" width="56" height="56" rx="10" fill="#059669" opacity="0.14"/><rect x="384" y="222" width="52" height="52" rx="9" fill="none" stroke="#059669" stroke-width="2.4" transform="rotate(0.6 410 248)"/>
+    <rect x="448" y="220" width="56" height="56" rx="10" fill="#d97706" opacity="0.14"/><rect x="450" y="222" width="52" height="52" rx="9" fill="none" stroke="#d97706" stroke-width="2.4" transform="rotate(0.8 476 248)"/>
+    <rect x="514" y="220" width="56" height="56" rx="10" fill="#059669" opacity="0.14"/><rect x="516" y="222" width="52" height="52" rx="9" fill="none" stroke="#059669" stroke-width="2.4"/>
+    <rect x="580" y="220" width="56" height="56" rx="10" fill="#e11d48" opacity="0.14"/><rect x="582" y="222" width="52" height="52" rx="9" fill="none" stroke="#e11d48" stroke-width="2.4" transform="rotate(-0.6 608 248)"/>
+    <rect x="646" y="220" width="56" height="56" rx="10" fill="#059669" opacity="0.14"/><rect x="648" y="222" width="52" height="52" rx="9" fill="none" stroke="#059669" stroke-width="2.4" transform="rotate(0.7 674 248)"/>
+    <rect x="712" y="220" width="56" height="56" rx="10" fill="#e11d48" opacity="0.14"/><rect x="714" y="222" width="52" height="52" rx="9" fill="none" stroke="#e11d48" stroke-width="2.4" transform="rotate(-0.5 740 248)"/>
+    <rect x="778" y="220" width="56" height="56" rx="10" fill="#d97706" opacity="0.14"/><rect x="780" y="222" width="52" height="52" rx="9" fill="none" stroke="#d97706" stroke-width="2.4" transform="rotate(0.8 806 248)"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="bold" text-anchor="middle">
+    <text x="278" y="256" fill="#e11d48">A</text><text x="344" y="256" fill="#d97706">B</text><text x="410" y="256" fill="#059669">C</text>
+    <text x="476" y="256" fill="#d97706">B</text><text x="542" y="256" fill="#059669">C</text><text x="608" y="256" fill="#e11d48">A</text>
+    <text x="674" y="256" fill="#059669">C</text><text x="740" y="256" fill="#e11d48">A</text><text x="806" y="256" fill="#d97706">B</text>
+  </g>
+  <text x="566" y="300" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#059669">selection happens eight times — and each category is retrieved three times</text>
+  <!-- what the student must answer -->
+  <rect x="120" y="352" width="640" height="64" rx="12" fill="none" stroke="#8a8a93" stroke-width="2.2" transform="rotate(-0.4 440 384)"/>
+  <text x="440" y="378" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-style="italic" fill="currentColor">the question blocked practice never asks: which kind of problem is this?</text>
+  <text x="440" y="400" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#8a8a93">same problems · same minutes · only the order differs (Rohrer &amp; Taylor, 2007)</text>
+  <text x="440" y="446" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#d97706">A = rose · B = amber · C = emerald</text>
+</svg>`,
+        },
+        {
+          kind: 'para',
           text: 'Two engines run under the mix. First, discrimination: interleaving trains the front half of expertise — recognizing which knowledge applies — which blocked practice skips entirely. Second, each return to a category after an absence is a spaced retrieval, and spaced retrieval is the strongest known memory tool. Interleaving is spaced repetition wearing practice clothes.',
         },
         {
@@ -812,6 +1026,10 @@ export const foundationLearning: KnowledgeDomainFile = {
         {
           kind: 'para',
           text: 'The effect is largest for confusable categories: bird species, drug names, painting styles, problem types that share surface features. If the difficulty is telling things apart, mixing is the medicine. Skills with dissimilar demands benefit less, and complete novices may need a short blocked warm-up first — you cannot discriminate categories you have not yet formed.',
+        },
+        {
+          kind: 'para',
+          text: 'A usable mixed set obeys three design rules. First, the one-back rule: no two consecutive items of the same type, which forces a fresh selection on nearly every problem — ABCBCA, never AAB. Second, keep the family together: interleave the kinds that are confusable (volume against surface area, not volume against verb conjugation), because the discrimination being trained is between near neighbours. Third, dose evenly — a running tally keeps every category from quietly vanishing, and three to five categories cycled twice is a good opening mix. Textbook exercise blocks fail all three rules at once, which is why shuffling the end-of-chapter problems is the cheapest curriculum upgrade a student can make.',
         },
         {
           kind: 'para',
@@ -834,6 +1052,47 @@ export const foundationLearning: KnowledgeDomainFile = {
             'Apply: shuffle the twelve into a mixed order such as area–slope–volume–slope–area–volume and cycle through, expecting slower going and more errors because every problem begins with selection rather than execution.',
             'State the result: the same hour trains selection twelve times instead of twice, and each category is retrieved on three separate occasions — the delayed-test advantage that makes the rougher session worth it.',
           ],
+        },
+        {
+          kind: 'derivation',
+          title: 'The interleaving exchange rate: three times the test for zero extra minutes',
+          statement:
+            'Rohrer and Taylor\u2019s 2007 design isolates order as the only variable — the same twenty problems, the same sitting — so the delayed-test gap is a pure exchange rate for reordering practice.',
+          prerequisites: ['Percentages and ratios', 'The blocked-vs-shuffled design'],
+          steps: [
+            {
+              label: 'Step 1: Hold everything constant but the order',
+              formula: '$$n_{\\text{problems}} = 20, \\qquad t_{\\text{blocked}} = t_{\\text{shuffled}}$$',
+              explanation:
+                'Both groups solved the same twenty problems in the same session; the sequence was the only difference. Any delayed-test gap is therefore purchased at zero extra cost in problems or minutes.',
+            },
+            {
+              label: 'Step 2: Price the in-session cost',
+              formula: '$$89\\% - 65\\% = 24\\ \\text{points}$$',
+              explanation:
+                'Shuffling cost 24 points of practice accuracy — the selection tax. Students felt it immediately and judged the method worse, which is exactly why it stays underused.',
+            },
+            {
+              label: 'Step 3: Price the delayed payoff',
+              formula: '$$63\\% - 20\\% = 43\\ \\text{points}$$',
+              explanation:
+                'One week later the shuffled group led by 43 points — the discrimination dividend, earned on the front half of expertise (which method applies?) that blocked practice never trains.',
+            },
+            {
+              label: 'Step 4: Compute the exchange rate',
+              formula: '$$\\frac{63}{20} \\approx 3.2$$',
+              explanation:
+                'For identical problems and identical minutes, the shuffled group\u2019s week-later score was roughly three times higher — the selection tax repaid at better than 3-to-1.',
+            },
+            {
+              label: 'Step 5: Check it outside the laboratory',
+              formula: '$$72\\%\\ \\text{vs}\\ 38\\%\\ \\text{at 30 days}$$',
+              explanation:
+                'Rohrer, Dedrick and Stershic\u2019s 2015 classroom trial found the same flip in real 9th-grade algebra across twelve problem types: the interleaved group\u2019s month-later score was nearly double (72/38 \u2248 1.9), and Brunmair and Richter\u2019s 2019 meta-analysis (g \u2248 0.42) confirms the average across 59 studies.',
+            },
+          ],
+          result:
+            'Reordering identical practice buys about 3\u00d7 the week-later score in the laboratory and nearly 2\u00d7 the month-later score in real classrooms — for zero extra minutes — paid for with a 24-point drop in how good practice feels. The feeling is the currency being exchanged.',
         },
         { kind: 'heading', text: 'Applications in the Real World' },
         {
@@ -863,6 +1122,8 @@ export const foundationLearning: KnowledgeDomainFile = {
             { term: 'Spaced retrieval', def: 'Recalling an item after a delay, strengthened by interleaving\'s returns.' },
             { term: 'Transfer', def: 'Applying a practiced skill to new problems and contexts.' },
             { term: 'Overlearning', def: 'Continuing to practice past the criterion within the same session; useful for performance automaticity, wasteful for durable learning.' },
+            { term: 'One-back rule', def: 'Mixed-set design rule: no two consecutive items of the same type.' },
+            { term: 'Selection tax', def: 'The drop in practice accuracy interleaving charges — repaid with interest on the delayed test.' },
           ],
         },
         { kind: 'heading', text: 'Check Yourself' },
@@ -892,6 +1153,30 @@ export const foundationLearning: KnowledgeDomainFile = {
               options: ['Score better in practice and on the delayed test', 'Score worse in practice but better on the delayed test', 'Score worse in both', 'Show no difference either way'],
               answer: 1,
               explain: 'Mixing depresses in-session performance while strengthening retention and transfer.',
+            },
+            {
+              q: 'Rohrer and Taylor (2007): same twenty problems, test one week later. Blocked versus shuffled scores were about:',
+              options: ['89% vs 65% — the practice scores', '20% vs 63% — the shuffled group won by 43 points', '63% vs 20% — the blocked group won', 'Equal — order made no difference'],
+              answer: 1,
+              explain: 'The blocked group\u2019s 89% practice accuracy collapsed to 20% on the delayed test; the clumsier-feeling shuffled group scored 63% — three times higher for the same hour.',
+            },
+            {
+              q: 'The 2015 randomized classroom trial (twelve algebra problem types) found one month after practice:',
+              options: ['The blocked group ahead, 72% vs 38%', 'The interleaved group ahead, 72% vs 38%', 'No difference at any delay', 'An advantage only for the strongest students'],
+              answer: 1,
+              explain: 'In real 9th-grade classrooms the interleaved group nearly doubled the blocked group\u2019s month-later score — the lab result survived contact with schools.',
+            },
+            {
+              q: 'The one-back rule for building a mixed set says:',
+              options: ['Repeat a type once before switching', 'No two consecutive items of the same type', 'Never return to a category once left', 'Alternate exactly two categories forever'],
+              answer: 1,
+              explain: 'Consecutive items should usually differ — ABCBCA, never AAB — so nearly every problem begins with a fresh selection.',
+            },
+            {
+              q: 'The selection tax means the interleaved group pays for its delayed-test advantage with:',
+              options: ['More total minutes', 'Lower in-session accuracy — practice that feels worse', 'More practice problems to buy', 'Extra instruction or tutoring'],
+              answer: 1,
+              explain: 'Same problems, same minutes: the price is a 24-point drop in how competent practice feels (89% to 65% in the 2007 study) — the paradox is the price.',
             },
           ],
         },
