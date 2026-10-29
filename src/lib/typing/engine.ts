@@ -24,6 +24,7 @@ import {
   drillById,
   generateDrillTokens,
 } from './content'
+import { courseLessonById, generateLessonTokens } from './course'
 
 /* ------------------------------------------------------------------ */
 /* Core types                                                          */
@@ -46,7 +47,7 @@ export interface TypingWord {
   freeForm?: boolean
 }
 
-export type TestMode = 'time' | 'words' | 'quote' | 'code' | 'drill' | 'custom'
+export type TestMode = 'course' | 'time' | 'words' | 'quote' | 'code' | 'drill' | 'custom'
 
 export interface Modifiers {
   punc: boolean
@@ -66,7 +67,7 @@ export const DEFAULT_MODIFIERS: Modifiers = {
 
 export interface TestConfig {
   mode: TestMode
-  /** seconds for time mode, word count for words mode, 's'|'m'|'l' quote, code lang, drill id */
+  /** seconds for time mode, word count for words mode, 's'|'m'|'l' quote, code lang, drill id, course lesson id ('' = course home) */
   param: number | string
   mods: Modifiers
   customText?: string
@@ -119,6 +120,10 @@ export function makeCodeWords(code: string): TypingWord[] {
 /** Human label for the mode shown in history/PB chips. */
 export function configLabel(cfg: TestConfig): string {
   switch (cfg.mode) {
+    case 'course': {
+      const les = courseLessonById(String(cfg.param || ''))
+      return les ? `course ${les.n}: ${les.title}` : 'course overview'
+    }
     case 'time':
       return `time ${cfg.param}s`
     case 'words':
@@ -149,6 +154,11 @@ export const CODE_LANGS: { id: CodeLang | 'all'; label: string; short: string }[
 /** Generate the word list for a fresh test. */
 export function generateTest(cfg: TestConfig): TypingWord[] {
   switch (cfg.mode) {
+    case 'course': {
+      const les = courseLessonById(String(cfg.param || ''))
+      if (!les) return makeWords('choose a lesson from the course to begin')
+      return makeWords(generateLessonTokens(les).join(' '))
+    }
     case 'time': {
       // endless-ish stream: ~4.5 chars/word at a generous pace
       const secs = Number(cfg.param) || 60
@@ -193,6 +203,9 @@ export function appendWords(existing: TypingWord[], cfg: TestConfig, count = 30)
   } else if (cfg.mode === 'drill') {
     const d = drillById(String(cfg.param)) ?? DRILLS[0]
     fresh = generateDrillTokens(d)
+  } else if (cfg.mode === 'course') {
+    const les = courseLessonById(String(cfg.param || ''))
+    fresh = les ? generateLessonTokens(les) : COMMON_WORDS.slice(0, count)
   } else {
     fresh = COMMON_WORDS.slice(0, count)
   }
@@ -239,6 +252,7 @@ export const TYPING_LS = {
   days: 'sv-typing-days',
   totals: 'sv-typing-totals',
   name: 'sv-typing-name',
+  course: 'sv-typing-course',
 } as const
 
 export interface KeyStat {
@@ -281,18 +295,20 @@ export interface StoredSettings {
   quoteSize: 's' | 'm' | 'l'
   codeLang: CodeLang | 'all'
   drillId: string
+  courseLesson: string
   mods: Modifiers
   sound: boolean
   name: string
 }
 
 export const DEFAULT_SETTINGS: StoredSettings = {
-  mode: 'time',
+  mode: 'course',
   timeParam: 60,
   wordsParam: 25,
   quoteSize: 'm',
   codeLang: 'all',
   drillId: 'home-row-anchor',
+  courseLesson: '',
   mods: { ...DEFAULT_MODIFIERS },
   sound: false,
   name: '',
@@ -327,6 +343,37 @@ export const loadSettings = (): StoredSettings => {
   }
 }
 export const saveSettings = (s: StoredSettings) => write(TYPING_LS.settings, s)
+
+/* ---- course progress ---- */
+
+export interface LessonRecord {
+  passed: boolean
+  stars: number
+  wpm: number
+  acc: number
+  at: string
+}
+
+export type CourseProgress = Record<string, LessonRecord>
+
+export const loadCourse = (): CourseProgress => {
+  const c = read<Record<string, unknown>>(TYPING_LS.course, {})
+  const out: CourseProgress = {}
+  for (const [k, v] of Object.entries(c)) {
+    if (v && typeof v === 'object' && typeof (v as LessonRecord).wpm === 'number') {
+      const r = v as LessonRecord
+      out[k] = {
+        passed: !!r.passed,
+        stars: Math.max(0, Math.min(3, r.stars | 0)),
+        wpm: r.wpm | 0,
+        acc: Math.max(0, Math.min(100, r.acc | 0)),
+        at: typeof r.at === 'string' ? r.at : new Date().toISOString(),
+      }
+    }
+  }
+  return out
+}
+export const saveCourse = (c: CourseProgress) => write(TYPING_LS.course, c)
 
 export const loadHistory = (): StoredRun[] => {
   const h = read<unknown>(TYPING_LS.history, [])
@@ -426,13 +473,15 @@ export function effectiveMods(cfg: TestConfig): string[] {
 
 export function pbKey(cfg: TestConfig): string {
   const base =
-    cfg.mode === 'time' || cfg.mode === 'words'
+    cfg.mode === 'course'
+      ? `course-${cfg.param}`
+      : cfg.mode === 'time' || cfg.mode === 'words'
       ? `${cfg.mode}-${cfg.param}`
-      : cfg.mode === 'quote' || cfg.mode === 'code'
-        ? `${cfg.mode}-${cfg.param}`
-        : cfg.mode === 'drill'
-          ? `drill-${cfg.param}`
-          : 'custom'
+        : cfg.mode === 'quote' || cfg.mode === 'code'
+          ? `${cfg.mode}-${cfg.param}`
+          : cfg.mode === 'drill'
+            ? `drill-${cfg.param}`
+            : 'custom'
   const mods = effectiveMods(cfg).filter((m) => m !== 'punc' && m !== 'nums')
   const textMods = effectiveMods(cfg).filter((m) => m === 'punc' || m === 'nums')
   const parts = [base, ...textMods, ...mods]

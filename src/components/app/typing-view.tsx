@@ -32,19 +32,27 @@ import {
 } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
+  ArrowRight,
   AtSign,
   BarChart3,
+  BookOpen,
+  CheckCircle2,
+  ChevronDown,
   CornerDownLeft,
   EyeOff,
   Flame,
   Gauge,
   Ghost,
+  GraduationCap,
   Hash,
   Keyboard,
+  Lightbulb,
+  Lock,
   Medal,
   Play,
   RotateCcw,
   Sparkles,
+  Star,
   Target,
   Timer,
   Trophy,
@@ -73,7 +81,20 @@ import { cn } from '@/lib/utils'
 import { useStudy } from '@/store/useStudy'
 import { type CodeLang, DRILLS, drillById, pickCode, pickQuote } from '@/lib/typing/content'
 import {
+  CHAPTERS,
+  COURSE_LESSONS,
+  type CourseLesson,
+  FINGER_LABEL,
+  LEFT_HAND_KEYS,
+  SHIFTED_TO_BASE,
+  TOTAL_LESSONS,
+  courseLessonById,
+  generateLessonTokens,
+  lessonAfter,
+} from '@/lib/typing/course'
+import {
   type KeyStat,
+  type LessonRecord,
   type Modifiers,
   type PbEntry,
   type StoredRun,
@@ -90,6 +111,7 @@ import {
   effectiveMods,
   generateTest,
   loadConfusions,
+  loadCourse,
   loadDays,
   loadHistory,
   loadKeyStats,
@@ -101,6 +123,7 @@ import {
   makeWords,
   pbKey,
   saveConfusions,
+  saveCourse,
   saveDays,
   saveHistory,
   saveKeyStats,
@@ -272,6 +295,521 @@ function KeyboardHeatmap({
 }
 
 /* ------------------------------------------------------------------ */
+/* Touch Typing Course — finger-keyed keyboard + lesson chrome          */
+/* ------------------------------------------------------------------ */
+
+const FINGER_STYLE: Record<string, string> = {
+  lp: 'border-rose-500/35 bg-rose-500/[0.13] text-rose-600 dark:text-rose-300',
+  rp: 'border-rose-500/35 bg-rose-500/[0.13] text-rose-600 dark:text-rose-300',
+  lr: 'border-amber-400/35 bg-amber-400/[0.13] text-amber-700 dark:text-amber-300',
+  rr: 'border-amber-400/35 bg-amber-400/[0.13] text-amber-700 dark:text-amber-300',
+  lm: 'border-violet-500/35 bg-violet-500/[0.13] text-violet-600 dark:text-violet-300',
+  rm: 'border-violet-500/35 bg-violet-500/[0.13] text-violet-600 dark:text-violet-300',
+  li: 'border-emerald-500/35 bg-emerald-500/[0.13] text-emerald-700 dark:text-emerald-300',
+  ri: 'border-emerald-500/35 bg-emerald-500/[0.13] text-emerald-700 dark:text-emerald-300',
+  th: 'border-border/60 bg-muted/40 text-muted-foreground',
+}
+
+const FINGER_DOT: Record<string, string> = {
+  lp: 'bg-rose-500/70',
+  rp: 'bg-rose-500/70',
+  lr: 'bg-amber-400/70',
+  rr: 'bg-amber-400/70',
+  lm: 'bg-violet-500/70',
+  rm: 'bg-violet-500/70',
+  li: 'bg-emerald-500/70',
+  ri: 'bg-emerald-500/70',
+  th: 'bg-muted-foreground/50',
+}
+
+interface FingerKey {
+  k: string
+  /** shift label printed on the keycap */
+  shift?: string
+  w?: 'normal' | 'wide' | 'xwide' | 'fill'
+}
+
+const FK_ROWS: FingerKey[][] = [
+  [
+    { k: '`', shift: '~' }, { k: '1', shift: '!' }, { k: '2', shift: '@' }, { k: '3', shift: '#' },
+    { k: '4', shift: '$' }, { k: '5', shift: '%' }, { k: '6', shift: '^' }, { k: '7', shift: '&' },
+    { k: '8', shift: '*' }, { k: '9', shift: '(' }, { k: '0', shift: ')' }, { k: '-', shift: '_' },
+    { k: '=', shift: '+' }, { k: 'bksp', w: 'wide' },
+  ],
+  [
+    { k: 'tab', w: 'wide' }, { k: 'q' }, { k: 'w' }, { k: 'e' }, { k: 'r' }, { k: 't' },
+    { k: 'y' }, { k: 'u' }, { k: 'i' }, { k: 'o' }, { k: 'p' }, { k: '[', shift: '{' },
+    { k: ']', shift: '}' }, { k: '\\', shift: '|' },
+  ],
+  [
+    { k: 'caps', w: 'wide' }, { k: 'a' }, { k: 's' }, { k: 'd' }, { k: 'f' }, { k: 'g' },
+    { k: 'h' }, { k: 'j' }, { k: 'k' }, { k: 'l' }, { k: ';', shift: ':' }, { k: "'", shift: '"' },
+    { k: 'ret', w: 'wide' },
+  ],
+  [
+    { k: 'lsh', w: 'xwide' }, { k: 'z' }, { k: 'x' }, { k: 'c' }, { k: 'v' }, { k: 'b' },
+    { k: 'n' }, { k: 'm' }, { k: ',', shift: '<' }, { k: '.', shift: '>' }, { k: '/', shift: '?' },
+    { k: 'rsh', w: 'xwide' },
+  ],
+]
+
+/**
+ * The course keyboard: full layout, color-coded by finger, keys-not-yet-taught
+ * dimmed, new-lesson keys ringed, and the NEXT key (+ its Shift) lit live.
+ */
+function FingerKeyboard({
+  taughtKeys,
+  newKeys,
+  nextKey,
+  nextShift,
+  legend = false,
+}: {
+  taughtKeys: string
+  newKeys: string
+  nextKey?: string
+  nextShift?: 'l' | 'r' | null
+  legend?: boolean
+}) {
+  const taught = useMemo(() => new Set(taughtKeys.toLowerCase().split('')), [taughtKeys])
+  const fresh = useMemo(() => new Set(newKeys.toLowerCase().split('')), [newKeys])
+
+  const isNext = (k: string) => nextKey === k
+  const keyWidth = (w: FingerKey['w']) =>
+    w === 'wide'
+      ? 'w-[13vw] sm:w-[4.6rem]'
+      : w === 'xwide'
+        ? 'w-[17vw] sm:w-[6.2rem]'
+        : 'w-[6.6vw] max-w-8 sm:w-9 sm:max-w-9'
+
+  const renderKey = (fk: FingerKey) => {
+    const special = fk.k.length > 1
+    const finger = special ? '' : (FINGER_LABEL[fk.k] ? fk.k : '')
+    const isTaught = special || fk.k === ' ' ? true : taught.has(fk.k)
+    const isNew = fresh.has(fk.k)
+    const lit =
+      (fk.k === 'lsh' && nextShift === 'l') || (fk.k === 'rsh' && nextShift === 'r')
+    const next = isNext(fk.k)
+    const label = special
+      ? fk.k === 'bksp'
+        ? '⌫'
+        : fk.k === 'tab'
+          ? 'tab'
+          : fk.k === 'caps'
+            ? 'caps'
+            : fk.k === 'ret'
+              ? 'return'
+              : 'shift'
+      : fk.k === ' '
+        ? 'space — thumb'
+        : fk.k.toUpperCase()
+    return (
+      <span
+        key={fk.k}
+        title={
+          special || fk.k === ' '
+            ? label
+            : `${fk.k.toUpperCase()} — ${FINGER_LABEL[finger] ?? ''} finger${fk.shift ? ` · shift: ${fk.shift}` : ''}`
+        }
+        className={cn(
+          'relative flex h-7 shrink-0 select-none items-center justify-center rounded-md border font-mono text-[10px] font-semibold transition-all sm:h-8 sm:text-[11px]',
+          keyWidth(fk.w),
+          !special && FINGER_STYLE[finger],
+          !special && !isTaught && 'border-border/40 bg-muted/20 text-muted-foreground/25',
+          special && 'border-border/50 bg-muted/30 text-muted-foreground/60',
+          fk.k === ' ' && 'border-border/60 bg-muted/40 text-muted-foreground',
+          isNew && 'ring-2 ring-emerald-400/70 ring-offset-1 ring-offset-card',
+          next && 'scale-110 border-emerald-400 bg-emerald-400/30 text-emerald-800 shadow-[0_0_0_3px_rgba(52,211,153,0.35)] dark:text-emerald-100',
+          lit && !next && 'scale-105 border-amber-400 bg-amber-400/25 text-amber-700 shadow-[0_0_0_3px_rgba(251,191,36,0.3)] dark:text-amber-200',
+          isNew && !next && !lit && 'text-emerald-800 dark:text-emerald-200'
+        )}
+      >
+        {label}
+        {isNew && !next && (
+          <span className="absolute -top-1 -right-1 rounded-full bg-emerald-500 px-1 text-[7px] font-bold leading-tight text-white">
+            NEW
+          </span>
+        )}
+        {fk.shift && !next && (
+          <span className="absolute right-1 top-0.5 text-[7px] font-normal opacity-50">{fk.shift}</span>
+        )}
+      </span>
+    )
+  }
+
+  return (
+    <div className="space-y-1.5">
+      <div className="flex flex-col items-center gap-1.5">
+        {FK_ROWS.map((row, i) => (
+          <div key={i} className="flex justify-center gap-1 sm:gap-1.5">
+            {row.map(renderKey)}
+          </div>
+        ))}
+        <div className="flex w-full justify-center gap-1 sm:gap-1.5">
+          <span className="hidden w-[6.2rem] shrink-0 sm:block" />
+          {renderKey({ k: ' ', w: 'fill' })}
+          <span className="hidden w-[6.2rem] shrink-0 sm:block" />
+        </div>
+      </div>
+      {legend && (
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 pt-1 text-[10px] text-muted-foreground">
+          <span className="flex items-center gap-1"><i className={cn('h-2.5 w-2.5 rounded-sm', FINGER_DOT.lp)} /> pinky</span>
+          <span className="flex items-center gap-1"><i className={cn('h-2.5 w-2.5 rounded-sm', FINGER_DOT.lr)} /> ring</span>
+          <span className="flex items-center gap-1"><i className={cn('h-2.5 w-2.5 rounded-sm', FINGER_DOT.lm)} /> middle</span>
+          <span className="flex items-center gap-1"><i className={cn('h-2.5 w-2.5 rounded-sm', FINGER_DOT.li)} /> index</span>
+          <span className="flex items-center gap-1"><i className="h-2.5 w-2.5 rounded-sm bg-muted-foreground/50" /> thumb (space)</span>
+          <span>NEW = introduced this lesson</span>
+        </div>
+      )}
+    </div>
+  )
+}
+
+/** mini number-pad diagram (chapter 8 intros) */
+function NumpadMini() {
+  const rows: { k: string; f: string }[][] = [
+    [
+      { k: '/', f: 'li' }, { k: '*', f: 'lm' }, { k: '-', f: 'rr' }, { k: '+', f: 'rp' },
+    ],
+    [
+      { k: '7', f: 'li' }, { k: '8', f: 'lm' }, { k: '9', f: 'rr' }, { k: '=', f: 'rp' },
+    ],
+    [
+      { k: '4', f: 'li' }, { k: '5', f: 'lm' }, { k: '6', f: 'rr' }, { k: '.', f: 'rr' },
+    ],
+    [
+      { k: '1', f: 'li' }, { k: '2', f: 'lm' }, { k: '3', f: 'rr' }, { k: '⏎', f: 'rp' },
+    ],
+    [
+      { k: '0', f: 'th' }, { k: '00', f: 'th' },
+    ],
+  ]
+  return (
+    <div className="inline-flex flex-col gap-1 rounded-xl border border-border/70 bg-background/60 p-2.5">
+      {rows.map((row, i) => (
+        <div key={i} className="flex justify-center gap-1">
+          {row.map((c) => (
+            <span
+              key={c.k}
+              title={c.f === 'th' ? 'thumb' : `${FINGER_LABEL[c.f]} finger`}
+              className={cn(
+                'flex h-7 w-8 items-center justify-center rounded-md border font-mono text-[11px] font-semibold',
+                c.k === '⏎' ? 'h-16' : '',
+                FINGER_STYLE[c.f]
+              )}
+            >
+              {c.k}
+            </span>
+          ))}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+/** 1-3 stars row */
+function StarsRow({ stars, size = 'md', pop = false }: { stars: number; size?: 'sm' | 'md' | 'lg'; pop?: boolean }) {
+  const cls = size === 'lg' ? 'h-7 w-7' : size === 'sm' ? 'h-3.5 w-3.5' : 'h-5 w-5'
+  return (
+    <span className="inline-flex items-center gap-0.5" aria-label={`${stars} of 3 stars`}>
+      {[1, 2, 3].map((i) => (
+        <motion.span
+          key={i}
+          initial={pop ? { scale: 0, rotate: -30 } : false}
+          animate={pop ? { scale: 1, rotate: 0 } : undefined}
+          transition={pop ? { delay: i * 0.16, type: 'spring', stiffness: 300, damping: 15 } : undefined}
+        >
+          <Star
+            className={cn(
+              cls,
+              i <= stars ? 'fill-amber-400 text-amber-400' : 'fill-transparent text-muted-foreground/30'
+            )}
+          />
+        </motion.span>
+      ))}
+    </span>
+  )
+}
+
+/** big keycap used in lesson intros */
+function LessonKeyCap({ ch }: { ch: string }) {
+  const code = FINGER_CODE[ch.toLowerCase()] ?? 'th'
+  return (
+    <div className="flex flex-col items-center gap-1.5">
+      <span
+        title={`${FINGER_LABEL[code]} finger`}
+        className={cn(
+          'flex h-12 w-12 items-center justify-center rounded-xl border-2 font-mono text-xl font-bold shadow-sm sm:h-14 sm:w-14 sm:text-2xl',
+          FINGER_STYLE[code]
+        )}
+      >
+        {ch === ';' ? ';' : ch.toUpperCase()}
+      </span>
+      <span className="text-[10px] font-semibold text-muted-foreground">{FINGER_LABEL[code]}</span>
+    </div>
+  )
+}
+
+const FINGER_CODE: Record<string, string> = {
+  '`': 'lp', '1': 'lp', '2': 'lr', '3': 'lm', '4': 'li', '5': 'li',
+  '6': 'ri', '7': 'ri', '8': 'rm', '9': 'rr', '0': 'rp', '-': 'rp', '=': 'rp',
+  q: 'lp', w: 'lr', e: 'lm', r: 'li', t: 'li', y: 'ri', u: 'ri', i: 'rm', o: 'rr', p: 'rp',
+  a: 'lp', s: 'lr', d: 'lm', f: 'li', g: 'li', h: 'ri', j: 'ri', k: 'rm', l: 'rr',
+  ';': 'rp', "'": 'rp', z: 'lp', x: 'lr', c: 'lm', v: 'li', b: 'li', n: 'ri', m: 'ri',
+  ',': 'rm', '.': 'rr', '/': 'rp', ' ': 'th',
+}
+
+/* ---- course home ---------------------------------------------------- */
+
+function CourseHome({
+  prog,
+  onPick,
+  onReset,
+}: {
+  prog: Record<string, LessonRecord>
+  onPick: (id: string) => void
+  onReset: () => void
+}) {
+  const done = useMemo(() => COURSE_LESSONS.filter((l) => prog[l.id]?.passed).length, [prog])
+  const stars = useMemo(
+    () => COURSE_LESSONS.reduce((a, l) => a + (prog[l.id]?.stars ?? 0), 0),
+    [prog]
+  )
+  const nextLesson = useMemo(() => COURSE_LESSONS.find((l) => !prog[l.id]?.passed), [prog])
+  const complete = !nextLesson
+  const [openCh, setOpenCh] = useState<number>(nextLesson ? nextLesson.ch : 12)
+  const [confirmReset, setConfirmReset] = useState(false)
+
+  const unlocked = (n: number) => n === 1 || !!prog[COURSE_LESSONS[n - 2]?.id]?.passed
+
+  return (
+    <div className="mt-4 space-y-4">
+      {/* hero */}
+      <div className="rounded-2xl border border-emerald-500/25 bg-gradient-to-br from-emerald-500/[0.08] via-card to-amber-300/[0.05] p-5 sm:p-6">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div className="min-w-0">
+            <h2 className="flex items-center gap-2 text-lg font-bold tracking-tight sm:text-xl">
+              <GraduationCap className="h-5 w-5 text-emerald-500 dark:text-emerald-300" />
+              Touch Typing Course
+            </h2>
+            <p className="mt-1 max-w-xl text-[13px] leading-relaxed text-muted-foreground">
+              A guided journey from your very first keystroke to full-keyboard mastery —
+              12 chapters, {TOTAL_LESSONS} lessons, star grades and strict progression,
+              the way classic typing tutors teach it.
+            </p>
+          </div>
+          <div className="flex flex-col items-end gap-2">
+            {complete ? (
+              <span className="flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-4 py-2 text-[13px] font-bold text-amber-700 dark:text-amber-200">
+                <Trophy className="h-4 w-4" /> Course complete — black belt!
+              </span>
+            ) : (
+              <Button
+                onClick={() => nextLesson && onPick(nextLesson.id)}
+                className="gap-2 bg-emerald-600 text-white hover:bg-emerald-500 dark:bg-emerald-500 dark:text-emerald-950 dark:hover:bg-emerald-400"
+              >
+                <Play className="h-4 w-4" />
+                {done === 0 ? 'Start lesson 1' : `Continue — lesson ${nextLesson!.n}`}
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            )}
+          </div>
+        </div>
+        {/* progress */}
+        <div className="mt-4 space-y-1.5">
+          <div className="flex items-center justify-between text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+            <span>
+              {done} / {TOTAL_LESSONS} lessons
+            </span>
+            <span className="flex items-center gap-1">
+              <Star className="h-3 w-3 fill-amber-400 text-amber-400" /> {stars} / {TOTAL_LESSONS * 3}
+            </span>
+          </div>
+          <div
+            className="h-2 overflow-hidden rounded-full bg-muted"
+            role="progressbar"
+            aria-valuemin={0}
+            aria-valuemax={TOTAL_LESSONS}
+            aria-valuenow={done}
+          >
+            <motion.div
+              className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-amber-400"
+              initial={{ width: 0 }}
+              animate={{ width: `${(done / TOTAL_LESSONS) * 100}%` }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* chapters */}
+      <div className="space-y-2.5">
+        {CHAPTERS.map((ch) => {
+          const lessons = COURSE_LESSONS.filter((l) => l.ch === ch.n)
+          const chDone = lessons.filter((l) => prog[l.id]?.passed).length
+          const chOpen = openCh === ch.n
+          const chUnlocked = lessons.some((l) => unlocked(l.n))
+          return (
+            <div
+              key={ch.n}
+              className={cn(
+                'overflow-hidden rounded-xl border transition-colors',
+                chUnlocked ? 'border-border/70 bg-card/60' : 'border-border/40 bg-muted/20'
+              )}
+            >
+              <button
+                onClick={() => setOpenCh(chOpen ? -1 : ch.n)}
+                className="flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-muted/40"
+                aria-expanded={chOpen}
+              >
+                <span
+                  className={cn(
+                    'flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border font-mono text-[13px] font-bold',
+                    chDone === lessons.length
+                      ? 'border-emerald-500/40 bg-emerald-500/15 text-emerald-600 dark:text-emerald-300'
+                      : chUnlocked
+                        ? 'border-border/70 bg-muted/50 text-foreground'
+                        : 'border-border/40 bg-muted/30 text-muted-foreground/50'
+                  )}
+                >
+                  {chDone === lessons.length ? <CheckCircle2 className="h-4 w-4" /> : ch.n}
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="flex items-center gap-2">
+                    <span
+                      className={cn(
+                        'truncate text-[13px] font-bold sm:text-sm',
+                        !chUnlocked && 'text-muted-foreground/60'
+                      )}
+                    >
+                      {ch.title}
+                    </span>
+                    {!chUnlocked && <Lock className="h-3 w-3 shrink-0 text-muted-foreground/40" />}
+                  </span>
+                  <span className="mt-0.5 block truncate text-[11px] text-muted-foreground">
+                    {ch.blurb}
+                  </span>
+                </span>
+                <span className="flex shrink-0 items-center gap-2.5">
+                  <span className="hidden font-mono text-[11px] text-muted-foreground sm:inline">
+                    {chDone}/{lessons.length}
+                  </span>
+                  <span className="h-1.5 w-14 overflow-hidden rounded-full bg-muted">
+                    <span
+                      className="block h-full rounded-full bg-emerald-500"
+                      style={{ width: `${(chDone / lessons.length) * 100}%` }}
+                    />
+                  </span>
+                  <ChevronDown
+                    className={cn(
+                      'h-4 w-4 text-muted-foreground transition-transform',
+                      chOpen && 'rotate-180'
+                    )}
+                  />
+                </span>
+              </button>
+              <AnimatePresence initial={false}>
+                {chOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="space-y-1 border-t border-border/50 px-3 py-2.5 sm:px-4">
+                      {lessons.map((les) => {
+                        const rec = prog[les.id]
+                        const isUnlocked = unlocked(les.n)
+                        const isNext = nextLesson?.id === les.id
+                        return (
+                          <button
+                            key={les.id}
+                            disabled={!isUnlocked}
+                            onClick={() => onPick(les.id)}
+                            className={cn(
+                              'flex w-full items-center gap-3 rounded-lg border px-3 py-2 text-left transition-all',
+                              isUnlocked
+                                ? 'border-border/50 bg-background/50 hover:border-emerald-500/30 hover:bg-emerald-500/[0.06]'
+                                : 'cursor-not-allowed border-transparent opacity-50',
+                              isNext &&
+                                'border-emerald-500/40 bg-emerald-500/[0.08] shadow-[inset_0_0_0_1px_rgba(16,185,129,0.2)]'
+                            )}
+                          >
+                            <span className="w-6 shrink-0 text-center font-mono text-[11px] text-muted-foreground">
+                              {les.n}
+                            </span>
+                            {rec?.passed ? (
+                              <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500 dark:text-emerald-300" />
+                            ) : isNext ? (
+                              <Play className="h-4 w-4 shrink-0 text-emerald-500 dark:text-emerald-300" />
+                            ) : (
+                              <Lock className="h-4 w-4 shrink-0 text-muted-foreground/40" />
+                            )}
+                            <span className="min-w-0 flex-1">
+                              <span className="block truncate text-[13px] font-semibold">
+                                {les.title}
+                              </span>
+                              <span className="block truncate text-[10px] text-muted-foreground">
+                                {les.newKeys
+                                  ? `new keys: ${les.newKeys.split('').join(' ')}`
+                                  : `review · goal ${les.goalWpm} wpm / ${les.goalAcc}%`}
+                              </span>
+                            </span>
+                            {rec?.passed ? (
+                              <span className="flex shrink-0 items-center gap-2">
+                                <span className="hidden font-mono text-[10px] text-muted-foreground sm:inline">
+                                  best {rec.wpm} wpm
+                                </span>
+                                <StarsRow stars={rec.stars} size="sm" />
+                              </span>
+                            ) : isUnlocked ? (
+                              <span className="shrink-0 rounded-full bg-muted px-2 py-0.5 font-mono text-[9px] font-bold uppercase text-muted-foreground">
+                                {les.goalWpm} wpm
+                              </span>
+                            ) : null}
+                          </button>
+                        )
+                      })}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          )
+        })}
+      </div>
+
+      <div className="flex items-center justify-between px-1">
+        <p className="text-[11px] text-muted-foreground/70">
+          Lessons unlock in order — pass each one to open the next, just like a real typing tutor.
+        </p>
+        {done > 0 && (
+          <button
+            onClick={() => {
+              if (confirmReset) {
+                onReset()
+                setConfirmReset(false)
+              } else {
+                setConfirmReset(true)
+                setTimeout(() => setConfirmReset(false), 3000)
+              }
+            }}
+            className={cn(
+              'shrink-0 rounded-full border px-3 py-1 text-[11px] font-medium transition-all',
+              confirmReset
+                ? 'border-rose-500/50 bg-rose-500/10 text-rose-600 dark:text-rose-300'
+                : 'border-border/60 text-muted-foreground/70 hover:text-foreground'
+            )}
+          >
+            {confirmReset ? 'click again to wipe' : 'reset progress'}
+          </button>
+        )}
+      </div>
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------ */
 /* Leaderboard                                                         */
 /* ------------------------------------------------------------------ */
 
@@ -421,6 +959,7 @@ function LeaderboardPanel({
 /* ------------------------------------------------------------------ */
 
 const MODES: { id: TestMode; label: string }[] = [
+  { id: 'course', label: 'Course' },
   { id: 'time', label: 'Time' },
   { id: 'words', label: 'Words' },
   { id: 'quote', label: 'Quote' },
@@ -437,7 +976,16 @@ const QUOTE_PARAMS: { id: 's' | 'm' | 'l'; label: string }[] = [
   { id: 'l', label: 'long' },
 ]
 
-type ParamMem = { time: number; words: number; quote: 's' | 'm' | 'l'; code: CodeLang | 'all'; drill: string }
+type ParamMem = { time: number; words: number; quote: 's' | 'm' | 'l'; code: CodeLang | 'all'; drill: string; course: string }
+
+interface LessonOutcome {
+  passed: boolean
+  stars: number
+  firstClear: boolean
+  improved: boolean
+  goalWpm: number
+  goalAcc: number
+}
 
 export function TypingView() {
   const ensureDevice = useStudy((s) => s.ensureDevice)
@@ -468,6 +1016,8 @@ export function TypingView() {
   const [boardTick, setBoardTick] = useState(0)
   const [tab, setTab] = useState('analytics')
   const [deviceId, setDeviceId] = useState('')
+  const [courseProg, setCourseProg] = useState<Record<string, LessonRecord>>({})
+  const [lessonOutcome, setLessonOutcome] = useState<LessonOutcome | null>(null)
 
   /* ---- engine refs (source of truth between renders) ---- */
   const cfgRef = useRef(cfg)
@@ -490,7 +1040,7 @@ export function TypingView() {
   const caretRef = useRef<HTMLDivElement>(null)
   const innerRef = useRef<HTMLDivElement>(null)
   const activeCharRef = useRef<HTMLSpanElement | null>(null)
-  const paramMemRef = useRef<ParamMem>({ time: 60, words: 25, quote: 'm', code: 'all', drill: 'home-row-anchor' })
+  const paramMemRef = useRef<ParamMem>({ time: 60, words: 25, quote: 'm', code: 'all', drill: 'home-row-anchor', course: '' })
   const customTextRef = useRef('')
   const soundRef = useRef(false)
   const nameRef = useRef('')
@@ -509,6 +1059,7 @@ export function TypingView() {
       quoteSize: c.mode === 'quote' ? (c.param as 's' | 'm' | 'l') : paramMemRef.current.quote,
       codeLang: c.mode === 'code' ? (c.param as CodeLang | 'all') : paramMemRef.current.code,
       drillId: c.mode === 'drill' ? String(c.param) : paramMemRef.current.drill,
+      courseLesson: c.mode === 'course' ? String(c.param ?? '') : paramMemRef.current.course,
       mods: c.mods,
       sound: soundRef.current,
       name: nameRef.current,
@@ -530,6 +1081,7 @@ export function TypingView() {
     setPos({ w: 0, c: 0 })
     setHud(null)
     setResult(null)
+    setLessonOutcome(null)
   }, [])
 
   const setPhaseSafe = useCallback((p: 'idle' | 'running' | 'done') => {
@@ -539,6 +1091,15 @@ export function TypingView() {
 
   /** build word list + source label for a config */
   const buildWords = useCallback((c: TestConfig): { words: TypingWord[]; source: string } => {
+    if (c.mode === 'course') {
+      const les = courseLessonById(String(c.param || ''))
+      if (!les) return { words: [], source: '' }
+      const ch = CHAPTERS.find((x) => x.n === les.ch)
+      return {
+        words: makeWords(generateLessonTokens(les).join(' ')),
+        source: `${ch ? `Ch ${ch.n} · ${ch.title.split('—')[0].trim()}` : 'Course'} — lesson ${les.n} of ${TOTAL_LESSONS}`,
+      }
+    }
     if (c.mode === 'quote') {
       const q = pickQuote((c.param as 's' | 'm' | 'l') || 'm')
       return { words: makeWords(q.text), source: `— ${q.author}` }
@@ -570,6 +1131,7 @@ export function TypingView() {
       if (next.mode === 'quote') paramMemRef.current.quote = next.param as 's' | 'm' | 'l'
       if (next.mode === 'code') paramMemRef.current.code = next.param as CodeLang | 'all'
       if (next.mode === 'drill') paramMemRef.current.drill = String(next.param)
+      if (next.mode === 'course') paramMemRef.current.course = String(next.param ?? '')
       persistSettings(next)
       const built = buildWords(next)
       wordsRef.current = built.words
@@ -608,6 +1170,7 @@ export function TypingView() {
       quote: s.quoteSize,
       code: s.codeLang,
       drill: s.drillId,
+      course: s.courseLesson,
     }
     soundRef.current = s.sound
     setSound(s.sound)
@@ -617,6 +1180,7 @@ export function TypingView() {
     setHistory(loadHistory())
     setPbs(loadPbs())
     setTotals(loadTotals())
+    setCourseProg(loadCourse())
     const ks = loadKeyStats()
     keyStatsRef.current = ks
     setKeyStats(ks)
@@ -637,7 +1201,9 @@ export function TypingView() {
                 ? s.codeLang
                 : s.mode === 'drill'
                   ? s.drillId
-                  : '',
+                  : s.mode === 'course'
+                    ? s.courseLesson
+                    : '',
       mods: s.mods,
     })
   }, [])

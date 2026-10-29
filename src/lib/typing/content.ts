@@ -431,12 +431,13 @@ export const DRILLS: Drill[] = [
 /* Generators                                                          */
 /* ------------------------------------------------------------------ */
 
-const TOP_BIGRAMS = [
+const TOP_BIGRAMS_LOCAL = [
   'th', 'he', 'in', 'er', 'an', 're', 'on', 'at', 'en', 'nd',
   'ti', 'es', 'or', 'te', 'of', 'ed', 'is', 'it', 'al', 'ar',
   'st', 'to', 'nt', 'ng', 'se', 'ha', 'as', 'ou', 'io', 'le',
   've', 'co', 'me', 'de', 'hi', 'ri', 'ro', 'ic', 'ne', 'ea',
 ]
+export const TOP_BIGRAMS = TOP_BIGRAMS_LOCAL
 
 const SYMBOL_PAIRS = ['()', '[]', '{}', '<>', '""', "''", ';;', '::', ',,', '..', '??', '!!', '--', '__', '//', '\\\\']
 
