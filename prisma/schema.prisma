@@ -378,3 +378,27 @@ model FocusSession {
   @@index([deviceId, day])
   @@index([deviceId, subject])
 }
+
+// ============ X12 — Keyboard Dojo (advanced typing trainer) ============
+// Anonymous leaderboard runs (device-scoped like every StudyVerse surface).
+// mode: "time-15" | "time-30" | "time-60" | "time-120" | "words-25" | "words-50"
+//       | "words-100" | "words-10" | "quote" | "code" | "drill" | "custom"
+// modifiers: comma list of punc|nums|iron|blind|peek
+model TypingResult {
+  id          String   @id @default(cuid())
+  deviceId    String
+  name        String   @default("Anonymous")
+  mode        String
+  modifiers   String   @default("")
+  wpm         Int
+  rawWpm      Int      @default(0)
+  accuracy    Int // percent
+  consistency Int? // percent, null when too short to measure
+  durationSec Int
+  chars       Int      @default(0)
+  errors      Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  @@index([mode, wpm])
+  @@index([createdAt])
+}

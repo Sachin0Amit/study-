@@ -26,6 +26,7 @@ export type View =
   | { name: 'paper-dna' }
   | { name: 'palace'; sectionKey?: string }
   | { name: 'focus' }
+  | { name: 'typing' }
 
 interface ProgressEntry {
   status: 'in_progress' | 'completed'

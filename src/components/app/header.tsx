@@ -13,6 +13,7 @@ import {
   Search,
   Brain,
   Swords,
+  Keyboard,
 } from 'lucide-react'
 import { useStudy } from '@/store/useStudy'
 import { CommandPalette } from './command-palette'
@@ -26,6 +27,7 @@ const NAV = [
   { view: 'syllabus', label: 'Syllabus', icon: ClipboardList, easy: 'Map any syllabus to your books' },
   { view: 'arena', label: 'Arena', icon: Swords, easy: 'Live 1v1 quiz battles' },
   { view: 'playground', label: 'Labs', icon: FlaskConical, easy: 'Play with live demos' },
+  { view: 'typing', label: 'Typing', icon: Keyboard, easy: 'Typing speed dojo — WPM, drills, heatmap' },
   { view: 'flashcards', label: 'Cards', icon: Layers, easy: 'Quick memory cards' },
   { view: 'review', label: 'Review', icon: Repeat, easy: 'Spaced-repetition memory drills' },
   { view: 'formulas', label: 'Formulas', icon: Sigma, easy: 'All key formulas' },

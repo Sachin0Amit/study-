@@ -107,6 +107,12 @@ const PalaceView = dynamic(
 const FocusView = dynamic(() => import('@/components/app/focus-view').then((m) => m.FocusView), {
   loading: ViewLoading,
 })
+/* X12 — Keyboard Dojo: fully client-side (word streams are random per mount,
+   so SSR is skipped to keep hydration honest). */
+const TypingView = dynamic(() => import('@/components/app/typing-view').then((m) => m.TypingView), {
+  ssr: false,
+  loading: ViewLoading,
+})
 
 /* X11 — Focus HQ widget mount: the Pomodoro engine survives unmounts and
    reloads; the widget slot-claims so double mounting is harmless. */
@@ -177,6 +183,8 @@ export default function Home() {
         useStudy.setState({ view: { name: 'palace' } })
       } else if (v === 'focus') {
         useStudy.setState({ view: { name: 'focus' } })
+      } else if (v === 'typing') {
+        useStudy.setState({ view: { name: 'typing' } })
       }
     }
   }, [])
@@ -277,6 +285,7 @@ export default function Home() {
             {view.name === 'paper-dna' && <PaperDnaView />}
             {view.name === 'palace' && <PalaceView sectionKey={view.sectionKey} />}
             {view.name === 'focus' && <FocusView />}
+            {view.name === 'typing' && <TypingView />}
           </motion.div>
         </AnimatePresence>
       </main>
@@ -336,6 +345,12 @@ export default function Home() {
                   className="text-left text-muted-foreground transition-colors hover:text-emerald-300"
                 >
                   Focus HQ — Pomodoro &amp; to-dos
+                </button>
+                <button
+                  onClick={() => useStudy.getState().navigate({ name: 'typing' })}
+                  className="text-left text-muted-foreground transition-colors hover:text-emerald-300"
+                >
+                  Keyboard Dojo — typing trainer
                 </button>
                 <button
                   onClick={() => useStudy.getState().navigate({ name: 'formulas' })}

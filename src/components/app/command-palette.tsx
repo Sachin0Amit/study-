@@ -72,6 +72,7 @@ type ViewName =
   | 'paper-dna'
   | 'palace'
   | 'focus'
+  | 'typing'
 
 /** Quick jumps — shown when the palette opens (empty or matching query) */
 const QUICK_ACTIONS: {
@@ -117,6 +118,7 @@ const QUICK_ACTIONS: {
   },
   { view: 'library', label: 'Library', hint: 'subject tracks · chapters · knowledge sections', icon: LibraryIcon },
   { view: 'arena', label: 'Study Arena', hint: 'live 1v1 quiz battles · ELO', icon: Swords },
+  { view: 'typing', label: 'Keyboard Dojo', hint: 'advanced typing trainer · WPM · drills · heatmap', icon: Keyboard, accent: 'emerald' },
   { view: 'paper-dna', label: 'Paper-DNA Analyzer', hint: 'forensic topic prediction', icon: Scale },
   { view: 'palace', label: 'Memory Palaces', hint: 'visual journeys + narration', icon: Wand2 },
   { view: 'playground', label: 'Lab floor', hint: '62 labs + simulators + code judge', icon: FlaskConical },
