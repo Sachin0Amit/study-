@@ -18,6 +18,7 @@ import { x57CrossverifyTopics } from './x57-crossverify-pass'
 import { x60CrossverifyTopics } from './x60-crossverify-pass'
 import { x71CrossverifyGeneticsTopics } from './x71-crossverify-pass'
 import { x72CrossverifyPassTopics } from './x72-crossverify-pass'
+import { x77CrossverifyZoologyTopics } from './x77-crossverify-pass'
 import { x60LibraryOrgThinBooksPassTopics } from './x60-library-org-pass'
 import { x64LibraryOrgPassTopics } from './x64-library-org-pass'
 import { x65CrossverifyBotanyPassTopics } from './x65-crossverify-pass'
@@ -28,6 +29,20 @@ export const lifeSciences: KnowledgeDomainFile = {
   blurb:
     'From genes, neurons, and photosynthesis to anatomy, microbes, evolution, and the animal kingdom — how living systems are built, run, and related.',
   topics: [
+    // X77 crossverify pass (2026-10-30): Zoology cross-verified against the
+    // official Hickman 18e TOC (internet-research run — no legitimate free
+    // full PDF exists for Hickman/Miller-Harley) + open-authority sources.
+    // NEW lesson bio-animal-behavior-rhythms fills Hickman 36.2 "Control of
+    // Behavior" (endogenous clocks, Zeitgebers, Beling/Renner bee time
+    // memory, Gwinner circannual, monarch time-compensated sun compass,
+    // hormonal control). Carved against the human-sleep lessons ('zeitgeber'
+    // lived only there) and the ethology lesson (no clock content);
+    // 'Zugunruhe', 'Gwinner', 'circannual', 'time memory' were all ZERO live
+    // hits. Also enriched in place: bio-animal-senses-superpowers (+lateral
+    // line / mechanoreception para per Hickman 33.4) and a central-place
+    // foraging attribution fix in bio-animal-behavior-ethology (Krebs 1977
+    // great tits 95%, J.M. Tinbergen 1981 starlings 5.9 vs 6-7 predicted).
+    ...x77CrossverifyZoologyTopics.filter((t) => t.domain === 'Life Sciences'),
     // X47 biology-split pass (2026-10-25): the user split the one-volume
     // Biology book into 13 discipline books; this pass supplies the new
     // lessons the thin books need. Life Sciences slice: the biochemist's
@@ -3045,7 +3060,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         "Mating systems",
         "Eusociality and kin selection",
       ],
-      words: 1249,
+      words: 1275,
       readMins: 6,
       addedOn: "2026-10-18",
       blocks: [
@@ -3074,7 +3089,7 @@ export const lifeSciences: KnowledgeDomainFile = {
         },
         {
           kind: "para",
-          text: "Foraging gave behavior its economics. Optimal foraging theory treats an animal as a decision-maker maximizing net energy per unit time: prey are ranked by profitability — energy divided by handling time — and a prey type is ignored only when its profitability drops below the intake rate from better prey alone. Real starlings and chickadees follow the prediction, loading bigger prey when the flight back is longer.",
+          text: "Foraging gave behavior its economics. Optimal foraging theory treats an animal as a decision-maker maximizing net energy per unit time: prey are ranked by profitability — energy divided by handling time — and a prey type is ignored only when its profitability drops below the intake rate from better prey alone. The prediction holds under test: captive great tits took the more profitable prey type in 95 percent of encounters (Krebs, 1977), and starling parents flying food to the nest returned with loads near the model's optimum — six to seven items predicted, 5.9 observed (J. M. Tinbergen, 1981).",
         },
         {
           kind: "para",
@@ -3468,11 +3483,12 @@ export const lifeSciences: KnowledgeDomainFile = {
         "Echolocation: ranging with sound",
         "Magnetoreception via cryptochrome",
         "Electroreception in sharks and platypuses",
+        "Water motion and balance: the lateral line",
         "Snake infrared and pit organs",
         "The olfactory gulf: dogs versus humans",
       ],
-      words: 1239,
-      readMins: 6,
+      words: 1473,
+      readMins: 7,
       addedOn: "2026-10-18",
       blocks: [
         {
@@ -3505,6 +3521,10 @@ export const lifeSciences: KnowledgeDomainFile = {
         {
           kind: "para",
           text: "Sharks hunt electricity. Rows of jelly-filled pores on the head — the ampullae of Lorenzini — detect electric fields as faint as a few billionths of a volt per centimeter, which is enough to find a flatfish buried in sand from the firing of its heartbeat. The platypus goes further: it closes its eyes, ears, and nostrils underwater and forages entirely by electroreceptors in its bill. Electric fish flip the trick and generate their own fields, sensing distortions the way we might feel objects brushing a net.",
+        },
+        {
+          kind: "para",
+          text: "Water itself is a channel most land animals never read. Fishes and aquatic amphibians run the LATERAL LINE — a row of pores running from head to tail into canals lined with NEUROMASTS, clusters of hair cells whose tips sit in a jelly cupula, exactly the transducer design the mammalian inner ear uses for hearing. Water displaced by a darting minnow, a breaking wave or an approaching hand bends the cupulae and the fish reads the pattern as pressure ripples across its skin: schooling fish hold formation largely with it, blind cavefish navigate by it, and predators home in on the wake a fleeing fish leaves. The same hair-cell logic runs balance: invertebrate statocysts — a stone rolling inside a sphere of sensors — report tilt, and the fish inner ear's otoliths do the same job in vertebrates. Mechanoreception, in water, is less a special sense than a constant map of everything moving nearby.",
         },
         {
           kind: "para",
@@ -3552,6 +3572,8 @@ export const lifeSciences: KnowledgeDomainFile = {
             { term: "Echolocation", def: "Ranging and imaging the world from the echoes of one's own sound." },
             { term: "Cryptochrome", def: "A blue-light retina protein thought to give birds a magnetic compass." },
             { term: "Ampullae of Lorenzini", def: "Sharks' jelly-filled electrosensory pores, sensitive to vanishingly weak fields." },
+            { term: "Lateral line", def: "The head-to-tail canal system of fishes and aquatic amphibians that reads water displacement." },
+            { term: "Neuromast", def: "A lateral-line hair-cell cluster with a jelly cupula — the same transducer design as the inner ear." },
             { term: "Pit organ", def: "A snake's infrared-sensing cavity that forms a thermal image of warm prey." },
             { term: "Olfactory receptor", def: "A nose protein that binds a specific odor molecule class; dogs carry about fifty times ours." },
           ],
@@ -3582,6 +3604,12 @@ export const lifeSciences: KnowledgeDomainFile = {
               options: ["infrared heat", "ultraviolet light", "radio waves", "X-rays"],
               answer: 1,
               explain: "Their visual pigments extend into UV, revealing flower guides and urine trails.",
+            },
+            {
+              q: "A blind cavefish can still avoid your hand entering the water because its:",
+              options: ["electroreceptors in the tail", "lateral-line neuromasts read the water displacement", "pit organs feel infrared", "otoliths hear the splash"],
+              answer: 1,
+              explain: "Neuromast hair cells in the lateral-line canals map pressure ripples — the same transducer design as the inner ear.",
             },
           ],
         },

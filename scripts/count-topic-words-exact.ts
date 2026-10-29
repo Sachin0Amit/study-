@@ -350,6 +350,10 @@ const IDS = [
   // LIBRARY-ORG 2026-10-30 (X76) — International Law deepening: new chapter
   'law-states-statehood-territory',
   'law-jurisdiction-immunity',
+  // CROSSVERIFY 2026-10-30 (X77) — Zoology vs Hickman 18e (internet-research)
+  'bio-animal-behavior-rhythms',
+  'bio-animal-senses-superpowers',
+  'bio-animal-behavior-ethology',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

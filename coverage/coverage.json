@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T16:27:28.004Z",
+  "generatedAt": "2026-10-29T16:47:40.763Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 138,
     "books": 138,
     "chapters": 885,
-    "sections": 4685
+    "sections": 4686
   },
   "subjects": [
     {
@@ -27276,7 +27276,7 @@
       "group": "Life Sciences",
       "tagline": "The animal kingdom, up close",
       "chapterCount": 2,
-      "sectionCount": 4,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-zoology-animal-diversity-and-form",
@@ -27304,16 +27304,21 @@
           "title": "Senses & Behavior",
           "shortTitle": "Senses & Behavior",
           "bookId": "ku-zoology",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
-              "id": "ku-bio-animal-behavior-ethology",
+              "id": "ku-bio-animal-behavior-rhythms",
               "number": 2.1,
+              "title": "Biological Clocks and Rhythms: The Hidden Timetables of Behavior"
+            },
+            {
+              "id": "ku-bio-animal-behavior-ethology",
+              "number": 2.2,
               "title": "Animal Behavior: Instinct, Learning, Signals"
             },
             {
               "id": "ku-bio-animal-senses-superpowers",
-              "number": 2.2,
+              "number": 2.3,
               "title": "How Animals Sense the World"
             }
           ]

@@ -17,7 +17,7 @@
 - **Subjects:** 138
 - **Books (master volumes):** 138
 - **Chapters:** 885
-- **Sections (lessons):** 4685
+- **Sections (lessons):** 4686
 
 ## Foundations — 7 subjects
 
@@ -842,10 +842,10 @@
 
 ### Zoology (`ku-zoology`)
 
-*The animal kingdom, up close* — 2 chapters · 4 sections
+*The animal kingdom, up close* — 2 chapters · 5 sections
 
 - **Ch 1. Animal Diversity & Form** `ku-zoology-animal-diversity-and-form` — 2 sections: Animal Tissue Types: Four Families, One Body Plan; The Animal Kingdom: A Tour of Body Plans and Phyla
-- **Ch 2. Senses & Behavior** `ku-zoology-senses-and-behavior` — 2 sections: Animal Behavior: Instinct, Learning, Signals; How Animals Sense the World
+- **Ch 2. Senses & Behavior** `ku-zoology-senses-and-behavior` — 3 sections: Biological Clocks and Rhythms: The Hidden Timetables of Behavior; Animal Behavior: Instinct, Learning, Signals; How Animals Sense the World
 
 ### Ecology & Conservation (`ku-ecology-conservation`)
 
