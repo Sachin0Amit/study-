@@ -955,8 +955,8 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
         'Study groups that work — and ones that do not',
         'Teaching exposes your gaps',
       ],
-      words: 1354,
-      readMins: 7,
+      words: 2935,
+      readMins: 15,
       addedOn: '2026-10-25',
       blocks: [
         {
@@ -976,19 +976,141 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
         },
         {
           kind: 'para',
-          text: 'The surprise in the experimental work of Fiorella and Mayer is that anticipation alone already does part of the job: students who merely expected to teach a passage afterward retained more than students who expected a test on it — the expectation itself changes how you process material, hunting for structure that can survive transmission. Actually teaching then added further gains on delayed comprehension tests. So the practice works twice: prepare-to-teach processes deeply, and teach-back consolidates what processing found.',
+          text: 'The protégé effect has been tested most cleanly with teachable agents — computer characters designed to be taught, not to teach. Biswas, Schwartz and colleagues at Vanderbilt built Betty\u2019s Brain, a cartoon agent whose mastery of a science topic depends entirely on the concept map the student teaches her; children who believed they were responsible for Betty\u2019s quiz scores studied harder, consulted more sources and outperformed children who were simply taught the same material by the agent — and the gap was widest, again, for the weakest students. The same logic powers the oldest large-scale classroom version: Jean-Pol Martin\u2019s Lernen durch Lehren (learning by teaching), running in German language classrooms since the 1980s, hands regular lesson content to rotating student teachers while the class interrogates them. Responsibility, not talent, is the variable doing the work — the learner stops asking \u201cwill this be on the test?\u201d and starts asking \u201chow will I survive the explanation?\u201d.',
         },
         {
           kind: 'para',
-          text: 'Peer instruction is the classroom-scale version, and its cycle is worth stealing wholesale for group study: everyone reads the material before the session; the leader poses a conceptual multiple-choice question — not a calculation, a concept with plausible wrong answers; everyone commits to an answer individually first; then peers convince each other; then everyone votes again. The two-vote structure is the engine: the second vote reveals how many minds actually moved, and the persuasion in between is where the learning happens. A finding worth knowing: when clickers — the electronic voting gadgets — were compared against plain colored flashcards, students learned equally well with either; the hardware was never the mechanism, the discussion was. A group of four with paper cards has everything that matters.',
+          text: 'The surprise in the experimental work of Fiorella and Mayer is that anticipation alone already does part of the job: students who merely expected to teach a passage afterward retained more than students who expected a test on it — the expectation itself changes how you process material, hunting for structure that can survive transmission. Actually teaching then added further gains on delayed comprehension tests. So the practice works twice: prepare-to-teach processes deeply, and teach-back consolidates what processing found. The lineage is longer than one study: Linda Annis\u2019s 1983 experiment found students who expected to teach a passage afterward outperformed those who expected a test on it; Nestojko, Bui, Kornell and Bjork extended the point in 2014 by showing the expectancy benefit arrives even when the teaching never happens — expecters organized the material better and recalled more; and Koh, Lee and Lim traced the mechanism toward retrieval, finding the benefit survives comparison against pure retrieval practice. Expectation, in short, is free: it costs nothing to sit down at your desk already rehearsing how you will explain.',
         },
         {
           kind: 'para',
-          text: 'Solo learners get the same engine through the teach-back ritual, best known as the Feynman technique: study the concept, then explain it aloud, from memory, in plain words, to an imagined novice — no jargon to hide behind, because the novice would not understand it anyway. Every stall, every circular sentence, every "um, well, basically" marks a gap. You return to the source only for the stalled points, repair them, and explain again, simpler. The ritual is honest in a way rereading cannot be: air does not lie, and silence where an explanation should be is the exact location of the hole in your knowledge.',
+          text: 'Peer instruction is the classroom-scale version, and its cycle is worth stealing wholesale for group study: everyone reads the material before the session; the leader poses a conceptual multiple-choice question — not a calculation, a concept with plausible wrong answers; everyone commits to an answer individually first; then peers convince each other; then everyone votes again. The two-vote structure is the engine: the second vote reveals how many minds actually moved, and the persuasion in between is where the learning happens. A finding worth knowing: when clickers — the electronic voting gadgets — were compared against plain colored flashcards, students learned equally well with either; the hardware was never the mechanism, the discussion was. A group of four with paper cards has everything that matters. The numbers made the method famous. The Force Concept Inventory that exposed Mazur\u2019s class was Hestenes, Wells and Swackhamer\u2019s 1992 instrument — some thirty conceptual questions on Newtonian mechanics, each wrong option built from a documented misconception — and Mazur\u2019s own course had shown superb problem-set scores sitting on near-standstill concept gains. He published Peer Instruction as a book in 1997 and said farewell to pure lecturing in Science in 2009. Richard Hake\u2019s 1998 survey supplied the aggregate verdict: across 6,542 students in 62 courses, traditional lecture moved concept-test scores by an average normalized gain of 0.23, while interactive-engagement courses built around peer discussion averaged 0.48 — twice the movement per hour of the same content.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The peer-instruction cycle. Pre-read before class; a ConcepTest is posed; every student commits to an individual vote; peer discussion follows, where each side must convince the other; then the second vote measures how many minds actually moved. The discussion between the two votes — not the voting hardware — is the mechanism, and Hake\u2019s 6,542-student survey found such interactive courses close twice the fraction of the conceptual gap that lecture does (normalized gain 0.48 vs 0.23).',
+          sketchImage: '/diagrams/peer-instruction-cycle-sketch.jpg',
+          sketchCaption:
+            'Student Laboratory Notebook: the peer-instruction cycle hand-drawn as five stations — pre-read, ConcepTest posed, individual vote, peer discussion, second vote — with curved arrows looping back to the leader and a margin note: \u201cthe discussion is the mechanism.\u201d',
+          afterConcept: 4,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="The peer-instruction cycle: pre-read, ConcepTest posed, individual vote, peer discussion, second vote, then the next ConcepTest">
+  <!-- station 1: pre-read (ink) -->
+  <rect x="52" y="70" width="180" height="76" rx="14" fill="none" stroke="#8a8a93" stroke-width="2.6" stroke-linecap="round" transform="rotate(-0.8 142 108)"/>
+  <rect x="55" y="73" width="174" height="70" rx="12" fill="none" stroke="#8a8a93" stroke-width="1" opacity="0.45" transform="rotate(0.6 142 108)"/>
+  <circle cx="80" cy="70" r="11" fill="#8a8a93"/>
+  <text x="80" y="74.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#ffffff">1</text>
+  <text x="146" y="102" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="currentColor">Pre-read</text>
+  <text x="146" y="126" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">before the session</text>
+  <!-- station 2: ConcepTest posed (rose) -->
+  <rect x="350" y="66" width="192" height="84" rx="14" fill="none" stroke="#e11d48" stroke-width="2.6" stroke-linecap="round" transform="rotate(0.7 446 108)"/>
+  <rect x="353" y="69" width="186" height="78" rx="12" fill="none" stroke="#e11d48" stroke-width="1" opacity="0.45" transform="rotate(-0.5 446 108)"/>
+  <circle cx="378" cy="66" r="11" fill="#e11d48"/>
+  <text x="378" y="70.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#ffffff">2</text>
+  <text x="448" y="100" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="currentColor">ConcepTest posed</text>
+  <text x="448" y="122" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">a concept, with plausible</text>
+  <text x="448" y="138" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">wrong answers</text>
+  <!-- station 3: individual vote (amber) -->
+  <rect x="648" y="70" width="180" height="76" rx="14" fill="none" stroke="#d97706" stroke-width="2.6" stroke-linecap="round" transform="rotate(0.6 738 108)"/>
+  <rect x="651" y="73" width="174" height="70" rx="12" fill="none" stroke="#d97706" stroke-width="1" opacity="0.45" transform="rotate(-0.7 738 108)"/>
+  <circle cx="676" cy="70" r="11" fill="#d97706"/>
+  <text x="676" y="74.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#ffffff">3</text>
+  <text x="742" y="102" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="currentColor">Individual vote</text>
+  <text x="742" y="126" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">commit before comparing</text>
+  <!-- station 4: peer discussion (emerald, the mechanism) -->
+  <rect x="240" y="298" width="242" height="86" rx="14" fill="none" stroke="#059669" stroke-width="2.6" stroke-linecap="round" transform="rotate(-0.7 361 341)"/>
+  <rect x="243" y="301" width="236" height="80" rx="12" fill="none" stroke="#059669" stroke-width="1" opacity="0.45" transform="rotate(0.5 361 341)"/>
+  <circle cx="268" cy="298" r="11" fill="#059669"/>
+  <text x="268" y="302.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#ffffff">4</text>
+  <text x="365" y="332" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="currentColor">Peer discussion</text>
+  <text x="365" y="354" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">convince each other</text>
+  <rect x="306" y="364" width="112" height="17" rx="8.5" fill="#059669" opacity="0.14"/>
+  <text x="362" y="376.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#059669">the mechanism</text>
+  <!-- station 5: second vote (amber) -->
+  <rect x="648" y="298" width="180" height="86" rx="14" fill="none" stroke="#d97706" stroke-width="2.6" stroke-linecap="round" transform="rotate(0.8 738 341)"/>
+  <rect x="651" y="301" width="174" height="80" rx="12" fill="none" stroke="#d97706" stroke-width="1" opacity="0.45" transform="rotate(-0.6 738 341)"/>
+  <circle cx="676" cy="298" r="11" fill="#d97706"/>
+  <text x="676" y="302.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#ffffff">5</text>
+  <text x="742" y="332" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="currentColor">Second vote</text>
+  <text x="742" y="354" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">measures the movement</text>
+  <!-- arrows: 1→2, 2→3, 3→4, 4→5, loop 5→2 -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round">
+    <path d="M238 106 Q292 96 340 104"/>
+    <path d="M340 104 l-11 -4 M340 104 l-10 5"/>
+    <path d="M548 104 Q596 96 640 104"/>
+    <path d="M640 104 l-11 -4 M640 104 l-10 5"/>
+    <path d="M726 152 Q748 236 494 294"/>
+    <path d="M494 294 l12 1 M494 294 l8 -8"/>
+    <path d="M488 340 Q566 334 640 340"/>
+    <path d="M640 340 l-11 -4 M640 340 l-10 5"/>
+  </g>
+  <path d="M716 294 Q600 226 470 158" fill="none" stroke="#e11d48" stroke-width="2.2" stroke-dasharray="7 6" stroke-linecap="round"/>
+  <path d="M470 158 l12 0 M470 158 l7 9" fill="none" stroke="#e11d48" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="598" y="216" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#e11d48">next ConcepTest</text>
+</svg>`,
         },
         {
           kind: 'para',
-          text: 'Study groups earn their reputation only when they run on this engine. The good version rotates an explainer role each session, members who commit to individual answers before comparing, and a norm of challenging claims rather than collecting them — a journal-club culture, where discussing a paper or problem set forces active engagement. The bad version is a comfort ritual: one person explaining to polite nods, or worse, a pool of confidently shared misconceptions — because peers, unlike sources, do not fact-check each other. The rule: groups should multiply explainers, not audiences. And a boundary keeps this lesson honest: delivery skills — posture, projection, stage fright — live in the public-speaking topic; here it is always the explanation, never the performance, that pays.',
+          text: 'Solo learners get the same engine through the teach-back ritual, best known as the Feynman technique: study the concept, then explain it aloud, from memory, in plain words, to an imagined novice — no jargon to hide behind, because the novice would not understand it anyway. Every stall, every circular sentence, every "um, well, basically" marks a gap. You return to the source only for the stalled points, repair them, and explain again, simpler. The ritual is honest in a way rereading cannot be: air does not lie, and silence where an explanation should be is the exact location of the hole in your knowledge. Software engineers built the same ritual into their trade and named it rubber-duck debugging: Hunt and Thomas\u2019s The Pragmatic Programmer (1999) tells of explaining code, line by line, to a rubber duck on the desk, because verbalizing surfaces the bug without the duck needing to say a word. The duck never answers — and that is precisely why the method works: the explainer cannot lean on the listener\u2019s half-nods.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The teach-back ritual as a repair loop. Study the concept, then explain aloud from memory in plain words — no source, no jargon. A stall is not failure; it is the exact location of a gap. Repair only the stalled point from the source, then explain again, simpler; a clean run closes the loop. Rubber-duck debugging runs the identical loop on code, with a listener who never answers.',
+          afterConcept: 5,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="The teach-back repair loop: study, explain aloud from memory, stall check, repair only the stalled point, explain again simpler, or a clean run closes the loop">
+  <!-- station: study the concept (ink) -->
+  <rect x="330" y="40" width="222" height="66" rx="14" fill="none" stroke="#8a8a93" stroke-width="2.6" stroke-linecap="round" transform="rotate(-0.7 441 73)"/>
+  <rect x="333" y="43" width="216" height="60" rx="12" fill="none" stroke="#8a8a93" stroke-width="1" opacity="0.45" transform="rotate(0.5 441 73)"/>
+  <text x="443" y="80" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="currentColor">Study the concept</text>
+  <!-- station: explain aloud (rose) -->
+  <rect x="600" y="150" width="252" height="90" rx="14" fill="none" stroke="#e11d48" stroke-width="2.6" stroke-linecap="round" transform="rotate(0.7 726 195)"/>
+  <rect x="603" y="153" width="246" height="84" rx="12" fill="none" stroke="#e11d48" stroke-width="1" opacity="0.45" transform="rotate(-0.5 726 195)"/>
+  <text x="728" y="184" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="currentColor">Explain aloud</text>
+  <text x="728" y="206" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">from memory — plain words,</text>
+  <text x="728" y="224" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">no source, no jargon to hide behind</text>
+  <!-- decision: stall? -->
+  <path d="M640 272 Q642 296 640 292 L734 318 Q738 320 734 322 L642 344 Q640 346 638 344 L546 322 Q542 320 546 318 Z" fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round"/>
+  <text x="641" y="312" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-style="italic" fill="currentColor">Stall?</text>
+  <text x="641" y="332" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" fill="#8a8a93">a circular sentence, a gap</text>
+  <!-- terminal: clean run (emerald) -->
+  <rect x="58" y="150" width="196" height="72" rx="14" fill="none" stroke="#059669" stroke-width="2.6" stroke-linecap="round" transform="rotate(0.7 156 186)"/>
+  <rect x="61" y="153" width="190" height="66" rx="12" fill="none" stroke="#059669" stroke-width="1" opacity="0.45" transform="rotate(-0.5 156 186)"/>
+  <text x="158" y="180" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15.5" fill="currentColor">Clean run</text>
+  <text x="158" y="202" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#059669">loop closed — move on</text>
+  <!-- station: repair (amber) -->
+  <rect x="150" y="346" width="250" height="76" rx="14" fill="none" stroke="#d97706" stroke-width="2.6" stroke-linecap="round" transform="rotate(-0.6 275 384)"/>
+  <rect x="153" y="349" width="244" height="70" rx="12" fill="none" stroke="#d97706" stroke-width="1" opacity="0.45" transform="rotate(0.5 275 384)"/>
+  <text x="277" y="376" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15.5" fill="currentColor">Repair the stalled point</text>
+  <text x="277" y="398" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-style="italic" fill="#8a8a93">reread only that — not the whole chapter</text>
+  <!-- arrows -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round">
+    <path d="M512 82 Q580 92 614 146"/>
+    <path d="M614 146 l-1 -12 M614 146 l9 -7"/>
+    <path d="M700 244 Q712 258 690 276"/>
+    <path d="M690 276 l2 -12 M690 276 l10 -6"/>
+  </g>
+  <!-- yes → repair -->
+  <path d="M544 328 Q486 356 408 372" fill="none" stroke="#d97706" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M408 372 l12 2 M408 372 l9 -8" fill="none" stroke="#d97706" stroke-width="2.4" stroke-linecap="round"/>
+  <text x="492" y="340" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#d97706">yes — a gap, mapped</text>
+  <!-- no → clean run -->
+  <path d="M544 314 Q400 300 260 216" fill="none" stroke="#059669" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M260 216 l12 3 M260 216 l6 10" fill="none" stroke="#059669" stroke-width="2.4" stroke-linecap="round"/>
+  <text x="400" y="276" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#059669">no</text>
+  <!-- repair → explain again (loop) -->
+  <path d="M398 352 Q478 250 596 206" fill="none" stroke="#e11d48" stroke-width="2.2" stroke-dasharray="7 6" stroke-linecap="round"/>
+  <path d="M596 206 l-12 -2 M596 206 l-8 9" fill="none" stroke="#e11d48" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="500" y="262" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#e11d48">explain again, simpler</text>
+</svg>`,
+        },
+        {
+          kind: 'para',
+          text: 'Study groups earn their reputation only when they run on this engine. The good version rotates an explainer role each session, members who commit to individual answers before comparing, and a norm of challenging claims rather than collecting them — a journal-club culture, where discussing a paper or problem set forces active engagement. The bad version is a comfort ritual: one person explaining to polite nods, or worse, a pool of confidently shared misconceptions — because peers, unlike sources, do not fact-check each other. The rule: groups should multiply explainers, not audiences. And a boundary keeps this lesson honest: delivery skills — posture, projection, stage fright — live in the public-speaking topic; here it is always the explanation, never the performance, that pays. The tutor gains too, often as much as the tutee: Topping\u2019s 1996 review of peer tutoring in further and higher education found tutors repeatedly matching or exceeding their students\u2019 gains — because the tutor does the retrieving, the reorganizing and the answering. If you cannot find a group, be the tutor: volunteer in a homework clinic, mentor a junior year, or teach the topic to an empty room with more conviction than it will ever return.',
+        },
+        {
+          kind: 'para',
+          text: 'Teaching is also the sharpest gap-detector in the study toolkit, and it earns that role honestly. A gap found by teaching announces itself — the sentence dies mid-clause, the example refuses to come, the \u201cwhy\u201d question hangs in the air — while a gap found by rereading hides behind the smooth familiarity of the page. That announcement is exactly the feedback calibration needs: a stall during your teach-back is a graded, located judgment of your own understanding, more honest than any confidence rating, and it arrives attached to a repair plan — reread the stalled point only. Run the metacognition lesson\u2019s advice through this lesson\u2019s engine: predict, explain, compare, repair. The student who teaches weekly is running a full diagnostic cycle on their own knowledge every seven days, and their map of what they do not yet know is the most current document in their study system.',
         },
         {
           kind: 'example',
@@ -999,6 +1121,47 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
             'Apply: the second student studies once, closes the book, and explains B-cell activation aloud to an imaginary class. The explanation sails until antibody class-switching, where it stalls twice.',
             'State the result: the stall map is the study plan — one targeted reread of class-switching, then a second, simpler teach-back that runs clean. Twenty-five minutes produced a ranked map of what is known and a repair, where rereading twice produces only the feeling of coverage.',
           ],
+        },
+        {
+          kind: 'derivation',
+          title: 'How far did the room move? Deriving Hake\u2019s normalized gain',
+          statement:
+            'A raw improvement between the two votes flatters weak rooms and buries the gains of already-strong ones. Hake\u2019s normalized gain $g$ rescales the movement by the improvement that was actually possible — and gives peer-instruction courses a number comparable across classrooms.',
+          prerequisites: ['Class votes as fractions of the room', 'Elementary algebra'],
+          steps: [
+            {
+              label: 'Step 1: Fix the starting point',
+              formula: '$$s_i = \\frac{\\text{correct on the first vote}}{N}$$',
+              explanation:
+                'Let the class size be $N$ and let $s_i$ be the fraction answering the ConcepTest correctly on the individual vote — the knowledge the room walked in with (or gained from pre-reading).',
+            },
+            {
+              label: 'Step 2: Write the ceiling',
+              formula: '$$1 - s_i$$',
+              explanation:
+                'No discussion can create more than the fraction that was missing. The largest possible movement is the gap $1 - s_i$: a strong room with $s_i = 0.8$ has only $0.2$ of headroom left, so a raw score alone cannot say how well the session worked.',
+            },
+            {
+              label: 'Step 3: Measure the actual movement',
+              formula: '$$s_f - s_i$$',
+              explanation:
+                'After peer discussion, the second vote lands at $s_f$. The raw movement is the difference — but identical discussions should not earn identical credit in a room that started at 0.8 and one that started at 0.3.',
+            },
+            {
+              label: 'Step 4: Normalize by what was possible',
+              formula: '$$g = \\frac{s_f - s_i}{1 - s_i}$$',
+              explanation:
+                'Dividing by the headroom converts the raw gain into a fraction of what was achievable: $g = 0$ means the discussion moved nobody, $g = 1$ means every wrong first vote was persuaded.',
+            },
+            {
+              label: 'Step 5: Run the classroom arithmetic',
+              formula: '$$g = \\frac{0.65 - 0.35}{1 - 0.35} = \\frac{0.30}{0.65} \\approx 0.46$$',
+              explanation:
+                'A room voting 35% correct before discussion and 65% after moved 0.30 of a possible 0.65 — a normalized gain of about 0.46, right in the interactive-engagement band.',
+            },
+          ],
+          result:
+            'Hake\u2019s survey of 6,542 students across 62 courses gives the reference bands: traditional lecture averages $\\langle g \\rangle \\approx 0.23$, interactive-engagement teaching built around peer discussion averages $\\langle g \\rangle \\approx 0.48$. Same content, same concept tests — the discussion roughly doubles the fraction of the gap that closes. A teach-back of one is harder to count, but the stall map is $g$ written by hand.',
         },
         { kind: 'heading', text: 'Applications in the Real World' },
         {
@@ -1027,6 +1190,9 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
             { term: 'ConcepTest', def: 'A multiple-choice question targeting a concept, with wrong options built from known misconceptions.' },
             { term: 'Teach-back ritual', def: 'Explain from memory in plain words to an imagined novice; repair only the stalled points.' },
             { term: 'Journal club', def: 'A group norm of discussing and challenging material — active engagement over passive collection.' },
+            { term: 'Teachable agent', def: 'A computer character designed to be taught by the student — the protégé effect\u2019s cleanest laboratory (Betty\u2019s Brain).' },
+            { term: 'Normalized gain (Hake\u2019s g)', def: 'The fraction of the available improvement actually gained: g = (s_f − s_i)/(1 − s_i).' },
+            { term: 'Lernen durch Lehren', def: 'Jean-Pol Martin\u2019s learning-by-teaching method, running in German classrooms since the 1980s.' },
           ],
         },
         { kind: 'heading', text: 'Check Yourself' },
@@ -1056,6 +1222,30 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
               options: ['You should switch topics', 'The exact location of a gap — reread only that point and explain again', 'You need to memorize more jargon', 'The listener should explain instead'],
               answer: 1,
               explain: 'Silence where an explanation should be maps the hole precisely — that economy is the method\u2019s advantage.',
+            },
+            {
+              q: 'In the Betty\u2019s Brain studies, the protégé effect appeared because students who believed they were responsible for the agent\u2019s learning:',
+              options: ['Were graded more harshly by the researchers', 'Studied harder and used more sources than students taught by the same agent', 'Found the agent easier to fool than a human teacher', 'Spent less time on the material but memorized more jargon'],
+              answer: 1,
+              explain: 'Chase and colleagues\u2019 teachable-agent studies: responsibility for the pupil — not talent or grading pressure — drives the extra effort, and the effect is strongest in lower-achieving students.',
+            },
+            {
+              q: 'Nestojko, Bui, Kornell and Bjork (2014) sharpened the expectancy finding: students who merely expected to teach later — but were never asked to —',
+              options: ['Learned nothing beyond the control group', 'Did worse because the expectation was violated', 'Still organized the material better and recalled more', 'Outperformed everyone only on reading speed'],
+              answer: 2,
+              explain: 'The benefit is encoded during study, not delivered at the teach-back — expecting to explain forces the hunt for transmittable structure even if the explanation never happens.',
+            },
+            {
+              q: 'A class votes 40% correct before peer discussion and 60% after. Hake\u2019s normalized gain g is:',
+              options: ['0.20 — the raw movement', '\u2248 0.33 — a third of the gap closed', '0.50 — half the room moved', '1.5 — the votes multiplied'],
+              answer: 1,
+              explain: 'g = (0.60 \u2212 0.40)/(1 \u2212 0.40) = 0.20/0.60 \u2248 0.33: the headroom after the first vote was 0.60 and the discussion closed 0.20 of it — below Hake\u2019s interactive-engagement band of \u2248 0.48.',
+            },
+            {
+              q: 'Your study group has just agreed on a neat explanation everyone finds convincing. The lesson\u2019s rule for the next step is:',
+              options: ['Record it and move on — consensus is the goal', 'Check the claim against a source before the session ends, because peers do not fact-check each other', 'Vote on it — the majority settles what is true', 'Have the quietest member repeat it back'],
+              answer: 1,
+              explain: 'A group can pool misconceptions as efficiently as insights; the journal-club norm is challenge-and-check, not agreement-collection.',
             },
           ],
         },
