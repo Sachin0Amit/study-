@@ -383,13 +383,15 @@ export const x53CrossverifyPassTopics: KnowledgeTopic[] = [
         'Bricks and mortar: why cramming fails',
         'The keystone habit',
         'Zombie anatomy: cue, routine, reward, belief',
+        'Deadlines as precommitment',
         'Process, not product',
+        'The evidence: 691 correlations',
         'Willpower economics',
         'Mental contrasting',
         'The Pomodoro as cue-rewiring',
       ],
-      words: 1802,
-      readMins: 9,
+      words: 2855,
+      readMins: 14,
       addedOn: '2026-10-26',
       blocks: [
         {
@@ -409,11 +411,71 @@ export const x53CrossverifyPassTopics: KnowledgeTopic[] = [
         },
         {
           kind: 'para',
+          text: 'The numbers back the diagnosis. Piers Steel’s 2007 meta-analysis in Psychological Bulletin swept 691 correlations and found the strongest predictors of procrastination are exactly this anatomy: task aversiveness (the ouch), impulsiveness (the escape), low self-efficacy, and the self-control and organization facets of conscientiousness — while popular suspects such as neuroticism and sensation-seeking turned out weak. Prevalence follows: about one adult in five identifies as a chronic procrastinator (Harriott and Ferrari, 1996), and university rates run far higher. The costs are not symmetric in time, either. Tice and Baumeister (1997) tracked students across a semester: procrastinators reported less stress and illness early on — the short-term relief is real — but by term’s end they reported more stress and more illness, the bill arriving exactly when the deadlines did. Procrastination is a loan with a schedule.',
+        },
+        {
+          kind: 'para',
           text: 'Why not simply try harder? Because willpower is expensive. Oakley\'s rule is blunt: do not spray willpower around like cheap air freshener. Willpower uses heavy neural resources and runs out; the entire strategy of this lesson is to spend it at exactly one place — the moment of reaction to a cue — and let redesigned habit machinery carry everything after. Habits, her friendly "zombies", are the routine, cue-triggered responses your brain falls into. You do not fight the zombie. You rewrite its programming.',
         },
         {
           kind: 'para',
           text: 'Every habit, procrastination included, has four parts, and the rewrite targets each. The cue is what launches the zombie: location, time of day, how you feel, a reaction to other people, or the thing that just happened — the laptop opening, the phone buzzing, the textbook on the desk at the wrong hour. The routine is what the zombie does once launched; this is the pressure point, the only place where active effort is applied — have a plan and rehearse it: phone in another room, library seat, timer on. The reward is what the habit actually pays out; procrastination pays in relief and small pleasures, so the rewrite must supply its own — a latte, guilt-free web time after the timer, the felt pride of a crossed-off block. Only when the brain starts expecting the new reward does rewiring take hold, a process sometimes called learned industriousness: work itself gradually becomes rewarding. And the belief is the fourth part — the conviction that the new system will carry you on the bad days. Belief is fed by community (classmates who run the same system) and by evidence (a wall calendar of finished blocks).',
+        },
+        {
+          kind: 'para',
+          text: 'The fix has numbers too. Dan Ariely and Klaus Wertenbroch (2002) let a class set its own paper deadlines: students who precommitted to evenly spaced due dates beat those who left everything to the end — though the best grades of all belonged to students given externally spaced deadlines, and a late penalty shrank the lateness that remained. Self-control helps; structure helps more. The if-then plans owned by the habits lesson passed a procrastination-specific test as well: Owens and colleagues (2008) found that students who formed implementation intentions were nearly eight times more likely to show up for the appointment they were avoiding, and in Gollwitzer and Brandstätter’s studies difficult goals were roughly three times likelier to be completed once furnished with if-then plans. Precommitment is not a personality trait; it is machinery you can bolt on tonight.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The zombie loop and its rewrite. Clockwise: a cue launches the loop, the anticipatory discomfort flashes, the routine escapes it, the reward pays relief — and the belief that the loop works deepens the track. The rewrite spends willpower at exactly one point: the routine is shrunk to one Pomodoro, committed to process (25 minutes), not product (finish the assignment), and the loop begins paying work instead of escape.',
+          sketchImage: '/diagrams/procrastination-zombie-loop-sketch.jpg',
+          sketchCaption:
+            'Student Laboratory Notebook: hand-drawn circular habit-loop diagram — cue at the top, pain marked anticipatory discomfort, routine: escape, reward: relief, belief arc closing the circle, and a kitchen-timer Pomodoro breaking the loop with a margin note: “process, not product.”',
+          afterConcept: 4,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="Circular habit loop: cue launches the loop, anticipatory discomfort flashes, routine escapes, reward pays relief, belief closes the circle; a Pomodoro wedge breaks the loop by committing to process, not product.">
+  <!-- wobbly loop circle -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.2" stroke-linecap="round" opacity="0.8">
+    <path d="M300 84 Q120 130 106 240 Q96 350 300 398 Q506 350 496 240 Q486 132 300 84"/>
+  </g>
+  <g fill="none" stroke="#8a8a93" stroke-width="1" opacity="0.45" stroke-linecap="round">
+    <path d="M302 78 Q116 126 100 240 Q90 356 300 404 Q512 354 502 240 Q492 128 302 78"/>
+  </g>
+  <!-- clockwise arrows -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2" stroke-linecap="round">
+    <path d="M180 118 l-12 10 M180 118 l2 15"/>
+    <path d="M102 300 l-2 15 M102 300 l12 8"/>
+    <path d="M420 366 l12 -9 M420 366 l-3 -15"/>
+    <path d="M497 180 l3 -15 M497 180 l-13 -7"/>
+  </g>
+  <!-- nodes -->
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="300" y="66" font-size="16" fill="currentColor" font-weight="bold">cue</text>
+    <text x="300" y="84" font-size="12" fill="#8a8a93">the phone buzzes, the book opens</text>
+    <text x="594" y="196" font-size="15" fill="#e11d48">anticipatory discomfort</text>
+    <text x="594" y="214" font-size="12" fill="#8a8a93">a subtle ouch — then it fades</text>
+    <text x="594" y="292" font-size="15" fill="currentColor" font-weight="bold">routine: escape</text>
+    <text x="594" y="310" font-size="12" fill="#8a8a93">laptop, feed, another shelf of notes</text>
+    <text x="300" y="432" font-size="15" fill="#059669" font-weight="bold">reward: relief</text>
+    <text x="300" y="450" font-size="12" fill="#8a8a93">a small dollop of pleasure, twice</text>
+    <text x="30" y="240" font-size="15" fill="currentColor" text-anchor="start" transform="rotate(-90 30 240)">belief: the loop works</text>
+  </g>
+  <text x="300" y="248" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#8a8a93">the zombie loop</text>
+  <!-- the rewrite wedge -->
+  <path d="M212 300 Q300 250 392 300" fill="none" stroke="#d97706" stroke-width="2.4" stroke-dasharray="8 7" stroke-linecap="round"/>
+  <path d="M392 300 l-12 -1 M392 300 l-6 -11" fill="none" stroke="#d97706" stroke-width="2.4" stroke-linecap="round"/>
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="300" y="288" font-size="14" fill="#d97706" font-weight="bold">the rewrite: one Pomodoro</text>
+    <text x="300" y="305" font-size="12.5" fill="#d97706">process, not product — 25 minutes, then a real reward</text>
+  </g>
+  <!-- willpower note -->
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="676" y="98" font-size="13.5" fill="currentColor">willpower is spent once:</text>
+    <text x="676" y="116" font-size="13.5" fill="currentColor">at the reaction to the cue</text>
+    <path d="M672 130 Q640 168 596 186" fill="none" stroke="#8a8a93" stroke-width="1.6" stroke-dasharray="4 6" stroke-linecap="round"/>
+  </g>
+  <text x="452" y="466" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#8a8a93">cue → discomfort → escape → relief → belief — rewritten at the only point effort is cheap</text>
+</svg>`,
         },
         {
           kind: 'para',
@@ -433,6 +495,47 @@ export const x53CrossverifyPassTopics: KnowledgeTopic[] = [
           'Apply: change the cue first — Saturday study happens at the library after breakfast, phone in the bag, laptop opened only to the problem set. The routine: one Pomodoro on the easiest pending problem (an early win), then a second on the confusing section, notes taken on exactly where confusion sits. The reward: the good coffee from the place next door plus twenty minutes of guilt-free browsing. The belief: a study partner meets at the same hour, and each finished block gets a cross on a visible calendar.',
           'State the result: the zombie is not fought head-on — its cue (couch + open laptop + morning boredom) is removed, its routine replaced at the single point willpower was needed, and the new loop pays its own reward while the calendar and the partner hold the belief.',
         ] },
+        {
+          kind: 'derivation',
+          title: 'The arithmetic of delay: temporal motivation theory',
+          statement:
+            'Steel and König (2006) compress the 691-correlation evidence into one equation — motivation as a function of expectancy, value, impulsiveness and delay. Two homework tasks show why delay is toxic and what the Pomodoro actually buys.',
+          prerequisites: ['Percentages and ratios', 'The four-part habit anatomy'],
+          steps: [
+            {
+              label: 'Step 1: The equation',
+              formula: '$$M = \\frac{E \\times V}{1 + I \\times D}$$',
+              explanation:
+                'Motivation M rises with expectancy E (can I succeed?) and value V (does it matter?), and falls with impulsiveness I (how fast do I discount?) and delay D (how far away is the payoff?).',
+            },
+            {
+              label: 'Step 2: A task feeding an exam tomorrow',
+              formula: '$$M_{\\text{tomorrow}} = \\frac{0.9 \\times 10}{1 + 0.5 \\times 1} = 6.0$$',
+              explanation:
+                'Take E = 0.9, V = 10, I = 0.5, D = 1 day. Motivation is high: 6.0 on this dial. The work feels almost self-starting.',
+            },
+            {
+              label: 'Step 3: The same task, four weeks out',
+              formula: '$$M_{\\text{month\\ out}} = \\frac{0.9 \\times 10}{1 + 0.5 \\times 30} \\approx 0.56$$',
+              explanation:
+                'Identical task, D = 30 days: motivation collapses to 0.56 — roughly eleven times lower. Nothing about the task changed; only the delay did.',
+            },
+            {
+              label: 'Step 4: What impulsiveness does',
+              formula: '$$M_{I=2} = \\frac{9}{1 + 2 \\times 30} \\approx 0.15$$',
+              explanation:
+                'For an impulsive student (I = 2) the distant task scores 0.15 — the payoff is discounted so steeply that no version of it competes with the phone.',
+            },
+            {
+              label: 'Step 5: The two levers',
+              formula: '$$D_{\\text{stage}} \\ll D_{\\text{exam}} \\;\\Rightarrow\\; M \\uparrow$$',
+              explanation:
+                'Shrink the delay: a stage due tomorrow (backward planning) or a 25-minute Pomodoro puts D at its floor, where the 1+ term is nearly 1 and motivation survives. That is the equation behind process, not product.',
+            },
+          ],
+          result:
+            'Temporal motivation theory explains the Saturday-morning paralysis arithmetically: at I = 0.5 the same mathematics task scores 6.0 with a one-day delay and 0.56 with a month one. The exam date cannot move — but backward planning and Pomodoros move D, and D is the denominator.',
+        },
         { kind: 'heading', text: 'Applications in the Real World' },
         { kind: 'list', items: [
           'Programmers rewire the after-lunch cue: opening the code editor before the feed, instead of the feed before the editor.',
@@ -458,6 +561,9 @@ export const x53CrossverifyPassTopics: KnowledgeTopic[] = [
           { term: 'Learned industriousness', def: 'The process by which work itself, reliably rewarded, becomes satisfying.' },
           { term: 'Process versus product', def: 'Committing to flows of time and habit rather than outcomes, because outcomes trigger the pain.' },
           { term: 'Mental contrasting', def: 'Deliberately contrasting a vivid picture of the target with the current reality to fuel effort.' },
+          { term: 'Temporal motivation theory', def: 'Steel and König’s equation M = (E × V) / (1 + I × D): motivation rises with expectancy and value, falls with impulsiveness and delay.' },
+          { term: 'Precommitment', def: 'Locking a future choice in advance — self-imposed deadlines, if-then plans — so the escape is not on the menu.' },
+          { term: 'Hyperbolic discounting', def: 'The steep, impulse-driven devaluation of delayed payoffs that the delay term of the equation models.' },
         ] },
         { kind: 'heading', text: 'Check Yourself' },
         { kind: 'quiz', items: [
@@ -484,6 +590,30 @@ export const x53CrossverifyPassTopics: KnowledgeTopic[] = [
             options: ['Imagining only your future success in detail', 'Contrasting a vivid image of your target with your current reality', 'Comparing yourself with classmates', 'Memorising your grades across terms'],
             answer: 1,
             explain: 'The contrast — target picture against present situation — is the fuel; the image alone is daydreaming, and the gap is the point.',
+          },
+          {
+            q: 'In Steel’s 2007 meta-analysis of 691 correlations, the strongest predictors of procrastination included:',
+            options: ['Neuroticism and sensation seeking', 'Task aversiveness, impulsiveness, low self-efficacy and disorganization', 'Intelligence and class attendance', 'Age and gender'],
+            answer: 1,
+            explain: 'Task aversiveness, task delay, self-efficacy, impulsiveness and the conscientiousness facets (self-control, distractibility, organization) were strong; neuroticism, rebelliousness and sensation-seeking were weak.',
+          },
+          {
+            q: 'Tice and Baumeister’s semester-long study (1997) found procrastinators reported:',
+            options: ['Uniformly higher stress all term', 'Less stress and illness early but more of both late in the term', 'No difference at any point', 'More illness early and less late'],
+            answer: 1,
+            explain: 'The short-term relief is real — and so is the bill: by term’s end procrastinators carried more stress and more illness, exactly when the deadlines landed.',
+          },
+          {
+            q: 'In Ariely and Wertenbroch’s deadline study, the best paper grades went to:',
+            options: ['Students with no deadlines at all', 'Students who self-imposed evenly spaced deadlines', 'Students given externally spaced deadlines', 'All groups did equally well'],
+            answer: 2,
+            explain: 'Self-imposed spacing helped students beat their own procrastination, but externally imposed spacing produced the best performance — structure beats willpower, and a late penalty shrank the remaining lateness.',
+          },
+          {
+            q: 'Two tasks both have E = 0.9 and V = 10, with I = 0.5. Task A pays off in 1 day, Task B in 30 days. Under M = EV/(1 + ID):',
+            options: ['Both have equal motivation', 'A ≈ 6.0 and B ≈ 0.56 — over ten times more motivation for the near task', 'A ≈ 0.56 and B ≈ 6.0', 'B wins because delay builds anticipation'],
+            answer: 1,
+            explain: 'A: 9/(1 + 0.5) = 6.0; B: 9/(1 + 15) = 0.56. The delay sits in the denominator — exactly why backward planning and Pomodoros shrink D.',
           },
         ] },
         {
