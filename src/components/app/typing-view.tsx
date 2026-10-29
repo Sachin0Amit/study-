@@ -1523,18 +1523,6 @@ export function TypingView() {
                           </span>
                         ))
                       )}
-                      {/* caret sync — positions the caret + refocuses the
-                          capture input; lives INSIDE the surface so it mounts
-                          with it (AnimatePresence exit timing, see note above) */}
-                      <CaretSync
-                        activeCharRef={activeCharRef}
-                        caretRef={caretRef}
-                        innerRef={innerRef}
-                        inputRef={inputRef}
-                        words={words}
-                        pos={pos}
-                        phase={phase}
-                      />
                       {/* caret */}
                       <div
                         ref={caretRef}
@@ -1570,6 +1558,20 @@ export function TypingView() {
                     autoCapitalize="off"
                     spellCheck={false}
                     aria-label="Typing input — type the text shown above"
+                  />
+                  {/* caret sync — MUST be the LAST child of the surface: its
+                      layout effect positions the caret from live refs, so every
+                      ref (active char, caret, inner, input) must already be
+                      attached when it runs — including on AnimatePresence
+                      surface swaps. */}
+                  <CaretSync
+                    activeCharRef={activeCharRef}
+                    caretRef={caretRef}
+                    innerRef={innerRef}
+                    inputRef={inputRef}
+                    words={words}
+                    pos={pos}
+                    phase={phase}
                   />
                 </div>
 
