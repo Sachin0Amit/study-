@@ -79,14 +79,17 @@ export const x52CrossverifyPassTopics: KnowledgeTopic[] = [
       concepts: [
         'Active agency and a vision of success',
         'Self-efficacy and its four sources',
+        'Building the four sources: mastery ladders and coping models',
+        'Efficacy versus self-esteem: a task judgment, not a worth judgment',
         'Growth mindset versus fixed mindset',
         'Attribution: how you explain results',
         'The learning-styles myth',
         'Personalising learning: strategy fit, not style labels',
         'Cottrell’s ten self-efficacy skills and C·R·E·A·M',
+        'The arithmetic of attempting versus avoiding',
       ],
-      words: 1676,
-      readMins: 8,
+      words: 3000,
+      readMins: 15,
       addedOn: '2026-10-26',
       blocks: [
         {
@@ -110,11 +113,133 @@ export const x52CrossverifyPassTopics: KnowledgeTopic[] = [
         },
         {
           kind: 'para',
-          text: 'Mindset is Carol Dweck\'s term for beliefs about whether ability is fixed or growable. Make It Stick devotes its "Increase Your Abilities" chapter to the finding: students who believe learning and intelligence are malleable focus on learning and growing with increasing challenges rather than defending a performance snapshot, and the payoff is more learning and more persistence over time. The practical signature shows up in how each mindset explains a result. Fixed mindset reads a disappointing grade as talent evidence — "I\'m just not a maths person" — and responds by avoiding. Growth mindset reads it as strategy evidence — "my approach didn\'t work yet" — and responds by adjusting. Dweck\'s own later work adds an honesty note: mindset interventions are modest, not magic; they help most when paired with actual better strategies. That is exactly how this book is arranged — the belief opens the door, the retrieval and spacing lessons walk through it.',
+          text: 'Belief is not enough — Bandura\'s four sources are buildable, and each can be built. Mastery responds to design: lay a ladder of achievable-but-stretching rungs and bank each rung in a visible log — your own execution is the strongest efficacy currency. Vicarious modelling can be chosen: Zimmerman and Ringle (1981) found that a coping model — a peer who persists through difficulty before cracking it — builds more self-efficacy than a flawless performance. Social persuasion works when it is specific and credible: "your setup was right, the limit step needs work" moves belief; generic praise does not. The physiological channel trains too: the racing heart before a hard problem is one arousal — practise reading it as readiness.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The four sources feeding the central belief: mastery experience (banked wins — strongest), vicarious models (a peer who copes), social persuasion (specific, credible), physiological state (readiness, not threat).',
+          sketchImage: '/diagrams/study-self-efficacy-mindset-sketch.jpg',
+          sketchCaption:
+            'Notebook sketch: SELF-EFFICACY centre, four feeder boxes, converging arrows — Mastery experience (bank a small win), Vicarious models (a peer copes then succeeds), Social persuasion (specific feedback), Physiological state (readiness, not threat).',
+          afterConcept: 3,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="The four sources of self-efficacy feeding a central belief">
+  <!-- central belief box: hand-drawn double-stroke -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round">
+    <path d="M336 178 Q438 168 542 176 Q552 232 546 284 Q440 296 338 288 Q328 232 336 178"/>
+  </g>
+  <g fill="none" stroke="#8a8a93" stroke-width="1" opacity="0.5" stroke-linecap="round">
+    <path d="M342 186 Q438 176 536 184 Q544 232 540 278 Q440 288 344 282 Q338 232 342 186"/>
+  </g>
+  <text x="440" y="224" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="currentColor" letter-spacing="1">SELF-EFFICACY</text>
+  <text x="440" y="254" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#8a8a93">your effort changes the outcome</text>
+  <!-- source boxes -->
+  <g fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round">
+    <path d="M64 56 Q176 46 286 54 Q294 90 288 126 Q176 134 66 128 Q56 92 64 56"/>
+  </g>
+  <text x="175" y="42" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#059669">strongest source</text>
+  <text x="175" y="86" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16.5" fill="#059669">Mastery experience</text>
+  <text x="175" y="110" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="currentColor" opacity="0.85">bank a small win</text>
+  <g fill="none" stroke="#e11d48" stroke-width="2.2" stroke-linecap="round">
+    <path d="M594 56 Q706 46 816 54 Q824 90 818 126 Q706 134 596 128 Q586 92 594 56"/>
+  </g>
+  <text x="706" y="86" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16.5" fill="#e11d48">Vicarious models</text>
+  <text x="706" y="110" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="currentColor" opacity="0.85">watch a similar peer cope and succeed</text>
+  <g fill="none" stroke="#d97706" stroke-width="2.2" stroke-linecap="round">
+    <path d="M64 344 Q176 334 286 342 Q294 378 288 414 Q176 422 66 416 Q56 380 64 344"/>
+  </g>
+  <text x="175" y="374" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16.5" fill="#d97706">Social persuasion</text>
+  <text x="175" y="398" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="currentColor" opacity="0.85">specific, credible feedback</text>
+  <g fill="none" stroke="#8a8a93" stroke-width="2.2" stroke-linecap="round">
+    <path d="M594 344 Q706 334 816 342 Q824 378 818 414 Q706 422 596 416 Q586 380 594 344"/>
+  </g>
+  <text x="706" y="374" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16.5" fill="currentColor">Physiological state</text>
+  <text x="706" y="398" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="currentColor" opacity="0.85">readiness, not threat</text>
+  <!-- converging arrows with hand-drawn heads -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.2" stroke-linecap="round">
+    <path d="M258 132 Q300 160 342 177"/>
+    <path d="M622 132 Q580 160 538 177"/>
+    <path d="M258 338 Q300 310 342 293"/>
+    <path d="M622 338 Q580 310 538 293"/>
+    <path d="M331 176 L344 179 L335 168"/>
+    <path d="M549 168 L536 179 L545 176"/>
+    <path d="M331 294 L344 291 L335 302"/>
+    <path d="M549 302 L536 291 L545 294"/>
+  </g>
+</svg>`,
         },
         {
           kind: 'para',
-          text: 'The learning-styles myth deserves its own paragraph because it is the most popular wrong belief in education. The claim — that each person learns best in a particular format, visual, auditory or kinaesthetic, and should be taught that way — feels obvious and is repeated everywhere. Make It Stick\'s "Get Beyond Learning Styles" chapter states the finding plainly: there is no empirical evidence that teaching students in their preferred style improves learning. What matters is matching the format to the material, not to the label: maps for geography, sound for pronunciation, hands for circuits — for everyone. Cottrell\'s "personalising learning" means something sharper than style labels: identifying, by experiment and reflection, which approaches work best for you on which tasks — the same idea the note-taking lesson applies when it matches Cornell, outlines, maps or a slip-box to the task at hand. Personalise your strategies; do not diagnose your soul.',
+          text: 'Two distinctions keep this lesson honest. Self-efficacy is not self-esteem: esteem is a judgment of worth ("I matter"), efficacy a judgment of capability for a defined task ("I can execute what this task demands"). Pumping esteem without competence is fragile at the first hard feedback; earned efficacy survives it — praise the strategy, build the win, let the feeling follow the evidence. Efficacy is also domain-specific: high for essays, low for integration by parts, on the same Tuesday — and both can be accurate, because efficacy is a fact-check on a task, not a personality trait. So a global verdict ("I\'m bad at maths") offers nothing to act on, while "I haven\'t got integration by parts yet" points at the next practice task.',
+        },
+        {
+          kind: 'para',
+          text: 'Mindset is Carol Dweck\'s term for beliefs about whether ability is fixed or growable. Make It Stick devotes its "Increase Your Abilities" chapter to the finding: students who believe learning and intelligence are malleable focus on learning and growing with increasing challenges rather than defending a performance snapshot, and the payoff is more learning and more persistence over time. The practical signature shows up in how each mindset explains a result. Fixed mindset reads a disappointing grade as talent evidence — "I\'m just not a maths person" — and responds by avoiding. Growth mindset reads it as strategy evidence — "my approach didn\'t work yet" — and responds by adjusting. Dweck\'s own later work adds an honesty note: mindset interventions are modest, not magic; they help most when paired with actual better strategies. That is exactly how this book is arranged — the belief opens the door, the retrieval and spacing lessons walk through it. The National Study of Learning Mindsets (Yeager and colleagues, Nature, 2019) — a preregistered randomised trial across 65 US high schools, 12,490 students — found a sub-hour online session on how ability grows with practice raised lower-achievers\' core-course GPA by 0.10 grade points. Two meta-analyses by Sisk and colleagues (Psychological Science, 2018; 273 studies plus 43 trials, N = 423,070 combined) price it honestly: d ≈ 0.08 overall, ≈ 0.19 for at-risk students — small, targeted, cheap at scale.',
+        },
+        {
+          kind: 'para',
+          text: 'Attribution theory explains where the two mindsets come from — how a raw result becomes a belief. Bernard Weiner\'s account (1985) sorts explanations for success and failure along three dimensions: locus (is the cause inside me or outside?), stability (permanent or changeable?) and controllability (could I have changed it?). Attribute a failure to low ability and you have picked internal, stable and uncontrollable — the most demoralising combination, because it suggests no next move. Attribute it to strategy and effort and you have picked internal, unstable and controllable — the combination that predicts trying again, differently. Diener and Dweck (1978) recorded it live: helpless-oriented children defaulted to ability talk and deteriorated after failure; mastery-oriented children issued self-instructions — "check the steps, work harder" — and recovered. The lineage runs back through Seligman\'s learned-helplessness work.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'One result, two attributions. The 41% test as a fixed verdict ("I\'m not a maths person" — internal, stable, uncontrollable) routes into avoidance; as strategy evidence ("my approach didn\'t work yet" — internal, unstable, controllable) it routes into adjustment for the next attempt.',
+          afterConcept: 6,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="One result branching into a fixed attribution leading to avoidance and a growth attribution leading to adjustment">
+  <!-- top result box: hand-drawn double-stroke -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round">
+    <path d="M304 42 Q440 34 576 40 Q584 66 578 90 Q440 98 306 92 Q296 66 304 42"/>
+  </g>
+  <g fill="none" stroke="#8a8a93" stroke-width="1" opacity="0.5" stroke-linecap="round">
+    <path d="M310 48 Q440 42 570 46 Q576 66 572 86 Q440 92 312 86 Q304 66 310 48"/>
+  </g>
+  <text x="440" y="72" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="currentColor">Result: 41% on the calculus test</text>
+  <!-- branch arrows -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.2" stroke-linecap="round">
+    <path d="M400 100 Q330 136 258 172"/>
+    <path d="M480 100 Q550 136 622 172"/>
+    <path d="M252 160 L258 173 L268 162"/>
+    <path d="M612 162 L622 173 L628 160"/>
+  </g>
+  <!-- fixed branch (rose) -->
+  <g fill="none" stroke="#e11d48" stroke-width="2.2" stroke-linecap="round">
+    <path d="M94 184 Q250 174 406 182 Q414 236 408 292 Q250 300 96 294 Q86 238 94 184"/>
+  </g>
+  <text x="250" y="214" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#e11d48">Fixed attribution</text>
+  <text x="250" y="240" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="currentColor">\u2018I\'m not a maths person\u2019</text>
+  <text x="250" y="270" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#e11d48">internal · stable · uncontrollable</text>
+  <!-- growth branch (emerald) -->
+  <g fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round">
+    <path d="M474 184 Q630 174 786 182 Q794 236 788 292 Q630 300 476 294 Q466 238 474 184"/>
+  </g>
+  <text x="630" y="214" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#059669">Growth attribution</text>
+  <text x="630" y="240" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="currentColor">\u2018my strategy didn\'t work yet\u2019</text>
+  <text x="630" y="270" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#059669">internal · unstable · controllable</text>
+  <!-- descent arrows -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.2" stroke-linecap="round">
+    <path d="M250 302 Q248 328 250 352"/>
+    <path d="M630 302 Q632 328 630 352"/>
+    <path d="M244 342 L250 354 L256 342"/>
+    <path d="M624 342 L630 354 L636 342"/>
+  </g>
+  <!-- terminals -->
+  <g fill="none" stroke="#e11d48" stroke-width="2" stroke-dasharray="7 6" stroke-linecap="round">
+    <path d="M134 364 Q250 356 366 362 Q372 392 368 420 Q250 428 136 422 Q128 392 134 364"/>
+  </g>
+  <text x="250" y="398" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#e11d48">avoid → no new data</text>
+  <g fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round">
+    <path d="M514 364 Q630 356 746 362 Q752 392 748 420 Q630 428 516 422 Q508 392 514 364"/>
+  </g>
+  <text x="630" y="398" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#059669">adjust → new data → next attempt</text>
+</svg>`,
+        },
+        {
+          kind: 'para',
+          text: 'The learning-styles myth deserves its own paragraph because it is the most popular wrong belief in education. The claim — that each person learns best in a particular format, visual, auditory or kinaesthetic, and should be taught that way — feels obvious and is repeated everywhere. Make It Stick\'s "Get Beyond Learning Styles" chapter states the finding plainly: there is no empirical evidence that teaching students in their preferred style improves learning. What matters is matching the format to the material, not to the label: maps for geography, sound for pronunciation, hands for circuits — for everyone. The claim received its most careful test in Pashler, McDaniel, Rohrer and Bjork\'s 2008 review "Learning Styles: Concepts and Evidence" (Psychological Science in the Public Interest): to justify styles-matched teaching — the meshing hypothesis — a study must find a crossover: visual learners doing best from visual teaching while verbal learners do best from verbal. Almost no studies meet that design bar, and the few that do come out against matching; later tests (Massa and Mayer 2006; Rogowsky, Calhoun and Tallal 2015) agree. The verdict: no adequate evidence base for styles-matched teaching — hours diagnosing styles are hours not spent on retrieval and spacing. Cottrell\'s "personalising learning" means something sharper than style labels: identifying, by experiment and reflection, which approaches work best for you on which tasks — the same idea the note-taking lesson applies when it matches Cornell, outlines, maps or a slip-box to the task at hand. Personalise your strategies; do not diagnose your soul.',
+        },
+        {
+          kind: 'para',
+          text: 'Personalising learning, done properly, replaces the label with an experiment loop. Push one topic this week through two candidate approaches — a recall sheet from memory, a diagram from scratch — then judge by evidence: which produced the fewest stalls on a cold self-test. The honest answer differs by task — maps for geography, sound for pronunciation, hands for circuits — so fit the strategy to the task, never to a fixed portrait of yourself.',
         },
         {
           kind: 'para',
@@ -129,6 +254,51 @@ export const x52CrossverifyPassTopics: KnowledgeTopic[] = [
             'Apply: reframe the 41% as a calibration reading — the metacognition lesson\'s predict-then-check ritual will tighten it. Join one peer problem group weekly (vicarious model). Book one concrete win: retake the hardest missed problem cold and score it (mastery experience). Book the tutor\'s feedback hour with two specific questions (social persuasion). Run the growth loop: what strategy changes this week — daily blank-page recall of worked examples — and what evidence next week will judge it.',
             'State the result: the same grade now carries an action plan instead of an identity; efficacy is rebuilt from four directions at once, and the decision to drop waits until the plan has actually been run.',
           ],
+        },
+        {
+          kind: 'para',
+          text: 'The worked example ends in a plan; this concept prices it. Beliefs act through choices, and the choice a mindset controls is stark: attempt the problem, or route around it. Expected-value arithmetic makes the stakes visible — and shows that avoidance is only rational if failure carries no information, the exact claim the attribution evidence refutes.',
+        },
+        {
+          kind: 'derivation',
+          title: 'The arithmetic of attempting: pricing the mindset choice',
+          statement:
+            'A stretching problem is attempted — success probability $p$, skill gain $G$ — or avoided; a failed attempt still purchases feedback worth $F$. Show that attempting dominates avoiding whenever feedback has value.',
+          prerequisites: ['Expected value as a probability-weighted sum', 'The attribution distinction: strategy (changeable) vs trait (fixed)'],
+          steps: [
+            {
+              label: 'Step 1: Price the attempt',
+              formula: '$$\\mathrm{EV}_{\\text{attempt}} = p\\,G + (1-p)\\,F$$',
+              explanation:
+                'A success locks in the skill (G); a failure converts into a strategy adjustment worth F — both branches pay.',
+            },
+            {
+              label: 'Step 2: Price the avoidance',
+              formula: '$$\\mathrm{EV}_{\\text{avoid}} = 0$$',
+              explanation:
+                'Nothing attempted, nothing learned, no data collected — skill freezes where it is.',
+            },
+            {
+              label: 'Step 3: Insert honest numbers',
+              formula: '$$\\mathrm{EV}_{\\text{attempt}} = 0.30 \\times 4 + 0.70 \\times 1.5 = 1.20 + 1.05 = 2.25$$',
+              explanation:
+                'A 30% chance at a 4-unit problem, feedback worth 1.5 on failure: one attempt buys 2.25 units against zero.',
+            },
+            {
+              label: 'Step 4: Scale over a term',
+              formula: '$$20 \\times 2.25 = 45\\ \\text{units}$$',
+              explanation:
+                'Twenty attempts compound to 45 units in a term — all forgone by avoidance.',
+            },
+            {
+              label: 'Step 5: Ask when avoidance could ever win',
+              formula: '$$\\mathrm{EV}_{\\text{attempt}} - \\mathrm{EV}_{\\text{avoid}} = p\\,G + (1-p)\\,F > 0 \\quad \\text{whenever}\\ F > 0$$',
+              explanation:
+                'The attempt dominates unless F = 0 — failure teaches nothing — exactly the fixed-mindset premise that attribution research refutes.',
+            },
+          ],
+          result:
+            'Attempting dominates avoiding for every positive p; the only escape hatch is the claim that failure carries zero information — precisely what the attribution evidence rejects. A failure with feedback is the cheapest coaching a student receives — the growth mindset, in this arithmetic, is not optimism but correct bookkeeping.',
         },
         { kind: 'heading', text: 'Applications in the Real World' },
         {
@@ -157,6 +327,8 @@ export const x52CrossverifyPassTopics: KnowledgeTopic[] = [
             { term: 'Attribution', def: 'The explanation you give for a result — strategy-and-effort explanations feed adjustment; trait explanations feed avoidance.' },
             { term: 'Learning-styles myth', def: 'The unsupported claim that teaching to a personal style (visual, auditory, kinaesthetic) improves learning; format should match the material instead.' },
             { term: 'C·R·E·A·M', def: 'Cottrell’s strategy acronym: Creative, Reflective, Effective, Active, Motivated approaches to learning.' },
+            { term: 'Coping model', def: 'A peer model shown struggling and then succeeding; observing coping builds more self-efficacy than observing a flawless performance (Zimmerman & Ringle, 1981).' },
+            { term: 'Domain-specific efficacy', def: 'Bandura\'s finding that self-efficacy is a task-bound judgment — high for one subject, low for another — not a global trait.' },
           ],
         },
         { kind: 'heading', text: 'Check Yourself' },
@@ -186,6 +358,30 @@ export const x52CrossverifyPassTopics: KnowledgeTopic[] = [
               options: ['Calm, rapid, easy, automatic, minimal', 'Creative, Reflective, Effective, Active, Motivated', 'Critical, Repetitive, Examined, Assessed, Marked', 'Curious, Realistic, Efficient, Applied, Measured'],
               answer: 1,
               explain: 'Her acronym names the posture she wants applied to every task: creative, reflective, effective, active, well-motivated.',
+            },
+            {
+              q: 'Weiner\'s attribution dimensions: explaining a failed test by "low ability" places the cause at:',
+              options: ['Internal, stable, uncontrollable', 'External, unstable, controllable', 'Internal, unstable, controllable', 'External, stable, controllable'],
+              answer: 0,
+              explain: 'Ability is internal, stable and uncontrollable in the attributor\'s eyes — no next move suggested; strategy and effort invite another attempt.',
+            },
+            {
+              q: 'Self-efficacy differs from self-esteem because efficacy is:',
+              options: ['A judgment of your worth as a person', 'A judgment of your capability for a specific task', 'A fixed personality trait', 'Just confidence by another name'],
+              answer: 1,
+              explain: 'Efficacy asks "can I execute what this task demands?" — task-bound and evidence-sensitive; inflated worth without competence is fragile, earned wins are durable.',
+            },
+            {
+              q: 'In the decision model, a problem has success probability 0.3, gain G = 4, feedback F = 1.5. The expected value of attempting is:',
+              options: ['0 units', '1.2 units', '2.25 units', '4 units'],
+              answer: 2,
+              explain: 'EV = p·G + (1−p)·F = 0.3 × 4 + 0.7 × 1.5 = 2.25 per attempt, against 0 for avoiding — failure still pays via feedback.',
+            },
+            {
+              q: 'What do the strongest large-scale studies conclude about mindset interventions?',
+              options: ['They transform grades for everyone', 'They show real but modest effects, largest for lower-achieving students', 'They do nothing at all', 'They only work in primary school'],
+              answer: 1,
+              explain: 'Yeager 2019 (Nature; 65 schools): +0.10 GPA for lower-achievers; Sisk 2018 (273 studies): d ≈ 0.08 overall, ≈ 0.19 at-risk — modest, targeted, cheap.',
             },
           ],
         },
