@@ -1917,15 +1917,19 @@ export const foundationLearning: KnowledgeDomainFile = {
       tier: 'core',
       concepts: [
         'Sleep is study time',
+        'The all-nighter, priced',
         'The retrieval warm-up',
         'Reading the paper before answering it',
         'Point arithmetic: budgeting minutes',
+        'The guessing arithmetic',
         'Error triage: three passes',
         'Hard-start, jump-to-easy',
         'Anxiety as fuel, not fog',
+        'Choking: why experts freeze',
+        'Writing the worries away',
       ],
-      words: 2082,
-      readMins: 10,
+      words: 3000,
+      readMins: 15,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1942,6 +1946,10 @@ export const foundationLearning: KnowledgeDomainFile = {
         {
           kind: 'para',
           text: 'Sleep is when memory consolidates — the filing-and-stabilising stage the spaced repetition lesson describes. An all-nighter trades a night of consolidation for a few extra hours of shallow exposure, and the arithmetic is terrible: sleep-deprived test-takers recall less of what they studied and solve problems more slowly. The right final evening is boring: a light pass over a one-page summary sheet, materials packed, alarm set, normal bedtime. The exam is partly won the night before, in bed.',
+        },
+        {
+          kind: 'para',
+          text: 'The all-nighter\'s arithmetic has been measured directly. Dawson and Reid\'s 1997 Nature study walked volunteers through a night of sustained wakefulness, testing psychomotor performance against blood-alcohol curves: after seventeen hours awake, performance matched 0.05 per cent blood alcohol — most jurisdictions\' drink-drive limit — and after twenty-four hours it matched 0.10 per cent, beyond every limit in the developed world. A candidate who swaps the last night of sleep for extra pages of exposure is not adding preparation but sitting the exam intoxicated. Sleep, not the eleventh hour, is the last revision session.',
         },
         {
           kind: 'para',
@@ -1975,6 +1983,169 @@ export const foundationLearning: KnowledgeDomainFile = {
           kind: 'para',
           text: 'The modern choking literature explains exactly why the freeze happens. Sian Beilock\'s experiments — golf putters under video cameras, students doing arithmetic for money — showed that pressure hurts skilled performers when attention turns inward: experts run on compiled procedures, and consciously monitoring the mechanics ("keep the elbow in, watch the clubface") re-inserts the step-by-step control the skill has outgrown. Among students, it was the HIGH working-memory ones who fell furthest under pressure — the very resource pressure floods is the one their strategies lean on. The practical defences follow from the mechanism: practise under mild, staged pressure so the exam feels familiar rather than novel; use pre-performance routines to park attention on one controllable cue; and reappraise the symptoms as readiness, because a body mobilised for action is only mislabelled as disaster.',
         },
+        {
+          kind: 'para',
+          text: 'The choking research also points to an intervention cheap enough for any exam hall. Ramirez and Beilock\'s 2011 Science experiments — four studies, two randomized field experiments in real schools — gave students ten minutes before a high-stakes test to write about their worries, and the expressive-writing assignment significantly improved exam scores, most of all for students habitually anxious about test-taking. The mechanism is the one Beilock\'s choking work predicts: worries are working-memory borrowers, and committing them to paper evicts them before the exam needs the space. The corridor version — muttering "I\'m going to fail" — spends the same memory without clearing it.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The exam-day budget, from the worked example below. Panel A: a 100-point paper in 120 minutes — multiple choice 20′, short answers 36′, essay 40′ (8 outline, 32 prose), 24′ buffer. Panel B: error triage in three passes — sure things to bank marks, mediums at full budgets, hard and uncertain with the remainder — then a final sweep for signs, units, skipped sub-parts, your name.',
+          sketchImage: '/diagrams/exam-strategy-budget-passes-sketch.jpg',
+          sketchCaption:
+            'Student Laboratory Notebook: a stacked time-budget bar for a 120-minute exam — multiple choice, short answers, essay (outline + prose), buffer — above a hand-drawn three-pass chain ending in a final sweep.',
+          afterConcept: 7,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="Panel A: the 120-minute point budget for a 100-point paper; Panel B: the three-pass triage chain with a final sweep">
+  <!-- Panel A title -->
+  <text x="90" y="44" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" font-style="italic" fill="currentColor">the point budget — a 100-point paper in 120 minutes</text>
+  <!-- wobbly bar frame -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2" stroke-linecap="round">
+    <path d="M91 66 Q430 63 769 67 Q772 90 769 113 Q430 116 91 112 Q88 89 91 66 Z"/>
+  </g>
+  <!-- segments -->
+  <rect x="92" y="68" width="111" height="43" fill="#e11d48" opacity="0.82"/>
+  <rect x="205" y="68" width="203" height="43" fill="#059669" opacity="0.82"/>
+  <rect x="410" y="68" width="225" height="43" fill="#d97706" opacity="0.82"/>
+  <rect x="637" y="68" width="131" height="43" fill="#8a8a93" opacity="0.45"/>
+  <!-- outline/prose dashed divider inside essay -->
+  <line x1="457" y1="70" x2="456" y2="110" stroke="#fff" stroke-width="1.6" stroke-dasharray="4 4" opacity="0.85"/>
+  <!-- in-bar minute numbers -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#ffffff" text-anchor="middle">
+    <text x="147" y="94">20′</text>
+    <text x="306" y="94">36′</text>
+    <text x="433" y="94">8′</text>
+    <text x="522" y="94">32′</text>
+    <text x="702" y="94">24′</text>
+  </g>
+  <!-- segment labels above -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="11.5" fill="currentColor" text-anchor="middle">
+    <text x="147" y="130">multiple choice</text>
+    <text x="306" y="130">short answers</text>
+    <text x="522" y="130">essay: outline + prose</text>
+    <text x="702" y="130">buffer</text>
+  </g>
+  <!-- ticks -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="10.5" fill="#8a8a93" text-anchor="middle">
+    <text x="90" y="148">0</text><text x="203" y="148">20</text><text x="317" y="148">40</text><text x="430" y="148">60</text><text x="543" y="148">80</text><text x="657" y="148">100</text><text x="768" y="148">120</text>
+  </g>
+  <text x="800" y="148" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-style="italic" fill="#8a8a93">minutes</text>
+  <!-- hard rule -->
+  <text x="430" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#e11d48" text-anchor="middle">hard rule: when a question exhausts its budget, mark it and move</text>
+  <!-- Panel B title -->
+  <text x="90" y="208" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" font-style="italic" fill="currentColor">error triage: three passes, then a final sweep</text>
+  <!-- pass boxes (wobbly) -->
+  <g fill="none" stroke-width="2.2" stroke-linecap="round">
+    <path d="M92 222 Q437 219 782 223 Q785 240 781 254 Q437 258 93 253 Q89 238 92 222 Z" stroke="#059669"/>
+    <path d="M92 272 Q437 269 782 273 Q785 290 781 304 Q437 308 93 303 Q89 288 92 272 Z" stroke="#d97706"/>
+    <path d="M92 322 Q437 319 782 323 Q785 340 781 354 Q437 358 93 353 Q89 338 92 322 Z" stroke="#e11d48"/>
+    <path d="M92 372 Q437 369 782 373 Q785 390 781 404 Q437 408 93 403 Q89 388 92 372 Z" stroke="#8a8a93"/>
+  </g>
+  <!-- arrows between passes -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2" stroke-linecap="round">
+    <path d="M436 256 Q438 262 437 269"/>
+    <path d="M436 306 Q438 312 437 319"/>
+    <path d="M436 356 Q438 362 437 369"/>
+  </g>
+  <g fill="#8a8a93">
+    <path d="M437 271 L433 263 L441 263 Z"/>
+    <path d="M437 321 L433 313 L441 313 Z"/>
+    <path d="M437 371 L433 363 L441 363 Z"/>
+  </g>
+  <!-- pass labels -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="currentColor">
+    <text x="112" y="243">Pass one — sure things: answer cleanly and fast, bank the marks</text>
+    <text x="112" y="293">Pass two — mediums: give each its full budget</text>
+    <text x="112" y="343">Pass three — hard and uncertain: the remaining time, a mostly-finished paper</text>
+    <text x="112" y="393">Final pass — signs, units, skipped sub-parts, your name</text>
+  </g>
+</svg>`,
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The Yerkes-Dodson law as the exam-day arousal map: performance peaks at moderate arousal, collapsing into panic as working memory floods. The same racing heart sits on both slopes — fuel if reappraised, paralysis if misread.',
+          sketchImage: '/diagrams/exam-strategy-yerkes-dodson-sketch.jpg',
+          sketchCaption:
+            'Student Laboratory Notebook: an inverted-U curve, performance against arousal, peak labelled moderate arousal, tails too calm and panic, curved arrow "reappraise: fuel, not fog" toward the peak.',
+          afterConcept: 9,
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" role="img" aria-label="The Yerkes-Dodson inverted U: performance peaks at moderate arousal, falling on both sides; reappraisal moves a performer from panic toward the peak">
+  <!-- hand-drawn axes (double-stroked, gently wobbly) -->
+  <g fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round">
+    <path d="M104 46 Q100 200 104 356"/>
+    <path d="M100 352 Q455 356 812 350"/>
+  </g>
+  <g fill="none" stroke="#8a8a93" stroke-width="1" opacity="0.5" stroke-linecap="round">
+    <path d="M109 49 Q105 200 109 354"/>
+    <path d="M96 357 Q455 361 809 355"/>
+  </g>
+  <!-- axis labels -->
+  <text x="34" y="204" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-style="italic" text-anchor="middle" transform="rotate(-90 34 204)" fill="currentColor">Performance</text>
+  <text x="806" y="386" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-style="italic" text-anchor="end" fill="currentColor">Arousal</text>
+  <!-- corner note -->
+  <text x="122" y="64" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#8a8a93">Yerkes-Dodson law (Yerkes &amp; Dodson, 1908)</text>
+  <!-- the inverted U -->
+  <path d="M116 316 C 200 190 300 100 424 92 C 548 100 648 208 794 328" fill="none" stroke="#e11d48" stroke-width="3" stroke-linecap="round" opacity="0.95"/>
+  <!-- peak marker -->
+  <line x1="424" y1="92" x2="424" y2="348" stroke="#d97706" stroke-width="2" stroke-dasharray="7 6" opacity="0.9"/>
+  <text x="424" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#d97706" text-anchor="middle">moderate arousal — the peak</text>
+  <!-- zone labels -->
+  <text x="168" y="336" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#8a8a93">too calm — under-aroused</text>
+  <text x="668" y="316" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#e11d48" text-anchor="middle">panic: working memory flooded</text>
+  <!-- reappraisal arrow -->
+  <path d="M696 236 C 640 170 560 128 486 112" fill="none" stroke="#059669" stroke-width="2.2" stroke-dasharray="6 5" stroke-linecap="round"/>
+  <path d="M480 110 L494 106 L490 120 Z" fill="#059669"/>
+  <text x="652" y="196" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#059669">reappraise the racing heart —</text>
+  <text x="652" y="214" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-style="italic" fill="#059669">fuel, not fog</text>
+</svg>`,
+        },
+        { kind: 'heading', text: 'The Mathematics of Guessing' },
+        {
+          kind: 'formula',
+          name: 'Expected value of a guess',
+          latex: 'EV = \\tfrac{1}{n}R - \\tfrac{n-1}{n}W',
+          meaning: 'A blind guess among n live options: chance-weighted reward R minus penalty W. Guess when EV is positive — or narrow until it is.',
+        },
+        {
+          kind: 'derivation',
+          title: 'The guessing arithmetic: when a blank beats a guess',
+          statement:
+            'Derivation of the guessing rule used above: when a blind guess pays, why every elimination multiplies the edge, and the one regime where the blank is rational.',
+          prerequisites: ['Expected value', 'The scoring regime (reward R, penalty W, n live options)'],
+          steps: [
+            {
+              label: 'Step 1: Model the blind guess',
+              formula: '$$EV = \\frac{1}{n}\\,R - \\frac{n-1}{n}\\,W$$',
+              explanation:
+                'Exactly one of n live options is correct: the guess succeeds with probability 1/n collecting R, fails otherwise paying W. Expected value weighs both branches.',
+            },
+            {
+              label: 'Step 2: The common fractional regime (n = 4, R = +1, W = −¼)',
+              formula: '$$EV = \\tfrac{1}{4}(1) - \\tfrac{3}{4}\\!\\left(\\tfrac{1}{4}\\right) = \\tfrac{1}{4} - \\tfrac{3}{16} = +0.0625$$',
+              explanation:
+                'The standard four-option paper: even a blind guess clears zero, and one elimination lifts it six-fold — the +0.375 coin-flip edge.',
+            },
+            {
+              label: 'Step 3: The break-even penalty',
+              formula: '$$EV = 0 \\;\\Leftrightarrow\\; W^{*} = \\frac{R}{n-1} \\;\\xrightarrow{\\;n=4\\;}\\; W^{*} = \\tfrac{1}{3}$$',
+              explanation:
+                'Set EV to zero: guessing pays whenever the penalty is lighter than R/(n−1) — the standard −¼ beats −⅓; five options at −¼ sit exactly at EV = ⅕ − ⅘·¼ = 0, and any elimination tips it positive.',
+            },
+            {
+              label: 'Step 4: The full-penalty regime',
+              formula: '$$W = -R \\;\\Rightarrow\\; EV = \\tfrac{1}{4}R - \\tfrac{3}{4}R = -\\tfrac{1}{2}R < 0$$',
+              explanation:
+                'Only when a wrong answer forfeits the full reward does the sign flip — an expected loss of half a mark against the blank\'s zero: the one regime where the blank is rational.',
+            },
+            {
+              label: 'Step 5: The rule that survives every regime',
+              formula: '$$\\text{answer} \\iff EV > 0 \\quad\\Longleftrightarrow\\quad p\\,R > (1-p)\\,W$$',
+              explanation:
+                'Answer exactly when your belief-weighted reward beats your belief-weighted penalty: narrowing raises p, fractional penalties lower the W to beat. Never leave a blank you could narrow, and never answer at random under a full penalty.',
+            },
+          ],
+          result:
+            'Guess whenever EV > 0. Under the standard fractional penalty a blind guess already clears zero (+0.0625), every elimination multiplies the edge, and the break-even penalty is W* = R/(n−1) = −⅓ for four options — the standard −¼ sits inside it. Only a full forfeiture flips the sign: the blank wins.',
+        },
         { kind: 'example', title: 'Worked Example', steps: [
           'Identify what is asked: a 120-minute, 100-point paper — twenty multiple-choice questions worth 1 point each, three short answers worth 10 each, one essay worth 30. Build the plan.',
           'Recall the governing ideas: budget minutes in proportion to points, hold a buffer, triage in passes, outline the essay before writing it.',
@@ -2005,6 +2176,8 @@ export const foundationLearning: KnowledgeDomainFile = {
           { term: 'Yerkes-Dodson law', def: 'The finding that performance peaks at moderate arousal and falls when arousal is too low or too high.' },
           { term: 'reappraisal', def: 'Relabelling a racing heart as excitement rather than fear, exploiting their physiological similarity.' },
           { term: 'hard-start, jump-to-easy', def: 'Attempting the hardest question first when the format allows, then switching to easier ones so the diffuse mode keeps incubating it.' },
+          { term: 'expected value', def: 'The chance-weighted average outcome of a guess — positive means answer, negative means the blank wins.' },
+          { term: 'expressive writing', def: 'A brief pre-exam writing assignment about one\'s worries that evicts them from working memory and lifts scores, especially for test-anxious students.' },
         ] },
         { kind: 'heading', text: 'Check Yourself' },
         { kind: 'quiz', items: [
@@ -2055,6 +2228,18 @@ export const foundationLearning: KnowledgeDomainFile = {
               options: ['1 minute per point', '1.8 minutes per point', '2.5 minutes per point', '3 minutes per point'],
               answer: 1,
               explain: '(180 − 20) / 90 ≈ 1.78 — reserve the buffer first, then divide what remains by the marks; every question gets a ceiling in the same currency.',
+            },
+            {
+              q: 'In Ramirez and Beilock\'s 2011 Science experiments, ten minutes of expressive writing before an important exam helped most:',
+              options: ['students who had not studied', 'students habitually anxious about test-taking — writing the worries down freed working memory', 'top students, who used the time to plan', 'nobody — writing made no difference'],
+              answer: 1,
+              explain: 'The assignment significantly improved scores, especially for test-anxious students: worries consume the working memory the exam needs, and papering them out evicts them.',
+            },
+            {
+              q: 'A five-option question scores +1 correct and −¼ wrong. The expected value of a blind guess is:',
+              options: ['+0.0625, the same as a four-option paper', 'exactly zero — but eliminating one option turns it positive', '−0.20, so always leave it blank', 'impossible to compute without the topic'],
+              answer: 1,
+              explain: 'EV = ⅕(1) − ⅘(¼) = 0 exactly; one elimination lifts it to ¼(1) − ¾(¼) = +0.0625 — the break-even line the derivation solves for.',
             },
         ] },
         {
