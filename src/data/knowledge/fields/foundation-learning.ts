@@ -1717,6 +1717,9 @@ export const foundationLearning: KnowledgeDomainFile = {
           caption:
             'The Cornell page as Pauk designed it: a narrow cue column on the left, a wide note area on the right, a summary strip along the bottom. Live notes go right, in your own words and abbreviated; within 24 hours the cues are distilled — the questions those notes answer; then cover the note area and answer the cues from memory, and let the summary strip force a one-sentence synthesis. Every zone is a working part: the page is a self-test that wrote itself.',
           afterConcept: 2,
+          sketchImage: '/diagrams/study-note-taking-systems-sketch.jpg',
+          sketchCaption:
+            'Student Laboratory Notebook: the Cornell page ruled into its three working zones — the narrow cue column on the left holding question cues, the wide note area on the right filled with compressed notes in your own words, the summary strip along the bottom holding a one-sentence synthesis; a curved arrow annotates \u201cwithin 24 hours: distill the cues\u201d and a shaded wedge marks \u201ccover the notes, answer the cues.\u201d',
           svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="The Cornell page: cue column left, note area right, summary strip bottom">
   <rect x="120" y="60" width="640" height="330" fill="#059669" opacity="0.04"/>
   <rect x="120" y="60" width="640" height="330" fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round"/>
