@@ -65,6 +65,29 @@ import type { KnowledgeTopic } from '../types'
  *    handout, advising.nd.edu PDF, image-only — text read against the widely
  *    mirrored list): use recall, test yourself, chunk your problems, task
  *    lists, eat your frogs first. Read this pass.
+ *
+ *  SUBJECTDEPTH enrichment (2026-10-30, study-stress-wellbeing only) —
+ *  sources read for the added concept paras (effort–recovery / recovery
+ *  experiences / load–output curve):
+ *  - Sonnentag & Fritz 2007, "The Recovery Experience Questionnaire" (J Occup
+ *    Health Psychol 12(3):204, DOI 10.1037/1076-8998.12.3.204, PubMed
+ *    17638488) — the four recovery experiences: psychological detachment,
+ *    relaxation, mastery, control; detachment the strongest predictor of
+ *    next-day well-being. Read this pass.
+ *  - Sonnentag & Fritz 2015, the recovery paradox (most-strained recover
+ *    least; depleted self-regulation fuels rumination) — via the recovery-
+ *    science literature. Read this pass.
+ *  - Meijman & Mulder 1998, "Psychological aspects of workload" (in Drenth,
+ *    Thierry & de Wolff eds, Handbook of Work and Organizational Psychology,
+ *    2nd ed., vol 2 Work Psychology) — effort produces acute load reactions;
+ *    recovery reverses them; incomplete recovery leaves residual strain that
+ *    accumulates across effort episodes. Read this pass.
+ *  - Carving: allostatic load / McEwen's physiological wear is owned by
+ *    health-stress-cortisol (health-wellness.ts) — this lesson crosses to it
+ *    and owns the behavioral cycle only; Lazarus appraisal, eustress and
+ *    problem-vs-emotion-focused coping are owned by psy-stress-coping
+ *    (social-sciences.ts) — not re-taught here; day-scale arousal belongs to
+ *    study-exam-strategy — this lesson owns the term-scale curve.
  */
 
 export const x52CrossverifyPassTopics: KnowledgeTopic[] = [
@@ -662,9 +685,12 @@ export const x52CrossverifyPassTopics: KnowledgeTopic[] = [
         'Burnout signals and early response',
         'Recovery assets: exercise, sleep, people, pauses',
         'Help-seeking as a study skill',
+        'Incomplete recovery: the effort–recovery model',
+        'The four recovery experiences',
+        'The term-scale load–output curve',
       ],
-      words: 1596,
-      readMins: 8,
+      words: 2918,
+      readMins: 15,
       addedOn: '2026-10-26',
       blocks: [
         {
@@ -699,6 +725,130 @@ export const x52CrossverifyPassTopics: KnowledgeTopic[] = [
           text: 'Help-seeking is a skill, and Cottrell\'s self-evaluation treats it as one: "I ask for help if I really need it." The failure pattern is well documented — students wait until crisis, then present a problem six weeks old that was solvable in week one. The repair is mechanical: know your routes before you need them (tutor office hours, student services, counselling, academic skills centres, peer groups), and treat early contact as cheap maintenance rather than admission of failure. Universities, Cottrell notes, provide the opportunities and the services; using them is part of being an active agent of your own success — the same principle that opens this book, applied to your own operating condition. A ten-minute conversation with a tutor about an overload that is still manageable beats a formal appeal about one that wasn\'t.',
         },
         {
+          kind: 'para',
+          text: 'Why does the load–resources ratio move the wrong way under pressure? The effort–recovery model of Meijman and Mulder (1998) gives the mechanism: effort consumes capacity and produces acute load reactions — fatigue, narrowed attention, low mood; recovery, any episode when the demands drop, reverses them. The model\'s warning is about residue: when recovery is incomplete, the leftover strain — the unfinished worry, the sleep debt, the unspent energy — carries into the next effort block, so each week starts from a lower floor. The behavioral cycle has a physiological twin, the cumulative wear of a stress response that never fully switches off; the health book\'s cortisol lesson owns that machinery. For a student the takeaway is scheduling-shaped: rest is not the absence of work, it is the half of the cycle that makes the other half work — and "I\'ll rest after exams" is a plan to run the first half only, for twelve consecutive weeks.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The effort–recovery cycle drawn across three weeks. Each effort block consumes capacity; each recovery block restores it. Week one: recovery completes the cycle. Week two: incomplete recovery leaves residue — the next week starts lower. Week three: recovery is skipped, and the floor keeps dropping — accumulated strain, the behavioral road to the burnout triad.',
+          afterConcept: 6,
+          sketchImage: '/diagrams/effort-recovery-strain-sketch.jpg',
+          sketchCaption: 'notebook plate — effort, recovery, and the strain that stacks when recovery is skipped',
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" role="img" aria-label="Effort and recovery across three weeks: full recovery restores capacity, incomplete recovery leaves residue, skipped recovery lets accumulated strain stack">
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <!-- full-capacity baseline -->
+    <path d="M84 108 Q450 104 828 109" fill="none" stroke="#8a8a93" stroke-width="1.6" stroke-dasharray="7 6" stroke-linecap="round" opacity="0.8"/>
+    <text x="120" y="96" font-size="12.5" fill="#8a8a93" font-style="italic">full capacity</text>
+    <!-- capacity line: effort drops, recovery restores -->
+    <g fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" opacity="0.97">
+      <path d="M90 112 C 140 180 170 240 202 296 C 250 260 292 180 330 124 C 360 180 400 250 438 302 C 474 280 522 220 566 176 C 596 220 636 280 672 322 C 710 316 762 300 812 288"/>
+    </g>
+    <g fill="none" stroke="#059669" stroke-width="1" stroke-linecap="round" opacity="0.4">
+      <path d="M94 116 C 144 184 174 244 206 300 C 254 264 296 184 334 128 C 364 184 404 254 442 306 C 478 284 526 224 570 180 C 600 224 640 284 676 326 C 714 320 766 304 816 292"/>
+    </g>
+    <!-- week separators -->
+    <g stroke="#8a8a93" stroke-width="1.3" stroke-dasharray="3 5" opacity="0.55" fill="none" stroke-linecap="round">
+      <path d="M330 118 Q332 220 330 372"/>
+      <path d="M566 172 Q568 260 566 372"/>
+    </g>
+    <!-- effort / recovery brackets -->
+    <g fill="none" stroke="#e11d48" stroke-width="2" stroke-linecap="round">
+      <path d="M96 356 L96 364 L198 364 L198 356"/>
+      <path d="M362 356 L362 364 L434 364 L434 356"/>
+      <path d="M598 356 L598 364 L668 364 L668 356"/>
+    </g>
+    <g font-size="12.5" fill="#e11d48" text-anchor="middle">
+      <text x="147" y="384">effort</text>
+      <text x="398" y="384">effort</text>
+      <text x="633" y="384">effort</text>
+    </g>
+    <g fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round">
+      <path d="M246 356 L246 364 L322 364 L322 356"/>
+      <path d="M482 356 L482 364 L558 364 L558 356"/>
+    </g>
+    <g font-size="12.5" fill="#d97706" text-anchor="middle">
+      <text x="284" y="384">recovery</text>
+      <text x="520" y="384">recovery</text>
+    </g>
+    <!-- annotations -->
+    <text x="212" y="140" font-size="13" font-style="italic" fill="#059669">recovery completes the cycle</text>
+    <text x="560" y="242" font-size="13" font-style="italic" fill="#d97706" text-anchor="end">incomplete recovery — residue</text>
+    <g fill="none" stroke="#e11d48" stroke-width="1.6" stroke-linecap="round">
+      <path d="M742 250 Q760 262 778 282"/>
+      <path d="M766 278 L778 282 L772 270"/>
+    </g>
+    <text x="744" y="240" font-size="13" font-style="italic" fill="#e11d48" text-anchor="middle">accumulated strain</text>
+    <!-- x label -->
+    <text x="828" y="420" font-size="14" font-style="italic" text-anchor="end" fill="currentColor">three weeks of the term</text>
+  </g>
+</svg>`
+        },
+        {
+          kind: 'para',
+          text: 'What counts as recovery, precisely? Sonnentag and Fritz\'s Recovery Experience Questionnaire (2007) gives the design vocabulary: four recovery experiences. Psychological detachment — mentally switching off, not thinking about study during off-hours — is the strongest single predictor of next-day well-being in the diary studies: evening detachment predicts next-morning mood and energy, and low detachment predicts next-morning fatigue. Relaxation: low-activation pleasant states — walks, music, unhurried meals. Mastery: challenging, absorbing activity outside study — an instrument, a language, a climbing route — builds competence and positive affect in a world with no grades, which is exactly why it works. Control: deciding for yourself how the free time goes. The awkward finding is the recovery paradox (Sonnentag and Fritz, 2015): the people who most need recovery are least able to detach, because depleted self-regulation fuels rumination — and a student in deadline pressure is the textbook case. That is precisely why recovery gets scheduled like deadlines instead of hoped for after them.',
+        },
+        {
+          kind: 'para',
+          text: 'Put the two models together and the weekly load–output curve appears: an inverted-U at term scale. On the left is under-load: drift — too few effective hours, material uncovered, guilt accruing faster than learning. In the middle is the sustainable zone: the planning lesson\'s 70–80% rule is this zone expressed as a budget, and a calm 30-hour week can tie a frantic 50-hour one. On the right is chronic overload: each extra hour buys less and costs more, because it is spent out of the recovery budget — output falls even as hours rise, the curve that ends at the burnout triad. The day-scale version of the same shape — arousal and performance on exam morning — is owned by the exam-strategy lesson, relabeled racing heart included; this lesson owns the week. The derivation below prices the right side of the curve in output points, and the figure draws it.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The term-scale load–output curve. Weekly output peaks inside the sustainable zone — the 70–80% rule drawn as a curve; the left slope is under-load: drift, the right slope is chronic overload: falling output as hours rise. Dashed markers show the derivation\'s symmetry — 30 and 50 effective hours tie at 96 — while the 70-hour push lands at 64.',
+          afterConcept: 8,
+          sketchImage: '/diagrams/load-output-curve-sketch.jpg',
+          sketchCaption: 'notebook plate — the weekly load–output curve and its sustainable zone',
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" role="img" aria-label="The load-output curve: output peaks at the sustainable load, drift on the left, falling output under chronic overload">
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <!-- axes -->
+    <g fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round">
+      <path d="M96 60 Q92 240 96 386"/>
+      <path d="M94 382 Q470 385 842 381"/>
+    </g>
+    <!-- zone tints -->
+    <rect x="100" y="66" width="274" height="312" fill="#d97706" opacity="0.06"/>
+    <rect x="374" y="66" width="182" height="312" fill="#059669" opacity="0.08"/>
+    <rect x="556" y="66" width="284" height="312" fill="#e11d48" opacity="0.06"/>
+    <g font-size="12.5" text-anchor="middle">
+      <text x="234" y="86" fill="#d97706" font-style="italic">under-load: drift</text>
+      <text x="465" y="86" fill="#059669" font-style="italic">the sustainable zone</text>
+      <text x="700" y="86" fill="#e11d48" font-style="italic">chronic overload: falling output</text>
+    </g>
+    <!-- the curve P(h)=100-0.04(h-40)^2, h in [10,70] -->
+    <g fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" opacity="0.97">
+      <path d="M187 350 C 260 250 330 130 465 92 C 600 130 668 250 741 350"/>
+    </g>
+    <g fill="none" stroke="#059669" stroke-width="1" stroke-linecap="round" opacity="0.4">
+      <path d="M191 354 C 264 254 334 134 465 96 C 604 134 672 254 745 354"/>
+    </g>
+    <!-- symmetry markers 30 & 50 -->
+    <g stroke="#8a8a93" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.8" fill="none" stroke-linecap="round">
+      <path d="M374 121 L374 378"/>
+      <path d="M556 121 L556 378"/>
+    </g>
+    <g fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linecap="round">
+      <circle cx="374" cy="121" r="5"/>
+      <circle cx="556" cy="121" r="5"/>
+    </g>
+    <text x="465" y="150" font-size="13" font-style="italic" fill="currentColor" text-anchor="middle">P(30) = P(50) = 96 — symmetry about h*</text>
+    <!-- 70-hour marker -->
+    <g fill="none" stroke="#e11d48" stroke-width="2.4" stroke-linecap="round">
+      <circle cx="739" cy="350" r="5"/>
+    </g>
+    <text x="700" y="330" font-size="13" font-style="italic" fill="#e11d48" text-anchor="end">the 70-hour push: P = 64</text>
+    <!-- h* marker -->
+    <g stroke="#059669" stroke-width="1.6" stroke-dasharray="6 5" opacity="0.85" fill="none" stroke-linecap="round">
+      <path d="M465 96 L465 378"/>
+    </g>
+    <text x="465" y="404" font-size="13" fill="#059669" text-anchor="middle" font-style="italic">h* — the sustainable load (the 70–80% rule)</text>
+    <!-- axis labels -->
+    <text x="842" y="430" font-size="14" font-style="italic" text-anchor="end" fill="currentColor">weekly study load (effective hours)</text>
+    <text x="40" y="230" font-size="14" font-style="italic" text-anchor="middle" fill="currentColor" transform="rotate(-90 40 230)">weekly output</text>
+  </g>
+</svg>`
+        },
+        {
           kind: 'example',
           title: 'Worked Example',
           steps: [
@@ -707,6 +857,46 @@ export const x52CrossverifyPassTopics: KnowledgeTopic[] = [
             'Apply: diagnose — this is the triad forming, not laziness. Triage the load: cut the bottom-value revision topics (calibration data says two are already solid), negotiate one extension, cancel the 1am finish. Restore the floor: sleep 7+ hours (alarm on bedtime, not just waking), one 20-minute walk daily, one social meal this week. Shrink the horizon: plan only the coming week at 75% load, with spaced short sessions instead of 12-hour blocks. Book one check-in: tutor or student services, framed as load management, not crisis.',
             'State the result: the same revision content now runs on a body that can consolidate it; output typically recovers within a week, and the weekly review now includes a standing well-being line: sleep, movement, people — checked like deadlines.',
           ],
+        },
+        {
+          kind: 'derivation',
+          title: 'Why more hours can mean less output: the load–output curve',
+          statement:
+            'A quadratic model of weekly output P as a function of weekly study load h — the term-scale curve drawn as an equation — locates the optimum and prices the overload in output points.',
+          prerequisites: ['Quadratics and their vertex', 'Symmetry about a maximum'],
+          steps: [
+            {
+              label: 'Step 1: Model the curve',
+              formula: '$$P(h) = P_{\\max} - k\\,(h - h^{*})^{2}$$',
+              explanation:
+                'Output peaks at the sustainable load h* and falls on both sides: fewer hours leave material uncovered, more hours begin to eat the recovery that output runs on. The constant k sets how sharply overload bites.',
+            },
+            {
+              label: 'Step 2: Locate the optimum',
+              formula: '$$\\frac{dP}{dh} = -2k\\,(h - h^{*}) = 0 \\;\\Rightarrow\\; h = h^{*}$$',
+              explanation:
+                'The vertex is the optimum: at h* one more hour gains nothing on the left side and begins to cost recovery on the right. This is the model home of the planning lesson\'s 70–80% rule.',
+            },
+            {
+              label: 'Step 3: Worked numbers',
+              formula: '$$P(h) = 100 - 0.04\\,(h-40)^{2} \\;\\Rightarrow\\; P(40)=100,\\ P(50)=96,\\ P(60)=84,\\ P(70)=64$$',
+              explanation:
+                'Take h* = 40 effective hours and k = 0.04. Pushing from 40 to 70 hours — a 75% load increase — yields P = 100 − 0.04·(30)² = 64: thirty-six output points below the peak.',
+            },
+            {
+              label: 'Step 4: Same output, two loads',
+              formula: '$$P(30) = 100 - 0.04\\,(10)^{2} = 96 = P(50)$$',
+              explanation:
+                'The curve is symmetric about h*: a calm 30-hour week can tie a frantic 50-hour week — and banks twenty extra hours of recovery on the side. Only one of them leaves the effort–recovery cycle paid up.',
+            },
+            {
+              label: 'Step 5: Read the right side honestly',
+              explanation:
+                'Beyond h*, every extra hour subtracts output — effort without recovery is the incomplete-recovery loop drawn as a line. The planner\'s job is not to maximize hours but to sit just inside the sustainable zone: h*, or a little below it.',
+            },
+          ],
+          result:
+            'With P(h) = 100 − 0.04(h − 40)², output peaks at the sustainable 40-hour load; a 70-hour push produces 64 (−36 points), and a 30-hour week ties a 50-hour week at 96 — the arithmetic behind planning to the sustainable zone instead of to exhaustion.',
         },
         { kind: 'heading', text: 'Applications in the Real World' },
         {
@@ -733,6 +923,10 @@ export const x52CrossverifyPassTopics: KnowledgeTopic[] = [
             { term: 'Burnout', def: 'Chronic-overload endpoint: exhaustion sleep doesn’t fix, detachment from work, and falling output despite rising effort.' },
             { term: 'Recovery asset', def: 'A reliable restorer of capacity — exercise, sleep, social contact, pauses between sessions.' },
             { term: 'Help-seeking', def: 'Using tutors, services and peers early, while problems are still cheap to solve; a skill, not a confession.' },
+            { term: 'Effort–recovery model', def: 'Meijman and Mulder’s cycle: effort consumes capacity, recovery restores it; incomplete recovery lets residue stack across weeks.' },
+            { term: 'Psychological detachment', def: 'Mentally switching off during off-hours — no study thoughts; the strongest single predictor of next-day well-being.' },
+            { term: 'Recovery experiences', def: 'Sonnentag and Fritz’s four: psychological detachment, relaxation, mastery, control — the design vocabulary for off-hours.' },
+            { term: 'Load–output curve', def: 'The term-scale inverted-U: weekly output peaks at the sustainable load and falls on both sides; overloading ends at the burnout triad.' },
           ],
         },
         { kind: 'heading', text: 'Check Yourself' },
@@ -762,6 +956,30 @@ export const x52CrossverifyPassTopics: KnowledgeTopic[] = [
               options: ['A last resort after failure', 'A skill to use early, before problems become crises', 'Only for academic probation cases', 'A sign you should change courses'],
               answer: 1,
               explain: 'Early contact is cheap maintenance — the active-agent principle applied to your own operating condition.',
+            },
+            {
+              q: 'In Sonnentag and Fritz’s four recovery experiences, which one means doing something challenging and absorbing that is NOT study — an instrument, a language, a climbing route?',
+              options: ['Psychological detachment', 'Relaxation', 'Mastery', 'Control'],
+              answer: 2,
+              explain: 'Mastery builds competence and positive affect outside the grade world; detachment means not thinking about study, relaxation means low activation, control means choosing for yourself.',
+            },
+            {
+              q: 'In the effort–recovery model, strain accumulates across weeks when:',
+              options: ['Effort is high for a single day', 'Recovery between effort episodes is incomplete, so residue carries into the next block', 'The material is intellectually difficult', 'Every week is perfectly balanced'],
+              answer: 1,
+              explain: 'Incomplete recovery leaves residue — sleep debt, unfinished worry — that lowers the floor of the next week; the health book’s cortisol lesson owns the physiological twin.',
+            },
+            {
+              q: 'With P(h) = 100 − 0.04(h − 40)², a student at the 40-hour optimum considers pushing to 70 hours. The model prices that push at:',
+              options: ['P = 96 — barely a loss', 'P = 84', 'P = 64 — thirty-six points below the peak', 'P = 100 — no loss, more hours always help'],
+              answer: 2,
+              explain: 'P(70) = 100 − 0.04·(30)² = 64: the 75% load increase costs a third of the output, because the extra hours are spent out of the recovery budget.',
+            },
+            {
+              q: 'The load–output curve shows two weeks tying at 96. Which pair — and what is the honest difference between them?',
+              options: ['20 and 60 hours — no difference at all', '30 and 50 hours — equal output, but the 30-hour week banks twenty hours of recovery', '40 and 70 hours — the 70-hour week wins', '10 and 70 hours — both minimal'],
+              answer: 1,
+              explain: 'Symmetry about h* = 40: P(30) = P(50) = 96. Same output, very different recovery bills — the quiet argument for the left side of the sustainable zone.',
             },
           ],
         },

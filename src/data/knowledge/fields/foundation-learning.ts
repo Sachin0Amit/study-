@@ -1680,13 +1680,17 @@ export const foundationLearning: KnowledgeDomainFile = {
       concepts: [
         'Notes encode; they do not just record',
         'Cornell: the page as a testing machine',
+        'The 24-hour conversion: notes into a retrieval pipeline',
         'Outlines: hierarchy in real time',
         'Mind maps: structure you can see',
+        'Live triage: writing at the speed of listening',
         'Zettelkasten: notes that network',
         'Matching the system to the task',
+        'The honest limits: the longhand effect under replication',
+        'Notes as living documents: prune, rewrite, link',
       ],
-      words: 1826,
-      readMins: 9,
+      words: 2184,
+      readMins: 11,
       addedOn: '2026-10-18',
       blocks: [
         {
@@ -1801,6 +1805,14 @@ export const foundationLearning: KnowledgeDomainFile = {
           kind: 'para',
           text: 'Choose by task. Live lectures with exams ahead: Cornell, because the cue column converts notes into retrieval practice. Well-structured reading or meetings: outlines, which mirror the source\'s architecture. New, tangled territory: a mind map to discover the shape. A research project or thesis: a Zettelkasten, which accumulates rather than archives. And the rule that outranks all systems: notes are commitments to future retrieval — any format that makes you revisit and self-test beats a more beautiful format that does not.',
         },
+        {
+          kind: 'para',
+          text: 'One honest limit belongs on the record. Mueller and Oppenheimer\'s 2014 result — longhand beats laptops on conceptual questions — has not replicated cleanly. Urry and colleagues\' 2021 direct replication, using full-scene lecture videos, found no reliable longhand advantage on conceptual learning, and the meta-analysis by Morehead, Dunlosky and Rawson (2019) finds the written-notes edge modest and inconsistent across designs. The stable finding underneath the noise is the one this lesson opened with: what pays is generative processing — selecting, compressing, rephrasing in your own words — and the instrument matters mainly through whether it invites that. A laptop user who paraphrases ruthlessly beats a longhand user who transcribes. The prescription survives every study: whichever tool you hold, write fewer, denser, more rephrased words — then test yourself on them.',
+        },
+        {
+          kind: 'para',
+          text: 'Finally, treat notes as living documents rather than a museum. The weekly review — the same ritual the time-management lesson builds — is where notes get maintained: prune the dead ones, rewrite the bloated ones (rewriting is encoding again, for free), and settle any “?” gaps the live pass left. Link across courses where ideas genuinely touch — statistics informs psychology, thermodynamics informs chemistry — because the Zettelkasten principle scales down: even a handful of cross-course links turns isolated subjects into one connected picture. And retire ruthlessly: a note that has answered its cue three reviews in a row has done its job, because the knowledge now lives in you — which was the point all along.',
+        },
         { kind: 'example', title: 'Worked Example', steps: [
           'Identify what is asked: a fifty-minute lecture on the Marshall Plan with an exam six weeks away — which system, applied how, produces exam-ready material?',
           'Recall the governing ideas: encoding favours rephrasing; Cornell\'s cue column converts notes into self-tests; spaced repetition schedules the reviews.',
@@ -1831,6 +1843,8 @@ export const foundationLearning: KnowledgeDomainFile = {
           { term: 'Zettelkasten', def: 'A slip-box or digital system of atomic, densely linked notes in one\'s own words.' },
           { term: 'atomic note', def: 'A Zettelkasten unit: one idea per note, phrased for reuse and linking.' },
           { term: 'cue conversion', def: 'Distilling the day\'s notes into cue questions within 24 hours so the page becomes a self-test.' },
+          { term: 'generative processing', def: 'Selecting, compressing and rephrasing in your own words — the encoding work that pays regardless of pen or keyboard.' },
+          { term: 'living documents', def: 'Notes maintained weekly — pruned, rewritten, cross-linked and retired once their cues are mastered.' },
         ] },
         { kind: 'heading', text: 'Check Yourself' },
         { kind: 'quiz', items: [
@@ -1875,6 +1889,12 @@ export const foundationLearning: KnowledgeDomainFile = {
             options: ['a mind map, to discover the shape', 'verbatim transcription', 'a Zettelkasten from day one', 'highlighting only'],
             answer: 0,
             explain: 'Maps surface connections and gaps when structure is unknown — the map discovers it; outlines mirror structure you already know.',
+          },
+          {
+            q: 'The 2014 longhand-over-laptop finding, after Urry\'s 2021 direct replication and the 2019 meta-analysis, is best summarized as…',
+            options: ['disproven — handwriting never mattered', 'ironclad — always take longhand notes', 'mixed — the durable rule is generative processing: rephrase, compress, then self-test, on any instrument', 'relevant only to psychology courses'],
+            answer: 2,
+            explain: 'The 2014 conceptual advantage did not replicate cleanly (Urry 2021; Morehead 2019 finds a modest, inconsistent edge) — what survives is the processing, not the pen.',
           },
         ] },
         {
