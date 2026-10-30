@@ -88,6 +88,26 @@ import type { KnowledgeTopic } from '../types'
  *    pass; Chase et al. 2009, "Teachable Agents and the Protégé Effect"
  *    (open PDF via the Stanford AAA lab) — greater effort for a student one
  *    is responsible for, strongest for lower achievers.
+ *
+ *  LESSONBOOK enrichment (2026-10-30, fnd-habits-behavior-design only) —
+ *  sources read for the added concept paras (habit loop / dopamine /
+ *  unwanted-habit repair):
+ *  - Duhigg 2012, The Power of Habit (Ch1: the habit loop cue-routine-reward;
+ *    the Eugene Pauly case from Squire's lab; the golden rule of habit change
+ *    drawn from AA and coaching) — popularization, used as attribution.
+ *  - Knowlton, Mangels & Squire 1996, "A neostriatal habit learning system
+ *    in humans" (Science 273:1399) — amnesic patients learn the weather-
+ *    prediction task, basal-ganglia (Parkinson) patients fail it.
+ *  - Schultz, Dayan & Montague 1997, "A neural substrate of prediction and
+ *    reward" (Science) — dopamine bursts at unpredicted reward, shift to the
+ *    predicting cue after learning, dip on omitted reward (prediction error).
+ *  - Ferster & Skinner 1957, Schedules of Reinforcement — variable-ratio
+ *    most resistant to extinction (the app-design caveat).
+ *  - Quinn, Pascoe, Wood & Neal 2010, "Can't control yourself? Monitor those
+ *    bad habits" (PSPB, 10.1177/0146167209360665) — monitoring improves
+ *    control of unwanted habits.
+ *  - Graybiel 2008, "Habits, rituals, and the evaluative brain" (Annu Rev
+ *    Neurosci) — habit circuits in the dorsolateral striatum (attribution).
  */
 
 export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
@@ -406,16 +426,20 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
       branch: 'Study Systems',
       tier: 'core',
       concepts: [
-        'The intention–behavior gap',
         'Habits: cue-triggered automaticity',
+        'The 43% share: authoring the automatic',
         'Initiation, learning and stability phases',
         'The 66-day median and the 18–254 range',
+        'Rewards that cement the link',
         'Implementation intentions: if–then plans',
         'Friction and context design',
         'Lapse recovery: never miss twice',
+        'The habit loop: cue, routine, reward',
+        'Dopamine and the prediction error',
+        'Breaking unwanted habits: monitoring and substitution',
       ],
-      words: 1983,
-      readMins: 10,
+      words: 2999,
+      readMins: 15,
       addedOn: '2026-10-25',
       blocks: [
         {
@@ -518,6 +542,158 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
           text: 'Lapses are data, not verdicts. In the Lally study a single missed opportunity barely registered — automaticity dipped by less than half a point on a 0–42 scale and recovered quickly. What kills habits is not the missed day but the cascade after it: one skip becomes a week, and the context link decays. The practical rule is never miss twice. A second miss in the same slot is the signal to shrink the behavior until it fits the worst day — ten flashcards become two — because protecting the cue–context link matters more than the session volume. Deliberate practice owns the quality of what you do in the session; this lesson only owns the automation of arriving.',
         },
         {
+          kind: 'para',
+          text: 'Where does the automaticity come from? The working template is the habit loop — cue, routine, reward — popularized by Charles Duhigg\'s The Power of Habit (2012) and grounded in basal-ganglia research, notably Ann Graybiel\'s tracing of habit circuits into the dorsolateral striatum at MIT. The loop explains a clinical oddity: the amnesic patient Eugene Pauly, studied in Larry Squire\'s laboratory, could not describe his own morning, yet walked his neighborhood daily — habit learning survived when memory could not file a day. Sharper still in the lab: Knowlton, Mangels and Squire (1996) gave amnesic patients a weather-prediction task built on cue–outcome associations; they learned it gradually and well, while basal-ganglia patients failed it. For the designer: choose the cue, script the routine, guarantee a small reward — the three beats the learning phase will fuse.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The habit loop, and where the dopamine goes. Left: the three-beat loop — cue, routine, reward — that the learning phase fuses into one unit. Right: before learning, dopamine fires at the reward; after learning, it fires at the cue, and an omitted predicted reward produces a dip — the prediction error.',
+          afterConcept: 9,
+          sketchImage: '/diagrams/habit-loop-prediction-sketch.jpg',
+          sketchCaption: 'notebook plate — the habit loop and the dopamine shift',
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img" aria-label="The habit loop: cue, routine, reward — and the dopamine response shifting from reward to cue after learning">
+  <!-- LEFT PANEL: the habit loop -->
+  <g fill="none" stroke="#8a8a93" stroke-width="1.2" stroke-dasharray="4 5" opacity="0.6" stroke-linecap="round">
+    <path d="M208 96 Q400 66 508 176"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <!-- wobbly nodes -->
+    <g fill="none" stroke-width="2.4" stroke-linecap="round">
+      <path d="M118 62 Q190 55 262 61 Q269 78 263 95 Q190 103 119 96 Q111 79 118 62 Z" stroke="#d97706"/>
+      <path d="M420 152 Q492 145 564 151 Q571 168 565 185 Q492 193 421 186 Q413 169 420 152 Z" stroke="#e11d48"/>
+      <path d="M118 262 Q190 255 262 261 Q269 278 263 295 Q190 303 119 296 Q111 279 118 262 Z" stroke="#059669"/>
+    </g>
+    <g font-size="16" fill="currentColor" text-anchor="middle">
+      <text x="190" y="85">cue</text>
+      <text x="492" y="175">routine</text>
+      <text x="190" y="285">reward</text>
+    </g>
+    <!-- loop arrows -->
+    <g fill="none" stroke="#8a8a93" stroke-width="2.2" stroke-linecap="round">
+      <path d="M258 74 Q390 62 448 138"/>
+      <path d="M438 132 L448 138 L447 124"/>
+      <path d="M448 196 Q400 268 266 282"/>
+      <path d="M277 274 L266 282 L279 288"/>
+      <path d="M158 258 Q120 180 148 106"/>
+      <path d="M140 116 L148 106 L155 118"/>
+    </g>
+    <!-- loop center label -->
+    <text x="330" y="185" font-size="17" font-style="italic" fill="currentColor" text-anchor="middle">the habit loop</text>
+    <text x="330" y="208" font-size="12.5" fill="#8a8a93" text-anchor="middle">the learning phase fuses the three beats</text>
+    <!-- panel divider -->
+    <path d="M614 42 Q618 225 615 424" stroke="#8a8a93" stroke-width="1.4" stroke-dasharray="6 6" opacity="0.55" fill="none" stroke-linecap="round"/>
+    <!-- RIGHT PANEL: dopamine shifts -->
+    <text x="742" y="52" font-size="15" font-style="italic" fill="currentColor" text-anchor="middle">where the dopamine goes</text>
+    <!-- before learning -->
+    <text x="668" y="86" font-size="13" fill="#8a8a93" text-anchor="middle">before learning</text>
+    <g fill="none" stroke="#8a8a93" stroke-width="2" stroke-linecap="round">
+      <path d="M640 138 Q760 141 866 137"/>
+    </g>
+    <text x="672" y="158" font-size="12.5" fill="currentColor" text-anchor="middle">cue</text>
+    <text x="836" y="158" font-size="12.5" fill="currentColor" text-anchor="middle">reward</text>
+    <g fill="none" stroke="#e11d48" stroke-width="2.6" stroke-linecap="round">
+      <path d="M668 137 Q672 136 675 131 Q678 100 681 131 Q684 136 688 137"/>
+    </g>
+    <text x="790" y="102" font-size="12.5" fill="#e11d48" text-anchor="middle">dopamine fires at the reward</text>
+    <!-- after learning -->
+    <text x="668" y="204" font-size="13" fill="#8a8a93" text-anchor="middle">after learning</text>
+    <g fill="none" stroke="#8a8a93" stroke-width="2" stroke-linecap="round">
+      <path d="M640 256 Q760 259 866 255"/>
+    </g>
+    <text x="672" y="276" font-size="12.5" fill="currentColor" text-anchor="middle">cue</text>
+    <text x="836" y="276" font-size="12.5" fill="currentColor" text-anchor="middle">reward</text>
+    <g fill="none" stroke="#059669" stroke-width="2.6" stroke-linecap="round">
+      <path d="M660 255 Q664 254 667 249 Q670 214 673 249 Q676 254 680 255"/>
+    </g>
+    <g fill="none" stroke="#8a8a93" stroke-width="2.2" stroke-linecap="round">
+      <circle cx="836" cy="248" r="6"/>
+    </g>
+    <text x="762" y="222" font-size="12.5" fill="#059669" text-anchor="middle">dopamine fires at the cue</text>
+    <text x="800" y="300" font-size="12.5" fill="#8a8a93" text-anchor="middle">predicted reward: no spike</text>
+    <text x="800" y="318" font-size="12.5" fill="#8a8a93" text-anchor="middle">(a dip if omitted) — the prediction error</text>
+    <!-- footer note -->
+    <text x="440" y="440" font-size="13" font-style="italic" fill="#8a8a93" text-anchor="middle">the shift is why a small reliable reward trains the cue, not just the session</text>
+  </g>
+</svg>`
+        },
+        {
+          kind: 'para',
+          text: 'The reward beat has its own neuroscience, and it explains why cues grip. Wolfram Schultz, with Peter Dayan and Read Montague (Science, 1997), recorded dopamine neurons in monkeys learning that a light predicts juice: at first the neurons fire at the unexpected reward; once the prediction is learned, the burst shifts to the cue; if the predicted reward is omitted, firing dips below baseline — the prediction error. A reliable small reward works by making the cue itself something to look forward to — which is why the calendar cross trains the evening slot, not only the session. Dark mirror: Ferster and Skinner\'s schedules of reinforcement (1957) showed variable-ratio payoff — reward on an unpredictable fraction of attempts — is the most extinction-resistant schedule, and it is the phone\'s design pattern; pull-to-refresh and badges are slot machines. Keep your habit\'s reward small, predictable and self-administered.',
+        },
+        {
+          kind: 'para',
+          text: 'What about habits you did not choose — the late-night phone crawl that eats a study slot? The design logic runs in reverse, and the evidence favors two moves over willpower. The first is monitoring: Quinn, Pascoe, Wood and Neal (2010) found that simply watching the unwanted habit — marking each occurrence — measurably improved control. The second is substitution: keep the cue, swap the routine, keep the reward — the golden rule Duhigg drew from recovery programs. Suppression leans on the effortful-control machinery habits exist to spare, and it collapses under load. Raise friction on the old routine, lower it on the substitute, and let the loop run the new way.',
+        },
+        {
+          kind: 'figure',
+          caption:
+            'The repair kit for an unwanted habit. Keep the cue, keep the reward, swap the routine — substitution, not suppression. Raise friction on the old routine, lower it on the new, and keep a monitoring tally of every occurrence (Quinn, Pascoe, Wood and Neal, 2010).',
+          afterConcept: 11,
+          sketchImage: '/diagrams/keep-cue-swap-routine-sketch.jpg',
+          sketchCaption: 'notebook plate — keep the cue, swap the routine, tally every occurrence',
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" role="img" aria-label="The repair kit: keep the cue, swap the routine, keep the reward — with a monitoring tally and raised friction on the old routine">
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <!-- OLD LOOP (left) -->
+    <text x="200" y="52" font-size="15" font-style="italic" fill="#e11d48" text-anchor="middle">the old loop</text>
+    <g fill="none" stroke-width="2.4" stroke-linecap="round">
+      <path d="M132 76 Q196 69 260 75 Q267 92 261 109 Q196 117 133 110 Q125 93 132 76 Z" stroke="#d97706"/>
+      <path d="M120 250 Q192 243 264 249 Q271 266 265 283 Q192 291 121 284 Q113 267 120 250 Z" stroke="#e11d48"/>
+      <path d="M132 386 Q196 379 260 385 Q267 402 261 419 Q196 427 133 420 Q125 403 132 386 Z" stroke="#059669"/>
+    </g>
+    <g font-size="15" fill="currentColor" text-anchor="middle">
+      <text x="196" y="99">cue</text>
+      <text x="192" y="273">old routine</text>
+      <text x="196" y="409">reward</text>
+    </g>
+    <!-- old loop arrows -->
+    <g fill="none" stroke="#8a8a93" stroke-width="2" stroke-linecap="round">
+      <path d="M176 112 Q150 170 168 240"/>
+      <path d="M160 230 L168 240 L175 228"/>
+      <path d="M196 286 Q196 330 196 376"/>
+      <path d="M189 366 L196 376 L203 366"/>
+    </g>
+    <!-- friction wall in front of old routine -->
+    <g fill="none" stroke="#e11d48" stroke-width="2.2" stroke-linecap="round">
+      <path d="M238 214 L306 210 M240 228 L308 224 M242 242 L310 238"/>
+      <path d="M252 212 L252 240 M276 211 L276 240 M298 210 L298 238"/>
+    </g>
+    <text x="352" y="232" font-size="12.5" fill="#e11d48" text-anchor="middle">raise friction</text>
+    <!-- center swap arrow -->
+    <g fill="none" stroke="#059669" stroke-width="2.6" stroke-linecap="round">
+      <path d="M352 316 Q440 306 522 314"/>
+      <path d="M508 306 L522 314 L509 322"/>
+    </g>
+    <text x="440" y="296" font-size="14" font-style="italic" fill="#059669" text-anchor="middle">keep the cue, swap the routine</text>
+    <text x="440" y="345" font-size="12.5" fill="#8a8a93" text-anchor="middle">the reward stays the same</text>
+    <!-- NEW LOOP (right) -->
+    <text x="672" y="52" font-size="15" font-style="italic" fill="#059669" text-anchor="middle">the substitution</text>
+    <g fill="none" stroke-width="2.4" stroke-linecap="round">
+      <path d="M604 76 Q668 69 732 75 Q739 92 733 109 Q668 117 605 110 Q597 93 604 76 Z" stroke="#d97706"/>
+      <path d="M596 250 Q664 243 732 249 Q739 266 733 283 Q664 291 597 284 Q589 267 596 250 Z" stroke="#059669"/>
+      <path d="M604 386 Q668 379 732 385 Q739 402 733 419 Q668 427 605 420 Q597 403 604 386 Z" stroke="#059669"/>
+    </g>
+    <g font-size="15" fill="currentColor" text-anchor="middle">
+      <text x="668" y="99">cue</text>
+      <text x="664" y="273">new routine</text>
+      <text x="668" y="409">same reward</text>
+    </g>
+    <g fill="none" stroke="#8a8a93" stroke-width="2" stroke-linecap="round">
+      <path d="M648 112 Q622 170 640 240"/>
+      <path d="M632 230 L640 240 L647 228"/>
+      <path d="M668 286 Q668 330 668 376"/>
+      <path d="M661 366 L668 376 L675 366"/>
+    </g>
+    <!-- monitoring tally (bottom center strip) -->
+    <g fill="none" stroke="#8a8a93" stroke-width="2.2" stroke-linecap="round">
+      <path d="M330 384 Q346 382 362 383 M380 382 Q396 380 412 382 M430 381 Q446 379 462 381 M480 380 Q496 378 512 380"/>
+      <path d="M522 378 L508 388"/>
+    </g>
+    <text x="440" y="418" font-size="12.5" fill="#8a8a93" text-anchor="middle">monitoring tally — note each occurrence</text>
+  </g>
+</svg>`
+        },
+        {
           kind: 'example',
           title: 'Worked Example',
           steps: [
@@ -526,6 +702,46 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
             'Apply: set "If I finish dinner and clear my plate, then I will sit at the desk and run ten active-recall cards." Deck opens on the tablet that lives on the desk; phone charges in the hallway overnight; a wall calendar gets one cross per completed evening.',
             'State the result: the cue (dinner cleanup), the context (desk, evening) and the tiny first action are now one associative unit. Automaticity builds on its own curve — expect it to feel effortful for weeks, easier by two months, strange to skip by three. One missed night changes nothing; two in a row triggers the shrink-to-two-cards rule.',
           ],
+        },
+        {
+          kind: 'derivation',
+          title: 'Why the rule is “never miss twice”: the cascade arithmetic',
+          statement:
+            'Derivation of the lapse rule from a simple reliability model — with independent daily miss probability, “never miss” is statistically inhuman, while two-miss cascades are common enough to need a named rule.',
+          prerequisites: ['Independent daily attempts', 'Recursion and geometric decay'],
+          steps: [
+            {
+              label: 'Step 1: The perfect month is a lottery win',
+              formula: '$$P(\\text{perfect month}) = p^{30}, \\quad p = 0.8 \\Rightarrow 0.8^{30} \\approx 0.0012$$',
+              explanation:
+                'A good student shows up about 80% of days. Thirty consecutive perfect days then have probability 0.8 to the 30th ≈ 0.12% — one month in eight hundred. A rule demanding perfection is a rule you will break.',
+            },
+            {
+              label: 'Step 2: Define the no-cascade probability',
+              formula: '$$f(n) = p\\,f(n-1) + p\\,(1-p)\\,f(n-2), \\quad f(0) = f(1) = 1$$',
+              explanation:
+                'Let f(n) be the probability that n days contain no two consecutive misses. Day one: a success (p) leaves f(n−1) clean days; a miss forces day two to succeed (p) and leaves f(n−2).',
+            },
+            {
+              label: 'Step 3: Walk the week',
+              formula: '$$f(2)=0.96,\\ f(3)=0.93,\\ f(4)=0.90,\\ f(5)=0.87,\\ f(6)=0.84,\\ f(7)=0.81$$',
+              explanation:
+                'Feeding p = 0.8 through the recurrence: the chance of a cascade-free week is about 0.81 — roughly a 19% chance of at least one two-miss cascade, every week.',
+            },
+            {
+              label: 'Step 4: The long run decays slowly',
+              formula: '$$f(n) \\approx C\\,r^{n}, \\quad r = \\tfrac{p + \\sqrt{p^{2}+4p(1-p)}}{2} \\approx 0.966 \\Rightarrow f(30) \\approx 0.36$$',
+              explanation:
+                'The recurrence decays geometrically at rate r ≈ 0.966, so f(30) ≈ 0.36 — about a 64% chance of at least one cascade per month. At human reliability, cascades are the norm.',
+            },
+            {
+              label: 'Step 5: Read the rule off the arithmetic',
+              explanation:
+                'One miss is noise — the Lally study measured it, under half a point of automaticity. What compounds is the second day: the rule that survives is not “never miss” (0.12% feasible) but “never miss twice” — shrink the behavior until it fits the worst day.',
+            },
+          ],
+          result:
+            'At 80% daily reliability a perfect month is a 1-in-800 event, while a two-miss cascade lands most weeks (≈19%) and most months (≈64%) — so the design rule is never miss twice, not never miss.',
         },
         { kind: 'heading', text: 'Applications in the Real World' },
         {
@@ -556,6 +772,8 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
             { term: 'Never miss twice', def: 'The lapse rule: one miss is noise; two consecutive misses trigger shrinking the behavior.' },
             { term: 'Cue stacking', def: 'Bolting a new behavior onto an existing stable habit so the old routine becomes the new cue.' },
             { term: 'Stability phase', def: 'The plateau region where the habit maintains itself with minimal effort — strange not to do.' },
+            { term: 'Habit loop', def: 'The three-beat template — cue, routine, reward — that the learning phase fuses into one associative unit.' },
+            { term: 'Prediction error', def: 'The dopamine response when reality differs from prediction; after learning it fires at the cue rather than the reward.' },
           ],
         },
         { kind: 'heading', text: 'Check Yourself' },
@@ -603,6 +821,18 @@ export const x36LearningSciencePassTopics: KnowledgeTopic[] = [
               options: ['Double the next session to catch up', 'Shrink the behavior until it fits the worst day — ten cards become two', 'Restart the habit from day one', 'Switch to a different habit'],
               answer: 1,
               explain: 'Protect the cue–context link; volume is recoverable, the link is what decays — exactly the worked example\'s shrink-to-two-cards rule.',
+            },
+            {
+              q: 'In Schultz\'s recordings, once a monkey has learned that a light predicts juice, the dopamine burst:',
+              options: ['Disappears entirely', 'Shifts to the cue, and an omitted predicted reward produces a dip', 'Stays at the reward and grows larger', 'Fires randomly throughout the task'],
+              answer: 1,
+              explain: 'The prediction error shifts to the predictor: fire at the cue, none at a fully predicted reward, a dip when it is omitted.',
+            },
+            {
+              q: 'With a daily show-up probability of p = 0.8, the cascade arithmetic says a two-miss cascade in a week has probability about:',
+              options: ['2%', '19%', '64%', '96%'],
+              answer: 1,
+              explain: 'The no-cascade probability after 7 days is f(7) ≈ 0.81, so the cascade risk is 1 − 0.81 ≈ 19% per week (≈64% per month) — hence the rule: never miss twice.',
             },
           ],
         },
