@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
+  // Hide the floating Next.js dev-tools indicator (dark circle with the "N"
+  // logo, bottom-left): it overlapped Library chapter cards in the preview.
+  // Compile status is still visible in dev.log, so nothing is lost.
+  devIndicators: false,
 };
 
 export default nextConfig;
