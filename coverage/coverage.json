@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T19:32:42.554Z",
+  "generatedAt": "2026-10-31T19:54:16.999Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 140,
     "books": 140,
     "chapters": 889,
-    "sections": 4695
+    "sections": 4696
   },
   "subjects": [
     {
@@ -26741,7 +26741,7 @@
       "group": "Aptitude & Test Preparation",
       "tagline": "Numbers at examination speed",
       "chapterCount": 1,
-      "sectionCount": 4,
+      "sectionCount": 5,
       "chapters": [
         {
           "id": "ku-quantitative-aptitude-number-system-foundations",
@@ -26749,7 +26749,7 @@
           "title": "Number System Foundations",
           "shortTitle": "Number System Foundations",
           "bookId": "ku-quantitative-aptitude",
-          "sectionCount": 4,
+          "sectionCount": 5,
           "sections": [
             {
               "id": "ku-qa-number-families-place-value",
@@ -26770,6 +26770,11 @@
               "id": "ku-qa-remainders-cyclicity",
               "number": 1.4,
               "title": "Remainders and Cyclicity: Units Digits of Enormous Powers in Fifteen Seconds"
+            },
+            {
+              "id": "ku-qa-fractions-decimals-comparison",
+              "number": 1.5,
+              "title": "Fractions, Decimals and the Comparison Short-Cuts: Ordering Any Two Numbers in Ten Seconds"
             }
           ]
         }

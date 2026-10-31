@@ -17,7 +17,7 @@
 - **Subjects:** 140
 - **Books (master volumes):** 140
 - **Chapters:** 889
-- **Sections (lessons):** 4695
+- **Sections (lessons):** 4696
 
 ## Foundations — 7 subjects
 
@@ -799,9 +799,9 @@
 
 ### Quantitative Aptitude (`ku-quantitative-aptitude`)
 
-*Numbers at examination speed* — 1 chapters · 4 sections
+*Numbers at examination speed* — 1 chapters · 5 sections
 
-- **Ch 1. Number System Foundations** `ku-quantitative-aptitude-number-system-foundations` — 4 sections: Place Value and the Number Families: The Ground Under Every Aptitude Question; Divisibility Rules and Digit Sums: Twenty-Second Factor Detection; Factors, HCF and LCM: The Two Numbers Behind a Thousand Word Problems; Remainders and Cyclicity: Units Digits of Enormous Powers in Fifteen Seconds
+- **Ch 1. Number System Foundations** `ku-quantitative-aptitude-number-system-foundations` — 5 sections: Place Value and the Number Families: The Ground Under Every Aptitude Question; Divisibility Rules and Digit Sums: Twenty-Second Factor Detection; Factors, HCF and LCM: The Two Numbers Behind a Thousand Word Problems; Remainders and Cyclicity: Units Digits of Enormous Powers in Fifteen Seconds; Fractions, Decimals and the Comparison Short-Cuts: Ordering Any Two Numbers in Ten Seconds
 
 ### Logical Reasoning (`ku-logical-reasoning`)
 

@@ -195,3 +195,4 @@ step feeds them targets when their subjects come up.
 | Date (IST) | Subject | What happened | State |
 |---|---|---|---|
 | 2026-11-01 | Program | Master syllabus created; 3 subjects registered (taxonomy + field file + wiring); QA Ch1 lessons 1.1–1.4 authored; pipeline 100%; pushed | ku-quantitative-aptitude IN PROGRESS (Ch1 §1.5 next) |
+| 2026-11-01 | ku-quantitative-aptitude | Ch1 §1.5 qa-fractions-decimals-comparison authored (2,924w, 2 figures, 5-step nines-law derivation, quiz 8 w/ explanations, worked example 4-fraction ordering); carve vs fnd-percentage-ratio-mental-math documented; audit 2967/2967 = 100%; pushed | QA Ch1 §1.1–§1.5 live — §1.6 Surds & Indices next |

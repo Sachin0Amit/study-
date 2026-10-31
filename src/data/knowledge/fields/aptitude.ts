@@ -760,4 +760,296 @@ export const aptitude: KnowledgeTopic[] = [
       },
     ],
   },
+  // ================================================================
+  // §1.5 — fractions, decimals & comparison short-cuts.
+  // Carve: NO live lesson owns fraction/decimal territory (greps for
+  // 'fraction|decimal' in topic ids and titles: zero hits — the only
+  // neighbour is fnd-percentage-ratio-mental-math, which owns the
+  // percent/ratio everyday layer at 883 words, and this lesson points
+  // Ch2 of THIS book at percentages next). math-prime-numbers owns
+  // primes/GCD as number theory; ku-math-algebra-notation-
+  // manipulation owns expression algebra. This lesson OWNS: the
+  // fraction–decimal–percent conversion table, the five comparison
+  // tools (same-denominator, same-numerator, cross-multiplication,
+  // LCM common ground for sets, distance-from-1), recurring-decimal
+  // conversion (the nines law), and the mediant bracket ladder top.
+  // Sources: OpenStax Prealgebra 2e Ch. 4 (Fractions) & Ch. 5
+  // (Decimals), NCERT Class 6–7 fractions/decimals chapters, R.S.
+  // Aggarwal TOC (fractions/decimals section), Arun Sharma TOC; Simon
+  // Stevin, De Thiende (1585, decimal fractions popularized); Moritz
+  // Stern (1858) & Achille Brocot (1861, clockmaker gear ratios) for
+  // the Stern–Brocot tree; John Farey (1816) & Cauchy's proof of the
+  // Farey property; Archimedes, Measurement of a Circle (223/71 <
+  // π < 22/7); Zu Chongzhi's Milü 355/113 (fifth century). No exam
+  // name appears in lesson-facing text (product rule).
+  // ================================================================
+  {
+    id: 'qa-fractions-decimals-comparison',
+    title: 'Fractions, Decimals and the Comparison Short-Cuts: Ordering Any Two Numbers in Ten Seconds',
+    domain: 'Aptitude & Test Preparation',
+    field: 'Quantitative Aptitude',
+    branch: 'Arithmetic Foundations',
+    tier: 'core',
+    concepts: [
+      'a fraction is a division statement: the numerator counts pieces, the denominator sizes them',
+      'the three costumes — fraction, decimal, percent — and the memorized 1/n conversion table',
+      'same denominator: bigger numerator wins; same numerator: smaller denominator wins',
+      'cross-multiplication: a/b vs c/d is ad vs bc — multiply along the arms of the X',
+      'sets: LCM common denominator or decimal conversion (three places); benchmark 1/2 classifies first',
+      'distance from 1: the smaller complement belongs to the larger fraction',
+      'recurring decimals: a period of k digits means k nines below; the 1/7 six-rotation family',
+      'the mediant (a+c)/(b+d) brackets strictly between — the Stern–Brocot ladder to π’s best friends',
+    ],
+    words: 2924,
+    readMins: 15,
+    addedOn: '2026-11-01',
+    blocks: [
+      {
+        kind: 'para',
+        text: '“Which is larger, 7/12 or 5/9?” Untutored, that invites converting both to some guessed common ground and drowning in arithmetic. Tutored, it is one X-shaped multiply and ten seconds: 7 × 9 = 63 against 5 × 12 = 60, and 7/12 wins. This lesson owns the fraction–decimal–percent layer at examination speed. It builds the piece-counting view of a fraction, installs the conversion table that makes decimals and percents interchangeable costumes, hands over the five comparison tools in decision order, and converts recurring decimals into exact fractions by the nines law. It closes at the ladder’s top: the mediant bracket, the device that let Archimedes cage π between 223/71 and 22/7 and let Zu Chongzhi land 355/113 — accurate to seven significant figures — in the fifth century, with nothing but addition.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'Comparison items are the quiet backbone of every quantitative screening paper: direct “which is greatest” questions, data-interpretation choices priced in fractions, quantity-comparison columns, and approximation calls all resolve through this toolkit. The 1/n conversion table installed below is the single highest-yield memorization in this book — it feeds percentages (Ch2), interest (Ch4), and data interpretation (Ch12) directly.',
+        tone: 'insight',
+      },
+      { kind: 'heading', text: 'Core Concepts' },
+      {
+        kind: 'para',
+        text: 'A fraction is a division statement frozen in place: 7/12 names the number 7 ÷ 12, and every manipulation below is licensed by that identity. The two numbers have asymmetric jobs — the NUMERATOR counts pieces taken; the DENOMINATOR sizes the pieces. This gives the first free insight, the piece-size flip: with the numerator held fixed, a bigger denominator means SMALLER pieces, so 5/7 > 5/9 (fifths of a whole are bigger than ninths), and a bigger denominator means the fraction sits closer to zero. The flip fails only when the numerator is not fixed — and that is exactly when the heavier tools below take over. Every fraction also lives on the number line next to its decimal expansion: 7/12 = 0.58333…, a fact you will verify to the digit in this lesson’s derivation.',
+      },
+      {
+        kind: 'para',
+        text: 'The same number wears three costumes: the fraction 3/8, the decimal 0.375, and the percent 37.5% (per-cent = per hundred: multiply the decimal by 100). Fluency means converting between costumes on sight, and that runs on ONE memorized spine — the 1/n table: 1/2 = 0.5 = 50%; 1/3 = 0.333…; 1/4 = 0.25; 1/5 = 0.2; 1/6 = 0.166…; 1/7 = 0.142857… (the six-digit cycle below); 1/8 = 0.125; 1/9 = 0.111…; 1/11 = 0.0909…; 1/12 = 0.0833…; 1/15 = 0.0666…; 1/16 = 0.0625. Every k/n is k × the spine entry: 3/8 = 3 × 12.5% = 37.5%; 5/8 = 62.5%; 7/8 = 87.5%; 2/3 = 66.6…%. Quarters and eighths run in clean 12.5% steps; fifths in 20% steps; ninths repeat their digit (2/9 = 0.222…); elevenths repeat two digits (2/11 = 0.1818…). This table is not trivia to admire — it is the working memory that makes the rest of the lesson run at speed.',
+      },
+      {
+        kind: 'para',
+        text: 'Two comparisons cost nothing. SAME DENOMINATOR: pieces are the same size, so the bigger numerator wins — 5/11 < 7/11, as directly as 5 objects < 7 objects. SAME NUMERATOR: the piece-size flip from above — the smaller denominator makes bigger pieces, so 5/7 > 5/9. Real questions rarely hand you these alignments; you CREATE them. When two fractions’ denominators are both small and friendly, find their LCM common denominator (§1.3) and rewrite both: comparing 4/7 with 5/9, LCM(7, 9) = 63 gives 36/63 against 35/63 — one point apart, and the gap is now visible as plain counting. The same move scales to a whole SET of fractions: rewrite all of them over the LCM of their denominators and order the numerators (a worked set appears in the next concept).',
+      },
+      {
+        kind: 'para',
+        text: 'Cross-multiplication is the workhorse for a single pair, because it creates the common ground without ever writing it down. For b, d > 0: a/b vs c/d is decided by ad vs bc — multiply each numerator by the OTHER denominator, along the arms of the X drawn over the pair. 7/12 vs 5/9: 7 × 9 = 63 vs 5 × 12 = 60 → 63 wins → 7/12 is larger (decimals confirm: 0.5833… vs 0.5555…). WHY it works, in one line: multiply both fractions by bd — the positive product of denominators — and the left becomes ad while the right becomes bc; multiplying both sides of a comparison by a positive number never changes who wins. Watch the arms: it is a×d against c×b, never a×c against b×d. Cross-multiplication is optimal for ONE pair; for three or more fractions it produces a pile of pairwise products, and the set tools below are faster.',
+      },
+      {
+        kind: 'figure',
+        caption:
+          'The comparison decision ladder: four checks in order — same denominator, same numerator, distance from 1, then cross-multiply — with the set-level tools (LCM common denominator, decimal conversion, benchmark 1/2) running underneath.',
+        afterConcept: 3,
+        svg: `<svg viewBox="0 0 840 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fraction comparison decision ladder">
+  <style>.bx{fill:#faf5ff;stroke:#8a8a93;stroke-width:1.6;rx:8}.ac{fill:#ecfdf5;stroke:#8a8a93;stroke-width:1.6;rx:8}.q{font-family:Georgia,serif;font-size:16px;font-weight:bold;fill:#3f3f46}.a{font-family:Georgia,serif;font-size:15px;fill:#3f3f46}.lb{font-family:Georgia,serif;font-size:13px;fill:#71717a}.ar{stroke:#e11d48;fill:none;stroke-width:2;stroke-linecap:round;marker-end:url(#h)}</style>
+  <defs><marker id="h" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#e11d48"/></marker></defs>
+  <rect class="bx" x="240" y="14" width="180" height="34" rx="8"/><text class="q" x="330" y="36" text-anchor="middle">two fractions a/b, c/d</text>
+  <line class="ar" x1="330" y1="48" x2="330" y2="70"/>
+  <rect class="bx" x="180" y="72" width="300" height="34" rx="8"/><text class="q" x="330" y="94" text-anchor="middle">same denominator? → bigger numerator wins</text>
+  <line class="ar" x1="330" y1="106" x2="330" y2="128"/>
+  <rect class="bx" x="180" y="130" width="300" height="34" rx="8"/><text class="q" x="330" y="152" text-anchor="middle">same numerator? → smaller denominator wins</text>
+  <line class="ar" x1="330" y1="164" x2="330" y2="186"/>
+  <rect class="bx" x="180" y="188" width="300" height="34" rx="8"/><text class="q" x="330" y="210" text-anchor="middle">both close to 1? → compare distances from 1</text>
+  <line class="ar" x1="330" y1="222" x2="330" y2="244"/>
+  <rect class="ac" x="180" y="246" width="300" height="34" rx="8"/><text class="q" x="330" y="268" text-anchor="middle">otherwise → cross-multiply: ad vs bc</text>
+  <line class="ar" x1="480" y1="100" x2="580" y2="100"/>
+  <line class="ar" x1="480" y1="158" x2="580" y2="158"/>
+  <line class="ar" x1="480" y1="216" x2="580" y2="216"/>
+  <rect class="bx" x="584" y="80" width="238" height="160" rx="8"/>
+  <text class="a" x="600" y="104">a whole set? work set-level:</text>
+  <text class="a" x="600" y="130">· benchmark 1/2: classify</text>
+  <text class="a" x="614" y="150">above/below first</text>
+  <text class="a" x="600" y="176">· LCM common denominator</text>
+  <text class="a" x="600" y="202">· decimal conversion</text>
+  <text class="a" x="614" y="222">(three places) — then seal</text>
+  <text class="a" x="614" y="240">close pairs with the X</text>
+  <text class="lb" x="180" y="312">checks run top to bottom — stop at the first that applies;</text>
+  <text class="lb" x="180" y="330">cross-multiplication is the default that always works for one pair</text>
+</svg>`,
+      },
+      {
+        kind: 'para',
+        text: 'Sets of three or more fractions need set-level tools, and the first is classification: use the benchmark 1/2 to split the field — 4/9 and 3/7 sit below it, 5/9 and 4/7 above — and the winner can only come from the above-benchmark group. Inside a group, two exact routes exist. Route A, the LCM common denominator: order 5/6, 7/9, 11/15 — LCM(6, 9, 15) = 90, and the set becomes 75/90, 70/90, 66/90, so 11/15 < 7/9 < 5/6 at a glance. Route B, decimal conversion (three places): divide each fraction to three decimal places — indispensable when denominators are awkward (13, 17, 23 have no friendly LCM partners). 5/8 = 0.625 exactly, but 7/11 = 0.6363… rounds to 0.636 — and when two decimals collide at three places, do NOT trust the rounding: seal the close pair with cross-multiplication, which is exact. Speed policy: decimals for the broad pass, the X for the tight finish.',
+      },
+      {
+        kind: 'para',
+        text: 'Distance from 1 is the elegant fifth tool, built on one subtraction: 1 − a/b = (b − a)/b, the complement. If two fractions are both close to 1, compare their complements — the SMALLER complement belongs to the LARGER fraction. 8/9 vs 7/8: complements are 1/9 ≈ 0.111 and 1/8 = 0.125; since 1/9 < 1/8, the fraction 8/9 is closer to 1 and therefore larger. The same logic works from the benchmark 1/2 for fractions straddling it: subtract 1/2 from each and compare the gaps. Complements turn “which is bigger” into “which leftover is smaller,” and leftovers are often one-step fractions with tiny denominators — 1/9 against 1/8 is a far easier fight than 8/9 against 7/8 looks. Any common anchor works: distance from 3/4, from 2, from 100 — the pattern is invariance under subtracting both from the same reference.',
+      },
+      {
+        kind: 'para',
+        text: 'Recurring decimals are fractions in disguise, and the disguise comes off with the nines law (derived in full below): a repeating block of k digits means the fraction’s denominator is 10^k − 1 — a string of k nines. 0.727272… = 72/99 = 8/11; 0.333… = 3/9 = 1/3; 0.0909… = 9/99 = 1/11. When non-repeating digits precede the block (a MIXED recurring decimal such as 0.58333…), the denominator grows to (10^k − 1) × 10^m, and the worked numbers below show 0.58333… = 7/12 exactly. One memorized expansion can mint six fractions: 1/7 = 0.142857142857…, and the block 142857 ROTATES one place for each next numerator — 2/7 = 0.285714…, 3/7 = 0.428571…, 4/7 = 0.571428…, 5/7 = 0.714285…, 6/7 = 0.857142… — so reading 0.428571… off an option list resolves instantly to 3/7. Finally, the boundary law: a fraction in lowest terms has a TERMINATING decimal exactly when its denominator’s prime factors are only 2s and 5s (12 = 2² × 3 → recurring; 16 = 2⁴ → terminating at four places).',
+      },
+      {
+        kind: 'figure',
+        caption:
+          'The 1/7 rotation wheel: one six-digit block, 142857, read from six different starting points — the decimal of n/7 is the block started n − 1 places in, so six fractions cost one memorized expansion.',
+        afterConcept: 6,
+        svg: `<svg viewBox="0 0 840 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The 1/7 rotation wheel">
+  <style>.d{font-family:Georgia,serif;font-size:18px;font-weight:bold;fill:#3f3f46}.dd{font-family:Georgia,serif;font-size:13px;fill:#52525b}.c{font-family:Georgia,serif;font-size:15px;fill:#71717a}.w{stroke:#8a8a93;fill:none;stroke-width:2}.ar{stroke:#e11d48;fill:none;stroke-width:2.2;stroke-linecap:round;marker-end:url(#h2)}</style>
+  <defs><marker id="h2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#e11d48"/></marker></defs>
+  <circle class="w" cx="420" cy="160" r="86"/>
+  <text class="c" x="420" y="150" text-anchor="middle">one block,</text>
+  <text class="c" x="420" y="172" text-anchor="middle">six starting points</text>
+  <text class="d" x="420" y="112" text-anchor="middle">1/7</text>
+  <text class="dd" x="420" y="132" text-anchor="middle">0.142857…</text>
+  <text class="d" x="512" y="86" text-anchor="middle">2/7</text>
+  <text class="dd" x="512" y="106" text-anchor="middle">0.285714…</text>
+  <text class="d" x="512" y="222" text-anchor="middle">3/7</text>
+  <text class="dd" x="512" y="242" text-anchor="middle">0.428571…</text>
+  <text class="d" x="420" y="242" text-anchor="middle">4/7</text>
+  <text class="dd" x="420" y="262" text-anchor="middle">0.571428…</text>
+  <text class="d" x="328" y="222" text-anchor="middle">5/7</text>
+  <text class="dd" x="328" y="242" text-anchor="middle">0.714285…</text>
+  <text class="d" x="328" y="86" text-anchor="middle">6/7</text>
+  <text class="dd" x="328" y="106" text-anchor="middle">0.857142…</text>
+  <path class="ar" d="M446 118 C 470 122, 488 132, 498 142"/>
+  <path class="ar" d="M516 152 C 522 170, 522 192, 516 206"/>
+  <path class="ar" d="M498 216 C 488 226, 470 236, 452 240"/>
+  <path class="ar" d="M394 240 C 376 236, 358 226, 348 216"/>
+  <path class="ar" d="M324 206 C 318 192, 318 170, 324 152"/>
+  <path class="ar" d="M348 142 C 358 132, 376 122, 394 118"/>
+  <text class="c" x="620" y="120">read n/7 by starting the</text>
+  <text class="c" x="620" y="140">block n − 1 places in:</text>
+  <text class="c" x="620" y="166">3/7 starts at place 3</text>
+  <text class="c" x="620" y="186">→ 428571</text>
+  <text class="c" x="620" y="218">clockwise = multiply the</text>
+  <text class="c" x="620" y="238">numerator; the block only</text>
+  <text class="c" x="620" y="258">rotates, never changes</text>
+</svg>`,
+      },
+      {
+        kind: 'para',
+        text: 'The ladder top: bracketing with the MEDIANT. For two fractions a/b < c/d, the mediant (a + c)/(b + d) — the naive “add across” — always lies STRICTLY between them: between 3/5 and 5/8 sits 8/13, and indeed 0.600 < 0.6154 < 0.625. As an ANSWER the mediant is a trap (it is not the average of the two fractions); as a BOUND it is a precision instrument. Insert mediants repeatedly and you fill the number line with every fraction in order — the Stern–Brocot tree, found by Moritz Stern (1858) and independently by Achille Brocot (1861), a French clockmaker who used it to pick gear ratios approximating target speed ratios. Walk the tree toward π starting from the bracket 3/1 < π < 4/1: repeated mediants give 22/7, then squeeze to 223/71 < π < 22/7 — precisely Archimedes’ bracket in the Measurement of a Circle — then 333/106, then 355/113, Zu Chongzhi’s fifth-century Milü, off by less than 0.0000003. The Farey sequence (John Farey, 1816; Augustin-Louis Cauchy proved why the mediant structure works) lists ordered fractions with capped denominators and powers the same walk. The deep theory — continued fractions and best rational approximation — lives in the Mathematics Master Library; the working habit lives here: when two bounds squeeze a value, the mediant is the best next guess.',
+      },
+      {
+        kind: 'example',
+        title: 'Worked example — ascending order, four fractions, no calculator',
+        steps: [
+          'Identify what is asked: arrange 5/8, 2/3, 7/11, 3/5 in ascending order with exact comparisons.',
+          'Benchmark pass: all four exceed 1/2 (numerators beat half their denominators: 5 > 4, 2 > 1.5, 7 > 5.5, 3 > 2.5) — the winner must be separated inside this group.',
+          'Decimal conversion (three places): 3/5 = 0.600; 5/8 = 0.625; 7/11 = 0.636 (0.6363…); 2/3 = 0.667 (0.6666…). Broad order: 3/5 < 5/8 < 7/11 < 2/3.',
+          'Seal the tight pair 5/8 vs 7/11 by cross-multiplication: 5 × 11 = 55 vs 7 × 8 = 56 → 55 < 56, so 5/8 < 7/11 — the rounding gap (0.625 vs 0.636) is confirmed as real.',
+          'Seal the top pair 7/11 vs 2/3: 7 × 3 = 21 vs 2 × 11 = 22 → 21 < 22, so 7/11 < 2/3.',
+          'State the result: 3/5 < 5/8 < 7/11 < 2/3 — benchmark, decimals for the broad pass, the X as the exactness seal on every close pair.',
+        ],
+      },
+      {
+        kind: 'derivation',
+        title: 'Why the nines law works: turning a recurring decimal into an exact fraction',
+        statement:
+          'Derivation of the recurring-decimal law from place value: a decimal whose block of k digits repeats forever equals a fraction with denominator $10^k - 1$ (k nines) — shown for $0.\\overline{72}$, then generalized to mixed cases.',
+        prerequisites: ['Place value (§1.1)', 'Multiplying by powers of ten shifts the point one place per zero'],
+        steps: [
+          {
+            label: 'Step 1: Name the unknown',
+            formula: '$$x = 0.72727272\\ldots = 0.\\overline{72}$$',
+            explanation:
+              'The block 72 repeats without end; x is the exact number this notation names. Nothing is rounded — the tail is infinite by definition.',
+          },
+          {
+            label: 'Step 2: Shift by one full period',
+            formula: '$$100x = 72.727272\\ldots$$',
+            explanation:
+              'Multiplying by 10^k (here 10² = 100) slides the point exactly one full block right. The repeating tail now hangs BELOW the whole number 72 — but digit-for-digit identical to the tail under x.',
+          },
+          {
+            label: 'Step 3: Subtract — the infinite tails cancel',
+            formula: '$$100x - x = 72.727272\\ldots - 0.727272\\ldots = 72$$',
+            explanation:
+              'Both numbers carry the SAME infinite tail after the point, so subtracting cancels it completely and exactly: the difference is the clean integer 72. No limits, no approximation — just an exact cancellation.',
+          },
+          {
+            label: 'Step 4: Solve and reduce',
+            formula: '$$99x = 72 \\quad\\Rightarrow\\quad x = \\tfrac{72}{99} = \\tfrac{8}{11}$$',
+            explanation:
+              'Denominator 99 = 10² − 1: two nines for a two-digit block. Reduce by the GCD (§1.3): 72/99 = 8/11. Check by division: 8 ÷ 11 = 0.727272… ✓ — the disguise is fully off.',
+          },
+          {
+            label: 'Step 5: Generalize — the nines law and the mixed case',
+            formula: '$$0.\\overline{d_1 d_2 \\ldots d_k} = \\frac{d_1 d_2 \\ldots d_k}{10^k - 1} \\qquad\\quad 0.58\\overline{3} = \\frac{583 - 58}{9 \\times 100} = \\frac{525}{900} = \\frac{7}{12}$$',
+            explanation:
+              'Pure block of k digits → denominator of k nines. With m non-repeating digits before the block, multiply the denominator by 10^m and subtract the prefix in the numerator: 0.58333… has m = 2, k = 1 → denominator 9 × 100 = 900, numerator 583 − 58 = 525 → 7/12 (and 7 ÷ 12 = 0.58333… ✓ — the fraction the opening concept promised).',
+          },
+        ],
+        result:
+          'A recurring decimal is a fraction wearing a costume: period k → denominator 10^k − 1; a non-repeating tail of m digits multiplies that denominator by 10^m. Terminating decimals are the special case — denominators built only from 2s and 5s, the numbers that divide a power of ten.',
+      },
+      {
+        kind: 'callout',
+        title: 'Traps that cost real marks',
+        text: 'The place-value trap: 0.6 > 0.58 — more digits never mean a bigger number; compare from the left (6 tenths beats 5 tenths outright). The numerator trap: 5/9 is SMALLER than 5/7 — fixed numerator, bigger denominator, smaller pieces. The arms slip: a/b vs c/d compares a×d with c×b, never a×c with b×d — write the X over the pair and read its arms. The rounding trap: when rounded decimals collide at three places, only cross-multiplication decides — 0.625 vs 0.636 looked safe, but pairs like 0.667 vs 0.667 would have decided nothing. The costume trap: 0.999… is EXACTLY 1 (nines law, block 9: 9/9), not “just below” — options exploiting this count on hesitation. And the mediant trap: (a+c)/(b+d) is a bound between the pair, never the answer to “which is bigger.”',
+        tone: 'warn',
+      },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Cross-multiplication', def: 'a/b vs c/d decided by ad vs bc (b, d > 0) — the products along the arms of the X; exact, and equivalent to multiplying both sides by bd.' },
+          { term: 'Benchmark fraction', def: 'An anchor such as 1/2 or 1 used to classify fractions above/below before fine comparison.' },
+          { term: 'Complement comparison', def: 'Comparing distances from an anchor: 1 − a/b against 1 − c/d; the smaller complement belongs to the larger fraction.' },
+          { term: 'LCM common denominator', def: 'The least common multiple of denominators (§1.3) as the exact common ground for ordering a whole set.' },
+          { term: 'Terminating decimal', def: 'A decimal that ends; its fraction, in lowest terms, has a denominator built only from 2s and 5s.' },
+          { term: 'Recurring decimal', def: 'A decimal whose digits fall into an eventually repeating block; the block length is the period.' },
+          { term: 'Mixed recurring decimal', def: 'Non-repeating digits precede the block (0.58333…); denominator (10^k − 1) × 10^m.' },
+          { term: 'Nines law', def: 'A pure k-digit repeating block converts over 10^k − 1: 0.727272… = 72/99 = 8/11.' },
+          { term: 'Mediant', def: '(a+c)/(b+d) of a/b < c/d — strictly between them; the Stern–Brocot building block, a bound and not an answer.' },
+          { term: 'Best rational approximation', def: 'The smallest-denominator fraction closest to a value: 22/7 and 355/113 are π’s famous pair.' },
+        ],
+      },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'The largest of 2/3, 5/8, 7/11 and 3/5 is:',
+            options: ['7/11', '2/3', '3/5', '5/8'],
+            answer: 1,
+            explain: 'The worked example’s set: decimals give 0.667, 0.636, 0.625, 0.600, and the top pair seals as 7 × 3 = 21 < 2 × 11 = 22 → 7/11 < 2/3. Largest: 2/3.',
+          },
+          {
+            q: 'The recurring decimal 0.41666… (block 6 repeating) equals:',
+            options: ['41/90', '41/100', '5/12', '5/11'],
+            answer: 2,
+            explain: 'Mixed case: m = 2 digits before the block, k = 1-digit block → denominator (10¹ − 1) × 10² = 900; numerator 416 − 41 = 375; 375/900 = 5/12. (41/90 is the pure-nines mistake — it would be 0.4555…)',
+          },
+          {
+            q: 'The greater of 0.6 and 0.583 is:',
+            options: ['0.583', 'they are equal', 'a common denominator is needed first', '0.6'],
+            answer: 3,
+            explain: 'Place-value comparison: 6 tenths > 5 tenths decides immediately — 0.600 > 0.583. (0.583 is 7/12 in disguise; “more digits” tempted nothing here.)',
+          },
+          {
+            q: 'Which is larger: 8/9 or 7/8?',
+            options: ['8/9', '7/8', 'they are equal', 'only a calculator can tell'],
+            answer: 0,
+            explain: 'Complements: 1/9 ≈ 0.111 < 1/8 = 0.125, so 8/9 is closer to 1 and wins. (Cross-multiplication agrees: 8 × 8 = 64 > 7 × 9 = 63 — by a single point.)',
+          },
+          {
+            q: '3/8 expressed as a percent is:',
+            options: ['3.8%', '38%', '3.75%', '37.5%'],
+            answer: 3,
+            explain: 'Eighths run in 12.5% steps: 3 × 12.5 = 37.5%. The 1/n spine converts without division: 1/8 = 0.125 → 3/8 = 0.375.',
+          },
+          {
+            q: 'The mediant of 3/5 and 5/8 is 8/13. Where does it sit?',
+            options: ['exactly halfway between them', 'strictly between 3/5 and 5/8', 'above both', 'below both'],
+            answer: 1,
+            explain: '0.600 < 8/13 ≈ 0.6154 < 0.625 — always strictly between (add across the same direction twice: 3/5 < 8/13 because 3 × 13 = 39 < 8 × 5 = 40, and 8/13 < 5/8 because 8 × 8 = 64 < 5 × 13 = 65). It is NOT the average: (0.6 + 0.625)/2 = 0.6125.',
+          },
+          {
+            q: '0.428571 with the block repeating equals:',
+            options: ['2/7', '3/7', '4/7', '5/7'],
+            answer: 1,
+            explain: 'The 1/7 family rotates one block 142857: 0.428571… starts at place 3 of the block → 3/7. (Check: nines law gives 428571/999999 = 3/7 after reduction.)',
+          },
+          {
+            q: 'Closest to π among 22/7, 245/78, 333/106 and 355/113 is:',
+            options: ['333/106', '22/7', '355/113', '245/78'],
+            answer: 2,
+            explain: 'Errors against π ≈ 3.14159265: 22/7 is off by 1.3 × 10⁻³, 245/78 by 5.7 × 10⁻⁴, 333/106 by 8.3 × 10⁻⁵, and 355/113 by only 2.7 × 10⁻⁷ — Zu Chongzhi’s Milü, an accuracy record that stood for over a thousand years.',
+          },
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Where to go next',
+        text: 'The number-system ladder now stands complete: §1.1 place value and families, §1.2 divisibility, §1.3 factors/HCF/LCM, §1.4 remainders and cycles, §1.5 fractions, decimals and comparison. Next rung: Surds & Indices (§1.6) — roots, powers and their rules at speed, where the 1/n table and the units-digit cycles of §1.4 reappear on radicals. For the mathematics beneath this lesson — continued fractions, Farey sequences and the theory of best rational approximation — the Mathematics Master Library is the deep home; here you own the speed layer.',
+        tone: 'path',
+      },
+    ],
+  },
 ]

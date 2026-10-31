@@ -369,6 +369,8 @@ const IDS = [
   'qa-divisibility-digit-sums',
   'qa-factors-hcf-lcm',
   'qa-remainders-cyclicity',
+  // MASTER-SYLLABUS LOOP (2026-11-01) — QA Ch1 §1.5
+  'qa-fractions-decimals-comparison',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length
