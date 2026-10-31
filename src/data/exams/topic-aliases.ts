@@ -269,6 +269,48 @@ export const TOPIC_ALIASES: Record<string, string> = {
   // tracking).
   'type 4 best fit': 'fnd-visual-pattern-rules',
 
+  /* ---- Master-syllabus retirement gap-fill (2026-11-01): the combined
+   * aptitude-complete stub book was retired for the three split subjects
+   * (ku-quantitative-aptitude, ku-logical-reasoning, ku-general-awareness);
+   * its chapter anchors had been carrying these 24 exam topics, now
+   * re-pointed to the 11 authored gap lessons. Every mapping verified
+   * against the target lesson's concepts and blocks (aliases only fire
+   * when masters matching fails, so currently-mapped topics are
+   * untouched). ---- */
+  // logical reasoning — analogies, ordering, seating, clock-calendar, folds
+  'analogies': 'lr-analogies-classification',
+  'ordering and ranking': 'lr-ordering-ranking',
+  'seating arrangements': 'lr-seating-arrangements',
+  'puzzles and seating arrangements': 'lr-seating-arrangements',
+  'calendar and clock': 'lr-clock-calendar',
+  'paper cutting and figure matrix': 'lr-paper-folding-figure-matrix',
+  // quantitative aptitude — DI tables/caselets, quantity comparison
+  'tables and caselets': 'qa-tables-caselets',
+  'caselets': 'qa-tables-caselets',
+  'quantity a vs quantity b': 'qa-quantity-comparison',
+  // general awareness — history, culture, honours, current affairs
+  'important historical events': 'ga-history-landmark-events',
+  'art and culture': 'ga-art-culture-heritage',
+  'awards and honours': 'ga-awards-sports-persons',
+  'sports': 'ga-awards-sports-persons',
+  'awards, sports and persons in news': 'ga-awards-sports-persons',
+  'sports, awards and culture': 'ga-awards-sports-persons',
+  'current affairs': 'ga-current-affairs-engine',
+  'general current affairs': 'ga-current-affairs-engine',
+  'recent national affairs': 'ga-current-affairs-engine',
+  'recent international affairs': 'ga-current-affairs-engine',
+  'recent events in india': 'ga-current-affairs-engine',
+  // gaokao Politics elective 'Political life' (people's democracy,
+  // congresses, government duties, parties and consultation, ethnic and
+  // religious policy, diplomacy): the subtopic-rich name dilutes the
+  // global fuzzy match below threshold. Genre-verified target: the
+  // Japan parliamentary lesson covers exactly the institutions-of-a-
+  // modern-Asian-state module (popular sovereignty and constitution,
+  // the legislature's powers, cabinet duties, parties, contemporary
+  // rights); China-specific depth remains a gap-fill target under the
+  // gaokao program.
+  'political life': 'pol-democratic-government-japan',
+
   /* ---- X22 pass (2026-10-22): exam-gap closures on new + existing lessons.
    * Every mapping verified against the target lesson's actual concepts and
    * blocks; borderline auto-matches (< 0.6 name score) get belt-and-braces

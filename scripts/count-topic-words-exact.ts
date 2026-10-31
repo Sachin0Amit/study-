@@ -371,6 +371,19 @@ const IDS = [
   'qa-remainders-cyclicity',
   // MASTER-SYLLABUS LOOP (2026-11-01) — QA Ch1 §1.5
   'qa-fractions-decimals-comparison',
+  // MASTER-SYLLABUS RETIREMENT GAP-FILL (2026-11-01) — the 11 lessons
+  // restoring 100% audit after the aptitude-complete book retirement
+  'qa-tables-caselets',
+  'qa-quantity-comparison',
+  'lr-analogies-classification',
+  'lr-ordering-ranking',
+  'lr-seating-arrangements',
+  'lr-clock-calendar',
+  'lr-paper-folding-figure-matrix',
+  'ga-history-landmark-events',
+  'ga-art-culture-heritage',
+  'ga-awards-sports-persons',
+  'ga-current-affairs-engine',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length

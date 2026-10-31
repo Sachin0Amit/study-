@@ -402,7 +402,7 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
       { name: 'Economy & Banking Awareness', branches: ['Economy Essentials'] },
       { name: 'Science & Technology Awareness', branches: ['Science Awareness'] },
       { name: 'Environment & Ecology Awareness', branches: ['Environment Essentials'] },
-      { name: 'Static GK: Awards, Sports, Books & Organizations', branches: ['Static GK'] },
+      { name: 'Static GK: Awards, Sports, Culture, Books & Organizations', branches: ['Static GK'] },
       { name: 'The Current-Affairs Engine', branches: ['Current Affairs'] },
     ],
   },

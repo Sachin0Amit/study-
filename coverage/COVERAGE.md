@@ -16,10 +16,10 @@
 
 - **Subjects:** 140
 - **Books (master volumes):** 140
-- **Chapters:** 889
-- **Sections (lessons):** 4696
+- **Chapters:** 894
+- **Sections (lessons):** 4681
 
-## Foundations — 7 subjects
+## Foundations — 6 subjects
 
 ### Mathematics (`mathematics`)
 
@@ -225,15 +225,6 @@
 - **Ch 11. Writing, Grammar & Composition** `ku-x-english-complete-writing-grammar-and-composition` — 4 sections: Business Correspondence: Formal Letters, Memos, Email and the Précis; Punctuation Mechanics: Commas, Semicolons, Apostrophes and Dashes; The Argument Essay: Thesis, Evidence and Counterargument; Coherence, Cohesion and Lexical Resource: Writing That Reads Smoothly
 - **Ch 12. Speaking & Listening** `ku-x-english-complete-speaking-and-listening` — 1 sections: The Long Turn: Speaking Fluently Under Exam Conditions
 - **Ch 13. Creative Writing** `ku-x-english-complete-creative-writing` — 1 sections: Three Acts, Save the Cat: Story Structure That Grips
-
-### Aptitude & Reasoning (`aptitude`)
-
-*Sharpen every kind of thinking* — 4 chapters · 26 sections
-
-- **Ch 1. Reasoning & Problem Solving** `apt-r1` — 6 sections: Analogies, Classification & Series; Coding–Decoding, Blood Relations & Direction Sense; Syllogisms, Statements & Logical Deduction; Seating Arrangements, Puzzles & Order–Ranking; Venn Diagrams, Calendar & Clock Problems; Non-Verbal Reasoning: Figures, Paper Folding & Mirror Images
-- **Ch 2. General Awareness & Current Affairs** `apt-g1` — 6 sections: Current Affairs: National & International; Indian History, Polity & Constitution; Geography, Economy & Culture; Defence & Security: Defence-Research Missions, Labs & Products; Science & Technology in News; Awards, Sports, Important Days & Organizations
-- **Ch 3. General Science** `apt-gensci` — 6 sections: Physics Fundamentals; Chemistry Fundamentals; Biology: Cells, Genetics & Human Physiology; Ecology & Everyday Science; Space & Defence Science; Recent Developments in Science & Technology
-- **Ch 4. Quantitative Aptitude & Numerical Ability** `apt-q1` — 8 sections: Number Systems, HCF & LCM, Surds and Indices; Percentages, Profit & Loss, Discount and Interest; Ratio, Proportion, Averages, Mixtures & Partnership; Time & Work, Pipes, Time–Speed–Distance, Trains & Boats; Algebra, Geometry, Mensuration & Trigonometry Basics; Elementary Statistics & Data Interpretation; Data Interpretation: Tables, Charts & Caselets; Data Sufficiency & Quantity Comparison
 
 ### Study Skills & Learning Science (`ku-study-skills`)
 
@@ -795,23 +786,37 @@
 - **Ch 5. Mechatronic System Design & Modeling** `mech-modeling` — 6 sections: The Mechatronic Design Process; System Modeling Across Domains; Time & Frequency Domain Response; Controllers for Mechatronic Plants; Simulation-Driven Design & Digital Twins; Case Studies
 - **Ch 6. Mobile & Autonomous Robotics** `mech-mobile-robotics` — 6 sections: Locomotion Concepts; Localization & Mapping Fundamentals; Path Planning; Navigation Stacks & Obstacle Avoidance; Robot Programming Frameworks; Ethics & Safety of Autonomous Systems
 
-## Aptitude & Test Preparation — 2 subjects
+## Aptitude & Test Preparation — 3 subjects
 
 ### Quantitative Aptitude (`ku-quantitative-aptitude`)
 
-*Numbers at examination speed* — 1 chapters · 5 sections
+*Numbers at examination speed* — 3 chapters · 7 sections
 
 - **Ch 1. Number System Foundations** `ku-quantitative-aptitude-number-system-foundations` — 5 sections: Place Value and the Number Families: The Ground Under Every Aptitude Question; Divisibility Rules and Digit Sums: Twenty-Second Factor Detection; Factors, HCF and LCM: The Two Numbers Behind a Thousand Word Problems; Remainders and Cyclicity: Units Digits of Enormous Powers in Fifteen Seconds; Fractions, Decimals and the Comparison Short-Cuts: Ordering Any Two Numbers in Ten Seconds
+- **Ch 2. Statistics & Data Interpretation** `ku-quantitative-aptitude-statistics-and-data-interpretation` — 1 sections: Tables and Caselets: Reading Data at Examination Speed
+- **Ch 3. Data Sufficiency & Quantity Comparison** `ku-quantitative-aptitude-data-sufficiency-and-quantity-comparison` — 1 sections: Quantity A versus Quantity B: The Comparison Decision Ladder
 
 ### Logical Reasoning (`ku-logical-reasoning`)
 
-*Every kind of thinking, tested* — 5 chapters · 7 sections
+*Every kind of thinking, tested* — 9 chapters · 12 sections
 
 - **Ch 1. Foundations of Logical Thinking** `ku-logical-reasoning-foundations-of-logical-thinking` — 1 sections: Induction, Deduction and the Square of Opposition
 - **Ch 2. Deduction: Syllogisms & Coded Logic** `ku-logical-reasoning-deduction-syllogisms-and-coded-logic` — 1 sections: Coded Inequalities: Decoding Order Statements into Valid Conclusions
-- **Ch 3. Non-Verbal & Abstract Reasoning** `ku-logical-reasoning-non-verbal-and-abstract-reasoning` — 1 sections: Nonverbal Reasoning: Shape Attributes, Series and Rule Detection
-- **Ch 4. Critical Reasoning** `ku-logical-reasoning-critical-reasoning` — 3 sections: Applying Principles: From Rule to Case; True, False, Can’t Tell: Judging Claims Against the Passage; Critical Reasoning: Breaking Down Arguments for Exams
-- **Ch 5. Decision Making & Judgement** `ku-logical-reasoning-decision-making-and-judgement` — 1 sections: Situational Judgement: Integrity, Perspective Taking and Teamwork
+- **Ch 3. Series, Analogies & Classification** `ku-logical-reasoning-series-analogies-and-classification` — 1 sections: Analogies, Classification and Series: Playing the Relationship Game
+- **Ch 4. Relations, Directions & Ordering** `ku-logical-reasoning-relations-directions-and-ordering` — 1 sections: Ordering and Ranking: Positions as Constraints
+- **Ch 5. Arrangements & Puzzles** `ku-logical-reasoning-arrangements-and-puzzles` — 1 sections: Seating Arrangements: The Clue Ledger for Linear and Circular Puzzles
+- **Ch 6. Clocks, Calendars & Mathematical Logic** `ku-logical-reasoning-clocks-calendars-and-mathematical-logic` — 1 sections: Clocks and Calendars: Angles, Odd Days and Repeating Cycles
+- **Ch 7. Non-Verbal & Abstract Reasoning** `ku-logical-reasoning-non-verbal-and-abstract-reasoning` — 2 sections: Nonverbal Reasoning: Shape Attributes, Series and Rule Detection; Paper Folding, Cutting and the Figure Matrix: Non-Verbal Reasoning at Speed
+- **Ch 8. Critical Reasoning** `ku-logical-reasoning-critical-reasoning` — 3 sections: Applying Principles: From Rule to Case; True, False, Can’t Tell: Judging Claims Against the Passage; Critical Reasoning: Breaking Down Arguments for Exams
+- **Ch 9. Decision Making & Judgement** `ku-logical-reasoning-decision-making-and-judgement` — 1 sections: Situational Judgement: Integrity, Perspective Taking and Teamwork
+
+### General Awareness (`ku-general-awareness`)
+
+*The world, recall-ready* — 3 chapters · 4 sections
+
+- **Ch 1. Indian History Essentials** `ku-general-awareness-indian-history-essentials` — 1 sections: Landmark Events in Indian and World History: The Recall Ladder
+- **Ch 2. Static GK: Awards, Sports, Culture, Books & Organizations** `ku-general-awareness-static-gk-awards-sports-culture-books-and-organizations` — 2 sections: Indian Art, Culture and Heritage: The Static-GK Atlas; Awards, Sports and Persons in News: The Honours Map
+- **Ch 3. The Current-Affairs Engine** `ku-general-awareness-the-current-affairs-engine` — 1 sections: The Current-Affairs Engine: A Twelve-Month Recall System
 
 ## Life Sciences — 13 subjects
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T19:54:16.999Z",
+  "generatedAt": "2026-10-31T21:38:02.420Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 140,
     "books": 140,
-    "chapters": 889,
-    "sections": 4696
+    "chapters": 894,
+    "sections": 4681
   },
   "subjects": [
     {
@@ -10945,186 +10945,6 @@
               "id": "ku-art-story-structure",
               "number": 13.1,
               "title": "Three Acts, Save the Cat: Story Structure That Grips"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "aptitude",
-      "name": "Aptitude & Reasoning",
-      "group": "Foundations",
-      "tagline": "Sharpen every kind of thinking",
-      "chapterCount": 4,
-      "sectionCount": 26,
-      "chapters": [
-        {
-          "id": "apt-r1",
-          "number": 1,
-          "title": "Reasoning & Problem Solving",
-          "shortTitle": "Reasoning",
-          "bookId": "aptitude-complete",
-          "sectionCount": 6,
-          "sections": [
-            {
-              "id": "apt-r1-s1",
-              "number": 1,
-              "title": "Analogies, Classification & Series"
-            },
-            {
-              "id": "apt-r1-s2",
-              "number": 2,
-              "title": "Coding–Decoding, Blood Relations & Direction Sense"
-            },
-            {
-              "id": "apt-r1-s3",
-              "number": 3,
-              "title": "Syllogisms, Statements & Logical Deduction"
-            },
-            {
-              "id": "apt-r1-s4",
-              "number": 4,
-              "title": "Seating Arrangements, Puzzles & Order–Ranking"
-            },
-            {
-              "id": "apt-r1-s5",
-              "number": 5,
-              "title": "Venn Diagrams, Calendar & Clock Problems"
-            },
-            {
-              "id": "apt-r1-s6",
-              "number": 6,
-              "title": "Non-Verbal Reasoning: Figures, Paper Folding & Mirror Images"
-            }
-          ]
-        },
-        {
-          "id": "apt-g1",
-          "number": 2,
-          "title": "General Awareness & Current Affairs",
-          "shortTitle": "General Awareness",
-          "bookId": "aptitude-complete",
-          "sectionCount": 6,
-          "sections": [
-            {
-              "id": "apt-g1-s1",
-              "number": 1,
-              "title": "Current Affairs: National & International"
-            },
-            {
-              "id": "apt-g1-s2",
-              "number": 2,
-              "title": "Indian History, Polity & Constitution"
-            },
-            {
-              "id": "apt-g1-s3",
-              "number": 3,
-              "title": "Geography, Economy & Culture"
-            },
-            {
-              "id": "apt-g1-s4",
-              "number": 4,
-              "title": "Defence & Security: Defence-Research Missions, Labs & Products"
-            },
-            {
-              "id": "apt-g1-s5",
-              "number": 5,
-              "title": "Science & Technology in News"
-            },
-            {
-              "id": "apt-g1-s6",
-              "number": 6,
-              "title": "Awards, Sports, Important Days & Organizations"
-            }
-          ]
-        },
-        {
-          "id": "apt-gensci",
-          "number": 3,
-          "title": "General Science",
-          "shortTitle": "General Science",
-          "bookId": "aptitude-complete",
-          "sectionCount": 6,
-          "sections": [
-            {
-              "id": "apt-gensci-s1",
-              "number": 1,
-              "title": "Physics Fundamentals"
-            },
-            {
-              "id": "apt-gensci-s2",
-              "number": 2,
-              "title": "Chemistry Fundamentals"
-            },
-            {
-              "id": "apt-gensci-s3",
-              "number": 3,
-              "title": "Biology: Cells, Genetics & Human Physiology"
-            },
-            {
-              "id": "apt-gensci-s4",
-              "number": 4,
-              "title": "Ecology & Everyday Science"
-            },
-            {
-              "id": "apt-gensci-s5",
-              "number": 5,
-              "title": "Space & Defence Science"
-            },
-            {
-              "id": "apt-gensci-s6",
-              "number": 6,
-              "title": "Recent Developments in Science & Technology"
-            }
-          ]
-        },
-        {
-          "id": "apt-q1",
-          "number": 4,
-          "title": "Quantitative Aptitude & Numerical Ability",
-          "shortTitle": "Quantitative Aptitude",
-          "bookId": "aptitude-complete",
-          "sectionCount": 8,
-          "sections": [
-            {
-              "id": "apt-q1-s1",
-              "number": 1,
-              "title": "Number Systems, HCF & LCM, Surds and Indices"
-            },
-            {
-              "id": "apt-q1-s2",
-              "number": 2,
-              "title": "Percentages, Profit & Loss, Discount and Interest"
-            },
-            {
-              "id": "apt-q1-s3",
-              "number": 3,
-              "title": "Ratio, Proportion, Averages, Mixtures & Partnership"
-            },
-            {
-              "id": "apt-q1-s4",
-              "number": 4,
-              "title": "Time & Work, Pipes, Time–Speed–Distance, Trains & Boats"
-            },
-            {
-              "id": "apt-q1-s5",
-              "number": 5,
-              "title": "Algebra, Geometry, Mensuration & Trigonometry Basics"
-            },
-            {
-              "id": "apt-q1-s6",
-              "number": 6,
-              "title": "Elementary Statistics & Data Interpretation"
-            },
-            {
-              "id": "apt-q1-s7",
-              "number": 7,
-              "title": "Data Interpretation: Tables, Charts & Caselets"
-            },
-            {
-              "id": "apt-q1-s8",
-              "number": 8,
-              "title": "Data Sufficiency & Quantity Comparison"
             }
           ]
         }
@@ -26740,8 +26560,8 @@
       "name": "Quantitative Aptitude",
       "group": "Aptitude & Test Preparation",
       "tagline": "Numbers at examination speed",
-      "chapterCount": 1,
-      "sectionCount": 5,
+      "chapterCount": 3,
+      "sectionCount": 7,
       "chapters": [
         {
           "id": "ku-quantitative-aptitude-number-system-foundations",
@@ -26777,6 +26597,36 @@
               "title": "Fractions, Decimals and the Comparison Short-Cuts: Ordering Any Two Numbers in Ten Seconds"
             }
           ]
+        },
+        {
+          "id": "ku-quantitative-aptitude-statistics-and-data-interpretation",
+          "number": 2,
+          "title": "Statistics & Data Interpretation",
+          "shortTitle": "Statistics & Data Interpretation",
+          "bookId": "ku-quantitative-aptitude",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-qa-tables-caselets",
+              "number": 2.1,
+              "title": "Tables and Caselets: Reading Data at Examination Speed"
+            }
+          ]
+        },
+        {
+          "id": "ku-quantitative-aptitude-data-sufficiency-and-quantity-comparison",
+          "number": 3,
+          "title": "Data Sufficiency & Quantity Comparison",
+          "shortTitle": "Data Sufficiency & Quantity Comparison",
+          "bookId": "ku-quantitative-aptitude",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-qa-quantity-comparison",
+              "number": 3.1,
+              "title": "Quantity A versus Quantity B: The Comparison Decision Ladder"
+            }
+          ]
         }
       ]
     },
@@ -26785,8 +26635,8 @@
       "name": "Logical Reasoning",
       "group": "Aptitude & Test Preparation",
       "tagline": "Every kind of thinking, tested",
-      "chapterCount": 5,
-      "sectionCount": 7,
+      "chapterCount": 9,
+      "sectionCount": 12,
       "chapters": [
         {
           "id": "ku-logical-reasoning-foundations-of-logical-thinking",
@@ -26819,23 +26669,88 @@
           ]
         },
         {
-          "id": "ku-logical-reasoning-non-verbal-and-abstract-reasoning",
+          "id": "ku-logical-reasoning-series-analogies-and-classification",
           "number": 3,
-          "title": "Non-Verbal & Abstract Reasoning",
-          "shortTitle": "Non-Verbal & Abstract Reasoning",
+          "title": "Series, Analogies & Classification",
+          "shortTitle": "Series, Analogies & Classification",
           "bookId": "ku-logical-reasoning",
           "sectionCount": 1,
           "sections": [
             {
-              "id": "ku-fnd-visual-pattern-rules",
+              "id": "ku-lr-analogies-classification",
               "number": 3.1,
+              "title": "Analogies, Classification and Series: Playing the Relationship Game"
+            }
+          ]
+        },
+        {
+          "id": "ku-logical-reasoning-relations-directions-and-ordering",
+          "number": 4,
+          "title": "Relations, Directions & Ordering",
+          "shortTitle": "Relations, Directions & Ordering",
+          "bookId": "ku-logical-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lr-ordering-ranking",
+              "number": 4.1,
+              "title": "Ordering and Ranking: Positions as Constraints"
+            }
+          ]
+        },
+        {
+          "id": "ku-logical-reasoning-arrangements-and-puzzles",
+          "number": 5,
+          "title": "Arrangements & Puzzles",
+          "shortTitle": "Arrangements & Puzzles",
+          "bookId": "ku-logical-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lr-seating-arrangements",
+              "number": 5.1,
+              "title": "Seating Arrangements: The Clue Ledger for Linear and Circular Puzzles"
+            }
+          ]
+        },
+        {
+          "id": "ku-logical-reasoning-clocks-calendars-and-mathematical-logic",
+          "number": 6,
+          "title": "Clocks, Calendars & Mathematical Logic",
+          "shortTitle": "Clocks, Calendars & Mathematical Logic",
+          "bookId": "ku-logical-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-lr-clock-calendar",
+              "number": 6.1,
+              "title": "Clocks and Calendars: Angles, Odd Days and Repeating Cycles"
+            }
+          ]
+        },
+        {
+          "id": "ku-logical-reasoning-non-verbal-and-abstract-reasoning",
+          "number": 7,
+          "title": "Non-Verbal & Abstract Reasoning",
+          "shortTitle": "Non-Verbal & Abstract Reasoning",
+          "bookId": "ku-logical-reasoning",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-fnd-visual-pattern-rules",
+              "number": 7.1,
               "title": "Nonverbal Reasoning: Shape Attributes, Series and Rule Detection"
+            },
+            {
+              "id": "ku-lr-paper-folding-figure-matrix",
+              "number": 7.2,
+              "title": "Paper Folding, Cutting and the Figure Matrix: Non-Verbal Reasoning at Speed"
             }
           ]
         },
         {
           "id": "ku-logical-reasoning-critical-reasoning",
-          "number": 4,
+          "number": 8,
           "title": "Critical Reasoning",
           "shortTitle": "Critical Reasoning",
           "bookId": "ku-logical-reasoning",
@@ -26843,24 +26758,24 @@
           "sections": [
             {
               "id": "ku-eng-principle-application",
-              "number": 4.1,
+              "number": 8.1,
               "title": "Applying Principles: From Rule to Case"
             },
             {
               "id": "ku-eng-verbal-reasoning-passage-claims",
-              "number": 4.2,
+              "number": 8.2,
               "title": "True, False, Can’t Tell: Judging Claims Against the Passage"
             },
             {
               "id": "ku-eng-critical-reasoning-arguments",
-              "number": 4.3,
+              "number": 8.3,
               "title": "Critical Reasoning: Breaking Down Arguments for Exams"
             }
           ]
         },
         {
           "id": "ku-logical-reasoning-decision-making-and-judgement",
-          "number": 5,
+          "number": 9,
           "title": "Decision Making & Judgement",
           "shortTitle": "Decision Making & Judgement",
           "bookId": "ku-logical-reasoning",
@@ -26868,8 +26783,68 @@
           "sections": [
             {
               "id": "ku-sj-situational-judgement",
-              "number": 5.1,
+              "number": 9.1,
               "title": "Situational Judgement: Integrity, Perspective Taking and Teamwork"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-general-awareness",
+      "name": "General Awareness",
+      "group": "Aptitude & Test Preparation",
+      "tagline": "The world, recall-ready",
+      "chapterCount": 3,
+      "sectionCount": 4,
+      "chapters": [
+        {
+          "id": "ku-general-awareness-indian-history-essentials",
+          "number": 1,
+          "title": "Indian History Essentials",
+          "shortTitle": "Indian History Essentials",
+          "bookId": "ku-general-awareness",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-ga-history-landmark-events",
+              "number": 1.1,
+              "title": "Landmark Events in Indian and World History: The Recall Ladder"
+            }
+          ]
+        },
+        {
+          "id": "ku-general-awareness-static-gk-awards-sports-culture-books-and-organizations",
+          "number": 2,
+          "title": "Static GK: Awards, Sports, Culture, Books & Organizations",
+          "shortTitle": "Static GK: Awards, Sports, Culture, Books & Organizations",
+          "bookId": "ku-general-awareness",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-ga-art-culture-heritage",
+              "number": 2.1,
+              "title": "Indian Art, Culture and Heritage: The Static-GK Atlas"
+            },
+            {
+              "id": "ku-ga-awards-sports-persons",
+              "number": 2.2,
+              "title": "Awards, Sports and Persons in News: The Honours Map"
+            }
+          ]
+        },
+        {
+          "id": "ku-general-awareness-the-current-affairs-engine",
+          "number": 3,
+          "title": "The Current-Affairs Engine",
+          "shortTitle": "The Current-Affairs Engine",
+          "bookId": "ku-general-awareness",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-ga-current-affairs-engine",
+              "number": 3.1,
+              "title": "The Current-Affairs Engine: A Twelve-Month Recall System"
             }
           ]
         }
