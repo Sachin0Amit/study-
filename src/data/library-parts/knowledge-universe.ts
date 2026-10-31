@@ -16,7 +16,7 @@
 /*  mathematics from any source lands in the Mathematics Master        */
 /*  Library, physics in the Physics Master Library, and the rest       */
 /*  each get a single unified book. The bridge adapts automatically    */
-/*  as ../knowledge/fields/*.ts grows.                                 */
+/*  as the subject-wise tree ../knowledge/subjects/* grows.            */
 /*                                                                     */
 /*  DEDUP RULE: topics listed in ../knowledge/dedup.ts are already     */
 /*  explained elsewhere in the Library and are filtered out here —     */
@@ -865,7 +865,9 @@ export const KNOWLEDGE_BOOKS: BookMeta[] = [
     const declaredNames = tax.chapters.map((c) => c.name).filter((name) => bucket.chapters.has(name))
     const restNames = [...bucket.chapters.keys()].filter((name) => !declaredNames.includes(name))
     const chapterTitles = [...declaredNames, ...restNames].join(', ')
-    const sourceAreas = [...new Set(topics.map((t) => t.field))].join(', ')
+    /* sorted so the string is deterministic regardless of source-file layout
+       (field-wise reorganization 2026-11-02 must not alter serialized output) */
+    const sourceAreas = [...new Set(topics.map((t) => t.field))].sort().join(', ')
     return {
       id: `ku-${tax.key}`,
       subjectId: `ku-${tax.key}`,

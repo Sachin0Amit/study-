@@ -682,7 +682,9 @@ export const TOPIC_ALIASES: Record<string, string> = {
 
   /* ---- Exam-gap pass X45 (verified 2026-10-25) --------------------
    * Six audited-unmapped syllabus points → lessons authored this pass
-   * (src/data/knowledge/fields/x45-exam-gap-pass.ts). Each target
+   * (legacy x45-exam-gap-pass.ts; since the 2026-11-02 field-wise
+   * reorganization these lessons live under the subject-wise tree
+   * src/data/knowledge/subjects/). Each target
    * lesson genuinely teaches the full syllabus point (both accountancy
    * units map to the one computerized-accounting lesson, which covers
    * components, vouchers, account creation and report generation).

@@ -1,0 +1,431 @@
+/**
+ * Knowledge Universe — Geography — Chapter 02: Human Geography
+ * 4 lessons · ~5,235 words
+ * field: Human Geography
+ * legacy sources: social-sciences.ts, x28-gaokao-skills-pass.ts
+ *
+ * Auto-organized by scripts/reorganize-knowledge-fields.ts (2026-11-02);
+ * edit freely — append new lessons to this array, then run:
+ *   bun run scripts/serialize-content.ts
+ *
+ * Taxonomy match: fields [Human Geography]
+ *
+ * Lessons (snapshot at reorganization):
+ *   02.1 geo-regional-development-sustainability — Regional Development and Sustainability: Places, Resources and the Long Term
+ *   02.2 geog-population-migration — Population Geography: Where Humans Live and Why
+ *   02.3 geog-economic-cultural-landscapes — Landscapes of Trade and Belief: Economic and Cultural Geography
+ *   02.4 geog-demographic-transition — The Demographic Transition: The Arithmetic of Populations
+ */
+import type { KnowledgeTopic } from '../../types'
+
+export const geographyCh02: KnowledgeTopic[] = [
+  {
+    id: 'geo-regional-development-sustainability',
+    title: 'Regional Development and Sustainability: Places, Resources and the Long Term',
+    domain: 'Social Sciences',
+    field: 'Human Geography',
+    branch: 'Development and Sustainability',
+    tier: 'intermediate',
+    concepts: [
+      'The regional analysis toolkit',
+      'Core-periphery patterns and industrial transfer',
+      'Resource regions: boom, depletion and transformation',
+      'Land management and environmental governance',
+      'National resource security',
+      'The Brundtland definition of sustainable development',
+      'The three pillars: environmental, social, economic',
+      'Sustainability indicators and composite measures',
+      'GIS and remote sensing for regional planning',
+    ],
+    words: 1757,
+    readMins: 9,
+    addedOn: '2026-10-24',
+    blocks: [
+      { kind: 'heading', text: 'Why this matters' },
+      {
+        kind: 'para',
+        text: 'Regions are not equal: one sits on coal and iron, another on a deep harbour, a third on nothing but skilled people and good roads. Development geography asks why these differences matter, how places convert endowments into wellbeing, and — the modern constraint — how they do so without consuming the base that makes it possible. The classic definition comes from the 1987 Brundtland Report, quoted across the open geography texts: sustainable development \u201cseeks to meet the needs of the present without compromising the ability of future generations to meet their own needs\u201d. Every regional question in this topic is that definition applied to a place.',
+      },
+      {
+        kind: 'para',
+        text: 'The topic\u2019s exam questions cluster into four moves: analyse a region (what advantages and constraints does it have?), explain a change (why did industry move, decline or transform?), evaluate a strategy (does this plan balance the three pillars?), and read the tools (maps, GIS layers, indicator tables). This lesson builds each move in turn, with the vocabulary — carrying capacity, resource security, industrial structure, environmental governance — fixed precisely, because half the marks in this topic are vocabulary deployed accurately.',
+      },
+      { kind: 'heading', text: 'The regional analysis toolkit' },
+      {
+        kind: 'para',
+        text: 'Analysing a region starts with four inventories. Physical base: relief, climate, water, soils, minerals — the given cards. Location and accessibility: distance to markets and ports, transport links, proximity to growth centres; a mediocre resource near a motorway beats a rich one beyond mountains. Human factors: population (size, skills, age structure), capital, technology and institutions. Economic structure: the share of primary (extraction and farming), secondary (manufacturing) and tertiary (services) activity, and the direction of travel — development classically shifts employment from primary through secondary into tertiary, and a region stuck in raw-material export has a structural problem, not a temporary one.',
+      },
+      {
+        kind: 'para',
+        text: 'Two patterns organize the map. Core-periphery: development concentrates where capital, labour and infrastructure pool, leaving peripheral regions supplying raw materials and labour — and policy tries to shift this with transport investment, tax incentives and relocated institutions. Industrial transfer: as core regions grow expensive, labour-intensive manufacturing migrates toward cheaper peripheries, which gain jobs but inherit pollution — the classic trade-off question. When a question shows a region\u2019s employment data across decades, the expected answer names the structural shift, the driving costs or technologies, and the social consequences on both sides of the move.',
+      },
+      { kind: 'heading', text: 'Resource regions: boom, depletion, transformation' },
+      {
+        kind: 'para',
+        text: 'Resource endowments are gifts with strings. The boom phase concentrates investment and population fast; the depletion phase exposes the region\u2019s dependence as grades fall and costs rise; and the transformation phase decides the region\u2019s fate — diversify or decline. The classic transformation playbook, visible in old industrial regions worldwide, runs: extend the resource\u2019s value chain (refine and manufacture locally rather than ship raw ore), develop substitute industries (equipment manufacture, services, tourism on industrial heritage), retrain the workforce, and repair the environment (subsidence zones into wetlands, headframes into museums) so the place can attract the people the new industries need.',
+      },
+      {
+        kind: 'para',
+        text: 'The evaluation questions live in the trade-offs. Extending the value chain raises income but deepens dependence if the resource still dominates; environmental repair costs money now and repays in attractiveness and health later; retraining works only if the new industries actually exist nearby. A strong answer names at least two pillars affected by each measure — an economic gain with a social cost, an environmental cost deferred — and that pillar-habit is exactly what the three-pillars section below formalizes.',
+      },
+      { kind: 'heading', text: 'Land management and environmental governance' },
+      {
+        kind: 'para',
+        text: 'Land management is the deliberate matching of use to capability: farming on fertile plains, grazing on steppe with rotation to prevent desertification, terracing and afforestation on erodible slopes, wetland protection where floods buffer. Mismanagement has signatures the questions expect you to read — overgrazing and over-cultivation leading to soil loss and dust, over-extraction draining aquifers, encroaching construction eating farmland. Environmental governance then supplies the institutions: regulation and emission standards, protected areas, payment for ecosystem services, and cross-boundary coordination, since rivers and airsheds ignore administrative lines. International governance follows the same logic at scale — the Paris Agreement, cited in the open geography texts as the emblem of negotiated global resource responsibility, shows the same architecture of targets, reporting and review.',
+      },
+      {
+        kind: 'para',
+        text: 'National resource security frames the strategic layer: reliable access to the food, energy, water and minerals a country cannot safely depend on importing under stress. The instruments are strategic reserves, diversification of suppliers and energy mix, efficiency standards that stretch domestic supply, and — for food — maintaining arable-land floors and agricultural technology. Resource security questions usually ask you to weigh self-sufficiency against cost: full autarky is expensive; full dependence is fragile; the defensible answer is diversified sources plus reserves plus efficiency, argued with the region\u2019s actual constraints.',
+      },
+      { kind: 'heading', text: 'Three pillars, indicators and GIS' },
+      {
+        kind: 'para',
+        text: 'Sustainability evaluation uses the three-pillar frame the open texts call the integration of environmental, social and economic considerations — sometimes drawn as a three-legged stool, where shortening any leg topples the seat. Environmental: emissions, water quality, forest and wetland cover, biodiversity. Social: health, education, equity, housing. Economic: income levels and diversity, employment quality, fiscal capacity. Composite frameworks such as the Sustainable Development Goals bundle indicators across all three, and a plan is judged sustainable only when its indicators move in the right directions together — growth funded by an aquifer drawn down fails the frame even though the economic leg looks splendid.',
+      },
+      {
+        kind: 'para',
+        text: 'The modern toolkit is geographic information technology. GIS layers maps — relief, land use, population, transport, pollution — in one coordinate frame, so planners can overlay a proposed road on farmland grades and flood zones and see conflicts before concrete pours; it powers site selection, service-area analysis and change detection. Remote sensing (satellite imagery) monitors the variables GIS stores — urban expansion, deforestation, crop health, glacier retreat — repeatedly and cheaply. Questions present this layer pair and ask what a planner could detect: the answer is the intersection — the data sees the change, the analysis attributes it.',
+      },
+      {
+        kind: 'example',
+        title: 'Worked Example — Evaluating a coal region\u2019s transition plan',
+        steps: [
+          'Scenario: a region with two centuries of coal mining faces depleted seams. The plan: a coal-equipment manufacturing park, a logistics hub on a new rail link, retraining subsidies, and conversion of subsided land into a wetland park.',
+          'Structure analysis: the plan attacks the depletion phase with diversification (equipment manufacture reuses existing engineering skills), connectivity (the rail hub recruits the tertiary sector), and human capital (retraining).',
+          'Pillar check — economic: income source broadens from one commodity to manufacture plus logistics; risk falls. Social: retraining cushions miners; the wetland park improves health amenity. Environmental: mining pressure ends; land is remediated rather than abandoned.',
+          'Trade-offs to name: equipment manufacturing still depends on the very industry that is shrinking — a second-order exposure; retraining fails wherever the new employers are distant; remediation funds compete with pensions.',
+          'Verdict discipline: the plan is sustainable in direction, not guaranteed in outcome — state which indicators to watch over five years (employment mix, air and water quality, population trend) and the evaluation becomes evidence-based rather than rhetorical.',
+        ],
+      },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'The Brundtland Report defines sustainable development as development that',
+            options: [
+              'maximizes present output regardless of future cost',
+              'meets present needs without compromising future generations\u2019 ability to meet theirs',
+              'preserves resources unused so future generations have more',
+              'balances imports and exports across regions',
+            ],
+            answer: 1,
+            explain: 'The 1987 definition balances present and future — neither exhausting the base (answer 1) nor freezing it (answer 3). It is the sentence every marker looks for.',
+          },
+          {
+            q: 'A region\u2019s employment shifts from 60 per cent mining to 45 per cent services in two decades. What does this indicate?',
+            options: [
+              'the region is deindustrializing and failing',
+              'a structural transition typical of development, though its cause (depletion versus diversification) needs checking',
+              'statistical error in the census',
+              'that services cannot count as real economic activity',
+            ],
+            answer: 1,
+            explain: 'Primary-to-tertiary shift is the classic development trajectory. Whether it is healthy depends on the driver — planned diversification or forced depletion — which data on output and employment quality reveal.',
+          },
+          {
+            q: 'As a core region\u2019s wages rise, labour-intensive factories relocate to the periphery. Which pairing of consequence is most defensible?',
+            options: [
+              'jobs leave the core entirely; the periphery gains nothing',
+              'the core sheds routine jobs but retains design and finance; the periphery gains employment but inherits pollution',
+              'both regions lose employment overall',
+              'pollution always falls in both regions',
+            ],
+            answer: 1,
+            explain: 'Industrial transfer splits the value chain: the core keeps high-value functions while routine production — and its emissions — move outward. Both standard gains and the standard externality travel together.',
+          },
+          {
+            q: 'Which measure best illustrates strategic resource security policy?',
+            options: [
+              'exporting more raw materials for revenue',
+              'holding strategic reserves while diversifying suppliers and raising efficiency standards',
+              'banning all imports of every resource',
+              'privatizing all water sources without regulation',
+            ],
+            answer: 1,
+            explain: 'Security combines buffers (reserves), redundancy (diversified sources) and demand reduction (efficiency). Autarky is too rigid; dependence without buffers is too fragile.',
+          },
+          {
+            q: 'A planner overlays satellite-derived urban expansion on farmland-grade maps in GIS. What is this procedure\u2019s purpose?',
+            options: [
+              'decorating maps for presentations',
+              'detecting where growth conflicts with protected farmland so plans can be adjusted',
+              'replacing the need for any field survey forever',
+              'measuring only the population total',
+            ],
+            answer: 1,
+            explain: 'Layer overlay is GIS\u2019s core operation: remote sensing detects the change, GIS attributes it against other layers, and the conflict zones enter the planning process.',
+          },
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Common Pitfalls',
+        tone: 'warn',
+        text: 'Analysing a region by one factor alone — answers need physical, locational, human and structural inventories together. Treating resource endowment as destiny; institutions and location routinely beat geology. Judging a plan by its economic pillar only — sustainability questions exist to test the three-legged stool. Confusing industrial transfer (production moves) with deindustrialization (industry disappears) — the core usually keeps the high-value head functions. Naming GIS as if it were a single sensor: GIS stores and analyses layers; remote sensing observes. Forgetting that \u201csome\u201d in resource-security answers means diversified buffers, never autarky or naked dependence.',
+      },
+      {
+        kind: 'callout',
+        title: 'Where to go next',
+        tone: 'path',
+        text: 'Prerequisites: none, though the climate-feedbacks lesson deepens the environmental pillar. Follow with the economics lessons on market efficiency (resource pricing) and the environment-domain topics for planetary-scale sustainability. Primary reading: LibreTexts, Cultural Geography ch.13.5 \u201cSustainable Development Overview\u201d (Brundtland definition, pillars, resource-management strategies, Paris Agreement) and LibreTexts, Sustainability: A Comprehensive Foundation for the three-legged-stool framing and indicator design (both CC licensed).',
+      },
+      { kind: 'heading', text: 'Five-Minute Recap' },
+      { kind: 'list', ordered: true, items: [
+        'Analyse a region on four inventories: physical, locational, human, structural.',
+        'Core-periphery and industrial transfer explain most maps of uneven development.',
+        'Resource regions live or die by transformation: value chains, substitutes, retraining, repair.',
+        'Brundtland: meet present needs without stealing from future ones.',
+        'Three pillars — environmental, social, economic — must move together.',
+        'GIS layers the evidence; remote sensing watches the change; security needs buffers plus diversity.',
+      ] },
+    ],
+  },
+  {
+    id: 'geog-population-migration',
+    title: 'Population Geography: Where Humans Live and Why',
+    domain: 'Social Sciences',
+    field: 'Human Geography',
+    branch: 'Population and Settlement',
+    tier: 'core',
+    concepts: [
+      'Distribution and the ecumene',
+      'The demographic transition',
+      'Pyramids: a population\'s autobiography',
+      'Migration: push, pull and friction',
+      'Forced displacement',
+      'The urban turn',
+    ],
+    words: 1072,
+    readMins: 5,
+    addedOn: '2026-10-18',
+    blocks: [
+      { kind: 'para', text: 'Eight billion people, most of the land nearly empty: humanity clusters on a small fraction of the Earth\'s surface, stacked into a few great concentrations and strung along coasts and rivers. Population geography — spatial demography — asks why people live where they do, how fast they grow, and what moves them from one countryside, one continent or one century to the next. Its toolkit is rates rather than raw counts, pyramids rather than averages, and a stubborn interest in the way births, deaths and migrants redraw the map every decade.' },
+      { kind: 'callout', title: 'Why this matters', tone: 'insight', text: 'Schools, pensions, hospitals, housing and climate adaptation are all downstream of population structure. Reading a pyramid is reading a country\'s future demand schedule; reading migration correctly, as choice or flight, decides whether policy meets people or myths.' },
+      { kind: 'heading', text: 'Core Concepts' },
+      { kind: 'para', text: 'Geographers map the ecumene — the permanently inhabited world — and its empty quarters: deserts, highlands, tundra and dense rainforest. The great clusters sit in East Asia, South Asia, Europe and northeastern North America, seated on fertile plains and coasts (the first-civilizations lesson covers their ancient roots). Density comes in two flavors: arithmetic (people over all land) and physiological (people over farmland) — Egypt, with over one hundred million people on the Nile\'s ribbon, is arithmetic-sparse but physiological-crowded.' },
+      { kind: 'para', text: 'The demographic transition model orders modern population history into stages. Stage one, high birth and death rates, survives nowhere. Stage two: death rates crash — sanitation, medicine, food — while births stay high, and population explodes. Stage three: births fall with urbanization, women\'s education and contraception. Stage four settles near replacement; stage five runs below it, into decline. The rate of natural increase equals the birth rate minus the death rate, divided by ten, in per cent.' },
+      { kind: 'para', text: 'A population pyramid plots males and females by age, and its shape is an autobiography: a wide base (Niger, median age about sixteen) means decades of growth already locked in; a narrow base and bulging middle (Japan, median near fifty) means shrinkage and aging. Scars record history — baby booms, wars\' missing young men, China\'s one-child echo. The same country, aged differently, plans different schools and different pensions.' },
+      { kind: 'para', text: 'Ernst Ravenstein derived migration "laws" from 1885 census data: most moves are short, migration proceeds by steps, and every flow has a counterflow. Everette Lee\'s 1966 scheme balanced push factors (poverty, war, drought), pull factors (jobs, family, safety) and intervening obstacles — distance, cost, borders. Wilbur Zelinsky\'s mobility transition matched migration eras to demographic ones: pre-transition societies move little; stage-two societies empty the countryside into cities. Remittances — several hundred billion dollars a year — now rival exports for many developing economies.' },
+      { kind: 'para', text: 'Not all movement is chosen. The 1951 Refugee Convention and its 1967 Protocol define a refugee by well-founded fear of persecution (the International Law lessons cover that machinery); those who never cross a border — internally displaced persons — outnumber refugees worldwide, and the UNHCR counted over one hundred million forcibly displaced in the 2020s. Climate-linked displacement cuts across every legal category, which is precisely what makes it slippery.' },
+      { kind: 'para', text: 'Humanity urbanized faster than it grew: half the world lived in cities by 2008, two-thirds are projected by mid-century, and nearly all the increase is in Asia and Africa. Why cities pull so hard is the agglomeration lesson\'s business; the population geographer tracks the flows — rural migrants, natural increase within cities, and the shrinkage of depopulating regions from Detroit to rural Japan.' },
+      { kind: 'example', title: 'Worked Example', steps: [
+        'Identify what is asked: a country has a birth rate of 32, a death rate of 12 and net emigration of 2 per thousand — find its annual growth rate and doubling time.',
+        'Recall: growth equals natural increase minus net migration loss; natural increase is (births − deaths)/10 in per cent, and the rule of 70 estimates doubling time.',
+        'Apply: natural increase is (32 − 12)/10 = 2.0 per cent; emigration trims 2/10 = 0.2, so growth is 1.8 per cent. Doubling time is 70/1.8 ≈ 39 years.',
+        'State the result: 1.8 per cent a year, doubling in under four decades — a late stage-two profile: fertility is falling, but population momentum keeps numbers climbing.',
+      ] },
+      { kind: 'heading', text: 'Applications in the Real World' },
+      { kind: 'list', items: [
+        'Census design: sampling hard-to-count urban and migrant populations without double-counting movers.',
+        'Schools and hospitals: cohort-survival projections place the next decade\'s desks and beds.',
+        'Immigration policy: points systems and quotas argue over pull factors governments can and cannot control.',
+        'Humanitarian logistics: refugee camp planning runs on age-sex data collected in the camps themselves.',
+        'Market sizing: consumer-goods firms plan entries from pyramid shapes, not population totals.',
+      ] },
+      { kind: 'callout', title: 'Common Pitfalls', tone: 'warn', text: 'Population is not destiny — Malthus\'s arithmetic has so far lost to innovation and demography\'s own feedbacks. The transition model summarizes one history, not a schedule; some regions\' fertility fell later and differently than Europe\'s. Extrapolating pyramids ignores policy shocks. And refugees, labor migrants and internally displaced persons are distinct legal categories — conflating them poisons both analysis and politics.' },
+      { kind: 'heading', text: 'Key Terms' },
+      { kind: 'terms', items: [
+        { term: 'ecumene', def: 'The permanently inhabited portion of the Earth\'s surface.' },
+        { term: 'physiological density', def: 'Population per unit of arable land, exposing pressure on farmland.' },
+        { term: 'demographic transition', def: 'The shift from high birth and death rates to low ones, via a growth surge.' },
+        { term: 'rate of natural increase', def: 'Birth rate minus death rate, expressed as a percentage per year.' },
+        { term: 'population pyramid', def: 'Paired age-sex bars whose shape records a population\'s history and future.' },
+        { term: 'push and pull factors', def: 'Lee\'s conditions driving people from origin and drawing them to destination.' },
+        { term: 'internally displaced person', def: 'Someone forced from home who has not crossed an international border.' },
+      ] },
+      { kind: 'quiz', items: [
+        {
+          q: 'In stage two of the demographic transition…',
+          options: ['birth rates fall first', 'death rates fall while births stay high', 'both rates are already low', 'population declines'],
+          answer: 1,
+          explain: 'Mortality gains arrive before fertility adjusts — the gap between them is the population explosion.',
+        },
+        {
+          q: 'At 1.8 per cent annual growth, the rule of 70 gives a doubling time of about…',
+          options: ['18 years', '70 years', '39 years', '25 years'],
+          answer: 2,
+          explain: '70 divided by the growth rate: 70/1.8 ≈ 39 years — the rule\'s whole arithmetic.',
+        },
+        {
+          q: 'An internally displaced person differs from a refugee because they…',
+          options: ['have not crossed an international border', 'carry passports', 'are always urban', 'count as voluntary migrants'],
+          answer: 0,
+          explain: 'Same coercion, different geography: staying inside the state\'s borders changes legal status and available protection.',
+        },
+        {
+          q: 'A constrictive pyramid with a median age near fifty suggests…',
+          options: ['rapid future growth', 'high fertility', 'heavy immigration', 'an aging, shrinking population'],
+          answer: 3,
+          explain: 'Narrow bases mean small incoming cohorts replacing large aging ones — Japan\'s shape, and its fiscal agenda.',
+        },
+      ] },
+    ],
+  },
+  {
+    id: 'geog-economic-cultural-landscapes',
+    title: 'Landscapes of Trade and Belief: Economic and Cultural Geography',
+    domain: 'Social Sciences',
+    field: 'Human Geography',
+    branch: 'Economic and Cultural Landscapes',
+    tier: 'core',
+    concepts: [
+      'Von Thünen: land use in rings',
+      'Weber: industry follows weights',
+      'Christaller: central place theory',
+      'Cultural regions and sequent occupance',
+      'Diffusion: how practices travel',
+      'Borders as geography\'s scissors',
+    ],
+    words: 1108,
+    readMins: 6,
+    addedOn: '2026-10-18',
+    blocks: [
+      { kind: 'para', text: 'Look down on any old countryside and you are reading arguments about rent. Dairy hugs the town, grain stretches beyond, and forest once stood where fuel was heavy to haul — Johann Heinrich von Thünen saw the rings from his 1826 estate and turned them into economics. Cultural geography reads the same landscapes for meaning: church spires, signage, field walls, the names on the map. This lesson pairs the two readings — the economic logic of location and the cultural layering of place — and ends at borders, where both are cut and sorted.' },
+      { kind: 'callout', title: 'Why this matters', tone: 'insight', text: 'Location models decide where warehouses, clinics and stores actually go; cultural geography explains why identical products, laws or policies land differently in different regions. Reading landscape as evidence is a portable skill — useful in planning, retail, heritage work and any job that asks "why exactly here?"' },
+      { kind: 'heading', text: 'Core Concepts' },
+      { kind: 'para', text: 'Von Thünen\'s Isolated State assumed a featureless plain and one market town, then asked what rational farmers do. Land nearest the market bears the highest rent, so only intensive, perishable, high-value uses — dairying, market gardening — can bid for it; bulky, low-value grain spreads outward; ranching takes the margin where land is nearly free. Transport cost, not soil, draws the rings. Bid-rent thinking resurfaced in city models (see the urban lesson), and the rings still show at forest frontiers, where roads and markets carve land use into zones.' },
+      { kind: 'para', text: 'Alfred Weber (1909) located industry by weights. Weight-losing processes — smelting, sugar refining — sit by the materials, hauling less away than they consume; weight-gaining ones — bottling, bread baking — sit by the market. Cheap labor can deflect a plant from the transport optimum, and agglomeration pulls firms together (the urban lesson treats those economies). Containerization and global value chains later dissolved the single-factory logic: cars are designed in one country and assembled in another.' },
+      { kind: 'para', text: 'Walter Christaller (1933) explained why towns come in sizes. Every service needs a threshold — the minimum customers required to survive — and serves a range — the distance shoppers will travel. Small services (bread, haircuts) have low thresholds and dot every village; big ones (surgery, concert halls) need huge thresholds and cluster in few cities. Nesting hexagonal market areas produces a regular hierarchy of hamlet, town and city — visible in the tidy spacing of American county seats.' },
+      { kind: 'para', text: 'Carl Sauer\'s Berkeley school defined the cultural landscape as nature reshaped by a culture group. Cultural regions come in kinds: formal (shared traits — language areas, the Bible Belt), functional (organized around a node — a metro\'s transit shed) and vernacular (perceived — "Dixie", mapped by Wilbur Zelinsky from residents\' own words). Derwent Whittlesey\'s sequent occupance reads a place as layered deposits — New Orleans stacks French, Spanish, American and immigrant plans on one delta.' },
+      { kind: 'para', text: 'Practices move as well as people. Torsten Hägerstrand mapped Swedish innovation diffusion in 1953 and found waves of adoption decaying with distance. Expansion diffusion is contagious (spreading to neighbors) or hierarchical (leapfrogging through big cities first — fashions arrive in capitals before towns); relocation diffusion carries culture with migrants. Time-space convergence — the shrinking of effective distance by transport and communication — keeps raising the tempo.' },
+      { kind: 'para', text: 'Borders cut the woven cloth. States come compact, elongated, prorupted, fragmented (Indonesia across seventeen thousand islands) or perforated (South Africa around Lesotho); some forty-four landlocked states pay a geographic tax on trade. Enclaves and exclaves — Baarle\'s Dutch-Belgian lace, Kaliningrad — sharpen the absurdity. The treaty law of borders belongs to the International Law lessons; geographically, borders filter migrants, prices, dialects and diseases, producing difference as surely as oceans do.' },
+      { kind: 'example', title: 'Worked Example', steps: [
+        'Identify what is asked: on a uniform plain, dairying nets 2,400 per hectare at the market and loses 60 per hectare per kilometer hauled; grain nets 1,200 and loses 20. Where does the boundary between them fall?',
+        'Recall: land goes to the use that can pay the highest rent at each distance, and each use\'s rent falls linearly with distance.',
+        'Apply: set the rents equal — 2,400 − 60d = 1,200 − 20d — so 1,200 = 40d and d = 30 kilometers.',
+        'State the result: dairying outbids grain within 30 kilometers of the market; beyond, grain pays more. Steeper transport costs — perishability — make steeper rent curves: that is why the milk is near.',
+      ] },
+      { kind: 'heading', text: 'Applications in the Real World' },
+      { kind: 'list', items: [
+        'Retail site selection: threshold and range calculated before a lease is signed.',
+        'Land-use policy: green belts and agricultural zoning argue with von Thünen\'s rings.',
+        'Heritage conservation: cultural-landscape inventories protect layers, not just monuments.',
+        'Market entry strategy: diffusion type decides whether to launch nationally or city by city.',
+        'Cross-border planning: transport corridors and enclaves negotiated as geography, not just law.',
+      ] },
+      { kind: 'callout', title: 'Common Pitfalls', tone: 'warn', text: 'The models assume isotropic plains and rational actors — terrain, history and policy bend every ring. Central place theory fits services, not specialized industrial cities or company towns. Culture is not a bounded container: it mixes, hybridizes and travels faster than the maps drawn around it. And borders do not only block — they also produce: smuggling corridors, twin cities and remittance economies live off the very lines they cross.' },
+      { kind: 'heading', text: 'Key Terms' },
+      { kind: 'terms', items: [
+        { term: 'bid-rent', def: 'The amount a use can pay for a location, falling with distance from the market.' },
+        { term: 'threshold', def: 'Christaller\'s minimum market population a service needs to survive.' },
+        { term: 'range', def: 'The maximum distance consumers will travel for a service.' },
+        { term: 'vernacular region', def: 'A region defined by residents\' perceptions rather than formal criteria.' },
+        { term: 'sequent occupance', def: 'The layering of successive cultures\' imprints on one place.' },
+        { term: 'hierarchical diffusion', def: 'Spread that leaps through large cities or elites before filtering down.' },
+        { term: 'enclave', def: 'A territory, or people, enclosed within another state\'s borders.' },
+      ] },
+      { kind: 'quiz', items: [
+        {
+          q: 'Von Thünen\'s model places dairying nearest the city because…',
+          options: ['cows were first domesticated nearby', 'perishable, high-value produce bears transport cost poorly and bids highest for access', 'land is cheaper there', 'grain cannot grow near cities'],
+          answer: 1,
+          explain: 'Rent falls with distance, so only uses whose value survives the trip — intensive, perishable ones — can pay for proximity.',
+        },
+        {
+          q: 'Christaller\'s "threshold" is…',
+          options: ['the minimum market a service needs to survive', 'the distance shoppers will travel', 'a city wall', 'the number of competing towns'],
+          answer: 0,
+          explain: 'Below threshold, a service dies; threshold and range together generate the settlement hierarchy.',
+        },
+        {
+          q: 'Sequent occupance describes…',
+          options: ['rent gaps between land uses', 'apartment sharing', 'seasonal labor moves', 'successive cultures layering their imprint on one place'],
+          answer: 3,
+          explain: 'Each group builds on the last\'s residue — the landscape as a palimpsest, in Whittlesey\'s phrase.',
+        },
+        {
+          q: 'A weight-losing industry like copper smelting locates…',
+          options: ['at the final market', 'at the port regardless', 'near the raw material', 'wherever labor is cheapest'],
+          answer: 2,
+          explain: 'Hauling the finished metal is cheaper than hauling the ore: locate where the weight is lost.',
+        },
+      ] },
+    ],
+  },
+  {
+    id: "geog-demographic-transition",
+    title: "The Demographic Transition: The Arithmetic of Populations",
+    domain: "Social Sciences",
+    field: "Human Geography",
+    branch: "Population and Settlement",
+    tier: "core",
+    concepts: [
+      "Crude rates and natural increase",
+      "Four stages of transition",
+      "Replacement fertility (2.1)",
+      "Age pyramids as autobiographies",
+      "Dependency ratio and the dividend",
+      "Population momentum",
+      "Shrinking societies",
+    ],
+    words: 1298,
+    readMins: 6,
+    addedOn: "2026-10-18",
+    blocks: [
+      { kind: "para", text: "Two numbers — the births and the deaths per thousand people — quietly explain most of modern population history. Every nation that industrializes has passed, or is passing, through the same sequence: high and balanced, death falling, birth following, and a new equilibrium that is no longer growing. The demographic transition is demography's central regularity, and the arithmetic behind it — rates, structures, momentum — is what pension systems, school planners and climate models run on. (Where people live and why is the companion geography lesson's subject; this one is the rates.)" },
+      { kind: "callout", title: "Why this matters", tone: "insight", text: "The world is mid-transition: population growth peaked at about 2.1 percent per year in 1968 and has slowed to under 1 percent, while two-thirds of humanity now lives in countries below replacement fertility. The twenty-first century's population story is aging and shrinking, not explosion — and almost every institution is unprepared." },
+      { kind: "heading", text: "Core Concepts" },
+      { kind: "para", text: "The vital arithmetic: the crude birth rate and crude death rate are annual births and deaths per thousand population, and their difference is the rate of natural increase — 30 per thousand equals 3 percent growth, a doubling time of roughly 23 years by the 70-over-growth rule. Migration adds or subtracts on top; its push-and-pull mechanics are the migration lesson's. Fertility is counted per woman as the total fertility rate, with 2.1 as replacement — the extra tenth covers those who die before reproducing." },
+      { kind: "para", text: "The model's stages read like compressed history. Stage one — both rates high and roughly equal — was all of humanity until about 1750, growth near zero. Stage two: death falls first, through sanitation, food security and vaccination, while births stay high — populations explode, as Europe did in the nineteenth century and much of sub-Saharan Africa late in the twentieth. Stage three: births follow downward as children survive, cities grow, women educate and contraception spreads. Stage four: both low, growth near zero — most industrial countries today. A disputed fifth stage has fertility sinking below replacement into decline; the sequence is descriptive, its timing has varied enormously, and no country reversed it by decree." },
+      { kind: "para", text: "An age pyramid — males one side, females the other, by five-year cohorts — is a population's autobiography. A wide base means high fertility and built-in growth; a bulge records a baby boom, or its echo; a notch records famine, war or policy. Japan's near-rectangle, top-heavy and narrowing, is stage five in silhouette. Median age summarizes the shape: Niger about sixteen, Japan near fifty — the same planet." },
+      { kind: "para", text: "The dependency ratio counts the young and old per hundred working-age adults, tracking the transition like a needle. Stage-two societies carry crushing child dependency; as fertility falls, the bulge reaches working age while child numbers shrink — the demographic dividend, a generation-long window when dependents are few and workers abundant. East Asia's miracle was partly this arithmetic — analysts credit a third or so of its growth to the dividend — but only where jobs, schooling and savings absorbed the bulge. Latin America fumbled part of its window: a dividend is a chance, not a guarantee." },
+      { kind: "para", text: "The strangest trap: populations with young age structures keep growing for decades after fertility hits replacement, because the pyramid's base is so wide that even replacement-level mothers outnumber their own mothers. Momentum carried the world from six billion in 1999 toward eight in 2022 even as global fertility fell near 2.3. UN projections now put the peak near 10.3 billion in the 2080s — the momentum spending itself out." },
+      { kind: "para", text: "The far side is here first in East Asia and Europe. Fertility below 2.1 means every generation smaller than its parent — South Korea's 0.7 roughly halves each one — and pay-as-you-go pensions, built on growing cohorts, meet the mathematics: Japan's workers per pensioner fell from ten in the 1950s toward two. Responses exist, all hard: later retirement, immigration (contested everywhere), and pro-natal spending, which nudges fertility by hundredths, not halves. Population decline is not collapse — but fast aging strains every institution built for young populations, and speed matters more than direction." },
+      { kind: "formula", name: "Dependency ratio", latex: "\\mathrm{DR} = \\frac{P_{0{-}14} + P_{65+}}{P_{15{-}64}} \\times 100", meaning: "Dependents per hundred working-age adults — child and old-age pressure in one number." },
+      { kind: "formula", name: "Doubling time", latex: "t_2 \\approx \\frac{70}{r\\,\\%}", meaning: "At r percent annual growth, the population doubles in about 70-over-r years — 3 percent growth doubles in 23." },
+      { kind: "example", title: "Worked Example", steps: [
+        "Identify what is asked: a stage-two country posts CBR 45, CDR 15, with 44 percent of its population under fifteen and 3 percent over sixty-four — growth rate, doubling time and dependency burden?",
+        "Recall the governing idea: natural increase is the rate difference divided by ten; the dependency ratio is dependents per hundred of working age.",
+        "Apply: (45 − 15)/10 = 3 percent growth, doubling in 70/3 ≈ 23 years. The working-age share is 53 percent, so DR = (44 + 3)/53 ≈ 89 — nearly one dependent per worker, overwhelmingly children.",
+        "State the result: schools are the crisis and the investment. Forty years later, stage three-four with CBR 18, CDR 8 and the bulge working, the ratio falls toward 50 — the dividend window, open or squandered.",
+      ] },
+      { kind: "heading", text: "Applications in the Real World" },
+      { kind: "list", items: [
+        "School systems plan classroom cohorts a decade out from today's birth counts — Kenya builds while Japan closes.",
+        "Pension reform indexes retirement ages to life expectancy to steady the worker-pensioner ratio.",
+        "Labor and immigration policy is quietly becoming demography policy, like it or not.",
+        "Health systems shift capacity from obstetrics to chronic and geriatric care along the transition.",
+        "Climate and resource models run on population paths — the UN's projections feed IPCC scenarios.",
+      ] },
+      { kind: "callout", title: "Common Pitfalls", tone: "warn", text: "The recurring mistakes: Malthusian determinism (fertility fell fastest exactly where famine was forecast — the model describes, it does not doom); treating the stages as prophecy (timings have varied fivefold; Africa is not one demographic story); reading overpopulation as today's crisis when two-thirds of humanity already sits below replacement; blaming or crediting single policies for fertility (China's birth rate kept falling after the one-child policy ended); and assuming decline buys sustainability — aging societies still consume, with fewer workers to build the transition." },
+      { kind: "heading", text: "Key Terms" },
+      { kind: "terms", items: [
+        { term: "crude birth rate", def: "Annual live births per thousand population." },
+        { term: "rate of natural increase", def: "Birth rate minus death rate — the growth migration does not touch." },
+        { term: "total fertility rate", def: "Average children per woman across a lifetime; 2.1 is replacement." },
+        { term: "demographic dividend", def: "The generation-long window of low dependency when the bulge works." },
+        { term: "population momentum", def: "Growth baked into young age structures even at replacement fertility." },
+        { term: "dependency ratio", def: "Young plus elderly per hundred working-age adults." },
+        { term: "age pyramid", def: "Males and females by age cohort — a population's autobiography in one chart." },
+      ] },
+      { kind: "heading", text: "Check Yourself" },
+      { kind: "quiz", items: [
+        {
+          q: "Stage two of the transition is defined by:",
+          options: ["both rates high and equal", "death rates falling while births stay high", "births falling below deaths", "zero growth at low rates"],
+          answer: 1,
+          explain: "Sanitation and vaccination cut mortality first; the birth rate lags for a generation — that lag is the explosion.",
+        },
+        {
+          q: "Replacement fertility is about:",
+          options: ["1.0 children per woman", "2.1 children per woman", "3.0 children per woman", "5.0 children per woman"],
+          answer: 1,
+          explain: "Two to replace the parents, plus a tenth for mortality before reproductive age.",
+        },
+        {
+          q: "The demographic dividend opens when:",
+          options: ["fertility rises again", "the baby-bulge reaches working age while child dependency falls", "migration accelerates", "the death rate rises"],
+          answer: 1,
+          explain: "Few dependents, many workers — for one generation. East Asia caught the window; Latin America partly missed it.",
+        },
+        {
+          q: "Population momentum means growth continues after fertility hits replacement because:",
+          options: ["young age structures keep births numerous for decades", "fertility always rebounds", "migration always increases", "mortality keeps falling"],
+          answer: 0,
+          explain: "The wide base supplies abundant future parents — even replacement behavior grows a young population.",
+        },
+      ] },
+      { kind: "callout", title: "Where to go next", tone: "path", text: "Pairs with the population-geography lesson — where people live — and the stratification lesson for who ages poor. The reproductive-health lesson covers the contraception that carried stage three. Next: the epidemiologic transition, pension economics, and China's demographic reversal." },
+    ],
+  },
+]

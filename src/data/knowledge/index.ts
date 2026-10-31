@@ -1,15 +1,22 @@
 /**
- * Knowledge domains — aggregated index.
+ * Knowledge Universe — subject-wise, chapter-wise source tree (2026-11-02).
  *
- * Domains live in ./fields/*.ts. Every expansion pass appends topics; this
- * index recomputes stats at load time so counts and word totals always
+ * Layout (see ./README.md):
+ *   subjects/<subject-key>/<nn>-<chapter-slug>.ts   lesson files, one per
+ *                                                   canonical book chapter
+ *   subjects/<subject-key>/index.ts                 subject book TOC
+ *   domains/<nn>-<field-slug>.ts                    18 field assembly files
+ *                                                   (route each subject's
+ *                                                   topics to its field)
+ *
+ * This index recomputes stats at load time so counts and word totals always
  * reflect the actual content on disk. The Library bridge in
  * ../library-parts/knowledge-universe maps every field to ONE canonical
  * SUBJECT via subject-taxonomy.ts (all mathematics — from any source —
  * lands in the single Mathematics book, and so on for every subject);
  * chapters inside each book are canonical topic areas.
  *
- * DEDUP: ../dedup.ts lists topics already explained elsewhere — they are
+ * DEDUP: ./dedup.ts lists topics already explained elsewhere — they are
  * filtered out by the bridge (zero repetition across the app).
  *
  * NOTE: this module is consumed ONLY by scripts/serialize-content.ts (which
@@ -18,43 +25,38 @@
  */
 
 import type { KnowledgeTopic, KnowledgeDomainFile } from './types'
-import { foundationLearning } from './fields/foundation-learning'
-import { physicalSciences } from './fields/physical-sciences'
-import { lifeSciences } from './fields/life-sciences'
-import { mathematics } from './fields/mathematics'
-import { environment } from './fields/environment'
-import { computingAI } from './fields/computing-ai'
-import { engineering } from './fields/engineering'
-import { technologyApplied } from './fields/technology-applied'
-import { socialSciences } from './fields/social-sciences'
-import { humanities } from './fields/humanities'
-import { languagesLiterature } from './fields/languages-literature'
-import { lawGovernance } from './fields/law-governance'
-import { businessEconomics } from './fields/business-economics'
-import { healthWellness } from './fields/health-wellness'
-import { artsCulture } from './fields/arts-culture'
-import { everydayPractical } from './fields/everyday-practical'
-import { emergingInterdisciplinary } from './fields/emerging-interdisciplinary'
-import { aptitude as aptitudeTopics } from './fields/aptitude'
+import { foundationLearning } from './domains/01-foundation-learning'
+import { aptitudeTestPrep } from './domains/02-aptitude-test-prep'
+import { physicalSciences } from './domains/03-physical-sciences'
+import { lifeSciences } from './domains/04-life-sciences'
+import { mathematicsDomain } from './domains/05-mathematics'
+import { environmentDomain } from './domains/06-environment'
+import { computingAi } from './domains/07-computing-ai'
+import { engineeringDomain } from './domains/08-engineering'
+import { technologyApplied } from './domains/09-technology-applied'
+import { socialSciences } from './domains/10-social-sciences'
+import { humanitiesDomain } from './domains/11-humanities'
+import { languagesLiterature } from './domains/12-languages-literature'
+import { lawGovernance } from './domains/13-law-governance'
+import { businessEconomics } from './domains/14-business-economics'
+import { healthWellness } from './domains/15-health-wellness'
+import { artsCulture } from './domains/16-arts-culture'
+import { everydayPractical } from './domains/17-everyday-practical'
+import { emergingInterdisciplinary } from './domains/18-emerging-interdisciplinary'
 
-/** Domain files in display order. Expansion passes may append new files here. */
+/** Domain files in display order (field-wise shelf order). */
 export const KNOWLEDGE_DOMAIN_FILES: KnowledgeDomainFile[] = [
   foundationLearning,
-  {
-    domain: 'Aptitude & Test Preparation',
-    blurb:
-      'Quantitative aptitude, logical reasoning and general awareness — the speed-and-pattern layer every aptitude test examines, from absolute basics to mastery.',
-    topics: aptitudeTopics,
-  },
+  aptitudeTestPrep,
   physicalSciences,
   lifeSciences,
-  mathematics,
-  environment,
-  computingAI,
-  engineering,
+  mathematicsDomain,
+  environmentDomain,
+  computingAi,
+  engineeringDomain,
   technologyApplied,
   socialSciences,
-  humanities,
+  humanitiesDomain,
   languagesLiterature,
   lawGovernance,
   businessEconomics,

@@ -21,11 +21,12 @@ const IDS = stems.length
       'bio-biotechnology-applications',
     ]
 
-// Load every fields file and find the topic objects by id via a crude
-// but reliable TS-object slice (brace matching from `id: '<stem>'`).
+// Load every chapter file (subject-wise tree, 2026-11-02 reorganization) and
+// find the topic objects by id via a crude but reliable TS-object slice
+// (brace matching from `id: '<stem>'`).
 import { globSync } from 'fs'
 
-const files = globSync('src/data/knowledge/fields/*.ts')
+const files = globSync('src/data/knowledge/subjects/*/*.ts')
 const topics = new Map<string, any>()
 
 for (const f of files) {

@@ -13,8 +13,8 @@
  *     at runtime (client) / fs-read (server API routes) so the 25 MB corpus
  *     never enters the bundler graph (the OOM fix of fixes).
  *
- * The authored TS files (src/data/content/*.ts, src/data/knowledge/fields/*)
- * are consumed ONLY by this script.
+ * The authored TS files (src/data/content/*.ts and the subject-wise tree
+ * under src/data/knowledge/subjects/) are consumed ONLY by this script.
  */
 import {
   KNOWLEDGE_SUBJECTS,

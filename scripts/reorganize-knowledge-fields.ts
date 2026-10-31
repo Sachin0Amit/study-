@@ -95,6 +95,79 @@ interface Phys {
   file: string
   lines: string[] // exact source lines, dedented to column 0
   comment: string[] // contiguous // lines directly above, trimmed
+  /** per-line flag: line STARTS inside a multi-line template literal — its
+   *  leading whitespace is STRING CONTENT and must never be dedented/re-indented */
+  verbatim: boolean[]
+}
+
+/* ---- template-literal scanner -------------------------------------- */
+/* Tracks the TS lexing state line by line so we know which lines START
+ * inside a ` ... ` template literal. Those lines' leading whitespace is
+ * part of the string value — dedenting or re-indenting them would corrupt
+ * the lesson content (the hand-drawn SVG figures use multi-line templates). */
+type LexState = 'code' | 'block' | 'single' | 'double' | 'template'
+
+function scanTemplateState(lines: string[]): boolean[] {
+  let st: LexState = 'code'
+  const startsInTemplate: boolean[] = []
+  for (const line of lines) {
+    startsInTemplate.push(st === 'template')
+    let i = 0
+    while (i < line.length) {
+      const c = line[i]
+      if (st === 'code') {
+        if (c === '/' && line[i + 1] === '/') break // line comment — rest ignored
+        if (c === '/' && line[i + 1] === '*') {
+          st = 'block'
+          i += 2
+          continue
+        }
+        if (c === "'") {
+          st = 'single'
+          i++
+          continue
+        }
+        if (c === '"') {
+          st = 'double'
+          i++
+          continue
+        }
+        if (c === '`') {
+          st = 'template'
+          i++
+          continue
+        }
+        if (c === '\\') {
+          i += 2
+          continue
+        }
+        i++
+        continue
+      }
+      if (st === 'block') {
+        if (c === '*' && line[i + 1] === '/') {
+          st = 'code'
+          i += 2
+          continue
+        }
+        i++
+        continue
+      }
+      // single / double / template string states
+      if (c === '\\') {
+        i += 2
+        continue
+      }
+      if (st === 'single' && c === "'") st = 'code'
+      else if (st === 'double' && c === '"') st = 'code'
+      else if (st === 'template' && c === '`') st = 'code'
+      i++
+    }
+    // unterminated single/double quotes reset at EOL (they cannot span lines);
+    // block comments and templates persist across lines.
+    if (st === 'single' || st === 'double') st = 'code'
+  }
+  return startsInTemplate
 }
 
 if (!existsSync(FIELDS_DIR)) {
@@ -109,6 +182,7 @@ const files = readdirSync(FIELDS_DIR)
 
 for (const f of files) {
   const lines = readFileSync(join(FIELDS_DIR, f), 'utf8').split('\n')
+  const templateAtStart = scanTemplateState(lines)
   let i = 0
   while (i < lines.length) {
     const line = lines[i]
@@ -116,12 +190,20 @@ for (const f of files) {
     const mOpen = line.match(/^(\s*)\{\s*$/)
     let indent = ''
     let start = -1
+    let idLine = ''
     if (mSame) {
       start = i
       indent = mSame[1]
-    } else if (mOpen && /^\s*id:\s*['"]/.test(lines[i + 1] ?? '')) {
-      start = i
-      indent = mOpen[1]
+      idLine = line
+    } else if (mOpen) {
+      // allow blank lines between the opener and the id line
+      let k = i + 1
+      while (k < lines.length && lines[k].trim() === '') k++
+      if (/^\s*id:\s*['"]/.test(lines[k] ?? '')) {
+        start = i
+        indent = mOpen[1]
+        idLine = lines[k]
+      }
     }
     if (start < 0) {
       i++
@@ -136,7 +218,6 @@ for (const f of files) {
       }
     }
     if (end < 0) throw new Error(`Unclosed topic object at ${f}:${start + 1}`)
-    const idLine = mSame ? line : lines[start + 1]
     const id = (idLine.match(/id:\s*['"]([^'"]+)['"]/) || [])[1]
     if (!id) throw new Error(`No id parsed at ${f}:${start + 1}`)
     if (physical.has(id)) throw new Error(`Duplicate physical topic id "${id}" in ${f} (already in ${physical.get(id)!.file})`)
@@ -147,8 +228,15 @@ for (const f of files) {
       c--
     }
     const n = indent.length
-    const body = lines.slice(start, end + 1).map((l) => (l.trim() === '' ? '' : l.slice(n)))
-    physical.set(id, { file: f, lines: body, comment })
+    const body: string[] = []
+    const verbatim: boolean[] = []
+    for (let k = start; k <= end; k++) {
+      verbatim.push(templateAtStart[k])
+      // template-continuation lines keep their exact text (leading whitespace
+      // is string content); code lines are dedented to column 0
+      body.push(templateAtStart[k] ? lines[k] : lines[k].trim() === '' ? '' : lines[k].slice(n))
+    }
+    physical.set(id, { file: f, lines: body, comment, verbatim })
     i = end + 1
   }
 }
@@ -254,8 +342,10 @@ const snapshot = {
     topicIds: d.topics.map((t) => t.id),
   })),
   topics: Object.fromEntries(allTopics.map((t) => [t.id, t])),
-  /** bridge-exact buckets (LIVE topics only, in order) */
-  buckets: SUBJECT_TAXONOMY.filter((tax) => subjectChapters.has(tax.key)).map((tax) => ({
+  /** bridge-exact buckets (LIVE topics only, in order) — subjects with zero
+   *  live topics (all their lessons dedup-excluded) are invisible to the
+   *  Library bridge and are omitted, matching the verifier's definition */
+  buckets: SUBJECT_TAXONOMY.filter((tax) => (liveChapterOrder.get(tax.key) ?? []).length > 0).map((tax) => ({
     key: tax.key,
     chapters: chapterOrder(tax.key)
       .map((name) => ({
@@ -370,8 +460,21 @@ for (const tax of SUBJECT_TAXONOMY) {
     const body = topics
       .map((t) => {
         const p = physical.get(t.id)!
+        // p.lines ends with the closing brace line, which may already carry a
+        // trailing comma in the legacy source — strip it, the join below (and
+        // the template's final ',\n]') supplies exactly one separator.
+        const lines = [...p.lines]
+        const last = lines.length - 1
+        lines[last] = lines[last].replace(/,\s*$/, '')
         const cmt = p.comment.length ? p.comment.map((l) => '  ' + l).join('\n') + '\n' : ''
-        return cmt + p.lines.map((l) => (l === '' ? '' : '  ' + l)).join('\n')
+        // re-indent code lines by 2; template-literal continuation lines stay
+        // byte-exact (their leading whitespace is string content)
+        return (
+          cmt +
+          lines
+            .map((l, li) => (p.verbatim[li] || l === '' ? l : '  ' + l))
+            .join('\n')
+        )
       })
       .join(',\n')
 
