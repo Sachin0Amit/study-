@@ -38,6 +38,7 @@ import { x61LibraryOrgLoopPassTopics } from '../src/data/knowledge/fields/x61-li
 import { x64LibraryOrgPassTopics } from '../src/data/knowledge/fields/x64-library-org-pass'
 import { x65CrossverifyBotanyPassTopics } from '../src/data/knowledge/fields/x65-crossverify-pass'
 import { x67LibraryOrgDeepeningPassTopics } from '../src/data/knowledge/fields/x67-library-org-pass'
+import { aptitude as aptitudeTopics } from '../src/data/knowledge/fields/aptitude'
 import { x68LibraryOrgConvergenceTopics } from '../src/data/knowledge/fields/x68-library-org-convergence'
 import { x69LibraryOrgConvergenceTopics } from '../src/data/knowledge/fields/x69-library-org-convergence'
 import { x70LibraryOrgPassTopics } from '../src/data/knowledge/fields/x70-library-org-pass'
@@ -363,6 +364,11 @@ const IDS = [
   'bio-pathogen-virulence-toxins',
   'bio-innate-defenses-complement',
   'bio-immune-system',
+  // MASTER-SYLLABUS LAUNCH (2026-11-01) — Quantitative Aptitude Ch1 §1.1–§1.4
+  'qa-number-families-place-value',
+  'qa-divisibility-digit-sums',
+  'qa-factors-hcf-lcm',
+  'qa-remainders-cyclicity',
 ]
 
 const wc = (s: string) => s.split(/\s+/).filter(Boolean).length
@@ -394,7 +400,7 @@ function blockWords(b: any): number {
   return n
 }
 
-for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, foundationLearning, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, { topics: x25TournamentReasoningCivicsPassTopics } as any, { topics: x26BankingManagementPassTopics } as any, { topics: x27ApCalcChinaPassTopics } as any, { topics: x36LearningSciencePassTopics } as any, { topics: x37AlbertaPassTopics } as any, computingAI, { topics: x45ExamGapPassTopics } as any, { topics: x46ThinBooksPassTopics } as any, { topics: x47BioSplitPassTopics } as any, { topics: x48AllSubjectsSplitPassTopics } as any, { topics: x49LanguageDeepeningPassTopics } as any, { topics: x51LibraryOrgPassTopics } as any, { topics: x52CrossverifyPassTopics } as any, { topics: x53CrossverifyPassTopics } as any, { topics: x54CrossverifyPassTopics } as any, { topics: x58LibraryOrgDeepeningPassTopics } as any, { topics: x59LibraryOrgBacklogPassTopics } as any, { topics: x60EnemBrazilPassTopics } as any, { topics: x61LibraryOrgLoopPassTopics } as any, { topics: x64LibraryOrgPassTopics } as any, { topics: x65CrossverifyBotanyPassTopics } as any, { topics: x67LibraryOrgDeepeningPassTopics } as any, { topics: x68LibraryOrgConvergenceTopics } as any, { topics: x69LibraryOrgConvergenceTopics } as any, { topics: x70LibraryOrgPassTopics } as any, { topics: x71CrossverifyGeneticsTopics } as any, { topics: x72CrossverifyPassTopics } as any, { topics: x74LibraryOrgConvergencePassTopics } as any, { topics: x14HeredityBiotechTopics } as any]) {
+for (const file of [emergingInterdisciplinary, environment, healthWellness, lifeSciences, humanities, socialSciences, businessEconomics, lawGovernance, languagesLiterature, physicalSciences, mathematics, technologyApplied, foundationLearning, x16ExamSkills, { topics: x17ExamSyllabusTopics } as any, { topics: x19CivilCoreTopics } as any, { topics: x20FoundationsPassTopics } as any, { topics: x21SkillsPassTopics } as any, { topics: x25TournamentReasoningCivicsPassTopics } as any, { topics: x26BankingManagementPassTopics } as any, { topics: x27ApCalcChinaPassTopics } as any, { topics: x36LearningSciencePassTopics } as any, { topics: x37AlbertaPassTopics } as any, computingAI, { topics: x45ExamGapPassTopics } as any, { topics: x46ThinBooksPassTopics } as any, { topics: x47BioSplitPassTopics } as any, { topics: x48AllSubjectsSplitPassTopics } as any, { topics: x49LanguageDeepeningPassTopics } as any, { topics: x51LibraryOrgPassTopics } as any, { topics: x52CrossverifyPassTopics } as any, { topics: x53CrossverifyPassTopics } as any, { topics: x54CrossverifyPassTopics } as any, { topics: x58LibraryOrgDeepeningPassTopics } as any, { topics: x59LibraryOrgBacklogPassTopics } as any, { topics: x60EnemBrazilPassTopics } as any, { topics: x61LibraryOrgLoopPassTopics } as any, { topics: x64LibraryOrgPassTopics } as any, { topics: x65CrossverifyBotanyPassTopics } as any, { topics: x67LibraryOrgDeepeningPassTopics } as any, { topics: x68LibraryOrgConvergenceTopics } as any, { topics: x69LibraryOrgConvergenceTopics } as any, { topics: x70LibraryOrgPassTopics } as any, { topics: x71CrossverifyGeneticsTopics } as any, { topics: x72CrossverifyPassTopics } as any, { topics: x74LibraryOrgConvergencePassTopics } as any, { topics: x14HeredityBiotechTopics } as any, { topics: aptitudeTopics } as any]) {
   for (const t of file.topics) {
     if (!IDS.includes(t.id)) continue
     const actual = (t.blocks || []).reduce((a, b) => a + blockWords(b), 0)

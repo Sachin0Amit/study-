@@ -1689,7 +1689,7 @@ export const foundationLearning: KnowledgeDomainFile = {
         'The honest limits: the longhand effect under replication',
         'Notes as living documents: prune, rewrite, link',
       ],
-      words: 2184,
+      words: 2253,
       readMins: 11,
       addedOn: '2026-10-18',
       blocks: [

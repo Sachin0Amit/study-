@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T03:56:46.805Z",
+  "generatedAt": "2026-10-31T19:32:42.554Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -9,10 +9,10 @@
     "5. Knowledge-domain topics: also check excludedTopics below — those ids are ALREADY EXPLAINED elsewhere and must never be re-authored."
   ],
   "totals": {
-    "subjects": 138,
-    "books": 138,
-    "chapters": 885,
-    "sections": 4691
+    "subjects": 140,
+    "books": 140,
+    "chapters": 889,
+    "sections": 4695
   },
   "subjects": [
     {
@@ -10955,8 +10955,8 @@
       "name": "Aptitude & Reasoning",
       "group": "Foundations",
       "tagline": "Sharpen every kind of thinking",
-      "chapterCount": 6,
-      "sectionCount": 33,
+      "chapterCount": 4,
+      "sectionCount": 26,
       "chapters": [
         {
           "id": "apt-r1",
@@ -11125,61 +11125,6 @@
               "id": "apt-q1-s8",
               "number": 8,
               "title": "Data Sufficiency & Quantity Comparison"
-            }
-          ]
-        },
-        {
-          "id": "ku-x-aptitude-complete-verbal-logical-and-nonverbal-reasoning",
-          "number": 5,
-          "title": "Verbal, Logical & Nonverbal Reasoning",
-          "shortTitle": "Verbal, Logical & Nonverbal Reasoning",
-          "bookId": "aptitude-complete",
-          "sectionCount": 6,
-          "sections": [
-            {
-              "id": "ku-fnd-visual-pattern-rules",
-              "number": 5.1,
-              "title": "Nonverbal Reasoning: Shape Attributes, Series and Rule Detection"
-            },
-            {
-              "id": "ku-reason-coded-inequalities",
-              "number": 5.2,
-              "title": "Coded Inequalities: Decoding Order Statements into Valid Conclusions"
-            },
-            {
-              "id": "ku-pol-logic-induction-deduction-square",
-              "number": 5.3,
-              "title": "Induction, Deduction and the Square of Opposition"
-            },
-            {
-              "id": "ku-eng-principle-application",
-              "number": 5.4,
-              "title": "Applying Principles: From Rule to Case"
-            },
-            {
-              "id": "ku-eng-verbal-reasoning-passage-claims",
-              "number": 5.5,
-              "title": "True, False, Can’t Tell: Judging Claims Against the Passage"
-            },
-            {
-              "id": "ku-eng-critical-reasoning-arguments",
-              "number": 5.6,
-              "title": "Critical Reasoning: Breaking Down Arguments for Exams"
-            }
-          ]
-        },
-        {
-          "id": "ku-x-aptitude-complete-situational-judgement",
-          "number": 6,
-          "title": "Situational Judgement",
-          "shortTitle": "Situational Judgement",
-          "bookId": "aptitude-complete",
-          "sectionCount": 1,
-          "sections": [
-            {
-              "id": "ku-sj-situational-judgement",
-              "number": 6.1,
-              "title": "Situational Judgement: Integrity, Perspective Taking and Teamwork"
             }
           ]
         }
@@ -26785,6 +26730,141 @@
               "id": "ku-comp-office-productivity-software",
               "number": 2.7,
               "title": "Office Productivity Software: Documents, Spreadsheets, Slides and Workflows"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-quantitative-aptitude",
+      "name": "Quantitative Aptitude",
+      "group": "Aptitude & Test Preparation",
+      "tagline": "Numbers at examination speed",
+      "chapterCount": 1,
+      "sectionCount": 4,
+      "chapters": [
+        {
+          "id": "ku-quantitative-aptitude-number-system-foundations",
+          "number": 1,
+          "title": "Number System Foundations",
+          "shortTitle": "Number System Foundations",
+          "bookId": "ku-quantitative-aptitude",
+          "sectionCount": 4,
+          "sections": [
+            {
+              "id": "ku-qa-number-families-place-value",
+              "number": 1.1,
+              "title": "Place Value and the Number Families: The Ground Under Every Aptitude Question"
+            },
+            {
+              "id": "ku-qa-divisibility-digit-sums",
+              "number": 1.2,
+              "title": "Divisibility Rules and Digit Sums: Twenty-Second Factor Detection"
+            },
+            {
+              "id": "ku-qa-factors-hcf-lcm",
+              "number": 1.3,
+              "title": "Factors, HCF and LCM: The Two Numbers Behind a Thousand Word Problems"
+            },
+            {
+              "id": "ku-qa-remainders-cyclicity",
+              "number": 1.4,
+              "title": "Remainders and Cyclicity: Units Digits of Enormous Powers in Fifteen Seconds"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ku-logical-reasoning",
+      "name": "Logical Reasoning",
+      "group": "Aptitude & Test Preparation",
+      "tagline": "Every kind of thinking, tested",
+      "chapterCount": 5,
+      "sectionCount": 7,
+      "chapters": [
+        {
+          "id": "ku-logical-reasoning-foundations-of-logical-thinking",
+          "number": 1,
+          "title": "Foundations of Logical Thinking",
+          "shortTitle": "Foundations of Logical Thinking",
+          "bookId": "ku-logical-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-pol-logic-induction-deduction-square",
+              "number": 1.1,
+              "title": "Induction, Deduction and the Square of Opposition"
+            }
+          ]
+        },
+        {
+          "id": "ku-logical-reasoning-deduction-syllogisms-and-coded-logic",
+          "number": 2,
+          "title": "Deduction: Syllogisms & Coded Logic",
+          "shortTitle": "Deduction: Syllogisms & Coded Logic",
+          "bookId": "ku-logical-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-reason-coded-inequalities",
+              "number": 2.1,
+              "title": "Coded Inequalities: Decoding Order Statements into Valid Conclusions"
+            }
+          ]
+        },
+        {
+          "id": "ku-logical-reasoning-non-verbal-and-abstract-reasoning",
+          "number": 3,
+          "title": "Non-Verbal & Abstract Reasoning",
+          "shortTitle": "Non-Verbal & Abstract Reasoning",
+          "bookId": "ku-logical-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-fnd-visual-pattern-rules",
+              "number": 3.1,
+              "title": "Nonverbal Reasoning: Shape Attributes, Series and Rule Detection"
+            }
+          ]
+        },
+        {
+          "id": "ku-logical-reasoning-critical-reasoning",
+          "number": 4,
+          "title": "Critical Reasoning",
+          "shortTitle": "Critical Reasoning",
+          "bookId": "ku-logical-reasoning",
+          "sectionCount": 3,
+          "sections": [
+            {
+              "id": "ku-eng-principle-application",
+              "number": 4.1,
+              "title": "Applying Principles: From Rule to Case"
+            },
+            {
+              "id": "ku-eng-verbal-reasoning-passage-claims",
+              "number": 4.2,
+              "title": "True, False, Can’t Tell: Judging Claims Against the Passage"
+            },
+            {
+              "id": "ku-eng-critical-reasoning-arguments",
+              "number": 4.3,
+              "title": "Critical Reasoning: Breaking Down Arguments for Exams"
+            }
+          ]
+        },
+        {
+          "id": "ku-logical-reasoning-decision-making-and-judgement",
+          "number": 5,
+          "title": "Decision Making & Judgement",
+          "shortTitle": "Decision Making & Judgement",
+          "bookId": "ku-logical-reasoning",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-sj-situational-judgement",
+              "number": 5.1,
+              "title": "Situational Judgement: Integrity, Perspective Taking and Teamwork"
             }
           ]
         }

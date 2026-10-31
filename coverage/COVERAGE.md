@@ -14,10 +14,10 @@
 
 ## Totals
 
-- **Subjects:** 138
-- **Books (master volumes):** 138
-- **Chapters:** 885
-- **Sections (lessons):** 4691
+- **Subjects:** 140
+- **Books (master volumes):** 140
+- **Chapters:** 889
+- **Sections (lessons):** 4695
 
 ## Foundations — 7 subjects
 
@@ -228,14 +228,12 @@
 
 ### Aptitude & Reasoning (`aptitude`)
 
-*Sharpen every kind of thinking* — 6 chapters · 33 sections
+*Sharpen every kind of thinking* — 4 chapters · 26 sections
 
 - **Ch 1. Reasoning & Problem Solving** `apt-r1` — 6 sections: Analogies, Classification & Series; Coding–Decoding, Blood Relations & Direction Sense; Syllogisms, Statements & Logical Deduction; Seating Arrangements, Puzzles & Order–Ranking; Venn Diagrams, Calendar & Clock Problems; Non-Verbal Reasoning: Figures, Paper Folding & Mirror Images
 - **Ch 2. General Awareness & Current Affairs** `apt-g1` — 6 sections: Current Affairs: National & International; Indian History, Polity & Constitution; Geography, Economy & Culture; Defence & Security: Defence-Research Missions, Labs & Products; Science & Technology in News; Awards, Sports, Important Days & Organizations
 - **Ch 3. General Science** `apt-gensci` — 6 sections: Physics Fundamentals; Chemistry Fundamentals; Biology: Cells, Genetics & Human Physiology; Ecology & Everyday Science; Space & Defence Science; Recent Developments in Science & Technology
 - **Ch 4. Quantitative Aptitude & Numerical Ability** `apt-q1` — 8 sections: Number Systems, HCF & LCM, Surds and Indices; Percentages, Profit & Loss, Discount and Interest; Ratio, Proportion, Averages, Mixtures & Partnership; Time & Work, Pipes, Time–Speed–Distance, Trains & Boats; Algebra, Geometry, Mensuration & Trigonometry Basics; Elementary Statistics & Data Interpretation; Data Interpretation: Tables, Charts & Caselets; Data Sufficiency & Quantity Comparison
-- **Ch 5. Verbal, Logical & Nonverbal Reasoning** `ku-x-aptitude-complete-verbal-logical-and-nonverbal-reasoning` — 6 sections: Nonverbal Reasoning: Shape Attributes, Series and Rule Detection; Coded Inequalities: Decoding Order Statements into Valid Conclusions; Induction, Deduction and the Square of Opposition; Applying Principles: From Rule to Case; True, False, Can’t Tell: Judging Claims Against the Passage; Critical Reasoning: Breaking Down Arguments for Exams
-- **Ch 6. Situational Judgement** `ku-x-aptitude-complete-situational-judgement` — 1 sections: Situational Judgement: Integrity, Perspective Taking and Teamwork
 
 ### Study Skills & Learning Science (`ku-study-skills`)
 
@@ -796,6 +794,24 @@
 - **Ch 4. Actuators & Drive Systems** `mech-actuators` — 6 sections: Electromagnetic Actuation Principles; Electric Motors as Actuators; Hydraulic & Pneumatic Actuation; Servo Drives & Motion Control Loops; Actuator Selection & Sizing; Safety Interlocks
 - **Ch 5. Mechatronic System Design & Modeling** `mech-modeling` — 6 sections: The Mechatronic Design Process; System Modeling Across Domains; Time & Frequency Domain Response; Controllers for Mechatronic Plants; Simulation-Driven Design & Digital Twins; Case Studies
 - **Ch 6. Mobile & Autonomous Robotics** `mech-mobile-robotics` — 6 sections: Locomotion Concepts; Localization & Mapping Fundamentals; Path Planning; Navigation Stacks & Obstacle Avoidance; Robot Programming Frameworks; Ethics & Safety of Autonomous Systems
+
+## Aptitude & Test Preparation — 2 subjects
+
+### Quantitative Aptitude (`ku-quantitative-aptitude`)
+
+*Numbers at examination speed* — 1 chapters · 4 sections
+
+- **Ch 1. Number System Foundations** `ku-quantitative-aptitude-number-system-foundations` — 4 sections: Place Value and the Number Families: The Ground Under Every Aptitude Question; Divisibility Rules and Digit Sums: Twenty-Second Factor Detection; Factors, HCF and LCM: The Two Numbers Behind a Thousand Word Problems; Remainders and Cyclicity: Units Digits of Enormous Powers in Fifteen Seconds
+
+### Logical Reasoning (`ku-logical-reasoning`)
+
+*Every kind of thinking, tested* — 5 chapters · 7 sections
+
+- **Ch 1. Foundations of Logical Thinking** `ku-logical-reasoning-foundations-of-logical-thinking` — 1 sections: Induction, Deduction and the Square of Opposition
+- **Ch 2. Deduction: Syllogisms & Coded Logic** `ku-logical-reasoning-deduction-syllogisms-and-coded-logic` — 1 sections: Coded Inequalities: Decoding Order Statements into Valid Conclusions
+- **Ch 3. Non-Verbal & Abstract Reasoning** `ku-logical-reasoning-non-verbal-and-abstract-reasoning` — 1 sections: Nonverbal Reasoning: Shape Attributes, Series and Rule Detection
+- **Ch 4. Critical Reasoning** `ku-logical-reasoning-critical-reasoning` — 3 sections: Applying Principles: From Rule to Case; True, False, Can’t Tell: Judging Claims Against the Passage; Critical Reasoning: Breaking Down Arguments for Exams
+- **Ch 5. Decision Making & Judgement** `ku-logical-reasoning-decision-making-and-judgement` — 1 sections: Situational Judgement: Integrity, Perspective Taking and Teamwork
 
 ## Life Sciences — 13 subjects
 

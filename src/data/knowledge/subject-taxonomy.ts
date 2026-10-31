@@ -156,25 +156,6 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     ],
   },
   {
-    key: 'aptitude-unified',
-    name: 'Aptitude & Reasoning',
-    group: 'Foundations',
-    icon: 'brain',
-    accent: '#a3e635',
-    tagline: 'Sharpen every kind of thinking',
-    blurb: 'Verbal, logical and nonverbal reasoning, situational judgement and decision strategy.',
-    ownFields: [
-      'Logical Reasoning', 'Logic and Reasoning', 'Nonverbal Reasoning',
-      'Professional & Interpersonal Skills', 'Verbal Reasoning',
-    ],
-    mergeInto: { subjectId: 'aptitude', bookId: 'aptitude-complete' },
-    chapters: [
-      { name: 'Verbal, Logical & Nonverbal Reasoning', fields: ['Verbal Reasoning', 'Logical Reasoning', 'Nonverbal Reasoning', 'Logic and Reasoning'] },
-      { name: 'Situational Judgement', fields: ['Professional & Interpersonal Skills'] },
-      { name: 'Games & Decision Strategy', fields: ['Games & Strategy'] },
-    ],
-  },
-  {
     key: 'java-unified',
     name: 'Java Programming',
     group: 'Programming & Software',
@@ -338,6 +319,91 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     chapters: [
       { name: 'Computing Fundamentals', fields: ['Computer Science'] },
       { name: 'ICT & Digital Literacy', fields: ['ICT & Digital Literacy', 'Digital Literacy'] },
+    ],
+  },
+  /* ================================================================ */
+  /*  MASTER-SYLLABUS SPLIT (2026-11-01): the single thin              */
+  /*  'Aptitude & Reasoning' subject is split into three full          */
+  /*  subjects per the user's order — Aptitude, Reasoning and          */
+  /*  General Awareness, each covering every exam-syllabus chapter.    */
+  /*  The eight legacy reasoning lessons (coded inequalities,          */
+  /*  induction/deduction, three verbal-reasoning lessons, figural     */
+  /*  patterns, situational judgement, everyday decision probability)  */
+  /*  migrate into ku-logical-reasoning by field routing — their ids,  */
+  /*  files and prose are untouched. The aptitude-complete curated     */
+  /*  course book (typing drills) keeps its own 4 base chapters.        */
+  /*  Program reference: docs/syllabus/MASTER-SYLLABUS.md              */
+  /* ================================================================ */
+  {
+    key: 'quantitative-aptitude',
+    name: 'Quantitative Aptitude',
+    group: 'Aptitude & Test Preparation',
+    icon: 'calculator',
+    accent: '#10b981',
+    tagline: 'Numbers at examination speed',
+    blurb: 'Speed-and-pattern arithmetic through algebra, geometry, counting, probability and data interpretation — the complete numerical-aptitude ladder from absolute basics to test mastery.',
+    ownFields: ['Quantitative Aptitude'],
+    chapters: [
+      { name: 'Number System Foundations', branches: ['Arithmetic Foundations'] },
+      { name: 'Percentages', branches: ['Commercial Arithmetic: Percentages'] },
+      { name: 'Profit, Loss & Discount', branches: ['Commercial Arithmetic: Profit & Loss'] },
+      { name: 'Interest & Growth', branches: ['Commercial Arithmetic: Interest'] },
+      { name: 'Ratio, Proportion, Averages & Mixtures', branches: ['Commercial Arithmetic: Ratio & Mixtures'] },
+      { name: 'Time & Work', branches: ['Rates: Work'] },
+      { name: 'Time, Speed & Distance', branches: ['Rates: Motion'] },
+      { name: 'Algebra for Tests', branches: ['Algebra for Tests'] },
+      { name: 'Geometry & Mensuration for Tests', branches: ['Geometry & Mensuration for Tests'] },
+      { name: 'Permutations & Combinations', branches: ['Counting'] },
+      { name: 'Probability for Tests', branches: ['Counting'] },
+      { name: 'Statistics & Data Interpretation', branches: ['Data Interpretation'] },
+      { name: 'Data Sufficiency & Quantity Comparison', branches: ['Data Sufficiency'] },
+      { name: 'Calculation Mastery & Test Strategy', branches: ['Test Strategy'] },
+    ],
+  },
+  {
+    key: 'logical-reasoning',
+    name: 'Logical Reasoning',
+    group: 'Aptitude & Test Preparation',
+    icon: 'brain',
+    accent: '#f43f5e',
+    tagline: 'Every kind of thinking, tested',
+    blurb: 'Deduction, syllogisms, series, coding, relations, arrangements, non-verbal patterns, critical reasoning and decision making — the complete reasoning ladder from first principles.',
+    ownFields: [
+      'Logical Reasoning', 'Logic and Reasoning', 'Verbal Reasoning',
+      'Nonverbal Reasoning', 'Professional & Interpersonal Skills', 'Games & Strategy',
+    ],
+    chapters: [
+      { name: 'Foundations of Logical Thinking', branches: ['Logic Foundations', 'Evaluating Arguments'] },
+      { name: 'Deduction: Syllogisms & Coded Logic', branches: ['Syllogisms', 'Coded Inequalities'] },
+      { name: 'Series, Analogies & Classification', branches: ['Series & Patterns'] },
+      { name: 'Coding–Decoding & Symbol Operations', branches: ['Coding & Symbols'] },
+      { name: 'Relations, Directions & Ordering', branches: ['Relations & Ordering'] },
+      { name: 'Arrangements & Puzzles', branches: ['Arrangements & Puzzles'] },
+      { name: 'Clocks, Calendars & Mathematical Logic', branches: ['Mathematical Logic'] },
+      { name: 'Non-Verbal & Abstract Reasoning', branches: ['Figural Patterns', 'Nonverbal Reasoning'] },
+      { name: 'Critical Reasoning', branches: ['Critical Reasoning', 'Passage Judgements', 'Principle Application'] },
+      { name: 'Decision Making & Judgement', branches: ['Situational Judgement', 'Decision Math'] },
+    ],
+  },
+  {
+    key: 'general-awareness',
+    name: 'General Awareness',
+    group: 'Aptitude & Test Preparation',
+    icon: 'globe',
+    accent: '#d97706',
+    tagline: 'The world, recall-ready',
+    blurb: 'History, polity, geography, economy, science, environment and static GK at the rapid-recall layer exams demand — evergreen facts, one-line formats and the memory method, linked to the deep subject books.',
+    ownFields: ['General Awareness'],
+    chapters: [
+      { name: 'The General Awareness Method', branches: ['GA Method'] },
+      { name: 'Indian History Essentials', branches: ['History Essentials'] },
+      { name: 'Polity & Constitution Essentials', branches: ['Polity Essentials'] },
+      { name: 'Geography Essentials', branches: ['Geography Essentials'] },
+      { name: 'Economy & Banking Awareness', branches: ['Economy Essentials'] },
+      { name: 'Science & Technology Awareness', branches: ['Science Awareness'] },
+      { name: 'Environment & Ecology Awareness', branches: ['Environment Essentials'] },
+      { name: 'Static GK: Awards, Sports, Books & Organizations', branches: ['Static GK'] },
+      { name: 'The Current-Affairs Engine', branches: ['Current Affairs'] },
     ],
   },
   {

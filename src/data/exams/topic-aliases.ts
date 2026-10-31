@@ -261,6 +261,13 @@ export const TOPIC_ALIASES: Record<string, string> = {
   'shape attributes': 'fnd-visual-pattern-rules',
   'pattern perception and figure formation': 'fnd-visual-pattern-rules',
   'rule detection': 'fnd-visual-pattern-rules',
+  // Master-syllabus split (2026-11-01): the aptitude-complete appended
+  // knowledge chapters moved to ku-logical-reasoning; this set-membership
+  // format maps to the figural-patterns lesson whose attribute-inventory
+  // + rule-detection checklist covers best-fit items (verified vs the
+  // lesson's concepts: attribute inventory, rule detection, two-feature
+  // tracking).
+  'type 4 best fit': 'fnd-visual-pattern-rules',
 
   /* ---- X22 pass (2026-10-22): exam-gap closures on new + existing lessons.
    * Every mapping verified against the target lesson's actual concepts and

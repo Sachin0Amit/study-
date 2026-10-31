@@ -35,10 +35,17 @@ import { healthWellness } from './fields/health-wellness'
 import { artsCulture } from './fields/arts-culture'
 import { everydayPractical } from './fields/everyday-practical'
 import { emergingInterdisciplinary } from './fields/emerging-interdisciplinary'
+import { aptitude as aptitudeTopics } from './fields/aptitude'
 
 /** Domain files in display order. Expansion passes may append new files here. */
 export const KNOWLEDGE_DOMAIN_FILES: KnowledgeDomainFile[] = [
   foundationLearning,
+  {
+    domain: 'Aptitude & Test Preparation',
+    blurb:
+      'Quantitative aptitude, logical reasoning and general awareness — the speed-and-pattern layer every aptitude test examines, from absolute basics to mastery.',
+    topics: aptitudeTopics,
+  },
   physicalSciences,
   lifeSciences,
   mathematics,

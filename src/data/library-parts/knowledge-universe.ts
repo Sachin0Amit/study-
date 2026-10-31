@@ -65,6 +65,13 @@ const DOMAIN_SECTIONS: Record<string, DomainSectionDef> = {
     accent: '#f59e0b',
     tagline: 'Learn how to learn',
   },
+  'Aptitude & Test Preparation': {
+    key: 'aptitude-test-prep',
+    name: 'Aptitude & Test Preparation',
+    icon: 'target',
+    accent: '#10b981',
+    tagline: 'Numbers, logic and awareness at test speed',
+  },
   'Physical Sciences': {
     key: 'physical-sciences',
     name: 'Physical Sciences',
