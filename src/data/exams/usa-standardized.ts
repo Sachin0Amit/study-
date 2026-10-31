@@ -596,7 +596,7 @@ export const USA_STANDARDIZED_EXAMS: CuratedExam[] = [
       },
       {
         name: 'Data Insights',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-quantitative-aptitude',
         units: [
           {
             name: 'Data Interpretation',

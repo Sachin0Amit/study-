@@ -108,7 +108,7 @@ export const INDIA_GOVT_EXAMS: CuratedExam[] = [
       },
       {
         name: 'General Studies Paper II (CSAT)',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-logical-reasoning',
         units: [
           {
             name: 'Comprehension',
@@ -200,7 +200,7 @@ export const INDIA_GOVT_EXAMS: CuratedExam[] = [
     subjects: [
       {
         name: 'General Intelligence and Reasoning',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-logical-reasoning',
         units: [
           {
             name: 'Verbal Reasoning',
@@ -429,7 +429,7 @@ export const INDIA_GOVT_EXAMS: CuratedExam[] = [
       },
       {
         name: 'Reasoning Ability',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-logical-reasoning',
         units: [
           {
             name: 'Puzzles and Seating Arrangements',
@@ -884,7 +884,7 @@ export const INDIA_GOVT_EXAMS: CuratedExam[] = [
     subjects: [
       {
         name: 'General Awareness',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-general-awareness',
         weightage: 40,
         units: [
           {
@@ -930,7 +930,7 @@ export const INDIA_GOVT_EXAMS: CuratedExam[] = [
       },
       {
         name: 'Reasoning Ability',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-logical-reasoning',
         weightage: 30,
         units: [
           {

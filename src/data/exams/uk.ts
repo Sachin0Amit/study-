@@ -716,7 +716,7 @@ export const UK_EXAMS: CuratedExam[] = [
       },
       {
         name: 'Decision Making',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-logical-reasoning',
         units: [
           {
             name: 'Logical Puzzles and Reasoning',
@@ -764,7 +764,7 @@ export const UK_EXAMS: CuratedExam[] = [
       },
       {
         name: 'Abstract Reasoning',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-logical-reasoning',
         units: [
           {
             name: 'Pattern Recognition',

@@ -13,7 +13,13 @@ import { MATH_CHAPTERS, MATH_SECTIONS } from './library-parts/merged/math'
 import { PHYS_CHAPTERS, PHYS_SECTIONS } from './library-parts/merged/physics'
 import { CHEM_CHAPTERS, CHEM_SECTIONS } from './library-parts/merged/chemistry'
 import { ENGLISH_CHAPTERS, ENGLISH_SECTIONS } from './library-parts/merged/english'
-import { APT_CHAPTERS, APT_SECTIONS } from './library-parts/merged/aptitude'
+// NOTE 2026-11-01: the combined 'Aptitude, Reasoning & General Awareness'
+// stub book (subject 'aptitude' / book 'aptitude-complete' /
+// library-parts/merged/aptitude.ts) was RETIRED — replaced by the three
+// master-syllabus subjects ku-quantitative-aptitude, ku-logical-reasoning
+// and ku-general-awareness (see docs/syllabus/MASTER-SYLLABUS.md §2). Its
+// authored section prose survives in src/data/content/*.ts (never delete
+// prose); serialize-content.ts filters orphans out of content.json.
 import { CCPP_CHAPTERS, CCPP_SECTIONS } from './library-parts/subjects/programming-c-cpp'
 import { JAVA_CHAPTERS, JAVA_SECTIONS } from './library-parts/subjects/programming-java'
 import { WEB_CHAPTERS, WEB_SECTIONS } from './library-parts/subjects/web-development'
@@ -226,16 +232,6 @@ export const LIBRARY_SUBJECTS: Subject[] = [
     icon: 'type',
     accent: '#f472b6',
     tagline: 'Read deeply, write precisely',
-    group: 'Foundations',
-  },
-  {
-    id: 'aptitude',
-    name: 'Aptitude & Reasoning',
-    slug: 'aptitude',
-    description: 'The complete mental-aptitude curriculum: reasoning and problem solving, quantitative aptitude, general awareness and general science.',
-    icon: 'brain',
-    accent: '#a3e635',
-    tagline: 'Sharpen every kind of thinking',
     group: 'Foundations',
   },
   {
@@ -622,18 +618,6 @@ export const LIBRARY_BOOKS: BookMeta[] = [
       'Complete verbal skills in one volume: reading comprehension and rhetoric, words in context, text structure and purpose, cross-text connections, command of evidence, standard English conventions, transitions, rhetorical synthesis, grammar essentials, vocabulary, voice, narration and comprehension practice.',
     pages: 5,
     accent: '#f472b6',
-  },
-  {
-    id: 'aptitude-complete',
-    subjectId: 'aptitude',
-    title: 'Aptitude, Reasoning & General Awareness',
-    author: 'StudyVerse Curriculum Team',
-    edition: '2026 Edition',
-    year: '2026',
-    description:
-      'The complete mental-aptitude curriculum: reasoning and problem solving (analogies, series, coding–decoding, blood relations, syllogisms, seating arrangements, puzzles and non-verbal patterns), quantitative aptitude (percentages, ratios, time–work, speed–distance and data interpretation), general awareness and general science.',
-    pages: 4,
-    accent: '#a3e635',
   },
   {
     id: 'c-cpp-complete',
@@ -1100,7 +1084,6 @@ export const LIBRARY_CHAPTERS: ChapterMeta[] = [
   ...PHYS_CHAPTERS,
   ...CHEM_CHAPTERS,
   ...ENGLISH_CHAPTERS,
-  ...APT_CHAPTERS,
   ...CCPP_CHAPTERS,
   ...JAVA_CHAPTERS,
   ...WEB_CHAPTERS,
@@ -1141,7 +1124,6 @@ export const LIBRARY_SECTIONS: SectionMeta[] = [
   ...PHYS_SECTIONS,
   ...CHEM_SECTIONS,
   ...ENGLISH_SECTIONS,
-  ...APT_SECTIONS,
   ...CCPP_SECTIONS,
   ...JAVA_SECTIONS,
   ...WEB_SECTIONS,

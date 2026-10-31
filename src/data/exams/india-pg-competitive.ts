@@ -39,7 +39,7 @@ export const INDIA_PG_COMPETITIVE_EXAMS: CuratedExam[] = [
     subjects: [
       {
         name: 'General Aptitude',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-quantitative-aptitude',
         weightage: 15,
         units: [
           {
@@ -234,7 +234,7 @@ export const INDIA_PG_COMPETITIVE_EXAMS: CuratedExam[] = [
     subjects: [
       {
         name: 'General Aptitude',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-quantitative-aptitude',
         weightage: 15,
         units: [
           {
@@ -413,7 +413,7 @@ export const INDIA_PG_COMPETITIVE_EXAMS: CuratedExam[] = [
     subjects: [
       {
         name: 'General Aptitude',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-quantitative-aptitude',
         weightage: 15,
         units: [
           {
@@ -614,7 +614,7 @@ export const INDIA_PG_COMPETITIVE_EXAMS: CuratedExam[] = [
     subjects: [
       {
         name: 'General Aptitude',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-quantitative-aptitude',
         weightage: 15,
         units: [
           {
@@ -834,7 +834,7 @@ export const INDIA_PG_COMPETITIVE_EXAMS: CuratedExam[] = [
     subjects: [
       {
         name: 'General Aptitude',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-quantitative-aptitude',
         weightage: 15,
         units: [
           {
@@ -1018,7 +1018,7 @@ export const INDIA_PG_COMPETITIVE_EXAMS: CuratedExam[] = [
       },
       {
         name: 'Data Interpretation and Logical Reasoning',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-logical-reasoning',
         weightage: 30,
         units: [
           {
@@ -1638,7 +1638,7 @@ export const INDIA_PG_COMPETITIVE_EXAMS: CuratedExam[] = [
       },
       {
         name: 'General Test',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-logical-reasoning',
         units: [
           {
             name: 'Quantitative Reasoning',
@@ -1709,7 +1709,7 @@ export const INDIA_PG_COMPETITIVE_EXAMS: CuratedExam[] = [
     subjects: [
       {
         name: 'General Paper on Teaching & Research Aptitude (Paper I)',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-logical-reasoning',
         weightage: 33,
         units: [
           {

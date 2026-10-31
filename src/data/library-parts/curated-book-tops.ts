@@ -17,7 +17,6 @@ import { MATH_CHAPTERS } from './merged/math'
 import { PHYS_CHAPTERS } from './merged/physics'
 import { CHEM_CHAPTERS } from './merged/chemistry'
 import { ENGLISH_CHAPTERS } from './merged/english'
-import { APT_CHAPTERS } from './merged/aptitude'
 import { JAVA_CHAPTERS } from './subjects/programming-java'
 import { DSA_CHAPTERS } from './subjects/dsa'
 import { AI_CHAPTERS } from './subjects/ai-data-science'
@@ -40,7 +39,6 @@ export const CURATED_BOOK_CHAPTER_TOPS: Record<string, number> = {
   'phys-master': topOf(PHYS_CHAPTERS),
   'chem-complete': topOf(CHEM_CHAPTERS),
   'english-complete': topOf(ENGLISH_CHAPTERS),
-  'aptitude-complete': topOf(APT_CHAPTERS),
   'java-complete': topOf(JAVA_CHAPTERS),
   'dsa-complete': topOf(DSA_CHAPTERS),
   'ai-complete': topOf(AI_CHAPTERS),

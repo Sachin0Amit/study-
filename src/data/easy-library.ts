@@ -15,8 +15,6 @@ const SUBJECT_EASY: Record<string, string> = {
     'Chemistry = what things are made of and how they change. Moles count particles, equilibrium balances reactions, organic maps trace carbon paths. Start Mole Ch 1, go in order.',
   english:
     'English = read carefully + write clearly. First find what the passage says, then how it says it, then fix grammar bits. Practice one small passage daily.',
-  aptitude:
-    'Aptitude = fast thinking games: patterns, puzzles, quick maths, and knowing the world. Learn one trick, solve 10 sums with it the same way.',
   'programming-c-cpp':
     'C & C++ = talk close to the machine. C first: types, loops, pointers. Then C++ adds classes and templates. Like driving manual car: more control, more care needed.',
   'programming-java':
@@ -100,8 +98,6 @@ const BOOK_EASY: Record<string, string> = {
     'Full chemistry: moles to equilibrium to organic maps to salt tests, plus engineering chemistry. Physical first, then organic, then inorganic. Write reactions by hand.',
   'english-complete':
     'Reading + writing in one small book: comprehension passages, grammar rules, expression. Do one section a day, always with a pencil in hand.',
-  'aptitude-complete':
-    'Four kinds of thinking: reasoning puzzles, quick maths, world facts, science facts. Learn one trick, then drill 10 questions the same way.',
   'c-cpp-complete':
     'C first (small, close to metal), then the full C++ tour by Stroustrup. Type every example, break it, fix it. Pointers click only when you draw memory boxes.',
   'java-complete':

@@ -110,7 +110,7 @@ export const INDIA_PROFESSIONAL_EXAMS: CuratedExam[] = [
       },
       {
         name: 'Logical Reasoning',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-logical-reasoning',
         units: [
           {
             name: 'Argument Analysis',

@@ -3219,7 +3219,7 @@ export const INDIA_ENGINEERING_EXAMS: CuratedExam[] = [
       },
       {
         name: 'Logical Reasoning',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-logical-reasoning',
         units: [
           {
             name: 'Verbal Reasoning',
@@ -3949,7 +3949,7 @@ export const INDIA_ENGINEERING_EXAMS: CuratedExam[] = [
       },
       {
         name: 'Aptitude',
-        mappedSubjectId: 'aptitude',
+        mappedSubjectId: 'ku-logical-reasoning',
         weightage: 5,
         units: [
           {
