@@ -1,7 +1,7 @@
 {
   "$comment": "Topic-level prerequisite graph (spec PART 2.3: Topic → Prerequisite Topics → Learning Sequence). sequence = teaching order per subject (ordering facts, not dependencies). declared = derivation prerequisite phrases resolved to ku topics (title/concept, exact or ≥0.7 token overlap) or masters-library sections (cross-universe foundations). Lesson-internal phrases are classified, unresolved phrases are the honest missing-prerequisite work queue (spec: create or connect). Validation: dependency cycles (declared ku edges only), forward-reference violations, dangling refs. Regenerate: bun scripts/build-prerequisite-graph.ts",
   "builtOn": "2026-11-01",
-  "nodeCount": 720,
+  "nodeCount": 721,
   "nodes": [
     {
       "id": "sci-experimental-design-hypotheses",
@@ -777,6 +777,14 @@
       "subject": "Biochemistry",
       "chapter": "Metabolism",
       "orderInSubject": 11,
+      "tier": "intermediate"
+    },
+    {
+      "id": "bioc-citric-acid-cycle",
+      "title": "The Citric-Acid Cycle: Eight Steps Around One Catalytic Wheel",
+      "subject": "Biochemistry",
+      "chapter": "Metabolism",
+      "orderInSubject": 12,
       "tier": "intermediate"
     },
     {
@@ -6137,6 +6145,11 @@
         "via": "sequence: Biochemistry lesson 11 → 12"
       },
       {
+        "from": "bioc-glycolysis-step-by-step",
+        "to": "bioc-citric-acid-cycle",
+        "via": "sequence: Biochemistry lesson 12 → 13"
+      },
+      {
         "from": "bio-developmental-biology",
         "to": "bio-cell-fate-determinants",
         "via": "sequence: Developmental Biology lesson 1 → 2"
@@ -8486,11 +8499,11 @@
     ]
   },
   "declaredResolution": {
-    "phrasesTotal": 44,
+    "phrasesTotal": 46,
     "resolvedToKuTopic": 4,
     "resolvedToMastersSection": 8,
-    "lessonInternal": 24,
-    "unresolved": 8,
+    "lessonInternal": 25,
+    "unresolved": 9,
     "unresolvedList": [
       {
         "from": "fnd-metacognition-calibration",
@@ -8523,6 +8536,10 @@
       {
         "from": "fnd-deliberate-practice",
         "phrase": "The power law of practice"
+      },
+      {
+        "from": "bioc-citric-acid-cycle",
+        "phrase": "For sequential reactions, ΔG°′ values add"
       }
     ],
     "lessonInternalList": [
@@ -8609,6 +8626,10 @@
       {
         "from": "bioc-glycolysis-step-by-step",
         "phrase": "For coupled reactions, ΔG°′ values add"
+      },
+      {
+        "from": "bioc-citric-acid-cycle",
+        "phrase": "Table values (Lehninger), steps 1–8: −32.2, +13.3, −20.9, −33.5, −2.9, 0.0, −3.8, +29.7 kJ/mol"
       },
       {
         "from": "bio-cell-two-architectures-size-limit",
@@ -8737,7 +8758,7 @@
     },
     "Biochemistry": {
       "core": 6,
-      "intermediate": 4,
+      "intermediate": 5,
       "advanced": 2
     },
     "Developmental Biology": {

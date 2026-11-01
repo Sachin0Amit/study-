@@ -10,9 +10,9 @@
     "knowledgeSubjects": 201,
     "knowledgeBooks": 104,
     "knowledgeChapters": 339,
-    "knowledgeTopics": 720,
-    "knowledgeWords": 1145013,
-    "knowledgeSections": 628
+    "knowledgeTopics": 721,
+    "knowledgeWords": 1148513,
+    "knowledgeSections": 629
   },
   "subjects": [
     {
@@ -400,7 +400,7 @@
       "universe": "masters-library",
       "books": 1,
       "chapters": 3,
-      "sections": 12
+      "sections": 13
     },
     {
       "id": "ku-genetics-heredity",
@@ -1348,12 +1348,12 @@
       "universe": "knowledge-university",
       "domain": "Life Sciences",
       "chapters": 3,
-      "topics": 12,
-      "words": 25200,
+      "topics": 13,
+      "words": 28700,
       "tiers": {
         "advanced": 2,
         "core": 6,
-        "intermediate": 4
+        "intermediate": 5
       }
     },
     {

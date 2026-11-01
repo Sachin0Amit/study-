@@ -10,7 +10,7 @@
  * Table of contents:
  *   01 Molecules of Life — 8 lessons
  *   02 Laboratory Methods — 3 lessons
- *   03 Metabolic Pathways in Depth — 1 lesson (§3.1 glycolysis; §3.2–§3.5 per §6.2)
+ *   03 Metabolic Pathways in Depth — 2 lessons (§3.1 glycolysis · §3.2 citric-acid cycle; §3.3–§3.5 per §6.2)
  */
 import type { KnowledgeTopic } from '../../types'
 import { biochemistryCh01 } from './01-molecules-of-life'

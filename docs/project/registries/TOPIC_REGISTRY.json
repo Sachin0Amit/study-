@@ -1,7 +1,7 @@
 {
   "$comment": "Every Knowledge-University topic by stable id (spec PART 8: canonical topic registry — check here before authoring; ids are kebab-case, globally unique, stable forever). Regenerate: bun scripts/build-project-registries.ts",
   "builtOn": "2026-11-01",
-  "count": 720,
+  "count": 721,
   "topics": [
     {
       "id": "sci-experimental-design-hypotheses",
@@ -1950,6 +1950,26 @@
         "Three irreversible stations: hexokinase, PFK-1, pyruvate kinase",
         "Poisons on the ladder: arsenate, fluoride, iodoacetate",
         "A century of discovery: Buchner, Harden, Meyerhof, Embden, Parnas"
+      ]
+    },
+    {
+      "id": "bioc-citric-acid-cycle",
+      "title": "The Citric-Acid Cycle: Eight Steps Around One Catalytic Wheel",
+      "domain": "Life Sciences",
+      "subject": "Biochemistry",
+      "chapter": "Metabolism",
+      "tier": "intermediate",
+      "words": 3500,
+      "readMins": 18,
+      "addedOn": "2026-11-01",
+      "concepts": [
+        "Pyruvate dehydrogenase: the one-way gateway with a swinging lipoyl arm",
+        "Eight steps: condense, rearrange, decarboxylate twice, cash a GTP, rehydrate, regenerate",
+        "Three control stations: citrate synthase, isocitrate dehydrogenase, α-ketoglutarate dehydrogenase",
+        "Per turn: 3 NADH, 1 FADH2, 1 GTP, 2 CO2 — carriers are the product, not ATP",
+        "Standard ledger −50.3 kJ/mol per turn, derived by grouping pulls, climbs and ripples",
+        "Three poisons, three fingerprints: malonate, fluoroacetate, arsenite",
+        "Found with pigeon muscle and malonate: Krebs, Johnson, Szent-Györgyi, Lipmann"
       ]
     },
     {

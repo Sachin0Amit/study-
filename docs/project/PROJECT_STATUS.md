@@ -1,6 +1,6 @@
 # PROJECT STATUS — StudyVerse
 
-**Snapshot date:** 2026-11-02 (regenerated at each execution — see WORKLOG.md for deltas)
+**Snapshot date:** 2026-11-01 (regenerated at each execution — see WORKLOG.md for deltas)
 
 ## Current phase
 
@@ -15,9 +15,9 @@ Life Sciences writing program per `docs/syllabus/MASTER-SYLLABUS.md` §4/§6.
 | Metric | Count |
 |---|---|
 | Masters Library subjects / books / chapters / sections | 140 / 36 / 898 / 4,704 |
-| Knowledge University domains / books / chapters / topics | 18 / 104 / 360 / 720 |
-| Knowledge words (sum of topic word counts) | ≈1,145,000 |
-| Topic tiers | 399 core · 269 intermediate · 52 advanced |
+| Knowledge University domains / books / chapters / topics | 18 / 104 / 360 / 721 |
+| Knowledge words (sum of topic word counts) | ≈1,149,000 |
+| Topic tiers | 399 core · 270 intermediate · 52 advanced |
 | Curated exams / official syllabus entries | 59 / 2,967 |
 | Exam regions covered | India, USA, UK, Global, Europe, Australia, Canada, Singapore, Japan, China, South America |
 | Syllabus-entry mapping (audit) | 2,967 / 2,967 = 100%, 0 unmapped |
@@ -27,7 +27,7 @@ Life Sciences writing program per `docs/syllabus/MASTER-SYLLABUS.md` §4/§6.
 
 - ku-cell-molecular-biology: **COMPLETE** (4 ch · 18 lessons)
 - ku-zoology: 5 ch · 11 lessons (Comparative Physiology, Digestion & Metabolism, Reproduction & Life Cycles authored)
-- ku-biochemistry: Ch1 + Ch2 **COMPLETE** (11 lessons — incl. §1.8 nucleotide chemistry 2,895w; §2.2 isotopes/centrifugation 2,510w and §2.3 structural methods 2,287w with figure plates); Ch3 Metabolism 1/5 — §3.1 glycolysis 3,500w/18min (figure plate, hydrolysis-energy derivation, poison diagnostics); §3.2–§3.5 next
+- ku-biochemistry: Ch1 + Ch2 **COMPLETE** (11 lessons — incl. §1.8 nucleotide chemistry 2,895w; §2.2 isotopes/centrifugation 2,510w and §2.3 structural methods 2,287w with figure plates); Ch3 Metabolism 2/5 — §3.1 glycolysis 3,500w/18min and §3.2 citric-acid cycle 3,500w/18min (figure plates, standard-ledger derivations, poison diagnostics); §3.3–§3.5 next
 - 13-subject Life Sciences cluster in progress (107 → 168 lesson target), then the
   aptitude trio (Quantitative Aptitude, Logical Reasoning, General Awareness —
   first 2 chapters of each seeded), then remaining §4 subjects.
@@ -41,7 +41,7 @@ Life Sciences writing program per `docs/syllabus/MASTER-SYLLABUS.md` §4/§6.
 | Dev server (:3000) | ✅ running (watchdog auto-recovers OOM restarts ~90 s) |
 | Hourly master loop (cron 492782) | ✅ live — prompt re-pointed to PROJECT_MASTER_PLAN workflow |
 | 15-min webDevReview loop | ✅ live |
-| Registries (docs/project/registries/) | ✅ 5 registries + prerequisite graph (719 nodes · 518 sequence edges · 12 verified declared edges · validation PASS) |
+| Registries (docs/project/registries/) | ✅ 5 registries + prerequisite graph (721 nodes · 520 sequence edges · 12 verified declared edges · validation PASS) |
 | Source inventory | ✅ 58 records: 20 user files (4 unique after md5 dedupe) + 38 diagram assets (22 referenced) — 0 pending inspection |
 
 ## Known limitations (honest)
@@ -49,8 +49,8 @@ Life Sciences writing program per `docs/syllabus/MASTER-SYLLABUS.md` §4/§6.
 - Syllabus-entry "mapped" ≠ "taught at exam depth": mapping confirms a lesson
   genuinely teaching the entry exists; depth is the writing program's ongoing work
   (that is what the tier ladder + word counts track).
-- Derivation-level prerequisites: 42 phrases → 12 verified cross-topic edges
-  (4 ku + 8 masters, all curated/exact), 22 classified lesson-internal, **8
+- Derivation-level prerequisites: 46 phrases → 12 verified cross-topic edges
+  (4 ku + 8 masters, all curated/exact), 25 classified lesson-internal, **9
   unresolved** — the honest missing-prerequisite queue in
   PREREQUISITE_GRAPH.json (backlog item 5 adds author-declared topic-level
   prerequisites going forward).
