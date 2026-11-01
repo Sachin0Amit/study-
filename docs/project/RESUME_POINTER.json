@@ -1,19 +1,19 @@
 {
   "$comment": "StudyVerse resume pointer (governing spec PART 14). Read FIRST by every execution — manual or scheduled. Update after every completed unit. Never mark complete before validating output.",
   "lastSuccessfulExecution": {
-    "when": "2026-11-02T20:30:00+05:30",
-    "kind": "manual",
-    "objective": "Install the STUDYVERSE master-spec systems (PART 16 first-execution workflow)",
-    "summary": "PART-16 audit + persistent project memory + source inventory + registries + coverage report + prerequisite graph + cron re-pointing, all validated and pushed"
+    "when": "2026-11-02T21:00:00+05:30",
+    "kind": "scheduled-hourly-master-loop (job 492782)",
+    "objective": "Certify ku-biochemistry Ch2 Laboratory Methods to the charter bar",
+    "summary": "Committed the 15-min job's uncommitted system units (ef4d76b); found it had authored Ch2 §2.2+§2.3 (35b15a0) with declared≠actual counts and no figures — added both SVG figure plates, made counts word-exact (2,510w/13min + 2,287w/11min), verified carving, pipeline+lint+tsc green, browser QA passed"
   },
   "currentPhase": "B — systems complete, writing program in motion",
   "governingPlan": "docs/project/PROJECT_MASTER_PLAN.md",
   "writingProgram": {
     "programDoc": "docs/syllabus/MASTER-SYLLABUS.md",
     "currentSubject": "ku-biochemistry",
-    "currentChapter": "Ch1 (complete) — next: Ch2 Laboratory Methods expansion / Ch3–Ch4 per §6 tree",
+    "currentChapter": "Ch1 Molecules of Life COMPLETE (8) · Ch2 Laboratory Methods COMPLETE (3/3, 6,600 words) — Ch3 is the only chapter left",
     "currentTopic": null,
-    "nextUnit": "ku-biochemistry: continue per §6 tree — Ch2 laboratory methods, Ch3 metabolism, Ch4 regulation; then remaining Life Sciences subjects per §4 order, then aptitude trio"
+    "nextUnit": "ku-biochemistry Ch3 Metabolic Pathways in Depth per §6.2 tree: author §3.1 Glycolysis Step by Step (reaction-by-reaction mechanism; carve vs Cell-Bio §4.1 integrative overview and the fermentation lesson), then §3.2 Citric-Acid Cycle, §3.3 Oxidative Phosphorylation & Chemiosmosis, §3.4 Carbohydrate & Lipid Traffic, §3.5 Nitrogen Metabolism & the Urea Cycle; then remaining Life Sciences subjects per §4 order, then aptitude trio"
   },
   "scheduledJobs": {
     "masterLoop": { "jobId": 492782, "cadence": "hourly", "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8" },
@@ -31,12 +31,12 @@
     "bun scripts/build-project-registries.ts",
     "bun scripts/build-prerequisite-graph.ts"
   ],
-  "lastCompletedOperation": "Master-spec systems install (see docs/project/WORKLOG.md row 'MASTER-SPEC INSTALL')",
-  "nextRequiredOperation": "Hourly master loop: pick up the writing program at ku-biochemistry (§6 tree), one bounded unit, then validate + ledger + push",
+  "lastCompletedOperation": "ku-biochemistry Ch2 Laboratory Methods certified complete (see MASTER-SYLLABUS §7 ledger row 2026-11-02 Ch2 LABORATORY METHODS COMPLETE)",
+  "nextRequiredOperation": "Hourly master loop: author ku-biochemistry Ch3 §3.1 Glycolysis Step by Step (one bounded unit), then validate + ledger + push",
   "outstandingErrors": [],
   "pendingValidation": [],
   "blockers": [],
-  "relevantCommit": "to be stamped at commit time (see git log for MASTER-SPEC-20261102)",
+  "relevantCommit": "stamped at commit time — see git log MASTERLOOP-20261102",
   "knownConstraints": [
     "never run bun run build (dev :3000 only, port 3000, watchdog recovers OOM in ~90s)",
     "PAT is inline-only — never written to any file or committed",

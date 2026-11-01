@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Biochemistry — Chapter 02: Laboratory Methods
- * 1 lesson · ~1,803 words
+ * 3 lessons · ~6,600 words
  * field: Biochemistry
  * legacy sources: x47-bio-split-pass.ts
  *
@@ -10,8 +10,10 @@
  *
  * Taxonomy match: branches [Laboratory Methods]
  *
- * Lessons (snapshot at reorganization):
+ * Lessons:
  *   02.1 bioc-biochem-toolbox — The Biochemist’s Toolbox: Chromatography, Electrophoresis and Spectrophotometry
+ *   02.2 bioc-isotopes-centrifugation — Tracers and Spin: Isotopes, Fractionation and the Ultracentrifuge
+ *   02.3 bioc-structural-methods — Seeing Molecules: X-Ray Crystallography, NMR and Cryo-EM
  */
 import type { KnowledgeTopic } from '../../types'
 
@@ -202,8 +204,8 @@ export const biochemistryCh02: KnowledgeTopic[] = [
       'Differential centrifugation: the subcellular fractionation ladder',
       'Rate-zonal versus isopycnic density gradients',
     ],
-    words: 2334,
-    readMins: 12,
+    words: 2510,
+    readMins: 13,
     addedOn: '2026-11-01',
     blocks: [
       {
@@ -273,6 +275,63 @@ export const biochemistryCh02: KnowledgeTopic[] = [
       {
         kind: 'para',
         text: 'When differential force alone is not clean enough, layer the sample on top of a pre-formed gradient of sucrose or cesium chloride and spin again — in one of two opposite philosophies. Rate-zonal separation spins long enough for particles to SORT by sedimentation coefficient (size and shape), stopping before any particle reaches the tube bottom; the particles band at positions set by s, and the fastest (biggest) travel deepest. Isopycnic separation spins until each particle floats to the gradient position where the medium\'s density equals the particle\'s OWN buoyant density, however long that takes; position reflects density, not size. The crown-jewel application: Meselson and Stahl spun DNA in cesium chloride to isopycnic equilibrium, where 15N-heavy and 14N-light DNA separate cleanly by density — the machine behind the replication lesson\'s famous experiment. Rate-zonal is the choice for ribosome subunits and viruses; isopycnic is the choice when density is the question. Between them, the ultracentrifuge turns a cell into a parts list.',
+      },
+      {
+        kind: 'figure',
+        caption: 'The fractionation ladder and the two gradient strategies. LEFT — differential centrifugation: cells homogenized in cold isotonic sucrose are spun in steps of rising force — nuclei pellet at ~600 g, mitochondria/lysosomes/peroxisomes at ~10,000 g, microsomes (ER fragments) and ribosomes at ~100,000 g, and the cytosol remains the final supernatant. RIGHT — rate-zonal spins sort particles by sedimentation coefficient s (biggest travel deepest, stopped before the pellet); isopycnic spinning in a cesium chloride gradient lets each particle band where the medium equals its own buoyant density — the machine behind the 15N-heavy/14N-light separation.',
+        afterConcept: 6,
+        svg: `<svg viewBox="0 0 880 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Differential centrifugation ladder from nuclei to cytosol, and the two gradient strategies rate-zonal versus isopycnic">
+  <style>.lbl{font-family:Georgia,serif;font-size:14.5px;fill:#3f3f46}.big{font-size:18px;font-weight:bold}.sm{font-size:12.5px;fill:#52525b}.ink{stroke:#8a8a93;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.route{stroke:#e11d48;fill:none;stroke-width:2.2;stroke-linecap:round}.pel{fill:#52525b}.band{fill:#3f3f46}.grad{fill:#7c3aed}.midb{font-family:Georgia,serif;font-size:14.5px;font-weight:bold;fill:#3f3f46;text-anchor:middle}</style>
+  <text class="lbl big" x="30" y="34" fill="#3f3f46">Sorting the wreckage — the ladder and the gradients</text>
+  <rect x="20" y="50" width="410" height="400" rx="14" class="ink"/>
+  <text class="lbl big" x="38" y="80" fill="#3f3f46">A · The differential-centrifugation ladder</text>
+  <text class="sm" x="38" y="100">homogenize in cold isotonic sucrose, then spins of rising force</text>
+  <text class="lbl" x="38" y="134">SPIN 1 · ~600 g · 10 min</text>
+  <text class="sm" x="38" y="152">pellet: nuclei — the biggest, heaviest first</text>
+  <rect x="310" y="112" width="48" height="46" rx="7" class="ink"/><rect x="313" y="140" width="42" height="15" rx="3" class="pel"/>
+  <path class="route" d="M334 162 L334 176"/><path d="M334 180 l-4 -7 h8 z" fill="#e11d48"/>
+  <text class="lbl" x="38" y="204">SPIN 2 · ~10,000 g</text>
+  <text class="sm" x="38" y="222">pellet: mitochondria, lysosomes</text>
+  <text class="sm" x="38" y="238">and peroxisomes</text>
+  <rect x="310" y="182" width="48" height="46" rx="7" class="ink"/><rect x="313" y="212" width="42" height="13" rx="3" class="pel"/>
+  <path class="route" d="M334 232 L334 246"/><path d="M334 250 l-4 -7 h8 z" fill="#e11d48"/>
+  <text class="lbl" x="38" y="274">SPIN 3 · ~100,000 g · 1 h</text>
+  <text class="sm" x="38" y="292">pellet: microsomes (ER fragments)</text>
+  <text class="sm" x="38" y="308">and ribosomes</text>
+  <rect x="310" y="252" width="48" height="46" rx="7" class="ink"/><rect x="313" y="287" width="42" height="8" rx="3" class="pel"/>
+  <path class="route" d="M334 302 L334 316"/><path d="M334 320 l-4 -7 h8 z" fill="#e11d48"/>
+  <text class="lbl" x="38" y="344">final supernatant</text>
+  <text class="sm" x="38" y="362">the cytosol — soluble enzymes</text>
+  <text class="sm" x="38" y="378">(glycolysis) stay behind</text>
+  <rect x="310" y="322" width="48" height="46" rx="7" class="ink"/><rect x="313" y="325" width="42" height="40" rx="3" fill="#e4e4e7"/>
+  <circle cx="326" cy="336" r="1.8" fill="#8a8a93"/><circle cx="342" cy="344" r="1.8" fill="#8a8a93"/><circle cx="334" cy="354" r="1.8" fill="#8a8a93"/><circle cx="350" cy="332" r="1.8" fill="#8a8a93"/>
+  <text class="sm" x="38" y="412">this ladder is how the cell was first taken apart</text>
+  <text class="sm" x="38" y="428">into its working parts</text>
+  <rect x="450" y="50" width="410" height="400" rx="14" class="ink"/>
+  <text class="lbl big" x="468" y="80" fill="#3f3f46">B · The two gradient strategies</text>
+  <text class="sm" x="468" y="100">layer the sample on a pre-formed gradient and spin</text>
+  <text class="midb" x="512" y="116">RATE-ZONAL</text>
+  <rect x="478" y="120" width="68" height="230" rx="8" class="ink"/>
+  <rect x="481" y="123" width="62" height="38" class="grad" opacity="0.06"/><rect x="481" y="161" width="62" height="38" class="grad" opacity="0.11"/><rect x="481" y="199" width="62" height="38" class="grad" opacity="0.17"/><rect x="481" y="237" width="62" height="38" class="grad" opacity="0.24"/><rect x="481" y="275" width="62" height="38" class="grad" opacity="0.32"/><rect x="481" y="313" width="62" height="34" class="grad" opacity="0.42"/>
+  <rect x="481" y="126" width="62" height="7" class="band"/>
+  <rect x="487" y="168" width="50" height="9" rx="2" fill="#52525b"/><rect x="487" y="206" width="50" height="9" rx="2" fill="#52525b"/><rect x="487" y="252" width="50" height="9" rx="2" fill="#52525b"/>
+  <text class="sm" x="556" y="176">sort by sedimentation</text>
+  <text class="sm" x="556" y="192">coefficient s — biggest</text>
+  <text class="sm" x="556" y="208">travel deepest; stop</text>
+  <text class="sm" x="556" y="224">before the pellet</text>
+  <text class="midb" x="758" y="116">ISOPYCNIC</text>
+  <rect x="724" y="120" width="68" height="230" rx="8" class="ink"/>
+  <rect x="727" y="123" width="62" height="38" class="grad" opacity="0.06"/><rect x="727" y="161" width="62" height="38" class="grad" opacity="0.11"/><rect x="727" y="199" width="62" height="38" class="grad" opacity="0.17"/><rect x="727" y="237" width="62" height="38" class="grad" opacity="0.24"/><rect x="727" y="275" width="62" height="38" class="grad" opacity="0.32"/><rect x="727" y="313" width="62" height="34" class="grad" opacity="0.42"/>
+  <rect x="731" y="196" width="54" height="10" rx="2" fill="#52525b"/><rect x="731" y="252" width="54" height="10" rx="2" class="band"/>
+  <text class="sm" x="800" y="204">14N-light</text>
+  <text class="sm" x="800" y="256">15N-heavy</text>
+  <text class="sm" x="800" y="272">(denser)</text>
+  <text class="sm" x="512" y="376" text-anchor="middle">position = s</text>
+  <text class="sm" x="512" y="392" text-anchor="middle">(size + shape)</text>
+  <text class="sm" x="758" y="376" text-anchor="middle">position = buoyant density</text>
+  <text class="sm" x="758" y="392" text-anchor="middle">— density, not size</text>
+  <text class="sm" x="655" y="428" text-anchor="middle">Meselson–Stahl's machine: 15N-heavy vs 14N-light DNA</text>
+</svg>`,
       },
       {
         kind: 'callout',
@@ -365,8 +424,8 @@ export const biochemistryCh02: KnowledgeTopic[] = [
       'Cryo-EM: vitrification and single-particle reconstruction',
       'Choosing a method: size, state and environment',
     ],
-    words: 2358,
-    readMins: 12,
+    words: 2287,
+    readMins: 11,
     addedOn: '2026-11-01',
     blocks: [
       {
@@ -416,6 +475,79 @@ export const biochemistryCh02: KnowledgeTopic[] = [
       {
         kind: 'para',
         text: 'The third method abolished crystallography\'s bottleneck. In cryo-electron microscopy, a thin film of protein solution is plunged into liquid ethane cooled by liquid nitrogen — cooling so fast (tens of thousands of degrees per second) that water vitrifies: it becomes glass, with NO ice crystals to crush the particles. Thousands of single particles lie in the film in random orientations; the electron microscope images them, and software (descended from Fred Sigworth\'s maximum-likelihood ideas and built by the field around Jacques Dubochet\'s vitrification, Richard Henderson\'s membrane-protein proof and Joachim Frank\'s classification algorithms — the 2017 Nobel) sorts the images into orientation classes and back-projects them into a single 3D density map. The "resolution revolution" (after 2012–2013 direct-electron detectors that count single electrons) lifted cryo-EM from blobby 10 Å maps to routine 2–3 Å structures of machines crystallization never touched: membrane receptors, the spliceosome, ribosomes with antibiotics bound, the coronavirus spike. Its unique dividend is heterogeneity: classification sorts particles into STATES, so one preparation yields the open and closed forms of a channel — dynamics, not just shape. Electron crystallography\'s microcrystal electron diffraction (MicroED) extends the family to sub-micron crystals, and the 2024 chemistry Nobel honored the protein-structure-prediction network that now supplies starting models for all three methods.',
+      },
+      {
+        kind: 'figure',
+        caption: 'Three ways to see a molecule. X-ray crystallography: a crystal turns an X-ray beam into diffraction spots; Bragg\'s law ties spot angles to atomic spacings and, once the phase problem is solved, Fourier synthesis yields the electron-density map judged by R-factor and R-free. Solution NMR: chemical shifts fingerprint each atom\'s neighborhood and NOE distance constraints (protons within ~5 Å) fold the molecule computationally into an ensemble. Cryo-EM: vitrification in liquid ethane, thousands of single particles, classification, back-projection — a 3D density map with no crystal, and dynamics as a bonus.',
+        afterConcept: 5,
+        svg: `<svg viewBox="0 0 880 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three structure-determination methods compared: X-ray crystallography, solution NMR and cryo-EM pipelines">
+  <style>.lbl{font-family:Georgia,serif;font-size:14.5px;fill:#3f3f46}.big{font-size:18px;font-weight:bold}.sm{font-size:12.5px;fill:#52525b}.ink{stroke:#8a8a93;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.route{stroke:#e11d48;fill:none;stroke-width:2.2;stroke-linecap:round}.dot{fill:#52525b}.red{fill:#e11d48}</style>
+  <text class="lbl big" x="30" y="34" fill="#3f3f46">Three ways to see a molecule</text>
+  <rect x="20" y="50" width="270" height="400" rx="14" class="ink"/>
+  <text class="lbl big" x="36" y="78" fill="#3f3f46">A · X-ray crystallography</text>
+  <path class="route" d="M28 130 L50 130"/>
+  <circle cx="60" cy="116" r="3.2" class="dot"/><circle cx="74" cy="116" r="3.2" class="dot"/><circle cx="88" cy="116" r="3.2" class="dot"/><circle cx="60" cy="130" r="3.2" class="dot"/><circle cx="74" cy="130" r="3.2" class="dot"/><circle cx="88" cy="130" r="3.2" class="dot"/><circle cx="60" cy="144" r="3.2" class="dot"/><circle cx="74" cy="144" r="3.2" class="dot"/><circle cx="88" cy="144" r="3.2" class="dot"/>
+  <text class="sm" x="28" y="162">X-ray beam (λ ≈ 1 Å)</text>
+  <text class="sm" x="104" y="122">the crystal — trillions of</text>
+  <text class="sm" x="104" y="138">identically oriented molecules</text>
+  <path class="route" d="M74 152 L74 176"/><path d="M74 180 l-4 -7 h8 z" class="red"/>
+  <circle cx="74" cy="204" r="2.6" class="dot"/><circle cx="66" cy="216" r="2.6" class="dot"/><circle cx="82" cy="216" r="2.6" class="dot"/><circle cx="58" cy="228" r="2.6" class="dot"/><circle cx="74" cy="228" r="2.6" class="dot"/><circle cx="90" cy="228" r="2.6" class="dot"/><circle cx="66" cy="240" r="2.6" class="dot"/><circle cx="82" cy="240" r="2.6" class="dot"/><circle cx="74" cy="252" r="2.6" class="dot"/>
+  <text class="sm" x="104" y="216">diffraction spots — geometry</text>
+  <text class="sm" x="104" y="232">encodes its dimensions</text>
+  <path class="route" d="M74 262 L74 286"/><path d="M74 290 l-4 -7 h8 z" class="red"/>
+  <text class="sm" x="86" y="280">Fourier synthesis</text>
+  <text class="sm" x="86" y="296">(phases!)</text>
+  <ellipse cx="74" cy="340" rx="34" ry="21" class="ink"/><ellipse cx="74" cy="340" rx="23" ry="14" class="ink"/><ellipse cx="74" cy="340" rx="13" ry="7" class="ink"/>
+  <text class="sm" x="120" y="332">electron-density map —</text>
+  <text class="sm" x="120" y="348">the atomic model is built</text>
+  <text class="sm" x="120" y="364">into the contours</text>
+  <text class="sm" x="36" y="412">Bragg's law nλ = 2d·sinθ ties spot</text>
+  <text class="sm" x="36" y="428">angles to spacings · R-factor / R-free</text>
+  <rect x="305" y="50" width="270" height="400" rx="14" class="ink"/>
+  <text class="lbl big" x="321" y="78" fill="#3f3f46">B · Solution NMR</text>
+  <circle cx="368" cy="138" r="28" class="ink" stroke-dasharray="6 5"/>
+  <path class="ink" d="M354 138 q7 -12 14 0 t14 0"/>
+  <text class="sm" x="408" y="130">nuclei with spin, tumbling</text>
+  <text class="sm" x="408" y="146">in a strong field</text>
+  <path class="ink" d="M336 206 L436 206"/>
+  <path class="ink" d="M350 206 L350 186"/><path class="ink" d="M366 206 L366 176"/><path class="ink" d="M382 206 L382 196"/><path class="ink" d="M400 206 L400 182"/><path class="ink" d="M418 206 L418 192"/>
+  <text class="sm" x="448" y="192">chemical shift — each</text>
+  <text class="sm" x="448" y="208">atom's fingerprint</text>
+  <circle cx="352" cy="262" r="4" class="red"/><circle cx="398" cy="262" r="4" class="red"/>
+  <path class="ink" d="M358 262 L392 262" stroke-dasharray="4 4"/>
+  <text class="sm" x="330" y="286">NOE: protons within ~5 Å</text>
+  <path class="ink" d="M336 322 q8 -10 16 0 t16 0 t16 0 t16 0"/>
+  <path class="ink" d="M340 330 q8 -10 16 0 t16 0 t16 0 t16 0"/>
+  <path class="ink" d="M344 338 q8 -10 16 0 t16 0 t16 0 t16 0"/>
+  <text class="sm" x="420" y="326">an ENSEMBLE of 20</text>
+  <text class="sm" x="420" y="342">structures — tightness</text>
+  <text class="sm" x="420" y="358">= rigidity map</text>
+  <text class="sm" x="321" y="412">needs isotope labels (¹³C, ¹⁵N) and small</text>
+  <text class="sm" x="321" y="428">size — classical limit ~30–50 kDa</text>
+  <rect x="590" y="50" width="270" height="400" rx="14" class="ink"/>
+  <text class="lbl big" x="606" y="78" fill="#3f3f46">C · Cryo-EM</text>
+  <path class="route" d="M643 88 L643 100"/><path d="M643 104 l-4 -7 h8 z" class="red"/>
+  <circle cx="643" cy="108" r="4" fill="#0369a1"/>
+  <rect x="616" y="128" width="54" height="14" rx="3" class="ink"/>
+  <text class="sm" x="616" y="158">liquid ethane</text>
+  <text class="sm" x="684" y="120">vitrification — water</text>
+  <text class="sm" x="684" y="136">becomes glass, never ice</text>
+  <path class="route" d="M643 162 L643 170"/><path d="M643 174 l-4 -7 h8 z" class="red"/>
+  <rect x="616" y="180" width="66" height="52" rx="4" class="ink"/>
+  <circle cx="630" cy="194" r="2" class="dot"/><circle cx="648" cy="188" r="2" class="dot"/><circle cx="664" cy="198" r="2" class="dot"/><circle cx="636" cy="208" r="2" class="dot"/><circle cx="656" cy="206" r="2" class="dot"/><circle cx="668" cy="216" r="2" class="dot"/><circle cx="628" cy="220" r="2" class="dot"/><circle cx="648" cy="222" r="2" class="dot"/>
+  <text class="sm" x="694" y="192">thousands of single</text>
+  <text class="sm" x="694" y="208">particles, random</text>
+  <text class="sm" x="694" y="224">orientations</text>
+  <path class="route" d="M649 238 L649 252"/><path d="M649 256 l-4 -7 h8 z" class="red"/>
+  <text class="sm" x="660" y="252">classification sorts</text>
+  <text class="sm" x="660" y="268">orientations — and STATES</text>
+  <ellipse cx="649" cy="322" rx="32" ry="20" class="ink"/><ellipse cx="649" cy="322" rx="21" ry="13" class="ink"/><ellipse cx="649" cy="322" rx="11" ry="6" class="ink"/>
+  <text class="sm" x="694" y="312">back-projection →</text>
+  <text class="sm" x="694" y="328">3D density map</text>
+  <text class="sm" x="694" y="344">(routine 2–3 Å)</text>
+  <text class="sm" x="606" y="412">no crystal needed — heterogeneity</text>
+  <text class="sm" x="606" y="428">is the dividend: states, not just shape</text>
+</svg>`,
       },
       {
         kind: 'example',
