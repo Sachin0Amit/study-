@@ -9,7 +9,7 @@
  *
  * Table of contents:
  *   01 Foundations: Life, Microscopy & the Cell — 3 lessons (the ladder head: absolute basics)
- *   02 The Cell: Structure & Signaling — 4 lessons
+ *   02 The Cell: Structure & Signaling — 5 lessons (biomolecules → organelle atlas → cytoskeleton → signaling → cycle)
  *   03 Molecular Biology of the Gene — 6 lessons
  *   04 Bioenergetics — 1 lesson
  */

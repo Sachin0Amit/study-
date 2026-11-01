@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T05:11:30.059Z",
+  "generatedAt": "2026-11-01T05:28:47.717Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 140,
     "books": 140,
     "chapters": 895,
-    "sections": 4684
+    "sections": 4685
   },
   "subjects": [
     {
@@ -26856,7 +26856,7 @@
       "group": "Life Sciences",
       "tagline": "The unit of life, read to the letter",
       "chapterCount": 4,
-      "sectionCount": 14,
+      "sectionCount": 15,
       "chapters": [
         {
           "id": "ku-cell-molecular-biology-foundations-life-microscopy-and-the-cell",
@@ -26889,17 +26889,17 @@
           "title": "The Cell: Structure & Signaling",
           "shortTitle": "The Cell: Structure & Signaling",
           "bookId": "ku-cell-molecular-biology",
-          "sectionCount": 4,
+          "sectionCount": 5,
           "sections": [
             {
-              "id": "ku-bio-cell-signaling-transduction",
+              "id": "ku-bio-cell-biomolecules",
               "number": 2.1,
-              "title": "Cell Signaling: Reception, Transduction, Response"
+              "title": "The Cell and Its Biomolecules: From Membranes to Macromolecules"
             },
             {
-              "id": "ku-bio-cell-biomolecules",
+              "id": "ku-bio-organelle-atlas",
               "number": 2.2,
-              "title": "The Cell and Its Biomolecules: From Membranes to Macromolecules"
+              "title": "The Organelle Atlas: Nucleus to Peroxisome"
             },
             {
               "id": "ku-bio-cytoskeleton-cell-motility",
@@ -26907,8 +26907,13 @@
               "title": "The Cytoskeleton and Cell Motility: Tubes, Ropes and Molecular Walkers"
             },
             {
-              "id": "ku-bio-cell-cycle-mitosis-checkpoints",
+              "id": "ku-bio-cell-signaling-transduction",
               "number": 2.4,
+              "title": "Cell Signaling: Reception, Transduction, Response"
+            },
+            {
+              "id": "ku-bio-cell-cycle-mitosis-checkpoints",
+              "number": 2.5,
               "title": "The Cell Cycle: Phases, Checkpoints and How Cells Die"
             }
           ]

@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Cell & Molecular Biology — Chapter 02: The Cell: Structure & Signaling
- * 4 lessons · ~8,471 words
+ * 5 lessons · ~11,189 words
  * field: Cell & Molecular Biology
  * legacy sources: life-sciences.ts, x14-molecular.ts, x55-crossverify-pass.ts
  *
@@ -10,15 +10,518 @@
  *
  * Taxonomy match: branches [Cell Biology, Cell Signaling]
  *
- * Lessons (snapshot at reorganization):
- *   02.1 bio-cell-signaling-transduction — Cell Signaling: Reception, Transduction, Response
- *   02.2 bio-cell-biomolecules — The Cell and Its Biomolecules: From Membranes to Macromolecules
- *   02.3 bio-cytoskeleton-cell-motility — The Cytoskeleton and Cell Motility: Tubes, Ropes and Molecular Walkers
- *   02.4 bio-cell-cycle-mitosis-checkpoints — The Cell Cycle: Phases, Checkpoints and How Cells Die
+ * Lesson order (MASTER-SYLLABUS §6.1 tree — chemistry first, then architecture,
+ * movement, communication, division; numbering is derived by the bridge):
+ *   02.1 bio-cell-biomolecules — The Cell and Its Biomolecules: From Membranes to Macromolecules
+ *   02.2 bio-organelle-atlas — The Organelle Atlas: Nucleus to Peroxisome (NEW 2026-11-02)
+ *   02.3 bio-cytoskeleton-cell-motility — The Cytoskeleton and Cell Motility
+ *   02.4 bio-cell-signaling-transduction — Cell Signaling: Reception, Transduction, Response
+ *   02.5 bio-cell-cycle-mitosis-checkpoints — The Cell Cycle: Phases, Checkpoints and How Cells Die
  */
 import type { KnowledgeTopic } from '../../types'
 
 export const cellMolecularBiologyCh02: KnowledgeTopic[] = [
+  {
+    id: 'bio-cell-biomolecules',
+    title: 'The Cell and Its Biomolecules: From Membranes to Macromolecules',
+    domain: 'Life Sciences',
+    field: 'Cell & Molecular Biology',
+    branch: 'Cell Biology',
+    tier: 'core',
+    concepts: [
+      'Cell theory and its honest exceptions',
+      'Prokaryote versus eukaryote',
+      'The endomembrane system',
+      'Mitochondria, plastids and ribosomes',
+      'Fluid-mosaic membrane',
+      'Passive and active transport',
+      'Four classes of biomolecules',
+      'Enzymes, active sites and saturation',
+    ],
+    words: 1859,
+    readMins: 8,
+    addedOn: '2026-10-20',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'Before genetics, before physiology, biology’s ground floor is the cell and its chemistry. One lesson cannot replace a textbook’s four chapters, but it can assemble the parts that exams actually probe: what the cell theory claims and where it bends, the organelle inventory, the membrane and its traffic rules, the four classes of biomolecules, and the enzymes that make the chemistry fast enough for life. NCERT compresses this into Class 11 chapters 8 through 11; OpenStax Biology 2e spreads it across its opening chapters; this lesson condenses both.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'The cell is among the most reliably scoring areas in entrance biology — screening papers routinely draw five or more questions from cell structure, biomolecules and enzymes, and the college-entrance biology course opens its year with this material. It is also the conceptual base for everything later: genetics needs the nucleus, respiration needs the mitochondrion, pharmacology needs the membrane.',
+        tone: 'insight',
+      },
+      { kind: 'heading', text: 'Cell Theory and Its Limits' },
+      {
+        kind: 'para',
+        text: 'Matthias Schleiden (1838, plants) and Theodor Schwann (1839, animals) proposed that all organisms are made of cells and that the cell is the basic unit of life; Rudolf Virchow closed the loop in 1855 — omnis cellula e cellula, every cell from a cell. The theory has honest exceptions: viruses are acellular, skeletal muscle fibers run centimeters long with hundreds of nuclei, and mature red blood cells work without any nucleus at all. None of these embarrasses the theory, which describes organisms, not every tissue’s eccentricities. Microscopes set the ceiling of what could be known — light microscopes resolve about 200 nanometers, electron microscopes a thousandfold finer — which is why organelle knowledge tracks microscope history.',
+      },
+      { kind: 'heading', text: 'Two Architectures' },
+      {
+        kind: 'para',
+        text: 'Prokaryotes pack life into a single compartment: no nuclear envelope (the nucleoid is a coiled-chromosome zone), no membrane-bound organelles, ribosomes of the smaller 70S class. Outside lies the cell envelope — glycocalyx (capsule or slime layer), the wall, and the plasma membrane — plus mesosome infoldings and inclusion bodies that stockpile glycogen or phosphate; plasmids carry accessory genes such as antibiotic resistance. The disease-facing story of these structures belongs to this library’s microbiology field guide; here they matter as the prokaryote’s defining architecture.',
+      },
+      {
+        kind: 'para',
+        text: 'Eukaryotes compartmentalize. The nucleus — double envelope perforated by pores, nucleolus assembling ribosomal RNA, chromatin of DNA plus protein — is the archive. The endomembrane system is the logistics wing: rough ER studded with ribosomes folds proteins; smooth ER makes lipids and detoxifies drugs in the liver; the Golgi apparatus, a stack of cisternae, receives vesicles at its cis face and ships glycoproteins and lysosomes from its trans face — the cell’s post office; lysosomes are sacs of acid hydrolases built for demolition and recycling, the “suicide bags” whose failure causes Tay–Sachs disease; and vacuoles are the tonoplast-bounded storehouses of plant cells, contractile in freshwater Amoeba for osmoregulation.',
+      },
+      {
+        kind: 'para',
+        text: 'Two organelles run their own show. Mitochondria: double-membraned, inner membrane folded into cristae studded with ATP-making particles, matrix holding its own circular DNA and 70S ribosomes — semiautonomous, multiplying by fission and maternally inherited, the core of the endosymbiosis argument. Plastids are the plant counterparts: chloroplasts with grana of thylakoids in a stroma, starch-storing amyloplasts and pigment-loaded chromoplasts. Ribosomes sit outside the membrane system entirely — 80S in the eukaryotic cytosol, 70S inside organelles — a fingerprint examiners love.',
+      },
+      { kind: 'heading', text: 'The Membrane and Its Traffic Rules' },
+      {
+        kind: 'para',
+        text: 'The boundary is the fluid-mosaic membrane of Singer and Nicolson (1972): a phospholipid bilayer with hydrophobic tails inward, proteins embedded (integral) or perched (peripheral), cholesterol between the tails buffering fluidity, and carbohydrates tagging the outer face for recognition. “Fluid” is literal — proteins and lipids drift laterally, which is why membranes fuse, endocytose and divide.',
+      },
+      {
+        kind: 'para',
+        text: 'Traffic across the membrane runs by two rules. Passive transport moves things down gradients without ATP: simple diffusion for small nonpolar molecules and gases; facilitated diffusion through channel proteins (aquaporins for water) or carriers (the GLUT glucose transporters) — specific and saturable, but still free; and osmosis, water’s own diffusion toward the stronger solution, which swells cells hypotonically, holds them isotonic and shrinks them — or plasmolyses plant cells — hypertonically. Active transport pumps uphill using ATP: the sodium–potassium pump exports 3 Na+ for every 2 K+ per ATP spent, founding the ion gradients behind every nerve impulse (the action-potential lesson runs on this pump). Bulk transport rounds it out — endocytosis, phagocytosis (“cell eating”, how Amoeba feeds) and pinocytosis (“cell drinking”), plus exocytosis, the vesicle release behind secretion and neurotransmission.',
+      },
+      { kind: 'heading', text: 'The Biomolecules' },
+      {
+        kind: 'para',
+        text: 'Carbohydrates are “hydrates of carbon” by formula and polymers of monosaccharides in practice. The monomers: the hexoses glucose and fructose, and the pentoses ribose and deoxyribose that later anchor nucleic acids. Disaccharides pair them — sucrose (glucose plus fructose, table sugar), maltose, lactose. Polysaccharides sort by bond geometry: starch stores energy in plants, glycogen is the more branched animal store of liver and muscle, and cellulose — beta-linked glucose, the most abundant organic polymer on Earth — cannot be digested by humans but builds every plant wall. Inulin is the fructose-storing oddity that examiners occasionally pull out.',
+      },
+      {
+        kind: 'para',
+        text: 'Lipids are defined by insolubility, not chemistry. Fats are glycerol esterified to three fatty acids — saturated chains straight and stackable (butter), unsaturated chains kinked at cis double bonds and fluid (olive oil). Phospholipids swap one fatty acid for a phosphate head: amphipathic, and therefore the membrane’s own building block. Steroids are four fused carbon rings — cholesterol, the membrane fluidity manager and parent of the sex hormones — a shape exam papers ask you to recognize on sight.',
+      },
+      {
+        kind: 'para',
+        text: 'Proteins are amino-acid polymers joined by peptide bonds, twenty monomers strong, and their function is folding: primary structure is the sequence; secondary is local hydrogen-bonded alpha helices and beta sheets; tertiary is the full 3D fold locked by hydrophobic packing, ionic bonds and disulfide bridges; quaternary assembles chains — hemoglobin’s four subunits the standard example. The cast covers every job in the body: enzymes, oxygen-carrying hemoglobin, antibodies, collagen, the actin and myosin of the musculoskeletal lesson. Nucleic acids store the instructions: DNA, a right-handed antiparallel double helix of deoxyribose-phosphate backbones and paired bases — adenine with thymine (two hydrogen bonds), guanine with cytosine (three) — and single-stranded RNA in its messenger, transfer and ribosomal casts. Proteins do the work; nucleic acids remember the recipe.',
+      },
+      {
+        kind: 'formula',
+        name: 'Chargaff’s rule',
+        latex: '\\%A = \\%T, \\quad \\%G = \\%C \\quad \\Rightarrow \\quad \\%G + \\%C = 100\\% - 2(\\%A)',
+        meaning: 'In double-stranded DNA the bases pair one-to-one, so adenine equals thymine and guanine equals cytosine — knowing any one percentage yields the rest.',
+      },
+      {
+        kind: 'para',
+        text: 'All organisms share the primary metabolites — amino acids, sugars, fats, nucleotides, the proteins of respiration and growth, present everywhere with identifiable jobs. Secondary metabolites are the optional chemistry of particular species: alkaloids such as morphine, quinine and caffeine, terpenoids, tannins, flavonoid pigments, rubber, and most drugs, dyes and spices. The exam line is clean: primary metabolites have roles in all cells; secondary ones are species-specific luxuries, mostly defense.',
+      },
+      { kind: 'heading', text: 'Enzymes: Catalysts of the Possible' },
+      {
+        kind: 'para',
+        text: 'Nearly every enzyme is a catalytic protein (a few RNAs, ribozymes, catalyze too). The substrate binds the active site, the enzyme–substrate complex stabilizes the transition state, activation energy drops, and product leaves the enzyme unchanged to run again — millions of cycles per minute. Enzymes never decide whether a reaction is favorable; they decide only how fast. Rate responds to substrate concentration along the Michaelis–Menten curve: velocity climbs, then plateaus at Vmax when every active site is occupied; Km, the substrate level at half-maximal velocity, measures affinity — low Km means a tight grip. Temperature and pH tune the curve: human enzymes peak near body temperature and denature not far above it, pepsin works in stomach acid near pH 2, trypsin prefers about 8. Inhibitors finish the story — competitive molecules fight for the active site, non-competitive ones bend it — the mechanism behind statins and most drug design (the metabolism lesson carries that machinery further).',
+      },
+      {
+        kind: 'example',
+        title: 'Worked Example: Base Composition from One Number',
+        steps: [
+          'Identify what is asked: a double-stranded DNA sample is 15% adenine — what is its guanine percentage?',
+          'Apply pairing: adenine pairs with thymine, so thymine is also 15%; together A + T account for 30%.',
+          'Subtract from the whole: G + C = 100% − 30% = 70%.',
+          'Pair again: G = C, so guanine = cytosine = 35%.',
+          'Check: 15 + 15 + 35 + 35 = 100% — the symmetry of the double helix turns every such problem into two subtractions and a halving.',
+        ],
+      },
+      { kind: 'heading', text: 'Applications in the Real World' },
+      {
+        kind: 'list',
+        items: [
+          'Cystic fibrosis is a faulty membrane chloride channel — a transport protein, not a metabolism flaw.',
+          'Aquaporin mutations cause rare diabetes insipidus: the water channel fails and the kidneys cannot concentrate urine.',
+          'Statins, antivirals and many psychiatric drugs target membrane receptors and enzymes — pharmacology is applied cell biology.',
+          'Mitochondrial DNA analysis identifies disaster victims and maternal lineages, because the organelle passes down one parent only.',
+          'Glycogen’s branching versus starch explains why athletes carb-load on starch while specific enzyme losses cause glycogen-storage diseases.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Common Pitfalls',
+        text: 'Four slips dominate mark schemes. 70S ribosomes occur in prokaryotes and in mitochondria and chloroplasts — that is evidence for endosymbiosis, not a printing error. Facilitated diffusion is passive: carriers make movement specific, not powered. Water crosses membranes fast because of aquaporins — osmosis without them would be slow. And enzymes lower activation energy; they never touch the equilibrium or make an unfavorable reaction run uphill.',
+        tone: 'warn',
+      },
+      { kind: 'heading', text: 'Key Terms' },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Nucleoid', def: 'The nuclear region of a prokaryote — chromosome without a surrounding envelope.' },
+          { term: 'Endomembrane system', def: 'ER, Golgi, lysosomes and vacuoles working as the cell’s manufacturing and shipping network.' },
+          { term: 'Cristae', def: 'The inner mitochondrial folds carrying the electron-transport machinery.' },
+          { term: 'Fluid-mosaic model', def: 'Singer and Nicolson’s membrane: a mobile phospholipid bilayer with drifting proteins.' },
+          { term: 'Facilitated diffusion', def: 'Passage down a gradient through specific channels or carriers — no ATP spent.' },
+          { term: 'Amphipathic', def: 'Having both hydrophobic and hydrophilic regions — the phospholipid’s defining trick.' },
+          { term: 'Quaternary structure', def: 'The assembly of multiple folded protein chains, as in hemoglobin’s four subunits.' },
+          { term: 'Secondary metabolite', def: 'A species-specific compound such as an alkaloid or tannin, absent from general metabolism.' },
+          { term: 'Km', def: 'Substrate concentration at half-maximal enzyme velocity; inversely reflects substrate affinity.' },
+        ],
+      },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'The organelles nicknamed “suicide bags” are:',
+            options: ['ribosomes', 'lysosomes', 'Golgi cisternae', 'peroxisomes'],
+            answer: 1,
+            explain: 'Lysosomes hold acid hydrolases that can digest the cell’s own contents — hence the name, and the tissue damage in Tay–Sachs disease.',
+          },
+          {
+            q: 'Movement of glucose through a GLUT carrier is:',
+            options: ['simple diffusion', 'facilitated diffusion — passive but specific', 'primary active transport', 'endocytosis'],
+            answer: 1,
+            explain: 'GLUT carriers move glucose down its concentration gradient; they make the passage selective and saturable, not powered.',
+          },
+          {
+            q: 'Which structures contain 70S ribosomes?',
+            options: ['the eukaryotic cytosol only', 'prokaryotes, mitochondria and chloroplasts', 'prokaryotes only', 'all ribosomes are 70S'],
+            answer: 1,
+            explain: 'Mitochondria and chloroplasts keep bacterial-sized ribosomes — a cornerstone of the endosymbiosis argument.',
+          },
+          {
+            q: 'The alpha helices and beta sheets of protein secondary structure are held by:',
+            options: ['hydrogen bonds within the backbone', 'disulfide bridges', 'peptide bonds', 'hydrophobic packing'],
+            answer: 0,
+            explain: 'Secondary structure is local hydrogen bonding; disulfide and hydrophobic interactions lock the tertiary fold instead.',
+          },
+        ],
+      },
+      {
+        kind: 'para',
+        text: 'The cell is a bag of controlled chemistry: a selective membrane, compartmental workshops, four classes of molecules and catalysts that set the speed limits. Everything else in biology — inheritance, respiration, physiology, medicine — is this lesson wearing different costumes. Move next to the genetics lessons for the nucleus in action, or to cellular respiration for what the cristae actually do.',
+      },
+    ],
+  },
+  // ------------------------------------------------------------------
+  {
+    id: 'bio-organelle-atlas',
+    title: 'The Organelle Atlas: Nucleus to Peroxisome',
+    domain: 'Life Sciences',
+    field: 'Cell & Molecular Biology',
+    branch: 'Cell Biology',
+    tier: 'core',
+    concepts: [
+      'The nuclear envelope and its pores: selectivity, capacity and the Ran cycle',
+      'The nucleolus and the nuclear lamina: the nucleus\'s two internal structures',
+      'Rough endoplasmic reticulum: the signal hypothesis, folding and quality control',
+      'Smooth ER: lipid synthesis, detoxification and the calcium warehouse',
+      'The Golgi apparatus: polarity, processing and the mannose-6-phosphate tag',
+      'Lysosomes: acidity, autophagy and the recycling loop',
+      'Peroxisomes and vacuoles: oxidation chemistry and pressure storage',
+    ],
+    words: 2718,
+    readMins: 14,
+    addedOn: '2026-11-02',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'The inventory lesson compressed the whole organelle roster into a few paragraphs; this lesson walks the rooms one by one, at the depth each deserves. The plan is the compartment logic itself: the archive and its reading room (nucleus, nucleolus, lamina), the factory wing that threads and folds new proteins (rough ER), the chemistry bay and warehouse (smooth ER), the finishing and shipping office (Golgi), the demolition-and-recycling yard (lysosome), the oxidation wing (peroxisome) and the pressure tank (the plant vacuole). One thread runs through most of the tour — the secretory pathway, the production line that Palade\'s pulse-chase experiments traced from ribosome to cell surface — and one habit: every room is introduced with the defect that reveals it, because damaged rooms are how medicine meets cell biology.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'Room-by-room structure-function is the spine of entrance biology: pore selectivity, ER versus Golgi roles, the lysosome\'s acidity, the peroxisome\'s chemistry — each is a standard question, and the classic distractor is a room swapped for its neighbour. The defect map (which disease belongs to which room) turns memorized lists into reasoning that survives any phrasing.',
+        tone: 'insight',
+      },
+      { kind: 'heading', text: 'Core Concepts' },
+      {
+        kind: 'para',
+        text: 'The nucleus is bounded by two membranes that are one continuous sheet: the outer nuclear membrane is studded with ribosomes and merges into the endoplasmic reticulum, the inner face is lined by the nuclear lamina, and the two fuse at thousands of circular holes. Each hole is not a gap but a machine: the nuclear pore complex, an eight-spoked assembly of some thirty different nucleoporins, about a thousand times the mass of a typical protein, present in a few thousand copies per mammalian nucleus. The pore is a two-speed gate. Below roughly 40 kilodaltons, small proteins and ions wiggle through freely by diffusion; above it, cargo must carry a nuclear localization signal and be escorted by importin proteins, which dock, drag their cargo through the disordered tangle lining the channel, and are then recycled by Ran — a small GTP-binding switch whose GTP-loaded form inside the nucleus releases the cargo and sends the escort back empty. The RNA traffic is one-way: finished mRNA and ribosomal subunits leave; the archive\'s DNA never does.',
+      },
+      {
+        kind: 'para',
+        text: 'Inside the nucleus, two structures matter enough to have their own names. The nucleolus — the densest spot in the nucleus on any stained preparation — is not a membrane-bounded room but a workbench: the nucleolar organizer regions, where the chromosomes carry their ribosomal-RNA genes, transcribe rRNA around the clock and assemble it with imported proteins into the two ribosomal subunits that then exit through the pores. A cell\'s nucleolus is roughly proportional to its protein-building appetite — large in embryonic and cancer cells, the reason nucleolar enlargement is a diagnostic warning sign. The nuclear lamina is the opposite kind of structure: a chain-link fence of intermediate filaments (the lamins) just under the inner membrane, anchoring pores, organizing chromatin and giving the nucleus its mechanical shape. Mutations in the lamin gene produce Hutchinson–Gilford progeria — the premature-aging syndrome in which nuclei deform — the lamina\'s structural job made visible.',
+      },
+      {
+        kind: 'figure',
+        caption:
+          'The secretory pathway — the endomembrane production line: proteins made on the rough ER travel in transport vesicles to the Golgi\'s cis face, are processed across the stack, and leave the trans face for the lysosome (tagged with mannose-6-phosphate), the plasma membrane, or secretion out of the cell.',
+        afterConcept: 5,
+        svg: `<svg viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Secretory pathway from nucleus through ER and Golgi to destinations">
+  <style>.lbl{font-family:Georgia,serif;font-size:14.5px;fill:#3f3f46}.big{font-size:18px;font-weight:bold}.sm{font-size:12.5px;fill:#52525b}.ink{stroke:#8a8a93;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.route{stroke:#e11d48;fill:none;stroke-width:2.2;stroke-linecap:round}</style>
+  <text class="lbl big" x="30" y="36" fill="#3f3f46">The secretory pathway — nucleus to export</text>
+  <circle cx="130" cy="220" r="78" class="ink"/>
+  <circle cx="130" cy="220" r="52" class="ink" stroke-dasharray="6 5"/>
+  <circle cx="130" cy="220" r="22" class="ink" stroke="#d97706"/>
+  <text class="lbl" x="86" y="216">nucleus</text>
+  <text class="sm" x="78" y="236">(nucleolus inside)</text>
+  <text class="sm" x="86" y="130">pores</text>
+  <path class="ink" d="M206 190 C 238 186, 260 186, 292 190"/>
+  <text class="sm" x="212" y="178">mRNA exits</text>
+  <path class="ink" d="M300 150 C 312 146, 322 146, 334 150 M300 176 C 312 172, 322 172, 334 176 M300 202 C 312 198, 322 198, 334 202" stroke="#059669"/>
+  <text class="sm" x="296" y="136" fill="#047857">ribosomes (80S)</text>
+  <path class="ink" d="M330 150 C 380 150, 420 148, 470 150 L470 236 C 420 240, 380 240, 330 238 Z"/>
+  <path class="ink" d="M330 176 C 380 176, 420 174, 470 176" stroke-dasharray="4 4"/>
+  <path class="ink" d="M330 206 C 380 206, 420 204, 470 206" stroke-dasharray="4 4"/>
+  <text class="lbl" x="352" y="262">rough ER — threads &amp; folds</text>
+  <text class="sm" x="348" y="280">signal peptide opens the way (Blobel)</text>
+  <path class="route" d="M472 186 C 500 186, 510 188, 534 190 M534 190 C 540 186, 548 186, 552 190 M552 190 C 546 194, 540 194, 534 190"/>
+  <text class="sm" x="486" y="172">transport vesicle (COPII)</text>
+  <path class="ink" d="M560 120 C 570 112, 590 110, 600 118 L600 270 C 590 278, 570 276, 560 268 Z"/>
+  <path class="ink" d="M600 128 C 622 122, 636 124, 644 132 L644 258 C 636 264, 622 266, 600 262 Z"/>
+  <path class="ink" d="M644 136 C 664 130, 678 132, 686 140 L686 250 C 678 258, 664 260, 644 254 Z"/>
+  <text class="lbl" x="586" y="300">Golgi stack</text>
+  <text class="sm" x="560" y="318">cis (arrival, left) → trans (shipping, right)</text>
+  <path class="route" d="M688 170 C 716 168, 734 166, 760 164 M760 164 C 766 160, 774 160, 778 164 M778 164 C 772 168, 766 168, 760 164"/>
+  <text class="sm" x="700" y="150">secretion route</text>
+  <path class="ink" d="M782 140 L816 140 L816 176 L782 176 Z"/>
+  <text class="sm" x="770" y="126">exocytosis →</text>
+  <text class="sm" x="742" y="196">out of the cell</text>
+  <path class="route" d="M672 260 C 700 292, 726 322, 748 350 M748 350 C 754 346, 762 346, 766 350 M766 350 C 760 354, 754 354, 748 350"/>
+  <circle cx="790" cy="392" r="46" class="ink"/>
+  <text class="sm" x="762" y="390">lysosome</text>
+  <text class="sm" x="756" y="410">pH 4.5–5.0</text>
+  <text class="sm" x="676" y="342" fill="#b91c1c">mannose-6-phosphate tag</text>
+  <text class="sm" x="676" y="360">routes enzymes here (Golgi\'s address label)</text>
+  <path class="route" d="M600 274 C 596 330, 594 372, 592 420 M592 420 C 588 426, 580 426, 576 422 M592 420 C 596 426, 604 426, 608 422" stroke="#059669"/>
+  <path class="ink" d="M540 430 C 560 424, 620 424, 640 430 L640 462 C 620 468, 560 468, 540 462 Z"/>
+  <text class="sm" x="544" y="452">plasma membrane route (membrane + surface proteins)</text>
+  <text class="sm" x="30" y="330">two recycling notes:</text>
+  <text class="sm" x="30" y="350">COPI vesicles run backward (Golgi → ER), keeping the rooms in balance</text>
+  <text class="sm" x="30" y="370">eating a worn-out organelle = autophagy — the lysosome recycles the cell\'s own rooms</text>
+</svg>`,
+      },
+      {
+        kind: 'para',
+        text: 'The rough endoplasmic reticulum is where the secretory line begins. Its sheets are studded with ribosomes on the cytosolic face, and the puzzle that made it famous is: how does a protein destined for export know to enter the ER\'s interior rather than stay in the cytosol? Günter Blobel\'s signal hypothesis (Nobel Prize, 1999) answered it: the first stretch of the growing protein — the signal peptide, about fifteen to thirty hydrophobic amino acids — is grabbed in the cytosol by a signal recognition particle, which parks the whole ribosome on an ER pore complex; synthesis then threads the chain into the ER\'s interior as it is made. Inside, the protein folds with chaperone help, gains its first sugars, and is inspected: misfolded chains are retained and degraded, which is why the most common single cystic-fibrosis mutation (a deleted phenylalanine, ΔF508) kills by quantity-control, not chemistry — the channel protein is built slightly wrong and the ER refuses to ship it. Scale is worth remembering: the ER holds more than half of all the membrane in a eukaryotic cell, a factory wing out-massing every other room.',
+      },
+      {
+        kind: 'para',
+        text: 'The smooth ER — same membranes, no ribosomes — is the wing\'s other half, three jobs deep. It makes lipids: phospholipids for all the cell\'s membranes, and steroid hormones in the gland cells that specialize in them. It detoxifies: liver hepatocytes pack their smooth ER with cytochrome P450 enzymes that chemically oxidize drugs and poisons into excretable forms — the reason chronic exposure (alcohol, sedatives) makes the liver\'s smooth ER visibly grow, tolerance with a physical address. And it stores calcium: the muscle version (the sarcoplasmic reticulum) banks the calcium that contraction releases — the signaling lesson\'s IP3 opens these same calcium warehouses, so every G-protein cascade touches this room. Neurons\' dendritic spines keep local smooth-ER calcium too, wiring local protein synthesis to local signals.',
+      },
+      {
+        kind: 'para',
+        text: 'The Golgi apparatus — seen by Camillo Golgi in 1898 with a stain so new he called it the internal reticular apparatus, and doubted for fifty years until the electron microscope settled it — is the finishing and shipping office. Its stack of flattened cisternae has a direction: the cis face receives vesicles from the ER, the trans face dispatches them onward, and cargo is processed as it moves or as the stack itself matures — the two competing models (cisternal maturation, in which each cisterna progresses from cis chemistry to trans chemistry while vesicles recycle enzymes backward via COPI; versus vesicular transport, in which cargo shuttles between fixed cisternae in COPII vesicles) — both agree on the chemistry, and the debate itself taught the field that the stack is dynamic, not furniture. The Golgi\'s jobs: finish the sugars started in the ER (O-linked glycosylation happens here), sort and tag — most famously adding mannose-6-phosphate onto lysosomal enzymes, the address label that routes them to the lysosome — and package the export traffic of the secretory pathway.',
+      },
+      {
+        kind: 'formula',
+        name: 'The lysosome\'s proton gradient',
+        latex: '\\frac{[\\text{H}^{+}]_{\\text{lysosome}}}{[\\text{H}^{+}]_{\\text{cytosol}}} = 10^{7.2 - 4.5} \\approx 500',
+        meaning: 'Cytosol sits near pH 7.2; the lysosome\'s interior is held at pH 4.5–5.0 by a V-type ATPase pump that spends ATP to push protons inward. A 2.7-unit pH gap is a ~500-fold excess of protons — the acid that activates the lysosome\'s ~60 acid hydrolases, all of which are built to work only at that acidity. The safeguard is elegant: if a lysosome leaks, its enzymes meet the neutral cytosol and go inactive — self-dissolution is engineered out.',
+      },
+      {
+        kind: 'para',
+        text: 'The lysosome — discovered and named by Christian de Duve in 1949 through centrifugation fractions, a piece of the 1974 Nobel — is the recycling yard: a sac of some sixty acid hydrolases (proteases, nucleases, lipases, polysaccharidases) working at the acid pH the formula above quantifies. Its diet has two menus. Heterophagy: material swallowed from outside by endocytosis or phagocytosis, delivered to the lysosome through endosome intermediates. Autophagy: the cell eating its own parts — a worn-out mitochondrion is wrapped in a double membrane and delivered whole; Yoshinori Ohsumi\'s yeast genetics (Nobel Prize, 2016) turned autophagy from an observation into a mapped pathway, and medicine now reads it everywhere from fasting metabolism to neurodegenerative disease, where failing autophagy lets protein garbage pile up. When the routing fails instead of the digestion, enzymes built without their mannose-6-phosphate tag are shipped to the surface and secreted — the cell\'s lysosomes run empty while the enzymes float uselessly in the medium: inclusion-cell (I-cell) disease, the Golgi\'s tagging failure.',
+      },
+      {
+        kind: 'para',
+        text: 'Two rooms remain. The peroxisome — also named by de Duve — is the oxidation wing: a single-membrane sac importing its enzymes (catalase among them, the most abundant protein in some peroxisomes) directly from the cytosol. Its chemistry is oxidative housekeeping: it breaks down very-long-chain fatty acids (twenty-two carbons and longer, which mitochondria cannot start on), synthesizes the ether lipids called plasmalogens that myelin needs, and disposes of hydrogen peroxide — the by-product of its oxidases — through catalase\'s two-step, which turns hydrogen peroxide into water and oxygen before the radical can spread. Import failure is again the revealing defect: peroxisome-biogenesis disorders such as Zellweger syndrome (mutations in the PEX import machinery) leave enzymes stranded in the cytosol, very-long-chain fatty acids accumulate in brain and liver, and development derails. In plants, specialized peroxisomes called glyoxysomes run the seed-oil-to-sugar conversion; photorespiration\'s peroxisome chemistry is the botany book\'s territory. The plant vacuole completes the atlas: a tonoplast-bounded tank that can occupy up to eighty percent of a cell\'s volume, holding water under turgor pressures of several atmospheres (the plant\'s skeleton is hydraulic), plus pigments, storage and defensive chemistry; its physiology belongs to the botany book — here it stands as the endomembrane system\'s largest single room.',
+      },
+      {
+        kind: 'example',
+        title: 'Worked Example: Which Room Failed? Four Defects, Four Verdicts',
+        steps: [
+          'Identify what is asked: for each defect, name the organelle room and the mechanism, and say why the symptom follows.',
+          'Case one — lysosomal enzymes are found at high level in the blood, and the patient\'s cells show swollen, undigested inclusions: the enzymes were built but never delivered. The address step is the Golgi\'s mannose-6-phosphate tag; its failure (N-acetylglucosamine phosphotransferase) is inclusion-cell disease. Room: Golgi.',
+          'Case two — an infant presents with very-long-chain fatty acids (>C22) accumulated in brain and liver, and catalase found free in the cytosol instead of in an organelle: the peroxisome\'s enzymes were made but never imported. The PEX peroxisome-biogenesis machinery failed — Zellweger syndrome. Room: peroxisome.',
+          'Case three — the most common cystic-fibrosis mutation deletes one phenylalanine from a chloride channel; the protein reaches the ER but is never seen at the cell surface: the ER\'s folding quality control retained and degraded a slightly misfolded (but functional if shipped) protein. Room: rough ER.',
+          'Case four — a child shows accelerated aging, with nuclei visibly deformed in biopsied cells: the lamina scaffold is defective (LMNA mutation) — Hutchinson–Gilford progeria. Room: nuclear lamina.',
+          'State the result: Golgi (tagging) → peroxisome (import) → rough ER (quality control) → lamina (scaffold). The reasoning chain is always the same: locate where the traffic broke, then name the room.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Common Pitfalls',
+        text: 'Five slips recur. "Lysosomes are suicide bags that rupture to kill the cell" — the acid hygiene means leaked enzymes are inactive at cytosolic pH; routine autophagy is housekeeping, not self-destruction. "Smooth ER exists only in the liver" — muscle\'s sarcoplasmic reticulum and steroid-making glands are the same room specialized. "Ribosomes are organelles" — they are not membrane-bounded and sit outside the endomembrane system, a distinction the inventory lesson flags and examiners test. "The Golgi only serves secretion" — lysosome tagging and membrane protein finishing are half its business. "Peroxisomes and mitochondria both burn fat, so they are interchangeable" — the peroxisome starts the very-long chains mitochondria cannot touch and captures no ATP from them (the energy leaves as heat); the two rooms divide the fat, they do not duplicate it.',
+        tone: 'warn',
+      },
+      { kind: 'heading', text: 'Applications in the Real World' },
+      { kind: 'list', items: [
+        'Enzyme-replacement therapy for several lysosomal storage diseases works by exactly this lesson\'s routing: manufactured enzyme tagged with mannose-6-phosphate is infused, and cells drink it in by endocytosis — the address label does the targeting.',
+        'Autophagy is the mechanistic bridge between fasting research, cancer metabolism and neurodegeneration — Ohsumi\'s pathway is now a drug-target class.',
+        'The P450 smooth-ER system explains drug interactions: one drug inducing the ER\'s detox machinery speeds the clearance of another — dosing consequences visible in stained liver tissue.',
+        'Vaccine and biologic manufacturing runs the secretory pathway in cultured cells — glycoprotein finishing happens in the ER–Golgi line, which is why production hosts are chosen for their Golgi chemistry.',
+      ] },
+      { kind: 'heading', text: 'Key Terms' },
+      { kind: 'terms', items: [
+        { term: 'Nuclear pore complex (NPC)', def: 'The eight-spoked protein machine at each envelope hole; free diffusion below ~40 kDa, escorted transport above it.' },
+        { term: 'Ran-GTP', def: 'The small GTPase whose nuclear-GTP/cytosol-GDP gradient drives and recycles nuclear import escorts.' },
+        { term: 'Nucleolus', def: 'The rRNA-gene workbench inside the nucleus where ribosomal subunits are assembled before export.' },
+        { term: 'Nuclear lamina', def: 'The lamin-filament fence lining the inner nuclear membrane — shape, pore anchoring, chromatin organization; LMNA mutations cause progeria.' },
+        { term: 'Signal peptide / signal hypothesis', def: 'The N-terminal address that routes a growing protein into the ER via the signal recognition particle (Blobel, 1999).' },
+        { term: 'Cis and trans face', def: 'The Golgi\'s receiving side (toward the ER) and dispatching side; cargo is processed across the stack.' },
+        { term: 'Mannose-6-phosphate (M6P) tag', def: 'The Golgi-added address that routes acid hydrolases to the lysosome; its failure is I-cell disease.' },
+        { term: 'COPI / COPII vesicles', def: 'Retrograde (Golgi→ER recycling) and anterograde (ER→Golgi forward) transport vesicles respectively.' },
+        { term: 'V-type ATPase', def: 'The lysosomal proton pump that spends ATP to hold pH 4.5–5.0 — the ~500-fold proton gradient of the acid interior.' },
+        { term: 'Autophagy', def: 'Delivery and digestion of the cell\'s own worn components by the lysosome (Ohsumi\'s Nobel pathway, 2016).' },
+      ] },
+      { kind: 'heading', text: 'Check Yourself' },
+      { kind: 'quiz', items: [
+        {
+          q: 'A 25-kilodalton protein with no localization signal, and a 90-kilodalton protein with a nuclear localization signal, are placed in the cytosol. Which enters the nucleus?',
+          options: ['only the 25 kDa protein, by passive diffusion', 'only the 90 kDa protein, by importin escort', 'both, by different routes', 'neither'],
+          answer: 2,
+          explain: 'Below ~40 kDa the pore diffuses freely; above it, an escort (importin) with a nuclear localization signal drags cargo through. Each protein qualifies by one route — the pore is a two-speed gate.',
+        },
+        {
+          q: 'The lysosome\'s interior at pH 4.7 versus cytosol at pH 7.2 holds protons at roughly what multiple?',
+          options: ['about 2.5×', 'about 30×', 'about 300×', 'about 3,000×'],
+          answer: 2,
+          explain: '10^(7.2 − 4.7) = 10^2.5 ≈ 316 — the ~300-fold gradient (order 10²·⁵–10³) the V-type ATPase maintains; exam arithmetic uses the 10^(ΔpH) rule.',
+        },
+        {
+          q: 'A patient\'s fibroblasts secrete lysosomal hydrolases into the medium instead of packaging them. The broken step is:',
+          options: ['the ER signal peptide', 'Golgi mannose-6-phosphate tagging', 'the V-type ATPase', 'Ran-GTP recycling'],
+          answer: 1,
+          explain: 'Undelivered (untagged) enzymes default to the secretion route — inclusion-cell disease. The enzymes themselves work; the address label was never applied.',
+        },
+        {
+          q: 'Very-long-chain fatty acids (≥22 carbons) accumulate in a child\'s brain; catalase is found free in the cytosol. The defective room and process are:',
+          options: ['mitochondrion — beta-oxidation', 'peroxisome — enzyme import (PEX machinery)', 'lysosome — autophagy', 'smooth ER — lipid synthesis'],
+          answer: 1,
+          explain: 'Peroxisomes own the ≥C22 chains\' breakdown; Zellweger-spectrum disorders strand the enzymes in the cytosol — catalase outside its room is the giveaway.',
+        },
+        {
+          q: 'COPII vesicles differ from COPI vesicles in that COPII:',
+          options: ['run backward from Golgi to ER', 'carry cargo forward from ER to Golgi', 'serve the lysosome only', 'are powered by Ran'],
+          answer: 1,
+          explain: 'COPII = anterograde (ER→Golgi, the secretory line\'s outbound truck); COPI = retrograde recycling. Both are coat proteins, not motors of nuclear traffic (that is Ran/importin).',
+        },
+        {
+          q: 'The rough ER earns "rough" from ribosomes, but its share of the cell\'s total membrane is roughly:',
+          options: ['about 5%', 'about 25%', 'more than half', 'about 90%'],
+          answer: 2,
+          explain: 'The ER — rough plus smooth — comprises more than half of all membrane in a typical eukaryotic cell: the factory wing is also the building\'s biggest structure.',
+        },
+        {
+          q: 'Which pairing of room → revealing defect is WRONG?',
+          options: ['nuclear lamina → progeria', 'Golgi tagging → I-cell disease', 'rough ER quality control → the common cystic-fibrosis mutation', 'lysosome pH → Zellweger syndrome'],
+          answer: 3,
+          explain: 'Zellweger is the peroxisome\'s import failure, not a lysosomal pH defect; the lysosome\'s classic failures are storage diseases from missing hydrolases.',
+        },
+        {
+          q: 'A beta-cell making insulin for secretion follows which route?',
+          options: ['free ribosome → Golgi → surface', 'rough ER → vesicle → Golgi cis → Golgi trans → secretory granule → exocytosis', 'smooth ER → lysosome → surface', 'nucleus → pore → membrane directly'],
+          answer: 1,
+          explain: 'Secreted proteins are made on the rough ER (signal peptide), ride COPII vesicles to the cis face, cross the stack, and leave via secretory granules — Palade\'s pulse-chase traced exactly this line.',
+        },
+      ] },
+      {
+        kind: 'callout',
+        title: 'Where next',
+        tone: 'path',
+        text: 'Grounding: Alberts Molecular Biology of the Cell 6e Ch. 12 (Intracellular Membrane Traffic) and Ch. 9 (visual recap of the nucleus); OpenStax Biology 2e Ch. 4.3-4.4; Bergtrom CMB iText Ch. 3-5; NCERT Class 11 Biology Ch. 8. Original papers behind the story: Blobel\'s signal hypothesis (Nobel lecture 1999), de Duve\'s lysosome papers (Nobel lecture 1974), Ohsumi\'s autophagy (Nobel lecture 2016), Palade\'s pulse-chase secretion studies. The next lessons take the cytoskeleton that moves all these vesicles, then the signaling cascades that command the rooms.',
+      },
+    ],
+  },
+  // ------------------------------------------------------------------
+  {
+    id: 'bio-cytoskeleton-cell-motility',
+    title: 'The Cytoskeleton and Cell Motility: Tubes, Ropes and Molecular Walkers',
+    domain: 'Life Sciences',
+    field: 'Cell & Molecular Biology',
+    branch: 'Cell Biology',
+    tier: 'core',
+    concepts: [
+      'Three filament systems: microtubules, microfilaments, intermediate filaments',
+      'Microtubule polarity: GTP, plus and minus ends, MTOC nucleation',
+      'Kinetochore vs polar spindle fibers; laser-severing proof',
+      'The 9+2 axoneme, nexin and dynein arms',
+      'Kinesin and dynein: anterograde and retrograde cargo',
+      'Sarcomere bands and the sliding-filament model',
+      'Contraction paradox: ATP for contraction and relaxation',
+    ],
+    words: 1981,
+    readMins: 10,
+    addedOn: '2026-10-26',
+    blocks: [
+      {
+        kind: 'para',
+        text: "Look at a eukaryotic cell in a light microscope and it looks like a bag of fluid — the book opens its chapter with exactly that underestimation. The electron microscope demolished it: the cytoplasm is permeated by rods, tubes and filaments, a cytoskeleton that fixes where organelles sit, gives the cell its shape and mechanical strength, and powers every movement the cell or its cargo makes. Nothing about cellular motion is random — not the crawl of an amoeba, not the tug of a dividing chromosome, not the ferrying of a neurotransmitter vesicle down an axon. Bergtrom organises the whole machinery around three filament systems and two questions: what is each fibre made of, and what walks along it?",
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        tone: 'insight',
+        text: "The cytoskeleton is the skeleton AND the freight railway of the cell, and its failures are human disease: cilia built with defective dynein leave airways and fertility damaged; axonal transport breakdown precedes several neurodegenerations; muscle weakness runs on sarcomere proteins. It is also pharmacology's favourite target — spindle poisons work precisely on the microtubule dynamics described here, which is why this chapter is perennial exam material and clinical science at once.",
+      },
+      { kind: 'heading', text: 'Core Concepts' },
+      {
+        kind: 'para',
+        text: "Three systems, three jobs. Microtubules are the stiffest: hollow tubes 25 nm across, each wall a ring of 13 protofilaments of tubulin subunits. Microfilaments are the thinnest, 7 nm solid twin helices of the protein actin — G-actin monomers polymerising into F-actin strands. Intermediate filaments sit in between at about 10 nm (keratin is the family's celebrity) and are the group's structural specialists: ropes that brace cell shape and anchor organelles, notably NOT built for movement. The division of labour the book draws: intermediate filaments mainly structure; microtubules and microfilaments do double duty, holding shape while also changing it, because both carry motor proteins and both self-assemble and disassemble. Even bacteria, the book adds from its first chapter, have primitive homologs — MreB echoes actin in the dividing ring, FtsZ echoes tubulin — so the cytoskeleton is ancient, not a eukaryotic invention.",
+      },
+      {
+        kind: 'para',
+        text: "Microtubule dynamics and polarity. Tubulin monomers pair into alpha-beta dimers, and the dimers add to one end — the plus end — with GTP hydrolysis fuelling assembly, while the minus end disassembles when the structure must remodel. That polarity was proven beautifully: isolated microtubules grow at one end while shrinking at the other. In animal cells, microtubules radiate from centrioles (a cross-section shows the classic nine-triplet arrangement); in plants, from a less defined microtubule-organising centre. Because the filaments are dynamic — disassembling here, reassembling there — the cell can rebuild its entire interior skeleton within minutes, which is exactly what mitosis demands.",
+      },
+      {
+        kind: 'para',
+        text: "The mitotic spindle, measured by laser. Dividing cells build two kinds of spindle microtubules. Kinetochore microtubules attach, via proteins assembled at each chromatid's centromere (the kinetochore), to the pulled chromosomes; polar microtubules run pole to pole and overlap at the cell's middle. The counterintuitive part the book stresses: the plus, assembling ends of the kinetochore fibers are AT the kinetochore, and the chromosome is reeled in when the fiber disassembles at its minus end back at the pole — shortening, not reeling-in like thread on a spool. Proof came from aiming a tiny laser at the spindle fiber attached to a pair of chromatids: cut it, and the severed fragment's behaviour revealed which end was doing what. Meanwhile dynein motors walk the overlapping polar fibers past each other, ATP in hand, pushing the poles apart even as the chromosomes are being pulled to them.",
+      },
+      {
+        kind: 'para',
+        text: "Cilia and flagella: the 9+2 engine. A cilium or flagellum grows from a basal body (itself nine triplets, centriole-like) into the axoneme, whose cross-section is the textbook's most recognisable diagram: nine outer microtubule doublets ringing a central pair — 9+2. Dynein arms on the A tubule of each doublet walk along the B tubule of the next doublet; when the walkers on one side fire, doublets slide, but flexible nexin links and radial spokes restrain the slide, converting it into a bend. One-sided, wave-like sliding gives the flagellum's propeller beat; choreographed, single-plane sliding gives the cilium's oar stroke. The clinching experiment: shear cilia or sperm tails off cells in a blender, strip their membranes with detergent, and the naked axonemes still beat — but only when ATP is added. Demolish the nexin and spokes with harsher treatment and ATP makes the doublets slide apart instead of beating: motility, restraint and ATP dependence all demonstrated in one preparation.",
+      },
+      {
+        kind: 'para',
+        text: "Cargo logistics. Dynein and kinesin are ATPase motor proteins that stride along microtubule tracks carrying organelles and vesicles — the book's examples run from secretory vesicles heading for the plasma membrane to the axon's freight system, where kinesin hauls neurotransmitter-filled vesicles outward from cell body to nerve ending (anterograde) and a dynein-dynactin complex hauls empties back (retrograde). Even a chameleon's colour change is freight: pigment vesicles disperse or aggregate along microtubule tracks in its skin cells. Microfilaments carry their own walker — myosin — and when one end of an actin filament is anchored to the membrane, myosin's ATP-powered stroke deforms the membrane itself: the mechanics behind pseudopods and shape change.",
+      },
+      {
+        kind: 'para',
+        text: "Muscle and the sliding filament. Skeletal muscle packs its contractile units into sarcomeres, repeating segments between dense Z-lines (Z for zwischen, 'between'). Reading the bands is a classic skill: thin actin filaments extend inward from each Z-line and constitute the light I bands; thick myosin filaments make up the dark A band with the M line at its centre; the H zone is the myosin-only stretch around the M line. Under the microscope, contraction is a slide, not a squeeze: the H zone nearly vanishes, the I bands narrow, the Z-lines draw closer — but the A band's width never changes. That asymmetry is the evidence for the sliding-filament model: thin filaments slide along thick ones, towing the Z-lines together; nothing contracts in length. The paradox that once confused physiologists resolves with the model: glycerinated muscle fibers, given ATP and calcium, contract and lift a weight — but when the ATP runs out they will not relax, and no amount of pulling fixes it until fresh ATP arrives. Contraction needs ATP to energise the stroke; relaxation needs ATP to let myosin release actin and reset. The book adds the calcium switch: regulatory proteins gate actin so that a nerve's calcium signal decides when the sliding runs.",
+      },
+      { kind: 'example', title: 'Worked Example', steps: [
+        "Problem: a micrograph shows a sarcomere with its H zone nearly gone, I bands narrowed and Z-lines closer together. A classmate claims the myosin filaments have shortened. Decide.",
+        "Recall the invariants: the A band (thick-filament region) has a fixed width equal to the myosin filament length; only the sliding positions of thin filaments change.",
+        "Apply: if myosin filaments had shortened, the A band would narrow. The A band width is unchanged while the I bands narrow and the H zone disappears — thin filaments have been drawn deeper into the A band, overlapping more of the myosin.",
+        "Cross-check with the paradox experiment: the fiber relaxes only when fresh ATP is added, consistent with cross-bridges releasing upon ATP binding, not with any shortening of the filaments.",
+        "State the result: contraction is relative sliding of unchanging filaments — the sliding-filament model — evidenced by the fixed A band and the ATP-dependent relaxation.",
+      ] },
+      { kind: 'heading', text: 'Applications in the Real World' },
+      { kind: 'list', items: [
+        'Cancer chemotherapy: spindle poisons freeze microtubule assembly or disassembly, jamming the mitotic spindle this lesson describes — the biology behind taxane and vinca drugs.',
+        'Respiratory and fertility medicine: defective dynein arms disable the 9+2 axonemes of airway cilia and sperm tails, producing chronic airway disease and infertility.',
+        'Neurology: axonal transport runs on kinesin and dynein over microtubule tracks — the freight system whose long-range failure characterises several neurodegenerative diseases.',
+        'Exercise science: the strength of weight training builds on sarcomere biology — repeated controlled contraction and the repair of the contractile apparatus.',
+        'Cell biology technique: fluorescently tagged tubulin and actin light up live-cell dynamics precisely because these filaments are dynamic polymers, not static struts.',
+      ] },
+      {
+        kind: 'callout',
+        title: 'Common Pitfalls',
+        tone: 'warn',
+        text: "Four slips recur. Reversing the spindle logic: kinetochore fibers pull chromosomes in by DISassembling at their pole-facing minus ends — their growing plus ends sit at the kinetochore, so 'reeled in like thread' is backwards. Confusing the motor roster: kinesin generally walks cargo toward plus ends (outward, anterograde), dynein toward minus ends (inward, retrograde) — and in the axoneme it is dynein arms that slide the doublets. Reading the sarcomere backwards: the A band is the fixed-width thick-filament zone; if your contraction story shrinks it, the story is wrong. And forgetting that relaxation costs ATP: rigor — the locked state — is what happens when ATP is absent, which is why the glycerinated-fiber experiment confused physiologists for years.",
+      },
+      { kind: 'heading', text: 'Key Terms' },
+      { kind: 'terms', items: [
+        { term: 'Cytoskeleton', def: 'The cell-wide network of microtubules, microfilaments and intermediate filaments that shapes the cell and powers its internal movements.' },
+        { term: 'Microtubule', def: 'A 25 nm hollow tube of 13 tubulin protofilaments; assembles at its plus end with GTP and disassembles at its minus end.' },
+        { term: 'Microfilament', def: 'A 7 nm twin-helical polymer of actin (F-actin built from G-actin monomers); the track for myosin motors.' },
+        { term: 'Intermediate filament', def: 'A ~10 nm structural rope (e.g. keratin) bracing cell shape; the one filament family not built for motility.' },
+        { term: 'Kinetochore', def: 'The protein assembly built on each chromatid\'s centromere where spindle microtubules attach.' },
+        { term: 'Axoneme', def: "The 9+2 microtubule core of a cilium or flagellum, with dynein arms, nexin links and radial spokes — the beating engine." },
+        { term: 'Anterograde / retrograde', def: 'Outbound and return cargo traffic along a track; in axons, kinesin hauls vesicles out, dynein-dynactin hauls empties back.' },
+        { term: 'Sarcomere', def: 'The repeating contractile unit between Z-lines; its fixed A band and sliding I bands carry the sliding-filament evidence.' },
+        { term: 'Sliding-filament model', def: 'Contraction as thin filaments sliding along unchanging thick filaments, drawing Z-lines closer — no filament shortens.' },
+      ] },
+      { kind: 'heading', text: 'Check Yourself' },
+      { kind: 'quiz', items: [
+        {
+          q: 'During anaphase, a chromosome moves poleward mainly because:',
+          options: ['kinetochore microtubules shorten by disassembling at their pole-facing minus ends', 'kinetochore microtubules lengthen at the kinetochore', 'myosin motors walk the chromosome along actin', 'the chromosome is pushed by a growing polar microtubule'],
+          answer: 0,
+          explain: 'The book stresses the counterintuitive geometry: plus ends assemble at the kinetochore, and poleward movement comes from shortening at the minus ends — proven with the laser-severing experiment.',
+        },
+        {
+          q: 'Stripped, membrane-free axonemes beat when ATP is added. If nexin links and radial spokes are then removed, adding ATP instead causes:',
+          options: ['stronger beating', 'the doublets to slide apart without bending', 'the axoneme to disassemble into tubulin', 'nothing — dynein needs calcium'],
+          answer: 1,
+          explain: 'Restraint converts sliding into bending: remove nexin and spokes and the same dynein sliding simply separates the doublets — the preparation that proved the slide-under-restraint mechanism.',
+        },
+        {
+          q: 'A glycerinated muscle fiber has lifted a weight until all added ATP is hydrolysed. What happens now?',
+          options: ['it relaxes spontaneously', 'it can be stretched and then relaxes on its own', 'it neither contracts nor can be stretched until fresh ATP is supplied', 'it contracts further without ATP'],
+          answer: 2,
+          explain: 'The contraction paradox resolved: ATP is needed both to power the stroke and to release myosin from actin for relaxation — without ATP the system locks in rigor.',
+        },
+        {
+          q: 'Which observation best supports the sliding-filament model over "filaments shorten"?',
+          options: ['The A band width stays constant while I bands narrow and the H zone disappears', 'The Z-lines move apart during contraction', 'Sarcomeres disappear during contraction', 'Actin filaments shorten while myosin lengthens'],
+          answer: 0,
+          explain: 'If thick filaments shortened, the A band would narrow; its fixed width with vanishing H zone and narrowing I bands means thin filaments slide deeper into overlap.',
+        },
+      ] },
+      {
+        kind: 'callout',
+        title: 'Where next',
+        tone: 'insight',
+        text: 'Grounding: Gerald Bergtrom, Cell and Molecular Biology: What We Know & How We Found Out (Basic iText, UWM, CC-BY), Chapter 15 "The Cytoskeleton & Cell Motility" — microtubules, kinetochore and polar fibers, the laser-severing and axoneme experiments, motor proteins, and the sarcomere/sliding-filament sections; prokaryotic MreB/FtsZ homologs from Chapter 1. The cell-cycle lesson applies this machinery to mitosis; the development lessons build embryonic movement on the same actin; the anatomy book scales the sarcomere up to whole-muscle physiology.',
+      },
+    ],
+  },
+  // ------------------------------------------------------------------
   {
     id: 'bio-cell-signaling-transduction',
     title: 'Cell Signaling: Reception, Transduction, Response',
@@ -222,295 +725,6 @@ export const cellMolecularBiologyCh02: KnowledgeTopic[] = [
           'Catalytic relays compound: one epinephrine molecule can yield about a hundred million cyclic-AMP molecules.',
           'Tyrosine-kinase receptors reach the nucleus through Ras and the MAP kinase cascade; termination and desensitization make every signal reversible.',
         ],
-      },
-    ],
-  },
-  // ------------------------------------------------------------------
-  {
-    id: 'bio-cell-biomolecules',
-    title: 'The Cell and Its Biomolecules: From Membranes to Macromolecules',
-    domain: 'Life Sciences',
-    field: 'Cell & Molecular Biology',
-    branch: 'Cell Biology',
-    tier: 'core',
-    concepts: [
-      'Cell theory and its honest exceptions',
-      'Prokaryote versus eukaryote',
-      'The endomembrane system',
-      'Mitochondria, plastids and ribosomes',
-      'Fluid-mosaic membrane',
-      'Passive and active transport',
-      'Four classes of biomolecules',
-      'Enzymes, active sites and saturation',
-    ],
-    words: 1859,
-    readMins: 8,
-    addedOn: '2026-10-20',
-    blocks: [
-      {
-        kind: 'para',
-        text: 'Before genetics, before physiology, biology’s ground floor is the cell and its chemistry. One lesson cannot replace a textbook’s four chapters, but it can assemble the parts that exams actually probe: what the cell theory claims and where it bends, the organelle inventory, the membrane and its traffic rules, the four classes of biomolecules, and the enzymes that make the chemistry fast enough for life. NCERT compresses this into Class 11 chapters 8 through 11; OpenStax Biology 2e spreads it across its opening chapters; this lesson condenses both.',
-      },
-      {
-        kind: 'callout',
-        title: 'Why this matters',
-        text: 'The cell is the most reliably scoring area in entrance biology — NEET typically draws five or more questions from cell structure, biomolecules and enzymes, and AP Biology opens its entire course with this material. It is also the conceptual base for everything later: genetics needs the nucleus, respiration needs the mitochondrion, pharmacology needs the membrane.',
-        tone: 'insight',
-      },
-      { kind: 'heading', text: 'Cell Theory and Its Limits' },
-      {
-        kind: 'para',
-        text: 'Matthias Schleiden (1838, plants) and Theodor Schwann (1839, animals) proposed that all organisms are made of cells and that the cell is the basic unit of life; Rudolf Virchow closed the loop in 1855 — omnis cellula e cellula, every cell from a cell. The theory has honest exceptions: viruses are acellular, skeletal muscle fibers run centimeters long with hundreds of nuclei, and mature red blood cells work without any nucleus at all. None of these embarrasses the theory, which describes organisms, not every tissue’s eccentricities. Microscopes set the ceiling of what could be known — light microscopes resolve about 200 nanometers, electron microscopes a thousandfold finer — which is why organelle knowledge tracks microscope history.',
-      },
-      { kind: 'heading', text: 'Two Architectures' },
-      {
-        kind: 'para',
-        text: 'Prokaryotes pack life into a single compartment: no nuclear envelope (the nucleoid is a coiled-chromosome zone), no membrane-bound organelles, ribosomes of the smaller 70S class. Outside lies the cell envelope — glycocalyx (capsule or slime layer), the wall, and the plasma membrane — plus mesosome infoldings and inclusion bodies that stockpile glycogen or phosphate; plasmids carry accessory genes such as antibiotic resistance. The disease-facing story of these structures belongs to this library’s microbiology field guide; here they matter as the prokaryote’s defining architecture.',
-      },
-      {
-        kind: 'para',
-        text: 'Eukaryotes compartmentalize. The nucleus — double envelope perforated by pores, nucleolus assembling ribosomal RNA, chromatin of DNA plus protein — is the archive. The endomembrane system is the logistics wing: rough ER studded with ribosomes folds proteins; smooth ER makes lipids and detoxifies drugs in the liver; the Golgi apparatus, a stack of cisternae, receives vesicles at its cis face and ships glycoproteins and lysosomes from its trans face — the cell’s post office; lysosomes are sacs of acid hydrolases built for demolition and recycling, the “suicide bags” whose failure causes Tay–Sachs disease; and vacuoles are the tonoplast-bounded storehouses of plant cells, contractile in freshwater Amoeba for osmoregulation.',
-      },
-      {
-        kind: 'para',
-        text: 'Two organelles run their own show. Mitochondria: double-membraned, inner membrane folded into cristae studded with ATP-making particles, matrix holding its own circular DNA and 70S ribosomes — semiautonomous, multiplying by fission and maternally inherited, the core of the endosymbiosis argument. Plastids are the plant counterparts: chloroplasts with grana of thylakoids in a stroma, starch-storing amyloplasts and pigment-loaded chromoplasts. Ribosomes sit outside the membrane system entirely — 80S in the eukaryotic cytosol, 70S inside organelles — a fingerprint examiners love.',
-      },
-      { kind: 'heading', text: 'The Membrane and Its Traffic Rules' },
-      {
-        kind: 'para',
-        text: 'The boundary is the fluid-mosaic membrane of Singer and Nicolson (1972): a phospholipid bilayer with hydrophobic tails inward, proteins embedded (integral) or perched (peripheral), cholesterol between the tails buffering fluidity, and carbohydrates tagging the outer face for recognition. “Fluid” is literal — proteins and lipids drift laterally, which is why membranes fuse, endocytose and divide.',
-      },
-      {
-        kind: 'para',
-        text: 'Traffic across the membrane runs by two rules. Passive transport moves things down gradients without ATP: simple diffusion for small nonpolar molecules and gases; facilitated diffusion through channel proteins (aquaporins for water) or carriers (the GLUT glucose transporters) — specific and saturable, but still free; and osmosis, water’s own diffusion toward the stronger solution, which swells cells hypotonically, holds them isotonic and shrinks them — or plasmolyses plant cells — hypertonically. Active transport pumps uphill using ATP: the sodium–potassium pump exports 3 Na+ for every 2 K+ per ATP spent, founding the ion gradients behind every nerve impulse (the action-potential lesson runs on this pump). Bulk transport rounds it out — endocytosis, phagocytosis (“cell eating”, how Amoeba feeds) and pinocytosis (“cell drinking”), plus exocytosis, the vesicle release behind secretion and neurotransmission.',
-      },
-      { kind: 'heading', text: 'The Biomolecules' },
-      {
-        kind: 'para',
-        text: 'Carbohydrates are “hydrates of carbon” by formula and polymers of monosaccharides in practice. The monomers: the hexoses glucose and fructose, and the pentoses ribose and deoxyribose that later anchor nucleic acids. Disaccharides pair them — sucrose (glucose plus fructose, table sugar), maltose, lactose. Polysaccharides sort by bond geometry: starch stores energy in plants, glycogen is the more branched animal store of liver and muscle, and cellulose — beta-linked glucose, the most abundant organic polymer on Earth — cannot be digested by humans but builds every plant wall. Inulin is the fructose-storing oddity that examiners occasionally pull out.',
-      },
-      {
-        kind: 'para',
-        text: 'Lipids are defined by insolubility, not chemistry. Fats are glycerol esterified to three fatty acids — saturated chains straight and stackable (butter), unsaturated chains kinked at cis double bonds and fluid (olive oil). Phospholipids swap one fatty acid for a phosphate head: amphipathic, and therefore the membrane’s own building block. Steroids are four fused carbon rings — cholesterol, the membrane fluidity manager and parent of the sex hormones — a shape exam papers ask you to recognize on sight.',
-      },
-      {
-        kind: 'para',
-        text: 'Proteins are amino-acid polymers joined by peptide bonds, twenty monomers strong, and their function is folding: primary structure is the sequence; secondary is local hydrogen-bonded alpha helices and beta sheets; tertiary is the full 3D fold locked by hydrophobic packing, ionic bonds and disulfide bridges; quaternary assembles chains — hemoglobin’s four subunits the standard example. The cast covers every job in the body: enzymes, oxygen-carrying hemoglobin, antibodies, collagen, the actin and myosin of the musculoskeletal lesson. Nucleic acids store the instructions: DNA, a right-handed antiparallel double helix of deoxyribose-phosphate backbones and paired bases — adenine with thymine (two hydrogen bonds), guanine with cytosine (three) — and single-stranded RNA in its messenger, transfer and ribosomal casts. Proteins do the work; nucleic acids remember the recipe.',
-      },
-      {
-        kind: 'formula',
-        name: 'Chargaff’s rule',
-        latex: '\\%A = \\%T, \\quad \\%G = \\%C \\quad \\Rightarrow \\quad \\%G + \\%C = 100\\% - 2(\\%A)',
-        meaning: 'In double-stranded DNA the bases pair one-to-one, so adenine equals thymine and guanine equals cytosine — knowing any one percentage yields the rest.',
-      },
-      {
-        kind: 'para',
-        text: 'All organisms share the primary metabolites — amino acids, sugars, fats, nucleotides, the proteins of respiration and growth, present everywhere with identifiable jobs. Secondary metabolites are the optional chemistry of particular species: alkaloids such as morphine, quinine and caffeine, terpenoids, tannins, flavonoid pigments, rubber, and most drugs, dyes and spices. The exam line is clean: primary metabolites have roles in all cells; secondary ones are species-specific luxuries, mostly defense.',
-      },
-      { kind: 'heading', text: 'Enzymes: Catalysts of the Possible' },
-      {
-        kind: 'para',
-        text: 'Nearly every enzyme is a catalytic protein (a few RNAs, ribozymes, catalyze too). The substrate binds the active site, the enzyme–substrate complex stabilizes the transition state, activation energy drops, and product leaves the enzyme unchanged to run again — millions of cycles per minute. Enzymes never decide whether a reaction is favorable; they decide only how fast. Rate responds to substrate concentration along the Michaelis–Menten curve: velocity climbs, then plateaus at Vmax when every active site is occupied; Km, the substrate level at half-maximal velocity, measures affinity — low Km means a tight grip. Temperature and pH tune the curve: human enzymes peak near body temperature and denature not far above it, pepsin works in stomach acid near pH 2, trypsin prefers about 8. Inhibitors finish the story — competitive molecules fight for the active site, non-competitive ones bend it — the mechanism behind statins and most drug design (the metabolism lesson carries that machinery further).',
-      },
-      {
-        kind: 'example',
-        title: 'Worked Example: Base Composition from One Number',
-        steps: [
-          'Identify what is asked: a double-stranded DNA sample is 15% adenine — what is its guanine percentage?',
-          'Apply pairing: adenine pairs with thymine, so thymine is also 15%; together A + T account for 30%.',
-          'Subtract from the whole: G + C = 100% − 30% = 70%.',
-          'Pair again: G = C, so guanine = cytosine = 35%.',
-          'Check: 15 + 15 + 35 + 35 = 100% — the symmetry of the double helix turns every such problem into two subtractions and a halving.',
-        ],
-      },
-      { kind: 'heading', text: 'Applications in the Real World' },
-      {
-        kind: 'list',
-        items: [
-          'Cystic fibrosis is a faulty membrane chloride channel — a transport protein, not a metabolism flaw.',
-          'Aquaporin mutations cause rare diabetes insipidus: the water channel fails and the kidneys cannot concentrate urine.',
-          'Statins, antivirals and many psychiatric drugs target membrane receptors and enzymes — pharmacology is applied cell biology.',
-          'Mitochondrial DNA analysis identifies disaster victims and maternal lineages, because the organelle passes down one parent only.',
-          'Glycogen’s branching versus starch explains why athletes carb-load on starch while specific enzyme losses cause glycogen-storage diseases.',
-        ],
-      },
-      {
-        kind: 'callout',
-        title: 'Common Pitfalls',
-        text: 'Four slips dominate mark schemes. 70S ribosomes occur in prokaryotes and in mitochondria and chloroplasts — that is evidence for endosymbiosis, not a printing error. Facilitated diffusion is passive: carriers make movement specific, not powered. Water crosses membranes fast because of aquaporins — osmosis without them would be slow. And enzymes lower activation energy; they never touch the equilibrium or make an unfavorable reaction run uphill.',
-        tone: 'warn',
-      },
-      { kind: 'heading', text: 'Key Terms' },
-      {
-        kind: 'terms',
-        items: [
-          { term: 'Nucleoid', def: 'The nuclear region of a prokaryote — chromosome without a surrounding envelope.' },
-          { term: 'Endomembrane system', def: 'ER, Golgi, lysosomes and vacuoles working as the cell’s manufacturing and shipping network.' },
-          { term: 'Cristae', def: 'The inner mitochondrial folds carrying the electron-transport machinery.' },
-          { term: 'Fluid-mosaic model', def: 'Singer and Nicolson’s membrane: a mobile phospholipid bilayer with drifting proteins.' },
-          { term: 'Facilitated diffusion', def: 'Passage down a gradient through specific channels or carriers — no ATP spent.' },
-          { term: 'Amphipathic', def: 'Having both hydrophobic and hydrophilic regions — the phospholipid’s defining trick.' },
-          { term: 'Quaternary structure', def: 'The assembly of multiple folded protein chains, as in hemoglobin’s four subunits.' },
-          { term: 'Secondary metabolite', def: 'A species-specific compound such as an alkaloid or tannin, absent from general metabolism.' },
-          { term: 'Km', def: 'Substrate concentration at half-maximal enzyme velocity; inversely reflects substrate affinity.' },
-        ],
-      },
-      {
-        kind: 'quiz',
-        items: [
-          {
-            q: 'The organelles nicknamed “suicide bags” are:',
-            options: ['ribosomes', 'lysosomes', 'Golgi cisternae', 'peroxisomes'],
-            answer: 1,
-            explain: 'Lysosomes hold acid hydrolases that can digest the cell’s own contents — hence the name, and the tissue damage in Tay–Sachs disease.',
-          },
-          {
-            q: 'Movement of glucose through a GLUT carrier is:',
-            options: ['simple diffusion', 'facilitated diffusion — passive but specific', 'primary active transport', 'endocytosis'],
-            answer: 1,
-            explain: 'GLUT carriers move glucose down its concentration gradient; they make the passage selective and saturable, not powered.',
-          },
-          {
-            q: 'Which structures contain 70S ribosomes?',
-            options: ['the eukaryotic cytosol only', 'prokaryotes, mitochondria and chloroplasts', 'prokaryotes only', 'all ribosomes are 70S'],
-            answer: 1,
-            explain: 'Mitochondria and chloroplasts keep bacterial-sized ribosomes — a cornerstone of the endosymbiosis argument.',
-          },
-          {
-            q: 'The alpha helices and beta sheets of protein secondary structure are held by:',
-            options: ['hydrogen bonds within the backbone', 'disulfide bridges', 'peptide bonds', 'hydrophobic packing'],
-            answer: 0,
-            explain: 'Secondary structure is local hydrogen bonding; disulfide and hydrophobic interactions lock the tertiary fold instead.',
-          },
-        ],
-      },
-      {
-        kind: 'para',
-        text: 'The cell is a bag of controlled chemistry: a selective membrane, compartmental workshops, four classes of molecules and catalysts that set the speed limits. Everything else in biology — inheritance, respiration, physiology, medicine — is this lesson wearing different costumes. Move next to the genetics lessons for the nucleus in action, or to cellular respiration for what the cristae actually do.',
-      },
-    ],
-  },
-  // ------------------------------------------------------------------
-  {
-    id: 'bio-cytoskeleton-cell-motility',
-    title: 'The Cytoskeleton and Cell Motility: Tubes, Ropes and Molecular Walkers',
-    domain: 'Life Sciences',
-    field: 'Cell & Molecular Biology',
-    branch: 'Cell Biology',
-    tier: 'core',
-    concepts: [
-      'Three filament systems: microtubules, microfilaments, intermediate filaments',
-      'Microtubule polarity: GTP, plus and minus ends, MTOC nucleation',
-      'Kinetochore vs polar spindle fibers; laser-severing proof',
-      'The 9+2 axoneme, nexin and dynein arms',
-      'Kinesin and dynein: anterograde and retrograde cargo',
-      'Sarcomere bands and the sliding-filament model',
-      'Contraction paradox: ATP for contraction and relaxation',
-    ],
-    words: 1981,
-    readMins: 10,
-    addedOn: '2026-10-26',
-    blocks: [
-      {
-        kind: 'para',
-        text: "Look at a eukaryotic cell in a light microscope and it looks like a bag of fluid — the book opens its chapter with exactly that underestimation. The electron microscope demolished it: the cytoplasm is permeated by rods, tubes and filaments, a cytoskeleton that fixes where organelles sit, gives the cell its shape and mechanical strength, and powers every movement the cell or its cargo makes. Nothing about cellular motion is random — not the crawl of an amoeba, not the tug of a dividing chromosome, not the ferrying of a neurotransmitter vesicle down an axon. Bergtrom organises the whole machinery around three filament systems and two questions: what is each fibre made of, and what walks along it?",
-      },
-      {
-        kind: 'callout',
-        title: 'Why this matters',
-        tone: 'insight',
-        text: "The cytoskeleton is the skeleton AND the freight railway of the cell, and its failures are human disease: cilia built with defective dynein leave airways and fertility damaged; axonal transport breakdown precedes several neurodegenerations; muscle weakness runs on sarcomere proteins. It is also pharmacology's favourite target — spindle poisons work precisely on the microtubule dynamics described here, which is why this chapter is perennial exam material and clinical science at once.",
-      },
-      { kind: 'heading', text: 'Core Concepts' },
-      {
-        kind: 'para',
-        text: "Three systems, three jobs. Microtubules are the stiffest: hollow tubes 25 nm across, each wall a ring of 13 protofilaments of tubulin subunits. Microfilaments are the thinnest, 7 nm solid twin helices of the protein actin — G-actin monomers polymerising into F-actin strands. Intermediate filaments sit in between at about 10 nm (keratin is the family's celebrity) and are the group's structural specialists: ropes that brace cell shape and anchor organelles, notably NOT built for movement. The division of labour the book draws: intermediate filaments mainly structure; microtubules and microfilaments do double duty, holding shape while also changing it, because both carry motor proteins and both self-assemble and disassemble. Even bacteria, the book adds from its first chapter, have primitive homologs — MreB echoes actin in the dividing ring, FtsZ echoes tubulin — so the cytoskeleton is ancient, not a eukaryotic invention.",
-      },
-      {
-        kind: 'para',
-        text: "Microtubule dynamics and polarity. Tubulin monomers pair into alpha-beta dimers, and the dimers add to one end — the plus end — with GTP hydrolysis fuelling assembly, while the minus end disassembles when the structure must remodel. That polarity was proven beautifully: isolated microtubules grow at one end while shrinking at the other. In animal cells, microtubules radiate from centrioles (a cross-section shows the classic nine-triplet arrangement); in plants, from a less defined microtubule-organising centre. Because the filaments are dynamic — disassembling here, reassembling there — the cell can rebuild its entire interior skeleton within minutes, which is exactly what mitosis demands.",
-      },
-      {
-        kind: 'para',
-        text: "The mitotic spindle, measured by laser. Dividing cells build two kinds of spindle microtubules. Kinetochore microtubules attach, via proteins assembled at each chromatid's centromere (the kinetochore), to the pulled chromosomes; polar microtubules run pole to pole and overlap at the cell's middle. The counterintuitive part the book stresses: the plus, assembling ends of the kinetochore fibers are AT the kinetochore, and the chromosome is reeled in when the fiber disassembles at its minus end back at the pole — shortening, not reeling-in like thread on a spool. Proof came from aiming a tiny laser at the spindle fiber attached to a pair of chromatids: cut it, and the severed fragment's behaviour revealed which end was doing what. Meanwhile dynein motors walk the overlapping polar fibers past each other, ATP in hand, pushing the poles apart even as the chromosomes are being pulled to them.",
-      },
-      {
-        kind: 'para',
-        text: "Cilia and flagella: the 9+2 engine. A cilium or flagellum grows from a basal body (itself nine triplets, centriole-like) into the axoneme, whose cross-section is the textbook's most recognisable diagram: nine outer microtubule doublets ringing a central pair — 9+2. Dynein arms on the A tubule of each doublet walk along the B tubule of the next doublet; when the walkers on one side fire, doublets slide, but flexible nexin links and radial spokes restrain the slide, converting it into a bend. One-sided, wave-like sliding gives the flagellum's propeller beat; choreographed, single-plane sliding gives the cilium's oar stroke. The clinching experiment: shear cilia or sperm tails off cells in a blender, strip their membranes with detergent, and the naked axonemes still beat — but only when ATP is added. Demolish the nexin and spokes with harsher treatment and ATP makes the doublets slide apart instead of beating: motility, restraint and ATP dependence all demonstrated in one preparation.",
-      },
-      {
-        kind: 'para',
-        text: "Cargo logistics. Dynein and kinesin are ATPase motor proteins that stride along microtubule tracks carrying organelles and vesicles — the book's examples run from secretory vesicles heading for the plasma membrane to the axon's freight system, where kinesin hauls neurotransmitter-filled vesicles outward from cell body to nerve ending (anterograde) and a dynein-dynactin complex hauls empties back (retrograde). Even a chameleon's colour change is freight: pigment vesicles disperse or aggregate along microtubule tracks in its skin cells. Microfilaments carry their own walker — myosin — and when one end of an actin filament is anchored to the membrane, myosin's ATP-powered stroke deforms the membrane itself: the mechanics behind pseudopods and shape change.",
-      },
-      {
-        kind: 'para',
-        text: "Muscle and the sliding filament. Skeletal muscle packs its contractile units into sarcomeres, repeating segments between dense Z-lines (Z for zwischen, 'between'). Reading the bands is a classic skill: thin actin filaments extend inward from each Z-line and constitute the light I bands; thick myosin filaments make up the dark A band with the M line at its centre; the H zone is the myosin-only stretch around the M line. Under the microscope, contraction is a slide, not a squeeze: the H zone nearly vanishes, the I bands narrow, the Z-lines draw closer — but the A band's width never changes. That asymmetry is the evidence for the sliding-filament model: thin filaments slide along thick ones, towing the Z-lines together; nothing contracts in length. The paradox that once confused physiologists resolves with the model: glycerinated muscle fibers, given ATP and calcium, contract and lift a weight — but when the ATP runs out they will not relax, and no amount of pulling fixes it until fresh ATP arrives. Contraction needs ATP to energise the stroke; relaxation needs ATP to let myosin release actin and reset. The book adds the calcium switch: regulatory proteins gate actin so that a nerve's calcium signal decides when the sliding runs.",
-      },
-      { kind: 'example', title: 'Worked Example', steps: [
-        "Problem: a micrograph shows a sarcomere with its H zone nearly gone, I bands narrowed and Z-lines closer together. A classmate claims the myosin filaments have shortened. Decide.",
-        "Recall the invariants: the A band (thick-filament region) has a fixed width equal to the myosin filament length; only the sliding positions of thin filaments change.",
-        "Apply: if myosin filaments had shortened, the A band would narrow. The A band width is unchanged while the I bands narrow and the H zone disappears — thin filaments have been drawn deeper into the A band, overlapping more of the myosin.",
-        "Cross-check with the paradox experiment: the fiber relaxes only when fresh ATP is added, consistent with cross-bridges releasing upon ATP binding, not with any shortening of the filaments.",
-        "State the result: contraction is relative sliding of unchanging filaments — the sliding-filament model — evidenced by the fixed A band and the ATP-dependent relaxation.",
-      ] },
-      { kind: 'heading', text: 'Applications in the Real World' },
-      { kind: 'list', items: [
-        'Cancer chemotherapy: spindle poisons freeze microtubule assembly or disassembly, jamming the mitotic spindle this lesson describes — the biology behind taxane and vinca drugs.',
-        'Respiratory and fertility medicine: defective dynein arms disable the 9+2 axonemes of airway cilia and sperm tails, producing chronic airway disease and infertility.',
-        'Neurology: axonal transport runs on kinesin and dynein over microtubule tracks — the freight system whose long-range failure characterises several neurodegenerative diseases.',
-        'Exercise science: the strength of weight training builds on sarcomere biology — repeated controlled contraction and the repair of the contractile apparatus.',
-        'Cell biology technique: fluorescently tagged tubulin and actin light up live-cell dynamics precisely because these filaments are dynamic polymers, not static struts.',
-      ] },
-      {
-        kind: 'callout',
-        title: 'Common Pitfalls',
-        tone: 'warn',
-        text: "Four slips recur. Reversing the spindle logic: kinetochore fibers pull chromosomes in by DISassembling at their pole-facing minus ends — their growing plus ends sit at the kinetochore, so 'reeled in like thread' is backwards. Confusing the motor roster: kinesin generally walks cargo toward plus ends (outward, anterograde), dynein toward minus ends (inward, retrograde) — and in the axoneme it is dynein arms that slide the doublets. Reading the sarcomere backwards: the A band is the fixed-width thick-filament zone; if your contraction story shrinks it, the story is wrong. And forgetting that relaxation costs ATP: rigor — the locked state — is what happens when ATP is absent, which is why the glycerinated-fiber experiment confused physiologists for years.",
-      },
-      { kind: 'heading', text: 'Key Terms' },
-      { kind: 'terms', items: [
-        { term: 'Cytoskeleton', def: 'The cell-wide network of microtubules, microfilaments and intermediate filaments that shapes the cell and powers its internal movements.' },
-        { term: 'Microtubule', def: 'A 25 nm hollow tube of 13 tubulin protofilaments; assembles at its plus end with GTP and disassembles at its minus end.' },
-        { term: 'Microfilament', def: 'A 7 nm twin-helical polymer of actin (F-actin built from G-actin monomers); the track for myosin motors.' },
-        { term: 'Intermediate filament', def: 'A ~10 nm structural rope (e.g. keratin) bracing cell shape; the one filament family not built for motility.' },
-        { term: 'Kinetochore', def: 'The protein assembly built on each chromatid\'s centromere where spindle microtubules attach.' },
-        { term: 'Axoneme', def: "The 9+2 microtubule core of a cilium or flagellum, with dynein arms, nexin links and radial spokes — the beating engine." },
-        { term: 'Anterograde / retrograde', def: 'Outbound and return cargo traffic along a track; in axons, kinesin hauls vesicles out, dynein-dynactin hauls empties back.' },
-        { term: 'Sarcomere', def: 'The repeating contractile unit between Z-lines; its fixed A band and sliding I bands carry the sliding-filament evidence.' },
-        { term: 'Sliding-filament model', def: 'Contraction as thin filaments sliding along unchanging thick filaments, drawing Z-lines closer — no filament shortens.' },
-      ] },
-      { kind: 'heading', text: 'Check Yourself' },
-      { kind: 'quiz', items: [
-        {
-          q: 'During anaphase, a chromosome moves poleward mainly because:',
-          options: ['kinetochore microtubules shorten by disassembling at their pole-facing minus ends', 'kinetochore microtubules lengthen at the kinetochore', 'myosin motors walk the chromosome along actin', 'the chromosome is pushed by a growing polar microtubule'],
-          answer: 0,
-          explain: 'The book stresses the counterintuitive geometry: plus ends assemble at the kinetochore, and poleward movement comes from shortening at the minus ends — proven with the laser-severing experiment.',
-        },
-        {
-          q: 'Stripped, membrane-free axonemes beat when ATP is added. If nexin links and radial spokes are then removed, adding ATP instead causes:',
-          options: ['stronger beating', 'the doublets to slide apart without bending', 'the axoneme to disassemble into tubulin', 'nothing — dynein needs calcium'],
-          answer: 1,
-          explain: 'Restraint converts sliding into bending: remove nexin and spokes and the same dynein sliding simply separates the doublets — the preparation that proved the slide-under-restraint mechanism.',
-        },
-        {
-          q: 'A glycerinated muscle fiber has lifted a weight until all added ATP is hydrolysed. What happens now?',
-          options: ['it relaxes spontaneously', 'it can be stretched and then relaxes on its own', 'it neither contracts nor can be stretched until fresh ATP is supplied', 'it contracts further without ATP'],
-          answer: 2,
-          explain: 'The contraction paradox resolved: ATP is needed both to power the stroke and to release myosin from actin for relaxation — without ATP the system locks in rigor.',
-        },
-        {
-          q: 'Which observation best supports the sliding-filament model over "filaments shorten"?',
-          options: ['The A band width stays constant while I bands narrow and the H zone disappears', 'The Z-lines move apart during contraction', 'Sarcomeres disappear during contraction', 'Actin filaments shorten while myosin lengthens'],
-          answer: 0,
-          explain: 'If thick filaments shortened, the A band would narrow; its fixed width with vanishing H zone and narrowing I bands means thin filaments slide deeper into overlap.',
-        },
-      ] },
-      {
-        kind: 'callout',
-        title: 'Where next',
-        tone: 'insight',
-        text: 'Grounding: Gerald Bergtrom, Cell and Molecular Biology: What We Know & How We Found Out (Basic iText, UWM, CC-BY), Chapter 15 "The Cytoskeleton & Cell Motility" — microtubules, kinetochore and polar fibers, the laser-severing and axoneme experiments, motor proteins, and the sarcomere/sliding-filament sections; prokaryotic MreB/FtsZ homologs from Chapter 1. The cell-cycle lesson applies this machinery to mitosis; the development lessons build embryonic movement on the same actin; the anatomy book scales the sarcomere up to whole-muscle physiology.',
       },
     ],
   },
