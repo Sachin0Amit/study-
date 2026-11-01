@@ -1,19 +1,19 @@
 {
   "$comment": "StudyVerse resume pointer (governing spec PART 14). Read FIRST by every execution — manual or scheduled. Update after every completed unit. Never mark complete before validating output.",
   "lastSuccessfulExecution": {
-    "when": "2026-11-01T18:45:00+05:30",
+    "when": "2026-11-01T21:05:00+05:30",
     "kind": "scheduled-hourly-master-loop (job 492782)",
-    "objective": "Author ku-biochemistry Ch3 §3.2 The Citric-Acid Cycle",
-    "summary": "Lesson 3,500w exact/18min appended to 03-metabolism.ts (Ch3 now 2 lessons · 7,000 words): PDH gateway nanomachine (30 E1/60 E2/12 E3, swinging lipoyl arm, PDK/PDP covalent throttle), discovery history (Szent-Györgyi, Martius & Knoop, Krebs & Johnson 1937, Lipmann), eight steps reaction-by-reaction with the −50.3 kJ/mol per-turn standard ledger derived by grouping pulls/climbs/ripples, carbon audit + Ogston 1948 labeling riddle, three-poison fingerprints (malonate/fluoroacetate/arsenite), two-panel SVG (wheel + PDH machine), 8-question quiz; carving verified by dedup greps; pipeline 721 topics/1,149k → audit 2967/2967 = 100% 0 unmapped; registries+prereq graph rebuilt PASS; lint clean, tsc 0 under src/; browser QA passed. Clock note: prior rows were mis-dated (+08:00 read as IST); honest IST dating restored this run."
+    "objective": "Take over + certify ku-biochemistry Ch3 §3.3 Oxidative Phosphorylation & Chemiosmosis (interrupted 22:30(+08) run's uncommitted work)",
+    "summary": "Concurrency sweep found memory exhausted (leftover dev server + browser from a prior run — killed both) and the interrupted run's complete §3.3 lesson uncommitted in the tree. Certified against the charter (3,500w EXACT/18min via count-topic-words-exact; 7-question quiz; two-panel SVG chain-dam + c8-turbine; no exam names) and committed honestly (5f39191). Full pipeline re-run: 722 topics/1,152k words → audit 2967/2967 = 100% 0 unmapped. §6.2 tree marked ✓ (3 ch / 14 lessons), §7 ledger row + WORKLOG appended."
   },
   "currentPhase": "B — systems complete, writing program in motion",
   "governingPlan": "docs/project/PROJECT_MASTER_PLAN.md",
   "writingProgram": {
     "programDoc": "docs/syllabus/MASTER-SYLLABUS.md",
     "currentSubject": "ku-biochemistry",
-    "currentChapter": "Ch1 Molecules of Life COMPLETE (8) · Ch2 Laboratory Methods COMPLETE (3/3, 6,600 words) · Ch3 Metabolic Pathways in Depth 2/5 (§3.1 glycolysis 3,500w · §3.2 citric-acid cycle 3,500w) — §3.3–§3.5 remain",
-    "currentTopic": "bioc-citric-acid-cycle",
-    "nextUnit": "ku-biochemistry Ch3 §3.3 Oxidative Phosphorylation & Chemiosmosis per §6.2 tree (electron transport chain complexes, P/O ratios 2.5/1.5 and why FADH2 is discounted, chemiosmotic coupling, ATP synthase, uncouplers; carve vs Cell-Bio respiration lesson which owns the survey and the 30–32 ATP audit; cite §3.2's FADH2-discount setup), then §3.4 Carbohydrate & Lipid Traffic, §3.5 Nitrogen Metabolism & the Urea Cycle; then remaining Life Sciences subjects per §4 order, then aptitude trio"
+    "currentChapter": "Ch1 Molecules of Life COMPLETE (8) · Ch2 Laboratory Methods COMPLETE (3/3, 6,600 words) · Ch3 Metabolic Pathways in Depth 3/5 (§3.1 glycolysis 3,500w · §3.2 citric-acid cycle 3,500w · §3.3 oxidative phosphorylation 3,500w) — §3.4–§3.5 remain",
+    "currentTopic": "bioc-carbohydrate-lipid-traffic",
+    "nextUnit": "ku-biochemistry Ch3 §3.4 Carbohydrate & Lipid Traffic per §6.2 tree (glycogen granule chemistry, gluconeogenesis bypasses + ATP ledger, pentose-phosphate pathway, fatty-acid β-oxidation spiral + palmitate ledger, fatty-acid synthesis mirror; carve vs Cell-Bio 4.2 which owns Cori cycle/F2,6BP switch/ketone bridge/anaplerosis, vs §3.1 which owns glycolysis reactions; cite §3.3's shuttle ledger), then §3.5 Nitrogen Metabolism & the Urea Cycle; then remaining Life Sciences subjects per §4 order, then aptitude trio"
   },
   "scheduledJobs": {
     "masterLoop": { "jobId": 492782, "cadence": "hourly", "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8" },
@@ -31,8 +31,8 @@
     "bun scripts/build-project-registries.ts",
     "bun scripts/build-prerequisite-graph.ts"
   ],
-  "lastCompletedOperation": "ku-biochemistry Ch3 §3.2 The Citric-Acid Cycle authored and certified (MASTER-SYLLABUS §7 ledger row 2026-11-01 ~18:45 IST)",
-  "nextRequiredOperation": "Hourly master loop: author ku-biochemistry Ch3 §3.3 Oxidative Phosphorylation & Chemiosmosis (one bounded unit), then validate + ledger + push",
+  "lastCompletedOperation": "ku-biochemistry Ch3 §3.3 Oxidative Phosphorylation & Chemiosmosis taken over + certified (takeover commit 5f39191, ledger row 2026-11-01 ~21:00 IST)",
+  "nextRequiredOperation": "Hourly master loop: author ku-biochemistry Ch3 §3.4 Carbohydrate & Lipid Traffic (one bounded unit), then validate + ledger + push",
   "outstandingErrors": [],
   "pendingValidation": [],
   "blockers": [],
