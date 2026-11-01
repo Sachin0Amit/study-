@@ -19,6 +19,7 @@
     "masterLoop": { "jobId": 492782, "cadence": "hourly", "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8" },
     "webDevReview": { "jobId": 492783, "cadence": "every 15 min", "kind": "webDevReview" },
     "textbookQualityLoop": {
+      "jobId": 493731,
       "cadence": "hourly at :30",
       "workflow": "docs/project/TEXTBOOK-QUALITY-DIRECTIVE.md + docs/project/TEXTBOOK_REWRITE_LEDGER.md",
       "scope": "pedagogical rewrites of LIVE lessons, mathematics first → end of library; independent of the master loop's new-lesson program (the two share the repo via git-first checks)"
