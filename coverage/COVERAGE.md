@@ -17,7 +17,7 @@
 - **Subjects:** 140
 - **Books (master volumes):** 140
 - **Chapters:** 895
-- **Sections (lessons):** 4685
+- **Sections (lessons):** 4686
 
 ## Foundations — 6 subjects
 
@@ -822,11 +822,11 @@
 
 ### Cell & Molecular Biology (`ku-cell-molecular-biology`)
 
-*The unit of life, read to the letter* — 4 chapters · 15 sections
+*The unit of life, read to the letter* — 4 chapters · 16 sections
 
 - **Ch 1. Foundations: Life, Microscopy & the Cell** `ku-cell-molecular-biology-foundations-life-microscopy-and-the-cell` — 3 sections: What Is Life? The Five Signatures of Living Things; Seeing the Invisible: Microscopy from Hooke to Cryo-EM; The Two Architectures: Prokaryotes, Eukaryotes and the Size Limit
 - **Ch 2. The Cell: Structure & Signaling** `ku-cell-molecular-biology-the-cell-structure-and-signaling` — 5 sections: The Cell and Its Biomolecules: From Membranes to Macromolecules; The Organelle Atlas: Nucleus to Peroxisome; The Cytoskeleton and Cell Motility: Tubes, Ropes and Molecular Walkers; Cell Signaling: Reception, Transduction, Response; The Cell Cycle: Phases, Checkpoints and How Cells Die
-- **Ch 3. Molecular Biology of the Gene** `ku-cell-molecular-biology-molecular-biology-of-the-gene` — 6 sections: DNA: The Molecule of Heredity, Structure and Replication; Transcription: Reading Genes into RNA; The Genetic Code and Translation: RNA to Protein; Mutations and the Repair Systems That Contain Them; Gene Regulation: From Operons to Epigenetics; Chromatin and the Nucleosome: How Two Metres of DNA Fit Into a Nucleus
+- **Ch 3. Molecular Biology of the Gene** `ku-cell-molecular-biology-molecular-biology-of-the-gene` — 7 sections: DNA: The Molecule of Heredity, Structure and Replication; Transcription: Reading Genes into RNA; The Genetic Code and Translation: RNA to Protein; Mutations and the Repair Systems That Contain Them; Gene Regulation: From Operons to Epigenetics; Chromatin and the Nucleosome: How Two Metres of DNA Fit Into a Nucleus; Viruses and Mobile Genetic Elements: Genes That Travel
 - **Ch 4. Bioenergetics** `ku-cell-molecular-biology-bioenergetics` — 1 sections: Cellular Respiration: Glycolysis to the Electron Transport Chain
 
 ### Biochemistry (`ku-biochemistry`)

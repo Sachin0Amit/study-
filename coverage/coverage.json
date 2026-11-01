@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T06:16:58.367Z",
+  "generatedAt": "2026-11-01T06:29:57.866Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 140,
     "books": 140,
     "chapters": 895,
-    "sections": 4685
+    "sections": 4686
   },
   "subjects": [
     {
@@ -26856,7 +26856,7 @@
       "group": "Life Sciences",
       "tagline": "The unit of life, read to the letter",
       "chapterCount": 4,
-      "sectionCount": 15,
+      "sectionCount": 16,
       "chapters": [
         {
           "id": "ku-cell-molecular-biology-foundations-life-microscopy-and-the-cell",
@@ -26924,7 +26924,7 @@
           "title": "Molecular Biology of the Gene",
           "shortTitle": "Molecular Biology of the Gene",
           "bookId": "ku-cell-molecular-biology",
-          "sectionCount": 6,
+          "sectionCount": 7,
           "sections": [
             {
               "id": "ku-bio-dna-structure-replication",
@@ -26955,6 +26955,11 @@
               "id": "ku-bio-chromatin-nucleosome-packaging",
               "number": 3.6,
               "title": "Chromatin and the Nucleosome: How Two Metres of DNA Fit Into a Nucleus"
+            },
+            {
+              "id": "ku-bio-viruses-mobile-genetic-elements",
+              "number": 3.7,
+              "title": "Viruses and Mobile Genetic Elements: Genes That Travel"
             }
           ]
         },

@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Cell & Molecular Biology — Chapter 03: Molecular Biology of the Gene
- * 6 lessons · ~13,413 words
+ * 7 lessons · ~17,592 words
  * field: Cell & Molecular Biology
  * legacy sources: x14-molecular.ts, x55-crossverify-pass.ts
  *
@@ -17,6 +17,7 @@
  *   03.4 bio-mutations-dna-repair — Mutations and the Repair Systems That Contain Them
  *   03.5 bio-gene-regulation-epigenetics — Gene Regulation: From Operons to Epigenetics
  *   03.6 bio-chromatin-nucleosome-packaging — Chromatin and the Nucleosome: How Two Metres of DNA Fit Into a Nucleus
+ *   03.7 bio-viruses-mobile-genetic-elements — Viruses and Mobile Genetic Elements: Genes That Travel
  */
 import type { KnowledgeTopic } from '../../types'
 
@@ -1106,6 +1107,250 @@ export const cellMolecularBiologyCh03: KnowledgeTopic[] = [
         title: 'Where next',
         tone: 'insight',
         text: 'Grounding: Gerald Bergtrom, Cell and Molecular Biology: What We Know & How We Found Out (Basic iText, UWM, CC-BY), Chapter 8 "DNA Structure, Chromosomes, Chromatin and Replication" — the chromatin, nucleosome and histone sections. The DNA-structure lesson owns the double helix and replication fork; the gene-regulation lesson owns the chemical marks that open and close this packaging; the genetics book extends the story to how packaged chromosomes behave in inheritance.',
+      },
+    ],
+  },
+  {
+    id: 'bio-viruses-mobile-genetic-elements',
+    title: 'Viruses and Mobile Genetic Elements: Genes That Travel',
+    domain: 'Life Sciences',
+    field: 'Cell & Molecular Biology',
+    branch: 'Molecular Genetics',
+    tier: 'intermediate',
+    concepts: [
+      'Viruses as traveling genes: genome, capsid, envelope',
+      'The Baltimore classes: seven solutions to one problem',
+      'The lambda switch: lysogeny as live gene regulation',
+      'Reverse transcriptase and the retroviral provirus',
+      'Transposons: cut, paste and the jumping genes of maize',
+      'Retrotransposons: LINEs, SINEs and half the human genome',
+      'The mobile ecosystem: plasmids, integrons, CRISPR memory',
+      'The border of life: viroids, satellites, prions and giant viruses',
+    ],
+    words: 4179,
+    readMins: 21,
+    addedOn: '2026-11-01',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'Take the gene\'s-eye view and a virus stops being a shrunken organism and becomes a traveling set of instructions hunting for a ribosome. That shift in perspective is what this lesson owns. The microbiology book\'s replication-cycle lesson walked the choreography from attachment to burst; here the question is molecular genetics: what kind of genetic cargo do viruses actually carry, in what chemical dialect, and how do some of them settle permanently into host DNA? Answering it reveals a family reunion — because the enzymes that let retroviruses land in chromosomes are the same enzymes that have been shuffling, copying and re-colonizing genomes since before there were immune systems to object. Viruses, transposons, retrotransposons and plasmids are all mobile genetic elements: genes that travel, by different vehicles.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'Roughly eight percent of your genome is defunct retrovirus and about forty-five percent is recognizable mobile-element DNA — against one-and-a-half percent that codes for proteins. HIV drug cocktails are applied reverse-transcriptase chemistry; the antibody diversity that protects you exists because a transposase was tamed half a billion years ago; CRISPR is a bacterial memory of phage invasion turned laboratory tool. This lesson is the map of everything in your DNA that arrived from somewhere else.',
+        tone: 'insight',
+      },
+      { kind: 'heading', text: 'Core Concepts' },
+      {
+        kind: 'para',
+        text: "Viruses as traveling genes. A virion is genome plus container and nothing else: a nucleic acid of either DNA or RNA — never both — packed in a protein capsid, sometimes wrapped in a stolen membrane envelope. The extremes of cargo size are staggering. At the small end, circoviruses carry about 1,800 nucleotides and just two genes; at the large end, mimivirus carries 1.2 million base pairs encoding on the order of a thousand genes, more than many bacteria possess. Between infections a virus has no metabolism, no ribosomes, no energy conversion — which is why the field guide ranks it outside the formal definition of life: it is an object between cells and a program inside them. Viral genomes are also the most compressed texts in biology: genes overlap, are read in several reading frames from one DNA stretch, and every nucleotide tends to earn its keep. A millilitre of seawater holds millions of virions, and phages kill a large fraction of the ocean's microbes every day — the traffic this lesson describes is not an edge case of life but its busiest road.",
+      },
+      {
+        kind: 'para',
+        text: 'The Baltimore classes: seven solutions to one problem. David Baltimore saw in 1971 that all viral diversity answers a single question: how does this genome get itself read by a ribosome, which accepts only positive-sense messenger RNA? His classification sorts every virus into seven routes. Class I, double-stranded DNA (adenovirus, herpesvirus, smallpox): the host\'s own RNA polymerase transcribes it, usually in the nucleus. Class II, single-stranded DNA (parvovirus): must first build a double-stranded intermediate. Class III, double-stranded RNA (rotavirus, carrying eleven segments): double-stranded RNA never reaches ribosomes, so the virion packs its own RNA-dependent RNA polymerase inside the capsid. Class IV, positive-strand RNA (poliovirus, SARS-CoV-2, tobacco mosaic virus): the genome is itself mRNA — inject it and translation starts at once. Class V, negative-strand RNA (influenza, measles, rabies, Ebola): the genome is the mirror image of mRNA, no cell enzyme can read it, so the virion must carry its polymerase aboard or nothing happens. Class VI, the RNA retroviruses (HIV): RNA travels, but is reverse-transcribed to DNA and integrated before expression. Class VII, the DNA hepadnaviruses (hepatitis B): DNA travels by way of an RNA intermediate. The class predicts the virology: where replication happens, what the particle must smuggle in, and which enzymes are druggable.',
+      },
+      {
+        kind: 'para',
+        text: 'The lambda switch: lysogeny as live gene regulation. The Escherichia coli phage lambda, forty-eight thousand base pairs of double-stranded DNA, faces every infection with a binary decision — burst the cell now, or move in quietly. Moving in means lysogeny: lambda\'s integrase performs site-specific recombination between a site on the phage genome (attP) and one on the bacterium\'s chromosome (attB, sitting between the galactose and biotin genes), splicing the phage in as a prophage that is copied with every host division. The decision itself is the gene-regulation lesson\'s logic running a viral circuit. Two promoters aim at a cluster of three operator sites — OR1, OR2, OR3. Reading rightward, promoter PR drives cro and the lytic genes; reading leftward, promoter PRM drives cI, the gene for the CI repressor. CI binds the operators in the order OR1, then OR2, then OR3: a CI dimer parked on OR1 and OR2 blocks RNA polymerase at PR — cro and the lytic program are silenced — while the same binding bends DNA in a way that stimulates PRM, so CI keeps making more of itself. The lysogen is thus self-maintaining and immune to fresh lambda, because incoming genomes meet a cell already flooded with CI. Cro, a smaller repressor, prefers OR3 and does the opposite: occupying OR3 shuts PRM off, cI collapses, PR fires, and the lytic cascade runs to lysis. The flip from lysogeny to lysis is triggered by danger: DNA damage activates the SOS response, and activated RecA — the co-protease the repair lesson\'s story also uses to cleave LexA — makes CI cleave itself apart. One signal, one proteolytic snip, and a quiet tenant becomes a bomb.',
+      },
+      {
+        kind: 'figure',
+        caption:
+          "The lambda switch — one operator cluster, two fates. CI repressor dimers on OR1 and OR2 block rightward promoter PR (cro and lytic genes silent) while stimulating leftward promoter PRM (cI makes more CI): the self-maintaining lysogen. DNA damage activates RecA, which makes CI cleave itself; freed, Cro occupies OR3 and shuts PRM — cI dies out, PR fires, and the lytic program bursts the cell.",
+        afterConcept: 3,
+        svg: `<svg viewBox="0 0 880 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The lambda lytic versus lysogenic switch with CI repressor and Cro at the OR operators">
+  <style>.lbl{font-family:Georgia,serif;font-size:14.5px;fill:#3f3f46}.big{font-size:18px;font-weight:bold}.sm{font-size:12.5px;fill:#52525b}.ink{stroke:#8a8a93;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.route{stroke:#e11d48;fill:none;stroke-width:2.2;stroke-linecap:round}.ok{stroke:#059669;fill:none;stroke-width:2.2;stroke-linecap:round}</style>
+  <text class="lbl big" x="30" y="34" fill="#3f3f46">The lambda switch — stay quiet or burst</text>
+  <rect x="22" y="52" width="410" height="252" rx="14" class="ink" stroke="#059669" stroke-width="1.6"/>
+  <text class="lbl" x="40" y="76" fill="#047857">LYSOGENY — CI wins</text>
+  <path class="ink" d="M52 168 L400 168" stroke-width="3"/>
+  <rect x="86" y="152" width="64" height="32" class="ink"/>
+  <text class="lbl" x="98" y="172">cI</text>
+  <rect x="312" y="152" width="58" height="32" class="ink"/>
+  <text class="lbl" x="320" y="172">cro</text>
+  <rect x="196" y="150" width="26" height="36" class="ink" stroke="#059669"/>
+  <rect x="228" y="150" width="26" height="36" class="ink" stroke="#059669"/>
+  <rect x="260" y="150" width="26" height="36" class="ink" stroke="#059669"/>
+  <text class="sm" x="192" y="140">OR3</text>
+  <text class="sm" x="224" y="140">OR2</text>
+  <text class="sm" x="256" y="140">OR1</text>
+  <path class="ok" d="M196 214 C 188 208, 180 208, 174 214 M174 214 C 180 218, 188 218, 196 214 M182 196 C 176 208, 176 222, 182 234"/>
+  <text class="sm" x="108" y="206" fill="#047857">PRM reads left → cI ON</text>
+  <text class="sm" x="108" y="222" fill="#047857">(CI stimulates its own gene)</text>
+  <circle cx="241" cy="120" r="11" class="ink" stroke="#059669"/>
+  <circle cx="262" cy="120" r="11" class="ink" stroke="#059669"/>
+  <text class="sm" x="232" y="124" fill="#047857">CI</text>
+  <text class="sm" x="196" y="100" fill="#047857">CI dimers bind OR1 &amp; OR2</text>
+  <path class="route" d="M286 208 C 296 202, 306 202, 316 208" stroke-dasharray="5 4"/>
+  <text x="292" y="196" font-family="Georgia,serif" font-size="14" fill="#e11d48">✗</text>
+  <text class="sm" x="286" y="228" fill="#b91c1c">PR blocked → cro OFF</text>
+  <text class="sm" x="40" y="266">prophage: lambda DNA integrated at attB;</text>
+  <text class="sm" x="40" y="284">the cell divides, copies its tenant —</text>
+  <text class="sm" x="40" y="302">and is immune to new lambda (CI flood)</text>
+  <rect x="448" y="52" width="410" height="252" rx="14" class="ink" stroke="#e11d48" stroke-width="1.6"/>
+  <text class="lbl" x="466" y="76" fill="#b91c1c">LYTIC — Cro wins</text>
+  <path class="ink" d="M478 168 L826 168" stroke-width="3"/>
+  <rect x="512" y="152" width="64" height="32" class="ink"/>
+  <text class="lbl" x="524" y="172">cI</text>
+  <rect x="738" y="152" width="58" height="32" class="ink"/>
+  <text class="lbl" x="746" y="172">cro</text>
+  <rect x="622" y="150" width="26" height="36" class="ink" stroke="#e11d48"/>
+  <rect x="654" y="150" width="26" height="36" class="ink" stroke="#e11d48"/>
+  <rect x="686" y="150" width="26" height="36" class="ink" stroke="#e11d48"/>
+  <text class="sm" x="618" y="140">OR3</text>
+  <text class="sm" x="650" y="140">OR2</text>
+  <text class="sm" x="682" y="140">OR1</text>
+  <path class="route" d="M714 200 C 726 192, 740 192, 752 200 M752 200 C 744 204, 736 204, 728 204" stroke-width="2.8"/>
+  <text class="sm" x="712" y="224" fill="#b91c1c">PR fires → cro, Q, lysis ON</text>
+  <path class="ink" d="M618 212 C 608 206, 600 206, 592 212 M592 212 C 600 216, 608 216, 618 212" stroke-dasharray="5 4"/>
+  <text x="596" y="232" font-family="Georgia,serif" font-size="14" fill="#e11d48">✗</text>
+  <text class="sm" x="500" y="212" fill="#b91c1c">PRM blocked → cI OFF</text>
+  <rect x="612" y="104" width="46" height="26" class="ink" stroke="#e11d48"/>
+  <text class="sm" x="618" y="122" fill="#b91c1c">Cro</text>
+  <text class="sm" x="600" y="96" fill="#b91c1c">Cro occupies OR3 first</text>
+  <path class="route" d="M560 116 C 550 110, 542 110, 534 116 M546 100 L560 90 M552 92 L560 90 M560 90 L558 98"/>
+  <text class="sm" x="466" y="264">excision (Xis + integrase) frees lambda DNA;</text>
+  <text class="sm" x="466" y="282">replication, headfuls of progeny, lysozyme —</text>
+  <text class="sm" x="466" y="300">the cell bursts (the cycle lesson's clock)</text>
+  <path class="route" d="M416 340 C 300 356, 200 356, 120 340 M120 340 C 112 344, 112 352, 120 356 M120 340 C 114 334, 106 336, 104 344"/>
+  <path class="route" d="M464 340 C 580 356, 680 356, 760 340 M760 340 C 768 344, 768 352, 760 356 M760 340 C 766 334, 774 336, 776 344"/>
+  <text class="lbl" x="352" y="348" fill="#b91c1c">the flip</text>
+  <text class="sm" x="30" y="390" fill="#52525b">DNA damage (UV, breaks) → single-stranded DNA + RecA = activated RecA</text>
+  <text class="sm" x="30" y="410" fill="#52525b">RecA is a co-protease: it makes CI cleave itself (the same trick that cleaves LexA in the SOS response)</text>
+  <text class="sm" x="30" y="430" fill="#52525b">CI gone → PR opens → cro → the lytic cascade — a quiet tenant leaves as a bomb</text>
+  <text class="sm" x="30" y="456" fill="#52525b">binding orders: CI prefers OR1 &gt; OR2 &gt; OR3 · Cro prefers OR3 first — that asymmetry is the whole circuit</text>
+</svg>`,
+      },
+      {
+        kind: 'para',
+        text: "Reverse transcriptase and the retroviral provirus. Howard Temin's provirus hypothesis — that RNA tumour viruses copy their RNA into DNA and insert it — was doubted for six years, because it ran the central dogma backwards; then in 1970 Temin and David Baltimore independently found the enzyme inside virions, and molecular genetics gained its most consequential import. Reverse transcriptase is a multi-tool heterodimer (in HIV, p66 and p51 subunits) that runs three reactions in sequence: first an RNA-dependent DNA polymerase makes a complementary DNA strand from the viral RNA; then its built-in RNase H activity chews the RNA template away, leaving fragments that prime the third step; then a DNA-dependent DNA polymerase activity builds the second DNA strand. The finished double-stranded copy is flanked by long terminal repeats — the LTRs — that carry the provirus's promoters and regulatory signals. The enzyme has no proofreading exonuclease, so it misincorporates at roughly one base in ten thousand to a hundred thousand per cycle, a hundred-thousand-fold sloppier than the host's repaired replication. Integrase then performs what is chemically a transposition: it trims two nucleotides from each 3-prime end, cuts the host DNA with a five-base stagger, and splices the viral DNA in — a permanent, hereditary insertion copied with the cell ever after. The HIV genome is about 9,700 bases of RNA carrying nine genes, and the virion is diploid — it packs two identical RNA copies, which recombine when co-packaged genomes differ. Integration is why retroviral infection is lifelong: drugs can shut down every new cycle, but the proviral archive in the genome cannot be excised. The error rate plus a production of ten billion virions a day means an untreated patient harbours not one virus genotype but a swarm — the quasispecies — within which every single-point variant exists at every moment.",
+      },
+      {
+        kind: 'para',
+        text: "Transposons: cut, paste and the jumping genes of maize. Barbara McClintock discovered mobile DNA fourteen years before the double helix. Mapping maize chromosomes in the 1940s, she found kernel colour variegating in speckles that made sense only if chromosome segments were moving — the Dissociator and Activator loci, a transposable element and its regulator, announced in 1950 and believed by almost no one until transposons turned up everywhere; the Nobel Prize arrived thirty-three years later. Cut-and-paste DNA transposons are the simplest design: a transposase gene flanked by inverted terminal repeats. The transposase — its catalytic core a DDE motif, two aspartates and a glutamate that coordinate magnesium — cuts the element out of the donor site and pastes it into a new target, sealing with a small duplication of host sequence at each insertion. Bacterial insertion sequences are little more than this; composite transposons like Tn10 weld two insertion sequences around a cargo gene, such as tetracycline resistance, and haul it around the genome. Some elements copy rather than excise — replicative transposition, the strategy of Tn3 and of phage Mu, whose entire name means mutator. Two domestications matter enormously to us. The RAG1 and RAG2 recombinase, which cuts and pastes antibody gene segments into the millions of combinations the immune system deploys, is recognizably a tamed transposase — its recombination signal sequences are stripped-down inverted repeats, and the DDE catalytic trio is conserved; jawed vertebrates acquired it from a Transib-family element roughly half a billion years ago. And telomerase, the enzyme that extends chromosome ends, is a reverse transcriptase running on an internal RNA template — the same engine family as the retroelements, solving a replication problem instead of moving a gene.",
+      },
+      {
+        kind: 'para',
+        text: "Retrotransposons: LINEs, SINEs and half the human genome. The copy-and-paste aristocrats of genomes move through an RNA intermediate, using reverse transcriptase to print new DNA copies at fresh genomic addresses. LINE-1, the workhorse of the human lineage, is about 6,400 bases with two open reading frames: ORF1 encodes an RNA-binding chaperone, ORF2 encodes a protein with an endonuclease domain and a reverse transcriptase domain. Insertion by target-primed reverse transcription is a masterpiece of molecular parasitism: the ORF2 protein nicks a T-rich consensus sequence in genomic DNA, and the exposed 3-prime hydroxyl of the nicked host strand itself primes reverse transcription of the LINE-1 messenger RNA as it arrives — host DNA as its own primer, no free ends, no ligase required. The human genome carries roughly nine hundred thousand LINE-1 copies, but over ninety-nine percent are 5-prime truncated fossils; somewhere between fifty and one hundred full-length elements per diploid genome still jump. SINEs are shorter hangers-on: the Alu element, about three hundred bases, has no protein-coding genes at all and borrows LINE-1's ORF2 machinery in trans — a parasite of a parasite, and spectacularly successful at roughly 1.1 million copies, partly because it inserts preferentially into the open chromatin of active genes. Add the retroviral-like LTR elements at about eight percent and DNA transposon fossils at about three, and roughly forty-five percent of human DNA is recognizable mobile-element sequence — thirty times the protein-coding fraction. Insertions still cause disease: an Alu landing in a factor VIII exon is a classic cause of haemophilia A, and LINE-1 insertions into NF1 and DMD disrupt those genes; somatic retrotransposition is also documented in tumours and reported in neurons. The most respectable citizens of this class are the endogenous retroviruses — proviruses that colonized the germline of ancestors and drifted into jobs. The syncytin proteins that fuse placental trophoblast cells, and without which a placenta cannot form, are domesticated retroviral envelope genes, captured independently in several mammalian lineages: the placenta is, in part, a viral invention.",
+      },
+      {
+        kind: 'para',
+        text: 'The mobile ecosystem: plasmids, integrons, CRISPR memory. Viruses and transposons are the famous travelers, but the cell\'s traffic system runs on more vehicles. Plasmids are self-replicating DNA loops that trade genes for opportunity: the F fertility factor builds the conjugation bridge that donates DNA between bacteria, and R plasmids stack resistance genes onto it. Conjugation is one of the three ancient routes of horizontal gene transfer, with transformation (naked DNA uptake) and transduction (phage-mediated) — the epidemiology of resistance, and how these routes spread it, belongs to the antibiotic-resistance lesson. Integrons are the cataloguing layer: an integrase enzyme that captures circular gene cassettes at a recombination site and lines them into an expression array — sitting on a transposon, on a plasmid, they become a conveyor belt assembling multi-resistance. Bacteria also keep a memory of past invaders: the CRISPR arrays store short spacer sequences copied from attacking phage and plasmid DNA, transcribed into guide RNAs that aim Cas nucleases at any returning invader\'s sequence — adaptive immunity in organisms without immune systems, carried by roughly forty percent of sequenced bacteria and ninety percent of archaea. The biotechnology lesson owns what humans did with this machinery once they found it. And the host genome is not just a battlefield but a construction site: mobile elements are a major source of new regulatory DNA, and dozens of interferon-responsive enhancers in human innate-immunity genes descend from MER41 retroelement insertions — the genome recruited its parasites to wire its defenses.',
+      },
+      {
+        kind: 'para',
+        text: 'The border of life: viroids, satellites, prions and giant viruses. Below the virus and beyond it, the border blurs. Viroids are the smallest known infectious agents: bare circles of single-stranded RNA two hundred fifty to four hundred nucleotides long, with no capsid and no protein-coding genes at all — they are heredity without an organism, replicating through the host\'s own RNA polymerases via a rolling-circle scheme, and some carry built-in hammerhead ribozymes, RNA enzymes that cut themselves. They infect plants, where potato spindle tuber viroid and coconut cadang-cadang do commercial damage. Satellite viruses and virusoids are genomes too small to survive alone: hepatitis delta virus is a roughly 1,700-base circular RNA ribozyme-bearing agent that cannot spread unless hepatitis B virus is present to lend it its envelope protein — a satellite borrowing its host\'s coat. Prions abandon nucleic acid altogether: a misfolded conformation of the prion protein that templates the same misfolding in normal copies, spreading as infectious structure — scrapie, bovine spongiform encephalopathy and variant CJD — a story the biomolecules lesson tells from the protein side. And at the opposite end, giant viruses such as mimivirus and pandoravirus carry genomes up to 2.5 million base pairs, including genes for translation machinery components like aminoacyl-tRNA synthetases, eroding the size argument against viral aliveness. Where viruses came from has three standing answers — regressive shrinkage of parasitic cells, escaped mobile elements that acquired coats, or relics of a pre-cellular RNA world — and the modern view is that different lineages may have different histories; the travelers are not one family with one origin, but a road with many entrances.',
+      },
+      {
+        kind: 'formula',
+        name: 'Multiplicity of infection (Poisson arrival)',
+        latex: 'P(k) = \\frac{e^{-m}\\, m^{k}}{k!}, \\quad P(0) = e^{-m}',
+        meaning:
+          'When a stock of virus is mixed with a layer of cells, each cell is hit at random: if m virions of the stock correspond to each cell on average (the multiplicity of infection), the fraction of cells receiving exactly k particles follows a Poisson distribution. The workhorse corollary is P(0) = e^{-m}, the fraction of cells that escape infection entirely — at MOI 5, e^{-5} ≈ 0.7% escape and 99.3% are infected, most of them several times over. Plaque purification and single-hit genetics deliberately run the opposite regime, low MOI, so most infected cells received exactly one genome.',
+      },
+      { kind: 'example', title: 'Worked Example: Reading an MOI Like a Virologist', steps: [
+        'Identify what is asked: one million cells are infected at a multiplicity of infection of 5 — how many cells escape infection entirely, and how many receive exactly one virion?',
+        'Recall the model: random hits, Poisson statistics — the probability of exactly k hits is e^{-m} m^k / k!, with m = 5.',
+        'Compute the escapees: P(0) = e^{-5} ≈ 0.0067, so about 6,700 cells out of a million receive nothing at all.',
+        'Compute the single-hit cells: P(1) = 5 e^{-5} ≈ 0.0337, about 33,700 cells — only three percent, even though the average cell was hit five times.',
+        'State the result: at MOI 5, infection is near-universal but mostly multiple — which is why coinfection, complementation between defective viruses and high-dose stock preparation all work, and why cloning a single viral genome requires diluting to MOI well under one.',
+      ] },
+      { kind: 'example', title: 'Worked Example: Why Anti-HIV Drugs Come in Threes', steps: [
+        'Identify what is asked: why does a single antiviral drug fail within months while a three-drug combination suppresses the same virus for decades?',
+        'Set the error rate: reverse transcriptase lacks proofreading and misincorporates at roughly one base in 10^5 per cycle; the HIV genome is about 10^4 bases, so each new genome carries on the order of one new mutation.',
+        'Set the production: an untreated patient makes on the order of 10^10 virions per day. The expected number of copies already carrying any one specified point mutation is about 10^10 x 10^-5 = 10^5 — every single-point variant in the genome exists, thousands of times over, every day.',
+        'Stack a second gate: a variant needing two specific point mutations appears at about 10^10 x (10^-5)^2 = 1 copy per day — borderline.',
+        'Stack the third: a triple variant is expected at 10^10 x (10^-5)^3 = 10^-5 copies per day — essentially never. A single drug presents one mutational gate the swarm steps over daily; three drugs against independent targets demand a jackpot the swarm cannot hit.',
+        'State the result: combination antiretroviral therapy is applied probability — the same quasispecies arithmetic that makes the virus adaptable makes it, at three independent gates, statistically trapped.',
+      ] },
+      { kind: 'heading', text: 'Applications in the Real World' },
+      { kind: 'list', items: [
+        'Reading pandemic coverage: "new variant" is a quasispecies sampling event — the swarm described here is why RNA-virus surveillance exists and why vaccine updates track drift.',
+        'Antiviral design: reverse-transcriptase, integrase and protease inhibitors each attack one enzyme this lesson maps, and the worked example shows why they are never prescribed alone.',
+        'Genome literacy: when a sequencing report or a documentary calls non-coding DNA "junk", this lesson is the correction — roughly forty-five percent of that DNA is mobile-element history, and some of it is working regulatory code.',
+        'Genetic diagnosis: an Alu insertion in factor VIII, a LINE-1 insertion in NF1 or DMD — retrotransposition is a live mutational mechanism clinicians must recognize, not just a fossil record.',
+        'Reproductive and immune biology: syncytin-dependent placental fusion and RAG-dependent antibody diversity are both domesticated mobile elements — two of the body\'s signature features have travelers\' papers.',
+        'Plant quarantine and agriculture: viroids with no protein at all cause notifiable crop diseases — the reason seed potatoes and coconut stock move under certification regimes.',
+      ] },
+      {
+        kind: 'callout',
+        title: 'Common Pitfalls',
+        tone: 'warn',
+        text: "Five slips recur. Positive-strand RNA is injectable message; negative-strand RNA is its mirror and forces the virion to carry a polymerase — reversing who carries the enzyme is the classic error. A retrovirus and a retrotransposon share LTRs and reverse transcriptase; the difference is the env gene and infectivity — the retrovirus can leave the cell, the retrotransposon only its genome. Cut-and-paste transposition moves an element without increasing copy number; replicative transposition and retrotransposition both multiply it. Prophage and provirus mean the same thing — an integrated viral genome — one word per host type, not different states. And e^{-m} describes random hits in a free-running mixture, not the synchronized one-step growth experiment — that clock belongs to the replication-cycle lesson.",
+      },
+      { kind: 'heading', text: 'Key Terms' },
+      { kind: 'terms', items: [
+        { term: 'Virion', def: 'The extracellular virus particle: genome (DNA or RNA, never both) in a capsid, with or without a stolen-membrane envelope — inert until it meets a cell.' },
+        { term: 'Baltimore classification', def: 'The seven-class sorting of viruses by how their genome reaches readable positive-sense mRNA — from plain dsDNA to the reverse-transcribing retroviruses and hepadnaviruses.' },
+        { term: 'Negative-strand RNA virus', def: 'A virus (influenza, rabies, measles, Ebola) whose genome is complementary to mRNA and therefore must pack its own RNA-dependent RNA polymerase in the virion.' },
+        { term: 'Reverse transcriptase', def: 'The retroviral three-in-one enzyme: RNA-dependent DNA polymerase, RNase H, and DNA-dependent DNA polymerase — no proofreading, hence the mutation storm.' },
+        { term: 'Provirus', def: 'The integrated double-stranded DNA copy of a retroviral genome, flanked by LTRs and inherited with the host cell — the reason retroviral infection is lifelong.' },
+        { term: 'CI repressor', def: 'The lambda phage protein that maintains lysogeny: bound at OR1 and OR2 it silences promoter PR and stimulates its own gene at PRM, until activated RecA makes it self-cleave.' },
+        { term: 'Transposase', def: 'The enzyme of cut-and-paste DNA transposons; its DDE catalytic motif coordinates magnesium and appears again in RAG1 and in retroviral integrase — one fold, three jobs.' },
+        { term: 'Target-primed reverse transcription', def: 'The LINE-1 insertion mechanism: ORF2 nicks T-rich host DNA and the nicked strand\'s own 3-prime end primes reverse transcription of the arriving RNA.' },
+        { term: 'LINE-1', def: 'The autonomous human retrotransposon (~6.4 kb, ORF1 and ORF2), present in ~900,000 mostly truncated copies, with ~100 elements still capable of jumping per diploid genome.' },
+        { term: 'SINE (Alu element)', def: 'A non-coding ~300 bp retrotransposon (~1.1 million copies in humans) that borrows LINE-1\'s ORF2 protein for its own multiplication — a parasite of a parasite.' },
+        { term: 'Endogenous retrovirus', def: 'A provirus that colonized the germline of an ancestor; some were domesticated — syncytin placental fusion proteins are retired retroviral envelopes.' },
+        { term: 'Viroid', def: 'A bare circular RNA of 250-400 nucleotides, with no capsid and no coding — the smallest infectious agent, replicating by host enzymes and ribozyme self-cleavage in plants.' },
+        { term: 'Integron', def: 'A bacterial capture system: an integrase that files circular gene cassettes into an expressible array — the cataloguing layer under multi-drug resistance.' },
+      ] },
+      { kind: 'heading', text: 'Check Yourself' },
+      { kind: 'quiz', items: [
+        {
+          q: 'Which viral class must carry its RNA-dependent RNA polymerase inside the virion, and why?',
+          options: ['Positive-strand RNA viruses, because their genome doubles as mRNA', 'Negative-strand RNA viruses, because no cell enzyme can read RNA complementary to mRNA', 'Double-stranded DNA viruses, because they replicate in the cytoplasm', 'Retroviruses, because reverse transcription precedes entry'],
+          answer: 1,
+          explain: 'Negative-strand genomes (Class V — influenza, rabies, measles, Ebola) are the mirror image of mRNA; the first viral mRNA must be made before anything else can happen, so the polymerase travels with the particle.',
+        },
+        {
+          q: 'In a lambda lysogen, what is CI repressor actually doing?',
+          options: ['Blocking PR, so cro and lytic genes stay off, while stimulating PRM to keep making more CI', 'Blocking PRM, so no more CI is made and Cro accumulates', 'Cleaving host DNA to excise the prophage', 'Coating the virion to grant superinfection immunity'],
+          answer: 0,
+          explain: 'CI at OR1 and OR2 shuts the rightward promoter PR and its lytic program, while the same binding stimulates CI\'s own promoter PRM — a self-maintaining circuit with memory, textbook operon logic in a virus.',
+        },
+        {
+          q: 'Reverse transcriptase performs its three reactions in which order?',
+          options: ['RNase H first, then RNA-dependent DNA polymerase, then ligation', 'RNA-dependent DNA polymerase, then RNase H, then DNA-dependent DNA polymerase', 'DNA-dependent DNA polymerase, then integration, then RNase H', 'All three simultaneously on separate templates'],
+          answer: 1,
+          explain: 'It copies RNA into complementary DNA, chews away the RNA template (RNase H), then uses surviving RNA fragments to prime second-strand synthesis — ending with LTR-flanked double-stranded DNA ready for integrase.',
+        },
+        {
+          q: 'A culture is infected at MOI 5. Roughly what fraction of cells receives no virus at all?',
+          options: ['0% — MOI 5 guarantees every cell is infected', 'About 5%, because MOI is a percentage', 'About 0.7% — e to the minus five', 'About 50%, because hits split evenly'],
+          answer: 2,
+          explain: 'Random arrival makes the hit count Poisson: P(0) = e^{-5} ≈ 0.0067. Infection is near-universal at MOI 5, but a real escapee fraction always remains — the number the plaque assay depends on.',
+        },
+        {
+          q: 'The Alu element cannot retrotranspose on its own. Whose machinery does it borrow?',
+          options: ['Reverse transcriptase from infecting retroviruses', 'LINE-1\'s ORF2 protein, in trans', 'The host\'s DNA polymerase III', 'Integrase from lambda phage'],
+          answer: 1,
+          explain: 'SINEs are non-coding; they parasitize the autonomous LINE-1 element\'s ORF2 endonuclease-plus-reverse-transcriptase to insert themselves — roughly 1.1 million successful rides in the human genome.',
+        },
+        {
+          q: 'Antibody diversity depends on V(D)J recombination. That system evolved from what?',
+          options: ['A bacterial plasmid', 'A retroviral integrase', 'A domesticated DNA transposase — RAG1/2 with recombination signal sequences as stripped-down inverted repeats', 'A viroid ribozyme'],
+          answer: 2,
+          explain: 'RAG1 and RAG2 are recognizably a tamed transposase of the Transib lineage: the heptamer-nonamer recombination signal sequences are decayed terminal inverted repeats, and the DDE catalytic motif survives — the immune system\'s combinatorial engine has a jumper\'s pedigree.',
+        },
+        {
+          q: 'Hepatitis delta virus is best described as:',
+          options: ['A viroid of animals', 'A satellite — a small circular RNA that needs hepatitis B virus to supply its envelope protein', 'A giant virus with translation genes', 'A prion of the liver'],
+          answer: 1,
+          explain: 'HDV carries its own ~1,700-base circular ribozyme-bearing RNA but no envelope gene: it spreads only alongside HBV, which donates the surface antigen it wraps itself in — a satellite borrowing its host\'s coat.',
+        },
+        {
+          q: 'Roughly eight percent of the human genome consists of:',
+          options: ['Protein-coding exons', 'Endogenous retroviruses — germline-colonized proviruses, some domesticated like syncytin', 'Bacterial DNA acquired by transformation', 'Telomere repeats'],
+          answer: 1,
+          explain: 'About eight percent is endogenous retroviral sequence, against roughly one-and-a-half percent protein-coding; syncytin, required for placental cell fusion, is a captured retroviral envelope gene — viral ancestry doing essential work.',
+        },
+      ] },
+      {
+        kind: 'callout',
+        title: 'Where next',
+        tone: 'path',
+        text: 'Grounding: David Baltimore (1971), "Expression of Animal Virus Genomes," Bacteriological Reviews 35:235-241; Barbara McClintock (1950), "The Origin and Behavior of Mutable Loci in Maize," PNAS 36:344-355; Lander et al. (2001), "Initial Sequencing and Analysis of the Human Genome," Nature 409 (mobile-element fractions); supported by Tortora, Funke & Case, Microbiology: An Introduction (virus chapters) and Lewin\'s Genes (transposable elements). Carve notes: the replication-cycle lesson in the microbiology book owns attachment-to-burst choreography, antiviral step targets and lysogenic conversion; the immunology lesson owns vaccines; the CRISPR lesson owns the editing toolbox; the antibiotic-resistance lesson owns the epidemiology of horizontal transfer; the biomolecules lesson owns prion protein folding. Next in this book: the bioenergetics chapter — fermentation and the metabolic integration this chapter\'s parasites exploit.',
       },
     ],
   },
