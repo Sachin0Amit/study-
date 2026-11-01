@@ -21,7 +21,13 @@
    literacy) and climbs step-wise to maximum level. Foundations → mechanics → applications → mastery.
    No rung skipped; every rung written.
 3. **The depth bar (physics/math/chemistry standard).** A finished lesson has:
-   - 2,000–3,500 words (new lessons land at 1,300–2,800 and are deepened on later passes);
+   - **textbook-style continuous teaching** per `docs/project/TEXTBOOK-QUALITY-DIRECTIVE.md` —
+     situation openings, background, gradual development, definitions built up and explained
+     word by word AFTER intuition (NEVER the "directly definition + insight" notes pattern);
+   - **NO upper word limit** (user directive 2026-11-02, supersedes the former 2,000–3,500
+     range) — as elaborative as genuine teaching requires, typically 2,000–6,000+ words;
+     never truncate theory, examples, derivations or figures to fit a count; never pad.
+     New lessons may land at 1,300–2,800 on the first pass and are deepened on later passes;
    - worked examples with full arithmetic ("show every step");
    - named researchers/dates/origins where the discipline has them (Brahmagupta 628 CE, Ramanujan,
      Metropolis 1953…);
@@ -167,7 +173,9 @@ For every existing subject, "finished" is defined by the same bar as physics/mat
    discipline (research pass per subject: top-selling textbook TOC + official exam syllabi where
    relevant). Missing chapters get declared at the right pedagogical position.
 2. **Lesson completeness** — every chapter's topic list covered; no syllabus topic without a lesson.
-3. **Depth** — every lesson ≥ 2,000 words (interim floor while climbing: none below 1,300).
+3. **Depth** — every lesson ≥ 2,000 words (interim floor while climbing: none below 1,300);
+   **no upper limit** — as elaborative as the topic genuinely requires, in textbook style
+   per `docs/project/TEXTBOOK-QUALITY-DIRECTIVE.md`.
 4. **Questions** — every lesson quiz ≥ 6 with explanations; worked examples present.
 5. **Figures/derivations** — where the discipline warrants (math/science/engineering: derivation
    blocks; everything: figure plates where a visual helps).
@@ -308,7 +316,8 @@ molecule-level reaction chemistry; Cell & Molecular Biology owns the cell-level 
 Botany owns the plant-specific physiology; Human A&P owns the human organ depth; Genetics owns
 heredity & population genetics; Evolution owns the diversity survey & evolutionary narrative;
 Ecology owns the ecosystem layer; Bioinformatics owns the computational method.** Depth bar per
-§0 Charter (2,000–3,500 words/lesson, worked examples, figures, quizzes with explanations).
+§0 Charter (NO upper word limit — as elaborative as teaching requires, floor 2,000 words/lesson;
+textbook style, worked examples, figures, quizzes with explanations).
 
 ### 6.1 Cell & Molecular Biology — `ku-cell-molecular-biology` (THE ANCHOR — starts now)
 Group: Life Sciences · field: `Cell & Molecular Biology` · current: 4 ch / 18 lessons

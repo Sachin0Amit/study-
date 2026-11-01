@@ -11,7 +11,7 @@ the next subject in Library order and build its queue. Never repeat a ✅ row.
 
 | Grade | Meaning | Operational test (measurable) |
 |---|---|---|
-| A | Proper textbook quality | ≥2,000 words, figure plate(s), derivation where formula-based, ≥2 worked examples, 6–10 quiz questions with explanations |
+| A | Proper textbook quality | ≥2,000 words (no upper limit — as long as teaching requires), figure plate(s), derivation where formula-based, ≥2 worked examples, 6–10 quiz questions with explanations |
 | B | Understandable, missing detail | 1,750–2,000 words OR missing figure/derivation but otherwise coherent |
 | C | Mostly definitions/bullets | 1,000–1,750 words, no figure, single example, compressed concept-list structure |
 | D | Incomplete/confusing | <1,000 words, or fails the anti-AI-notes test outright |
@@ -25,7 +25,7 @@ when touched, but never spend a bounded unit on them.
 
 ## Quality gates for every rewrite (all must pass)
 
-1. Word count exact: `bun scripts/count-topic-words-exact.ts <id>` — declared == actual, 2,000–3,500 words, readMins = round(words/200).
+1. Word count exact: `bun scripts/count-topic-words-exact.ts <id>` — declared == actual, **NO upper limit** (user directive 2026-11-02: as elaborative as the topic genuinely requires, typically 2,500–6,000+ words; floor 2,000; never truncate substance to fit a count; never pad), readMins = round(words/200).
 2. Dedup greps BEFORE writing: `rg -il "<distinctive term>" src/data/knowledge/subjects/` — inspect every hit, carve (cite, never re-teach), record evidence.
 3. Lesson text contains NO exam names. Topic `id` and `title` UNCHANGED (stable forever — mappings, links, progress depend on them).
 4. Structure: situation-opening → background → gradual development → formal definition → figure (explained in prose) → derivation for key formulas → ≥2 worked examples (house style "Identify what is asked … State the result") → applications → pitfalls → study path → terms → 6–10 quiz questions with explanations → recap.
@@ -42,11 +42,26 @@ zero derivations anywhere in the subject before this program started.
 
 ### Queue (live topics only; priority = severity, then tier core>intermediate>advanced, then ascending words)
 
+**NO-CEILING RULE (user directive 2026-11-02):** rewrites are UNLIMITED in length — write
+as elaborative as genuine teaching requires. Lessons known to have been TRIMMED under the
+former 3,500-word charter ceiling must be RE-EXPANDED to restore the cut substance:
+
+| Topic id | Trim history | Re-expansion status |
+|---|---|---|
+| math-algebra-notation-manipulation (§71.1) | 4,264 → 3,496 (three trim passes, 2026-11-01) | queued as row 3b below |
+| bioc-glycolysis-step-by-step (§3.1) | 3,860 → 3,500 | biochemistry audit must include re-expansion |
+| bioc-citric-acid-cycle (§3.2) | 3,546 → 3,500 | biochemistry audit must include re-expansion |
+| bioc-carbohydrate-lipid-traffic (§3.4) | 4,189 → 3,500 (five trim passes) | biochemistry audit must include re-expansion |
+| math-derivative-as-limit (excluded source) | n/a — 3,416 authored under old ceiling | maintain only; no unit spent (stays excluded) |
+
+All future rewrites, audits and new lessons are born under the no-ceiling charter.
+
 | # | Topic id (§ in book) | Words | Tier | Grade | Status |
 |---|---|---|---|---|---|
 | 1 | fnd-percentage-ratio-mental-math (§76.1) | 883→**2,811** | core | D | ✅ 2026-11-02 rewritten (see log) |
 | 2 | math-algebra-notation-manipulation (§71.1) | 1,409→**3,496** | core | C→A | ✅ 2026-11-01 rewritten (see log) |
 | 3 | math-quadratics-completing-square (§71.2) | 1,471 | core | C | next |
+| 3b | math-algebra-notation-manipulation (§71.1) re-expansion | 3,496 | core | A− (ceiling-trimmed) | queued — restore the ~768 words cut under the former 3,500 ceiling (worked-example depth / pitfall reasoning), unlimited length |
 | 4 | math-earth-geometry (§73.2) | 1,338 | intermediate | C | queued |
 | 5 | calc-linearization-differentials (§72.2) | 1,530 | intermediate | C | queued |
 | 6 | stats-sampling-central-limit (§74.6) | 1,619 | intermediate | C | queued |

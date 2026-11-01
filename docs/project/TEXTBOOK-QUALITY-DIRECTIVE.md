@@ -119,13 +119,25 @@ short-to-medium sentences; consistent notation; professional but approachable vo
 Simple language does not mean inaccurate science. Higher levels add formal terminology
 gradually.
 
-## 12. Depth must match the subject and level
+## 12. Depth must match the subject and level — NO WORD CEILING
 
-House charter: **2,000–3,500 words per lesson** (counted exactly by
-`bun scripts/count-topic-words-exact.ts <id>`; declared == actual; readMins =
+House charter (**updated 2026-11-02 by explicit user directive — supersedes every earlier
+word range**): **there is NO upper word limit.** A lesson is exactly as long as genuine
+teaching requires — typically 2,500–6,000+ words, and longer whenever the topic needs
+more theory, more worked examples, more derivations, or more explained figures. The only
+floor is completeness: the lesson must be long enough to teach the concept to a beginner
+with zero external help (in practice ≥ 2,000 words).
+
+**NEVER truncate substance to fit a count** — never cut a worked example, drop a
+derivation, remove a figure, or compress a gradual explanation to slide under any
+cap. The former 3,500-word ceiling is ABOLISHED; lessons previously trimmed under it
+must have their cut substance restored (see the re-expansion notes in the ledger).
+**NEVER pad either** — length must come from real teaching (more reasoning, more
+examples, more depth), never from repetition or filler. Counts remain exact and honest
+(`bun scripts/count-topic-words-exact.ts <id>`; declared == actual; readMins =
 round(words/200)). Depth follows conceptual difficulty, importance, prerequisites,
 mathematical complexity, examination relevance, applications, level, research
-significance. No padding, no artificial shortening.
+significance — and nothing else. No number ever overrides pedagogy.
 
 ## 13. Subject-specific expectations
 
@@ -150,14 +162,23 @@ Quizzes (6–10 questions, house style) test recall → understanding → applic
 analysis, with explanations for every answer and why wrong options fail. Never generate
 questions unrelated to the material.
 
-## 15. Improving existing StudyVerse content
+## 15. Improving existing StudyVerse content — A to Z, everything, plus future content
+
+**Scope mandate (user directive, 2026-11-02): the improvement and rewriting program
+covers ALL already-written content A–Z — every subject, every chapter, every lesson in
+the library from the first subject to the last, with no skipping — AND all future
+content, which must be BORN to this standard (never authored in notes style to be fixed
+later).**
 
 Audit and classify every lesson: **A** proper textbook quality · **B** understandable but
 missing important detail · **C** mostly definitions and bullets · **D** incomplete,
-confusing or technically weak · **E** placeholder. Prioritize C, D, E. Preserve accurate
-existing information, source references and examination mappings; never break
-application features, links, IDs or schemas (the topic `id` and `title` are stable
-forever). Do not rewrite content that already meets the standard.
+confusing or technically weak · **E** placeholder. Prioritize C, D, E. Lessons graded A
+or B that were compressed under the former word ceiling are re-expanded instead. Every
+lesson must read as textbook theory — concepts developed with reasoning, definitions
+built up and explained word by word — never the "directly definition + insight" notes
+pattern. Preserve accurate existing information, source references and examination
+mappings; never break application features, links, IDs or schemas (the topic `id` and
+`title` are stable forever).
 
 ## 16. Pedagogical quality test (before marking complete)
 

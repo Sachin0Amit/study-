@@ -57,8 +57,10 @@ Registries rebuild: `bun scripts/source-inventory.ts && bun scripts/build-projec
 
 ## 6. Quality rules (spec PART 6/7/8/15 — enforced)
 
-- Depth bar: 2,000–3,500 words/lesson, worked examples with full arithmetic, named
-  researchers/dates, SVG figure plates, derivations, 6–10-question quizzes with
+- Depth bar: **NO upper word limit** (user directive 2026-11-02 — as elaborative as
+  teaching requires, floor 2,000 words/lesson), textbook style per
+  `docs/project/TEXTBOOK-QUALITY-DIRECTIVE.md`, worked examples with full arithmetic,
+  named researchers/dates, SVG figure plates, derivations, 6–10-question quizzes with
   explanations (full charter: `docs/syllabus/MASTER-SYLLABUS.md` §0).
 - **Dedup before authoring** (spec PART 8): grep the tree for distinctive terms,
   inspect every hit, CARVE against the owning lesson — cite, never re-teach.
