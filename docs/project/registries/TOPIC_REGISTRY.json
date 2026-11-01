@@ -1,7 +1,7 @@
 {
   "$comment": "Every Knowledge-University topic by stable id (spec PART 8: canonical topic registry — check here before authoring; ids are kebab-case, globally unique, stable forever). Regenerate: bun scripts/build-project-registries.ts",
   "builtOn": "2026-11-01",
-  "count": 722,
+  "count": 723,
   "topics": [
     {
       "id": "sci-experimental-design-hypotheses",
@@ -1991,6 +1991,27 @@
         "P/O ratios of 2.5 and 1.5, derived from proton bookkeeping",
         "Respiratory control: ADP is the throttle, not oxygen",
         "Uncouplers and shuttles: the price of heat and the fare for cytosolic NADH"
+      ]
+    },
+    {
+      "id": "bioc-carbohydrate-lipid-traffic",
+      "title": "Carbohydrate and Lipid Traffic: Storing, Building, Burning",
+      "domain": "Life Sciences",
+      "subject": "Biochemistry",
+      "chapter": "Metabolism",
+      "tier": "intermediate",
+      "words": 3500,
+      "readMins": 18,
+      "addedOn": "2026-11-01",
+      "concepts": [
+        "The liver traffic map: the glycogen granule, the glucose-6-phosphate hub and the blood",
+        "Phosphorolysis: why glycogen is broken with phosphate, not water",
+        "Phosphorylase mechanics: PLP as proton wrench, debranching, the PKA cascade",
+        "Gluconeogenesis: four bypass enzymes and the six-bond bill",
+        "The pentose-phosphate lane: NADPH manufacture and reversible carbon shuffling",
+        "β-oxidation: Knoop’s two-carbon clue, the carnitine tollgate, the four-station spiral",
+        "Fatty-acid synthesis: the mirror workshop, ACP and the NADPH bill",
+        "The malonyl-CoA traffic light: one molecule decides burn or store"
       ]
     },
     {

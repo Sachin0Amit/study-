@@ -10,9 +10,9 @@
     "knowledgeSubjects": 201,
     "knowledgeBooks": 104,
     "knowledgeChapters": 339,
-    "knowledgeTopics": 722,
-    "knowledgeWords": 1152013,
-    "knowledgeSections": 630
+    "knowledgeTopics": 723,
+    "knowledgeWords": 1155513,
+    "knowledgeSections": 631
   },
   "subjects": [
     {
@@ -400,7 +400,7 @@
       "universe": "masters-library",
       "books": 1,
       "chapters": 3,
-      "sections": 14
+      "sections": 15
     },
     {
       "id": "ku-genetics-heredity",
@@ -1330,6 +1330,20 @@
       }
     },
     {
+      "id": "Biochemistry",
+      "name": "Biochemistry",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 3,
+      "topics": 15,
+      "words": 35700,
+      "tiers": {
+        "advanced": 2,
+        "core": 6,
+        "intermediate": 7
+      }
+    },
+    {
       "id": "Political Science",
       "name": "Political Science",
       "universe": "knowledge-university",
@@ -1340,20 +1354,6 @@
       "tiers": {
         "intermediate": 9,
         "core": 6
-      }
-    },
-    {
-      "id": "Biochemistry",
-      "name": "Biochemistry",
-      "universe": "knowledge-university",
-      "domain": "Life Sciences",
-      "chapters": 3,
-      "topics": 14,
-      "words": 32200,
-      "tiers": {
-        "advanced": 2,
-        "core": 6,
-        "intermediate": 6
       }
     },
     {

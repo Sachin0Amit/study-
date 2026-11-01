@@ -1,7 +1,7 @@
 {
   "$comment": "Topic-level prerequisite graph (spec PART 2.3: Topic → Prerequisite Topics → Learning Sequence). sequence = teaching order per subject (ordering facts, not dependencies). declared = derivation prerequisite phrases resolved to ku topics (title/concept, exact or ≥0.7 token overlap) or masters-library sections (cross-universe foundations). Lesson-internal phrases are classified, unresolved phrases are the honest missing-prerequisite work queue (spec: create or connect). Validation: dependency cycles (declared ku edges only), forward-reference violations, dangling refs. Regenerate: bun scripts/build-prerequisite-graph.ts",
   "builtOn": "2026-11-01",
-  "nodeCount": 722,
+  "nodeCount": 723,
   "nodes": [
     {
       "id": "sci-experimental-design-hypotheses",
@@ -793,6 +793,14 @@
       "subject": "Biochemistry",
       "chapter": "Metabolism",
       "orderInSubject": 13,
+      "tier": "intermediate"
+    },
+    {
+      "id": "bioc-carbohydrate-lipid-traffic",
+      "title": "Carbohydrate and Lipid Traffic: Storing, Building, Burning",
+      "subject": "Biochemistry",
+      "chapter": "Metabolism",
+      "orderInSubject": 14,
       "tier": "intermediate"
     },
     {
@@ -6163,6 +6171,11 @@
         "via": "sequence: Biochemistry lesson 13 → 14"
       },
       {
+        "from": "bioc-oxidative-phosphorylation-chemiosmosis",
+        "to": "bioc-carbohydrate-lipid-traffic",
+        "via": "sequence: Biochemistry lesson 14 → 15"
+      },
+      {
         "from": "bio-developmental-biology",
         "to": "bio-cell-fate-determinants",
         "via": "sequence: Developmental Biology lesson 1 → 2"
@@ -8512,11 +8525,11 @@
     ]
   },
   "declaredResolution": {
-    "phrasesTotal": 49,
+    "phrasesTotal": 51,
     "resolvedToKuTopic": 4,
     "resolvedToMastersSection": 8,
-    "lessonInternal": 28,
-    "unresolved": 9,
+    "lessonInternal": 29,
+    "unresolved": 10,
     "unresolvedList": [
       {
         "from": "fnd-metacognition-calibration",
@@ -8553,6 +8566,10 @@
       {
         "from": "bioc-citric-acid-cycle",
         "phrase": "For sequential reactions, ΔG°′ values add"
+      },
+      {
+        "from": "bioc-carbohydrate-lipid-traffic",
+        "phrase": "Glycolysis’s net standard ledger is −72.7 kJ/mol; a naive reversal would cost +72.7 and stall at the three irreversible steps"
       }
     ],
     "lessonInternalList": [
@@ -8655,6 +8672,10 @@
       {
         "from": "bioc-oxidative-phosphorylation-chemiosmosis",
         "phrase": "Difference notation across a membrane"
+      },
+      {
+        "from": "bioc-carbohydrate-lipid-traffic",
+        "phrase": "PC: pyruvate + CO2 + ATP → OAA; PEPCK: OAA + GTP → PEP; both run once per pyruvate, so twice per glucose"
       },
       {
         "from": "bio-cell-two-architectures-size-limit",
@@ -8783,7 +8804,7 @@
     },
     "Biochemistry": {
       "core": 6,
-      "intermediate": 6,
+      "intermediate": 7,
       "advanced": 2
     },
     "Developmental Biology": {
