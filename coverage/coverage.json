@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T10:59:29.679Z",
+  "generatedAt": "2026-11-01T11:59:11.361Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 140,
     "books": 140,
-    "chapters": 898,
-    "sections": 4704
+    "chapters": 899,
+    "sections": 4705
   },
   "subjects": [
     {
@@ -26995,8 +26995,8 @@
       "name": "Biochemistry",
       "group": "Life Sciences",
       "tagline": "The chemistry that runs cells",
-      "chapterCount": 2,
-      "sectionCount": 11,
+      "chapterCount": 3,
+      "sectionCount": 12,
       "chapters": [
         {
           "id": "ku-biochemistry-molecules-of-life",
@@ -27070,6 +27070,21 @@
               "id": "ku-bioc-structural-methods",
               "number": 2.3,
               "title": "Seeing Molecules: X-Ray Crystallography, NMR and Cryo-EM"
+            }
+          ]
+        },
+        {
+          "id": "ku-biochemistry-metabolic-pathways-in-depth",
+          "number": 3,
+          "title": "Metabolic Pathways in Depth",
+          "shortTitle": "Metabolic Pathways in Depth",
+          "bookId": "ku-biochemistry",
+          "sectionCount": 1,
+          "sections": [
+            {
+              "id": "ku-bioc-glycolysis-step-by-step",
+              "number": 3.1,
+              "title": "Glycolysis Step by Step: Ten Reactions, One Ancient Machine"
             }
           ]
         }

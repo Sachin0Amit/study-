@@ -9,10 +9,10 @@
     "knowledgeDomains": 18,
     "knowledgeSubjects": 201,
     "knowledgeBooks": 104,
-    "knowledgeChapters": 338,
-    "knowledgeTopics": 719,
-    "knowledgeWords": 1141330,
-    "knowledgeSections": 627
+    "knowledgeChapters": 339,
+    "knowledgeTopics": 720,
+    "knowledgeWords": 1145013,
+    "knowledgeSections": 628
   },
   "subjects": [
     {
@@ -399,8 +399,8 @@
       "group": "Life Sciences",
       "universe": "masters-library",
       "books": 1,
-      "chapters": 2,
-      "sections": 11
+      "chapters": 3,
+      "sections": 12
     },
     {
       "id": "ku-genetics-heredity",
@@ -1343,6 +1343,20 @@
       }
     },
     {
+      "id": "Biochemistry",
+      "name": "Biochemistry",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 3,
+      "topics": 12,
+      "words": 25200,
+      "tiers": {
+        "advanced": 2,
+        "core": 6,
+        "intermediate": 4
+      }
+    },
+    {
       "id": "Psychology",
       "name": "Psychology",
       "universe": "knowledge-university",
@@ -1353,20 +1367,6 @@
       "tiers": {
         "core": 8,
         "intermediate": 4
-      }
-    },
-    {
-      "id": "Biochemistry",
-      "name": "Biochemistry",
-      "universe": "knowledge-university",
-      "domain": "Life Sciences",
-      "chapters": 2,
-      "topics": 11,
-      "words": 21517,
-      "tiers": {
-        "advanced": 2,
-        "core": 6,
-        "intermediate": 3
       }
     },
     {

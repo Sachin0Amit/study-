@@ -1,7 +1,7 @@
 {
   "$comment": "Topic-level prerequisite graph (spec PART 2.3: Topic → Prerequisite Topics → Learning Sequence). sequence = teaching order per subject (ordering facts, not dependencies). declared = derivation prerequisite phrases resolved to ku topics (title/concept, exact or ≥0.7 token overlap) or masters-library sections (cross-universe foundations). Lesson-internal phrases are classified, unresolved phrases are the honest missing-prerequisite work queue (spec: create or connect). Validation: dependency cycles (declared ku edges only), forward-reference violations, dangling refs. Regenerate: bun scripts/build-prerequisite-graph.ts",
   "builtOn": "2026-11-01",
-  "nodeCount": 719,
+  "nodeCount": 720,
   "nodes": [
     {
       "id": "sci-experimental-design-hypotheses",
@@ -770,6 +770,14 @@
       "chapter": "Laboratory Methods",
       "orderInSubject": 10,
       "tier": "advanced"
+    },
+    {
+      "id": "bioc-glycolysis-step-by-step",
+      "title": "Glycolysis Step by Step: Ten Reactions, One Ancient Machine",
+      "subject": "Biochemistry",
+      "chapter": "Metabolism",
+      "orderInSubject": 11,
+      "tier": "intermediate"
     },
     {
       "id": "bio-developmental-biology",
@@ -6124,6 +6132,11 @@
         "via": "sequence: Biochemistry lesson 10 → 11"
       },
       {
+        "from": "bioc-structural-methods",
+        "to": "bioc-glycolysis-step-by-step",
+        "via": "sequence: Biochemistry lesson 11 → 12"
+      },
+      {
         "from": "bio-developmental-biology",
         "to": "bio-cell-fate-determinants",
         "via": "sequence: Developmental Biology lesson 1 → 2"
@@ -8473,10 +8486,10 @@
     ]
   },
   "declaredResolution": {
-    "phrasesTotal": 42,
+    "phrasesTotal": 44,
     "resolvedToKuTopic": 4,
     "resolvedToMastersSection": 8,
-    "lessonInternal": 22,
+    "lessonInternal": 24,
     "unresolved": 8,
     "unresolvedList": [
       {
@@ -8588,6 +8601,14 @@
       {
         "from": "bioc-structural-methods",
         "phrase": "Reflection: angle in equals angle out"
+      },
+      {
+        "from": "bioc-glycolysis-step-by-step",
+        "phrase": "ATP hydrolysis to ADP: ΔG°′ = −30.5 kJ/mol"
+      },
+      {
+        "from": "bioc-glycolysis-step-by-step",
+        "phrase": "For coupled reactions, ΔG°′ values add"
       },
       {
         "from": "bio-cell-two-architectures-size-limit",
@@ -8716,7 +8737,7 @@
     },
     "Biochemistry": {
       "core": 6,
-      "intermediate": 3,
+      "intermediate": 4,
       "advanced": 2
     },
     "Developmental Biology": {

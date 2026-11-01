@@ -1,7 +1,7 @@
 {
   "$comment": "Every Knowledge-University topic by stable id (spec PART 8: canonical topic registry — check here before authoring; ids are kebab-case, globally unique, stable forever). Regenerate: bun scripts/build-project-registries.ts",
   "builtOn": "2026-11-01",
-  "count": 719,
+  "count": 720,
   "topics": [
     {
       "id": "sci-experimental-design-hypotheses",
@@ -1901,8 +1901,8 @@
       "subject": "Biochemistry",
       "chapter": "Laboratory Methods",
       "tier": "intermediate",
-      "words": 2417,
-      "readMins": 12,
+      "words": 2510,
+      "readMins": 13,
       "addedOn": "2026-11-01",
       "concepts": [
         "The tracer principle: atoms that report their own position",
@@ -1920,7 +1920,7 @@
       "subject": "Biochemistry",
       "chapter": "Laboratory Methods",
       "tier": "advanced",
-      "words": 2197,
+      "words": 2287,
       "readMins": 11,
       "addedOn": "2026-11-01",
       "concepts": [
@@ -1930,6 +1930,26 @@
         "NMR: chemical shifts and NOE distance constraints",
         "Cryo-EM: vitrification and single-particle reconstruction",
         "Choosing a method: size, state and environment"
+      ]
+    },
+    {
+      "id": "bioc-glycolysis-step-by-step",
+      "title": "Glycolysis Step by Step: Ten Reactions, One Ancient Machine",
+      "domain": "Life Sciences",
+      "subject": "Biochemistry",
+      "chapter": "Metabolism",
+      "tier": "intermediate",
+      "words": 3500,
+      "readMins": 18,
+      "addedOn": "2026-11-02",
+      "concepts": [
+        "Ten cytosolic reactions: one glucose to two pyruvates",
+        "The investment phase: two ATP to trap, destabilise and split",
+        "The payoff phase (×2): four ATP and two NADH from the triose pair",
+        "Substrate-level phosphorylation: acyl phosphates as phosphate vaults",
+        "Three irreversible stations: hexokinase, PFK-1, pyruvate kinase",
+        "Poisons on the ladder: arsenate, fluoride, iodoacetate",
+        "A century of discovery: Buchner, Harden, Meyerhof, Embden, Parnas"
       ]
     },
     {

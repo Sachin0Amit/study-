@@ -441,6 +441,7 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     chapters: [
       { name: 'Molecules of Life', branches: ['Molecules of Life'] },
       { name: 'Laboratory Methods', branches: ['Laboratory Methods'] },
+      { name: 'Metabolic Pathways in Depth', branches: ['Metabolism'] },
     ],
   },
   {

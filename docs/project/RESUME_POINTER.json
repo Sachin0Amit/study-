@@ -1,19 +1,19 @@
 {
   "$comment": "StudyVerse resume pointer (governing spec PART 14). Read FIRST by every execution — manual or scheduled. Update after every completed unit. Never mark complete before validating output.",
   "lastSuccessfulExecution": {
-    "when": "2026-11-02T21:00:00+05:30",
+    "when": "2026-11-02T22:30:00+05:30",
     "kind": "scheduled-hourly-master-loop (job 492782)",
-    "objective": "Certify ku-biochemistry Ch2 Laboratory Methods to the charter bar",
-    "summary": "Committed the 15-min job's uncommitted system units (ef4d76b); found it had authored Ch2 §2.2+§2.3 (35b15a0) with declared≠actual counts and no figures — added both SVG figure plates, made counts word-exact (2,510w/13min + 2,287w/11min), verified carving, pipeline+lint+tsc green, browser QA passed"
+    "objective": "Author ku-biochemistry Ch3 §3.1 Glycolysis Step by Step",
+    "summary": "New chapter file 03-metabolism.ts (branch Metabolism declared, index wired 3 ch · 12 lessons); lesson 3,500w exact/18min with two-panel SVG, hydrolysis-energy derivation of the substrate-level pulls, −72.7 kJ/mol standard ledger (cellular ≈ −96), poison-diagnostic worked examples, 8-question quiz; carving verified by dedup greps; pipeline+registries+lint+tsc green; browser QA passed"
   },
   "currentPhase": "B — systems complete, writing program in motion",
   "governingPlan": "docs/project/PROJECT_MASTER_PLAN.md",
   "writingProgram": {
     "programDoc": "docs/syllabus/MASTER-SYLLABUS.md",
     "currentSubject": "ku-biochemistry",
-    "currentChapter": "Ch1 Molecules of Life COMPLETE (8) · Ch2 Laboratory Methods COMPLETE (3/3, 6,600 words) — Ch3 is the only chapter left",
-    "currentTopic": null,
-    "nextUnit": "ku-biochemistry Ch3 Metabolic Pathways in Depth per §6.2 tree: author §3.1 Glycolysis Step by Step (reaction-by-reaction mechanism; carve vs Cell-Bio §4.1 integrative overview and the fermentation lesson), then §3.2 Citric-Acid Cycle, §3.3 Oxidative Phosphorylation & Chemiosmosis, §3.4 Carbohydrate & Lipid Traffic, §3.5 Nitrogen Metabolism & the Urea Cycle; then remaining Life Sciences subjects per §4 order, then aptitude trio"
+    "currentChapter": "Ch1 Molecules of Life COMPLETE (8) · Ch2 Laboratory Methods COMPLETE (3/3, 6,600 words) · Ch3 Metabolic Pathways in Depth 1/5 (§3.1 glycolysis 3,500w) — §3.2–§3.5 remain",
+    "currentTopic": "bioc-glycolysis-step-by-step",
+    "nextUnit": "ku-biochemistry Ch3 §3.2 The Citric-Acid Cycle per §6.2 tree (pyruvate dehydrogenase gateway + eight cycle steps + anaplerosis pointer to the integration lesson; carve vs Cell-Bio respiration survey and the fermentation lesson's hub paragraph), then §3.3 Oxidative Phosphorylation & Chemiosmosis, §3.4 Carbohydrate & Lipid Traffic, §3.5 Nitrogen Metabolism & the Urea Cycle; then remaining Life Sciences subjects per §4 order, then aptitude trio"
   },
   "scheduledJobs": {
     "masterLoop": { "jobId": 492782, "cadence": "hourly", "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8" },
@@ -31,8 +31,8 @@
     "bun scripts/build-project-registries.ts",
     "bun scripts/build-prerequisite-graph.ts"
   ],
-  "lastCompletedOperation": "ku-biochemistry Ch2 Laboratory Methods certified complete (see MASTER-SYLLABUS §7 ledger row 2026-11-02 Ch2 LABORATORY METHODS COMPLETE)",
-  "nextRequiredOperation": "Hourly master loop: author ku-biochemistry Ch3 §3.1 Glycolysis Step by Step (one bounded unit), then validate + ledger + push",
+  "lastCompletedOperation": "ku-biochemistry Ch3 §3.1 Glycolysis Step by Step authored and certified (MASTER-SYLLABUS §7 ledger row 2026-11-02 ~22:30)",
+  "nextRequiredOperation": "Hourly master loop: author ku-biochemistry Ch3 §3.2 The Citric-Acid Cycle (one bounded unit), then validate + ledger + push",
   "outstandingErrors": [],
   "pendingValidation": [],
   "blockers": [],

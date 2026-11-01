@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — subject book: Biochemistry (biochemistry)
- * group: Life Sciences · 2 chapters · 8 lessons
+ * group: Life Sciences · 3 chapters · 12 lessons
  *
  * One folder per canonical subject (mirrors the Library book); one file
  * per chapter. New chapters: create <nn>-<chapter-slug>.ts, add it to the
@@ -8,14 +8,17 @@
  * ../subject-taxonomy.ts so the bridge groups it correctly.
  *
  * Table of contents:
- *   01 Molecules of Life — 7 lessons
- *   02 Laboratory Methods — 1 lesson
+ *   01 Molecules of Life — 8 lessons
+ *   02 Laboratory Methods — 3 lessons
+ *   03 Metabolic Pathways in Depth — 1 lesson (§3.1 glycolysis; §3.2–§3.5 per §6.2)
  */
 import type { KnowledgeTopic } from '../../types'
 import { biochemistryCh01 } from './01-molecules-of-life'
 import { biochemistryCh02 } from './02-laboratory-methods'
+import { biochemistryCh03 } from './03-metabolism'
 
 export const biochemistryTopics: KnowledgeTopic[] = [
   ...biochemistryCh01,
   ...biochemistryCh02,
+  ...biochemistryCh03,
 ]
