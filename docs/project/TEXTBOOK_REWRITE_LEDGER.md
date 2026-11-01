@@ -1,0 +1,82 @@
+# TEXTBOOK REWRITE LEDGER — pedagogical quality program
+
+**Governing directive:** `docs/project/TEXTBOOK-QUALITY-DIRECTIVE.md` (read first, every run).
+**Scope:** start at the FIRST subject of the Library (mathematics) and proceed subject by
+subject until the end of the library. One bounded rewrite unit per run (one lesson), or
+one audit unit (classify the next unaudited subject) when no audit exists yet.
+**Resume rule:** work strictly down the CURRENT SUBJECT QUEUE below; when empty, audit
+the next subject in Library order and build its queue. Never repeat a ✅ row.
+
+## Classification rubric (directive §15/§16)
+
+| Grade | Meaning | Operational test (measurable) |
+|---|---|---|
+| A | Proper textbook quality | ≥2,000 words, figure plate(s), derivation where formula-based, ≥2 worked examples, 6–10 quiz questions with explanations |
+| B | Understandable, missing detail | 1,750–2,000 words OR missing figure/derivation but otherwise coherent |
+| C | Mostly definitions/bullets | 1,000–1,750 words, no figure, single example, compressed concept-list structure |
+| D | Incomplete/confusing | <1,000 words, or fails the anti-AI-notes test outright |
+| E | Placeholder/unusable | stub, wrong, or empty |
+
+**CRITICAL pre-flight (learned 2026-11-02):** before choosing any rewrite target, check
+`src/data/knowledge/dedup.ts` EXCLUDED_TOPICS. Excluded topics are NOT user-visible
+(the bridge filters them out of content.json) — rewriting them improves nothing the
+student sees. Only LIVE topics belong in the queue. Maintain excluded-topic source files
+when touched, but never spend a bounded unit on them.
+
+## Quality gates for every rewrite (all must pass)
+
+1. Word count exact: `bun scripts/count-topic-words-exact.ts <id>` — declared == actual, 2,000–3,500 words, readMins = round(words/200).
+2. Dedup greps BEFORE writing: `rg -il "<distinctive term>" src/data/knowledge/subjects/` — inspect every hit, carve (cite, never re-teach), record evidence.
+3. Lesson text contains NO exam names. Topic `id` and `title` UNCHANGED (stable forever — mappings, links, progress depend on them).
+4. Structure: situation-opening → background → gradual development → formal definition → figure (explained in prose) → derivation for key formulas → ≥2 worked examples (house style "Identify what is asked … State the result") → applications → pitfalls → study path → terms → 6–10 quiz questions with explanations → recap.
+5. Pipeline: serialize → coverage → index → audit = 2967+/2967+ = 100%, 0 unmapped.
+6. `bun run lint` clean; `bunx tsc --noEmit` 0 errors under src/.
+7. Browser QA: lesson renders (intro, figure, derivation, examples), answer one quiz question → Correct, fresh load 0 console errors, 390px no overflow, CLOSE the browser.
+
+## CURRENT SUBJECT: mathematics-unified (Library book math-master, subject mathematics)
+
+Audit 2026-11-02: 28 topics in the folder, **6 are EXCLUDED** (derivative-as-limit,
+bayes-theorem, eigenvalues, prime-numbers, infinity-countability, graph-theory-bridges —
+covered by curated Stewart/Rosen chapters per dedup.ts). **22 LIVE.** Zero figures and
+zero derivations anywhere in the subject before this program started.
+
+### Queue (live topics only; priority = severity, then tier core>intermediate>advanced, then ascending words)
+
+| # | Topic id (§ in book) | Words | Tier | Grade | Status |
+|---|---|---|---|---|---|
+| 1 | fnd-percentage-ratio-mental-math (§76.1) | 883→**2,811** | core | D | ✅ 2026-11-02 rewritten (see log) |
+| 2 | math-algebra-notation-manipulation (§71.1) | 1,409 | core | C | next |
+| 3 | math-quadratics-completing-square (§71.2) | 1,471 | core | C | queued |
+| 4 | math-earth-geometry (§73.2) | 1,338 | intermediate | C | queued |
+| 5 | calc-linearization-differentials (§72.2) | 1,530 | intermediate | C | queued |
+| 6 | stats-sampling-central-limit (§74.6) | 1,619 | intermediate | C | queued |
+| 7 | math-graphical-linear-programming (§76.2) | 1,624 | intermediate | C | queued |
+| 8 | math-reading-data-charts (§74.3) | 1,690 | core | C | queued |
+| 9 | stats-correlation-regression (§74.8) | 1,691 | intermediate | C | queued |
+| 10 | math-cumulative-frequency-box-plots (§74.2) | 1,706 | core | C | queued |
+| 11 | calc-concavity-second-derivative-test (§72.3) | 1,718 | intermediate | C | queued |
+| 12 | calc-removing-discontinuities (§72.1) | 1,728 | intermediate | C+ | queued |
+| 13 | stats-confidence-hypothesis-testing (§74.7) | 1,745 | advanced | C+ | queued |
+| 14 | stats-time-series-trend-seasonality (§74.1) | 1,767 | core | C+ | queued |
+| 15 | stats-descriptive-distributions (§74.5) | 1,783 | core | C+ | queued |
+| 16 | math-formulating-real-life-problems (§76.3) | 1,901 | core | B− | queued |
+| 17 | math-games-tournaments-tactics (§75.1) | 1,955 | core | B− | queued |
+| 18 | math-measurement-areas-volumes (§73.1) | 2,012 | core | B | queued |
+| 19 | math-modulus-logarithm-inequalities (§71.3) | 2,047 | advanced | B | queued |
+| 20 | math-sphere-three-dimensions (§73.3) | 2,047 | advanced | B | queued |
+| 21 | calc-definite-integral-properties (§72.4) | 2,050 | advanced | B | queued |
+| 22 | math-sets-logic-foundations (§70.1) | 2,051 | core | B | queued |
+
+(Excluded-source maintenance, not in queue: math-derivative-as-limit was rewritten to
+3,416w textbook standard on 2026-11-02 and STAYS EXCLUDED — its teaching is owned by the
+curated Stewart Ch 15; the rewrite is kept as maintained source. Do not un-exclude
+without a full dedup review against Ch 15 §2.1/§2.7.)
+
+When this queue is empty → audit the next subject in Library order (physics-unified),
+classify its live topics, build its queue here.
+
+## Run log
+
+| Date (IST) | Unit | What happened | Next |
+|---|---|---|---|
+| 2026-11-02 | Program install + first unit | Directive installed as docs/project/TEXTBOOK-QUALITY-DIRECTIVE.md; this ledger created with the full mathematics-unified audit (28 topics, 6 excluded, 22 live, zero figures subject-wide). Rewrote queue #1 fnd-percentage-ratio-mental-math (§76.1) 883 → 2,811 words exact/14 min: shop-window situation opening, Fibonacci Liber Abaci 1202 + per-cento history, swap trick, 10%-anchor ladder, two-panel SVG figure (percent triangle + anchor ladder on an 84.60 bill), successive-changes formula DERIVED (a+b+ab/100 from binomial multipliers), 3 worked examples (jacket −24.4% honest net; two raises 18.8%; ratio share 720 in 2:3:4), 8-question quiz (6 quantitative) all verified, pitfalls (base error, points-vs-percent, decimal slips), estimation brackets. Carve: percentages/ratios/mental-math unowned elsewhere (rg verified); interest compounding left to the interest lesson. Also rewrote excluded-source math-derivative-as-limit 983 → 3,416 words exact/17 min (secant→tangent two-panel SVG, Zeno→Merton 1330s→Galileo 1638→Newton 1665-6→Leibniz 1675/1684→Lagrange 1797→Cauchy 1821→Weierstrass history, x²-from-definition derivation, √x conjugate + |x| corner + falling-ball 19.6 m/s examples, differentiability⟹continuity proof, 8-question quiz) — stays excluded per dedup (Stewart Ch 15 owns it). Pipeline 723 topics/1,160k words, audit 2967/2967 = 100% 0 unmapped; lint clean, tsc 0 under src/; browser QA: §76.1 renders (figure + derivation + examples), quiz → Correct, fresh load 0 console errors, 390px no overflow, browser closed. | Queue #2: math-algebra-notation-manipulation |

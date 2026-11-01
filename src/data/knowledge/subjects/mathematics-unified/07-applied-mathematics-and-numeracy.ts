@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Mathematics — Chapter 07: Applied Mathematics & Numeracy
- * 3 lessons · ~4,408 words
+ * 3 lessons · ~6,336 words (07.1 rewritten 2026-11-02 to textbook standard: 883 → 2,811 words, figure plate + derivation added)
  * fields: Applied & Finite Mathematics, Everyday Math & Numeracy
  * legacy sources: foundation-learning.ts, x25-tournament-reasoning-civics-pass.ts, x30-orphan-final-pass.ts
  *
@@ -28,52 +28,74 @@ export const mathematicsUnifiedCh07: KnowledgeTopic[] = [
     tier: 'core',
     concepts: [
       'Percent as parts per hundred',
-      'The x-percent of y equals y-percent of x trick',
-      'Percentage change versus percentage points',
+      'The swap trick: x percent of y equals y percent of x',
+      'The 10 percent anchor for tips and discounts',
+      'Percentage change is always measured against the original',
+      'Successive changes combine multiplicatively',
+      'Percentage points versus relative percent',
       'Ratios and the unitary method',
-      'Double-and-halve and distributive shortcuts',
-      'Estimation and sanity checks',
+      'Double-and-halve, distribution, and estimation brackets',
     ],
-    words: 883,
-    readMins: 4,
+    words: 2811,
+    readMins: 14,
     addedOn: '2026-10-16',
     blocks: [
       {
         kind: 'para',
-        text: 'Percentages, ratios, and a toolkit of mental shortcuts power the arithmetic behind prices, tips, discounts, taxes, and news statistics. Practical Arithmetic treats a percent as a fraction with denominator 100, a ratio as a comparison of quantities, and mental math as reorderings — swapping, halving, doubling — that make awkward numbers friendly.',
+        text: 'A shop window advertises “50% OFF — take an extra 20% off the reduced price”. Shoppers who add the two numbers stay outside, satisfied that everything is 70% off. It is not. The second 20% is taken off the already-halved price, so a 100 rupee item falls to 50, then to 40 — a total reduction of 60%, not 70%. The difference between reading that sign correctly and misreading it is exactly the difference between numerical fluency and numerical helplessness, and this lesson builds the fluency: what a percent truly is, how changes stack, how ratios scale, and the small toolkit of mental reorderings that let you recompute a bill, a tip or a headline faster than the person quoting it.',
       },
-      {
-        kind: 'callout',
-        title: 'Why this matters',
-        text: 'Numerate adults catch markup disguised as a discount, recompute a bill in seconds, and read a five percent headline with an accurate sense of scale — fluency that pays daily dividends.',
-        tone: 'insight',
-      },
-      { kind: 'heading', text: 'Core Concepts' },
+      { kind: 'heading', text: 'What a percent actually is' },
       {
         kind: 'para',
-        text: 'A percent is literally per hundred — 8 percent means 8/100 — and the word of means multiply: 8 percent of 250 is 20. Fluency among percent, fraction, and decimal is the gateway skill.',
+        text: 'A percent is a fraction whose denominator has been fixed at one hundred: 8 percent means 8/100, written as the decimal 0.08. The word is Latin — per centum, “by the hundred” — and the symbol % grew out of the Italian merchants’ shorthand for per cento in their ledgers. Those merchants had good reason for the convention: when Leonardo of Pisa published the Liber Abaci in 1202, introducing Hindu-Arabic numerals to European commerce, interest rates, taxes and profit shares were all negotiated in parts per hundred, and a common denominator made every comparison instant. It still does. In percent arithmetic the word of means multiply: 8 percent of 250 is 250 × 8/100 = 2000/100 = 20. Reading percentages as fractions unlocks the whole family of familiar equivalences — 50% is a half, 25% a quarter, 20% a fifth, 10% a tenth, 12.5% an eighth, and 33⅓% a third — and fluency among percent, fraction and decimal is the gateway skill this chapter assumes everywhere else.',
       },
       {
         kind: 'para',
-        text: 'Multiplication commutes, so x percent of y equals y percent of x. Four percent of 75 sounds awkward, but 75 percent of 4 — three quarters of 4 — is instantly 3; when one arrangement is friendly, use it.',
+        text: 'Because multiplication commutes, x percent of y always equals y percent of x — a fact that sounds like a trivia question and behaves like a superpower. Four percent of 75 is an awkward thought; 75 percent of 4 — three quarters of four — is instantly 3. Eight percent of 25 rewrites itself as 25 percent of 8, and a quarter of eight is 2. The rule costs nothing to verify: x/100 × y = y/100 × x. The habit it buys is worth more: before computing any percentage, glance at both numbers and ask which arrangement is friendly. If one of them is 25, 50, 75 or a small whole number, the swap turns a pencil-and-paper problem into a one-step mental one.',
       },
       {
         kind: 'para',
-        text: 'A percentage change is measured against the original: rising from 40 to 50 is a 25 percent increase, yet falling from 50 to 40 is only 20 percent. Percentage points are plain differences — a rate moving from 4 to 6 percent rose two points, a 50 percent relative jump.',
+        text: 'The second workhorse is the 10 percent anchor. Ten percent of any number is that number divided by ten — slide the decimal point one place left: 10% of 64 is 6.40, 10% of 846 is 84.6. Every other useful percentage is then a short walk from the anchor: halve it for 5 percent, add the two for 15 percent, double for 20 percent, take a quarter for 2.5 percent. A 15 percent tip on a 64 rupee bill is 6.40 plus 3.20, which is 9.60 — computed in the time it takes to say it. The figure below gathers the two ideas into one picture: the percent triangle showing which number is the base, and the ladder that builds every percentage from the single anchor you can always find in your head.',
       },
       {
-        kind: 'para',
-        text: 'Find the value of one unit first: if 7 notebooks cost 42, one costs 6, so 12 cost 72 — this unitary method solves nearly every proportion problem without algebra.',
+        kind: 'figure',
+        caption:
+          'The mental percentage machine. LEFT — the percent triangle: amount = base × rate/100, and each quantity is found by multiplying or dividing the other two; locating the base (the number after “of”) is the step that prevents most errors. RIGHT — the 10 percent anchor ladder: divide by ten once for 10%, halve that for 5%, and build 15, 20, 25 or 17.5 percent by adding short walks along the ladder.',
+        afterConcept: 3,
+        svg: `<svg viewBox="0 0 880 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A percent triangle relating base, rate and amount, beside a ladder building five, ten, fifteen, twenty and twenty-five percent from the ten percent anchor">
+  <style>.lbl{font-family:Georgia,serif;font-size:14px;fill:#3f3f46}.big{font-size:18px;font-weight:bold}.sm{font-size:12px;fill:#52525b}.ink{stroke:#8a8a93;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.rose{fill:#e11d48}.vio{fill:#7c3aed}.box{fill:none;stroke:#c8c8d0;stroke-width:1.6;stroke-dasharray:5 4}.mid{font-family:Georgia,serif;font-size:13.5px;font-weight:bold;fill:#3f3f46;text-anchor:middle}</style>
+  <rect x="24" y="52" width="404" height="352" rx="12" class="box"/>
+  <text class="lbl big" x="40" y="78">The percent triangle</text>
+  <text class="sm" x="40" y="96">amount = base × rate ÷ 100</text>
+  <path d="M150 300 L110 150 L250 150 Z" fill="none" stroke="#8a8a93" stroke-width="2.4" stroke-linejoin="round"/>
+  <rect x="96" y="118" width="168" height="30" rx="8" fill="#fafafa" stroke="#e11d48" stroke-width="2"/>
+  <text class="mid" x="180" y="138">RATE  8%</text>
+  <rect x="36" y="284" width="150" height="30" rx="8" fill="#fafafa" stroke="#7c3aed" stroke-width="2"/>
+  <text class="mid" x="111" y="304">BASE  250</text>
+  <rect x="216" y="284" width="150" height="30" rx="8" fill="#fafafa" stroke="#8a8a93" stroke-width="2"/>
+  <text class="mid" x="291" y="304">AMOUNT  20</text>
+  <text class="sm" x="60" y="220">× rate ÷ 100 →</text>
+  <text class="sm" x="222" y="220">← ÷ rate × 100</text>
+  <text class="sm" x="150" y="348">the base is the number after “of” — 8% of 250</text>
+  <text class="sm" x="150" y="366">÷ 100 × base ↔ amount for any corner</text>
+  <rect x="452" y="52" width="404" height="352" rx="12" class="box"/>
+  <text class="lbl big" x="468" y="78">The 10 percent anchor ladder</text>
+  <text class="sm" x="468" y="96">build every percentage from ÷10 — bill 84.60</text>
+  <text class="mid" x="500" y="130">20%</text><rect x="540" y="118" width="180" height="24" rx="6" fill="#f4f4f5" stroke="#c8c8d0"/><text class="sm" x="630" y="135" text-anchor="middle">16.92 = double the anchor</text>
+  <text class="mid" x="500" y="170">15%</text><rect x="540" y="158" width="180" height="24" rx="6" fill="#faf5ff" stroke="#c4b5fd"/><text class="sm" x="630" y="175" text-anchor="middle">12.69 = 10% + 5%</text>
+  <text class="mid" x="500" y="210">10%</text><rect x="540" y="198" width="180" height="26" rx="6" fill="#fff1f2" stroke="#e11d48" stroke-width="2"/><text class="sm" x="630" y="216" text-anchor="middle">8.46 = 84.60 ÷ 10 (anchor)</text>
+  <text class="mid" x="500" y="250">5%</text><rect x="540" y="238" width="180" height="24" rx="6" fill="#faf5ff" stroke="#c4b5fd"/><text class="sm" x="630" y="255" text-anchor="middle">4.23 = half the anchor</text>
+  <text class="mid" x="500" y="290">2.5%</text><rect x="540" y="278" width="180" height="24" rx="6" fill="#f4f4f5" stroke="#c8c8d0"/><text class="sm" x="630" y="295" text-anchor="middle">2.115 = half of 5%</text>
+  <line x1="500" y1="120" x2="500" y2="290" stroke="#e11d48" stroke-width="3"/>
+  <text class="sm" x="468" y="348">17.5% tip = 10% + 5% + 2.5% = 8.46 + 4.23 + 2.115</text>
+  <text class="sm" x="468" y="366">= 14.805 ≈ 14.81 — no pencil, no phone</text>
+</svg>`,
       },
+      { kind: 'heading', text: 'Percentage change: always ask “of what?”' },
       {
         kind: 'para',
-        text: 'Reorder products to your advantage: 25 times 16 is 25 times 4, times 4, giving 400; double-and-halve turns 15 times 22 into 30 times 11, or 330; the distributive law gives 7 times 98 as 700 minus 14, or 686.',
+        text: 'A percentage change is a comparison, and every comparison needs a reference. The convention is that change is measured against the original — where you started, not where you arrived. Rising from 40 to 50 is a change of 10 on a base of 40, hence 10/40 = 25 percent; falling from 50 back to 40 is a change of 10 on a base of 50, hence only 20 percent. Same distance, different base, different percentage — which is why “up 25% then down 20%” is a round trip, and why every percentage-change question should trigger the same reflex: find the original first. In a sentence like “the price of 80 rose to 100”, the original is 80, the change is 20, and the answer is 20/80 = 25 percent.',
       },
-      {
-        kind: 'para',
-        text: 'Round to one or two significant figures and bracket: a 17.5 percent tip on 84.60 is near 13 to 15. Estimation turns wrong answers into visibly wrong ones.',
-      },
-      { kind: 'heading', text: 'Key Formulas' },
       {
         kind: 'formula',
         name: 'Percentage change',
@@ -81,55 +103,132 @@ export const mathematicsUnifiedCh07: KnowledgeTopic[] = [
         meaning: 'Change is measured against the original value, which is why up and down by the same percent are asymmetric.',
       },
       {
+        kind: 'para',
+        text: 'Successive changes do not add — they multiply, because each one acts on whatever the previous one left behind. A 20 percent rise followed by a 20 percent fall is not zero: the multiplier 1.20 followed by 0.80 gives 1.20 × 0.80 = 0.96, a net loss of 4 percent. The derivation below turns that observation into a formula worth memorizing, and the worked examples that follow run it on prices, taxes and salaries.',
+      },
+      {
+        kind: 'derivation',
+        title: 'The successive-changes formula, derived',
+        statement:
+          'Two successive changes of a percent and then b percent combine into a single net change of a + b + ab/100 percent. The proof is one line of algebra on the multipliers.',
+        prerequisites: ['A change of p percent multiplies the value by (1 + p/100)', 'Expanding a product of two binomials'],
+        steps: [
+          {
+            label: 'Write both multipliers',
+            formula: '$\\left(1 + \\frac{a}{100}\\right)\\left(1 + \\frac{b}{100}\\right)$',
+            explanation: 'A rise of a percent multiplies by 1 + a/100; a fall of b percent is just b negative, multiplying by 1 − b/100 — the same formula with b < 0.',
+          },
+          {
+            label: 'Expand',
+            formula: '$1 + \\frac{a}{100} + \\frac{b}{100} + \\frac{ab}{10000}$',
+            explanation: 'Ordinary binomial expansion: each term meets each term. The cross-term ab/10000 is the interaction the naive sum forgets.',
+          },
+          {
+            label: 'Read off the net change',
+            formula: '$\\text{net} = a + b + \\frac{ab}{100}$',
+            explanation: 'The total multiplier exceeds 1 by (a + b)/100 + ab/10000, so the net percentage change is a + b + ab/100. Check: +20 then −20 gives 20 − 20 − 400/100 = −4 percent, matching 1.20 × 0.80 = 0.96.',
+          },
+        ],
+        result:
+          'Net percent = a + b + ab/100. The cross-term is usually small but never zero: +10 then +8 nets 18.8 percent, not 18; +50 then −50 nets −25 percent, not 0. Multiplication, not addition, is how changes stack.',
+      },
+      {
         kind: 'formula',
         name: 'Successive percentage changes',
         latex: '\\text{net}\\% = a + b + \\frac{ab}{100}',
-        meaning: 'Two successive changes of a and b percent net a + b + ab/100 — a 20 percent rise then fall nets minus 4 percent.',
+        meaning: 'Two successive changes of a and b percent net a + b + ab/100 percent — the cross-term is the whole difference between stacking and adding.',
+      },
+      { kind: 'heading', text: 'Percentage points versus relative percent' },
+      {
+        kind: 'para',
+        text: 'When a news report says an interest rate rose from 4 percent to 7 percent, two true sentences describe it: the rate rose by 3 percentage points, and it rose by 75 percent. Both are correct because they answer different questions. Percentage points are the plain difference — 7 minus 4 — the way you would subtract any two numbers. The relative change is measured, as always, against the original: 3 points on a base of 4 percent is 3/4 = 75 percent. Headlines exploit the gap between the two readings relentlessly: “a 30 percent rise in the failure rate” may describe a move from 10 percent to 13 percent — three points — and your sense of alarm should depend on which reading matters for the decision at hand. The discipline is simple: when you hear a percent about a percent, stop and ask which of the two is being quoted.',
+      },
+      { kind: 'heading', text: 'Ratios and the unitary method' },
+      {
+        kind: 'para',
+        text: 'A ratio compares two quantities by division: mixing paint in the ratio 3:2 means three parts one colour for every two parts the other — five parts in each round of the recipe. To share 240 rupees in the ratio 3:2, count the parts (5), find one part (240 ÷ 5 = 48), and hand out multiples: 3 × 48 = 144 and 2 × 48 = 96, which sum back to 240 as a check. The same move, dressed differently, is the unitary method: find the value of one unit first, then scale to the units you want. Seven notebooks cost 42, so one notebook costs 42 ÷ 7 = 6, so twelve notebooks cost 12 × 6 = 72. A recipe for four that must feed six scales by 6 ÷ 4 = 1.5: multiply every quantity by one and a half. Proportion problems — prices, speeds, recipes, conversion — nearly all yield to this single habit, no algebra required.',
+      },
+      { kind: 'heading', text: 'The mental multiplication toolkit' },
+      {
+        kind: 'para',
+        text: 'Three reorderings do most of the work of mental arithmetic. Double-and-halve: since 2 × ½ = 1, doubling one factor and halving the other leaves the product unchanged — 15 × 22 becomes 30 × 11, which is 330; 25 × 16 becomes 50 × 8, or 100 × 4, landing on 400. Distribution: split an unfriendly factor into round pieces — 7 × 98 is 7 × (100 − 2) = 700 − 14 = 686; 6 × 23 is 6 × 20 + 6 × 3 = 120 + 18 = 138. Friendly factors: 25 is a quarter of a hundred, so multiplying by 25 is quartering then appending two zeros — the 25 × 16 example again, seen from the other side. Each trick is a tiny application of the commutative, associative and distributive laws — the same laws algebra will formalize later — and together they turn a page of column arithmetic into a few seconds of rehearsal.',
+      },
+      {
+        kind: 'para',
+        text: 'The last habit is the estimation bracket: before computing anything exactly, cage the answer between two easy values. A 17.5 percent tip on 84.60 must exceed the 15 percent figure (12.69) and stay below the 20 percent figure (16.92); the anchor ladder narrows it to 8.46 + 4.23 + 2.115 = 14.805, so about 14.81. Estimation does not replace exact arithmetic — it guards it. An answer outside the bracket is visibly wrong before anyone else notices, whether it came from a slip of the pencil or a spreadsheet formula referencing the wrong cell.',
+      },
+      { kind: 'heading', text: 'Three worked examples' },
+      {
+        kind: 'example',
+        title: 'The shop-window sign, settled',
+        steps: [
+          'Identify what is asked: the final price of a jacket marked 120 with a 30 percent discount, then 8 percent tax added — and the honest overall change.',
+          'Apply the discount: 30 percent of 120 is 36, so the sale price is 120 − 36 = 84.',
+          'Apply the tax to the new base: 8 percent of 84 is 6.72, so the till asks for 84 × 1.08 = 90.72.',
+          'Combine honestly with the formula: net = −30 + 8 + (−30)(8)/100 = −22 − 2.4 = −24.4 percent.',
+          'State the result: the jacket costs 90.72, which is 75.6 percent of the marked price — an overall reduction of 24.4 percent, not the 22 percent a naive subtraction would suggest, because the tax acted on the smaller post-discount base.',
+        ],
       },
       {
         kind: 'example',
-        title: 'Worked Example',
+        title: 'Two raises in a row',
         steps: [
-          'Identify what is asked: the final price of a jacket marked 120 with a 30 percent discount plus 8 percent tax.',
-          'Recall the governing idea: each percentage applies to the current value — the discount on the marked price, the tax on the sale price.',
-          'Apply: 30 percent of 120 is 36, so the sale price is 84; 8 percent of 84 is 6.72, giving 90.72 with tax — or directly, 84 times 1.08.',
-          'State the result: the jacket costs 90.72 — 75.6 percent of the marked price, an overall reduction of 24.4 percent, not 22.',
+          'Identify what is asked: a salary of 50,000 rises by 10 percent one year and 8 percent the next — what is the total rise?',
+          'First raise: 10 percent of 50,000 is 5,000, giving 55,000.',
+          'Second raise: 8 percent of the new 55,000 is 4,400, giving 59,400.',
+          'Check with the formula: net = 10 + 8 + 80/100 = 18.8 percent, and 50,000 × 1.188 = 59,400.',
+          'State the result: the salary rose 18.8 percent over two years — the cross-term 0.8 is exactly the 400 the naive 18 percent reading would miss.',
         ],
       },
-      { kind: 'heading', text: 'Applications in the Real World' },
       {
-        kind: 'list',
-        items: [
-          'Tips: a 15 percent tip on 64 is 10 percent (6.40) plus half again (3.20), so 9.60.',
-          'Loans: 1 percent monthly compounds to about 12.7 percent a year.',
-          'News: a 3 point rise in a 10 percent rate is a 30 percent relative increase — very different claims.',
-          'Cooking: ratios stretch a four-person recipe to six by scaling by 1.5.',
+        kind: 'example',
+        title: 'Sharing in a ratio',
+        steps: [
+          'Identify what is asked: divide 720 rupees among three people in the ratio 2:3:4.',
+          'Count the parts: 2 + 3 + 4 = 9 parts make up the whole 720.',
+          'Find one part: 720 ÷ 9 = 80.',
+          'Scale each share: 2 × 80 = 160, 3 × 80 = 240, 4 × 80 = 320.',
+          'State the result: the shares are 160, 240 and 320 — and they sum back to 720, which is the check that costs nothing and catches everything.',
         ],
       },
       {
         kind: 'callout',
-        title: 'Common Pitfalls',
-        text: 'The most common error is adding percentages from different bases — a 30 percent discount plus 8 percent tax is not 22 percent off, since tax applies to the sale price. Watch also the percent versus percentage-point confusion, which quietly triples or halves reported statistics.',
+        title: 'Where the fluency pays',
+        text: 'Tips and bills: the anchor ladder prices a 15 or 17.5 percent tip in seconds. Loans: a “1 percent per month” offer compounds to 1.01 to the twelfth = 1.1268, about 12.68 percent a year — noticeably more than the advertised 12. News: three points on a ten percent base is a 30 percent relative rise, and knowing which reading a headline uses changes how alarmed to be. Cooking: ratios stretch any four-person recipe to six by scaling 1.5, or to two by halving. None of these waits for a pencil.',
+        tone: 'insight',
+      },
+      {
+        kind: 'callout',
+        title: 'Common pitfalls',
+        text: 'The classic error is adding percentages that live on different bases — 30 percent off plus 8 percent tax is not 22 percent off, because the tax is charged on the reduced price. The second is percent-versus-points confusion, which quietly triples or halves reported statistics. The third is losing the base in “of what”: 8 percent of 25 and 25 percent of 8 agree, but 8 percent of 250 is ten times either. And watch decimal slips when converting: 0.5 percent is half of one percent, not five.',
         tone: 'warn',
       },
-      { kind: 'heading', text: 'Key Terms' },
+      {
+        kind: 'callout',
+        title: 'Study path',
+        text: 'Prerequisites: multiplication tables and basic fractions — the fraction equivalences of 50, 25 and 20 percent should eventually be as automatic as the tables themselves. Next in this book: algebraic proportions and formula manipulation, simple and compound interest (where the successive-changes formula becomes a full year-by-year machine), and the estimation habits that underpin statistical literacy.',
+        tone: 'path',
+      },
+      { kind: 'heading', text: 'Key terms' },
       {
         kind: 'terms',
         items: [
-          { term: 'Percent', def: 'A fraction expressed with denominator 100.' },
+          { term: 'Percent', def: 'A fraction with denominator 100; the word of between them means multiply.' },
+          { term: 'Base', def: 'The number a percentage is taken of — the reference that change and share are measured against.' },
           { term: 'Percentage point', def: 'The plain difference between two percentages, distinct from relative change.' },
-          { term: 'Ratio', def: 'A comparison of two quantities by division, such as 3:2.' },
-          { term: 'Unitary method', def: 'Finding the value of one unit, then scaling to the required units.' },
-          { term: 'Commutativity', def: 'The property that a times b equals b times a.' },
-          { term: 'Distributive law', def: 'a times (b + c) equals ab plus ac — splitting hard multiplications.' },
+          { term: 'Ratio', def: 'A comparison of quantities by division, written 3:2 — three parts to two.' },
+          { term: 'Unitary method', def: 'Find the value of one unit, then scale to the units required.' },
+          { term: 'Anchor', def: 'Ten percent of the base — divide by ten — from which other percentages are built.' },
+          { term: 'Double-and-halve', def: 'Doubling one factor and halving the other leaves the product unchanged.' },
+          { term: 'Estimation bracket', def: 'Caging an answer between two easily computed bounds before calculating.' },
         ],
       },
-      { kind: 'heading', text: 'Check Your Understanding' },
+      { kind: 'heading', text: 'Check your understanding' },
       {
         kind: 'quiz',
         items: [
           {
-            q: 'What is 8 percent of 25, using the commutative trick?',
+            q: 'What is 8 percent of 25, using the swap trick?',
             options: ['2', '1.5', '2.5', '0.2'],
             answer: 0,
             explain: '8 percent of 25 equals 25 percent of 8, and a quarter of 8 is 2.',
@@ -138,38 +237,59 @@ export const mathematicsUnifiedCh07: KnowledgeTopic[] = [
             q: 'A price rises from 80 to 100. What is the percentage increase?',
             options: ['20 percent', '25 percent', '80 percent', 'It depends on the currency'],
             answer: 1,
-            explain: 'The change is 20, measured against the original 80 — always divide by where you started.',
+            explain: 'The change is 20, measured against the original 80: 20/80 = 25 percent — always divide by where you started.',
           },
           {
             q: 'An interest rate rises from 4 percent to 7 percent. Which statement is correct?',
             options: ['A 3 percent increase', 'A 3 percentage point rise — a 75 percent relative increase', 'A 7 percent rise', 'A 43 percent point rise'],
             answer: 1,
-            explain: 'The difference is 3 points; relative to 4 percent that is 75 percent.',
+            explain: 'The difference is 3 points; measured against the original 4 percent that is 3/4 = 75 percent.',
           },
           {
             q: 'After a 20 percent rise and then a 20 percent fall, a price is:',
             options: ['Back where it started', '4 percent lower', '4 percent higher', '20 percent lower'],
             answer: 1,
-            explain: '1.2 times 0.8 is 0.96, a net 4 percent decrease.',
+            explain: 'The multipliers give 1.20 × 0.80 = 0.96, a net 4 percent decrease — the formula gives 20 − 20 − 400/100 = −4.',
+          },
+          {
+            q: 'A 15 percent tip on a 64 rupee bill is:',
+            options: ['9.60', '6.40', '12.80', '4.80'],
+            answer: 0,
+            explain: 'The anchor 10 percent is 6.40; half of it, 5 percent, is 3.20; the sum is 9.60.',
+          },
+          {
+            q: 'A jacket marked 120 takes a 30 percent discount, then 8 percent tax. The final price is:',
+            options: ['90.72', '93.60', '86.40', '98.40'],
+            answer: 0,
+            explain: '120 − 36 = 84 after the discount; tax on the new base: 84 × 1.08 = 90.72. Adding the percents (−22 percent) would wrongly give 93.60.',
+          },
+          {
+            q: 'Divide 240 rupees in the ratio 3:2. The larger share is:',
+            options: ['144', '120', '160', '96'],
+            answer: 0,
+            explain: 'Five parts make 240, so one part is 48; the larger share is 3 × 48 = 144 (and 2 × 48 = 96 makes the total check out).',
+          },
+          {
+            q: 'Using distribution, 7 × 98 equals:',
+            options: ['686', '694', '672', '700'],
+            answer: 0,
+            explain: '7 × (100 − 2) = 700 − 14 = 686 — split the unfriendly factor into round pieces.',
           },
         ],
       },
-      {
-        kind: 'callout',
-        title: 'Study Path',
-        text: 'Prerequisite: multiplication tables and basic fractions. Next come algebraic proportions, simple and compound interest, and estimation habits for statistics literacy.',
-        tone: 'path',
-      },
-      { kind: 'heading', text: 'Five-Minute Recap' },
+      { kind: 'heading', text: 'Five-minute recap' },
       {
         kind: 'list',
         ordered: true,
         items: [
-          'Percent means per hundred, and the word of means multiply.',
-          'Swap when it helps: x percent of y equals y percent of x.',
-          'Percentage change divides by the original; percentage points are plain differences.',
-          'The unitary method — value of one, then scale — cracks proportion problems.',
-          'Double-and-halve, split with distribution, and always bracket with an estimate.',
+          'Percent means per hundred and of means multiply; 8 percent of 250 is 20.',
+          'Swap when it helps: x percent of y equals y percent of x — 4 percent of 75 is 75 percent of 4.',
+          'Build from the 10 percent anchor: halve for 5, add for 15, double for 20.',
+          'Percentage change divides by the original; up 25 then down 20 is a round trip.',
+          'Successive changes multiply: net percent is a + b + ab/100, so +10 then +8 is 18.8, not 18.',
+          'Percentage points are plain differences; relative change divides by the original rate.',
+          'Ratios: count parts, price one part, scale — and check the sum.',
+          'Double-and-halve, distribute, and bracket every answer with an estimate.',
         ],
       },
     ],

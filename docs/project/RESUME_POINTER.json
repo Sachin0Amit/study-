@@ -17,7 +17,19 @@
   },
   "scheduledJobs": {
     "masterLoop": { "jobId": 492782, "cadence": "hourly", "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8" },
-    "webDevReview": { "jobId": 492783, "cadence": "every 15 min", "kind": "webDevReview" }
+    "webDevReview": { "jobId": 492783, "cadence": "every 15 min", "kind": "webDevReview" },
+    "textbookQualityLoop": {
+      "cadence": "hourly at :30",
+      "workflow": "docs/project/TEXTBOOK-QUALITY-DIRECTIVE.md + docs/project/TEXTBOOK_REWRITE_LEDGER.md",
+      "scope": "pedagogical rewrites of LIVE lessons, mathematics first → end of library; independent of the master loop's new-lesson program (the two share the repo via git-first checks)"
+    }
+  },
+  "textbookQualityProgram": {
+    "directive": "docs/project/TEXTBOOK-QUALITY-DIRECTIVE.md",
+    "ledger": "docs/project/TEXTBOOK_REWRITE_LEDGER.md",
+    "currentSubject": "mathematics-unified",
+    "lastCompletedUnit": "2026-11-02: fnd-percentage-ratio-mental-math (§76.1) rewritten 883 → 2,811 words (first queue item); excluded-source math-derivative-as-limit also upgraded 983 → 3,416 but stays EXCLUDED per dedup",
+    "nextUnit": "mathematics-unified queue #2: math-algebra-notation-manipulation (§71.1, 1,409 words, grade C) — pre-flight: verify LIVE in dedup.ts, dedup greps, then rewrite per the ledger's quality gates"
   },
   "pipelineInvariant": [
     "bun scripts/serialize-content.ts",

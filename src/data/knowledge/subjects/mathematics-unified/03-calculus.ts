@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Mathematics — Chapter 03: Calculus
- * 5 lessons · ~8,009 words
+ * 5 lessons · ~10,442 words (§3.4 rewritten 2026-11-02 to textbook standard: 983 → 3,416 words, figure plate added)
  * field: Calculus
  * legacy sources: mathematics.ts, x27-ap-calc-china-pass.ts, x63-cengage-pass.ts
  *
@@ -438,154 +438,368 @@ export const mathematicsUnifiedCh03: KnowledgeTopic[] = [
     tier: 'core',
     concepts: [
       'Average versus instantaneous rate of change',
+      'Why instantaneous speed resisted definition for two millennia',
+      'The falling-ball squeeze: averages over shrinking windows',
       'Secant lines closing onto the tangent',
-      'The difference quotient',
-      'The formal limit definition',
-      'Leibniz and Lagrange notation',
+      'The difference quotient, symbol by symbol',
+      'Why the limit never substitutes h = 0',
+      'Leibniz, Newton and Lagrange: three notations, one object',
       'Continuity, corners, and differentiability',
     ],
-    words: 983,
-    readMins: 5,
+    words: 3416,
+    readMins: 17,
     addedOn: '2026-10-16',
     blocks: [
       {
         kind: 'para',
-        text: 'The derivative answers one question with unreasonable power: at this exact instant, how fast is it changing? Differential Calculus formalizes the answer as a limit — the slopes of secant lines through ever-closer points, closing in on the slope of the tangent line. This topic builds the definition from that picture, applies it to a concrete function, and connects it to the rules you use daily.',
+        text: 'A car’s speedometer is a strange instrument. At any instant it reads a single number — sixty, perhaps — and we trust it enough to let fines be computed from it. Yet speed was understood for two thousand years as distance divided by time, and at a single instant both are zero: the reading 60 cannot come from dividing anything by anything. This lesson is about how mathematics answered the question the speedometer begs — what could instantaneous speed mean? The answer, the derivative, defined as a limit of average speeds over ever-smaller windows, became the most productive idea in the history of the subject. This chapter builds it the way it was discovered: from numbers, to pictures, to symbols.',
       },
-      {
-        kind: 'callout',
-        title: 'Why this matters',
-        text: 'Velocity, growth rates, marginal cost, cooling curves, and the gradients that train machine-learning models are all derivatives in costume. A firm grip on the limit definition turns the shortcut rules into discoveries instead of incantations.',
-        tone: 'insight',
-      },
-      { kind: 'heading', text: 'Core Concepts' },
+      { kind: 'heading', text: 'From average speed to an impossible question' },
       {
         kind: 'para',
-        text: 'Average speed over an hour is a simple division of totals, but instantaneous speed at a moment seems to require distance over zero time — the paradox that stalled mathematics for centuries. The escape is to compute averages over shrinking windows and watch where they settle.',
+        text: 'Average speed is honest arithmetic. Drive 120 kilometres between 2 p.m. and 4 p.m. and your average over the window is 120 km ÷ 2 h = 60 km/h: total change in position divided by total change in time, describing the journey as if uniform. An average rate of change is always this division — change in output over change in input. For a position function s(t), the average speed between t and t + h is (s(t + h) − s(t)) / h, where h is the window width. The average is easy, useful, and — for a journey full of traffic lights and overtaken lorries — mildly fictional: it treats the whole window as one uniform block.',
       },
       {
         kind: 'para',
-        text: 'A secant line through two points of a graph has slope Δy over Δx; slide the second point toward the first and the secants swing onto a limiting line — the tangent. This single moving picture contains the entire idea of the derivative.',
+        text: 'The fiction bothered the Greeks first. Around 450 BCE, Zeno of Elea offered his arrow paradox: at any single instant, the flying arrow occupies exactly one position, no different from an arrow at rest — so where does its motion live? The challenge was serious: “speed at an instant”, taken literally, is 0 ÷ 0. Medieval scholars at Merton College, Oxford, in the 1330s proved the mean-speed theorem — a body speeding up uniformly covers the distance of one moving steadily at the mean of its initial and final speeds — a correct result about changing motion, achieved without any notion of instantaneous speed. Galileo, in his Discourses of 1638, established experimentally that a dropped ball falls a distance proportional to the square of the elapsed time: s = 4.9 t² in modern metres and seconds, the 4.9 being half the gravitational acceleration of 9.8 m/s². Everyone could compute averages over intervals; nobody had a number that deserved to be called the speed at one exact moment.',
       },
       {
         kind: 'para',
-        text: 'For a function f at a point x, the difference quotient (f(x+h) − f(x))/h is the slope over a step of width h. The derivative is the number this quotient approaches as h shrinks toward zero — a process, not a single plug-in.',
+        text: 'The escape from 0 ÷ 0 is to refuse the single instant and study shrinking windows instead. Take Galileo’s falling ball, s(t) = 4.9 t², and ask how fast it is falling exactly two seconds after release. Over the window from t = 2 to t = 3, the ball falls from 19.6 m to 44.1 m — an average speed of (44.1 − 19.6) / 1 = 24.5 m/s, honest but coarse: a whole second of continuing acceleration folded in. Shrink the window. From t = 2 to t = 2.1: the ball falls from 19.6 m to 4.9 × 2.1² = 21.609 m, an average of (21.609 − 19.6) / 0.1 = 20.09 m/s. From t = 2 to t = 2.01: position 4.9 × 4.0401 = 19.79649 m, average (19.79649 − 19.6) / 0.01 = 19.649 m/s. Now the left. Over t = 1.9 to t = 2: (19.6 − 17.689) / 0.1 = 19.11 m/s; over t = 1.99 to t = 2: (19.6 − 19.40449) / 0.01 = 19.551 m/s. The averages are no longer wandering — from both sides they crowd onto 19.6. That number, the target of the squeeze rather than any member of it, is what mathematics now defines as the instantaneous speed.',
+      },
+      { kind: 'heading', text: 'The picture: secants closing onto the tangent' },
+      {
+        kind: 'para',
+        text: 'Every average rate of change has a geometric body double. Draw the graph of y = f(x), mark a point P at x = a and a second point Q at x = a + h. The line through P and Q is a secant line, and its slope is exactly the average rate of change: rise Δy = f(a + h) − f(a), run Δx = h, slope = Δy / Δx. (Secant is Latin secare, “to cut” — the geometry chapter uses the same word for a line cutting a circle; no power-of-a-point theorems here.) Now let h shrink. Q slides along the curve toward P, and the secant pivots. The line the secants swing onto is the tangent at P — the line that kisses the curve at that point and shares its direction. The falling ball’s average speeds were secant slopes on the position graph; the instantaneous speed is the tangent slope.',
       },
       {
         kind: 'para',
-        text: 'Writing the derivative as a limit turns the picture into a computable object: as h gets arbitrarily small, do the quotient values crowd onto one number? If they do, that number is the derivative; if they disagree or blow up, it does not exist.',
+        text: 'Read the figure in two passes. Left: the curve y = x², the fixed point P = (3, 9), the moving point Q = (3 + h, (3 + h)²). Three secants are drawn, for h = 2, 1 and 0.5, with slopes 8, 7 and 6.5; the bold line is the tangent, slope 6. Each halving of h brings the slope halfway down toward 6. Right: the same story in numbers — the quotient takes the values 7, 6.5, 6.1, 6.01 as h runs through 1, 0.5, 0.1, 0.01, and 5, 5.5, 5.9, 5.99 from the left. Both sides crowd onto 6 — and only when they agree does the tangent slope exist.',
       },
       {
-        kind: 'para',
-        text: 'Leibniz wrote dy/dx to remind you of the quotients being limited; Lagrange wrote f′(x) to treat differentiation as a machine that produces a new function. Both denote the same object, and fluency means reading them interchangeably.',
+        kind: 'figure',
+        caption:
+          'The derivative as a limit, seen two ways. LEFT — on y = x² with P(3, 9), the secant through Q(3 + h, (3 + h)²) has slope 6 + h; as h shrinks 2 → 1 → 0.5 the secants swing onto the tangent of slope 6 (bold). RIGHT — the quotient takes values 7, 6.5, 6.1, 6.01 from the right (h > 0) and 5, 5.5, 5.9, 5.99 from the left (h < 0); both sides crowd onto 6, so the limit exists and f′(3) = 6.',
+        afterConcept: 4,
+        svg: `<svg viewBox="0 0 880 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Secant lines through P on the curve y equals x squared rotating onto the tangent as h shrinks, beside the difference-quotient values crowding onto six from both sides">
+  <style>.lbl{font-family:Georgia,serif;font-size:14px;fill:#3f3f46}.big{font-size:18px;font-weight:bold}.sm{font-size:12px;fill:#52525b}.ink{stroke:#8a8a93;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.thin{stroke:#b8b8c0;fill:none;stroke-width:1.6}.rose{fill:#e11d48}.vio{fill:#7c3aed}.box{fill:none;stroke:#c8c8d0;stroke-width:1.6;stroke-dasharray:5 4}.midb{font-family:Georgia,serif;font-size:13.5px;font-weight:bold;fill:#3f3f46;text-anchor:middle}.mono{font-family:Georgia,serif;font-size:13px;fill:#3f3f46}</style>
+  <rect x="24" y="52" width="404" height="452" rx="12" class="box"/>
+  <text class="lbl big" x="40" y="78">The geometry — secants onto the tangent</text>
+  <text class="sm" x="40" y="96">y = x² · fixed point P(3, 9) · moving point Q(3 + h, (3 + h)²)</text>
+  <line x1="120" y1="118" x2="146" y2="118" stroke="#7c3aed" stroke-width="2.4"/><text class="sm" x="152" y="122">secant h = 2 · slope 8</text>
+  <line x1="120" y1="138" x2="146" y2="138" stroke="#a78bfa" stroke-width="2.4"/><text class="sm" x="152" y="142">secant h = 1 · slope 7</text>
+  <line x1="120" y1="158" x2="146" y2="158" stroke="#c4b5fd" stroke-width="2.4"/><text class="sm" x="152" y="162">secant h = 0.5 · slope 6.5</text>
+  <line x1="120" y1="178" x2="146" y2="178" stroke="#e11d48" stroke-width="3.4"/><text class="sm" x="152" y="182">tangent · slope 6</text>
+  <line x1="60" y1="470" x2="420" y2="470" class="ink"/>
+  <line x1="60" y1="470" x2="60" y2="230" class="ink"/>
+  <text class="sm" x="414" y="488">x</text>
+  <text class="sm" x="44" y="240">y</text>
+  <path d="M73.7 459.5 L87.4 454.8 L101.1 449.3 L114.8 443.0 L128.5 435.8 L142.2 427.8 L155.9 419.0 L169.6 409.3 L183.3 398.7 L197.0 387.4 L210.7 375.1 L224.4 362.1 L238.2 348.1 L251.9 333.4 L265.6 317.8 L279.3 301.4 L293.0 284.0 L306.7 265.9 L320.4 247.0 L334.1 227.1 L347.8 206.5 L361.5 185.0 L375.2 162.6" fill="none" stroke="#3f3f46" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="155.9" y1="442.6" x2="354.7" y2="193.8" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="169.6" y1="419.4" x2="316.9" y2="260.8" stroke="#a78bfa" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="183.3" y1="402.5" x2="289.6" y2="296.3" stroke="#c4b5fd" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="142.2" y1="438.4" x2="303.3" y2="289.8" stroke="#e11d48" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M352 214 C 320 250 282 288 254 328" fill="none" stroke="#52525b" stroke-width="1.6" stroke-dasharray="4 4"/>
+  <path d="M254 328 l-1 -9 l8 4 z" fill="#52525b"/>
+  <text class="sm" x="286" y="252">Q slides toward P as h → 0</text>
+  <circle cx="210.7" cy="375.1" r="4.5" fill="#e11d48"/>
+  <circle cx="347.8" cy="206.5" r="3.5" fill="#7c3aed"/>
+  <circle cx="279.3" cy="301.4" r="3.5" fill="#a78bfa"/>
+  <circle cx="245.0" cy="340.9" r="3.5" fill="#c4b5fd"/>
+  <text class="sm" x="196" y="394" text-anchor="end">P (3, 9)</text>
+  <text class="sm" x="356" y="200">Q (5, 25)</text>
+  <text class="sm" x="286" y="296">Q (4, 16)</text>
+  <text class="sm" x="252" y="338">Q (3.5, 12.25)</text>
+  <text class="sm" x="360" y="180" font-style="italic">y = x²</text>
+  <rect x="452" y="52" width="404" height="452" rx="12" class="box"/>
+  <text class="lbl big" x="468" y="78">The arithmetic — both sides crowd onto 6</text>
+  <text class="sm" x="468" y="96">difference quotient ( f(3 + h) − f(3) ) / h = 6 + h</text>
+  <rect x="486" y="110" width="336" height="130" rx="10" class="box"/>
+  <text class="lbl" x="502" y="132" font-weight="bold">from the right · h &gt; 0</text>
+  <text class="mono" x="502" y="156">h = 1 → quotient 7</text>
+  <text class="mono" x="502" y="178">h = 0.5 → quotient 6.5</text>
+  <text class="mono" x="502" y="200">h = 0.1 → quotient 6.1</text>
+  <text class="mono" x="502" y="222">h = 0.01 → quotient 6.01</text>
+  <line x1="654" y1="244" x2="654" y2="260" stroke="#52525b" stroke-width="2"/>
+  <path d="M654 266 l-4 -9 h8 z" fill="#52525b"/>
+  <circle cx="654" cy="300" r="34" fill="#e11d48"/>
+  <text x="654" y="310" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-weight="bold" fill="#fff">6</text>
+  <text class="lbl" x="654" y="356" text-anchor="middle" font-weight="bold">f′(3) = 6</text>
+  <line x1="654" y1="366" x2="654" y2="380" stroke="#52525b" stroke-width="2"/>
+  <path d="M654 386 l-4 -9 h8 z" fill="#52525b"/>
+  <rect x="486" y="392" width="336" height="96" rx="10" class="box"/>
+  <text class="lbl" x="502" y="412" font-weight="bold">from the left · h &lt; 0</text>
+  <text class="mono" x="502" y="434">h = −1 → quotient 5</text>
+  <text class="mono" x="502" y="454">h = −0.5 → quotient 5.5</text>
+  <text class="mono" x="502" y="474">h = −0.1 → quotient 5.9</text>
+  <text class="mono" x="676" y="434">h = −0.01 → 5.99</text>
+  <text class="sm" x="654" y="512" text-anchor="middle">both one-sided crowds agree on 6 — the limit exists, so the tangent slope is defined</text>
+</svg>`,
       },
+      { kind: 'heading', text: 'The formal definition, symbol by symbol' },
       {
         kind: 'para',
-        text: 'If the limit of the quotient exists, the function is differentiable there, which forces continuity — any jump or hole kills the limit. The converse fails: the absolute value function is continuous at zero yet has no derivative there, because left and right slopes disagree at the corner.',
+        text: 'It is time to freeze the moving picture into a formula. Fix a function f and a point x, and step a distance h away: the output changes from f(x) to f(x + h). The fraction (f(x + h) − f(x)) / h is the difference quotient — the average rate of change of f over the window from x to x + h, and the slope of the secant through (x, f(x)) and (x + h, f(x + h)). Every symbol earns its place: f(x) is the height at the left edge, f(x + h) the height at the right edge, their difference the rise, h the run, the division the slope. The quotient is meaningful for every h ≠ 0, small or large, positive or negative — a machine with one free dial: h.',
       },
-      { kind: 'heading', text: 'Key Formulas' },
       {
         kind: 'formula',
-        name: 'Derivative definition',
+        name: 'The difference quotient',
+        latex: '\\frac{f(x+h) - f(x)}{h}',
+        meaning:
+          'Average rate of change over a window of width h: the slope of the secant through (x, f(x)) and (x + h, f(x + h)). Meaningful for every h ≠ 0.',
+      },
+      {
+        kind: 'para',
+        text: 'The derivative is the number the dial controls as h shrinks toward zero. Not the value at h = 0 — the quotient reads 0/0 there, undefined, and that is not a technicality but the entire point. The definition says: examine the quotient for h near zero but never equal to zero; if those values crowd onto a single number L, then L is the derivative of f at x. This is exactly the squeeze the falling ball performed onto 19.6. If the two sides disagree, or run away without bound, the derivative does not exist — no tangent slope there. The limit is a process of approach, never a substitution.',
+      },
+      {
+        kind: 'formula',
+        name: 'The derivative as a limit',
         latex: "f'(x) = \\lim_{h \\to 0}\\frac{f(x+h) - f(x)}{h}",
-        meaning: 'The slope of the tangent as the limit of secant slopes over shrinking intervals.',
+        meaning:
+          'The number the difference quotient approaches as h shrinks toward zero from both sides. When the approach succeeds, f is differentiable at x and the tangent slope is f′(x).',
       },
       {
-        kind: 'formula',
-        name: 'Power rule',
-        latex: '\\frac{d}{dx}x^n = nx^{n-1}',
-        meaning: 'Falls straight out of the definition plus the binomial expansion — the workhorse rule for polynomials.',
+        kind: 'para',
+        text: 'Symbols carry history, and this idea carries more than most. Isaac Newton, during the plague years of 1665–1666 exiled from Cambridge to Woolsthorpe, thought of quantities flowing through time and called the instantaneous rate a fluxion, written with a dot. Gottfried Wilhelm Leibniz, working independently in Paris a decade later — notebooks 1675, first publication 1684 — wrote dy/dx to keep the memory of a quotient of differences alive inside the notation. The partisans fought a priority war that poisoned English and continental mathematics for a century; the modern verdict: both invented calculus independently. Joseph-Louis Lagrange, in his Théorie des fonctions analytiques of 1797, introduced f′(x) to treat differentiation as a machine: feed in a function, receive its derivative. Read all three fluently — dy/dx to feel the shrinking quotient, f′(x) for a function of x, Newton’s dots for physics. The rigorous meaning of “approaches” waited for Cauchy’s Cours d’analyse of 1821 and Weierstrass’s ε–δ language; this lesson’s crowd-onto language is what those theories made exact.',
       },
       {
         kind: 'formula',
         name: 'Tangent slope at a point',
         latex: "m_{\\text{tangent}} = f'(a)",
-        meaning: 'The tangent line to the curve at x = a has exactly this slope.',
+        meaning:
+          'The tangent line to y = f(x) at x = a has exactly this slope; the line itself is y = f(a) + f′(a)(x − a). Using that line as a calculator is the business of the next lesson, on linearization and differentials.',
+      },
+      { kind: 'heading', text: 'The algebra that makes it computable' },
+      {
+        kind: 'derivation',
+        title: 'The derivative of x², straight from the definition',
+        statement:
+          'For f(x) = x², compute f′(x) straight from the limit definition. The strategy: expand the numerator, cancel the h, then let h approach zero — the same algebra that produced 19.6 m/s for the falling ball.',
+        prerequisites: [
+          'The difference quotient (f(x + h) − f(x)) / h',
+          'A limit may be evaluated by substitution once the expression is defined at the target',
+        ],
+        steps: [
+          {
+            label: 'Write the quotient',
+            formula: '$\\frac{(x+h)^2 - x^2}{h}$',
+            explanation:
+              'Substitute f(x) = x² into the difference quotient: the slope of the secant through (x, x²) and (x + h, (x + h)²), valid for every h ≠ 0.',
+          },
+          {
+            label: 'Expand the numerator',
+            formula: '$\\frac{x^2 + 2xh + h^2 - x^2}{h} = \\frac{2xh + h^2}{h}$',
+            explanation:
+              'The x² terms cancel — the fixed height leaves the rise, and only the change caused by the step h remains. That is why expansion helps.',
+          },
+          {
+            label: 'Cancel the h',
+            formula: '$2x + h$',
+            explanation:
+              'For every h ≠ 0 the quotient is exactly 2x + h. Check: at x = 3, h = 0.5 gives 6.5, h = 0.1 gives 6.1 — the figure’s right column. The falling ball is the same algebra with 4.9 built in: 19.6 + 4.9h.',
+          },
+          {
+            label: 'Let h approach zero',
+            formula: "$f'(x) = \\lim_{h \\to 0}(2x + h) = 2x$",
+            explanation:
+              '2x + h is defined at h = 0, so substitution is legal after the cancellation — it gives 2x. The tangent slope on y = x² is twice the x-coordinate: 6 at x = 3, 19.6 m/s for the ball at t = 2.',
+          },
+        ],
+        result:
+          'The derivative of x² is 2x — derived, not memorized. For the falling ball s(t) = 4.9 t², the speed at t = 2 is 4.9 × 2 × 2 = 19.6 m/s, the very number the shrinking averages crowded onto.',
+      },
+      { kind: 'heading', text: 'Three worked examples, three techniques' },
+      {
+        kind: 'example',
+        title: 'A falling ball, finished honestly',
+        steps: [
+          'Identify what is asked: the instantaneous speed of s(t) = 4.9 t² at t = 2, from the definition.',
+          'Write the quotient: (4.9 (2 + h)² − 19.6) / h, since s(2) = 19.6 exactly.',
+          'Expand: 4.9 (4 + 4h + h²) − 19.6 = 19.6 h + 4.9 h².',
+          'Divide by h: 19.6 + 4.9 h, valid for every h ≠ 0.',
+          'Take the limit: 4.9 h vanishes, and the quotient crowds onto 19.6 from both sides — 19.649 at h = 0.01, 19.551 at h = −0.01.',
+          'State the result: the speed at t = 2 is exactly 19.6 m/s, about 70.6 km/h — an answer that survives arithmetic.',
+        ],
       },
       {
         kind: 'example',
-        title: 'Worked Example',
+        title: 'A square root: rationalize, then cancel',
         steps: [
-          'Identify what is asked: the derivative of f(x) = x² from the definition, and the tangent slope at x = 3.',
-          'Recall the governing idea: f′(x) is the limit as h approaches zero of [(x+h)² − x²]/h.',
-          'Apply: expand (x+h)² − x² = 2xh + h², divide by h to get 2x + h, then let h approach zero, leaving f′(x) = 2x — so f′(3) = 6.',
-          'State the result: the slope of y = x² at x = 3 is 6; note that cancelling h before taking the limit is exactly the move that makes polynomial derivatives work.',
+          'Identify what is asked: f′(4) for f(x) = √x, from the definition.',
+          'Write the quotient: (√(4 + h) − 2) / h. There is no binomial square to open — the h hides under the radical.',
+          'Rationalize: multiply by the conjugate (√(4 + h) + 2). The numerator becomes (4 + h) − 4 = h, so the quotient is 1 / (√(4 + h) + 2).',
+          'Cancel and substitute: the h is gone; at h = 0 the survivor gives 1 / (√4 + 2) = 1/4.',
+          'Check numerically: at h = 0.01, (√4.01 − 2) / 0.01 ≈ 0.2498, closing onto 0.25 from below.',
+          'State the result: f′(4) = 1/4 — the tangent at (4, 2) is gentle, because square roots flatten as they grow.',
         ],
       },
-      { kind: 'heading', text: 'Applications in the Real World' },
       {
-        kind: 'list',
-        items: [
-          'Physics reads velocity as the derivative of position and acceleration as the derivative of velocity.',
-          'Economics computes marginal cost and marginal revenue as derivatives of cost and revenue functions.',
-          'Optimization in every field locates peaks and valleys by setting the derivative to zero.',
-          'Machine learning descends error surfaces by repeatedly stepping against the gradient.',
+        kind: 'example',
+        title: 'A corner where the limit fails',
+        steps: [
+          'Identify what is asked: does f(x) = |x| have a derivative at x = 0? If not, why not, precisely?',
+          'Write the quotient at x = 0: (|h| − 0) / h = |h| / h.',
+          'Right side: for h > 0, |h| = h, so the quotient is 1 — every secant from the right has slope 1.',
+          'Left side: for h < 0, |h| = −h, so the quotient is −1.',
+          'Compare: the two sides crowd onto different numbers, 1 and −1, so the two-sided limit fails and no derivative exists at 0.',
+          'State the result: |x| is continuous at 0 yet not differentiable — a corner. Compare x^(1/3) at 0, where the quotient 1 / h^(2/3) runs to infinity: a vertical tangent, still no derivative.',
         ],
+      },
+      { kind: 'heading', text: 'Differentiability implies continuity' },
+      {
+        kind: 'para',
+        text: 'The corner example forces the question of how the two properties relate. Continuity at a point says the value there matches what nearby values approach — the removing-discontinuities lesson owns the three-condition test. Differentiability is strictly stronger: it demands not just that values approach, but that slopes approach. The one-line proof below shows the arrow runs one way, and the corner of |x| shows the converse fails. Jump discontinuities fail continuity first, so they cannot be differentiable; corners and vertical tangents preserve continuity but break slopes; smooth curves have both.',
+      },
+      {
+        kind: 'derivation',
+        title: 'Why differentiability forces continuity',
+        statement:
+          'If f′(x) exists, then f is continuous at x. The proof is one factorization: the change in output equals the average rate times the window width.',
+        prerequisites: [
+          'The limit definition of f′(x)',
+          'Continuity at x means the change f(x + h) − f(x) crowds onto 0 as h approaches 0',
+        ],
+        steps: [
+          {
+            label: 'Factor the change in output',
+            formula: '$f(x+h) - f(x) = \\frac{f(x+h) - f(x)}{h} \\cdot h$',
+            explanation:
+              'For h ≠ 0 this is an identity — the h’s cancel when multiplied out. It reframes the change in f as average rate × window width.',
+          },
+          {
+            label: 'Take the limit of each factor',
+            formula: "$\\lim_{h \\to 0}\\left(\\frac{f(x+h)-f(x)}{h} \\cdot h\\right) = f'(x) \\cdot 0 = 0$",
+            explanation:
+              'The first factor crowds onto f′(x), which exists by assumption; the second is h, which crowds onto 0. Products of convergent factors converge to the product.',
+          },
+          {
+            label: 'Conclude',
+            formula: '$\\lim_{h \\to 0} f(x+h) = f(x)$',
+            explanation:
+              'The change in output crowds onto zero, so nearby values crowd onto the value at the point — the definition of continuity.',
+          },
+        ],
+        result:
+          'Differentiability implies continuity; the converse fails — |x| at 0 is continuous, cornered, slopeless. Contrapositive bonus: if a function jumps, its derivative cannot exist, so you need not even form the quotient.',
       },
       {
         kind: 'callout',
-        title: 'Common Pitfalls',
-        text: 'The classic blunder is substituting h = 0 directly: the difference quotient is meaningless there, and only its limit defines the derivative. Remember also the logical hierarchy — differentiability implies continuity, but continuity does not imply differentiability, as the corner of the absolute value function shows.',
+        title: 'Where derivatives earn their keep',
+        text: 'Newton built the derivative to do physics: velocity is the derivative of position, acceleration the derivative of velocity — this lesson’s falling ball is Newton’s program run on Galileo’s data. Economists read the derivative of a cost function as marginal cost — the cost of the next unit, a rate, not an average. Optimization in every discipline begins by setting a derivative to zero, because at a peak or valley the tangent is horizontal. And when Cauchy proposed gradient descent in 1847, he built the workhorse of machine learning: step against the derivative of the error, and you slide down the error surface. One idea, four centuries, still compounding.',
+        tone: 'insight',
+      },
+      {
+        kind: 'callout',
+        title: 'Common pitfalls',
+        text: 'Three mistakes cost most marks. First, substituting h = 0 into the difference quotient: it reads 0/0, and the limit is a squeeze, not a substitution. Second, believing continuity earns differentiability: |x| at 0 is continuous with one-sided slopes −1 and +1, and the limit still fails. Third, confusing the derivative f′(a), a number, with the tangent line y = f(a) + f′(a)(x − a) — the linearization lesson owns the craft of using that line as a calculator. A last trap hides in names: the Leibniz rule for differentiating integrals belongs to the definite-integral lesson later in this chapter; it shares Leibniz’s name, not this machinery.',
         tone: 'warn',
       },
-      { kind: 'heading', text: 'Key Terms' },
+      {
+        kind: 'callout',
+        title: 'Study path',
+        text: 'Prerequisites: functions and graphs, and limits — the removing-discontinuities lesson of this chapter is the right warm-up, training the one-sided limits squeezed here. Next: the differentiation rules turn this algebra into shortcuts, each provable the way x² was proved here; linearization puts the tangent to work; concavity enlists the derivative twice. The grand symmetry arrives later, when integration accumulates what differentiation slices.',
+        tone: 'path',
+      },
+      { kind: 'heading', text: 'Key terms' },
       {
         kind: 'terms',
         items: [
-          { term: 'Difference quotient', def: 'The secant slope (f(x+h) − f(x))/h over a step of width h.' },
-          { term: 'Limit', def: 'The value outputs approach as the input approaches a point.' },
-          { term: 'Tangent line', def: 'The line a shrinking sequence of secants settles onto at a point.' },
-          { term: 'Differentiable', def: 'Possessing a well-defined derivative at a point.' },
-          { term: 'Leibniz notation', def: 'dy/dx, reading the derivative as a ratio of vanishing differences.' },
-          { term: 'Power rule', def: 'The rule that the derivative of xⁿ is n·xⁿ⁻¹.' },
+          { term: 'Average rate of change', def: 'Change in output over change in input: (f(x + h) − f(x)) / h.' },
+          { term: 'Difference quotient', def: 'The same fraction, viewed as the slope of the secant through (x, f(x)) and (x + h, f(x + h)).' },
+          { term: 'Secant line', def: 'A line cutting a curve twice; its slope is the average rate over the window between the points.' },
+          { term: 'Tangent line', def: 'The line the secants crowd onto as h shrinks; slope f′(a) at x = a.' },
+          { term: 'Derivative', def: 'The limit of the difference quotient as h approaches zero: the instantaneous rate of change.' },
+          { term: 'Differentiable', def: 'Possessing a derivative at the point; forces continuity there.' },
+          { term: 'Corner', def: 'A point like x = 0 on |x|: one-sided slopes exist but disagree.' },
+          { term: 'Fluxion', def: 'Newton’s name for the instantaneous rate of a flowing quantity.' },
         ],
       },
-      { kind: 'heading', text: 'Check Your Understanding' },
+      { kind: 'heading', text: 'Check your understanding' },
       {
         kind: 'quiz',
         items: [
           {
-            q: 'The expression (f(x+h) − f(x))/h represents:',
-            options: ['The tangent slope at x', 'The secant slope over a step of width h', 'The average value of f', 'The area under f between x and x+h'],
+            q: 'For f(x) = x² at x = 3, the difference quotient with h = 0.1 equals:',
+            options: ['6', '6.1', '6.5', '7'],
             answer: 1,
-            explain: 'It is an average rate over a finite interval; only its limit as h approaches zero becomes the tangent slope.',
+            explain: 'After cancellation the quotient is 2x + h = 6 + 0.1 = 6.1 — the secant through (3, 9) and (3.1, 9.61).',
           },
           {
-            q: 'Differentiating f(x) = x² from the limit definition yields:',
-            options: ['2x', 'x', 'x²', '2'],
+            q: 'A ball falls from rest with s(t) = 4.9 t² metres. Its instantaneous speed at t = 2 is:',
+            options: ['19.6 m/s', '24.5 m/s', '9.8 m/s', '39.2 m/s'],
             answer: 0,
-            explain: 'Expanding, cancelling h, and letting h approach zero leaves f′(x) = 2x.',
+            explain: 'The quotient collapses to 19.6 + 4.9h, whose limit is 19.6; 24.5 m/s is only the average over [2, 3].',
           },
           {
-            q: 'Which function is continuous at 0 but not differentiable there?',
-            options: ['f(x) = x²', 'f(x) = |x|', 'f(x) = 1/x', 'f(x) = sin x'],
+            q: 'For f(x) = √x, the derivative at x = 4 is:',
+            options: ['1/2', '1/4', '2', '4'],
             answer: 1,
-            explain: 'The absolute value function has slopes −1 and +1 on either side of the corner, so the two-sided limit of the quotient fails.',
+            explain: 'Rationalizing turns the quotient into 1 / (√(4 + h) + 2), which crowds onto 1/4 as h approaches zero.',
           },
           {
-            q: 'Why can we not simply substitute h = 0 in the difference quotient?',
-            options: ['It gives the wrong sign', 'It would mean division by zero; only the limit is defined', 'It is slower than using rules', 'h must be negative'],
+            q: 'The secant through (2, 4) and (5, 25) on the curve y = x² has slope:',
+            options: ['6', '7', '8', '21'],
             answer: 1,
-            explain: 'At h = 0 the quotient is 0/0 and undefined; the derivative is defined as the limit of the quotient, never its value at zero.',
+            explain: 'Rise 21 over run 3 gives 7 — the quotient 2x + h = 4 + 3.',
+          },
+          {
+            q: 'Why is substituting h = 0 into the difference quotient always wrong?',
+            options: [
+              'it gives the wrong sign',
+              'the quotient is 0/0 there; the derivative is the limit of the quotient, never its value at zero',
+              'it only works for polynomials',
+              'h must approach zero from the left only',
+            ],
+            answer: 1,
+            explain: 'At h = 0 the quotient is 0/0. The definition examines h ≠ 0 and asks where the values crowd; substitution is legal only after algebra removes h from the denominator.',
+          },
+          {
+            q: 'Which statement about continuity and differentiability is correct?',
+            options: [
+              'continuity implies differentiability',
+              'differentiability implies continuity, and the converse fails',
+              'the two properties are equivalent',
+              'neither property implies the other',
+            ],
+            answer: 1,
+            explain: 'The factorization proof gives the forward arrow; |x| at 0 — continuous, one-sided slopes −1 and +1 — breaks the reverse.',
+          },
+          {
+            q: 'At x = 0 the function f(x) = x^(1/3) has:',
+            options: [
+              'a corner, like |x|',
+              'a jump discontinuity',
+              'a vertical tangent: the quotient h^(1/3) / h = 1 / h^(2/3) grows without bound',
+              'a well-defined derivative equal to 0',
+            ],
+            answer: 2,
+            explain: 'The secant slopes 1 / h^(2/3) run off to infinity: the tangent stands vertical, so no finite derivative exists.',
+          },
+          {
+            q: 'Leibniz chose the notation dy/dx to remind the reader that:',
+            options: [
+              'derivatives only describe straight lines',
+              'the derivative is the limit of quotients of differences',
+              'dy and dx are ordinary numbers',
+              'the derivative must be plotted to be used',
+            ],
+            answer: 1,
+            explain: 'The notation preserves Δy / Δx passing to a limit — differences that vanish without ever dividing by zero.',
           },
         ],
       },
-      {
-        kind: 'callout',
-        title: 'Study Path',
-        text: 'Prerequisites: functions, graphs, and basic limits. This topic opens the whole of calculus: differentiation rules, implicit differentiation, optimization, and eventually integration — the inverse problem of accumulating these instantaneous rates.',
-        tone: 'path',
-      },
-      { kind: 'heading', text: 'Five-Minute Recap' },
+      { kind: 'heading', text: 'Five-minute recap' },
       {
         kind: 'list',
         ordered: true,
         items: [
-          'The derivative is a limit of secant slopes — an instant built from shrinking intervals.',
-          'f′(x) = lim of (f(x+h) − f(x))/h; cancel h before taking the limit.',
-          'The derivative of xⁿ is n·xⁿ⁻¹, provable straight from the definition.',
-          'Differentiability implies continuity; the converse fails at corners.',
-          'dy/dx and f′(x) are one object in two notations.',
+          'Average rate of change is honest division: (f(x + h) − f(x)) / h, a secant slope.',
+          'Instantaneous rate is the target of a squeeze: the limit as h approaches zero from both sides.',
+          'The derivative of x² is 2x — expand, cancel h, substitute: the master template.',
+          'Square roots yield to the conjugate; always cancel the h before taking the limit.',
+          'Differentiability implies continuity; the converse fails at corners and vertical tangents.',
+          'Newton, Leibniz, Lagrange: the dot, dy/dx, f′(x) — three notations, one idea.',
         ],
       },
     ],

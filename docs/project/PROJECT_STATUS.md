@@ -16,7 +16,7 @@ Life Sciences writing program per `docs/syllabus/MASTER-SYLLABUS.md` §4/§6.
 |---|---|
 | Masters Library subjects / books / chapters / sections | 140 / 36 / 899 / 4,708 |
 | Knowledge University domains / books / chapters / topics | 18 / 104 / 360 / 723 |
-| Knowledge words (sum of topic word counts) | ≈1,156,000 |
+| Knowledge words (sum of topic word counts) | ≈1,160,000 |
 | Topic tiers | 399 core · 270 intermediate · 52 advanced |
 | Curated exams / official syllabus entries | 59 / 2,967 |
 | Exam regions covered | India, USA, UK, Global, Europe, Australia, Canada, Singapore, Japan, China, South America |
@@ -24,6 +24,14 @@ Life Sciences writing program per `docs/syllabus/MASTER-SYLLABUS.md` §4/§6.
 | User source files inventoried | 20 (3 unique documents + 2 screenshots after dedupe) |
 
 ## Writing program state (from MASTER-SYLLABUS.md §7 ledger)
+
+**Pedagogical quality program (2026-11-02, textbook directive):** a second scheduled loop
+now rewrites weak LIVE lessons to textbook standard — mathematics-unified first (audit:
+28 topics, 6 dedup-excluded, 22 live, previously zero figures subject-wide), then every
+subject to the end of the library. Governing spec `docs/project/TEXTBOOK-QUALITY-DIRECTIVE.md`;
+queue + run log in `docs/project/TEXTBOOK_REWRITE_LEDGER.md`. First unit done:
+§76.1 Percentage, Ratio & Mental Math 883 → 2,811 words (figure plate + derived
+successive-changes formula + 3 worked examples + 8-question quiz).
 
 - ku-cell-molecular-biology: **COMPLETE** (4 ch · 18 lessons)
 - ku-zoology: 5 ch · 11 lessons (Comparative Physiology, Digestion & Metabolism, Reproduction & Life Cycles authored)
