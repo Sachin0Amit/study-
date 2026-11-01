@@ -34,8 +34,6 @@ import type { KnowledgeTopic } from '../../types'
  *   03.1 bio-zoology-gas-exchange-designs — Gas Exchange Across Phyla: Gills, Tracheae, Lungs & Fick's Law
  *   03.2 bio-zoology-circulatory-designs — Circulation: Open, Closed & the Two-to-Four-Chamber Ladder
  */
-import type { KnowledgeTopic } from '../../types'
-
 export const zoologyCh03: KnowledgeTopic[] = [
   // Salvaged 2026-11-01 from the diverged local line (pass x62-zoology-pass, branch backup-loop-20261101) — ported verbatim into the subjects/ tree.
   {

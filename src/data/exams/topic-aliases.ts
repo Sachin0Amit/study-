@@ -556,6 +556,12 @@ export const TOPIC_ALIASES: Record<string, string> = {
   'the twentieth century': 'hist-twentieth-century',
 
   /* ---- UGC NET Paper 1: matcher misses on existing lessons (verified 2026-10-24) ---- */
+  // X62a salvage follow-up (2026-11-01): the pramana lesson ported into the
+  // Philosophy book's epistemology chapter FOR this topic — the six pramanas
+  // with school-by-school counts and the five-membered avayana/anumana
+  // structure. Without the alias, a weak scoped fuzzy match sends the topic
+  // to Differentiation Rules (verified false positive at clamped 0.4).
+  'indian logic means of knowledge': 'phil-pramana-means-of-knowledge',
   // The business-communication lesson teaches the communication process
   // (sender-encoding-channel-decoding-feedback), channels and the
   // semantic/psychological/organisational barriers behind communicating

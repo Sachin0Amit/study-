@@ -171,6 +171,29 @@ function mapSubject(
   const units = subject.units.map((unit) => ({
     name: unit.name,
     topics: unit.topics.map((topic) => {
+      // AUTHORED ALIAS FIRST — an explicit TOPIC_ALIASES entry is a human-
+      // verified mapping (audited against the target lesson's actual
+      // concepts), so it outranks every fuzzy guess. Without this
+      // precedence, a weak scoped match (e.g. "Indian logic: means of
+      // knowledge" → Differentiation Rules at clamped 0.4) can block the
+      // alias path entirely, because the fuzzy hit counts as "mapped".
+      const aliasTarget = TOPIC_ALIASES[normalizeTopicName(topic.name)]
+      if (aliasTarget) {
+        const kn = matchKnowledgeTopic(topic.name, topic.subtopics)
+        if (kn) {
+          knowledgeMapped++
+          return {
+            name: topic.name,
+            subtopics: topic.subtopics && topic.subtopics.length ? topic.subtopics : undefined,
+            weightage: topic.weightage,
+            chapterId: kn.entry.id,
+            chapterTitle: kn.entry.title,
+            subjectId: fieldSlug(kn.entry.field),
+            subjectName: `${kn.entry.field} (Knowledge University)`,
+            confidence: 0.9,
+          }
+        }
+      }
       // matching text: topic name (+ a few subtopics when they exist, they
       // sharpen the token set — "Optics" alone is vague, "Optics: ray optics,
       // wave optics, dispersion" is not)

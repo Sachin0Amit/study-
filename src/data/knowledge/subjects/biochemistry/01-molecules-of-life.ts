@@ -954,4 +954,236 @@ export const biochemistryCh01: KnowledgeTopic[] = [
       },
     ],
   },
+  // ------------------------------------------------------------------
+  // 1.8 Nucleotides & Nucleic-Acid Chemistry (2026-11-01, subject run
+  // "Biochemistry to target"). Carved against: the molecular-biology
+  // book's DNA lesson (owns the double-helix story, Chargaff's
+  // experimental history and the heredity narrative — this lesson owns
+  // the monomer CHEMISTRY and quotes Chargaff's rules only as a
+  // compositional fact), the virology lesson (owns antiviral
+  // pharmacology — AZT is referenced, not taught), the cell-signaling
+  // lesson (owns cAMP cascades — the cyclization chemistry is what is
+  // new here) and the toolbox lesson (owns gel electrophoresis
+  // mechanics — migration by charge is referenced, not re-taught).
+  {
+    id: 'bioc-nucleotides-nucleic-acid-chemistry',
+    title: 'Nucleotides and Nucleic-Acid Chemistry: The Monomer Behind the Code',
+    domain: 'Life Sciences',
+    field: 'Biochemistry',
+    branch: 'Molecules of Life',
+    tier: 'intermediate',
+    concepts: [
+      'The tripartite nucleotide: base, sugar, phosphate',
+      'Purines versus pyrimidines, and the N-glycosidic bond',
+      "Why 2'-OH makes RNA fragile and DNA durable",
+      'The phosphodiester backbone and its 5-prime-to-3-prime polarity',
+      'Why ATP hydrolysis pays: three molecular reasons',
+      'UV absorbance, the hyperchromic shift and the melting temperature',
+      'De novo and salvage pathways, and where analog drugs attack',
+    ],
+    words: 2270,
+    readMins: 11,
+    addedOn: '2026-11-01',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'Proteins do the work, lipids build the walls, carbohydrates store the fuel — but nucleotides are the only class of biomolecule that plays on all three teams at once. The same molecular design that stores genetic information in DNA also runs the cell\'s energy economy (ATP), carries electrons between metabolic enzymes (NADH, FADH2), relays hormonal signals (cyclic AMP), and serves as the activated building block for every biosynthetic polymer the cell makes. This lesson takes that design apart: the three-part anatomy of every nucleotide, the sugar that divides RNA from DNA, the backbone chemistry that gives nucleic acids their direction, and the arithmetic of melting temperature that PCR technicians use every day.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'Nucleotide chemistry is the chemistry of the pharmacy shelf and the forensic lab: antiviral drugs are fake nucleotides, gout is purine catabolism gone wrong, and DNA melting arithmetic sits under every PCR annealing-temperature choice. It is also fixed exam material — the base-pairing rules, the ATP bond bookkeeping and the RNA-versus-DNA stability contrast appear on every biology and biochemistry paper.',
+        tone: 'insight',
+      },
+      {
+        kind: 'callout',
+        title: 'How this lesson is scoped',
+        text: 'The molecular-biology book\'s DNA lesson tells the double-helix discovery story and owns heredity; here the question is chemical — what IS a nucleotide and how does its chemistry behave? The virology lesson owns antiviral drug mechanisms, the cell-signaling lesson owns receptor-to-cAMP cascades, and the toolbox lesson owns how gel electrophoresis is run. This lesson supplies the chemistry all four assume.',
+        tone: 'path',
+      },
+      { kind: 'heading', text: 'The Tripartite Anatomy: Base, Sugar, Phosphate' },
+      {
+        kind: 'para',
+        text: 'Every nucleotide, from ATP to the letters of a chromosome, is assembled from exactly three parts. The first is a nitrogenous base, a flat aromatic ring system rich in nitrogen, of which there are two architectural families. Purines — adenine and guanine in nucleic acids — are fuzed double rings: a six-membered ring welded to a five-membered one, nine heavy atoms in all. Pyrimidines — cytosine, thymine and uracil — are single six-membered rings. The size asymmetry is not decoration: it is what lets a purine pair with a pyrimidine at a constant width across the double helix, the geometry the DNA lesson develops. Both families are weak bases not because they capture protons in bulk water but because their ring nitrogens can accept them transiently — the property that lets bases hydrogen-bond and lets them stack.',
+      },
+      {
+        kind: 'para',
+        text: 'The second part is a five-carbon sugar in its furanose ring form: ribose in RNA, 2\'-deoxyribose in DNA — identical except that DNA\'s version lacks the hydroxyl group on carbon 2\'. The third part is one or more phosphate groups, almost always esterified to the 5\' carbon of the sugar. Sugar plus base alone (no phosphate) is a nucleoside — adenosine, guanosine, cytidine, uridine, thymidine. Add the phosphate and you have the nucleotide: adenosine monophosphate (AMP), and with two or three phosphates ADP and ATP. The bond from base to sugar is the N-glycosidic bond — nitrogen 9 of a purine or nitrogen 1 of a pyrimidine bonded to the sugar\'s carbon 1\'. This naming ladder matters clinically: adenosine is a signaling molecule in its own right, while deoxy-thymidine-monophosphate (dTMP) is a DNA letter and a drug target. Exams love the distinction — a nucleoside is a molecule you can dissolve a base in; a nucleotide is the monomer that actually polymerizes.',
+      },
+      { kind: 'heading', text: "The Sugar That Divides RNA from DNA" },
+      {
+        kind: 'para',
+        text: 'That single missing hydroxyl on DNA\'s 2\' carbon is the most consequential atom in biology. RNA\'s 2\'-OH sits one bond away from the phosphodiester backbone and makes RNA chemically self-destructive: under alkaline conditions the 2\'-OH deprotonates, and the resulting alkoxide attacks the adjacent phosphorus, cleaving the backbone in a two-step transesterification that yields a 2\'-3\' cyclic phosphate. DNA, with no 2\'-OH, sails through the same conditions untouched — the reason a century-old DNA sample can still be sequenced while an RNA sample must be stored at low temperature, protected by RNase-free technique, and used fast. The cell even exploits the contrast on purpose: it uses DNA as its permanent archive (stable for a lifetime) and RNA as its disposable working copy (messenger RNAs are meant to be recycled on timescales of minutes to days). The same 2\'-OH also lets RNA fold into complex three-dimensional shapes with ribose zippers and pseudoknots — catalytic RNAs are possible only because RNA can be a shape as well as a sequence.',
+      },
+      { kind: 'heading', text: 'The Phosphodiester Backbone and Its Polarity' },
+      {
+        kind: 'para',
+        text: 'In a nucleic-acid strand, each phosphate forms two ester bonds: one to the 3\'-OH of the previous sugar and one to the 5\'-OH of the next — a phosphodiester bridge that turns sugars into a repeating sugar-phosphate chain with the bases hanging off like pendants. Two chemical facts follow. First, the backbone is strongly and uniformly negatively charged (every phosphate carries roughly one negative charge at physiological pH), which is why nucleic acids migrate toward the positive electrode in the gels of the toolbox lesson and why they need compensating chemistry — histone proteins, polyamines, magnesium — to be packed into a nucleus. Second, the chain has an unambiguous direction: one end carries a free 5\'-phosphate (or 5\'-OH), the other a free 3\'-OH. Every sequence is written 5\'→3\', every polymerase adds nucleotides onto a 3\'-OH, and "antiparallel" in the double helix means exactly this polarity running opposite ways in the two strands.',
+      },
+      {
+        kind: 'figure',
+        caption: 'Anatomy of a nucleotide, using the DNA letter dGMP as the example. Left: the purine guanine rides on its sugar through the N-glycosidic bond (base N9 to sugar C1\'). Center: the furanose ring with its carbons numbered 1\' through 5\' — the missing 2\'-OH that defines DNA is highlighted. Right: the 5\' phosphate, drawn with the two ester bonds it would form in a chain (3\' behind, 5\' ahead), so the backbone reads 5\'→3\'. The inset contrasts the pyrimidine ring (single, six-membered) with the purine\'s fused double ring.',
+        afterConcept: 2,
+        svg: `<svg viewBox="0 0 880 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nucleotide anatomy: purine base, sugar with numbered carbons, 5-prime phosphate, and backbone polarity inset">
+  <style>.lbl{font-family:Georgia,serif;font-size:14.5px;fill:#3f3f46}.big{font-size:18px;font-weight:bold}.sm{font-size:12.5px;fill:#52525b}.ink{stroke:#8a8a93;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.hl{stroke:#d97706;fill:none;stroke-width:2.6}.bond{stroke:#0e7490;fill:none;stroke-width:2.6}</style>
+  <text class="lbl big" x="30" y="34" fill="#3f3f46">One nucleotide, three parts — the DNA letter dGMP</text>
+  <text class="lbl" x="30" y="66">1 · the base (purine guanine)</text>
+  <path class="ink" d="M60 200 L95 180 L130 200 L130 240 L95 260 L60 240 Z"/>
+  <path class="ink" d="M130 200 L172 178 L214 198 L214 242 L172 262 L130 240"/>
+  <text class="sm" x="74" y="228">N</text>
+  <text class="sm" x="186" y="226">N9</text>
+  <circle cx="176" cy="234" r="5" fill="#0e7490"/>
+  <text class="sm" x="52" y="292">six-membered ring fused</text>
+  <text class="sm" x="52" y="310">to five-membered ring</text>
+  <text class="sm" x="150" y="292">pyrimidine = one</text>
+  <text class="sm" x="150" y="310">six-ring only</text>
+  <text class="lbl" x="320" y="66">2 · the sugar (2'-deoxyribose)</text>
+  <path class="ink" d="M380 220 L420 200 L460 220 L460 262 L420 282 L380 262 Z"/>
+  <text class="sm" x="368" y="218">C1'</text>
+  <text class="sm" x="408" y="192">C2'</text>
+  <text class="sm" x="466" y="218">C3'</text>
+  <text class="sm" x="466" y="262">C4'</text>
+  <text class="sm" x="404" y="302">C5'</text>
+  <path class="ink" d="M420 282 L428 296"/>
+  <path class="bond" d="M214 238 C 280 236, 340 228, 378 222 M370 218 L378 222 M372 228 L378 222"/>
+  <text class="sm" x="252" y="216">N-glycosidic bond</text>
+  <path class="hl" d="M412 208 L412 196"/>
+  <text class="sm" x="420" y="176" fill="#d97706">no 2'-OH in DNA —</text>
+  <text class="sm" x="420" y="192" fill="#d97706">RNA has it, and is fragile</text>
+  <text class="lbl" x="600" y="66">3 · the phosphate(s)</text>
+  <path class="ink" d="M660 226 L700 226"/>
+  <circle cx="720" cy="226" r="14" class="ink"/>
+  <text class="sm" x="712" y="231">P</text>
+  <path class="ink" d="M700 226 L700 200"/>
+  <path class="ink" d="M734 226 L760 226"/>
+  <text class="sm" x="742" y="216">to next sugar 5'</text>
+  <text class="sm" x="620" y="270">α, β, γ phosphates in ATP:</text>
+  <text class="sm" x="620" y="288">the last two are phosphoanhydrides</text>
+  <rect x="30" y="340" width="820" height="106" rx="14" class="ink"/>
+  <text class="lbl" x="52" y="372">In the chain: 3'-O–P–O-5' phosphodiester bridge, one negative charge per phosphate</text>
+  <text class="sm" x="52" y="398">5'-P ————— O — sugar — O — P ————— O — sugar — 3'-OH : the strand has direction, 5'→3'</text>
+  <text class="sm" x="52" y="422">Uniform negative charge is why DNA runs to the + electrode in a gel (mechanics: the toolbox lesson)</text>
+</svg>`,
+      },
+      { kind: 'heading', text: 'Nucleotides as Energy Currency — and Why Hydrolysis Pays' },
+      {
+        kind: 'para',
+        text: 'Ribonucleoside triphosphates are the cell\'s rechargeable batteries: ATP, GTP, CTP, UTP for RNA work, with dATP through dTTP for DNA. The phosphate chain in ATP carries two phosphoanhydride bonds (the α–β and β–γ links), and hydrolyzing the terminal one — ATP + water → ADP + inorganic phosphate — releases roughly 30.5 kilojoules per mole under standard conditions, more inside a real cell. Where does the energy actually come from? Not from "a high-energy bond" breaking — bonds release energy when they FORM. Three real factors pay the bill. Charge repulsion: three adjacent negative charges crowd each other, and splitting the chain relieves the crowding. Resonance: the released phosphate is more resonance-stabilized than the same group was inside ATP. Solvation: water hydrates ADP and Pi far better than it ever could hydrate the crowded triphosphate. The synthesis direction is paid for by metabolism — the oxidative lessons show the machinery that re-attaches the phosphate.',
+      },
+      {
+        kind: 'formula',
+        name: 'Standard free energy of ATP hydrolysis',
+        latex: '\\text{ATP} + \\text{H}_2\\text{O} \\rightarrow \\text{ADP} + \\text{P}_i \\qquad \\Delta G^{\\circ\\prime} = -30.5\\ \\text{kJ/mol}',
+        meaning: 'The bookkeeping number every coupling argument leans on. In a living cell the actual ΔG is nearer −50 to −65 kJ/mol because ATP, ADP and phosphate concentrations sit far from standard state — which is why "ATP is rich" is a statement about cell conditions, not about the bond.',
+      },
+      { kind: 'heading', text: 'Cyclic Nucleotides: The Cell\'s Postal Service' },
+      {
+        kind: 'para',
+        text: 'Break the phosphate out of the chain and loop it back onto the sugar instead, and you get a second messenger. Adenylyl cyclase converts ATP into 3\'-5\' cyclic AMP — the same phosphate esterified to both the 3\' and 5\' hydroxyls, forming a ring with the sugar. That small topological change turns a building block into a broadcast signal: the cascade that links a hormone at the membrane to phosphorylation inside the cell is the signaling lesson\'s territory, but the chemistry is this lesson\'s — one intramolecular ester bond, and the signal is terminated by phosphodiesterases that cut the loop back to plain AMP (the target caffeine inhibits, which is why coffee lengthens a coffee-jitter). Cyclic GMP plays the mirror role in smooth-muscle relaxation and vision. Same nucleotide anatomy, same bonds — different topology, entirely different job.',
+      },
+      { kind: 'heading', text: 'UV Light, Melting and the GC Thermostat' },
+      {
+        kind: 'para',
+        text: 'The bases are aromatic rings with delocalized electrons, and delocalized electrons absorb ultraviolet light: nucleic acids absorb strongly near 260 nanometers, roughly thirty times more than proteins at their own peak. Absorbance at 260 nm is therefore how every lab quantifies DNA and RNA — and it hides a structural probe. When the two strands of a helix separate, stacked bases unstack, and unstacked bases absorb MORE than stacked ones: the hyperchromic shift. Heat a DNA solution slowly while watching A260, and the trace stays flat until a narrow temperature window where it jumps 30–40 percent — the melting curve. Its midpoint, the melting temperature Tm, is set by base composition: G–C pairs (three hydrogen bonds, better packing) hold harder than A–T pairs (two), so GC-rich DNA melts higher. The jump itself tells you the sample was helical; the midpoint tells you what it was made of.',
+      },
+      {
+        kind: 'derivation',
+        title: 'Why Tm rises with GC content — and the working formula',
+        statement: 'For long double-stranded DNAs measured in standard saline-citrate buffer, the melting temperature scales linearly with GC percentage. Deriving the working relation from two calibration points.',
+        prerequisites: ['GC pairs hold the helix together more strongly than AT pairs (three hydrogen bonds plus better stacking)', 'Tm is read as the midpoint of the hyperchromic jump'],
+        steps: [
+          { label: 'Anchor one extreme', formula: 'Tm \\approx 69.3\\,^\\circ\\text{C} \\text{ at } 0\\%\\ \\text{GC}', explanation: 'A purely AT-rich long DNA melts near 69.3 °C under standard salt — the measured intercept of the GC dependence.' },
+          { label: 'Read the slope', formula: '\\text{slope} \\approx 0.41\\,^\\circ\\text{C per } 1\\%\\ \\text{GC}', explanation: 'Across genomes from AT-rich to GC-rich, each added percent GC lifts Tm by about 0.41 °C — the measured slope of the same calibration.' },
+          { label: 'Combine into the working formula', formula: 'Tm \\approx 69.3 + 0.41\\,(\\%\\text{GC})\\ \\,^\\circ\\text{C}', explanation: 'Linear interpolation between the anchors gives the design rule used to set denaturation temperatures before PCR cycles were computed on a machine.' },
+          { label: 'Sanity-check the spread', formula: '\\Delta Tm = 0.41 \\times (100-0) \\approx 41\\,^\\circ\\text{C}', explanation: 'From 0% to 100% GC the midpoint moves about 41 °C — a wide, easily measured window, which is exactly why the method works as a compositional assay.' },
+        ],
+        result: 'Tm ≈ 69.3 + 0.41·(%GC) °C for long DNAs in standard saline-citrate — the arithmetic behind every old-school melting-temperature exam question and every quick PCR pre-calculation.',
+      },
+      {
+        kind: 'example',
+        title: 'Worked Example: Melting Temperatures of Three Genomes',
+        steps: [
+          'Human genome: about 40% GC. Tm ≈ 69.3 + 0.41 × 40 = 69.3 + 16.4 ≈ 85.7 °C.',
+          'A GC-rich bacterium such as one adapted to hot springs, about 65% GC: Tm ≈ 69.3 + 0.41 × 65 = 69.3 + 26.7 ≈ 96.0 °C — ten whole degrees higher.',
+          'An AT-rich Plasmodium-style genome near 20% GC: Tm ≈ 69.3 + 8.2 ≈ 77.5 °C.',
+          'Read the teaching point: a single formula turns a melting curve into a compositional measurement, and the spread — 77 to 96 °C across genomes — is why melting temperature was a classic genome-classification assay before sequencing existed.',
+          'PCR connection: denaturation steps are set a few degrees ABOVE the computed Tm; the same arithmetic, applied to short primers with different rules, is the annealing-temperature calculation done in every lab notebook.',
+        ],
+      },
+      { kind: 'heading', text: 'Where Nucleotides Come From — and Where Drugs Attack' },
+      {
+        kind: 'para',
+        text: 'Cells build nucleotides two ways. The de novo routes assemble the ring atom by atom onto the sugar-phosphate scaffold: amino acids donate nearly everything (glycine, glutamine and aspartate are the major suppliers, with formyl-tetrahydrofolate delivering one-carbon units and CO2 the last carbons), and PRPP — ribose-5-phosphate activated with pyrophosphate, a product of the pentose-phosphate pathway — is the universal handle. The salvage routes recycle ready-made bases and nucleosides broken down from worn-out nucleic acids, saving the heavy synthetic cost; HGPRT, the key salvage enzyme, is missing in Lesch-Nyhan syndrome, and adenosine deaminase deficiency causes one form of SCID — historically the first human disease treated with gene therapy, precisely because fixing one enzyme in immune cells restores the whole system. Every antipurine and antipyrimidine drug aims at these routes: methotrexate starves de novo thymidylate synthesis by blocking folate regeneration, and the analog story continues in the virology lesson, where AZT mimics thymidine and terminates a growing viral DNA chain.',
+      },
+      { kind: 'heading', text: 'Modified Bases: Beyond the Four Letters' },
+      {
+        kind: 'para',
+        text: 'The four-letter alphabet is the beginning, not the end. DNA letters are chemically edited after the fact: 5-methylcytosine marks silenced genes in the epigenetic systems the genetics book follows, and bacteria use methylation to mark their own DNA against restriction enzymes. RNA goes much further — transfer RNAs carry the densest chemistry in the cell, including inosine at the wobble position (guanine with its 2-amino group removed), which pairs with U, C or A and lets one tRNA read three codons; queuosine, a base no other biomolecule uses; and the pseudouridine edits that stabilise the modified-RNA vaccines the virology and immunology lessons discuss. The pattern to hold: the backbone carries information reliably; the bases carry adjustments — tags, wobbles, locks — that tune how the information is used.',
+      },
+      {
+        kind: 'callout',
+        title: 'Common Pitfalls',
+        text: 'Four traps account for nearly every lost mark on this material. Nucleoside versus nucleotide — the phosphate is the difference; a "nucleoside triphosphate" is a nucleotide, and exams exploit the phrasing. Purine versus pyrimidine sizes — purines are the BIGGER rings, and it is one purine pairing with one pyrimidine that keeps the helix width constant, not any same-size pairing. "High-energy bond" — the energy of ATP is not stored in a spring-loaded bond waiting to snap; hydrolysis pays because the PRODUCTS (ADP, free phosphate, hydrated, resonance-stabilized, charge-relieved) are lower in energy than reactants. And melting is not breaking — denaturation separates strands by disrupting non-covalent hydrogen bonds and stacking; the covalent phosphodiester backbone stays fully intact until the temperature is far higher.',
+        tone: 'warn',
+      },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Nucleoside', def: 'A nitrogenous base joined to a sugar (ribose or deoxyribose) through the N-glycosidic bond — no phosphate yet: adenosine, guanosine, cytidine, uridine, thymidine.' },
+          { term: 'Nucleotide', def: 'A nucleoside with one or more phosphates esterified to the sugar (usually at 5\'); the monomer of nucleic acids and, as triphosphates, the cell\'s energy and electron currency.' },
+          { term: 'Phosphodiester bond', def: 'The 3\'→5\' bridge linking consecutive sugars in a nucleic-acid strand; carries one negative charge per phosphate and fixes the strand\'s 5\'→3\' polarity.' },
+          { term: 'Hyperchromic shift', def: 'The 30–40% rise in absorbance at 260 nm when stacked bases unstack during strand separation — the optical signature of DNA melting.' },
+          { term: 'Melting temperature (Tm)', def: 'The midpoint of the helix-to-coil transition; for long DNAs in standard buffer, Tm ≈ 69.3 + 0.41·(%GC) °C.' },
+          { term: 'Salvage pathway', def: 'Recycling of intact bases and nucleosides back into nucleotides (HGPRT, adenosine phosphoribosyltransferase), cheaper than de novo synthesis and the target of Lesch-Nyhan pathology.' },
+        ],
+      },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'Which structural feature explains why RNA is hydrolyzed by alkali while DNA is not?',
+            options: ["RNA's extra oxygen on the 2' carbon of ribose", 'RNA uses uracil, which is unstable', 'DNA has thymine, which resists hydrolysis', "RNA's N-glycosidic bond is weaker"],
+            answer: 0,
+            explain: "The 2'-OH deprotonates in base; the alkoxide attacks the adjacent phosphate and cleaves the backbone via a 2'-3' cyclic intermediate. DNA lacks the 2'-OH and survives the same conditions.",
+          },
+          {
+            q: 'A double-stranded DNA sample melts at about 90 °C in standard saline-citrate. Its GC content is closest to:',
+            options: ['30%', '40%', '50%', '65%'],
+            answer: 2,
+            explain: 'Rearranged formula: %GC = (Tm − 69.3)/0.41 = (90 − 69.3)/0.41 ≈ 20.7/0.41 ≈ 50%. A 65% GC sample would melt near 96 °C.',
+          },
+          {
+            q: 'The energy released when ATP hydrolyzes to ADP comes primarily from:',
+            options: ['a spring-like high-energy phosphate bond snapping', 'the products (ADP and Pi) being more resonance-stabilized, better hydrated and charge-relieved', 'heat released by breaking the N-glycosidic bond', 'the adenine ring absorbing water'],
+            answer: 1,
+            explain: 'Bonds release energy when they form, not when they break. Hydrolysis pays because the products sit in a deeper energy well: relieved charge repulsion, more resonance forms and better solvation.',
+          },
+          {
+            q: 'Cyclic AMP differs from ordinary AMP because in cAMP:',
+            options: ['the adenine is methylated', 'one phosphate is esterified to BOTH the 3\' and 5\' hydroxyls of the sugar', 'the sugar is deoxyribose', 'three phosphates are chained to the 5\' carbon'],
+            answer: 1,
+            explain: 'Cyclization is a topological change: the same phosphate forms two ester bonds to the same sugar, making a ring. Phosphodiesterases cut that loop to terminate the signal.',
+          },
+          {
+            q: 'In Lesch-Nyhan syndrome, the defective enzyme HGPRT belongs to which pathway?',
+            options: ['De novo purine ring assembly', 'The salvage pathway that recycles free bases into nucleotides', 'The phosphodiester backbone repair system', 'Pyrimidine ring cleavage'],
+            answer: 1,
+            explain: 'HGPRT (hypoxanthine-guanine phosphoribosyltransferase) re-attaches salvaged hypoxanthine and guanine to PRPP. Its loss forces overproduction through the de novo route, raising uric acid and causing the neurological syndrome.',
+          },
+          {
+            q: 'A DNA solution shows a 37% rise in absorbance at 260 nm after slow heating. The rise is evidence that:',
+            options: ['the phosphodiester backbone was cleaved', 'stacked bases unstacked as the two strands separated', 'the bases were oxidized by the heat', 'the sample contained protein contamination'],
+            answer: 1,
+            explain: 'That is the hyperchromic shift — a direct optical consequence of base unstacking during strand separation, while the covalent backbone remains intact. It is how melting curves are read.',
+          },
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Study Path',
+        text: 'Prerequisites: the amino-acid lesson (ring chemistry, pKa logic) and the cell\'s-biomolecules survey in the cell-biology book. Follow with the DNA lesson in the molecular-biology book for the double helix this chemistry builds, the oxidative-phosphorylation lesson for how the cell re-charges ATP, and the toolbox lesson for how the charge and UV absorbance described here become purification and quantification methods. Standard reading: OpenStax Biology 2e ch. 14 on gene expression for context; Lehninger Principles of Biochemistry, chapters 8–9, for the nucleotide chemistry at textbook depth.',
+        tone: 'path',
+      },
+    ],
+  },
 ]

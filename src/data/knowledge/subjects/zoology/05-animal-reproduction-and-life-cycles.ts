@@ -36,8 +36,6 @@ import type { KnowledgeTopic } from '../../types'
  *   05.1 bio-zoology-reproduction-modes — Reproductive Modes: From Binary Fission to Viviparity
  *   05.2 bio-zoology-life-cycles — Life Cycles: Metamorphosis, Diapause, Semelparity
  */
-import type { KnowledgeTopic } from '../../types'
-
 export const zoologyCh05: KnowledgeTopic[] = [
   // Salvaged 2026-11-01 from the diverged local line (pass x62-zoology-pass, branch backup-loop-20261101) — ported verbatim into the subjects/ tree.
   {

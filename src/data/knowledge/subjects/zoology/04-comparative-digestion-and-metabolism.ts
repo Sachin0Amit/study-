@@ -36,8 +36,6 @@ import type { KnowledgeTopic } from '../../types'
  *   04.1 bio-zoology-digestive-strategies — Digestive Strategies Across the Animal Kingdom
  *   04.2 bio-zoology-metabolic-scaling — Metabolic Scaling: Kleiber's Law, Q10 & the Economics of Endothermy
  */
-import type { KnowledgeTopic } from '../../types'
-
 export const zoologyCh04: KnowledgeTopic[] = [
   // Salvaged 2026-11-01 from the diverged local line (pass x62-zoology-pass, branch backup-loop-20261101) — ported verbatim into the subjects/ tree.
   {
