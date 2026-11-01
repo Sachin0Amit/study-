@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Mathematics — Chapter 02: Algebra
- * 3 lessons · ~4,927 words
+ * 3 lessons · ~7,014 words
  * field: Algebra
  * legacy sources: x29-orphan-closure-pass.ts, x63-cengage-pass.ts
  *
@@ -35,133 +35,293 @@ export const mathematicsUnifiedCh02: KnowledgeTopic[] = [
       'Identities versus equations',
       'Substitution and evaluation',
     ],
-    words: 1409,
-    readMins: 7,
+    words: 3496,
+    readMins: 17,
     addedOn: '2026-10-24',
     blocks: [
-      { kind: 'heading', text: 'Why this matters' },
       {
         kind: 'para',
-        text: 'Algebra is a written language for computation, and manipulation is its grammar: simplify, expand, factorise, rearrange. Every later technique — solving quadratics, differentiating, computing with matrices — assumes these moves are automatic. The vocabulary matters as much as the moves, because questions are phrased in it: \u201csimplify\u201d means make shorter without changing value; \u201cexpand\u201d means multiply out; \u201cfactorise\u201d means reverse that; \u201crearrange\u201d means solve for a named letter. Mixing up the commands is the most common way strong arithmetic students lose algebra marks.',
+        text: 'Baghdad, around 820 CE. In the House of Wisdom, Muhammad ibn Musa al-Khwarizmi sets down a problem the only way his age allowed — as a sentence: “a square and ten of its roots equal thirty-nine dirhams”. We would write x² + 10x = 39 and be done. His readers could not — the symbols did not exist yet, and algebra would stay written in prose for centuries. The Arabic al-jabr — restoring what a subtraction removed to the other side — gave the subject its name, and al-Khwarizmi’s Latinised name gave us the word algorithm. The notation this lesson teaches is the end of a long compression: François Viète proposed vowels for unknowns and consonants for knowns in 1591; René Descartes fixed x, y, z for unknowns in La Géométrie of 1637. What looks like jargon is the most productive notation ever devised: one short line of symbols asserts infinitely many numerical facts at once. This lesson teaches its fluent reading — the anatomy of an expression, the laws that govern it, and the four commands simplify, expand, factorise and rearrange that every later chapter assumes.',
       },
+      { kind: 'heading', text: 'From arithmetic to letters' },
       {
         kind: 'para',
-        text: 'This lesson drills the grammar to fluency: reading expressions through their anatomy (terms, coefficients, degrees), the three core moves (collect, expand, factorise) and the fourth (rearranging formulae), with the identity/equation distinction drawn sharply. The quadratics lesson then puts the machinery to work solving equations.',
+        text: 'An algebraic expression is a recipe for computing a number, written with letters standing in for values that are unknown or arbitrary. The expression 3x² − 5x + 7 says: square a number x, multiply by three, subtract five of the original x, and add seven. Letters are the crucial upgrade from arithmetic. In the mental-arithmetic lesson the commutative, associative and distributive laws worked on actual numbers — 7 × 98 was split into 7 × (100 − 2). A letter is the device for saying this holds for every number: writing a(b + c) = ab + ac asserts the trick for all values at once — the formalisation that lesson promised. Two writing conventions apply. Multiplication is silent: 3x means 3 × x, and 3x² means 3 × (x × x) — the power grabs only the letter, not the coefficient, so 3x² and (3x)² are different objects — three copies of x² versus nine. And the arithmetic order of operations still rules: powers first, then multiplication and division, then addition and subtraction, with brackets overriding everything.',
       },
       { kind: 'heading', text: 'The anatomy of an expression' },
       {
         kind: 'para',
-        text: 'An expression like 3x\u00b2 \u2212 5x + 7 is built from terms — the pieces separated by plus and minus signs (here: 3x\u00b2, \u22125x, 7). Each term has a coefficient (the number multiplying the letters: 3, \u22125, and 7 as a constant term) and a degree (the total exponent of its variables: x\u00b2 has degree 2, x has degree 1, a constant has degree 0); the degree of the whole expression is its highest term degree. Like terms share exactly the same letters raised to exactly the same powers — 5x and \u22122x are like; 5x and 5x\u00b2 are not. This vocabulary is what exam questions test directly: \u201cstate the coefficient of x in \u2026\u201d, \u201cwhat is the degree of \u2026\u201d — one-word answers that cost marks if the language is fuzzy.',
-      },
-      { kind: 'heading', text: 'The core moves' },
-      {
-        kind: 'para',
-        text: 'Collecting like terms: add or subtract the coefficients of like terms and keep the shared letter part. 7a + 3b \u2212 2a + b = 5a + 4b. The sign belongs to the term that follows it — the classic error is dropping a minus during collection, so underline terms with their signs before combining. Expanding brackets uses the distributive law: multiply the outside by everything inside. 3(2x \u2212 5) = 6x \u2212 15; double brackets produce four products: (x + 2)(x + 3) = x\u00b2 + 3x + 2x + 6 = x\u00b2 + 5x + 6 — the middle coefficient is the sum of the inner numbers, the end product their product. Two signs in a row obey minus-times-minus: (x \u2212 4)(x \u2212 3) = x\u00b2 \u2212 7x + 12.',
+        text: 'An expression is built from terms — the pieces separated by plus and minus signs. In 3x² − 5x + 7 there are three terms: 3x², −5x and 7. The sign travels with the term — the second term is −5x — a discipline that prevents the most frequent error in the subject. Each term has an anatomy of its own. The coefficient is the number multiplying the letters: 3 in the first term, −5 in the second, sign included. The variable is the letter itself, standing for the unknown or arbitrary quantity. The degree of a term is the total exponent of its variables: 3x² has degree 2, −5x has degree 1, and the constant 7 has degree 0 because no variable appears at all. The degree of the whole expression is the highest among its terms — here 2, which makes it quadratic in shape.',
       },
       {
         kind: 'para',
-        text: 'Factorising reverses expansion, and the order of attempts is fixed. First, take out the highest common factor: 6x\u00b2 + 9x = 3x(2x + 3) — always check for one before anything fancier. Second, recognize named patterns: the difference of squares a\u00b2 \u2212 b\u00b2 = (a \u2212 b)(a + b) — x\u00b2 \u2212 49 = (x \u2212 7)(x + 7) — and the perfect square a\u00b2 \u00b1 2ab + b\u00b2 = (a \u00b1 b)\u00b2. Third, for quadratics like x\u00b2 + bx + c, hunt a factor pair of c that sums to b: x\u00b2 \u2212 x \u2212 12 = (x \u2212 4)(x + 3) because (\u22124)(+3) = \u221212 and \u22124 + 3 = \u22121. Every factorisation can be checked instantly by expanding back — an exam habit that costs ten seconds and saves whole marks.',
+        text: 'Two terms are like terms when they involve exactly the same letters raised to exactly the same powers. 5x and −2x are like — both are “some number of x”. 5x and 5x² are not, nor 3xy and 3x: the letter part must match completely. This vocabulary is not decoration — questions are phrased in it: state the coefficient of x; the degree of the expression. The figure below pins all of these names onto a real expression; study it until labelling any term is automatic.',
       },
-      { kind: 'heading', text: 'Rearranging formulae, and identities versus equations' },
+      { kind: 'heading', text: 'The laws that make letters behave like numbers' },
       {
         kind: 'para',
-        text: 'Rearranging a formula is solving with a letter as the target: undo the operations in reverse order, doing to both sides whatever you do. From A = 2\u03c0r, divide both sides by 2\u03c0: r = A/(2\u03c0). From v = u + at: subtract u, then divide by a — t = (v \u2212 u)/a. Two discipline points: keep the operations symmetric (whatever happens left happens right), and when the target letter appears in more than one term, collect those terms first and factor the letter out — from ax \u2212 bx = c, factor x(a \u2212 b) = c, then x = c/(a \u2212 b). That last maneuver — factorise to isolate — is the one examiners build \u201chard\u201d rearrangement questions from.',
+        text: 'Three laws form the entire legal code of manipulation. The commutative laws say order does not matter: a + b = b + a and ab = ba — though subtraction and division are not covered: 5 − 3 ≠ 3 − 5. The associative laws say grouping does not matter: (a + b) + c = a + (b + c) and (ab)c = a(bc) — the reason terms can be added in any order. The distributive law is the engine of this lesson: a(b + c) = ab + ac — read forwards it expands a bracket, backwards it factorises. Every move in this lesson is one of these three sentences wearing different clothes, and nothing else is permitted: a rewrite must follow from these laws, so checking a manipulation means checking that it did.',
+      },
+      {
+        kind: 'formula',
+        name: 'The distributive law',
+        latex: 'a(b + c) = ab + ac',
+        meaning: 'The engine of the lesson: forwards it expands a bracket, backwards it factorises a sum into a product.',
+      },
+      { kind: 'heading', text: 'Expanding: the distributive law at work' },
+      {
+        kind: 'para',
+        text: 'Expanding means multiplying out every bracket until none remain. For a single bracket the distributive law does everything: 3(2x − 5) = 6x − 15 — the outside factor meets every inside term, not just the first. A minus in front of a bracket is the same move with −1: −(x − 4) = −x + 4 — every inside sign flips. This is where marks are silently lost: 5a − (2a − 3b) equals 5a − 2a + 3b, not 5a − 2a − 3b, because the minus multiplies both inside terms.',
       },
       {
         kind: 'para',
-        text: 'Finally, keep identities and equations apart. An equation is true for particular values: 2x = 10 holds only at x = 5. An identity is true for every value: 2(x + 3) \u2261 2x + 6, and (a \u00b2 \u2212 b\u00b2) \u2261 (a \u2212 b)(a + b) — identities are marked with \u2261 and are the expansion and factorisation patterns stated as facts. The practical test: an equation you solve; an identity you verify or use. Questions of the form \u201cshow that \u2026\u201d are identity questions — expand or factorise one side into the other, no solving allowed, and saying \u201cx = 5\u201d there is a category error that costs the mark.',
+        text: 'Two brackets multiply by applying the law twice: (x + 2)(x + 3) = x(x + 3) + 2(x + 3) = x² + 3x + 2x + 6, which collects to x² + 5x + 6. Four products — one for each pairing of an outside term with an inside term; first, outer, inner, last, as a mnemonic to check all four. Notice the pattern: the middle coefficient 5 is the sum of the bracket numbers, the final term 6 their product. The area model in the figure shows why the pattern must hold — one rectangle, sliced four ways, is the whole computation in a picture.',
+      },
+      {
+        kind: 'figure',
+        caption:
+          'The grammar of expressions, drawn. LEFT — the anatomy of 3x² − 5x + 7: three terms with signs attached, each with a coefficient (3, −5, 7) and a degree (2, 1, 0); the expression’s degree is the highest, 2. RIGHT — the area model of (x + 3)(x + 2): one rectangle sliced into four products x², 2x, 3x and 6, totalling x² + 5x + 6 — middle coefficient the sum, end term the product.',
+        afterConcept: 2,
+        svg: `<svg viewBox="0 0 880 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Left panel labels the terms, coefficients and degrees of the expression 3x squared minus 5x plus 7; right panel shows the area model of the product of x plus 3 and x plus 2 as four rectangles">
+  <style>.lbl{font-family:Georgia,serif;font-size:14px;fill:#3f3f46}.big{font-size:18px;font-weight:bold}.sm{font-size:12px;fill:#52525b}.expr{font-family:Georgia,serif;font-size:27px;font-weight:bold;fill:#18181b}.mid{font-family:Georgia,serif;font-size:13.5px;font-weight:bold;fill:#3f3f46;text-anchor:middle}.box{fill:none;stroke:#c8c8d0;stroke-width:1.6;stroke-dasharray:5 4}.cell{font-family:Georgia,serif;font-size:19px;font-weight:bold;fill:#3f3f46;text-anchor:middle}</style>
+  <rect x="24" y="52" width="404" height="352" rx="12" class="box"/>
+  <text class="lbl big" x="40" y="78">The anatomy of an expression</text>
+  <text class="sm" x="40" y="96">3x² − 5x + 7 — three terms, each with its sign</text>
+  <rect x="36" y="112" width="120" height="26" rx="8" fill="#fafafa" stroke="#e11d48" stroke-width="1.8"/>
+  <text class="mid" x="96" y="130">TERM 1 · 3x²</text>
+  <rect x="166" y="112" width="120" height="26" rx="8" fill="#fafafa" stroke="#7c3aed" stroke-width="1.8"/>
+  <text class="mid" x="226" y="130">TERM 2 · −5x</text>
+  <rect x="296" y="112" width="120" height="26" rx="8" fill="#fafafa" stroke="#8a8a93" stroke-width="1.8"/>
+  <text class="mid" x="356" y="130">TERM 3 · 7</text>
+  <line x1="96" y1="138" x2="96" y2="156" stroke="#8a8a93" stroke-width="1.6"/>
+  <line x1="226" y1="138" x2="226" y2="156" stroke="#8a8a93" stroke-width="1.6"/>
+  <line x1="356" y1="138" x2="356" y2="156" stroke="#8a8a93" stroke-width="1.6"/>
+  <text class="expr" x="96" y="182" text-anchor="middle">3x²</text>
+  <text class="expr" x="226" y="182" text-anchor="middle">− 5x</text>
+  <text class="expr" x="356" y="182" text-anchor="middle">+ 7</text>
+  <text class="sm" x="96" y="208" text-anchor="middle">coefficient 3 · degree 2</text>
+  <text class="sm" x="226" y="208" text-anchor="middle">coefficient −5 · degree 1</text>
+  <text class="sm" x="356" y="208" text-anchor="middle">constant · degree 0</text>
+  <text class="sm" x="40" y="244">the sign belongs to the term that follows it — −5x is one term</text>
+  <rect x="40" y="262" width="372" height="126" rx="10" fill="#fafafa" stroke="#c8c8d0" stroke-width="1.4"/>
+  <text class="mid" x="226" y="286" style="font-size:14px">Like terms — same letters, same powers</text>
+  <text class="sm" x="56" y="314">5x and −2x · LIKE — both are “some number of x”</text>
+  <text class="sm" x="56" y="338">5x and 5x² · NOT like — the powers differ</text>
+  <text class="sm" x="56" y="362">3xy and 3x · NOT like — the letters differ</text>
+  <rect x="452" y="52" width="404" height="352" rx="12" class="box"/>
+  <text class="lbl big" x="468" y="78">The area model of (x + 3)(x + 2)</text>
+  <text class="sm" x="468" y="96">one rectangle, four slices — the distributive law drawn</text>
+  <text class="mid" x="615" y="112">x</text>
+  <text class="mid" x="725" y="112">2</text>
+  <text class="mid" x="527" y="172">x</text>
+  <text class="mid" x="527" y="247">3</text>
+  <rect x="540" y="120" width="150" height="95" fill="#fff1f2" stroke="#e11d48" stroke-width="2"/>
+  <text class="cell" x="615" y="175">x²</text>
+  <rect x="690" y="120" width="70" height="95" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.8"/>
+  <text class="cell" x="725" y="175">2x</text>
+  <rect x="540" y="215" width="150" height="55" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.8"/>
+  <text class="cell" x="615" y="248">3x</text>
+  <rect x="690" y="215" width="70" height="55" fill="#f4f4f5" stroke="#c8c8d0" stroke-width="1.8"/>
+  <text class="cell" x="725" y="248">6</text>
+  <text class="sm" x="468" y="305">total area = x² + 2x + 3x + 6 = x² + 5x + 6</text>
+  <text class="sm" x="468" y="330">middle coefficient 5 = 3 + 2 — the SUM of the bracket numbers</text>
+  <text class="sm" x="468" y="352">end term 6 = 3 × 2 — the PRODUCT of the bracket numbers</text>
+  <text class="sm" x="468" y="380">sliced four ways or computed by algebra — same rectangle, same total</text>
+</svg>`,
+      },
+      {
+        kind: 'derivation',
+        title: 'The perfect square, derived',
+        statement:
+          'Squaring a sum produces three terms, never two: the identity (a + b)² = a² + 2ab + b² follows in four short steps from the distributive law.',
+        prerequisites: ['The distributive law', 'Two brackets expand into four products'],
+        steps: [
+          {
+            label: 'Write the square as a product',
+            formula: '$(a + b)^2 = (a + b)(a + b)$',
+            explanation: 'Squaring means multiplying by itself — no new rule needed.',
+          },
+          {
+            label: 'Distribute once',
+            formula: '$= a(a + b) + b(a + b)$',
+            explanation: 'The left bracket is a sum, so each of its terms multiplies the second bracket.',
+          },
+          {
+            label: 'Distribute again',
+            formula: '$= a \\cdot a + a \\cdot b + b \\cdot a + b \\cdot b$',
+            explanation: 'Each outside term now meets both inside terms — four products, exactly as the area model shows.',
+          },
+          {
+            label: 'Collect like terms',
+            formula: '$= a^2 + 2ab + b^2$',
+            explanation: 'The cross-products ab and ba are like terms — the commutative law makes them equal — so they merge into 2ab, the two strips of the picture.',
+          },
+        ],
+        result:
+          '(a + b)² = a² + 2ab + b². With a minus the same steps give (a − b)² = a² − 2ab + b². Read backwards these are factorising patterns: a² + 6a + 9 = (a + 3)² because 6a is exactly 2 × a × 3 — and announcing (a + b)² = a² + b² forgets the two strips.',
+      },
+      { kind: 'heading', text: 'Factorising: running the film backwards' },
+      {
+        kind: 'para',
+        text: 'Factorising rewrites a sum as a product — expansion reversed. It matters because products have a property sums lack: a product is zero the moment any factor is zero, the hinge the quadratics lesson will swing. The order of attack is fixed. First, take out the highest common factor. In 6x² + 9x both terms carry x, and 6 and 9 share 3, so 6x² + 9x = 3x(2x + 3) — verified instantly by expanding back. This generalises the highest-common-factor reasoning of the number-system lesson, where the HCF of two whole numbers comes from prime factors; here the idea runs over letters too. Make it the first move even when a fancier pattern waits: 4x² − 100 = 4(x² − 25) = 4(x − 5)(x + 5) needs both, in that order.',
+      },
+      {
+        kind: 'para',
+        text: 'Second, recognise the named patterns. The difference of squares: a² − b² = (a − b)(a + b) — expand the right side and the middle terms cancel like a film run forwards and backwards. So x² − 49 = (x − 7)(x + 7) and 9x² − 25 = (3x − 5)(3x + 5). The perfect square runs the derivation above in reverse: a² + 6a + 9 = (a + 3)². The warning cuts both ways: a difference of squares always factorises; a sum of squares a² + b² does not — no rearrangement of signs will ever do it.',
+      },
+      {
+        kind: 'formula',
+        name: 'Difference of squares',
+        latex: 'a^2 - b^2 = (a - b)(a + b)',
+        meaning: 'The middle terms cancel on expansion. A sum of squares has no factorisation over the ordinary numbers — only the difference does.',
+      },
+      {
+        kind: 'para',
+        text: 'Third, for expressions of the shape x² + bx + c, hunt a pair of numbers whose product is c and whose sum is b. In x² − x − 12 the pair is −4 and 3: (−4) × 3 = −12, −4 + 3 = −1, so x² − x − 12 = (x − 4)(x + 3). The trick works because (x + m)(x + n) = x² + (m + n)x + mn — m and n must reproduce b and c. Expanding back takes ten seconds and proves the factorisation: make the check automatic, because a wrong factorisation silently poisons every equation solved with it later.',
+      },
+      { kind: 'heading', text: 'Rearranging formulae: solving with a letter as the target' },
+      {
+        kind: 'para',
+        text: 'A formula relates several quantities, and rearranging it means making a chosen letter — the subject — stand alone. The method is equation-solving with a different target: undo, in reverse order, the operations applied to the subject, performing each undoing on both sides so the balance survives. From v = u + at: the recipe that built the subject read multiply a by t, then add u; reversed — subtract u, then divide by a — it lands on t = (v − u)/a. The last operation applied is always the first undone: dividing by a before subtracting u would tangle u with a.',
+      },
+      {
+        kind: 'para',
+        text: 'When the target letter appears in more than one term, collect those terms first and factor the letter out — the distributive law in the extracting direction. From ax − bx = c: x appears twice, so read the left side as x(a − b) and only then divide, giving x = c/(a − b). Two disciplines govern every rearrangement: whatever is done to one side is done to the other — an equation is a balance, not a conveyor belt for symbols — and the result is verified by substituting convenient numbers into both the original and the rearranged formula; if they disagree, the rearrangement is wrong no matter how plausible it looked.',
+      },
+      { kind: 'heading', text: 'Identities versus equations: two different contracts' },
+      {
+        kind: 'para',
+        text: 'An equation is a claim true for particular values: 2x = 10 holds only at x = 5, and solving is the search for those values. An identity is a claim true for every value: 2(x + 3) = 2x + 6 whatever x is, and (a − b)(a + b) = a² − b² whatever a and b are. Identities are the patterns of this lesson stated as permanent facts, often marked with the triple bar ≡. Robert Recorde introduced the equals sign in his 1557 book The Whetstone of Witte, choosing a pair of parallel lines because no two things could be more equal; the identity sign is his symbol under the strictest reading. The distinction changes how you answer: an equation you solve; an identity you verify — expand or factorise one side into the other, never solve. A question phrased “show that …” is an identity question, and answering it with a particular value of x is a category error.',
+      },
+      { kind: 'heading', text: 'Three worked examples' },
+      {
+        kind: 'example',
+        title: 'One expression, all four commands',
+        steps: [
+          'Identify what is asked: simplify 3x(2x − 5) − 2x(x − 4) + 7x fully.',
+          'Expand with the distributive law, signs attached: 3x × 2x = 6x², 3x × (−5) = −15x, −2x × x = −2x², −2x × (−4) = +8x. The expression becomes 6x² − 15x − 2x² + 8x + 7x.',
+          'Collect like terms: the x² family holds (6 − 2)x² = 4x²; the x family holds −15 + 8 + 7 = 0, so the x-terms cancel completely.',
+          'State the result: the expression simplifies to 4x² — and the vanishing middle is a signal to look for structure: 4x² = (2x)².',
+          'Reuse the shapes in a rearrangement: from y = 4x² − k, undo in reverse order — add k, divide by 4, square-root — giving x = ±√((y + k)/4), both roots kept.',
+        ],
       },
       {
         kind: 'example',
-        title: 'Worked Example — One expression, all four commands',
+        title: 'Factorise completely: x⁴ − 16',
         steps: [
-          'Start: 3x(2x \u2212 5) \u2212 2x(x \u2212 4) + 7x.',
-          'Expand: 6x\u00b2 \u2212 15x \u2212 2x\u00b2 + 8x + 7x — each bracket product keeps its sign.',
-          'Collect like terms: (6 \u2212 2)x\u00b2 + (\u221215 + 8 + 7)x = 4x\u00b2 + 0x = 4x\u00b2.',
-          'Factorise the result: 4x\u00b2 = 4x \u00b7 x, so 4x\u00b2 = (2x)\u00b2 \u2212 0\u00b2 — a difference of squares with b = 0; more usefully, its highest common factor form is 4x\u00b2 = 4x(x).',
-          'Rearrange practice with the same shapes: from 4x\u00b2 \u2212 k = y, add k and square-root: x = \u00b1\u221a((y + k)/4) — reverse order, symmetric operations, both roots.',
+          'Identify what is asked: rewrite x⁴ − 16 as a product that cannot be broken further.',
+          'First move — highest common factor: x⁴ and 16 share nothing beyond 1, so go straight to the named patterns.',
+          'Recognise the difference of squares: x⁴ = (x²)² and 16 = 4², so x⁴ − 16 = (x² − 4)(x² + 4).',
+          'Keep going: the first factor is itself a difference of squares, x² − 4 = (x − 2)(x + 2). The second, x² + 4, is a sum of squares and stops there.',
+          'State the result: x⁴ − 16 = (x − 2)(x + 2)(x² + 4). Verify by expanding back in pairs: (x − 2)(x + 2) = x² − 4, then (x² − 4)(x² + 4) = x⁴ − 16. Stopping a stage early is half an answer — factorise until nothing factors.',
         ],
       },
+      {
+        kind: 'example',
+        title: 'A tank formula, rearranged and used',
+        steps: [
+          'Identify what is asked: the total surface of a closed cylindrical tank of radius r and height h is S = 2πr² + 2πrh; make h the subject, then find h when S = 1,848 cm² and r = 14 cm, taking π = 22/7.',
+          'Concept: h is multiplied by 2πr after the term 2πr² was added — the last operation applied is the addition, so undo it first: S − 2πr² = 2πrh.',
+          'Divide both sides by 2πr (r must be non-zero, which a tank radius always is): h = (S − 2πr²)/(2πr).',
+          'Substitute: 2πr² = 2 × (22/7) × 14 × 14 = 2 × 22 × 2 × 14 = 1,232, so the numerator is 1,848 − 1,232 = 616. The denominator is 2 × (22/7) × 14 = 88.',
+          'Calculate: h = 616/88 = 7.',
+          'State the result: h = 7 cm — a tank 28 cm across and 7 cm tall, whose ends contribute 1,232 cm² and curved side 616 cm², summing to 1,848: the check that certifies the rearrangement.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Where the grammar pays',
+        text: 'Every formula-driven subject rearranges exactly this way — t = (v − u)/a above is kinematics doing algebra. Code and spreadsheets follow the same order of operations and distributive law. The quantity-comparison lessons open their decision ladder with the rung “combine like terms” — this lesson’s first command under time pressure — and the mental-arithmetic lesson’s tricks are these three laws run on numbers.',
+        tone: 'insight',
+      },
+      {
+        kind: 'callout',
+        title: 'Common pitfalls',
+        text: 'Dropping a minus while collecting or expanding — signs travel attached to their terms. Multiplying only the first inside term: the law hits everything inside, and a minus in front of a bracket flips every sign within. Announcing (a + b)² = a² + b² — the most-exploited error in the subject. Skipping the highest-common-factor check, and stopping a factorisation one stage early. Treating 3x² as (3x)² — the power binds only the letter. Sliding symbols across without operating on both sides. And solving when the question says “show that”: identities are verified, never solved.',
+        tone: 'warn',
+      },
+      {
+        kind: 'callout',
+        title: 'Study path',
+        text: 'Prerequisites: arithmetic with negatives and fractions, and the mental-arithmetic lesson, whose laws this lesson formalises. Follow immediately with the quadratics lesson — the factor-pair hunt becomes its first solving method — then the modulus and logarithm inequalities, where manipulation fluency decides speed. The same grammar runs through every formula-driven subject in this library. Primary reading: OpenStax, Intermediate Algebra 2e, ch.1 “The Language of Algebra” and the factoring chapters (openstax.org, CC BY-NC-SA).',
+        tone: 'path',
+      },
+      { kind: 'heading', text: 'Key terms' },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Term', def: 'A piece of an expression separated by plus or minus signs; its sign travels with it.' },
+          { term: 'Coefficient', def: 'The number multiplying the letters of a term, sign included.' },
+          { term: 'Degree', def: 'The total exponent of a term’s variables; the expression’s degree is the highest term degree.' },
+          { term: 'Like terms', def: 'Terms with exactly the same letters raised to exactly the same powers — only these may be collected.' },
+          { term: 'Distributive law', def: 'a(b + c) = ab + ac: expanding read forwards, factorising read backwards.' },
+          { term: 'Factorise', def: 'Rewrite a sum as a product: highest common factor first, then named patterns, then the factor-pair hunt.' },
+          { term: 'Identity', def: 'A statement true for every value, marked ≡; verified by expansion or factorisation, never solved.' },
+          { term: 'Subject', def: 'The letter standing alone after a formula is rearranged, isolated by inverse operations in reverse order.' },
+        ],
+      },
+      { kind: 'heading', text: 'Check your understanding' },
       {
         kind: 'quiz',
         items: [
           {
-            q: 'In the expression 5x\u00b3 \u2212 2x + 8, what is the coefficient of x and the degree of the expression?',
+            q: 'In 5x³ − 2x + 8, what are the coefficient of x and the degree of the expression?',
             options: [
-              'coefficient \u22122; degree 3',
+              'coefficient −2; degree 3',
               'coefficient 2; degree 3',
-              'coefficient \u22122; degree 8',
+              'coefficient −2; degree 8',
               'coefficient 5; degree 3',
             ],
             answer: 0,
-            explain: 'The x-term is \u22122x, so its coefficient is \u22122 (sign included); the highest term degree is 3, which is the expression\u2019s degree.',
+            explain: 'The x-term is −2x: coefficient −2, sign included. Term degrees are 3, 1 and 0; the expression takes the highest, 3. Option D quotes the leading coefficient of 5x³ instead of the asked x-term.',
           },
           {
-            q: 'Expand and simplify (x \u2212 3)(x + 5).',
-            options: [
-              'x\u00b2 + 2x \u2212 15',
-              'x\u00b2 \u2212 2x \u2212 15',
-              'x\u00b2 + 8x \u2212 15',
-              'x\u00b2 \u2212 15',
-            ],
+            q: 'Which expression equals (2x + 3)²?',
+            options: ['4x² + 12x + 9', '4x² + 9', '4x² + 6x + 9', '2x² + 12x + 9'],
             answer: 0,
-            explain: 'Four products: x\u00b2 + 5x \u2212 3x \u2212 15 = x\u00b2 + 2x \u2212 15. Middle coefficient = 5 + (\u22123) = 2; constant = 5 \u00d7 (\u22123) = \u221215.',
+            explain: 'Apply (a + b)² = a² + 2ab + b² with a = 2x, b = 3: middle term 2 × 2x × 3 = 12x. Option B forgets the middle; option C halves it; option D fails to square the coefficient.',
           },
           {
-            q: 'Factorise 4x\u00b2 \u2212 25.',
-            options: [
-              '(2x \u2212 5)(2x + 5)',
-              '(4x \u2212 5)(x + 5)',
-              '(2x \u2212 5)\u00b2',
-              'cannot be factorised',
-            ],
+            q: 'Factorise 4x² − 25.',
+            options: ['(2x − 5)(2x + 5)', '(4x − 5)(x + 5)', '(2x − 5)²', 'not factorable'],
             answer: 0,
-            explain: 'Difference of squares: 4x\u00b2 = (2x)\u00b2 and 25 = 5\u00b2, so a\u00b2 \u2212 b\u00b2 = (a \u2212 b)(a + b) with a = 2x, b = 5.',
+            explain: '4x² = (2x)² and 25 = 5²: difference of squares with a = 2x, b = 5. Option C is the perfect square — it expands to 4x² − 20x + 25; option B does not multiply back.',
+          },
+          {
+            q: 'Factorise x² − x − 12.',
+            options: ['(x − 4)(x + 3)', '(x + 4)(x − 3)', '(x − 6)(x + 2)', '(x − 12)(x + 1)'],
+            answer: 0,
+            explain: 'The pair must multiply to −12 and add to −1: −4 and 3. Every wrong option has the right product but the wrong sum — (x + 4)(x − 3) would give a middle term of +x.',
           },
           {
             q: 'Rearrange p = 2(a + b) to make b the subject.',
-            options: [
-              'b = p \u2212 2a',
-              'b = (p \u2212 2a)/2',
-              'b = p/(2a)',
-              'b = 2(p \u2212 a)',
-            ],
+            options: ['b = p − 2a', 'b = (p − 2a)/2', 'b = p/(2a)', 'b = 2(p − a)'],
             answer: 1,
-            explain: 'Divide both sides by 2 first (a + b = p/2), then subtract a: b = p/2 \u2212 a, which equals (p \u2212 2a)/2. Reverse order, symmetric operations.',
+            explain: 'Divide by 2 first: a + b = p/2; then subtract a: b = p/2 − a = (p − 2a)/2. Option A skips the division — the 2 multiplies both a and b, so undoing must touch both.',
           },
           {
             q: 'Which statement is an identity rather than an equation?',
-            options: [
-              '3x + 1 = 10',
-              'x\u00b2 = 16',
-              '(x + 1)\u00b2 \u2261 x\u00b2 + 2x + 1',
-              '2x \u2212 4 = 0',
-            ],
+            options: ['3x + 1 = 10', 'x² = 16', '(x + 1)² = x² + 2x + 1', '2x − 4 = 0'],
             answer: 2,
-            explain: 'It holds for every x — an expansion pattern stated as a fact, marked with \u2261. The others hold only for specific values and are solved.',
+            explain: 'It holds for every x — an expansion pattern stated as a permanent fact, the strict contract the ≡ sign flags. The others hold only for particular values and are solved for them.',
+          },
+          {
+            q: 'Making x the subject of ax − bx = c gives:',
+            options: ['x = c/(a − b)', 'x = c − a − b', 'x = c/(a + b)', 'x = c − (a − b)'],
+            answer: 0,
+            explain: 'The letter appears twice: collect first, x(a − b) = c, then divide by (a − b). Option B subtracts the letters as if they were numbers; option C ignores the minus between the terms.',
           },
         ],
       },
-      {
-        kind: 'callout',
-        title: 'Common Pitfalls',
-        tone: 'warn',
-        text: 'Dropping a minus while collecting or expanding — carry signs attached to their terms. Multiplying only the first inside term by the outside bracket — the distributive law hits everything inside. Forgetting the highest common factor check before fancy factorising. Announcing (a + b)\u00b2 = a\u00b2 + b\u00b2 — the middle term 2ab is the most-exploited error in algebra. Rearranging by moving symbols across without operating on both sides. Solving when the question says \u201cshow that\u201d — identity verification needs expansion or factorisation, not a solution. And treating x\u00b2 + 5x + 6 as (x + 6)(x + 1): the product 6 pairs with sum 5 via 2 and 3, not 6 and 1.',
-      },
-      {
-        kind: 'callout',
-        title: 'Where to go next',
-        tone: 'path',
-        text: 'Prerequisites: arithmetic fluency with negatives and fractions. Follow immediately with the quadratics lesson — this lesson\u2019s factorising is that lesson\u2019s first solving method — and then with simultaneous equations and graph-sketching topics. Primary reading: OpenStax, Intermediate Algebra 2e, ch.1 \u201cThe Language of Algebra\u201d for the vocabulary and ch.9\u2019s factoring review for the patterns (openstax.org, CC BY-NC-SA).',
-      },
-      { kind: 'heading', text: 'Five-Minute Recap' },
+      { kind: 'heading', text: 'Five-minute recap' },
       { kind: 'list', ordered: true, items: [
-        'Anatomy: terms, coefficients (sign included), degrees (highest wins).',
-        'Collect like terms — identical letter parts only, signs carried.',
-        'Expand with the distributive law; double brackets give four products.',
-        'Factorise in order: common factor, named patterns, factor pair of c summing to b.',
-        'Rearrange: reverse order, symmetric operations, factor the target out when it repeats.',
-        'Equations are solved; identities (\u2261) are shown — different commands entirely.',
+        'Terms carry their signs; the coefficient is the number with the letters; the degree is the highest exponent among the terms.',
+        'Only the commutative, associative and distributive laws license a rewrite — every move is one of these three.',
+        'Expand: the outside factor meets every inside term; two brackets give four products.',
+        '(a + b)² = a² + 2ab + b² — never forget the middle term.',
+        'Factorise in order: highest common factor, difference of squares, perfect square, then the pair multiplying to c and summing to b — and check by expanding back.',
+        'Rearrange by undoing the last operation first, symmetrically on both sides; collect and factor when the target appears twice.',
+        'Equations are solved for particular values; identities are shown for all values — and simplify, expand, factorise and rearrange are different commands.',
       ] },
     ],
   },

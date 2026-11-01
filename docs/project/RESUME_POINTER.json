@@ -29,8 +29,8 @@
     "directive": "docs/project/TEXTBOOK-QUALITY-DIRECTIVE.md",
     "ledger": "docs/project/TEXTBOOK_REWRITE_LEDGER.md",
     "currentSubject": "mathematics-unified",
-    "lastCompletedUnit": "2026-11-02: fnd-percentage-ratio-mental-math (§76.1) rewritten 883 → 2,811 words (first queue item); excluded-source math-derivative-as-limit also upgraded 983 → 3,416 but stays EXCLUDED per dedup",
-    "nextUnit": "mathematics-unified queue #2: math-algebra-notation-manipulation (§71.1, 1,409 words, grade C) — pre-flight: verify LIVE in dedup.ts, dedup greps, then rewrite per the ledger's quality gates"
+    "lastCompletedUnit": "2026-11-01 ~22:55 IST: math-algebra-notation-manipulation (§71.1) rewritten in place 1,409 → 3,496 words EXACT/17min (queue #2; Baghdad 820 CE opening, two-panel anatomy + area-model SVG, (a+b)² derivation, 3 worked examples, 7-question quiz, carve evidence recorded in ledger)",
+    "nextUnit": "mathematics-unified queue #3: math-quadratics-completing-square (§71.2, 1,471 words, grade C) — pre-flight: verify LIVE in dedup.ts, dedup greps (factorising/quadratic formula territory), then rewrite per the ledger's quality gates"
   },
   "pipelineInvariant": [
     "bun scripts/serialize-content.ts",
