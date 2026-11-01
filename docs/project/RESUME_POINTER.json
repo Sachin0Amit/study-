@@ -16,13 +16,13 @@
     "nextUnit": "ku-biochemistry Ch3 §3.5 Nitrogen Metabolism & the Urea Cycle per §6.2 tree (transamination, oxidative deamination, the urea cycle reaction-by-reaction with its 4-ATP bill, inherited hyperammonemias, creatine/amine messengers; carve vs cell-bio integration lesson which owns the alanine-glucose cycle framing, and cite §3.4's alanine door) — completes Ch3 and the ku-biochemistry subject (3 ch · 16 lessons), then MASTERSYLLABUS-DONE check, then next Life Sciences subject per §4 order (ku-genetics-heredity gaps per §6.3)"
   },
   "scheduledJobs": {
-    "masterLoop": { "jobId": 492782, "cadence": "hourly", "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8" },
-    "webDevReview": { "jobId": 492783, "cadence": "every 15 min", "kind": "webDevReview" },
+    "masterLoop": { "jobId": 493829, "cadence": "hourly at :00 IST", "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8", "note": "recreated 2026-11-02 ~23:20 IST with NO-CEILING charter + born-textbook-quality rule for all future content (replaces disabled 492782)" },
+    "webDevReview": { "jobId": 493831, "cadence": "every 15 min at :07/:22/:37/:52 IST", "kind": "webDevReview", "note": "recreated 2026-11-02 ~23:20 IST (replaces 492783)" },
     "textbookQualityLoop": {
-      "jobId": 493731,
-      "cadence": "hourly at :30",
+      "jobId": 493826,
+      "cadence": "hourly at :30 IST",
       "workflow": "docs/project/TEXTBOOK-QUALITY-DIRECTIVE.md + docs/project/TEXTBOOK_REWRITE_LEDGER.md",
-      "scope": "pedagogical rewrites of LIVE lessons, mathematics first → end of library; independent of the master loop's new-lesson program (the two share the repo via git-first checks)"
+      "scope": "pedagogical rewrites of LIVE lessons A-Z (mathematics first → end of library, no skipping) with NO word ceiling, plus re-expansion of ceiling-trimmed lessons (ledger 3b + biochemistry flags); future content held to the same standard (replaces 493731)"
     }
   },
   "textbookQualityProgram": {
@@ -30,7 +30,7 @@
     "ledger": "docs/project/TEXTBOOK_REWRITE_LEDGER.md",
     "currentSubject": "mathematics-unified",
     "lastCompletedUnit": "2026-11-01 ~22:55 IST: math-algebra-notation-manipulation (§71.1) rewritten in place 1,409 → 3,496 words EXACT/17min (queue #2; Baghdad 820 CE opening, two-panel anatomy + area-model SVG, (a+b)² derivation, 3 worked examples, 7-question quiz, carve evidence recorded in ledger)",
-    "nextUnit": "mathematics-unified queue #3: math-quadratics-completing-square (§71.2, 1,471 words, grade C) — pre-flight: verify LIVE in dedup.ts, dedup greps (factorising/quadratic formula territory), then rewrite per the ledger's quality gates"
+    "nextUnit": "mathematics-unified queue #3: math-quadratics-completing-square (§71.2, 1,471 words, grade C) — then queue row 3b: re-expand math-algebra-notation-manipulation (restore the ~768 words cut under the former 3,500 ceiling). NO WORD CEILING from 2026-11-02: rewrites are as elaborative as genuine teaching requires (directive §12). Pre-flight: verify LIVE in dedup.ts, dedup greps (factorising/quadratic formula territory), then rewrite per the ledger's quality gates"
   },
   "pipelineInvariant": [
     "bun scripts/serialize-content.ts",
@@ -54,7 +54,8 @@
     "never run bun run build (dev :3000 only, port 3000, watchdog recovers OOM in ~90s)",
     "PAT is inline-only — never written to any file or committed",
     "lesson text must not contain exam names; dedup grep before authoring; word counts declared == actual exactly",
-    "two concurrent scheduled jobs work this repo — always check git status/log first and leave the tree clean",
+    "NO WORD CEILING (user directive 2026-11-02): every lesson, existing or future, is as elaborative as genuine teaching requires — never truncate substance to fit a count, never pad; textbook style (theory + explained definitions), never 'definition + insight' notes",
+    "three concurrent scheduled jobs work this repo (master :00, textbook :30, webDevReview :07/:22/:37/:52) — always check git status/log first and leave the tree clean; a trigger may fail with 'model concurrency limit exceeded' if another agent session is active — the job stays enabled and fires again on its next boundary",
     "IST dating: the sandbox clock is UTC/+08:00 — convert honestly to Asia/Kolkata, never copy a prior row's date"
   ]
 }
