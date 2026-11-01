@@ -1,5 +1,5 @@
 /**
- * Knowledge Universe — Cell & Molecular Biology — Chapter 01: The Cell: Structure & Signaling
+ * Knowledge Universe — Cell & Molecular Biology — Chapter 02: The Cell: Structure & Signaling
  * 4 lessons · ~8,471 words
  * field: Cell & Molecular Biology
  * legacy sources: life-sciences.ts, x14-molecular.ts, x55-crossverify-pass.ts
@@ -11,14 +11,14 @@
  * Taxonomy match: branches [Cell Biology, Cell Signaling]
  *
  * Lessons (snapshot at reorganization):
- *   01.1 bio-cell-signaling-transduction — Cell Signaling: Reception, Transduction, Response
- *   01.2 bio-cell-biomolecules — The Cell and Its Biomolecules: From Membranes to Macromolecules
- *   01.3 bio-cytoskeleton-cell-motility — The Cytoskeleton and Cell Motility: Tubes, Ropes and Molecular Walkers
- *   01.4 bio-cell-cycle-mitosis-checkpoints — The Cell Cycle: Phases, Checkpoints and How Cells Die
+ *   02.1 bio-cell-signaling-transduction — Cell Signaling: Reception, Transduction, Response
+ *   02.2 bio-cell-biomolecules — The Cell and Its Biomolecules: From Membranes to Macromolecules
+ *   02.3 bio-cytoskeleton-cell-motility — The Cytoskeleton and Cell Motility: Tubes, Ropes and Molecular Walkers
+ *   02.4 bio-cell-cycle-mitosis-checkpoints — The Cell Cycle: Phases, Checkpoints and How Cells Die
  */
 import type { KnowledgeTopic } from '../../types'
 
-export const cellMolecularBiologyCh01: KnowledgeTopic[] = [
+export const cellMolecularBiologyCh02: KnowledgeTopic[] = [
   {
     id: 'bio-cell-signaling-transduction',
     title: 'Cell Signaling: Reception, Transduction, Response',

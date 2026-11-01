@@ -1,5 +1,5 @@
 /**
- * Knowledge Universe — Cell & Molecular Biology — Chapter 02: Molecular Biology of the Gene
+ * Knowledge Universe — Cell & Molecular Biology — Chapter 03: Molecular Biology of the Gene
  * 6 lessons · ~13,413 words
  * field: Cell & Molecular Biology
  * legacy sources: x14-molecular.ts, x55-crossverify-pass.ts
@@ -11,16 +11,16 @@
  * Taxonomy match: branches [Molecular Genetics, Gene Regulation]
  *
  * Lessons (snapshot at reorganization):
- *   02.1 bio-dna-structure-replication — DNA: The Molecule of Heredity, Structure and Replication
- *   02.2 bio-transcription-rna-processing — Transcription: Reading Genes into RNA
- *   02.3 bio-translation-genetic-code — The Genetic Code and Translation: RNA to Protein
- *   02.4 bio-mutations-dna-repair — Mutations and the Repair Systems That Contain Them
- *   02.5 bio-gene-regulation-epigenetics — Gene Regulation: From Operons to Epigenetics
- *   02.6 bio-chromatin-nucleosome-packaging — Chromatin and the Nucleosome: How Two Metres of DNA Fit Into a Nucleus
+ *   03.1 bio-dna-structure-replication — DNA: The Molecule of Heredity, Structure and Replication
+ *   03.2 bio-transcription-rna-processing — Transcription: Reading Genes into RNA
+ *   03.3 bio-translation-genetic-code — The Genetic Code and Translation: RNA to Protein
+ *   03.4 bio-mutations-dna-repair — Mutations and the Repair Systems That Contain Them
+ *   03.5 bio-gene-regulation-epigenetics — Gene Regulation: From Operons to Epigenetics
+ *   03.6 bio-chromatin-nucleosome-packaging — Chromatin and the Nucleosome: How Two Metres of DNA Fit Into a Nucleus
  */
 import type { KnowledgeTopic } from '../../types'
 
-export const cellMolecularBiologyCh02: KnowledgeTopic[] = [
+export const cellMolecularBiologyCh03: KnowledgeTopic[] = [
   {
     id: 'bio-dna-structure-replication',
     title: 'DNA: The Molecule of Heredity, Structure and Replication',

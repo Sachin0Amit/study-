@@ -1,4 +1,4 @@
-import type { KnowledgeTopic } from '../../types'
+import type { KnowledgeTopic } from '../types'
 
 /* ==================================================================
  * ATTIC (2026-11-02) — SUPERSEDED DRAFT, NEVER WIRED

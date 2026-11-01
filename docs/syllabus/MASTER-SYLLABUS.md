@@ -182,15 +182,270 @@ Books already at the bar are marked DONE in the ledger without rework.
 
 ## 4. Subject Registry & Schedule Order
 
-Order: **A. the three new subjects (2.1 → 2.2 → 2.3)**, then **B. the 101 existing subjects in
-knowledge-meta.json order** (ku-study-skills first … ku-career-communication last), each to the §3
-bar. Tracks (math-master, phys-master, chem-complete, aptitude-complete course books,
-english-complete …) keep their own maintenance loops; this program's Chapter-completeness research
-step feeds them targets when their subjects come up.
+Order (updated 2026-11-02 per the user's directive: *"begin with life science field"*):
+**A. the Life Sciences field — 13 subjects in §6's ladder order** (Cell & Molecular Biology →
+Biochemistry → Genetics & Heredity → Human Anatomy & Physiology → Botany → Zoology → Evolutionary
+Biology → Microbiology & Immunology → Ecology & Conservation → Developmental Biology → Marine
+Biology → Bioinformatics & Genomics → Synthetic Biology), then **B. the three aptitude-family
+subjects (§2.1 → §2.2 → §2.3)** — QA resumes at Ch1 §1.6 Surds & Indices after its pause, then
+**C. the remaining ~88 ku-subjects in knowledge-meta.json order**, each to the §3 bar. Tracks
+(math-master, phys-master, chem-complete, english-complete …) keep their own maintenance loops;
+this program's Chapter-completeness research step feeds them targets when their subjects come up.
 
 ---
 
-## 5. Progress Ledger (append-only — newest last)
+## 5. The Subject → Exam Map (full library scan, 2026-11-02)
+
+Every subject currently in the Library, and — per the user's mandate — **the exams that ask it**.
+Source: the 59-exam curated corpus in `src/data/exams/` (hand-curated from official syllabus pages;
+see each exam's `sources` for the official pages used). Region key: 🇮🇳 India · 🇺🇸 US · 🇬🇧 UK ·
+🌍 Global · 🇦🇺 Australia · 🇨🇦 Canada · 🇸🇬 Singapore · 🇯🇵 Japan · 🇨🇳 China · 🇧🇷 South America.
+The exam↔topic ROUTING lives only in `src/data/exams/` + `topic-aliases.ts` (product rule: no exam
+names in lesson text).
+
+### 5.1 Foundations
+| Library subject | Asked in |
+|---|---|
+| Study Skills & Learning Science | (no exam tests it directly — the meta-subject that speeds every other line) |
+| Computer & Digital Literacy | IBPS PO 🇮🇳 (computer aptitude) · SSC CGL 🇮🇳 · UGC NET 🇮🇳 (paper I) · RBI Grade B 🇮🇳 |
+
+### 5.2 Aptitude & Test Preparation
+| Library subject | Asked in |
+|---|---|
+| Quantitative Aptitude | GATE (CSE/ECE/ME/EE/CE) 🇮🇳 · GMAT 🌍 + the quantitative layers of CAT 🇮🇳 · SAT 🇺🇸 · GRE 🌍 · ACT 🇺🇸 · UPSC Prelims 🇮🇳 · SSC CGL 🇮🇳 · IBPS PO 🇮🇳 · CUET 🇮🇳 · NDA/CDS 🇮🇳 · RBI Grade B 🇮🇳 |
+| Logical Reasoning | UPSC Prelims 🇮🇳 · CAT 🇮🇳 · SSC CGL 🇮🇳 · CUET 🇮🇳 · IBPS PO 🇮🇳 · BITSAT 🇮🇳 · CLAT 🇮🇳 · UCAT 🇬🇧 · UGC NET 🇮🇳 · VITEEE 🇮🇳 · RBI Grade B 🇮🇳 + abstract-reasoning layers of GRE 🌍 · GMAT 🌍 · LSAT 🇺🇸 |
+| General Awareness | SSC CGL 🇮🇳 (general awareness) · IBPS PO 🇮🇳 (general/economy/banking awareness) · RBI Grade B 🇮🇳 · UPSC Prelims 🇮🇳 (GS paper I) · CDS 🇮🇳 (general knowledge) · CLAT 🇮🇳 (current affairs + GK) |
+
+### 5.3 Life Sciences
+| Library subject | Asked in |
+|---|---|
+| Cell & Molecular Biology · Biochemistry · Genetics & Heredity · Human Anatomy & Physiology · Botany · Zoology · Ecology & Conservation · Evolutionary Biology | **NEET 🇮🇳** (the whole biology paper) · **CUET 🇮🇳** (biology) · **BITSAT 🇮🇳** · **KCET 🇮🇳 · MHT CET 🇮🇳 · VITEEE 🇮🇳 · WBJEE 🇮🇳** (biology option) · **AP Biology 🇺🇸 · A-Level Biology 🇬🇧 · IB Biology 🌍 · GCE A-Level H2 Biology 🇸🇬** · VCE/QCE/NSW HSC/Alberta Diploma 🇦🇺🇨🇦 (biology) · Gaokao 🇨🇳 (biology elective) · **MCAT 🇺🇸** (biological & biochemical foundations of living systems; psychological/social foundations pull Psychology + Sociology too) · ENEM 🇧🇷 (nature sciences) · EJU 🇯🇵 (science option) |
+| Marine Biology · Developmental Biology · Microbiology & Immunology | NEET 🇮🇳 + A-Level/IB/AP Biology 🌍 pull their chapters (human reproduction & development, microbes & disease); Marine Biology serves the biodiversity/environment layers |
+| Bioinformatics & Genomics · Synthetic Biology | university-entrance interviews + the genomics/biotech tools layers of NEET 🇮🇳 & AP/IB Biology 🌍 (modern-biology applications sections) — not directly examined as named subjects, they are the modern-biology context the exams point at |
+
+### 5.4 Natural Sciences
+| Library subject | Asked in |
+|---|---|
+| Physics (phys-master) | NEET · JEE Main · JEE Advanced · CUET · BITSAT · KCET · MHT CET · WBJEE · VITEEE 🇮🇳 · AP Physics 1 · A-Level Physics · IB Physics · GCE A-Level 🇸🇬 · VCE/QCE/NSW HSC/Alberta 🇦🇺🇨🇦 · Gaokao 🇨🇳 · MCAT (physics layer) |
+| Chemistry (chem-complete) | the same 19-exam set as Physics (19 mapped exams incl. NEET/JEE both tiers/IB/AP/A-Level/Gaokao) |
+| Mathematics (math-master) | JEE Main · JEE Advanced · SAT · ACT · CAT · SSC CGL · GRE · GATE (all papers) · CUET · IBPS PO · BITSAT · NDA · CLAT · GMAT · CA Foundation · A-Level Maths · AP Calculus AB/BC · AP Statistics · GCSE Maths · IB Math AA · GCE A-Level 🇸🇬 · KCET · VITEEE · VCE ×3 · QCE ×3 · WBJEE · EJU · NSW HSC ×2 · RBI Grade B · MHT CET · Alberta · Gaokao (44 mapped exam-subject pairs — the most-tested subject in the corpus) |
+| Neuroscience | VCE 🇦🇺 · QCE 🇦🇺 (psychology/biology intersection) + MCAT 🇺🇸 behavior layers |
+| Astronomy & Space Science · Earth & Atmospheric Sciences · Earth & Climate Science | UPSC Prelims 🇮🇳 GS · NDA/CDS 🇮🇳 general science · EJU 🇯🇵 science option · general-science layers of ACT 🇺🇸 — and the geography papers' physical layer (CUET/Gaokao geography) |
+| Environmental Policy & Circularity · Environmental Health & Food Systems · Energy & Sustainability | UPSC Prelims 🇮🇳 (environment in GS) · ENEM 🇧🇷 (nature sciences + human sciences intersection) · GATE CE 🇮🇳 (environmental engineering layers) |
+
+### 5.5 Medicine & Health
+| Library subject | Asked in |
+|---|---|
+| Clinical Medicine · Medical Technology | NEET 🇮🇳 (its whole purpose) · MCAT 🇺🇸 · UCAT 🇬🇧 (decision layers) — the vocational depth beyond the entrance exams |
+| Public Health · Health, Nutrition & Fitness · Mental Health | UPSC Prelims 🇮🇳 GS · CUET 🇮🇳 (physical education/nutrition) · VCE/QCE 🇦🇺 health & human development |
+| Medicines, First Aid & Reproductive Health | NEET 🇮🇳 biology layers · NDA/CDS 🇮🇳 first-aid practicals |
+
+### 5.6 Humanities & Social Sciences
+| Library subject | Asked in |
+|---|---|
+| Indian History · Ancient & Early Modern History · Modern World History · Economic History | CUET 🇮🇳 (history) · UPSC Prelims 🇮🇳 GS I · CDS 🇮🇳 · Gaokao 🇨🇳 (history elective) · ENEM 🇧🇷 (human sciences) |
+| Geography | CUET 🇮🇳 · Gaokao 🇨🇳 (geography elective) · UPSC Prelims 🇮🇳 GS I |
+| Political Theory · Comparative Politics & Indian Polity | CUET 🇮🇳 (political science) · UGC NET 🇮🇳 (paper II code 02) · UPSC Prelims 🇮🇳 · Gaokao 🇨🇳 (politics elective) |
+| Psychology | CUET 🇮🇳 · VCE 🇦🇺 · QCE 🇦🇺 · MCAT 🇺🇸 (behavioral foundations) |
+| Philosophy · Religious Studies · Sociology · Anthropology · Urban Studies · Media & Communication · Education · Research Methods | UPSC Prelims 🇮🇳 GS layers · UGC NET 🇮🇳 (paper I reasoning/comprehension/diology layers) · CLAT 🇮🇳 comprehension passages — the deep context the comprehension papers draw from |
+| International Relations & Security · Public Policy & Administration | UPSC Prelims 🇮🇳 GS II layers · RBI Grade B 🇮🇳 (economic & social issues paper) |
+
+### 5.7 Commerce, Economics & Business
+| Library subject | Asked in |
+|---|---|
+| Microeconomics · Macroeconomics · Economics cluster | CUET 🇮🇳 (economics) · A-Level Economics 🇬🇧 · IB Economics 🌍 · GCE A-Level H2 Economics 🇸🇬 · RBI Grade B 🇮🇳 · ENEM 🇧🇷 (human sciences) |
+| Financial Accounting · Advanced Accounting & Auditing | CUET 🇮🇳 (accountancy) · CA Foundation 🇮🇳 (accounting) |
+| Finance & Banking | RBI Grade B 🇮🇳 (finance & management paper) · IBPS PO 🇮🇳 (banking awareness) |
+| Business Economics · Management & Leadership · Marketing · Operations & Entrepreneurship cluster | CA Foundation 🇮🇳 (business economics + business laws) · UGC NET 🇮🇳 (commerce paper II code 08) · CAT 🇮🇳 (business-context passages) |
+
+### 5.8 Law & Justice
+| Library subject | Asked in |
+|---|---|
+| Legal Systems & Method · all law books | **CLAT 🇮🇳** (legal reasoning) · **LSAT 🇺🇸** · A-Level Law 🇬🇸 layers · UGC NET 🇮🇳 law paper |
+
+### 5.9 Languages & Literature
+| Library subject | Asked in |
+|---|---|
+| English (english-complete) | **33 mapped exam-subject pairs** — SAT · CAT · SSC CGL · GRE · CUET · IBPS PO · BITSAT · IELTS ×4 · CLAT · GMAT · TOEFL ×4 · MCAT · ACT ×2 · CDS · LSAT ×2 · UCAT · VITEEE · VCE · QCE · NSW HSC · RBI Grade B ×2 · Alberta · Gaokao |
+| Literature · Linguistics | CUET 🇮🇳 · UGC NET 🇮🇳 (paper I comprehension) — the reading depth beneath every verbal paper |
+| Spanish · Japanese · French · German · Hindi · Arabic · Korean · Russian · Mandarin Chinese | EJU 🇯🇵 (Japanese as a foreign language) · Gaokao 🇨🇳 (语文 Chinese) · IELTS/TOEFL 🌍 (the L2 testing genre) · CUET 🇮🇳 language papers |
+
+### 5.10 Arts & Culture
+| Library subject | Asked in |
+|---|---|
+| Art History · Visual Arts · Music · Film · Animation · Design · Performing Arts · Architecture | UPSC Prelims 🇮🇳 GS I (art & culture) · CLAT 🇮🇳 GK · NID/NIFT-style 🇮🇳 aptitude layers (design) — the cultural-literacy layer of every GK paper |
+
+### 5.11 Applied Engineering & Technology
+| Library subject | Asked in |
+|---|---|
+| Structural & Seismic · Water & Environmental · Transportation · Construction/Geomatics (GATE CE cluster) | **GATE CE 🇮🇳** (mechanics-graphics layers) |
+| Aerospace & Aviation · Chemical Engineering · Naval Architecture · Nanotechnology · Quantum Information · Computational Science | GATE 🇮🇳 discipline papers (AE/CH/NA/PH layers) + the advanced-technology awareness layers of UPSC 🇮🇳 & RBI Grade B 🇮🇳 |
+| Programming & Software (C/C++ · Java · Web) + Computing Systems cluster | **GATE CSE 🇮🇳** (DSA + aptitude) · **AP CSA 🇺🇸** · CUET 🇮🇳 (programming-java) |
+| Electronics & Communication cluster (incl. Signals & Systems) | **GATE ECE 🇮🇳** (signals-systems + aptitude) |
+| Electrical & Power cluster (incl. Electric Circuits) | **GATE EE 🇮🇳** (electric-circuits + aptitude) |
+| Mechanical & Energy cluster (incl. Thermal-Fluids) | **GATE ME 🇮🇳** (thermal-fluids + aptitude) |
+
+### 5.12 Everyday Life Skills
+| Library subject | Asked in |
+|---|---|
+| Cooking & Food Science · Home Repair · Cars & Outdoors · Garden & Growing · Practical Skills · Career & Communication | not directly examined — the everyday layer that GK papers sample (first aid, food, safety) and the employability layer campus tests probe |
+
+**Reading of the scan (what it orders next):** the three most-tested clusters in the corpus are
+**Mathematics (44 pairs) · English (33 pairs) · Chemistry/Physics (19 pairs each)** — all four are
+hand-authored deep books already near the bar. The biggest **exam-driven under-supply** is the
+**biology cluster** (NEET + CUET + BITSAT + KCET + MHT-CET + VITEEE + WBJEE + AP/A-Level/IB/H2 +
+VCE/QCE/NSW/Alberta + Gaokao + MCAT + ENEM + EJU — 15+ exams whose biology papers map to the
+Life Sciences subjects) — which is exactly why the user's directive to begin with the Life Sciences
+field is the correct next move: it is the highest-exam-demand cluster with the thinnest current
+depth (107 lessons across 13 subjects vs. the physics/chemistry standard).
+
+---
+
+## 6. Life Sciences Field — Syllabus Trees (the first cluster, 2026-11-02)
+
+The ladder order and the full chapter→lesson trees. Carving is explicit: **Biochemistry owns the
+molecule-level reaction chemistry; Cell & Molecular Biology owns the cell-level integration;
+Botany owns the plant-specific physiology; Human A&P owns the human organ depth; Genetics owns
+heredity & population genetics; Evolution owns the diversity survey & evolutionary narrative;
+Ecology owns the ecosystem layer; Bioinformatics owns the computational method.** Depth bar per
+§0 Charter (2,000–3,500 words/lesson, worked examples, figures, quizzes with explanations).
+
+### 6.1 Cell & Molecular Biology — `ku-cell-molecular-biology` (THE ANCHOR — starts now)
+Group: Life Sciences · field: `Cell & Molecular Biology` · current: 3 ch / 11 lessons
+
+| Ch | Chapter (branch) | Lessons (target ≥) |
+|----|------------------|--------------------|
+| 1 | Foundations: Life, Microscopy & the Cell (`Cell Foundations`) | 1.1 What Is Life? The Five Signatures ✍️ · 1.2 Seeing the Invisible: Microscopy from Hooke to Cryo-EM ✍️ · 1.3 The Two Architectures: Prokaryotes, Eukaryotes & the Size Limit ✍️ (3 NEW) |
+| 2 | The Cell: Structure & Signaling (`Cell Biology`, `Cell Signaling`) | 2.1 The Cell and Its Biomolecules ✓ · 2.2 The Organelle Atlas: Nucleus to Peroxisome (NEW) · 2.3 The Cytoskeleton and Cell Motility ✓ · 2.4 Cell Signaling ✓ · 2.5 The Cell Cycle ✓ (5) |
+| 3 | Molecular Biology of the Gene (`Molecular Genetics`, `Gene Regulation`) | 3.1 DNA: The Molecule of Heredity ✓ · 3.2 Transcription ✓ · 3.3 The Genetic Code and Translation ✓ · 3.4 Mutations and Repair ✓ · 3.5 Gene Regulation ✓ · 3.6 Chromatin and the Nucleosome ✓ · 3.7 Viruses & Mobile Genetic Elements (NEW) (7) |
+| 4 | Bioenergetics (`Bioenergetics`) | 4.1 Cellular Respiration ✓ · 4.2 Fermentation & Metabolic Integration (NEW) · 4.3 Photosynthesis: The Cell-Level View (NEW, carved: plant detail stays in Botany 2.1) (3) |
+
+**Total target: 4 chapters · 18 lessons.**
+
+### 6.2 Biochemistry — `ku-biochemistry` · current: 2 ch / 8 lessons
+| Ch | Chapter (branch) | Lessons (target ≥) |
+|----|------------------|--------------------|
+| 1 | Molecules of Life (`Molecules of Life`) | 1.1–1.7 ✓ (7 existing) · 1.8 Nucleotides & Nucleic-Acid Chemistry (NEW) (8) |
+| 2 | Laboratory Methods (`Laboratory Methods`) | 2.1 The Biochemist's Toolbox ✓ · 2.2 Isotopes, Fractionation & Centrifugation (NEW) · 2.3 Structural Methods: X-Ray, NMR, Cryo-EM for Molecules (NEW) (3) |
+| 3 | Metabolic Pathways in Depth (`Metabolism`) | 3.1 Glycolysis Step by Step (NEW) · 3.2 The Citric-Acid Cycle (NEW) · 3.3 Oxidative Phosphorylation & Chemiosmosis (NEW) · 3.4 Carbohydrate & Lipid Traffic (NEW) · 3.5 Nitrogen Metabolism & the Urea Cycle (NEW) — carve: Cell-Bio 4.1 keeps the integrative overview, this chapter goes reaction-by-reaction (5) |
+
+**Total target: 3 chapters · 16 lessons.**
+
+### 6.3 Genetics & Heredity — `ku-genetics-heredity` · current: 5 ch / 18 lessons
+| Ch | Chapter (branch) | Lessons (target ≥) |
+|----|------------------|--------------------|
+| 1 | Classical & Transmission Genetics | 1.1–1.7 ✓ (7) |
+| 2 | Cytogenetics & Allelic Analysis | 2.1–2.2 ✓ · 2.3 Chromosome Mutations: Deletions to Inversions (NEW) (3) |
+| 3 | Molecular Genetics & Genomics | 3.1–3.4 ✓ (4) |
+| 4 | Genes in Populations | 4.1–4.3 ✓ · 4.4 Selection Models & Fitness Arithmetic (NEW) (4) |
+| 5 | Biotechnology | 5.1–5.2 ✓ · 5.3 Genomics in Medicine: Testing, Counselling, Ethics (NEW) (3) |
+| 6 | Quantitative Genetics (`Quantitative Genetics`) | 6.1 Polygenic Traits & the Bell Curve (NEW) · 6.2 Heritability & the Breeder's Equation (NEW) · 6.3 QTL Mapping in Practice (NEW) (3) |
+
+**Total target: 6 chapters · 24 lessons.**
+
+### 6.4 Human Anatomy & Physiology — `ku-human-anatomy-physiology` · current: 3 ch / 11 lessons
+| Ch | Chapter (branch) | Lessons (target ≥) |
+|----|------------------|--------------------|
+| 1 | Body Systems | 1.1–1.9 ✓ · 1.10 Blood: The Fluid Tissue (NEW) · 1.11 Skin, Hair & Nails: The Barrier Organ (NEW) (11) |
+| 2 | Reproduction & Development | 2.1 ✓ · 2.2 Pregnancy, Birth & Lactation (NEW) · 2.3 Development Through Life: Aging (NEW, carve: embryology mechanism stays in Developmental Biology) (3) |
+| 3 | When Systems Fail | 3.1 ✓ · 3.2 Metabolic Disease: Diabetes (NEW) · 3.3 The Cardiovascular Risk Story (NEW) (3) |
+
+**Total target: 3 chapters · 17 lessons.**
+
+### 6.5 Botany — `ku-botany` · current: 3 ch / 8 lessons
+| Ch | Chapter (branch) | Lessons (target ≥) |
+|----|------------------|--------------------|
+| 1 | The Plant Body | 1.1 ✓ · 1.2 Tissues Under the Microscope (NEW) · 1.3 Roots, Stems & Leaves: The Organ Toolkit (NEW) (3) |
+| 2 | Plant Physiology | 2.1–2.5 ✓ (5) |
+| 3 | Reproduction & Life Cycles | 3.1–3.2 ✓ · 3.3 Plant Hormones & Growth Responses (NEW) · 3.4 Photoperiodism & Flowering (NEW) (4) |
+| 4 | Plant Ecology & Adaptations (`Plant Ecology`) | 4.1 Defenses: Thorns, Toxins & Recruits (NEW) · 4.2 Plant–Pollinator Systems (NEW) (2) — carve: the plant-KINGDOM survey stays in Evolutionary Biology 3.2 |
+
+**Total target: 4 chapters · 14 lessons.**
+
+### 6.6 Zoology — `ku-zoology` · current: 2 ch / 5 lessons
+| Ch | Chapter (branch) | Lessons (target ≥) |
+|----|------------------|--------------------|
+| 1 | Animal Diversity & Form | 1.1–1.2 ✓ · 1.3 Invertebrates I: Sponges to Molluscs (NEW) · 1.4 Invertebrates II: Arthropods & Echinoderms (NEW) · 1.5 Vertebrates: Fish to Mammals (NEW) (5) |
+| 2 | Senses & Behavior | 2.1–2.3 ✓ (3) |
+| 3 | Comparative Physiology (`Comparative Physiology`) | 3.1 Gas Exchange Across Phyla (NEW) · 3.2 Circulation: Open, Closed & Two-Chambered to Four (NEW) · 3.3 Osmoregulation & Excretion: From Flame Cells to Nephrons (NEW) — carve: the HUMAN depth stays in Human A&P (3) |
+
+**Total target: 3 chapters · 11 lessons.**
+
+### 6.7 Evolutionary Biology — `ku-evolutionary-biology` · current: 3 ch / 9 lessons
+| Ch | Chapter (branch) | Lessons (target ≥) |
+|----|------------------|--------------------|
+| 1 | Evolution & Speciation | 1.1–1.5 ✓ · 1.6 Kin Selection & the Social Contract (NEW) (6) |
+| 2 | Human Evolution | 2.1 ✓ · 2.2 The Genus Homo & the Migration Story (NEW) (2) |
+| 3 | Diversity & Systematics | 3.1–3.3 ✓ · 3.4 The Fossil Record & Deep Time (NEW) · 3.5 Coevolution: Arms Races and Mutualisms (NEW) (5) |
+
+**Total target: 3 chapters · 13 lessons.**
+
+### 6.8 Microbiology & Immunology — `ku-microbiology-immunology` · current: 2 ch / 8 lessons
+| Ch | Chapter (branch) | Lessons (target ≥) |
+|----|------------------|--------------------|
+| 1 | The Microbial World | 1.1–1.5 ✓ · 1.6 Archaea, Protists & Fungi: The Rest of the Tree (NEW) · 1.7 Growing & Counting Microbes (NEW) (7) |
+| 2 | Immunology | 2.1–2.3 ✓ · 2.4 Adaptive Immunity in Depth: B Cells, T Cells & Antibodies (NEW) · 2.5 Vaccines & Immune Memory (NEW) (5) |
+| 3 | Applied Microbiology (`Applied Microbiology`) | 3.1 Industrial Fermentation (NEW) · 3.2 Water, Food & Household Microbiology (NEW) (2) |
+
+**Total target: 3 chapters · 14 lessons.**
+
+### 6.9 Ecology & Conservation — `ku-ecology-conservation` · current: 4 ch / 12 lessons
+| Ch | Chapter (branch) | Lessons (target ≥) |
+|----|------------------|--------------------|
+| 1 | Organisms & the Environment | 1.1 ✓ · 1.2 Behavioral Ecology: Foraging & Mating Systems (NEW) (2) |
+| 2 | Populations & Communities | 2.1–2.3 ✓ · 2.4 Ecological Succession (NEW) (4) |
+| 3 | Ecosystems, Energy & Biomes | 3.1–3.4 ✓ · 3.5 Biogeochemical Cycles: Carbon, Nitrogen, Phosphorus (NEW — verify carve vs Earth & Climate Science at authoring time) (5) |
+| 4 | Conservation & Restoration | 4.1–4.4 ✓ (4) |
+
+**Total target: 4 chapters · 15 lessons.**
+
+### 6.10 Developmental Biology — `ku-developmental-biology` · current: 5 ch / 5 lessons
+| Ch | Chapter (branch) | Lessons (target ≥) |
+|----|------------------|--------------------|
+| 1 | Building the Body | 1.1 ✓ · 1.2 Fertilization: The Meeting of Gametes (NEW) · 1.3 Cleavage, Gastrulation & the Body Plan (NEW) (3) |
+| 2 | Cell Fate & Determination | 2.1 ✓ · 2.2 Pattern Formation: Gradients, Hox & the Body's Coordinates (NEW) (2) |
+| 3 | Mechanisms & Model Organisms | 3.1–3.2 ✓ (2) |
+| 4 | Growth, Renewal & Regeneration | 4.1 ✓ · 4.2 Aging: The Slow Failure of Maintenance (NEW) (2) |
+| 5 | Evo-Devo | 5.1 ✓ (1) |
+
+**Total target: 5 chapters · 10 lessons.**
+
+### 6.11 Marine Biology — `ku-marine-biology` · current: 4 ch / 4 lessons
+| Ch | Chapter (branch) | Lessons (target ≥) |
+|----|------------------|--------------------|
+| 1 | The Blue Realm | 1.1 ✓ · 1.2 The Physical Ocean: Light, Pressure, Salt & Currents (NEW) (2) |
+| 2 | Coastal Habitats & Communities | 2.1 ✓ · 2.2 Coral Reefs in Depth (NEW) (2) |
+| 3 | Plankton, Larvae & Recruitment | 3.1 ✓ · 3.2 The Deep Sea & Polar Oceans (NEW) (2) |
+| 4 | Fisheries & Ocean Conservation | 4.1 ✓ (1) |
+
+**Total target: 4 chapters · 7 lessons.**
+
+### 6.12 Bioinformatics & Genomics — `ku-bioinformatics-genomics` · current: 4 ch / 4 lessons
+| Ch | Chapter (branch) | Lessons (target ≥) |
+|----|------------------|--------------------|
+| 1 | Reading Genomes with Code | 1.1 ✓ · 1.2 Sequence Alignment: The Core Algorithm (NEW) (2) |
+| 2 | Sequencing & Assembly | 2.1 ✓ (1) |
+| 3 | Phylogenetics | 3.1 ✓ (1) |
+| 4 | Databases & Structure Prediction | 4.1 ✓ (1) |
+
+**Total target: 4 chapters · 5 lessons.**
+
+### 6.13 Synthetic Biology — `ku-synthetic-biology` · current: 3 ch / 4 lessons
+| Ch | Chapter (branch) | Lessons (target ≥) |
+|----|------------------|--------------------|
+| 1 | Programming Living Cells | 1.1–1.2 ✓ (2) |
+| 2 | Genetic Circuits & Toolkits | 2.1 ✓ · 2.2 Chassis Organisms & Minimal Genomes (NEW) (2) |
+| 3 | Applications & Responsible Innovation | 3.1–3.2 ✓ (2) |
+
+**Total target: 3 chapters · 6 lessons.**
+
+**Life Sciences field total: from 107 → 168 lessons across 13 subjects.** The ✍️ lessons in 6.1
+are authored in this same session (the field's opening increment); every other NEW lesson is the
+standing queue, one subject at a time, per §4 order.
+
+---
+
+## 7. Progress Ledger (append-only — newest last)
 
 | Date (IST) | Subject | What happened | State |
 |---|---|---|---|
@@ -199,3 +454,4 @@ step feeds them targets when their subjects come up.
 | 2026-11-01 | Retirement + gap-fill | Combined 'Aptitude, Reasoning & General Awareness' stub book retired per user order (subject 'aptitude', book 'aptitude-complete', merged/aptitude.ts deleted; prose preserved, serialize filters orphans; exam mappedSubjectId hints re-pointed). Retirement exposed 24 unmapped exam topics → 11 gap lessons authored across the three split subjects: QA §12.1 tables-caselets (2,297w) + §13.1 quantity-comparison (2,390w); LR §3.1 analogies-classification (2,257w), §5.3 ordering-ranking (2,055w), §6.1 seating-arrangements (2,462w), §7.1 clock-calendar (2,044w), §8.2 paper-folding-figure-matrix (2,101w); GA §2.6 history-landmark-events (2,028w), §7.1 art-culture-heritage (1,922w), §7.2 awards-sports-persons (1,921w), §8.1 current-affairs-engine (2,099w). 21 verified TOPIC_ALIASES added (incl. gaokao 'political life' genre-fix); Static GK chapter renamed to include Culture; auditor IDS + declared words exact. Audit 2967/2967 = 100% restored | First 2 chapters of each split subject now seeded; QA Ch1 §1.6 Surds & Indices next per working order |
 | 2026-11-02 | Field-wise reorganization | **Whole knowledge source tree arranged field-wise → subject-wise → chapter-wise per user order.** Legacy flat pass files (fields/ — 87 files incl. 71 cryptic x-pass artifacts) replaced by: subjects/<subject-key>/<nn>-<chapter>.ts (119 subject folders · 366 chapter files, one per canonical Library book chapter) + domains/<nn>-<field>.ts (18 field assembly files) + README.md map + attic/ (x17-cuet-gap superseded draft preserved, 3 revivable lessons documented). Migration by scripts/reorganize-knowledge-fields.ts with a template-literal-safe verbatim mover; verified by scripts/verify-knowledge-reorg.ts: 696/696 topics deep-equal, 113 bridge-exact subject buckets identical, stats identical, content.json byte-identical; knowledge-meta.json differs only in 24 books' `sources` strings (fields now alphabetized — deterministic via knowledge-universe.ts sort fix). Bridge determinism hardening: sourceAreas sorted so serialized output is layout-independent. Audit 2967/2967 = 100% maintained. count-topic-words-exact.ts rewritten to walk the new tree dynamically; audit-concept-alignment.ts glob re-pointed; 19 historical one-shot codemods retired (git history preserves them) | Tree is now the canonical authoring surface — new lessons go straight into subjects/<book>/<chapter>.ts; QA Ch1 §1.6 Surds & Indices next per working order |
 | 2026-11-02 | Housekeeping | Unnecessary files removed per user order: 53 retired one-shot scripts (round14 generators, scrapers, probe/dump/vlm-check/validate/fix/rebuild/x60 families, executed migrations consolidate + subject-wise + reorganize-knowledge-fields + its snapshot verifier, migration-id-map.json artifact, dated counters, tmp- helpers, superseded python structure audits — git history preserves all) + 5 stale unreferenced QA screenshots (coverage/*.png). scripts/ now holds only the standing toolbox: pipeline (serialize-content, build-coverage, build-knowledge-index, exam-coverage-audit, count-topic-words-exact, audit-concept-alignment) + standing audits (verify-counts, words-truth, validate-library, gap-audit, dedupe-knowledge, inventory, subject-depth-stats, subjectdepth-dump-book, lessonbook-ch1-order, library-book-toc, library-org-audit, library-structure-audit, library-discipline-spread) + dev ops (dev-start.sh, dev-watchdog.sh). Tree re-verified clean: 119 subject folders all with index.ts; 366 chapter files all nn-numbered; 18 domain files; attic tidy. knowledge/README.md provenance updated. Audit 2967/2967 = 100% maintained | scripts/ is a clean standing toolbox; QA Ch1 §1.6 Surds & Indices next per working order |
+| 2026-11-02 | Library discoverability fix + program re-order | **User bug report: "Quantitative Aptitude, Logical Reasoning, General Awareness as separate books i cant see this in library" — root-caused (all three render, but at y≈9,550px in the 7th of 17 groups, under ~50 cards: a discoverability failure, not a data failure) and fixed: live subject search + 17 group quick-jump chips added to the Library catalog (sticky bar under the app header), browser-verified ("aptitude" → exactly the 3 books; "Life Sciences" chip → 13 subjects; mobile 390 no overflow; console clean).** per the user's new mandate the program is re-scanned and re-ordered: §5 added — the full subject→exam map (all 104 ku-subjects + tracks vs the 59-exam corpus; mathematics 44 / english 33 / chemistry-physics 19 pairs are the deep books; the biology cluster is the biggest exam-driven under-supply at 107 lessons across 13 subjects); §6 added — complete Life Sciences syllabus trees (13 subjects, 107 → 168 lesson target); §4 order updated: **Life Sciences field FIRST** (user directive), aptitude trio resumes after. Opening increment authored: Cell & Molecular Biology new Ch1 Foundations (3 lessons) | Life Sciences cluster IN PROGRESS — ku-cell-molecular-biology Ch1 §1.1–§1.3 authored; §2.2 Organelle Atlas next |

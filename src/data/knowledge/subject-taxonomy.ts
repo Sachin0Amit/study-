@@ -420,6 +420,10 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     blurb: 'Cells, membranes, signaling and the molecular biology of the gene — DNA, RNA, protein and their regulation.',
     ownFields: ['Cell & Molecular Biology'],
     chapters: [
+      /* MASTERSYLLABUS §6.1 (2026-11-02): the ladder head — what living means,
+         the instrument that revealed the cell, and the two architectures.
+         Branch 'Cell Foundations' is new and routes only these three lessons. */
+      { name: 'Foundations: Life, Microscopy & the Cell', branches: ['Cell Foundations'] },
       { name: 'The Cell: Structure & Signaling', branches: ['Cell Biology', 'Cell Signaling'] },
       { name: 'Molecular Biology of the Gene', branches: ['Molecular Genetics', 'Gene Regulation'] },
       { name: 'Bioenergetics', branches: ['Bioenergetics'] },

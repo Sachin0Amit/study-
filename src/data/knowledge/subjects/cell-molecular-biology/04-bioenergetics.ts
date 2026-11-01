@@ -1,5 +1,5 @@
 /**
- * Knowledge Universe — Cell & Molecular Biology — Chapter 03: Bioenergetics
+ * Knowledge Universe — Cell & Molecular Biology — Chapter 04: Bioenergetics
  * 1 lesson · ~1,968 words
  * field: Cell & Molecular Biology
  * legacy sources: life-sciences.ts
@@ -11,11 +11,11 @@
  * Taxonomy match: branches [Bioenergetics]
  *
  * Lessons (snapshot at reorganization):
- *   03.1 bio-cellular-respiration-pathways — Cellular Respiration: Glycolysis to the Electron Transport Chain
+ *   04.1 bio-cellular-respiration-pathways — Cellular Respiration: Glycolysis to the Electron Transport Chain
  */
 import type { KnowledgeTopic } from '../../types'
 
-export const cellMolecularBiologyCh03: KnowledgeTopic[] = [
+export const cellMolecularBiologyCh04: KnowledgeTopic[] = [
   // ------------------------------------------------------------------
   {
     id: 'bio-cellular-respiration-pathways',

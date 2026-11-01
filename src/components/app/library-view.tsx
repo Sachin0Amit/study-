@@ -14,6 +14,8 @@ import {
   Sparkles,
   ChevronRight,
   Library as LibraryIcon,
+  Search,
+  X,
 } from 'lucide-react'
 import Hero3D from './hero3d'
 import {
@@ -210,6 +212,11 @@ function HeroStat({ value, label }: { value: number; label: string }) {
 
 export function LibraryView() {
   const navigate = useStudy((s) => s.navigate)
+  /** Subject catalog search + group quick-jump — with 140+ subjects across 17
+   *  groups, the three-line scroll of old buried books ~9,500px down; this
+   *  filter makes every subject findable in one keystroke. */
+  const [query, setQuery] = useState('')
+  const [activeGroup, setActiveGroup] = useState<string | null>(null)
   const totalSections = LIBRARY_SECTIONS.length
   const totalChapters = LIBRARY_CHAPTERS.length
   const totalTools =
@@ -434,19 +441,115 @@ export function LibraryView() {
           </div>
         </div>
 
+        {/* Sticky subject finder — search + group chips (fixes the
+            "can't find my book among 140 subjects" problem) */}
+        <div className="sticky top-[65px] z-30 -mx-4 mb-8 border-b border-border/60 bg-background/90 px-4 py-3 backdrop-blur-xl sm:-mx-6 sm:px-6">
+          <div className="relative">
+            <Search
+              aria-hidden
+              className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
+            />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={`Search ${LIBRARY_SUBJECTS.length} subjects — try “aptitude”, “reasoning”, “botany”, “awareness”…`}
+              aria-label="Search subjects in the library"
+              className={`w-full rounded-xl border border-border bg-card py-2.5 pl-10 pr-10 text-sm text-foreground shadow-inner outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-emerald-400/50 focus:ring-2 focus:ring-emerald-400/20 ${FOCUS_RING}`}
+            />
+            {query && (
+              <button
+                type="button"
+                onClick={() => setQuery('')}
+                aria-label="Clear subject search"
+                className={`absolute right-2.5 top-1/2 -translate-y-1/2 rounded-md p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground ${FOCUS_RING}`}
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
+          </div>
+          <div
+            className="mt-2.5 flex flex-wrap items-center gap-1.5"
+            role="group"
+            aria-label="Filter subjects by group"
+          >
+            <button
+              type="button"
+              onClick={() => setActiveGroup(null)}
+              aria-pressed={activeGroup === null}
+              className={`rounded-full border px-2.5 py-1 text-[11px] font-semibold transition-colors ${
+                activeGroup === null
+                  ? 'border-emerald-400/50 bg-emerald-400/15 text-emerald-200'
+                  : 'border-border bg-card text-muted-foreground hover:border-emerald-400/40 hover:text-foreground'
+              } ${FOCUS_RING}`}
+            >
+              All
+            </button>
+            {[...new Set(LIBRARY_SUBJECTS.map((s) => s.group ?? 'Subjects'))].map((g) => (
+              <button
+                key={g}
+                type="button"
+                onClick={() => setActiveGroup(activeGroup === g ? null : g)}
+                aria-pressed={activeGroup === g}
+                className={`rounded-full border px-2.5 py-1 text-[11px] font-medium transition-colors ${
+                  activeGroup === g
+                    ? 'border-emerald-400/50 bg-emerald-400/15 text-emerald-200'
+                    : 'border-border bg-card text-muted-foreground hover:border-emerald-400/40 hover:text-foreground'
+                } ${FOCUS_RING}`}
+              >
+                {g}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {(() => {
-          // group subjects by their catalog group, preserving library order
+          // group subjects by their catalog group, preserving library order —
+          // filtered by the live search query and the active group chip
+          const q = query.trim().toLowerCase()
+          const matches = (s: (typeof LIBRARY_SUBJECTS)[number]) =>
+            !q ||
+            s.name.toLowerCase().includes(q) ||
+            s.tagline.toLowerCase().includes(q) ||
+            s.description.toLowerCase().includes(q) ||
+            (s.group ?? '').toLowerCase().includes(q)
           const groups: { name: string; subjects: typeof LIBRARY_SUBJECTS }[] = []
           const byName = new Map<string, typeof LIBRARY_SUBJECTS>()
           for (const s of LIBRARY_SUBJECTS) {
+            if (!matches(s)) continue
             const g = s.group ?? 'Subjects'
+            if (activeGroup && g !== activeGroup) continue
             if (!byName.has(g)) {
               byName.set(g, [])
               groups.push({ name: g, subjects: byName.get(g)! })
             }
             byName.get(g)!.push(s)
           }
-          return groups.map((group) => (
+          const shown = groups.reduce((n, g) => n + g.subjects.length, 0)
+          const filtering = q !== '' || activeGroup !== null
+          return (
+            <>
+              {filtering && (
+                <div className="mb-5 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                  <span>
+                    Showing <strong className="text-foreground">{shown}</strong> of{' '}
+                    {LIBRARY_SUBJECTS.length} subjects
+                    {activeGroup ? ` in “${activeGroup}”` : ''}
+                    {q ? ` matching “${query.trim()}”` : ''}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setQuery('')
+                      setActiveGroup(null)
+                    }}
+                    className={`rounded-md border border-border bg-card px-2 py-0.5 font-medium text-foreground transition-colors hover:border-emerald-400/40 ${FOCUS_RING}`}
+                  >
+                    Reset
+                  </button>
+                </div>
+              )}
+              {groups.map((group) => (
             <div key={group.name} className="mb-10 last:mb-0">
               <div className="mb-4 flex items-center gap-3">
                 <span className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-300/90">
@@ -555,7 +658,29 @@ export function LibraryView() {
                 })}
               </div>
             </div>
-          ))
+          ))}
+              {groups.length === 0 && (
+                <div className="rounded-2xl border border-dashed border-border/80 bg-card/30 p-10 text-center">
+                  <Search className="mx-auto h-6 w-6 text-muted-foreground/60" />
+                  <h3 className="mt-3 text-base font-semibold">No subjects match</h3>
+                  <p className="mx-auto mt-1.5 max-w-sm text-xs leading-relaxed text-muted-foreground">
+                    Nothing in the catalog matches “{query.trim()}”. Try a shorter word — a subject
+                    name, a theme like “reasoning” or “medicine”, or reset and browse the groups.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setQuery('')
+                      setActiveGroup(null)
+                    }}
+                    className={`mt-4 rounded-lg border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:border-emerald-400/40 ${FOCUS_RING}`}
+                  >
+                    Clear filters
+                  </button>
+                </div>
+              )}
+            </>
+          )
         })()}
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
