@@ -921,7 +921,7 @@ export const KNOWLEDGE_CHAPTERS: ChapterMeta[] = [
         220,
       ),
       icon: g.tax.icon,
-      pages: `${words.toLocaleString('en-US')} words`,
+      pages: String(Math.max(1, Math.round(words / 400))),
       interactiveKey: '',
     }
   }),
@@ -940,7 +940,7 @@ export const KNOWLEDGE_CHAPTERS: ChapterMeta[] = [
         220,
       ),
       icon: subject?.icon ?? 'sparkles',
-      pages: `${words.toLocaleString('en-US')} words`,
+      pages: String(Math.max(1, Math.round(words / 400))),
       interactiveKey: '',
     }
   }),
