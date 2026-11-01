@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Biochemistry — Chapter 03: Metabolic Pathways in Depth
- * 3 lessons · 10,500 words
+ * 4 lessons · 14,000 words
  * field: Biochemistry · branch: Metabolism
  *
  * §6.2 slot 3.1 (2026-11-01, master loop job 492782): Glycolysis Step by Step.
@@ -70,6 +70,40 @@
  * change), shuttle mechanics, respiratory control, uncouplers (DNP, UCP1),
  * the reactive-oxygen leak, the inhibitor map and the history (Keilin,
  * Belitzer, Slater, Mitchell, Boyer, Walker).
+ *
+ * §6.2 slot 3.4 (2026-11-01, master loop job 492782): Carbohydrate & Lipid
+ * Traffic.
+ *
+ * Carved against for §3.4 (dedup greps: glycogenin / UDP-glucose / von
+ * Gierke / McArdle / transketolase / G6PD / PEPCK / acetyl-CoA carboxylase
+ * / glucose-6-phosphatase / malic enzyme / citrate shuttle / acyl-CoA
+ * synthetase / Heinz — all unique to this file; fructokinase hits were
+ * phosphofructokinase substrings; the hits for carnitine / malonyl /
+ * pentose / thiolase / palmitate / gluconeogenesis / β-oxidation /
+ * ketogenesis / glycogen phosphorylase were inspected and are the
+ * molecule-level survey in Ch1, the one-clause integration mentions in
+ * cell-bio 04.2, the signaling-cascade example in cell-bio 02, or §3.1/§3.3
+ * senses already carved):
+ *   • bio-fermentation-metabolic-integration (cell-bio 04.2) OWNS the
+ *     fed/fasted organ map, Cori-cycle arithmetic (its "six ATP" is DERIVED
+ *     here), the F2,6BP insulin/glucagon switch, AMPK, the ketone bridge,
+ *     anaplerosis and the odd-chain/propionate door — cited, not re-taught.
+ *   • Ch1 molecules-of-life OWNS carnitine the molecule, the palmitate-106
+ *     survey ledger, glycerol→DHAP and fat chemistry; nutrition-science OWNS
+ *     essential-fatty-acid diet facts; the organelle atlas OWNS lysosomes
+ *     (Pompe pointed to); immunology OWNS the phagocyte NADPH oxidase.
+ *   • §3.1 OWNS glycolysis reactions incl. PFK-1; §3.2 owns the wheel
+ *     (acetyl-CoA outflow cited); §3.3 owns the chain ledger that prices
+ *     every FADH2/NADH named here, and the ROS/GSH context this lesson only
+ *     cites for G6PD.
+ * §3.4 OWNS the granule machine (phosphorolysis, PLP-as-wrench, debranching,
+ * GSD fingerprints von Gierke/Cori/Hers/McArdle/Pompe), the gluconeogenesis
+ * bypasses with the six-bond bill DERIVED, the pentose-phosphate lane with
+ * its carbon-shuffle ledger, the β-oxidation spiral with the stearate-120
+ * ledger, the synthesis workshop with the NADPH bill, the malonyl-CoA
+ * traffic light, and the histories (Cori, Sutherland, Fischer & Krebs,
+ * Utter & Keech, Warburg's Zwischenferment, Horecker, Knoop, Fritz,
+ * Wakil, Vagelos, McGarry & Foster, Luzzatto).
  *
  * Lesson text contains no exam names (charter rule 5).
  *
@@ -1090,6 +1124,365 @@ export const biochemistryCh03: KnowledgeTopic[] = [
         kind: 'callout',
         title: 'Study Path',
         text: 'Grounding: Nelson & Cox, Lehninger Principles of Biochemistry — the oxidative-phosphorylation chapters; Nicholls & Ferguson, Bioenergetics; Berg, Tymoczko & Stryer, Biochemistry — the ATP-synthase chapter. Primary sources: Mitchell (1961), Nature 191:144; Jagendorf & Uribe (1966), PNAS 55:170; Racker & Stoeckenius (1974), JBC 249:662; Chance & Williams (1955), JBC 217:383; Abrahams, Leslie, Lutter & Walker (1994), Nature 370:621; Boyer (1997), Annual Review of Biochemistry 66:717; Watt et al. (2010), PNAS 107:16823 on the c8 ring; Harman (1956). Carve notes: the cell-biology respiration lesson owns the chain survey, the 30–32 audit and the gas arithmetic; the energy-economy overview owns ATP’s currency chemistry; §3.2 owns the succinate-dehydrogenase hand-off and the FADH2-discount pointer cashed here; photosynthesis owns the chloroplast twin. Next: §3.4 — Carbohydrate & Lipid Traffic: the roads that feed glycolysis and the wheel.',
+        tone: 'path',
+      },
+    ],
+  },
+  {
+    id: 'bioc-carbohydrate-lipid-traffic',
+    title: 'Carbohydrate and Lipid Traffic: Storing, Building, Burning',
+    domain: 'Life Sciences',
+    field: 'Biochemistry',
+    branch: 'Metabolism',
+    tier: 'intermediate',
+    concepts: [
+      'The liver traffic map: the glycogen granule, the glucose-6-phosphate hub and the blood',
+      'Phosphorolysis: why glycogen is broken with phosphate, not water',
+      'Phosphorylase mechanics: PLP as proton wrench, debranching, the PKA cascade',
+      'Gluconeogenesis: four bypass enzymes and the six-bond bill',
+      'The pentose-phosphate lane: NADPH manufacture and reversible carbon shuffling',
+      'β-oxidation: Knoop’s two-carbon clue, the carnitine tollgate, the four-station spiral',
+      'Fatty-acid synthesis: the mirror workshop, ACP and the NADPH bill',
+      'The malonyl-CoA traffic light: one molecule decides burn or store',
+    ],
+    words: 3500,
+    readMins: 18,
+    addedOn: '2026-11-01',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'Glycolysis, the wheel and the chain are combustion machinery — but a cell that only burns dies with its next meal. Life also runs warehouses and workshops: sugar packed into glycogen granules, fat condensed into triglyceride depots, glucose manufactured from scrap when supply stops. This lesson maps the traffic between those rooms. Everything pivots on one crossroads metabolite — glucose-6-phosphate, the hub where storage, export, burning and NADPH manufacture all meet — and, at the acetyl-CoA junction downstream, on a single small molecule, malonyl-CoA, the traffic light deciding whether fat is burned or built.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'Von Gierke disease, McArdle disease, favism, sudden-infant-death-linked MCAD deficiency and AMPK-targeting diabetes drugs all live on this map. The six high-energy bonds gluconeogenesis charges per glucose set the metabolic price of fasting; the pentose-phosphate lane is why fava beans can be lethal to some people and harmless to others; and the fat ledger explains lipid’s twice-per-gram energy density.',
+        tone: 'insight',
+      },
+      {
+        kind: 'callout',
+        title: 'How this lesson is scoped',
+        text: 'The cell-biology integration chapter owns the fed/fasted organ map, the Cori-cycle arithmetic, the fructose-2,6-bisphosphate switch, AMPK, the ketone bridge and the anaplerotic doors — read it for strategy. This lesson owns the machine room: glycogen chemistry, the gluconeogenesis bypasses and their six-bond bill, the pentose-phosphate shuffle, the β-oxidation spiral with its stearate ledger, and the synthesis workshop’s NADPH bill. Earlier lessons of this chapter own glycolysis (§3.1), the wheel (§3.2) and the chain (§3.3); this one feeds and drains them.',
+        tone: 'path',
+      },
+      { kind: 'heading', text: 'The Granule: Sugar Warehousing with a Phosphate Trick' },
+      {
+        kind: 'para',
+        text: 'Glycogen is one giant glucose polymer per granule — up to ~55,000 residues in liver — linked α-1,4 along strands, α-1,6 at a branch roughly every ten residues. Branching is not clutter: phosphorylase chews only at chain ends, so branches multiply the ends — and the rate the warehouse empties. Every molecule is covalently anchored to glycogenin, a self-glucosylating primer protein characterised by William Whelan’s group in the 1980s, which builds the first stub before synthase takes over.',
+      },
+      {
+        kind: 'para',
+        text: 'The breakdown breakthrough belongs to Carl and Gerty Cori, who showed in 1936–37 that phosphorylase cleaves the α-1,4 bond with inorganic phosphate rather than water — phosphorolysis. The product is glucose-1-phosphate, the “Cori ester”. The trick is bookkeeping: hydrolysis yields free glucose, which must spend one ATP to be phosphorylated; phosphorolysis banks the bond energy and hands the cell an already-activated sugar. Both muscle and liver phosphorylase carry a startling prosthetic group: pyridoxal-5′-phosphate, the vitamin-B6 derivative, first recognised as an enzyme cofactor here. Its aldehyde chemistry goes unused: the 5′-phosphate swings a proton while phosphate attacks through a half-chair, oxocarbenium-like transition state. A vitamin as a wrench, not a reagent.',
+      },
+      {
+        kind: 'para',
+        text: 'Synthesis runs the reverse road with a different currency: glycogen synthase extends α-1,4 strands only from UDP-glucose, and a branching enzyme cuts a ~7-residue terminal block and re-attaches it α-1,6. Control is a phosphorylation cascade: adrenaline or glucagon raises cyclic AMP — Earl Sutherland’s second messenger (Nobel 1971) — activating PKA; PKA activates phosphorylase kinase, Edmond Fischer and Edwin Krebs’s 1955 discovery (Nobel 1992), which converts phosphorylase from the b (off) to the a (on) form. The same volley switches glycogen synthase off — one signal, two opposite effects. Insulin pushes the reciprocal protein-phosphatase-1 arm; muscle adds an input no hormone provides — Ca²⁺ from contraction binds phosphorylase kinase’s calmodulin: exercise starts mobilisation before adrenaline arrives.',
+      },
+      {
+        kind: 'para',
+        text: 'One mechanical problem remains: phosphorylase stalls four residues short of every α-1,6 branch point. Two debranching enzymes finish: a transferase swings three remaining residues onto a neighbouring strand, and α-1,6-glucosidase frees the lone branch residue as glucose. One free glucose per branch — about one residue in ten — is the granule’s only unactivated leak; the rest arrives as glucose-1-phosphate. Liver then adds the export door that muscle lacks: glucose-6-phosphatase, in the endoplasmic-reticulum membrane, frees glucose for the blood. Muscle possesses no such enzyme — its granule is strictly private fuel.',
+      },
+      {
+        kind: 'figure',
+        caption: 'LEFT — the liver traffic map. The glucose-6-phosphate hub joins the glycogen granule (phosphorylase out through G1P, synthase in through UDP-glucose), the G6Pase export door, the pentose-phosphate lane (NADPH) and the gluconeogenesis inflow doors — six high-energy bonds per glucose. At the acetyl-CoA junction, malonyl-CoA blocks the carnitine tollgate (CPT-I). RIGHT — the β-oxidation spiral: four stations, the chain shrinking two carbons per turn, one FADH2, one NADH, one acetyl-CoA per cycle.',
+        afterConcept: 5,
+        svg: `<svg viewBox="0 0 880 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Liver traffic map and the beta-oxidation spiral">
+  <rect x="0" y="0" width="880" height="520" fill="#faf7f2"/>
+  <text x="220" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">LEFT — liver traffic map</text>
+  <text x="660" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">RIGHT — the β-oxidation spiral</text>
+  <line x1="440" y1="12" x2="440" y2="508" stroke="#d6cec2" stroke-width="2"/>
+  <rect x="120" y="44" width="200" height="34" rx="17" fill="#dc2626"/>
+  <text x="220" y="66" text-anchor="middle" font-size="14" fill="#fff">blood glucose</text>
+  <rect x="132" y="106" width="176" height="34" rx="6" fill="#fbbf24"/>
+  <text x="220" y="128" text-anchor="middle" font-size="14" fill="#1f2937">G6Pase door</text>
+  <line x1="220" y1="106" x2="220" y2="82" stroke="#1f2937" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="140" y="168" width="160" height="40" rx="6" fill="#fde68a" stroke="#b45309"/>
+  <text x="220" y="193" text-anchor="middle" font-size="13" fill="#1f2937">glucose-6-P hub</text>
+  <line x1="220" y1="168" x2="220" y2="144" stroke="#1f2937" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="20" y="248" width="150" height="66" rx="8" fill="#a3a3a3"/>
+  <text x="95" y="274" text-anchor="middle" font-size="13" fill="#fff">glycogen granule</text>
+  <text x="95" y="292" text-anchor="middle" font-size="11" fill="#fff">(α-1,4 + α-1,6)</text>
+  <line x1="95" y1="248" x2="150" y2="212" stroke="#1f2937" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="86" y="224" text-anchor="middle" font-size="11" fill="#1f2937">phosphorylase → G1P</text>
+  <line x1="185" y1="248" x2="245" y2="212" stroke="#1f2937" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="292" y="232" text-anchor="middle" font-size="11" fill="#1f2937">synthase ← UDP-glucose</text>
+  <rect x="270" y="168" width="150" height="40" rx="6" fill="#bbf7d0" stroke="#15803d"/>
+  <text x="345" y="188" text-anchor="middle" font-size="12" fill="#1f2937">pentose-phosphate</text>
+  <text x="345" y="203" text-anchor="middle" font-size="12" fill="#1f2937">lane → NADPH</text>
+  <line x1="300" y1="168" x2="272" y2="148" stroke="#1f2937" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="20" y="352" width="200" height="44" rx="6" fill="#dbeafe" stroke="#1d4ed8"/>
+  <text x="120" y="370" text-anchor="middle" font-size="12" fill="#1f2937">inflow doors: lactate · alanine</text>
+  <text x="120" y="387" text-anchor="middle" font-size="12" fill="#1f2937">· glycerol (gluconeogenesis)</text>
+  <line x1="140" y1="352" x2="185" y2="212" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="116" y="338" text-anchor="middle" font-size="11" fill="#1d4ed8">6 high-energy bonds / glucose</text>
+  <rect x="150" y="446" width="150" height="36" rx="6" fill="#fca5a5" stroke="#b91c1c"/>
+  <text x="225" y="469" text-anchor="middle" font-size="13" fill="#1f2937">acetyl-CoA junction</text>
+  <line x1="225" y1="446" x2="235" y2="212" stroke="#b91c1c" stroke-width="2" stroke-dasharray="4 3"/>
+  <rect x="330" y="446" width="96" height="36" rx="6" fill="#f59e0b"/>
+  <text x="378" y="463" text-anchor="middle" font-size="11" fill="#1f2937">malonyl-CoA</text>
+  <text x="378" y="477" text-anchor="middle" font-size="11" fill="#1f2937">traffic light</text>
+  <line x1="300" y1="464" x2="330" y2="464" stroke="#b91c1c" stroke-width="2"/>
+  <line x1="378" y1="446" x2="416" y2="330" stroke="#b91c1c" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="412" y="396" text-anchor="middle" font-size="10" fill="#b91c1c">blocks CPT-I</text>
+  <text x="660" y="58" text-anchor="middle" font-size="13" fill="#1f2937">carnitine tollgate (CPT-I) — blocked by malonyl-CoA</text>
+  <rect x="560" y="70" width="200" height="40" rx="6" fill="#fca5a5" stroke="#b91c1c"/>
+  <text x="660" y="95" text-anchor="middle" font-size="13" fill="#1f2937">acyl-CoA · C16</text>
+  <line x1="660" y1="110" x2="660" y2="150" stroke="#1f2937" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="580" y="150" width="160" height="34" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="660" y="172" text-anchor="middle" font-size="12" fill="#1f2937">1 · FAD oxidation</text>
+  <text x="746" y="172" font-size="11" fill="#6b7280">→ FADH2 (1.5)</text>
+  <line x1="660" y1="184" x2="660" y2="206" stroke="#1f2937" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="580" y="206" width="160" height="34" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="660" y="228" text-anchor="middle" font-size="12" fill="#1f2937">2 · hydration</text>
+  <line x1="660" y1="240" x2="660" y2="262" stroke="#1f2937" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="580" y="262" width="160" height="34" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="660" y="284" text-anchor="middle" font-size="12" fill="#1f2937">3 · NAD+ oxidation</text>
+  <text x="746" y="284" font-size="11" fill="#6b7280">→ NADH (2.5)</text>
+  <line x1="660" y1="296" x2="660" y2="318" stroke="#1f2937" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="580" y="318" width="160" height="40" rx="6" fill="#fde68a" stroke="#b45309"/>
+  <text x="660" y="336" text-anchor="middle" font-size="12" fill="#1f2937">4 · thiolysis</text>
+  <text x="660" y="351" text-anchor="middle" font-size="11" fill="#1f2937">C2 leaves as acetyl-CoA</text>
+  <text x="660" y="384" text-anchor="middle" font-size="13" fill="#1f2937">C16 → C14 → C12 → … → C4</text>
+  <line x1="586" y1="374" x2="540" y2="374" stroke="#6b7280" stroke-width="2" stroke-dasharray="3 3" marker-end="url(#arr)"/>
+  <text x="534" y="378" text-anchor="end" font-size="11" fill="#6b7280">back to station 1</text>
+  <rect x="580" y="404" width="160" height="34" rx="6" fill="#fca5a5" stroke="#b91c1c"/>
+  <text x="660" y="426" text-anchor="middle" font-size="12" fill="#1f2937">8 acetyl-CoA (C16 start)</text>
+  <text x="660" y="462" text-anchor="middle" font-size="12" fill="#1f2937">→ the wheel (§3.2), one turn each</text>
+  <text x="660" y="494" text-anchor="middle" font-size="11" fill="#374151">7 spirals: 7 FADH2 + 7 NADH + 8 acetyl-CoA − 2 bonds for activation</text>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#1f2937"/>
+    </marker>
+  </defs>
+</svg>`,
+      },
+      {
+        kind: 'example',
+        title: 'Worked Example — The Phosphorolysis Bonus and the Branch Tax',
+        steps: [
+          'Setup: a liver granule of 30,000 glucosyl residues, a branch roughly every ten → branch points = 30,000 ÷ 10 = 3,000.',
+          'Branch tax: each branch residue leaves α-1,6-glucosidase as free glucose → 3,000 free glucose (10%); the other 27,000 residues (90%) arrive as glucose-1-phosphate.',
+          'Liver export ledger: G1P → G6P via phosphoglucomutase, 0 ATP; G6P → blood via G6Pase, 0 ATP. Export bill for all 30,000 residues: 0.',
+          'Counterfactual A — no granule: importing 30,000 glucose costs glucokinase 1 ATP each → 30,000 ATP saved by the granule.',
+          'Counterfactual B — building from scratch: 6 bonds per glucose × 30,000 = 180,000 bonds. The liver empties its granule first (the first 12–24 h of fasting) and only then pays gluconeogenesis.',
+          'Muscle variant: no G6Pase; its 27,000 G1P enter already phosphorylated — saving 27,000 ATP — but the 3,000 branch glucoses still pay hexokinase. The branch tax, paid every time.',
+        ],
+      },
+      {
+        kind: 'para',
+        text: 'Break any enzyme on this map and the granule stops cooperating — the glycogen storage diseases are the map drawn in bold. Von Gierke disease (type I, Edgar von Gierke, 1929) knocks out glucose-6-phosphatase: the liver floods with unexportable glycogen, blood sugar sags, and the hub backs up into lactate and fat — hepatomegaly, hypoglycaemia, lactic acidosis. Cori disease (type III) removes the debrancher, leaving the granule full of stubs phosphorylase cannot pass. Hers disease (type VI, Hers, 1959) weakens liver phosphorylase; McArdle disease (type V, Brian McArdle, 1951) removes muscle phosphorylase — patients tire in seconds, exercised muscle releases no lactate (the diagnostic flat line), yet they enjoy a “second wind” once fatty-acid mobilisation and liver gluconeogenesis catch up. Pompe disease (type II, 1932) is the lysosomal exception — the organelle atlas owns that compartment.',
+      },
+      { kind: 'heading', text: 'Building Glucose from Scrap: Gluconeogenesis and Its Bill' },
+      {
+        kind: 'para',
+        text: 'When the granule runs dry the brain still demands glucose, and red cells — mitochondria-free — still burn it anaerobically. The liver and kidney therefore build glucose from scrap — gluconeogenesis — mainly from lactate (muscle’s overflow), alanine (muscle’s nitrogen-wrapped carbon), glycerol (the fat depot’s backbone, as dihydroxyacetone phosphate) and propionate (the odd-chain door). The naïve plan — glycolysis run backwards — fails at the three irreversible steps; evolution’s answer is four bypass enzymes, not a reverse gear.',
+      },
+      {
+        kind: 'para',
+        text: 'The bypasses, in traffic order. (1) Pyruvate carboxylase — discovered by Merton Utter and Bruce Keech in 1960 while tracing gluconeogenesis — charges pyruvate + CO2 + ATP → oxaloacetate, with biotin swinging the carboxyl group and acetyl-CoA as its obligatory activator: fat burning arriving signals “build more sugar”. Oxaloacetate cannot cross the inner membrane — it trades to malate and back. (2) PEP carboxykinase pays a GTP to decarboxylate OAA → PEP — undoing what carboxylation just bought. (3) Fructose-1,6-bisphosphatase hydrolyses the glycolytic valve’s product — no ATP, pure pull — target of the F2,6BP switch the integration chapter owns. (4) Glucose-6-phosphatase finishes the job at the hub itself. Meanwhile the glyceraldehyde-3-phosphate dehydrogenase step runs backwards, consuming two cytosolic NADH per glucose — the lactate door supplies them in the same stroke.',
+      },
+      {
+        kind: 'derivation',
+        title: 'The six-bond bill, derived reaction by reaction',
+        statement:
+          'Two pyruvate → one glucose. Count every high-energy phosphate the bypasses and the reversed glycolytic steps actually spend; hydrolytic bypasses spend none.',
+        prerequisites: [
+          'Glycolysis’s net standard ledger is −72.7 kJ/mol; a naive reversal would cost +72.7 and stall at the three irreversible steps',
+          'PC: pyruvate + CO2 + ATP → OAA; PEPCK: OAA + GTP → PEP; both run once per pyruvate, so twice per glucose',
+        ],
+        steps: [
+          {
+            label: 'Step 1 — the pyruvate kinase bypass (×2)',
+            formula: 'PC: 2\\ ATP\\ +\\ PEPCK:\\ 2\\ GTP\\ =\\ 4\\ bonds',
+            explanation:
+              'Each pyruvate pays one ATP to load biotin’s CO2 and one GTP to cash out as PEP. Four bonds per glucose — the price of tunnelling under the +31.4 kJ/mol wall.',
+          },
+          {
+            label: 'Step 2 — the reversed GAPDH step (×2)',
+            formula: 'PGK\\ reversed:\\ 2\\ ATP\\ =\\ 2\\ bonds\\ +\\ 2\\ NADH\\ consumed',
+            explanation:
+              '3-PGA must be re-armed to 1,3-BPG before GAPDH runs backwards: 2 ATP and 2 NADH per glucose — the lactate door’s hidden balance.',
+          },
+          {
+            label: 'Step 3 — the two hydrolytic bypasses',
+            formula: 'FBPase-1:\\ 0\\ bonds\\ ·\\ G6Pase:\\ 0\\ bonds',
+            explanation:
+              'Both are hydrolases, not kinases: each bleeds off a phosphate, adding its own pull on top of the six-bond count.',
+          },
+        ],
+        result: 'Total: 2 ATP (PC) + 2 GTP (PEPCK) + 2 ATP (PGK) = 6 high-energy bonds + 2 NADH per glucose — the bill the integration chapter’s Cori-cycle arithmetic quotes. The surcharge is what makes fasting expensive and granules precious.',
+      },
+      { kind: 'heading', text: 'The Pentose-Phosphate Lane: Paying in NADPH' },
+      {
+        kind: 'para',
+        text: 'Not every glucose-6-phosphate should burn. Some must be skimmed for NADPH, the cell’s electron courier for biosynthesis and detoxification, and for ribose-5-phosphate, the backbone every nucleotide needs (the nucleotide-chemistry lesson owns that demand). The pentose-phosphate lane runs in two arms of opposite character. The oxidative arm is a dead-end cash register: glucose-6-phosphate dehydrogenase — Otto Warburg’s early-1930s “Zwischenferment” — pulls two electrons onto NADP+, 6-phosphogluconolactonase opens the lactone, and 6-phosphogluconate dehydrogenase oxidises and decarboxylates, leaving five-carbon ribulose-5-phosphate, one CO2 and two NADPH per visit.',
+      },
+      {
+        kind: 'para',
+        text: 'The non-oxidative arm, assembled by Bernard Horecker’s group in the 1950s, is reversible carbon plumbing: transketolase (thiamine pyrophosphate — the B1 motif met at PDH) swings two-carbon units; transaldolase swings three. Together they turn three pentoses into two hexoses and one triose — 3 × C5 = 2 × C6 + 1 × C3 — no ATP, no NADPH: pure reversible reshuffling that flexes toward whatever the cell lacks — more NADPH (another oxidative pass), more ribose, or more glycolytic fuel.',
+      },
+      {
+        kind: 'example',
+        title: 'Worked Example — The PPP Carbon Ledger',
+        steps: [
+          'One pass, oxidative arm: 3 glucose-6-P (18 C) → 3 ribulose-5-P (15 C) + 3 CO2 + 6 NADPH.',
+          'Isomerise and epimerise: 1 ribulose-5-P → ribose-5-P; 2 ribulose-5-P → 2 xylulose-5-P.',
+          'Transketolase: xylulose-5-P + ribose-5-P → glyceraldehyde-3-P (C3) + sedoheptulose-7-P (C7). Carbon check: 5 + 5 = 3 + 7.',
+          'Transaldolase: sedoheptulose-7-P + glyceraldehyde-3-P → fructose-6-P (C6) + erythrose-4-P (C4). Check: 7 + 3 = 6 + 4.',
+          'Transketolase again: xylulose-5-P + erythrose-4-P → fructose-6-P (C6) + glyceraldehyde-3-P (C3). Check: 5 + 4 = 6 + 3.',
+          'Net of one pass: 2 fructose-6-P + 1 glyceraldehyde-3-P (15 C back to glycolysis) + 3 CO2 + 6 NADPH. Six rounds rebuild five hexose-phosphates from six pentoses — net 1 glucose fully oxidised per 12 NADPH: the standard G6P + 12 NADP+ + 7 H2O → 6 CO2 + 12 NADPH.',
+        ],
+      },
+      {
+        kind: 'para',
+        text: 'The lane’s medical fame belongs to its cash register. Red cells carry no mitochondria and no other NADPH source, so glutathione reductase — keeper of haemoglobin’s sulphydryls — depends entirely on G6PD. G6PD deficiency is the commonest human enzymopathy (hundreds of millions, X-linked): oxidants such as primaquine or the fava bean’s aglycones overwhelm the recycling system, haemoglobin precipitates into Heinz bodies and the spleen nicks them out — “bite cells”. The deficiency persists because it balances malaria: Luzzatto’s group showed in 1969 that G6PD-deficient red cells resist Plasmodium infection.',
+      },
+      { kind: 'heading', text: 'Fat’s Arrival Hall: β-Oxidation, Two Carbons at a Time' },
+      {
+        kind: 'para',
+        text: 'The β-oxidation spiral was guessed before it was measured: in 1904 Franz Knoop fed dogs fatty acids tagged with a phenyl ring — even-chained substrates came out as phenylacetic acid, odd-chained as benzoic acid, as if oxidation always chipped two carbons from the carboxyl end. Half a century of enzymology turned the guess into four stations. Activation first: acyl-CoA synthetase trades ATP → AMP + PPi — two high-energy bonds, the road’s toll — to build the thioester. Then the carnitine tollgate: CPT-I swaps the CoA for carnitine, the translocase ferries it across, CPT-II restores CoA inside. Irving Fritz showed in the mid-1950s that carnitine powerfully stimulates long-chain oxidation; in 1978 McGarry and Foster identified CPT-I as malonyl-CoA’s site of action.',
+      },
+      {
+        kind: 'para',
+        text: 'Inside the matrix the four-station spiral runs: (1) acyl-CoA dehydrogenase passes two electrons to FAD, leaving a trans-double bond; (2) enoyl-CoA hydratase adds water across it; (3) β-hydroxyacyl-CoA dehydrogenase passes two electrons to NAD+; (4) thiolase splits the β-keto bond with a second CoA, releasing one acetyl-CoA and a chain two carbons shorter, back to station 1. Per turn: one FADH2 (worth 1.5 on §3.3’s ledger), one NADH (2.5) and one acetyl-CoA (10 through wheel and chain). The FADH2 discount is §3.2’s setup cashed — acyl-CoA dehydrogenase hands directly to the Q pool, complex I never sees it. Very-long-chain fats start in peroxisomes, which shave them short; the matrix finishes the job.',
+      },
+      {
+        kind: 'para',
+        text: 'The spiral’s clinical face is MCAD deficiency, the commonest inborn error of fatty-acid oxidation. A dead medium-chain dehydrogenase leaves the fasting child unable to finish the spiral: hypoketotic hypoglycaemia — fat burns to glucose-paper money, but the ketone coins the integration chapter describes never print. Newborn screening reads the fingerprint: the aborted spiral accumulates medium-chain acyl-carnitines; tandem mass spectrometry of a blood spot catches them.',
+      },
+      {
+        kind: 'example',
+        title: 'Worked Example — The Stearate Ledger',
+        steps: [
+          'Stearate, C18:0. Activation: ATP → AMP + PPi = 2 high-energy bonds paid at the door.',
+          'Spiral count: 18/2 − 1 = 8 turns; the last splits C4 into two acetyl-CoA — 9 total.',
+          'Per-turn harvest: 8 FADH2 × 1.5 = 12; 8 NADH × 2.5 = 20 — both priced on §3.3’s ledger.',
+          'Acetyl-CoA harvest: 9 × 10 = 90, each through §3.2’s wheel and §3.3’s chain.',
+          'Total: 12 + 20 + 90 − 2 = 120 per stearate — the same arithmetic as the molecules-of-life book’s palmitate-106 survey, one carbon-pair longer.',
+          'Density check: 120 ÷ 18 ≈ 6.7 ATP per carbon versus glucose’s ~5.0 (the respiration lesson’s 30–32 audit) — the dense-fuel dividend of a molecule already reduced.',
+        ],
+      },
+      { kind: 'heading', text: 'The Mirror Workshop: Fatty-Acid Synthesis' },
+      {
+        kind: 'para',
+        text: 'Synthesis is β-oxidation in a mirror — same four moves, reversed order, different room and carriers: cytosol and NADPH, not matrix and NAD+. Salih Wakil’s laboratory identified malonyl-CoA as the chain-extending donor in the late 1950s; the malonyl trick is the mirror’s engine: acetyl-CoA is first carboxylated by acetyl-CoA carboxylase (ACC) — biotin again, citrate as its allosteric switch, palmitoyl-CoA as its feedback brake, AMPK phosphorylation the integration chapter owns as its off-switch. Every two-carbon addition decarboxylates a malonyl: carboxylation is the puppet-string that makes condensation pull.',
+      },
+      {
+        kind: 'para',
+        text: 'The workshop is a dimer of one 2,500-residue protein carrying seven active sites, the growing chain tethered to acyl carrier protein (ACP) — named by P. Roy Vagelos’s group in 1964 — whose phosphopantetheine arm is the same pantetheine CoA wears; the molecules-of-life lesson owns that chemistry. Four stations per round — condensation, reduction, dehydration, reduction — extend the chain by C2, and after seven rounds (C16) a thioesterase releases palmitate. Cytosolic acetyl-CoA arrives via the citrate shuttle, whose malate exit leg runs malic enzyme — banking one NADPH per exported acetyl-CoA. Konrad Bloch’s laboratory mapped the Δ9 desaturase around 1960, the enzyme that inserts the double bonds membranes need; the two essential fatty acids stay a nutrition-science fact.',
+      },
+      {
+        kind: 'example',
+        title: 'Worked Example — The NADPH Bill for One Palmitate',
+        steps: [
+          'Palmitate, C16, from 8 acetyl-CoA + 7 ATP + 14 NADPH — 7 malonyl condensations, 1 ATP each.',
+          'Citrate shuttle: 8 rounds export 8 acetyl-CoA; each round’s malic-enzyme rebate banks 1 NADPH → 8.',
+          'Shortfall: 14 − 8 = 6 NADPH must come from the pentose-phosphate lane — one oxidative-arm pass (3 glucose-6-P → 6 NADPH) covers it exactly.',
+          'Reading the bill: a fed cell making fat must run the PPP — the two pathways rise together under insulin. Traffic on both roads, one map.',
+        ],
+      },
+      { kind: 'heading', text: 'The Traffic Light: One Molecule Decides Burn or Store' },
+      {
+        kind: 'para',
+        text: 'The whole lipid map folds into one point. ACC on → malonyl-CoA rises → synthesis runs, and the same malonyl-CoA binds CPT-I: fresh fat is never burned mid-build. When AMPK phosphorylates ACC (fuel low) or glucagon’s cascade does (fasting), malonyl-CoA falls, the tollgate lifts, and the spiral takes over. The integration chapter’s F2,6BP switch is this light’s carbohydrate twin — one small molecule per junction, flipped by hormones and charge.',
+      },
+      { kind: 'heading', text: 'Applications in the Real World' },
+      {
+        kind: 'list',
+        items: [
+          'Newborn screening: tandem mass spectrometry reads acyl-carnitine fingerprints on dried blood spots, catching MCAD deficiency before the first fasting crisis.',
+          'McArdle management: the flat-lactate exercise test, then programmed low-intensity “second-wind” exercise.',
+          'Von Gierke therapy: overnight raw cornstarch — a slow-release glucose drip eaten with a spoon.',
+          'G6PD counselling: screen before prescribing primaquine or dapsone; the fava-bean list is regional and real.',
+          'Diabetes pharmacology: metformin raises AMP charge, AMPK phosphorylates ACC, malonyl-CoA falls, the tollgate lifts.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Common Pitfalls',
+        text: 'Gluconeogenesis is not glycolysis reversed — three steps are bypassed by four enzymes, and two of the bypasses cost bonds while two are free hydrolyses. Phosphorylase does not hydrolyse; its product is glucose-1-phosphate. Muscle glycogen cannot feed the blood — no G6Pase. Activation of a fatty acid costs two bonds (ATP → AMP), not one. The PPP makes NADPH, never ATP. Malonyl-CoA is both building block and brake; and the FADH2 of each spiral turn is worth 1.5, not 2.5 — acyl-CoA dehydrogenase feeds the Q pool past complex I (§3.3’s discount).',
+        tone: 'warn',
+      },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'glucose-6-phosphate hub', def: 'The crossroads where storage (to glycogen), export (G6Pase), burning (glycolysis) and NADPH manufacture (the lane) meet.' },
+          { term: 'phosphorolysis', def: 'Cleavage by inorganic phosphate instead of water — the Coris’ 1936 trick yielding glucose-1-phosphate, one ATP saved per residue.' },
+          { term: 'glycogenin', def: 'The self-glucosylating primer protein every glycogen molecule is anchored to; it builds the first stub before synthase takes over.' },
+          { term: 'glucose-6-phosphatase', def: 'The ER export door of liver and kidney; absent from muscle — hence private muscle fuel.' },
+          { term: 'pyruvate carboxylase', def: 'Utter and Keech’s 1960 biotin enzyme: pyruvate + CO2 + ATP → oxaloacetate, switched on by acetyl-CoA — the first bypass.' },
+          { term: 'pentose-phosphate lane', def: 'The two-arm diversion from the hub: an oxidative NADPH register plus a reversible transketolase/transaldolase shuffle.' },
+          { term: 'carnitine shuttle (CPT-I)', def: 'The tollgate carrying activated long chains into the matrix; malonyl-CoA blocks CPT-I — the traffic light’s hand.' },
+          { term: 'malonyl-CoA traffic light', def: 'One molecule with two jobs: C2 donor for synthesis and inhibitor of CPT-I — the guarantee that fat is built or burned, not both.' },
+        ],
+      },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'Two lactate → one glucose. How many high-energy phosphate bonds does gluconeogenesis spend?',
+            options: ['2', '4', '6', '8'],
+            answer: 2,
+            explain: '2 ATP (PC) + 2 GTP (PEPCK) + 2 ATP (reversed PGK) = 6; the hydrolytic bypasses cost nothing, and lactate’s LDH step covers the 2 NADH.',
+          },
+          {
+            q: 'One full pass of the shuffle (3 G6P through both arms) returns which carbon cargo to glycolysis?',
+            options: ['3 G6P unchanged', '2 F6P + 1 GAP', '1 F6P + 2 GAP', '3 GAP'],
+            answer: 1,
+            explain: '3 × C5 → 2 × C6 + 1 × C3, plus 3 CO2 and 6 NADPH — the transketolase/transaldolase plumbing.',
+          },
+          {
+            q: 'Which finding most cleanly points to McArdle disease rather than von Gierke?',
+            options: ['fasting hypoglycaemia', 'hepatomegaly', 'no lactate rise in exercised muscle', 'lactic acidosis'],
+            answer: 2,
+            explain: 'Muscle phosphorylase is gone (type V) — no G1P, no lactate. Hypoglycaemia, hepatomegaly and lactate belong to type I.',
+          },
+          {
+            q: 'Stearate (C18:0) to CO2 and water at 10/2.5/1.5 ATP per acetyl-CoA/NADH/FADH2 yields:',
+            options: ['106 ATP', '108 ATP', '120 ATP', '129 ATP'],
+            answer: 2,
+            explain: '8 × 1.5 + 8 × 2.5 + 9 × 10 − 2 activation = 12 + 20 + 90 − 2 = 120.',
+          },
+          {
+            q: 'Malonyl-CoA shuts down fatty-acid oxidation by binding:',
+            options: ['acyl-CoA synthetase', 'CPT-I on the outer membrane', 'acyl-CoA dehydrogenase', 'thiolase'],
+            answer: 1,
+            explain: 'McGarry and Foster’s 1978 assignment: CPT-I is the tollgate, malonyl-CoA its red light — never full-throttle both ways.',
+          },
+          {
+            q: 'Why does phosphorolysis beat hydrolysis for glycogen mobilisation?',
+            options: [
+              'it yields free glucose directly',
+              'it saves one ATP per residue by producing glucose-1-phosphate',
+              'it works without an enzyme',
+              'it avoids the debranching enzyme',
+            ],
+            answer: 1,
+            explain: 'G1P enters phosphorylated — no hexokinase payment. Hydrolysis would give free glucose, costing 1 ATP on re-phosphorylation.',
+          },
+          {
+            q: 'One palmitate needs 14 NADPH. How many arrive via the citrate shuttle’s malic-enzyme rebate?',
+            options: ['6', '8', '12', '14'],
+            answer: 1,
+            explain: '8 exported acetyl-CoA → 8 NADPH from malic enzyme; the other 6 come from the pentose-phosphate lane.',
+          },
+          {
+            q: 'A G6PD-deficient red cell dies under oxidant stress because it:',
+            options: [
+              'cannot make ATP',
+              'has no other NADPH source for glutathione recycling',
+              'cannot synthesise ribose-5-phosphate',
+              'lacks catalase entirely',
+            ],
+            answer: 1,
+            explain: 'No mitochondria, no other NADPH source: glutathione reductase stalls, haemoglobin oxidises into Heinz bodies, the spleen bites them out.',
+          },
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Study Path',
+        text: 'Grounding: Nelson & Cox, Lehninger Principles of Biochemistry — the glycogen, pentose-phosphate and fatty-acid chapters. Primary sources: Cori & Cori (1936–37) on phosphorolysis; Fischer & Krebs (1955); Sutherland’s 1971 Nobel lecture; Utter & Keech (1960); Knoop (1904); Fritz on carnitine (1955–63); Wakil on malonyl-CoA (late 1950s); Majerus, Alberts & Vagelos (1964) naming ACP; McGarry & Foster (1978); Luzzatto, Usanga & Reddy (1969). Carve notes: the integration chapter owns fed/fasted strategy, Cori arithmetic, the F2,6BP switch, AMPK and the ketone bridge; the molecules-of-life book owns fat chemistry and the palmitate-106 survey; §3.1–§3.3 own glycolysis, the wheel and the chain; the organelle atlas owns lysosomes; nutrition science owns essential fats. Next: §3.5 — Nitrogen Metabolism and the Urea Cycle: alanine’s nitrogen after the carbon is spent.',
         tone: 'path',
       },
     ],

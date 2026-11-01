@@ -1,19 +1,19 @@
 {
   "$comment": "StudyVerse resume pointer (governing spec PART 14). Read FIRST by every execution — manual or scheduled. Update after every completed unit. Never mark complete before validating output.",
   "lastSuccessfulExecution": {
-    "when": "2026-11-01T21:05:00+05:30",
+    "when": "2026-11-01T21:55:00+05:30",
     "kind": "scheduled-hourly-master-loop (job 492782)",
-    "objective": "Take over + certify ku-biochemistry Ch3 §3.3 Oxidative Phosphorylation & Chemiosmosis (interrupted 22:30(+08) run's uncommitted work)",
-    "summary": "Concurrency sweep found memory exhausted (leftover dev server + browser from a prior run — killed both) and the interrupted run's complete §3.3 lesson uncommitted in the tree. Certified against the charter (3,500w EXACT/18min via count-topic-words-exact; 7-question quiz; two-panel SVG chain-dam + c8-turbine; no exam names) and committed honestly (5f39191). Full pipeline re-run: 722 topics/1,152k words → audit 2967/2967 = 100% 0 unmapped. §6.2 tree marked ✓ (3 ch / 14 lessons), §7 ledger row + WORKLOG appended."
+    "objective": "Author ku-biochemistry Ch3 §3.4 Carbohydrate & Lipid Traffic (after taking over + closing the interrupted run's §3.3 memory)",
+    "summary": "First freed memory (killed leftover dev server + unclosed browser from a prior run), committed the interrupted run's §3.3 as takeover 5f39191 and closed its ledger/WORKLOG/RESUME memory. Then authored §3.4 Carbohydrate & Lipid Traffic: 3,500w EXACT/18min via count-topic-words-exact (five trim passes from 4,189), two-panel SVG (liver traffic map + β-oxidation spiral), six-bond gluconeogenesis derivation, 4 worked examples (branch tax, PPP carbon ledger, stearate-120, 14-NADPH bill), 8-question quiz, carving verified by dedup greps (13 terms unique; fructokinase hits = phosphofructokinase substrings). Pipeline 723 topics/1,156k words → audit 2967/2967 = 100% 0 unmapped; lint clean, tsc 0 under src/; browser QA passed (quiz → Correct, 0 console errors, 390px 0 overflow, browser closed)."
   },
   "currentPhase": "B — systems complete, writing program in motion",
   "governingPlan": "docs/project/PROJECT_MASTER_PLAN.md",
   "writingProgram": {
     "programDoc": "docs/syllabus/MASTER-SYLLABUS.md",
     "currentSubject": "ku-biochemistry",
-    "currentChapter": "Ch1 Molecules of Life COMPLETE (8) · Ch2 Laboratory Methods COMPLETE (3/3, 6,600 words) · Ch3 Metabolic Pathways in Depth 3/5 (§3.1 glycolysis 3,500w · §3.2 citric-acid cycle 3,500w · §3.3 oxidative phosphorylation 3,500w) — §3.4–§3.5 remain",
-    "currentTopic": "bioc-carbohydrate-lipid-traffic",
-    "nextUnit": "ku-biochemistry Ch3 §3.4 Carbohydrate & Lipid Traffic per §6.2 tree (glycogen granule chemistry, gluconeogenesis bypasses + ATP ledger, pentose-phosphate pathway, fatty-acid β-oxidation spiral + palmitate ledger, fatty-acid synthesis mirror; carve vs Cell-Bio 4.2 which owns Cori cycle/F2,6BP switch/ketone bridge/anaplerosis, vs §3.1 which owns glycolysis reactions; cite §3.3's shuttle ledger), then §3.5 Nitrogen Metabolism & the Urea Cycle; then remaining Life Sciences subjects per §4 order, then aptitude trio"
+    "currentChapter": "Ch1 Molecules of Life COMPLETE (8) · Ch2 Laboratory Methods COMPLETE (3/3, 6,600 words) · Ch3 Metabolic Pathways in Depth 4/5 (§3.1 glycolysis 3,500w · §3.2 citric-acid cycle 3,500w · §3.3 oxidative phosphorylation 3,500w · §3.4 carbohydrate & lipid traffic 3,500w) — §3.5 remains",
+    "currentTopic": "bioc-nitrogen-metabolism-urea-cycle",
+    "nextUnit": "ku-biochemistry Ch3 §3.5 Nitrogen Metabolism & the Urea Cycle per §6.2 tree (transamination, oxidative deamination, the urea cycle reaction-by-reaction with its 4-ATP bill, inherited hyperammonemias, creatine/amine messengers; carve vs cell-bio integration lesson which owns the alanine-glucose cycle framing, and cite §3.4's alanine door) — completes Ch3 and the ku-biochemistry subject (3 ch · 16 lessons), then MASTERSYLLABUS-DONE check, then next Life Sciences subject per §4 order (ku-genetics-heredity gaps per §6.3)"
   },
   "scheduledJobs": {
     "masterLoop": { "jobId": 492782, "cadence": "hourly", "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8" },
@@ -31,8 +31,8 @@
     "bun scripts/build-project-registries.ts",
     "bun scripts/build-prerequisite-graph.ts"
   ],
-  "lastCompletedOperation": "ku-biochemistry Ch3 §3.3 Oxidative Phosphorylation & Chemiosmosis taken over + certified (takeover commit 5f39191, ledger row 2026-11-01 ~21:00 IST)",
-  "nextRequiredOperation": "Hourly master loop: author ku-biochemistry Ch3 §3.4 Carbohydrate & Lipid Traffic (one bounded unit), then validate + ledger + push",
+  "lastCompletedOperation": "ku-biochemistry Ch3 §3.4 Carbohydrate & Lipid Traffic authored and certified (MASTER-SYLLABUS §7 ledger row 2026-11-01 ~21:55 IST); §3.3 takeover closed earlier this run (5f39191)",
+  "nextRequiredOperation": "Hourly master loop: author ku-biochemistry Ch3 §3.5 Nitrogen Metabolism & the Urea Cycle (one bounded unit) — completes Ch3 + the subject — then validate + ledger + push",
   "outstandingErrors": [],
   "pendingValidation": [],
   "blockers": [],

@@ -14,9 +14,9 @@ Life Sciences writing program per `docs/syllabus/MASTER-SYLLABUS.md` §4/§6.
 
 | Metric | Count |
 |---|---|
-| Masters Library subjects / books / chapters / sections | 140 / 36 / 898 / 4,704 |
-| Knowledge University domains / books / chapters / topics | 18 / 104 / 360 / 721 |
-| Knowledge words (sum of topic word counts) | ≈1,149,000 |
+| Masters Library subjects / books / chapters / sections | 140 / 36 / 899 / 4,708 |
+| Knowledge University domains / books / chapters / topics | 18 / 104 / 360 / 723 |
+| Knowledge words (sum of topic word counts) | ≈1,156,000 |
 | Topic tiers | 399 core · 270 intermediate · 52 advanced |
 | Curated exams / official syllabus entries | 59 / 2,967 |
 | Exam regions covered | India, USA, UK, Global, Europe, Australia, Canada, Singapore, Japan, China, South America |
@@ -27,7 +27,7 @@ Life Sciences writing program per `docs/syllabus/MASTER-SYLLABUS.md` §4/§6.
 
 - ku-cell-molecular-biology: **COMPLETE** (4 ch · 18 lessons)
 - ku-zoology: 5 ch · 11 lessons (Comparative Physiology, Digestion & Metabolism, Reproduction & Life Cycles authored)
-- ku-biochemistry: Ch1 + Ch2 **COMPLETE** (11 lessons — incl. §1.8 nucleotide chemistry 2,895w; §2.2 isotopes/centrifugation 2,510w and §2.3 structural methods 2,287w with figure plates); Ch3 Metabolism 2/5 — §3.1 glycolysis 3,500w/18min and §3.2 citric-acid cycle 3,500w/18min (figure plates, standard-ledger derivations, poison diagnostics); §3.3–§3.5 next
+- ku-biochemistry: Ch1 + Ch2 **COMPLETE** (11 lessons — incl. §1.8 nucleotide chemistry 2,895w; §2.2 isotopes/centrifugation 2,510w and §2.3 structural methods 2,287w with figure plates); Ch3 Metabolism 4/5 — §3.1 glycolysis 3,500w, §3.2 citric-acid cycle 3,500w, §3.3 oxidative phosphorylation 3,500w (takeover-certified) and §3.4 carbohydrate & lipid traffic 3,500w — all word-exact with figure plates, derivations and worked-example ledgers; §3.5 next
 - 13-subject Life Sciences cluster in progress (107 → 168 lesson target), then the
   aptitude trio (Quantitative Aptitude, Logical Reasoning, General Awareness —
   first 2 chapters of each seeded), then remaining §4 subjects.
