@@ -1,0 +1,3791 @@
+{
+  "$comment": "Subject registry across both universes (spec PART 3/14). Masters Library: recognized-textbook subjects. Knowledge University: original StudyVerse textbooks (subject name = authoring-tree key). Regenerate: bun scripts/build-project-registries.ts",
+  "builtOn": "2026-11-01",
+  "summary": {
+    "mastersSubjects": 140,
+    "mastersBooks": 36,
+    "mastersChapters": 560,
+    "mastersSections": 4077,
+    "knowledgeDomains": 18,
+    "knowledgeSubjects": 201,
+    "knowledgeBooks": 104,
+    "knowledgeChapters": 338,
+    "knowledgeTopics": 719,
+    "knowledgeWords": 1141330,
+    "knowledgeSections": 627
+  },
+  "subjects": [
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "group": "Foundations",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 76,
+      "sections": 490
+    },
+    {
+      "id": "physics",
+      "name": "Physics",
+      "group": "Foundations",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 50,
+      "sections": 920
+    },
+    {
+      "id": "chemistry",
+      "name": "Chemistry",
+      "group": "Foundations",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 46,
+      "sections": 358
+    },
+    {
+      "id": "english",
+      "name": "English & Comprehension",
+      "group": "Foundations",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 13,
+      "sections": 41
+    },
+    {
+      "id": "programming-c-cpp",
+      "name": "C & C++ Programming",
+      "group": "Programming & Software",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 45,
+      "sections": 273
+    },
+    {
+      "id": "programming-java",
+      "name": "Java Programming",
+      "group": "Programming & Software",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 16,
+      "sections": 71
+    },
+    {
+      "id": "web-development",
+      "name": "Web Development & JavaScript",
+      "group": "Programming & Software",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 43,
+      "sections": 223
+    },
+    {
+      "id": "ai-data-science",
+      "name": "AI, Machine Learning & Data Science",
+      "group": "Programming & Software",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 13,
+      "sections": 73
+    },
+    {
+      "id": "dsa",
+      "name": "Data Structures & Algorithms",
+      "group": "Computing Systems",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 39,
+      "sections": 156
+    },
+    {
+      "id": "toc",
+      "name": "Theory of Computation",
+      "group": "Computing Systems",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 9,
+      "sections": 57
+    },
+    {
+      "id": "coa",
+      "name": "Computer Organization & Architecture",
+      "group": "Computing Systems",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 16,
+      "sections": 71
+    },
+    {
+      "id": "compiler-design",
+      "name": "Compiler Design",
+      "group": "Computing Systems",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 8,
+      "sections": 38
+    },
+    {
+      "id": "operating-systems",
+      "name": "Operating Systems",
+      "group": "Computing Systems",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 15,
+      "sections": 62
+    },
+    {
+      "id": "dbms",
+      "name": "Database Management Systems",
+      "group": "Computing Systems",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 13,
+      "sections": 62
+    },
+    {
+      "id": "computer-networks",
+      "name": "Computer Networks",
+      "group": "Computing Systems",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 14,
+      "sections": 68
+    },
+    {
+      "id": "microprocessors-embedded",
+      "name": "Microprocessors & Embedded Systems",
+      "group": "Electronics & Communication",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 8,
+      "sections": 55
+    },
+    {
+      "id": "software-emerging",
+      "name": "Software Engineering & Emerging Tech",
+      "group": "Programming & Software",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 11,
+      "sections": 61
+    },
+    {
+      "id": "cybersecurity",
+      "name": "Cybersecurity",
+      "group": "Programming & Software",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 9,
+      "sections": 58
+    },
+    {
+      "id": "visual-computing",
+      "name": "Computer Graphics & Image Processing",
+      "group": "Computing Systems",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 11,
+      "sections": 60
+    },
+    {
+      "id": "digital-electronics",
+      "name": "Digital Electronics & Logic Design",
+      "group": "Electronics & Communication",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 12,
+      "sections": 76
+    },
+    {
+      "id": "electronic-devices-circuits",
+      "name": "Electronic Devices & Circuits",
+      "group": "Electronics & Communication",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 102
+    },
+    {
+      "id": "signals-systems",
+      "name": "Signals, Systems & DSP",
+      "group": "Electronics & Communication",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 48
+    },
+    {
+      "id": "communication-systems",
+      "name": "Communication Systems",
+      "group": "Electronics & Communication",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 9,
+      "sections": 64
+    },
+    {
+      "id": "electromagnetics",
+      "name": "Electromagnetics, Antennas & Microwaves",
+      "group": "Electronics & Communication",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 34
+    },
+    {
+      "id": "vlsi-design",
+      "name": "VLSI Design",
+      "group": "Electronics & Communication",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 7,
+      "sections": 42
+    },
+    {
+      "id": "electric-circuits",
+      "name": "Electric Circuits & Networks",
+      "group": "Electrical & Power",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 74
+    },
+    {
+      "id": "electrical-machines",
+      "name": "Electrical Machines, Drives & EV",
+      "group": "Electrical & Power",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 7,
+      "sections": 51
+    },
+    {
+      "id": "power-systems",
+      "name": "Power Systems",
+      "group": "Electrical & Power",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 8,
+      "sections": 50
+    },
+    {
+      "id": "control-instrumentation",
+      "name": "Control Systems & Instrumentation",
+      "group": "Electrical & Power",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 6,
+      "sections": 60
+    },
+    {
+      "id": "energy-automotive",
+      "name": "Energy Conversion & Automotive",
+      "group": "Mechanical & Energy",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 39
+    },
+    {
+      "id": "mechanics-graphics",
+      "name": "Engineering Mechanics & Graphics",
+      "group": "Mechanical & Energy",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 22
+    },
+    {
+      "id": "solids-materials",
+      "name": "Mechanics of Solids & Materials",
+      "group": "Mechanical & Energy",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 36
+    },
+    {
+      "id": "machines-design",
+      "name": "Theory of Machines & Machine Design",
+      "group": "Mechanical & Energy",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 6,
+      "sections": 40
+    },
+    {
+      "id": "thermal-fluids",
+      "name": "Thermal & Fluid Sciences",
+      "group": "Mechanical & Energy",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 7,
+      "sections": 55
+    },
+    {
+      "id": "manufacturing-industrial",
+      "name": "Manufacturing & Industrial Systems",
+      "group": "Mechanical & Energy",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 8,
+      "sections": 48
+    },
+    {
+      "id": "mechatronics-robotics",
+      "name": "Mechatronics & Robotics",
+      "group": "Mechanical & Energy",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 6,
+      "sections": 39
+    },
+    {
+      "id": "ku-study-skills",
+      "name": "Study Skills & Learning Science",
+      "group": "Foundations",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 16
+    },
+    {
+      "id": "ku-computer-literacy",
+      "name": "Computer & Digital Literacy",
+      "group": "Foundations",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 9
+    },
+    {
+      "id": "ku-quantitative-aptitude",
+      "name": "Quantitative Aptitude",
+      "group": "Aptitude & Test Preparation",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 7
+    },
+    {
+      "id": "ku-logical-reasoning",
+      "name": "Logical Reasoning",
+      "group": "Aptitude & Test Preparation",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 9,
+      "sections": 12
+    },
+    {
+      "id": "ku-general-awareness",
+      "name": "General Awareness",
+      "group": "Aptitude & Test Preparation",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 4
+    },
+    {
+      "id": "ku-cell-molecular-biology",
+      "name": "Cell & Molecular Biology",
+      "group": "Life Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 18
+    },
+    {
+      "id": "ku-biochemistry",
+      "name": "Biochemistry",
+      "group": "Life Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 11
+    },
+    {
+      "id": "ku-genetics-heredity",
+      "name": "Genetics & Heredity",
+      "group": "Life Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 18
+    },
+    {
+      "id": "ku-evolutionary-biology",
+      "name": "Evolutionary Biology",
+      "group": "Life Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 9
+    },
+    {
+      "id": "ku-botany",
+      "name": "Botany",
+      "group": "Life Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 10
+    },
+    {
+      "id": "ku-zoology",
+      "name": "Zoology",
+      "group": "Life Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 11
+    },
+    {
+      "id": "ku-ecology-conservation",
+      "name": "Ecology & Conservation",
+      "group": "Life Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 12
+    },
+    {
+      "id": "ku-microbiology-immunology",
+      "name": "Microbiology & Immunology",
+      "group": "Life Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 8
+    },
+    {
+      "id": "ku-human-anatomy-physiology",
+      "name": "Human Anatomy & Physiology",
+      "group": "Life Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 11
+    },
+    {
+      "id": "ku-developmental-biology",
+      "name": "Developmental Biology",
+      "group": "Life Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 8
+    },
+    {
+      "id": "ku-marine-biology",
+      "name": "Marine Biology",
+      "group": "Life Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 6
+    },
+    {
+      "id": "ku-bioinformatics-genomics",
+      "name": "Bioinformatics & Genomics",
+      "group": "Life Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 4
+    },
+    {
+      "id": "ku-synthetic-biology",
+      "name": "Synthetic Biology",
+      "group": "Life Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 5
+    },
+    {
+      "id": "ku-neuroscience",
+      "name": "Neuroscience",
+      "group": "Natural Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 5
+    },
+    {
+      "id": "ku-astronomy",
+      "name": "Astronomy & Space Science",
+      "group": "Natural Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 6
+    },
+    {
+      "id": "ku-earth-sciences",
+      "name": "Earth & Atmospheric Sciences",
+      "group": "Natural Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 7
+    },
+    {
+      "id": "ku-earth-climate-science",
+      "name": "Earth & Climate Science",
+      "group": "Natural Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 5
+    },
+    {
+      "id": "ku-environmental-policy-circularity",
+      "name": "Environmental Policy & Circularity",
+      "group": "Natural Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 5
+    },
+    {
+      "id": "ku-environmental-health-food",
+      "name": "Environmental Health & Food Systems",
+      "group": "Natural Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 4
+    },
+    {
+      "id": "ku-energy",
+      "name": "Energy & Sustainability",
+      "group": "Natural Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 4
+    },
+    {
+      "id": "ku-clinical-medicine",
+      "name": "Clinical Medicine",
+      "group": "Medicine & Health",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 9
+    },
+    {
+      "id": "ku-medical-technology",
+      "name": "Medical Technology",
+      "group": "Medicine & Health",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 4
+    },
+    {
+      "id": "ku-medicines-emergency-care",
+      "name": "Medicines, First Aid & Reproductive Health",
+      "group": "Medicine & Health",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 6
+    },
+    {
+      "id": "ku-public-health",
+      "name": "Public Health",
+      "group": "Medicine & Health",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 6
+    },
+    {
+      "id": "ku-health-nutrition-fitness",
+      "name": "Health, Nutrition & Fitness",
+      "group": "Medicine & Health",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 7
+    },
+    {
+      "id": "ku-mental-health",
+      "name": "Mental Health",
+      "group": "Medicine & Health",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 7
+    },
+    {
+      "id": "ku-ancient-early-modern-history",
+      "name": "Ancient & Early Modern History",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 4
+    },
+    {
+      "id": "ku-modern-world-history",
+      "name": "Modern World History",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 9
+    },
+    {
+      "id": "ku-economic-history",
+      "name": "Economic History",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 5
+    },
+    {
+      "id": "ku-indian-history",
+      "name": "Indian History",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 6
+    },
+    {
+      "id": "ku-east-asian-history",
+      "name": "East Asian History",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 4
+    },
+    {
+      "id": "ku-philosophy",
+      "name": "Philosophy",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 11
+    },
+    {
+      "id": "ku-religion-mythology",
+      "name": "Religious Studies & Mythology",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 4
+    },
+    {
+      "id": "ku-psychology",
+      "name": "Psychology",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 6,
+      "sections": 12
+    },
+    {
+      "id": "ku-sociology",
+      "name": "Sociology",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 10
+    },
+    {
+      "id": "ku-urban-studies",
+      "name": "Urban Studies",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 6
+    },
+    {
+      "id": "ku-anthropology",
+      "name": "Anthropology",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 5
+    },
+    {
+      "id": "ku-political-theory",
+      "name": "Political Theory",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 4
+    },
+    {
+      "id": "ku-comparative-indian-politics",
+      "name": "Comparative Politics & Indian Polity",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 4
+    },
+    {
+      "id": "ku-international-relations",
+      "name": "International Relations & Security",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 4
+    },
+    {
+      "id": "ku-public-policy-administration",
+      "name": "Public Policy & Administration",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 5
+    },
+    {
+      "id": "ku-geography",
+      "name": "Geography",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 5
+    },
+    {
+      "id": "ku-education",
+      "name": "Education",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 4
+    },
+    {
+      "id": "ku-media-communication",
+      "name": "Media & Communication",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 6
+    },
+    {
+      "id": "ku-research-methods",
+      "name": "Research Methods",
+      "group": "Humanities & Social Sciences",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 4
+    },
+    {
+      "id": "ku-microeconomics",
+      "name": "Microeconomics",
+      "group": "Commerce, Economics & Business",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 7
+    },
+    {
+      "id": "ku-macroeconomics",
+      "name": "Macroeconomics",
+      "group": "Commerce, Economics & Business",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 6
+    },
+    {
+      "id": "ku-international-trade",
+      "name": "International Trade",
+      "group": "Commerce, Economics & Business",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 4
+    },
+    {
+      "id": "ku-development-economics",
+      "name": "Development & Political Economy",
+      "group": "Commerce, Economics & Business",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 3
+    },
+    {
+      "id": "ku-business-economics",
+      "name": "Business Economics",
+      "group": "Commerce, Economics & Business",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 3
+    },
+    {
+      "id": "ku-financial-accounting",
+      "name": "Financial Accounting",
+      "group": "Commerce, Economics & Business",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 6
+    },
+    {
+      "id": "ku-advanced-accounting-auditing",
+      "name": "Advanced Accounting & Auditing",
+      "group": "Commerce, Economics & Business",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 6
+    },
+    {
+      "id": "ku-finance-banking",
+      "name": "Finance & Banking",
+      "group": "Commerce, Economics & Business",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 9
+    },
+    {
+      "id": "ku-management-leadership",
+      "name": "Management & Leadership",
+      "group": "Commerce, Economics & Business",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 4
+    },
+    {
+      "id": "ku-marketing",
+      "name": "Marketing",
+      "group": "Commerce, Economics & Business",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 4
+    },
+    {
+      "id": "ku-operations-strategy",
+      "name": "Operations, Strategy & Supply Chain",
+      "group": "Commerce, Economics & Business",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 4
+    },
+    {
+      "id": "ku-entrepreneurship-business-environment",
+      "name": "Entrepreneurship & the Business Environment",
+      "group": "Commerce, Economics & Business",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 4
+    },
+    {
+      "id": "ku-legal-systems-method",
+      "name": "Legal Systems & Method",
+      "group": "Law & Justice",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 3
+    },
+    {
+      "id": "ku-constitutional-law",
+      "name": "Constitutional Law",
+      "group": "Law & Justice",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 4
+    },
+    {
+      "id": "ku-private-law",
+      "name": "Private Law: Contracts, Torts & Family",
+      "group": "Law & Justice",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 5
+    },
+    {
+      "id": "ku-business-corporate-law",
+      "name": "Business & Corporate Law",
+      "group": "Law & Justice",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 5
+    },
+    {
+      "id": "ku-criminal-justice",
+      "name": "Criminal Law & Justice",
+      "group": "Law & Justice",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 3
+    },
+    {
+      "id": "ku-international-law",
+      "name": "International Law",
+      "group": "Law & Justice",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 5
+    },
+    {
+      "id": "ku-regulatory-workplace-law",
+      "name": "Regulatory & Workplace Law",
+      "group": "Law & Justice",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 3
+    },
+    {
+      "id": "ku-literature",
+      "name": "Literature",
+      "group": "Languages & Literature",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 7
+    },
+    {
+      "id": "ku-linguistics",
+      "name": "Linguistics",
+      "group": "Languages & Literature",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 11
+    },
+    {
+      "id": "ku-spanish",
+      "name": "Spanish",
+      "group": "Languages & Literature",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 3
+    },
+    {
+      "id": "ku-japanese",
+      "name": "Japanese",
+      "group": "Languages & Literature",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 3
+    },
+    {
+      "id": "ku-french",
+      "name": "French",
+      "group": "Languages & Literature",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 3
+    },
+    {
+      "id": "ku-german",
+      "name": "German",
+      "group": "Languages & Literature",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 5
+    },
+    {
+      "id": "ku-hindi",
+      "name": "Hindi",
+      "group": "Languages & Literature",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 3
+    },
+    {
+      "id": "ku-arabic",
+      "name": "Arabic",
+      "group": "Languages & Literature",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 3
+    },
+    {
+      "id": "ku-korean",
+      "name": "Korean",
+      "group": "Languages & Literature",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 3
+    },
+    {
+      "id": "ku-russian",
+      "name": "Russian",
+      "group": "Languages & Literature",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 3
+    },
+    {
+      "id": "ku-mandarin",
+      "name": "Mandarin Chinese",
+      "group": "Languages & Literature",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 5
+    },
+    {
+      "id": "ku-art-history",
+      "name": "Art History",
+      "group": "Arts & Culture",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 5
+    },
+    {
+      "id": "ku-visual-arts",
+      "name": "Visual Arts",
+      "group": "Arts & Culture",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 6
+    },
+    {
+      "id": "ku-music",
+      "name": "Music",
+      "group": "Arts & Culture",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 9
+    },
+    {
+      "id": "ku-film-cinema",
+      "name": "Film & Cinema",
+      "group": "Arts & Culture",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 5
+    },
+    {
+      "id": "ku-animation",
+      "name": "Animation",
+      "group": "Arts & Culture",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 5
+    },
+    {
+      "id": "ku-design",
+      "name": "Design",
+      "group": "Arts & Culture",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 7
+    },
+    {
+      "id": "ku-performing-arts",
+      "name": "Performing Arts",
+      "group": "Arts & Culture",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 6
+    },
+    {
+      "id": "ku-architecture",
+      "name": "Architecture",
+      "group": "Arts & Culture",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 6
+    },
+    {
+      "id": "ku-structural-seismic-engineering",
+      "name": "Structural & Seismic Engineering",
+      "group": "Applied Engineering & Technology",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 4,
+      "sections": 5
+    },
+    {
+      "id": "ku-water-environmental-engineering",
+      "name": "Water & Environmental Engineering",
+      "group": "Applied Engineering & Technology",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 5
+    },
+    {
+      "id": "ku-transportation-engineering",
+      "name": "Transportation Engineering",
+      "group": "Applied Engineering & Technology",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 3
+    },
+    {
+      "id": "ku-construction-geomatics",
+      "name": "Construction, Geomatics & Underground Engineering",
+      "group": "Applied Engineering & Technology",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 3
+    },
+    {
+      "id": "ku-aerospace-aviation",
+      "name": "Aerospace & Aviation",
+      "group": "Applied Engineering & Technology",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 4
+    },
+    {
+      "id": "ku-chemical-engineering",
+      "name": "Chemical Engineering",
+      "group": "Applied Engineering & Technology",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 4
+    },
+    {
+      "id": "ku-naval-architecture",
+      "name": "Naval Architecture & Marine Engineering",
+      "group": "Applied Engineering & Technology",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 7
+    },
+    {
+      "id": "ku-nanotechnology",
+      "name": "Nanotechnology",
+      "group": "Applied Engineering & Technology",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 7
+    },
+    {
+      "id": "ku-quantum-information",
+      "name": "Quantum Information",
+      "group": "Applied Engineering & Technology",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 5,
+      "sections": 7
+    },
+    {
+      "id": "ku-computational-science",
+      "name": "Computational Science & Simulation",
+      "group": "Applied Engineering & Technology",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 5
+    },
+    {
+      "id": "ku-cooking-food-science",
+      "name": "Cooking & Food Science",
+      "group": "Everyday Life Skills",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 4
+    },
+    {
+      "id": "ku-home-repair-machines",
+      "name": "Home Repair & Everyday Machines",
+      "group": "Everyday Life Skills",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 6
+    },
+    {
+      "id": "ku-cars-navigation-outdoors",
+      "name": "Cars, Navigation & the Outdoors",
+      "group": "Everyday Life Skills",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 3
+    },
+    {
+      "id": "ku-garden-growing",
+      "name": "Garden & Growing",
+      "group": "Everyday Life Skills",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 3,
+      "sections": 4
+    },
+    {
+      "id": "ku-practical-skills-readiness",
+      "name": "Practical Skills & Readiness",
+      "group": "Everyday Life Skills",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 4
+    },
+    {
+      "id": "ku-career-communication",
+      "name": "Career & Communication",
+      "group": "Everyday Life Skills",
+      "universe": "masters-library",
+      "books": 1,
+      "chapters": 2,
+      "sections": 4
+    },
+    {
+      "id": "Genetics & Heredity",
+      "name": "Genetics & Heredity",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 9,
+      "topics": 18,
+      "words": 35003,
+      "tiers": {
+        "core": 4,
+        "intermediate": 4,
+        "advanced": 10
+      }
+    },
+    {
+      "id": "Cell & Molecular Biology",
+      "name": "Cell & Molecular Biology",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 6,
+      "topics": 18,
+      "words": 46835,
+      "tiers": {
+        "core": 11,
+        "advanced": 3,
+        "intermediate": 4
+      }
+    },
+    {
+      "id": "World History",
+      "name": "World History",
+      "universe": "knowledge-university",
+      "domain": "Humanities",
+      "chapters": 8,
+      "topics": 18,
+      "words": 30101,
+      "tiers": {
+        "intermediate": 5,
+        "core": 13
+      }
+    },
+    {
+      "id": "Study Skills & Memory",
+      "name": "Study Skills & Memory",
+      "universe": "knowledge-university",
+      "domain": "Foundation Learning",
+      "chapters": 3,
+      "topics": 15,
+      "words": 41997,
+      "tiers": {
+        "core": 11,
+        "intermediate": 4
+      }
+    },
+    {
+      "id": "Political Science",
+      "name": "Political Science",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 10,
+      "topics": 15,
+      "words": 26501,
+      "tiers": {
+        "intermediate": 9,
+        "core": 6
+      }
+    },
+    {
+      "id": "Psychology",
+      "name": "Psychology",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 9,
+      "topics": 12,
+      "words": 16759,
+      "tiers": {
+        "core": 8,
+        "intermediate": 4
+      }
+    },
+    {
+      "id": "Biochemistry",
+      "name": "Biochemistry",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 2,
+      "topics": 11,
+      "words": 21517,
+      "tiers": {
+        "advanced": 2,
+        "core": 6,
+        "intermediate": 3
+      }
+    },
+    {
+      "id": "Philosophy",
+      "name": "Philosophy",
+      "universe": "knowledge-university",
+      "domain": "Humanities",
+      "chapters": 8,
+      "topics": 11,
+      "words": 13825,
+      "tiers": {
+        "intermediate": 7,
+        "advanced": 2,
+        "core": 2
+      }
+    },
+    {
+      "id": "Accounting",
+      "name": "Accounting",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 9,
+      "topics": 11,
+      "words": 21869,
+      "tiers": {
+        "core": 5,
+        "intermediate": 4,
+        "advanced": 2
+      }
+    },
+    {
+      "id": "Anatomy & Physiology",
+      "name": "Anatomy & Physiology",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 2,
+      "topics": 10,
+      "words": 13053,
+      "tiers": {
+        "core": 5,
+        "intermediate": 5
+      }
+    },
+    {
+      "id": "Botany",
+      "name": "Botany",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 4,
+      "topics": 10,
+      "words": 15300,
+      "tiers": {
+        "core": 7,
+        "intermediate": 3
+      }
+    },
+    {
+      "id": "Sociology",
+      "name": "Sociology",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 7,
+      "topics": 10,
+      "words": 14236,
+      "tiers": {
+        "intermediate": 4,
+        "core": 6
+      }
+    },
+    {
+      "id": "History",
+      "name": "History",
+      "universe": "knowledge-university",
+      "domain": "Humanities",
+      "chapters": 5,
+      "topics": 10,
+      "words": 22217,
+      "tiers": {
+        "core": 7,
+        "intermediate": 3
+      }
+    },
+    {
+      "id": "Disease & Treatment",
+      "name": "Disease & Treatment",
+      "universe": "knowledge-university",
+      "domain": "Health & Wellness",
+      "chapters": 5,
+      "topics": 9,
+      "words": 12513,
+      "tiers": {
+        "core": 6,
+        "intermediate": 3
+      }
+    },
+    {
+      "id": "Developmental Biology",
+      "name": "Developmental Biology",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 5,
+      "topics": 8,
+      "words": 11587,
+      "tiers": {
+        "advanced": 6,
+        "core": 1,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Civil Engineering",
+      "name": "Civil Engineering",
+      "universe": "knowledge-university",
+      "domain": "Engineering",
+      "chapters": 6,
+      "topics": 8,
+      "words": 13743,
+      "tiers": {
+        "intermediate": 8
+      }
+    },
+    {
+      "id": "Nanotechnology",
+      "name": "Nanotechnology",
+      "universe": "knowledge-university",
+      "domain": "Technology & Applied Science",
+      "chapters": 6,
+      "topics": 8,
+      "words": 11075,
+      "tiers": {
+        "advanced": 1,
+        "intermediate": 3,
+        "core": 4
+      }
+    },
+    {
+      "id": "Quantum Information",
+      "name": "Quantum Information",
+      "universe": "knowledge-university",
+      "domain": "Emerging & Interdisciplinary",
+      "chapters": 5,
+      "topics": 8,
+      "words": 11316,
+      "tiers": {
+        "core": 4,
+        "advanced": 4
+      }
+    },
+    {
+      "id": "Quantitative Aptitude",
+      "name": "Quantitative Aptitude",
+      "universe": "knowledge-university",
+      "domain": "Aptitude & Test Preparation",
+      "chapters": 3,
+      "topics": 7,
+      "words": 15815,
+      "tiers": {
+        "core": 7
+      }
+    },
+    {
+      "id": "Zoology",
+      "name": "Zoology",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 6,
+      "topics": 7,
+      "words": 10916,
+      "tiers": {
+        "core": 1,
+        "intermediate": 6
+      }
+    },
+    {
+      "id": "Ecology",
+      "name": "Ecology",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 2,
+      "topics": 7,
+      "words": 10254,
+      "tiers": {
+        "intermediate": 5,
+        "core": 2
+      }
+    },
+    {
+      "id": "Evolutionary Biology",
+      "name": "Evolutionary Biology",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 4,
+      "topics": 7,
+      "words": 10006,
+      "tiers": {
+        "core": 4,
+        "intermediate": 2,
+        "advanced": 1
+      }
+    },
+    {
+      "id": "Naval Architecture",
+      "name": "Naval Architecture",
+      "universe": "knowledge-university",
+      "domain": "Engineering",
+      "chapters": 5,
+      "topics": 7,
+      "words": 10853,
+      "tiers": {
+        "intermediate": 3,
+        "core": 4
+      }
+    },
+    {
+      "id": "Mental Health",
+      "name": "Mental Health",
+      "universe": "knowledge-university",
+      "domain": "Health & Wellness",
+      "chapters": 3,
+      "topics": 7,
+      "words": 10487,
+      "tiers": {
+        "intermediate": 5,
+        "core": 2
+      }
+    },
+    {
+      "id": "Animation & Sequential Art",
+      "name": "Animation & Sequential Art",
+      "universe": "knowledge-university",
+      "domain": "Arts & Culture",
+      "chapters": 7,
+      "topics": 7,
+      "words": 9500,
+      "tiers": {
+        "core": 5,
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Logical Reasoning",
+      "name": "Logical Reasoning",
+      "universe": "knowledge-university",
+      "domain": "Foundation Learning",
+      "chapters": 6,
+      "topics": 6,
+      "words": 12858,
+      "tiers": {
+        "core": 6
+      }
+    },
+    {
+      "id": "Chemistry",
+      "name": "Chemistry",
+      "universe": "knowledge-university",
+      "domain": "Physical Sciences",
+      "chapters": 6,
+      "topics": 6,
+      "words": 8705,
+      "tiers": {
+        "core": 5,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Astronomy & Space Science",
+      "name": "Astronomy & Space Science",
+      "universe": "knowledge-university",
+      "domain": "Physical Sciences",
+      "chapters": 3,
+      "topics": 6,
+      "words": 7208,
+      "tiers": {
+        "intermediate": 3,
+        "core": 2,
+        "advanced": 1
+      }
+    },
+    {
+      "id": "Marine Biology",
+      "name": "Marine Biology",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 4,
+      "topics": 6,
+      "words": 9160,
+      "tiers": {
+        "core": 6
+      }
+    },
+    {
+      "id": "Probability & Statistics",
+      "name": "Probability & Statistics",
+      "universe": "knowledge-university",
+      "domain": "Mathematics",
+      "chapters": 5,
+      "topics": 6,
+      "words": 9583,
+      "tiers": {
+        "core": 2,
+        "intermediate": 3,
+        "advanced": 1
+      }
+    },
+    {
+      "id": "Linguistics",
+      "name": "Linguistics",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 3,
+      "topics": 6,
+      "words": 7703,
+      "tiers": {
+        "core": 3,
+        "intermediate": 3
+      }
+    },
+    {
+      "id": "Macroeconomics",
+      "name": "Macroeconomics",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 6,
+      "topics": 6,
+      "words": 10468,
+      "tiers": {
+        "core": 1,
+        "intermediate": 5
+      }
+    },
+    {
+      "id": "Public Health",
+      "name": "Public Health",
+      "universe": "knowledge-university",
+      "domain": "Health & Wellness",
+      "chapters": 5,
+      "topics": 6,
+      "words": 8219,
+      "tiers": {
+        "intermediate": 2,
+        "core": 4
+      }
+    },
+    {
+      "id": "Music Theory & Practice",
+      "name": "Music Theory & Practice",
+      "universe": "knowledge-university",
+      "domain": "Arts & Culture",
+      "chapters": 6,
+      "topics": 6,
+      "words": 7561,
+      "tiers": {
+        "core": 3,
+        "intermediate": 3
+      }
+    },
+    {
+      "id": "Visual Design",
+      "name": "Visual Design",
+      "universe": "knowledge-university",
+      "domain": "Arts & Culture",
+      "chapters": 4,
+      "topics": 6,
+      "words": 7976,
+      "tiers": {
+        "core": 5,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Architecture",
+      "name": "Architecture",
+      "universe": "knowledge-university",
+      "domain": "Arts & Culture",
+      "chapters": 4,
+      "topics": 6,
+      "words": 8459,
+      "tiers": {
+        "core": 4,
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Geology & Earth Science",
+      "name": "Geology & Earth Science",
+      "universe": "knowledge-university",
+      "domain": "Physical Sciences",
+      "chapters": 1,
+      "topics": 5,
+      "words": 5122,
+      "tiers": {
+        "core": 2,
+        "intermediate": 3
+      }
+    },
+    {
+      "id": "Neuroscience",
+      "name": "Neuroscience",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 4,
+      "topics": 5,
+      "words": 6348,
+      "tiers": {
+        "intermediate": 3,
+        "core": 2
+      }
+    },
+    {
+      "id": "Microbiology & Disease",
+      "name": "Microbiology & Disease",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 1,
+      "topics": 5,
+      "words": 6977,
+      "tiers": {
+        "core": 1,
+        "intermediate": 4
+      }
+    },
+    {
+      "id": "Calculus",
+      "name": "Calculus",
+      "universe": "knowledge-university",
+      "domain": "Mathematics",
+      "chapters": 2,
+      "topics": 5,
+      "words": 8009,
+      "tiers": {
+        "intermediate": 3,
+        "core": 1,
+        "advanced": 1
+      }
+    },
+    {
+      "id": "Digital Literacy",
+      "name": "Digital Literacy",
+      "universe": "knowledge-university",
+      "domain": "Computing & AI",
+      "chapters": 2,
+      "topics": 5,
+      "words": 10627,
+      "tiers": {
+        "core": 5
+      }
+    },
+    {
+      "id": "Civil & Structural Engineering",
+      "name": "Civil & Structural Engineering",
+      "universe": "knowledge-university",
+      "domain": "Engineering",
+      "chapters": 5,
+      "topics": 5,
+      "words": 6796,
+      "tiers": {
+        "core": 1,
+        "intermediate": 4
+      }
+    },
+    {
+      "id": "Anthropology",
+      "name": "Anthropology",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 2,
+      "topics": 5,
+      "words": 6966,
+      "tiers": {
+        "core": 4,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Art History",
+      "name": "Art History",
+      "universe": "knowledge-university",
+      "domain": "Humanities",
+      "chapters": 5,
+      "topics": 5,
+      "words": 6812,
+      "tiers": {
+        "core": 3,
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "German",
+      "name": "German",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 3,
+      "topics": 5,
+      "words": 6839,
+      "tiers": {
+        "core": 5
+      }
+    },
+    {
+      "id": "Mandarin Chinese",
+      "name": "Mandarin Chinese",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 3,
+      "topics": 5,
+      "words": 7571,
+      "tiers": {
+        "core": 4,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "International Law",
+      "name": "International Law",
+      "universe": "knowledge-university",
+      "domain": "Law & Governance",
+      "chapters": 4,
+      "topics": 5,
+      "words": 8763,
+      "tiers": {
+        "intermediate": 4,
+        "core": 1
+      }
+    },
+    {
+      "id": "Microeconomics",
+      "name": "Microeconomics",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 5,
+      "topics": 5,
+      "words": 8345,
+      "tiers": {
+        "core": 3,
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Finance & Investment",
+      "name": "Finance & Investment",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 5,
+      "topics": 5,
+      "words": 8389,
+      "tiers": {
+        "intermediate": 3,
+        "core": 2
+      }
+    },
+    {
+      "id": "Film & Cinema",
+      "name": "Film & Cinema",
+      "universe": "knowledge-university",
+      "domain": "Arts & Culture",
+      "chapters": 5,
+      "topics": 5,
+      "words": 6374,
+      "tiers": {
+        "core": 3,
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Theater & Performance",
+      "name": "Theater & Performance",
+      "universe": "knowledge-university",
+      "domain": "Arts & Culture",
+      "chapters": 4,
+      "topics": 5,
+      "words": 7026,
+      "tiers": {
+        "core": 4,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Computational Science",
+      "name": "Computational Science",
+      "universe": "knowledge-university",
+      "domain": "Emerging & Interdisciplinary",
+      "chapters": 3,
+      "topics": 5,
+      "words": 7282,
+      "tiers": {
+        "core": 2,
+        "intermediate": 2,
+        "advanced": 1
+      }
+    },
+    {
+      "id": "Synthetic Biology",
+      "name": "Synthetic Biology",
+      "universe": "knowledge-university",
+      "domain": "Emerging & Interdisciplinary",
+      "chapters": 3,
+      "topics": 5,
+      "words": 7509,
+      "tiers": {
+        "advanced": 2,
+        "intermediate": 3
+      }
+    },
+    {
+      "id": "General Awareness",
+      "name": "General Awareness",
+      "universe": "knowledge-university",
+      "domain": "Aptitude & Test Preparation",
+      "chapters": 3,
+      "topics": 4,
+      "words": 7970,
+      "tiers": {
+        "core": 4
+      }
+    },
+    {
+      "id": "Physics",
+      "name": "Physics",
+      "universe": "knowledge-university",
+      "domain": "Physical Sciences",
+      "chapters": 4,
+      "topics": 4,
+      "words": 4857,
+      "tiers": {
+        "core": 1,
+        "intermediate": 3
+      }
+    },
+    {
+      "id": "Conservation Biology",
+      "name": "Conservation Biology",
+      "universe": "knowledge-university",
+      "domain": "Environment & Sustainability",
+      "chapters": 2,
+      "topics": 4,
+      "words": 5046,
+      "tiers": {
+        "core": 2,
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Programming",
+      "name": "Programming",
+      "universe": "knowledge-university",
+      "domain": "Computing & AI",
+      "chapters": 3,
+      "topics": 4,
+      "words": 5781,
+      "tiers": {
+        "core": 4
+      }
+    },
+    {
+      "id": "Chemical Engineering",
+      "name": "Chemical Engineering",
+      "universe": "knowledge-university",
+      "domain": "Engineering",
+      "chapters": 3,
+      "topics": 4,
+      "words": 5433,
+      "tiers": {
+        "advanced": 1,
+        "intermediate": 2,
+        "core": 1
+      }
+    },
+    {
+      "id": "Medical Technology",
+      "name": "Medical Technology",
+      "universe": "knowledge-university",
+      "domain": "Technology & Applied Science",
+      "chapters": 4,
+      "topics": 4,
+      "words": 5155,
+      "tiers": {
+        "advanced": 1,
+        "intermediate": 2,
+        "core": 1
+      }
+    },
+    {
+      "id": "Education",
+      "name": "Education",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 3,
+      "topics": 4,
+      "words": 6366,
+      "tiers": {
+        "core": 3,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Human Geography",
+      "name": "Human Geography",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 3,
+      "topics": 4,
+      "words": 5235,
+      "tiers": {
+        "intermediate": 1,
+        "core": 3
+      }
+    },
+    {
+      "id": "World Literature",
+      "name": "World Literature",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 3,
+      "topics": 4,
+      "words": 6566,
+      "tiers": {
+        "core": 3,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Constitutional Law",
+      "name": "Constitutional Law",
+      "universe": "knowledge-university",
+      "domain": "Law & Governance",
+      "chapters": 2,
+      "topics": 4,
+      "words": 6268,
+      "tiers": {
+        "core": 4
+      }
+    },
+    {
+      "id": "Business Law",
+      "name": "Business Law",
+      "universe": "knowledge-university",
+      "domain": "Law & Governance",
+      "chapters": 4,
+      "topics": 4,
+      "words": 9815,
+      "tiers": {
+        "intermediate": 4
+      }
+    },
+    {
+      "id": "Private Law",
+      "name": "Private Law",
+      "universe": "knowledge-university",
+      "domain": "Law & Governance",
+      "chapters": 4,
+      "topics": 4,
+      "words": 6254,
+      "tiers": {
+        "intermediate": 1,
+        "core": 3
+      }
+    },
+    {
+      "id": "Marketing",
+      "name": "Marketing",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 3,
+      "topics": 4,
+      "words": 6059,
+      "tiers": {
+        "core": 4
+      }
+    },
+    {
+      "id": "International Trade",
+      "name": "International Trade",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 4,
+      "topics": 4,
+      "words": 6287,
+      "tiers": {
+        "intermediate": 4
+      }
+    },
+    {
+      "id": "Cooking & Food Science",
+      "name": "Cooking & Food Science",
+      "universe": "knowledge-university",
+      "domain": "Everyday Knowledge",
+      "chapters": 3,
+      "topics": 4,
+      "words": 4923,
+      "tiers": {
+        "core": 4
+      }
+    },
+    {
+      "id": "Garden & Growing",
+      "name": "Garden & Growing",
+      "universe": "knowledge-university",
+      "domain": "Everyday Knowledge",
+      "chapters": 3,
+      "topics": 4,
+      "words": 6439,
+      "tiers": {
+        "core": 4
+      }
+    },
+    {
+      "id": "Home & Repair",
+      "name": "Home & Repair",
+      "universe": "knowledge-university",
+      "domain": "Everyday Knowledge",
+      "chapters": 1,
+      "topics": 4,
+      "words": 6532,
+      "tiers": {
+        "core": 4
+      }
+    },
+    {
+      "id": "Practical Skills",
+      "name": "Practical Skills",
+      "universe": "knowledge-university",
+      "domain": "Everyday Knowledge",
+      "chapters": 4,
+      "topics": 4,
+      "words": 6741,
+      "tiers": {
+        "core": 3,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Career & Communication",
+      "name": "Career & Communication",
+      "universe": "knowledge-university",
+      "domain": "Everyday Knowledge",
+      "chapters": 3,
+      "topics": 4,
+      "words": 6761,
+      "tiers": {
+        "core": 3,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Bioinformatics",
+      "name": "Bioinformatics",
+      "universe": "knowledge-university",
+      "domain": "Emerging & Interdisciplinary",
+      "chapters": 4,
+      "topics": 4,
+      "words": 4966,
+      "tiers": {
+        "advanced": 2,
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Animal Behavior",
+      "name": "Animal Behavior",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 2,
+      "topics": 3,
+      "words": 4696,
+      "tiers": {
+        "intermediate": 3
+      }
+    },
+    {
+      "id": "Immunology",
+      "name": "Immunology",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 1,
+      "topics": 3,
+      "words": 4787,
+      "tiers": {
+        "intermediate": 3
+      }
+    },
+    {
+      "id": "Algebra",
+      "name": "Algebra",
+      "universe": "knowledge-university",
+      "domain": "Mathematics",
+      "chapters": 3,
+      "topics": 3,
+      "words": 4927,
+      "tiers": {
+        "core": 2,
+        "advanced": 1
+      }
+    },
+    {
+      "id": "Geometry & Measurement",
+      "name": "Geometry & Measurement",
+      "universe": "knowledge-university",
+      "domain": "Mathematics",
+      "chapters": 2,
+      "topics": 3,
+      "words": 5397,
+      "tiers": {
+        "core": 1,
+        "intermediate": 1,
+        "advanced": 1
+      }
+    },
+    {
+      "id": "Waste & Circularity",
+      "name": "Waste & Circularity",
+      "universe": "knowledge-university",
+      "domain": "Environment & Sustainability",
+      "chapters": 1,
+      "topics": 3,
+      "words": 3671,
+      "tiers": {
+        "core": 2,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Climate Science",
+      "name": "Climate Science",
+      "universe": "knowledge-university",
+      "domain": "Environment & Sustainability",
+      "chapters": 3,
+      "topics": 3,
+      "words": 3510,
+      "tiers": {
+        "intermediate": 2,
+        "advanced": 1
+      }
+    },
+    {
+      "id": "Energy & Sustainability",
+      "name": "Energy & Sustainability",
+      "universe": "knowledge-university",
+      "domain": "Environment & Sustainability",
+      "chapters": 3,
+      "topics": 3,
+      "words": 3695,
+      "tiers": {
+        "intermediate": 3
+      }
+    },
+    {
+      "id": "Urban Planning",
+      "name": "Urban Planning",
+      "universe": "knowledge-university",
+      "domain": "Environment & Sustainability",
+      "chapters": 3,
+      "topics": 3,
+      "words": 4373,
+      "tiers": {
+        "core": 1,
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Research Methods",
+      "name": "Research Methods",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 2,
+      "topics": 3,
+      "words": 5084,
+      "tiers": {
+        "core": 1,
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Media & Communication",
+      "name": "Media & Communication",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 2,
+      "topics": 3,
+      "words": 4429,
+      "tiers": {
+        "core": 1,
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Urban Sociology",
+      "name": "Urban Sociology",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 2,
+      "topics": 3,
+      "words": 4177,
+      "tiers": {
+        "intermediate": 3
+      }
+    },
+    {
+      "id": "Religious Studies",
+      "name": "Religious Studies",
+      "universe": "knowledge-university",
+      "domain": "Humanities",
+      "chapters": 3,
+      "topics": 3,
+      "words": 4281,
+      "tiers": {
+        "core": 3
+      }
+    },
+    {
+      "id": "Arabic",
+      "name": "Arabic",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 3,
+      "topics": 3,
+      "words": 4122,
+      "tiers": {
+        "core": 3
+      }
+    },
+    {
+      "id": "Korean",
+      "name": "Korean",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 3,
+      "topics": 3,
+      "words": 3859,
+      "tiers": {
+        "core": 3
+      }
+    },
+    {
+      "id": "Russian",
+      "name": "Russian",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 3,
+      "topics": 3,
+      "words": 4193,
+      "tiers": {
+        "core": 3
+      }
+    },
+    {
+      "id": "Hindi",
+      "name": "Hindi",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 3,
+      "topics": 3,
+      "words": 4278,
+      "tiers": {
+        "core": 3
+      }
+    },
+    {
+      "id": "French",
+      "name": "French",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 3,
+      "topics": 3,
+      "words": 3991,
+      "tiers": {
+        "core": 2,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Literary Craft",
+      "name": "Literary Craft",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 2,
+      "topics": 3,
+      "words": 4103,
+      "tiers": {
+        "core": 2,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Reading Strategy",
+      "name": "Reading Strategy",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 3,
+      "topics": 3,
+      "words": 4412,
+      "tiers": {
+        "intermediate": 1,
+        "core": 2
+      }
+    },
+    {
+      "id": "Verbal Reasoning",
+      "name": "Verbal Reasoning",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 3,
+      "topics": 3,
+      "words": 5483,
+      "tiers": {
+        "intermediate": 1,
+        "core": 2
+      }
+    },
+    {
+      "id": "Phonetics & Phonology",
+      "name": "Phonetics & Phonology",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 3,
+      "topics": 3,
+      "words": 3875,
+      "tiers": {
+        "intermediate": 2,
+        "core": 1
+      }
+    },
+    {
+      "id": "Spanish",
+      "name": "Spanish",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 3,
+      "topics": 3,
+      "words": 3560,
+      "tiers": {
+        "core": 3
+      }
+    },
+    {
+      "id": "Japanese",
+      "name": "Japanese",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 3,
+      "topics": 3,
+      "words": 3608,
+      "tiers": {
+        "intermediate": 1,
+        "core": 2
+      }
+    },
+    {
+      "id": "Criminal Justice",
+      "name": "Criminal Justice",
+      "universe": "knowledge-university",
+      "domain": "Law & Governance",
+      "chapters": 3,
+      "topics": 3,
+      "words": 4464,
+      "tiers": {
+        "intermediate": 2,
+        "core": 1
+      }
+    },
+    {
+      "id": "Business Economics",
+      "name": "Business Economics",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 3,
+      "topics": 3,
+      "words": 7500,
+      "tiers": {
+        "core": 1,
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Drawing & Painting",
+      "name": "Drawing & Painting",
+      "universe": "knowledge-university",
+      "domain": "Arts & Culture",
+      "chapters": 2,
+      "topics": 3,
+      "words": 4062,
+      "tiers": {
+        "intermediate": 1,
+        "core": 2
+      }
+    },
+    {
+      "id": "Sculpture & Craft",
+      "name": "Sculpture & Craft",
+      "universe": "knowledge-university",
+      "domain": "Arts & Culture",
+      "chapters": 3,
+      "topics": 3,
+      "words": 4348,
+      "tiers": {
+        "core": 3
+      }
+    },
+    {
+      "id": "Dance",
+      "name": "Dance",
+      "universe": "knowledge-university",
+      "domain": "Arts & Culture",
+      "chapters": 3,
+      "topics": 3,
+      "words": 4191,
+      "tiers": {
+        "core": 2,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Personal Finance",
+      "name": "Personal Finance",
+      "universe": "knowledge-university",
+      "domain": "Everyday Knowledge",
+      "chapters": 3,
+      "topics": 3,
+      "words": 3598,
+      "tiers": {
+        "core": 3
+      }
+    },
+    {
+      "id": "Reading & Literacy",
+      "name": "Reading & Literacy",
+      "universe": "knowledge-university",
+      "domain": "Foundation Learning",
+      "chapters": 1,
+      "topics": 2,
+      "words": 2314,
+      "tiers": {
+        "intermediate": 1,
+        "core": 1
+      }
+    },
+    {
+      "id": "Everyday Math & Numeracy",
+      "name": "Everyday Math & Numeracy",
+      "universe": "knowledge-university",
+      "domain": "Foundation Learning",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2784,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Physics of Complexity",
+      "name": "Physics of Complexity",
+      "universe": "knowledge-university",
+      "domain": "Physical Sciences",
+      "chapters": 1,
+      "topics": 2,
+      "words": 2489,
+      "tiers": {
+        "advanced": 1,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Meteorology",
+      "name": "Meteorology",
+      "universe": "knowledge-university",
+      "domain": "Physical Sciences",
+      "chapters": 1,
+      "topics": 2,
+      "words": 2052,
+      "tiers": {
+        "core": 1,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Diversity & Classification",
+      "name": "Diversity & Classification",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 2,
+      "topics": 2,
+      "words": 3574,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Discrete Mathematics",
+      "name": "Discrete Mathematics",
+      "universe": "knowledge-university",
+      "domain": "Mathematics",
+      "chapters": 2,
+      "topics": 2,
+      "words": 3137,
+      "tiers": {
+        "core": 1,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Mathematics",
+      "name": "Mathematics",
+      "universe": "knowledge-university",
+      "domain": "Mathematics",
+      "chapters": 2,
+      "topics": 2,
+      "words": 3396,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Environmental Policy",
+      "name": "Environmental Policy",
+      "universe": "knowledge-university",
+      "domain": "Environment & Sustainability",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2807,
+      "tiers": {
+        "intermediate": 1,
+        "advanced": 1
+      }
+    },
+    {
+      "id": "Earth Systems",
+      "name": "Earth Systems",
+      "universe": "knowledge-university",
+      "domain": "Environment & Sustainability",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2169,
+      "tiers": {
+        "core": 1,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Pollution & Environmental Health",
+      "name": "Pollution & Environmental Health",
+      "universe": "knowledge-university",
+      "domain": "Environment & Sustainability",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2498,
+      "tiers": {
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Agriculture & Food Systems",
+      "name": "Agriculture & Food Systems",
+      "universe": "knowledge-university",
+      "domain": "Environment & Sustainability",
+      "chapters": 2,
+      "topics": 2,
+      "words": 1934,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Nuclear Technology",
+      "name": "Nuclear Technology",
+      "universe": "knowledge-university",
+      "domain": "Environment & Sustainability",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2762,
+      "tiers": {
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Computer Science",
+      "name": "Computer Science",
+      "universe": "knowledge-university",
+      "domain": "Computing & AI",
+      "chapters": 2,
+      "topics": 2,
+      "words": 5046,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "ICT & Digital Literacy",
+      "name": "ICT & Digital Literacy",
+      "universe": "knowledge-university",
+      "domain": "Computing & AI",
+      "chapters": 2,
+      "topics": 2,
+      "words": 3495,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Machine Learning",
+      "name": "Machine Learning",
+      "universe": "knowledge-university",
+      "domain": "Computing & AI",
+      "chapters": 1,
+      "topics": 2,
+      "words": 2088,
+      "tiers": {
+        "advanced": 2
+      }
+    },
+    {
+      "id": "Manufacturing Engineering",
+      "name": "Manufacturing Engineering",
+      "universe": "knowledge-university",
+      "domain": "Engineering",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2393,
+      "tiers": {
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Aerospace Engineering",
+      "name": "Aerospace Engineering",
+      "universe": "knowledge-university",
+      "domain": "Engineering",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2539,
+      "tiers": {
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Aviation & Flight",
+      "name": "Aviation & Flight",
+      "universe": "knowledge-university",
+      "domain": "Technology & Applied Science",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2379,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Water Technology",
+      "name": "Water Technology",
+      "universe": "knowledge-university",
+      "domain": "Technology & Applied Science",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2884,
+      "tiers": {
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Everyday Machines",
+      "name": "Everyday Machines",
+      "universe": "knowledge-university",
+      "domain": "Technology & Applied Science",
+      "chapters": 1,
+      "topics": 2,
+      "words": 2419,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Mass Media and Society",
+      "name": "Mass Media and Society",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 2,
+      "topics": 2,
+      "words": 3717,
+      "tiers": {
+        "core": 1,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Academic Reading",
+      "name": "Academic Reading",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 2,
+      "topics": 2,
+      "words": 3177,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Academic English Skills",
+      "name": "Academic English Skills",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2957,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Academic Writing",
+      "name": "Academic Writing",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 2,
+      "topics": 2,
+      "words": 3587,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Legal Method",
+      "name": "Legal Method",
+      "universe": "knowledge-university",
+      "domain": "Law & Governance",
+      "chapters": 2,
+      "topics": 2,
+      "words": 3571,
+      "tiers": {
+        "core": 1,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Contract Law",
+      "name": "Contract Law",
+      "universe": "knowledge-university",
+      "domain": "Law & Governance",
+      "chapters": 2,
+      "topics": 2,
+      "words": 3964,
+      "tiers": {
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Entrepreneurship",
+      "name": "Entrepreneurship",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 2,
+      "topics": 2,
+      "words": 3015,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Development Economics",
+      "name": "Development Economics",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 2,
+      "topics": 2,
+      "words": 4348,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Management",
+      "name": "Management",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 2,
+      "topics": 2,
+      "words": 3880,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Management & Leadership",
+      "name": "Management & Leadership",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 2,
+      "topics": 2,
+      "words": 3110,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Operations & Supply Chain",
+      "name": "Operations & Supply Chain",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 1,
+      "topics": 2,
+      "words": 3266,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Strategy",
+      "name": "Strategy",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 2,
+      "topics": 2,
+      "words": 3156,
+      "tiers": {
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Nutrition",
+      "name": "Nutrition",
+      "universe": "knowledge-university",
+      "domain": "Health & Wellness",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2784,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Exercise & Fitness",
+      "name": "Exercise & Fitness",
+      "universe": "knowledge-university",
+      "domain": "Health & Wellness",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2314,
+      "tiers": {
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Sleep Science",
+      "name": "Sleep Science",
+      "universe": "knowledge-university",
+      "domain": "Health & Wellness",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2449,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Medicine & Pharmacology",
+      "name": "Medicine & Pharmacology",
+      "universe": "knowledge-university",
+      "domain": "Health & Wellness",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2916,
+      "tiers": {
+        "intermediate": 1,
+        "core": 1
+      }
+    },
+    {
+      "id": "First Aid & Emergency Care",
+      "name": "First Aid & Emergency Care",
+      "universe": "knowledge-university",
+      "domain": "Health & Wellness",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2542,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Sexual & Reproductive Health",
+      "name": "Sexual & Reproductive Health",
+      "universe": "knowledge-university",
+      "domain": "Health & Wellness",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2806,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Photography",
+      "name": "Photography",
+      "universe": "knowledge-university",
+      "domain": "Arts & Culture",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2198,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Music History & Appreciation",
+      "name": "Music History & Appreciation",
+      "universe": "knowledge-university",
+      "domain": "Arts & Culture",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2913,
+      "tiers": {
+        "core": 1,
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Fashion & Identity",
+      "name": "Fashion & Identity",
+      "universe": "knowledge-university",
+      "domain": "Arts & Culture",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2579,
+      "tiers": {
+        "intermediate": 2
+      }
+    },
+    {
+      "id": "Car & Driving",
+      "name": "Car & Driving",
+      "universe": "knowledge-university",
+      "domain": "Everyday Knowledge",
+      "chapters": 1,
+      "topics": 2,
+      "words": 3085,
+      "tiers": {
+        "core": 2
+      }
+    },
+    {
+      "id": "Brain-Inspired Computing",
+      "name": "Brain-Inspired Computing",
+      "universe": "knowledge-university",
+      "domain": "Emerging & Interdisciplinary",
+      "chapters": 2,
+      "topics": 2,
+      "words": 2436,
+      "tiers": {
+        "advanced": 2
+      }
+    },
+    {
+      "id": "Science & Inquiry Skills",
+      "name": "Science & Inquiry Skills",
+      "universe": "knowledge-university",
+      "domain": "Foundation Learning",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1422,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Nonverbal Reasoning",
+      "name": "Nonverbal Reasoning",
+      "universe": "knowledge-university",
+      "domain": "Foundation Learning",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1367,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Professional & Interpersonal Skills",
+      "name": "Professional & Interpersonal Skills",
+      "universe": "knowledge-university",
+      "domain": "Foundation Learning",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1466,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Skill Acquisition",
+      "name": "Skill Acquisition",
+      "universe": "knowledge-university",
+      "domain": "Foundation Learning",
+      "chapters": 1,
+      "topics": 1,
+      "words": 2516,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Physics of Everyday Phenomena",
+      "name": "Physics of Everyday Phenomena",
+      "universe": "knowledge-university",
+      "domain": "Physical Sciences",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1204,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Animal Biology",
+      "name": "Animal Biology",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1650,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Biology",
+      "name": "Biology",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1702,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Human Physiology",
+      "name": "Human Physiology",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 1,
+      "topics": 1,
+      "words": 2019,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Foundations",
+      "name": "Foundations",
+      "universe": "knowledge-university",
+      "domain": "Mathematics",
+      "chapters": 1,
+      "topics": 1,
+      "words": 2051,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Set Theory & Logic",
+      "name": "Set Theory & Logic",
+      "universe": "knowledge-university",
+      "domain": "Mathematics",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1249,
+      "tiers": {
+        "advanced": 1
+      }
+    },
+    {
+      "id": "Applied & Finite Mathematics",
+      "name": "Applied & Finite Mathematics",
+      "universe": "knowledge-university",
+      "domain": "Mathematics",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1624,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Linear Algebra",
+      "name": "Linear Algebra",
+      "universe": "knowledge-university",
+      "domain": "Mathematics",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1084,
+      "tiers": {
+        "advanced": 1
+      }
+    },
+    {
+      "id": "Number Theory",
+      "name": "Number Theory",
+      "universe": "knowledge-university",
+      "domain": "Mathematics",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1246,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Data Structures & Algorithms",
+      "name": "Data Structures & Algorithms",
+      "universe": "knowledge-university",
+      "domain": "Computing & AI",
+      "chapters": 1,
+      "topics": 1,
+      "words": 898,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Cybersecurity",
+      "name": "Cybersecurity",
+      "universe": "knowledge-university",
+      "domain": "Computing & AI",
+      "chapters": 1,
+      "topics": 1,
+      "words": 896,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Distributed Systems",
+      "name": "Distributed Systems",
+      "universe": "knowledge-university",
+      "domain": "Computing & AI",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1156,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Systems & Infrastructure",
+      "name": "Systems & Infrastructure",
+      "universe": "knowledge-university",
+      "domain": "Computing & AI",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1141,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Railway Engineering",
+      "name": "Railway Engineering",
+      "universe": "knowledge-university",
+      "domain": "Engineering",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1248,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Mechanical Engineering",
+      "name": "Mechanical Engineering",
+      "universe": "knowledge-university",
+      "domain": "Engineering",
+      "chapters": 1,
+      "topics": 1,
+      "words": 997,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Materials Science",
+      "name": "Materials Science",
+      "universe": "knowledge-university",
+      "domain": "Engineering",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1050,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Electrical & Electronics Engineering",
+      "name": "Electrical & Electronics Engineering",
+      "universe": "knowledge-university",
+      "domain": "Engineering",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1006,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Manufacturing & Materials",
+      "name": "Manufacturing & Materials",
+      "universe": "knowledge-university",
+      "domain": "Technology & Applied Science",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1499,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Energy Systems",
+      "name": "Energy Systems",
+      "universe": "knowledge-university",
+      "domain": "Technology & Applied Science",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1009,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Telecommunications",
+      "name": "Telecommunications",
+      "universe": "knowledge-university",
+      "domain": "Technology & Applied Science",
+      "chapters": 1,
+      "topics": 1,
+      "words": 901,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Photonics",
+      "name": "Photonics",
+      "universe": "knowledge-university",
+      "domain": "Technology & Applied Science",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1167,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Construction & the Built Environment",
+      "name": "Construction & the Built Environment",
+      "universe": "knowledge-university",
+      "domain": "Technology & Applied Science",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1328,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Media Literacy",
+      "name": "Media Literacy",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1837,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Defence Studies",
+      "name": "Defence Studies",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 1,
+      "topics": 1,
+      "words": 2172,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Public Policy",
+      "name": "Public Policy",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1246,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Logic and Reasoning",
+      "name": "Logic and Reasoning",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 1,
+      "topics": 1,
+      "words": 2418,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Geography",
+      "name": "Geography",
+      "universe": "knowledge-university",
+      "domain": "Social Sciences",
+      "chapters": 1,
+      "topics": 1,
+      "words": 2345,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Comparative Mythology",
+      "name": "Comparative Mythology",
+      "universe": "knowledge-university",
+      "domain": "Humanities",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1425,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Reading Skills",
+      "name": "Reading Skills",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1779,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Professional Writing",
+      "name": "Professional Writing",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1970,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Grammar & Mechanics",
+      "name": "Grammar & Mechanics",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1326,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Speaking & Listening",
+      "name": "Speaking & Listening",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1967,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Sociolinguistics",
+      "name": "Sociolinguistics",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1279,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Language Acquisition Science",
+      "name": "Language Acquisition Science",
+      "universe": "knowledge-university",
+      "domain": "Languages & World Literature",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1022,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Legal History",
+      "name": "Legal History",
+      "universe": "knowledge-university",
+      "domain": "Law & Governance",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1975,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Tax & Administrative Law",
+      "name": "Tax & Administrative Law",
+      "universe": "knowledge-university",
+      "domain": "Law & Governance",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1634,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Employment Law",
+      "name": "Employment Law",
+      "universe": "knowledge-university",
+      "domain": "Law & Governance",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1556,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Intellectual Property & Media Law",
+      "name": "Intellectual Property & Media Law",
+      "universe": "knowledge-university",
+      "domain": "Law & Governance",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1422,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Auditing & Assurance",
+      "name": "Auditing & Assurance",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 1,
+      "topics": 1,
+      "words": 2625,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Business Regulation",
+      "name": "Business Regulation",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 1,
+      "topics": 1,
+      "words": 2013,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Business Environment",
+      "name": "Business Environment",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 1,
+      "topics": 1,
+      "words": 2041,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Foundations of Economics",
+      "name": "Foundations of Economics",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1639,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Behavioral Economics",
+      "name": "Behavioral Economics",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1331,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Banking & Finance",
+      "name": "Banking & Finance",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 1,
+      "topics": 1,
+      "words": 2050,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Political Economy",
+      "name": "Political Economy",
+      "universe": "knowledge-university",
+      "domain": "Business & Economics",
+      "chapters": 1,
+      "topics": 1,
+      "words": 2018,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Health & Longevity",
+      "name": "Health & Longevity",
+      "universe": "knowledge-university",
+      "domain": "Health & Wellness",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1472,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Music Production",
+      "name": "Music Production",
+      "universe": "knowledge-university",
+      "domain": "Arts & Culture",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1214,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Creative Writing",
+      "name": "Creative Writing",
+      "universe": "knowledge-university",
+      "domain": "Arts & Culture",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1132,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Games & Strategy",
+      "name": "Games & Strategy",
+      "universe": "knowledge-university",
+      "domain": "Everyday Knowledge",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1086,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Navigation & Outdoors",
+      "name": "Navigation & Outdoors",
+      "universe": "knowledge-university",
+      "domain": "Everyday Knowledge",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1189,
+      "tiers": {
+        "core": 1
+      }
+    },
+    {
+      "id": "Systems Science",
+      "name": "Systems Science",
+      "universe": "knowledge-university",
+      "domain": "Emerging & Interdisciplinary",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1013,
+      "tiers": {
+        "intermediate": 1
+      }
+    },
+    {
+      "id": "Extended Reality",
+      "name": "Extended Reality",
+      "universe": "knowledge-university",
+      "domain": "Emerging & Interdisciplinary",
+      "chapters": 1,
+      "topics": 1,
+      "words": 1248,
+      "tiers": {
+        "intermediate": 1
+      }
+    }
+  ]
+}

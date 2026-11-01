@@ -1,0 +1,4056 @@
+{
+  "$comment": "Examination registry (spec PART 2.2): curated OFFICIAL syllabi with authority, verification date and official source URLs. syllabusVerified = date the syllabus data was last verified against the official page — re-verify when older than 12 months (DISCOVERY_BACKLOG item 11). Regenerate: bun scripts/build-project-registries.ts",
+  "builtOn": "2026-11-01",
+  "count": 59,
+  "regions": [
+    "India",
+    "United States",
+    "Global",
+    "United Kingdom",
+    "South America",
+    "Singapore",
+    "Australia",
+    "Japan",
+    "Canada",
+    "China"
+  ],
+  "exams": [
+    {
+      "id": "neet",
+      "name": "NEET",
+      "fullName": "National Eligibility cum Entrance Test (Undergraduate)",
+      "region": "India",
+      "category": "Medical entrance",
+      "authority": "National Testing Agency (NTA)",
+      "website": "https://neet.nta.nic.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "NEET UG — Syllabus",
+          "url": "https://neet.nta.nic.in",
+          "host": "neet.nta.nic.in"
+        }
+      ],
+      "overview": {
+        "conductor": "National Testing Agency (NTA)",
+        "level": "Class 11–12 → MBBS/BDS/AYUSH admission",
+        "papers": [
+          "Single pen-paper: Physics, Chemistry, Biology"
+        ],
+        "duration": "3 h 20 min · 180 questions (45 physics, 45 chemistry, 90 biology)",
+        "marking": "720 marks; +4 correct / −1 incorrect",
+        "negativeMarking": "−1 per incorrect",
+        "questionTypes": [
+          "MCQ (4 options)"
+        ],
+        "notes": "Single pen-and-paper (OMR) exam offered in English, Hindi and regional languages. NCERT Class 11–12 textbooks are the base. The syllabus follows the NMC/NTA rationalised syllabus in force since the 2024 edition (2026 official syllabus verified) — chapters dropped in the rationalisation (e.g. States of Matter, Hydrogen, s-Block, Environmental Chemistry, Polymers, Chemistry in Everyday Life, Reproduction in Organisms) are not tested."
+      },
+      "subjects": [
+        {
+          "name": "Physics",
+          "mappedSubjectId": "physics",
+          "weightage": null,
+          "units": 20,
+          "syllabusEntries": 54
+        },
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": null,
+          "units": 20,
+          "syllabusEntries": 68
+        },
+        {
+          "name": "Biology",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 10,
+          "syllabusEntries": 32
+        }
+      ],
+      "syllabusEntries": 154,
+      "mappedEntries": 154,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "jee-main",
+      "name": "JEE Main",
+      "fullName": "Joint Entrance Examination Main",
+      "region": "India",
+      "category": "Engineering entrance",
+      "authority": "National Testing Agency (NTA)",
+      "website": "https://jeemain.nta.nic.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "JEE Main — Information Bulletin & Syllabus",
+          "url": "https://jeemain.nta.nic.in",
+          "host": "jeemain.nta.nic.in"
+        }
+      ],
+      "overview": {
+        "conductor": "National Testing Agency (NTA)",
+        "level": "Class 11–12 → BTech/BE/BArch admission",
+        "papers": [
+          "Paper 1: BTech (Physics, Chemistry, Mathematics)",
+          "Paper 2: BArch/BPlanning"
+        ],
+        "duration": "Paper 1: 3 h · 75 questions (25 per subject: 20 MCQ + 5 numerical, all compulsory)",
+        "marking": "Paper 1: 300 marks; +4 correct / −1 incorrect MCQ",
+        "negativeMarking": "−1 per incorrect MCQ; numerical value questions (Section B) carry NO negative marking under the 2025+ policy — the 2024 cycle had briefly applied −1 to numericals as well",
+        "questionTypes": [
+          "MCQ (4 options)",
+          "Numerical value questions"
+        ],
+        "notes": "Computer-based test held in two sessions per year (January and April); a candidate’s best session score counts. Syllabus follows the NTA-reduced syllabus in force since the 2024 cycle (2026 official syllabus PDF verified) — chapters dropped in the reduction (States of Matter, Hydrogen, s-Block, Polymers, Chemistry in Everyday Life, Communication Systems etc.) are not tested. Paper 2 Drawing portion is pen-and-paper."
+      },
+      "subjects": [
+        {
+          "name": "Physics",
+          "mappedSubjectId": "physics",
+          "weightage": null,
+          "units": 20,
+          "syllabusEntries": 61
+        },
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": null,
+          "units": 20,
+          "syllabusEntries": 68
+        },
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 14,
+          "syllabusEntries": 34
+        }
+      ],
+      "syllabusEntries": 163,
+      "mappedEntries": 163,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "sat",
+      "name": "SAT",
+      "fullName": "Scholastic Assessment Test (Digital, Adaptive)",
+      "region": "United States",
+      "category": "Undergraduate admission aptitude",
+      "authority": "College Board (via Bluebird/Bluebook app)",
+      "website": "https://sats.collegeboard.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "SAT Suite of Assessments — test specifications",
+          "url": "https://sats.collegeboard.org/digital",
+          "host": "collegeboard.org"
+        }
+      ],
+      "overview": {
+        "conductor": "College Board (via Bluebird/Bluebook app)",
+        "level": "High-school → undergraduate admission (US & international)",
+        "stages": [
+          "Single digital adaptive stage (module 1 → module 2 per section)"
+        ],
+        "papers": [
+          "Reading & Writing",
+          "Math"
+        ],
+        "duration": "2 h 14 min total (RW 64 min · Math 70 min)",
+        "marking": "400–1600 total; each section 200–800",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Multiple-choice (4 options)",
+          "Student-produced responses (math grid-in)"
+        ],
+        "notes": "Digital adaptive: module 2 difficulty adapts to module 1 performance. Calculator allowed throughout Math (Desmos built in)."
+      },
+      "subjects": [
+        {
+          "name": "Reading & Writing",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 10
+        },
+        {
+          "name": "Math",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 18
+        }
+      ],
+      "syllabusEntries": 28,
+      "mappedEntries": 28,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "upsc-prelims",
+      "name": "UPSC Prelims",
+      "fullName": "UPSC Civil Services Preliminary Examination",
+      "region": "India",
+      "category": "Civil services",
+      "authority": "Union Public Service Commission",
+      "website": "https://upsc.gov.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "UPSC Civil Services Examination — notification and syllabus",
+          "url": "https://upsc.gov.in/examinations/active-examinations",
+          "host": "upsc.gov.in"
+        }
+      ],
+      "overview": {
+        "conductor": "Union Public Service Commission",
+        "level": "Graduate → civil services (IAS, IPS, IFS and other Group A/B services)",
+        "stages": [
+          "Prelims (objective) → Mains (written) → Interview"
+        ],
+        "papers": [
+          "General Studies Paper I — 100 questions, 200 marks (merit-ranking)",
+          "General Studies Paper II (CSAT) — 80 questions, 200 marks (qualifying)"
+        ],
+        "duration": "GS Paper I: 2 h · CSAT: 2 h",
+        "marking": "GS Paper I: +2/−0.66 per question (200 marks); CSAT qualifying 33%",
+        "negativeMarking": "One-third of the question's marks deducted per wrong answer (−0.66 in GS I, −0.83 in CSAT)",
+        "questionTypes": [
+          "MCQ (4 options)"
+        ],
+        "notes": "GS Paper I decides the cut; CSAT is qualifying. Syllabus is topical, not chapter-wise."
+      },
+      "subjects": [
+        {
+          "name": "General Studies Paper I",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 7,
+          "syllabusEntries": 30
+        },
+        {
+          "name": "General Studies Paper II (CSAT)",
+          "mappedSubjectId": "ku-logical-reasoning",
+          "weightage": null,
+          "units": 7,
+          "syllabusEntries": 24
+        }
+      ],
+      "syllabusEntries": 54,
+      "mappedEntries": 54,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "jee-advanced",
+      "name": "JEE Advanced",
+      "fullName": "Joint Entrance Examination Advanced",
+      "region": "India",
+      "category": "Engineering entrance",
+      "authority": "IIT (rotating organising institute) under the Joint Admission Board (JAB)",
+      "website": "https://jeeadv.ac.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "JEE Advanced — Official Syllabus",
+          "url": "https://jeeadv.ac.in",
+          "host": "jeeadv.ac.in"
+        }
+      ],
+      "overview": {
+        "conductor": "IIT (rotating organising institute) under the Joint Admission Board (JAB)",
+        "level": "Class 11–12 → BTech admission to the IITs (via JEE Main qualification)",
+        "stages": [
+          "JEE Main (qualifying) → JEE Advanced"
+        ],
+        "papers": [
+          "Paper 1 and Paper 2 — both compulsory, held the same day"
+        ],
+        "duration": "2 × 3 h",
+        "marking": "Varies section to section: full, partial and negative marks are possible (e.g. +4/−2, +3/−1, +2/−1); the exact scheme is disclosed with each paper",
+        "negativeMarking": "Negative marking in most sections (−1 to −2); some multiple-correct sections award partial marks",
+        "questionTypes": [
+          "MCQ with one correct option",
+          "MCQ with one or more correct options (partial marking)",
+          "Numerical value questions",
+          "Matching list questions"
+        ],
+        "notes": "Computer-based test; only the top JEE Main qualifiers (about 2.5 lakh candidates) may register each year. Syllabus follows the revised JEE Advanced syllabus in force since the 2023 examination."
+      },
+      "subjects": [
+        {
+          "name": "Physics",
+          "mappedSubjectId": "physics",
+          "weightage": null,
+          "units": 6,
+          "syllabusEntries": 22
+        },
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 29
+        },
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 6,
+          "syllabusEntries": 21
+        }
+      ],
+      "syllabusEntries": 72,
+      "mappedEntries": 72,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "cat",
+      "name": "CAT",
+      "fullName": "Common Admission Test",
+      "region": "India",
+      "category": "MBA entrance",
+      "authority": "IIMs (rotating)",
+      "website": "https://iimcat.ac.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "IIM CAT — official website and exam pattern",
+          "url": "https://iimcat.ac.in",
+          "host": "iimcat.ac.in"
+        }
+      ],
+      "overview": {
+        "conductor": "IIMs (rotating)",
+        "level": "Graduate → MBA/PGP admission",
+        "stages": [
+          "Single stage (three fixed-order, individually timed sections)"
+        ],
+        "papers": [
+          "Verbal Ability and Reading Comprehension (VARC)",
+          "Data Interpretation and Logical Reasoning (DILR)",
+          "Quantitative Aptitude (QA)"
+        ],
+        "duration": "2 h · 3 sections · 40 min each",
+        "marking": "+3 correct / −1 incorrect (TITA no negative)",
+        "negativeMarking": "−1 per wrong MCQ; TITA questions carry no negative marking",
+        "questionTypes": [
+          "MCQ",
+          "TITA (type in the answer)"
+        ],
+        "notes": "IIMs publish no official syllabus — this section-wise map follows the official exam pattern and past papers. Recent pattern (CAT 2024): 66 questions — VARC 24, DILR 20, QA 22, 3 marks each; on-screen calculator provided."
+      },
+      "subjects": [
+        {
+          "name": "Verbal Ability and Reading Comprehension",
+          "mappedSubjectId": "english",
+          "weightage": 36,
+          "units": 2,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Data Interpretation and Logical Reasoning",
+          "mappedSubjectId": "ku-logical-reasoning",
+          "weightage": 30,
+          "units": 2,
+          "syllabusEntries": 10
+        },
+        {
+          "name": "Quantitative Aptitude",
+          "mappedSubjectId": "mathematics",
+          "weightage": 34,
+          "units": 4,
+          "syllabusEntries": 22
+        }
+      ],
+      "syllabusEntries": 38,
+      "mappedEntries": 38,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "gate-cse",
+      "name": "GATE CSE",
+      "fullName": "Graduate Aptitude Test in Engineering — Computer Science and Information Technology",
+      "region": "India",
+      "category": "PG engineering entrance",
+      "authority": "IISc/IITs (rotating)",
+      "website": "https://gate.iitm.ac.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "GATE 2027 — official website, brochure and paper syllabi",
+          "url": "https://gate2027.iitm.ac.in",
+          "host": "iitm.ac.in"
+        }
+      ],
+      "overview": {
+        "conductor": "IISc/IITs (rotating)",
+        "level": "BTech/BE → M.Tech/PSU recruitment",
+        "stages": [
+          "Single stage — one paper chosen from 30 subject codes"
+        ],
+        "papers": [
+          "General Aptitude (15 marks)",
+          "Engineering Mathematics (13 marks)",
+          "Core CS (72 marks)"
+        ],
+        "duration": "3 h · 65 questions · 100 marks",
+        "marking": "+1/+2 marks per question; MCQ −1/3 or −2/3 negative, MSQ/NAT no negative",
+        "negativeMarking": "MCQ only: −1/3 (1-mark) or −2/3 (2-mark); MSQ and NAT carry none",
+        "questionTypes": [
+          "MCQ (1 correct)",
+          "MSQ (multiple correct)",
+          "NAT (numerical answer)"
+        ],
+        "notes": "Paper code CS. The organising institute rotates yearly (IIT Madras for GATE 2027). The GATE score stays valid for 3 years from the result date."
+      },
+      "subjects": [
+        {
+          "name": "General Aptitude",
+          "mappedSubjectId": "ku-quantitative-aptitude",
+          "weightage": 15,
+          "units": 2,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Engineering Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": 13,
+          "units": 4,
+          "syllabusEntries": 15
+        },
+        {
+          "name": "Core CS",
+          "mappedSubjectId": "dsa",
+          "weightage": 72,
+          "units": 9,
+          "syllabusEntries": 50
+        }
+      ],
+      "syllabusEntries": 71,
+      "mappedEntries": 71,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ssc-cgl",
+      "name": "SSC CGL",
+      "fullName": "Staff Selection Commission — Combined Graduate Level Examination",
+      "region": "India",
+      "category": "Government recruitment",
+      "authority": "Staff Selection Commission",
+      "website": "https://ssc.gov.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "SSC CGL — notice of examination and syllabus",
+          "url": "https://ssc.gov.in",
+          "host": "ssc.gov.in"
+        }
+      ],
+      "overview": {
+        "conductor": "Staff Selection Commission",
+        "level": "Graduate → Group B and C posts in central government departments",
+        "stages": [
+          "Tier 1 (computer-based) → Tier 2 (computer-based, merit)"
+        ],
+        "papers": [
+          "Tier 1 — four equal sections of 50 marks",
+          "Tier 2 — Paper 1 compulsory (merit); optional papers for specific posts"
+        ],
+        "duration": "Tier 1: 1 h · Tier 2: 2 h 15 min per paper",
+        "marking": "Tier 1: 200 marks +2/−0.5",
+        "negativeMarking": "Tier 1: −0.5 per wrong answer; Tier 2 Paper 1: −1 per wrong answer",
+        "questionTypes": [
+          "MCQ (4 options)"
+        ],
+        "notes": "Tier 1 qualifying-focused; Tier 2 decides merit (Paper 1 compulsory)."
+      },
+      "subjects": [
+        {
+          "name": "General Intelligence and Reasoning",
+          "mappedSubjectId": "ku-logical-reasoning",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 12
+        },
+        {
+          "name": "General Awareness",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 5,
+          "syllabusEntries": 11
+        },
+        {
+          "name": "Quantitative Aptitude",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 15
+        },
+        {
+          "name": "English Comprehension",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 9
+        }
+      ],
+      "syllabusEntries": 47,
+      "mappedEntries": 47,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "gre",
+      "name": "GRE",
+      "fullName": "Graduate Record Examinations (shortened GRE)",
+      "region": "Global",
+      "category": "Graduate admission aptitude",
+      "authority": "ETS (Educational Testing Service)",
+      "website": "https://www.ets.org/gre",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "GRE test content and structure",
+          "url": "https://www.ets.org/gre/revised_general/about",
+          "host": "ets.org"
+        }
+      ],
+      "overview": {
+        "conductor": "ETS (Educational Testing Service)",
+        "level": "Undergraduate → graduate/PG admission worldwide",
+        "stages": [
+          "Single stage (shortened since Sep 2023)"
+        ],
+        "papers": [
+          "Verbal Reasoning",
+          "Quantitative Reasoning",
+          "Analytical Writing"
+        ],
+        "duration": "1 h 58 min total (AW 30 min · V 2×~12 min · Q 2×~21-26 min)",
+        "marking": "V 130–170 · Q 130–170 · AW 0–6",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Multiple-choice (1 or more answers)",
+          "Numeric entry",
+          "Quantitative comparison",
+          "Select-in-passage",
+          "Analyze an issue essay"
+        ],
+        "notes": "Section-adaptive. Calculator provided on Quant. No vocabulary out of context — words tested in context."
+      },
+      "subjects": [
+        {
+          "name": "Verbal Reasoning",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 7
+        },
+        {
+          "name": "Quantitative Reasoning",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 5,
+          "syllabusEntries": 16
+        },
+        {
+          "name": "Analytical Writing",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 1,
+          "syllabusEntries": 3
+        }
+      ],
+      "syllabusEntries": 26,
+      "mappedEntries": 26,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "gate-ece",
+      "name": "GATE ECE",
+      "fullName": "Graduate Aptitude Test in Engineering — Electronics and Communication Engineering",
+      "region": "India",
+      "category": "PG engineering entrance",
+      "authority": "IISc/IITs (rotating)",
+      "website": "https://gate.iitm.ac.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "GATE 2027 — official website, brochure and paper syllabi",
+          "url": "https://gate2027.iitm.ac.in",
+          "host": "iitm.ac.in"
+        }
+      ],
+      "overview": {
+        "conductor": "IISc/IITs (rotating)",
+        "level": "BTech/BE → M.Tech/PSU recruitment",
+        "stages": [
+          "Single stage — one paper chosen from 30 subject codes"
+        ],
+        "papers": [
+          "General Aptitude (15 marks)",
+          "Subject section (85 marks)"
+        ],
+        "duration": "3 h · 65 questions · 100 marks",
+        "marking": "+1/+2 marks per question; MCQ −1/3 or −2/3 negative, MSQ/NAT no negative",
+        "negativeMarking": "MCQ only: −1/3 (1-mark) or −2/3 (2-mark); MSQ and NAT carry none",
+        "questionTypes": [
+          "MCQ (1 correct)",
+          "MSQ (multiple correct)",
+          "NAT (numerical answer)"
+        ],
+        "notes": "Paper code EC. The organising institute rotates yearly (IIT Madras for GATE 2027). The GATE score stays valid for 3 years from the result date."
+      },
+      "subjects": [
+        {
+          "name": "General Aptitude",
+          "mappedSubjectId": "ku-quantitative-aptitude",
+          "weightage": 15,
+          "units": 2,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Engineering Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 5,
+          "syllabusEntries": 19
+        },
+        {
+          "name": "Core ECE",
+          "mappedSubjectId": "signals-systems",
+          "weightage": null,
+          "units": 7,
+          "syllabusEntries": 37
+        }
+      ],
+      "syllabusEntries": 62,
+      "mappedEntries": 62,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "gate-mechanical",
+      "name": "GATE ME",
+      "fullName": "Graduate Aptitude Test in Engineering — Mechanical Engineering",
+      "region": "India",
+      "category": "PG engineering entrance",
+      "authority": "IISc/IITs (rotating)",
+      "website": "https://gate.iitm.ac.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "GATE 2027 — official website, brochure and paper syllabi",
+          "url": "https://gate2027.iitm.ac.in",
+          "host": "iitm.ac.in"
+        }
+      ],
+      "overview": {
+        "conductor": "IISc/IITs (rotating)",
+        "level": "BTech/BE → M.Tech/PSU recruitment",
+        "stages": [
+          "Single stage — one paper chosen from 30 subject codes"
+        ],
+        "papers": [
+          "General Aptitude (15 marks)",
+          "Subject section (85 marks)"
+        ],
+        "duration": "3 h · 65 questions · 100 marks",
+        "marking": "+1/+2 marks per question; MCQ −1/3 or −2/3 negative, MSQ/NAT no negative",
+        "negativeMarking": "MCQ only: −1/3 (1-mark) or −2/3 (2-mark); MSQ and NAT carry none",
+        "questionTypes": [
+          "MCQ (1 correct)",
+          "MSQ (multiple correct)",
+          "NAT (numerical answer)"
+        ],
+        "notes": "Paper code ME. The organising institute rotates yearly (IIT Madras for GATE 2027). The GATE score stays valid for 3 years from the result date."
+      },
+      "subjects": [
+        {
+          "name": "General Aptitude",
+          "mappedSubjectId": "ku-quantitative-aptitude",
+          "weightage": 15,
+          "units": 2,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Engineering Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 6,
+          "syllabusEntries": 19
+        },
+        {
+          "name": "Core ME",
+          "mappedSubjectId": "thermal-fluids",
+          "weightage": null,
+          "units": 11,
+          "syllabusEntries": 53
+        }
+      ],
+      "syllabusEntries": 78,
+      "mappedEntries": 78,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "gate-ee",
+      "name": "GATE EE",
+      "fullName": "Graduate Aptitude Test in Engineering — Electrical Engineering",
+      "region": "India",
+      "category": "PG engineering entrance",
+      "authority": "IISc/IITs (rotating)",
+      "website": "https://gate.iitm.ac.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "GATE 2027 — official website, brochure and paper syllabi",
+          "url": "https://gate2027.iitm.ac.in",
+          "host": "iitm.ac.in"
+        }
+      ],
+      "overview": {
+        "conductor": "IISc/IITs (rotating)",
+        "level": "BTech/BE → M.Tech/PSU recruitment",
+        "stages": [
+          "Single stage — one paper chosen from 30 subject codes"
+        ],
+        "papers": [
+          "General Aptitude (15 marks)",
+          "Subject section (85 marks)"
+        ],
+        "duration": "3 h · 65 questions · 100 marks",
+        "marking": "+1/+2 marks per question; MCQ −1/3 or −2/3 negative, MSQ/NAT no negative",
+        "negativeMarking": "MCQ only: −1/3 (1-mark) or −2/3 (2-mark); MSQ and NAT carry none",
+        "questionTypes": [
+          "MCQ (1 correct)",
+          "MSQ (multiple correct)",
+          "NAT (numerical answer)"
+        ],
+        "notes": "Paper code EE. The organising institute rotates yearly (IIT Madras for GATE 2027). The GATE score stays valid for 3 years from the result date."
+      },
+      "subjects": [
+        {
+          "name": "General Aptitude",
+          "mappedSubjectId": "ku-quantitative-aptitude",
+          "weightage": 15,
+          "units": 2,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Engineering Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 7,
+          "syllabusEntries": 22
+        },
+        {
+          "name": "Core EE",
+          "mappedSubjectId": "electric-circuits",
+          "weightage": null,
+          "units": 8,
+          "syllabusEntries": 41
+        }
+      ],
+      "syllabusEntries": 69,
+      "mappedEntries": 69,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "cuet",
+      "name": "CUET",
+      "fullName": "Common University Entrance Test (Undergraduate)",
+      "region": "India",
+      "category": "University entrance",
+      "authority": "NTA",
+      "website": "https://cuet.nta.nic.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "CUET (UG) — information bulletin and section-wise syllabus",
+          "url": "https://cuet.nta.nic.in",
+          "host": "nta.nic.in"
+        }
+      ],
+      "overview": {
+        "conductor": "NTA",
+        "level": "Class 12 → undergraduate admission (central, state and participating private universities)",
+        "stages": [
+          "Single stage — computer-based, multiple slots"
+        ],
+        "papers": [
+          "Section IA/IB: Languages",
+          "Section II: Domain subjects",
+          "Section III: General Test"
+        ],
+        "duration": "per-slot 60 min MCQ papers",
+        "marking": "+5 correct / −1 incorrect",
+        "negativeMarking": "−1 per incorrect answer",
+        "questionTypes": [
+          "MCQ (four options)"
+        ],
+        "notes": "Section IA languages + Section II domain subjects + Section III general test; students pick their mix. Domain syllabi follow the NCERT Class 11-12 curriculum; the subject list below covers the most commonly chosen domains."
+      },
+      "subjects": [
+        {
+          "name": "English",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 9
+        },
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 5,
+          "syllabusEntries": 15
+        },
+        {
+          "name": "Physics",
+          "mappedSubjectId": "physics",
+          "weightage": null,
+          "units": 6,
+          "syllabusEntries": 19
+        },
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": null,
+          "units": 6,
+          "syllabusEntries": 17
+        },
+        {
+          "name": "Biology",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 6,
+          "syllabusEntries": 22
+        },
+        {
+          "name": "Economics",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 12
+        },
+        {
+          "name": "Accountancy",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 5,
+          "syllabusEntries": 15
+        },
+        {
+          "name": "History",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 20
+        },
+        {
+          "name": "Political Science",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 17
+        },
+        {
+          "name": "Geography",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 11
+        },
+        {
+          "name": "Psychology",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 13
+        },
+        {
+          "name": "Computer Science",
+          "mappedSubjectId": "programming-java",
+          "weightage": null,
+          "units": 5,
+          "syllabusEntries": 11
+        },
+        {
+          "name": "General Test",
+          "mappedSubjectId": "ku-logical-reasoning",
+          "weightage": null,
+          "units": 5,
+          "syllabusEntries": 11
+        }
+      ],
+      "syllabusEntries": 192,
+      "mappedEntries": 192,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "gate-civil",
+      "name": "GATE CE",
+      "fullName": "Graduate Aptitude Test in Engineering — Civil Engineering",
+      "region": "India",
+      "category": "PG engineering entrance",
+      "authority": "IISc/IITs (rotating)",
+      "website": "https://gate.iitm.ac.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "GATE 2027 — official website, brochure and paper syllabi",
+          "url": "https://gate2027.iitm.ac.in",
+          "host": "iitm.ac.in"
+        }
+      ],
+      "overview": {
+        "conductor": "IISc/IITs (rotating)",
+        "level": "BTech/BE → M.Tech/PSU recruitment",
+        "stages": [
+          "Single stage — one paper chosen from 30 subject codes"
+        ],
+        "papers": [
+          "General Aptitude (15 marks)",
+          "Subject section (85 marks)"
+        ],
+        "duration": "3 h · 65 questions · 100 marks",
+        "marking": "+1/+2 marks per question; MCQ −1/3 or −2/3 negative, MSQ/NAT no negative",
+        "negativeMarking": "MCQ only: −1/3 (1-mark) or −2/3 (2-mark); MSQ and NAT carry none",
+        "questionTypes": [
+          "MCQ (1 correct)",
+          "MSQ (multiple correct)",
+          "NAT (numerical answer)"
+        ],
+        "notes": "Paper code CE. The organising institute rotates yearly (IIT Madras for GATE 2027). The GATE score stays valid for 3 years from the result date."
+      },
+      "subjects": [
+        {
+          "name": "General Aptitude",
+          "mappedSubjectId": "ku-quantitative-aptitude",
+          "weightage": 15,
+          "units": 2,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Engineering Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 6,
+          "syllabusEntries": 18
+        },
+        {
+          "name": "Core CE",
+          "mappedSubjectId": "mechanics-graphics",
+          "weightage": null,
+          "units": 6,
+          "syllabusEntries": 20
+        }
+      ],
+      "syllabusEntries": 44,
+      "mappedEntries": 44,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ibps-po",
+      "name": "IBPS PO",
+      "fullName": "Institute of Banking Personnel Selection — Probationary Officers",
+      "region": "India",
+      "category": "Banking recruitment",
+      "authority": "IBPS",
+      "website": "https://www.ibps.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "IBPS PO — notification and exam pattern",
+          "url": "https://www.ibps.in",
+          "host": "ibps.in"
+        }
+      ],
+      "overview": {
+        "conductor": "IBPS",
+        "level": "Graduate → probationary officer / management trainee in public sector banks",
+        "stages": [
+          "Prelims → Mains → Interview"
+        ],
+        "papers": [
+          "Prelims — English Language, Quantitative Aptitude, Reasoning Ability",
+          "Mains — Reasoning and Computer Aptitude, Data Analysis and Interpretation, General/Economy/Banking Awareness, English (plus descriptive letter and essay)"
+        ],
+        "duration": "Prelims 1 h · Mains 3 h 30 min",
+        "marking": "+1 correct / −0.25 incorrect (prelims)",
+        "negativeMarking": "One-fourth of the marks deducted per wrong answer",
+        "questionTypes": [
+          "MCQ (5 options)"
+        ],
+        "notes": "Prelims qualifying; Mains + interview decide merit."
+      },
+      "subjects": [
+        {
+          "name": "English Language",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Quantitative Aptitude",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 9
+        },
+        {
+          "name": "Reasoning Ability",
+          "mappedSubjectId": "ku-logical-reasoning",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 8
+        },
+        {
+          "name": "General/Economy/Banking Awareness",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Computer Aptitude",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 6
+        }
+      ],
+      "syllabusEntries": 35,
+      "mappedEntries": 35,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "bitsat",
+      "name": "BITSAT",
+      "fullName": "Birla Institute of Technology and Science Admission Test",
+      "region": "India",
+      "category": "Engineering entrance",
+      "authority": "BITS Pilani",
+      "website": "https://bitsadmission.com",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "BITSAT-2026 — Official Syllabus (Annexure)",
+          "url": "https://admissions.bits-pilani.ac.in/FD/downloads/BITSAT_Syllabus.pdf",
+          "host": "admissions.bits-pilani.ac.in"
+        }
+      ],
+      "overview": {
+        "conductor": "BITS Pilani",
+        "level": "Class 11–12 → integrated first-degree admission (BE, BPharm, MSc) at BITS Pilani, Goa and Hyderabad campuses",
+        "papers": [
+          "Part I: Physics",
+          "Part II: Chemistry",
+          "Part III: (a) English Proficiency and (b) Logical Reasoning",
+          "Part IV: Mathematics (or Biology for BPharm, BE Environmental & Sustainability Engg and MSc Biological Sciences)"
+        ],
+        "duration": "3 h for 130 questions (Physics 30, Chemistry 30, English 10, Logical Reasoning 20, Maths/Biology 40)",
+        "marking": "390 marks; +3 correct / −1 incorrect; no time limit per section",
+        "negativeMarking": "−1 per incorrect answer; no marks for unattempted questions",
+        "questionTypes": [
+          "MCQ (4 options, one correct)"
+        ],
+        "notes": "Computer-based test held in two sessions (about May and June–July); candidates may appear in both and the higher score counts. If all 130 questions are answered without skipping, 12 extra questions (3 each from Physics, Chemistry, Maths/Biology and Logical Reasoning) may be attempted in remaining time."
+      },
+      "subjects": [
+        {
+          "name": "Physics",
+          "mappedSubjectId": "physics",
+          "weightage": null,
+          "units": 18,
+          "syllabusEntries": 38
+        },
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": null,
+          "units": 14,
+          "syllabusEntries": 47
+        },
+        {
+          "name": "English Proficiency",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 11
+        },
+        {
+          "name": "Logical Reasoning",
+          "mappedSubjectId": "ku-logical-reasoning",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 12,
+          "syllabusEntries": 32
+        },
+        {
+          "name": "Biology",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 10,
+          "syllabusEntries": 25
+        }
+      ],
+      "syllabusEntries": 159,
+      "mappedEntries": 159,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ielts",
+      "name": "IELTS",
+      "fullName": "International English Language Testing System (Academic)",
+      "region": "Global",
+      "category": "English language proficiency",
+      "authority": "British Council, IDP: IELTS Australia, Cambridge Assessment English",
+      "website": "https://ielts.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "IELTS test format",
+          "url": "https://ielts.org/take-a-test/how-is-ielts-scored",
+          "host": "ielts.org"
+        }
+      ],
+      "overview": {
+        "conductor": "British Council, IDP: IELTS Australia, Cambridge Assessment English",
+        "level": "Non-native English speakers → study / migration / work",
+        "stages": [
+          "Single stage (Academic or General Training)"
+        ],
+        "papers": [
+          "Listening",
+          "Reading",
+          "Writing",
+          "Speaking"
+        ],
+        "duration": "2 h 40 min (+ speaking up to 14 min)",
+        "marking": "Band 0–9 per skill; overall band = average",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Multiple choice",
+          "Matching",
+          "Plan/map/diagram labelling",
+          "Form/note/table completion",
+          "Short answers",
+          "Essays and reports"
+        ],
+        "notes": "Academic Reading/Writing differ from General Training. Speaking is a face-to-face interview."
+      },
+      "subjects": [
+        {
+          "name": "Listening",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 1,
+          "syllabusEntries": 3
+        },
+        {
+          "name": "Academic Reading",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 1,
+          "syllabusEntries": 3
+        },
+        {
+          "name": "Academic Writing",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 5
+        },
+        {
+          "name": "Speaking",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 1,
+          "syllabusEntries": 4
+        }
+      ],
+      "syllabusEntries": 15,
+      "mappedEntries": 15,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "nda",
+      "name": "NDA",
+      "fullName": "National Defence Academy Examination",
+      "region": "India",
+      "category": "Defence services",
+      "authority": "UPSC",
+      "website": "https://upsc.gov.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "NDA & NA examination — notification and syllabus",
+          "url": "https://upsc.gov.in/examinations/active-examinations",
+          "host": "upsc.gov.in"
+        }
+      ],
+      "overview": {
+        "conductor": "UPSC",
+        "level": "10+2 → National Defence Academy (Army, Navy and Air Force wings)",
+        "stages": [
+          "Written exam → SSB interview (5 days) → Medical board"
+        ],
+        "papers": [
+          "Mathematics (300 marks)",
+          "General Ability Test (600 marks)"
+        ],
+        "duration": "Mathematics 2.5 h · GAT 2.5 h",
+        "marking": "Maths 300 marks; GAT 600 marks; −0.33 negative",
+        "negativeMarking": "One-third of the question's marks deducted per wrong answer",
+        "questionTypes": [
+          "MCQ (4 options)"
+        ],
+        "notes": "Conducted twice a year (NDA I and II). Clearing the written exam is followed by the 5-day SSB interview and a medical board before the final merit list."
+      },
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": 33,
+          "units": 8,
+          "syllabusEntries": 27
+        },
+        {
+          "name": "General Ability Test",
+          "mappedSubjectId": null,
+          "weightage": 67,
+          "units": 7,
+          "syllabusEntries": 33
+        }
+      ],
+      "syllabusEntries": 60,
+      "mappedEntries": 60,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "clat",
+      "name": "CLAT",
+      "fullName": "Common Law Admission Test (Undergraduate)",
+      "region": "India",
+      "category": "Law entrance",
+      "authority": "Consortium of National Law Universities",
+      "website": "https://consortiumofnlus.ac.in",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "CLAT UG — exam pattern and syllabus",
+          "url": "https://consortiumofnlus.ac.in",
+          "host": "consortiumofnlus.ac.in"
+        }
+      ],
+      "overview": {
+        "conductor": "Consortium of National Law Universities",
+        "level": "Class 12 → 5-year integrated BA-LLB admission",
+        "duration": "2 h · 120 comprehension-based questions",
+        "marking": "120 marks; +1 correct / −0.25 incorrect",
+        "questionTypes": [
+          "Comprehension-passage MCQs"
+        ],
+        "notes": "The whole paper is passage-based since 2020; each section gives 400-450 word passages."
+      },
+      "subjects": [
+        {
+          "name": "English Language",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 7
+        },
+        {
+          "name": "Current Affairs including General Knowledge",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 8
+        },
+        {
+          "name": "Legal Reasoning",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Logical Reasoning",
+          "mappedSubjectId": "ku-logical-reasoning",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 7
+        },
+        {
+          "name": "Quantitative Techniques",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 9
+        }
+      ],
+      "syllabusEntries": 37,
+      "mappedEntries": 37,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "gmat",
+      "name": "GMAT",
+      "fullName": "Graduate Management Admission Test (Focus Edition)",
+      "region": "Global",
+      "category": "MBA admission aptitude",
+      "authority": "GMAC (Graduate Management Admission Council)",
+      "website": "https://www.mba.com",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "GMAT Focus Edition structure",
+          "url": "https://www.mba.com/exams/gmat-focus-edition",
+          "host": "mba.com"
+        }
+      ],
+      "overview": {
+        "conductor": "GMAC (Graduate Management Admission Council)",
+        "level": "Undergraduate → MBA / business-school admission",
+        "stages": [
+          "Single stage — section order is selectable"
+        ],
+        "papers": [
+          "Quantitative Reasoning",
+          "Verbal Reasoning",
+          "Data Insights"
+        ],
+        "duration": "2 h 15 min",
+        "marking": "205–805 total; section subscores + percentile",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Problem solving",
+          "Data sufficiency",
+          "Reading comprehension",
+          "Critical reasoning",
+          "Data-sufficiency-style DI items",
+          "Table/graph/two-part analysis"
+        ],
+        "notes": "Focus Edition replaced the classic GMAT in Feb 2024: no AWA, no sentence correction, new Data Insights section. Question-level adaptive."
+      },
+      "subjects": [
+        {
+          "name": "Quantitative Reasoning",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 5,
+          "syllabusEntries": 8
+        },
+        {
+          "name": "Verbal Reasoning",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 4
+        },
+        {
+          "name": "Data Insights",
+          "mappedSubjectId": "ku-quantitative-aptitude",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 6
+        }
+      ],
+      "syllabusEntries": 18,
+      "mappedEntries": 18,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ca-foundation",
+      "name": "CA Foundation",
+      "fullName": "Chartered Accountancy Foundation Course Examination",
+      "region": "India",
+      "category": "Professional qualification",
+      "authority": "ICAI (Institute of Chartered Accountants of India)",
+      "website": "https://www.icai.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "CA Foundation — scheme of papers and syllabus",
+          "url": "https://www.icai.org",
+          "host": "icai.org"
+        }
+      ],
+      "overview": {
+        "conductor": "ICAI (Institute of Chartered Accountants of India)",
+        "level": "Class 12 → CA course entry",
+        "papers": [
+          "Paper 1: Accounting",
+          "Paper 2: Business Laws",
+          "Paper 3: Quantitative Aptitude",
+          "Paper 4: Business Economics"
+        ],
+        "duration": "Papers 1-3: 2 h each · Paper 4: 2 h",
+        "marking": "Papers 1&2 objective +1/−0.25; Papers 3&4 subjective",
+        "questionTypes": [
+          "MCQ (objective papers)",
+          "Descriptive (subjective papers)"
+        ],
+        "notes": "Four papers: Accounting; Business Laws; Quantitative Aptitude; Business Economics."
+      },
+      "subjects": [
+        {
+          "name": "Accounting",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 6,
+          "syllabusEntries": 19
+        },
+        {
+          "name": "Business Laws",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 6,
+          "syllabusEntries": 24
+        },
+        {
+          "name": "Quantitative Aptitude",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 17
+        },
+        {
+          "name": "Business Economics",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 8,
+          "syllabusEntries": 18
+        }
+      ],
+      "syllabusEntries": 78,
+      "mappedEntries": 78,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "a-level-maths",
+      "name": "A-Level Maths",
+      "fullName": "GCE Advanced Level Mathematics (Edexcel/AQA/OCR common core)",
+      "region": "United Kingdom",
+      "category": "School-leaving subject exam",
+      "authority": "Pearson Edexcel / AQA / OCR (common DfE core)",
+      "website": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "A Level Mathematics specification (Pearson)",
+          "url": "https://qualifications.pearson.com",
+          "host": "qualifications.pearson.com"
+        },
+        {
+          "title": "DfE — GCE AS and A level mathematics content",
+          "url": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
+          "host": "gov.uk"
+        }
+      ],
+      "overview": {
+        "conductor": "Pearson Edexcel / AQA / OCR (common DfE core)",
+        "level": "Sixth form → university admission",
+        "stages": [
+          "Linear — all exams at the end of the two-year course (AS is a separate standalone qualification)"
+        ],
+        "papers": [
+          "Paper 1: Pure Mathematics",
+          "Paper 2: Pure Mathematics",
+          "Paper 3: Statistics and Mechanics (Edexcel layout)"
+        ],
+        "duration": "Three 2 h papers (Pure 1, Pure 2, Statistics & Mechanics)",
+        "marking": "A*-E grades; 300 UMS-era removed — linear 100% exam",
+        "questionTypes": [
+          "Structured written questions",
+          "Calculator allowed throughout"
+        ],
+        "notes": "Content below is the DfE common core shared by all boards; paper layout differs (Edexcel: two pure papers + one stats & mechanics paper; OCR/AQA interleave pure questions into papers 2 and 3)."
+      },
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 20
+        }
+      ],
+      "syllabusEntries": 20,
+      "mappedEntries": 20,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "toefl",
+      "name": "TOEFL",
+      "fullName": "Test of English as a Foreign Language (TOEFL iBT)",
+      "region": "Global",
+      "category": "English language proficiency",
+      "authority": "ETS",
+      "website": "https://www.ets.org/toefl",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "TOEFL iBT test content",
+          "url": "https://www.ets.org/toefl/test-takers/ibt/about/content",
+          "host": "ets.org"
+        }
+      ],
+      "overview": {
+        "conductor": "ETS",
+        "level": "Non-native English speakers → university admission / visas",
+        "stages": [
+          "Single stage"
+        ],
+        "papers": [
+          "Reading",
+          "Listening",
+          "Speaking",
+          "Writing"
+        ],
+        "duration": "≈ 1 h 56 min (shortened format since July 2023)",
+        "marking": "0–30 per section; 0–120 total",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Multiple-choice",
+          "Insert-a-sentence",
+          "Summarize/summarize & speak tasks",
+          "Integrated writing",
+          "Academic discussion task"
+        ],
+        "notes": "MyBest scores accepted by many institutions. AI speaking scoring with human quality checks."
+      },
+      "subjects": [
+        {
+          "name": "Reading",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 1,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Listening",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 1,
+          "syllabusEntries": 4
+        },
+        {
+          "name": "Speaking",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 1,
+          "syllabusEntries": 3
+        },
+        {
+          "name": "Writing",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 2
+        }
+      ],
+      "syllabusEntries": 15,
+      "mappedEntries": 15,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ap-calculus-ab",
+      "name": "AP Calculus AB",
+      "fullName": "Advanced Placement Calculus AB",
+      "region": "United States",
+      "category": "AP subject exam",
+      "authority": "College Board",
+      "website": "https://apstudents.collegeboard.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "AP Calculus AB — Course and Exam Description (CED)",
+          "url": "https://apcentral.collegeboard.org",
+          "host": "apcentral.collegeboard.org"
+        }
+      ],
+      "overview": {
+        "conductor": "College Board",
+        "level": "High school → college credit / advanced placement",
+        "duration": "3 h 15 min (Section I MCQ 105 min · Section II FRQ 90 min)",
+        "marking": "MCQ 50% + FRQ 50%; score 1-5",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Multiple-choice (4 options)",
+          "Free-response questions"
+        ],
+        "notes": "Units 1-8 follow the official CED order; Section II mixes calculator-permitted and no-calculator parts."
+      },
+      "subjects": [
+        {
+          "name": "Calculus AB",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 8,
+          "syllabusEntries": 33
+        }
+      ],
+      "syllabusEntries": 33,
+      "mappedEntries": 33,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "mcat",
+      "name": "MCAT",
+      "fullName": "Medical College Admission Test",
+      "region": "United States",
+      "category": "Medical admission",
+      "authority": "AAMC (Association of American Medical Colleges)",
+      "website": "https://students-residents.aamc.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "MCAT — What is on the MCAT Exam",
+          "url": "https://students-residents.aamc.org",
+          "host": "aamc.org"
+        }
+      ],
+      "overview": {
+        "conductor": "AAMC (Association of American Medical Colleges)",
+        "level": "Undergraduate → MD programs",
+        "duration": "7 h 30 min total (four 90-95 min sections)",
+        "marking": "118-132 per section; 472-528 total",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Passage-based MCQs",
+          "Standalone discrete questions"
+        ],
+        "notes": "No penalty for guessing; foundations-of-behavior sections test research-methods skills throughout."
+      },
+      "subjects": [
+        {
+          "name": "Chemical and Physical Foundations — Physics",
+          "mappedSubjectId": "physics",
+          "weightage": null,
+          "units": 6,
+          "syllabusEntries": 18
+        },
+        {
+          "name": "Chemical and Physical Foundations — Chemistry & Biochemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 12
+        },
+        {
+          "name": "Critical Analysis and Reasoning Skills",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Biological and Biochemical Foundations of Living Systems",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 5,
+          "syllabusEntries": 15
+        },
+        {
+          "name": "Psychological, Social, and Biological Foundations of Behavior",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 7,
+          "syllabusEntries": 19
+        }
+      ],
+      "syllabusEntries": 70,
+      "mappedEntries": 70,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "act",
+      "name": "ACT",
+      "fullName": "American College Testing",
+      "region": "United States",
+      "category": "Undergraduate admission aptitude",
+      "authority": "ACT, Inc.",
+      "website": "https://www.act.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "ACT test overview",
+          "url": "https://www.act.org/content/act/en/products-and-services/the-act.html",
+          "host": "act.org"
+        }
+      ],
+      "overview": {
+        "conductor": "ACT, Inc.",
+        "level": "High-school → undergraduate admission (US)",
+        "stages": [
+          "Single stage (optional Writing essay)"
+        ],
+        "papers": [
+          "English",
+          "Math",
+          "Reading",
+          "Science",
+          "Writing (optional)"
+        ],
+        "duration": "2 h 55 min without Writing; 3 h 35 min with",
+        "marking": "Composite 1–36 (average of four sections)",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Multiple-choice (4 options)",
+          "Optional essay"
+        ],
+        "notes": "The Enhanced ACT (rolling out 2025) shortens the test and makes it adaptive in some digital forms; the Science section becomes optional for online testers."
+      },
+      "subjects": [
+        {
+          "name": "English",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 5,
+          "syllabusEntries": 10
+        },
+        {
+          "name": "Reading",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Science",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 8
+        }
+      ],
+      "syllabusEntries": 30,
+      "mappedEntries": 30,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "cds",
+      "name": "CDS",
+      "fullName": "Combined Defence Services Examination",
+      "region": "India",
+      "category": "Defence services",
+      "authority": "UPSC",
+      "website": "https://upsc.gov.in/examinations/Combined%20Defence%20Services%20Examination%20%28II%29%2C%202025",
+      "syllabusVerified": "2026-10-22",
+      "officialSources": [
+        {
+          "title": "UPSC — Combined Defence Services Examination notice and question papers",
+          "url": "https://upsc.gov.in/examinations/Combined%20Defence%20Services%20Examination%20%28II%29%2C%202025",
+          "host": "upsc.gov.in"
+        },
+        {
+          "title": "UPSC examinations portal (active examinations with notifications)",
+          "url": "https://upsc.gov.in/examinations/active-examinations",
+          "host": "upsc.gov.in"
+        }
+      ],
+      "overview": {
+        "conductor": "UPSC",
+        "level": "Graduate (any discipline) → IMA, INA, AFA; OTA for men and women",
+        "stages": [
+          "Written exam → SSB interview (5 days) → Medical board → Merit list"
+        ],
+        "papers": [
+          "English (100 marks)",
+          "General Knowledge (100 marks)",
+          "Elementary Mathematics (100 marks — not for OTA)"
+        ],
+        "duration": "Three 2 h papers",
+        "marking": "Each paper 100 marks; negative marking applies",
+        "negativeMarking": "One-third of the question's marks deducted per wrong answer",
+        "questionTypes": [
+          "MCQ (4 options)"
+        ],
+        "notes": "Conducted twice a year (CDS I and II). OTA candidates sit English and General Knowledge only; IMA/INA/AFA candidates sit all three papers. The Elementary Mathematics paper is at Class 10 (matriculation) level."
+      },
+      "subjects": [
+        {
+          "name": "English",
+          "mappedSubjectId": "english",
+          "weightage": 33,
+          "units": 4,
+          "syllabusEntries": 7
+        },
+        {
+          "name": "General Knowledge",
+          "mappedSubjectId": null,
+          "weightage": 33,
+          "units": 6,
+          "syllabusEntries": 11
+        },
+        {
+          "name": "Elementary Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": 34,
+          "units": 6,
+          "syllabusEntries": 18
+        }
+      ],
+      "syllabusEntries": 36,
+      "mappedEntries": 36,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "gcse-maths",
+      "name": "GCSE Maths",
+      "fullName": "GCSE Mathematics (Higher Tier, grades 9-1)",
+      "region": "United Kingdom",
+      "category": "School-leaving subject exam",
+      "authority": "AQA / Edexcel / OCR (common DfE core)",
+      "website": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "AQA GCSE Mathematics (8300) specification",
+          "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300",
+          "host": "aqa.org.uk"
+        },
+        {
+          "title": "DfE — Mathematics GCSE subject content",
+          "url": "https://www.gov.uk/government/publications/mathematics-gcse-subject-content",
+          "host": "gov.uk"
+        }
+      ],
+      "overview": {
+        "conductor": "AQA / Edexcel / OCR (common DfE core)",
+        "level": "Key Stage 4 → sixth form / apprenticeships",
+        "stages": [
+          "Linear — all exams at the end of Year 11"
+        ],
+        "papers": [
+          "Paper 1",
+          "Paper 2",
+          "Paper 3 (one non-calculator paper and two calculator papers on AQA/Edexcel)"
+        ],
+        "duration": "Three 1 h 30 min papers",
+        "marking": "Grades 9-1 (Foundation 5-1, Higher 9-4)",
+        "questionTypes": [
+          "Short single-mark questions",
+          "Structured multi-step problems"
+        ],
+        "notes": "Foundation and Higher tiers share a common core; this entry covers the Higher tier. Higher-only content is flagged in the subtopics."
+      },
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 6,
+          "syllabusEntries": 25
+        }
+      ],
+      "syllabusEntries": 25,
+      "mappedEntries": 25,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "lsat",
+      "name": "LSAT",
+      "fullName": "Law School Admission Test",
+      "region": "United States",
+      "category": "Law admission",
+      "authority": "LSAC (Law School Admission Council)",
+      "website": "https://www.lsac.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "LSAT — test structure and question types",
+          "url": "https://www.lsac.org",
+          "host": "lsac.org"
+        }
+      ],
+      "overview": {
+        "conductor": "LSAC (Law School Admission Council)",
+        "level": "Undergraduate → JD programs",
+        "duration": "≈ 2 h 20 min (four 35-min sections: two Logical Reasoning, one Reading Comprehension, one unscored experimental) + 35-min unscored writing",
+        "marking": "120-180 scale",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Four-choice MCQs",
+          "Argument-based passages"
+        ],
+        "notes": "Logic Games (analytical reasoning) were removed from the LSAT in August 2024; a second Logical Reasoning section replaced them."
+      },
+      "subjects": [
+        {
+          "name": "Logical Reasoning",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 11
+        },
+        {
+          "name": "Reading Comprehension",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 6
+        }
+      ],
+      "syllabusEntries": 17,
+      "mappedEntries": 17,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ib-math-aa",
+      "name": "IB Math AA",
+      "fullName": "IB Diploma — Mathematics: Analysis and Approaches (HL)",
+      "region": "Global",
+      "category": "IB Diploma subject",
+      "authority": "International Baccalaureate Organization",
+      "website": "https://www.ibo.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "Mathematics: Analysis and Approaches — IB Diploma Programme guide",
+          "url": "https://www.ibo.org/programmes/diploma-programme/curriculum/",
+          "host": "ibo.org"
+        }
+      ],
+      "overview": {
+        "conductor": "International Baccalaureate Organization",
+        "level": "Diploma Programme → university admission",
+        "stages": [
+          "HL route (240 h) or SL route (150 h); this entry covers HL"
+        ],
+        "papers": [
+          "Paper 1: 2 h (no calculator)",
+          "Paper 2: 2 h (calculator)",
+          "Paper 3: 1 h (HL-only, calculator)"
+        ],
+        "duration": "3 papers (HL: 2 h + 2 h + 1 h) + IA exploration",
+        "marking": "1-7 scale; 80% exam + 20% internal assessment",
+        "questionTypes": [
+          "Short-response questions",
+          "Extended-response questions",
+          "Problem-solving without a calculator (Paper 1)"
+        ],
+        "notes": "AA emphasises analytic methods; AI (Applications) is a separate route not covered here. The IA is an individual mathematical exploration."
+      },
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 5,
+          "syllabusEntries": 28
+        }
+      ],
+      "syllabusEntries": 28,
+      "mappedEntries": 28,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ap-physics-1",
+      "name": "AP Physics 1",
+      "fullName": "AP Physics 1: Algebra-Based",
+      "region": "United States",
+      "category": "AP subject exam",
+      "authority": "College Board",
+      "website": "https://apstudents.collegeboard.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "AP Physics 1 — Course and Exam Description (CED)",
+          "url": "https://apcentral.collegeboard.org",
+          "host": "apcentral.collegeboard.org"
+        }
+      ],
+      "overview": {
+        "conductor": "College Board",
+        "level": "High school → college credit / advanced placement",
+        "duration": "3 h (Section I MCQ 80 min · Section II 4 FRQ 100 min)",
+        "marking": "MCQ 50% + FRQ 50%; score 1-5",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Multiple-choice (4 options)",
+          "Free-response questions"
+        ],
+        "notes": "Revised CED effective fall 2024: fluids joins as Unit 8 and the exam moved to 40 MCQs and 4 FRQs."
+      },
+      "subjects": [
+        {
+          "name": "Physics 1",
+          "mappedSubjectId": "physics",
+          "weightage": null,
+          "units": 8,
+          "syllabusEntries": 37
+        }
+      ],
+      "syllabusEntries": 37,
+      "mappedEntries": 37,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ap-calculus-bc",
+      "name": "AP Calculus BC",
+      "fullName": "Advanced Placement Calculus BC",
+      "region": "United States",
+      "category": "AP subject exam",
+      "authority": "College Board",
+      "website": "https://apstudents.collegeboard.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "AP Calculus BC — Course and Exam Description (CED)",
+          "url": "https://apcentral.collegeboard.org",
+          "host": "apcentral.collegeboard.org"
+        }
+      ],
+      "overview": {
+        "conductor": "College Board",
+        "level": "High school → college credit / advanced placement",
+        "duration": "3 h 15 min (Section I MCQ 105 min · Section II FRQ 90 min)",
+        "marking": "MCQ 50% + FRQ 50%; score 1-5",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Multiple-choice (4 options)",
+          "Free-response questions"
+        ],
+        "notes": "A superset of Calculus AB: all eight AB units plus parametric, polar and vector-valued functions (Unit 9) and infinite series (Unit 10). An AB subscore is also reported."
+      },
+      "subjects": [
+        {
+          "name": "Calculus BC",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 10,
+          "syllabusEntries": 43
+        }
+      ],
+      "syllabusEntries": 43,
+      "mappedEntries": 43,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ap-chemistry",
+      "name": "AP Chemistry",
+      "fullName": "Advanced Placement Chemistry",
+      "region": "United States",
+      "category": "AP subject exam",
+      "authority": "College Board",
+      "website": "https://apstudents.collegeboard.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "AP Chemistry — Course and Exam Description (CED)",
+          "url": "https://apcentral.collegeboard.org",
+          "host": "apcentral.collegeboard.org"
+        }
+      ],
+      "overview": {
+        "conductor": "College Board",
+        "level": "High school → college credit / advanced placement",
+        "duration": "3 h 15 min (Section I MCQ 90 min · Section II FRQ 105 min)",
+        "marking": "MCQ 50% + FRQ 50%; score 1-5",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Multiple-choice (4 options)",
+          "Free-response questions"
+        ],
+        "notes": "The nine CED units assume algebra-level math; a calculator is allowed in Section II only."
+      },
+      "subjects": [
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": null,
+          "units": 9,
+          "syllabusEntries": 34
+        }
+      ],
+      "syllabusEntries": 34,
+      "mappedEntries": 34,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ap-biology",
+      "name": "AP Biology",
+      "fullName": "Advanced Placement Biology",
+      "region": "United States",
+      "category": "AP subject exam",
+      "authority": "College Board",
+      "website": "https://apstudents.collegeboard.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "AP Biology — Course and Exam Description (CED)",
+          "url": "https://apcentral.collegeboard.org",
+          "host": "apcentral.collegeboard.org"
+        }
+      ],
+      "overview": {
+        "conductor": "College Board",
+        "level": "High school → college credit / advanced placement",
+        "duration": "3 h (Section I MCQ 90 min · Section II FRQ 90 min)",
+        "marking": "MCQ 50% + FRQ 50%; score 1-5",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Multiple-choice (4 options)",
+          "Free-response questions"
+        ],
+        "notes": "Section II mixes individual and investigative long questions with short-answer items; science practices run across all eight units."
+      },
+      "subjects": [
+        {
+          "name": "Biology",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 8,
+          "syllabusEntries": 35
+        }
+      ],
+      "syllabusEntries": 35,
+      "mappedEntries": 35,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ucat",
+      "name": "UCAT",
+      "fullName": "University Clinical Aptitude Test",
+      "region": "United Kingdom",
+      "category": "Medical admission aptitude",
+      "authority": "UCAT Consortium (formerly UKCAT)",
+      "website": "https://www.ucat.ac.uk",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "UCAT — test format and subtests",
+          "url": "https://www.ucat.ac.uk",
+          "host": "ucat.ac.uk"
+        }
+      ],
+      "overview": {
+        "conductor": "UCAT Consortium (formerly UKCAT)",
+        "level": "Undergraduate → UK medicine/dentistry",
+        "stages": [
+          "Single sitting per admissions cycle (one attempt per year)"
+        ],
+        "papers": [
+          "Verbal Reasoning",
+          "Decision Making",
+          "Quantitative Reasoning",
+          "Abstract Reasoning",
+          "Situational Judgement"
+        ],
+        "duration": "≈ 2 h computer-based (five timed subtests)",
+        "marking": "300-900 per cognitive subtest; SJT band 1-4",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "MCQ (4-5 options)",
+          "Situational judgement ranking"
+        ],
+        "notes": "No curriculum content — tests aptitude; sections are strictly timed with no going back. Universities weight the score differently."
+      },
+      "subjects": [
+        {
+          "name": "Verbal Reasoning",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 4
+        },
+        {
+          "name": "Decision Making",
+          "mappedSubjectId": "ku-logical-reasoning",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Quantitative Reasoning",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 5
+        },
+        {
+          "name": "Abstract Reasoning",
+          "mappedSubjectId": "ku-logical-reasoning",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Situational Judgement",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 5
+        }
+      ],
+      "syllabusEntries": 26,
+      "mappedEntries": 26,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "enem",
+      "name": "ENEM",
+      "fullName": "Exame Nacional do Ensino Médio",
+      "region": "South America",
+      "category": "Secondary completion & university admission",
+      "authority": "INEP (Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira), Ministry of Education",
+      "website": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem",
+      "syllabusVerified": "2026-10-27",
+      "officialSources": [
+        {
+          "title": "INEP — ENEM official page (four areas, essay, structure)",
+          "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem",
+          "host": "gov.br"
+        },
+        {
+          "title": "Edital INEP nº 64, de 21 de maio de 2026 (MEC Normas) — exam structure 2026",
+          "url": "https://mecnormas.mec.gov.br/pesquisa/detalhar/11900",
+          "host": "mecnormas.mec.gov.br"
+        },
+        {
+          "title": "INEP — Matriz de Referência ENEM (competências e habilidades)",
+          "url": "https://download.inep.gov.br/enem/outros_documentos/enem_matriz_referencia.pdf",
+          "host": "download.inep.gov.br"
+        },
+        {
+          "title": "Brasil Escola — ENEM 2026: what to study, per area",
+          "url": "https://vestibular.brasilescola.uol.com.br/enem/o-que-estudar-para-o-enem-2026.htm",
+          "host": "vestibular.brasilescola.uol.com.br"
+        }
+      ],
+      "overview": {
+        "conductor": "INEP (Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira), Ministry of Education",
+        "level": "Completion of Brazilian upper-secondary (ensino médio) and university admission",
+        "stages": [
+          "Two consecutive Sundays in November — Day 1: Linguagens 45 + Ciências Humanas 45 + Redação (5h30); Day 2: Ciências da Natureza 45 + Matemática 45 (5h)",
+          "Scores used by Sisu (public universities), Prouni and Fies (private-sector scholarships and loans), plus ensino médio certification"
+        ],
+        "papers": [
+          "Linguagens, Códigos e suas Tecnologias — 45 questions",
+          "Ciências Humanas e suas Tecnologias — 45 questions",
+          "Ciências da Natureza e suas Tecnologias — 45 questions",
+          "Matemática e suas Tecnologias — 45 questions",
+          "Redação — one dissertative-argumentative essay (up to 30 lines) on a social problem-situation"
+        ],
+        "duration": "5h30 (Day 1, includes the essay) and 5h (Day 2), gates open 12h00, tests start 13h30",
+        "marking": "TRI (Item Response Theory) scaled scores per area, 0-1000; essay marked 0-1000 on five competencies (0-200 each)",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Multiple choice (5 options) for all 180 objective questions; one extended-response essay"
+        ],
+        "notes": "Candidates choose English or Spanish for the foreign-language items inside Linguagens. The essay demands formal written Portuguese, a clear thesis, at least two developed arguments and a concrete intervention proposal (with agent, means, detail and purpose) — a missing proposal caps the score at 800. 180 MCQs total, the largest national exam by registrations in the world."
+      },
+      "subjects": [
+        {
+          "name": "Linguagens, Códigos e suas Tecnologias",
+          "mappedSubjectId": null,
+          "weightage": 25,
+          "units": 4,
+          "syllabusEntries": 11
+        },
+        {
+          "name": "Ciências Humanas e suas Tecnologias",
+          "mappedSubjectId": null,
+          "weightage": 25,
+          "units": 5,
+          "syllabusEntries": 18
+        },
+        {
+          "name": "Ciências da Natureza e suas Tecnologias",
+          "mappedSubjectId": null,
+          "weightage": 25,
+          "units": 3,
+          "syllabusEntries": 10
+        },
+        {
+          "name": "Matemática e suas Tecnologias",
+          "mappedSubjectId": null,
+          "weightage": 25,
+          "units": 3,
+          "syllabusEntries": 7
+        }
+      ],
+      "syllabusEntries": 46,
+      "mappedEntries": 46,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ap-csa",
+      "name": "AP Computer Science A",
+      "fullName": "Advanced Placement Computer Science A",
+      "region": "United States",
+      "category": "AP subject exam",
+      "authority": "College Board",
+      "website": "https://apstudents.collegeboard.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "AP Computer Science A — Course and Exam Description (CED)",
+          "url": "https://apcentral.collegeboard.org",
+          "host": "apcentral.collegeboard.org"
+        }
+      ],
+      "overview": {
+        "conductor": "College Board",
+        "level": "High school → college credit / advanced placement",
+        "duration": "3 h (Section I MCQ 90 min · Section II FRQ 90 min)",
+        "marking": "MCQ 50% + FRQ 50%; score 1-5",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Multiple-choice (4 options)",
+          "Free-response questions"
+        ],
+        "notes": "All code is written in Java; the 2024 course update reorganized the early units around objects and methods, and abstract classes and interfaces are not tested."
+      },
+      "subjects": [
+        {
+          "name": "Computer Science A",
+          "mappedSubjectId": "programming-java",
+          "weightage": null,
+          "units": 10,
+          "syllabusEntries": 34
+        }
+      ],
+      "syllabusEntries": 34,
+      "mappedEntries": 34,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "a-level-physics",
+      "name": "A-Level Physics",
+      "fullName": "GCE Advanced Level Physics (AQA 7408 core; OCR/Edexcel equivalents)",
+      "region": "United Kingdom",
+      "category": "School-leaving subject exam",
+      "authority": "AQA / OCR / Edexcel",
+      "website": "https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7408",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "AQA A-level Physics (7408) specification",
+          "url": "https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7408",
+          "host": "aqa.org.uk"
+        }
+      ],
+      "overview": {
+        "conductor": "AQA / OCR / Edexcel",
+        "level": "Sixth form → university admission",
+        "stages": [
+          "Linear — all exams at the end of the two-year course"
+        ],
+        "papers": [
+          "Paper 1 — measurements to mechanics + periodic motion",
+          "Paper 2 — thermal physics, fields and nuclear physics",
+          "Paper 3 — practical skills, data analysis + optional topic"
+        ],
+        "duration": "Three 2 h papers",
+        "marking": "A*-E; three 2 h papers",
+        "questionTypes": [
+          "Multiple-choice questions",
+          "Structured written questions",
+          "Data analysis and practical skills questions"
+        ],
+        "notes": "Structure shown follows AQA 7408; OCR A and Edexcel have equivalent cores with different option lists and paper layouts. A separate practical endorsement (pass/fail) complements the grade."
+      },
+      "subjects": [
+        {
+          "name": "Physics",
+          "mappedSubjectId": "physics",
+          "weightage": null,
+          "units": 9,
+          "syllabusEntries": 30
+        }
+      ],
+      "syllabusEntries": 30,
+      "mappedEntries": 30,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "a-level-chemistry",
+      "name": "A-Level Chemistry",
+      "fullName": "GCE Advanced Level Chemistry (AQA 7405 core; OCR/Edexcel equivalents)",
+      "region": "United Kingdom",
+      "category": "School-leaving subject exam",
+      "authority": "AQA / OCR / Edexcel",
+      "website": "https://www.aqa.org.uk/subjects/science/as-and-a-level/chemistry-7405",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "AQA A-level Chemistry (7405) specification",
+          "url": "https://www.aqa.org.uk/subjects/science/as-and-a-level/chemistry-7405",
+          "host": "aqa.org.uk"
+        }
+      ],
+      "overview": {
+        "conductor": "AQA / OCR / Edexcel",
+        "level": "Sixth form → university admission",
+        "stages": [
+          "Linear — all exams at the end of the two-year course"
+        ],
+        "papers": [
+          "Paper 1 — physical and inorganic chemistry with relevant practicals",
+          "Paper 2 — physical and organic chemistry with relevant practicals",
+          "Paper 3 — all content, practical skills and data analysis"
+        ],
+        "duration": "Three 2 h papers",
+        "marking": "A*-E; linear exams",
+        "questionTypes": [
+          "Multiple-choice questions",
+          "Structured questions with calculations, equations and mechanisms",
+          "Practical skills and data analysis questions"
+        ],
+        "notes": "Structure shown follows AQA 7405 (physical / inorganic / organic); OCR and Edexcel cover the same core ideas with different topic orders. A separate practical endorsement (pass/fail) complements the grade."
+      },
+      "subjects": [
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 31
+        }
+      ],
+      "syllabusEntries": 31,
+      "mappedEntries": 31,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ap-statistics",
+      "name": "AP Statistics",
+      "fullName": "Advanced Placement Statistics",
+      "region": "United States",
+      "category": "AP subject exam",
+      "authority": "College Board",
+      "website": "https://apstudents.collegeboard.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "AP Statistics — Course and Exam Description (CED)",
+          "url": "https://apcentral.collegeboard.org",
+          "host": "apcentral.collegeboard.org"
+        }
+      ],
+      "overview": {
+        "conductor": "College Board",
+        "level": "High school → college credit / advanced placement",
+        "duration": "3 h (Section I MCQ 90 min · Section II FRQ 90 min)",
+        "marking": "MCQ 50% + FRQ 50%; score 1-5",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Multiple-choice (4 options)",
+          "Free-response questions"
+        ],
+        "notes": "A graphing calculator with statistics functions is expected on both sections; the CED does not publish fixed unit weightings for this course."
+      },
+      "subjects": [
+        {
+          "name": "Statistics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 9,
+          "syllabusEntries": 30
+        }
+      ],
+      "syllabusEntries": 30,
+      "mappedEntries": 30,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "a-level-biology",
+      "name": "A-Level Biology",
+      "fullName": "GCE Advanced Level Biology (AQA 7402 core; OCR/Edexcel equivalents)",
+      "region": "United Kingdom",
+      "category": "School-leaving subject exam",
+      "authority": "AQA / OCR / Edexcel",
+      "website": "https://www.aqa.org.uk/subjects/science/as-and-a-level/biology-7402",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "AQA A-level Biology (7402) specification",
+          "url": "https://www.aqa.org.uk/subjects/science/as-and-a-level/biology-7402",
+          "host": "aqa.org.uk"
+        }
+      ],
+      "overview": {
+        "conductor": "AQA / OCR / Edexcel",
+        "level": "Sixth form → university admission",
+        "stages": [
+          "Linear — all exams at the end of the two-year course"
+        ],
+        "papers": [
+          "Paper 1 — biological molecules to genetic information (units 1-4)",
+          "Paper 2 — energy transfers to gene expression (units 5-8)",
+          "Paper 3 — synoptic content, practical skills, data analysis and one essay"
+        ],
+        "duration": "Three 2 h papers",
+        "marking": "A*-E; linear exams with an essay in Paper 3",
+        "questionTypes": [
+          "Short-answer questions",
+          "Structured and extended written questions",
+          "Practical skills and data analysis questions"
+        ],
+        "notes": "Structure shown follows AQA 7402; OCR A and Edexcel A (context-led) cover the same core with different organisations. A separate practical endorsement (pass/fail) complements the grade."
+      },
+      "subjects": [
+        {
+          "name": "Biology",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 8,
+          "syllabusEntries": 34
+        }
+      ],
+      "syllabusEntries": 34,
+      "mappedEntries": 34,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "a-level-economics",
+      "name": "A-Level Economics",
+      "fullName": "GCE Advanced Level Economics (AQA 7136; OCR/Edexcel equivalents)",
+      "region": "United Kingdom",
+      "category": "School-leaving subject exam",
+      "authority": "AQA / OCR / Edexcel",
+      "website": "https://www.aqa.org.uk/subjects/business/as-and-a-level/economics-7136",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "AQA A-level Economics (7136) specification",
+          "url": "https://www.aqa.org.uk/subjects/business/as-and-a-level/economics-7136",
+          "host": "aqa.org.uk"
+        }
+      ],
+      "overview": {
+        "conductor": "AQA / OCR / Edexcel",
+        "level": "Sixth form → university admission",
+        "stages": [
+          "Linear — all exams at the end of the two-year course"
+        ],
+        "papers": [
+          "Paper 1 — markets and market failure (2 h)",
+          "Paper 2 — national and international economy (2 h)",
+          "Paper 3 — economic principles and issues (2 h, multiple choice + case study)"
+        ],
+        "duration": "Three 2 h papers",
+        "marking": "A*-E; linear exams",
+        "questionTypes": [
+          "Multiple-choice (Paper 3)",
+          "Data-response questions",
+          "Extended case-study essays"
+        ],
+        "notes": "Structure shown follows AQA 7136; Edexcel and OCR organise the same micro/macro content across three linear papers with different question styles."
+      },
+      "subjects": [
+        {
+          "name": "Economics",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 11
+        }
+      ],
+      "syllabusEntries": 11,
+      "mappedEntries": 11,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ugc-net",
+      "name": "UGC NET",
+      "fullName": "University Grants Commission National Eligibility Test (UGC-NET)",
+      "region": "India",
+      "category": "Teaching & research eligibility (Assistant Professor, JRF, PhD admission)",
+      "authority": "National Testing Agency (NTA) on behalf of University Grants Commission",
+      "website": "https://ugcnet.nta.nic.in",
+      "syllabusVerified": "2026-10-24",
+      "officialSources": [
+        {
+          "title": "University Grants Commission — NET syllabi (updated syllabi applicable from June 2019 UGC-NET onwards)",
+          "url": "https://www.ugcnetonline.in/syllabus-new.php",
+          "host": "ugcnetonline.in"
+        },
+        {
+          "title": "NTA — UGC NET official examination portal (information bulletins and syllabus downloads)",
+          "url": "https://ugcnet.nta.nic.in",
+          "host": "ugcnet.nta.nic.in"
+        }
+      ],
+      "overview": {
+        "conductor": "National Testing Agency (NTA) on behalf of University Grants Commission",
+        "level": "National eligibility determination for Assistant Professor, Junior Research Fellowship (JRF) and PhD admission",
+        "stages": [
+          "Paper I — General Paper on Teaching & Research Aptitude (50 questions, 100 marks, compulsory for all)",
+          "Paper II — subject-specific paper in the chosen subject (100 questions, 200 marks)",
+          "Both papers sat in a single three-hour session without a break"
+        ],
+        "papers": [
+          "Paper I (10 units: teaching aptitude, research aptitude, comprehension, communication, mathematical reasoning, logical reasoning, data interpretation, ICT, people-development-environment, higher education system)",
+          "Paper II (subject paper — 80+ subjects; syllabus of most subjects last revised with effect from June 2019)"
+        ],
+        "duration": "3 hours, single combined session for Paper I + Paper II",
+        "marking": "Paper I 100 marks (50 × 2) + Paper II 200 marks (100 × 2) = 300 marks total",
+        "negativeMarking": "None — no negative marking in either paper",
+        "questionTypes": [
+          "Objective multiple-choice questions with four options, one correct"
+        ],
+        "notes": "Qualifying marks: 40% aggregate for General/Unreserved, 35% for reserved categories, in both papers combined. JRF goes to the top ~6% of qualifying candidates subject to age limits; Assistant Professor eligibility has no upper age limit. The same test now also gates PhD admission under UGC PhD regulations. Subjects include Commerce (code 08), Political Science (code 02), Management (17), Education (09), English (30), Computer Science & Applications (87) and Economics (01)."
+      },
+      "subjects": [
+        {
+          "name": "General Paper on Teaching & Research Aptitude (Paper I)",
+          "mappedSubjectId": "ku-logical-reasoning",
+          "weightage": 33,
+          "units": 10,
+          "syllabusEntries": 44
+        },
+        {
+          "name": "Commerce (Paper II, Code 08)",
+          "mappedSubjectId": null,
+          "weightage": 33,
+          "units": 10,
+          "syllabusEntries": 23
+        },
+        {
+          "name": "Political Science (Paper II, Code 02)",
+          "mappedSubjectId": null,
+          "weightage": 34,
+          "units": 10,
+          "syllabusEntries": 15
+        }
+      ],
+      "syllabusEntries": 82,
+      "mappedEntries": 82,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ib-physics",
+      "name": "IB Physics",
+      "fullName": "IB Diploma — Physics (HL)",
+      "region": "Global",
+      "category": "IB Diploma subject",
+      "authority": "International Baccalaureate Organization",
+      "website": "https://www.ibo.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "Physics — IB Diploma Programme guide",
+          "url": "https://www.ibo.org/programmes/diploma-programme/curriculum/",
+          "host": "ibo.org"
+        }
+      ],
+      "overview": {
+        "conductor": "International Baccalaureate Organization",
+        "level": "Diploma Programme → university admission",
+        "stages": [
+          "HL route with 60 h of extension content beyond the SL core"
+        ],
+        "papers": [
+          "Paper 1 — multiple-choice and data-based questions",
+          "Paper 2 — short-answer and extended-response",
+          "IA — individual scientific investigation"
+        ],
+        "duration": "Two written papers (HL) + IA; 95 h core + 60 h HL extension",
+        "marking": "1-7 scale; ≈80% exam + 20% IA",
+        "questionTypes": [
+          "Multiple-choice questions",
+          "Short-answer questions",
+          "Extended-response questions",
+          "Data-based and experimental questions"
+        ],
+        "notes": "2023 syllabus (first assessment 2025): five themes A-E with HL-only content flagged below; options removed and assessment restructured to two written papers plus the investigation."
+      },
+      "subjects": [
+        {
+          "name": "Physics",
+          "mappedSubjectId": "physics",
+          "weightage": null,
+          "units": 5,
+          "syllabusEntries": 24
+        }
+      ],
+      "syllabusEntries": 24,
+      "mappedEntries": 24,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ib-chemistry",
+      "name": "IB Chemistry",
+      "fullName": "IB Diploma — Chemistry (HL)",
+      "region": "Global",
+      "category": "IB Diploma subject",
+      "authority": "International Baccalaureate Organization",
+      "website": "https://www.ibo.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "Chemistry — IB Diploma Programme guide",
+          "url": "https://www.ibo.org/programmes/diploma-programme/curriculum/",
+          "host": "ibo.org"
+        }
+      ],
+      "overview": {
+        "conductor": "International Baccalaureate Organization",
+        "level": "Diploma Programme → university admission",
+        "stages": [
+          "HL route with additional higher-level content throughout the themes"
+        ],
+        "papers": [
+          "Paper 1 — multiple-choice and data-based questions",
+          "Paper 2 — short-answer and extended-response",
+          "IA — individual scientific investigation"
+        ],
+        "duration": "Two written papers (HL) + IA",
+        "marking": "1-7 scale; ≈80% exam + 20% IA",
+        "questionTypes": [
+          "Multiple-choice questions",
+          "Short-answer questions",
+          "Extended-response questions",
+          "Data-based and experimental questions"
+        ],
+        "notes": "2023 syllabus (first assessment 2025): content is organised into Structure and Reactivity themes; options removed; HL-only material is flagged below."
+      },
+      "subjects": [
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 12
+        }
+      ],
+      "syllabusEntries": 12,
+      "mappedEntries": 12,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "kcet",
+      "name": "KCET",
+      "fullName": "Karnataka Common Entrance Test (UGCET)",
+      "region": "India",
+      "category": "State engineering, agriculture & pharmacy entrance",
+      "authority": "Karnataka Examinations Authority (KEA), Government of Karnataka",
+      "website": "https://cetonline.karnataka.gov.in/kea/ugcet2026",
+      "syllabusVerified": "2026-10-26",
+      "officialSources": [
+        {
+          "title": "KEA — UGCET-2026 Information Bulletin (official; exam pattern, subject papers and merit rules)",
+          "url": "https://cetonline.karnataka.gov.in/keawebentry456/ugcet2026/information_bulletin_1_ugcet_2026_17012026english.pdf",
+          "host": "cetonline.karnataka.gov.in"
+        },
+        {
+          "title": "KEA — UGCET-2026 portal (subject syllabus documents and notifications)",
+          "url": "https://cetonline.karnataka.gov.in/kea/ugcet2026",
+          "host": "cetonline.karnataka.gov.in"
+        }
+      ],
+      "overview": {
+        "conductor": "Karnataka Examinations Authority (KEA), Government of Karnataka",
+        "level": "First- and second-year PUC (Class 11-12) → undergraduate admission to Engineering/Technology, B.Pharm, farm-science and other professional courses in Karnataka",
+        "stages": [
+          "Application and document verification",
+          "Four OMR subject sessions held across two days",
+          "Option entry and seat allocation in KEA counselling rounds"
+        ],
+        "papers": [
+          "Physics: 60 MCQs, 60 marks, 80 minutes",
+          "Chemistry: 60 MCQs, 60 marks, 80 minutes",
+          "Mathematics: 60 MCQs, 60 marks, 80 minutes (PCM group)",
+          "Biology: 60 MCQs, 60 marks, 80 minutes (medical / agriculture / pharmacy groups sit Biology instead of or alongside Mathematics)"
+        ],
+        "duration": "Four 80-minute subject sessions across two days",
+        "marking": "One mark per question, 60 marks per subject, maximum 180 marks; the candidate takes three subject papers per their stream",
+        "negativeMarking": "None — no negative marking",
+        "questionTypes": [
+          "Multiple-choice questions with four options, OMR answer sheets"
+        ],
+        "notes": "The syllabus is the ENTIRE first-year and second-year PUC curriculum prescribed by the Department of Pre-University Education, Karnataka (NCERT-aligned), which KEA publishes as per-subject syllabus documents on the UGCET portal. Engineering-seat merit uses the PCM total; B.Arch additionally requires the NATA score; B.Sc. farm-science (agriculture quota) merit combines 50% CET marks (Physics, Chemistry, Biology) with 50% of the practical-examination marks; the Kannada language test on the eve of the exam is qualifying-only for eligible (horanadu and gadinaru Kannadiga) candidates. KCET marks carry no negative penalty, so exhaustive coverage of the PUC chapter list below is the scoring strategy."
+      },
+      "subjects": [
+        {
+          "name": "Physics",
+          "mappedSubjectId": "physics",
+          "weightage": 33,
+          "units": 2,
+          "syllabusEntries": 23
+        },
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": 33,
+          "units": 2,
+          "syllabusEntries": 18
+        },
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": 34,
+          "units": 2,
+          "syllabusEntries": 21
+        },
+        {
+          "name": "Biology",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 18
+        }
+      ],
+      "syllabusEntries": 80,
+      "mappedEntries": 80,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ib-biology",
+      "name": "IB Biology",
+      "fullName": "IB Diploma — Biology (HL)",
+      "region": "Global",
+      "category": "IB Diploma subject",
+      "authority": "International Baccalaureate Organization",
+      "website": "https://www.ibo.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "Biology — IB Diploma Programme guide",
+          "url": "https://www.ibo.org/programmes/diploma-programme/curriculum/",
+          "host": "ibo.org"
+        }
+      ],
+      "overview": {
+        "conductor": "International Baccalaureate Organization",
+        "level": "Diploma Programme → university admission",
+        "stages": [
+          "HL route with additional higher-level content throughout the themes"
+        ],
+        "papers": [
+          "Paper 1 — multiple-choice and data-based questions",
+          "Paper 2 — short-answer and extended-response",
+          "IA — individual scientific investigation"
+        ],
+        "duration": "Two written papers (HL) + IA",
+        "marking": "1-7 scale; ≈80% exam + 20% IA",
+        "questionTypes": [
+          "Multiple-choice questions",
+          "Short-answer questions",
+          "Extended-response questions",
+          "Data-based and experimental questions"
+        ],
+        "notes": "Structure follows the 2023 IB Biology guide (themes A-D, first assessment 2025). A few subtopic placements are regularised where official subtopics straddle themes (e.g. gas exchange grouped under B, energy transfer under C); content items are standard syllabus material and HL-only items are flagged."
+      },
+      "subjects": [
+        {
+          "name": "Biology",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 23
+        }
+      ],
+      "syllabusEntries": 23,
+      "mappedEntries": 23,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "sg-gce-a-level",
+      "name": "GCE A-Level (SG)",
+      "fullName": "Singapore-Cambridge GCE Advanced Level (H2 subjects)",
+      "region": "Singapore",
+      "category": "School-leaving subject exam",
+      "authority": "SEAB with the Singapore MOE and Cambridge International Education",
+      "website": "https://www.seab.gov.sg/gce-a-level/a-level-syllabuses-examined-for-school-candidates-2026",
+      "syllabusVerified": "2026-10-22",
+      "officialSources": [
+        {
+          "title": "SEAB — 2026 GCE A-Level syllabuses examined for school candidates",
+          "url": "https://www.seab.gov.sg/gce-a-level/a-level-syllabuses-examined-for-school-candidates-2026",
+          "host": "seab.gov.sg"
+        },
+        {
+          "title": "Singapore Examinations and Assessment Board",
+          "url": "https://www.seab.gov.sg",
+          "host": "seab.gov.sg"
+        }
+      ],
+      "overview": {
+        "conductor": "SEAB with the Singapore MOE and Cambridge International Education",
+        "level": "Junior college (Years 12-13) → university admission",
+        "stages": [
+          "Two-year course → H1/H2/H3 subject examinations in a single sitting each year"
+        ],
+        "papers": [
+          "H2 subjects: two or three written papers each (some with practical or case-study components)"
+        ],
+        "duration": "Per-subject written papers at end of course",
+        "marking": "Grades A-U per subject; university admission points computed from H1+H2 profile",
+        "questionTypes": [
+          "Structured written questions",
+          "Data-response and case-study questions (Economics)",
+          "Practical papers (sciences)"
+        ],
+        "notes": "Content below follows the five most-taken H2 local-subject syllabuses by their official section titles. H1 General Paper, Mother Tongue and literature subjects are excluded because they examine language and textual skills outside the library scope."
+      },
+      "subjects": [
+        {
+          "name": "H2 Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": 20,
+          "units": 6,
+          "syllabusEntries": 10
+        },
+        {
+          "name": "H2 Physics",
+          "mappedSubjectId": "physics",
+          "weightage": 20,
+          "units": 5,
+          "syllabusEntries": 11
+        },
+        {
+          "name": "H2 Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": 20,
+          "units": 3,
+          "syllabusEntries": 9
+        },
+        {
+          "name": "H2 Biology",
+          "mappedSubjectId": null,
+          "weightage": 20,
+          "units": 4,
+          "syllabusEntries": 8
+        },
+        {
+          "name": "H2 Economics",
+          "mappedSubjectId": null,
+          "weightage": 20,
+          "units": 2,
+          "syllabusEntries": 6
+        }
+      ],
+      "syllabusEntries": 44,
+      "mappedEntries": 44,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "ib-economics",
+      "name": "IB Economics",
+      "fullName": "IB Diploma — Economics (HL)",
+      "region": "Global",
+      "category": "IB Diploma subject",
+      "authority": "International Baccalaureate Organization",
+      "website": "https://www.ibo.org",
+      "syllabusVerified": "2026-10-20",
+      "officialSources": [
+        {
+          "title": "Economics — IB Diploma Programme guide",
+          "url": "https://www.ibo.org/programmes/diploma-programme/curriculum/",
+          "host": "ibo.org"
+        }
+      ],
+      "overview": {
+        "conductor": "International Baccalaureate Organization",
+        "level": "Diploma Programme → university admission",
+        "stages": [
+          "Four units with HL extensions throughout; real-world examples are assessed in every paper"
+        ],
+        "papers": [
+          "Paper 1 — extended response (essay)",
+          "Paper 2 — data response",
+          "Paper 3 — HL-only quantitative and policy paper",
+          "Internal assessment — three news-based commentaries"
+        ],
+        "duration": "P1 1 h 15 + P2 1 h 45 + P3 1 h 45 (HL) + IA commentaries",
+        "marking": "1-7 scale; ≈80% exam + 20% IA",
+        "questionTypes": [
+          "Extended written responses (essays)",
+          "Data-response questions",
+          "Quantitative and policy questions (HL Paper 3)"
+        ],
+        "notes": "2020 syllabus (first assessment 2022). SL skips Paper 3; HL-only content is flagged in the subtopics below."
+      },
+      "subjects": [
+        {
+          "name": "Economics",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 15
+        }
+      ],
+      "syllabusEntries": 15,
+      "mappedEntries": 15,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "viteee",
+      "name": "VITEEE",
+      "fullName": "VIT Engineering Entrance Examination",
+      "region": "India",
+      "category": "Engineering entrance",
+      "authority": "Vellore Institute of Technology (VIT)",
+      "website": "https://viteee.vit.ac.in",
+      "syllabusVerified": "2026-10-23",
+      "officialSources": [
+        {
+          "title": "VITEEE official site — pattern, eligibility and syllabus links",
+          "url": "https://viteee.vit.ac.in",
+          "host": "viteee.vit.ac.in"
+        },
+        {
+          "title": "VITEEE syllabus page — subject-wise syllabus links",
+          "url": "https://viteee.vit.ac.in/viteee-syllabus.html",
+          "host": "viteee.vit.ac.in"
+        }
+      ],
+      "overview": {
+        "conductor": "Vellore Institute of Technology (VIT)",
+        "level": "Undergraduate B.Tech admission across VIT campuses (Vellore, Chennai, AP, Bhopal)",
+        "stages": [
+          "Single computer-based test session; candidates book a slot across the exam window (April-May)"
+        ],
+        "papers": [
+          "One 2-hour paper, 100 MCQs: Mathematics or Biology 40, Physics 25, Chemistry 25, Aptitude 5, English 5"
+        ],
+        "duration": "120 minutes (Maths/Biology 50 min, Physics 30 min, Chemistry 30 min, English+Aptitude 10 min)",
+        "marking": "+4 for each correct answer; 0 for unanswered; no marks above 125 are possible — the paper totals 400 marks across 100 questions",
+        "negativeMarking": "−1 for each wrong answer",
+        "questionTypes": [
+          "MCQ only; each question carries 4 marks"
+        ],
+        "notes": "Two streams: MPCEA (Mathematics, Physics, Chemistry, Aptitude, English) for most B.Tech programmes and BPCEA (Biology replaces Mathematics) for biotechnology streams. There is no separate third subject choice — candidates attempt exactly one stream. Selection is rank-based across all VIT campuses."
+      },
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": 40,
+          "units": 3,
+          "syllabusEntries": 13
+        },
+        {
+          "name": "Physics",
+          "mappedSubjectId": "physics",
+          "weightage": 25,
+          "units": 3,
+          "syllabusEntries": 12
+        },
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": 25,
+          "units": 3,
+          "syllabusEntries": 8
+        },
+        {
+          "name": "Aptitude",
+          "mappedSubjectId": "ku-logical-reasoning",
+          "weightage": 5,
+          "units": 1,
+          "syllabusEntries": 3
+        },
+        {
+          "name": "English",
+          "mappedSubjectId": "english",
+          "weightage": 5,
+          "units": 1,
+          "syllabusEntries": 3
+        },
+        {
+          "name": "Biology (BPCEA stream)",
+          "mappedSubjectId": null,
+          "weightage": 40,
+          "units": 2,
+          "syllabusEntries": 7
+        }
+      ],
+      "syllabusEntries": 46,
+      "mappedEntries": 46,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "vce",
+      "name": "VCE",
+      "fullName": "Victorian Certificate of Education",
+      "region": "Australia",
+      "category": "School-leaving subject exam",
+      "authority": "Victorian Curriculum and Assessment Authority (VCAA)",
+      "website": "https://www.vcaa.vic.edu.au",
+      "syllabusVerified": "2026-10-26",
+      "officialSources": [
+        {
+          "title": "VCAA — VCE English and English as an Additional Language Study Design 2024-2027",
+          "url": "https://www.vcaa.vic.edu.au/curriculum/vce-curriculum/vce-study-designs/english-and-english-additional-language/english-and-english-additional-language-eal",
+          "host": "vcaa.vic.edu.au"
+        },
+        {
+          "title": "VCAA — VCE Mathematics Study Design 2023-2027 (General, Methods, Specialist)",
+          "url": "https://www.vcaa.vic.edu.au/curriculum/vce-curriculum/vce-study-designs/mathematical-methods/vce-mathematical-methods",
+          "host": "vcaa.vic.edu.au"
+        },
+        {
+          "title": "VCAA — VCE Biology Study Design 2022-2026",
+          "url": "https://www.vcaa.vic.edu.au/curriculum/vce-curriculum/vce-study-designs/biology/biology",
+          "host": "vcaa.vic.edu.au"
+        },
+        {
+          "title": "VCAA — VCE Chemistry Study Design 2023-2027",
+          "url": "https://www.vcaa.vic.edu.au/curriculum/vce-curriculum/vce-study-designs/chemistry/chemistry",
+          "host": "vcaa.vic.edu.au"
+        },
+        {
+          "title": "VCAA — VCE Physics Study Design 2023-2027",
+          "url": "https://www.vcaa.vic.edu.au/curriculum/vce-curriculum/vce-study-designs/physics/physics",
+          "host": "vcaa.vic.edu.au"
+        },
+        {
+          "title": "VCAA — VCE Psychology Study Design 2023-2027",
+          "url": "https://www.vcaa.vic.edu.au/curriculum/vce-curriculum/vce-study-designs/psychology/vce-psychology",
+          "host": "vcaa.vic.edu.au"
+        },
+        {
+          "title": "VCAA — VCE examination specifications, past examinations and reports",
+          "url": "https://www.vcaa.vic.edu.au/assessment/vce-assessment/past-examinations/Pages/Index.aspx",
+          "host": "vcaa.vic.edu.au"
+        }
+      ],
+      "overview": {
+        "conductor": "Victorian Curriculum and Assessment Authority (VCAA)",
+        "level": "Years 11-12 → study score → ATAR via VTAC",
+        "stages": [
+          "Units 1 and 2 (school-assessed)",
+          "Units 3 and 4 (school-assessed coursework + VCAA external examinations)"
+        ],
+        "papers": [
+          "Per-study written examinations (General Mathematics and Mathematical Methods two papers each: technology-free Exam 1 and technology-active Exam 2)"
+        ],
+        "duration": "External written examinations in October-November (English opens the written-exam period)",
+        "marking": "Unit 3 and 4 School-assessed Coursework statistically moderated against the examination; study score reported relative to the state cohort (mean 30), scaled by VTAC into the ATAR",
+        "questionTypes": [
+          "Multiple choice",
+          "Short answer",
+          "Extended response",
+          "Analytical essays (English)",
+          "Scientific-poster-linked investigation questions (sciences)"
+        ],
+        "notes": "Content follows the eight highest-enrolment studies at Units 3 and 4 by their official area-of-study, outcome and key-knowledge names from the current VCAA study designs (English/EAL 2024-2027, Mathematics 2023-2027, Biology 2022-2026, Chemistry 2023-2027, Physics 2023-2027, Psychology 2023-2027). Each science study also carries a student-designed scientific investigation assessed as a scientific poster; its methodology is taught in the corresponding Knowledge-University research-methods lessons."
+      },
+      "subjects": [
+        {
+          "name": "English and EAL",
+          "mappedSubjectId": "english",
+          "weightage": 14,
+          "units": 2,
+          "syllabusEntries": 4
+        },
+        {
+          "name": "Mathematical Methods",
+          "mappedSubjectId": "mathematics",
+          "weightage": 13,
+          "units": 4,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Specialist Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": 11,
+          "units": 6,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "General Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": 13,
+          "units": 4,
+          "syllabusEntries": 9
+        },
+        {
+          "name": "Biology",
+          "mappedSubjectId": "ku-life-sciences-biology",
+          "weightage": 13,
+          "units": 5,
+          "syllabusEntries": 13
+        },
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": 13,
+          "units": 5,
+          "syllabusEntries": 10
+        },
+        {
+          "name": "Physics",
+          "mappedSubjectId": "physics",
+          "weightage": 13,
+          "units": 5,
+          "syllabusEntries": 9
+        },
+        {
+          "name": "Psychology",
+          "mappedSubjectId": "ku-psychology",
+          "weightage": 10,
+          "units": 5,
+          "syllabusEntries": 10
+        }
+      ],
+      "syllabusEntries": 67,
+      "mappedEntries": 67,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "qce",
+      "name": "QCE",
+      "fullName": "Queensland Certificate of Education",
+      "region": "Australia",
+      "category": "School-leaving subject exam",
+      "authority": "Queensland Curriculum and Assessment Authority (QCAA)",
+      "website": "https://www.qcaa.qld.edu.au",
+      "syllabusVerified": "2026-10-26",
+      "officialSources": [
+        {
+          "title": "QCAA — Physics General senior syllabus 2025 (subject page + syllabus)",
+          "url": "https://www.qcaa.qld.edu.au/senior/senior-subjects/sciences/physics",
+          "host": "qcaa.qld.edu.au"
+        },
+        {
+          "title": "QCAA — Chemistry General senior syllabus 2025 (subject page + syllabus)",
+          "url": "https://www.qcaa.qld.edu.au/senior/senior-subjects/sciences/chemistry",
+          "host": "qcaa.qld.edu.au"
+        },
+        {
+          "title": "QCAA — General Mathematics 2025 v1.3 General senior syllabus (PDF)",
+          "url": "https://www.qcaa.qld.edu.au/downloads/senior-qce/syllabuses/snr_maths_general_25_syll.pdf",
+          "host": "qcaa.qld.edu.au"
+        },
+        {
+          "title": "QCAA — English 2025 v1.3 General senior syllabus (PDF)",
+          "url": "https://www.qcaa.qld.edu.au/downloads/senior-qce/syllabuses/snr_english_25_syll.pdf",
+          "host": "qcaa.qld.edu.au"
+        },
+        {
+          "title": "QCAA — Psychology 2025 v1.3 General senior syllabus (PDF)",
+          "url": "https://www.qcaa.qld.edu.au/downloads/senior-qce/syllabuses/snr_psychology_25_syll.pdf",
+          "host": "qcaa.qld.edu.au"
+        },
+        {
+          "title": "QCAA — Senior subjects hub (Mathematical Methods, Specialist Mathematics, Biology)",
+          "url": "https://www.qcaa.qld.edu.au/senior/senior-subjects",
+          "host": "qcaa.qld.edu.au"
+        }
+      ],
+      "overview": {
+        "conductor": "Queensland Curriculum and Assessment Authority (QCAA)",
+        "level": "Years 11-12 → subject result → ATAR via QTAC",
+        "stages": [
+          "Units 1 and 2 (school-assessed)",
+          "Units 3 and 4 (internal assessment + QCAA external examinations)"
+        ],
+        "papers": [
+          "One written external examination per General subject in October-November"
+        ],
+        "duration": "External written examinations in October-November",
+        "marking": "School-based internal assessment 50% + QCAA external examination 50% for each General subject (science subjects: data test 10%, student experiment 20%, research investigation 20%, external exam 50%); subject results reported relative to the state cohort and scaled by QTAC into the ATAR",
+        "questionTypes": [
+          "Multiple choice",
+          "Short response",
+          "Extended response",
+          "Problem-solving and modelling tasks (mathematics)",
+          "Analytical and creative writing (English)"
+        ],
+        "notes": "Content follows the eight highest-enrolment General subjects at Units 3 and 4 by their official unit, topic and subject-matter names from the current QCAA senior syllabuses (Physics 2025 v1.3, Chemistry 2025 v1.3, Biology 2025 v1.3, Psychology 2025 v1.3, Mathematical Methods 2025, Specialist Mathematics 2025, General Mathematics 2025 v1.3, English 2025 v1.3). Each science subject also carries internal data-test and student-experiment assessment; its methodology is taught in the corresponding Knowledge-University research-methods lessons."
+      },
+      "subjects": [
+        {
+          "name": "English",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 4
+        },
+        {
+          "name": "General Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Mathematical Methods",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 7
+        },
+        {
+          "name": "Specialist Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 10
+        },
+        {
+          "name": "Biology",
+          "mappedSubjectId": "ku-life-sciences-biology",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 4
+        },
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 4
+        },
+        {
+          "name": "Physics",
+          "mappedSubjectId": "physics",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 5
+        },
+        {
+          "name": "Psychology",
+          "mappedSubjectId": "ku-psychology",
+          "weightage": null,
+          "units": 2,
+          "syllabusEntries": 8
+        }
+      ],
+      "syllabusEntries": 48,
+      "mappedEntries": 48,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "wbjee",
+      "name": "WBJEE",
+      "fullName": "West Bengal Joint Entrance Examination (WBJEE)",
+      "region": "India",
+      "category": "State engineering & pharmacy entrance",
+      "authority": "West Bengal Joint Entrance Examinations Board (WBJEEB)",
+      "website": "https://wbjeeb.nic.in",
+      "syllabusVerified": "2026-10-26",
+      "officialSources": [
+        {
+          "title": "WBJEEB — Information Bulletin WBJEE-2026 (official; Appendix-9 syllabus pp. 39-54)",
+          "url": "https://cdnbbsr.s3waas.gov.in/s3d2a27e83d429f0dcae6b937cf440aeb1/uploads/2026/03/202603101506582412.pdf",
+          "host": "cdnbbsr.s3waas.gov.in"
+        },
+        {
+          "title": "West Bengal Joint Entrance Examinations Board — official portal",
+          "url": "https://wbjeeb.nic.in",
+          "host": "wbjeeb.nic.in"
+        }
+      ],
+      "overview": {
+        "conductor": "West Bengal Joint Entrance Examinations Board (WBJEEB)",
+        "level": "Class 11-12 → undergraduate admission to Engineering/Technology, Pharmacy and Architecture courses in West Bengal",
+        "stages": [
+          "Single-day written examination — Paper-I and Paper-II on the same day"
+        ],
+        "papers": [
+          "Paper-I Mathematics: 75 MCQs in 2 hours (11:00 a.m. - 1:00 p.m.) — 50 Category-1 (1 mark each), 15 Category-2 (2 marks each), 10 Category-3 (2 marks each) = 100 marks",
+          "Paper-II Physics & Chemistry: 40 Physics + 40 Chemistry MCQs in 2 hours (2:00 p.m. - 4:00 p.m.) — per subject 30 Category-1 (1 mark), 5 Category-2 (2 marks), 5 Category-3 (2 marks) = 50 + 50 marks"
+        ],
+        "duration": "Paper-I 2 h · Paper-II 2 h (both papers on one day)",
+        "marking": "200 marks total (Mathematics 100, Physics 50, Chemistry 50). Category-1: one option correct, +1 / −¼. Category-2: one option correct, +2 / −½. Category-3: one or more options correct, +2 only when all correct and none incorrect (partial credit: 1 of 2 for two of three correct in a 3-correct question), no negative marking",
+        "negativeMarking": "Category-1: −¼ per wrong answer · Category-2: −½ per wrong answer · Category-3: no negative marking (but any marked incorrect option voids the question)",
+        "questionTypes": [
+          "Multiple-choice questions with four options per question, OMR answer sheets",
+          "Category-3 questions may have more than one correct option"
+        ],
+        "notes": "Two merit lists from one sitting: the General Merit Rank (GMR) for engineering/technology/pharmacy/architecture and the Pharmacy Merit Rank (PMR) — candidates sitting only Paper-II are eligible for the PMR only, and Paper-I alone draws no rank. Tie-breaking walks through subject-wise negative marks and 2-mark question scores in bulletin-defined order. Counselling runs through the WBJEEB e-counselling (Kolkata centre-based option entry). For B.Arch, the NATA score is used alongside. The syllabus below is the official Appendix-9 chapter list of the WBJEE-2026 bulletin, read in full."
+      },
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": 50,
+          "units": 5,
+          "syllabusEntries": 21
+        },
+        {
+          "name": "Physics",
+          "mappedSubjectId": "physics",
+          "weightage": 25,
+          "units": 7,
+          "syllabusEntries": 24
+        },
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": 25,
+          "units": 4,
+          "syllabusEntries": 25
+        }
+      ],
+      "syllabusEntries": 70,
+      "mappedEntries": 70,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "eju",
+      "name": "EJU",
+      "fullName": "Examination for Japanese University Admission for International Students",
+      "region": "Japan",
+      "category": "University admission (international students)",
+      "authority": "JASSO (Japan Student Services Organization)",
+      "website": "https://www.jasso.go.jp/en/ryugaku/eju/examinee/syllabus/index.html",
+      "syllabusVerified": "2026-10-22",
+      "officialSources": [
+        {
+          "title": "JASSO — Guidelines for 2026 EJU",
+          "url": "https://www.jasso.go.jp/en/ryugaku/eju/about/eju_guide/2026.html",
+          "host": "jasso.go.jp"
+        },
+        {
+          "title": "JASSO — EJU Syllabus index",
+          "url": "https://www.jasso.go.jp/en/ryugaku/eju/examinee/syllabus/index.html",
+          "host": "jasso.go.jp"
+        },
+        {
+          "title": "JASSO — EJU Syllabus for Mathematics (2026 1st Session)",
+          "url": "https://www.jasso.go.jp/en/ryugaku/eju/examinee/syllabus/mathematics.html",
+          "host": "jasso.go.jp"
+        },
+        {
+          "title": "JASSO — EJU Syllabus for Japan and the World (2026 1st Session)",
+          "url": "https://www.jasso.go.jp/en/ryugaku/eju/examinee/syllabus/japan_theworld.html",
+          "host": "jasso.go.jp"
+        }
+      ],
+      "overview": {
+        "conductor": "JASSO (Japan Student Services Organization)",
+        "level": "International students seeking undergraduate admission to Japanese universities",
+        "stages": [
+          "Two sessions per year (June and November) — Japanese universities use EJU scores for admission screening"
+        ],
+        "papers": [
+          "Japanese as a Foreign Language (125 min)",
+          "Science — choose 2 of Physics, Chemistry, Biology (80 min)",
+          "Japan and the World (80 min)",
+          "Mathematics — Course 1 or Course 2 (80 min)"
+        ],
+        "duration": "Per-subject sittings in one day; candidates take the subjects their target university requires",
+        "marking": "Scaled scores: Japanese 0-400 + Writing 0-50; Science 0-200; Japan and the World 0-200; Mathematics 0-200",
+        "negativeMarking": "None (multiple-choice marking with scaled scoring)",
+        "questionTypes": [
+          "MCQ (4 options) for all subjects except the Japanese writing section"
+        ],
+        "notes": "Examinees may not take both the Science test and the Japan and the World test. Mathematics Course 1 (liberal-arts programmes) covers topics 1-7 of the official list; Course 2 (science programmes) covers topics 1-20. The revised syllabus applies from the 2026 EJU 1st Session. Japanese as a Foreign Language is administered in Japanese only; other subjects are available in Japanese or English."
+      },
+      "subjects": [
+        {
+          "name": "Japanese as a Foreign Language",
+          "mappedSubjectId": null,
+          "weightage": 40,
+          "units": 1,
+          "syllabusEntries": 3
+        },
+        {
+          "name": "Science",
+          "mappedSubjectId": null,
+          "weightage": 20,
+          "units": 3,
+          "syllabusEntries": 16
+        },
+        {
+          "name": "Japan and the World",
+          "mappedSubjectId": null,
+          "weightage": 20,
+          "units": 3,
+          "syllabusEntries": 11
+        },
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": 20,
+          "units": 2,
+          "syllabusEntries": 19
+        }
+      ],
+      "syllabusEntries": 49,
+      "mappedEntries": 49,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "nsw-hsc",
+      "name": "NSW HSC",
+      "fullName": "Higher School Certificate (New South Wales)",
+      "region": "Australia",
+      "category": "School-leaving subject exam",
+      "authority": "NSW Education Standards Authority (NESA)",
+      "website": "https://www.nsw.gov.au/education-and-training/nesa",
+      "syllabusVerified": "2026-10-25",
+      "officialSources": [
+        {
+          "title": "NESA — Physics Stage 6 Syllabus (2017)",
+          "url": "https://www.nsw.gov.au/education-and-training/nesa/curriculum/science/physics-stage-6-2017",
+          "host": "nsw.gov.au"
+        },
+        {
+          "title": "NESA — Chemistry Stage 6 Syllabus (2017)",
+          "url": "https://www.nsw.gov.au/education-and-training/nesa/curriculum/science/chemistry-stage-6-2017",
+          "host": "nsw.gov.au"
+        },
+        {
+          "title": "NESA — Biology Stage 6 Syllabus (2017)",
+          "url": "https://www.nsw.gov.au/education-and-training/nesa/curriculum/science/biology-stage-6-2017",
+          "host": "nsw.gov.au"
+        },
+        {
+          "title": "NESA — Mathematics Advanced Stage 6 Syllabus (2017)",
+          "url": "https://www.nsw.gov.au/education-and-training/nesa/curriculum/mathematics/mathematics-advanced-stage-6-2017",
+          "host": "nsw.gov.au"
+        },
+        {
+          "title": "NESA — Mathematics Standard Stage 6 Syllabus (2017)",
+          "url": "https://www.nsw.gov.au/education-and-training/nesa/curriculum/mathematics/mathematics-standard-stage-6-2017",
+          "host": "nsw.gov.au"
+        },
+        {
+          "title": "NESA — HSC Standards: English Advanced Paper 2 modules",
+          "url": "https://www.nsw.gov.au/education-and-training/nesa/curriculum/hsc-standards/english-advanced/paper-2-section-iii-module-c-craft-of-writing",
+          "host": "nsw.gov.au"
+        }
+      ],
+      "overview": {
+        "conductor": "NSW Education Standards Authority (NESA)",
+        "level": "Years 11-12 (Stage 6) → ATAR for university admission",
+        "stages": [
+          "Year 11 (Preliminary) course",
+          "Year 12 (HSC) course → external written examinations"
+        ],
+        "papers": [
+          "Per-subject written papers (English two papers; sciences and mathematics one paper each)"
+        ],
+        "duration": "Per-subject written examinations in October-November",
+        "marking": "HSC marks reported against performance bands (Band 1-6); ATAR computed by UAC from the scaled aggregate",
+        "questionTypes": [
+          "Multiple choice",
+          "Short response",
+          "Extended response / essays",
+          "Show-that working and solutions (mathematics)"
+        ],
+        "notes": "Content follows the six highest-enrolment ATAR courses by their official topic and focus-area names from the 2017 NESA syllabuses (which govern HSC examinations through 2026; the 2024 syllabuses first-examine 2027). Year 11 focus areas are included where the HSC examination assumes them as assumed knowledge."
+      },
+      "subjects": [
+        {
+          "name": "English Advanced",
+          "mappedSubjectId": "english",
+          "weightage": 17,
+          "units": 4,
+          "syllabusEntries": 5
+        },
+        {
+          "name": "Mathematics Advanced",
+          "mappedSubjectId": "mathematics",
+          "weightage": 17,
+          "units": 6,
+          "syllabusEntries": 14
+        },
+        {
+          "name": "Mathematics Standard 2",
+          "mappedSubjectId": "mathematics",
+          "weightage": 17,
+          "units": 5,
+          "syllabusEntries": 16
+        },
+        {
+          "name": "Biology",
+          "mappedSubjectId": "ku-life-sciences-biology",
+          "weightage": 17,
+          "units": 4,
+          "syllabusEntries": 17
+        },
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": 17,
+          "units": 4,
+          "syllabusEntries": 15
+        },
+        {
+          "name": "Physics",
+          "mappedSubjectId": "physics",
+          "weightage": 15,
+          "units": 4,
+          "syllabusEntries": 16
+        }
+      ],
+      "syllabusEntries": 83,
+      "mappedEntries": 83,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "rbi-grade-b",
+      "name": "RBI Grade B",
+      "fullName": "Reserve Bank of India Grade B Officer (Direct Recruit) Examination",
+      "region": "India",
+      "category": "Banking & regulatory services",
+      "authority": "Reserve Bank of India (Services Board — RBI Services Board)",
+      "website": "https://www.rbi.org.in",
+      "syllabusVerified": "2026-10-23",
+      "officialSources": [
+        {
+          "title": "Reserve Bank of India — recruitment for Officers Grade B (notification and scheme of selection)",
+          "url": "https://www.rbi.org.in/scripts/bs_viewcontent.aspx?Id=2836",
+          "host": "rbi.org.in"
+        },
+        {
+          "title": "RBI — Opportunities@RBI current recruitment pages (Phase I/II scheme and information handouts)",
+          "url": "https://www.rbi.org.in/Scripts/bs_viewcontent.aspx?Id=3935",
+          "host": "rbi.org.in"
+        }
+      ],
+      "overview": {
+        "conductor": "Reserve Bank of India (Services Board — RBI Services Board)",
+        "level": "Officer Grade B (Direct Recruit, General cadre) recruitment; separate DEPR/DSIM specialist cadres",
+        "stages": [
+          "Phase I — online objective examination (200 marks, 120 minutes)",
+          "Phase II — three online papers of 100 marks each (Economic & Social Issues; English — Writing Skills; Finance & Management)",
+          "Interview — 50 marks"
+        ],
+        "papers": [
+          "Phase I: General Awareness (80 Q / 80 marks), English Language (30 Q / 30), Quantitative Aptitude (30 Q / 30), Reasoning Ability (60 Q / 60)",
+          "Phase II: Paper I Economic & Social Issues, Paper II English (Writing Skills, descriptive), Paper III Finance & Management (objective + descriptive mix)"
+        ],
+        "duration": "Phase I: 120 minutes with sectional timings; Phase II: papers sat on one day (90-120 minutes per paper per recent cycles)",
+        "marking": "Phase I 200 marks; Phase II 300 marks; final merit from Phase II + Interview out of 350",
+        "negativeMarking": "−0.25 for each wrong answer in objective papers (Phase I and Phase II objective sections)",
+        "questionTypes": [
+          "MCQ (5 options in Phase I)",
+          "Descriptive typed answers in Phase II Paper II and the descriptive parts of Papers I & III"
+        ],
+        "notes": "Minimum sectional and aggregate cut-offs apply in Phase I. The English Writing paper tests essay, précis and comprehension through keyboard typing. Current-affairs coverage for General Awareness runs roughly six months before the exam. DEPR (economics) and DSIM (statistics) cadres sit different papers — this syllabus covers the General cadre."
+      },
+      "subjects": [
+        {
+          "name": "General Awareness",
+          "mappedSubjectId": "ku-general-awareness",
+          "weightage": 40,
+          "units": 1,
+          "syllabusEntries": 4
+        },
+        {
+          "name": "English Language",
+          "mappedSubjectId": "english",
+          "weightage": 15,
+          "units": 1,
+          "syllabusEntries": 3
+        },
+        {
+          "name": "Quantitative Aptitude",
+          "mappedSubjectId": "mathematics",
+          "weightage": 15,
+          "units": 1,
+          "syllabusEntries": 3
+        },
+        {
+          "name": "Reasoning Ability",
+          "mappedSubjectId": "ku-logical-reasoning",
+          "weightage": 30,
+          "units": 1,
+          "syllabusEntries": 3
+        },
+        {
+          "name": "Economic & Social Issues (Phase II Paper I)",
+          "mappedSubjectId": null,
+          "weightage": 25,
+          "units": 1,
+          "syllabusEntries": 4
+        },
+        {
+          "name": "English — Writing Skills (Phase II Paper II)",
+          "mappedSubjectId": "english",
+          "weightage": 15,
+          "units": 1,
+          "syllabusEntries": 3
+        },
+        {
+          "name": "Finance & Management (Phase II Paper III)",
+          "mappedSubjectId": null,
+          "weightage": 30,
+          "units": 2,
+          "syllabusEntries": 5
+        }
+      ],
+      "syllabusEntries": 25,
+      "mappedEntries": 25,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "mht-cet",
+      "name": "MHT CET",
+      "fullName": "Maharashtra Health and Technical Common Entrance Test (MHT-CET)",
+      "region": "India",
+      "category": "State engineering & pharmacy entrance",
+      "authority": "State Common Entrance Test Cell, Government of Maharashtra",
+      "website": "https://cetcell.mahacet.org",
+      "syllabusVerified": "2026-10-24",
+      "officialSources": [
+        {
+          "title": "State CET Cell Maharashtra — CET syllabus and marking scheme for MHT-CET 2026 (Technical Education)",
+          "url": "https://cetcell.mahacet.org/wp-content/uploads/2023/12/Syllabus-Technical-2026.pdf",
+          "host": "cetcell.mahacet.org"
+        },
+        {
+          "title": "MHT-CET information brochure — State Common Entrance Test Cell",
+          "url": "https://cetcell.mahacet.org/wp-content/uploads/2023/12/MHT-CET-2026-Information-Brochure.pdf",
+          "host": "cetcell.mahacet.org"
+        }
+      ],
+      "overview": {
+        "conductor": "State Common Entrance Test Cell, Government of Maharashtra",
+        "level": "Undergraduate admission to first-year B.E./B.Tech (PCM group) and B.Pharm/Pharm.D (PCM or PCB group) courses in Maharashtra",
+        "stages": [
+          "Paper 1 — Mathematics (50 questions, 2 marks each, 90 minutes)",
+          "Paper 2 — Physics and Chemistry (100 questions — 50 each, 1 mark each, 90 minutes)",
+          "PCB group instead sits Botany and Zoology papers; PCM and PCB groups are held in separate shifts"
+        ],
+        "papers": [
+          "Paper 1 Mathematics: 50 MCQs (10 from Class 11, 40 from Class 12), 100 marks",
+          "Paper 2 Physics: 50 MCQs (10 from Class 11, 40 from Class 12); Chemistry: 50 MCQs (10 from Class 11, 40 from Class 12), 100 marks combined"
+        ],
+        "duration": "Two 90-minute papers — 180 minutes total for the PCM group",
+        "marking": "Mathematics 2 marks per question (100 marks); Physics and Chemistry 1 mark per question (50 + 50 marks); total 200 marks",
+        "negativeMarking": "None — no negative marking",
+        "questionTypes": [
+          "Multiple-choice questions with four options, one correct; no calculators or smart devices"
+        ],
+        "notes": "The syllabus is the Maharashtra State Board curriculum: roughly 20 per cent of questions come from selected Class 11 chapters and 80 per cent from the full Class 12 syllabus. For 2026 the additions are Vectors and Error Analysis (Physics Std 11), Chemistry in Everyday Life (Chemistry) and Conic Sections (Mathematics Std 11), while Measures of Dispersion was dropped from Mathematics. Admission runs through the Centralised Admission Process (CAP) rounds using CET percentile; JEE Main scores are also accepted for a share of All-India seats."
+      },
+      "subjects": [
+        {
+          "name": "Physics",
+          "mappedSubjectId": "physics",
+          "weightage": 25,
+          "units": 2,
+          "syllabusEntries": 8
+        },
+        {
+          "name": "Chemistry",
+          "mappedSubjectId": "chemistry",
+          "weightage": 25,
+          "units": 2,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": 50,
+          "units": 2,
+          "syllabusEntries": 7
+        }
+      ],
+      "syllabusEntries": 21,
+      "mappedEntries": 21,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "alberta-diploma",
+      "name": "Alberta Diploma Exams",
+      "fullName": "Alberta Diploma Examinations",
+      "region": "Canada",
+      "category": "School-leaving subject exam",
+      "authority": "Alberta Education (Provincial Assessment)",
+      "website": "https://www.alberta.ca/diploma-exams-overview",
+      "syllabusVerified": "2026-10-25",
+      "officialSources": [
+        {
+          "title": "Alberta Education — Diploma exams overview",
+          "url": "https://www.alberta.ca/diploma-exams-overview",
+          "host": "alberta.ca"
+        },
+        {
+          "title": "LearnAlberta — Social Studies 30-1 Program of Studies (SST3771)",
+          "url": "https://curriculum.learnalberta.ca/curriculum/en/pos/SSSGEN_HS/SST3771",
+          "host": "curriculum.learnalberta.ca"
+        },
+        {
+          "title": "LearnAlberta — Biology 30 Program of Studies (SCN3230)",
+          "url": "https://curriculum.learnalberta.ca/curriculum/en/pos/SCIBIO_20_30/SCN3230",
+          "host": "curriculum.learnalberta.ca"
+        },
+        {
+          "title": "LearnAlberta — Chemistry 30 Program of Studies (SCN3796)",
+          "url": "https://curriculum.learnalberta.ca/curriculum/en/pos/scicem_20_30/scn3796",
+          "host": "curriculum.learnalberta.ca"
+        },
+        {
+          "title": "LearnAlberta — English Language Arts (10-12) Program of Studies",
+          "url": "https://curriculum.learnalberta.ca/curriculum/en/pos/LANENG_HS",
+          "host": "curriculum.learnalberta.ca"
+        },
+        {
+          "title": "LearnAlberta — Mathematics 30-1 (MAT3791) Program of Studies",
+          "url": "https://curriculum.learnalberta.ca/curriculum/en/pos/MAT_HS/MAT3791",
+          "host": "curriculum.learnalberta.ca"
+        },
+        {
+          "title": "LearnAlberta — Physics (20, 30) Program of Studies",
+          "url": "https://curriculum.learnalberta.ca/curriculum/en/pos/SCIPHY_20_30",
+          "host": "curriculum.learnalberta.ca"
+        }
+      ],
+      "overview": {
+        "conductor": "Alberta Education (Provincial Assessment)",
+        "level": "Grade 12 (30-level courses) → blended course mark for the Alberta High School Diploma and university admission",
+        "stages": [
+          "Course work (70% of final mark)",
+          "Diploma examination (30% of final mark since September 2023)"
+        ],
+        "papers": [
+          "Part A — written response: English Language Arts 30-1 and Social Studies 30-1 (and a written-response component in Mathematics 30-1)",
+          "Part B — machine-scorable multiple choice for all courses"
+        ],
+        "duration": "Five sittings a year (November, January, April, June, August); all students may take up to double the listed writing time",
+        "marking": "Written assignments marked centrally by qualified teachers with school identity removed; results on myPass about three weeks after writing; blended finals of 48-49% are raised to 50%",
+        "questionTypes": [
+          "Multiple choice (Part B)",
+          "Written response: critical/analytical essays and source analysis (Part A)",
+          "Numerical response (sciences and mathematics)"
+        ],
+        "notes": "Content follows the six highest-enrolment 30-1 diploma courses by their official Program of Studies unit names and outcomes. Diploma exams moved to Alberta Education's digital assessment platform; all diploma exams except the English ELA exams are also offered in French. The sciences and mathematics exams are multiple-choice (plus numerical response), so the curriculum topics below are assessed as concept questions — the humanities courses carry the Part A written essays."
+      },
+      "subjects": [
+        {
+          "name": "Biology 30",
+          "mappedSubjectId": "ku-life-sciences-biology",
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 9
+        },
+        {
+          "name": "Chemistry 30",
+          "mappedSubjectId": "chemistry",
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 8
+        },
+        {
+          "name": "Physics 30",
+          "mappedSubjectId": "physics",
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 7
+        },
+        {
+          "name": "Mathematics 30-1",
+          "mappedSubjectId": "mathematics",
+          "weightage": null,
+          "units": 3,
+          "syllabusEntries": 7
+        },
+        {
+          "name": "English Language Arts 30-1",
+          "mappedSubjectId": "english",
+          "weightage": null,
+          "units": 5,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Social Studies 30-1",
+          "mappedSubjectId": null,
+          "weightage": null,
+          "units": 4,
+          "syllabusEntries": 6
+        }
+      ],
+      "syllabusEntries": 43,
+      "mappedEntries": 43,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    },
+    {
+      "id": "gaokao",
+      "name": "Gaokao",
+      "fullName": "National College Entrance Examination (普通高等学校招生全国统一考试)",
+      "region": "China",
+      "category": "University admission",
+      "authority": "Ministry of Education of the People's Republic of China with provincial examination authorities",
+      "website": "https://www.neea.edu.cn",
+      "syllabusVerified": "2026-10-23",
+      "officialSources": [
+        {
+          "title": "Ministry of Education of the PRC — general senior-secondary curriculum standards (2017 edition, 2020 revision)",
+          "url": "http://www.moe.gov.cn",
+          "host": "moe.gov.cn"
+        },
+        {
+          "title": "National Education Examinations Authority — national examination portals",
+          "url": "https://www.neea.edu.cn",
+          "host": "neea.edu.cn"
+        },
+        {
+          "title": "Ministry of Education — Gaokao work notices and evaluation system documentation",
+          "url": "http://www.moe.gov.cn/jyb_xxgk/moe_1777/",
+          "host": "moe.gov.cn"
+        }
+      ],
+      "overview": {
+        "conductor": "Ministry of Education of the People's Republic of China with provincial examination authorities",
+        "level": "Senior-secondary students seeking undergraduate admission to Chinese universities",
+        "stages": [
+          "One national sitting per year (7-9 June, some provinces to 10 June)",
+          "Most provinces use the 3+1+2 model: 3 unified subjects + 1 preferred (Physics or History) + 2 electives (grade-converted)",
+          "Some provinces retain the 3+3 model with three electives chosen from six"
+        ],
+        "papers": [
+          "Chinese (150 min, 150 points)",
+          "Mathematics (120 min, 150 points)",
+          "Foreign Language — usually English, with listening (120 min, 150 points)",
+          "Preferred subject: Physics or History (75-90 min, 100 points)",
+          "Two electives: Chemistry, Biology, Politics, Geography (75 min each, 100 points each, grade-converted)"
+        ],
+        "duration": "Two to four exam days per province; each subject sits separately",
+        "marking": "Total 750 points: unified subjects marked directly; electives grade-converted within the province",
+        "negativeMarking": "None",
+        "questionTypes": [
+          "Multiple-choice (single and multiple-response)",
+          "Fill-in (language use, mathematics)",
+          "Constructed response (mathematics, sciences, history, politics, geography)",
+          "Essay (Chinese; English writing)"
+        ],
+        "notes": "The exam assesses the national senior-secondary curriculum standards (2017 edition, 2020 revision). Mathematics offers a non-calculus track in provinces using the old liberal-arts/science split, but the current curriculum is unified with elective modules. Foreign Language candidates may sit English, Russian, Japanese, French, German or Spanish — English is by far the most common. Provincial papers (Beijing, Shanghai, Tianjin) differ in format but share the national syllabus scope."
+      },
+      "subjects": [
+        {
+          "name": "Chinese (语文)",
+          "mappedSubjectId": null,
+          "weightage": 20,
+          "units": 4,
+          "syllabusEntries": 9
+        },
+        {
+          "name": "Mathematics",
+          "mappedSubjectId": "mathematics",
+          "weightage": 20,
+          "units": 7,
+          "syllabusEntries": 14
+        },
+        {
+          "name": "Foreign Language (English)",
+          "mappedSubjectId": "english",
+          "weightage": 20,
+          "units": 3,
+          "syllabusEntries": 7
+        },
+        {
+          "name": "Physics (preferred subject)",
+          "mappedSubjectId": "physics",
+          "weightage": 13,
+          "units": 4,
+          "syllabusEntries": 10
+        },
+        {
+          "name": "History (preferred subject)",
+          "mappedSubjectId": null,
+          "weightage": 13,
+          "units": 3,
+          "syllabusEntries": 6
+        },
+        {
+          "name": "Chemistry (elective subject)",
+          "mappedSubjectId": "chemistry",
+          "weightage": 9,
+          "units": 2,
+          "syllabusEntries": 7
+        },
+        {
+          "name": "Biology (elective subject)",
+          "mappedSubjectId": null,
+          "weightage": 9,
+          "units": 3,
+          "syllabusEntries": 7
+        },
+        {
+          "name": "Politics (elective subject)",
+          "mappedSubjectId": null,
+          "weightage": 9,
+          "units": 2,
+          "syllabusEntries": 5
+        },
+        {
+          "name": "Geography (elective subject)",
+          "mappedSubjectId": null,
+          "weightage": 9,
+          "units": 2,
+          "syllabusEntries": 5
+        }
+      ],
+      "syllabusEntries": 70,
+      "mappedEntries": 70,
+      "unmappedEntries": 0,
+      "coveragePct": 100
+    }
+  ]
+}

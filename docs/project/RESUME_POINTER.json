@@ -1,0 +1,46 @@
+{
+  "$comment": "StudyVerse resume pointer (governing spec PART 14). Read FIRST by every execution — manual or scheduled. Update after every completed unit. Never mark complete before validating output.",
+  "lastSuccessfulExecution": {
+    "when": "2026-11-02T20:30:00+05:30",
+    "kind": "manual",
+    "objective": "Install the STUDYVERSE master-spec systems (PART 16 first-execution workflow)",
+    "summary": "PART-16 audit + persistent project memory + source inventory + registries + coverage report + prerequisite graph + cron re-pointing, all validated and pushed"
+  },
+  "currentPhase": "B — systems complete, writing program in motion",
+  "governingPlan": "docs/project/PROJECT_MASTER_PLAN.md",
+  "writingProgram": {
+    "programDoc": "docs/syllabus/MASTER-SYLLABUS.md",
+    "currentSubject": "ku-biochemistry",
+    "currentChapter": "Ch1 (complete) — next: Ch2 Laboratory Methods expansion / Ch3–Ch4 per §6 tree",
+    "currentTopic": null,
+    "nextUnit": "ku-biochemistry: continue per §6 tree — Ch2 laboratory methods, Ch3 metabolism, Ch4 regulation; then remaining Life Sciences subjects per §4 order, then aptitude trio"
+  },
+  "scheduledJobs": {
+    "masterLoop": { "jobId": 492782, "cadence": "hourly", "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8" },
+    "webDevReview": { "jobId": 492783, "cadence": "every 15 min", "kind": "webDevReview" }
+  },
+  "pipelineInvariant": [
+    "bun scripts/serialize-content.ts",
+    "bun scripts/build-coverage.ts",
+    "bun scripts/build-knowledge-index.ts",
+    "bun scripts/exam-coverage-audit.ts  # must print 2967+/2967+ = 100%, 0 unmapped",
+    "bun run lint && bunx tsc --noEmit"
+  ],
+  "registriesRebuild": [
+    "bun scripts/source-inventory.ts",
+    "bun scripts/build-project-registries.ts",
+    "bun scripts/build-prerequisite-graph.ts"
+  ],
+  "lastCompletedOperation": "Master-spec systems install (see docs/project/WORKLOG.md row 'MASTER-SPEC INSTALL')",
+  "nextRequiredOperation": "Hourly master loop: pick up the writing program at ku-biochemistry (§6 tree), one bounded unit, then validate + ledger + push",
+  "outstandingErrors": [],
+  "pendingValidation": [],
+  "blockers": [],
+  "relevantCommit": "to be stamped at commit time (see git log for MASTER-SPEC-20261102)",
+  "knownConstraints": [
+    "never run bun run build (dev :3000 only, port 3000, watchdog recovers OOM in ~90s)",
+    "PAT is inline-only — never written to any file or committed",
+    "lesson text must not contain exam names; dedup grep before authoring; word counts declared == actual exactly",
+    "two concurrent scheduled jobs work this repo — always check git status/log first and leave the tree clean"
+  ]
+}

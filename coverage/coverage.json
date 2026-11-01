@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T10:16:29.338Z",
+  "generatedAt": "2026-11-01T10:42:53.455Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 140,
     "books": 140,
     "chapters": 898,
-    "sections": 4701
+    "sections": 4704
   },
   "subjects": [
     {
@@ -26996,7 +26996,7 @@
       "group": "Life Sciences",
       "tagline": "The chemistry that runs cells",
       "chapterCount": 2,
-      "sectionCount": 8,
+      "sectionCount": 11,
       "chapters": [
         {
           "id": "ku-biochemistry-molecules-of-life",
@@ -27004,7 +27004,7 @@
           "title": "Molecules of Life",
           "shortTitle": "Molecules of Life",
           "bookId": "ku-biochemistry",
-          "sectionCount": 7,
+          "sectionCount": 8,
           "sections": [
             {
               "id": "ku-bio-biochemistry-metabolism",
@@ -27040,6 +27040,11 @@
               "id": "ku-bioc-carbohydrates-lipids",
               "number": 1.7,
               "title": "Carbohydrates and Lipids: Fuel, Structure and Signalling"
+            },
+            {
+              "id": "ku-bioc-nucleotides-nucleic-acid-chemistry",
+              "number": 1.8,
+              "title": "Nucleotides and Nucleic-Acid Chemistry: The Monomer Behind the Code"
             }
           ]
         },
@@ -27049,12 +27054,22 @@
           "title": "Laboratory Methods",
           "shortTitle": "Laboratory Methods",
           "bookId": "ku-biochemistry",
-          "sectionCount": 1,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-bioc-biochem-toolbox",
               "number": 2.1,
               "title": "The Biochemist’s Toolbox: Chromatography, Electrophoresis and Spectrophotometry"
+            },
+            {
+              "id": "ku-bioc-isotopes-centrifugation",
+              "number": 2.2,
+              "title": "Tracers and Spin: Isotopes, Fractionation and the Ultracentrifuge"
+            },
+            {
+              "id": "ku-bioc-structural-methods",
+              "number": 2.3,
+              "title": "Seeing Molecules: X-Ray Crystallography, NMR and Cryo-EM"
             }
           ]
         }

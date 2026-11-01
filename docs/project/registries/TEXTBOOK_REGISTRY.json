@@ -1,0 +1,2119 @@
+{
+  "$comment": "Every library book (spec PART 4). Masters books are recognized textbooks (author/edition/year as curated; full texts are NOT reproduced — lessons are original explanations). ku- books are original StudyVerse volumes. sources[] on master volumes lists the books merged into it. Regenerate: bun scripts/build-project-registries.ts",
+  "builtOn": "2026-11-01",
+  "count": 140,
+  "books": [
+    {
+      "id": "math-master",
+      "universe": "masters-library",
+      "subjectId": "mathematics",
+      "title": "The Mathematics Master Library",
+      "author": "Kenneth H. Rosen, James Stewart & the StudyVerse Curriculum Team",
+      "edition": "Master Edition",
+      "year": "2019 · 2020 · 2026",
+      "pages": 3868,
+      "chapters": 76,
+      "mergedFrom": [
+        "Rosen — Discrete Mathematics and Its Applications, 8e (1118 pp)",
+        "Stewart, Clegg & Watson — Calculus: Early Transcendentals, 9e (1390 pp)",
+        "Engineering mathematics curriculum — linear algebra to numerical methods (23 chapters)",
+        "Classical algebra & advanced problem-solving companion (curriculum volumes)"
+      ],
+      "description": "All the mathematics, one master volume: Rosen’s discrete mathematics (logic, proofs, counting, graphs), Stewart’s complete calculus sequence, the classical algebra block (complex numbers, matrices, trigonometry, coordinate and 3D geometry, probability and statistics), applied problem-solving skills, and the full engineering mathematics sequence — linear algebra, ODEs, PDEs, complex analysis, Laplace/Fourier/z transforms and numerical methods. Every topic appears exactly once, in pedagogical order."
+    },
+    {
+      "id": "phys-master",
+      "universe": "masters-library",
+      "subjectId": "physics",
+      "title": "The Physics Master Library",
+      "author": "David Halliday, Hugh D. Young, Richard P. Feynman, Dale Ewen, Vincent Coletta",
+      "edition": "Consolidated Topic Edition",
+      "year": "2010 · 2018 · 2020 · 2021 · 2010",
+      "pages": 7534,
+      "chapters": 50,
+      "mergedFrom": [
+        "Feynman, Leighton & Sands — The Feynman Lectures on Physics, Vols I–III (conceptual spine)",
+        "Halliday, Resnick & Walker — Fundamentals of Physics, 11e Extended (primary treatment)",
+        "Young & Freedman — University Physics with Modern Physics, 15e (merged)",
+        "Ewen, Schurter & Gundersen — Applied Physics, 11e (merged)",
+        "Coletta — Physics Fundamentals, 2e (merged)"
+      ],
+      "description": "One canonical chapter per physics topic. The conceptual spine of the Feynman Lectures, the complete university course of Halliday/Resnick/Walker and Young & Freedman, Ewen’s applied physics and Coletta’s fundamentals are merged into a single deduplicated sequence — measurement and vectors, mechanics, waves, heat and thermodynamics, electromagnetism, optics, modern physics, lasers and optical fibres — with entrance-scope depth folded into each topic."
+    },
+    {
+      "id": "chem-complete",
+      "universe": "masters-library",
+      "subjectId": "chemistry",
+      "title": "Chemistry: Physical, Organic, Inorganic & Applied",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 1060,
+      "chapters": 46,
+      "mergedFrom": [],
+      "description": "Physical, organic and inorganic chemistry in one deduplicated volume — mole concept through kinetics, GOC through biomolecules, periodicity through salt analysis, spectroscopy, stereochemistry and pericyclic depth — capped by the applied engineering chemistry chapter: water, corrosion, fuels, lubricants, polymers, nanomaterials and green chemistry."
+    },
+    {
+      "id": "english-complete",
+      "universe": "masters-library",
+      "subjectId": "english",
+      "title": "English: Reading, Writing & Comprehension",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 5,
+      "chapters": 13,
+      "mergedFrom": [],
+      "description": "Complete verbal skills in one volume: reading comprehension and rhetoric, words in context, text structure and purpose, cross-text connections, command of evidence, standard English conventions, transitions, rhetorical synthesis, grammar essentials, vocabulary, voice, narration and comprehension practice."
+    },
+    {
+      "id": "c-cpp-complete",
+      "universe": "masters-library",
+      "subjectId": "programming-c-cpp",
+      "title": "C & C++ Programming — The Complete Track",
+      "author": "StudyVerse Curriculum Team with Bjarne Stroustrup",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 1640,
+      "chapters": 45,
+      "mergedFrom": [
+        "Stroustrup — The C++ Programming Language, 4e (1366 pp)",
+        "C programming curriculum — all branches + assessment scopes, merged"
+      ],
+      "description": "All of C and C++ in one track: the C programming course first — types, operators, control flow, functions, arrays, strings, pointers, structures and file handling — then the complete C++ language: tours of the language, abstraction, containers and concurrency; types, declarations and expressions; classes, construction and hierarchies; overloading and templates through metaprogramming; the standard library from containers and algorithms to streams, numerics and concurrency; and memory, resource and utility management."
+    },
+    {
+      "id": "java-complete",
+      "universe": "masters-library",
+      "subjectId": "programming-java",
+      "title": "Java Programming — The Complete Track",
+      "author": "StudyVerse Curriculum Team with Cay Horstmann",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 290,
+      "chapters": 16,
+      "mergedFrom": [
+        "Horstmann — Core Java, 12e (two volumes)",
+        "University Java curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "The complete Java course: the Java platform and environment, fundamentals, objects and classes, inheritance, interfaces and lambda expressions, error handling and logging, generics, collections, concurrency, streams, I/O and networking, JDBC and the module system — every branch’s Java curriculum and assessment scope merged into one sequence."
+    },
+    {
+      "id": "web-complete",
+      "universe": "masters-library",
+      "subjectId": "web-development",
+      "title": "Web Development & JavaScript — The Complete Track",
+      "author": "StudyVerse Curriculum Team with David Flanagan",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 1340,
+      "chapters": 43,
+      "mergedFrom": [
+        "The Complete Web Development Library (2026 edition)",
+        "Flanagan — JavaScript: The Definitive Guide, 7e (708 pp)"
+      ],
+      "description": "From a blank page to a deployed full-stack app: web foundations, semantic HTML, forms and media, CSS fundamentals through layout and theming, motion and tooling, JavaScript for the web, async and storage, TypeScript, React and Next.js, Node and Express, APIs and realtime, SQL and NoSQL with ORMs, auth and security, testing, performance, accessibility and SEO, DevOps and the capstone — followed by the definitive deep course on JavaScript itself: lexical structure, types, expressions, objects, arrays, functions, classes, modules, the standard library, iterators and generators, async patterns, metaprogramming, browsers, Node and tooling."
+    },
+    {
+      "id": "ai-complete",
+      "universe": "masters-library",
+      "subjectId": "ai-data-science",
+      "title": "AI, Machine Learning & Data Science — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 170,
+      "chapters": 13,
+      "mergedFrom": [
+        "University AI/ML/data-science curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "The intelligence track in one volume: Python programming as the working language, classical artificial intelligence — search, knowledge representation, reasoning, planning and learning — machine learning across supervised, unsupervised and ensemble methods, deep learning with neural architectures and applications, and big-data analytics with the modern data stack. Every branch’s AI curriculum and assessment scope is merged in."
+    },
+    {
+      "id": "dsa-complete",
+      "universe": "masters-library",
+      "subjectId": "dsa",
+      "title": "Data Structures & Algorithms — The Complete Track",
+      "author": "StudyVerse Curriculum Team with Cormen, Leiserson, Rivest & Stein",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 940,
+      "chapters": 39,
+      "mergedFrom": [
+        "Cormen, Leiserson, Rivest & Stein — Introduction to Algorithms, 3e (1313 pp)",
+        "Design-&-analysis curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "The complete algorithms canon: the role of algorithms and getting started, growth of functions, divide-and-conquer, randomized algorithms, heapsort and quicksort, linear-time sorting, medians and order statistics, elementary data structures, hash tables, binary search trees, red-black trees and augmentation, dynamic programming and greedy algorithms, amortized analysis, B-trees, Fibonacci heaps, van Emde Boas trees and disjoint sets, graph algorithms from BFS to maximum flow, multithreaded and matrix algorithms, linear programming, polynomials and the FFT, number theory, string matching, computational geometry, NP-completeness and approximation — with every assessment scope folded in."
+    },
+    {
+      "id": "toc-complete",
+      "universe": "masters-library",
+      "subjectId": "toc",
+      "title": "Theory of Computation — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 50,
+      "chapters": 9,
+      "mergedFrom": [
+        "University automata/computation curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Formal languages and the machines that recognize them: regular languages and finite automata, context-free grammars and pushdown automata, Turing machines and computability, decidability and reductions — every curriculum and assessment scope for the theory of computation merged into one chapter-by-section sequence."
+    },
+    {
+      "id": "coa-complete",
+      "universe": "masters-library",
+      "subjectId": "coa",
+      "title": "Computer Organization & Architecture — The Complete Track",
+      "author": "StudyVerse Curriculum Team with M. Morris Mano",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 250,
+      "chapters": 16,
+      "mergedFrom": [
+        "Mano — Digital Logic and Computer Design (612 pp, architecture chapters)",
+        "Computer-organization curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "How computers are built, from the register-transfer level upward: register transfer and micro-operations, processor design, control-unit design, the basic computer and microcomputers, then the modern course — instruction-set architecture and addressing, datapath and control, pipelining, memory hierarchy and I/O systems — capped by advanced architectures. Every branch’s organization curriculum and assessment scope is folded in."
+    },
+    {
+      "id": "compiler-complete",
+      "universe": "masters-library",
+      "subjectId": "compiler-design",
+      "title": "Compiler Design — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 120,
+      "chapters": 8,
+      "mergedFrom": [
+        "University compiler curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "The complete translation pipeline: lexical analysis and symbol-table construction, top-down LL parsing, bottom-up LR parsing, syntax-directed translation and runtime memory organization, and optimization — machine-independent and machine-dependent. Every curriculum and assessment scope for translators and compilers is merged in."
+    },
+    {
+      "id": "os-complete",
+      "universe": "masters-library",
+      "subjectId": "operating-systems",
+      "title": "Operating Systems — The Complete Track",
+      "author": "StudyVerse Curriculum Team with Silberschatz, Galvin & Gagne",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 370,
+      "chapters": 15,
+      "mergedFrom": [
+        "Silberschatz, Galvin & Gagne — Operating System Concepts, 10e (918 pp)",
+        "University OS curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "The complete operating-systems course: introduction and OS structures, processes, threads and concurrency, CPU scheduling, synchronization tools and their classic problems, deadlocks, main memory and virtual memory, mass-storage structure, I/O systems, and the file-system interface, implementation and internals — with every branch’s curriculum and assessment scope folded in."
+    },
+    {
+      "id": "dbms-complete",
+      "universe": "masters-library",
+      "subjectId": "dbms",
+      "title": "Database Management Systems — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 190,
+      "chapters": 13,
+      "mergedFrom": [
+        "University DBMS curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "The complete databases course: ER modelling, the relational model and algebra with calculus, SQL, normalization, transactions, concurrency control and recovery, and indexing and file organization — every branch’s curriculum and assessment scope merged into one sequence."
+    },
+    {
+      "id": "networks-complete",
+      "universe": "masters-library",
+      "subjectId": "computer-networks",
+      "title": "Computer Networks — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 230,
+      "chapters": 14,
+      "mergedFrom": [
+        "University networking curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "The complete networking track: layering and switching, framing and error control, medium access and Ethernet, routing, IP addressing, ARP/DHCP/ICMP, TCP and congestion control, application protocols — plus the data-communication perspective: OSI and TCP/IP stacks, LAN/MAN/WAN, circuit and packet switching, HDLC, ATM and frame relay, and digital switching — with every assessment scope folded in."
+    },
+    {
+      "id": "microembedded-complete",
+      "universe": "masters-library",
+      "subjectId": "microprocessors-embedded",
+      "title": "Microprocessors & Embedded Systems — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 110,
+      "chapters": 8,
+      "mergedFrom": [
+        "University microprocessor & embedded curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "The complete micro-and-embedded track: microprocessor and microcontroller architecture, programming and interfacing — timers, interrupts, memory and I/O, peripherals and serial buses from UART to CAN — plus embedded-system design: embedded C, RTOS concepts with scheduling and synchronization, and sensor/actuator interfacing case studies. The computer-science and electronics curricula and every assessment scope are merged in."
+    },
+    {
+      "id": "software-complete",
+      "universe": "masters-library",
+      "subjectId": "software-emerging",
+      "title": "Software Engineering & Emerging Tech — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 110,
+      "chapters": 11,
+      "mergedFrom": [
+        "University software & emerging-tech curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Software practice and the modern stack: software-engineering process models, requirements, design, construction, testing and project management, cloud computing from service models to virtualization and migration, the Internet of Things from sensing to fog computing, and blockchain architecture from consensus to smart contracts — every branch’s curriculum and assessment scope merged in."
+    },
+    {
+      "id": "cybersecurity-complete",
+      "universe": "masters-library",
+      "subjectId": "cybersecurity",
+      "title": "Cybersecurity — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 70,
+      "chapters": 9,
+      "mergedFrom": [
+        "University security curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "The complete security course: security foundations and goals, classical and modern cryptography, symmetric and asymmetric ciphers, hashes, MACs and digital signatures, authentication and key management, network-security protocols and firewalls, web and system attacks, malware, intrusion detection and security management — with every branch’s curriculum and assessment scope folded in."
+    },
+    {
+      "id": "visual-complete",
+      "universe": "masters-library",
+      "subjectId": "visual-computing",
+      "title": "Computer Graphics & Image Processing — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 70,
+      "chapters": 11,
+      "mergedFrom": [
+        "University graphics & vision curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "The visual-computing track: computer graphics — output primitives and scan conversion, 2D and 3D transformations, clipping, viewing, visible-surface determination, illumination, curves and surfaces — and digital image processing: fundamentals and enhancement, transforms, restoration, segmentation, morphology and compression — merging both curricula and every assessment scope."
+    },
+    {
+      "id": "digital-complete",
+      "universe": "masters-library",
+      "subjectId": "digital-electronics",
+      "title": "Digital Electronics & Logic Design — The Complete Track",
+      "author": "StudyVerse Curriculum Team with M. Morris Mano",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 310,
+      "chapters": 12,
+      "mergedFrom": [
+        "Mano — Digital Logic and Computer Design (612 pp, logic chapters)",
+        "University digital curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "The complete digital track: binary systems, Boolean algebra and logic gates, function simplification from K-maps to the Quine–McCluskey method, combinational logic and MSI/LSI blocks, sequential logic, registers and counters — merged with the full digital-systems course covering number systems, PLDs, finite state machines, logic families and HDL basics. Every branch’s logic curriculum and assessment scope is folded in."
+    },
+    {
+      "id": "edc-complete",
+      "universe": "masters-library",
+      "subjectId": "electronic-devices-circuits",
+      "title": "Electronic Devices & Circuits — The Complete Track",
+      "author": "StudyVerse Curriculum Team with Horowitz & Hill",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 580,
+      "chapters": 4,
+      "mergedFrom": [
+        "Horowitz & Hill — The Art of Electronics, 3e (merged)",
+        "University devices & circuits curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Devices through analog ICs in one track: semiconductor physics, the pn junction and diode circuits, special-purpose diodes, BJTs, JFETs and MOSFETs with biasing, the thyristor family and IC fabrication; diode and transistor circuit applications, amplifier analysis with small-signal models, feedback and oscillator topologies, power amplifiers and op-amp active circuits; and the analog-IC course — op-amp internals, application circuits, the 555 timer and PLL, voltage regulators, data converters and multipliers. Every branch’s electronics curriculum and assessment scope is merged in."
+    },
+    {
+      "id": "signals-complete",
+      "universe": "masters-library",
+      "subjectId": "signals-systems",
+      "title": "Signals, Systems & DSP — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 250,
+      "chapters": 4,
+      "mergedFrom": [
+        "University signals & DSP curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Signals and their processing in one track: signal and system classification with LTI analysis, convolution, Fourier series and transforms, sampling and aliasing, Laplace and z-transforms with system functions; discrete-time analysis with the DFT and FFT, FIR and IIR filter design, realization structures and finite word-length effects — plus speech and biomedical signal applications. Every branch’s curriculum and assessment scope is folded in."
+    },
+    {
+      "id": "communication-complete",
+      "universe": "masters-library",
+      "subjectId": "communication-systems",
+      "title": "Communication Systems — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 310,
+      "chapters": 9,
+      "mergedFrom": [
+        "University communication curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Sender to receiver in one track: analog modulation and detection with superheterodyne receivers, digital communication with PCM, line coding, matched filtering, digital modulation and channel coding, spread spectrum and information theory; wireless and mobile systems from propagation and fading through GSM to 5G; satellite orbits, transponders and link budgets; and optical fibre communication with photonic networks from SONET to PON. Every curriculum and assessment scope is merged in."
+    },
+    {
+      "id": "em-complete",
+      "universe": "masters-library",
+      "subjectId": "electromagnetics",
+      "title": "Electromagnetics, Antennas & Microwaves — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 200,
+      "chapters": 3,
+      "mergedFrom": [
+        "University fields & microwave curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Fields, waves and links in one track: vector calculus, electrostatics and magnetostatics with boundary conditions, Maxwell’s equations, plane-wave propagation and polarization, transmission lines with Smith charts, and waveguides; antenna parameters, wire and array antennas, aperture antennas and propagation modes; and microwave engineering — tubes, solid-state devices, waveguide components, S-parameters, matching, measurements and radar systems. Every assessment scope is folded in."
+    },
+    {
+      "id": "vlsi-complete",
+      "universe": "masters-library",
+      "subjectId": "vlsi-design",
+      "title": "VLSI Design — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 70,
+      "chapters": 7,
+      "mergedFrom": [
+        "University VLSI curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Chip design end to end: fabrication science from crystal growth through oxidation, epitaxy, diffusion, ion implantation, lithography and metallization to complete CMOS flows, layout rules and packaging; MOS inverter VTC and delay, static, dynamic and domino logic styles, sequential design, subsystem datapaths, memory design, low-power techniques and testing with ATPG, scan and BIST — merging both VLSI curricula and every assessment scope."
+    },
+    {
+      "id": "circuits-complete",
+      "universe": "masters-library",
+      "subjectId": "electric-circuits",
+      "title": "Electric Circuits & Networks — The Complete Track",
+      "author": "StudyVerse Curriculum Team with Nilsson & Riedel",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 440,
+      "chapters": 4,
+      "mergedFrom": [
+        "Nilsson & Riedel — Electric Circuits, 12e (merged)",
+        "University circuits curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "The complete circuits track: basic electrical engineering — DC and AC fundamentals, magnetism and batteries; circuit analysis with the deep treatments of capacitance, transients, AC power and resonance, two-port networks; network analysis and synthesis — graph theory and topology, the complete theorem set, RLC transients, resonance and coupled circuits, driving-point functions and Foster/Cauer realization; and the electrical materials that make it all — conductors, magnetics and insulators. Every branch’s circuits curriculum and assessment scope is merged in."
+    },
+    {
+      "id": "machines-complete",
+      "universe": "masters-library",
+      "subjectId": "electrical-machines",
+      "title": "Electrical Machines, Drives & EV — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 310,
+      "chapters": 7,
+      "mergedFrom": [
+        "University machines & drives curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Rotating machinery and drives in one track: DC machines, transformers, induction and synchronous machines, special machines and electrical machine design; power-electronic converters — rectifiers, choppers, inverters and cycloconverters — with electric drives; utilization and electric traction; and electric vehicles — motors, batteries, charging and management systems. Every branch’s curriculum and assessment scope is merged in."
+    },
+    {
+      "id": "power-complete",
+      "universe": "masters-library",
+      "subjectId": "power-systems",
+      "title": "Power Systems — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 190,
+      "chapters": 8,
+      "mergedFrom": [
+        "University power curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "The grid end to end: generation and supply systems, per-unit representation and load-flow analysis, symmetrical components and fault studies, switchgear and protection — relays, circuit breakers and surge protection — transmission lines and cables, power-system operation and control, and HVDC with FACTS. Every branch’s curriculum and assessment scope is folded in."
+    },
+    {
+      "id": "control-complete",
+      "universe": "masters-library",
+      "subjectId": "control-instrumentation",
+      "title": "Control Systems & Instrumentation — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 290,
+      "chapters": 6,
+      "mergedFrom": [
+        "University control & instrumentation curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Measurement and regulation in one track: control-systems modelling with block-diagram algebra and signal flow graphs, time-domain specifications and stability, root locus, Bode and Nyquist methods, compensation and state-space design; electrical and electronic measurement — standards and errors, bridges and Q-meters, instruments and oscilloscopes, digital techniques; and instrumentation — transducers, signal conditioning, data acquisition and display. Both the electrical and electronics curricula and every assessment scope are merged in."
+    },
+    {
+      "id": "energy-complete",
+      "universe": "masters-library",
+      "subjectId": "energy-automotive",
+      "title": "Energy Conversion & Automotive — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 240,
+      "chapters": 5,
+      "mergedFrom": [
+        "University energy & automotive curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Energy and motion in one track: power-plant engineering — thermal, hydro, nuclear and gas plants with their cycles and economics; internal-combustion engines — SI and CI, fuels, combustion, testing and emissions; automobile engineering — transmission, chassis, electricals and modern systems; renewable energy — solar, wind, biomass, geothermal and storage with hybrid systems; and rocket & space propulsion — the thrust and rocket equations, chemical and electric engines, staging, and spacecraft mission systems. The mechanical and electrical coverage and every assessment scope are merged in."
+    },
+    {
+      "id": "mechanics-complete",
+      "universe": "masters-library",
+      "subjectId": "mechanics-graphics",
+      "title": "Engineering Mechanics & Graphics — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 100,
+      "chapters": 4,
+      "mergedFrom": [
+        "University mechanics & graphics curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Forces, motion and the drawings that describe them: engineering mechanics — statics of particles and rigid bodies, friction, trusses, dynamics, kinematics and kinetics; engineering graphics — projection systems, orthographic views, sections, development and pictorials; and machine drawing — threads and fasteners, keys, couplings, joints, bearings and assemblies with limits and fits. Every branch’s curriculum and assessment scope is folded in."
+    },
+    {
+      "id": "solids-complete",
+      "universe": "masters-library",
+      "subjectId": "solids-materials",
+      "title": "Mechanics of Solids & Materials — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 110,
+      "chapters": 5,
+      "mergedFrom": [
+        "University solids & materials curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "How materials carry load and what they are made of: strength of materials — stress and strain, torsion, bending and shear, deflection, columns and strain energy; and materials science — crystal structure and defects, phase diagrams and transformations, heat treatment, ferrous and non-ferrous alloys, composites and smart materials. Every branch’s curriculum and assessment scope is merged in."
+    },
+    {
+      "id": "design-complete",
+      "universe": "masters-library",
+      "subjectId": "machines-design",
+      "title": "Theory of Machines & Machine Design — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 130,
+      "chapters": 6,
+      "mergedFrom": [
+        "University machines & design curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Mechanisms into machines: kinematics of links, cams and followers, gears and gear trains; velocity and acceleration analysis, friction and belt drives; dynamics of machines — balancing, vibration analysis and critical speeds, governors and flywheels; and machine design — materials and stresses, threaded fasteners, shafts and keys, couplings, springs, bearings, welded and riveted joints, spur and helical gears with fatigue considerations. Every assessment scope is folded in."
+    },
+    {
+      "id": "thermal-complete",
+      "universe": "masters-library",
+      "subjectId": "thermal-fluids",
+      "title": "Thermal & Fluid Sciences — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 260,
+      "chapters": 7,
+      "mergedFrom": [
+        "University thermal & fluids curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Heat, work and flow in one track: applied thermodynamics — laws, processes, cycles, gas and vapour power, refrigeration psychrometry; fluid mechanics — statics, kinematics, dynamics with Bernoulli and momentum, viscous flow, boundary layers, turbomachinery and hydraulic machines; heat and mass transfer — conduction, convection, radiation and exchangers; and refrigeration and air conditioning — vapour-compression and absorption systems, components and load estimation. Every branch’s curriculum and assessment scope is merged in."
+    },
+    {
+      "id": "manufacturing-complete",
+      "universe": "masters-library",
+      "subjectId": "manufacturing-industrial",
+      "title": "Manufacturing & Industrial Systems — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 200,
+      "chapters": 8,
+      "mergedFrom": [
+        "University manufacturing & industrial curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Make it, measure it, manage it: manufacturing processes — casting, welding, forming and machining with CNC; metrology and quality control — measurement standards, comparators, gauges, statistical quality control and acceptance sampling; CAD/CAM and automation — geometric modelling, NC part programming, robotics in manufacturing, FMS and CIM; and industrial engineering — operations research from linear programming through queuing, production planning and control, inventory and plant layout. Every assessment scope is folded in."
+    },
+    {
+      "id": "mechatronics-complete",
+      "universe": "masters-library",
+      "subjectId": "mechatronics-robotics",
+      "title": "Mechatronics & Robotics — The Complete Track",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "2026 Edition",
+      "year": "2026",
+      "pages": 90,
+      "chapters": 6,
+      "mergedFrom": [
+        "University mechatronics & robotics curricula — all branches + assessment scopes, merged"
+      ],
+      "description": "Where machines think: mechatronics — sensors and transducers, actuators, signal conditioning and microcontroller interfacing, system modeling, design and simulation with case studies; and robotics — manipulator kinematics and dynamics, trajectory planning, control, sensors, end effectors and mobile robotics with applications. Every branch’s curriculum and assessment scope is merged in."
+    },
+    {
+      "id": "ku-study-skills",
+      "universe": "knowledge-university",
+      "subjectId": "ku-study-skills",
+      "title": "Study Skills & Learning Science — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 111,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Skill Acquisition, Study Skills & Memory"
+      ],
+      "description": "Every Study Skills & Learning Science lesson in the Library, unified into one volume — The Science of Learning, Study Systems, Practice, Performance & Expertise. 16 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-computer-literacy",
+      "universe": "knowledge-university",
+      "subjectId": "ku-computer-literacy",
+      "title": "Computer & Digital Literacy — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 48,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 3 subject areas merged: Computer Science, Digital Literacy, ICT & Digital Literacy"
+      ],
+      "description": "Every Computer & Digital Literacy lesson in the Library, unified into one volume — Computing Fundamentals, ICT & Digital Literacy. 9 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-quantitative-aptitude",
+      "universe": "knowledge-university",
+      "subjectId": "ku-quantitative-aptitude",
+      "title": "Quantitative Aptitude — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 40,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Quantitative Aptitude"
+      ],
+      "description": "Every Quantitative Aptitude lesson in the Library, unified into one volume — Number System Foundations, Statistics & Data Interpretation, Data Sufficiency & Quantity Comparison. 7 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-logical-reasoning",
+      "universe": "knowledge-university",
+      "subjectId": "ku-logical-reasoning",
+      "title": "Logical Reasoning — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 59,
+      "chapters": 9,
+      "mergedFrom": [
+        "One book per subject — 5 subject areas merged: Logic and Reasoning, Logical Reasoning, Nonverbal Reasoning, Professional & Interpersonal Skills, Verbal Reasoning"
+      ],
+      "description": "Every Logical Reasoning lesson in the Library, unified into one volume — Foundations of Logical Thinking, Deduction: Syllogisms & Coded Logic, Series, Analogies & Classification, Relations, Directions & Ordering, Arrangements & Puzzles, Clocks, Calendars & Mathematical Logic, Non-Verbal & Abstract Reasoning, Critical Reasoning, Decision Making & Judgement. 12 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-general-awareness",
+      "universe": "knowledge-university",
+      "subjectId": "ku-general-awareness",
+      "title": "General Awareness — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 20,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: General Awareness"
+      ],
+      "description": "Every General Awareness lesson in the Library, unified into one volume — Indian History Essentials, Static GK: Awards, Sports, Culture, Books & Organizations, The Current-Affairs Engine. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-cell-molecular-biology",
+      "universe": "knowledge-university",
+      "subjectId": "ku-cell-molecular-biology",
+      "title": "Cell & Molecular Biology — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 117,
+      "chapters": 4,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Cell & Molecular Biology"
+      ],
+      "description": "Every Cell & Molecular Biology lesson in the Library, unified into one volume — Foundations: Life, Microscopy & the Cell, The Cell: Structure & Signaling, Molecular Biology of the Gene, Bioenergetics. 18 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-biochemistry",
+      "universe": "knowledge-university",
+      "subjectId": "ku-biochemistry",
+      "title": "Biochemistry — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 54,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Biochemistry"
+      ],
+      "description": "Every Biochemistry lesson in the Library, unified into one volume — Molecules of Life, Laboratory Methods. 11 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-genetics-heredity",
+      "universe": "knowledge-university",
+      "subjectId": "ku-genetics-heredity",
+      "title": "Genetics & Heredity — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 88,
+      "chapters": 5,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Genetics & Heredity"
+      ],
+      "description": "Every Genetics & Heredity lesson in the Library, unified into one volume — Classical & Transmission Genetics, Cytogenetics & Allelic Analysis, Molecular Genetics & Genomics, Genes in Populations, Biotechnology. 18 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-evolutionary-biology",
+      "universe": "knowledge-university",
+      "subjectId": "ku-evolutionary-biology",
+      "title": "Evolutionary Biology — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 34,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Diversity & Classification, Evolutionary Biology"
+      ],
+      "description": "Every Evolutionary Biology lesson in the Library, unified into one volume — Evolution & Speciation, Human Evolution, Diversity & Systematics. 9 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-botany",
+      "universe": "knowledge-university",
+      "subjectId": "ku-botany",
+      "title": "Botany — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 38,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Botany"
+      ],
+      "description": "Every Botany lesson in the Library, unified into one volume — The Plant Body, Plant Physiology, Reproduction & Life Cycles. 10 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-zoology",
+      "universe": "knowledge-university",
+      "subjectId": "ku-zoology",
+      "title": "Zoology — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 43,
+      "chapters": 5,
+      "mergedFrom": [
+        "One book per subject — 3 subject areas merged: Animal Behavior, Animal Biology, Zoology"
+      ],
+      "description": "Every Zoology lesson in the Library, unified into one volume — Animal Diversity & Form, Senses & Behavior, Comparative Physiology, Comparative Digestion & Metabolism, Animal Reproduction & Life Cycles. 11 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-ecology-conservation",
+      "universe": "knowledge-university",
+      "subjectId": "ku-ecology-conservation",
+      "title": "Ecology & Conservation — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 43,
+      "chapters": 4,
+      "mergedFrom": [
+        "One book per subject — 3 subject areas merged: Biology, Conservation Biology, Ecology"
+      ],
+      "description": "Every Ecology & Conservation lesson in the Library, unified into one volume — Organisms & the Environment, Populations & Communities, Ecosystems, Energy & Biomes, Conservation & Restoration. 12 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-microbiology-immunology",
+      "universe": "knowledge-university",
+      "subjectId": "ku-microbiology-immunology",
+      "title": "Microbiology & Immunology — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 29,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Immunology, Microbiology & Disease"
+      ],
+      "description": "Every Microbiology & Immunology lesson in the Library, unified into one volume — The Microbial World, Immunology. 8 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-human-anatomy-physiology",
+      "universe": "knowledge-university",
+      "subjectId": "ku-human-anatomy-physiology",
+      "title": "Human Anatomy & Physiology — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 38,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Anatomy & Physiology, Human Physiology"
+      ],
+      "description": "Every Human Anatomy & Physiology lesson in the Library, unified into one volume — Body Systems, Reproduction & Development, When Systems Fail. 11 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-developmental-biology",
+      "universe": "knowledge-university",
+      "subjectId": "ku-developmental-biology",
+      "title": "Developmental Biology — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 29,
+      "chapters": 5,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Developmental Biology"
+      ],
+      "description": "Every Developmental Biology lesson in the Library, unified into one volume — Building the Body, Cell Fate & Determination, Mechanisms & Model Organisms, Growth, Renewal & Regeneration, Evo-Devo: How Development Evolves. 8 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-marine-biology",
+      "universe": "knowledge-university",
+      "subjectId": "ku-marine-biology",
+      "title": "Marine Biology — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 23,
+      "chapters": 4,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Marine Biology"
+      ],
+      "description": "Every Marine Biology lesson in the Library, unified into one volume — The Blue Realm, Coastal Habitats & Communities, Plankton, Larvae & Recruitment, Fisheries & Ocean Conservation. 6 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-bioinformatics-genomics",
+      "universe": "knowledge-university",
+      "subjectId": "ku-bioinformatics-genomics",
+      "title": "Bioinformatics & Genomics — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 12,
+      "chapters": 4,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Bioinformatics"
+      ],
+      "description": "Every Bioinformatics & Genomics lesson in the Library, unified into one volume — Reading Genomes with Code, Sequencing & Assembly, Phylogenetics, Databases & Structure Prediction. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-synthetic-biology",
+      "universe": "knowledge-university",
+      "subjectId": "ku-synthetic-biology",
+      "title": "Synthetic Biology — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 19,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Synthetic Biology"
+      ],
+      "description": "Every Synthetic Biology lesson in the Library, unified into one volume — Programming Living Cells, Genetic Circuits & Toolkits, Applications & Responsible Innovation. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-neuroscience",
+      "universe": "knowledge-university",
+      "subjectId": "ku-neuroscience",
+      "title": "Neuroscience — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 16,
+      "chapters": 4,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Neuroscience"
+      ],
+      "description": "Every Neuroscience lesson in the Library, unified into one volume — Cellular Neurophysiology, Systems Neuroscience, Neuroanatomy, Plasticity. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-astronomy",
+      "universe": "knowledge-university",
+      "subjectId": "ku-astronomy",
+      "title": "Astronomy & Space Science — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 18,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Astronomy & Space Science"
+      ],
+      "description": "Every Astronomy & Space Science lesson in the Library, unified into one volume — Astrophysics, Exploring the Cosmos, Beyond the Milky Way. 6 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-earth-sciences",
+      "universe": "knowledge-university",
+      "subjectId": "ku-earth-sciences",
+      "title": "Earth & Atmospheric Sciences — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 18,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Geology & Earth Science, Meteorology"
+      ],
+      "description": "Every Earth & Atmospheric Sciences lesson in the Library, unified into one volume — Dynamic Earth, Weather & Atmosphere. 7 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-earth-climate-science",
+      "universe": "knowledge-university",
+      "subjectId": "ku-earth-climate-science",
+      "title": "Earth & Climate Science — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 14,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Climate Science, Earth Systems"
+      ],
+      "description": "Every Earth & Climate Science lesson in the Library, unified into one volume — Earth Systems: Oceans, Water & Rock, Climate Science & Change. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-environmental-policy-circularity",
+      "universe": "knowledge-university",
+      "subjectId": "ku-environmental-policy-circularity",
+      "title": "Environmental Policy & Circularity — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 16,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Environmental Policy, Waste & Circularity"
+      ],
+      "description": "Every Environmental Policy & Circularity lesson in the Library, unified into one volume — Environmental Policy & Governance, Waste, Materials & the Circular Economy. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-environmental-health-food",
+      "universe": "knowledge-university",
+      "subjectId": "ku-environmental-health-food",
+      "title": "Environmental Health & Food Systems — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 11,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Agriculture & Food Systems, Pollution & Environmental Health"
+      ],
+      "description": "Every Environmental Health & Food Systems lesson in the Library, unified into one volume — Pollution & Environmental Health, Agriculture & Food Systems. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-energy",
+      "universe": "knowledge-university",
+      "subjectId": "ku-energy",
+      "title": "Energy & Sustainability — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 13,
+      "chapters": 4,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Energy & Sustainability, Nuclear Technology"
+      ],
+      "description": "Every Energy & Sustainability lesson in the Library, unified into one volume — The Energy Transition, Solar Power, Wind Power, Nuclear Energy. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-clinical-medicine",
+      "universe": "knowledge-university",
+      "subjectId": "ku-clinical-medicine",
+      "title": "Clinical Medicine — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 31,
+      "chapters": 4,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Disease & Treatment"
+      ],
+      "description": "Every Clinical Medicine lesson in the Library, unified into one volume — Chronic & Metabolic Disease, Cancer, Senses & Organs, Pain, Bones & Joints. 9 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-medical-technology",
+      "universe": "knowledge-university",
+      "subjectId": "ku-medical-technology",
+      "title": "Medical Technology — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 13,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Medical Technology"
+      ],
+      "description": "Every Medical Technology lesson in the Library, unified into one volume — Biomedical Imaging, Laboratory Medicine, Prosthetics & Human–Machine Interfaces. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-medicines-emergency-care",
+      "universe": "knowledge-university",
+      "subjectId": "ku-medicines-emergency-care",
+      "title": "Medicines, First Aid & Reproductive Health — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 21,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 3 subject areas merged: First Aid & Emergency Care, Medicine & Pharmacology, Sexual & Reproductive Health"
+      ],
+      "description": "Every Medicines, First Aid & Reproductive Health lesson in the Library, unified into one volume — Pharmacology & Clinical Reasoning, First Aid & Resuscitation, Sexual & Reproductive Health. 6 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-public-health",
+      "universe": "knowledge-university",
+      "subjectId": "ku-public-health",
+      "title": "Public Health — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 21,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Public Health"
+      ],
+      "description": "Every Public Health lesson in the Library, unified into one volume — Epidemiology, Immunization & Health Behavior, Health Equity & Systems. 6 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-health-nutrition-fitness",
+      "universe": "knowledge-university",
+      "subjectId": "ku-health-nutrition-fitness",
+      "title": "Health, Nutrition & Fitness — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 23,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 4 subject areas merged: Exercise & Fitness, Health & Longevity, Nutrition, Sleep Science"
+      ],
+      "description": "Every Health, Nutrition & Fitness lesson in the Library, unified into one volume — Nutrition Science, Exercise & Fitness, Sleep, Aging & Longevity. 7 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-mental-health",
+      "universe": "knowledge-university",
+      "subjectId": "ku-mental-health",
+      "title": "Mental Health — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 26,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Mental Health"
+      ],
+      "description": "Every Mental Health lesson in the Library, unified into one volume — Mood & Anxiety, Mind & Therapy, Mind–Body Science. 7 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-ancient-early-modern-history",
+      "universe": "knowledge-university",
+      "subjectId": "ku-ancient-early-modern-history",
+      "title": "Ancient & Early Modern History — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 17,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: History, World History"
+      ],
+      "description": "Every Ancient & Early Modern History lesson in the Library, unified into one volume — The Ancient World, Themes in Early Modern World History. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-modern-world-history",
+      "universe": "knowledge-university",
+      "subjectId": "ku-modern-world-history",
+      "title": "Modern World History — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 39,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: World History"
+      ],
+      "description": "Every Modern World History lesson in the Library, unified into one volume — Democracy, Rights & Revolution, War, Decolonization & the Twentieth Century, Brazil: Colony to Redemocratization. 9 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-economic-history",
+      "universe": "knowledge-university",
+      "subjectId": "ku-economic-history",
+      "title": "Economic History — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 19,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: World History"
+      ],
+      "description": "Every Economic History lesson in the Library, unified into one volume — Trade, Exchange & Industrialization, The Great Divergence, Money, Crises & the Modern Order. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-indian-history",
+      "universe": "knowledge-university",
+      "subjectId": "ku-indian-history",
+      "title": "Indian History — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 35,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: History"
+      ],
+      "description": "Every Indian History lesson in the Library, unified into one volume — Ancient & Medieval India, Colonial India & the Freedom Struggle. 6 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-east-asian-history",
+      "universe": "knowledge-university",
+      "subjectId": "ku-east-asian-history",
+      "title": "East Asian History — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 21,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: History, World History"
+      ],
+      "description": "Every East Asian History lesson in the Library, unified into one volume — China: Aggression, Salvation & Revolution, Japan’s Modern Industrialization, The Two Koreas. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-philosophy",
+      "universe": "knowledge-university",
+      "subjectId": "ku-philosophy",
+      "title": "Philosophy — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 35,
+      "chapters": 5,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Philosophy"
+      ],
+      "description": "Every Philosophy lesson in the Library, unified into one volume — Epistemology & Philosophy of Science, Ethics & Value Theory, Philosophy of Mind, Political Philosophy & Legitimacy, Intellectual History. 11 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-religion-mythology",
+      "universe": "knowledge-university",
+      "subjectId": "ku-religion-mythology",
+      "title": "Religious Studies & Mythology — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 14,
+      "chapters": 4,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Comparative Mythology, Religious Studies"
+      ],
+      "description": "Every Religious Studies & Mythology lesson in the Library, unified into one volume — Eastern Traditions, Western Traditions, Sacred Texts & Canon, Comparative Mythology. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-psychology",
+      "universe": "knowledge-university",
+      "subjectId": "ku-psychology",
+      "title": "Psychology — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 42,
+      "chapters": 6,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Psychology"
+      ],
+      "description": "Every Psychology lesson in the Library, unified into one volume — Cognitive & Behavioral Psychology, Developmental Psychology, Social & Interpersonal Psychology, Personality & Individual Differences, Stress & Clinical Psychology, Learning and Behaviour. 12 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-sociology",
+      "universe": "knowledge-university",
+      "subjectId": "ku-sociology",
+      "title": "Sociology — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 36,
+      "chapters": 5,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Sociology"
+      ],
+      "description": "Every Sociology lesson in the Library, unified into one volume — Classical Theory, Social Structure & Institutions, Culture, Collective Dynamics & Networks, Social Control. 10 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-urban-studies",
+      "universe": "knowledge-university",
+      "subjectId": "ku-urban-studies",
+      "title": "Urban Studies — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 21,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Urban Planning, Urban Sociology"
+      ],
+      "description": "Every Urban Studies lesson in the Library, unified into one volume — The Built Environment, Urban Society & Change. 6 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-anthropology",
+      "universe": "knowledge-university",
+      "subjectId": "ku-anthropology",
+      "title": "Anthropology — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 17,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Anthropology"
+      ],
+      "description": "Every Anthropology lesson in the Library, unified into one volume — Cultural Anthropology, Archaeology. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-political-theory",
+      "universe": "knowledge-university",
+      "subjectId": "ku-political-theory",
+      "title": "Political Theory — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 16,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Political Science"
+      ],
+      "description": "Every Political Theory lesson in the Library, unified into one volume — Political Ideologies, History of Political Thought. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-comparative-indian-politics",
+      "universe": "knowledge-university",
+      "subjectId": "ku-comparative-indian-politics",
+      "title": "Comparative Politics & Indian Polity — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 20,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Political Science"
+      ],
+      "description": "Every Comparative Politics & Indian Polity lesson in the Library, unified into one volume — Comparative Politics, Indian Polity. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-international-relations",
+      "universe": "knowledge-university",
+      "subjectId": "ku-international-relations",
+      "title": "International Relations & Security — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 20,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Defence Studies, Political Science"
+      ],
+      "description": "Every International Relations & Security lesson in the Library, unified into one volume — International Relations, Foreign Policy & Security, Defence & the Armed Forces. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-public-policy-administration",
+      "universe": "knowledge-university",
+      "subjectId": "ku-public-policy-administration",
+      "title": "Public Policy & Administration — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 18,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Political Science, Public Policy"
+      ],
+      "description": "Every Public Policy & Administration lesson in the Library, unified into one volume — Governance & Public Administration, The Policy Cycle, Rational Choice & Institutional Design. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-geography",
+      "universe": "knowledge-university",
+      "subjectId": "ku-geography",
+      "title": "Geography — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 19,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Geography, Human Geography"
+      ],
+      "description": "Every Geography lesson in the Library, unified into one volume — Physical Geography, Human Geography. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-education",
+      "universe": "knowledge-university",
+      "subjectId": "ku-education",
+      "title": "Education — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 16,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Education"
+      ],
+      "description": "Every Education lesson in the Library, unified into one volume — Teaching & Pedagogy, Higher Education, Learning Systems. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-media-communication",
+      "universe": "knowledge-university",
+      "subjectId": "ku-media-communication",
+      "title": "Media & Communication — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 25,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 3 subject areas merged: Mass Media and Society, Media & Communication, Media Literacy"
+      ],
+      "description": "Every Media & Communication lesson in the Library, unified into one volume — Media & Society, The Attention Economy, Persuasion & Misinformation. 6 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-research-methods",
+      "universe": "knowledge-university",
+      "subjectId": "ku-research-methods",
+      "title": "Research Methods — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 16,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Research Methods, Science & Inquiry Skills"
+      ],
+      "description": "Every Research Methods lesson in the Library, unified into one volume — Research Methodology, Experimental Design. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-microeconomics",
+      "universe": "knowledge-university",
+      "subjectId": "ku-microeconomics",
+      "title": "Microeconomics — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 28,
+      "chapters": 5,
+      "mergedFrom": [
+        "One book per subject — 3 subject areas merged: Behavioral Economics, Foundations of Economics, Microeconomics"
+      ],
+      "description": "Every Microeconomics lesson in the Library, unified into one volume — The Economic Way of Thinking, How Markets Work, Consumers, Producers & Welfare, When Markets Fail, Behavioral Economics. 7 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-macroeconomics",
+      "universe": "knowledge-university",
+      "subjectId": "ku-macroeconomics",
+      "title": "Macroeconomics — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 26,
+      "chapters": 4,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Macroeconomics"
+      ],
+      "description": "Every Macroeconomics lesson in the Library, unified into one volume — National Income & the Vital Signs, Money & Monetary Policy, Fiscal Policy, The Open Economy. 6 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-international-trade",
+      "universe": "knowledge-university",
+      "subjectId": "ku-international-trade",
+      "title": "International Trade — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 16,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: International Trade"
+      ],
+      "description": "Every International Trade lesson in the Library, unified into one volume — Trade Theory, Trade Policy, Regional Integration & FDI. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-development-economics",
+      "universe": "knowledge-university",
+      "subjectId": "ku-development-economics",
+      "title": "Development & Political Economy — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 16,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Development Economics, Political Economy"
+      ],
+      "description": "Every Development & Political Economy lesson in the Library, unified into one volume — Poverty, Labour & Development, India & Comparative Development, Political Economy. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-business-economics",
+      "universe": "knowledge-university",
+      "subjectId": "ku-business-economics",
+      "title": "Business Economics — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 19,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Business Economics"
+      ],
+      "description": "Every Business Economics lesson in the Library, unified into one volume — Costs & Production, Business Cycles, Public Finance. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-financial-accounting",
+      "universe": "knowledge-university",
+      "subjectId": "ku-financial-accounting",
+      "title": "Financial Accounting — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 29,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Accounting"
+      ],
+      "description": "Every Financial Accounting lesson in the Library, unified into one volume — The Accounting Cycle & the Ledger, Cash, Assets & Controls, Special Transactions & Computerized Systems. 6 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-advanced-accounting-auditing",
+      "universe": "knowledge-university",
+      "subjectId": "ku-advanced-accounting-auditing",
+      "title": "Advanced Accounting & Auditing — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 32,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Accounting, Auditing & Assurance"
+      ],
+      "description": "Every Advanced Accounting & Auditing lesson in the Library, unified into one volume — Partnership Accounts, Company Accounts & Financial Statements, Auditing & Assurance. 6 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-finance-banking",
+      "universe": "knowledge-university",
+      "subjectId": "ku-finance-banking",
+      "title": "Finance & Banking — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 35,
+      "chapters": 5,
+      "mergedFrom": [
+        "One book per subject — 3 subject areas merged: Banking & Finance, Finance & Investment, Personal Finance"
+      ],
+      "description": "Every Finance & Banking lesson in the Library, unified into one volume — Money, Banking, Risk & Insurance, Markets & Instruments, Valuation Basics, Corporate Finance, Personal Finance. 9 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-management-leadership",
+      "universe": "knowledge-university",
+      "subjectId": "ku-management-leadership",
+      "title": "Management & Leadership — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 17,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Management, Management & Leadership"
+      ],
+      "description": "Every Management & Leadership lesson in the Library, unified into one volume — Organisations & People, Leadership, Deals & Decisions. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-marketing",
+      "universe": "knowledge-university",
+      "subjectId": "ku-marketing",
+      "title": "Marketing — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 15,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Marketing"
+      ],
+      "description": "Every Marketing lesson in the Library, unified into one volume — Marketing Foundations, Pricing, Channels & Promotion, Brands & Growth. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-operations-strategy",
+      "universe": "knowledge-university",
+      "subjectId": "ku-operations-strategy",
+      "title": "Operations, Strategy & Supply Chain — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 16,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Operations & Supply Chain, Strategy"
+      ],
+      "description": "Every Operations, Strategy & Supply Chain lesson in the Library, unified into one volume — Operations & Supply Chain, Strategy & Strategic Interaction. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-entrepreneurship-business-environment",
+      "universe": "knowledge-university",
+      "subjectId": "ku-entrepreneurship-business-environment",
+      "title": "Entrepreneurship & the Business Environment — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 18,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 3 subject areas merged: Business Environment, Business Regulation, Entrepreneurship"
+      ],
+      "description": "Every Entrepreneurship & the Business Environment lesson in the Library, unified into one volume — Building & Financing Ventures, Business Environment & Regulation. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-legal-systems-method",
+      "universe": "knowledge-university",
+      "subjectId": "ku-legal-systems-method",
+      "title": "Legal Systems & Method — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 14,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Legal History, Legal Method"
+      ],
+      "description": "Every Legal Systems & Method lesson in the Library, unified into one volume — Legal Reasoning, Courts, Precedent & the Legal Machine, Comparative Legal Systems & Legal History. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-constitutional-law",
+      "universe": "knowledge-university",
+      "subjectId": "ku-constitutional-law",
+      "title": "Constitutional Law — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 16,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Constitutional Law"
+      ],
+      "description": "Every Constitutional Law lesson in the Library, unified into one volume — Structural Principles, Constitutional Law in Practice. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-private-law",
+      "universe": "knowledge-university",
+      "subjectId": "ku-private-law",
+      "title": "Private Law: Contracts, Torts & Family — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 21,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Contract Law, Private Law"
+      ],
+      "description": "Every Private Law: Contracts, Torts & Family lesson in the Library, unified into one volume — Contract Law, Tort Law, Family Law. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-business-corporate-law",
+      "universe": "knowledge-university",
+      "subjectId": "ku-business-corporate-law",
+      "title": "Business & Corporate Law — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 29,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Business Law, Private Law"
+      ],
+      "description": "Every Business & Corporate Law lesson in the Library, unified into one volume — Sale of Goods & Commercial Transactions, Partnership & LLP, Company Law. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-criminal-justice",
+      "universe": "knowledge-university",
+      "subjectId": "ku-criminal-justice",
+      "title": "Criminal Law & Justice — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 11,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Criminal Justice"
+      ],
+      "description": "Every Criminal Law & Justice lesson in the Library, unified into one volume — Criminology, The Legal Machine, Criminal Litigation. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-international-law",
+      "universe": "knowledge-university",
+      "subjectId": "ku-international-law",
+      "title": "International Law — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 22,
+      "chapters": 4,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: International Law"
+      ],
+      "description": "Every International Law lesson in the Library, unified into one volume — Treaty Law, States, Territory & Jurisdiction, Human Rights Law, Courts, Organizations & the Law of the Sea. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-regulatory-workplace-law",
+      "universe": "knowledge-university",
+      "subjectId": "ku-regulatory-workplace-law",
+      "title": "Regulatory & Workplace Law — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 12,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 3 subject areas merged: Employment Law, Intellectual Property & Media Law, Tax & Administrative Law"
+      ],
+      "description": "Every Regulatory & Workplace Law lesson in the Library, unified into one volume — Tax & Administrative Law, Employment Law & the Workplace, IP & Media Law. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-literature",
+      "universe": "knowledge-university",
+      "subjectId": "ku-literature",
+      "title": "Literature — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 27,
+      "chapters": 4,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Literary Craft, World Literature"
+      ],
+      "description": "Every Literature lesson in the Library, unified into one volume — The Great Tradition, Reading the World, Literary Awards & the Canon, Literary Craft & Criticism. 7 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-linguistics",
+      "universe": "knowledge-university",
+      "subjectId": "ku-linguistics",
+      "title": "Linguistics — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 35,
+      "chapters": 4,
+      "mergedFrom": [
+        "One book per subject — 4 subject areas merged: Language Acquisition Science, Linguistics, Phonetics & Phonology, Sociolinguistics"
+      ],
+      "description": "Every Linguistics lesson in the Library, unified into one volume — The Science of Language, Phonetics & Phonology, Language in Society, Language Acquisition. 11 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-spanish",
+      "universe": "knowledge-university",
+      "subjectId": "ku-spanish",
+      "title": "Spanish — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 9,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Spanish"
+      ],
+      "description": "Every Spanish lesson in the Library, unified into one volume — Verb Semantics, Practical Spanish, Verb Morphology. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-japanese",
+      "universe": "knowledge-university",
+      "subjectId": "ku-japanese",
+      "title": "Japanese — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 9,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Japanese"
+      ],
+      "description": "Every Japanese lesson in the Library, unified into one volume — Sentence Structure, The Writing System, Verbs & Politeness. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-french",
+      "universe": "knowledge-university",
+      "subjectId": "ku-french",
+      "title": "French — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 10,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: French"
+      ],
+      "description": "Every French lesson in the Library, unified into one volume — French Foundations, French Verbs, French Reading & Culture. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-german",
+      "universe": "knowledge-university",
+      "subjectId": "ku-german",
+      "title": "German — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 17,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: German"
+      ],
+      "description": "Every German lesson in the Library, unified into one volume — German Foundations, German Verbs, German Literature. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-hindi",
+      "universe": "knowledge-university",
+      "subjectId": "ku-hindi",
+      "title": "Hindi — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 11,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Hindi"
+      ],
+      "description": "Every Hindi lesson in the Library, unified into one volume — Hindi Foundations, Hindi Grammar, Hindi Literature. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-arabic",
+      "universe": "knowledge-university",
+      "subjectId": "ku-arabic",
+      "title": "Arabic — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 10,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Arabic"
+      ],
+      "description": "Every Arabic lesson in the Library, unified into one volume — Arabic Foundations, Arabic Grammar, Arabic Literature & Culture. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-korean",
+      "universe": "knowledge-university",
+      "subjectId": "ku-korean",
+      "title": "Korean — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 10,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Korean"
+      ],
+      "description": "Every Korean lesson in the Library, unified into one volume — Korean Foundations, Korean Grammar, Korean Literature & Culture. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-russian",
+      "universe": "knowledge-university",
+      "subjectId": "ku-russian",
+      "title": "Russian — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 10,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Russian"
+      ],
+      "description": "Every Russian lesson in the Library, unified into one volume — Russian Foundations, Russian Grammar, Russian Literature. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-mandarin",
+      "universe": "knowledge-university",
+      "subjectId": "ku-mandarin",
+      "title": "Mandarin Chinese — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 19,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Mandarin Chinese"
+      ],
+      "description": "Every Mandarin Chinese lesson in the Library, unified into one volume — Mandarin Foundations, Mandarin Grammar, Classical Canon & Recitation. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-art-history",
+      "universe": "knowledge-university",
+      "subjectId": "ku-art-history",
+      "title": "Art History — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 17,
+      "chapters": 5,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Art History"
+      ],
+      "description": "Every Art History lesson in the Library, unified into one volume — Foundations & the Ancient World, Renaissance to Modernism, World Art Traditions, The Historian's Craft, The Contemporary Scene. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-visual-arts",
+      "universe": "knowledge-university",
+      "subjectId": "ku-visual-arts",
+      "title": "Visual Arts — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 19,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 3 subject areas merged: Drawing & Painting, Photography, Sculpture & Craft"
+      ],
+      "description": "Every Visual Arts lesson in the Library, unified into one volume — Drawing & Painting, Photography, Sculpture & Craft. 6 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-music",
+      "universe": "knowledge-university",
+      "subjectId": "ku-music",
+      "title": "Music — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 29,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 3 subject areas merged: Music History & Appreciation, Music Production, Music Theory & Practice"
+      ],
+      "description": "Every Music lesson in the Library, unified into one volume — Theory & Musicianship, History & Appreciation, Music Production. 9 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-film-cinema",
+      "universe": "knowledge-university",
+      "subjectId": "ku-film-cinema",
+      "title": "Film & Cinema — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 16,
+      "chapters": 5,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Film & Cinema"
+      ],
+      "description": "Every Film & Cinema lesson in the Library, unified into one volume — Screenwriting & Story, Cinematography & Light, Editing & Montage, Sound & Score, Film History & Movements. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-animation",
+      "universe": "knowledge-university",
+      "subjectId": "ku-animation",
+      "title": "Animation — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 16,
+      "chapters": 5,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Animation & Sequential Art"
+      ],
+      "description": "Every Animation lesson in the Library, unified into one volume — Principles of Animation, Storyboarding & Pre-Production, Stop-Motion & Hybrid Techniques, Digital & 3D Production, Comics & Sequential Art. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-design",
+      "universe": "knowledge-university",
+      "subjectId": "ku-design",
+      "title": "Design — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 23,
+      "chapters": 4,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Fashion & Identity, Visual Design"
+      ],
+      "description": "Every Design lesson in the Library, unified into one volume — Design Foundations, Typography & Layout, Interaction & UX, Fashion & Identity. 7 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-performing-arts",
+      "universe": "knowledge-university",
+      "subjectId": "ku-performing-arts",
+      "title": "Performing Arts — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 21,
+      "chapters": 5,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Dance, Theater & Performance"
+      ],
+      "description": "Every Performing Arts lesson in the Library, unified into one volume — Acting & Performance, Stagecraft & Production, Dance Forms & History, Choreography & Composition, Opera & Musical Theater. 6 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-architecture",
+      "universe": "knowledge-university",
+      "subjectId": "ku-architecture",
+      "title": "Architecture — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 21,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Architecture"
+      ],
+      "description": "Every Architecture lesson in the Library, unified into one volume — History of Architecture, Structures & Materials, Design & Practice. 6 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-structural-seismic-engineering",
+      "universe": "knowledge-university",
+      "subjectId": "ku-structural-seismic-engineering",
+      "title": "Structural & Seismic Engineering — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 21,
+      "chapters": 4,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Civil & Structural Engineering, Civil Engineering"
+      ],
+      "description": "Every Structural & Seismic Engineering lesson in the Library, unified into one volume — Structural Analysis & Design, Ground & Foundations, Seismic Design, Bridges & Long-Span Structures. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-water-environmental-engineering",
+      "universe": "knowledge-university",
+      "subjectId": "ku-water-environmental-engineering",
+      "title": "Water & Environmental Engineering — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 19,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 3 subject areas merged: Civil & Structural Engineering, Civil Engineering, Water Technology"
+      ],
+      "description": "Every Water & Environmental Engineering lesson in the Library, unified into one volume — Water Resources & Dams, Water & Wastewater Treatment, Environmental Engineering. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-transportation-engineering",
+      "universe": "knowledge-university",
+      "subjectId": "ku-transportation-engineering",
+      "title": "Transportation Engineering — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 11,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Civil Engineering, Railway Engineering"
+      ],
+      "description": "Every Transportation Engineering lesson in the Library, unified into one volume — Highways, Traffic & Geometric Design, Railways & Transport Infrastructure. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-construction-geomatics",
+      "universe": "knowledge-university",
+      "subjectId": "ku-construction-geomatics",
+      "title": "Construction, Geomatics & Underground Engineering — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 11,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 3 subject areas merged: Civil & Structural Engineering, Civil Engineering, Construction & the Built Environment"
+      ],
+      "description": "Every Construction, Geomatics & Underground Engineering lesson in the Library, unified into one volume — Geomatics & Surveying, Tunnels & Underground Engineering, How Buildings Work. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-aerospace-aviation",
+      "universe": "knowledge-university",
+      "subjectId": "ku-aerospace-aviation",
+      "title": "Aerospace & Aviation — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 12,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Aerospace Engineering, Aviation & Flight"
+      ],
+      "description": "Every Aerospace & Aviation lesson in the Library, unified into one volume — Aerodynamics, Rotorcraft & VTOL, Aviation & Flight. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-chemical-engineering",
+      "universe": "knowledge-university",
+      "subjectId": "ku-chemical-engineering",
+      "title": "Chemical Engineering — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 14,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Chemical Engineering"
+      ],
+      "description": "Every Chemical Engineering lesson in the Library, unified into one volume — Process Engineering, Pipeline Transport, Process Safety. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-naval-architecture",
+      "universe": "knowledge-university",
+      "subjectId": "ku-naval-architecture",
+      "title": "Naval Architecture & Marine Engineering — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 27,
+      "chapters": 5,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Naval Architecture"
+      ],
+      "description": "Every Naval Architecture & Marine Engineering lesson in the Library, unified into one volume — Marine Engineering, Stability & Safety, Ship Structures, Ship Design & Propulsion, Seakeeping & Manoeuvring. 7 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-nanotechnology",
+      "universe": "knowledge-university",
+      "subjectId": "ku-nanotechnology",
+      "title": "Nanotechnology — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 25,
+      "chapters": 5,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Nanotechnology"
+      ],
+      "description": "Every Nanotechnology lesson in the Library, unified into one volume — The Small Frontier, Confinement & Controlled Growth, Carbon Nanomaterials & Nanoelectronics, Making & Seeing the Nanoworld, Nanomedicine & Clean Tech. 7 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-quantum-information",
+      "universe": "knowledge-university",
+      "subjectId": "ku-quantum-information",
+      "title": "Quantum Information — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 25,
+      "chapters": 5,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Quantum Information"
+      ],
+      "description": "Every Quantum Information lesson in the Library, unified into one volume — Quantum Computation, Algorithms & Hardware, Quantum Communication & Networks, Quantum Sensing & Metrology, Error Correction & Fault Tolerance. 7 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-computational-science",
+      "universe": "knowledge-university",
+      "subjectId": "ku-computational-science",
+      "title": "Computational Science & Simulation — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 18,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Computational Science"
+      ],
+      "description": "Every Computational Science & Simulation lesson in the Library, unified into one volume — Numerical Methods, Simulating Reality, Earth System Modeling. 5 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-cooking-food-science",
+      "universe": "knowledge-university",
+      "subjectId": "ku-cooking-food-science",
+      "title": "Cooking & Food Science — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 12,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Cooking & Food Science"
+      ],
+      "description": "Every Cooking & Food Science lesson in the Library, unified into one volume — Kitchen Chemistry & Flavor, Food Safety. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-home-repair-machines",
+      "universe": "knowledge-university",
+      "subjectId": "ku-home-repair-machines",
+      "title": "Home Repair & Everyday Machines — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 22,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Everyday Machines, Home & Repair"
+      ],
+      "description": "Every Home Repair & Everyday Machines lesson in the Library, unified into one volume — Around the House, Machines of Daily Life. 6 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-cars-navigation-outdoors",
+      "universe": "knowledge-university",
+      "subjectId": "ku-cars-navigation-outdoors",
+      "title": "Cars, Navigation & the Outdoors — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 11,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 2 subject areas merged: Car & Driving, Navigation & Outdoors"
+      ],
+      "description": "Every Cars, Navigation & the Outdoors lesson in the Library, unified into one volume — Wheels & Ownership, Navigation & the Outdoors. 3 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-garden-growing",
+      "universe": "knowledge-university",
+      "subjectId": "ku-garden-growing",
+      "title": "Garden & Growing — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 16,
+      "chapters": 3,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Garden & Growing"
+      ],
+      "description": "Every Garden & Growing lesson in the Library, unified into one volume — Growing Things, Propagation: Making More Plants, Plant Health. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-practical-skills-readiness",
+      "universe": "knowledge-university",
+      "subjectId": "ku-practical-skills-readiness",
+      "title": "Practical Skills & Readiness — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 17,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Practical Skills"
+      ],
+      "description": "Every Practical Skills & Readiness lesson in the Library, unified into one volume — Cloth, Mending & Household Chemistry, Animals, Safety & Readiness. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    },
+    {
+      "id": "ku-career-communication",
+      "universe": "knowledge-university",
+      "subjectId": "ku-career-communication",
+      "title": "Career & Communication — The Complete Book",
+      "author": "StudyVerse Curriculum Team",
+      "edition": "Unified Edition",
+      "year": "2026",
+      "pages": 17,
+      "chapters": 2,
+      "mergedFrom": [
+        "One book per subject — 1 subject areas merged: Career & Communication"
+      ],
+      "description": "Every Career & Communication lesson in the Library, unified into one volume — Speaking & Presence, Getting Hired & Working Smarter. 4 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+    }
+  ]
+}

@@ -17,7 +17,7 @@
 - **Subjects:** 140
 - **Books (master volumes):** 140
 - **Chapters:** 898
-- **Sections (lessons):** 4701
+- **Sections (lessons):** 4704
 
 ## Foundations — 6 subjects
 
@@ -831,10 +831,10 @@
 
 ### Biochemistry (`ku-biochemistry`)
 
-*The chemistry that runs cells* — 2 chapters · 8 sections
+*The chemistry that runs cells* — 2 chapters · 11 sections
 
-- **Ch 1. Molecules of Life** `ku-biochemistry-molecules-of-life` — 7 sections: Biochemistry: The Cell's Energy Economy; Water, pH and Buffers: The Chemistry Every Reaction Lives In; Amino Acids: The Twenty Letters and Their Chemistry; Protein Structure and Folding: Shape Is Function; Enzymes: Catalysis, Kinetics and Regulation; Beyond Glucose: Fat and Amino-Acid Metabolism; Carbohydrates and Lipids: Fuel, Structure and Signalling
-- **Ch 2. Laboratory Methods** `ku-biochemistry-laboratory-methods` — 1 sections: The Biochemist’s Toolbox: Chromatography, Electrophoresis and Spectrophotometry
+- **Ch 1. Molecules of Life** `ku-biochemistry-molecules-of-life` — 8 sections: Biochemistry: The Cell's Energy Economy; Water, pH and Buffers: The Chemistry Every Reaction Lives In; Amino Acids: The Twenty Letters and Their Chemistry; Protein Structure and Folding: Shape Is Function; Enzymes: Catalysis, Kinetics and Regulation; Beyond Glucose: Fat and Amino-Acid Metabolism; Carbohydrates and Lipids: Fuel, Structure and Signalling; Nucleotides and Nucleic-Acid Chemistry: The Monomer Behind the Code
+- **Ch 2. Laboratory Methods** `ku-biochemistry-laboratory-methods` — 3 sections: The Biochemist’s Toolbox: Chromatography, Electrophoresis and Spectrophotometry; Tracers and Spin: Isotopes, Fractionation and the Ultracentrifuge; Seeing Molecules: X-Ray Crystallography, NMR and Cryo-EM
 
 ### Genetics & Heredity (`ku-genetics-heredity`)
 
