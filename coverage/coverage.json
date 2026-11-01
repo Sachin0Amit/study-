@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T12:48:26.135Z",
+  "generatedAt": "2026-11-01T15:38:24.905Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 140,
     "books": 140,
     "chapters": 899,
-    "sections": 4706
+    "sections": 4707
   },
   "subjects": [
     {
@@ -26996,7 +26996,7 @@
       "group": "Life Sciences",
       "tagline": "The chemistry that runs cells",
       "chapterCount": 3,
-      "sectionCount": 13,
+      "sectionCount": 14,
       "chapters": [
         {
           "id": "ku-biochemistry-molecules-of-life",
@@ -27079,7 +27079,7 @@
           "title": "Metabolic Pathways in Depth",
           "shortTitle": "Metabolic Pathways in Depth",
           "bookId": "ku-biochemistry",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-bioc-glycolysis-step-by-step",
@@ -27090,6 +27090,11 @@
               "id": "ku-bioc-citric-acid-cycle",
               "number": 3.2,
               "title": "The Citric-Acid Cycle: Eight Steps Around One Catalytic Wheel"
+            },
+            {
+              "id": "ku-bioc-oxidative-phosphorylation-chemiosmosis",
+              "number": 3.3,
+              "title": "Oxidative Phosphorylation and Chemiosmosis: Cashing the Carriers"
             }
           ]
         }

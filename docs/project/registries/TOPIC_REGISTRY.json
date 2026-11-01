@@ -1,7 +1,7 @@
 {
   "$comment": "Every Knowledge-University topic by stable id (spec PART 8: canonical topic registry — check here before authoring; ids are kebab-case, globally unique, stable forever). Regenerate: bun scripts/build-project-registries.ts",
   "builtOn": "2026-11-01",
-  "count": 721,
+  "count": 722,
   "topics": [
     {
       "id": "sci-experimental-design-hypotheses",
@@ -1970,6 +1970,27 @@
         "Standard ledger −50.3 kJ/mol per turn, derived by grouping pulls, climbs and ripples",
         "Three poisons, three fingerprints: malonate, fluoroacetate, arsenite",
         "Found with pigeon muscle and malonate: Krebs, Johnson, Szent-Györgyi, Lipmann"
+      ]
+    },
+    {
+      "id": "bioc-oxidative-phosphorylation-chemiosmosis",
+      "title": "Oxidative Phosphorylation and Chemiosmosis: Cashing the Carriers",
+      "domain": "Life Sciences",
+      "subject": "Biochemistry",
+      "chapter": "Metabolism",
+      "tier": "intermediate",
+      "words": 3500,
+      "readMins": 18,
+      "addedOn": "2026-11-01",
+      "concepts": [
+        "The inner membrane as a dam: electrons flow down, protons are pushed up",
+        "Complexes I–IV: cofactors, proton counts, and where each poison bites",
+        "The Q cycle: one two-electron carrier split into two one-electron engines",
+        "Proton-motive force: an electrical and a chemical term in one voltage",
+        "ATP synthase: the c-ring rotor and Boyer’s binding-change mechanism",
+        "P/O ratios of 2.5 and 1.5, derived from proton bookkeeping",
+        "Respiratory control: ADP is the throttle, not oxygen",
+        "Uncouplers and shuttles: the price of heat and the fare for cytosolic NADH"
       ]
     },
     {

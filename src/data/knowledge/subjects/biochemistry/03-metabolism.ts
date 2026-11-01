@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Biochemistry — Chapter 03: Metabolic Pathways in Depth
- * 2 lessons · 7,000 words
+ * 3 lessons · 10,500 words
  * field: Biochemistry · branch: Metabolism
  *
  * §6.2 slot 3.1 (2026-11-01, master loop job 492782): Glycolysis Step by Step.
@@ -43,6 +43,33 @@
  * (malonate, fluoroacetate, arsenite), the PDH nanomachine and its PDK/PDP
  * covalent regulation, and the discovery history (Szent-Györgyi, Martius &
  * Knoop, Krebs & Johnson, Lipmann).
+ *
+ * §6.2 slot 3.3 (2026-11-01, master loop job 492782): Oxidative Phosphorylation
+ * & Chemiosmosis.
+ *
+ * Carved against for §3.3 (dedup greps: Q cycle / oligomycin / rotenone /
+ * antimycin / Jagendorf / Rieske / binuclear / c-ring / dinitrophenol —
+ * all unique to this file; the hits for Mitchell / Boyer / uncoupl /
+ * chemiosmotic / thermogenin / DNP / ubiquinone / cytochrome c oxidase /
+ * malate-aspartate / glycerol-3-phosphate shuttle were inspected and are
+ * different people, different senses, or one-clause survey mentions):
+ *   • cell-molecular-biology/04-bioenergetics.ts › bio-cellular-respiration-
+ *     pathways OWNS the one-paragraph chain survey, the 30–32 ATP audit and
+ *     its shuttle-fare clause, the RQ arithmetic and the cyanide/DNP/
+ *     thermogenin one-liners — cited, not re-taught here.
+ *   • bio-biochemistry-metabolism (Ch1) OWNS the ATP currency chemistry and
+ *     its one-line chemiosmosis name-drop (Mitchell's 1978 Nobel).
+ *   • §3.1 OWNS glycolysis's arsenate "uncoupling" sense; §3.2 OWNS the
+ *     succinate-dehydrogenase/complex-II hand-off and the FADH2-discount
+ *     pointer that this lesson cashes ("a story the next lesson tells").
+ *   • photosynthesis lessons (cell-bio 04.3, botany Ch2) OWN the chloroplast
+ *     twin — light-driven proton gradients — pointed to, not repeated.
+ * §3.3 OWNS the machine level: complexes I–IV cofactor-by-cofactor with
+ * proton counts, the Q cycle, the proton-motive force and its derivation,
+ * the P/O derivation, ATP synthase mechanics (c-ring, γ stalk, binding
+ * change), shuttle mechanics, respiratory control, uncouplers (DNP, UCP1),
+ * the reactive-oxygen leak, the inhibitor map and the history (Keilin,
+ * Belitzer, Slater, Mitchell, Boyer, Walker).
  *
  * Lesson text contains no exam names (charter rule 5).
  *
@@ -716,6 +743,353 @@ export const biochemistryCh03: KnowledgeTopic[] = [
         kind: 'callout',
         title: 'Study Path',
         text: 'Grounding: Nelson & Cox, Lehninger Principles of Biochemistry — the citric-acid-cycle chapter and its standard free-energy table; Berg, Tymoczko & Stryer, Biochemistry — the TCA chapter; Krebs & Johnson (1937), Enzymologia 4:148; Ogston (1948), Nature 162:963; Peters (1952), Proceedings of the Royal Society B 139:143; Kornberg (1965), Angewandte Chemie 4:558; Quastel & Wooldridge (1927) on malonate; Reed & Hackert (1990), Journal of Biological Chemistry 265:8971, on the PDH machine; Dang et al. (2009), Nature 462:739, on mutant IDH1. Carve notes: the cell-biology respiration lesson owns the survey walk, the link-reaction summary, the 30–32 ATP audit and the FADH2-discount chain logic; the fermentation-and-integration lesson owns the acetyl-CoA hub, anaplerosis mechanics, ketogenesis and the fat-to-glucose dead-end; this book\u2019s molecules chapter owns the vitamin-cofactor logic, §3.1 owns substrate-level phosphorylation, the phosphohistidine relay concept and the enzymes lesson\u2019s allostery; §3.3 owns the respiratory chain. Next: §3.3 — Oxidative Phosphorylation & Chemiosmosis: cashing the eight carriers this wheel just charged.',
+        tone: 'path',
+      },
+    ],
+  },
+  {
+    id: 'bioc-oxidative-phosphorylation-chemiosmosis',
+    title: 'Oxidative Phosphorylation and Chemiosmosis: Cashing the Carriers',
+    domain: 'Life Sciences',
+    field: 'Biochemistry',
+    branch: 'Metabolism',
+    tier: 'intermediate',
+    concepts: [
+      'The inner membrane as a dam: electrons flow down, protons are pushed up',
+      'Complexes I–IV: cofactors, proton counts, and where each poison bites',
+      'The Q cycle: one two-electron carrier split into two one-electron engines',
+      'Proton-motive force: an electrical and a chemical term in one voltage',
+      'ATP synthase: the c-ring rotor and Boyer’s binding-change mechanism',
+      'P/O ratios of 2.5 and 1.5, derived from proton bookkeeping',
+      'Respiratory control: ADP is the throttle, not oxygen',
+      'Uncouplers and shuttles: the price of heat and the fare for cytosolic NADH',
+    ],
+    words: 3500,
+    readMins: 18,
+    addedOn: '2026-11-01',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'The citric-acid wheel ended its turn owing a debt: three NADH, one FADH2 and one GTP per acetyl unit, with the GTP the only cash on delivery. This lesson collects the rest. In the inner mitochondrial membrane the reduced carriers hand their electrons down a four-station waterfall, and each fall pushes protons out of the matrix against charge and concentration. The protons then return through a molecular turbine that clamps ADP and phosphate into ATP. About nine tenths of the ATP your body mints passes through this machine; glycolysis and the wheel were the rehearsal.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'Cyanide, carbon monoxide, rotenone and the banned diet pill dinitrophenol all act here, each leaving a distinct fingerprint; brown fat heats babies by deliberately breaching this dam; the 2.5-and-1.5 numbers behind every honest ATP audit come from this chapter’s proton bookkeeping; and ATP synthase is the smallest rotary engine known.',
+        tone: 'insight',
+      },
+      {
+        kind: 'callout',
+        title: 'How this lesson is scoped',
+        text: 'The cell-biology respiration lesson already gave the one-paragraph chain survey, the 30–32 ATP audit and the gas arithmetic — read it first if the chain is new. This book’s energy-economy overview owns ATP’s currency chemistry and named chemiosmosis in passing; the citric-acid lesson handed off the FADH2 discount with the words “a story the next lesson tells”; the photosynthesis lessons own the chloroplast’s light-driven twin. Here we build the machine: each complex’s cofactors and proton count, the Q cycle, the proton-motive force and its derivation, the synthase’s rotor and binding change, shuttle mechanics, respiratory control, uncouplers, the ROS leak and the poison map.',
+        tone: 'path',
+      },
+      { kind: 'heading', text: 'From Argument to Machine: A Forty-Year Fight' },
+      {
+        kind: 'para',
+        text: 'The pieces were found decades before the design. David Keilin rediscovered the cytochromes in 1925 — MacMunn had seen their bands in 1884 but been argued off them — and named the pigments that shift oxidation state as a muscle works. Vladimir Belitzer and Elena Tsybakova showed in 1939 that minced muscle couples respiration to ATP synthesis; Herman Kalckar’s work tied phosphate esterification to breathing. In 1953 Bill Slater proposed a chemical-coupling hypothesis — the chain makes a high-energy intermediate, glycolysis-style, and spends it on ATP — and the hunt for it consumed a decade and found nothing, because it does not exist. Peter Mitchell proposed the answer in 1961, in a two-page Nature paper: the chain makes no intermediate; it separates charge and protons across a closed, ion-tight membrane, and ATP synthesis is powered by the protons’ return. Rivals mocked the odious hypothesis — broken mitochondrial preparations, open to the medium, could never show a gradient. The clinching evidence came from outside the animal line: Andre Jagendorf and Helen Uribe soaked chloroplasts in acid and watched them, in 1966, make ATP in the dark from the pH jump alone; in 1974 Efraim Racker and Walther Stoeckenius co-reconstituted the light-driven proton pump bacteriorhodopsin with the mitochondrial synthase, and light made ATP through nothing but a gradient. Mitchell took the 1978 chemistry Nobel.',
+      },
+      { kind: 'heading', text: 'The Waterfall: Four Stations and Two Ferries' },
+      {
+        kind: 'para',
+        text: 'Fix the geography: the N side — the matrix, negative and alkaline — and the P side — the intermembrane space, positive and slightly acid. Electrons fall from the NADH pair at −0.32 volts to the oxygen pair at +0.82 volts; the 1.14-volt drop is worth about 220 kilojoules per mole of NADH, spent in four controlled bites. Two carriers ferry electrons: the Q pool — ubiquinone, a hydrophobic quinone drifting in the lipid interior, ten isoprene units long in humans — carries two electrons and two protons, while cytochrome c, a water-soluble protein on the P face, ferries one electron per trip.',
+      },
+      {
+        kind: 'para',
+        text: 'Complex I, NADH:ubiquinone oxidoreductase, is the giant — about forty-four subunits in mammals, only fourteen conserved back to bacteria. A flavin mononucleotide catches NADH’s hydride; the electrons step through eight iron–sulfur clusters to reduce Q in the membrane arm. The L-shaped machine converts redox energy into long-range conformational strokes that push four protons across — a piston-and-lever design the 2016 cryo-electron-microscopy structures made visible. Rotenone, a plant-derived insecticide, and piericidin A block the Q site.',
+      },
+      {
+        kind: 'para',
+        text: 'Complex III, cytochrome bc1, must solve a mismatch: Q carries electrons in pairs, but cytochrome c takes them one at a time. Mitchell’s Q cycle (1975) is the answer. Each monomer carries a Rieske iron–sulfur protein (named for John Rieske, 1964), cytochrome c1, and cytochrome b with two hemes, bL and bH, spanning the membrane. At the Qo site a QH2 is oxidized in a bifurcated step: one electron climbs the high-potential path through the Rieske cluster and c1 onto cytochrome c; the other drops through bL to bH and waits at the Qi site, where two such electrons reduce a fresh Q to QH2 with protons drawn from the matrix. Run twice, the cycle oxidizes two QH2, reduces two cytochromes c, releases four protons at the P side and takes up two from the N side — netting four deposited per two electrons reaching cytochrome c. Antimycin A jams the Qi site and stops the cycle dead.',
+      },
+      {
+        kind: 'para',
+        text: 'Complex IV, cytochrome c oxidase, ends the fall. Electrons arrive one at a time from cytochrome c, dock at a binuclear copper pair, CuA, and step through heme a to the binuclear center — heme a3 beside CuB — where oxygen takes four electrons and four protons in sequence, leaving two water molecules without leaking a half-reduced radical. Two of those four protons are pumped, two are spent chemically — two moved per electron pair. Cyanide, carbon monoxide and azide all bind this binuclear center — a3 is the poison’s seat.',
+      },
+      { kind: 'heading', text: 'The Dam: Proton-Motive Force' },
+      {
+        kind: 'para',
+        text: 'What the protons have built is a dam with two walls. In a working liver mitochondrion the electrical term Δψ runs about 150–170 millivolts (matrix negative) and the chemical term ΔpH about half a unit (matrix alkaline) — a proton-motive force of roughly 180–220 millivolts, four fifths electrical. Each returning proton releases about 19–21 kilojoules per mole — the turbine’s currency.',
+      },
+      {
+        kind: 'formula',
+        name: 'Proton-motive force',
+        latex: '\\Delta p = \\Delta\\psi - \\frac{2.303\\,RT}{F}\\,\\Delta\\mathrm{pH}',
+        meaning: 'The gradient as one voltage: the electrical term Δψ (membrane potential, P minus N) minus the chemical term 2.303RT/F times ΔpH (pH difference, P minus N); 2.303RT/F ≈ 59.2 mV per pH unit at 25 °C; work per mole of protons = F·Δp.',
+      },
+      {
+        kind: 'derivation',
+        title: 'Deriving the proton-motive force from first principles',
+        statement: 'Show that a proton gradient across the inner membrane equals one voltage — the proton-motive force — and evaluate it for a working liver mitochondrion.',
+        prerequisites: ['Chemical potential μ = μ° + RT ln c', 'Electrical work: F per mole per volt', 'Difference notation across a membrane'],
+        steps: [
+          {
+            label: 'Write the electrochemical potential of H+ on each face',
+            formula: '\\bar{\\mu}_{H^+} = \\mu^{\\circ} + RT\\,\\ln[H^+] + F\\psi',
+            explanation: 'A mole of protons carries one Faraday of charge, so a potential ψ does F·ψ of work on it; the chemical term is the usual RT ln concentration.',
+          },
+          {
+            label: 'Take the P-side minus N-side difference',
+            formula: '\\Delta\\bar{\\mu} = RT\\,\\ln\\frac{[H^+]_{P}}{[H^+]_{N}} + F(\\psi_{P}-\\psi_{N})',
+            explanation: 'Constants cancel. The first term is chemical (protons prefer the alkaline matrix), the second electrical (protons prefer the negative matrix).',
+          },
+          {
+            label: 'Convert to pH and divide by F to express in volts',
+            formula: '\\Delta p = \\frac{\\Delta\\bar{\\mu}}{F} = \\Delta\\psi - \\frac{2.303\\,RT}{F}\\,\\Delta\\mathrm{pH}',
+            explanation: 'ln[H+]P/[H+]N = 2.303·(pH_N − pH_P) = −2.303·ΔpH with ΔpH = pH_P − pH_N, hence the minus sign. At 25 °C, 2.303RT/F = 59.2 mV per pH unit.',
+          },
+          {
+            label: 'Insert the measured numbers',
+            formula: '\\Delta p = 170\\ \\text{mV} - 59.2\\ \\text{mV}\\times(-0.5) \\approx 200\\ \\text{mV}',
+            explanation: 'Δψ ≈ +170 mV (P side positive) and ΔpH ≈ −0.5 (the P side is the more acidic) add, because both terms push protons back toward the matrix.',
+          },
+          {
+            label: 'Price a proton',
+            formula: '\\Delta G = F\\,\\Delta p = 96.5\\ \\text{kJ·V}^{-1}\\text{·mol}^{-1} \\times 0.20\\ \\text{V} \\approx 19\\ \\text{kJ/mol}',
+            explanation: 'Each returning proton releases roughly 19–21 kilojoules per mole.',
+          },
+        ],
+        result: 'Δp ≈ 200 mV, about four fifths electrical (Δψ) and one fifth chemical (ΔpH); each proton’s return is worth ≈ 19–21 kJ/mol.',
+      },
+      {
+        kind: 'figure',
+        caption: 'LEFT — the chain as a two-sided dam. Electrons fall NADH → Complex I → Q pool → Complex III → cytochrome c → Complex IV → O2 reduced to 2 H2O; cofactors are named inside the plates. Protons ride up: 4 H+ at I, 4 H+ out (Qo) with 2 H+ in (Qi) at III, 2 H+ at IV — ten per NADH; FADH2 enters at the Q pool through II and pumps nothing, six per FADH2. Poison dots: rotenone, antimycin A, CN− · CO, and the DNP leak. RIGHT — the turbine: H+ from the P side enters the a subunit, hops onto the c-ring (c8), rides one turn (8 H+) and exits to the matrix; the γ stalk turns 120° per ATP, cycling the β sites O · L · T; the stator b2 + δ holds the F1 head (α3β3) still; ADP + Pi in, ATP out.',
+        afterConcept: 4,
+        svg: `<svg viewBox="0 0 880 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Left: the electron-transport chain with complexes I to IV, the Q pool, cytochrome c, proton counts, poison dots and the DNP leak. Right: ATP synthase with the c-ring rotor, gamma stalk, F1 head and the three binding-change sites.">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a93"/></marker>
+  </defs>
+  <style>.lbl{font-family:Georgia,serif;font-size:14px;fill:#3f3f46}.big{font-size:18px;font-weight:bold}.sm{font-size:12px;fill:#52525b}.ink{stroke:#8a8a93;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.thin{stroke:#b8b8c0;fill:none;stroke-width:1.6}.rose{fill:#e11d48}.vio{fill:#7c3aed}.box{fill:none;stroke:#c8c8d0;stroke-width:1.6;stroke-dasharray:5 4}.node{fill:#fafafa;stroke:#8a8a93;stroke-width:2}.mid{font-family:Georgia,serif;font-size:13.5px;font-weight:bold;fill:#3f3f46;text-anchor:middle}.ctr{font-family:Georgia,serif;font-size:12px;fill:#3f3f46;text-anchor:middle}.arm{stroke:#7c3aed;fill:none;stroke-width:2.2;stroke-dasharray:6 4}.leak{stroke:#e11d48;fill:none;stroke-width:2;stroke-dasharray:4 4}</style>
+  <text x="225" y="40" class="mid big">THE CHAIN — electrons fall, protons rise</text>
+  <text x="665" y="40" class="mid big">THE TURBINE — ATP synthase</text>
+  <line x1="445" y1="30" x2="445" y2="548" class="thin"/>
+  <line x1="30" y1="250" x2="430" y2="250" class="ink"/>
+  <line x1="30" y1="440" x2="430" y2="440" class="ink"/>
+  <text x="230" y="240" class="ctr">P SIDE · intermembrane space</text>
+  <text x="230" y="462" class="ctr">N SIDE · matrix</text>
+  <rect x="50" y="258" width="60" height="184" class="node"/>
+  <text x="80" y="246" class="mid">Complex I</text>
+  <text x="80" y="290" class="ctr">FMN</text>
+  <text x="80" y="312" class="ctr">Fe–S ×8</text>
+  <line x1="115" y1="436" x2="115" y2="264" class="ink" marker-end="url(#ar)"/>
+  <text x="120" y="344" class="lbl">4 H+</text>
+  <line x1="48" y1="478" x2="66" y2="448" class="ink" marker-end="url(#ar)"/>
+  <text x="44" y="494" class="sm">NADH</text>
+  <ellipse cx="163" cy="330" rx="34" ry="16" class="node"/>
+  <text x="163" y="335" class="ctr">Q pool</text>
+  <text x="163" y="358" class="sm" text-anchor="middle">2 e− · 2 H+</text>
+  <line x1="110" y1="330" x2="127" y2="330" class="ink" marker-end="url(#ar)"/>
+  <line x1="197" y1="330" x2="210" y2="330" class="ink" marker-end="url(#ar)"/>
+  <rect x="122" y="402" width="84" height="34" class="box"/>
+  <text x="164" y="417" class="ctr">Complex II · FADH2</text>
+  <text x="164" y="431" class="ctr">0 H+</text>
+  <line x1="164" y1="400" x2="164" y2="348" class="thin" marker-end="url(#ar)"/>
+  <rect x="210" y="258" width="70" height="184" class="node"/>
+  <text x="245" y="246" class="mid">Complex III</text>
+  <text x="245" y="282" class="ctr">Rieske [2Fe–2S]</text>
+  <text x="245" y="300" class="ctr">bL · bH</text>
+  <text x="245" y="318" class="ctr">c1</text>
+  <line x1="285" y1="436" x2="285" y2="264" class="ink" marker-end="url(#ar)"/>
+  <text x="290" y="300" class="lbl">4 H+ out (Qo)</text>
+  <line x1="206" y1="264" x2="206" y2="436" class="ink" marker-end="url(#ar)"/>
+  <text x="200" y="392" class="lbl" text-anchor="end">2 H+ in (Qi)</text>
+  <circle cx="312" cy="205" r="16" class="node"/>
+  <text x="312" y="180" class="ctr">cytochrome c</text>
+  <text x="312" y="236" class="sm" text-anchor="middle">1 e− per trip</text>
+  <line x1="268" y1="256" x2="298" y2="218" class="ink" marker-end="url(#ar)"/>
+  <line x1="326" y1="218" x2="356" y2="254" class="ink" marker-end="url(#ar)"/>
+  <rect x="360" y="258" width="64" height="184" class="node"/>
+  <text x="392" y="246" class="mid">Complex IV</text>
+  <text x="392" y="284" class="ctr">CuA</text>
+  <text x="392" y="302" class="ctr">a</text>
+  <text x="392" y="320" class="ctr">a3–CuB</text>
+  <line x1="430" y1="436" x2="430" y2="264" class="ink" marker-end="url(#ar)"/>
+  <text x="436" y="246" class="lbl">2 H+</text>
+  <line x1="392" y1="478" x2="392" y2="448" class="ink" marker-end="url(#ar)"/>
+  <text x="392" y="494" class="sm" text-anchor="middle">O2 → 2 H2O</text>
+  <circle cx="117" cy="392" r="4" class="rose"/>
+  <circle cx="240" cy="412" r="4" class="rose"/>
+  <circle cx="404" cy="316" r="4" class="rose"/>
+  <line x1="322" y1="436" x2="322" y2="264" class="leak"/>
+  <circle cx="322" cy="350" r="4" class="rose"/>
+  <text x="230" y="516" class="sm" text-anchor="middle">● rotenone at I’s Q site · ● antimycin A at III’s Qi · ● CN− · CO at IV’s binuclear center</text>
+  <text x="230" y="534" class="sm" text-anchor="middle">● DNP — a proton leak through the lipid · electrons: NADH → I → Q → III → cytochrome c → IV → O2</text>
+  <line x1="470" y1="250" x2="860" y2="250" class="ink"/>
+  <line x1="470" y1="440" x2="860" y2="440" class="ink"/>
+  <text x="665" y="240" class="ctr">P SIDE · intermembrane space</text>
+  <text x="665" y="462" class="ctr">N SIDE · matrix</text>
+  <rect x="688" y="262" width="44" height="166" class="node"/>
+  <text x="710" y="286" class="mid">a</text>
+  <line x1="710" y1="210" x2="710" y2="258" class="ink" marker-end="url(#ar)"/>
+  <text x="722" y="232" class="lbl">H+ in</text>
+  <circle cx="662" cy="345" r="13" class="node"/><circle cx="650" cy="375" r="13" class="node"/><circle cx="620" cy="387" r="13" class="node"/><circle cx="590" cy="375" r="13" class="node"/><circle cx="578" cy="345" r="13" class="node"/><circle cx="590" cy="315" r="13" class="node"/><circle cx="620" cy="303" r="13" class="node"/><circle cx="650" cy="315" r="13" class="node"/>
+  <text x="620" y="272" class="ctr">1 turn · 8 H+</text>
+  <text x="560" y="352" class="lbl" text-anchor="end">c-ring (c8)</text>
+  <path d="M 560 315 A 62 62 0 0 1 680 315" class="thin" marker-end="url(#ar)"/>
+  <line x1="620" y1="358" x2="620" y2="492" class="arm"/>
+  <text x="632" y="440" class="lbl">γ stalk</text>
+  <line x1="620" y1="398" x2="620" y2="446" class="ink" marker-end="url(#ar)"/>
+  <text x="632" y="428" class="lbl">H+</text>
+  <circle cx="654" cy="500" r="13" class="node"/><circle cx="637" cy="529" r="13" class="node"/><circle cx="603" cy="529" r="13" class="node"/><circle cx="586" cy="500" r="13" class="node"/><circle cx="603" cy="471" r="13" class="node"/><circle cx="637" cy="471" r="13" class="node"/>
+  <line x1="654" y1="500" x2="700" y2="500" class="thin"/>
+  <line x1="700" y1="500" x2="700" y2="428" class="thin"/>
+  <text x="706" y="452" class="lbl">stator b2 + δ</text>
+  <text x="706" y="486" class="lbl">F1 head (α3β3)</text>
+  <text x="706" y="508" class="lbl">O · L · T sites</text>
+  <text x="706" y="530" class="lbl">1 ATP per 120°</text>
+  <line x1="580" y1="486" x2="544" y2="486" class="ink" marker-end="url(#ar)"/>
+  <text x="538" y="490" class="lbl" text-anchor="end">ATP out</text>
+  <line x1="544" y1="516" x2="580" y2="516" class="ink" marker-end="url(#ar)"/>
+  <text x="538" y="520" class="lbl" text-anchor="end">ADP + Pi</text>
+  <text x="665" y="548" class="sm" text-anchor="middle">Boyer: energy pays for affinity changes and ATP release, not for bond-making</text>
+</svg>`,
+      },
+      { kind: 'heading', text: 'The Turbine: ATP Synthase' },
+      {
+        kind: 'para',
+        text: 'ATP synthase is two machines coupled by a shaft. The Fo part sits in the membrane: a ring of c subunits — eight in mammals (Watt and colleagues, 2010), ten in yeast, up to fifteen in bacteria — each carrying one acidic residue that picks up a proton. The a subunit beside the ring offers two staggered half-channels: a proton enters from the P side, hops onto a c subunit, rides one step, and leaves into the matrix — turning the ring like a waterwheel. Eight protons buy one full turn. The γ stalk is fixed to the ring and turns with it — deliberately lopsided, crowding each catalytic β subunit in turn.',
+      },
+      {
+        kind: 'para',
+        text: 'The F1 head is a hexamer of three α and three β subunits; the catalytic sites sit on the β subunits, and John Walker’s 1994 crystal at 2.8 Å caught the three β subunits in three different shapes. That picture explained Paul Boyer’s binding-change mechanism, forced on a skeptical field by his isotope-exchange experiments: squeezing ADP and phosphate into ATP is near-equilibrium chemistry that needs almost no push — what the protons buy is affinity. Each 120° turn cycles every β site from open (O, nothing bound) to loose (L, ADP and Pi enter) to tight (T, water squeezed out, ATP held until the site reopens). The gradient’s energy pays for the release, not the bond-making. Boyer and Walker shared the 1997 chemistry Nobel.',
+      },
+      { kind: 'heading', text: 'Two Doors for Cytosolic NADH' },
+      {
+        kind: 'para',
+        text: 'One complication remains: glycolysis’s cytosolic NADH cannot cross the inner membrane — no transporter carries NAD(H). Two doors exist. The malate–aspartate shuttle (liver, heart): cytosolic malate dehydrogenase reduces oxaloacetate to malate on NADH’s account; malate crosses the malate/α-ketoglutarate antiporter; the matrix enzyme reoxidizes it, minting a full-value NADH; oxaloacetate returns as aspartate via the glutamate–aspartate carrier. The glycerol-3-phosphate shuttle (muscle, brain) is cheaper and irreversible: cytosolic NADH reduces dihydroxyacetone phosphate to glycerol-3-phosphate, and a mitochondrial FAD dehydrogenase hands the electrons to Q — banking 1.5, skipping complex I exactly as the citric-acid lesson promised.',
+      },
+      { kind: 'heading', text: 'Respiratory Control: ADP Is the Throttle' },
+      {
+        kind: 'para',
+        text: 'ADP, not oxygen, is the throttle. Britton Chance and G.R. Williams drew the state map in 1955: with ADP exhausted (state 4) protons cannot return, the dam fills, and the chain stops pressing electrons — oxygen uptake falls to a trickle; feed ADP (state 3) and uptake leaps. The acceptor control ratio between the two states, typically 3–10, tests mitochondrial health. The loop closes at the turbine: block the c-ring with oligomycin and oxygen uptake collapses — the chain stalls behind a full dam; add an uncoupler and oxygen uptake races with no ATP — the classic proof of coupling. The ATP–ADP translocase exchanges ATP4− out for ADP3− in — an electrogenic swap driven by Δψ, worth about a quarter of the gradient — with poisons of its own: atractyloside, from a Mediterranean thistle, locks it from the cytosolic side; bongkrekic acid, the agent in tainted coconut tempeh, from the matrix side.',
+      },
+      { kind: 'heading', text: 'Uncouplers and the Price of Heat' },
+      {
+        kind: 'para',
+        text: 'An uncoupler is a proton leak with no turbine. 2,4-Dinitrophenol is a weak acid that crosses the membrane in its neutral form and releases its proton on the far side — in either direction — erasing both walls. The chain, unthrottled, races; oxygen consumption soars; ATP stops; the energy leaves as heat. The history is cautionary: French munitions workers making DNP in the Great War lost weight dramatically; Cutting and Tainter’s 1933 trials made it a diet drug for roughly a hundred thousand people; hyperthermia and cataracts followed, and regulators banned it in 1938 — grey-market pills still kill. The body’s own uncoupler is better engineered: brown fat’s UCP1 — thermogenin — is a proton channel switched on by free fatty acids when noradrenaline hits β3 receptors. Infants carry brown fat for warmth; adults keep depots under the collarbone that light up on cold-exposure scans — the same leak, licensed.',
+      },
+      { kind: 'heading', text: 'The Leak: Reactive Oxygen' },
+      {
+        kind: 'para',
+        text: 'The waterfall leaks. One electron in a few hundred escapes the pool chemistry — at complex I’s Q site and complex III’s Qo semiquinone — and reduces oxygen directly to superoxide. Superoxide dismutase makes hydrogen peroxide; catalase and glutathione peroxidase finish the job. In 1956 Denham Harman proposed that this leak drives aging; mitochondrial DNA — a bare 16.6-kilobase circle without histones, nanometers from the leak — accumulates mutations accordingly. The clinical face is Leber’s hereditary optic neuropathy: maternally inherited mutations in complex I’s mitochondrial genes that blind the optic nerve, the chain’s hungriest customer. A moderate leak also signals adaptation — the relationship is hormetic, not simply toxic.',
+      },
+      { kind: 'heading', text: 'Worked Examples' },
+      {
+        kind: 'example',
+        title: 'Worked Example — The Proton Ledger, End to End',
+        steps: [
+          'Sum the pumps per NADH: I 4 + III 4 + IV 2 = 10 protons to the P side. Per FADH2 (entering at Q, skipping I): 0 + 4 + 2 = 6.',
+          'Rotor arithmetic: the mammalian c-ring is c8, so one turn costs 8 protons and makes 3 ATP — 8 ÷ 3 = 2.67 protons per ATP at the synthase.',
+          'Add the trade route: the ATP4−/ADP3− antiport spends Δψ worth about one proton; charging phosphate import rounds the bookkeeping to ≈ 4 protons per ATP. (Books apportion 3.7–4.7 by transport conventions; the operational figure is 4.)',
+          'Divide: 10 ÷ 4 = 2.5 ATP per NADH; 6 ÷ 4 = 1.5 ATP per FADH2 — the measured P/O ratios.',
+          'Per glucose: 10 NADH × 2.5 = 25; 2 FADH2 × 1.5 = 3; plus 2 + 2 substrate-level = 32. Via the cheap shuttle, the two cytosolic NADH drop from 5.0 to 3.0 — the audit’s 30.',
+        ],
+      },
+      {
+        kind: 'example',
+        title: 'Worked Example — The Efficiency Audit',
+        steps: [
+          'Banked: 32 ATP × 30.5 kJ/mol = 976 kJ per mole.',
+          'Fuel: glucose combustion’s standard drop is −2,840 kJ/mol.',
+          'Efficiency: 976 ÷ 2,840 = 0.344 — about 34%.',
+          'Via the cheap shuttle: 30 × 30.5 = 915; 915 ÷ 2,840 = 32.2%.',
+          'The other two thirds leave as heat — the reason a resting body holds 37 °C without shivering, and why uncoupled mitochondria make superb heaters.',
+        ],
+      },
+      {
+        kind: 'example',
+        title: 'Worked Example — Five Fingerprints at the Membrane',
+        steps: [
+          'Healthy state 3: oxygen uptake and ATP synthesis rise and fall together.',
+          'Rotenone (I’s Q site): NADH-linked oxygen uptake stops, but succinate-fed uptake (FADH2, entering at Q) continues — the entry-point test.',
+          'Antimycin A (Qi site): everything stops; no QH2 can empty, the pool jams in both directions.',
+          'Cyanide or carbon monoxide (a3–CuB binuclear center): full stop regardless of entry point — the waterfall has no exit.',
+          'Oligomycin (Fo rotor): oxygen uptake collapses and ATP synthesis falls with it — turbine blocked, coupling intact. DNP: oxygen uptake races while ATP stays at zero — a leak, not a block.',
+        ],
+      },
+      { kind: 'heading', text: 'Applications in the Real World' },
+      {
+        kind: 'list',
+        items: [
+          'Cyanide medicine: nitrites induce methemoglobin to trap cyanide in the blood; sodium thiosulfate lets rhodanese convert it to thiocyanate; hydroxocobalamin mops up the rest.',
+          'DNP’s afterlife: banned in 1938, the molecule resurfaces in grey-market slimming pills every few years — the leak is indiscriminate; watch body temperature.',
+          'Brown fat as therapy: cold-activated supraclavicular depots show on scans; activating UCP1 deliberately is a standing target of obesity research — burning fuel as heat on purpose.',
+          'Mitochondrial genetics: Leber’s optic neuropathy and the heteroplasmy threshold make complex I mutations a genetics case study; the machine explains the organ bias — optic-nerve cells run the chain hardest.',
+          'Metformin, the world’s most-prescribed glucose-lowering drug, mildly inhibits complex I — rotenone’s target — at a dose the liver tolerates, lowering hepatic glucose output through the energy charge.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Common Pitfalls',
+        text: 'Six slips recur. First, oxygen does not make ATP — it only pulls electrons through the chain and clears them as water; uncoupled mitochondria breathe and make no ATP. Second, 2.5 and 1.5 are non-integers because ten and six protons meet about four per ATP — exact chemistry, fractional coupling. Third, complex II pumps nothing — it is an entry door, not a pump. Fourth, the synthase runs both ways: with the dam empty it hydrolyzes ATP, and the IF1 inhibitor protein clamps it during ischemia. Fifth, Δψ dominates ΔpH about four to one — a protonophore erases both walls, while a potassium ionophore such as valinomycin erases only the electrical one. Sixth, an uncoupler speeds the chain and an inhibitor stalls it — the oxygen-uptake fingerprint tells them apart in one experiment.',
+        tone: 'warn',
+      },
+      { kind: 'heading', text: 'Key Terms' },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'chemiosmosis', def: 'Mitchell’s 1961 mechanism: the chain converts redox energy into a transmembrane proton gradient; its return through ATP synthase powers ATP synthesis.' },
+          { term: 'proton-motive force (Δp)', def: 'The gradient as one voltage: Δp = Δψ − 59.2·ΔpH millivolts; about 200 mV in a working mitochondrion, worth ≈ 19–21 kJ per mole of protons.' },
+          { term: 'Q cycle', def: 'Complex III’s answer to the two-electron Q / one-electron cytochrome c mismatch (Mitchell, 1975): a bifurcated Qo oxidation and a Qi reduction, netting four protons out per two electrons.' },
+          { term: 'binding-change mechanism', def: 'Boyer’s account of the synthase: proton-driven γ rotation cycles each β site through open, loose and tight; the energy pays for affinity changes and ATP release.' },
+          { term: 'P/O ratio', def: 'ATP made per oxygen atom reduced — 2.5 per NADH, 1.5 per FADH2; the arithmetic behind every honest 30–32 audit.' },
+          { term: 'respiratory control', def: 'ADP availability throttles the chain: dam full, chain stalled (state 4); ADP lets protons return and oxygen uptake leaps (state 3); the acceptor control ratio tests health.' },
+          { term: 'uncoupler', def: 'A proton leak without a turbine — dinitrophenol crossing the lipid, or brown fat’s licensed UCP1 channel — converting the gradient straight to heat.' },
+          { term: 'electrogenic antiport', def: 'The ATP–ADP translocase’s ATP4−-out/ADP3−-in swap, driven by Δψ, worth about a quarter of the gradient; atractyloside and bongkrekic acid lock it.' },
+        ],
+      },
+      { kind: 'heading', text: 'Check Your Understanding' },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'How many protons does one FADH2 move to the P side, entering at Q?',
+            options: ['4', '6', '10', '12'],
+            answer: 1,
+            explain: 'FADH2 skips complex I: 0 + 4 (III) + 2 (IV) = 6 — why its P/O is 1.5, not 2.5.',
+          },
+          {
+            q: 'At four protons per ATP, one NADH’s ten protons are worth:',
+            options: ['2.0 ATP', '2.5 ATP', '3.0 ATP', '4.0 ATP'],
+            answer: 1,
+            explain: '10 ÷ 4 = 2.5 — the measured P/O ratio; 6 ÷ 4 = 1.5 for FADH2.',
+          },
+          {
+            q: 'Cyanide halts the chain by binding:',
+            options: ['complex I’s FMN', 'the Q pool', 'the a3–CuB binuclear center of complex IV', 'the ATP–ADP translocase'],
+            answer: 2,
+            explain: 'Cyanide, carbon monoxide and azide all bind the binuclear center — the waterfall loses its exit.',
+          },
+          {
+            q: 'Oligomycin is added to coupled, ADP-driven mitochondria. What happens?',
+            options: ['Oxygen uptake races while ATP stops', 'Oxygen uptake and ATP synthesis both collapse', 'Oxygen uptake is unchanged', 'ATP synthesis doubles'],
+            answer: 1,
+            explain: 'Blocking the Fo rotor fills the dam; backpressure stalls the chain — both fall together (an uncoupler would invert the pattern).',
+          },
+          {
+            q: 'One full Q cycle: how many protons released and taken up?',
+            options: ['2 released (P), 4 taken (N)', '4 released (P), 2 taken (N)', '4 released (P), 4 taken (N)', '6 released (P), none taken'],
+            answer: 1,
+            explain: 'Two QH2 oxidized at Qo release 4 H+ to the P side; one Q reduced at Qi takes 2 H+ from the N side.',
+          },
+          {
+            q: 'Two cytosolic NADH enter via the glycerol-3-phosphate shuttle instead of malate–aspartate. The cost in ATP:',
+            options: ['0', '1', '2', '5'],
+            answer: 2,
+            explain: 'Full value 2 × 2.5 = 5.0 drops to FADH2-class 2 × 1.5 = 3.0 — the audit’s 32 becomes 30.',
+          },
+          {
+            q: 'In Boyer’s binding-change mechanism, proton flow directly powers:',
+            options: ['the condensation of ADP and Pi at the catalytic site', 'γ-rotation that cycles the β sites through O, L and T', 'electron transfer through complex I', 'ADP import by the translocase'],
+            answer: 1,
+            explain: 'The rotation pays for affinity changes and ATP release; the condensation chemistry is near-equilibrium and needs almost no push.',
+          },
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Study Path',
+        text: 'Grounding: Nelson & Cox, Lehninger Principles of Biochemistry — the oxidative-phosphorylation chapters; Nicholls & Ferguson, Bioenergetics; Berg, Tymoczko & Stryer, Biochemistry — the ATP-synthase chapter. Primary sources: Mitchell (1961), Nature 191:144; Jagendorf & Uribe (1966), PNAS 55:170; Racker & Stoeckenius (1974), JBC 249:662; Chance & Williams (1955), JBC 217:383; Abrahams, Leslie, Lutter & Walker (1994), Nature 370:621; Boyer (1997), Annual Review of Biochemistry 66:717; Watt et al. (2010), PNAS 107:16823 on the c8 ring; Harman (1956). Carve notes: the cell-biology respiration lesson owns the chain survey, the 30–32 audit and the gas arithmetic; the energy-economy overview owns ATP’s currency chemistry; §3.2 owns the succinate-dehydrogenase hand-off and the FADH2-discount pointer cashed here; photosynthesis owns the chloroplast twin. Next: §3.4 — Carbohydrate & Lipid Traffic: the roads that feed glycolysis and the wheel.',
         tone: 'path',
       },
     ],

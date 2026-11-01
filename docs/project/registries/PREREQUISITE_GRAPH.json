@@ -1,7 +1,7 @@
 {
   "$comment": "Topic-level prerequisite graph (spec PART 2.3: Topic → Prerequisite Topics → Learning Sequence). sequence = teaching order per subject (ordering facts, not dependencies). declared = derivation prerequisite phrases resolved to ku topics (title/concept, exact or ≥0.7 token overlap) or masters-library sections (cross-universe foundations). Lesson-internal phrases are classified, unresolved phrases are the honest missing-prerequisite work queue (spec: create or connect). Validation: dependency cycles (declared ku edges only), forward-reference violations, dangling refs. Regenerate: bun scripts/build-prerequisite-graph.ts",
   "builtOn": "2026-11-01",
-  "nodeCount": 721,
+  "nodeCount": 722,
   "nodes": [
     {
       "id": "sci-experimental-design-hypotheses",
@@ -785,6 +785,14 @@
       "subject": "Biochemistry",
       "chapter": "Metabolism",
       "orderInSubject": 12,
+      "tier": "intermediate"
+    },
+    {
+      "id": "bioc-oxidative-phosphorylation-chemiosmosis",
+      "title": "Oxidative Phosphorylation and Chemiosmosis: Cashing the Carriers",
+      "subject": "Biochemistry",
+      "chapter": "Metabolism",
+      "orderInSubject": 13,
       "tier": "intermediate"
     },
     {
@@ -6150,6 +6158,11 @@
         "via": "sequence: Biochemistry lesson 12 → 13"
       },
       {
+        "from": "bioc-citric-acid-cycle",
+        "to": "bioc-oxidative-phosphorylation-chemiosmosis",
+        "via": "sequence: Biochemistry lesson 13 → 14"
+      },
+      {
         "from": "bio-developmental-biology",
         "to": "bio-cell-fate-determinants",
         "via": "sequence: Developmental Biology lesson 1 → 2"
@@ -8499,10 +8512,10 @@
     ]
   },
   "declaredResolution": {
-    "phrasesTotal": 46,
+    "phrasesTotal": 49,
     "resolvedToKuTopic": 4,
     "resolvedToMastersSection": 8,
-    "lessonInternal": 25,
+    "lessonInternal": 28,
     "unresolved": 9,
     "unresolvedList": [
       {
@@ -8632,6 +8645,18 @@
         "phrase": "Table values (Lehninger), steps 1–8: −32.2, +13.3, −20.9, −33.5, −2.9, 0.0, −3.8, +29.7 kJ/mol"
       },
       {
+        "from": "bioc-oxidative-phosphorylation-chemiosmosis",
+        "phrase": "Chemical potential μ = μ° + RT ln c"
+      },
+      {
+        "from": "bioc-oxidative-phosphorylation-chemiosmosis",
+        "phrase": "Electrical work: F per mole per volt"
+      },
+      {
+        "from": "bioc-oxidative-phosphorylation-chemiosmosis",
+        "phrase": "Difference notation across a membrane"
+      },
+      {
         "from": "bio-cell-two-architectures-size-limit",
         "phrase": "Area of a cube face: a²"
       },
@@ -8758,7 +8783,7 @@
     },
     "Biochemistry": {
       "core": 6,
-      "intermediate": 5,
+      "intermediate": 6,
       "advanced": 2
     },
     "Developmental Biology": {
