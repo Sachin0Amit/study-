@@ -1,7 +1,7 @@
 {
   "$comment": "Topic-level prerequisite graph (spec PART 2.3: Topic → Prerequisite Topics → Learning Sequence). sequence = teaching order per subject (ordering facts, not dependencies). declared = derivation prerequisite phrases resolved to ku topics (title/concept, exact or ≥0.7 token overlap) or masters-library sections (cross-universe foundations). Lesson-internal phrases are classified, unresolved phrases are the honest missing-prerequisite work queue (spec: create or connect). Validation: dependency cycles (declared ku edges only), forward-reference violations, dangling refs. Regenerate: bun scripts/build-prerequisite-graph.ts",
   "builtOn": "2026-11-01",
-  "nodeCount": 723,
+  "nodeCount": 724,
   "nodes": [
     {
       "id": "sci-experimental-design-hypotheses",
@@ -801,6 +801,14 @@
       "subject": "Biochemistry",
       "chapter": "Metabolism",
       "orderInSubject": 14,
+      "tier": "intermediate"
+    },
+    {
+      "id": "bioc-nitrogen-metabolism-urea-cycle",
+      "title": "Nitrogen Metabolism and the Urea Cycle: Disposing of Protein’s Poison",
+      "subject": "Biochemistry",
+      "chapter": "Metabolism",
+      "orderInSubject": 15,
       "tier": "intermediate"
     },
     {
@@ -6176,6 +6184,11 @@
         "via": "sequence: Biochemistry lesson 14 → 15"
       },
       {
+        "from": "bioc-carbohydrate-lipid-traffic",
+        "to": "bioc-nitrogen-metabolism-urea-cycle",
+        "via": "sequence: Biochemistry lesson 15 → 16"
+      },
+      {
         "from": "bio-developmental-biology",
         "to": "bio-cell-fate-determinants",
         "via": "sequence: Developmental Biology lesson 1 → 2"
@@ -8525,11 +8538,11 @@
     ]
   },
   "declaredResolution": {
-    "phrasesTotal": 51,
+    "phrasesTotal": 62,
     "resolvedToKuTopic": 4,
     "resolvedToMastersSection": 8,
-    "lessonInternal": 29,
-    "unresolved": 10,
+    "lessonInternal": 39,
+    "unresolved": 11,
     "unresolvedList": [
       {
         "from": "fnd-metacognition-calibration",
@@ -8562,6 +8575,10 @@
       {
         "from": "fnd-deliberate-practice",
         "phrase": "The power law of practice"
+      },
+      {
+        "from": "fnd-percentage-ratio-mental-math",
+        "phrase": "Expanding a product of two binomials"
       },
       {
         "from": "bioc-citric-acid-cycle",
@@ -8630,6 +8647,10 @@
         "phrase": "The scoring regime (reward R, penalty W, n live options)"
       },
       {
+        "from": "fnd-percentage-ratio-mental-math",
+        "phrase": "A change of p percent multiplies the value by (1 + p/100)"
+      },
+      {
         "from": "qa-fractions-decimals-comparison",
         "phrase": "Multiplying by powers of ten shifts the point one place per zero"
       },
@@ -8678,6 +8699,18 @@
         "phrase": "PC: pyruvate + CO2 + ATP → OAA; PEPCK: OAA + GTP → PEP; both run once per pyruvate, so twice per glucose"
       },
       {
+        "from": "bioc-nitrogen-metabolism-urea-cycle",
+        "phrase": "One high-energy phosphate bond ≈ one ATP-equivalent (§3.1’s ledger convention)"
+      },
+      {
+        "from": "bioc-nitrogen-metabolism-urea-cycle",
+        "phrase": "ATP → AMP + PPi, followed by PPi hydrolysis, costs two bonds (the pyrophosphate rule from the molecules-of-life book)"
+      },
+      {
+        "from": "bioc-nitrogen-metabolism-urea-cycle",
+        "phrase": "Hydrolysis-only steps cost none"
+      },
+      {
         "from": "bio-cell-two-architectures-size-limit",
         "phrase": "Area of a cube face: a²"
       },
@@ -8688,6 +8721,30 @@
       {
         "from": "bio-cell-two-architectures-size-limit",
         "phrase": "A bacterium is ~1 µm across; a typical eukaryotic cell is ~10 µm; a big one reaches ~100 µm"
+      },
+      {
+        "from": "math-algebra-notation-manipulation",
+        "phrase": "The distributive law"
+      },
+      {
+        "from": "math-algebra-notation-manipulation",
+        "phrase": "Two brackets expand into four products"
+      },
+      {
+        "from": "math-derivative-as-limit",
+        "phrase": "The difference quotient (f(x + h) − f(x)) / h"
+      },
+      {
+        "from": "math-derivative-as-limit",
+        "phrase": "A limit may be evaluated by substitution once the expression is defined at the target"
+      },
+      {
+        "from": "math-derivative-as-limit",
+        "phrase": "The limit definition of f′(x)"
+      },
+      {
+        "from": "math-derivative-as-limit",
+        "phrase": "Continuity at x means the change f(x + h) − f(x) crowds onto 0 as h approaches 0"
       }
     ]
   },
@@ -8804,7 +8861,7 @@
     },
     "Biochemistry": {
       "core": 6,
-      "intermediate": 7,
+      "intermediate": 8,
       "advanced": 2
     },
     "Developmental Biology": {

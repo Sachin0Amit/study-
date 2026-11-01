@@ -10,9 +10,9 @@
     "knowledgeSubjects": 201,
     "knowledgeBooks": 104,
     "knowledgeChapters": 339,
-    "knowledgeTopics": 723,
-    "knowledgeWords": 1155513,
-    "knowledgeSections": 631
+    "knowledgeTopics": 724,
+    "knowledgeWords": 1168350,
+    "knowledgeSections": 632
   },
   "subjects": [
     {
@@ -400,7 +400,7 @@
       "universe": "masters-library",
       "books": 1,
       "chapters": 3,
-      "sections": 15
+      "sections": 16
     },
     {
       "id": "ku-genetics-heredity",
@@ -1317,6 +1317,20 @@
       }
     },
     {
+      "id": "Biochemistry",
+      "name": "Biochemistry",
+      "universe": "knowledge-university",
+      "domain": "Life Sciences",
+      "chapters": 3,
+      "topics": 16,
+      "words": 42089,
+      "tiers": {
+        "advanced": 2,
+        "core": 6,
+        "intermediate": 8
+      }
+    },
+    {
       "id": "Study Skills & Memory",
       "name": "Study Skills & Memory",
       "universe": "knowledge-university",
@@ -1327,20 +1341,6 @@
       "tiers": {
         "core": 11,
         "intermediate": 4
-      }
-    },
-    {
-      "id": "Biochemistry",
-      "name": "Biochemistry",
-      "universe": "knowledge-university",
-      "domain": "Life Sciences",
-      "chapters": 3,
-      "topics": 15,
-      "words": 35700,
-      "tiers": {
-        "advanced": 2,
-        "core": 6,
-        "intermediate": 7
       }
     },
     {
@@ -1795,7 +1795,7 @@
       "domain": "Mathematics",
       "chapters": 2,
       "topics": 5,
-      "words": 8009,
+      "words": 10442,
       "tiers": {
         "intermediate": 3,
         "core": 1,
@@ -2254,7 +2254,7 @@
       "domain": "Mathematics",
       "chapters": 3,
       "topics": 3,
-      "words": 4927,
+      "words": 7014,
       "tiers": {
         "core": 2,
         "advanced": 1
@@ -2609,7 +2609,7 @@
       "domain": "Foundation Learning",
       "chapters": 2,
       "topics": 2,
-      "words": 2784,
+      "words": 4712,
       "tiers": {
         "core": 2
       }

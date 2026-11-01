@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — subject book: Biochemistry (biochemistry)
- * group: Life Sciences · 3 chapters · 15 lessons
+ * group: Life Sciences · 3 chapters · 16 lessons
  *
  * One folder per canonical subject (mirrors the Library book); one file
  * per chapter. New chapters: create <nn>-<chapter-slug>.ts, add it to the
@@ -10,7 +10,7 @@
  * Table of contents:
  *   01 Molecules of Life — 8 lessons
  *   02 Laboratory Methods — 3 lessons
- *   03 Metabolic Pathways in Depth — 4 lessons (§3.1 glycolysis · §3.2 citric-acid cycle · §3.3 oxidative phosphorylation · §3.4 carbohydrate & lipid traffic; §3.5 per §6.2)
+ *   03 Metabolic Pathways in Depth — 5 lessons (§3.1 glycolysis · §3.2 citric-acid cycle · §3.3 oxidative phosphorylation · §3.4 carbohydrate & lipid traffic · §3.5 nitrogen metabolism & the urea cycle)
  */
 import type { KnowledgeTopic } from '../../types'
 import { biochemistryCh01 } from './01-molecules-of-life'

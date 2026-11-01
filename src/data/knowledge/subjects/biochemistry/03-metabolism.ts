@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Biochemistry — Chapter 03: Metabolic Pathways in Depth
- * 4 lessons · 14,000 words
+ * 5 lessons · 20,389 words
  * field: Biochemistry · branch: Metabolism
  *
  * §6.2 slot 3.1 (2026-11-01, master loop job 492782): Glycolysis Step by Step.
@@ -106,6 +106,44 @@
  * Wakil, Vagelos, McGarry & Foster, Luzzatto).
  *
  * Lesson text contains no exam names (charter rule 5).
+ *
+ * §6.2 slot 3.5 (2026-11-02 IST, master loop job 493829): Nitrogen Metabolism
+ * & the Urea Cycle — completes Ch3 and the ku-biochemistry subject.
+ *
+ * Carved against for §3.5 (dedup greps: carbamoyl / ornithine / citrulline /
+ * argininosuccinate / glutamate dehydrogenase / N-acetylglutamate / urease /
+ * creatine / creatinine / deaminat / transamin / hepatic encephalopathy /
+ * ammonia / urea — every hit inspected):
+ *   • Ch1 bio-biochemistry-metabolism (molecules-of-life) OWNS the one-
+ *     paragraph nitrogen survey and the carbon-skeleton sorting (glucogenic
+ *     vs ketogenic classes) — §3.5 owns the reaction-by-reaction machine
+ *     level and CITES the survey, never re-teaches the skeleton classes.
+ *   • Ch1 amino-acids lesson OWNS ornithine/citrulline/carnitine as molecule
+ *     identities (non-protein amino acids) and the arginine→NO clause; the
+ *     enzymes lesson OWNS ping-pong bisubstrate kinetics (transaminase as
+ *     its exemplar) and the creatine-kinase isozyme example.
+ *   • cell-bio 04.2 (bio-fermentation-metabolic-integration) OWNS the
+ *     acetyl-CoA hub, the fed/fasted map, the Cori arithmetic and the
+ *     "nitrogen tax" one-liner (its carve note points HERE).
+ *   • laboratory-methods OWNS Sumner's 1926 urease crystallisation and the
+ *     urea breath test; medical-technology OWNS the urea/creatinine/ALT-AST
+ *     chemistry panels and eGFR grading — cited, not re-taught.
+ *   • zoology/04 OWNS ruminant urea recycling; marine-biology OWNS the
+ *     shark's urea-as-osmolyte + TMAO; mental-health and immunology OWN
+ *     GABA's and histamine's physiological roles; the physiology book OWNS
+ *     renal acid-base and the lactulose/rifaximin clinical management is
+ *     taught here only as nitrogen arithmetic.
+ * §3.5 OWNS the transamination chemistry (Schiff-base algebra, Braunstein &
+ * Kritzmann 1937, Snell), GDH mechanics + the HI/HA syndrome, the glutamine
+ * and alanine ferries, the urea cycle station-by-station with the four-bond
+ * bill DERIVED and the fumarate bridge, N-acetylglutamate control +
+ * carglumic acid, the hyperammonemia fingerprint table + the scavenger
+ * ledger (benzoate 1 N, phenylbutyrate 2 N), the comparative excretion
+ * strategies (ammonotelic/ureotelic/uricotelic + the sealed-egg argument),
+ * Wöhler 1828, the creatine–creatinine ledger (AGAT kidney → GAMT liver →
+ * 1.5%/day creatinine) and the amine-messenger exits. History taught:
+ * Kossel & Dakin 1904, Wöhler 1828, Krebs & Henseleit 1931–32 (Z. physiol.
+ * Chem. 210:33–66), Cohen and Ratner's enzyme resolution, Häberle on NAGS.
  *
  * After editing, run: bun run scripts/serialize-content.ts
  */
@@ -1483,6 +1521,400 @@ export const biochemistryCh03: KnowledgeTopic[] = [
         kind: 'callout',
         title: 'Study Path',
         text: 'Grounding: Nelson & Cox, Lehninger Principles of Biochemistry — the glycogen, pentose-phosphate and fatty-acid chapters. Primary sources: Cori & Cori (1936–37) on phosphorolysis; Fischer & Krebs (1955); Sutherland’s 1971 Nobel lecture; Utter & Keech (1960); Knoop (1904); Fritz on carnitine (1955–63); Wakil on malonyl-CoA (late 1950s); Majerus, Alberts & Vagelos (1964) naming ACP; McGarry & Foster (1978); Luzzatto, Usanga & Reddy (1969). Carve notes: the integration chapter owns fed/fasted strategy, Cori arithmetic, the F2,6BP switch, AMPK and the ketone bridge; the molecules-of-life book owns fat chemistry and the palmitate-106 survey; §3.1–§3.3 own glycolysis, the wheel and the chain; the organelle atlas owns lysosomes; nutrition science owns essential fats. Next: §3.5 — Nitrogen Metabolism and the Urea Cycle: alanine’s nitrogen after the carbon is spent.',
+        tone: 'path',
+      },
+    ],
+  },
+  {
+    id: 'bioc-nitrogen-metabolism-urea-cycle',
+    title: 'Nitrogen Metabolism and the Urea Cycle: Disposing of Protein’s Poison',
+    domain: 'Life Sciences',
+    field: 'Biochemistry',
+    branch: 'Metabolism',
+    tier: 'intermediate',
+    concepts: [
+      'The amino-acid pool and nitrogen balance: protein is never stored',
+      'Why ammonia is poison, and the three excretion strategies of life',
+      'Transamination: the PLP amino-group shuttle that feeds glutamate',
+      'Glutamate dehydrogenase: the one legal free-ammonia tap',
+      'Blood ferries: glutamine synthetase and the alanine door',
+      'The urea cycle: two nitrogen doors, five stations, two compartments',
+      'The fumarate bridge: how the urea cycle and the citric-acid cycle interlock',
+      'N-acetylglutamate control and the inherited hyperammonemias',
+      'Nitrogen’s other exits: creatine–creatinine and amine messengers',
+    ],
+    words: 6389,
+    readMins: 32,
+    addedOn: '2026-11-02',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'Consider three animals finishing a protein-rich meal: a trout drifting in a river, a sparrow perched on a wire, and the mammal reading this page. Each has broken the meal into the same twenty amino acids, and each faces the same predicament — protein is the only macronutrient that arrives with its own poison. Carbon skeletons burn cleanly to carbon dioxide and water; fat and starch carry no troublesome atoms at all. But every amino acid wears an amino group, and once the carbon has been stripped for fuel the nitrogen stands exposed as ammonia — a molecule that deranges the brain within hours at concentrations blood can barely carry. The trout simply vents it across its gills into ten thousand litres of flowing water. The sparrow cannot afford that luxury: it flies with grams of water, so it spends extra chemical energy welding its nitrogen into a near-insoluble paste excreted with almost no water at all. The mammal took the middle road — a far less toxic, highly soluble molecule, urea, manufactured by a molecular machine called the urea cycle. This lesson follows nitrogen from the dinner plate to the lavatory: how cells move amino groups without ever releasing free ammonia in the wrong room, how the liver collects nitrogen from the whole body, how the cycle works station by station, what it costs, and what happens — in the clinic and across the animal kingdom — when the machine runs short.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'Errors of the urea cycle make dietary protein a poison from the first days of life — the commonest of them, ornithine transcarbamylase deficiency, is the only one inherited on the X chromosome, and its partial forms can fell a previously healthy adult woman after childbirth. A failing liver lets ammonia climb into the brain (hepatic encephalopathy); the drug lactulose rescues these patients by nothing more exotic than acidifying the colon. The transferases ALT and AST are the two most-quoted numbers on a liver chemistry panel; creatinine, produced at a fixed rate from the muscle’s creatine pool, is the number that grades kidney function. And the cycle holds two places in scientific history: it was the first metabolic cycle ever discovered, five years before the citric-acid wheel, and its product was the first organic molecule ever synthesised in a laboratory — the experiment that began the end of vitalism.',
+        tone: 'insight',
+      },
+      {
+        kind: 'callout',
+        title: 'How this lesson is scoped',
+        text: 'The molecules-of-life book owns the carbon half of amino-acid catabolism — its survey paragraph sorts carbon skeletons into glucogenic and ketogenic classes, and its amino-acid lesson introduced ornithine and citrulline as molecule identities. This lesson owns the nitrogen half at machine level: the transamination chemistry, the deamination tap, the blood ferries, and the urea cycle reaction by reaction with its energy bill derived. The cell-biology integration chapter owns the fed/fasted organ map and the glucose–alanine cycle’s strategic framing (its “nitrogen tax” line points here); §3.4 already opened the alanine door among the gluconeogenesis inflows — here we watch what that door carries. Laboratory methods owns urease’s crystallisation history; laboratory medicine owns how urea, creatinine and the transferases are read as panels. Zoology owns the ruminant’s urea recycling; marine biology owns the shark’s habit of keeping urea aboard. Everything below is the nitrogen ledger itself.',
+        tone: 'path',
+      },
+      { kind: 'heading', text: 'The Amino-Acid Pool: Protein Is Never Stored' },
+      {
+        kind: 'para',
+        text: 'Fat has adipose tissue; carbohydrate has glycogen granules and, in plants, starch. Protein has no warehouse. Muscle is not a store — its proteins are contractile machinery with jobs to do, dismantled only at cost. Instead the body holds a modest, fast-turning pool of free amino acids — a few tens of grams in the whole adult, distributed between blood and tissues — through which a comparable mass circulates every few hours: dietary amino acids absorbed from the gut, molecules released by tissue protein being recycled, molecules withdrawn to build new protein or to make nucleotides, hormones and haem, molecules diverted to be burned. The pool is a busy railway station, not a warehouse. Its traffic has a direction the other fuels lack: wherever protein is being broken down, nitrogen is being set free, and free nitrogen has no benign resting state in water. Every route out of the pool ends, sooner or later, at the same destination — ammonia that must be collected, carried and disposed of.',
+      },
+      {
+        kind: 'para',
+        text: 'Physiologists summarise the pool’s ledger in one line: nitrogen balance — dietary intake against output, the output dominated by urea in urine with smaller losses in sloughed skin, gut lining and hair. A growing child, a pregnant woman, a body rebuilding after surgery or infection runs positive balance: intake exceeds output because protein is being built. Fasting, severe illness, immobility or a deficient diet runs negative balance: the body consumes its own proteins faster than it rebuilds them, and the surplus nitrogen leaves as urea — which is why crash diets and prolonged bed rest measurably melt muscle. An average adult needs roughly 0.8 grams of dietary protein per kilogram of body mass per day to hold the balance at zero; a seventy-kilogram adult therefore turns over about 56 grams of protein daily, and we will follow that protein’s nitrogen to the lavatory later in this lesson. Which amino acids the diet must supply is the nutrition book’s territory (the nine essentials are named there); the pool itself is indifferent to provenance — turnover treats diet and self-consumed protein identically.',
+      },
+      { kind: 'heading', text: 'Why Ammonia Is Poison — and the Three Strategies of Life' },
+      {
+        kind: 'para',
+        text: 'Ammonia in water exists in equilibrium between dissolved ammonia, NH3, and the ammonium ion, NH4+. The pair’s pKa is 9.25, so at blood pH 7.4 the Henderson–Hasselbalch arithmetic gives 10^(7.4 − 9.25) ≈ 1.4% as NH3 and 98.6% as NH4+. The charge is both a safety and a trap: the ion cannot diffuse out of a cell on its own, so ammonia sits wherever it forms until an enzyme or a transporter handles it, and the membranes it does cross (as the uncharged 1.4%) pay a price. Toxicity works through at least three doors. First, ammonia pulls the metabolic rug from under the cell: it combines with α-ketoglutarate, the citric-acid cycle’s carbon-hungry entry point, draining the very engine that keeps the cell alive. Second — the mechanism modern work emphasises for the brain — ammonia reaching the brain is mopped up by astrocytes, which convert it to glutamine; glutamine is osmotically active, accumulates inside those cells, and the swollen astrocytes swell the brain. Third, ammonia perturbs neurotransmitter balance — glutamate and GABA among the casualties. Healthy blood carries only tens of micromoles per litre; symptoms begin as the concentration climbs into the hundreds. The margin between routine and lethal is narrow, which is why no animal lets free ammonia circulate for more than a few heartbeats.',
+      },
+      {
+        kind: 'para',
+        text: 'Living machinery answers the nitrogen problem in three ways, and the choice maps almost perfectly onto water. Fish — ammonotelic animals — never let ammonia accumulate: it diffuses across the thin gill epithelium into the surrounding water at almost no cost, because a fish is an ammonia source bathed in an infinite sink. Birds, reptiles, most terrestrial insects and snails — uricotelic animals — take the opposite bet: they spend extra chemical energy converting nitrogen into uric acid, a molecule so poorly soluble it is voided as a semi-solid paste, saving nearly all the water urea would demand. For birds and reptiles the strategy is not a preference but a developmental necessity: the embryo grows inside a sealed egg with no way to vent anything, and ammonia would accumulate to lethal levels inside the shell — precipitated uric acid, by contrast, simply sits inert in the allantoic sac until hatching. Mammals — ureotelic animals — compromise: urea is far less toxic than ammonia and freely soluble, so it cruises the bloodstream at millimolar concentrations and leaves in urine; the price is real water and a few high-energy bonds per molecule. There are magnificent exceptions the other books own: the shark keeps urea aboard not as waste but as ballast, an osmolyte that keeps it from losing salt to the sea (the marine-biology book tells that story, and of the TMAO that tames urea’s chemistry); the cow pumps urea into its rumen, where microbes rebuild waste nitrogen into protein the animal then digests (the zoology digestion chapter owns that circuit). And the molecule itself has a pedestal in the history of science: in 1828 Friedrich Wöhler heated ammonium cyanate and obtained urea — the first organic compound synthesised from purely inorganic starting materials, the experiment that began the end of the doctrine that living chemistry required a special vital force. The waste product of this lesson was, fittingly, the doorway into organic chemistry.',
+      },
+      { kind: 'heading', text: 'Transamination: Moving Nitrogen Without Freeing It' },
+      {
+        kind: 'para',
+        text: 'Before nitrogen can leave the body it must be collected, and collection happens one amino acid at a time by a molecular sleight of hand called transamination: an amino group is swapped from an amino acid onto a keto-acid, converting the donor into its corresponding keto-acid and the acceptor into an amino acid. No nitrogen is released — the group merely changes partners. The swap is catalysed by aminotransferases (also called transaminases), and the universal acceptor is α-ketoglutarate, the citric-acid cycle intermediate: present it with almost any amino group and it becomes glutamate. The two swaps clinical medicine quotes by name are alanine aminotransferase (ALT), which turns alanine + α-ketoglutarate into pyruvate + glutamate, and aspartate aminotransferase (AST), which turns aspartate + α-ketoglutarate into oxaloacetate + glutamate. Transamination therefore funnels the amino groups of nearly the whole amino-acid alphabet onto a single collector molecule — these two enzymes are precisely the “liver enzymes” of a hospital chemistry panel, and the medical-technology book owns how that panel is read.',
+      },
+      {
+        kind: 'para',
+        text: 'The elegance is in the mechanism. Alexander Braunstein and Maria Kritzmann discovered the transfer reaction in Moscow in 1937, and Esmond Snell’s laboratory identified what makes it possible: pyridoxal phosphate (PLP), the active form of vitamin B6 — the vitamin’s payroll was introduced in the molecules-of-life book, and here it earns its chemistry. PLP’s aldehyde condenses with the incoming amino group to form a Schiff base — an aldimine, a C=N link joining cofactor to substrate. The ring of PLP then does the real work: it is an electron sink, absorbing and stabilising the electron pair set loose when the substrate’s α-C–H bond breaks, which lets the bond be broken and re-formed in a controlled sequence instead of a chemical accident. The first half-reaction leaves the amino acid as a keto-acid and the amino group riding on the cofactor itself, which has become pyridoxamine phosphate (PMP). The second half-reaction runs the same algebra in reverse with α-ketoglutarate: PMP hands the amino group over, glutamate is born, PLP is restored. The enzyme’s two substrates never occupy the active site together — a ping-pong mechanism, exactly the kinetic family the enzymes lesson introduced with this very example. One cofactor, two half-reactions, nitrogen banked safely in glutamate — and not a molecule of free ammonia anywhere.',
+      },
+      {
+        kind: 'para',
+        text: 'Why should every road lead through glutamate? Because glutamate is the only amino acid whose α-amino group animal tissues will release as free ammonia. Every other amino acid sheds nitrogen by transamination into the glutamate pool; glutamate alone stands at the junction between collection and disposal. That double role makes it the pivot of the entire nitrogen economy — collector, carrier, and the one licensed source of free ammonia. The next section opens that tap.',
+      },
+      { kind: 'heading', text: 'Oxidative Deamination: The One Legal Tap' },
+      {
+        kind: 'para',
+        text: 'Glutamate dehydrogenase (GDH), a large mitochondrial enzyme abundant in liver, kidney and brain, oxidises glutamate’s α-carbon: glutamate + NAD(P)+ + H2O → α-ketoglutarate + NH4+ + NAD(P)H. Two facts make it special. First, it is one of very few enzymes that accept either NAD+ or NADP+ as electron acceptor — two carrier pools that normally keep strict separate staffs. Second, the reaction is freely reversible, and the enzyme reads the body’s fuel state through allostery: ADP (fuel low — release and burn more) activates it, GTP (fuel rich) inhibits it. In a protein-fed, energy-hungry liver the tap opens: glutamate is stripped, its carbon skeleton α-ketoglutarate re-enters the wheel to be burned, and the freed NH4+ is handed directly to the urea cycle’s first station, a few nanometres away in the same mitochondrial matrix. When ammonia floods in from elsewhere, the reaction runs backwards instead — α-ketoglutarate + NH4+ + NAD(P)H → glutamate — converting free poison into safe carrier in a single step. One enzyme, two directions: the cell’s ammonia thermostat.',
+      },
+      {
+        kind: 'para',
+        text: 'The tap’s importance shows in its malfunction. A family of dominant GDH mutations — the best-known changes amino acid 445 (S445L) — weaken the GTP brake. The enzyme stays open in pancreatic β-cells and in liver, and the clinical result is the rare hyperinsulinism–hyperammonemia syndrome: after a protein meal, leucine’s carbon skeleton floods into β-cells, over-active GDH oxidises it, the amplified mitochondrial signal releases insulin as though sugar had arrived, and blood glucose crashes — while the same over-active enzyme dumps extra ammonia into the blood, usually without brain symptoms because the level stays moderate. Two organs, one enzyme, one lost brake: the allostery chapter’s theory, written out in a child’s blood sugar.',
+      },
+      {
+        kind: 'para',
+        text: 'For completeness: a minor second route exists in kidney and liver — L- and D-amino-acid oxidases, flavoproteins passing electrons straight to oxygen to make hydrogen peroxide; they handle odd substrates and detoxify the D-amino acids of bacterial cell walls, but the bulk traffic flows through GDH. And not every amino acid waits for the liver: many tissues shed their own nitrogen, and the two great ferries that carry it through blood are next.',
+      },
+      { kind: 'heading', text: 'Blood Ferries: Glutamine and the Alanine Door' },
+      {
+        kind: 'para',
+        text: 'Most tissues never see the urea cycle — the five enzymes run only in the liver (and, weakly, the kidney). Peripheral tissues still generate ammonia from turnover and must export nitrogen without exporting poison. Two ferries do the work. Ferry one, glutamine: glutamine synthetase condenses glutamate + NH4+ + ATP → glutamine, spending one ATP to weld a second amino group onto glutamate’s side-chain carboxyl. (The suffix is precise: synthetase marks a ligase that spends ATP, synthase one that joins without nucleoside-triphosphate payment — the wheel already met both, citrate synthase versus succinyl-CoA synthetase in §3.2.) Glutamine — non-toxic, uncharged, the most abundant free amino acid in blood — cruises to the liver, where mitochondrial glutaminase hydrolyses it back: glutamine + H2O → glutamate + NH4+, delivering the nitrogen at the factory gate. The brain runs the same pair in miniature: astrocytes own glutamine synthetase as the organ’s last safety net — exactly the door hepatic encephalopathy shoves open. The kidney adds its own twist: renal glutaminase releases NH4+ into the urine, where it buffers acid — the physiology book owns that ledger.',
+      },
+      {
+        kind: 'para',
+        text: 'Ferry two, alanine. Muscle transaminates its waste amino groups onto pyruvate, and the alanine formed rides the blood to the liver, where alanine aminotransferase runs the swap backwards — alanine’s group lands on α-ketoglutarate, regenerating pyruvate plus glutamate. The pyruvate is not wasted: it is §3.4’s alanine door, one of the gluconeogenesis inflow channels — the carbon is rebuilt into glucose while the nitrogen proceeds to urea. The integration chapter owns the glucose–alanine cycle’s strategy and arithmetic; the point here is the nitrogen half: one molecule carries carbon out of muscle and nitrogen into liver, and the liver unloads both at once.',
+      },
+      { kind: 'heading', text: 'The Urea Cycle: The First Cycle Ever Discovered' },
+      {
+        kind: 'para',
+        text: 'The story begins with a clinical appointment and a home-built laboratory. Hans Krebs, working at the Freiburg hospital in 1931 with his first doctoral student, the physician Kurt Henseleit, set out to measure how the liver makes urea. The method was beautifully simple: slices of liver cut 0.3 millimetres thick — about fifty cell layers — shaken in a salt solution Krebs had tuned to match blood plasma (the solution survives as Krebs–Ringer), with the urea assayed manometrically: add the enzyme urease, which splits urea into carbon dioxide and ammonia, and read the pressure change. On October 26, 1931 Krebs tested a mixture of amino acids and ammonia; on November 15 Henseleit tested the obscure amino acid ornithine — and urea formation leapt. By January 14, 1932 they had titrated the effect: a single molecule of ornithine caused the slices to form about twenty molecules of urea. A catalyst, then — ornithine was not consumed; it must emerge unchanged at the end of a closed loop, having ferried the nitrogen through. Krebs wrote the cycle and submitted the manuscript on June 12, 1932 — Untersuchungen über die Harnstoffbildung im Tierkörper, Hoppe-Seyler’s Zeitschrift für physiologische Chemie, volume 210 — the first metabolic cycle in the history of biochemistry, five years before the citric-acid wheel that made his name. One gap remained: the paper admitted an unknown intermediate “X” between ornithine and arginine. The 1930s resolved it — citrulline (first isolated from watermelon juice in 1930; the fruit’s Latin name gave the molecule its own) and argininosuccinate turned out to be the missing stations — and through the 1940s and 1950s Philip Cohen and Sarah Ratner purified the individual enzymes, Cohen the carbamoyl-phosphate half, Ratner the argininosuccinate steps, turning Krebs’s cycle into reaction-by-reaction enzymology. The wheel’s last station had been known longest of all: arginase, characterised by Kossel and Dakin in 1904, splits arginine into ornithine and urea — the very reaction whose catalytic behaviour gave the cycle its shape.',
+      },
+      {
+        kind: 'para',
+        text: 'The finished machine has five stations and runs in two rooms. Two of its enzymes sit in the mitochondrial matrix, three in the cytosol, and intermediates cross the inner membrane on dedicated carriers. Its deepest design point fits in one sentence: urea’s two nitrogens enter through two different doors, and both doors charge admission. Door one is free ammonium ion — collected by glutamate dehydrogenase and glutaminase inside the matrix and welded onto dissolved bicarbonate by carbamoyl-phosphate synthetase I (CPS-I). Door two is aspartate — an amino acid whose nitrogen arrived by transamination onto the cycle’s own intermediate oxaloacetate, boarding at the third station. The wheel then turns: ornithine → citrulline → argininosuccinate → arginine → ornithine, with urea split off as arginine departs. One turn, two nitrogens collected, one urea released.',
+      },
+      {
+        kind: 'derivation',
+        title: 'The four-bond bill, derived door by door',
+        statement:
+          'Count every high-energy phosphate the cycle spends to add one urea — two nitrogens — to the blood.',
+        prerequisites: [
+          'One high-energy phosphate bond ≈ one ATP-equivalent (§3.1’s ledger convention)',
+          'ATP → AMP + PPi, followed by PPi hydrolysis, costs two bonds (the pyrophosphate rule from the molecules-of-life book)',
+          'Hydrolysis-only steps cost none',
+        ],
+        steps: [
+          {
+            label: 'Door 1 — CPS-I charges the bicarbonate',
+            formula: 'NH4+ + HCO3− + 2 ATP → carbamoyl\\ phosphate + 2 ADP + 2 Pi',
+            explanation:
+              'Two ATP per carbamoyl phosphate: the first activates bicarbonate (through a carboxyphosphate intermediate) so ammonia can attack, the second phosphorylates the carbamate into the final mixed anhydride. Two bonds paid at the matrix door.',
+          },
+          {
+            label: 'Door 2 — aspartate boards at the synthetase',
+            formula: 'citrulline + aspartate + ATP → argininosuccinate + AMP + PPi',
+            explanation:
+              'The ATP is spent making AMP — both high-energy bonds of ATP (α–β and β–γ) broken — and pyrophosphatase promptly hydrolyses the PPi, making the condensation effectively irreversible. Two more bonds.',
+          },
+          {
+            label: 'Stations 2, 4, 5 — exchange and cleave, no charge',
+            formula: 'OTC:\\ 0\\ bonds\\ ·\\ ASL:\\ 0\\ bonds\\ ·\\ arginase:\\ 0\\ bonds',
+            explanation:
+              'Ornithine transcarbamylase merely transfers the carbamoyl group; the lyase splits argininosuccinate without nucleotide triphosphates; arginase hydrolyses. Pure rearrangement — no admission fee.',
+          },
+        ],
+        result:
+          'Total per urea: 2 bonds (CPS-I) + 2 bonds (ASS) = 4 high-energy bonds — the textbooks’ “3 ATP” shorthand, since two ADP and one AMP are consumed. Two nitrogens per urea means two bonds per nitrogen: the standing price of safety. The cycle even refunds part of the bill — the fumarate released at station 4 can be oxidised to oxaloacetate (fumarase, then malate dehydrogenase), banking one NADH worth 2.5 ATP-equivalents on §3.3’s ledger, which cuts the net cost to about 1.5 per urea.',
+      },
+      {
+        kind: 'para',
+        text: 'Now the wheel in motion, station by station. (1) Carbamoyl-phosphate synthetase I sits at the top of the mitochondrial matrix and is among the most abundant enzymes in the liver: disposal must never be the bottleneck. It takes door one’s substrates — NH4+ from GDH and glutaminase, HCO3− from dissolved carbon dioxide — and builds carbamoyl phosphate, a mixed anhydride so reactive it hands its carbamoyl group on like a spring-loaded part. (A guard against a classic confusion: a second enzyme, CPS-II, runs in the cytosol of every cell, takes glutamine’s side-chain nitrogen rather than free ammonia, and feeds pyrimidine assembly — the nucleotide-chemistry lesson owns that road. Same chemical family, different room, different nitrogen, different customer.) (2) Ornithine transcarbamylase transfers the carbamoyl group onto ornithine, the five-carbon scaffold, making citrulline — which leaves the matrix through a specific inner-membrane carrier. (3) Argininosuccinate synthetase activates citrulline with ATP → AMP and couples aspartate’s amino nitrogen: door two boards here. The product, argininosuccinate, is the only molecule in the body carrying both of urea’s nitrogens at once. (4) Argininosuccinate lyase cleaves the scaffold: arginine keeps both nitrogens, and the aspartate’s carbon skeleton is released as fumarate — the bridge, taken just below. (5) Arginase-1 hydrolyses arginine: urea departs to the blood (kidney, urine) and ornithine returns through its own transporter to the matrix, closing the loop. Ornithine, true to Krebs and Henseleit’s manometer, is the catalyst — produced only in the sense that a wheel’s rim is produced.',
+      },
+      {
+        kind: 'para',
+        text: 'Station 4 is where this lesson shakes hands with §3.2. The fumarate released from argininosuccinate does not leave the liver: fumarase adds water, malate dehydrogenase oxidises the product, and oxaloacetate stands ready — the citric-acid cycle’s own entry point. But instead of condensing with acetyl-CoA, oxaloacetate usually takes the transamination exit: aspartate aminotransferase swaps glutamate’s amino group onto it, regenerating the exact molecule door two needs. The two cycles therefore interlock like gear wheels — the urea cycle hands the citric-acid cycle a fumarate; the citric-acid cycle’s chemistry, plus one transamination, hands the urea cycle back an aspartate; and because the aspartate’s nitrogen is a second-hand amino group collected by transamination, nitrogen from anywhere in the body can enter urea by this side door without an extra bond being spent. Biochemists nickname the pair the Krebs bicycle — the same man built both wheels, four years apart and one shared Nobel later (with Lipmann’s coenzyme A; the vitamin payroll stays with the nucleotide-chemistry lesson).',
+      },
+      {
+        kind: 'figure',
+        caption: 'LEFT — nitrogen traffic to the liver: muscle exports glutamine (glutamine synthetase, 1 ATP) and alanine (the alanine door); gut bacteria and the gut wall feed ammonia into the portal vein; the kidney’s glutaminase sends NH4+ straight to urine for acid buffering. RIGHT — the urea cycle, the first metabolic cycle (Krebs & Henseleit, 1932): door one (CPS-I, 2 ATP) and door two (aspartate at ASS, ATP→AMP = 2 bonds) both charge admission; two stations run in the matrix, three in the cytosol; fumarate exits to the citric-acid wheel with its 2.5-ATP-equivalent refund; urea leaves for the kidney.',
+        afterConcept: 5,
+        svg: `<svg viewBox="0 0 880 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nitrogen traffic to the liver and the urea cycle with its two ATP-charging doors">
+  <rect x="0" y="0" width="880" height="520" fill="#faf7f2"/>
+  <text x="220" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">LEFT — nitrogen traffic to the liver</text>
+  <text x="655" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">RIGHT — the urea cycle (1932)</text>
+  <line x1="440" y1="12" x2="440" y2="508" stroke="#d6cec2" stroke-width="2"/>
+  <rect x="24" y="52" width="150" height="66" rx="8" fill="#a3a3a3"/>
+  <text x="99" y="80" text-anchor="middle" font-size="13" fill="#fff">muscle</text>
+  <text x="99" y="98" text-anchor="middle" font-size="11" fill="#fff">amino-acid pool</text>
+  <line x1="60" y1="118" x2="60" y2="168" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2)"/>
+  <text x="58" y="148" text-anchor="end" font-size="10.5" fill="#1f2937">glutamine synthetase</text>
+  <text x="58" y="161" text-anchor="end" font-size="10.5" fill="#1f2937">Glu + NH4+ + ATP</text>
+  <line x1="140" y1="118" x2="140" y2="168" stroke="#b45309" stroke-width="2" marker-end="url(#arr2b)"/>
+  <text x="143" y="148" font-size="10.5" fill="#b45309">alanine door:</text>
+  <text x="143" y="161" font-size="10.5" fill="#b45309">pyruvate + amino group</text>
+  <rect x="20" y="170" width="160" height="26" rx="6" fill="#dbeafe"/>
+  <text x="100" y="187" text-anchor="middle" font-size="11.5" fill="#1d4ed8">blood ferries: glutamine · alanine</text>
+  <line x1="100" y1="196" x2="100" y2="236" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2)"/>
+  <text x="104" y="222" font-size="10.5" fill="#1f2937">unloaded at the liver: glutaminase · ALT</text>
+  <rect x="24" y="252" width="150" height="58" rx="8" fill="#fca5a5" stroke="#b91c1c"/>
+  <text x="99" y="274" text-anchor="middle" font-size="12" fill="#1f2937">gut bacteria + wall</text>
+  <text x="99" y="290" text-anchor="middle" font-size="10.5" fill="#1f2937">urease · glutaminase</text>
+  <text x="99" y="303" text-anchor="middle" font-size="10.5" fill="#1f2937">→ NH4+ in the lumen</text>
+  <line x1="174" y1="280" x2="252" y2="280" stroke="#b91c1c" stroke-width="2" marker-end="url(#arr2r)"/>
+  <text x="213" y="272" text-anchor="middle" font-size="10.5" fill="#b91c1c">portal vein: NH4+</text>
+  <rect x="254" y="238" width="170" height="86" rx="8" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
+  <text x="339" y="260" text-anchor="middle" font-size="13" font-weight="bold" fill="#1f2937">LIVER</text>
+  <text x="339" y="277" text-anchor="middle" font-size="10.5" fill="#1f2937">the machine room</text>
+  <text x="339" y="292" text-anchor="middle" font-size="10.5" fill="#1f2937">GDH · glutaminase → NH4+</text>
+  <text x="339" y="307" text-anchor="middle" font-size="10.5" fill="#1f2937">the cycle runs → (right panel)</text>
+  <rect x="24" y="352" width="170" height="56" rx="8" fill="#bbf7d0" stroke="#15803d"/>
+  <text x="109" y="374" text-anchor="middle" font-size="12" fill="#14532d">kidney</text>
+  <text x="109" y="390" text-anchor="middle" font-size="10.5" fill="#14532d">glutaminase → NH4+</text>
+  <text x="109" y="403" text-anchor="middle" font-size="10.5" fill="#14532d">buffers urine acid</text>
+  <rect x="24" y="440" width="200" height="48" rx="8" fill="#ede9fe"/>
+  <text x="124" y="459" text-anchor="middle" font-size="11" fill="#5b21b6">brain astrocytes: GS = the last net</text>
+  <text x="124" y="475" text-anchor="middle" font-size="11" fill="#5b21b6">glutamine buildup swells the brain</text>
+  <rect x="460" y="48" width="400" height="104" rx="8" fill="#eef2ff"/>
+  <text x="660" y="66" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#3730a3">mitochondrial matrix</text>
+  <rect x="480" y="76" width="176" height="62" rx="6" fill="#dc2626"/>
+  <text x="568" y="94" text-anchor="middle" font-size="12" fill="#fff">CPS-I · door 1 · 2 ATP</text>
+  <text x="568" y="110" text-anchor="middle" font-size="10.5" fill="#fff">NH4+ + HCO3− + 2 ATP</text>
+  <text x="568" y="124" text-anchor="middle" font-size="10.5" fill="#fff">→ carbamoyl-P (NAG arms it)</text>
+  <line x1="656" y1="106" x2="690" y2="106" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2r)"/>
+  <text x="673" y="98" text-anchor="middle" font-size="10.5" fill="#1f2937">OTC · 0</text>
+  <rect x="692" y="76" width="156" height="62" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="770" y="96" text-anchor="middle" font-size="12" fill="#1f2937">ornithine → citrulline</text>
+  <text x="770" y="112" text-anchor="middle" font-size="10.5" fill="#1f2937">carrier exports citrulline ↓</text>
+  <line x1="770" y1="152" x2="770" y2="188" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2)"/>
+  <rect x="460" y="152" width="400" height="322" rx="8" fill="#fffbeb"/>
+  <text x="660" y="172" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#92400e">cytosol</text>
+  <rect x="480" y="190" width="180" height="58" rx="6" fill="#f59e0b"/>
+  <text x="570" y="208" text-anchor="middle" font-size="12" fill="#1f2937">ASS · door 2 · 2 bonds</text>
+  <text x="570" y="224" text-anchor="middle" font-size="10.5" fill="#1f2937">citrulline + aspartate + ATP</text>
+  <text x="570" y="238" text-anchor="middle" font-size="10.5" fill="#1f2937">→ argininosuccinate + AMP</text>
+  <text x="770" y="214" text-anchor="middle" font-size="11" fill="#1f2937">aspartate boards</text>
+  <text x="770" y="230" text-anchor="middle" font-size="11" fill="#1f2937">(2nd N)</text>
+  <line x1="770" y1="236" x2="770" y2="258" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2)"/>
+  <line x1="660" y1="248" x2="660" y2="270" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2)"/>
+  <rect x="480" y="272" width="180" height="48" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="570" y="290" text-anchor="middle" font-size="12" fill="#1f2937">ASL · 0 bonds</text>
+  <text x="570" y="306" text-anchor="middle" font-size="10.5" fill="#1f2937">→ arginine + fumarate</text>
+  <line x1="660" y1="296" x2="660" y2="318" stroke="#1f2937" stroke-width="2" marker-end="url(#arr2)"/>
+  <line x1="660" y1="318" x2="480" y2="352" stroke="#15803d" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arr2g)"/>
+  <text x="512" y="330" font-size="10.5" fill="#15803d">fumarate → fumarase → MDH → OAA</text>
+  <text x="512" y="344" font-size="10.5" fill="#15803d">→ aspartate reloads · +1 NADH (2.5)</text>
+  <rect x="480" y="356" width="180" height="48" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="570" y="374" text-anchor="middle" font-size="12" fill="#1f2937">arginase · 0 bonds</text>
+  <text x="570" y="390" text-anchor="middle" font-size="10.5" fill="#1f2937">Kossel &amp; Dakin 1904</text>
+  <line x1="660" y1="380" x2="700" y2="380" stroke="#b91c1c" stroke-width="2" marker-end="url(#arr2r)"/>
+  <rect x="702" y="360" width="146" height="40" rx="6" fill="#dc2626"/>
+  <text x="775" y="377" text-anchor="middle" font-size="12" fill="#fff">urea → kidney</text>
+  <text x="775" y="392" text-anchor="middle" font-size="10.5" fill="#fff">→ urine (34 g / 100 g protein)</text>
+  <line x1="775" y1="356" x2="775" y2="308" stroke="#6b7280" stroke-width="2" stroke-dasharray="3 3" marker-end="url(#arr2)"/>
+  <text x="800" y="330" font-size="10.5" fill="#6b7280">ornithine</text>
+  <text x="800" y="344" font-size="10.5" fill="#6b7280">returns ↑</text>
+  <text x="660" y="428" text-anchor="middle" font-size="12" fill="#1f2937">net bill: 4 high-energy bonds per urea (≈ 3 ATP) · 2 N per urea · refund ≈ 1.5</text>
+  <text x="660" y="448" text-anchor="middle" font-size="11" fill="#374151">Krebs &amp; Henseleit 1932: 1 ornithine → ~20 urea — the first metabolic cycle</text>
+  <defs>
+    <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#1f2937"/>
+    </marker>
+    <marker id="arr2b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr2r" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#b91c1c"/>
+    </marker>
+    <marker id="arr2g" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#15803d"/>
+    </marker>
+  </defs>
+</svg>`,
+      },
+      {
+        kind: 'example',
+        title: 'Worked Example — From a Protein Meal to Grams of Urea',
+        steps: [
+          'Setup: one 100-gram protein meal. Protein is about 16% nitrogen by mass → 16 g of nitrogen enters the pool (the classical 6.25 g protein per 1 g N conversion).',
+          'Moles of nitrogen: 16 g ÷ 14 g/mol ≈ 1.14 mol of nitrogen atoms.',
+          'Urea carries two nitrogens → 1.14 ÷ 2 = 0.57 mol of urea.',
+          'Mass of urea: 0.57 mol × 60 g/mol ≈ 34 g of urea to be excreted from this single meal.',
+          'Energy bill: 0.57 mol × 4 bonds = 2.3 mol of high-energy bonds ≈ 2.3 mol ATP-equivalents ≈ 70 kJ at §3.1’s 30.5 kJ/mol — a few percent of the meal’s energy, spent purely on rendering nitrogen harmless.',
+          'Scale to a day: the 70-kg adult at 0.8 g protein/kg turns over ≈ 56 g protein → ≈ 9 g N → ≈ 0.64 mol urea ≈ 39 g of urea daily — the bulk of the urine’s solids, and the arithmetic behind the blood-urea readings laboratory medicine interprets.',
+        ],
+      },
+      {
+        kind: 'para',
+        text: 'Control of the machine sits almost entirely at station 1, and it is feed-forward by design. CPS-I is inactive unless it binds N-acetylglutamate (NAG), an allosteric activator made by N-acetylglutamate synthase (NAGS) from acetyl-CoA and glutamate — and NAGS itself is switched on by arginine. Read the logic like a dock manager’s telegram: arginine abundant means cycle intermediates are plentiful and protein is arriving (arginine travels as a marker of amino-acid flux); glutamate abundant means nitrogen is being collected. Both signals true → NAG rises → CPS-I unleashes full rate → the disposal valve opens exactly when nitrogen arrives. Longer term, the five enzymes are induced together: weeks of a high-protein diet measurably raise their levels, and protein restriction lets them fade. And the activator itself became a medicine: NAGS deficiency — a child born unable to make NAG (first described in 1981) — is treated with N-carbamyl-L-glutamate (carglumic acid), a synthetic NAG analogue that switches CPS-I on from the outside: one of the few inherited metabolic errors corrected by simply supplying the missing allosteric key.',
+      },
+      { kind: 'heading', text: 'When the Wheel Breaks: The Inherited Hyperammonemias' },
+      {
+        kind: 'para',
+        text: 'Knock out any station and the design flaw surfaces at once: ammonia from door one still forms — GDH and glutaminase never sleep — but the wheel cannot discharge it. Blood ammonia climbs within hours of the first protein feeds; the newborn refuses milk, vomits, grows lethargic, then seizes and comatose — the classic neonatal metabolic crash. Because the astrocyte net converts the excess to glutamine, brain swelling is the earliest imaging finding. Untreated, repeated decompensations end in death or intellectual disability; treated early, many children develop normally — which is why this chemistry justifies newborn screening. The diagnostic art is reading the debris: which intermediates pile up where tells you which station failed.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'NAGS deficiency: everything downstream low — citrulline low, no argininosuccinate, orotate low — but the flaw is the activator, not a cycle enzyme; carglumic acid reverses the crisis.',
+          'CPS-I deficiency: citrulline low, orotate low — the “high ammonia, low everything” picture, hardest to tell from NAGS without genetic testing.',
+          'Ornithine transcarbamylase (OTC) deficiency — the commonest, and the only X-linked one: citrulline low but orotate high. The fingerprint logic is hub thinking: carbamoyl phosphate backs up in the matrix, leaks into the cytosol, and CPS-II happily converts the overflow into pyrimidines, which spill orotic acid into the urine. Female carriers (one X inactivated per cell — Lyon’s mosaic) often live sub-clinically with a lifelong protein aversion, and can decompensate after childbirth, when protein catabolism peaks.',
+          'Argininosuccinate synthetase deficiency (classic citrullinemia): citrulline towers — it is made but cannot be used — with orotate normal to high.',
+          'Argininosuccinate lyase deficiency (argininosuccinic aciduria): argininosuccinate appears in blood and urine, and the arginine shortage starves hair keratin — brittle, stubby trichorrhexis nodosa hair is the visible sign.',
+          'Arginase deficiency (argininemia): the mildest; arginine piles up, ammonia rises less dramatically — the block sits one station from the exit.',
+          'Transporter defects complete the set: failure of the ornithine carrier (ORNT1) gives the hyperornithinemia–hyperammonemia–homocitrullinuria syndrome; mutations in citrin, the liver’s aspartate–glutamate carrier, give adult-onset type II citrullinemia, common in East Asian populations — proof that the doors between rooms are part of the machine.',
+        ],
+      },
+      {
+        kind: 'example',
+        title: 'Worked Example — Reading a Hyperammonemia Fingerprint',
+        steps: [
+          'A newborn seizes on day 3, after milk feeds begin. Blood ammonia is 680 μmol/L (normal tens). Somewhere in this lesson’s machinery, a station has failed.',
+          'Fingerprint 1 — citrulline is 18 μmol/L (low). The wheel stalls before citrulline can accumulate: the block is at OTC or earlier, or the wheel never started (NAGS, CPS-I).',
+          'Fingerprint 2 — urinary orotate is strongly positive. Backup of carbamoyl phosphate must exist and leak into pyrimidine synthesis — so CPS-I ran (it made carbamoyl phosphate) but OTC could not consume it. NAGS and CPS-I deficiencies are eliminated: their orotate is low.',
+          'Conclusion: OTC deficiency — the commonest answer, confirmed by sequencing the OTC gene. Had citrulline been tenfold high instead, the search would have begun at ASS; had both been low with orotate low, at NAGS/CPS-I.',
+          'The management arithmetic, same night: stop protein (the ammonia source), flood with glucose so the body stops consuming its own protein (negative nitrogen balance suspended), and open the scavenger drains — sodium benzoate conjugates with glycine to form hippurate (each hippurate exported removes 1 nitrogen); sodium phenylbutyrate is oxidised to phenylacetate and conjugated with glutamine (each phenylacetylglutamine removes 2). Two bypass drains around the broken wheel, running to the urine.',
+          'Why arginine is also infused: the wheel is catalytic and has lost intermediates — supplying arginine (arginase splits it to ornithine + urea) refills the rim so the residual cycle activity can turn at all. In a crisis, dialysis buys time; in the long term, liver transplant replaces the machine room outright.',
+        ],
+      },
+      {
+        kind: 'para',
+        text: 'The same chemistry explains the failing liver. In cirrhosis the machine room shrinks: ammonia from the gut — bacterial urease and glutaminase acting on the meal’s protein in the colon — passes through the portal vein into a liver that can no longer finish the wheel, and blood ammonia rises toward the brain. The mainstay drug is delightfully low-tech: lactulose, a synthetic sugar no human enzyme digests, reaches the colon intact, where bacteria ferment it to lactic and acetic acids; the lumen acidifies, NH3 protonates to NH4+, and the charged ion cannot cross the gut wall back into the blood — it leaves in the faeces. The pKa arithmetic of the ammonia section, reversed into therapy. A non-absorbed antibiotic (rifaximin) thins the ammonia-producing flora alongside. And when the liver fails outright, transplant is the definitive repair of the machine room — for the severe inherited cycles too.',
+      },
+      { kind: 'heading', text: 'Nitrogen’s Other Exits: Creatine and the Amine Messengers' },
+      {
+        kind: 'para',
+        text: 'Not all nitrogen waits to be discarded; part of the pool is seconded permanently to work. Creatine — the muscle’s kinetic battery — is built by a two-organ relay. The kidney’s arginine:glycine amidinotransferase (AGAT) clips the guanidino group off arginine onto glycine, making guanidinoacetate; the liver’s guanidinoacetate N-methyltransferase (GAMT) then methylates it with S-adenosylmethionine, the methyl donor introduced in the molecules-of-life book. Blood ferries the finished creatine to muscle, which spends ATP charging it: creatine kinase loads phosphate onto creatine to make phosphocreatine — about two-thirds of the pool, the phosphagen behind every short burst of effort (the integration chapter’s oxygen-debt story and the enzymes lesson’s creatine-kinase isozymes own those frames). The pool leaks by design: each day roughly 1.5% of body creatine cyclises spontaneously, without any enzyme, into creatinine — a dead-end molecule excreted at a rate set almost entirely by muscle mass. That constancy is the gift to laboratory medicine: with production fixed, output becomes a direct read of the kidney’s filtration (the chemistry-panel book owns the eGFR arithmetic). It also means a bodybuilder’s and a child’s creatinine are different normals — the number indexes muscle, not disease, until the muscle changes.',
+      },
+      {
+        kind: 'para',
+        text: 'And some nitrogen leaves as signals rather than waste. The same PLP cofactor that shuffles amino groups sideways can, in decarboxylase hands, cut them loose entirely — carbon dioxide departs, the amine stays: glutamate decarboxylated becomes GABA, the brain’s principal inhibitory transmitter (the mental-health book owns its pharmacology); histidine becomes histamine, the allergic mediator immunology introduced; DOPA becomes dopamine; tryptophan’s route runs on to serotonin. One cofactor family, one reaction class — transamination sideways, decarboxylation down — and the nitrogen economy doubles as the nervous system’s chemistry set. When these amines are finally inactivated, their nitrogen re-enters the pool or files out as urea: even the messengers end their careers in this lesson’s machinery.',
+      },
+      { kind: 'heading', text: 'Applications in the Real World' },
+      {
+        kind: 'list',
+        items: [
+          'Newborn screening: elevated citrulline on a dried blood spot catches classic citrullinemia and argininosuccinic aciduria; OTC deficiency is harder (its citrulline is low) — family history and genetic testing fill the gap.',
+          'Hepatic encephalopathy management: lactulose to trap NH4+ in the acidified colon, rifaximin to shrink ammonia-producing flora — nitrogen arithmetic at the bedside.',
+          'The chemistry panel: ALT and AST for hepatocyte integrity; urea and creatinine with eGFR for kidney function — four numbers, all forged in this lesson’s reactions (laboratory medicine reads them).',
+          'Creatine as a supplement: a modest, real benefit for short-burst power in most controlled studies; worthless without training — and a genuine therapy for GAMT and AGAT inborn errors.',
+          'Urea itself: a keratolytic ingredient in skin creams (it softens keratin), the fertiliser industry’s flagship product (industrial ammonia from the Haber–Bosch process, condensed to urea) — and Wöhler’s 1828 synthesis still marks the moment chemistry annexed biology.',
+          'Rare-metabolism pharmacology: carglumic acid (the missing activator) and the benzoate/phenylbutyrate scavenger pair — two drug classes that are pure metabolic ledger entries.',
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Common Pitfalls',
+        text: 'Transamination never releases free ammonia — it swaps partners; only GDH (and glutaminase) do. Urea’s two nitrogens enter by two doors — NH4+ via CPS-I and aspartate via ASS — and forgetting aspartate is the classic slip. ASS costs two bonds (ATP → AMP + PPi hydrolysis), not one; the total is four bonds ≈ three ATP. The fumarate released at the lyase step is not a loss — the bicycle refunds one NADH (2.5 ATP-equivalents) per urea. OTC deficiency raises orotate (the backup leak into pyrimidines) and lowers citrulline — not the reverse. CPS-I is mitochondrial and ammonia-fed; CPS-II is cytosolic and glutamine-fed. Glutamine synthetase spends ATP — hence the -synthetase suffix. At pH 7.4 ammonia is 98.6% NH4+: charged and membrane-trapped; fish exploit only the gill gradient of the uncharged fraction. And uric acid costs more energy per nitrogen than urea — the uricotelic saving is water, not energy.',
+        tone: 'warn',
+      },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'amino-acid pool', def: 'The small, fast-turning body inventory of free amino acids — a railway station, not a warehouse; protein itself is never stored.' },
+          { term: 'nitrogen balance', def: 'Intake versus output of nitrogen; positive while building tissue, negative while consuming it, zero in the healthy fed adult.' },
+          { term: 'transamination', def: 'Amino-group swap onto α-ketoglutarate via PLP’s Schiff-base algebra — nitrogen collected as glutamate with no free ammonia.' },
+          { term: 'pyridoxal phosphate (PLP)', def: 'Vitamin B6’s active form: electron-sink ring that stabilises the aldimine intermediates of transaminases and decarboxylases.' },
+          { term: 'glutamate dehydrogenase', def: 'The mitochondrial enzyme that alone releases amino nitrogen as free ammonia — reversible, NAD+/NADP+-dual, ADP-on/GTP-off.' },
+          { term: 'glutamine synthetase', def: 'The ATP-spending ferry builder: glutamate + NH4+ → glutamine; in the brain, the astrocytes’ last safety net.' },
+          { term: 'carbamoyl phosphate synthetase I', def: 'CPS-I: the matrix door that welds NH4+ onto bicarbonate with 2 ATP to make carbamoyl phosphate — armed only by N-acetylglutamate.' },
+          { term: 'N-acetylglutamate', def: 'The feed-forward activator of CPS-I, made by NAGS under arginine’s command; its synthetic analogue carglumic acid treats NAGS deficiency.' },
+          { term: 'nitrogen scavenger', def: 'A drug opening alternative drains: benzoate → hippurate (1 N) and phenylbutyrate → phenylacetylglutamine (2 N), each conjugate exported in urine.' },
+        ],
+      },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'One urea molecule carries how many nitrogen atoms, and how many high-energy bonds does the cycle spend per urea?',
+            options: ['1 and 2', '2 and 2', '2 and 4', '1 and 4'],
+            answer: 2,
+            explain: 'Two nitrogens — one via CPS-I’s carbamoyl phosphate, one via aspartate at ASS; 4 bonds = 2 (CPS-I) + 2 (ASS, ATP→AMP + PPi).',
+          },
+          {
+            q: 'A 100-gram protein meal (16% nitrogen) can yield at most how much urea?',
+            options: ['16 g', '30 g', '34 g', '68 g'],
+            answer: 2,
+            explain: '16 g N ÷ 14 g/mol = 1.14 mol N; ÷ 2 N per urea = 0.57 mol; × 60 g/mol ≈ 34 g.',
+          },
+          {
+            q: 'Which two stations of the cycle run inside the mitochondrial matrix?',
+            options: ['CPS-I and OTC', 'ASS and ASL', 'OTC and arginase', 'CPS-I and arginase'],
+            answer: 0,
+            explain: 'CPS-I and ornithine transcarbamylase are the matrix pair; ASS, ASL and arginase run in the cytosol, with citrulline and ornithine crossing on carriers.',
+          },
+          {
+            q: 'A hyperammonemic newborn has LOW citrulline and HIGH urinary orotate. Which station failed?',
+            options: ['CPS-I', 'OTC', 'ASS', 'arginase'],
+            answer: 1,
+            explain: 'Low citrulline (it was never made) with high orotate (backup carbamoyl phosphate leaked into pyrimidines) is the OTC fingerprint — the only X-linked urea-cycle disorder.',
+          },
+          {
+            q: 'Transaminating aspartate’s amino group onto α-ketoglutarate yields:',
+            options: ['oxaloacetate + glutamate', 'fumarate + glutamate', 'alanine + glutamate', 'pyruvate + glutamine'],
+            answer: 0,
+            explain: 'The swap: donor becomes its keto-acid (aspartate → oxaloacetate), α-ketoglutarate becomes glutamate — the door-two reload of the Krebs bicycle.',
+          },
+          {
+            q: 'The fumarate released per turn can be oxidised to oxaloacetate, banking one NADH. At 2.5 ATP-equivalents per NADH, the net cost per urea is about:',
+            options: ['4.0', '2.5', '1.5', '0.5'],
+            answer: 2,
+            explain: '4 bonds paid − 2.5 refunded (fumarase, then MDH making NADH) ≈ 1.5 net ATP-equivalents per urea.',
+          },
+          {
+            q: 'Sodium benzoate removes nitrogen by conjugating with glycine to form:',
+            options: ['phenylacetylglutamine', 'hippurate', 'creatine', 'citrulline'],
+            answer: 1,
+            explain: 'Benzoate → benzoyl-CoA → hippurate (1 N removed per molecule); phenylacetate’s conjugate, phenylacetylglutamine, removes 2.',
+          },
+          {
+            q: 'Why does the embryo inside a sealed bird egg excrete uric acid rather than ammonia?',
+            options: [
+              'uric acid costs less energy',
+              'ammonia would accumulate to lethal levels in the shell; uric acid precipitates harmlessly',
+              'uric acid diffuses through the shell',
+              'the embryo has no urea-cycle genes',
+            ],
+            answer: 1,
+            explain: 'The egg is a closed system: ammonia (soluble, toxic) would build up; uric acid precipitates and sits inert in the allantois until hatching — water economy first, energy second.',
+          },
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Study Path',
+        text: 'Grounding: Nelson & Cox, Lehninger Principles of Biochemistry — the amino-acid-oxidation and urea-cycle chapters; Rodwell et al., Harper’s Illustrated Biochemistry. Primary sources: Wöhler (1828), Poggendorff’s Annalen der Physik; Kossel & Dakin (1904) on arginase; Krebs & Henseleit, Untersuchungen über die Harnstoffbildung im Tierkörper, Hoppe-Seyler’s Z. physiol. Chem. 210:33–66 (submitted June 12, 1932), with Krebs’s 1973 retrospective in Biochemical Education; Braunstein & Kritzmann (1937) on transamination; Snell’s 1940s PLP work; Cohen (1950s) and Ratner & Petrack (1953–56) resolving the enzymes; Rose et al. (2013) on astrocyte glutamine synthetase; Häberle (2011) on NAGS deficiency and carglumic acid; Klassa et al. (2025, J Inherit Metab Dis) on nitrogen scavengers; da Silva et al. (2009) on the creatine–creatinine ledger; StatPearls (2024) on OTC deficiency. Carve notes: the molecules-of-life book owns the carbon skeletons’ glucogenic/ketogenic sorting, ornithine/citrulline as molecules and the vitamin payroll; the enzymes lesson owns ping-pong kinetics and creatine-kinase isozymes; the integration chapter owns the fed/fasted map, the acetyl-CoA hub and the glucose–alanine framing; laboratory methods owns Sumner’s urease; laboratory medicine owns the panels; zoology owns ruminant urea recycling; marine biology owns the shark’s urea ballast; mental health, immunology and the physiology book own GABA, histamine and acid-base respectively. Subject complete: this closes Ch3 and the ku-biochemistry book — three chapters, sixteen lessons. Next: the MASTERSYLLABUS-DONE check, then the next Life Sciences subject per §4 (ku-genetics-heredity gaps per §6.3).',
         tone: 'path',
       },
     ],

@@ -1,7 +1,7 @@
 {
   "$comment": "Every Knowledge-University topic by stable id (spec PART 8: canonical topic registry — check here before authoring; ids are kebab-case, globally unique, stable forever). Regenerate: bun scripts/build-project-registries.ts",
   "builtOn": "2026-11-01",
-  "count": 723,
+  "count": 724,
   "topics": [
     {
       "id": "sci-experimental-design-hypotheses",
@@ -488,16 +488,18 @@
       "subject": "Everyday Math & Numeracy",
       "chapter": "Practical Arithmetic",
       "tier": "core",
-      "words": 883,
-      "readMins": 4,
+      "words": 2811,
+      "readMins": 14,
       "addedOn": "2026-10-16",
       "concepts": [
         "Percent as parts per hundred",
-        "The x-percent of y equals y-percent of x trick",
-        "Percentage change versus percentage points",
+        "The swap trick: x percent of y equals y percent of x",
+        "The 10 percent anchor for tips and discounts",
+        "Percentage change is always measured against the original",
+        "Successive changes combine multiplicatively",
+        "Percentage points versus relative percent",
         "Ratios and the unitary method",
-        "Double-and-halve and distributive shortcuts",
-        "Estimation and sanity checks"
+        "Double-and-halve, distribution, and estimation brackets"
       ]
     },
     {
@@ -2012,6 +2014,28 @@
         "β-oxidation: Knoop’s two-carbon clue, the carnitine tollgate, the four-station spiral",
         "Fatty-acid synthesis: the mirror workshop, ACP and the NADPH bill",
         "The malonyl-CoA traffic light: one molecule decides burn or store"
+      ]
+    },
+    {
+      "id": "bioc-nitrogen-metabolism-urea-cycle",
+      "title": "Nitrogen Metabolism and the Urea Cycle: Disposing of Protein’s Poison",
+      "domain": "Life Sciences",
+      "subject": "Biochemistry",
+      "chapter": "Metabolism",
+      "tier": "intermediate",
+      "words": 6389,
+      "readMins": 32,
+      "addedOn": "2026-11-02",
+      "concepts": [
+        "The amino-acid pool and nitrogen balance: protein is never stored",
+        "Why ammonia is poison, and the three excretion strategies of life",
+        "Transamination: the PLP amino-group shuttle that feeds glutamate",
+        "Glutamate dehydrogenase: the one legal free-ammonia tap",
+        "Blood ferries: glutamine synthetase and the alanine door",
+        "The urea cycle: two nitrogen doors, five stations, two compartments",
+        "The fumarate bridge: how the urea cycle and the citric-acid cycle interlock",
+        "N-acetylglutamate control and the inherited hyperammonemias",
+        "Nitrogen’s other exits: creatine–creatinine and amine messengers"
       ]
     },
     {
@@ -3936,8 +3960,8 @@
       "subject": "Algebra",
       "chapter": "Elementary Algebra",
       "tier": "core",
-      "words": 1409,
-      "readMins": 7,
+      "words": 3496,
+      "readMins": 17,
       "addedOn": "2026-10-24",
       "concepts": [
         "Terms, coefficients, variables, degrees",
@@ -4056,15 +4080,17 @@
       "subject": "Calculus",
       "chapter": "Differential Calculus",
       "tier": "core",
-      "words": 983,
-      "readMins": 5,
+      "words": 3416,
+      "readMins": 17,
       "addedOn": "2026-10-16",
       "concepts": [
         "Average versus instantaneous rate of change",
+        "Why instantaneous speed resisted definition for two millennia",
+        "The falling-ball squeeze: averages over shrinking windows",
         "Secant lines closing onto the tangent",
-        "The difference quotient",
-        "The formal limit definition",
-        "Leibniz and Lagrange notation",
+        "The difference quotient, symbol by symbol",
+        "Why the limit never substitutes h = 0",
+        "Leibniz, Newton and Lagrange: three notations, one object",
         "Continuity, corners, and differentiability"
       ]
     },

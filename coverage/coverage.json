@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T17:41:28.213Z",
+  "generatedAt": "2026-11-01T18:04:17.187Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 140,
     "books": 140,
     "chapters": 899,
-    "sections": 4708
+    "sections": 4709
   },
   "subjects": [
     {
@@ -26996,7 +26996,7 @@
       "group": "Life Sciences",
       "tagline": "The chemistry that runs cells",
       "chapterCount": 3,
-      "sectionCount": 15,
+      "sectionCount": 16,
       "chapters": [
         {
           "id": "ku-biochemistry-molecules-of-life",
@@ -27079,7 +27079,7 @@
           "title": "Metabolic Pathways in Depth",
           "shortTitle": "Metabolic Pathways in Depth",
           "bookId": "ku-biochemistry",
-          "sectionCount": 4,
+          "sectionCount": 5,
           "sections": [
             {
               "id": "ku-bioc-glycolysis-step-by-step",
@@ -27100,6 +27100,11 @@
               "id": "ku-bioc-carbohydrate-lipid-traffic",
               "number": 3.4,
               "title": "Carbohydrate and Lipid Traffic: Storing, Building, Burning"
+            },
+            {
+              "id": "ku-bioc-nitrogen-metabolism-urea-cycle",
+              "number": 3.5,
+              "title": "Nitrogen Metabolism and the Urea Cycle: Disposing of Protein’s Poison"
             }
           ]
         }
