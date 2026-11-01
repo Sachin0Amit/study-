@@ -48,7 +48,10 @@ src/data/knowledge/
 
 ## Provenance
 
-This tree was generated on 2026-11-02 by `scripts/reorganize-knowledge-fields.ts`
-from the legacy flat pass files (`fields/x…-pass.ts`, 87 files) with a
-verified guarantee: every lesson's source text moved verbatim, and the
-serialized registries (`knowledge-meta.json`) came out byte-identical.
+This tree was generated on 2026-11-02 from the legacy flat pass files
+(`fields/x…-pass.ts`, 87 files) with a verified guarantee: every lesson's
+source text moved verbatim, and the serialized registries
+(`knowledge-meta.json`) came out byte-identical. The one-shot migration
+and its snapshot verifier were retired after execution — preserved in
+git history (commit `bbdd668`). This `subjects/` tree is now the
+canonical authoring surface.
