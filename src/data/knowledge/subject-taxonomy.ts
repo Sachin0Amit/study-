@@ -497,11 +497,17 @@ export const SUBJECT_TAXONOMY: TaxonomySubject[] = [
     icon: 'paw-print',
     accent: '#b45309',
     tagline: 'The animal kingdom, up close',
-    blurb: 'Animal diversity, tissues, body plans and how animals sense and behave in the world.',
+    blurb: 'Animal diversity, tissues, body plans, comparative physiology, and how animals sense and behave in the world.',
     ownFields: ['Zoology', 'Animal Biology', 'Animal Behavior'],
     chapters: [
       { name: 'Animal Diversity & Form', branches: ['Animal Diversity', 'Histology'] },
       { name: 'Senses & Behavior', branches: ['Sensory Worlds', 'Minds in the Wild'] },
+      // Salvaged 2026-11-01 from the diverged local line (pass X62) — Ch3 is
+      // MASTER-SYLLABUS §6.6 slot 3.1/3.2 (osmoregulation 3.3 on the queue);
+      // Ch4/Ch5 are the pass's added chapters beyond the tree minimum.
+      { name: 'Comparative Physiology', branches: ['Comparative Physiology'] },
+      { name: 'Comparative Digestion & Metabolism', branches: ['Comparative Digestion', 'Comparative Metabolism'] },
+      { name: 'Animal Reproduction & Life Cycles', branches: ['Reproductive Strategies', 'Life Cycles & Development'] },
     ],
   },
   {

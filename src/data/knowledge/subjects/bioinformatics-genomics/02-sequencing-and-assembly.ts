@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Bioinformatics & Genomics — Chapter 02: Sequencing & Assembly
- * 1 lesson · ~1,164 words
+ * 2 lessons · ~2,753 words (includes the 2026-11-01 salvage increment)
  * field: Bioinformatics
  * legacy sources: x69-library-org-convergence.ts
  *
@@ -12,6 +12,7 @@
  *
  * Lessons (snapshot at reorganization):
  *   02.1 emer-bioinformatics-sequencing-assembly — Genome Sequencing and Assembly: From Reads to Reference
+ *   02.2 bioinfo-genome-assembly — Genome Assembly: Turning Billions of Reads into Chromosomes (~1,589w, salvaged)
  */
 import type { KnowledgeTopic } from '../../types'
 
@@ -156,4 +157,160 @@ export const bioinformaticsGenomicsCh02: KnowledgeTopic[] = [
       },
     ],
   },
+  // Salvaged 2026-11-01 from the diverged local line (pass x60-lifescience-deepening-pass, branch backup-loop-20261101) — ported verbatim into the subjects/ tree.
+  {
+    id: 'bioinfo-genome-assembly',
+    title: 'Genome Assembly: Turning Billions of Reads into Chromosomes',
+    domain: 'Life Sciences',
+    field: 'Bioinformatics',
+    branch: 'Sequencing & Assembly',
+    tier: 'intermediate',
+    concepts: [
+      'The assembly ladder: reads → contigs → scaffolds → chromosomes',
+      'Coverage depth and the Lander–Waterman statistics',
+      'Overlap–layout–consensus: assembling long reads',
+      'De Bruijn graphs: assembling billions of short reads',
+      'Repeats: why assemblies break',
+      'N50: measuring assembly contiguity honestly',
+      'Long reads, hybrid assembly, polishing and telomere-to-telomere',
+    ],
+    words: 1589,
+    readMins: 8,
+    addedOn: '2026-11-01',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'A modern sequencer does not hand you a genome. It hands you fragments — typically a few hundred letters for the short-read machines, and for the long-read platforms somewhere between thousands and a million. A bacterial genome runs a few million letters; a human genome 3.1 billion; the wheat genome 17 billion. Assembly is the computational craft of rebuilding the book from shuffled torn strips: overlap the fragments, order them, and hammer out a consensus letter where they disagree. The genomics lesson already told the Human Genome Project’s story — BAC-by-BAC hierarchy against whole-genome shotgun, and the Bermuda Principle that made the data public. This lesson owns the machinery underneath that race and every one since: what a computer actually does with the reads.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'Every time you hear that a new species’ genome, a cancer genome or a SARS-CoV-2 strain has been “sequenced,” an assembler rebuilt it first. Assembly quality decides whether you see a structural variant or a hallucination, and the field’s hardest open problems — perfect human genomes, cancer karyotypes, metagenome recovery — are assembly problems.',
+        tone: 'insight',
+      },
+      { kind: 'heading', text: 'Core Concepts' },
+      {
+        kind: 'heading',
+        text: 'Coverage: how many strips do you need?',
+      },
+      {
+        kind: 'para',
+        text: 'Shotgun sequencing shreds DNA at random and reads a sample of the pieces. Because the shredding is random, some regions are read many times and others, by luck, not at all. The Poisson statistics of this lottery were worked out by Lander and Waterman: if you sequence total length N of reads for a genome of length G, the average depth of coverage is C = N/G, and the fraction of the genome you have seen at least once approaches 1 − e^(−C). At 5× coverage, roughly 0.7% of the genome is still missing; at 10×, about 0.005%. That exponential tail is why projects buy depth with cheap reads, and why “30×” became the standard depth for a human genome: the gaps from sampling bad luck are gone, and the remaining disagreements are read errors, which the consensus step can vote away.',
+      },
+      {
+        kind: 'formula',
+        name: 'Lander–Waterman coverage',
+        latex: 'C = \\frac{N \\cdot L}{G}, \\qquad P(\\text{uncovered}) = e^{-C}',
+        meaning: 'Coverage C equals reads N times read length L divided by genome length G; the probability a base was never read falls exponentially with depth.',
+      },
+      {
+        kind: 'example',
+        title: 'Planning a bacterial genome run',
+        steps: [
+          'The task: assemble a 5-megabase (5,000,000 bp) bacterial genome to 40× coverage using 150 bp paired-end reads.',
+          'Total bases needed: C × G = 40 × 5,000,000 = 200,000,000 bp.',
+          'Read pairs needed: 200,000,000 ÷ (2 × 150) ≈ 666,667 pairs — about 0.67 million read-pairs, a small fraction of one instrument run.',
+          'Sanity check with Lander–Waterman: the chance any given base went unread is e^(−40) ≈ 4 × 10⁻¹⁸ — sampling gaps are impossible at this depth.',
+          'Conclusion: for bacteria, the problem is never coverage; it is repeats and plasmids, which is where the graph algorithms earn their keep.',
+        ],
+      },
+      { kind: 'heading', text: 'Two ways to overlap: OLC and de Bruijn' },
+      {
+        kind: 'para',
+        text: 'Assemblers come in two great families. Overlap–layout–consensus (OLC) works the way a human solves a jigsaw: compute all worthwhile pairwise read overlaps (“this read’s end matches that read’s start for 400 letters”), build a graph whose nodes are reads and edges are overlaps, pick the heaviest path through it — the layout — and read off a consensus letter at each column. This was the logic behind the early whole-genome assemblers, and it is the natural style for long reads, where each read spans thousands of letters and overlaps are unambiguous and rare.',
+      },
+      {
+        kind: 'para',
+        text: 'The de Bruijn graph takes the opposite route: chop every read into overlapping k-mers — substrings of fixed length k, say 31 — and build a graph whose nodes are (k−1)-mers and whose edges are the k-mers, each read contributing a little path through the graph. Reads are then irrelevant; only the k-mer counts remain. This sounds like madness until you count: a billion reads never need to be compared pairwise (a quadrillion comparisons), because identical k-mers collapse into the same edge. The genome itself becomes the graph — every place where two reads agree is already merged — and assembly means finding an Eulerian path that walks every edge. This is the engine that made billion-read human assembly affordable, and its cost is fixed k: any repeat longer than the k-mer length tangles the graph, because the assembler cannot tell which copy of the repeat a read came from.',
+      },
+      {
+        kind: 'para',
+        text: 'Repeats are the eternal enemy. A genome is full of them — the human Alu element appears over a million times — and a repeat longer than the information in a read breaks the assembly into fragments at exactly that point. Short reads cannot span the repeat, so the graph bulges and the assembler must cut. This is the whole strategic logic of read length: a read longer than the repeat resolves it outright. Long-read platforms now deliver reads of tens of thousands to millions of bases — long enough to walk through most repeats and across entire bacterial genomes — but at higher per-base error rates and cost. The modern compromise is hybrid assembly: long reads for the layout, cheap accurate short reads for the consensus, plus a final polishing pass that realigns short reads to the long-read scaffold and votes on each letter.',
+      },
+      { kind: 'heading', text: 'Scoring an assembly: N50 and its caveats' },
+      {
+        kind: 'para',
+        text: 'How do you know one assembly is better than another? The field’s favorite single number is N50: sort the contigs by length, then walk down the list accumulating bases; N50 is the length of the contig that carries you past half the total. An N50 of 10 kb says the assembly’s bulk lives in blocks of at least 10 kilobases. N50 must be read with total size — a splintered assembly and a good one can share an N50 if their totals differ — and it says nothing about correctness, since mis-joins inflate contiguity while scrambling the genome. Assembly-to-reference comparison, read-mapping agreement and BUSCO gene-completeness checks complete the honest picture.',
+      },
+      {
+        kind: 'example',
+        title: 'Computing N50 by hand',
+        steps: [
+          'Contig lengths: 120 kb, 95 kb, 80 kb, 40 kb, 30 kb, 25 kb, 10 kb — total = 400 kb; half = 200 kb.',
+          'Walk the sorted list: 120 (cumulative 120), 95 (215) — the cumulative total crosses 200 kb at the 95 kb contig.',
+          'N50 = 95 kb. L50 = 2, the number of contigs needed to get there.',
+          'Now merge nothing but reorder nothing — suppose the 120 kb contig was a mis-join of two 60 kb pieces: totals stay 400 kb, but the walk becomes 95, 80, 60 (235) → N50 drops to 80 kb.',
+          'Moral: N50 rewards contiguity, says nothing about whether the joins are real, and always travels with the total-assembly-size context.',
+        ],
+      },
+      {
+        kind: 'para',
+        text: 'The endgame of the craft is the telomere-to-telomere (T2T) human genome, finished in 2022: ultra-long reads stitched through the repeat deserts — the satellite arrays and ribosomal-DNA clusters that stayed “gaps” for twenty years — until every chromosome ran gapless, including the fully sequenced Y. T2T is the proof that with reads long enough and polishing careful enough, the shuffled-strips problem yields completely; what remains open is doing it for every individual genome, cheaply, and for the cancer genomes that are worse than shuffled — rearranged.',
+      },
+      { kind: 'heading', text: 'Key Terms' },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Contig / scaffold', def: 'A gapless assembled sequence (contig); scaffolds additionally order and orient contigs using paired-read and mapping evidence across gaps.' },
+          { term: 'Coverage depth', def: 'Average number of reads spanning a random base, C = NL/G; the probability of an unsequenced base falls as e^(−C).' },
+          { term: 'OLC assembly', def: 'Overlap–layout–consensus: pairwise read overlaps form a graph; natural for long, expensive reads.' },
+          { term: 'De Bruijn graph', def: 'Assembly on k-mers: nodes are (k−1)-mers, edges are k-mers; collapsing reads into k-mer space makes billion-read assembly affordable.' },
+          { term: 'N50', def: 'The contig length at which cumulative sorted contig sizes reach half the assembly; a contiguity metric, not a correctness metric.' },
+          { term: 'Polishing', def: 'Realigning accurate (usually short) reads to the draft and voting per base to correct long-read consensus errors.' },
+        ],
+      },
+      { kind: 'heading', text: 'Check Yourself' },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'Why do de Bruijn assemblers chop reads into k-mers instead of comparing all read pairs?',
+            options: [
+              'k-mers are more chemically stable',
+              'Identical k-mers collapse into shared edges, avoiding quadratic all-vs-all read comparison',
+              'It removes sequencing errors entirely',
+              'k-mers make reads longer',
+            ],
+            answer: 1,
+            explain: 'Billion-read pairwise overlap is computationally impossible; in k-mer space, redundancy merges and the genome itself becomes the graph.',
+          },
+          {
+            q: 'A genome contains a 6,000 bp repeat. Which read assembles across it most reliably?',
+            options: [
+              'A 150 bp Illumina read',
+              'A 250 bp paired-end read pair',
+              'A 15,000 bp long read',
+              'A 31-mer',
+            ],
+            answer: 2,
+            explain: 'A read longer than the repeat spans it and anchors both sides; short reads and k-mers shorter than the repeat cannot distinguish its copies.',
+          },
+          {
+            q: 'Assembly A has N50 = 95 kb and total 400 kb; assembly B has N50 = 95 kb and total 300 Mb. What can you conclude?',
+            options: [
+              'A is more accurate',
+              'B is more contiguous — its bulk sits in 95 kb blocks',
+              'They have identical quality',
+              'Nothing without total sizes and correctness checks — same N50 alone does not compare them',
+            ],
+            answer: 3,
+            explain: 'N50 is only meaningful alongside total assembly size, and it measures contiguity, never correctness — mis-joins can inflate it.',
+          },
+          {
+            q: 'At coverage C, the probability a given base was never sequenced is:',
+            options: ['C/N', 'e^(−C)', '1 − C', '(1 − e^(−C))'],
+            answer: 1,
+            explain: 'Lander–Waterman: random sampling gives Poisson coverage, so the unseen fraction is e^(−C) — the reason depth buys completeness exponentially.',
+          },
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Study Path',
+        text: 'Read after the genomics lesson, which owns the sequencing-platform story and the Human Genome Project race; the synthetic-biology programming lesson names de Bruijn assembly in one line that this lesson expands into the full machinery. The phylogenetics lesson next uses assembled or reference genomes as its raw material.',
+        tone: 'path',
+      },
+    ],
+  },
+
 ]

@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Developmental Biology — Chapter 03: Mechanisms & Model Organisms
- * 2 lessons · ~2,591 words
+ * 3 lessons · ~4,025 words (includes the 2026-11-01 salvage increment)
  * field: Developmental Biology
  * legacy sources: x47-bio-split-pass.ts
  *
@@ -13,6 +13,7 @@
  * Lessons (snapshot at reorganization):
  *   03.1 bio-dev-model-organisms — Model Organisms: Flies, Worms, Fish and the Standard Laboratory Bodies
  *   03.2 bio-dev-morphogenesis — Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo
+ *   03.3 devbio-turing-reaction-diffusion — Turing Patterns: How Chemistry Paints Stripes and Spots (~1,434w, salvaged)
  */
 import type { KnowledgeTopic } from '../../types'
 
@@ -299,4 +300,151 @@ export const developmentalBiologyCh03: KnowledgeTopic[] = [
       },
     ],
   },
+  // Salvaged 2026-11-01 from the diverged local line (pass x60-lifescience-deepening-pass, branch backup-loop-20261101) — ported verbatim into the subjects/ tree.
+  {
+    id: 'devbio-turing-reaction-diffusion',
+    title: 'Turing Patterns: How Chemistry Paints Stripes and Spots',
+    domain: 'Life Sciences',
+    field: 'Developmental Biology',
+    branch: 'Developmental Mechanisms',
+    tier: 'advanced',
+    concepts: [
+      'Two ways to make a pattern: instructed versus self-organized',
+      'Local activation with long-range inhibition',
+      'The reaction–diffusion equations and their parts',
+      'Wavelength selection: why patterns have a size',
+      'Stripes, spots and labyrinths as one dial',
+      'Growth resets the pattern: the growing-lizard experiment',
+      'Where Turing machinery runs in real animals',
+    ],
+    words: 1434,
+    readMins: 7,
+    addedOn: '2026-11-01',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'The developmental-biology lesson taught you the instructed way to build a body: a mother plant’s bicoid messenger RNA at one end makes a gradient, cells read thresholds off it, and Hox genes lock in identity — a blueprint handed down from outside. This lesson owns the other half of patterning, the half no one instructs: self-organization. Some of the most regular patterns in biology — the even spacing of hair follicles, the stripes of an angelfish, the alternating fingers of a growing feather — arise from chemistry that organizes itself. The idea was proposed in 1952 by Alan Turing, the same mind that defined the computer, in a single paper on “the chemical basis of morphogenesis”; it took biology fifty years to catch up.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'Turing’s mechanism is the general explanation for periodic patterns — repeated stripes, spots, scales — that no gradient lays out one by one. It also matters beyond skin: the same activator–inhibitor logic patterns the branching of lungs, the somites that become your vertebrae, and even the spatial organization of ecological predator–prey systems.',
+        tone: 'insight',
+      },
+      { kind: 'heading', text: 'Core Concepts' },
+      {
+        kind: 'heading',
+        text: 'The trick: two molecules, two very different wanderings',
+      },
+      {
+        kind: 'para',
+        text: 'Turing’s recipe needs exactly two ingredients with asymmetric jobs and asymmetric wanderings. An activator promotes its own production (feedback) and also promotes an inhibitor; the inhibitor suppresses the activator. The asymmetry is in diffusion: the activator diffuses slowly — it stays near where it is made — while the inhibitor diffuses fast, spreading far ahead of its source. Start from a nearly uniform field with a tiny random ripple of activator. Where activator is slightly higher, it amplifies itself and drags inhibitor up with it; the inhibitor spreads outward, faster and farther, and crushes activator everywhere except its own immediate neighborhood. Each activator peak thus becomes surrounded by a moat of inhibition, and the field settles into a periodic pattern of peaks whose spacing is set by the diffusion rates and reaction strengths — not by any pre-existing ruler.',
+      },
+      {
+        kind: 'formula',
+        name: 'Reaction–diffusion system (activator–inhibitor)',
+        latex: '\\frac{\\partial u}{\\partial t} = f(u, v) + D_u \\nabla^2 u, \\qquad \\frac{\\partial v}{\\partial t} = g(u, v) + D_v \\nabla^2 v, \\qquad D_u \\ll D_v',
+        meaning: 'Two concentrations u (activator) and v (inhibitor), each changed by local reactions plus diffusion; the diffusion ratio Du ≪ Dv is the design condition for instability.',
+      },
+      {
+        kind: 'para',
+        text: 'The phrase for what happens next is diffusion-driven instability — the strangest phrase in development, because diffusion is supposed to smooth things out, not sharpen them. For most parameter values it does. But Turing found the narrow regime where the coupling reverses the intuition: the uniform state is stable without diffusion (add diffusion terms, but with equal rates, nothing grows), yet unstable with unequal diffusion — the smallest random ripple grows into a standing pattern. The wavelength that grows fastest — the one that wins — is selected by the parameters, and its size sets the spacing between stripes, spots or follicles.',
+      },
+      {
+        kind: 'example',
+        title: 'Why the inhibitor must travel farther (a two-point thought experiment)',
+        steps: [
+          'Imagine a one-dimensional field with two candidate activator peaks, 1 and 2, and tune only the inhibitor’s diffusion constant.',
+          'Inhibitor diffuses poorly: the moat around peak 1 stays local; peak 2, far away, feels nothing and grows too. Result: dense, closely packed pattern — small wavelength.',
+          'Inhibitor diffuses freely: the moat around peak 1 spreads across the whole field; peak 2, at moderate distance, is suppressed. Result: sparse pattern — large wavelength.',
+          'Push further: a single peak’s inhibition can reach everywhere, and no second peak forms at all — the field is a lone spot, the “polarized” limit.',
+          'Moral: one parameter — the ratio of diffusion ranges — dials the pattern from tight stripes to loose spots to a single point. No new molecules, no new instructions.',
+        ],
+      },
+      { kind: 'heading', text: 'One mechanism, many coats' },
+      {
+        kind: 'para',
+        text: 'The same two-molecule machinery produces what look like unrelated patterns, and which one you get depends on the regime. In the classic activator–inhibitor regime of Gierer and Meinhardt, moderate parameters give spots; tilting the balance (inhibitor acting over longer range relative to activator, or slower activator kinetics) stretches spots into stripes; adding a second inhibitory coupling can stripe any region of parameter space. The Gray–Scott alternative — an activator fed by a slowly depleted substrate — produces labyrinthine, slow-crawling patterns like fingerprints. The visual lesson is that nature’s coat catalog (leopard spots, zebra stripes, giraffe networks, the polygonal scales of the ocellated lizard) is a tour of one system’s phase diagram.',
+      },
+      {
+        kind: 'para',
+        text: 'The evidence that living animals actually run this machinery is now strong in three theatres. Angelfish stripes: pigment cells observed over weeks rearrange exactly as a Turing system predicts — including the telling insertion of a new stripe when a growing region becomes too wide for the old count. Hair follicles: spacing across the skin is set by WNT (activator) and its antagonist DKK (inhibitor) with the right diffusion asymmetry, and Turing simulations of the pair reproduce follicle maps, including the disorderly spacing in diseases where the inhibitor is deficient. The ridges of the palate (palatal rugae) and the polygonal scales of the ocellated lizard both switch pattern as tissue grows, matching wavelength selection territory by territory. Note what this list does not include: the segmented stripes of the early fly embryo are laid down by the instructed gradient-plus-gene-network logic the developmental-biology lesson owns, not by Turing chemistry — biology uses both patterning engines, and exam answers must not conflate them.',
+      },
+      { kind: 'heading', text: 'Growth: the pattern that renews itself' },
+      {
+        kind: 'para',
+        text: 'A pattern fixed at birth would tear as the animal grows. Turing systems instead maintain themselves against growth: when the tissue between two stripes stretches until local activator peaks fall too far apart, the inhibition between them weakens, and a new peak nucleates in the gap — stripe insertion, observed directly in growing angelfish and in the lizard’s scale polygons flipping their geometry as the animal enlarges. In organ after organ — feather buds, tastebud renewal, the villi of the gut — growth and Turing dynamics form a loop that keeps spacing near the selected wavelength for a lifetime.',
+      },
+      { kind: 'heading', text: 'Key Terms' },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Turing system', def: 'A reaction–diffusion pair — slow-diffusing self-amplifying activator, fast-diffusing inhibitor — whose uniform state destabilizes into a periodic pattern.' },
+          { term: 'Local activation, long-range inhibition', def: 'The design principle: each peak reinforces itself nearby while suppressing peaks at a distance; spacing is set by the ranges.' },
+          { term: 'Diffusion-driven instability', def: 'The counterintuitive regime where unequal diffusion destabilizes a state that equal diffusion would keep uniform.' },
+          { term: 'Wavelength selection', def: 'Parameters choose one fastest-growing wavelength; that spacing becomes the pattern period — spots or stripes at a characteristic size.' },
+          { term: 'Gierer–Meinhardt model', def: 'The classic activator–inhibitor formulation; regime changes turn its spots into stripes without changing parts.' },
+          { term: 'Gray–Scott model', def: 'Activator-plus-depletable-substrate scheme producing labyrinthine patterns; the fingerprint-look branch of the same idea.' },
+          { term: 'Stripe insertion', def: 'Growth-driven pattern renewal: stretched gaps weaken inhibition, new peaks nucleate, keeping spacing near the selected wavelength.' },
+        ],
+      },
+      { kind: 'heading', text: 'Check Yourself' },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'In a Turing pair, the inhibitor must diffuse faster than the activator so that:',
+            options: [
+              'the pattern moves faster',
+              'each activator peak suppresses others at a distance while keeping its own neighborhood — local activation with long-range inhibition',
+              'the inhibitor can leave the tissue',
+              'the activator can catch up',
+            ],
+            answer: 1,
+            explain: 'The diffusion asymmetry is the engine: self-reinforcement stays local, inhibition travels — and the two ranges set the spacing.',
+          },
+          {
+            q: 'An angelfish grows, and a new pigment stripe appears in the middle of a widening gap. In Turing terms this is:',
+            options: [
+              'a mutation in pigment genes',
+              'stripe insertion: stretched tissue weakens inhibition until a new activator peak nucleates',
+              'apoptosis of old stripes',
+              'a gradient being re-read',
+            ],
+            answer: 1,
+            explain: 'Growth dilutes the inhibitor between peaks; once inhibition fails, the fastest-growing wavelength nucleates a new peak — the pattern maintains its spacing as the animal enlarges.',
+          },
+          {
+            q: 'Which pattern is NOT produced by Turing self-organization, but by the instructed gradient machinery of the early fly embryo?',
+            options: [
+              'Evenly spaced hair follicles',
+              'Angelfish stripes',
+              'The segmental stripes of the Drosophila embryo',
+              'Lizard scale polygons',
+            ],
+            answer: 2,
+            explain: 'The fly embryo’s segments are laid down by bicoid/Hox-style instructed gene networks — the gradient engine — not reaction–diffusion; conflating the two engines is the classic exam trap.',
+          },
+          {
+            q: 'Turning one dial — the inhibitor’s diffusion range — from short to very long would morph the pattern:',
+            options: [
+              'from spots to stripes to nothing at all',
+              'from stripes to spots to a single polarized peak, as distant peaks get suppressed',
+              'from periodic to random and back',
+              'not at all',
+            ],
+            answer: 1,
+            explain: 'Short-range inhibition permits many peaks (dense pattern); long-range inhibition suppresses everything but the strongest, ending at a lone maximum.',
+          },
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Study Path',
+        text: 'Read after the developmental-biology lesson, which owns the instructed patterning engine (bicoid gradients, French-flag thresholds, Hox colinearity) that this lesson deliberately does not re-teach, and after morphogenesis, which owns the cell behaviors that execute whatever pattern is sketched. The evo-devo lesson next shows how the two engines together explain evolutionary change.',
+        tone: 'path',
+      },
+    ],
+  },
+
 ]

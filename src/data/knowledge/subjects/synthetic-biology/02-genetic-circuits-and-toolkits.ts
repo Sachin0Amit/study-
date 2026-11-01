@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Synthetic Biology — Chapter 02: Genetic Circuits & Toolkits
- * 1 lesson · ~1,518 words
+ * 2 lessons · ~2,937 words (includes the 2026-11-01 salvage increment)
  * field: Synthetic Biology
  * legacy sources: x60-library-org-pass.ts
  *
@@ -12,6 +12,7 @@
  *
  * Lessons (snapshot at reorganization):
  *   02.1 emer-synbio-genetic-circuits — Genetic Circuits: Engineering Logic from Repressors
+ *   02.2 synbio-crispr-regulation-toolkit — Beyond Cutting: CRISPRi, CRISPRa and the Regulation Toolbox (~1,419w, salvaged)
  */
 import type { KnowledgeTopic } from '../../types'
 
@@ -172,4 +173,147 @@ export const syntheticBiologyCh02: KnowledgeTopic[] = [
       },
     ],
   },
+  // Salvaged 2026-11-01 from the diverged local line (pass x60-lifescience-deepening-pass, branch backup-loop-20261101) — ported verbatim into the subjects/ tree.
+  {
+    id: 'synbio-crispr-regulation-toolkit',
+    title: 'Beyond Cutting: CRISPRi, CRISPRa and the Regulation Toolbox',
+    domain: 'Life Sciences',
+    field: 'Synthetic Biology',
+    branch: 'Genetic Circuits & Toolkits',
+    tier: 'advanced',
+    concepts: [
+      'Why regulation beats cutting for tuning',
+      'CRISPRi: dead Cas9 as a roadblock',
+      'CRISPRa: recruiting the transcription machine',
+      'Analog control: tuning expression with guide dosage',
+      'Toehold switches: RNA logic in untranslated regions',
+      'Recombinase memory and state machines',
+      'Burden, retroactivity and orthogonal parts',
+    ],
+    words: 1419,
+    readMins: 7,
+    addedOn: '2026-11-01',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'The programming lesson taught you the circuit canon: a toggle switch for memory, a repressilator for rhythm, and the idea that behavior emerges from wiring parts together. The CRISPR lesson taught you the editing endonuclease: cut the double helix, let repair rewrite it. This lesson owns what lies between the two — the regulation toolbox that has made programmable control of gene expression the field’s daily workhorse. Its premise is simple: most engineering jobs want a dial, not a knife. You rarely want to destroy a gene; you want to turn it down 30%, or turn it up in cells that smell lactose, or remember for the rest of a lineage that a signal once arrived. For all of that, cutting is the wrong tool.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'CRISPR interference (CRISPRi) is the workhorse of genome-wide functional screens and metabolic engineering; CRISPR activation (CRISPRa) drives stem-cell differentiation protocols; RNA toehold switches power paper-based diagnostics that ran during Ebola and COVID outbreaks. Regulation, not editing, is where synthetic biology touches most experiments today.',
+        tone: 'insight',
+      },
+      { kind: 'heading', text: 'Core Concepts' },
+      {
+        kind: 'heading',
+        text: 'CRISPRi: the roadblock',
+      },
+      {
+        kind: 'para',
+        text: 'Take Cas9 and mutate its two catalytic domains and you have dCas9 — dead Cas9. It still loads a guide RNA and still finds the matching DNA sequence with the same programmable precision; it simply cannot cut. Parked over a gene’s promoter or early coding region, the protein becomes a physical roadblock: RNA polymerase slams into it and stalls, and transcription falls — near-completely when the guide targets the promoter, partially when it targets the first tens of bases of the coding strand. That is CRISPR interference, and its virtues over cutting are exactly engineering virtues: it is reversible (drop the guide and expression returns), it is titratable (more guide, more blockade), and it leaves the chromosome intact — no repair lottery, no off-target double-strand breaks, no selecting scarred survivors. Because it works in bacteria without the repair machinery cutting requires, it scaled immediately to genome-wide libraries: knock down every gene, one guide-well at a time, and read fitness.',
+      },
+      {
+        kind: 'para',
+        text: 'CRISPRa runs the same machinery in reverse: park dCas9 not as a roadblock but as a tow truck. The trick is fusing (or co-recruiting) a transcriptional activator domain to the dead protein — in bacteria, the carboxy-terminal domain of the alpha subunit of RNA polymerase or the σ-factor; in eukaryotes, activation domains like VP64 or VP16/p65. Guide the fusion to a promoter and it drags the transcription machinery to that spot, booting expression of genes the cell would otherwise barely transcribe. The same genome-wide logic follows: CRISPRa libraries ask the complementary question — “which genes, when over-expressed, rescue or worsen a phenotype?” — and answers it without cloning a single overexpression construct.',
+      },
+      {
+        kind: 'formula',
+        name: 'Guide-dosage analog control',
+        latex: '\\text{expression} \\;\\approx\\; f(\\text{[guide]}) \\;\\Rightarrow\\; \\text{fold-repression} = \\frac{E_0}{E(\\text{[guide]})}',
+        meaning: 'Because blockade probability rises smoothly with guide abundance, guide expression level becomes a continuous dial: expression is analog, not just on/off.',
+      },
+      {
+        kind: 'example',
+        title: 'Tuning a pathway with guide dosage',
+        steps: [
+          'The problem: a two-step pathway makes product P from precursor A, but step 1 runs hot — the intermediate B accumulates and poisons growth.',
+          'The circuit: a guide targeting the step-1 enzyme is placed under an inducible promoter whose inducer concentration you control.',
+          'Calibration: at full guide induction, step-1 expression falls 8-fold; at zero induction it is unchanged; the curve between is monotonic and roughly log-linear in inducer.',
+          'Operation: dial the inducer until B no longer accumulates — roughly a 3-fold knockdown — and flux now flows through step 2 as fast as step 1 supplies it.',
+          'The lesson: with a knife (deletion) you get 0 or 1; with CRISPRi you get every value in between, which is what balancing a pathway actually requires. The metabolic-engineering lesson takes this principle to full pathway scale.',
+        ],
+      },
+      { kind: 'heading', text: 'RNA devices: toehold switches' },
+      {
+        kind: 'para',
+        text: 'Not every circuit wants a protein. Toehold switches are RNA devices that sense other RNAs: a messenger RNA is designed with a hairpin caging its ribosome-binding site, and the cage’s stem exposes a short single-stranded toehold. An input RNA — say, a viral genome segment — binds the toehold and unzip-and-rearranges the hairpin, exposing the binding site and letting translation fire. The output protein can be anything: a reporter, a toxin for cell killing, an enzyme that changes a paper strip’s color. Because the sequence-programmable interaction is RNA-to-RNA, toeholds can be designed by algorithm for any input sequence without touching the cell’s own regulation — the property that made them the engine of freeze-dried, paper-based diagnostics that report Ebola, Zika and SARS-CoV-2 RNA sequences from a sample drop.',
+      },
+      { kind: 'heading', text: 'Memory: recombinase state machines' },
+      {
+        kind: 'para',
+        text: 'A circuit that forgets its inputs the moment they vanish cannot record history. DNA recombinases give biology a write-once memory: serine integrases cut DNA at two short att sites and flip or excise the segment between them, irreversibly. Put a promoter facing backward inside such a segment: the integrase flips it forward, and the gene it drives stays on — and its daughter cells inherit the flip — for generations after the input that triggered the integrase has disappeared. Chaining orthogonal recombinases with overlapping sites yields state machines that count events and store which of several inputs arrived in which order; the recorder writes its log directly into the chromosome. Combined with the toggle-switch memory the programming lesson owns, the field can now build counters, event loggers and permanent lineage marks — the same recombinase logic this book’s single-cell lesson borrows for synthetic lineage recording.',
+      },
+      { kind: 'heading', text: 'The honest engineering limits' },
+      {
+        kind: 'para',
+        text: 'Three limits discipline every design. Burden: every circuit consumes the host’s transcription, translation and energy budgets; a circuit demanding 30% of the cell’s protein synthesis will select hard for mutants that delete it, which is why dials and lightweight RNA devices beat protein-heavy designs in long-running cultures. Retroactivity: a downstream module loads its upstream regulator, changing the signal it was supposed to merely read — insulation motifs and load-driving amplifiers exist precisely for this. Orthogonality: parts must not cross-talk with the host or with each other; dCas9 with a guide library, for instance, faces a fundamental budget — one roadblock protein shared by all guides — so scaling circuits past dozens of simultaneous targets needs orthogonal Cas variants and careful resource accounting. These constraints, not ignorance of circuit theory, define the frontier.',
+      },
+      { kind: 'heading', text: 'Key Terms' },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'dCas9', def: 'Catalytically dead Cas9: still programmable by guide RNA, still binds target DNA, no double-strand cut.' },
+          { term: 'CRISPRi', def: 'CRISPR interference — dCas9 roadblock over promoter or early coding region; reversible, titratable, chromosome-intact knockdown.' },
+          { term: 'CRISPRa', def: 'CRISPR activation — dCas9 fused or co-recruited with transcription-activation domains to boot expression of chosen genes.' },
+          { term: 'Toehold switch', def: 'Designed RNA hairpin caging a ribosome-binding site; input RNA opens it via a single-stranded toehold, coupling RNA sensing to translation.' },
+          { term: 'Serine integrase', def: 'Recombinase that irreversibly flips or excises DNA between att sites — the write-once memory bit behind biological event recorders.' },
+          { term: 'Burden', def: 'Host resources consumed by a circuit (polymerases, ribosomes, energy); over-burdened hosts mutate circuits away.' },
+          { term: 'Retroactivity', def: 'A downstream module loading and distorting its upstream signal; the reason insulation is designed into serious circuits.' },
+        ],
+      },
+      { kind: 'heading', text: 'Check Yourself' },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'The key difference between CRISPR editing and CRISPRi is that CRISPRi:',
+            options: [
+              'cuts DNA more precisely',
+              'blocks transcription with catalytically dead Cas9, leaving the chromosome intact',
+              'requires homologous repair templates',
+              'only works in eukaryotes',
+            ],
+            answer: 1,
+            explain: 'dCas9 parks on the target without cutting; expression drops, the sequence is untouched, and the effect is reversible and titratable.',
+          },
+          {
+            q: 'A toehold switch couples sensing to output by:',
+            options: [
+              'phosphorylating a transcription factor',
+              'an input RNA opening a hairpin that cages the ribosome-binding site',
+              'recruiting dCas9 to the mRNA',
+              'flipping a promoter with an integrase',
+            ],
+            answer: 1,
+            explain: 'The input RNA binds the exposed toehold and unwinds the cage, exposing the RBS — pure RNA-to-RNA programmability, ideal for diagnostics.',
+          },
+          {
+            q: 'Recombinase-based memory is “write-once” because:',
+            options: [
+              'proteins are stable for generations',
+              'the integrase reaction reverses only with a second engineered enzyme, so the flipped DNA is inherited',
+              'it uses RNA which is copied forever',
+              'the cell refuses to transcribe it again',
+            ],
+            answer: 1,
+            explain: 'Serine integrases flip or excise DNA irreversibly without their cognate RDF; the chromosomal edit — and the state it encodes — passes to every descendant.',
+          },
+          {
+            q: 'A heavily expressed circuit gradually disappears from a long-running culture. The most likely culprit is:',
+            options: ['retroactivity', 'burden selecting for circuit-deleting mutants', 'guide RNA degradation', 'CRISPRa over-activation'],
+            answer: 1,
+            explain: 'Circuits tax the host’s transcription and translation budgets; any mutant that sheds the tax outgrows the faithful majority.',
+          },
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Study Path',
+        text: 'The programming lesson owns the toggle switch and repressilator; the CRISPR lesson owns double-strand-break editing — this lesson owns everything between: dead-Cas9 dials, RNA devices, recombinase memory and the burden/retroactivity discipline. The metabolic-engineering lesson next applies the CRISPRi dial to whole pathways.',
+        tone: 'path',
+      },
+    ],
+  },
+
 ]

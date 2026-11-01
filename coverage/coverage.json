@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T06:45:19.297Z",
+  "generatedAt": "2026-11-01T10:05:31.649Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -11,8 +11,8 @@
   "totals": {
     "subjects": 140,
     "books": 140,
-    "chapters": 895,
-    "sections": 4688
+    "chapters": 898,
+    "sections": 4701
   },
   "subjects": [
     {
@@ -27301,7 +27301,7 @@
       "group": "Life Sciences",
       "tagline": "The lives of plants",
       "chapterCount": 3,
-      "sectionCount": 8,
+      "sectionCount": 10,
       "chapters": [
         {
           "id": "ku-botany-the-plant-body",
@@ -27309,12 +27309,17 @@
           "title": "The Plant Body",
           "shortTitle": "The Plant Body",
           "bookId": "ku-botany",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-bio-flowering-plant-body",
               "number": 1.1,
               "title": "The Flowering Plant Body: Morphology and Anatomy"
+            },
+            {
+              "id": "ku-bio-plant-vascular-ultrastructure",
+              "number": 1.2,
+              "title": "Xylem and Phloem Under the Microscope: The Cells That Carry"
             }
           ]
         },
@@ -27324,7 +27329,7 @@
           "title": "Plant Physiology",
           "shortTitle": "Plant Physiology",
           "bookId": "ku-botany",
-          "sectionCount": 5,
+          "sectionCount": 6,
           "sections": [
             {
               "id": "ku-bio-photosynthesis",
@@ -27350,6 +27355,11 @@
               "id": "ku-bio-plant-stomatal-blue-light",
               "number": 2.5,
               "title": "Stomata: Blue-Light Valves and the Water–Carbon Bargain"
+            },
+            {
+              "id": "ku-bio-plant-water-ledger",
+              "number": 2.6,
+              "title": "The Water Ledger: Water-Potential Arithmetic from Soil to Air"
             }
           ]
         },
@@ -27380,8 +27390,8 @@
       "name": "Zoology",
       "group": "Life Sciences",
       "tagline": "The animal kingdom, up close",
-      "chapterCount": 2,
-      "sectionCount": 5,
+      "chapterCount": 5,
+      "sectionCount": 11,
       "chapters": [
         {
           "id": "ku-zoology-animal-diversity-and-form",
@@ -27425,6 +27435,66 @@
               "id": "ku-bio-animal-senses-superpowers",
               "number": 2.3,
               "title": "How Animals Sense the World"
+            }
+          ]
+        },
+        {
+          "id": "ku-zoology-comparative-physiology",
+          "number": 3,
+          "title": "Comparative Physiology",
+          "shortTitle": "Comparative Physiology",
+          "bookId": "ku-zoology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-zoology-gas-exchange-designs",
+              "number": 3.1,
+              "title": "Breathing Underwater, Underground and at Altitude: Gas Exchange Designs"
+            },
+            {
+              "id": "ku-bio-zoology-circulatory-designs",
+              "number": 3.2,
+              "title": "Pumps and Pipework: Circulatory Designs Across the Animal Kingdom"
+            }
+          ]
+        },
+        {
+          "id": "ku-zoology-comparative-digestion-and-metabolism",
+          "number": 4,
+          "title": "Comparative Digestion & Metabolism",
+          "shortTitle": "Comparative Digestion & Metabolism",
+          "bookId": "ku-zoology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-zoology-digestive-strategies",
+              "number": 4.1,
+              "title": "How Animals Eat: Digestive Strategies Across the Kingdom"
+            },
+            {
+              "id": "ku-bio-zoology-metabolic-scaling",
+              "number": 4.2,
+              "title": "Size, Heat and Hunger: The Mathematics of Metabolism"
+            }
+          ]
+        },
+        {
+          "id": "ku-zoology-animal-reproduction-and-life-cycles",
+          "number": 5,
+          "title": "Animal Reproduction & Life Cycles",
+          "shortTitle": "Animal Reproduction & Life Cycles",
+          "bookId": "ku-zoology",
+          "sectionCount": 2,
+          "sections": [
+            {
+              "id": "ku-bio-zoology-reproduction-modes",
+              "number": 5.1,
+              "title": "Strategies for the Next Generation: Reproductive Modes in Animals"
+            },
+            {
+              "id": "ku-bio-zoology-life-cycles",
+              "number": 5.2,
+              "title": "Metamorphosis and Life Histories: From Egg to Adult in Stages"
             }
           ]
         }
@@ -27711,7 +27781,7 @@
       "group": "Life Sciences",
       "tagline": "From one cell to a body",
       "chapterCount": 5,
-      "sectionCount": 6,
+      "sectionCount": 8,
       "chapters": [
         {
           "id": "ku-developmental-biology-building-the-body",
@@ -27749,7 +27819,7 @@
           "title": "Mechanisms & Model Organisms",
           "shortTitle": "Mechanisms & Model Organisms",
           "bookId": "ku-developmental-biology",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-bio-dev-model-organisms",
@@ -27760,6 +27830,11 @@
               "id": "ku-bio-dev-morphogenesis",
               "number": 3.2,
               "title": "Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo"
+            },
+            {
+              "id": "ku-devbio-turing-reaction-diffusion",
+              "number": 3.3,
+              "title": "Turing Patterns: How Chemistry Paints Stripes and Spots"
             }
           ]
         },
@@ -27784,12 +27859,17 @@
           "title": "Evo-Devo: How Development Evolves",
           "shortTitle": "Evo-Devo: How Development Evolves",
           "bookId": "ku-developmental-biology",
-          "sectionCount": 1,
+          "sectionCount": 2,
           "sections": [
             {
               "id": "ku-bio-dev-evo-devo",
               "number": 5.1,
               "title": "Evo-Devo: How Development Evolves"
+            },
+            {
+              "id": "ku-devbio-evo-devo-toolkit",
+              "number": 5.2,
+              "title": "Evo-Devo: Same Toolkit, Different Animals"
             }
           ]
         }
@@ -27801,7 +27881,7 @@
       "group": "Life Sciences",
       "tagline": "Life in the blue",
       "chapterCount": 4,
-      "sectionCount": 4,
+      "sectionCount": 6,
       "chapters": [
         {
           "id": "ku-marine-biology-the-blue-realm",
@@ -27809,12 +27889,22 @@
           "title": "The Blue Realm",
           "shortTitle": "The Blue Realm",
           "bookId": "ku-marine-biology",
-          "sectionCount": 1,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-bio-marine-biology-oceans",
               "number": 1.1,
               "title": "Marine Biology: Life in the Ocean"
+            },
+            {
+              "id": "ku-marine-fish-design-locomotion",
+              "number": 1.2,
+              "title": "Fish in Motion: Body Plans, Fins and the Physics of Swimming"
+            },
+            {
+              "id": "ku-marine-mammals-diving",
+              "number": 1.3,
+              "title": "Warm Bodies in Cold Water: Marine Mammals and the Diving Breath"
             }
           ]
         },
@@ -29211,7 +29301,7 @@
       "group": "Humanities & Social Sciences",
       "tagline": "The examined life",
       "chapterCount": 5,
-      "sectionCount": 10,
+      "sectionCount": 11,
       "chapters": [
         {
           "id": "ku-philosophy-epistemology-and-philosophy-of-science",
@@ -29219,7 +29309,7 @@
           "title": "Epistemology & Philosophy of Science",
           "shortTitle": "Epistemology & Philosophy of Science",
           "bookId": "ku-philosophy",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-phil-epistemology",
@@ -29230,6 +29320,11 @@
               "id": "ku-hum-philosophy-of-science",
               "number": 1.2,
               "title": "Philosophy of Science: How We Know What We Know"
+            },
+            {
+              "id": "ku-phil-pramana-means-of-knowledge",
+              "number": 1.3,
+              "title": "Pramanas: The Means of Knowledge in Indian Logic"
             }
           ]
         },

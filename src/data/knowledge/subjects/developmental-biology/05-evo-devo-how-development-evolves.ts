@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Developmental Biology — Chapter 05: Evo-Devo: How Development Evolves
- * 1 lesson · ~1,598 words
+ * 2 lessons · ~3,028 words (includes the 2026-11-01 salvage increment)
  * field: Developmental Biology
  * legacy sources: x69-library-org-convergence.ts
  *
@@ -12,6 +12,7 @@
  *
  * Lessons (snapshot at reorganization):
  *   05.1 bio-dev-evo-devo — Evo-Devo: How Development Evolves
+ *   05.2 devbio-evo-devo-toolkit — Evo-Devo: Same Toolkit, Different Animals (~1,430w, salvaged)
  */
 import type { KnowledgeTopic } from '../../types'
 
@@ -159,4 +160,138 @@ export const developmentalBiologyCh05: KnowledgeTopic[] = [
       },
     ],
   },
+  // Salvaged 2026-11-01 from the diverged local line (pass x60-lifescience-deepening-pass, branch backup-loop-20261101) — ported verbatim into the subjects/ tree.
+  {
+    id: 'devbio-evo-devo-toolkit',
+    title: 'Evo-Devo: Same Toolkit, Different Animals',
+    domain: 'Life Sciences',
+    field: 'Developmental Biology',
+    branch: 'Evo-Devo',
+    tier: 'advanced',
+    concepts: [
+      'The paradox: wildly different bodies, nearly identical genes',
+      'Deep homology: eyes and appendages built from shared circuitry',
+      'Heterochrony: evolution by changing the timing',
+      'Paedomorphosis and peramorphosis: the axolotl and beyond',
+      'Regulatory mutations: editing switches, not proteins',
+      'The stickleback pelvis: a textbook enhancer deletion',
+      'Modularity, constraint and pleiotropy as evolutionary forces',
+    ],
+    words: 1430,
+    readMins: 7,
+    addedOn: '2026-11-01',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'Compare a fruit fly, a mouse and a human and you are comparing three nearly interchangeable gene lists: the fly shares with us well over half of its protein-coding genes, including every developmental regulator that matters. Yet the bodies differ absurdly. Evolutionary developmental biology — evo-devo — was born from resolving this paradox: the animals differ not mainly in their parts but in how the parts are deployed. Development is run by a conserved toolkit of transcription factors and signals, and evolution mostly edits the switches that control when and where each tool is used. The developmental-biology lesson owns the toolkit’s core — Hox colinearity, the Pax6 master eye gene, the beetle that lost its hind wings. This lesson owns the evolutionary logic: what happens to that toolkit as lineages diverge, and why the results look the way they do.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'Evo-devo reframed the question “how does new form evolve?” — the answer is largely “by rewiring regulation, not by inventing new proteins.” That reframing explains rapid morphological change, the return of lost traits, and why some designs never appear no matter how useful they would be.',
+        tone: 'insight',
+      },
+      { kind: 'heading', text: 'Core Concepts' },
+      {
+        kind: 'heading',
+        text: 'Deep homology: the same circuit, the opposite anatomy',
+      },
+      {
+        kind: 'para',
+        text: 'The field’s founding shock was that structures with no common anatomical origin are built by the same genes. The compound eye of an insect and the camera eye of a vertebrate evolved independently — yet both are specified by Pax6: the developmental-biology lesson showed a fly growing an extra eye on a leg when and where Pax6 was misexpressed. The Distal-less gene builds the outgrowth machinery of appendages as unrelated as insect legs, vertebrate limbs, and the tube feet of sea urchins; the same hedgehog-signaling logic patterns the limb bud’s asymmetry, the feather’s barb identity and the neural tube’s ventral domains. Deep homology is the name for this pattern: the regulatory circuit is older than the organ, having been inherited from a common ancestor and deployed by each descendant on whatever structure its lineage was building. The consequence for evolution is profound — new organs do not require new genes; they require a new address for an old one.',
+      },
+      { kind: 'heading', text: 'Heterochrony: evolution of the timetable' },
+      {
+        kind: 'para',
+        text: 'The cleanest way to redeploy a toolkit is to change when it runs. Heterochrony is evolutionary change in the timing of developmental events, and it comes in two great families. Paedomorphosis is the retention of juvenile features in the adult — the adult stops developing early. Its most famous case is the axolotl: a salamander that breeds with its larval aquatic form, gills and all, having lost the metamorphosis its cousins still perform; thyroid hormone can force it to complete the change, proving the adult program survives, merely untriggered. Peramorphosis is the opposite — development runs longer or faster, exaggerating adult traits past the ancestral endpoint; the enormous antlers of large deer lineages, hyper-extended by scaling the growth period, are the textbook case. Timing shifts are cheap mutations with outsized effects, which is why heterochrony recurs whenever lineages invade new habitats with different adult demands.',
+      },
+      { kind: 'heading', text: 'Regulatory evolution: editing the switches' },
+      {
+        kind: 'para',
+        text: 'The molecular heart of evo-devo is where mutations with morphological consequences actually land. A coding mutation changes a protein everywhere it works — and since toolkit proteins are pleiotropic, working in dozens of organs, the mutation damages all of them at once; evolution resists this. A mutation in a gene’s regulatory switches — the hundreds of enhancers that each control one time-and-place of expression — changes one deployment and nothing else. Selection therefore edits switches preferentially, and morphological evolution is overwhelmingly regulatory evolution. The stickleback fish is the canonical demonstration: ocean sticklebacks carry a robust pelvic skeleton (the spiny armor), while countless lake populations evolved armor loss in parallel — and the mutation is a deletion of a specific enhancer of the Pitx1 gene, a switch that drives expression in the developing pelvis. The Pitx1 protein is untouched and still does its other jobs; the pelvis alone vanished. Better still, the parallel armor losses in separate lakes map to this same regulatory region while the coding sequence stays intact — precisely the switch-editing prediction.',
+      },
+      {
+        kind: 'example',
+        title: 'Reading the stickleback pelvis result',
+        steps: [
+          'The phenotype: freshwater lake sticklebacks repeatedly lose the pelvic spines their ocean ancestors carried — dozens of independent lakes, same loss.',
+          'The mapping: the trait tracks to Pitx1, a gene whose protein is expressed in mouth, pituitary and pelvis — outright loss of the gene would be lethal or multi-defect.',
+          'The comparison: lake fish have normal Pitx1 protein sequence and normal expression in mouth and pituitary — but pelvis-expression is gone.',
+          'The lesion: a deletion of the pelvis-specific enhancer (the switch), leaving every other deployment intact — pleiotropy dodged by editing one line of the address book.',
+          'The evolutionary lesson: parallel armor loss in many lakes used the same switch, because with hundreds of switches and one coding sequence to break, regulatory paths are where selectable variation lives.',
+        ],
+      },
+      { kind: 'heading', text: 'Modularity and constraint: why some things never evolve' },
+      {
+        kind: 'para',
+        text: 'Two closing principles discipline the story. Modularity: development is built of semi-independent modules — limb, jaw, pigment stripe — each with its own switch set, so modules evolve separately and get co-opted whole into new roles (a jaw module becomes ear bones; a limb module becomes a wing). Modularity is why evolution is tinkering, not redesign. Constraint: the toolkit’s entanglement limits what selection can reach. A gene deployed in many modules cannot change its protein freely (pleiotropic constraint); lineage history locks in body plans — no vertebrate will re-evolve the insect’s exoskeleton molting program, because every downstream module now assumes the vertebrate plan. Deep homology explains why evolution keeps reusing the same circuits; constraint explains why it reuses them in the same characteristic ways. Together they turn evo-devo from a catalog of curiosities into a predictive framework: where variation is abundant (switches), what is reachable (module recombination), and what will never appear (whatever would require breaking pleiotropy).',
+      },
+      { kind: 'heading', text: 'Key Terms' },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Deep homology', def: 'Shared regulatory ancestry of structures that evolved independently — insect and vertebrate eyes under Pax6; limbs, legs and tube feet under Distal-less.' },
+          { term: 'Heterochrony', def: 'Evolutionary change in developmental timing; the cheapest route to large morphological change.' },
+          { term: 'Paedomorphosis', def: 'Adult retention of juvenile features via earlier stopping — the breeding larva of the axolotl, metamorphosis untriggered.' },
+          { term: 'Peramorphosis', def: 'Development extended or accelerated past the ancestral endpoint — exaggerated adult traits like lineage-scaled antler growth.' },
+          { term: 'Regulatory evolution', def: 'Morphological change from mutations in enhancers/switches rather than protein sequence — dodging pleiotropy by editing one deployment.' },
+          { term: 'Pitx1 enhancer', def: 'The stickleback pelvis switch whose deletion removes pelvic spines while leaving the gene’s other duties intact; the switch-editing exemplar.' },
+          { term: 'Modularity', def: 'Semi-independent development of parts, each with its own regulation — the property that lets evolution recombine and co-opt without breaking the whole.' },
+          { term: 'Pleiotropic constraint', def: 'One protein serving many modules resists coding change — the reason toolkits stay conserved while forms diverge.' },
+        ],
+      },
+      { kind: 'heading', text: 'Check Yourself' },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'Deep homology means that the insect compound eye and the vertebrate camera eye:',
+            options: [
+              'evolved from a single common eye',
+              'arose independently but are both specified by homologous regulatory machinery such as Pax6',
+              'use completely unrelated genes',
+              'are identical in structure',
+            ],
+            answer: 1,
+            explain: 'The structures are anatomically independent inventions; the circuit that says “build an eye here” is shared ancestry — the regulator predates the organ.',
+          },
+          {
+            q: 'The axolotl breeds as a swimming, gilled larva. This is classic:',
+            options: ['peramorphosis', 'paedomorphosis', 'heterotopy', 'homeosis'],
+            answer: 1,
+            explain: 'Development stops early and the juvenile form becomes the reproductive adult — thyroid hormone can still force the ancestral metamorphosis, proving the program is untriggered, not lost.',
+          },
+          {
+            q: 'Loss of pelvic spines in lake sticklebacks traces to:',
+            options: [
+              'a frameshift in the Pitx1 coding sequence',
+              'deletion of the pelvis-specific enhancer of Pitx1, leaving the protein and its other roles intact',
+              'a whole-chromosome loss',
+              'increased thyroid hormone',
+            ],
+            answer: 1,
+            explain: 'The switch for pelvis expression is deleted; every other deployment of Pitx1 still works — the textbook case of regulatory evolution dodging pleiotropy.',
+          },
+          {
+            q: 'Why does natural selection preferentially edit regulatory switches rather than toolkit proteins?',
+            options: [
+              'Switches mutate more often',
+              'Switch changes alter one time-and-place of deployment, while protein changes damage every module the gene serves',
+              'Proteins cannot change at all',
+              'Switches are dominant alleles',
+            ],
+            answer: 1,
+            explain: 'Pleiotropy: a toolkit protein works in many organs, so coding mutations pile on correlated damage; enhancer edits confine the effect — selectable variation concentrates there.',
+          },
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Study Path',
+        text: 'This lesson builds directly on the developmental-biology lesson (owner of Hox colinearity, Pax6 and the beetle-wing example cited here) and the Turing-pattern lesson (the second patterning engine whose redeployment heterochrony re-times). The genetics lesson owns the Mendelian machinery; evolution lessons own selection — this lesson is the bridge where genes, development and selection meet.',
+        tone: 'path',
+      },
+    ],
+  },
+
 ]

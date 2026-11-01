@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Philosophy — Chapter 01: Epistemology & Philosophy of Science
- * 2 lessons · ~2,333 words
+ * 3 lessons · ~3,967 words (includes the 2026-11-01 salvage increment)
  * field: Philosophy
  * legacy sources: humanities.ts
  *
@@ -13,6 +13,7 @@
  * Lessons (snapshot at reorganization):
  *   01.1 phil-epistemology — Epistemology: What Can We Know?
  *   01.2 hum-philosophy-of-science — Philosophy of Science: How We Know What We Know
+ *   01.3 phil-pramana-means-of-knowledge — Pramanas: The Means of Knowledge in Indian Logic (~1,634w, salvaged)
  */
 import type { KnowledgeTopic } from '../../types'
 
@@ -244,4 +245,158 @@ export const philosophyCh01: KnowledgeTopic[] = [
       ] },
     ],
   },
+  // Salvaged 2026-11-01 from the diverged local line (pass x62-pramana-pass, branch backup-loop-20261101) — ported verbatim into the subjects/ tree.
+  {
+    id: 'phil-pramana-means-of-knowledge',
+    title: 'Pramanas: The Means of Knowledge in Indian Logic',
+    domain: 'Humanities',
+    field: 'Philosophy',
+    branch: 'Epistemology',
+    tier: 'intermediate',
+    concepts: [
+      'Pramana, prameya, prama: the vocabulary of Indian epistemology',
+      'The four classical pramanas: perception, inference, comparison, testimony',
+      'Postulation (arthapatti) and non-apprehension (anupalabdhi): the disputed fifth and sixth',
+      'Who accepts how many: the school-by-school count',
+      'The five-membered inference (avayava) of Nyaya',
+      'Vyapti: the invariable concomitance that powers inference',
+      'The Buddhist reduction: two pramanas, two realities',
+      'Carvaka: the one-pramana sceptics',
+    ],
+    words: 1634,
+    readMins: 8,
+    addedOn: '2026-11-01',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'Western epistemology asks what knowledge is and famously struggled to define it — the justified-true-belief formula and its Gettier cracks are the Philosophy book\u2019s next lesson but one. Classical Indian philosophy asked a different first question, and asked it earlier: through what instruments does knowledge arrive at all? The answer framework is the theory of pramanas — literally "means of knowledge" or "sources of valid cognition". Where a Western course organises around scepticism and justification, an Indian course organises around a census: how many reliable channels connect mind to world, and what exactly does each one deliver? Every major school of Indian thought declared its count, and the counts became identity badges: to accept or reject a pramana was to accept or reject a whole picture of reality.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'The pramana framework is the operating system of two thousand years of Indian argument — court debate (katha), disputation (vada), and the commentarial tradition all run on it. For the exam syllabus that lists this topic, the school-by-school pramana table and the five-membered inference are the two most-tested items.',
+        tone: 'insight',
+      },
+      { kind: 'heading', text: 'The vocabulary first' },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Pramana', def: 'The means or instrument of valid knowledge — the channel, not the content.' },
+          { term: 'Prameya', def: 'The object of valid knowledge — that which is known.' },
+          { term: 'Prama', def: 'Valid knowledge itself — the true cognition produced by a pramana.' },
+          { term: 'Aprama', def: 'Invalid cognition — error, doubt, or misapprehension, each with its own analysis.' },
+        ],
+      },
+      {
+        kind: 'para',
+        text: 'Keep the grammar straight and half the confusion dissolves: perception is a pramana; the pot you see is a prameya; your seeing of the pot is prama. When a school "accepts perception and inference only", it is making a claim about instruments — that testimony, say, reduces to one of the other two rather than being an independent channel.',
+      },
+      { kind: 'heading', text: 'The six candidate pramanas' },
+      {
+        kind: 'para',
+        text: 'The classical list, consolidated by the Nyaya school from Gautama\u2019s Nyaya-sutra onward, presents up to six candidates. Every school then prunes. Perception (pratyaksha) is knowledge arising from the contact of sense faculty and object — sight of the pot, touch of the fire. Inference (anumana) is knowledge that follows from a mark: smoke on the hill, fire inferred. Comparison (upamana) is knowing a thing by being told it resembles a known thing — the person who learns "a gavaya is like a cow" and then recognises the wild animal. Testimony (shabda) is the word of a trustworthy source, spoken or scriptural. Postulation (arthapatti) is the presupposition required to make an observed fact coherent: the fat man who does not eat by day must eat by night — the observed facts force an unseen explanation. Non-apprehension (anupalabdhi) is knowledge of an absence through the absence of perception: the pot is not on the mat because, being visible and not seen there, its non-perception is itself informative.',
+      },
+      {
+        kind: 'list',
+        ordered: false,
+        items: [
+          'Pratyaksha — perception: faculty–object contact.',
+          'Anumana — inference: knowledge "after measurement", from a mark.',
+          'Upamana — comparison: knowledge via told resemblance.',
+          'Shabda — testimony: reliable word.',
+          'Arthapatti — postulation: the unseen assumption that makes the seen coherent.',
+          'Anupalabdhi — non-apprehension: absence known through failed perception.',
+        ],
+      },
+      { kind: 'heading', text: 'The school-by-school count' },
+      {
+        kind: 'para',
+        text: 'The counts are the classic examination grid. Carvaka, the materialist sceptics, accepted perception alone — inference, they argued, depends on universals and invariable connections that no one has ever perceived, so the syllogism is a confidence trick. The Buddhist schools (following Dignaga and Dharmakirti) accepted perception and inference, and paired the two with a metaphysics: perception reaches the particular (svalakshana), inference reaches the general concept (samanyalakshana); a pramana per reality. Nyaya and Vaisesika accepted four — perception, inference, comparison, testimony — treating postulation and non-apprehension as reducible to inference and perception respectively. Mimamsa, the ritual-hermeneutic school, is the maximalist: Kumarila\u2019s faction defended all six, insisting postulation and non-apprehension do independent work that the other four cannot do. Vedanta (Advaita) follows Mimamsa in accepting six. Samkhya accepts three — perception, inference, testimony — as does Yoga with its distinctive trusted-source rider. The joint is where the philosophy lives: every reduction claim ("testimony is just inference about the speaker\u2019s reliability") provoked a counter-treatise, and the pramana literature is that argument, institution by institution.',
+      },
+      {
+        kind: 'formula',
+        name: 'The pramana census (classical positions)',
+        latex: '\\text{Carvaka } 1 \\;<\\; \\text{Buddhist } 2 \\;<\\; \\text{Samkhya/Yoga } 3 \\;<\\; \\text{Nyaya/Vaisesika } 4 \\;<\\; \\text{Mimamsa/Vedanta } 6',
+        meaning: 'Six candidate pramanas, five canonical counts: each school\u2019s number encodes its theory of what channels genuinely connect mind to world.',
+      },
+      { kind: 'heading', text: 'Anatomy of an inference: the five members' },
+      {
+        kind: 'para',
+        text: 'Nyaya\u2019s contribution that travelled furthest is the explicit statement form of inference, the five-membered avayava. To prove "the hill has fire" from its smoke, the full Nyaya statement runs: (1) the thesis (pratijna) — "the hill has fire"; (2) the reason (hetu) — "for it has smoke"; (3) the universal rule (udaharana) — "whatever has smoke has fire, like a kitchen"; (4) the application (upanaya) — "this hill has smoke"; (5) the conclusion (nigamana) — "therefore this hill has fire". The Western categorical syllogism, taught with its Venn-diagram test in the reasoning lesson, compresses members 3–5 into its minor premise and conclusion; what the Indian form keeps explicit is the example-with-instance (the kitchen) — the concrete witness that grounds the universal rule. Later Navya-Nyaya, from Gangesa\u2019s Tattvacintamani on, industrialised the theory: the reason must be free of the three formal faults, the rule must be a genuine vyapti — an invariable concomitance, smoke-where-fire, certified by repeated observation and the failure of counterexamples — and the inference fails if the mark occurs where the probandum is absent.',
+      },
+      {
+        kind: 'example',
+        title: 'State an inference in the five-membered form',
+        steps: [
+          'Pratijna (thesis): "The hill has fire."',
+          'Hetu (reason): "Because it has smoke."',
+          'Udaharana (rule + example): "Wherever there is smoke, there is fire — as in a kitchen."',
+          'Upanaya (application): "This hill has smoke (of that kind)."',
+          'Nigamana (conclusion): "Therefore this hill has fire."',
+        ],
+      },
+      {
+        kind: 'para',
+        text: 'The design is dialectical, not just deductive: members 1 and 2 stake the claim, member 3 shoulders the burden of proof with an instance anyone can check, member 4 ties the instance-rule to the case at hand, and member 5 registers agreement. In formal debate (vada) a respondent could attack member 3 — deny the vyapti, or produce a place with smoke and no fire (a red-hot iron ball\u2019s heated air, say) — and the debate turned on exactly the moves a modern logician would call challenging the major premise for a hidden defeater.',
+      },
+      { kind: 'heading', text: 'The philosophical engine room' },
+      {
+        kind: 'para',
+        text: 'Three debates define the literature. First, the reduction wars: is testimony its own pramana (Mimamsa: words from a reliable speaker generate knowledge directly) or disguised inference (a Carvaka-adjacent line Nyaya rejects — you would have to verify the speaker\u2019s reliability before every sentence, which nobody does and children could not do)? Second, the perception wars: Buddhists built a two-level theory — indeterminate perception of pure particulars, then determined judgement that already mixes in concepts — so that "the pot" as a recognisable, nameable item is already construction; Nyaya answered with a compound theory of perception that includes classification from the start. Third, the absence wars: is non-apprehension an independent instrument (you know the absent pot precisely because a seeable thing is not seen), or is absence just another perceivable qualified object? Kumarila\u2019s examples — the fat man who must eat by night, the missing pot on the mat — remain the standard illustrations precisely because they are hard to reduce away.',
+      },
+      {
+        kind: 'callout',
+        title: 'The bridge to the Western table',
+        text: 'Set the pramana question beside the Western one and the systems light each other up: rationalism and empiricism are arguing about pramana priority among sources the Indian schools had already separated; the Gettier problem presupposes a definition of prama that Indian theorists stated as the requirement that valid cognition be uncontradicted (abhadhita) and novel (anadhigata); and vyapti is the classical ancestor of what modern logic calls a strict implication or lawlike regularity.',
+        tone: 'path',
+      },
+      { kind: 'heading', text: 'Common traps' },
+      {
+        kind: 'list',
+        ordered: false,
+        items: [
+          'Confusing pramana (instrument) with prama (the resulting knowledge) — the classic one-mark loss.',
+          'Assigning six pramanas to Nyaya — Nyaya\u2019s canonical count is four; the maximalist six belongs to Mimamsa and Vedanta.',
+          'Translating anumana as "guessing" or "intuition" — it is strictly inference from a mark through a rule.',
+          'Forgetting arthapatti\u2019s signature structure: the observed facts must be otherwise inexplicable (the day-fasting fat man).',
+          'Stating the five members without the example (kitchen) — the udaharana with its instance is what distinguishes the Nyaya form from the bare Western syllogism.',
+        ],
+      },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'A school accepts perception and inference as the only pramanas, pairing perception with particulars and inference with generalities. Which school is it?',
+            options: ['Nyaya', 'Buddhist (Dignaga–Dharmakirti tradition)', 'Mimamsa', 'Carvaka'],
+            answer: 1,
+            explain: 'The Buddhist two-pramana reduction ties each pramana to one kind of reality: perception reaches the particular (svalakshana), inference the general (samanyalakshana). Nyaya accepts four, Mimamsa up to six, Carvaka only perception.',
+          },
+          {
+            q: 'You know a visibly fat man does not eat during the day, and conclude he eats at night. Which pramana is at work?',
+            options: ['Anumana (inference)', 'Upamana (comparison)', 'Arthapatti (postulation)', 'Anupalabdhi (non-apprehension)'],
+            answer: 2,
+            explain: 'This is Kumarila\u2019s stock example of arthapatti: the observed facts (fatness plus day-fasting) cannot be made coherent without presupposing the unseen fact (night eating). No mark-to-rule inference produces it; the data force it.',
+          },
+          {
+            q: 'In the five-membered Nyaya proof that the hill has fire, which member states "whatever has smoke has fire, like a kitchen"?',
+            options: ['Pratijna', 'Hetu', 'Udaharana', 'Nigamana'],
+            answer: 2,
+            explain: 'The udaharana (universal rule with example) is member 3 — the burden-bearing step that grounds the vyapti with a checkable instance, which is exactly what distinguishes the Nyaya form from the compressed Western syllogism.',
+          },
+          {
+            q: 'The Carvaka rejection of inference argues that:',
+            options: [
+              'inference is valid but too slow to be a pramana',
+              'the invariable concomitances inference needs are themselves never perceived',
+              'perception is fallible, so only inference is trustworthy',
+              'testimony is more fundamental than either perception or inference',
+            ],
+            answer: 1,
+            explain: 'Carvaka accepts only pratyaksha and attacks anumana at its foundation: a vyapti (all-smoke-has-fire) is a universal connection that could only be certified by perceiving every instance — which no one has. Without perceivable universals, the syllogism borrows from what it cannot deliver.',
+          },
+        ],
+      },
+    ],
+  },
+
 ]

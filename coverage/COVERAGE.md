@@ -16,8 +16,8 @@
 
 - **Subjects:** 140
 - **Books (master volumes):** 140
-- **Chapters:** 895
-- **Sections (lessons):** 4688
+- **Chapters:** 898
+- **Sections (lessons):** 4701
 
 ## Foundations — 6 subjects
 
@@ -856,18 +856,21 @@
 
 ### Botany (`ku-botany`)
 
-*The lives of plants* — 3 chapters · 8 sections
+*The lives of plants* — 3 chapters · 10 sections
 
-- **Ch 1. The Plant Body** `ku-botany-the-plant-body` — 1 sections: The Flowering Plant Body: Morphology and Anatomy
-- **Ch 2. Plant Physiology** `ku-botany-plant-physiology` — 5 sections: Photosynthesis: Light and Dark Reactions; Plant Physiology: How Plants Actually Work; The Xylem Pipeline: Soil Water, Root Pressure and Cavitation; Phloem Mechanics: Loading, Pressure Flow and Allocation; Stomata: Blue-Light Valves and the Water–Carbon Bargain
+- **Ch 1. The Plant Body** `ku-botany-the-plant-body` — 2 sections: The Flowering Plant Body: Morphology and Anatomy; Xylem and Phloem Under the Microscope: The Cells That Carry
+- **Ch 2. Plant Physiology** `ku-botany-plant-physiology` — 6 sections: Photosynthesis: Light and Dark Reactions; Plant Physiology: How Plants Actually Work; The Xylem Pipeline: Soil Water, Root Pressure and Cavitation; Phloem Mechanics: Loading, Pressure Flow and Allocation; Stomata: Blue-Light Valves and the Water–Carbon Bargain; The Water Ledger: Water-Potential Arithmetic from Soil to Air
 - **Ch 3. Reproduction & Life Cycles** `ku-botany-reproduction-and-life-cycles` — 2 sections: Plant Reproduction: Flowers, Pollination and Seeds; Inside the Seed: Grain Anatomy, Dormancy and the Germination Trigger
 
 ### Zoology (`ku-zoology`)
 
-*The animal kingdom, up close* — 2 chapters · 5 sections
+*The animal kingdom, up close* — 5 chapters · 11 sections
 
 - **Ch 1. Animal Diversity & Form** `ku-zoology-animal-diversity-and-form` — 2 sections: Animal Tissue Types: Four Families, One Body Plan; The Animal Kingdom: A Tour of Body Plans and Phyla
 - **Ch 2. Senses & Behavior** `ku-zoology-senses-and-behavior` — 3 sections: Biological Clocks and Rhythms: The Hidden Timetables of Behavior; Animal Behavior: Instinct, Learning, Signals; How Animals Sense the World
+- **Ch 3. Comparative Physiology** `ku-zoology-comparative-physiology` — 2 sections: Breathing Underwater, Underground and at Altitude: Gas Exchange Designs; Pumps and Pipework: Circulatory Designs Across the Animal Kingdom
+- **Ch 4. Comparative Digestion & Metabolism** `ku-zoology-comparative-digestion-and-metabolism` — 2 sections: How Animals Eat: Digestive Strategies Across the Kingdom; Size, Heat and Hunger: The Mathematics of Metabolism
+- **Ch 5. Animal Reproduction & Life Cycles** `ku-zoology-animal-reproduction-and-life-cycles` — 2 sections: Strategies for the Next Generation: Reproductive Modes in Animals; Metamorphosis and Life Histories: From Egg to Adult in Stages
 
 ### Ecology & Conservation (`ku-ecology-conservation`)
 
@@ -895,19 +898,19 @@
 
 ### Developmental Biology (`ku-developmental-biology`)
 
-*From one cell to a body* — 5 chapters · 6 sections
+*From one cell to a body* — 5 chapters · 8 sections
 
 - **Ch 1. Building the Body** `ku-developmental-biology-building-the-body` — 1 sections: Developmental Biology: How a Body Builds Itself
 - **Ch 2. Cell Fate & Determination** `ku-developmental-biology-cell-fate-and-determination` — 1 sections: Cell Fate: How Identical Nuclei Become Different Cells
-- **Ch 3. Mechanisms & Model Organisms** `ku-developmental-biology-mechanisms-and-model-organisms` — 2 sections: Model Organisms: Flies, Worms, Fish and the Standard Laboratory Bodies; Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo
+- **Ch 3. Mechanisms & Model Organisms** `ku-developmental-biology-mechanisms-and-model-organisms` — 3 sections: Model Organisms: Flies, Worms, Fish and the Standard Laboratory Bodies; Morphogenesis: The Cell Behaviors That Fold, Tube and Sculpt the Embryo; Turing Patterns: How Chemistry Paints Stripes and Spots
 - **Ch 4. Growth, Renewal & Regeneration** `ku-developmental-biology-growth-renewal-and-regeneration` — 1 sections: Stem Cells and Regeneration: The Body’s Repair Kit and Its Missing Manuals
-- **Ch 5. Evo-Devo: How Development Evolves** `ku-developmental-biology-evo-devo-how-development-evolves` — 1 sections: Evo-Devo: How Development Evolves
+- **Ch 5. Evo-Devo: How Development Evolves** `ku-developmental-biology-evo-devo-how-development-evolves` — 2 sections: Evo-Devo: How Development Evolves; Evo-Devo: Same Toolkit, Different Animals
 
 ### Marine Biology (`ku-marine-biology`)
 
-*Life in the blue* — 4 chapters · 4 sections
+*Life in the blue* — 4 chapters · 6 sections
 
-- **Ch 1. The Blue Realm** `ku-marine-biology-the-blue-realm` — 1 sections: Marine Biology: Life in the Ocean
+- **Ch 1. The Blue Realm** `ku-marine-biology-the-blue-realm` — 3 sections: Marine Biology: Life in the Ocean; Fish in Motion: Body Plans, Fins and the Physics of Swimming; Warm Bodies in Cold Water: Marine Mammals and the Diving Breath
 - **Ch 2. Coastal Habitats & Communities** `ku-marine-biology-coastal-habitats-and-communities` — 1 sections: From Tidepools to Reefs: Coastal Habitats and Communities
 - **Ch 3. Plankton, Larvae & Recruitment** `ku-marine-biology-plankton-larvae-and-recruitment` — 1 sections: Plankton and Larvae: The Drifting Majority of Ocean Life
 - **Ch 4. Fisheries & Ocean Conservation** `ku-marine-biology-fisheries-and-ocean-conservation` — 1 sections: Fisheries, Aquaculture and the Future of Ocean Food
@@ -1078,9 +1081,9 @@
 
 ### Philosophy (`ku-philosophy`)
 
-*The examined life* — 5 chapters · 10 sections
+*The examined life* — 5 chapters · 11 sections
 
-- **Ch 1. Epistemology & Philosophy of Science** `ku-philosophy-epistemology-and-philosophy-of-science` — 2 sections: Epistemology: What Can We Know?; Philosophy of Science: How We Know What We Know
+- **Ch 1. Epistemology & Philosophy of Science** `ku-philosophy-epistemology-and-philosophy-of-science` — 3 sections: Epistemology: What Can We Know?; Philosophy of Science: How We Know What We Know; Pramanas: The Means of Knowledge in Indian Logic
 - **Ch 2. Ethics & Value Theory** `ku-philosophy-ethics-and-value-theory` — 3 sections: Aristotle’s Ethics of Flourishing; Ethics: Consequentialism, Deontology and Beyond; Stoicism: The Art of Living Well
 - **Ch 3. Philosophy of Mind** `ku-philosophy-philosophy-of-mind` — 3 sections: The Philosophy of Mind: Consciousness and Its Puzzles; Eastern Philosophy: The Great Systems; Existentialism: Freedom, Anxiety, Meaning
 - **Ch 4. Political Philosophy & Legitimacy** `ku-philosophy-political-philosophy-and-legitimacy` — 1 sections: Political Philosophy: From Plato to Rawls

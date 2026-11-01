@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Botany — Chapter 02: Plant Physiology
- * 5 lessons · ~6,952 words
+ * 6 lessons · ~8,726 words (includes the 2026-11-01 salvage increment)
  * field: Botany
  * legacy sources: life-sciences.ts, x65-crossverify-pass.ts
  *
@@ -16,6 +16,7 @@
  *   02.3 bio-plant-xylem-hydraulics — The Xylem Pipeline: Soil Water, Root Pressure and Cavitation
  *   02.4 bio-plant-phloem-loading-partitioning — Phloem Mechanics: Loading, Pressure Flow and Allocation
  *   02.5 bio-plant-stomatal-blue-light — Stomata: Blue-Light Valves and the Water–Carbon Bargain
+ *   02.6 bio-plant-water-ledger — The Water Ledger: Water-Potential Arithmetic from Soil to Air (~1,774w, salvaged)
  */
 import type { KnowledgeTopic } from '../../types'
 
@@ -668,4 +669,187 @@ export const botanyCh02: KnowledgeTopic[] = [
       ] },
     ],
   },
+  // Salvaged 2026-11-01 from the diverged local line (pass x61-botany-pass, branch backup-loop-20261101) — ported verbatim into the subjects/ tree.
+  {
+    id: 'bio-plant-water-ledger',
+    title: 'The Water Ledger: Water-Potential Arithmetic from Soil to Air',
+    domain: 'Life Sciences',
+    field: 'Botany',
+    branch: 'Beyond Photosynthesis',
+    tier: 'intermediate',
+    concepts: [
+      'Pressure units: the megapascal ladder',
+      'Computing ψ with ψs = −iCRT',
+      'The soil–plant–air continuum in real numbers',
+      'Measuring tension: the Scholander pressure chamber',
+      'Root pressure and guttation: the push that cannot climb',
+      'Cavitation: when the column snaps',
+      'Vapour-pressure deficit and the transpiration equation',
+      'Phloem sap in numbers: concentration, turgor, velocity',
+    ],
+    words: 1774,
+    readMins: 9,
+    addedOn: '2026-11-01',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'The plant-physiology lesson told the transport story: a cohesive water column pulled up the xylem by evaporation, sugar pushed through phloem by osmotic pressure. This lesson puts numbers on every arrow of that story, because plant water relations is one of the most quantitative corners of biology — irrigation schedules, drought-tolerance breeding and tree-height limits are all settled in megapascals. One warning before the arithmetic: the ψ = ψs + ψp bookkeeping formula is owned by the physiology lesson; here we compute with it.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'Every irrigation controller, drought-resistance trial and eco-hydrology model runs on these numbers. A farmer who knows field capacity is −0.03 MPa and wilting point is −1.5 MPa knows exactly how much water the soil is holding between those two lines — and plants feel the same gradient this lesson computes.',
+        tone: 'insight',
+      },
+      { kind: 'heading', text: 'Core Concepts' },
+      {
+        kind: 'heading',
+        text: 'The units: feeling a megapascal',
+      },
+      {
+        kind: 'para',
+        text: 'Plant water potential is measured in megapascals: 1 MPa = 10 bar ≈ 9.87 atmospheres ≈ 10.2 meters of water head. A car tire holds about 0.2 MPa; a properly watered soil sits near −0.03 MPa; a transpiring leaf on a hot afternoon runs −1 to −2 MPa; and dry air, the end of the line, holds a water potential around −100 MPa. The sign matters as much as the size: negative values are tensions — the water is under pull, not push — and water always moves toward the more negative number. Read any transport question by lining the numbers up from wet to dry.',
+      },
+      {
+        kind: 'formula',
+        name: 'Solute (osmotic) potential of a solution',
+        latex: '\\Psi_s = -iCRT',
+        meaning: 'van’t Hoff’s relation: ψs in bars (convert ÷10 to MPa) with i the dissociation count (1 for sucrose), C molar concentration, R = 0.0831 L·bar mol⁻¹ K⁻¹, T in kelvin; the solute term that pulls water in.',
+      },
+      {
+        kind: 'example',
+        title: 'Water potential of one mesophyll cell',
+        steps: [
+          'The cell: a leaf mesophyll cell at 25 °C (298 K) with a total solute concentration equivalent to 0.4 M sucrose, and a turgor pressure of +0.5 MPa.',
+          'Solute term: ψs = −(1)(0.0831)(298)(0.4) = −9.9 bar ≈ −0.99 MPa.',
+          'Pressure term: ψp = +0.5 MPa.',
+          'Total: ψ = −0.99 + 0.5 = −0.49 MPa.',
+          'Read it back: this cell is more negative than a wet root (≈ −0.3 MPa), so it draws water up — and less negative than the dry air outside the stomata (≈ −95 MPa), so it keeps losing vapor. The cell sits between two pulls, and the arithmetic says which way everything moves.',
+        ],
+      },
+      { kind: 'heading', text: 'The continuum, in real numbers' },
+      {
+        kind: 'para',
+        text: 'Line up a transpiring plant on a clear day: soil at field capacity −0.03 MPa; the root xylem −0.5; the leaf mesophyll −1.5; the air inside the stomatal cavity saturated (≈ 0 relative), but the outside air at 50% humidity a crushing −95 MPa. Between every pair of neighbors there is a downhill gradient — and the final step, leaf to air, is by far the steepest. That ladder is the whole engine: the air’s dryness pulls vapor out of the leaf, the leaf’s low potential pulls the xylem column up, the column pulls from the root, the root pulls from the soil. Transpiration is not a cost the plant grudgingly pays; it is the pump, and the CO2 intake stomata must open to run it.',
+      },
+      {
+        kind: 'para',
+        text: 'How are these numbers measured? The classic instrument is the Scholander pressure chamber: cut a leafy twig, seal it cut-end outward in a chamber, and squeeze the shoot with gas pressure until xylem sap just appears at the cut surface. The balancing pressure is exactly the negative of the twig’s xylem tension — turn the pull into a push and read it on a gauge. Thermocouple psychrometers measure whole-tissue water potential by vapor equilibration, and porometers measure stomatal conductance by the rate a chamber’s air is humidified.',
+      },
+      { kind: 'heading', text: 'Root pressure and guttation: the push that cannot climb' },
+      {
+        kind: 'para',
+        text: 'Transpiration pull is not the only engine. On humid nights when the stomata close and evaporation nearly stops, roots keep pumping ions into the xylem; the stele’s sap turns hypertonic, water osmoses in through the endodermis (the Casparian strip — owned by the anatomy lesson — forcing that route through membranes), and a positive root pressure of up to roughly 0.1–0.2 MPa develops. The visible signatures: guttation, droplets of xylem sap exuded overnight from hydathodes — special pores at the toothed margins of grass, strawberry and garden nasturtium leaves — and the bleeding of sap from a cut stump. The arithmetic caps the ambition: even 0.2 MPa lifts water about two meters of head, so root pressure can refill small conduits and wet short herbs, but it can never serve a tall tree. That job belongs to the tension engine, which generates hundreds of times more force.',
+      },
+      { kind: 'heading', text: 'Cavitation: when the column snaps' },
+      {
+        kind: 'para',
+        text: 'The tension engine has a failure mode. A water column under −2 MPa is metastable: if air is pulled through a pit membrane — or dissolved gas comes out of solution during a freeze–thaw cycle — a vapor pocket nucleates and the column snaps, embolizing the conduit. An embolized vessel or tracheid conducts nothing until refilled, and refilling is expensive and imperfect: some species use night root pressure, others simply write off last year’s ring-porous vessels and grow new ones. Species sit on a safety–efficiency edge: desert and Mediterranean plants run narrower, more pit-reinforced conduits that embolize only beyond −4 MPa, while fast-growing riparian trees run wide conduits that cavitate earlier. The anatomy lesson’s wall-collapse arithmetic and this air-seed threshold together define a conduit’s two independent breaking points — buckling and snapping — and a drought-tolerant xylem must clear both.',
+      },
+      {
+        kind: 'formula',
+        name: 'Transpiration as conductance times vapour-pressure deficit',
+        latex: 'E \\approx g_{s} \\times VPD, \\qquad VPD = e_{sat}(T)\\,(1 - RH/100)',
+        meaning: 'Transpiration rate E rises with stomatal conductance gs and the vapour-pressure deficit: e_sat is saturation vapor pressure (2.34 kPa at 20 °C, 3.17 at 25 °C, 4.24 at 30 °C) scaled down by relative humidity.',
+      },
+      {
+        kind: 'example',
+        title: 'Computing the atmospheric pull on a leaf',
+        steps: [
+          'The day: air at 25 °C and 40% relative humidity over a transpiring canopy.',
+          'Saturation pressure at 25 °C: e_sat = 3.17 kPa.',
+          'The deficit: VPD = 3.17 × (1 − 0.40) = 1.90 kPa — the atmosphere is pulling with nearly 2 kPa of dryness.',
+          'The flow: with stomatal conductance gs at a typical crop value, E scales directly — halving gs (stomatal closure at midday) halves transpiration but also halves CO2 entry, the bargain the physiology lesson described.',
+          'State the result: same leaf, same temperature, 80% humidity → VPD = 0.63 kPa, a third of the pull — the reason humid greenhouses are forgiving and desert afternoons are brutal.',
+        ],
+      },
+      { kind: 'heading', text: 'Phloem in numbers' },
+      {
+        kind: 'para',
+        text: 'The pressure-flow story gets its arithmetic too. Sieve-tube sap is 10–30% sucrose by mass — roughly 0.3 to 0.9 molar — so by ψs = −iCRT a 0.5 M sap holds an osmotic potential near −12.4 bar ≈ −1.2 MPa, and companion-cell loading at a source raises sieve-tube turgor to around +0.8 MPa against a sink’s +0.3 MPa. That ~0.5 MPa difference drives sap along the tube at measured velocities of roughly 0.5–1.5 meters per hour — far faster than diffusion could ever move sugar. The classic proof is an aphid’s stylet: the insect taps a single sieve element, and when the stylet is severed the sap keeps exuding for hours at turgor pressure — the plant’s own plumbing demonstrates that the line is pressurized, exactly as the ledger says.',
+      },
+      { kind: 'heading', text: 'Key Terms' },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Megapascal ladder', def: '1 MPa ≈ 10 bar ≈ 10.2 m of water head; field capacity −0.03 MPa, wilting point −1.5 MPa, dry air ≈ −95 MPa.' },
+          { term: 'ψs = −iCRT', def: 'van’t Hoff solute potential; the arithmetic core of every water-potential calculation.' },
+          { term: 'Soil–plant–atmosphere continuum', def: 'One connected water path whose potentials fall steeply from soil to air; the gradient, not a pump, drives the stream.' },
+          { term: 'Scholander pressure chamber', def: 'Instrument that measures xylem tension by balancing gas pressure against the pull until sap reappears at a cut.' },
+          { term: 'Guttation', def: 'Overnight exudation of xylem sap from hydathodes at leaf margins under root pressure — not dew, and not transpiration.' },
+          { term: 'Cavitation', def: 'Nucleation of a vapor bubble under excessive tension, embolizing a conduit; the failure mode tension transport must budget against.' },
+          { term: 'Vapour-pressure deficit (VPD)', def: 'The gap between actual and saturation vapor pressure; the atmosphere-side term of the transpiration equation.' },
+        ],
+      },
+      { kind: 'heading', text: 'Check Yourself' },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'A cell at 25 °C holds 0.3 M sucrose with turgor +0.4 MPa. Its total ψ is about:',
+            options: ['−0.74 MPa', '−0.34 MPa', '+0.06 MPa', '−0.10 MPa'],
+            answer: 1,
+            explain: 'ψs = −(0.0831)(298)(0.3) = −7.4 bar ≈ −0.74 MPa; adding +0.4 MPa turgor gives ψ ≈ −0.34 MPa.',
+          },
+          {
+            q: 'Water flows from soil into root xylem on a normal day because:',
+            options: [
+              'root pressure pushes it',
+              'the root xylem (−0.5 MPa) is more negative than the wet soil (−0.03 MPa)',
+              'capillarity in the cell walls sucks it in',
+              'the endodermis pumps it actively',
+            ],
+            answer: 1,
+            explain: 'Uptake is the ledger’s first step: water moves toward the more negative potential, and even a moderately transpiring root sits well below wet soil.',
+          },
+          {
+            q: 'Guttation droplets on a grass blade at dawn are best explained as:',
+            options: [
+              'condensation from humid air (dew)',
+              'xylem sap forced out of hydathodes by root pressure',
+              'phloem sap leaking from severed sieve tubes',
+              'glandular secretion like nectar',
+            ],
+            answer: 1,
+            explain: 'Overnight root pressure, built on ion pumping into a non-transpiring stele, pushes sap out at the margins — the composition (xylem sap) and position (hydathodes) distinguish it from dew.',
+          },
+          {
+            q: 'Why can root pressure never water a 100 m tree?',
+            options: [
+              'Roots cannot pump at night',
+              '0.2 MPa lifts water only ~2 m — far short of the required head',
+              'Guttation wastes all the water',
+              'Casparian strips block upward flow',
+            ],
+            answer: 1,
+            explain: 'Even the strongest root pressures (~0.1–0.2 MPa) raise water a couple of meters; a 100 m column needs ~1 MPa of lifting plus friction losses — tension transport supplies it.',
+          },
+          {
+            q: 'At 30 °C (e_sat = 4.24 kPa) and 60% humidity, the VPD is:',
+            options: ['1.06 kPa', '1.70 kPa', '2.54 kPa', '4.24 kPa'],
+            answer: 1,
+            explain: 'VPD = 4.24 × (1 − 0.60) = 1.70 kPa — hotter air holds exponentially more vapor, which is why the same humidity fraction pulls harder on a warm day.',
+          },
+          {
+            q: 'Severed aphid stylets keep exuding sieve-tube sap for hours, demonstrating that:',
+            options: [
+              'phloem flow is driven by transpiration',
+              'sieve tubes are under positive turgor pressure',
+              'aphids inject pumping enzymes',
+              'sieve plates act as one-way valves',
+            ],
+            answer: 1,
+            explain: 'Continuous exudation at the wound shows the tube is pressurized from the source side — the direct measurement behind the pressure-flow ledger.',
+          },
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Study Path',
+        text: 'The plant-physiology lesson owns the mechanism stories this lesson computes — read it first, then keep this lesson’s numbers beside it. The vascular-ultrastructure lesson explains the cell walls that survive the tensions computed here; the flowering-plant-body lesson owns the Casparian route that makes root pressure possible; the photosynthesis lesson owns the carbon side of the stomatal bargain.',
+        tone: 'path',
+      },
+    ],
+  },
+
 ]

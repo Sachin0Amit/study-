@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Synthetic Biology — Chapter 03: Applications & Responsible Innovation
- * 2 lessons · ~2,996 words
+ * 3 lessons · ~4,305 words (includes the 2026-11-01 salvage increment)
  * field: Synthetic Biology
  * legacy sources: x47-bio-split-pass.ts
  *
@@ -13,6 +13,7 @@
  * Lessons (snapshot at reorganization):
  *   03.1 bio-synbio-dbtl-practice — Synthetic Biology in Practice: The Design–Build–Test–Learn Cycle
  *   03.2 bio-synbio-biosafety-ethics — Biosafety, Biosecurity and the Ethics of Engineering Life
+ *   03.3 synbio-metabolic-engineering — Metabolic Engineering: Rewiring Cells into Factories (~1,309w, salvaged)
  */
 import type { KnowledgeTopic } from '../../types'
 
@@ -316,4 +317,144 @@ export const syntheticBiologyCh03: KnowledgeTopic[] = [
       },
     ],
   },
+  // Salvaged 2026-11-01 from the diverged local line (pass x60-lifescience-deepening-pass, branch backup-loop-20261101) — ported verbatim into the subjects/ tree.
+  {
+    id: 'synbio-metabolic-engineering',
+    title: 'Metabolic Engineering: Rewiring Cells into Factories',
+    domain: 'Life Sciences',
+    field: 'Synthetic Biology',
+    branch: 'Applications & Ethics',
+    tier: 'advanced',
+    concepts: [
+      'Flux: the rate material actually flows',
+      'The rate-limiting step and why over-expressing everything fails',
+      'Precursor and cofactor balancing (NADPH versus NADH)',
+      'Thermodynamic feasibility of a pathway',
+      'Yield arithmetic: theoretical versus achieved (g/g)',
+      'Dynamic regulation: sensors that throttle pathways',
+      'The strain-improvement ladder: ALE, mutagenesis, CRISPRi screens',
+    ],
+    words: 1309,
+    readMins: 7,
+    addedOn: '2026-11-01',
+    blocks: [
+      {
+        kind: 'para',
+        text: 'A cell is already a chemical plant: hundreds of simultaneous reactions, each catalyzed, each regulated, all running on sugar and salts. Metabolic engineering is the discipline of re-plumbing that plant so more of the carbon you feed it ends up in a molecule you want — a drug, a fuel, a plastic monomer, a fragrance. The practice lesson told the field’s signature case: ten years of tuning yeast until it manufactured artemisinic acid, the malaria-drug precursor, at industrial scale. This lesson owns the theory that made such a project thinkable: what limits a pathway, what balancing means, and why the obvious move — over-express everything — almost never works.',
+      },
+      {
+        kind: 'callout',
+        title: 'Why this matters',
+        text: 'Metabolic engineering is the economics of the bioeconomy: yields decide whether biomanufactured insulin, aviation fuel, or nylon precursors compete with petrochemicals. Every published strain description is an argument in the currency this lesson defines — flux, titer, rate and yield.',
+        tone: 'insight',
+      },
+      { kind: 'heading', text: 'Core Concepts' },
+      {
+        kind: 'heading',
+        text: 'Flux and the rate-limiting step',
+      },
+      {
+        kind: 'para',
+        text: 'Flux is the rate at which material flows through a reaction — moles per liter per hour. A pathway’s throughput is not the sum of its enzymes’ speeds but, at any moment, the speed of the step that is slowest relative to how much of it the cell provides: the rate-limiting step, the narrow valve in the pipe. The engineering reflex is to find it and widen it — clone the enzyme behind a strong promoter. That works, briefly. But widening one valve immediately makes the next-narrowest one the limit, and the improvement saturates; worse, the over-expressed enzyme taxes the cell (the burden lesson) and the accumulated intermediate can become toxic. Real strain work is therefore iterative: widen, measure, find the new limit, widen again — the design-build-test-learn cycle the programming lesson owns, applied to plumbing.',
+      },
+      {
+        kind: 'heading',
+        text: 'The four balances',
+      },
+      {
+        kind: 'para',
+        text: 'A heterologous pathway — imported from another organism — makes four demands on the host that must be balanced, not just connected. First, precursors: your product drains building blocks (acetyl-CoA, pyruvate, erythrose-4-phosphate) that native metabolism is already spending on growth, so the engineered strain must be pushed to route more carbon into the precursor pool. Second, energy and reducing power: biosynthesis consumes ATP and, very often, NADPH specifically — not the more abundant NADH — so a pathway needing three NADPH per product molecule quietly fails unless the cell’s NADPH-generating machinery (or a transhydrogenase shuffling hydride from NADH) is engineered to keep pace. Third, thermodynamics: every reaction must run downhill in the actual intracellular conditions; a pathway with a near-equilibrium or uphill step stalls as the product side accumulates, which is why engineers check Gibbs energies and sometimes swap in alternative enzymes to get a favorable step. Fourth, the product itself: it must be tolerated, exported, and neither poison the membrane nor get re-consumed. Balancing all four at once is the craft; a wiring diagram that satisfies the chemist can still starve, stall, or suicide the cell.',
+      },
+      {
+        kind: 'formula',
+        name: 'Yield on substrate',
+        latex: 'Y_{P/S} = \\frac{\\text{g product formed}}{\\text{g substrate consumed}} = \\frac{m_{P}}{m_{S}} \\cdot \\frac{\\text{mol product}}{\\text{mol substrate}}',
+        meaning: 'Grams of product per gram of feed; compared against the theoretical stoichiometric maximum (mass-balance ceiling) to score how close a strain is to perfect carbon conversion.',
+      },
+      {
+        kind: 'example',
+        title: 'Scoring a strain against the theoretical ceiling',
+        steps: [
+          'The pathway: glucose (180 g/mol) → one target molecule (200 g/mol) via a synthetic route whose best stoichiometry is 1 glucose : 1 product.',
+          'Theoretical maximum yield: 200/180 = 1.11 g product per g glucose — the mass-balance ceiling, assuming carbon, energy and redox all balance.',
+          'The measured strain: fed 100 g of glucose, the fermentation produces 25 g of product.',
+          'Achieved yield: 25/100 = 0.25 g/g — that is 0.25/1.11 ≈ 22.5% of theoretical.',
+          'Diagnosis: three-quarters of the carbon is still going to biomass, CO2 and byproducts — a routing problem, not a rate problem. Next design move: knock down competing fermentative routes with CRISPRi dials and re-test, exactly the tuning workflow the regulation lesson built.',
+        ],
+      },
+      { kind: 'heading', text: 'Dynamic regulation: throttle instead of toggle' },
+      {
+        kind: 'para',
+        text: 'The sharpest recent idea in the field is to stop treating a pathway as a static circuit. A strain that must both grow and produce faces a conflict: the precursor pool feeds biomass while you want it feeding product. Static engineering forces one trade-off all the time; dynamic regulation makes the choice conditional. Sensor-regulator circuits — a transcription factor that senses an intermediate (say, the fatty-acyl pool or acyl-CoA) wired to the expression of the pathway’s throttle enzymes — let the cell run growth mode while precursors are scarce and switch toward production only when the intermediate accumulates. The result is measurably higher effective yield at the same enzyme budget, because no step over-produces what the next step cannot swallow. This is the metabolic analog of the toehold and CRISPRi logic from the regulation lesson: sensors plus dials, deployed along a pipe.',
+      },
+      {
+        kind: 'para',
+        text: 'How do you find which gene to dial? The field climbs a ladder of search strategies. Adaptive laboratory evolution (ALE) grows the strain under selection for the desired phenotype and lets mutation-and-competition discover improvements invisible to rational design — powerful for tolerance, substrate-range and growth-coupled production, but blind to non-selected traits. Classical mutagenesis-and-screening generates diversity blindly and keeps only winners. Rational design targets known enzymes by the flux analysis above. And genome-scale CRISPRi libraries now bridge the two: knock down every gene modestly, in parallel, under production conditions, and the surviving wells reveal which repressions help — a functional map of the dial settings worth pursuing. Modern strain programs run all four in combination, with the DBTL cycle of the practice lesson as the metronome.',
+      },
+      { kind: 'heading', text: 'Key Terms' },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Flux', def: 'Rate of material flow through a reaction or pathway (mol L⁻¹ h⁻¹); the quantity every intervention ultimately tries to raise.' },
+          { term: 'Rate-limiting step', def: 'The step whose capacity, relative to demand, bounds pathway throughput; widening it shifts the limit downstream.' },
+          { term: 'Cofactor balancing', def: 'Matching pathway demand for NADPH/NADH and ATP to the host’s regeneration capacity — mismatched redox silently caps flux.' },
+          { term: 'Theoretical yield', def: 'The mass-balance ceiling from stoichiometry (g product per g substrate); achieved yield is reported as a fraction of it.' },
+          { term: 'Dynamic regulation', def: 'Sensor-actuator circuits that throttle pathway enzymes by metabolite levels, time-sharing carbon between growth and production.' },
+          { term: 'Adaptive laboratory evolution', def: 'Long selection regimes in which spontaneous mutations that improve the phenotype are enriched — ideal for tolerance traits rational design misses.' },
+        ],
+      },
+      { kind: 'heading', text: 'Check Yourself' },
+      {
+        kind: 'quiz',
+        items: [
+          {
+            q: 'Over-expressing every enzyme in a pathway usually fails because it:',
+            options: [
+              'makes the product too pure',
+              'burdens the host, accumulates toxic intermediates, and leaves the real rate-limiting step undiscovered',
+              'violates the second law',
+              'permanently silences the promoter',
+            ],
+            answer: 1,
+            explain: 'Flux is set by the narrowest valve; blanket over-expression taxes the cell and the next-limited step still caps throughput — the iterative widen-measure loop is the alternative.',
+          },
+          {
+            q: 'A pathway requires 3 NADPH per product molecule but the host supplies mostly NADH. The likely engineering fix is:',
+            options: [
+              'add more of the final enzyme',
+              'raise transhydrogenase activity or NADPH-generating flux to rebalance reducing power',
+              'lower ATP production',
+              'over-express the first enzyme only',
+            ],
+            answer: 1,
+            explain: 'Cofactor specificity is a hard constraint: without NADPH regeneration matched to demand, the pathway starves no matter how much enzyme is present.',
+          },
+          {
+            q: 'A strain fed 90 g glucose yields 30 g of a product whose stoichiometric maximum is 0.9 g/g. Its percent-of-theoretical is:',
+            options: ['33%', '27%', '37%', '67%'],
+            answer: 2,
+            explain: 'Achieved = 30/90 = 0.333 g/g; against 0.9 g/g ceiling that is 0.333/0.9 ≈ 37% — the rest is carbon lost to biomass and byproducts.',
+          },
+          {
+            q: 'Dynamic regulation improves effective yield mainly by:',
+            options: [
+              'increasing plasmid copy number',
+              'time-sharing precursors between growth and production as metabolite levels dictate',
+              'preventing all mutations',
+              'exporting the product faster',
+            ],
+            answer: 1,
+            explain: 'Sensors let the cell grow when intermediates are scarce and produce when they accumulate — resolving the growth-versus-production conflict a static circuit forces.',
+          },
+        ],
+      },
+      {
+        kind: 'callout',
+        title: 'Study Path',
+        text: 'The practice lesson owns the DBTL cycle and the artemisinin case study this lesson’s theory explains; the regulation lesson owns the CRISPRi dials and burden analysis applied here at pathway scale. Read the biochemistry metabolism lessons for the native network being re-plumbed.',
+        tone: 'path',
+      },
+    ],
+  },
+
 ]
