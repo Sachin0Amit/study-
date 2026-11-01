@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T06:29:57.866Z",
+  "generatedAt": "2026-11-01T06:45:19.297Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 140,
     "books": 140,
     "chapters": 895,
-    "sections": 4686
+    "sections": 4688
   },
   "subjects": [
     {
@@ -26856,7 +26856,7 @@
       "group": "Life Sciences",
       "tagline": "The unit of life, read to the letter",
       "chapterCount": 4,
-      "sectionCount": 16,
+      "sectionCount": 18,
       "chapters": [
         {
           "id": "ku-cell-molecular-biology-foundations-life-microscopy-and-the-cell",
@@ -26969,12 +26969,22 @@
           "title": "Bioenergetics",
           "shortTitle": "Bioenergetics",
           "bookId": "ku-cell-molecular-biology",
-          "sectionCount": 1,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-bio-cellular-respiration-pathways",
               "number": 4.1,
               "title": "Cellular Respiration: Glycolysis to the Electron Transport Chain"
+            },
+            {
+              "id": "ku-bio-fermentation-metabolic-integration",
+              "number": 4.2,
+              "title": "Fermentation and Metabolic Integration: Living Without Air, Running the Whole Machine"
+            },
+            {
+              "id": "ku-bio-photosynthesis-cell-level",
+              "number": 4.3,
+              "title": "Photosynthesis at the Cell Level: The Chloroplast, the Z-Scheme and the Cost of Light"
             }
           ]
         }

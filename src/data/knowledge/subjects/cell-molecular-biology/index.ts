@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — subject book: Cell & Molecular Biology (cell-molecular-biology)
- * group: Life Sciences · 4 chapters · 14 lessons
+ * group: Life Sciences · 4 chapters · 18 lessons
  *
  * One folder per canonical subject (mirrors the Library book); one file
  * per chapter. New chapters: create <nn>-<chapter-slug>.ts, add it to the
@@ -10,8 +10,8 @@
  * Table of contents:
  *   01 Foundations: Life, Microscopy & the Cell — 3 lessons (the ladder head: absolute basics)
  *   02 The Cell: Structure & Signaling — 5 lessons (biomolecules → organelle atlas → cytoskeleton → signaling → cycle)
- *   03 Molecular Biology of the Gene — 6 lessons
- *   04 Bioenergetics — 1 lesson
+ *   03 Molecular Biology of the Gene — 7 lessons
+ *   04 Bioenergetics — 3 lessons (respiration → fermentation & integration → photosynthesis)
  */
 import type { KnowledgeTopic } from '../../types'
 import { cellMolecularBiologyCh01 } from './01-foundations-of-life-and-cells'
