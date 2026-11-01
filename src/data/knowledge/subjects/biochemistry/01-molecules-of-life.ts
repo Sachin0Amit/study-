@@ -186,7 +186,7 @@ export const biochemistryCh01: KnowledgeTopic[] = [
       'Polyprotic molecules and the pI average rule',
     ],
     words: 2169,
-    readMins: 11,
+    readMins: 14,
     addedOn: '2026-10-26',
     blocks: [
       {
@@ -981,7 +981,7 @@ export const biochemistryCh01: KnowledgeTopic[] = [
       'UV absorbance, the hyperchromic shift and the melting temperature',
       'De novo and salvage pathways, and where analog drugs attack',
     ],
-    words: 2270,
+    words: 2895,
     readMins: 11,
     addedOn: '2026-11-01',
     blocks: [
