@@ -1,6 +1,9 @@
 # STUDYVERSE — TEXTBOOK WRITING AND PEDAGOGICAL QUALITY DIRECTIVE
 
 **Adopted:** 2026-11-02 (IST) — installed by user directive during the master-loop session.
+**Amended:** 2026-11-02 (IST) — §7A THE EQUATION-STYLE LAW added by explicit user
+directive with a photographed textbook page (a stacked, centered, step-by-step
+quadratic-formula derivation) as the binding visual model.
 **Status:** GOVERNING for the Textbook-Quality Rewrite Loop (scheduled task; see
 `docs/project/TEXTBOOK_REWRITE_LEDGER.md` for the audit table, queue and run log).
 **Relation to other specs:** supplements `docs/project/PROJECT_MASTER_PLAN.md` (§17:
@@ -89,6 +92,51 @@ derivations, show all meaningful intermediate steps (use the `derivation` block)
 numerical problems use the structure **Problem → Given → Required → Concept → Formula →
 Substitution → Calculation → Final Answer → Interpretation** (the house style
 "Identify what is asked … State the result" already matches this).
+
+## 7A. THE EQUATION-STYLE LAW — set the mathematics, never narrate it
+
+**Adopted 2026-11-02 by explicit user directive, with a photographed textbook page as
+the binding model.** The model page shows the quadratic-formula derivation as a
+vertical stack of centered equations — each algebraic manipulation on its own line,
+almost no prose between them. THAT is how mathematics in StudyVerse must look.
+
+1. **Display, don't narrate.** Every equation, formula, transformation, substitution
+   and numerical result that carries teaching weight is SET as a display equation —
+   its own centered line in KaTeX (`$$…$$`) — exactly like a printed book. A chain of
+   reasoning is a vertical stack of such lines, so the eye follows the symbolic
+   development the way it follows a printed derivation.
+2. **The equation is the sentence.** Prose around displayed mathematics shrinks to the
+   minimum that justifies the move: a short lead-in ("Divide through by $a$:",
+   "Complete the square:", "Substitute:") or a short reading after the display
+   ("the bracket can never be negative, so…"). Do not re-state in words what the
+   displayed line already shows.
+3. **NEVER bury algebra inside a running sentence.** Writing
+   *"so x = (−9 ± √(81+40))/4 = (−9 ± 11)/4, giving x = 1/2 or x = −5"* is forbidden —
+   each of those equalities becomes its own centered line instead:
+   `$$x=\frac{-9\pm\sqrt{81-4(2)(-5)}}{2(2)}=\frac{-9\pm 11}{4}$$` then
+   `$$x=\tfrac12 \quad\text{or}\quad x=-5$$`.
+4. **Real notation everywhere.** Plain-text math (x², ±, √, slashed fractions a/b) is
+   replaced by proper KaTeX: superscripts, radicals, stacked fractions, the ± sign.
+   Inline `$…$` is for a single symbol or short expression inside a sentence; the
+   moment an equality, transformation or computation appears, it goes on display.
+   Inside `derivation` steps use the `formula` field for the displayed line and keep
+   `explanation` for the short reading.
+5. **Worked examples stay in the house frame** (Identify what is asked → … → State the
+   result), but every mathematical line inside — Given, Formula, Substitution,
+   Arithmetic, Result, Check — is a display equation with at most one short connecting
+   phrase per line.
+6. **What remains prose:** situation openings, history, the meaning of a formula AFTER
+   it is displayed (read every symbol aloud in words), applications, pitfalls,
+   connections to other lessons. The law changes how mathematics is displayed, not the
+   teaching around it — intuition first, formalism second, and the formalism is SET,
+   not spoken.
+7. **All quantitative subjects follow the same law** — physics, chemistry, statistics,
+   engineering, economics — with units carried through the display chains
+   (`$$v = 30\ \text{m/s}$$`), and chemistry equations set as display reaction lines.
+8. **Vertical rhythm like the book.** Consecutive display lines that form one chain sit
+   close together (one `para` block containing consecutive `$$…$$` lines renders as a
+   tight centered stack — prefer that over scattering them across paragraphs); break
+   the stack only when the teaching between moves genuinely needs a sentence.
 
 ## 8. Step-by-step examples and worked problems
 
@@ -194,6 +242,12 @@ from the material; is it factually correct; does it prepare the next topic?
 short bullets; if the student must search elsewhere; if examples appear without
 reasoning; if diagrams appear without explanation; if there are many words but little
 teaching.
+
+**Equation-style test (§7A):** fails if algebra is narrated inside sentences instead
+of set on centered display lines; if plain-text math (x², √, ±, slashed fractions)
+survives where KaTeX belongs; if a worked example's substitution and arithmetic are
+not displayed; if consecutive moves of one chain are scattered when they belong in a
+single tight stack.
 
 ## 17. Integration with the master system
 
