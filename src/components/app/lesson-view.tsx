@@ -1780,7 +1780,7 @@ function BookDerivation({
       </div>
 
       {/* final result */}
-      {(expandAll || openSteps >= derivation.steps.length) && (
+      {derivation.result && (expandAll || openSteps >= derivation.steps.length) && (
         <div className="mt-5 rounded-lg border-2 border-emerald-500/30 bg-emerald-500/5 p-4 text-[1.01rem] dark:bg-emerald-950/20">
           <p className="font-serif">
             <span className="sv-book-label text-emerald-600 dark:text-emerald-400">Conclusion ·</span>
