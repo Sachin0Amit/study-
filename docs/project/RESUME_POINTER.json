@@ -16,13 +16,13 @@
     "nextUnit": "MASTERSYLLABUS-DONE check for ku-biochemistry, then open the next Life Sciences subject per §4 order: ku-genetics-heredity — run the §6.3 gap audit, fix thin lessons to the textbook bar, and author the missing lessons the tree marks (new lessons BORN textbook-quality per the no-ceiling charter; rewrite targets are LIVE lessons only — dedup.ts EXCLUDED_TOPICS are invisible to students)"
   },
   "scheduledJobs": {
-    "masterLoop": { "jobId": 493829, "cadence": "hourly at :00 IST", "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8", "note": "recreated 2026-11-02 ~23:20 IST with NO-CEILING charter + born-textbook-quality rule for all future content (replaces disabled 492782)" },
-    "webDevReview": { "jobId": 493831, "cadence": "every 15 min at :07/:22/:37/:52 IST", "kind": "webDevReview", "note": "recreated 2026-11-02 ~23:20 IST (replaces 492783)" },
+    "masterLoop": { "jobId": 494898, "cadence": "hourly at :00 IST", "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8", "note": "recreated 2026-11-02 ~06:55 IST after the sandbox-rollback failure night (old 493829 deleted — it fired 8x against a sandbox rolled back to the Oct-26 state and was disabled by the API); new payload carries STEP 0 ANTI-STALE SYNC (fetch origin, ff-only hard-sync when local is behind with 0 unique commits)" },
+    "webDevReview": { "jobId": 494900, "cadence": "every 15 min at :07/:22/:37/:52 IST", "kind": "webDevReview", "note": "recreated 2026-11-02 ~06:55 IST (old 493831 was lost in the same incident)" },
     "textbookQualityLoop": {
-      "jobId": 493826,
+      "jobId": 494899,
       "cadence": "hourly at :30 IST",
       "workflow": "docs/project/TEXTBOOK-QUALITY-DIRECTIVE.md + docs/project/TEXTBOOK_REWRITE_LEDGER.md",
-      "scope": "pedagogical rewrites of LIVE lessons A-Z (mathematics first → end of library, no skipping) with NO word ceiling, plus re-expansion of ceiling-trimmed lessons (ledger 3b + biochemistry flags); future content held to the same standard (replaces 493731)"
+      "scope": "pedagogical rewrites of LIVE lessons A-Z (mathematics first → end of library, no skipping) with NO word ceiling, plus re-expansion of ceiling-trimmed lessons (ledger 3b + biochemistry flags); future content held to the same standard (replaces 493826, deleted after the rollback night — same STEP 0 anti-stale hardening)"
     }
   },
   "textbookQualityProgram": {
@@ -55,7 +55,8 @@
     "PAT is inline-only — never written to any file or committed",
     "lesson text must not contain exam names; dedup grep before authoring; word counts declared == actual exactly",
     "NO WORD CEILING (user directive 2026-11-02): every lesson, existing or future, is as elaborative as genuine teaching requires — never truncate substance to fit a count, never pad; textbook style (theory + explained definitions), never 'definition + insight' notes",
-    "three concurrent scheduled jobs work this repo (master :00, textbook :30, webDevReview :07/:22/:37/:52) — always check git status/log first and leave the tree clean; a trigger may fail with 'model concurrency limit exceeded' if another agent session is active — the job stays enabled and fires again on its next boundary",
+    "three concurrent scheduled jobs work this repo (master 494898 :00, textbook 494899 :30, webDevReview 494900 :07/:22/:37/:52) — always check git status/log first and leave the tree clean; a trigger may fail with 'model concurrency limit exceeded' if another agent session is active — the job stays enabled and fires again on its next boundary",
+    "SANDBOX ROLLBACK HAZARD (hit 2026-11-02): the sandbox can silently roll back to an old commit while cron jobs keep firing — both loops now run STEP 0 ANTI-STALE SYNC (fetch origin; 0-unique-commits + behind => git restore stat-dirty files then ff-only merge) before any work; trust origin/main + this pointer over any stale local state",
     "IST dating: the sandbox clock is UTC/+08:00 — convert honestly to Asia/Kolkata, never copy a prior row's date"
   ]
 }
