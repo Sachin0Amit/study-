@@ -108,7 +108,7 @@ export const businessEconomicsCh03: KnowledgeTopic[] = [
       {
         kind: 'formula',
         name: 'The Laffer curve',
-        latex: 'R = t \cdot B(t), \qquad R = 0 \text{ at } t = 0 \text{ and } t = 1',
+        latex: 'R = t \\cdot B(t), \\qquad R = 0 \\text{ at } t = 0 \\text{ and } t = 1',
         meaning: 'Revenue is the rate times the base, and the base itself shrinks as the rate rises — through less work, less saving, evasion and migration — so revenue is zero at a zero rate and at a hundred percent, and peaks at some rate in between.',
       },
       {
