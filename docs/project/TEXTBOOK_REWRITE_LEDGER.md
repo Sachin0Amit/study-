@@ -11,7 +11,7 @@ the next subject in Library order and build its queue. Never repeat a ✅ row.
 
 | Grade | Meaning | Operational test (measurable) |
 |---|---|---|
-| A | Proper textbook quality | ≥2,000 words (no upper limit — as long as teaching requires), figure plate(s), derivation where formula-based, ≥2 worked examples, 6–10 quiz questions with explanations |
+| A | Proper textbook quality | ≥2,000 words (no upper limit, no target range — as long as teaching requires), figure plate(s), derivation where formula-based, ≥2 worked examples, exercise set ≥6 questions with NO upper bound, mixed types, full explanations |
 | B | Understandable, missing detail | 1,750–2,000 words OR missing figure/derivation but otherwise coherent |
 | C | Mostly definitions/bullets | 1,000–1,750 words, no figure, single example, compressed concept-list structure |
 | D | Incomplete/confusing | <1,000 words, or fails the anti-AI-notes test outright |
@@ -25,10 +25,10 @@ when touched, but never spend a bounded unit on them.
 
 ## Quality gates for every rewrite (all must pass)
 
-1. Word count exact: `bun scripts/count-topic-words-exact.ts <id>` — declared == actual, **NO upper limit** (user directive 2026-11-02: as elaborative as the topic genuinely requires, typically 2,500–6,000+ words; floor 2,000; never truncate substance to fit a count; never pad), readMins = round(words/200).
+1. Word count exact: `bun scripts/count-topic-words-exact.ts <id>` — declared == actual, **NO upper limit and NO target range** (user directive 2026-11-02: as elaborative as the topic genuinely requires — whether that honestly lands at 2,500 or 6,000+ words is up to the teaching; floor 2,000; never truncate substance to fit a count; never pad), readMins = round(words/200).
 2. Dedup greps BEFORE writing: `rg -il "<distinctive term>" src/data/knowledge/subjects/` — inspect every hit, carve (cite, never re-teach), record evidence.
 3. Lesson text contains NO exam names. Topic `id` and `title` UNCHANGED (stable forever — mappings, links, progress depend on them).
-4. Structure: situation-opening → background → gradual development → formal definition → figure (explained in prose) → derivation for key formulas → ≥2 worked examples (house style "Identify what is asked … State the result") → applications → pitfalls → study path → terms → 6–10 quiz questions with explanations → recap.
+4. Structure: situation-opening → background → gradual development → formal definition → figure (explained in prose) → derivation for key formulas → ≥2 worked examples (house style "Identify what is asked … State the result") → applications → pitfalls → study path → terms → exercise set ≥6 questions, NO upper bound, mixed types (single-correct, numerical-value, multiple-correct style, assertion–reason, linked-comprehension, trap items), full explanations → recap.
 5. Pipeline: serialize → coverage → index → audit = 2967+/2967+ = 100%, 0 unmapped.
 6. `bun run lint` clean; `bunx tsc --noEmit` 0 errors under src/.
 7. Browser QA: lesson renders (intro, figure, derivation, examples), answer one quiz question → Correct, fresh load 0 console errors, 390px no overflow, CLOSE the browser.

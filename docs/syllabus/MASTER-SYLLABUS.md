@@ -25,7 +25,8 @@
      situation openings, background, gradual development, definitions built up and explained
      word by word AFTER intuition (NEVER the "directly definition + insight" notes pattern);
    - **NO upper word limit** (user directive 2026-11-02, supersedes the former 2,000–3,500
-     range) — as elaborative as genuine teaching requires, typically 2,000–6,000+ words;
+     range; reaffirmed later the same day: no target range either) — as elaborative as
+     genuine teaching requires, whether that honestly lands at 2,300 or 9,000 words;
      never truncate theory, examples, derivations or figures to fit a count; never pad.
      New lessons may land at 1,300–2,800 on the first pass and are deepened on later passes;
    - worked examples with full arithmetic ("show every step");
@@ -33,8 +34,12 @@
      Metropolis 1953…);
    - a figure plate (hand-drawn SVG, labels matching the prose terms verbatim) where a visual helps;
    - a derivation block for every formula-bearing topic;
-   - quiz of 6–10 questions WITH explanations, at least half quantitative/method from the lesson's own
-     worked example;
+   - **exercise set with NO question bound** (user directive 2026-11-02, directive §14):
+     minimum 6 questions, no upper limit — as many as genuine mastery requires — WITH
+     explanations for every answer (and why each wrong option fails), at least half
+     quantitative/method from the lesson's own worked examples, mixing question types
+     (single-correct, numerical-value, multiple-correct style, assertion–reason,
+     linked-comprehension stems, precedence/sign traps);
    - key-terms table; pitfalls callout; applications.
 4. **Zero repetition (hard).** Before writing any lesson: check `coverage/COVERAGE.md`,
    `src/data/knowledge/dedup.ts`, and grep live topics. Carve against neighbours and write the carving

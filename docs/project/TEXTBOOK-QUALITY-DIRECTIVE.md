@@ -210,9 +210,10 @@ gradually.
 ## 12. Depth must match the subject and level — NO WORD CEILING
 
 House charter (**updated 2026-11-02 by explicit user directive — supersedes every earlier
-word range**): **there is NO upper word limit.** A lesson is exactly as long as genuine
-teaching requires — typically 2,500–6,000+ words, and longer whenever the topic needs
-more theory, more worked examples, more derivations, or more explained figures. The only
+word range**): **there is NO upper word limit and NO target range.** A lesson is exactly
+as long as genuine teaching requires — whether that is honestly 2,300 words or 9,000
+is decided by the teaching, never by a number; the topic needs whatever it needs in
+theory, worked examples, derivations, and explained figures. The only
 floor is completeness: the lesson must be long enough to teach the concept to a beginner
 with zero external help (in practice ≥ 2,000 words).
 
@@ -257,11 +258,36 @@ maths text:
 - **Every other discipline:** same principle — the subject's own best textbook
   sets the rhythm, within the §7A/§7B laws.
 
-## 14. Exercises must follow the teaching
+## 14. The Exercise Law — exercises follow the teaching, with NO question bound
 
-Quizzes (6–10 questions, house style) test recall → understanding → application →
-analysis, with explanations for every answer and why wrong options fail. Never generate
-questions unrelated to the material.
+**User directive 2026-11-02 (from the photographed contents page of a comprehensive
+all-in-one mathematics text): exercise sets are UNBOUNDED.** Every lesson ends in a
+full exercise set — a minimum of 6 questions, **NO upper limit**: as many as genuine
+mastery of the lesson requires. A lesson with several concept families and rich
+arithmetic naturally earns 10–20+ questions; never stop at a count, never pad with
+filler questions either. The set climbs recall → understanding → application →
+analysis, every question carries an explanation of the correct answer AND why each
+wrong option fails, and every question grows out of the lesson's own material —
+never generate unrelated questions.
+
+**Question-type variety — the photographed book's "Concept Application Exercise"
+discipline.** Mix the formats the great exam texts use, expressed in the house MCQ
+shape (`{ q, options[], answer, explain }` is single-select, so phrase set-valued
+questions as "which of the following sets/lists…"):
+
+- **single-correct** conceptual checks (recall and meaning);
+- **numerical-value** items — compute, then pick the value among the options;
+- **multiple-correct style** — "Which of the following are true?" with candidate
+  sets/combinations as the options;
+- **assertion–reason** items — Assertion …, Reason …; options: both true and R
+  explains A / both true but R does not explain A / A true R false / A false R true;
+- **linked-comprehension style** — a short stem (data table, scenario, or graph
+  reading) described inside `q`, testing one skill deeply;
+- **precedence / sign / edge-case traps** that rehearse the lesson's own pitfalls
+  list — the book's habit of testing exactly where students slip.
+
+Every question type still obeys §7A: any mathematics in a question, option or
+explanation is set as `$…$`/`$$…$$` KaTeX, never narrated loosely.
 
 ## 15. Improving existing StudyVerse content — A to Z, everything, plus future content
 
