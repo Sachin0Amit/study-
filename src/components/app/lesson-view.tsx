@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import {
   ArrowLeft,
   ArrowRight,
+  ArrowUp,
   BookOpenCheck,
   Brain,
   CheckCircle2,
@@ -484,6 +485,9 @@ export function LessonView({ sectionId }: { sectionId: string }) {
   const activeId = useScrollSpy(tocEntries.map((e) => e.id))
   const restore = useLessonScrollRestore(sectionId)
   const [tocOpen, setTocOpen] = useState(false)
+
+  /** hairline reading-progress rule + deep-scroll back-to-top for long chapters */
+  const reading = useReadingProgress()
 
   /** jump to an outline anchor (sticky-header offset via scroll-mt targets) */
   const scrollToAnchor = useCallback((id: string) => {
@@ -1116,6 +1120,10 @@ export function LessonView({ sectionId }: { sectionId: string }) {
 
       {/* the lesson that talks back — Listen + voice Q&A */}
       <VoiceTutor sectionId={sectionId} lessonTitle={`§${section.number} ${section.title}`} blocks={voiceBlocks} />
+
+      {/* reading-progress rule + deep-scroll back-to-top (both print-hidden) */}
+      <ReadingProgressBar progress={reading.progress} />
+      <BackToTopButton show={reading.deep} />
     </div>
   )
 }
@@ -1176,6 +1184,82 @@ function useScrollSpy(ids: string[]) {
     }
   }, [key])
   return active
+}
+
+/* ------------------------ reading progress + back-to-top ------------------------ */
+
+/** Document scroll progress (0..1) through the lesson plus a "reader is deep"
+ *  flag that earns the back-to-top affordance. Passive listeners, rAF-throttled,
+ *  state only updates when the value actually moves — cheap on every frame. */
+function useReadingProgress() {
+  const [progress, setProgress] = useState(0)
+  const [deep, setDeep] = useState(false)
+
+  useEffect(() => {
+    let raf = 0
+    const measure = () => {
+      raf = 0
+      const doc = document.documentElement
+      const max = doc.scrollHeight - window.innerHeight
+      const p = max > 24 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0
+      setProgress((prev) => (Math.abs(prev - p) > 0.004 ? p : prev))
+      setDeep((prev) => {
+        const next = window.scrollY > window.innerHeight * 2.5
+        return prev === next ? prev : next
+      })
+    }
+    const onScroll = () => {
+      if (!raf) raf = window.requestAnimationFrame(measure)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll, { passive: true })
+    measure()
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      if (raf) window.cancelAnimationFrame(raf)
+    }
+  }, [])
+
+  return { progress, deep }
+}
+
+/** Hairline rule pinned to the very top of the viewport, filling left→right as
+ *  the reader moves through the chapter — the book-page equivalent of a folio
+ *  thumb index. Transform-only animation, hidden on paper. */
+function ReadingProgressBar({ progress }: { progress: number }) {
+  return (
+    <div
+      aria-hidden
+      className="pointer-events-none fixed inset-x-0 top-0 z-[60] h-[3px] print:hidden!"
+    >
+      <div
+        className="h-full origin-left bg-gradient-to-r from-emerald-500 via-emerald-400 to-teal-300 transition-transform duration-100 ease-linear dark:from-emerald-400 dark:via-emerald-300 dark:to-teal-200"
+        style={{ transform: `scaleX(${progress})` }}
+      />
+    </div>
+  )
+}
+
+/** Floating back-to-top — appears once the reader is past ~2½ viewports of a
+ *  long chapter page; respects prefers-reduced-motion. */
+function BackToTopButton({ show }: { show: boolean }) {
+  const jump = useCallback(() => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' })
+  }, [])
+  return (
+    <button
+      onClick={jump}
+      aria-label="Back to top of lesson"
+      tabIndex={show ? 0 : -1}
+      className={`fixed bottom-5 right-5 z-[60] flex h-11 w-11 items-center justify-center rounded-full border border-book-rule bg-card/90 text-muted-foreground shadow-md backdrop-blur transition-all duration-200 hover:border-emerald-400/50 hover:text-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60 dark:hover:text-emerald-300 print:hidden! ${
+        show ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-3 opacity-0'
+      }`}
+    >
+      <ArrowUp className="h-4.5 w-4.5" aria-hidden />
+    </button>
+  )
 }
 
 /** shared outline list — mono numbered chips, emerald active marker, truncation */

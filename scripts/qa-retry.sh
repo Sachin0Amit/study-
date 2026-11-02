@@ -17,17 +17,17 @@ for attempt in 1 2 3 4 5 6; do
     QA="$QA[$attempt:open-fail] "; continue
   fi
   sleep 14
-  body=$(agent-browser eval "(() => { const t = document.body.innerText; return JSON.stringify({ missouri: t.includes('BM 13901'), fig1: t.includes('Figure 1'), fig2: t.includes('Figure 2'), derive: t.includes('Quadratic Formula, Derived'), quiz: t.includes('Check Yourself'), balancer: t.includes('fastest door'), dmd: t.includes('reading-frame'), svgCount: document.querySelectorAll('svg').length, len: t.length }) })()" 2>/dev/null)
+  body=$(agent-browser eval "(() => { const t = document.body.innerText; return JSON.stringify({ missouri: t.includes('BM 13901'), fig1: t.includes('Figure 1'), fig2: t.includes('Figure 2'), derive: t.includes('Quadratic Formula, Derived'), quiz: /check yourself/i.test(t), balancer: t.includes('fastest door'), disc: t.includes('discriminant'), svgCount: document.querySelectorAll('svg').length, len: t.length }) })()" 2>/dev/null)
   echo "attempt $attempt body: $body"
   echo "$body" | rg -q 'missouri..:true' || { QA="$QA[$attempt:body-incomplete] "; agent-browser close >/dev/null 2>&1; continue; }
   echo "$body" | rg -q 'fig1..:true' || { QA="$QA[$attempt:no-figure] "; agent-browser close >/dev/null 2>&1; continue; }
   echo "=== FULL RENDER ATTEMPT $attempt — proceeding with QA ==="
   echo "=== QUIZ SECTION PRESENT ==="
-  agent-browser eval "(() => { const t=document.body.innerText; return JSON.stringify({ checkSelf: /check yourself/i.test(t), q1opt: t.includes('x = ±7'), quizWords: (t.match(/Correct/g)||[]).length }) })()" 2>/dev/null
+  agent-browser eval "(() => { const t=document.body.innerText; return JSON.stringify({ checkSelf: /check yourself/i.test(t), q1opt: /x\\s*=\\s*±\\s*7/.test(t), quizWords: (t.match(/Correct/g)||[]).length }) })()" 2>/dev/null
   echo "=== QUIZ Q1 ==="
-  agent-browser eval "(() => { const btns=[...document.querySelectorAll('button')]; const b=btns.find(x=>x.innerText.includes('x = ±7')); if(!b) return 'Q1 option not found among ' + btns.length; b.click(); return 'clicked: ' + b.innerText.trim().slice(0,30); })()" 2>/dev/null
+  agent-browser eval "(() => { const btns=[...document.querySelectorAll('button')]; const b=btns.find(x=>/x\\s*=\\s*±\\s*7/.test(x.innerText)); if(!b) return 'Q1 option not found among ' + btns.length; b.click(); return 'clicked: ' + b.innerText.trim().slice(0,30); })()" 2>/dev/null
   sleep 3
-  agent-browser eval "(() => { const t=document.body.innerText; const m=t.match(/Correct[^\n]{0,160}/); return m ? m[0] : 'no-correct-feedback'; })()" 2>/dev/null
+  agent-browser eval "(() => { const t=document.body.innerText; const m=t.match(/Correct[^\n]{0,160}/i); return m ? m[0] : 'no-correct-feedback'; })()" 2>/dev/null
   echo "=== CONSOLE ERRORS ==="
   agent-browser errors 2>&1 | tail -3
   echo "=== MOBILE 390 ==="
