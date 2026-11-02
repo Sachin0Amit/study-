@@ -1,19 +1,19 @@
 {
   "$comment": "StudyVerse resume pointer (governing spec PART 14). Read FIRST by every execution — manual or scheduled. Update after every completed unit. Never mark complete before validating output.",
   "lastSuccessfulExecution": {
-    "when": "2026-11-01T23:35:00+05:30",
-    "kind": "scheduled-hourly-master-loop (job 493829, no-ceiling payload)",
-    "objective": "Author ku-biochemistry Ch3 §3.5 Nitrogen Metabolism & the Urea Cycle — completes Ch3 and the subject",
-    "summary": "First lesson authored under the NO-CEILING charter: 6,389 words EXACT / readMins 32 (declared == actual; zero trims, zero padding). Situation opening, PLP Schiff-base transamination, GDH + S445L HI/HA, glutamine/alanine ferries, urea cycle station-by-station with the four-bond bill derived (CPS-I 2 + ASS 2, fumarate refund 2.5 → net ≈ 1.5) and the Krebs bicycle, NAG control + carglumic acid, seven hyperammonemia fingerprints, scavenger ledger (benzoate 1 N / phenylbutyrate 2 N), lactulose therapy, creatine–creatinine ledger, amine messengers; two-panel SVG, 2 worked examples, 8-question quiz. Carve verified by dedup greps; history verified via web (Krebs & Henseleit 1932 Z. physiol. Chem. 210:33–66; Häberle 2011; Klassa 2025; Grimaldi 2017 S445L). Pipeline 724 topics/1,168k words → audit 2967/2967 = 100% 0 unmapped; registries + prerequisite graph rebuilt (724 nodes, 0 cycles, PASS); lint clean, tsc 0 under src/; browser QA passed (quiz → Correct, figure renders, 0 console errors, 390px 0 overflow, browser closed)."
+    "when": "2026-11-02T08:25:00+05:30",
+    "kind": "scheduled-hourly-master-loop (job 494898, first post-recovery firing)",
+    "objective": "ku-biochemistry MASTERSYLLABUS-DONE check + ku-genetics-heredity §6.3 gap audit + author Ch2 §2.3 Chromosome Mutations: Deletions to Inversions",
+    "summary": "DONE check passed (16/16 word-exact; fixed bio-biochemistry-metabolism declared 1,244→1,217). Gap audit: 18/24 lessons present, 6 NEW missing (now 5), 11 lessons below the 2,000 floor, zero figure plates subject-wide — queues recorded in §6.3/§7. Authored bio-structural-chromosome-mutations: 5,821 words EXACT / readMins 29, born textbook-quality under the NO-CEILING charter (zero trims): Missouri semisterile-maize opening, two-break rule, ISCN notation, deletions (Bridges 1917 pseudodominance; cri-du-chat/Williams/22q11.2 contiguous-gene syndromes; DMD reading-frame worked example mod-3), duplications (Sturtevant 1925 Bar unequal crossing-over; NAHR engine), inversions (Figure 1 two-panel SVG; semisterility DERIVED V = 1 − f/2; Sturtevant & Beadle 1936; PEV), balancers (CyO all-Curly stock arithmetic), translocations (Figure 2 quadrivalent; Philadelphia Nowell & Hungerford 1960 + Rowley 1973, BCR-ABL carved to cancer-genetics; Robertsonian rob(14;21) 10-15%/1-3%; McClintock 1941 BFB); 12 terms, 8-question quiz ≥4 quantitative. Carve evidence in file header; research web-verified (haematologica, NLM Profiles, StudyRare, JARG 2019, JCN 2017). Pipeline 725 topics/1,174k → audit 2967/2967 = 100% 0 unmapped; registries + prereq graph rebuilt (725 nodes · 524 edges, PASS); lint clean; tsc 0 under src/ (Prisma client regenerated, fixing 3 rollback-wiped typing-route errors). Browser QA via new standing scripts/qa-retry.sh (server reaped by memory watchdog between compiles — warm-cache retry): full render 116 SVGs, quiz → Correct, 0 console errors, 390px 0 overflow, browser closed."
   },
   "currentPhase": "B — systems complete, writing program in motion",
   "governingPlan": "docs/project/PROJECT_MASTER_PLAN.md",
   "writingProgram": {
     "programDoc": "docs/syllabus/MASTER-SYLLABUS.md",
-    "currentSubject": "ku-biochemistry — COMPLETE (3 ch · 16 lessons)",
-    "currentChapter": "Ch1 Molecules of Life COMPLETE (8) · Ch2 Laboratory Methods COMPLETE (3/3, 6,600 words) · Ch3 Metabolic Pathways in Depth COMPLETE (§3.1 glycolysis 3,500w · §3.2 citric-acid cycle 3,500w · §3.3 oxidative phosphorylation 3,500w · §3.4 carbohydrate & lipid traffic 3,500w · §3.5 nitrogen metabolism & the urea cycle 6,389w)",
-    "currentTopic": "none — subject closed",
-    "nextUnit": "MASTERSYLLABUS-DONE check for ku-biochemistry, then open the next Life Sciences subject per §4 order: ku-genetics-heredity — run the §6.3 gap audit, fix thin lessons to the textbook bar, and author the missing lessons the tree marks (new lessons BORN textbook-quality per the no-ceiling charter; rewrite targets are LIVE lessons only — dedup.ts EXCLUDED_TOPICS are invisible to students)"
+    "currentSubject": "ku-genetics-heredity — IN PROGRESS (5 ch · 19 of 24 lessons; §6.3 gap audit done 2026-11-02)",
+    "currentChapter": "Ch1 Classical & Transmission COMPLETE (7) · Ch2 Cytogenetics & Allelic Analysis COMPLETE (§2.1–2.2 ✓ + §2.3 bio-structural-chromosome-mutations authored 5,821w no-ceiling) · Ch3 Molecular Genetics & Genomics COMPLETE (4) · Ch4 Genes in Populations 3/4 · Ch5 Biotechnology 2/3 · Ch6 Quantitative Genetics 0/3 (NEW chapter to create)",
+    "currentTopic": "none — next unit not started",
+    "nextUnit": "Author Ch4 §4.4 Selection Models & Fitness Arithmetic (next NEW in tree order) — born textbook-quality, NO WORD CEILING, dedup greps before writing (fitness/selection-coefficient territory vs existing population lessons 4.1–4.3), figure plate + derivation + worked examples + 6-10-question quiz. Then §5.3 Genomics in Medicine, then new Ch6 Quantitative Genetics (§6.1 Polygenic Traits & the Bell Curve, §6.2 Heritability & the Breeder's Equation, §6.3 QTL Mapping in Practice — carve vs bio-markers-qtl-mapping which owns marker-map mechanics). AFTER structural completion: deepen the 11 thin lessons (< 2,000-word floor; thinnest mendel 975, crispr 1,169, population-genetics 1,261) and fill the subject-wide figure gap"
   },
   "scheduledJobs": {
     "masterLoop": { "jobId": 494898, "cadence": "hourly at :00 IST", "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8", "note": "recreated 2026-11-02 ~06:55 IST after the sandbox-rollback failure night (old 493829 deleted — it fired 8x against a sandbox rolled back to the Oct-26 state and was disabled by the API); new payload carries STEP 0 ANTI-STALE SYNC (fetch origin, ff-only hard-sync when local is behind with 0 unique commits)" },
@@ -44,8 +44,8 @@
     "bun scripts/build-project-registries.ts",
     "bun scripts/build-prerequisite-graph.ts"
   ],
-  "lastCompletedOperation": "ku-biochemistry Ch3 §3.5 Nitrogen Metabolism & the Urea Cycle authored and certified (MASTER-SYLLABUS §7 ledger row 2026-11-01 ~23:35 IST) — ku-biochemistry COMPLETE (3 ch · 16 lessons)",
-  "nextRequiredOperation": "Hourly master loop: MASTERSYLLABUS-DONE check for ku-biochemistry, then open ku-genetics-heredity per §4 (§6.3 gap audit first) — one bounded unit, then validate + ledger + push",
+  "lastCompletedOperation": "ku-genetics-heredity opened per §4 order: ku-biochemistry MASTERSYLLABUS-DONE check PASSED + §6.3 gap audit recorded + Ch2 §2.3 bio-structural-chromosome-mutations authored and certified 5,821w (MASTER-SYLLABUS §7 ledger row 2026-11-02 ~08:25 IST) — subject now 5 ch · 19/24 lessons",
+  "nextRequiredOperation": "Hourly master loop: author ku-genetics-heredity Ch4 §4.4 Selection Models & Fitness Arithmetic (next NEW in tree order), then §5.3 + new Ch6 ×3, then thin-lesson deepenings + figure gap — one bounded unit, then validate + ledger + push",
   "outstandingErrors": [],
   "pendingValidation": [],
   "blockers": [],
@@ -57,6 +57,7 @@
     "NO WORD CEILING (user directive 2026-11-02): every lesson, existing or future, is as elaborative as genuine teaching requires — never truncate substance to fit a count, never pad; textbook style (theory + explained definitions), never 'definition + insight' notes",
     "three concurrent scheduled jobs work this repo (master 494898 :00, textbook 494899 :30, webDevReview 494900 :07/:22/:37/:52) — always check git status/log first and leave the tree clean; a trigger may fail with 'model concurrency limit exceeded' if another agent session is active — the job stays enabled and fires again on its next boundary",
     "SANDBOX ROLLBACK HAZARD (hit 2026-11-02): the sandbox can silently roll back to an old commit while cron jobs keep firing — both loops now run STEP 0 ANTI-STALE SYNC (fetch origin; 0-unique-commits + behind => git restore stat-dirty files then ff-only merge) before any work; trust origin/main + this pointer over any stale local state",
-    "IST dating: the sandbox clock is UTC/+08:00 — convert honestly to Asia/Kolkata, never copy a prior row's date"
+    "IST dating: the sandbox clock is UTC/+08:00 — convert honestly to Asia/Kolkata, never copy a prior row's date",
+    "DEV-SERVER FRAGILITY (observed 2026-11-02): the memory watchdog reaps next-server after heavy compiles — restart, curl-warm the target route (HTTP 200), then open the browser IMMEDIATELY; retry warm-cache cycles until the page body renders fully; standing script scripts/qa-retry.sh automates open → body-check → full QA (quiz click, console, 390px). Always close the browser; and after any sandbox rollback run `bunx prisma generate` — 'typingResult does not exist on PrismaClient' errors under src/app/api/typing are the tell that the generated client was wiped"
   ]
 }

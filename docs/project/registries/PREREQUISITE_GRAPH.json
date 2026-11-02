@@ -1,7 +1,7 @@
 {
   "$comment": "Topic-level prerequisite graph (spec PART 2.3: Topic → Prerequisite Topics → Learning Sequence). sequence = teaching order per subject (ordering facts, not dependencies). declared = derivation prerequisite phrases resolved to ku topics (title/concept, exact or ≥0.7 token overlap) or masters-library sections (cross-universe foundations). Lesson-internal phrases are classified, unresolved phrases are the honest missing-prerequisite work queue (spec: create or connect). Validation: dependency cycles (declared ku edges only), forward-reference violations, dangling refs. Regenerate: bun scripts/build-prerequisite-graph.ts",
-  "builtOn": "2026-11-01",
-  "nodeCount": 724,
+  "builtOn": "2026-11-02",
+  "nodeCount": 725,
   "nodes": [
     {
       "id": "sci-experimental-design-hypotheses",
@@ -996,11 +996,19 @@
       "tier": "advanced"
     },
     {
+      "id": "bio-structural-chromosome-mutations",
+      "title": "Chromosome Mutations: Deletions to Inversions",
+      "subject": "Genetics & Heredity",
+      "chapter": "Cytogenetics",
+      "orderInSubject": 9,
+      "tier": "intermediate"
+    },
+    {
       "id": "bio-genomics-bioinformatics",
       "title": "Genomics and Bioinformatics: Reading Whole Genomes",
       "subject": "Genetics & Heredity",
       "chapter": "Genomics",
-      "orderInSubject": 9,
+      "orderInSubject": 10,
       "tier": "advanced"
     },
     {
@@ -1008,7 +1016,7 @@
       "title": "Genetic Markers: DNA Landmarks, Marker Maps and QTL",
       "subject": "Genetics & Heredity",
       "chapter": "Genomics",
-      "orderInSubject": 10,
+      "orderInSubject": 11,
       "tier": "advanced"
     },
     {
@@ -1016,7 +1024,7 @@
       "title": "CRISPR and the Mechanics of Gene Editing",
       "subject": "Genetics & Heredity",
       "chapter": "Molecular Genetics",
-      "orderInSubject": 11,
+      "orderInSubject": 12,
       "tier": "advanced"
     },
     {
@@ -1024,7 +1032,7 @@
       "title": "Cancer Genetics: Oncogenes, Tumor Suppressors and Targeted Therapy",
       "subject": "Genetics & Heredity",
       "chapter": "Molecular Genetics",
-      "orderInSubject": 12,
+      "orderInSubject": 13,
       "tier": "advanced"
     },
     {
@@ -1032,7 +1040,7 @@
       "title": "Inheritance in Populations: Allele Frequencies and Population Patterns",
       "subject": "Genetics & Heredity",
       "chapter": "Population Genetics",
-      "orderInSubject": 13,
+      "orderInSubject": 14,
       "tier": "intermediate"
     },
     {
@@ -1040,7 +1048,7 @@
       "title": "Population Genetics: Genes Drifting Through Time",
       "subject": "Genetics & Heredity",
       "chapter": "Genes in Populations",
-      "orderInSubject": 14,
+      "orderInSubject": 15,
       "tier": "advanced"
     },
     {
@@ -1048,7 +1056,7 @@
       "title": "Inbreeding, Consanguinity and the Mutation-Selection Balance",
       "subject": "Genetics & Heredity",
       "chapter": "Population Genetics",
-      "orderInSubject": 15,
+      "orderInSubject": 16,
       "tier": "advanced"
     },
     {
@@ -1056,7 +1064,7 @@
       "title": "Recombinant DNA: The Tools and Techniques of Genetic Engineering",
       "subject": "Genetics & Heredity",
       "chapter": "Biotechnology",
-      "orderInSubject": 16,
+      "orderInSubject": 17,
       "tier": "intermediate"
     },
     {
@@ -1064,7 +1072,7 @@
       "title": "Biotechnology in Practice: Medicine, Farms, and Industry",
       "subject": "Genetics & Heredity",
       "chapter": "Biotechnology",
-      "orderInSubject": 17,
+      "orderInSubject": 18,
       "tier": "advanced"
     },
     {
@@ -6290,48 +6298,53 @@
       },
       {
         "from": "bio-alleles-mullers-morphs",
-        "to": "bio-genomics-bioinformatics",
+        "to": "bio-structural-chromosome-mutations",
         "via": "sequence: Genetics & Heredity lesson 9 → 10"
+      },
+      {
+        "from": "bio-structural-chromosome-mutations",
+        "to": "bio-genomics-bioinformatics",
+        "via": "sequence: Genetics & Heredity lesson 10 → 11"
       },
       {
         "from": "bio-genomics-bioinformatics",
         "to": "bio-markers-qtl-mapping",
-        "via": "sequence: Genetics & Heredity lesson 10 → 11"
+        "via": "sequence: Genetics & Heredity lesson 11 → 12"
       },
       {
         "from": "bio-markers-qtl-mapping",
         "to": "bio-crispr-gene-editing",
-        "via": "sequence: Genetics & Heredity lesson 11 → 12"
+        "via": "sequence: Genetics & Heredity lesson 12 → 13"
       },
       {
         "from": "bio-crispr-gene-editing",
         "to": "bio-cancer-genetics-oncogenes",
-        "via": "sequence: Genetics & Heredity lesson 12 → 13"
+        "via": "sequence: Genetics & Heredity lesson 13 → 14"
       },
       {
         "from": "bio-cancer-genetics-oncogenes",
         "to": "bio-population-inheritance-frequencies",
-        "via": "sequence: Genetics & Heredity lesson 13 → 14"
+        "via": "sequence: Genetics & Heredity lesson 14 → 15"
       },
       {
         "from": "bio-population-inheritance-frequencies",
         "to": "bio-population-genetics",
-        "via": "sequence: Genetics & Heredity lesson 14 → 15"
+        "via": "sequence: Genetics & Heredity lesson 15 → 16"
       },
       {
         "from": "bio-population-genetics",
         "to": "bio-inbreeding-mutation-balance",
-        "via": "sequence: Genetics & Heredity lesson 15 → 16"
+        "via": "sequence: Genetics & Heredity lesson 16 → 17"
       },
       {
         "from": "bio-inbreeding-mutation-balance",
         "to": "bio-biotechnology-rdna-processes",
-        "via": "sequence: Genetics & Heredity lesson 16 → 17"
+        "via": "sequence: Genetics & Heredity lesson 17 → 18"
       },
       {
         "from": "bio-biotechnology-rdna-processes",
         "to": "bio-biotechnology-applications",
-        "via": "sequence: Genetics & Heredity lesson 17 → 18"
+        "via": "sequence: Genetics & Heredity lesson 18 → 19"
       },
       {
         "from": "bio-anatomy-heart-circulation",
@@ -8538,10 +8551,10 @@
     ]
   },
   "declaredResolution": {
-    "phrasesTotal": 62,
+    "phrasesTotal": 65,
     "resolvedToKuTopic": 4,
     "resolvedToMastersSection": 8,
-    "lessonInternal": 39,
+    "lessonInternal": 42,
     "unresolved": 11,
     "unresolvedList": [
       {
@@ -8711,6 +8724,18 @@
         "phrase": "Hydrolysis-only steps cost none"
       },
       {
+        "from": "bio-structural-chromosome-mutations",
+        "phrase": "meiosis yields four chromatid products"
+      },
+      {
+        "from": "bio-structural-chromosome-mutations",
+        "phrase": "paracentric crossover: two of four chromatids inviable"
+      },
+      {
+        "from": "bio-structural-chromosome-mutations",
+        "phrase": "pericentric crossover: two balanced, two duplication-deletion"
+      },
+      {
         "from": "bio-cell-two-architectures-size-limit",
         "phrase": "Area of a cube face: a²"
       },
@@ -8876,7 +8901,7 @@
     },
     "Genetics & Heredity": {
       "core": 4,
-      "intermediate": 4,
+      "intermediate": 5,
       "advanced": 10
     },
     "Anatomy & Physiology": {

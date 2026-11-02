@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — subject book: Genetics & Heredity (genetics-heredity)
- * group: Life Sciences · 5 chapters · 18 lessons
+ * group: Life Sciences · 5 chapters · 19 lessons
  *
  * One folder per canonical subject (mirrors the Library book); one file
  * per chapter. New chapters: create <nn>-<chapter-slug>.ts, add it to the
@@ -9,7 +9,7 @@
  *
  * Table of contents:
  *   01 Classical & Transmission Genetics — 7 lessons
- *   02 Cytogenetics & Allelic Analysis — 2 lessons
+ *   02 Cytogenetics & Allelic Analysis — 3 lessons
  *   03 Molecular Genetics & Genomics — 4 lessons
  *   04 Genes in Populations — 3 lessons
  *   05 Biotechnology — 2 lessons

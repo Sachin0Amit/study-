@@ -1,7 +1,7 @@
 {
   "$comment": "Every Knowledge-University topic by stable id (spec PART 8: canonical topic registry — check here before authoring; ids are kebab-case, globally unique, stable forever). Regenerate: bun scripts/build-project-registries.ts",
-  "builtOn": "2026-11-01",
-  "count": 724,
+  "builtOn": "2026-11-02",
+  "count": 725,
   "topics": [
     {
       "id": "sci-experimental-design-hypotheses",
@@ -2504,6 +2504,27 @@
         "Sorting any allele against deletion, wild type, duplication",
         "The complementation test: same gene or different genes?",
         "Complementation groups assign mutants to genes"
+      ]
+    },
+    {
+      "id": "bio-structural-chromosome-mutations",
+      "title": "Chromosome Mutations: Deletions to Inversions",
+      "domain": "Life Sciences",
+      "subject": "Genetics & Heredity",
+      "chapter": "Cytogenetics",
+      "tier": "intermediate",
+      "words": 5821,
+      "readMins": 29,
+      "addedOn": "2026-11-02",
+      "concepts": [
+        "Two-break misrepair and unequal crossing-over: the rearrangement engines",
+        "Pseudodominance: the deletion's genetic signature",
+        "Contiguous-gene deletion syndromes: cri-du-chat, Williams, 22q11.2",
+        "Bar eye: Sturtevant's unequal crossing-over and gene dosage",
+        "Inversion loops, dicentric bridges and semisterility",
+        "Recombination suppression and Drosophila balancer chromosomes",
+        "Reciprocal and Robertsonian translocations; the Philadelphia chromosome",
+        "Position-effect variegation"
       ]
     },
     {

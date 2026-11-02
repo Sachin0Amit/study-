@@ -1,6 +1,6 @@
 {
   "$comment": "Syllabus-entry coverage (spec PART 9): Coverage = mapped entries / total applicable entries. Mapping confirms a lesson/chapter genuinely teaching the entry exists (alias-first, audited) — it does NOT certify exam-depth mastery; depth is tracked by the writing program (tiers + word counts). Assessment coverage (practice-question counts per entry) is not yet tracked — DISCOVERY_BACKLOG item 10. Regenerate: bun scripts/build-project-registries.ts",
-  "builtOn": "2026-11-01",
+  "builtOn": "2026-11-02",
   "formula": "Coverage = mapped syllabus entries / total verified applicable syllabus entries × 100",
   "grandTotal": {
     "exams": 59,

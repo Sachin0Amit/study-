@@ -39,7 +39,7 @@ export const biochemistryCh01: KnowledgeTopic[] = [
       "Michaelis-Menten kinetics",
       "Catabolism and anabolism integrated",
     ],
-    words: 1244,
+    words: 1217,
     readMins: 6,
     addedOn: "2026-10-18",
     blocks: [

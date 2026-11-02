@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T01:43:06.835Z",
+  "generatedAt": "2026-11-02T02:14:12.423Z",
   "purpose": "AI content ledger — consult BEFORE writing any new library content. If a topic exists here, deepen it (new sections, worked examples, depth tiers) instead of duplicating. Only absent topics get fresh authoring.",
   "howToCheck": [
     "1. Search this file (or COVERAGE.md) for the topic/subject you plan to write.",
@@ -12,7 +12,7 @@
     "subjects": 140,
     "books": 140,
     "chapters": 899,
-    "sections": 4709
+    "sections": 4710
   },
   "subjects": [
     {
@@ -27116,7 +27116,7 @@
       "group": "Life Sciences",
       "tagline": "How traits travel and vary",
       "chapterCount": 5,
-      "sectionCount": 18,
+      "sectionCount": 19,
       "chapters": [
         {
           "id": "ku-genetics-heredity-classical-and-transmission-genetics",
@@ -27169,7 +27169,7 @@
           "title": "Cytogenetics & Allelic Analysis",
           "shortTitle": "Cytogenetics & Allelic Analysis",
           "bookId": "ku-genetics-heredity",
-          "sectionCount": 2,
+          "sectionCount": 3,
           "sections": [
             {
               "id": "ku-bio-chromosome-number-structure",
@@ -27180,6 +27180,11 @@
               "id": "ku-bio-alleles-mullers-morphs",
               "number": 2.2,
               "title": "What Alleles Do: Wild Type, Muller's Morphs and Complementation"
+            },
+            {
+              "id": "ku-bio-structural-chromosome-mutations",
+              "number": 2.3,
+              "title": "Chromosome Mutations: Deletions to Inversions"
             }
           ]
         },

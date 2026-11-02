@@ -1,6 +1,6 @@
 {
   "$comment": "Examination registry (spec PART 2.2): curated OFFICIAL syllabi with authority, verification date and official source URLs. syllabusVerified = date the syllabus data was last verified against the official page — re-verify when older than 12 months (DISCOVERY_BACKLOG item 11). Regenerate: bun scripts/build-project-registries.ts",
-  "builtOn": "2026-11-01",
+  "builtOn": "2026-11-02",
   "count": 59,
   "regions": [
     "India",

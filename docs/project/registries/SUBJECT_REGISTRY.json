@@ -1,6 +1,6 @@
 {
   "$comment": "Subject registry across both universes (spec PART 3/14). Masters Library: recognized-textbook subjects. Knowledge University: original StudyVerse textbooks (subject name = authoring-tree key). Regenerate: bun scripts/build-project-registries.ts",
-  "builtOn": "2026-11-01",
+  "builtOn": "2026-11-02",
   "summary": {
     "mastersSubjects": 140,
     "mastersBooks": 36,
@@ -10,9 +10,9 @@
     "knowledgeSubjects": 201,
     "knowledgeBooks": 104,
     "knowledgeChapters": 339,
-    "knowledgeTopics": 724,
-    "knowledgeWords": 1168350,
-    "knowledgeSections": 632
+    "knowledgeTopics": 725,
+    "knowledgeWords": 1174171,
+    "knowledgeSections": 633
   },
   "subjects": [
     {
@@ -409,7 +409,7 @@
       "universe": "masters-library",
       "books": 1,
       "chapters": 5,
-      "sections": 18
+      "sections": 19
     },
     {
       "id": "ku-evolutionary-biology",
@@ -1281,11 +1281,11 @@
       "universe": "knowledge-university",
       "domain": "Life Sciences",
       "chapters": 9,
-      "topics": 18,
-      "words": 35003,
+      "topics": 19,
+      "words": 40824,
       "tiers": {
         "core": 4,
-        "intermediate": 4,
+        "intermediate": 5,
         "advanced": 10
       }
     },

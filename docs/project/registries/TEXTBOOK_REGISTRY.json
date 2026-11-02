@@ -1,6 +1,6 @@
 {
   "$comment": "Every library book (spec PART 4). Masters books are recognized textbooks (author/edition/year as curated; full texts are NOT reproduced — lessons are original explanations). ku- books are original StudyVerse volumes. sources[] on master volumes lists the books merged into it. Regenerate: bun scripts/build-project-registries.ts",
-  "builtOn": "2026-11-01",
+  "builtOn": "2026-11-02",
   "count": 140,
   "books": [
     {
@@ -668,12 +668,12 @@
       "author": "StudyVerse Curriculum Team",
       "edition": "Unified Edition",
       "year": "2026",
-      "pages": 88,
+      "pages": 102,
       "chapters": 5,
       "mergedFrom": [
         "One book per subject — 1 subject areas merged: Genetics & Heredity"
       ],
-      "description": "Every Genetics & Heredity lesson in the Library, unified into one volume — Classical & Transmission Genetics, Cytogenetics & Allelic Analysis, Molecular Genetics & Genomics, Genes in Populations, Biotechnology. 18 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
+      "description": "Every Genetics & Heredity lesson in the Library, unified into one volume — Classical & Transmission Genetics, Cytogenetics & Allelic Analysis, Molecular Genetics & Genomics, Genes in Populations, Biotechnology. 19 complete, self-contained lessons with worked examples, key terms and self-check quizzes, merging university coursework, entrance-exam scope and applied material."
     },
     {
       "id": "ku-evolutionary-biology",

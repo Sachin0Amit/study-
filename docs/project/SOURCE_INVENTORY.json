@@ -1,6 +1,6 @@
 {
   "$comment": "Machine-readable source inventory (master spec PART 2.1). Traceability chain: Source → Subject → Chapter → Topic → Lesson → Examination → Learning Objective. Sources are never deleted; duplicates carry group ids. Regenerate: bun scripts/source-inventory.ts",
-  "builtOn": "2026-11-01",
+  "builtOn": "2026-11-02",
   "summary": {
     "userSourceFiles": 20,
     "uniqueUserSources": 4,

@@ -1,6 +1,6 @@
 # PROJECT STATUS — StudyVerse
 
-**Snapshot date:** 2026-11-01 (regenerated at each execution — see WORKLOG.md for deltas)
+**Snapshot date:** 2026-11-02 (regenerated at each execution — see WORKLOG.md for deltas)
 
 ## Current phase
 
@@ -15,8 +15,8 @@ Life Sciences writing program per `docs/syllabus/MASTER-SYLLABUS.md` §4/§6.
 | Metric | Count |
 |---|---|
 | Masters Library subjects / books / chapters / sections | 140 / 36 / 899 / 4,708 |
-| Knowledge University domains / books / chapters / topics | 18 / 104 / 360 / 724 |
-| Knowledge words (sum of topic word counts) | ≈1,168,000 |
+| Knowledge University domains / books / chapters / topics | 18 / 104 / 360 / 725 |
+| Knowledge words (sum of topic word counts) | ≈1,174,000 |
 | Topic tiers | 399 core · 270 intermediate · 52 advanced |
 | Curated exams / official syllabus entries | 59 / 2,967 |
 | Exam regions covered | India, USA, UK, Global, Europe, Australia, Canada, Singapore, Japan, China, South America |
@@ -35,7 +35,8 @@ successive-changes formula + 3 worked examples + 8-question quiz).
 
 - ku-cell-molecular-biology: **COMPLETE** (4 ch · 18 lessons)
 - ku-zoology: 5 ch · 11 lessons (Comparative Physiology, Digestion & Metabolism, Reproduction & Life Cycles authored)
-- ku-biochemistry: **COMPLETE** (3 ch · 16 lessons — Ch1 8 lessons incl. §1.8 nucleotides 2,895w; Ch2 3 lessons incl. figure-plated §2.2 2,510w / §2.3 2,287w; Ch3 5 lessons — §3.1 glycolysis 3,500w · §3.2 citric-acid cycle 3,500w · §3.3 oxidative phosphorylation 3,500w · §3.4 carbohydrate & lipid traffic 3,500w · §3.5 nitrogen metabolism & the urea cycle 6,389w, the first lesson authored under the NO-CEILING charter) — all word-exact with figure plates, derivations and worked-example ledgers; MASTERSYLLABUS-DONE check next, then ku-genetics-heredity per §6.3
+- ku-biochemistry: **COMPLETE — MASTERSYLLABUS-DONE check PASSED 2026-11-02** (3 ch · 16 lessons, all word-exact incl. §3.5 nitrogen metabolism & the urea cycle 6,389w, the first NO-CEILING lesson)
+- ku-genetics-heredity: 5 ch · **19 of 24** lessons (§6.3 gap audit 2026-11-02; Ch2 §2.3 Chromosome Mutations: Deletions to Inversions authored 5,821w no-ceiling; remaining NEW: §4.4 Selection Models, §5.3 Genomics in Medicine, new Ch6 Quantitative Genetics ×3; then 11 thin lessons < 2,000 floor + zero-figure gap to fill)
 - 13-subject Life Sciences cluster in progress (107 → 168 lesson target), then the
   aptitude trio (Quantitative Aptitude, Logical Reasoning, General Awareness —
   first 2 chapters of each seeded), then remaining §4 subjects.
@@ -47,9 +48,9 @@ successive-changes formula + 3 worked examples + 8-question quiz).
 | Content pipeline (serialize → coverage → index → audit) | ✅ green, 2,967/2,967 = 100% mapped (masters 2,413 · ku 554) |
 | lint / tsc | ✅ clean / 0 errors under src/ (new scripts clean) |
 | Dev server (:3000) | ✅ running (watchdog auto-recovers OOM restarts ~90 s) |
-| Hourly master loop (cron 492782) | ✅ live — prompt re-pointed to PROJECT_MASTER_PLAN workflow |
+| Hourly master loop (cron 494898, recreated after the 2026-11-02 rollback incident with STEP 0 anti-stale sync) | ✅ live — first firing completed 2026-11-02 ~08:25 IST |
 | 15-min webDevReview loop | ✅ live |
-| Registries (docs/project/registries/) | ✅ 5 registries + prerequisite graph (721 nodes · 520 sequence edges · 12 verified declared edges · validation PASS) |
+| Registries (docs/project/registries/) | ✅ 5 registries + prerequisite graph (725 nodes · 524 sequence edges · validation PASS) |
 | Source inventory | ✅ 58 records: 20 user files (4 unique after md5 dedupe) + 38 diagram assets (22 referenced) — 0 pending inspection |
 
 ## Known limitations (honest)
@@ -62,5 +63,8 @@ successive-changes formula + 3 worked examples + 8-question quiz).
   unresolved** — the honest missing-prerequisite queue in
   PREREQUISITE_GRAPH.json (backlog item 5 adds author-declared topic-level
   prerequisites going forward).
-- The 4 GB sandbox occasionally OOM-restarts the dev server; the watchdog
-  recovers it. Browser verification must poll patiently and close when done.
+- The 4 GB sandbox OOM-reaps the dev server after heavy compiles (observed 2026-11-02:
+  repeated reaping mid-QA). Standing workaround: scripts/qa-retry.sh (restart →
+  curl-warm route → browse immediately → retry until full render → close browser).
+  After any sandbox rollback also run `bunx prisma generate` (the generated client
+  is wiped; TypingResult errors under src/app/api/typing are the tell).
