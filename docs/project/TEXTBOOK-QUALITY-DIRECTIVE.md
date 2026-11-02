@@ -284,7 +284,15 @@ questions as "which of the following sets/lists…"):
 - **linked-comprehension style** — a short stem (data table, scenario, or graph
   reading) described inside `q`, testing one skill deeply;
 - **precedence / sign / edge-case traps** that rehearse the lesson's own pitfalls
-  list — the book's habit of testing exactly where students slip.
+  list — the book's habit of testing exactly where students slip;
+- **matrix-matching (match-the-columns) style** — the photographed book's two-column
+  List-I/List-II format: state the pairs inside `q` (List-I items, List-II items) and
+  make the options the possible matchings ("A→3, B→1, C→4, D→2" style), one correct
+  mapping among plausible near-misses.
+
+A large lesson closes with a **cumulative mixed set** — several formats interleaved in
+one exercise, the way the photographed text ends each chapter — so the student never
+knows which skill the next question rehearses.
 
 Every question type still obeys §7A: any mathematics in a question, option or
 explanation is set as `$…$`/`$$…$$` KaTeX, never narrated loosely.

@@ -23,10 +23,10 @@
       "note": "recreated 2026-11-02 ~13:25 IST (supersedes 495102, same STEP 0 anti-stale hardening) to bake in THE UNBOUNDED CHARTER: NO WORD CEILING/NO TARGET RANGE + NO QUESTION BOUND (directive §14 Exercise Law — ≥6 questions, no upper limit, mixed types incl. assertion-reason/linked-comprehension/numerical-value/trap items) on top of the STYLE LAWS (§7A/§7B/§13)"
     },
     "webDevReview": {
-      "jobId": 495200,
+      "jobId": 495243,
       "cadence": "every 15 min at :07/:22/:37/:52 IST",
       "kind": "webDevReview",
-      "note": "recreated 2026-11-02 ~12:58 IST as 495200 — BOTH predecessors (494900, then its 12:15 IST replacement 495104) vanished from the scheduler; pattern: check `cron list` for all 3 jobs every session and restore missing ones first. Mandatory QA/styling/features description + repo hygiene (commit foreign work, leave tree clean, push PAT-inline) + style-law guard (never reintroduce Definition/Insight labels in UI work)"
+      "note": "recreated 2026-11-02 ~13:22 IST as 495243 (12:58 recreation 495200 superseded when the charter landed) — predecessors 494900 and 495104 BOTH vanished from the scheduler earlier; pattern: check `cron list` for all 3 jobs every session and restore missing ones first. Mandatory QA/styling/features description + UNBOUNDED CHARTER guard (§7A/§7B/§12/§13/§14 — never reintroduce Definition/Insight labels or question/word bounds) + GIT RACE SAFETY (never reset/checkout destructively, never touch uncommitted foreign files, pull --rebase on rejected push)"
     },
     "textbookQualityLoop": {
       "jobId": 495219,
