@@ -726,7 +726,8 @@ body.sv-summary-open {
   color: color-mix(in oklab, var(--primary) 68%, var(--sv-book-ink));
 }
 
-/* small-cap run-in labels — "Definition 1.", "Theorem 2.", "Solution." */
+/* small-cap run-in labels — kept for book furniture that prints use them
+   ("Solution.", figure captions, derivation step tags) */
 .sv-book-label {
   font-weight: 600;
   font-size: 0.8em;
@@ -735,7 +736,8 @@ body.sv-summary-open {
   margin-right: 0.35em;
 }
 
-/* theorem / law block — indented, amber hairline, italic body */
+/* theorem / law block — indented, amber hairline, italic body (deeper-theory
+   runs only; the lesson body itself is continuous prose, no labelled boxes) */
 .sv-book-thm {
   margin: 1.4rem 0 1.4rem 1.5rem;
   padding: 0.15rem 0 0.15rem 1.15rem;
@@ -746,28 +748,6 @@ body.sv-summary-open {
   font-style: normal; /* keep math upright inside italic theorems */
 }
 .sv-book-thm .sv-book-label {
-  font-style: normal;
-}
-
-/* definition wash — the faintest paper tint, full measure */
-.sv-book-def {
-  margin: 1.35rem 0;
-  padding: 0.9rem 1.1rem 0.9rem 1.25rem;
-  background: var(--sv-book-shade);
-  border-left: 2.5px solid color-mix(in oklab, var(--primary) 55%, transparent);
-  border-radius: 0 2px 2px 0;
-}
-
-/* insight — a marginal note in rose */
-.sv-book-note {
-  margin: 1.4rem 0 1.4rem 1.5rem;
-  padding-left: 1.15rem;
-  border-left: 2px solid color-mix(in oklab, var(--color-rose-400, oklch(0.65 0.19 13)) 55%, transparent);
-  font-style: italic;
-  font-size: 0.97em;
-  color: var(--sv-book-ink-soft);
-}
-.sv-book-note .sv-book-label {
   font-style: normal;
 }
 
@@ -845,12 +825,7 @@ body.sv-summary-open {
     background: transparent !important;
     font-size: 11pt;
   }
-  .sv-book-def {
-    border-left-color: #52525b !important;
-    background: #f4f4f5 !important;
-  }
-  .sv-book-thm,
-  .sv-book-note {
+  .sv-book-thm {
     border-left-color: #a1a1aa !important;
   }
   .sv-book-dropcap::first-letter {

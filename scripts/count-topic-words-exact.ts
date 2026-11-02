@@ -129,6 +129,7 @@ function blockWords(b: any): number {
   if (typeof b.title === 'string' && b.kind === 'callout') n += wc(b.title)
   if (typeof b.name === 'string') n += wc(b.name)
   if (typeof b.meaning === 'string') n += wc(b.meaning)
+  if (b.kind === 'equation' && typeof b.note === 'string') n += wc(b.note)
   if (typeof b.title === 'string' && b.kind === 'example') n += wc(b.title)
   if (b.kind === 'figure') {
     if (typeof b.caption === 'string') n += wc(b.caption)

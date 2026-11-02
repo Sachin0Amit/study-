@@ -76,6 +76,7 @@ export function countTopicWords(t: KnowledgeTopic): number {
     if (b.kind === 'para' || b.kind === 'heading') n += b.text.split(/\s+/).filter(Boolean).length
     else if (b.kind === 'callout') n += (b.title + ' ' + b.text).split(/\s+/).filter(Boolean).length
     else if (b.kind === 'formula') n += (b.name + ' ' + b.meaning).split(/\s+/).filter(Boolean).length
+    else if (b.kind === 'equation') n += (b.note ?? '').split(/\s+/).filter(Boolean).length
     else if (b.kind === 'example') n += (b.title + ' ' + b.steps.join(' ')).split(/\s+/).filter(Boolean).length
     else if (b.kind === 'terms') n += b.items.map((i) => i.term + ' ' + i.def).join(' ').split(/\s+/).filter(Boolean).length
     else if (b.kind === 'list') n += b.items.join(' ').split(/\s+/).filter(Boolean).length

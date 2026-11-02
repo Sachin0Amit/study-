@@ -138,6 +138,46 @@ almost no prose between them. THAT is how mathematics in StudyVerse must look.
    tight centered stack — prefer that over scattering them across paragraphs); break
    the stack only when the teaching between moves genuinely needs a sentence.
 
+## 7B. THE PROSE LAW — no “heading → Definition/Insight” blocks anywhere
+
+**Adopted 2026-11-02 by explicit user directive (“remove that heading then insight
+style / heading then definition everywhere — make things as I send you in image”)**,
+with four photographed textbook pages (NCERT calculus, NCERT chemistry, Cengage 3D
+geometry, solved-examples sheet) as the binding model. The lesson renderer was
+changed the same day: concept run-in labels (“DEFINITION 1.”, “INSIGHT.”,
+“THEOREM 2.”) and their boxes are GONE from the reading surface — theory renders
+as numbered subsection headings followed by continuous prose. Authoring must
+match that surface:
+
+1. **Theory flows as prose.** A concept is developed in full paragraphs of
+   connected reasoning, never as “term as heading + one-line labelled
+   definition”. The subsection heading names the idea; the paragraphs under it
+   BUILD the idea (context → mechanism → formal statement → interpretation),
+   exactly like an NCERT section.
+2. **Key terms are bolded inline, first occurrence** — `**cathode rays**`,
+   `**completing the square**` — the way the photographed pages emphasize
+   terminology inside sentences. The `terms` block remains ONLY as the end-of-
+   lesson glossary recap.
+3. **Definitions are earned, then stated in prose.** Build the intuition first,
+   then give the precise statement as a normal sentence (its symbols may sit in
+   `$…$`, or the whole statement may be one `$$…$$` display when symbolic).
+   Never a bare “Definition: X is …” fragment stripped of reasoning.
+4. **The `equation` block is now first-class** — `{ kind: 'equation', latex,
+   note? }` sets one display equation that rides with the concept being
+   developed: use it (or `$$…$$` lines inside a `para`) for every display; use
+   KaTeX `\tag{n}` when an equation is referenced later, `\begin{aligned}…
+   \end{aligned}` with `\\` + `&` for stacked derivations whose equals signs
+   align, and `\text{(Given)}` / `\text{(Chain Rule)}` / `\text{(using (1))}`
+   for right-margin annotations — the exact conventions of the photographed
+   solved-examples page.
+5. **Worked examples keep the house frame** (Identify what is asked → … → State
+   the result) — rendered as “Example N / Problem. / steps / Result.” — with
+   every mathematical line displayed per §7A.
+6. **This law applies to every subject and every future lesson**, and to every
+   A–Z rewrite: when a rewritten lesson is re-read, nothing may resemble a
+   notes app — no labelled fragments, no bullet-point theory, no “Insight:”
+   callouts replacing reasoning.
+
 ## 8. Step-by-step examples and worked problems
 
 Examples at levels 1–5 (basic understanding → standard application → intermediate →
@@ -187,22 +227,35 @@ round(words/200)). Depth follows conceptual difficulty, importance, prerequisite
 mathematical complexity, examination relevance, applications, level, research
 significance — and nothing else. No number ever overrides pedagogy.
 
-## 13. Subject-specific expectations
+## 13. Subject-specific expectations — and per-subject style variation
 
-- **Mathematics:** why the idea is needed, how it develops, number examples, algebra,
-  graphs, geometric interpretations, proofs, counterexamples, step-by-step derivations,
-  numerical exercises.
-- **Physics:** physical observations first, meaning before equations, experiments,
-  free-body diagrams, units, numerical problems, limits of models.
-- **Chemistry:** observable → molecular → atomic levels, equations, mechanisms,
-  structures, energy diagrams, laboratory examples, step-by-step calculations.
-- **Computer Science:** the problem before the algorithm; runnable code or clearly marked
-  pseudocode, walkthroughs, execution traces, memory diagrams, complexity analysis.
-- **Biology:** structure with function, processes in order, labelled diagrams,
-  life-cycles, comparative tables, experiments, real examples.
+**User directive 2026-11-02: writing style may differ a bit from subject to
+subject** — the laws above fix the QUALITY floor (prose theory, displayed
+equations, earned definitions), not a uniform template. Each subject keeps its
+natural textbook voice, the way NCERT physics reads differently from a Cengage
+maths text:
+
+- **Mathematics:** equation-dense — §7A at full strength: display chains,
+  aligned derivations, `\tag` numbering, proofs, counterexamples, graphs,
+  geometric interpretations, numerical exercises.
+- **Physics:** observations and experiments first, meaning before equations; once
+  an equation arrives it is displayed with units carried through; free-body
+  diagrams, limits of models.
+- **Chemistry:** prose-driven narrative across observable → molecular → atomic
+  levels; reaction equations and mechanisms as display lines; energy diagrams,
+  structures, laboratory examples, step-by-step calculations.
+- **Computer Science:** the problem before the algorithm; runnable code or
+  clearly marked pseudocode, walkthroughs, execution traces, memory diagrams,
+  complexity analysis (displayed where symbolic).
+- **Biology:** structure with function, processes in order, labelled figure
+  plates, life-cycles, comparative tables, experiments, real examples — flowing
+  prose carries the lesson; equations only where they naturally arise
+  (Hardy–Weinberg, Q₁₀, dilution).
 - **Humanities:** arguments not facts; historical context, primary sources,
-  interpretations, evidence, comparative analysis, critical questions.
-(Equivalent methods for every other discipline.)
+  interpretations, evidence, comparative analysis, critical questions — the
+  most prose-forward voice in the Library.
+- **Every other discipline:** same principle — the subject's own best textbook
+  sets the rhythm, within the §7A/§7B laws.
 
 ## 14. Exercises must follow the teaching
 

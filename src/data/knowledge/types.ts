@@ -26,6 +26,16 @@ export type KnowledgeBlock =
   | { kind: 'heading'; text: string }
   | { kind: 'callout'; title: string; text: string; tone: 'insight' | 'warn' | 'path' }
   | { kind: 'formula'; name: string; latex: string; meaning: string }
+  /**
+   * Displayed equation — set on its own centred line, exactly like a printed
+   * textbook (user directive 2026-11-02: content is EQUATION STYLE, not
+   * everything-in-sentences). `latex` may carry `\tag{n}` for a right-margin
+   * equation number and `\begin{aligned} ... \end{aligned}` with `\\` row
+   * breaks and `&` alignment for stacked multi-step derivations; margin
+   * annotations are written as `\text{(Given)}`, `\text{(Chain Rule)}` etc.
+   * `note` is the prose that follows the display ("where …", "i.e. …").
+   */
+  | { kind: 'equation'; latex: string; note?: string }
   | { kind: 'example'; title: string; steps: string[] }
   | { kind: 'terms'; items: { term: string; def: string }[] }
   | { kind: 'quiz'; items: { q: string; options: string[]; answer: number; explain: string }[] }

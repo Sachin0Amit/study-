@@ -137,12 +137,12 @@ function buildMissesDeck(attempts: { missed?: MissedQuestion[] }[]): Flashcard[]
 }
 
 const KIND_LABEL: Record<string, string> = {
-  definition: 'Definition',
+  definition: 'Concept',
   theorem: 'Theorem',
   law: 'Law',
   method: 'Method',
-  notation: 'Notation',
-  insight: 'Insight',
+  notation: 'Formula',
+  insight: 'Concept',
   exam: 'Missed question',
 }
 

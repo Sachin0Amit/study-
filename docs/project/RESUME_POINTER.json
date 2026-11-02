@@ -17,22 +17,22 @@
   },
   "scheduledJobs": {
     "masterLoop": {
-      "jobId": 494898,
+      "jobId": 495102,
       "cadence": "hourly at :00 IST",
       "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8",
-      "note": "recreated 2026-11-02 ~06:55 IST after the sandbox-rollback failure night (old 493829 deleted — it fired 8x against a sandbox rolled back to the Oct-26 state and was disabled by the API); new payload carries STEP 0 ANTI-STALE SYNC (fetch origin, ff-only hard-sync when local is behind with 0 unique commits)"
+      "note": "recreated 2026-11-02 ~12:15 IST (supersedes 494898) to bake in the STYLE LAWS (directive §7A equation-style + §7B prose law + §13 subject variation); payload carries STEP 0 ANTI-STALE SYNC (fetch origin, ff-only hard-sync when local is behind with 0 unique commits)"
     },
     "webDevReview": {
-      "jobId": 494900,
+      "jobId": 495104,
       "cadence": "every 15 min at :07/:22/:37/:52 IST",
       "kind": "webDevReview",
-      "note": "recreated 2026-11-02 ~06:55 IST (old 493831 was lost in the same incident)"
+      "note": "recreated 2026-11-02 ~12:15 IST — job 494900 had vanished from the scheduler (found missing during the style-law update); mandatory QA/styling/features description + repo hygiene (commit foreign work, leave tree clean, push PAT-inline)"
     },
     "textbookQualityLoop": {
-      "jobId": 494899,
+      "jobId": 495103,
       "cadence": "hourly at :30 IST",
       "workflow": "docs/project/TEXTBOOK-QUALITY-DIRECTIVE.md + docs/project/TEXTBOOK_REWRITE_LEDGER.md",
-      "scope": "pedagogical rewrites of LIVE lessons A-Z (mathematics first → end of library, no skipping) with NO word ceiling, plus re-expansion of ceiling-trimmed lessons (ledger 3b + biochemistry flags); future content held to the same standard (replaces 493826, deleted after the rollback night — same STEP 0 anti-stale hardening)"
+      "scope": "pedagogical rewrites of LIVE lessons A-Z (mathematics first → end of library, no skipping) with NO word ceiling, equation-style + prose-law compliance, plus re-expansion of ceiling-trimmed lessons (ledger 3b + biochemistry flags); future content held to the same standard (supersedes 494899, same STEP 0 anti-stale hardening)"
     }
   },
   "textbookQualityProgram": {
@@ -65,7 +65,8 @@
     "PAT is inline-only — never written to any file or committed",
     "lesson text must not contain exam names; dedup grep before authoring; word counts declared == actual exactly",
     "NO WORD CEILING (user directive 2026-11-02): every lesson, existing or future, is as elaborative as genuine teaching requires — never truncate substance to fit a count, never pad; textbook style (theory + explained definitions), never 'definition + insight' notes",
-    "three concurrent scheduled jobs work this repo (master 494898 :00, textbook 494899 :30, webDevReview 494900 :07/:22/:37/:52) — always check git status/log first and leave the tree clean; a trigger may fail with 'model concurrency limit exceeded' if another agent session is active — the job stays enabled and fires again on its next boundary",
+    "STYLE LAWS (user directives 2026-11-02, directive §7A/§7B/§13): (1) PROSE LAW — theory flows as continuous paragraphs, never 'heading + Definition/Insight label' fragments; key terms bolded inline; the lesson RENDERER already complies (run-in labels + boxes removed 2026-11-02), content must match. (2) EQUATION-STYLE LAW — every equation with teaching weight is its own centered $$...$$ display; never bury algebra in a sentence; new block { kind: 'equation', latex, note? } rides with the current concept; KaTeX \\tag{n} numbers referenced equations; \\begin{aligned} stacks derivations; \\text{(Given)} margin annotations. (3) SUBJECT VARIATION — maths equation-dense … humanities prose-forward, each subject keeps its natural textbook voice",
+    "three concurrent scheduled jobs work this repo (master 495102 :00, textbook 495103 :30, webDevReview 495104 :07/:22/:37/:52) — always check git status/log first and leave the tree clean; a trigger may fail with 'model concurrency limit exceeded' if another agent session is active — the job stays enabled and fires again on its next boundary",
     "SANDBOX ROLLBACK HAZARD (hit 2026-11-02): the sandbox can silently roll back to an old commit while cron jobs keep firing — both loops now run STEP 0 ANTI-STALE SYNC (fetch origin; 0-unique-commits + behind => git restore stat-dirty files then ff-only merge) before any work; trust origin/main + this pointer over any stale local state",
     "IST dating: the sandbox clock is UTC/+08:00 — convert honestly to Asia/Kolkata, never copy a prior row's date",
     "DEV-SERVER FRAGILITY (observed 2026-11-02): the memory watchdog reaps next-server after heavy compiles — restart, curl-warm the target route (HTTP 200), then open the browser IMMEDIATELY; retry warm-cache cycles until the page body renders fully; standing script scripts/qa-retry.sh automates open → body-check → full QA (quiz click, console, 390px). Always close the browser; and after any sandbox rollback run `bunx prisma generate` — 'typingResult does not exist on PrismaClient' errors under src/app/api/typing are the tell that the generated client was wiped"

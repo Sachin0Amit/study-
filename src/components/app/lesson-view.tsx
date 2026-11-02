@@ -44,11 +44,14 @@ import { EasyBox, EasyStart } from './easy-box'
 
 /* ------------------------------------------------------------------ */
 /*  Book page vocabulary                                               */
-/*  The lesson reads like a page of a real textbook: one paper          */
-/*  surface, a running head, serif prose at a reading measure,          */
-/*  run-in small-cap labels (Definition 1. / Theorem 2. / Solution.),  */
-/*  hairline rules, an asterism between parts, and a folio at the      */
-/*  foot. No card soup — content flows.                                */
+/*  The lesson reads like a page of a printed textbook (NCERT /        */
+/*  Cengage set-book style): one paper surface, a running head,        */
+/*  serif prose at a reading measure, numbered subsection headings     */
+/*  with the theory flowing as continuous paragraphs — key terms       */
+/*  bolded inline, equations centred on their own lines, aligned       */
+/*  derivations with stacked equals signs — and an asterism between    */
+/*  parts, with a folio at the foot. No labelled definition/insight    */
+/*  boxes, no card soup — content flows.                               */
 /* ------------------------------------------------------------------ */
 
 /** Attribution line for the chapter opening, e.g. "Discrete Mathematics and Its Applications — Rosen, 8th Ed" */
@@ -245,16 +248,6 @@ function bookAuthorShort(bookId: string): string {
     .filter(Boolean)
     .slice(0, 3)
     .join(' · ')
-}
-
-/** How each concept kind is set on the page: run-in label + optional block treatment */
-const KIND: Record<string, { label: string; color: string; block?: 'def' | 'thm' | 'note' }> = {
-  definition: { label: 'Definition', color: 'text-primary', block: 'def' },
-  theorem: { label: 'Theorem', color: 'text-amber-600 dark:text-amber-300', block: 'thm' },
-  law: { label: 'Law', color: 'text-amber-600 dark:text-amber-300', block: 'thm' },
-  method: { label: 'Method', color: 'text-teal-600 dark:text-teal-300' },
-  notation: { label: 'Notation', color: 'text-book-soft' },
-  insight: { label: 'Insight', color: 'text-rose-500 dark:text-rose-300', block: 'note' },
 }
 
 /* Live network flag for the offline-copy fallback (X9 Pro download manager). */
@@ -484,19 +477,6 @@ export function LessonView({ sectionId }: { sectionId: string }) {
   /** the book's figure plates, placed next to the ideas they illustrate.
    *  `afterConcept` is 1-based; figures without it follow the whole run. */
   const figures = content?.figures ?? []
-
-  /** book-style numbering: Definitions / Theorems / Laws count separately, like chapters do */
-  const conceptLabels = useMemo(() => {
-    const counters: Record<string, number> = {}
-    return (content?.concepts ?? []).map((c) => {
-      const kind = KIND[c.kind] ?? KIND.definition
-      if (kind.block === 'def' || kind.block === 'thm') {
-        counters[kind.label] = (counters[kind.label] ?? 0) + 1
-        return `${kind.label} ${counters[kind.label]}.`
-      }
-      return `${kind.label}.`
-    })
-  }, [content])
 
   /** a drop cap only reads well when the lede opens with a plain letter */
   const canDropcap = useMemo(() => !!content?.intro && /^[A-Za-z]/.test(content.intro), [content])
@@ -872,105 +852,57 @@ export function LessonView({ sectionId }: { sectionId: string }) {
             </div>
           ) : null}
 
-          {/* the reading proper — concepts flow as numbered subsections, no boxes.
-              Each figure plate sits right after the concept it illustrates. */}
-          {content?.concepts?.map((c, i) => {
-            const kind = KIND[c.kind] ?? KIND.definition
-            const label = conceptLabels[i]
-            return (
-              <Fragment key={i}>
-                <motion.section
-                  id={`concept-${i}`}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true, margin: '-30px' }}
-                  transition={{ duration: 0.4 }}
-                  className="scroll-mt-24 mt-11 first:mt-0 print:mt-7"
-                >
+          {/* the reading proper — concepts flow as numbered subsections whose
+              theory is continuous prose, exactly like a printed textbook:
+              no "Definition"/"Insight" run-in labels, no boxes. Key terms
+              arrive bolded inline by the author (**term**); every $$...$$
+              span centres on its own display line. Each figure plate sits
+              right after the concept it illustrates. */}
+          {content?.concepts?.map((c, i) => (
+            <Fragment key={i}>
+              <motion.section
+                id={`concept-${i}`}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{ duration: 0.4 }}
+                className="scroll-mt-24 mt-11 first:mt-0 print:mt-7"
+              >
                 <h3 className="font-serif text-[1.32rem] font-semibold leading-snug tracking-[-0.008em]">
                   <span className="mr-2.5 font-semibold text-primary">{i + 1}.</span>
                   {c.term}
                 </h3>
 
-                {kind.block === 'def' && (
-                  <div className="sv-book-def mt-3">
-                    <p className="text-[1.01rem]">
-                      <span className={`sv-book-label ${kind.color}`}>{label}</span>
-                      <RichText text={c.statement} />
-                    </p>
-                    {c.detail && (
-                      <p className="mt-2.5 text-[0.95em] leading-[1.72] text-book-soft">
-                        <RichText text={c.detail} />
-                      </p>
-                    )}
-                  </div>
-                )}
+                <div className="mt-3 space-y-3.5 text-[1.01rem] leading-[1.74]">
+                  <RichText text={c.statement} className="block" />
+                  {c.detail
+                    ?.split(/\n\n+/)
+                    .filter((d) => d.trim().length > 0)
+                    .map((d, j) => (
+                      <RichText key={j} text={d} className="block" />
+                    ))}
+                </div>
 
-                {kind.block === 'thm' && (
-                  <div className="sv-book-thm">
-                    <p className="text-[1.01rem]">
-                      <span className={`sv-book-label ${kind.color}`}>{label}</span>
-                      <RichText text={c.statement} />
-                    </p>
-                    {c.detail && (
-                      <p className="mt-2.5 text-[0.95em] leading-[1.72] text-book-soft">
-                        <RichText text={c.detail} />
-                      </p>
-                    )}
-                  </div>
-                )}
-
-                {kind.block === 'note' && (
-                  <aside className="sv-book-note">
-                    <p>
-                      <span aria-hidden className="mr-2 align-middle text-[1.05em] text-rose-500 dark:text-rose-300">
-                        ☞
-                      </span>
-                      <span className={`sv-book-label ${kind.color}`}>{label}</span>
-                      <RichText text={c.statement} />
-                    </p>
-                    {c.detail && (
-                      <p className="mt-2.5 text-[0.95em] leading-[1.72]">
-                        <RichText text={c.detail} />
-                      </p>
-                    )}
-                  </aside>
-                )}
-
-                {!kind.block && (
-                  <>
-                    <p className="mt-3 text-[1.01rem]">
-                      <span className={`sv-book-label ${kind.color}`}>{label}</span>
-                      <RichText text={c.statement} />
-                    </p>
-                    {c.detail && (
-                      <p className="mt-2.5 text-[0.95em] leading-[1.72] text-book-soft">
-                        <RichText text={c.detail} />
-                      </p>
-                    )}
-                  </>
-                )}
                 {easyMode && (
                   <div className="font-sans text-[14px] leading-normal">
                     <EasyBox variant="concept" term={c.term} statement={c.statement} detail={c.detail} />
                   </div>
                 )}
-                </motion.section>
+              </motion.section>
 
-                {/* figure plates tied to this concept */}
-                {figures
-                  .filter((fig) => fig.afterConcept === i + 1)
-                  .map((fig) => (
-                    <BookFigure
-                      key={`fig-${figures.indexOf(fig)}`}
-                      figure={fig}
-                      number={figures.indexOf(fig) + 1}
-                      chapterId={section?.chapterId}
-                    />
-                  ))}
-              </Fragment>
-            )
-          })}
+              {/* figure plates tied to this concept */}
+              {figures
+                .filter((fig) => fig.afterConcept === i + 1)
+                .map((fig) => (
+                  <BookFigure
+                    key={`fig-${figures.indexOf(fig)}`}
+                    figure={fig}
+                    number={figures.indexOf(fig) + 1}
+                    chapterId={section?.chapterId}
+                  />
+                ))}
+            </Fragment>
+          ))}
 
           {/* figure plates that follow the whole concept run */}
           {figures
@@ -1386,19 +1318,11 @@ function DepthBlockView({ block }: { block: DepthBlock }) {
         </div>
       )
     case 'remark':
+      /* a remark reads as quiet continuing prose — no rose aside, no label */
       return (
-        <aside className="sv-book-note">
-          <p>
-            <span
-              aria-hidden
-              className="mr-2 align-middle text-[1.05em] text-rose-500 dark:text-rose-300"
-            >
-              ☞
-            </span>
-            <span className="sv-book-label text-rose-500 dark:text-rose-300">Remark.</span>
-            <RichText text={block.body} />
-          </p>
-        </aside>
+        <p className="mt-3.5 text-[0.99em] leading-[1.78] text-book-soft">
+          <RichText text={block.body} />
+        </p>
       )
     case 'example':
       return (

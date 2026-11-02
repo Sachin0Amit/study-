@@ -514,6 +514,19 @@ export function topicToSectionContent(topic: KnowledgeTopic): SectionContent {
         })
         break
       }
+      case 'equation': {
+        /* displayed equation — rides with the concept it belongs to, set on
+         * its own centred line (\tag / aligned handled by KaTeX in render) */
+        const eq = `$$${block.latex}$$`
+        const text = block.note ? `${eq}\n\n${block.note}` : eq
+        if (concepts.length > 0) {
+          const last = concepts[concepts.length - 1]
+          last.detail = last.detail ? `${last.detail}\n\n${text}` : text
+        } else {
+          pushConceptPara(text)
+        }
+        break
+      }
       case 'example': {
         const steps = block.steps
           .map((s, i) => parseStep(s, i))
