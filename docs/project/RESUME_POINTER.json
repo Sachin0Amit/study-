@@ -23,10 +23,10 @@
       "note": "recreated 2026-11-02 ~12:15 IST (supersedes 494898) to bake in the STYLE LAWS (directive §7A equation-style + §7B prose law + §13 subject variation); payload carries STEP 0 ANTI-STALE SYNC (fetch origin, ff-only hard-sync when local is behind with 0 unique commits)"
     },
     "webDevReview": {
-      "jobId": 495104,
+      "jobId": 495200,
       "cadence": "every 15 min at :07/:22/:37/:52 IST",
       "kind": "webDevReview",
-      "note": "recreated 2026-11-02 ~12:15 IST — job 494900 had vanished from the scheduler (found missing during the style-law update); mandatory QA/styling/features description + repo hygiene (commit foreign work, leave tree clean, push PAT-inline)"
+      "note": "recreated 2026-11-02 ~12:58 IST as 495200 — BOTH predecessors (494900, then its 12:15 IST replacement 495104) vanished from the scheduler; pattern: check `cron list` for all 3 jobs every session and restore missing ones first. Mandatory QA/styling/features description + repo hygiene (commit foreign work, leave tree clean, push PAT-inline) + style-law guard (never reintroduce Definition/Insight labels in UI work)"
     },
     "textbookQualityLoop": {
       "jobId": 495103,
