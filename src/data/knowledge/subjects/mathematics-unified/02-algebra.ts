@@ -1,6 +1,6 @@
 /**
  * Knowledge Universe — Mathematics — Chapter 02: Algebra
- * 3 lessons · ~7,014 words
+ * 3 lessons · ~10,614 words
  * field: Algebra
  * legacy sources: x29-orphan-closure-pass.ts, x63-cengage-pass.ts
  *
@@ -333,132 +333,310 @@ export const mathematicsUnifiedCh02: KnowledgeTopic[] = [
     branch: 'Quadratic Equations',
     tier: 'core',
     concepts: [
-      'Standard form ax\u00b2 + bx + c = 0',
-      'Solving by factorising',
-      'The square-root property',
-      'Completing the square: the recipe and why it works',
-      'The quadratic formula and its four-step use',
+      'Standard form ax² + bx + c = 0',
+      'Zero-product property and factorising',
+      'The square-root property and its ±',
+      'Completing the square: the recipe, the geometry, the reason',
+      'The quadratic formula DERIVED, step by step',
       'The discriminant and the number of solutions',
+      'Vertex form, the turning point and −b/2a',
       'Choosing the fastest method',
-      'Vertex form and applications',
     ],
-    words: 1471,
-    readMins: 7,
+    words: 5071,
+    readMins: 25,
     addedOn: '2026-10-24',
     blocks: [
-      { kind: 'heading', text: 'Why this matters' },
       {
-        kind: 'para',
-        text: 'Quadratic equations are the boundary between school arithmetic and real algebra: the first equation type whose solutions are not obvious, and the template for every higher-degree technique that follows. Projectile heights, areas, revenue curves — when one quantity is the square of another plus a linear term, a quadratic models it. The examinable skill set is compact and fixed: put the equation in standard form, choose among four solving methods, read the discriminant to know how many solutions exist, and switch to vertex form when the question asks for a maximum or minimum. This lesson covers all four moves and the decision rule between them.',
+        kind: "para",
+        text: "A scribe in Babylon, somewhere around 1800 BCE, presses a problem into wet clay — a problem that survives on the tablet we now call BM 13901: 'I tore out my square's side from inside its area, and 870 was left.' Strip away the wording and it is an equation: the area x² minus the side x equals 870. There is no algebra yet, no letter x, no formula — and yet the scribe solves it in four quick moves, spoken aloud like a recipe: 'Break the torn-out side in half. Make the half and itself hold — that is, square it. Append that quarter to the 870. The equalside of 870 and a quarter is 29 and a half; tear out the half you added, and the side is 30.' Check it: 30² − 30 = 900 − 30 = 870. The answer is right. What the scribe did — halve the coefficient, square the half, add it back, take a square root — is completing the square, the oldest reliable solving technique in mathematics, working thirty-seven centuries before anyone drew a parabola. This lesson takes that clay-tablet move and builds the whole modern machinery on top of it: four ways to solve any quadratic equation, the reason each works, one formula that contains them all — and the arithmetic to choose the fastest door every time.",
       },
-      { kind: 'heading', text: 'Standard form and the first two methods' },
+      { kind: 'heading', text: 'Background: What a Quadratic Is and Where It Comes From' },
       {
-        kind: 'para',
-        text: 'Standard form is ax\u00b2 + bx + c = 0 with a \u2260 0 — everything moved to one side, zero on the other. Every method begins here, and most lost marks on quadratics are lost before any solving: a sign dropped while moving terms poisons everything downstream. Rearrange first, identify a, b and c, then solve.',
-      },
-      {
-        kind: 'para',
-        text: 'Method one, factorising, uses the algebra lesson\u2019s machinery: x\u00b2 \u2212 x \u2212 12 = 0 factorises to (x \u2212 4)(x + 3) = 0, and a product is zero only when a factor is zero — so x = 4 or x = \u22123. Fast and clean when the factor pair is friendly. Method two, the square-root property, handles the missing-middle-term shape: x\u00b2 = k gives x = \u00b1\u221ak (both roots!), and a(x \u2212 h)\u00b2 = k gives x = h \u00b1 \u221a(k/a). The habit to keep: a square root always carries a plus-or-minus — forgetting the negative root is the single most common answer-killing slip on this method.',
-      },
-      { kind: 'heading', text: 'Completing the square: the recipe and the reason' },
-      {
-        kind: 'para',
-        text: 'Completing the square rewrites any quadratic so the x appears exactly once, squared: x\u00b2 + bx + c = (x + b/2)\u00b2 + (c \u2212 b\u00b2/4). The recipe, when the leading coefficient is 1: take half of b, square it, add and subtract that square, then regroup. For x\u00b2 + 6x + 2 = 0: half of 6 is 3, squared is 9, so x\u00b2 + 6x + 2 = (x + 3)\u00b2 \u2212 9 + 2 = (x + 3)\u00b2 \u2212 7; setting this to zero gives (x + 3)\u00b2 = 7 and x = \u22123 \u00b1 \u221a7. When the leading coefficient is not 1, divide the whole equation by a first — OpenStax\u2019s Intermediate Algebra makes the same point: completing the square requires a = 1, so make it so.',
+        kind: "para",
+        text: "A quadratic equation is any equation that can be written in standard form: ax² + bx + c = 0, where a, b and c are fixed numbers and a ≠ 0. Everything about solving hangs on that little condition a ≠ 0: if a were zero, the x² term would vanish and the equation would collapse to the linear bx + c = 0, which the mental-arithmetic and algebra lessons already handle. The x² term is what makes a quadratic a quadratic — and it is what makes it hard, because squaring destroys the neat one-to-one logic of linear equations: both +3 and −3 square to 9, so equations can now have two honest answers.",
       },
       {
-        kind: 'para',
-        text: 'Why the maneuver works: (x + b/2)\u00b2 expands to x\u00b2 + bx + b\u00b2/4 — the square of half of b is exactly the constant that completes x\u00b2 + bx into a perfect square. Adding and subtracting b\u00b2/4 changes nothing while creating that square. Beyond solving, the form pays twice: (x \u2212 h)\u00b2 + k is the vertex form of the parabola, handing over the turning point (h, k) directly, and it is the launchpad from which the quadratic formula is derived.',
+        kind: "para",
+        text: "Where do such equations come from? Three places worth naming. Areas and designs: the Babylonian scribe's own problem was literally about a square field with a strip removed, and the same shape appears whenever a fixed fence encloses a rectangular garden (you will work one below). Motion: an object thrown upward has height h = −4.9t² + v₀t + h₀ in metres — the −4.9 is half of g, gravity's 9.8 m/s², and the t² is the very signature of acceleration (the physics lessons carry the derivation; here we borrow the formula). Money: if lowering a price by p rupees sells 40p more tickets, revenue is (price) × (count) — a product of two linear terms, which expands into a quadratic. In every case the question 'when does the quantity hit a target value, or reach its peak?' becomes 'solve a quadratic'. The algebra lesson (§71.1) already built the tools this lesson consumes: expanding brackets gave us the identity (x + h)² = x² + 2hx + h², and factorising turned products into equations. Those two rungs are the whole ladder; climb them again here.",
       },
-      { kind: 'heading', text: 'The quadratic formula and the discriminant' },
+      { kind: 'heading', text: 'Standard Form First — and the First Two Methods' },
       {
-        kind: 'para',
-        text: 'Method four works on every quadratic: x = (\u2212b \u00b1 \u221a(b\u00b2 \u2212 4ac))/(2a). OpenStax drills a four-step procedure: write the equation in standard form and identify a, b, c; write the formula; substitute; simplify — and then CHECK the solutions by substitution. Worked example from the same text: 2x\u00b2 + 9x \u2212 5 = 0 has a = 2, b = 9, c = \u22125, giving x = (\u22129 \u00b1 \u221a(81 + 40))/4 = (\u22129 \u00b1 11)/4, so x = 1/2 or x = \u22125. The formula is an equation — start every line with x =, and keep the whole numerator over the whole denominator.',
-      },
-      {
-        kind: 'para',
-        text: 'The discriminant b\u00b2 \u2212 4ac counts the solutions before any arithmetic: positive — two distinct real roots; zero — exactly one (a repeated root; the parabola touches the axis); negative — no real roots (two complex ones). So b\u00b2 \u2212 4ac = 9 \u2212 4(1)(\u22124) style questions are answered by inspection after computing one number. The method-choice strategy rounds out the toolkit, in OpenStax\u2019s order: try factorising first if the factors are easy; use the square-root property if the shape fits; otherwise the quadratic formula — and completing the square is the method you fall back on when you must SHOW the vertex or the derivation. Applications tie it together: projectile height h = \u221216t\u00b2 + v\u2080t questions ask \u201cwhen is h = 0?\u201d (solve) or \u201cwhat is the maximum height?\u201d (vertex form, or \u2212b/2a for the time).',
+        kind: "para",
+        text: "Every solving method begins from standard form ax² + bx + c = 0, with everything gathered on one side and zero on the other. This is not bureaucracy: the methods read their inputs off a, b and c, and a sign dropped while gathering terms poisons every line downstream. So the discipline is mechanical — expand, collect, set to zero, THEN identify a, b and c. For 3x² = 5x − 2, standard form is 3x² − 5x + 2 = 0 with a = 3, b = −5, c = 2; for (x + 1)(x − 2) = 4, expand first to x² − x − 2 = 4, then gather to x² − x − 6 = 0.",
       },
       {
-        kind: 'example',
-        title: 'Worked Example — One equation, method decision live',
+        kind: "para",
+        text: "Method one is factorising, powered by the zero-product property: if a product equals zero, at least one factor must equal zero (there is no other way to multiply two numbers and get nothing). The algebra lesson built the factorising toolkit; here it becomes a solving engine. x² − x − 12 = 0 factorises to (x − 4)(x + 3) = 0, so either x − 4 = 0 or x + 3 = 0 — giving x = 4 or x = −3. Notice what the property just bought: one product equation split into two linear ones. The method is fast and clean when the factor pair is friendly, and silent when it is not — which is exactly why we need methods three and four.",
+      },
+      {
+        kind: "para",
+        text: "Method two, the square-root property, handles the missing-middle shape where the unknown appears only once, squared. If x² = k with k ≥ 0, then x = ±√k — BOTH signs, because squaring erases sign, so the equation cannot tell +√k from −√k apart. Forgetting the negative root is the single most common answer-killing slip in the whole topic. The same property solves the shifted shape (x − 3)² = 12 directly: x − 3 = ±√12, so x = 3 ± 2√3. And it draws a line worth noticing: x² = −5 has NO real solution, because no real number squares to a negative — park that thought; it returns as the third case of the discriminant. Method two looks like a special case, but it is secretly the destination: the next method is precisely the art of REWRITING any quadratic into this shape.",
+      },
+      { kind: 'heading', text: 'Completing the Square: The Recipe and the Geometry' },
+      {
+        kind: "para",
+        text: "Here is the heart of the lesson. Look again at the identity from the algebra lesson: (x + h)² = x² + 2hx + h². The middle coefficient 2h is twice the h hiding inside the bracket. Read it in reverse: given x² + bx, the bracket constant that would generate that middle term is h = b/2 — half of b — and the constant that completes the perfect square is h² = (b/2)². That is the entire recipe: to complete the square of x² + bx, take half of b and square it. x² + 6x becomes (x + 3)² minus the 9 we invented; x² + 10x becomes (x + 5)² minus 25; x² − 8x becomes (x − 4)² minus 16 (half of −8 is −4, and (−4)² = 16 — the half keeps the sign, the square forgets it). Because we INVENTED the h², we must also subtract it to keep the value unchanged: x² + bx + c = (x + b/2)² + (c − b²/4). Nothing was gained or lost — the expression was only re-packaged so the unknown appears once, squared, which is exactly the shape method two devours.",
+      },
+      {
+        kind: "para",
+        text: "Why should half-and-square work? Because it is literally cutting and pasting area. Draw the x² as a literal square of side x, and bx as a rectangle of side b and width x. Cut that rectangle in half lengthwise, giving two strips of (b/2) × x, and glue one strip onto the right edge of the square and the other onto the top edge. The figure now ALMOST forms a bigger square of side x + b/2 — it is missing exactly one corner piece, a little square of side b/2, of area (b/2)². Append that corner and the square is complete. This is not a modern teaching gimmick: it is the Babylonian scribe's own move ('break the side in half, make the half and itself hold, append the quarter'), and the figure the Baghdad mathematician al-Khwarizmi drew around 820 CE to justify his version of the same recipe. The algebra lesson opened with al-Khwarizmi's equation 'a square and ten roots equal thirty-nine dirhams' — x² + 10x = 39 — and here is the picture he attached to it: four rectangles of 2½ × x (total area 10x) glued to the four sides of the x² square, four 2½ × 2½ corner squares (total 25) filling the gaps, one big square of side x + 5. Its area is 39 + 25 = 64, so the side is 8, so x = 8 − 5 = 3. Figure 1 shows both constructions; the labels use the exact words of this paragraph.",
+      },
+      {
+        kind: 'figure',
+        caption: 'Figure 1 — Completing the square as cut-and-paste geometry. LEFT: the gnomon version — an x² square plus two (b/2) × x half-strips almost makes a bigger square; only the (b/2)² corner is missing. RIGHT: al-Khwarizmi\'s x² + 10x = 39 — four 2½-wide strips and four 2½ × 2½ corners complete a big square of side x + 5, whose area is 39 + 25 = 64, so x + 5 = 8 and x = 3.',
+        afterConcept: 4,
+        svg: `<svg viewBox="0 0 880 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two geometric completing-the-square constructions: a gnomon of two half strips and a corner square, and al-Khwarizmi's four strips and four corners making a big square of side x plus five with area sixty-four">
+  <style>.lbl{font-family:Georgia,serif;font-size:14px;fill:#3f3f46}.big{font-size:17px;font-weight:bold}.sm{font-size:12px;fill:#52525b}.ink{stroke:#8a8a93;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.thin{stroke:#b8b8c0;fill:none;stroke-width:1.4}.box{fill:none;stroke:#c8c8d0;stroke-width:1.6;stroke-dasharray:5 4}</style>
+  <text class="lbl big" x="28" y="32" fill="#3f3f46">Completing the square: the missing corner</text>
+  <rect x="24" y="48" width="396" height="400" rx="12" class="box"/>
+  <text class="lbl" x="40" y="72" font-weight="bold">ONE-STRIP-A-SIDE VERSION (the gnomon)</text>
+  <rect x="70" y="100" width="150" height="150" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text class="lbl" x="145" y="180" text-anchor="middle">x²</text>
+  <rect x="220" y="100" width="60" height="150" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <rect x="70" y="52" width="210" height="48" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text class="sm" x="285" y="180">strip (½b)·x</text>
+  <text class="sm" x="120" y="46">strip (½b)·x</text>
+  <rect x="220" y="52" width="60" height="48" fill="#fef9c3" stroke="#ca8a04" stroke-width="2" stroke-dasharray="4 3"/>
+  <text class="sm" x="228" y="80">corner (½b)²</text>
+  <path class="ink" d="M320 130 H362"/><path d="M366 130 l-9 -4 v8 z" fill="#8a8a93"/>
+  <rect x="70" y="100" width="210" height="198" class="thin"/>
+  <text class="lbl" x="64" y="330" font-weight="bold">the completed square: (x + ½b)²</text>
+  <text class="sm" x="40" y="352">its area = x² + bx + (½b)² — only the yellow corner</text>
+  <text class="sm" x="40" y="370">was added, so subtract it again to keep the value:</text>
+  <text class="lbl" x="40" y="396">x² + bx + c = (x + ½b)² + c − (½b)²</text>
+  <text class="sm" x="40" y="424"> Babylon: 'break the side in half, square the half,</text>
+  <text class="sm" x="40" y="440">append the quarter' — BM 13901, c. 1800 BCE</text>
+  <rect x="452" y="48" width="404" height="400" rx="12" class="box"/>
+  <text class="lbl" x="468" y="72" font-weight="bold">AL-KHWARIZMI'S x² + 10x = 39 (c. 820 CE)</text>
+  <rect x="560" y="150" width="130" height="130" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text class="lbl" x="625" y="220" text-anchor="middle">x²</text>
+  <rect x="560" y="112" width="168" height="38" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <rect x="560" y="280" width="168" height="38" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <rect x="522" y="150" width="38" height="130" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <rect x="690" y="150" width="38" height="130" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <rect x="522" y="112" width="38" height="38" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <rect x="690" y="112" width="38" height="38" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <rect x="522" y="280" width="38" height="38" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <rect x="690" y="280" width="38" height="38" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text class="sm" x="736" y="170">2½-wide strip</text>
+  <text class="sm" x="736" y="186">area 2½x (×4)</text>
+  <text class="sm" x="736" y="300">2½ × 2½</text>
+  <text class="sm" x="736" y="316">corner (×4)</text>
+  <text class="lbl" x="468" y="352" font-weight="bold">big square side x + 5</text>
+  <text class="sm" x="468" y="372">(x + 5)² = x² + 10x + 25 = 39 + 25 = 64</text>
+  <text class="sm" x="468" y="390">x + 5 = 8  →  x = 3   (check: 9 + 30 = 39 ✓)</text>
+  <text class="sm" x="468" y="416">four green strips give 4 × 2½x = 10x;</text>
+  <text class="sm" x="468" y="432">four yellow corners give 4 × 6¼ = 25</text>
+</svg>`,
+      },
+      {
+        kind: "para",
+        text: "Solving BY completing the square now runs itself. Take x² + 6x + 2 = 0: half of 6 is 3, squared is 9, so x² + 6x + 2 = (x + 3)² − 9 + 2 = (x + 3)² − 7. The equation becomes (x + 3)² = 7, and method two finishes it: x + 3 = ±√7, so x = −3 ± √7. One subtlety, and it is the equation-side version of the geometry: when you complete the square on an EQUATION (not just an expression), you may add the (b/2)² to the left side ONLY if you add it to the right side too — the scribe's 'append the quarter' applied to BOTH the area and the target number. The safest habit, though, is the add-and-subtract form on one side, which cannot go wrong.",
+      },
+      {
+        kind: "para",
+        text: "When the leading coefficient is not 1, divide the whole equation by a first — completing the square needs a bare x², and OpenStax's Intermediate Algebra (2e), our standing source for this topic, makes the same point in exactly those words. There is also a lovely fraction-free alternative that Indian textbooks credit to Sridhara (c. 870–930 CE; his algebra is lost, and his rule survives as a quotation in later commentaries): instead of dividing, MULTIPLY the whole equation by 4a. Then 4a²x² + 4abx = (2ax + b)² − b² — the square completes itself around 2ax + b, no fractions ever appear, and the formula drops out (as you will see in the derivation below). Both roads are the same idea wearing different clothes: make the square complete.",
+      },
+      {
+        kind: 'derivation',
+        title: 'The Quadratic Formula, Derived — Not Memorised',
+        statement: 'Every quadratic formula is one completing-the-square computation done once, with letters instead of numbers. Derive x = (−b ± √(b² − 4ac))/(2a) from ax² + bx + c = 0.',
+        prerequisites: ['completing the square for x² + px', 'square-root property with its ±', 'adding a fraction to a fraction: common denominator'],
         steps: [
-          'Solve 2x\u00b2 \u2212 4x \u2212 3 = 0. Standard form already; a = 2, b = \u22124, c = \u22123.',
-          'Method check: factorising — factors of 2 \u00d7 (\u22123) summing to \u22124? \u22126 and 2 give \u22124, but 2x\u00b2 + 2x \u2212 6x \u2212 3 resists clean grouping (2x(x+1) \u2212 3(2x+1)) — not friendly. Square-root property: no isolated square. So: quadratic formula.',
-          'Formula: x = (4 \u00b1 \u221a(16 + 24))/4 = (4 \u00b1 \u221a40)/4 = (4 \u00b1 2\u221a10)/4 = (2 \u00b1 \u221a10)/2.',
-          'Discriminant read: b\u00b2 \u2212 4ac = 16 + 24 = 40 > 0 — two distinct real roots, as found. (If it had been 0, the equation would collapse to one root; negative, none.)',
-          'Vertex bonus: x = \u2212b/2a = 4/4 = 1; f(1) = 2 \u2212 4 \u2212 3 = \u22125. Vertex (1, \u22125) — the minimum, since a > 0. The same numbers, read two ways.',
+          { label: 'Normalise: divide through by a', formula: 'x^2 + \\tfrac{b}{a}\\,x + \\tfrac{c}{a} = 0', explanation: 'a ≠ 0 is guaranteed by the definition of a quadratic, so the division is legal. The leading coefficient is now 1, as the recipe requires.' },
+          { label: 'Move the constant to the right', formula: 'x^2 + \\tfrac{b}{a}\\,x = -\\tfrac{c}{a}', explanation: 'Only the x-terms stay on the left; they are what the square will absorb.' },
+          { label: 'Complete the square: half of b/a is b/(2a), square it', formula: '\\left(x + \\tfrac{b}{2a}\\right)^2 = \\tfrac{b^2}{4a^2} - \\tfrac{c}{a} = \\tfrac{b^2 - 4ac}{4a^2}', explanation: 'Add b²/(4a²) to BOTH sides (the scribe\'s append-to-both rule). On the left it completes the perfect square; on the right, put the two fractions over the common denominator 4a² — and notice the combination b² − 4ac appearing for the first time.' },
+          { label: 'Square-root property — with its ±', formula: 'x + \\tfrac{b}{2a} = \\pm\\sqrt{b^2 - 4ac}\\,\\big/\\,2a', explanation: 'The square root of the right side is √(b² − 4ac) over √(4a²) = 2a (positive, since a² > 0). The ± is where BOTH roots enter the story — dropping it here is the classic half-answer error.' },
+          { label: 'Subtract b/(2a) and tidy', formula: 'x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}', explanation: 'Both terms on the left share the denominator 2a, so they merge into one fraction. There is the formula — not a rule to memorise but a computation you can now redo from scratch whenever memory fails.' },
+        ],
+        result: 'x = (−b ± √(b² − 4ac))/(2a) for every quadratic ax² + bx + c = 0 with a ≠ 0. The quantity under the root, b² − 4ac, decides how many real answers exist — it gets its own name, the discriminant, in the next section. History note: a rule equivalent to one root of this formula appears (stated without derivation) in Brahmagupta\'s Brāhmasphuṭasiddhānta of 628 CE; the name discriminant was coined by James Joseph Sylvester in 1851.',
+      },
+      { kind: 'heading', text: 'The Formula in Action and the Discriminant' },
+      {
+        kind: "para",
+        text: "Method four — the formula — works on every quadratic, friendly or not. OpenStax drills a four-step rhythm worth keeping: write standard form and identify a, b, c; write the formula; substitute; simplify — then CHECK by substitution, because the formula is an equation and each line should start with x =. Their worked example is a fine model: 2x² + 9x − 5 = 0 has a = 2, b = 9, c = −5, so x = (−9 ± √(81 + 40))/4 = (−9 ± 11)/4, giving x = 1/2 or x = −5. Substitute either back: 2(1/4) + 9/2 − 5 = 1/2 + 9/2 − 5 = 0 ✓. The two discipline points that save marks: the WHOLE numerator −b ± √(b² − 4ac) sits over the 2a (never just part of it), and the ± line produces two separate simplifications — do not average them or drop one.",
+      },
+      {
+        kind: "para",
+        text: "The number hiding under the root, Δ = b² − 4ac, is the discriminant — Sylvester's 1851 coinage — and it is a fortune-teller: it counts the real roots BEFORE any arithmetic. Δ > 0: the square root is a positive real, the ± splits it into two different values, two distinct real roots. Δ = 0: the root contributes nothing, the ± is ±0, and both branches collapse onto one value — a repeated (double) root. Δ < 0: you would need the square root of a negative — no real number provides one — so there are NO real roots (the equation still has two perfectly good complex roots, which the algebra goes on to study; Cardano in 1545, meeting √(−15) in a problem about dividing 10 into two parts of product 40, famously called the handling of such quantities 'dismissing mental tortures'). Geometrically the trichotomy is exactly how a parabola can meet the x-axis: twice, once (kissing it at the vertex), or never — Figure 2 shows all three.",
+      },
+      {
+        kind: 'figure',
+        caption: 'Figure 2 — The discriminant is the parabola\'s appointment book. A parabola y = ax² + bx + c with a > 0 crosses the x-axis once for each real root. Δ > 0: two crossings, two roots. Δ = 0: the vertex sits ON the axis — one repeated root. Δ < 0: the parabola floats entirely above (or below) — no real roots. The axis of symmetry x = −b/2a runs through the vertex in every case.',
+        afterConcept: 6,
+        svg: `<svg viewBox="0 0 880 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three parabolas: one crossing the axis twice, one touching at the vertex, one floating above with no real roots; axis of symmetry marked through the vertex">
+  <style>.lbl{font-family:Georgia,serif;font-size:14px;fill:#3f3f46}.big{font-size:17px;font-weight:bold}.sm{font-size:12px;fill:#52525b}.ink{stroke:#3b82f6;fill:none;stroke-width:2.6;stroke-linecap:round}.axis{stroke:#8a8a93;stroke-width:1.6}.dash{stroke:#ca8a04;stroke-width:1.4;stroke-dasharray:5 4}.box{fill:none;stroke:#c8c8d0;stroke-width:1.6;stroke-dasharray:5 4}</style>
+  <text class="lbl big" x="28" y="32" fill="#3f3f46">The discriminant Δ = b² − 4ac counts the crossings</text>
+  <rect x="24" y="48" width="264" height="330" rx="12" class="box"/>
+  <text class="lbl" x="40" y="72" font-weight="bold">Δ &gt; 0 — two real roots</text>
+  <line x1="44" y1="280" x2="268" y2="280" class="axis"/>
+  <path class="ink" d="M64 120 Q156 470 248 120"/>
+  <circle cx="103" cy="280" r="5" fill="#e11d48"/><circle cx="209" cy="280" r="5" fill="#e11d48"/>
+  <text class="sm" x="96" y="302">root 1</text><text class="sm" x="196" y="302">root 2</text>
+  <line x1="156" y1="96" x2="156" y2="340" class="dash"/>
+  <text class="sm" x="118" y="356">axis x = −b/2a</text>
+  <text class="sm" x="40" y="330">the curve dips THROUGH the axis:</text>
+  <text class="sm" x="40" y="346">two separate meetings, two answers</text>
+  <rect x="308" y="48" width="264" height="330" rx="12" class="box"/>
+  <text class="lbl" x="324" y="72" font-weight="bold">Δ = 0 — one repeated root</text>
+  <line x1="328" y1="280" x2="552" y2="280" class="axis"/>
+  <path class="ink" d="M352 140 Q440 420 528 140"/>
+  <circle cx="440" cy="280" r="5" fill="#e11d48"/>
+  <text class="sm" x="392" y="302">vertex ON the axis</text>
+  <text class="sm" x="324" y="330">the parabola only KISSES the axis:</text>
+  <text class="sm" x="324" y="346">both ± branches collapse to one value</text>
+  <text class="sm" x="324" y="362">— the repeated (double) root</text>
+  <rect x="592" y="48" width="264" height="330" rx="12" class="box"/>
+  <text class="lbl" x="608" y="72" font-weight="bold">Δ &lt; 0 — no real roots</text>
+  <line x1="612" y1="330" x2="836" y2="330" class="axis"/>
+  <path class="ink" d="M632 110 Q724 320 816 110"/>
+  <text class="sm" x="648" y="352">the whole parabola floats above:</text>
+  <text class="sm" x="648" y="368">never meets the axis</text>
+  <text class="sm" x="608" y="330">no real number squares to negative —</text>
+  <text class="sm" x="608" y="346">no real roots (complex ones exist)</text>
+</svg>`,
+      },
+      {
+        kind: 'formula',
+        name: 'The discriminant trichotomy',
+        latex: '\\Delta = b^2 - 4ac:\\quad \\Delta > 0 \\;\\Rightarrow\\; \\text{two distinct real roots};\\quad \\Delta = 0 \\;\\Rightarrow\\; \\text{one repeated root};\\quad \\Delta < 0 \\;\\Rightarrow\\; \\text{no real roots}',
+        meaning: 'One subtraction decides the shape of the answer set before any root is taken. A positive Δ that is also a PERFECT SQUARE (with rational a, b, c) further guarantees the equation factorises over the rationals — the quick test of whether method one is worth trying.',
+      },
+      { kind: 'heading', text: 'Vertex Form: What the Square Buys Beyond Roots' },
+      {
+        kind: "para",
+        text: "Completing the square does more than solve equations. Written as a FUNCTION, y = ax² + bx + c, the completed-square form y = a(x − h)² + k (with h = −b/2a and k = c − b²/4a) is the vertex form, and it reads the parabola's turning point straight off: the vertex is (h, k). Why must the turning point sit there? The bracket (x − h)² is zero exactly once, at x = h, and it is a square — so it can never be negative. Every other x makes it positive, pushing y ABOVE (when a > 0) or BELOW (when a < 0) the value k. The point x = h is therefore the unique best-or-worst point of the whole curve, and k is its value. The vertical line x = h is the axis of symmetry: the ± in the formula is its mirror twin — roots sit symmetrically h ± √(Δ)/2a on either side of it, which is also why the two roots of any quadratic sum to −b/a (their midpoint is the axis). That midpoint shortcut, x-vertex = −b/2a, is the fastest route to a maximum or minimum: in the projectile h = −4.9t² + v₀t + h₀, the peak arrives at t = −v₀/(2 × (−4.9)) = v₀/9.8 — half the total flight time, exactly as symmetry demands.",
+      },
+      {
+        kind: "example",
+        title: 'Worked Example 1 — One Equation, Two Doors, One Answer',
+        steps: [
+          'Identify what is asked: solve 2x² − 4x − 3 = 0 twice — by completing the square and by the formula — and confirm the answers agree.',
+          'Door A, completing the square: a = 2 ≠ 1, so divide everything by 2: x² − 2x − 3/2 = 0. Half of −2 is −1; square it: 1. Move the constant: x² − 2x = 3/2. Complete: (x − 1)² = 3/2 + 1 = 5/2.',
+          'Square-root property: x − 1 = ±√(5/2). Rationalise: √(5/2) = √5/√2 = √10/2. So x = 1 ± √10/2 = (2 ± √10)/2.',
+          'Door B, the formula: a = 2, b = −4, c = −3. x = (4 ± √(16 + 24))/4 = (4 ± √40)/4 = (4 ± 2√10)/4 = (2 ± √10)/2.',
+          'Cross-check numerically: √10 ≈ 3.162, so x ≈ 2.581 or x ≈ −0.581. Substitute x ≈ 2.581: 2(6.662) − 10.325 − 3 ≈ 13.32 − 13.32 = 0 ✓. Discriminant read: Δ = 16 + 24 = 40 > 0 — two distinct real roots, as found.',
+          'State the result: x = (2 ± √10)/2 by either road. Two methods, one truth — and the agreement is itself the check.',
         ],
       },
       {
-        kind: 'quiz',
-        items: [
-          {
-            q: 'Solve x\u00b2 = 49.',
-            options: ['x = 7', 'x = \u00b17', 'x = \u00b124.5', 'x = 7 or x = 0'],
-            answer: 1,
-            explain: 'Square-root property: x = \u00b1\u221a49 = \u00b17. Every square root in solving carries both signs — the negative root is the classic dropped solution.',
-          },
-          {
-            q: 'What number completes the square for x\u00b2 + 10x + 3?',
-            options: [
-              'add and subtract 100',
-              'add and subtract 25',
-              'add and subtract 10',
-              'add and subtract 5',
-            ],
-            answer: 1,
-            explain: 'Half of b = 5; squared = 25. x\u00b2 + 10x + 25 = (x + 5)\u00b2, so the expression becomes (x + 5)\u00b2 \u2212 22.',
-          },
-          {
-            q: 'For 3x\u00b2 + 2x + 5 = 0, the discriminant is',
-            options: ['4 \u2212 60 = \u221256: no real solutions', '4 + 60 = 64: two solutions', '9 \u2212 20 = \u221211: no real solutions', '0: one solution'],
-            answer: 0,
-            explain: 'b\u00b2 \u2212 4ac = 2\u00b2 \u2212 4(3)(5) = 4 \u2212 60 = \u221256. Negative discriminant means the parabola never meets the x-axis — no real roots.',
-          },
-          {
-            q: 'According to the standard method-choice strategy, which equation is best solved by the square-root property?',
-            options: [
-              'x\u00b2 + 5x + 6 = 0',
-              '(x \u2212 3)\u00b2 = 12',
-              '2x\u00b2 + 9x \u2212 5 = 0',
-              'x\u00b4 \u2212 5x\u00b2 + 6 = 0',
-            ],
-            answer: 1,
-            explain: 'The shape (x \u2212 h)\u00b2 = k is the square-root property\u2019s home turf: x \u2212 3 = \u00b1\u221a12 directly. The others suit factorising or the formula.',
-          },
-          {
-            q: 'A ball\u2019s height is h = \u221216t\u00b2 + 40t. What is its maximum height?',
-            options: [
-              'solve \u221216t\u00b2 + 40t = 0',
-              'vertex: t = \u221240/(2\u00d7(\u221216)) = 1.25, h(1.25) = 25',
-              'discriminant: 1600, so height 40',
-              'factorise: 8t(5 \u2212 2t), maximum 5',
-            ],
-            answer: 1,
-            explain: 'Maxima need the vertex, not the roots: t = \u2212b/2a = 1.25 s, h(1.25) = \u221216(1.5625) + 50 = 25. Solving h = 0 finds landing time, not peak.',
-          },
+        kind: "example",
+        title: 'Worked Example 2 — The Ball\'s Peak: Roots Answer "When", the Vertex Answers "How High"',
+        steps: [
+          'Identify what is asked: a ball is thrown upward from 2 m with speed 30 m/s; its height is h = −5t² + 30t + 2 (g ≈ 10 m/s²). Find BOTH the time it lands and the peak height.',
+          'Landing is h = 0: −5t² + 30t + 2 = 0, i.e. 5t² − 30t − 2 = 0. Discriminant: Δ = 900 + 40 = 940. √940 = √(4 × 235) = 2√235 ≈ 30.66.',
+          't = (30 ± 30.66)/10 → t ≈ 6.07 s or t ≈ −0.07 s. Time cannot be negative — discard the negative root. The ball lands about 6.07 seconds after the throw.',
+          'The peak is NOT a root — it is the vertex. t-vertex = −b/2a = −30/(2 × (−5)) = 3 s (half of the flight, as the symmetry argument promised). Height there: h(3) = −5(9) + 90 + 2 = −45 + 92 = 47 m.',
+          'State the result: lands at t ≈ 6.07 s; peaks at 47 m, reached at t = 3 s. Roots answer "when is height zero"; the vertex answers "how high at best" — two different questions, two different features of the same parabola.',
         ],
+      },
+      {
+        kind: "example",
+        title: 'Worked Example 3 — Reading Δ Before Computing, and a Design Question',
+        steps: [
+          'Identify what is asked: (a) classify 9x² − 12x + 4 = 0 without solving fully; (b) a 40 m fence encloses a rectangular garden against a straight wall on one side — what width maximises the area?',
+          '(a) a = 9, b = −12, c = 4: Δ = 144 − 144 = 0. One repeated root, x = 12/18 = 2/3. Indeed 9x² − 12x + 4 = (3x − 2)² — a perfect square, and the parabola\'s vertex (2/3, 0) sits exactly on the x-axis, kissing it.',
+          '(b) Let x be the two fenced widths (the wall covers the third side); the length is 40 − 2x. Area A = x(40 − 2x) = −2x² + 40x. This is a quadratic with a = −2 < 0 — opens downward, so its vertex is a MAXIMUM.',
+          'x-vertex = −40/(2 × (−2)) = 10 m. Then length = 40 − 20 = 20 m, and A(10) = 10 × 20 = 200 m². (Confirm with completed-square form: A = −2(x² − 20x) = −2(x − 10)² + 200 — the 200 stands alone as the peak.)',
+          'State the result: (a) Δ = 0 → the equation is (3x − 2)² = 0 with the repeated root x = 2/3; (b) the optimal garden is 10 m wide (two 10 m widths) and 20 m long along the wall, area 200 m² — and −2(x − 10)² + 200 shows the 200 standing alone as the peak.',
+        ],
+      },
+      { kind: 'heading', text: 'Choosing the Fastest Door' },
+      {
+        kind: "para",
+        text: "Four methods, one decision rule. Look for a friendly factorisation first — if integer factors jump out within a few seconds (check: does Δ being a small perfect square make it likely?), take them. Look for an isolated square next — (x − h)² = k or anything one move away from it — and let the square-root property finish. If neither shape appears, use the formula: it always works and its discriminant tells you in advance whether roots exist at all. Completing the square 'by hand' is the method you reach for when the question demands it — when the vertex, the maximum or the derivation itself is the point — and it remains the honest fallback that the formula was born from. Speed-layer short-cuts (pattern-spotting, sign games, option-plugging under time pressure) belong to test-strategy material; this lesson is the concept-depth home they optimise. Whatever the door, the exit ritual never changes: substitute both answers back and watch them vanish the equation.",
+      },
+      {
+        kind: 'callout',
+        title: 'Applications in the Real World',
+        tone: 'insight',
+        text: "Projectiles and sport: every thrown ball's height is a quadratic in time — solve h = 0 for the landing, read −b/2a for the apex, exactly as Worked Example 2 did. Business pricing: if each rupee off the price sells more tickets, revenue (price × count) is a quadratic in the discount, and the vertex IS the optimal price — companies live on −b/2a. Design: parabolic dishes and headlight reflectors use the curve's focusing property, and the fence problem's vertex logic sizes everything from bookshelf spans to solar-panel layouts. Equation plumbing: the geometry-and-measurement chapter recovers a circle's or sphere's centre-and-radius by completing the square in two or three variables at once (the sphere lesson cites this lesson for the method). Quantity comparisons: when an entrance-style comparison hides a polynomial, moving everything to one side and studying the SIGN of the resulting quadratic — its discriminant first — is exactly the algebraic-comparison technique the data-sufficiency lesson teaches. And engineering stability: characterising when a system oscillates or settles reduces to reading the sign of a discriminant.",
       },
       {
         kind: 'callout',
         title: 'Common Pitfalls',
         tone: 'warn',
-        text: 'Solving before reaching standard form — always gather to ax\u00b2 + bx + c = 0 first. Dropping the \u00b1 on square roots, in the square-root property and the formula alike. Halving b twice or forgetting to divide by a before completing the square when a \u2260 1. Writing the formula with only part of the numerator over 2a — the whole of \u2212b \u00b1 \u221a(b\u00b2 \u2212 4ac) sits over 2a. Announcing one solution when the discriminant is negative and \u201cno real solutions\u201d was meant — complex roots still exist. Answering maximum-height questions with roots instead of the vertex. And skipping the check — substitution catches sign slips the algebra hid.',
+        text: "Eight traps, in descending frequency. Dropping the ± — on the square-root property AND inside the formula; every square root in solving carries both signs. Adding (b/2)² to one side of an equation only — the scribe appended the quarter to BOTH sides. Forgetting to divide by a before completing the square (or mis-dividing when a does not go evenly). Writing the formula with part of the numerator over 2a — the WHOLE of −b ± √(b² − 4ac) sits over 2a. Solving before reaching standard form, so a, b, c are read off the wrong arrangement. Answering 'how high' with roots or 'when' with the vertex — roots and vertex are different features (Worked Example 2). Saying 'no solutions' when Δ < 0 — the honest phrase is 'no REAL solutions'; complex roots still exist. Skipping the substitution check, which catches sign slips the algebra hid.",
       },
+      { kind: 'heading', text: 'Key Terms' },
+      { kind: 'terms', items: [
+        { term: 'Standard form', def: 'ax² + bx + c = 0 with a ≠ 0 — the gathered arrangement every method reads its a, b, c from.' },
+        { term: 'Zero-product property', def: 'If a product of factors is zero, at least one factor is zero — the licence that turns (x − 4)(x + 3) = 0 into two linear equations.' },
+        { term: 'Square-root property', def: 'If x² = k ≥ 0 then x = ±√k — both signs, because squaring erases sign.' },
+        { term: 'Completing the square', def: 'Rewriting x² + bx + c as (x + b/2)² + (c − b²/4): half the middle coefficient, squared, added and subtracted. The Babylonian scribe\'s cut-and-paste move, made algebra.' },
+        { term: 'Perfect-square trinomial', def: 'A quadratic that IS a square: x² + 2hx + h² = (x + h)². Its discriminant is 0.' },
+        { term: 'Quadratic formula', def: 'x = (−b ± √(b² − 4ac))/(2a) — completing the square done once with letters; derived, not memorised, in this lesson.' },
+        { term: 'Discriminant', def: 'Δ = b² − 4ac: positive → two distinct real roots; zero → one repeated root; negative → no real roots (two complex). Named by Sylvester, 1851.' },
+        { term: 'Repeated (double) root', def: 'The single root that remains when Δ = 0; geometrically, the vertex sitting exactly on the x-axis.' },
+        { term: 'Vertex form', def: 'y = a(x − h)² + k with vertex (h, k) and h = −b/2a — the completed-square packaging that reads off the turning point.' },
+        { term: 'Axis of symmetry', def: 'The vertical line x = −b/2a through the vertex; the two roots sit mirrored on either side of it, so they sum to −b/a.' },
+      ] },
+      { kind: 'heading', text: 'Check Yourself' },
+      { kind: 'quiz', items: [
+        {
+          q: 'Solve x² = 49.',
+          options: ['x = 7', 'x = ±7', 'x = ±24.5', 'x = 7 or x = 0'],
+          answer: 1,
+          explain: 'Square-root property: x = ±√49 = ±7. Every square root in solving carries both signs — the negative root is the classic dropped solution.',
+        },
+        {
+          q: 'What number completes the square for x² + 10x + 3?',
+          options: ['add and subtract 100', 'add and subtract 25', 'add and subtract 10', 'add and subtract 5'],
+          answer: 1,
+          explain: 'Half of b = 5; squared = 25. x² + 10x + 25 = (x + 5)², so the expression becomes (x + 5)² − 22. Al-Khwarizmi\'s 10x needed exactly the same 25.',
+        },
+        {
+          q: 'Solve 2x² − 8x + 6 = 0 by dividing by a first. The roots are:',
+          options: ['1 and 3', '−1 and −3', '2 only', 'no real roots'],
+          answer: 0,
+          explain: 'Divide by 2: x² − 4x + 3 = 0 → (x − 1)(x − 3) = 0 → x = 1 or 3. Check 3: 18 − 24 + 6 = 0 ✓. Dividing first keeps the completing-square arithmetic fraction-free.',
+        },
+        {
+          q: 'For 3x² + 2x + 5 = 0, the discriminant is:',
+          options: ['4 − 60 = −56: no real solutions', '4 + 60 = 64: two solutions', '9 − 20 = −11: no real solutions', '0: one solution'],
+          answer: 0,
+          explain: 'Δ = b² − 4ac = 2² − 4(3)(5) = 4 − 60 = −56. Negative discriminant: the parabola never meets the x-axis — no REAL roots (complex ones exist).',
+        },
+        {
+          q: 'Which equation is best solved by the square-root property?',
+          options: ['x² + 5x + 6 = 0', '(x − 3)² = 12', '2x² + 9x − 5 = 0', 'x⁴ − 5x² + 6 = 0'],
+          answer: 1,
+          explain: 'The shape (x − h)² = k is the square-root property\'s home turf: x − 3 = ±√12 = ±2√3 directly. The others suit factorising or the formula.',
+        },
+        {
+          q: 'The vertex of y = 2x² − 4x − 3 is:',
+          options: ['(1, −5)', '(−1, 5)', '(2, −3)', '(4, −3)'],
+          answer: 0,
+          explain: 'x-vertex = −b/2a = 4/4 = 1; y(1) = 2 − 4 − 3 = −5. Since a = 2 > 0 the parabola opens up, so this is the minimum — Worked Example 1\'s equation read as a function.',
+        },
+        {
+          q: 'For the ball h = −5t² + 30t + 2 of Worked Example 2, the peak height is:',
+          options: ['45 m', '47 m', '92 m', '30 m'],
+          answer: 1,
+          explain: 'Peak at t = −b/2a = 3 s; h(3) = −45 + 90 + 2 = 47 m. The 45 m is only the −5t² contribution, and 92 is a sign slip: peaks come from the VERTEX, never from the roots.',
+        },
+        {
+          q: 'If a quadratic\'s discriminant is exactly 0, what does the graph do?',
+          options: ['crosses the x-axis twice', 'touches the x-axis once, at the vertex', 'never meets the x-axis', 'has no vertex'],
+          answer: 1,
+          explain: 'Δ = 0 collapses the ± into one value: the repeated root sits AT the vertex, which lies exactly on the axis — the parabola kisses the x-axis once (Figure 2, middle panel).',
+        },
+      ] },
       {
         kind: 'callout',
         title: 'Where to go next',
         tone: 'path',
-        text: 'Prerequisites: the algebraic-notation-and-manipulation lesson — factorising and rearranging are this lesson\u2019s first and third methods. Follow with function-graphing topics (the parabola as a function\u2019s picture) and, later, the derivative lesson, whose critical points generalize the vertex. Primary reading: OpenStax, Intermediate Algebra 2e \u00a79.2 \u201cSolve Quadratic Equations by Completing the Square\u201d and \u00a79.3 \u201cSolve Quadratic Equations Using the Quadratic Formula\u201d, with \u00a79.5\u2019s projectile applications (openstax.org, CC BY-NC-SA).',
+        text: 'Prerequisites: the algebraic-notation-and-manipulation lesson (§71.1) — expanding brackets and factorising are this lesson\'s first method and its completing-square identity; the mental-arithmetic rungs of the applied-mathematics lesson sharpen the half-and-square speed. Follow the algebra chapter in order: §71.3 pushes these equations into modulus and logarithm inequalities, where a quadratic\'s discriminant decides how many cases exist. Later connections: the function-graphing material draws the parabola this lesson describes; the sphere and circle lessons (§73.3, geometry-and-measurement) reuse completing the square in three variables to recover centre and radius; the derivative lesson generalises the vertex to every curve\'s critical points — the −b/2a you computed here is that story\'s first chapter. Sources: OpenStax, Intermediate Algebra 2e (sections on quadratic equations and the quadratic formula) for the four-step formula rhythm, the 2x² + 9x − 5 worked example and the a = 1 point; BM 13901 problem 2 as translated in Jöran Friberg\'s and Eleanor Robson\'s Babylonian-mathematics scholarship; al-Khwarizmi\'s Al-jabr (c. 820 CE) for the four-rectangle completion; Brahmagupta, Brāhmasphuṭasiddhānta (628 CE); Sridhara\'s rule as preserved in later quotations (c. 870–930); Sylvester 1851 for "discriminant"; Cardano, Ars Magna (1545), chapter on the irreducible case.',
       },
       { kind: 'heading', text: 'Five-Minute Recap' },
       { kind: 'list', ordered: true, items: [
-        'Standard form first: ax\u00b2 + bx + c = 0, a \u2260 0; identify a, b, c.',
-        'Factorise when friendly; square-root property when a square stands alone — both roots.',
-        'Complete the square: half of b, squared, added and subtracted; divide by a first if needed.',
-        'Formula: x = (\u2212b \u00b1 \u221a(b\u00b2 \u2212 4ac))/2a — four steps, then check.',
-        'Discriminant trichotomy: positive two, zero one, negative none.',
-        'Vertex from \u2212b/2a: maxima and minima live there, not at the roots.',
+        'Standard form first: ax² + bx + c = 0, a ≠ 0; identify a, b, c before choosing anything.',
+        'Factorise when friendly (zero-product property splits it); square-root property when a square stands alone — carry the ±.',
+        'Completing the square: half of b, squared, added and subtracted; divide by a first (or use Sridhara\'s 4a-multiply); the geometry is a missing corner.',
+        'The formula is completing the square done once — and you can now re-derive it, not just recall it.',
+        'Δ = b² − 4ac counts roots: positive two, zero one (vertex on the axis), negative none real.',
+        'Vertex form y = a(x − h)² + k reads the turning point (h, k) with h = −b/2a; roots answer "when", the vertex answers "how high".',
+        'Door-choice: factor → square → formula; complete the square when the vertex or the derivation is the question. Then CHECK by substitution.',
       ] },
     ],
   },

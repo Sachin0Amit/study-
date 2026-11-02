@@ -16,8 +16,18 @@
     "nextUnit": "Author Ch4 §4.4 Selection Models & Fitness Arithmetic (next NEW in tree order) — born textbook-quality, NO WORD CEILING, dedup greps before writing (fitness/selection-coefficient territory vs existing population lessons 4.1–4.3), figure plate + derivation + worked examples + 6-10-question quiz. Then §5.3 Genomics in Medicine, then new Ch6 Quantitative Genetics (§6.1 Polygenic Traits & the Bell Curve, §6.2 Heritability & the Breeder's Equation, §6.3 QTL Mapping in Practice — carve vs bio-markers-qtl-mapping which owns marker-map mechanics). AFTER structural completion: deepen the 11 thin lessons (< 2,000-word floor; thinnest mendel 975, crispr 1,169, population-genetics 1,261) and fill the subject-wide figure gap"
   },
   "scheduledJobs": {
-    "masterLoop": { "jobId": 494898, "cadence": "hourly at :00 IST", "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8", "note": "recreated 2026-11-02 ~06:55 IST after the sandbox-rollback failure night (old 493829 deleted — it fired 8x against a sandbox rolled back to the Oct-26 state and was disabled by the API); new payload carries STEP 0 ANTI-STALE SYNC (fetch origin, ff-only hard-sync when local is behind with 0 unique commits)" },
-    "webDevReview": { "jobId": 494900, "cadence": "every 15 min at :07/:22/:37/:52 IST", "kind": "webDevReview", "note": "recreated 2026-11-02 ~06:55 IST (old 493831 was lost in the same incident)" },
+    "masterLoop": {
+      "jobId": 494898,
+      "cadence": "hourly at :00 IST",
+      "workflow": "docs/project/PROJECT_MASTER_PLAN.md §8",
+      "note": "recreated 2026-11-02 ~06:55 IST after the sandbox-rollback failure night (old 493829 deleted — it fired 8x against a sandbox rolled back to the Oct-26 state and was disabled by the API); new payload carries STEP 0 ANTI-STALE SYNC (fetch origin, ff-only hard-sync when local is behind with 0 unique commits)"
+    },
+    "webDevReview": {
+      "jobId": 494900,
+      "cadence": "every 15 min at :07/:22/:37/:52 IST",
+      "kind": "webDevReview",
+      "note": "recreated 2026-11-02 ~06:55 IST (old 493831 was lost in the same incident)"
+    },
     "textbookQualityLoop": {
       "jobId": 494899,
       "cadence": "hourly at :30 IST",
@@ -29,8 +39,8 @@
     "directive": "docs/project/TEXTBOOK-QUALITY-DIRECTIVE.md",
     "ledger": "docs/project/TEXTBOOK_REWRITE_LEDGER.md",
     "currentSubject": "mathematics-unified",
-    "lastCompletedUnit": "2026-11-01 ~22:55 IST: math-algebra-notation-manipulation (§71.1) rewritten in place 1,409 → 3,496 words EXACT/17min (queue #2; Baghdad 820 CE opening, two-panel anatomy + area-model SVG, (a+b)² derivation, 3 worked examples, 7-question quiz, carve evidence recorded in ledger)",
-    "nextUnit": "mathematics-unified queue #3: math-quadratics-completing-square (§71.2, 1,471 words, grade C) — then queue row 3b: re-expand math-algebra-notation-manipulation (restore the ~768 words cut under the former 3,500 ceiling). NO WORD CEILING from 2026-11-02: rewrites are as elaborative as genuine teaching requires (directive §12). Pre-flight: verify LIVE in dedup.ts, dedup greps (factorising/quadratic formula territory), then rewrite per the ledger's quality gates"
+    "lastCompletedUnit": "2026-11-02 ~08:45 IST: math-quadratics-completing-square (§71.2) rewritten in place 1,471 → 5,071 words EXACT/25min (queue #3, first NO-CEILING rewrite — zero trims; BM 13901 Babylonian opening, Figure 1 gnomon + al-Khwarizmi four-strip completion, quadratic-formula DERIVATION block with Brahmagupta 628/Sridhara/Sylvester 1851/Cardano 1545 history, Figure 2 discriminant parabolas, 4 worked examples, 8-question quiz 6 quantitative, carve evidence in ledger)",
+    "nextUnit": "mathematics-unified queue #3b: re-expand math-algebra-notation-manipulation (§71.1) — restore the ~768 words cut under the former 3,500 ceiling (worked-example depth / pitfall reasoning), UNLIMITED length per the no-ceiling charter. Pre-flight: verify LIVE in dedup.ts (it is), dedup greps, then expand in place (same id/title/file) and re-verify declared == actual via count-topic-words-exact. Then queue #4 math-earth-geometry (§73.2, 1,338 words, grade C)"
   },
   "pipelineInvariant": [
     "bun scripts/serialize-content.ts",
